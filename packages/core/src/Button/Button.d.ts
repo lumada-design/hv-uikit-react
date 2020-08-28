@@ -1,13 +1,12 @@
 import { ButtonProps, StandardProps } from "@material-ui/core";
 
-export type HvButtonCategories =
-  | "primary"
-  | "secondary"
-  | "ghost"
-  | "semantic"
-  | "icon";
+export type HvButtonCategories = "primary" | "secondary" | "ghost" | "semantic";
 
 export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassKey> {
+  /**
+   * Whether the Button is an icon-only button.
+   */
+  icon: boolean;
   /**
    * Category of button to use
    */
@@ -21,7 +20,7 @@ export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassK
 
 export type HvButtonClassKey =
   | "root"
-  | "rootIcon"
+  | "icon"
   | "primary"
   | "primaryDisabled"
   | "secondary"

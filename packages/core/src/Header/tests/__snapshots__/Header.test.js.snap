@@ -100,12 +100,12 @@ exports[`[v3] Header should be able to render 1`] = `
                         "ghost": "HvButton-ghost",
                         "ghostDisabled": "HvButton-ghostDisabled",
                         "ghostSVG": "HvButton-ghostSVG",
+                        "icon": "HvButton-icon",
                         "iconSVG": "HvButton-iconSVG",
                         "primary": "HvButton-primary",
                         "primaryDisabled": "HvButton-primaryDisabled",
                         "primarySVG": "HvButton-primarySVG",
                         "root": "HvButton-root",
-                        "rootIcon": "HvButton-rootIcon",
                         "secondary": "HvButton-secondary",
                         "secondaryDisabled": "HvButton-secondaryDisabled",
                         "secondarySVG": "HvButton-secondarySVG",
@@ -118,11 +118,11 @@ exports[`[v3] Header should be able to render 1`] = `
                     onClick={[Function]}
                   >
                     <WithStyles(ForwardRef(Button))
-                      className="HvButton-iconSVG HvButton-rootIcon"
+                      className="HvButton-iconSVG"
                       classes={
                         Object {
                           "containedPrimary": "HvButton-primary",
-                          "disabled": "HvButton-ghostDisabled",
+                          "disabled": "HvButton-primaryDisabled",
                           "outlinedPrimary": "HvButton-secondary",
                           "root": "HvButton-root",
                           "startIcon": "HvButton-startIcon",
@@ -132,10 +132,10 @@ exports[`[v3] Header should be able to render 1`] = `
                       color="primary"
                       disableRipple={true}
                       onClick={[Function]}
-                      variant="text"
+                      variant="contained"
                     >
                       <ForwardRef(Button)
-                        className="HvButton-iconSVG HvButton-rootIcon"
+                        className="HvButton-iconSVG"
                         classes={
                           Object {
                             "colorInherit": "MuiButton-colorInherit",
@@ -145,7 +145,7 @@ exports[`[v3] Header should be able to render 1`] = `
                             "containedSizeLarge": "MuiButton-containedSizeLarge",
                             "containedSizeSmall": "MuiButton-containedSizeSmall",
                             "disableElevation": "MuiButton-disableElevation",
-                            "disabled": "Mui-disabled HvButton-ghostDisabled",
+                            "disabled": "Mui-disabled HvButton-primaryDisabled",
                             "endIcon": "MuiButton-endIcon",
                             "focusVisible": "Mui-focusVisible",
                             "fullWidth": "MuiButton-fullWidth",
@@ -172,10 +172,10 @@ exports[`[v3] Header should be able to render 1`] = `
                         color="primary"
                         disableRipple={true}
                         onClick={[Function]}
-                        variant="text"
+                        variant="contained"
                       >
                         <WithStyles(ForwardRef(ButtonBase))
-                          className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-contained HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
                           component="button"
                           disableRipple={true}
                           disabled={false}
@@ -185,7 +185,7 @@ exports[`[v3] Header should be able to render 1`] = `
                           type="button"
                         >
                           <ForwardRef(ButtonBase)
-                            className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButton-root HvButton-root MuiButton-contained HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -202,7 +202,7 @@ exports[`[v3] Header should be able to render 1`] = `
                             type="button"
                           >
                             <button
-                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -409,12 +409,12 @@ exports[`[v3] Header should be able to render 1`] = `
                               "ghost": "HvButton-ghost",
                               "ghostDisabled": "HvButton-ghostDisabled",
                               "ghostSVG": "HvButton-ghostSVG",
+                              "icon": "HvButton-icon",
                               "iconSVG": "HvButton-iconSVG",
                               "primary": "HvButton-primary",
                               "primaryDisabled": "HvButton-primaryDisabled",
                               "primarySVG": "HvButton-primarySVG",
                               "root": "HvButton-root",
-                              "rootIcon": "HvButton-rootIcon",
                               "secondary": "HvButton-secondary",
                               "secondaryDisabled": "HvButton-secondaryDisabled",
                               "secondarySVG": "HvButton-secondarySVG",
@@ -428,11 +428,11 @@ exports[`[v3] Header should be able to render 1`] = `
                         >
                           <WithStyles(ForwardRef(Button))
                             aria-label="Open Notifications panel"
-                            className="HvButton-iconSVG HvButton-rootIcon"
+                            className="HvButton-iconSVG"
                             classes={
                               Object {
                                 "containedPrimary": "HvButton-primary",
-                                "disabled": "HvButton-ghostDisabled",
+                                "disabled": "HvButton-primaryDisabled",
                                 "outlinedPrimary": "HvButton-secondary",
                                 "root": "HvButton-root",
                                 "startIcon": "HvButton-startIcon",
@@ -442,11 +442,11 @@ exports[`[v3] Header should be able to render 1`] = `
                             color="primary"
                             disableRipple={true}
                             onClick={[Function]}
-                            variant="text"
+                            variant="contained"
                           >
                             <ForwardRef(Button)
                               aria-label="Open Notifications panel"
-                              className="HvButton-iconSVG HvButton-rootIcon"
+                              className="HvButton-iconSVG"
                               classes={
                                 Object {
                                   "colorInherit": "MuiButton-colorInherit",
@@ -456,7 +456,7 @@ exports[`[v3] Header should be able to render 1`] = `
                                   "containedSizeLarge": "MuiButton-containedSizeLarge",
                                   "containedSizeSmall": "MuiButton-containedSizeSmall",
                                   "disableElevation": "MuiButton-disableElevation",
-                                  "disabled": "Mui-disabled HvButton-ghostDisabled",
+                                  "disabled": "Mui-disabled HvButton-primaryDisabled",
                                   "endIcon": "MuiButton-endIcon",
                                   "focusVisible": "Mui-focusVisible",
                                   "fullWidth": "MuiButton-fullWidth",
@@ -483,11 +483,11 @@ exports[`[v3] Header should be able to render 1`] = `
                               color="primary"
                               disableRipple={true}
                               onClick={[Function]}
-                              variant="text"
+                              variant="contained"
                             >
                               <WithStyles(ForwardRef(ButtonBase))
                                 aria-label="Open Notifications panel"
-                                className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                                className="MuiButton-root HvButton-root MuiButton-contained HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
                                 component="button"
                                 disableRipple={true}
                                 disabled={false}
@@ -498,7 +498,7 @@ exports[`[v3] Header should be able to render 1`] = `
                               >
                                 <ForwardRef(ButtonBase)
                                   aria-label="Open Notifications panel"
-                                  className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                                  className="MuiButton-root HvButton-root MuiButton-contained HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
                                   classes={
                                     Object {
                                       "disabled": "Mui-disabled",
@@ -516,7 +516,7 @@ exports[`[v3] Header should be able to render 1`] = `
                                 >
                                   <button
                                     aria-label="Open Notifications panel"
-                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}

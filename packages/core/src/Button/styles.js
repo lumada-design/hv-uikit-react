@@ -28,7 +28,7 @@ const styles = theme => {
       borderRadius: "2px",
       ...theme.hv.typography.highlightText
     },
-    rootIcon: {
+    icon: {
       padding: 0,
       height: "unset",
       width: "unset",
