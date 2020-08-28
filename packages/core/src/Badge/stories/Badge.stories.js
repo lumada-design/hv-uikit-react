@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Alert } from "@hv/uikit-react-icons/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
-import { HvBadge, HvButton, HvTab, HvTabs } from "../..";
+import { HvBadge, HvButton } from "../..";
 
 const container = {
   width: 400,
@@ -45,7 +44,7 @@ export const WithIcon = () => (
 );
 
 WithIcon.story = {
-  decorators: [storyFn => <div style={{ ...container, width: 50 }}>{storyFn()}</div>],
+  decorators: [storyFn => <div style={{ ...container, width: 500 }}>{storyFn()}</div>],
   parameters: {
     docs: {
       storyDescription: "Badge sample that uses a custom icon."
@@ -94,44 +93,5 @@ WithState.story = {
       storyDescription: "Badge sample using react hooks to set the number of events."
     },
     v3: true
-  }
-};
-
-export const WithTabs = () => {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const StyledTab = withStyles(theme => ({
-    root: {
-      fontSize: theme.hv.typography.sTitle.fontSize,
-      minHeight: "inherit",
-      justifyContent: "center"
-    },
-    labelContainer: {
-      padding: "21px 40px",
-      maxWidth: "unset",
-      width: 265,
-      justifyContent: "center",
-      display: "flex"
-    }
-  }))(props => <HvTab {...props} />);
-
-  return (
-    <HvTabs value={value} onChange={handleChange}>
-      <StyledTab label={<HvBadge showCount count={2} text="Track events" />} />
-      <StyledTab label={<HvBadge count={1} text="Vehicle events" />} />
-    </HvTabs>
-  );
-};
-
-WithTabs.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Badges applied to Tabs component."
-    }
-    // Enabled with the tabs update
   }
 };
