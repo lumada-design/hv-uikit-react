@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.10.2...@hv/uikit-react-core@2.11.0) (2020-08-28)
+
+
+### Bug Fixes
+
+* **badge:** sample. HVUIKIT-5502 ([c24822a](https://github.com/pentaho/hv-uikit-react/commit/c24822a1434637f4dd6a3c4c62cd68a7a3bebbac))
+* **datepicker:** replace forced color by theme. HVUIKIT-5459 ([7205de2](https://github.com/pentaho/hv-uikit-react/commit/7205de235e87883b99edff6717c6d5d66889c7f8))
+* **dropdowmenu:** list should be condensed. HVUIKIT-5500 ([e053c24](https://github.com/pentaho/hv-uikit-react/commit/e053c24a672420994266e31c75d93679315e166c))
+* **form:** input sample. HVUIKIT-5427 ([#1905](https://github.com/pentaho/hv-uikit-react/issues/1905)) ([e854c70](https://github.com/pentaho/hv-uikit-react/commit/e854c70c32c7bf6f0a0e088153122fdeb92a9aa4))
+* **table:** invalid ids in secondary actions. HVUIKIT-5461 ([8e0fe84](https://github.com/pentaho/hv-uikit-react/commit/8e0fe847c17dab5d057ca748b4b9207abe3164dd))
+* **tooltip:** adjust header bottom spacing. HVUIKIT-5518 ([edaf7c3](https://github.com/pentaho/hv-uikit-react/commit/edaf7c371bd06d29218e6782d96d41be22be5d66))
+
+
+### Features
+
+* **login:** mark as deprecated. HVUIKIT-5479 ([6d2238e](https://github.com/pentaho/hv-uikit-react/commit/6d2238e1cf3321b41577adbc2eaa28b93365fe06))
+
+
+
+
+
 ## [2.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.10.1...@hv/uikit-react-core@2.10.2) (2020-08-18)
 
 
