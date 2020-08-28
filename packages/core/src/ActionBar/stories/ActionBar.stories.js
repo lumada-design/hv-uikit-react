@@ -28,7 +28,7 @@ export const Main = () => {
       flex: 1
     },
     buttonSeparator: {
-      marginRight: theme.hv.spacing.sm
+      marginRight: theme.hv.spacing.xs
     }
   }));
 
@@ -74,7 +74,7 @@ export const DualAction = () => {
       flex: 1
     },
     buttonSeparator: {
-      marginRight: theme.hv.spacing.sm
+      marginRight: theme.hv.spacing.xs
     }
   }));
 
@@ -122,7 +122,7 @@ export const VariedActionBar = () => {
       flex: 1
     },
     buttonSeparator: {
-      marginRight: theme.hv.spacing.sm
+      marginRight: theme.hv.spacing.xs
     }
   }));
 
