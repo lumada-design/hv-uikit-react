@@ -108,37 +108,39 @@ const styles = theme => ({
         background: theme.hv.palette.atmosphere.atmo2,
         "& $trGroups": {
           borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
-          "& $tr.selected": {
-            background: theme.hv.palette.atmosphere.atmo1
-          },
-          "& $tr > div ": {
-            background: theme.hv.palette.atmosphere.atmo2
-          },
-          "& $tr:hover > div ": {
-            background: theme.hv.palette.atmosphere.atmo3
-          },
-          "& $tr:hover > div.sorted ": {
-            background: theme.hv.palette.atmosphere.atmo3
-          },
-          "& $tr.selected > div": {
-            background: "none"
-          },
-          "& $tr.selected:hover > div": {
-            background: theme.hv.palette.atmosphere.atmo3
-          },
-          "& $tr > $td.sorted": {
-            backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4)
-          },
-          "& $tr > div.rt-td.rthfc-td-fixed-left-last": {
-            background: theme.hv.palette.atmosphere.atmo2,
-            "&.sorted": {
-              background: theme.hv.palette.atmosphere.atmo2
-            }
-          },
-          "& $tr > div.rt-td.rthfc-td-fixed-right-first": {
-            background: theme.hv.palette.atmosphere.atmo2,
-            "&.sorted": {
-              background: theme.hv.palette.atmosphere.atmo2
+          "& $tr": {
+            "& > div$td": {
+              background: theme.hv.palette.atmosphere.atmo2,
+              "&.sorted": {
+                background: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4)
+              },
+              "&.rthfc-td-fixed": {
+                background: theme.hv.palette.atmosphere.atmo2,
+                "&.sorted": {
+                  background: theme.hv.palette.atmosphere.atmo2
+                }
+              }
+            },
+            "&.selected": {
+              background: theme.hv.palette.atmosphere.atmo1,
+              "& > div$td": {
+                background: "none"
+              }
+            },
+            "&.selected:hover > div$td": {
+              background: theme.hv.palette.atmosphere.atmo3
+            },
+            "&:hover > div$td": {
+              background: theme.hv.palette.atmosphere.atmo3,
+              "&.sorted": {
+                background: theme.hv.palette.atmosphere.atmo3
+              },
+              "&.rthfc-td-fixed": {
+                background: theme.hv.palette.atmosphere.atmo3,
+                "&.sorted": {
+                  background: theme.hv.palette.atmosphere.atmo3
+                }
+              }
             }
           }
         },
