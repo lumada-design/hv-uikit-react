@@ -64,7 +64,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                     Object {
                       "current": <button
                         aria-label="open"
-                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         id="sample3-container-hamburger-button"
                         tabindex="0"
                         type="button"
@@ -93,8 +93,8 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                       </button>,
                     }
                   }
-                  category="icon"
                   className="HvVerticalNavigationVerticalContainer-button"
+                  icon={true}
                   id="sample3-container-hamburger-button"
                   onClick={[Function]}
                 >
@@ -104,7 +104,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                       Object {
                         "current": <button
                           aria-label="open"
-                          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           id="sample3-container-hamburger-button"
                           tabindex="0"
                           type="button"
@@ -133,7 +133,6 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                         </button>,
                       }
                     }
-                    category="icon"
                     className="HvVerticalNavigationVerticalContainer-button"
                     classes={
                       Object {
@@ -155,6 +154,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                         "startIcon": "HvButton-startIcon",
                       }
                     }
+                    icon={true}
                     id="sample3-container-hamburger-button"
                     onClick={[Function]}
                   >
@@ -164,7 +164,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                         Object {
                           "current": <button
                             aria-label="open"
-                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             id="sample3-container-hamburger-button"
                             tabindex="0"
                             type="button"
@@ -193,11 +193,11 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                           </button>,
                         }
                       }
-                      className="HvVerticalNavigationVerticalContainer-button HvButton-iconSVG"
+                      className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "containedPrimary": "HvButton-primary",
-                          "disabled": "HvButton-primaryDisabled",
+                          "disabled": "HvButton-ghostDisabled",
                           "outlinedPrimary": "HvButton-secondary",
                           "root": "HvButton-root",
                           "startIcon": "HvButton-startIcon",
@@ -208,7 +208,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                       disableRipple={true}
                       id="sample3-container-hamburger-button"
                       onClick={[Function]}
-                      variant="contained"
+                      variant="text"
                     >
                       <ForwardRef(Button)
                         aria-label="open"
@@ -216,7 +216,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                           Object {
                             "current": <button
                               aria-label="open"
-                              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                               id="sample3-container-hamburger-button"
                               tabindex="0"
                               type="button"
@@ -245,7 +245,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                             </button>,
                           }
                         }
-                        className="HvVerticalNavigationVerticalContainer-button HvButton-iconSVG"
+                        className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                         classes={
                           Object {
                             "colorInherit": "MuiButton-colorInherit",
@@ -255,7 +255,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                             "containedSizeLarge": "MuiButton-containedSizeLarge",
                             "containedSizeSmall": "MuiButton-containedSizeSmall",
                             "disableElevation": "MuiButton-disableElevation",
-                            "disabled": "Mui-disabled HvButton-primaryDisabled",
+                            "disabled": "Mui-disabled HvButton-ghostDisabled",
                             "endIcon": "MuiButton-endIcon",
                             "focusVisible": "Mui-focusVisible",
                             "fullWidth": "MuiButton-fullWidth",
@@ -283,7 +283,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                         disableRipple={true}
                         id="sample3-container-hamburger-button"
                         onClick={[Function]}
-                        variant="contained"
+                        variant="text"
                       >
                         <WithStyles(ForwardRef(ButtonBase))
                           aria-label="open"
@@ -291,7 +291,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                             Object {
                               "current": <button
                                 aria-label="open"
-                                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                 id="sample3-container-hamburger-button"
                                 tabindex="0"
                                 type="button"
@@ -320,7 +320,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                               </button>,
                             }
                           }
-                          className="MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                          className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           component="button"
                           disableRipple={true}
                           disabled={false}
@@ -336,7 +336,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                               Object {
                                 "current": <button
                                   aria-label="open"
-                                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                   id="sample3-container-hamburger-button"
                                   tabindex="0"
                                   type="button"
@@ -365,7 +365,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                                 </button>,
                               }
                             }
-                            className="MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                            className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -384,7 +384,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                           >
                             <button
                               aria-label="open"
-                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                               disabled={false}
                               id="sample3-container-hamburger-button"
                               onBlur={[Function]}
@@ -518,7 +518,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                     Object {
                       "current": <button
                         aria-label="open"
-                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         id="sample3-container-hamburger-button"
                         tabindex="0"
                         type="button"
@@ -547,8 +547,8 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                       </button>,
                     }
                   }
-                  category="icon"
                   className="HvVerticalNavigationVerticalContainer-button"
+                  icon={true}
                   id="sample3-container-hamburger-button"
                   onClick={[Function]}
                 >
@@ -558,7 +558,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                       Object {
                         "current": <button
                           aria-label="open"
-                          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           id="sample3-container-hamburger-button"
                           tabindex="0"
                           type="button"
@@ -587,7 +587,6 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                         </button>,
                       }
                     }
-                    category="icon"
                     className="HvVerticalNavigationVerticalContainer-button"
                     classes={
                       Object {
@@ -609,6 +608,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                         "startIcon": "HvButton-startIcon",
                       }
                     }
+                    icon={true}
                     id="sample3-container-hamburger-button"
                     onClick={[Function]}
                   >
@@ -618,7 +618,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                         Object {
                           "current": <button
                             aria-label="open"
-                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             id="sample3-container-hamburger-button"
                             tabindex="0"
                             type="button"
@@ -647,11 +647,11 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                           </button>,
                         }
                       }
-                      className="HvVerticalNavigationVerticalContainer-button HvButton-iconSVG"
+                      className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "containedPrimary": "HvButton-primary",
-                          "disabled": "HvButton-primaryDisabled",
+                          "disabled": "HvButton-ghostDisabled",
                           "outlinedPrimary": "HvButton-secondary",
                           "root": "HvButton-root",
                           "startIcon": "HvButton-startIcon",
@@ -662,7 +662,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                       disableRipple={true}
                       id="sample3-container-hamburger-button"
                       onClick={[Function]}
-                      variant="contained"
+                      variant="text"
                     >
                       <ForwardRef(Button)
                         aria-label="open"
@@ -670,7 +670,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                           Object {
                             "current": <button
                               aria-label="open"
-                              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                               id="sample3-container-hamburger-button"
                               tabindex="0"
                               type="button"
@@ -699,7 +699,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                             </button>,
                           }
                         }
-                        className="HvVerticalNavigationVerticalContainer-button HvButton-iconSVG"
+                        className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                         classes={
                           Object {
                             "colorInherit": "MuiButton-colorInherit",
@@ -709,7 +709,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                             "containedSizeLarge": "MuiButton-containedSizeLarge",
                             "containedSizeSmall": "MuiButton-containedSizeSmall",
                             "disableElevation": "MuiButton-disableElevation",
-                            "disabled": "Mui-disabled HvButton-primaryDisabled",
+                            "disabled": "Mui-disabled HvButton-ghostDisabled",
                             "endIcon": "MuiButton-endIcon",
                             "focusVisible": "Mui-focusVisible",
                             "fullWidth": "MuiButton-fullWidth",
@@ -737,7 +737,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                         disableRipple={true}
                         id="sample3-container-hamburger-button"
                         onClick={[Function]}
-                        variant="contained"
+                        variant="text"
                       >
                         <WithStyles(ForwardRef(ButtonBase))
                           aria-label="open"
@@ -745,7 +745,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                             Object {
                               "current": <button
                                 aria-label="open"
-                                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                 id="sample3-container-hamburger-button"
                                 tabindex="0"
                                 type="button"
@@ -774,7 +774,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                               </button>,
                             }
                           }
-                          className="MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                          className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           component="button"
                           disableRipple={true}
                           disabled={false}
@@ -790,7 +790,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                               Object {
                                 "current": <button
                                   aria-label="open"
-                                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                   id="sample3-container-hamburger-button"
                                   tabindex="0"
                                   type="button"
@@ -819,7 +819,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                                 </button>,
                               }
                             }
-                            className="MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                            className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -838,7 +838,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                           >
                             <button
                               aria-label="open"
-                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvVerticalNavigationVerticalContainer-button HvButton-iconSVG MuiButton-containedPrimary HvButton-primary"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                               disabled={false}
                               id="sample3-container-hamburger-button"
                               onBlur={[Function]}

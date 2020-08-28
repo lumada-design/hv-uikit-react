@@ -109,7 +109,7 @@ export const Custom = () => {
         <HvButton
           overrideIconColors={false}
           onClick={setterOpen}
-          category="icon"
+          icon
           aria-label="Dropdown menu"
           style={{ backgroundColor: open ? theme.palette.atmo1 : undefined }}
         >

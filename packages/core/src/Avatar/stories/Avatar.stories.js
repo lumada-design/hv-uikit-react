@@ -159,12 +159,7 @@ Sizes.story = {
 
 export const Buttons = () => {
   const AvatarButton = ({ children, ...other }) => (
-    <HvButton
-      aria-label="Open the user profile"
-      category="icon"
-      overrideIconColors={false}
-      {...other}
-    >
+    <HvButton aria-label="Open the user profile" icon overrideIconColors={false} {...other}>
       {children}
     </HvButton>
   );
