@@ -56,6 +56,7 @@ const DropDownMenu = ({
   const headerComponent = (
     <HvButton
       category="icon"
+      overrideIconColors={false}
       id={setId(id, "icon-button")}
       className={clsx(classes.icon, {
         [classes.iconSelected]: open
