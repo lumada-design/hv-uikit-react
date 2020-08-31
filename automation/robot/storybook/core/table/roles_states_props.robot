@@ -3,7 +3,7 @@ Resource         table.resource
 Test Setup       Run Keywords
 ...              Go To    ${visualizations}table--with-checkbox
 ...              AND    Wait Until Element Is Visible    ${table}
-Force Tags       wai-aria-practices
+Force Tags       wai-aria-practices v3
 Documentation    https://www.w3.org/TR/wai-aria-practices/#table
 
 

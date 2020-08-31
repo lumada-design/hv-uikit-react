@@ -1,3 +1,5 @@
+import hexToRgbA from "../utils/hexToRgbA";
+
 const tableStyleOverrides = classes => ({
   getProps: () => ({ className: classes.root }),
   getTableProps: () => ({ className: classes.table }),
@@ -34,14 +36,15 @@ const styles = theme => ({
       "& $thead": {
         background: theme.hv.palette.atmosphere.atmo1,
         textAlign: `right`,
-        borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+        borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+        borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
         boxShadow: `none`,
         // Needed because of the HOC for the fixed columns
         top: "0 !important",
         "& $theadTh": {
           outline: "none",
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          height: "54px",
+          height: "52px",
           minWidth: "72px",
           padding: 0,
           display: "flex",
@@ -61,7 +64,7 @@ const styles = theme => ({
             borderLeft: "none"
           },
           "&:nth-last-child(2).-secondaryActionsNeighbor": {
-            borderRightColor: theme.hv.palette.atmosphere.atmo5
+            borderRightColor: theme.hv.palette.atmosphere.atmo4
           },
           "&:last-child": {
             borderRight: "none"
@@ -69,21 +72,21 @@ const styles = theme => ({
           "&.secondaryAction": {
             minWidth: "30px",
             maxWidth: "30px",
-            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
           },
           "&.checkBox": {
             minWidth: "31px",
             maxWidth: "31px",
-            borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+            borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
           },
           "& ~.rt-th.rthfc-th-fixed-left-last": {
             borderLeft: "none"
           },
           "&.rt-th.rthfc-th-fixed-left-last": {
-            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`
           },
           "&.rt-th.rthfc-th-fixed-right-first": {
-            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`
           },
           "&.sortable": {
             "&:hover > div > div > div ": {
@@ -91,30 +94,58 @@ const styles = theme => ({
             },
             "&:hover, &:focus-within": {
               // hover and focus in table header
-              background: theme.hv.palette.atmosphere.atmo4
+              background: theme.hv.palette.atmosphere.atmo3
+            },
+            "&:hover": {
+              // hover and focus in table header
+              background: theme.hv.palette.atmosphere.atmo3
             }
           }
         }
       },
       "& $tbody": {
         "-ms-overflow-y": "hidden",
+        background: theme.hv.palette.atmosphere.atmo2,
         "& $trGroups": {
-          borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-          "& $tr > div ": {
-            background: theme.hv.palette.atmosphere.atmo3
-          },
-          "& $tr:hover > div ": {
-            background: theme.hv.palette.atmosphere.atmo4
-          },
-          "& $tr.selected > div": {
-            background: theme.hv.palette.atmosphere.atmo1
-          },
-          "& $tr.selected:hover > div": {
-            background: theme.hv.palette.atmosphere.atmo4
+          borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+          "& $tr": {
+            "& > div$td": {
+              background: theme.hv.palette.atmosphere.atmo2,
+              "&.sorted": {
+                background: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4)
+              },
+              "&.rthfc-td-fixed": {
+                background: theme.hv.palette.atmosphere.atmo2,
+                "&.sorted": {
+                  background: theme.hv.palette.atmosphere.atmo2
+                }
+              }
+            },
+            "&.selected": {
+              background: theme.hv.palette.atmosphere.atmo1,
+              "& > div$td": {
+                background: "none"
+              }
+            },
+            "&.selected:hover > div$td": {
+              background: theme.hv.palette.atmosphere.atmo3
+            },
+            "&:hover > div$td": {
+              background: theme.hv.palette.atmosphere.atmo3,
+              "&.sorted": {
+                background: theme.hv.palette.atmosphere.atmo3
+              },
+              "&.rthfc-td-fixed": {
+                background: theme.hv.palette.atmosphere.atmo3,
+                "&.sorted": {
+                  background: theme.hv.palette.atmosphere.atmo3
+                }
+              }
+            }
           }
         },
         "& $td": {
-          background: theme.hv.palette.atmosphere.atmo2,
+          background: "transparent",
           border: "0 solid transparent",
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
@@ -135,7 +166,7 @@ const styles = theme => ({
             minWidth: "31px",
             maxWidth: "31px",
             padding: 0,
-            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
             overflow: "visible"
           },
           "&:first-child": {
@@ -145,10 +176,10 @@ const styles = theme => ({
             borderRight: "none"
           },
           "&.rt-td.rthfc-td-fixed-left-last": {
-            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`
           },
           "&.rt-td.rthfc-td-fixed-right-first": {
-            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`
           },
           "&$expand": {
             paddingLeft: "0"
@@ -161,7 +192,7 @@ const styles = theme => ({
           minWidth: "31px",
           maxWidth: "31px",
           padding: 0,
-          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
         }
       }
     },
@@ -184,6 +215,7 @@ const styles = theme => ({
   theadFilterTh: {},
   tbody: {},
   tBodyEmpty: {
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     minHeight: "calc(32px * 3)"
   },
   trGroups: {},
@@ -227,7 +259,7 @@ const styles = theme => ({
   },
   checkBoxBorder: {
     "&:nth-child(2)": {
-      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo3}`
     }
   },
   checkBoxRow: {
@@ -256,7 +288,7 @@ const styles = theme => ({
   subComponentContainer: {
     width: "100%",
     height: "100%",
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     background: theme.hv.palette.atmosphere.atmo1,
     padding: `${theme.hv.spacing.md}px 32px`
   },
@@ -264,7 +296,7 @@ const styles = theme => ({
     width: "32px",
     height: "32px",
     "&:focus": {
-      background: theme.hv.palette.atmosphere.atmo4,
+      background: theme.hv.palette.atmosphere.atmo3,
       outline: 0
     }
   },
@@ -281,7 +313,9 @@ const styles = theme => ({
     marginBottom: "-6px",
     marginTop: "-6px"
   },
-  expand: {},
+  expand: {
+    ...theme.hv.typography.highlightText
+  },
   separatorContainer: {
     width: "32px",
     height: "32px",

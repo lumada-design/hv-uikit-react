@@ -9,12 +9,12 @@ import { CustomEmpty } from "../stories/Table.stories";
 
 /* eslint-disable no-console */
 
-describe("Hv Table", () => {
+describe("[v3] Hv Table", () => {
   let wrapper;
 
   const originalWarn = console.warn;
 
-  describe("index", () => {
+  describe("[v3] index", () => {
     beforeEach(async () => {
       // Expected warning "Please update the following components: ReactTable"
       console.warn = jest.fn();
@@ -47,7 +47,7 @@ describe("Hv Table", () => {
     });
   });
 
-  describe("is rendered correctly and behaves as expected", () => {
+  describe("[v3] is rendered correctly and behaves as expected", () => {
     const data = [
       { id: 1, t1: "test1", link: { displayText: "mock", url: "mock" } },
       { id: 2, t1: "test2", link: { displayText: "mock", url: "mock" } },

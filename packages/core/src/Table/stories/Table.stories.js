@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import moment from "moment";
-import Chart from "react-google-charts";
-import orderBy from "lodash/orderBy";
-import { makeStyles } from "@material-ui/core/styles";
 import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+import { makeStyles } from "@material-ui/core/styles";
+import orderBy from "lodash/orderBy";
+import moment from "moment";
+import React, { useState } from "react";
+import Chart from "react-google-charts";
 
 import { HvEmptyState, HvTable } from "../..";
 
@@ -12,6 +12,7 @@ import { HvEmptyState, HvTable } from "../..";
 export default {
   title: "Visualizations/Table",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvTable } from '@hv/uikit-react-core/dist'"
   },
@@ -239,11 +240,6 @@ export const Main = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div style={{ padding: "10px" }}>
       <HvTable
@@ -254,7 +250,6 @@ export const Main = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -334,11 +329,6 @@ export const Empty = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div style={{ padding: "10px" }}>
       <HvTable
@@ -349,7 +339,6 @@ export const Empty = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -358,6 +347,7 @@ export const Empty = () => {
 
 Empty.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample without data."
     }
@@ -437,11 +427,6 @@ export const CustomEmpty = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const NoDataComponent = () => {
     const useStyles = makeStyles({
       root: {
@@ -469,7 +454,6 @@ export const CustomEmpty = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         noDataComponent={<NoDataComponent />}
       />
@@ -479,6 +463,7 @@ export const CustomEmpty = () => {
 
 CustomEmpty.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample without data."
     }
@@ -706,11 +691,6 @@ export const WithExpander = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const subElementTemplate = row => (
     <div>
       <table>
@@ -736,7 +716,6 @@ export const WithExpander = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         subElementTemplate={subElementTemplate}
         onPageSizeChange={onPageSizeChange}
       />
@@ -746,6 +725,7 @@ export const WithExpander = () => {
 
 WithExpander.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add an expander."
     }
@@ -965,11 +945,6 @@ export const WithExpanderAndCustomContent = () => {
 
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const subElementTemplate = () => (
     <div>
       <table>
@@ -1020,7 +995,6 @@ export const WithExpanderAndCustomContent = () => {
         defaultPageSize={10}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         subElementTemplate={subElementTemplate}
       />
     </div>
@@ -1029,6 +1003,7 @@ export const WithExpanderAndCustomContent = () => {
 
 WithExpanderAndCustomContent.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "Table sample that shows the ability to add a complex expander and custom cell."
@@ -1261,11 +1236,6 @@ export const WithCheckbox = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const actions = [
     { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
     { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
@@ -1292,7 +1262,6 @@ export const WithCheckbox = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         idForCheckbox="pid"
         actions={actions}
@@ -1305,6 +1274,7 @@ export const WithCheckbox = () => {
 
 WithCheckbox.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add checkboxes."
     }
@@ -1423,11 +1393,6 @@ export const WithCheckboxCustomContent = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "Sales overview",
-    subtitleText: "Click on a row to see store details"
-  };
-
   return (
     <div>
       <HvTable
@@ -1438,7 +1403,6 @@ export const WithCheckboxCustomContent = () => {
         onPageSizeChange={onPageSizeChange}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         idForCheckbox="id"
       />
     </div>
@@ -1447,6 +1411,7 @@ export const WithCheckboxCustomContent = () => {
 
 WithCheckboxCustomContent.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add use a checkbox."
     },
@@ -1679,11 +1644,6 @@ export const WithCheckboxAndSecondaryActions = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div>
       <HvTable
@@ -1694,7 +1654,6 @@ export const WithCheckboxAndSecondaryActions = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         idForCheckbox="pid"
         secondaryActions={[
@@ -1724,6 +1683,7 @@ export const WithCheckboxAndSecondaryActions = () => {
 
 WithCheckboxAndSecondaryActions.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add a secondary action column."
     }
@@ -1949,11 +1909,6 @@ export const WithNullValues = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div>
       <HvTable
@@ -1964,7 +1919,6 @@ export const WithNullValues = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -1973,6 +1927,7 @@ export const WithNullValues = () => {
 
 WithNullValues.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample with that has cell values that are null."
     }
@@ -2088,6 +2043,7 @@ export const TableWithChangingData = () => {
 
 TableWithChangingData.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Sample showcasing the table component behavior with changing data."
     }
@@ -2258,10 +2214,7 @@ export const ServerSidePagination = () => {
 
     render() {
       const { pages, pageSize, dataSize, sorted, data } = this.state;
-      const labels = {
-        titleText: "This is a title",
-        subtitleText: "This is a subtitle"
-      };
+
       return (
         <HvTable
           id="test"
@@ -2276,7 +2229,6 @@ export const ServerSidePagination = () => {
           pages={pages}
           resizable={false}
           defaultSorted={sorted}
-          labels={labels}
           onPageSizeChange={this.onPageSizeChange}
           paginationServerSide
           onFetchData={this.fetchData} // Request new data when things change
@@ -2290,6 +2242,7 @@ export const ServerSidePagination = () => {
 
 ServerSidePagination.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "Table sample that shows how to use the table with server side pagination. Bulk Actions"

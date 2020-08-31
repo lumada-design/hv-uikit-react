@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
-import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
+import PropTypes from "prop-types";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 
@@ -9,27 +9,23 @@ import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import { withStyles } from "@material-ui/core";
-import { HvBulkActions, HvPagination, HvTypography } from "..";
-import withLabels from "../withLabels";
-import withId from "../withId";
+import { HvBulkActions, HvPagination } from "..";
 import { setId } from "../utils";
+import withId from "../withId";
 
-import expander from "./expander";
-import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
-import { isSelected, selectPage } from "./checkBoxUtils";
 import DropDownMenu from "./DropdownMenu";
-import NoData from "./NoData";
 import Header from "./Header";
+import NoData from "./NoData";
+import { isSelected, selectPage } from "./checkBoxUtils";
+import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
+import expander from "./expander";
 import withCheckbox from "./selectTable";
 import { styles, tableStyleOverrides } from "./styles";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = withCheckbox(ReactTable);
 
-const DEFAULT_LABELS = {
-  titleText: "",
-  subtitleText: ""
-};
+// TODO deprecate header labels in 2.x
 
 /**
  * Table component. This component offers:
@@ -66,7 +62,6 @@ const HvTable = props => {
     idForCheckbox = "",
     getTrProps: getTrPropsProp,
     getTableProps: getTablePropsProp,
-    labels,
     actions,
     actionsCallback,
     actionsDisabled,
@@ -409,7 +404,9 @@ const HvTable = props => {
 
   const getTdProps = (state, rowInfo, column) => ({
     id: setId(computeRowElementId(rowInfo), "column", column.id),
-    className: classes.td,
+    className: clsx(classes.td, {
+      sorted: sorted.find(elemt => column.id === elemt.id) !== undefined
+    }),
     role: "cell"
   });
 
@@ -498,21 +495,6 @@ const HvTable = props => {
 
   return (
     <div id={id} className={clsx(classes.tableContainer, className)}>
-      {labels.titleText && (
-        <div className={classes.title}>
-          <div>
-            <HvTypography variant="mTitle" id={setId(id, "title")}>
-              {labels.titleText}
-            </HvTypography>
-          </div>
-          {labels.subtitleText && (
-            <div className={classes.subtitle}>
-              <HvTypography id={setId(id, "subtitle")}>{labels.subtitleText}</HvTypography>
-            </div>
-          )}
-        </div>
-      )}
-
       {idForCheckbox && (
         <HvBulkActions
           id={setId(id, "select-all")}
@@ -673,19 +655,6 @@ HvTable.propTypes = {
      */
     table: PropTypes.string
   }).isRequired,
-  /**
-   * The labels inside the table.
-   */
-  labels: PropTypes.shape({
-    /**
-     * The title that identifies the title, rendered outside of the table.
-     */
-    titleText: PropTypes.string,
-    /**
-     * The subtitle that identifies the title, rendered outside of the table.
-     */
-    subtitleText: PropTypes.string
-  }),
   /**
    * Labels for the pagination.
    */
@@ -882,4 +851,4 @@ HvTable.propTypes = {
   collapseOnDataChange: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(HvTable)));
+export default withStyles(styles, { name: "HvTable" })(withId(HvTable));
