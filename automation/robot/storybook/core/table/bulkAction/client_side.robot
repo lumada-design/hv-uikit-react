@@ -26,12 +26,12 @@ show previous page when it is deleted all rows of last page
     Select From List By Value                   ${rows_per_page}    5
     Click Button                                ${pagination_last_page}
     select Checkbox                             ${bulkAction_checkbox}
-    Wait Until Page Contains                    3 / 13 items
+    Wait Until Page Contains                    3 / 13
     Textfield Value Should Be                   ${pagination_input}    3
     Click Button                                Delete
     Wait Until Page Does Not Contain Element    ${rows_selected}
     select Checkbox                             ${bulkAction_checkbox}
-    Wait Until Page Contains                    5 / 10 items
+    Wait Until Page Contains                    5 / 10
     Textfield Value Should Be                   ${pagination_input}    2
 
 delete all rows when all rows are selected and is clicked delete bulk action
