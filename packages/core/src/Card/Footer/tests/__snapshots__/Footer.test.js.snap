@@ -213,6 +213,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         </HvButton>
       </WithStyles(HvButton)>
       <WithStyles(WithId)
+        category="ghost"
         classes={
           Object {
             "icon": "HvActionsGeneric-dropDownMenuButton",
@@ -242,6 +243,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         placement="left"
       >
         <WithId
+          category="ghost"
           classes={
             Object {
               "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
@@ -271,6 +273,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           placement="left"
         >
           <DropDownMenu
+            category="ghost"
             classes={
               Object {
                 "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
@@ -308,7 +311,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               component={
                 <ForwardRef(WithStyles)
                   aria-label="Dropdown menu"
-                  category="icon"
+                  category="ghost"
                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                   disabled={false}
                   id="id-menu-icon-button"
@@ -349,7 +352,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 component={
                   <ForwardRef(WithStyles)
                     aria-label="Dropdown menu"
-                    category="icon"
+                    category="ghost"
                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                     disabled={false}
                     id="id-menu-icon-button"
@@ -390,7 +393,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   component={
                     <ForwardRef(WithStyles)
                       aria-label="Dropdown menu"
-                      category="icon"
+                      category="ghost"
                       className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                       disabled={false}
                       id="id-menu-icon-button"
@@ -419,7 +422,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   >
                     <WithStyles(HvButton)
                       aria-label="Dropdown menu"
-                      category="icon"
+                      category="ghost"
                       className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                       disabled={false}
                       id="id-menu-icon-button"
@@ -428,7 +431,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     >
                       <HvButton
                         aria-label="Dropdown menu"
-                        category="icon"
+                        category="ghost"
                         className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                         classes={
                           Object {
@@ -696,6 +699,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
       className="HvActionsGeneric-root HvActionsGeneric-actionContainer"
     >
       <WithStyles(WithId)
+        category="ghost"
         classes={
           Object {
             "icon": "HvActionsGeneric-dropDownMenuButton",
@@ -729,6 +733,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         placement="left"
       >
         <WithId
+          category="ghost"
           classes={
             Object {
               "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
@@ -762,6 +767,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
           placement="left"
         >
           <DropDownMenu
+            category="ghost"
             classes={
               Object {
                 "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
@@ -803,7 +809,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
               component={
                 <ForwardRef(WithStyles)
                   aria-label="Dropdown menu"
-                  category="icon"
+                  category="ghost"
                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                   disabled={false}
                   id="id-menu-icon-button"
@@ -844,7 +850,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 component={
                   <ForwardRef(WithStyles)
                     aria-label="Dropdown menu"
-                    category="icon"
+                    category="ghost"
                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                     disabled={false}
                     id="id-menu-icon-button"
@@ -885,7 +891,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   component={
                     <ForwardRef(WithStyles)
                       aria-label="Dropdown menu"
-                      category="icon"
+                      category="ghost"
                       className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                       disabled={false}
                       id="id-menu-icon-button"
@@ -914,7 +920,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   >
                     <WithStyles(HvButton)
                       aria-label="Dropdown menu"
-                      category="icon"
+                      category="ghost"
                       className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                       disabled={false}
                       id="id-menu-icon-button"
@@ -923,7 +929,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     >
                       <HvButton
                         aria-label="Dropdown menu"
-                        category="icon"
+                        category="ghost"
                         className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                         classes={
                           Object {
@@ -1503,6 +1509,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         </HvButton>
       </WithStyles(HvButton)>
       <WithStyles(WithId)
+        category="ghost"
         classes={
           Object {
             "icon": "HvActionsGeneric-dropDownMenuButton",
@@ -1528,6 +1535,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         placement="left"
       >
         <WithId
+          category="ghost"
           classes={
             Object {
               "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
@@ -1553,6 +1561,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           placement="left"
         >
           <DropDownMenu
+            category="ghost"
             classes={
               Object {
                 "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
@@ -1586,7 +1595,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               component={
                 <ForwardRef(WithStyles)
                   aria-label="Dropdown menu"
-                  category="icon"
+                  category="ghost"
                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                   disabled={false}
                   id="id-menu-icon-button"
@@ -1627,7 +1636,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 component={
                   <ForwardRef(WithStyles)
                     aria-label="Dropdown menu"
-                    category="icon"
+                    category="ghost"
                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                     disabled={false}
                     id="id-menu-icon-button"
@@ -1668,7 +1677,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   component={
                     <ForwardRef(WithStyles)
                       aria-label="Dropdown menu"
-                      category="icon"
+                      category="ghost"
                       className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                       disabled={false}
                       id="id-menu-icon-button"
@@ -1697,7 +1706,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   >
                     <WithStyles(HvButton)
                       aria-label="Dropdown menu"
-                      category="icon"
+                      category="ghost"
                       className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                       disabled={false}
                       id="id-menu-icon-button"
@@ -1706,7 +1715,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     >
                       <HvButton
                         aria-label="Dropdown menu"
-                        category="icon"
+                        category="ghost"
                         className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                         classes={
                           Object {

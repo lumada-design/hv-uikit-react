@@ -24,6 +24,8 @@ const DropDownMenu = ({
   keepOpened = true,
   disabled = false,
   expanded = false,
+  // eslint-disable-next-line
+  category,
   ...others
 }) => {
   const [open, setOpen] = useState(expanded && !disabled);
@@ -55,8 +57,8 @@ const DropDownMenu = ({
 
   const headerComponent = (
     <HvButton
-      category="icon"
-      overrideIconColors={false}
+      icon
+      category={category}
       id={setId(id, "icon-button")}
       className={clsx(classes.icon, {
         [classes.iconSelected]: open
