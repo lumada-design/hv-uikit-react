@@ -37,7 +37,7 @@ remove selection when a selected row goes to next page
     Select Checkbox                     ${row_1_checkbox}
     Select Checkbox                     ${row_10_checkbox}
     Select From List By Value           ${rows_per_page}   5
-    Wait Until Page Contains            1 / 553 items
+    Wait Until Page Contains            1 / 553
     Page Should Contain Element         ${rows_selected}    limit=1
 
 keep selection when number of rows per table is increased
