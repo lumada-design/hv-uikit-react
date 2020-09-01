@@ -106,15 +106,6 @@ describe("[V3] <Dropdown />", () => {
     it("should render correctly", () => {
       expect(wrapper.find(Dropdown)).toMatchSnapshot();
     });
-
-    it("<Dropdown /> handleToggle should do nothing if disabled", () => {
-      dropdownComponent = wrapper.find("#test-dropdown-header");
-      expect(wrapper.find("HvListContainer")).toHaveLength(1);
-
-      dropdownComponent.simulate("click");
-
-      expect(wrapper.find("HvListContainer")).toHaveLength(1);
-    });
   });
 
   describe("[V3] <Dropdown /> onChange prop called in multiselect", () => {
