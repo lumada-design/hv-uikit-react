@@ -310,6 +310,7 @@ const HvAssetInventory = props => {
         <HvGrid item xs={12}>
           {hasBulkActions && (
             <HvBulkActions
+              classes={{ root: classes.bulkActions }}
               numTotal={values.length}
               numSelected={selectedValues.length}
               onSelectAll={handleSelectPage}
@@ -367,6 +368,10 @@ HvAssetInventory.propTypes = {
      *  Styles applied to the multiButtons.
      */
     multiButtons: PropTypes.string,
+    /**
+     *  Styles applied to the bulkActions.
+     */
+    bulkActions: PropTypes.string,
     /**
      * Styles applied to the view container.
      */

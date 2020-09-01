@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -71,6 +71,8 @@ const DropDownMenu = ({
     </HvButton>
   );
 
+  const condensed = useMemo(() => dataList.every(el => !(el.icon || el.iconCallback)), [dataList]);
+
   return (
     <HvBaseDropdown
       id={id}
@@ -92,7 +94,7 @@ const DropDownMenu = ({
           id={listId}
           values={dataList}
           selectable={false}
-          condensed
+          condensed={condensed}
           onClick={(event, item) => {
             if (!keepOpened) handleClose();
             onClick?.(event, item);

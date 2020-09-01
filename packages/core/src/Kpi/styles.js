@@ -18,9 +18,7 @@ const styles = theme => ({
   indicatorsContainer: {
     display: "inline-flex",
     minHeight: "16px",
-    alignItems: "flex-end",
-    marginTop: `${theme.hv.spacing.xs}px`,
-    marginBottom: `${theme.hv.spacing.xs}px`
+    alignItems: "flex-end"
   },
   indicatorUnit: {
     alignSelf: "flex-end",
