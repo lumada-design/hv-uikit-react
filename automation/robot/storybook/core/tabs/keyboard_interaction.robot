@@ -49,7 +49,7 @@ Selection does not change when selecting a selected element when using SPACE
     Element Attribute Value Should Be    tabs-tab2        aria-selected  false
 
 Selection does not change when selecting a selected element when using ENTER
-    Go To                                ${components}tabs--main
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Element Attribute Value Should Be    tabs-tab1        aria-selected  true
     Element Attribute Value Should Be    tabs-tab2        aria-selected  false
@@ -59,7 +59,7 @@ Selection does not change when selecting a selected element when using ENTER
     Element Attribute Value Should Be    tabs-tab2        aria-selected  false
 
 Next element of the tabs can be selected when using TAB and SPACE having a tab element focused
-    Go To                                ${components}tabs--main
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
     Press Keys                           NONE             TAB
@@ -68,7 +68,7 @@ Next element of the tabs can be selected when using TAB and SPACE having a tab e
     Element Attribute Value Should Be    tabs-tab2        aria-selected  true
 
 Next element of the tabs can be selected when using TAB and ENTER having a tab element focused
-    Go To                                ${components}tabs--main
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
     Press Keys                           NONE             TAB
