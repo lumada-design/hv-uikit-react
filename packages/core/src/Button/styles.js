@@ -28,7 +28,7 @@ const styles = theme => {
       borderRadius: "2px",
       ...theme.hv.typography.highlightText
     },
-    rootIcon: {
+    icon: {
       padding: 0,
       height: "unset",
       width: "unset",
@@ -38,7 +38,7 @@ const styles = theme => {
     },
 
     primary: {
-      color: theme.hv.palette.atmosphere.atmo1,
+      color: theme.palette.base1,
       backgroundColor: theme.hv.palette.accent.acce2,
       "&:hover,&:focus": {
         backgroundColor: theme.hv.palette.accent.acce2h

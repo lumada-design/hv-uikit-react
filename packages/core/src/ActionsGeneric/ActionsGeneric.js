@@ -52,6 +52,7 @@ const ActionsGeneric = ({
         <HvDropDownMenu
           id={setId(id, "menu")}
           disabled={disabled}
+          category={category}
           classes={{
             root: classes.dropDownMenu,
             icon: classes.dropDownMenuButton,

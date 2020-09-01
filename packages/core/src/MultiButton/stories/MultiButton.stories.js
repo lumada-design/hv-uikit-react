@@ -71,7 +71,7 @@ export const OnlyIcons = () => {
       {buttons.map(({ name, icon }, i) => (
         <HvButton
           id={name.toLowerCase()}
-          category="icon"
+          icon
           aria-label={name}
           selected={selection.includes(i)}
           onClick={evt => handleChange(evt, i)}
@@ -139,7 +139,7 @@ export const VerticalOrientation = () => {
 
   return (
     <div style={{ display: "flex" }}>
-      <HvMultiButton category="icon" vertical style={{ margin: "10px", width: "32px" }}>
+      <HvMultiButton icon vertical style={{ margin: "10px", width: "32px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
             aria-label={name}

@@ -84,7 +84,7 @@ export const Main = () => {
   return (
     <HvHeader position="relative">
       {!isMdUp && (
-        <HvButton category="icon" onClick={() => console.log("menu")}>
+        <HvButton icon onClick={() => console.log("menu")}>
           <Menu />
         </HvButton>
       )}
@@ -93,19 +93,11 @@ export const Main = () => {
         <HvHeaderNavigation data={navigationData} selected={selected} onClick={handleChange} />
       )}
       <HvHeaderActions>
-        <HvButton
-          category="icon"
-          onClick={() => console.log("alerts")}
-          aria-label="Open Notifications panel"
-        >
+        <HvButton icon onClick={() => console.log("alerts")} aria-label="Open Notifications panel">
           <HvBadge count={1} icon={<Alert />} />
         </HvButton>
         {isMdUp && (
-          <HvButton
-            category="icon"
-            onClick={() => console.log("user")}
-            aria-label="Open User panel"
-          >
+          <HvButton icon onClick={() => console.log("user")} aria-label="Open User panel">
             <User />
           </HvButton>
         )}

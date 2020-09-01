@@ -8,12 +8,12 @@ exports[`[v3] Button should render correctly 1`] = `
         "ghost": "HvButton-ghost",
         "ghostDisabled": "HvButton-ghostDisabled",
         "ghostSVG": "HvButton-ghostSVG",
+        "icon": "HvButton-icon",
         "iconSVG": "HvButton-iconSVG",
         "primary": "HvButton-primary",
         "primaryDisabled": "HvButton-primaryDisabled",
         "primarySVG": "HvButton-primarySVG",
         "root": "HvButton-root",
-        "rootIcon": "HvButton-rootIcon",
         "secondary": "HvButton-secondary",
         "secondaryDisabled": "HvButton-secondaryDisabled",
         "secondarySVG": "HvButton-secondarySVG",
@@ -38,7 +38,6 @@ exports[`[v3] Button should render correctly 1`] = `
       }
       color="primary"
       disableRipple={true}
-      onClick={[Function]}
       variant="contained"
     >
       <ForwardRef(Button)
@@ -78,7 +77,6 @@ exports[`[v3] Button should render correctly 1`] = `
         }
         color="primary"
         disableRipple={true}
-        onClick={[Function]}
         variant="contained"
       >
         <WithStyles(ForwardRef(ButtonBase))
@@ -88,7 +86,6 @@ exports[`[v3] Button should render correctly 1`] = `
           disabled={false}
           focusRipple={true}
           focusVisibleClassName="Mui-focusVisible"
-          onClick={[Function]}
           type="button"
         >
           <ForwardRef(ButtonBase)
@@ -105,14 +102,12 @@ exports[`[v3] Button should render correctly 1`] = `
             disabled={false}
             focusRipple={true}
             focusVisibleClassName="Mui-focusVisible"
-            onClick={[Function]}
             type="button"
           >
             <button
               className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
               disabled={false}
               onBlur={[Function]}
-              onClick={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}

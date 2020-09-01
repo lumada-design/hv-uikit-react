@@ -73,11 +73,10 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
         component={
           <ForwardRef(WithStyles)
             aria-label="Dropdown menu"
-            category="icon"
             className="HvDropDownMenu-icon"
             disabled={false}
+            icon={true}
             id="drop-down-menu-11-icon-button"
-            overrideIconColors={false}
             tabIndex={-1}
           >
             <ForwardRef(WithStyles) />
@@ -114,11 +113,10 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
           component={
             <ForwardRef(WithStyles)
               aria-label="Dropdown menu"
-              category="icon"
               className="HvDropDownMenu-icon"
               disabled={false}
+              icon={true}
               id="drop-down-menu-11-icon-button"
-              overrideIconColors={false}
               tabIndex={-1}
             >
               <ForwardRef(WithStyles) />
@@ -155,11 +153,10 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
             component={
               <ForwardRef(WithStyles)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-11-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <ForwardRef(WithStyles) />
@@ -184,28 +181,26 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-11-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
-                  category="icon"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
+                      "icon": "HvButton-icon",
                       "iconSVG": "HvButton-iconSVG",
                       "primary": "HvButton-primary",
                       "primaryDisabled": "HvButton-primaryDisabled",
                       "primarySVG": "HvButton-primarySVG",
                       "root": "HvButton-root",
-                      "rootIcon": "HvButton-rootIcon",
                       "secondary": "HvButton-secondary",
                       "secondaryDisabled": "HvButton-secondaryDisabled",
                       "secondarySVG": "HvButton-secondarySVG",
@@ -216,13 +211,13 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                     }
                   }
                   disabled={false}
+                  icon={true}
                   id="drop-down-menu-11-icon-button"
-                  overrideIconColors={false}
                   tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
-                    className="HvDropDownMenu-icon HvButton-rootIcon"
+                    className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -237,13 +232,12 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                     disableRipple={true}
                     disabled={false}
                     id="drop-down-menu-11-icon-button"
-                    onClick={[Function]}
                     tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
                       aria-label="Dropdown menu"
-                      className="HvDropDownMenu-icon HvButton-rootIcon"
+                      className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -281,26 +275,24 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                       disableRipple={true}
                       disabled={false}
                       id="drop-down-menu-11-icon-button"
-                      onClick={[Function]}
                       tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Dropdown menu"
-                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         component="button"
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         id="drop-down-menu-11-icon-button"
-                        onClick={[Function]}
                         tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
                           aria-label="Dropdown menu"
-                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -314,17 +306,15 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           id="drop-down-menu-11-icon-button"
-                          onClick={[Function]}
                           tabIndex={-1}
                           type="button"
                         >
                           <button
                             aria-label="Dropdown menu"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             disabled={false}
                             id="drop-down-menu-11-icon-button"
                             onBlur={[Function]}
-                            onClick={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -393,7 +383,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                 >
                   <button
                     aria-label="Dropdown menu"
-                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-11-icon-button"
                     tabindex="-1"
                     type="button"
@@ -518,11 +508,10 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
         component={
           <ForwardRef(WithStyles)
             aria-label="Dropdown menu"
-            category="icon"
             className="HvDropDownMenu-icon"
             disabled={false}
+            icon={true}
             id="drop-down-menu-9-icon-button"
-            overrideIconColors={false}
             tabIndex={-1}
           >
             <ForwardRef(WithStyles) />
@@ -559,11 +548,10 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
           component={
             <ForwardRef(WithStyles)
               aria-label="Dropdown menu"
-              category="icon"
               className="HvDropDownMenu-icon"
               disabled={false}
+              icon={true}
               id="drop-down-menu-9-icon-button"
-              overrideIconColors={false}
               tabIndex={-1}
             >
               <ForwardRef(WithStyles) />
@@ -600,11 +588,10 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
             component={
               <ForwardRef(WithStyles)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-9-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <ForwardRef(WithStyles) />
@@ -629,28 +616,26 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-9-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
-                  category="icon"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
+                      "icon": "HvButton-icon",
                       "iconSVG": "HvButton-iconSVG",
                       "primary": "HvButton-primary",
                       "primaryDisabled": "HvButton-primaryDisabled",
                       "primarySVG": "HvButton-primarySVG",
                       "root": "HvButton-root",
-                      "rootIcon": "HvButton-rootIcon",
                       "secondary": "HvButton-secondary",
                       "secondaryDisabled": "HvButton-secondaryDisabled",
                       "secondarySVG": "HvButton-secondarySVG",
@@ -661,13 +646,13 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                     }
                   }
                   disabled={false}
+                  icon={true}
                   id="drop-down-menu-9-icon-button"
-                  overrideIconColors={false}
                   tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
-                    className="HvDropDownMenu-icon HvButton-rootIcon"
+                    className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -682,13 +667,12 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                     disableRipple={true}
                     disabled={false}
                     id="drop-down-menu-9-icon-button"
-                    onClick={[Function]}
                     tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
                       aria-label="Dropdown menu"
-                      className="HvDropDownMenu-icon HvButton-rootIcon"
+                      className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -726,26 +710,24 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                       disableRipple={true}
                       disabled={false}
                       id="drop-down-menu-9-icon-button"
-                      onClick={[Function]}
                       tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Dropdown menu"
-                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         component="button"
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         id="drop-down-menu-9-icon-button"
-                        onClick={[Function]}
                         tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
                           aria-label="Dropdown menu"
-                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -759,17 +741,15 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           id="drop-down-menu-9-icon-button"
-                          onClick={[Function]}
                           tabIndex={-1}
                           type="button"
                         >
                           <button
                             aria-label="Dropdown menu"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             disabled={false}
                             id="drop-down-menu-9-icon-button"
                             onBlur={[Function]}
-                            onClick={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -924,11 +904,10 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
         component={
           <ForwardRef(WithStyles)
             aria-label="Dropdown menu"
-            category="icon"
             className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
             disabled={false}
+            icon={true}
             id="drop-down-menu-10-icon-button"
-            overrideIconColors={false}
             tabIndex={-1}
           >
             <ForwardRef(WithStyles) />
@@ -965,11 +944,10 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
           component={
             <ForwardRef(WithStyles)
               aria-label="Dropdown menu"
-              category="icon"
               className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
               disabled={false}
+              icon={true}
               id="drop-down-menu-10-icon-button"
-              overrideIconColors={false}
               tabIndex={-1}
             >
               <ForwardRef(WithStyles) />
@@ -1006,11 +984,10 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
             component={
               <ForwardRef(WithStyles)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-10-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <ForwardRef(WithStyles) />
@@ -1036,28 +1013,26 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-10-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
-                  category="icon"
                   className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
+                      "icon": "HvButton-icon",
                       "iconSVG": "HvButton-iconSVG",
                       "primary": "HvButton-primary",
                       "primaryDisabled": "HvButton-primaryDisabled",
                       "primarySVG": "HvButton-primarySVG",
                       "root": "HvButton-root",
-                      "rootIcon": "HvButton-rootIcon",
                       "secondary": "HvButton-secondary",
                       "secondaryDisabled": "HvButton-secondaryDisabled",
                       "secondarySVG": "HvButton-secondarySVG",
@@ -1068,13 +1043,13 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                     }
                   }
                   disabled={false}
+                  icon={true}
                   id="drop-down-menu-10-icon-button"
-                  overrideIconColors={false}
                   tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
-                    className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon"
+                    className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -1089,13 +1064,12 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                     disableRipple={true}
                     disabled={false}
                     id="drop-down-menu-10-icon-button"
-                    onClick={[Function]}
                     tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
                       aria-label="Dropdown menu"
-                      className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon"
+                      className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -1133,26 +1107,24 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                       disableRipple={true}
                       disabled={false}
                       id="drop-down-menu-10-icon-button"
-                      onClick={[Function]}
                       tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Dropdown menu"
-                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         component="button"
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         id="drop-down-menu-10-icon-button"
-                        onClick={[Function]}
                         tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
                           aria-label="Dropdown menu"
-                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -1166,17 +1138,15 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           id="drop-down-menu-10-icon-button"
-                          onClick={[Function]}
                           tabIndex={-1}
                           type="button"
                         >
                           <button
                             aria-label="Dropdown menu"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             disabled={false}
                             id="drop-down-menu-10-icon-button"
                             onBlur={[Function]}
-                            onClick={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -1246,7 +1216,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                 >
                   <button
                     aria-label="Dropdown menu"
-                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-10-icon-button"
                     tabindex="-1"
                     type="button"
@@ -2200,11 +2170,10 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
         component={
           <ForwardRef(WithStyles)
             aria-label="Dropdown menu"
-            category="icon"
             className="HvDropDownMenu-icon"
             disabled={false}
+            icon={true}
             id="drop-down-menu-3-icon-button"
-            overrideIconColors={false}
             tabIndex={-1}
           >
             <ForwardRef(WithStyles) />
@@ -2241,11 +2210,10 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
           component={
             <ForwardRef(WithStyles)
               aria-label="Dropdown menu"
-              category="icon"
               className="HvDropDownMenu-icon"
               disabled={false}
+              icon={true}
               id="drop-down-menu-3-icon-button"
-              overrideIconColors={false}
               tabIndex={-1}
             >
               <ForwardRef(WithStyles) />
@@ -2282,11 +2250,10 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
             component={
               <ForwardRef(WithStyles)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-3-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <ForwardRef(WithStyles) />
@@ -2311,28 +2278,26 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-3-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
-                  category="icon"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
+                      "icon": "HvButton-icon",
                       "iconSVG": "HvButton-iconSVG",
                       "primary": "HvButton-primary",
                       "primaryDisabled": "HvButton-primaryDisabled",
                       "primarySVG": "HvButton-primarySVG",
                       "root": "HvButton-root",
-                      "rootIcon": "HvButton-rootIcon",
                       "secondary": "HvButton-secondary",
                       "secondaryDisabled": "HvButton-secondaryDisabled",
                       "secondarySVG": "HvButton-secondarySVG",
@@ -2343,13 +2308,13 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                     }
                   }
                   disabled={false}
+                  icon={true}
                   id="drop-down-menu-3-icon-button"
-                  overrideIconColors={false}
                   tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
-                    className="HvDropDownMenu-icon HvButton-rootIcon"
+                    className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -2364,13 +2329,12 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                     disableRipple={true}
                     disabled={false}
                     id="drop-down-menu-3-icon-button"
-                    onClick={[Function]}
                     tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
                       aria-label="Dropdown menu"
-                      className="HvDropDownMenu-icon HvButton-rootIcon"
+                      className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -2408,26 +2372,24 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                       disableRipple={true}
                       disabled={false}
                       id="drop-down-menu-3-icon-button"
-                      onClick={[Function]}
                       tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Dropdown menu"
-                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         component="button"
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         id="drop-down-menu-3-icon-button"
-                        onClick={[Function]}
                         tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
                           aria-label="Dropdown menu"
-                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -2441,17 +2403,15 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           id="drop-down-menu-3-icon-button"
-                          onClick={[Function]}
                           tabIndex={-1}
                           type="button"
                         >
                           <button
                             aria-label="Dropdown menu"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             disabled={false}
                             id="drop-down-menu-3-icon-button"
                             onBlur={[Function]}
-                            onClick={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -2520,7 +2480,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                 >
                   <button
                     aria-label="Dropdown menu"
-                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-3-icon-button"
                     tabindex="-1"
                     type="button"
@@ -2645,11 +2605,10 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
         component={
           <ForwardRef(WithStyles)
             aria-label="Dropdown menu"
-            category="icon"
             className="HvDropDownMenu-icon"
             disabled={false}
+            icon={true}
             id="drop-down-menu-1-icon-button"
-            overrideIconColors={false}
             tabIndex={-1}
           >
             <ForwardRef(WithStyles) />
@@ -2686,11 +2645,10 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
           component={
             <ForwardRef(WithStyles)
               aria-label="Dropdown menu"
-              category="icon"
               className="HvDropDownMenu-icon"
               disabled={false}
+              icon={true}
               id="drop-down-menu-1-icon-button"
-              overrideIconColors={false}
               tabIndex={-1}
             >
               <ForwardRef(WithStyles) />
@@ -2727,11 +2685,10 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
             component={
               <ForwardRef(WithStyles)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-1-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <ForwardRef(WithStyles) />
@@ -2756,28 +2713,26 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-1-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
-                  category="icon"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
+                      "icon": "HvButton-icon",
                       "iconSVG": "HvButton-iconSVG",
                       "primary": "HvButton-primary",
                       "primaryDisabled": "HvButton-primaryDisabled",
                       "primarySVG": "HvButton-primarySVG",
                       "root": "HvButton-root",
-                      "rootIcon": "HvButton-rootIcon",
                       "secondary": "HvButton-secondary",
                       "secondaryDisabled": "HvButton-secondaryDisabled",
                       "secondarySVG": "HvButton-secondarySVG",
@@ -2788,13 +2743,13 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                     }
                   }
                   disabled={false}
+                  icon={true}
                   id="drop-down-menu-1-icon-button"
-                  overrideIconColors={false}
                   tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
-                    className="HvDropDownMenu-icon HvButton-rootIcon"
+                    className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -2809,13 +2764,12 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                     disableRipple={true}
                     disabled={false}
                     id="drop-down-menu-1-icon-button"
-                    onClick={[Function]}
                     tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
                       aria-label="Dropdown menu"
-                      className="HvDropDownMenu-icon HvButton-rootIcon"
+                      className="HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -2853,26 +2807,24 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                       disableRipple={true}
                       disabled={false}
                       id="drop-down-menu-1-icon-button"
-                      onClick={[Function]}
                       tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Dropdown menu"
-                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         component="button"
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         id="drop-down-menu-1-icon-button"
-                        onClick={[Function]}
                         tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
                           aria-label="Dropdown menu"
-                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -2886,17 +2838,15 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           id="drop-down-menu-1-icon-button"
-                          onClick={[Function]}
                           tabIndex={-1}
                           type="button"
                         >
                           <button
                             aria-label="Dropdown menu"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             disabled={false}
                             id="drop-down-menu-1-icon-button"
                             onBlur={[Function]}
-                            onClick={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -3051,11 +3001,10 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
         component={
           <ForwardRef(WithStyles)
             aria-label="Dropdown menu"
-            category="icon"
             className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
             disabled={false}
+            icon={true}
             id="drop-down-menu-2-icon-button"
-            overrideIconColors={false}
             tabIndex={-1}
           >
             <ForwardRef(WithStyles) />
@@ -3092,11 +3041,10 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
           component={
             <ForwardRef(WithStyles)
               aria-label="Dropdown menu"
-              category="icon"
               className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
               disabled={false}
+              icon={true}
               id="drop-down-menu-2-icon-button"
-              overrideIconColors={false}
               tabIndex={-1}
             >
               <ForwardRef(WithStyles) />
@@ -3133,11 +3081,10 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
             component={
               <ForwardRef(WithStyles)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-2-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <ForwardRef(WithStyles) />
@@ -3163,28 +3110,26 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
-                category="icon"
                 className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                 disabled={false}
+                icon={true}
                 id="drop-down-menu-2-icon-button"
-                overrideIconColors={false}
                 tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
-                  category="icon"
                   className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
+                      "icon": "HvButton-icon",
                       "iconSVG": "HvButton-iconSVG",
                       "primary": "HvButton-primary",
                       "primaryDisabled": "HvButton-primaryDisabled",
                       "primarySVG": "HvButton-primarySVG",
                       "root": "HvButton-root",
-                      "rootIcon": "HvButton-rootIcon",
                       "secondary": "HvButton-secondary",
                       "secondaryDisabled": "HvButton-secondaryDisabled",
                       "secondarySVG": "HvButton-secondarySVG",
@@ -3195,13 +3140,13 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                     }
                   }
                   disabled={false}
+                  icon={true}
                   id="drop-down-menu-2-icon-button"
-                  overrideIconColors={false}
                   tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
-                    className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon"
+                    className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -3216,13 +3161,12 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                     disableRipple={true}
                     disabled={false}
                     id="drop-down-menu-2-icon-button"
-                    onClick={[Function]}
                     tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
                       aria-label="Dropdown menu"
-                      className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon"
+                      className="HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -3260,26 +3204,24 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                       disableRipple={true}
                       disabled={false}
                       id="drop-down-menu-2-icon-button"
-                      onClick={[Function]}
                       tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Dropdown menu"
-                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                        className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                         component="button"
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         id="drop-down-menu-2-icon-button"
-                        onClick={[Function]}
                         tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
                           aria-label="Dropdown menu"
-                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -3293,17 +3235,15 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           id="drop-down-menu-2-icon-button"
-                          onClick={[Function]}
                           tabIndex={-1}
                           type="button"
                         >
                           <button
                             aria-label="Dropdown menu"
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             disabled={false}
                             id="drop-down-menu-2-icon-button"
                             onBlur={[Function]}
-                            onClick={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
@@ -3373,7 +3313,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                 >
                   <button
                     aria-label="Dropdown menu"
-                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-2-icon-button"
                     tabindex="-1"
                     type="button"

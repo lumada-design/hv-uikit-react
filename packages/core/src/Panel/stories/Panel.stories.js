@@ -38,7 +38,7 @@ export const FullWidth = () => {
   return (
     <HvPanel width="100%" height="200px">
       <div>Panel Content</div>
-      <HvButton category="icon" className={classes.editButton}>
+      <HvButton icon className={classes.editButton}>
         <Edit />
       </HvButton>
     </HvPanel>
@@ -68,7 +68,7 @@ export const Modal = () => {
     <div className={classes.overlay}>
       <HvPanel width="100%" height="200px" boxShadow={theme.hv.shadows[1]}>
         <div>Panel Content</div>
-        <HvButton category="icon" className={classes.closeButton}>
+        <HvButton icon className={classes.closeButton}>
           <Close />
         </HvButton>
       </HvPanel>

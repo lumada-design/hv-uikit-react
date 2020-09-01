@@ -16,7 +16,7 @@ const AssetMultiButton = ({ id, views, selectedView, changeView, onViewChange })
         <HvButton
           id={btnId}
           key={btnId}
-          category="icon"
+          icon
           selected={selectedView === idx}
           onClick={evt => onChangeViewHandler(evt, idx)}
           {...others}
