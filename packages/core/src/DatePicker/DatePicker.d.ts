@@ -1,8 +1,8 @@
-import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvFormElementProps } from "../..";
 
 export interface HvDatePickerProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvDatePickerClassKey, "onChange"> {
+  extends StandardProps<HvFormElementProps, HvDatePickerClassKey, "onChange"> {
   /**
    * An Object containing the various text associated with the input.
    */

@@ -9,7 +9,13 @@ export default {
     usage: "import { HvDatePicker } from '@hv/uikit-react-core/dist'"
   },
   component: HvDatePicker,
-  decorators: [storyFn => <div style={{ height: "600px" }}>{storyFn()}</div>]
+  decorators: [
+    Story => (
+      <div style={{ height: 600, padding: 10 }}>
+        <Story />
+      </div>
+    )
+  ]
 };
 
 export const Main = () => <HvDatePicker id="DatePicker" />;
@@ -27,7 +33,7 @@ Main.parameters = {
   }
 };
 
-export const DefaultValue = () => <HvDatePicker id="DatePicker" value="1970-01-01" />;
+export const DefaultValue = () => <HvDatePicker id="DatePicker" value={new Date()} />;
 
 DefaultValue.parameters = {
   docs: {
@@ -85,7 +91,9 @@ Localized.parameters = {
   }
 };
 
-export const WithActions = () => <HvDatePicker showActions value="1970-01-02" id="DatePicker" />;
+export const WithActions = () => (
+  <HvDatePicker showActions value={new Date(1970, 1, 2)} id="DatePicker" />
+);
 
 WithActions.parameters = {
   docs: {
@@ -176,8 +184,8 @@ export const RangeWithValues = () => {
       id="DatePicker"
       labels={labels}
       rangeMode
-      startValue="2019-06-05"
-      endValue="2019-06-10"
+      startValue={new Date(2019, 6, 5)}
+      endValue={new Date(2019, 6, 10)}
     />
   );
 };
@@ -198,7 +206,7 @@ RangeWithValues.parameters = {
   }
 };
 
-export const NearInvalid = () => <HvDatePicker value="1000-01-01" />;
+export const NearInvalid = () => <HvDatePicker value={new Date(1000, 0, 1)} />;
 
 NearInvalid.parameters = {
   docs: {
@@ -217,28 +225,24 @@ NearInvalid.parameters = {
 };
 
 export const WithValueChange = () => {
-  const Example = () => {
-    const [date, setDate] = useState("2020-01-01");
+  const [date, setDate] = useState(new Date(2020, 0, 1));
 
-    const addDay = () =>
-      setDate(
-        moment(date)
-          .add(1, "day")
-          .format("YYYY-MM-DD")
-      );
-
-    return (
-      <>
-        <HvButton id="AddButton" onClick={addDay}>
-          Add a day
-        </HvButton>
-        <p />
-        <HvDatePicker id="DatePicker" value={date} onChange={d => setDate(d)} />
-      </>
+  const addDay = () =>
+    setDate(
+      moment(date)
+        .add(1, "day")
+        .toDate()
     );
-  };
 
-  return <Example />;
+  return (
+    <>
+      <HvButton id="AddButton" onClick={addDay}>
+        Add a day
+      </HvButton>
+      <p />
+      <HvDatePicker id="DatePicker" value={date} onChange={d => setDate(d)} />
+    </>
+  );
 };
 
 WithValueChange.parameters = {

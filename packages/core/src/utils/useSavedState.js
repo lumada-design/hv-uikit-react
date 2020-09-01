@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useUpdated(defaultState) {
+export default function useSavedState(defaultState) {
   const [state, setState] = useState(defaultState);
   const [submittedState, setSubmittedState] = useState(defaultState);
 
