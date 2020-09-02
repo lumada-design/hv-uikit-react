@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-
-import { parser } from "html-react-parser";
+import parser from "html-react-parser";
+import { useTheme } from "@material-ui/core";
 
 import {
   HvFormElement,
@@ -24,7 +24,7 @@ export default {
   component: HvSuggestions,
   decorators: [
     Story => (
-      <div style={{ width: 500, height: 200 }}>
+      <div style={{ width: 500, height: 300 }}>
         <Story />
       </div>
     )
@@ -68,6 +68,8 @@ export const Main = () => {
     }
   };
 
+  const values = suggestionList.map((label, id) => ({ id: String(id), label })).slice(0, 6);
+
   return (
     <HvFormElement value={value}>
       <HvLabel id="countries" label="Select country">
@@ -78,7 +80,7 @@ export const Main = () => {
           onClose={() => setOpen(false)}
           onKeyDown={handleSuggestionsKey}
           onSuggestionSelected={handleSelection}
-          suggestionValues={suggestionList.map((label, id) => ({ id: String(id), label }))}
+          suggestionValues={values}
         />
       </HvLabel>
     </HvFormElement>
@@ -147,6 +149,8 @@ export const ServerSideSuggestions = () => {
     }
   };
 
+  const values = suggestionList.map((label, id) => ({ id: String(id), label })).slice(0, 6);
+
   return (
     <HvFormElement value={value}>
       <HvLabel id="countries" label="Select country">
@@ -157,7 +161,7 @@ export const ServerSideSuggestions = () => {
           onClose={() => setOpen(false)}
           onKeyDown={handleSuggestionsKey}
           onSuggestionSelected={handleSelection}
-          suggestionValues={suggestionList.map((label, id) => ({ id: String(id), label }))}
+          suggestionValues={values}
         />
       </HvLabel>
     </HvFormElement>
@@ -222,29 +226,28 @@ export const OpenWithDownArrow = () => {
     }
   };
 
+  const values = suggestionList.map((label, id) => ({ id: String(id), label })).slice(0, 6);
+
   return (
-    <>
-      <HvFormElement value={value}>
-        <HvLabel id="countries" label="Select country">
-          <HvBaseInput
-            inputRef={inputRef}
-            placeholder="Insert country"
-            onChange={handleChange}
-            onKeyDown={handleKey}
-          />
-          <HvSuggestions
-            id="suggestions"
-            expanded={open}
-            anchorEl={inputRef.current?.parentElement}
-            onClose={() => setOpen(false)}
-            onKeyDown={handleSuggestionsKey}
-            onSuggestionSelected={handleSelection}
-            suggestionValues={suggestionList.map((label, id) => ({ id: String(id), label }))}
-          />
-        </HvLabel>
-      </HvFormElement>
-      <HvButton category="ghost">Submit</HvButton>
-    </>
+    <HvFormElement value={value}>
+      <HvLabel id="countries" label="Select country">
+        <HvBaseInput
+          inputRef={inputRef}
+          placeholder="Insert country"
+          onChange={handleChange}
+          onKeyDown={handleKey}
+        />
+        <HvSuggestions
+          id="suggestions"
+          expanded={open}
+          anchorEl={inputRef.current?.parentElement}
+          onClose={() => setOpen(false)}
+          onKeyDown={handleSuggestionsKey}
+          onSuggestionSelected={handleSelection}
+          suggestionValues={values}
+        />
+      </HvLabel>
+    </HvFormElement>
   );
 };
 
@@ -271,10 +274,10 @@ export const WithHighlighter = () => {
   const [value, setValue] = useState("");
   const [mode, setMode] = useState("auto-complete");
   const inputRef = useRef(null);
+  const theme = useTheme();
 
   const filterHighlighter = searchString => {
     const reg = new RegExp(searchString, "gi");
-
     switch (mode) {
       case "auto-complete":
         return suggestions
@@ -324,13 +327,18 @@ export const WithHighlighter = () => {
     }
   };
 
+  const values = suggestionList
+    .map((elem, id) => ({ id: String(id), label: elem.label, value: elem.value }))
+    .slice(0, 6);
+
   return (
     <>
       <HvTypography>
-        Current mode:
+        {`Current mode: `}
         <b>{mode}</b>
       </HvTypography>
       <HvButton
+        style={{ margin: theme.spacing("xs", 0, "md") }}
         onClick={() => setMode(mode === "auto-complete" ? "auto-suggest" : "auto-complete")}
       >
         Change mode
@@ -345,11 +353,7 @@ export const WithHighlighter = () => {
             onClose={() => setOpen(false)}
             onKeyDown={handleSuggestionsKey}
             onSuggestionSelected={handleSelection}
-            suggestionValues={suggestionList.map((elem, id) => ({
-              id: String(id),
-              label: elem.label,
-              value: elem.value
-            }))}
+            suggestionValues={values}
           />
         </HvLabel>
       </HvFormElement>
