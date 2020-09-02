@@ -34,6 +34,14 @@ show previous page when it is deleted all rows of last page
     Wait Until Page Contains                    5 / 10
     Textfield Value Should Be                   ${pagination_input}    2
 
+deselect all elements with multiple pages selected
+    Wait Until Page Contains Element    ${bulkAction_checkbox}
+    Select Checkbox                     ${bulkAction_checkbox}
+    Select From List By Value           ${rows_per_page}    5
+    Click Element                       ${bulkAction_checkbox}
+    Checkbox Should Not Be Selected     ${bulkAction_checkbox}
+    Page Should Contain                 All
+
 delete all rows when all rows are selected and is clicked delete bulk action
     Select Checkbox                    ${row_1_checkbox}
     Wait Until Page Contains           Select all
