@@ -14,9 +14,9 @@ export default {
   component: HvSwitch
 };
 
-export const Main = () => {
-  return <HvSwitch />;
-};
+export const Main = () => (
+  <HvSwitch checked id="Switch-no-labels" showLabels={false} aria-label="Engine Control" />
+);
 
 Main.story = {
   parameters: {
@@ -68,11 +68,9 @@ OnChange.story = {
   }
 };
 
-export const NoLabels = () => (
-  <HvSwitch checked id="Switch-no-labels" showLabels={false} aria-label="Engine Control" />
-);
+export const WithLabels = () => <HvSwitch />;
 
-NoLabels.story = {
+WithLabels.story = {
   parameters: {
     v3: true
   }

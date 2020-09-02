@@ -35,6 +35,7 @@ export type HvCheckBoxClassKey =
   | "labelStart"
   | "checkBox"
   | "icon"
-  | "truncate";
+  | "truncate"
+  | "disabledBorder";
 
 export default function HvCheckBox(props: HvCheckBoxProps): JSX.Element | null;

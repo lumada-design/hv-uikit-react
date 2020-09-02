@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${patterns}selectors-switch--main    AND
+...           Go To    ${patterns}selectors-switch--with-labels    AND
 ...           Wait Until Element Is Enabled    ${switch}
 Force Tags  v3
 

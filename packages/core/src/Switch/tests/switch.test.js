@@ -4,7 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import { HvProvider, HvSwitch } from "../..";
-import { Main, LabelsDefinition, NoLabels } from "../stories/Switch.stories";
+import { Main, LabelsDefinition, WithLabels } from "../stories/Switch.stories";
 
 let wrapper;
 
@@ -45,7 +45,7 @@ describe("Switch with Custom Configurations", () => {
 describe("Switch with no label display but with custom label configuration", () => {
   wrapper = mount(
     <HvProvider>
-      <NoLabels />
+      <WithLabels />
     </HvProvider>
   );
 

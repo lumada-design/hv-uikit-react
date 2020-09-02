@@ -56,7 +56,9 @@ const HvRadio = props => {
       control={
         <Radio
           id={setId(id, "input")}
-          className={classes.radio}
+          className={clsx(classes.radio, {
+            [classes.disabledBorder]: checked && disabled
+          })}
           icon={icons.radio}
           checkedIcon={icons.radioChecked}
           color="default"
@@ -118,7 +120,11 @@ HvRadio.propTypes = {
     /**
      * Styles applied to the icon.
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the icon border when it is checked and disabled.
+     */
+    disabledBorder: PropTypes.string
   }).isRequired,
   /**
    * If `true` the Radio button is disabled and the onChange function will not be called.

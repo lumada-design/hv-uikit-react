@@ -13,6 +13,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
       Object {
         "container": "HvRadioButton-container",
         "disableFocus": "HvRadioButton-disableFocus",
+        "disabledBorder": "HvRadioButton-disabledBorder",
         "icon": "HvRadioButton-icon",
         "labelDisabled": "HvRadioButton-labelDisabled",
         "labelEnd": "HvRadioButton-labelEnd",
