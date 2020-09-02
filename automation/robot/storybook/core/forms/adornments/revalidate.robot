@@ -20,13 +20,13 @@ does not show validation adornment icons when input was cleaned
     wait until element is Visible        ${adornment_accepted}
     Double Click Element                 ${input}
     Press Keys                           NONE    DELETE
-    Press Keys                           ${input}    TAB
+    Press Keys                           ${label}    TAB
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited
     Press Keys                           ${input}    Joao    TAB
     wait until element is Visible        ${adornment_accepted}
-    click Element                        ${input}
+    click Element                        ${label}
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited by clicking in label
@@ -40,7 +40,7 @@ revalidate adornments when input value is changed - failed to accepted
     Wait Until Element Is Visible    ${adornment_failed}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE   Joao
-    Press Keys                       ${input}    TAB
+    Press Keys                       ${label}    TAB
     Wait Until Element Is Visible    ${adornment_accepted}
     Element Should Not Be Visible    ${adornment_failed}
 
@@ -67,6 +67,6 @@ revalidate input when focus goes out - accepted to failed
     Wait Until Element Is Visible    ${adornment_accepted}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE
-    Press Keys                       ${input}    1a    TAB
+    Press Keys                       ${label}    1a    TAB
     Wait Until Element Is Visible    ${adornment_failed}
     Element Should Not Be Visible    ${adornment_accepted}
