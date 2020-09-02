@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import isEmpty from "lodash/isEmpty";
-import { Map } from "@hv/uikit-react-icons/dist";
+import { makeStyles } from "@material-ui/core";
+import { Map } from "@hv/uikit-react-icons";
 import { HvButton, HvInput } from "../..";
 import countryNamesArray from "./countries";
 
@@ -192,7 +193,7 @@ export const Email = () => {
     placeholder: "example@domain.com",
     infoText: "Enter your email",
     inputLabel: "Email",
-    warningText: "please add the right email format: your.name@hitachivantara.com"
+    warningText: "Please add the right email format: your.name@hitachivantara.com"
   };
 
   return <HvInput id="email-input" labels={labels} validationType="email" />;
@@ -362,39 +363,47 @@ export const Controlled = () => {
 };
 
 export const ControlledWithButtons = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value"
-  };
+  const useStyles = makeStyles(theme => ({
+    container: {
+      "& button": {
+        marginRight: theme.spacing("xs"),
+        marginBottom: theme.spacing("md")
+      }
+    }
+  }));
 
-  const btnStyle = {
-    width: "50px",
-    height: "50px",
-    margin: "10px"
-  };
+  const classes = useStyles();
+
   const [value, setValue] = useState("Initial value");
 
   // to be possible to change the input value by user action
-  const setterValue = (event, newValue) => {
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <>
-      <HvButton style={btnStyle} onClick={() => setValue("First value")}>
+    <div className={classes.container}>
+      <HvButton category="secondary" onClick={() => setValue("First value")}>
         First value
       </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Second value")}>
+      <HvButton category="secondary" onClick={() => setValue("Second value")}>
         Second value
       </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Third value")}>
+      <HvButton category="secondary" onClick={() => setValue("Third value")}>
         Third value
       </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("")}>
+      <HvButton category="secondary" onClick={() => setValue("")}>
         Clear value
       </HvButton>
-      <HvInput labels={labels} value={value} onChange={setterValue} />
-    </>
+      <HvInput
+        labels={{
+          inputLabel: "Label",
+          placeholder: "Enter value"
+        }}
+        value={value}
+        onChange={handleChange}
+      />
+    </div>
   );
 };
 
@@ -411,7 +420,7 @@ export const Suggestion = () => {
 
   const labels = {
     placeholder: "Country",
-    infoText: "Info",
+    infoText: "",
     inputLabel: "Select a country",
     warningText: "Error",
     maxCharQuantityWarningText: "Max characters exceeded"
