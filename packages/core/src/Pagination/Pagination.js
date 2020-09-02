@@ -132,7 +132,8 @@ const Pagination = ({
                 }}
                 classes={{
                   root: classes.pageSizeInputContainer,
-                  input: classes.pageSizeInput
+                  input: classes.pageSizeInput,
+                  inputRoot: classes.pageSizeInputRoot
                 }}
                 onChange={(event, val) => setStatePage(val - 1)}
                 initialValue={`${statePage + 1}`}
@@ -210,6 +211,10 @@ Pagination.propTypes = {
      * Styles passed down to the page selector Input component as `input`.
      */
     pageSizeInput: PropTypes.string,
+    /**
+     * Styles passed down to the page selector Input root.
+     */
+    pageSizeInputRoot: PropTypes.string,
     /**
      * Styles passed down to the page selector Input component as `container`.
      */
