@@ -1,6 +1,7 @@
 const styles = theme => ({
   root: {
-    width: "310px"
+    width: "310px",
+    borderRadius: 2
   },
   rootList: {},
   arrow: {},

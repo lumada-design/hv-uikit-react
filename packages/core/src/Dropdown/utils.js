@@ -4,7 +4,7 @@
  * @param {Object} list - the list to filter
  * @returns {Array} - the selected elements
  */
-const getSelected = list => (list ? list.filter(elem => elem.selected) : []);
+const getSelected = list => list?.filter(elem => elem.selected) || [];
 
 /**
  * Checks if any element of the list is selected.
