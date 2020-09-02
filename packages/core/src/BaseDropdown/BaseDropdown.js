@@ -1,16 +1,15 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { useContext, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { Popper, useTheme, withStyles } from "@material-ui/core";
+import { ClickAwayListener, Popper, useTheme, withStyles } from "@material-ui/core";
 import clsx from "clsx";
-import ArrowUp from "@hv/uikit-react-icons/dist/DropUpXS";
-import ArrowDown from "@hv/uikit-react-icons/dist/DropDownXS";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import { getFirstAndLastFocus, isKeypress, KeyboardCodes, setId } from "../utils";
+import { DropUpXS, DropDownXS } from "@hv/uikit-react-icons";
+import { HvFormElementContext, HvTypography } from "..";
+import { getFirstAndLastFocus, isKeypress, KeyboardCodes, setId, useUpdated } from "../utils";
 import withId from "../withId";
 import styles from "./styles";
-import HvTypography from "../Typography";
-import { HvFormElementContext } from "../Forms/FormElement";
+
+const { Tab, Enter, Esc, Space, ArrowDown } = KeyboardCodes;
 
 const HvBaseDropdown = ({
   id,
@@ -34,15 +33,16 @@ const HvBaseDropdown = ({
   const [positionUp, setPositionUp] = useState(false);
   const [widthInput, setWidthInput] = useState(null);
 
-  const created = useRef(false);
+  const [created, setCreated] = useUpdated(false);
+  const [updated, setUpdated] = useUpdated();
   const anchorHeaderRef = useRef(null);
 
   const { elementId, elementDisabled, descriptors = {} } = useContext(HvFormElementContext);
 
   const { HvLabel } = descriptors;
 
-  const localId = elementId || id;
-  const localDisabled = disabled || elementDisabled;
+  const localId = elementId ?? id;
+  const localDisabled = disabled ?? elementDisabled;
 
   const theme = useTheme();
 
@@ -61,7 +61,13 @@ const HvBaseDropdown = ({
    * If closes focus on the header component.
    */
   useEffect(() => {
+    if (!updated) {
+      setUpdated();
+      return;
+    }
+
     if (!isOpen) anchorHeaderRef.current?.focus({ preventScroll: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   /**
@@ -83,23 +89,23 @@ const HvBaseDropdown = ({
   };
 
   const handleToggle = event => {
-    if (event && !isKeypress(event, KeyboardCodes.Tab)) {
+    if (event && !isKeypress(event, Tab)) {
       event.stopPropagation();
       event.preventDefault();
     }
+
     // we are checking specifically for false because if "isKeypress" returns true or undefined it should continue
-    if (
-      localDisabled ||
-      (isKeypress(event, KeyboardCodes.Tab) === false &&
-        isKeypress(event, KeyboardCodes.Enter) === false &&
-        isKeypress(event, KeyboardCodes.Esc) === false &&
-        isKeypress(event, KeyboardCodes.ArrowDown) === false &&
-        isKeypress(event, KeyboardCodes.Space) === false) ||
-      (isKeypress(event, KeyboardCodes.Esc) && !isOpen) ||
-      (isKeypress(event, KeyboardCodes.ArrowDown) && isOpen) ||
-      (isKeypress(event, KeyboardCodes.Tab) && !isOpen)
-    )
-      return;
+    const notControlKey = [Tab, Enter, Esc, ArrowDown, Space].every(
+      key => isKeypress(event, key) === false
+    );
+
+    const ignoredCombinations =
+      (isKeypress(event, Esc) && !isOpen) ||
+      (isKeypress(event, ArrowDown) && isOpen) ||
+      (isKeypress(event, Tab) && !isOpen);
+
+    if (localDisabled || notControlKey || ignoredCombinations) return;
+
     const newOpen = !isOpen;
     setIsOpen(newOpen);
     onToggle?.(event, newOpen);
@@ -123,15 +129,16 @@ const HvBaseDropdown = ({
     </div>
   );
   const renderAdornment = () =>
-    adornment || isOpen ? (
-      <ArrowUp iconSize="XS" className={classes.arrow} />
+    adornment ||
+    (isOpen ? (
+      <DropUpXS iconSize="XS" className={classes.arrow} />
     ) : (
-      <ArrowDown
+      <DropDownXS
         iconSize="XS"
         className={classes.arrow}
         color={localDisabled ? "atmo5" : undefined}
       />
-    );
+    ));
 
   const labelledby =
     others["aria-labelledby"] ??
@@ -190,10 +197,10 @@ const HvBaseDropdown = ({
     getFirstAndLastFocus(
       document.getElementById(setId(localId, "children-container"))
     )?.first?.focus();
-    if (!created.current) {
+    if (!created) {
       const position = data.flipped;
       setterPosition(position);
-      created.current = true;
+      setCreated();
     }
   };
 
@@ -201,10 +208,10 @@ const HvBaseDropdown = ({
    *  Handle keyboard inside children container.
    */
   const handleContainerKeyDown = event => {
-    if (isKeypress(event, KeyboardCodes.Esc)) {
+    if (isKeypress(event, Esc)) {
       handleToggle(event);
     }
-    if (isKeypress(event, KeyboardCodes.Tab)) {
+    if (isKeypress(event, Tab)) {
       const focusList = getFirstAndLastFocus(
         document.getElementById(setId(localId, "children-container"))
       );

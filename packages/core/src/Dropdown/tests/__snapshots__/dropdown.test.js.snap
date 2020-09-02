@@ -2572,14 +2572,9 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                       >
                         <div
                           aria-labelledby="test-dropdown-selectionPlaceholder"
-                          className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown HvBaseDropdown-headerDisabled"
+                          className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
                           id="test-dropdown-header"
                           role="textbox"
-                          style={
-                            Object {
-                              "pointerEvents": "none",
-                            }
-                          }
                         >
                           <div
                             className="HvBaseDropdown-selection"
