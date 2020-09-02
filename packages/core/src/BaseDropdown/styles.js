@@ -8,7 +8,6 @@ const styles = theme => ({
     }
   },
   header: {
-    height: `${theme.hv.spacing.md}px`,
     cursor: "pointer",
     userSelect: "none",
     position: "relative",
@@ -45,10 +44,8 @@ const styles = theme => ({
   arrow: {
     position: "absolute",
     pointerEvents: "none",
-    top: 0,
-    right: 0,
-    width: 30,
-    height: 30
+    top: -1,
+    right: -1
   },
   selection: {
     display: "flex",
