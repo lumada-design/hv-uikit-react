@@ -1,14 +1,15 @@
-import React, { useState, useRef } from "react";
 import { CloseXS, Success } from "@hv/uikit-react-icons";
+import React, { useRef, useState } from "react";
 
 import {
   HvFormElement,
   HvBaseInput,
+  HvCharCounter,
   HvLabel,
   HvAdornment,
   HvInfoMessage,
   HvWarningText,
-  HvCharCounter
+  setId
 } from "../../..";
 
 export default {
@@ -57,8 +58,13 @@ export const Main = () => {
     }
   };
 
+  /**
+   * Extra validation is needed because of the close adornment.
+   *
+   * @param event
+   */
   const onBlurHandler = event => {
-    if (event.relatedTarget === null || event.relatedTarget === undefined) {
+    if (event.relatedTarget === null || event?.relatedTarget?.id !== setId(inputId, "clear")) {
       setElement(event.target.value);
       setShowCloseAdornment(false);
     }
@@ -91,6 +97,7 @@ export const Main = () => {
           endAdornment={
             <>
               <HvAdornment
+                id={setId(inputId, "clear")}
                 isVisible={showCloseAdornment}
                 onClick={() => {
                   setElement("");

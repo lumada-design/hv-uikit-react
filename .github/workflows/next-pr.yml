@@ -92,7 +92,7 @@ jobs:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
           env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          ref: ${{ github.head_ref }}
+          ref: refs/pull/${{ github.event.number }}/head
           desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
 
       - name: Checkout Documentation Repository

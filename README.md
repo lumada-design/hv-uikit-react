@@ -8,8 +8,9 @@
 ![alt text](https://img.shields.io/badge/node-12.14-brightgreen.svg)
 ![alt text](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![alt text](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge%20%7C%20ie%2011-blue.svg)
-![Master](https://github.com/pentaho/hv-uikit-react/workflows/Master/badge.svg)
-![v1.x](https://github.com/pentaho/hv-uikit-react/workflows/v1.x/badge.svg)
+![Next](https://github.com/lumada-design/hv-uikit-react/workflows/Next%20Nightly/badge.svg)
+![Master](https://github.com/lumada-design/hv-uikit-react/workflows/Master%20Nightly/badge.svg)
+![v1.x](https://github.com/lumada-design/hv-uikit-react/workflows/v1.x%20Nightly/badge.svg)
 
 </div>
 
