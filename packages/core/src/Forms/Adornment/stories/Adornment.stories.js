@@ -8,7 +8,8 @@ export default {
   title: "Components/Forms/Adornment",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAdornment } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvAdornment } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvAdornment,
   decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
@@ -92,6 +93,7 @@ DynamicAdornments.story = {
   parameters: {
     docs: {
       storyDescription: "Adornment showcasing the ability to react to the form element status."
-    }
+    },
+    v3: true
   }
 };

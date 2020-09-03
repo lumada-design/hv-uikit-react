@@ -1,36 +1,44 @@
-const switchWidth = 52;
+import { outlineStyles } from "../Focus/styles";
+
+const switchWidth = 32;
 
 const thumbPosition = {
   position: "relative",
-  left: -16,
-  width: 16,
-  height: 16
+  left: -9,
+  width: 12,
+  height: 12
 };
 
 const styles = theme => ({
   root: {
     display: "inline-flex",
-    height: 22
+    alignItems: "center",
+    height: 32,
+    cursor: "pointer"
   },
+  focus: {
+    ...outlineStyles
+  },
+
   switch: {
     padding: 0,
     width: switchWidth,
-    height: 22,
-    cursor: "pointer"
+    height: 16
   },
 
   switchBase: {
     width: switchWidth,
-    height: 22,
+    height: 16,
     padding: 0,
     // increase CSS specificity
     "&:hover": {
       backgroundColor: "transparent"
     },
     "&$checked": {
-      transform: "translateX(30px)",
+      transform: "translateX(16px)",
       "& + $track": {
-        opacity: 1
+        opacity: 1,
+        backgroundColor: theme.hv.palette.accent.acce1
       },
       "&:hover": {
         backgroundColor: "transparent"
@@ -39,18 +47,18 @@ const styles = theme => ({
   },
 
   track: {
+    opacity: 1,
     borderRadius: 15,
     left: 17,
     top: 8,
     border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo2,
-    opacity: "unset"
+    backgroundColor: theme.hv.palette.atmosphere.atmo2
   },
 
   thumb: {
     ...thumbPosition,
     border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo2,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
     marginLeft: 2,
     marginTop: 0
   },
@@ -58,35 +66,25 @@ const styles = theme => ({
   checked: {},
 
   disabled: {
-    color: theme.hv.palette.atmosphere.atmo4,
-    borderColor: theme.hv.palette.atmosphere.atmo6,
-    cursor: "no-drop",
-    "& + $track": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-      opacity: "1 !important",
-      cursor: "no-drop"
+    cursor: "not-allowed",
+
+    "& $switch": {
+      cursor: "not-allowed"
     },
+
     "& $thumb": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+    },
+
+    "& $switchBase + $track": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
     }
   },
 
   disabledLabel: {
-    ...theme.hv.typography.placeholderText,
-    height: `${theme.hv.spacing.sm}px`,
-    cursor: "no-drop"
-  },
-
-  labelDeselected: {
-    ...theme.hv.typography.normalText,
-    height: `${theme.hv.spacing.sm}px`,
-    cursor: "pointer"
-  },
-  labelSelected: {
-    height: `${theme.hv.spacing.sm}px`,
-    cursor: "default"
+    ...theme.hv.typography.placeholderText
   },
 
   leftLabel: {
@@ -95,13 +93,6 @@ const styles = theme => ({
 
   rightLabel: {
     paddingLeft: `${theme.hv.spacing.xs}px`
-  },
-
-  checkedIcon: {
-    ...thumbPosition,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    border: "none",
-    borderRadius: "50%"
   }
 });
 

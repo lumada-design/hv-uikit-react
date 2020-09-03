@@ -2,7 +2,11 @@ import { outlineStyles } from "../Focus/styles";
 
 const styles = theme => ({
   root: {
-    display: "inline-block"
+    display: "inline-block",
+    width: "100%"
+  },
+  rootResizable: {
+    width: "auto"
   },
   input: {
     height: "auto",
@@ -40,13 +44,19 @@ const styles = theme => ({
       borderWidth: "1px"
     }
   },
+  labelContainer: {
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    marginBottom: 6
+  },
   container: {},
   characterCounter: {
     textAlign: "right",
     paddingTop: theme.hv.spacing.xs
   },
   disabled: {
-    ...theme.hv.typography.infoText
+    ...theme.hv.typography.normalText
   },
   invalid: {
     color: theme.hv.palette.accent.acce3

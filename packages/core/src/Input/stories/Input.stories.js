@@ -5,7 +5,7 @@ import { HvButton, HvInput } from "../..";
 import countryNamesArray from "./countries";
 
 export default {
-  title: "Components/Input",
+  title: "Patterns/Input",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvInput } from '@hv/uikit-react-core/dist'"
@@ -22,10 +22,10 @@ export const Main = () => {
     maxCharQuantityWarningText: "Max characters exceeded"
   };
 
-  return <HvInput labels={labels} id="input-simple-sample" />;
+  return <HvInput labels={labels} id="input-simple-sample" showInfo={false} />;
 };
 
-export const WithIconInfo = () => {
+export const WithInfoMessage = () => {
   const labels = {
     placeholder: "Insert first name",
     infoText: "Please enter your first name",
@@ -34,13 +34,13 @@ export const WithIconInfo = () => {
     maxCharQuantityWarningText: "Max characters exceeded"
   };
 
-  return <HvInput labels={labels} id="input-simple-with-info-icon-sample" infoIcon />;
+  return <HvInput labels={labels} id="input-simple-with-info-icon-sample" />;
 };
 
-WithIconInfo.story = {
+WithInfoMessage.story = {
   parameters: {
     docs: {
-      storyDescription: "Showing the info icon instead of the info text bellow the input."
+      storyDescription: "Showing the info message."
     }
   }
 };
@@ -251,7 +251,6 @@ export const CustomValidation = () => {
     <HvInput
       id="custom-validation-input"
       labels={labels}
-      infoIcon
       validation={value => value.includes("hello")}
     />
   );

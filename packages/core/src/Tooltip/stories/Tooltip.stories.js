@@ -6,7 +6,7 @@ import HvTypography from "../../Typography";
 import tooltipStyling from "../styles";
 
 export default {
-  title: "Components/Tooltip",
+  title: "Patterns/Tooltip",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTooltip } from '@hv/uikit-react-core/dist'"
@@ -26,7 +26,7 @@ export const Main = () => {
     }
   };
 
-  const data = <HvTypography variant="infoText">Grid View</HvTypography>;
+  const data = <HvTypography>Grid View</HvTypography>;
 
   return (
     <div style={styling.placeholder}>
@@ -42,7 +42,7 @@ export const Main = () => {
 
 export const LongText = () => {
   const data = (
-    <HvTypography variant="infoText">
+    <HvTypography>
       Tooltips can showcase truncated text. The text should be concise and not redundant.
     </HvTypography>
   );
@@ -86,15 +86,15 @@ export const Multiline = () => {
     <div>
       <div className={classes.title}>
         <div>
-          <HvTypography variant="labelText">{title.title}</HvTypography>
+          <HvTypography variant="highlightText">{title.title}</HvTypography>
         </div>
       </div>
       <div className={classes.valueWrapper}>
         {title.elements.map(element => (
           <div key={element.name} className={classes.values}>
-            <HvTypography variant="labelText">{element.name}</HvTypography>
+            <HvTypography variant="highlightText">{element.name}</HvTypography>
             <div className={classes.separator} />
-            <HvTypography variant="sText">{element.value}</HvTypography>
+            <HvTypography>{element.value}</HvTypography>
           </div>
         ))}
       </div>
@@ -138,9 +138,9 @@ export const MultilineWithoutHeader = () => {
     <div className={classes.valueWrapper}>
       {data.map(element => (
         <div key={element.name} className={classes.values}>
-          <HvTypography variant="labelText">{element.name}</HvTypography>
+          <HvTypography variant="highlightText">{element.name}</HvTypography>
           <div className={classes.separator} />
-          <HvTypography variant="sText">{element.value}</HvTypography>
+          <HvTypography>{element.value}</HvTypography>
         </div>
       ))}
     </div>

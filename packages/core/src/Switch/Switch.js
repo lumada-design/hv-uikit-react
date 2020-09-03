@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { Switch, withStyles } from "@material-ui/core";
-import CheckMark from "@hv/uikit-react-icons/dist/CompletedStep";
 import { setId } from "../utils";
 import withLabels from "../withLabels";
 import HvTypography from "../Typography";
@@ -29,7 +28,6 @@ const HvSwitch = props => {
     labels,
     showLabels = true,
     value = "",
-    displayIconChecked = false,
     ...others
   } = props;
 
@@ -40,6 +38,8 @@ const HvSwitch = props => {
   }, [checked]);
 
   const onClickHandler = event => {
+    if (disabled) return;
+
     const newState = !clickState;
     setClicked(newState);
     onChange?.(event, newState);
@@ -49,28 +49,30 @@ const HvSwitch = props => {
     <div id={!isNil(id) ? setId(id, position, "button") : undefined}>
       <HvTypography
         className={clsx(classes[`${position}Label`], {
-          [classes.disabledLabel]: disabled,
-          [classes.labelSelected]: !disabled && !clickState,
-          [classes.labelDeselected]: !disabled && clickState
+          [classes.disabledLabel]: disabled
         })}
-        onClick={disabled ? undefined : onClickHandler}
-        aria-disabled={disabled}
+        onClick={onClickHandler}
       >
         {labels[position]}
       </HvTypography>
     </div>
   );
 
-  const checkedIcon = <CheckMark width="14px" height="14px" className={classes.checkedIcon} />;
-
   return (
-    <div className={clsx(classes.root, className)}>
+    <div
+      className={clsx(
+        classes.root,
+        {
+          [classes.disabled]: disabled
+        },
+        className
+      )}
+    >
       {showLabels && renderLabel("left")}
-      <Focus strategy="card" useFalseFocus>
+      <Focus disabledClass={disabled || undefined} classes={{ focus: classes.focus }}>
         <div
-          className={classes.root}
-          onClick={disabled ? undefined : onClickHandler}
-          onKeyDown={disabled ? undefined : onClickHandler}
+          onClick={onClickHandler}
+          onKeyDown={onClickHandler}
           role="checkbox"
           tabIndex="0"
           aria-checked={clickState}
@@ -96,7 +98,6 @@ const HvSwitch = props => {
               thumb: classes.thumb,
               disabled: classes.disabled
             }}
-            {...(displayIconChecked && { checkedIcon })}
           />
         </div>
       </Focus>
@@ -119,6 +120,10 @@ HvSwitch.propTypes = {
      */
     root: PropTypes.string,
     /**
+     * Styles applied when the switch is focused.
+     */
+    focus: PropTypes.string,
+    /**
      * Styles applied to the internal Switch component's root class.
      */
     switch: PropTypes.string,
@@ -130,18 +135,6 @@ HvSwitch.propTypes = {
      * Styles applied to the labels when they are disabled.
      */
     disabledLabel: PropTypes.string,
-    /**
-     * Styles applied to the labels when they are selected.
-     */
-    labelSelected: PropTypes.string,
-    /**
-     * Styles applied to the labels when they are disabled.
-     */
-    labelDeselected: PropTypes.string,
-    /**
-     * Styles applied to the checked icon.
-     */
-    checkedIcon: PropTypes.string,
     /**
      * Pseudo-class applied to the internal SwitchBase component's checked class.
      */
@@ -195,11 +188,7 @@ HvSwitch.propTypes = {
   /**
    * Determine if labels should be displayed alongside component
    */
-  showLabels: PropTypes.bool,
-  /**
-   * Determine if custom icon in button should be displayed
-   * */
-  displayIconChecked: PropTypes.bool
+  showLabels: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvSwitch" })(withLabels(DEFAULT_LABELS)(HvSwitch));

@@ -132,6 +132,7 @@ export const AutomationSample = () => {
 
 AutomationSample.story = {
   parameters: {
+    v3: true,
     pa11y: {
       ignore: [
         "region",

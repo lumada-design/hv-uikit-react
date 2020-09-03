@@ -22,12 +22,14 @@ const HvFormElement = props => {
     disabled = false,
     ...others
   } = props;
-
   const descriptors = findDescriptors(children, [
-    "HvHelperText",
     "HvLabel",
     "HvSuggestions",
-    "HvBaseInput"
+    "HvInfoMessage",
+    "HvCharCounter",
+    "HvWarningText",
+    "HvBaseInput",
+    "HvBaseDropdown"
   ]);
   const contextValue = {
     elementId: id,
@@ -37,7 +39,6 @@ const HvFormElement = props => {
     elementDisabled: disabled,
     descriptors
   };
-
   return (
     <div className={clsx(className, classes.root)} {...others}>
       <HvFormElementContextProvider value={contextValue}>{children}</HvFormElementContextProvider>
@@ -82,7 +83,7 @@ HvFormElement.propTypes = {
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the children through the context.
    */
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.node]),
   /**
    * If `true` the form element and all of it's children are disabled which blocks interactions.
    * this value will be propagated to the children through the context.

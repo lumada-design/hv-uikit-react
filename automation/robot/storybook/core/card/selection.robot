@@ -1,4 +1,5 @@
 *** Setting ***
+Force Tags        v3
 Resource          ../_keywords.resource
 Variables         variables.yaml
 Test Template     Verify selectable card behavior
@@ -6,11 +7,11 @@ Test Template     Verify selectable card behavior
 
 *** Keywords ***
 Verify card is selected
-    Element Attribute Value Should Be    ${aboveFooter}    aria-checked    true
+    Element Attribute Value Should Be    ${aboveFooter}    aria-selected    true
     Checkbox Should Be Selected          ${Checkbox}
 
 Verify card is not selected
-    Element Attribute Value Should Be    ${aboveFooter}    aria-checked    false
+    Element Attribute Value Should Be    ${aboveFooter}    aria-selected    false
     Checkbox Should Not Be Selected      ${Checkbox}
 
 Verify selectable card behavior
@@ -22,7 +23,7 @@ Verify selectable card behavior
     ...   | locator       | where (area) should click on the card     |
     ...   | isSelected    | flag (true or false) if card is selected  |
 
-    Go To                                ${components}card--${card}
+    Go To                                ${patterns}card--${card}
     Wait Until Element Is Enabled        ${locator}
     Click Element                        ${locator}
     Run Keyword If                       '${isSelected}'=='true'       Verify card is selected

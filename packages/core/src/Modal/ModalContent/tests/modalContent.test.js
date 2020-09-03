@@ -6,7 +6,7 @@ import { shallow } from "enzyme";
 import HvProvider from "../../../Provider";
 import ModalContent from "..";
 
-describe("ModalContent withStyles", () => {
+describe("[v3] ModalContent withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
@@ -22,7 +22,7 @@ describe("ModalContent withStyles", () => {
   });
 });
 
-describe("ModalContent Component", () => {
+describe("[v3] ModalContent Component", () => {
   let wrapper;
 
   beforeEach(async () => {

@@ -13,18 +13,16 @@ const styles = theme => ({
   sTitle: theme.hv.typography.sTitle,
   xsTitle: theme.hv.typography.xsTitle,
   xxsTitle: theme.hv.typography.xxsTitle,
+  sectionTitle: theme.hv.typography.sectionTitle,
   highlightText: theme.hv.typography.highlightText,
   normalText: theme.hv.typography.normalText,
-  selectedText: theme.hv.typography.selectedText,
-  inlineLink: theme.hv.typography.inlineLink,
-  disabledButtonText: theme.hv.typography.disabledButtonText,
   placeholderText: theme.hv.typography.placeholderText,
+  link: theme.hv.typography.link,
+  disabledText: theme.hv.typography.disabledText,
   selectedNavText: theme.hv.typography.selectedNavText,
-  sText: theme.hv.typography.sText,
-  labelText: theme.hv.typography.labelText,
-  infoText: theme.hv.typography.infoText,
-  sLink: theme.hv.typography.sLink,
-  vizText: theme.hv.typography.vizText
+  vizText: theme.hv.typography.vizText,
+  vizTextDisabled: theme.hv.typography.vizTextDisabled,
+  xsInlineLink: theme.hv.typography.xsInlineLink
 });
 
 export default styles;

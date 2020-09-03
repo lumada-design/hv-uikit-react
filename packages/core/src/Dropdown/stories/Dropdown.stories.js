@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core";
 import { HvDropdown } from "../..";
 
 export default {
-  title: "Components/Dropdown",
+  title: "Patterns/Dropdown",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDropdown } from '@hv/uikit-react-core/dist'"
@@ -27,6 +27,7 @@ export const Main = () => (
 
 Main.story = {
   parameters: {
+    v3: true,
     pa11y: {
       ignore: ["region"]
     }
@@ -37,6 +38,7 @@ export const Empty = () => <HvDropdown id="dropdown1" />;
 
 Empty.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Dropdown with no values"
     },
@@ -66,7 +68,8 @@ SingleSelection.story = {
     },
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -84,6 +87,12 @@ export const MultiSelection = () => (
     ]}
   />
 );
+
+MultiSelection.story = {
+  parameters: {
+    v3: true
+  }
+};
 
 export const MultiSelectionNoSearch = () => (
   <HvDropdown
@@ -103,7 +112,8 @@ MultiSelectionNoSearch.story = {
   parameters: {
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -127,7 +137,8 @@ SingleSelectionWithSearch.story = {
     },
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -150,7 +161,8 @@ SingleSelectionNoDefault.story = {
   parameters: {
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -167,11 +179,11 @@ export const DifferentSizeAndPlacements = () => {
   ];
 
   const styles = () => ({
+    root: {
+      width: "200px"
+    },
     rootList: {
       width: "520px"
-    },
-    list: {
-      maxWidth: "none"
     }
   });
 
@@ -196,7 +208,8 @@ DifferentSizeAndPlacements.story = {
     },
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -233,7 +246,8 @@ Disabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    v3: true
   }
 };
 
@@ -243,7 +257,6 @@ export const Expanded = () => (
     expanded
     multiSelect
     showSearch
-    hasTooltips
     labels={{ title: "Dropdown" }}
     values={[
       { label: "value 1" },
@@ -267,6 +280,6 @@ Expanded.story = {
     docs: {
       inlineStories: false
     },
-    eyes: { waitBeforeScreenshot: "[id*=search-input]:focus" }
+    v3: true
   }
 };

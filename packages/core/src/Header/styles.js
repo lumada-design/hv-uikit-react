@@ -1,6 +1,6 @@
 const styles = theme => ({
   root: {
-    height: 50
+    height: 44
   },
   backgroundColor: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1

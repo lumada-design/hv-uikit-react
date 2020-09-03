@@ -88,24 +88,17 @@ export interface HvDropdownProps
    */
   onChange?: (selected: ListValueProp | ListValueProp[] | undefined) => void;
   /**
-   * Properties passed to the undelying Popper component
+   * Properties passed to the underlying Popper component
    */
   popperProps?: Partial<PopperProps>;
 }
 
 export type HvDropdownClassKey =
   | "root"
-  | "rootOpen"
-  | "rootDisabled"
-  | "rootList"
-  | "list"
   | "label"
-  | "header"
-  | "selection"
   | "arrow"
-  | "headerDisabled"
-  | "icon"
   | "truncate"
-  | "selectionDisabled";
+  | "selectionDisabled"
+  | "rootList";
 
 export default function HvDropdown(props: HvDropdownProps): JSX.Element | null;

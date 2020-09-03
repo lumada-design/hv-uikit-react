@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps, SnackbarProps, SnackbarContentProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
 export type TransitionDirectionProp = "up" | "down" | "left" | "right";
 
@@ -40,7 +40,7 @@ export interface NotificationsCommonProps {
 
 export interface HvBannerProps
   extends StandardProps<SnackbarProps, HvBannerClassKey>,
-    HvActionsCommonProps,
+    HvActionsGenericCommonProps,
     NotificationsCommonProps {
   /**
    * The position property of the header.

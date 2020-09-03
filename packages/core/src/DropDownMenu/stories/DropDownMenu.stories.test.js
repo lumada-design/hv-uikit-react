@@ -32,6 +32,12 @@ export const KeyboardNavigation = () => (
   </>
 );
 
+KeyboardNavigation.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 // __________________________________
 // Extended pa11y test scenarios
 
@@ -43,6 +49,12 @@ export const A11YClosed = () => (
   />
 );
 
+A11YClosed.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const A11YOpen = () => (
   <HvDropDownMenu
     id="dropdownmenu-open"
@@ -53,6 +65,7 @@ export const A11YOpen = () => (
 
 A11YOpen.story = {
   parameters: {
+    v3: true,
     pa11y: {
       actions: [
         // open menu before testing

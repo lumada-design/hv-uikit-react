@@ -1,14 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import clsx from "clsx";
+
 import isNil from "lodash/isNil";
+
 import { withStyles } from "@material-ui/core";
+
 import DropRight from "@hv/uikit-react-icons/dist/DropRightXS";
 import { parseList, parseState, wrapperTooltip } from "./utils";
-import { HvCheckBox, HvRadio } from "../Selectors";
-import { HvLink, HvTypography, setId } from "..";
-import Focus from "../Focus";
-import styles from "./styles";
+
+import { HvCheckBox, HvListContainer, HvListItem, HvRadio, HvTypography, setId } from "..";
+
+import HvBulkActions from "../BulkActions";
+import HvLink from "../Link";
+
+import styles, { linkStyles, selectAllStyles } from "./styles";
 
 const DEFAULT_STATE = {
   list: [],
@@ -21,9 +28,12 @@ const DEFAULT_STATE = {
 };
 
 const DEFAULT_LABELS = {
-  selectAll: "All",
-  selectionConjunction: "of"
+  selectAll: "Select All",
+  selectionConjunction: "/"
 };
+
+const StyledHvBulkActions = withStyles(selectAllStyles)(HvBulkActions);
+const StyledHvLink = withStyles(linkStyles)(HvLink);
 
 /**
  * Component used to show a set of related data to the user.
@@ -83,82 +93,64 @@ class List extends React.Component {
   }
 
   renderSelectAll = () => {
-    const { id, classes, labels } = this.props;
-    const { list, selection, allSelected, anySelected } = this.state;
+    const { id, labels } = this.props;
+    const { list, selection, anySelected } = this.state;
     const { selectAll, selectionConjunction } = labels;
 
-    const ofLabel = (
-      <>
-        {selection.length}
-        <HvTypography component="span" variant="normalText">
-          {`\xa0${selectionConjunction}\xa0`}
-          {list.length}
-        </HvTypography>
-      </>
+    const selectionLabel = (
+      <HvTypography component="span">
+        {!anySelected ? (
+          <>
+            <b>{selectAll}</b>
+            {` (${list.length})`}
+          </>
+        ) : (
+          <>
+            <b>{selection.length}</b>
+            {`\xa0${selectionConjunction}\xa0`}
+            {list.length}
+          </>
+        )}
+      </HvTypography>
     );
 
-    const selectionLabel = anySelected ? ofLabel : selectAll;
-
     return (
-      <HvCheckBox
+      <StyledHvBulkActions
         id={setId(id, "select-all")}
-        label={
-          <HvTypography component="span" variant="highlightText">
-            {selectionLabel}
-          </HvTypography>
-        }
-        onChange={() => this.handleSelectAll()}
-        classes={{ container: classes.selectorContainer }}
-        className={classes.selectAll}
-        indeterminate={!allSelected && anySelected}
-        checked={allSelected}
+        onSelectAll={() => this.handleSelectAll()}
+        numTotal={list.length}
+        numSelected={selection.length}
+        selectAllLabel={selectionLabel}
       />
     );
   };
 
   renderListItem = (item, i) => {
-    const { id, classes, multiSelect, useSelector, selectable, condensed } = this.props;
-    const { selection, anySelected } = this.state;
+    const { id, multiSelect, useSelector, selectable } = this.props;
 
     const itemId = setId(id, "item", i);
     const selected = item.selected || false;
-    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+
+    let startAdornment = null;
+    if (!useSelector && item.iconCallback) {
+      startAdornment = this.renderLeftIcon(item);
+    }
+
     return (
-      <Focus
+      <HvListItem
         key={i}
-        rootRef={this.listRef}
-        selected={item.selected}
-        disabledClass={item.disabled}
-        strategy={selectable ? "listbox" : "menu"}
-        configuration={{
-          tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1
-        }}
-        isDropdown
-        classes={{ focus: classes.focus }}
+        id={itemId}
+        role={selectable ? "option" : "menuitem"}
+        disabled={item.disabled || undefined}
+        selected={multiSelect || selected ? selected : undefined}
+        onClick={evt => this.handleSelect(evt, item)}
+        startAdornment={startAdornment}
+        endAdornment={item.showNavIcon && this.renderNavIcon(item)}
       >
-        <li
-          id={itemId}
-          role={selectable ? "option" : "menuitem"}
-          aria-disabled={item.disabled || undefined}
-          aria-selected={multiSelect || selected ? selected : undefined}
-          onClick={evt => this.handleSelect(evt, item)}
-          onKeyDown={() => {}}
-          className={clsx(classes.listItem, {
-            [classes.selected]: item.selected && !useSelector,
-            [classes.condensed]: condensed,
-            [classes.selector]: useSelector,
-            [classes.disabled]: item.disabled
-          })}
-        >
-          {!useSelector && item.iconCallback && this.renderLeftIcon(item)}
-
-          {multiSelect
-            ? this.renderMultiSelectItem(item, itemId)
-            : this.renderSingleSelectItem(item, itemId)}
-
-          {item.showNavIcon && this.renderNavIcon(item)}
-        </li>
-      </Focus>
+        {multiSelect
+          ? this.renderMultiSelectItem(item, itemId)
+          : this.renderSingleSelectItem(item, itemId)}
+      </HvListItem>
     );
   };
 
@@ -176,14 +168,15 @@ class List extends React.Component {
           onChange={evt => this.handleSelect(evt, item)}
           classes={{
             container: classes.selectorContainer,
+            labelTypography: classes.truncate,
             icon: classes.icon
           }}
         />,
         item.label
       );
-
       return <Selection />;
     }
+
     return this.renderItemText(item);
   };
 
@@ -200,47 +193,27 @@ class List extends React.Component {
           disabled={item.disabled}
           classes={{
             container: classes.selectorContainer,
+            labelTypography: classes.truncate,
             icon: classes.icon
           }}
         />,
         item.label
       );
-
       return <Selection />;
     }
     return this.renderItemText(item);
   };
 
   renderItemText = item => {
-    const { multiSelect, hasTooltips, classes } = this.props;
-
-    const ItemText = wrapperTooltip(hasTooltips, this.renderText(item), item.label);
+    const { multiSelect, hasTooltips } = this.props;
+    const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
 
     return !multiSelect && item.path ? (
-      <HvLink key={item.label} route={item.path} classes={{ a: classes.link }}>
+      <StyledHvLink key={item.label} route={item.path}>
         <ItemText />
-      </HvLink>
+      </StyledHvLink>
     ) : (
       <ItemText />
-    );
-  };
-
-  renderText = item => {
-    const { classes } = this.props;
-    const { hasLeftIcons } = this.state;
-
-    return (
-      <HvTypography
-        variant={item.selected ? "selectedText" : "normalText"}
-        className={clsx(classes.label, classes.truncate, {
-          [classes.selected]: item.selected,
-          [classes.textDisabled]: item.disabled,
-          [classes.labelIconLeftPadding]: item.iconCallback,
-          [classes.noIconLeftPadding]: !item.iconCallback && hasLeftIcons
-        })}
-      >
-        {item.label}
-      </HvTypography>
     );
   };
 
@@ -278,27 +251,30 @@ class List extends React.Component {
       onClick,
       selectDefault,
       singleSelectionToggle,
-      condensed,
       ...others
     } = this.props;
+
     const { list } = this.state;
 
     return (
-      <div ref={this.listRef} className={clsx(className, classes.root)}>
+      <>
         {multiSelect && useSelector && showSelectAll && this.renderSelectAll()}
 
         {list && (
-          <ul
+          <HvListContainer
             id={id}
-            className={classes.list}
+            className={clsx(className, classes.root)}
             role={selectable ? "listbox" : "menu"}
-            aria-multiselectable={multiSelect || undefined}
+            interactive
+            selectable={selectable}
+            multiSelect={multiSelect}
+            disableGutters={useSelector}
             {...others}
           >
-            {list.map((item, i) => !item.isHidden && this.renderListItem(item, i))}
-          </ul>
+            {list.filter(it => !it.isHidden).map((item, i) => this.renderListItem(item, i))}
+          </HvListContainer>
         )}
-      </div>
+      </>
     );
   }
 }
@@ -317,57 +293,13 @@ List.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the list element.
-     */
-    list: PropTypes.string,
-    /**
-     * Styles applied to the list item.
-     */
-    listItem: PropTypes.string,
-    /**
-     * Styles applied to the list item when condensed.
-     */
-    condensed: PropTypes.string,
-    /**
-     * Styles applied to the list item when disabled.
-     */
-    disabled: PropTypes.string,
-    /**
-     * Styles applied to the list item selector, when it is enabled.
-     */
-    selector: PropTypes.string,
-    /**
      * Styles applied to the list item selector container.
      */
     selectorContainer: PropTypes.string,
     /**
-     * Styles applied to the selected list item.
-     */
-    selected: PropTypes.string,
-    /**
-     * Styles applied to the select all option when multiselect.
-     */
-    selectAll: PropTypes.string,
-    /**
-     * Style applied to the text of a disabled item.
-     */
-    textDisabled: PropTypes.string,
-    /**
-     * Style applied to the label of the checkbox.
-     */
-    label: PropTypes.string,
-    /**
      * Style applied to the icon box.
      */
     box: PropTypes.string,
-    /**
-     * Styles applied to the list item icon left padding
-     */
-    labelIconLeftPadding: PropTypes.string,
-    /**
-     * Styles applied to the list item padding when no left icon
-     */
-    noIconLeftPadding: PropTypes.string,
     /**
      * Styles applied when the list item text when truncate.
      */
@@ -375,15 +307,7 @@ List.propTypes = {
     /**
      * Styles applied to the icon of the selector.
      */
-    icon: PropTypes.string,
-    /**
-     * Styles applied when focus .
-     */
-    focus: PropTypes.string,
-    /**
-     * Styles applied to the link.
-     */
-    link: PropTypes.string
+    icon: PropTypes.string
   }).isRequired,
   /**
    * The id of the root element
@@ -405,7 +329,7 @@ List.propTypes = {
   values: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      label: PropTypes.string.isRequired,
+      label: PropTypes.node.isRequired,
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
       isHidden: PropTypes.bool,

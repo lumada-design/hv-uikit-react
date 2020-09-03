@@ -246,7 +246,6 @@ const TreeViewItem = props => {
       <HvTypography
         id={setId(id, "button")}
         component="div"
-        variant={selectable && selected ? "selectedText" : "normalText"}
         role="button"
         innerRef={actionableRef}
         className={clsx(classes.content, {

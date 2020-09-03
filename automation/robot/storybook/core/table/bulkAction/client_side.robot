@@ -4,7 +4,7 @@ Test Setup        Run Keywords
 ...               Go To    ${visualizations}table--with-checkbox
 ...               AND    Wait Until Element Is Visible    ${table}
 Test Template     Run Keyword
-
+Force Tags        v3
 
 *** Test Cases ***
 enable actions when any row is selected
@@ -26,13 +26,21 @@ show previous page when it is deleted all rows of last page
     Select From List By Value                   ${rows_per_page}    5
     Click Button                                ${pagination_last_page}
     select Checkbox                             ${bulkAction_checkbox}
-    Wait Until Page Contains                    3 of 13 items
+    Wait Until Page Contains                    3 / 13
     Textfield Value Should Be                   ${pagination_input}    3
     Click Button                                Delete
     Wait Until Page Does Not Contain Element    ${rows_selected}
     select Checkbox                             ${bulkAction_checkbox}
-    Wait Until Page Contains                    5 of 10 items
+    Wait Until Page Contains                    5 / 10
     Textfield Value Should Be                   ${pagination_input}    2
+
+deselect all elements with multiple pages selected
+    Wait Until Page Contains Element    ${bulkAction_checkbox}
+    Select Checkbox                     ${bulkAction_checkbox}
+    Select From List By Value           ${rows_per_page}    5
+    Click Element                       ${bulkAction_checkbox}
+    Checkbox Should Not Be Selected     ${bulkAction_checkbox}
+    Page Should Contain                 All
 
 delete all rows when all rows are selected and is clicked delete bulk action
     Select Checkbox                    ${row_1_checkbox}

@@ -1,8 +1,9 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}input--suggestion
+...           Go To    ${patterns}input--suggestion
 ...           AND    Wait Until Element Is Enabled    ${input}
+Force Tags    v3
 
 
 *** Test Cases ***
@@ -36,7 +37,7 @@ select correctly suggestion when suggestion text area is pressed
     [Tags]     bug-ie-webdriver
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
-    Click Element                        xpath://p[.='Portugal']
+    Click Element                        xpath://li[.='Portugal']
     Wait Until Element Is Not Visible    ${suggestion_list}
     Textfield Value Should Be            ${input}    Portugal
 

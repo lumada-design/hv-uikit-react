@@ -48,16 +48,6 @@ export interface HvDropDownMenuProps
   expanded?: boolean;
 }
 
-export type HvDropDownMenuClassKey =
-  | "root"
-  | "popper"
-  | "icon"
-  | "iconSelected"
-  | "menuList"
-  | "inputExtensionOpen"
-  | "inputExtensionOpenShadow"
-  | "inputExtensionFloatRight"
-  | "inputExtensionFloatLeft"
-  | "inputExtensionLeftPosition";
+export type HvDropDownMenuClassKey = "icon" | "iconSelected";
 
 export default function HvDropDownMenu(props: HvDropDownMenuProps): JSX.Element | null;

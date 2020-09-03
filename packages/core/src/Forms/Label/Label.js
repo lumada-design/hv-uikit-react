@@ -4,25 +4,10 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import isNil from "lodash/isNil";
 import { HvFormElementContext } from "../FormElement";
-import { getDescriptorMap } from "../FormElement/utils/FormUtils";
+import { getChildIdToLabel } from "../FormElement/utils/FormUtils";
 import { HvTypography } from "../..";
 import { setId } from "../../utils";
 import styles from "./styles";
-
-const getChildIdToLabel = (children, childName) => {
-  let childId = "";
-  if (Array.isArray(children)) {
-    childId = React.Children.forEach(child => {
-      const foundId = getDescriptorMap(child, childName)?.id;
-      if (!isNil(foundId)) {
-        childId = childId.concat(`${foundId} `);
-      }
-    });
-  } else {
-    childId = getDescriptorMap(children, childName)?.id;
-  }
-  return childId;
-};
 
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
@@ -43,7 +28,7 @@ const HvLabel = props => {
           [classes.labelDisabled]: localDisabled,
           [classes.childGutter]: !isNil(children)
         })}
-        variant="labelText"
+        variant="highlightText"
         component="label"
         htmlFor={childId}
         {...others}

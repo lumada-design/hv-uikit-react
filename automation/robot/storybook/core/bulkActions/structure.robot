@@ -3,6 +3,7 @@ Resource      _bulkActions.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}bulk-actions--controlled-with-actions    AND
 ...           Wait Until Page Contains Element    ${parentCheckbox}
+Force Tags    v3
 
 
 *** Test Cases ***

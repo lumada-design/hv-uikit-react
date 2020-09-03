@@ -17,8 +17,9 @@ import {
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Modal",
+  title: "Patterns/Modal",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvModal } from '@hv/uikit-react-core/dist'"
   },
@@ -128,6 +129,7 @@ export const TextAndSemantic = () => (
 
 TextAndSemantic.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "The modal allow the definition of variants, that alters the presented icon."
@@ -138,12 +140,13 @@ TextAndSemantic.story = {
 export const CustomIcon = () => (
   <SimpleModal
     buttonMessage="Custom icon"
-    title={<HvModalTitle customIcon={<Ungroup iconSize="M" />}>Are you sure?</HvModalTitle>}
+    title={<HvModalTitle customIcon={<Ungroup iconSize="S" />}>Are you sure?</HvModalTitle>}
   />
 );
 
 CustomIcon.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button."
@@ -186,6 +189,7 @@ export const Accessibility = () => {
 
 Accessibility.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content."
@@ -234,7 +238,7 @@ export const CustomContent = () => {
           <HvModalTitle>
             <div>
               <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
-              <HvTypography variant="normalText">HDI</HvTypography>
+              <HvTypography>HDI</HvTypography>
             </div>
           </HvModalTitle>
         }
@@ -302,6 +306,7 @@ export const CustomContent = () => {
 
 CustomContent.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "It is possible to insert any component in the modal."
     }

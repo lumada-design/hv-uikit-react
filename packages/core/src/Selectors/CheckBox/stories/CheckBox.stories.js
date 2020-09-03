@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvCheckBox } from "../../..";
 
 export default {
-  title: "Components/Selectors/Checkbox",
+  title: "Patterns/Selectors/Checkbox",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCheckBox } from '@hv/uikit-react-core/dist'"
@@ -12,6 +12,12 @@ export default {
 
 export const Main = () => {
   return <HvCheckBox id="test" inputProps={{ "aria-label": "Checkbox example" }} />;
+};
+
+Main.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const Disabled = () => (
@@ -31,7 +37,8 @@ Disabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    v3: true
   }
 };
 
@@ -41,7 +48,8 @@ WithLabel.story = {
   parameters: {
     docs: {
       storyDescription: "A sample showcasing a checkbox that includes a label."
-    }
+    },
+    v3: true
   }
 };
 
@@ -59,7 +67,8 @@ WithClickAction.story = {
     docs: {
       storyDescription:
         "Returns the value when clicked, check the browser console to see the result."
-    }
+    },
+    v3: true
   }
 };
 
@@ -87,7 +96,8 @@ WithClickActionDisabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    v3: true
   }
 };
 
@@ -143,6 +153,7 @@ WithState.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    v3: true
   }
 };

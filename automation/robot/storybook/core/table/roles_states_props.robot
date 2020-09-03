@@ -3,7 +3,7 @@ Resource         table.resource
 Test Setup       Run Keywords
 ...              Go To    ${visualizations}table--with-checkbox
 ...              AND    Wait Until Element Is Visible    ${table}
-Force Tags       wai-aria-practices
+Force Tags       wai-aria-practices v3
 Documentation    https://www.w3.org/TR/wai-aria-practices/#table
 
 
@@ -52,7 +52,7 @@ aria-sort ascending or descending when a column is order by
 aria-selected as boolean when a row is selected and unselected
     [Setup]    NONE
     Go To                                ${visualizations}table--with-checkbox
-    Wait Until Page Contains             This is a title
+    Wait Until Page Contains             Title
     Page Should Contain Element          css:[aria-selected=false]    limit=10
     Click Element                        ${row_1_checkbox}
     Element Attribute Value Should Be    ${row_1}    aria-selected    true
@@ -64,7 +64,7 @@ aria-selected as boolean when a row is selected and unselected
 aria-expanded as boolean when a row is expanded and shrink
     [Setup]    NONE
     Go To                                ${visualizations}table--with-expander-and-custom-content
-    Wait Until Page Contains             This is a title
+    Wait Until Page Contains             Title
     Page Should Not Contain Element      css:[aria-expanded=true]
     Click Element                        ${button_expand}
     Element Attribute Value Should Be    ${row_1}    aria-expanded    true

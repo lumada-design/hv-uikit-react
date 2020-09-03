@@ -10,7 +10,8 @@ const styles = theme => ({
       background: theme.hv.palette.atmosphere.atmo1,
       "&:not(:last-child)": {
         marginBottom: `${theme.hv.spacing.xs}px`
-      }
+      },
+      height: 72
     }
   }
 });

@@ -20,7 +20,7 @@ const ListContainer = withStyles(styles)(({ classes, children }) => (
 ));
 
 export default {
-  title: "Components/List",
+  title: "Patterns/List",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvList } from '@hv/uikit-react-core/dist'"
@@ -47,7 +47,7 @@ export const Main = () => (
 
 export const WithTitle = () => (
   <>
-    <HvTypography variant="labelText" style={{ margin: "0 10px 10px" }}>
+    <HvTypography variant="highlightText" style={{ margin: "0 10px 10px" }}>
       Options
     </HvTypography>
     <HvList
@@ -101,9 +101,7 @@ export const SingleSelection = () => (
 
 export const SingleSelectionWithIcon = () => {
   /* eslint-disable no-nested-ternary */
-  const ColoredIcon = Icon => ({ isSelected, isDisabled }) => (
-    <Icon color={isSelected ? "atmo1" : isDisabled ? "atmo7" : undefined} />
-  );
+  const ColoredIcon = Icon => ({ isDisabled }) => <Icon color={isDisabled ? "atmo5" : undefined} />;
 
   const data = [
     { label: "Advanced server DS120", iconCallback: ColoredIcon(User) },
@@ -161,7 +159,7 @@ export const MultiSelectionWithSelectors = () => (
     values={[
       { id: "1", label: "Arhauss is somewhere" },
       { id: "2", label: "Allentown is not are 51" },
-      { id: "3", label: "Bergamo where you can eat you can", selected: true },
+      { id: "3", label: "Bergamo where you can eat whatever you want", selected: true },
       { id: "4", label: "Bergen city", disabled: true },
       { id: "5", label: "Boston of the Seven Seas" }
     ]}

@@ -1,33 +1,18 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
-
-export interface HvBulkActionsLabelsProp {
-  /**
-   * Label applied to the Select All when no item is selected.
-   */
-  selectAll?: string;
-  /**
-   * Label applied to the Select All across all pages.
-   */
-  selectAllPages?: string;
-  /**
-   * Label applied to the Select All across all pages when all elements are selected.
-   */
-  deselectAllPages: string;
-}
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
 export interface HvBulkActionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBulkActionsClassKey>,
-    HvActionsCommonProps {
-  /**
-   * Labels
-   */
-  labels?: HvBulkActionsLabelsProp;
+    HvActionsGenericCommonProps {
   /**
    * Custom label for select all checkbox
    */
   selectAllLabel?: React.ReactNode;
+  /**
+   * Custom label for select all pages button
+   */
+  selectAllPagesLabel?: React.ReactNode;
   /**
    * Whether select all pages element should be visible
    */

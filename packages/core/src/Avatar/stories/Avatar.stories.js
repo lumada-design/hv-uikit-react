@@ -30,7 +30,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 export default {
-  title: "Components/Avatar",
+  title: "Patterns/Avatar",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvAvatar } from '@hv/uikit-react-core/dist'"
@@ -159,12 +159,7 @@ Sizes.story = {
 
 export const Buttons = () => {
   const AvatarButton = ({ children, ...other }) => (
-    <HvButton
-      aria-label="Open the user profile"
-      category="icon"
-      overrideIconColors={false}
-      {...other}
-    >
+    <HvButton aria-label="Open the user profile" icon overrideIconColors={false} {...other}>
       {children}
     </HvButton>
   );

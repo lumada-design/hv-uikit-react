@@ -5,7 +5,7 @@ import customBackground from "./background-custom.jpg";
 import useStyles from "./styles";
 
 export default {
-  title: "Components/LoginContainer",
+  title: "Patterns/LoginContainer",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvLoginContainer } from '@hv/uikit-react-core/dist'"

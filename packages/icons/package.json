@@ -15,12 +15,15 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "build": "npm-run-all clean svg-optimize convert build:* copy",
+    "build": "npm-run-all clean svg-optimize convert:* build:* copy:*",
     "svg-optimize": "npx svgo --config=./svgo-config.yml -r -f assets assets",
-    "convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
+    "convert:icons": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
+    "convert:pictograms": "node ./src/svgToReact.js dir --input assets/pictograms --output bin/pictograms --force",
     "build:types": "npx cp src/IconBase.d.ts bin/",
+    "build:types_pictogram": "npx cp src/IconBase.d.ts bin/pictograms",
     "build:babel": "npx babel bin -d dist --source-maps --copy-files",
-    "copy": "npx cp -f bin/index.js dist/index.es.js",
+    "copy:icons": "npx cp -f bin/index.js dist/index.es.js",
+    "copy:pictograms": "npx cp -f bin/pictograms/index.js dist/pictograms/index.es.js",
     "clean": "npx del-cli dist bin",
     "prepare": "npm run build",
     "link": "npm link",

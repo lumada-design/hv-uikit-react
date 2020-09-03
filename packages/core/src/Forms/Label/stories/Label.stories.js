@@ -5,7 +5,8 @@ export default {
   title: "Components/Forms/Label",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLabel } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvLabel } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvLabel
 };
@@ -20,6 +21,7 @@ export const DisabledLabel = () => {
 
 DisabledLabel.story = {
   parameters: {
+    v3: true,
     pa11y: {
       ignore: [
         "region",

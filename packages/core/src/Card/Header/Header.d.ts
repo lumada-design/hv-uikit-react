@@ -3,14 +3,6 @@ import { CardHeaderProps, StandardProps } from "@material-ui/core";
 
 export interface HvCardHeaderProps extends StandardProps<CardHeaderProps, HvCardHeaderClassKey> {
   /**
-   *  The renderable content inside the title slot of the header.
-   */
-  headerTitle: React.ReactNode;
-  /**
-   *  The renderable content inside the subheader slot of the header.
-   */
-  subheader?: React.ReactNode;
-  /**
    *  The renderable content inside the icon slot of the header.
    */
   icon?: React.ReactNode;

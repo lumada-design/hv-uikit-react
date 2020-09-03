@@ -4,7 +4,7 @@ import backgroundImage from "../resources/background.jpg";
 import logoImage from "../resources/Hitachi-logo.png";
 
 export default {
-  title: "Components/Login",
+  title: "Patterns/Login",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvLogin } from '@hv/uikit-react-core/dist'",

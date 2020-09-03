@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Close from "@hv/uikit-react-icons/dist/CloseXS";
-import Actions from "../../../Actions";
+import ActionsGeneric from "../../../ActionsGeneric";
 import styles from "./styles";
 
 const ActionContainer = ({ id, classes, onClose, action, actionCallback, ...others }) => {
@@ -21,7 +21,12 @@ const ActionContainer = ({ id, classes, onClose, action, actionCallback, ...othe
       </div>
       {action && (
         <div className={classes.actionsInnerContainer}>
-          <Actions id={id} category="semantic" actions={action} actionsCallback={actionCallback} />
+          <ActionsGeneric
+            id={id}
+            category="semantic"
+            actions={action}
+            actionsCallback={actionCallback}
+          />
         </div>
       )}
     </div>
@@ -40,7 +45,7 @@ ActionContainer.propTypes = {
   /**
    * onClose function.
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /**
    * Actions to display.
    */

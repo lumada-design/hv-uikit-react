@@ -1,5 +1,6 @@
 *** Setting ***
 Resource    ../_keywords.resource
+Force Tags  v3
 
 
 *** Variables ***
@@ -12,7 +13,7 @@ ${1stRadioButtonLabel}    xpath://span[text()='Label']
 
 *** Test Cases ***
 select radio button by clicking in input
-    go to                                ${components}selectors-radio--label
+    go to                                ${patterns}selectors-radio--label
     Wait Until Page Contains Element     ${1stRadioButton}
     Element Should not Be Visible        ${radioSelected}
     Element Should Be Visible            ${radioNotSelected}
@@ -21,7 +22,7 @@ select radio button by clicking in input
     Element Should not Be Visible        ${radioNotSelected}
 
 select radio button by clicking in label
-    go to                                ${components}selectors-radio--label
+    go to                                ${patterns}selectors-radio--label
     Wait Until Page Contains Element     ${1stRadioButton}
     Element Should not Be Visible        ${radioSelected}
     Element Should Be Visible            ${radioNotSelected}
@@ -30,7 +31,7 @@ select radio button by clicking in label
     Element Should not Be Visible        ${radioNotSelected}
 
 unable select radio button when is disabled
-    go to                                ${components}selectors-radio--disabled
+    go to                                ${patterns}selectors-radio--disabled
     Wait Until Page Contains Element     ${1stRadioButton}
     Run Keyword And Ignore Error         Click Element    ${1stRadioButton}
     Element Should Be Disabled           ${1stRadioButton}
@@ -38,7 +39,7 @@ unable select radio button when is disabled
     Element Should not Be Visible        ${radioSelected}
 
 unable unselect checked radio button when is disabled
-    go to                                ${components}selectors-radio--checked-disabled
+    go to                                ${patterns}selectors-radio--checked-disabled
     Wait Until Page Contains Element     ${1stRadioButton}
     Run Keyword And Ignore Error         Click Element    ${1stRadioButton}
     Element Should Be Disabled           ${1stRadioButton}
@@ -46,7 +47,7 @@ unable unselect checked radio button when is disabled
     Element Should not Be Visible        ${radioNotSelected}
 
 radio button with state management
-    go to                                ${components}selectors-radio--with-state
+    go to                                ${patterns}selectors-radio--with-state
     Wait Until Element Is Enabled        ${1stRadioButton}
     Element Attribute Value Should Be    ${1stRadioButton}    checked    true
     Element Attribute Value Should Be    ${2ndRadioButton}    checked    ${None}

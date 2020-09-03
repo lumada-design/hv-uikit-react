@@ -4,7 +4,7 @@ import { Calendar, Plane, User } from "@hv/uikit-react-icons/dist";
 import { HvButton, HvDropDownMenu } from "../..";
 
 export default {
-  title: "Components/Dropdown Menu",
+  title: "Patterns/Dropdown Menu",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDropDownMenu } from '@hv/uikit-react-core/dist'"
@@ -21,6 +21,12 @@ export const Main = () => (
     dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
   />
 );
+
+Main.story = {
+  parameters: {
+    v3: true
+  }
+};
 
 export const Positioning = () => {
   const [position, setPosition] = useState("right");
@@ -39,6 +45,7 @@ export const Positioning = () => {
 
 Positioning.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "DropDownMenu with configurable positioning in the dropdown"
     }
@@ -67,6 +74,7 @@ export const WithIconsAndActions = () => {
 
 WithIconsAndActions.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected"
@@ -92,6 +100,12 @@ export const Disabled = () => (
   />
 );
 
+Disabled.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const DisabledItems = () => (
   <HvDropDownMenu
     id="dpmDisabledItems"
@@ -99,6 +113,12 @@ export const DisabledItems = () => (
     dataList={[{ label: "Label 1" }, { label: "Label 2", disabled: true }, { label: "Label 3" }]}
   />
 );
+
+DisabledItems.story = {
+  parameters: {
+    v3: true
+  }
+};
 
 export const Controlled = () => {
   const ControlledDropdownMenu = () => {
@@ -122,6 +142,9 @@ export const Controlled = () => {
           aria-label="dropdownMenu-1"
           keepOpened={false}
           dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+          onToggleOpen={s => {
+            console.log(s);
+          }}
         />
       </>
     );
@@ -132,6 +155,7 @@ export const Controlled = () => {
 
 Controlled.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "DropDownMenu toggle opening controlled by an external button"
     }

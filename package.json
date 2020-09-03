@@ -26,7 +26,7 @@
     "test": "npx lerna run test --parallel",
     "test:update": "npx lerna run test:update --parallel",
     "link": "npx lerna run link",
-    "generate": "node generator/index.js",
+    "generate": "node scripts/generator/index.js",
     "publish-": "npx lerna changed && npx lerna publish --yes",
     "publish-prerelease": "npx lerna changed && npx lerna publish prerelease --yes",
     "publish-prepatch": "npx lerna changed && npx lerna publish prepatch --yes",
@@ -44,7 +44,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "npm run lint:eslint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -90,6 +90,7 @@
     "fs-readdir-recursive": "^1.1.0",
     "gh-pages": "^2.2.0",
     "glob": "^7.1.6",
+    "html-react-parser": "^0.13.0",
     "husky": "^4.2.5",
     "lerna": "^3.22.0",
     "license-checker": "^25.0.1",

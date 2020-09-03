@@ -8,8 +8,9 @@ import HvHeader, { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation } from "..
 import HitachiLogo from "./assets/HitachiLogo";
 
 export default {
-  title: "Components/Navigation System/Horizontal Navigation",
+  title: "Patterns/Navigation System/Horizontal Navigation",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvHeader } from '@hv/uikit-react-core/dist'",
     subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation }
@@ -83,7 +84,7 @@ export const Main = () => {
   return (
     <HvHeader position="relative">
       {!isMdUp && (
-        <HvButton category="icon" onClick={() => console.log("menu")}>
+        <HvButton icon onClick={() => console.log("menu")}>
           <Menu />
         </HvButton>
       )}
@@ -92,19 +93,11 @@ export const Main = () => {
         <HvHeaderNavigation data={navigationData} selected={selected} onClick={handleChange} />
       )}
       <HvHeaderActions>
-        <HvButton
-          category="icon"
-          onClick={() => console.log("alerts")}
-          aria-label="Open Notifications panel"
-        >
+        <HvButton icon onClick={() => console.log("alerts")} aria-label="Open Notifications panel">
           <HvBadge count={1} icon={<Alert />} />
         </HvButton>
         {isMdUp && (
-          <HvButton
-            category="icon"
-            onClick={() => console.log("user")}
-            aria-label="Open User panel"
-          >
+          <HvButton icon onClick={() => console.log("user")} aria-label="Open User panel">
             <User />
           </HvButton>
         )}
@@ -115,6 +108,7 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
+    v3: true,
     eyes: {
       // waiting until all elements are rendered (issue #1794)
       waitBeforeScreenshot: ".HvHeaderMenuBar-active"

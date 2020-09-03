@@ -1,7 +1,7 @@
 *** Setting ***
 Resource       ../_keywords.resource
 Suite Setup    Run Keywords
-...            Go To    ${components}user-preferences--with-open-control
+...            Go To    ${patterns}user-preferences--with-open-control
 ...            AND               Wait Until Element Is Visible    ${userPreferences}
 
 *** Test Cases ***

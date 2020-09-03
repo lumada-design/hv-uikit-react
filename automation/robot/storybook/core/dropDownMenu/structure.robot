@@ -1,9 +1,9 @@
 *** Setting ***
 Resource      _resources.resource
 Test Setup    Run Keywords
-...           Go To    ${components}dropdown-menu--disabled-items
+...           Go To    ${patterns}dropdown-menu--disabled-items
 ...           AND      Wait Until Element Is Enabled    ${dropDownMenu}
-
+Force Tags  v3
 
 *** Test Cases ***
 open dropdown menu when click dropdown button
@@ -24,7 +24,7 @@ close dropdow menu when is pressed right click out of list
 
 close dropdown menu when item is selected
     [Setup]    NONE
-    Go To                                ${components}dropdown-menu--controlled
+    Go To                                ${patterns}dropdown-menu--controlled
     Wait Until Element Is Enabled        ${dropDownMenu}
     Click Element                        ${dropDownMenu}
     Wait Until Element Is Visible        ${droppedMenu}
@@ -45,3 +45,5 @@ unable select a disabled item
     Click Element                        ${item2}
     Element Attribute Value Should Be    ${item2}           tabindex         0
     Element Attribute Value Should Be    ${item2}           aria-selected    ${None}
+
+

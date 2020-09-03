@@ -4,7 +4,7 @@ Test Setup        Run Keywords
 ...               Go To    ${visualizations}table--server-side-pagination
 ...               AND    Wait Until Element Is Visible    ${table}
 Test Template     Run Keyword
-
+Force Tags        v3
 
 *** Test Cases ***
 enable actions when any row is selected
@@ -26,9 +26,9 @@ show previous page when it is deleted all rows of last page
     Click Button                        ${pagination_last_page}
     wait until page contains elements   ${rows_populated}    3
     select Checkbox                     ${bulkAction_checkbox}
-    Wait Until Page Contains            3 of 553 items
+    Wait Until Page Contains            3 / 553
     Click Button                        Delete
     wait until page contains elements   ${rows_populated}    10
     select Checkbox                     ${bulkAction_checkbox}
-    Wait Until Page Contains            10 of 550 items
+    Wait Until Page Contains            10 / 550
     Textfield Value Should Be           ${pagination_input}    55

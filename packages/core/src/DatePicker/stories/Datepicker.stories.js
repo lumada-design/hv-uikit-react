@@ -3,7 +3,7 @@ import moment from "moment";
 import { HvButton, HvDatePicker, HvInput } from "../..";
 
 export default {
-  title: "Components/Date Picker",
+  title: "Patterns/Date Picker",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDatePicker } from '@hv/uikit-react-core/dist'"

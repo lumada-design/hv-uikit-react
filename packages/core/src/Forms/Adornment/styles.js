@@ -1,8 +1,10 @@
+import { outlineStyles } from "../../Focus/styles";
+
 const styles = {
   root: {},
   icon: {
-    width: 30,
-    height: 30
+    width: 32,
+    height: 32
   },
   adornment: {
     backgroundColor: "transparent",
@@ -12,7 +14,10 @@ const styles = {
     cursor: "pointer"
   },
   adornmentButton: {
-    cursor: "pointer"
+    cursor: "pointer",
+    "&:focus": {
+      ...outlineStyles
+    }
   },
   adornmentIcon: {
     cursor: "default"

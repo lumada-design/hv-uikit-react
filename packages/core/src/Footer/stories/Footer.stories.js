@@ -2,7 +2,7 @@ import React from "react";
 import { HvFooter, HvLink, HvTypography } from "../..";
 
 export default {
-  title: "Components/Footer",
+  title: "Patterns/Footer",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvFooter } from '@hv/uikit-react-core/dist'"
@@ -19,14 +19,20 @@ export default {
 
 export const Main = () => <HvFooter />;
 
+Main.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const CustomLabels = () => {
   return (
     <HvFooter
       id="sample2"
       name="Hitachi Vantara"
-      copyright="© Hitachi Vantara Corporation 2018"
+      copyright="© Hitachi Vantara Corporation 2020"
       links={
-        <HvTypography component="div" variant="inlineLink">
+        <HvTypography component="div" variant="link">
           <HvLink route="https://www.hitachivantara.com">License information</HvLink>
         </HvTypography>
       }
@@ -36,6 +42,7 @@ export const CustomLabels = () => {
 
 CustomLabels.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Sample 2 description."
     }

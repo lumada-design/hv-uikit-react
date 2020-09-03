@@ -1,7 +1,7 @@
 import { outlineStyles } from "../Focus/styles";
 
 const styles = theme => {
-  const hoverColor = theme.hv.palette.atmosphere.atmo4;
+  const hoverColor = theme.palette.atmo3;
 
   return {
     root: {
@@ -15,13 +15,15 @@ const styles = theme => {
     },
     pageSizeOptions: {
       position: "absolute",
-      marginRight: "40px",
+      height: 32,
+      marginRight: 40,
       top: "50%",
       transform: "translateY(-50%)",
       left: "0"
     },
     pageSizeOptionsSelect: {
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
+      fontFamily: theme.hv.typography.fontFamily,
       "-webkit-appearance": "none",
       border: "none",
       borderRadius: 0,
@@ -62,10 +64,10 @@ const styles = theme => {
     },
     pageJump: {
       display: "inline-block",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs / 2}px`
     },
     pageSizeInput: {
-      ...theme.hv.typography.labelText,
+      ...theme.hv.typography.highlightText,
       paddingLeft: `${theme.hv.spacing.xs / 2}px`,
       paddingRight: `${theme.hv.spacing.xs / 2}px`,
       margin: 0,
@@ -73,22 +75,25 @@ const styles = theme => {
       MozAppearance: "textfield",
       "&:focus": {
         backgroundColor: hoverColor
-      }
-    },
-    pageSizeInputRoot: {
-      backgroundColor: "transparent",
-      "&:hover": {
-        backgroundColor: hoverColor
       },
-      '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
-        WebkitAppearance: "none",
-        margin: 0
+      "&:hover": {
+        cursor: "pointer"
       }
     },
     pageSizeInputContainer: {
       width: "40px",
       minWidth: "40px",
-      maxWidth: `${theme.hv.spacing.lg}px`
+      maxWidth: `${theme.hv.spacing.lg}px`,
+      "& :nth-child(2) > div": {
+        backgroundColor: "transparent",
+        "&:focus, &:hover": {
+          background: hoverColor
+        }
+      },
+      '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
+        WebkitAppearance: "none",
+        margin: 0
+      }
     },
     iconContainer: {
       padding: 0,

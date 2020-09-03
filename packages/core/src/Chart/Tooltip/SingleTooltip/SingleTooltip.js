@@ -7,11 +7,11 @@ import styles from "./styles";
 const SingleTooltip = ({ classes, title, value }) => (
   <div className={classes.root}>
     <div>
-      <Typography variant="labelText">{title}</Typography>
+      <Typography variant="highlightText">{title}</Typography>
     </div>
     <div className={classes.separator} />
     <div>
-      <Typography variant="sText">{value}</Typography>
+      <Typography>{value}</Typography>
     </div>
   </div>
 );

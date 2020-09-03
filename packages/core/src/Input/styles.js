@@ -1,4 +1,4 @@
-import { outlineStyles } from "../Focus/styles";
+import "focus-within-polyfill";
 
 const styles = theme => ({
   root: {
@@ -6,18 +6,6 @@ const styles = theme => ({
     maxWidth: "610px"
   },
   inputRoot: {
-    margin: "0",
-    width: "100%",
-    borderStyle: "solid",
-    borderWidth: " 0 0 1px 0",
-    background: theme.hv.palette.atmosphere.atmo1,
-    borderColor: theme.hv.palette.atmosphere.atmo6,
-    "&:hover": {
-      borderStyle: "solid",
-      borderWidth: " 0 0 1px 0",
-      borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
-    },
     "&:hover, &:focus-within": {
       "& $iconClear": {
         visibility: "visible"
@@ -25,47 +13,13 @@ const styles = theme => ({
     }
   },
   inputRootDisabled: {
-    borderColor: theme.hv.palette.atmosphere.atmo6,
-    background: theme.hv.palette.atmosphere.atmo4,
-    "&:hover": {
-      borderColor: theme.hv.palette.atmosphere.atmo6,
-      background: theme.hv.palette.atmosphere.atmo4,
-      cursor: "not-allowed"
-    },
     cursor: "not-allowed"
   },
   inputRootFocused: {
-    borderStyle: "solid",
-    borderWidth: " 0 0 1px 0",
-    borderColor: theme.hv.palette.accent.acce1,
-    background: theme.hv.palette.atmosphere.atmo1,
-    ...outlineStyles,
-    "&:hover": {
-      borderStyle: "solid",
-      borderWidth: "0 0 1px 0",
-      borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
-    },
     "& $iconClear": { visibility: "visible" }
   },
-  inputRootInvalid: {
-    borderColor: theme.hv.palette.semantic.sema4,
-    "&:hover": {
-      borderColor: theme.hv.palette.semantic.sema4
-    }
-  },
+  inputRootInvalid: {},
   input: {
-    height: `20px`,
-    marginLeft: `${theme.hv.spacing.xs}px`,
-    marginRight: `${theme.hv.spacing.xs}px`,
-    padding: "6px 0 5px",
-    ...theme.hv.typography.normalText,
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    "&::placeholder": {
-      ...theme.hv.typography.placeholderText,
-      opacity: 1
-    },
     "&::-ms-clear": {
       display: "none"
     }
@@ -78,32 +32,13 @@ const styles = theme => ({
   },
   labelContainer: {
     display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "space-between"
+    alignItems: "flex-start"
   },
   label: {
-    paddingBottom: "8px",
+    paddingBottom: "6px",
     display: "block"
   },
-  labelDisabled: {
-    color: theme.hv.palette.atmosphere.atmo7
-  },
-  infoIconContainer: {
-    height: "32px",
-    width: "32px",
-    display: "flex",
-    justifyContent: "center",
-    "& div": {
-      alignSelf: "center",
-      marginTop: -2
-    }
-  },
-  infoText: {
-    display: "block"
-  },
-  infoIcon: {
-    display: "none"
-  },
+  labelDisabled: {},
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",

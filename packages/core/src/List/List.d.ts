@@ -79,18 +79,8 @@ export interface HvListProps
 
 export type HvListClassKey =
   | "root"
-  | "listItem"
-  | "condensed"
-  | "disabled"
-  | "selector"
   | "selectorContainer"
-  | "selected"
-  | "selectAll"
-  | "textDisabled"
-  | "label"
   | "box"
-  | "labelIconLeftPadding"
-  | "noIconLeftPadding"
   | "truncate"
   | "icon"
   | "focus"

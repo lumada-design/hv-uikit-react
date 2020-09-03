@@ -1,0 +1,678 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[v3] BaseDropDown closes on double click 1`] = `
+<WithStyles(WithId)
+  placeholder="Placeholder..."
+>
+  <WithId
+    classes={
+      Object {
+        "arrow": "HvBaseDropdown-arrow",
+        "header": "HvBaseDropdown-header",
+        "headerDisabled": "HvBaseDropdown-headerDisabled",
+        "headerOpen": "HvBaseDropdown-headerOpen",
+        "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+        "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+        "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+        "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+        "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+        "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+        "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+        "panel": "HvBaseDropdown-panel",
+        "root": "HvBaseDropdown-root",
+        "selection": "HvBaseDropdown-selection",
+        "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+        "truncate": "HvBaseDropdown-truncate",
+      }
+    }
+    placeholder="Placeholder..."
+  >
+    <HvBaseDropdown
+      classes={
+        Object {
+          "arrow": "HvBaseDropdown-arrow",
+          "header": "HvBaseDropdown-header",
+          "headerDisabled": "HvBaseDropdown-headerDisabled",
+          "headerOpen": "HvBaseDropdown-headerOpen",
+          "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+          "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+          "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+          "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+          "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+          "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+          "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+          "panel": "HvBaseDropdown-panel",
+          "root": "HvBaseDropdown-root",
+          "selection": "HvBaseDropdown-selection",
+          "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+          "truncate": "HvBaseDropdown-truncate",
+        }
+      }
+      id="hv-base-dropdown-3"
+      placeholder="Placeholder..."
+    >
+      <div
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
+        aria-owns="hv-base-dropdown-3-children-container"
+        className="HvBaseDropdown-root"
+        id="hv-base-dropdown-3"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+      >
+        <div
+          aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
+          className="HvBaseDropdown-header"
+          id="hv-base-dropdown-3-header"
+          role="textbox"
+        >
+          <div
+            className="HvBaseDropdown-selection"
+          >
+            <WithStyles(ForwardRef)
+              className="HvBaseDropdown-truncate"
+              id="hv-base-dropdown-3-selectionPlaceholder"
+              variant="placeholderText"
+            >
+              <ForwardRef
+                className="HvBaseDropdown-truncate"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                id="hv-base-dropdown-3-selectionPlaceholder"
+                variant="placeholderText"
+              >
+                <p
+                  className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  id="hv-base-dropdown-3-selectionPlaceholder"
+                >
+                  Placeholder...
+                </p>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
+          <WithStyles(DropDownXS)
+            className="HvBaseDropdown-arrow"
+            iconSize="XS"
+          >
+            <DropDownXS
+              className="HvBaseDropdown-arrow"
+              classes={
+                Object {
+                  "root": "HvIconDropDownXS-root",
+                  "rootL": "HvIconDropDownXS-rootL",
+                  "rootM": "HvIconDropDownXS-rootM",
+                  "rootS": "HvIconDropDownXS-rootS",
+                  "rootXs": "HvIconDropDownXS-rootXs",
+                }
+              }
+              iconSize="XS"
+            >
+              <div
+                className="HvBaseDropdown-arrow HvIconDropDownXS-root HvIconDropDownXS-rootXs"
+              >
+                <svg
+                  focusable={false}
+                  height="12px"
+                  viewBox="0 0 12 12"
+                  width="12px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="color0"
+                    d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </DropDownXS>
+          </WithStyles(DropDownXS)>
+        </div>
+      </div>
+      <ForwardRef(Popper)
+        anchorEl={
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
+            aria-owns="hv-base-dropdown-3-children-container"
+            class="HvBaseDropdown-root"
+            id="hv-base-dropdown-3"
+            tabindex="0"
+          >
+            <div
+              aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
+              class="HvBaseDropdown-header"
+              id="hv-base-dropdown-3-header"
+              role="textbox"
+            >
+              <div
+                class="HvBaseDropdown-selection"
+              >
+                <p
+                  class="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  id="hv-base-dropdown-3-selectionPlaceholder"
+                >
+                  Placeholder...
+                </p>
+              </div>
+              <div
+                class="HvBaseDropdown-arrow HvIconDropDownXS-root HvIconDropDownXS-rootXs"
+              >
+                <svg
+                  focusable="false"
+                  height="12px"
+                  viewBox="0 0 12 12"
+                  width="12px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        }
+        disablePortal={false}
+        open={false}
+        placement="bottom-start"
+        popperOptions={
+          Object {
+            "onCreate": [Function],
+            "onUpdate": [Function],
+          }
+        }
+        style={
+          Object {
+            "zIndex": 1500,
+          }
+        }
+      />
+    </HvBaseDropdown>
+  </WithId>
+</WithStyles(WithId)>
+`;
+
+exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
+<WithStyles(WithId)
+  placeholder="Placeholder..."
+>
+  <WithId
+    classes={
+      Object {
+        "arrow": "HvBaseDropdown-arrow",
+        "header": "HvBaseDropdown-header",
+        "headerDisabled": "HvBaseDropdown-headerDisabled",
+        "headerOpen": "HvBaseDropdown-headerOpen",
+        "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+        "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+        "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+        "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+        "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+        "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+        "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+        "panel": "HvBaseDropdown-panel",
+        "root": "HvBaseDropdown-root",
+        "selection": "HvBaseDropdown-selection",
+        "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+        "truncate": "HvBaseDropdown-truncate",
+      }
+    }
+    placeholder="Placeholder..."
+  >
+    <HvBaseDropdown
+      classes={
+        Object {
+          "arrow": "HvBaseDropdown-arrow",
+          "header": "HvBaseDropdown-header",
+          "headerDisabled": "HvBaseDropdown-headerDisabled",
+          "headerOpen": "HvBaseDropdown-headerOpen",
+          "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+          "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+          "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+          "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+          "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+          "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+          "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+          "panel": "HvBaseDropdown-panel",
+          "root": "HvBaseDropdown-root",
+          "selection": "HvBaseDropdown-selection",
+          "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+          "truncate": "HvBaseDropdown-truncate",
+        }
+      }
+      id="hv-base-dropdown-1"
+      placeholder="Placeholder..."
+    >
+      <div
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-labelledby="hv-base-dropdown-1-selectionPlaceholder"
+        aria-owns="hv-base-dropdown-1-children-container"
+        className="HvBaseDropdown-root"
+        id="hv-base-dropdown-1"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+      >
+        <div
+          aria-labelledby="hv-base-dropdown-1-selectionPlaceholder"
+          className="HvBaseDropdown-header"
+          id="hv-base-dropdown-1-header"
+          role="textbox"
+        >
+          <div
+            className="HvBaseDropdown-selection"
+          >
+            <WithStyles(ForwardRef)
+              className="HvBaseDropdown-truncate"
+              id="hv-base-dropdown-1-selectionPlaceholder"
+              variant="placeholderText"
+            >
+              <ForwardRef
+                className="HvBaseDropdown-truncate"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                id="hv-base-dropdown-1-selectionPlaceholder"
+                variant="placeholderText"
+              >
+                <p
+                  className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  id="hv-base-dropdown-1-selectionPlaceholder"
+                >
+                  Placeholder...
+                </p>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
+          <WithStyles(DropDownXS)
+            className="HvBaseDropdown-arrow"
+            iconSize="XS"
+          >
+            <DropDownXS
+              className="HvBaseDropdown-arrow"
+              classes={
+                Object {
+                  "root": "HvIconDropDownXS-root",
+                  "rootL": "HvIconDropDownXS-rootL",
+                  "rootM": "HvIconDropDownXS-rootM",
+                  "rootS": "HvIconDropDownXS-rootS",
+                  "rootXs": "HvIconDropDownXS-rootXs",
+                }
+              }
+              iconSize="XS"
+            >
+              <div
+                className="HvBaseDropdown-arrow HvIconDropDownXS-root HvIconDropDownXS-rootXs"
+              >
+                <svg
+                  focusable={false}
+                  height="12px"
+                  viewBox="0 0 12 12"
+                  width="12px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="color0"
+                    d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </DropDownXS>
+          </WithStyles(DropDownXS)>
+        </div>
+      </div>
+      <ForwardRef(Popper)
+        anchorEl={null}
+        disablePortal={false}
+        open={false}
+        placement="bottom-start"
+        popperOptions={
+          Object {
+            "onCreate": [Function],
+            "onUpdate": [Function],
+          }
+        }
+        style={
+          Object {
+            "zIndex": 1500,
+          }
+        }
+      />
+    </HvBaseDropdown>
+  </WithId>
+</WithStyles(WithId)>
+`;
+
+exports[`[v3] BaseDropDown opens on click 1`] = `
+<WithStyles(WithId)
+  placeholder="Placeholder..."
+>
+  <WithId
+    classes={
+      Object {
+        "arrow": "HvBaseDropdown-arrow",
+        "header": "HvBaseDropdown-header",
+        "headerDisabled": "HvBaseDropdown-headerDisabled",
+        "headerOpen": "HvBaseDropdown-headerOpen",
+        "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+        "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+        "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+        "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+        "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+        "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+        "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+        "panel": "HvBaseDropdown-panel",
+        "root": "HvBaseDropdown-root",
+        "selection": "HvBaseDropdown-selection",
+        "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+        "truncate": "HvBaseDropdown-truncate",
+      }
+    }
+    placeholder="Placeholder..."
+  >
+    <HvBaseDropdown
+      classes={
+        Object {
+          "arrow": "HvBaseDropdown-arrow",
+          "header": "HvBaseDropdown-header",
+          "headerDisabled": "HvBaseDropdown-headerDisabled",
+          "headerOpen": "HvBaseDropdown-headerOpen",
+          "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+          "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+          "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+          "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+          "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+          "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+          "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+          "panel": "HvBaseDropdown-panel",
+          "root": "HvBaseDropdown-root",
+          "selection": "HvBaseDropdown-selection",
+          "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+          "truncate": "HvBaseDropdown-truncate",
+        }
+      }
+      id="hv-base-dropdown-2"
+      placeholder="Placeholder..."
+    >
+      <div
+        aria-controls="hv-base-dropdown-2-children-container"
+        aria-expanded={true}
+        aria-haspopup="listbox"
+        aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
+        aria-owns="hv-base-dropdown-2-children-container"
+        className="HvBaseDropdown-root"
+        id="hv-base-dropdown-2"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+      >
+        <div
+          aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
+          className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
+          id="hv-base-dropdown-2-header"
+          role="textbox"
+        >
+          <div
+            className="HvBaseDropdown-selection"
+          >
+            <WithStyles(ForwardRef)
+              className="HvBaseDropdown-truncate"
+              id="hv-base-dropdown-2-selectionPlaceholder"
+              variant="placeholderText"
+            >
+              <ForwardRef
+                className="HvBaseDropdown-truncate"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                id="hv-base-dropdown-2-selectionPlaceholder"
+                variant="placeholderText"
+              >
+                <p
+                  className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  id="hv-base-dropdown-2-selectionPlaceholder"
+                >
+                  Placeholder...
+                </p>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
+          <WithStyles(DropUpXS)
+            className="HvBaseDropdown-arrow"
+            iconSize="XS"
+          >
+            <DropUpXS
+              className="HvBaseDropdown-arrow"
+              classes={
+                Object {
+                  "root": "HvIconDropUpXS-root",
+                  "rootL": "HvIconDropUpXS-rootL",
+                  "rootM": "HvIconDropUpXS-rootM",
+                  "rootS": "HvIconDropUpXS-rootS",
+                  "rootXs": "HvIconDropUpXS-rootXs",
+                }
+              }
+              iconSize="XS"
+            >
+              <div
+                className="HvBaseDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+              >
+                <svg
+                  focusable={false}
+                  height="12px"
+                  viewBox="0 0 12 12"
+                  width="12px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="color0"
+                    d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </DropUpXS>
+          </WithStyles(DropUpXS)>
+        </div>
+      </div>
+      <ForwardRef(Popper)
+        anchorEl={
+          <div
+            aria-controls="hv-base-dropdown-2-children-container"
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
+            aria-owns="hv-base-dropdown-2-children-container"
+            class="HvBaseDropdown-root"
+            id="hv-base-dropdown-2"
+            tabindex="0"
+          >
+            <div
+              aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
+              class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
+              id="hv-base-dropdown-2-header"
+              role="textbox"
+            >
+              <div
+                class="HvBaseDropdown-selection"
+              >
+                <p
+                  class="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  id="hv-base-dropdown-2-selectionPlaceholder"
+                >
+                  Placeholder...
+                </p>
+              </div>
+              <div
+                class="HvBaseDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+              >
+                <svg
+                  focusable="false"
+                  height="12px"
+                  viewBox="0 0 12 12"
+                  width="12px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        }
+        disablePortal={false}
+        open={true}
+        placement="bottom-start"
+        popperOptions={
+          Object {
+            "onCreate": [Function],
+            "onUpdate": [Function],
+          }
+        }
+        style={
+          Object {
+            "zIndex": 1500,
+          }
+        }
+      >
+        <ForwardRef(Portal)
+          disablePortal={false}
+        >
+          <Portal
+            containerInfo={
+              <body
+                class="js-focus-within"
+              >
+                <div
+                  role="tooltip"
+                  style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                >
+                  <div>
+                    <div
+                      class="HvBaseDropdown-inputExtensionOpen"
+                    />
+                    <div
+                      class="HvBaseDropdown-panel"
+                      id="hv-base-dropdown-2-children-container"
+                    />
+                  </div>
+                </div>
+              </body>
+            }
+          >
+            <div
+              role="tooltip"
+              style={
+                Object {
+                  "left": 0,
+                  "position": "fixed",
+                  "top": 0,
+                  "zIndex": 1500,
+                }
+              }
+            >
+              <ForwardRef(ClickAwayListener)
+                onClickAway={[Function]}
+              >
+                <div
+                  onKeyDown={[Function]}
+                >
+                  <div
+                    className="HvBaseDropdown-inputExtensionOpen"
+                    style={
+                      Object {
+                        "width": null,
+                      }
+                    }
+                  />
+                  <div
+                    className="HvBaseDropdown-panel"
+                    id="hv-base-dropdown-2-children-container"
+                  />
+                </div>
+              </ForwardRef(ClickAwayListener)>
+            </div>
+          </Portal>
+        </ForwardRef(Portal)>
+      </ForwardRef(Popper)>
+    </HvBaseDropdown>
+  </WithId>
+</WithStyles(WithId)>
+`;

@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import { HvListView, HvProvider } from "../../..";
 import { Main } from "../stories/ListView.stories";
 
-describe("AssetInventoryListView", () => {
+describe("[v3]  AssetInventory ListView", () => {
   let wrapper;
 
   it("should be defined", () => {

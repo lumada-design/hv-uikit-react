@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Switch input area hover input can be hovered in 1`] = `
+exports[`[v3] Switch withStyles should render correctly 1`] = `
 <WithStyles(WithLabels)
   checked={false}
   classes={Object {}}
@@ -17,11 +17,9 @@ exports[`Switch input area hover input can be hovered in 1`] = `
     classes={
       Object {
         "checked": "HvSwitch-checked",
-        "checkedIcon": "HvSwitch-checkedIcon",
         "disabled": "HvSwitch-disabled",
         "disabledLabel": "HvSwitch-disabledLabel",
-        "labelDeselected": "HvSwitch-labelDeselected",
-        "labelSelected": "HvSwitch-labelSelected",
+        "focus": "HvSwitch-focus",
         "leftLabel": "HvSwitch-leftLabel",
         "rightLabel": "HvSwitch-rightLabel",
         "root": "HvSwitch-root",
@@ -44,11 +42,9 @@ exports[`Switch input area hover input can be hovered in 1`] = `
       classes={
         Object {
           "checked": "HvSwitch-checked",
-          "checkedIcon": "HvSwitch-checkedIcon",
           "disabled": "HvSwitch-disabled",
           "disabledLabel": "HvSwitch-disabledLabel",
-          "labelDeselected": "HvSwitch-labelDeselected",
-          "labelSelected": "HvSwitch-labelSelected",
+          "focus": "HvSwitch-focus",
           "leftLabel": "HvSwitch-leftLabel",
           "rightLabel": "HvSwitch-rightLabel",
           "root": "HvSwitch-root",
@@ -71,35 +67,31 @@ exports[`Switch input area hover input can be hovered in 1`] = `
       >
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-leftLabel HvSwitch-labelSelected"
+            className="HvSwitch-leftLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-leftLabel HvSwitch-labelSelected"
+              className="HvSwitch-leftLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -108,8 +100,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-leftLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-leftLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Left
@@ -118,8 +109,11 @@ exports[`Switch input area hover input can be hovered in 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          strategy="card"
-          useFalseFocus={true}
+          classes={
+            Object {
+              "focus": "HvSwitch-focus",
+            }
+          }
         >
           <Focus
             classes={
@@ -127,47 +121,69 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
-                "focus": "HvFocus-focus",
+                "focus": "HvFocus-focus HvSwitch-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
               }
             }
-            strategy="card"
-            useFalseFocus={true}
           >
             <ConditionalWrapper
-              condition={true}
+              condition={false}
               wrapper={[Function]}
             >
               <div
-                className="HvFocus-externalReference"
+                aria-checked={false}
+                aria-disabled={false}
+                className="HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="checkbox"
+                selected={false}
+                tabIndex="0"
               >
-                <div
-                  aria-checked={false}
-                  aria-disabled={false}
-                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  role="checkbox"
-                  selected={false}
-                  tabIndex="0"
+                <WithStyles(ForwardRef(Switch))
+                  checked={false}
+                  classes={
+                    Object {
+                      "checked": "HvSwitch-checked",
+                      "disabled": "HvSwitch-disabled",
+                      "root": "HvSwitch-switch",
+                      "switchBase": "HvSwitch-switchBase",
+                      "thumb": "HvSwitch-thumb",
+                      "track": "HvSwitch-track",
+                    }
+                  }
+                  disabled={false}
+                  inputProps={
+                    Object {
+                      "aria-label": "base switch",
+                    }
+                  }
+                  tabIndex="-1"
+                  value=""
                 >
-                  <WithStyles(ForwardRef(Switch))
+                  <ForwardRef(Switch)
                     checked={false}
                     classes={
                       Object {
-                        "checked": "HvSwitch-checked",
-                        "disabled": "HvSwitch-disabled",
-                        "root": "HvSwitch-switch",
-                        "switchBase": "HvSwitch-switchBase",
-                        "thumb": "HvSwitch-thumb",
-                        "track": "HvSwitch-track",
+                        "checked": "Mui-checked HvSwitch-checked",
+                        "colorPrimary": "MuiSwitch-colorPrimary",
+                        "colorSecondary": "MuiSwitch-colorSecondary",
+                        "disabled": "Mui-disabled HvSwitch-disabled",
+                        "edgeEnd": "MuiSwitch-edgeEnd",
+                        "edgeStart": "MuiSwitch-edgeStart",
+                        "input": "MuiSwitch-input",
+                        "root": "MuiSwitch-root HvSwitch-switch",
+                        "sizeSmall": "MuiSwitch-sizeSmall",
+                        "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
+                        "thumb": "MuiSwitch-thumb HvSwitch-thumb",
+                        "track": "MuiSwitch-track HvSwitch-track",
                       }
                     }
                     disabled={false}
@@ -179,37 +195,40 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                     tabIndex="-1"
                     value=""
                   >
-                    <ForwardRef(Switch)
-                      checked={false}
-                      classes={
-                        Object {
-                          "checked": "Mui-checked HvSwitch-checked",
-                          "colorPrimary": "MuiSwitch-colorPrimary",
-                          "colorSecondary": "MuiSwitch-colorSecondary",
-                          "disabled": "Mui-disabled HvSwitch-disabled",
-                          "edgeEnd": "MuiSwitch-edgeEnd",
-                          "edgeStart": "MuiSwitch-edgeStart",
-                          "input": "MuiSwitch-input",
-                          "root": "MuiSwitch-root HvSwitch-switch",
-                          "sizeSmall": "MuiSwitch-sizeSmall",
-                          "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
-                          "thumb": "MuiSwitch-thumb HvSwitch-thumb",
-                          "track": "MuiSwitch-track HvSwitch-track",
-                        }
-                      }
-                      disabled={false}
-                      inputProps={
-                        Object {
-                          "aria-label": "base switch",
-                        }
-                      }
-                      tabIndex="-1"
-                      value=""
+                    <span
+                      className="MuiSwitch-root HvSwitch-switch"
                     >
-                      <span
-                        className="MuiSwitch-root HvSwitch-switch"
+                      <WithStyles(ForwardRef(SwitchBase))
+                        checked={false}
+                        checkedIcon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        classes={
+                          Object {
+                            "checked": "Mui-checked HvSwitch-checked",
+                            "disabled": "Mui-disabled HvSwitch-disabled",
+                            "input": "MuiSwitch-input",
+                            "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                          }
+                        }
+                        disabled={false}
+                        icon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        inputProps={
+                          Object {
+                            "aria-label": "base switch",
+                          }
+                        }
+                        tabIndex="-1"
+                        type="checkbox"
+                        value=""
                       >
-                        <WithStyles(ForwardRef(SwitchBase))
+                        <ForwardRef(SwitchBase)
                           checked={false}
                           checkedIcon={
                             <span
@@ -218,10 +237,10 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                           }
                           classes={
                             Object {
-                              "checked": "Mui-checked HvSwitch-checked",
-                              "disabled": "Mui-disabled HvSwitch-disabled",
-                              "input": "MuiSwitch-input",
-                              "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                              "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                             }
                           }
                           disabled={false}
@@ -239,175 +258,140 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                           type="checkbox"
                           value=""
                         >
-                          <ForwardRef(SwitchBase)
-                            checked={false}
-                            checkedIcon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            classes={
-                              Object {
-                                "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
-                              }
-                            }
+                          <WithStyles(ForwardRef(IconButton))
+                            className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                            component="span"
                             disabled={false}
-                            icon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            inputProps={
-                              Object {
-                                "aria-label": "base switch",
-                              }
-                            }
-                            tabIndex="-1"
-                            type="checkbox"
-                            value=""
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
                           >
-                            <WithStyles(ForwardRef(IconButton))
+                            <ForwardRef(IconButton)
                               className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiIconButton-colorInherit",
+                                  "colorPrimary": "MuiIconButton-colorPrimary",
+                                  "colorSecondary": "MuiIconButton-colorSecondary",
+                                  "disabled": "Mui-disabled",
+                                  "edgeEnd": "MuiIconButton-edgeEnd",
+                                  "edgeStart": "MuiIconButton-edgeStart",
+                                  "label": "MuiIconButton-label",
+                                  "root": "MuiIconButton-root",
+                                  "sizeSmall": "MuiIconButton-sizeSmall",
+                                }
+                              }
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
                               tabIndex={null}
                             >
-                              <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiIconButton-colorInherit",
-                                    "colorPrimary": "MuiIconButton-colorPrimary",
-                                    "colorSecondary": "MuiIconButton-colorSecondary",
-                                    "disabled": "Mui-disabled",
-                                    "edgeEnd": "MuiIconButton-edgeEnd",
-                                    "edgeStart": "MuiIconButton-edgeStart",
-                                    "label": "MuiIconButton-label",
-                                    "root": "MuiIconButton-root",
-                                    "sizeSmall": "MuiIconButton-sizeSmall",
-                                  }
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 component="span"
                                 disabled={false}
+                                focusRipple={true}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
                                 tabIndex={null}
                               >
-                                <WithStyles(ForwardRef(ButtonBase))
+                                <ForwardRef(ButtonBase)
                                   centerRipple={true}
                                   className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
                                   component="span"
+                                  disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
                                   tabIndex={null}
                                 >
-                                  <ForwardRef(ButtonBase)
-                                    centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                    classes={
-                                      Object {
-                                        "disabled": "Mui-disabled",
-                                        "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
-                                      }
-                                    }
-                                    component="span"
-                                    disableRipple={true}
-                                    disabled={false}
-                                    focusRipple={true}
+                                  <span
+                                    aria-disabled={false}
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     onBlur={[Function]}
+                                    onDragLeave={[Function]}
                                     onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
-                                      aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={null}
+                                      className="MuiIconButton-label"
                                     >
+                                      <input
+                                        aria-label="base switch"
+                                        checked={false}
+                                        className="PrivateSwitchBase-input-20 MuiSwitch-input"
+                                        disabled={false}
+                                        onChange={[Function]}
+                                        tabIndex="-1"
+                                        type="checkbox"
+                                        value=""
+                                      />
                                       <span
-                                        className="MuiIconButton-label"
-                                      >
-                                        <input
-                                          aria-label="base switch"
-                                          checked={false}
-                                          className="PrivateSwitchBase-input-20 MuiSwitch-input"
-                                          disabled={false}
-                                          onChange={[Function]}
-                                          tabIndex="-1"
-                                          type="checkbox"
-                                          value=""
-                                        />
-                                        <span
-                                          className="MuiSwitch-thumb HvSwitch-thumb"
-                                        />
-                                      </span>
+                                        className="MuiSwitch-thumb HvSwitch-thumb"
+                                      />
                                     </span>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(IconButton)>
-                            </WithStyles(ForwardRef(IconButton))>
-                          </ForwardRef(SwitchBase)>
-                        </WithStyles(ForwardRef(SwitchBase))>
-                        <span
-                          className="MuiSwitch-track HvSwitch-track"
-                        />
-                      </span>
-                    </ForwardRef(Switch)>
-                  </WithStyles(ForwardRef(Switch))>
-                </div>
+                                  </span>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(IconButton)>
+                          </WithStyles(ForwardRef(IconButton))>
+                        </ForwardRef(SwitchBase)>
+                      </WithStyles(ForwardRef(SwitchBase))>
+                      <span
+                        className="MuiSwitch-track HvSwitch-track"
+                      />
+                    </span>
+                  </ForwardRef(Switch)>
+                </WithStyles(ForwardRef(Switch))>
               </div>
             </ConditionalWrapper>
           </Focus>
         </WithStyles(Focus)>
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-rightLabel HvSwitch-labelSelected"
+            className="HvSwitch-rightLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-rightLabel HvSwitch-labelSelected"
+              className="HvSwitch-rightLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -416,8 +400,421 @@ exports[`Switch input area hover input can be hovered in 1`] = `
               onClick={[Function]}
             >
               <p
+                className="HvSwitch-rightLabel HvTypography-root HvTypography-normalText"
+                onClick={[Function]}
+              >
+                Right
+              </p>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
+        </div>
+      </div>
+    </HvSwitch>
+  </WithLabels>
+</WithStyles(WithLabels)>
+`;
+
+exports[`Switch input area hover input can be hovered in 1`] = `
+<WithStyles(WithLabels)
+  checked={false}
+  classes={Object {}}
+  labels={
+    Object {
+      "left": "Left",
+      "right": "Right",
+    }
+  }
+  showLabels={true}
+>
+  <WithLabels
+    checked={false}
+    classes={
+      Object {
+        "checked": "HvSwitch-checked",
+        "disabled": "HvSwitch-disabled",
+        "disabledLabel": "HvSwitch-disabledLabel",
+        "focus": "HvSwitch-focus",
+        "leftLabel": "HvSwitch-leftLabel",
+        "rightLabel": "HvSwitch-rightLabel",
+        "root": "HvSwitch-root",
+        "switch": "HvSwitch-switch",
+        "switchBase": "HvSwitch-switchBase",
+        "thumb": "HvSwitch-thumb",
+        "track": "HvSwitch-track",
+      }
+    }
+    labels={
+      Object {
+        "left": "Left",
+        "right": "Right",
+      }
+    }
+    showLabels={true}
+  >
+    <HvSwitch
+      checked={false}
+      classes={
+        Object {
+          "checked": "HvSwitch-checked",
+          "disabled": "HvSwitch-disabled",
+          "disabledLabel": "HvSwitch-disabledLabel",
+          "focus": "HvSwitch-focus",
+          "leftLabel": "HvSwitch-leftLabel",
+          "rightLabel": "HvSwitch-rightLabel",
+          "root": "HvSwitch-root",
+          "switch": "HvSwitch-switch",
+          "switchBase": "HvSwitch-switchBase",
+          "thumb": "HvSwitch-thumb",
+          "track": "HvSwitch-track",
+        }
+      }
+      labels={
+        Object {
+          "left": "Left",
+          "right": "Right",
+        }
+      }
+      showLabels={true}
+    >
+      <div
+        className="HvSwitch-root"
+      >
+        <div>
+          <WithStyles(ForwardRef)
+            className="HvSwitch-leftLabel"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              className="HvSwitch-leftLabel"
+              classes={
+                Object {
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
+                }
+              }
+              onClick={[Function]}
+            >
+              <p
+                className="HvSwitch-leftLabel HvTypography-root HvTypography-normalText"
+                onClick={[Function]}
+              >
+                Left
+              </p>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
+        </div>
+        <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvSwitch-focus",
+            }
+          }
+        >
+          <Focus
+            classes={
+              Object {
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvSwitch-focus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
+              }
+            }
+          >
+            <ConditionalWrapper
+              condition={false}
+              wrapper={[Function]}
+            >
+              <div
+                aria-checked={false}
                 aria-disabled={false}
-                className="HvSwitch-rightLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="checkbox"
+                selected={false}
+                tabIndex="0"
+              >
+                <WithStyles(ForwardRef(Switch))
+                  checked={false}
+                  classes={
+                    Object {
+                      "checked": "HvSwitch-checked",
+                      "disabled": "HvSwitch-disabled",
+                      "root": "HvSwitch-switch",
+                      "switchBase": "HvSwitch-switchBase",
+                      "thumb": "HvSwitch-thumb",
+                      "track": "HvSwitch-track",
+                    }
+                  }
+                  disabled={false}
+                  inputProps={
+                    Object {
+                      "aria-label": "base switch",
+                    }
+                  }
+                  tabIndex="-1"
+                  value=""
+                >
+                  <ForwardRef(Switch)
+                    checked={false}
+                    classes={
+                      Object {
+                        "checked": "Mui-checked HvSwitch-checked",
+                        "colorPrimary": "MuiSwitch-colorPrimary",
+                        "colorSecondary": "MuiSwitch-colorSecondary",
+                        "disabled": "Mui-disabled HvSwitch-disabled",
+                        "edgeEnd": "MuiSwitch-edgeEnd",
+                        "edgeStart": "MuiSwitch-edgeStart",
+                        "input": "MuiSwitch-input",
+                        "root": "MuiSwitch-root HvSwitch-switch",
+                        "sizeSmall": "MuiSwitch-sizeSmall",
+                        "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
+                        "thumb": "MuiSwitch-thumb HvSwitch-thumb",
+                        "track": "MuiSwitch-track HvSwitch-track",
+                      }
+                    }
+                    disabled={false}
+                    inputProps={
+                      Object {
+                        "aria-label": "base switch",
+                      }
+                    }
+                    tabIndex="-1"
+                    value=""
+                  >
+                    <span
+                      className="MuiSwitch-root HvSwitch-switch"
+                    >
+                      <WithStyles(ForwardRef(SwitchBase))
+                        checked={false}
+                        checkedIcon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        classes={
+                          Object {
+                            "checked": "Mui-checked HvSwitch-checked",
+                            "disabled": "Mui-disabled HvSwitch-disabled",
+                            "input": "MuiSwitch-input",
+                            "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                          }
+                        }
+                        disabled={false}
+                        icon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        inputProps={
+                          Object {
+                            "aria-label": "base switch",
+                          }
+                        }
+                        tabIndex="-1"
+                        type="checkbox"
+                        value=""
+                      >
+                        <ForwardRef(SwitchBase)
+                          checked={false}
+                          checkedIcon={
+                            <span
+                              className="MuiSwitch-thumb HvSwitch-thumb"
+                            />
+                          }
+                          classes={
+                            Object {
+                              "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                            }
+                          }
+                          disabled={false}
+                          icon={
+                            <span
+                              className="MuiSwitch-thumb HvSwitch-thumb"
+                            />
+                          }
+                          inputProps={
+                            Object {
+                              "aria-label": "base switch",
+                            }
+                          }
+                          tabIndex="-1"
+                          type="checkbox"
+                          value=""
+                        >
+                          <WithStyles(ForwardRef(IconButton))
+                            className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                            component="span"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
+                          >
+                            <ForwardRef(IconButton)
+                              className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiIconButton-colorInherit",
+                                  "colorPrimary": "MuiIconButton-colorPrimary",
+                                  "colorSecondary": "MuiIconButton-colorSecondary",
+                                  "disabled": "Mui-disabled",
+                                  "edgeEnd": "MuiIconButton-edgeEnd",
+                                  "edgeStart": "MuiIconButton-edgeStart",
+                                  "label": "MuiIconButton-label",
+                                  "root": "MuiIconButton-root",
+                                  "sizeSmall": "MuiIconButton-sizeSmall",
+                                }
+                              }
+                              component="span"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                            >
+                              <WithStyles(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                component="span"
+                                disabled={false}
+                                focusRipple={true}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                tabIndex={null}
+                              >
+                                <ForwardRef(ButtonBase)
+                                  centerRipple={true}
+                                  className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
+                                  component="span"
+                                  disableRipple={true}
+                                  disabled={false}
+                                  focusRipple={true}
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  tabIndex={null}
+                                >
+                                  <span
+                                    aria-disabled={false}
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                    onBlur={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={null}
+                                  >
+                                    <span
+                                      className="MuiIconButton-label"
+                                    >
+                                      <input
+                                        aria-label="base switch"
+                                        checked={false}
+                                        className="PrivateSwitchBase-input-20 MuiSwitch-input"
+                                        disabled={false}
+                                        onChange={[Function]}
+                                        tabIndex="-1"
+                                        type="checkbox"
+                                        value=""
+                                      />
+                                      <span
+                                        className="MuiSwitch-thumb HvSwitch-thumb"
+                                      />
+                                    </span>
+                                  </span>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(IconButton)>
+                          </WithStyles(ForwardRef(IconButton))>
+                        </ForwardRef(SwitchBase)>
+                      </WithStyles(ForwardRef(SwitchBase))>
+                      <span
+                        className="MuiSwitch-track HvSwitch-track"
+                      />
+                    </span>
+                  </ForwardRef(Switch)>
+                </WithStyles(ForwardRef(Switch))>
+              </div>
+            </ConditionalWrapper>
+          </Focus>
+        </WithStyles(Focus)>
+        <div>
+          <WithStyles(ForwardRef)
+            className="HvSwitch-rightLabel"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              className="HvSwitch-rightLabel"
+              classes={
+                Object {
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledText": "HvTypography-disabledText",
+                  "highlightText": "HvTypography-highlightText",
+                  "lTitle": "HvTypography-lTitle",
+                  "link": "HvTypography-link",
+                  "mTitle": "HvTypography-mTitle",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
+                }
+              }
+              onClick={[Function]}
+            >
+              <p
+                className="HvSwitch-rightLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Right
@@ -448,11 +845,9 @@ exports[`Switch input area hover input can be hovered out 1`] = `
     classes={
       Object {
         "checked": "HvSwitch-checked",
-        "checkedIcon": "HvSwitch-checkedIcon",
         "disabled": "HvSwitch-disabled",
         "disabledLabel": "HvSwitch-disabledLabel",
-        "labelDeselected": "HvSwitch-labelDeselected",
-        "labelSelected": "HvSwitch-labelSelected",
+        "focus": "HvSwitch-focus",
         "leftLabel": "HvSwitch-leftLabel",
         "rightLabel": "HvSwitch-rightLabel",
         "root": "HvSwitch-root",
@@ -475,11 +870,9 @@ exports[`Switch input area hover input can be hovered out 1`] = `
       classes={
         Object {
           "checked": "HvSwitch-checked",
-          "checkedIcon": "HvSwitch-checkedIcon",
           "disabled": "HvSwitch-disabled",
           "disabledLabel": "HvSwitch-disabledLabel",
-          "labelDeselected": "HvSwitch-labelDeselected",
-          "labelSelected": "HvSwitch-labelSelected",
+          "focus": "HvSwitch-focus",
           "leftLabel": "HvSwitch-leftLabel",
           "rightLabel": "HvSwitch-rightLabel",
           "root": "HvSwitch-root",
@@ -502,35 +895,31 @@ exports[`Switch input area hover input can be hovered out 1`] = `
       >
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-leftLabel HvSwitch-labelSelected"
+            className="HvSwitch-leftLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-leftLabel HvSwitch-labelSelected"
+              className="HvSwitch-leftLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -539,8 +928,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-leftLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-leftLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Left
@@ -549,8 +937,11 @@ exports[`Switch input area hover input can be hovered out 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          strategy="card"
-          useFalseFocus={true}
+          classes={
+            Object {
+              "focus": "HvSwitch-focus",
+            }
+          }
         >
           <Focus
             classes={
@@ -558,47 +949,69 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
-                "focus": "HvFocus-focus",
+                "focus": "HvFocus-focus HvSwitch-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
               }
             }
-            strategy="card"
-            useFalseFocus={true}
           >
             <ConditionalWrapper
-              condition={true}
+              condition={false}
               wrapper={[Function]}
             >
               <div
-                className="HvFocus-externalReference"
+                aria-checked={false}
+                aria-disabled={false}
+                className="HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="checkbox"
+                selected={false}
+                tabIndex="0"
               >
-                <div
-                  aria-checked={false}
-                  aria-disabled={false}
-                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  role="checkbox"
-                  selected={false}
-                  tabIndex="0"
+                <WithStyles(ForwardRef(Switch))
+                  checked={false}
+                  classes={
+                    Object {
+                      "checked": "HvSwitch-checked",
+                      "disabled": "HvSwitch-disabled",
+                      "root": "HvSwitch-switch",
+                      "switchBase": "HvSwitch-switchBase",
+                      "thumb": "HvSwitch-thumb",
+                      "track": "HvSwitch-track",
+                    }
+                  }
+                  disabled={false}
+                  inputProps={
+                    Object {
+                      "aria-label": "base switch",
+                    }
+                  }
+                  tabIndex="-1"
+                  value=""
                 >
-                  <WithStyles(ForwardRef(Switch))
+                  <ForwardRef(Switch)
                     checked={false}
                     classes={
                       Object {
-                        "checked": "HvSwitch-checked",
-                        "disabled": "HvSwitch-disabled",
-                        "root": "HvSwitch-switch",
-                        "switchBase": "HvSwitch-switchBase",
-                        "thumb": "HvSwitch-thumb",
-                        "track": "HvSwitch-track",
+                        "checked": "Mui-checked HvSwitch-checked",
+                        "colorPrimary": "MuiSwitch-colorPrimary",
+                        "colorSecondary": "MuiSwitch-colorSecondary",
+                        "disabled": "Mui-disabled HvSwitch-disabled",
+                        "edgeEnd": "MuiSwitch-edgeEnd",
+                        "edgeStart": "MuiSwitch-edgeStart",
+                        "input": "MuiSwitch-input",
+                        "root": "MuiSwitch-root HvSwitch-switch",
+                        "sizeSmall": "MuiSwitch-sizeSmall",
+                        "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
+                        "thumb": "MuiSwitch-thumb HvSwitch-thumb",
+                        "track": "MuiSwitch-track HvSwitch-track",
                       }
                     }
                     disabled={false}
@@ -610,37 +1023,40 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                     tabIndex="-1"
                     value=""
                   >
-                    <ForwardRef(Switch)
-                      checked={false}
-                      classes={
-                        Object {
-                          "checked": "Mui-checked HvSwitch-checked",
-                          "colorPrimary": "MuiSwitch-colorPrimary",
-                          "colorSecondary": "MuiSwitch-colorSecondary",
-                          "disabled": "Mui-disabled HvSwitch-disabled",
-                          "edgeEnd": "MuiSwitch-edgeEnd",
-                          "edgeStart": "MuiSwitch-edgeStart",
-                          "input": "MuiSwitch-input",
-                          "root": "MuiSwitch-root HvSwitch-switch",
-                          "sizeSmall": "MuiSwitch-sizeSmall",
-                          "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
-                          "thumb": "MuiSwitch-thumb HvSwitch-thumb",
-                          "track": "MuiSwitch-track HvSwitch-track",
-                        }
-                      }
-                      disabled={false}
-                      inputProps={
-                        Object {
-                          "aria-label": "base switch",
-                        }
-                      }
-                      tabIndex="-1"
-                      value=""
+                    <span
+                      className="MuiSwitch-root HvSwitch-switch"
                     >
-                      <span
-                        className="MuiSwitch-root HvSwitch-switch"
+                      <WithStyles(ForwardRef(SwitchBase))
+                        checked={false}
+                        checkedIcon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        classes={
+                          Object {
+                            "checked": "Mui-checked HvSwitch-checked",
+                            "disabled": "Mui-disabled HvSwitch-disabled",
+                            "input": "MuiSwitch-input",
+                            "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                          }
+                        }
+                        disabled={false}
+                        icon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        inputProps={
+                          Object {
+                            "aria-label": "base switch",
+                          }
+                        }
+                        tabIndex="-1"
+                        type="checkbox"
+                        value=""
                       >
-                        <WithStyles(ForwardRef(SwitchBase))
+                        <ForwardRef(SwitchBase)
                           checked={false}
                           checkedIcon={
                             <span
@@ -649,10 +1065,10 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                           }
                           classes={
                             Object {
-                              "checked": "Mui-checked HvSwitch-checked",
-                              "disabled": "Mui-disabled HvSwitch-disabled",
-                              "input": "MuiSwitch-input",
-                              "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                              "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                             }
                           }
                           disabled={false}
@@ -670,175 +1086,140 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                           type="checkbox"
                           value=""
                         >
-                          <ForwardRef(SwitchBase)
-                            checked={false}
-                            checkedIcon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            classes={
-                              Object {
-                                "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
-                              }
-                            }
+                          <WithStyles(ForwardRef(IconButton))
+                            className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                            component="span"
                             disabled={false}
-                            icon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            inputProps={
-                              Object {
-                                "aria-label": "base switch",
-                              }
-                            }
-                            tabIndex="-1"
-                            type="checkbox"
-                            value=""
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
                           >
-                            <WithStyles(ForwardRef(IconButton))
+                            <ForwardRef(IconButton)
                               className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiIconButton-colorInherit",
+                                  "colorPrimary": "MuiIconButton-colorPrimary",
+                                  "colorSecondary": "MuiIconButton-colorSecondary",
+                                  "disabled": "Mui-disabled",
+                                  "edgeEnd": "MuiIconButton-edgeEnd",
+                                  "edgeStart": "MuiIconButton-edgeStart",
+                                  "label": "MuiIconButton-label",
+                                  "root": "MuiIconButton-root",
+                                  "sizeSmall": "MuiIconButton-sizeSmall",
+                                }
+                              }
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
                               tabIndex={null}
                             >
-                              <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiIconButton-colorInherit",
-                                    "colorPrimary": "MuiIconButton-colorPrimary",
-                                    "colorSecondary": "MuiIconButton-colorSecondary",
-                                    "disabled": "Mui-disabled",
-                                    "edgeEnd": "MuiIconButton-edgeEnd",
-                                    "edgeStart": "MuiIconButton-edgeStart",
-                                    "label": "MuiIconButton-label",
-                                    "root": "MuiIconButton-root",
-                                    "sizeSmall": "MuiIconButton-sizeSmall",
-                                  }
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 component="span"
                                 disabled={false}
+                                focusRipple={true}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
                                 tabIndex={null}
                               >
-                                <WithStyles(ForwardRef(ButtonBase))
+                                <ForwardRef(ButtonBase)
                                   centerRipple={true}
                                   className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
                                   component="span"
+                                  disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
                                   tabIndex={null}
                                 >
-                                  <ForwardRef(ButtonBase)
-                                    centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                    classes={
-                                      Object {
-                                        "disabled": "Mui-disabled",
-                                        "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
-                                      }
-                                    }
-                                    component="span"
-                                    disableRipple={true}
-                                    disabled={false}
-                                    focusRipple={true}
+                                  <span
+                                    aria-disabled={false}
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     onBlur={[Function]}
+                                    onDragLeave={[Function]}
                                     onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
-                                      aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={null}
+                                      className="MuiIconButton-label"
                                     >
+                                      <input
+                                        aria-label="base switch"
+                                        checked={false}
+                                        className="PrivateSwitchBase-input-20 MuiSwitch-input"
+                                        disabled={false}
+                                        onChange={[Function]}
+                                        tabIndex="-1"
+                                        type="checkbox"
+                                        value=""
+                                      />
                                       <span
-                                        className="MuiIconButton-label"
-                                      >
-                                        <input
-                                          aria-label="base switch"
-                                          checked={false}
-                                          className="PrivateSwitchBase-input-20 MuiSwitch-input"
-                                          disabled={false}
-                                          onChange={[Function]}
-                                          tabIndex="-1"
-                                          type="checkbox"
-                                          value=""
-                                        />
-                                        <span
-                                          className="MuiSwitch-thumb HvSwitch-thumb"
-                                        />
-                                      </span>
+                                        className="MuiSwitch-thumb HvSwitch-thumb"
+                                      />
                                     </span>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(IconButton)>
-                            </WithStyles(ForwardRef(IconButton))>
-                          </ForwardRef(SwitchBase)>
-                        </WithStyles(ForwardRef(SwitchBase))>
-                        <span
-                          className="MuiSwitch-track HvSwitch-track"
-                        />
-                      </span>
-                    </ForwardRef(Switch)>
-                  </WithStyles(ForwardRef(Switch))>
-                </div>
+                                  </span>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(IconButton)>
+                          </WithStyles(ForwardRef(IconButton))>
+                        </ForwardRef(SwitchBase)>
+                      </WithStyles(ForwardRef(SwitchBase))>
+                      <span
+                        className="MuiSwitch-track HvSwitch-track"
+                      />
+                    </span>
+                  </ForwardRef(Switch)>
+                </WithStyles(ForwardRef(Switch))>
               </div>
             </ConditionalWrapper>
           </Focus>
         </WithStyles(Focus)>
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-rightLabel HvSwitch-labelSelected"
+            className="HvSwitch-rightLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-rightLabel HvSwitch-labelSelected"
+              className="HvSwitch-rightLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -847,8 +1228,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-rightLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-rightLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Right
@@ -879,11 +1259,9 @@ exports[`Switch label click label can be clicked 1`] = `
     classes={
       Object {
         "checked": "HvSwitch-checked",
-        "checkedIcon": "HvSwitch-checkedIcon",
         "disabled": "HvSwitch-disabled",
         "disabledLabel": "HvSwitch-disabledLabel",
-        "labelDeselected": "HvSwitch-labelDeselected",
-        "labelSelected": "HvSwitch-labelSelected",
+        "focus": "HvSwitch-focus",
         "leftLabel": "HvSwitch-leftLabel",
         "rightLabel": "HvSwitch-rightLabel",
         "root": "HvSwitch-root",
@@ -906,11 +1284,9 @@ exports[`Switch label click label can be clicked 1`] = `
       classes={
         Object {
           "checked": "HvSwitch-checked",
-          "checkedIcon": "HvSwitch-checkedIcon",
           "disabled": "HvSwitch-disabled",
           "disabledLabel": "HvSwitch-disabledLabel",
-          "labelDeselected": "HvSwitch-labelDeselected",
-          "labelSelected": "HvSwitch-labelSelected",
+          "focus": "HvSwitch-focus",
           "leftLabel": "HvSwitch-leftLabel",
           "rightLabel": "HvSwitch-rightLabel",
           "root": "HvSwitch-root",
@@ -933,35 +1309,31 @@ exports[`Switch label click label can be clicked 1`] = `
       >
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-leftLabel HvSwitch-labelSelected"
+            className="HvSwitch-leftLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-leftLabel HvSwitch-labelSelected"
+              className="HvSwitch-leftLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -970,8 +1342,7 @@ exports[`Switch label click label can be clicked 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-leftLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-leftLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Left
@@ -980,8 +1351,11 @@ exports[`Switch label click label can be clicked 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          strategy="card"
-          useFalseFocus={true}
+          classes={
+            Object {
+              "focus": "HvSwitch-focus",
+            }
+          }
         >
           <Focus
             classes={
@@ -989,47 +1363,69 @@ exports[`Switch label click label can be clicked 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
-                "focus": "HvFocus-focus",
+                "focus": "HvFocus-focus HvSwitch-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
               }
             }
-            strategy="card"
-            useFalseFocus={true}
           >
             <ConditionalWrapper
-              condition={true}
+              condition={false}
               wrapper={[Function]}
             >
               <div
-                className="HvFocus-externalReference"
+                aria-checked={false}
+                aria-disabled={false}
+                className="HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="checkbox"
+                selected={false}
+                tabIndex="0"
               >
-                <div
-                  aria-checked={false}
-                  aria-disabled={false}
-                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  role="checkbox"
-                  selected={false}
-                  tabIndex="0"
+                <WithStyles(ForwardRef(Switch))
+                  checked={false}
+                  classes={
+                    Object {
+                      "checked": "HvSwitch-checked",
+                      "disabled": "HvSwitch-disabled",
+                      "root": "HvSwitch-switch",
+                      "switchBase": "HvSwitch-switchBase",
+                      "thumb": "HvSwitch-thumb",
+                      "track": "HvSwitch-track",
+                    }
+                  }
+                  disabled={false}
+                  inputProps={
+                    Object {
+                      "aria-label": "base switch",
+                    }
+                  }
+                  tabIndex="-1"
+                  value=""
                 >
-                  <WithStyles(ForwardRef(Switch))
+                  <ForwardRef(Switch)
                     checked={false}
                     classes={
                       Object {
-                        "checked": "HvSwitch-checked",
-                        "disabled": "HvSwitch-disabled",
-                        "root": "HvSwitch-switch",
-                        "switchBase": "HvSwitch-switchBase",
-                        "thumb": "HvSwitch-thumb",
-                        "track": "HvSwitch-track",
+                        "checked": "Mui-checked HvSwitch-checked",
+                        "colorPrimary": "MuiSwitch-colorPrimary",
+                        "colorSecondary": "MuiSwitch-colorSecondary",
+                        "disabled": "Mui-disabled HvSwitch-disabled",
+                        "edgeEnd": "MuiSwitch-edgeEnd",
+                        "edgeStart": "MuiSwitch-edgeStart",
+                        "input": "MuiSwitch-input",
+                        "root": "MuiSwitch-root HvSwitch-switch",
+                        "sizeSmall": "MuiSwitch-sizeSmall",
+                        "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
+                        "thumb": "MuiSwitch-thumb HvSwitch-thumb",
+                        "track": "MuiSwitch-track HvSwitch-track",
                       }
                     }
                     disabled={false}
@@ -1041,37 +1437,40 @@ exports[`Switch label click label can be clicked 1`] = `
                     tabIndex="-1"
                     value=""
                   >
-                    <ForwardRef(Switch)
-                      checked={false}
-                      classes={
-                        Object {
-                          "checked": "Mui-checked HvSwitch-checked",
-                          "colorPrimary": "MuiSwitch-colorPrimary",
-                          "colorSecondary": "MuiSwitch-colorSecondary",
-                          "disabled": "Mui-disabled HvSwitch-disabled",
-                          "edgeEnd": "MuiSwitch-edgeEnd",
-                          "edgeStart": "MuiSwitch-edgeStart",
-                          "input": "MuiSwitch-input",
-                          "root": "MuiSwitch-root HvSwitch-switch",
-                          "sizeSmall": "MuiSwitch-sizeSmall",
-                          "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
-                          "thumb": "MuiSwitch-thumb HvSwitch-thumb",
-                          "track": "MuiSwitch-track HvSwitch-track",
-                        }
-                      }
-                      disabled={false}
-                      inputProps={
-                        Object {
-                          "aria-label": "base switch",
-                        }
-                      }
-                      tabIndex="-1"
-                      value=""
+                    <span
+                      className="MuiSwitch-root HvSwitch-switch"
                     >
-                      <span
-                        className="MuiSwitch-root HvSwitch-switch"
+                      <WithStyles(ForwardRef(SwitchBase))
+                        checked={false}
+                        checkedIcon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        classes={
+                          Object {
+                            "checked": "Mui-checked HvSwitch-checked",
+                            "disabled": "Mui-disabled HvSwitch-disabled",
+                            "input": "MuiSwitch-input",
+                            "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                          }
+                        }
+                        disabled={false}
+                        icon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        inputProps={
+                          Object {
+                            "aria-label": "base switch",
+                          }
+                        }
+                        tabIndex="-1"
+                        type="checkbox"
+                        value=""
                       >
-                        <WithStyles(ForwardRef(SwitchBase))
+                        <ForwardRef(SwitchBase)
                           checked={false}
                           checkedIcon={
                             <span
@@ -1080,10 +1479,10 @@ exports[`Switch label click label can be clicked 1`] = `
                           }
                           classes={
                             Object {
-                              "checked": "Mui-checked HvSwitch-checked",
-                              "disabled": "Mui-disabled HvSwitch-disabled",
-                              "input": "MuiSwitch-input",
-                              "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                              "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                             }
                           }
                           disabled={false}
@@ -1101,175 +1500,140 @@ exports[`Switch label click label can be clicked 1`] = `
                           type="checkbox"
                           value=""
                         >
-                          <ForwardRef(SwitchBase)
-                            checked={false}
-                            checkedIcon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            classes={
-                              Object {
-                                "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
-                              }
-                            }
+                          <WithStyles(ForwardRef(IconButton))
+                            className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                            component="span"
                             disabled={false}
-                            icon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            inputProps={
-                              Object {
-                                "aria-label": "base switch",
-                              }
-                            }
-                            tabIndex="-1"
-                            type="checkbox"
-                            value=""
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
                           >
-                            <WithStyles(ForwardRef(IconButton))
+                            <ForwardRef(IconButton)
                               className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiIconButton-colorInherit",
+                                  "colorPrimary": "MuiIconButton-colorPrimary",
+                                  "colorSecondary": "MuiIconButton-colorSecondary",
+                                  "disabled": "Mui-disabled",
+                                  "edgeEnd": "MuiIconButton-edgeEnd",
+                                  "edgeStart": "MuiIconButton-edgeStart",
+                                  "label": "MuiIconButton-label",
+                                  "root": "MuiIconButton-root",
+                                  "sizeSmall": "MuiIconButton-sizeSmall",
+                                }
+                              }
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
                               tabIndex={null}
                             >
-                              <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiIconButton-colorInherit",
-                                    "colorPrimary": "MuiIconButton-colorPrimary",
-                                    "colorSecondary": "MuiIconButton-colorSecondary",
-                                    "disabled": "Mui-disabled",
-                                    "edgeEnd": "MuiIconButton-edgeEnd",
-                                    "edgeStart": "MuiIconButton-edgeStart",
-                                    "label": "MuiIconButton-label",
-                                    "root": "MuiIconButton-root",
-                                    "sizeSmall": "MuiIconButton-sizeSmall",
-                                  }
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 component="span"
                                 disabled={false}
+                                focusRipple={true}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
                                 tabIndex={null}
                               >
-                                <WithStyles(ForwardRef(ButtonBase))
+                                <ForwardRef(ButtonBase)
                                   centerRipple={true}
                                   className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
                                   component="span"
+                                  disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
                                   tabIndex={null}
                                 >
-                                  <ForwardRef(ButtonBase)
-                                    centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                    classes={
-                                      Object {
-                                        "disabled": "Mui-disabled",
-                                        "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
-                                      }
-                                    }
-                                    component="span"
-                                    disableRipple={true}
-                                    disabled={false}
-                                    focusRipple={true}
+                                  <span
+                                    aria-disabled={false}
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     onBlur={[Function]}
+                                    onDragLeave={[Function]}
                                     onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
-                                      aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={null}
+                                      className="MuiIconButton-label"
                                     >
+                                      <input
+                                        aria-label="base switch"
+                                        checked={false}
+                                        className="PrivateSwitchBase-input-20 MuiSwitch-input"
+                                        disabled={false}
+                                        onChange={[Function]}
+                                        tabIndex="-1"
+                                        type="checkbox"
+                                        value=""
+                                      />
                                       <span
-                                        className="MuiIconButton-label"
-                                      >
-                                        <input
-                                          aria-label="base switch"
-                                          checked={false}
-                                          className="PrivateSwitchBase-input-20 MuiSwitch-input"
-                                          disabled={false}
-                                          onChange={[Function]}
-                                          tabIndex="-1"
-                                          type="checkbox"
-                                          value=""
-                                        />
-                                        <span
-                                          className="MuiSwitch-thumb HvSwitch-thumb"
-                                        />
-                                      </span>
+                                        className="MuiSwitch-thumb HvSwitch-thumb"
+                                      />
                                     </span>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(IconButton)>
-                            </WithStyles(ForwardRef(IconButton))>
-                          </ForwardRef(SwitchBase)>
-                        </WithStyles(ForwardRef(SwitchBase))>
-                        <span
-                          className="MuiSwitch-track HvSwitch-track"
-                        />
-                      </span>
-                    </ForwardRef(Switch)>
-                  </WithStyles(ForwardRef(Switch))>
-                </div>
+                                  </span>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(IconButton)>
+                          </WithStyles(ForwardRef(IconButton))>
+                        </ForwardRef(SwitchBase)>
+                      </WithStyles(ForwardRef(SwitchBase))>
+                      <span
+                        className="MuiSwitch-track HvSwitch-track"
+                      />
+                    </span>
+                  </ForwardRef(Switch)>
+                </WithStyles(ForwardRef(Switch))>
               </div>
             </ConditionalWrapper>
           </Focus>
         </WithStyles(Focus)>
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-rightLabel HvSwitch-labelSelected"
+            className="HvSwitch-rightLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-rightLabel HvSwitch-labelSelected"
+              className="HvSwitch-rightLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -1278,8 +1642,7 @@ exports[`Switch label click label can be clicked 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-rightLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-rightLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Right
@@ -1310,11 +1673,9 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
     classes={
       Object {
         "checked": "HvSwitch-checked",
-        "checkedIcon": "HvSwitch-checkedIcon",
         "disabled": "HvSwitch-disabled",
         "disabledLabel": "HvSwitch-disabledLabel",
-        "labelDeselected": "HvSwitch-labelDeselected",
-        "labelSelected": "HvSwitch-labelSelected",
+        "focus": "HvSwitch-focus",
         "leftLabel": "HvSwitch-leftLabel",
         "rightLabel": "HvSwitch-rightLabel",
         "root": "HvSwitch-root",
@@ -1337,11 +1698,9 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
       classes={
         Object {
           "checked": "HvSwitch-checked",
-          "checkedIcon": "HvSwitch-checkedIcon",
           "disabled": "HvSwitch-disabled",
           "disabledLabel": "HvSwitch-disabledLabel",
-          "labelDeselected": "HvSwitch-labelDeselected",
-          "labelSelected": "HvSwitch-labelSelected",
+          "focus": "HvSwitch-focus",
           "leftLabel": "HvSwitch-leftLabel",
           "rightLabel": "HvSwitch-rightLabel",
           "root": "HvSwitch-root",
@@ -1364,35 +1723,31 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
       >
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-leftLabel HvSwitch-labelSelected"
+            className="HvSwitch-leftLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-leftLabel HvSwitch-labelSelected"
+              className="HvSwitch-leftLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -1401,8 +1756,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-leftLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-leftLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Left
@@ -1411,8 +1765,11 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          strategy="card"
-          useFalseFocus={true}
+          classes={
+            Object {
+              "focus": "HvSwitch-focus",
+            }
+          }
         >
           <Focus
             classes={
@@ -1420,47 +1777,69 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
-                "focus": "HvFocus-focus",
+                "focus": "HvFocus-focus HvSwitch-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
               }
             }
-            strategy="card"
-            useFalseFocus={true}
           >
             <ConditionalWrapper
-              condition={true}
+              condition={false}
               wrapper={[Function]}
             >
               <div
-                className="HvFocus-externalReference"
+                aria-checked={false}
+                aria-disabled={false}
+                className="HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="checkbox"
+                selected={false}
+                tabIndex="0"
               >
-                <div
-                  aria-checked={false}
-                  aria-disabled={false}
-                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  role="checkbox"
-                  selected={false}
-                  tabIndex="0"
+                <WithStyles(ForwardRef(Switch))
+                  checked={false}
+                  classes={
+                    Object {
+                      "checked": "HvSwitch-checked",
+                      "disabled": "HvSwitch-disabled",
+                      "root": "HvSwitch-switch",
+                      "switchBase": "HvSwitch-switchBase",
+                      "thumb": "HvSwitch-thumb",
+                      "track": "HvSwitch-track",
+                    }
+                  }
+                  disabled={false}
+                  inputProps={
+                    Object {
+                      "aria-label": "base switch",
+                    }
+                  }
+                  tabIndex="-1"
+                  value=""
                 >
-                  <WithStyles(ForwardRef(Switch))
+                  <ForwardRef(Switch)
                     checked={false}
                     classes={
                       Object {
-                        "checked": "HvSwitch-checked",
-                        "disabled": "HvSwitch-disabled",
-                        "root": "HvSwitch-switch",
-                        "switchBase": "HvSwitch-switchBase",
-                        "thumb": "HvSwitch-thumb",
-                        "track": "HvSwitch-track",
+                        "checked": "Mui-checked HvSwitch-checked",
+                        "colorPrimary": "MuiSwitch-colorPrimary",
+                        "colorSecondary": "MuiSwitch-colorSecondary",
+                        "disabled": "Mui-disabled HvSwitch-disabled",
+                        "edgeEnd": "MuiSwitch-edgeEnd",
+                        "edgeStart": "MuiSwitch-edgeStart",
+                        "input": "MuiSwitch-input",
+                        "root": "MuiSwitch-root HvSwitch-switch",
+                        "sizeSmall": "MuiSwitch-sizeSmall",
+                        "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
+                        "thumb": "MuiSwitch-thumb HvSwitch-thumb",
+                        "track": "MuiSwitch-track HvSwitch-track",
                       }
                     }
                     disabled={false}
@@ -1472,37 +1851,40 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                     tabIndex="-1"
                     value=""
                   >
-                    <ForwardRef(Switch)
-                      checked={false}
-                      classes={
-                        Object {
-                          "checked": "Mui-checked HvSwitch-checked",
-                          "colorPrimary": "MuiSwitch-colorPrimary",
-                          "colorSecondary": "MuiSwitch-colorSecondary",
-                          "disabled": "Mui-disabled HvSwitch-disabled",
-                          "edgeEnd": "MuiSwitch-edgeEnd",
-                          "edgeStart": "MuiSwitch-edgeStart",
-                          "input": "MuiSwitch-input",
-                          "root": "MuiSwitch-root HvSwitch-switch",
-                          "sizeSmall": "MuiSwitch-sizeSmall",
-                          "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
-                          "thumb": "MuiSwitch-thumb HvSwitch-thumb",
-                          "track": "MuiSwitch-track HvSwitch-track",
-                        }
-                      }
-                      disabled={false}
-                      inputProps={
-                        Object {
-                          "aria-label": "base switch",
-                        }
-                      }
-                      tabIndex="-1"
-                      value=""
+                    <span
+                      className="MuiSwitch-root HvSwitch-switch"
                     >
-                      <span
-                        className="MuiSwitch-root HvSwitch-switch"
+                      <WithStyles(ForwardRef(SwitchBase))
+                        checked={false}
+                        checkedIcon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        classes={
+                          Object {
+                            "checked": "Mui-checked HvSwitch-checked",
+                            "disabled": "Mui-disabled HvSwitch-disabled",
+                            "input": "MuiSwitch-input",
+                            "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                          }
+                        }
+                        disabled={false}
+                        icon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        inputProps={
+                          Object {
+                            "aria-label": "base switch",
+                          }
+                        }
+                        tabIndex="-1"
+                        type="checkbox"
+                        value=""
                       >
-                        <WithStyles(ForwardRef(SwitchBase))
+                        <ForwardRef(SwitchBase)
                           checked={false}
                           checkedIcon={
                             <span
@@ -1511,10 +1893,10 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                           }
                           classes={
                             Object {
-                              "checked": "Mui-checked HvSwitch-checked",
-                              "disabled": "Mui-disabled HvSwitch-disabled",
-                              "input": "MuiSwitch-input",
-                              "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                              "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                             }
                           }
                           disabled={false}
@@ -1532,175 +1914,140 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                           type="checkbox"
                           value=""
                         >
-                          <ForwardRef(SwitchBase)
-                            checked={false}
-                            checkedIcon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            classes={
-                              Object {
-                                "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
-                              }
-                            }
+                          <WithStyles(ForwardRef(IconButton))
+                            className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                            component="span"
                             disabled={false}
-                            icon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            inputProps={
-                              Object {
-                                "aria-label": "base switch",
-                              }
-                            }
-                            tabIndex="-1"
-                            type="checkbox"
-                            value=""
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
                           >
-                            <WithStyles(ForwardRef(IconButton))
+                            <ForwardRef(IconButton)
                               className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiIconButton-colorInherit",
+                                  "colorPrimary": "MuiIconButton-colorPrimary",
+                                  "colorSecondary": "MuiIconButton-colorSecondary",
+                                  "disabled": "Mui-disabled",
+                                  "edgeEnd": "MuiIconButton-edgeEnd",
+                                  "edgeStart": "MuiIconButton-edgeStart",
+                                  "label": "MuiIconButton-label",
+                                  "root": "MuiIconButton-root",
+                                  "sizeSmall": "MuiIconButton-sizeSmall",
+                                }
+                              }
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
                               tabIndex={null}
                             >
-                              <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiIconButton-colorInherit",
-                                    "colorPrimary": "MuiIconButton-colorPrimary",
-                                    "colorSecondary": "MuiIconButton-colorSecondary",
-                                    "disabled": "Mui-disabled",
-                                    "edgeEnd": "MuiIconButton-edgeEnd",
-                                    "edgeStart": "MuiIconButton-edgeStart",
-                                    "label": "MuiIconButton-label",
-                                    "root": "MuiIconButton-root",
-                                    "sizeSmall": "MuiIconButton-sizeSmall",
-                                  }
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 component="span"
                                 disabled={false}
+                                focusRipple={true}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
                                 tabIndex={null}
                               >
-                                <WithStyles(ForwardRef(ButtonBase))
+                                <ForwardRef(ButtonBase)
                                   centerRipple={true}
                                   className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
                                   component="span"
+                                  disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
                                   tabIndex={null}
                                 >
-                                  <ForwardRef(ButtonBase)
-                                    centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                    classes={
-                                      Object {
-                                        "disabled": "Mui-disabled",
-                                        "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
-                                      }
-                                    }
-                                    component="span"
-                                    disableRipple={true}
-                                    disabled={false}
-                                    focusRipple={true}
+                                  <span
+                                    aria-disabled={false}
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     onBlur={[Function]}
+                                    onDragLeave={[Function]}
                                     onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
-                                      aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={null}
+                                      className="MuiIconButton-label"
                                     >
+                                      <input
+                                        aria-label="base switch"
+                                        checked={false}
+                                        className="PrivateSwitchBase-input-20 MuiSwitch-input"
+                                        disabled={false}
+                                        onChange={[Function]}
+                                        tabIndex="-1"
+                                        type="checkbox"
+                                        value=""
+                                      />
                                       <span
-                                        className="MuiIconButton-label"
-                                      >
-                                        <input
-                                          aria-label="base switch"
-                                          checked={false}
-                                          className="PrivateSwitchBase-input-20 MuiSwitch-input"
-                                          disabled={false}
-                                          onChange={[Function]}
-                                          tabIndex="-1"
-                                          type="checkbox"
-                                          value=""
-                                        />
-                                        <span
-                                          className="MuiSwitch-thumb HvSwitch-thumb"
-                                        />
-                                      </span>
+                                        className="MuiSwitch-thumb HvSwitch-thumb"
+                                      />
                                     </span>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(IconButton)>
-                            </WithStyles(ForwardRef(IconButton))>
-                          </ForwardRef(SwitchBase)>
-                        </WithStyles(ForwardRef(SwitchBase))>
-                        <span
-                          className="MuiSwitch-track HvSwitch-track"
-                        />
-                      </span>
-                    </ForwardRef(Switch)>
-                  </WithStyles(ForwardRef(Switch))>
-                </div>
+                                  </span>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(IconButton)>
+                          </WithStyles(ForwardRef(IconButton))>
+                        </ForwardRef(SwitchBase)>
+                      </WithStyles(ForwardRef(SwitchBase))>
+                      <span
+                        className="MuiSwitch-track HvSwitch-track"
+                      />
+                    </span>
+                  </ForwardRef(Switch)>
+                </WithStyles(ForwardRef(Switch))>
               </div>
             </ConditionalWrapper>
           </Focus>
         </WithStyles(Focus)>
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-rightLabel HvSwitch-labelSelected"
+            className="HvSwitch-rightLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-rightLabel HvSwitch-labelSelected"
+              className="HvSwitch-rightLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -1709,8 +2056,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-rightLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-rightLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Right
@@ -1741,11 +2087,9 @@ exports[`Switch with no label display but with custom label configuration should
     classes={
       Object {
         "checked": "HvSwitch-checked",
-        "checkedIcon": "HvSwitch-checkedIcon",
         "disabled": "HvSwitch-disabled",
         "disabledLabel": "HvSwitch-disabledLabel",
-        "labelDeselected": "HvSwitch-labelDeselected",
-        "labelSelected": "HvSwitch-labelSelected",
+        "focus": "HvSwitch-focus",
         "leftLabel": "HvSwitch-leftLabel",
         "rightLabel": "HvSwitch-rightLabel",
         "root": "HvSwitch-root",
@@ -1768,11 +2112,9 @@ exports[`Switch with no label display but with custom label configuration should
       classes={
         Object {
           "checked": "HvSwitch-checked",
-          "checkedIcon": "HvSwitch-checkedIcon",
           "disabled": "HvSwitch-disabled",
           "disabledLabel": "HvSwitch-disabledLabel",
-          "labelDeselected": "HvSwitch-labelDeselected",
-          "labelSelected": "HvSwitch-labelSelected",
+          "focus": "HvSwitch-focus",
           "leftLabel": "HvSwitch-leftLabel",
           "rightLabel": "HvSwitch-rightLabel",
           "root": "HvSwitch-root",
@@ -1795,35 +2137,31 @@ exports[`Switch with no label display but with custom label configuration should
       >
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-leftLabel HvSwitch-labelSelected"
+            className="HvSwitch-leftLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-leftLabel HvSwitch-labelSelected"
+              className="HvSwitch-leftLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -1832,8 +2170,7 @@ exports[`Switch with no label display but with custom label configuration should
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-leftLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-leftLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Left
@@ -1842,8 +2179,11 @@ exports[`Switch with no label display but with custom label configuration should
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          strategy="card"
-          useFalseFocus={true}
+          classes={
+            Object {
+              "focus": "HvSwitch-focus",
+            }
+          }
         >
           <Focus
             classes={
@@ -1851,47 +2191,69 @@ exports[`Switch with no label display but with custom label configuration should
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
-                "focus": "HvFocus-focus",
+                "focus": "HvFocus-focus HvSwitch-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
               }
             }
-            strategy="card"
-            useFalseFocus={true}
           >
             <ConditionalWrapper
-              condition={true}
+              condition={false}
               wrapper={[Function]}
             >
               <div
-                className="HvFocus-externalReference"
+                aria-checked={false}
+                aria-disabled={false}
+                className="HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="checkbox"
+                selected={false}
+                tabIndex="0"
               >
-                <div
-                  aria-checked={false}
-                  aria-disabled={false}
-                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  role="checkbox"
-                  selected={false}
-                  tabIndex="0"
+                <WithStyles(ForwardRef(Switch))
+                  checked={false}
+                  classes={
+                    Object {
+                      "checked": "HvSwitch-checked",
+                      "disabled": "HvSwitch-disabled",
+                      "root": "HvSwitch-switch",
+                      "switchBase": "HvSwitch-switchBase",
+                      "thumb": "HvSwitch-thumb",
+                      "track": "HvSwitch-track",
+                    }
+                  }
+                  disabled={false}
+                  inputProps={
+                    Object {
+                      "aria-label": "base switch",
+                    }
+                  }
+                  tabIndex="-1"
+                  value=""
                 >
-                  <WithStyles(ForwardRef(Switch))
+                  <ForwardRef(Switch)
                     checked={false}
                     classes={
                       Object {
-                        "checked": "HvSwitch-checked",
-                        "disabled": "HvSwitch-disabled",
-                        "root": "HvSwitch-switch",
-                        "switchBase": "HvSwitch-switchBase",
-                        "thumb": "HvSwitch-thumb",
-                        "track": "HvSwitch-track",
+                        "checked": "Mui-checked HvSwitch-checked",
+                        "colorPrimary": "MuiSwitch-colorPrimary",
+                        "colorSecondary": "MuiSwitch-colorSecondary",
+                        "disabled": "Mui-disabled HvSwitch-disabled",
+                        "edgeEnd": "MuiSwitch-edgeEnd",
+                        "edgeStart": "MuiSwitch-edgeStart",
+                        "input": "MuiSwitch-input",
+                        "root": "MuiSwitch-root HvSwitch-switch",
+                        "sizeSmall": "MuiSwitch-sizeSmall",
+                        "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
+                        "thumb": "MuiSwitch-thumb HvSwitch-thumb",
+                        "track": "MuiSwitch-track HvSwitch-track",
                       }
                     }
                     disabled={false}
@@ -1903,37 +2265,40 @@ exports[`Switch with no label display but with custom label configuration should
                     tabIndex="-1"
                     value=""
                   >
-                    <ForwardRef(Switch)
-                      checked={false}
-                      classes={
-                        Object {
-                          "checked": "Mui-checked HvSwitch-checked",
-                          "colorPrimary": "MuiSwitch-colorPrimary",
-                          "colorSecondary": "MuiSwitch-colorSecondary",
-                          "disabled": "Mui-disabled HvSwitch-disabled",
-                          "edgeEnd": "MuiSwitch-edgeEnd",
-                          "edgeStart": "MuiSwitch-edgeStart",
-                          "input": "MuiSwitch-input",
-                          "root": "MuiSwitch-root HvSwitch-switch",
-                          "sizeSmall": "MuiSwitch-sizeSmall",
-                          "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
-                          "thumb": "MuiSwitch-thumb HvSwitch-thumb",
-                          "track": "MuiSwitch-track HvSwitch-track",
-                        }
-                      }
-                      disabled={false}
-                      inputProps={
-                        Object {
-                          "aria-label": "base switch",
-                        }
-                      }
-                      tabIndex="-1"
-                      value=""
+                    <span
+                      className="MuiSwitch-root HvSwitch-switch"
                     >
-                      <span
-                        className="MuiSwitch-root HvSwitch-switch"
+                      <WithStyles(ForwardRef(SwitchBase))
+                        checked={false}
+                        checkedIcon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        classes={
+                          Object {
+                            "checked": "Mui-checked HvSwitch-checked",
+                            "disabled": "Mui-disabled HvSwitch-disabled",
+                            "input": "MuiSwitch-input",
+                            "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                          }
+                        }
+                        disabled={false}
+                        icon={
+                          <span
+                            className="MuiSwitch-thumb HvSwitch-thumb"
+                          />
+                        }
+                        inputProps={
+                          Object {
+                            "aria-label": "base switch",
+                          }
+                        }
+                        tabIndex="-1"
+                        type="checkbox"
+                        value=""
                       >
-                        <WithStyles(ForwardRef(SwitchBase))
+                        <ForwardRef(SwitchBase)
                           checked={false}
                           checkedIcon={
                             <span
@@ -1942,10 +2307,10 @@ exports[`Switch with no label display but with custom label configuration should
                           }
                           classes={
                             Object {
-                              "checked": "Mui-checked HvSwitch-checked",
-                              "disabled": "Mui-disabled HvSwitch-disabled",
-                              "input": "MuiSwitch-input",
-                              "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                              "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                             }
                           }
                           disabled={false}
@@ -1963,606 +2328,140 @@ exports[`Switch with no label display but with custom label configuration should
                           type="checkbox"
                           value=""
                         >
-                          <ForwardRef(SwitchBase)
-                            checked={false}
-                            checkedIcon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            classes={
-                              Object {
-                                "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
-                              }
-                            }
+                          <WithStyles(ForwardRef(IconButton))
+                            className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                            component="span"
                             disabled={false}
-                            icon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            inputProps={
-                              Object {
-                                "aria-label": "base switch",
-                              }
-                            }
-                            tabIndex="-1"
-                            type="checkbox"
-                            value=""
+                            onBlur={[Function]}
+                            onFocus={[Function]}
+                            tabIndex={null}
                           >
-                            <WithStyles(ForwardRef(IconButton))
+                            <ForwardRef(IconButton)
                               className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              classes={
+                                Object {
+                                  "colorInherit": "MuiIconButton-colorInherit",
+                                  "colorPrimary": "MuiIconButton-colorPrimary",
+                                  "colorSecondary": "MuiIconButton-colorSecondary",
+                                  "disabled": "Mui-disabled",
+                                  "edgeEnd": "MuiIconButton-edgeEnd",
+                                  "edgeStart": "MuiIconButton-edgeStart",
+                                  "label": "MuiIconButton-label",
+                                  "root": "MuiIconButton-root",
+                                  "sizeSmall": "MuiIconButton-sizeSmall",
+                                }
+                              }
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
                               tabIndex={null}
                             >
-                              <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiIconButton-colorInherit",
-                                    "colorPrimary": "MuiIconButton-colorPrimary",
-                                    "colorSecondary": "MuiIconButton-colorSecondary",
-                                    "disabled": "Mui-disabled",
-                                    "edgeEnd": "MuiIconButton-edgeEnd",
-                                    "edgeStart": "MuiIconButton-edgeStart",
-                                    "label": "MuiIconButton-label",
-                                    "root": "MuiIconButton-root",
-                                    "sizeSmall": "MuiIconButton-sizeSmall",
-                                  }
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 component="span"
                                 disabled={false}
+                                focusRipple={true}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
                                 tabIndex={null}
                               >
-                                <WithStyles(ForwardRef(ButtonBase))
+                                <ForwardRef(ButtonBase)
                                   centerRipple={true}
                                   className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
+                                    }
+                                  }
                                   component="span"
+                                  disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
                                   tabIndex={null}
                                 >
-                                  <ForwardRef(ButtonBase)
-                                    centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                    classes={
-                                      Object {
-                                        "disabled": "Mui-disabled",
-                                        "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
-                                      }
-                                    }
-                                    component="span"
-                                    disableRipple={true}
-                                    disabled={false}
-                                    focusRipple={true}
+                                  <span
+                                    aria-disabled={false}
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     onBlur={[Function]}
+                                    onDragLeave={[Function]}
                                     onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
-                                      aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={null}
+                                      className="MuiIconButton-label"
                                     >
+                                      <input
+                                        aria-label="base switch"
+                                        checked={false}
+                                        className="PrivateSwitchBase-input-20 MuiSwitch-input"
+                                        disabled={false}
+                                        onChange={[Function]}
+                                        tabIndex="-1"
+                                        type="checkbox"
+                                        value=""
+                                      />
                                       <span
-                                        className="MuiIconButton-label"
-                                      >
-                                        <input
-                                          aria-label="base switch"
-                                          checked={false}
-                                          className="PrivateSwitchBase-input-20 MuiSwitch-input"
-                                          disabled={false}
-                                          onChange={[Function]}
-                                          tabIndex="-1"
-                                          type="checkbox"
-                                          value=""
-                                        />
-                                        <span
-                                          className="MuiSwitch-thumb HvSwitch-thumb"
-                                        />
-                                      </span>
+                                        className="MuiSwitch-thumb HvSwitch-thumb"
+                                      />
                                     </span>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(IconButton)>
-                            </WithStyles(ForwardRef(IconButton))>
-                          </ForwardRef(SwitchBase)>
-                        </WithStyles(ForwardRef(SwitchBase))>
-                        <span
-                          className="MuiSwitch-track HvSwitch-track"
-                        />
-                      </span>
-                    </ForwardRef(Switch)>
-                  </WithStyles(ForwardRef(Switch))>
-                </div>
-              </div>
-            </ConditionalWrapper>
-          </Focus>
-        </WithStyles(Focus)>
-        <div>
-          <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-rightLabel HvSwitch-labelSelected"
-            onClick={[Function]}
-          >
-            <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-rightLabel HvSwitch-labelSelected"
-              classes={
-                Object {
-                  "3xlTitle": "HvTypography-3xlTitle",
-                  "4xlTitle": "HvTypography-4xlTitle",
-                  "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
-                  "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
-                  "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
-                  "mTitle": "HvTypography-mTitle",
-                  "normalText": "HvTypography-normalText",
-                  "placeholderText": "HvTypography-placeholderText",
-                  "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
-                  "sTitle": "HvTypography-sTitle",
-                  "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
-                  "vizText": "HvTypography-vizText",
-                  "xlTitle": "HvTypography-xlTitle",
-                  "xsTitle": "HvTypography-xsTitle",
-                  "xxlTitle": "HvTypography-xxlTitle",
-                  "xxsTitle": "HvTypography-xxsTitle",
-                }
-              }
-              onClick={[Function]}
-            >
-              <p
-                aria-disabled={false}
-                className="HvSwitch-rightLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
-                onClick={[Function]}
-              >
-                Right
-              </p>
-            </ForwardRef>
-          </WithStyles(ForwardRef)>
-        </div>
-      </div>
-    </HvSwitch>
-  </WithLabels>
-</WithStyles(WithLabels)>
-`;
-
-exports[`Switch withStyles should render correctly 1`] = `
-<WithStyles(WithLabels)
-  checked={false}
-  classes={Object {}}
-  labels={
-    Object {
-      "left": "Left",
-      "right": "Right",
-    }
-  }
-  showLabels={true}
->
-  <WithLabels
-    checked={false}
-    classes={
-      Object {
-        "checked": "HvSwitch-checked",
-        "checkedIcon": "HvSwitch-checkedIcon",
-        "disabled": "HvSwitch-disabled",
-        "disabledLabel": "HvSwitch-disabledLabel",
-        "labelDeselected": "HvSwitch-labelDeselected",
-        "labelSelected": "HvSwitch-labelSelected",
-        "leftLabel": "HvSwitch-leftLabel",
-        "rightLabel": "HvSwitch-rightLabel",
-        "root": "HvSwitch-root",
-        "switch": "HvSwitch-switch",
-        "switchBase": "HvSwitch-switchBase",
-        "thumb": "HvSwitch-thumb",
-        "track": "HvSwitch-track",
-      }
-    }
-    labels={
-      Object {
-        "left": "Left",
-        "right": "Right",
-      }
-    }
-    showLabels={true}
-  >
-    <HvSwitch
-      checked={false}
-      classes={
-        Object {
-          "checked": "HvSwitch-checked",
-          "checkedIcon": "HvSwitch-checkedIcon",
-          "disabled": "HvSwitch-disabled",
-          "disabledLabel": "HvSwitch-disabledLabel",
-          "labelDeselected": "HvSwitch-labelDeselected",
-          "labelSelected": "HvSwitch-labelSelected",
-          "leftLabel": "HvSwitch-leftLabel",
-          "rightLabel": "HvSwitch-rightLabel",
-          "root": "HvSwitch-root",
-          "switch": "HvSwitch-switch",
-          "switchBase": "HvSwitch-switchBase",
-          "thumb": "HvSwitch-thumb",
-          "track": "HvSwitch-track",
-        }
-      }
-      labels={
-        Object {
-          "left": "Left",
-          "right": "Right",
-        }
-      }
-      showLabels={true}
-    >
-      <div
-        className="HvSwitch-root"
-      >
-        <div>
-          <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-leftLabel HvSwitch-labelSelected"
-            onClick={[Function]}
-          >
-            <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-leftLabel HvSwitch-labelSelected"
-              classes={
-                Object {
-                  "3xlTitle": "HvTypography-3xlTitle",
-                  "4xlTitle": "HvTypography-4xlTitle",
-                  "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
-                  "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
-                  "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
-                  "mTitle": "HvTypography-mTitle",
-                  "normalText": "HvTypography-normalText",
-                  "placeholderText": "HvTypography-placeholderText",
-                  "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
-                  "sTitle": "HvTypography-sTitle",
-                  "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
-                  "vizText": "HvTypography-vizText",
-                  "xlTitle": "HvTypography-xlTitle",
-                  "xsTitle": "HvTypography-xsTitle",
-                  "xxlTitle": "HvTypography-xxlTitle",
-                  "xxsTitle": "HvTypography-xxsTitle",
-                }
-              }
-              onClick={[Function]}
-            >
-              <p
-                aria-disabled={false}
-                className="HvSwitch-leftLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
-                onClick={[Function]}
-              >
-                Left
-              </p>
-            </ForwardRef>
-          </WithStyles(ForwardRef)>
-        </div>
-        <WithStyles(Focus)
-          strategy="card"
-          useFalseFocus={true}
-        >
-          <Focus
-            classes={
-              Object {
-                "disabled": "HvFocus-disabled",
-                "externalReference": "HvFocus-externalReference",
-                "falseFocus": "HvFocus-falseFocus",
-                "focus": "HvFocus-focus",
-                "focusDisabled": "HvFocus-focusDisabled",
-                "focused": "HvFocus-focused",
-                "root": "HvFocus-root",
-                "selected": "HvFocus-selected",
-              }
-            }
-            strategy="card"
-            useFalseFocus={true}
-          >
-            <ConditionalWrapper
-              condition={true}
-              wrapper={[Function]}
-            >
-              <div
-                className="HvFocus-externalReference"
-              >
-                <div
-                  aria-checked={false}
-                  aria-disabled={false}
-                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  role="checkbox"
-                  selected={false}
-                  tabIndex="0"
-                >
-                  <WithStyles(ForwardRef(Switch))
-                    checked={false}
-                    classes={
-                      Object {
-                        "checked": "HvSwitch-checked",
-                        "disabled": "HvSwitch-disabled",
-                        "root": "HvSwitch-switch",
-                        "switchBase": "HvSwitch-switchBase",
-                        "thumb": "HvSwitch-thumb",
-                        "track": "HvSwitch-track",
-                      }
-                    }
-                    disabled={false}
-                    inputProps={
-                      Object {
-                        "aria-label": "base switch",
-                      }
-                    }
-                    tabIndex="-1"
-                    value=""
-                  >
-                    <ForwardRef(Switch)
-                      checked={false}
-                      classes={
-                        Object {
-                          "checked": "Mui-checked HvSwitch-checked",
-                          "colorPrimary": "MuiSwitch-colorPrimary",
-                          "colorSecondary": "MuiSwitch-colorSecondary",
-                          "disabled": "Mui-disabled HvSwitch-disabled",
-                          "edgeEnd": "MuiSwitch-edgeEnd",
-                          "edgeStart": "MuiSwitch-edgeStart",
-                          "input": "MuiSwitch-input",
-                          "root": "MuiSwitch-root HvSwitch-switch",
-                          "sizeSmall": "MuiSwitch-sizeSmall",
-                          "switchBase": "MuiSwitch-switchBase HvSwitch-switchBase",
-                          "thumb": "MuiSwitch-thumb HvSwitch-thumb",
-                          "track": "MuiSwitch-track HvSwitch-track",
-                        }
-                      }
-                      disabled={false}
-                      inputProps={
-                        Object {
-                          "aria-label": "base switch",
-                        }
-                      }
-                      tabIndex="-1"
-                      value=""
-                    >
+                                  </span>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(IconButton)>
+                          </WithStyles(ForwardRef(IconButton))>
+                        </ForwardRef(SwitchBase)>
+                      </WithStyles(ForwardRef(SwitchBase))>
                       <span
-                        className="MuiSwitch-root HvSwitch-switch"
-                      >
-                        <WithStyles(ForwardRef(SwitchBase))
-                          checked={false}
-                          checkedIcon={
-                            <span
-                              className="MuiSwitch-thumb HvSwitch-thumb"
-                            />
-                          }
-                          classes={
-                            Object {
-                              "checked": "Mui-checked HvSwitch-checked",
-                              "disabled": "Mui-disabled HvSwitch-disabled",
-                              "input": "MuiSwitch-input",
-                              "root": "MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
-                            }
-                          }
-                          disabled={false}
-                          icon={
-                            <span
-                              className="MuiSwitch-thumb HvSwitch-thumb"
-                            />
-                          }
-                          inputProps={
-                            Object {
-                              "aria-label": "base switch",
-                            }
-                          }
-                          tabIndex="-1"
-                          type="checkbox"
-                          value=""
-                        >
-                          <ForwardRef(SwitchBase)
-                            checked={false}
-                            checkedIcon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            classes={
-                              Object {
-                                "checked": "PrivateSwitchBase-checked-18 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-19 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-20 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
-                              }
-                            }
-                            disabled={false}
-                            icon={
-                              <span
-                                className="MuiSwitch-thumb HvSwitch-thumb"
-                              />
-                            }
-                            inputProps={
-                              Object {
-                                "aria-label": "base switch",
-                              }
-                            }
-                            tabIndex="-1"
-                            type="checkbox"
-                            value=""
-                          >
-                            <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                              component="span"
-                              disabled={false}
-                              onBlur={[Function]}
-                              onFocus={[Function]}
-                              tabIndex={null}
-                            >
-                              <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiIconButton-colorInherit",
-                                    "colorPrimary": "MuiIconButton-colorPrimary",
-                                    "colorSecondary": "MuiIconButton-colorSecondary",
-                                    "disabled": "Mui-disabled",
-                                    "edgeEnd": "MuiIconButton-edgeEnd",
-                                    "edgeStart": "MuiIconButton-edgeStart",
-                                    "label": "MuiIconButton-label",
-                                    "root": "MuiIconButton-root",
-                                    "sizeSmall": "MuiIconButton-sizeSmall",
-                                  }
-                                }
-                                component="span"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onFocus={[Function]}
-                                tabIndex={null}
-                              >
-                                <WithStyles(ForwardRef(ButtonBase))
-                                  centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                  component="span"
-                                  disabled={false}
-                                  focusRipple={true}
-                                  onBlur={[Function]}
-                                  onFocus={[Function]}
-                                  tabIndex={null}
-                                >
-                                  <ForwardRef(ButtonBase)
-                                    centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                    classes={
-                                      Object {
-                                        "disabled": "Mui-disabled",
-                                        "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
-                                      }
-                                    }
-                                    component="span"
-                                    disableRipple={true}
-                                    disabled={false}
-                                    focusRipple={true}
-                                    onBlur={[Function]}
-                                    onFocus={[Function]}
-                                    tabIndex={null}
-                                  >
-                                    <span
-                                      aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-17 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={null}
-                                    >
-                                      <span
-                                        className="MuiIconButton-label"
-                                      >
-                                        <input
-                                          aria-label="base switch"
-                                          checked={false}
-                                          className="PrivateSwitchBase-input-20 MuiSwitch-input"
-                                          disabled={false}
-                                          onChange={[Function]}
-                                          tabIndex="-1"
-                                          type="checkbox"
-                                          value=""
-                                        />
-                                        <span
-                                          className="MuiSwitch-thumb HvSwitch-thumb"
-                                        />
-                                      </span>
-                                    </span>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(IconButton)>
-                            </WithStyles(ForwardRef(IconButton))>
-                          </ForwardRef(SwitchBase)>
-                        </WithStyles(ForwardRef(SwitchBase))>
-                        <span
-                          className="MuiSwitch-track HvSwitch-track"
-                        />
-                      </span>
-                    </ForwardRef(Switch)>
-                  </WithStyles(ForwardRef(Switch))>
-                </div>
+                        className="MuiSwitch-track HvSwitch-track"
+                      />
+                    </span>
+                  </ForwardRef(Switch)>
+                </WithStyles(ForwardRef(Switch))>
               </div>
             </ConditionalWrapper>
           </Focus>
         </WithStyles(Focus)>
         <div>
           <WithStyles(ForwardRef)
-            aria-disabled={false}
-            className="HvSwitch-rightLabel HvSwitch-labelSelected"
+            className="HvSwitch-rightLabel"
             onClick={[Function]}
           >
             <ForwardRef
-              aria-disabled={false}
-              className="HvSwitch-rightLabel HvSwitch-labelSelected"
+              className="HvSwitch-rightLabel"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -2571,8 +2470,7 @@ exports[`Switch withStyles should render correctly 1`] = `
               onClick={[Function]}
             >
               <p
-                aria-disabled={false}
-                className="HvSwitch-rightLabel HvSwitch-labelSelected HvTypography-root HvTypography-normalText"
+                className="HvSwitch-rightLabel HvTypography-root HvTypography-normalText"
                 onClick={[Function]}
               >
                 Right

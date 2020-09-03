@@ -52,7 +52,7 @@ const styles = theme => {
       width: "40px"
     },
     calendarDateNotInMonth: {
-      color: theme.palette.atmo7
+      color: theme.palette.atmo5
     },
     calendarDateSelected: {
       backgroundColor: theme.palette.acce1,

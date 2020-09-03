@@ -22,7 +22,7 @@ const styles = theme => ({
   },
   disabled: {
     "& svg *.color0": {
-      fill: theme.palette.atmo6
+      fill: theme.palette.atmo4
     },
     "&:hover": {
       backgroundColor: "transparent",

@@ -21,7 +21,7 @@ const styles = theme => ({
     }
   },
   inputCalendarClosed: {
-    border: `1px solid ${theme.palette.atmo6}`,
+    border: `1px solid ${theme.palette.atmo4}`,
     "&:hover": {
       cursor: "pointer",
       border: `1px solid ${theme.palette.acce1}`

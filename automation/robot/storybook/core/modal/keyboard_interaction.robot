@@ -6,7 +6,6 @@ Test Setup    Run Keywords
 ...           AND    Wait Until Element Is Enabled    ${buttonWarning}
 Force Tags    keyboard
 
-
 *** Test Cases ***
 navigate to next component element when TAB is pressed
     Click Button                     Warning

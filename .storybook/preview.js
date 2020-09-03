@@ -39,6 +39,7 @@ addParameters({
         "Foundation",
         ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
         "Components",
+        "Patterns",
         "Visualizations",
         "Lab",
         "Templates",

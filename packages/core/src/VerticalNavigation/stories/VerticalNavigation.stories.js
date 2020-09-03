@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import { LogOut, OpenBook, Operation, Tool, User, Stop, Play } from "@hv/uikit-react-icons/dist";
 import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
 
 export default {
-  title: "Components/Navigation System/Vertical Navigation",
+  title: "Patterns/Navigation System/Vertical Navigation",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvVerticalNavigation } from '@hv/uikit-react-core/dist'",
     subcomponents: { Navigation, Actions, Action }
@@ -18,7 +18,6 @@ export const Main = () => {
     {
       id: "01",
       label: "System",
-      icon: <Tool />,
       data: [
         {
           id: "01-01",
@@ -48,7 +47,6 @@ export const Main = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
       data: [
         {
           id: "02-01",
@@ -93,32 +91,14 @@ export const Main = () => {
         }}
         data={navigationData}
       />
-
-      <Actions>
-        <Action
-          label="User"
-          icon={<User />}
-          onClick={event => {
-            console.log("Action 1", event);
-          }}
-        />
-        <Action
-          label="Documentation"
-          icon={<OpenBook />}
-          onClick={event => {
-            console.log("Action 2", event);
-          }}
-        />
-        <Action
-          label="Logout"
-          icon={<LogOut />}
-          onClick={event => {
-            console.log("Action 3", event);
-          }}
-        />
-      </Actions>
     </HvVerticalNavigation>
   );
+};
+
+Main.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const WithoutActions = () => {
@@ -126,7 +106,6 @@ export const WithoutActions = () => {
     {
       id: "01",
       label: "System",
-      icon: <Tool />,
       data: [
         {
           id: "01-01",
@@ -156,7 +135,6 @@ export const WithoutActions = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
       data: [
         {
           id: "02-01",
@@ -196,7 +174,6 @@ export const WithoutActions = () => {
         label="Example 1 navigation"
         selected={value}
         onClick={(event, data) => {
-          console.log(data);
           setValue(data.id);
         }}
         data={navigationData}
@@ -205,12 +182,17 @@ export const WithoutActions = () => {
   );
 };
 
+WithoutActions.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const Collapsable = () => {
   const navigationData = [
     {
       id: "01",
       label: "System",
-      icon: <Tool />,
       data: [
         {
           id: "01-01",
@@ -240,7 +222,6 @@ export const Collapsable = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
       data: [
         {
           id: "02-01",
@@ -285,38 +266,19 @@ export const Collapsable = () => {
           label="Example 2 navigation"
           selected={value}
           onClick={(event, data) => {
-            console.log(data);
             setValue(data.id);
           }}
           data={navigationData}
         />
-
-        <Actions>
-          <Action
-            label="User"
-            icon={<User />}
-            onClick={event => {
-              console.log("Action 1", event);
-            }}
-          />
-          <Action
-            label="Documentation"
-            icon={<OpenBook />}
-            onClick={event => {
-              console.log("Action 2", event);
-            }}
-          />
-          <Action
-            label="Logout"
-            icon={<LogOut />}
-            onClick={event => {
-              console.log("Action 3", event);
-            }}
-          />
-        </Actions>
       </HvVerticalNavigation>
     </div>
   );
+};
+
+Collapsable.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const CollapseOnExit = () => {
@@ -326,7 +288,6 @@ export const CollapseOnExit = () => {
     {
       id: "01",
       label: "System",
-      icon: <Play />,
       data: [
         {
           id: "01-01",
@@ -358,7 +319,6 @@ export const CollapseOnExit = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Stop />,
       data: [
         {
           id: "02-01",
@@ -402,35 +362,17 @@ export const CollapseOnExit = () => {
           label="Example 2 navigation"
           selected={value}
           onClick={(event, data) => {
-            console.log(data);
             setValue(data.id);
           }}
           data={navigationData}
         />
-
-        <Actions>
-          <Action
-            label="Action 1"
-            icon={<Play />}
-            onClick={event => {
-              console.log("Action 1", event);
-            }}
-          />
-          <Action
-            label="Action 2"
-            onClick={event => {
-              console.log("Action 2", event);
-            }}
-          />
-          <Action
-            label="Action 3"
-            icon={<Stop />}
-            onClick={event => {
-              console.log("Action 3", event);
-            }}
-          />
-        </Actions>
       </HvVerticalNavigation>
     </div>
   );
+};
+
+CollapseOnExit.story = {
+  parameters: {
+    v3: true
+  }
 };

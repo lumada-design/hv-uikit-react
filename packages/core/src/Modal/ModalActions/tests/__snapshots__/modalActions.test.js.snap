@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalActions Component allows external props to be added 1`] = `
+exports[`[v3] ModalActions Component allows external props to be added 1`] = `
 <WithStyles(HvModalActions)
   disableActionSpacing={true}
 >
@@ -8,7 +8,7 @@ exports[`ModalActions Component allows external props to be added 1`] = `
 </WithStyles(HvModalActions)>
 `;
 
-exports[`ModalActions Component allows external styles to be added 1`] = `
+exports[`[v3] ModalActions Component allows external styles to be added 1`] = `
 <WithStyles(HvModalActions)
   classes={
     Object {
@@ -21,13 +21,13 @@ exports[`ModalActions Component allows external styles to be added 1`] = `
 </WithStyles(HvModalActions)>
 `;
 
-exports[`ModalActions Component should render correctly if opened 1`] = `
+exports[`[v3] ModalActions Component should render correctly if opened 1`] = `
 <WithStyles(HvModalActions)>
   Modal Content
 </WithStyles(HvModalActions)>
 `;
 
-exports[`ModalActions withStyles should render correctly 1`] = `
+exports[`[v3] ModalActions withStyles should render correctly 1`] = `
 <WithStyles(HvModalActions)>
   Modal Content
 </WithStyles(HvModalActions)>

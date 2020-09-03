@@ -8,12 +8,11 @@ import styles from "./styles";
  * The header container for the card.
  */
 const Header = props => {
-  const { classes, className, headerTitle, subheader, icon, id, onClick, ...others } = props;
+  const { classes, className, title, subheader, icon, onClick, ...others } = props;
 
   return (
     <CardHeader
-      id={id}
-      title={headerTitle}
+      title={title}
       className={clsx(classes.root, className)}
       subheader={subheader}
       action={icon}
@@ -30,10 +29,6 @@ const Header = props => {
 };
 
 Header.propTypes = {
-  /**
-   * Id to be applied to the root node.
-   */
-  id: PropTypes.string,
   /**
    * Class names to be applied.
    */
@@ -70,7 +65,7 @@ Header.propTypes = {
   /**
    *  The renderable content inside the title slot of the header.
    */
-  headerTitle: PropTypes.node.isRequired,
+  title: PropTypes.node.isRequired,
   /**
    *  The renderable content inside the subheader slot of the header.
    */

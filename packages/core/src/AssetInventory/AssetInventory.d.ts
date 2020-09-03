@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 import { CardViewConfiguration } from "./CardView";
 import { ListViewConfiguration } from "./ListView";
 import { ListValueProp } from "../List";
@@ -58,7 +58,7 @@ export type AssetInventoryMetadata = {
 
 export interface HvAssetInventoryProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey>,
-    HvActionsCommonProps,
+    HvActionsGenericCommonProps,
     HvPaginationCommonProps {
   /**
    * Data passed to the component.
@@ -112,7 +112,11 @@ export interface HvAssetInventoryProps
    */
   selectedView?: string;
   /**
-   * Defines if it has pagination.
+   * Defines whether the Asset Inventory includes the bulk actions component.
+   */
+  hasBulkActions?: boolean;
+  /**
+   * Defines whether the Asset Inventory includes the pagination component.
    */
   hasPagination?: boolean;
   /**
@@ -157,6 +161,10 @@ export interface HvAssetInventoryProps
    * and other props to pe passed to each button.
    */
   multibuttonProps?: object;
+  /**
+   * Component to the present when no data is available.
+   */
+  emptyComponent: React.ReactNode;
 }
 
 export type ClassKey =

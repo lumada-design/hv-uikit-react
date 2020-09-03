@@ -35,7 +35,6 @@ const Action = ({ className, classes, id, label = "", icon, onClick, ...others }
     <HvTypography
       id={setId(id, "button")}
       component="div"
-      variant="normalText"
       role="button"
       className={clsx(className, classes.action, { [classes.noIcon]: !icon })}
       tabIndex={0}

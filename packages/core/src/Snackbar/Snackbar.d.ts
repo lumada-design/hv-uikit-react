@@ -1,5 +1,5 @@
 import { StandardProps, SnackbarProps } from "@material-ui/core";
-import { Action } from "../Actions";
+import { ActionGeneric } from "../ActionsGeneric";
 import { NotificationsCommonProps } from "../Banner";
 
 export interface HvSnackbarProps
@@ -8,11 +8,11 @@ export interface HvSnackbarProps
   /**
    * Action to display.
    */
-  action?: React.ReactNode | Action;
+  action?: React.ReactNode | ActionGeneric;
   /**
    * The callback function ran when an action is triggered, receiving ´action´ as param
    */
-  actionCallback?: (id: string, action: Action) => void;
+  actionCallback?: (id: string, action: ActionGeneric) => void;
 }
 
 export type HvSnackbarClassKey =

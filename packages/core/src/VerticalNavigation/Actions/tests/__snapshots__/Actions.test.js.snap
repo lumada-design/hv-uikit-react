@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Actions should be able to render 1`] = `
+exports[`[v3] Actions should be able to render 1`] = `
 <WithStyles(Actions)>
   <Actions
     classes={
@@ -35,7 +35,6 @@ exports[`Actions should be able to render 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
-            variant="normalText"
           >
             <ForwardRef
               className="HvVerticalNavigationAction-action"
@@ -44,23 +43,21 @@ exports[`Actions should be able to render 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -70,7 +67,6 @@ exports[`Actions should be able to render 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <div
                 className="HvVerticalNavigationAction-action HvTypography-root HvTypography-normalText"
@@ -153,7 +149,6 @@ exports[`Actions should be able to render 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
-            variant="normalText"
           >
             <ForwardRef
               className="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon"
@@ -162,23 +157,21 @@ exports[`Actions should be able to render 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -188,7 +181,6 @@ exports[`Actions should be able to render 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <div
                 className="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon HvTypography-root HvTypography-normalText"
@@ -223,7 +215,6 @@ exports[`Actions should be able to render 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
-            variant="normalText"
           >
             <ForwardRef
               className="HvVerticalNavigationAction-action"
@@ -232,23 +223,21 @@ exports[`Actions should be able to render 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
+                  "sectionTitle": "HvTypography-sectionTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -258,7 +247,6 @@ exports[`Actions should be able to render 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <div
                 className="HvVerticalNavigationAction-action HvTypography-root HvTypography-normalText"

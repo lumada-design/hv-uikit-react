@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton should render correctly 1`] = `
+exports[`[v3] RadioButton should render correctly 1`] = `
 <WithStyles(HvRadio)
   inputProps={
     Object {
@@ -343,7 +343,7 @@ exports[`RadioButton should render correctly 1`] = `
                                       <path
                                         className="color0"
                                         d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                        fill="#FFFFFF"
+                                        fill="#FBFCFC"
                                       />
                                       <path
                                         className="color1"

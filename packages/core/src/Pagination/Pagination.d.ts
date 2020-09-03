@@ -113,7 +113,6 @@ export type HvPaginationClassKey =
   | "pageInfo"
   | "pageJump"
   | "pageSizeInput"
-  | "pageSizeInputRoot"
   | "pageSizeInputContainer"
   | "iconContainer"
   | "icon"

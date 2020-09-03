@@ -8,39 +8,46 @@ import styles from "./styles";
 /**
  * Tooltips display informative text when users hover over, focus on, or tap an element.
  */
-const HvTooltip = ({
-  className,
-  classes,
-  open,
-  enterDelay = 300,
-  placement = "top",
-  useSingle = true,
-  children,
-  tooltipData,
-  title,
-  TransitionComponent = Fade,
-  TransitionProps = { timeout: 400 },
-  ...others
-}) => {
-  return (
-    <Tooltip
-      open={(!isNil(open) && open) || undefined}
-      enterDelay={enterDelay}
-      placement={placement}
-      TransitionComponent={TransitionComponent}
-      TransitionProps={TransitionProps}
-      className={className}
-      classes={{
-        tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
-        popper: classes.popper
-      }}
-      title={tooltipData || title}
-      {...others}
-    >
-      {children}
-    </Tooltip>
-  );
-};
+const HvTooltip = React.forwardRef(
+  (
+    {
+      className,
+      classes,
+      open,
+      enterDelay = 300,
+      placement = "top",
+      useSingle = true,
+      children,
+      tooltipData,
+      title,
+      TransitionComponent = Fade,
+      TransitionProps = { timeout: 400 },
+      ...others
+    },
+    ref
+  ) => {
+    return (
+      <Tooltip
+        ref={ref}
+        open={(!isNil(open) && open) || undefined}
+        enterDelay={enterDelay}
+        placement={placement}
+        TransitionComponent={TransitionComponent}
+        TransitionProps={TransitionProps}
+        className={className}
+        classes={{
+          tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
+          popper: classes.popper
+        }}
+        title={tooltipData || title}
+        {...others}
+      >
+        {children}
+      </Tooltip>
+    );
+  }
+);
+
 HvTooltip.propTypes = {
   /**
    * Class names to be applied.

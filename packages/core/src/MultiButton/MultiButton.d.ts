@@ -1,14 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvButtonProps } from "../Button";
-
-export interface MultiButtonData extends HvButtonProps {
-  id: string;
-  value?: string;
-  icon?: React.ReactNode;
-  selected?: boolean;
-  enforced?: boolean;
-}
+import { HvButtonCategories } from "../Button";
 
 export interface HvMultiButtonProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvMultiButtonClassKey, "onChange"> {
@@ -17,33 +9,9 @@ export interface HvMultiButtonProps
    */
   vertical?: boolean;
   /**
-   * If the MultiButton is multi selectable.
+   * Category of button to use
    */
-  multi?: boolean;
-  /**
-   * Type of button display.
-   *  - Accepted values:
-   *    --"label": displays just a text label,
-   *    --"icon": displays just an icon,
-   *    --"mixed": displays both a label and an icon
-   */
-  type: "text" | "icon" | "mixed";
-  /**
-   * Buttons definitions
-   */
-  buttons: MultiButtonData[];
-  /**
-   * Callback function to be triggered when the input value is changed
-   */
-  onChange: (event: React.FormEvent<HTMLDivElement>, checkedItems: MultiButtonData[]) => void;
-  /**
-   * Specify minimum number of selections in component
-   */
-  minSelection?: number;
-  /**
-   * Specify maximum number of selections in component
-   */
-  maxSelection?: number;
+  category: HvButtonCategories;
 }
 
 export type HvMultiButtonClassKey =
@@ -51,7 +19,6 @@ export type HvMultiButtonClassKey =
   | "vertical"
   | "labelText"
   | "button"
-  | "icon"
   | "isSelected"
   | "isUnselected";
 

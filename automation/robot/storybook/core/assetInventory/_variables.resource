@@ -5,16 +5,16 @@ ${card3}              css:#id_2-grid>div
 ${card4}              css:#id_3-grid>div
 ${card6}              css:#id_5-grid>div
 ${cards}              css:#cardView>div
-${cardViewButton}     id:cardView-button
+${cardViewButton}     id:card-button
 ${checkBox1}          xpath:(//input[@type='checkbox'])[1]
 ${checkBox2}          xpath:(//input[@type='checkbox'])[2]
 ${checkBox3}          xpath:(//input[@type='checkbox'])[3]
 ${checkBox4}          xpath:(//input[@type='checkbox'])[4]
-${clearText}          css:button[title='Clear the text']
-${dropdownHeader}     id:sort_hv-assetinventory-header
+${clearText}          css:button[aria-label='clear button']
+${dropdownHeader}     id:hv-assetinventory-sort
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${firstCheckbox}      css:input[value='id_0']
-${listViewButton}     id:listView-button
+${listViewButton}     id:list-button
 ${pageCurrent}        id:hv-assetinventory-pagination-currentPage-input
 ${pageLast}           id:hv-assetinventory-pagination-lastPage-button
 ${pageNavigator}      css:div[class=HvPagination-pageNavigator]
@@ -31,4 +31,4 @@ ${row6}               css:#listView ul>li:nth-child(6)
 ${rows}               css:#listView ul>li
 ${searchBox}          css:input[type='text']
 ${secondCheckbox}     css:input[value='id_1']
-${sortTitleDesc}      id:sort_hv-assetinventory-values-list-item-1
+${sortTitleDesc}      id:hv-assetinventory-sort-values-list-item-1

@@ -9,9 +9,7 @@ import styles from "./styles";
 
 const DEFAULT_LABELS = {
   dropzone: "Label",
-  progressConjunction: "of",
   sizeWarning: "Max. file size:",
-  acceptedFiles: "Accepted files:",
   drag: "Drag and drop or",
   selectFiles: "Select files",
   dropFiles: "Drop files here",
@@ -47,7 +45,6 @@ const FileUploader = ({
       <FileList
         id={setId(id, "filelist")}
         list={fileList}
-        progressConjunctionLabel={labels.progressConjunction}
         onFileRemoved={onFileRemoved}
         removeFileButtonLabel={labels.removeFileButtonLabel}
       />
@@ -67,17 +64,12 @@ FileUploader.propTypes = {
   /**
    * An object containing all the labels.
    *
-   * - progressConjunction: The label used in the middle of the progress message.
    */
   labels: PropTypes.shape({
     /**
      *
      */
     acceptedFiles: PropTypes.string,
-    /**
-     *
-     */
-    progressConjunction: PropTypes.string,
     /**
      * DropZone area label.
      */

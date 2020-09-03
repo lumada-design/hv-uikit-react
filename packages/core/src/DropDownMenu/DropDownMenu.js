@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { IconButton, Popper, withStyles } from "@material-ui/core";
-import FocusTrap from "focus-trap-react";
-import OutsideClickHandler from "react-outside-click-handler";
+import { withStyles } from "@material-ui/core";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
-import { isKeypress, KeyboardCodes } from "../utils";
-import List from "../List";
-import { getPrevNextFocus, setId } from "..";
+import { getPrevNextFocus, isKeypress, KeyboardCodes } from "../utils";
+import { HvButton, HvList, HvPanel, HvBaseDropdown, setId } from "..";
 import styles from "./styles";
 import withId from "../withId";
 
@@ -27,22 +24,12 @@ const DropDownMenu = ({
   keepOpened = true,
   disabled = false,
   expanded = false,
+  // eslint-disable-next-line
+  category,
   ...others
 }) => {
-  const didMountRef = useRef(false);
   const [open, setOpen] = useState(expanded && !disabled);
-  const [positionUp, setPositionUp] = useState(false);
-  const [hasFocusTrap, setHasFocusTrap] = useState(true);
-  const anchorRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
-
-  useEffect(() => {
-    if (didMountRef.current) {
-      onToggleOpen?.(open);
-    } else {
-      didMountRef.current = true;
-    }
-  }, [open, onToggleOpen]);
 
   useEffect(() => {
     if (expanded !== open) {
@@ -51,125 +38,71 @@ const DropDownMenu = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [expanded, disabled]);
 
-  const handleToggle = () => {
-    setHasFocusTrap(true);
-    setOpen(prevOpen => !prevOpen);
+  const listId = setId(id, "list");
+
+  const handleClose = () => {
+    onToggleOpen?.(false);
+    setOpen(false);
   };
 
-  const handleClose = event => {
-    setHasFocusTrap(false);
-    const isButtonClick = anchorRef.current?.contains(event.target);
-    if (!isButtonClick) {
-      setOpen(false);
-    }
-  };
-
-  // If the ESCAPE key is pressed the close handler must be called.
+  // If the ESCAPE key is pressed inside the list, the close handler must be called.
   const handleKeyDown = event => {
-    if (isKeypress(event, KeyboardCodes.Esc)) {
-      handleClose(event);
-    }
     if (isKeypress(event, KeyboardCodes.Tab)) {
       const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
-      handleToggle(event);
+      handleClose();
     }
     event.preventDefault();
   };
 
-  const handleKeyboardToggle = event => {
-    if (
-      isKeypress(event, KeyboardCodes.SpaceBar) ||
-      isKeypress(event, KeyboardCodes.Enter) ||
-      (isKeypress(event, KeyboardCodes.ArrowDown) && !open) ||
-      (isKeypress(event, KeyboardCodes.ArrowUp) && open)
-    ) {
-      handleToggle(event);
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  };
+  const headerComponent = (
+    <HvButton
+      icon
+      category={category}
+      id={setId(id, "icon-button")}
+      className={clsx(classes.icon, {
+        [classes.iconSelected]: open
+      })}
+      disabled={disabled}
+      tabIndex={-1}
+      aria-label="Dropdown menu"
+    >
+      {icon || <MoreVert color={disabled ? "atmo5" : undefined} />}
+    </HvButton>
+  );
 
-  const handleListFlip = data => {
-    const position = data.flipped;
-    if (positionUp !== position) {
-      setPositionUp(position);
-    }
-  };
+  const condensed = useMemo(() => dataList.every(el => !(el.icon || el.iconCallback)), [dataList]);
 
   return (
-    <div id={id} className={clsx(className, classes.root)}>
-      <IconButton
-        id={setId(id, "icon-button")}
-        buttonRef={anchorRef}
-        aria-label="Dropdown menu"
-        aria-controls={open ? `${id}` : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? true : undefined}
-        onClick={handleToggle}
-        onKeyDown={handleKeyboardToggle}
-        className={clsx(classes.icon, {
-          [classes.iconSelected]: open
-        })}
-        disabled={disabled}
-        {...others}
-      >
-        {icon || <MoreVert color={disabled ? "atmo7" : undefined} />}
-      </IconButton>
-      <Popper
-        className={classes.popper}
-        disablePortal={disablePortal}
-        open={open}
-        anchorEl={anchorRef.current}
-        placement={`bottom-${placement === "left" ? "end" : "start"}`}
-        popperOptions={{
-          onUpdate: data => handleListFlip(data),
-          onCreate: data => handleListFlip(data)
-        }}
-      >
-        <OutsideClickHandler onOutsideClick={handleClose}>
-          <FocusTrap
-            active={hasFocusTrap}
-            createOptions={{
-              escapeDeactivates: false,
-              allowOutsideClick: true,
-              fallbackFocus: document.getElementById(setId(id, "icon-button"))
-            }}
-          >
-            <div>
-              {!positionUp && (
-                <div
-                  className={clsx(classes.inputExtensionOpen, {
-                    [classes.inputExtensionLeftPosition]: placement === "left"
-                  })}
-                />
-              )}
-              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-              <div className={classes.menuList} onKeyDown={handleKeyDown}>
-                <List
-                  id={setId(id, "list")}
-                  values={dataList}
-                  selectable={false}
-                  condensed
-                  onClick={(event, item) => {
-                    if (!keepOpened) setOpen(false);
-                    onClick?.(event, item);
-                  }}
-                />
-              </div>
-              {positionUp && (
-                <div
-                  className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
-                    [classes.inputExtensionFloatRight]: placement === "right",
-                    [classes.inputExtensionFloatLeft]: placement === "left"
-                  })}
-                />
-              )}
-            </div>
-          </FocusTrap>
-        </OutsideClickHandler>
-      </Popper>
-    </div>
+    <HvBaseDropdown
+      id={id}
+      className={className}
+      classes={{ root: classes.root }}
+      expanded={open}
+      component={headerComponent}
+      placement={placement}
+      disablePortal={disablePortal}
+      onToggle={(e, s) => {
+        setOpen(s);
+        onToggleOpen?.(s);
+      }}
+      disabled={disabled}
+      {...others}
+    >
+      <HvPanel>
+        <HvList
+          id={listId}
+          values={dataList}
+          selectable={false}
+          condensed={condensed}
+          onClick={(event, item) => {
+            if (!keepOpened) handleClose();
+            onClick?.(event, item);
+          }}
+          onKeyDown={handleKeyDown}
+        />
+      </HvPanel>
+    </HvBaseDropdown>
   );
 };
 
@@ -187,13 +120,9 @@ DropDownMenu.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * Styles applied to the root of the component.
+     * Styles applied to the root.
      */
     root: PropTypes.string,
-    /**
-     * Styles applied to the popper.
-     */
-    popper: PropTypes.string,
     /**
      * Styles applied to the icon.
      */
@@ -201,31 +130,7 @@ DropDownMenu.propTypes = {
     /**
      * Styles applied to the icon when selected.
      */
-    iconSelected: PropTypes.string,
-    /**
-     * Styles applied to the list.
-     */
-    menuList: PropTypes.string,
-    /**
-     * Styles applied to the extension of the button.
-     */
-    inputExtensionOpen: PropTypes.string,
-    /**
-     * Styles applied to the extension shadow.
-     */
-    inputExtensionOpenShadow: PropTypes.string,
-    /**
-     * Styles applied to the extension to go right when open down.
-     */
-    inputExtensionFloatRight: PropTypes.string,
-    /**
-     * Styles applied to the extension to go right when open up.
-     */
-    inputExtensionFloatLeft: PropTypes.string,
-    /**
-     * Styles applied to the extension to go left when open up.
-     */
-    inputExtensionLeftPosition: PropTypes.string
+    iconSelected: PropTypes.string
   }).isRequired,
   /**
    * Icon.

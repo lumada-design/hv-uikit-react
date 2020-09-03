@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalContent withStyles should render correctly 1`] = `
+exports[`[v3] ModalContent withStyles should render correctly 1`] = `
 <WithStyles(ModalTitle)>
   Modal Content
 </WithStyles(ModalTitle)>
 `;
 
-exports[`ModalTitle Component should render correctly if opened 1`] = `
+exports[`[v3] ModalTitle Component should render correctly if opened 1`] = `
 <WithStyles(ModalTitle)>
   Modal Content
 </WithStyles(ModalTitle)>

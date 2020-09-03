@@ -14,7 +14,7 @@ const DEFAULT_LABELS = {
   pageSizePrev: "Show",
   pageSizeEntryName: "rows",
   pageSizeSelectorDescription: "Select how many to display",
-  pagesSeparator: "of",
+  pagesSeparator: "/",
   paginationFirstPageTitle: "First page",
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
@@ -66,7 +66,7 @@ const Pagination = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, pageSize]);
 
-  const setColor = condition => (condition ? "atmo7" : undefined);
+  const setColor = condition => (condition ? "atmo5" : undefined);
   const FirstPage = () => <Start className={classes.icon} color={setColor(!canPrevious)} />;
   const PrevPage = () => <Backwards className={classes.icon} color={setColor(!canPrevious)} />;
   const NextPage = () => <Forwards className={classes.icon} color={setColor(!canNext)} />;
@@ -82,9 +82,7 @@ const Pagination = ({
       <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
-            <HvTypography component="span" variant="sText">
-              {labels.pageSizePrev}
-            </HvTypography>
+            <HvTypography component="span">{labels.pageSizePrev}</HvTypography>
             <select
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
@@ -100,9 +98,7 @@ const Pagination = ({
               ))}
             </select>
             <DropDownXS className={classes.selectDownIcon} />
-            <HvTypography component="span" variant="sText">
-              {labels.pageSizeEntryName}
-            </HvTypography>
+            <HvTypography component="span">{labels.pageSizeEntryName}</HvTypography>
           </>
         )}
       </div>
@@ -136,8 +132,7 @@ const Pagination = ({
                 }}
                 classes={{
                   root: classes.pageSizeInputContainer,
-                  input: classes.pageSizeInput,
-                  inputRoot: classes.pageSizeInputRoot
+                  input: classes.pageSizeInput
                 }}
                 onChange={(event, val) => setStatePage(val - 1)}
                 initialValue={`${statePage + 1}`}
@@ -152,14 +147,10 @@ const Pagination = ({
               />
             </div>
           ) : (
-            <HvTypography component="span" variant="sText">
-              {`${statePage + 1}`}
-            </HvTypography>
+            <HvTypography component="span">{`${statePage + 1}`}</HvTypography>
           )}
-          <HvTypography component="span" variant="sText">
-            {` ${labels.pagesSeparator} `}
-          </HvTypography>
-          <HvTypography id={setId(id, "totalPages")} component="span" variant="sText">
+          <HvTypography component="span">{`${labels.pagesSeparator} `}</HvTypography>
+          <HvTypography id={setId(id, "totalPages")} component="span">
             {pages}
           </HvTypography>
         </div>
@@ -219,10 +210,6 @@ Pagination.propTypes = {
      * Styles passed down to the page selector Input component as `input`.
      */
     pageSizeInput: PropTypes.string,
-    /**
-     * Styles passed down to the page selector Input component as `inputRoot` .
-     */
-    pageSizeInputRoot: PropTypes.string,
     /**
      * Styles passed down to the page selector Input component as `container`.
      */

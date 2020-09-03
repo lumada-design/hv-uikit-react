@@ -1,3 +1,39 @@
+import { outlineStyles } from "../Focus/styles";
+
+export const hover = theme => ({
+  backgroundColor: theme.palette.atmo3
+});
+
+export const selected = theme => ({
+  backgroundColor: theme.palette.atmo3,
+  color: theme.palette.acce1,
+  "& *": {
+    backgroundColor: theme.palette.atmo3,
+    color: theme.palette.acce1
+  },
+  "& svg *.color0": {
+    fill: theme.palette.acce1
+  }
+});
+
+export const buttonStyles = theme => ({
+  width: "100%",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  height: "32px",
+  color: theme.hv.palette.atmosphere.acce1,
+  borderRadius: 0,
+  cursor: "pointer",
+
+  "&:hover": hover(theme),
+
+  "&:focus": {
+    ...hover(theme),
+    ...outlineStyles
+  }
+});
+
 const styles = theme => ({
   root: {
     display: "flex",

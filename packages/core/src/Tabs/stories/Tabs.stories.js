@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core/";
+import { withStyles, makeStyles } from "@material-ui/core/";
 import { HvBadge, HvTabs, HvTab, HvTypography } from "../..";
 
 export default {
-  title: "Components/Tabs",
+  title: "Patterns/Tabs",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTabs, HvTab } from '@hv/uikit-react-core/dist'"
@@ -42,7 +42,8 @@ FullWidth.story = {
   parameters: {
     docs: {
       storyDescription: "Tabs occupying the full width of the available space"
-    }
+    },
+    v3: true
   }
 };
 
@@ -74,7 +75,8 @@ ContentChanging.story = {
   parameters: {
     docs: {
       storyDescription: "Tabs changing the content to display according to the selected tab"
-    }
+    },
+    v3: true
   }
 };
 
@@ -84,6 +86,7 @@ export const TextSize = () => {
 
   const StyledTab = withStyles(theme => ({
     root: {
+      minHeight: 48,
       ...theme.hv.typography.sTitle
     }
   }))(props => <HvTab {...props} />);
@@ -101,16 +104,20 @@ export const CenteredTabs = () => {
   const [value, setValue] = useState(0);
   const handleChange = (e, newValue) => setValue(newValue);
 
-  const StyledTabs = withStyles({
-    flexContainer: { justifyContent: "center" }
-  })(props => <HvTabs {...props} />);
+  const classes = makeStyles({
+    content: {
+      "& div div": {
+        justifyContent: "center"
+      }
+    }
+  })();
 
   return (
-    <StyledTabs value={value} onChange={handleChange}>
+    <HvTabs className={classes.content} value={value} onChange={handleChange}>
       <HvTab label="Clickable tab" />
       <HvTab label="Clickable tab" />
       <HvTab label="Clickable tab" />
-    </StyledTabs>
+    </HvTabs>
   );
 };
 
@@ -122,8 +129,11 @@ export const WithBadges = () => {
     const StyledTab = withStyles(theme => ({
       root: {
         ...theme.hv.typography.sTitle,
-        minHeight: "inherit",
-        justifyContent: "center"
+        minHeight: 48,
+        justifyContent: "center",
+        "&$selected": {
+          fontWeight: theme.hv.typography.highlightText.fontWeight
+        }
       }
     }))(props => <HvTab {...props} />);
 
@@ -142,6 +152,7 @@ WithBadges.story = {
   parameters: {
     docs: {
       storyDescription: "Badges applied to Tabs component."
-    }
+    },
+    v3: true
   }
 };

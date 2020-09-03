@@ -6,7 +6,6 @@ Test Setup    Run Keywords
 ...           AND    Wait Until Element Is Enabled    ${buttonWarning}
 Force Tags    keyboard
 
-
 *** Test Cases ***
 focus first element (close button) when modal is opened
     Click Button                                ${buttonWarning}

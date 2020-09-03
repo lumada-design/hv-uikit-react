@@ -14,13 +14,18 @@ function getStories(url, filter) {
       .filter(
         s =>
           // test only core components
-          (s.kind && s.kind.indexOf("Components/") === 0) ||
+          (s.kind && (s.kind.indexOf("Components/") === 0 || s.kind.indexOf("Patterns/") === 0)) ||
           // allow lab components if they provide a pa11y configuration (even if empty)
           (s.parameters != null && s.parameters.pa11y != null)
       )
       .filter(
         s =>
           s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== false
+      )
+      // TODO Remove before major release
+      .filter(
+        s =>
+          s.parameters != null && s.parameters.v3
       )
       .filter(s => filter == null || s.id.indexOf(filter.toLowerCase()) !== -1)
       .map(s => ({
@@ -52,7 +57,7 @@ module.exports = (async () => {
     process.exit(1);
   }
 
-  const pa11yciConfig = {
+  return {
     defaults: {
       timeout: 15000,
       ignore: [
@@ -73,6 +78,4 @@ module.exports = (async () => {
     },
     urls: stories
   };
-
-  return pa11yciConfig;
 })();

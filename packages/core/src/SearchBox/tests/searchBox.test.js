@@ -5,9 +5,8 @@ import { shallow, mount } from "enzyme";
 import SearchBox from "../index";
 import HvProvider from "../../Provider";
 
-describe("<SearchBox />", () => {
+describe("[v3] <SearchBox />", () => {
   const onChangeMock = jest.fn();
-  const onSubmitMock = jest.fn();
 
   it("has default props", () => {
     const wrapper = mount(
@@ -36,21 +35,6 @@ describe("<SearchBox />", () => {
       </HvProvider>
     );
     expect(wrapper.find(SearchBox)).toMatchSnapshot();
-  });
-
-  it("submits on enter", () => {
-    const wrapper = mount(
-      <HvProvider>
-        <SearchBox id="hv-search-box-1" onChange={onChangeMock} onSubmit={onSubmitMock} />
-      </HvProvider>
-    );
-
-    wrapper
-      .find("#hv-search-box-1-input")
-      .at(0)
-      .props()
-      .onKeyDown({ keyCode: 13 }, "value");
-    expect(onSubmitMock).toHaveBeenCalled();
   });
 
   it("renders correctly with provided search input", () => {

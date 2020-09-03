@@ -4,7 +4,7 @@ Suite Setup       Run Keywords
 ...               Go To    ${tests}button--smoke-tests
 ...               AND    Wait Until Element Is Visible    css:button
 Test Template     Activate and focus button when it is clicked
-
+Force Tags        v3
 
 *** Keywords ***
 Activate and focus button when it is clicked
@@ -23,8 +23,6 @@ activate and focus button when is clicked a default button            default
 activate and focus button when is clicked a secondary button          secondary
 
 activate and focus button when is clicked a ghost button              ghost
-
-activate and focus button when is clicked a ghost Secondary button    ghostSecondary
 
 activate and focus button when is clicked a semantic button           semantic
 

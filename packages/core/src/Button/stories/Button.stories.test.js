@@ -50,16 +50,6 @@ export const SmokeTests = () => (
       </HvGrid>
       <HvGrid item xl={2}>
         <HvButton
-          id="ghostSecondary"
-          category="ghostSecondary"
-          startIcon={<Caution />}
-          onClick={() => alert("ghostSecondary")}
-        >
-          ghostSecondary
-        </HvButton>
-      </HvGrid>
-      <HvGrid item xl={2}>
-        <HvButton
           id="semantic"
           category="semantic"
           startIcon={<Caution />}
@@ -107,17 +97,6 @@ export const SmokeTests = () => (
       </HvGrid>
       <HvGrid item xl={2}>
         <HvButton
-          id="disabledGhostSecondary"
-          disabled
-          category="ghostSecondary"
-          startIcon={<Caution />}
-          onClick={() => alert("disabled ghostSecondary")}
-        >
-          disabled ghostSecondary
-        </HvButton>
-      </HvGrid>
-      <HvGrid item xl={2}>
-        <HvButton
           id="disabledSemantic"
           disabled
           category="semantic"
@@ -147,3 +126,9 @@ export const SmokeTests = () => (
     </HvGrid>
   </>
 );
+
+SmokeTests.story = {
+  parameters: {
+    v3: true
+  }
+};

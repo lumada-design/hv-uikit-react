@@ -5,7 +5,8 @@ export default {
   title: "Components/Forms/Base Input",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvBaseInput,
   decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
@@ -27,6 +28,55 @@ export const Main = () => {
   );
 };
 
+export const MultiLine = () => {
+  return (
+    <HvBaseInput
+      id="multiline"
+      aria-label="input multiline"
+      placeholder="Enter text"
+      inputProps={{
+        "aria-label": "multiline text area"
+      }}
+      multiline
+      rows={6}
+    />
+  );
+};
+
+MultiLine.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Showcasing the multiline input style."
+    },
+    v3: true
+  }
+};
+
+export const MultiLineResize = () => {
+  return (
+    <HvBaseInput
+      id="multiline-resize"
+      aria-label="input multiline"
+      placeholder="Enter text"
+      inputProps={{
+        "aria-label": "multiline text area"
+      }}
+      multiline
+      resizable
+      rows={6}
+    />
+  );
+};
+
+MultiLineResize.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Showcasing the multiline input style with resizing."
+    },
+    v3: true
+  }
+};
+
 export const DisabledInput = () => {
   return (
     <HvBaseInput
@@ -45,7 +95,33 @@ DisabledInput.story = {
   parameters: {
     docs: {
       storyDescription: "Showcasing the disabled input style."
-    }
+    },
+    v3: true
+  }
+};
+
+export const DisabledMultiLine = () => {
+  return (
+    <HvBaseInput
+      id="disabled-text-area"
+      aria-label="disabled text area"
+      placeholder="Enter text"
+      inputProps={{
+        "aria-label": "disabled text area"
+      }}
+      multiline
+      disabled
+      rows={6}
+    />
+  );
+};
+
+DisabledMultiLine.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Showcasing the disabled multiline input style."
+    },
+    v3: true
   }
 };
 
@@ -67,6 +143,32 @@ InvalidInput.story = {
   parameters: {
     docs: {
       storyDescription: "Showcasing the input in Invalid State."
-    }
+    },
+    v3: true
+  }
+};
+
+export const InvalidMultiLine = () => {
+  return (
+    <HvBaseInput
+      id="invalid-text-area"
+      aria-label="invalid text area"
+      placeholder="Enter text"
+      inputProps={{
+        "aria-label": "invalid text area"
+      }}
+      multiline
+      invalid
+      rows={6}
+    />
+  );
+};
+
+InvalidMultiLine.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Showcasing the invalid multiline input style."
+    },
+    v3: true
   }
 };

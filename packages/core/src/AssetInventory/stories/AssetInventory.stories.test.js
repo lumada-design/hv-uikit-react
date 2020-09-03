@@ -86,10 +86,10 @@ export const AccessibilityList = () => {
     <HvGrid container className={classes.container}>
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="sText">
+          <HvTypography className={classes.timestamp} variant="normalText">
             {values.event.timestamp}
           </HvTypography>
-          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
         </div>
       </HvGrid>
 
@@ -101,7 +101,7 @@ export const AccessibilityList = () => {
       </HvGrid>
 
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
+        <HvTypography variant="highlightText">Related assets</HvTypography>
         <HvTypography variant="normalText" className={classes.text}>
           {values.relatedAssets}
         </HvTypography>
@@ -148,11 +148,11 @@ export const AccessibilityList = () => {
         <HvListViewCell id={`description-${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
+            <HvTypography className={classes.timestamp} variant="normalText">
               {value.event.timestamp}
             </HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -262,8 +262,8 @@ export const AccessibilityList = () => {
 
   const myActions = [
     { id: "post", label: "Dismiss", disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 

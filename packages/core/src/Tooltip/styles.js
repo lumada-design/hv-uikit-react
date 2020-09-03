@@ -48,7 +48,7 @@ const styles = theme => ({
   values: {
     display: "flex",
     justifyContent: "space-between",
-    paddingBottom: "15px",
+    paddingBottom: "10px",
     "&:last-child": {
       paddingBottom: 0
     }

@@ -17,7 +17,6 @@ const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata })
 const ListView = ({
   className,
   id,
-  icon,
   viewConfiguration,
   classes,
   renderer,
@@ -89,10 +88,6 @@ ListView.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
-  /**
-   * Icon used in the multi button in the assert inventory.
-   */
-  icon: PropTypes.node.isRequired,
   /**
    * Component to the present when no data is available.
    */

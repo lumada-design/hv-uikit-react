@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import HvTypography from "../Typography";
-import Input from "../Input";
+import { setId } from "../utils";
+import { HvFormElement, HvBaseInput, HvLabel, HvWarningText, HvCharCounter } from "..";
+import { validateCharLength } from "../Input/validations";
 import styles from "./styles";
 import withLabels from "../withLabels";
 
@@ -13,68 +14,48 @@ const DEFAULT_LABELS = {
   placeholder: "",
   warningText: "",
   maxCharQuantityWarningText: "",
-  minCharQuantityWarningText: "",
   requiredWarningText: "",
-  startCount: "",
-  middleCount: "/",
-  endCount: ""
+  middleCount: "/"
+};
+
+const VALIDATION_STATES = {
+  standBy: "standBy",
+  invalid: "invalid"
 };
 
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
  * alongside this it can provide a validation for the max character quantity
  */
-class HvTextArea extends React.Component {
-  constructor(props) {
-    super(props);
-    const { initialValue, autoScroll } = this.props;
+const HvTextArea = props => {
+  const {
+    classes,
+    className = "",
+    name,
+    id,
+    labels,
+    maxCharQuantity,
+    rows = 1,
+    initialValue,
+    validationState: validationStateProp,
+    value: valueProp,
+    isRequired = false,
+    disabled = false,
+    resizable = false,
+    autoScroll = false,
+    validation,
+    onChange,
+    onBlur,
+    blockMax = false,
+    countCharProps,
+    formElementProps,
+    warningProps,
+    labelProps,
+    ...others
+  } = props;
 
-    this.state = {
-      currentValueLength: initialValue !== undefined ? this.limitValue(initialValue).length : 0,
-      autoScrolling: autoScroll,
-      overflow: initialValue ? this.isOverflow(initialValue) : false
-    };
-    this.textInputRef = React.createRef();
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { value: nextValue, maxCharQuantity, blockMax } = nextProps;
-    const { currentValueLength: oldLength } = prevState;
-
-    if (nextValue !== undefined) {
-      const isOverflow = nextValue.length > maxCharQuantity;
-
-      const nextLength = isOverflow && blockMax ? maxCharQuantity : nextValue.length;
-
-      if (nextLength !== oldLength) {
-        return {
-          currentValueLength: nextLength,
-          overflow: maxCharQuantity && isOverflow
-        };
-      }
-    }
-    return null;
-  }
-
-  componentDidMount() {
-    const { autoScroll } = this.props;
-    if (autoScroll) {
-      this.addScrollListener();
-      this.scrollDown();
-    }
-  }
-
-  componentDidUpdate() {
-    const { autoScrolling } = this.state;
-    if (autoScrolling) {
-      this.scrollDown();
-    }
-  }
-
-  isOverflow = value => {
-    const { maxCharQuantity } = this.props;
-    return isNil(maxCharQuantity) ? false : value.length > maxCharQuantity;
-  };
+  const isOverflow = currentValue =>
+    isNil(maxCharQuantity) ? false : currentValue.length > maxCharQuantity;
 
   /**
    * Limit the string to the maxCharQuantity length.
@@ -82,33 +63,109 @@ class HvTextArea extends React.Component {
    * @param value - string to evaluate
    * @returns {string|*} - string according the limit
    */
-  limitValue = value => {
-    const { maxCharQuantity, blockMax } = this.props;
-
-    if (value === undefined || !blockMax) return value;
-
-    return !this.isOverflow(value) ? value : value.substring(0, maxCharQuantity);
+  const limitValue = currentValue => {
+    if (currentValue === undefined || !blockMax) return currentValue;
+    return !isOverflow(currentValue) ? currentValue : currentValue.substring(0, maxCharQuantity);
   };
 
-  isScrolledDown = () => {
-    const el = this.textInputRef.current;
+  const isInvalid = compareState => compareState === VALIDATION_STATES.invalid;
+  const textInputRef = useRef(null);
+  const [value, setValue] = useState(initialValue);
+  const [currentValueLength, setCurrentValueLength] = useState(
+    initialValue !== undefined ? limitValue(initialValue).length : 0
+  );
+  const [validationState, setValidationState] = useState(
+    validationStateProp || VALIDATION_STATES.standBy
+  );
+  const [warningText, setWarningText] = useState(
+    isInvalid(validationStateProp) ? labels.warningText : null
+  );
+  const [overflow, setOverflow] = useState(initialValue ? isOverflow(initialValue) : false);
+  const [autoScrolling, setAutoScrolling] = useState(autoScroll);
+
+  const isScrolledDown = () => {
+    const el = textInputRef.current;
     return el == null || el.scrollHeight - el.scrollTop === el.clientHeight;
   };
 
-  scrollDown = () => {
-    const el = this.textInputRef.current;
+  const scrollDown = () => {
+    const el = textInputRef.current;
     if (el != null) {
       el.scrollTop = el.scrollHeight - el.clientHeight;
     }
   };
 
-  addScrollListener = () => {
+  const addScrollListener = useCallback(() => {
     const scrollHandler = {
       handleEvent: () => {
-        this.setState({ autoScrolling: this.isScrolledDown() });
+        setAutoScrolling(isScrolledDown());
       }
     };
-    this.textInputRef.current.addEventListener("scroll", scrollHandler);
+    textInputRef.current.addEventListener("scroll", scrollHandler);
+  }, []);
+
+  const checkEmptyValue = (valueToTest = "") => {
+    let validationStateResult = VALIDATION_STATES.standBy;
+    let warningTextResult = null;
+    if (!valueToTest && isRequired) {
+      validationStateResult = VALIDATION_STATES.invalid;
+      warningTextResult = labels.requiredWarningText;
+    }
+    return {
+      validationStateResult,
+      warningTextResult
+    };
+  };
+
+  const validateValue = useCallback(
+    (valueToTest = "") => {
+      let validationStateResult;
+      let warningTextResult = null;
+
+      if (
+        validationStateProp === VALIDATION_STATES.invalid ||
+        validation?.(valueToTest) === false
+      ) {
+        // testing for false because if undefined validation does not exist
+        return {
+          validationStateResult: VALIDATION_STATES.invalid,
+          warningTextResult: labels.warningText
+        };
+      }
+      const isValidLength = validateCharLength(valueToTest, maxCharQuantity, null);
+
+      if (isValidLength) {
+        validationStateResult = VALIDATION_STATES.standBy;
+      } else if (!isValidLength) {
+        validationStateResult = VALIDATION_STATES.invalid;
+        warningTextResult = labels.maxCharQuantityWarningText;
+      }
+
+      return {
+        validationStateResult,
+        warningTextResult
+      };
+    },
+    [labels, maxCharQuantity, validation, validationStateProp]
+  );
+
+  /**
+   * Validates the text area updating the state and modifying the warning text, also executes
+   * the user provided onBlur passing the current validation status and value.
+   *
+   * @returns {undefined}
+   */
+  const onContainerBlurHandler = event => {
+    if (event.relatedTarget) return;
+    const emptyResult = checkEmptyValue(value);
+    const validationResult = validateValue(value);
+    const wText = emptyResult.warningTextResult || validationResult.warningTextResult;
+    const vResult = emptyResult.warningTextResult
+      ? emptyResult.validationStateResult
+      : validationState.validationStateResult;
+    setValidationState(vResult);
+    setWarningText(wText);
+    onBlur?.(event, value, vResult);
   };
 
   /**
@@ -117,95 +174,85 @@ class HvTextArea extends React.Component {
    *
    * @param {String} value - The value provided by the HvInput
    */
-  onChangeHandler = (event, value) => {
-    const { onChange } = this.props;
-
-    const newValue = onChange(event, this.limitValue(value)) ?? value;
-
-    const textAreaValue = this.limitValue(newValue);
-
-    this.setState({
-      currentValueLength: textAreaValue.length,
-      overflow: this.isOverflow(value)
-    });
-    return textAreaValue;
+  const onChangeHandler = (event, currentValue) => {
+    const limitedValue = blockMax ? limitValue(currentValue) : currentValue;
+    onChange?.(event, limitedValue);
+    setValue(limitedValue);
+    setCurrentValueLength(limitedValue.length);
+    setOverflow(isOverflow(limitedValue));
   };
 
-  render() {
-    const {
-      classes,
-      className,
-      id,
-      labels,
-      maxCharQuantity,
-      rows,
-      initialValue,
-      value,
-      disabled,
-      resizable,
-      autoScroll,
-      onChange,
-      blockMax,
-      countCharProps,
-      ...others
-    } = this.props;
+  useEffect(() => {
+    if (autoScroll) {
+      addScrollListener();
+      scrollDown();
+    }
+    if (autoScrolling) {
+      scrollDown();
+    }
+    const valueToUse = valueProp || value || "";
+    const { validationStateResult, warningTextResult } = validateValue(valueToUse);
+    setCurrentValueLength(valueToUse?.length);
+    setValidationState(validationStateResult);
+    setWarningText(warningTextResult);
+  }, [autoScroll, autoScrolling, value, valueProp, validateValue, addScrollListener]);
 
-    const { currentValueLength, overflow } = this.state;
-    const val = initialValue;
+  const isStateInvalid = isInvalid(validationState);
 
-    return (
-      <div className={classes.root}>
-        <Input
-          classes={{
-            root: classes.container,
-            input: clsx(classes.input, {
-              [classes.resize]: !disabled && resizable,
-              [classes.defaultWith]: !resizable
-            }),
-            inputRoot: classes.inputRoot,
-            inputRootDisabled: classes.inputRootDisabled,
-            inputRootFocused: classes.inputRootFocused
-          }}
-          className={className}
-          id={id}
-          labels={labels}
-          initialValue={val && this.limitValue(val)}
-          value={this.limitValue(value)}
-          onChange={this.onChangeHandler}
-          multiline
-          rows={rows}
-          disabled={disabled}
-          showInfo={false}
-          validationIconVisible={false}
-          disableClear
-          inputRef={this.textInputRef}
-          validationState={(overflow && "invalid") || undefined}
-          aria-invalid={overflow || undefined}
-          {...others}
-        />
-        {maxCharQuantity && (
-          <div className={classes.characterCounter} aria-live="polite" {...countCharProps}>
-            <HvTypography
-              variant="sText"
-              component="span"
-              aria-disabled={disabled}
-              className={clsx({
-                [classes.disabled]: disabled,
-                [classes.invalid]: overflow
-              })}
-            >
+  return (
+    <HvFormElement
+      id={id}
+      name={name}
+      className={clsx(classes.root, className, { [classes.rootResizable]: resizable })}
+      onBlur={onContainerBlurHandler}
+      value={valueProp || value}
+      status={validationStateProp || validationState}
+      disabled={disabled}
+      {...formElementProps}
+    >
+      <div className={classes.labelContainer}>
+        {labels.inputLabel && (
+          <HvLabel
+            id={setId(id, "label")}
+            htmlFor={setId(id, "input")}
+            aria-disabled={disabled}
+            label={
               <>
-                {labels.startCount}
-                <b>{` ${currentValueLength} `}</b>
-                {`${labels.middleCount} ${maxCharQuantity} ${labels.endCount}`}
+                {labels.inputLabel}
+                {isRequired && <span aria-hidden="true">*</span>}
               </>
-            </HvTypography>
-          </div>
+            }
+            {...labelProps}
+          />
+        )}
+        {maxCharQuantity && (
+          <HvCharCounter
+            id={setId(id, "charCounter")}
+            separator={labels.middleCount}
+            currentCharQuantity={currentValueLength}
+            maxCharQuantity={maxCharQuantity}
+            {...countCharProps}
+          />
         )}
       </div>
-    );
-  }
-}
+      <HvBaseInput
+        className={className}
+        id={setId(id, "input")}
+        onChange={onChangeHandler}
+        placeholder={labels.placeholder}
+        resizable={resizable}
+        multiline
+        rows={rows}
+        inputRef={textInputRef}
+        aria-invalid={overflow || undefined}
+        {...others}
+      />
+      <HvWarningText id={setId(id, "warning")} {...warningProps}>
+        {isStateInvalid ? warningText : ""}
+      </HvWarningText>
+    </HvFormElement>
+  );
+};
 
 HvTextArea.propTypes = {
   /**
@@ -216,6 +263,18 @@ HvTextArea.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
+  /**
+   * Component name identifier to be used in the context.
+   */
+  name: PropTypes.string,
+  /**
+   * The current state of the text area.
+   */
+  validationState: PropTypes.oneOf(["standBy", "invalid"]),
+  /**
+   * If ´true´ the the text area value must be filled on blur or else the validation fails.
+   */
+  isRequired: PropTypes.bool,
   /**
    *  Styles applied to the Drawer Paper element.
    */
@@ -229,6 +288,10 @@ HvTextArea.propTypes = {
      */
     resize: PropTypes.string,
     /**
+     * Style applied to the root when resizable is `true`.
+     */
+    rootResizable: PropTypes.string,
+    /**
      * Styles applied to input root which is comprising of everything but the labels and descriptions.
      */
     inputRoot: PropTypes.string,
@@ -240,6 +303,10 @@ HvTextArea.propTypes = {
      * Styles applied to input root when it is focused.
      */
     inputRootFocused: PropTypes.string,
+    /**
+     * Styles applied to text area container that holds the label and counter.
+     */
+    labelContainer: PropTypes.string,
     /**
      * Style applied defining the width when resizable is `false`.
      */
@@ -298,17 +365,9 @@ HvTextArea.propTypes = {
      */
     requiredWarningText: PropTypes.string,
     /**
-     * Text before the current char counter.
-     */
-    startCount: PropTypes.string,
-    /**
      * Text between the current char counter and max value.
      */
-    middleCount: PropTypes.string,
-    /**
-     * Text after the max value.
-     */
-    endCount: PropTypes.string
+    middleCount: PropTypes.string
   }),
   /**
    * The maximum allowed length of the characters, if this value is null or undefined no check
@@ -333,6 +392,17 @@ HvTextArea.propTypes = {
    */
   onChange: PropTypes.func,
   /**
+   * The custom validation function, it receives the value and must return
+   * either ´true´ for valid or ´false´ for invalid, default validations would only
+   * occur if this function is null or undefined
+   */
+  validation: PropTypes.func,
+  /**
+   * The function that will be executed onBlur, allows checking the validation state,
+   * it receives the value and the validation state (´empty´, ´filled´, ´invalid´, ´valid´).
+   */
+  onBlur: PropTypes.func,
+  /**
    * If ´true´ the text area is disabled.
    */
   disabled: PropTypes.bool,
@@ -346,28 +416,25 @@ HvTextArea.propTypes = {
    */
   autoScroll: PropTypes.bool,
   /**
-   * If true it isn't possible to pass the `maxCharQuantity`
+   * If ´true´ it isn't possible to have more characters than the `maxCharQuantity`
    */
   blockMax: PropTypes.bool,
   /**
-   * Props passed to the char count.
+   * Props passed to the HvbaseInput component.
    */
-  countCharProps: PropTypes.instanceOf(Object)
-};
-
-HvTextArea.defaultProps = {
-  className: "",
-  id: undefined,
-  rows: 1,
-  disabled: false,
-  value: undefined,
-  initialValue: undefined,
-  maxCharQuantity: undefined,
-  onChange: (event, value) => value,
-  autoScroll: false,
-  resizable: false,
-  blockMax: false,
-  countCharProps: {}
+  formElementProps: PropTypes.instanceOf(Object),
+  /**
+   * Props passed to the HvCharCount component.
+   */
+  countCharProps: PropTypes.instanceOf(Object),
+  /**
+   * Props passed to the HvLabel component.
+   */
+  labelProps: PropTypes.instanceOf(Object),
+  /**
+   * Props passed to the HvWarning component.
+   */
+  warningProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));

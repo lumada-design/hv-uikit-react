@@ -1,5 +1,7 @@
 const styles = theme => ({
-  root: {},
+  root: {
+    minHeight: 0
+  },
   indicator: {
     display: "flex",
     justifyContent: "center",
@@ -8,15 +10,14 @@ const styles = theme => ({
       width: "100%",
       backgroundColor: `${theme.hv.palette.accent.acce1}`
     },
-    height: 2,
-    top: 0
+    height: 2
   },
-  scroller: {
-    "& $flexContainer": {
-      borderTop: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+  scroller: {},
+  flexContainer: {
+    "& button:first-child": {
+      marginLeft: "3px"
     }
-  },
-  flexContainer: {}
+  }
 });
 
 export default styles;

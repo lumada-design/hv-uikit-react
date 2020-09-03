@@ -34,19 +34,20 @@ const styles = theme => ({
       paddingLeft: "4px"
     },
     "& a": {
-      ...theme.hv.typography.inlineLink,
+      ...theme.hv.typography.link,
       textDecoration: "none"
     }
   },
   titleContainer: {
-    margin: "5px 0",
+    marginTop: 5,
+    marginBottom: theme.spacing("xs"),
     [theme.breakpoints.only("xs")]: {
-      marginTop: `${theme.hv.spacing.sm}px`
+      marginTop: theme.spacing("sm")
     }
   },
   messageContainer: {},
   actionContainer: {
-    marginTop: `${theme.hv.spacing.sm}px`
+    marginTop: theme.spacing("sm")
   }
 });
 

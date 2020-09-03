@@ -22,7 +22,7 @@ const Index = ({ classes, data }) => {
     <HvTooltip
       disableHoverListener={!isOverflowed}
       placement="top-start"
-      title={<HvTypography variant="infoText">{data}</HvTypography>}
+      title={<HvTypography>{data}</HvTypography>}
     >
       <div ref={textRef} className={clsx(classes.tooltipAnchor, classes.textContainer)}>
         {data}

@@ -1,21 +1,20 @@
 const styles = theme => ({
   root: {
     padding: `15px ${theme.hv.spacing.sm}px`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
     position: "relative"
   },
   title: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.mTitle
+    ...theme.hv.typography.xsTitle
   },
   titleShort: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.mTitle,
+    ...theme.hv.typography.xsTitle,
     marginRight: "30px"
   },
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.sText,
+    ...theme.hv.typography.normalText,
     paddingTop: `${theme.hv.spacing.sm}px`
   },
   action: {

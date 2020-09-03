@@ -8,11 +8,11 @@ const palette = theme =>
     },
     secondary: {
       main: theme.palette.accent.acce1,
-      light: theme.palette.atmosphere.atmo7
+      light: theme.palette.atmosphere.atmo5
     },
     text: {
       primary: theme.palette.accent.acce1,
-      disabled: theme.palette.atmosphere.atmo7
+      disabled: theme.palette.atmosphere.atmo5
     },
     background: {
       default: theme.palette.atmosphere.atmo3

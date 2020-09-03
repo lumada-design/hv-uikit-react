@@ -136,7 +136,7 @@ class Header extends React.Component {
     return (
       <>
         {topText && (
-          <HvTypography variant="labelText" className={classes.rangeLabel}>
+          <HvTypography variant="highlightText" className={classes.rangeLabel}>
             {topText}
           </HvTypography>
         )}
@@ -147,7 +147,7 @@ class Header extends React.Component {
           })}
         >
           <div className={classes.headerDayOfWeek}>
-            <HvTypography variant="normalText">{weekDay}</HvTypography>
+            <HvTypography>{weekDay}</HvTypography>
           </div>
           <div className={classes.headerDate}>
             <input

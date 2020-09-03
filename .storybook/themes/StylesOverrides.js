@@ -76,13 +76,13 @@ export const getDocsStylesOverrides = theme => ({
             backgroundColor: theme.hv.palette.atmosphere.atmo1 + " !important"
           },
           "tr:not(:first-of-type)": {
-            borderTopColor: theme.hv.palette.atmosphere.atmo5
+            borderTopColor: theme.hv.palette.atmosphere.atmo4
           }
         }
       },
 
       "& > h2": {
-        borderBottomColor: theme.hv.palette.atmosphere.atmo6,
+        borderBottomColor: theme.hv.palette.atmosphere.atmo4,
         paddingBottom: theme.hv.spacing.xs,
         marginBottom: theme.hv.spacing.sm
       }

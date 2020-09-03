@@ -6,7 +6,7 @@ const styles = theme => ({
   },
   background: {
     backgroundColor: theme.palette.atmo3,
-    borderBottom: `1px solid ${theme.palette.atmo6}`,
+    borderBottom: `1px solid ${theme.palette.atmo4}`,
     borderTop: "1px solid transparent",
     borderLeft: "1px solid transparent",
     borderRight: "1px solid transparent"

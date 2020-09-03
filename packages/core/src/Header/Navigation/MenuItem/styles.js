@@ -4,7 +4,7 @@ import focusStyles from "../../../Focus/styles";
 const { focused, focusDisabled, externalReference, falseFocus } = focusStyles;
 
 const styles = theme => {
-  const hoverColor = theme.hv.palette.atmosphere.atmo4;
+  const hoverColor = theme.hv.palette.atmosphere.atmo3;
 
   return {
     root: {
@@ -36,7 +36,7 @@ const styles = theme => {
     button: {
       border: "none",
       cursor: "pointer",
-      padding: `6px ${theme.hv.spacing.sm}px`,
+      padding: `8px ${theme.hv.spacing.sm}px`,
       "&:active": {
         outline: "none"
       },

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormElement  should render correctly 1`] = `
+exports[`v3 FormElement  should render correctly 1`] = `
 <WithStyles(WithId)
   status="valid"
   value="George"
@@ -15,29 +15,27 @@ exports[`FormElement  should render correctly 1`] = `
       placeholder="Insert your name"
     />
   </WithStyles(HvLabel)>
-  <WithStyles(HvHelperText)
+  <WithStyles(HvWarningText)
     id="infotext-main"
     key="2"
-    notification="warning"
   >
-    Write your name in this input do not put numbers
-  </WithStyles(HvHelperText)>
+    warning
+  </WithStyles(HvWarningText)>
 </WithStyles(WithId)>
 `;
 
-exports[`FormElement  should render correctly 2`] = `
+exports[`v3 FormElement  should render correctly 2`] = `
 <WithStyles(HvBaseInput)
   id="id-test"
   placeholder="Insert your name"
 />
 `;
 
-exports[`FormElement  should render correctly 3`] = `
-<WithStyles(HvHelperText)
+exports[`v3 FormElement  should render correctly 3`] = `
+<WithStyles(HvWarningText)
   id="infotext-main"
   key="2"
-  notification="warning"
 >
-  Write your name in this input do not put numbers
-</WithStyles(HvHelperText)>
+  warning
+</WithStyles(HvWarningText)>
 `;

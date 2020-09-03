@@ -5,7 +5,7 @@ import map from "lodash/map";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import HvCheckbox from "../../../Selectors/CheckBox";
-import Actions from "../../../Actions";
+import ActionsGeneric from "../../../ActionsGeneric";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
@@ -38,7 +38,7 @@ const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semanti
 const actionsCell = (classes, id, viewConfiguration) => {
   return (
     <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
-      <Actions
+      <ActionsGeneric
         id={id}
         actions={setActionsId(viewConfiguration.actions, id)}
         actionsCallback={viewConfiguration.actionsCallback}
@@ -241,8 +241,7 @@ ListViewRow.propTypes = {
     "atmo2",
     "atmo3",
     "atmo4",
-    "atmo5",
-    "atmo6"
+    "atmo5"
   ])
 };
 

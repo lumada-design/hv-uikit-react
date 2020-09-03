@@ -33,11 +33,11 @@ export interface HvToggleButtonProps
   /**
    * Icon for when selected.
    */
-  selectedIcon?: React.ComponentType<any>;
+  selectedIcon?: React.ReactNode;
   /**
    * Icon for when not selected.
    */
-  notSelectedIcon: React.ComponentType<any>;
+  notSelectedIcon: React.ReactNode;
 }
 
 export type HvToggleButtonClassKey = "root" | "icon" | "disabled";

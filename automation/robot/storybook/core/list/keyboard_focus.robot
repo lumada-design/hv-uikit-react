@@ -1,14 +1,14 @@
 *** Setting ***
 Variables         variables.yaml
 Resource          ../_keywords.resource
-Force Tags        keyboard    issue
+Force Tags        v3    keyboard    issue
 Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
 
 
 *** Test Cases ***
 focus next option when pressing DOWN on option
     [Tags]    bug-ie-webdriver
-    Go To                                       ${components}list--multi-selection-with-select-all
+    Go To                                       ${patterns}list--multi-selection-with-select-all
     Wait Until Element Is Visible               ${list}
     set focus and press keys                    ${option1}    DOWN
     element attribute value should contain      ${option2}    class    focused
@@ -18,7 +18,7 @@ focus next option when pressing DOWN on option
 
 focus the previous option when pressing UP on option
     [Tags]    bug-ie-webdriver
-    Go To                                       ${components}list--multi-selection-with-select-all
+    Go To                                       ${patterns}list--multi-selection-with-select-all
     Wait Until Element Is Visible               ${list}
     set focus and press keys                    ${option5}    UP
     element attribute value should contain      ${option4}    class    focused
@@ -27,20 +27,20 @@ focus the previous option when pressing UP on option
     wait until element attribute not contain    ${option4}    class    focused
 
 focus the first option when pressing DOWN on last option
-    Go To                                     ${components}list--multi-selection-with-select-all
+    Go To                                     ${patterns}list--multi-selection-with-select-all
     Wait Until Element Is Visible             ${list}
     set focus and press keys                  ${option5}    DOWN
     element attribute value should contain    ${option1}    class    focused
 
 focus the last option when pressing UP on first option
-    Go To                                     ${components}list--multi-selection-with-select-all
+    Go To                                     ${patterns}list--multi-selection-with-select-all
     Wait Until Element Is Visible             ${list}
     set focus and press keys                  ${option1}    UP
     element attribute value should contain    ${option5}    class    focused
 
 exit focus from list when pressing TAB on option
     [Tags]    bug-ie-webdriver
-    Go To                                       ${components}list--multi-selection-with-select-all
+    Go To                                       ${patterns}list--multi-selection-with-select-all
     Wait Until Element Is Visible               ${list}
     set focus and press keys                    ${option1}    TAB
     wait until element attribute not contain    ${option1}    class    focused
@@ -74,7 +74,7 @@ focus disabled option when is a list menu
     element attribute value should contain    ${option1}      class    disabled
 
 jump focus to next enable option when is a simple/pure list
-    Go To                                     ${components}list--multi-selection-with-selectors
+    Go To                                     ${patterns}list--multi-selection-with-selectors
     Wait Until Element Is Visible             ${list}
     Set Focus and press keys                  ${option3}    DOWN
     element attribute value should contain    ${option5}    class            focused

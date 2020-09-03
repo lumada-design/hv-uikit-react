@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileUploader withStyles should render correctly 1`] = `
+exports[`[v3] FileUploader withStyles should render correctly 1`] = `
 <WithStyles(WithLabels)
   acceptedFiles={
     Array [
@@ -79,13 +79,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
       }
       labels={
         Object {
-          "acceptedFiles": "Accepted files:",
           "drag": "Drag and drop or",
           "dropFiles": "Drop files here",
           "dropzone": "Label",
           "fileSizeError": "The file exceeds the maximum upload size",
           "fileTypeError": "File type not allowed for upload",
-          "progressConjunction": "of",
           "removeFileButtonLabel": "Remove File",
           "selectFiles": "Select files",
           "sizeWarning": "Max. file size:",
@@ -107,13 +105,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           disabled={false}
           labels={
             Object {
-              "acceptedFiles": "Accepted files:",
               "drag": "Drag and drop or",
               "dropFiles": "Drop files here",
               "dropzone": "Label",
               "fileSizeError": "The file exceeds the maximum upload size",
               "fileTypeError": "File type not allowed for upload",
-              "progressConjunction": "of",
               "removeFileButtonLabel": "Remove File",
               "selectFiles": "Select files",
               "sizeWarning": "Max. file size:",
@@ -146,13 +142,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             disabled={false}
             labels={
               Object {
-                "acceptedFiles": "Accepted files:",
                 "drag": "Drag and drop or",
                 "dropFiles": "Drop files here",
                 "dropzone": "Label",
                 "fileSizeError": "The file exceeds the maximum upload size",
                 "fileTypeError": "File type not allowed for upload",
-                "progressConjunction": "of",
                 "removeFileButtonLabel": "Remove File",
                 "selectFiles": "Select files",
                 "sizeWarning": "Max. file size:",
@@ -186,13 +180,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               id="drop-zone-2"
               labels={
                 Object {
-                  "acceptedFiles": "Accepted files:",
                   "drag": "Drag and drop or",
                   "dropFiles": "Drop files here",
                   "dropzone": "Label",
                   "fileSizeError": "The file exceeds the maximum upload size",
                   "fileTypeError": "File type not allowed for upload",
-                  "progressConjunction": "of",
                   "removeFileButtonLabel": "Remove File",
                   "selectFiles": "Select files",
                   "sizeWarning": "Max. file size:",
@@ -211,7 +203,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   component="label"
                   htmlFor="drop-zone-2-input-file"
                   id="drop-zone-2-input-file-label"
-                  variant="labelText"
+                  variant="highlightText"
                 >
                   <ForwardRef
                     classes={
@@ -219,23 +211,21 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
@@ -244,10 +234,10 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     component="label"
                     htmlFor="drop-zone-2-input-file"
                     id="drop-zone-2-input-file-label"
-                    variant="labelText"
+                    variant="highlightText"
                   >
                     <label
-                      className="HvTypography-root HvTypography-labelText"
+                      className="HvTypography-root HvTypography-highlightText"
                       htmlFor="drop-zone-2-input-file"
                       id="drop-zone-2-input-file-label"
                     >
@@ -255,123 +245,73 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     </label>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  variant="sText"
-                >
+                <WithStyles(ForwardRef)>
                   <ForwardRef
                     classes={
                       Object {
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="sText"
                   >
                     <p
-                      className="HvTypography-root HvTypography-sText"
+                      className="HvTypography-root HvTypography-normalText"
                     >
                       Max. file size: 12.00B
                     </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  variant="labelText"
-                >
+                <WithStyles(ForwardRef)>
                   <ForwardRef
                     classes={
                       Object {
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="labelText"
                   >
                     <p
-                      className="HvTypography-root HvTypography-labelText"
+                      className="HvTypography-root HvTypography-normalText"
                     >
-                      Accepted files:
-                    </p>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  variant="sText"
-                >
-                  <ForwardRef
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
-                        "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
-                        "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
-                        "mTitle": "HvTypography-mTitle",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
-                        "sTitle": "HvTypography-sTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
-                        "vizText": "HvTypography-vizText",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
-                    }
-                    variant="sText"
-                  >
-                    <p
-                      className="HvTypography-root HvTypography-sText"
-                    >
-                      jpeg
+                       (jpeg)
                     </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
@@ -453,23 +393,21 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
@@ -512,7 +450,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             ]
           }
           onFileRemoved={[MockFunction]}
-          progressConjunctionLabel="of"
           removeFileButtonLabel="Remove File"
         >
           <FileList
@@ -538,16 +475,36 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               ]
             }
             onFileRemoved={[MockFunction]}
-            progressConjunctionLabel="of"
             removeFileButtonLabel="Remove File"
           >
             <ul
               className="HvFileUploaderFileList-list"
             >
-              <li
+              <WithStyles(File)
+                data={
+                  Object {
+                    "id": "1",
+                    "name": "Screenshot 2019-12-05 at 17.15.43.png",
+                    "size": 14100000,
+                    "type": "image/png",
+                  }
+                }
                 key="1"
+                onFileRemoved={[MockFunction]}
+                removeFileButtonLabel="Remove File"
               >
-                <WithStyles(File)
+                <File
+                  classes={
+                    Object {
+                      "fail": "HvFileUploaderFile-fail",
+                      "icon": "HvFileUploaderFile-icon",
+                      "nameText": "HvFileUploaderFile-nameText",
+                      "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
+                      "progressbar": "HvFileUploaderFile-progressbar",
+                      "progressbarBack": "HvFileUploaderFile-progressbarBack",
+                      "removeButton": "HvFileUploaderFile-removeButton",
+                    }
+                  }
                   data={
                     Object {
                       "id": "1",
@@ -557,39 +514,15 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                   }
                   onFileRemoved={[MockFunction]}
-                  progressConjunctionLabel="of"
                   removeFileButtonLabel="Remove File"
                 >
-                  <File
-                    classes={
-                      Object {
-                        "fail": "HvFileUploaderFile-fail",
-                        "icon": "HvFileUploaderFile-icon",
-                        "nameText": "HvFileUploaderFile-nameText",
-                        "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-                        "progressbar": "HvFileUploaderFile-progressbar",
-                        "progressbarBack": "HvFileUploaderFile-progressbarBack",
-                        "removeButton": "HvFileUploaderFile-removeButton",
-                      }
-                    }
-                    data={
-                      Object {
-                        "id": "1",
-                        "name": "Screenshot 2019-12-05 at 17.15.43.png",
-                        "size": 14100000,
-                        "type": "image/png",
-                      }
-                    }
-                    onFileRemoved={[MockFunction]}
-                    progressConjunctionLabel="of"
-                    removeFileButtonLabel="Remove File"
-                  >
+                  <li>
                     <div
                       className="HvFileUploaderFile-icon"
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText"
-                      variant="sText"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvFileUploaderFile-nameText"
@@ -598,32 +531,30 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
-                        variant="sText"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
+                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
                         >
                           Screenshot 2019-12-05 at 17.15.43.png
                         </p>
@@ -632,43 +563,39 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     <span
                       className="HvFileUploaderFile-progressTextContainer"
                     >
-                      <WithStyles(ForwardRef)
-                        variant="sText"
-                      >
+                       | 
+                      <WithStyles(ForwardRef)>
                         <ForwardRef
                           classes={
                             Object {
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
+                              "sectionTitle": "HvTypography-sectionTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sText"
                         >
                           <p
-                            className="HvTypography-root HvTypography-sText"
+                            className="HvTypography-root HvTypography-normalText"
                           >
-                             of 14.10MB
+                             / 14.10MB
                           </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
@@ -774,7 +701,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                       >
                                         <path
                                           className="color0"
-                                          d="M14 2.7l-.7-.7L8 7.3 2.7 2l-.7.7L7.3 8 2 13.3l.7.7L8 8.7l5.3 5.3.7-.7L8.7 8z"
+                                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -787,13 +714,34 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         </WithStyles(ForwardRef(ButtonBase))>
                       </ForwardRef(IconButton)>
                     </WithStyles(ForwardRef(IconButton))>
-                  </File>
-                </WithStyles(File)>
-              </li>
-              <li
+                  </li>
+                </File>
+              </WithStyles(File)>
+              <WithStyles(File)
+                data={
+                  Object {
+                    "id": "2",
+                    "name": "Screenshot 2019-12-05 at 12.03.13.png",
+                    "size": 875000,
+                    "type": "image/png",
+                  }
+                }
                 key="2"
+                onFileRemoved={[MockFunction]}
+                removeFileButtonLabel="Remove File"
               >
-                <WithStyles(File)
+                <File
+                  classes={
+                    Object {
+                      "fail": "HvFileUploaderFile-fail",
+                      "icon": "HvFileUploaderFile-icon",
+                      "nameText": "HvFileUploaderFile-nameText",
+                      "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
+                      "progressbar": "HvFileUploaderFile-progressbar",
+                      "progressbarBack": "HvFileUploaderFile-progressbarBack",
+                      "removeButton": "HvFileUploaderFile-removeButton",
+                    }
+                  }
                   data={
                     Object {
                       "id": "2",
@@ -803,39 +751,15 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                   }
                   onFileRemoved={[MockFunction]}
-                  progressConjunctionLabel="of"
                   removeFileButtonLabel="Remove File"
                 >
-                  <File
-                    classes={
-                      Object {
-                        "fail": "HvFileUploaderFile-fail",
-                        "icon": "HvFileUploaderFile-icon",
-                        "nameText": "HvFileUploaderFile-nameText",
-                        "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-                        "progressbar": "HvFileUploaderFile-progressbar",
-                        "progressbarBack": "HvFileUploaderFile-progressbarBack",
-                        "removeButton": "HvFileUploaderFile-removeButton",
-                      }
-                    }
-                    data={
-                      Object {
-                        "id": "2",
-                        "name": "Screenshot 2019-12-05 at 12.03.13.png",
-                        "size": 875000,
-                        "type": "image/png",
-                      }
-                    }
-                    onFileRemoved={[MockFunction]}
-                    progressConjunctionLabel="of"
-                    removeFileButtonLabel="Remove File"
-                  >
+                  <li>
                     <div
                       className="HvFileUploaderFile-icon"
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText"
-                      variant="sText"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvFileUploaderFile-nameText"
@@ -844,32 +768,30 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
-                        variant="sText"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
+                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
                         >
                           Screenshot 2019-12-05 at 12.03.13.png
                         </p>
@@ -878,43 +800,39 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     <span
                       className="HvFileUploaderFile-progressTextContainer"
                     >
-                      <WithStyles(ForwardRef)
-                        variant="sText"
-                      >
+                       | 
+                      <WithStyles(ForwardRef)>
                         <ForwardRef
                           classes={
                             Object {
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
+                              "sectionTitle": "HvTypography-sectionTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sText"
                         >
                           <p
-                            className="HvTypography-root HvTypography-sText"
+                            className="HvTypography-root HvTypography-normalText"
                           >
-                             of 875.00kB
+                             / 875.00kB
                           </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
@@ -1020,7 +938,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                       >
                                         <path
                                           className="color0"
-                                          d="M14 2.7l-.7-.7L8 7.3 2.7 2l-.7.7L7.3 8 2 13.3l.7.7L8 8.7l5.3 5.3.7-.7L8.7 8z"
+                                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -1033,9 +951,9 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         </WithStyles(ForwardRef(ButtonBase))>
                       </ForwardRef(IconButton)>
                     </WithStyles(ForwardRef(IconButton))>
-                  </File>
-                </WithStyles(File)>
-              </li>
+                  </li>
+                </File>
+              </WithStyles(File)>
             </ul>
           </FileList>
         </WithStyles(FileList)>

@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import HvProvider from "../../Provider";
 import Tab from "..";
 
-describe("Tab withStyles", () => {
+describe("v3 Tab withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {

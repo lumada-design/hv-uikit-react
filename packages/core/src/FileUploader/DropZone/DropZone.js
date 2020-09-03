@@ -63,7 +63,7 @@ const DropZone = ({
     <>
       <div id={id} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
         <HvTypography
-          variant="labelText"
+          variant="highlightText"
           component="label"
           id={setId(id, "input-file-label")}
           htmlFor={setId(id, "input-file")}
@@ -71,14 +71,12 @@ const DropZone = ({
           {labels.dropzone}
         </HvTypography>
 
-        <HvTypography variant="sText">
-          {`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
-        </HvTypography>
+        {Number.isInteger(maxFileSize) && (
+          <HvTypography>{`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}</HvTypography>
+        )}
+
         {acceptedFiles.length > 0 && (
-          <>
-            <HvTypography variant="labelText">{labels.acceptedFiles}</HvTypography>
-            <HvTypography variant="sText">{acceptedFiles.join(", ")}</HvTypography>
-          </>
+          <HvTypography>{`\u00A0(${acceptedFiles.join(", ")})`}</HvTypography>
         )}
       </div>
 
@@ -152,7 +150,7 @@ const DropZone = ({
               <Doc
                 iconSize="M"
                 className={classes.dropZoneAreaIcon}
-                color={disabled ? "atmo6" : "acce1"}
+                color={disabled ? "atmo4" : "acce1"}
               />
               <div className={classes.dropZoneAreaLabels}>
                 <HvTypography className={classes.dragText}>

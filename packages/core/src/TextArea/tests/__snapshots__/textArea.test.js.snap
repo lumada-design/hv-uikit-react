@@ -2,10 +2,8 @@
 
 exports[`TextArea Component should render correctly if opened 1`] = `
 <WithStyles(WithLabels)
-  initialValue="test"
-  onChange={[Function]}
   rows={4}
 />
 `;
 
-exports[`TextArea should render correctly 1`] = `null`;
+exports[`v3 TextArea should render correctly 1`] = `null`;
