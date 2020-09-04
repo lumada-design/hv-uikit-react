@@ -1,6 +1,0 @@
-header:         css:span[class*='Header-title']
-subHeader:      css:span[class*='Header-subheader']
-content:        css:div[class|='MuiCardContent']
-aboveFooter:    css:div[aria-selected]
-footer:         css:div[class*='HvActionContainer']
-checkbox:       css:input[type='checkbox']
