@@ -1,6 +1,6 @@
 *** Setting ***
+Resource    _resources.resource
 Force Tags  v3
-Resource    ../_keywords.resource
 
 
 *** Test Cases ***

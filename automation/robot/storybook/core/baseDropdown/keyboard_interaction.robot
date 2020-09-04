@@ -1,8 +1,8 @@
 *** Setting ***
 Resource      _resources.resource
 Test Setup    Run Keywords
-...           Go To    ${withContent}              AND
-...           Wait Until Element Is Enabled    ${dropdown}
+...           Go To    ${components}basedropdown--with-content
+...           AND    Wait Until Element Is Enabled    ${dropdown}
 Force Tags    keyboard, v3
 
 
@@ -20,4 +20,3 @@ close dropdown when is pressed ESCAPE
     Wait Until Element Is Visible        ${container}
     Press Keys                           None           ESCAPE
     Wait Until Element Is not Visible    ${container}
-
