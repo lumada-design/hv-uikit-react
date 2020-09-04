@@ -42,7 +42,7 @@ toggle indeterminate checkbox
     Go To                               ${patterns}selectors-checkbox--with-state
     Wait Until Element Is Enabled       ${inputIndeterm}
     Checkbox Should Not Be Selected     ${inputIndeterm}
-    Element Attribute Value Should Be   ${inputIndeterm}    data-indeterminate  false
+    Element Attribute Value Should Be   ${inputIndeterm}    data-indeterminate  true
     Click Element                       ${inputIndeterm}
     Element Attribute Value Should Be   ${inputIndeterm}    data-indeterminate  true
     Checkbox Should Be Selected         ${inputIndeterm}

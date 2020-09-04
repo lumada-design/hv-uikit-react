@@ -129,7 +129,7 @@ export const WithState = () => {
       <HvCheckBox
         id="checkState3"
         label="Checkbox indeterminate"
-        indeterminate={cChecked}
+        indeterminate
         onChange={() => setCChecked(!cChecked)}
       />
 

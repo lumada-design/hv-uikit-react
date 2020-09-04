@@ -34,6 +34,7 @@ export type HvRadioButtonClassKey =
   | "labelEnd"
   | "labelStart"
   | "radio"
-  | "icon";
+  | "icon"
+  | "disabledBorder";
 
 export default function HvRadioButton(props: HvRadioButtonProps): JSX.Element | null;

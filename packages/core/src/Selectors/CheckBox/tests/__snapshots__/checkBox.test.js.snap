@@ -15,6 +15,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
         "checkBox": "HvCheckBox-checkBox",
         "container": "HvCheckBox-container",
         "disableFocus": "HvCheckBox-disableFocus",
+        "disabledBorder": "HvCheckBox-disabledBorder",
         "icon": "HvCheckBox-icon",
         "labelDisabled": "HvCheckBox-labelDisabled",
         "labelEnd": "HvCheckBox-labelEnd",

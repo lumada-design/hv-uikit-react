@@ -48,6 +48,13 @@ const styles = theme => ({
   icon: {
     width: "32px",
     height: "32px"
+  },
+  disabledBorder: {
+    "& svg ": {
+      "& path:nth-child(2)": {
+        fill: theme.hv.palette.atmosphere.atmo5
+      }
+    }
   }
 });
 

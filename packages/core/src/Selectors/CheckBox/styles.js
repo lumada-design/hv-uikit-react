@@ -44,7 +44,14 @@ const styles = theme => ({
   checkBox: {
     padding: 0
   },
-  icon: {}
+  icon: {},
+  disabledBorder: {
+    "& svg ": {
+      "& path:nth-child(2)": {
+        fill: theme.hv.palette.atmosphere.atmo5
+      }
+    }
+  }
 });
 
 export default styles;

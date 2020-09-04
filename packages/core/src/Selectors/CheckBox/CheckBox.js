@@ -57,7 +57,9 @@ const HvCheckbox = props => {
       control={
         <Checkbox
           id={setId(id, "input")}
-          className={classes.checkBox}
+          className={clsx(classes.checkBox, {
+            [classes.disabledBorder]: checked && disabled
+          })}
           icon={icons.checkbox}
           indeterminateIcon={icons.checkboxPartial}
           checkedIcon={icons.checkboxChecked}
@@ -122,6 +124,10 @@ HvCheckbox.propTypes = {
      * Styles applied to the icon.
      */
     icon: PropTypes.string,
+    /**
+     * Styles applied to the icon border when it is checked and disabled.
+     */
+    disabledBorder: PropTypes.string,
     truncate: PropTypes.string
   }).isRequired,
   /**
