@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/";
 import { Ungroup } from "@hv/uikit-react-icons/dist";
@@ -27,7 +28,7 @@ export default {
   subcomponents: { HvModalTitle, HvModalContent, HvModalActions }
 };
 
-const SimpleModal = ({ buttonMessage, title, content, classes }) => {
+const SimpleModal = ({ buttonMessage, title, content, classes, indentContent = false }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -43,8 +44,9 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         onClose={() => setOpen(false)}
       >
         {title}
+
         {content || (
-          <HvModalContent>
+          <HvModalContent indentContent={indentContent}>
             Switching to model view will clear all the fields in your visualization. You will need
             to re-select your fields.
           </HvModalContent>
@@ -75,10 +77,10 @@ export const Main = () => {
         id="test"
         open={open}
         onClose={() => setOpen(false)}
-        firstFocusable="apply"
+        firstFocusable="close"
       >
         <HvModalTitle variant="warning">Switch model view?</HvModalTitle>
-        <HvModalContent>
+        <HvModalContent indentContent>
           Switching to model view will clear all the fields in your visualization. You will need to
           re-select your fields.
         </HvModalContent>
@@ -95,37 +97,42 @@ export const Main = () => {
   );
 };
 
-export const TextAndSemantic = () => (
-  <>
-    <SimpleModal
-      buttonMessage="No icon"
-      title={<HvModalTitle showIcon={false}>Are you sure?</HvModalTitle>}
-      content={
-        <HvModalContent>
-          <HvTypography style={{ marginLeft: 0 }}>
-            Switching to model view will clear all the fields in your visualization. You will need
-            to re-select your fields.
-          </HvTypography>
-        </HvModalContent>
-      }
-    />
-    <p />
-    <SimpleModal
-      buttonMessage="Warning"
-      title={<HvModalTitle variant="warning">Are you sure?</HvModalTitle>}
-    />
-    <p />
-    <SimpleModal
-      buttonMessage="Info"
-      title={<HvModalTitle variant="info">Are you sure?</HvModalTitle>}
-    />
-    <p />
-    <SimpleModal
-      buttonMessage="Error"
-      title={<HvModalTitle variant="error">Are you sure?</HvModalTitle>}
-    />
-  </>
-);
+export const TextAndSemantic = () => {
+  return (
+    <>
+      <SimpleModal
+        buttonMessage="No icon"
+        title={<HvModalTitle showIcon={false}>Are you sure?</HvModalTitle>}
+        content={
+          <HvModalContent>
+            <HvTypography>
+              Switching to model view will clear all the fields in your visualization. You will need
+              to re-select your fields.
+            </HvTypography>
+          </HvModalContent>
+        }
+      />
+      <p />
+      <SimpleModal
+        buttonMessage="Warning"
+        title={<HvModalTitle variant="warning">Are you sure?</HvModalTitle>}
+        indentContent
+      />
+      <p />
+      <SimpleModal
+        buttonMessage="Info"
+        title={<HvModalTitle variant="info">Are you sure?</HvModalTitle>}
+        indentContent
+      />
+      <p />
+      <SimpleModal
+        buttonMessage="Error"
+        title={<HvModalTitle variant="error">Are you sure?</HvModalTitle>}
+        indentContent
+      />
+    </>
+  );
+};
 
 TextAndSemantic.story = {
   parameters: {
@@ -141,6 +148,7 @@ export const CustomIcon = () => (
   <SimpleModal
     buttonMessage="Custom icon"
     title={<HvModalTitle customIcon={<Ungroup iconSize="S" />}>Are you sure?</HvModalTitle>}
+    indentContent
   />
 );
 
@@ -172,7 +180,7 @@ export const Accessibility = () => {
         <HvModalTitle id="hv-modal-title" variant="warning">
           Switch model view?
         </HvModalTitle>
-        <HvModalContent id="hv-modal-description">
+        <HvModalContent id="hv-modal-description" indentContent>
           Switching to model view will clear all the fields in your visualization. You will need to
           re-select your fields.
         </HvModalContent>
@@ -235,7 +243,7 @@ export const CustomContent = () => {
         buttonMessage="Table"
         disableBackdropClick
         title={
-          <HvModalTitle>
+          <HvModalTitle showIcon={false}>
             <div>
               <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
               <HvTypography>HDI</HvTypography>
@@ -310,5 +318,147 @@ CustomContent.story = {
     docs: {
       storyDescription: "It is possible to insert any component in the modal."
     }
+  }
+};
+
+export const RemoveSchedule = () => {
+  const [open, setOpen] = useState(false);
+
+  const styledString = () => (
+    <div>
+      The
+      <b>
+        {"\u00A0"}Generate Search Index{"\u00A0"}
+      </b>
+      schedule will be permanently removed.
+    </div>
+  );
+
+  return (
+    <div>
+      <HvButton id="openModal" style={{ width: "120px" }} onClick={() => setOpen(true)}>
+        Open modal
+      </HvButton>
+      <HvModal
+        disableBackdropClick
+        id="test"
+        open={open}
+        onClose={() => setOpen(false)}
+        firstFocusable="close"
+      >
+        <HvModalTitle variant="warning">Remove schedule?</HvModalTitle>
+        <HvModalContent indentContent>
+          <div>{styledString()}</div>
+        </HvModalContent>
+        <HvModalActions>
+          <HvButton id="remove" category="ghost">
+            Remove
+          </HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvModalActions>
+      </HvModal>
+    </div>
+  );
+};
+
+RemoveSchedule.story = {
+  parameters: {
+    v3: true
+  }
+};
+
+export const DeleteConfirmation = () => {
+  const [open, setOpen] = useState(false);
+
+  const labels = {
+    placeholder: "Enter text"
+  };
+
+  const styledString = () => (
+    <div>
+      This Execution and all its dependencies will be deleted permanently.
+      <br />
+      Confirm by typing
+      <b>
+        {"\u00A0"} Cleanse Raw Retail Store Date {"\u00A0"}
+      </b>
+      below.
+      <br />
+    </div>
+  );
+
+  return (
+    <div>
+      <HvButton id="openModal" style={{ width: "120px" }} onClick={() => setOpen(true)}>
+        Open modal
+      </HvButton>
+      <HvModal
+        disableBackdropClick
+        id="test"
+        open={open}
+        onClose={() => setOpen(false)}
+        firstFocusable="close"
+      >
+        <HvModalTitle variant="warning">Delete Confirmation</HvModalTitle>
+        <HvModalContent indentContent>
+          {styledString()}
+          <div style={{ marginTop: 20 }}>
+            <HvInput labels={labels} id="input-simple-sample" showInfo={false} />
+          </div>
+        </HvModalContent>
+        <HvModalActions>
+          <HvButton id="remove" category="ghost">
+            Delete Forever
+          </HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvModalActions>
+      </HvModal>
+    </div>
+  );
+};
+
+DeleteConfirmation.story = {
+  parameters: {
+    v3: true
+  }
+};
+
+export const NoRename = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <HvButton id="openModal" style={{ width: "120px" }} onClick={() => setOpen(true)}>
+        Open modal
+      </HvButton>
+      <HvModal
+        disableBackdropClick
+        id="test"
+        open={open}
+        onClose={() => setOpen(false)}
+        firstFocusable="close"
+      >
+        <HvModalTitle variant="warning">Cannot rename</HvModalTitle>
+        <HvModalContent indentContent>
+          A file with the same name already exists. You can replace existing file or specify another
+          name.
+        </HvModalContent>
+        <HvModalActions>
+          <HvButton id="remove" category="ghost">
+            Specify another name
+          </HvButton>
+        </HvModalActions>
+      </HvModal>
+    </div>
+  );
+};
+
+NoRename.story = {
+  parameters: {
+    v3: true
   }
 };

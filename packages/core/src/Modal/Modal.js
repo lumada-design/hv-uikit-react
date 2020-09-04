@@ -47,12 +47,6 @@ const HvModal = ({
     }
   }, []);
 
-  const closeButtonDisplay = () => <Close role="presentation" />;
-
-  const CloseButtonTooltipWrapper = buttonTitle
-    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
-    : closeButtonDisplay;
-
   const keyDownHandler = event => {
     if (isKeypress(event, KeyboardCodes.Tab) && !isNil(event.target) && !isNil(focusableQueue)) {
       if (event.shiftKey && event.target === focusableQueue.first) {
@@ -80,6 +74,12 @@ const HvModal = ({
       }
     }
   };
+
+  const closeButtonDisplay = () => <Close role="presentation" />;
+
+  const CloseButtonTooltipWrapper = buttonTitle
+    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
+    : closeButtonDisplay;
 
   return (
     <Dialog

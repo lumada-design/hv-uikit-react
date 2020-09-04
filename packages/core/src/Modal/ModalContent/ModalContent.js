@@ -5,17 +5,12 @@ import clsx from "clsx";
 import HvTypography from "../../Typography";
 import styles from "./styles";
 
-const ModalContent = ({ classes, className, children }) => {
-  const isString = typeof children === "string";
-
+const ModalContent = ({ classes, className, children, indentContent = false }) => {
   return (
-    <DialogContent
-      className={clsx(className, classes.root, {
-        [classes.textContent]: isString
-      })}
-    >
-      {!isString && children}
-      {isString && <HvTypography>{children}</HvTypography>}
+    <DialogContent className={clsx(className, classes.root)}>
+      <div className={clsx({ [classes.textContent]: indentContent })}>
+        <HvTypography>{children}</HvTypography>
+      </div>
     </DialogContent>
   );
 };
@@ -39,7 +34,11 @@ ModalContent.propTypes = {
     textContent: PropTypes.string
   }).isRequired,
   /**
-   * Content to be render.
+   * Content should be indented in relationship to the Modal title.
+   */
+  indentContent: PropTypes.bool,
+  /**
+   * Content to be rendered.
    */
   children: PropTypes.node.isRequired
 };

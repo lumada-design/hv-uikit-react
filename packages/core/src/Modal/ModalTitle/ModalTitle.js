@@ -25,7 +25,7 @@ const ModalTitle = ({
         {icon}
         <div className={clsx({ [classes.textWithIcon]: icon })}>
           {!isString && children}
-          {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
+          {isString && <HvTypography variant="xxsTitle">{children}</HvTypography>}
         </div>
       </div>
     </DialogTitle>
@@ -56,7 +56,11 @@ ModalTitle.propTypes = {
     /**
      * Style applied to the icon.
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    /**
+     * Style applied to the close button.
+     */
+    closeButton: PropTypes.string
   }).isRequired,
   /**
    * Variant of the modal.
