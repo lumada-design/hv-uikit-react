@@ -1712,6 +1712,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                   Object {
                                                     "box": "HvList-box",
                                                     "icon": "HvList-icon",
+                                                    "itemSelector": "HvList-itemSelector",
                                                     "root": "HvList-root",
                                                     "selectorContainer": "HvList-selectorContainer",
                                                     "truncate": "HvList-truncate",
@@ -1779,6 +1780,11 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                       role="listbox"
                                                     >
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "",
+                                                          }
+                                                        }
                                                         id="hv-dropdown-base-1-values-list-item-0"
                                                         key=".$0"
                                                         onClick={[Function]}
@@ -1942,6 +1948,11 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                         </HvListItem>
                                                       </WithStyles(HvListItem)>
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "",
+                                                          }
+                                                        }
                                                         id="hv-dropdown-base-1-values-list-item-1"
                                                         key=".$1"
                                                         onClick={[Function]}
@@ -2100,6 +2111,11 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                         </HvListItem>
                                                       </WithStyles(HvListItem)>
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "",
+                                                          }
+                                                        }
                                                         id="hv-dropdown-base-1-values-list-item-2"
                                                         key=".$2"
                                                         onClick={[Function]}
@@ -5492,6 +5508,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                   Object {
                                                     "box": "HvList-box",
                                                     "icon": "HvList-icon",
+                                                    "itemSelector": "HvList-itemSelector",
                                                     "root": "HvList-root",
                                                     "selectorContainer": "HvList-selectorContainer",
                                                     "truncate": "HvList-truncate",
@@ -5560,6 +5577,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                       role="listbox"
                                                     >
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "HvList-itemSelector",
+                                                          }
+                                                        }
                                                         id="test-dropdown-values-list-item-0"
                                                         key=".$0"
                                                         onClick={[Function]}
@@ -5578,7 +5600,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                               "gutters": "HvListItem-gutters",
                                                               "interactive": "HvListItem-interactive",
                                                               "root": "HvListItem-root",
-                                                              "selected": "HvListItem-selected",
+                                                              "selected": "HvListItem-selected HvList-itemSelector",
                                                               "startAdornment": "HvListItem-startAdornment",
                                                               "withEndAdornment": "HvListItem-withEndAdornment",
                                                               "withStartAdornment": "HvListItem-withStartAdornment",
@@ -6470,6 +6492,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         </HvListItem>
                                                       </WithStyles(HvListItem)>
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "HvList-itemSelector",
+                                                          }
+                                                        }
                                                         id="test-dropdown-values-list-item-1"
                                                         key=".$1"
                                                         onClick={[Function]}
@@ -6488,7 +6515,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                               "gutters": "HvListItem-gutters",
                                                               "interactive": "HvListItem-interactive",
                                                               "root": "HvListItem-root",
-                                                              "selected": "HvListItem-selected",
+                                                              "selected": "HvListItem-selected HvList-itemSelector",
                                                               "startAdornment": "HvListItem-startAdornment",
                                                               "withEndAdornment": "HvListItem-withEndAdornment",
                                                               "withStartAdornment": "HvListItem-withStartAdornment",
@@ -7380,6 +7407,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         </HvListItem>
                                                       </WithStyles(HvListItem)>
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "HvList-itemSelector",
+                                                          }
+                                                        }
                                                         id="test-dropdown-values-list-item-2"
                                                         key=".$2"
                                                         onClick={[Function]}
@@ -7398,7 +7430,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                               "gutters": "HvListItem-gutters",
                                                               "interactive": "HvListItem-interactive",
                                                               "root": "HvListItem-root",
-                                                              "selected": "HvListItem-selected",
+                                                              "selected": "HvListItem-selected HvList-itemSelector",
                                                               "startAdornment": "HvListItem-startAdornment",
                                                               "withEndAdornment": "HvListItem-withEndAdornment",
                                                               "withStartAdornment": "HvListItem-withStartAdornment",
@@ -9830,6 +9862,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                   Object {
                                                     "box": "HvList-box",
                                                     "icon": "HvList-icon",
+                                                    "itemSelector": "HvList-itemSelector",
                                                     "root": "HvList-root",
                                                     "selectorContainer": "HvList-selectorContainer",
                                                     "truncate": "HvList-truncate",
@@ -9897,6 +9930,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                       role="listbox"
                                                     >
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "",
+                                                          }
+                                                        }
                                                         id="hv-dropdown-base-9-values-list-item-0"
                                                         key=".$0"
                                                         onClick={[Function]}
@@ -10053,6 +10091,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                         </HvListItem>
                                                       </WithStyles(HvListItem)>
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "",
+                                                          }
+                                                        }
                                                         id="hv-dropdown-base-9-values-list-item-1"
                                                         key=".$1"
                                                         onClick={[Function]}
@@ -10209,6 +10252,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                         </HvListItem>
                                                       </WithStyles(HvListItem)>
                                                       <WithStyles(HvListItem)
+                                                        classes={
+                                                          Object {
+                                                            "selected": "",
+                                                          }
+                                                        }
                                                         id="hv-dropdown-base-9-values-list-item-2"
                                                         key=".$2"
                                                         onClick={[Function]}
