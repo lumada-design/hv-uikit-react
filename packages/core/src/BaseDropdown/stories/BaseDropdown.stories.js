@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { MoreOptionsVertical } from "@hv/uikit-react-icons";
 import { useTheme } from "@material-ui/core";
-import HvBaseDropdown from "..";
-import HvPanel from "../../Panel";
-import HvInput from "../../Input";
-import HvButton from "../../Button";
-import HvTypography from "../../Typography";
+import { HvBaseDropdown, HvButton, HvInput, HvPanel } from "../..";
 import { HvFormElement, HvWarningText, HvLabel } from "../../Forms";
 
 export default {
@@ -30,11 +26,9 @@ Main.story = {
 
 export const WithContent = () => {
   const theme = useTheme();
+
   return (
-    <HvBaseDropdown
-      placeholder={<HvTypography id="labelTypography">Placeholder</HvTypography>}
-      aria-labelledby="labelTypography"
-    >
+    <HvBaseDropdown placeholder="Placeholder...">
       <HvPanel>
         <div style={{ width: "300px", height: "300px", background: theme.palette.atmo2 }}>
           <HvInput id="input-dropdown" />
@@ -76,9 +70,9 @@ export const Controlled = () => {
   const theme = useTheme();
   return (
     <>
-      <HvButton onClick={() => setOpen(!open)}>change</HvButton>
+      <HvButton onClick={() => setOpen(!open)}>Toggle</HvButton>
       <p />
-      <HvBaseDropdown placeholder="PlaceHolder..." expanded={open} onToggle={(e, s) => setOpen(s)}>
+      <HvBaseDropdown placeholder="Placeholder..." expanded={open} onToggle={(e, s) => setOpen(s)}>
         <HvPanel>
           <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
         </HvPanel>
