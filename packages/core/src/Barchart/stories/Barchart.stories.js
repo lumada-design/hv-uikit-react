@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import withStyles from "@material-ui/core/styles/withStyles";
-import React, { useState, useEffect } from "react";
-import { Random } from "../../utils";
+import React from "react";
 import { HvBarchart, HvDropDownMenu, HvDropdown, HvTypography } from "../..";
 
 export default {
@@ -120,7 +119,7 @@ export const CustomStackedVerticalBarchart = () => {
           <HvDropdown
             id="dropdown2"
             labels={{ title: "Time Period" }}
-            classes={{ root: classes.root, label: classes.label }}
+            classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             values={[
               { label: "Last 0.5h" },
               { label: "Last 1.5h", selected: true },
@@ -132,6 +131,7 @@ export const CustomStackedVerticalBarchart = () => {
             className={classes.dropdownPlacement}
             onClick={(e, item) => console.log(item.label)}
             dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+            placement="left"
           />
         </div>
       </ChartHeader>
@@ -239,39 +239,5 @@ export const StackedHorizontalBarchart = () => {
 StackedHorizontalBarchart.parameters = {
   docs: {
     description: { story: "Groups in stack mode." }
-  }
-};
-
-export const WithIntervalUpdates = () => {
-  const r = new Random();
-
-  const [data, setData] = useState([
-    {
-      x: ["January", "February", "March"],
-      y: [2300, 1000, 8500],
-      name: "Sales Target"
-    }
-  ]);
-
-  useEffect(() => {
-    const interval = setTimeout(() => {
-      setData([
-        {
-          x: ["January", "February", "March"],
-          y: [r.next(1000, 3000), r.next(500, 3500), 8500],
-          name: "Sales Target"
-        }
-      ]);
-    }, 2000);
-
-    return () => clearTimeout(interval);
-  });
-
-  return <HvBarchart data={data} />;
-};
-
-WithIntervalUpdates.parameters = {
-  docs: {
-    description: { story: "Data updated each second." }
   }
 };

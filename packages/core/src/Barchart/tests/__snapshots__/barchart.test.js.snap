@@ -71,6 +71,83 @@ exports[`Barchart should render correctly 1`] = `
         Object {
           "bargap": 0.25,
           "bargroupgap": 0.25,
+          "xaxis": Object {
+            "automargin": true,
+            "autorange": true,
+            "fixedrange": true,
+            "gridcolor": "#CCCED0",
+            "linecolor": "#CCCED0",
+            "linewidth": 1,
+            "range": Array [
+              -0.5,
+              2.5,
+            ],
+            "showgrid": false,
+            "tickfont": Object {
+              "color": "#414141",
+              "family": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "size": 10,
+            },
+            "ticks": "",
+            "title": Object {
+              "font": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+            },
+            "type": "category",
+            "zeroline": false,
+          },
+          "yaxis": Object {
+            "automargin": true,
+            "autorange": true,
+            "fixedrange": true,
+            "gridcolor": "#CCCED0",
+            "linecolor": "#CCCED0",
+            "linewidth": 1,
+            "range": Array [
+              0,
+              8947.368421052632,
+            ],
+            "showgrid": true,
+            "showline": false,
+            "tickfont": Object {
+              "color": "#414141",
+              "family": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "size": 10,
+            },
+            "ticks": "",
+            "title": Object {
+              "font": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+            },
+            "type": "linear",
+            "zeroline": false,
+          },
         }
       }
       tooltipType="multiple"
@@ -112,6 +189,83 @@ exports[`Barchart should render correctly 1`] = `
           Object {
             "bargap": 0.25,
             "bargroupgap": 0.25,
+            "xaxis": Object {
+              "automargin": true,
+              "autorange": true,
+              "fixedrange": true,
+              "gridcolor": "#CCCED0",
+              "linecolor": "#CCCED0",
+              "linewidth": 1,
+              "range": Array [
+                -0.5,
+                2.5,
+              ],
+              "showgrid": false,
+              "tickfont": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+              "ticks": "",
+              "title": Object {
+                "font": Object {
+                  "color": "#414141",
+                  "family": Array [
+                    "'Open Sans'",
+                    "Arial",
+                    "Helvetica",
+                    "sans-serif",
+                  ],
+                  "size": 10,
+                },
+              },
+              "type": "category",
+              "zeroline": false,
+            },
+            "yaxis": Object {
+              "automargin": true,
+              "autorange": true,
+              "fixedrange": true,
+              "gridcolor": "#CCCED0",
+              "linecolor": "#CCCED0",
+              "linewidth": 1,
+              "range": Array [
+                0,
+                8947.368421052632,
+              ],
+              "showgrid": true,
+              "showline": false,
+              "tickfont": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+              "ticks": "",
+              "title": Object {
+                "font": Object {
+                  "color": "#414141",
+                  "family": Array [
+                    "'Open Sans'",
+                    "Arial",
+                    "Helvetica",
+                    "sans-serif",
+                  ],
+                  "size": 10,
+                },
+              },
+              "type": "linear",
+              "zeroline": false,
+            },
           }
         }
         tooltipType="multiple"
@@ -186,14 +340,14 @@ exports[`Barchart should render correctly 1`] = `
                     "orientation": "h",
                     "x": 0.5,
                     "xanchor": "center",
-                    "y": 1.15,
+                    "y": 1.1,
                     "yanchor": "middle",
                   },
                   "margin": Object {
                     "b": 50,
                     "l": 50,
                     "pad": 0,
-                    "t": 50,
+                    "t": 10,
                   },
                   "paper_bgcolor": "transparent",
                   "plot_bgcolor": "transparent",
@@ -209,7 +363,6 @@ exports[`Barchart should render correctly 1`] = `
                       2.5,
                     ],
                     "showgrid": false,
-                    "showline": true,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -345,14 +498,14 @@ exports[`Barchart should render correctly 1`] = `
                       "orientation": "h",
                       "x": 0.5,
                       "xanchor": "center",
-                      "y": 1.15,
+                      "y": 1.1,
                       "yanchor": "middle",
                     },
                     "margin": Object {
                       "b": 50,
                       "l": 50,
                       "pad": 0,
-                      "t": 50,
+                      "t": 10,
                     },
                     "paper_bgcolor": "transparent",
                     "plot_bgcolor": "transparent",
@@ -368,7 +521,6 @@ exports[`Barchart should render correctly 1`] = `
                         2.5,
                       ],
                       "showgrid": false,
-                      "showline": true,
                       "tickfont": Object {
                         "color": "#414141",
                         "family": Array [
@@ -504,14 +656,14 @@ exports[`Barchart should render correctly 1`] = `
                         "orientation": "h",
                         "x": 0.5,
                         "xanchor": "center",
-                        "y": 1.15,
+                        "y": 1.1,
                         "yanchor": "middle",
                       },
                       "margin": Object {
                         "b": 50,
                         "l": 50,
                         "pad": 0,
-                        "t": 50,
+                        "t": 10,
                       },
                       "paper_bgcolor": "transparent",
                       "plot_bgcolor": "transparent",
@@ -527,7 +679,6 @@ exports[`Barchart should render correctly 1`] = `
                           2.5,
                         ],
                         "showgrid": false,
-                        "showline": true,
                         "tickfont": Object {
                           "color": "#414141",
                           "family": Array [

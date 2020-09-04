@@ -29,7 +29,11 @@ const Barchart = ({
   /* Values derived from props */
 
   const dataWithDefaults = useMemo(() => applyDataDefaults(data, horizontal), [data, horizontal]);
-  const chartLayout = useMemo(() => applyLayoutDefaults(layout, stack), [layout, stack]);
+  const chartLayout = useMemo(() => applyLayoutDefaults(layout, stack, horizontal), [
+    layout,
+    stack,
+    horizontal
+  ]);
 
   /* State */
 

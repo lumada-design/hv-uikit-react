@@ -125,14 +125,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                 "orientation": "h",
                 "x": 0.5,
                 "xanchor": "center",
-                "y": 1.15,
+                "y": 1.1,
                 "yanchor": "middle",
               },
               "margin": Object {
                 "b": 50,
                 "l": 50,
                 "pad": 0,
-                "t": 50,
+                "t": 10,
               },
               "paper_bgcolor": "transparent",
               "plot_bgcolor": "transparent",
@@ -148,7 +148,6 @@ exports[`Chart withStyles should render correctly 1`] = `
                   8947.368421052632,
                 ],
                 "showgrid": true,
-                "showline": false,
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -187,7 +186,6 @@ exports[`Chart withStyles should render correctly 1`] = `
                   2.5,
                 ],
                 "showgrid": false,
-                "showline": true,
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -281,14 +279,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                   "orientation": "h",
                   "x": 0.5,
                   "xanchor": "center",
-                  "y": 1.15,
+                  "y": 1.1,
                   "yanchor": "middle",
                 },
                 "margin": Object {
                   "b": 50,
                   "l": 50,
                   "pad": 0,
-                  "t": 50,
+                  "t": 10,
                 },
                 "paper_bgcolor": "transparent",
                 "plot_bgcolor": "transparent",
@@ -304,7 +302,6 @@ exports[`Chart withStyles should render correctly 1`] = `
                     8947.368421052632,
                   ],
                   "showgrid": true,
-                  "showline": false,
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -343,7 +340,6 @@ exports[`Chart withStyles should render correctly 1`] = `
                     2.5,
                   ],
                   "showgrid": false,
-                  "showline": true,
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -438,14 +434,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                     "orientation": "h",
                     "x": 0.5,
                     "xanchor": "center",
-                    "y": 1.15,
+                    "y": 1.1,
                     "yanchor": "middle",
                   },
                   "margin": Object {
                     "b": 50,
                     "l": 50,
                     "pad": 0,
-                    "t": 50,
+                    "t": 10,
                   },
                   "paper_bgcolor": "transparent",
                   "plot_bgcolor": "transparent",
@@ -461,7 +457,6 @@ exports[`Chart withStyles should render correctly 1`] = `
                       8947.368421052632,
                     ],
                     "showgrid": true,
-                    "showline": false,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -500,7 +495,6 @@ exports[`Chart withStyles should render correctly 1`] = `
                       2.5,
                     ],
                     "showgrid": false,
-                    "showline": true,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
