@@ -38,6 +38,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
         "pageNavigator": "HvPagination-pageNavigator",
         "pageSizeInput": "HvPagination-pageSizeInput",
         "pageSizeInputContainer": "HvPagination-pageSizeInputContainer",
+        "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
         "pageSizeOptions": "HvPagination-pageSizeOptions",
         "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
         "root": "HvPagination-root",
@@ -78,6 +79,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
           "pageNavigator": "HvPagination-pageNavigator",
           "pageSizeInput": "HvPagination-pageSizeInput",
           "pageSizeInputContainer": "HvPagination-pageSizeInputContainer",
+          "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
           "pageSizeOptions": "HvPagination-pageSizeOptions",
           "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
           "root": "HvPagination-root",
@@ -944,6 +946,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                 classes={
                   Object {
                     "input": "HvPagination-pageSizeInput",
+                    "inputRoot": "HvPagination-pageSizeInputRoot",
                     "root": "HvPagination-pageSizeInputContainer",
                   }
                 }
@@ -985,7 +988,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                       "iconClear": "HvInput-iconClear",
                       "input": "HvInput-input HvPagination-pageSizeInput",
                       "inputDisabled": "HvInput-inputDisabled",
-                      "inputRoot": "HvInput-inputRoot",
+                      "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
                       "inputRootDisabled": "HvInput-inputRootDisabled",
                       "inputRootFocused": "HvInput-inputRootFocused",
                       "inputRootInvalid": "HvInput-inputRootInvalid",
@@ -1036,7 +1039,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                         "iconClear": "HvInput-iconClear",
                         "input": "HvInput-input HvPagination-pageSizeInput",
                         "inputDisabled": "HvInput-inputDisabled",
-                        "inputRoot": "HvInput-inputRoot",
+                        "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
                         "inputRootDisabled": "HvInput-inputRootDisabled",
                         "inputRootFocused": "HvInput-inputRootFocused",
                         "inputRootInvalid": "HvInput-inputRootInvalid",
@@ -1095,7 +1098,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                           "iconClear": "HvInput-iconClear",
                           "input": "HvInput-input HvPagination-pageSizeInput",
                           "inputDisabled": "HvInput-inputDisabled",
-                          "inputRoot": "HvInput-inputRoot",
+                          "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
                           "inputRootDisabled": "HvInput-inputRootDisabled",
                           "inputRootFocused": "HvInput-inputRootFocused",
                           "inputRootInvalid": "HvInput-inputRootInvalid",
@@ -1193,7 +1196,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                   Object {
                                     "input": "HvInput-input HvPagination-pageSizeInput",
                                     "inputDisabled": "HvInput-inputDisabled",
-                                    "inputRoot": "HvInput-inputRoot",
+                                    "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
                                     "inputRootFocused": "HvInput-inputRootFocused",
                                     "multiLine": "HvInput-multiLine",
                                   }
@@ -1244,7 +1247,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                       "input": "HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
                                       "inputBorderContainer": "HvBaseInput-inputBorderContainer",
                                       "inputDisabled": "HvBaseInput-inputDisabled HvInput-inputDisabled",
-                                      "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot",
+                                      "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
                                       "inputRootDisabled": "HvBaseInput-inputRootDisabled",
                                       "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                                       "invalidRoot": "HvBaseInput-invalidRoot",
@@ -1296,7 +1299,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(Input))
                                       autoFocus={false}
-                                      className="HvBaseInput-inputRoot HvInput-inputRoot"
+                                      className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
                                       classes={
                                         Object {
                                           "disabled": "HvBaseInput-inputDisabled HvInput-inputDisabled",
@@ -1352,7 +1355,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                     >
                                       <ForwardRef(Input)
                                         autoFocus={false}
-                                        className="HvBaseInput-inputRoot HvInput-inputRoot"
+                                        className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
                                         classes={
                                           Object {
                                             "colorSecondary": "MuiInput-colorSecondary",
@@ -1419,7 +1422,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                       >
                                         <WithStyles(ForwardRef(InputBase))
                                           autoFocus={false}
-                                          className="HvBaseInput-inputRoot HvInput-inputRoot"
+                                          className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
                                           classes={
                                             Object {
                                               "colorSecondary": "MuiInput-colorSecondary",
@@ -1487,7 +1490,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                         >
                                           <ForwardRef(InputBase)
                                             autoFocus={false}
-                                            className="HvBaseInput-inputRoot HvInput-inputRoot"
+                                            className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
                                             classes={
                                               Object {
                                                 "adornedEnd": "MuiInputBase-adornedEnd",
@@ -1558,7 +1561,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                             value="1"
                                           >
                                             <div
-                                              className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
+                                              className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
                                               onClick={[Function]}
                                             >
                                               <input

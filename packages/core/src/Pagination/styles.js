@@ -11,7 +11,22 @@ const styles = theme => {
       justifyContent: "center",
       alignItems: "stretch",
       flexWrap: "wrap",
-      marginTop: `${theme.hv.spacing.sm}px`
+      marginTop: theme.hv.spacing.sm,
+      "& $pageSizeInputContainer": {
+        width: 40,
+        minWidth: 40,
+        maxWidth: theme.hv.spacing.lg,
+        '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
+          WebkitAppearance: "none",
+          margin: 0
+        }
+      },
+      "& $pageSizeInputRoot": {
+        backgroundColor: "transparent",
+        "&:focus, &:hover": {
+          backgroundColor: hoverColor
+        }
+      }
     },
     pageSizeOptions: {
       position: "absolute",
@@ -80,21 +95,8 @@ const styles = theme => {
         cursor: "pointer"
       }
     },
-    pageSizeInputContainer: {
-      width: "40px",
-      minWidth: "40px",
-      maxWidth: `${theme.hv.spacing.lg}px`,
-      "& :nth-child(2) > div": {
-        backgroundColor: "transparent",
-        "&:focus, &:hover": {
-          background: hoverColor
-        }
-      },
-      '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
-        WebkitAppearance: "none",
-        margin: 0
-      }
-    },
+    pageSizeInputContainer: {},
+    pageSizeInputRoot: {},
     iconContainer: {
       padding: 0,
       borderRadius: 0,
