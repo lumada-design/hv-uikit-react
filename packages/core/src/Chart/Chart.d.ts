@@ -3,14 +3,6 @@ import { HvPlotProps } from "./Plot";
 
 export interface HvChartProps extends StandardProps<HvPlotProps, HvChartClassKey> {
   /**
-   * Title of the chart.
-   */
-  title?: string;
-  /**
-   * Subtitle of the chart.
-   */
-  subtitle?: string;
-  /**
    * Defines if should use a single or multiline tooltip.
    */
   tooltipType?: "single" | "multiple";
@@ -24,6 +16,6 @@ export interface HvChartProps extends StandardProps<HvPlotProps, HvChartClassKey
   yAxisTitle?: string;
 }
 
-export type HvChartClassKey = "root" | "titleContainer" | "subtitle" | "paddingTop";
+export type HvChartClassKey = "root";
 
 export default function HvChart(props: HvChartProps): JSX.Element | null;

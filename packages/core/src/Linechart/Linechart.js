@@ -15,8 +15,6 @@ import styles from "./styles";
 const Linechart = ({
   id,
   classes,
-  title,
-  subtitle,
   data,
   layout,
   config,
@@ -39,8 +37,6 @@ const Linechart = ({
     <Chart
       id={id}
       classes={classes}
-      title={title}
-      subtitle={subtitle}
       xAxisTitle={xAxisTitle}
       yAxisTitle={yAxisTitle}
       data={chartData}
@@ -61,14 +57,6 @@ Linechart.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.instanceOf(Object),
-  /**
-   * Title of the chart.
-   */
-  title: PropTypes.string,
-  /**
-   * Subtitle of the chart.
-   */
-  subtitle: PropTypes.string,
   /**
    * Plotly data object (see https://plot.ly/javascript/reference/).
    */

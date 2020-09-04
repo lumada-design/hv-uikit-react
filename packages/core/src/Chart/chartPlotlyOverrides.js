@@ -27,8 +27,7 @@ const applyLayoutYaxisDefaults = (inputLayout, layoutStyles, yAxisTitle, isHoriz
 
   setterIfNil(layout.yaxis, "fixedrange", true);
 
-  setterIfNil(layout.yaxis, "tickcolor", layoutStyles.lineColor);
-  setterIfNil(layout.yaxis, "ticklen", 2);
+  setterIfNil(layout.yaxis, "ticks", "");
   setterIfNil(layout.yaxis, "tickfont", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
@@ -58,7 +57,6 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
   setterIfNil(layout.xaxis, "automargin", true);
 
   setterIfNil(layout.xaxis, "title", {});
-
   setterIfNil(layout.xaxis.title, "font", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
@@ -67,8 +65,7 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
 
   setterIfNil(layout.xaxis, "fixedrange", true);
 
-  setterIfNil(layout.xaxis, "tickcolor", layoutStyles.lineColor);
-  setterIfNil(layout.xaxis, "ticklen", 2);
+  setterIfNil(layout.xaxis, "ticks", "");
   setterIfNil(layout.xaxis, "tickfont", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
@@ -93,17 +90,17 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
 const applyLayoutLegendDefaults = (inputLayout, layoutStyles) => {
   const layout = inputLayout;
   setterIfNil(layout, "legend", {
-    x: 1,
-    y: 1.1,
+    x: 0.5,
+    y: 1,
     xanchor: "right",
     yanchor: "bottom",
     orientation: "h"
   });
 
   setterIfNil(layout.legend, "font", {
-    family: layoutStyles.vizText.fontFamily,
-    size: layoutStyles.vizText.fontSize,
-    color: layoutStyles.vizText.color
+    family: layoutStyles.legendText.fontFamily,
+    size: layoutStyles.legendText.fontSize,
+    color: layoutStyles.legendText.color
   });
   return layout;
 };
@@ -124,10 +121,6 @@ const applyLayoutRootDefaults = (inputLayout, layoutStyles) => {
 
   layout.plot_bgcolor = layoutStyles.plotColor;
   layout.paper_bgcolor = layoutStyles.plotColor;
-
-  // setterIfNil(layout, "plot_bgcolor", styles.plotColor);
-  //
-  // setterIfNil(layout, "paper_bgcolor", styles.plotColor);
 };
 
 export const applyLayoutDefaults = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTitle) => {
