@@ -511,7 +511,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-1-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -1786,6 +1786,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                         selected={true}
                                                         startAdornment={null}
                                                         tabIndex={0}
+                                                        useSelector={false}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -1809,6 +1810,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                           selected={true}
                                                           startAdornment={null}
                                                           tabIndex={0}
+                                                          useSelector={false}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -1830,7 +1832,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                 >
                                                                   <li
                                                                     aria-selected="true"
-                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                                     id="hv-dropdown-base-1-values-list-item-0"
                                                                     role="option"
                                                                     tabindex="0"
@@ -1886,7 +1888,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                   >
                                                                     <li
                                                                       aria-selected="true"
-                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                                       id="hv-dropdown-base-1-values-list-item-0"
                                                                       role="option"
                                                                       tabindex="0"
@@ -1921,7 +1923,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                               >
                                                                 <li
                                                                   aria-selected={true}
-                                                                  className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                                  className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                                   id="hv-dropdown-base-1-values-list-item-0"
                                                                   onBlur={[Function]}
                                                                   onClick={[Function]}
@@ -1948,6 +1950,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                         role="option"
                                                         startAdornment={null}
                                                         tabIndex={-1}
+                                                        useSelector={false}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -1970,6 +1973,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                           role="option"
                                                           startAdornment={null}
                                                           tabIndex={-1}
+                                                          useSelector={false}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -1991,7 +1995,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                 >
                                                                   <li
                                                                     aria-selected="true"
-                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                                     id="hv-dropdown-base-1-values-list-item-0"
                                                                     role="option"
                                                                     tabindex="0"
@@ -2046,7 +2050,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                   >
                                                                     <li
                                                                       aria-selected="true"
-                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                                       id="hv-dropdown-base-1-values-list-item-0"
                                                                       role="option"
                                                                       tabindex="0"
@@ -2106,6 +2110,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                         role="option"
                                                         startAdornment={null}
                                                         tabIndex={-1}
+                                                        useSelector={false}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -2128,6 +2133,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                           role="option"
                                                           startAdornment={null}
                                                           tabIndex={-1}
+                                                          useSelector={false}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -2149,7 +2155,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                 >
                                                                   <li
                                                                     aria-selected="true"
-                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                                     id="hv-dropdown-base-1-values-list-item-0"
                                                                     role="option"
                                                                     tabindex="0"
@@ -2204,7 +2210,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                   >
                                                                     <li
                                                                       aria-selected="true"
-                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                                       id="hv-dropdown-base-1-values-list-item-0"
                                                                       role="option"
                                                                       tabindex="0"
@@ -2807,7 +2813,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-1-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -2956,7 +2962,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-3-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -3105,7 +3111,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-5-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -3254,7 +3260,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-7-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -5567,6 +5573,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         selected={false}
                                                         startAdornment={null}
                                                         tabIndex={0}
+                                                        useSelector={true}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -5590,6 +5597,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                           selected={false}
                                                           startAdornment={null}
                                                           tabIndex={0}
+                                                          useSelector={true}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -6477,6 +6485,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         selected={false}
                                                         startAdornment={null}
                                                         tabIndex={-1}
+                                                        useSelector={true}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -6500,6 +6509,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                           selected={false}
                                                           startAdornment={null}
                                                           tabIndex={-1}
+                                                          useSelector={true}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -7387,6 +7397,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         selected={false}
                                                         startAdornment={null}
                                                         tabIndex={-1}
+                                                        useSelector={true}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -7410,6 +7421,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                           selected={false}
                                                           startAdornment={null}
                                                           tabIndex={-1}
+                                                          useSelector={true}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -9139,7 +9151,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-1-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -9288,7 +9300,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-3-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -9437,7 +9449,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-5-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -9586,7 +9598,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <li
                                               aria-selected="true"
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                               id="hv-dropdown-base-7-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -9903,6 +9915,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                         role="option"
                                                         startAdornment={null}
                                                         tabIndex={0}
+                                                        useSelector={false}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -9925,6 +9938,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                           role="option"
                                                           startAdornment={null}
                                                           tabIndex={0}
+                                                          useSelector={false}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -10059,6 +10073,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                         role="option"
                                                         startAdornment={null}
                                                         tabIndex={-1}
+                                                        useSelector={false}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -10081,6 +10096,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                           role="option"
                                                           startAdornment={null}
                                                           tabIndex={-1}
+                                                          useSelector={false}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={
@@ -10215,6 +10231,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                         role="option"
                                                         startAdornment={null}
                                                         tabIndex={-1}
+                                                        useSelector={false}
                                                       >
                                                         <HvListItem
                                                           classes={
@@ -10237,6 +10254,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                           role="option"
                                                           startAdornment={null}
                                                           tabIndex={-1}
+                                                          useSelector={false}
                                                         >
                                                           <WithStyles(Focus)
                                                             classes={

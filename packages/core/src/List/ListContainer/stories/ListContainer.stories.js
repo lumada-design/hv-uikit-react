@@ -29,7 +29,7 @@ export default {
 export const Main = () => (
   <>
     <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer>
+      <HvListContainer condensed>
         <HvListItem>98001, Store Manager</HvListItem>
         <HvListItem>98002, Store Manager</HvListItem>
         <HvListItem>98003, Store Manager</HvListItem>
@@ -196,6 +196,7 @@ export const MultiSelectionWithSelectors = () => {
         disableGutters
         multiSelect
         aria-label="Single Selection List with radio"
+        directSelection={false}
       >
         <HvListItem>
           <HvCheckBox
@@ -242,11 +243,11 @@ export const MultiSelectionWithSelectAll = () => {
   // Style bulk actions
   const StyledHvBulkActions = withStyles(theme => ({
     root: {
-      margin: "0 0 2px 0"
+      margin: 0
     },
     editMode: {
-      backgroundColor: theme.palette.atmo3,
-      "& $selectAll": {
+      backgroundColor: theme.palette.atmo1,
+      "& $selectAll *": {
         color: theme.hv.palette.accent.acce1
       }
     },
@@ -383,7 +384,7 @@ export const WithTitle = () => {
   const StyledHvLink = withStyles(theme => ({
     a: {
       ...theme.hv.typography.normalText,
-
+      textDecoration: "none",
       "&:focus": {
         boxShadow: "unset !important"
       }

@@ -1612,6 +1612,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                               role="menuitem"
                                               startAdornment={null}
                                               tabIndex={0}
+                                              useSelector={false}
                                             >
                                               <HvListItem
                                                 classes={
@@ -1634,6 +1635,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                                 role="menuitem"
                                                 startAdornment={null}
                                                 tabIndex={0}
+                                                useSelector={false}
                                               >
                                                 <WithStyles(Focus)
                                                   classes={
@@ -1768,6 +1770,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                               role="menuitem"
                                               startAdornment={null}
                                               tabIndex={-1}
+                                              useSelector={false}
                                             >
                                               <HvListItem
                                                 classes={
@@ -1790,6 +1793,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                                 role="menuitem"
                                                 startAdornment={null}
                                                 tabIndex={-1}
+                                                useSelector={false}
                                               >
                                                 <WithStyles(Focus)
                                                   classes={
@@ -1924,6 +1928,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                               role="menuitem"
                                               startAdornment={null}
                                               tabIndex={-1}
+                                              useSelector={false}
                                             >
                                               <HvListItem
                                                 classes={
@@ -1946,6 +1951,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                                 role="menuitem"
                                                 startAdornment={null}
                                                 tabIndex={-1}
+                                                useSelector={false}
                                               >
                                                 <WithStyles(Focus)
                                                   classes={
@@ -3562,6 +3568,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                               role="menuitem"
                                               startAdornment={null}
                                               tabIndex={0}
+                                              useSelector={false}
                                             >
                                               <HvListItem
                                                 classes={
@@ -3584,6 +3591,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                                 role="menuitem"
                                                 startAdornment={null}
                                                 tabIndex={0}
+                                                useSelector={false}
                                               >
                                                 <WithStyles(Focus)
                                                   classes={
@@ -3718,6 +3726,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                               role="menuitem"
                                               startAdornment={null}
                                               tabIndex={-1}
+                                              useSelector={false}
                                             >
                                               <HvListItem
                                                 classes={
@@ -3740,6 +3749,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                                 role="menuitem"
                                                 startAdornment={null}
                                                 tabIndex={-1}
+                                                useSelector={false}
                                               >
                                                 <WithStyles(Focus)
                                                   classes={
@@ -3874,6 +3884,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                               role="menuitem"
                                               startAdornment={null}
                                               tabIndex={-1}
+                                              useSelector={false}
                                             >
                                               <HvListItem
                                                 classes={
@@ -3896,6 +3907,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                                 role="menuitem"
                                                 startAdornment={null}
                                                 tabIndex={-1}
+                                                useSelector={false}
                                               >
                                                 <WithStyles(Focus)
                                                   classes={

@@ -146,6 +146,7 @@ class List extends React.Component {
         onClick={evt => this.handleSelect(evt, item)}
         startAdornment={startAdornment}
         endAdornment={item.showNavIcon && this.renderNavIcon(item)}
+        useSelector={useSelector}
       >
         {multiSelect
           ? this.renderMultiSelectItem(item, itemId)

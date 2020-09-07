@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ListContainer should render correctly 1`] = `
-<WithStyles(HvListContainer)>
+<WithStyles(HvListContainer)
+  condensed={true}
+>
   <HvListContainer
     classes={
       Object {
         "root": "HvListContainer-root",
       }
     }
+    condensed={true}
   >
     <ul
       className="HvListContainer-root"
@@ -31,7 +34,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98001, Store Manager
@@ -57,7 +60,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98002, Store Manager
@@ -83,7 +86,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98003, Store Manager
@@ -109,7 +112,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98004, Store Manager
@@ -135,7 +138,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98005, Store Manager
@@ -161,7 +164,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98001, Store Manager
@@ -187,7 +190,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98002, Store Manager
@@ -213,7 +216,7 @@ exports[`ListContainer should render correctly 1`] = `
           }
         >
           <li
-            className="HvListItem-root HvListItem-gutters"
+            className="HvListItem-root HvListItem-gutters HvListItem-condensed"
             onKeyDown={[Function]}
           >
             98003, Store Manager

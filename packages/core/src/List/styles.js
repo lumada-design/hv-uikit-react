@@ -26,11 +26,11 @@ export default styles;
 
 const selectAllStyles = theme => ({
   root: {
-    margin: "0 0 2px 0"
+    margin: 0
   },
   editMode: {
-    backgroundColor: theme.palette.atmo3,
-    "& $selectAll": {
+    backgroundColor: theme.palette.atmo1,
+    "& $selectAll *": {
       color: theme.hv.palette.accent.acce1
     }
   },
@@ -45,7 +45,7 @@ const selectAllStyles = theme => ({
 const linkStyles = theme => ({
   a: {
     ...theme.hv.typography.normalText,
-
+    textDecoration: "none",
     "&:focus": {
       boxShadow: "unset !important"
     }

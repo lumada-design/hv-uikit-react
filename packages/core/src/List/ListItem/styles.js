@@ -24,6 +24,9 @@ const styles = theme => ({
     },
     "&$condensed": {
       marginBottom: 0
+    },
+    "& label": {
+      width: "100%"
     }
   },
 

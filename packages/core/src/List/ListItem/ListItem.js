@@ -53,6 +53,7 @@ const HvListItem = props => {
     onClick,
     children,
     tabIndex,
+    useSelector,
     ...others
   } = props;
 
@@ -114,7 +115,7 @@ const HvListItem = props => {
           [classes.gutters]: !disableGutters,
           [classes.condensed]: condensed,
           [classes.interactive]: interactive,
-          [classes.selected]: selected,
+          [classes.selected]: !useSelector && selected && !(startAdornment !== undefined),
           [classes.disabled]: disabled,
           [classes.withStartAdornment]: startAdornment != null,
           [classes.withEndAdornment]: endAdornment != null
@@ -146,7 +147,8 @@ const HvListItem = props => {
       startAdornment,
       endAdornment,
       others,
-      listItemContent
+      listItemContent,
+      useSelector
     ]
   );
 
@@ -286,7 +288,11 @@ HvListItem.propTypes = {
   /**
    * @ignore
    */
-  tabIndex: PropTypes.number
+  tabIndex: PropTypes.number,
+  /**
+   * used in this context to apply selection style.
+   */
+  useSelector: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvListItem" })(HvListItem);

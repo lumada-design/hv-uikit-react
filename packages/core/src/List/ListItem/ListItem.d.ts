@@ -68,6 +68,10 @@ export interface HvListItemProps
    * @ignore
    */
   tabIndex?: number;
+  /**
+   * If true renders list items with radio or checkbox selectors.
+   */
+  useSelector?: boolean;
 }
 
 export type HvListItemClassKey =
