@@ -4,14 +4,10 @@ import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../../utils";
-import InnerList from "../../List";
-import Search from "../../SearchBox";
-import HvCheckBox from "../../Selectors/CheckBox";
+import { HvButton, HvCheckBox, HvList, HvSearchBox, HvTypography } from "../..";
 import { getSelected } from "../utils";
 import styles from "./styles";
-import Typography from "../../Typography";
 import ActionContainer from "../../ActionBar";
-import HvButton from "../../Button";
 
 const List = ({
   id,
@@ -91,7 +87,7 @@ const List = ({
    */
   const renderSearch = () => (
     <div className={classes.searchContainer}>
-      <Search
+      <HvSearchBox
         id={setId(id, "search")}
         value={searchStr}
         values={values}
@@ -117,19 +113,26 @@ const List = ({
    */
   const renderSelectAll = () => {
     const { selectAll } = labels;
+    const nbrSelected = getSelected(list).length;
 
-    const label = selectAll || (
-      <Typography component="span">
-        <b>Select All</b>
-        {` (${list.length})`}
-      </Typography>
+    const defaultLabel = (
+      <HvTypography component="span">
+        {nbrSelected > 0 ? (
+          <>
+            <b>{nbrSelected}</b>
+            {` / ${list.length}`}
+          </>
+        ) : (
+          <b>All</b>
+        )}
+      </HvTypography>
     );
 
     return (
       <div className={classes.selectAllContainer}>
         <HvCheckBox
           id={setId(id, "select-all")}
-          label={label}
+          label={selectAll || defaultLabel}
           onChange={() => handleSelectAll()}
           classes={{ container: classes.selection }}
           className={classes.selectAll}
@@ -191,11 +194,11 @@ const List = ({
   return (
     <div className={classes.rootList}>
       <div className={classes.listBorderDown} />
-      {showSearch && renderSearch()}
-      {showList && multiSelect && renderSelectAll()}
       <div className={classes.listContainer}>
+        {showSearch && renderSearch()}
+        {showList && multiSelect && renderSelectAll()}
         {showList && (
-          <InnerList
+          <HvList
             id={setId(id, "list")}
             values={list}
             multiSelect={multiSelect}

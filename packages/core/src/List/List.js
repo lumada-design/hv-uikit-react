@@ -6,8 +6,8 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 
 import { withStyles } from "@material-ui/core";
+import { DropRightXS } from "@hv/uikit-react-icons";
 
-import DropRight from "@hv/uikit-react-icons/dist/DropRightXS";
 import { parseList, parseState, wrapperTooltip } from "./utils";
 
 import { HvCheckBox, HvListContainer, HvListItem, HvRadio, HvTypography, setId } from "..";
@@ -126,7 +126,7 @@ class List extends React.Component {
   };
 
   renderListItem = (item, i) => {
-    const { id, multiSelect, useSelector, selectable } = this.props;
+    const { id, multiSelect, useSelector, classes, selectable } = this.props;
 
     const itemId = setId(id, "item", i);
     const selected = item.selected || false;
@@ -142,6 +142,7 @@ class List extends React.Component {
         id={itemId}
         role={selectable ? "option" : "menuitem"}
         disabled={item.disabled || undefined}
+        classes={{ selected: useSelector || multiSelect ? classes.itemSelector : "" }}
         selected={multiSelect || selected ? selected : undefined}
         onClick={evt => this.handleSelect(evt, item)}
         startAdornment={startAdornment}
@@ -220,7 +221,7 @@ class List extends React.Component {
   renderNavIcon = () => {
     const { classes } = this.props;
 
-    return <DropRight className={classes.box} iconSize="XS" />;
+    return <DropRightXS className={classes.box} iconSize="XS" />;
   };
 
   renderLeftIcon = item => {
@@ -307,7 +308,11 @@ List.propTypes = {
     /**
      * Styles applied to the icon of the selector.
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the list item when it has a selector.
+     */
+    itemSelector: PropTypes.string
   }).isRequired,
   /**
    * The id of the root element

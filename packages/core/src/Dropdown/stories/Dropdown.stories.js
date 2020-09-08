@@ -278,6 +278,7 @@ export const Expanded = () => (
 Expanded.story = {
   parameters: {
     docs: {
+      disable: true,
       inlineStories: false
     },
     v3: true

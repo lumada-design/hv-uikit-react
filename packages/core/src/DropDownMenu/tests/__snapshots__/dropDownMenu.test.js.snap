@@ -1535,6 +1535,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                         Object {
                                           "box": "HvList-box",
                                           "icon": "HvList-icon",
+                                          "itemSelector": "HvList-itemSelector",
                                           "root": "HvList-root",
                                           "selectorContainer": "HvList-selectorContainer",
                                           "truncate": "HvList-truncate",
@@ -1606,6 +1607,11 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <WithStyles(HvListItem)
+                                              classes={
+                                                Object {
+                                                  "selected": "",
+                                                }
+                                              }
                                               id="drop-down-menu-10-list-item-0"
                                               key=".$0"
                                               onClick={[Function]}
@@ -1762,6 +1768,11 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                               </HvListItem>
                                             </WithStyles(HvListItem)>
                                             <WithStyles(HvListItem)
+                                              classes={
+                                                Object {
+                                                  "selected": "",
+                                                }
+                                              }
                                               id="drop-down-menu-10-list-item-1"
                                               key=".$1"
                                               onClick={[Function]}
@@ -1918,6 +1929,11 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                               </HvListItem>
                                             </WithStyles(HvListItem)>
                                             <WithStyles(HvListItem)
+                                              classes={
+                                                Object {
+                                                  "selected": "",
+                                                }
+                                              }
                                               id="drop-down-menu-10-list-item-2"
                                               key=".$2"
                                               onClick={[Function]}
@@ -3485,6 +3501,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                         Object {
                                           "box": "HvList-box",
                                           "icon": "HvList-icon",
+                                          "itemSelector": "HvList-itemSelector",
                                           "root": "HvList-root",
                                           "selectorContainer": "HvList-selectorContainer",
                                           "truncate": "HvList-truncate",
@@ -3556,6 +3573,11 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <WithStyles(HvListItem)
+                                              classes={
+                                                Object {
+                                                  "selected": "",
+                                                }
+                                              }
                                               id="drop-down-menu-2-list-item-0"
                                               key=".$0"
                                               onClick={[Function]}
@@ -3712,6 +3734,11 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                               </HvListItem>
                                             </WithStyles(HvListItem)>
                                             <WithStyles(HvListItem)
+                                              classes={
+                                                Object {
+                                                  "selected": "",
+                                                }
+                                              }
                                               id="drop-down-menu-2-list-item-1"
                                               key=".$1"
                                               onClick={[Function]}
@@ -3868,6 +3895,11 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                               </HvListItem>
                                             </WithStyles(HvListItem)>
                                             <WithStyles(HvListItem)
+                                              classes={
+                                                Object {
+                                                  "selected": "",
+                                                }
+                                              }
                                               id="drop-down-menu-2-list-item-2"
                                               key=".$2"
                                               onClick={[Function]}

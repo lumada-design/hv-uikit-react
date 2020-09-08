@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import isNil from "lodash/isNil";
 import { HvFormElementContext } from "../FormElement";
 import { getChildIdToLabel } from "../FormElement/utils/FormUtils";
 import { HvTypography } from "../..";
@@ -26,7 +25,7 @@ const HvLabel = props => {
         id={localId}
         className={clsx(className, classes.root, {
           [classes.labelDisabled]: localDisabled,
-          [classes.childGutter]: !isNil(children)
+          [classes.childGutter]: children && label
         })}
         variant="highlightText"
         component="label"
