@@ -13,6 +13,8 @@ import DocsContainer from "./blocks/DocsContainer";
 import { UIKIT_THEME, getStoredTheme } from "./themes";
 import "./themes/fonts/font-faces.css";
 
+import { extractArgTypes } from "./props/extractArgTypes";
+
 addParameters({
   options: {
     isFullscreen: false,
@@ -53,7 +55,8 @@ addParameters({
 addParameters({
   docs: {
     page: DocsPage,
-    container: DocsContainer
+    container: DocsContainer,
+    extractArgTypes
   }
 });
 
