@@ -30,10 +30,10 @@ const styles = theme => {
     },
     icon: {
       padding: 0,
-      height: "unset",
-      width: "unset",
-      minHeight: "unset",
-      minWidth: "unset",
+      height: "inherit",
+      width: "inherit",
+      minHeight: "inherit",
+      minWidth: "inherit",
       ...theme.hv.typography.highlightText
     },
 
