@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.0...@hv/uikit-react-core@2.11.1) (2020-09-09)
+
+**Note:** Version bump only for package @hv/uikit-react-core
+
+
+
+
+
 # [2.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.10.2...@hv/uikit-react-core@2.11.0) (2020-08-28)
 
 
