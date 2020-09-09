@@ -54,20 +54,20 @@ const styles = theme => ({
 
     // 2nd, with icon
     "&[data-hasicon]>$group>$node>$content": {
-      paddingLeft: `${32 + theme.hv.spacing.sm * 1}px`
+      paddingLeft: `${32 + theme.hv.spacing.xs * 2}px`
     },
     // 2nd, no icon
     "&:not([data-hasicon])>$group>$node>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 1}px`
+      paddingLeft: `${theme.hv.spacing.xs * 2}px`
     },
 
     // 3rd, with icon
     "&[data-hasicon]>$group>$node>$group>$node>$content": {
-      paddingLeft: `${32 + theme.hv.spacing.sm * 2}px`
+      paddingLeft: `${32 + theme.hv.spacing.xs * 3}px`
     },
     // 3rd, no icon
     "&:not([data-hasicon])>$group>$node>$group>$node>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 2}px`
+      paddingLeft: `${theme.hv.spacing.xs * 3}px`
     }
   },
 

@@ -38,7 +38,8 @@ const styles = theme => ({
   },
   button: {
     marginTop: `${theme.hv.spacing.xs}px`,
-    minWidth: "32px"
+    width: "32px",
+    height: "32px"
   },
   separator: {
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
