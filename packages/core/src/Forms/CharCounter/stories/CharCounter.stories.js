@@ -21,7 +21,7 @@ export const DisabledCharCounter = () => (
 
 DisabledCharCounter.parameters = {
   docs: {
-    storyDescription: "Char counter showcasing the disabled state."
+    description: { story: "Char counter showcasing the disabled state." }
   },
   v3: true,
   pa11y: {
@@ -41,7 +41,7 @@ export const OverloadedCharCounter = () => (
 
 OverloadedCharCounter.parameters = {
   docs: {
-    storyDescription: "Char counter showcasing the overloaded state."
+    description: { story: "Char counter showcasing the overloaded state." }
   },
   v3: true
 };

@@ -45,7 +45,7 @@ WithIcon.decorators = [storyFn => <div style={{ ...container, width: 500 }}>{sto
 
 WithIcon.parameters = {
   docs: {
-    storyDescription: "Badge sample that uses a custom icon."
+    description: { story: "Badge sample that uses a custom icon." }
   },
   v3: true
 };
@@ -65,7 +65,7 @@ WithText.decorators = [storyFn => <div style={{ ...container, width: 650 }}>{sto
 
 WithText.parameters = {
   docs: {
-    storyDescription: "Badge sample using only text."
+    description: { story: "Badge sample using only text." }
   },
   v3: true
 };
@@ -85,7 +85,7 @@ export const WithState = () => {
 
 WithState.parameters = {
   docs: {
-    storyDescription: "Badge sample using react hooks to set the number of events."
+    description: { story: "Badge sample using react hooks to set the number of events." }
   },
   v3: true
 };

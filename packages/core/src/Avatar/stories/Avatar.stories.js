@@ -67,8 +67,10 @@ export const ImageAvatars = () => (
 
 ImageAvatars.parameters = {
   docs: {
-    storyDescription:
-      "Image avatars can be created by passing standard img props src or srcSet to the component."
+    description: {
+      story:
+        "Image avatars can be created by passing standard img props src or srcSet to the component."
+    }
   }
 };
 
@@ -82,8 +84,9 @@ export const LetterAvatars = () => (
 
 LetterAvatars.parameters = {
   docs: {
-    storyDescription:
-      "Avatars containing simple characters can be created by passing a string as children."
+    description: {
+      story: "Avatars containing simple characters can be created by passing a string as children."
+    }
   }
 };
 
@@ -106,8 +109,10 @@ export const IconAvatars = () => (
 
 IconAvatars.parameters = {
   docs: {
-    storyDescription:
-      "Icon avatars are created by passing an icon as children. Its size and color aren't Avatar's responsibility."
+    description: {
+      story:
+        "Icon avatars are created by passing an icon as children. Its size and color aren't Avatar's responsibility."
+    }
   }
 };
 
@@ -123,8 +128,10 @@ export const Fallbacks = () => (
 
 Fallbacks.parameters = {
   docs: {
-    storyDescription:
-      "If there is an error loading the avatar image, the component falls back to an alternative in the following order: the provided children, the first letter of the alt text and finally the generic User icon."
+    description: {
+      story:
+        "If there is an error loading the avatar image, the component falls back to an alternative in the following order: the provided children, the first letter of the alt text and finally the generic User icon."
+    }
   }
 };
 
@@ -142,8 +149,10 @@ export const Sizes = () => (
 
 Sizes.parameters = {
   docs: {
-    storyDescription:
-      "You can change the size of the avatar with the size property (S, M, L). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size."
+    description: {
+      story:
+        "You can change the size of the avatar with the size property (S, M, L). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size."
+    }
   }
 };
 
@@ -177,7 +186,9 @@ export const Buttons = () => {
 
 Buttons.parameters = {
   docs: {
-    storyDescription:
-      "You can change the component used for the root node, for instance for rendering a HvButton. All other properties are spread in the root node, such as event callbacks."
+    description: {
+      story:
+        "You can change the component used for the root node, for instance for rendering a HvButton. All other properties are spread in the root node, such as event callbacks."
+    }
   }
 };

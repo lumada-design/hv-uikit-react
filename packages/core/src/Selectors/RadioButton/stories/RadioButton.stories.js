@@ -24,8 +24,9 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    storyDescription:
-      "A sample showcasing a disabled radio button that does not allows interaction."
+    description: {
+      story: "A sample showcasing a disabled radio button that does not allows interaction."
+    }
   },
   pa11y: {
     ignore: [
@@ -45,8 +46,10 @@ export const CheckedDisabled = () => (
 
 CheckedDisabled.parameters = {
   docs: {
-    storyDescription:
-      "A sample showcasing a checked and disabled radio button that does not allows interaction."
+    description: {
+      story:
+        "A sample showcasing a checked and disabled radio button that does not allows interaction."
+    }
   },
   pa11y: {
     ignore: [
@@ -64,7 +67,7 @@ export const Label = () => <HvRadio id="radio1" label="Label" />;
 
 Label.parameters = {
   docs: {
-    storyDescription: "A sample showcasing a radio button that includes a label."
+    description: { story: "A sample showcasing a radio button that includes a label." }
   },
   v3: true
 };
@@ -80,8 +83,9 @@ export const WithClickAction = () => (
 
 WithClickAction.parameters = {
   docs: {
-    storyDescription:
-      "Returns the value when clicked, check the browser console to see the result."
+    description: {
+      story: "Returns the value when clicked, check the browser console to see the result."
+    }
   },
   v3: true
 };
@@ -98,8 +102,10 @@ export const WithClickActionDisabled = () => (
 
 WithClickActionDisabled.parameters = {
   docs: {
-    storyDescription:
-      "Dos not return the value when clicked because is disabled, check the browser console to see the result."
+    description: {
+      story:
+        "Dos not return the value when clicked because is disabled, check the browser console to see the result."
+    }
   },
   pa11y: {
     ignore: [
@@ -157,7 +163,7 @@ export const WithState = () => {
 
 WithState.parameters = {
   docs: {
-    storyDescription: "Demostration of how to set the state of the radio button"
+    description: { story: "Demostration of how to set the state of the radio button" }
   },
   v3: true
 };

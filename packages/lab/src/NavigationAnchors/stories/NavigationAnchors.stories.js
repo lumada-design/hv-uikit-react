@@ -89,7 +89,8 @@ export const WithScroll = () => {
 
 WithScroll.parameters = {
   docs: {
-    storyDescription:
-      "Basic navigation anchors to provide a clickable area to show scrolling capabilities"
+    description: {
+      story: "Basic navigation anchors to provide a clickable area to show scrolling capabilities"
+    }
   }
 };

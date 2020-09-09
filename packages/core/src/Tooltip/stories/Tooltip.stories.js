@@ -151,4 +151,6 @@ export const MultilineWithoutHeader = () => {
   );
 };
 
-MultilineWithoutHeader.decorators = [storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>];
+MultilineWithoutHeader.decorators = [
+  storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>
+];

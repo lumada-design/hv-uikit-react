@@ -59,7 +59,7 @@ export const OnChange = () => {
 
 OnChange.parameters = {
   docs: {
-    storyDescription: "OnChange is called in the labels as in the switch itself."
+    description: { story: "OnChange is called in the labels as in the switch itself." }
   },
   v3: true
 };

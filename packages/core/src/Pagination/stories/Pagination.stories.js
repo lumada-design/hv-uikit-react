@@ -73,7 +73,7 @@ export const ControlledSample = () => {
 
 ControlledSample.parameters = {
   docs: {
-    storyDescription: "Pagination controlling a list of elements"
+    description: { story: "Pagination controlling a list of elements" }
   },
   v3: true
 };

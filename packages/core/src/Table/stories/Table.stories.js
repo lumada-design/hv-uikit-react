@@ -348,7 +348,7 @@ export const Empty = () => {
 Empty.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Table sample without data."
+    description: { story: "Table sample without data." }
   }
 };
 
@@ -462,7 +462,7 @@ export const CustomEmpty = () => {
 CustomEmpty.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Table sample without data."
+    description: { story: "Table sample without data." }
   }
 };
 
@@ -722,7 +722,7 @@ export const WithExpander = () => {
 WithExpander.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Table sample that shows the ability to add an expander."
+    description: { story: "Table sample that shows the ability to add an expander." }
   }
 };
 
@@ -998,8 +998,9 @@ export const WithExpanderAndCustomContent = () => {
 WithExpanderAndCustomContent.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "Table sample that shows the ability to add a complex expander and custom cell."
+    description: {
+      story: "Table sample that shows the ability to add a complex expander and custom cell."
+    }
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
@@ -1267,7 +1268,7 @@ export const WithCheckbox = () => {
 WithCheckbox.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Table sample that shows the ability to add checkboxes."
+    description: { story: "Table sample that shows the ability to add checkboxes." }
   }
 };
 
@@ -1402,7 +1403,7 @@ export const WithCheckboxCustomContent = () => {
 WithCheckboxCustomContent.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Table sample that shows the ability to add use a checkbox."
+    description: { story: "Table sample that shows the ability to add use a checkbox." }
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
@@ -1672,7 +1673,7 @@ export const WithCheckboxAndSecondaryActions = () => {
 WithCheckboxAndSecondaryActions.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Table sample that shows the ability to add a secondary action column."
+    description: { story: "Table sample that shows the ability to add a secondary action column." }
   }
 };
 
@@ -1914,7 +1915,7 @@ export const WithNullValues = () => {
 WithNullValues.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Table sample with that has cell values that are null."
+    description: { story: "Table sample with that has cell values that are null." }
   }
 };
 
@@ -2028,7 +2029,7 @@ export const TableWithChangingData = () => {
 TableWithChangingData.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Sample showcasing the table component behavior with changing data."
+    description: { story: "Sample showcasing the table component behavior with changing data." }
   }
 };
 
@@ -2225,7 +2226,9 @@ export const ServerSidePagination = () => {
 ServerSidePagination.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "Table sample that shows how to use the table with server side pagination. Bulk Actions"
+    description: {
+      story:
+        "Table sample that shows how to use the table with server side pagination. Bulk Actions"
+    }
   }
 };

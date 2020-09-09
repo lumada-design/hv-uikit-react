@@ -191,7 +191,7 @@ export const Controlled = () => {
 
 Controlled.parameters = {
   docs: {
-    storyDescription: "A sample showcasing a toggle button with state."
+    description: { story: "A sample showcasing a toggle button with state." }
   },
   v3: true
 };
@@ -211,7 +211,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    storyDescription: "A sample showcasing a disabled toggle button."
+    description: { story: "A sample showcasing a disabled toggle button." }
   },
   v3: true
 };
@@ -238,7 +238,7 @@ export const UsingChildren = () => {
 
 UsingChildren.parameters = {
   docs: {
-    storyDescription: "A sample using children to provide the toggle button content."
+    description: { story: "A sample using children to provide the toggle button content." }
   },
   v3: true
 };
@@ -265,7 +265,7 @@ export const Animated = () => {
 
 Animated.parameters = {
   docs: {
-    storyDescription: "A sample showcasing a toggle button with a custom animated icon."
+    description: { story: "A sample showcasing a toggle button with a custom animated icon." }
   },
   v3: true
 };

@@ -42,6 +42,6 @@ export const WithoutSuggestion = () => {
 
 WithoutSuggestion.parameters = {
   docs: {
-    storyDescription: "Searchbox sample that does not use the suggestion box."
+    description: { story: "Searchbox sample that does not use the suggestion box." }
   }
 };

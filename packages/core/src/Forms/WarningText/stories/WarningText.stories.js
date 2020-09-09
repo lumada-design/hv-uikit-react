@@ -51,8 +51,10 @@ export const WarningTextWithStatus = () => {
 WarningTextWithStatus.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "Warning text showcasing the ability to notify the user and to react to the form status."
+    description: {
+      story:
+        "Warning text showcasing the ability to notify the user and to react to the form status."
+    }
   }
 };
 
@@ -89,7 +91,7 @@ export const DisabledWarningText = () => {
 DisabledWarningText.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Helper text showcasing the disabled state."
+    description: { story: "Helper text showcasing the disabled state." }
   },
   pa11y: {
     ignore: [

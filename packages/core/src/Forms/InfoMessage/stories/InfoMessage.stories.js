@@ -23,7 +23,7 @@ export const DisabledInfoMessage = () => {
 
 DisabledInfoMessage.parameters = {
   docs: {
-    storyDescription: "Info message showcasing the disabled state."
+    description: { story: "Info message showcasing the disabled state." }
   },
   v3: true,
   pa11y: {

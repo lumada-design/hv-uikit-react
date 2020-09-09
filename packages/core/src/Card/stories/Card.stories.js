@@ -172,7 +172,7 @@ export const AllComponents = () => {
 
 AllComponents.parameters = {
   docs: {
-    storyDescription: "A card that has all it's component defined."
+    description: { story: "A card that has all it's component defined." }
   }
 };
 
@@ -244,7 +244,7 @@ export const NoActions = () => {
 
 NoActions.parameters = {
   docs: {
-    storyDescription: "A Card without any actions."
+    description: { story: "A Card without any actions." }
   }
 };
 
@@ -256,7 +256,7 @@ export const OnlyTitle = () => (
 
 OnlyTitle.parameters = {
   docs: {
-    storyDescription: "A Card that only has a title."
+    description: { story: "A Card that only has a title." }
   }
 };
 
@@ -358,7 +358,7 @@ export const KPICard = () => {
 
 KPICard.parameters = {
   docs: {
-    storyDescription: "A card sample combined with a kpi as content."
+    description: { story: "A card sample combined with a kpi as content." }
   }
 };
 
@@ -394,7 +394,7 @@ export const WithComposition = () => (
 
 WithComposition.parameters = {
   docs: {
-    storyDescription: "A card sample that shows how to compose card with subcomponents."
+    description: { story: "A card sample that shows how to compose card with subcomponents." }
   }
 };
 
@@ -464,8 +464,9 @@ export const Selectable = () => {
 
 Selectable.parameters = {
   docs: {
-    storyDescription:
-      "A card sample showcasing the ability to select in the content and click action."
+    description: {
+      story: "A card sample showcasing the ability to select in the content and click action."
+    }
   }
 };
 
@@ -510,6 +511,6 @@ export const SelectableNoFooter = () => {
 
 SelectableNoFooter.parameters = {
   docs: {
-    storyDescription: "A card sample showcasing the ability to select in the content."
+    description: { story: "A card sample showcasing the ability to select in the content." }
   }
 };

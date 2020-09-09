@@ -148,7 +148,7 @@ export const sample2 = () => {
 
 sample2.parameters = {
   docs: {
-    storyDescription: "Simple example with footer"
+    description: { story: "Simple example with footer" }
   }
 };
 
@@ -191,7 +191,7 @@ export const sample3 = () => {
 
 sample3.parameters = {
   docs: {
-    storyDescription: "Simple example with a big list of applications"
+    description: { story: "Simple example with a big list of applications" }
   }
 };
 
@@ -248,7 +248,7 @@ export const sample4 = () => {
 
 sample4.parameters = {
   docs: {
-    storyDescription: "Example with a custom header"
+    description: { story: "Example with a custom header" }
   }
 };
 
@@ -334,7 +334,7 @@ export const sample5 = () => {
 
 sample5.parameters = {
   docs: {
-    storyDescription: "Using icon components mixed with url icons"
+    description: { story: "Using icon components mixed with url icons" }
   }
 };
 
@@ -422,6 +422,6 @@ export const sample6 = () => {
 
 sample6.parameters = {
   docs: {
-    storyDescription: "Alerts on which menu was clicked"
+    description: { story: "Alerts on which menu was clicked" }
   }
 };

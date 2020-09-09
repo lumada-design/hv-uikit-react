@@ -117,6 +117,6 @@ export const WithOpenControl = () => {
 };
 WithOpenControl.parameters = {
   docs: {
-    storyDescription: "User Preferences controlled."
+    description: { story: "User Preferences controlled." }
   }
 };

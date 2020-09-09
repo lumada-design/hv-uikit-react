@@ -40,7 +40,7 @@ export const FullWidth = () => {
 
 FullWidth.parameters = {
   docs: {
-    storyDescription: "Tabs occupying the full width of the available space"
+    description: { story: "Tabs occupying the full width of the available space" }
   },
   v3: true
 };
@@ -71,7 +71,7 @@ export const ContentChanging = () => {
 
 ContentChanging.parameters = {
   docs: {
-    storyDescription: "Tabs changing the content to display according to the selected tab"
+    description: { story: "Tabs changing the content to display according to the selected tab" }
   },
   v3: true
 };
@@ -146,7 +146,7 @@ export const WithBadges = () => {
 
 WithBadges.parameters = {
   docs: {
-    storyDescription: "Badges applied to Tabs component."
+    description: { story: "Badges applied to Tabs component." }
   },
   v3: true
 };

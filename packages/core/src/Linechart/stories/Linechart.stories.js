@@ -65,7 +65,7 @@ export const WithArea = () => {
 
 WithArea.parameters = {
   docs: {
-    storyDescription: "Colors the area below it."
+    description: { story: "Colors the area below it." }
   }
 };
 
@@ -102,7 +102,7 @@ export const LinechartGrouped = () => {
 
 LinechartGrouped.parameters = {
   docs: {
-    storyDescription: "Representation of groups by using multiple lines."
+    description: { story: "Representation of groups by using multiple lines." }
   }
 };
 
@@ -128,7 +128,7 @@ export const GroupedWithArea = () => {
 
 GroupedWithArea.parameters = {
   docs: {
-    storyDescription: "Groups using colored areas."
+    description: { story: "Groups using colored areas." }
   }
 };
 
@@ -155,7 +155,7 @@ export const LinechartStacked = () => {
 
 LinechartStacked.parameters = {
   docs: {
-    storyDescription: "Groups in stack mode."
+    description: { story: "Groups in stack mode." }
   }
 };
 
@@ -198,7 +198,7 @@ export const TimeRepresentation = () => {
 
 TimeRepresentation.parameters = {
   docs: {
-    storyDescription: "Representation of time related data."
+    description: { story: "Representation of time related data." }
   },
   eyes: {
     // story excluded due inconsistent component alignment and relative position, opened 1822 issue
@@ -268,6 +268,6 @@ export const WithIntervalUpdates = () => {
 
 WithIntervalUpdates.parameters = {
   docs: {
-    storyDescription: "Data updated each second."
+    description: { story: "Data updated each second." }
   }
 };

@@ -594,8 +594,10 @@ export const Configurations = () => {
 
 Configurations.parameters = {
   docs: {
-    storyDescription:
-      "Search uses the headerTitle, schedule and probability. Sort uses the headerTitle, probability and timeHorizon"
+    description: {
+      story:
+        "Search uses the headerTitle, schedule and probability. Sort uses the headerTitle, probability and timeHorizon"
+    }
   }
 };
 
@@ -880,7 +882,7 @@ export const ThreeViews = () => {
 
 ThreeViews.parameters = {
   docs: {
-    storyDescription: "Asset Inventory with third view, a custom TextRender"
+    description: { story: "Asset Inventory with third view, a custom TextRender" }
   }
 };
 
@@ -1127,7 +1129,7 @@ export const ServerSidePagination = () => {
 
 ServerSidePagination.parameters = {
   docs: {
-    storyDescription: "Asset Inventory with a simulation of server-side pagination"
+    description: { story: "Asset Inventory with a simulation of server-side pagination" }
   }
 };
 
@@ -1391,10 +1393,12 @@ export const Accessibility = () => {
 
 Accessibility.parameters = {
   docs: {
-    storyDescription:
-      "Accessibility:<br/>" +
-      "- Search: Create a label using aria-label using the searchProps. <br/>" +
-      "- Sort: Use the labels.sortBy to create a aria-label. <br/>" +
-      "- MultiButton: Individual aria-label to create a label for each button using the multibuttonProps "
+    description: {
+      story:
+        "Accessibility:<br/>" +
+        "- Search: Create a label using aria-label using the searchProps. <br/>" +
+        "- Sort: Use the labels.sortBy to create a aria-label. <br/>" +
+        "- MultiButton: Individual aria-label to create a label for each button using the multibuttonProps "
+    }
   }
 };

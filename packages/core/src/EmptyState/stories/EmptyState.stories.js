@@ -35,7 +35,7 @@ export const WithAction = () => (
 WithAction.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Empty states that includes an action inside its content."
+    description: { story: "Empty states that includes an action inside its content." }
   }
 };
 
@@ -62,7 +62,7 @@ export const CustomMessages = () => {
 CustomMessages.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Empty states with message and action set as custom elements."
+    description: { story: "Empty states with message and action set as custom elements." }
   }
 };
 
@@ -77,6 +77,6 @@ export const Minimal = () => (
 Minimal.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Empty state without title and small icon."
+    description: { story: "Empty state without title and small icon." }
   }
 };

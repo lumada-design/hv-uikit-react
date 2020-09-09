@@ -44,7 +44,7 @@ export const Positioning = () => {
 Positioning.parameters = {
   v3: true,
   docs: {
-    storyDescription: "DropDownMenu with configurable positioning in the dropdown"
+    description: { story: "DropDownMenu with configurable positioning in the dropdown" }
   }
 };
 
@@ -71,8 +71,10 @@ export const WithIconsAndActions = () => {
 WithIconsAndActions.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected"
+    description: {
+      story:
+        "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected"
+    }
   },
   pa11y: {
     actions: [
@@ -146,6 +148,6 @@ export const Controlled = () => {
 Controlled.parameters = {
   v3: true,
   docs: {
-    storyDescription: "DropDownMenu toggle opening controlled by an external button"
+    description: { story: "DropDownMenu toggle opening controlled by an external button" }
   }
 };

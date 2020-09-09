@@ -16,7 +16,7 @@ export const IconSize = () => <CheckboxCheck iconSize="M" />;
 
 IconSize.parameters = {
   docs: {
-    storyDescription: "Overrides Generic Icon size using standard sizes"
+    description: { story: "Overrides Generic Icon size using standard sizes" }
   }
 };
 
@@ -26,7 +26,7 @@ export const CustomColors = () => (
 
 CustomColors.parameters = {
   docs: {
-    storyDescription: "Overriding Icon colors with palette colors"
+    description: { story: "Overriding Icon colors with palette colors" }
   }
 };
 
@@ -34,7 +34,7 @@ export const DecorativeIcon = () => <Machine role="presentation" iconSize="M" />
 
 DecorativeIcon.parameters = {
   docs: {
-    storyDescription: "Icon with decorative meaning using the hidden attribute for accessibility"
+    description: { story: "Icon with decorative meaning using the hidden attribute for accessibility" }
   }
 };
 
@@ -44,8 +44,7 @@ export const SemanticIcon = () => (
 
 SemanticIcon.parameters = {
   docs: {
-    storyDescription:
-      "Icon with semantic meaning using the title and role attributes for accessibility"
+    description: { story: "Icon with semantic meaning using the title and role attributes for accessibility" }
   }
 };
 
@@ -55,7 +54,7 @@ export const CustomSize = () => (
 
 CustomSize.parameters = {
   docs: {
-    storyDescription: "Overrides Icon size using non standard sizes"
+    description: { story: "Overrides Icon size using non standard sizes" }
   }
 };
 
@@ -63,6 +62,6 @@ export const InvertedColors = () => <Level5 iconSize="L" inverted role="img" tit
 
 InvertedColors.parameters = {
   docs: {
-    storyDescription: "Inverts Generic Icon colors"
+    description: { story: "Inverts Generic Icon colors" }
   }
 };

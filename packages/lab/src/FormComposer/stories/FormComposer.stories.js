@@ -295,6 +295,6 @@ export const WithComposition = () => {
 
 WithComposition.parameters = {
   docs: {
-    storyDescription: "Example of the form composer using multiple components."
+    description: { story: "Example of the form composer using multiple components." }
   }
 };

@@ -41,6 +41,6 @@ export const CustomLabels = () => {
 CustomLabels.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Sample 2 description."
+    description: { story: "Sample 2 description." }
   }
 };

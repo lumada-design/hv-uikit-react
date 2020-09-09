@@ -73,7 +73,7 @@ export const SnackbarController = () => {
 
 SnackbarController.parameters = {
   docs: {
-    storyDescription: "Different Snackbar variants with controller"
+    description: { story: "Different Snackbar variants with controller" }
   }
 };
 
@@ -91,7 +91,7 @@ export const CustomIcon = () => (
 
 CustomIcon.parameters = {
   docs: {
-    storyDescription: "Snackbar with custom icon"
+    description: { story: "Snackbar with custom icon" }
   }
 };
 
@@ -111,8 +111,9 @@ export const CustomAction = () => (
 
 CustomAction.parameters = {
   docs: {
-    storyDescription:
-      "Snackbar can receive a component or object action that will render a semantic button"
+    description: {
+      story: "Snackbar can receive a component or object action that will render a semantic button"
+    }
   }
 };
 

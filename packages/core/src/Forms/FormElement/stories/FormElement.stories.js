@@ -177,7 +177,7 @@ export const TextAreaFormElement = () => {
 TextAreaFormElement.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Form element propagating the invalid state to the input."
+    description: { story: "Form element propagating the invalid state to the input." }
   }
 };
 
@@ -196,7 +196,7 @@ export const FormElementInvalid = () => {
 FormElementInvalid.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Form element propagating the invalid state to the input."
+    description: { story: "Form element propagating the invalid state to the input." }
   }
 };
 
@@ -218,7 +218,7 @@ export const FormElementValid = () => {
 FormElementValid.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Form element propagating the valid state to the input."
+    description: { story: "Form element propagating the valid state to the input." }
   }
 };
 
@@ -237,7 +237,7 @@ export const FormElementDisabled = () => {
 FormElementDisabled.parameters = {
   docs: {
     v3: true,
-    storyDescription: "Form element propagating the disabled state to the input."
+    description: { story: "Form element propagating the disabled state to the input." }
   },
   pa11y: {
     ignore: [

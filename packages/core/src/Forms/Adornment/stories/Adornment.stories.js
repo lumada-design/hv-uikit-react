@@ -91,7 +91,7 @@ export const DynamicAdornments = () => {
 
 DynamicAdornments.parameters = {
   docs: {
-    storyDescription: "Adornment showcasing the ability to react to the form element status."
+    description: { story: "Adornment showcasing the ability to react to the form element status." }
   },
   v3: true
 };

@@ -168,7 +168,9 @@ export const VerticalOrientation = () => {
 
 VerticalOrientation.parameters = {
   docs: {
-    storyDescription: "MultiButton combinations with vertical orientation and multiple selection"
+    description: {
+      story: "MultiButton combinations with vertical orientation and multiple selection"
+    }
   }
 };
 
@@ -203,8 +205,10 @@ export const EnforcedSelection = () => {
 
 EnforcedSelection.parameters = {
   docs: {
-    storyDescription:
-      'MultiButton element set as enforced cannot be toggled - In this case "Map" cannot be toggled on/off'
+    description: {
+      story:
+        'MultiButton element set as enforced cannot be toggled - In this case "Map" cannot be toggled on/off'
+    }
   }
 };
 
@@ -239,8 +243,10 @@ export const MinimumSelection = () => {
 
 MinimumSelection.parameters = {
   docs: {
-    storyDescription:
-      "Specify a number of minimum elements that must be active - in this case a minimum of 2"
+    description: {
+      story:
+        "Specify a number of minimum elements that must be active - in this case a minimum of 2"
+    }
   }
 };
 
@@ -275,7 +281,9 @@ export const MaximumSelection = () => {
 
 MaximumSelection.parameters = {
   docs: {
-    storyDescription:
-      "Specify a number of maximum elements that can be selected - in this case a maximum of 2"
+    description: {
+      story:
+        "Specify a number of maximum elements that can be selected - in this case a maximum of 2"
+    }
   }
 };

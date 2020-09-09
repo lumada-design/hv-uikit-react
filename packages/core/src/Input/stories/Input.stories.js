@@ -40,7 +40,7 @@ export const WithInfoMessage = () => {
 
 WithInfoMessage.parameters = {
   docs: {
-    storyDescription: "Showing the info message."
+    description: { story: "Showing the info message." }
   }
 };
 
@@ -58,7 +58,7 @@ export const Disabled = () => {
 
 Disabled.parameters = {
   docs: {
-    storyDescription: "Input sample that does not allow interactions."
+    description: { story: "Input sample that does not allow interactions." }
   },
   pa11y: {
     ignore: [
@@ -91,8 +91,10 @@ export const InvalidState = () => {
 
 InvalidState.parameters = {
   docs: {
-    storyDescription:
-      "Input created in invalid state showing the error message and the failed validation icon."
+    description: {
+      story:
+        "Input created in invalid state showing the error message and the failed validation icon."
+    }
   }
 };
 
@@ -107,7 +109,7 @@ export const NoValidation = () => {
 
 NoValidation.parameters = {
   docs: {
-    storyDescription: "Input without any type of validation not showing validation icons."
+    description: { story: "Input without any type of validation not showing validation icons." }
   }
 };
 
@@ -123,7 +125,7 @@ export const Limited = () => {
 
 Limited.parameters = {
   docs: {
-    storyDescription: "Input that limits the maximum text length to 5."
+    description: { story: "Input that limits the maximum text length to 5." }
   }
 };
 
@@ -142,7 +144,7 @@ export const NumericLimited = () => {
 
 NumericLimited.parameters = {
   docs: {
-    storyDescription: "Input that only accepts numbers and limits the maximum length to 5."
+    description: { story: "Input that only accepts numbers and limits the maximum length to 5." }
   }
 };
 
@@ -169,8 +171,9 @@ export const NumericRequired = () => {
 
 NumericRequired.parameters = {
   docs: {
-    storyDescription:
-      "Required Input that only accepts numbers and limits the maximum length to 5."
+    description: {
+      story: "Required Input that only accepts numbers and limits the maximum length to 5."
+    }
   }
 };
 
@@ -187,7 +190,7 @@ export const Email = () => {
 
 Email.parameters = {
   docs: {
-    storyDescription: "Required Input that only accepts valid emails."
+    description: { story: "Required Input that only accepts valid emails." }
   }
 };
 
@@ -217,8 +220,10 @@ export const Password = () => {
 
 Password.parameters = {
   docs: {
-    storyDescription:
-      "Password required input that only accepts the value ´password´ and limits the value between 6 or 12 characters."
+    description: {
+      story:
+        "Password required input that only accepts the value ´password´ and limits the value between 6 or 12 characters."
+    }
   }
 };
 
@@ -241,8 +246,10 @@ export const CustomValidation = () => {
 
 CustomValidation.parameters = {
   docs: {
-    storyDescription:
-      "Input with a custom validation function, it validates if the input contains the value ´hello´."
+    description: {
+      story:
+        "Input with a custom validation function, it validates if the input contains the value ´hello´."
+    }
   }
 };
 
@@ -266,7 +273,7 @@ export const DefaultValue = () => {
 
 DefaultValue.parameters = {
   docs: {
-    storyDescription: "Input with an default value already in place."
+    description: { story: "Input with an default value already in place." }
   }
 };
 
@@ -294,7 +301,7 @@ export const EventDemonstration = () => {
 
 EventDemonstration.parameters = {
   docs: {
-    storyDescription: "Input with all events functions enabled."
+    description: { story: "Input with all events functions enabled." }
   }
 };
 
@@ -318,8 +325,10 @@ export const CustomProps = () => {
 
 CustomProps.parameters = {
   docs: {
-    storyDescription:
-      "Using the input props to inject custom props, this input will block values exceeding 25 character."
+    description: {
+      story:
+        "Using the input props to inject custom props, this input will block values exceeding 25 character."
+    }
   }
 };
 
@@ -383,7 +392,7 @@ export const ControlledWithButtons = () => {
 
 ControlledWithButtons.parameters = {
   docs: {
-    storyDescription: "Changing the input value from outside the input component."
+    description: { story: "Changing the input value from outside the input component." }
   }
 };
 
@@ -430,6 +439,6 @@ export const Suggestion = () => {
 
 Suggestion.parameters = {
   docs: {
-    storyDescription: "Input with suggestion list."
+    description: { story: "Input with suggestion list." }
   }
 };

@@ -137,8 +137,9 @@ export const TextAndSemantic = () => {
 TextAndSemantic.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "The modal allow the definition of variants, that alters the presented icon."
+    description: {
+      story: "The modal allow the definition of variants, that alters the presented icon."
+    }
   }
 };
 
@@ -153,8 +154,10 @@ export const CustomIcon = () => (
 CustomIcon.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button."
+    description: {
+      story:
+        "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button."
+    }
   }
 };
 
@@ -194,8 +197,10 @@ export const Accessibility = () => {
 Accessibility.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content."
+    description: {
+      story:
+        "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content."
+    }
   }
 };
 
@@ -309,7 +314,7 @@ export const CustomContent = () => {
 CustomContent.parameters = {
   v3: true,
   docs: {
-    storyDescription: "It is possible to insert any component in the modal."
+    description: { story: "It is possible to insert any component in the modal." }
   }
 };
 

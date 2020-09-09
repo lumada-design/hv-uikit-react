@@ -56,7 +56,7 @@ export const VerticalWithSingleTooltip = () => {
 
 VerticalWithSingleTooltip.parameters = {
   docs: {
-    storyDescription: "Tooltip in single line mode."
+    description: { story: "Tooltip in single line mode." }
   }
 };
 
@@ -82,7 +82,7 @@ export const GroupedVerticalBarchart = () => {
 
 GroupedVerticalBarchart.parameters = {
   docs: {
-    storyDescription: "Representation of groups by using multiple bars."
+    description: { story: "Representation of groups by using multiple bars." }
   }
 };
 
@@ -109,7 +109,7 @@ export const StackedVerticalBarchart = () => {
 
 StackedVerticalBarchart.parameters = {
   docs: {
-    storyDescription: "Groups in stack mode."
+    description: { story: "Groups in stack mode." }
   }
 };
 
@@ -132,7 +132,7 @@ export const SimpleHorizontalBarchart = () => (
 
 SimpleHorizontalBarchart.parameters = {
   docs: {
-    storyDescription: "Representation of horizontal chart."
+    description: { story: "Representation of horizontal chart." }
   }
 };
 
@@ -156,7 +156,7 @@ export const HorizontalBarchartWithSingleTooltip = () => (
 
 HorizontalBarchartWithSingleTooltip.parameters = {
   docs: {
-    storyDescription: "Tooltip in single line mode."
+    description: { story: "Tooltip in single line mode." }
   }
 };
 
@@ -183,7 +183,7 @@ export const GroupedHorizontalBarchart = () => {
 
 GroupedHorizontalBarchart.parameters = {
   docs: {
-    storyDescription: "Representation of groups by using multiple horizontal bars."
+    description: { story: "Representation of groups by using multiple horizontal bars." }
   }
 };
 
@@ -211,7 +211,7 @@ export const StackedHorizontalBarchart = () => {
 
 StackedHorizontalBarchart.parameters = {
   docs: {
-    storyDescription: "Groups in stack mode."
+    description: { story: "Groups in stack mode." }
   }
 };
 
@@ -253,6 +253,6 @@ export const WithIntervalUpdates = () => {
 
 WithIntervalUpdates.parameters = {
   docs: {
-    storyDescription: "Data updated each second."
+    description: { story: "Data updated each second." }
   }
 };

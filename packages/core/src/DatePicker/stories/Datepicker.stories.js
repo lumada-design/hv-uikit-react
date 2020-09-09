@@ -31,7 +31,7 @@ export const DefaultValue = () => <HvDatePicker id="DatePicker" value="1970-01-0
 
 DefaultValue.parameters = {
   docs: {
-    storyDescription: "Datepicker sample with a value already set."
+    description: { story: "Datepicker sample with a value already set." }
   },
   pa11y: {
     ignore: [
@@ -64,7 +64,7 @@ export const Localized = () => {
 
 Localized.parameters = {
   docs: {
-    storyDescription: "Datepicker sample with values localized."
+    description: { story: "Datepicker sample with values localized." }
   },
   pa11y: {
     ignore: [
@@ -82,7 +82,7 @@ export const WithActions = () => <HvDatePicker showActions value="1970-01-02" id
 
 WithActions.parameters = {
   docs: {
-    storyDescription: "Datepicker with action buttons at the bottom."
+    description: { story: "Datepicker with action buttons at the bottom." }
   },
   pa11y: {
     ignore: [
@@ -108,7 +108,7 @@ export const WithCustomLabels = () => (
 
 WithCustomLabels.parameters = {
   docs: {
-    storyDescription: "Datepicker with actions buttons at the bottom that have custom labels."
+    description: { story: "Datepicker with actions buttons at the bottom that have custom labels." }
   },
   pa11y: {
     ignore: [
@@ -139,7 +139,9 @@ export const RangeMode = () => (
 
 RangeMode.parameters = {
   docs: {
-    storyDescription: "Datepicker in range mode allowing the selection of more than one value."
+    description: {
+      story: "Datepicker in range mode allowing the selection of more than one value."
+    }
   },
   pa11y: {
     ignore: [
@@ -175,7 +177,7 @@ export const RangeWithValues = () => {
 
 RangeWithValues.parameters = {
   docs: {
-    storyDescription: "Datepicker in range mode with values already set."
+    description: { story: "Datepicker in range mode with values already set." }
   },
   pa11y: {
     ignore: [
@@ -193,7 +195,7 @@ export const NearInvalid = () => <HvDatePicker value="1000-01-01" />;
 
 NearInvalid.parameters = {
   docs: {
-    storyDescription: "Datepicker in range mode with invalid near invalid dates."
+    description: { story: "Datepicker in range mode with invalid near invalid dates." }
   },
   pa11y: {
     ignore: [

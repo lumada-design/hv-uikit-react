@@ -37,7 +37,7 @@ export const Empty = () => <HvDropdown id="dropdown1" />;
 Empty.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Dropdown with no values"
+    description: { story: "Dropdown with no values" }
   },
   pa11y: {
     ignore: ["region"]
@@ -59,7 +59,7 @@ export const SingleSelection = () => (
 
 SingleSelection.parameters = {
   docs: {
-    storyDescription: "Support ids to manage selection"
+    description: { story: "Support ids to manage selection" }
   },
   pa11y: {
     ignore: ["region"]
@@ -122,7 +122,7 @@ export const SingleSelectionWithSearch = () => (
 
 SingleSelectionWithSearch.parameters = {
   docs: {
-    storyDescription: "Single selection Dropdown with search and less than 10 elements"
+    description: { story: "Single selection Dropdown with search and less than 10 elements" }
   },
   pa11y: {
     ignore: ["region"]
@@ -189,7 +189,7 @@ export const DifferentSizeAndPlacements = () => {
 
 DifferentSizeAndPlacements.parameters = {
   docs: {
-    storyDescription: "Dropdown defined with a specific width and with different placements."
+    description: { story: "Dropdown defined with a specific width and with different placements." }
   },
   pa11y: {
     ignore: ["region"]

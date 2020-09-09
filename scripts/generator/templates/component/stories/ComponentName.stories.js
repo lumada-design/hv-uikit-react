@@ -18,6 +18,6 @@ export const Sample2 = () => {
 
 Sample2.parameters = {
   docs: {
-    storyDescription: "Sample 2 description."
+    description: { story: "Sample 2 description." }
   }
 };

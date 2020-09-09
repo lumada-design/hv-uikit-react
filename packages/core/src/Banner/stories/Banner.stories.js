@@ -82,7 +82,7 @@ export const BannerController = () => {
 
 BannerController.parameters = {
   docs: {
-    storyDescription: "Different Banner variants with actions and controlled by buttons."
+    description: { story: "Different Banner variants with actions and controlled by buttons." }
   },
   v3: true
 };
@@ -98,7 +98,7 @@ export const CustomIcon = () => (
 
 CustomIcon.parameters = {
   docs: {
-    storyDescription: "Banner with custom icon with base color on the semantic background."
+    description: { story: "Banner with custom icon with base color on the semantic background." }
   },
   v3: true
 };
@@ -117,8 +117,9 @@ export const CustomAction = () => (
 
 CustomAction.parameters = {
   docs: {
-    storyDescription:
-      "Banner can receive a component or object action that will render a semantic button."
+    description: {
+      story: "Banner can receive a component or object action that will render a semantic button."
+    }
   },
   v3: true
 };

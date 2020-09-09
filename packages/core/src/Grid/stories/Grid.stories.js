@@ -187,7 +187,9 @@ export const Behaviour = () => {
 
 Behaviour.parameters = {
   docs: {
-    storyDescription:
-      "Change the size of the window to see the grid behaviour. The box will adjust following the define breakpoints."
+    description: {
+      story:
+        "Change the size of the window to see the grid behaviour. The box will adjust following the define breakpoints."
+    }
   }
 };

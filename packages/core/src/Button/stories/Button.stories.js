@@ -64,7 +64,7 @@ export const DisabledButtons = () => (
 
 DisabledButtons.parameters = {
   docs: {
-    storyDescription: "Disabled buttons that don't allow any interaction."
+    description: { story: "Disabled buttons that don't allow any interaction." }
   },
   v3: true
 };
@@ -154,7 +154,7 @@ export const Icons = () => {
 
 Icons.parameters = {
   docs: {
-    storyDescription: "Various Button configurations with icons and icons + text."
+    description: { story: "Various Button configurations with icons and icons + text." }
   },
   v3: true
 };

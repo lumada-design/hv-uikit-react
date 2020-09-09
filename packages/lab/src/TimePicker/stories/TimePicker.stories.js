@@ -27,7 +27,7 @@ export const Format12Hours = () => <HvTimePicker locale="en-US" />;
 
 Format12Hours.parameters = {
   docs: {
-    storyDescription: "TimePicker to select time in 12-hour format."
+    description: { story: "TimePicker to select time in 12-hour format." }
   },
   eyes: {
     // excluded due to dynamic date (which is the default that we intend to exemplify)
@@ -41,7 +41,7 @@ export const CustomDefault = () => (
 
 CustomDefault.parameters = {
   docs: {
-    storyDescription: "TimePicker with default custom set time. "
+    description: { story: "TimePicker with default custom set time. " }
   }
 };
 
@@ -72,6 +72,6 @@ export const WithOnChange = () => {
 
 WithOnChange.parameters = {
   docs: {
-    storyDescription: "TimePicker triggers an onChange when some of values change. "
+    description: { story: "TimePicker triggers an onChange when some of values change. " }
   }
 };

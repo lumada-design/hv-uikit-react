@@ -56,7 +56,7 @@ export const AverageService = () => (
 
 AverageService.parameters = {
   docs: {
-    storyDescription: "A kpi showing the average service time."
+    description: { story: "A kpi showing the average service time." }
   }
 };
 
@@ -133,7 +133,7 @@ export const IOPS = () => {
 
 IOPS.parameters = {
   docs: {
-    storyDescription: "A Kpi sample showcasing the total IOPS."
+    description: { story: "A Kpi sample showcasing the total IOPS." }
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
@@ -229,7 +229,7 @@ export const Selectable = () => {
 
 Selectable.parameters = {
   docs: {
-    storyDescription: "A selectable kpi with the total numbers of event."
+    description: { story: "A selectable kpi with the total numbers of event." }
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)
@@ -311,7 +311,7 @@ export const SelectableSemantic = () => {
 
 SelectableSemantic.parameters = {
   docs: {
-    storyDescription: "A selectable kpi with the total numbers of event."
+    description: { story: "A selectable kpi with the total numbers of event." }
   },
   eyes: {
     // waiting until external charts are rendered (issue #1792)

@@ -47,7 +47,7 @@ export const LimitedToFivePaths = () => {
 
 LimitedToFivePaths.parameters = {
   docs: {
-    storyDescription: "Breadcrumb sample with 5 out of 7 paths visible."
+    description: { story: "Breadcrumb sample with 5 out of 7 paths visible." }
   },
   v3: true
 };
@@ -69,7 +69,7 @@ export const LimitedToTwoPaths = () => {
 
 LimitedToTwoPaths.parameters = {
   docs: {
-    storyDescription: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible"
+    description: { story: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible" }
   },
   v3: true
 };
@@ -84,7 +84,7 @@ export const WithURL = () => (
 
 WithURL.parameters = {
   docs: {
-    storyDescription: "Breadcrumb sample that generates the paths using an URL."
+    description: { story: "Breadcrumb sample that generates the paths using an URL." }
   },
   v3: true
 };
@@ -102,7 +102,7 @@ export const WithURLLimited = () => {
 
 WithURLLimited.parameters = {
   docs: {
-    storyDescription: "Breadcrumb sample that generates the limited paths using an URL."
+    description: { story: "Breadcrumb sample that generates the limited paths using an URL." }
   },
   v3: true
 };
@@ -132,7 +132,7 @@ export const WithClickEvents = () => {
 
 WithClickEvents.parameters = {
   docs: {
-    storyDescription: "Breadcrumb sample that has a onClick defined."
+    description: { story: "Breadcrumb sample that has a onClick defined." }
   },
   v3: true
 };

@@ -33,7 +33,7 @@ export const Resizable = () => {
 Resizable.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Text area that allow resizing."
+    description: { story: "Text area that allow resizing." }
   }
 };
 
@@ -68,8 +68,10 @@ export const LimitedBlocking = () => {
 LimitedBlocking.parameters = {
   v3: true,
   docs: {
-    storyDescription:
-      "Text area that limits the quantity of character that can be introduced in the text area."
+    description: {
+      story:
+        "Text area that limits the quantity of character that can be introduced in the text area."
+    }
   }
 };
 
@@ -96,7 +98,7 @@ export const LimitedWithCustomLabels = () => {
 LimitedWithCustomLabels.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Text area char count with a custom labels."
+    description: { story: "Text area char count with a custom labels." }
   }
 };
 
@@ -113,7 +115,7 @@ export const Disabled = () => {
 Disabled.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Text area that does not allows any interaction."
+    description: { story: "Text area that does not allows any interaction." }
   }
 };
 
@@ -166,7 +168,7 @@ export const ControlledLimited = () => {
 ControlledLimited.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Text area value altered from an outside component."
+    description: { story: "Text area value altered from an outside component." }
   }
 };
 
@@ -192,7 +194,7 @@ export const customValidation = () => {
 customValidation.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Text area value that can't contain numbers."
+    description: { story: "Text area value that can't contain numbers." }
   }
 };
 
@@ -236,6 +238,6 @@ export const ControlledValidation = () => {
 ControlledValidation.parameters = {
   v3: true,
   docs: {
-    storyDescription: "Text area value altered from an outside component."
+    description: { story: "Text area value altered from an outside component." }
   }
 };

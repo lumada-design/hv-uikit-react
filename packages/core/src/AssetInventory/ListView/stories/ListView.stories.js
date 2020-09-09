@@ -394,7 +394,8 @@ export const NotSelectableWithMenu = () => {
 
 NotSelectableWithMenu.parameters = {
   docs: {
-    storyDescription:
-      "List View that is not selectable with many actions, collapsed into a DropDownMenu"
+    description: {
+      story: "List View that is not selectable with many actions, collapsed into a DropDownMenu"
+    }
   }
 };

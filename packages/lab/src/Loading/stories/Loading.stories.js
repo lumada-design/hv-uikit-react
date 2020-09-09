@@ -21,6 +21,6 @@ export const WithDelay = () => <HvLoadingWithDelay delay={5000} />;
 
 WithDelay.parameters = {
   docs: {
-    storyDescription: "A simple Loading example with Delay"
+    description: { story: "A simple Loading example with Delay" }
   }
 };

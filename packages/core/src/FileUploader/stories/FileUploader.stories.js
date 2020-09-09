@@ -168,7 +168,7 @@ export const Basic = () => {
 Basic.parameters = {
   v3: true,
   docs: {
-    storyDescription: "FileUploader default usage sample"
+    description: { story: "FileUploader default usage sample" }
   }
 };
 
@@ -255,7 +255,7 @@ export const SingleUpload = () => {
 SingleUpload.parameters = {
   v3: true,
   docs: {
-    storyDescription: "FileUploader which permits the upload of a single file at a time"
+    description: { story: "FileUploader which permits the upload of a single file at a time" }
   },
   pa11y: {
     ignore: [

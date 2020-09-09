@@ -45,7 +45,7 @@ export const MultiLine = () => {
 
 MultiLine.parameters = {
   docs: {
-    storyDescription: "Showcasing the multiline input style."
+    description: { story: "Showcasing the multiline input style." }
   },
   v3: true
 };
@@ -68,7 +68,7 @@ export const MultiLineResize = () => {
 
 MultiLineResize.parameters = {
   docs: {
-    storyDescription: "Showcasing the multiline input style with resizing."
+    description: { story: "Showcasing the multiline input style with resizing." }
   },
   v3: true
 };
@@ -89,7 +89,7 @@ export const DisabledInput = () => {
 
 DisabledInput.parameters = {
   docs: {
-    storyDescription: "Showcasing the disabled input style."
+    description: { story: "Showcasing the disabled input style." }
   },
   v3: true
 };
@@ -112,7 +112,7 @@ export const DisabledMultiLine = () => {
 
 DisabledMultiLine.parameters = {
   docs: {
-    storyDescription: "Showcasing the disabled multiline input style."
+    description: { story: "Showcasing the disabled multiline input style." }
   },
   v3: true
 };
@@ -133,7 +133,7 @@ export const InvalidInput = () => {
 
 InvalidInput.parameters = {
   docs: {
-    storyDescription: "Showcasing the input in Invalid State."
+    description: { story: "Showcasing the input in Invalid State." }
   },
   v3: true
 };
@@ -156,7 +156,7 @@ export const InvalidMultiLine = () => {
 
 InvalidMultiLine.parameters = {
   docs: {
-    storyDescription: "Showcasing the invalid multiline input style."
+    description: { story: "Showcasing the invalid multiline input style." }
   },
   v3: true
 };

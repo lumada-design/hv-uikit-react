@@ -37,7 +37,7 @@ export const Successful = () => (
 
 Successful.parameters = {
   docs: {
-    storyDescription: "Login sample with a successful result on login attempt"
+    description: { story: "Login sample with a successful result on login attempt" }
   }
 };
 
@@ -53,7 +53,7 @@ export const Unsuccessful = () => (
 
 Unsuccessful.parameters = {
   docs: {
-    storyDescription: "Login sample with an error result on login attempt"
+    description: { story: "Login sample with an error result on login attempt" }
   }
 };
 
@@ -68,7 +68,7 @@ export const NoRememberCredentials = () => (
 
 NoRememberCredentials.parameters = {
   docs: {
-    storyDescription: 'Without "Forgot Your Credentials" or "Remember Me"'
+    description: { story: 'Without "Forgot Your Credentials" or "Remember Me"' }
   }
 };
 
@@ -91,7 +91,7 @@ export const CustomLabels = () => (
 
 CustomLabels.parameters = {
   docs: {
-    storyDescription: "Login overriding some default labels"
+    description: { story: "Login overriding some default labels" }
   }
 };
 
