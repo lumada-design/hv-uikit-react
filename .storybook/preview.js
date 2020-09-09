@@ -21,17 +21,9 @@ addParameters({
     showNav: true,
     showPanel: true,
     panelPosition: "bottom",
-    sidebarAnimations: true,
-
-    // enable keyboard shortcuts
-    // (even thou we're hidding the button)
-    enableShortcuts: true,
 
     // show tool bar
     isToolshown: true,
-
-    // display the top-level grouping as a "root" in the sidebar
-    showRoots: true,
 
     storySort: storySort({
       method: "alphabetical",
