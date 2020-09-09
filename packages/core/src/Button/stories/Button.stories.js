@@ -30,22 +30,20 @@ export const Main = () => (
   </>
 );
 
-Main.story = {
-  decorators: [
-    Story => (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          width: 400,
-          justifyContent: "space-between"
-        }}
-      >
-        <Story />
-      </div>
-    )
-  ]
-};
+Main.decorators = [
+  Story => (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        width: 400,
+        justifyContent: "space-between"
+      }}
+    >
+      <Story />
+    </div>
+  )
+];
 
 export const DisabledButtons = () => (
   <>
@@ -64,28 +62,28 @@ export const DisabledButtons = () => (
   </>
 );
 
-DisabledButtons.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Disabled buttons that don't allow any interaction."
-    },
-    v3: true
+DisabledButtons.parameters = {
+  docs: {
+    storyDescription: "Disabled buttons that don't allow any interaction."
   },
-  decorators: [
-    Story => (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          width: 400,
-          justifyContent: "space-between"
-        }}
-      >
-        <Story />
-      </div>
-    )
-  ]
+  v3: true
 };
+
+DisabledButtons.decorators = [
+  Story => (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        width: 400,
+        justifyContent: "space-between"
+      }}
+    >
+      <Story />
+    </div>
+  )
+];
+
 export const SemanticWithIcons = () => {
   const useStyles = makeStyles(() => ({
     spacing: {
@@ -154,11 +152,9 @@ export const Icons = () => {
   );
 };
 
-Icons.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Various Button configurations with icons and icons + text."
-    },
-    v3: true
-  }
+Icons.parameters = {
+  docs: {
+    storyDescription: "Various Button configurations with icons and icons + text."
+  },
+  v3: true
 };

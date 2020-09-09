@@ -63,11 +63,9 @@ export const WithArea = () => {
   );
 };
 
-WithArea.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Colors the area below it."
-    }
+WithArea.parameters = {
+  docs: {
+    storyDescription: "Colors the area below it."
   }
 };
 
@@ -102,11 +100,9 @@ export const LinechartGrouped = () => {
   );
 };
 
-LinechartGrouped.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Representation of groups by using multiple lines."
-    }
+LinechartGrouped.parameters = {
+  docs: {
+    storyDescription: "Representation of groups by using multiple lines."
   }
 };
 
@@ -130,11 +126,9 @@ export const GroupedWithArea = () => {
   );
 };
 
-GroupedWithArea.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Groups using colored areas."
-    }
+GroupedWithArea.parameters = {
+  docs: {
+    storyDescription: "Groups using colored areas."
   }
 };
 
@@ -159,11 +153,9 @@ export const LinechartStacked = () => {
   );
 };
 
-LinechartStacked.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Groups in stack mode."
-    }
+LinechartStacked.parameters = {
+  docs: {
+    storyDescription: "Groups in stack mode."
   }
 };
 
@@ -204,15 +196,13 @@ export const TimeRepresentation = () => {
   );
 };
 
-TimeRepresentation.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Representation of time related data."
-    },
-    eyes: {
-      // story excluded due inconsistent component alignment and relative position, opened 1822 issue
-      include: false
-    }
+TimeRepresentation.parameters = {
+  docs: {
+    storyDescription: "Representation of time related data."
+  },
+  eyes: {
+    // story excluded due inconsistent component alignment and relative position, opened 1822 issue
+    include: false
   }
 };
 
@@ -276,10 +266,8 @@ export const WithIntervalUpdates = () => {
   );
 };
 
-WithIntervalUpdates.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Data updated each second."
-    }
+WithIntervalUpdates.parameters = {
+  docs: {
+    storyDescription: "Data updated each second."
   }
 };

@@ -95,10 +95,8 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    v3: true
-  }
+Main.parameters = {
+  v3: true
 };
 
 export const WithoutActions = () => {
@@ -182,10 +180,8 @@ export const WithoutActions = () => {
   );
 };
 
-WithoutActions.story = {
-  parameters: {
-    v3: true
-  }
+WithoutActions.parameters = {
+  v3: true
 };
 
 export const Collapsable = () => {
@@ -275,10 +271,8 @@ export const Collapsable = () => {
   );
 };
 
-Collapsable.story = {
-  parameters: {
-    v3: true
-  }
+Collapsable.parameters = {
+  v3: true
 };
 
 export const CollapseOnExit = () => {
@@ -371,8 +365,6 @@ export const CollapseOnExit = () => {
   );
 };
 
-CollapseOnExit.story = {
-  parameters: {
-    v3: true
-  }
+CollapseOnExit.parameters = {
+  v3: true
 };

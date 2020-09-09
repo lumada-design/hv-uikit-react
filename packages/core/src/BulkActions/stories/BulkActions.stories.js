@@ -42,10 +42,8 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    v3: true
-  }
+Main.parameters = {
+  v3: true
 };
 
 const styles = theme => ({
@@ -114,10 +112,8 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
-  parameters: {
-    v3: true
-  }
+Controlled.parameters = {
+  v3: true
 };
 
 export const ControlledWithActions = () => {
@@ -181,10 +177,8 @@ export const ControlledWithActions = () => {
   );
 };
 
-ControlledWithActions.story = {
-  parameters: {
-    v3: true
-  }
+ControlledWithActions.parameters = {
+  v3: true
 };
 
 export const ControlledWithAllPages = () => {
@@ -289,8 +283,6 @@ export const ControlledWithAllPages = () => {
   );
 };
 
-ControlledWithAllPages.story = {
-  parameters: {
-    v3: true
-  }
+ControlledWithAllPages.parameters = {
+  v3: true
 };

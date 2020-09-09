@@ -32,10 +32,8 @@ export const KeyboardNavigation = () => (
   </>
 );
 
-KeyboardNavigation.story = {
-  parameters: {
-    v3: true
-  }
+KeyboardNavigation.parameters = {
+  v3: true
 };
 
 // __________________________________
@@ -49,10 +47,8 @@ export const A11YClosed = () => (
   />
 );
 
-A11YClosed.story = {
-  parameters: {
-    v3: true
-  }
+A11YClosed.parameters = {
+  v3: true
 };
 
 export const A11YOpen = () => (
@@ -63,15 +59,13 @@ export const A11YOpen = () => (
   />
 );
 
-A11YOpen.story = {
-  parameters: {
-    v3: true,
-    pa11y: {
-      actions: [
-        // open menu before testing
-        "click element #dropdownmenu-open-icon-button",
-        "wait for element #dropdownmenu-open-list to be visible"
-      ]
-    }
+A11YOpen.parameters = {
+  v3: true,
+  pa11y: {
+    actions: [
+      // open menu before testing
+      "click element #dropdownmenu-open-icon-button",
+      "wait for element #dropdownmenu-open-list to be visible"
+    ]
   }
 };

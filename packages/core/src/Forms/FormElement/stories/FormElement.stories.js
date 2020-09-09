@@ -174,12 +174,10 @@ export const TextAreaFormElement = () => {
   );
 };
 
-TextAreaFormElement.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Form element propagating the invalid state to the input."
-    }
+TextAreaFormElement.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Form element propagating the invalid state to the input."
   }
 };
 
@@ -195,12 +193,10 @@ export const FormElementInvalid = () => {
   );
 };
 
-FormElementInvalid.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Form element propagating the invalid state to the input."
-    }
+FormElementInvalid.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Form element propagating the invalid state to the input."
   }
 };
 
@@ -219,12 +215,10 @@ export const FormElementValid = () => {
   );
 };
 
-FormElementValid.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Form element propagating the valid state to the input."
-    }
+FormElementValid.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Form element propagating the valid state to the input."
   }
 };
 
@@ -240,20 +234,18 @@ export const FormElementDisabled = () => {
   );
 };
 
-FormElementDisabled.story = {
-  parameters: {
-    docs: {
-      v3: true,
-      storyDescription: "Form element propagating the disabled state to the input."
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
+FormElementDisabled.parameters = {
+  docs: {
+    v3: true,
+    storyDescription: "Form element propagating the disabled state to the input."
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast"
+    ]
   }
 };

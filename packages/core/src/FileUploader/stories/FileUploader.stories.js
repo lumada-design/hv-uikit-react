@@ -165,12 +165,10 @@ export const Basic = () => {
   return <Sample />;
 };
 
-Basic.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "FileUploader default usage sample"
-    }
+Basic.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "FileUploader default usage sample"
   }
 };
 
@@ -254,19 +252,17 @@ export const SingleUpload = () => {
   return <Sample />;
 };
 
-SingleUpload.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "FileUploader which permits the upload of a single file at a time"
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG When not provided with an ID the label isn't associated with the input
-        // https://github.com/lumada-design/hv-uikit-react/issues/1694
-        "label-title-only"
-      ]
-    }
+SingleUpload.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "FileUploader which permits the upload of a single file at a time"
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // TODO: BUG When not provided with an ID the label isn't associated with the input
+      // https://github.com/lumada-design/hv-uikit-react/issues/1694
+      "label-title-only"
+    ]
   }
 };

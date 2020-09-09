@@ -345,12 +345,10 @@ export const Empty = () => {
   );
 };
 
-Empty.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Table sample without data."
-    }
+Empty.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Table sample without data."
   }
 };
 
@@ -461,12 +459,10 @@ export const CustomEmpty = () => {
   );
 };
 
-CustomEmpty.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Table sample without data."
-    }
+CustomEmpty.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Table sample without data."
   }
 };
 
@@ -723,12 +719,10 @@ export const WithExpander = () => {
   );
 };
 
-WithExpander.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Table sample that shows the ability to add an expander."
-    }
+WithExpander.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Table sample that shows the ability to add an expander."
   }
 };
 
@@ -1001,17 +995,15 @@ export const WithExpanderAndCustomContent = () => {
   );
 };
 
-WithExpanderAndCustomContent.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription:
-        "Table sample that shows the ability to add a complex expander and custom cell."
-    },
-    eyes: {
-      // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
+WithExpanderAndCustomContent.parameters = {
+  v3: true,
+  docs: {
+    storyDescription:
+      "Table sample that shows the ability to add a complex expander and custom cell."
+  },
+  eyes: {
+    // waiting until external charts are rendered (issue #1792)
+    waitBeforeScreenshot: "[id|=reactgooglegraph]"
   }
 };
 
@@ -1272,12 +1264,10 @@ export const WithCheckbox = () => {
   );
 };
 
-WithCheckbox.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Table sample that shows the ability to add checkboxes."
-    }
+WithCheckbox.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Table sample that shows the ability to add checkboxes."
   }
 };
 
@@ -1409,16 +1399,14 @@ export const WithCheckboxCustomContent = () => {
   );
 };
 
-WithCheckboxCustomContent.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Table sample that shows the ability to add use a checkbox."
-    },
-    eyes: {
-      // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
+WithCheckboxCustomContent.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Table sample that shows the ability to add use a checkbox."
+  },
+  eyes: {
+    // waiting until external charts are rendered (issue #1792)
+    waitBeforeScreenshot: "[id|=reactgooglegraph]"
   }
 };
 
@@ -1681,12 +1669,10 @@ export const WithCheckboxAndSecondaryActions = () => {
   );
 };
 
-WithCheckboxAndSecondaryActions.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Table sample that shows the ability to add a secondary action column."
-    }
+WithCheckboxAndSecondaryActions.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Table sample that shows the ability to add a secondary action column."
   }
 };
 
@@ -1925,12 +1911,10 @@ export const WithNullValues = () => {
   );
 };
 
-WithNullValues.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Table sample with that has cell values that are null."
-    }
+WithNullValues.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Table sample with that has cell values that are null."
   }
 };
 
@@ -2041,12 +2025,10 @@ export const TableWithChangingData = () => {
   );
 };
 
-TableWithChangingData.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Sample showcasing the table component behavior with changing data."
-    }
+TableWithChangingData.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Sample showcasing the table component behavior with changing data."
   }
 };
 
@@ -2240,12 +2222,10 @@ export const ServerSidePagination = () => {
   return <Sample />;
 };
 
-ServerSidePagination.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription:
-        "Table sample that shows how to use the table with server side pagination. Bulk Actions"
-    }
+ServerSidePagination.parameters = {
+  v3: true,
+  docs: {
+    storyDescription:
+      "Table sample that shows how to use the table with server side pagination. Bulk Actions"
   }
 };

@@ -19,10 +19,8 @@ export default {
 
 export const Main = () => <HvFooter />;
 
-Main.story = {
-  parameters: {
-    v3: true
-  }
+Main.parameters = {
+  v3: true
 };
 
 export const CustomLabels = () => {
@@ -40,11 +38,9 @@ export const CustomLabels = () => {
   );
 };
 
-CustomLabels.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Sample 2 description."
-    }
+CustomLabels.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Sample 2 description."
   }
 };

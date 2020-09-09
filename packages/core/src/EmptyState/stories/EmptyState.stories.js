@@ -32,12 +32,10 @@ export const WithAction = () => (
   />
 );
 
-WithAction.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Empty states that includes an action inside its content."
-    }
+WithAction.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Empty states that includes an action inside its content."
   }
 };
 
@@ -61,12 +59,10 @@ export const CustomMessages = () => {
   );
 };
 
-CustomMessages.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Empty states with message and action set as custom elements."
-    }
+CustomMessages.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Empty states with message and action set as custom elements."
   }
 };
 
@@ -78,11 +74,9 @@ export const Minimal = () => (
   />
 );
 
-Minimal.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Empty state without title and small icon."
-    }
+Minimal.parameters = {
+  v3: true,
+  docs: {
+    storyDescription: "Empty state without title and small icon."
   }
 };

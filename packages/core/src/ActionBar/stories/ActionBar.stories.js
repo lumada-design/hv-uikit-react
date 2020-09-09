@@ -97,11 +97,9 @@ export const DualAction = () => {
   );
 };
 
-DualAction.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the action bar pattern with only two actions."
-    }
+DualAction.parameters = {
+  docs: {
+    storyDescription: "Showcasing the action bar pattern with only two actions."
   }
 };
 
@@ -152,10 +150,8 @@ export const VariedActionBar = () => {
   );
 };
 
-VariedActionBar.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the action bar pattern with only two actions."
-    }
+VariedActionBar.parameters = {
+  docs: {
+    storyDescription: "Showcasing the action bar pattern with only two actions."
   }
 };

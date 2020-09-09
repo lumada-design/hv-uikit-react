@@ -54,11 +54,9 @@ export const VerticalWithSingleTooltip = () => {
   );
 };
 
-VerticalWithSingleTooltip.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Tooltip in single line mode."
-    }
+VerticalWithSingleTooltip.parameters = {
+  docs: {
+    storyDescription: "Tooltip in single line mode."
   }
 };
 
@@ -82,11 +80,9 @@ export const GroupedVerticalBarchart = () => {
   );
 };
 
-GroupedVerticalBarchart.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Representation of groups by using multiple bars."
-    }
+GroupedVerticalBarchart.parameters = {
+  docs: {
+    storyDescription: "Representation of groups by using multiple bars."
   }
 };
 
@@ -111,11 +107,9 @@ export const StackedVerticalBarchart = () => {
   );
 };
 
-StackedVerticalBarchart.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Groups in stack mode."
-    }
+StackedVerticalBarchart.parameters = {
+  docs: {
+    storyDescription: "Groups in stack mode."
   }
 };
 
@@ -136,11 +130,9 @@ export const SimpleHorizontalBarchart = () => (
   />
 );
 
-SimpleHorizontalBarchart.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Representation of horizontal chart."
-    }
+SimpleHorizontalBarchart.parameters = {
+  docs: {
+    storyDescription: "Representation of horizontal chart."
   }
 };
 
@@ -162,11 +154,9 @@ export const HorizontalBarchartWithSingleTooltip = () => (
   />
 );
 
-HorizontalBarchartWithSingleTooltip.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Tooltip in single line mode."
-    }
+HorizontalBarchartWithSingleTooltip.parameters = {
+  docs: {
+    storyDescription: "Tooltip in single line mode."
   }
 };
 
@@ -191,11 +181,9 @@ export const GroupedHorizontalBarchart = () => {
   );
 };
 
-GroupedHorizontalBarchart.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Representation of groups by using multiple horizontal bars."
-    }
+GroupedHorizontalBarchart.parameters = {
+  docs: {
+    storyDescription: "Representation of groups by using multiple horizontal bars."
   }
 };
 
@@ -221,11 +209,9 @@ export const StackedHorizontalBarchart = () => {
   );
 };
 
-StackedHorizontalBarchart.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Groups in stack mode."
-    }
+StackedHorizontalBarchart.parameters = {
+  docs: {
+    storyDescription: "Groups in stack mode."
   }
 };
 
@@ -265,10 +251,8 @@ export const WithIntervalUpdates = () => {
   );
 };
 
-WithIntervalUpdates.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Data updated each second."
-    }
+WithIntervalUpdates.parameters = {
+  docs: {
+    storyDescription: "Data updated each second."
   }
 };

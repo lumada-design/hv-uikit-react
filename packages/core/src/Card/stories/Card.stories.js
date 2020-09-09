@@ -170,11 +170,9 @@ export const AllComponents = () => {
   );
 };
 
-AllComponents.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A card that has all it's component defined."
-    }
+AllComponents.parameters = {
+  docs: {
+    storyDescription: "A card that has all it's component defined."
   }
 };
 
@@ -244,11 +242,9 @@ export const NoActions = () => {
   );
 };
 
-NoActions.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A Card without any actions."
-    }
+NoActions.parameters = {
+  docs: {
+    storyDescription: "A Card without any actions."
   }
 };
 
@@ -258,11 +254,9 @@ export const OnlyTitle = () => (
   </HvCard>
 );
 
-OnlyTitle.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A Card that only has a title."
-    }
+OnlyTitle.parameters = {
+  docs: {
+    storyDescription: "A Card that only has a title."
   }
 };
 
@@ -362,11 +356,9 @@ export const KPICard = () => {
   );
 };
 
-KPICard.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A card sample combined with a kpi as content."
-    }
+KPICard.parameters = {
+  docs: {
+    storyDescription: "A card sample combined with a kpi as content."
   }
 };
 
@@ -400,11 +392,9 @@ export const WithComposition = () => (
   </HvCard>
 );
 
-WithComposition.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A card sample that shows how to compose card with subcomponents."
-    }
+WithComposition.parameters = {
+  docs: {
+    storyDescription: "A card sample that shows how to compose card with subcomponents."
   }
 };
 
@@ -472,12 +462,10 @@ export const Selectable = () => {
   );
 };
 
-Selectable.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "A card sample showcasing the ability to select in the content and click action."
-    }
+Selectable.parameters = {
+  docs: {
+    storyDescription:
+      "A card sample showcasing the ability to select in the content and click action."
   }
 };
 
@@ -520,10 +508,8 @@ export const SelectableNoFooter = () => {
   );
 };
 
-SelectableNoFooter.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A card sample showcasing the ability to select in the content."
-    }
+SelectableNoFooter.parameters = {
+  docs: {
+    storyDescription: "A card sample showcasing the ability to select in the content."
   }
 };
