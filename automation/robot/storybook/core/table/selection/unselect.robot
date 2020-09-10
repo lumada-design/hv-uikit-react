@@ -8,7 +8,7 @@ Force Tags    v3
 *** Test Cases ***
 indeterminate state on parent checkbox when she is unselected and is clicked
     [Documentation]    unselected - indeterminate
-    Select From List By Value            ${rows_per_page}    5
+    Select Dropdown Value                ${rows_per_page}    5
     Click Element                        ${bulkAction_checkbox}
     Wait Until Page Contains             5 / 13
     Page Should Contain Element          ${rows_selected}    limit=5

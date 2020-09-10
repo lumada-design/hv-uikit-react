@@ -413,7 +413,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   <div
                     aria-expanded={false}
                     aria-haspopup="listbox"
-                    aria-owns="id-menu-children-container"
                     className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
                     id="id-menu"
                     onClick={[Function]}
@@ -919,7 +918,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   <div
                     aria-expanded={false}
                     aria-haspopup="listbox"
-                    aria-owns="id-menu-children-container"
                     className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
                     id="id-menu"
                     onClick={[Function]}
@@ -1713,7 +1711,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   <div
                     aria-expanded={false}
                     aria-haspopup="listbox"
-                    aria-owns="id-menu-children-container"
                     className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
                     id="id-menu"
                     onClick={[Function]}

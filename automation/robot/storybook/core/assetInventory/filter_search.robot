@@ -26,7 +26,7 @@ hide cards and pagination when search does not return data
 
 show all results when user delete search text
     [Template]    NONE
-    Select From List By Value      ${pageSize}     10
+    Select Dropdown Value          ${pageSize}     10
     Press Keys                     ${searchBox}    97
     Page Should Contain Element    ${cards}        limit=1
     Press Keys                     ${searchBox}    BACKSPACE    BACKSPACE
@@ -34,7 +34,7 @@ show all results when user delete search text
 
 remove search when user click button clear the text
     [Template]    NONE
-    Select From List By Value      ${pageSize}     10
+    Select Dropdown Value          ${pageSize}     10
     Press Keys                     ${searchBox}    97
     Page Should Contain Element    ${cards}        limit=1
     Click Button                   ${clearText}
@@ -43,7 +43,7 @@ remove search when user click button clear the text
 *** Keywords ***
 validate search
     [Arguments]    ${items}    ${numItems}    ${search}    ${Assertion}
-    Select From List By Value      ${pageSize}     10
+    Select Dropdown Value          ${pageSize}     10
     Press Keys                     ${searchBox}    ${search}
     Wait Until Page Contains       ${Assertion}
     Page Should Contain Element    ${items}        limit=${numItems}

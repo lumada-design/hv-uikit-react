@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../utils";
-import HvTypography from "../Typography";
+import { HvBaseDropdown, HvFormElement, HvLabel, HvTypography } from "..";
 import withLabels from "../withLabels";
 import withId from "../withId";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
 import styles from "./styles";
-import HvBaseDropdown from "../BaseDropdown";
-import { HvFormElement, HvLabel } from "../Forms";
 
 const DEFAULT_LABELS = {
   select: undefined,
@@ -25,24 +23,24 @@ const DEFAULT_LABELS = {
 /**
  * A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
  */
-const HvDropdownBase = ({
+const HvDropdown = ({
   className,
   id,
   classes,
   values,
-  multiSelect,
-  showSearch,
-  disabled,
-  expanded,
+  multiSelect = false,
+  showSearch = false,
+  disabled = false,
+  expanded = false,
   onChange,
-  notifyChangesOnFirstRender,
+  notifyChangesOnFirstRender = false,
   labels,
-  selectDefault,
-  hasTooltips,
-  disablePortal,
-  singleSelectionToggle,
+  selectDefault = true,
+  hasTooltips = false,
+  disablePortal = false,
+  singleSelectionToggle = true,
   placement,
-  popperProps
+  popperProps = {}
 }) => {
   const [isOpen, setIsOpen] = useState(expanded);
   const [selectionLabel, setSelectionLabel] = useState(
@@ -75,11 +73,10 @@ const HvDropdownBase = ({
     if (notifyChanges) onChange?.(multiSelect ? selected : selected[0]);
   };
 
-  const buildHeaderLabel = selectionLabelId => {
+  const buildHeaderLabel = () => {
     const hasSelection = getSelected(internalValues).length > 0;
     return labels.select || !multiSelect ? (
       <HvTypography
-        id={selectionLabelId}
         variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
         className={clsx(classes.truncate, {
           [classes.selectionDisabled]: disabled
@@ -89,7 +86,6 @@ const HvDropdownBase = ({
       </HvTypography>
     ) : (
       <HvTypography
-        id={selectionLabelId}
         className={clsx(classes.truncate, {
           [classes.selectionDisabled]: disabled
         })}
@@ -101,7 +97,12 @@ const HvDropdownBase = ({
   };
 
   return (
-    <HvFormElement id={id} disabled={disabled} value={getSelected(internalValues)}>
+    <HvFormElement
+      id={id}
+      className={clsx(className, classes.root)}
+      disabled={disabled}
+      value={getSelected(internalValues)}
+    >
       {labels.title && (
         <HvLabel
           htmlFor={id}
@@ -111,14 +112,13 @@ const HvDropdownBase = ({
         />
       )}
       <HvBaseDropdown
-        className={className}
-        classes={{ root: classes.root, arrow: classes.arrow }}
+        classes={{ root: classes.dropdown, arrow: classes.arrow }}
         expanded={isOpen}
         disabled={disabled}
         disablePortal={disablePortal}
         placement={placement}
         popperProps={popperProps}
-        placeholder={buildHeaderLabel(setId(id, "selectionPlaceholder"))}
+        placeholder={buildHeaderLabel()}
         onToggle={(e, s) => setIsOpen(s)}
         role="combobox"
       >
@@ -143,7 +143,7 @@ const HvDropdownBase = ({
   );
 };
 
-HvDropdownBase.propTypes = {
+HvDropdown.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -160,6 +160,10 @@ HvDropdownBase.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the dropdown.
+     */
+    dropdown: PropTypes.string,
     /**
      * Styles applied to the label.
      */
@@ -188,7 +192,7 @@ HvDropdownBase.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       label: PropTypes.node.isRequired,
-      value: PropTypes.string,
+      value: PropTypes.any,
       selected: PropTypes.bool
     })
   ),
@@ -273,25 +277,6 @@ HvDropdownBase.propTypes = {
   popperProps: PropTypes.shape()
 };
 
-HvDropdownBase.defaultProps = {
-  className: "",
-  id: undefined,
-  values: null,
-  multiSelect: false,
-  showSearch: false,
-  disabled: false,
-  expanded: false,
-  onChange() {},
-  notifyChangesOnFirstRender: false,
-  labels: {},
-  selectDefault: true,
-  disablePortal: false,
-  hasTooltips: false,
-  singleSelectionToggle: true,
-  placement: undefined,
-  popperProps: {}
-};
-
 export default withStyles(styles, { name: "HvDropdown" })(
-  withLabels(DEFAULT_LABELS)(withId(HvDropdownBase))
+  withLabels(DEFAULT_LABELS)(withId(HvDropdown))
 );

@@ -23,7 +23,7 @@ role as columnheader on correct tags when table is rendered
 aria-rowcount as total number of table rows on correct tag when a paginated table is rendered
     Element Attribute Value Should Be    ${table}    aria-rowcount    13
     Page Should Contain Element          css:[aria-rowcount]    limit=1
-    Select From List By Value            ${rows_per_page}    5
+    Select Dropdown Value                ${rows_per_page}    5
     Element Attribute Value Should Be    ${table}    aria-rowcount    13
 
 role as row on correct tags when a paginated table is rendered
@@ -37,7 +37,7 @@ role as cell on correct DOM tags when a paginated table is rendered
     Page Should Contain Element          css:[role=cell]    limit=90
     Click Button                         ${pagination_next_page}
     Page Should Contain Element          css:[role=cell]    limit=90
-    Select From List By Value            ${rows_per_page}    5
+    Select Dropdown Value                ${rows_per_page}    5
     Page Should Contain Element          css:[role=cell]    limit=45
 
 aria-sort ascending or descending when a column is order by

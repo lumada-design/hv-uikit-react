@@ -30,6 +30,6 @@ pageSize, select, sort and paginate
     Select Checkbox                ${checkBox1}
     Click Element                  ${dropdownHeader}
     Click Element                  ${sortTitleDesc}
-    Select From List By Label      ${pageSize}    2
+    Select Dropdown Value          ${pageSize}    2
     Click Element                  ${pageLast}
     Checkbox Should Be Selected    ${checkBox2}

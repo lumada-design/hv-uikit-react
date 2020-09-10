@@ -23,7 +23,7 @@ show correct rows and pages when rows per page is changed
     [Arguments]    ${url}    ${per_page}    ${populated}    ${pages}
     Go To                                ${url}
     Wait Until Element Is Enabled        ${rows_per_page}
-    Select From List By Value            ${rows_per_page}    ${per_page}
+    Select Dropdown Value                ${rows_per_page}    ${per_page}
     Wait Until Page Contains Element     ${rows_populated}    timeout=5s    limit=${populated}
     Page Should Contain Element          ${rows_counted}    limit=${per_page}
     elements text should be              ${pagination_count_of_pages}    ${pages}

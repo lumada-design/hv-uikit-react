@@ -23,7 +23,7 @@ const styles = theme => {
       },
       "& $pageSizeInputRoot": {
         backgroundColor: "transparent",
-        "&:focus, &:hover": {
+        "&:focus, &:focus-within, &:hover": {
           backgroundColor: hoverColor
         }
       }
@@ -37,31 +37,8 @@ const styles = theme => {
       left: "0"
     },
     pageSizeOptionsSelect: {
-      ...theme.hv.typography.normalText,
-      fontFamily: theme.hv.typography.fontFamily,
-      "-webkit-appearance": "none",
-      border: "none",
-      borderRadius: 0,
-      paddingLeft: `${theme.hv.spacing.xs}px`,
-      paddingRight: "32px",
-      textAlignLast: "right",
-      marginLeft: `${theme.hv.spacing.xs}px`,
-      marginRight: `${theme.hv.spacing.xs}px`,
-      outline: "none",
-      height: "32px",
-      backgroundColor: "transparent",
-      backgroundSize: "26px 26px",
-      "&::-ms-expand": {
-        display: "none"
-      },
-      "&:hover:enabled": {
-        cursor: "pointer",
-        backgroundColor: hoverColor
-      },
-      "&:focus": {
-        backgroundColor: hoverColor,
-        ...outlineStyles
-      }
+      display: "inline-block",
+      margin: theme.spacing(0, "xs")
     },
     pageNavigator: {
       display: "flex",

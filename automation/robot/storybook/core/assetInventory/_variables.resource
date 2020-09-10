@@ -20,7 +20,7 @@ ${pageLast}           id:hv-assetinventory-pagination-lastPage-button
 ${pageNavigator}      css:div[class=HvPagination-pageNavigator]
 ${pageNext}           id:hv-assetinventory-pagination-nextPage-button
 ${pagePrevious}       id:hv-assetinventory-pagination-previousPage-button
-${pageSize}           css:select[id|='hv-assetinventory-pagination-pageSize']
+${pageSize}           hv-assetinventory-pagination-pageSize
 ${pageTotal}          id:hv-assetinventory-pagination-totalPages
 ${row1}               css:#listView ul>li:nth-child(1)
 ${row2}               css:#listView ul>li:nth-child(2)

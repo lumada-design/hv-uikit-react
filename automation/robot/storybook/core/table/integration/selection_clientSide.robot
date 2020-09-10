@@ -9,7 +9,7 @@ Force Tags    v3
 keep selection when pagination is moved to next page
     [Documentation]    selection vs pagination
     Select Checkbox                    ${row_10_checkbox}
-    Select From List By Value          ${rows_per_page}    5
+    Select Dropdown Value              ${rows_per_page}    5
     Click Element                      ${pagination_next_page}
     Checkbox Should Be Selected        ${row_5_checkbox}
 
@@ -24,7 +24,7 @@ keep selection when number of rows per table is changed
     [Documentation]    selection vs page size
     Select Checkbox                ${row_1_checkbox}
     Select Checkbox                ${row_10_checkbox}
-    Select From List By Value      ${rows_per_page}   20
+    Select Dropdown Value          ${rows_per_page}   20
     Checkbox Should Be Selected    ${row_1_checkbox}
     Checkbox Should Be Selected    ${row_10_checkbox}
 

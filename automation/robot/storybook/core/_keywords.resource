@@ -95,3 +95,10 @@ wait until element attribute not contain
     Wait Until Keyword Succeeds    5x    1s
     ...    element attribute value should not contain    ${locator}    ${attribute}    ${value}
 
+Select Dropdown Value
+    [Documentation]    selects a dropdown value given the dropdown locator and value to select
+    [Arguments]    ${dropdown}    ${value}
+    Click Element                       ${dropdown}
+    Wait Until Element Is Visible       css:ul[role='listbox']
+    Click Element                       //li[@role='option' and text()='${value}']
+    Wait Until Element Is Not Visible   css:ul[role='listbox']

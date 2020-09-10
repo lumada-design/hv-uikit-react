@@ -172,7 +172,6 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
             <div
               aria-expanded={false}
               aria-haspopup="listbox"
-              aria-owns="drop-down-menu-11-children-container"
               className="HvBaseDropdown-root HvDropDownMenu-root"
               id="drop-down-menu-11"
               onClick={[Function]}
@@ -384,7 +383,6 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                 <div
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-owns="drop-down-menu-11-children-container"
                   class="HvBaseDropdown-root HvDropDownMenu-root"
                   id="drop-down-menu-11"
                   tabindex="0"
@@ -616,7 +614,6 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
             <div
               aria-expanded={false}
               aria-haspopup="listbox"
-              aria-owns="drop-down-menu-9-children-container"
               className="HvBaseDropdown-root HvDropDownMenu-root"
               id="drop-down-menu-9"
               onClick={[Function]}
@@ -1018,7 +1015,6 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
             placement="right"
           >
             <div
-              aria-controls="drop-down-menu-10-children-container"
               aria-expanded={true}
               aria-haspopup="listbox"
               aria-owns="drop-down-menu-10-children-container"
@@ -1231,7 +1227,6 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
             <ForwardRef(Popper)
               anchorEl={
                 <div
-                  aria-controls="drop-down-menu-10-children-container"
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-owns="drop-down-menu-10-children-container"
@@ -2311,7 +2306,6 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
             <div
               aria-expanded={false}
               aria-haspopup="listbox"
-              aria-owns="drop-down-menu-3-children-container"
               className="HvBaseDropdown-root HvDropDownMenu-root"
               id="drop-down-menu-3"
               onClick={[Function]}
@@ -2523,7 +2517,6 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                 <div
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-owns="drop-down-menu-3-children-container"
                   class="HvBaseDropdown-root HvDropDownMenu-root"
                   id="drop-down-menu-3"
                   tabindex="0"
@@ -2755,7 +2748,6 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
             <div
               aria-expanded={false}
               aria-haspopup="listbox"
-              aria-owns="drop-down-menu-1-children-container"
               className="HvBaseDropdown-root HvDropDownMenu-root"
               id="drop-down-menu-1"
               onClick={[Function]}
@@ -3157,7 +3149,6 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
             placement="right"
           >
             <div
-              aria-controls="drop-down-menu-2-children-container"
               aria-expanded={true}
               aria-haspopup="listbox"
               aria-owns="drop-down-menu-2-children-container"
@@ -3370,7 +3361,6 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
             <ForwardRef(Popper)
               anchorEl={
                 <div
-                  aria-controls="drop-down-menu-2-children-container"
                   aria-expanded="true"
                   aria-haspopup="listbox"
                   aria-owns="drop-down-menu-2-children-container"

@@ -5,6 +5,7 @@ import { mount } from "enzyme";
 
 import { HvInput, HvPagination, HvProvider } from "../..";
 import { Main, ControlledSample } from "../stories/Pagination.stories";
+import Select from "../Select";
 
 describe("v3 Default Pagination", () => {
   const wrapper = mount(
@@ -27,8 +28,8 @@ describe("v3 Default Pagination", () => {
     expect(input.length).toBe(1);
   });
 
-  it("should render the pageSize select", () => {
-    const input = wrapper.find("select");
+  it("should render the pageSize dropdown", () => {
+    const input = wrapper.find(Select);
     expect(input.length).toBe(1);
   });
 });
