@@ -264,10 +264,10 @@ export const Hoc = () => {
   );
 };
 
-Hoc.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Hoc.parameters = {
+  docs: {
+    description: {
+      story:
         "If a children is passed the component works as a HOC (High Order Component), wrapping the children and creating a overlay."
     }
   }

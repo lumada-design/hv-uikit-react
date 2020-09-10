@@ -134,12 +134,11 @@ export const TextAndSemantic = () => {
   );
 };
 
-TextAndSemantic.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription:
-        "The modal allow the definition of variants, that alters the presented icon."
+TextAndSemantic.parameters = {
+  v3: true,
+  docs: {
+    description: {
+      story: "The modal allow the definition of variants, that alters the presented icon."
     }
   }
 };
@@ -152,11 +151,11 @@ export const CustomIcon = () => (
   />
 );
 
-CustomIcon.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription:
+CustomIcon.parameters = {
+  v3: true,
+  docs: {
+    description: {
+      story:
         "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button."
     }
   }
@@ -195,11 +194,11 @@ export const Accessibility = () => {
   );
 };
 
-Accessibility.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription:
+Accessibility.parameters = {
+  v3: true,
+  docs: {
+    description: {
+      story:
         "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content."
     }
   }
@@ -312,12 +311,10 @@ export const CustomContent = () => {
   );
 };
 
-CustomContent.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "It is possible to insert any component in the modal."
-    }
+CustomContent.parameters = {
+  v3: true,
+  docs: {
+    description: { story: "It is possible to insert any component in the modal." }
   }
 };
 
@@ -363,10 +360,8 @@ export const RemoveSchedule = () => {
   );
 };
 
-RemoveSchedule.story = {
-  parameters: {
-    v3: true
-  }
+RemoveSchedule.parameters = {
+  v3: true
 };
 
 export const DeleteConfirmation = () => {
@@ -421,10 +416,8 @@ export const DeleteConfirmation = () => {
   );
 };
 
-DeleteConfirmation.story = {
-  parameters: {
-    v3: true
-  }
+DeleteConfirmation.parameters = {
+  v3: true
 };
 
 export const NoRename = () => {
@@ -457,8 +450,6 @@ export const NoRename = () => {
   );
 };
 
-NoRename.story = {
-  parameters: {
-    v3: true
-  }
+NoRename.parameters = {
+  v3: true
 };

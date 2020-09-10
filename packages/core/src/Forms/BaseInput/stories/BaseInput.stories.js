@@ -43,13 +43,11 @@ export const MultiLine = () => {
   );
 };
 
-MultiLine.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the multiline input style."
-    },
-    v3: true
-  }
+MultiLine.parameters = {
+  docs: {
+    description: { story: "Showcasing the multiline input style." }
+  },
+  v3: true
 };
 
 export const MultiLineResize = () => {
@@ -68,13 +66,11 @@ export const MultiLineResize = () => {
   );
 };
 
-MultiLineResize.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the multiline input style with resizing."
-    },
-    v3: true
-  }
+MultiLineResize.parameters = {
+  docs: {
+    description: { story: "Showcasing the multiline input style with resizing." }
+  },
+  v3: true
 };
 
 export const DisabledInput = () => {
@@ -91,13 +87,11 @@ export const DisabledInput = () => {
   );
 };
 
-DisabledInput.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the disabled input style."
-    },
-    v3: true
-  }
+DisabledInput.parameters = {
+  docs: {
+    description: { story: "Showcasing the disabled input style." }
+  },
+  v3: true
 };
 
 export const DisabledMultiLine = () => {
@@ -116,13 +110,11 @@ export const DisabledMultiLine = () => {
   );
 };
 
-DisabledMultiLine.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the disabled multiline input style."
-    },
-    v3: true
-  }
+DisabledMultiLine.parameters = {
+  docs: {
+    description: { story: "Showcasing the disabled multiline input style." }
+  },
+  v3: true
 };
 
 export const InvalidInput = () => {
@@ -139,13 +131,11 @@ export const InvalidInput = () => {
   );
 };
 
-InvalidInput.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the input in Invalid State."
-    },
-    v3: true
-  }
+InvalidInput.parameters = {
+  docs: {
+    description: { story: "Showcasing the input in Invalid State." }
+  },
+  v3: true
 };
 
 export const InvalidMultiLine = () => {
@@ -164,11 +154,9 @@ export const InvalidMultiLine = () => {
   );
 };
 
-InvalidMultiLine.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showcasing the invalid multiline input style."
-    },
-    v3: true
-  }
+InvalidMultiLine.parameters = {
+  docs: {
+    description: { story: "Showcasing the invalid multiline input style." }
+  },
+  v3: true
 };

@@ -27,10 +27,8 @@ export const Main = () => {
   return <HvBreadCrumb listRoute={data} id="breadcrumb1" aria-label="Breadcrumb" />;
 };
 
-Main.story = {
-  parameters: {
-    v3: true
-  }
+Main.parameters = {
+  v3: true
 };
 
 export const LimitedToFivePaths = () => {
@@ -47,13 +45,11 @@ export const LimitedToFivePaths = () => {
   return <HvBreadCrumb listRoute={data} maxVisible={5} id="breadcrumb2" aria-label="Breadcrumb" />;
 };
 
-LimitedToFivePaths.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Breadcrumb sample with 5 out of 7 paths visible."
-    },
-    v3: true
-  }
+LimitedToFivePaths.parameters = {
+  docs: {
+    description: { story: "Breadcrumb sample with 5 out of 7 paths visible." }
+  },
+  v3: true
 };
 
 export const LimitedToTwoPaths = () => {
@@ -71,13 +67,11 @@ export const LimitedToTwoPaths = () => {
   return <HvBreadCrumb listRoute={data} maxVisible={2} id="breadcrumb3" aria-label="Breadcrumb" />;
 };
 
-LimitedToTwoPaths.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible"
-    },
-    v3: true
-  }
+LimitedToTwoPaths.parameters = {
+  docs: {
+    description: { story: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible" }
+  },
+  v3: true
 };
 
 export const WithURL = () => (
@@ -88,13 +82,11 @@ export const WithURL = () => (
   />
 );
 
-WithURL.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Breadcrumb sample that generates the paths using an URL."
-    },
-    v3: true
-  }
+WithURL.parameters = {
+  docs: {
+    description: { story: "Breadcrumb sample that generates the paths using an URL." }
+  },
+  v3: true
 };
 
 export const WithURLLimited = () => {
@@ -108,13 +100,11 @@ export const WithURLLimited = () => {
   );
 };
 
-WithURLLimited.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Breadcrumb sample that generates the limited paths using an URL."
-    },
-    v3: true
-  }
+WithURLLimited.parameters = {
+  docs: {
+    description: { story: "Breadcrumb sample that generates the limited paths using an URL." }
+  },
+  v3: true
 };
 
 export const WithClickEvents = () => {
@@ -140,11 +130,9 @@ export const WithClickEvents = () => {
   );
 };
 
-WithClickEvents.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Breadcrumb sample that has a onClick defined."
-    },
-    v3: true
-  }
+WithClickEvents.parameters = {
+  docs: {
+    description: { story: "Breadcrumb sample that has a onClick defined." }
+  },
+  v3: true
 };

@@ -13,23 +13,17 @@ import DocsContainer from "./blocks/DocsContainer";
 import { UIKIT_THEME, getStoredTheme } from "./themes";
 import "./themes/fonts/font-faces.css";
 
+import { extractArgTypes } from "./props/extractArgTypes";
+
 addParameters({
   options: {
     isFullscreen: false,
     showNav: true,
     showPanel: true,
     panelPosition: "bottom",
-    sidebarAnimations: true,
-
-    // enable keyboard shortcuts
-    // (even thou we're hidding the button)
-    enableShortcuts: true,
 
     // show tool bar
     isToolshown: true,
-
-    // display the top-level grouping as a "root" in the sidebar
-    showRoots: true,
 
     storySort: storySort({
       method: "alphabetical",
@@ -53,7 +47,8 @@ addParameters({
 addParameters({
   docs: {
     page: DocsPage,
-    container: DocsContainer
+    container: DocsContainer,
+    extractArgTypes
   }
 });
 

@@ -40,10 +40,8 @@ export const WithoutSuggestion = () => {
   return <HvSearchBox onSubmit={(event, value) => console.log(`${value} submitted`)} />;
 };
 
-WithoutSuggestion.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Searchbox sample that does not use the suggestion box."
-    }
+WithoutSuggestion.parameters = {
+  docs: {
+    description: { story: "Searchbox sample that does not use the suggestion box." }
   }
 };

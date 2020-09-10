@@ -38,11 +38,9 @@ export const WithInfoMessage = () => {
   return <HvInput labels={labels} id="input-simple-with-info-icon-sample" />;
 };
 
-WithInfoMessage.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showing the info message."
-    }
+WithInfoMessage.parameters = {
+  docs: {
+    description: { story: "Showing the info message." }
   }
 };
 
@@ -58,20 +56,18 @@ export const Disabled = () => {
   return <HvInput labels={labels} disabled id="input-disabled-sample" />;
 };
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input sample that does not allow interactions."
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
+Disabled.parameters = {
+  docs: {
+    description: { story: "Input sample that does not allow interactions." }
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast"
+    ]
   }
 };
 
@@ -93,10 +89,10 @@ export const InvalidState = () => {
   );
 };
 
-InvalidState.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+InvalidState.parameters = {
+  docs: {
+    description: {
+      story:
         "Input created in invalid state showing the error message and the failed validation icon."
     }
   }
@@ -111,11 +107,9 @@ export const NoValidation = () => {
   return <HvInput id="no-validation-input" labels={labels} showInfo={false} />;
 };
 
-NoValidation.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input without any type of validation not showing validation icons."
-    }
+NoValidation.parameters = {
+  docs: {
+    description: { story: "Input without any type of validation not showing validation icons." }
   }
 };
 
@@ -129,11 +123,9 @@ export const Limited = () => {
   return <HvInput id="limited-input" labels={labels} maxCharQuantity={5} />;
 };
 
-Limited.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input that limits the maximum text length to 5."
-    }
+Limited.parameters = {
+  docs: {
+    description: { story: "Input that limits the maximum text length to 5." }
   }
 };
 
@@ -150,11 +142,9 @@ export const NumericLimited = () => {
   return <HvInput id="numeric-input" labels={labels} maxCharQuantity={5} validationType="number" />;
 };
 
-NumericLimited.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input that only accepts numbers and limits the maximum length to 5."
-    }
+NumericLimited.parameters = {
+  docs: {
+    description: { story: "Input that only accepts numbers and limits the maximum length to 5." }
   }
 };
 
@@ -179,11 +169,10 @@ export const NumericRequired = () => {
   );
 };
 
-NumericRequired.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Required Input that only accepts numbers and limits the maximum length to 5."
+NumericRequired.parameters = {
+  docs: {
+    description: {
+      story: "Required Input that only accepts numbers and limits the maximum length to 5."
     }
   }
 };
@@ -199,11 +188,9 @@ export const Email = () => {
   return <HvInput id="email-input" labels={labels} validationType="email" />;
 };
 
-Email.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Required Input that only accepts valid emails."
-    }
+Email.parameters = {
+  docs: {
+    description: { story: "Required Input that only accepts valid emails." }
   }
 };
 
@@ -231,10 +218,10 @@ export const Password = () => {
   );
 };
 
-Password.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Password.parameters = {
+  docs: {
+    description: {
+      story:
         "Password required input that only accepts the value ´password´ and limits the value between 6 or 12 characters."
     }
   }
@@ -257,10 +244,10 @@ export const CustomValidation = () => {
   );
 };
 
-CustomValidation.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+CustomValidation.parameters = {
+  docs: {
+    description: {
+      story:
         "Input with a custom validation function, it validates if the input contains the value ´hello´."
     }
   }
@@ -284,11 +271,9 @@ export const DefaultValue = () => {
   );
 };
 
-DefaultValue.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input with an default value already in place."
-    }
+DefaultValue.parameters = {
+  docs: {
+    description: { story: "Input with an default value already in place." }
   }
 };
 
@@ -314,11 +299,9 @@ export const EventDemonstration = () => {
   );
 };
 
-EventDemonstration.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input with all events functions enabled."
-    }
+EventDemonstration.parameters = {
+  docs: {
+    description: { story: "Input with all events functions enabled." }
   }
 };
 
@@ -340,10 +323,10 @@ export const CustomProps = () => {
   );
 };
 
-CustomProps.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+CustomProps.parameters = {
+  docs: {
+    description: {
+      story:
         "Using the input props to inject custom props, this input will block values exceeding 25 character."
     }
   }
@@ -407,11 +390,9 @@ export const ControlledWithButtons = () => {
   );
 };
 
-ControlledWithButtons.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Changing the input value from outside the input component."
-    }
+ControlledWithButtons.parameters = {
+  docs: {
+    description: { story: "Changing the input value from outside the input component." }
   }
 };
 
@@ -456,10 +437,8 @@ export const Suggestion = () => {
   );
 };
 
-Suggestion.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input with suggestion list."
-    }
+Suggestion.parameters = {
+  docs: {
+    description: { story: "Input with suggestion list." }
   }
 };

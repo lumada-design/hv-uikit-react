@@ -15,10 +15,8 @@ export const Main = () => {
   return <HvPagination />;
 };
 
-Main.story = {
-  parameters: {
-    v3: true
-  }
+Main.parameters = {
+  v3: true
 };
 
 export const ControlledSample = () => {
@@ -73,11 +71,9 @@ export const ControlledSample = () => {
   );
 };
 
-ControlledSample.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Pagination controlling a list of elements"
-    },
-    v3: true
-  }
+ControlledSample.parameters = {
+  docs: {
+    description: { story: "Pagination controlling a list of elements" }
+  },
+  v3: true
 };

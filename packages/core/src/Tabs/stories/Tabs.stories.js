@@ -38,13 +38,11 @@ export const FullWidth = () => {
   );
 };
 
-FullWidth.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Tabs occupying the full width of the available space"
-    },
-    v3: true
-  }
+FullWidth.parameters = {
+  docs: {
+    description: { story: "Tabs occupying the full width of the available space" }
+  },
+  v3: true
 };
 
 export const ContentChanging = () => {
@@ -71,13 +69,11 @@ export const ContentChanging = () => {
   );
 };
 
-ContentChanging.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Tabs changing the content to display according to the selected tab"
-    },
-    v3: true
-  }
+ContentChanging.parameters = {
+  docs: {
+    description: { story: "Tabs changing the content to display according to the selected tab" }
+  },
+  v3: true
 };
 
 export const TextSize = () => {
@@ -148,11 +144,9 @@ export const WithBadges = () => {
   return <Sample />;
 };
 
-WithBadges.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Badges applied to Tabs component."
-    },
-    v3: true
-  }
+WithBadges.parameters = {
+  docs: {
+    description: { story: "Badges applied to Tabs component." }
+  },
+  v3: true
 };

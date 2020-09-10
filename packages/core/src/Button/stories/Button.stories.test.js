@@ -127,8 +127,6 @@ export const SmokeTests = () => (
   </>
 );
 
-SmokeTests.story = {
-  parameters: {
-    v3: true
-  }
+SmokeTests.parameters = {
+  v3: true
 };

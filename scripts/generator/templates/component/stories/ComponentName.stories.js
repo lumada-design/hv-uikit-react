@@ -16,10 +16,8 @@ export const Sample2 = () => {
   return <HvComponentName id="sample2" />;
 };
 
-Sample2.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Sample 2 description."
-    }
+Sample2.parameters = {
+  docs: {
+    description: { story: "Sample 2 description." }
   }
 };

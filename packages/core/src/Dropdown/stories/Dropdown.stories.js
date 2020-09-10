@@ -25,26 +25,22 @@ export const Main = () => (
   />
 );
 
-Main.story = {
-  parameters: {
-    v3: true,
-    pa11y: {
-      ignore: ["region"]
-    }
+Main.parameters = {
+  v3: true,
+  pa11y: {
+    ignore: ["region"]
   }
 };
 
 export const Empty = () => <HvDropdown id="dropdown1" />;
 
-Empty.story = {
-  parameters: {
-    v3: true,
-    docs: {
-      storyDescription: "Dropdown with no values"
-    },
-    pa11y: {
-      ignore: ["region"]
-    }
+Empty.parameters = {
+  v3: true,
+  docs: {
+    description: { story: "Dropdown with no values" }
+  },
+  pa11y: {
+    ignore: ["region"]
   }
 };
 
@@ -61,16 +57,14 @@ export const SingleSelection = () => (
   />
 );
 
-SingleSelection.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Support ids to manage selection"
-    },
-    pa11y: {
-      ignore: ["region"]
-    },
-    v3: true
-  }
+SingleSelection.parameters = {
+  docs: {
+    description: { story: "Support ids to manage selection" }
+  },
+  pa11y: {
+    ignore: ["region"]
+  },
+  v3: true
 };
 
 export const MultiSelection = () => (
@@ -88,10 +82,8 @@ export const MultiSelection = () => (
   />
 );
 
-MultiSelection.story = {
-  parameters: {
-    v3: true
-  }
+MultiSelection.parameters = {
+  v3: true
 };
 
 export const MultiSelectionNoSearch = () => (
@@ -108,13 +100,11 @@ export const MultiSelectionNoSearch = () => (
   />
 );
 
-MultiSelectionNoSearch.story = {
-  parameters: {
-    pa11y: {
-      ignore: ["region"]
-    },
-    v3: true
-  }
+MultiSelectionNoSearch.parameters = {
+  pa11y: {
+    ignore: ["region"]
+  },
+  v3: true
 };
 
 export const SingleSelectionWithSearch = () => (
@@ -130,16 +120,14 @@ export const SingleSelectionWithSearch = () => (
   />
 );
 
-SingleSelectionWithSearch.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Single selection Dropdown with search and less than 10 elements"
-    },
-    pa11y: {
-      ignore: ["region"]
-    },
-    v3: true
-  }
+SingleSelectionWithSearch.parameters = {
+  docs: {
+    description: { story: "Single selection Dropdown with search and less than 10 elements" }
+  },
+  pa11y: {
+    ignore: ["region"]
+  },
+  v3: true
 };
 
 export const SingleSelectionNoDefault = () => (
@@ -157,13 +145,11 @@ export const SingleSelectionNoDefault = () => (
   />
 );
 
-SingleSelectionNoDefault.story = {
-  parameters: {
-    pa11y: {
-      ignore: ["region"]
-    },
-    v3: true
-  }
+SingleSelectionNoDefault.parameters = {
+  pa11y: {
+    ignore: ["region"]
+  },
+  v3: true
 };
 
 export const DifferentSizeAndPlacements = () => {
@@ -201,16 +187,14 @@ export const DifferentSizeAndPlacements = () => {
   );
 };
 
-DifferentSizeAndPlacements.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Dropdown defined with a specific width and with different placements."
-    },
-    pa11y: {
-      ignore: ["region"]
-    },
-    v3: true
-  }
+DifferentSizeAndPlacements.parameters = {
+  docs: {
+    description: { story: "Dropdown defined with a specific width and with different placements." }
+  },
+  pa11y: {
+    ignore: ["region"]
+  },
+  v3: true
 };
 
 export const Disabled = () => (
@@ -236,19 +220,17 @@ export const Disabled = () => (
   />
 );
 
-Disabled.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    },
-    v3: true
-  }
+Disabled.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast"
+    ]
+  },
+  v3: true
 };
 
 export const Expanded = () => (
@@ -275,12 +257,10 @@ export const Expanded = () => (
   />
 );
 
-Expanded.story = {
-  parameters: {
-    docs: {
-      disable: true,
-      inlineStories: false
-    },
-    v3: true
-  }
+Expanded.parameters = {
+  docs: {
+    disable: true,
+    inlineStories: false
+  },
+  v3: true
 };

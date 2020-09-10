@@ -15,12 +15,10 @@ export default {
 
 export const Main = () => <HvBaseDropdown placeholder="Placeholder..." />;
 
-Main.story = {
-  parameters: {
-    v3: true,
-    pa11y: {
-      ignore: ["region"]
-    }
+Main.parameters = {
+  v3: true,
+  pa11y: {
+    ignore: ["region"]
   }
 };
 
@@ -38,10 +36,8 @@ export const WithContent = () => {
   );
 };
 
-WithContent.story = {
-  parameters: {
-    v3: true
-  }
+WithContent.parameters = {
+  v3: true
 };
 
 export const WithForms = () => {
@@ -59,10 +55,8 @@ export const WithForms = () => {
   );
 };
 
-WithForms.story = {
-  parameters: {
-    v3: true
-  }
+WithForms.parameters = {
+  v3: true
 };
 
 export const Controlled = () => {
@@ -81,10 +75,8 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
-  parameters: {
-    v3: true
-  }
+Controlled.parameters = {
+  v3: true
 };
 
 export const Custom = () => {
@@ -118,8 +110,6 @@ export const Custom = () => {
   );
 };
 
-Custom.story = {
-  parameters: {
-    v3: true
-  }
+Custom.parameters = {
+  v3: true
 };
