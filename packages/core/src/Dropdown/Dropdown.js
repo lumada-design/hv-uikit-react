@@ -76,7 +76,7 @@ const HvDropdownBase = ({
   };
 
   const buildHeaderLabel = selectionLabelId => {
-    const hasSelection = getSelected(internalValues);
+    const hasSelection = getSelected(internalValues).length > 0;
     return labels.select || !multiSelect ? (
       <HvTypography
         id={selectionLabelId}
@@ -114,6 +114,7 @@ const HvDropdownBase = ({
         className={className}
         classes={{ root: classes.root, arrow: classes.arrow }}
         expanded={isOpen}
+        disabled={disabled}
         disablePortal={disablePortal}
         placement={placement}
         popperProps={popperProps}

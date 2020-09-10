@@ -19,6 +19,9 @@ const styles = {
       boxShadow: "none !important",
       outline: "none !important"
     }
+  },
+  itemSelector: {
+    backgroundColor: "transparent"
   }
 };
 
