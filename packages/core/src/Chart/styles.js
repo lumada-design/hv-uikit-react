@@ -1,6 +1,6 @@
 const styles = theme => ({
   root: {
-    padding: "40px"
+    padding: 0
   },
   defaultColors: {
     ...theme.hv.viz.palette.categorical

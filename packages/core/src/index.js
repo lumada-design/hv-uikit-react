@@ -16,6 +16,7 @@ export * from "./Card";
 export * from "./Calendar";
 export { default as HvContainer } from "./Container";
 export { default as HvDatePicker } from "./DatePicker";
+export { default as HvDonutchart } from "./Donutchart";
 export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvEmptyState } from "./EmptyState";

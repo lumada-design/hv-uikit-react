@@ -50,15 +50,23 @@ const Chart = ({
   // Extract data from the plotly onHover event to be used to create the tooltip.
   const onHover = useCallback(
     event => {
+      const { points } = event;
+
       const dataFromPoints = {
-        title: isHorizontal ? event.points[0].y : event.points[0].x,
+        title: "",
         elements: []
       };
-      event.points.forEach(p => {
+
+      points.forEach((p, i) => {
+        const fData = p.fullData;
+        const pNumber = p.pointNumber;
+
+        if (i === 0) dataFromPoints.title = isHorizontal ? p.y : p.x || fData.name;
+
         dataFromPoints.elements.push({
-          color: p.fullData.marker ? p.fullData.marker.color : p.fullData.line.color,
-          name: p.fullData.name,
-          value: isHorizontal ? p.x : p.y
+          color: fData.marker?.color || fData.line?.color || p.color,
+          name: fData.labels?.[pNumber] || fData.name,
+          value: isHorizontal ? p.x : p.y || p.value
         });
       });
 

@@ -13,23 +13,17 @@ export default {
   component: HvBarchart
 };
 
-export const Main = () => {
-  const layout = {
-    yaxis: { showline: false }
-  };
-  return (
-    <HvBarchart
-      layout={layout}
-      data={[
-        {
-          x: ["January", "February", "March"],
-          y: [2300, 1000, 8500],
-          name: "Sales Target"
-        }
-      ]}
-    />
-  );
-};
+export const Main = () => (
+  <HvBarchart
+    data={[
+      {
+        x: ["January", "February", "March"],
+        y: [2300, 1000, 8500],
+        name: "Sales Target"
+      }
+    ]}
+  />
+);
 
 export const VerticalWithSingleTooltip = () => {
   const trace1 = {
@@ -40,11 +34,7 @@ export const VerticalWithSingleTooltip = () => {
 
   const data = [trace1];
 
-  const layout = {
-    yaxis: { showline: false }
-  };
-
-  return <HvBarchart data={data} tooltipType="single" layout={layout} />;
+  return <HvBarchart data={data} tooltipType="single" />;
 };
 
 VerticalWithSingleTooltip.parameters = {
@@ -59,15 +49,10 @@ export const GroupedVerticalBarchart = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [6000, 3900, 1000], name: "Sales Per Rep" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 7500, 1100], name: "Monthly Sales" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 8500, 3000], name: "Target" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" }
+    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 8400], name: "Cash" }
   ];
 
-  const layout = {
-    legend: { orientation: "h", x: 0.2, y: 1.1 },
-    yaxis: { showline: false }
-  };
-
-  return <HvBarchart data={data} layout={layout} />;
+  return <HvBarchart data={data} />;
 };
 
 GroupedVerticalBarchart.parameters = {
@@ -103,15 +88,16 @@ export const CustomStackedVerticalBarchart = () => {
   ];
 
   const layout = {
-    legend: { orientation: "h", x: 0.4, y: 1.1 },
-
     yaxis: {
-      ticksuffix: " Gb",
-      showline: false
+      ticksuffix: " Gb"
     }
   };
 
   const useStyles = makeStyles(() => ({
+    root: {
+      width: 250
+    },
+    label: { paddingBottom: 6 },
     titlePadding: { marginTop: 10 },
     dropdownPlacement: {
       marginTop: 24,
@@ -127,14 +113,14 @@ export const CustomStackedVerticalBarchart = () => {
   return (
     <>
       <ChartHeader>
-        <HvTypography className={classes.titlePadding} variant="mTitle">
+        <HvTypography className={classes.titlePadding} variant="xsTitle">
           Server Status Summary
         </HvTypography>
         <div className={classes.controllerGroup}>
           <HvDropdown
             id="dropdown2"
             labels={{ title: "Time Period" }}
-            classes={{ root: classes.root }}
+            classes={{ root: classes.root, label: classes.label }}
             values={[
               { label: "Last 0.5h" },
               { label: "Last 1.5h", selected: true },
@@ -172,12 +158,7 @@ export const StackedVerticalBarchart = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" }
   ];
 
-  const layout = {
-    legend: { orientation: "h", x: 0.2, y: 1.1 },
-    yaxis: { showline: false }
-  };
-
-  return <HvBarchart stack data={data} layout={layout} />;
+  return <HvBarchart stack data={data} />;
 };
 
 StackedVerticalBarchart.parameters = {
@@ -186,26 +167,18 @@ StackedVerticalBarchart.parameters = {
   }
 };
 
-export const SimpleHorizontalBarchart = () => {
-  const layout = {
-    legend: { orientation: "h", x: 0.2, y: 1.1 },
-    xaxis: { showline: false }
-  };
-
-  return (
-    <HvBarchart
-      horizontal
-      layout={layout}
-      data={[
-        {
-          x: [2300, 1000, 8500],
-          y: ["January", "February", "March"],
-          name: "Sales Target"
-        }
-      ]}
-    />
-  );
-};
+export const SimpleHorizontalBarchart = () => (
+  <HvBarchart
+    horizontal
+    data={[
+      {
+        x: [2300, 1000, 8500],
+        y: ["January", "February", "March"],
+        name: "Sales Target"
+      }
+    ]}
+  />
+);
 
 SimpleHorizontalBarchart.parameters = {
   docs: {
@@ -213,27 +186,19 @@ SimpleHorizontalBarchart.parameters = {
   }
 };
 
-export const HorizontalBarchartWithSingleTooltip = () => {
-  const layout = {
-    legend: { orientation: "h", x: 0.2, y: 1.1 },
-    xaxis: { showline: false }
-  };
-
-  return (
-    <HvBarchart
-      horizontal
-      tooltipType="single"
-      data={[
-        {
-          x: [2300, 1000, 8500],
-          y: ["January", "February", "March"],
-          name: "Sales Target"
-        }
-      ]}
-      layout={layout}
-    />
-  );
-};
+export const HorizontalBarchartWithSingleTooltip = () => (
+  <HvBarchart
+    horizontal
+    tooltipType="single"
+    data={[
+      {
+        x: [2300, 1000, 8500],
+        y: ["January", "February", "March"],
+        name: "Sales Target"
+      }
+    ]}
+  />
+);
 
 HorizontalBarchartWithSingleTooltip.parameters = {
   docs: {
@@ -247,15 +212,10 @@ export const GroupedHorizontalBarchart = () => {
     { y: ["Group 1", "Group 2", "Group 3"], x: [6000, 3900, 1000], name: "Sales Per Rep" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [3700, 7500, 1100], name: "Monthly Sales" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 8500, 3000], name: "Target" },
-    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" }
+    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 8400], name: "Cash" }
   ];
 
-  const layout = {
-    legend: { orientation: "h", x: 0.2, y: 1.1 },
-    xaxis: { showline: false }
-  };
-
-  return <HvBarchart horizontal data={data} layout={layout} />;
+  return <HvBarchart horizontal data={data} />;
 };
 
 GroupedHorizontalBarchart.parameters = {
@@ -272,12 +232,8 @@ export const StackedHorizontalBarchart = () => {
     { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 8500, 3000], name: "Target" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" }
   ];
-  const layout = {
-    legend: { orientation: "h", x: 0.2, y: 1.1 },
-    xaxis: { showline: false }
-  };
 
-  return <HvBarchart stack data={data} horizontal layout={layout} />;
+  return <HvBarchart stack data={data} horizontal />;
 };
 
 StackedHorizontalBarchart.parameters = {
@@ -311,11 +267,7 @@ export const WithIntervalUpdates = () => {
     return () => clearTimeout(interval);
   });
 
-  const layout = {
-    yaxis: { showline: false }
-  };
-
-  return <HvBarchart data={data} layout={layout} />;
+  return <HvBarchart data={data} />;
 };
 
 WithIntervalUpdates.parameters = {

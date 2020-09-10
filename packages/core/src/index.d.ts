@@ -36,6 +36,9 @@ export * from "./Container";
 export { default as HvDatePicker } from "./DatePicker";
 export * from "./DatePicker";
 
+export { default as HvDonutchart } from "./Donutchart";
+export * from "./Donutchart";
+
 export { default as HvDropdown } from "./Dropdown";
 export * from "./Dropdown";
 

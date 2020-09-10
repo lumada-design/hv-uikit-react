@@ -36,6 +36,7 @@ const applyLayoutYaxisDefaults = (inputLayout, layoutStyles, yAxisTitle, isHoriz
 
   setterIfNil(layout.yaxis, "gridcolor", layoutStyles.gridColor);
   setterIfNil(layout.yaxis, "showgrid", !isHorizontal);
+  setterIfNil(layout.yaxis, "showline", isHorizontal);
 
   setterIfNil(layout.yaxis, "linecolor", layoutStyles.lineColor);
   setterIfNil(layout.yaxis, "linewidth", 1);
@@ -74,6 +75,7 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
 
   setterIfNil(layout.xaxis, "gridcolor", layoutStyles.gridColor);
   setterIfNil(layout.xaxis, "showgrid", isHorizontal);
+  setterIfNil(layout.xaxis, "showline", !isHorizontal);
 
   setterIfNil(layout.xaxis, "linewidth", 1);
   setterIfNil(layout.xaxis, "linecolor", layoutStyles.lineColor);
@@ -91,9 +93,9 @@ const applyLayoutLegendDefaults = (inputLayout, layoutStyles) => {
   const layout = inputLayout;
   setterIfNil(layout, "legend", {
     x: 0.5,
-    y: 1,
-    xanchor: "right",
-    yanchor: "bottom",
+    y: 1.15,
+    xanchor: "center",
+    yanchor: "middle",
     orientation: "h"
   });
 
@@ -115,7 +117,7 @@ const applyLayoutRootDefaults = (inputLayout, layoutStyles) => {
   setterIfNil(layout, "margin", {
     l: 50,
     b: 50,
-    t: 10,
+    t: 50,
     pad: 0
   });
 

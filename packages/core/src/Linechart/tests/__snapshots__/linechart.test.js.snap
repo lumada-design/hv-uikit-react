@@ -40,13 +40,6 @@ exports[`Linechart should render correctly 1`] = `
       },
     ]
   }
-  layout={
-    Object {
-      "yaxis": Object {
-        "showline": false,
-      },
-    }
-  }
 >
   <Linechart
     classes={Object {}}
@@ -87,13 +80,6 @@ exports[`Linechart should render correctly 1`] = `
           ],
         },
       ]
-    }
-    layout={
-      Object {
-        "yaxis": Object {
-          "showline": false,
-        },
-      }
     }
   >
     <WithStyles(Chart)
@@ -136,49 +122,7 @@ exports[`Linechart should render correctly 1`] = `
           },
         ]
       }
-      layout={
-        Object {
-          "yaxis": Object {
-            "automargin": true,
-            "autorange": true,
-            "fixedrange": true,
-            "gridcolor": "#CCCED0",
-            "linecolor": "#CCCED0",
-            "linewidth": 1,
-            "range": Array [
-              1244.0555555555557,
-              8162.944444444444,
-            ],
-            "showgrid": true,
-            "showline": false,
-            "tickfont": Object {
-              "color": "#414141",
-              "family": Array [
-                "'Open Sans'",
-                "Arial",
-                "Helvetica",
-                "sans-serif",
-              ],
-              "size": 10,
-            },
-            "ticks": "",
-            "title": Object {
-              "font": Object {
-                "color": "#414141",
-                "family": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "size": 10,
-              },
-            },
-            "type": "linear",
-            "zeroline": false,
-          },
-        }
-      }
+      layout={Object {}}
       tooltipType="multiple"
     >
       <Chart
@@ -231,49 +175,7 @@ exports[`Linechart should render correctly 1`] = `
             },
           ]
         }
-        layout={
-          Object {
-            "yaxis": Object {
-              "automargin": true,
-              "autorange": true,
-              "fixedrange": true,
-              "gridcolor": "#CCCED0",
-              "linecolor": "#CCCED0",
-              "linewidth": 1,
-              "range": Array [
-                1244.0555555555557,
-                8162.944444444444,
-              ],
-              "showgrid": true,
-              "showline": false,
-              "tickfont": Object {
-                "color": "#414141",
-                "family": Array [
-                  "'Open Sans'",
-                  "Arial",
-                  "Helvetica",
-                  "sans-serif",
-                ],
-                "size": 10,
-              },
-              "ticks": "",
-              "title": Object {
-                "font": Object {
-                  "color": "#414141",
-                  "family": Array [
-                    "'Open Sans'",
-                    "Arial",
-                    "Helvetica",
-                    "sans-serif",
-                  ],
-                  "size": 10,
-                },
-              },
-              "type": "linear",
-              "zeroline": false,
-            },
-          }
-        }
+        layout={Object {}}
         tooltipType="multiple"
       >
         <div
@@ -360,15 +262,15 @@ exports[`Linechart should render correctly 1`] = `
                     },
                     "orientation": "h",
                     "x": 0.5,
-                    "xanchor": "right",
-                    "y": 1,
-                    "yanchor": "bottom",
+                    "xanchor": "center",
+                    "y": 1.15,
+                    "yanchor": "middle",
                   },
                   "margin": Object {
                     "b": 50,
                     "l": 50,
                     "pad": 0,
-                    "t": 10,
+                    "t": 50,
                   },
                   "paper_bgcolor": "transparent",
                   "plot_bgcolor": "transparent",
@@ -384,6 +286,7 @@ exports[`Linechart should render correctly 1`] = `
                       11,
                     ],
                     "showgrid": false,
+                    "showline": true,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -533,15 +436,15 @@ exports[`Linechart should render correctly 1`] = `
                       },
                       "orientation": "h",
                       "x": 0.5,
-                      "xanchor": "right",
-                      "y": 1,
-                      "yanchor": "bottom",
+                      "xanchor": "center",
+                      "y": 1.15,
+                      "yanchor": "middle",
                     },
                     "margin": Object {
                       "b": 50,
                       "l": 50,
                       "pad": 0,
-                      "t": 10,
+                      "t": 50,
                     },
                     "paper_bgcolor": "transparent",
                     "plot_bgcolor": "transparent",
@@ -557,6 +460,7 @@ exports[`Linechart should render correctly 1`] = `
                         11,
                       ],
                       "showgrid": false,
+                      "showline": true,
                       "tickfont": Object {
                         "color": "#414141",
                         "family": Array [
@@ -707,15 +611,15 @@ exports[`Linechart should render correctly 1`] = `
                         },
                         "orientation": "h",
                         "x": 0.5,
-                        "xanchor": "right",
-                        "y": 1,
-                        "yanchor": "bottom",
+                        "xanchor": "center",
+                        "y": 1.15,
+                        "yanchor": "middle",
                       },
                       "margin": Object {
                         "b": 50,
                         "l": 50,
                         "pad": 0,
-                        "t": 10,
+                        "t": 50,
                       },
                       "paper_bgcolor": "transparent",
                       "plot_bgcolor": "transparent",
@@ -731,6 +635,7 @@ exports[`Linechart should render correctly 1`] = `
                           11,
                         ],
                         "showgrid": false,
+                        "showline": true,
                         "tickfont": Object {
                           "color": "#414141",
                           "family": Array [

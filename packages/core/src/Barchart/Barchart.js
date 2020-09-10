@@ -24,8 +24,6 @@ const Barchart = ({
   tooltipType = "multiple",
   stack = false,
   horizontal = false,
-  xAxisTitle,
-  yAxisTitle,
   ...others
 }) => {
   /* Values derived from props */
@@ -113,8 +111,6 @@ const Barchart = ({
     <Chart
       id={id}
       classes={classes}
-      xAxisTitle={xAxisTitle}
-      yAxisTitle={yAxisTitle}
       data={chartData}
       layout={chartLayout}
       config={config}
@@ -156,15 +152,7 @@ Barchart.propTypes = {
   /**
    * Sets is the chart is horizontal.
    */
-  horizontal: PropTypes.bool,
-  /**
-   * Defines the title of the X axis.
-   */
-  xAxisTitle: PropTypes.string,
-  /**
-   * Defines the title of the Y axis.
-   */
-  yAxisTitle: PropTypes.string
+  horizontal: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvBarchart" })(Barchart);
