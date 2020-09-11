@@ -257,10 +257,33 @@ export const Expanded = () => (
   />
 );
 
-Expanded.parameters = {
-  docs: {
-    disable: true,
-    inlineStories: false
-  },
-  v3: true
+Expanded.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const SingleSelectedValue = () => (
+  <HvDropdown
+    id="dropdownSelected"
+    onChange={item => console.log(item)}
+    values={[
+      { id: "id-1", label: "value 1" },
+      { id: "id-2", label: "value 2" },
+      { id: "id-3", label: "value 3", selected: true },
+      { id: "id-4", label: "value 4" }
+    ]}
+  />
+);
+
+SingleSelectedValue.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
 };

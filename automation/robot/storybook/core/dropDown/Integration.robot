@@ -2,17 +2,16 @@
 Resource      _resources.resource
 
 *** Test Cases ***
-focus other clicked element when dropdown is opened
-    [Documentation]    https://github.com/lumada-design/hv-uikit-react/issues/1783
-    ...    focus clicked element and keep dropdown opened when other page elements are clicked
-    Go To                            ${patterns}asset-inventory--three-views
-    Wait Until Element Is Enabled    ${dropdown}
-    Click Element                    ${dropdown}
-    Wait Until Page Contains         TimeHorizon descending
-    Click Element                    ${lastDismissButton}
-    Element Should Be Focused        ${dropdown}
-    Page Should Not Contain          TimeHorizon descending
-
-
-*** Variables ***
-${lastDismissButton}    id:post-id_9
+move focus between dropdown's
+    [Tags]    run-any-way
+    [Documentation]    verify focus behavior when user interact with multiple dropdown's
+    ...                https://insightgroup.atlassian.net/browse/HVUIKIT-5533
+    Go To                               ${patterns}dropdown--different-size-and-placements
+    Wait Until Element Is Enabled       dropdown1
+    Click Element                       dropdown1
+    Wait Until Element Is Visible       dropdown1-values-actions
+    Click Element                       dropdown2
+    Wait Until Element Is Visible       dropdown2-values-actions
+    Element Should Not Be Visible       dropdown1-values-actions
+    Run Keyword And Expect Error        *
+    ...    Element Should Be Focused    ${searchInput}
