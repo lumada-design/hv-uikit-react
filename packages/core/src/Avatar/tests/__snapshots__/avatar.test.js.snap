@@ -52,44 +52,51 @@ exports[`Avatar  default avatar snapshot 1`] = `
             }
           }
         >
-          <WithStyles(User)
+          <User
             className="HvAvatar-fallback"
             color="atmo1"
             iconSize="XS"
           >
-            <User
+            <WithStyles(HvIconBase)
               className="HvAvatar-fallback"
-              classes={
-                Object {
-                  "root": "HvIconUser-root",
-                  "rootL": "HvIconUser-rootL",
-                  "rootM": "HvIconUser-rootM",
-                  "rootS": "HvIconUser-rootS",
-                  "rootXs": "HvIconUser-rootXs",
-                }
-              }
-              color="atmo1"
               iconSize="XS"
+              name="User"
             >
-              <div
-                className="HvAvatar-fallback HvIconUser-root HvIconUser-rootXs"
+              <HvIconBase
+                className="HvAvatar-fallback"
+                classes={
+                  Object {
+                    "l": "HvIconBase-l",
+                    "m": "HvIconBase-m",
+                    "root": "HvIconBase-root",
+                    "s": "HvIconBase-s",
+                    "xs": "HvIconBase-xs",
+                  }
+                }
+                iconSize="XS"
+                name="User"
               >
-                <svg
-                  focusable={false}
-                  height="12px"
-                  viewBox="0 0 16 16"
-                  width="12px"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="HvAvatar-fallback HvIconBase-root HvIconBase-xs"
+                  name="User"
                 >
-                  <path
-                    className="color0"
-                    d="M9.6 8.7A4.49656 4.49656 0 008.03809 0Q8.019-.00007 8 0a4.481 4.481 0 00-4.5 4.46194q-.00009.019 0 .03808A4.563 4.563 0 006.4 8.7 7.687 7.687 0 00.5 16h1a6.487 6.487 0 016.474-6.5H8a6.487 6.487 0 016.5 6.474V16h1a7.493 7.493 0 00-5.9-7.3zM4.5 4.5A3.543 3.543 0 018 1a3.543 3.543 0 013.5 3.5A3.543 3.543 0 018 8a3.543 3.543 0 01-3.5-3.5z"
-                    fill="#FBFCFC"
-                  />
-                </svg>
-              </div>
-            </User>
-          </WithStyles(User)>
+                  <svg
+                    focusable={false}
+                    height={12}
+                    viewBox="0 0 16 16"
+                    width={12}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      className="color0"
+                      d="M9.6 8.7A4.49656 4.49656 0 008.03809 0Q8.019-.00007 8 0a4.481 4.481 0 00-4.5 4.46194q-.00009.019 0 .03808A4.563 4.563 0 006.4 8.7 7.687 7.687 0 00.5 16h1a6.487 6.487 0 016.474-6.5H8a6.487 6.487 0 016.5 6.474V16h1a7.493 7.493 0 00-5.9-7.3zM4.5 4.5A3.543 3.543 0 018 1a3.543 3.543 0 013.5 3.5A3.543 3.543 0 018 8a3.543 3.543 0 01-3.5-3.5z"
+                      fill="#"
+                    />
+                  </svg>
+                </div>
+              </HvIconBase>
+            </WithStyles(HvIconBase)>
+          </User>
         </div>
       </ForwardRef(Avatar)>
     </WithStyles(ForwardRef(Avatar))>
@@ -149,40 +156,47 @@ exports[`Avatar  icon avatar snapshot 1`] = `
             }
           }
         >
-          <WithStyles(LogIn)
+          <LogIn
             iconSize="XS"
           >
-            <LogIn
-              classes={
-                Object {
-                  "root": "HvIconLogIn-root",
-                  "rootL": "HvIconLogIn-rootL",
-                  "rootM": "HvIconLogIn-rootM",
-                  "rootS": "HvIconLogIn-rootS",
-                  "rootXs": "HvIconLogIn-rootXs",
-                }
-              }
+            <WithStyles(HvIconBase)
               iconSize="XS"
+              name="LogIn"
             >
-              <div
-                className="HvIconLogIn-root HvIconLogIn-rootXs"
+              <HvIconBase
+                classes={
+                  Object {
+                    "l": "HvIconBase-l",
+                    "m": "HvIconBase-m",
+                    "root": "HvIconBase-root",
+                    "s": "HvIconBase-s",
+                    "xs": "HvIconBase-xs",
+                  }
+                }
+                iconSize="XS"
+                name="LogIn"
               >
-                <svg
-                  focusable={false}
-                  height="12px"
-                  viewBox="0 0 16 16"
-                  width="12px"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="HvIconBase-root HvIconBase-xs"
+                  name="LogIn"
                 >
-                  <path
-                    className="color0"
-                    d="M16 16H6v-1h9V1H6V0h10zm-7.69995-4.5L9 12.2 13.2 8 9 3.8l-.69995.7 3 3H1v1h10.30005z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </LogIn>
-          </WithStyles(LogIn)>
+                  <svg
+                    focusable={false}
+                    height={12}
+                    viewBox="0 0 16 16"
+                    width={12}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      className="color0"
+                      d="M16 16H6v-1h9V1H6V0h10zm-7.69995-4.5L9 12.2 13.2 8 9 3.8l-.69995.7 3 3H1v1h10.30005z"
+                      fill="#414141"
+                    />
+                  </svg>
+                </div>
+              </HvIconBase>
+            </WithStyles(HvIconBase)>
+          </LogIn>
         </div>
       </ForwardRef(Avatar)>
     </WithStyles(ForwardRef(Avatar))>

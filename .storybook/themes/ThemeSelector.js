@@ -43,11 +43,7 @@ const ThemeSelector = ({ api }) => {
         title={theme === "wicked" ? "Change theme to Dawn" : "Change theme to Wicked"}
         onClick={() => setMode(theme === "wicked" ? "dawn" : "wicked")}
       >
-        <ThemeSwitcherIcon
-          boxStyles={{ width: 16, height: 16 }}
-          iconSize="S"
-          color={[sbTheme.colorSecondary]}
-        />
+        <ThemeSwitcherIcon style={{ width: 16, height: 16 }} color={sbTheme.colorSecondary} />
       </IconButton>
     </>
   );

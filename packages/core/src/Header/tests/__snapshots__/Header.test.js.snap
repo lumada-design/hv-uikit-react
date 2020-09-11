@@ -222,37 +222,45 @@ exports[`[v3] Header should be able to render 1`] = `
                               <span
                                 className="MuiButton-label"
                               >
-                                <WithStyles(Menu)>
-                                  <Menu
-                                    classes={
-                                      Object {
-                                        "root": "HvIconMenu-root",
-                                        "rootL": "HvIconMenu-rootL",
-                                        "rootM": "HvIconMenu-rootM",
-                                        "rootS": "HvIconMenu-rootS",
-                                        "rootXs": "HvIconMenu-rootXs",
-                                      }
-                                    }
+                                <Menu>
+                                  <WithStyles(HvIconBase)
+                                    iconSize="S"
+                                    name="Menu"
                                   >
-                                    <div
-                                      className="HvIconMenu-root HvIconMenu-rootS"
+                                    <HvIconBase
+                                      classes={
+                                        Object {
+                                          "l": "HvIconBase-l",
+                                          "m": "HvIconBase-m",
+                                          "root": "HvIconBase-root",
+                                          "s": "HvIconBase-s",
+                                          "xs": "HvIconBase-xs",
+                                        }
+                                      }
+                                      iconSize="S"
+                                      name="Menu"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height="16px"
-                                        viewBox="0 0 16 16"
-                                        width="16px"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        className="HvIconBase-root HvIconBase-s"
+                                        name="Menu"
                                       >
-                                        <path
-                                          className="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </Menu>
-                                </WithStyles(Menu)>
+                                        <svg
+                                          focusable={false}
+                                          height={16}
+                                          viewBox="0 0 16 16"
+                                          width={16}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            className="color0"
+                                            d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                            fill="#414141"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </HvIconBase>
+                                  </WithStyles(HvIconBase)>
+                                </Menu>
                               </span>
                             </button>
                           </ForwardRef(ButtonBase)>
@@ -538,7 +546,7 @@ exports[`[v3] Header should be able to render 1`] = `
                                     >
                                       <WithStyles(Badge)
                                         count={1}
-                                        icon={<ForwardRef(WithStyles) />}
+                                        icon={<Alert />}
                                       >
                                         <Badge
                                           classes={
@@ -553,43 +561,51 @@ exports[`[v3] Header should be able to render 1`] = `
                                             }
                                           }
                                           count={1}
-                                          icon={<ForwardRef(WithStyles) />}
+                                          icon={<Alert />}
                                         >
                                           <div
                                             aria-label={null}
                                             className="HvBadge-root"
                                           >
-                                            <WithStyles(Alert)>
-                                              <Alert
-                                                classes={
-                                                  Object {
-                                                    "root": "HvIconAlert-root",
-                                                    "rootL": "HvIconAlert-rootL",
-                                                    "rootM": "HvIconAlert-rootM",
-                                                    "rootS": "HvIconAlert-rootS",
-                                                    "rootXs": "HvIconAlert-rootXs",
-                                                  }
-                                                }
+                                            <Alert>
+                                              <WithStyles(HvIconBase)
+                                                iconSize="S"
+                                                name="Alert"
                                               >
-                                                <div
-                                                  className="HvIconAlert-root HvIconAlert-rootS"
+                                                <HvIconBase
+                                                  classes={
+                                                    Object {
+                                                      "l": "HvIconBase-l",
+                                                      "m": "HvIconBase-m",
+                                                      "root": "HvIconBase-root",
+                                                      "s": "HvIconBase-s",
+                                                      "xs": "HvIconBase-xs",
+                                                    }
+                                                  }
+                                                  iconSize="S"
+                                                  name="Alert"
                                                 >
-                                                  <svg
-                                                    focusable={false}
-                                                    height="16px"
-                                                    viewBox="0 0 16 16"
-                                                    width="16px"
-                                                    xmlns="http://www.w3.org/2000/svg"
+                                                  <div
+                                                    className="HvIconBase-root HvIconBase-s"
+                                                    name="Alert"
                                                   >
-                                                    <path
-                                                      className="color0"
-                                                      d="M14 12V8a5.884 5.884 0 00-4-5.666V2a2 2 0 00-4 0v.334A5.884 5.884 0 002 8v4H0v1h6v1a2 2 0 004 0v-1h6v-1zM7 2a1 1 0 012 0v.086a5.85679 5.85679 0 00-2 0zm2 12a1 1 0 01-2 0v-1h2zm-6-2V8a5 5 0 0110 0v4z"
-                                                      fill="#414141"
-                                                    />
-                                                  </svg>
-                                                </div>
-                                              </Alert>
-                                            </WithStyles(Alert)>
+                                                    <svg
+                                                      focusable={false}
+                                                      height={16}
+                                                      viewBox="0 0 16 16"
+                                                      width={16}
+                                                      xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                      <path
+                                                        className="color0"
+                                                        d="M14 12V8a5.884 5.884 0 00-4-5.666V2a2 2 0 00-4 0v.334A5.884 5.884 0 002 8v4H0v1h6v1a2 2 0 004 0v-1h6v-1zM7 2a1 1 0 012 0v.086a5.85679 5.85679 0 00-2 0zm2 12a1 1 0 01-2 0v-1h2zm-6-2V8a5 5 0 0110 0v4z"
+                                                        fill="#414141"
+                                                      />
+                                                    </svg>
+                                                  </div>
+                                                </HvIconBase>
+                                              </WithStyles(HvIconBase)>
+                                            </Alert>
                                             <div
                                               className="HvBadge-badgeContainer"
                                             >

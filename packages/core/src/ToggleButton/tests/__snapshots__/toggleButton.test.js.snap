@@ -11,8 +11,8 @@ Array [
         "selectedTitle": "Unmark as favorite",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<Favorite />}
+    selectedIcon={<FavoriteSelected />}
   >
     <WithLabels
       aria-label="Favorite"
@@ -30,8 +30,8 @@ Array [
           "selectedTitle": "Unmark as favorite",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<Favorite />}
+      selectedIcon={<FavoriteSelected />}
     >
       <ToggleButton
         aria-label="Favorite"
@@ -49,8 +49,8 @@ Array [
             "selectedTitle": "Unmark as favorite",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<Favorite />}
+        selectedIcon={<FavoriteSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -237,42 +237,50 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(FavoriteSelected)>
-                          <FavoriteSelected
-                            classes={
-                              Object {
-                                "root": "HvIconFavoriteSelected-root",
-                                "rootL": "HvIconFavoriteSelected-rootL",
-                                "rootM": "HvIconFavoriteSelected-rootM",
-                                "rootS": "HvIconFavoriteSelected-rootS",
-                                "rootXs": "HvIconFavoriteSelected-rootXs",
-                              }
-                            }
+                        <FavoriteSelected>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="FavoriteSelected"
                           >
-                            <div
-                              className="HvIconFavoriteSelected-root HvIconFavoriteSelected-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="FavoriteSelected"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="FavoriteSelected"
                               >
-                                <path
-                                  className="color0"
-                                  d="M7.96825 12.24129l4.375 2.625-.875-5.25 3.5-3.5-4.624-.639-2.376-4.611-2.37 4.611-4.63.639 3.5 3.5-.87 5.25z"
-                                  fill="#414141"
-                                />
-                                <path
-                                  className="color0"
-                                  d="M2.96825 15.86629l.998-6.03421-3.998-4.0102 5.32639-.73736L7.96925-.13371l2.67857 5.21823 5.32043.73836-3.997 4.0092 1.003 6.03321-5.005-3.01213zm5.001-4.1734l3.67063 2.21211-.73313-4.4152 2.94742-2.9564L10 6 7.96925 2.04155 5.94147 6l-3.86012.53436 2.94643 2.95541-.72917 4.41423z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </FavoriteSelected>
-                        </WithStyles(FavoriteSelected)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M7.96825 12.24129l4.375 2.625-.875-5.25 3.5-3.5-4.624-.639-2.376-4.611-2.37 4.611-4.63.639 3.5 3.5-.87 5.25z"
+                                    fill="#414141"
+                                  />
+                                  <path
+                                    className="color0"
+                                    d="M2.96825 15.86629l.998-6.03421-3.998-4.0102 5.32639-.73736L7.96925-.13371l2.67857 5.21823 5.32043.73836-3.997 4.0092 1.003 6.03321-5.005-3.01213zm5.001-4.1734l3.67063 2.21211-.73313-4.4152 2.94742-2.9564L10 6 7.96925 2.04155 5.94147 6l-3.86012.53436 2.94643 2.95541-.72917 4.41423z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </FavoriteSelected>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -283,13 +291,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconFavoriteSelected-root HvIconFavoriteSelected-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="FavoriteSelected"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -340,8 +349,8 @@ Array [
         "selectedTitle": "Remove bookmark",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<Bookmark />}
+    selectedIcon={<BookmarkSelected />}
   >
     <WithLabels
       aria-label="Bookmark"
@@ -358,8 +367,8 @@ Array [
           "selectedTitle": "Remove bookmark",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<Bookmark />}
+      selectedIcon={<BookmarkSelected />}
     >
       <ToggleButton
         aria-label="Bookmark"
@@ -376,8 +385,8 @@ Array [
             "selectedTitle": "Remove bookmark",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<Bookmark />}
+        selectedIcon={<BookmarkSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -564,42 +573,50 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(Bookmark)>
-                          <Bookmark
-                            classes={
-                              Object {
-                                "root": "HvIconBookmark-root",
-                                "rootL": "HvIconBookmark-rootL",
-                                "rootM": "HvIconBookmark-rootM",
-                                "rootS": "HvIconBookmark-rootS",
-                                "rootXs": "HvIconBookmark-rootXs",
-                              }
-                            }
+                        <Bookmark>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="Bookmark"
                           >
-                            <div
-                              className="HvIconBookmark-root HvIconBookmark-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="Bookmark"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="Bookmark"
                               >
-                                <path
-                                  className="color0"
-                                  d="M3 0h10v16l-5-5-5 5z"
-                                  fill="#F0F0F0"
-                                />
-                                <path
-                                  className="color1"
-                                  d="M4 1v12.586l3.293-3.293L8 9.586l.707.707L12 13.586V1H4M3 0h10v16l-5-5-5 5z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </Bookmark>
-                        </WithStyles(Bookmark)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M3 0h10v16l-5-5-5 5z"
+                                    fill="#F0F0F0"
+                                  />
+                                  <path
+                                    className="color1"
+                                    d="M4 1v12.586l3.293-3.293L8 9.586l.707.707L12 13.586V1H4M3 0h10v16l-5-5-5 5z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </Bookmark>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -610,13 +627,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconBookmark-root HvIconBookmark-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="Bookmark"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -667,8 +685,8 @@ Array [
         "selectedTitle": "Stop",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<BackwardsEmpty />}
+    selectedIcon={<BackwardsSelected />}
   >
     <WithLabels
       aria-label="Backwards"
@@ -685,8 +703,8 @@ Array [
           "selectedTitle": "Stop",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<BackwardsEmpty />}
+      selectedIcon={<BackwardsSelected />}
     >
       <ToggleButton
         aria-label="Backwards"
@@ -703,8 +721,8 @@ Array [
             "selectedTitle": "Stop",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<BackwardsEmpty />}
+        selectedIcon={<BackwardsSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -891,42 +909,50 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(BackwardsEmpty)>
-                          <BackwardsEmpty
-                            classes={
-                              Object {
-                                "root": "HvIconBackwardsEmpty-root",
-                                "rootL": "HvIconBackwardsEmpty-rootL",
-                                "rootM": "HvIconBackwardsEmpty-rootM",
-                                "rootS": "HvIconBackwardsEmpty-rootS",
-                                "rootXs": "HvIconBackwardsEmpty-rootXs",
-                              }
-                            }
+                        <BackwardsEmpty>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="BackwardsEmpty"
                           >
-                            <div
-                              className="HvIconBackwardsEmpty-root HvIconBackwardsEmpty-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="BackwardsEmpty"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="BackwardsEmpty"
                               >
-                                <path
-                                  className="color0"
-                                  d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
-                                  fill="#414141"
-                                />
-                                <path
-                                  className="color0"
-                                  d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </BackwardsEmpty>
-                        </WithStyles(BackwardsEmpty)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
+                                    fill="#414141"
+                                  />
+                                  <path
+                                    className="color0"
+                                    d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </BackwardsEmpty>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -937,13 +963,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconBackwardsEmpty-root HvIconBackwardsEmpty-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="BackwardsEmpty"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -994,8 +1021,8 @@ Array [
         "selectedTitle": "Stop",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<UpEmpty />}
+    selectedIcon={<UpSelected />}
   >
     <WithLabels
       aria-label="Up"
@@ -1012,8 +1039,8 @@ Array [
           "selectedTitle": "Stop",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<UpEmpty />}
+      selectedIcon={<UpSelected />}
     >
       <ToggleButton
         aria-label="Up"
@@ -1030,8 +1057,8 @@ Array [
             "selectedTitle": "Stop",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<UpEmpty />}
+        selectedIcon={<UpSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -1218,37 +1245,45 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(UpEmpty)>
-                          <UpEmpty
-                            classes={
-                              Object {
-                                "root": "HvIconUpEmpty-root",
-                                "rootL": "HvIconUpEmpty-rootL",
-                                "rootM": "HvIconUpEmpty-rootM",
-                                "rootS": "HvIconUpEmpty-rootS",
-                                "rootXs": "HvIconUpEmpty-rootXs",
-                              }
-                            }
+                        <UpEmpty>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="UpEmpty"
                           >
-                            <div
-                              className="HvIconUpEmpty-root HvIconUpEmpty-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="UpEmpty"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="UpEmpty"
                               >
-                                <path
-                                  className="color0"
-                                  d="M2.414 11h11.172L8 5.414 2.414 11M0 12l8-8 8 8z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </UpEmpty>
-                        </WithStyles(UpEmpty)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M2.414 11h11.172L8 5.414 2.414 11M0 12l8-8 8 8z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </UpEmpty>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -1259,13 +1294,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconUpEmpty-root HvIconUpEmpty-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="UpEmpty"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -1311,8 +1347,8 @@ Array [
         "selectedTitle": "Stop",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<DownEmpty />}
+    selectedIcon={<DownSelected />}
   >
     <WithLabels
       aria-label="Down"
@@ -1329,8 +1365,8 @@ Array [
           "selectedTitle": "Stop",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<DownEmpty />}
+      selectedIcon={<DownSelected />}
     >
       <ToggleButton
         aria-label="Down"
@@ -1347,8 +1383,8 @@ Array [
             "selectedTitle": "Stop",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<DownEmpty />}
+        selectedIcon={<DownSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -1535,37 +1571,45 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(DownEmpty)>
-                          <DownEmpty
-                            classes={
-                              Object {
-                                "root": "HvIconDownEmpty-root",
-                                "rootL": "HvIconDownEmpty-rootL",
-                                "rootM": "HvIconDownEmpty-rootM",
-                                "rootS": "HvIconDownEmpty-rootS",
-                                "rootXs": "HvIconDownEmpty-rootXs",
-                              }
-                            }
+                        <DownEmpty>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="DownEmpty"
                           >
-                            <div
-                              className="HvIconDownEmpty-root HvIconDownEmpty-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="DownEmpty"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="DownEmpty"
                               >
-                                <path
-                                  className="color0"
-                                  d="M13.586 5H2.414L8 10.586 13.586 5M16 4l-8 8-8-8z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </DownEmpty>
-                        </WithStyles(DownEmpty)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M13.586 5H2.414L8 10.586 13.586 5M16 4l-8 8-8-8z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </DownEmpty>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -1576,13 +1620,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconDownEmpty-root HvIconDownEmpty-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="DownEmpty"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -1628,8 +1673,8 @@ Array [
         "selectedTitle": "Stop",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<ForwardsEmpty />}
+    selectedIcon={<ForwardsSelected />}
   >
     <WithLabels
       aria-label="Forward"
@@ -1646,8 +1691,8 @@ Array [
           "selectedTitle": "Stop",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<ForwardsEmpty />}
+      selectedIcon={<ForwardsSelected />}
     >
       <ToggleButton
         aria-label="Forward"
@@ -1664,8 +1709,8 @@ Array [
             "selectedTitle": "Stop",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<ForwardsEmpty />}
+        selectedIcon={<ForwardsSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -1852,37 +1897,45 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(ForwardsEmpty)>
-                          <ForwardsEmpty
-                            classes={
-                              Object {
-                                "root": "HvIconForwardsEmpty-root",
-                                "rootL": "HvIconForwardsEmpty-rootL",
-                                "rootM": "HvIconForwardsEmpty-rootM",
-                                "rootS": "HvIconForwardsEmpty-rootS",
-                                "rootXs": "HvIconForwardsEmpty-rootXs",
-                              }
-                            }
+                        <ForwardsEmpty>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="ForwardsEmpty"
                           >
-                            <div
-                              className="HvIconForwardsEmpty-root HvIconForwardsEmpty-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="ForwardsEmpty"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="ForwardsEmpty"
                               >
-                                <path
-                                  className="color0"
-                                  d="M5 2.414v11.172L10.586 8 5 2.414M4 0l8 8-8 8z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </ForwardsEmpty>
-                        </WithStyles(ForwardsEmpty)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M5 2.414v11.172L10.586 8 5 2.414M4 0l8 8-8 8z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </ForwardsEmpty>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -1893,13 +1946,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconForwardsEmpty-root HvIconForwardsEmpty-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="ForwardsEmpty"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -1945,8 +1999,8 @@ Array [
         "selectedTitle": "Remove like",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<Like />}
+    selectedIcon={<LikeSelected />}
   >
     <WithLabels
       aria-label="Like"
@@ -1963,8 +2017,8 @@ Array [
           "selectedTitle": "Remove like",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<Like />}
+      selectedIcon={<LikeSelected />}
     >
       <ToggleButton
         aria-label="Like"
@@ -1981,8 +2035,8 @@ Array [
             "selectedTitle": "Remove like",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<Like />}
+        selectedIcon={<LikeSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -2169,37 +2223,45 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(Like)>
-                          <Like
-                            classes={
-                              Object {
-                                "root": "HvIconLike-root",
-                                "rootL": "HvIconLike-rootL",
-                                "rootM": "HvIconLike-rootM",
-                                "rootS": "HvIconLike-rootS",
-                                "rootXs": "HvIconLike-rootXs",
-                              }
-                            }
+                        <Like>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="Like"
                           >
-                            <div
-                              className="HvIconLike-root HvIconLike-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="Like"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="Like"
                               >
-                                <path
-                                  className="color0"
-                                  d="M13.69343 5.0065h-3.663l-.049-2.372c0-2.408-2.588-2.641-3.591-2.641-.241 0-.391.013-.391.013v3.755a3.128 3.128 0 01-2 2.912v-.667h-4v10h4v-.373a5.48109 5.48109 0 001.976.373h5.8c3 0 3.254-2.227 3.254-2.227l.97-6.215a2.49 2.49 0 00-2.306-2.558zm-10.694 10h-2v-8h2zm11.039-1.381v.031a1.549 1.549 0 01-.345.676 2.43 2.43 0 01-1.921.674h-5.8a4.97388 4.97388 0 01-1.3-.184 1.56 1.56 0 01-.573-.285.268.268 0 01-.1-.231v-6.55a5.5399 5.5399 0 001.032-.5 3.963 3.963 0 001.968-3.495v-2.736a3.70009 3.70009 0 011.141.292 1.3 1.3 0 01.841 1.317v.02l.05 2.373.02.979h4.587a1.96111 1.96111 0 01.744.27 1.357 1.357 0 01.617 1.217z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </Like>
-                        </WithStyles(Like)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M13.69343 5.0065h-3.663l-.049-2.372c0-2.408-2.588-2.641-3.591-2.641-.241 0-.391.013-.391.013v3.755a3.128 3.128 0 01-2 2.912v-.667h-4v10h4v-.373a5.48109 5.48109 0 001.976.373h5.8c3 0 3.254-2.227 3.254-2.227l.97-6.215a2.49 2.49 0 00-2.306-2.558zm-10.694 10h-2v-8h2zm11.039-1.381v.031a1.549 1.549 0 01-.345.676 2.43 2.43 0 01-1.921.674h-5.8a4.97388 4.97388 0 01-1.3-.184 1.56 1.56 0 01-.573-.285.268.268 0 01-.1-.231v-6.55a5.5399 5.5399 0 001.032-.5 3.963 3.963 0 001.968-3.495v-2.736a3.70009 3.70009 0 011.141.292 1.3 1.3 0 01.841 1.317v.02l.05 2.373.02.979h4.587a1.96111 1.96111 0 01.744.27 1.357 1.357 0 01.617 1.217z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </Like>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -2210,13 +2272,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconLike-root HvIconLike-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="Like"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -2262,8 +2325,8 @@ Array [
         "selectedTitle": "Remove dislike",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<Dislike />}
+    selectedIcon={<DislikeSelected />}
   >
     <WithLabels
       aria-label="Dislike"
@@ -2280,8 +2343,8 @@ Array [
           "selectedTitle": "Remove dislike",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<Dislike />}
+      selectedIcon={<DislikeSelected />}
     >
       <ToggleButton
         aria-label="Dislike"
@@ -2298,8 +2361,8 @@ Array [
             "selectedTitle": "Remove dislike",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<Dislike />}
+        selectedIcon={<DislikeSelected />}
       >
         <WithStyles(Focus)
           classes={
@@ -2486,37 +2549,45 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(Dislike)>
-                          <Dislike
-                            classes={
-                              Object {
-                                "root": "HvIconDislike-root",
-                                "rootL": "HvIconDislike-rootL",
-                                "rootM": "HvIconDislike-rootM",
-                                "rootS": "HvIconDislike-rootS",
-                                "rootXs": "HvIconDislike-rootXs",
-                              }
-                            }
+                        <Dislike>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="Dislike"
                           >
-                            <div
-                              className="HvIconDislike-root HvIconDislike-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="Dislike"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="Dislike"
                               >
-                                <path
-                                  className="color0"
-                                  d="M.00057 8.435l.973-6.215s.258-2.227 3.254-2.227h5.8a5.481 5.481 0 011.973.373v-.373h4v10h-4v-.667a3.128 3.128 0 00-2 2.912v3.755s-.15.014-.391.014c-1 0-3.591-.234-3.591-2.642l-.049-2.372h-3.663a2.49 2.49 0 01-2.306-2.558zm13 .558h2v-8h-2zm-12-.486a1.355 1.355 0 00.616 1.216 1.96111 1.96111 0 00.744.27h4.587l.02.979.05 2.373v.02a1.3 1.3 0 00.841 1.317 3.70009 3.70009 0 001.142.292v-2.736a3.963 3.963 0 011.968-3.491 5.54112 5.54112 0 011.032-.504v-6.55a.268.268 0 00-.1-.227 1.56 1.56 0 00-.573-.285 4.9742 4.9742 0 00-1.303-.188h-5.8a2.43 2.43 0 00-1.916.674 1.549 1.549 0 00-.345.676v.031z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </Dislike>
-                        </WithStyles(Dislike)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M.00057 8.435l.973-6.215s.258-2.227 3.254-2.227h5.8a5.481 5.481 0 011.973.373v-.373h4v10h-4v-.667a3.128 3.128 0 00-2 2.912v3.755s-.15.014-.391.014c-1 0-3.591-.234-3.591-2.642l-.049-2.372h-3.663a2.49 2.49 0 01-2.306-2.558zm13 .558h2v-8h-2zm-12-.486a1.355 1.355 0 00.616 1.216 1.96111 1.96111 0 00.744.27h4.587l.02.979.05 2.373v.02a1.3 1.3 0 00.841 1.317 3.70009 3.70009 0 001.142.292v-2.736a3.963 3.963 0 011.968-3.491 5.54112 5.54112 0 011.032-.504v-6.55a.268.268 0 00-.1-.227 1.56 1.56 0 00-.573-.285 4.9742 4.9742 0 00-1.303-.188h-5.8a2.43 2.43 0 00-1.916.674 1.549 1.549 0 00-.345.676v.031z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </Dislike>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -2527,13 +2598,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconDislike-root HvIconDislike-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="Dislike"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -2579,8 +2651,8 @@ Array [
         "selectedTitle": "Turn off",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<LightOff />}
+    selectedIcon={<LightOn />}
   >
     <WithLabels
       aria-label="Light"
@@ -2597,8 +2669,8 @@ Array [
           "selectedTitle": "Turn off",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<LightOff />}
+      selectedIcon={<LightOn />}
     >
       <ToggleButton
         aria-label="Light"
@@ -2615,8 +2687,8 @@ Array [
             "selectedTitle": "Turn off",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<LightOff />}
+        selectedIcon={<LightOn />}
       >
         <WithStyles(Focus)
           classes={
@@ -2803,37 +2875,45 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(LightOff)>
-                          <LightOff
-                            classes={
-                              Object {
-                                "root": "HvIconLightOff-root",
-                                "rootL": "HvIconLightOff-rootL",
-                                "rootM": "HvIconLightOff-rootM",
-                                "rootS": "HvIconLightOff-rootS",
-                                "rootXs": "HvIconLightOff-rootXs",
-                              }
-                            }
+                        <LightOff>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="LightOff"
                           >
-                            <div
-                              className="HvIconLightOff-root HvIconLightOff-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="LightOff"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="LightOff"
                               >
-                                <path
-                                  className="color0"
-                                  d="M5 15h6v1H5zm5-2H6v-1.5l-.4-.3a4 4 0 114.8 0l-.4.3V13m1-1a5 5 0 10-6 0v2h6z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </LightOff>
-                        </WithStyles(LightOff)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M5 15h6v1H5zm5-2H6v-1.5l-.4-.3a4 4 0 114.8 0l-.4.3V13m1-1a5 5 0 10-6 0v2h6z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </LightOff>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -2844,13 +2924,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconLightOff-root HvIconLightOff-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="LightOff"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -2896,8 +2977,8 @@ Array [
         "selectedTitle": "Unlock",
       }
     }
-    notSelectedIcon={<ForwardRef(WithStyles) />}
-    selectedIcon={<ForwardRef(WithStyles) />}
+    notSelectedIcon={<Unlock />}
+    selectedIcon={<Lock />}
   >
     <WithLabels
       aria-label="Lock"
@@ -2914,8 +2995,8 @@ Array [
           "selectedTitle": "Unlock",
         }
       }
-      notSelectedIcon={<ForwardRef(WithStyles) />}
-      selectedIcon={<ForwardRef(WithStyles) />}
+      notSelectedIcon={<Unlock />}
+      selectedIcon={<Lock />}
     >
       <ToggleButton
         aria-label="Lock"
@@ -2932,8 +3013,8 @@ Array [
             "selectedTitle": "Unlock",
           }
         }
-        notSelectedIcon={<ForwardRef(WithStyles) />}
-        selectedIcon={<ForwardRef(WithStyles) />}
+        notSelectedIcon={<Unlock />}
+        selectedIcon={<Lock />}
       >
         <WithStyles(Focus)
           classes={
@@ -3120,37 +3201,45 @@ Array [
                         title={null}
                         type="button"
                       >
-                        <WithStyles(Unlock)>
-                          <Unlock
-                            classes={
-                              Object {
-                                "root": "HvIconUnlock-root",
-                                "rootL": "HvIconUnlock-rootL",
-                                "rootM": "HvIconUnlock-rootM",
-                                "rootS": "HvIconUnlock-rootS",
-                                "rootXs": "HvIconUnlock-rootXs",
-                              }
-                            }
+                        <Unlock>
+                          <WithStyles(HvIconBase)
+                            iconSize="S"
+                            name="Unlock"
                           >
-                            <div
-                              className="HvIconUnlock-root HvIconUnlock-rootS"
+                            <HvIconBase
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="S"
+                              name="Unlock"
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="Unlock"
                               >
-                                <path
-                                  className="color0"
-                                  d="M8.5 12h-1V8h1zM14 4v12H2V4h2V0h6v1H5v3zm-1 1H3v10h10z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </Unlock>
-                        </WithStyles(Unlock)>
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M8.5 12h-1V8h1zM14 4v12H2V4h2V0h6v1H5v3zm-1 1H3v10h10z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </Unlock>
                       </button>
                       <ForwardRef(Popper)
                         anchorEl={
@@ -3161,13 +3250,14 @@ Array [
                             type="button"
                           >
                             <div
-                              class="HvIconUnlock-root HvIconUnlock-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="Unlock"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path

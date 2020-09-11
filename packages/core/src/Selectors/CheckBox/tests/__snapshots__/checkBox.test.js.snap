@@ -41,7 +41,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
       control={
         <ForwardRef(WithStyles)
           checkedIcon={
-            <ForwardRef(WithStyles)
+            <CheckboxCheck
               className="HvCheckBox-icon"
             />
           }
@@ -50,13 +50,13 @@ exports[`[v3] CheckBox should render correctly 1`] = `
           disableRipple={true}
           disabled={false}
           icon={
-            <ForwardRef(WithStyles)
+            <Checkbox
               className="HvCheckBox-icon"
             />
           }
           id="test-input"
           indeterminateIcon={
-            <ForwardRef(WithStyles)
+            <CheckboxPartial
               className="HvCheckBox-icon"
             />
           }
@@ -89,7 +89,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
         control={
           <ForwardRef(WithStyles)
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <CheckboxCheck
                 className="HvCheckBox-icon"
               />
             }
@@ -98,13 +98,13 @@ exports[`[v3] CheckBox should render correctly 1`] = `
             disableRipple={true}
             disabled={false}
             icon={
-              <ForwardRef(WithStyles)
+              <Checkbox
                 className="HvCheckBox-icon"
               />
             }
             id="test-input"
             indeterminateIcon={
-              <ForwardRef(WithStyles)
+              <CheckboxPartial
                 className="HvCheckBox-icon"
               />
             }
@@ -128,7 +128,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
         >
           <WithStyles(ForwardRef(Checkbox))
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <CheckboxCheck
                 className="HvCheckBox-icon"
               />
             }
@@ -137,13 +137,13 @@ exports[`[v3] CheckBox should render correctly 1`] = `
             disableRipple={true}
             disabled={false}
             icon={
-              <ForwardRef(WithStyles)
+              <Checkbox
                 className="HvCheckBox-icon"
               />
             }
             id="test-input"
             indeterminateIcon={
-              <ForwardRef(WithStyles)
+              <CheckboxPartial
                 className="HvCheckBox-icon"
               />
             }
@@ -158,7 +158,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
           >
             <ForwardRef(Checkbox)
               checkedIcon={
-                <ForwardRef(WithStyles)
+                <CheckboxCheck
                   className="HvCheckBox-icon"
                 />
               }
@@ -177,13 +177,13 @@ exports[`[v3] CheckBox should render correctly 1`] = `
               disableRipple={true}
               disabled={false}
               icon={
-                <ForwardRef(WithStyles)
+                <Checkbox
                   className="HvCheckBox-icon"
                 />
               }
               id="test-input"
               indeterminateIcon={
-                <ForwardRef(WithStyles)
+                <CheckboxPartial
                   className="HvCheckBox-icon"
                 />
               }
@@ -198,7 +198,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
             >
               <WithStyles(ForwardRef(SwitchBase))
                 checkedIcon={
-                  <ForwardRef(WithStyles)
+                  <CheckboxCheck
                     className="HvCheckBox-icon"
                     fontSize="default"
                   />
@@ -215,7 +215,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <Checkbox
                     className="HvCheckBox-icon"
                     fontSize="default"
                   />
@@ -234,7 +234,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
               >
                 <ForwardRef(SwitchBase)
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxCheck
                       className="HvCheckBox-icon"
                       fontSize="default"
                     />
@@ -252,7 +252,7 @@ exports[`[v3] CheckBox should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <Checkbox
                       className="HvCheckBox-icon"
                       fontSize="default"
                     />
@@ -360,48 +360,58 @@ exports[`[v3] CheckBox should render correctly 1`] = `
                                 type="checkbox"
                                 value=""
                               />
-                              <WithStyles(Checkbox)
+                              <Checkbox
                                 className="HvCheckBox-icon"
                                 fontSize="default"
                               >
-                                <Checkbox
+                                <WithStyles(HvIconBase)
                                   className="HvCheckBox-icon"
-                                  classes={
-                                    Object {
-                                      "root": "HvIconCheckbox-root",
-                                      "rootL": "HvIconCheckbox-rootL",
-                                      "rootM": "HvIconCheckbox-rootM",
-                                      "rootS": "HvIconCheckbox-rootS",
-                                      "rootXs": "HvIconCheckbox-rootXs",
-                                    }
-                                  }
                                   fontSize="default"
+                                  iconSize="S"
+                                  name="Checkbox"
                                 >
-                                  <div
-                                    className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                  <HvIconBase
+                                    className="HvCheckBox-icon"
+                                    classes={
+                                      Object {
+                                        "l": "HvIconBase-l",
+                                        "m": "HvIconBase-m",
+                                        "root": "HvIconBase-root",
+                                        "s": "HvIconBase-s",
+                                        "xs": "HvIconBase-xs",
+                                      }
+                                    }
                                     fontSize="default"
+                                    iconSize="S"
+                                    name="Checkbox"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height="16px"
-                                      viewBox="0 0 16 16"
-                                      width="16px"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="HvCheckBox-icon HvIconBase-root HvIconBase-s"
+                                      fontSize="default"
+                                      name="Checkbox"
                                     >
-                                      <path
-                                        className="color0"
-                                        d="M0 0h16v16H0z"
-                                        fill="#FBFCFC"
-                                      />
-                                      <path
-                                        className="color1"
-                                        d="M16 16H0V0h16zM1 15h14V1H1z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </Checkbox>
-                              </WithStyles(Checkbox)>
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M0 0h16v16H0z"
+                                          fill="#FBFCFC"
+                                        />
+                                        <path
+                                          className="color1"
+                                          d="M16 16H0V0h16zM1 15h14V1H1z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </WithStyles(HvIconBase)>
+                              </Checkbox>
                             </span>
                           </span>
                         </ForwardRef(ButtonBase)>

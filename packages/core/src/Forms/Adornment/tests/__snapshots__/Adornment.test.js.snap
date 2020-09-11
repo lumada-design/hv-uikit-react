@@ -2,7 +2,7 @@
 
 exports[`v3 Adornment should render correctly 1`] = `
 <WithStyles(HvAdornment)
-  icon={<ForwardRef(WithStyles) />}
+  icon={<CloseXS />}
 >
   <HvAdornment
     classes={
@@ -15,7 +15,7 @@ exports[`v3 Adornment should render correctly 1`] = `
         "root": "HvAdornment-root",
       }
     }
-    icon={<ForwardRef(WithStyles) />}
+    icon={<CloseXS />}
   >
     <div
       className="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
@@ -24,37 +24,45 @@ exports[`v3 Adornment should render correctly 1`] = `
       <div
         className="HvAdornment-icon"
       >
-        <WithStyles(CloseXS)>
-          <CloseXS
-            classes={
-              Object {
-                "root": "HvIconCloseXS-root",
-                "rootL": "HvIconCloseXS-rootL",
-                "rootM": "HvIconCloseXS-rootM",
-                "rootS": "HvIconCloseXS-rootS",
-                "rootXs": "HvIconCloseXS-rootXs",
-              }
-            }
+        <CloseXS>
+          <WithStyles(HvIconBase)
+            iconSize="XS"
+            name="CloseXS"
           >
-            <div
-              className="HvIconCloseXS-root HvIconCloseXS-rootXs"
+            <HvIconBase
+              classes={
+                Object {
+                  "l": "HvIconBase-l",
+                  "m": "HvIconBase-m",
+                  "root": "HvIconBase-root",
+                  "s": "HvIconBase-s",
+                  "xs": "HvIconBase-xs",
+                }
+              }
+              iconSize="XS"
+              name="CloseXS"
             >
-              <svg
-                focusable={false}
-                height="12px"
-                viewBox="0 0 12 12"
-                width="12px"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="HvIconBase-root HvIconBase-xs"
+                name="CloseXS"
               >
-                <path
-                  className="color0"
-                  d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </CloseXS>
-        </WithStyles(CloseXS)>
+                <svg
+                  focusable={false}
+                  height={12}
+                  viewBox="0 0 12 12"
+                  width={12}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="color0"
+                    d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </HvIconBase>
+          </WithStyles(HvIconBase)>
+        </CloseXS>
       </div>
     </div>
   </HvAdornment>

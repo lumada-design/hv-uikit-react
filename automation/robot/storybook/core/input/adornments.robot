@@ -88,8 +88,8 @@ show adornment and clean button when mouse hover unfocused filled input
 
 
 *** Variables ***
-${adornment_accepted}    css:div [class*=IconSuccess]
-${adornment_failed}      css:div [class*=IconFail]
-${clean_button}          css:button [class*=IconClose]
+${adornment_accepted}    css:div[name*='Success']
+${adornment_failed}      css:div[name*='Fail']
+${clean_button}          css:div[name*='Close']
 ${input}                 css:#limited-input-input
 ${label}                 css:#limited-input-label

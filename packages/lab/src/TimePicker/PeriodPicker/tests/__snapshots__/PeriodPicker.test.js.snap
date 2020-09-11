@@ -19,43 +19,53 @@ exports[`PeriodPicker should render correctly 1`] = `
     <div
       className="HvTimePickerPeriodPicker-periodContainer"
     >
-      <WithStyles(DropUpXS)
+      <DropUpXS
         className="HvTimePickerPeriodPicker-icon"
         onClick={[Function]}
       >
-        <DropUpXS
+        <WithStyles(HvIconBase)
           className="HvTimePickerPeriodPicker-icon"
-          classes={
-            Object {
-              "root": "HvIconDropUpXS-root",
-              "rootL": "HvIconDropUpXS-rootL",
-              "rootM": "HvIconDropUpXS-rootM",
-              "rootS": "HvIconDropUpXS-rootS",
-              "rootXs": "HvIconDropUpXS-rootXs",
-            }
-          }
+          iconSize="XS"
+          name="DropUpXS"
           onClick={[Function]}
         >
-          <div
-            className="HvTimePickerPeriodPicker-icon HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+          <HvIconBase
+            className="HvTimePickerPeriodPicker-icon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="XS"
+            name="DropUpXS"
             onClick={[Function]}
           >
-            <svg
-              focusable={false}
-              height="12px"
-              viewBox="0 0 12 12"
-              width="12px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvTimePickerPeriodPicker-icon HvIconBase-root HvIconBase-xs"
+              name="DropUpXS"
+              onClick={[Function]}
             >
-              <path
-                className="color0"
-                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </DropUpXS>
-      </WithStyles(DropUpXS)>
+              <svg
+                focusable={false}
+                height={12}
+                viewBox="0 0 12 12"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </DropUpXS>
       <WithStyles(ForwardRef)
         className="HvTimePickerPeriodPicker-periodText"
         variant="highlightText"
@@ -96,43 +106,53 @@ exports[`PeriodPicker should render correctly 1`] = `
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
-      <WithStyles(DropDownXS)
+      <DropDownXS
         className="HvTimePickerPeriodPicker-icon"
         onClick={[Function]}
       >
-        <DropDownXS
+        <WithStyles(HvIconBase)
           className="HvTimePickerPeriodPicker-icon"
-          classes={
-            Object {
-              "root": "HvIconDropDownXS-root",
-              "rootL": "HvIconDropDownXS-rootL",
-              "rootM": "HvIconDropDownXS-rootM",
-              "rootS": "HvIconDropDownXS-rootS",
-              "rootXs": "HvIconDropDownXS-rootXs",
-            }
-          }
+          iconSize="XS"
+          name="DropDownXS"
           onClick={[Function]}
         >
-          <div
-            className="HvTimePickerPeriodPicker-icon HvIconDropDownXS-root HvIconDropDownXS-rootXs"
+          <HvIconBase
+            className="HvTimePickerPeriodPicker-icon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="XS"
+            name="DropDownXS"
             onClick={[Function]}
           >
-            <svg
-              focusable={false}
-              height="12px"
-              viewBox="0 0 12 12"
-              width="12px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvTimePickerPeriodPicker-icon HvIconBase-root HvIconBase-xs"
+              name="DropDownXS"
+              onClick={[Function]}
             >
-              <path
-                className="color0"
-                d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </DropDownXS>
-      </WithStyles(DropDownXS)>
+              <svg
+                focusable={false}
+                height={12}
+                viewBox="0 0 12 12"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </DropDownXS>
     </div>
   </PeriodPicker>
 </WithStyles(PeriodPicker)>

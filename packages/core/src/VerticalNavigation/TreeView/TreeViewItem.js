@@ -232,15 +232,6 @@ const TreeViewItem = props => {
     }
   }, [treeviewMode, tabbable]);
 
-  const renderedIcon = useMemo(
-    () =>
-      icon &&
-      React.cloneElement(icon, {
-        boxStyles: { width: "32px", height: "32px" }
-      }),
-    [icon]
-  );
-
   const renderedContent = useMemo(
     () => (
       <HvTypography
@@ -259,7 +250,7 @@ const TreeViewItem = props => {
         onClick={handleClick}
         aria-current={!treeviewMode && selectable && selected ? "page" : undefined}
       >
-        {renderedIcon}
+        {icon}
         {label}
       </HvTypography>
     ),
@@ -271,7 +262,7 @@ const TreeViewItem = props => {
       id,
       label,
       treeviewMode,
-      renderedIcon,
+      icon,
       selectable,
       selected,
       tabbable

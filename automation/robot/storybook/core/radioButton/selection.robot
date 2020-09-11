@@ -6,8 +6,8 @@ Force Tags  v3
 *** Variables ***
 ${1stRadioButton}         id:radio1-input
 ${2ndRadioButton}         id:radio2-input
-${radioSelected}          css:div[class*='RadioButtonSelected']
-${radioNotSelected}       css:div[class*='RadioButtonUnselected']
+${radioSelected}          css:div[name='RadioButtonSelected']
+${radioNotSelected}       css:div[name='RadioButtonUnselected']
 ${1stRadioButtonLabel}    xpath://span[text()='Label']
 
 

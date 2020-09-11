@@ -4,7 +4,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
 <WithStyles(Action)
   application={
     Object {
-      "iconElement": <ForwardRef(WithStyles) />,
+      "iconElement": <Tool />,
       "id": "app-1",
       "name": "Mock App 1",
       "target": "_top",
@@ -16,7 +16,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
   <Action
     application={
       Object {
-        "iconElement": <ForwardRef(WithStyles) />,
+        "iconElement": <Tool />,
         "id": "app-1",
         "name": "Mock App 1",
         "target": "_top",
@@ -832,37 +832,45 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
             role="button"
             tabIndex={0}
           >
-            <WithStyles(Tool)>
-              <Tool
-                classes={
-                  Object {
-                    "root": "HvIconTool-root",
-                    "rootL": "HvIconTool-rootL",
-                    "rootM": "HvIconTool-rootM",
-                    "rootS": "HvIconTool-rootS",
-                    "rootXs": "HvIconTool-rootXs",
-                  }
-                }
+            <Tool>
+              <WithStyles(HvIconBase)
+                iconSize="S"
+                name="Tool"
               >
-                <div
-                  className="HvIconTool-root HvIconTool-rootS"
+                <HvIconBase
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
+                  iconSize="S"
+                  name="Tool"
                 >
-                  <svg
-                    focusable={false}
-                    height="16px"
-                    viewBox="0 0 16 16"
-                    width="16px"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="HvIconBase-root HvIconBase-s"
+                    name="Tool"
                   >
-                    <path
-                      className="color0"
-                      d="M4.79431 14.03412l4.59619-4.5962.49494.07061a3.97211 3.97211 0 003.39415-1.13127 4.01469 4.01469 0 001.03528-3.86371L12.987 5.84145l-.41363.00069h-2.41551V3.42665l.00069-.41363 1.3279-1.32789a4.01606 4.01606 0 00-3.86371 1.03528 3.97211 3.97211 0 00-1.13127 3.39415l.07061.49494-4.5962 4.59619 2.82843 2.82843m0 1.41421L.55167 11.20569l4.94975-4.94975a5.00069 5.00069 0 017.70739-4.879l-2.05054 2.05058v1.41421h1.41421L14.623 2.79119a5.01258 5.01258 0 01-.63632 6.29318 4.96269 4.96269 0 01-4.24264 1.41421z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </Tool>
-            </WithStyles(Tool)>
+                    <svg
+                      focusable={false}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        className="color0"
+                        d="M4.79431 14.03412l4.59619-4.5962.49494.07061a3.97211 3.97211 0 003.39415-1.13127 4.01469 4.01469 0 001.03528-3.86371L12.987 5.84145l-.41363.00069h-2.41551V3.42665l.00069-.41363 1.3279-1.32789a4.01606 4.01606 0 00-3.86371 1.03528 3.97211 3.97211 0 00-1.13127 3.39415l.07061.49494-4.5962 4.59619 2.82843 2.82843m0 1.41421L.55167 11.20569l4.94975-4.94975a5.00069 5.00069 0 017.70739-4.879l-2.05054 2.05058v1.41421h1.41421L14.623 2.79119a5.01258 5.01258 0 01-.63632 6.29318 4.96269 4.96269 0 01-4.24264 1.41421z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </Tool>
             <span
               title="Mock App 1"
             >
@@ -1720,43 +1728,53 @@ exports[`<Action /> with description should render correctly 1`] = `
             >
               Mock App 1
             </span>
-            <WithStyles(Info)
+            <Info
               className="Action-iconInfo-5"
               title="Mock App 1 Description"
             >
-              <Info
+              <WithStyles(HvIconBase)
                 className="Action-iconInfo-5"
-                classes={
-                  Object {
-                    "root": "HvIconInfo-root",
-                    "rootL": "HvIconInfo-rootL",
-                    "rootM": "HvIconInfo-rootM",
-                    "rootS": "HvIconInfo-rootS",
-                    "rootXs": "HvIconInfo-rootXs",
-                  }
-                }
+                iconSize="S"
+                name="Info"
                 title="Mock App 1 Description"
               >
-                <div
-                  className="Action-iconInfo-5 HvIconInfo-root HvIconInfo-rootS"
+                <HvIconBase
+                  className="Action-iconInfo-5"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
+                  iconSize="S"
+                  name="Info"
                   title="Mock App 1 Description"
                 >
-                  <svg
-                    focusable={false}
-                    height="16px"
-                    viewBox="0 0 16 16"
-                    width="16px"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="Action-iconInfo-5 HvIconBase-root HvIconBase-s"
+                    name="Info"
+                    title="Mock App 1 Description"
                   >
-                    <path
-                      className="color0"
-                      d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </Info>
-            </WithStyles(Info)>
+                    <svg
+                      focusable={false}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        className="color0"
+                        d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </Info>
           </div>
         </ForwardRef>
       </WithStyles(ForwardRef)>

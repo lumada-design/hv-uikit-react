@@ -19,42 +19,50 @@ exports[`HelperText should render correctly 1`] = `
     <div
       className="HvWarningText-root"
     >
-      <WithStyles(Fail)
+      <Fail
         className="HvWarningText-defaultIcon"
         semantic="sema4"
       >
-        <Fail
+        <WithStyles(HvIconBase)
           className="HvWarningText-defaultIcon"
-          classes={
-            Object {
-              "root": "HvIconFail-root",
-              "rootL": "HvIconFail-rootL",
-              "rootM": "HvIconFail-rootM",
-              "rootS": "HvIconFail-rootS",
-              "rootXs": "HvIconFail-rootXs",
-            }
-          }
-          semantic="sema4"
+          iconSize="S"
+          name="Fail"
         >
-          <div
-            className="HvWarningText-defaultIcon HvIconFail-root HvIconFail-rootS"
+          <HvIconBase
+            className="HvWarningText-defaultIcon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="S"
+            name="Fail"
           >
-            <svg
-              focusable={false}
-              height="16px"
-              viewBox="0 0 16 16"
-              width="16px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
+              name="Fail"
             >
-              <path
-                className="color0"
-                d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                fill="#C62828"
-              />
-            </svg>
-          </div>
-        </Fail>
-      </WithStyles(Fail)>
+              <svg
+                focusable={false}
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                  fill="#C62828"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </Fail>
       <WithStyles(ForwardRef)
         aria-atomic="true"
         aria-live="polite"

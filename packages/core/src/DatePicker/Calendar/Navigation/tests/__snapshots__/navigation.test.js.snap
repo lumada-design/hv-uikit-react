@@ -29,52 +29,65 @@ exports[`<Navigation /> should render correctly 1`] = `
     <div
       className="HvDatePickerNavigation-root"
     >
-      <WithStyles(DropLeftXS)
+      <DropLeftXS
         className="HvDatePickerNavigation-icon"
         id="id1-left"
         onClick={[MockFunction]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <DropLeftXS
+        <WithStyles(HvIconBase)
           className="HvDatePickerNavigation-icon"
-          classes={
-            Object {
-              "root": "HvIconDropLeftXS-root",
-              "rootL": "HvIconDropLeftXS-rootL",
-              "rootM": "HvIconDropLeftXS-rootM",
-              "rootS": "HvIconDropLeftXS-rootS",
-              "rootXs": "HvIconDropLeftXS-rootXs",
-            }
-          }
+          iconSize="XS"
           id="id1-left"
+          name="DropLeftXS"
           onClick={[MockFunction]}
           onKeyDown={[Function]}
           tabIndex={0}
         >
-          <div
-            className="HvDatePickerNavigation-icon HvIconDropLeftXS-root HvIconDropLeftXS-rootXs"
+          <HvIconBase
+            className="HvDatePickerNavigation-icon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="XS"
             id="id1-left"
+            name="DropLeftXS"
             onClick={[MockFunction]}
             onKeyDown={[Function]}
             tabIndex={0}
           >
-            <svg
-              focusable={false}
-              height="12px"
-              viewBox="0 0 12 12"
-              width="12px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvDatePickerNavigation-icon HvIconBase-root HvIconBase-xs"
+              id="id1-left"
+              name="DropLeftXS"
+              onClick={[MockFunction]}
+              onKeyDown={[Function]}
+              tabIndex={0}
             >
-              <path
-                className="color0"
-                d="M3.35 5.99994l4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </DropLeftXS>
-      </WithStyles(DropLeftXS)>
+              <svg
+                focusable={false}
+                height={12}
+                viewBox="0 0 12 12"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M3.35 5.99994l4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </DropLeftXS>
       <div
         className="HvDatePickerNavigation-text"
         id="id1"
@@ -119,52 +132,65 @@ exports[`<Navigation /> should render correctly 1`] = `
           </ForwardRef>
         </WithStyles(ForwardRef)>
       </div>
-      <WithStyles(DropRightXS)
+      <DropRightXS
         className="HvDatePickerNavigation-icon"
         id="id1-right"
         onClick={[MockFunction]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <DropRightXS
+        <WithStyles(HvIconBase)
           className="HvDatePickerNavigation-icon"
-          classes={
-            Object {
-              "root": "HvIconDropRightXS-root",
-              "rootL": "HvIconDropRightXS-rootL",
-              "rootM": "HvIconDropRightXS-rootM",
-              "rootS": "HvIconDropRightXS-rootS",
-              "rootXs": "HvIconDropRightXS-rootXs",
-            }
-          }
+          iconSize="XS"
           id="id1-right"
+          name="DropRightXS"
           onClick={[MockFunction]}
           onKeyDown={[Function]}
           tabIndex={0}
         >
-          <div
-            className="HvDatePickerNavigation-icon HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+          <HvIconBase
+            className="HvDatePickerNavigation-icon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="XS"
             id="id1-right"
+            name="DropRightXS"
             onClick={[MockFunction]}
             onKeyDown={[Function]}
             tabIndex={0}
           >
-            <svg
-              focusable={false}
-              height="12px"
-              viewBox="0 0 12 12"
-              width="12px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvDatePickerNavigation-icon HvIconBase-root HvIconBase-xs"
+              id="id1-right"
+              name="DropRightXS"
+              onClick={[MockFunction]}
+              onKeyDown={[Function]}
+              tabIndex={0}
             >
-              <path
-                className="color0"
-                d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </DropRightXS>
-      </WithStyles(DropRightXS)>
+              <svg
+                focusable={false}
+                height={12}
+                viewBox="0 0 12 12"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </DropRightXS>
     </div>
   </Navigation>
 </WithStyles(Navigation)>

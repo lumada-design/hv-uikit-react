@@ -29,10 +29,9 @@ module.exports = ({ svgOutput, componentName, colors, defaultSizes }) => {
 
   const selectors = ["Checkbox", "RadioButton"];
   const isSelector = selectors.some(el => componentName.startsWith(el));
-  const hasSpecialSize = /^Level(\d)/g.test(componentName);
-  const specialCaseXS = componentName.endsWith("XS");
-  const calcSize = size => (hasSpecialSize ? size + 8 : size);
-  const USE_DS_SPECS = true;
+  const hasSpecialSizeLevel = /^Level(\d)/g.test(componentName);
+  const hasSpecialSizeXS = componentName.endsWith("XS");
+  const calcSize = size => (hasSpecialSizeLevel ? size + 8 : size);
 
   const themedPalette = colors
     .replace(/"#414141"/g, "theme.palette.acce1")
@@ -41,79 +40,43 @@ module.exports = ({ svgOutput, componentName, colors, defaultSizes }) => {
 
   return `
 import React from "react";
-import PropTypes from "prop-types";
-import clsx from "clsx";
-import withStyles from "@material-ui/core/styles/withStyles";
-import useTheme from "@material-ui/core/styles/useTheme";
+import { useTheme } from "@material-ui/core";
+import HvIconBase from "./IconBase";
 
-const X_SMALL = "${calcSize(12)}px";
-const X_SMALL_BOX = "${USE_DS_SPECS ? 32 : calcSize(12)}px";
-const SMALL = "${calcSize(16)}px";
-const SMALL_BOX = "${USE_DS_SPECS ? 32 : calcSize(16)}px";
-const MEDIUM = "${calcSize(32)}px";
-const MEDIUM_BOX = "${USE_DS_SPECS ? 48 : calcSize(32)}px";
-const LARGE = "${calcSize(96)}px";
-const LARGE_BOX = "${USE_DS_SPECS ? 112 : calcSize(96)}px";
-
-const sizeSelector = (iconSize, iconHeight, iconWidth) => {
-  if (iconHeight && iconWidth) {
-    return { width: iconWidth, height: iconHeight };
+const sizeSelector = (iconSize, height, width) => {
+  if (height && width) {
+    return { width, height };
   }
 
   switch (iconSize) {
     case "XS":
-      return { width: X_SMALL, height: X_SMALL };
+      return { width: ${calcSize(12)}, height: ${calcSize(12)} };
     default:
     case "S":
-      return { width: SMALL, height: SMALL };
+      return { width: ${calcSize(16)}, height: ${calcSize(16)} };
     case "M":
-      return { width: MEDIUM, height: MEDIUM };
+      return { width: ${calcSize(32)}, height: ${calcSize(32)} };
     case "L":
-      return { width: LARGE, height: LARGE };
-  }
-};
-
-const sizeClass = (classes, iconSize) => {
-  switch (iconSize) {
-    case "XS":
-      return classes.rootXs;
-    default:
-    case "S":
-      return classes.rootS;
-    case "M":
-      return classes.rootM;
-    case "L":
-      return classes.rootL;
+      return { width: ${calcSize(96)}, height: ${calcSize(96)} };
   }
 };
 
 const ${componentName} = ({
-  classes,
   color,
-  iconSize = "${specialCaseXS ? "XS" : "S"}",
+  iconSize = "${hasSpecialSizeXS ? "XS" : "S"}",
   viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
   height,
   width,
   semantic,
   inverted = false,
-  className = "",
-  boxStyles,
-  style,
-  ...other
+  svgProps,
+  ...others
 }) => {
   const theme = useTheme();
-  let colorArray;
+  const colorArray = theme.palette?.[color] || color?.map?.(c => theme.palette[c] || c) || [${palette}];
 
-  if (typeof color == "string" && theme.palette[color]) {
-    colorArray = [theme.palette[color]];
-  } else if (Array.isArray(color)) {
-    colorArray = color.map(c => theme.palette[c] || c);
-  } else {
-    colorArray = [${palette}];
-
-    if (semantic) {
-      colorArray[0] = theme.palette[semantic];
-    }
+  if (semantic) {
+    colorArray[0] = theme.palette[semantic];
   }
 
   if (inverted && colorArray[1]) {
@@ -122,108 +85,14 @@ const ${componentName} = ({
   }
 
   const size = sizeSelector(iconSize, height, width);
-  const clx = clsx(className, classes.root, sizeClass(classes, iconSize));
 
   return (
-    <div className={clx} style={boxStyles} {...other}>
-      ${svgOutput.replace("{...other}", "style={style} focusable={false}")}
-    </div>
-  );
-};
+    <HvIconBase name="${componentName}" iconSize={iconSize ?? "S"} {...others}>
+      ${svgOutput.replace("{...other}", "focusable={false} {...svgProps}")}
+    </HvIconBase>
+)};
 
-const styles = {
-  root: {
-    display: "flex",
-    "& svg": {
-      margin: "auto"
-    }
-  },
-  rootXs: {
-    width: X_SMALL_BOX,
-    height: X_SMALL_BOX
-  },
-  rootS: {
-    width: SMALL_BOX,
-    height: SMALL_BOX
-  },
-  rootM: {
-    width: MEDIUM_BOX,
-    height: MEDIUM_BOX
-  },
-  rootL: {
-    width: LARGE_BOX,
-    height: LARGE_BOX
-  }
-};
+${componentName}.propTypes = HvIconBase.propTypes;
 
-${componentName}.propTypes = {
-  /**
-   * A Jss Object used to override or extend the styles applied.
-   */
-  classes: PropTypes.shape({
-    /**
-     * Styles applied to the root component.
-     */
-    root: PropTypes.string,
-    /**
-     * Styles applied to the root component, when it is extra small.
-     */
-    rootXs: PropTypes.string,
-    /**
-     * Styles applied to the root component, when it is small.
-     */
-    rootS: PropTypes.string,
-    /**
-     * Styles applied to the root component, when it is medium.
-     */
-    rootM: PropTypes.string,
-    /**
-     * Styles applied to the root component, when it is large.
-     */
-    rootL: PropTypes.string,
-  }),
-  /**
-   * Class names to be applied.
-   */
-  className: PropTypes.string,
-  /**
-   * A String or Array of strings representing the colors to override in the icon.
-   * Each element inside the array will override a diferent color.
-   * You can use either an HEX or color name from the palette.
-   */
-  color: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string)
-  ]),
-  /**
-   * A string that will override the viewbox of the svg
-   */
-  viewbox: PropTypes.string,
-  /**
-   * A string that will override the height of the svg
-   */
-  height: PropTypes.string,
-  /**
-   * A string that will override the width of the svg
-   */
-  width: PropTypes.string,
-  /**
-   * Sets one of the standard sizes of the icons
-   */
-  iconSize: PropTypes.oneOf(["XS","S","M","L"]),
-  /**
-   * Sets one of the standard semantic palette colors of the icon
-   */
-  semantic: PropTypes.oneOf(["sema1","sema2","sema3","sema4","sema5","sema6","sema7","sema8","sema9","sema10", "sema11","sema12","sema13","sema14","sema15","sema16","sema17","sema18","sema19"]),
-  /**
-   * Inverts the background-foreground on semantic icons
-   */
-  inverted: PropTypes.bool,
-  /**
-   * Styles applied to the box around the svg.
-   */
-  boxStyles: PropTypes.instanceOf(Object)
-};
-
-export default withStyles(styles, { name: "HvIcon${componentName}" })(${componentName});`;
+export default ${componentName};`;
 };

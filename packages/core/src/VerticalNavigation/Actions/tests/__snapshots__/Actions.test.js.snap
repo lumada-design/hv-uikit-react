@@ -15,7 +15,7 @@ exports[`[v3] Actions should be able to render 1`] = `
       className="HvVerticalNavigationActions-root"
     >
       <WithStyles(Action)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<Play />}
         label="Action 1"
       >
         <Action
@@ -26,7 +26,7 @@ exports[`[v3] Actions should be able to render 1`] = `
               "root": "HvVerticalNavigationAction-root",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<Play />}
           label="Action 1"
         >
           <WithStyles(ForwardRef)
@@ -74,56 +74,45 @@ exports[`[v3] Actions should be able to render 1`] = `
                 role="button"
                 tabIndex={0}
               >
-                <WithStyles(Play)
-                  boxStyles={
-                    Object {
-                      "height": "32px",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <Play
-                    boxStyles={
-                      Object {
-                        "height": "32px",
-                        "width": "32px",
-                      }
-                    }
-                    classes={
-                      Object {
-                        "root": "HvIconPlay-root",
-                        "rootL": "HvIconPlay-rootL",
-                        "rootM": "HvIconPlay-rootM",
-                        "rootS": "HvIconPlay-rootS",
-                        "rootXs": "HvIconPlay-rootXs",
-                      }
-                    }
+                <Play>
+                  <WithStyles(HvIconBase)
+                    iconSize="S"
+                    name="Play"
                   >
-                    <div
-                      className="HvIconPlay-root HvIconPlay-rootS"
-                      style={
+                    <HvIconBase
+                      classes={
                         Object {
-                          "height": "32px",
-                          "width": "32px",
+                          "l": "HvIconBase-l",
+                          "m": "HvIconBase-m",
+                          "root": "HvIconBase-root",
+                          "s": "HvIconBase-s",
+                          "xs": "HvIconBase-xs",
                         }
                       }
+                      iconSize="S"
+                      name="Play"
                     >
-                      <svg
-                        focusable={false}
-                        height="16px"
-                        viewBox="0 0 16 16"
-                        width="16px"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="HvIconBase-root HvIconBase-s"
+                        name="Play"
                       >
-                        <path
-                          className="color0"
-                          d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
-                          fill="#414141"
-                        />
-                      </svg>
-                    </div>
-                  </Play>
-                </WithStyles(Play)>
+                        <svg
+                          focusable={false}
+                          height={16}
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </HvIconBase>
+                  </WithStyles(HvIconBase)>
+                </Play>
                 Action 1
               </div>
             </ForwardRef>
@@ -195,7 +184,7 @@ exports[`[v3] Actions should be able to render 1`] = `
         </Action>
       </WithStyles(Action)>
       <WithStyles(Action)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<Stop />}
         label="Action 3"
       >
         <Action
@@ -206,7 +195,7 @@ exports[`[v3] Actions should be able to render 1`] = `
               "root": "HvVerticalNavigationAction-root",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<Stop />}
           label="Action 3"
         >
           <WithStyles(ForwardRef)
@@ -254,56 +243,45 @@ exports[`[v3] Actions should be able to render 1`] = `
                 role="button"
                 tabIndex={0}
               >
-                <WithStyles(Stop)
-                  boxStyles={
-                    Object {
-                      "height": "32px",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <Stop
-                    boxStyles={
-                      Object {
-                        "height": "32px",
-                        "width": "32px",
-                      }
-                    }
-                    classes={
-                      Object {
-                        "root": "HvIconStop-root",
-                        "rootL": "HvIconStop-rootL",
-                        "rootM": "HvIconStop-rootM",
-                        "rootS": "HvIconStop-rootS",
-                        "rootXs": "HvIconStop-rootXs",
-                      }
-                    }
+                <Stop>
+                  <WithStyles(HvIconBase)
+                    iconSize="S"
+                    name="Stop"
                   >
-                    <div
-                      className="HvIconStop-root HvIconStop-rootS"
-                      style={
+                    <HvIconBase
+                      classes={
                         Object {
-                          "height": "32px",
-                          "width": "32px",
+                          "l": "HvIconBase-l",
+                          "m": "HvIconBase-m",
+                          "root": "HvIconBase-root",
+                          "s": "HvIconBase-s",
+                          "xs": "HvIconBase-xs",
                         }
                       }
+                      iconSize="S"
+                      name="Stop"
                     >
-                      <svg
-                        focusable={false}
-                        height="16px"
-                        viewBox="0 0 16 16"
-                        width="16px"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="HvIconBase-root HvIconBase-s"
+                        name="Stop"
                       >
-                        <path
-                          className="color0"
-                          d="M14 14H2V2h12zM3 13h10V3H3z"
-                          fill="#414141"
-                        />
-                      </svg>
-                    </div>
-                  </Stop>
-                </WithStyles(Stop)>
+                        <svg
+                          focusable={false}
+                          height={16}
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M14 14H2V2h12zM3 13h10V3H3z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </HvIconBase>
+                  </WithStyles(HvIconBase)>
+                </Stop>
                 Action 3
               </div>
             </ForwardRef>
