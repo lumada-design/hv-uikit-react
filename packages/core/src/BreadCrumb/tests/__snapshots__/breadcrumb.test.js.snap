@@ -266,7 +266,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>
@@ -434,7 +434,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>
@@ -602,7 +602,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>
@@ -770,7 +770,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>
@@ -938,7 +938,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>
@@ -1106,7 +1106,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>
@@ -1274,7 +1274,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>
@@ -1442,7 +1442,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                         <path
                           className="color0"
                           d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#"
+                          fill="#999999"
                         />
                       </svg>
                     </div>

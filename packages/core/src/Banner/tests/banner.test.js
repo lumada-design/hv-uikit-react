@@ -181,7 +181,7 @@ describe("Banner ", () => {
   });
 
   it("should return the severity variant", () => {
-    const error = mount(iconVariant("error")).find("Fail");
+    const error = mount(iconVariant("error")).find(Fail);
     expect(error.length).toBe(1);
     const invalid = mount(iconVariant("test"));
     expect(invalid.isEmptyRender()).toBe(true);

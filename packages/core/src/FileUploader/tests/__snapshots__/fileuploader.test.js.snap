@@ -380,7 +380,7 @@ exports[`[v3] FileUploader withStyles should render correctly 1`] = `
                             <path
                               className="color0"
                               d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-                              fill="#"
+                              fill="#414141"
                             />
                           </svg>
                         </div>

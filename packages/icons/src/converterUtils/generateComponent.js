@@ -73,10 +73,14 @@ const ${componentName} = ({
   ...others
 }) => {
   const theme = useTheme();
-  const colorArray = theme.palette?.[color] || color?.map?.(c => theme.palette[c] || c) || [${palette}];
+  const getColor = c => theme.palette?.[c] || c;
+  const colorArray = 
+    (typeof color === "string" && [getColor(color)]) ||
+    (Array.isArray(color) && color.map?.(getColor)) ||
+    [${palette}];
 
   if (semantic) {
-    colorArray[0] = theme.palette[semantic];
+    colorArray[0] = theme.palette?.[semantic] || colorArray[0];
   }
 
   if (inverted && colorArray[1]) {
