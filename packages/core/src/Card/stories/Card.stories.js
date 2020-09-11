@@ -47,13 +47,13 @@ export default {
 export const Main = () => (
   <HvCard bgcolor="atmo1" style={{ width: 360 }}>
     <HvCardHeader title="Asset Avatar L90" subheader="Compressor" aria-label="Compressor" />
-    <HvCardMedia component="img" aria-label="Compressor" height={186} image={compressor} />
+    <HvCardMedia component="img" aria-label="Compressor" height={140} image={compressor} />
     <HvCardContent>
-      <div>
+      <div style={{ paddingTop: "20px" }}>
         <HvTypography variant="highlightText">ID</HvTypography>
         <HvTypography>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </div>
-      <div style={{ marginTop: "15px" }}>
+      <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">Last connected</HvTypography>
         <HvTypography>Aug 30, 2017 12:27:53 PM</HvTypography>
       </div>
@@ -265,7 +265,7 @@ export const KPICard = () => {
 
   const useStyles = makeStyles(theme => ({
     item: {
-      padding: theme.spacing(0, 0, "sm", 0)
+      padding: theme.spacing("sm", 0)
     },
     bottomItem: {
       padding: 0
@@ -419,11 +419,11 @@ export const Selectable = () => {
 
   const SingleContent = () => (
     <HvCardContent>
-      <div>
+      <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">ID</HvTypography>
         <HvTypography style={styles.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </div>
-      <div style={{ marginTop: "15px" }}>
+      <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">Last connected</HvTypography>
         <HvTypography style={styles.text}>Aug 30, 2017 12:27:53 PM</HvTypography>
       </div>
@@ -439,7 +439,7 @@ export const Selectable = () => {
         aria-label="Asset Avatar L90 press enter or space to select this card"
       >
         <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
-        <HvCardMedia component="img" image={compressor} height={186} title="Compressor" />
+        <HvCardMedia component="img" image={compressor} height={140} title="Compressor" />
         <SingleContent />
       </button>
       <HvActionContainer>
@@ -454,7 +454,7 @@ export const Selectable = () => {
         <HvActionsGeneric
           actions={[
             { id: "view", label: "View" },
-            { id: "booking", label: "Book a table" }
+            { id: "dismiss", label: "Dismiss" }
           ]}
         />
       </HvActionContainer>
@@ -487,7 +487,7 @@ export const SelectableNoFooter = () => {
         <HvTypography variant="highlightText">ID</HvTypography>
         <HvTypography style={styles.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </div>
-      <div style={{ marginTop: "15px" }}>
+      <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">Last connected</HvTypography>
         <HvTypography style={styles.text}>Aug 30, 2017 12:27:53 PM</HvTypography>
       </div>

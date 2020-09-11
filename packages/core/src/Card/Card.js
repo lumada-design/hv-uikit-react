@@ -5,7 +5,7 @@ import { Box, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 /**
- * A card container to be used for short and related of information.
+ * A card is a container for a few short and related pieces of content. It roughly resembles a playing card in size and shape and is intended as a linked short representation of a conceptual unit. For that reason, this pattern must be used as an entry-point for further information.
  */
 const HvCard = props => {
   const {

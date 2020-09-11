@@ -252,7 +252,7 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
         <WithStyles(Media)
           aria-label="Compressor"
           component="img"
-          height={186}
+          height={140}
           image="IMAGE_MOCK"
         >
           <Media
@@ -264,7 +264,7 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
               }
             }
             component="img"
-            height={186}
+            height={140}
             image="IMAGE_MOCK"
           >
             <WithStyles(ForwardRef(CardMedia))
@@ -276,7 +276,7 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
                 }
               }
               component="img"
-              height={186}
+              height={140}
               image="IMAGE_MOCK"
               role="img"
             >
@@ -290,14 +290,14 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
                   }
                 }
                 component="img"
-                height={186}
+                height={140}
                 image="IMAGE_MOCK"
                 role="img"
               >
                 <img
                   aria-label="Compressor"
                   className="MuiCardMedia-root HvCardMedia-root MuiCardMedia-media HvCardMedia-media MuiCardMedia-img"
-                  height={186}
+                  height={140}
                   role="img"
                   src="IMAGE_MOCK"
                 />
@@ -327,7 +327,13 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
                 <div
                   className="MuiCardContent-root HvCardContent-content"
                 >
-                  <div>
+                  <div
+                    style={
+                      Object {
+                        "paddingTop": "20px",
+                      }
+                    }
+                  >
                     <WithStyles(ForwardRef)
                       variant="highlightText"
                     >
@@ -405,7 +411,7 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
                   <div
                     style={
                       Object {
-                        "marginTop": "15px",
+                        "marginTop": "20px",
                       }
                     }
                   >
