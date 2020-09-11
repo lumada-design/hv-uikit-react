@@ -109,11 +109,11 @@ HvCharCounter.propTypes = {
    */
   currentCharQuantity: PropTypes.number,
   /**
-   * If ´true´ the counter is disabled.
+   * If `true` the counter is disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the info message won't have margins.
+   * If `true` the info message won't have margins.
    */
   disableGutter: PropTypes.bool
 };

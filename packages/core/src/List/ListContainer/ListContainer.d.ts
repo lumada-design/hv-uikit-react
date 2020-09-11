@@ -29,7 +29,7 @@ export interface HvListContainerProps
    */
   multiSelect?: boolean;
   /**
-   * If ´true´ compact the vertical spacing between list items.
+   * If `true` compact the vertical spacing between list items.
    */
   condensed?: boolean;
   /**

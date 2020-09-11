@@ -41,7 +41,8 @@ export interface HvTextAreaLabelsProp {
   requiredWarningText: string;
 }
 
-export interface HvTextAreaProps extends StandardProps<HvBaseInputProps, HvTextAreaClassKey, "onChange" | "onBlur"> {
+export interface HvTextAreaProps
+  extends StandardProps<HvBaseInputProps, HvTextAreaClassKey, "onChange" | "onBlur"> {
   /**
    * The initial value of the input, when uncontrolled.
    */
@@ -59,7 +60,7 @@ export interface HvTextAreaProps extends StandardProps<HvBaseInputProps, HvTextA
    */
   rows?: number;
   /**
-   * If ´true´ the component is resizable.
+   * If `true` the component is resizable.
    */
   resizable?: boolean;
   /**
@@ -72,7 +73,7 @@ export interface HvTextAreaProps extends StandardProps<HvBaseInputProps, HvTextA
    */
   blockMax?: boolean;
   /**
-   * If ´true´ the input value must be filled on blur or else the validation fails.
+   * If `true` the input value must be filled on blur or else the validation fails.
    */
   isRequired?: boolean;
   /**
@@ -81,7 +82,7 @@ export interface HvTextAreaProps extends StandardProps<HvBaseInputProps, HvTextA
   validationState?: "standBy" | "invalid";
   /**
    * The custom validation function, it receives the value and must return
-   * either ´true´ for valid or ´false´ for invalid, default validations would only
+   * either `true` for valid or `false` for invalid, default validations would only
    * occur if this function is null or undefined
    */
   validation?: (value: string) => boolean;
@@ -93,7 +94,7 @@ export interface HvTextAreaProps extends StandardProps<HvBaseInputProps, HvTextA
   onBlur?: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined,
     value: string,
-    validationState:  "standBy" | "invalid",
+    validationState: "standBy" | "invalid"
   ) => undefined | void;
   /**
    * Called back when the value is changed.

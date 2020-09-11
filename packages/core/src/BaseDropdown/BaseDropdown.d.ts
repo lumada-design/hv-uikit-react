@@ -9,7 +9,7 @@ export interface HvBaseDropdownProps
    */
   placeholder?: string | React.ReactNode;
   /**
-   * If ´true´ the dropdown is disabled unable to be interacted, if ´false´ it is enabled.
+   * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
    */
   disabled?: boolean;
   /**
@@ -18,7 +18,7 @@ export interface HvBaseDropdownProps
    */
   disablePortal?: boolean;
   /**
-   * If ´true´ the dropdown starts opened if ´false´ it starts closed.
+   * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded?: boolean;
   /**

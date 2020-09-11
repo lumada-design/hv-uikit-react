@@ -7,7 +7,7 @@ export interface HvLabelProps
    */
   label?: React.ReactNode;
   /**
-   * If ´true´ the input is disabled.
+   * If `true` the input is disabled.
    */
   disabled?: boolean;
 }

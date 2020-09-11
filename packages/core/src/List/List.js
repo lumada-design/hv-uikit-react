@@ -379,24 +379,24 @@ List.propTypes = {
    */
   onClick: PropTypes.func,
   /**
-   * If ´true´ the list items will show the selection state.
+   * If `true` the list items will show the selection state.
    */
   selectable: PropTypes.bool,
   /**
-   * If ´true´ and none element selected,
+   * If `true` and none element selected,
    * single select has default (first) label selected.
    */
   selectDefault: PropTypes.bool,
   /**
-   * If ´true´, selection can be toggled when single selection.
+   * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle: PropTypes.bool,
   /**
-   * If ´true´ the list will be rendered without vertical spacing.
+   * If `true` the list will be rendered without vertical spacing.
    */
   condensed: PropTypes.bool,
   /**
-   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips: PropTypes.bool
 };

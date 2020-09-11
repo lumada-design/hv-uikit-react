@@ -542,15 +542,15 @@ HvInput.propTypes = {
    */
   inputRef: PropTypes.shape({ current: PropTypes.any }),
   /**
-   * If ´true´ the input is disabled.
+   * If `true` the input is disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the input value must be filled on blur or else the validation fails.
+   * If `true` the input value must be filled on blur or else the validation fails.
    */
   isRequired: PropTypes.bool,
   /**
-   * If ´true´ the input is of type password hiding the value.
+   * If `true` the input is of type password hiding the value.
    */
   password: PropTypes.bool,
   /**
@@ -560,7 +560,7 @@ HvInput.propTypes = {
   onChange: PropTypes.func,
   /**
    * The function that will be executed onBlur, allows checking the validation state,
-   * it receives the value and the validation state (´empty´, ´filled´, ´invalid´, ´valid´).
+   * it receives the value and the validation state (`empty`, `filled`, `invalid`, `valid`).
    */
   onBlur: PropTypes.func,
   /**
@@ -587,7 +587,7 @@ HvInput.propTypes = {
   showInfo: PropTypes.bool,
   /**
    * The custom validation function, it receives the value and must return
-   * either ´true´ for valid or ´false´ for invalid, default validations would only
+   * either `true` for valid or `false` for invalid, default validations would only
    * occur if this function is null or undefined
    */
   validation: PropTypes.func,

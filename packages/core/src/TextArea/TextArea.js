@@ -272,7 +272,7 @@ HvTextArea.propTypes = {
    */
   validationState: PropTypes.oneOf(["standBy", "invalid"]),
   /**
-   * If ´true´ the the text area value must be filled on blur or else the validation fails.
+   * If `true` the the text area value must be filled on blur or else the validation fails.
    */
   isRequired: PropTypes.bool,
   /**
@@ -393,21 +393,21 @@ HvTextArea.propTypes = {
   onChange: PropTypes.func,
   /**
    * The custom validation function, it receives the value and must return
-   * either ´true´ for valid or ´false´ for invalid, default validations would only
+   * either `true` for valid or `false` for invalid, default validations would only
    * occur if this function is null or undefined
    */
   validation: PropTypes.func,
   /**
    * The function that will be executed onBlur, allows checking the validation state,
-   * it receives the value and the validation state (´empty´, ´filled´, ´invalid´, ´valid´).
+   * it receives the value and the validation state (`empty`, `filled`, `invalid`, `valid`).
    */
   onBlur: PropTypes.func,
   /**
-   * If ´true´ the text area is disabled.
+   * If `true` the text area is disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the component is resizable.
+   * If `true` the component is resizable.
    */
   resizable: PropTypes.bool,
   /**
@@ -416,7 +416,7 @@ HvTextArea.propTypes = {
    */
   autoScroll: PropTypes.bool,
   /**
-   * If ´true´ it isn't possible to have more characters than the `maxCharQuantity`
+   * If `true` it isn't possible to have more characters than the `maxCharQuantity`
    */
   blockMax: PropTypes.bool,
   /**

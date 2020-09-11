@@ -250,7 +250,7 @@ List.propTypes = {
    */
   labels: PropTypes.instanceOf(Object).isRequired,
   /**
-   * If ´true´ and none element selected,
+   * If `true` and none element selected,
    * single select has default (first) label selected.
    */
   selectDefault: PropTypes.bool,
@@ -259,11 +259,11 @@ List.propTypes = {
    */
   notifyChangesOnFirstRender: PropTypes.bool,
   /**
-   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips: PropTypes.bool,
   /**
-   * If ´true´, selection can be toggled when single selection.
+   * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle: PropTypes.bool.isRequired
 };

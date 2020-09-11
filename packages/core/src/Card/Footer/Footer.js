@@ -78,7 +78,7 @@ Footer.propTypes = {
   id: PropTypes.string,
   /**
    * The renderable content inside the actions slot of the footer,
-   * or an Array of actions ´{id, label, icon}´
+   * or an Array of actions `{id, label, icon}`
    */
   actions: oneOfType([
     PropTypes.node,
@@ -95,7 +95,7 @@ Footer.propTypes = {
     )
   ]),
   /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   *  The callback function ran when an action is triggered, receiving `action` as param
    */
   actionsCallback: PropTypes.func,
   /**
@@ -103,11 +103,11 @@ Footer.propTypes = {
    */
   actionsAlignment: PropTypes.oneOf(["left", "right"]),
   /**
-   *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
+   *  The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
    */
   maxVisibleActions: PropTypes.number,
   /**
-   *  ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
+   *  `true` if the card should have a checkbox in the footer to be selectable `false` if it is not required.
    */
   isSelectable: PropTypes.bool,
   /**

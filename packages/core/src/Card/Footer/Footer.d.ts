@@ -8,7 +8,7 @@ export interface HvCardFooterCommonProps extends HvActionsGenericCommonProps {
    */
   actionsAlignment?: "left" | "right";
   /**
-   *  ´true´ if the card should have a checkbox in the footer to be selectable ´false´ if it is not required.
+   *  `true` if the card should have a checkbox in the footer to be selectable `false` if it is not required.
    */
   isSelectable?: boolean;
 }

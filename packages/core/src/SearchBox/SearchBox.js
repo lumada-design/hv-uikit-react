@@ -176,7 +176,7 @@ HvSearchBox.propTypes = {
   suggestionSelectedCallback: PropTypes.func,
   /**
    * The function that will be executed onBlur, allows checking the validation state,
-   * it receives the value and the validation state (´empty´, ´filled´, ´invalid´, ´valid´).
+   * it receives the value and the validation state (`empty`, `filled`, `invalid`, `valid`).
    */
   onBlur: PropTypes.func,
   /**
@@ -201,7 +201,7 @@ HvSearchBox.propTypes = {
    */
   autoFocus: PropTypes.bool,
   /**
-   * If ´true´ the searchBox is disabled.
+   * If `true` the searchBox is disabled.
    */
   disabled: PropTypes.bool,
   /**

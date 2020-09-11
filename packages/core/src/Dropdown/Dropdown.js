@@ -193,19 +193,19 @@ HvDropdownBase.propTypes = {
     })
   ),
   /**
-   * If ´true´ the dropdown is multiSelect, if ´false´ the dropdown is single select.
+   * If `true` the dropdown is multiSelect, if `false` the dropdown is single select.
    */
   multiSelect: PropTypes.bool,
   /**
-   * If ´true´ the dropdown is rendered with a search bar, if ´false´ there won't be a search bar.
+   * If `true` the dropdown is rendered with a search bar, if `false` there won't be a search bar.
    */
   showSearch: PropTypes.bool,
   /**
-   * If ´true´ the dropdown is disabled unable to be interacted, if ´false´ it is enabled.
+   * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the dropdown starts opened if ´false´ it starts closed.
+   * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded: PropTypes.bool,
   /**
@@ -246,12 +246,12 @@ HvDropdownBase.propTypes = {
     multiSelectionConjunction: PropTypes.string
   }),
   /**
-   * If ´true´ and none element selected,
+   * If `true` and none element selected,
    * single select has default (first) label selected.
    */
   selectDefault: PropTypes.bool,
   /**
-   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips: PropTypes.bool,
   /**
@@ -260,7 +260,7 @@ HvDropdownBase.propTypes = {
    */
   disablePortal: PropTypes.bool,
   /**
-   * If ´true´, selection can be toggled when single selection.
+   * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle: PropTypes.bool,
   /**

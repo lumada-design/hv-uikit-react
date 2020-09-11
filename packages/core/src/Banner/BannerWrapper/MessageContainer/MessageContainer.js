@@ -64,7 +64,7 @@ MessageContainer.propTypes = {
     )
   ]),
   /**
-   * The callback function ran when an action is triggered, receiving ´actionsOnMessage´ as param
+   * The callback function ran when an action is triggered, receiving `actionsOnMessage` as param
    */
   actionsOnMessageCallback: PropTypes.func
 };

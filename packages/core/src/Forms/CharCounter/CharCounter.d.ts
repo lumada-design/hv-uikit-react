@@ -2,28 +2,28 @@ import { StandardProps } from "@material-ui/core";
 
 export interface HvCharCounterProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvCharCounterClassKey> {
-  /** 
-   * The string that separtes the current char quantity from the max quantity. 
+  /**
+   * The string that separtes the current char quantity from the max quantity.
    */
   separator: string;
   /**
    * The maximum allowed length of the characters.
    */
   maxCharQuantity: number;
-    /**
+  /**
    * The current char quantity to be rendered.
    */
   currentCharQuantity?: number;
   /**
-   * If ´true´ the input is disabled.
+   * If `true` the input is disabled.
    */
   disabled?: boolean;
   /**
-   * If ´true´ the info message won't have margins.
+   * If `true` the info message won't have margins.
    */
   disableGutter?: boolean;
 }
 
-export type HvCharCounterClassKey = "root" | "counterDisabled" |"overloaded" | "gutter";
+export type HvCharCounterClassKey = "root" | "counterDisabled" | "overloaded" | "gutter";
 
 export default function HvCharCounter(props: HvCharCounterProps): JSX.Element | null;
