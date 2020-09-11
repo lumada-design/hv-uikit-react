@@ -133,7 +133,7 @@ ActionsGeneric.propTypes = {
   disabled: PropTypes.bool,
   /**
    * The renderable content inside the actions slot of the footer,
-   * or an Array of actions ´{id, label, icon, disabled}´
+   * or an Array of actions `{id, label, icon, disabled}`
    */
   actions: PropTypes.oneOfType([
     PropTypes.node,
@@ -147,11 +147,11 @@ ActionsGeneric.propTypes = {
     )
   ]),
   /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   *  The callback function ran when an action is triggered, receiving `action` as param
    */
   actionsCallback: PropTypes.func,
   /**
-   *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
+   *  The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
    */
   maxVisibleActions: PropTypes.number
 };

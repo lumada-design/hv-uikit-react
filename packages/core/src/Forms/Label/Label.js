@@ -75,7 +75,7 @@ HvLabel.propTypes = {
    */
   label: PropTypes.node,
   /**
-   * If ´true´ the label is disabled.
+   * If `true` the label is disabled.
    */
   disabled: PropTypes.bool
 };

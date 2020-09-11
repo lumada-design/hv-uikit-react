@@ -371,7 +371,7 @@ HvBaseDropdown.propTypes = {
    */
   placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /**
-   * If ´true´ the dropdown is disabled unable to be interacted, if ´false´ it is enabled.
+   * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
    */
   disabled: PropTypes.bool,
   /**
@@ -380,7 +380,7 @@ HvBaseDropdown.propTypes = {
    */
   disablePortal: PropTypes.bool,
   /**
-   * If ´true´ the dropdown starts opened if ´false´ it starts closed.
+   * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded: PropTypes.bool,
   /**

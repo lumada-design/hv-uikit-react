@@ -181,7 +181,7 @@ HvBaseInput.propTypes = {
    */
   inputRef: PropTypes.shape({ current: PropTypes.any }),
   /**
-   * If ´true´ the input is disabled.
+   * If `true` the input is disabled.
    */
   disabled: PropTypes.bool,
   /**

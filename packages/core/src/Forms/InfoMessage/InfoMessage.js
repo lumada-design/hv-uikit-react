@@ -79,11 +79,11 @@ HvInfoMessage.propTypes = {
    */
   label: PropTypes.node,
   /**
-   * If ´true´ the label is disabled.
+   * If `true` the label is disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the info message won't have margins.
+   * If `true` the info message won't have margins.
    */
   disableGutter: PropTypes.bool
 };

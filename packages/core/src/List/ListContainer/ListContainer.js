@@ -120,7 +120,7 @@ HvListContainer.propTypes = {
    */
   multiSelect: PropTypes.bool,
   /**
-   * If ´true´ compact the vertical spacing between list items.
+   * If `true` compact the vertical spacing between list items.
    */
   condensed: PropTypes.bool,
   /**

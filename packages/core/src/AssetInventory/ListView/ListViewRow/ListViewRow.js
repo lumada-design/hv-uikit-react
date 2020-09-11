@@ -201,12 +201,13 @@ ListViewRow.propTypes = {
    */
   onSelection: PropTypes.func,
   /**
-   * ´true´ if the row should have a checkbox in the the left part to be selectable ´false´ if it is not required.
+   * `true` if the row should have a checkbox in the the left part to be selectable `false` if it is not required.
    */
   isSelectable: PropTypes.bool,
   /**
-   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
-   * note: if this value is specified the state of the checkbox must be managed
+   * Whether the checkbox is selected or not.
+   *
+   * Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
    */
   checked: PropTypes.bool,
   /**

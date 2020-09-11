@@ -31,7 +31,7 @@ export const validateCharLength = (value, maxCharQuantity, minCharQuantity) => {
  * Checks if the value is a number.
  *
  * @param {Number || String} num - The value to test.
- * @returns {Boolean} - ´true´ if the value is a number ´false´ otherwise.
+ * @returns {Boolean} - `true` if the value is a number `false` otherwise.
  */
 export const isNumeric = num =>
   // to prevent Number( <spaces> ) = 0
@@ -41,7 +41,7 @@ export const isNumeric = num =>
  * Checks if the value is an email
  *
  * @param {String} email - The value to test.
- * @returns {Boolean} - ´true´ if the value is an email ´false´ otherwise.
+ * @returns {Boolean} - `true` if the value is an email `false` otherwise.
  */
 export const isEmail = email => {
   const regexp = new RegExp(

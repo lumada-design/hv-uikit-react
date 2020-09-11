@@ -39,15 +39,15 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
    */
   inputRef?: React.Ref<unknown>;
   /**
-   * If ´true´ the input is disabled.
+   * If `true` the input is disabled.
    */
   disabled?: boolean;
   /**
-   * If ´true´ the input value must be filled on blur or else the validation fails.
+   * If `true` the input value must be filled on blur or else the validation fails.
    */
   isRequired?: boolean;
   /**
-   * If ´true´ the input is of type password hiding the value.
+   * If `true` the input is of type password hiding the value.
    */
   password?: boolean;
   /**
@@ -64,7 +64,7 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
   showInfo?: boolean;
   /**
    * The custom validation function, it receives the value and must return
-   * either ´true´ for valid or ´false´ for invalid, default validations would only
+   * either `true` for valid or `false` for invalid, default validations would only
    * occur if this function is null or undefined
    */
   validation?: (value: string) => boolean;

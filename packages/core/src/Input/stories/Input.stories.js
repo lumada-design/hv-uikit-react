@@ -222,7 +222,7 @@ Password.parameters = {
   docs: {
     description: {
       story:
-        "Password required input that only accepts the value ´password´ and limits the value between 6 or 12 characters."
+        "Password required input that only accepts the value `password` and limits the value between 6 or 12 characters."
     }
   }
 };
@@ -248,7 +248,7 @@ CustomValidation.parameters = {
   docs: {
     description: {
       story:
-        "Input with a custom validation function, it validates if the input contains the value ´hello´."
+        "Input with a custom validation function, it validates if the input contains the value `hello`."
     }
   }
 };

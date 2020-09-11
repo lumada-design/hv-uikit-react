@@ -10,7 +10,7 @@ export interface HvSnackbarProps
    */
   action?: React.ReactNode | ActionGeneric;
   /**
-   * The callback function ran when an action is triggered, receiving ´action´ as param
+   * The callback function ran when an action is triggered, receiving `action` as param
    */
   actionCallback?: (id: string, action: ActionGeneric) => void;
 }

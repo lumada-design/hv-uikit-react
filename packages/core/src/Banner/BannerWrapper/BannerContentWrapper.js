@@ -114,7 +114,7 @@ HvBannerContentWrapper.propTypes = {
     )
   ]),
   /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   *  The callback function ran when an action is triggered, receiving `action` as param
    */
   actionsCallback: PropTypes.func,
   /**

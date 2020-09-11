@@ -103,15 +103,15 @@ HvWarningText.propTypes = {
    */
   adornment: PropTypes.node,
   /**
-   * If ´true´ the text is not rendered.
+   * If `true` the text is not rendered.
    */
   isVisible: PropTypes.bool,
   /**
-   * If ´true´ the text is disabled.
+   * If `true` the text is disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the text won't include a gutter.
+   * If `true` the text won't include a gutter.
    */
   disableGutter: PropTypes.bool
 };
