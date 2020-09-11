@@ -24,7 +24,7 @@ export default {
   component: HvSuggestions,
   decorators: [
     Story => (
-      <div style={{ width: 500, height: 300 }}>
+      <div style={{ width: 500, height: 320 }}>
         <Story />
       </div>
     )
@@ -323,7 +323,7 @@ export const WithHighlighter = () => {
 
   const values = suggestionList
     .map((elem, id) => ({ id: String(id), label: elem.label, value: elem.value }))
-    .slice(0, 6);
+    .slice(0, 4);
 
   return (
     <>
