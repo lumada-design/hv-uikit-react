@@ -14,8 +14,7 @@ const styles = theme => ({
   },
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.normalText,
-    paddingTop: `${theme.hv.spacing.sm}px`
+    ...theme.hv.typography.normalText
   },
   action: {
     position: "absolute",
