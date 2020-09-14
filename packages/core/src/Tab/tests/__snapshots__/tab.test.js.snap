@@ -8,6 +8,7 @@ exports[`Tab withStyles should render correctly 1`] = `
     classes={
       Object {
         "disabled": "HvTab-disabled",
+        "focusVisible": "HvTab-focusVisible",
         "root": "HvTab-root",
         "selected": "HvTab-selected",
       }
@@ -27,6 +28,7 @@ exports[`Tab withStyles should render correctly 1`] = `
       disableRipple={true}
       disableTouchRipple={true}
       disabled={false}
+      focusVisibleClassName="HvTab-focusVisible"
       icon={null}
       label="Clickable Tab"
     >
@@ -48,6 +50,7 @@ exports[`Tab withStyles should render correctly 1`] = `
         disableRipple={true}
         disableTouchRipple={true}
         disabled={false}
+        focusVisibleClassName="HvTab-focusVisible"
         icon={null}
         label="Clickable Tab"
       >
@@ -57,6 +60,7 @@ exports[`Tab withStyles should render correctly 1`] = `
           disableTouchRipple={true}
           disabled={false}
           focusRipple={true}
+          focusVisibleClassName="HvTab-focusVisible"
           onClick={[Function]}
           role="tab"
         >
@@ -73,6 +77,7 @@ exports[`Tab withStyles should render correctly 1`] = `
             disableTouchRipple={true}
             disabled={false}
             focusRipple={true}
+            focusVisibleClassName="HvTab-focusVisible"
             onClick={[Function]}
             role="tab"
           >
