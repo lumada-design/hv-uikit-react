@@ -21,6 +21,7 @@ const styles = theme => {
       left: "0"
     },
     pageSizeOptionsSelect: {
+      fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.sText,
       "-webkit-appearance": "none",
       border: "none",
@@ -75,20 +76,24 @@ const styles = theme => {
         backgroundColor: hoverColor
       }
     },
-    pageSizeInputRoot: {
-      backgroundColor: "transparent",
-      "&:hover": {
-        backgroundColor: hoverColor
-      },
-      '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
-        WebkitAppearance: "none",
-        margin: 0
-      }
-    },
+    pageSizeInputRoot: {},
     pageSizeInputContainer: {
       width: "40px",
       minWidth: "40px",
-      maxWidth: `${theme.hv.spacing.lg}px`
+      maxWidth: `${theme.hv.spacing.lg}px`,
+      "& $pageSizeInputRoot": {
+        backgroundColor: "transparent",
+        "&:hover": {
+          backgroundColor: hoverColor
+        },
+        "&:focus": {
+          backgroundColor: hoverColor
+        },
+        '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
+          WebkitAppearance: "none",
+          margin: 0
+        }
+      }
     },
     iconContainer: {
       padding: 0,
