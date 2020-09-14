@@ -1,5 +1,7 @@
 const styles = theme => ({
-  root: {},
+  root: {
+    overflow: "visible"
+  },
   indicator: {
     display: "flex",
     justifyContent: "center",
@@ -12,6 +14,8 @@ const styles = theme => ({
     top: 0
   },
   scroller: {
+    // fixes inline style included in material ui tab in https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Tabs/Tabs.js#L125
+    overflow: "visible !important",
     "& $flexContainer": {
       borderTop: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
     }

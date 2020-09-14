@@ -15,6 +15,7 @@ const HvTab = props => {
       }}
       disableRipple
       disableTouchRipple
+      focusVisibleClassName={classes.focusVisible}
       {...others}
     />
   );
@@ -48,7 +49,11 @@ HvTab.propTypes = {
     /**
      * Styles applied to the root element if `disabled={true}` (controlled by the Tabs component).
      */
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
+    /**
+     * Styles applied to the root element if keyboard focused.
+     */
+    focusVisible: PropTypes.string
   }).isRequired,
   /**
    * If `true`, the tab will be disabled.
