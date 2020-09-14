@@ -1,23 +1,19 @@
 import React from "react";
-import { Fail, Success, Caution, Info } from "@hv/uikit-react-icons/dist";
+import { Fail, Success, Caution, Info } from "@hv/uikit-react-icons";
 
-const iconVariant = (variant, monochrome = false) => {
-  const Icon = () => {
-    switch (variant) {
-      case "success":
-        return <Success iconSize="S" color={monochrome ? "acce1" : "sema4"} />;
-      case "warning":
-        return <Caution iconSize="S" color={monochrome ? "acce1" : "sema20"} />;
-      case "error":
-        return <Fail iconSize="S" color={monochrome ? "acce1" : "sema4"} />;
-      case "info":
-        return <Info iconSize="S" color="acce1" />;
-      default:
-        return null;
-    }
-  };
-
-  return <Icon />;
+const iconVariant = (variant, color, semantic) => {
+  switch (variant) {
+    case "success":
+      return <Success color={color} semantic={semantic && "sema1"} />;
+    case "warning":
+      return <Caution color={color} semantic={semantic && "sema3"} />;
+    case "error":
+      return <Fail color={color} semantic={semantic && "sema4"} />;
+    case "info":
+      return <Info color={color} />;
+    default:
+      return null;
+  }
 };
 
 export default iconVariant;

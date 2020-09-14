@@ -17,7 +17,7 @@ const ModalTitle = ({
 }) => {
   const isString = typeof children === "string";
 
-  const icon = customIcon || (showIcon && iconVariant(variant, true));
+  const icon = customIcon || (showIcon && iconVariant(variant));
 
   return (
     <DialogTitle className={clsx(classes.root, className)} disableTypography {...others}>

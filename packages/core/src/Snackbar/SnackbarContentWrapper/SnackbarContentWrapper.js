@@ -19,7 +19,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
     actionCallback,
     ...others
   } = props;
-  const icon = customIcon || (showIcon && iconVariant(variant));
+  const icon = customIcon || (showIcon && iconVariant(variant, "base2"));
   const innerAction = React.isValidElement(action) ? action : [action];
 
   return (

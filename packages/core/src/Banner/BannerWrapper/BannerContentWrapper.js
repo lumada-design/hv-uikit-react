@@ -23,7 +23,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
     ...others
   } = props;
 
-  const icon = customIcon || (showIcon && iconVariant(variant, true));
+  const icon = customIcon || (showIcon && iconVariant(variant, "base2"));
 
   // default to inline
   // this might try to be more intelligent in the future,
