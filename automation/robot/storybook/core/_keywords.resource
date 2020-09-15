@@ -1,5 +1,5 @@
 *** Settings ***
-Library     SeleniumLibrary    timeout=15s    #version 4.3.0
+Library     SeleniumLibrary    timeout=15s    #version 4.5.0
 Library     String
 Resource    _variables.resource
 
@@ -95,9 +95,3 @@ wait until element attribute not contain
     Wait Until Keyword Succeeds    5x    1s
     ...    element attribute value should not contain    ${locator}    ${attribute}    ${value}
 
-wait until page contains elements
-    [Documentation]    workaround while it is not possible use seleniumLibrary 4.4 with:
-    ...                 - *'Wait Until Page Contains Element ... limit=x'*
-    [Arguments]    ${csslocator}    ${limit}
-    Wait For Condition
-    ...    return document.querySelectorAll('${csslocator}'.replace('css:','')).length == ${limit}
