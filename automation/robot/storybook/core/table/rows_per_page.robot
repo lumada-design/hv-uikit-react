@@ -24,6 +24,6 @@ show correct rows and pages when rows per page is changed
     Go To                                ${url}
     Wait Until Element Is Enabled        ${rows_per_page}
     Select From List By Value            ${rows_per_page}    ${per_page}
-    wait until page contains elements    ${rows_populated}    ${populated}
+    Wait Until Page Contains Element     ${rows_populated}    timeout=5s    limit=${populated}
     Page Should Contain Element          ${rows_counted}    limit=${per_page}
     elements text should be              ${pagination_count_of_pages}    ${pages}

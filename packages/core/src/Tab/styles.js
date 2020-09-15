@@ -21,9 +21,6 @@ const styles = theme => ({
       lineHeight: theme.hv.typography.highlightText.lineWeight,
       letterSpacing: theme.hv.typography.highlightText.letterSpacing
     },
-    "&:focus": {
-      ...outlineStyles
-    },
     "&$disabled": {
       color: theme.hv.palette.atmosphere.atmo5,
       cursor: "not-allowed",
@@ -45,6 +42,9 @@ const styles = theme => ({
     height: "1px",
     width: "100%",
     backgroundColor: theme.hv.palette.atmosphere.atmo4
+  },
+  focusVisible: {
+    ...outlineStyles
   },
   selected: {},
   disabled: {}

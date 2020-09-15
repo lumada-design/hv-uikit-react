@@ -95,6 +95,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                   classes={
                     Object {
                       "disabled": "HvTab-disabled",
+                      "focusVisible": "HvTab-focusVisible",
                       "root": "HvTab-root",
                       "selected": "HvTab-selected",
                       "tabBorder": "HvTab-tabBorder",
@@ -128,6 +129,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     disableRipple={true}
                     disableTouchRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvTab-focusVisible"
                     fullWidth={false}
                     icon={null}
                     id="tabs-tab1"
@@ -162,6 +164,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       disableRipple={true}
                       disableTouchRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvTab-focusVisible"
                       fullWidth={false}
                       icon={null}
                       id="tabs-tab1"
@@ -185,6 +188,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disableTouchRipple={true}
                         disabled={false}
                         focusRipple={true}
+                        focusVisibleClassName="HvTab-focusVisible"
                         id="tabs-tab1"
                         onClick={[Function]}
                         role="tab"
@@ -209,6 +213,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disableTouchRipple={true}
                           disabled={false}
                           focusRipple={true}
+                          focusVisibleClassName="HvTab-focusVisible"
                           id="tabs-tab1"
                           onClick={[Function]}
                           role="tab"
@@ -339,6 +344,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                   classes={
                     Object {
                       "disabled": "HvTab-disabled",
+                      "focusVisible": "HvTab-focusVisible",
                       "root": "HvTab-root",
                       "selected": "HvTab-selected",
                       "tabBorder": "HvTab-tabBorder",
@@ -372,6 +378,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     disableRipple={true}
                     disableTouchRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvTab-focusVisible"
                     fullWidth={false}
                     icon={null}
                     id="tabs-tab2"
@@ -406,6 +413,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       disableRipple={true}
                       disableTouchRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvTab-focusVisible"
                       fullWidth={false}
                       icon={null}
                       id="tabs-tab2"
@@ -429,6 +437,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disableTouchRipple={true}
                         disabled={false}
                         focusRipple={true}
+                        focusVisibleClassName="HvTab-focusVisible"
                         id="tabs-tab2"
                         onClick={[Function]}
                         role="tab"
@@ -453,6 +462,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disableTouchRipple={true}
                           disabled={false}
                           focusRipple={true}
+                          focusVisibleClassName="HvTab-focusVisible"
                           id="tabs-tab2"
                           onClick={[Function]}
                           role="tab"
@@ -583,6 +593,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                   classes={
                     Object {
                       "disabled": "HvTab-disabled",
+                      "focusVisible": "HvTab-focusVisible",
                       "root": "HvTab-root",
                       "selected": "HvTab-selected",
                       "tabBorder": "HvTab-tabBorder",
@@ -616,6 +627,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                     disableRipple={true}
                     disableTouchRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvTab-focusVisible"
                     fullWidth={false}
                     icon={null}
                     id="tabs-tab3"
@@ -650,6 +662,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       disableRipple={true}
                       disableTouchRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvTab-focusVisible"
                       fullWidth={false}
                       icon={null}
                       id="tabs-tab3"
@@ -673,6 +686,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disableTouchRipple={true}
                         disabled={false}
                         focusRipple={true}
+                        focusVisibleClassName="HvTab-focusVisible"
                         id="tabs-tab3"
                         onClick={[Function]}
                         role="tab"
@@ -697,6 +711,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disableTouchRipple={true}
                           disabled={false}
                           focusRipple={true}
+                          focusVisibleClassName="HvTab-focusVisible"
                           id="tabs-tab3"
                           onClick={[Function]}
                           role="tab"

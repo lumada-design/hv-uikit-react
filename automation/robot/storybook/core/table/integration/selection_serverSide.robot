@@ -46,7 +46,7 @@ keep selection when number of rows per table is increased
     Select Checkbox                     ${row_1_checkbox}
     Select Checkbox                     ${row_10_checkbox}
     Select From List By Value           ${rows_per_page}   20
-    wait until page contains elements   ${rows_populated}    20
+    Wait Until Page Contains Element    ${rows_populated}    timeout=5s    limit=20
     Checkbox Should Be Selected         ${row_1_checkbox}
     Checkbox Should Be Selected         ${row_10_checkbox}
 

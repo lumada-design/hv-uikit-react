@@ -1,6 +1,7 @@
 const styles = theme => ({
   root: {
-    minHeight: 0
+    minHeight: 0,
+    overflow: "visible"
   },
   indicator: {
     display: "flex",
@@ -12,7 +13,13 @@ const styles = theme => ({
     },
     height: 2
   },
-  scroller: {},
+  scroller: {
+    // fixes inline style included in material ui tab in https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Tabs/Tabs.js#L125
+    overflow: "visible !important",
+    "& $flexContainer": {
+      borderTop: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+    }
+  },
   flexContainer: {
     "& button:first-child": {
       marginLeft: "3px"
