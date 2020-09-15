@@ -1,4 +1,5 @@
 import { outlineStyles } from "../Focus/styles";
+import "focus-within-polyfill";
 
 const styles = theme => ({
   root: {
@@ -16,12 +17,13 @@ const styles = theme => ({
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
-    },
-    "&:hover, &:focus-within": {
+      background: theme.hv.palette.atmosphere.atmo1,
       "& $iconClear": {
         visibility: "visible"
       }
+    },
+    "&:focus-within $iconClear": {
+      visibility: "visible"
     }
   },
   inputRootDisabled: {
