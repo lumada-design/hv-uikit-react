@@ -9,12 +9,12 @@ exports[`v3 <CalendarHeader /> should render correctly 1`] = `
   <HvCalendarHeader
     classes={
       Object {
-        "background": "HvCalendarHeader-background",
         "headerDate": "HvCalendarHeader-headerDate",
         "headerDayOfWeek": "HvCalendarHeader-headerDayOfWeek",
         "input": "HvCalendarHeader-input",
         "invalid": "HvCalendarHeader-invalid",
         "rangeLabel": "HvCalendarHeader-rangeLabel",
+        "root": "HvCalendarHeader-root",
       }
     }
     id="default"
@@ -22,7 +22,7 @@ exports[`v3 <CalendarHeader /> should render correctly 1`] = `
     value={2020-01-01T00:00:00.000Z}
   >
     <div
-      className="HvCalendarHeader-background"
+      className="HvCalendarHeader-root"
       id="default"
     >
       <div

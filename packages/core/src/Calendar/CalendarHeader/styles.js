@@ -4,7 +4,7 @@ const styles = theme => ({
   rangeLabel: {
     paddingBottom: "10px"
   },
-  background: {
+  root: {
     backgroundColor: theme.palette.atmo1,
     borderBottom: `1px solid ${theme.palette.atmo4}`,
     borderTop: "1px solid transparent",
@@ -19,9 +19,7 @@ const styles = theme => ({
     paddingLeft: theme.spacing("xs")
   },
   headerDate: {},
-  invalid: {
-    border: `1px solid ${theme.palette.sema4}`
-  },
+  invalid: {},
   input: {
     border: "none",
     backgroundColor: "transparent",

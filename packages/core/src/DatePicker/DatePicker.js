@@ -16,13 +16,8 @@ import {
 import styles from "./styles";
 import withLabels from "../withLabels";
 import withId from "../withId";
-import {
-  DEFAULT_LOCALE,
-  getFormattedDate,
-  isDate,
-  isSameDay,
-  isValidLocale
-} from "../Calendar/utils";
+import { DEFAULT_LOCALE, isDate, isSameDay } from "../Calendar/utils";
+import { getDateLabel, validateLocale } from "./utils";
 import { NAV_OPTIONS } from "../Calendar/enums";
 
 const DEFAULT_LABELS = {
@@ -33,8 +28,6 @@ const DEFAULT_LABELS = {
   rangeStart: "Start date",
   rangeEnd: "End date"
 };
-
-const validateLocale = locale => (isValidLocale(locale) ? locale : DEFAULT_LOCALE);
 
 /**
  * A graphical widget which allows the user to select a date.
@@ -56,18 +49,17 @@ const HvDatePicker = ({
   escapeWithReference = true,
   ...others
 }) => {
-  const now = new Date();
-
   const [locale, setLocale] = useState(validateLocale(localeProp));
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const [startDate, setStartDate, rollbackStartDate] = useSavedState(
-    (rangeMode ? startValue : value) ?? now
+    rangeMode ? startValue : value
   );
   const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
 
-  const [visibleMonth, setVisibleMonth] = useState((startDate || now)?.getMonth());
-  const [visibleYear, setVisibleYear] = useState((startDate || now)?.getFullYear());
+  const visibleDate = (isDate(startDate) && startDate) || new Date();
+  const [visibleMonth, setVisibleMonth] = useState(visibleDate?.getMonth() + 1);
+  const [visibleYear, setVisibleYear] = useState(visibleDate?.getFullYear());
 
   useEffect(() => {
     setStartDate(rangeMode ? startValue : value, true);
@@ -78,6 +70,13 @@ const HvDatePicker = ({
   useEffect(() => {
     setLocale(validateLocale(localeProp));
   }, [localeProp]);
+
+  useEffect(() => {
+    if (!calendarOpen) return;
+    setVisibleMonth(visibleDate?.getMonth() + 1);
+    setVisibleYear(visibleDate?.getFullYear());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [calendarOpen]);
 
   const handleVisibleDateChange = (event, action, index) => {
     switch (action) {
@@ -141,26 +140,14 @@ const HvDatePicker = ({
     const shouldSave = !(rangeMode || showActions);
     shouldSave ? handleApply() : handleCancel();
   };
-  /**
-   * Gets the formatted selected value to be displayed on the input.
-   *
-   * @memberOf HvDatePicker
-   */
-  const getFormattedSelectedDate = () => {
-    if (rangeMode && isDate(startDate) && isDate(endDate)) {
-      return `${getFormattedDate(startDate, locale)} - ${getFormattedDate(endDate, locale)}`;
-    }
-
-    return isDate(startDate) ? getFormattedDate(startDate, locale) : "";
-  };
 
   const handleDateChange = (event, newDate) => {
     const autoSave = !showActions && !rangeMode;
 
-    if (isSameDay(startDate, newDate) || isSameDay(endDate, newDate)) return;
+    if (!isDate(newDate) || isSameDay(startDate, newDate) || isSameDay(endDate, newDate)) return;
 
     if (rangeMode) {
-      if ((startDate && endDate) || newDate < startDate) {
+      if (!startDate || (startDate && endDate) || newDate < startDate) {
         setStartDate(newDate);
         setEndDate(null);
       } else {
@@ -196,13 +183,10 @@ const HvDatePicker = ({
     </HvTypography>
   );
 
+  const dateValue = rangeMode ? { startDate, endDate } : startDate;
+
   return (
-    <HvFormElement
-      id={id}
-      className={clsx(classes.root, className)}
-      value={rangeMode ? { startDate, endDate } : startDate}
-      {...others}
-    >
+    <HvFormElement id={id} className={clsx(classes.root, className)} value={dateValue} {...others}>
       {labels.title && (
         <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title} />
       )}
@@ -213,7 +197,7 @@ const HvDatePicker = ({
         expanded={calendarOpen}
         onToggle={(evt, open) => setCalendarOpen(open)}
         onClickOutside={handleCalendarClickAway}
-        placeholder={renderInput(getFormattedSelectedDate())}
+        placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
         adornment={<Calendar className={classes.icon} />}
         popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
       >

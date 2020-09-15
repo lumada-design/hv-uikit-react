@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import withTooltip from "../../withTooltip";
 import {
   getDateISO,
   getFormattedDate,
@@ -11,7 +10,7 @@ import {
   dateInProvidedValueRange,
   checkIfDateIsDisabled
 } from "../utils";
-import HvTypography from "../../Typography";
+import { HvTooltip, HvTypography } from "../..";
 import styles from "./styles";
 
 const HvCalendarCell = ({
@@ -26,7 +25,7 @@ const HvCalendarCell = ({
   locale,
   minimumDate,
   maximumDate,
-  rangeMode,
+  rangeMode = false,
   ...others
 }) => {
   const { startDate, endDate } = calendarValue;
@@ -37,20 +36,24 @@ const HvCalendarCell = ({
   const isCellStartingDate = rangeMode ? isSameDay(value, startDate) : false;
   const isDateInSelectionRange =
     calendarValue && rangeMode ? dateInProvidedValueRange(value, calendarValue) : false;
-  const isDateDisabled =
-    minimumDate || maximumDate ? checkIfDateIsDisabled(value, minimumDate, maximumDate) : false;
+  const isDateDisabled = checkIfDateIsDisabled(value, minimumDate, maximumDate);
   const startBookend = isSameDay(startDate, value);
   const endBookend = isSameDay(endDate, value);
+  const isSelecting = isDateSelectionMode && isCellAfterStartingDate;
 
-  const onClickFunc = event => {
-    onChange(event, value);
+  const handleClick = event => {
+    onChange?.(event, value);
+  };
+
+  const handleKeyDown = event => {
+    arrowKeysFocus?.(event, handleClick, 7);
   };
 
   const DateDisplay = () => (
     <div
       className={clsx(classes.cellContainer, { [classes.focusSelection]: inMonth })}
-      onClick={!isDateDisabled ? onClickFunc : undefined}
-      onKeyDown={event => arrowKeysFocus(event, onClickFunc, 7)}
+      onClick={!isDateDisabled ? handleClick : undefined}
+      onKeyDown={handleKeyDown}
       role="button"
       tabIndex={0}
       {...others}
@@ -67,29 +70,26 @@ const HvCalendarCell = ({
           [classes.endBookend]: inMonth && endBookend && rangeMode
         })}
       >
-        {value.getUTCDate()}
+        {value.getDate()}
       </HvTypography>
     </div>
   );
 
-  const tooltipContainerProps = {
-    className: clsx({
-      [classes.cellsInRange]:
-        inMonth && rangeMode && isDateSelectionMode && isCellAfterStartingDate,
-      [classes.cellsOutsideRange]: rangeMode && !(isDateSelectionMode && isCellAfterStartingDate)
-    })
-  };
-
-  const DateTooltipWrapper = withTooltip(
-    DateDisplay,
-    getFormattedDate(value, locale),
-    undefined,
-    undefined,
-    undefined,
-    tooltipContainerProps
+  return (
+    <HvTooltip
+      key={getDateISO(value)}
+      title={<HvTypography noWrap>{getFormattedDate(value, locale)}</HvTypography>}
+    >
+      <div
+        className={clsx({
+          [classes.cellsInRange]: inMonth && rangeMode && isSelecting,
+          [classes.cellsOutsideRange]: rangeMode && !isSelecting
+        })}
+      >
+        <DateDisplay />
+      </div>
+    </HvTooltip>
   );
-  // TODO: Maybe we could have a custom tooltip for the calendar to avoid passing so many subprops
-  return <DateTooltipWrapper key={getDateISO(value)} />;
 };
 
 HvCalendarCell.propTypes = {

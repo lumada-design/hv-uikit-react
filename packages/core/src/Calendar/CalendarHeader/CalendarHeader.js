@@ -43,9 +43,7 @@ const HvCalendarHeader = ({
     localValue = showEndDate ? preLocalValue.endDate : preLocalValue.startDate;
   }
 
-  // eslint-disable-next-line no-underscore-dangle
   const localeFormat = moment.localeData().longDateFormat("L");
-
   const isValidValue = moment.utc(localValue, "L").isValid();
 
   useEffect(() => {
@@ -92,19 +90,20 @@ const HvCalendarHeader = ({
   return (
     <div
       id={localId}
-      className={clsx(classes.background, {
-        [classes.invalid]: !isValidValue,
-        [classes.invalid]: false
+      className={clsx(classes.root, {
+        [classes.invalid]: !isValidValue
       })}
     >
-      <div className={classes.headerDayOfWeek}>
-        <HvTypography variant="normalText">{weekDayDisplay}</HvTypography>
-      </div>
+      {weekDayDisplay && (
+        <div className={classes.headerDayOfWeek}>
+          <HvTypography variant="normalText">{weekDayDisplay}</HvTypography>
+        </div>
+      )}
       <div className={classes.headerDate}>
         <input
           id={setId(localId, "header-input")}
           placeholder={localeFormat}
-          value={isNil(editedValue) ? displayValue : editedValue}
+          value={editedValue ?? displayValue}
           className={classes.input}
           onBlur={event => onBlurHandler(event, onChange)}
           onFocus={onFocusHandler}

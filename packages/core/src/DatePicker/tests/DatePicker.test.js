@@ -2,7 +2,8 @@ import React from "react";
 import { mount } from "enzyme";
 
 import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
-import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker, HvTypography } from "../..";
+import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker } from "../..";
+import SingleCalendar from "../../Calendar/SingleCalendar";
 import { convertISOStringDateToDate } from "../../Calendar/utils";
 
 describe("<DatePicker /> with minimum configuration", () => {
@@ -15,7 +16,7 @@ describe("<DatePicker /> with minimum configuration", () => {
         <HvDatePicker />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find("HvDatePicker");
+    DatePickerComponent = wrapper.find(HvDatePicker);
   });
 
   it("should be defined", () => {
@@ -32,10 +33,6 @@ describe("<DatePicker /> with minimum configuration", () => {
 
   it("should not render any Calendar component", () => {
     expect(wrapper.find(HvCalendar).length).toBe(0);
-  });
-
-  it("should have an empty value on the input", () => {
-    expect(DatePickerComponent.find("input").instance().value).toBe("");
   });
 
   it("should add a <Calendar /> component to the container when clicking on the calendar icon", () => {
@@ -62,7 +59,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvDatePicker rangeMode={false} value="2019-01-01" locale="en-US" />
+        <HvDatePicker value={new Date("2019-01-01")} locale="en-US" />
       </HvProvider>
     );
   });
@@ -93,23 +90,26 @@ describe("<DatePicker /> with Single Calendar mode", () => {
 
   it("should have the Calendar component with the same selected date as the received value property", () => {
     wrapper.find(CalendarIcon).simulate("click");
-    const calendarInstance = wrapper.find(HvCalendar);
+    const calendarInstance = wrapper.find(HvDatePicker);
 
-    expect(calendarInstance.prop("selectedDate")).toEqual(convertISOStringDateToDate("2019-01-01"));
+    expect(calendarInstance.prop("value")).toEqual(convertISOStringDateToDate("2019-01-01"));
   });
 });
 
 describe("<DatePicker /> with Range Calendar mode", () => {
   let wrapper;
-  let DatePickerComponent;
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvDatePicker rangeMode locale="en-US" startValue="2019-01-05" endValue="2019-01-10" />
+        <HvDatePicker
+          rangeMode
+          locale="en-US"
+          startValue={new Date("2019-01-05")}
+          endValue={new Date("2019-01-10")}
+        />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find("HvDatePicker");
   });
 
   it("should be defined", () => {
@@ -127,7 +127,7 @@ describe("<DatePicker /> with Range Calendar mode", () => {
   it("should open two calendars when clicking the calendar icon", () => {
     wrapper.find(CalendarIcon).simulate("click");
 
-    expect(wrapper.find(HvCalendar).length).toBe(2);
+    expect(wrapper.find(SingleCalendar).length).toBe(2);
   });
 
   it("should show an Actions component when opening the calendars", () => {
@@ -135,15 +135,10 @@ describe("<DatePicker /> with Range Calendar mode", () => {
 
     expect(wrapper.find(HvActionContainer).length).toBe(1);
   });
-
-  it("should not have a Typography component if the `title` props is not passed inside the labels object", () => {
-    expect(DatePickerComponent.find(HvTypography).length).toBe(0);
-  });
 });
 
 describe("<DatePicker /> with custom properties", () => {
   let wrapper;
-  let DatePickerComponent;
   const labels = {
     applyLabel: "OK",
     cancelLabel: "GO BACK",
@@ -156,7 +151,7 @@ describe("<DatePicker /> with custom properties", () => {
       <HvProvider>
         <HvDatePicker
           locale="en-US"
-          value="2019-01-05"
+          value={new Date("2019-01-05")}
           labels={labels}
           horizontalPlacement="left"
           showActions
@@ -164,7 +159,6 @@ describe("<DatePicker /> with custom properties", () => {
         />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find("HvDatePicker");
   });
 
   it("should be defined", () => {
@@ -177,20 +171,6 @@ describe("<DatePicker /> with custom properties", () => {
 
   it("should show an Actions component when opening the calendar", () => {
     wrapper.find(CalendarIcon).simulate("click");
-
     expect(wrapper.find(HvActionContainer).length).toBe(1);
-  });
-
-  it("should add the correct placeholder to the input", () => {
-    expect(wrapper.find("input").instance().placeholder).toBe(labels.placeholder);
-  });
-
-  it("should have a Typography component if the `title` props is passed inside the labels object", () => {
-    expect(DatePickerComponent.find(HvTypography).length).toBe(1);
-  });
-
-  it("should have the Typography component with the same text as the one passed on the `title` prop", () => {
-    const typographyElement = wrapper.find(HvTypography);
-    expect(typographyElement.prop("children")).toBe(labels.title);
   });
 });

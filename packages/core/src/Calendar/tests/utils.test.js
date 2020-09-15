@@ -270,7 +270,7 @@ describe("Calendar utils - getWeekdayNamesList", () => {
 
 describe("Calendar utils - getMonthName", () => {
   it("should return a string", () => {
-    expect(typeof getMonthName(1, "en-US")).toBe("string");
+    expect(typeof getMonthName(new Date(), "en-US")).toBe("string");
   });
 });
 
