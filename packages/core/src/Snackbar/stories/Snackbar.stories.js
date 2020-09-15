@@ -82,6 +82,7 @@ export const CustomIcon = () => (
     <HvSnackbar
       open
       offset={0}
+      style={{ position: "relative" }}
       id="snackbar2"
       label="This is a snackbar with a custom icon."
       customIcon={<Info color="base2" />}
@@ -101,6 +102,7 @@ export const CustomAction = () => (
       open
       id="actionStructure"
       offset={0}
+      style={{ position: "relative" }}
       label="This is a snackbar."
       showIcon
       action={{ id: "post", label: "Action", disabled: false }}
