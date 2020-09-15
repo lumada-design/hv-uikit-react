@@ -1,66 +1,64 @@
 *** Setting ***
 Resource      _resources.resource
 Test Setup    Run Keywords
-...           Go To    ${patterns}dropdown--multi-selection    AND
-...           Wait Until Element Is Enabled    ${dropdown}
-Force Tags  v3
-
-
-*** Comments ***
-theses list was not compatible with list selenium keywords
+...           Go To    ${patterns}dropdown--multi-selection
+...           AND    Wait Until Element Is Enabled    ${dropdown}
+...           AND    Click Element                    ${dropdownHeader}
+...           AND    Wait Until Element Is Visible    ${listBox}
+Force Tags    v3
 
 
 *** Test Cases ***
-Open and close dropdown when click the input (top part of the dropdown)
-    Click Element                        ${dropdownHeader}
-    Wait Until Element Is Visible        ${listBox}
+Open and close dropdown when is clicked header section
     Click Element                        ${dropdownHeader}
     Wait Until Element Is Not Visible    ${listBox}
 
-unselect all values when is unselected all options one by one
-    Click Element                        ${dropdown}
-    Element Attribute Value Should Be    ${option2}          aria-selected    true
-    Click Element                        ${option2}
-    Page Should Not Contain Element      ${aria-selected}
+close dropdown when Apply button is clicked
     Click Button                         Apply
-    Click Element                        ${dropdown}
-    Page Should Not Contain Element      ${aria-selected}
+    Wait Until Element Is Not Visible    ${listBox}
 
 select all options when checked all option
-    Click Element                    ${dropdown}
     Page Should Contain Element      ${aria-selected}    limit=1
     Click Element                    ${selectAll}
     Click Element                    ${selectAll}
     Page Should Contain Element      ${aria-selected}    limit=4
     Click Button                     Apply
     Click Element                    ${dropdown}
+    Wait Until Element Is Visible    ${listBox}
     Page Should Contain Element      ${aria-selected}    limit=4
 
+unselect all when is unselected all options one by one
+    Element Attribute Value Should Be    ${option2}    aria-selected    true
+    Click Element                        ${option2}
+    Page Should Not Contain Element      ${aria-selected}
+    Click Button                         Apply
+    Click Element                        ${dropdown}
+    Wait Until Element Is Visible        ${listBox}
+    Page Should Not Contain Element      ${aria-selected}
+
 unselect all options when unchecked all option
-    Click Element                      ${dropdown}
     Page Should Contain Element        ${aria-selected}    limit=1
     Click Element                      ${selectAll}
     Page Should not Contain Element    ${aria-selected}
     Click Button                       Apply
     Click Element                      ${dropdown}
+    Wait Until Element Is Visible      ${listBox}
     Page Should not Contain Element    ${aria-selected}
 
-show indeterminate state when just some options are checked
-    Click Element                        ${dropdown}
+show indeterminate state when just some options are selected
     Element Attribute Value Should Be    ${selectAll}    data-indeterminate    true
 
 cancel selection when is clicked out of dropdown area
-    Click Element                    ${dropdown}
     Page Should Contain Element      ${aria-selected}    limit=1
     Click Element                    ${selectAll}
     Click Element                    ${selectAll}
     Page Should Contain Element      ${aria-selected}    limit=4
     Click Element                    css:body
     Click Element                    ${dropdown}
+    Wait Until Element Is Visible    ${listBox}
     Page Should Contain Element      ${aria-selected}    limit=1
 
 cancel selection when activated cancel button
-    Click Element                    ${dropdown}
     Page Should Contain Element      ${aria-selected}    limit=1
     Click Element                    ${selectAll}
     Click Element                    ${selectAll}

@@ -232,35 +232,3 @@ Disabled.parameters = {
   },
   v3: true
 };
-
-export const Expanded = () => (
-  <HvDropdown
-    id="dropdown12"
-    expanded
-    multiSelect
-    showSearch
-    labels={{ title: "Dropdown" }}
-    values={[
-      { label: "value 1" },
-      { label: "value 2" },
-      { label: "value 3", selected: true },
-      { label: "value 4" },
-      { label: "value 5 value 5 value 5 555555555555 value value 5" },
-      { label: "value 6" },
-      { label: "value 7" },
-      { label: "value 8", selected: true },
-      { label: "value 9", selected: true },
-      { label: "value 10" },
-      { label: "value 11" },
-      { label: "value 12" }
-    ]}
-  />
-);
-
-Expanded.parameters = {
-  docs: {
-    disable: true,
-    inlineStories: false
-  },
-  v3: true
-};
