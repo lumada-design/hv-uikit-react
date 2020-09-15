@@ -65,18 +65,20 @@ const styles = theme => {
       display: "inline-block",
       marginRight: `${theme.hv.spacing.xs}px`
     },
-    pageSizeInput: {
-      ...theme.hv.typography.labelText,
-      paddingLeft: `${theme.hv.spacing.xs / 2}px`,
-      paddingRight: `${theme.hv.spacing.xs / 2}px`,
-      margin: 0,
-      textAlign: "right",
-      MozAppearance: "textfield",
-      "&:focus": {
-        backgroundColor: hoverColor
+    pageSizeInput: {},
+    pageSizeInputRoot: {
+      "& $pageSizeInput": {
+        ...theme.hv.typography.labelText,
+        paddingLeft: `${theme.hv.spacing.xs / 2}px`,
+        paddingRight: `${theme.hv.spacing.xs / 2}px`,
+        margin: 0,
+        textAlign: "right",
+        MozAppearance: "textfield",
+        "&:focus": {
+          backgroundColor: hoverColor
+        }
       }
     },
-    pageSizeInputRoot: {},
     pageSizeInputContainer: {
       width: "40px",
       minWidth: "40px",
