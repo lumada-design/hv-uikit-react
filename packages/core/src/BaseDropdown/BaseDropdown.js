@@ -50,12 +50,12 @@ const HvBaseDropdown = ({
 
   useEffect(() => {
     if (expanded !== isOpen) {
-      const value = expanded && !(disabled || elementDisabled);
+      const value = expanded && !localDisabled;
       setIsOpen(value);
       onToggle?.(null, value);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [expanded, disabled, elementDisabled]);
+  }, [expanded, localDisabled]);
 
   /**
    * If closes focus on the header component.
@@ -112,10 +112,9 @@ const HvBaseDropdown = ({
   };
 
   const buildHeaderLabel = () => (
-    <div className={classes.selection}>
+    <div className={classes.selection} id={setId(localId, "selectionPlaceholder")}>
       {placeholder && typeof placeholder === "string" ? (
         <HvTypography
-          id={setId(localId, "selectionPlaceholder")}
           className={clsx(classes.truncate, {
             [classes.selectionDisabled]: localDisabled
           })}
@@ -140,10 +139,11 @@ const HvBaseDropdown = ({
       />
     ));
 
-  const labelledby =
-    others["aria-labelledby"] ??
-    HvLabel?.[0]?.id ??
-    (!component && setId(localId, "selectionPlaceholder"));
+  const ariaLabelledBy =
+    others["aria-labelledby"] ||
+    HvLabel?.[0]?.id ||
+    (!component && setId(localId, "selectionPlaceholder")) ||
+    undefined;
 
   const renderHeader = () => {
     return (
@@ -157,7 +157,8 @@ const HvBaseDropdown = ({
         })}
         role="textbox"
         style={localDisabled ? { pointerEvents: "none" } : undefined}
-        aria-labelledby={labelledby || undefined}
+        aria-labelledby={ariaLabelledBy}
+        aria-controls={isOpen ? setId(localId, "children-container") : undefined}
         aria-label={others["aria-label"] ?? undefined}
       >
         {buildHeaderLabel()}
@@ -270,16 +271,15 @@ const HvBaseDropdown = ({
         id={localId}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        aria-owns={setId(localId, "children-container")}
-        aria-controls={isOpen ? setId(localId, "children-container") : undefined}
-        aria-labelledby={labelledby || undefined}
-        aria-label={labelledby ? undefined : others["aria-label"] || undefined}
+        aria-owns={isOpen ? setId(localId, "children-container") : undefined}
+        aria-labelledby={ariaLabelledBy}
         ref={anchorHeaderRef}
         className={clsx(className, classes.root)}
         onKeyDown={handleToggle}
         onClick={handleToggle}
         tabIndex={disabled ? -1 : 0}
         {...others}
+        aria-label={ariaLabelledBy ? undefined : others["aria-label"]}
       >
         {component || renderHeader()}
       </div>

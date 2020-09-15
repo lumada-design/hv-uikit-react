@@ -161,7 +161,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
               </span>
             </ForwardRef>
           </WithStyles(ForwardRef)>
-          <select
+          <WithStyles(HvSelect)
             aria-label="Select how many to display"
             className="HvPagination-pageSizeOptionsSelect"
             disabled={false}
@@ -169,86 +169,232 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
             onChange={[Function]}
             value={12}
           >
-            <option
-              key="4"
-              value={4}
-            >
-              4
-            </option>
-            <option
-              key="6"
-              value={6}
-            >
-              6
-            </option>
-            <option
-              key="12"
+            <HvSelect
+              aria-label="Select how many to display"
+              className="HvPagination-pageSizeOptionsSelect"
+              classes={
+                Object {
+                  "header": "HvSelect-header-9",
+                  "headerOpen": "HvSelect-headerOpen-10",
+                  "root": "HvSelect-root-8",
+                }
+              }
+              disabled={false}
+              id="pagination-pageSize"
+              onChange={[Function]}
               value={12}
             >
-              12
-            </option>
-            <option
-              key="24"
-              value={24}
-            >
-              24
-            </option>
-            <option
-              key="48"
-              value={48}
-            >
-              48
-            </option>
-            <option
-              key="2000"
-              value={2000}
-            >
-              2000
-            </option>
-          </select>
-          <DropDownXS
-            className="HvPagination-selectDownIcon"
-          >
-            <WithStyles(HvIconBase)
-              className="HvPagination-selectDownIcon"
-              iconSize="XS"
-              name="DropDownXS"
-            >
-              <HvIconBase
-                className="HvPagination-selectDownIcon"
+              <WithStyles(WithId)
+                aria-label="Select how many to display"
+                className="HvPagination-pageSizeOptionsSelect"
                 classes={
                   Object {
-                    "l": "HvIconBase-l",
-                    "m": "HvIconBase-m",
-                    "root": "HvIconBase-root",
-                    "s": "HvIconBase-s",
-                    "xs": "HvIconBase-xs",
+                    "header": "HvSelect-header-9",
+                    "headerOpen": "HvSelect-headerOpen-10",
+                    "root": "HvSelect-root-8",
                   }
                 }
-                iconSize="XS"
-                name="DropDownXS"
+                disabled={false}
+                expanded={false}
+                id="pagination-pageSize"
+                onToggle={[Function]}
+                placeholder={
+                  <ForwardRef(WithStyles)>
+                    12
+                  </ForwardRef(WithStyles)>
+                }
               >
-                <div
-                  className="HvPagination-selectDownIcon HvIconBase-root HvIconBase-xs"
-                  name="DropDownXS"
+                <WithId
+                  aria-label="Select how many to display"
+                  className="HvPagination-pageSizeOptionsSelect"
+                  classes={
+                    Object {
+                      "arrow": "HvBaseDropdown-arrow",
+                      "header": "HvBaseDropdown-header HvSelect-header-9",
+                      "headerDisabled": "HvBaseDropdown-headerDisabled",
+                      "headerOpen": "HvBaseDropdown-headerOpen HvSelect-headerOpen-10",
+                      "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+                      "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+                      "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+                      "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+                      "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+                      "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+                      "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+                      "panel": "HvBaseDropdown-panel",
+                      "root": "HvBaseDropdown-root HvSelect-root-8",
+                      "selection": "HvBaseDropdown-selection",
+                      "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+                      "truncate": "HvBaseDropdown-truncate",
+                    }
+                  }
+                  disabled={false}
+                  expanded={false}
+                  id="pagination-pageSize"
+                  onToggle={[Function]}
+                  placeholder={
+                    <ForwardRef(WithStyles)>
+                      12
+                    </ForwardRef(WithStyles)>
+                  }
                 >
-                  <svg
-                    focusable={false}
-                    height={12}
-                    viewBox="0 0 12 12"
-                    width={12}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <HvBaseDropdown
+                    aria-label="Select how many to display"
+                    className="HvPagination-pageSizeOptionsSelect"
+                    classes={
+                      Object {
+                        "arrow": "HvBaseDropdown-arrow",
+                        "header": "HvBaseDropdown-header HvSelect-header-9",
+                        "headerDisabled": "HvBaseDropdown-headerDisabled",
+                        "headerOpen": "HvBaseDropdown-headerOpen HvSelect-headerOpen-10",
+                        "headerOpenDown": "HvBaseDropdown-headerOpenDown",
+                        "headerOpenUp": "HvBaseDropdown-headerOpenUp",
+                        "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
+                        "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
+                        "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
+                        "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
+                        "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
+                        "panel": "HvBaseDropdown-panel",
+                        "root": "HvBaseDropdown-root HvSelect-root-8",
+                        "selection": "HvBaseDropdown-selection",
+                        "selectionDisabled": "HvBaseDropdown-selectionDisabled",
+                        "truncate": "HvBaseDropdown-truncate",
+                      }
+                    }
+                    disabled={false}
+                    expanded={false}
+                    id="pagination-pageSize"
+                    onToggle={[Function]}
+                    placeholder={
+                      <ForwardRef(WithStyles)>
+                        12
+                      </ForwardRef(WithStyles)>
+                    }
                   >
-                    <path
-                      className="color0"
-                      d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                      fill="#414141"
+                    <div
+                      aria-expanded={false}
+                      aria-haspopup="listbox"
+                      aria-labelledby="pagination-pageSize-selectionPlaceholder"
+                      className="HvPagination-pageSizeOptionsSelect HvBaseDropdown-root HvSelect-root-8"
+                      id="pagination-pageSize"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex={0}
+                    >
+                      <div
+                        aria-label="Select how many to display"
+                        aria-labelledby="pagination-pageSize-selectionPlaceholder"
+                        className="HvBaseDropdown-header HvSelect-header-9"
+                        id="pagination-pageSize-header"
+                        role="textbox"
+                      >
+                        <div
+                          className="HvBaseDropdown-selection"
+                          id="pagination-pageSize-selectionPlaceholder"
+                        >
+                          <WithStyles(ForwardRef)>
+                            <ForwardRef
+                              classes={
+                                Object {
+                                  "3xlTitle": "HvTypography-3xlTitle",
+                                  "4xlTitle": "HvTypography-4xlTitle",
+                                  "5xlTitle": "HvTypography-5xlTitle",
+                                  "disabledText": "HvTypography-disabledText",
+                                  "highlightText": "HvTypography-highlightText",
+                                  "lTitle": "HvTypography-lTitle",
+                                  "link": "HvTypography-link",
+                                  "mTitle": "HvTypography-mTitle",
+                                  "normalText": "HvTypography-normalText",
+                                  "placeholderText": "HvTypography-placeholderText",
+                                  "root": "HvTypography-root",
+                                  "sTitle": "HvTypography-sTitle",
+                                  "sectionTitle": "HvTypography-sectionTitle",
+                                  "selectedNavText": "HvTypography-selectedNavText",
+                                  "vizText": "HvTypography-vizText",
+                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                  "xlTitle": "HvTypography-xlTitle",
+                                  "xsInlineLink": "HvTypography-xsInlineLink",
+                                  "xsTitle": "HvTypography-xsTitle",
+                                  "xxlTitle": "HvTypography-xxlTitle",
+                                  "xxsTitle": "HvTypography-xxsTitle",
+                                }
+                              }
+                            >
+                              <p
+                                className="HvTypography-root HvTypography-normalText"
+                              >
+                                12
+                              </p>
+                            </ForwardRef>
+                          </WithStyles(ForwardRef)>
+                        </div>
+                        <DropDownXS
+                          className="HvBaseDropdown-arrow"
+                          iconSize="XS"
+                        >
+                          <WithStyles(HvIconBase)
+                            className="HvBaseDropdown-arrow"
+                            iconSize="XS"
+                            name="DropDownXS"
+                          >
+                            <HvIconBase
+                              className="HvBaseDropdown-arrow"
+                              classes={
+                                Object {
+                                  "l": "HvIconBase-l",
+                                  "m": "HvIconBase-m",
+                                  "root": "HvIconBase-root",
+                                  "s": "HvIconBase-s",
+                                  "xs": "HvIconBase-xs",
+                                }
+                              }
+                              iconSize="XS"
+                              name="DropDownXS"
+                            >
+                              <div
+                                className="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
+                                name="DropDownXS"
+                              >
+                                <svg
+                                  focusable={false}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  width={12}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </WithStyles(HvIconBase)>
+                        </DropDownXS>
+                      </div>
+                    </div>
+                    <ForwardRef(Popper)
+                      anchorEl={null}
+                      disablePortal={false}
+                      open={false}
+                      placement="bottom-start"
+                      popperOptions={
+                        Object {
+                          "onCreate": [Function],
+                          "onUpdate": [Function],
+                        }
+                      }
+                      style={
+                        Object {
+                          "zIndex": 1500,
+                        }
+                      }
                     />
-                  </svg>
-                </div>
-              </HvIconBase>
-            </WithStyles(HvIconBase)>
-          </DropDownXS>
+                  </HvBaseDropdown>
+                </WithId>
+              </WithStyles(WithId)>
+            </HvSelect>
+          </WithStyles(HvSelect)>
           <WithStyles(ForwardRef)
             component="span"
           >
@@ -291,678 +437,786 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
         <div
           className="HvPagination-pageNavigator"
         >
-          <WithStyles(ForwardRef(IconButton))
+          <ButtonIconTooltip
             aria-label="First Page"
             className="HvPagination-iconContainer"
             disabled={true}
             id="pagination-firstPage-button"
             onClick={[Function]}
+            tooltip="First page"
           >
-            <ForwardRef(IconButton)
-              aria-label="First Page"
-              className="HvPagination-iconContainer"
-              classes={
-                Object {
-                  "colorInherit": "MuiIconButton-colorInherit",
-                  "colorPrimary": "MuiIconButton-colorPrimary",
-                  "colorSecondary": "MuiIconButton-colorSecondary",
-                  "disabled": "Mui-disabled",
-                  "edgeEnd": "MuiIconButton-edgeEnd",
-                  "edgeStart": "MuiIconButton-edgeStart",
-                  "label": "MuiIconButton-label",
-                  "root": "MuiIconButton-root",
-                  "sizeSmall": "MuiIconButton-sizeSmall",
-                }
+            <WithStyles(ForwardRef)
+              title={
+                <ForwardRef(WithStyles)>
+                  First page
+                </ForwardRef(WithStyles)>
               }
-              disabled={true}
-              id="pagination-firstPage-button"
-              onClick={[Function]}
             >
-              <WithStyles(ForwardRef(ButtonBase))
-                aria-label="First Page"
-                centerRipple={true}
-                className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
-                disabled={true}
-                focusRipple={true}
-                id="pagination-firstPage-button"
-                onClick={[Function]}
+              <ForwardRef
+                classes={
+                  Object {
+                    "color": "HvTooltip-color",
+                    "popper": "HvTooltip-popper",
+                    "root": "HvTooltip-root",
+                    "separator": "HvTooltip-separator",
+                    "separatorColor": "HvTooltip-separatorColor",
+                    "title": "HvTooltip-title",
+                    "tooltip": "HvTooltip-tooltip",
+                    "tooltipMulti": "HvTooltip-tooltipMulti",
+                    "valueWrapper": "HvTooltip-valueWrapper",
+                    "values": "HvTooltip-values",
+                    "valuesContainer": "HvTooltip-valuesContainer",
+                  }
+                }
+                title={
+                  <ForwardRef(WithStyles)>
+                    First page
+                  </ForwardRef(WithStyles)>
+                }
               >
-                <ForwardRef(ButtonBase)
-                  aria-label="First Page"
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
-                  classes={
+                <WithStyles(ForwardRef(Tooltip))
+                  TransitionComponent={
                     Object {
-                      "disabled": "Mui-disabled",
-                      "focusVisible": "Mui-focusVisible",
-                      "root": "MuiButtonBase-root",
+                      "$$typeof": Symbol(react.forward_ref),
+                      "propTypes": Object {
+                        "children": [Function],
+                        "in": [Function],
+                        "onEnter": [Function],
+                        "onExit": [Function],
+                        "style": [Function],
+                        "timeout": [Function],
+                      },
+                      "render": [Function],
                     }
                   }
-                  disableRipple={true}
-                  disabled={true}
-                  focusRipple={true}
-                  id="pagination-firstPage-button"
-                  onClick={[Function]}
+                  TransitionProps={
+                    Object {
+                      "timeout": 400,
+                    }
+                  }
+                  classes={
+                    Object {
+                      "popper": "HvTooltip-popper",
+                      "tooltip": "HvTooltip-tooltip",
+                    }
+                  }
+                  enterDelay={300}
+                  placement="top"
+                  title={
+                    <ForwardRef(WithStyles)>
+                      First page
+                    </ForwardRef(WithStyles)>
+                  }
                 >
-                  <button
-                    aria-label="First Page"
-                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer Mui-disabled Mui-disabled"
-                    disabled={true}
-                    id="pagination-firstPage-button"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onDragLeave={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchMove={[Function]}
-                    onTouchStart={[Function]}
-                    tabIndex={-1}
-                    type="button"
+                  <ForwardRef(Tooltip)
+                    TransitionComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "propTypes": Object {
+                          "children": [Function],
+                          "in": [Function],
+                          "onEnter": [Function],
+                          "onExit": [Function],
+                          "style": [Function],
+                          "timeout": [Function],
+                        },
+                        "render": [Function],
+                      }
+                    }
+                    TransitionProps={
+                      Object {
+                        "timeout": 400,
+                      }
+                    }
+                    classes={
+                      Object {
+                        "arrow": "MuiTooltip-arrow",
+                        "popper": "MuiTooltip-popper HvTooltip-popper",
+                        "popperArrow": "MuiTooltip-popperArrow",
+                        "popperInteractive": "MuiTooltip-popperInteractive",
+                        "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                        "tooltipArrow": "MuiTooltip-tooltipArrow",
+                        "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                        "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                        "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                        "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                        "touch": "MuiTooltip-touch",
+                      }
+                    }
+                    enterDelay={300}
+                    placement="top"
+                    title={
+                      <ForwardRef(WithStyles)>
+                        First page
+                      </ForwardRef(WithStyles)>
+                    }
                   >
-                    <span
-                      className="MuiIconButton-label"
+                    <div
+                      aria-describedby={null}
+                      className=""
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title={null}
                     >
-                      <Component>
-                        <WithStyles(ForwardRef)
-                          disableFocusListener={true}
-                          disableTouchListener={true}
-                          open={false}
-                          style={
+                      <WithStyles(HvButton)
+                        aria-label="First Page"
+                        className="HvPagination-iconContainer"
+                        disabled={true}
+                        icon={true}
+                        id="pagination-firstPage-button"
+                        onClick={[Function]}
+                      >
+                        <HvButton
+                          aria-label="First Page"
+                          className="HvPagination-iconContainer"
+                          classes={
                             Object {
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
+                              "ghost": "HvButton-ghost",
+                              "ghostDisabled": "HvButton-ghostDisabled",
+                              "ghostSVG": "HvButton-ghostSVG",
+                              "icon": "HvButton-icon",
+                              "iconSVG": "HvButton-iconSVG",
+                              "primary": "HvButton-primary",
+                              "primaryDisabled": "HvButton-primaryDisabled",
+                              "primarySVG": "HvButton-primarySVG",
+                              "root": "HvButton-root",
+                              "secondary": "HvButton-secondary",
+                              "secondaryDisabled": "HvButton-secondaryDisabled",
+                              "secondarySVG": "HvButton-secondarySVG",
+                              "semantic": "HvButton-semantic",
+                              "semanticDisabled": "HvButton-semanticDisabled",
+                              "semanticSVG": "HvButton-semanticSVG",
+                              "startIcon": "HvButton-startIcon",
                             }
                           }
-                          title={
-                            <ForwardRef(WithStyles)>
-                              First page
-                            </ForwardRef(WithStyles)>
-                          }
+                          disabled={true}
+                          icon={true}
+                          id="pagination-firstPage-button"
+                          onClick={[Function]}
                         >
-                          <ForwardRef
+                          <WithStyles(ForwardRef(Button))
+                            aria-label="First Page"
+                            className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                             classes={
                               Object {
-                                "color": "HvTooltip-color",
-                                "popper": "HvTooltip-popper",
-                                "root": "HvTooltip-root",
-                                "separator": "HvTooltip-separator",
-                                "separatorColor": "HvTooltip-separatorColor",
-                                "title": "HvTooltip-title",
-                                "tooltip": "HvTooltip-tooltip",
-                                "tooltipMulti": "HvTooltip-tooltipMulti",
-                                "valueWrapper": "HvTooltip-valueWrapper",
-                                "values": "HvTooltip-values",
-                                "valuesContainer": "HvTooltip-valuesContainer",
+                                "containedPrimary": "HvButton-primary",
+                                "disabled": "HvButton-ghostDisabled",
+                                "outlinedPrimary": "HvButton-secondary",
+                                "root": "HvButton-root",
+                                "startIcon": "HvButton-startIcon",
+                                "textPrimary": "HvButton-ghost",
                               }
                             }
-                            disableFocusListener={true}
-                            disableTouchListener={true}
-                            open={false}
-                            style={
-                              Object {
-                                "overflow": "hidden",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                            title={
-                              <ForwardRef(WithStyles)>
-                                First page
-                              </ForwardRef(WithStyles)>
-                            }
+                            color="primary"
+                            disableRipple={true}
+                            disabled={true}
+                            id="pagination-firstPage-button"
+                            onClick={[Function]}
+                            variant="text"
                           >
-                            <WithStyles(ForwardRef(Tooltip))
-                              TransitionComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "propTypes": Object {
-                                    "children": [Function],
-                                    "in": [Function],
-                                    "onEnter": [Function],
-                                    "onExit": [Function],
-                                    "style": [Function],
-                                    "timeout": [Function],
-                                  },
-                                  "render": [Function],
-                                }
-                              }
-                              TransitionProps={
-                                Object {
-                                  "timeout": 400,
-                                }
-                              }
+                            <ForwardRef(Button)
+                              aria-label="First Page"
+                              className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                               classes={
                                 Object {
-                                  "popper": "HvTooltip-popper",
-                                  "tooltip": "HvTooltip-tooltip",
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled HvButton-ghostDisabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root HvButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon HvButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary HvButton-ghost",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
                                 }
                               }
-                              disableFocusListener={true}
-                              disableTouchListener={true}
-                              enterDelay={300}
-                              placement="top"
-                              style={
-                                Object {
-                                  "overflow": "hidden",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                              title={
-                                <ForwardRef(WithStyles)>
-                                  First page
-                                </ForwardRef(WithStyles)>
-                              }
+                              color="primary"
+                              disableRipple={true}
+                              disabled={true}
+                              id="pagination-firstPage-button"
+                              onClick={[Function]}
+                              variant="text"
                             >
-                              <ForwardRef(Tooltip)
-                                TransitionComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "propTypes": Object {
-                                      "children": [Function],
-                                      "in": [Function],
-                                      "onEnter": [Function],
-                                      "onExit": [Function],
-                                      "style": [Function],
-                                      "timeout": [Function],
-                                    },
-                                    "render": [Function],
-                                  }
-                                }
-                                TransitionProps={
-                                  Object {
-                                    "timeout": 400,
-                                  }
-                                }
-                                classes={
-                                  Object {
-                                    "arrow": "MuiTooltip-arrow",
-                                    "popper": "MuiTooltip-popper HvTooltip-popper",
-                                    "popperArrow": "MuiTooltip-popperArrow",
-                                    "popperInteractive": "MuiTooltip-popperInteractive",
-                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
-                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
-                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                                    "touch": "MuiTooltip-touch",
-                                  }
-                                }
-                                disableFocusListener={true}
-                                disableTouchListener={true}
-                                enterDelay={300}
-                                placement="top"
-                                style={
-                                  Object {
-                                    "overflow": "hidden",
-                                    "textOverflow": "ellipsis",
-                                    "whiteSpace": "nowrap",
-                                  }
-                                }
-                                title={
-                                  <ForwardRef(WithStyles)>
-                                    First page
-                                  </ForwardRef(WithStyles)>
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                aria-label="First Page"
+                                className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                                component="button"
+                                disableRipple={true}
+                                disabled={true}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                id="pagination-firstPage-button"
+                                onClick={[Function]}
+                                type="button"
                               >
-                                <div
-                                  aria-describedby={null}
-                                  className=""
-                                  onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseOver={[Function]}
-                                  style={
+                                <ForwardRef(ButtonBase)
+                                  aria-label="First Page"
+                                  className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                                  classes={
                                     Object {
-                                      "overflow": "hidden",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
                                     }
                                   }
-                                  title={null}
+                                  component="button"
+                                  disableRipple={true}
+                                  disabled={true}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  id="pagination-firstPage-button"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  <FirstPage>
-                                    <Start
-                                      className="HvPagination-icon"
-                                      color="atmo5"
+                                  <button
+                                    aria-label="First Page"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                                    disabled={true}
+                                    id="pagination-firstPage-button"
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={-1}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
                                     >
-                                      <WithStyles(HvIconBase)
+                                      <Start
                                         className="HvPagination-icon"
-                                        iconSize="S"
-                                        name="Start"
+                                        color="atmo5"
                                       >
-                                        <HvIconBase
+                                        <WithStyles(HvIconBase)
                                           className="HvPagination-icon"
-                                          classes={
-                                            Object {
-                                              "l": "HvIconBase-l",
-                                              "m": "HvIconBase-m",
-                                              "root": "HvIconBase-root",
-                                              "s": "HvIconBase-s",
-                                              "xs": "HvIconBase-xs",
-                                            }
-                                          }
                                           iconSize="S"
                                           name="Start"
                                         >
-                                          <div
-                                            className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                          <HvIconBase
+                                            className="HvPagination-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
+                                            iconSize="S"
                                             name="Start"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height={16}
-                                              viewBox="0 0 16 16"
-                                              width={16}
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                              name="Start"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M2.98954 16.04533H2v-16h.98954zm2.96861-8l7.3421 7.41967L14 14.758 7.35759 8.04533 14 1.33268l-.69975-.707z"
-                                                fill="#999999"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </HvIconBase>
-                                      </WithStyles(HvIconBase)>
-                                    </Start>
-                                  </FirstPage>
-                                </div>
-                                <ForwardRef(Popper)
-                                  anchorEl={
-                                    <div
-                                      class=""
-                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-                                    >
-                                      <div
-                                        class="HvPagination-icon HvIconBase-root HvIconBase-s"
-                                        name="Start"
-                                      >
-                                        <svg
-                                          focusable="false"
-                                          height="16"
-                                          viewBox="0 0 16 16"
-                                          width="16"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="color0"
-                                            d="M2.98954 16.04533H2v-16h.98954zm2.96861-8l7.3421 7.41967L14 14.758 7.35759 8.04533 14 1.33268l-.69975-.707z"
-                                            fill="#999999"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  }
-                                  className="MuiTooltip-popper HvTooltip-popper"
-                                  id={null}
-                                  open={false}
-                                  placement="top"
-                                  popperOptions={
-                                    Object {
-                                      "modifiers": Object {
-                                        "arrow": Object {
-                                          "element": null,
-                                          "enabled": false,
-                                        },
-                                      },
-                                    }
-                                  }
-                                  transition={true}
-                                />
-                              </ForwardRef(Tooltip)>
-                            </WithStyles(ForwardRef(Tooltip))>
-                          </ForwardRef>
-                        </WithStyles(ForwardRef)>
-                      </Component>
-                    </span>
-                  </button>
-                </ForwardRef(ButtonBase)>
-              </WithStyles(ForwardRef(ButtonBase))>
-            </ForwardRef(IconButton)>
-          </WithStyles(ForwardRef(IconButton))>
-          <WithStyles(ForwardRef(IconButton))
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M2.98954 16.04533H2v-16h.98954zm2.96861-8l7.3421 7.41967L14 14.758 7.35759 8.04533 14 1.33268l-.69975-.707z"
+                                                  fill="#999999"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </Start>
+                                    </span>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                        </HvButton>
+                      </WithStyles(HvButton)>
+                    </div>
+                    <ForwardRef(Popper)
+                      anchorEl={
+                        <div
+                          class=""
+                        >
+                          <button
+                            aria-label="First Page"
+                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                            disabled=""
+                            id="pagination-firstPage-button"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <span
+                              class="MuiButton-label"
+                            >
+                              <div
+                                class="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                name="Start"
+                              >
+                                <svg
+                                  focusable="false"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    class="color0"
+                                    d="M2.98954 16.04533H2v-16h.98954zm2.96861-8l7.3421 7.41967L14 14.758 7.35759 8.04533 14 1.33268l-.69975-.707z"
+                                    fill="#999999"
+                                  />
+                                </svg>
+                              </div>
+                            </span>
+                          </button>
+                        </div>
+                      }
+                      className="MuiTooltip-popper HvTooltip-popper"
+                      id={null}
+                      open={false}
+                      placement="top"
+                      popperOptions={
+                        Object {
+                          "modifiers": Object {
+                            "arrow": Object {
+                              "element": null,
+                              "enabled": false,
+                            },
+                          },
+                        }
+                      }
+                      transition={true}
+                    />
+                  </ForwardRef(Tooltip)>
+                </WithStyles(ForwardRef(Tooltip))>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </ButtonIconTooltip>
+          <ButtonIconTooltip
             aria-label="Previous Page"
             className="HvPagination-iconContainer"
             disabled={true}
             id="pagination-previousPage-button"
             onClick={[Function]}
+            tooltip="Previous page"
           >
-            <ForwardRef(IconButton)
-              aria-label="Previous Page"
-              className="HvPagination-iconContainer"
-              classes={
-                Object {
-                  "colorInherit": "MuiIconButton-colorInherit",
-                  "colorPrimary": "MuiIconButton-colorPrimary",
-                  "colorSecondary": "MuiIconButton-colorSecondary",
-                  "disabled": "Mui-disabled",
-                  "edgeEnd": "MuiIconButton-edgeEnd",
-                  "edgeStart": "MuiIconButton-edgeStart",
-                  "label": "MuiIconButton-label",
-                  "root": "MuiIconButton-root",
-                  "sizeSmall": "MuiIconButton-sizeSmall",
-                }
+            <WithStyles(ForwardRef)
+              title={
+                <ForwardRef(WithStyles)>
+                  Previous page
+                </ForwardRef(WithStyles)>
               }
-              disabled={true}
-              id="pagination-previousPage-button"
-              onClick={[Function]}
             >
-              <WithStyles(ForwardRef(ButtonBase))
-                aria-label="Previous Page"
-                centerRipple={true}
-                className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
-                disabled={true}
-                focusRipple={true}
-                id="pagination-previousPage-button"
-                onClick={[Function]}
+              <ForwardRef
+                classes={
+                  Object {
+                    "color": "HvTooltip-color",
+                    "popper": "HvTooltip-popper",
+                    "root": "HvTooltip-root",
+                    "separator": "HvTooltip-separator",
+                    "separatorColor": "HvTooltip-separatorColor",
+                    "title": "HvTooltip-title",
+                    "tooltip": "HvTooltip-tooltip",
+                    "tooltipMulti": "HvTooltip-tooltipMulti",
+                    "valueWrapper": "HvTooltip-valueWrapper",
+                    "values": "HvTooltip-values",
+                    "valuesContainer": "HvTooltip-valuesContainer",
+                  }
+                }
+                title={
+                  <ForwardRef(WithStyles)>
+                    Previous page
+                  </ForwardRef(WithStyles)>
+                }
               >
-                <ForwardRef(ButtonBase)
-                  aria-label="Previous Page"
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
-                  classes={
+                <WithStyles(ForwardRef(Tooltip))
+                  TransitionComponent={
                     Object {
-                      "disabled": "Mui-disabled",
-                      "focusVisible": "Mui-focusVisible",
-                      "root": "MuiButtonBase-root",
+                      "$$typeof": Symbol(react.forward_ref),
+                      "propTypes": Object {
+                        "children": [Function],
+                        "in": [Function],
+                        "onEnter": [Function],
+                        "onExit": [Function],
+                        "style": [Function],
+                        "timeout": [Function],
+                      },
+                      "render": [Function],
                     }
                   }
-                  disableRipple={true}
-                  disabled={true}
-                  focusRipple={true}
-                  id="pagination-previousPage-button"
-                  onClick={[Function]}
+                  TransitionProps={
+                    Object {
+                      "timeout": 400,
+                    }
+                  }
+                  classes={
+                    Object {
+                      "popper": "HvTooltip-popper",
+                      "tooltip": "HvTooltip-tooltip",
+                    }
+                  }
+                  enterDelay={300}
+                  placement="top"
+                  title={
+                    <ForwardRef(WithStyles)>
+                      Previous page
+                    </ForwardRef(WithStyles)>
+                  }
                 >
-                  <button
-                    aria-label="Previous Page"
-                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer Mui-disabled Mui-disabled"
-                    disabled={true}
-                    id="pagination-previousPage-button"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onDragLeave={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchMove={[Function]}
-                    onTouchStart={[Function]}
-                    tabIndex={-1}
-                    type="button"
+                  <ForwardRef(Tooltip)
+                    TransitionComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "propTypes": Object {
+                          "children": [Function],
+                          "in": [Function],
+                          "onEnter": [Function],
+                          "onExit": [Function],
+                          "style": [Function],
+                          "timeout": [Function],
+                        },
+                        "render": [Function],
+                      }
+                    }
+                    TransitionProps={
+                      Object {
+                        "timeout": 400,
+                      }
+                    }
+                    classes={
+                      Object {
+                        "arrow": "MuiTooltip-arrow",
+                        "popper": "MuiTooltip-popper HvTooltip-popper",
+                        "popperArrow": "MuiTooltip-popperArrow",
+                        "popperInteractive": "MuiTooltip-popperInteractive",
+                        "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                        "tooltipArrow": "MuiTooltip-tooltipArrow",
+                        "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                        "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                        "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                        "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                        "touch": "MuiTooltip-touch",
+                      }
+                    }
+                    enterDelay={300}
+                    placement="top"
+                    title={
+                      <ForwardRef(WithStyles)>
+                        Previous page
+                      </ForwardRef(WithStyles)>
+                    }
                   >
-                    <span
-                      className="MuiIconButton-label"
+                    <div
+                      aria-describedby={null}
+                      className=""
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title={null}
                     >
-                      <Component>
-                        <WithStyles(ForwardRef)
-                          disableFocusListener={true}
-                          disableTouchListener={true}
-                          open={false}
-                          style={
+                      <WithStyles(HvButton)
+                        aria-label="Previous Page"
+                        className="HvPagination-iconContainer"
+                        disabled={true}
+                        icon={true}
+                        id="pagination-previousPage-button"
+                        onClick={[Function]}
+                      >
+                        <HvButton
+                          aria-label="Previous Page"
+                          className="HvPagination-iconContainer"
+                          classes={
                             Object {
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
+                              "ghost": "HvButton-ghost",
+                              "ghostDisabled": "HvButton-ghostDisabled",
+                              "ghostSVG": "HvButton-ghostSVG",
+                              "icon": "HvButton-icon",
+                              "iconSVG": "HvButton-iconSVG",
+                              "primary": "HvButton-primary",
+                              "primaryDisabled": "HvButton-primaryDisabled",
+                              "primarySVG": "HvButton-primarySVG",
+                              "root": "HvButton-root",
+                              "secondary": "HvButton-secondary",
+                              "secondaryDisabled": "HvButton-secondaryDisabled",
+                              "secondarySVG": "HvButton-secondarySVG",
+                              "semantic": "HvButton-semantic",
+                              "semanticDisabled": "HvButton-semanticDisabled",
+                              "semanticSVG": "HvButton-semanticSVG",
+                              "startIcon": "HvButton-startIcon",
                             }
                           }
-                          title={
-                            <ForwardRef(WithStyles)>
-                              Previous page
-                            </ForwardRef(WithStyles)>
-                          }
+                          disabled={true}
+                          icon={true}
+                          id="pagination-previousPage-button"
+                          onClick={[Function]}
                         >
-                          <ForwardRef
+                          <WithStyles(ForwardRef(Button))
+                            aria-label="Previous Page"
+                            className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                             classes={
                               Object {
-                                "color": "HvTooltip-color",
-                                "popper": "HvTooltip-popper",
-                                "root": "HvTooltip-root",
-                                "separator": "HvTooltip-separator",
-                                "separatorColor": "HvTooltip-separatorColor",
-                                "title": "HvTooltip-title",
-                                "tooltip": "HvTooltip-tooltip",
-                                "tooltipMulti": "HvTooltip-tooltipMulti",
-                                "valueWrapper": "HvTooltip-valueWrapper",
-                                "values": "HvTooltip-values",
-                                "valuesContainer": "HvTooltip-valuesContainer",
+                                "containedPrimary": "HvButton-primary",
+                                "disabled": "HvButton-ghostDisabled",
+                                "outlinedPrimary": "HvButton-secondary",
+                                "root": "HvButton-root",
+                                "startIcon": "HvButton-startIcon",
+                                "textPrimary": "HvButton-ghost",
                               }
                             }
-                            disableFocusListener={true}
-                            disableTouchListener={true}
-                            open={false}
-                            style={
-                              Object {
-                                "overflow": "hidden",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                            title={
-                              <ForwardRef(WithStyles)>
-                                Previous page
-                              </ForwardRef(WithStyles)>
-                            }
+                            color="primary"
+                            disableRipple={true}
+                            disabled={true}
+                            id="pagination-previousPage-button"
+                            onClick={[Function]}
+                            variant="text"
                           >
-                            <WithStyles(ForwardRef(Tooltip))
-                              TransitionComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "propTypes": Object {
-                                    "children": [Function],
-                                    "in": [Function],
-                                    "onEnter": [Function],
-                                    "onExit": [Function],
-                                    "style": [Function],
-                                    "timeout": [Function],
-                                  },
-                                  "render": [Function],
-                                }
-                              }
-                              TransitionProps={
-                                Object {
-                                  "timeout": 400,
-                                }
-                              }
+                            <ForwardRef(Button)
+                              aria-label="Previous Page"
+                              className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                               classes={
                                 Object {
-                                  "popper": "HvTooltip-popper",
-                                  "tooltip": "HvTooltip-tooltip",
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled HvButton-ghostDisabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root HvButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon HvButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary HvButton-ghost",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
                                 }
                               }
-                              disableFocusListener={true}
-                              disableTouchListener={true}
-                              enterDelay={300}
-                              placement="top"
-                              style={
-                                Object {
-                                  "overflow": "hidden",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                              title={
-                                <ForwardRef(WithStyles)>
-                                  Previous page
-                                </ForwardRef(WithStyles)>
-                              }
+                              color="primary"
+                              disableRipple={true}
+                              disabled={true}
+                              id="pagination-previousPage-button"
+                              onClick={[Function]}
+                              variant="text"
                             >
-                              <ForwardRef(Tooltip)
-                                TransitionComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "propTypes": Object {
-                                      "children": [Function],
-                                      "in": [Function],
-                                      "onEnter": [Function],
-                                      "onExit": [Function],
-                                      "style": [Function],
-                                      "timeout": [Function],
-                                    },
-                                    "render": [Function],
-                                  }
-                                }
-                                TransitionProps={
-                                  Object {
-                                    "timeout": 400,
-                                  }
-                                }
-                                classes={
-                                  Object {
-                                    "arrow": "MuiTooltip-arrow",
-                                    "popper": "MuiTooltip-popper HvTooltip-popper",
-                                    "popperArrow": "MuiTooltip-popperArrow",
-                                    "popperInteractive": "MuiTooltip-popperInteractive",
-                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
-                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
-                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                                    "touch": "MuiTooltip-touch",
-                                  }
-                                }
-                                disableFocusListener={true}
-                                disableTouchListener={true}
-                                enterDelay={300}
-                                placement="top"
-                                style={
-                                  Object {
-                                    "overflow": "hidden",
-                                    "textOverflow": "ellipsis",
-                                    "whiteSpace": "nowrap",
-                                  }
-                                }
-                                title={
-                                  <ForwardRef(WithStyles)>
-                                    Previous page
-                                  </ForwardRef(WithStyles)>
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                aria-label="Previous Page"
+                                className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                                component="button"
+                                disableRipple={true}
+                                disabled={true}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                id="pagination-previousPage-button"
+                                onClick={[Function]}
+                                type="button"
                               >
-                                <div
-                                  aria-describedby={null}
-                                  className=""
-                                  onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseOver={[Function]}
-                                  style={
+                                <ForwardRef(ButtonBase)
+                                  aria-label="Previous Page"
+                                  className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                                  classes={
                                     Object {
-                                      "overflow": "hidden",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
                                     }
                                   }
-                                  title={null}
+                                  component="button"
+                                  disableRipple={true}
+                                  disabled={true}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  id="pagination-previousPage-button"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  <PrevPage>
-                                    <Backwards
-                                      className="HvPagination-icon"
-                                      color="atmo5"
+                                  <button
+                                    aria-label="Previous Page"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                                    disabled={true}
+                                    id="pagination-previousPage-button"
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={-1}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
                                     >
-                                      <WithStyles(HvIconBase)
+                                      <Backwards
                                         className="HvPagination-icon"
-                                        iconSize="S"
-                                        name="Backwards"
+                                        color="atmo5"
                                       >
-                                        <HvIconBase
+                                        <WithStyles(HvIconBase)
                                           className="HvPagination-icon"
-                                          classes={
-                                            Object {
-                                              "l": "HvIconBase-l",
-                                              "m": "HvIconBase-m",
-                                              "root": "HvIconBase-root",
-                                              "s": "HvIconBase-s",
-                                              "xs": "HvIconBase-xs",
-                                            }
-                                          }
                                           iconSize="S"
                                           name="Backwards"
                                         >
-                                          <div
-                                            className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                          <HvIconBase
+                                            className="HvPagination-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
+                                            iconSize="S"
                                             name="Backwards"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height={16}
-                                              viewBox="0 0 16 16"
-                                              width={16}
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                              name="Backwards"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                                                fill="#999999"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </HvIconBase>
-                                      </WithStyles(HvIconBase)>
-                                    </Backwards>
-                                  </PrevPage>
-                                </div>
-                                <ForwardRef(Popper)
-                                  anchorEl={
-                                    <div
-                                      class=""
-                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-                                    >
-                                      <div
-                                        class="HvPagination-icon HvIconBase-root HvIconBase-s"
-                                        name="Backwards"
-                                      >
-                                        <svg
-                                          focusable="false"
-                                          height="16"
-                                          viewBox="0 0 16 16"
-                                          width="16"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="color0"
-                                            d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                                            fill="#999999"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  }
-                                  className="MuiTooltip-popper HvTooltip-popper"
-                                  id={null}
-                                  open={false}
-                                  placement="top"
-                                  popperOptions={
-                                    Object {
-                                      "modifiers": Object {
-                                        "arrow": Object {
-                                          "element": null,
-                                          "enabled": false,
-                                        },
-                                      },
-                                    }
-                                  }
-                                  transition={true}
-                                />
-                              </ForwardRef(Tooltip)>
-                            </WithStyles(ForwardRef(Tooltip))>
-                          </ForwardRef>
-                        </WithStyles(ForwardRef)>
-                      </Component>
-                    </span>
-                  </button>
-                </ForwardRef(ButtonBase)>
-              </WithStyles(ForwardRef(ButtonBase))>
-            </ForwardRef(IconButton)>
-          </WithStyles(ForwardRef(IconButton))>
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                                                  fill="#999999"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </Backwards>
+                                    </span>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                        </HvButton>
+                      </WithStyles(HvButton)>
+                    </div>
+                    <ForwardRef(Popper)
+                      anchorEl={
+                        <div
+                          class=""
+                        >
+                          <button
+                            aria-label="Previous Page"
+                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                            disabled=""
+                            id="pagination-previousPage-button"
+                            tabindex="-1"
+                            type="button"
+                          >
+                            <span
+                              class="MuiButton-label"
+                            >
+                              <div
+                                class="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                name="Backwards"
+                              >
+                                <svg
+                                  focusable="false"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    class="color0"
+                                    d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                                    fill="#999999"
+                                  />
+                                </svg>
+                              </div>
+                            </span>
+                          </button>
+                        </div>
+                      }
+                      className="MuiTooltip-popper HvTooltip-popper"
+                      id={null}
+                      open={false}
+                      placement="top"
+                      popperOptions={
+                        Object {
+                          "modifiers": Object {
+                            "arrow": Object {
+                              "element": null,
+                              "enabled": false,
+                            },
+                          },
+                        }
+                      }
+                      transition={true}
+                    />
+                  </ForwardRef(Tooltip)>
+                </WithStyles(ForwardRef(Tooltip))>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </ButtonIconTooltip>
           <div
             className="HvPagination-pageInfo"
           >
@@ -1863,676 +2117,782 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
               </ForwardRef>
             </WithStyles(ForwardRef)>
           </div>
-          <WithStyles(ForwardRef(IconButton))
+          <ButtonIconTooltip
             aria-label="Next Page"
             className="HvPagination-iconContainer"
             disabled={false}
             id="pagination-nextPage-button"
             onClick={[Function]}
+            tooltip="Next page"
           >
-            <ForwardRef(IconButton)
-              aria-label="Next Page"
-              className="HvPagination-iconContainer"
-              classes={
-                Object {
-                  "colorInherit": "MuiIconButton-colorInherit",
-                  "colorPrimary": "MuiIconButton-colorPrimary",
-                  "colorSecondary": "MuiIconButton-colorSecondary",
-                  "disabled": "Mui-disabled",
-                  "edgeEnd": "MuiIconButton-edgeEnd",
-                  "edgeStart": "MuiIconButton-edgeStart",
-                  "label": "MuiIconButton-label",
-                  "root": "MuiIconButton-root",
-                  "sizeSmall": "MuiIconButton-sizeSmall",
-                }
+            <WithStyles(ForwardRef)
+              title={
+                <ForwardRef(WithStyles)>
+                  Next page
+                </ForwardRef(WithStyles)>
               }
-              disabled={false}
-              id="pagination-nextPage-button"
-              onClick={[Function]}
             >
-              <WithStyles(ForwardRef(ButtonBase))
-                aria-label="Next Page"
-                centerRipple={true}
-                className="MuiIconButton-root HvPagination-iconContainer"
-                disabled={false}
-                focusRipple={true}
-                id="pagination-nextPage-button"
-                onClick={[Function]}
+              <ForwardRef
+                classes={
+                  Object {
+                    "color": "HvTooltip-color",
+                    "popper": "HvTooltip-popper",
+                    "root": "HvTooltip-root",
+                    "separator": "HvTooltip-separator",
+                    "separatorColor": "HvTooltip-separatorColor",
+                    "title": "HvTooltip-title",
+                    "tooltip": "HvTooltip-tooltip",
+                    "tooltipMulti": "HvTooltip-tooltipMulti",
+                    "valueWrapper": "HvTooltip-valueWrapper",
+                    "values": "HvTooltip-values",
+                    "valuesContainer": "HvTooltip-valuesContainer",
+                  }
+                }
+                title={
+                  <ForwardRef(WithStyles)>
+                    Next page
+                  </ForwardRef(WithStyles)>
+                }
               >
-                <ForwardRef(ButtonBase)
-                  aria-label="Next Page"
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer"
-                  classes={
+                <WithStyles(ForwardRef(Tooltip))
+                  TransitionComponent={
                     Object {
-                      "disabled": "Mui-disabled",
-                      "focusVisible": "Mui-focusVisible",
-                      "root": "MuiButtonBase-root",
+                      "$$typeof": Symbol(react.forward_ref),
+                      "propTypes": Object {
+                        "children": [Function],
+                        "in": [Function],
+                        "onEnter": [Function],
+                        "onExit": [Function],
+                        "style": [Function],
+                        "timeout": [Function],
+                      },
+                      "render": [Function],
                     }
                   }
-                  disableRipple={true}
-                  disabled={false}
-                  focusRipple={true}
-                  id="pagination-nextPage-button"
-                  onClick={[Function]}
+                  TransitionProps={
+                    Object {
+                      "timeout": 400,
+                    }
+                  }
+                  classes={
+                    Object {
+                      "popper": "HvTooltip-popper",
+                      "tooltip": "HvTooltip-tooltip",
+                    }
+                  }
+                  enterDelay={300}
+                  placement="top"
+                  title={
+                    <ForwardRef(WithStyles)>
+                      Next page
+                    </ForwardRef(WithStyles)>
+                  }
                 >
-                  <button
-                    aria-label="Next Page"
-                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
-                    disabled={false}
-                    id="pagination-nextPage-button"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onDragLeave={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchMove={[Function]}
-                    onTouchStart={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <ForwardRef(Tooltip)
+                    TransitionComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "propTypes": Object {
+                          "children": [Function],
+                          "in": [Function],
+                          "onEnter": [Function],
+                          "onExit": [Function],
+                          "style": [Function],
+                          "timeout": [Function],
+                        },
+                        "render": [Function],
+                      }
+                    }
+                    TransitionProps={
+                      Object {
+                        "timeout": 400,
+                      }
+                    }
+                    classes={
+                      Object {
+                        "arrow": "MuiTooltip-arrow",
+                        "popper": "MuiTooltip-popper HvTooltip-popper",
+                        "popperArrow": "MuiTooltip-popperArrow",
+                        "popperInteractive": "MuiTooltip-popperInteractive",
+                        "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                        "tooltipArrow": "MuiTooltip-tooltipArrow",
+                        "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                        "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                        "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                        "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                        "touch": "MuiTooltip-touch",
+                      }
+                    }
+                    enterDelay={300}
+                    placement="top"
+                    title={
+                      <ForwardRef(WithStyles)>
+                        Next page
+                      </ForwardRef(WithStyles)>
+                    }
                   >
-                    <span
-                      className="MuiIconButton-label"
+                    <div
+                      aria-describedby={null}
+                      className=""
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title={null}
                     >
-                      <Component>
-                        <WithStyles(ForwardRef)
-                          disableFocusListener={true}
-                          disableTouchListener={true}
-                          open={false}
-                          style={
+                      <WithStyles(HvButton)
+                        aria-label="Next Page"
+                        className="HvPagination-iconContainer"
+                        disabled={false}
+                        icon={true}
+                        id="pagination-nextPage-button"
+                        onClick={[Function]}
+                      >
+                        <HvButton
+                          aria-label="Next Page"
+                          className="HvPagination-iconContainer"
+                          classes={
                             Object {
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
+                              "ghost": "HvButton-ghost",
+                              "ghostDisabled": "HvButton-ghostDisabled",
+                              "ghostSVG": "HvButton-ghostSVG",
+                              "icon": "HvButton-icon",
+                              "iconSVG": "HvButton-iconSVG",
+                              "primary": "HvButton-primary",
+                              "primaryDisabled": "HvButton-primaryDisabled",
+                              "primarySVG": "HvButton-primarySVG",
+                              "root": "HvButton-root",
+                              "secondary": "HvButton-secondary",
+                              "secondaryDisabled": "HvButton-secondaryDisabled",
+                              "secondarySVG": "HvButton-secondarySVG",
+                              "semantic": "HvButton-semantic",
+                              "semanticDisabled": "HvButton-semanticDisabled",
+                              "semanticSVG": "HvButton-semanticSVG",
+                              "startIcon": "HvButton-startIcon",
                             }
                           }
-                          title={
-                            <ForwardRef(WithStyles)>
-                              Next page
-                            </ForwardRef(WithStyles)>
-                          }
+                          disabled={false}
+                          icon={true}
+                          id="pagination-nextPage-button"
+                          onClick={[Function]}
                         >
-                          <ForwardRef
+                          <WithStyles(ForwardRef(Button))
+                            aria-label="Next Page"
+                            className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                             classes={
                               Object {
-                                "color": "HvTooltip-color",
-                                "popper": "HvTooltip-popper",
-                                "root": "HvTooltip-root",
-                                "separator": "HvTooltip-separator",
-                                "separatorColor": "HvTooltip-separatorColor",
-                                "title": "HvTooltip-title",
-                                "tooltip": "HvTooltip-tooltip",
-                                "tooltipMulti": "HvTooltip-tooltipMulti",
-                                "valueWrapper": "HvTooltip-valueWrapper",
-                                "values": "HvTooltip-values",
-                                "valuesContainer": "HvTooltip-valuesContainer",
+                                "containedPrimary": "HvButton-primary",
+                                "disabled": "HvButton-ghostDisabled",
+                                "outlinedPrimary": "HvButton-secondary",
+                                "root": "HvButton-root",
+                                "startIcon": "HvButton-startIcon",
+                                "textPrimary": "HvButton-ghost",
                               }
                             }
-                            disableFocusListener={true}
-                            disableTouchListener={true}
-                            open={false}
-                            style={
-                              Object {
-                                "overflow": "hidden",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                            title={
-                              <ForwardRef(WithStyles)>
-                                Next page
-                              </ForwardRef(WithStyles)>
-                            }
+                            color="primary"
+                            disableRipple={true}
+                            disabled={false}
+                            id="pagination-nextPage-button"
+                            onClick={[Function]}
+                            variant="text"
                           >
-                            <WithStyles(ForwardRef(Tooltip))
-                              TransitionComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "propTypes": Object {
-                                    "children": [Function],
-                                    "in": [Function],
-                                    "onEnter": [Function],
-                                    "onExit": [Function],
-                                    "style": [Function],
-                                    "timeout": [Function],
-                                  },
-                                  "render": [Function],
-                                }
-                              }
-                              TransitionProps={
-                                Object {
-                                  "timeout": 400,
-                                }
-                              }
+                            <ForwardRef(Button)
+                              aria-label="Next Page"
+                              className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                               classes={
                                 Object {
-                                  "popper": "HvTooltip-popper",
-                                  "tooltip": "HvTooltip-tooltip",
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled HvButton-ghostDisabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root HvButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon HvButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary HvButton-ghost",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
                                 }
                               }
-                              disableFocusListener={true}
-                              disableTouchListener={true}
-                              enterDelay={300}
-                              placement="top"
-                              style={
-                                Object {
-                                  "overflow": "hidden",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                              title={
-                                <ForwardRef(WithStyles)>
-                                  Next page
-                                </ForwardRef(WithStyles)>
-                              }
+                              color="primary"
+                              disableRipple={true}
+                              disabled={false}
+                              id="pagination-nextPage-button"
+                              onClick={[Function]}
+                              variant="text"
                             >
-                              <ForwardRef(Tooltip)
-                                TransitionComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "propTypes": Object {
-                                      "children": [Function],
-                                      "in": [Function],
-                                      "onEnter": [Function],
-                                      "onExit": [Function],
-                                      "style": [Function],
-                                      "timeout": [Function],
-                                    },
-                                    "render": [Function],
-                                  }
-                                }
-                                TransitionProps={
-                                  Object {
-                                    "timeout": 400,
-                                  }
-                                }
-                                classes={
-                                  Object {
-                                    "arrow": "MuiTooltip-arrow",
-                                    "popper": "MuiTooltip-popper HvTooltip-popper",
-                                    "popperArrow": "MuiTooltip-popperArrow",
-                                    "popperInteractive": "MuiTooltip-popperInteractive",
-                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
-                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
-                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                                    "touch": "MuiTooltip-touch",
-                                  }
-                                }
-                                disableFocusListener={true}
-                                disableTouchListener={true}
-                                enterDelay={300}
-                                placement="top"
-                                style={
-                                  Object {
-                                    "overflow": "hidden",
-                                    "textOverflow": "ellipsis",
-                                    "whiteSpace": "nowrap",
-                                  }
-                                }
-                                title={
-                                  <ForwardRef(WithStyles)>
-                                    Next page
-                                  </ForwardRef(WithStyles)>
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                aria-label="Next Page"
+                                className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                component="button"
+                                disableRipple={true}
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                id="pagination-nextPage-button"
+                                onClick={[Function]}
+                                type="button"
                               >
-                                <div
-                                  aria-describedby={null}
-                                  className=""
-                                  onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseOver={[Function]}
-                                  style={
+                                <ForwardRef(ButtonBase)
+                                  aria-label="Next Page"
+                                  className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                  classes={
                                     Object {
-                                      "overflow": "hidden",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
                                     }
                                   }
-                                  title={null}
+                                  component="button"
+                                  disableRipple={true}
+                                  disabled={false}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  id="pagination-nextPage-button"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  <NextPage>
-                                    <Forwards
-                                      className="HvPagination-icon"
+                                  <button
+                                    aria-label="Next Page"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                    disabled={false}
+                                    id="pagination-nextPage-button"
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
                                     >
-                                      <WithStyles(HvIconBase)
+                                      <Forwards
                                         className="HvPagination-icon"
-                                        iconSize="S"
-                                        name="Forwards"
                                       >
-                                        <HvIconBase
+                                        <WithStyles(HvIconBase)
                                           className="HvPagination-icon"
-                                          classes={
-                                            Object {
-                                              "l": "HvIconBase-l",
-                                              "m": "HvIconBase-m",
-                                              "root": "HvIconBase-root",
-                                              "s": "HvIconBase-s",
-                                              "xs": "HvIconBase-xs",
-                                            }
-                                          }
                                           iconSize="S"
                                           name="Forwards"
                                         >
-                                          <div
-                                            className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                          <HvIconBase
+                                            className="HvPagination-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
+                                            iconSize="S"
                                             name="Forwards"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height={16}
-                                              viewBox="0 0 16 16"
-                                              width={16}
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                              name="Forwards"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
-                                                fill="#414141"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </HvIconBase>
-                                      </WithStyles(HvIconBase)>
-                                    </Forwards>
-                                  </NextPage>
-                                </div>
-                                <ForwardRef(Popper)
-                                  anchorEl={
-                                    <div
-                                      class=""
-                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-                                    >
-                                      <div
-                                        class="HvPagination-icon HvIconBase-root HvIconBase-s"
-                                        name="Forwards"
-                                      >
-                                        <svg
-                                          focusable="false"
-                                          height="16"
-                                          viewBox="0 0 16 16"
-                                          width="16"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="color0"
-                                            d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
-                                            fill="#414141"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  }
-                                  className="MuiTooltip-popper HvTooltip-popper"
-                                  id={null}
-                                  open={false}
-                                  placement="top"
-                                  popperOptions={
-                                    Object {
-                                      "modifiers": Object {
-                                        "arrow": Object {
-                                          "element": null,
-                                          "enabled": false,
-                                        },
-                                      },
-                                    }
-                                  }
-                                  transition={true}
-                                />
-                              </ForwardRef(Tooltip)>
-                            </WithStyles(ForwardRef(Tooltip))>
-                          </ForwardRef>
-                        </WithStyles(ForwardRef)>
-                      </Component>
-                    </span>
-                  </button>
-                </ForwardRef(ButtonBase)>
-              </WithStyles(ForwardRef(ButtonBase))>
-            </ForwardRef(IconButton)>
-          </WithStyles(ForwardRef(IconButton))>
-          <WithStyles(ForwardRef(IconButton))
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+                                                  fill="#414141"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </Forwards>
+                                    </span>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                        </HvButton>
+                      </WithStyles(HvButton)>
+                    </div>
+                    <ForwardRef(Popper)
+                      anchorEl={
+                        <div
+                          class=""
+                        >
+                          <button
+                            aria-label="Next Page"
+                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                            id="pagination-nextPage-button"
+                            tabindex="0"
+                            type="button"
+                          >
+                            <span
+                              class="MuiButton-label"
+                            >
+                              <div
+                                class="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                name="Forwards"
+                              >
+                                <svg
+                                  focusable="false"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    class="color0"
+                                    d="M4.79011 15.5L4 14.79529 10.61729 8 4 1.30536 4.79011.5 12 8z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </span>
+                          </button>
+                        </div>
+                      }
+                      className="MuiTooltip-popper HvTooltip-popper"
+                      id={null}
+                      open={false}
+                      placement="top"
+                      popperOptions={
+                        Object {
+                          "modifiers": Object {
+                            "arrow": Object {
+                              "element": null,
+                              "enabled": false,
+                            },
+                          },
+                        }
+                      }
+                      transition={true}
+                    />
+                  </ForwardRef(Tooltip)>
+                </WithStyles(ForwardRef(Tooltip))>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </ButtonIconTooltip>
+          <ButtonIconTooltip
             aria-label="Last Page"
             className="HvPagination-iconContainer"
             disabled={false}
             id="pagination-lastPage-button"
             onClick={[Function]}
+            tooltip="Last page"
           >
-            <ForwardRef(IconButton)
-              aria-label="Last Page"
-              className="HvPagination-iconContainer"
-              classes={
-                Object {
-                  "colorInherit": "MuiIconButton-colorInherit",
-                  "colorPrimary": "MuiIconButton-colorPrimary",
-                  "colorSecondary": "MuiIconButton-colorSecondary",
-                  "disabled": "Mui-disabled",
-                  "edgeEnd": "MuiIconButton-edgeEnd",
-                  "edgeStart": "MuiIconButton-edgeStart",
-                  "label": "MuiIconButton-label",
-                  "root": "MuiIconButton-root",
-                  "sizeSmall": "MuiIconButton-sizeSmall",
-                }
+            <WithStyles(ForwardRef)
+              title={
+                <ForwardRef(WithStyles)>
+                  Last page
+                </ForwardRef(WithStyles)>
               }
-              disabled={false}
-              id="pagination-lastPage-button"
-              onClick={[Function]}
             >
-              <WithStyles(ForwardRef(ButtonBase))
-                aria-label="Last Page"
-                centerRipple={true}
-                className="MuiIconButton-root HvPagination-iconContainer"
-                disabled={false}
-                focusRipple={true}
-                id="pagination-lastPage-button"
-                onClick={[Function]}
+              <ForwardRef
+                classes={
+                  Object {
+                    "color": "HvTooltip-color",
+                    "popper": "HvTooltip-popper",
+                    "root": "HvTooltip-root",
+                    "separator": "HvTooltip-separator",
+                    "separatorColor": "HvTooltip-separatorColor",
+                    "title": "HvTooltip-title",
+                    "tooltip": "HvTooltip-tooltip",
+                    "tooltipMulti": "HvTooltip-tooltipMulti",
+                    "valueWrapper": "HvTooltip-valueWrapper",
+                    "values": "HvTooltip-values",
+                    "valuesContainer": "HvTooltip-valuesContainer",
+                  }
+                }
+                title={
+                  <ForwardRef(WithStyles)>
+                    Last page
+                  </ForwardRef(WithStyles)>
+                }
               >
-                <ForwardRef(ButtonBase)
-                  aria-label="Last Page"
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer"
-                  classes={
+                <WithStyles(ForwardRef(Tooltip))
+                  TransitionComponent={
                     Object {
-                      "disabled": "Mui-disabled",
-                      "focusVisible": "Mui-focusVisible",
-                      "root": "MuiButtonBase-root",
+                      "$$typeof": Symbol(react.forward_ref),
+                      "propTypes": Object {
+                        "children": [Function],
+                        "in": [Function],
+                        "onEnter": [Function],
+                        "onExit": [Function],
+                        "style": [Function],
+                        "timeout": [Function],
+                      },
+                      "render": [Function],
                     }
                   }
-                  disableRipple={true}
-                  disabled={false}
-                  focusRipple={true}
-                  id="pagination-lastPage-button"
-                  onClick={[Function]}
+                  TransitionProps={
+                    Object {
+                      "timeout": 400,
+                    }
+                  }
+                  classes={
+                    Object {
+                      "popper": "HvTooltip-popper",
+                      "tooltip": "HvTooltip-tooltip",
+                    }
+                  }
+                  enterDelay={300}
+                  placement="top"
+                  title={
+                    <ForwardRef(WithStyles)>
+                      Last page
+                    </ForwardRef(WithStyles)>
+                  }
                 >
-                  <button
-                    aria-label="Last Page"
-                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
-                    disabled={false}
-                    id="pagination-lastPage-button"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onDragLeave={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchMove={[Function]}
-                    onTouchStart={[Function]}
-                    tabIndex={0}
-                    type="button"
+                  <ForwardRef(Tooltip)
+                    TransitionComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "propTypes": Object {
+                          "children": [Function],
+                          "in": [Function],
+                          "onEnter": [Function],
+                          "onExit": [Function],
+                          "style": [Function],
+                          "timeout": [Function],
+                        },
+                        "render": [Function],
+                      }
+                    }
+                    TransitionProps={
+                      Object {
+                        "timeout": 400,
+                      }
+                    }
+                    classes={
+                      Object {
+                        "arrow": "MuiTooltip-arrow",
+                        "popper": "MuiTooltip-popper HvTooltip-popper",
+                        "popperArrow": "MuiTooltip-popperArrow",
+                        "popperInteractive": "MuiTooltip-popperInteractive",
+                        "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                        "tooltipArrow": "MuiTooltip-tooltipArrow",
+                        "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                        "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                        "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                        "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                        "touch": "MuiTooltip-touch",
+                      }
+                    }
+                    enterDelay={300}
+                    placement="top"
+                    title={
+                      <ForwardRef(WithStyles)>
+                        Last page
+                      </ForwardRef(WithStyles)>
+                    }
                   >
-                    <span
-                      className="MuiIconButton-label"
+                    <div
+                      aria-describedby={null}
+                      className=""
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title={null}
                     >
-                      <Component>
-                        <WithStyles(ForwardRef)
-                          disableFocusListener={true}
-                          disableTouchListener={true}
-                          open={false}
-                          style={
+                      <WithStyles(HvButton)
+                        aria-label="Last Page"
+                        className="HvPagination-iconContainer"
+                        disabled={false}
+                        icon={true}
+                        id="pagination-lastPage-button"
+                        onClick={[Function]}
+                      >
+                        <HvButton
+                          aria-label="Last Page"
+                          className="HvPagination-iconContainer"
+                          classes={
                             Object {
-                              "overflow": "hidden",
-                              "textOverflow": "ellipsis",
-                              "whiteSpace": "nowrap",
+                              "ghost": "HvButton-ghost",
+                              "ghostDisabled": "HvButton-ghostDisabled",
+                              "ghostSVG": "HvButton-ghostSVG",
+                              "icon": "HvButton-icon",
+                              "iconSVG": "HvButton-iconSVG",
+                              "primary": "HvButton-primary",
+                              "primaryDisabled": "HvButton-primaryDisabled",
+                              "primarySVG": "HvButton-primarySVG",
+                              "root": "HvButton-root",
+                              "secondary": "HvButton-secondary",
+                              "secondaryDisabled": "HvButton-secondaryDisabled",
+                              "secondarySVG": "HvButton-secondarySVG",
+                              "semantic": "HvButton-semantic",
+                              "semanticDisabled": "HvButton-semanticDisabled",
+                              "semanticSVG": "HvButton-semanticSVG",
+                              "startIcon": "HvButton-startIcon",
                             }
                           }
-                          title={
-                            <ForwardRef(WithStyles)>
-                              Last page
-                            </ForwardRef(WithStyles)>
-                          }
+                          disabled={false}
+                          icon={true}
+                          id="pagination-lastPage-button"
+                          onClick={[Function]}
                         >
-                          <ForwardRef
+                          <WithStyles(ForwardRef(Button))
+                            aria-label="Last Page"
+                            className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                             classes={
                               Object {
-                                "color": "HvTooltip-color",
-                                "popper": "HvTooltip-popper",
-                                "root": "HvTooltip-root",
-                                "separator": "HvTooltip-separator",
-                                "separatorColor": "HvTooltip-separatorColor",
-                                "title": "HvTooltip-title",
-                                "tooltip": "HvTooltip-tooltip",
-                                "tooltipMulti": "HvTooltip-tooltipMulti",
-                                "valueWrapper": "HvTooltip-valueWrapper",
-                                "values": "HvTooltip-values",
-                                "valuesContainer": "HvTooltip-valuesContainer",
+                                "containedPrimary": "HvButton-primary",
+                                "disabled": "HvButton-ghostDisabled",
+                                "outlinedPrimary": "HvButton-secondary",
+                                "root": "HvButton-root",
+                                "startIcon": "HvButton-startIcon",
+                                "textPrimary": "HvButton-ghost",
                               }
                             }
-                            disableFocusListener={true}
-                            disableTouchListener={true}
-                            open={false}
-                            style={
-                              Object {
-                                "overflow": "hidden",
-                                "textOverflow": "ellipsis",
-                                "whiteSpace": "nowrap",
-                              }
-                            }
-                            title={
-                              <ForwardRef(WithStyles)>
-                                Last page
-                              </ForwardRef(WithStyles)>
-                            }
+                            color="primary"
+                            disableRipple={true}
+                            disabled={false}
+                            id="pagination-lastPage-button"
+                            onClick={[Function]}
+                            variant="text"
                           >
-                            <WithStyles(ForwardRef(Tooltip))
-                              TransitionComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "propTypes": Object {
-                                    "children": [Function],
-                                    "in": [Function],
-                                    "onEnter": [Function],
-                                    "onExit": [Function],
-                                    "style": [Function],
-                                    "timeout": [Function],
-                                  },
-                                  "render": [Function],
-                                }
-                              }
-                              TransitionProps={
-                                Object {
-                                  "timeout": 400,
-                                }
-                              }
+                            <ForwardRef(Button)
+                              aria-label="Last Page"
+                              className="HvPagination-iconContainer HvButton-icon HvButton-ghostSVG"
                               classes={
                                 Object {
-                                  "popper": "HvTooltip-popper",
-                                  "tooltip": "HvTooltip-tooltip",
+                                  "colorInherit": "MuiButton-colorInherit",
+                                  "contained": "MuiButton-contained",
+                                  "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
+                                  "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                  "disableElevation": "MuiButton-disableElevation",
+                                  "disabled": "Mui-disabled HvButton-ghostDisabled",
+                                  "endIcon": "MuiButton-endIcon",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                  "label": "MuiButton-label",
+                                  "outlined": "MuiButton-outlined",
+                                  "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
+                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                  "root": "MuiButton-root HvButton-root",
+                                  "sizeLarge": "MuiButton-sizeLarge",
+                                  "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon HvButton-startIcon",
+                                  "text": "MuiButton-text",
+                                  "textPrimary": "MuiButton-textPrimary HvButton-ghost",
+                                  "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
                                 }
                               }
-                              disableFocusListener={true}
-                              disableTouchListener={true}
-                              enterDelay={300}
-                              placement="top"
-                              style={
-                                Object {
-                                  "overflow": "hidden",
-                                  "textOverflow": "ellipsis",
-                                  "whiteSpace": "nowrap",
-                                }
-                              }
-                              title={
-                                <ForwardRef(WithStyles)>
-                                  Last page
-                                </ForwardRef(WithStyles)>
-                              }
+                              color="primary"
+                              disableRipple={true}
+                              disabled={false}
+                              id="pagination-lastPage-button"
+                              onClick={[Function]}
+                              variant="text"
                             >
-                              <ForwardRef(Tooltip)
-                                TransitionComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "propTypes": Object {
-                                      "children": [Function],
-                                      "in": [Function],
-                                      "onEnter": [Function],
-                                      "onExit": [Function],
-                                      "style": [Function],
-                                      "timeout": [Function],
-                                    },
-                                    "render": [Function],
-                                  }
-                                }
-                                TransitionProps={
-                                  Object {
-                                    "timeout": 400,
-                                  }
-                                }
-                                classes={
-                                  Object {
-                                    "arrow": "MuiTooltip-arrow",
-                                    "popper": "MuiTooltip-popper HvTooltip-popper",
-                                    "popperArrow": "MuiTooltip-popperArrow",
-                                    "popperInteractive": "MuiTooltip-popperInteractive",
-                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
-                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
-                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                                    "touch": "MuiTooltip-touch",
-                                  }
-                                }
-                                disableFocusListener={true}
-                                disableTouchListener={true}
-                                enterDelay={300}
-                                placement="top"
-                                style={
-                                  Object {
-                                    "overflow": "hidden",
-                                    "textOverflow": "ellipsis",
-                                    "whiteSpace": "nowrap",
-                                  }
-                                }
-                                title={
-                                  <ForwardRef(WithStyles)>
-                                    Last page
-                                  </ForwardRef(WithStyles)>
-                                }
+                              <WithStyles(ForwardRef(ButtonBase))
+                                aria-label="Last Page"
+                                className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                component="button"
+                                disableRipple={true}
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                id="pagination-lastPage-button"
+                                onClick={[Function]}
+                                type="button"
                               >
-                                <div
-                                  aria-describedby={null}
-                                  className=""
-                                  onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseOver={[Function]}
-                                  style={
+                                <ForwardRef(ButtonBase)
+                                  aria-label="Last Page"
+                                  className="MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                  classes={
                                     Object {
-                                      "overflow": "hidden",
-                                      "textOverflow": "ellipsis",
-                                      "whiteSpace": "nowrap",
+                                      "disabled": "Mui-disabled",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "root": "MuiButtonBase-root",
                                     }
                                   }
-                                  title={null}
+                                  component="button"
+                                  disableRipple={true}
+                                  disabled={false}
+                                  focusRipple={true}
+                                  focusVisibleClassName="Mui-focusVisible"
+                                  id="pagination-lastPage-button"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  <LastPage>
-                                    <End
-                                      className="HvPagination-icon"
+                                  <button
+                                    aria-label="Last Page"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                                    disabled={false}
+                                    id="pagination-lastPage-button"
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <span
+                                      className="MuiButton-label"
                                     >
-                                      <WithStyles(HvIconBase)
+                                      <End
                                         className="HvPagination-icon"
-                                        iconSize="S"
-                                        name="End"
                                       >
-                                        <HvIconBase
+                                        <WithStyles(HvIconBase)
                                           className="HvPagination-icon"
-                                          classes={
-                                            Object {
-                                              "l": "HvIconBase-l",
-                                              "m": "HvIconBase-m",
-                                              "root": "HvIconBase-root",
-                                              "s": "HvIconBase-s",
-                                              "xs": "HvIconBase-xs",
-                                            }
-                                          }
                                           iconSize="S"
                                           name="End"
                                         >
-                                          <div
-                                            className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                          <HvIconBase
+                                            className="HvPagination-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
+                                            iconSize="S"
                                             name="End"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height={16}
-                                              viewBox="0 0 16 16"
-                                              width={16}
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                              name="End"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M13 0h1v16h-1zM2.58026.58032l-.70715.707L8.58575 8l-6.71264 6.71265.70715.707L10 8z"
-                                                fill="#414141"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </HvIconBase>
-                                      </WithStyles(HvIconBase)>
-                                    </End>
-                                  </LastPage>
-                                </div>
-                                <ForwardRef(Popper)
-                                  anchorEl={
-                                    <div
-                                      class=""
-                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
-                                    >
-                                      <div
-                                        class="HvPagination-icon HvIconBase-root HvIconBase-s"
-                                        name="End"
-                                      >
-                                        <svg
-                                          focusable="false"
-                                          height="16"
-                                          viewBox="0 0 16 16"
-                                          width="16"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="color0"
-                                            d="M13 0h1v16h-1zM2.58026.58032l-.70715.707L8.58575 8l-6.71264 6.71265.70715.707L10 8z"
-                                            fill="#414141"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  }
-                                  className="MuiTooltip-popper HvTooltip-popper"
-                                  id={null}
-                                  open={false}
-                                  placement="top"
-                                  popperOptions={
-                                    Object {
-                                      "modifiers": Object {
-                                        "arrow": Object {
-                                          "element": null,
-                                          "enabled": false,
-                                        },
-                                      },
-                                    }
-                                  }
-                                  transition={true}
-                                />
-                              </ForwardRef(Tooltip)>
-                            </WithStyles(ForwardRef(Tooltip))>
-                          </ForwardRef>
-                        </WithStyles(ForwardRef)>
-                      </Component>
-                    </span>
-                  </button>
-                </ForwardRef(ButtonBase)>
-              </WithStyles(ForwardRef(ButtonBase))>
-            </ForwardRef(IconButton)>
-          </WithStyles(ForwardRef(IconButton))>
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M13 0h1v16h-1zM2.58026.58032l-.70715.707L8.58575 8l-6.71264 6.71265.70715.707L10 8z"
+                                                  fill="#414141"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </End>
+                                    </span>
+                                  </button>
+                                </ForwardRef(ButtonBase)>
+                              </WithStyles(ForwardRef(ButtonBase))>
+                            </ForwardRef(Button)>
+                          </WithStyles(ForwardRef(Button))>
+                        </HvButton>
+                      </WithStyles(HvButton)>
+                    </div>
+                    <ForwardRef(Popper)
+                      anchorEl={
+                        <div
+                          class=""
+                        >
+                          <button
+                            aria-label="Last Page"
+                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvPagination-iconContainer HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                            id="pagination-lastPage-button"
+                            tabindex="0"
+                            type="button"
+                          >
+                            <span
+                              class="MuiButton-label"
+                            >
+                              <div
+                                class="HvPagination-icon HvIconBase-root HvIconBase-s"
+                                name="End"
+                              >
+                                <svg
+                                  focusable="false"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    class="color0"
+                                    d="M13 0h1v16h-1zM2.58026.58032l-.70715.707L8.58575 8l-6.71264 6.71265.70715.707L10 8z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </span>
+                          </button>
+                        </div>
+                      }
+                      className="MuiTooltip-popper HvTooltip-popper"
+                      id={null}
+                      open={false}
+                      placement="top"
+                      popperOptions={
+                        Object {
+                          "modifiers": Object {
+                            "arrow": Object {
+                              "element": null,
+                              "enabled": false,
+                            },
+                          },
+                        }
+                      }
+                      transition={true}
+                    />
+                  </ForwardRef(Tooltip)>
+                </WithStyles(ForwardRef(Tooltip))>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </ButtonIconTooltip>
         </div>
       </div>
     </Pagination>

@@ -27,7 +27,10 @@ describe("Loading", () => {
     );
 
     expect(wrapper.find(".HvLoading-barContainer").length).toEqual(0);
-    wrapper.find(HvButton).simulate("click");
+    wrapper
+      .find(HvButton)
+      .at(0)
+      .simulate("click");
     expect(wrapper.find(".HvLoading-barContainer").length).toEqual(1);
 
     console.warn = originalWarn;

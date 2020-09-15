@@ -8,7 +8,7 @@ Force Tags    v3
 *** Test Cases ***
 checkboxes are selected when checkbox all is selected
     [Documentation]    unselected - selected
-    Select From List By Value      ${rows_per_page}    20
+    Select Dropdown Value          ${rows_per_page}    20
     Click Element                  ${bulkAction_checkbox}
     Wait Until Page Contains       13 / 13
     Page Should Contain Element    ${rows_selected}    limit=13

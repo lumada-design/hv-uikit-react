@@ -4,6 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 import ReactTable from "react-table";
 import { HvDropDownMenu, HvPagination, HvProvider, HvTable } from "../..";
+import Select from "../../Pagination/Select";
 import NoData from "../NoData";
 import { CustomEmpty } from "../stories/Table.stories";
 
@@ -117,7 +118,7 @@ describe("[v3] Hv Table", () => {
         </HvProvider>
       );
 
-      const pageSize = wrapper.find("select");
+      const pageSize = wrapper.find(Select);
       expect(pageSize.props().value).toBe(5);
     });
 

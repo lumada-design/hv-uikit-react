@@ -28,7 +28,7 @@ ${row_4_checkbox}               xpath:(//div[@role='row'][@aria-rowindex])[4]//i
 ${row_5_checkbox}               xpath:(//div[@role='row'][@aria-rowindex])[5]//input
 ${rows_counted}                 css:[role=rowgroup] [role=row]
 ${rows_empty}                   css:[role=[role=rowgroup] [role=row]:not([aria-rowindex])
-${rows_per_page}                css:select[aria-label='Select how many to display']
+${rows_per_page}                css:div[class*='HvPagination-pageSizeOptionsSelect']
 ${rows_populated}               css:[role=rowgroup] [aria-rowindex]
 ${rows_selected}                css:[role=row][aria-selected=true]
 ${table}                        css:[caption][role=table]

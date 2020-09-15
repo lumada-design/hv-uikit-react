@@ -55,7 +55,6 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
         aria-expanded={false}
         aria-haspopup="listbox"
         aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
-        aria-owns="hv-base-dropdown-3-children-container"
         className="HvBaseDropdown-root"
         id="hv-base-dropdown-3"
         onClick={[Function]}
@@ -70,10 +69,10 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
         >
           <div
             className="HvBaseDropdown-selection"
+            id="hv-base-dropdown-3-selectionPlaceholder"
           >
             <WithStyles(ForwardRef)
               className="HvBaseDropdown-truncate"
-              id="hv-base-dropdown-3-selectionPlaceholder"
               variant="placeholderText"
             >
               <ForwardRef
@@ -103,12 +102,10 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
-                id="hv-base-dropdown-3-selectionPlaceholder"
                 variant="placeholderText"
               >
                 <p
                   className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
-                  id="hv-base-dropdown-3-selectionPlaceholder"
                 >
                   Placeholder...
                 </p>
@@ -167,7 +164,6 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
             aria-expanded="false"
             aria-haspopup="listbox"
             aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
-            aria-owns="hv-base-dropdown-3-children-container"
             class="HvBaseDropdown-root"
             id="hv-base-dropdown-3"
             tabindex="0"
@@ -180,10 +176,10 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
             >
               <div
                 class="HvBaseDropdown-selection"
+                id="hv-base-dropdown-3-selectionPlaceholder"
               >
                 <p
                   class="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
-                  id="hv-base-dropdown-3-selectionPlaceholder"
                 >
                   Placeholder...
                 </p>
@@ -284,7 +280,6 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
         aria-expanded={false}
         aria-haspopup="listbox"
         aria-labelledby="hv-base-dropdown-1-selectionPlaceholder"
-        aria-owns="hv-base-dropdown-1-children-container"
         className="HvBaseDropdown-root"
         id="hv-base-dropdown-1"
         onClick={[Function]}
@@ -299,10 +294,10 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
         >
           <div
             className="HvBaseDropdown-selection"
+            id="hv-base-dropdown-1-selectionPlaceholder"
           >
             <WithStyles(ForwardRef)
               className="HvBaseDropdown-truncate"
-              id="hv-base-dropdown-1-selectionPlaceholder"
               variant="placeholderText"
             >
               <ForwardRef
@@ -332,12 +327,10 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
-                id="hv-base-dropdown-1-selectionPlaceholder"
                 variant="placeholderText"
               >
                 <p
                   className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
-                  id="hv-base-dropdown-1-selectionPlaceholder"
                 >
                   Placeholder...
                 </p>
@@ -464,7 +457,6 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
       placeholder="Placeholder..."
     >
       <div
-        aria-controls="hv-base-dropdown-2-children-container"
         aria-expanded={true}
         aria-haspopup="listbox"
         aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
@@ -476,6 +468,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
         tabIndex={0}
       >
         <div
+          aria-controls="hv-base-dropdown-2-children-container"
           aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
           className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
           id="hv-base-dropdown-2-header"
@@ -483,10 +476,10 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
         >
           <div
             className="HvBaseDropdown-selection"
+            id="hv-base-dropdown-2-selectionPlaceholder"
           >
             <WithStyles(ForwardRef)
               className="HvBaseDropdown-truncate"
-              id="hv-base-dropdown-2-selectionPlaceholder"
               variant="placeholderText"
             >
               <ForwardRef
@@ -516,12 +509,10 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
-                id="hv-base-dropdown-2-selectionPlaceholder"
                 variant="placeholderText"
               >
                 <p
                   className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
-                  id="hv-base-dropdown-2-selectionPlaceholder"
                 >
                   Placeholder...
                 </p>
@@ -577,7 +568,6 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
       <ForwardRef(Popper)
         anchorEl={
           <div
-            aria-controls="hv-base-dropdown-2-children-container"
             aria-expanded="true"
             aria-haspopup="listbox"
             aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
@@ -587,6 +577,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
             tabindex="0"
           >
             <div
+              aria-controls="hv-base-dropdown-2-children-container"
               aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
               class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
               id="hv-base-dropdown-2-header"
@@ -594,10 +585,10 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
             >
               <div
                 class="HvBaseDropdown-selection"
+                id="hv-base-dropdown-2-selectionPlaceholder"
               >
                 <p
                   class="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
-                  id="hv-base-dropdown-2-selectionPlaceholder"
                 >
                   Placeholder...
                 </p>

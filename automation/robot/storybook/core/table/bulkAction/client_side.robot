@@ -23,7 +23,7 @@ disable actions when is removed all selections
 
 show previous page when it is deleted all rows of last page
     Wait Until Element Is Enabled               ${rows_per_page}
-    Select From List By Value                   ${rows_per_page}    5
+    Select Dropdown Value                       ${rows_per_page}    5
     Click Button                                ${pagination_last_page}
     select Checkbox                             ${bulkAction_checkbox}
     Wait Until Page Contains                    3 / 13
@@ -37,7 +37,7 @@ show previous page when it is deleted all rows of last page
 deselect all elements with multiple pages selected
     Wait Until Page Contains Element    ${bulkAction_checkbox}
     Select Checkbox                     ${bulkAction_checkbox}
-    Select From List By Value           ${rows_per_page}    5
+    Select Dropdown Value               ${rows_per_page}    5
     Click Element                       ${bulkAction_checkbox}
     Checkbox Should Not Be Selected     ${bulkAction_checkbox}
     Page Should Contain                 All

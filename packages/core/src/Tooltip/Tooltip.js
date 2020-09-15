@@ -1,52 +1,46 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Fade, Tooltip, withStyles } from "@material-ui/core";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import isNil from "lodash/isNil";
 import styles from "./styles";
 
 /**
  * Tooltips display informative text when users hover over, focus on, or tap an element.
  */
-const HvTooltip = React.forwardRef(
-  (
-    {
-      className,
-      classes,
-      open,
-      enterDelay = 300,
-      placement = "top",
-      useSingle = true,
-      children,
-      tooltipData,
-      title,
-      TransitionComponent = Fade,
-      TransitionProps = { timeout: 400 },
-      ...others
-    },
-    ref
-  ) => {
-    return (
-      <Tooltip
-        ref={ref}
-        open={(!isNil(open) && open) || undefined}
-        enterDelay={enterDelay}
-        placement={placement}
-        TransitionComponent={TransitionComponent}
-        TransitionProps={TransitionProps}
-        className={className}
-        classes={{
-          tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
-          popper: classes.popper
-        }}
-        title={tooltipData || title}
-        {...others}
-      >
-        {children}
-      </Tooltip>
-    );
-  }
-);
+const HvTooltip = React.forwardRef((props, ref) => {
+  const {
+    className,
+    classes,
+    open,
+    enterDelay = 300,
+    placement = "top",
+    useSingle = true,
+    children,
+    title,
+    TransitionComponent = Fade,
+    TransitionProps = { timeout: 400 },
+    ...others
+  } = props;
+
+  return (
+    <Tooltip
+      ref={ref}
+      open={open ?? undefined}
+      enterDelay={enterDelay}
+      placement={placement}
+      TransitionComponent={TransitionComponent}
+      TransitionProps={TransitionProps}
+      className={className}
+      classes={{
+        tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
+        popper: classes.popper
+      }}
+      title={title}
+      {...others}
+    >
+      {children}
+    </Tooltip>
+  );
+});
 
 HvTooltip.propTypes = {
   /**
@@ -102,11 +96,6 @@ HvTooltip.propTypes = {
      */
     valueWrapper: PropTypes.string
   }).isRequired,
-  /**
-   * Values to display in tooltip.
-   * @deprecated
-   */
-  tooltipData: deprecatedPropType(PropTypes.node),
   /**
    * If true, the tooltip is shown.
    */

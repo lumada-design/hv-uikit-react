@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { IconButton, withStyles } from "@material-ui/core";
-import { DropDownXS, Start, End, Backwards, Forwards } from "@hv/uikit-react-icons";
-import { isKeypress, KeyboardCodes as Codes } from "../utils/KeyboardUtils";
+import { withStyles } from "@material-ui/core";
+import { Start, End, Backwards, Forwards } from "@hv/uikit-react-icons";
+import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import { HvInput, HvTypography } from "..";
-import withTooltip from "../withTooltip";
 import withLabels from "../withLabels";
 import { setId } from "../utils";
+import ButtonIconTooltip from "./ButtonIconTooltip";
+import Select, { Option } from "./Select";
 import styles from "./styles";
 
 const DEFAULT_LABELS = {
@@ -21,6 +22,10 @@ const DEFAULT_LABELS = {
   paginationLastPageTitle: "Last page",
   paginationInputLabel: "Total pages for page input"
 };
+
+const setColor = condition => (condition ? "atmo5" : undefined);
+
+const { Enter } = KeyboardCodes;
 
 const Pagination = ({
   classes,
@@ -51,7 +56,7 @@ const Pagination = ({
     setStatePage(outPage);
 
     if (page !== outPage) {
-      onPageChange(outPage);
+      onPageChange?.(outPage);
     }
   };
 
@@ -66,16 +71,32 @@ const Pagination = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, pageSize]);
 
-  const setColor = condition => (condition ? "atmo5" : undefined);
-  const FirstPage = () => <Start className={classes.icon} color={setColor(!canPrevious)} />;
-  const PrevPage = () => <Backwards className={classes.icon} color={setColor(!canPrevious)} />;
-  const NextPage = () => <Forwards className={classes.icon} color={setColor(!canNext)} />;
-  const LastPage = () => <End className={classes.icon} color={setColor(!canNext)} />;
-
-  const FirstPageTooltipWrapper = withTooltip(FirstPage, labels.paginationFirstPageTitle);
-  const PreviousPageTooltipWrapper = withTooltip(PrevPage, labels.paginationPreviousPageTitle);
-  const NextPageTooltipWrapper = withTooltip(NextPage, labels.paginationNextPageTitle);
-  const LastPageTooltipWrapper = withTooltip(LastPage, labels.paginationLastPageTitle);
+  const renderPageJump = () => (
+    <div className={classes.pageJump}>
+      <HvInput
+        id={setId(id, "currentPage")}
+        labels={labels}
+        inputProps={{
+          "aria-label": `${pages} ${labels.paginationInputLabel}`
+        }}
+        classes={{
+          root: classes.pageSizeInputContainer,
+          input: classes.pageSizeInput,
+          inputRoot: classes.pageSizeInputRoot
+        }}
+        onChange={(event, val) => setStatePage(val - 1)}
+        initialValue={`${statePage + 1}`}
+        value={`${statePage === "" ? "" : Number(statePage) + 1}`}
+        onBlur={applyPage}
+        onKeyDown={e => isKeypress(e, Enter) && applyPage()}
+        validationIconVisible={false}
+        disabled={pageSize === 0}
+        disableClear
+        type="number"
+        {...currentPageInputProps}
+      />
+    </div>
+  );
 
   return (
     <div id={id} className={clsx(className, classes.root)}>
@@ -83,70 +104,48 @@ const Pagination = ({
         {showPageSizeOptions && (
           <>
             <HvTypography component="span">{labels.pageSizePrev}</HvTypography>
-            <select
+            <Select
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
               className={classes.pageSizeOptionsSelect}
               aria-label={labels.pageSizeSelectorDescription}
-              onChange={e => onPageSizeChange(Number(e.target.value))}
+              onChange={(evt, val) => onPageSizeChange?.(val)}
               value={pageSize}
             >
               {pageSizeOptions.map(option => (
-                <option key={option} value={option}>
+                <Option key={option} value={option}>
                   {option}
-                </option>
+                </Option>
               ))}
-            </select>
-            <DropDownXS className={classes.selectDownIcon} />
+            </Select>
             <HvTypography component="span">{labels.pageSizeEntryName}</HvTypography>
           </>
         )}
       </div>
       <div className={classes.pageNavigator} {...navigationProps}>
-        <IconButton
+        <ButtonIconTooltip
           id={setId(id, "firstPage-button")}
           aria-label="First Page"
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
+          tooltip={labels.paginationFirstPageTitle}
         >
-          <FirstPageTooltipWrapper />
-        </IconButton>
-        <IconButton
+          <Start className={classes.icon} color={setColor(!canPrevious)} />
+        </ButtonIconTooltip>
+        <ButtonIconTooltip
           id={setId(id, "previousPage-button")}
           aria-label="Previous Page"
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
+          tooltip={labels.paginationPreviousPageTitle}
         >
-          <PreviousPageTooltipWrapper />
-        </IconButton>
+          <Backwards className={classes.icon} color={setColor(!canPrevious)} />
+        </ButtonIconTooltip>
         <div className={classes.pageInfo}>
           {showPageJump ? (
-            <div className={classes.pageJump}>
-              <HvInput
-                id={setId(id, "currentPage")}
-                labels={labels}
-                inputProps={{
-                  "aria-label": `${pages} ${labels.paginationInputLabel}`
-                }}
-                classes={{
-                  root: classes.pageSizeInputContainer,
-                  input: classes.pageSizeInput,
-                  inputRoot: classes.pageSizeInputRoot
-                }}
-                onChange={(event, val) => setStatePage(val - 1)}
-                initialValue={`${statePage + 1}`}
-                value={`${statePage === "" ? "" : Number(statePage) + 1}`}
-                onBlur={applyPage}
-                onKeyDown={e => isKeypress(e, Codes.Enter) && applyPage()}
-                validationIconVisible={false}
-                disabled={pageSize === 0}
-                disableClear
-                type="number"
-                {...currentPageInputProps}
-              />
-            </div>
+            renderPageJump()
           ) : (
             <HvTypography component="span">{`${statePage + 1}`}</HvTypography>
           )}
@@ -155,24 +154,26 @@ const Pagination = ({
             {pages}
           </HvTypography>
         </div>
-        <IconButton
+        <ButtonIconTooltip
           id={setId(id, "nextPage-button")}
           aria-label="Next Page"
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
+          tooltip={labels.paginationNextPageTitle}
         >
-          <NextPageTooltipWrapper />
-        </IconButton>
-        <IconButton
+          <Forwards className={classes.icon} color={setColor(!canNext)} />
+        </ButtonIconTooltip>
+        <ButtonIconTooltip
           id={setId(id, "lastPage-button")}
           aria-label="Last Page"
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
+          tooltip={labels.paginationLastPageTitle}
         >
-          <LastPageTooltipWrapper />
-        </IconButton>
+          <End className={classes.icon} color={setColor(!canNext)} />
+        </ButtonIconTooltip>
       </div>
     </div>
   );
@@ -220,17 +221,13 @@ Pagination.propTypes = {
      */
     pageSizeInputContainer: PropTypes.string,
     /**
-     * Styles applied to each navigation `IconButton` icon container.
+     * Styles applied to each navigation `HvButton` icon container.
      */
     iconContainer: PropTypes.string,
     /**
      * Styles applied to each navigation icon.
      */
-    icon: PropTypes.string,
-    /**
-     * Styles applied to the page size dropdown icon.
-     */
-    selectDownIcon: PropTypes.string
+    icon: PropTypes.string
   }).isRequired,
   /**
    * The number of pages the component has.

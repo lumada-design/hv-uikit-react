@@ -22,7 +22,7 @@ keep same number rows per page when column is sorted
 keep same data sort when number of rows per table is changed
     [Documentation]    sort by vs table size
     Click Element                        ${header_2}
-    Select From List By Value            ${rows_per_page}         5
+    Select Dropdown Value                ${rows_per_page}         5
     Element Attribute Value Should Be    ${header_2}    aria-sort    ascending
     elements text should be              ${column_2}    ${ascending_values}
 
@@ -44,7 +44,7 @@ show first table page when a column is sorted
 keep same data sort when pagination is moved to previous page
     [Documentation]    sort by vs page size
     Click Element                ${header_2}
-    Select From List By Value    ${rows_per_page}    5
+    Select Dropdown Value        ${rows_per_page}    5
     Click Element                ${pagination_next_page}
     elements text should be      ${column_2}    ${ascending_values_2}
     Click Element                ${pagination_previous_page}

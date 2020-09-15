@@ -27,7 +27,7 @@ shrink expanded line when any column is sorted
     Wait Until Page Does Not Contain    Company
 
 shrink expanded line when it is changed the navigation page
-    Select From List By Value           ${rows_per_page}    5
+    Select Dropdown Value               ${rows_per_page}    5
     Click Element                       ${button_expand}
     Wait Until Page Contains            Company
     Click Element                       ${pagination_next_page}
@@ -36,7 +36,7 @@ shrink expanded line when it is changed the navigation page
 shrink expanded line when it is changed the number of rows per page
     Click Element                       ${button_expand}
     Wait Until Page Contains            Company
-    Select From List By Value           ${rows_per_page}    5
+    Select Dropdown Value               ${rows_per_page}    5
     Wait Until Page Does Not Contain    Company
 
 do not shrink data when any part of expanded area is clicked

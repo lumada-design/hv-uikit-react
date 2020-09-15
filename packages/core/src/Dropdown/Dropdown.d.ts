@@ -95,6 +95,7 @@ export interface HvDropdownProps
 
 export type HvDropdownClassKey =
   | "root"
+  | "dropdown"
   | "label"
   | "arrow"
   | "truncate"
