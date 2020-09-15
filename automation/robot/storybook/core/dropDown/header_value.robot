@@ -14,7 +14,7 @@ api selectDefault
     ...    Element Text Should Be    ${dropdownHeader}    Value 1    ignore_case=True
 
 api select item
-    Go To                            ${patterns}dropdown--single-selected-value
+    Go To                            ${tests}dropdown--single-selected-value
     Wait Until Element Is Visible    ${dropdown}
     Element Text Should Be           ${dropdownHeader}    Value 3    ignore_case=True
 
@@ -29,7 +29,7 @@ user selected item
     Element Text Should Be               ${dropdownHeader}    Value 2    ignore_case=True
 
 user unselect item
-    Go To                                ${patterns}dropdown--single-selected-value
+    Go To                                ${tests}dropdown--single-selected-value
     Wait Until Element Is Visible        ${dropdown}
     Element Text Should Be               ${dropdownHeader}    Value 3    ignore_case=True
     Click Element                        ${dropdownHeader}

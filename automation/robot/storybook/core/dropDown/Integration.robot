@@ -1,5 +1,7 @@
 *** Setting ***
 Resource      _resources.resource
+Force Tags    v3
+
 
 *** Test Cases ***
 move focus between dropdown's
