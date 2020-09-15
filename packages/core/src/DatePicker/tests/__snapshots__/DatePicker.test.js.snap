@@ -7573,7 +7573,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
         <WithStyles(WithId)
           className="HvDatePicker-root"
           id="hv-date-picker-3"
-          value={2020-09-14T19:08:46.955Z}
+          value={2020-09-15T18:30:09.896Z}
         >
           <WithId
             className="HvDatePicker-root"
@@ -7583,7 +7583,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               }
             }
             id="hv-date-picker-3"
-            value={2020-09-14T19:08:46.955Z}
+            value={2020-09-15T18:30:09.896Z}
           >
             <HvFormElement
               className="HvDatePicker-root"
@@ -7593,7 +7593,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 }
               }
               id="hv-date-picker-3"
-              value={2020-09-14T19:08:46.955Z}
+              value={2020-09-15T18:30:09.896Z}
             >
               <div
                 className="HvDatePicker-root HvFormElement-root"
@@ -7618,7 +7618,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                     <ForwardRef(WithStyles)
                       variant="normalText"
                     >
-                      14 Sep 2020
+                      15 Sep 2020
                     </ForwardRef(WithStyles)>
                   }
                   placement="right"
@@ -7666,7 +7666,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                       <ForwardRef(WithStyles)
                         variant="normalText"
                       >
-                        14 Sep 2020
+                        15 Sep 2020
                       </ForwardRef(WithStyles)>
                     }
                     placement="right"
@@ -7715,7 +7715,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                         <ForwardRef(WithStyles)
                           variant="normalText"
                         >
-                          14 Sep 2020
+                          15 Sep 2020
                         </ForwardRef(WithStyles)>
                       }
                       placement="right"
@@ -7763,6 +7763,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                                     "lTitle": "HvTypography-lTitle",
                                     "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
@@ -7783,7 +7784,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                                 <p
                                   className="HvTypography-root HvTypography-normalText"
                                 >
-                                  14 Sep 2020
+                                  15 Sep 2020
                                 </p>
                               </ForwardRef>
                             </WithStyles(ForwardRef)>

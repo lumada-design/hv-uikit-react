@@ -22,7 +22,12 @@ const styles = theme => ({
   selectedNavText: theme.hv.typography.selectedNavText,
   vizText: theme.hv.typography.vizText,
   vizTextDisabled: theme.hv.typography.vizTextDisabled,
-  xsInlineLink: theme.hv.typography.xsInlineLink
+  xsInlineLink: theme.hv.typography.xsInlineLink,
+  noWrap: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap"
+  }
 });
 
 export default styles;

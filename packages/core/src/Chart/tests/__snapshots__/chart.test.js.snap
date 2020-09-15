@@ -619,6 +619,7 @@ exports[`Tooltip withStyles should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",

@@ -35,6 +35,7 @@ const HvTypography = React.forwardRef((props, ref) => {
     className,
     component,
     children,
+    noWrap = false,
     ...others
   } = props;
   const Component = component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
@@ -43,7 +44,9 @@ const HvTypography = React.forwardRef((props, ref) => {
     <Component
       id={id}
       ref={ref}
-      className={clsx(className, classes.root, classes[variant])}
+      className={clsx(className, classes.root, classes[variant], {
+        [classes.noWrap]: noWrap
+      })}
       {...others}
     >
       {children}
@@ -140,7 +143,11 @@ HvTypography.propTypes = {
     /**
      * Styles applied to the xsInlineLink variant
      */
-    xsInlineLink: PropTypes.string
+    xsInlineLink: PropTypes.string,
+    /**
+     * Styles applied to the root root element if noWrap is used
+     */
+    noWrap: PropTypes.string
   }),
   /**
    * @ignore
@@ -183,7 +190,14 @@ HvTypography.propTypes = {
     "vizText",
     "vizTextDisabled",
     "xsInlineLink"
-  ])
+  ]),
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   */
+  noWrap: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvTypography" })(HvTypography);
