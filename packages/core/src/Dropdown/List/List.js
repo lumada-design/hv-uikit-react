@@ -31,6 +31,7 @@ const List = ({
   singleSelectionToggle,
   placement,
   popperProps,
+  headerRef,
   ...others
 }) => {
   const [searchStr, setSearchStr] = useState();
@@ -48,13 +49,10 @@ const List = ({
     selectionConjunction: labels.multiSelectionConjunction
   };
 
-  const { headerId } = others;
-
   const applyFocusRef = useCallback(node => {
-    const dropdownHeader = document.getElementById(`${headerId}-header`);
+    const dropdownHeader = headerRef?.current;
     if (node) {
       const focusableList = getFocusableList(node);
-
       if (focusableList.length === 0) {
         return;
       }
@@ -234,7 +232,9 @@ const List = ({
     setList(clone(prevList));
     setSearchStr("");
     updateSelectAll(prevList);
-    sendOnChange(prevList, false, true, false, event);
+    event?.target === headerRef?.current
+      ? sendOnChange(prevList, false, false, false, event)
+      : sendOnChange(prevList, false, true, false, event);
   };
 
   /**
@@ -449,7 +449,11 @@ List.propTypes = {
   /**
    * An object containing props to be wired to the popper component.
    */
-  popperProps: PropTypes.shape()
+  popperProps: PropTypes.shape(),
+  /**
+   * A reference to the dropdown header used for refocusing the element.
+   */
+  headerRef: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvDropdownList" })(List);

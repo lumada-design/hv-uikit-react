@@ -272,7 +272,42 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
             }
             disablePortal={false}
             hasTooltips={false}
-            headerId="test-dropdown"
+            headerRef={
+              Object {
+                "current": <div
+                  aria-labelledby="test-dropdown-selectionLabel"
+                  class="HvDropdown-header HvDropdown-headerDisabled"
+                  id="test-dropdown-header"
+                  role="textbox"
+                  style="pointer-events: none;"
+                  tabindex="0"
+                >
+                  <p
+                    class="HvDropdown-selection HvDropdown-truncate HvDropdown-selectionDisabled HvTypography-root HvTypography-normalText"
+                    id="test-dropdown-selectionLabel"
+                  >
+                    All
+                  </p>
+                  <div
+                    class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12px"
+                      viewBox="0 0 12 12"
+                      width="12px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>,
+              }
+            }
             id="test-dropdown-values"
             isOpen={true}
             labels={
@@ -332,7 +367,42 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
               }
               disablePortal={false}
               hasTooltips={false}
-              headerId="test-dropdown"
+              headerRef={
+                Object {
+                  "current": <div
+                    aria-labelledby="test-dropdown-selectionLabel"
+                    class="HvDropdown-header HvDropdown-headerDisabled"
+                    id="test-dropdown-header"
+                    role="textbox"
+                    style="pointer-events: none;"
+                    tabindex="0"
+                  >
+                    <p
+                      class="HvDropdown-selection HvDropdown-truncate HvDropdown-selectionDisabled HvTypography-root HvTypography-normalText"
+                      id="test-dropdown-selectionLabel"
+                    >
+                      All
+                    </p>
+                    <div
+                      class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                    >
+                      <svg
+                        focusable="false"
+                        height="12px"
+                        viewBox="0 0 12 12"
+                        width="12px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                  </div>,
+                }
+              }
               id="test-dropdown-values"
               isOpen={true}
               labels={
@@ -518,7 +588,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-1"
                                         id="hv-dropdown-1-values-list"
                                         role="listbox"
                                       >
@@ -694,7 +763,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-2"
                                         id="hv-dropdown-2-values-list"
                                         role="listbox"
                                       >
@@ -870,7 +938,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-3"
                                         id="hv-dropdown-3-values-list"
                                         role="listbox"
                                       >
@@ -1046,7 +1113,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-4"
                                         id="hv-dropdown-4-values-list"
                                         role="listbox"
                                       >
@@ -1222,7 +1288,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-5"
                                         id="hv-dropdown-5-values-list"
                                         role="listbox"
                                       >
@@ -1398,7 +1463,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-6"
                                         id="hv-dropdown-6-values-list"
                                         role="listbox"
                                       >
@@ -1474,7 +1538,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-7"
                                         id="hv-dropdown-7-values-list"
                                         role="listbox"
                                       >
@@ -1549,7 +1612,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-8"
                                         id="hv-dropdown-8-values-list"
                                         role="listbox"
                                       >
@@ -1778,7 +1840,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       <ul
                                         aria-multiselectable="true"
                                         class="HvList-list"
-                                        headerid="test-dropdown"
                                         id="test-dropdown-values-list"
                                         role="listbox"
                                       >
@@ -3856,7 +3917,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                   <WithStyles(List)
                                     condensed={true}
                                     hasTooltips={false}
-                                    headerId="test-dropdown"
                                     id="test-dropdown-values-list"
                                     labels={
                                       Object {
@@ -3910,7 +3970,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       }
                                       condensed={true}
                                       hasTooltips={false}
-                                      headerId="test-dropdown"
                                       id="test-dropdown-values-list"
                                       labels={
                                         Object {
@@ -3946,7 +4005,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         <ul
                                           aria-multiselectable={true}
                                           className="HvList-list"
-                                          headerId="test-dropdown"
                                           id="test-dropdown-values-list"
                                           role="listbox"
                                         >
@@ -3971,7 +4029,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   <ul
                                                     aria-multiselectable="true"
                                                     class="HvList-list"
-                                                    headerid="test-dropdown"
                                                     id="test-dropdown-values-list"
                                                     role="listbox"
                                                   >
@@ -4183,7 +4240,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     <ul
                                                       aria-multiselectable="true"
                                                       class="HvList-list"
-                                                      headerid="test-dropdown"
                                                       id="test-dropdown-values-list"
                                                       role="listbox"
                                                     >
@@ -4864,7 +4920,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   <ul
                                                     aria-multiselectable="true"
                                                     class="HvList-list"
-                                                    headerid="test-dropdown"
                                                     id="test-dropdown-values-list"
                                                     role="listbox"
                                                   >
@@ -5076,7 +5131,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     <ul
                                                       aria-multiselectable="true"
                                                       class="HvList-list"
-                                                      headerid="test-dropdown"
                                                       id="test-dropdown-values-list"
                                                       role="listbox"
                                                     >
@@ -5757,7 +5811,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   <ul
                                                     aria-multiselectable="true"
                                                     class="HvList-list"
-                                                    headerid="test-dropdown"
                                                     id="test-dropdown-values-list"
                                                     role="listbox"
                                                   >
@@ -5969,7 +6022,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     <ul
                                                       aria-multiselectable="true"
                                                       class="HvList-list"
-                                                      headerid="test-dropdown"
                                                       id="test-dropdown-values-list"
                                                       role="listbox"
                                                     >
@@ -7267,7 +7319,41 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
             }
             disablePortal={false}
             hasTooltips={false}
-            headerId="hv-dropdown-7"
+            headerRef={
+              Object {
+                "current": <div
+                  aria-labelledby="hv-dropdown-7-selectionLabel"
+                  class="HvDropdown-header"
+                  id="hv-dropdown-7-header"
+                  role="textbox"
+                  tabindex="0"
+                >
+                  <p
+                    class="HvDropdown-selection HvDropdown-truncate HvTypography-root HvTypography-normalText"
+                    id="hv-dropdown-7-selectionLabel"
+                  >
+                    Select...
+                  </p>
+                  <div
+                    class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12px"
+                      viewBox="0 0 12 12"
+                      width="12px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>,
+              }
+            }
             id="hv-dropdown-7-values"
             isOpen={true}
             labels={
@@ -7327,7 +7413,41 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
               }
               disablePortal={false}
               hasTooltips={false}
-              headerId="hv-dropdown-7"
+              headerRef={
+                Object {
+                  "current": <div
+                    aria-labelledby="hv-dropdown-7-selectionLabel"
+                    class="HvDropdown-header"
+                    id="hv-dropdown-7-header"
+                    role="textbox"
+                    tabindex="0"
+                  >
+                    <p
+                      class="HvDropdown-selection HvDropdown-truncate HvTypography-root HvTypography-normalText"
+                      id="hv-dropdown-7-selectionLabel"
+                    >
+                      Select...
+                    </p>
+                    <div
+                      class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                    >
+                      <svg
+                        focusable="false"
+                        height="12px"
+                        viewBox="0 0 12 12"
+                        width="12px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                  </div>,
+                }
+              }
               id="hv-dropdown-7-values"
               isOpen={true}
               labels={
@@ -7513,7 +7633,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-1"
                                         id="hv-dropdown-1-values-list"
                                         role="listbox"
                                       >
@@ -7689,7 +7808,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-2"
                                         id="hv-dropdown-2-values-list"
                                         role="listbox"
                                       >
@@ -7865,7 +7983,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-3"
                                         id="hv-dropdown-3-values-list"
                                         role="listbox"
                                       >
@@ -8041,7 +8158,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-4"
                                         id="hv-dropdown-4-values-list"
                                         role="listbox"
                                       >
@@ -8217,7 +8333,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-5"
                                         id="hv-dropdown-5-values-list"
                                         role="listbox"
                                       >
@@ -8393,7 +8508,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-6"
                                         id="hv-dropdown-6-values-list"
                                         role="listbox"
                                       >
@@ -8469,7 +8583,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-7"
                                         id="hv-dropdown-7-values-list"
                                         role="listbox"
                                       >
@@ -8559,7 +8672,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                   <WithStyles(List)
                                     condensed={true}
                                     hasTooltips={false}
-                                    headerId="hv-dropdown-7"
                                     id="hv-dropdown-7-values-list"
                                     labels={
                                       Object {
@@ -8613,7 +8725,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       }
                                       condensed={true}
                                       hasTooltips={false}
-                                      headerId="hv-dropdown-7"
                                       id="hv-dropdown-7-values-list"
                                       labels={
                                         Object {
@@ -8648,7 +8759,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <ul
                                           className="HvList-list"
-                                          headerId="hv-dropdown-7"
                                           id="hv-dropdown-7-values-list"
                                           role="listbox"
                                         >
@@ -8672,7 +8782,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 >
                                                   <ul
                                                     class="HvList-list"
-                                                    headerid="hv-dropdown-7"
                                                     id="hv-dropdown-7-values-list"
                                                     role="listbox"
                                                   >
@@ -8745,7 +8854,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   >
                                                     <ul
                                                       class="HvList-list"
-                                                      headerid="hv-dropdown-7"
                                                       id="hv-dropdown-7-values-list"
                                                       role="listbox"
                                                     >
@@ -8876,7 +8984,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 >
                                                   <ul
                                                     class="HvList-list"
-                                                    headerid="hv-dropdown-7"
                                                     id="hv-dropdown-7-values-list"
                                                     role="listbox"
                                                   >
@@ -8949,7 +9056,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   >
                                                     <ul
                                                       class="HvList-list"
-                                                      headerid="hv-dropdown-7"
                                                       id="hv-dropdown-7-values-list"
                                                       role="listbox"
                                                     >
@@ -9080,7 +9186,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 >
                                                   <ul
                                                     class="HvList-list"
-                                                    headerid="hv-dropdown-7"
                                                     id="hv-dropdown-7-values-list"
                                                     role="listbox"
                                                   >
@@ -9153,7 +9258,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   >
                                                     <ul
                                                       class="HvList-list"
-                                                      headerid="hv-dropdown-7"
                                                       id="hv-dropdown-7-values-list"
                                                       role="listbox"
                                                     >
@@ -9551,7 +9655,41 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
             }
             disablePortal={false}
             hasTooltips={false}
-            headerId="hv-dropdown-1"
+            headerRef={
+              Object {
+                "current": <div
+                  aria-labelledby="hv-dropdown-1-selectionLabel"
+                  class="HvDropdown-header"
+                  id="hv-dropdown-1-header"
+                  role="textbox"
+                  tabindex="0"
+                >
+                  <p
+                    class="HvDropdown-selection HvDropdown-truncate HvTypography-root HvTypography-normalText"
+                    id="hv-dropdown-1-selectionLabel"
+                  >
+                    Select...
+                  </p>
+                  <div
+                    class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                  >
+                    <svg
+                      focusable="false"
+                      height="12px"
+                      viewBox="0 0 12 12"
+                      width="12px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="color0"
+                        d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </div>,
+              }
+            }
             id="hv-dropdown-1-values"
             isOpen={true}
             labels={
@@ -9611,7 +9749,41 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
               }
               disablePortal={false}
               hasTooltips={false}
-              headerId="hv-dropdown-1"
+              headerRef={
+                Object {
+                  "current": <div
+                    aria-labelledby="hv-dropdown-1-selectionLabel"
+                    class="HvDropdown-header"
+                    id="hv-dropdown-1-header"
+                    role="textbox"
+                    tabindex="0"
+                  >
+                    <p
+                      class="HvDropdown-selection HvDropdown-truncate HvTypography-root HvTypography-normalText"
+                      id="hv-dropdown-1-selectionLabel"
+                    >
+                      Select...
+                    </p>
+                    <div
+                      class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                    >
+                      <svg
+                        focusable="false"
+                        height="12px"
+                        viewBox="0 0 12 12"
+                        width="12px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                  </div>,
+                }
+              }
               id="hv-dropdown-1-values"
               isOpen={true}
               labels={
@@ -9797,7 +9969,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                     >
                                       <ul
                                         class="HvList-list"
-                                        headerid="hv-dropdown-1"
                                         id="hv-dropdown-1-values-list"
                                         role="listbox"
                                       >
@@ -11243,7 +11414,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                   <WithStyles(List)
                                     condensed={true}
                                     hasTooltips={false}
-                                    headerId="hv-dropdown-1"
                                     id="hv-dropdown-1-values-list"
                                     labels={
                                       Object {
@@ -11297,7 +11467,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                       }
                                       condensed={true}
                                       hasTooltips={false}
-                                      headerId="hv-dropdown-1"
                                       id="hv-dropdown-1-values-list"
                                       labels={
                                         Object {
@@ -11332,7 +11501,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                       >
                                         <ul
                                           className="HvList-list"
-                                          headerId="hv-dropdown-1"
                                           id="hv-dropdown-1-values-list"
                                           role="listbox"
                                         >
@@ -11356,7 +11524,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 >
                                                   <ul
                                                     class="HvList-list"
-                                                    headerid="hv-dropdown-1"
                                                     id="hv-dropdown-1-values-list"
                                                     role="listbox"
                                                   >
@@ -11430,7 +11597,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   >
                                                     <ul
                                                       class="HvList-list"
-                                                      headerid="hv-dropdown-1"
                                                       id="hv-dropdown-1-values-list"
                                                       role="listbox"
                                                     >
@@ -11563,7 +11729,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 >
                                                   <ul
                                                     class="HvList-list"
-                                                    headerid="hv-dropdown-1"
                                                     id="hv-dropdown-1-values-list"
                                                     role="listbox"
                                                   >
@@ -11637,7 +11802,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   >
                                                     <ul
                                                       class="HvList-list"
-                                                      headerid="hv-dropdown-1"
                                                       id="hv-dropdown-1-values-list"
                                                       role="listbox"
                                                     >
@@ -11769,7 +11933,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 >
                                                   <ul
                                                     class="HvList-list"
-                                                    headerid="hv-dropdown-1"
                                                     id="hv-dropdown-1-values-list"
                                                     role="listbox"
                                                   >
@@ -11843,7 +12006,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   >
                                                     <ul
                                                       class="HvList-list"
-                                                      headerid="hv-dropdown-1"
                                                       id="hv-dropdown-1-values-list"
                                                       role="listbox"
                                                     >
