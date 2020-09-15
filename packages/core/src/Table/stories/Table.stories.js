@@ -733,7 +733,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Bob Route",
       storageSegment: "Open systems",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.62,
       totalIOPS: 18649,
       totalThroughput: 1963.28,
@@ -745,7 +745,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.7,
       totalIOPS: 8652,
       totalThroughput: 1013.01,
@@ -757,7 +757,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Chris1",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -769,7 +769,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Jeans Data Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -781,7 +781,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -793,7 +793,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Bob Route",
       storageSegment: "Open systems",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.62,
       totalIOPS: 18649,
       totalThroughput: 1963.28,
@@ -805,7 +805,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.7,
       totalIOPS: 8652,
       totalThroughput: 1013.01,
@@ -817,7 +817,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Chris1",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -829,7 +829,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Jeans Data Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -841,7 +841,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -866,40 +866,6 @@ export const WithExpanderAndCustomContent = () => {
       headerText: "Storage array",
       accessor: "storageArray",
       cellType: "numeric"
-    },
-    {
-      headerText: "Allocated vs avail.capability",
-      cellType: "numeric",
-      minWidth: 140,
-      Cell: cellData => {
-        const value = [
-          [" ", " ", { role: "style" }],
-          [" ", Number(cellData.row._original.allocateVsCapability), "color:black"]
-        ];
-        return (
-          <div style={{ display: "flex" }}>
-            <div style={{ paddingRight: "5px", alignSelf: "center" }}>
-              {cellData.row._original.allocateVsCapability}
-              /1 TB
-            </div>
-            <Chart
-              width="80px"
-              height="30px"
-              chartType="BarChart"
-              loader={<div>Loading Chart</div>}
-              data={value}
-              options={{
-                legend: "none",
-                hAxis: {
-                  minValue: 0,
-                  maxValue: 3
-                },
-                backgroundColor: "transparent"
-              }}
-            />
-          </div>
-        );
-      }
     },
     {
       headerText: "Average compression rt",
@@ -2229,6 +2195,186 @@ ServerSidePagination.parameters = {
     description: {
       story:
         "Table sample that shows how to use the table with server side pagination. Bulk Actions"
+    }
+  }
+};
+
+export const ConditionalPaginationDisplay = () => {
+  const data = [
+    {
+      id: 8,
+      name: "Event 6",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Closed",
+      riskScore: "98",
+      severity: "Major",
+      priority: "High",
+      link: { displayText: "Asset 1", url: "blablabla" }
+    },
+    {
+      id: 7,
+      name: "Event 7",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" }
+    },
+    {
+      id: 6,
+      name: "Event 8",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Pending",
+      riskScore: "98",
+      severity: "Moderate",
+      priority: "Medium",
+      link: { displayText: "Asset 2", url: "blablabla" }
+    },
+    {
+      id: 5,
+      name: "Event 9",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" }
+    },
+    {
+      id: 4,
+      name: "Event 1",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Closed",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" }
+    },
+    {
+      id: 3,
+      name: "Event 10",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Major",
+      priority: "High",
+      link: { displayText: "Asset 1", url: "blablabla" }
+    },
+    {
+      id: 2,
+      name: "Event 11",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" }
+    },
+    {
+      id: 1,
+      name: "Event 12",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" }
+    }
+  ];
+
+  const getColumns = () => [
+    {
+      headerText: "Title",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left",
+      sortMethod: (a, b) => {
+        if (a === b) {
+          return 0;
+        }
+        const aReverse = Number(a.split(" ")[1]);
+        const bReverse = Number(b.split(" ")[1]);
+        return aReverse > bReverse ? 1 : -1;
+      }
+    },
+    {
+      headerText: "Time",
+      accessor: "createdDate",
+      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric"
+    },
+    {
+      headerText: "Event Type",
+      accessor: "eventType",
+      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Status",
+      accessor: "status",
+      format: value => value.original.status.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Probability",
+      accessor: "riskScore",
+      format: value => `${value.original.riskScore}%`,
+      cellType: "numeric"
+    },
+    {
+      headerText: "Severity",
+      accessor: "severity",
+      format: value => value.original.severity.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+      sortable: false
+    },
+    {
+      headerText: "Priority",
+      accessor: "priority",
+      format: value => value.original.priority.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Asset",
+      accessor: "asset",
+      cellType: "link",
+      fixed: "right",
+      sortable: false
+    }
+  ];
+
+  return (
+    <div>
+      <HvTable
+        data={data}
+        columns={getColumns()}
+        defaultPageSize={10}
+        resizable={false}
+        showPagination={false}
+      />
+    </div>
+  );
+};
+
+ConditionalPaginationDisplay.parameters = {
+  v3: true,
+  docs: {
+    description: {
+      story:
+        "Table pagination control conditionally displayed. In this case, when there are not enough records for multiple pages, Pagination can be disabled"
     }
   }
 };
