@@ -1619,7 +1619,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
         endValue="2019-01-10"
         escapeWithReference={true}
         horizontalPlacement="left"
-        id="hv-date-picker-29"
+        id="hv-date-picker-16"
         labels={
           Object {
             "applyLabel": "Apply",
@@ -2384,7 +2384,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
           <div
             aria-label="Date input"
             className="HvDatePicker-root HvDatePicker-inputCalendarClosed"
-            id="hv-date-picker-29"
+            id="hv-date-picker-16"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -2448,9 +2448,8 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
             </Calendar>
           </div>
           <ForwardRef(Popper)
-            anchorEl={null}
             disablePortal={true}
-            id="hv-date-picker-29-tooltip"
+            id="hv-date-picker-16-tooltip"
             modifiers={
               Object {
                 "preventOverflow": Object {
@@ -4094,7 +4093,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
         disablePortal={true}
         escapeWithReference={true}
         horizontalPlacement="left"
-        id="hv-date-picker-13"
+        id="hv-date-picker-10"
         labels={
           Object {
             "applyLabel": "Apply",
@@ -4859,7 +4858,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
           <div
             aria-label="Date input"
             className="HvDatePicker-root HvDatePicker-inputCalendarClosed"
-            id="hv-date-picker-13"
+            id="hv-date-picker-10"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -4923,9 +4922,8 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             </Calendar>
           </div>
           <ForwardRef(Popper)
-            anchorEl={null}
             disablePortal={true}
-            id="hv-date-picker-13-tooltip"
+            id="hv-date-picker-10-tooltip"
             modifiers={
               Object {
                 "preventOverflow": Object {
@@ -7465,7 +7463,6 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             </Calendar>
           </div>
           <ForwardRef(Popper)
-            anchorEl={null}
             disablePortal={true}
             id="testingDatePicker-tooltip"
             modifiers={
@@ -9929,7 +9926,6 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             </Calendar>
           </div>
           <ForwardRef(Popper)
-            anchorEl={null}
             disablePortal={true}
             id="hv-date-picker-2-tooltip"
             modifiers={

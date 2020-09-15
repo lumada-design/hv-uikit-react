@@ -20,6 +20,7 @@ const HvFormElement = props => {
     status = "standBy",
     value,
     disabled = false,
+    locale = "en-US",
     ...others
   } = props;
   const descriptors = findDescriptors(children, [
@@ -29,7 +30,9 @@ const HvFormElement = props => {
     "HvCharCounter",
     "HvWarningText",
     "HvBaseInput",
-    "HvBaseDropdown"
+    "HvBaseDropdown",
+    "HvCalendar",
+    "HvCalendarHeader"
   ]);
   const contextValue = {
     elementId: id,
@@ -37,6 +40,7 @@ const HvFormElement = props => {
     elementStatus: status,
     elementValue: value,
     elementDisabled: disabled,
+    elementLocale: locale,
     descriptors
   };
   return (
@@ -79,11 +83,14 @@ HvFormElement.propTypes = {
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * Represents the status of this form element,
-   * where valid is correct, invalid is incorrect and standby means no validations had run.
-   * this value will be propagated to the children through the context.
+   * Represents the values this form element will inject into the children.
    */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.node]),
+  // eslint-disable-next-line react/forbid-prop-types
+  value: PropTypes.any,
+  /**
+   * Locale to be used by the calendar.
+   */
+  locale: PropTypes.string,
   /**
    * If `true` the form element and all of it's children are disabled which blocks interactions.
    * this value will be propagated to the children through the context.
