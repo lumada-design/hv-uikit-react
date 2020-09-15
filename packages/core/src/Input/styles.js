@@ -10,6 +10,9 @@ const styles = theme => ({
       "& $iconClear": {
         visibility: "visible"
       }
+    },
+    "&:focus-within $iconClear": {
+      visibility: "visible"
     }
   },
   inputRootDisabled: {

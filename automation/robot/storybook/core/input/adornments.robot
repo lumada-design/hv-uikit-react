@@ -34,7 +34,6 @@ does not show validation adornment icons when input was clean
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited
-    [Documentation]    unexpected behavior just when firefox run via webdriver
     Input Text                           ${input}    Jo
     Press Keys                           NONE    TAB
     wait until element is Visible        ${adornment_accepted}
@@ -78,9 +77,10 @@ revalidate input when focus goes out - accepted to failed
     Element Should Not Be Visible    ${adornment_accepted}
 
 show adornment and clean button when mouse hover unfocused filled input
-    [Tags]    bug-ie
-    [Documentation]    https://github.com/lumada-design/hv-uikit-react/issues/1749
-    ...                Integration: clean button, adornments
+    [Tags]    bug-ie-webdriver
+    [Documentation]
+    ...  https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver#hovering-over-elements
+    ...  firefox-webdriver focus blur issue work around, send "TAB" instead "mouse click"
     Press Keys                       ${input}    Joao    TAB
     Mouse Over                       ${input}
     Wait Until Element Is Visible    ${clean_button}

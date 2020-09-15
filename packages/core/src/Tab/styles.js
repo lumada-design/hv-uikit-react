@@ -16,13 +16,7 @@ const styles = theme => ({
       }
     },
     "&$selected": {
-      color: theme.hv.typography.highlightText.color,
-      fontWeight: theme.hv.typography.highlightText.fontWeight,
-      lineHeight: theme.hv.typography.highlightText.lineWeight,
-      letterSpacing: theme.hv.typography.highlightText.letterSpacing
-    },
-    "&:focus": {
-      ...outlineStyles
+      ...theme.hv.typography.highlightText
     },
     "&$disabled": {
       color: theme.hv.palette.atmosphere.atmo5,
@@ -45,6 +39,9 @@ const styles = theme => ({
     height: "1px",
     width: "100%",
     backgroundColor: theme.hv.palette.atmosphere.atmo4
+  },
+  focusVisible: {
+    ...outlineStyles
   },
   selected: {},
   disabled: {}

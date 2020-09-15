@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types, no-unused-vars */
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
 
 import { HvCard, HvSwitch, HvTypography } from "../..";
 
+import { AllComponents } from "./Card.stories";
 import compressor from "./resources/compressor.png";
 
 export default {
@@ -159,4 +162,22 @@ export const Controlled = () => {
       </div>
     </>
   );
+};
+
+// __________________________________
+// Extended applitools test scenarios
+
+// test scenario, card selected and dropdownmenu opned
+export const SelectedOpened = () => AllComponents();
+
+SelectedOpened.story = {
+  parameters: {
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByRole("checkbox"));
+        fireEvent.click(screen.getByLabelText("Dropdown menu"));
+        return wait(() => screen.getByText("Delete"));
+      }
+    }
+  }
 };

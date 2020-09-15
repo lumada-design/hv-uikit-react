@@ -14,7 +14,9 @@ show clean button when input is not empty and is focused
 
 show clean button when input is not empty and mouse is hover it
     [Tags]    bug-ie-webdriver
-    [Documentation]    to avoid firefox errors must be used input text and then keyboard kw
+    [Documentation]
+    ...  https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver#hovering-over-elements
+    ...  firefox-webdriver focus blur issue work around, send "TAB" instead "mouse click"
     Input Text                           ${input}    Joao
     Press Keys                           NONE    TAB
     Wait Until Element Is Not Visible    ${clean_button}
