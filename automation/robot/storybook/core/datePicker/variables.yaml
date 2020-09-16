@@ -1,8 +1,0 @@
-calendar:           DatePicker-calendar
-calendarRange:      DatePicker-calendar-start
-input:              DatePicker-calendar-header-input
-endInput:           DatePicker-calendar-end-header-input
-startInput:         DatePicker-calendar-start-header-input
-navigationMonth:    DatePicker-calendar-navigation-month
-navigationYear:     DatePicker-calendar-navigation-year
-outside:            css:body

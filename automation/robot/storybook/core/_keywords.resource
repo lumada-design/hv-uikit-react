@@ -72,7 +72,8 @@ open browser webdriver
     ...   - url        (by default about:blank)
     ...   - browser    (by defautl is assuming Global variable ${BROWSER} )
     [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
-    Open Browser    ${url}    ${browser}    options=add_argument("--headless")
+    Open Browser    ${url}    ${browser}
+    ...             options=add_argument("--headless");add_argument("--lang=en-US")
     Set Window Size    1920    1080
 
 scroll to element
