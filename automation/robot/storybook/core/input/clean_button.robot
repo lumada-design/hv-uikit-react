@@ -35,7 +35,7 @@ does not show clean button when input is not focused and mouse is not hover it
     Input Text                           ${input}    Joao
     Wait Until Element Is Visible        ${clean_button}
     Press Keys                           NONE    TAB
-    Mouse Over                           ${label}
+    Mouse Over                           ${description}
     Wait Until Element Is Not Visible    ${clean_button}
 
 does not show clean button when input is empty and is focused and mouse is hover it
@@ -66,3 +66,4 @@ does not show clean button when input is cleaned
 ${clean_button}    css:button [class*=IconClose]
 ${input}           css:input
 ${label}           css:#input-simple-sample-label
+${description}     css:p[id$=description]
