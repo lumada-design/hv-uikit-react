@@ -54,7 +54,6 @@ exports[`Breadcrumb should render correctly 1`] = `
         "link": "HvBreadCrumb-link",
         "orderedList": "HvBreadCrumb-orderedList",
         "root": "HvBreadCrumb-root",
-        "separator": "HvBreadCrumb-separator",
         "separatorContainer": "HvBreadCrumb-separatorContainer",
       }
     }
@@ -116,11 +115,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_0"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -133,7 +132,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -177,103 +175,94 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route1"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 1
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 1
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
         <PathElement
@@ -284,11 +273,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_1"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -301,7 +290,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -345,103 +333,94 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route2"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 2
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 2
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
         <PathElement
@@ -452,11 +431,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_2"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -469,7 +448,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -513,103 +491,94 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route3"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 3
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 3
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
         <PathElement
@@ -620,11 +589,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_3"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -637,7 +606,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -681,103 +649,94 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route4"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 4
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 4
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
         <PathElement
@@ -788,11 +747,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_4"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -805,7 +764,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -849,103 +807,94 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route5"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 5
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 5
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
         <PathElement
@@ -956,11 +905,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_5"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -973,7 +922,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -1017,103 +965,94 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route6"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 6
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 6
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
         <PathElement
@@ -1124,11 +1063,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_6"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -1141,7 +1080,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -1185,103 +1123,94 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route7"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 7
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 7
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
         <PathElement
@@ -1292,11 +1221,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_7"
+          last={false}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -1309,7 +1238,6 @@ exports[`Breadcrumb should render correctly 1`] = `
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
-                  "separator": "HvBreadCrumb-separator",
                   "separatorContainer": "HvBreadCrumb-separatorContainer",
                 }
               }
@@ -1353,106 +1281,97 @@ exports[`Breadcrumb should render correctly 1`] = `
                     className="HvLink-a HvBreadCrumb-a"
                     href="route8"
                   >
-                    <div
-                      className="HvBreadCrumb-centerContainer"
+                    <WithStyles(ForwardRef)
+                      className="HvBreadCrumb-link"
+                      variant="link"
                     >
-                      <WithStyles(ForwardRef)
+                      <ForwardRef
                         className="HvBreadCrumb-link"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
                         variant="link"
                       >
-                        <ForwardRef
-                          className="HvBreadCrumb-link"
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                          variant="link"
+                        <p
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
-                          >
-                            Label 8
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </div>
+                          Label 8
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
                   </a>
                 </HvLink>
               </WithStyles(HvLink)>
             </Page>
-            <div
-              aria-hidden={true}
-              className="HvBreadCrumb-separator"
+            <DropRightXS
+              className="HvBreadCrumb-separatorContainer"
+              color="atmo5"
             >
-              <DropRightXS
+              <WithStyles(HvIconBase)
                 className="HvBreadCrumb-separatorContainer"
-                color="atmo5"
+                iconSize="XS"
+                name="DropRightXS"
               >
-                <WithStyles(HvIconBase)
+                <HvIconBase
                   className="HvBreadCrumb-separatorContainer"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
                   iconSize="XS"
                   name="DropRightXS"
                 >
-                  <HvIconBase
-                    className="HvBreadCrumb-separatorContainer"
-                    classes={
-                      Object {
-                        "l": "HvIconBase-l",
-                        "m": "HvIconBase-m",
-                        "root": "HvIconBase-root",
-                        "s": "HvIconBase-s",
-                        "xs": "HvIconBase-xs",
-                      }
-                    }
-                    iconSize="XS"
+                  <div
+                    className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
                     name="DropRightXS"
                   >
-                    <div
-                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
-                      name="DropRightXS"
+                    <svg
+                      focusable={false}
+                      height={12}
+                      viewBox="0 0 12 12"
+                      width={12}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        focusable={false}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        width={12}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                          fill="#999999"
-                        />
-                      </svg>
-                    </div>
-                  </HvIconBase>
-                </WithStyles(HvIconBase)>
-              </DropRightXS>
-            </div>
+                      <path
+                        className="color0"
+                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                        fill="#999999"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </DropRightXS>
           </li>
         </PathElement>
-        <LastPathElement
+        <PathElement
           classes={
             Object {
               "a": "HvBreadCrumb-a",
@@ -1460,12 +1379,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
-              "separator": "HvBreadCrumb-separator",
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
           key="key_8"
-          label="Label 9"
+          last={true}
         >
           <li
             className="HvBreadCrumb-centerContainer"
@@ -1506,7 +1424,7 @@ exports[`Breadcrumb should render correctly 1`] = `
               </ForwardRef>
             </WithStyles(ForwardRef)>
           </li>
-        </LastPathElement>
+        </PathElement>
       </ol>
     </nav>
   </BreadCrumb>

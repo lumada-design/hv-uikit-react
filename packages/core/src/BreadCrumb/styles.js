@@ -20,19 +20,18 @@ const styles = theme => ({
       textDecoration: "underline"
     }
   },
-  separator: {
-    display: "contents"
-  },
   separatorContainer: {
-    width: "32px",
-    height: "32px",
-    margin: "0 10px"
+    margin: theme.spacing(0, "xs")
   },
   orderedList: {
     display: "flex"
   },
   a: {
-    "&:focus > div > p": {
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "underline"
+    },
+    "&:focus > p": {
       color: theme.hv.palette.accent.acce1,
       textDecoration: "underline"
     }

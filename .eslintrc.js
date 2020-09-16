@@ -29,7 +29,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.stories.js"],
+      files: ["*.stories.js", "*.stories.test.js"],
       rules: {
         "no-console": "off",
         "no-alert": "off",
