@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.1...@hv/uikit-react-core@2.11.2) (2020-09-17)
+
+
+### Bug Fixes
+
+* **input:** have clean button visible in ie 11. HVUIKIT-5409 ([64bd24a](https://github.com/pentaho/hv-uikit-react/commit/64bd24a882a506eb3ffc039b1386102b9513ae7c))
+* **pagination:** apply styles correctly over BaseInput. HVUIKIT-5523 ([#1959](https://github.com/pentaho/hv-uikit-react/issues/1959)) ([3e1d779](https://github.com/pentaho/hv-uikit-react/commit/3e1d779c0044de56ed8c0718c0867573c7a28333))
+* **pagination:** fix style override for page input. HVUIKIT-5523 ([0a0a90d](https://github.com/pentaho/hv-uikit-react/commit/0a0a90d311df0d43b85f6856270e303c9ea14412))
+* **tabs:** use focusVisible for custom styles. HVUIKIT-5402 ([21533e4](https://github.com/pentaho/hv-uikit-react/commit/21533e4f4ce50ce44fa16e74c228a2c739e3f7f9))
+
+
+
+
+
 ## [2.11.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.0...@hv/uikit-react-core@2.11.1) (2020-09-09)
 
 **Note:** Version bump only for package @hv/uikit-react-core
