@@ -26,7 +26,8 @@ const styles = theme => ({
   removeButton: {
     position: "absolute",
     margin: `0 ${theme.hv.spacing.xs}px`,
-    right: 0
+    right: 0,
+    top: 20
   },
   fail: {
     color: theme.hv.palette.semantic.sema4

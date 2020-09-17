@@ -12,6 +12,9 @@ const styles = theme => {
       alignItems: "stretch",
       flexWrap: "wrap",
       marginTop: theme.hv.spacing.sm,
+      "& $pageSizeInput": {
+        ...theme.hv.typography.highlightText
+      },
       "& $pageSizeInputContainer": {
         width: 40,
         minWidth: 40,
@@ -29,6 +32,7 @@ const styles = theme => {
       }
     },
     pageSizeOptions: {
+      display: "flex",
       position: "absolute",
       height: 32,
       marginRight: 40,
@@ -39,6 +43,10 @@ const styles = theme => {
     pageSizeOptionsSelect: {
       display: "inline-block",
       margin: theme.spacing(0, "xs")
+    },
+    pageSizeTextContainer: {
+      height: "32px",
+      padding: "8px 0"
     },
     pageNavigator: {
       display: "flex",
@@ -59,7 +67,6 @@ const styles = theme => {
       marginRight: `${theme.hv.spacing.xs / 2}px`
     },
     pageSizeInput: {
-      ...theme.hv.typography.highlightText,
       paddingLeft: `${theme.hv.spacing.xs / 2}px`,
       paddingRight: `${theme.hv.spacing.xs / 2}px`,
       margin: 0,

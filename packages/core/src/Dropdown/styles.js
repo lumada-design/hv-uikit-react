@@ -1,6 +1,12 @@
 const styles = theme => ({
   root: {
-    borderRadius: 2
+    borderRadius: 2,
+    "& $label": {
+      display: "block"
+    },
+    "& $selectionDisabled": {
+      color: theme.palette.atmo5
+    }
   },
   dropdown: {
     width: 310
@@ -8,8 +14,7 @@ const styles = theme => ({
   rootList: {},
   arrow: {},
   label: {
-    paddingBottom: "8px",
-    display: "block"
+    paddingBottom: "8px"
   },
   truncate: {
     display: "block",
@@ -18,7 +23,6 @@ const styles = theme => ({
     whiteSpace: "nowrap"
   },
   selectionDisabled: {
-    ...theme.hv.typography.placeholderText,
     lineHeight: `${theme.hv.spacing.md}px`
   }
 });
