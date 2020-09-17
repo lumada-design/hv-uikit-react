@@ -4,7 +4,6 @@ import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 import { CardViewConfiguration } from "./CardView";
 import { ListViewConfiguration } from "./ListView";
 import { ListValueProp } from "../List";
-import { MultiButtonData } from "../MultiButton";
 import { HvPaginationCommonProps } from "../Pagination";
 
 export interface AssetInventoryConfiguration extends ListViewConfiguration, CardViewConfiguration {}
@@ -134,7 +133,7 @@ export interface HvAssetInventoryProps
   /**
    * View change callback.
    */
-  onViewChange?: (event: React.FormEvent<HTMLDivElement>, value: MultiButtonData[]) => void;
+  onViewChange?: (event: React.FormEvent<HTMLDivElement>, index: number) => void;
   /**
    * Visual indication of the sort applied. The id is given by the metadata.id+Asc or metadata.id+Desc.
    */

@@ -3,7 +3,11 @@ import { StandardProps } from "@material-ui/core";
 import { PopperProps } from "@material-ui/core/Popper";
 
 export interface HvBaseDropdownProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBaseDropdownClassKey> {
+  extends StandardProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HvBaseDropdownClassKey,
+    "placeholder"
+  > {
   /**
    * Header placeholder.
    */
