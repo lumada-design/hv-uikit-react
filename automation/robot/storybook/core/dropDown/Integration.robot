@@ -5,7 +5,7 @@ Force Tags    v3
 
 *** Test Cases ***
 move focus between dropdown's
-    [Tags]    run-any-way
+    [Tags]    issue-ie    issue-chrome
     [Documentation]    verify focus behavior when user interact with multiple dropdown's
     ...                https://insightgroup.atlassian.net/browse/HVUIKIT-5533
     Go To                               ${patterns}dropdown--different-size-and-placements
@@ -15,5 +15,4 @@ move focus between dropdown's
     Click Element                       dropdown2
     Wait Until Element Is Visible       dropdown2-values-actions
     Element Should Not Be Visible       dropdown1-values-actions
-    Run Keyword And Expect Error        *
-    ...    Element Should Be Focused    ${searchInput}
+    Element Should Be Focused           ${searchInput}
