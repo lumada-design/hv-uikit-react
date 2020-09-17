@@ -54,18 +54,13 @@ const styles = theme => {
       },
 
       // IE fallback code (using focus-within-polyfill)
-      "&.focus-within $active": {
-        ...hide
+      "&.focus-within $active, &:focus-within $active": {
+        ...hide,
+        zIndex: -1
       },
-      "& li.focus-within > $hidden": {
-        ...show
-      },
-
-      "&:focus-within $active": {
-        ...hide
-      },
-      "& li:focus-within> $hidden": {
-        ...show
+      "& li.focus-within > $hidden, & li:focus-within > $hidden": {
+        ...show,
+        zIndex: 0
       }
     }
   };
