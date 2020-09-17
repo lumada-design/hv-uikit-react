@@ -1,7 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
-import { Main, CustomContent } from "./Modal.stories";
+import {
+  Main,
+  CustomContent,
+  TextAndSemantic,
+  CustomIcon,
+  Accessibility,
+  RemoveSchedule,
+  DeleteConfirmation,
+  NoRename
+} from "./Modal.stories";
 
 export default {
   title: "Tests/Modal",
@@ -21,6 +30,7 @@ export const ModalOpened = () => Main();
 
 ModalOpened.story = {
   parameters: {
+    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
@@ -35,6 +45,7 @@ export const TableOpened = () => CustomContent();
 
 TableOpened.story = {
   parameters: {
+    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Table"));
@@ -49,9 +60,145 @@ export const inputsOpened = () => CustomContent();
 
 inputsOpened.story = {
   parameters: {
+    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Inputs"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open No Rename Modal
+export const sNoRename = () => NoRename();
+
+sNoRename.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Open modal"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal DeleteConfirmation
+export const sDeleteConfirmation = () => DeleteConfirmation();
+
+sDeleteConfirmation.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Open modal"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal DeleteConfirmation
+export const sRemoveSchedule = () => RemoveSchedule();
+
+sRemoveSchedule.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Open modal"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal DeleteConfirmation
+export const sAccessibility = () => Accessibility();
+
+sAccessibility.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Open modal"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal CustomIcon
+export const sCustomIcon = () => CustomIcon();
+
+sCustomIcon.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Custom icon"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal TextAndSemantic no icon
+export const sTextAndSemanticNoIcon = () => TextAndSemantic();
+
+sTextAndSemanticNoIcon.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("No icon"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal TextAndSemantic Warning
+export const sTextAndSemanticWarning = () => TextAndSemantic();
+
+sTextAndSemanticWarning.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Warning"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal TextAndSemantic info
+export const sTextAndSemanticInfo = () => TextAndSemantic();
+
+sTextAndSemanticInfo.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Info"));
+        return wait(() => screen.getByRole("dialog"));
+      }
+    }
+  }
+};
+
+// open modal TextAndSemantic Error
+export const sTextAndSemanticError = () => TextAndSemantic();
+
+sTextAndSemanticError.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      runBefore() {
+        fireEvent.click(screen.getByText("Error"));
         return wait(() => screen.getByRole("dialog"));
       }
     }

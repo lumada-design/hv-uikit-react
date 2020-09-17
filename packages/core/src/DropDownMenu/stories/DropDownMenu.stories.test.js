@@ -36,7 +36,8 @@ export const KeyboardNavigation = () => (
 );
 
 KeyboardNavigation.parameters = {
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 // __________________________________
@@ -51,7 +52,8 @@ export const A11YClosed = () => (
 );
 
 A11YClosed.parameters = {
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const A11YOpen = () => (
@@ -70,16 +72,18 @@ A11YOpen.parameters = {
       "click element #dropdownmenu-open-icon-button",
       "wait for element #dropdownmenu-open-list to be visible"
     ]
-  }
+  },
+  eyes: { include: false }
 };
 
 // __________________________________
 // Extended applitools test scenarios
 
 // test scenario, With Icons And Actions opened
-export const IconsOpened = () => WithIconsAndActions();
+export const sWithIconsAndActions = () => WithIconsAndActions();
 
-IconsOpened.story = {
+sWithIconsAndActions.story = {
+  v3: true,
   parameters: {
     eyes: {
       runBefore() {
@@ -91,9 +95,10 @@ IconsOpened.story = {
 };
 
 // test scenario, Disabled Items opened
-export const DisabledItemsOpened = () => DisabledItems();
+export const sDisabledItems = () => DisabledItems();
 
-DisabledItemsOpened.story = {
+sDisabledItems.story = {
+  v3: true,
   parameters: {
     eyes: {
       runBefore() {

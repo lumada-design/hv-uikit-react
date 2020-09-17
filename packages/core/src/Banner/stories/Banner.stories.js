@@ -84,7 +84,8 @@ BannerController.parameters = {
   docs: {
     description: { story: "Different Banner variants with actions and controlled by buttons." }
   },
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const CustomIcon = () => (

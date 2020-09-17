@@ -29,7 +29,8 @@ Main.parameters = {
   v3: true,
   pa11y: {
     ignore: ["region"]
-  }
+  },
+  eyes: { include: false }
 };
 
 export const Empty = () => <HvDropdown id="dropdown1" />;
@@ -41,7 +42,8 @@ Empty.parameters = {
   },
   pa11y: {
     ignore: ["region"]
-  }
+  },
+  eyes: { include: false }
 };
 
 export const SingleSelection = () => (
@@ -64,7 +66,8 @@ SingleSelection.parameters = {
   pa11y: {
     ignore: ["region"]
   },
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const MultiSelection = () => (
@@ -83,7 +86,8 @@ export const MultiSelection = () => (
 );
 
 MultiSelection.parameters = {
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const MultiSelectionNoSearch = () => (
@@ -104,7 +108,8 @@ MultiSelectionNoSearch.parameters = {
   pa11y: {
     ignore: ["region"]
   },
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const SingleSelectionWithSearch = () => (
@@ -127,7 +132,8 @@ SingleSelectionWithSearch.parameters = {
   pa11y: {
     ignore: ["region"]
   },
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const SingleSelectionNoDefault = () => (
@@ -149,7 +155,8 @@ SingleSelectionNoDefault.parameters = {
   pa11y: {
     ignore: ["region"]
   },
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const DifferentSizeAndPlacements = () => {
@@ -194,7 +201,8 @@ DifferentSizeAndPlacements.parameters = {
   pa11y: {
     ignore: ["region"]
   },
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const Disabled = () => (
@@ -230,5 +238,6 @@ Disabled.parameters = {
       "color-contrast"
     ]
   },
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };

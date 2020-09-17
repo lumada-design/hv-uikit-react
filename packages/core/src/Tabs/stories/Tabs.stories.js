@@ -41,8 +41,7 @@ export const FullWidth = () => {
 FullWidth.parameters = {
   docs: {
     description: { story: "Tabs occupying the full width of the available space" }
-  },
-  v3: true
+  }
 };
 
 export const ContentChanging = () => {
