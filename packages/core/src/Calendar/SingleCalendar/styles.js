@@ -8,7 +8,7 @@ const styles = theme => {
     calendarContainer: {
       backgroundColor: theme.palette.atmo1,
       width: "320px",
-      minHeight: "435px",
+      minHeight: "440px",
       position: "relative"
     },
     calendarWrapper: {

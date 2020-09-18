@@ -64,8 +64,12 @@ const styles = theme => ({
     bottom: -1
   },
   label: {
-    marginBottom: theme.spacing("xs"),
     display: "block"
+  },
+  action: {
+    "&:first-child": {
+      marginRight: theme.spacing("xs")
+    }
   },
 
   rangeMainContainer: {

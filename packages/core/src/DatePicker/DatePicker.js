@@ -75,8 +75,7 @@ const HvDatePicker = ({
     if (!calendarOpen) return;
     setVisibleMonth(visibleDate?.getMonth() + 1);
     setVisibleYear(visibleDate?.getFullYear());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [calendarOpen]);
+  }, [visibleDate, calendarOpen]);
 
   const handleVisibleDateChange = (event, action, index) => {
     switch (action) {
@@ -168,10 +167,20 @@ const HvDatePicker = ({
    */
   const renderActions = () => (
     <HvActionContainer>
-      <HvButton id={setId(id, "action", "apply")} category="ghost" onClick={handleApply}>
+      <HvButton
+        id={setId(id, "action", "apply")}
+        className={classes.action}
+        category="ghost"
+        onClick={handleApply}
+      >
         {labels.applyLabel}
       </HvButton>
-      <HvButton id={setId(id, "action", "cancel")} category="ghost" onClick={handleCancel}>
+      <HvButton
+        id={setId(id, "action", "cancel")}
+        className={classes.action}
+        category="ghost"
+        onClick={handleCancel}
+      >
         {labels.cancelLabel}
       </HvButton>
     </HvActionContainer>
@@ -187,30 +196,29 @@ const HvDatePicker = ({
 
   return (
     <HvFormElement id={id} className={clsx(classes.root, className)} value={dateValue} {...others}>
-      {labels.title && (
-        <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title} />
-      )}
-      <HvBaseDropdown
-        classes={{ root: classes.dropdown, panel: classes.panel }}
-        disablePortal={disablePortal}
-        placement={horizontalPlacement}
-        expanded={calendarOpen}
-        onToggle={(evt, open) => setCalendarOpen(open)}
-        onClickOutside={handleCalendarClickAway}
-        placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
-        adornment={<Calendar className={classes.icon} />}
-        popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
-      >
-        <HvCalendar
-          id={setId(id, "calendar")}
-          visibleMonth={visibleMonth}
-          visibleYear={visibleYear}
-          onVisibleDateChange={handleVisibleDateChange}
-          onChange={handleDateChange}
-          locale={locale}
-        />
-        {(rangeMode || showActions) && renderActions()}
-      </HvBaseDropdown>
+      <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title}>
+        <HvBaseDropdown
+          classes={{ root: classes.dropdown, panel: classes.panel }}
+          disablePortal={disablePortal}
+          placement={horizontalPlacement}
+          expanded={calendarOpen}
+          onToggle={(evt, open) => setCalendarOpen(open)}
+          onClickOutside={handleCalendarClickAway}
+          placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
+          adornment={<Calendar className={classes.icon} />}
+          popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
+        >
+          <HvCalendar
+            id={setId(id, "calendar")}
+            visibleMonth={visibleMonth}
+            visibleYear={visibleYear}
+            onVisibleDateChange={handleVisibleDateChange}
+            onChange={handleDateChange}
+            locale={locale}
+          />
+          {(rangeMode || showActions) && renderActions()}
+        </HvBaseDropdown>
+      </HvLabel>
     </HvFormElement>
   );
 };
@@ -300,6 +308,6 @@ HvDatePicker.propTypes = {
   escapeWithReference: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvDatePicker" })(
+export default withStyles(styles, { name: "HvDatePicker", index: 1 })(
   withLabels(DEFAULT_LABELS)(withId(HvDatePicker))
 );

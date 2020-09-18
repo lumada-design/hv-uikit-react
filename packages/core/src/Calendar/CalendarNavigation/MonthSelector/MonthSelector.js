@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { setId, isKeypress, KeyboardCodes } from "../../../utils";
+import { isKeypress, KeyboardCodes } from "../../../utils";
 import { getMonthNamesList } from "../../utils";
 import { NAV_OPTIONS, VIEW_MODE, REPRESENTATION_VALUES } from "../../enums";
 import { HvTypography } from "../../../..";
@@ -32,33 +32,29 @@ const HvMonthSelector = ({
         [classes.normalWidth]: !rangeMode
       })}
     >
-      {listMonthNamesShort.map((monthName, index) => {
-        const key = `${monthName}-${index}`;
-        let className = `${classes.calendarMonthlyCell}`;
-        if (index + 1 === visibleMonth) {
-          className += ` ${classes.calendarMonthlyCellSelected}`;
-        }
-
-        return (
-          <div
-            className={classes.focusSelection}
-            id={setId(id, "month-selector")}
-            key={key}
-            role="button"
-            onClick={event => {
-              onChange(event, NAV_OPTIONS.MONTH, index + 1);
-              onViewModeChange(VIEW_MODE.CALENDAR);
-            }}
-            onKeyDown={event => onKeyDownHandler(event, index)}
-            tabIndex={0}
-            {...others}
+      {listMonthNamesShort.map((monthName, index) => (
+        <div
+          className={classes.focusSelection}
+          key={monthName}
+          role="button"
+          onClick={event => {
+            onChange(event, NAV_OPTIONS.MONTH, index + 1);
+            onViewModeChange(VIEW_MODE.CALENDAR);
+          }}
+          onKeyDown={event => onKeyDownHandler(event, index)}
+          tabIndex={0}
+          {...others}
+        >
+          <HvTypography
+            variant="normalText"
+            className={clsx(classes.calendarMonthlyCell, {
+              [classes.calendarMonthlyCellSelected]: index + 1 === visibleMonth
+            })}
           >
-            <HvTypography variant="normalText" className={className}>
-              {monthName}
-            </HvTypography>
-          </div>
-        );
-      })}
+            {monthName}
+          </HvTypography>
+        </div>
+      ))}
     </div>
   );
 };
