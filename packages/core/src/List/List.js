@@ -10,12 +10,18 @@ import { DropRightXS } from "@hv/uikit-react-icons";
 
 import { parseList, parseState, wrapperTooltip } from "./utils";
 
-import { HvCheckBox, HvListContainer, HvListItem, HvRadio, HvTypography, setId } from "..";
+import {
+  HvBulkActions,
+  HvLink,
+  HvCheckBox,
+  HvListContainer,
+  HvListItem,
+  HvRadio,
+  HvTypography,
+  setId
+} from "..";
 
-import HvBulkActions from "../BulkActions";
-import HvLink from "../Link";
-
-import styles, { linkStyles, selectAllStyles } from "./styles";
+import styles, { selectAllStyles } from "./styles";
 
 const DEFAULT_STATE = {
   list: [],
@@ -33,7 +39,6 @@ const DEFAULT_LABELS = {
 };
 
 const StyledHvBulkActions = withStyles(selectAllStyles)(HvBulkActions);
-const StyledHvLink = withStyles(linkStyles)(HvLink);
 
 /**
  * Component used to show a set of related data to the user.
@@ -206,13 +211,13 @@ class List extends React.Component {
   };
 
   renderItemText = item => {
-    const { multiSelect, hasTooltips } = this.props;
+    const { classes, multiSelect, hasTooltips } = this.props;
     const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
 
     return !multiSelect && item.path ? (
-      <StyledHvLink key={item.label} route={item.path}>
+      <HvLink key={item.label} route={item.path} classes={{ a: classes.link }}>
         <ItemText />
-      </StyledHvLink>
+      </HvLink>
     ) : (
       <ItemText />
     );
@@ -312,7 +317,11 @@ List.propTypes = {
     /**
      * Styles applied to the list item when it has a selector.
      */
-    itemSelector: PropTypes.string
+    itemSelector: PropTypes.string,
+    /**
+     * Styles applied to the the list item when it has a link path.
+     */
+    link: PropTypes.string
   }).isRequired,
   /**
    * The id of the root element

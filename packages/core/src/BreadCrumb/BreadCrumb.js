@@ -2,29 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import Separator from "@hv/uikit-react-icons/dist/DropRightXS";
-import MoreOptions from "@hv/uikit-react-icons/dist/MoreOptionsHorizontal";
+import { DropRightXS } from "@hv/uikit-react-icons";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
-import HvTypography from "../Typography";
-import HvDropDownMenu from "../DropDownMenu";
-import { setId } from "../utils";
-import HvLink from "../Link";
+import { HvLink, HvTypography } from "..";
+import { pathWithSubMenu, removeExtension } from "./utils";
 import styles from "./styles";
-
-const removeExtension = label =>
-  label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
-
-const LastPathElement = ({ classes, label }) => (
-  <li className={classes.centerContainer}>
-    <HvTypography>{startCase(removeExtension(label))}</HvTypography>
-  </li>
-);
-
-LastPathElement.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired,
-  label: PropTypes.string.isRequired
-};
 
 const Page = ({ Component, onClick, elem, classes }) => (
   <HvLink
@@ -34,11 +17,9 @@ const Page = ({ Component, onClick, elem, classes }) => (
     data={elem}
     classes={{ a: classes.a }}
   >
-    <div className={classes.centerContainer}>
-      <HvTypography variant="link" className={classes.link}>
-        {startCase(elem.label)}
-      </HvTypography>
-    </div>
+    <HvTypography variant="link" className={classes.link}>
+      {startCase(elem.label)}
+    </HvTypography>
   </HvLink>
 );
 
@@ -52,36 +33,17 @@ Page.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired
 };
 
-const PathElement = ({ classes, children }) => (
+const PathElement = ({ classes, last = false, children }) => (
   <li className={classes.centerContainer}>
     {children}
-    <div className={classes.separator} aria-hidden>
-      <Separator className={classes.separatorContainer} color="atmo5" />
-    </div>
+    {!last && <DropRightXS className={classes.separatorContainer} color="atmo5" />}
   </li>
 );
 
 PathElement.propTypes = {
+  last: PropTypes.bool,
   classes: PropTypes.instanceOf(Object).isRequired,
   children: PropTypes.element.isRequired
-};
-
-const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {
-  const nbrElemToSubMenu = listRoute.length - maxVisible;
-  const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
-
-  listRoute.splice(
-    1,
-    nbrElemToSubMenu,
-    <HvDropDownMenu
-      id={setId(id, "submenu")}
-      icon={<MoreOptions />}
-      dataList={subMenuList}
-      {...dropDownMenuProps}
-    />
-  );
-
-  return listRoute;
 };
 
 /**
@@ -128,31 +90,27 @@ const BreadCrumb = props => {
       ? pathWithSubMenu(id, listPath, maxVisibleElem, dropDownMenuProps)
       : listPath;
 
-  const lastIndex = breadcrumbPath.length - 1;
-
-  const Component = onClick ? component : undefined;
-
   return (
     <nav id={id} className={clsx(classes.root, className)} {...others}>
       <ol className={classes.orderedList}>
         {listPath.map((elem, index) => {
           const key = `key_${index}`;
+          const isLast = index === breadcrumbPath.length - 1;
 
-          return index === lastIndex ? (
-            <LastPathElement classes={classes} label={elem.label} key={key} />
-          ) : (
-            <PathElement classes={classes} key={key}>
-              {React.isValidElement(elem) ? (
-                elem
-              ) : (
-                <Page
-                  key={key}
-                  elem={elem}
-                  classes={classes}
-                  Component={Component}
-                  onClick={onClick}
-                />
-              )}
+          return (
+            <PathElement classes={classes} key={key} last={isLast}>
+              {(React.isValidElement(elem) && elem) ||
+                (isLast && (
+                  <HvTypography>{startCase(removeExtension(elem.label))}</HvTypography>
+                )) || (
+                  <Page
+                    key={key}
+                    elem={elem}
+                    classes={classes}
+                    Component={onClick ? component : undefined}
+                    onClick={onClick}
+                  />
+                )}
             </PathElement>
           );
         })}
@@ -160,6 +118,7 @@ const BreadCrumb = props => {
     </nav>
   );
 };
+
 BreadCrumb.propTypes = {
   /**
    * Class names to be applied.
@@ -181,10 +140,6 @@ BreadCrumb.propTypes = {
      * Styles applied to the links.
      */
     link: PropTypes.string,
-    /**
-     *  Styles applied to the separator.
-     */
-    separator: PropTypes.string,
     /**
      *  Styles applied to the list.
      */
@@ -222,4 +177,4 @@ BreadCrumb.propTypes = {
   dropDownMenuProps: PropTypes.instanceOf(Object)
 };
 
-export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);
+export default withStyles(styles, { name: "HvBreadCrumb", index: 1 })(BreadCrumb);

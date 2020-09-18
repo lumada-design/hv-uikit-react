@@ -1,4 +1,4 @@
-const styles = {
+const styles = theme => ({
   root: {},
   selectorContainer: {
     width: "100%"
@@ -22,12 +22,20 @@ const styles = {
   },
   itemSelector: {
     backgroundColor: "transparent"
+  },
+  link: {
+    ...theme.hv.typography.normalText,
+    textDecoration: "none",
+
+    "&:focus": {
+      boxShadow: "unset !important"
+    }
   }
-};
+});
 
 export default styles;
 
-const selectAllStyles = theme => ({
+export const selectAllStyles = theme => ({
   root: {
     margin: "0 0 2px 0"
   },
@@ -44,15 +52,3 @@ const selectAllStyles = theme => ({
     width: "100%"
   }
 });
-
-const linkStyles = theme => ({
-  a: {
-    ...theme.hv.typography.normalText,
-
-    "&:focus": {
-      boxShadow: "unset !important"
-    }
-  }
-});
-
-export { selectAllStyles, linkStyles };
