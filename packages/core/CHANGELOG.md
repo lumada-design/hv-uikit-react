@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.2...@hv/uikit-react-core@2.11.3) (2020-09-18)
+
+
+### Bug Fixes
+
+* **input:** onBlur not occurring when focusing in other element. [#1961](https://github.com/pentaho/hv-uikit-react/issues/1961) ([1af91ec](https://github.com/pentaho/hv-uikit-react/commit/1af91ec6e00266c2c727fec89ff9a952fafa2b3e))
+* **tabs:** use focusVisible for custom styles. HVUIKIT-5402 ([21533e4](https://github.com/pentaho/hv-uikit-react/commit/21533e4f4ce50ce44fa16e74c228a2c739e3f7f9))
+
+
+
+
+
 ## [2.11.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.1...@hv/uikit-react-core@2.11.2) (2020-09-17)
 
 
