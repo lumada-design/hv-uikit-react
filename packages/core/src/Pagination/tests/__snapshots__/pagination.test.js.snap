@@ -588,6 +588,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                           className="HvPagination-iconContainer"
                           classes={
                             Object {
+                              "focusVisible": "HvButton-focusVisible",
                               "ghost": "HvButton-ghost",
                               "ghostDisabled": "HvButton-ghostDisabled",
                               "ghostSVG": "HvButton-ghostSVG",
@@ -627,6 +628,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                             color="primary"
                             disableRipple={true}
                             disabled={true}
+                            focusVisibleClassName="HvButton-focusVisible"
                             id="pagination-firstPage-button"
                             onClick={[Function]}
                             variant="text"
@@ -670,6 +672,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                               color="primary"
                               disableRipple={true}
                               disabled={true}
+                              focusVisibleClassName="HvButton-focusVisible"
                               id="pagination-firstPage-button"
                               onClick={[Function]}
                               variant="text"
@@ -681,7 +684,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                 disableRipple={true}
                                 disabled={true}
                                 focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
+                                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 id="pagination-firstPage-button"
                                 onClick={[Function]}
                                 type="button"
@@ -700,7 +703,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                   disableRipple={true}
                                   disabled={true}
                                   focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible"
+                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                   id="pagination-firstPage-button"
                                   onClick={[Function]}
                                   type="button"
@@ -978,6 +981,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                           className="HvPagination-iconContainer"
                           classes={
                             Object {
+                              "focusVisible": "HvButton-focusVisible",
                               "ghost": "HvButton-ghost",
                               "ghostDisabled": "HvButton-ghostDisabled",
                               "ghostSVG": "HvButton-ghostSVG",
@@ -1017,6 +1021,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                             color="primary"
                             disableRipple={true}
                             disabled={true}
+                            focusVisibleClassName="HvButton-focusVisible"
                             id="pagination-previousPage-button"
                             onClick={[Function]}
                             variant="text"
@@ -1060,6 +1065,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                               color="primary"
                               disableRipple={true}
                               disabled={true}
+                              focusVisibleClassName="HvButton-focusVisible"
                               id="pagination-previousPage-button"
                               onClick={[Function]}
                               variant="text"
@@ -1071,7 +1077,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                 disableRipple={true}
                                 disabled={true}
                                 focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
+                                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 id="pagination-previousPage-button"
                                 onClick={[Function]}
                                 type="button"
@@ -1090,7 +1096,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                   disableRipple={true}
                                   disabled={true}
                                   focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible"
+                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                   id="pagination-previousPage-button"
                                   onClick={[Function]}
                                   type="button"
@@ -2271,6 +2277,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                           className="HvPagination-iconContainer"
                           classes={
                             Object {
+                              "focusVisible": "HvButton-focusVisible",
                               "ghost": "HvButton-ghost",
                               "ghostDisabled": "HvButton-ghostDisabled",
                               "ghostSVG": "HvButton-ghostSVG",
@@ -2310,6 +2317,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                             color="primary"
                             disableRipple={true}
                             disabled={false}
+                            focusVisibleClassName="HvButton-focusVisible"
                             id="pagination-nextPage-button"
                             onClick={[Function]}
                             variant="text"
@@ -2353,6 +2361,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                               color="primary"
                               disableRipple={true}
                               disabled={false}
+                              focusVisibleClassName="HvButton-focusVisible"
                               id="pagination-nextPage-button"
                               onClick={[Function]}
                               variant="text"
@@ -2364,7 +2373,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                 disableRipple={true}
                                 disabled={false}
                                 focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
+                                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 id="pagination-nextPage-button"
                                 onClick={[Function]}
                                 type="button"
@@ -2383,7 +2392,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible"
+                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                   id="pagination-nextPage-button"
                                   onClick={[Function]}
                                   type="button"
@@ -2659,6 +2668,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                           className="HvPagination-iconContainer"
                           classes={
                             Object {
+                              "focusVisible": "HvButton-focusVisible",
                               "ghost": "HvButton-ghost",
                               "ghostDisabled": "HvButton-ghostDisabled",
                               "ghostSVG": "HvButton-ghostSVG",
@@ -2698,6 +2708,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                             color="primary"
                             disableRipple={true}
                             disabled={false}
+                            focusVisibleClassName="HvButton-focusVisible"
                             id="pagination-lastPage-button"
                             onClick={[Function]}
                             variant="text"
@@ -2741,6 +2752,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                               color="primary"
                               disableRipple={true}
                               disabled={false}
+                              focusVisibleClassName="HvButton-focusVisible"
                               id="pagination-lastPage-button"
                               onClick={[Function]}
                               variant="text"
@@ -2752,7 +2764,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                 disableRipple={true}
                                 disabled={false}
                                 focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
+                                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 id="pagination-lastPage-button"
                                 onClick={[Function]}
                                 type="button"
@@ -2771,7 +2783,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible"
+                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                   id="pagination-lastPage-button"
                                   onClick={[Function]}
                                   type="button"

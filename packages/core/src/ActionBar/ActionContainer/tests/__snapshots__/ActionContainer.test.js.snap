@@ -23,6 +23,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
           category="ghost"
           classes={
             Object {
+              "focusVisible": "HvButton-focusVisible",
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
               "ghostSVG": "HvButton-ghostSVG",
@@ -57,6 +58,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
             }
             color="primary"
             disableRipple={true}
+            focusVisibleClassName="HvButton-focusVisible"
             onClick={[Function]}
             variant="text"
           >
@@ -97,6 +99,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
               }
               color="primary"
               disableRipple={true}
+              focusVisibleClassName="HvButton-focusVisible"
               onClick={[Function]}
               variant="text"
             >
@@ -106,7 +109,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 focusRipple={true}
-                focusVisibleClassName="Mui-focusVisible"
+                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                 onClick={[Function]}
                 type="button"
               >
@@ -123,7 +126,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
-                  focusVisibleClassName="Mui-focusVisible"
+                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                   onClick={[Function]}
                   type="button"
                 >
@@ -173,6 +176,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
           className="makeStyles-buttonSeparator-4"
           classes={
             Object {
+              "focusVisible": "HvButton-focusVisible",
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
               "ghostSVG": "HvButton-ghostSVG",
@@ -207,6 +211,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
             }
             color="primary"
             disableRipple={true}
+            focusVisibleClassName="HvButton-focusVisible"
             onClick={[Function]}
             variant="text"
           >
@@ -247,6 +252,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
               }
               color="primary"
               disableRipple={true}
+              focusVisibleClassName="HvButton-focusVisible"
               onClick={[Function]}
               variant="text"
             >
@@ -256,7 +262,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 focusRipple={true}
-                focusVisibleClassName="Mui-focusVisible"
+                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                 onClick={[Function]}
                 type="button"
               >
@@ -273,7 +279,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
-                  focusVisibleClassName="Mui-focusVisible"
+                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                   onClick={[Function]}
                   type="button"
                 >
@@ -315,6 +321,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
           category="ghost"
           classes={
             Object {
+              "focusVisible": "HvButton-focusVisible",
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
               "ghostSVG": "HvButton-ghostSVG",
@@ -349,6 +356,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
             }
             color="primary"
             disableRipple={true}
+            focusVisibleClassName="HvButton-focusVisible"
             onClick={[Function]}
             variant="text"
           >
@@ -389,6 +397,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
               }
               color="primary"
               disableRipple={true}
+              focusVisibleClassName="HvButton-focusVisible"
               onClick={[Function]}
               variant="text"
             >
@@ -398,7 +407,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 focusRipple={true}
-                focusVisibleClassName="Mui-focusVisible"
+                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                 onClick={[Function]}
                 type="button"
               >
@@ -415,7 +424,7 @@ exports[`[v3] Action Bar should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
-                  focusVisibleClassName="Mui-focusVisible"
+                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                   onClick={[Function]}
                   type="button"
                 >

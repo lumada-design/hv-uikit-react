@@ -39,6 +39,7 @@ const HvButton = props => {
       disableRipple
       onClick={onClick}
       startIcon={startIcon}
+      focusVisibleClassName={classes.focusVisible}
       {...others}
     >
       {children}
@@ -103,7 +104,11 @@ HvButton.propTypes = {
     /**
      * Styles applied to the button's left icon.
      */
-    startIcon: PropTypes.string
+    startIcon: PropTypes.string,
+    /**
+     * Styles applied to the button if keyboard focused.
+     */
+    focusVisible: PropTypes.string
   }),
   /**
    * @ignore

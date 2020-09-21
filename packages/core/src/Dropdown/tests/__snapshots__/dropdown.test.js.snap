@@ -796,7 +796,6 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                         "lTitle": "HvTypography-lTitle",
                                                                         "link": "HvTypography-link",
                                                                         "mTitle": "HvTypography-mTitle",
-                                                                        "noWrap": "HvTypography-noWrap",
                                                                         "normalText": "HvTypography-normalText",
                                                                         "placeholderText": "HvTypography-placeholderText",
                                                                         "root": "HvTypography-root",
@@ -3820,7 +3819,6 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                         "lTitle": "HvTypography-lTitle",
                                                                         "link": "HvTypography-link",
                                                                         "mTitle": "HvTypography-mTitle",
-                                                                        "noWrap": "HvTypography-noWrap",
                                                                         "normalText": "HvTypography-normalText",
                                                                         "placeholderText": "HvTypography-placeholderText",
                                                                         "root": "HvTypography-root",
@@ -8192,6 +8190,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                     category="ghost"
                                                     classes={
                                                       Object {
+                                                        "focusVisible": "HvButton-focusVisible",
                                                         "ghost": "HvButton-ghost",
                                                         "ghostDisabled": "HvButton-ghostDisabled",
                                                         "ghostSVG": "HvButton-ghostSVG",
@@ -8227,6 +8226,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                       }
                                                       color="primary"
                                                       disableRipple={true}
+                                                      focusVisibleClassName="HvButton-focusVisible"
                                                       id="test-dropdown-values-actions-apply"
                                                       onClick={[Function]}
                                                       variant="text"
@@ -8268,6 +8268,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         }
                                                         color="primary"
                                                         disableRipple={true}
+                                                        focusVisibleClassName="HvButton-focusVisible"
                                                         id="test-dropdown-values-actions-apply"
                                                         onClick={[Function]}
                                                         variant="text"
@@ -8278,7 +8279,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                           disableRipple={true}
                                                           disabled={false}
                                                           focusRipple={true}
-                                                          focusVisibleClassName="Mui-focusVisible"
+                                                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                                           id="test-dropdown-values-actions-apply"
                                                           onClick={[Function]}
                                                           type="button"
@@ -8296,7 +8297,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                             disableRipple={true}
                                                             disabled={false}
                                                             focusRipple={true}
-                                                            focusVisibleClassName="Mui-focusVisible"
+                                                            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                                             id="test-dropdown-values-actions-apply"
                                                             onClick={[Function]}
                                                             type="button"
@@ -8341,6 +8342,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                     category="ghost"
                                                     classes={
                                                       Object {
+                                                        "focusVisible": "HvButton-focusVisible",
                                                         "ghost": "HvButton-ghost",
                                                         "ghostDisabled": "HvButton-ghostDisabled",
                                                         "ghostSVG": "HvButton-ghostSVG",
@@ -8376,6 +8378,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                       }
                                                       color="primary"
                                                       disableRipple={true}
+                                                      focusVisibleClassName="HvButton-focusVisible"
                                                       id="test-dropdown-values-actions-cancel"
                                                       onClick={[Function]}
                                                       variant="text"
@@ -8417,6 +8420,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         }
                                                         color="primary"
                                                         disableRipple={true}
+                                                        focusVisibleClassName="HvButton-focusVisible"
                                                         id="test-dropdown-values-actions-cancel"
                                                         onClick={[Function]}
                                                         variant="text"
@@ -8427,7 +8431,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                           disableRipple={true}
                                                           disabled={false}
                                                           focusRipple={true}
-                                                          focusVisibleClassName="Mui-focusVisible"
+                                                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                                           id="test-dropdown-values-actions-cancel"
                                                           onClick={[Function]}
                                                           type="button"
@@ -8445,7 +8449,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                             disableRipple={true}
                                                             disabled={false}
                                                             focusRipple={true}
-                                                            focusVisibleClassName="Mui-focusVisible"
+                                                            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                                             id="test-dropdown-values-actions-cancel"
                                                             onClick={[Function]}
                                                             type="button"

@@ -5,6 +5,7 @@ exports[`[v3] Button should render correctly 1`] = `
   <HvButton
     classes={
       Object {
+        "focusVisible": "HvButton-focusVisible",
         "ghost": "HvButton-ghost",
         "ghostDisabled": "HvButton-ghostDisabled",
         "ghostSVG": "HvButton-ghostSVG",
@@ -38,6 +39,7 @@ exports[`[v3] Button should render correctly 1`] = `
       }
       color="primary"
       disableRipple={true}
+      focusVisibleClassName="HvButton-focusVisible"
       variant="contained"
     >
       <ForwardRef(Button)
@@ -77,6 +79,7 @@ exports[`[v3] Button should render correctly 1`] = `
         }
         color="primary"
         disableRipple={true}
+        focusVisibleClassName="HvButton-focusVisible"
         variant="contained"
       >
         <WithStyles(ForwardRef(ButtonBase))
@@ -85,7 +88,7 @@ exports[`[v3] Button should render correctly 1`] = `
           disableRipple={true}
           disabled={false}
           focusRipple={true}
-          focusVisibleClassName="Mui-focusVisible"
+          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
           type="button"
         >
           <ForwardRef(ButtonBase)
@@ -101,7 +104,7 @@ exports[`[v3] Button should render correctly 1`] = `
             disableRipple={true}
             disabled={false}
             focusRipple={true}
-            focusVisibleClassName="Mui-focusVisible"
+            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
             type="button"
           >
             <button
