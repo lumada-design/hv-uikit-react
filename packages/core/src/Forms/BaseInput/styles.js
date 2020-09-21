@@ -1,4 +1,3 @@
-import "focus-within-polyfill";
 import { outlineStyles } from "../../Focus/styles";
 
 const styles = theme => ({
@@ -97,6 +96,7 @@ const styles = theme => ({
     ...theme.hv.typography.normalText,
     overflow: "hidden",
     textOverflow: "ellipsis",
+    outline: "none",
     "&::placeholder": {
       ...theme.hv.typography.placeholderText,
       opacity: 1
