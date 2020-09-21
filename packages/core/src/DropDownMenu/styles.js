@@ -1,6 +1,11 @@
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   root: {
-    display: "inline-block"
+    display: "inline-block",
+    "&.focus-visible $icon": {
+      ...outlineStyles
+    }
   },
   icon: {
     position: "relative",
@@ -16,7 +21,8 @@ const styles = theme => ({
     },
     "& svg .color0": {
       fill: theme.palette.acce1
-    }
+    },
+  borderRadius: "2px 2px 0px 0px"
   }
 });
 

@@ -64,7 +64,6 @@ const DropDownMenu = ({
         [classes.iconSelected]: open
       })}
       disabled={disabled}
-      tabIndex={-1}
       aria-label="Dropdown menu"
     >
       {icon || <MoreVert color={disabled ? "atmo5" : undefined} />}

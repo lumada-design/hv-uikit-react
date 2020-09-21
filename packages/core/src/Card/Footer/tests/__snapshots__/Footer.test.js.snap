@@ -319,7 +319,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   disabled={false}
                   icon={true}
                   id="id-menu-icon-button"
-                  tabIndex={-1}
                 >
                   <MoreOptionsVertical />
                 </ForwardRef(WithStyles)>
@@ -360,7 +359,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     disabled={false}
                     icon={true}
                     id="id-menu-icon-button"
-                    tabIndex={-1}
                   >
                     <MoreOptionsVertical />
                   </ForwardRef(WithStyles)>
@@ -401,7 +399,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       disabled={false}
                       icon={true}
                       id="id-menu-icon-button"
-                      tabIndex={-1}
                     >
                       <MoreOptionsVertical />
                     </ForwardRef(WithStyles)>
@@ -420,7 +417,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     id="id-menu"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    tabIndex={0}
+                    tabIndex={-1}
                   >
                     <WithStyles(HvButton)
                       aria-label="Dropdown menu"
@@ -429,7 +426,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       disabled={false}
                       icon={true}
                       id="id-menu-icon-button"
-                      tabIndex={-1}
                     >
                       <HvButton
                         aria-label="Dropdown menu"
@@ -459,7 +455,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                         disabled={false}
                         icon={true}
                         id="id-menu-icon-button"
-                        tabIndex={-1}
                       >
                         <WithStyles(ForwardRef(Button))
                           aria-label="Dropdown menu"
@@ -479,7 +474,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                           disabled={false}
                           focusVisibleClassName="HvButton-focusVisible"
                           id="id-menu-icon-button"
-                          tabIndex={-1}
                           variant="text"
                         >
                           <ForwardRef(Button)
@@ -523,7 +517,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                             disabled={false}
                             focusVisibleClassName="HvButton-focusVisible"
                             id="id-menu-icon-button"
-                            tabIndex={-1}
                             variant="text"
                           >
                             <WithStyles(ForwardRef(ButtonBase))
@@ -535,7 +528,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                               focusRipple={true}
                               focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                               id="id-menu-icon-button"
-                              tabIndex={-1}
                               type="button"
                             >
                               <ForwardRef(ButtonBase)
@@ -554,7 +546,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                                 focusRipple={true}
                                 focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 id="id-menu-icon-button"
-                                tabIndex={-1}
                                 type="button"
                               >
                                 <button
@@ -573,7 +564,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                                   onTouchEnd={[Function]}
                                   onTouchMove={[Function]}
                                   onTouchStart={[Function]}
-                                  tabIndex={-1}
+                                  tabIndex={0}
                                   type="button"
                                 >
                                   <span
@@ -827,7 +818,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   disabled={false}
                   icon={true}
                   id="id-menu-icon-button"
-                  tabIndex={-1}
                 >
                   <MoreOptionsVertical />
                 </ForwardRef(WithStyles)>
@@ -868,7 +858,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     disabled={false}
                     icon={true}
                     id="id-menu-icon-button"
-                    tabIndex={-1}
                   >
                     <MoreOptionsVertical />
                   </ForwardRef(WithStyles)>
@@ -909,7 +898,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       disabled={false}
                       icon={true}
                       id="id-menu-icon-button"
-                      tabIndex={-1}
                     >
                       <MoreOptionsVertical />
                     </ForwardRef(WithStyles)>
@@ -928,7 +916,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     id="id-menu"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    tabIndex={0}
+                    tabIndex={-1}
                   >
                     <WithStyles(HvButton)
                       aria-label="Dropdown menu"
@@ -937,7 +925,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       disabled={false}
                       icon={true}
                       id="id-menu-icon-button"
-                      tabIndex={-1}
                     >
                       <HvButton
                         aria-label="Dropdown menu"
@@ -967,7 +954,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                         disabled={false}
                         icon={true}
                         id="id-menu-icon-button"
-                        tabIndex={-1}
                       >
                         <WithStyles(ForwardRef(Button))
                           aria-label="Dropdown menu"
@@ -987,7 +973,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                           disabled={false}
                           focusVisibleClassName="HvButton-focusVisible"
                           id="id-menu-icon-button"
-                          tabIndex={-1}
                           variant="text"
                         >
                           <ForwardRef(Button)
@@ -1031,7 +1016,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                             disabled={false}
                             focusVisibleClassName="HvButton-focusVisible"
                             id="id-menu-icon-button"
-                            tabIndex={-1}
                             variant="text"
                           >
                             <WithStyles(ForwardRef(ButtonBase))
@@ -1043,7 +1027,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                               focusRipple={true}
                               focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                               id="id-menu-icon-button"
-                              tabIndex={-1}
                               type="button"
                             >
                               <ForwardRef(ButtonBase)
@@ -1062,7 +1045,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                                 focusRipple={true}
                                 focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 id="id-menu-icon-button"
-                                tabIndex={-1}
                                 type="button"
                               >
                                 <button
@@ -1081,7 +1063,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                                   onTouchEnd={[Function]}
                                   onTouchMove={[Function]}
                                   onTouchStart={[Function]}
-                                  tabIndex={-1}
+                                  tabIndex={0}
                                   type="button"
                                 >
                                   <span
@@ -1629,7 +1611,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   disabled={false}
                   icon={true}
                   id="id-menu-icon-button"
-                  tabIndex={-1}
                 >
                   <MoreOptionsVertical />
                 </ForwardRef(WithStyles)>
@@ -1670,7 +1651,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     disabled={false}
                     icon={true}
                     id="id-menu-icon-button"
-                    tabIndex={-1}
                   >
                     <MoreOptionsVertical />
                   </ForwardRef(WithStyles)>
@@ -1711,7 +1691,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       disabled={false}
                       icon={true}
                       id="id-menu-icon-button"
-                      tabIndex={-1}
                     >
                       <MoreOptionsVertical />
                     </ForwardRef(WithStyles)>
@@ -1730,7 +1709,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     id="id-menu"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    tabIndex={0}
+                    tabIndex={-1}
                   >
                     <WithStyles(HvButton)
                       aria-label="Dropdown menu"
@@ -1739,7 +1718,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       disabled={false}
                       icon={true}
                       id="id-menu-icon-button"
-                      tabIndex={-1}
                     >
                       <HvButton
                         aria-label="Dropdown menu"
@@ -1769,7 +1747,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                         disabled={false}
                         icon={true}
                         id="id-menu-icon-button"
-                        tabIndex={-1}
                       >
                         <WithStyles(ForwardRef(Button))
                           aria-label="Dropdown menu"
@@ -1833,7 +1810,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                             disabled={false}
                             focusVisibleClassName="HvButton-focusVisible"
                             id="id-menu-icon-button"
-                            tabIndex={-1}
                             variant="text"
                           >
                             <WithStyles(ForwardRef(ButtonBase))
@@ -1845,7 +1821,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                               focusRipple={true}
                               focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                               id="id-menu-icon-button"
-                              tabIndex={-1}
                               type="button"
                             >
                               <ForwardRef(ButtonBase)
@@ -1864,7 +1839,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                                 focusRipple={true}
                                 focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 id="id-menu-icon-button"
-                                tabIndex={-1}
                                 type="button"
                               >
                                 <button
@@ -1883,7 +1857,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                                   onTouchEnd={[Function]}
                                   onTouchMove={[Function]}
                                   onTouchStart={[Function]}
-                                  tabIndex={-1}
+                                  tabIndex={0}
                                   type="button"
                                 >
                                   <span

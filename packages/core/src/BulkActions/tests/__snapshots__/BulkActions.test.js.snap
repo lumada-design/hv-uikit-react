@@ -1233,7 +1233,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         disabled={true}
                         icon={true}
                         id="bulkActions-actions-menu-icon-button"
-                        tabIndex={-1}
                       >
                         <MoreOptionsVertical
                           color="atmo5"
@@ -1276,7 +1275,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           disabled={true}
                           icon={true}
                           id="bulkActions-actions-menu-icon-button"
-                          tabIndex={-1}
                         >
                           <MoreOptionsVertical
                             color="atmo5"
@@ -1319,7 +1317,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             disabled={true}
                             icon={true}
                             id="bulkActions-actions-menu-icon-button"
-                            tabIndex={-1}
                           >
                             <MoreOptionsVertical
                               color="atmo5"
@@ -1349,7 +1346,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             disabled={true}
                             icon={true}
                             id="bulkActions-actions-menu-icon-button"
-                            tabIndex={-1}
                           >
                             <HvButton
                               aria-label="Dropdown menu"
@@ -1379,7 +1375,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               disabled={true}
                               icon={true}
                               id="bulkActions-actions-menu-icon-button"
-                              tabIndex={-1}
                             >
                               <WithStyles(ForwardRef(Button))
                                 aria-label="Dropdown menu"
@@ -1399,7 +1394,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                 disabled={true}
                                 focusVisibleClassName="HvButton-focusVisible"
                                 id="bulkActions-actions-menu-icon-button"
-                                tabIndex={-1}
                                 variant="text"
                               >
                                 <ForwardRef(Button)
@@ -1443,7 +1437,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                   disabled={true}
                                   focusVisibleClassName="HvButton-focusVisible"
                                   id="bulkActions-actions-menu-icon-button"
-                                  tabIndex={-1}
                                   variant="text"
                                 >
                                   <WithStyles(ForwardRef(ButtonBase))
@@ -1455,7 +1448,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                     focusRipple={true}
                                     focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                     id="bulkActions-actions-menu-icon-button"
-                                    tabIndex={-1}
                                     type="button"
                                   >
                                     <ForwardRef(ButtonBase)
@@ -1474,7 +1466,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       focusRipple={true}
                                       focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                       id="bulkActions-actions-menu-icon-button"
-                                      tabIndex={-1}
                                       type="button"
                                     >
                                       <button
@@ -3014,7 +3005,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         disabled={true}
                         icon={true}
                         id="drop-down-menu-1-icon-button"
-                        tabIndex={-1}
                       >
                         <MoreOptionsVertical
                           color="atmo5"
@@ -3057,7 +3047,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           disabled={true}
                           icon={true}
                           id="drop-down-menu-1-icon-button"
-                          tabIndex={-1}
                         >
                           <MoreOptionsVertical
                             color="atmo5"
@@ -3100,7 +3089,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             disabled={true}
                             icon={true}
                             id="drop-down-menu-1-icon-button"
-                            tabIndex={-1}
                           >
                             <MoreOptionsVertical
                               color="atmo5"
@@ -3130,7 +3118,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             disabled={true}
                             icon={true}
                             id="drop-down-menu-1-icon-button"
-                            tabIndex={-1}
                           >
                             <HvButton
                               aria-label="Dropdown menu"
@@ -3160,7 +3147,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               disabled={true}
                               icon={true}
                               id="drop-down-menu-1-icon-button"
-                              tabIndex={-1}
                             >
                               <WithStyles(ForwardRef(Button))
                                 aria-label="Dropdown menu"
@@ -3180,7 +3166,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                 disabled={true}
                                 focusVisibleClassName="HvButton-focusVisible"
                                 id="drop-down-menu-1-icon-button"
-                                tabIndex={-1}
                                 variant="text"
                               >
                                 <ForwardRef(Button)
@@ -3224,7 +3209,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                   disabled={true}
                                   focusVisibleClassName="HvButton-focusVisible"
                                   id="drop-down-menu-1-icon-button"
-                                  tabIndex={-1}
                                   variant="text"
                                 >
                                   <WithStyles(ForwardRef(ButtonBase))
@@ -3236,7 +3220,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                     focusRipple={true}
                                     focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                     id="drop-down-menu-1-icon-button"
-                                    tabIndex={-1}
                                     type="button"
                                   >
                                     <ForwardRef(ButtonBase)
@@ -3255,7 +3238,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       focusRipple={true}
                                       focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                       id="drop-down-menu-1-icon-button"
-                                      tabIndex={-1}
                                       type="button"
                                     >
                                       <button

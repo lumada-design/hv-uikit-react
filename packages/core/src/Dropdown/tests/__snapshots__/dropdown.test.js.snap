@@ -263,14 +263,15 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="combobox"
-                        tabIndex={0}
+                        tabIndex={-1}
                       >
                         <div
                           aria-controls="hv-dropdown-1-children-container"
                           aria-labelledby="hv-dropdown-1-selectionPlaceholder"
                           className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
                           id="hv-dropdown-1-header"
-                          role="textbox"
+                          role="button"
+                          tabIndex={0}
                         >
                           <div
                             className="HvBaseDropdown-selection"
@@ -796,6 +797,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                         "lTitle": "HvTypography-lTitle",
                                                                         "link": "HvTypography-link",
                                                                         "mTitle": "HvTypography-mTitle",
+                                                                        "noWrap": "HvTypography-noWrap",
                                                                         "normalText": "HvTypography-normalText",
                                                                         "placeholderText": "HvTypography-placeholderText",
                                                                         "root": "HvTypography-root",
@@ -2595,12 +2597,13 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                           aria-labelledby="test-dropdown-selectionPlaceholder"
                           className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown HvBaseDropdown-headerDisabled"
                           id="test-dropdown-header"
-                          role="textbox"
+                          role="button"
                           style={
                             Object {
                               "pointerEvents": "none",
                             }
                           }
+                          tabIndex={-1}
                         >
                           <div
                             className="HvBaseDropdown-selection"
@@ -3819,6 +3822,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                         "lTitle": "HvTypography-lTitle",
                                                                         "link": "HvTypography-link",
                                                                         "mTitle": "HvTypography-mTitle",
+                                                                        "noWrap": "HvTypography-noWrap",
                                                                         "normalText": "HvTypography-normalText",
                                                                         "placeholderText": "HvTypography-placeholderText",
                                                                         "root": "HvTypography-root",
