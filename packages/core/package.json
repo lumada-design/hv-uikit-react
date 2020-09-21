@@ -44,6 +44,7 @@
     "deep-diff": "^1.0.2",
     "detect-browser": "^5.1.0",
     "focus-trap-react": "^6.0.0",
+    "focus-visible": "^5.1.0",
     "focus-within-polyfill": "^5.0.9",
     "hoist-non-react-statics": "^3.3.2",
     "html-react-parser": "^0.13.0",

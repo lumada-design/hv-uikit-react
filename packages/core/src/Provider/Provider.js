@@ -7,6 +7,9 @@ import isEmpty from "lodash/isEmpty";
 import cloneDeep from "lodash/cloneDeep";
 import diff from "deep-diff";
 
+import "focus-within-polyfill";
+import "focus-visible";
+
 import {
   ThemeProvider as MuiThemeProvider,
   StylesProvider as MuiStylesProvider,
