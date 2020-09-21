@@ -7,6 +7,7 @@ import styles from "./styles";
 
 const MARGIN = 50;
 const MAX_BAR_WIDTH = 90;
+const MIN_BAR_WIDTH = 3;
 
 /**
  * A Bar chart is a chart or graph that presents categorical data with rectangular bars.
@@ -17,16 +18,12 @@ const MAX_BAR_WIDTH = 90;
 const Barchart = ({
   id,
   classes,
-  title,
-  subtitle,
   data,
   layout,
   config,
   tooltipType = "multiple",
   stack = false,
   horizontal = false,
-  xAxisTitle,
-  yAxisTitle,
   ...others
 }) => {
   /* Values derived from props */
@@ -75,11 +72,23 @@ const Barchart = ({
       const groupWidth = plotWidth / numberOfGroup;
       const colWidth = groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
 
-      const greaterThan90 = colWidth / numberOfBarsByGroup > MAX_BAR_WIDTH;
+      const calculatedBarWidth = colWidth / numberOfBarsByGroup;
+      const greaterThan90 = calculatedBarWidth > MAX_BAR_WIDTH;
+      const lessThan3 = calculatedBarWidth < MIN_BAR_WIDTH;
       const isAlreadyGreaterThan90 = plotData[0].width !== undefined;
 
       if (greaterThan90 && !isAlreadyGreaterThan90) {
         const newWidth = (MAX_BAR_WIDTH / plotWidth) * numberOfGroup;
+
+        const newData = plotData.map(subData => {
+          return { ...subData, width: newWidth };
+        });
+
+        setChartData(newData);
+      }
+
+      if (lessThan3 && !isAlreadyGreaterThan90) {
+        const newWidth = (MIN_BAR_WIDTH / plotWidth) * numberOfGroup;
 
         const newData = plotData.map(subData => {
           return { ...subData, width: newWidth };
@@ -102,10 +111,6 @@ const Barchart = ({
     <Chart
       id={id}
       classes={classes}
-      title={title}
-      subtitle={subtitle}
-      xAxisTitle={xAxisTitle}
-      yAxisTitle={yAxisTitle}
       data={chartData}
       layout={chartLayout}
       config={config}
@@ -124,14 +129,6 @@ Barchart.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.instanceOf(Object),
-  /**
-   * Title of the chart.
-   */
-  title: PropTypes.string,
-  /**
-   * Subtitle of the chart.
-   */
-  subtitle: PropTypes.string,
   /**
    * Plotly data object (see https://plot.ly/javascript/reference/).
    */
@@ -155,15 +152,7 @@ Barchart.propTypes = {
   /**
    * Sets is the chart is horizontal.
    */
-  horizontal: PropTypes.bool,
-  /**
-   * Defines the title of the X axis.
-   */
-  xAxisTitle: PropTypes.string,
-  /**
-   * Defines the title of the Y axis.
-   */
-  yAxisTitle: PropTypes.string
+  horizontal: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvBarchart" })(Barchart);

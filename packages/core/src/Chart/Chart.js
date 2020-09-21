@@ -1,19 +1,16 @@
 import React, { useState, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import clsx from "clsx";
 import { useTheme, withStyles } from "@material-ui/core";
 import Tooltip from "./Tooltip";
 import { applyLayoutDefaults, applyConfigDefaults } from "./chartPlotlyOverrides";
-import Typography from "../Typography";
+
 import Plot from "./Plot";
 import styles from "./styles";
 
 const Chart = ({
   id,
   classes,
-  title,
-  subtitle,
   data,
   layout,
   config,
@@ -53,15 +50,23 @@ const Chart = ({
   // Extract data from the plotly onHover event to be used to create the tooltip.
   const onHover = useCallback(
     event => {
+      const { points } = event;
+
       const dataFromPoints = {
-        title: isHorizontal ? event.points[0].y : event.points[0].x,
+        title: "",
         elements: []
       };
-      event.points.forEach(p => {
+
+      points.forEach((p, i) => {
+        const fData = p.fullData;
+        const pNumber = p.pointNumber;
+
+        if (i === 0) dataFromPoints.title = isHorizontal ? p.y : p.x || fData.name;
+
         dataFromPoints.elements.push({
-          color: p.fullData.marker ? p.fullData.marker.color : p.fullData.line.color,
-          name: p.fullData.name,
-          value: isHorizontal ? p.x : p.y
+          color: fData.marker?.color || fData.line?.color || p.color,
+          name: fData.labels?.[pNumber] || fData.name,
+          value: isHorizontal ? p.x : p.y || p.value
         });
       });
 
@@ -86,13 +91,8 @@ const Chart = ({
     <>
       {isHover && <Tooltip coordinates={coordinates} data={dataTooltip} useSingle={useSingle} />}
       <div id={id} className={classes.root}>
-        <div className={classes.titleContainer}>
-          {title && <Typography variant="mTitle">{title}</Typography>}
-          <div className={classes.subtitle}>{subtitle && <Typography>{subtitle}</Typography>}</div>
-        </div>
-        <div className={clsx({ [classes.paddingTop]: title })} onMouseMove={onMouseMove}>
+        <div onMouseMove={onMouseMove}>
           <Plot
-            title={title}
             data={data}
             layout={chartLayout}
             config={chartConfig}
@@ -116,19 +116,9 @@ Chart.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
-    root: PropTypes.string,
-    titleContainer: PropTypes.string,
-    subtitle: PropTypes.string,
-    paddingTop: PropTypes.string
+    root: PropTypes.string
   }),
-  /**
-   * Title of the chart.
-   */
-  title: PropTypes.string,
-  /**
-   * Subtitle of the chart.
-   */
-  subtitle: PropTypes.string,
+
   /**
    * Plotly data object (see https://plot.ly/javascript/reference/).
    */

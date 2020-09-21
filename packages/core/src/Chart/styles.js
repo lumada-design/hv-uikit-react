@@ -1,14 +1,6 @@
 const styles = theme => ({
   root: {
-    padding: "40px",
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
-  },
-  titleContainer: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1
-  },
-  subtitle: {
-    marginTop: `${theme.hv.spacing.xs}px`
+    padding: 0
   },
   defaultColors: {
     ...theme.hv.viz.palette.categorical
@@ -18,12 +10,12 @@ const styles = theme => ({
     fontFamily: theme.hv.typography.fontFamily,
     fontSize: 10
   },
-  lineColor: theme.hv.palette.atmosphere.atmo4,
-  gridColor: theme.hv.palette.atmosphere.atmo5,
-  paddingTop: {
-    paddingTop: "20px"
+  legendText: {
+    ...theme.hv.typography.normalText
   },
-  plotColor: theme.hv.palette.atmosphere.atmo1
+  lineColor: theme.hv.palette.atmosphere.atmo4,
+  gridColor: theme.hv.palette.atmosphere.atmo4,
+  plotColor: "transparent"
 });
 
 export default styles;

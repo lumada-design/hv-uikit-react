@@ -27,8 +27,7 @@ const applyLayoutYaxisDefaults = (inputLayout, layoutStyles, yAxisTitle, isHoriz
 
   setterIfNil(layout.yaxis, "fixedrange", true);
 
-  setterIfNil(layout.yaxis, "tickcolor", layoutStyles.lineColor);
-  setterIfNil(layout.yaxis, "ticklen", 2);
+  setterIfNil(layout.yaxis, "ticks", "");
   setterIfNil(layout.yaxis, "tickfont", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
@@ -37,6 +36,7 @@ const applyLayoutYaxisDefaults = (inputLayout, layoutStyles, yAxisTitle, isHoriz
 
   setterIfNil(layout.yaxis, "gridcolor", layoutStyles.gridColor);
   setterIfNil(layout.yaxis, "showgrid", !isHorizontal);
+  setterIfNil(layout.yaxis, "showline", isHorizontal);
 
   setterIfNil(layout.yaxis, "linecolor", layoutStyles.lineColor);
   setterIfNil(layout.yaxis, "linewidth", 1);
@@ -58,7 +58,6 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
   setterIfNil(layout.xaxis, "automargin", true);
 
   setterIfNil(layout.xaxis, "title", {});
-
   setterIfNil(layout.xaxis.title, "font", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
@@ -67,8 +66,7 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
 
   setterIfNil(layout.xaxis, "fixedrange", true);
 
-  setterIfNil(layout.xaxis, "tickcolor", layoutStyles.lineColor);
-  setterIfNil(layout.xaxis, "ticklen", 2);
+  setterIfNil(layout.xaxis, "ticks", "");
   setterIfNil(layout.xaxis, "tickfont", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
@@ -77,6 +75,7 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
 
   setterIfNil(layout.xaxis, "gridcolor", layoutStyles.gridColor);
   setterIfNil(layout.xaxis, "showgrid", isHorizontal);
+  setterIfNil(layout.xaxis, "showline", !isHorizontal);
 
   setterIfNil(layout.xaxis, "linewidth", 1);
   setterIfNil(layout.xaxis, "linecolor", layoutStyles.lineColor);
@@ -93,17 +92,17 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
 const applyLayoutLegendDefaults = (inputLayout, layoutStyles) => {
   const layout = inputLayout;
   setterIfNil(layout, "legend", {
-    x: 1,
-    y: 1.1,
-    xanchor: "right",
-    yanchor: "bottom",
+    x: 0.5,
+    y: 1.15,
+    xanchor: "center",
+    yanchor: "middle",
     orientation: "h"
   });
 
   setterIfNil(layout.legend, "font", {
-    family: layoutStyles.vizText.fontFamily,
-    size: layoutStyles.vizText.fontSize,
-    color: layoutStyles.vizText.color
+    family: layoutStyles.legendText.fontFamily,
+    size: layoutStyles.legendText.fontSize,
+    color: layoutStyles.legendText.color
   });
   return layout;
 };
@@ -118,16 +117,12 @@ const applyLayoutRootDefaults = (inputLayout, layoutStyles) => {
   setterIfNil(layout, "margin", {
     l: 50,
     b: 50,
-    t: 10,
+    t: 50,
     pad: 0
   });
 
   layout.plot_bgcolor = layoutStyles.plotColor;
   layout.paper_bgcolor = layoutStyles.plotColor;
-
-  // setterIfNil(layout, "plot_bgcolor", styles.plotColor);
-  //
-  // setterIfNil(layout, "paper_bgcolor", styles.plotColor);
 };
 
 export const applyLayoutDefaults = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTitle) => {

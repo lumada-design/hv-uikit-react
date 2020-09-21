@@ -37,8 +37,8 @@ export const applyDataDefaults = (inputData, type) => {
   return data;
 };
 
-export const applyLayoutDefaults = (inputLayout, rangeSlider) => {
-  const layout = inputLayout === undefined ? {} : clone(inputLayout);
+export const applyLayoutDefaults = (inputLayout = {}, rangeSlider) => {
+  const layout = clone(inputLayout);
 
   if (rangeSlider) {
     setterIfNil(layout, "xaxis", {});

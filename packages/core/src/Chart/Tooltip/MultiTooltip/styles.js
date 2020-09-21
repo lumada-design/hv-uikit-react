@@ -6,7 +6,7 @@ const styles = theme => ({
     zIndex: 100
   },
   title: {
-    padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px`,
+    padding: `15px ${theme.hv.spacing.sm}px`,
     borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
   },
   valuesContainer: {

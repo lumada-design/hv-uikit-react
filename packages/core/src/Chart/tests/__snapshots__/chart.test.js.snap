@@ -29,12 +29,10 @@ exports[`Chart withStyles should render correctly 1`] = `
       Object {
         "defaultColors": "HvChart-defaultColors",
         "gridColor": "HvChart-gridColor",
+        "legendText": "HvChart-legendText",
         "lineColor": "HvChart-lineColor",
-        "paddingTop": "HvChart-paddingTop",
         "plotColor": "HvChart-plotColor",
         "root": "HvChart-root",
-        "subtitle": "HvChart-subtitle",
-        "titleContainer": "HvChart-titleContainer",
         "vizText": "HvChart-vizText",
       }
     }
@@ -64,14 +62,6 @@ exports[`Chart withStyles should render correctly 1`] = `
       className="HvChart-root"
     >
       <div
-        className="HvChart-titleContainer"
-      >
-        <div
-          className="HvChart-subtitle"
-        />
-      </div>
-      <div
-        className=""
         onMouseMove={[Function]}
       >
         <WithStyles(Plot)
@@ -129,33 +119,28 @@ exports[`Chart withStyles should render correctly 1`] = `
               "legend": Object {
                 "font": Object {
                   "color": "#414141",
-                  "family": Array [
-                    "'Open Sans'",
-                    "Arial",
-                    "Helvetica",
-                    "sans-serif",
-                  ],
-                  "size": 10,
+                  "family": undefined,
+                  "size": "12px",
                 },
                 "orientation": "h",
-                "x": 1,
-                "xanchor": "right",
-                "y": 1.1,
-                "yanchor": "bottom",
+                "x": 0.5,
+                "xanchor": "center",
+                "y": 1.15,
+                "yanchor": "middle",
               },
               "margin": Object {
                 "b": 50,
                 "l": 50,
                 "pad": 0,
-                "t": 10,
+                "t": 50,
               },
-              "paper_bgcolor": "#FBFCFC",
-              "plot_bgcolor": "#FBFCFC",
+              "paper_bgcolor": "transparent",
+              "plot_bgcolor": "transparent",
               "xaxis": Object {
                 "automargin": true,
                 "autorange": true,
                 "fixedrange": true,
-                "gridcolor": "#999999",
+                "gridcolor": "#CCCED0",
                 "linecolor": "#CCCED0",
                 "linewidth": 1,
                 "range": Array [
@@ -163,7 +148,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                   8947.368421052632,
                 ],
                 "showgrid": true,
-                "tickcolor": "#CCCED0",
+                "showline": false,
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -174,7 +159,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                   ],
                   "size": 10,
                 },
-                "ticklen": 2,
+                "ticks": "",
                 "title": Object {
                   "font": Object {
                     "color": "#414141",
@@ -194,7 +179,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                 "automargin": true,
                 "autorange": true,
                 "fixedrange": true,
-                "gridcolor": "#999999",
+                "gridcolor": "#CCCED0",
                 "linecolor": "#CCCED0",
                 "linewidth": 1,
                 "range": Array [
@@ -202,7 +187,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                   2.5,
                 ],
                 "showgrid": false,
-                "tickcolor": "#CCCED0",
+                "showline": true,
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -213,7 +198,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                   ],
                   "size": 10,
                 },
-                "ticklen": 2,
+                "ticks": "",
                 "title": Object {
                   "font": Object {
                     "color": "#414141",
@@ -290,33 +275,28 @@ exports[`Chart withStyles should render correctly 1`] = `
                 "legend": Object {
                   "font": Object {
                     "color": "#414141",
-                    "family": Array [
-                      "'Open Sans'",
-                      "Arial",
-                      "Helvetica",
-                      "sans-serif",
-                    ],
-                    "size": 10,
+                    "family": undefined,
+                    "size": "12px",
                   },
                   "orientation": "h",
-                  "x": 1,
-                  "xanchor": "right",
-                  "y": 1.1,
-                  "yanchor": "bottom",
+                  "x": 0.5,
+                  "xanchor": "center",
+                  "y": 1.15,
+                  "yanchor": "middle",
                 },
                 "margin": Object {
                   "b": 50,
                   "l": 50,
                   "pad": 0,
-                  "t": 10,
+                  "t": 50,
                 },
-                "paper_bgcolor": "#FBFCFC",
-                "plot_bgcolor": "#FBFCFC",
+                "paper_bgcolor": "transparent",
+                "plot_bgcolor": "transparent",
                 "xaxis": Object {
                   "automargin": true,
                   "autorange": true,
                   "fixedrange": true,
-                  "gridcolor": "#999999",
+                  "gridcolor": "#CCCED0",
                   "linecolor": "#CCCED0",
                   "linewidth": 1,
                   "range": Array [
@@ -324,7 +304,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                     8947.368421052632,
                   ],
                   "showgrid": true,
-                  "tickcolor": "#CCCED0",
+                  "showline": false,
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -335,7 +315,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                     ],
                     "size": 10,
                   },
-                  "ticklen": 2,
+                  "ticks": "",
                   "title": Object {
                     "font": Object {
                       "color": "#414141",
@@ -355,7 +335,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                   "automargin": true,
                   "autorange": true,
                   "fixedrange": true,
-                  "gridcolor": "#999999",
+                  "gridcolor": "#CCCED0",
                   "linecolor": "#CCCED0",
                   "linewidth": 1,
                   "range": Array [
@@ -363,7 +343,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                     2.5,
                   ],
                   "showgrid": false,
-                  "tickcolor": "#CCCED0",
+                  "showline": true,
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -374,7 +354,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                     ],
                     "size": 10,
                   },
-                  "ticklen": 2,
+                  "ticks": "",
                   "title": Object {
                     "font": Object {
                       "color": "#414141",
@@ -452,33 +432,28 @@ exports[`Chart withStyles should render correctly 1`] = `
                   "legend": Object {
                     "font": Object {
                       "color": "#414141",
-                      "family": Array [
-                        "'Open Sans'",
-                        "Arial",
-                        "Helvetica",
-                        "sans-serif",
-                      ],
-                      "size": 10,
+                      "family": undefined,
+                      "size": "12px",
                     },
                     "orientation": "h",
-                    "x": 1,
-                    "xanchor": "right",
-                    "y": 1.1,
-                    "yanchor": "bottom",
+                    "x": 0.5,
+                    "xanchor": "center",
+                    "y": 1.15,
+                    "yanchor": "middle",
                   },
                   "margin": Object {
                     "b": 50,
                     "l": 50,
                     "pad": 0,
-                    "t": 10,
+                    "t": 50,
                   },
-                  "paper_bgcolor": "#FBFCFC",
-                  "plot_bgcolor": "#FBFCFC",
+                  "paper_bgcolor": "transparent",
+                  "plot_bgcolor": "transparent",
                   "xaxis": Object {
                     "automargin": true,
                     "autorange": true,
                     "fixedrange": true,
-                    "gridcolor": "#999999",
+                    "gridcolor": "#CCCED0",
                     "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
@@ -486,7 +461,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                       8947.368421052632,
                     ],
                     "showgrid": true,
-                    "tickcolor": "#CCCED0",
+                    "showline": false,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -497,7 +472,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                       ],
                       "size": 10,
                     },
-                    "ticklen": 2,
+                    "ticks": "",
                     "title": Object {
                       "font": Object {
                         "color": "#414141",
@@ -517,7 +492,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                     "automargin": true,
                     "autorange": true,
                     "fixedrange": true,
-                    "gridcolor": "#999999",
+                    "gridcolor": "#CCCED0",
                     "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
@@ -525,7 +500,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                       2.5,
                     ],
                     "showgrid": false,
-                    "tickcolor": "#CCCED0",
+                    "showline": true,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -536,7 +511,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                       ],
                       "size": 10,
                     },
-                    "ticklen": 2,
+                    "ticks": "",
                     "title": Object {
                       "font": Object {
                         "color": "#414141",

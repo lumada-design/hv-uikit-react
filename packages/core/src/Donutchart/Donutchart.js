@@ -2,34 +2,30 @@ import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Chart from "../Chart";
-import { applyDataDefaults, applyLayoutDefaults } from "./lineChartPlotlyOverrides";
+import { applyDataDefaults, applyLayoutDefaults } from "./donutchartPlotlyOverrides";
 import styles from "./styles";
 
 /**
- * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
- * called 'markers' connected by straight line segments. It is a basic type of chart common in many fields.
+ * Donut charts nicely convey the part-whole relationship and they have become
+ * the most recognizable chart types for representing proportions in business and data statistics.
  *
  * Our implementation uses as base Plotly. If you have a specific case
  * that we don't cover directly, the Plotly [documentation](https://plotly.com/javascript/) is a good starting point.
  */
-const Linechart = ({
+const Donutchart = ({
   id,
   classes,
   data,
   layout,
   config,
   tooltipType = "multiple",
-  type = "line",
-  rangeSlider = false,
+  type = "regular",
   ...others
 }) => {
   /* Values derived from props */
 
   const chartData = useMemo(() => applyDataDefaults(data, type), [data, type]);
-  const chartLayout = useMemo(() => applyLayoutDefaults(layout, rangeSlider), [
-    layout,
-    rangeSlider
-  ]);
+  const chartLayout = useMemo(() => applyLayoutDefaults(layout), [layout]);
 
   return (
     <Chart
@@ -39,12 +35,13 @@ const Linechart = ({
       layout={chartLayout}
       config={config}
       tooltipType={tooltipType}
+      type={type}
       {...others}
     />
   );
 };
 
-Linechart.propTypes = {
+Donutchart.propTypes = {
   /**
    * An Id passed on to the component
    */
@@ -72,11 +69,7 @@ Linechart.propTypes = {
   /**
    * Sets the type of graph.
    */
-  type: PropTypes.oneOf(["line", "area", "stack"]),
-  /**
-   * Defines it should present a range slider.
-   */
-  rangeSlider: PropTypes.bool
+  type: PropTypes.oneOf(["regular", "thin"])
 };
 
-export default withStyles(styles, { name: "HvLinechart" })(Linechart);
+export default withStyles(styles, { name: "HvDonutchart" })(Donutchart);

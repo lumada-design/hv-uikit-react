@@ -60,26 +60,6 @@ describe("Chart withStyles", () => {
     const plot = wrapper.find(Plot);
     expect(plot.length).toBe(1);
   });
-
-  it("should render a title", () => {
-    wrapper = mount(
-      <HvProvider>
-        <Chart data={data} layout={layout} title="This is a title" />
-      </HvProvider>
-    );
-    const title = wrapper.find("h3");
-    expect(title.length).toBe(1);
-  });
-
-  it("should render a subtitle", () => {
-    wrapper = mount(
-      <HvProvider>
-        <Chart data={data} layout={layout} title="This is a title" subtitle="This is a subtitle" />
-      </HvProvider>
-    );
-    const subTitle = wrapper.find("p");
-    expect(subTitle.length).toBe(1);
-  });
 });
 
 describe("Tooltip withStyles", () => {
