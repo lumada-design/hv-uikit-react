@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvTypographyProps } from "../../Typography";
-import { Payload } from "../Actions";
+import { Payload } from "../Action";
 
 export interface HvOptionProps
   extends StandardProps<HvTypographyProps, HvUserPreferencesOptionClassKey, "onClick"> {

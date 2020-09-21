@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 /**
- * This component is used as a building block for the Action bar pattern, it's objetive is to provide the .
+ * This component is used as a building block for the Action bar pattern, it's objective is to provide the .
  */
 const ActionContainer = props => {
   const { classes, className, id, children, ...others } = props;
