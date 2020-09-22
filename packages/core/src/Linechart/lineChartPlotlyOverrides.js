@@ -40,9 +40,14 @@ export const applyDataDefaults = (inputData, type) => {
 export const applyLayoutDefaults = (inputLayout = {}, rangeSlider) => {
   const layout = clone(inputLayout);
 
-  if (rangeSlider) {
-    setterIfNil(layout, "xaxis", {});
+  setterIfNil(layout, "xaxis", {});
+  setterIfNil(layout.xaxis, "showgrid", true);
+  setterIfNil(layout.xaxis, "showline", true);
 
+  setterIfNil(layout, "yaxis", {});
+  setterIfNil(layout.yaxis, "showline", false);
+
+  if (rangeSlider) {
     setterIfNil(layout.xaxis, "rangeslider", {
       visible: true
     });

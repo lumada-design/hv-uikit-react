@@ -127,14 +127,14 @@ export const CustomLinechartGrouped = () => {
           <HvDropdown
             className={classes.selectorPadding}
             id="dropdown1"
-            classes={{ root: classes.root, label: classes.label }}
+            classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             labels={{ title: "Country" }}
             values={countriesObject}
           />
           <HvDropdown
             id="dropdown2"
             labels={{ title: "Time Period" }}
-            classes={{ root: classes.root, label: classes.label }}
+            classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             values={[
               { label: "Last 0.5h" },
               { label: "Last 1.5h", selected: true },
@@ -146,6 +146,7 @@ export const CustomLinechartGrouped = () => {
             className={classes.dropdownPlacement}
             onClick={(e, item) => console.log(item.label)}
             dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+            placement="left"
           />
         </div>
       </ChartHeader>
@@ -224,9 +225,6 @@ export const LinechartStacked = () => {
       subtitle="Sales performance (YTD)"
       data={data}
       type="stack"
-      layout={{
-        xaxis: { showline: false }
-      }}
     />
   );
 };
@@ -268,9 +266,6 @@ export const TimeRepresentation = () => {
       title="Time series with range slider"
       subtitle="Sales performance (YTD)"
       data={data}
-      layout={{
-        xaxis: { showline: false }
-      }}
     />
   );
 };

@@ -91,6 +91,7 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
 
 const applyLayoutLegendDefaults = (inputLayout, layoutStyles) => {
   const layout = inputLayout;
+
   setterIfNil(layout, "legend", {
     x: 0.5,
     y: 1.15,
