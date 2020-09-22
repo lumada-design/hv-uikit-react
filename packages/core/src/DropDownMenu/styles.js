@@ -22,7 +22,7 @@ const styles = theme => ({
     "& svg .color0": {
       fill: theme.palette.acce1
     },
-  borderRadius: "2px 2px 0px 0px"
+    borderRadius: "2px 2px 0px 0px"
   }
 });
 
