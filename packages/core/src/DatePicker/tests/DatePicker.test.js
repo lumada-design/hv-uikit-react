@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
 import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker } from "../..";
 import SingleCalendar from "../../Calendar/SingleCalendar";
-import { convertISOStringDateToDate } from "../../Calendar/utils";
+import { isSameDay } from "../../Calendar/utils";
 
 describe("<DatePicker /> with minimum configuration", () => {
   let wrapper;
@@ -21,10 +21,6 @@ describe("<DatePicker /> with minimum configuration", () => {
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
   });
 
   it("should not render an actions component", () => {
@@ -59,17 +55,13 @@ describe("<DatePicker /> with Single Calendar mode", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvDatePicker value={new Date("2019-01-01")} locale="en-US" />
+        <HvDatePicker value={new Date(2019, 1, 1, 12)} locale="en-US" />
       </HvProvider>
     );
   });
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
   });
 
   it("should not render any Calendar component", () => {
@@ -92,7 +84,8 @@ describe("<DatePicker /> with Single Calendar mode", () => {
     wrapper.find(CalendarIcon).simulate("click");
     const calendarInstance = wrapper.find(HvDatePicker);
 
-    expect(calendarInstance.prop("value")).toEqual(convertISOStringDateToDate("2019-01-01"));
+    const sameDay = isSameDay(calendarInstance.prop("value"), new Date(2019, 1, 1, 12));
+    expect(sameDay).toEqual(true);
   });
 });
 
@@ -105,8 +98,8 @@ describe("<DatePicker /> with Range Calendar mode", () => {
         <HvDatePicker
           rangeMode
           locale="en-US"
-          startValue={new Date("2019-01-05")}
-          endValue={new Date("2019-01-10")}
+          startValue={new Date(2019, 1, 5, 12)}
+          endValue={new Date(2019, 1, 10, 12)}
         />
       </HvProvider>
     );
@@ -114,10 +107,6 @@ describe("<DatePicker /> with Range Calendar mode", () => {
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
   });
 
   it("should not render any Calendar component", () => {
@@ -151,7 +140,7 @@ describe("<DatePicker /> with custom properties", () => {
       <HvProvider>
         <HvDatePicker
           locale="en-US"
-          value={new Date("2019-01-05")}
+          value={new Date(2019, 1, 5, 12)}
           labels={labels}
           horizontalPlacement="left"
           showActions
@@ -163,10 +152,6 @@ describe("<DatePicker /> with custom properties", () => {
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
   });
 
   it("should show an Actions component when opening the calendar", () => {
