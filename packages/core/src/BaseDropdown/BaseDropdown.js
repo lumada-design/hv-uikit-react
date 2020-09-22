@@ -155,7 +155,7 @@ const HvBaseDropdown = ({
           [classes.headerOpenUp]: isOpen && positionUp,
           [classes.headerOpenDown]: isOpen && !positionUp
         })}
-        role="button"
+        role="textbox"
         style={localDisabled ? { pointerEvents: "none" } : undefined}
         aria-labelledby={ariaLabelledBy}
         aria-controls={isOpen ? setId(localId, "children-container") : undefined}

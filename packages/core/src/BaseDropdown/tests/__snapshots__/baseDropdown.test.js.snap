@@ -65,7 +65,7 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
           aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
           className="HvBaseDropdown-header"
           id="hv-base-dropdown-3-header"
-          role="button"
+          role="textbox"
           tabIndex={0}
         >
           <div
@@ -174,7 +174,7 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
               aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
               class="HvBaseDropdown-header"
               id="hv-base-dropdown-3-header"
-              role="button"
+              role="textbox"
               tabindex="0"
             >
               <div
@@ -293,7 +293,7 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
           aria-labelledby="hv-base-dropdown-1-selectionPlaceholder"
           className="HvBaseDropdown-header"
           id="hv-base-dropdown-1-header"
-          role="button"
+          role="textbox"
           tabIndex={0}
         >
           <div
@@ -477,7 +477,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
           aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
           className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
           id="hv-base-dropdown-2-header"
-          role="button"
+          role="textbox"
           tabIndex={0}
         >
           <div
@@ -588,7 +588,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
               aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
               class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
               id="hv-base-dropdown-2-header"
-              role="button"
+              role="textbox"
               tabindex="0"
             >
               <div
