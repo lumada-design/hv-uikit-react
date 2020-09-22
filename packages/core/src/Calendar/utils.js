@@ -48,7 +48,7 @@ export const getWeekdayNumber = (date) => date.getUTCDay();
  * @param {number} day
  * @returns {Date}
  */
-export const makeUTCDate = (year, month, day) => new Date(Date.UTC(year, month - 1, day, 0));
+export const makeUTCDate = (year, month, day = 1) => new Date(Date.UTC(year, month - 1, day, 0));
 
 /**
  * Creates a date in UTC timezone from an ISO string.
@@ -126,13 +126,7 @@ export const isDateInValidRange = (date) => {
 export const isSameMonth = (date1, date2) => {
   if (!(isDate(date1) && isDate(date2))) return false;
 
-  const date2Month = date2.getUTCMonth() + 1;
-  const date2Year = date2.getUTCFullYear();
-
-  const date1Month = date1.getUTCMonth() + 1;
-  const date1Year = date1.getUTCFullYear();
-
-  return date2Month === date1Month && date2Year === date1Year;
+  return date1.getMonth() === date2.getMonth() && date1.getFullYear() === date2.getFullYear();
 };
 
 /**
@@ -282,7 +276,7 @@ export const getMonthName = (
   locale,
   representationValue = REPRESENTATION_VALUES.LONG
 ) => {
-  const monthIndex = date.getMonth();
+  const monthIndex = date.getUTCMonth();
   const auxDate = new Date(1970, monthIndex, 1);
   return new Intl.DateTimeFormat(locale, { month: representationValue }).format(auxDate);
 };
@@ -296,7 +290,7 @@ export const getMonthName = (
  * @returns {string} The formatted date as a string.
  */
 export const getFormattedDate = (date, locale, rep = REPRESENTATION_VALUES.SHORT) =>
-  `${date.getDate()} ${getMonthName(date, locale, rep)} ${date.getFullYear()}`;
+  `${date.getUTCDate()} ${getMonthName(date, locale, rep)} ${date.getUTCFullYear()}`;
 /**
  * Creates an array of 42 days. The complete current month and enough days from the previous and next months to fill
  * the 42 positions.

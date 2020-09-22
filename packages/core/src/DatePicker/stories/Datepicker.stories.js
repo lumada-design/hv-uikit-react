@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { HvButton, HvDatePicker, HvInput } from "../..";
+import { HvButton, HvList, HvDatePicker, HvInput } from "../..";
+import { makeUTCDate } from "../../Calendar/utils";
 
 export default {
   title: "Forms/Date Picker",
@@ -35,7 +36,9 @@ Main.story = {
   },
 };
 
-export const DefaultValue = () => <HvDatePicker id="DatePicker" value={new Date()} />;
+export const DefaultValue = () => (
+  <HvDatePicker id="DatePicker" value={makeUTCDate(2020, 10, 10)} />
+);
 
 DefaultValue.story = {
   parameters: {
@@ -98,7 +101,7 @@ Localized.story = {
 };
 
 export const WithActions = () => (
-  <HvDatePicker showActions value={new Date(1970, 1, 2)} id="DatePicker" />
+  <HvDatePicker showActions value={makeUTCDate(1970, 2, 2)} id="DatePicker" />
 );
 
 WithActions.story = {
@@ -194,8 +197,8 @@ export const RangeWithValues = () => {
       id="DatePicker"
       labels={labels}
       rangeMode
-      startValue={new Date(2019, 6, 5)}
-      endValue={new Date(2019, 6, 10)}
+      startValue={makeUTCDate(2019, 7, 5)}
+      endValue={makeUTCDate(2019, 7, 10)}
     />
   );
 };
@@ -218,7 +221,7 @@ RangeWithValues.story = {
   },
 };
 
-export const NearInvalid = () => <HvDatePicker value={new Date(1000, 0, 1)} />;
+export const NearInvalid = () => <HvDatePicker value={makeUTCDate(1000, 1, 1)} />;
 
 NearInvalid.story = {
   parameters: {
@@ -239,7 +242,7 @@ NearInvalid.story = {
 };
 
 export const WithValueChange = () => {
-  const [date, setDate] = useState(new Date(2020, 0, 1));
+  const [date, setDate] = useState(makeUTCDate(2020, 1, 1));
 
   const addDay = () => setDate(moment(date).add(1, "day").toDate());
 
@@ -267,4 +270,60 @@ WithValueChange.story = {
       ],
     },
   },
+};
+
+export const WithSelectionList = () => {
+  const [startDate, setStartDate] = useState(makeUTCDate(2020, 9, 5));
+  const [endDate, setEndDate] = useState(makeUTCDate(2020, 9, 10));
+
+  const handleClick = (evt, item) => {
+    console.log(item);
+    const today = new Date();
+    const [d, m, y] = [today.getUTCDate(), today.getUTCMonth() + 1, today.getUTCFullYear()];
+
+    switch (item.label) {
+      case "Last 7 days": {
+        setStartDate(makeUTCDate(y, m, d - 7));
+        setEndDate(makeUTCDate(y, m, d));
+        break;
+      }
+      case "This month": {
+        setStartDate(makeUTCDate(y, m, 1));
+        setEndDate(makeUTCDate(y, m, d));
+        break;
+      }
+      case "This year": {
+        setStartDate(makeUTCDate(y, 1, 1));
+        setEndDate(makeUTCDate(y, m, d));
+        break;
+      }
+      default:
+        break;
+    }
+  };
+
+  const options = (
+    <HvList
+      style={{ padding: "40px 20px", minWidth: 160 }}
+      selectable={false}
+      values={[
+        { label: "Today", disabled: true },
+        { label: "Yesterday", disabled: true },
+        { label: "Last 7 days" },
+        { label: "This month" },
+        { label: "This year" },
+      ]}
+      onClick={handleClick}
+    />
+  );
+
+  return (
+    <HvDatePicker
+      id="DatePicker"
+      startAdornment={options}
+      rangeMode
+      startValue={startDate}
+      endValue={endDate}
+    />
+  );
 };

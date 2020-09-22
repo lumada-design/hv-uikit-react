@@ -16,6 +16,8 @@ import CalendarHeader from "../CalendarHeader";
 import CalendarWeekLabels from "../CalendarWeekLabels";
 import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
 
+const { Enter, ArrowLeft, ArrowRight, ArrowUp, ArrowDown } = KeyboardCodes;
+
 const HvSingleCalendar = ({
   classes,
   className,
@@ -27,6 +29,7 @@ const HvSingleCalendar = ({
   minimumDate,
   maximumDate,
   onChange,
+  onInputChange,
   onVisibleDateChange,
   showEndDate,
   children,
@@ -47,23 +50,41 @@ const HvSingleCalendar = ({
     : generateCalendarModel(localValue, visibleMonth, visibleYear);
   const firstDayOfCurrentMonth = makeUTCDate(calModel.year, calModel.month, 1);
 
-  const selectDate = (event, date) => {
+  const handleChange = (event, date) => {
     event?.preventDefault();
     onChange?.(event, date);
   };
 
-  const arrowKeysFocus = (event, onClickFunc) => {
+  const handleInputChange = (event, date) => {
+    event?.preventDefault();
+    onInputChange?.(event, date);
+  };
+
+  const getNavChild = (event, siblings, i) => {
+    if (isKeypress(event, ArrowLeft)) return siblings[i - 1];
+    if (isKeypress(event, ArrowRight)) return siblings[i + 1];
+    if (isKeypress(event, ArrowUp)) return siblings[i - 7];
+    if (isKeypress(event, ArrowDown)) return siblings[i + 7];
+    return undefined;
+  };
+
+  const handleKeyDown = event => {
     // This code is very brittle and should be managed with the focus wrapper
-    if (isKeypress(event, KeyboardCodes.ArrowLeft)) {
-      event.preventDefault();
-      document?.activeElement?.parentElement?.previousSibling?.children[0]?.focus();
+    const el = document?.activeElement;
+    const parent = el?.parentElement?.parentElement;
+    const siblings = [...parent?.getElementsByClassName("HvCalendarCell-cellContainer")];
+    const elIndex = siblings.indexOf(el);
+
+    if (isKeypress(event, Enter)) {
+      el?.focus();
+      return;
     }
-    if (isKeypress(event, KeyboardCodes.ArrowRight)) {
-      event.preventDefault();
-      document?.activeElement?.parentElement?.nextSibling?.children[0]?.focus();
-    }
-    if (isKeypress(event, KeyboardCodes.Enter)) {
-      onClickFunc?.();
+
+    const child = getNavChild(event, siblings, elIndex);
+
+    if (child) {
+      event?.preventDefault();
+      child?.focus();
     }
   };
 
@@ -78,8 +99,9 @@ const HvSingleCalendar = ({
       <CalendarCell
         classes={classes}
         key={index}
-        onChange={selectDate}
-        arrowKeysFocus={arrowKeysFocus}
+        tabIndex={index === 0 ? 0 : -1}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
         value={currentDate}
         today={today}
         calendarValue={localValue}
@@ -127,7 +149,8 @@ const HvSingleCalendar = ({
       <div id={id} className={classes.calendarWrapper}>
         <CalendarHeader
           id={setId(id, "header")}
-          onChange={selectDate}
+          locale={locale}
+          onChange={handleInputChange}
           showEndDate={showEndDate && !isDateSelectionMode}
         />
         <>
@@ -246,6 +269,10 @@ HvSingleCalendar.propTypes = {
    * Callback function to be triggered when the selected date has changed.
    */
   onChange: PropTypes.func,
+  /**
+   * Callback function to be triggered when the selected date input has changed.
+   */
+  onInputChange: PropTypes.func,
   /**
    * Callback function to be triggered when visible date has changed.
    */

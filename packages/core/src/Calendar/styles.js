@@ -1,4 +1,7 @@
 const styles = (theme) => ({
+  root: {
+    display: "flex",
+  },
   rangeCalendarContainer: {
     display: "flex",
   },

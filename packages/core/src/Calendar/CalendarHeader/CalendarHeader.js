@@ -8,7 +8,9 @@ import { setId, isKeypress, KeyboardCodes } from "../../utils";
 import HvTypography from "../../Typography";
 import styles from "./styles";
 import { HvFormElementContext } from "../../Forms/FormElement";
-import { isRange } from "../utils";
+import { isRange, isSameDay } from "../utils";
+
+const { Enter } = KeyboardCodes;
 
 const HvCalendarHeader = ({
   id,
@@ -25,6 +27,14 @@ const HvCalendarHeader = ({
   );
   const { HvLabel } = descriptors;
 
+  const preLocalValue = value ?? elementValue ?? "";
+  let localValue = preLocalValue;
+
+  if (isRange(preLocalValue)) {
+    localValue = showEndDate ? preLocalValue.endDate : preLocalValue.startDate;
+  }
+
+  const [dateValue, setDateValue] = useState(localValue);
   const [editedValue, setEditedValue] = useState(null);
   const [displayValue, setDisplayValue] = useState("");
   const [weekDayDisplay, setWeekDayDisplay] = useState("");
@@ -36,21 +46,15 @@ const HvCalendarHeader = ({
   // that are using the moment library
   moment.locale(localLocale);
 
-  const preLocalValue = value ?? elementValue;
-  let localValue = preLocalValue;
-
-  if (isRange(preLocalValue)) {
-    localValue = showEndDate ? preLocalValue.endDate : preLocalValue.startDate;
-  }
-
   const inputValue = editedValue ?? displayValue;
   const localeFormat = moment.localeData().longDateFormat("L");
-  const isValidValue = !!inputValue && moment(localValue, "L").isValid();
+  const isValidValue = !!inputValue && moment.utc(localValue, "L").isValid();
 
   useEffect(() => {
+    setDateValue(localValue);
     if (isValidValue) {
-      setDisplayValue(moment(localValue, "L").format("D MMM YYYY"));
-      setWeekDayDisplay(moment(localValue, "L").format("ddd"));
+      setDisplayValue(moment.utc(localValue, "L").format("D MMM YYYY"));
+      setWeekDayDisplay(moment.utc(localValue, "L").format("ddd"));
     } else {
       setDisplayValue(localValue);
       setWeekDayDisplay("");
@@ -63,23 +67,28 @@ const HvCalendarHeader = ({
       setEditedValue(null);
       return;
     }
-    const dateParsed = moment(editedValue, "L");
-    onChange?.(event, dateParsed.toDate());
+    const dateParsed = moment.utc(editedValue, "L").toDate();
+    if (!isSameDay(dateParsed, dateValue)) {
+      setDateValue(dateParsed);
+      onChange?.(event, dateParsed);
+    }
     setEditedValue(null);
   };
 
   const keyDownHandler = (event) => {
-    if (isKeypress(event, KeyboardCodes.Enter)) {
-      if (isNil(editedValue) || editedValue === "") return;
-      event.preventDefault();
-      const dateParsed = moment(editedValue, "L");
-      onChange?.(event, dateParsed.toDate());
-      setEditedValue(null);
+    if (!isKeypress(event, Enter) || isNil(editedValue) || editedValue === "") return;
+    event.preventDefault();
+    const dateParsed = moment.utc(editedValue, "L").toDate();
+
+    if (!isSameDay(dateParsed, dateValue)) {
+      setDateValue(dateParsed);
+      onChange?.(event, dateParsed);
     }
+    setEditedValue(null);
   };
 
   const onFocusHandler = (event) => {
-    const formattedDate = isValidValue ? moment(localValue).format("L") : localValue;
+    const formattedDate = isValidValue ? moment.utc(localValue).format("L") : localValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);
   };
@@ -100,6 +109,7 @@ const HvCalendarHeader = ({
       </HvTypography>
       <div className={classes.headerDate}>
         <input
+          type="text"
           id={setId(localId, "header-input")}
           placeholder={localeFormat}
           value={inputValue}

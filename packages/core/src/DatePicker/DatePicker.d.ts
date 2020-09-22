@@ -102,6 +102,10 @@ export interface HvDatePickerProps
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
   escapeWithReference?: boolean;
+  /**
+   * An element placed before the Calendar
+   */
+  startAdornment: React.ReactNode;
 }
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

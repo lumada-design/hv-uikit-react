@@ -16,7 +16,9 @@ const HvCalendar = ({
   visibleYear,
   minimumDate,
   maximumDate,
+  startAdornment,
   onChange,
+  onInputChange,
   onVisibleDateChange,
   ...others
 }) => {
@@ -24,7 +26,7 @@ const HvCalendar = ({
   const localValue = value ?? elementValue;
   const localId = id ?? setId(elementId, "single-calendar");
   const rangeMode = isRange(localValue);
-  const rightCalendarId = rangeMode ? setId(localId, "single-calendar-right") : undefined;
+  const rightCalendarId = setId(localId, "single-calendar-right");
   const localLocale = locale ?? elementLocale;
   const clampedMonth = visibleMonth % 13 > 0 ? visibleMonth % 13 : 1;
 
@@ -38,6 +40,7 @@ const HvCalendar = ({
       minimumDate={minimumDate}
       maximumDate={maximumDate}
       onChange={onChange}
+      onInputChange={(evt, date) => onInputChange(evt, date, "left")}
       onVisibleDateChange={onVisibleDateChange}
       {...others}
     />
@@ -59,6 +62,7 @@ const HvCalendar = ({
         minimumDate={minimumDate}
         maximumDate={maximumDate}
         onChange={onChange}
+        onInputChange={(evt, date) => onInputChange(evt, date, "left")}
         onVisibleDateChange={onVisibleDateChange}
         {...others}
       />
@@ -72,6 +76,7 @@ const HvCalendar = ({
         minimumDate={minimumDate}
         maximumDate={maximumDate}
         onChange={onChange}
+        onInputChange={(evt, date) => onInputChange(evt, date, "right")}
         onVisibleDateChange={onVisibleDateChange}
         showEndDate
         {...others}
@@ -79,7 +84,12 @@ const HvCalendar = ({
     </div>
   );
 
-  return <div className={classes.root}>{rangeMode ? rangeCalendar : singleCalendar}</div>;
+  return (
+    <div className={classes.root}>
+      {startAdornment}
+      {rangeMode ? rangeCalendar : singleCalendar}
+    </div>
+  );
 };
 
 HvCalendar.propTypes = {
@@ -116,6 +126,10 @@ HvCalendar.propTypes = {
    */
   onChange: PropTypes.func,
   /**
+   * Callback function to be triggered when the selected date input has changed.
+   */
+  onInputChange: PropTypes.func,
+  /**
    * Callback function to be triggered when the user clicks on the month or year selector.
    * it receives the action that was pressed:
    * previous_month, next_month, previous_year, next_year,month
@@ -129,6 +143,10 @@ HvCalendar.propTypes = {
    * The minimum selectable date before this all values are disabled.
    */
   minimumDate: PropTypes.instanceOf(Date),
+  /**
+   * An element placed before the Calendar
+   */
+  startAdornment: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvCalendar" })(HvCalendar);

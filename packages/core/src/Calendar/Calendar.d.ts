@@ -6,11 +6,14 @@ export interface DateRangeProp {
   endDate?: Date;
 }
 
-export type HvCalendarClassKey =
-  | "rangeCalendarContainer"
-  | "singleCalendar"
+export type HvCalendarClassKey = "rangeCalendarContainer" | "singleCalendar";
 
-export type visibilitySelectorActions = "previous_month" | "next_month" | "previous_year" | "next_year" | "month"
+export type visibilitySelectorActions =
+  | "previous_month"
+  | "next_month"
+  | "previous_year"
+  | "next_year"
+  | "month";
 
 export interface HvCalendarProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvCalendarClassKey, "onChange"> {
@@ -34,19 +37,28 @@ export interface HvCalendarProps
   /**
    * Callback function to be triggered when the selected date has changed.
    */
-  onChange?: ( 
+  onChange?: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined,
     value: Date | DateRangeProp
-    ) => void;
+  ) => void;
+  /**
+   * Callback function to be triggered when the selected date input has changed.
+   */
+  onInputChange: (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined,
+    value: Date | DateRangeProp,
+    position: "left" | "right"
+  ) => void;
   /**
    * Callback function to be triggered when the user clicks on the month or year selector.
-   * it receives the action that was pressed: 
+   * it receives the action that was pressed:
    * previous_month, next_month, previous_year, next_year,month
    */
   onVisibleDateChange?: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined,
     action: visibilitySelectorActions,
-    value: Date | DateRangeProp) => void;
+    value: Date | DateRangeProp
+  ) => void;
   /**
    * Text to show in the header on range mode.
    */
@@ -59,6 +71,10 @@ export interface HvCalendarProps
    * The minimum selectable date before this all values are disabled.
    */
   minimumDate?: string;
+  /**
+   * An element placed before the Calendar
+   */
+  startAdornment: React.ReactNode;
 }
 
 export default function HvCalendar(props: HvCalendarProps): JSX.Element | null;

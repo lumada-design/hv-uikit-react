@@ -80,6 +80,7 @@ export const Main = () => {
           <HvCalendar
             id="main-calendar"
             onChange={onChangeHandler}
+            onInputChange={onChangeHandler}
             onVisibleDateChange={visibleDateChangeHandler}
             visibleMonth={visibleMonth}
             visibleYear={visibleYear}
@@ -135,6 +136,7 @@ export const SingleDate = () => {
           <HvCalendar
             id="single-calendar"
             onChange={onChangeHandler}
+            onInputChange={onChangeHandler}
             onVisibleDateChange={visibleDateChangeHandler}
             visibleMonth={visibleMonth}
             visibleYear={visibleYear}
@@ -206,6 +208,7 @@ export const Localized = () => {
             <HvCalendar
               id="locale-calendar"
               onChange={onChangeHandler}
+              onInputChange={onChangeHandler}
               onVisibleDateChange={visibleDateChangeHandler}
               visibleMonth={visibleMonth}
               visibleYear={visibleYear}

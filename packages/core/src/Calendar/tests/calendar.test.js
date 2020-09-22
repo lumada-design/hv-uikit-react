@@ -34,7 +34,7 @@ describe("v3 <Calendar /> with configurations", () => {
           id="default"
           value={selectedDate}
           locale="en-US"
-          handleDateChange={handleDateChangeMock}
+          onChange={handleDateChangeMock}
         />
       </HvProvider>
     );
