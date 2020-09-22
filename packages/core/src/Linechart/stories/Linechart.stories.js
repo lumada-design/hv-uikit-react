@@ -28,7 +28,6 @@ const getMonthNamesArray = () => [
   "December"
 ];
 
-<<<<<<< HEAD
 export const Main = () => (
   <HvLinechart
     data={[
@@ -40,21 +39,6 @@ export const Main = () => (
     ]}
   />
 );
-=======
-export const Main = () => {
-  return (
-    <HvLinechart
-      data={[
-        {
-          x: getMonthNamesArray(),
-          y: [5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119, 2146],
-          name: "Sales Target"
-        }
-      ]}
-    />
-  );
-};
->>>>>>> feat(chart): upgrade bar and line chart look and feel. HVUIKIT-5492
 
 export const WithArea = () => {
   const data = [
