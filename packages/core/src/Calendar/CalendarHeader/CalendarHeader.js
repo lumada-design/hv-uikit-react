@@ -43,44 +43,43 @@ const HvCalendarHeader = ({
     localValue = showEndDate ? preLocalValue.endDate : preLocalValue.startDate;
   }
 
-  // eslint-disable-next-line no-underscore-dangle
+  const inputValue = editedValue ?? displayValue;
   const localeFormat = moment.localeData().longDateFormat("L");
-
-  const isValidValue = moment.utc(localValue, "L").isValid();
+  const isValidValue = !!inputValue && moment(localValue, "L").isValid();
 
   useEffect(() => {
     if (isValidValue) {
-      setDisplayValue(moment.utc(localValue, "L").format("D MMM YYYY"));
-      setWeekDayDisplay(moment.utc(localValue, "L").format("ddd"));
+      setDisplayValue(moment(localValue, "L").format("D MMM YYYY"));
+      setWeekDayDisplay(moment(localValue, "L").format("ddd"));
     } else {
       setDisplayValue(localValue);
       setWeekDayDisplay("");
     }
   }, [localValue, isValidValue, localLocale]);
 
-  const onBlurHandler = (event, onChangeFunc) => {
+  const onBlurHandler = event => {
     if (isNil(editedValue)) return;
     if (editedValue === "") {
       setEditedValue(null);
       return;
     }
-    const dateParsed = moment.utc(editedValue, "L");
-    onChangeFunc?.(event, dateParsed.toDate());
+    const dateParsed = moment(editedValue, "L");
+    onChange?.(event, dateParsed.toDate());
     setEditedValue(null);
   };
 
-  const keyDownHandler = (event, onChangeFunc) => {
+  const keyDownHandler = event => {
     if (isKeypress(event, KeyboardCodes.Enter)) {
       if (isNil(editedValue) || editedValue === "") return;
       event.preventDefault();
-      const dateParsed = moment.utc(editedValue, "L");
-      onChangeFunc?.(event, dateParsed.toDate());
+      const dateParsed = moment(editedValue, "L");
+      onChange?.(event, dateParsed.toDate());
       setEditedValue(null);
     }
   };
 
   const onFocusHandler = event => {
-    const formattedDate = isValidValue ? moment.utc(localValue).format("L") : localValue;
+    const formattedDate = isValidValue ? moment(localValue).format("L") : localValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);
   };
@@ -92,24 +91,23 @@ const HvCalendarHeader = ({
   return (
     <div
       id={localId}
-      className={clsx(classes.background, {
-        [classes.invalid]: !isValidValue,
-        [classes.invalid]: false
+      className={clsx(classes.root, {
+        [classes.invalid]: !isValidValue
       })}
     >
-      <div className={classes.headerDayOfWeek}>
-        <HvTypography variant="normalText">{weekDayDisplay}</HvTypography>
-      </div>
+      <HvTypography variant="normalText" className={classes.headerDayOfWeek}>
+        {weekDayDisplay || "\u00A0"}
+      </HvTypography>
       <div className={classes.headerDate}>
         <input
           id={setId(localId, "header-input")}
           placeholder={localeFormat}
-          value={isNil(editedValue) ? displayValue : editedValue}
+          value={inputValue}
           className={classes.input}
-          onBlur={event => onBlurHandler(event, onChange)}
+          onBlur={onBlurHandler}
           onFocus={onFocusHandler}
           onChange={onChangeHandler}
-          onKeyDown={event => keyDownHandler(event, onChange)}
+          onKeyDown={keyDownHandler}
           aria-labelledby={HvLabel?.[0]?.id}
           {...others}
         />

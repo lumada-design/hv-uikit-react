@@ -135,6 +135,7 @@ exports[`[v3] Navigation withStyles should be able to render 1`] = `
                                   "lTitle": "HvTypography-lTitle",
                                   "link": "HvTypography-link",
                                   "mTitle": "HvTypography-mTitle",
+                                  "noWrap": "HvTypography-noWrap",
                                   "normalText": "HvTypography-normalText",
                                   "placeholderText": "HvTypography-placeholderText",
                                   "root": "HvTypography-root",

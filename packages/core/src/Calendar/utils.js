@@ -145,15 +145,11 @@ export const isSameMonth = (date1, date2) => {
 export const isSameDay = (date1, date2) => {
   if (!(isDate(date1) && isDate(date2))) return false;
 
-  const date2Day = date2.getUTCDate();
-  const date2Month = date2.getUTCMonth() + 1;
-  const date2Year = date2.getUTCFullYear();
-
-  const date1Date = date1.getUTCDate();
-  const date1Month = date1.getUTCMonth() + 1;
-  const date1Year = date1.getUTCFullYear();
-
-  return date2Day === date1Date && date2Month === date1Month && date2Year === date1Year;
+  return (
+    date1.getDate() === date2.getDate() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getFullYear() === date2.getFullYear()
+  );
 };
 
 /**
@@ -282,10 +278,11 @@ export const getWeekdayNamesList = (locale, representativeValue = REPRESENTATION
  * @returns {string} The name of the month.
  */
 export const getMonthName = (
-  monthIndex,
+  date = new Date(),
   locale,
   representationValue = REPRESENTATION_VALUES.LONG
 ) => {
+  const monthIndex = date.getMonth();
   const auxDate = new Date(1970, monthIndex, 1);
   return new Intl.DateTimeFormat(locale, { month: representationValue }).format(auxDate);
 };
@@ -298,12 +295,8 @@ export const getMonthName = (
  * @param {string} locale - The locale to be applied to the Intl format.
  * @returns {string} The formatted date as a string.
  */
-export const getFormattedDate = (date, locale) =>
-  `${date.getUTCDate()} ${getMonthName(
-    date.getUTCMonth(),
-    locale,
-    REPRESENTATION_VALUES.SHORT
-  )} ${date.getUTCFullYear()}`;
+export const getFormattedDate = (date, locale, rep = REPRESENTATION_VALUES.SHORT) =>
+  `${date.getDate()} ${getMonthName(date, locale, rep)} ${date.getFullYear()}`;
 /**
  * Creates an array of 42 days. The complete current month and enough days from the previous and next months to fill
  * the 42 positions.
@@ -407,7 +400,7 @@ export const isNextDateValid = (year, month) => {
   return isDateInValidRange(makeUTCDate(nextMonthYear.year, nextMonthYear.month, 1));
 };
 
-export const isRange = dateValue => !isNil(dateValue?.startDate);
+export const isRange = date => typeof date === "object" && "startDate" in date;
 
 /**
  * Checks if the date falls within a specified date range.
@@ -431,6 +424,7 @@ export const dateInProvidedValueRange = (date, providedValueRange) => {
 };
 
 export const checkIfDateIsDisabled = (date, minimumDate, maximumDate) => {
+  if (!minimumDate && !maximumDate) return false;
   const modStartDate = minimumDate ? moment(minimumDate).format("YYYY-MM-DD") : undefined;
   const modEndDate = maximumDate ? moment(maximumDate).format("YYYY-MM-DD") : undefined;
 

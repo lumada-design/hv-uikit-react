@@ -5,6 +5,9 @@ const styles = theme => {
   };
 
   return {
+    root: {
+      cursor: "pointer"
+    },
     calendarContainer: {
       backgroundColor: theme.palette.atmo1,
       width: "320px",
@@ -18,51 +21,11 @@ const styles = theme => {
       backgroundColor: theme.palette.atmo1,
       padding: theme.spacing("sm")
     },
-    calendarGrid: {
-      display: "flex",
-      flexFlow: "wrap",
-      width: "280px",
-      "& $cellsInRange": {
-        backgroundColor: theme.palette.atmo1,
-        "& $startBookend": {
-          borderLeft: `1px solid ${theme.palette.acce1}`,
-          backgroundColor: theme.palette.atmo3,
-          borderRight: `1px solid ${theme.palette.acce1}`,
-          "&:hover": {
-            borderRight: `1px solid ${theme.palette.acce1}`
-          }
-        }
-      },
-      "&:hover $cellsInRange": {
-        backgroundColor: theme.palette.atmo3,
-        "& $startBookend": {
-          borderLeft: `1px solid ${theme.palette.acce1}`,
-          borderRight: "inherit"
-        }
-      },
-      "& $cellsInRange:hover": {
-        backgroundColor: theme.palette.atmo3,
-        "& $calendarDate": {
-          borderRight: `1px solid ${theme.palette.acce1}`
-        }
-      },
-      "& $cellsInRange:hover ~ $cellsInRange": {
-        backgroundColor: theme.palette.atmo1 // controls the right side of the hovered range
-      },
-      "& $cellsOutsideRange:hover ~ $cellsInRange": {
-        backgroundColor: theme.palette.atmo1,
-        "& $startBookend": {
-          borderRight: `1px solid ${theme.palette.acce1}`
-        }
-      }
-    },
+    calendarGrid: {},
     navigationContainer: {
       display: "flex",
       justifyContent: "space-between",
-      padding: `${theme.spacing("xs")}px 0`
-    },
-    cellContainer: {
-      cursor: "pointer"
+      padding: theme.spacing("xs", 0)
     },
     focusSelection: {
       "&:hover": {

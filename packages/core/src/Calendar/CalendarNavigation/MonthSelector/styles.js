@@ -17,8 +17,6 @@ const styles = theme => {
       }
     },
     calendarMonthlyGrid: {
-      top: "-15px",
-      height: "calc(100% - 85px)",
       marginTop: "100px",
       marginLeft: "-20px",
       display: "flex",
@@ -49,12 +47,8 @@ const styles = theme => {
         color: theme.palette.acce1
       }
     },
-    normalWidth: {
-      width: "calc(100% - 2px)" // 2px for the borders.
-    },
-    rangeModeWidth: {
-      width: "calc(100% - 2px)"
-    }
+    normalWidth: {},
+    rangeModeWidth: {}
   };
 };
 

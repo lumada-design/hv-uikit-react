@@ -1,29 +1,29 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import isNil from "lodash/isNil";
-import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
-import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
+import { withStyles } from "@material-ui/core";
+import { Calendar } from "@hv/uikit-react-icons";
 import clsx from "clsx";
-import { isKeypress, KeyboardCodes, setId } from "../utils";
-import Typography from "../Typography";
-import Calendar from "../Calendar";
-import Actions from "./Actions";
+import { setId, useSavedState } from "../utils";
+import {
+  HvActionContainer,
+  HvBaseDropdown,
+  HvButton,
+  HvCalendar,
+  HvLabel,
+  HvFormElement,
+  HvTypography
+} from "..";
 import styles from "./styles";
 import withLabels from "../withLabels";
 import withId from "../withId";
-import {
-  convertISOStringDateToDate,
-  DEFAULT_LOCALE,
-  getDateISO,
-  getFormattedDate,
-  isDate,
-  isValidLocale
-} from "../Calendar/utils";
+import { DEFAULT_LOCALE, isDate, isSameDay } from "../Calendar/utils";
+import { getDateLabel, validateLocale } from "./utils";
+import { NAV_OPTIONS } from "../Calendar/enums";
 
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
   cancelLabel: "Cancel",
-  title: undefined,
+  title: "",
   placeholder: "Select a date",
   rangeStart: "Start date",
   rangeEnd: "End date"
@@ -40,523 +40,186 @@ const HvDatePicker = ({
   value,
   startValue,
   endValue,
-  rangeMode,
-  horizontalPlacement,
-  locale,
-  showActions,
+  rangeMode = false,
+  horizontalPlacement = "right",
+  locale: localeProp = DEFAULT_LOCALE,
+  showActions = false,
   onChange,
-  theme,
-  disablePortal,
-  escapeWithReference
+  disablePortal = true,
+  escapeWithReference = true,
+  ...others
 }) => {
-  /**
-   * Triggered right before the Render() function of the components.
-   * Here we can update the state when a prop is changed.
-   *
-   * @static
-   * @param {Object} props - The new props object.
-   * @param {Object} state - The current state object.
-   *
-   * @returns {Object} - The updated state
-   * @memberOf HvDatePicker
-   */
-
-  const validateLocale = useCallback(() => (isValidLocale(locale) ? locale : DEFAULT_LOCALE), [
-    locale
-  ]);
-
-  const [datepickerLocale, setCalLocale] = useState(validateLocale(locale));
-
-  const [startSelectedDate, setStartSelectedDate] = useState();
-  const [endSelectedDate, setEndSelectedDate] = useState();
-  const [tempStartSelectedDate, setTempStartSelectedDate] = useState();
-  const [tempEndSelectedDate, setTempEndSelectedDate] = useState();
-
-  const [startVisibleDate, setStartVisibleDate] = useState();
-  const [endVisibleDate, setEndVisibleDate] = useState();
-  const [tempSelectedDate, setTempSelectedDate] = useState();
-
+  const [locale, setLocale] = useState(validateLocale(localeProp));
   const [calendarOpen, setCalendarOpen] = useState(false);
-  const [created, setCreated] = useState();
 
-  // eslint-disable-next-line no-unused-vars
-  const [calendarPlacement, setCalendarPlacement] = useState();
-  const [calendarFlipped, setCalendarFlipped] = useState();
+  const [startDate, setStartDate, rollbackStartDate] = useSavedState(
+    rangeMode ? startValue : value
+  );
+  const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
 
-  const calculatedSelectedDate = dateValue =>
-    dateValue && dateValue !== "" ? convertISOStringDateToDate(dateValue) : null;
-
-  const [selectedDate, setSelectedDate] = useState(calculatedSelectedDate(value));
+  const visibleDate = (isDate(startDate) && startDate) || new Date();
+  const [visibleMonth, setVisibleMonth] = useState(visibleDate?.getMonth() + 1);
+  const [visibleYear, setVisibleYear] = useState(visibleDate?.getFullYear());
 
   useEffect(() => {
-    // update state
-    if (rangeMode) {
-      const calcStartSelectedDate =
-        startValue && startValue !== "" ? convertISOStringDateToDate(startValue) : null;
-      const calcEndSelectedDate =
-        endValue && endValue !== "" ? convertISOStringDateToDate(endValue) : null;
-      // Range mode state
-      setStartSelectedDate(calcStartSelectedDate);
-      setEndSelectedDate(calcEndSelectedDate);
-      setTempStartSelectedDate(calcStartSelectedDate);
-      setTempEndSelectedDate(calcEndSelectedDate);
-      setStartVisibleDate(null);
-      setEndVisibleDate(null);
-    } else {
-      setSelectedDate(calculatedSelectedDate(value));
-      setTempSelectedDate(calculatedSelectedDate(value));
-    }
+    setStartDate(rangeMode ? startValue : value, true);
+    setEndDate(endValue, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, startValue, endValue, rangeMode]);
 
   useEffect(() => {
-    setCalLocale(validateLocale(locale));
-  }, [locale, validateLocale]);
+    setLocale(validateLocale(localeProp));
+  }, [localeProp]);
 
-  /**
-   * Resolves the state using the received props.
-   *
-   * @memberOf HvDatePicker
-   */
+  useEffect(() => {
+    if (!calendarOpen) return;
+    setVisibleMonth(visibleDate?.getMonth() + 1);
+    setVisibleYear(visibleDate?.getFullYear());
+  }, [visibleDate, calendarOpen]);
 
-  /**
-   * Changes the calendar open state according to the received flag.
-   *
-   * @param {boolean} open - Opens / closes the calendar according to this flag.
-   * @memberOf HvDatePicker
-   */
-
-  const createCalendarPlacement = data => {
-    const { flipped, placement } = data;
-    if (!created) {
-      setCalendarPlacement(placement);
-      setCalendarFlipped(flipped);
-      setCreated(true);
-    }
-  };
-
-  /**
-   * Updates the calendar placement in case the Popper placement changed.
-   *
-   * @param {Object} data - The data provided by the popper plugin.
-   * @memberOf HvDatePicker
-   */
-  const updateCalendarPlacement = data => {
-    if (calendarFlipped !== data.flipped) {
-      setCalendarPlacement(data.placement);
-      setCalendarFlipped(data.flipped);
-    }
-  };
-
-  /**
-   * Set the date in the input, and changes the calendar visibility (hide).
-   *
-   * @param {Date} date - Date value that was selected.
-   * @param closeCalendar
-   * @memberOf HvDatePicker
-   */
-  const setSingleDate = (date, closeCalendar) => {
-    setSelectedDate(date);
-    setTempSelectedDate(date);
-
-    setCalendarOpen(!closeCalendar);
-
-    if (typeof onChange === "function") {
-      onChange(getDateISO(date));
-    }
-  };
-
-  /**
-   * Set the date in the input, and changes the calendar visibility (hide).
-   *
-   * @param {Date} startDate - Start date value that was selected.
-   * @param {Date} endDate - End date value that was selected.
-   * @memberOf HvDatePicker
-   */
-  const setRangeDate = (startDate, endDate) => {
-    setStartSelectedDate(startDate);
-    setEndSelectedDate(endDate);
-
-    setCalendarOpen(false);
-
-    if (typeof onChange === "function") {
-      onChange(getDateISO(startDate), getDateISO(endDate));
+  const handleVisibleDateChange = (event, action, index) => {
+    switch (action) {
+      case NAV_OPTIONS.PREVIOUS_MONTH: {
+        const previousMonth = visibleMonth - 1;
+        if (previousMonth < 1) {
+          setVisibleMonth(12);
+          setVisibleYear(visibleYear - 1);
+        } else {
+          setVisibleMonth(previousMonth);
+        }
+        break;
+      }
+      case NAV_OPTIONS.NEXT_MONTH: {
+        const nextMonth = visibleMonth + 1;
+        if (nextMonth > 12) {
+          setVisibleMonth(1);
+          setVisibleYear(visibleYear + 1);
+        } else {
+          setVisibleMonth(nextMonth);
+        }
+        break;
+      }
+      case NAV_OPTIONS.PREVIOUS_YEAR:
+        setVisibleYear(visibleYear - 1);
+        break;
+      case NAV_OPTIONS.NEXT_YEAR:
+        setVisibleYear(visibleYear + 1);
+        break;
+      case NAV_OPTIONS.MONTH:
+        setVisibleMonth(index);
+        break;
+      default:
+        break;
     }
   };
 
   /**
    * Handles the `Apply` action. Both single and ranged modes are handled here.
-   *
-   * @memberOf HvDatePicker
    */
-  const handleApplyAction = () => {
-    if (rangeMode) {
-      if (tempStartSelectedDate && tempEndSelectedDate) {
-        setRangeDate(tempStartSelectedDate, tempEndSelectedDate);
-      }
-    } else {
-      tempSelectedDate ? setSingleDate(tempSelectedDate, true) : undefined;
-    }
-  };
+  const handleApply = () => {
+    setStartDate(startDate, true);
+    setEndDate(endDate, true);
 
-  /**
-   * Cancels the date selection and closes the Calendar component.
-   *
-   * @memberOf HvDatePicker
-   */
-  const cancelDateSelection = () => {
-    if (rangeMode) {
-      setTempStartSelectedDate(startSelectedDate);
-      setTempEndSelectedDate(endSelectedDate);
-    } else {
-      setTempSelectedDate(selectedDate);
-    }
+    onChange?.(startDate, endDate);
 
     setCalendarOpen(false);
   };
 
   /**
-   * Handles the click on the Calendar icon inside the input.
-   *
-   * @memberOf HvDatePicker
-   */
-
-  const [calendarAnchorElement, setCalendarAnchorElement] = useState();
-
-  const handleCalendarIconClick = event => {
-    const { currentTarget } = event;
-
-    setCalendarAnchorElement(currentTarget);
-    setCalendarOpen(!calendarOpen);
-  };
-
-  /**
    * Handles the `Cancel` action. Both single and ranged modes are handled here.
-   *
-   * @memberOf HvDatePicker
    */
-  const handleCancelAction = () => {
-    cancelDateSelection();
+  const handleCancel = () => {
+    rollbackStartDate();
+    rollbackEndDate();
+
+    setCalendarOpen(false);
   };
 
-  /**
-   * Handle keyboard click in the input.
-   *
-   * @param event
-   */
-  const handleKeyboardClick = event => {
-    if (isKeypress(event, KeyboardCodes.Enter)) {
-      handleCalendarIconClick(event);
-    }
+  const handleCalendarClickAway = () => {
+    const shouldSave = !(rangeMode || showActions);
+    shouldSave ? handleApply() : handleCancel();
   };
 
-  /**
-   * Handles the event of clicking away from the Calendar.
-   *
-   * @param {Object} event - The event triggered when clicking outside of the calendar container.
-   * @memberOf HvDatePicker
-   */
-  const handleCalendarClickAway = event => {
-    if (event.target.id !== `${id}`) {
-      cancelDateSelection();
-    }
-  };
+  const handleDateChange = (event, newDate) => {
+    const autoSave = !showActions && !rangeMode;
 
-  /**
-   * Gets the formatted selected value to be displayed on the input.
-   *
-   * @memberOf HvDatePicker
-   */
-  const getFormattedSelectedDate = () => {
+    if (!isDate(newDate) || isSameDay(startDate, newDate) || isSameDay(endDate, newDate)) return;
+
     if (rangeMode) {
-      if (isDate(startSelectedDate) && isDate(endSelectedDate)) {
-        return `${getFormattedDate(startSelectedDate, locale)} - ${getFormattedDate(
-          endSelectedDate,
-          datepickerLocale
-        )}`;
+      if (!startDate || (startDate && endDate) || newDate < startDate) {
+        setStartDate(newDate);
+        setEndDate(null);
+      } else {
+        setEndDate(newDate);
       }
-    }
-
-    return isDate(selectedDate) ? getFormattedDate(selectedDate, datepickerLocale) : "";
-  };
-
-  /**
-   * Single Calendar
-   */
-
-  /**
-   * Handles the `handleDateChange` action from the Calendar component when in single mode. If the `showActions` prop
-   * is set to false then the date is immediately applied and the Calendar closed, otherwise the Calendar remains open.
-   *
-   * @param {Date} date - Date value received from the Calendar component.
-   * @param {boolean} closeCalendar - if it should close the date picker.
-   * @memberOf HvDatePicker
-   */
-  const handleSingleCalendarDateChange = (date, closeCalendar = true) => {
-    // const { showActions } = props;
-
-    if (!showActions) {
-      setSingleDate(date, closeCalendar);
     } else {
-      setTempSelectedDate(date);
+      setStartDate(newDate, autoSave);
     }
-  };
 
-  /**
-   * Range Calendars functions
-   */
-
-  /**
-   * Handles the `handleDateChange` action from the Calendar component associated to the Start/End date when in range mode.
-   *
-   * @param {Date} date - Date value received from the Calendar component.
-   * @memberOf HvDatePicker
-   */
-  const handleCalendarDateChange = (date, origin) => {
-    if (origin === "start") {
-      if (tempStartSelectedDate !== date) {
-        setTempStartSelectedDate(date);
-        if (tempEndSelectedDate === null) {
-          setTempEndSelectedDate(date);
-        } else if (date > tempEndSelectedDate) {
-          setTempEndSelectedDate(date);
-        }
-      }
-    } else if (origin === "end") {
-      if (tempEndSelectedDate !== date) {
-        setTempEndSelectedDate(date);
-        if (tempStartSelectedDate === null) {
-          setTempStartSelectedDate(date);
-        } else if (tempEndSelectedDate > date) {
-          setTempStartSelectedDate(date);
-        }
-      }
+    if (autoSave) {
+      setCalendarOpen(false);
+      onChange?.(newDate);
     }
-  };
-
-  /**
-   * Renders the Label element.
-   *
-   * @memberOf HvDatePicker
-   */
-  const renderLabel = () => {
-    return (
-      <Typography
-        id={setId(id, "label")}
-        variant="highlightText"
-        component="label"
-        className={classes.label}
-      >
-        {labels.title}
-      </Typography>
-    );
   };
 
   /**
    * Renders the container for the action elements.
-   *
-   * @memberOf HvDatePicker
    */
-  const renderActions = () => {
-    const actionLabels = {
-      applyLabel: labels.applyLabel,
-      cancelLabel: labels.cancelLabel
-    };
-
-    if (rangeMode) {
-      return (
-        <div className={classes.rangeCalendarsFooter}>
-          <div className={classes.rangeFooterLeft} />
-          <div className={classes.rangeFooterRight}>
-            <Actions
-              id={setId(id, "action")}
-              onCancel={() => handleCancelAction()}
-              onApply={() => handleApplyAction()}
-              labels={actionLabels}
-            />
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div className={classes.singleCalendarFooter}>
-        <Actions
-          id={setId(id, "action")}
-          onCancel={() => handleCancelAction()}
-          onApply={() => handleApplyAction()}
-          labels={actionLabels}
-        />
-      </div>
-    );
-  };
-
-  /**
-   * Renders one calendar component.
-   *
-   * @memberOf Calendar
-   */
-  const renderSingleCalendar = () => {
-    return (
-      <div className={classes.calendarContainer}>
-        <Calendar
-          id={setId(id, "calendar")}
-          handleDateChange={(date, close) => handleSingleCalendarDateChange(date, close)}
-          selectedDate={tempSelectedDate}
-          locale={datepickerLocale}
-          rangeMode={rangeMode}
-          flipped={calendarFlipped}
-        />
-        {showActions && renderActions()}
-      </div>
-    );
-  };
-
-  /**
-   * Renders two calendar for range mode.
-   *
-   * @memberOf Calendar
-   */
-
-  const renderRangeCalendars = () => {
-    return (
-      <div className={classes.rangeMainContainer}>
-        <div className={classes.rangeCalendarsContainer}>
-          <div className={classes.rangeLeftCalendarContainer}>
-            <Calendar
-              id={setId(id, "calendar-start")}
-              handleDateChange={date => handleCalendarDateChange(date, "start")}
-              selectedDate={tempStartSelectedDate}
-              visibleDate={startVisibleDate}
-              valueRange={{ startDate: tempStartSelectedDate, endDate: tempEndSelectedDate }}
-              locale={datepickerLocale}
-              rangeMode={rangeMode}
-              label={labels.rangeStart}
-              flipped={calendarFlipped}
-              inDatepicker
-            />
-          </div>
-
-          <div className={classes.rangeRightCalendarContainer}>
-            <Calendar
-              id={setId(id, "calendar-end")}
-              handleDateChange={date => handleCalendarDateChange(date, "end")}
-              selectedDate={tempEndSelectedDate}
-              visibleDate={endVisibleDate}
-              valueRange={{ startDate: tempStartSelectedDate, endDate: tempEndSelectedDate }}
-              locale={datepickerLocale}
-              rangeMode={rangeMode}
-              label={labels.rangeEnd}
-              flipped={calendarFlipped}
-              inDatepicker
-            />
-          </div>
-        </div>
-        {renderActions()}
-      </div>
-    );
-  };
-
-  /**
-   * Renders the input.
-   *
-   * @memberOf Calendar
-   */
-  const renderInput = () => {
-    const naming = {
-      "aria-label": isNil(labels) || isNil(labels.title) ? "Date input" : undefined,
-      "aria-labelledby": labels && labels.title ? setId(id, "label") : undefined
-    };
-
-    return (
-      <>
-        {labels && labels.title && renderLabel()}
-        <div
-          className={clsx(className, classes.root, {
-            [classes.inputCalendarOpen]: calendarOpen,
-            [classes.inputCalendarClosed]: !calendarOpen
-          })}
-          onKeyDown={handleKeyboardClick}
-          onClick={handleCalendarIconClick}
-          role="button"
-          tabIndex={0}
-          id={id}
-          {...naming}
-        >
-          <input
-            className={classes.input}
-            value={getFormattedSelectedDate()}
-            placeholder={labels.placeholder}
-            type="text"
-            readOnly
-            tabIndex={-1}
-            {...naming}
-          />
-          <CalendarIcon tabIndex={-1} className={classes.icon} />
-        </div>
-      </>
-    );
-  };
-
-  /**
-   * Renders the Popper component with the calendars inside.
-   *
-   * @memberOf HvDatePicker
-   */
-  const renderPopper = () => {
-    const RenderCalendar = rangeMode ? renderRangeCalendars() : renderSingleCalendar();
-    return (
-      <Popper
-        id={setId(id, "tooltip")}
-        open={calendarOpen}
-        placement={horizontalPlacement === "left" ? "bottom-start" : "bottom-end"}
-        anchorEl={calendarAnchorElement}
-        disablePortal={disablePortal}
-        popperOptions={{
-          onCreate: createCalendarPlacement,
-          onUpdate: updateCalendarPlacement
-        }}
-        modifiers={{
-          preventOverflow: {
-            // Follows the anchor element outside of the boundaries.
-            escapeWithReference
-          }
-        }}
-        style={{
-          zIndex: `${calendarFlipped ? theme.zIndex.tooltip : 1}`
-        }}
+  const renderActions = () => (
+    <HvActionContainer>
+      <HvButton
+        id={setId(id, "action", "apply")}
+        className={classes.action}
+        category="ghost"
+        onClick={handleApply}
       >
-        <ClickAwayListener onClickAway={handleCalendarClickAway}>
-          <div>
-            {!calendarFlipped && (
-              <div className={clsx(classes.popperRoot, classes.listBorderDown)} />
-            )}
-            <div
-              className={clsx(classes.popperRoot, {
-                [classes.calendarOpenDown]: calendarOpen && !calendarFlipped,
-                [classes.calendarOpenUp]: calendarOpen && calendarFlipped
-              })}
-            >
-              {RenderCalendar}
-            </div>
-            {calendarFlipped && <div className={clsx(classes.popperRoot, classes.listBorderUp)} />}
-          </div>
-        </ClickAwayListener>
-      </Popper>
-    );
-  };
+        {labels.applyLabel}
+      </HvButton>
+      <HvButton
+        id={setId(id, "action", "cancel")}
+        className={classes.action}
+        category="ghost"
+        onClick={handleCancel}
+      >
+        {labels.cancelLabel}
+      </HvButton>
+    </HvActionContainer>
+  );
 
-  /**
-   * Renders the DatePicker component.
-   *
-   * @returns
-   * @memberOf HvDatePicker
-   */
+  const renderInput = dateString => (
+    <HvTypography variant={dateString ? "normalText" : "placeholderText"}>
+      {dateString || labels.placeholder}
+    </HvTypography>
+  );
+
+  const dateValue = rangeMode ? { startDate, endDate } : startDate;
 
   return (
-    <div className={classes.datePickerContainer}>
-      {renderInput()}
-      {renderPopper()}
-    </div>
+    <HvFormElement id={id} className={clsx(classes.root, className)} value={dateValue} {...others}>
+      <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title}>
+        <HvBaseDropdown
+          classes={{ root: classes.dropdown, panel: classes.panel }}
+          disablePortal={disablePortal}
+          placement={horizontalPlacement}
+          expanded={calendarOpen}
+          onToggle={(evt, open) => setCalendarOpen(open)}
+          onClickOutside={handleCalendarClickAway}
+          placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
+          adornment={<Calendar className={classes.icon} />}
+          popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
+        >
+          <HvCalendar
+            id={setId(id, "calendar")}
+            visibleMonth={visibleMonth}
+            visibleYear={visibleYear}
+            onVisibleDateChange={handleVisibleDateChange}
+            onChange={handleDateChange}
+            locale={locale}
+          />
+          {(rangeMode || showActions) && renderActions()}
+        </HvBaseDropdown>
+      </HvLabel>
+    </HvFormElement>
   );
 };
 
@@ -605,15 +268,15 @@ HvDatePicker.propTypes = {
   /**
    * The initial value of the input when in single calendar mode.
    */
-  value: PropTypes.string,
+  value: PropTypes.instanceOf(Date),
   /**
    * The initial value for the start date when in range mode.
    */
-  startValue: PropTypes.string,
+  startValue: PropTypes.instanceOf(Date),
   /**
    * The initial value for the end date when in range mode.
    */
-  endValue: PropTypes.string,
+  endValue: PropTypes.instanceOf(Date),
   /**
    * Flag informing if the the component should be in range mode or in single mode.
    */
@@ -636,10 +299,6 @@ HvDatePicker.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * The theme object provided by the withStyles component.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
-  /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
   disablePortal: PropTypes.bool,
@@ -649,20 +308,6 @@ HvDatePicker.propTypes = {
   escapeWithReference: PropTypes.bool
 };
 
-HvDatePicker.defaultProps = {
-  id: undefined,
-  rangeMode: false,
-  horizontalPlacement: "left",
-  value: undefined,
-  startValue: undefined,
-  endValue: undefined,
-  locale: DEFAULT_LOCALE,
-  showActions: false,
-  onChange: undefined,
-  disablePortal: true,
-  escapeWithReference: true
-};
-
-export default withStyles(styles, { name: "HvDatePicker", withTheme: true })(
+export default withStyles(styles, { name: "HvDatePicker", index: 1 })(
   withLabels(DEFAULT_LABELS)(withId(HvDatePicker))
 );
