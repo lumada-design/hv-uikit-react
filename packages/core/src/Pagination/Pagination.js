@@ -39,10 +39,10 @@ const Pagination = ({
   labels,
   showPageProps,
   navigationProps,
-  currentPageInputProps
+  currentPageInputProps,
+  ...others
 }) => {
   const [statePage, setStatePage] = useState(page);
-
   const getSafePage = inPage =>
     Number.isNaN(inPage) ? page : Math.min(Math.max(inPage, 0), pages - 1);
 
@@ -78,7 +78,7 @@ const Pagination = ({
   const LastPageTooltipWrapper = withTooltip(LastPage, labels.paginationLastPageTitle);
 
   return (
-    <div id={id} className={clsx(className, classes.root)}>
+    <div id={id} className={clsx(className, classes.root)} {...others}>
       <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>

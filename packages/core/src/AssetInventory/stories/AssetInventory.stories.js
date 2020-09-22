@@ -617,6 +617,11 @@ export const Configurations = () => {
         { id: "listView", "aria-label": "Select list view" }
       ]}
       sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
+      paginationProps={{
+        labels: {
+          pageSizeEntryName: "assets"
+        }
+      }}
     >
       <HvCardView
         id="cardView"

@@ -157,6 +157,10 @@ export interface HvAssetInventoryProps
    * and other props to pe passed to each button.
    */
   multibuttonProps?: object;
+  /**
+   * Other props passed to the pagination.
+   */
+  paginationProps?: HvPaginationCommonProps;
 }
 
 export type ClassKey =
