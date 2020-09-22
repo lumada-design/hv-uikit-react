@@ -9,8 +9,23 @@ const styles = theme => ({
   searchContainer: {
     marginBottom: theme.spacing("xs")
   },
-  selectAllContainer: {},
-  selectAll: {},
+  selectAllContainer: {
+    // prevent the focus ring to be hidden by simbling hover background
+    "&": {
+      position: "relative",
+      zIndex: 0
+    },
+    "&:focus-within": {
+      zIndex: 1
+    },
+    // IE fallback code (using focus-within-polyfill)
+    "&.focus-within": {
+      zIndex: 1
+    }
+  },
+  selectAll: {
+    width: "100%"
+  },
   selection: {
     width: "100%"
   },

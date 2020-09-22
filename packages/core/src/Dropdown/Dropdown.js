@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../utils";
-import { HvBaseDropdown, HvFormElement, HvLabel, HvTypography } from "..";
+import { HvBaseDropdown, HvFormElement, HvLabel, HvTypography, useUniqueId } from "..";
 import withLabels from "../withLabels";
-import withId from "../withId";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
 import styles from "./styles";
@@ -35,12 +34,16 @@ const HvDropdown = ({
   onChange,
   notifyChangesOnFirstRender = false,
   labels,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
   hasTooltips = false,
   disablePortal = false,
   singleSelectionToggle = true,
   placement,
   popperProps = {}
 }) => {
+  const elementId = useUniqueId(id, "hvdropdown");
+
   const [isOpen, setIsOpen] = useState(expanded);
   const [selectionLabel, setSelectionLabel] = useState(
     getSelectionLabel(values, labels, multiSelect)
@@ -107,13 +110,14 @@ const HvDropdown = ({
     >
       {labels.title && (
         <HvLabel
-          htmlFor={id}
+          id={setId(elementId, "label")}
           aria-disabled={disabled}
           className={classes.label}
           label={labels.title}
         />
       )}
       <HvBaseDropdown
+        id={setId(id, "dropdown")}
         classes={{ root: classes.dropdown, arrow: classes.arrow }}
         expanded={isOpen}
         disabled={disabled}
@@ -123,9 +127,11 @@ const HvDropdown = ({
         placeholder={buildHeaderLabel()}
         onToggle={(e, s) => setIsOpen(s)}
         role="combobox"
+        aria-labelledby={ariaLabelledBy || labels.title ? setId(elementId, "label") : undefined}
+        aria-label={ariaLabel}
       >
         <List
-          id={setId(id, "values")}
+          id={setId(elementId, "values")}
           classes={{
             rootList: classes.rootList
           }}
@@ -137,7 +143,7 @@ const HvDropdown = ({
           notifyChangesOnFirstRender={notifyChangesOnFirstRender}
           hasTooltips={hasTooltips}
           singleSelectionToggle={singleSelectionToggle}
-          aria-labelledby={labels.title ? setId(id, "label") : undefined}
+          aria-labelledby={labels.title ? setId(elementId, "label") : undefined}
         />
       </HvBaseDropdown>
     </HvFormElement>
@@ -251,6 +257,14 @@ HvDropdown.propTypes = {
     multiSelectionConjunction: PropTypes.string
   }),
   /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-labelledby": PropTypes.string,
+  /**
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips: PropTypes.bool,
@@ -273,6 +287,4 @@ HvDropdown.propTypes = {
   popperProps: PropTypes.shape()
 };
 
-export default withStyles(styles, { name: "HvDropdown" })(
-  withLabels(DEFAULT_LABELS)(withId(HvDropdown))
-);
+export default withStyles(styles, { name: "HvDropdown" })(withLabels(DEFAULT_LABELS)(HvDropdown));

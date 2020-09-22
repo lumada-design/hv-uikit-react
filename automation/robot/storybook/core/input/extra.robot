@@ -23,4 +23,4 @@ placeholder - show placeholder when input rendered
 *** Variables ***
 ${input}         css:input
 ${label}         css:label
-${helperText}    css:#password-input-warning-notification
+${helperText}    css:#password-input-warning

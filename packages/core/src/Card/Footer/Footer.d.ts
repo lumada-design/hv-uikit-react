@@ -1,6 +1,6 @@
 import { CardActionsProps, StandardProps } from "@material-ui/core";
 import { HvActionsGenericCommonProps } from "../../ActionsGeneric";
-import { HvCheckBoxProps } from "../../Selectors/CheckBox";
+import { HvCheckBoxProps } from "../../CheckBox";
 
 export interface HvCardFooterCommonProps extends HvActionsGenericCommonProps {
   /**

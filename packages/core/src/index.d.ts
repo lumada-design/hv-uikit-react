@@ -106,6 +106,15 @@ export * from "./SearchBox";
 
 export * from "./Selectors";
 
+export { default as HvBaseCheckBox } from "./BaseCheckBox";
+export * from "./BaseCheckBox";
+
+export { default as HvCheckBox } from "./CheckBox";
+export * from "./CheckBox";
+
+export { default as HvCheckBoxGroup } from "./CheckBoxGroup";
+export * from "./CheckBoxGroup";
+
 export { default as HvSnackbar } from "./Snackbar";
 export * from "./Snackbar";
 

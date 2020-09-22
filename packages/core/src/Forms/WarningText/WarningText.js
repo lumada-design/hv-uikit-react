@@ -22,6 +22,7 @@ const HvWarningText = props => {
     id,
     disabled,
     disableGutter = false,
+    disableBorder = false,
     ...others
   } = props;
 
@@ -35,14 +36,15 @@ const HvWarningText = props => {
 
   return (
     <div
-      className={clsx(classes.root, {
-        [classes.showText]: showWarning
+      className={clsx(className, classes.root, {
+        [classes.showText]: showWarning,
+        [classes.topBorder]: !disableBorder
       })}
     >
       {localAdornment}
       <HvTypography
-        id={setId(localId, "notification")}
-        className={clsx(className, classes.warningText, {
+        id={setId(localId)}
+        className={clsx(classes.warningText, {
           [classes.topGutter]: !disableGutter
         })}
         aria-live="polite"
@@ -94,6 +96,10 @@ HvWarningText.propTypes = {
      */
     topGutter: PropTypes.string,
     /**
+     * The top border.
+     */
+    topBorder: PropTypes.string,
+    /**
      * IE11 specific styling.
      */
     "@global": PropTypes.string
@@ -113,7 +119,11 @@ HvWarningText.propTypes = {
   /**
    * If `true` the text won't include a gutter.
    */
-  disableGutter: PropTypes.bool
+  disableGutter: PropTypes.bool,
+  /**
+   * If `true` the text won't include the top border.
+   */
+  disableBorder: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvWarningText" })(HvWarningText);

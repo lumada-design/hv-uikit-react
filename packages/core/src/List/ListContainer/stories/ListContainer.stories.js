@@ -269,11 +269,11 @@ export const MultiSelectionWithSelectAll = () => {
 
   const handleSelectAll = (e, checked = false) => {
     setSelectedItems({
-      0: !checked,
-      1: !checked,
-      2: !checked,
-      3: !checked,
-      4: !checked
+      0: checked,
+      1: checked,
+      2: checked,
+      3: checked,
+      4: checked
     });
   };
 

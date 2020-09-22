@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../Provider";
-import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
+import HvCheckBox from "../../CheckBox/CheckBox";
 import List from "../List";
 import Dropdown from "..";
 

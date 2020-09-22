@@ -4,7 +4,7 @@ import clsx from "clsx";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
-import HvCheckbox from "../../../Selectors/CheckBox";
+import HvCheckbox from "../../../CheckBox";
 import ActionsGeneric from "../../../ActionsGeneric";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";

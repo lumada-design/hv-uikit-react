@@ -9,10 +9,14 @@ const styles = theme => ({
   },
   semantic: {
     backgroundColor: theme.palette.sema7,
-    "& $selectAll": {
+    "& $selectAll div": {
       ...semanticStyles(theme)
     },
-    "& $selectAll:focus-within": {
+    "& $selectAll:focus-within div": {
+      backgroundColor: fade(theme.palette.base1, 0.3)
+    },
+    // IE fallback code (using focus-within-polyfill)
+    "& $selectAll.focus-within div": {
       backgroundColor: fade(theme.palette.base1, 0.3)
     }
   },

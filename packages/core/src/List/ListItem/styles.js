@@ -9,6 +9,7 @@ const styles = theme => ({
     padding: 0,
 
     display: "block",
+    height: "32px",
     lineHeight: "32px",
 
     listStyleType: "none",

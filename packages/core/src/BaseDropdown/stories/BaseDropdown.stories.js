@@ -13,7 +13,7 @@ export default {
   component: HvBaseDropdown
 };
 
-export const Main = () => <HvBaseDropdown placeholder="Placeholder..." />;
+export const Main = () => <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />;
 
 Main.story = {
   parameters: {
@@ -28,7 +28,7 @@ export const WithContent = () => {
   const theme = useTheme();
 
   return (
-    <HvBaseDropdown placeholder="Placeholder...">
+    <HvBaseDropdown placeholder="Placeholder..." aria-label="With content">
       <HvPanel>
         <div style={{ width: "300px", height: "300px", background: theme.palette.atmo2 }}>
           <HvInput id="input-dropdown" />
@@ -47,14 +47,20 @@ WithContent.story = {
 export const WithForms = () => {
   const theme = useTheme();
   return (
-    <HvFormElement id="withForms" disabled={false}>
-      <HvLabel style={{ paddingBottom: "8px", display: "block" }} label="Label" />
-      <HvBaseDropdown placeholder="Placeholder...">
+    <HvFormElement id="withForms">
+      <HvLabel
+        id="withForms-label"
+        style={{ paddingBottom: "8px", display: "block" }}
+        label="Label"
+      />
+      <HvBaseDropdown placeholder="Placeholder..." aria-labelledby="withForms-label">
         <HvPanel>
           <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
         </HvPanel>
       </HvBaseDropdown>
-      <HvWarningText isVisible>The description.</HvWarningText>
+      <HvWarningText disableBorder isVisible>
+        The description.
+      </HvWarningText>
     </HvFormElement>
   );
 };
@@ -72,7 +78,12 @@ export const Controlled = () => {
     <>
       <HvButton onClick={() => setOpen(!open)}>Toggle</HvButton>
       <p />
-      <HvBaseDropdown placeholder="Placeholder..." expanded={open} onToggle={(e, s) => setOpen(s)}>
+      <HvBaseDropdown
+        placeholder="Placeholder..."
+        aria-label="Controlled"
+        expanded={open}
+        onToggle={(e, s) => setOpen(s)}
+      >
         <HvPanel>
           <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
         </HvPanel>

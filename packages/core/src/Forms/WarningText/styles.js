@@ -2,10 +2,13 @@ const styles = theme => ({
   root: {
     display: "none"
   },
+  topBorder: {
+    borderTop: `solid 1px ${theme.hv.palette.semantic.sema4}`
+  },
   topGutter: { paddingTop: 8 },
   warningText: {
-    width: "100%",
-    color: theme.hv.palette.semantic.sema4
+    color: theme.hv.palette.semantic.sema4,
+    paddingRight: theme.hv.spacing.xs
   },
   defaultIcon: {
     minWidth: "32px"

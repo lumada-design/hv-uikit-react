@@ -247,7 +247,7 @@ const HvTextArea = props => {
         aria-invalid={overflow || undefined}
         {...others}
       />
-      <HvWarningText id={setId(id, "warning")} {...warningProps}>
+      <HvWarningText disableBorder id={setId(id, "warning")} {...warningProps}>
         {isStateInvalid ? warningText : ""}
       </HvWarningText>
     </HvFormElement>

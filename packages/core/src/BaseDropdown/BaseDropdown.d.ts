@@ -9,6 +9,13 @@ export interface HvBaseDropdownProps
     "placeholder"
   > {
   /**
+   * The role of the element that triggers the popup.
+   *
+   * Defaults to "combobox" if `component` and the default
+   * "textbox" header is used, undefined otherwise.
+   */
+  role?: string;
+  /**
    * Header placeholder.
    */
   placeholder?: string | React.ReactNode;

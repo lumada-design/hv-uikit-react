@@ -89,14 +89,14 @@ export const Controlled = () => {
   const [data, setData] = useState(Array.from(Array(8), (el, i) => addEntry(i)));
 
   const handleSelectAll = (e, checked = false) => {
-    setData(data.map(el => ({ ...el, checked: !checked })));
+    setData(data.map(el => ({ ...el, checked })));
   };
 
   const handleSelectAllPages = e => handleSelectAll(e, true);
 
   const handleChange = (e, i, checked) => {
     const newData = [...data];
-    newData[i].checked = !checked;
+    newData[i].checked = checked;
     setData(newData);
   };
 
@@ -136,12 +136,12 @@ export const ControlledWithActions = () => {
   const [data, setData] = useState(Array.from(Array(8), (el, i) => addEntry(i)));
 
   const handleSelectAll = (e, checked = false) => {
-    setData(data.map(el => ({ ...el, checked: !checked })));
+    setData(data.map(el => ({ ...el, checked })));
   };
 
   const handleChange = (e, i, checked) => {
     const newData = [...data];
-    newData[i].checked = !checked;
+    newData[i].checked = checked;
     setData(newData);
   };
 
@@ -229,7 +229,7 @@ export const ControlledWithAllPages = () => {
 
   const handleChange = (e, i, checked) => {
     const newData = [...data];
-    newData[i + pageSize * page].checked = !checked;
+    newData[i + pageSize * page].checked = checked;
     setData(newData);
   };
 

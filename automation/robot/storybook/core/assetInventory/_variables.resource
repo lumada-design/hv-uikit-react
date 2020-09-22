@@ -11,7 +11,7 @@ ${checkBox2}          xpath:(//input[@type='checkbox'])[2]
 ${checkBox3}          xpath:(//input[@type='checkbox'])[3]
 ${checkBox4}          xpath:(//input[@type='checkbox'])[4]
 ${clearText}          css:button[aria-label='clear button']
-${dropdownHeader}     css:#hv-assetinventory-sort
+${dropdownHeader}     css:#hv-assetinventory-sort-dropdown
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${firstCheckbox}      css:input[value='id_0']
 ${listViewButton}     css:#list-button

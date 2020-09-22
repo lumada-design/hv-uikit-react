@@ -23,12 +23,12 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
     classes={
       Object {
         "box": "HvList-box",
-        "icon": "HvList-icon",
-        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
+        "selectAllSelector": "HvList-selectAllSelector",
         "selectorContainer": "HvList-selectorContainer",
+        "selectorRoot": "HvList-selectorRoot",
         "truncate": "HvList-truncate",
       }
     }
@@ -77,7 +77,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
           role="listbox"
         >
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -90,7 +89,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             tabIndex={0}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -129,21 +127,21 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
                         Value 1
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -179,21 +177,21 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
                           Value 1
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -209,7 +207,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -229,7 +227,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -242,7 +239,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             tabIndex={-1}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -281,21 +277,21 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
                         Value 1
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -331,21 +327,21 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
                           Value 1
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -361,7 +357,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -381,7 +377,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -394,7 +389,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             tabIndex={-1}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -433,21 +427,21 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
                         Value 1
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -483,21 +477,21 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
                           Value 1
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -513,7 +507,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -561,12 +555,12 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
     classes={
       Object {
         "box": "HvList-box",
-        "icon": "HvList-icon",
-        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
+        "selectAllSelector": "HvList-selectAllSelector",
         "selectorContainer": "HvList-selectorContainer",
+        "selectorRoot": "HvList-selectorRoot",
         "truncate": "HvList-truncate",
       }
     }
@@ -614,7 +608,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
           role="listbox"
         >
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -627,7 +620,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             tabIndex={0}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -666,7 +658,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -691,14 +683,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         Value 1
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -752,7 +744,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -777,14 +769,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                           Value 1
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -818,7 +810,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -889,7 +881,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -902,7 +893,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             tabIndex={-1}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -941,7 +931,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -966,14 +956,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         Value 1
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -1027,7 +1017,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -1052,14 +1042,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                           Value 1
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -1093,7 +1083,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -1113,7 +1103,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -1132,7 +1121,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             tabIndex={-1}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -1177,7 +1165,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -1202,14 +1190,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         Value 1
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -1263,7 +1251,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -1288,14 +1276,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                           Value 1
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -1329,7 +1317,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -1421,12 +1409,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
     classes={
       Object {
         "box": "HvList-box",
-        "icon": "HvList-icon",
-        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
+        "selectAllSelector": "HvList-selectAllSelector",
         "selectorContainer": "HvList-selectorContainer",
+        "selectorRoot": "HvList-selectorRoot",
         "truncate": "HvList-truncate",
       }
     }
@@ -1477,7 +1465,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
           selectDefault={true}
         >
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -1490,7 +1477,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             tabIndex={0}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -1529,7 +1515,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -1549,7 +1535,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -1581,7 +1567,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -1601,7 +1587,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -1633,7 +1619,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -1653,7 +1639,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -1714,7 +1700,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -1734,7 +1720,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -1766,7 +1752,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -1786,7 +1772,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -1818,7 +1804,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -1838,7 +1824,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -1879,7 +1865,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -1895,7 +1881,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           classes={
                             Object {
                               "container": "HvList-selectorContainer",
-                              "icon": "HvList-icon",
+                              "icon": undefined,
                               "labelTypography": "HvList-truncate",
                             }
                           }
@@ -1908,7 +1894,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 "container": "HvRadioButton-container HvList-selectorContainer",
                                 "disableFocus": "HvRadioButton-disableFocus",
                                 "disabledBorder": "HvRadioButton-disabledBorder",
-                                "icon": "HvRadioButton-icon HvList-icon",
+                                "icon": "HvRadioButton-icon",
                                 "labelDisabled": "HvRadioButton-labelDisabled",
                                 "labelEnd": "HvRadioButton-labelEnd",
                                 "labelStart": "HvRadioButton-labelStart",
@@ -1931,7 +1917,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   checked={false}
                                   checkedIcon={
                                     <RadioButtonSelected
-                                      className="HvRadioButton-icon HvList-icon"
+                                      className="HvRadioButton-icon"
                                     />
                                   }
                                   className="HvRadioButton-radio"
@@ -1939,7 +1925,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   disableRipple={true}
                                   icon={
                                     <RadioButtonUnselected
-                                      className="HvRadioButton-icon HvList-icon"
+                                      className="HvRadioButton-icon"
                                     />
                                   }
                                   onBlur={[Function]}
@@ -1967,7 +1953,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     className="HvRadioButton-radio"
@@ -1975,7 +1961,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     disableRipple={true}
                                     icon={
                                       <RadioButtonUnselected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     onBlur={[Function]}
@@ -1993,7 +1979,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     className="HvRadioButton-radio"
@@ -2001,7 +1987,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     disableRipple={true}
                                     icon={
                                       <RadioButtonUnselected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     onBlur={[Function]}
@@ -2012,7 +1998,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                       checked={false}
                                       checkedIcon={
                                         <RadioButtonSelected
-                                          className="HvRadioButton-icon HvList-icon"
+                                          className="HvRadioButton-icon"
                                         />
                                       }
                                       className="HvRadioButton-radio"
@@ -2029,7 +2015,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                       disableRipple={true}
                                       icon={
                                         <RadioButtonUnselected
-                                          className="HvRadioButton-icon HvList-icon"
+                                          className="HvRadioButton-icon"
                                         />
                                       }
                                       onBlur={[Function]}
@@ -2040,7 +2026,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         checked={false}
                                         checkedIcon={
                                           <RadioButtonSelected
-                                            className="HvRadioButton-icon HvList-icon"
+                                            className="HvRadioButton-icon"
                                           />
                                         }
                                         className="HvRadioButton-radio"
@@ -2056,7 +2042,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         disabled={false}
                                         icon={
                                           <RadioButtonUnselected
-                                            className="HvRadioButton-icon HvList-icon"
+                                            className="HvRadioButton-icon"
                                           />
                                         }
                                         onBlur={[Function]}
@@ -2068,7 +2054,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           checked={false}
                                           checkedIcon={
                                             <RadioButtonSelected
-                                              className="HvRadioButton-icon HvList-icon"
+                                              className="HvRadioButton-icon"
                                             />
                                           }
                                           className="HvRadioButton-radio"
@@ -2085,7 +2071,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           disabled={false}
                                           icon={
                                             <RadioButtonUnselected
-                                              className="HvRadioButton-icon HvList-icon"
+                                              className="HvRadioButton-icon"
                                             />
                                           }
                                           onBlur={[Function]}
@@ -2183,15 +2169,15 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                         value=""
                                                       />
                                                       <RadioButtonUnselected
-                                                        className="HvRadioButton-icon HvList-icon"
+                                                        className="HvRadioButton-icon"
                                                       >
                                                         <WithStyles(HvIconBase)
-                                                          className="HvRadioButton-icon HvList-icon"
+                                                          className="HvRadioButton-icon"
                                                           iconSize="S"
                                                           name="RadioButtonUnselected"
                                                         >
                                                           <HvIconBase
-                                                            className="HvRadioButton-icon HvList-icon"
+                                                            className="HvRadioButton-icon"
                                                             classes={
                                                               Object {
                                                                 "l": "HvIconBase-l",
@@ -2205,7 +2191,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                             name="RadioButtonUnselected"
                                                           >
                                                             <div
-                                                              className="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                                              className="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                                               name="RadioButtonUnselected"
                                                             >
                                                               <svg
@@ -2302,7 +2288,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -2315,7 +2300,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             tabIndex={-1}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -2354,7 +2338,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -2374,7 +2358,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -2406,7 +2390,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -2426,7 +2410,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -2458,7 +2442,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -2478,7 +2462,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -2539,7 +2523,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -2559,7 +2543,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -2591,7 +2575,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -2611,7 +2595,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -2643,7 +2627,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -2663,7 +2647,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -2704,7 +2688,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -2720,7 +2704,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           classes={
                             Object {
                               "container": "HvList-selectorContainer",
-                              "icon": "HvList-icon",
+                              "icon": undefined,
                               "labelTypography": "HvList-truncate",
                             }
                           }
@@ -2733,7 +2717,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 "container": "HvRadioButton-container HvList-selectorContainer",
                                 "disableFocus": "HvRadioButton-disableFocus",
                                 "disabledBorder": "HvRadioButton-disabledBorder",
-                                "icon": "HvRadioButton-icon HvList-icon",
+                                "icon": "HvRadioButton-icon",
                                 "labelDisabled": "HvRadioButton-labelDisabled",
                                 "labelEnd": "HvRadioButton-labelEnd",
                                 "labelStart": "HvRadioButton-labelStart",
@@ -2756,7 +2740,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   checked={false}
                                   checkedIcon={
                                     <RadioButtonSelected
-                                      className="HvRadioButton-icon HvList-icon"
+                                      className="HvRadioButton-icon"
                                     />
                                   }
                                   className="HvRadioButton-radio"
@@ -2764,7 +2748,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   disableRipple={true}
                                   icon={
                                     <RadioButtonUnselected
-                                      className="HvRadioButton-icon HvList-icon"
+                                      className="HvRadioButton-icon"
                                     />
                                   }
                                   onBlur={[Function]}
@@ -2792,7 +2776,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     className="HvRadioButton-radio"
@@ -2800,7 +2784,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     disableRipple={true}
                                     icon={
                                       <RadioButtonUnselected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     onBlur={[Function]}
@@ -2818,7 +2802,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     className="HvRadioButton-radio"
@@ -2826,7 +2810,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     disableRipple={true}
                                     icon={
                                       <RadioButtonUnselected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     onBlur={[Function]}
@@ -2837,7 +2821,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                       checked={false}
                                       checkedIcon={
                                         <RadioButtonSelected
-                                          className="HvRadioButton-icon HvList-icon"
+                                          className="HvRadioButton-icon"
                                         />
                                       }
                                       className="HvRadioButton-radio"
@@ -2854,7 +2838,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                       disableRipple={true}
                                       icon={
                                         <RadioButtonUnselected
-                                          className="HvRadioButton-icon HvList-icon"
+                                          className="HvRadioButton-icon"
                                         />
                                       }
                                       onBlur={[Function]}
@@ -2865,7 +2849,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         checked={false}
                                         checkedIcon={
                                           <RadioButtonSelected
-                                            className="HvRadioButton-icon HvList-icon"
+                                            className="HvRadioButton-icon"
                                           />
                                         }
                                         className="HvRadioButton-radio"
@@ -2881,7 +2865,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         disabled={false}
                                         icon={
                                           <RadioButtonUnselected
-                                            className="HvRadioButton-icon HvList-icon"
+                                            className="HvRadioButton-icon"
                                           />
                                         }
                                         onBlur={[Function]}
@@ -2893,7 +2877,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           checked={false}
                                           checkedIcon={
                                             <RadioButtonSelected
-                                              className="HvRadioButton-icon HvList-icon"
+                                              className="HvRadioButton-icon"
                                             />
                                           }
                                           className="HvRadioButton-radio"
@@ -2910,7 +2894,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           disabled={false}
                                           icon={
                                             <RadioButtonUnselected
-                                              className="HvRadioButton-icon HvList-icon"
+                                              className="HvRadioButton-icon"
                                             />
                                           }
                                           onBlur={[Function]}
@@ -3008,15 +2992,15 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                         value=""
                                                       />
                                                       <RadioButtonUnselected
-                                                        className="HvRadioButton-icon HvList-icon"
+                                                        className="HvRadioButton-icon"
                                                       >
                                                         <WithStyles(HvIconBase)
-                                                          className="HvRadioButton-icon HvList-icon"
+                                                          className="HvRadioButton-icon"
                                                           iconSize="S"
                                                           name="RadioButtonUnselected"
                                                         >
                                                           <HvIconBase
-                                                            className="HvRadioButton-icon HvList-icon"
+                                                            className="HvRadioButton-icon"
                                                             classes={
                                                               Object {
                                                                 "l": "HvIconBase-l",
@@ -3030,7 +3014,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                             name="RadioButtonUnselected"
                                                           >
                                                             <div
-                                                              className="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                                              className="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                                               name="RadioButtonUnselected"
                                                             >
                                                               <svg
@@ -3127,7 +3111,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
-            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -3140,7 +3123,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             tabIndex={-1}
           >
             <HvListItem
-              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -3179,7 +3161,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       role="listbox"
                     >
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -3199,7 +3181,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -3231,7 +3213,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -3251,7 +3233,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -3283,7 +3265,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -3303,7 +3285,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 value=""
                               />
                               <div
-                                class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                 name="RadioButtonUnselected"
                               >
                                 <svg
@@ -3364,7 +3346,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         role="listbox"
                       >
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3384,7 +3366,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -3416,7 +3398,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3436,7 +3418,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -3468,7 +3450,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3488,7 +3470,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   value=""
                                 />
                                 <div
-                                  class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                  class="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                   name="RadioButtonUnselected"
                                 >
                                   <svg
@@ -3529,7 +3511,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -3545,7 +3527,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           classes={
                             Object {
                               "container": "HvList-selectorContainer",
-                              "icon": "HvList-icon",
+                              "icon": undefined,
                               "labelTypography": "HvList-truncate",
                             }
                           }
@@ -3558,7 +3540,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 "container": "HvRadioButton-container HvList-selectorContainer",
                                 "disableFocus": "HvRadioButton-disableFocus",
                                 "disabledBorder": "HvRadioButton-disabledBorder",
-                                "icon": "HvRadioButton-icon HvList-icon",
+                                "icon": "HvRadioButton-icon",
                                 "labelDisabled": "HvRadioButton-labelDisabled",
                                 "labelEnd": "HvRadioButton-labelEnd",
                                 "labelStart": "HvRadioButton-labelStart",
@@ -3581,7 +3563,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   checked={false}
                                   checkedIcon={
                                     <RadioButtonSelected
-                                      className="HvRadioButton-icon HvList-icon"
+                                      className="HvRadioButton-icon"
                                     />
                                   }
                                   className="HvRadioButton-radio"
@@ -3589,7 +3571,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   disableRipple={true}
                                   icon={
                                     <RadioButtonUnselected
-                                      className="HvRadioButton-icon HvList-icon"
+                                      className="HvRadioButton-icon"
                                     />
                                   }
                                   onBlur={[Function]}
@@ -3617,7 +3599,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     className="HvRadioButton-radio"
@@ -3625,7 +3607,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     disableRipple={true}
                                     icon={
                                       <RadioButtonUnselected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     onBlur={[Function]}
@@ -3643,7 +3625,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     className="HvRadioButton-radio"
@@ -3651,7 +3633,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     disableRipple={true}
                                     icon={
                                       <RadioButtonUnselected
-                                        className="HvRadioButton-icon HvList-icon"
+                                        className="HvRadioButton-icon"
                                       />
                                     }
                                     onBlur={[Function]}
@@ -3662,7 +3644,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                       checked={false}
                                       checkedIcon={
                                         <RadioButtonSelected
-                                          className="HvRadioButton-icon HvList-icon"
+                                          className="HvRadioButton-icon"
                                         />
                                       }
                                       className="HvRadioButton-radio"
@@ -3679,7 +3661,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                       disableRipple={true}
                                       icon={
                                         <RadioButtonUnselected
-                                          className="HvRadioButton-icon HvList-icon"
+                                          className="HvRadioButton-icon"
                                         />
                                       }
                                       onBlur={[Function]}
@@ -3690,7 +3672,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         checked={false}
                                         checkedIcon={
                                           <RadioButtonSelected
-                                            className="HvRadioButton-icon HvList-icon"
+                                            className="HvRadioButton-icon"
                                           />
                                         }
                                         className="HvRadioButton-radio"
@@ -3706,7 +3688,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         disabled={false}
                                         icon={
                                           <RadioButtonUnselected
-                                            className="HvRadioButton-icon HvList-icon"
+                                            className="HvRadioButton-icon"
                                           />
                                         }
                                         onBlur={[Function]}
@@ -3718,7 +3700,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           checked={false}
                                           checkedIcon={
                                             <RadioButtonSelected
-                                              className="HvRadioButton-icon HvList-icon"
+                                              className="HvRadioButton-icon"
                                             />
                                           }
                                           className="HvRadioButton-radio"
@@ -3735,7 +3717,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           disabled={false}
                                           icon={
                                             <RadioButtonUnselected
-                                              className="HvRadioButton-icon HvList-icon"
+                                              className="HvRadioButton-icon"
                                             />
                                           }
                                           onBlur={[Function]}
@@ -3833,15 +3815,15 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                         value=""
                                                       />
                                                       <RadioButtonUnselected
-                                                        className="HvRadioButton-icon HvList-icon"
+                                                        className="HvRadioButton-icon"
                                                       >
                                                         <WithStyles(HvIconBase)
-                                                          className="HvRadioButton-icon HvList-icon"
+                                                          className="HvRadioButton-icon"
                                                           iconSize="S"
                                                           name="RadioButtonUnselected"
                                                         >
                                                           <HvIconBase
-                                                            className="HvRadioButton-icon HvList-icon"
+                                                            className="HvRadioButton-icon"
                                                             classes={
                                                               Object {
                                                                 "l": "HvIconBase-l",
@@ -3855,7 +3837,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                             name="RadioButtonUnselected"
                                                           >
                                                             <div
-                                                              className="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
+                                                              className="HvRadioButton-icon HvIconBase-root HvIconBase-s"
                                                               name="RadioButtonUnselected"
                                                             >
                                                               <svg

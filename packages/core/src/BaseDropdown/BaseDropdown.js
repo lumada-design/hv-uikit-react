@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import { ClickAwayListener, Popper, useTheme, withStyles } from "@material-ui/core";
 import clsx from "clsx";
 import { DropUpXS, DropDownXS } from "@hv/uikit-react-icons";
-import { HvFormElementContext, HvTypography } from "..";
+import { HvTypography, useUniqueId } from "..";
 import { getFirstAndLastFocus, isKeypress, KeyboardCodes, setId, useUpdated } from "../utils";
-import withId from "../withId";
 import styles from "./styles";
 
 const { Tab, Enter, Esc, Space, ArrowDown } = KeyboardCodes;
 
 const HvBaseDropdown = ({
   id,
+  role,
   classes,
   className,
   placeholder,
@@ -37,25 +37,24 @@ const HvBaseDropdown = ({
   const [updated, setUpdated] = useUpdated();
   const anchorHeaderRef = useRef(null);
 
-  const { elementId, elementDisabled, descriptors = {} } = useContext(HvFormElementContext);
-
-  const { HvLabel } = descriptors;
-
-  const localId = elementId ?? id;
-  const localDisabled = disabled ?? elementDisabled;
+  const elementId = useUniqueId(id, "hvbasedropdown");
 
   const theme = useTheme();
 
   const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
 
   useEffect(() => {
-    if (expanded !== isOpen) {
-      const value = expanded && !localDisabled;
-      setIsOpen(value);
-      onToggle?.(null, value);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [expanded, localDisabled]);
+    setIsOpen(currentIsOpen => {
+      const value = expanded && !disabled;
+
+      if (currentIsOpen !== value) {
+        onToggle?.(null, value);
+        return value;
+      }
+
+      return currentIsOpen;
+    });
+  }, [disabled, expanded, onToggle]);
 
   /**
    * If closes focus on the header component.
@@ -88,36 +87,39 @@ const HvBaseDropdown = ({
     }
   };
 
-  const handleToggle = event => {
-    if (event && !isKeypress(event, Tab)) {
-      event.stopPropagation();
-      event.preventDefault();
-    }
+  const handleToggle = useCallback(
+    event => {
+      if (event && !isKeypress(event, Tab)) {
+        event.stopPropagation();
+        event.preventDefault();
+      }
 
-    // we are checking specifically for false because if "isKeypress" returns true or undefined it should continue
-    const notControlKey = [Tab, Enter, Esc, ArrowDown, Space].every(
-      key => isKeypress(event, key) === false
-    );
+      // we are checking specifically for false because if "isKeypress" returns true or undefined it should continue
+      const notControlKey = [Tab, Enter, Esc, ArrowDown, Space].every(
+        key => isKeypress(event, key) === false
+      );
 
-    const ignoredCombinations =
-      (isKeypress(event, Esc) && !isOpen) ||
-      (isKeypress(event, ArrowDown) && isOpen) ||
-      (isKeypress(event, Tab) && !isOpen);
+      const ignoredCombinations =
+        (isKeypress(event, Esc) && !isOpen) ||
+        (isKeypress(event, ArrowDown) && isOpen) ||
+        (isKeypress(event, Tab) && !isOpen);
 
-    if (localDisabled || notControlKey || ignoredCombinations) return;
+      if (disabled || notControlKey || ignoredCombinations) return;
 
-    const newOpen = !isOpen;
-    setIsOpen(newOpen);
-    onToggle?.(event, newOpen);
-  };
+      const newOpen = !isOpen;
+      setIsOpen(newOpen);
+      onToggle?.(event, newOpen);
+    },
+    [disabled, isOpen, onToggle]
+  );
 
   const buildHeaderLabel = () => (
-    <div className={classes.selection} id={setId(localId, "selectionPlaceholder")}>
+    <div className={classes.selection}>
       {placeholder && typeof placeholder === "string" ? (
         <HvTypography
           noWrap
           className={clsx(classes.placeholder, {
-            [classes.selectionDisabled]: localDisabled
+            [classes.selectionDisabled]: disabled
           })}
           variant="placeholderText"
         >
@@ -133,34 +135,24 @@ const HvBaseDropdown = ({
     (isOpen ? (
       <DropUpXS iconSize="XS" className={classes.arrow} />
     ) : (
-      <DropDownXS
-        iconSize="XS"
-        className={classes.arrow}
-        color={localDisabled ? "atmo5" : undefined}
-      />
+      <DropDownXS iconSize="XS" className={classes.arrow} color={disabled ? "atmo5" : undefined} />
     ));
-
-  const ariaLabelledBy =
-    others["aria-labelledby"] ||
-    HvLabel?.[0]?.id ||
-    (!component && setId(localId, "selectionPlaceholder")) ||
-    undefined;
 
   const renderHeader = () => {
     return (
       <div
-        id={setId(localId, "header")}
+        id={setId(id, "header")}
         className={clsx(classes.header, {
-          [classes.headerDisabled]: localDisabled,
+          [classes.headerDisabled]: disabled,
           [classes.headerOpen]: isOpen,
           [classes.headerOpenUp]: isOpen && positionUp,
           [classes.headerOpenDown]: isOpen && !positionUp
         })}
         role="textbox"
-        style={localDisabled ? { pointerEvents: "none" } : undefined}
-        aria-labelledby={ariaLabelledBy}
-        aria-controls={isOpen ? setId(localId, "children-container") : undefined}
+        style={disabled ? { pointerEvents: "none" } : undefined}
+        aria-controls={isOpen ? setId(elementId, "children-container") : undefined}
         aria-label={others["aria-label"] ?? undefined}
+        aria-labelledby={others["aria-labelledby"] ?? undefined}
         tabIndex={disabled ? -1 : 0}
       >
         {buildHeaderLabel()}
@@ -198,7 +190,7 @@ const HvBaseDropdown = ({
    */
   const handleContainerCreate = data => {
     getFirstAndLastFocus(
-      document.getElementById(setId(localId, "children-container"))
+      document.getElementById(setId(elementId, "children-container"))
     )?.first?.focus();
     if (!created) {
       const position = data.flipped;
@@ -216,7 +208,7 @@ const HvBaseDropdown = ({
     }
     if (isKeypress(event, Tab)) {
       const focusList = getFirstAndLastFocus(
-        document.getElementById(setId(localId, "children-container"))
+        document.getElementById(setId(elementId, "children-container"))
       );
       if (document.activeElement === focusList?.last) {
         event.preventDefault();
@@ -249,7 +241,7 @@ const HvBaseDropdown = ({
               style={{ width: widthInput }}
             />
           )}
-          <div id={setId(localId, "children-container")} className={classes.panel}>
+          <div id={setId(elementId, "children-container")} className={classes.panel}>
             {children}
           </div>
           {positionUp && (
@@ -270,18 +262,16 @@ const HvBaseDropdown = ({
     <>
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
-        id={localId}
-        aria-haspopup="listbox"
+        id={id}
+        role={role || (component == null ? "combobox" : undefined)}
         aria-expanded={isOpen}
-        aria-owns={isOpen ? setId(localId, "children-container") : undefined}
-        aria-labelledby={ariaLabelledBy}
+        aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
         ref={anchorHeaderRef}
         className={clsx(className, classes.root)}
         onKeyDown={handleToggle}
         onClick={handleToggle}
         tabIndex={-1}
         {...others}
-        aria-label={ariaLabelledBy ? undefined : others["aria-label"]}
       >
         {component || renderHeader()}
       </div>
@@ -299,6 +289,13 @@ HvBaseDropdown.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
+  /**
+   * The role of the element that triggers the popup.
+   *
+   * Defaults to "combobox" if `component` and the default
+   * "textbox" header is used, undefined otherwise.
+   */
+  role: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles applied.
    */
@@ -419,4 +416,4 @@ HvBaseDropdown.propTypes = {
   onFlip: PropTypes.func
 };
 
-export default withStyles(styles, { name: "HvBaseDropdown" })(withId(HvBaseDropdown));
+export default withStyles(styles, { name: "HvBaseDropdown" })(HvBaseDropdown);

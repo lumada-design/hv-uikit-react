@@ -14,17 +14,17 @@ ${inputDisabledChecked}     checkState6-input
 
 *** Test Cases ***
 select and unselect a checkbox with label
-    Go To                              ${patterns}selectors-checkbox--with-label
-    Wait Until Element Is Enabled      ${input}
-    Checkbox Should Not Be Selected    ${input}
-    Select Checkbox                    ${input}
-    Checkbox Should Be Selected        ${input}
-    Unselect Checkbox                  ${input}
-    Checkbox Should Not Be Selected    ${input}
-    Element Should Be Visible          //span[text()='Label']
+    Go To                              ${tests}checkbox--with-state
+    Wait Until Element Is Enabled      ${inputUnchecked}
+    Checkbox Should Not Be Selected    ${inputUnchecked}
+    Select Checkbox                    ${inputUnchecked}
+    Checkbox Should Be Selected        ${inputUnchecked}
+    Unselect Checkbox                  ${inputUnchecked}
+    Checkbox Should Not Be Selected    ${inputUnchecked}
+    Element Should Be Visible          //label[text()='Checkbox 1']
 
 unable select checkbox when is disabled
-    Go To                               ${patterns}selectors-checkbox--with-state
+    Go To                               ${tests}checkbox--with-state
     Wait Until Page Contains Element    ${inputDisabled}
     Element Should Be Disabled          ${inputDisabled}
     Run Keyword And Ignore Error        Click Element       ${inputDisabled}
@@ -32,14 +32,14 @@ unable select checkbox when is disabled
     Element Should Be Disabled          ${inputDisabled}
 
 unable unselect checkbox when is disabled
-    Go To                               ${patterns}selectors-checkbox--with-state
+    Go To                               ${tests}checkbox--with-state
     Wait Until Page Contains Element    ${inputDisabledChecked}
     Run Keyword And Ignore Error        Click Element               ${inputDisabledChecked}
     Element Should Be Disabled          ${inputDisabledChecked}
     Checkbox Should Be Selected         ${inputDisabledChecked}
 
 toggle indeterminate checkbox
-    Go To                               ${patterns}selectors-checkbox--with-state
+    Go To                               ${tests}checkbox--with-state
     Wait Until Element Is Enabled       ${inputIndeterm}
     Checkbox Should Not Be Selected     ${inputIndeterm}
     Element Attribute Value Should Be   ${inputIndeterm}    data-indeterminate  true
@@ -48,7 +48,7 @@ toggle indeterminate checkbox
     Checkbox Should Be Selected         ${inputIndeterm}
 
 unable toggle disabled indeterminate checkbox
-    Go To                               ${patterns}selectors-checkbox--with-state
+    Go To                               ${tests}checkbox--with-state
     Wait Until Page Contains Element    ${inputIndetermDisabled}
     Element Attribute Value Should Be   ${inputIndetermDisabled}    data-indeterminate  true
     Run Keyword And Ignore Error        Click Element               ${inputIndetermDisabled}
