@@ -64,7 +64,10 @@ const styles = theme => ({
     display: "flex",
     alignItems: "center",
     height: "100%",
-    paddingRight: `${theme.hv.spacing.xs}px`
+    paddingRight: `${theme.hv.spacing.xs}px`,
+    "& > p": {
+      color: theme.hv.palette.base.base2
+    }
   },
   showCustomMessage: {
     backgroundColor: theme.hv.palette.semantic.sema7,
