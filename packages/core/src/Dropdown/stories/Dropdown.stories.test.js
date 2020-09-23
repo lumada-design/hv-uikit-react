@@ -9,22 +9,22 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
+      page: null,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const SingleSelectedValue = () => (
   <HvDropdown
     id="dropdownSelected"
     expanded
-    onChange={item => console.log(item)}
+    onChange={(item) => console.log(item)}
     values={[
       { id: "id-1", label: "value 1" },
       { id: "id-2", label: "value 2" },
       { id: "id-3", label: "value 3", selected: true },
-      { id: "id-4", label: "value 4" }
+      { id: "id-4", label: "value 4" },
     ]}
   />
 );
@@ -32,13 +32,13 @@ export const SingleSelectedValue = () => (
 SingleSelectedValue.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
-export const longLabel = () => (
+export const LongLabel = () => (
   <HvDropdown
     id="dropdown12"
     expanded
@@ -57,23 +57,23 @@ export const longLabel = () => (
       { label: "value 9", selected: true },
       { label: "value 10" },
       { label: "value 11" },
-      { label: "value 12" }
+      { label: "value 12" },
     ]}
   />
 );
 
-longLabel.story = {
+LongLabel.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 // Dropdown.stories.js with property expanded
 
-export const Main = () => (
+export const General = () => (
   <HvDropdown
     expanded
     multiSelect
@@ -82,30 +82,30 @@ export const Main = () => (
       { label: "value 1" },
       { label: "value 2", selected: true },
       { label: "value 3" },
-      { label: "value 4" }
+      { label: "value 4" },
     ]}
   />
 );
 
-Main.story = {
+General.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const SingleSelection = () => (
   <HvDropdown
     expanded
     id="dropdown7"
-    onChange={item => console.log(item)}
+    onChange={(item) => console.log(item)}
     values={[
       { id: "id-1", label: "value 1" },
       { id: "id-2", label: "value 2" },
       { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" }
+      { id: "id-4", label: "value 4" },
     ]}
   />
 );
@@ -113,10 +113,10 @@ export const SingleSelection = () => (
 SingleSelection.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const MultiSelection = () => (
@@ -130,7 +130,7 @@ export const MultiSelection = () => (
       { label: "value 1" },
       { label: "value 2", selected: true },
       { label: "value 3" },
-      { label: "value 4" }
+      { label: "value 4" },
     ]}
   />
 );
@@ -138,23 +138,23 @@ export const MultiSelection = () => (
 MultiSelection.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const MultiSelectionNoSearch = () => (
   <HvDropdown
     expanded
     id="dropdown5"
-    onChange={item => console.log(item)}
+    onChange={(item) => console.log(item)}
     multiSelect
     values={[
       { id: "id-1", label: "value 1" },
       { id: "id-2", label: "value 1", selected: true },
       { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" }
+      { id: "id-4", label: "value 4" },
     ]}
   />
 );
@@ -162,10 +162,10 @@ export const MultiSelectionNoSearch = () => (
 MultiSelectionNoSearch.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const SingleSelectionWithSearch = () => (
@@ -177,7 +177,7 @@ export const SingleSelectionWithSearch = () => (
       { label: "value 1" },
       { label: "value 2", selected: true },
       { label: "value 3" },
-      { label: "value 4" }
+      { label: "value 4" },
     ]}
   />
 );
@@ -185,10 +185,10 @@ export const SingleSelectionWithSearch = () => (
 SingleSelectionWithSearch.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const SingleSelectionNoDefault = () => (
@@ -202,7 +202,7 @@ export const SingleSelectionNoDefault = () => (
       { label: "value 2" },
       { label: "value 3" },
       { label: "value 4" },
-      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" }
+      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" },
     ]}
   />
 );
@@ -210,31 +210,31 @@ export const SingleSelectionNoDefault = () => (
 SingleSelectionNoDefault.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const DifferentSizeAndPlacements = () => {
   const data = [
     {
       label: "value 1",
-      selected: false
+      selected: false,
     },
     {
       label: "value 2",
-      selected: false
-    }
+      selected: false,
+    },
   ];
 
   const styles = () => ({
     root: {
-      width: "200px"
+      width: "200px",
     },
     rootList: {
-      width: "520px"
-    }
+      width: "520px",
+    },
   });
 
   const StyledDropdown = withStyles(styles)(HvDropdown);
@@ -268,8 +268,8 @@ export const DifferentSizeAndPlacements = () => {
 DifferentSizeAndPlacements.story = {
   parameters: {
     docs: {
-      disable: true
+      disable: true,
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
