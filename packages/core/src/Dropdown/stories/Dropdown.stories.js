@@ -165,11 +165,8 @@ export const DifferentSizeAndPlacements = () => {
   ];
 
   const styles = () => ({
-    root: {
-      width: "200px"
-    },
-    rootList: {
-      width: "520px"
+    dropdown: {
+      width: "180px"
     }
   });
 

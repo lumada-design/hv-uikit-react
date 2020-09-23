@@ -41,6 +41,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
         "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
         "pageSizeOptions": "HvPagination-pageSizeOptions",
         "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
+        "pageSizeTextContainer": "HvPagination-pageSizeTextContainer",
         "root": "HvPagination-root",
         "selectDownIcon": "HvPagination-selectDownIcon",
       }
@@ -82,6 +83,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
           "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
           "pageSizeOptions": "HvPagination-pageSizeOptions",
           "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
+          "pageSizeTextContainer": "HvPagination-pageSizeTextContainer",
           "root": "HvPagination-root",
           "selectDownIcon": "HvPagination-selectDownIcon",
         }
@@ -123,45 +125,49 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
         <div
           className="HvPagination-pageSizeOptions"
         >
-          <WithStyles(ForwardRef)
-            component="span"
+          <div
+            className="HvPagination-pageSizeTextContainer"
           >
-            <ForwardRef
-              classes={
-                Object {
-                  "3xlTitle": "HvTypography-3xlTitle",
-                  "4xlTitle": "HvTypography-4xlTitle",
-                  "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledText": "HvTypography-disabledText",
-                  "highlightText": "HvTypography-highlightText",
-                  "lTitle": "HvTypography-lTitle",
-                  "link": "HvTypography-link",
-                  "mTitle": "HvTypography-mTitle",
-                  "noWrap": "HvTypography-noWrap",
-                  "normalText": "HvTypography-normalText",
-                  "placeholderText": "HvTypography-placeholderText",
-                  "root": "HvTypography-root",
-                  "sTitle": "HvTypography-sTitle",
-                  "sectionTitle": "HvTypography-sectionTitle",
-                  "selectedNavText": "HvTypography-selectedNavText",
-                  "vizText": "HvTypography-vizText",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                  "xlTitle": "HvTypography-xlTitle",
-                  "xsInlineLink": "HvTypography-xsInlineLink",
-                  "xsTitle": "HvTypography-xsTitle",
-                  "xxlTitle": "HvTypography-xxlTitle",
-                  "xxsTitle": "HvTypography-xxsTitle",
-                }
-              }
+            <WithStyles(ForwardRef)
               component="span"
             >
-              <span
-                className="HvTypography-root HvTypography-normalText"
+              <ForwardRef
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="span"
               >
-                Show
-              </span>
-            </ForwardRef>
-          </WithStyles(ForwardRef)>
+                <span
+                  className="HvTypography-root HvTypography-normalText"
+                >
+                  Show
+                </span>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
           <WithStyles(HvSelect)
             aria-label="Select how many to display"
             className="HvPagination-pageSizeOptionsSelect"
@@ -397,45 +403,49 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
               </WithStyles(WithId)>
             </HvSelect>
           </WithStyles(HvSelect)>
-          <WithStyles(ForwardRef)
-            component="span"
+          <div
+            className="HvPagination-pageSizeTextContainer"
           >
-            <ForwardRef
-              classes={
-                Object {
-                  "3xlTitle": "HvTypography-3xlTitle",
-                  "4xlTitle": "HvTypography-4xlTitle",
-                  "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledText": "HvTypography-disabledText",
-                  "highlightText": "HvTypography-highlightText",
-                  "lTitle": "HvTypography-lTitle",
-                  "link": "HvTypography-link",
-                  "mTitle": "HvTypography-mTitle",
-                  "noWrap": "HvTypography-noWrap",
-                  "normalText": "HvTypography-normalText",
-                  "placeholderText": "HvTypography-placeholderText",
-                  "root": "HvTypography-root",
-                  "sTitle": "HvTypography-sTitle",
-                  "sectionTitle": "HvTypography-sectionTitle",
-                  "selectedNavText": "HvTypography-selectedNavText",
-                  "vizText": "HvTypography-vizText",
-                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                  "xlTitle": "HvTypography-xlTitle",
-                  "xsInlineLink": "HvTypography-xsInlineLink",
-                  "xsTitle": "HvTypography-xsTitle",
-                  "xxlTitle": "HvTypography-xxlTitle",
-                  "xxsTitle": "HvTypography-xxsTitle",
-                }
-              }
+            <WithStyles(ForwardRef)
               component="span"
             >
-              <span
-                className="HvTypography-root HvTypography-normalText"
+              <ForwardRef
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="span"
               >
-                items
-              </span>
-            </ForwardRef>
-          </WithStyles(ForwardRef)>
+                <span
+                  className="HvTypography-root HvTypography-normalText"
+                >
+                  items
+                </span>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
         </div>
         <div
           className="HvPagination-pageNavigator"

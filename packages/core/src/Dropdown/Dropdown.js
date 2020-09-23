@@ -89,6 +89,7 @@ const HvDropdown = ({
         className={clsx(classes.truncate, {
           [classes.selectionDisabled]: disabled
         })}
+        variant="normalText"
       >
         <b>{selectionLabel.selected}</b>
         {` ${labels.multiSelectionConjunction} ${selectionLabel.total}`}

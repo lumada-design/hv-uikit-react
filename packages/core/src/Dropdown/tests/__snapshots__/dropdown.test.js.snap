@@ -2509,6 +2509,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                   placeholder={
                     <ForwardRef(WithStyles)
                       className="HvDropdown-truncate HvDropdown-selectionDisabled"
+                      variant="normalText"
                     >
                       <b>
                         0
@@ -2547,6 +2548,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                     placeholder={
                       <ForwardRef(WithStyles)
                         className="HvDropdown-truncate HvDropdown-selectionDisabled"
+                        variant="normalText"
                       >
                         <b>
                           0
@@ -2586,6 +2588,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                       placeholder={
                         <ForwardRef(WithStyles)
                           className="HvDropdown-truncate HvDropdown-selectionDisabled"
+                          variant="normalText"
                         >
                           <b>
                             0
@@ -2626,6 +2629,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                           >
                             <WithStyles(ForwardRef)
                               className="HvDropdown-truncate HvDropdown-selectionDisabled"
+                              variant="normalText"
                             >
                               <ForwardRef
                                 className="HvDropdown-truncate HvDropdown-selectionDisabled"
@@ -2655,6 +2659,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
+                                variant="normalText"
                               >
                                 <p
                                   className="HvDropdown-truncate HvDropdown-selectionDisabled HvTypography-root HvTypography-normalText"

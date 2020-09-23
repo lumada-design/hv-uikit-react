@@ -103,7 +103,9 @@ const Pagination = ({
       <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
-            <HvTypography component="span">{labels.pageSizePrev}</HvTypography>
+            <div className={classes.pageSizeTextContainer}>
+              <HvTypography component="span">{labels.pageSizePrev}</HvTypography>
+            </div>
             <Select
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
@@ -118,7 +120,9 @@ const Pagination = ({
                 </Option>
               ))}
             </Select>
-            <HvTypography component="span">{labels.pageSizeEntryName}</HvTypography>
+            <div className={classes.pageSizeTextContainer}>
+              <HvTypography component="span">{labels.pageSizeEntryName}</HvTypography>
+            </div>
           </>
         )}
       </div>
@@ -196,6 +200,10 @@ Pagination.propTypes = {
      * Styles applied to the page size selector dropdown element.
      */
     pageSizeOptionsSelect: PropTypes.string,
+    /**
+     * Styles applied to the element that holds the labels for the page size selector
+     */
+    pageSizeTextContainer: PropTypes.string,
     /**
      * Styles applied to the page navigation container.
      */
