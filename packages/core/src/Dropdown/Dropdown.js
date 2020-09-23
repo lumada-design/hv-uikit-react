@@ -67,10 +67,6 @@ class HvDropdown extends React.Component {
   handleToggle(event) {
     const { disabled } = this.props;
     const { isOpen } = this.state;
-    if (event && !isKeypress(event, KeyboardCodes.Tab)) {
-      event.stopPropagation();
-      event.preventDefault();
-    }
     // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
     if (
       disabled ||
@@ -83,7 +79,6 @@ class HvDropdown extends React.Component {
       return;
 
     const anchor = event ? event.currentTarget.parentElement : null;
-
     this.setState({
       isOpen: !isOpen,
       anchorEl: anchor
@@ -225,7 +220,7 @@ class HvDropdown extends React.Component {
         aria-labelledby={labels.title ? setId(id, "label") : undefined}
         placement={placement}
         popperProps={popperProps}
-        headerId={id}
+        headerRef={this.ref}
       />
     );
   }
