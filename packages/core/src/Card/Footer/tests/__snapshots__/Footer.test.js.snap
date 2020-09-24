@@ -1766,7 +1766,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                           disabled={false}
                           focusVisibleClassName="HvButton-focusVisible"
                           id="id-menu-icon-button"
-                          tabIndex={-1}
                           variant="text"
                         >
                           <ForwardRef(Button)
