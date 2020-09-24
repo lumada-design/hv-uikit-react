@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import DropRight from "@hv/uikit-react-icons/dist/DropRightXS";
 import { parseList, parseState, wrapperTooltip } from "./utils";
 import { HvCheckBox, HvRadio } from "../Selectors";
@@ -456,8 +457,13 @@ List.propTypes = {
   /**
    * If ´true´ and none element selected,
    * single select has default (first) label selected.
+   *
+   * @deprecated
    */
-  selectDefault: PropTypes.bool,
+  selectDefault: deprecatedPropType(
+    PropTypes.bool,
+    "instead pass the default as a preselected value"
+  ),
   /**
    * If ´true´, selection can be toggled when single selection.
    */

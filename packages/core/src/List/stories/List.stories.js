@@ -1,8 +1,6 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-
 import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
-
 import { HvList, HvTypography } from "../..";
 
 const styles = theme => ({
@@ -85,12 +83,11 @@ export const WithNavigationIcons = () => (
 export const SingleSelection = () => (
   <HvList
     id="list"
-    selectDefault
     hasTooltips
     condensed
     aria-label="Single Selection List Title"
     values={[
-      { label: "Share" },
+      { label: "Share", selected: true },
       { label: "Edit" },
       { label: "Remove" },
       { label: "Delete" },
@@ -117,7 +114,6 @@ export const SingleSelectionWithIcon = () => {
     <HvList
       id="list"
       style={{ marginLeft: -10 }}
-      selectDefault
       aria-label="Single Selection List with Left Icons Title"
       values={data}
     />
@@ -127,14 +123,13 @@ export const SingleSelectionWithIcon = () => {
 export const SingleSelectionWithSelectors = () => (
   <HvList
     id="list"
-    selectDefault
     useSelector
     condensed
     hasTooltips
     aria-label="Single Selection List with radio"
     values={[
       { label: "98001, Store Manager" },
-      { label: "98002, Store Manager" },
+      { label: "98002, Store Manager", selected: true },
       { label: "98003, Store Manager of district" },
       { label: "98004, Store Manager", disabled: true },
       { label: "98005, Store Manager" }
