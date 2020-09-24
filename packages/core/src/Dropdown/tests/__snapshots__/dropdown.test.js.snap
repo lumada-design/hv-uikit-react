@@ -419,15 +419,12 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-1-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-1-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -773,7 +770,6 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                         >
                                                           <div
                                                             className="HvSearchBox-root HvFormElement-root"
-                                                            id="hv-dropdown-1-values-search"
                                                           >
                                                             <WithStyles(HvLabel)
                                                               label=""
@@ -2773,15 +2769,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-1-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-1-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -2927,15 +2920,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-3-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-3-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -3081,15 +3071,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-5-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-5-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -3235,15 +3222,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-7-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-7-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -3501,15 +3485,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="test-dropdown-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="test-dropdown-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -4094,7 +4075,6 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                         >
                                                           <div
                                                             className="HvSearchBox-root HvFormElement-root"
-                                                            id="test-dropdown-values-search"
                                                           >
                                                             <WithStyles(HvLabel)
                                                               label=""
@@ -9228,15 +9208,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-1-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-1-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -9382,15 +9359,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-3-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-3-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -9536,15 +9510,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-5-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-5-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
@@ -9690,15 +9661,12 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                           >
                                             <div
                                               class="HvSearchBox-root HvFormElement-root"
-                                              id="hv-dropdown-7-values-search"
                                             >
                                               <label
                                                 class="HvLabel-root HvTypography-root HvTypography-highlightText"
                                                 for=""
                                                 id="hv-dropdown-7-values-search-label"
-                                              >
-                                                
-                                              </label>
+                                              />
                                               <div
                                                 class="HvBaseInput-root"
                                               >
