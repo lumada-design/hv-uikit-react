@@ -256,6 +256,7 @@ class AssetInventory extends React.Component {
     const {
       id,
       paginationServerSide,
+      paginationProps,
       pages,
       pageSizeOptions,
       classes,
@@ -291,7 +292,7 @@ class AssetInventory extends React.Component {
         pageSizeOptions={pageSizeOptions}
         onPageChange={onPageChangeInternal}
         onPageSizeChange={onPageSizeChangeInternal}
-        labels={{ pageSizeEntryName: "assets" }}
+        {...paginationProps}
       />
     );
   };
@@ -673,7 +674,12 @@ AssetInventory.propTypes = {
     PropTypes.shape({
       id: PropTypes.string
     })
-  )
+  ),
+
+  /**
+   *  Extra properties passed to the pagination.
+   */
+  paginationProps: PropTypes.instanceOf(Object)
 };
 
 AssetInventory.defaultProps = {
@@ -704,7 +710,8 @@ AssetInventory.defaultProps = {
   disablePortal: false,
   searchProps: undefined,
   sortProps: undefined,
-  multibuttonProps: []
+  multibuttonProps: [],
+  paginationProps: undefined
 };
 
 export default withStyles(styles, { name: "HvAssetInventory" })(
