@@ -147,6 +147,7 @@ class List extends React.Component {
         id={itemId}
         role={selectable ? "option" : "menuitem"}
         disabled={item.disabled || undefined}
+        className={classes.item}
         classes={{ selected: useSelector || multiSelect ? classes.itemSelector : "" }}
         selected={multiSelect || selected ? selected : undefined}
         onClick={evt => this.handleSelect(evt, item)}
@@ -313,6 +314,10 @@ List.propTypes = {
      * Styles applied to the icon of the selector.
      */
     icon: PropTypes.string,
+    /**
+     * Styles applied to the list item.
+     */
+    item: PropTypes.string,
     /**
      * Styles applied to the list item when it has a selector.
      */

@@ -67,11 +67,6 @@ export const Main = () => {
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    },
     kpis: {
       display: "flex"
     },
@@ -127,7 +122,7 @@ export const Main = () => {
 
             <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
               <HvTypography variant="highlightText">Related assets</HvTypography>
-              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+              <HvTypography noWrap>{data.relatedAssets}</HvTypography>
             </HvGrid>
           </HvGrid>
         </HvCardContent>
@@ -326,11 +321,6 @@ export const Configurations = () => {
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    },
     kpis: {
       display: "flex"
     },
@@ -386,7 +376,7 @@ export const Configurations = () => {
 
             <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
               <HvTypography variant="highlightText">Related assets</HvTypography>
-              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+              <HvTypography noWrap>{data.relatedAssets}</HvTypography>
             </HvGrid>
           </HvGrid>
         </HvCardContent>
@@ -607,11 +597,6 @@ export const ThreeViews = () => {
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    },
     kpis: {
       display: "flex"
     },
@@ -667,7 +652,7 @@ export const ThreeViews = () => {
 
             <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
               <HvTypography variant="highlightText">Related assets</HvTypography>
-              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+              <HvTypography noWrap>{data.relatedAssets}</HvTypography>
             </HvGrid>
           </HvGrid>
         </HvCardContent>
@@ -894,11 +879,6 @@ export const ServerSidePagination = () => {
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    },
     kpis: {
       display: "flex"
     },
@@ -954,7 +934,7 @@ export const ServerSidePagination = () => {
 
             <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
               <HvTypography variant="highlightText">Related assets</HvTypography>
-              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+              <HvTypography noWrap>{data.relatedAssets}</HvTypography>
             </HvGrid>
           </HvGrid>
         </HvCardContent>
@@ -1143,11 +1123,6 @@ export const Accessibility = () => {
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    },
     kpis: {
       display: "flex"
     },
@@ -1203,7 +1178,7 @@ export const Accessibility = () => {
 
             <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
               <HvTypography variant="highlightText">Related assets</HvTypography>
-              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+              <HvTypography noWrap>{data.relatedAssets}</HvTypography>
             </HvGrid>
           </HvGrid>
         </HvCardContent>

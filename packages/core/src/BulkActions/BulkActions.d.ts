@@ -37,11 +37,15 @@ export interface HvBulkActionsProps
    *  Whether actions should be all disabled
    */
   actionsDisabled?: boolean;
+  /**
+   * Whether the bulk actions should use the semantic styles when there are selected elements.
+   */
+  semantic?: boolean;
 }
 
 export type HvBulkActionsClassKey =
   | "root"
-  | "editMode"
+  | "semantic"
   | "actions"
   | "selectAllContainer"
   | "selectAll"

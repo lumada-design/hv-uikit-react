@@ -17,7 +17,7 @@ const Page = ({ Component, onClick, elem, classes }) => (
     data={elem}
     classes={{ a: classes.a }}
   >
-    <HvTypography variant="link" className={classes.link}>
+    <HvTypography noWrap variant="link" className={classes.link}>
       {startCase(elem.label)}
     </HvTypography>
   </HvLink>

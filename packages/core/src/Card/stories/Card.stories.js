@@ -78,11 +78,6 @@ export const AllComponents = () => {
     bottomItem: {
       padding: 0
     },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    },
     subtitleLeft: {
       borderRight: `1px solid ${theme.palette.acce1}`,
       paddingRight: theme.spacing("xs"),
@@ -122,23 +117,23 @@ export const AllComponents = () => {
         <Grid container>
           <Grid item xs={5} className={classes.item}>
             <HvTypography variant="highlightText">{cells[0].title}</HvTypography>
-            <HvTypography className={classes.text}>{cells[0].content}</HvTypography>
+            <HvTypography noWrap>{cells[0].content}</HvTypography>
           </Grid>
           <Grid item xs={7} className={classes.item}>
             <HvTypography variant="highlightText">{cells[1].title}</HvTypography>
-            <HvTypography className={classes.text}>{cells[1].content}</HvTypography>
+            <HvTypography noWrap>{cells[1].content}</HvTypography>
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xs={5} className={classes.bottomItem}>
             <HvTypography variant="highlightText">{cells[2].title}</HvTypography>
-            <HvTypography variant="sTitle" className={classes.text}>
+            <HvTypography variant="sTitle" noWrap>
               {cells[2].content}
             </HvTypography>
           </Grid>
           <Grid item xs={7} className={classes.bottomItem}>
             <HvTypography variant="highlightText">{cells[3].title}</HvTypography>
-            <HvTypography variant="sTitle" className={classes.text}>
+            <HvTypography variant="sTitle" noWrap>
               {cells[3].content}
             </HvTypography>
           </Grid>
@@ -193,11 +188,6 @@ export const NoActions = () => {
     },
     bottomItem: {
       padding: 0
-    },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
     }
   }));
 
@@ -208,27 +198,27 @@ export const NoActions = () => {
       <Grid container>
         <Grid item xs={5} className={classes.item}>
           <HvTypography variant="highlightText">{cells[0].title}</HvTypography>
-          <HvTypography className={classes.text}>{cells[0].content}</HvTypography>
+          <HvTypography noWrap>{cells[0].content}</HvTypography>
         </Grid>
         <Grid item xs={7} className={classes.item}>
           <HvTypography variant="highlightText">{cells[1].title}</HvTypography>
-          <HvTypography className={classes.text}>{cells[1].content}</HvTypography>
+          <HvTypography noWrap>{cells[1].content}</HvTypography>
         </Grid>
       </Grid>
       <Grid container>
         <Grid item xs={5} className={classes.item}>
           <HvTypography variant="highlightText">{cells[2].title}</HvTypography>
-          <HvTypography className={classes.text}>{cells[2].content}</HvTypography>
+          <HvTypography noWrap>{cells[2].content}</HvTypography>
         </Grid>
         <Grid item xs={7} className={classes.bottomItem}>
           <HvTypography variant="highlightText">{cells[3].title}</HvTypography>
-          <HvTypography className={classes.text}>{cells[3].content}</HvTypography>
+          <HvTypography noWrap>{cells[3].content}</HvTypography>
         </Grid>
       </Grid>
       <Grid container>
         <Grid item xs={12} className={classes.bottomItem}>
           <HvTypography variant="highlightText">{cells[4].title}</HvTypography>
-          <HvTypography className={classes.text}>{cells[4].content}</HvTypography>
+          <HvTypography noWrap>{cells[4].content}</HvTypography>
         </Grid>
       </Grid>
     </>
@@ -275,11 +265,6 @@ export const KPICard = () => {
     },
     bottomItem: {
       padding: 0
-    },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
     },
     card: {
       margin: theme.spacing("sm"),
@@ -411,11 +396,6 @@ WithComposition.story = {
 export const Selectable = () => {
   const [checked, setChecked] = useState(false);
   const styles = {
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    },
     button: {
       cursor: "pointer",
       textAlign: "inherit",
@@ -484,23 +464,15 @@ Selectable.story = {
 export const SelectableNoFooter = () => {
   const [selected, setSelected] = useState(false);
 
-  const styles = {
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
-  };
-
   const SingleContent = () => (
     <HvCardContent>
       <div>
         <HvTypography variant="highlightText">ID</HvTypography>
-        <HvTypography style={styles.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
+        <HvTypography noWrap>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </div>
       <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">Last connected</HvTypography>
-        <HvTypography style={styles.text}>Aug 30, 2017 12:27:53 PM</HvTypography>
+        <HvTypography noWrap>Aug 30, 2017 12:27:53 PM</HvTypography>
       </div>
     </HvCardContent>
   );

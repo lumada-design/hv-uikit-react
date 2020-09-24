@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
 import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons";
 import {
   HvActionContainer,
@@ -34,16 +33,6 @@ export default {
 };
 
 export const Main = () => {
-  const useStyles = makeStyles({
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
-  });
-
-  const classes = useStyles();
-
   const renderer = (value, viewConfiguration) => (
     <HvCard
       id={value.id}
@@ -61,11 +50,11 @@ export const Main = () => {
       />
       <HvCardContent>
         <HvTypography variant="highlightText">ID</HvTypography>
-        <HvTypography className={classes.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
+        <HvTypography noWrap>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </HvCardContent>
       <HvCardContent>
         <HvTypography variant="highlightText">Last connected</HvTypography>
-        <HvTypography className={classes.text}>Jun 30, 2015 12:27:53 PM</HvTypography>
+        <HvTypography noWrap>Jun 30, 2015 12:27:53 PM</HvTypography>
       </HvCardContent>
       <HvActionContainer aria-label="Leaf">
         {viewConfiguration.isSelectable && (

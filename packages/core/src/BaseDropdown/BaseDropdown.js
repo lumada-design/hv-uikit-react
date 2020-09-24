@@ -115,7 +115,8 @@ const HvBaseDropdown = ({
     <div className={classes.selection} id={setId(localId, "selectionPlaceholder")}>
       {placeholder && typeof placeholder === "string" ? (
         <HvTypography
-          className={clsx(classes.truncate, {
+          noWrap
+          className={clsx(classes.placeholder, {
             [classes.selectionDisabled]: localDisabled
           })}
           variant="placeholderText"
@@ -336,7 +337,7 @@ HvBaseDropdown.propTypes = {
     /**
      * Styles applied for truncating the container elements.
      */
-    truncate: PropTypes.string,
+    placeholder: PropTypes.string,
     /**
      * Styles applied when the selection is disabled.
      */

@@ -73,6 +73,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
       Object {
         "box": "HvList-box",
         "icon": "HvList-icon",
+        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
@@ -187,6 +188,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
           role="listbox"
         >
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -200,6 +202,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
             tabIndex={0}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -241,7 +244,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                     >
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -249,7 +252,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       </li>
                       <li
                         aria-selected="false"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -257,7 +260,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       </li>
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -296,7 +299,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       >
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -304,7 +307,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -312,7 +315,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                         </li>
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -330,7 +333,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected={true}
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -350,6 +353,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -363,6 +367,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -404,7 +409,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                     >
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -412,7 +417,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       </li>
                       <li
                         aria-selected="false"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -420,7 +425,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       </li>
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -459,7 +464,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       >
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -467,7 +472,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -475,7 +480,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                         </li>
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -493,7 +498,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected={false}
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -513,6 +518,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -526,6 +532,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
             tabIndex={0}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -567,7 +574,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                     >
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -575,7 +582,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       </li>
                       <li
                         aria-selected="false"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -583,7 +590,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       </li>
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -622,7 +629,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                       >
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -630,7 +637,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -638,7 +645,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                         </li>
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -656,7 +663,7 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected={true}
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -816,6 +823,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
       Object {
         "box": "HvList-box",
         "icon": "HvList-icon",
+        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
@@ -1748,6 +1756,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
           role="listbox"
         >
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -1761,6 +1770,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
             tabIndex={0}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -1802,7 +1812,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                     >
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -1864,7 +1874,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       </li>
                       <li
                         aria-selected="false"
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -1920,7 +1930,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       </li>
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -2013,7 +2023,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       >
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -2075,7 +2085,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -2131,7 +2141,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                         </li>
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -2203,7 +2213,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                   >
                     <li
                       aria-selected={true}
-                      className="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -2679,6 +2689,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -2692,6 +2703,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -2733,7 +2745,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                     >
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -2795,7 +2807,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       </li>
                       <li
                         aria-selected="false"
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -2851,7 +2863,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       </li>
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -2944,7 +2956,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       >
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3006,7 +3018,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3062,7 +3074,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                         </li>
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3134,7 +3146,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                   >
                     <li
                       aria-selected={false}
-                      className="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -3605,6 +3617,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -3618,6 +3631,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
             tabIndex={0}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -3659,7 +3673,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                     >
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -3721,7 +3735,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       </li>
                       <li
                         aria-selected="false"
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -3777,7 +3791,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       </li>
                       <li
                         aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -3870,7 +3884,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                       >
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3932,7 +3946,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -3988,7 +4002,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                         </li>
                         <li
                           aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -4060,7 +4074,7 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
                   >
                     <li
                       aria-selected={true}
-                      className="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -4566,6 +4580,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
       Object {
         "box": "HvList-box",
         "icon": "HvList-icon",
+        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
@@ -4630,6 +4645,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
           role="listbox"
         >
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -4642,6 +4658,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             tabIndex={0}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -4687,14 +4704,14 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         Value 1
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -4737,14 +4754,14 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                           Value 1
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -4780,6 +4797,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -4792,6 +4810,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -4837,14 +4856,14 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         Value 1
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -4887,14 +4906,14 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                           Value 1
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -4910,7 +4929,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -4930,6 +4949,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -4942,6 +4962,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -4987,14 +5008,14 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         Value 1
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -5037,14 +5058,14 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                           Value 1
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -5060,7 +5081,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -5109,6 +5130,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
       Object {
         "box": "HvList-box",
         "icon": "HvList-icon",
+        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
@@ -5175,6 +5197,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
           role="listbox"
         >
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -5187,6 +5210,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             tabIndex={0}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -5225,7 +5249,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                       role="listbox"
                     >
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -5250,14 +5274,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         Value 1
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -5311,7 +5335,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         role="listbox"
                       >
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -5336,14 +5360,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                           Value 1
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -5377,7 +5401,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -5448,6 +5472,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -5460,6 +5485,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -5498,7 +5524,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                       role="listbox"
                     >
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -5523,14 +5549,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         Value 1
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -5584,7 +5610,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         role="listbox"
                       >
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -5609,14 +5635,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                           Value 1
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -5650,7 +5676,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -5670,6 +5696,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "",
@@ -5688,6 +5715,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -5732,7 +5760,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                       role="listbox"
                     >
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -5757,14 +5785,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         Value 1
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
                         Value 2
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -5818,7 +5846,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                         role="listbox"
                       >
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withStartAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -5843,14 +5871,14 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                           Value 1
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
                           Value 2
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -5884,7 +5912,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -5976,6 +6004,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
       Object {
         "box": "HvList-box",
         "icon": "HvList-icon",
+        "item": "HvList-item",
         "itemSelector": "HvList-itemSelector",
         "link": "HvList-link",
         "root": "HvList-root",
@@ -6040,6 +6069,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
           role="listbox"
         >
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -6052,6 +6082,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             tabIndex={0}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -6143,7 +6174,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -6196,7 +6227,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -6331,7 +6362,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -6384,7 +6415,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -6869,6 +6900,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -6881,6 +6913,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -6972,7 +7005,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -7025,7 +7058,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -7160,7 +7193,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -7213,7 +7246,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -7275,7 +7308,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -7698,6 +7731,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             </HvListItem>
           </WithStyles(HvListItem)>
           <WithStyles(HvListItem)
+            className="HvList-item"
             classes={
               Object {
                 "selected": "HvList-itemSelector",
@@ -7710,6 +7744,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             tabIndex={-1}
           >
             <HvListItem
+              className="HvList-item"
               classes={
                 Object {
                   "condensed": "HvListItem-condensed",
@@ -7801,7 +7836,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -7854,7 +7889,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         </label>
                       </li>
                       <li
-                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                        class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -7989,7 +8024,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -8042,7 +8077,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           </label>
                         </li>
                         <li
-                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                          class="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -8104,7 +8139,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                     wrapper={[Function]}
                   >
                     <li
-                      className="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                      className="HvList-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}

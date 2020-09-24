@@ -53,11 +53,8 @@ const styles = theme => ({
     height: `${theme.hv.spacing.md}px `,
     padding: `0 ${theme.hv.spacing.md}px 0 ${theme.hv.spacing.xs}px`
   },
-  truncate: {
-    display: "block",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
+  placeholder: {
+    display: "block"
   },
   selectionDisabled: {
     ...theme.hv.typography.placeholderText

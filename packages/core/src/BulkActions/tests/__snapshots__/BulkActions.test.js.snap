@@ -62,11 +62,11 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
     classes={
       Object {
         "actions": "HvBulkActions-actions",
-        "editMode": "HvBulkActions-editMode",
         "root": "HvBulkActions-root",
         "selectAll": "HvBulkActions-selectAll",
         "selectAllContainer": "HvBulkActions-selectAllContainer",
         "selectAllPages": "HvBulkActions-selectAllPages",
+        "semantic": "HvBulkActions-semantic",
       }
     }
     id="bulkActions"
@@ -1256,10 +1256,10 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                           "panel": "HvBaseDropdown-panel",
+                          "placeholder": "HvBaseDropdown-placeholder",
                           "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                           "selection": "HvBaseDropdown-selection",
                           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                          "truncate": "HvBaseDropdown-truncate",
                         }
                       }
                       component={
@@ -1299,10 +1299,10 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                             "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                             "panel": "HvBaseDropdown-panel",
+                            "placeholder": "HvBaseDropdown-placeholder",
                             "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                             "selection": "HvBaseDropdown-selection",
                             "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                            "truncate": "HvBaseDropdown-truncate",
                           }
                         }
                         component={
@@ -1639,11 +1639,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
     classes={
       Object {
         "actions": "HvBulkActions-actions",
-        "editMode": "HvBulkActions-editMode",
         "root": "HvBulkActions-root",
         "selectAll": "HvBulkActions-selectAll",
         "selectAllContainer": "HvBulkActions-selectAllContainer",
         "selectAllPages": "HvBulkActions-selectAllPages",
+        "semantic": "HvBulkActions-semantic",
       }
     }
     maxVisibleActions={3}
@@ -3025,10 +3025,10 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                           "panel": "HvBaseDropdown-panel",
+                          "placeholder": "HvBaseDropdown-placeholder",
                           "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                           "selection": "HvBaseDropdown-selection",
                           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                          "truncate": "HvBaseDropdown-truncate",
                         }
                       }
                       component={
@@ -3068,10 +3068,10 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                             "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                             "panel": "HvBaseDropdown-panel",
+                            "placeholder": "HvBaseDropdown-placeholder",
                             "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                             "selection": "HvBaseDropdown-selection",
                             "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                            "truncate": "HvBaseDropdown-truncate",
                           }
                         }
                         component={
@@ -3350,11 +3350,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
     classes={
       Object {
         "actions": "HvBulkActions-actions",
-        "editMode": "HvBulkActions-editMode",
         "root": "HvBulkActions-root",
         "selectAll": "HvBulkActions-selectAll",
         "selectAllContainer": "HvBulkActions-selectAllContainer",
         "selectAllPages": "HvBulkActions-selectAllPages",
+        "semantic": "HvBulkActions-semantic",
       }
     }
     numSelected={2}
@@ -3362,7 +3362,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
     selectAllLabel="MockLabel"
   >
     <div
-      className="HvBulkActions-root HvBulkActions-editMode"
+      className="HvBulkActions-root HvBulkActions-semantic"
     >
       <div
         className="HvBulkActions-selectAllContainer"
@@ -3975,11 +3975,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
     classes={
       Object {
         "actions": "HvBulkActions-actions",
-        "editMode": "HvBulkActions-editMode",
         "root": "HvBulkActions-root",
         "selectAll": "HvBulkActions-selectAll",
         "selectAllContainer": "HvBulkActions-selectAllContainer",
         "selectAllPages": "HvBulkActions-selectAllPages",
+        "semantic": "HvBulkActions-semantic",
       }
     }
     labels={
@@ -3994,7 +3994,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
     onSelectAllPages={[MockFunction]}
   >
     <div
-      className="HvBulkActions-root HvBulkActions-editMode"
+      className="HvBulkActions-root HvBulkActions-semantic"
       labels={
         Object {
           "selectAll": "All mock",

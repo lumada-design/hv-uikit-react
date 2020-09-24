@@ -76,8 +76,9 @@ const HvDropdown = ({
     const hasSelection = getSelected(internalValues).length > 0;
     return labels.select || !multiSelect ? (
       <HvTypography
+        noWrap
         variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
-        className={clsx(classes.truncate, {
+        className={clsx(classes.placeholder, {
           [classes.selectionDisabled]: disabled
         })}
       >
@@ -85,7 +86,8 @@ const HvDropdown = ({
       </HvTypography>
     ) : (
       <HvTypography
-        className={clsx(classes.truncate, {
+        noWrap
+        className={clsx(classes.placeholder, {
           [classes.selectionDisabled]: disabled
         })}
         variant="normalText"
@@ -174,7 +176,7 @@ HvDropdown.propTypes = {
     /**
      * Styles applied for truncating the list elements.
      */
-    truncate: PropTypes.string,
+    placeholder: PropTypes.string,
     /**
      * Styles applied when the selection is disabled.
      */

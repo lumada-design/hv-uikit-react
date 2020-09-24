@@ -228,10 +228,10 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                       "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                       "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                       "panel": "HvBaseDropdown-panel",
+                      "placeholder": "HvBaseDropdown-placeholder",
                       "root": "HvBaseDropdown-root HvSelect-root-8",
                       "selection": "HvBaseDropdown-selection",
                       "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                      "truncate": "HvBaseDropdown-truncate",
                     }
                   }
                   disabled={false}
@@ -261,10 +261,10 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                         "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                         "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                         "panel": "HvBaseDropdown-panel",
+                        "placeholder": "HvBaseDropdown-placeholder",
                         "root": "HvBaseDropdown-root HvSelect-root-8",
                         "selection": "HvBaseDropdown-selection",
                         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                        "truncate": "HvBaseDropdown-truncate",
                       }
                     }
                     disabled={false}

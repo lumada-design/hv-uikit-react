@@ -16,11 +16,8 @@ const styles = theme => ({
   label: {
     paddingBottom: "8px"
   },
-  truncate: {
-    display: "block",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
+  placeholder: {
+    display: "block"
   },
   selectionDisabled: {
     lineHeight: `${theme.hv.spacing.md}px`
