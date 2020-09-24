@@ -22,9 +22,11 @@ export const Main = () => (
   />
 );
 
-Main.parameters = {
-  v3: true,
-  eyes: { include: false }
+Main.story = {
+  parameters: {
+    v3: true,
+    eyes: { include: false }
+  }
 };
 
 export const Positioning = () => {
@@ -42,12 +44,14 @@ export const Positioning = () => {
   );
 };
 
-Positioning.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "DropDownMenu with configurable positioning in the dropdown" }
-  },
-  eyes: { include: false }
+Positioning.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "DropDownMenu with configurable positioning in the dropdown"
+    },
+    eyes: { include: false }
+  }
 };
 
 export const WithIconsAndActions = () => {
@@ -70,22 +74,22 @@ export const WithIconsAndActions = () => {
   );
 };
 
-WithIconsAndActions.parameters = {
-  v3: true,
-  docs: {
-    description: {
-      story:
+WithIconsAndActions.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription:
         "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected"
-    }
-  },
-  pa11y: {
-    actions: [
-      // open menu before testing
-      "click element #dropdownmenu-with-icons-and-actions-icon-button",
-      "wait for element #dropdownmenu-with-icons-and-actions-list to be visible"
-    ]
-  },
-  eyes: { include: false }
+    },
+    pa11y: {
+      actions: [
+        // open menu before testing
+        "click element #dropdownmenu-with-icons-and-actions-icon-button",
+        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible"
+      ]
+    },
+    eyes: { include: false }
+  }
 };
 
 export const Disabled = () => (
@@ -99,8 +103,10 @@ export const Disabled = () => (
   />
 );
 
-Disabled.parameters = {
-  v3: true
+Disabled.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const DisabledItems = () => (
@@ -111,9 +117,11 @@ export const DisabledItems = () => (
   />
 );
 
-DisabledItems.parameters = {
-  v3: true,
-  eyes: { include: false }
+DisabledItems.story = {
+  parameters: {
+    v3: true,
+    eyes: { include: false }
+  }
 };
 
 export const Controlled = () => {
@@ -149,10 +157,12 @@ export const Controlled = () => {
   return <ControlledDropdownMenu />;
 };
 
-Controlled.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "DropDownMenu toggle opening controlled by an external button" }
-  },
-  eyes: { include: false }
+Controlled.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "DropDownMenu toggle opening controlled by an external button"
+    },
+    eyes: { include: false }
+  }
 };

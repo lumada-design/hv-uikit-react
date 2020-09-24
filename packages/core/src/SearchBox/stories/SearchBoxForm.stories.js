@@ -64,7 +64,8 @@ export const Main = () => {
     </HvFormElement>
   );
 };
-Main.decorators = [storyFn => <div style={{ height: 40 }}>{storyFn()}</div>];
+
+Main.story = { decorators: [storyFn => <div style={{ height: 40 }}>{storyFn()}</div>] };
 
 export const DynamicSearch = () => {
   const suggestions = countryList;
@@ -165,7 +166,8 @@ export const DynamicSearch = () => {
     </HvFormElement>
   );
 };
-DynamicSearch.decorators = [storyFn => <div style={{ height: 300 }}>{storyFn()}</div>];
+
+DynamicSearch.story = { decorators: [storyFn => <div style={{ height: 300 }}>{storyFn()}</div>] };
 
 export const ScopedSearch = () => {
   const suggestions = countryList;
@@ -317,4 +319,5 @@ export const ScopedSearch = () => {
     </HvFormElement>
   );
 };
-ScopedSearch.decorators = [storyFn => <div style={{ height: 300 }}>{storyFn()}</div>];
+
+ScopedSearch.story = { decorators: [storyFn => <div style={{ height: 300 }}>{storyFn()}</div>] };

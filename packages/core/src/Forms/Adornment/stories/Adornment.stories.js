@@ -89,9 +89,11 @@ export const DynamicAdornments = () => {
   );
 };
 
-DynamicAdornments.parameters = {
-  docs: {
-    description: { story: "Adornment showcasing the ability to react to the form element status." }
-  },
-  v3: true
+DynamicAdornments.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Adornment showcasing the ability to react to the form element status."
+    },
+    v3: true
+  }
 };

@@ -30,22 +30,24 @@ module.exports = {
         configureJSX: true
       }
     },
-    __dirname + "/themes/register"
+    "./.storybook/themes/register"
   ],
 
   webpackFinal: async config => {
     const rules = config.module.rules;
 
-    const jsRule = rules.find(rule => rule.test.test(".js"));
-
+    // Fix for https://github.com/storybooks/storybook/issues/3346
+    // 6.0 already have https://github.com/storybookjs/storybook/pull/8822
+    const jsRule = config.module.rules.find(rule => rule.test.test(".js"));
     jsRule.include = [__dirname, docFolder, corePackageSrc, labPackageSrc, iconsPackageBin];
     jsRule.exclude = excludePaths;
     const babelLoader = jsRule.use.find(({ loader }) => loader === "babel-loader");
-    const overrideJsRule = babelLoader.options.overrides.find(rule => rule.test.test(".js"));
-    const overrideJsRulePlugins = overrideJsRule.plugins;
+    babelLoader.options.sourceType = "unambiguous";
 
     // add docgen handlers
-    let docgenPlugin = overrideJsRulePlugins.find(
+    const babelLoaderPlugins = babelLoader.options.plugins;
+
+    let docgenPlugin = babelLoaderPlugins.find(
       plugin =>
         plugin.includes("babel-plugin-react-docgen") ||
         (Array.isArray(plugin) &&
@@ -57,8 +59,8 @@ module.exports = {
       const docgenPluginName = docgenPlugin;
       docgenPlugin = [docgenPluginName, { DOC_GEN_COLLECTION_NAME: "STORYBOOK_REACT_CLASSES" }];
 
-      overrideJsRulePlugins[
-        overrideJsRulePlugins.findIndex(plugin => plugin.includes("babel-plugin-react-docgen"))
+      babelLoaderPlugins[
+        babelLoaderPlugins.findIndex(plugin => plugin.includes("babel-plugin-react-docgen"))
       ] = docgenPlugin;
     }
 

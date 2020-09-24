@@ -13,8 +13,8 @@ export default ({ context, children }) => {
 
   const docsContext = { ...context };
   docsContext.parameters = { ...context.parameters };
-  docsContext.parameters.docs = {
-    ...context.parameters.docs,
+  docsContext.parameters.options = {
+    ...context.parameters.options,
     theme: theme
   };
 

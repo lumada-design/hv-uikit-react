@@ -140,9 +140,11 @@ export const SingleSelectionWithSelectors = () => (
   />
 );
 
-SingleSelectionWithSelectors.parameters = {
-  docs: {
-    description: { story: "Selectable List that uses single-selection radio button selectors." }
+SingleSelectionWithSelectors.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Selectable List that uses single-selection radio button selectors."
+    }
   }
 };
 
@@ -164,9 +166,11 @@ export const MultiSelectionWithSelectors = () => (
   />
 );
 
-MultiSelectionWithSelectors.parameters = {
-  docs: {
-    description: { story: "Selectable List that uses multiple-selection checkboxes selectors." }
+MultiSelectionWithSelectors.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Selectable List that uses multiple-selection checkboxes selectors."
+    }
   }
 };
 
@@ -188,10 +192,10 @@ export const MultiSelectionWithSelectAll = () => (
   />
 );
 
-MultiSelectionWithSelectAll.parameters = {
-  docs: {
-    description: {
-      story: "List that has multi selection with selectors and a select all checkbox."
+MultiSelectionWithSelectAll.story = {
+  parameters: {
+    docs: {
+      storyDescription: "List that has multi selection with selectors and a select all checkbox."
     }
   }
 };

@@ -54,9 +54,11 @@ export const AverageService = () => (
   </HvCard>
 );
 
-AverageService.parameters = {
-  docs: {
-    description: { story: "A kpi showing the average service time." }
+AverageService.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A kpi showing the average service time."
+    }
   }
 };
 
@@ -131,13 +133,15 @@ export const IOPS = () => {
   );
 };
 
-IOPS.parameters = {
-  docs: {
-    description: { story: "A Kpi sample showcasing the total IOPS." }
-  },
-  eyes: {
-    // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]"
+IOPS.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A Kpi sample showcasing the total IOPS."
+    },
+    eyes: {
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
+    }
   }
 };
 
@@ -227,13 +231,15 @@ export const Selectable = () => {
   );
 };
 
-Selectable.parameters = {
-  docs: {
-    description: { story: "A selectable kpi with the total numbers of event." }
-  },
-  eyes: {
-    // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]"
+Selectable.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A selectable kpi with the total numbers of event."
+    },
+    eyes: {
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
+    }
   }
 };
 
@@ -309,12 +315,14 @@ export const SelectableSemantic = () => {
   );
 };
 
-SelectableSemantic.parameters = {
-  docs: {
-    description: { story: "A selectable kpi with the total numbers of event." }
-  },
-  eyes: {
-    // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]"
+SelectableSemantic.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A selectable kpi with the total numbers of event."
+    },
+    eyes: {
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
+    }
   }
 };

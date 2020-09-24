@@ -35,9 +35,11 @@ export const Successful = () => (
   <HvLogin login={callSimulation} recovery={callSimulation} id="test" allowRecover />
 );
 
-Successful.parameters = {
-  docs: {
-    description: { story: "Login sample with a successful result on login attempt" }
+Successful.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Login sample with a successful result on login attempt"
+    }
   }
 };
 
@@ -51,9 +53,11 @@ export const Unsuccessful = () => (
   />
 );
 
-Unsuccessful.parameters = {
-  docs: {
-    description: { story: "Login sample with an error result on login attempt" }
+Unsuccessful.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Login sample with an error result on login attempt"
+    }
   }
 };
 
@@ -66,9 +70,11 @@ export const NoRememberCredentials = () => (
   />
 );
 
-NoRememberCredentials.parameters = {
-  docs: {
-    description: { story: 'Without "Forgot Your Credentials" or "Remember Me"' }
+NoRememberCredentials.story = {
+  parameters: {
+    docs: {
+      storyDescription: 'Without "Forgot Your Credentials" or "Remember Me"'
+    }
   }
 };
 
@@ -89,9 +95,11 @@ export const CustomLabels = () => (
   />
 );
 
-CustomLabels.parameters = {
-  docs: {
-    description: { story: "Login overriding some default labels" }
+CustomLabels.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Login overriding some default labels"
+    }
   }
 };
 

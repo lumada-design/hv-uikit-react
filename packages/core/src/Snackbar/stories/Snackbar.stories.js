@@ -71,9 +71,11 @@ export const SnackbarController = () => {
   );
 };
 
-SnackbarController.parameters = {
-  docs: {
-    description: { story: "Different Snackbar variants with controller" }
+SnackbarController.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Different Snackbar variants with controller"
+    }
   }
 };
 
@@ -90,9 +92,11 @@ export const CustomIcon = () => (
   </div>
 );
 
-CustomIcon.parameters = {
-  docs: {
-    description: { story: "Snackbar with custom icon" }
+CustomIcon.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Snackbar with custom icon"
+    }
   }
 };
 
@@ -111,10 +115,11 @@ export const CustomAction = () => (
   </div>
 );
 
-CustomAction.parameters = {
-  docs: {
-    description: {
-      story: "Snackbar can receive a component or object action that will render a semantic button"
+CustomAction.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Snackbar can receive a component or object action that will render a semantic button"
     }
   }
 };

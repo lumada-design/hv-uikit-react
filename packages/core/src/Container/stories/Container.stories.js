@@ -70,9 +70,11 @@ export const SmMaxWidth = () => {
   return <Container />;
 };
 
-SmMaxWidth.parameters = {
-  docs: {
-    description: { story: "The Container with its size set to (640)." }
+SmMaxWidth.story = {
+  parameters: {
+    docs: {
+      storyDescription: "The Container with its size set to (640)."
+    }
   }
 };
 
@@ -104,8 +106,10 @@ export const FullWidth = () => {
   return <Container />;
 };
 
-FullWidth.parameters = {
-  docs: {
-    description: { story: "The Container with no max size." }
+FullWidth.story = {
+  parameters: {
+    docs: {
+      storyDescription: "The Container with no max size."
+    }
   }
 };
