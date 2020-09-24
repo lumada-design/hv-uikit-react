@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropUpXS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropDownXS";
 import { setId, isKeypress, KeyboardCodes } from "../utils";
@@ -402,8 +403,13 @@ HvDropdown.propTypes = {
   /**
    * If ´true´ and none element selected,
    * single select has default (first) label selected.
+   *
+   * @deprecated
    */
-  selectDefault: PropTypes.bool,
+  selectDefault: deprecatedPropType(
+    PropTypes.bool,
+    "instead pass the default as a preselected value"
+  ),
   /**
    * If ´true´ the dropdown will show tooltips when user mouseenter text in list
    */

@@ -131,10 +131,9 @@ SingleSelectionWithSearch.story = {
   }
 };
 
-export const SingleSelectionNoDefault = () => (
+export const SingleSelectionNoSelection = () => (
   <HvDropdown
     id="dropdown8"
-    selectDefault={false}
     hasTooltips
     values={[
       { label: "value 1" },
@@ -146,7 +145,7 @@ export const SingleSelectionNoDefault = () => (
   />
 );
 
-SingleSelectionNoDefault.story = {
+SingleSelectionNoSelection.story = {
   parameters: {
     pa11y: {
       ignore: ["region"]
