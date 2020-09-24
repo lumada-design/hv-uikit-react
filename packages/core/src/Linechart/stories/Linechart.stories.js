@@ -65,7 +65,7 @@ export const CustomLinechartGrouped = () => {
     wrapper: {
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center"
+      alignItems: "flex-end"
     }
   });
 
@@ -106,14 +106,14 @@ export const CustomLinechartGrouped = () => {
 
     titlePadding: { marginTop: 10 },
     selectorPadding: {
-      marginRight: 10
+      marginRight: 20
     },
     dropdownPlacement: {
-      marginTop: 24,
       marginLeft: 10
     },
     controllerGroup: {
-      display: "flex"
+      display: "flex",
+      alignItems: "flex-end"
     }
   }));
 
@@ -132,10 +132,12 @@ export const CustomLinechartGrouped = () => {
             classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             labels={{ title: "Country" }}
             values={countriesObject}
+            placement="left"
           />
           <HvDropdown
             id="dropdown2"
             labels={{ title: "Time Period" }}
+            placement="left"
             classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             values={[
               { label: "Last 0.5h" },
@@ -160,7 +162,7 @@ export const CustomLinechartGrouped = () => {
 CustomLinechartGrouped.story = {
   parameters: {
     docs: {
-      storyDescription: "Representation of groups by using multiple lines."
+      storyDescription: "Line chart with title and controls."
     }
   }
 };

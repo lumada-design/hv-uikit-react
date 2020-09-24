@@ -69,7 +69,7 @@ export const CustomStackedVerticalBarchart = () => {
     wrapper: {
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center"
+      alignItems: "flex-end"
     }
   });
 
@@ -103,11 +103,11 @@ export const CustomStackedVerticalBarchart = () => {
     label: { paddingBottom: 6 },
     titlePadding: { marginTop: 10 },
     dropdownPlacement: {
-      marginTop: 24,
       marginLeft: 10
     },
     controllerGroup: {
-      display: "flex"
+      display: "flex",
+      alignItems: "flex-end"
     }
   }));
 
@@ -123,6 +123,7 @@ export const CustomStackedVerticalBarchart = () => {
           <HvDropdown
             id="dropdown2"
             labels={{ title: "Time Period" }}
+            placement="left"
             classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             values={[
               { label: "Last 0.5h" },
@@ -148,7 +149,7 @@ export const CustomStackedVerticalBarchart = () => {
 CustomStackedVerticalBarchart.story = {
   parameters: {
     docs: {
-      storyDescription: "Groups in stack mode."
+      storyDescription: "Bar chart with title and controls."
     }
   }
 };
