@@ -23,7 +23,8 @@ export const Main = () => (
 );
 
 Main.parameters = {
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const Positioning = () => {
@@ -45,7 +46,8 @@ Positioning.parameters = {
   v3: true,
   docs: {
     description: { story: "DropDownMenu with configurable positioning in the dropdown" }
-  }
+  },
+  eyes: { include: false }
 };
 
 export const WithIconsAndActions = () => {
@@ -82,7 +84,8 @@ WithIconsAndActions.parameters = {
       "click element #dropdownmenu-with-icons-and-actions-icon-button",
       "wait for element #dropdownmenu-with-icons-and-actions-list to be visible"
     ]
-  }
+  },
+  eyes: { include: false }
 };
 
 export const Disabled = () => (
@@ -109,7 +112,8 @@ export const DisabledItems = () => (
 );
 
 DisabledItems.parameters = {
-  v3: true
+  v3: true,
+  eyes: { include: false }
 };
 
 export const Controlled = () => {
@@ -149,5 +153,6 @@ Controlled.parameters = {
   v3: true,
   docs: {
     description: { story: "DropDownMenu toggle opening controlled by an external button" }
-  }
+  },
+  eyes: { include: false }
 };

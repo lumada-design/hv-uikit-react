@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { withStyles } from "@material-ui/core";
+
 import { HvDropdown } from "../..";
 
 export default {
@@ -8,11 +10,35 @@ export default {
     docs: {
       disable: true,
       page: null
-    }
+    },
+    v3: true
   }
 };
 
-export const Expanded = () => (
+export const SingleSelectedValue = () => (
+  <HvDropdown
+    id="dropdownSelected"
+    expanded
+    onChange={item => console.log(item)}
+    values={[
+      { id: "id-1", label: "value 1" },
+      { id: "id-2", label: "value 2" },
+      { id: "id-3", label: "value 3", selected: true },
+      { id: "id-4", label: "value 4" }
+    ]}
+  />
+);
+
+SingleSelectedValue.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const LongLabel = () => (
   <HvDropdown
     id="dropdown12"
     expanded
@@ -36,7 +62,7 @@ export const Expanded = () => (
   />
 );
 
-Expanded.story = {
+LongLabel.story = {
   parameters: {
     docs: {
       disable: true
@@ -45,20 +71,201 @@ Expanded.story = {
   }
 };
 
-export const SingleSelectedValue = () => (
+// Dropdown.stories.js with property expanded
+
+export const General = () => (
   <HvDropdown
-    id="dropdownSelected"
+    expanded
+    multiSelect
+    showSearch
+    values={[
+      { label: "value 1" },
+      { label: "value 2", selected: true },
+      { label: "value 3" },
+      { label: "value 4" }
+    ]}
+  />
+);
+
+General.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const SingleSelection = () => (
+  <HvDropdown
+    expanded
+    id="dropdown7"
     onChange={item => console.log(item)}
     values={[
       { id: "id-1", label: "value 1" },
       { id: "id-2", label: "value 2" },
-      { id: "id-3", label: "value 3", selected: true },
+      { id: "id-3", label: "value 3" },
       { id: "id-4", label: "value 4" }
     ]}
   />
 );
 
-SingleSelectedValue.story = {
+SingleSelection.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const MultiSelection = () => (
+  <HvDropdown
+    expanded
+    id="dropdown2"
+    multiSelect
+    showSearch
+    labels={{ title: "Dropdown Title" }}
+    values={[
+      { label: "value 1" },
+      { label: "value 2", selected: true },
+      { label: "value 3" },
+      { label: "value 4" }
+    ]}
+  />
+);
+
+MultiSelection.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const MultiSelectionNoSearch = () => (
+  <HvDropdown
+    expanded
+    id="dropdown5"
+    onChange={item => console.log(item)}
+    multiSelect
+    values={[
+      { id: "id-1", label: "value 1" },
+      { id: "id-2", label: "value 1", selected: true },
+      { id: "id-3", label: "value 3" },
+      { id: "id-4", label: "value 4" }
+    ]}
+  />
+);
+
+MultiSelectionNoSearch.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const SingleSelectionWithSearch = () => (
+  <HvDropdown
+    expanded
+    id="dropdown6"
+    showSearch
+    values={[
+      { label: "value 1" },
+      { label: "value 2", selected: true },
+      { label: "value 3" },
+      { label: "value 4" }
+    ]}
+  />
+);
+
+SingleSelectionWithSearch.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const SingleSelectionNoDefault = () => (
+  <HvDropdown
+    expanded
+    id="dropdown8"
+    selectDefault={false}
+    hasTooltips
+    values={[
+      { label: "value 1" },
+      { label: "value 2" },
+      { label: "value 3" },
+      { label: "value 4" },
+      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" }
+    ]}
+  />
+);
+
+SingleSelectionNoDefault.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    v3: true
+  }
+};
+
+export const DifferentSizeAndPlacements = () => {
+  const data = [
+    {
+      label: "value 1",
+      selected: false
+    },
+    {
+      label: "value 2",
+      selected: false
+    }
+  ];
+
+  const styles = () => ({
+    root: {
+      width: "200px"
+    },
+    rootList: {
+      width: "520px"
+    }
+  });
+
+  const StyledDropdown = withStyles(styles)(HvDropdown);
+
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div>
+        <StyledDropdown
+          expanded
+          id="dropdown1"
+          values={data}
+          multiSelect
+          showSearch
+          placement="right"
+        />
+      </div>
+      <div>
+        <StyledDropdown
+          expanded
+          id="dropdown2"
+          values={data}
+          multiSelect
+          showSearch
+          placement="left"
+        />
+      </div>
+    </div>
+  );
+};
+
+DifferentSizeAndPlacements.story = {
   parameters: {
     docs: {
       disable: true

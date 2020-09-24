@@ -32,8 +32,6 @@ user unselect item
     Go To                                ${tests}dropdown--single-selected-value
     Wait Until Element Is Visible        ${dropdown}
     Element Text Should Be               ${dropdownHeader}    Value 3    ignore_case=True
-    Click Element                        ${dropdownHeader}
-    Wait Until Element Is Visible        ${listBox}
     click Element                        ${option3}
     Wait Until Element Is Not Visible    ${listBox}
     Element Text Should Be               ${dropdownHeader}    Select...    ignore_case=True

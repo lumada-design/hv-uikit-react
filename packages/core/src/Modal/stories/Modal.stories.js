@@ -20,7 +20,6 @@ import {
 export default {
   title: "Patterns/Modal",
   parameters: {
-    v3: true,
     componentSubtitle: null,
     usage: "import { HvModal } from '@hv/uikit-react-core/dist'"
   },
@@ -135,7 +134,6 @@ export const TextAndSemantic = () => {
 };
 
 TextAndSemantic.parameters = {
-  v3: true,
   docs: {
     description: {
       story: "The modal allow the definition of variants, that alters the presented icon."
@@ -152,7 +150,6 @@ export const CustomIcon = () => (
 );
 
 CustomIcon.parameters = {
-  v3: true,
   docs: {
     description: {
       story:
@@ -195,7 +192,6 @@ export const Accessibility = () => {
 };
 
 Accessibility.parameters = {
-  v3: true,
   docs: {
     description: {
       story:
@@ -312,7 +308,6 @@ export const CustomContent = () => {
 };
 
 CustomContent.parameters = {
-  v3: true,
   docs: {
     description: { story: "It is possible to insert any component in the modal." }
   }
@@ -358,10 +353,6 @@ export const RemoveSchedule = () => {
       </HvModal>
     </div>
   );
-};
-
-RemoveSchedule.parameters = {
-  v3: true
 };
 
 export const DeleteConfirmation = () => {
@@ -416,10 +407,6 @@ export const DeleteConfirmation = () => {
   );
 };
 
-DeleteConfirmation.parameters = {
-  v3: true
-};
-
 export const NoRename = () => {
   const [open, setOpen] = useState(false);
 
@@ -448,8 +435,4 @@ export const NoRename = () => {
       </HvModal>
     </div>
   );
-};
-
-NoRename.parameters = {
-  v3: true
 };
