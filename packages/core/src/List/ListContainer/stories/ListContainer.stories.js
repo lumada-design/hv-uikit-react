@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-import { withStyles } from "@material-ui/core";
-
-import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
+import { withStyles, makeStyles } from "@material-ui/core";
+import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
 
 import {
   HvListContainer,
@@ -27,20 +26,18 @@ export default {
 };
 
 export const Main = () => (
-  <>
-    <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer>
-        <HvListItem>98001, Store Manager</HvListItem>
-        <HvListItem>98002, Store Manager</HvListItem>
-        <HvListItem>98003, Store Manager</HvListItem>
-        <HvListItem>98004, Store Manager</HvListItem>
-        <HvListItem>98005, Store Manager</HvListItem>
-        <HvListItem>98001, Store Manager</HvListItem>
-        <HvListItem>98002, Store Manager</HvListItem>
-        <HvListItem>98003, Store Manager</HvListItem>
-      </HvListContainer>
-    </HvPanel>
-  </>
+  <HvPanel m="10px" style={{ float: "left" }}>
+    <HvListContainer condensed>
+      <HvListItem>98001, Store Manager</HvListItem>
+      <HvListItem>98002, Store Manager</HvListItem>
+      <HvListItem>98003, Store Manager</HvListItem>
+      <HvListItem>98004, Store Manager</HvListItem>
+      <HvListItem>98005, Store Manager</HvListItem>
+      <HvListItem>98001, Store Manager</HvListItem>
+      <HvListItem>98002, Store Manager</HvListItem>
+      <HvListItem>98003, Store Manager</HvListItem>
+    </HvListContainer>
+  </HvPanel>
 );
 
 export const SingleSelection = () => {
@@ -193,6 +190,7 @@ export const MultiSelectionWithSelectors = () => {
     <HvPanel m="10px" style={{ float: "left" }}>
       <HvListContainer
         condensed
+        selectable
         disableGutters
         multiSelect
         aria-label="Single Selection List with radio"
@@ -239,16 +237,9 @@ export const MultiSelectionWithSelectors = () => {
 };
 
 export const MultiSelectionWithSelectAll = () => {
-  // Style bulk actions
-  const StyledHvBulkActions = withStyles(theme => ({
+  const useStyles = makeStyles(() => ({
     root: {
-      margin: "0 0 2px 0"
-    },
-    editMode: {
-      backgroundColor: theme.palette.atmo3,
-      "& $selectAll": {
-        color: theme.hv.palette.accent.acce1
-      }
+      margin: 0
     },
     selectAllContainer: {
       width: "100%"
@@ -256,7 +247,8 @@ export const MultiSelectionWithSelectAll = () => {
     selectAll: {
       width: "100%"
     }
-  }))(HvBulkActions);
+  }));
+  const classes = useStyles();
 
   const [selectedItems, setSelectedItems] = useState({
     0: false,
@@ -287,7 +279,9 @@ export const MultiSelectionWithSelectAll = () => {
 
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
-      <StyledHvBulkActions
+      <HvBulkActions
+        semantic={false}
+        classes={classes}
         onSelectAll={handleSelectAll}
         numTotal={Object.keys(selectedItems).length}
         numSelected={Object.values(selectedItems).filter(el => el).length}
@@ -328,14 +322,12 @@ export const MultiSelectionWithSelectAll = () => {
   );
 };
 
-export const SingleSelectionWithIcon = () => (
+export const WithIcons = () => (
   <HvPanel m="10px" style={{ float: "left" }}>
     <HvListContainer selectable aria-label="Single Selection List with Left Icons Title">
       <HvListItem startAdornment={<User />}>Advanced server DS120</HvListItem>
       <HvListItem startAdornment={<Calendar />}>Advanced server DS122</HvListItem>
-      <HvListItem startAdornment={<Machine />} selected>
-        Advanced server DS250
-      </HvListItem>
+      <HvListItem startAdornment={<Machine />}>Advanced server DS250</HvListItem>
       <HvListItem startAdornment={<Plane />} disabled>
         Advanced server DS530
       </HvListItem>
@@ -358,7 +350,7 @@ export const WithNavigationIcons = () => (
   </HvPanel>
 );
 
-export const TextOverflow = () => {
+export const WithTextOverflow = () => {
   return (
     <HvPanel width="200px">
       <HvListContainer condensed selectable aria-label="Single Selection List Title">
@@ -378,11 +370,11 @@ export const TextOverflow = () => {
 };
 
 export const WithTitle = () => {
-  // Style link to prevent double-focus ring
-  // (and remove bold style)
+  // Style link to prevent double-focus ring, bold, and underline
   const StyledHvLink = withStyles(theme => ({
     a: {
       ...theme.hv.typography.normalText,
+      textDecoration: "none",
 
       "&:focus": {
         boxShadow: "unset !important"
