@@ -58,7 +58,7 @@ change focus to rows selection when pressed TAB on last iterable column header
     Element Should Be Focused    ${row_1_checkbox}
 
 change focus to pagination when pressed TAB on rows selection
-    set focus and press keys     ${rows_per_page}     TAB
+    set focus and press keys     ${rows_per_page}>div     TAB
     Element Should Be Focused    ${pagination_input}
 
 select and unselect a checkbox when pressed space on table checkbox row
