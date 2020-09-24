@@ -1531,7 +1531,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                 <div
                                   className="MuiBox-root MuiBox-root-9 HvPanel-root"
                                 >
-                                  <WithStyles(List)
+                                  <WithStyles(HvList)
                                     condensed={true}
                                     id="drop-down-menu-10-list"
                                     onClick={[Function]}
@@ -1551,7 +1551,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                       ]
                                     }
                                   >
-                                    <List
+                                    <HvList
                                       classes={
                                         Object {
                                           "box": "HvList-box",
@@ -1565,22 +1565,10 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                         }
                                       }
                                       condensed={true}
-                                      hasTooltips={false}
                                       id="drop-down-menu-10-list"
-                                      labels={
-                                        Object {
-                                          "selectAll": "Select All",
-                                          "selectionConjunction": "/",
-                                        }
-                                      }
-                                      multiSelect={false}
-                                      onChange={[Function]}
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
                                       selectable={false}
-                                      showSelectAll={false}
-                                      singleSelectionToggle={true}
-                                      useSelector={false}
                                       values={
                                         Array [
                                           Object {
@@ -2120,8 +2108,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                           </ul>
                                         </HvListContainer>
                                       </WithStyles(HvListContainer)>
-                                    </List>
-                                  </WithStyles(List)>
+                                    </HvList>
+                                  </WithStyles(HvList)>
                                 </div>
                               </Styled(MuiBox)>
                             </HvPanel>
@@ -3525,7 +3513,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                 <div
                                   className="MuiBox-root MuiBox-root-1 HvPanel-root"
                                 >
-                                  <WithStyles(List)
+                                  <WithStyles(HvList)
                                     condensed={true}
                                     id="drop-down-menu-2-list"
                                     onClick={[Function]}
@@ -3545,7 +3533,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                       ]
                                     }
                                   >
-                                    <List
+                                    <HvList
                                       classes={
                                         Object {
                                           "box": "HvList-box",
@@ -3559,22 +3547,10 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                         }
                                       }
                                       condensed={true}
-                                      hasTooltips={false}
                                       id="drop-down-menu-2-list"
-                                      labels={
-                                        Object {
-                                          "selectAll": "Select All",
-                                          "selectionConjunction": "/",
-                                        }
-                                      }
-                                      multiSelect={false}
-                                      onChange={[Function]}
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
                                       selectable={false}
-                                      showSelectAll={false}
-                                      singleSelectionToggle={true}
-                                      useSelector={false}
                                       values={
                                         Array [
                                           Object {
@@ -4114,8 +4090,8 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                           </ul>
                                         </HvListContainer>
                                       </WithStyles(HvListContainer)>
-                                    </List>
-                                  </WithStyles(List)>
+                                    </HvList>
+                                  </WithStyles(HvList)>
                                 </div>
                               </Styled(MuiBox)>
                             </HvPanel>

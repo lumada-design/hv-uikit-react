@@ -515,7 +515,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                             role="listbox"
                                           >
                                             <li
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                              class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                               id="hv-dropdown-1-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -1701,7 +1701,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                 </WithLabels>
                                               </WithStyles(WithLabels)>
                                             </div>
-                                            <WithStyles(List)
+                                            <WithStyles(HvList)
                                               condensed={true}
                                               hasTooltips={false}
                                               id="hv-dropdown-1-values-list"
@@ -1731,7 +1731,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                 ]
                                               }
                                             >
-                                              <List
+                                              <HvList
                                                 classes={
                                                   Object {
                                                     "box": "HvList-box",
@@ -1755,7 +1755,6 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                 }
                                                 multiSelect={false}
                                                 onChange={[Function]}
-                                                onClick={[Function]}
                                                 selectable={true}
                                                 showSelectAll={false}
                                                 singleSelectionToggle={true}
@@ -1860,7 +1859,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                   role="listbox"
                                                                 >
                                                                   <li
-                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                                                    class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                                                     id="hv-dropdown-1-values-list-item-0"
                                                                     role="option"
                                                                     tabindex="0"
@@ -1914,7 +1913,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                     role="listbox"
                                                                   >
                                                                     <li
-                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                                                      class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                                                       id="hv-dropdown-1-values-list-item-0"
                                                                       role="option"
                                                                       tabindex="0"
@@ -1947,7 +1946,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                 wrapper={[Function]}
                                                               >
                                                                 <li
-                                                                  className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                                                  className="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                                                   id="hv-dropdown-1-values-list-item-0"
                                                                   onBlur={[Function]}
                                                                   onClick={[Function]}
@@ -2023,7 +2022,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                   role="listbox"
                                                                 >
                                                                   <li
-                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                                                    class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                                                     id="hv-dropdown-1-values-list-item-0"
                                                                     role="option"
                                                                     tabindex="0"
@@ -2077,7 +2076,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                     role="listbox"
                                                                   >
                                                                     <li
-                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                                                      class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                                                       id="hv-dropdown-1-values-list-item-0"
                                                                       role="option"
                                                                       tabindex="0"
@@ -2186,7 +2185,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                   role="listbox"
                                                                 >
                                                                   <li
-                                                                    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                                                    class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                                                     id="hv-dropdown-1-values-list-item-0"
                                                                     role="option"
                                                                     tabindex="0"
@@ -2240,7 +2239,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                     role="listbox"
                                                                   >
                                                                     <li
-                                                                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                                                      class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                                                       id="hv-dropdown-1-values-list-item-0"
                                                                       role="option"
                                                                       tabindex="0"
@@ -2296,8 +2295,8 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                     </ul>
                                                   </HvListContainer>
                                                 </WithStyles(HvListContainer)>
-                                              </List>
-                                            </WithStyles(List)>
+                                              </HvList>
+                                            </WithStyles(HvList)>
                                           </div>
                                         </div>
                                       </List>
@@ -2861,7 +2860,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                             role="listbox"
                                           >
                                             <li
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                              class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                               id="hv-dropdown-1-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -3011,7 +3010,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                             role="listbox"
                                           >
                                             <li
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                              class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                               id="hv-dropdown-3-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -3161,7 +3160,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                             role="listbox"
                                           >
                                             <li
-                                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                              class="HvList-item HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                               id="hv-dropdown-5-values-list-item-0"
                                               role="option"
                                               tabindex="0"
@@ -5283,7 +5282,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                 </HvCheckbox>
                                               </WithStyles(HvCheckbox)>
                                             </div>
-                                            <WithStyles(List)
+                                            <WithStyles(HvList)
                                               condensed={true}
                                               hasTooltips={false}
                                               id="test-dropdown-values-list"
@@ -5313,7 +5312,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                 ]
                                               }
                                             >
-                                              <List
+                                              <HvList
                                                 classes={
                                                   Object {
                                                     "box": "HvList-box",
@@ -5337,7 +5336,6 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                 }
                                                 multiSelect={true}
                                                 onChange={[Function]}
-                                                onClick={[Function]}
                                                 selectable={true}
                                                 showSelectAll={false}
                                                 singleSelectionToggle={true}
@@ -8189,8 +8187,8 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                     </ul>
                                                   </HvListContainer>
                                                 </WithStyles(HvListContainer)>
-                                              </List>
-                                            </WithStyles(List)>
+                                              </HvList>
+                                            </WithStyles(HvList)>
                                           </div>
                                           <WithStyles(ActionContainer)
                                             id="test-dropdown-values-actions"
