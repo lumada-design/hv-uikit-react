@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.3...@hv/uikit-react-core@2.11.4) (2020-09-24)
+
+
+### Bug Fixes
+
+* **dropdown:** second dropdown not open. HVUIKIT-5528 ([e3094ce](https://github.com/pentaho/hv-uikit-react/commit/e3094ce36bcf80f19931f0cf32037fbc40a76660))
+* **header:** fix keyboard navigation when mouse hover. HVUIKIT-5209 ([7ae7bb6](https://github.com/pentaho/hv-uikit-react/commit/7ae7bb61027b7e47dcc7d258c6e0b4b75491ae67))
+
+
+
+
+
 ## [2.11.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.2...@hv/uikit-react-core@2.11.3) (2020-09-18)
 
 
