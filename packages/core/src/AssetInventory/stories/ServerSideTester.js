@@ -76,7 +76,8 @@ let searchString = "";
  * @param page
  * @returns {*}
  */
-const getSlicePage = (values2, size, page) => values2.slice(size * page, size * (page + 1));
+const getSlicePage = (values2, size, page) =>
+  size < values2.length ? values2.slice(size * page, size * (page + 1)) : values2;
 
 /**
  * Filter function for the search.
