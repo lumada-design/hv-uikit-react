@@ -24,7 +24,11 @@ export const SmokeTests = () => (
         Enable
       </HvGrid>
       <HvGrid item xl={2}>
-        <HvButton id="default" startIcon={<Caution />} onClick={() => alert("default")}>
+        <HvButton
+          id="default"
+          startIcon={<Caution color="base1" />}
+          onClick={() => alert("default")}
+        >
           default
         </HvButton>
       </HvGrid>
