@@ -30,7 +30,7 @@ const styles = theme => {
     menu: {
       position: "absolute",
       height: 2 * theme.hv.spacing.sm,
-      zIndex: -1,
+      zIndex: -2,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       "& li > div": {
         marginTop: 4
@@ -55,17 +55,21 @@ const styles = theme => {
 
       // IE fallback code (using focus-within-polyfill)
       "&.focus-within $active": {
-        ...hide
+        ...hide,
+        zIndex: -2
       },
       "& li.focus-within > $hidden": {
-        ...show
+        ...show,
+        zIndex: -1
       },
 
       "&:focus-within $active": {
-        ...hide
+        ...hide,
+        zIndex: -2
       },
       "& li:focus-within> $hidden": {
-        ...show
+        ...show,
+        zIndex: -1
       }
     }
   };

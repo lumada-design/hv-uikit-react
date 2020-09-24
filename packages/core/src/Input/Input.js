@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, isValidElement } from "react";
+import React, { isValidElement, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -19,6 +19,7 @@ import validationTypes from "./validationTypes";
 import validationStates, { isInvalid } from "./validationStates";
 import { validateCharLength, validateInput, validationIcon } from "./validations";
 import styles from "./styles";
+import isBrowser from "../utils/browser";
 
 const DEFAULT_LABELS = {
   inputLabel: "",
@@ -77,6 +78,7 @@ const HvInput = props => {
 
   const materialInputRef = useRef(null);
   const inputRef = useRef(inputRefProp || null);
+  const suggestionRef = useRef({});
 
   useEffect(() => {
     if (valueProp != null) setValue(valueProp);
@@ -88,6 +90,11 @@ const HvInput = props => {
       setWarningText(isInvalid(validationStateProp) ? labels.warningText : null);
     }
   }, [validationStateProp, labels.warningText]);
+
+  useEffect(() => {
+    suggestionRef.current = document.getElementById(setId(id, "suggestions"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /**
    * Updates the states while the input is being entered.
@@ -167,13 +174,23 @@ const HvInput = props => {
   };
 
   /**
+   * Find the focused element onBlur.
+   *
+   * @param event
+   * @returns {any}
+   */
+  const getFocusedElement = event =>
+    isBrowser("ie") ? document.activeElement : event.relatedTarget;
+
+  /**
    * Validates the input updating the state and modifying the info text, also executes
    * the user provided onBlur passing the current validation status and value.
    *
    * @returns {undefined}
    */
   const onInputBlurHandler = event => {
-    if (event.relatedTarget) return;
+    // If the blur is executed when choosing an suggestion it should be ignored.
+    if (suggestionRef?.current && suggestionRef?.current.contains(getFocusedElement(event))) return;
 
     let validationStateResult;
     let warningTextResult = null;

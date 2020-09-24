@@ -66,21 +66,23 @@ const styles = theme => {
       display: "inline-block",
       marginRight: `${theme.hv.spacing.xs / 2}px`
     },
-    pageSizeInput: {
-      paddingLeft: `${theme.hv.spacing.xs / 2}px`,
-      paddingRight: `${theme.hv.spacing.xs / 2}px`,
-      margin: 0,
-      textAlign: "right",
-      MozAppearance: "textfield",
-      "&:focus": {
-        backgroundColor: hoverColor
-      },
-      "&:hover": {
-        cursor: "pointer"
+    pageSizeInput: {},
+    pageSizeInputContainer: {},
+    pageSizeInputRoot: {
+      "& $pageSizeInput": {
+        paddingLeft: `${theme.hv.spacing.xs / 2}px`,
+        paddingRight: `${theme.hv.spacing.xs / 2}px`,
+        margin: 0,
+        textAlign: "right",
+        MozAppearance: "textfield",
+        "&:focus": {
+          backgroundColor: hoverColor
+        },
+        "&:hover": {
+          cursor: "pointer"
+        }
       }
     },
-    pageSizeInputContainer: {},
-    pageSizeInputRoot: {},
     iconContainer: {
       padding: 0,
       borderRadius: 0,
