@@ -6,10 +6,10 @@ export default {
   title: "Patterns/Tabs",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTabs, HvTab } from '@hv/uikit-react-core/dist'",
+    usage: "import { HvTabs, HvTab } from '@hv/uikit-react-core/dist'"
   },
   component: HvTabs,
-  subcomponents: { HvTab },
+  subcomponents: { HvTab }
 };
 
 export const Main = () => {
@@ -40,9 +40,9 @@ export const FullWidth = () => {
 
 FullWidth.parameters = {
   docs: {
-    description: { story: "Tabs occupying the full width of the available space" },
+    description: { story: "Tabs occupying the full width of the available space" }
   },
-  v3: true,
+  v3: true
 };
 
 export const ContentChanging = () => {
@@ -71,21 +71,21 @@ export const ContentChanging = () => {
 
 ContentChanging.parameters = {
   docs: {
-    description: { story: "Tabs changing the content to display according to the selected tab" },
+    description: { story: "Tabs changing the content to display according to the selected tab" }
   },
-  v3: true,
+  v3: true
 };
 
 export const TextSize = () => {
   const [value, setValue] = useState(0);
   const handleChange = (e, newValue) => setValue(newValue);
 
-  const StyledTab = withStyles((theme) => ({
+  const StyledTab = withStyles(theme => ({
     root: {
       minHeight: 48,
-      ...theme.hv.typography.sTitle,
-    },
-  }))((props) => <HvTab {...props} />);
+      ...theme.hv.typography.sTitle
+    }
+  }))(props => <HvTab {...props} />);
 
   return (
     <HvTabs id="tabs" value={value} onChange={handleChange}>
@@ -103,9 +103,9 @@ export const CenteredTabs = () => {
   const classes = makeStyles({
     content: {
       "& div div": {
-        justifyContent: "center",
-      },
-    },
+        justifyContent: "center"
+      }
+    }
   })();
 
   return (
@@ -122,16 +122,16 @@ export const WithBadges = () => {
     const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => setValue(newValue);
 
-    const StyledTab = withStyles((theme) => ({
+    const StyledTab = withStyles(theme => ({
       root: {
         ...theme.hv.typography.sTitle,
         minHeight: 48,
         justifyContent: "center",
         "&$selected": {
-          fontWeight: theme.hv.typography.highlightText.fontWeight,
-        },
-      },
-    }))((props) => <HvTab {...props} />);
+          fontWeight: theme.hv.typography.highlightText.fontWeight
+        }
+      }
+    }))(props => <HvTab {...props} />);
 
     return (
       <HvTabs value={value} onChange={handleChange}>
@@ -146,7 +146,7 @@ export const WithBadges = () => {
 
 WithBadges.parameters = {
   docs: {
-    description: { story: "Badges applied to Tabs component." },
+    description: { story: "Badges applied to Tabs component." }
   },
-  v3: true,
+  v3: true
 };
