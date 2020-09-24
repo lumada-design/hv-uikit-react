@@ -66,4 +66,4 @@ does not show clean button when input is cleaned
 *** Variables ***
 ${clean_button}    css:div[name*=Close]
 ${input}           css:input
-${description}     css:p[id$=description]
+${description}     css:label

@@ -1,11 +1,11 @@
 *** Setting ***
 Resource      _resources.resource
-Force Tags    v3
+Force Tags    v3    bug-ie    bug-chrome
 
 
 *** Test Cases ***
 move focus between dropdown's
-    Go To                               ${components}dropdown--different-size-and-placements
+    Go To                               ${patterns}dropdown--different-size-and-placements
     Wait Until Element Is Enabled       dropdown1
     Click Element                       dropdown1
     Wait Until Element Is Visible       dropdown1-values-actions
