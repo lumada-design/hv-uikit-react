@@ -138,7 +138,6 @@ exports[`[v3] <List /> Multi selection should render correctly 1`] = `
       }
     }
     onClick={[Function]}
-    selectDefault={false}
     selectable={true}
     showSelectAll={true}
     singleSelectionToggle={true}
@@ -942,7 +941,6 @@ exports[`[v3] <List /> Multi selection with selectors should render correctly 1`
       }
     }
     onClick={[Function]}
-    selectDefault={false}
     selectable={true}
     showSelectAll={true}
     singleSelectionToggle={true}
@@ -4548,7 +4546,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
 <WithStyles(List)
   onChange={[MockFunction]}
   onClick={[MockFunction]}
-  selectDefault={true}
   singleSelectionToggle={false}
   values={
     Array [
@@ -4587,7 +4584,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
     multiSelect={false}
     onChange={[MockFunction]}
     onClick={[MockFunction]}
-    selectDefault={true}
     selectable={true}
     showSelectAll={false}
     singleSelectionToggle={false}
@@ -4642,7 +4638,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
             key=".$0"
             onClick={[Function]}
             role="option"
-            selected={true}
             startAdornment={null}
             tabIndex={0}
           >
@@ -4664,7 +4659,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
               }
               onClick={[Function]}
               role="option"
-              selected={true}
               startAdornment={null}
               tabIndex={0}
             >
@@ -4686,8 +4680,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       role="listbox"
                     >
                       <li
-                        aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -4710,7 +4703,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                     </ul>,
                   }
                 }
-                selected={true}
                 strategy="listbox"
               >
                 <Focus
@@ -4738,8 +4730,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         role="listbox"
                       >
                         <li
-                          aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -4762,7 +4753,6 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       </ul>,
                     }
                   }
-                  selected={true}
                   strategy="listbox"
                 >
                   <ConditionalWrapper
@@ -4770,8 +4760,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                     wrapper={[Function]}
                   >
                     <li
-                      aria-selected={true}
-                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -4779,7 +4768,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
                       role="option"
-                      selected={true}
+                      selected={false}
                     >
                       <ComponentFunction>
                         Value 1
@@ -4841,8 +4830,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       role="listbox"
                     >
                       <li
-                        aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -4892,8 +4880,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         role="listbox"
                       >
                         <li
-                          aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -4993,8 +4980,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                       role="listbox"
                     >
                       <li
-                        aria-selected="true"
-                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="0"
                       >
@@ -5044,8 +5030,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
                         role="listbox"
                       >
                         <li
-                          aria-selected="true"
-                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="0"
                         >
@@ -5142,7 +5127,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
     multiSelect={false}
     onChange={[Function]}
     onClick={[Function]}
-    selectDefault={false}
     selectable={true}
     showSelectAll={false}
     singleSelectionToggle={true}
@@ -5972,7 +5956,6 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
 
 exports[`[v3] <List /> Single selection with selectors should render correctly 1`] = `
 <WithStyles(List)
-  selectDefault={true}
   useSelector={true}
   values={
     Array [
@@ -6011,7 +5994,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
     multiSelect={false}
     onChange={[Function]}
     onClick={[Function]}
-    selectDefault={true}
     selectable={true}
     showSelectAll={false}
     singleSelectionToggle={true}
@@ -6066,7 +6048,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
             key=".$0"
             onClick={[Function]}
             role="option"
-            selected={true}
             startAdornment={null}
             tabIndex={0}
           >
@@ -6088,7 +6069,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
               }
               onClick={[Function]}
               role="option"
-              selected={true}
               startAdornment={null}
               tabIndex={0}
             >
@@ -6110,8 +6090,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       role="listbox"
                     >
                       <li
-                        aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -6120,13 +6099,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         >
                           <span
                             aria-disabled="false"
-                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                           >
                             <span
                               class="MuiIconButton-label"
                             >
                               <input
-                                checked=""
                                 class="PrivateSwitchBase-input-4"
                                 tabindex="0"
                                 type="radio"
@@ -6134,7 +6112,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                               />
                               <div
                                 class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
-                                name="RadioButtonSelected"
+                                name="RadioButtonUnselected"
                               >
                                 <svg
                                   focusable="false"
@@ -6146,17 +6124,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   <path
                                     class="color0"
                                     d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                    fill="#414141"
-                                  />
-                                  <path
-                                    class="color0"
-                                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                    fill="#414141"
+                                    fill="#FBFCFC"
                                   />
                                   <path
                                     class="color1"
-                                    d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                    fill="#FBFCFC"
+                                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                    fill="#414141"
                                   />
                                 </svg>
                               </div>
@@ -6278,7 +6251,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                     </ul>,
                   }
                 }
-                selected={true}
                 strategy="listbox"
               >
                 <Focus
@@ -6306,8 +6278,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         role="listbox"
                       >
                         <li
-                          aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -6316,13 +6287,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           >
                             <span
                               aria-disabled="false"
-                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                             >
                               <span
                                 class="MuiIconButton-label"
                               >
                                 <input
-                                  checked=""
                                   class="PrivateSwitchBase-input-4"
                                   tabindex="0"
                                   type="radio"
@@ -6330,7 +6300,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 />
                                 <div
                                   class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
-                                  name="RadioButtonSelected"
+                                  name="RadioButtonUnselected"
                                 >
                                   <svg
                                     focusable="false"
@@ -6342,17 +6312,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     <path
                                       class="color0"
                                       d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                      fill="#414141"
-                                    />
-                                    <path
-                                      class="color0"
-                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                      fill="#414141"
+                                      fill="#FBFCFC"
                                     />
                                     <path
                                       class="color1"
-                                      d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                      fill="#FBFCFC"
+                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                      fill="#414141"
                                     />
                                   </svg>
                                 </div>
@@ -6474,7 +6439,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       </ul>,
                     }
                   }
-                  selected={true}
                   strategy="listbox"
                 >
                   <ConditionalWrapper
@@ -6482,8 +6446,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                     wrapper={[Function]}
                   >
                     <li
-                      aria-selected={true}
-                      className="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      className="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
@@ -6491,11 +6454,11 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
                       role="option"
-                      selected={true}
+                      selected={false}
                     >
                       <ComponentFunction>
                         <WithStyles(HvRadio)
-                          checked={true}
+                          checked={false}
                           classes={
                             Object {
                               "container": "HvList-selectorContainer",
@@ -6506,7 +6469,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           label="Value 1"
                         >
                           <HvRadio
-                            checked={true}
+                            checked={false}
                             classes={
                               Object {
                                 "container": "HvRadioButton-container HvList-selectorContainer",
@@ -6532,7 +6495,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                               }
                               control={
                                 <ForwardRef(WithStyles)
-                                  checked={true}
+                                  checked={false}
                                   checkedIcon={
                                     <RadioButtonSelected
                                       className="HvRadioButton-icon HvList-icon"
@@ -6568,7 +6531,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 }
                                 control={
                                   <ForwardRef(WithStyles)
-                                    checked={true}
+                                    checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
                                         className="HvRadioButton-icon HvList-icon"
@@ -6594,7 +6557,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   className="MuiFormControlLabel-root HvRadioButton-container HvList-selectorContainer HvRadioButton-labelEnd"
                                 >
                                   <WithStyles(ForwardRef(Radio))
-                                    checked={true}
+                                    checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
                                         className="HvRadioButton-icon HvList-icon"
@@ -6613,7 +6576,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     value=""
                                   >
                                     <ForwardRef(Radio)
-                                      checked={true}
+                                      checked={false}
                                       checkedIcon={
                                         <RadioButtonSelected
                                           className="HvRadioButton-icon HvList-icon"
@@ -6641,7 +6604,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                       value=""
                                     >
                                       <WithStyles(ForwardRef(SwitchBase))
-                                        checked={true}
+                                        checked={false}
                                         checkedIcon={
                                           <RadioButtonSelected
                                             className="HvRadioButton-icon HvList-icon"
@@ -6669,7 +6632,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         value=""
                                       >
                                         <ForwardRef(SwitchBase)
-                                          checked={true}
+                                          checked={false}
                                           checkedIcon={
                                             <RadioButtonSelected
                                               className="HvRadioButton-icon HvList-icon"
@@ -6698,7 +6661,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           value=""
                                         >
                                           <WithStyles(ForwardRef(IconButton))
-                                            className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                                            className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                             color="default"
                                             component="span"
                                             disableRipple={true}
@@ -6708,7 +6671,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                             tabIndex={null}
                                           >
                                             <ForwardRef(IconButton)
-                                              className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                                              className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                               classes={
                                                 Object {
                                                   "colorInherit": "MuiIconButton-colorInherit",
@@ -6732,7 +6695,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                             >
                                               <WithStyles(ForwardRef(ButtonBase))
                                                 centerRipple={true}
-                                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                                 component="span"
                                                 disableRipple={true}
                                                 disabled={false}
@@ -6743,7 +6706,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                               >
                                                 <ForwardRef(ButtonBase)
                                                   centerRipple={true}
-                                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                                   classes={
                                                     Object {
                                                       "disabled": "Mui-disabled",
@@ -6761,7 +6724,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                 >
                                                   <span
                                                     aria-disabled={false}
-                                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                                     onBlur={[Function]}
                                                     onDragLeave={[Function]}
                                                     onFocus={[Function]}
@@ -6779,20 +6742,20 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                       className="MuiIconButton-label"
                                                     >
                                                       <input
-                                                        checked={true}
+                                                        checked={false}
                                                         className="PrivateSwitchBase-input-4"
                                                         disabled={false}
                                                         onChange={[Function]}
                                                         type="radio"
                                                         value=""
                                                       />
-                                                      <RadioButtonSelected
+                                                      <RadioButtonUnselected
                                                         className="HvRadioButton-icon HvList-icon"
                                                       >
                                                         <WithStyles(HvIconBase)
                                                           className="HvRadioButton-icon HvList-icon"
                                                           iconSize="S"
-                                                          name="RadioButtonSelected"
+                                                          name="RadioButtonUnselected"
                                                         >
                                                           <HvIconBase
                                                             className="HvRadioButton-icon HvList-icon"
@@ -6806,11 +6769,11 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                               }
                                                             }
                                                             iconSize="S"
-                                                            name="RadioButtonSelected"
+                                                            name="RadioButtonUnselected"
                                                           >
                                                             <div
                                                               className="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
-                                                              name="RadioButtonSelected"
+                                                              name="RadioButtonUnselected"
                                                             >
                                                               <svg
                                                                 focusable={false}
@@ -6822,23 +6785,18 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                                 <path
                                                                   className="color0"
                                                                   d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                                  fill="#414141"
-                                                                />
-                                                                <path
-                                                                  className="color0"
-                                                                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                                                  fill="#414141"
+                                                                  fill="#FBFCFC"
                                                                 />
                                                                 <path
                                                                   className="color1"
-                                                                  d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                                                  fill="#FBFCFC"
+                                                                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                                  fill="#414141"
                                                                 />
                                                               </svg>
                                                             </div>
                                                           </HvIconBase>
                                                         </WithStyles(HvIconBase)>
-                                                      </RadioButtonSelected>
+                                                      </RadioButtonUnselected>
                                                     </span>
                                                   </span>
                                                 </ForwardRef(ButtonBase)>
@@ -6961,8 +6919,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       role="listbox"
                     >
                       <li
-                        aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -6971,13 +6928,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         >
                           <span
                             aria-disabled="false"
-                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                           >
                             <span
                               class="MuiIconButton-label"
                             >
                               <input
-                                checked=""
                                 class="PrivateSwitchBase-input-4"
                                 tabindex="0"
                                 type="radio"
@@ -6985,7 +6941,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                               />
                               <div
                                 class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
-                                name="RadioButtonSelected"
+                                name="RadioButtonUnselected"
                               >
                                 <svg
                                   focusable="false"
@@ -6997,17 +6953,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   <path
                                     class="color0"
                                     d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                    fill="#414141"
-                                  />
-                                  <path
-                                    class="color0"
-                                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                    fill="#414141"
+                                    fill="#FBFCFC"
                                   />
                                   <path
                                     class="color1"
-                                    d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                    fill="#FBFCFC"
+                                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                    fill="#414141"
                                   />
                                 </svg>
                               </div>
@@ -7156,8 +7107,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         role="listbox"
                       >
                         <li
-                          aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -7166,13 +7116,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           >
                             <span
                               aria-disabled="false"
-                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                             >
                               <span
                                 class="MuiIconButton-label"
                               >
                                 <input
-                                  checked=""
                                   class="PrivateSwitchBase-input-4"
                                   tabindex="0"
                                   type="radio"
@@ -7180,7 +7129,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 />
                                 <div
                                   class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
-                                  name="RadioButtonSelected"
+                                  name="RadioButtonUnselected"
                                 >
                                   <svg
                                     focusable="false"
@@ -7192,17 +7141,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     <path
                                       class="color0"
                                       d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                      fill="#414141"
-                                    />
-                                    <path
-                                      class="color0"
-                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                      fill="#414141"
+                                      fill="#FBFCFC"
                                     />
                                     <path
                                       class="color1"
-                                      d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                      fill="#FBFCFC"
+                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                      fill="#414141"
                                     />
                                   </svg>
                                 </div>
@@ -7804,8 +7748,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                       role="listbox"
                     >
                       <li
-                        aria-selected="true"
-                        class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                        class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         role="option"
                         tabindex="-1"
                       >
@@ -7814,13 +7757,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         >
                           <span
                             aria-disabled="false"
-                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                           >
                             <span
                               class="MuiIconButton-label"
                             >
                               <input
-                                checked=""
                                 class="PrivateSwitchBase-input-4"
                                 tabindex="0"
                                 type="radio"
@@ -7828,7 +7770,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                               />
                               <div
                                 class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
-                                name="RadioButtonSelected"
+                                name="RadioButtonUnselected"
                               >
                                 <svg
                                   focusable="false"
@@ -7840,17 +7782,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   <path
                                     class="color0"
                                     d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                    fill="#414141"
-                                  />
-                                  <path
-                                    class="color0"
-                                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                    fill="#414141"
+                                    fill="#FBFCFC"
                                   />
                                   <path
                                     class="color1"
-                                    d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                    fill="#FBFCFC"
+                                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                    fill="#414141"
                                   />
                                 </svg>
                               </div>
@@ -7999,8 +7936,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                         role="listbox"
                       >
                         <li
-                          aria-selected="true"
-                          class="HvListItem-root HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                          class="HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           role="option"
                           tabindex="-1"
                         >
@@ -8009,13 +7945,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                           >
                             <span
                               aria-disabled="false"
-                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
+                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                             >
                               <span
                                 class="MuiIconButton-label"
                               >
                                 <input
-                                  checked=""
                                   class="PrivateSwitchBase-input-4"
                                   tabindex="0"
                                   type="radio"
@@ -8023,7 +7958,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 />
                                 <div
                                   class="HvRadioButton-icon HvList-icon HvIconBase-root HvIconBase-s"
-                                  name="RadioButtonSelected"
+                                  name="RadioButtonUnselected"
                                 >
                                   <svg
                                     focusable="false"
@@ -8035,17 +7970,12 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                     <path
                                       class="color0"
                                       d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                      fill="#414141"
-                                    />
-                                    <path
-                                      class="color0"
-                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                      fill="#414141"
+                                      fill="#FBFCFC"
                                     />
                                     <path
                                       class="color1"
-                                      d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                      fill="#FBFCFC"
+                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                      fill="#414141"
                                     />
                                   </svg>
                                 </div>

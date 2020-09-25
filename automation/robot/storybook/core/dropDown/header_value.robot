@@ -5,21 +5,13 @@ Documentation    Verify value on top head section of dropdown for uses cases:
 
 
 *** Test Cases ***
-api selectDefault
-    [Tags]    run-any-way
-    [Documentation]    https://insightgroup.atlassian.net/browse/HVUIKIT-5531
-    Go To                            ${patterns}dropdown--single-selection
-    Wait Until Element Is Visible    ${dropdown}
-    Run Keyword And Expect Error     *
-    ...    Element Text Should Be    ${dropdownHeader}    Value 1    ignore_case=True
-
 api select item
     Go To                            ${tests}dropdown--single-selected-value
     Wait Until Element Is Visible    ${dropdown}
     Element Text Should Be           ${dropdownHeader}    Value 3    ignore_case=True
 
-user selected item
-    Go To                                ${patterns}dropdown--single-selection
+select an item
+    Go To                                ${patterns}dropdown--single-selection-no-selection
     Wait Until Element Is Visible        ${dropdown}
     Element Text Should Be               ${dropdownHeader}    Select...    ignore_case=True
     Click Element                        ${dropdownHeader}
@@ -28,7 +20,7 @@ user selected item
     Wait Until Element Is Not Visible    ${listBox}
     Element Text Should Be               ${dropdownHeader}    Value 2    ignore_case=True
 
-user unselect item
+unselect an item
     Go To                                ${tests}dropdown--single-selected-value
     Wait Until Element Is Visible        ${dropdown}
     Element Text Should Be               ${dropdownHeader}    Value 3    ignore_case=True

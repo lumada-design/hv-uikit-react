@@ -63,7 +63,6 @@ export const TestListFocusableSelection = () => (
     <HvList
       id="list"
       aria-label="Test List Focusable Selection"
-      selectDefault
       hasTooltips
       values={[
         { label: "Share" },

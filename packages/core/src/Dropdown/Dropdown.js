@@ -35,7 +35,6 @@ const HvDropdown = ({
   onChange,
   notifyChangesOnFirstRender = false,
   labels,
-  selectDefault = true,
   hasTooltips = false,
   disablePortal = false,
   singleSelectionToggle = true,
@@ -133,7 +132,6 @@ const HvDropdown = ({
           showSearch={showSearch}
           onChange={handleSelection}
           labels={labels}
-          selectDefault={selectDefault}
           notifyChangesOnFirstRender={notifyChangesOnFirstRender}
           hasTooltips={hasTooltips}
           singleSelectionToggle={singleSelectionToggle}
@@ -250,11 +248,6 @@ HvDropdown.propTypes = {
      */
     multiSelectionConjunction: PropTypes.string
   }),
-  /**
-   * If `true` and none element selected,
-   * single select has default (first) label selected.
-   */
-  selectDefault: PropTypes.bool,
   /**
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */

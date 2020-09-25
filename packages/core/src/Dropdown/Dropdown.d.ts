@@ -62,11 +62,6 @@ export interface HvDropdownProps
    */
   labels?: DropDownLabelsProp;
   /**
-   * If `true` and none element selected,
-   * single select has default (first) label selected.
-   */
-  selectDefault?: boolean;
-  /**
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips?: boolean;

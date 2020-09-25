@@ -56,7 +56,6 @@ describe("[v3] <List />", () => {
             values={mockDataSingleSelection}
             onChange={onChangeMock}
             onClick={onClickMock}
-            selectDefault
             singleSelectionToggle={false}
           />
         </HvProvider>
@@ -65,17 +64,6 @@ describe("[v3] <List />", () => {
 
     it("should render correctly", () => {
       expect(wrapper.find(List)).toMatchSnapshot();
-    });
-
-    it("default value is selected", () => {
-      listComponent = wrapper.find("List");
-      instance = listComponent.instance();
-
-      expect(instance.state.list).toEqual([
-        { label: "Value 1", selected: true },
-        { label: "Value 2", selected: false },
-        { label: "Value 3", selected: false }
-      ]);
     });
 
     it("onChange is triggered on selection and first is selected", () => {
@@ -133,7 +121,7 @@ describe("[v3] <List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <List values={mockDataSingleSelection} selectDefault useSelector />
+          <List values={mockDataSingleSelection} useSelector />
         </HvProvider>
       );
     });
@@ -166,16 +154,6 @@ describe("[v3] <List />", () => {
 
     it("should render correctly", () => {
       expect(wrapper.find(List)).toMatchSnapshot();
-    });
-
-    it("default values are selected", () => {
-      listComponent = wrapper.find("List");
-      instance = listComponent.instance();
-      expect(instance.state.list).toEqual([
-        { label: "Value 1", selected: true },
-        { label: "Value 2", selected: false },
-        { label: "Value 3", selected: true }
-      ]);
     });
 
     it("onChange is triggered on selection and first is selected", () => {
