@@ -2,7 +2,7 @@
 Resource      _keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}asset-inventory--configurations
-...           AND    Wait Until Element Is Visible    hv-assetinventory
+...           AND    Wait Until Element Is Enabled    hv-assetinventory
 
 
 *** Test Cases ***
@@ -36,27 +36,37 @@ pageSize, select, sort and paginate
 change page size with filtered results
     [Documentation]    traceability:
     ...                bug https://insightgroup.atlassian.net/browse/HVUIKIT-5549
+    [Setup]    NONE
     Go To                               ${components}asset-inventory--server-side-pagination
     Input Text                          ${searchBox}    Risk of downtime 1
     Select From List By Label           ${pageSize}   6
-    wait Until Page Contains Element    css:#card>div  limit=6
+    wait Until Page Contains Element    ${cards}   limit=6
     Select From List By Label           ${pageSize}   8
     List Selection Should Be            ${pageSize}   8
 
 change page size with filtered results on other page
+    [Setup]    NONE
     Go To                               ${components}asset-inventory--server-side-pagination
     Input Text                          ${searchBox}    Risk of downtime 1
-    Click Element                       css:button[aria-label="Next Page"]
-    wait Until Page Contains Element    css:#card>div  limit=2
+    Click Element                       ${nextPage}
+    wait Until Page Contains Element    ${cards}    limit=2
     Select From List By Label           ${pageSize}   8
-    wait Until Page Contains Element    css:#card>div  limit=6
+    wait Until Page Contains Element    ${cards}    limit=6
 
 change page size with filtered results on last page
-    [Documentation]    bug variation
+    [Setup]    NONE
     Go To                               ${components}asset-inventory--server-side-pagination
     Input Text                          ${searchBox}    Risk of downtime 1
-    Select From List By Label           ${pageSize}   2
-    Click Element                       css:button[aria-label="Last Page"]
-    Select From List By Label           ${pageSize}   4
-    wait Until Page Contains Element    css:#card>div  limit=4
-    List Selection Should Be            ${pageSize}   4
+    Select From List By Label           ${pageSize}    2
+    Click Element                       ${lastPage}
+    Select From List By Label           ${pageSize}    4
+    List Selection Should Be            ${pageSize}    4
+    Element Text Should Be              ${pageInTotal}    2
+
+
+*** Variables ***
+${assetInventory}    css:.HvAssetInventory-root
+${cards}             css:#card>div
+${lastPage}          css:button[aria-label="Last Page"]
+${nextPage}          css:button[aria-label="Next Page"]
+${pageInTotal}       css:.HvPagination-pageInfo>:nth-child(3)
