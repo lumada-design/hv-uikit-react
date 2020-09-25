@@ -8,7 +8,7 @@ Force Tags       v3
 
 *** Test Cases ***         Story                           Element
 Focus input on single      single-selection-with-search    ${searchInput}
-Focus 1st list item        single-selection-no-default     ${option1}
+Focus 1st list item        single-selection-no-selection   ${option1}
 Focus input on multi       main                            ${searchInput}
 Focus All                  multi-selection-no-search       ${selectAll}
 focus 1st selected item
