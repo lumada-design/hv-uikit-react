@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.4...@hv/uikit-react-core@2.12.0) (2020-09-25)
+
+
+### Bug Fixes
+
+* **dropdown:** deprecating selectdefault. HVUIKIT-5531 ([af6536c](https://github.com/pentaho/hv-uikit-react/commit/af6536c60a584f86f2bb0be743bb4da2dc2d1323))
+* **login:** adjust error message text color. HVUIKIT-5550 ([#1985](https://github.com/pentaho/hv-uikit-react/issues/1985)) ([e10f55b](https://github.com/pentaho/hv-uikit-react/commit/e10f55bc7df1293395dcbe669efc588fbff3adda))
+
+
+### Features
+
+* **assetinventory:** change pagination label. HVUIKIT-5547 ([5060693](https://github.com/pentaho/hv-uikit-react/commit/5060693f9de3128a5eec4155c4016968dccb38ad))
+
+
+
+
+
 ## [2.11.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.3...@hv/uikit-react-core@2.11.4) (2020-09-24)
 
 
