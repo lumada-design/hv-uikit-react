@@ -50,3 +50,13 @@ change page size with filtered results on other page
     wait Until Page Contains Element    css:#card>div  limit=2
     Select From List By Label           ${pageSize}   8
     wait Until Page Contains Element    css:#card>div  limit=6
+
+change page size with filtered results on last page
+    [Documentation]    bug variation
+    Go To                               ${components}asset-inventory--server-side-pagination
+    Input Text                          ${searchBox}    Risk of downtime 1
+    Select From List By Label           ${pageSize}   2
+    Click Element                       css:button[aria-label="Last Page"]
+    Select From List By Label           ${pageSize}   4
+    wait Until Page Contains Element    css:#card>div  limit=4
+    List Selection Should Be            ${pageSize}   4
