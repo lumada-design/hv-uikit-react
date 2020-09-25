@@ -4,7 +4,7 @@ Test Setup        Run Keywords
 ...               Go To    ${patterns}asset-inventory--configurations
 ...               AND    Wait Until Element Is Visible    hv-assetinventory
 Test Template     focus moves from to
-Force Tags        v3    keyboard    TTT
+Force Tags        v3    keyboard
 
 
 *** Variables ***
