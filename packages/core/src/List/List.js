@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-
 import clsx from "clsx";
-
-import isNil from "lodash/isNil";
 
 import { withStyles } from "@material-ui/core";
 import { DropRightXS } from "@hv/uikit-react-icons";
 
-import { parseList, parseState, wrapperTooltip } from "./utils";
+import { parseList, wrapperTooltip } from "./utils";
+import useSelectableList from "./useSelectableList";
 
 import {
   HvBulkActions,
@@ -23,16 +21,6 @@ import {
 
 import styles, { selectAllStyles } from "./styles";
 
-const DEFAULT_STATE = {
-  list: [],
-  values: [],
-  hasLeftIcons: false,
-  allSelected: false,
-  anySelected: false,
-  anySelectableSelected: false,
-  allSelectableSelected: false
-};
-
 const DEFAULT_LABELS = {
   selectAll: "Select All",
   selectionConjunction: "/"
@@ -43,64 +31,62 @@ const StyledHvBulkActions = withStyles(selectAllStyles)(HvBulkActions);
 /**
  * Component used to show a set of related data to the user.
  */
-class List extends React.Component {
-  constructor(props) {
-    super(props);
+const HvList = props => {
+  const {
+    id,
+    classes,
+    className,
+    multiSelect = false,
+    hasTooltips = false,
+    showSelectAll = false,
+    labels = DEFAULT_LABELS,
+    useSelector = false,
+    selectable = true,
+    singleSelectionToggle = true,
+    condensed = false,
+    onChange,
+    onClick,
+    values: valuesProp = [],
+    ...others
+  } = props;
+  const [list, setList, selection] = useSelectableList(valuesProp);
 
-    this.state = {
-      ...DEFAULT_STATE
-    };
-    this.listRef = React.createRef();
-  }
+  useEffect(() => {
+    const passedProps = { multiSelect, selectable, singleSelectionToggle };
+    const parsedList = parseList(valuesProp, null, passedProps);
+    setList(parsedList);
+  }, [valuesProp, multiSelect, selectable, singleSelectionToggle, setList]);
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.values !== state.values) {
-      const { values } = props;
-
-      const parsedList = parseList(values, null, props);
-      const parsedState = parseState(parsedList);
-
-      return {
-        values,
-        ...parsedState
-      };
-    }
-
-    return null;
-  }
-
-  handleSelect(evt, item) {
+  const handleSelect = (evt, item) => {
     if (!item.path) evt.preventDefault();
     if (item.disabled) return;
 
-    const { list } = this.state;
-    const { onChange, onClick } = this.props;
+    const passedProps = { multiSelect, selectable, singleSelectionToggle };
+    const parsedList = parseList(list, item, passedProps);
+    setList(parsedList);
 
-    const parsedList = parseList(list, item, this.props);
-    const parsedState = parseState(parsedList);
+    onClick?.(evt, item);
+    onChange?.(parsedList);
+  };
 
-    this.setState({ ...parsedState });
+  const handleSelectAll = () => {
+    const passedProps = { multiSelect, selectable, singleSelectionToggle };
+    const anySelectableSelected = list.some(elem => elem.selected || elem.disabled);
+    const parsedList = parseList(list, null, passedProps, !anySelectableSelected);
+    setList(parsedList);
 
-    onClick(evt, item);
-    onChange(parsedList);
-  }
+    onChange?.(parsedList);
+  };
 
-  handleSelectAll() {
-    const { list, anySelectableSelected } = this.state;
-    const { onChange } = this.props;
+  const renderLeftIcon = item =>
+    item.iconCallback?.({
+      isSelected: item.selected,
+      isDisabled: item.disabled
+    });
 
-    const parsedList = parseList(list, null, this.props, !anySelectableSelected);
-    const parsedState = parseState(parsedList);
-
-    this.setState({ ...parsedState });
-
-    onChange(parsedList);
-  }
-
-  renderSelectAll = () => {
-    const { id, labels } = this.props;
-    const { list, selection, anySelected } = this.state;
+  const renderSelectAll = () => {
     const { selectAll, selectionConjunction } = labels;
+    const anySelected = !!selection?.length;
 
     const selectionLabel = (
       <HvTypography component="span">
@@ -122,7 +108,8 @@ class List extends React.Component {
     return (
       <StyledHvBulkActions
         id={setId(id, "select-all")}
-        onSelectAll={() => this.handleSelectAll()}
+        semantic={false}
+        onSelectAll={handleSelectAll}
         numTotal={list.length}
         numSelected={selection.length}
         selectAllLabel={selectionLabel}
@@ -130,39 +117,19 @@ class List extends React.Component {
     );
   };
 
-  renderListItem = (item, i) => {
-    const { id, multiSelect, useSelector, classes, selectable } = this.props;
+  const renderItemText = item => {
+    const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
 
-    const itemId = setId(id, "item", i);
-    const selected = item.selected || false;
-
-    let startAdornment = null;
-    if (!useSelector && item.iconCallback) {
-      startAdornment = this.renderLeftIcon(item);
-    }
-
-    return (
-      <HvListItem
-        key={i}
-        id={itemId}
-        role={selectable ? "option" : "menuitem"}
-        disabled={item.disabled || undefined}
-        classes={{ selected: useSelector || multiSelect ? classes.itemSelector : "" }}
-        selected={multiSelect || selected ? selected : undefined}
-        onClick={evt => this.handleSelect(evt, item)}
-        startAdornment={startAdornment}
-        endAdornment={item.showNavIcon && this.renderNavIcon(item)}
-      >
-        {multiSelect
-          ? this.renderMultiSelectItem(item, itemId)
-          : this.renderSingleSelectItem(item, itemId)}
-      </HvListItem>
+    return !multiSelect && item.path ? (
+      <HvLink key={item.label} route={item.path} classes={{ a: classes.link }}>
+        <ItemText />
+      </HvLink>
+    ) : (
+      <ItemText />
     );
   };
 
-  renderMultiSelectItem = (item, itemId) => {
-    const { classes, useSelector, hasTooltips } = this.props;
-
+  const renderMultiSelectItem = (item, itemId) => {
     if (useSelector) {
       const Selection = wrapperTooltip(
         hasTooltips,
@@ -171,7 +138,7 @@ class List extends React.Component {
           label={item.label}
           checked={item.selected}
           disabled={item.disabled}
-          onChange={evt => this.handleSelect(evt, item)}
+          onChange={evt => handleSelect(evt, item)}
           classes={{
             container: classes.selectorContainer,
             labelTypography: classes.truncate,
@@ -183,12 +150,10 @@ class List extends React.Component {
       return <Selection />;
     }
 
-    return this.renderItemText(item);
+    return renderItemText(item);
   };
 
-  renderSingleSelectItem = (item, itemId) => {
-    const { classes, useSelector, hasTooltips } = this.props;
-
+  const renderSingleSelectItem = (item, itemId) => {
     if (useSelector) {
       const Selection = wrapperTooltip(
         hasTooltips,
@@ -207,84 +172,60 @@ class List extends React.Component {
       );
       return <Selection />;
     }
-    return this.renderItemText(item);
+    return renderItemText(item);
   };
 
-  renderItemText = item => {
-    const { classes, multiSelect, hasTooltips } = this.props;
-    const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
+  const renderListItem = (item, i) => {
+    const itemId = setId(id, "item", i);
+    const selected = item.selected || false;
 
-    return !multiSelect && item.path ? (
-      <HvLink key={item.label} route={item.path} classes={{ a: classes.link }}>
-        <ItemText />
-      </HvLink>
-    ) : (
-      <ItemText />
-    );
-  };
-
-  renderNavIcon = () => {
-    const { classes } = this.props;
-
-    return <DropRightXS className={classes.box} iconSize="XS" />;
-  };
-
-  renderLeftIcon = item => {
-    const newIcon = !isNil(item.iconCallback)
-      ? item.iconCallback({
-          isSelected: item.selected,
-          isDisabled: item.disabled
-        })
-      : undefined;
-
-    return newIcon;
-  };
-
-  render() {
-    const {
-      id,
-      classes,
-      className,
-      multiSelect,
-      useSelector,
-      showSelectAll,
-      selectable,
-      // TODO: convert component to functional so we don't to destructure here
-      hasTooltips,
-      values,
-      labels,
-      onChange,
-      onClick,
-      singleSelectionToggle,
-      ...others
-    } = this.props;
-
-    const { list } = this.state;
+    let startAdornment = null;
+    if (!useSelector && item.iconCallback) {
+      startAdornment = renderLeftIcon(item);
+    }
 
     return (
-      <>
-        {multiSelect && useSelector && showSelectAll && this.renderSelectAll()}
-
-        {list && (
-          <HvListContainer
-            id={id}
-            className={clsx(className, classes.root)}
-            role={selectable ? "listbox" : "menu"}
-            interactive
-            selectable={selectable}
-            multiSelect={multiSelect}
-            disableGutters={useSelector}
-            {...others}
-          >
-            {list.filter(it => !it.isHidden).map((item, i) => this.renderListItem(item, i))}
-          </HvListContainer>
-        )}
-      </>
+      <HvListItem
+        key={i}
+        id={itemId}
+        role={selectable ? "option" : "menuitem"}
+        disabled={item.disabled || undefined}
+        className={classes.item}
+        classes={{ selected: useSelector || multiSelect ? classes.itemSelector : "" }}
+        selected={multiSelect || selected ? selected : undefined}
+        onClick={evt => handleSelect(evt, item)}
+        startAdornment={startAdornment}
+        endAdornment={item.showNavIcon && <DropRightXS className={classes.box} iconSize="XS" />}
+      >
+        {multiSelect ? renderMultiSelectItem(item, itemId) : renderSingleSelectItem(item, itemId)}
+      </HvListItem>
     );
-  }
-}
+  };
 
-List.propTypes = {
+  return (
+    <>
+      {multiSelect && useSelector && showSelectAll && renderSelectAll()}
+
+      {list && (
+        <HvListContainer
+          id={id}
+          className={clsx(className, classes.root)}
+          role={selectable ? "listbox" : "menu"}
+          interactive
+          condensed={condensed}
+          selectable={selectable}
+          multiSelect={multiSelect}
+          disableGutters={useSelector}
+          {...others}
+        >
+          {list.filter(it => !it.isHidden).map((item, i) => renderListItem(item, i))}
+        </HvListContainer>
+      )}
+    </>
+  );
+};
+
+HvList.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -313,6 +254,10 @@ List.propTypes = {
      * Styles applied to the icon of the selector.
      */
     icon: PropTypes.string,
+    /**
+     * Styles applied to the list item.
+     */
+    item: PropTypes.string,
     /**
      * Styles applied to the list item when it has a selector.
      */
@@ -404,18 +349,4 @@ List.propTypes = {
   hasTooltips: PropTypes.bool
 };
 
-List.defaultProps = {
-  id: undefined,
-  multiSelect: false,
-  hasTooltips: false,
-  showSelectAll: false,
-  labels: DEFAULT_LABELS,
-  useSelector: false,
-  selectable: true,
-  singleSelectionToggle: true,
-  condensed: false,
-  onChange() {},
-  onClick() {}
-};
-
-export default withStyles(styles, { name: "HvList" })(List);
+export default withStyles(styles, { name: "HvList" })(HvList);

@@ -20,9 +20,12 @@ const styles = theme => ({
       outline: "none !important"
     }
   },
-  itemSelector: {
-    backgroundColor: "transparent"
+  item: {
+    "&$itemSelector": {
+      backgroundColor: "transparent"
+    }
   },
+  itemSelector: {},
   link: {
     ...theme.hv.typography.normalText,
     textDecoration: "none",
@@ -35,15 +38,9 @@ const styles = theme => ({
 
 export default styles;
 
-export const selectAllStyles = theme => ({
+export const selectAllStyles = () => ({
   root: {
-    margin: "0 0 2px 0"
-  },
-  editMode: {
-    backgroundColor: theme.palette.atmo3,
-    "& $selectAll": {
-      color: theme.hv.palette.accent.acce1
-    }
+    margin: 0
   },
   selectAllContainer: {
     width: "100%"

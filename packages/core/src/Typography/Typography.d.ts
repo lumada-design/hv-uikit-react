@@ -38,6 +38,14 @@ export interface HvTypographyProps
    * If `true`, the text will have a bottom margin.
    */
   paragraph?: boolean;
+
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   */
+  noWrap: boolean;
 }
 
 export type HvTypographyClassKey =

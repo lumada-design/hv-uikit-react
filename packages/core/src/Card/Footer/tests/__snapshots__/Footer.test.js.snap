@@ -345,10 +345,10 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                     "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                     "panel": "HvBaseDropdown-panel",
+                    "placeholder": "HvBaseDropdown-placeholder",
                     "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                     "selection": "HvBaseDropdown-selection",
                     "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                    "truncate": "HvBaseDropdown-truncate",
                   }
                 }
                 component={
@@ -385,10 +385,10 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                       "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                       "panel": "HvBaseDropdown-panel",
+                      "placeholder": "HvBaseDropdown-placeholder",
                       "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                       "selection": "HvBaseDropdown-selection",
                       "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                      "truncate": "HvBaseDropdown-truncate",
                     }
                   }
                   component={
@@ -844,10 +844,10 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                     "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                     "panel": "HvBaseDropdown-panel",
+                    "placeholder": "HvBaseDropdown-placeholder",
                     "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                     "selection": "HvBaseDropdown-selection",
                     "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                    "truncate": "HvBaseDropdown-truncate",
                   }
                 }
                 component={
@@ -884,10 +884,10 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                       "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                       "panel": "HvBaseDropdown-panel",
+                      "placeholder": "HvBaseDropdown-placeholder",
                       "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                       "selection": "HvBaseDropdown-selection",
                       "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                      "truncate": "HvBaseDropdown-truncate",
                     }
                   }
                   component={
@@ -1637,10 +1637,10 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                     "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                     "panel": "HvBaseDropdown-panel",
+                    "placeholder": "HvBaseDropdown-placeholder",
                     "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                     "selection": "HvBaseDropdown-selection",
                     "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                    "truncate": "HvBaseDropdown-truncate",
                   }
                 }
                 component={
@@ -1677,10 +1677,10 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                       "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                       "panel": "HvBaseDropdown-panel",
+                      "placeholder": "HvBaseDropdown-placeholder",
                       "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                       "selection": "HvBaseDropdown-selection",
                       "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                      "truncate": "HvBaseDropdown-truncate",
                     }
                   }
                   component={

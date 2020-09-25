@@ -19,10 +19,10 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
         "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
         "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
         "panel": "HvBaseDropdown-panel",
+        "placeholder": "HvBaseDropdown-placeholder",
         "root": "HvBaseDropdown-root",
         "selection": "HvBaseDropdown-selection",
         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-        "truncate": "HvBaseDropdown-truncate",
       }
     }
     placeholder="Placeholder..."
@@ -42,10 +42,10 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
           "panel": "HvBaseDropdown-panel",
+          "placeholder": "HvBaseDropdown-placeholder",
           "root": "HvBaseDropdown-root",
           "selection": "HvBaseDropdown-selection",
           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-          "truncate": "HvBaseDropdown-truncate",
         }
       }
       id="hv-base-dropdown-3"
@@ -73,11 +73,12 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
             id="hv-base-dropdown-3-selectionPlaceholder"
           >
             <WithStyles(ForwardRef)
-              className="HvBaseDropdown-truncate"
+              className="HvBaseDropdown-placeholder"
+              noWrap={true}
               variant="placeholderText"
             >
               <ForwardRef
-                className="HvBaseDropdown-truncate"
+                className="HvBaseDropdown-placeholder"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
@@ -104,10 +105,11 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                noWrap={true}
                 variant="placeholderText"
               >
                 <p
-                  className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  className="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
                 >
                   Placeholder...
                 </p>
@@ -182,7 +184,7 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
                 id="hv-base-dropdown-3-selectionPlaceholder"
               >
                 <p
-                  class="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  class="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
                 >
                   Placeholder...
                 </p>
@@ -247,10 +249,10 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
         "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
         "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
         "panel": "HvBaseDropdown-panel",
+        "placeholder": "HvBaseDropdown-placeholder",
         "root": "HvBaseDropdown-root",
         "selection": "HvBaseDropdown-selection",
         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-        "truncate": "HvBaseDropdown-truncate",
       }
     }
     placeholder="Placeholder..."
@@ -270,10 +272,10 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
           "panel": "HvBaseDropdown-panel",
+          "placeholder": "HvBaseDropdown-placeholder",
           "root": "HvBaseDropdown-root",
           "selection": "HvBaseDropdown-selection",
           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-          "truncate": "HvBaseDropdown-truncate",
         }
       }
       id="hv-base-dropdown-1"
@@ -301,11 +303,12 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
             id="hv-base-dropdown-1-selectionPlaceholder"
           >
             <WithStyles(ForwardRef)
-              className="HvBaseDropdown-truncate"
+              className="HvBaseDropdown-placeholder"
+              noWrap={true}
               variant="placeholderText"
             >
               <ForwardRef
-                className="HvBaseDropdown-truncate"
+                className="HvBaseDropdown-placeholder"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
@@ -332,10 +335,11 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                noWrap={true}
                 variant="placeholderText"
               >
                 <p
-                  className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  className="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
                 >
                   Placeholder...
                 </p>
@@ -429,10 +433,10 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
         "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
         "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
         "panel": "HvBaseDropdown-panel",
+        "placeholder": "HvBaseDropdown-placeholder",
         "root": "HvBaseDropdown-root",
         "selection": "HvBaseDropdown-selection",
         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-        "truncate": "HvBaseDropdown-truncate",
       }
     }
     placeholder="Placeholder..."
@@ -452,10 +456,10 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
           "panel": "HvBaseDropdown-panel",
+          "placeholder": "HvBaseDropdown-placeholder",
           "root": "HvBaseDropdown-root",
           "selection": "HvBaseDropdown-selection",
           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-          "truncate": "HvBaseDropdown-truncate",
         }
       }
       id="hv-base-dropdown-2"
@@ -485,11 +489,12 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
             id="hv-base-dropdown-2-selectionPlaceholder"
           >
             <WithStyles(ForwardRef)
-              className="HvBaseDropdown-truncate"
+              className="HvBaseDropdown-placeholder"
+              noWrap={true}
               variant="placeholderText"
             >
               <ForwardRef
-                className="HvBaseDropdown-truncate"
+                className="HvBaseDropdown-placeholder"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
@@ -516,10 +521,11 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                noWrap={true}
                 variant="placeholderText"
               >
                 <p
-                  className="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  className="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
                 >
                   Placeholder...
                 </p>
@@ -596,7 +602,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
                 id="hv-base-dropdown-2-selectionPlaceholder"
               >
                 <p
-                  class="HvBaseDropdown-truncate HvTypography-root HvTypography-placeholderText"
+                  class="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
                 >
                   Placeholder...
                 </p>

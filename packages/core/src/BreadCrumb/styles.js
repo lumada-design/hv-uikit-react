@@ -11,9 +11,6 @@ const styles = theme => ({
   link: {
     textDecoration: "none",
     maxWidth: "170px",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
     fontWeight: 400,
     "&:hover": {
       cursor: "pointer",

@@ -72,7 +72,7 @@ const File = ({ id, classes, data, onFileRemoved, removeFileButtonLabel }) => {
 
       {statusIcon}
 
-      <HvTypography className={classes.nameText} variant="highlightText">
+      <HvTypography noWrap className={classes.nameText} variant="highlightText">
         {data.name}
       </HvTypography>
 

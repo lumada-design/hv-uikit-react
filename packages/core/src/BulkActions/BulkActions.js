@@ -22,21 +22,24 @@ const HvBulkActions = props => {
     selectAllLabel,
     selectAllPagesLabel,
     showSelectAllPages = false,
+    semantic = true,
     actions,
     actionsCallback,
     actionsDisabled,
     maxVisibleActions,
     ...others
   } = props;
-  const [editMode, setEditMode] = useState(false);
+  const [anySelected, setAnySelected] = useState(false);
+
+  const isSemantic = semantic && anySelected;
 
   useEffect(() => {
-    setEditMode(numSelected > 0);
+    setAnySelected(numSelected > 0);
   }, [numSelected]);
 
   const defaultSelectAllLabel = (
     <HvTypography component="span">
-      {!editMode ? (
+      {!anySelected ? (
         <b>All</b>
       ) : (
         <>
@@ -57,7 +60,7 @@ const HvBulkActions = props => {
     <div
       id={id}
       className={clsx(className, classes.root, {
-        [classes.editMode]: editMode
+        [classes.semantic]: isSemantic
       })}
       {...others}
     >
@@ -66,16 +69,16 @@ const HvBulkActions = props => {
           id={setId(id, "select")}
           className={classes.selectAll}
           checked={numSelected > 0}
-          semantic={editMode}
+          semantic={isSemantic}
           onChange={(...args) => onSelectAll?.(...args)}
           indeterminate={numSelected > 0 && numSelected < numTotal}
           label={selectAllLabel ?? defaultSelectAllLabel}
         />
-        {showSelectAllPages && editMode && numSelected < numTotal && (
+        {showSelectAllPages && anySelected && numSelected < numTotal && (
           <HvButton
             id={setId(id, "pages")}
             className={classes.selectAllPages}
-            category={editMode ? "semantic" : "ghost"}
+            category={isSemantic ? "semantic" : "ghost"}
             onClick={(...args) => onSelectAllPages?.(...args)}
           >
             {selectAllPagesLabel ?? defaultSelectAllPagesLabel}
@@ -85,7 +88,7 @@ const HvBulkActions = props => {
       <HvActionsGeneric
         id={setId(id, "actions")}
         classes={{ root: classes.actions }}
-        category={editMode ? "semantic" : "ghost"}
+        category={isSemantic ? "semantic" : "ghost"}
         actions={actions}
         disabled={actionsDisabled ?? numSelected === 0}
         actionsCallback={actionsCallback}
@@ -113,9 +116,9 @@ HvBulkActions.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the component root class when in edit mode.
+     * Styles applied to the component root class when semantic and there are selected elements.
      */
-    editMode: PropTypes.string,
+    semantic: PropTypes.string,
     /**
      * Styles applied to the Actions root class.
      */
@@ -161,6 +164,10 @@ HvBulkActions.propTypes = {
    * Function called when the "select all pages" button is clicked toggled.
    */
   onSelectAllPages: PropTypes.func,
+  /**
+   * Whether the bulk actions should use the semantic styles when there are selected elements.
+   */
+  semantic: PropTypes.bool,
   /**
    * The renderable content inside the right actions slot,
    * or an Array of actions `{ id, label, icon, disabled, ... }`

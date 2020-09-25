@@ -21,22 +21,18 @@ const styles = theme => ({
   icon: {
     width: 32,
     height: 32,
-    margin: `0 ${theme.hv.spacing.xs}px`
+    margin: theme.spacing(0, "xs")
   },
   removeButton: {
     position: "absolute",
-    margin: `0 ${theme.hv.spacing.xs}px`,
+    margin: theme.spacing(0, "xs"),
     right: 0,
     top: 20
   },
   fail: {
-    color: theme.hv.palette.semantic.sema4
+    color: theme.palette.sema4
   },
-  nameText: {
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis"
-  }
+  nameText: {}
 });
 
 export default styles;

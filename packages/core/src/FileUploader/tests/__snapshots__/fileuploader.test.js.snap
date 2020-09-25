@@ -533,6 +533,7 @@ exports[`[v3] FileUploader withStyles should render correctly 1`] = `
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText"
+                      noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
@@ -563,10 +564,11 @@ exports[`[v3] FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        noWrap={true}
                         variant="highlightText"
                       >
                         <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
+                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Screenshot 2019-12-05 at 17.15.43.png
                         </p>
@@ -779,6 +781,7 @@ exports[`[v3] FileUploader withStyles should render correctly 1`] = `
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText"
+                      noWrap={true}
                       variant="highlightText"
                     >
                       <ForwardRef
@@ -809,10 +812,11 @@ exports[`[v3] FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
+                        noWrap={true}
                         variant="highlightText"
                       >
                         <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
+                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Screenshot 2019-12-05 at 12.03.13.png
                         </p>

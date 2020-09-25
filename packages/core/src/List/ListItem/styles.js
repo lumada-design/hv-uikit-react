@@ -47,7 +47,7 @@ const styles = theme => ({
   },
 
   selected: {
-    background: theme.hv.palette.atmosphere.atmo3
+    backgroundColor: theme.hv.palette.atmosphere.atmo3
   },
   disabled: {
     color: theme.hv.palette.atmosphere.atmo5

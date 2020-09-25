@@ -7,7 +7,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.atmo1,
     margin: theme.spacing("sm", 0, "xs")
   },
-  editMode: {
+  semantic: {
     backgroundColor: theme.palette.sema7,
     "& $selectAll": {
       ...semanticStyles(theme)

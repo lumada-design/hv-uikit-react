@@ -91,6 +91,7 @@ exports[`[v3] File withStyles - Invalid File should render correctly 1`] = `
       </Success>
       <WithStyles(ForwardRef)
         className="HvFileUploaderFile-nameText"
+        noWrap={true}
         variant="highlightText"
       >
         <ForwardRef
@@ -121,10 +122,11 @@ exports[`[v3] File withStyles - Invalid File should render correctly 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
+          noWrap={true}
           variant="highlightText"
         >
           <p
-            className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
+            className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
           >
             somefile.png
           </p>
@@ -427,6 +429,7 @@ exports[`[v3] File withStyles - Valid File should render correctly 1`] = `
       </Success>
       <WithStyles(ForwardRef)
         className="HvFileUploaderFile-nameText"
+        noWrap={true}
         variant="highlightText"
       >
         <ForwardRef
@@ -457,10 +460,11 @@ exports[`[v3] File withStyles - Valid File should render correctly 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
+          noWrap={true}
           variant="highlightText"
         >
           <p
-            className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
+            className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
           >
             somefile.png
           </p>

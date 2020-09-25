@@ -77,6 +77,7 @@ export type HvListClassKey =
   | "selectorContainer"
   | "box"
   | "truncate"
+  | "item"
   | "itemSelector"
   | "icon"
   | "focus"
