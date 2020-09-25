@@ -36,9 +36,11 @@ export const VerticalWithSingleTooltip = () => {
   return <HvBarchart data={data} tooltipType="single" />;
 };
 
-VerticalWithSingleTooltip.parameters = {
-  docs: {
-    description: { story: "Tooltip in single line mode." }
+VerticalWithSingleTooltip.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Tooltip in single line mode."
+    }
   }
 };
 
@@ -54,9 +56,11 @@ export const GroupedVerticalBarchart = () => {
   return <HvBarchart data={data} />;
 };
 
-GroupedVerticalBarchart.parameters = {
-  docs: {
-    description: { story: "Representation of groups by using multiple bars." }
+GroupedVerticalBarchart.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Representation of groups by using multiple bars."
+    }
   }
 };
 
@@ -161,9 +165,11 @@ export const StackedVerticalBarchart = () => {
   return <HvBarchart stack data={data} />;
 };
 
-StackedVerticalBarchart.parameters = {
-  docs: {
-    description: { story: "Groups in stack mode." }
+StackedVerticalBarchart.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Groups in stack mode."
+    }
   }
 };
 
@@ -180,9 +186,11 @@ export const SimpleHorizontalBarchart = () => (
   />
 );
 
-SimpleHorizontalBarchart.parameters = {
-  docs: {
-    description: { story: "Representation of horizontal chart." }
+SimpleHorizontalBarchart.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Representation of horizontal chart."
+    }
   }
 };
 
@@ -200,9 +208,11 @@ export const HorizontalBarchartWithSingleTooltip = () => (
   />
 );
 
-HorizontalBarchartWithSingleTooltip.parameters = {
-  docs: {
-    description: { story: "Tooltip in single line mode." }
+HorizontalBarchartWithSingleTooltip.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Tooltip in single line mode."
+    }
   }
 };
 
@@ -218,9 +228,11 @@ export const GroupedHorizontalBarchart = () => {
   return <HvBarchart horizontal data={data} />;
 };
 
-GroupedHorizontalBarchart.parameters = {
-  docs: {
-    description: { story: "Representation of groups by using multiple horizontal bars." }
+GroupedHorizontalBarchart.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Representation of groups by using multiple horizontal bars."
+    }
   }
 };
 
@@ -236,8 +248,10 @@ export const StackedHorizontalBarchart = () => {
   return <HvBarchart stack data={data} horizontal />;
 };
 
-StackedHorizontalBarchart.parameters = {
-  docs: {
-    description: { story: "Groups in stack mode." }
+StackedHorizontalBarchart.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Groups in stack mode."
+    }
   }
 };

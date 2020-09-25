@@ -18,8 +18,10 @@ export const Main = () => (
   <HvSwitch checked id="Switch-no-labels" showLabels={false} aria-label="Engine Control" />
 );
 
-Main.parameters = {
-  v3: true
+Main.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const OnChange = () => {
@@ -57,17 +59,21 @@ export const OnChange = () => {
   );
 };
 
-OnChange.parameters = {
-  docs: {
-    description: { story: "OnChange is called in the labels as in the switch itself." }
-  },
-  v3: true
+OnChange.story = {
+  parameters: {
+    docs: {
+      storyDescription: "OnChange is called in the labels as in the switch itself."
+    },
+    v3: true
+  }
 };
 
 export const WithLabels = () => <HvSwitch />;
 
-WithLabels.parameters = {
-  v3: true
+WithLabels.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const LabelsDefinition = () => {
@@ -79,14 +85,18 @@ export const LabelsDefinition = () => {
   return <HvSwitch checked={false} labels={labels} aria-label="Server online" />;
 };
 
-LabelsDefinition.parameters = {
-  v3: true
+LabelsDefinition.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const Disabled = () => <HvSwitch disabled />;
 
-Disabled.parameters = {
-  v3: true
+Disabled.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const Controlled = () => {
@@ -101,6 +111,8 @@ export const Controlled = () => {
   );
 };
 
-Controlled.parameters = {
-  v3: true
+Controlled.story = {
+  parameters: {
+    v3: true
+  }
 };

@@ -87,10 +87,11 @@ export const WithScroll = () => {
   );
 };
 
-WithScroll.parameters = {
-  docs: {
-    description: {
-      story: "Basic navigation anchors to provide a clickable area to show scrolling capabilities"
+WithScroll.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Basic navigation anchors to provide a clickable area to show scrolling capabilities"
     }
   }
 };

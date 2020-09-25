@@ -147,8 +147,10 @@ export const SingleDate = () => {
   );
 };
 
-SingleDate.parameters = {
-  v3: true
+SingleDate.story = {
+  parameters: {
+    v3: true
+  }
 };
 
 export const Localized = () => {
@@ -217,11 +219,11 @@ export const Localized = () => {
   );
 };
 
-Localized.parameters = {
-  v3: true,
-  docs: {
-    description: {
-      story: "Warning: Changing this sample locale changes the locale for all samples."
+Localized.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Warning: Changing this sample locale changes the locale for all samples."
     }
   }
 };

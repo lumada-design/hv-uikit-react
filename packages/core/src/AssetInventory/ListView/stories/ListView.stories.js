@@ -392,10 +392,11 @@ export const NotSelectableWithMenu = () => {
   return <HvListView values={values} renderer={rowRenderer} viewConfiguration={configuration} />;
 };
 
-NotSelectableWithMenu.parameters = {
-  docs: {
-    description: {
-      story: "List View that is not selectable with many actions, collapsed into a DropDownMenu"
+NotSelectableWithMenu.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "List View that is not selectable with many actions, collapsed into a DropDownMenu"
     }
   }
 };

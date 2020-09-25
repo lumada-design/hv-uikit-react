@@ -92,10 +92,11 @@ export const ThreeKnobs = () => {
   );
 };
 
-ThreeKnobs.parameters = {
-  docs: {
-    description: {
-      story: "Three knobs. Shows the possibility of manipulating N quantity of knobs and a range"
+ThreeKnobs.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Three knobs. Shows the possibility of manipulating N quantity of knobs and a range"
     }
   }
 };
@@ -131,10 +132,10 @@ export const ThreeKnobsWithColors = () => {
   );
 };
 
-ThreeKnobsWithColors.parameters = {
-  docs: {
-    description: {
-      story:
+ThreeKnobsWithColors.story = {
+  parameters: {
+    docs: {
+      storyDescription:
         "Three knobs with different color and different tracks. Shows the possibility manipulating the color of the knobs "
     }
   }
@@ -170,10 +171,10 @@ export const KnobsOverlapping = () => {
   );
 };
 
-KnobsOverlapping.parameters = {
-  docs: {
-    description: {
-      story:
+KnobsOverlapping.story = {
+  parameters: {
+    docs: {
+      storyDescription:
         "Two knobs with overlapping and a fractional scale. Range from 0.10 to 0.70 with 30 points defined. Each point represents 0.02 units. "
     }
   }
@@ -227,10 +228,10 @@ export const DifferentRanges = () => {
   );
 };
 
-DifferentRanges.parameters = {
-  docs: {
-    description: {
-      story:
+DifferentRanges.story = {
+  parameters: {
+    docs: {
+      storyDescription:
         "Three knobs with different range. Shows the possibility of manipulating N quantity of knobs and a range. "
     }
   }

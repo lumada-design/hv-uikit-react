@@ -170,9 +170,11 @@ export const AllComponents = () => {
   );
 };
 
-AllComponents.parameters = {
-  docs: {
-    description: { story: "A card that has all it's component defined." }
+AllComponents.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A card that has all it's component defined."
+    }
   }
 };
 
@@ -242,9 +244,11 @@ export const NoActions = () => {
   );
 };
 
-NoActions.parameters = {
-  docs: {
-    description: { story: "A Card without any actions." }
+NoActions.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A Card without any actions."
+    }
   }
 };
 
@@ -254,9 +258,11 @@ export const OnlyTitle = () => (
   </HvCard>
 );
 
-OnlyTitle.parameters = {
-  docs: {
-    description: { story: "A Card that only has a title." }
+OnlyTitle.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A Card that only has a title."
+    }
   }
 };
 
@@ -356,9 +362,11 @@ export const KPICard = () => {
   );
 };
 
-KPICard.parameters = {
-  docs: {
-    description: { story: "A card sample combined with a kpi as content." }
+KPICard.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A card sample combined with a kpi as content."
+    }
   }
 };
 
@@ -392,9 +400,11 @@ export const WithComposition = () => (
   </HvCard>
 );
 
-WithComposition.parameters = {
-  docs: {
-    description: { story: "A card sample that shows how to compose card with subcomponents." }
+WithComposition.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A card sample that shows how to compose card with subcomponents."
+    }
   }
 };
 
@@ -462,10 +472,11 @@ export const Selectable = () => {
   );
 };
 
-Selectable.parameters = {
-  docs: {
-    description: {
-      story: "A card sample showcasing the ability to select in the content and click action."
+Selectable.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "A card sample showcasing the ability to select in the content and click action."
     }
   }
 };
@@ -509,8 +520,10 @@ export const SelectableNoFooter = () => {
   );
 };
 
-SelectableNoFooter.parameters = {
-  docs: {
-    description: { story: "A card sample showcasing the ability to select in the content." }
+SelectableNoFooter.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A card sample showcasing the ability to select in the content."
+    }
   }
 };

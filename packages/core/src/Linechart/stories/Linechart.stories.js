@@ -52,9 +52,11 @@ export const WithArea = () => {
   return <HvLinechart data={data} type="area" />;
 };
 
-WithArea.parameters = {
-  docs: {
-    description: { story: "Colors the area below it." }
+WithArea.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Colors the area below it."
+    }
   }
 };
 
@@ -186,9 +188,11 @@ export const LinechartGrouped = () => {
   return <HvLinechart title="Multiple lines" subtitle="Sales performance (YTD)" data={data} />;
 };
 
-LinechartGrouped.parameters = {
-  docs: {
-    description: { story: "Representation of groups by using multiple lines." }
+LinechartGrouped.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Representation of groups by using multiple lines."
+    }
   }
 };
 
@@ -204,9 +208,11 @@ export const GroupedWithArea = () => {
   return <HvLinechart title="Multiple lines" subtitle="Sales performance (YTD)" data={data} />;
 };
 
-GroupedWithArea.parameters = {
-  docs: {
-    description: { story: "Groups using colored areas." }
+GroupedWithArea.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Groups using colored areas."
+    }
   }
 };
 
@@ -229,9 +235,11 @@ export const LinechartStacked = () => {
   );
 };
 
-LinechartStacked.parameters = {
-  docs: {
-    description: { story: "Groups in stack mode." }
+LinechartStacked.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Groups in stack mode."
+    }
   }
 };
 
@@ -270,13 +278,15 @@ export const TimeRepresentation = () => {
   );
 };
 
-TimeRepresentation.parameters = {
-  docs: {
-    description: { story: "Representation of time related data." }
-  },
-  eyes: {
-    // story excluded due inconsistent component alignment and relative position, opened 1822 issue
-    include: false
+TimeRepresentation.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Representation of time related data."
+    },
+    eyes: {
+      // story excluded due inconsistent component alignment and relative position, opened 1822 issue
+      include: false
+    }
   }
 };
 
@@ -338,8 +348,10 @@ export const WithIntervalUpdates = () => {
   );
 };
 
-WithIntervalUpdates.parameters = {
-  docs: {
-    description: { story: "Data updated each second." }
+WithIntervalUpdates.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Data updated each second."
+    }
   }
 };

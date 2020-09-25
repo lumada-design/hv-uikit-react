@@ -43,9 +43,11 @@ export const DonutChartThin = () => {
   );
 };
 
-DonutChartThin.parameters = {
-  docs: {
-    description: { story: "Thin Donut." }
+DonutChartThin.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Thin Donut."
+    }
   }
 };
 

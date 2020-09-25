@@ -30,10 +30,12 @@ export const Resizable = () => {
   return <HvTextArea labels={labels} id="resize" rows={5} maxCharQuantity={1000} resizable />;
 };
 
-Resizable.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "Text area that allow resizing." }
+Resizable.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area that allow resizing."
+    }
   }
 };
 
@@ -65,11 +67,11 @@ export const LimitedBlocking = () => {
   );
 };
 
-LimitedBlocking.parameters = {
-  v3: true,
-  docs: {
-    description: {
-      story:
+LimitedBlocking.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription:
         "Text area that limits the quantity of character that can be introduced in the text area."
     }
   }
@@ -95,10 +97,12 @@ export const LimitedWithCustomLabels = () => {
   );
 };
 
-LimitedWithCustomLabels.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "Text area char count with a custom labels." }
+LimitedWithCustomLabels.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area char count with a custom labels."
+    }
   }
 };
 
@@ -112,10 +116,12 @@ export const Disabled = () => {
   return <HvTextArea id="disabled" rows={5} labels={labels} maxCharQuantity={1500} disabled />;
 };
 
-Disabled.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "Text area that does not allows any interaction." }
+Disabled.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area that does not allows any interaction."
+    }
   }
 };
 
@@ -165,10 +171,12 @@ export const ControlledLimited = () => {
   );
 };
 
-ControlledLimited.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "Text area value altered from an outside component." }
+ControlledLimited.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area value altered from an outside component."
+    }
   }
 };
 
@@ -191,10 +199,12 @@ export const customValidation = () => {
   );
 };
 
-customValidation.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "Text area value that can't contain numbers." }
+customValidation.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area value that can't contain numbers."
+    }
   }
 };
 
@@ -235,9 +245,11 @@ export const ControlledValidation = () => {
   );
 };
 
-ControlledValidation.parameters = {
-  v3: true,
-  docs: {
-    description: { story: "Text area value altered from an outside component." }
+ControlledValidation.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area value altered from an outside component."
+    }
   }
 };

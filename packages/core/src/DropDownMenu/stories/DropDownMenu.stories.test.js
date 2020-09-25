@@ -35,9 +35,11 @@ export const KeyboardNavigation = () => (
   </>
 );
 
-KeyboardNavigation.parameters = {
-  v3: true,
-  eyes: { include: false }
+KeyboardNavigation.story = {
+  parameters: {
+    v3: true,
+    eyes: { include: false }
+  }
 };
 
 // __________________________________
@@ -51,9 +53,11 @@ export const A11YClosed = () => (
   />
 );
 
-A11YClosed.parameters = {
-  v3: true,
-  eyes: { include: false }
+A11YClosed.story = {
+  parameters: {
+    v3: true,
+    eyes: { include: false }
+  }
 };
 
 export const A11YOpen = () => (
@@ -64,16 +68,18 @@ export const A11YOpen = () => (
   />
 );
 
-A11YOpen.parameters = {
-  v3: true,
-  pa11y: {
-    actions: [
-      // open menu before testing
-      "click element #dropdownmenu-open-icon-button",
-      "wait for element #dropdownmenu-open-list to be visible"
-    ]
-  },
-  eyes: { include: false }
+A11YOpen.story = {
+  parameters: {
+    v3: true,
+    pa11y: {
+      actions: [
+        // open menu before testing
+        "click element #dropdownmenu-open-icon-button",
+        "wait for element #dropdownmenu-open-list to be visible"
+      ]
+    },
+    eyes: { include: false }
+  }
 };
 
 // __________________________________

@@ -106,10 +106,12 @@ export const Main = () => {
   );
 };
 
-Main.parameters = {
-  v3: true,
-  eyes: {
-    // waiting until all elements are rendered (issue #1794)
-    waitBeforeScreenshot: ".HvHeaderMenuBar-active"
+Main.story = {
+  parameters: {
+    v3: true,
+    eyes: {
+      // waiting until all elements are rendered (issue #1794)
+      waitBeforeScreenshot: ".HvHeaderMenuBar-active"
+    }
   }
 };
