@@ -56,7 +56,7 @@ export const DonutChartWithControls = () => {
     wrapper: {
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center"
+      alignItems: "flex-end"
     }
   });
 
@@ -71,11 +71,11 @@ export const DonutChartWithControls = () => {
     label: { paddingBottom: 6 },
     titlePadding: { marginTop: 10 },
     dropdownPlacement: {
-      marginTop: 24,
       marginLeft: 10
     },
     controllerGroup: {
-      display: "flex"
+      display: "flex",
+      alignItems: "flex-end"
     }
   }));
 
@@ -91,6 +91,7 @@ export const DonutChartWithControls = () => {
           <HvDropdown
             id="dropdown2"
             labels={{ title: "Time Period" }}
+            placement="left"
             classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             values={[
               { label: "Last 0.5h" },
@@ -103,6 +104,7 @@ export const DonutChartWithControls = () => {
             className={classes.dropdownPlacement}
             onClick={(e, item) => console.log(item.label)}
             dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+            placement="left"
           />
         </div>
       </ChartHeader>
@@ -124,7 +126,7 @@ export const DonutChartWithControls = () => {
 DonutChartWithControls.story = {
   parameters: {
     docs: {
-      storyDescription: "Donut chart with controls."
+      storyDescription: "Donut chart with title and controls."
     }
   }
 };
