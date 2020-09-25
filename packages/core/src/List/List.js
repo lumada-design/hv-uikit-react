@@ -255,7 +255,6 @@ class List extends React.Component {
       labels,
       onChange,
       onClick,
-      selectDefault,
       singleSelectionToggle,
       ...others
     } = this.props;
@@ -392,11 +391,6 @@ List.propTypes = {
    */
   selectable: PropTypes.bool,
   /**
-   * If `true` and none element selected,
-   * single select has default (first) label selected.
-   */
-  selectDefault: PropTypes.bool,
-  /**
    * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle: PropTypes.bool,
@@ -418,7 +412,6 @@ List.defaultProps = {
   labels: DEFAULT_LABELS,
   useSelector: false,
   selectable: true,
-  selectDefault: false,
   singleSelectionToggle: true,
   condensed: false,
   onChange() {},

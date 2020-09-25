@@ -59,11 +59,6 @@ export interface HvListProps
    */
   selectable?: boolean;
   /**
-   * If `true` and none element selected,
-   * single select has default (first) label selected.
-   */
-  selectDefault?: boolean;
-  /**
    * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle?: boolean;

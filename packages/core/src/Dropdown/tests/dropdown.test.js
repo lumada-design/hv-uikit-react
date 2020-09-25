@@ -22,7 +22,6 @@ describe("[V3] <Dropdown />", () => {
 
   let wrapper;
   let dropdownComponent;
-  let listComponent;
 
   describe("[V3]  with defaults", () => {
     const onChangeMock = jest.fn();
@@ -37,7 +36,7 @@ describe("[V3] <Dropdown />", () => {
 
       wrapper = mount(
         <HvProvider>
-          <Dropdown values={mockData} onChange={onChangeMock} showSearch selectDefault expanded />
+          <Dropdown values={mockData} onChange={onChangeMock} showSearch expanded />
         </HvProvider>
       );
 
@@ -47,11 +46,6 @@ describe("[V3] <Dropdown />", () => {
 
     it("should render correctly", () => {
       expect(wrapper.find(Dropdown)).toMatchSnapshot();
-    });
-
-    it("default value is selected", () => {
-      listComponent = wrapper.find(List).find("li");
-      expect(listComponent.at(0).prop("aria-selected")).toBe(true);
     });
 
     it("onChange is triggered on first render when required", () => {
@@ -69,28 +63,6 @@ describe("[V3] <Dropdown />", () => {
       );
 
       expect(onChangeMock).toHaveBeenCalled();
-    });
-  });
-
-  describe("[V3] <Dropdown /> with selectDefault false", () => {
-    beforeEach(async () => {
-      wrapper = mount(
-        <HvProvider>
-          <Dropdown values={mockData} selectDefault={false} expanded />
-        </HvProvider>
-      );
-    });
-
-    it("should render correctly", () => {
-      expect(wrapper.find(Dropdown)).toMatchSnapshot();
-    });
-
-    it("no default value is selected", () => {
-      listComponent = wrapper.find("li");
-
-      for (let i = 1; i < listComponent.length; i += i) {
-        expect(listComponent.at(i).prop("aria-selected")).toBe(undefined);
-      }
     });
   });
 

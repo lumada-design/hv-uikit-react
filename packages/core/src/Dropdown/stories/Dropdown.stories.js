@@ -55,7 +55,7 @@ export const SingleSelection = () => (
     id="dropdown7"
     onChange={item => console.log(item)}
     values={[
-      { id: "id-1", label: "value 1" },
+      { id: "id-1", label: "value 1", selected: true },
       { id: "id-2", label: "value 2" },
       { id: "id-3", label: "value 3" },
       { id: "id-4", label: "value 4" }
@@ -148,10 +148,9 @@ SingleSelectionWithSearch.story = {
   }
 };
 
-export const SingleSelectionNoDefault = () => (
+export const SingleSelectionNoSelection = () => (
   <HvDropdown
     id="dropdown8"
-    selectDefault={false}
     hasTooltips
     values={[
       { label: "value 1" },
@@ -163,14 +162,12 @@ export const SingleSelectionNoDefault = () => (
   />
 );
 
-SingleSelectionNoDefault.story = {
-  parameters: {
-    pa11y: {
-      ignore: ["region"]
-    },
-    v3: true,
-    eyes: { include: false }
-  }
+SingleSelectionNoSelection.parameters = {
+  pa11y: {
+    ignore: ["region"]
+  },
+  v3: true,
+  eyes: { include: false }
 };
 
 export const DifferentSizeAndPlacements = () => {

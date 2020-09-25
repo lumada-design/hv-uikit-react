@@ -197,6 +197,7 @@ rootDisabled
 rootOpen
 selection
 ```
+The `selectDefault` prop was removed
 
 ### DropDownMenu
 
@@ -244,6 +245,7 @@ selected
 selector
 textDisabled
 ```
+The `selectDefault` prop was removed
 
 ### Login
 

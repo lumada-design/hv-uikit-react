@@ -28,7 +28,7 @@ const parseState = list => {
 };
 
 const parseList = (list, item, props, selectAll) => {
-  const { multiSelect, selectable, selectDefault, singleSelectionToggle } = props;
+  const { multiSelect, selectable, singleSelectionToggle } = props;
 
   let anySelected = false;
   const newList = list.map(elem => {
@@ -61,11 +61,6 @@ const parseList = (list, item, props, selectAll) => {
 
     return newItem;
   });
-
-  // select first item by default when single select and no selection
-  if (!multiSelect && !anySelected && selectDefault && selectable) {
-    newList[0].selected = true;
-  }
 
   return newList;
 };

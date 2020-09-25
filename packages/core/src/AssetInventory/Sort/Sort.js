@@ -81,7 +81,6 @@ const Sort = ({
       labels={labels}
       values={sortOperationSetup(metadata, selected)}
       onChange={onSortChange || innerSortValues}
-      selectDefault={false}
       singleSelectionToggle={false}
       disablePortal={disablePortal}
       {...others}

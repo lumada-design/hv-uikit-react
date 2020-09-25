@@ -9,6 +9,8 @@ import { getSelected } from "../utils";
 import styles from "./styles";
 import ActionContainer from "../../ActionBar";
 
+const valuesExist = values => !isNil(values) && values?.length > 0;
+
 const List = ({
   id,
   classes,
@@ -17,7 +19,6 @@ const List = ({
   showSearch = false,
   onChange,
   labels,
-  selectDefault = true,
   notifyChangesOnFirstRender = false,
   hasTooltips = false,
   singleSelectionToggle,
@@ -50,6 +51,7 @@ const List = ({
    * After the first render, call onChange if notifyChangesOnFirstRender.
    */
   useEffect(() => {
+    if (!valuesExist(values)) return;
     setList(clone(values));
     updateSelectAll(values);
     if (notifyChangesOnFirstRender) {
@@ -189,7 +191,7 @@ const List = ({
     );
   };
 
-  const showList = !isNil(values);
+  const showList = valuesExist(values);
 
   return (
     <div className={classes.rootList}>
@@ -206,7 +208,6 @@ const List = ({
             showSelectAll={false}
             onChange={onSelection}
             labels={newLabels}
-            selectDefault={selectDefault}
             hasTooltips={hasTooltips}
             selectable
             condensed
@@ -249,11 +250,6 @@ List.propTypes = {
    * An object containing all the labels for the dropdown.
    */
   labels: PropTypes.instanceOf(Object).isRequired,
-  /**
-   * If `true` and none element selected,
-   * single select has default (first) label selected.
-   */
-  selectDefault: PropTypes.bool,
   /**
    * If 'true' the dropdown will notify on the first render.
    */
