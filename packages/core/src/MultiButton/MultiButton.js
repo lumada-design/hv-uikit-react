@@ -19,8 +19,7 @@ const HvMultiButton = props => {
           category,
           overrideIconColors: false,
           className: clsx(child.props.className, classes.button, {
-            [classes.isSelected]: child.props.selected,
-            [classes.isUnselected]: !child.props.selected
+            [classes.selected]: child.props.selected
           })
         })
       )}
@@ -56,11 +55,7 @@ HvMultiButton.propTypes = {
     /**
      * Styles applied to the button when it's selected.
      */
-    isSelected: PropTypes.string,
-    /**
-     * Styles applied to the button when it's not selected.
-     */
-    isUnselected: PropTypes.string
+    selected: PropTypes.string
   }).isRequired,
   /**
    * If the MultiButton is to be displayed vertically.
