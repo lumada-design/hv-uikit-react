@@ -32,3 +32,21 @@ pageSize, select, sort and paginate
     Select From List By Label      ${pageSize}    2
     Click Element                  ${pageLast}
     Checkbox Should Be Selected    ${checkBox2}
+
+change page size with filtered results
+    [Documentation]    traceability:
+    ...                bug https://insightgroup.atlassian.net/browse/HVUIKIT-5549
+    Go To                               ${components}asset-inventory--server-side-pagination
+    Input Text                          ${searchBox}    Risk of downtime 1
+    Select From List By Label           ${pageSize}   6
+    wait Until Page Contains Element    css:#card>div  limit=6
+    Select From List By Label           ${pageSize}   8
+    List Selection Should Be            ${pageSize}   8
+
+change page size with filtered results on other page
+    Go To                               ${components}asset-inventory--server-side-pagination
+    Input Text                          ${searchBox}    Risk of downtime 1
+    Click Element                       css:button[aria-label="Next Page"]
+    wait Until Page Contains Element    css:#card>div  limit=2
+    Select From List By Label           ${pageSize}   8
+    wait Until Page Contains Element    css:#card>div  limit=6
