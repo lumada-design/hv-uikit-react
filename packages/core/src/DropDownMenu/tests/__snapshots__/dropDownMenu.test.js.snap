@@ -77,7 +77,6 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
             disabled={false}
             icon={true}
             id="drop-down-menu-11-icon-button"
-            tabIndex={-1}
           >
             <MoreOptionsVertical />
           </ForwardRef(WithStyles)>
@@ -117,7 +116,6 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
               disabled={false}
               icon={true}
               id="drop-down-menu-11-icon-button"
-              tabIndex={-1}
             >
               <MoreOptionsVertical />
             </ForwardRef(WithStyles)>
@@ -157,7 +155,6 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-11-icon-button"
-                tabIndex={-1}
               >
                 <MoreOptionsVertical />
               </ForwardRef(WithStyles)>
@@ -176,7 +173,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
               id="drop-down-menu-11"
               onClick={[Function]}
               onKeyDown={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
@@ -184,13 +181,13 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-11-icon-button"
-                tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
+                      "focusVisible": "HvButton-focusVisible",
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
@@ -212,7 +209,6 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                   disabled={false}
                   icon={true}
                   id="drop-down-menu-11-icon-button"
-                  tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
@@ -230,8 +226,8 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                     color="primary"
                     disableRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvButton-focusVisible"
                     id="drop-down-menu-11-icon-button"
-                    tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -273,8 +269,8 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                       color="primary"
                       disableRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvButton-focusVisible"
                       id="drop-down-menu-11-icon-button"
-                      tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -284,9 +280,8 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                         id="drop-down-menu-11-icon-button"
-                        tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -303,9 +298,8 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           id="drop-down-menu-11-icon-button"
-                          tabIndex={-1}
                           type="button"
                         >
                           <button
@@ -324,7 +318,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -385,13 +379,13 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
                   aria-haspopup="listbox"
                   class="HvBaseDropdown-root HvDropDownMenu-root"
                   id="drop-down-menu-11"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <button
                     aria-label="Dropdown menu"
                     class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-11-icon-button"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <span
@@ -519,7 +513,6 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
             disabled={false}
             icon={true}
             id="drop-down-menu-9-icon-button"
-            tabIndex={-1}
           >
             <MoreOptionsVertical />
           </ForwardRef(WithStyles)>
@@ -559,7 +552,6 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
               disabled={false}
               icon={true}
               id="drop-down-menu-9-icon-button"
-              tabIndex={-1}
             >
               <MoreOptionsVertical />
             </ForwardRef(WithStyles)>
@@ -599,7 +591,6 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-9-icon-button"
-                tabIndex={-1}
               >
                 <MoreOptionsVertical />
               </ForwardRef(WithStyles)>
@@ -618,7 +609,7 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
               id="drop-down-menu-9"
               onClick={[Function]}
               onKeyDown={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
@@ -626,13 +617,13 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-9-icon-button"
-                tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
+                      "focusVisible": "HvButton-focusVisible",
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
@@ -654,7 +645,6 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                   disabled={false}
                   icon={true}
                   id="drop-down-menu-9-icon-button"
-                  tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
@@ -672,8 +662,8 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                     color="primary"
                     disableRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvButton-focusVisible"
                     id="drop-down-menu-9-icon-button"
-                    tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -715,8 +705,8 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                       color="primary"
                       disableRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvButton-focusVisible"
                       id="drop-down-menu-9-icon-button"
-                      tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -726,9 +716,8 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                         id="drop-down-menu-9-icon-button"
-                        tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -745,9 +734,8 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           id="drop-down-menu-9-icon-button"
-                          tabIndex={-1}
                           type="button"
                         >
                           <button
@@ -766,7 +754,7 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -922,7 +910,6 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
             disabled={false}
             icon={true}
             id="drop-down-menu-10-icon-button"
-            tabIndex={-1}
           >
             <MoreOptionsVertical />
           </ForwardRef(WithStyles)>
@@ -962,7 +949,6 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
               disabled={false}
               icon={true}
               id="drop-down-menu-10-icon-button"
-              tabIndex={-1}
             >
               <MoreOptionsVertical />
             </ForwardRef(WithStyles)>
@@ -1002,7 +988,6 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-10-icon-button"
-                tabIndex={-1}
               >
                 <MoreOptionsVertical />
               </ForwardRef(WithStyles)>
@@ -1022,7 +1007,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
               id="drop-down-menu-10"
               onClick={[Function]}
               onKeyDown={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
@@ -1030,13 +1015,13 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-10-icon-button"
-                tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
                   className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                   classes={
                     Object {
+                      "focusVisible": "HvButton-focusVisible",
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
@@ -1058,7 +1043,6 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                   disabled={false}
                   icon={true}
                   id="drop-down-menu-10-icon-button"
-                  tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
@@ -1076,8 +1060,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                     color="primary"
                     disableRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvButton-focusVisible"
                     id="drop-down-menu-10-icon-button"
-                    tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -1119,8 +1103,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                       color="primary"
                       disableRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvButton-focusVisible"
                       id="drop-down-menu-10-icon-button"
-                      tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -1130,9 +1114,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                         id="drop-down-menu-10-icon-button"
-                        tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -1149,9 +1132,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           id="drop-down-menu-10-icon-button"
-                          tabIndex={-1}
                           type="button"
                         >
                           <button
@@ -1170,7 +1152,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -1232,13 +1214,13 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                   aria-owns="drop-down-menu-10-children-container"
                   class="HvBaseDropdown-root HvDropDownMenu-root"
                   id="drop-down-menu-10"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <button
                     aria-label="Dropdown menu"
                     class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-10-icon-button"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <span
@@ -2211,7 +2193,6 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
             disabled={false}
             icon={true}
             id="drop-down-menu-3-icon-button"
-            tabIndex={-1}
           >
             <MoreOptionsVertical />
           </ForwardRef(WithStyles)>
@@ -2251,7 +2232,6 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
               disabled={false}
               icon={true}
               id="drop-down-menu-3-icon-button"
-              tabIndex={-1}
             >
               <MoreOptionsVertical />
             </ForwardRef(WithStyles)>
@@ -2291,7 +2271,6 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-3-icon-button"
-                tabIndex={-1}
               >
                 <MoreOptionsVertical />
               </ForwardRef(WithStyles)>
@@ -2310,7 +2289,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
               id="drop-down-menu-3"
               onClick={[Function]}
               onKeyDown={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
@@ -2318,13 +2297,13 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-3-icon-button"
-                tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
+                      "focusVisible": "HvButton-focusVisible",
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
@@ -2346,7 +2325,6 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                   disabled={false}
                   icon={true}
                   id="drop-down-menu-3-icon-button"
-                  tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
@@ -2364,8 +2342,8 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                     color="primary"
                     disableRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvButton-focusVisible"
                     id="drop-down-menu-3-icon-button"
-                    tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -2407,8 +2385,8 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                       color="primary"
                       disableRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvButton-focusVisible"
                       id="drop-down-menu-3-icon-button"
-                      tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -2418,9 +2396,8 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                         id="drop-down-menu-3-icon-button"
-                        tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -2437,9 +2414,8 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           id="drop-down-menu-3-icon-button"
-                          tabIndex={-1}
                           type="button"
                         >
                           <button
@@ -2458,7 +2434,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -2519,13 +2495,13 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
                   aria-haspopup="listbox"
                   class="HvBaseDropdown-root HvDropDownMenu-root"
                   id="drop-down-menu-3"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <button
                     aria-label="Dropdown menu"
                     class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-3-icon-button"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <span
@@ -2653,7 +2629,6 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
             disabled={false}
             icon={true}
             id="drop-down-menu-1-icon-button"
-            tabIndex={-1}
           >
             <MoreOptionsVertical />
           </ForwardRef(WithStyles)>
@@ -2693,7 +2668,6 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
               disabled={false}
               icon={true}
               id="drop-down-menu-1-icon-button"
-              tabIndex={-1}
             >
               <MoreOptionsVertical />
             </ForwardRef(WithStyles)>
@@ -2733,7 +2707,6 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-1-icon-button"
-                tabIndex={-1}
               >
                 <MoreOptionsVertical />
               </ForwardRef(WithStyles)>
@@ -2752,7 +2725,7 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
               id="drop-down-menu-1"
               onClick={[Function]}
               onKeyDown={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
@@ -2760,13 +2733,13 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-1-icon-button"
-                tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
                   className="HvDropDownMenu-icon"
                   classes={
                     Object {
+                      "focusVisible": "HvButton-focusVisible",
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
@@ -2788,7 +2761,6 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                   disabled={false}
                   icon={true}
                   id="drop-down-menu-1-icon-button"
-                  tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
@@ -2806,8 +2778,8 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                     color="primary"
                     disableRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvButton-focusVisible"
                     id="drop-down-menu-1-icon-button"
-                    tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -2849,8 +2821,8 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                       color="primary"
                       disableRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvButton-focusVisible"
                       id="drop-down-menu-1-icon-button"
-                      tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -2860,9 +2832,8 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                         id="drop-down-menu-1-icon-button"
-                        tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -2879,9 +2850,8 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           id="drop-down-menu-1-icon-button"
-                          tabIndex={-1}
                           type="button"
                         >
                           <button
@@ -2900,7 +2870,7 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -3056,7 +3026,6 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
             disabled={false}
             icon={true}
             id="drop-down-menu-2-icon-button"
-            tabIndex={-1}
           >
             <MoreOptionsVertical />
           </ForwardRef(WithStyles)>
@@ -3096,7 +3065,6 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
               disabled={false}
               icon={true}
               id="drop-down-menu-2-icon-button"
-              tabIndex={-1}
             >
               <MoreOptionsVertical />
             </ForwardRef(WithStyles)>
@@ -3136,7 +3104,6 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-2-icon-button"
-                tabIndex={-1}
               >
                 <MoreOptionsVertical />
               </ForwardRef(WithStyles)>
@@ -3156,7 +3123,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
               id="drop-down-menu-2"
               onClick={[Function]}
               onKeyDown={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
             >
               <WithStyles(HvButton)
                 aria-label="Dropdown menu"
@@ -3164,13 +3131,13 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                 disabled={false}
                 icon={true}
                 id="drop-down-menu-2-icon-button"
-                tabIndex={-1}
               >
                 <HvButton
                   aria-label="Dropdown menu"
                   className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
                   classes={
                     Object {
+                      "focusVisible": "HvButton-focusVisible",
                       "ghost": "HvButton-ghost",
                       "ghostDisabled": "HvButton-ghostDisabled",
                       "ghostSVG": "HvButton-ghostSVG",
@@ -3192,7 +3159,6 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                   disabled={false}
                   icon={true}
                   id="drop-down-menu-2-icon-button"
-                  tabIndex={-1}
                 >
                   <WithStyles(ForwardRef(Button))
                     aria-label="Dropdown menu"
@@ -3210,8 +3176,8 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                     color="primary"
                     disableRipple={true}
                     disabled={false}
+                    focusVisibleClassName="HvButton-focusVisible"
                     id="drop-down-menu-2-icon-button"
-                    tabIndex={-1}
                     variant="text"
                   >
                     <ForwardRef(Button)
@@ -3253,8 +3219,8 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                       color="primary"
                       disableRipple={true}
                       disabled={false}
+                      focusVisibleClassName="HvButton-focusVisible"
                       id="drop-down-menu-2-icon-button"
-                      tabIndex={-1}
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -3264,9 +3230,8 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                         id="drop-down-menu-2-icon-button"
-                        tabIndex={-1}
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -3283,9 +3248,8 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           id="drop-down-menu-2-icon-button"
-                          tabIndex={-1}
                           type="button"
                         >
                           <button
@@ -3304,7 +3268,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -3366,13 +3330,13 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                   aria-owns="drop-down-menu-2-children-container"
                   class="HvBaseDropdown-root HvDropDownMenu-root"
                   id="drop-down-menu-2"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <button
                     aria-label="Dropdown menu"
                     class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvDropDownMenu-iconSelected HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     id="drop-down-menu-2-icon-button"
-                    tabindex="-1"
+                    tabindex="0"
                     type="button"
                   >
                     <span

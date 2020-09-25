@@ -164,6 +164,8 @@ describe("[v3] Hv Table", () => {
             pageSize={5}
             subElementTemplate={subElementTemplate}
             idForCheckbox="id"
+            showPagination={false}
+            showPageSize={false}
           />
         </HvProvider>
       );

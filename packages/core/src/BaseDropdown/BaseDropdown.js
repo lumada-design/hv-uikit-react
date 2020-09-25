@@ -66,7 +66,7 @@ const HvBaseDropdown = ({
       return;
     }
 
-    if (!isOpen) anchorHeaderRef.current?.focus({ preventScroll: true });
+    if (!isOpen) anchorHeaderRef.current?.firstChild.focus({ preventScroll: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
@@ -160,6 +160,7 @@ const HvBaseDropdown = ({
         aria-labelledby={ariaLabelledBy}
         aria-controls={isOpen ? setId(localId, "children-container") : undefined}
         aria-label={others["aria-label"] ?? undefined}
+        tabIndex={disabled ? -1 : 0}
       >
         {buildHeaderLabel()}
         {renderAdornment()}
@@ -277,7 +278,7 @@ const HvBaseDropdown = ({
         className={clsx(className, classes.root)}
         onKeyDown={handleToggle}
         onClick={handleToggle}
-        tabIndex={disabled ? -1 : 0}
+        tabIndex={-1}
         {...others}
         aria-label={ariaLabelledBy ? undefined : others["aria-label"]}
       >

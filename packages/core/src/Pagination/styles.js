@@ -1,5 +1,3 @@
-import { outlineStyles } from "../Focus/styles";
-
 const styles = theme => {
   const hoverColor = theme.palette.atmo3;
 
@@ -84,15 +82,7 @@ const styles = theme => {
       }
     },
     iconContainer: {
-      padding: 0,
-      borderRadius: 0,
-      "&:hover": {
-        backgroundColor: hoverColor
-      },
-      "&:focus": {
-        backgroundColor: hoverColor,
-        ...outlineStyles
-      }
+      padding: 0
     },
     icon: {},
     selectDownIcon: {

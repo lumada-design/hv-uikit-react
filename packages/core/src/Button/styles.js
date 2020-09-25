@@ -17,9 +17,6 @@ const styles = theme => {
       textTransform: "none",
       "&:hover,&:focus": {},
       "&:active": {},
-      "&:focus": {
-        ...outlineStyles
-      },
       minWidth: "70px",
       padding: theme.spacing(0, "xs"),
       cursor: "pointer",
@@ -40,8 +37,12 @@ const styles = theme => {
     primary: {
       color: theme.palette.base1,
       backgroundColor: theme.hv.palette.accent.acce2,
-      "&:hover,&:focus": {
+      "&:hover": {
         backgroundColor: theme.hv.palette.accent.acce2h
+      },
+      "&$focusVisible": {
+        backgroundColor: theme.hv.palette.accent.acce2h,
+        ...outlineStyles
       },
       "&:active": {
         backgroundColor: theme.hv.palette.accent.acce2
@@ -59,14 +60,20 @@ const styles = theme => {
         pointerEvents: "auto"
       }
     },
+    focusVisible: {},
     primaryDisabled: {},
     secondary: {
       color: theme.hv.palette.accent.acce1,
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
       border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
-      "&:hover,&:focus": {
+      "&:hover": {
         backgroundColor: theme.hv.palette.atmosphere.atmo3,
         border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+      },
+      "&$focusVisible": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo3,
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+        ...outlineStyles
       },
       "&:active": {
         backgroundColor: theme.hv.palette.atmosphere.atmo1
@@ -91,8 +98,12 @@ const styles = theme => {
     ghost: {
       color: theme.hv.palette.accent.acce1,
       backgroundColor: "transparent",
-      "&:hover,&:focus": {
+      "&:hover": {
         backgroundColor: theme.hv.palette.atmosphere.atmo3
+      },
+      "&$focusVisible": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo3,
+        ...outlineStyles
       },
       "&:active": {
         backgroundColor: "transparent"
@@ -116,8 +127,12 @@ const styles = theme => {
     semantic: {
       color: theme.hv.palette.base.base2,
       backgroundColor: "transparent",
-      "&:hover,&:focus": {
+      "&:hover": {
         backgroundColor: convertedColor
+      },
+      "&$focusVisible": {
+        backgroundColor: convertedColor,
+        ...outlineStyles
       },
       "&:active": {
         backgroundColor: convertedColor

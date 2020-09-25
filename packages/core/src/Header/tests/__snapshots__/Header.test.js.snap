@@ -96,6 +96,7 @@ exports[`[v3] Header should be able to render 1`] = `
                   <HvButton
                     classes={
                       Object {
+                        "focusVisible": "HvButton-focusVisible",
                         "ghost": "HvButton-ghost",
                         "ghostDisabled": "HvButton-ghostDisabled",
                         "ghostSVG": "HvButton-ghostSVG",
@@ -131,6 +132,7 @@ exports[`[v3] Header should be able to render 1`] = `
                       }
                       color="primary"
                       disableRipple={true}
+                      focusVisibleClassName="HvButton-focusVisible"
                       onClick={[Function]}
                       variant="text"
                     >
@@ -171,6 +173,7 @@ exports[`[v3] Header should be able to render 1`] = `
                         }
                         color="primary"
                         disableRipple={true}
+                        focusVisibleClassName="HvButton-focusVisible"
                         onClick={[Function]}
                         variant="text"
                       >
@@ -180,7 +183,7 @@ exports[`[v3] Header should be able to render 1`] = `
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           onClick={[Function]}
                           type="button"
                         >
@@ -197,7 +200,7 @@ exports[`[v3] Header should be able to render 1`] = `
                             disableRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="Mui-focusVisible"
+                            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                             onClick={[Function]}
                             type="button"
                           >
@@ -414,6 +417,7 @@ exports[`[v3] Header should be able to render 1`] = `
                           aria-label="Open Notifications panel"
                           classes={
                             Object {
+                              "focusVisible": "HvButton-focusVisible",
                               "ghost": "HvButton-ghost",
                               "ghostDisabled": "HvButton-ghostDisabled",
                               "ghostSVG": "HvButton-ghostSVG",
@@ -450,6 +454,7 @@ exports[`[v3] Header should be able to render 1`] = `
                             }
                             color="primary"
                             disableRipple={true}
+                            focusVisibleClassName="HvButton-focusVisible"
                             onClick={[Function]}
                             variant="text"
                           >
@@ -491,6 +496,7 @@ exports[`[v3] Header should be able to render 1`] = `
                               }
                               color="primary"
                               disableRipple={true}
+                              focusVisibleClassName="HvButton-focusVisible"
                               onClick={[Function]}
                               variant="text"
                             >
@@ -501,7 +507,7 @@ exports[`[v3] Header should be able to render 1`] = `
                                 disableRipple={true}
                                 disabled={false}
                                 focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
+                                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -519,7 +525,7 @@ exports[`[v3] Header should be able to render 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible"
+                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                   onClick={[Function]}
                                   type="button"
                                 >

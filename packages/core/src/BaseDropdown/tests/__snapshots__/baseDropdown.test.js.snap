@@ -59,13 +59,14 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
         id="hv-base-dropdown-3"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
       >
         <div
           aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
           className="HvBaseDropdown-header"
           id="hv-base-dropdown-3-header"
           role="textbox"
+          tabIndex={0}
         >
           <div
             className="HvBaseDropdown-selection"
@@ -167,13 +168,14 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
             aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
             class="HvBaseDropdown-root"
             id="hv-base-dropdown-3"
-            tabindex="0"
+            tabindex="-1"
           >
             <div
               aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
               class="HvBaseDropdown-header"
               id="hv-base-dropdown-3-header"
               role="textbox"
+              tabindex="0"
             >
               <div
                 class="HvBaseDropdown-selection"
@@ -285,13 +287,14 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
         id="hv-base-dropdown-1"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
       >
         <div
           aria-labelledby="hv-base-dropdown-1-selectionPlaceholder"
           className="HvBaseDropdown-header"
           id="hv-base-dropdown-1-header"
           role="textbox"
+          tabIndex={0}
         >
           <div
             className="HvBaseDropdown-selection"
@@ -467,7 +470,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
         id="hv-base-dropdown-2"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
       >
         <div
           aria-controls="hv-base-dropdown-2-children-container"
@@ -475,6 +478,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
           className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
           id="hv-base-dropdown-2-header"
           role="textbox"
+          tabIndex={0}
         >
           <div
             className="HvBaseDropdown-selection"
@@ -577,7 +581,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
             aria-owns="hv-base-dropdown-2-children-container"
             class="HvBaseDropdown-root"
             id="hv-base-dropdown-2"
-            tabindex="0"
+            tabindex="-1"
           >
             <div
               aria-controls="hv-base-dropdown-2-children-container"
@@ -585,6 +589,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
               class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
               id="hv-base-dropdown-2-header"
               role="textbox"
+              tabindex="0"
             >
               <div
                 class="HvBaseDropdown-selection"

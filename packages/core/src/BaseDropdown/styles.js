@@ -2,10 +2,7 @@ import { outlineStyles } from "../Focus/styles";
 
 const styles = theme => ({
   root: {
-    display: "inline-block",
-    "&:focus": {
-      ...outlineStyles
-    }
+    display: "inline-block"
   },
   header: {
     cursor: "pointer",
@@ -16,7 +13,14 @@ const styles = theme => ({
     "&:hover": {
       border: `1px solid ${theme.hv.palette.accent.acce1}`
     },
-    borderRadius: "2px"
+    borderRadius: "2px",
+    "&:focus": {
+      outline: "none"
+    },
+    "&.focus-visible": {
+      ...outlineStyles,
+      border: `1px solid ${theme.hv.palette.accent.acce1}`
+    }
   },
   headerOpen: {
     border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
