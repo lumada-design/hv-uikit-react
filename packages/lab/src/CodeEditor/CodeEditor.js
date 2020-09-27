@@ -47,7 +47,7 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...oth
             rules: [],
             colors: {
               "editor.background": theme.hv.palette.atmosphere.atmo1,
-              "editorLineNumber.foreground": theme.hv.palette.atmosphere.atmo7,
+              "editorLineNumber.foreground": theme.hv.palette.atmosphere.atmo5,
             },
           });
         }}
