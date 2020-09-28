@@ -34,7 +34,6 @@ const HvBaseDropdown = ({
   const [widthInput, setWidthInput] = useState(null);
 
   const [created, setCreated] = useUpdated(false);
-  const [updated, setUpdated] = useUpdated();
   const anchorHeaderRef = useRef(null);
 
   const elementId = useUniqueId(id, "hvbasedropdown");
@@ -55,19 +54,6 @@ const HvBaseDropdown = ({
       return currentIsOpen;
     });
   }, [disabled, expanded, onToggle]);
-
-  /**
-   * If closes focus on the header component.
-   */
-  useEffect(() => {
-    if (!updated) {
-      setUpdated();
-      return;
-    }
-
-    if (!isOpen) anchorHeaderRef.current?.firstChild.focus({ preventScroll: true });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen]);
 
   /**
    *
@@ -107,6 +93,9 @@ const HvBaseDropdown = ({
       if (disabled || notControlKey || ignoredCombinations) return;
 
       const newOpen = !isOpen;
+
+      /* If about to close focus on the header component. */
+      if (!newOpen) anchorHeaderRef.current?.firstChild.focus({ preventScroll: true });
       setIsOpen(newOpen);
       onToggle?.(event, newOpen);
     },
