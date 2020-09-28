@@ -1,22 +1,22 @@
 import { outlineStyles } from "../../Focus/styles";
 import { buttonStyles, selected } from "../styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {},
   action: {
-    ...buttonStyles(theme)
+    ...buttonStyles(theme),
   },
   li: {
-    listStyle: "none"
+    listStyle: "none",
   },
   selected: {
     ...selected(theme),
     "&:hover": selected(theme),
     "&:focus": {
       ...selected(theme),
-      ...outlineStyles
-    }
-  }
+      ...outlineStyles,
+    },
+  },
 });
 
 export default styles;

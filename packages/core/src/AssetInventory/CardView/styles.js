@@ -1,6 +1,6 @@
 const styles = {
   root: {},
-  elements: {}
+  elements: {},
 };
 
 export default styles;

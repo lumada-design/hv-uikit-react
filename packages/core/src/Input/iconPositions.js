@@ -1,6 +1,6 @@
 const iconPosition = Object.freeze({
   right: "right",
-  left: "left"
+  left: "left",
 });
 
 export default iconPosition;

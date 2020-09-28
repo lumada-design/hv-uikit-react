@@ -18,7 +18,7 @@ const Navigation = ({
   onTextClick,
   navigationText = "n/a",
   isPreviousEnabled = true,
-  isNextEnabled = true
+  isNextEnabled = true,
 }) => {
   const onkeyDownHandler = (event, funcAction) => {
     if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space)) {
@@ -34,10 +34,10 @@ const Navigation = ({
       <DropLeftIcon
         id={setId(id, "left")}
         className={clsx(classes.icon, {
-          [classes.disabled]: !isPreviousEnabled
+          [classes.disabled]: !isPreviousEnabled,
         })}
-        onClick={isPreviousEnabled ? event => onNavigatePrevious(event) : undefined}
-        onKeyDown={event =>
+        onClick={isPreviousEnabled ? (event) => onNavigatePrevious(event) : undefined}
+        onKeyDown={(event) =>
           isNextEnabled ? onkeyDownHandler(event, onNavigatePrevious) : undefined
         }
         tabIndex={0}
@@ -47,11 +47,11 @@ const Navigation = ({
         id={id}
         className={clsx({
           [classes.text]: onTextClickIsFunction,
-          [classes.textWithoutHover]: !onTextClickIsFunction
+          [classes.textWithoutHover]: !onTextClickIsFunction,
         })}
         role="presentation"
         onClick={onTextClick}
-        onKeyDown={onTextClick && (event => onkeyDownHandler(event, onTextClick))}
+        onKeyDown={onTextClick && ((event) => onkeyDownHandler(event, onTextClick))}
         tabIndex={onTextClick ? 0 : -1}
       >
         <HvTypography variant="normalText">{navigationText}</HvTypography>
@@ -60,8 +60,8 @@ const Navigation = ({
       <DropRightIcon
         id={setId(id, "right")}
         className={`${classes.icon} ${isNextEnabled ? "" : classes.disabled}`}
-        onClick={isNextEnabled ? event => onNavigateNext(event) : undefined}
-        onKeyDown={event => (isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined)}
+        onClick={isNextEnabled ? (event) => onNavigateNext(event) : undefined}
+        onKeyDown={(event) => (isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined)}
         tabIndex={0}
       />
     </div>
@@ -100,7 +100,7 @@ Navigation.propTypes = {
   /**
    * Flag stating if the next button should be enabled or disabled.
    */
-  isNextEnabled: PropTypes.bool
+  isNextEnabled: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvCalendarNavigation" })(Navigation);

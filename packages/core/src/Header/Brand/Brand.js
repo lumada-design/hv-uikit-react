@@ -27,7 +27,7 @@ Brand.propTypes = {
     /**
      * Styles applied to the separator component class.
      */
-    separator: PropTypes.string
+    separator: PropTypes.string,
   }).isRequired,
   /**
    * Class names to be applied.
@@ -40,7 +40,7 @@ Brand.propTypes = {
   /**
    * The brand name string.
    */
-  name: PropTypes.string
+  name: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvHeaderBrand" })(Brand);

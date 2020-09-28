@@ -5,59 +5,59 @@ import { NodeTreeExpandUtils } from "../utils";
 describe("[v3] NodeTreeExpandUtils", () => {
   const nodeMap = {
     [-1]: {
-      children: ["A", "B", "C"]
+      children: ["A", "B", "C"],
     },
     A: {
       parent: -1,
       children: ["A1", "A2", "A3"],
-      label: "a"
+      label: "a",
     },
     A1: {
       parent: "A",
-      label: "d"
+      label: "d",
     },
     A2: {
       parent: "A",
-      label: "e"
+      label: "e",
     },
     A3: {
       parent: "A",
       children: ["A3a", "A3b", "A3c"],
-      label: "f"
+      label: "f",
     },
     A3a: {
       parent: "A3",
-      label: "i"
+      label: "i",
     },
     A3b: {
       parent: "A3",
-      label: "b"
+      label: "b",
     },
     A3c: {
       parent: "A3",
-      label: "j"
+      label: "j",
     },
     B: {
       parent: -1,
-      label: "b"
+      label: "b",
     },
     C: {
       parent: -1,
       children: ["C1", "C2", "C3"],
-      label: "c"
+      label: "c",
     },
     C1: {
       parent: "C",
-      label: "g"
+      label: "g",
     },
     C2: {
       parent: "C",
-      label: "g"
+      label: "g",
     },
     C3: {
       parent: "C",
-      label: "h"
-    }
+      label: "h",
+    },
   };
 
   describe("[v3] isExpanded", () => {
@@ -151,7 +151,7 @@ describe("[v3] NodeTreeExpandUtils", () => {
         "C",
         "C1",
         "C2",
-        "C3"
+        "C3",
       ]);
     });
 
@@ -170,7 +170,7 @@ describe("[v3] NodeTreeExpandUtils", () => {
         "C",
         "C1",
         "C2",
-        "C3"
+        "C3",
       ]);
     });
   });

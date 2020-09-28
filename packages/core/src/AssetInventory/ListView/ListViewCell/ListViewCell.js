@@ -23,7 +23,7 @@ const cell = (
     <div
       className={clsx(className, classes.root, {
         [classes.semanticBar]: semantic,
-        [classes[semantic]]: semantic
+        [classes[semantic]]: semantic,
       })}
       style={{ textAlign: align || alignConf }}
       id={id}
@@ -46,7 +46,7 @@ const ListViewCell = ({
 }) => {
   return (
     <ListViewContextConsumer>
-      {contextConfiguration =>
+      {(contextConfiguration) =>
         cell(
           classes,
           align,
@@ -92,7 +92,7 @@ ListViewCell.propTypes = {
     /**
      * Styles applied to the semanticBar.
      */
-    semanticBar: PropTypes.string
+    semanticBar: PropTypes.string,
   }).isRequired,
   /**
    *  The border color of the cell. Must be one of palette semantic colors.
@@ -121,9 +121,9 @@ ListViewCell.propTypes = {
     "atmo2",
     "atmo3",
     "atmo4",
-    "atmo5"
+    "atmo5",
   ]),
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvListViewCell" })(ListViewCell);

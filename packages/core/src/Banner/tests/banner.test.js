@@ -111,8 +111,8 @@ describe("Banner ", () => {
           actions={[
             {
               id: "testButton",
-              label: "test"
-            }
+              label: "test",
+            },
           ]}
           actionsPosition="inline"
           onClose={() => {}}
@@ -150,8 +150,8 @@ describe("Banner ", () => {
           actions={[
             {
               id: "testButton",
-              label: "test"
-            }
+              label: "test",
+            },
           ]}
           actionsPosition="bottom-right"
           onClose={() => {}}

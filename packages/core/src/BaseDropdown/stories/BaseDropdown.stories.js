@@ -8,9 +8,9 @@ export default {
   title: "Components/BaseDropdown",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBaseDropdown } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBaseDropdown } from '@hv/uikit-react-core/dist'",
   },
-  component: HvBaseDropdown
+  component: HvBaseDropdown,
 };
 
 export const Main = () => <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />;
@@ -19,9 +19,9 @@ Main.story = {
   parameters: {
     v3: true,
     pa11y: {
-      ignore: ["region"]
-    }
-  }
+      ignore: ["region"],
+    },
+  },
 };
 
 export const WithContent = () => {
@@ -40,8 +40,8 @@ export const WithContent = () => {
 
 WithContent.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const WithForms = () => {
@@ -67,8 +67,8 @@ export const WithForms = () => {
 
 WithForms.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Controlled = () => {
@@ -94,8 +94,8 @@ export const Controlled = () => {
 
 Controlled.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Custom = () => {
@@ -131,6 +131,6 @@ export const Custom = () => {
 
 Custom.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };

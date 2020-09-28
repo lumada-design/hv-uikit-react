@@ -9,10 +9,10 @@ export default {
   title: "Lab/Slider",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSlider } from '@hv/uikit-react-lab/dist'"
+    usage: "import { HvSlider } from '@hv/uikit-react-lab/dist'",
   },
   component: HvSlider,
-  decorators: [storyFn => <div style={{ height: "45px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ height: "45px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => {
@@ -22,32 +22,32 @@ export const Main = () => {
     {
       color: "#72cccb",
       dragColor: "#96d9d8",
-      trackColor: "#72cccb"
+      trackColor: "#72cccb",
     },
     {
       color: "#f9dc37",
       dragColor: "#fbe56a",
-      trackColor: "#f9dc37"
+      trackColor: "#f9dc37",
     },
     {
       color: "#ff9100",
       dragColor: "#ffa733",
-      trackColor: "#ff9100"
+      trackColor: "#ff9100",
     },
     {
       color: "#cc0000",
       dragColor: "#ff0000",
-      trackColor: "#cc0000"
+      trackColor: "#cc0000",
     },
     {
       color: "#cc0000",
       trackColor: "#cc0000",
       fixed: true,
-      hidden: true
-    }
+      hidden: true,
+    },
   ];
 
-  const formatMark = mark => `${mark}%`;
+  const formatMark = (mark) => `${mark}%`;
 
   return (
     <HvSlider
@@ -67,18 +67,18 @@ export const ThreeKnobs = () => {
     {
       color: "#72cccb",
       dragColor: "#96d9d8",
-      trackColor: "#72cccb"
+      trackColor: "#72cccb",
     },
     {
       color: "#f9dc37",
       dragColor: "#fbe56a",
-      trackColor: "#f9dc37"
+      trackColor: "#f9dc37",
     },
     {
       color: "#ff9100",
       dragColor: "#ffa733",
-      trackColor: "#ff9100"
-    }
+      trackColor: "#ff9100",
+    },
   ];
 
   const threeKnobPropertiesDefaults = [10, 20, 30];
@@ -96,9 +96,9 @@ ThreeKnobs.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Three knobs. Shows the possibility of manipulating N quantity of knobs and a range"
-    }
-  }
+        "Three knobs. Shows the possibility of manipulating N quantity of knobs and a range",
+    },
+  },
 };
 
 export const ThreeKnobsWithColors = () => {
@@ -106,19 +106,19 @@ export const ThreeKnobsWithColors = () => {
     {
       color: "yellow",
       dragColor: "black",
-      trackColor: "red"
+      trackColor: "red",
     },
     {
       color: "red",
       dragColor: "grey",
-      trackColor: "grey"
+      trackColor: "grey",
     },
     {
       color: "purple",
       dragColor: "orange",
       trackColor: "yellow",
-      fixed: true
-    }
+      fixed: true,
+    },
   ];
 
   const threeKnobFixedPropertiesDefaults = [10, 50, 80];
@@ -136,9 +136,9 @@ ThreeKnobsWithColors.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Three knobs with different color and different tracks. Shows the possibility manipulating the color of the knobs "
-    }
-  }
+        "Three knobs with different color and different tracks. Shows the possibility manipulating the color of the knobs ",
+    },
+  },
 };
 
 export const KnobsOverlapping = () => {
@@ -146,13 +146,13 @@ export const KnobsOverlapping = () => {
     {
       color: "#72cccb",
       dragColor: "#96d9d8",
-      defaultValue: 0.3
+      defaultValue: 0.3,
     },
     {
       color: "#72cccb",
       dragColor: "#96d9d8",
-      defaultValue: 0.5
-    }
+      defaultValue: 0.5,
+    },
   ];
 
   const scaledKnobPropertiesDefaults = [0.3, 0.5];
@@ -175,9 +175,9 @@ KnobsOverlapping.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Two knobs with overlapping and a fractional scale. Range from 0.10 to 0.70 with 30 points defined. Each point represents 0.02 units. "
-    }
-  }
+        "Two knobs with overlapping and a fractional scale. Range from 0.10 to 0.70 with 30 points defined. Each point represents 0.02 units. ",
+    },
+  },
 };
 
 export const DifferentRanges = () => {
@@ -185,18 +185,18 @@ export const DifferentRanges = () => {
     {
       color: "#72cccb",
       dragColor: "#96d9d8",
-      trackColor: "#72cccb"
+      trackColor: "#72cccb",
     },
     {
       color: "#f9dc37",
       dragColor: "#fbe56a",
-      trackColor: "#f9dc37"
+      trackColor: "#f9dc37",
     },
     {
       color: "#ff9100",
       dragColor: "#ffa733",
-      trackColor: "#ff9100"
-    }
+      trackColor: "#ff9100",
+    },
   ];
 
   const threeKnobPropertiesDefaults = [10, 20, 30];
@@ -232,7 +232,7 @@ DifferentRanges.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Three knobs with different range. Shows the possibility of manipulating N quantity of knobs and a range. "
-    }
-  }
+        "Three knobs with different range. Shows the possibility of manipulating N quantity of knobs and a range. ",
+    },
+  },
 };

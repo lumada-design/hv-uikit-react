@@ -6,7 +6,7 @@ import Search from "../Search/Search";
 describe("[v3] Asset Inventory ", () => {
   let wrapper;
 
-  const MockView = id => <div id={id} />;
+  const MockView = (id) => <div id={id} />;
 
   const setupComponent = (props, children = <MockView id="id" />) => (
     <HvProvider>
@@ -19,20 +19,20 @@ describe("[v3] Asset Inventory ", () => {
       id: "1",
       name: "AA",
       birthday: "1900-01-01",
-      number: 20
+      number: 20,
     },
     {
       id: "2",
       name: "HH",
       birthday: "1950-01-01",
-      number: 92
+      number: 92,
     },
     {
       id: "3",
       name: "ZZ",
       birthday: "1923-01-01",
-      number: 1
-    }
+      number: 1,
+    },
   ];
 
   beforeEach(() => {
@@ -56,9 +56,9 @@ describe("[v3] Asset Inventory ", () => {
           cellType: "alpha-numeric",
           sortable: true,
           sortableLabelAsc: "Name ascending",
-          sortableLabelDesc: "Name descending"
-        }
-      ]
+          sortableLabelDesc: "Name descending",
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -74,9 +74,9 @@ describe("[v3] Asset Inventory ", () => {
         {
           id: "id1",
           accessor: "name",
-          cellType: "alpha-numeric"
-        }
-      ]
+          cellType: "alpha-numeric",
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -93,9 +93,9 @@ describe("[v3] Asset Inventory ", () => {
           id: "id1",
           accessor: "name",
           cellType: "alpha-numeric",
-          searchable: true
-        }
-      ]
+          searchable: true,
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -111,9 +111,9 @@ describe("[v3] Asset Inventory ", () => {
         {
           id: "id1",
           accessor: "name",
-          cellType: "alpha-numeric"
-        }
-      ]
+          cellType: "alpha-numeric",
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));

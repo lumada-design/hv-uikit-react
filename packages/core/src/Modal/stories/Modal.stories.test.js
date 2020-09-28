@@ -9,7 +9,7 @@ import {
   Accessibility,
   RemoveSchedule,
   DeleteConfirmation,
-  NoRename
+  NoRename,
 } from "./Modal.stories";
 
 export default {
@@ -17,9 +17,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -35,9 +35,9 @@ ModalOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
         return wait(() => screen.getByRole("heading", { name: /switch model view\?/i }));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, modal with table open
@@ -50,9 +50,9 @@ TableOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Table"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, modal with inputs opened
@@ -65,9 +65,9 @@ inputsOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Inputs"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open No Rename Modal
@@ -80,9 +80,9 @@ sNoRename.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal DeleteConfirmation
@@ -95,9 +95,9 @@ sDeleteConfirmation.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal DeleteConfirmation
@@ -110,9 +110,9 @@ sRemoveSchedule.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal DeleteConfirmation
@@ -125,9 +125,9 @@ sAccessibility.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal CustomIcon
@@ -140,9 +140,9 @@ sCustomIcon.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Custom icon"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal TextAndSemantic no icon
@@ -155,9 +155,9 @@ sTextAndSemanticNoIcon.story = {
       runBefore() {
         fireEvent.click(screen.getByText("No icon"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal TextAndSemantic Warning
@@ -170,9 +170,9 @@ sTextAndSemanticWarning.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Warning"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal TextAndSemantic info
@@ -185,9 +185,9 @@ sTextAndSemanticInfo.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Info"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // open modal TextAndSemantic Error
@@ -200,7 +200,7 @@ sTextAndSemanticError.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Error"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

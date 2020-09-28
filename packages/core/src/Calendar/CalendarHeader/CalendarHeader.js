@@ -57,7 +57,7 @@ const HvCalendarHeader = ({
     }
   }, [localValue, isValidValue, localLocale]);
 
-  const onBlurHandler = event => {
+  const onBlurHandler = (event) => {
     if (isNil(editedValue)) return;
     if (editedValue === "") {
       setEditedValue(null);
@@ -68,7 +68,7 @@ const HvCalendarHeader = ({
     setEditedValue(null);
   };
 
-  const keyDownHandler = event => {
+  const keyDownHandler = (event) => {
     if (isKeypress(event, KeyboardCodes.Enter)) {
       if (isNil(editedValue) || editedValue === "") return;
       event.preventDefault();
@@ -78,13 +78,13 @@ const HvCalendarHeader = ({
     }
   };
 
-  const onFocusHandler = event => {
+  const onFocusHandler = (event) => {
     const formattedDate = isValidValue ? moment(localValue).format("L") : localValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);
   };
 
-  const onChangeHandler = event => {
+  const onChangeHandler = (event) => {
     setEditedValue(event.target.value);
   };
 
@@ -92,7 +92,7 @@ const HvCalendarHeader = ({
     <div
       id={localId}
       className={clsx(classes.root, {
-        [classes.invalid]: !isValidValue
+        [classes.invalid]: !isValidValue,
       })}
     >
       <HvTypography variant="normalText" className={classes.headerDayOfWeek}>
@@ -131,7 +131,7 @@ HvCalendarHeader.propTypes = {
   value: PropTypes.oneOfType([
     PropTypes.instanceOf(Date),
     PropTypes.string,
-    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) })
+    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) }),
   ]),
   /**
    * Locale to be used by the calendar.
@@ -148,7 +148,7 @@ HvCalendarHeader.propTypes = {
   /**
    * Indicates if header should display end date in a date range.
    */
-  showEndDate: PropTypes.bool
+  showEndDate: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvCalendarHeader" })(HvCalendarHeader);

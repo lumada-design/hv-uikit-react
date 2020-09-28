@@ -10,7 +10,7 @@ import { setId } from "../utils";
  * Bulk Actions allow users to perform an action to a single or multiple items,
  * also known as "batch production" of multiple items at once, one stage at a time.
  */
-const HvBulkActions = props => {
+const HvBulkActions = (props) => {
   const {
     id,
     className,
@@ -60,7 +60,7 @@ const HvBulkActions = props => {
     <div
       id={id}
       className={clsx(className, classes.root, {
-        [classes.semantic]: isSemantic
+        [classes.semantic]: isSemantic,
       })}
       {...others}
     >
@@ -134,7 +134,7 @@ HvBulkActions.propTypes = {
     /**
      * Styles applied to the Select All pages button.
      */
-    selectAllPages: PropTypes.string
+    selectAllPages: PropTypes.string,
   }).isRequired,
   /**
    * Custom label for select all checkbox
@@ -179,9 +179,9 @@ HvBulkActions.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string,
         iconCallback: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       })
-    )
+    ),
   ]),
   /**
    *  Whether actions should be all disabled
@@ -194,7 +194,7 @@ HvBulkActions.propTypes = {
   /**
    *  The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
    */
-  maxVisibleActions: PropTypes.number
+  maxVisibleActions: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvBulkActions" })(HvBulkActions);

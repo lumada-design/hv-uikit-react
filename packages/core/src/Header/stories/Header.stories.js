@@ -13,10 +13,10 @@ export default {
     v3: true,
     componentSubtitle: null,
     usage: "import { HvHeader } from '@hv/uikit-react-core/dist'",
-    subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation }
+    subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
   },
   component: HvHeader,
-  decorators: [storyFn => <div style={{ minHeight: 100 }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ minHeight: 100 }}>{storyFn()}</div>],
 };
 
 const navigationData = [
@@ -26,17 +26,17 @@ const navigationData = [
     data: [
       {
         id: "1-1",
-        label: "Model Effectiveness 1"
+        label: "Model Effectiveness 1",
       },
       {
         id: "1-2",
-        label: "Trend Analysis 1-2"
-      }
-    ]
+        label: "Trend Analysis 1-2",
+      },
+    ],
   },
   {
     id: "2",
-    label: "Events"
+    label: "Events",
   },
   {
     id: "3",
@@ -44,17 +44,17 @@ const navigationData = [
     data: [
       {
         id: "3-1",
-        label: "Model Effectiveness 3-1"
+        label: "Model Effectiveness 3-1",
       },
       {
         id: "3-2",
-        label: "Trend Analysis 3-2"
-      }
-    ]
+        label: "Trend Analysis 3-2",
+      },
+    ],
   },
   {
     id: "4",
-    label: "Asset"
+    label: "Asset",
   },
   {
     id: "5",
@@ -62,14 +62,14 @@ const navigationData = [
     data: [
       {
         id: "5-1",
-        label: "Model Effectiveness 5-1"
+        label: "Model Effectiveness 5-1",
       },
       {
         id: "5-2",
-        label: "Trend Analysis 5-2"
-      }
-    ]
-  }
+        label: "Trend Analysis 5-2",
+      },
+    ],
+  },
 ];
 
 export const Main = () => {
@@ -111,7 +111,7 @@ Main.story = {
     v3: true,
     eyes: {
       // waiting until all elements are rendered (issue #1794)
-      waitBeforeScreenshot: ".HvHeaderMenuBar-active"
-    }
-  }
+      waitBeforeScreenshot: ".HvHeaderMenuBar-active",
+    },
+  },
 };

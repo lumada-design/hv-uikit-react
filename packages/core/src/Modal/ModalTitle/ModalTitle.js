@@ -60,7 +60,7 @@ ModalTitle.propTypes = {
     /**
      * Style applied to the close button.
      */
-    closeButton: PropTypes.string
+    closeButton: PropTypes.string,
   }).isRequired,
   /**
    * Variant of the modal.
@@ -77,7 +77,7 @@ ModalTitle.propTypes = {
   /**
    * Node to be render.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvModalTitle" })(ModalTitle);

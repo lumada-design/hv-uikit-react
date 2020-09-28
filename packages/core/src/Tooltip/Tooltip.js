@@ -32,7 +32,7 @@ const HvTooltip = React.forwardRef((props, ref) => {
       className={className}
       classes={{
         tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
-        popper: classes.popper
+        popper: classes.popper,
       }}
       title={title}
       {...others}
@@ -94,7 +94,7 @@ HvTooltip.propTypes = {
     /**
      * Styles applied to the values wrapper.
      */
-    valueWrapper: PropTypes.string
+    valueWrapper: PropTypes.string,
   }).isRequired,
   /**
    * If true, the tooltip is shown.
@@ -130,7 +130,7 @@ HvTooltip.propTypes = {
   /**
    * Node to apply the tooltip.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvTooltip" })(HvTooltip);

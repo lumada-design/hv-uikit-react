@@ -9,9 +9,9 @@ export default {
   title: "Patterns/Input",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvInput } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvInput } from '@hv/uikit-react-core/dist'",
   },
-  component: HvInput
+  component: HvInput,
 };
 
 export const Main = () => {
@@ -20,7 +20,7 @@ export const Main = () => {
     infoText: "Please enter your first name",
     inputLabel: "First name",
     warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded"
+    maxCharQuantityWarningText: "Max characters exceeded",
   };
 
   return <HvInput labels={labels} id="input-simple-sample" showInfo={false} />;
@@ -32,7 +32,7 @@ export const WithInfoMessage = () => {
     infoText: "Please enter your first name",
     inputLabel: "First name",
     warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded"
+    maxCharQuantityWarningText: "Max characters exceeded",
   };
 
   return <HvInput labels={labels} id="input-simple-with-info-icon-sample" />;
@@ -41,9 +41,9 @@ export const WithInfoMessage = () => {
 WithInfoMessage.story = {
   parameters: {
     docs: {
-      storyDescription: "Showing the info message."
-    }
-  }
+      storyDescription: "Showing the info message.",
+    },
+  },
 };
 
 export const Disabled = () => {
@@ -52,7 +52,7 @@ export const Disabled = () => {
     infoText: "Please enter your first name",
     inputLabel: "First name",
     warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded"
+    maxCharQuantityWarningText: "Max characters exceeded",
   };
 
   return <HvInput labels={labels} disabled id="input-disabled-sample" />;
@@ -61,7 +61,7 @@ export const Disabled = () => {
 Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "Input sample that does not allow interactions."
+      storyDescription: "Input sample that does not allow interactions.",
     },
     pa11y: {
       ignore: [
@@ -69,10 +69,10 @@ Disabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
-  }
+        "color-contrast",
+      ],
+    },
+  },
 };
 
 export const InvalidState = () => {
@@ -81,7 +81,7 @@ export const InvalidState = () => {
     infoText: "Please enter your last name",
     inputLabel: "Last name",
     warningText: "This is invalid just because I said so",
-    maxCharQuantityWarningText: "Max characters exceeded"
+    maxCharQuantityWarningText: "Max characters exceeded",
   };
   return (
     <HvInput
@@ -97,16 +97,16 @@ InvalidState.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Input created in invalid state showing the error message and the failed validation icon."
-    }
-  }
+        "Input created in invalid state showing the error message and the failed validation icon.",
+    },
+  },
 };
 
 export const NoValidation = () => {
   const labels = {
     placeholder: "Type an animal name",
     infoText: "A living organism that feeds on organic matter",
-    inputLabel: "What's your favorite animal?"
+    inputLabel: "What's your favorite animal?",
   };
   return <HvInput id="no-validation-input" labels={labels} showInfo={false} />;
 };
@@ -114,9 +114,9 @@ export const NoValidation = () => {
 NoValidation.story = {
   parameters: {
     docs: {
-      storyDescription: "Input without any type of validation not showing validation icons."
-    }
-  }
+      storyDescription: "Input without any type of validation not showing validation icons.",
+    },
+  },
 };
 
 export const Limited = () => {
@@ -124,7 +124,7 @@ export const Limited = () => {
     placeholder: "Insert your postal code",
     infoText: "Group of letters and numbers added to your address to assist the sorting of mail",
     inputLabel: "Postal code",
-    maxCharQuantityWarningText: "Max characters exceeded"
+    maxCharQuantityWarningText: "Max characters exceeded",
   };
   return <HvInput id="limited-input" labels={labels} maxCharQuantity={5} />;
 };
@@ -132,9 +132,9 @@ export const Limited = () => {
 Limited.story = {
   parameters: {
     docs: {
-      storyDescription: "Input that limits the maximum text length to 5."
-    }
-  }
+      storyDescription: "Input that limits the maximum text length to 5.",
+    },
+  },
 };
 
 export const NumericLimited = () => {
@@ -144,7 +144,7 @@ export const NumericLimited = () => {
     inputLabel: "Weight",
     warningText: "Value is not a number",
     maxCharQuantityWarningText: "Number is too big",
-    requiredWarningText: "The number is required"
+    requiredWarningText: "The number is required",
   };
 
   return <HvInput id="numeric-input" labels={labels} maxCharQuantity={5} validationType="number" />;
@@ -153,9 +153,9 @@ export const NumericLimited = () => {
 NumericLimited.story = {
   parameters: {
     docs: {
-      storyDescription: "Input that only accepts numbers and limits the maximum length to 5."
-    }
-  }
+      storyDescription: "Input that only accepts numbers and limits the maximum length to 5.",
+    },
+  },
 };
 
 export const NumericRequired = () => {
@@ -165,7 +165,7 @@ export const NumericRequired = () => {
     inputLabel: "Height",
     warningText: "Value is not a number",
     maxCharQuantityWarningText: "Number is too big",
-    requiredWarningText: "The number is required"
+    requiredWarningText: "The number is required",
   };
 
   return (
@@ -183,9 +183,9 @@ NumericRequired.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Required Input that only accepts numbers and limits the maximum length to 5."
-    }
-  }
+        "Required Input that only accepts numbers and limits the maximum length to 5.",
+    },
+  },
 };
 
 export const Email = () => {
@@ -193,7 +193,7 @@ export const Email = () => {
     placeholder: "example@domain.com",
     infoText: "Enter your email",
     inputLabel: "Email",
-    warningText: "Please add the right email format: your.name@hitachivantara.com"
+    warningText: "Please add the right email format: your.name@hitachivantara.com",
   };
 
   return <HvInput id="email-input" labels={labels} validationType="email" />;
@@ -202,9 +202,9 @@ export const Email = () => {
 Email.story = {
   parameters: {
     docs: {
-      storyDescription: "Required Input that only accepts valid emails."
-    }
-  }
+      storyDescription: "Required Input that only accepts valid emails.",
+    },
+  },
 };
 
 export const Password = () => {
@@ -215,14 +215,14 @@ export const Password = () => {
     warningText: "Wrong password",
     maxCharQuantityWarningText: "Your password has more than 12 characters",
     minCharQuantityWarningText: "Your password has less than 6 characters",
-    requiredWarningText: "Your password is required"
+    requiredWarningText: "Your password is required",
   };
 
   return (
     <HvInput
       id="password-input"
       labels={labels}
-      validation={value => value === "password"}
+      validation={(value) => value === "password"}
       password
       isRequired
       maxCharQuantity={12}
@@ -235,9 +235,9 @@ Password.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Password required input that only accepts the value `password` and limits the value between 6 or 12 characters."
-    }
-  }
+        "Password required input that only accepts the value `password` and limits the value between 6 or 12 characters.",
+    },
+  },
 };
 
 export const CustomValidation = () => {
@@ -245,14 +245,14 @@ export const CustomValidation = () => {
     placeholder: "Insert 'hello'",
     infoText: "You must input the text 'hello'",
     inputLabel: "Compliment me",
-    warningText: "You didn't write 'hello'"
+    warningText: "You didn't write 'hello'",
   };
 
   return (
     <HvInput
       id="custom-validation-input"
       labels={labels}
-      validation={value => value.includes("hello")}
+      validation={(value) => value.includes("hello")}
     />
   );
 };
@@ -261,9 +261,9 @@ CustomValidation.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Input with a custom validation function, it validates if the input contains the value `hello`."
-    }
-  }
+        "Input with a custom validation function, it validates if the input contains the value `hello`.",
+    },
+  },
 };
 
 export const DefaultValue = () => {
@@ -271,7 +271,7 @@ export const DefaultValue = () => {
     placeholder: "example@domain.com",
     infoText: "Enter your email",
     inputLabel: "Email",
-    warningText: "Please add the right email format: your.name@hitachivantara.com"
+    warningText: "Please add the right email format: your.name@hitachivantara.com",
   };
 
   return (
@@ -287,23 +287,23 @@ export const DefaultValue = () => {
 DefaultValue.story = {
   parameters: {
     docs: {
-      storyDescription: "Input with an default value already in place."
-    }
-  }
+      storyDescription: "Input with an default value already in place.",
+    },
+  },
 };
 
 export const EventDemonstration = () => {
   const labels = {
     placeholder: "Insert text",
     infoText: "Look at the browser's developer console to see the event handlers output",
-    inputLabel: "Text I will modify"
+    inputLabel: "Text I will modify",
   };
 
   return (
     <HvInput
       id="event-demostration-input"
       labels={labels}
-      onFocus={value => {
+      onFocus={(value) => {
         console.log(`my value is ${value}`);
       }}
       onBlur={(value, validationState) => {
@@ -317,16 +317,16 @@ export const EventDemonstration = () => {
 EventDemonstration.story = {
   parameters: {
     docs: {
-      storyDescription: "Input with all events functions enabled."
-    }
-  }
+      storyDescription: "Input with all events functions enabled.",
+    },
+  },
 };
 
 export const CustomProps = () => {
   const labels = {
     placeholder: "Insert text",
     infoText: "Try to write more than 25 characters",
-    inputLabel: "Short story of your life"
+    inputLabel: "Short story of your life",
   };
 
   return (
@@ -334,7 +334,7 @@ export const CustomProps = () => {
       id="extraProps-input"
       labels={labels}
       inputProps={{
-        maxLength: 25
+        maxLength: 25,
       }}
     />
   );
@@ -344,9 +344,9 @@ CustomProps.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Using the input props to inject custom props, this input will block values exceeding 25 character."
-    }
-  }
+        "Using the input props to inject custom props, this input will block values exceeding 25 character.",
+    },
+  },
 };
 
 export const Controlled = () => {
@@ -363,13 +363,13 @@ export const Controlled = () => {
 };
 
 export const ControlledWithButtons = () => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     container: {
       "& button": {
         marginRight: theme.spacing("xs"),
-        marginBottom: theme.spacing("md")
-      }
-    }
+        marginBottom: theme.spacing("md"),
+      },
+    },
   }));
 
   const classes = useStyles();
@@ -398,7 +398,7 @@ export const ControlledWithButtons = () => {
       <HvInput
         labels={{
           inputLabel: "Label",
-          placeholder: "Enter value"
+          placeholder: "Enter value",
         }}
         value={value}
         onChange={handleChange}
@@ -410,9 +410,9 @@ export const ControlledWithButtons = () => {
 ControlledWithButtons.story = {
   parameters: {
     docs: {
-      storyDescription: "Changing the input value from outside the input component."
-    }
-  }
+      storyDescription: "Changing the input value from outside the input component.",
+    },
+  },
 };
 
 export const Suggestion = () => {
@@ -423,14 +423,14 @@ export const Suggestion = () => {
     infoText: "",
     inputLabel: "Select a country",
     warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded"
+    maxCharQuantityWarningText: "Max characters exceeded",
   };
 
   const countries = countryNamesArray;
 
-  const suggestionHandler = val => {
+  const suggestionHandler = (val) => {
     if (typeof val !== "string" || isEmpty(val)) return null;
-    const foundCountries = countries.filter(country =>
+    const foundCountries = countries.filter((country) =>
       country.toUpperCase().startsWith(val.toUpperCase())
     );
 
@@ -438,7 +438,7 @@ export const Suggestion = () => {
 
     return foundCountries.map((country, idx) => ({
       id: `c_${idx}`,
-      label: country
+      label: country,
     }));
   };
 
@@ -448,9 +448,9 @@ export const Suggestion = () => {
       id="suggestions"
       value={value}
       onChange={(e, val) => setValue(val)}
-      validation={val => val.includes("a")}
+      validation={(val) => val.includes("a")}
       suggestionListCallback={suggestionHandler}
-      suggestionSelectedCallback={item => setValue(item.label)}
+      suggestionSelectedCallback={(item) => setValue(item.label)}
       customFixedIcon={<Map />}
     />
   );
@@ -459,7 +459,7 @@ export const Suggestion = () => {
 Suggestion.story = {
   parameters: {
     docs: {
-      storyDescription: "Input with suggestion list."
-    }
-  }
+      storyDescription: "Input with suggestion list.",
+    },
+  },
 };

@@ -11,7 +11,7 @@ import styles from "./styles";
  * The footer container contains the actions of the cards also
  * it creates a checkbox if the card is required to be selectable positioning it to the left.
  */
-const Footer = props => {
+const Footer = (props) => {
   const {
     classes,
     id,
@@ -70,7 +70,7 @@ Footer.propTypes = {
     /**
      * Style applied to the actions right container of the component. Used when selection is active.
      */
-    rightContainer: PropTypes.string
+    rightContainer: PropTypes.string,
   }).isRequired,
   /**
    * Component identifier.
@@ -90,9 +90,9 @@ Footer.propTypes = {
         disabled: PropTypes.bool,
         ariaLabel: PropTypes.string,
         ariaLabelledBy: PropTypes.string,
-        ariaDescribedBy: PropTypes.string
+        ariaDescribedBy: PropTypes.string,
       })
-    )
+    ),
   ]),
   /**
    *  The callback function ran when an action is triggered, receiving `action` as param
@@ -123,7 +123,7 @@ Footer.propTypes = {
    * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
    * HvCheckbox API.
    */
-  checkboxProps: PropTypes.instanceOf(Object)
+  checkboxProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvCardFooter" })(withConfig(Footer));

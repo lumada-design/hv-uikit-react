@@ -1,6 +1,6 @@
 import { outlineStyles } from "../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     marginTop: "3px",
     padding: "0 20px",
@@ -12,14 +12,14 @@ const styles = theme => ({
     "&:focus, &:hover": {
       "& $tabBorder": {
         height: "1px",
-        backgroundColor: theme.hv.palette.atmosphere.atmo5
-      }
+        backgroundColor: theme.hv.palette.atmosphere.atmo5,
+      },
     },
     "&$selected": {
       color: theme.hv.typography.highlightText.color,
       fontWeight: theme.hv.typography.highlightText.fontWeight,
       lineHeight: theme.hv.typography.highlightText.lineWeight,
-      letterSpacing: theme.hv.typography.highlightText.letterSpacing
+      letterSpacing: theme.hv.typography.highlightText.letterSpacing,
     },
     "&$disabled": {
       color: theme.hv.palette.atmosphere.atmo5,
@@ -29,11 +29,11 @@ const styles = theme => ({
       "&:focus, &:hover": {
         background: "none",
         "& $tabBorder": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo4
-        }
-      }
+          backgroundColor: theme.hv.palette.atmosphere.atmo4,
+        },
+      },
     },
-    opacity: 1
+    opacity: 1,
   },
   tabBorder: {
     position: "absolute",
@@ -41,13 +41,13 @@ const styles = theme => ({
     top: "calc(100% - 1px)",
     height: "1px",
     width: "100%",
-    backgroundColor: theme.hv.palette.atmosphere.atmo4
+    backgroundColor: theme.hv.palette.atmosphere.atmo4,
   },
   focusVisible: {
-    ...outlineStyles
+    ...outlineStyles,
   },
   selected: {},
-  disabled: {}
+  disabled: {},
 });
 
 export default styles;

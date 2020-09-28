@@ -12,7 +12,7 @@ const renderHeaderCells = (classes, columnConfiguration) =>
     return (
       <div
         className={clsx(classes.headCell, {
-          [classes[configuration.spacing]]: configuration.spacing
+          [classes[configuration.spacing]]: configuration.spacing,
         })}
         style={{ textAlign: configuration?.align, ...configuration.style }}
         id={index}
@@ -58,8 +58,8 @@ ListViewHeaderRow.propTypes = {
     /**
      * TODO: add description
      */
-    headCell: PropTypes.string
-  }).isRequired
+    headCell: PropTypes.string,
+  }).isRequired,
 };
 
 export default withStyles(styles, { name: "HvListViewHeaderRow" })(ListViewHeaderRow);

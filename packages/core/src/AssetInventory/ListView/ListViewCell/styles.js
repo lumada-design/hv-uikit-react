@@ -1,16 +1,16 @@
 import mapValues from "lodash/mapValues";
 
-const styles = theme => {
-  const semantics = mapValues(theme.hv.palette.semantic, value => ({
+const styles = (theme) => {
+  const semantics = mapValues(theme.hv.palette.semantic, (value) => ({
     "&::before": {
-      background: value
-    }
+      background: value,
+    },
   }));
 
-  const atmosphere = mapValues(theme.hv.palette.atmosphere, value => ({
+  const atmosphere = mapValues(theme.hv.palette.atmosphere, (value) => ({
     "&::before": {
-      background: value
-    }
+      background: value,
+    },
   }));
 
   return {
@@ -18,7 +18,7 @@ const styles = theme => {
       position: "relative",
       padding: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px 0`,
       display: "table-cell",
-      verticalAlign: "middle"
+      verticalAlign: "middle",
     },
     semanticBar: {
       "&::before": {
@@ -29,11 +29,11 @@ const styles = theme => {
         background: theme.hv.palette.semantic.sema1,
         position: "absolute",
         top: 0,
-        left: 0
-      }
+        left: 0,
+      },
     },
     ...semantics,
-    ...atmosphere
+    ...atmosphere,
   };
 };
 

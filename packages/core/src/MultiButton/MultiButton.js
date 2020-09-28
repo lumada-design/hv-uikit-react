@@ -4,23 +4,23 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvMultiButton = props => {
+const HvMultiButton = (props) => {
   const { className, children, classes, category = "ghost", vertical = false, ...others } = props;
 
   return (
     <div
       className={clsx(className, classes.root, {
-        [classes.vertical]: vertical
+        [classes.vertical]: vertical,
       })}
       {...others}
     >
-      {React.Children.map(children, child =>
+      {React.Children.map(children, (child) =>
         cloneElement(child, {
           category,
           overrideIconColors: false,
           className: clsx(child.props.className, classes.button, {
-            [classes.selected]: child.props.selected
-          })
+            [classes.selected]: child.props.selected,
+          }),
         })
       )}
     </div>
@@ -55,7 +55,7 @@ HvMultiButton.propTypes = {
     /**
      * Styles applied to the button when it's selected.
      */
-    selected: PropTypes.string
+    selected: PropTypes.string,
   }).isRequired,
   /**
    * If the MultiButton is to be displayed vertically.
@@ -64,7 +64,7 @@ HvMultiButton.propTypes = {
   /**
    * Category of button to use
    */
-  category: PropTypes.oneOf(["ghost", "icon", "primary", "secondary", "semantic"])
+  category: PropTypes.oneOf(["ghost", "icon", "primary", "secondary", "semantic"]),
 };
 
 export default withStyles(styles, { name: "HvMultiButton" })(HvMultiButton);

@@ -98,7 +98,7 @@ const HvSingleCalendar = ({
       id={id}
       locale={locale}
       onChange={onVisibleDateChange}
-      onViewModeChange={viewMode => setCalViewMode(viewMode)}
+      onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
       visibleYear={visibleYear || today.getFullYear()}
       visibleMonth={visibleMonth || today.getMonth()}
     />
@@ -109,7 +109,7 @@ const HvSingleCalendar = ({
       id={id}
       locale={locale}
       onChange={onVisibleDateChange}
-      onViewModeChange={viewMode => setCalViewMode(viewMode)}
+      onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
       visibleMonth={visibleMonth || today.getMonth()}
       rangeMode={rangeMode}
     />
@@ -208,7 +208,7 @@ HvSingleCalendar.propTypes = {
     /**
      * Styles applied to the cells when it is not part of the selection in progress.
      */
-    cellsOutsideRange: PropTypes.string
+    cellsOutsideRange: PropTypes.string,
   }).isRequired,
   /**
    * Identifier.
@@ -227,7 +227,7 @@ HvSingleCalendar.propTypes = {
    */
   value: PropTypes.oneOfType([
     PropTypes.instanceOf(Date),
-    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) })
+    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) }),
   ]),
   /**
    * Date that will be used to know which month and year should be displayed on the calendar. The value of the day is
@@ -265,7 +265,7 @@ HvSingleCalendar.propTypes = {
   /**
    * Content on the upper part of the calendar.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvSingleCalendar" })(HvSingleCalendar);

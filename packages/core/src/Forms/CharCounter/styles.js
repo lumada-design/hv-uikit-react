@@ -1,17 +1,17 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "inline-block",
-    float: "right"
+    float: "right",
   },
   counterDisabled: {
-    color: theme.hv.palette.atmosphere.atmo5
+    color: theme.hv.palette.atmosphere.atmo5,
   },
   overloaded: {
-    color: theme.hv.palette.semantic.sema4
+    color: theme.hv.palette.semantic.sema4,
   },
   gutter: {
-    paddingLeft: `6px`
-  }
+    paddingLeft: `6px`,
+  },
 });
 
 export default styles;

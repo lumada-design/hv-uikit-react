@@ -69,7 +69,7 @@ const HvUserPreferences = ({
           return;
         }
       } else {
-        setOpen(prevState => !prevState);
+        setOpen((prevState) => !prevState);
       }
       toggleOpenCallback?.(newState);
     },
@@ -80,7 +80,7 @@ const HvUserPreferences = ({
    * Handler of keyboard clicks.
    */
   const handlerKeyContainer = useCallback(
-    event => {
+    (event) => {
       if (closeOnExit) {
         if (
           isKeypress(event, KeyboardCodes.Tab) &&
@@ -130,7 +130,7 @@ const HvUserPreferences = ({
       handlerKeyContainer,
       userInfo,
       closeOnExit,
-      toggleOpen
+      toggleOpen,
     ]
   );
 
@@ -142,9 +142,9 @@ const HvUserPreferences = ({
           [classes.static]: position === "static",
           [classes.relative]: position === "relative",
           [classes.fixed]: position === "fixed",
-          [classes.absolute]: position === "absolute"
+          [classes.absolute]: position === "absolute",
         },
-        className
+        className,
       ])}
     >
       <div className={classes.container} {...others}>
@@ -194,7 +194,7 @@ HvUserPreferences.propTypes = {
     /**
      * Styles applied to the user information.
      */
-    userInfo: PropTypes.string
+    userInfo: PropTypes.string,
   }).isRequired,
   /**
    * Defines if the user preferences is shown.
@@ -221,8 +221,8 @@ HvUserPreferences.propTypes = {
    */
   userInfo: PropTypes.shape({
     label1: PropTypes.string,
-    label2: PropTypes.string
-  })
+    label2: PropTypes.string,
+  }),
 };
 
 export default withStyles(styles, { name: "HvUserPreferences" })(HvUserPreferences);

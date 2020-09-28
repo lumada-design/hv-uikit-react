@@ -5,12 +5,12 @@ import {
   CheckboxCheck,
   CheckboxPartial,
   RadioButtonSelected,
-  RadioButtonUnselected
+  RadioButtonUnselected,
 } from "@hv/uikit-react-icons";
 
 export const labelPositions = Object.freeze({
   start: "start",
-  end: "end"
+  end: "end",
 });
 
 export const getLabelStyles = (classes, labelPosition, label) => {
@@ -35,6 +35,6 @@ export const getSelectorIcons = (classes, options) => {
     radioChecked: <RadioButtonSelected color={checkedColor} className={classes.icon} />,
     checkbox: <Checkbox color={color} className={classes.icon} />,
     checkboxPartial: <CheckboxPartial color={color} className={classes.icon} />,
-    checkboxChecked: <CheckboxCheck color={checkedColor} className={classes.icon} />
+    checkboxChecked: <CheckboxCheck color={checkedColor} className={classes.icon} />,
   };
 };

@@ -7,10 +7,10 @@ export default {
   title: "Lab/CodeEditor",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCodeEditor } from '@hv/uikit-react-lab/dist'"
+    usage: "import { HvCodeEditor } from '@hv/uikit-react-lab/dist'",
   },
   component: HvCodeEditor,
-  decorators: [storyFn => <div style={{ height: "270px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ height: "270px" }}>{storyFn()}</div>],
 };
 
 const defaultValueJson =
@@ -22,13 +22,13 @@ export const Main = () => (
   <HvCodeEditor
     options={{
       dimension: {
-        height: 270
-      }
+        height: 270,
+      },
     }}
     editorProps={{
-      language: "json"
+      language: "json",
     }}
-    onChange={input => console.log(input)}
+    onChange={(input) => console.log(input)}
     value={defaultValueJson}
   />
 );
@@ -38,12 +38,12 @@ export const YamlEditor = () => {
     <HvCodeEditor
       options={{
         dimension: {
-          height: 270
-        }
+          height: 270,
+        },
       }}
       editorProps={{}}
       language={"yaml"}
-      onChange={input => console.log(input)}
+      onChange={(input) => console.log(input)}
       value={defaultValueYaml}
     />
   );
@@ -52,7 +52,7 @@ export const YamlEditor = () => {
 YamlEditor.story = {
   parameters: {
     docs: {
-      storyDescription: "Yaml editor"
-    }
-  }
+      storyDescription: "Yaml editor",
+    },
+  },
 };

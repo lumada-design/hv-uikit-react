@@ -8,7 +8,7 @@ import { HvButton, HvTypography } from "../..";
 const Action = ({ classes, className, id, label, icon, onClick, ...others }) => {
   const payload = { id, label };
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     onClick?.(event, payload);
   };
 
@@ -42,7 +42,7 @@ Action.propTypes = {
     /**
      * Style applied to the component.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Visual label.
@@ -55,7 +55,7 @@ Action.propTypes = {
   /**
    * Callback called when clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesAction" })(Action);

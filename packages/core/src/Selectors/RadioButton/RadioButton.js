@@ -9,7 +9,7 @@ import styles from "./styles";
 /**
  * A Radio button is a mechanism that allows user to select one option from a group
  */
-const HvRadio = props => {
+const HvRadio = (props) => {
   const {
     classes,
     className,
@@ -29,7 +29,7 @@ const HvRadio = props => {
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
 
-  const onLocalChange = evt => {
+  const onLocalChange = (evt) => {
     const { screenX, screenY, clientX, clientY } = evt.nativeEvent;
     const isKeyEvent = screenX === 0 && screenY === 0 && clientX === 0 && clientY === 0;
 
@@ -47,17 +47,17 @@ const HvRadio = props => {
       labelPlacement={labelPlacement}
       id={id}
       className={clsx(labelStyles, className, {
-        [classes.disableFocus]: isFocusDisabled
+        [classes.disableFocus]: isFocusDisabled,
       })}
       classes={{
         disabled: classes.labelDisabled,
-        label: classes.labelTypography
+        label: classes.labelTypography,
       }}
       control={
         <Radio
           id={setId(id, "input")}
           className={clsx(classes.radio, {
-            [classes.disabledBorder]: checked && disabled
+            [classes.disabledBorder]: checked && disabled,
           })}
           icon={icons.radio}
           checkedIcon={icons.radioChecked}
@@ -124,7 +124,7 @@ HvRadio.propTypes = {
     /**
      * Styles applied to the icon border when it is checked and disabled.
      */
-    disabledBorder: PropTypes.string
+    disabledBorder: PropTypes.string,
   }).isRequired,
   /**
    * If `true` the Radio button is disabled and the onChange function will not be called.
@@ -162,7 +162,7 @@ HvRadio.propTypes = {
   /**
    * Extra properties passed to the MUI FormControlLabel component.
    */
-  formControlLabelProps: PropTypes.instanceOf(Object)
+  formControlLabelProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvRadioButton" })(HvRadio);

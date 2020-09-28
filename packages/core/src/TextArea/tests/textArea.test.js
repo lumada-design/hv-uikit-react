@@ -46,17 +46,13 @@ describe("TextArea Component", () => {
           labels={{
             startCount: "Inserted",
             middleCount: "of",
-            endCount: "available"
+            endCount: "available",
           }}
           maxCharQuantity={10}
         />
       </HvProvider>
     );
-    const labelCount = wrapperMount
-      .find("HvTextArea")
-      .find("label")
-      .at(0)
-      .text();
+    const labelCount = wrapperMount.find("HvTextArea").find("label").at(0).text();
     expect(labelCount).toBe("4");
   });
 
@@ -70,23 +66,15 @@ describe("TextArea Component", () => {
             startCount: "Inserted",
             middleCount: "of",
             endCount: "available",
-            maxCharQuantityWarningText: "too many characters"
+            maxCharQuantityWarningText: "too many characters",
           }}
           maxCharQuantity={3}
         />
       </HvProvider>
     );
 
-    const labelCount = wrapperMount
-      .find("HvTextArea")
-      .find("label")
-      .at(0)
-      .text();
-    const labelWarningText = wrapperMount
-      .find("HvTextArea")
-      .find("p")
-      .at(0)
-      .text();
+    const labelCount = wrapperMount.find("HvTextArea").find("label").at(0).text();
+    const labelWarningText = wrapperMount.find("HvTextArea").find("p").at(0).text();
     expect(labelCount).toBe("5");
     expect(labelWarningText).toBe("too many characters");
   });

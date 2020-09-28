@@ -73,7 +73,7 @@ describe("[v3] Modal Component", () => {
             root: "testClassRoot",
             paper: "testClassPaper",
             background: "testClassBackground",
-            closeButton: "testClassCloseButton"
+            closeButton: "testClassCloseButton",
           }}
           open={open}
         >

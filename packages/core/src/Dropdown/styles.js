@@ -1,27 +1,27 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     borderRadius: 2,
     "& $label": {
-      display: "block"
+      display: "block",
     },
     "& $selectionDisabled": {
-      color: theme.palette.atmo5
-    }
+      color: theme.palette.atmo5,
+    },
   },
   dropdown: {
-    width: 310
+    width: 310,
   },
   rootList: {},
   arrow: {},
   label: {
-    paddingBottom: "8px"
+    paddingBottom: "8px",
   },
   placeholder: {
-    display: "block"
+    display: "block",
   },
   selectionDisabled: {
-    lineHeight: `${theme.hv.spacing.md}px`
-  }
+    lineHeight: `${theme.hv.spacing.md}px`,
+  },
 });
 
 export default styles;

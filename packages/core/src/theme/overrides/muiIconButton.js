@@ -1,16 +1,16 @@
 import { outlineStyles } from "../../Focus/styles";
 
-const muiIconButton = theme => ({
+const muiIconButton = (theme) => ({
   root: {
     padding: 0,
     borderRadius: 0,
     "&:hover": {
-      backgroundColor: theme.palette.atmosphere.atmo3
+      backgroundColor: theme.palette.atmosphere.atmo3,
     },
     "&:focus": {
-      ...outlineStyles
-    }
-  }
+      ...outlineStyles,
+    },
+  },
 });
 
 export default muiIconButton;

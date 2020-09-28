@@ -45,7 +45,7 @@ MainToolTip.propTypes = {
     /**
      * Styles applied to the barchart root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Data of the tooltip.
@@ -71,9 +71,9 @@ MainToolTip.propTypes = {
         /**
          * Value.
          */
-        value: PropTypes.number
+        value: PropTypes.number,
       })
-    )
+    ),
   }).isRequired,
   /**
    * Coordinates.
@@ -86,16 +86,16 @@ MainToolTip.propTypes = {
     /**
      * yy's coordinate.
      */
-    y: PropTypes.number.isRequired
+    y: PropTypes.number.isRequired,
   }).isRequired,
   /**
    * Defines if should use a single or multiline tooltip.
    */
-  useSingle: PropTypes.bool
+  useSingle: PropTypes.bool,
 };
 
 MainToolTip.defaultProps = {
-  useSingle: false
+  useSingle: false,
 };
 
 export default withStyles(styles, { name: "HvChartTooltip" })(MainToolTip);

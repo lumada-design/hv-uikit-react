@@ -12,7 +12,7 @@ const setterIfNil = (object, property, value) => {
 export const applyDataDefaults = (inputData, type) => {
   const data = inputData;
 
-  data.forEach(trace => {
+  data.forEach((trace) => {
     setterIfNil(trace, "hoverinfo", "none");
     setterIfNil(trace, "textinfo", "none");
     setterIfNil(trace, "type", "pie");
@@ -30,7 +30,7 @@ export const applyDataDefaults = (inputData, type) => {
   return data;
 };
 
-export const applyLayoutDefaults = inputLayout => {
+export const applyLayoutDefaults = (inputLayout) => {
   const defaultLayout = {};
 
   return !inputLayout ? defaultLayout : clone(inputLayout);

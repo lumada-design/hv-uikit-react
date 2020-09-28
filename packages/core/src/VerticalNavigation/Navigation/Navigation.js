@@ -7,7 +7,7 @@ import { setId } from "../../utils";
 import styles from "./styles";
 
 const createListHierarchy = (items, id) =>
-  items.map(item => {
+  items.map((item) => {
     const { id: itemId, label: itemLabel, icon, data: children } = item;
 
     return (
@@ -69,7 +69,7 @@ Navigation.propTypes = {
     /**
      * Style applied to the component.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -90,7 +90,7 @@ Navigation.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       icon: PropTypes.node,
-      data: PropTypes.array
+      data: PropTypes.array,
     })
   ).isRequired,
   /**
@@ -100,7 +100,7 @@ Navigation.propTypes = {
   /**
    * Callback triggered when any item is clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigationNavigation" })(Navigation);

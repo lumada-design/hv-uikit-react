@@ -6,9 +6,9 @@ export default {
   title: "Patterns/Pagination",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvPagination } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvPagination } from '@hv/uikit-react-core/dist'",
   },
-  component: HvPagination
+  component: HvPagination,
 };
 
 export const Main = () => {
@@ -17,8 +17,8 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const ControlledSample = () => {
@@ -28,7 +28,7 @@ export const ControlledSample = () => {
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(pageSizeOptions[2]);
 
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
       flexWrap: "wrap",
@@ -38,9 +38,9 @@ export const ControlledSample = () => {
         margin: "12px",
         textAlign: "center",
         borderRadius: "4px",
-        background: theme.hv.palette.atmosphere.atmo1
-      }
-    }
+        background: theme.hv.palette.atmosphere.atmo1,
+      },
+    },
   }));
 
   const classes = useStyles();
@@ -50,7 +50,7 @@ export const ControlledSample = () => {
   return (
     <>
       <div className={classes.root}>
-        {data.slice(pageSize * page, pageSize * (page + 1)).map(i => (
+        {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
           <HvTypography key={i} component="span">
             {`Item ${i + 1}`}
           </HvTypography>
@@ -65,8 +65,8 @@ export const ControlledSample = () => {
         canNext={page < numPages - 1}
         pageSize={pageSize}
         pageSizeOptions={pageSizeOptions}
-        onPageChange={value => setPage(value)}
-        onPageSizeChange={value => setPageSize(value)}
+        onPageChange={(value) => setPage(value)}
+        onPageSizeChange={(value) => setPageSize(value)}
         labels={{ pageSizeEntryName: "items" }}
       />
     </>
@@ -76,8 +76,8 @@ export const ControlledSample = () => {
 ControlledSample.story = {
   parameters: {
     docs: {
-      storyDescription: "Pagination controlling a list of elements"
+      storyDescription: "Pagination controlling a list of elements",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

@@ -67,7 +67,7 @@ export default class NodeTreeNavigationUtils {
 
     let toFocus = null;
     let useNext = false;
-    visibleNodes.forEach(nId => {
+    visibleNodes.forEach((nId) => {
       const node = nodeMap[nId];
       const firstChar = node.label.substring(0, 1).toLowerCase();
 

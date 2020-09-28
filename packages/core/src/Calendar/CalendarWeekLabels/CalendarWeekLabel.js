@@ -35,7 +35,7 @@ HvCalendarWeekLabel.propTypes = {
   /**
    * Callback to define the input date.
    */
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvCalendarWeekLabel" })(HvCalendarWeekLabel);

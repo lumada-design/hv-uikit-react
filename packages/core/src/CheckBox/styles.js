@@ -1,8 +1,8 @@
 import { outlineStyles } from "../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    display: "inline-block"
+    display: "inline-block",
   },
 
   container: {
@@ -10,32 +10,32 @@ const styles = theme => ({
     display: "flex",
 
     "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo3
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
 
     "&:focus-within": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
-      ...outlineStyles
+      ...outlineStyles,
     },
     // IE fallback code (using focus-within-polyfill)
     "&.focus-within": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
-      ...outlineStyles
+      ...outlineStyles,
     },
 
     // ensure more specificity than .HvBaseCheckbox-root:focus-within svg
     "& $checkBox:focus-within div>svg": {
       outline: "none",
-      boxShadow: "none"
+      boxShadow: "none",
     },
     // IE fallback code (using focus-within-polyfill)
     "& $checkBox.focus-within div>svg": {
       outline: "none",
-      boxShadow: "none"
-    }
+      boxShadow: "none",
+    },
   },
   disabled: {
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
 
   checkBox: {},
@@ -52,14 +52,14 @@ const styles = theme => ({
       cursor: "pointer",
       height: "32px",
       lineHeight: "32px",
-      width: "100%"
+      width: "100%",
     },
     "$disabled &": {
       // not spreading theme.hv.typography.placeholderText, it overrides too many things
       color: theme.hv.palette.atmosphere.atmo5,
-      cursor: "not-allowed"
-    }
-  }
+      cursor: "not-allowed",
+    },
+  },
 });
 
 export default styles;

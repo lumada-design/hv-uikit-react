@@ -1,23 +1,23 @@
 import createPalette from "@material-ui/core/styles/createPalette";
 
-const palette = theme =>
+const palette = (theme) =>
   createPalette({
     primary: {
       main: theme.palette.accent.acce2,
-      light: theme.palette.accent.acce2h
+      light: theme.palette.accent.acce2h,
     },
     secondary: {
       main: theme.palette.accent.acce1,
-      light: theme.palette.atmosphere.atmo5
+      light: theme.palette.atmosphere.atmo5,
     },
     text: {
       primary: theme.palette.accent.acce1,
-      disabled: theme.palette.atmosphere.atmo5
+      disabled: theme.palette.atmosphere.atmo5,
     },
     background: {
-      default: theme.palette.atmosphere.atmo3
+      default: theme.palette.atmosphere.atmo3,
     },
-    ...Object.assign({}, ...Object.values(theme.palette))
+    ...Object.assign({}, ...Object.values(theme.palette)),
   });
 
 export default palette;

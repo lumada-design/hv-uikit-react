@@ -1,12 +1,12 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     alignItems: "center",
     marginLeft: "auto",
     "& > *": {
-      marginLeft: `${theme.hv.spacing.xs}px`
-    }
-  }
+      marginLeft: `${theme.hv.spacing.xs}px`,
+    },
+  },
 });
 
 export default styles;

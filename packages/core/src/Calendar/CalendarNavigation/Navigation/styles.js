@@ -1,10 +1,10 @@
 import { outlineStyles } from "../../../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   icon: {
     userSelect: "none",
@@ -12,22 +12,22 @@ const styles = theme => ({
     height: "32px",
     "&:hover": {
       backgroundColor: theme.palette.atmo3,
-      cursor: "pointer"
+      cursor: "pointer",
     },
     "&:focus": {
       backgroundColor: theme.palette.atmo3,
       cursor: "pointer",
-      ...outlineStyles
-    }
+      ...outlineStyles,
+    },
   },
   disabled: {
     "& svg *.color0": {
-      fill: theme.palette.atmo5
+      fill: theme.palette.atmo5,
     },
     "&:hover": {
       backgroundColor: "transparent",
-      cursor: "not-allowed"
-    }
+      cursor: "not-allowed",
+    },
   },
   text: {
     width: "calc(100% - 64px)",
@@ -36,19 +36,19 @@ const styles = theme => ({
     padding: "8px 0",
     "&:hover": {
       backgroundColor: theme.palette.atmo3,
-      cursor: "pointer"
+      cursor: "pointer",
     },
     "&:focus": {
       backgroundColor: theme.palette.atmo3,
       cursor: "pointer",
-      ...outlineStyles
-    }
+      ...outlineStyles,
+    },
   },
   textWithoutHover: {
     width: "calc(100% - 64px)",
     textAlign: "center",
-    padding: "0 5px"
-  }
+    padding: "0 5px",
+  },
 });
 
 export default styles;

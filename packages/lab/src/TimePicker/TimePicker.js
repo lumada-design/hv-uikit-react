@@ -25,7 +25,7 @@ class HvTimePicker extends React.Component {
       hours: getHoursForTimeFormat(hours, timeFormat),
       minutes,
       seconds,
-      period: timeFormat === TimeFormat.H24 ? undefined : period
+      period: timeFormat === TimeFormat.H24 ? undefined : period,
     };
 
     this.state = {
@@ -33,7 +33,7 @@ class HvTimePicker extends React.Component {
       timePopperAnchor: null,
       timePopperPlacement: "bottom-start",
       timeFormat,
-      selectedTime
+      selectedTime,
     };
 
     onChange(getTimeWithFormat24(selectedTime, timeFormat));
@@ -54,7 +54,7 @@ class HvTimePicker extends React.Component {
    * @param {Object} event - on click event on the icon
    * @memberof HvTimePicker
    */
-  handleTimeIconClick = event => {
+  handleTimeIconClick = (event) => {
     const { currentTarget } = event;
     const { timePopperOpen } = this.state;
     this.setTimePopperState(currentTarget.parentElement, !timePopperOpen);
@@ -74,11 +74,11 @@ class HvTimePicker extends React.Component {
    * @param {Number} hours - selected hours
    * @memberof HvTimePicker
    */
-  handleHoursChange = hours => {
+  handleHoursChange = (hours) => {
     const { selectedTime } = this.state;
     const newSelectedTime = {
       ...selectedTime,
-      hours
+      hours,
     };
     this.onSelectedTimeChange(newSelectedTime);
   };
@@ -88,11 +88,11 @@ class HvTimePicker extends React.Component {
    * @param {Number} minutes - selected minutes
    * @memberof HvTimePicker
    */
-  handleMinutesChange = minutes => {
+  handleMinutesChange = (minutes) => {
     const { selectedTime } = this.state;
     const newSelectedTime = {
       ...selectedTime,
-      minutes
+      minutes,
     };
     this.onSelectedTimeChange(newSelectedTime);
   };
@@ -102,11 +102,11 @@ class HvTimePicker extends React.Component {
    * @param {Number} seconds - selected seconds
    * @memberof HvTimePicker
    */
-  handleSecondsChange = seconds => {
+  handleSecondsChange = (seconds) => {
     const { selectedTime } = this.state;
     const newSelectedTime = {
       ...selectedTime,
-      seconds
+      seconds,
     };
     this.onSelectedTimeChange(newSelectedTime);
   };
@@ -116,11 +116,11 @@ class HvTimePicker extends React.Component {
    * @param {String} period - selected period
    * @memberof HvTimePicker
    */
-  handleChangePeriod = period => {
+  handleChangePeriod = (period) => {
     const { selectedTime } = this.state;
     const newSelectedTime = {
       ...selectedTime,
-      period
+      period,
     };
     this.onSelectedTimeChange(newSelectedTime);
   };
@@ -135,7 +135,7 @@ class HvTimePicker extends React.Component {
   setTimePopperState = (anchor, open) => {
     this.setState({
       timePopperAnchor: anchor,
-      timePopperOpen: open
+      timePopperOpen: open,
     });
   };
 
@@ -145,11 +145,11 @@ class HvTimePicker extends React.Component {
    * @param {String} placement - Popper placement
    * @memberof HvTimePicker
    */
-  setTimePopperPlacement = placement => {
+  setTimePopperPlacement = (placement) => {
     const { timePopperPlacement } = this.state;
     if (timePopperPlacement !== placement) {
       this.setState({
-        timePopperPlacement: placement
+        timePopperPlacement: placement,
       });
     }
   };
@@ -159,11 +159,11 @@ class HvTimePicker extends React.Component {
    * Also calls the onChange callback
    * @param {Object} selectedTime - time object with the selected values for hours, minutes, seconds and period
    */
-  onSelectedTimeChange = selectedTime => {
+  onSelectedTimeChange = (selectedTime) => {
     const { onChange } = this.props;
     const { timeFormat } = this.state;
     this.setState({
-      selectedTime
+      selectedTime,
     });
     const selectedTimeIn24Format = getTimeWithFormat24(selectedTime, timeFormat);
     onChange(selectedTimeIn24Format);
@@ -224,11 +224,11 @@ class HvTimePicker extends React.Component {
           className={clsx(classes.inputContainer, {
             [classes.inputPopperOpenedBelow]: timePopperOpen && isPopperBelow,
             [classes.inputPopperOpenedAbove]: timePopperOpen && !isPopperBelow,
-            [classes.inputPopperClosed]: !timePopperOpen
+            [classes.inputPopperClosed]: !timePopperOpen,
           })}
         >
           <input
-            ref={element => {
+            ref={(element) => {
               this.inputElement = element;
             }}
             className={classes.input}
@@ -257,19 +257,19 @@ class HvTimePicker extends React.Component {
       <Popper
         className={clsx(classes.popper, {
           [classes.popperBelow]: isPopperBelow,
-          [classes.popperAbove]: !isPopperBelow
+          [classes.popperAbove]: !isPopperBelow,
         })}
         open={timePopperOpen}
         anchorEl={timePopperAnchor}
         placement="bottom-start"
         disablePortal
         popperOptions={{
-          onCreate: data => {
+          onCreate: (data) => {
             this.setTimePopperPlacement(data.placement);
           },
-          onUpdate: data => {
+          onUpdate: (data) => {
             this.setTimePopperPlacement(data.placement);
-          }
+          },
         }}
       >
         {this.renderTimePopperContent()}
@@ -352,7 +352,7 @@ HvTimePicker.propTypes = {
     /**
      * Time picker placeholder (appears in the input)
      */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   }),
   /**
    * If the time should be presented in 12 or 24 hour format.
@@ -409,14 +409,14 @@ HvTimePicker.propTypes = {
     popperBelow: PropTypes.string,
     popperAbove: PropTypes.string,
     separator: PropTypes.string,
-    periodContainer: PropTypes.string
-  }).isRequired
+    periodContainer: PropTypes.string,
+  }).isRequired,
 };
 
 HvTimePicker.defaultProps = {
   labels: {
     title: undefined,
-    placeholder: "hh:mm:ss"
+    placeholder: "hh:mm:ss",
   },
   timeFormat: undefined,
   locale: "en",
@@ -424,7 +424,7 @@ HvTimePicker.defaultProps = {
   minutes: new Date().getMinutes(),
   seconds: 0,
   period: getPeriodForDate(),
-  onChange: () => {}
+  onChange: () => {},
 };
 
 export default withStyles(styles, { name: "HvTimePicker" })(HvTimePicker);

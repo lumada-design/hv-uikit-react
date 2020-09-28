@@ -10,7 +10,7 @@ const mockDataSingleSelection = [{ label: "Value 1" }, { label: "Value 2" }, { l
 const mockDataSingleSelectionWithIcons = [
   { label: "Value 1", iconCallback: () => <LineChart /> },
   { label: "Value 2" },
-  { label: "Value 3", showNavIcon: true }
+  { label: "Value 3", showNavIcon: true },
 ];
 
 describe("[v3] <List />", () => {

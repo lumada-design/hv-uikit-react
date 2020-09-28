@@ -41,7 +41,7 @@ HvHeader.propTypes = {
     /**
      * Styles applied to the component background color.
      */
-    backgroundColor: PropTypes.string
+    backgroundColor: PropTypes.string,
   }).isRequired,
   /**
    * Position of the component.
@@ -50,7 +50,7 @@ HvHeader.propTypes = {
   /**
    * Children to be rendered.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvHeader" })(HvHeader);

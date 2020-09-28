@@ -6,9 +6,9 @@ import { setId } from "../../utils";
 import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
-const concatDescribeBy = descriptors => {
+const concatDescribeBy = (descriptors) => {
   let result;
-  descriptors.forEach(descriptor => {
+  descriptors.forEach((descriptor) => {
     if (descriptor && !result) {
       result = descriptor;
       return;
@@ -22,7 +22,7 @@ const concatDescribeBy = descriptors => {
  * An Input component that only posses the most basic functionalities.
  * It should be used alongside the other form elements to construct a proper accessible form.
  */
-const HvBaseInput = props => {
+const HvBaseInput = (props) => {
   const {
     placeholder,
     classes,
@@ -46,10 +46,10 @@ const HvBaseInput = props => {
     elementStatus,
     elementValue,
     elementDisabled,
-    descriptors = {}
+    descriptors = {},
   } = useContext(HvFormElementContext);
 
-  const onChangeHandler = event => {
+  const onChangeHandler = (event) => {
     onChange?.(event, event.target.value);
   };
 
@@ -64,7 +64,7 @@ const HvBaseInput = props => {
       className={clsx(classes.root, {
         [classes.disabledRoot]: localDisabled,
         [classes.invalidRoot]: localInvalid,
-        [classes.rootResizable]: multiline && resizable
+        [classes.rootResizable]: multiline && resizable,
       })}
     >
       <Input
@@ -77,14 +77,14 @@ const HvBaseInput = props => {
         onChange={onChangeHandler}
         classes={{
           input: clsx(classes.input, {
-            [classes.resize]: !disabled && resizable
+            [classes.resize]: !disabled && resizable,
           }),
           focused: classes.inputRootFocused,
           disabled: classes.inputDisabled,
-          multiline: classes.multiLine
+          multiline: classes.multiLine,
         }}
         className={clsx(classes.inputRoot, className, {
-          [classes.inputRootDisabled]: localDisabled
+          [classes.inputRootDisabled]: localDisabled,
         })}
         inputProps={{
           required,
@@ -93,7 +93,7 @@ const HvBaseInput = props => {
           "aria-describedby": concatDescribeBy([HvWarningText?.[0]?.id, HvInfoMessage?.[0]?.id]),
           "aria-labelledby": HvLabel?.[0]?.id,
           "aria-controls": concatDescribeBy([HvSuggestions?.[0]?.id, HvCharCounter?.[0]?.id]),
-          ...inputProps
+          ...inputProps,
         }}
         inputRef={inputRef}
         multiline={multiline}
@@ -166,7 +166,7 @@ HvBaseInput.propTypes = {
     /**
      * IE11 specific styling.
      */
-    "@global": PropTypes.string
+    "@global": PropTypes.string,
   }).isRequired,
   /**
    * Label inside the input used to help user.
@@ -209,7 +209,7 @@ HvBaseInput.propTypes = {
   /**
    * Denotes if the input is in an invalid state.
    */
-  invalid: PropTypes.bool
+  invalid: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvBaseInput" })(HvBaseInput);

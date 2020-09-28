@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Tab, ButtonBase, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvTab = props => {
+const HvTab = (props) => {
   const { classes, ...others } = props;
 
   const TabSubstitute = React.forwardRef((subprops, ref) => {
@@ -20,7 +20,7 @@ const HvTab = props => {
       classes={{
         root: classes.root,
         selected: classes.selected,
-        disabled: classes.disabled
+        disabled: classes.disabled,
       }}
       disableRipple
       disableTouchRipple
@@ -67,7 +67,7 @@ HvTab.propTypes = {
     /**
      * Styles applied to the root element if keyboard focused.
      */
-    focusVisible: PropTypes.string
+    focusVisible: PropTypes.string,
   }).isRequired,
   /**
    * If `true`, the tab will be disabled.
@@ -80,13 +80,13 @@ HvTab.propTypes = {
   /**
    * The label element.
    */
-  label: PropTypes.node
+  label: PropTypes.node,
 };
 
 HvTab.defaultProps = {
   disabled: false,
   icon: null,
-  label: null
+  label: null,
 };
 
 export default withStyles(styles, { name: "HvTab" })(HvTab);

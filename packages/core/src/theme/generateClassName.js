@@ -2,7 +2,7 @@ import { createGenerateClassName } from "@material-ui/core/styles";
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "jss-uikit",
-  disableGlobal: false
+  disableGlobal: false,
 });
 
 export default (rule, styleSheet) => {

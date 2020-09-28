@@ -24,12 +24,12 @@ Actions.propTypes = {
     /**
      * Style applied to the component.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Node to be rendered
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesActions" })(Actions);

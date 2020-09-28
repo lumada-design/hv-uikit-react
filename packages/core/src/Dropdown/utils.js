@@ -4,7 +4,7 @@
  * @param {Object} list - the list to filter
  * @returns {Array} - the selected elements
  */
-const getSelected = list => list?.filter(elem => elem.selected) || [];
+const getSelected = (list) => list?.filter((elem) => elem.selected) || [];
 
 /**
  * Checks if any element of the list is selected.
@@ -12,7 +12,7 @@ const getSelected = list => list?.filter(elem => elem.selected) || [];
  * @param list
  * @returns {boolean}
  */
-const hasSelected = list => getSelected(list).length > 0;
+const hasSelected = (list) => getSelected(list).length > 0;
 
 /**
  * Gets the selection label according to selection.
@@ -32,7 +32,7 @@ const getSelectionLabel = (list = [], labels, multiSelect) => {
   if (multiSelect) {
     return {
       selected: selected.length,
-      total: list.length
+      total: list.length,
     };
   }
   return { selected: selected.length > 0 ? selected[0].label : selectSingle };

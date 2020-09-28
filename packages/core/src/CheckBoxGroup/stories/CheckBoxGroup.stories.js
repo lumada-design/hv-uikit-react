@@ -6,9 +6,9 @@ export default {
   title: "Components/Forms/Checkbox Group",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCheckBoxGroup } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvCheckBoxGroup } from '@hv/uikit-react-core/dist'",
   },
-  component: HvCheckBoxGroup
+  component: HvCheckBoxGroup,
 };
 
 export const Main = () => (
@@ -20,7 +20,7 @@ export const Main = () => (
 );
 
 Main.parameters = {
-  v3: true
+  v3: true,
 };
 
 export const Horizontal = () => (
@@ -38,10 +38,10 @@ export const Horizontal = () => (
 Horizontal.parameters = {
   docs: {
     description: {
-      story: "Layout checkboxes horizontally."
-    }
+      story: "Layout checkboxes horizontally.",
+    },
   },
-  v3: true
+  v3: true,
 };
 
 export const Disabled = () => (
@@ -60,8 +60,8 @@ export const Disabled = () => (
 Disabled.parameters = {
   docs: {
     description: {
-      story: "Disabled checkbox group."
-    }
+      story: "Disabled checkbox group.",
+    },
   },
   pa11y: {
     ignore: [
@@ -69,10 +69,10 @@ Disabled.parameters = {
       // Text or images of text that are part of an inactive user interface component have no contrast requirement.
       // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
       "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast"
-    ]
+      "color-contrast",
+    ],
   },
-  v3: true
+  v3: true,
 };
 
 export const ReadOnly = () => (
@@ -86,10 +86,10 @@ export const ReadOnly = () => (
 ReadOnly.parameters = {
   docs: {
     description: {
-      story: "Not editable checkbox group."
-    }
+      story: "Not editable checkbox group.",
+    },
   },
-  v3: true
+  v3: true,
 };
 
 export const WithoutLabel = () => (
@@ -104,10 +104,10 @@ WithoutLabel.parameters = {
   docs: {
     description: {
       story:
-        "A checkbox group without label. The accessible name is provided via the `aria-label` property."
-    }
+        "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
+    },
   },
-  v3: true
+  v3: true,
 };
 
 export const Required = () => (
@@ -123,10 +123,10 @@ export const Required = () => (
 Required.parameters = {
   docs: {
     description: {
-      story: "Required checkbox group. Uncheck all checkboxes to show default error message."
-    }
+      story: "Required checkbox group. Uncheck all checkboxes to show default error message.",
+    },
   },
-  v3: true
+  v3: true,
 };
 
 export const Controlled = () => {
@@ -154,10 +154,10 @@ export const Controlled = () => {
 Controlled.parameters = {
   docs: {
     description: {
-      story: "Controlled checkbox group."
-    }
+      story: "Controlled checkbox group.",
+    },
   },
-  v3: true
+  v3: true,
 };
 
 export const ErrorMessage = () => (
@@ -173,8 +173,8 @@ ErrorMessage.parameters = {
     ignore: [
       "region",
       // aria-errormessage value is being reported as invalid, but the references an existing ID
-      "aria-valid-attr-value"
-    ]
+      "aria-valid-attr-value",
+    ],
   },
-  v3: true
+  v3: true,
 };

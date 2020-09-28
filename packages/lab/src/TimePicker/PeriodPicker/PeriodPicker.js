@@ -11,7 +11,7 @@ class PeriodPicker extends React.Component {
     super(props);
 
     this.state = {
-      currentPeriod: props.period
+      currentPeriod: props.period,
     };
   }
 
@@ -23,7 +23,7 @@ class PeriodPicker extends React.Component {
     const { onChangePeriod } = this.props;
     const period = this.selectDifferentPeriod();
     this.setState({
-      currentPeriod: period
+      currentPeriod: period,
     });
     onChangePeriod(period);
   };
@@ -72,11 +72,11 @@ PeriodPicker.propTypes = {
   /**
    * Default period value
    */
-  period: PropTypes.oneOf([PeriodPickerOptions.AM, PeriodPickerOptions.PM])
+  period: PropTypes.oneOf([PeriodPickerOptions.AM, PeriodPickerOptions.PM]),
 };
 
 PeriodPicker.defaultProps = {
-  period: getPeriodForDate()
+  period: getPeriodForDate(),
 };
 
 export default PeriodPicker;

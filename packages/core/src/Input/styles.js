@@ -1,86 +1,86 @@
 import "focus-within-polyfill";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     minWidth: "150px",
-    maxWidth: "610px"
+    maxWidth: "610px",
   },
   inputRoot: {
     "&:hover, &:focus-within": {
       "& $iconClear": {
-        visibility: "visible"
-      }
+        visibility: "visible",
+      },
     },
     "&:focus-within $iconClear": {
-      visibility: "visible"
-    }
+      visibility: "visible",
+    },
   },
   inputRootDisabled: {
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
   inputRootFocused: {
-    "& $iconClear": { visibility: "visible" }
+    "& $iconClear": { visibility: "visible" },
   },
   inputRootInvalid: {},
   input: {
     "&::-ms-clear": {
-      display: "none"
-    }
+      display: "none",
+    },
   },
   inputDisabled: {
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
   multiLine: {
-    padding: 0
+    padding: 0,
   },
   labelContainer: {
     display: "flex",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   label: {
     paddingBottom: "6px",
-    display: "block"
+    display: "block",
   },
   labelDisabled: {},
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",
     height: 30,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   adornmentButton: {
     backgroundColor: "transparent",
     border: "none",
     padding: 0,
     margin: 0,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   icon: {
     width: 30,
-    height: 30
+    height: 30,
   },
   iconClear: {
-    visibility: "hidden"
+    visibility: "hidden",
   },
 
   suggestionsContainer: {
     width: "100%",
     position: "relative",
-    top: "-1px"
+    top: "-1px",
   },
   suggestionList: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
     padding: `${theme.hv.spacing.sm}px`,
     position: "absolute",
-    width: "100%"
+    width: "100%",
   },
   "@global": {
     "input:-webkit-autofill": {
       "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,
-      "-webkit-text-fill-color": theme.hv.typography.normalText.color
-    }
-  }
+      "-webkit-text-fill-color": theme.hv.typography.normalText.color,
+    },
+  },
 });
 
 export default styles;

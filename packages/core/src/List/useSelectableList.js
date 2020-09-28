@@ -5,7 +5,7 @@ export default function useSelectableList(defaultList = []) {
   const [selection, setSelection] = useState([]);
 
   useEffect(() => {
-    setSelection(list.filter(elem => elem.selected));
+    setSelection(list.filter((elem) => elem.selected));
   }, [list]);
 
   return [list, setList, selection];

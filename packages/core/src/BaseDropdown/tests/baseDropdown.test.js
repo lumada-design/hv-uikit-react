@@ -14,7 +14,7 @@ jest.mock(
         return {
           scheduleUpdate: jest.fn(),
           update: jest.fn(),
-          destroy: jest.fn()
+          destroy: jest.fn(),
         };
       }
     }

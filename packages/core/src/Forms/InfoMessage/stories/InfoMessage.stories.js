@@ -6,9 +6,9 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvInfoMessage } from '@hv/uikit-react-core/dist'",
-    v3: true
+    v3: true,
   },
-  component: HvInfoMessage
+  component: HvInfoMessage,
 };
 
 export const Main = () => <HvInfoMessage id="infoMessage">Info message</HvInfoMessage>;
@@ -24,7 +24,7 @@ export const DisabledInfoMessage = () => {
 DisabledInfoMessage.story = {
   parameters: {
     docs: {
-      storyDescription: "Info message showcasing the disabled state."
+      storyDescription: "Info message showcasing the disabled state.",
     },
     v3: true,
     pa11y: {
@@ -33,8 +33,8 @@ DisabledInfoMessage.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
-  }
+        "color-contrast",
+      ],
+    },
+  },
 };

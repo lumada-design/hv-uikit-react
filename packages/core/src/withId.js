@@ -6,7 +6,7 @@ import getComponentName from "./utils/getComponentName";
 
 const pascalToKebab = (string = "") => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 
-const withId = Component => {
+const withId = (Component) => {
   const WithId = ({ id, ...others }) => {
     const [internalId] = useState(id || uniqueId(`${pascalToKebab(getComponentName(Component))}-`));
     return <Component id={internalId} {...others} />;
@@ -16,7 +16,7 @@ const withId = Component => {
     /**
      * Component id.
      */
-    id: PropTypes.string
+    id: PropTypes.string,
   };
 
   // https://reactjs.org/docs/higher-order-components.html#static-methods-must-be-copied-over

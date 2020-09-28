@@ -14,7 +14,7 @@ const LoginContainer = ({ id, className, classes, children, customBackground, ..
       id={id}
       className={clsx(className, classes.root)}
       style={{
-        backgroundImage: `url(${customBackground || background})`
+        backgroundImage: `url(${customBackground || background})`,
       }}
       {...others}
     >
@@ -43,7 +43,7 @@ LoginContainer.propTypes = {
     /**
      * Styles applied to the form container.
      */
-    formContainer: PropTypes.string
+    formContainer: PropTypes.string,
   }).isRequired,
   /**
    *  The form to be rendered.
@@ -52,7 +52,7 @@ LoginContainer.propTypes = {
   /**
    *  The path for the custom background image.
    */
-  customBackground: PropTypes.string
+  customBackground: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvLoginContainer" })(LoginContainer);

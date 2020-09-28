@@ -5,24 +5,24 @@ export default {
   title: "Patterns/Footer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFooter } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvFooter } from '@hv/uikit-react-core/dist'",
   },
   component: HvFooter,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ padding: 10 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => <HvFooter />;
 
 Main.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const CustomLabels = () => {
@@ -44,7 +44,7 @@ CustomLabels.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Sample 2 description."
-    }
-  }
+      storyDescription: "Sample 2 description.",
+    },
+  },
 };

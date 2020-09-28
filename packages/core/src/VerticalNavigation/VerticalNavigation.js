@@ -46,7 +46,7 @@ const VerticalNavigation = ({
       <div
         id={id}
         className={clsx(className, classes.root, {
-          [classes.noCollapsable]: !isCollapsable
+          [classes.noCollapsable]: !isCollapsable,
         })}
       >
         {children}
@@ -75,7 +75,7 @@ VerticalNavigation.propTypes = {
     /**
      * Style applied to the root of the component when it not collapsable.
      */
-    noCollapsable: PropTypes.string
+    noCollapsable: PropTypes.string,
   }).isRequired,
   /**
    * Sets if the navigation should have a button to hide itself.
@@ -100,7 +100,7 @@ VerticalNavigation.propTypes = {
   /**
    * Defines if the navigation should close when losing focus / clicking outside.
    */
-  closeOnExit: PropTypes.bool
+  closeOnExit: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigation" })(VerticalNavigation);

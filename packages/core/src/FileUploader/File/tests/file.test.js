@@ -14,7 +14,7 @@ const dataFail = {
   errorMessage: "File type not allowed for upload",
   progress: 25,
   status: "fail",
-  fileStatus: "fail"
+  fileStatus: "fail",
 };
 
 const dataSuccess = {
@@ -23,7 +23,7 @@ const dataSuccess = {
   errorMessage: "File type not allowed for upload",
   progress: 25,
   status: "success",
-  fileStatus: "success"
+  fileStatus: "success",
 };
 
 const onClickCallback = jest.fn();

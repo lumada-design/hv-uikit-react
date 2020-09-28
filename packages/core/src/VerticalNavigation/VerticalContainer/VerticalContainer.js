@@ -66,7 +66,7 @@ const VerticalContainer = ({
           return;
         }
       } else {
-        setOpen(prevState => !prevState);
+        setOpen((prevState) => !prevState);
       }
       toggleOpenCallback?.(open);
     },
@@ -77,7 +77,7 @@ const VerticalContainer = ({
    * Handler of keyboard clicks.
    */
   const handlerKeyContainer = useCallback(
-    event => {
+    (event) => {
       if (closeOnExit) {
         if (
           isKeypress(event, KeyboardCodes.Tab) &&
@@ -140,7 +140,7 @@ const VerticalContainer = ({
       classes.separator,
       handlerKeyContainer,
       id,
-      isAnchorBarVisible
+      isAnchorBarVisible,
     ]
   );
 
@@ -151,7 +151,7 @@ const VerticalContainer = ({
         [classes.static]: position === "static",
         [classes.relative]: position === "relative",
         [classes.fixed]: position === "fixed",
-        [classes.absolute]: position === "absolute"
+        [classes.absolute]: position === "absolute",
       })}
     >
       <ClickAwayListener onClickAway={() => closeOnExit && toggleOpen(false)}>
@@ -220,7 +220,7 @@ VerticalContainer.propTypes = {
     /**
      *  Styles applied to the content container.
      */
-    contentContainer: PropTypes.string
+    contentContainer: PropTypes.string,
   }).isRequired,
 
   /**
@@ -251,9 +251,9 @@ VerticalContainer.propTypes = {
   /**
    * Defines if the content pane should close when losing focus / clicking outside.
    */
-  closeOnExit: PropTypes.bool
+  closeOnExit: PropTypes.bool,
 };
 
 export default withStyles(styles, {
-  name: "HvVerticalNavigationVerticalContainer"
+  name: "HvVerticalNavigationVerticalContainer",
 })(VerticalContainer);

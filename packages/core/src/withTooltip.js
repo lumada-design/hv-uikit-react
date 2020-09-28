@@ -6,20 +6,20 @@ const withTooltip = (
   Component,
   label = "",
   placement,
-  evaluationExpression = evt => evt.target.scrollWidth > evt.target.clientWidth,
+  evaluationExpression = (evt) => evt.target.scrollWidth > evt.target.clientWidth,
   tooltipProps,
   tooltipContainerProps
-) => props => {
+) => (props) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const styles = {
     truncate: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   };
 
-  const handleMouseEnter = evt => {
+  const handleMouseEnter = (evt) => {
     setShowTooltip(evaluationExpression(evt));
   };
 

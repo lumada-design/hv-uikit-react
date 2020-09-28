@@ -1,32 +1,32 @@
-const styles = theme => ({
+const styles = (theme) => ({
   selectCell: {
     width: "32px",
     display: "table-cell",
-    verticalAlign: "middle"
+    verticalAlign: "middle",
   },
   root: {
     background: theme.hv.palette.atmosphere.atmo1,
-    display: "table-row"
+    display: "table-row",
   },
   button: {
     padding: `0 ${theme.hv.spacing.xs}px`,
     marginRight: `${theme.hv.spacing.xs}px`,
-    position: "relative"
+    position: "relative",
   },
   dropdownMenu: {
-    position: "relative"
+    position: "relative",
   },
   selectable: {
     cursor: "pointer",
     "&:hover": {
-      outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
-    }
+      outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    },
   },
   selected: {
     outline: `1px solid ${theme.hv.palette.accent.acce1}`,
     "&:hover": {
-      outline: `1px solid ${theme.hv.palette.accent.acce1}`
-    }
+      outline: `1px solid ${theme.hv.palette.accent.acce1}`,
+    },
   },
   actionSeparator: {
     width: 1,
@@ -42,16 +42,16 @@ const styles = theme => ({
       background: theme.hv.palette.atmosphere.atmo2,
       position: "absolute",
       top: 0,
-      left: 0
+      left: 0,
     },
     "& > button": {
-      float: "right"
-    }
+      float: "right",
+    },
   },
   checkboxPlacement: {
     display: "flex",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
 
 export default styles;

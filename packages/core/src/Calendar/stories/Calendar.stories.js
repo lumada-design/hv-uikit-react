@@ -7,16 +7,16 @@ export default {
   title: "Components/Calendar",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCalendar } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvCalendar } from '@hv/uikit-react-core/dist'",
   },
   component: HvCalendar,
-  subcomponents: { HvCalendarHeader }
+  subcomponents: { HvCalendarHeader },
 };
 
 export const Main = () => {
   const [selectionDate, setSelectionDate] = useState({
     startDate: new Date("2020-08-15"),
-    endDate: new Date("2020-08-29")
+    endDate: new Date("2020-08-29"),
   });
 
   const [visibleMonth, setVisibleMonth] = useState(8);
@@ -26,18 +26,18 @@ export const Main = () => {
     if (value instanceof Date) {
       setSelectionDate({
         startDate: value,
-        endDate: null
+        endDate: null,
       });
     }
     if ((selectionDate.startDate && selectionDate.endDate) || value < selectionDate.startDate) {
       setSelectionDate({
         startDate: value,
-        endDate: null
+        endDate: null,
       });
     } else {
       setSelectionDate({
         startDate: selectionDate.startDate,
-        endDate: value
+        endDate: value,
       });
     }
   };
@@ -70,7 +70,7 @@ export const Main = () => {
 
   const availableDates = {
     minimumDate: new Date("2020-06-01"),
-    maximumDate: new Date("2020-12-10")
+    maximumDate: new Date("2020-12-10"),
   };
 
   return (
@@ -149,8 +149,8 @@ export const SingleDate = () => {
 
 SingleDate.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Localized = () => {
@@ -194,10 +194,10 @@ export const Localized = () => {
       <div style={{ display: "flex", justifyContent: "space-around", width: "650px" }}>
         <HvDropdown
           id="dropdown7"
-          onChange={item => setLocale(item.id)}
+          onChange={(item) => setLocale(item.id)}
           values={[
             { id: "pt-PT", label: "Portuguese" },
-            { id: "en-US", label: "English" }
+            { id: "en-US", label: "English" },
           ]}
           labels={{ title: "Select language" }}
         />
@@ -223,7 +223,7 @@ Localized.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Warning: Changing this sample locale changes the locale for all samples."
-    }
-  }
+      storyDescription: "Warning: Changing this sample locale changes the locale for all samples.",
+    },
+  },
 };

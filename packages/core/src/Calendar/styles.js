@@ -1,6 +1,6 @@
-const styles = theme => ({
+const styles = (theme) => ({
   rangeCalendarContainer: {
-    display: "flex"
+    display: "flex",
   },
   singleCalendar: {
     "&:hover": {
@@ -9,13 +9,13 @@ const styles = theme => ({
         "& > div": {
           "& > div:nth-child(3)": {
             "& > div": {
-              backgroundColor: theme.palette.atmo1
-            }
-          }
-        }
-      }
-    }
-  }
+              backgroundColor: theme.palette.atmo1,
+            },
+          },
+        },
+      },
+    },
+  },
 });
 
 export default styles;

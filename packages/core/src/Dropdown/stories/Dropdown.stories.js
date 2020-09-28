@@ -7,9 +7,9 @@ export default {
   title: "Patterns/Dropdown",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDropdown } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvDropdown } from '@hv/uikit-react-core/dist'",
   },
-  component: HvDropdown
+  component: HvDropdown,
 };
 
 export const Main = () => (
@@ -21,7 +21,7 @@ export const Main = () => (
       { label: "value 1" },
       { label: "value 2", selected: true },
       { label: "value 3" },
-      { label: "value 4" }
+      { label: "value 4" },
     ]}
   />
 );
@@ -30,10 +30,10 @@ Main.story = {
   parameters: {
     v3: true,
     pa11y: {
-      ignore: ["region"]
+      ignore: ["region"],
     },
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const Empty = () => <HvDropdown id="dropdown1" aria-label="Empty" />;
@@ -42,25 +42,25 @@ Empty.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Dropdown with no values"
+      storyDescription: "Dropdown with no values",
     },
     pa11y: {
-      ignore: ["region"]
+      ignore: ["region"],
     },
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const SingleSelection = () => (
   <HvDropdown
     id="dropdown7"
     aria-label="Single selection"
-    onChange={item => console.log(item)}
+    onChange={(item) => console.log(item)}
     values={[
       { id: "id-1", label: "value 1", selected: true },
       { id: "id-2", label: "value 2" },
       { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" }
+      { id: "id-4", label: "value 4" },
     ]}
   />
 );
@@ -68,14 +68,14 @@ export const SingleSelection = () => (
 SingleSelection.story = {
   parameters: {
     docs: {
-      storyDescription: "Support ids to manage selection"
+      storyDescription: "Support ids to manage selection",
     },
     pa11y: {
-      ignore: ["region"]
+      ignore: ["region"],
     },
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const MultiSelection = () => (
@@ -88,7 +88,7 @@ export const MultiSelection = () => (
       { label: "value 1" },
       { label: "value 2", selected: true },
       { label: "value 3" },
-      { label: "value 4" }
+      { label: "value 4" },
     ]}
   />
 );
@@ -96,21 +96,21 @@ export const MultiSelection = () => (
 MultiSelection.story = {
   parameters: {
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const MultiSelectionNoSearch = () => (
   <HvDropdown
     id="dropdown5"
     aria-label="No search"
-    onChange={item => console.log(item)}
+    onChange={(item) => console.log(item)}
     multiSelect
     values={[
       { id: "id-1", label: "value 1" },
       { id: "id-2", label: "value 1", selected: true },
       { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" }
+      { id: "id-4", label: "value 4" },
     ]}
   />
 );
@@ -118,11 +118,11 @@ export const MultiSelectionNoSearch = () => (
 MultiSelectionNoSearch.story = {
   parameters: {
     pa11y: {
-      ignore: ["region"]
+      ignore: ["region"],
     },
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const SingleSelectionWithSearch = () => (
@@ -134,7 +134,7 @@ export const SingleSelectionWithSearch = () => (
       { label: "value 1" },
       { label: "value 2", selected: true },
       { label: "value 3" },
-      { label: "value 4" }
+      { label: "value 4" },
     ]}
   />
 );
@@ -142,14 +142,14 @@ export const SingleSelectionWithSearch = () => (
 SingleSelectionWithSearch.story = {
   parameters: {
     docs: {
-      storyDescription: "Single selection Dropdown with search and less than 10 elements"
+      storyDescription: "Single selection Dropdown with search and less than 10 elements",
     },
     pa11y: {
-      ignore: ["region"]
+      ignore: ["region"],
     },
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const SingleSelectionNoSelection = () => (
@@ -162,35 +162,35 @@ export const SingleSelectionNoSelection = () => (
       { label: "value 2" },
       { label: "value 3" },
       { label: "value 4" },
-      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" }
+      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" },
     ]}
   />
 );
 
 SingleSelectionNoSelection.parameters = {
   pa11y: {
-    ignore: ["region"]
+    ignore: ["region"],
   },
   v3: true,
-  eyes: { include: false }
+  eyes: { include: false },
 };
 
 export const DifferentSizeAndPlacements = () => {
   const data = [
     {
       label: "value 1",
-      selected: false
+      selected: false,
     },
     {
       label: "value 2",
-      selected: false
-    }
+      selected: false,
+    },
   ];
 
   const styles = () => ({
     dropdown: {
-      width: "180px"
-    }
+      width: "180px",
+    },
   });
 
   const StyledDropdown = withStyles(styles)(HvDropdown);
@@ -224,14 +224,14 @@ export const DifferentSizeAndPlacements = () => {
 DifferentSizeAndPlacements.story = {
   parameters: {
     docs: {
-      storyDescription: "Dropdown defined with a specific width and with different placements."
+      storyDescription: "Dropdown defined with a specific width and with different placements.",
     },
     pa11y: {
-      ignore: ["region"]
+      ignore: ["region"],
     },
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const Disabled = () => (
@@ -252,7 +252,7 @@ export const Disabled = () => (
       { label: "value 9", selected: true },
       { label: "value 10" },
       { label: "value 11" },
-      { label: "value 12" }
+      { label: "value 12" },
     ]}
   />
 );
@@ -265,10 +265,10 @@ Disabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
+        "color-contrast",
+      ],
     },
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };

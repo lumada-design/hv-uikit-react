@@ -16,7 +16,7 @@ import { setId } from "../utils";
 const DEFAULT_LABELS = {
   sortBy: "Sort by",
   inputLabel: "",
-  placeholder: "Search"
+  placeholder: "Search",
 };
 
 const getPaginationData = ({ hasPagination, paginationServerSide }, values, pageSize, page) =>
@@ -28,7 +28,7 @@ const getPaginationData = ({ hasPagination, paginationServerSide }, values, page
  * An Asset Inventory allows to switch between views.
  * The Sort and Filter are defined using the metadata configuration, while the remaining configuration can be ser in the AssetInventory or in the individual views.
  */
-const HvAssetInventory = props => {
+const HvAssetInventory = (props) => {
   const {
     id,
     classes,
@@ -64,7 +64,7 @@ const HvAssetInventory = props => {
     FilterPlaceholder,
     onViewChange,
     multibuttonProps = [],
-    emptyComponent = null
+    emptyComponent = null,
   } = props;
 
   const innerPageSize = pageSizeProp || pageSizeOptions[0];
@@ -112,7 +112,7 @@ const HvAssetInventory = props => {
     setSelectedView(viewIndex);
   };
 
-  const changePageValues = returnedPageValues => {
+  const changePageValues = (returnedPageValues) => {
     setPageValues(getPaginationData(props, returnedPageValues, pageSize, page));
   };
 
@@ -170,14 +170,14 @@ const HvAssetInventory = props => {
     );
   };
 
-  const paginationOnPageChange = newPage => {
+  const paginationOnPageChange = (newPage) => {
     const pageData = values.slice(pageSize * newPage, pageSize * (newPage + 1));
 
     setPage(newPage);
     setPageValues(pageData);
   };
 
-  const paginationOnPageSizeChange = newPageSize => {
+  const paginationOnPageSizeChange = (newPageSize) => {
     const pageData = values.slice(newPageSize * page, newPageSize * (page + 1));
 
     setPageSize(newPageSize);
@@ -198,7 +198,7 @@ const HvAssetInventory = props => {
       <HvPagination
         id={setId(id, "pagination")}
         classes={{
-          root: classes.pagination
+          root: classes.pagination,
         }}
         pages={numPages}
         page={page}
@@ -214,20 +214,20 @@ const HvAssetInventory = props => {
   };
 
   const handleSelectPage = (e, checked = false) => {
-    setSelectedValues(checked ? [] : pageValues.map(v => v.id));
+    setSelectedValues(checked ? [] : pageValues.map((v) => v.id));
   };
 
   const handleSelectAll = () => {
     const allSelected = selectedValues.length === values.length;
-    setSelectedValues(allSelected ? [] : values.map(v => v.id));
+    setSelectedValues(allSelected ? [] : values.map((v) => v.id));
   };
 
-  const innerOnSelection = onSelectionFn => event => {
+  const innerOnSelection = (onSelectionFn) => (event) => {
     const valueId = event.target.value;
 
     const list =
       (event.target.checked && [...selectedValues, valueId]) ||
-      (selectedValues.includes(valueId) && selectedValues.filter(item => item !== valueId)) ||
+      (selectedValues.includes(valueId) && selectedValues.filter((item) => item !== valueId)) ||
       [];
 
     setSelectedValues(list);
@@ -235,15 +235,15 @@ const HvAssetInventory = props => {
   };
 
   const propsFillerManager = (source, target, propObj) => {
-    Object.keys(propObj).forEach(key => {
+    Object.keys(propObj).forEach((key) => {
       // eslint-disable-next-line no-param-reassign
       if (source.props[key] == null) target[key] = propObj[key];
     });
   };
 
-  const fillChildProp = child => {
+  const fillChildProp = (child) => {
     const childProps = {
-      ...(configuration?.viewConfiguration || child?.props?.viewConfiguration)
+      ...(configuration?.viewConfiguration || child?.props?.viewConfiguration),
     };
 
     propsFillerManager(child, childProps, {
@@ -251,7 +251,7 @@ const HvAssetInventory = props => {
       isSelectable,
       actions,
       maxVisibleActions,
-      actionsCallback
+      actionsCallback,
     });
 
     return childProps;
@@ -270,13 +270,13 @@ const HvAssetInventory = props => {
     return React.cloneElement(view, {
       values: pageValues,
       selectedValues,
-      viewConfiguration: fillChildProp(view)
+      viewConfiguration: fillChildProp(view),
     });
   };
 
   const showButtons = children.length > 1;
-  const showSort = find(configuration.metadata, element => element.sortable);
-  const showSearch = find(configuration.metadata, element => element.searchable);
+  const showSort = find(configuration.metadata, (element) => element.sortable);
+  const showSearch = find(configuration.metadata, (element) => element.searchable);
   const showRightControls = showButtons || showSort;
 
   const align = !showSearch ? "flex-end" : "space-between";
@@ -388,7 +388,7 @@ HvAssetInventory.propTypes = {
     /**
      * Styles applied to the pagination component.
      */
-    pagination: PropTypes.string
+    pagination: PropTypes.string,
   }).isRequired,
   /**
    * Views components.
@@ -399,7 +399,7 @@ HvAssetInventory.propTypes = {
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string
+      id: PropTypes.string,
     })
   ).isRequired,
   /**
@@ -417,7 +417,7 @@ HvAssetInventory.propTypes = {
     /**
      * the placeholder value of the search box.
      */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   }),
   /**
    * Contains the metadata for the values and the necessary configuration for the views,
@@ -433,10 +433,10 @@ HvAssetInventory.propTypes = {
         sortable: PropTypes.bool,
         sortFunction: PropTypes.func,
         searchable: PropTypes.bool,
-        searchFunction: PropTypes.func
+        searchFunction: PropTypes.func,
       })
     ).isRequired,
-    viewConfiguration: PropTypes.instanceOf(Object)
+    viewConfiguration: PropTypes.instanceOf(Object),
   }).isRequired,
   /**
    * Callback evoked in the selection of the card.
@@ -450,7 +450,7 @@ HvAssetInventory.propTypes = {
       id: PropTypes.string,
       label: PropTypes.string,
       icon: PropTypes.func,
-      disabled: PropTypes.bool
+      disabled: PropTypes.bool,
     })
   ),
   /**
@@ -553,7 +553,7 @@ HvAssetInventory.propTypes = {
   multibuttonProps: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      icon: PropTypes.node
+      icon: PropTypes.node,
     })
   ),
   /**
@@ -563,7 +563,7 @@ HvAssetInventory.propTypes = {
   /**
    * Component to the present when no data is available.
    */
-  emptyComponent: PropTypes.node
+  emptyComponent: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvAssetInventory" })(

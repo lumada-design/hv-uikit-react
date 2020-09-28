@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvLink = props => {
+const HvLink = (props) => {
   const {
     classes,
     children,
@@ -19,7 +19,7 @@ const HvLink = props => {
     <Component
       role="button"
       className={classes.a}
-      onClick={event => onClick?.(event, data)}
+      onClick={(event) => onClick?.(event, data)}
       tabIndex={tabIndex}
       {...others}
     >
@@ -40,7 +40,7 @@ HvLink.propTypes = {
     /**
      * Styles applied to the component.
      */
-    a: PropTypes.string
+    a: PropTypes.string,
   }).isRequired,
   /**
    * Children.
@@ -66,7 +66,7 @@ HvLink.propTypes = {
    * The component used for the link node.
    * Either a string to use a DOM element or a component.
    */
-  Component: PropTypes.elementType
+  Component: PropTypes.elementType,
 };
 
 export default withStyles(styles, { name: "HvLink" })(HvLink);

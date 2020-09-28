@@ -15,19 +15,19 @@ const DEFAULT_LABELS = {
   warningText: "",
   maxCharQuantityWarningText: "",
   requiredWarningText: "",
-  middleCount: "/"
+  middleCount: "/",
 };
 
 const VALIDATION_STATES = {
   standBy: "standBy",
-  invalid: "invalid"
+  invalid: "invalid",
 };
 
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
  * alongside this it can provide a validation for the max character quantity
  */
-const HvTextArea = props => {
+const HvTextArea = (props) => {
   const {
     classes,
     className = "",
@@ -54,7 +54,7 @@ const HvTextArea = props => {
     ...others
   } = props;
 
-  const isOverflow = currentValue =>
+  const isOverflow = (currentValue) =>
     isNil(maxCharQuantity) ? false : currentValue.length > maxCharQuantity;
 
   /**
@@ -63,12 +63,12 @@ const HvTextArea = props => {
    * @param value - string to evaluate
    * @returns {string|*} - string according the limit
    */
-  const limitValue = currentValue => {
+  const limitValue = (currentValue) => {
     if (currentValue === undefined || !blockMax) return currentValue;
     return !isOverflow(currentValue) ? currentValue : currentValue.substring(0, maxCharQuantity);
   };
 
-  const isInvalid = compareState => compareState === VALIDATION_STATES.invalid;
+  const isInvalid = (compareState) => compareState === VALIDATION_STATES.invalid;
   const textInputRef = useRef(null);
   const [value, setValue] = useState(initialValue);
   const [currentValueLength, setCurrentValueLength] = useState(
@@ -99,7 +99,7 @@ const HvTextArea = props => {
     const scrollHandler = {
       handleEvent: () => {
         setAutoScrolling(isScrolledDown());
-      }
+      },
     };
     textInputRef.current.addEventListener("scroll", scrollHandler);
   }, []);
@@ -113,7 +113,7 @@ const HvTextArea = props => {
     }
     return {
       validationStateResult,
-      warningTextResult
+      warningTextResult,
     };
   };
 
@@ -129,7 +129,7 @@ const HvTextArea = props => {
         // testing for false because if undefined validation does not exist
         return {
           validationStateResult: VALIDATION_STATES.invalid,
-          warningTextResult: labels.warningText
+          warningTextResult: labels.warningText,
         };
       }
       const isValidLength = validateCharLength(valueToTest, maxCharQuantity, null);
@@ -143,7 +143,7 @@ const HvTextArea = props => {
 
       return {
         validationStateResult,
-        warningTextResult
+        warningTextResult,
       };
     },
     [labels, maxCharQuantity, validation, validationStateProp]
@@ -155,7 +155,7 @@ const HvTextArea = props => {
    *
    * @returns {undefined}
    */
-  const onContainerBlurHandler = event => {
+  const onContainerBlurHandler = (event) => {
     if (event.relatedTarget) return;
     const emptyResult = checkEmptyValue(value);
     const validationResult = validateValue(value);
@@ -330,7 +330,7 @@ HvTextArea.propTypes = {
     /**
      * Style applied container of the text area component.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * An Object containing the various text associated with the input.
@@ -367,7 +367,7 @@ HvTextArea.propTypes = {
     /**
      * Text between the current char counter and max value.
      */
-    middleCount: PropTypes.string
+    middleCount: PropTypes.string,
   }),
   /**
    * The maximum allowed length of the characters, if this value is null or undefined no check
@@ -434,7 +434,7 @@ HvTextArea.propTypes = {
   /**
    * Props passed to the HvWarning component.
    */
-  warningProps: PropTypes.instanceOf(Object)
+  warningProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));

@@ -7,7 +7,7 @@ import styles from "./styles";
 /**
  * The content container for the card.
  */
-const Content = props => {
+const Content = (props) => {
   const { id, classes, className, children, onClick, ...others } = props;
   return (
     <CardContent id={id} className={clsx(classes.content, className)} onClick={onClick} {...others}>
@@ -32,7 +32,7 @@ Content.propTypes = {
     /**
      * Style applied to the root component.
      */
-    content: PropTypes.string
+    content: PropTypes.string,
   }).isRequired,
   /**
    *  The renderable content inside the body of the card.
@@ -41,7 +41,7 @@ Content.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvCardContent" })(Content);

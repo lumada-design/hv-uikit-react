@@ -132,7 +132,7 @@ describe("<DatePicker /> with custom properties", () => {
     applyLabel: "OK",
     cancelLabel: "GO BACK",
     title: "TESTING LABEL",
-    placeholder: "I'M THE PLACEHOLDER"
+    placeholder: "I'M THE PLACEHOLDER",
   };
 
   beforeEach(async () => {

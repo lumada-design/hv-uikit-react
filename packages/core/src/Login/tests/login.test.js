@@ -14,7 +14,7 @@ import Login from "..";
 const MyProvider = ({ children }) => <HvProvider>{children}</HvProvider>;
 
 MyProvider.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
 
 describe("Login ", () => {
@@ -32,7 +32,7 @@ describe("Login ", () => {
         <Login login={loginMock} recovery={recoverMock} allowRecover />
       </HvProvider>,
       {
-        wrappingComponent: MyProvider
+        wrappingComponent: MyProvider,
       }
     );
   });
@@ -69,10 +69,7 @@ describe("Login ", () => {
   });
 
   it("should render the Recovery component when click in the 'forgot your credentials'", () => {
-    const forgotCredentialsLink = wrapper
-      .find(LoginForm)
-      .find(HvButton)
-      .at(1);
+    const forgotCredentialsLink = wrapper.find(LoginForm).find(HvButton).at(1);
 
     forgotCredentialsLink.simulate("click");
 
@@ -90,11 +87,7 @@ describe("Login ", () => {
   });
 
   it("should call the recovery function", () => {
-    wrapper
-      .find(LoginForm)
-      .find(HvButton)
-      .at(1)
-      .simulate("click");
+    wrapper.find(LoginForm).find(HvButton).at(1).simulate("click");
 
     const recoveryComponent = wrapper.find("recoveryForm");
 
@@ -126,12 +119,7 @@ describe("Login ", () => {
       </HvProvider>
     );
 
-    const foundTitleComponent = wrapper2
-      .find(Title)
-      .children()
-      .children()
-      .children()
-      .first();
+    const foundTitleComponent = wrapper2.find(Title).children().children().children().first();
 
     expect(foundTitleComponent.type()).toBe("img");
   });
@@ -144,11 +132,7 @@ describe("Login ", () => {
       </HvProvider>
     );
 
-    const foundMsg = wrapper2
-      .find(MessageElement)
-      .children()
-      .children()
-      .first();
+    const foundMsg = wrapper2.find(MessageElement).children().children().first();
 
     expect(foundMsg.text()).toBe(msg.text);
   });

@@ -11,12 +11,12 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
+      page: null,
+    },
   },
   decorators: [
-    storyFn => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>
-  ]
+    (storyFn) => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>,
+  ],
 };
 
 // __________________________________
@@ -38,8 +38,8 @@ export const KeyboardNavigation = () => (
 KeyboardNavigation.story = {
   parameters: {
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 // __________________________________
@@ -56,8 +56,8 @@ export const A11YClosed = () => (
 A11YClosed.story = {
   parameters: {
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const A11YOpen = () => (
@@ -75,11 +75,11 @@ A11YOpen.story = {
       actions: [
         // open menu before testing
         "click element #dropdownmenu-open-icon-button",
-        "wait for element #dropdownmenu-open-list to be visible"
-      ]
+        "wait for element #dropdownmenu-open-list to be visible",
+      ],
     },
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 // __________________________________
@@ -95,9 +95,9 @@ sWithIconsAndActions.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-3/i }));
         return wait(() => screen.getByText("Label 3"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, Disabled Items opened
@@ -110,7 +110,7 @@ sDisabledItems.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-disableditems/i }));
         return wait(() => screen.getByText("Label 3"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

@@ -7,7 +7,7 @@ import styles from "./styles";
 /**
  * The header container for the card.
  */
-const Header = props => {
+const Header = (props) => {
   const { classes, className, title, subheader, icon, onClick, ...others } = props;
 
   return (
@@ -20,7 +20,7 @@ const Header = props => {
         title: icon ? classes.titleShort : classes.title,
         subheader: classes.subheader,
         action: classes.action,
-        content: classes.content
+        content: classes.content,
       }}
       onClick={onClick}
       {...others}
@@ -60,7 +60,7 @@ Header.propTypes = {
     /**
      * Styles applied to the content wrapper element.
      */
-    content: PropTypes.string
+    content: PropTypes.string,
   }).isRequired,
   /**
    *  The renderable content inside the title slot of the header.
@@ -77,7 +77,7 @@ Header.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvCardHeader" })(Header);

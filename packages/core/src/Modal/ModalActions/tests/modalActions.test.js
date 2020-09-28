@@ -52,7 +52,7 @@ describe("[v3] ModalActions Component", () => {
         <ModalActions
           classes={{
             root: "testClassRoot",
-            action: "testClassAction"
+            action: "testClassAction",
           }}
         >
           Modal Content

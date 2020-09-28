@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "@material-ui/core";
 
-const HitachiLogo = props => {
+const HitachiLogo = (props) => {
   const theme = useTheme();
   const color = theme.hv.palette.accent.acce1;
   return (
@@ -48,4 +48,4 @@ const HitachiLogo = props => {
   );
 };
 
-export default props => <HitachiLogo style={{ width: 72, height: 20 }} {...props} />;
+export default (props) => <HitachiLogo style={{ width: 72, height: 20 }} {...props} />;

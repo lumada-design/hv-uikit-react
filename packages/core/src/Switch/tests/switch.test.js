@@ -68,7 +68,7 @@ describe("Switch label click", () => {
         showLabels
         labels={{
           left: "Left",
-          right: "Right"
+          right: "Right",
         }}
         displayIconChecked={false}
       />
@@ -77,7 +77,7 @@ describe("Switch label click", () => {
 
   const clickableLabel = wrapper.find("#hvswitch-left-button");
   clickableLabel.simulate("click", {
-    target: { classname: "labelDeselected" }
+    target: { classname: "labelDeselected" },
   });
 
   it("label can be clicked", () => {
@@ -94,7 +94,7 @@ describe("Switch input area hover", () => {
         showLabels
         labels={{
           left: "Left",
-          right: "Right"
+          right: "Right",
         }}
       />
     </HvProvider>

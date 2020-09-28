@@ -7,13 +7,13 @@ import HvProvider from "../../../Provider";
 import BaseInput from "..";
 
 const inputProps = {
-  "aria-label": "Input Label"
+  "aria-label": "Input Label",
 };
 
 describe("v3 Input", () => {
   let wrapper;
 
-  const getInputProps = ParentElement => ParentElement.find(BaseInput).props();
+  const getInputProps = (ParentElement) => ParentElement.find(BaseInput).props();
 
   beforeEach(async () => {
     wrapper = mount(

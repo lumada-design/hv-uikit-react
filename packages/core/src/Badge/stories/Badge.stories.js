@@ -5,7 +5,7 @@ import { HvBadge, HvButton } from "../..";
 const container = {
   width: 400,
   display: "flex",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
 };
 
 export default {
@@ -13,9 +13,9 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBadge } from '@hv/uikit-react-core/dist'",
-    v3: true
+    v3: true,
   },
-  component: HvBadge
+  component: HvBadge,
 };
 
 export const Main = () => (
@@ -29,7 +29,7 @@ export const Main = () => (
 );
 
 Main.story = {
-  decorators: [storyFn => <div style={{ ...container, width: 300 }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ ...container, width: 300 }}>{storyFn()}</div>],
 };
 
 export const WithIcon = () => (
@@ -44,13 +44,13 @@ export const WithIcon = () => (
 );
 
 WithIcon.story = {
-  decorators: [storyFn => <div style={{ ...container, width: 500 }}>{storyFn()}</div>],
+  decorators: [(storyFn) => <div style={{ ...container, width: 500 }}>{storyFn()}</div>],
   parameters: {
     docs: {
-      storyDescription: "Badge sample that uses a custom icon."
+      storyDescription: "Badge sample that uses a custom icon.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const WithText = () => (
@@ -65,13 +65,13 @@ export const WithText = () => (
 );
 
 WithText.story = {
-  decorators: [storyFn => <div style={{ ...container, width: 650 }}>{storyFn()}</div>],
+  decorators: [(storyFn) => <div style={{ ...container, width: 650 }}>{storyFn()}</div>],
   parameters: {
     docs: {
-      storyDescription: "Badge sample using only text."
+      storyDescription: "Badge sample using only text.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const WithState = () => {
@@ -90,8 +90,8 @@ export const WithState = () => {
 WithState.story = {
   parameters: {
     docs: {
-      storyDescription: "Badge sample using react hooks to set the number of events."
+      storyDescription: "Badge sample using react hooks to set the number of events.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

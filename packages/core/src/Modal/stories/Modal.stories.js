@@ -12,7 +12,7 @@ import {
   HvModalTitle,
   HvTable,
   HvTextArea,
-  HvTypography
+  HvTypography,
 } from "../..";
 
 /* eslint-disable react/prop-types */
@@ -21,10 +21,10 @@ export default {
   title: "Patterns/Modal",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvModal } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvModal } from '@hv/uikit-react-core/dist'",
   },
   component: HvModal,
-  subcomponents: { HvModalTitle, HvModalContent, HvModalActions }
+  subcomponents: { HvModalTitle, HvModalContent, HvModalActions },
 };
 
 const SimpleModal = ({ buttonMessage, title, content, classes, indentContent = false }) => {
@@ -138,9 +138,9 @@ TextAndSemantic.story = {
     v3: true,
     docs: {
       storyDescription:
-        "The modal allow the definition of variants, that alters the presented icon."
-    }
-  }
+        "The modal allow the definition of variants, that alters the presented icon.",
+    },
+  },
 };
 
 export const CustomIcon = () => (
@@ -156,9 +156,9 @@ CustomIcon.story = {
     v3: true,
     docs: {
       storyDescription:
-        "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button."
-    }
-  }
+        "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button.",
+    },
+  },
 };
 
 export const Accessibility = () => {
@@ -199,37 +199,37 @@ Accessibility.story = {
     v3: true,
     docs: {
       storyDescription:
-        "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content."
-    }
-  }
+        "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content.",
+    },
+  },
 };
 
 export const CustomContent = () => {
   const inputStyles = {
     root: {
-      width: 555
+      width: 555,
     },
     label: {
       paddingTop: 0,
       paddingBottom: "10px",
-      display: "block"
+      display: "block",
     },
     infoText: {
-      paddingBottom: 20
-    }
+      paddingBottom: 20,
+    },
   };
 
   const textAreaStyles = {
     root: {
       paddingTop: 30,
-      width: 555
-    }
+      width: 555,
+    },
   };
 
   const contentStyles = {
     paper: {
-      width: "100%"
-    }
+      width: "100%",
+    },
   };
 
   const InputWithStyles = withStyles(inputStyles)(HvInput);
@@ -257,7 +257,7 @@ export const CustomContent = () => {
                 { id: 2, customer: "Blauer See Auto, Co.", dealSize: "Small" },
                 { id: 3, customer: "Blauer See Auto, Co.", dealSize: "Medium" },
                 { id: 4, customer: "Online Diecast Creation", dealSize: "Medium" },
-                { id: 5, customer: "Vitachrome Inc.", dealSize: "Small" }
+                { id: 5, customer: "Vitachrome Inc.", dealSize: "Small" },
               ]}
               columns={[
                 {
@@ -265,15 +265,15 @@ export const CustomContent = () => {
                   accessor: "customer",
                   cellType: "alpha-numeric",
                   sortable: false,
-                  width: "150px"
+                  width: "150px",
                 },
                 {
                   headerText: "Dealsize",
                   accessor: "dealSize",
                   cellType: "alpha-numeric",
                   sortable: false,
-                  width: "150px"
-                }
+                  width: "150px",
+                },
               ]}
               showPagination={false}
             />
@@ -290,7 +290,7 @@ export const CustomContent = () => {
             <InputWithStyles
               labels={{
                 placeholder: "Enter text",
-                inputLabel: "Title"
+                inputLabel: "Title",
               }}
               fullWidth
               showInfo={false}
@@ -299,7 +299,7 @@ export const CustomContent = () => {
               id="outlined-with-placeholder"
               labels={{
                 placeholder: "Enter text",
-                inputLabel: "Description"
+                inputLabel: "Description",
               }}
               multiline
               rows={3}
@@ -315,9 +315,9 @@ CustomContent.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "It is possible to insert any component in the modal."
-    }
-  }
+      storyDescription: "It is possible to insert any component in the modal.",
+    },
+  },
 };
 
 export const RemoveSchedule = () => {
@@ -366,7 +366,7 @@ export const DeleteConfirmation = () => {
   const [open, setOpen] = useState(false);
 
   const labels = {
-    placeholder: "Enter text"
+    placeholder: "Enter text",
   };
 
   const styledString = () => (

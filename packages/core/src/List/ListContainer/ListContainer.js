@@ -13,7 +13,7 @@ import HvListContext from "../ListContext";
  * The simple list is for continous <b>vertical indexes of text or icons+text</b>. The content of these lists must be simple: ideally simples fields.
  * This pattern is ideal for <b>selections</b>. It should be used inside a HvPanel.
  */
-const HvListContainer = props => {
+const HvListContainer = (props) => {
   const {
     id,
     className,
@@ -42,7 +42,7 @@ const HvListContainer = props => {
     disableGutters,
     interactive,
     selectable,
-    nesting: nesting + 1
+    nesting: nesting + 1,
   };
 
   const renderChildren = () => {
@@ -51,7 +51,7 @@ const HvListContainer = props => {
     }
 
     const anySelected = React.Children.toArray(children)
-      .map(child => child.props.selected && !child.props.disabled)
+      .map((child) => child.props.selected && !child.props.disabled)
       .reduce((result, selected) => result || selected, false);
 
     return React.Children.map(children, (child, i) => {
@@ -63,7 +63,7 @@ const HvListContainer = props => {
           : -1;
 
       return React.cloneElement(child, {
-        tabIndex
+        tabIndex,
       });
     });
   };
@@ -100,7 +100,7 @@ HvListContainer.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Overrides the implicit list role. It defaults to "listbox" if unspecified and the list is selectable.
@@ -130,7 +130,7 @@ HvListContainer.propTypes = {
   /**
    * The list items.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvListContainer" })(HvListContainer);

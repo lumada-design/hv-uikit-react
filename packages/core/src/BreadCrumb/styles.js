@@ -1,12 +1,12 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     alignItems: "center",
-    zIndex: 0
+    zIndex: 0,
   },
   centerContainer: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   link: {
     textDecoration: "none",
@@ -14,25 +14,25 @@ const styles = theme => ({
     fontWeight: 400,
     "&:hover": {
       cursor: "pointer",
-      textDecoration: "underline"
-    }
+      textDecoration: "underline",
+    },
   },
   separatorContainer: {
-    margin: theme.spacing(0, "xs")
+    margin: theme.spacing(0, "xs"),
   },
   orderedList: {
-    display: "flex"
+    display: "flex",
   },
   a: {
     textDecoration: "none",
     "&:hover": {
-      textDecoration: "underline"
+      textDecoration: "underline",
     },
     "&:focus > p": {
       color: theme.hv.palette.accent.acce1,
-      textDecoration: "underline"
-    }
-  }
+      textDecoration: "underline",
+    },
+  },
 });
 
 export default styles;

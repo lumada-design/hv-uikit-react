@@ -10,7 +10,7 @@ import styles from "./styles";
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
  */
-const HvInfoMessage = props => {
+const HvInfoMessage = (props) => {
   const {
     label,
     children,
@@ -31,7 +31,7 @@ const HvInfoMessage = props => {
         id={localId}
         className={clsx(className, classes.root, {
           [classes.infoDisabled]: localDisabled,
-          [classes.gutter]: !disableGutter
+          [classes.gutter]: !disableGutter,
         })}
         variant="normalText"
         component="label"
@@ -67,7 +67,7 @@ HvInfoMessage.propTypes = {
     /**
      * Separation for the message.
      */
-    gutter: PropTypes.string
+    gutter: PropTypes.string,
   }).isRequired,
   /**
    * The children to label.
@@ -85,7 +85,7 @@ HvInfoMessage.propTypes = {
   /**
    * If `true` the info message won't have margins.
    */
-  disableGutter: PropTypes.bool
+  disableGutter: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvInfoMessage" })(HvInfoMessage);

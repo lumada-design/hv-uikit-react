@@ -1,6 +1,6 @@
 import ListViewContext, {
   ListViewContextProvider,
-  ListViewContextConsumer
+  ListViewContextConsumer,
 } from "./ListViewContext/ListViewContext";
 
 export { default } from "./ListView";

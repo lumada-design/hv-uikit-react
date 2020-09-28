@@ -7,9 +7,9 @@ export default {
   title: "Visualizations/Donut Chart",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDonutchart } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvDonutchart } from '@hv/uikit-react-core/dist'",
   },
-  component: HvDonutchart
+  component: HvDonutchart,
 };
 
 export const Main = () => (
@@ -20,8 +20,8 @@ export const Main = () => (
       {
         values: [250, 800],
         labels: ["Uploads", "Downloads"],
-        name: "Music"
-      }
+        name: "Music",
+      },
     ]}
   />
 );
@@ -35,8 +35,8 @@ export const DonutChartThin = () => {
         {
           values: [540, 1234],
           labels: ["Uploads", "Downloads"],
-          name: "Music"
-        }
+          name: "Music",
+        },
       ]}
       type="thin"
     />
@@ -46,9 +46,9 @@ export const DonutChartThin = () => {
 DonutChartThin.story = {
   parameters: {
     docs: {
-      storyDescription: "Thin Donut."
-    }
-  }
+      storyDescription: "Thin Donut.",
+    },
+  },
 };
 
 export const DonutChartWithControls = () => {
@@ -56,8 +56,8 @@ export const DonutChartWithControls = () => {
     wrapper: {
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "flex-end"
-    }
+      alignItems: "flex-end",
+    },
   });
 
   const ChartHeader = withStyles(styles)(({ classes, children }) => (
@@ -66,17 +66,17 @@ export const DonutChartWithControls = () => {
 
   const useStyles = makeStyles(() => ({
     root: {
-      width: 250
+      width: 250,
     },
     label: { paddingBottom: 6 },
     titlePadding: { marginTop: 10 },
     dropdownPlacement: {
-      marginLeft: 10
+      marginLeft: 10,
     },
     controllerGroup: {
       display: "flex",
-      alignItems: "flex-end"
-    }
+      alignItems: "flex-end",
+    },
   }));
 
   const classes = useStyles();
@@ -97,7 +97,7 @@ export const DonutChartWithControls = () => {
               { label: "Last 0.5h" },
               { label: "Last 1.5h", selected: true },
               { label: "Last 24h" },
-              { label: "Last 48h" }
+              { label: "Last 48h" },
             ]}
           />
           <HvDropDownMenu
@@ -115,8 +115,8 @@ export const DonutChartWithControls = () => {
           {
             values: [250, 800],
             labels: ["Uploads", "Downloads"],
-            name: "Music"
-          }
+            name: "Music",
+          },
         ]}
       />
     </>
@@ -126,7 +126,7 @@ export const DonutChartWithControls = () => {
 DonutChartWithControls.story = {
   parameters: {
     docs: {
-      storyDescription: "Donut chart with title and controls."
-    }
-  }
+      storyDescription: "Donut chart with title and controls.",
+    },
+  },
 };

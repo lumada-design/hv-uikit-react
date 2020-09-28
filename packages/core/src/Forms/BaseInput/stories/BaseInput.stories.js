@@ -6,10 +6,10 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'",
-    v3: true
+    v3: true,
   },
   component: HvBaseInput,
-  decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => {
@@ -21,7 +21,7 @@ export const Main = () => {
         id="main-input"
         placeholder="Insert data"
         inputProps={{
-          "aria-labelledby": inputLabelId
+          "aria-labelledby": inputLabelId,
         }}
       />
     </HvLabel>
@@ -35,7 +35,7 @@ export const MultiLine = () => {
       aria-label="input multiline"
       placeholder="Enter text"
       inputProps={{
-        "aria-label": "multiline text area"
+        "aria-label": "multiline text area",
       }}
       multiline
       rows={6}
@@ -46,10 +46,10 @@ export const MultiLine = () => {
 MultiLine.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the multiline input style."
+      storyDescription: "Showcasing the multiline input style.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const MultiLineResize = () => {
@@ -59,7 +59,7 @@ export const MultiLineResize = () => {
       aria-label="input multiline"
       placeholder="Enter text"
       inputProps={{
-        "aria-label": "multiline text area"
+        "aria-label": "multiline text area",
       }}
       multiline
       resizable
@@ -71,10 +71,10 @@ export const MultiLineResize = () => {
 MultiLineResize.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the multiline input style with resizing."
+      storyDescription: "Showcasing the multiline input style with resizing.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const DisabledInput = () => {
@@ -84,7 +84,7 @@ export const DisabledInput = () => {
       aria-label="disabled input"
       placeholder="Insert data"
       inputProps={{
-        "aria-label": "disabled input"
+        "aria-label": "disabled input",
       }}
       disabled
     />
@@ -94,10 +94,10 @@ export const DisabledInput = () => {
 DisabledInput.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the disabled input style."
+      storyDescription: "Showcasing the disabled input style.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const DisabledMultiLine = () => {
@@ -107,7 +107,7 @@ export const DisabledMultiLine = () => {
       aria-label="disabled text area"
       placeholder="Enter text"
       inputProps={{
-        "aria-label": "disabled text area"
+        "aria-label": "disabled text area",
       }}
       multiline
       disabled
@@ -119,10 +119,10 @@ export const DisabledMultiLine = () => {
 DisabledMultiLine.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the disabled multiline input style."
+      storyDescription: "Showcasing the disabled multiline input style.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const InvalidInput = () => {
@@ -133,7 +133,7 @@ export const InvalidInput = () => {
       invalid
       placeholder="Insert data"
       inputProps={{
-        "aria-label": "invalid input"
+        "aria-label": "invalid input",
       }}
     />
   );
@@ -142,10 +142,10 @@ export const InvalidInput = () => {
 InvalidInput.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the input in Invalid State."
+      storyDescription: "Showcasing the input in Invalid State.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const InvalidMultiLine = () => {
@@ -155,7 +155,7 @@ export const InvalidMultiLine = () => {
       aria-label="invalid text area"
       placeholder="Enter text"
       inputProps={{
-        "aria-label": "invalid text area"
+        "aria-label": "invalid text area",
       }}
       multiline
       invalid
@@ -167,8 +167,8 @@ export const InvalidMultiLine = () => {
 InvalidMultiLine.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the invalid multiline input style."
+      storyDescription: "Showcasing the invalid multiline input style.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

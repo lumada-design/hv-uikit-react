@@ -1,7 +1,7 @@
 const styles = {
   root: {
-    display: "block"
-  }
+    display: "block",
+  },
 };
 
 export default styles;

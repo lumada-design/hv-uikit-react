@@ -12,8 +12,8 @@ const data = [
   {
     values: [250, 800],
     labels: ["Uploads", "Downloads"],
-    name: "Music"
-  }
+    name: "Music",
+  },
 ];
 
 describe("Donuchart", () => {

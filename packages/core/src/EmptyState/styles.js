@@ -1,9 +1,9 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     width: "100%",
     height: "100%",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   container: {
     display: "flex",
@@ -11,17 +11,17 @@ const styles = theme => ({
     [theme.breakpoints.only("xs")]: {
       flexDirection: "column",
       alignItems: "center",
-      textAlign: "center"
-    }
+      textAlign: "center",
+    },
   },
   containerMessageOnly: {
     alignItems: "center",
     [theme.breakpoints.only("xs")]: {
-      flexDirection: "row"
+      flexDirection: "row",
     },
     "& $textContainer": {
-      marginLeft: 0
-    }
+      marginLeft: 0,
+    },
   },
   iconContainer: {},
   textContainer: {
@@ -31,24 +31,24 @@ const styles = theme => ({
     fontFamily: theme.hv.typography.fontFamily,
     [theme.breakpoints.up("sm")]: {
       marginLeft: "16px",
-      paddingLeft: "4px"
+      paddingLeft: "4px",
     },
     "& a": {
       ...theme.hv.typography.link,
-      textDecoration: "none"
-    }
+      textDecoration: "none",
+    },
   },
   titleContainer: {
     marginTop: 5,
     marginBottom: theme.spacing("xs"),
     [theme.breakpoints.only("xs")]: {
-      marginTop: theme.spacing("sm")
-    }
+      marginTop: theme.spacing("sm"),
+    },
   },
   messageContainer: {},
   actionContainer: {
-    marginTop: theme.spacing("sm")
-  }
+    marginTop: theme.spacing("sm"),
+  },
 });
 
 export default styles;

@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = (theme) => ({
   list: {
     margin: 0,
     padding: 0,
@@ -9,11 +9,11 @@ const styles = theme => ({
       alignItems: "center",
       background: theme.hv.palette.atmosphere.atmo1,
       "&:not(:last-child)": {
-        marginBottom: `${theme.hv.spacing.xs}px`
+        marginBottom: `${theme.hv.spacing.xs}px`,
       },
-      height: 72
-    }
-  }
+      height: 72,
+    },
+  },
 });
 
 export default styles;

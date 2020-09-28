@@ -6,9 +6,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -24,7 +24,7 @@ export const WithState = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-start"
+        alignItems: "flex-start",
       }}
     >
       <HvCheckBox
@@ -62,9 +62,9 @@ WithState.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
+        "color-contrast",
+      ],
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

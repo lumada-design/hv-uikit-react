@@ -3,7 +3,7 @@ import { MoreOptionsHorizontal } from "@hv/uikit-react-icons";
 import { HvDropDownMenu } from "..";
 import { setId } from "../utils";
 
-export const removeExtension = label =>
+export const removeExtension = (label) =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
 
 export const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {

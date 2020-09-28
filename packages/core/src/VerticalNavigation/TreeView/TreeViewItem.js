@@ -12,9 +12,9 @@ import usePropAsRef from "../../utils/usePropAsRef";
 
 import styles from "./styles";
 
-const isPrintableCharacter = str => str && str.length === 1 && str.match(/\S/);
+const isPrintableCharacter = (str) => str && str.length === 1 && str.match(/\S/);
 
-const TreeViewItem = props => {
+const TreeViewItem = (props) => {
   const {
     id,
     className,
@@ -53,7 +53,7 @@ const TreeViewItem = props => {
     select,
     setFocusByFirstCharacter,
     toggle,
-    mode
+    mode,
   } = treeViewControlContext;
 
   const treeviewMode = mode === "treeview";
@@ -72,7 +72,7 @@ const TreeViewItem = props => {
   const tabbable = treeViewStateContext.isTabbable(nodeId);
 
   const handleAction = useCallback(
-    event => {
+    (event) => {
       if (!disabled) {
         if (collapsible && expandable) {
           if (!selectable || !expanded || selected) {
@@ -93,7 +93,7 @@ const TreeViewItem = props => {
   const onChangeCallback = usePropAsRef(onClick);
 
   const handleClick = useCallback(
-    event => {
+    (event) => {
       setUseFocus(false);
       if (!tabbable) {
         focus(nodeId);
@@ -113,7 +113,7 @@ const TreeViewItem = props => {
   );
 
   const handleNextArrow = useCallback(
-    event => {
+    (event) => {
       if (expandable) {
         if (expanded) {
           return focusNextNode(event, nodeId);
@@ -129,7 +129,7 @@ const TreeViewItem = props => {
   );
 
   const handleKeyDown = useCallback(
-    event => {
+    (event) => {
       let isEventHandled = false;
       const { key } = event;
 
@@ -197,13 +197,13 @@ const TreeViewItem = props => {
       focusFirstNode,
       focusLastNode,
       expandAllSiblings,
-      setFocusByFirstCharacter
+      setFocusByFirstCharacter,
     ]
   );
 
   const previousChildIds = useRef([]);
   const childIds = useMemo(() => {
-    const ids = React.Children.map(children, child => child.props.nodeId) || [];
+    const ids = React.Children.map(children, (child) => child.props.nodeId) || [];
 
     if (arrayDiff(previousChildIds.current, ids)) {
       previousChildIds.current = ids;
@@ -241,7 +241,7 @@ const TreeViewItem = props => {
         innerRef={actionableRef}
         className={clsx(classes.content, {
           [classes.contentFocused]: useFocus,
-          [classes.contentFocusDisabled]: !useFocus
+          [classes.contentFocusDisabled]: !useFocus,
         })}
         tabIndex={tabbable ? 0 : -1}
         onKeyDown={handleKeyDown}
@@ -265,7 +265,7 @@ const TreeViewItem = props => {
       icon,
       selectable,
       selected,
-      tabbable
+      tabbable,
     ]
   );
 
@@ -290,14 +290,14 @@ const TreeViewItem = props => {
         [classes.selectable]: !disabled && selectable,
         [classes.unselectable]: !disabled && !selectable,
         [classes.selected]: !disabled && selectable && selected,
-        [classes.unselected]: !disabled && selectable && !selected
+        [classes.unselected]: !disabled && selectable && !selected,
       })}
       data-hasicon={icon != null ? true : undefined}
       aria-disabled={disabled ? true : undefined}
       aria-expanded={collapsible && expandable ? expanded : undefined}
       {...(mode === "treeview" && {
         role: "treeitem",
-        "aria-selected": selectable && selected ? true : undefined
+        "aria-selected": selectable && selected ? true : undefined,
       })}
       {...others}
     >
@@ -367,7 +367,7 @@ TreeViewItem.propTypes = {
     /**
      * Style applied when element is focused by click.
      */
-    contentFocusDisabled: PropTypes.string
+    contentFocusDisabled: PropTypes.string,
   }).isRequired,
   /**
    * Is the node disabled.
@@ -401,9 +401,9 @@ TreeViewItem.propTypes = {
   /**
    * The content of the component.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, {
-  name: "HvVerticalNavigationTreeViewItem"
+  name: "HvVerticalNavigationTreeViewItem",
 })(TreeViewItem);

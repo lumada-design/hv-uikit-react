@@ -7,25 +7,25 @@ const styles = () => ({
   root: {
     display: "flex",
     "& svg": {
-      margin: "auto"
-    }
+      margin: "auto",
+    },
   },
   xs: {
     width: 32,
-    height: 32
+    height: 32,
   },
   s: {
     width: 32,
-    height: 32
+    height: 32,
   },
   m: {
     width: 48,
-    height: 48
+    height: 48,
   },
   l: {
     width: 112,
-    height: 112
-  }
+    height: 112,
+  },
 });
 
 const HvIconBase = ({ classes, className, children, iconSize, ...others }) => {
@@ -62,7 +62,7 @@ HvIconBase.propTypes = {
     /**
      * Styles applied to the root component, when it is large.
      */
-    l: PropTypes.string
+    l: PropTypes.string,
   }),
   /**
    * Class names to be applied.
@@ -112,7 +112,7 @@ HvIconBase.propTypes = {
     "sema16",
     "sema17",
     "sema18",
-    "sema19"
+    "sema19",
   ]),
   /**
    * Inverts the background-foreground on semantic icons
@@ -121,7 +121,7 @@ HvIconBase.propTypes = {
   /**
    * * Props passed down to the svg element..
    */
-  svgProps: PropTypes.instanceOf(Object)
+  svgProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvIconBase" })(HvIconBase);

@@ -24,7 +24,7 @@ Actions.propTypes = {
     /**
      * Style applied to the component.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the actions container.
@@ -33,7 +33,7 @@ Actions.propTypes = {
   /**
    * Node to be rendered
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigationActions" })(Actions);

@@ -31,7 +31,7 @@ ModalContent.propTypes = {
     /**
      * Style applied when the content is a string.
      */
-    textContent: PropTypes.string
+    textContent: PropTypes.string,
   }).isRequired,
   /**
    * Content should be indented in relationship to the Modal title.
@@ -40,7 +40,7 @@ ModalContent.propTypes = {
   /**
    * Content to be rendered.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvModalContent" })(ModalContent);

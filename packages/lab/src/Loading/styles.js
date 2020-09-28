@@ -1,8 +1,8 @@
 const interval = 0.11;
 
-const styles = theme => ({
+const styles = (theme) => ({
   loading: {
-    textAlign: "center"
+    textAlign: "center",
   },
 
   centerPosition: {
@@ -10,11 +10,11 @@ const styles = theme => ({
     height: "100%",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
 
   inlinePosition: {
-    marginTop: "5px"
+    marginTop: "5px",
   },
 
   loadingBar: {
@@ -28,14 +28,14 @@ const styles = theme => ({
       margin: "3px",
 
       "&:nth-child(1)": {
-        animationDelay: "0"
+        animationDelay: "0",
       },
       "&:nth-child(2)": {
-        animationDelay: `${interval * 2}s`
+        animationDelay: `${interval * 2}s`,
       },
       "&:nth-child(3)": {
-        animationDelay: `${interval * 4}s`
-      }
+        animationDelay: `${interval * 4}s`,
+      },
     },
 
     "&.small": {
@@ -45,41 +45,41 @@ const styles = theme => ({
       margin: "4px 2px 2px 2px",
 
       "&:nth-child(1)": {
-        animationDelay: "0"
+        animationDelay: "0",
       },
       "&:nth-child(2)": {
-        animationDelay: `${interval}s`
+        animationDelay: `${interval}s`,
       },
       "&:nth-child(3)": {
-        animationDelay: `${interval * 2}s`
-      }
-    }
+        animationDelay: `${interval * 2}s`,
+      },
+    },
   },
 
   "@keyframes loading-regular": {
     "0%": {
       transform: "scale(1)",
-      backgroundColor: theme.hv.palette.accent.acce1
+      backgroundColor: theme.hv.palette.accent.acce1,
     },
     "50%": {
       transform: "scale(1, 1.9)",
-      backgroundColor: theme.hv.palette.accent.acce3
-    }
+      backgroundColor: theme.hv.palette.accent.acce3,
+    },
   },
 
   "@keyframes loading-small": {
     "0%": {
       transform: "scale(1)",
-      backgroundColor: theme.hv.palette.accent.acce1
+      backgroundColor: theme.hv.palette.accent.acce1,
     },
     "50%": {
-      transform: "scale(1, 1.9)"
-    }
+      transform: "scale(1, 1.9)",
+    },
   },
 
   loadingText: {
-    marginTop: "20px"
-  }
+    marginTop: "20px",
+  },
 });
 
 export default styles;

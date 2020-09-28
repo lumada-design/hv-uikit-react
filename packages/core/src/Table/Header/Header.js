@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core";
 import {
   SortXS as Sort,
   SortAscendingXS as SortAsc,
-  SortDescendingXS as SortDesc
+  SortDescendingXS as SortDesc,
 } from "@hv/uikit-react-icons";
 import { HvTypography } from "../..";
 import { KeyboardCodes, isKeypress, setId } from "../../utils";
@@ -27,7 +27,7 @@ const renderSort = (sortType, columnSortable) => {
 };
 
 const getSortType = (id, sort) => {
-  const sortInfo = sort.filter(item => item.id === id);
+  const sortInfo = sort.filter((item) => item.id === id);
   if (sortInfo.length) {
     return sortInfo[0].desc === true ? "descending" : "ascending";
   }
@@ -62,13 +62,13 @@ const Header = ({ id, classes, column, tableSortable, sort, onSortChange }) => {
         <div
           id={setId(id, "column", colId, "sort-button")}
           className={clsx(classes.rtSortIcon, {
-            [classes.rtSortIconNumeric]: cellType === "numeric"
+            [classes.rtSortIconNumeric]: cellType === "numeric",
           })}
           aria-label={setId(id, "column", colId, "sort-button")}
           role="button"
           tabIndex="0"
-          onClick={event => handleSortChange(event, colId, onSortChange, sort)}
-          onKeyDown={event => handleKeyDown(event, colId, onSortChange, sort)}
+          onClick={(event) => handleSortChange(event, colId, onSortChange, sort)}
+          onKeyDown={(event) => handleKeyDown(event, colId, onSortChange, sort)}
         >
           {renderSort(sortType, columnSortable)}
         </div>
@@ -77,7 +77,7 @@ const Header = ({ id, classes, column, tableSortable, sort, onSortChange }) => {
       <div
         className={clsx(classes.headerTextContainer, {
           [classes.headerSortable]: columnSortable,
-          [classes.headerNotSortable]: !columnSortable
+          [classes.headerNotSortable]: !columnSortable,
         })}
       >
         <HvTypography
@@ -85,7 +85,7 @@ const Header = ({ id, classes, column, tableSortable, sort, onSortChange }) => {
           variant="highlightText"
           className={clsx(classes.headerProps, {
             [classes.headerAlphaNumeric]: cellType === "alpha-numeric" || cellType === "link",
-            [classes.headerNumeric]: cellType === "numeric"
+            [classes.headerNumeric]: cellType === "numeric",
           })}
         >
           {headerText}

@@ -70,7 +70,7 @@ class HvSlider extends React.Component {
       maxPointValue,
       minPointValue,
       divisionQuantity,
-      formatMark
+      formatMark,
     } = props;
 
     const styles = styleCreator(theme);
@@ -99,7 +99,7 @@ class HvSlider extends React.Component {
       defaultKnobsPositions: transformKnobsPosition(defaultValues, inverseStepValue, minPointValue),
       styles,
       stepValue,
-      inverseStepValue
+      inverseStepValue,
     };
   }
 
@@ -117,7 +117,7 @@ class HvSlider extends React.Component {
           props.values.length > 0 ? props.values : props.defaultValues,
           1 / stepValue,
           props.minPointValue
-        )
+        ),
       };
     }
     return null;
@@ -162,12 +162,12 @@ class HvSlider extends React.Component {
   ) => {
     const marks = {};
     if (markProperties.length > 0) {
-      markProperties.forEach(markProperty => {
+      markProperties.forEach((markProperty) => {
         marks[markProperty.position] = {
           label: `${markProperty.label}`,
           style: {
-            ...styles.mark
-          }
+            ...styles.mark,
+          },
         };
       });
     } else {
@@ -180,8 +180,8 @@ class HvSlider extends React.Component {
         marks[index] = {
           label: `${labelValue}`,
           style: {
-            ...styles.mark
-          }
+            ...styles.mark,
+          },
         };
       }
     }
@@ -248,7 +248,7 @@ class HvSlider extends React.Component {
 
     return {
       knobInner,
-      knobOuterStyle
+      knobOuterStyle,
     };
   };
 
@@ -259,7 +259,7 @@ class HvSlider extends React.Component {
    * @returns {Object} - An object with the positions and values of the knobs.
    * @memberof HvSlider
    */
-  generateKnobsPositionAndValues = knobsCurrentPosition => {
+  generateKnobsPositionAndValues = (knobsCurrentPosition) => {
     const newKnobsPosition = knobsCurrentPosition.slice();
     const knobsValues = [];
     const { minPointValue, noOverlap } = this.props;
@@ -291,7 +291,7 @@ class HvSlider extends React.Component {
 
     return {
       knobsPosition: newKnobsPosition,
-      knobsValues
+      knobsValues,
     };
   };
 
@@ -304,7 +304,7 @@ class HvSlider extends React.Component {
    * @param {Array} knobsPosition - An array containing the current positions of the knobs.
    * @memberof HvSlider
    */
-  onChangeHandler = knobsPosition => {
+  onChangeHandler = (knobsPosition) => {
     const knobs = this.generateKnobsPositionAndValues(knobsPosition);
     const { knobProperties, onChange, minPointValue, defaultValues } = this.props;
     const { inverseStepValue } = this.state;
@@ -321,7 +321,7 @@ class HvSlider extends React.Component {
     onChange(knobs);
 
     this.setState({
-      knobsPositions: knobs.knobsPosition
+      knobsPositions: knobs.knobsPosition,
     });
   };
 
@@ -333,7 +333,7 @@ class HvSlider extends React.Component {
    * @param {Array} knobsPosition - An array containing the current positions of the knobs.
    * @memberof HvSlider
    */
-  onBeforeChangeHandler = knobsPosition => {
+  onBeforeChangeHandler = (knobsPosition) => {
     const { onBeforeChange } = this.props;
     const knobs = this.generateKnobsPositionAndValues(knobsPosition);
     onBeforeChange(knobs);
@@ -347,7 +347,7 @@ class HvSlider extends React.Component {
    * @param {Array} knobsPosition - An array containing the current positions of the knobs.
    * @memberof HvSlider
    */
-  onAfterChangeHandler = knobsPosition => {
+  onAfterChangeHandler = (knobsPosition) => {
     const { onAfterChange } = this.props;
     const knobs = this.generateKnobsPositionAndValues(knobsPosition);
     onAfterChange(knobs);
@@ -363,7 +363,7 @@ class HvSlider extends React.Component {
    * @param {Object} props - An object containing the properties of the knobs.
    * @memberof HvSlider
    */
-  createKnob = props => {
+  createKnob = (props) => {
     const { minPointValue, markDigits, knobProperties, formatTooltip, classes } = this.props;
     const { stepValue } = this.state;
     const { value, dragging, index, style, ...restProps } = props;
@@ -403,7 +403,7 @@ class HvSlider extends React.Component {
       knobStyles,
       trackStyles,
       marks,
-      styles
+      styles,
     } = this.state;
 
     return (
@@ -450,7 +450,7 @@ HvSlider.propTypes = {
       hidden: PropTypes.bool,
       fixed: PropTypes.bool,
       hoverColor: PropTypes.string,
-      trackColor: PropTypes.string
+      trackColor: PropTypes.string,
     })
   ).isRequired,
   /**
@@ -459,7 +459,7 @@ HvSlider.propTypes = {
   markProperties: PropTypes.arrayOf(
     PropTypes.shape({
       position: PropTypes.number,
-      label: PropTypes.string
+      label: PropTypes.string,
     })
   ),
   /**
@@ -567,8 +567,8 @@ HvSlider.propTypes = {
     /**
      * Style applied to the tooltip.
      */
-    sliderTooltip: PropTypes.string
-  }).isRequired
+    sliderTooltip: PropTypes.string,
+  }).isRequired,
 };
 
 HvSlider.defaultProps = {
@@ -576,15 +576,15 @@ HvSlider.defaultProps = {
   markDigits: 0,
   noOverlap: true,
   values: [],
-  formatMark: mark => mark,
-  formatTooltip: mark => mark,
+  formatMark: (mark) => mark,
+  formatTooltip: (mark) => mark,
   markProperties: [],
   divisionQuantity: 100,
   minPointValue: 0,
   maxPointValue: 100,
   onBeforeChange: () => {},
   onChange: () => {},
-  onAfterChange: () => {}
+  onAfterChange: () => {},
 };
 
 export default withStyles(styleCreator, { name: "HvSlider", withTheme: true })(HvSlider);

@@ -14,13 +14,13 @@ import styles from "./styles";
 
 const DEFAULT_LABELS = {
   selectAll: "Select All",
-  selectionConjunction: "/"
+  selectionConjunction: "/",
 };
 
 /**
  * Component used to show a set of related data to the user.
  */
-const HvList = props => {
+const HvList = (props) => {
   const {
     id,
     classes,
@@ -60,17 +60,17 @@ const HvList = props => {
 
   const handleSelectAll = () => {
     const passedProps = { multiSelect, selectable, singleSelectionToggle };
-    const anySelectableSelected = list.some(elem => elem.selected || elem.disabled);
+    const anySelectableSelected = list.some((elem) => elem.selected || elem.disabled);
     const parsedList = parseList(list, null, passedProps, !anySelectableSelected);
     setList(parsedList);
 
     onChange?.(parsedList);
   };
 
-  const renderLeftIcon = item =>
+  const renderLeftIcon = (item) =>
     item.iconCallback?.({
       isSelected: item.selected,
-      isDisabled: item.disabled
+      isDisabled: item.disabled,
     });
 
   const renderSelectAll = () => {
@@ -108,7 +108,7 @@ const HvList = props => {
     );
   };
 
-  const renderItemText = item => {
+  const renderItemText = (item) => {
     const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
 
     return !multiSelect && item.path ? (
@@ -129,11 +129,11 @@ const HvList = props => {
           label={item.label}
           checked={item.selected}
           disabled={item.disabled}
-          onChange={evt => handleSelect(evt, item)}
+          onChange={(evt) => handleSelect(evt, item)}
           classes={{
             root: classes.selectorRoot,
             container: classes.selectorContainer,
-            label: classes.truncate
+            label: classes.truncate,
           }}
         />,
         item.label
@@ -156,7 +156,7 @@ const HvList = props => {
           classes={{
             container: classes.selectorContainer,
             labelTypography: classes.truncate,
-            icon: classes.icon
+            icon: classes.icon,
           }}
         />,
         item.label
@@ -184,7 +184,7 @@ const HvList = props => {
         className={classes.item}
         classes={{ selected: useSelector || multiSelect ? classes.itemSelector : "" }}
         selected={multiSelect || selected ? selected : undefined}
-        onClick={evt => handleSelect(evt, item)}
+        onClick={(evt) => handleSelect(evt, item)}
         startAdornment={startAdornment}
         endAdornment={item.showNavIcon && <DropRightXS className={classes.box} iconSize="XS" />}
       >
@@ -209,7 +209,7 @@ const HvList = props => {
           disableGutters={useSelector}
           {...others}
         >
-          {list.filter(it => !it.isHidden).map((item, i) => renderListItem(item, i))}
+          {list.filter((it) => !it.isHidden).map((item, i) => renderListItem(item, i))}
         </HvListContainer>
       )}
     </>
@@ -264,7 +264,7 @@ HvList.propTypes = {
     /**
      * Styles applied to the select all selector.
      */
-    selectAllSelector: PropTypes.string
+    selectAllSelector: PropTypes.string,
   }).isRequired,
   /**
    * The id of the root element
@@ -293,7 +293,7 @@ HvList.propTypes = {
       iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool,
       path: PropTypes.string,
-      params: PropTypes.instanceOf(Object)
+      params: PropTypes.instanceOf(Object),
     })
   ).isRequired,
   /**
@@ -316,7 +316,7 @@ HvList.propTypes = {
     /**
      * The label used in the middle of the multiselection count.
      */
-    selectionConjunction: PropTypes.string
+    selectionConjunction: PropTypes.string,
   }),
   /**
    * If true renders list items with radio or checkbox selectors.
@@ -345,7 +345,7 @@ HvList.propTypes = {
   /**
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
-  hasTooltips: PropTypes.bool
+  hasTooltips: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvList" })(HvList);

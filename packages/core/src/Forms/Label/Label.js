@@ -12,7 +12,7 @@ import styles from "./styles";
  * Component used in conjunction with other form elements, to give extra information about status.
  * If it receives a children, the component will set itself as a label for the children.
  */
-const HvLabel = props => {
+const HvLabel = (props) => {
   const {
     label,
     children,
@@ -39,7 +39,7 @@ const HvLabel = props => {
         id={localId}
         className={clsx(className, classes.root, {
           [classes.labelDisabled]: localDisabled,
-          [classes.childGutter]: children && label
+          [classes.childGutter]: children && label,
         })}
         variant="highlightText"
         component="label"
@@ -78,7 +78,7 @@ HvLabel.propTypes = {
     /**
      * Separation between the label and the children.
      */
-    childGutter: PropTypes.string
+    childGutter: PropTypes.string,
   }).isRequired,
   /**
    * The children to label.
@@ -100,7 +100,7 @@ HvLabel.propTypes = {
   /**
    * If `true`, the label will indicate that the form element is required (an `*` after the label text).
    */
-  required: PropTypes.bool
+  required: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvLabel" })(HvLabel);

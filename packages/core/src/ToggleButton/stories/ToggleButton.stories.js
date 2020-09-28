@@ -22,7 +22,7 @@ import {
   LightOff,
   LightOn,
   Unlock,
-  Lock
+  Lock,
 } from "@hv/uikit-react-icons/dist";
 import Eye from "./Eye";
 
@@ -36,9 +36,9 @@ const FlexDecorator = ({ children }) => {
       alignItems: "end",
       flexWrap: "wrap",
       "& > *": {
-        margin: "0 10px 5px 0"
-      }
-    }
+        margin: "0 10px 5px 0",
+      },
+    },
   });
 
   const classes = useStyles();
@@ -50,16 +50,16 @@ export default {
   title: "Patterns/Selectors/Toggle Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvToggleButton } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvToggleButton } from '@hv/uikit-react-core/dist'",
   },
   component: HvToggleButton,
   decorators: [
-    Story => (
+    (Story) => (
       <FlexDecorator>
         <Story />
       </FlexDecorator>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => (
@@ -71,7 +71,7 @@ export const Main = () => (
       selectedIcon={<FavoriteSelected />}
       labels={{
         notSelectedTitle: "Mark as favorite",
-        selectedTitle: "Unmark as favorite"
+        selectedTitle: "Unmark as favorite",
       }}
     />
     <HvToggleButton
@@ -80,7 +80,7 @@ export const Main = () => (
       selectedIcon={<BookmarkSelected />}
       labels={{
         notSelectedTitle: "Bookmark",
-        selectedTitle: "Remove bookmark"
+        selectedTitle: "Remove bookmark",
       }}
     />
     <HvToggleButton
@@ -89,7 +89,7 @@ export const Main = () => (
       selectedIcon={<BackwardsSelected />}
       labels={{
         notSelectedTitle: "Go backwards",
-        selectedTitle: "Stop"
+        selectedTitle: "Stop",
       }}
     />
     <HvToggleButton
@@ -98,7 +98,7 @@ export const Main = () => (
       selectedIcon={<UpSelected />}
       labels={{
         notSelectedTitle: "Go up",
-        selectedTitle: "Stop"
+        selectedTitle: "Stop",
       }}
     />
     <HvToggleButton
@@ -107,7 +107,7 @@ export const Main = () => (
       selectedIcon={<DownSelected />}
       labels={{
         notSelectedTitle: "Go down",
-        selectedTitle: "Stop"
+        selectedTitle: "Stop",
       }}
     />
     <HvToggleButton
@@ -116,7 +116,7 @@ export const Main = () => (
       selectedIcon={<ForwardsSelected />}
       labels={{
         notSelectedTitle: "Go forward",
-        selectedTitle: "Stop"
+        selectedTitle: "Stop",
       }}
     />
     <HvToggleButton
@@ -125,7 +125,7 @@ export const Main = () => (
       selectedIcon={<LikeSelected />}
       labels={{
         notSelectedTitle: "Like",
-        selectedTitle: "Remove like"
+        selectedTitle: "Remove like",
       }}
     />
     <HvToggleButton
@@ -134,7 +134,7 @@ export const Main = () => (
       selectedIcon={<DislikeSelected />}
       labels={{
         notSelectedTitle: "Dislike",
-        selectedTitle: "Remove dislike"
+        selectedTitle: "Remove dislike",
       }}
     />
     <HvToggleButton
@@ -143,7 +143,7 @@ export const Main = () => (
       selectedIcon={<LightOn />}
       labels={{
         notSelectedTitle: "Turn on",
-        selectedTitle: "Turn off"
+        selectedTitle: "Turn off",
       }}
     />
     <HvToggleButton
@@ -152,7 +152,7 @@ export const Main = () => (
       selectedIcon={<Lock />}
       labels={{
         notSelectedTitle: "Lock",
-        selectedTitle: "Unlock"
+        selectedTitle: "Unlock",
       }}
     />
   </>
@@ -160,8 +160,8 @@ export const Main = () => (
 
 Main.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Controlled = () => {
@@ -184,7 +184,7 @@ export const Controlled = () => {
         onClick={toggleState}
         labels={{
           notSelectedTitle: "Close lock",
-          selectedTitle: "Open lock"
+          selectedTitle: "Open lock",
         }}
       />
     </>
@@ -194,10 +194,10 @@ export const Controlled = () => {
 Controlled.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a toggle button with state."
+      storyDescription: "A sample showcasing a toggle button with state.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Disabled = () => (
@@ -208,7 +208,7 @@ export const Disabled = () => (
     disabled
     labels={{
       notSelectedTitle: "Turn on light",
-      selectedTitle: "Turn off light"
+      selectedTitle: "Turn off light",
     }}
   />
 );
@@ -216,10 +216,10 @@ export const Disabled = () => (
 Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a disabled toggle button."
+      storyDescription: "A sample showcasing a disabled toggle button.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const UsingChildren = () => {
@@ -234,7 +234,7 @@ export const UsingChildren = () => {
       onClick={toggleState}
       labels={{
         notSelectedTitle: "Close lock",
-        selectedTitle: "Open lock"
+        selectedTitle: "Open lock",
       }}
     >
       {select ? <Lock /> : <Unlock />}
@@ -245,10 +245,10 @@ export const UsingChildren = () => {
 UsingChildren.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample using children to provide the toggle button content."
+      storyDescription: "A sample using children to provide the toggle button content.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Animated = () => {
@@ -261,7 +261,7 @@ export const Animated = () => {
       selected={select}
       labels={{
         notSelectedTitle: "Don't Show",
-        selectedTitle: "Show"
+        selectedTitle: "Show",
       }}
       onClick={toggleState}
       aria-label="Eye"
@@ -274,8 +274,8 @@ export const Animated = () => {
 Animated.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a toggle button with a custom animated icon."
+      storyDescription: "A sample showcasing a toggle button with a custom animated icon.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

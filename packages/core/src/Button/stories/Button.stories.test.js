@@ -9,9 +9,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -133,6 +133,6 @@ export const SmokeTests = () => (
 
 SmokeTests.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };

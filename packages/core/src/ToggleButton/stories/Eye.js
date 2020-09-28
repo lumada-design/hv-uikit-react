@@ -9,12 +9,12 @@ const styles = {
     display: "flex",
     alignItems: "center",
     "&>svg": {
-      margin: "auto"
-    }
-  }
+      margin: "auto",
+    },
+  },
 };
 
-const Eye = props => {
+const Eye = (props) => {
   const { classes, className = "notSelected", theme, ...other } = props;
 
   /* eslint-disable react/no-danger */
@@ -31,7 +31,7 @@ const Eye = props => {
         <defs>
           <style
             dangerouslySetInnerHTML={{
-              __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.hv.palette.accent.acce1}; } .dash { fill: ${theme.hv.palette.accent.acce1}; transition: width .2s ease-in-out; } .selected .dash { width: 19.8px; } .notSelected .dash { width: 0px; }`
+              __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.hv.palette.accent.acce1}; } .dash { fill: ${theme.hv.palette.accent.acce1}; transition: width .2s ease-in-out; } .selected .dash { width: 19.8px; } .notSelected .dash { width: 0px; }`,
             }}
           />
         </defs>
@@ -72,7 +72,7 @@ const Eye = props => {
 Eye.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.instanceOf(Object),
-  theme: PropTypes.instanceOf(Object)
+  theme: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { withTheme: true })(Eye);

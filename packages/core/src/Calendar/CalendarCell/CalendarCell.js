@@ -8,7 +8,7 @@ import {
   isSameDay,
   isSameMonth,
   dateInProvidedValueRange,
-  checkIfDateIsDisabled
+  checkIfDateIsDisabled,
 } from "../utils";
 import { HvTooltip, HvTypography } from "../..";
 import styles from "./styles";
@@ -41,11 +41,11 @@ const HvCalendarCell = ({
   const endBookend = isSameDay(endDate, value);
   const isSelecting = isDateSelectionMode && isCellAfterStartingDate;
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     onChange?.(event, value);
   };
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     arrowKeysFocus?.(event, handleClick, 7);
   };
 
@@ -67,7 +67,7 @@ const HvCalendarCell = ({
           [classes.calendarDateDisabled]: isDateDisabled,
           [classes.startBookend]:
             inMonth && ((startBookend && rangeMode) || (isCellStartingDate && isDateSelectionMode)),
-          [classes.endBookend]: inMonth && endBookend && rangeMode
+          [classes.endBookend]: inMonth && endBookend && rangeMode,
         })}
       >
         {value.getDate()}
@@ -83,7 +83,7 @@ const HvCalendarCell = ({
       <div
         className={clsx({
           [classes.cellsInRange]: inMonth && rangeMode && isSelecting,
-          [classes.cellsOutsideRange]: rangeMode && !isSelecting
+          [classes.cellsOutsideRange]: rangeMode && !isSelecting,
         })}
       >
         <DateDisplay />
@@ -107,7 +107,7 @@ HvCalendarCell.propTypes = {
   calendarValue: PropTypes.oneOfType([
     PropTypes.instanceOf(Date),
     PropTypes.string,
-    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) })
+    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) }),
   ]),
   /**
    * The text to be shown on the main part of the header.
@@ -132,7 +132,7 @@ HvCalendarCell.propTypes = {
   maximumDate: PropTypes.instanceOf(Date),
   firstDayOfCurrentMonth: PropTypes.instanceOf(Date),
   isDateSelectionMode: PropTypes.bool,
-  rangeMode: PropTypes.bool
+  rangeMode: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvCalendarCell" })(HvCalendarCell);

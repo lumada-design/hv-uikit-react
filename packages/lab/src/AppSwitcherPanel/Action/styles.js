@@ -1,14 +1,14 @@
-const selected = theme => ({
+const selected = (theme) => ({
   background: theme.hv.palette.accent.acce1,
   color: theme.hv.palette.atmosphere.atmo1,
   cursor: "default",
   "& *": {
     background: theme.hv.palette.accent.acce1,
     color: theme.hv.palette.atmosphere.atmo1,
-    cursor: "default"
+    cursor: "default",
   },
   "& svg *.color0": {
-    fill: theme.hv.palette.atmosphere.atmo1
+    fill: theme.hv.palette.atmosphere.atmo1,
   },
   // hover
   "&:hover": {
@@ -16,19 +16,19 @@ const selected = theme => ({
     color: theme.hv.palette.atmosphere.atmo1,
     "& *": {
       background: theme.hv.palette.accent.acce1,
-      color: theme.hv.palette.atmosphere.atmo1
-    }
-  }
+      color: theme.hv.palette.atmosphere.atmo1,
+    },
+  },
 });
 
-const hover = theme => ({
+const hover = (theme) => ({
   background: theme.hv.palette.atmosphere.atmo4,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
-  }
+    background: theme.hv.palette.atmosphere.atmo4,
+  },
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   typography: {
     display: "flex",
     background: theme.hv.palette.atmosphere.atmo1,
@@ -45,38 +45,38 @@ const styles = theme => ({
     // cursor
     cursor: "pointer",
     "& *": {
-      cursor: "pointer"
+      cursor: "pointer",
     },
 
     "& span": {
       overflow: "hidden",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
-      width: "calc(100% - 64px)" // The with of both icons, 32px each.
-    }
+      width: "calc(100% - 64px)", // The with of both icons, 32px each.
+    },
   },
   selected: selected(theme),
 
   dummyImage: {
-    width: "8px"
+    width: "8px",
   },
 
   link: {
     color: "inherit",
-    textDecoration: "inherit"
+    textDecoration: "inherit",
   },
 
   iconInfo: {
     width: "32px",
     height: "32px",
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
 
   iconUrl: {
     width: "16px",
     height: "16px",
-    margin: "8px"
-  }
+    margin: "8px",
+  },
 });
 
 export default styles;

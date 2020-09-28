@@ -15,7 +15,7 @@ module.exports = function extractSize(fileData) {
   const result = {
     width: undefined,
     height: undefined,
-    viewBoxRegexp: []
+    viewBoxRegexp: [],
   };
 
   matcher = widthRegexp.exec(fileData);
@@ -28,7 +28,7 @@ module.exports = function extractSize(fileData) {
     parseInt(matcher[1], 10),
     parseInt(matcher[2], 10),
     parseInt(matcher[3], 10),
-    parseInt(matcher[4], 10)
+    parseInt(matcher[4], 10),
   ];
 
   return result;

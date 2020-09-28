@@ -7,7 +7,7 @@ import {
   Favorite,
   Refresh,
   Delete,
-  MoreOptionsVertical
+  MoreOptionsVertical,
 } from "@hv/uikit-react-icons";
 import { HvButton } from "../..";
 
@@ -16,9 +16,9 @@ export default {
   parameters: {
     componentSubtitle: null,
     v3: true,
-    usage: "import { HvButton } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvButton } from '@hv/uikit-react-core/dist'",
   },
-  component: HvButton
+  component: HvButton,
 };
 
 export const Main = () => (
@@ -32,19 +32,19 @@ export const Main = () => (
 
 Main.story = {
   decorators: [
-    Story => (
+    (Story) => (
       <div
         style={{
           display: "flex",
           alignItems: "center",
           width: 400,
-          justifyContent: "space-between"
+          justifyContent: "space-between",
         }}
       >
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const DisabledButtons = () => (
@@ -67,24 +67,24 @@ export const DisabledButtons = () => (
 DisabledButtons.story = {
   parameters: {
     docs: {
-      storyDescription: "Disabled buttons that don't allow any interaction."
+      storyDescription: "Disabled buttons that don't allow any interaction.",
     },
-    v3: true
+    v3: true,
   },
   decorators: [
-    Story => (
+    (Story) => (
       <div
         style={{
           display: "flex",
           alignItems: "center",
           width: 400,
-          justifyContent: "space-between"
+          justifyContent: "space-between",
         }}
       >
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 export const SemanticWithIcons = () => {
   const useStyles = makeStyles(() => ({
@@ -93,9 +93,9 @@ export const SemanticWithIcons = () => {
       display: "inline-flex",
       padding: 20,
       "& > button": {
-        marginRight: 10
-      }
-    }
+        marginRight: 10,
+      },
+    },
   }));
 
   const classes = useStyles();
@@ -122,9 +122,9 @@ export const Icons = () => {
   const useStyles = makeStyles(() => ({
     spacing: {
       "& > button": {
-        margin: 10
-      }
-    }
+        margin: 10,
+      },
+    },
   }));
 
   const classes = useStyles();
@@ -157,8 +157,8 @@ export const Icons = () => {
 Icons.story = {
   parameters: {
     docs: {
-      storyDescription: "Various Button configurations with icons and icons + text."
+      storyDescription: "Various Button configurations with icons and icons + text.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

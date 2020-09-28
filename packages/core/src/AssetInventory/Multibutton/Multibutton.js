@@ -18,7 +18,7 @@ const AssetMultiButton = ({ id, views, selectedView, changeView, onViewChange })
           key={btnId}
           icon
           selected={selectedView === idx}
-          onClick={evt => onChangeViewHandler(evt, idx)}
+          onClick={(evt) => onChangeViewHandler(evt, idx)}
           {...others}
         >
           {icon}
@@ -33,12 +33,12 @@ AssetMultiButton.propTypes = {
   views: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      icon: PropTypes.node
+      icon: PropTypes.node,
     })
   ).isRequired,
   selectedView: PropTypes.number,
   changeView: PropTypes.func.isRequired,
-  onViewChange: PropTypes.func
+  onViewChange: PropTypes.func,
 };
 
 export default AssetMultiButton;

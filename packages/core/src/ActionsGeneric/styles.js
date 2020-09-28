@@ -1,17 +1,17 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {},
   button: {
     "&:not(:last-child)": {
-      marginRight: theme.spacing("xs")
-    }
+      marginRight: theme.spacing("xs"),
+    },
   },
   actionContainer: {
     display: "flex",
-    float: "right"
+    float: "right",
   },
   dropDownMenu: {},
   dropDownMenuButton: {},
-  dropDownMenuButtonSelected: {}
+  dropDownMenuButtonSelected: {},
 });
 
 export default styles;

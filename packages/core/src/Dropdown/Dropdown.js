@@ -16,7 +16,7 @@ const DEFAULT_LABELS = {
   applyLabel: "Apply",
   multiSelectionConjunction: "/",
   // internal label, used when no select is passed.
-  selectSingle: "Select..."
+  selectSingle: "Select...",
 };
 
 /**
@@ -40,7 +40,7 @@ const HvDropdown = ({
   disablePortal = false,
   singleSelectionToggle = true,
   placement,
-  popperProps = {}
+  popperProps = {},
 }) => {
   const elementId = useUniqueId(id, "hvdropdown");
 
@@ -82,7 +82,7 @@ const HvDropdown = ({
         noWrap
         variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
         className={clsx(classes.placeholder, {
-          [classes.selectionDisabled]: disabled
+          [classes.selectionDisabled]: disabled,
         })}
       >
         {selectionLabel.selected}
@@ -91,7 +91,7 @@ const HvDropdown = ({
       <HvTypography
         noWrap
         className={clsx(classes.placeholder, {
-          [classes.selectionDisabled]: disabled
+          [classes.selectionDisabled]: disabled,
         })}
         variant="normalText"
       >
@@ -133,7 +133,7 @@ const HvDropdown = ({
         <List
           id={setId(elementId, "values")}
           classes={{
-            rootList: classes.rootList
+            rootList: classes.rootList,
           }}
           values={internalValues}
           multiSelect={multiSelect}
@@ -190,7 +190,7 @@ HvDropdown.propTypes = {
     /**
      * Styles applied to the list.
      */
-    rootList: PropTypes.string
+    rootList: PropTypes.string,
   }).isRequired,
   /**
    * The list to be rendered by the dropdown.
@@ -200,7 +200,7 @@ HvDropdown.propTypes = {
       id: PropTypes.string,
       label: PropTypes.node.isRequired,
       value: PropTypes.any,
-      selected: PropTypes.bool
+      selected: PropTypes.bool,
     })
   ),
   /**
@@ -254,7 +254,7 @@ HvDropdown.propTypes = {
     /**
      * The label used in the middle of the multiSelection count.
      */
-    multiSelectionConjunction: PropTypes.string
+    multiSelectionConjunction: PropTypes.string,
   }),
   /**
    * @ignore
@@ -284,7 +284,7 @@ HvDropdown.propTypes = {
   /**
    * An object containing props to be wired to the popper component.
    */
-  popperProps: PropTypes.shape()
+  popperProps: PropTypes.shape(),
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(withLabels(DEFAULT_LABELS)(HvDropdown));

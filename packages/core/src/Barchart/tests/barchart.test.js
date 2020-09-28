@@ -12,8 +12,8 @@ const data = [
   {
     x: [2300, 1000, 8500],
     y: ["January", "February", "March"],
-    name: "Sales Target"
-  }
+    name: "Sales Target",
+  },
 ];
 const layout = {};
 

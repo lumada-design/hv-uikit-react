@@ -1,7 +1,7 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     margin: 0,
-    fontFamily: theme.hv.typography.fontFamily
+    fontFamily: theme.hv.typography.fontFamily,
   },
   "5xlTitle": theme.hv.typography["5xlTitle"],
   "4xlTitle": theme.hv.typography["4xlTitle"],
@@ -26,8 +26,8 @@ const styles = theme => ({
   noWrap: {
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
-  }
+    whiteSpace: "nowrap",
+  },
 });
 
 export default styles;

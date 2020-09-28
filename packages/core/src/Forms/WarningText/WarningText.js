@@ -12,7 +12,7 @@ import styles from "./styles";
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
  */
-const HvWarningText = props => {
+const HvWarningText = (props) => {
   const {
     children,
     adornment,
@@ -38,14 +38,14 @@ const HvWarningText = props => {
     <div
       className={clsx(className, classes.root, {
         [classes.showText]: showWarning,
-        [classes.topBorder]: !disableBorder
+        [classes.topBorder]: !disableBorder,
       })}
     >
       {localAdornment}
       <HvTypography
         id={setId(localId)}
         className={clsx(classes.warningText, {
-          [classes.topGutter]: !disableGutter
+          [classes.topGutter]: !disableGutter,
         })}
         aria-live="polite"
         aria-atomic="true"
@@ -102,7 +102,7 @@ HvWarningText.propTypes = {
     /**
      * IE11 specific styling.
      */
-    "@global": PropTypes.string
+    "@global": PropTypes.string,
   }).isRequired,
   /**
    * Icon to be rendered alongside the warning text.
@@ -123,7 +123,7 @@ HvWarningText.propTypes = {
   /**
    * If `true` the text won't include the top border.
    */
-  disableBorder: PropTypes.bool
+  disableBorder: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvWarningText" })(HvWarningText);

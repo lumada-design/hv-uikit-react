@@ -4,7 +4,7 @@ import { withStyles, Container } from "@material-ui/core";
 import { styles as containerStyles } from "@material-ui/core/Container/Container";
 
 // inherit material ui styles so people can override them too
-const styles = theme => ({
+const styles = (theme) => ({
   ...containerStyles(theme),
   root: {
     paddingLeft: theme.spacing(1),
@@ -13,9 +13,9 @@ const styles = theme => ({
     color: theme.hv.palette.base.base2,
     [theme.breakpoints.up("md")]: {
       paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2)
-    }
-  }
+      paddingRight: theme.spacing(2),
+    },
+  },
 });
 
 /**
@@ -62,7 +62,7 @@ HvContainer.propTypes = {
    * The container width grows with the size of the screen.
    * Set to `false` to disable `maxWidth`.
    */
-  maxWidth: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", false])
+  maxWidth: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", false]),
 };
 
 export default withStyles(styles, { name: "HvContainer" })(HvContainer);

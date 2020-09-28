@@ -2,24 +2,24 @@ import materialButtonConfiguration from "./materialButtonConfiguration";
 
 const materialContained = {
   color: materialButtonConfiguration.color.primary,
-  variant: materialButtonConfiguration.variant.contained
+  variant: materialButtonConfiguration.variant.contained,
 };
 
 const materialOutlined = {
   color: materialButtonConfiguration.color.primary,
-  variant: materialButtonConfiguration.variant.outlined
+  variant: materialButtonConfiguration.variant.outlined,
 };
 
 const materialText = {
   color: materialButtonConfiguration.color.primary,
-  variant: materialButtonConfiguration.variant.text
+  variant: materialButtonConfiguration.variant.text,
 };
 
 const categoryValues = Object.freeze({
   primary: "primary",
   secondary: "secondary",
   ghost: "ghost",
-  semantic: "semantic"
+  semantic: "semantic",
 });
 
 /**
@@ -35,7 +35,7 @@ const getMaterialConfiguration = (classes, category) => {
     containedPrimary: classes.primary,
     outlinedPrimary: classes.secondary,
     textPrimary: classes.ghost,
-    startIcon: classes.startIcon
+    startIcon: classes.startIcon,
   };
 
   switch (category) {
@@ -45,24 +45,24 @@ const getMaterialConfiguration = (classes, category) => {
         ...materialContained,
         classes: {
           ...styling,
-          disabled: classes.primaryDisabled
-        }
+          disabled: classes.primaryDisabled,
+        },
       };
     case categoryValues.secondary:
       return {
         ...materialOutlined,
         classes: {
           ...styling,
-          disabled: classes.secondaryDisabled
-        }
+          disabled: classes.secondaryDisabled,
+        },
       };
     case categoryValues.ghost:
       return {
         ...materialText,
         classes: {
           ...styling,
-          disabled: classes.ghostDisabled
-        }
+          disabled: classes.ghostDisabled,
+        },
       };
     case categoryValues.semantic:
       return {
@@ -70,8 +70,8 @@ const getMaterialConfiguration = (classes, category) => {
         classes: {
           ...styling,
           textPrimary: classes.semantic,
-          disabled: classes.semanticDisabled
-        }
+          disabled: classes.semanticDisabled,
+        },
       };
   }
 };

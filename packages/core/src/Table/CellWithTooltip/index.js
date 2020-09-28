@@ -31,5 +31,5 @@ const Index = ({ classes, data }) => {
   );
 };
 export default withStyles(styles, {
-  name: "OverflowTooltip"
+  name: "OverflowTooltip",
 })(React.memo(Index));
