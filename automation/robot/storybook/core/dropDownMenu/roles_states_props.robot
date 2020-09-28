@@ -15,7 +15,7 @@ aria-disabled    ${item2}           aria-disabled    true
 *** Keywords ***
 verify dropped dropdownmenu has attributes
     [Arguments]    ${locator}    ${attribute}    ${expected}
-    Go To                                ${patterns}dropdown-menu--disabled-items
+    Go To                                ${widgets}dropdown-menu--disabled-items
     Wait Until Page Contains Element     ${dropDownMenu}
     Click Element                        ${dropDownMenu}
     Wait Until Page Contains Element     ${droppedMenu}

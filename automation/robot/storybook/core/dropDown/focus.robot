@@ -22,7 +22,7 @@ focus 1st selected item
 should focus the first element
     [Documentation]    focus should be on ${element} when is opened dropdown ${story}
     [Arguments]     ${story}    ${element}
-    Go To                            ${patterns}dropdown--${story}
+    Go To                            ${forms}dropdown--${story}
     Wait Until Element Is Visible    ${dropdown}
     Click Element                    ${dropdown}
     Wait Until Element Is Enabled    ${element}

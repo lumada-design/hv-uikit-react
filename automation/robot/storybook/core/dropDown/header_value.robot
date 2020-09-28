@@ -11,7 +11,7 @@ api select item
     Element Text Should Be           ${dropdownHeader}    Value 3    ignore_case=True
 
 select an item
-    Go To                                ${patterns}dropdown--single-selection-no-selection
+    Go To                                ${forms}dropdown--single-selection-no-selection
     Wait Until Element Is Visible        ${dropdown}
     Element Text Should Be               ${dropdownHeader}    Select...    ignore_case=True
     Click Element                        ${dropdownHeader}
@@ -29,7 +29,7 @@ unselect an item
     Element Text Should Be               ${dropdownHeader}    Select...    ignore_case=True
 
 multi selection is changed
-    Go To                                ${patterns}dropdown--multi-selection
+    Go To                                ${forms}dropdown--multi-selection
     Wait Until Element Is Visible        ${dropdown}
     Element Text Should Be               ${dropdownHeader}    1 / 4
     Click Element                        ${dropdownHeader}

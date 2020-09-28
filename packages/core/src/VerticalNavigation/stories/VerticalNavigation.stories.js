@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
 
 export default {
-  title: "Patterns/Navigation System/Vertical Navigation",
+  title: "Components/Vertical Navigation",
   parameters: {
     v3: true,
     componentSubtitle: null,

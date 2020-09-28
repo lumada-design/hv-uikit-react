@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _bulkActions.resource
 Test Setup    Run Keywords
-...           Go To    ${components}bulk-actions--controlled-with-actions    AND
+...           Go To    ${widgets}bulk-actions--controlled-with-actions    AND
 ...           Wait Until Page Contains Element    ${parentCheckbox}
 Force Tags    keyboard, v3
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvTextArea, HvButton, HvInput } from "../..";
 
 export default {
-  title: "Patterns/Text Area",
+  title: "Forms/Text Area",
   parameters: {
     v3: true,
     componentSubtitle: null,

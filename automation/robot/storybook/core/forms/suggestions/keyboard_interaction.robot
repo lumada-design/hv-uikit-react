@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _resource.resource
 Test Setup    Run Keywords
-...           Go To    ${components}forms-suggestions--main
+...           Go To    ${forms}form-element-suggestions--main
 ...           AND    Wait Until Element Is Enabled    ${input}
 Force Tags    keyboard    v3
 

@@ -5,7 +5,7 @@ import { HvBaseDropdown, HvButton, HvInput, HvPanel } from "../..";
 import { HvFormElement, HvWarningText, HvLabel } from "../../Forms";
 
 export default {
-  title: "Components/BaseDropdown",
+  title: "Components/Base Dropdown",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBaseDropdown } from '@hv/uikit-react-core/dist'",

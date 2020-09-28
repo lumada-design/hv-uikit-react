@@ -5,13 +5,13 @@ Force Tags  v3
 
 *** Test Cases ***
 click on button Add on card
-    Go To                            ${patterns}card--with-composition
+    Go To                            ${components}card--with-composition
     Wait Until Element Is Enabled    css:button
     Click Button                     post
     Alert Should Be Present          You have pressed Upload
 
 click on button 3 dots Delete on 9 Automatic action creation from list
-    Go To                            ${patterns}card--with-composition
+    Go To                            ${components}card--with-composition
     Wait Until Element Is Enabled    css:button[class*='HvDropDownMenu']
     Click Element                    css:button[class*='HvDropDownMenu']
     Wait Until Element Is Enabled    css:ul[role='menu']
@@ -19,7 +19,7 @@ click on button 3 dots Delete on 9 Automatic action creation from list
     Alert Should Be Present          You have pressed Delete
 
 unable click on preview and upload button
-    Go To                            ${patterns}card--with-composition
+    Go To                            ${components}card--with-composition
     Wait Until Element Is Enabled    css:button[class*='HvDropDownMenu']
     Click Element                    css:button[class*='HvDropDownMenu']
     Wait Until Element Is Enabled    css:ul[role='menu']

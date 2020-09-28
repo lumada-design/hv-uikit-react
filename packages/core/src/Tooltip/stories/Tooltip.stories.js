@@ -6,7 +6,7 @@ import HvTypography from "../../Typography";
 import tooltipStyling from "../styles";
 
 export default {
-  title: "Patterns/Tooltip",
+  title: "Components/Tooltip",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTooltip } from '@hv/uikit-react-core/dist'",

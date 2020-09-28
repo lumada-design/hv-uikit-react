@@ -1,7 +1,7 @@
 *** Setting ***
 Resource         _resources.resource
 Test Setup       Run Keywords
-...              Go To    ${patterns}dropdown--multi-selection
+...              Go To    ${forms}dropdown--multi-selection
 ...              AND    Wait Until Element Is Enabled    ${dropdown}
 ...              AND    Click Element                    ${dropdownHeader}
 ...              AND    Wait Until Element Is Visible    ${listBox}
@@ -37,7 +37,7 @@ select option returned by filter
     Element Text Should Be               ${dropdownHeader}    0 / 4
 
 filter options for single selection
-    Go To                            ${patterns}dropdown--single-selection-with-search
+    Go To                            ${forms}dropdown--single-selection-with-search
     Wait Until Element Is Enabled    ${dropdown}
     Click Element                    ${dropdownHeader}
     Wait Until Element Is Visible    ${listBox}

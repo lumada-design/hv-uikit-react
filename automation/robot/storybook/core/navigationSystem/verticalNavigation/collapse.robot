@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _verticalNavigation.resource
 Test Setup        Run Keywords
-...               Go To    ${patterns}navigation-system-vertical-navigation--collapsable    AND
+...               Go To    ${components}navigation-system-vertical-navigation--collapsable    AND
 ...               expand vertical navigation
 Documentation     Test Cases based on Design System Version 1.2.0
 
@@ -27,7 +27,7 @@ does not close vertical anchor bar when vertical navigation menu is closed
 
 closeOnExit property close menu when is clicked any area out of vertical navigation
     [Setup]    NONE
-    Go To    ${patterns}navigation-system-vertical-navigation--collapse-on-exit
+    Go To    ${components}navigation-system-vertical-navigation--collapse-on-exit
     expand vertical navigation
     Click Element                        css:body
     Wait Until Element Is Not Visible    ${items}

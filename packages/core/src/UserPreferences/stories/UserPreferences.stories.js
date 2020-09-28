@@ -16,7 +16,7 @@ import { HvButton } from "../..";
 import HvUserPreferences, { Action, Actions, Group, Label, Option, Options } from "..";
 
 export default {
-  title: "Patterns/User Preferences",
+  title: "Components/User Preferences",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvUserPreferences } from '@hv/uikit-react-core/dist'",

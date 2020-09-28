@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${patterns}asset-inventory--configurations
+...           Go To  ${layout}asset-inventory--configurations
 ...           AND    Wait Until Element Is Enabled    hv-assetinventory
 Force Tags    v3
 
@@ -38,7 +38,7 @@ change page size with filtered results
     [Documentation]    traceability:
     ...                bug https://insightgroup.atlassian.net/browse/HVUIKIT-5549
     [Setup]    NONE
-    Go To                               ${patterns}asset-inventory--server-side-pagination
+    Go To                               ${layout}asset-inventory--server-side-pagination
     Wait Until Element Is Enabled       ${searchBox}
     Input Text                          ${searchBox}    Risk of downtime 1
     Select Dropdown Value               ${pageSize}   6
@@ -48,7 +48,7 @@ change page size with filtered results
 
 change page size with filtered results on other page
     [Setup]    NONE
-    Go To                               ${patterns}asset-inventory--server-side-pagination
+    Go To                               ${layout}asset-inventory--server-side-pagination
     Wait Until Element Is Enabled       ${searchBox}
     Input Text                          ${searchBox}    Risk of downtime 1
     Click Element                       ${nextPage}
@@ -58,7 +58,7 @@ change page size with filtered results on other page
 
 change page size with filtered results on last page
     [Setup]    NONE
-    Go To                               ${patterns}asset-inventory--server-side-pagination
+    Go To                               ${layout}asset-inventory--server-side-pagination
     Wait Until Element Is Enabled       ${searchBox}
     Input Text                          ${searchBox}    Risk of downtime 1
     Select Dropdown Value               ${pageSize}    2

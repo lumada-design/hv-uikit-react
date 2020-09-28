@@ -3,7 +3,7 @@ import { withStyles, makeStyles } from "@material-ui/core/";
 import { HvBadge, HvTabs, HvTab, HvTypography } from "../..";
 
 export default {
-  title: "Patterns/Tabs",
+  title: "Components/Tabs",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTabs, HvTab } from '@hv/uikit-react-core/dist'",

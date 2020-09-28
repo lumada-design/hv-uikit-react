@@ -3,7 +3,7 @@ import { LocationPin, Map } from "@hv/uikit-react-icons";
 import { HvButton, HvMultiButton } from "../..";
 
 export default {
-  title: "Patterns/Multi Button",
+  title: "Forms/Multi Button",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",

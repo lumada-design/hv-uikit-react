@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvFileUploader } from "../..";
 
 export default {
-  title: "Patterns/File Uploader",
+  title: "Widgets/File Uploader",
   parameters: {
     v3: true,
     componentSubtitle: null,

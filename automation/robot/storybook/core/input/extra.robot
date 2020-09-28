@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${patterns}input--password
+...           Go To    ${forms}input--password
 ...           AND    Wait Until Element Is Enabled    ${input}
 Force Tags    v3
 

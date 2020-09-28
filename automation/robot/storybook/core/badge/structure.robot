@@ -4,9 +4,9 @@ Force Tags  v3
 
 *** Test Cases ***
 badge maxCount is 99
-    Go To                       ${patterns}badge--main
+    Go To                       ${components}badge--main
     Wait Until Page Contains    99+
 
 all badges renders a text
-    go to                       ${patterns}badge--with-text
+    go to                       ${components}badge--with-text
     Wait Until Page Contains    Events

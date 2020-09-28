@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvWarningText, HvButton, HvFormElement } from "../../..";
 
 export default {
-  title: "Components/Forms/Warning Text",
+  title: "Forms/Form Element/Warning Text",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvWarningText } from '@hv/uikit-react-core/dist'",

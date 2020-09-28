@@ -12,7 +12,7 @@ import {
 import { HvButton } from "../..";
 
 export default {
-  title: "Patterns/Button",
+  title: "Components/Button",
   parameters: {
     componentSubtitle: null,
     v3: true,
