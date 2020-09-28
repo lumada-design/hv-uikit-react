@@ -38,6 +38,7 @@ change page size with filtered results
     ...                bug https://insightgroup.atlassian.net/browse/HVUIKIT-5549
     [Setup]    NONE
     Go To                               ${components}asset-inventory--server-side-pagination
+    Wait Until Element Is Enabled       ${searchBox}
     Input Text                          ${searchBox}    Risk of downtime 1
     Select From List By Label           ${pageSize}   6
     wait Until Page Contains Element    ${cards}   limit=6
@@ -47,6 +48,7 @@ change page size with filtered results
 change page size with filtered results on other page
     [Setup]    NONE
     Go To                               ${components}asset-inventory--server-side-pagination
+    Wait Until Element Is Enabled       ${searchBox}
     Input Text                          ${searchBox}    Risk of downtime 1
     Click Element                       ${nextPage}
     wait Until Page Contains Element    ${cards}    limit=2
@@ -56,6 +58,7 @@ change page size with filtered results on other page
 change page size with filtered results on last page
     [Setup]    NONE
     Go To                               ${components}asset-inventory--server-side-pagination
+    Wait Until Element Is Enabled       ${searchBox}
     Input Text                          ${searchBox}    Risk of downtime 1
     Select From List By Label           ${pageSize}    2
     Click Element                       ${lastPage}
