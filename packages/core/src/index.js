@@ -38,7 +38,6 @@ export { default as HvListContainer } from "./List/ListContainer";
 export { default as HvListItem } from "./List/ListItem";
 
 export { default as HvLoading } from "./Loading";
-export { default as HvLogin } from "./Login";
 export { default as HvLoginContainer } from "./LoginContainer";
 export { default as HvModal } from "./Modal";
 export * from "./Modal";
