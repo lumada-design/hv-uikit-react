@@ -79,6 +79,7 @@ const DropDownMenu = ({
       classes={{ root: classes.root }}
       expanded={open}
       component={headerComponent}
+      aria-haspopup="menu"
       placement={placement}
       disablePortal={disablePortal}
       onToggle={(e, s) => {

@@ -55,4 +55,4 @@ remove list indeterminate state when unselect the unique selected option
 
 verify list indeterminate state when one option is selected
     Page Should Contain Element          ${selectedItems}              limit=1
-    Element Attribute Value Should Be    ${headerItem}-select-input    data-indeterminate    true
+    Element Attribute Value Should Be    ${headerItem}-input    data-indeterminate    true

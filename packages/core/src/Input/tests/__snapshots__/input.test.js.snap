@@ -134,6 +134,7 @@ exports[`v3 Input should not have the validation section 1`] = `
             >
               <div
                 className="HvInput-root HvFormElement-root"
+                id="hv-input-7"
                 onBlur={[Function]}
               >
                 <div
@@ -561,6 +562,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                   </HvSuggestions>
                 </WithStyles(HvSuggestions)>
                 <WithStyles(HvWarningText)
+                  disableBorder={true}
                   id="hv-input-7-warning"
                 >
                   <HvWarningText
@@ -569,10 +571,12 @@ exports[`v3 Input should not have the validation section 1`] = `
                         "defaultIcon": "HvWarningText-defaultIcon",
                         "root": "HvWarningText-root",
                         "showText": "HvWarningText-showText",
+                        "topBorder": "HvWarningText-topBorder",
                         "topGutter": "HvWarningText-topGutter",
                         "warningText": "HvWarningText-warningText",
                       }
                     }
+                    disableBorder={true}
                     id="hv-input-7-warning"
                   >
                     <div
@@ -627,7 +631,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                         aria-live="polite"
                         aria-relevant="additions text"
                         className="HvWarningText-warningText HvWarningText-topGutter"
-                        id="hv-input-7-warning-notification"
+                        id="hv-input-7-warning"
                       >
                         <ForwardRef
                           aria-atomic="true"
@@ -660,14 +664,14 @@ exports[`v3 Input should not have the validation section 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          id="hv-input-7-warning-notification"
+                          id="hv-input-7-warning"
                         >
                           <p
                             aria-atomic="true"
                             aria-live="polite"
                             aria-relevant="additions text"
                             className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                            id="hv-input-7-warning-notification"
+                            id="hv-input-7-warning"
                           />
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
@@ -834,6 +838,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
             >
               <div
                 className="HvInput-root HvFormElement-root"
+                id="hv-input-9"
                 onBlur={[Function]}
               >
                 <div
@@ -1280,6 +1285,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                   </HvSuggestions>
                 </WithStyles(HvSuggestions)>
                 <WithStyles(HvWarningText)
+                  disableBorder={true}
                   id="hv-input-9-warning"
                 >
                   <HvWarningText
@@ -1288,10 +1294,12 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                         "defaultIcon": "HvWarningText-defaultIcon",
                         "root": "HvWarningText-root",
                         "showText": "HvWarningText-showText",
+                        "topBorder": "HvWarningText-topBorder",
                         "topGutter": "HvWarningText-topGutter",
                         "warningText": "HvWarningText-warningText",
                       }
                     }
+                    disableBorder={true}
                     id="hv-input-9-warning"
                   >
                     <div
@@ -1346,7 +1354,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                         aria-live="polite"
                         aria-relevant="additions text"
                         className="HvWarningText-warningText HvWarningText-topGutter"
-                        id="hv-input-9-warning-notification"
+                        id="hv-input-9-warning"
                       >
                         <ForwardRef
                           aria-atomic="true"
@@ -1379,14 +1387,14 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          id="hv-input-9-warning-notification"
+                          id="hv-input-9-warning"
                         >
                           <p
                             aria-atomic="true"
                             aria-live="polite"
                             aria-relevant="additions text"
                             className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                            id="hv-input-9-warning-notification"
+                            id="hv-input-9-warning"
                           />
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
@@ -1532,6 +1540,7 @@ exports[`v3 Input should render correctly 1`] = `
             >
               <div
                 className="HvInput-root HvFormElement-root"
+                id="hv-input-2"
                 onBlur={[Function]}
               >
                 <div
@@ -1959,6 +1968,7 @@ exports[`v3 Input should render correctly 1`] = `
                   </HvSuggestions>
                 </WithStyles(HvSuggestions)>
                 <WithStyles(HvWarningText)
+                  disableBorder={true}
                   id="hv-input-2-warning"
                 >
                   <HvWarningText
@@ -1967,10 +1977,12 @@ exports[`v3 Input should render correctly 1`] = `
                         "defaultIcon": "HvWarningText-defaultIcon",
                         "root": "HvWarningText-root",
                         "showText": "HvWarningText-showText",
+                        "topBorder": "HvWarningText-topBorder",
                         "topGutter": "HvWarningText-topGutter",
                         "warningText": "HvWarningText-warningText",
                       }
                     }
+                    disableBorder={true}
                     id="hv-input-2-warning"
                   >
                     <div
@@ -2025,7 +2037,7 @@ exports[`v3 Input should render correctly 1`] = `
                         aria-live="polite"
                         aria-relevant="additions text"
                         className="HvWarningText-warningText HvWarningText-topGutter"
-                        id="hv-input-2-warning-notification"
+                        id="hv-input-2-warning"
                       >
                         <ForwardRef
                           aria-atomic="true"
@@ -2058,14 +2070,14 @@ exports[`v3 Input should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          id="hv-input-2-warning-notification"
+                          id="hv-input-2-warning"
                         >
                           <p
                             aria-atomic="true"
                             aria-live="polite"
                             aria-relevant="additions text"
                             className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                            id="hv-input-2-warning-notification"
+                            id="hv-input-2-warning"
                           />
                         </ForwardRef>
                       </WithStyles(ForwardRef)>

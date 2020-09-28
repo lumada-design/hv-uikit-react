@@ -8,7 +8,7 @@
  *
  */
 import React from "react";
-import HvCheckBox from "../Selectors/CheckBox";
+import HvCheckBox from "../CheckBox";
 import { setId } from "../utils";
 
 const defaultSelectInputComponent = props => {

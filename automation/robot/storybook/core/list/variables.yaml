@@ -7,5 +7,5 @@ option4:            list-item-3
 option5:            list-item-4
 selectedItems:      css:li[aria-selected='true']
 headerItem:         list-select-all
-headerItemLabel:    css:#list-select-all-select
+headerItemLabel:    css:#list-select-all-label
 iconChecked:        css:div[name='CheckboxCheck']

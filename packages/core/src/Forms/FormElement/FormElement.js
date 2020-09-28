@@ -20,6 +20,8 @@ const HvFormElement = props => {
     status = "standBy",
     value,
     disabled = false,
+    required = false,
+    readOnly = false,
     locale = "en-US",
     ...others
   } = props;
@@ -40,25 +42,20 @@ const HvFormElement = props => {
     elementStatus: status,
     elementValue: value,
     elementDisabled: disabled,
+    elementRequired: required,
+    elementReadOnly: readOnly,
     elementLocale: locale,
     descriptors
   };
+
   return (
-    <div className={clsx(className, classes.root)} {...others}>
+    <div id={id} className={clsx(className, classes.root)} {...others}>
       <HvFormElementContextProvider value={contextValue}>{children}</HvFormElementContextProvider>
     </div>
   );
 };
 
 HvFormElement.propTypes = {
-  /**
-   * Component identifier.
-   */
-  id: PropTypes.string,
-  /**
-   * Component name identifier to be used in the context.
-   */
-  name: PropTypes.string,
   /**
    * Class names to be applied.
    */
@@ -72,30 +69,53 @@ HvFormElement.propTypes = {
      */
     root: PropTypes.string
   }).isRequired,
+
   /**
    * Components that will receive the form context values.
    */
   children: PropTypes.node.isRequired,
+
+  /**
+   * Component identifier.
+   */
+  id: PropTypes.string,
+
+  /**
+   * Name of the form element.
+   * Part of a name/value pair, should be the name property of the undeling native input, if any.
+   */
+  name: PropTypes.string,
+  /**
+   * Current value of the form element.
+   * Part of a name/value pair, should be the value property of the undeling native input, if any.
+   */
+  // eslint-disable-next-line react/forbid-prop-types
+  value: PropTypes.any,
+
+  /**
+   * Whether the form element is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Indicates that the form element is not editable.
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  required: PropTypes.bool,
+
   /**
    * Represents the status of this form element,
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the children through the context.
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
-  /**
-   * Represents the values this form element will inject into the children.
-   */
-  // eslint-disable-next-line react/forbid-prop-types
-  value: PropTypes.any,
+
   /**
    * Locale to be used by the calendar.
    */
-  locale: PropTypes.string,
-  /**
-   * If `true` the form element and all of it's children are disabled which blocks interactions.
-   * this value will be propagated to the children through the context.
-   */
-  disabled: PropTypes.bool
+  locale: PropTypes.string
 };
 
 export default withStyles(styles, { name: "HvFormElement" })(withId(HvFormElement));

@@ -14,11 +14,20 @@ export interface HvWarningTextProps
    * If `true` the text is disabled which mean it is not rendered.
    */
   disabled?: boolean;
+  /**
+   * If `true` the text won't include a gutter.
+   */
+  disableGutter?: boolean;
+  /**
+   * If `true` the text won't include the top border.
+   */
+  disableBorder?: boolean;
 }
 
 export type HvWarningTextClassKey =
   | "root"
   | "warningText"
+  | "topBorder"
   | "topGutter"
   | "showText"
   | "defaultIcon"

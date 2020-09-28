@@ -44,7 +44,13 @@ export { default as HvModal } from "./Modal";
 export * from "./Modal";
 export { default as HvMultiButton } from "./MultiButton";
 export { default as HvPagination } from "./Pagination";
+
 export * from "./Selectors";
+
+export { default as HvBaseCheckBox } from "./BaseCheckBox";
+export { default as HvCheckBox } from "./CheckBox";
+export { default as HvCheckBoxGroup } from "./CheckBoxGroup";
+
 export { default as HvSnackbar } from "./Snackbar";
 export * from "./Snackbar";
 export { default as HvSwitch } from "./Switch";

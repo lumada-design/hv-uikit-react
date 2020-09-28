@@ -1,5 +1,5 @@
 import { StandardProps } from "@material-ui/core";
-import { HvFormElementProps } from "../..";
+import { HvFormElementProps } from "..";
 
 export interface HvDatePickerProps
   extends StandardProps<HvFormElementProps, HvDatePickerClassKey, "onChange"> {

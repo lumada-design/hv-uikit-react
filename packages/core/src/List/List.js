@@ -8,25 +8,14 @@ import { DropRightXS } from "@hv/uikit-react-icons";
 import { parseList, wrapperTooltip } from "./utils";
 import useSelectableList from "./useSelectableList";
 
-import {
-  HvBulkActions,
-  HvLink,
-  HvCheckBox,
-  HvListContainer,
-  HvListItem,
-  HvRadio,
-  HvTypography,
-  setId
-} from "..";
+import { HvLink, HvCheckBox, HvListContainer, HvListItem, HvRadio, HvTypography, setId } from "..";
 
-import styles, { selectAllStyles } from "./styles";
+import styles from "./styles";
 
 const DEFAULT_LABELS = {
   selectAll: "Select All",
   selectionConjunction: "/"
 };
-
-const StyledHvBulkActions = withStyles(selectAllStyles)(HvBulkActions);
 
 /**
  * Component used to show a set of related data to the user.
@@ -86,7 +75,9 @@ const HvList = props => {
 
   const renderSelectAll = () => {
     const { selectAll, selectionConjunction } = labels;
+
     const anySelected = !!selection?.length;
+    const allSelected = selection.length === list.length;
 
     const selectionLabel = (
       <HvTypography component="span">
@@ -106,13 +97,13 @@ const HvList = props => {
     );
 
     return (
-      <StyledHvBulkActions
+      <HvCheckBox
         id={setId(id, "select-all")}
-        semantic={false}
-        onSelectAll={handleSelectAll}
-        numTotal={list.length}
-        numSelected={selection.length}
-        selectAllLabel={selectionLabel}
+        label={selectionLabel}
+        onChange={handleSelectAll}
+        className={classes.selectAllSelector}
+        indeterminate={anySelected && !allSelected}
+        checked={allSelected}
       />
     );
   };
@@ -140,9 +131,9 @@ const HvList = props => {
           disabled={item.disabled}
           onChange={evt => handleSelect(evt, item)}
           classes={{
+            root: classes.selectorRoot,
             container: classes.selectorContainer,
-            labelTypography: classes.truncate,
-            icon: classes.icon
+            label: classes.truncate
           }}
         />,
         item.label
@@ -239,7 +230,11 @@ HvList.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the list item selector container.
+     * Styles applied to the list item selector.
+     */
+    selectorRoot: PropTypes.string,
+    /**
+     * Styles applied to the list item selector label container.
      */
     selectorContainer: PropTypes.string,
     /**
@@ -263,9 +258,13 @@ HvList.propTypes = {
      */
     itemSelector: PropTypes.string,
     /**
-     * Styles applied to the the list item when it has a link path.
+     * Styles applied to the list item when it has a link path.
      */
-    link: PropTypes.string
+    link: PropTypes.string,
+    /**
+     * Styles applied to the select all selector.
+     */
+    selectAllSelector: PropTypes.string
   }).isRequired,
   /**
    * The id of the root element

@@ -13,11 +13,25 @@ import styles from "./styles";
  * If it receives a children, the component will set itself as a label for the children.
  */
 const HvLabel = props => {
-  const { label, children, classes, className, id, disabled, ...others } = props;
-  const { elementId, elementDisabled } = useContext(HvFormElementContext);
-  const childId = children ? getChildIdToLabel(children, "HvBaseInput") : undefined;
+  const {
+    label,
+    children,
+    classes,
+    className,
+    id,
+    disabled,
+    required,
+    htmlFor: htmlForProp,
+    ...others
+  } = props;
+  const { elementId, elementDisabled, elementRequired } = useContext(HvFormElementContext);
+
   const localDisabled = disabled || elementDisabled;
+  const localRequired = required || elementRequired;
+
   const localId = id ?? setId(elementId, "label");
+
+  const forId = htmlForProp || (children ? getChildIdToLabel(children, "HvBaseInput") : undefined);
 
   return (
     <>
@@ -29,10 +43,11 @@ const HvLabel = props => {
         })}
         variant="highlightText"
         component="label"
-        htmlFor={childId}
+        htmlFor={forId}
         {...others}
       >
         {label}
+        {localRequired && <span aria-hidden="true">*</span>}
       </HvTypography>
       {children}
     </>
@@ -75,9 +90,17 @@ HvLabel.propTypes = {
    */
   label: PropTypes.node,
   /**
-   * If `true` the label is disabled.
+   * The id of the form element the label is bound to.
    */
-  disabled: PropTypes.bool
+  htmlFor: PropTypes.string,
+  /**
+   * If `true` the label is displayed with a disabled style.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the label will indicate that the form element is required (an `*` after the label text).
+   */
+  required: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvLabel" })(HvLabel);

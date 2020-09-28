@@ -1,0 +1,1386 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[v3] CheckBox should render correctly 1`] = `
+Array [
+  <WithStyles(HvCheckBox)
+    label="Checkbox 1"
+  >
+    <HvCheckBox
+      classes={
+        Object {
+          "checkBox": "HvCheckBox-checkBox",
+          "container": "HvCheckBox-container",
+          "disabled": "HvCheckBox-disabled",
+          "label": "HvCheckBox-label",
+          "root": "HvCheckBox-root",
+        }
+      }
+      label="Checkbox 1"
+    >
+      <WithStyles(WithId)
+        className="HvCheckBox-root"
+        disabled={false}
+        readOnly={false}
+        required={false}
+        status="standBy"
+        value="on"
+      >
+        <WithId
+          className="HvCheckBox-root"
+          classes={
+            Object {
+              "root": "HvFormElement-root",
+            }
+          }
+          disabled={false}
+          readOnly={false}
+          required={false}
+          status="standBy"
+          value="on"
+        >
+          <HvFormElement
+            className="HvCheckBox-root"
+            classes={
+              Object {
+                "root": "HvFormElement-root",
+              }
+            }
+            disabled={false}
+            id="hv-form-element-2"
+            readOnly={false}
+            required={false}
+            status="standBy"
+            value="on"
+          >
+            <div
+              className="HvCheckBox-root HvFormElement-root"
+              id="hv-form-element-2"
+            >
+              <div
+                className="HvCheckBox-container"
+              >
+                <WithStyles(HvBaseCheckbox)
+                  checked={false}
+                  className="HvCheckBox-checkBox"
+                  disabled={false}
+                  id="hvcheckbox1-input"
+                  indeterminate={false}
+                  inputProps={
+                    Object {
+                      "aria-errormessage": undefined,
+                      "aria-invalid": undefined,
+                    }
+                  }
+                  onChange={[Function]}
+                  readOnly={false}
+                  semantic={false}
+                  value="on"
+                >
+                  <HvBaseCheckbox
+                    checked={false}
+                    className="HvCheckBox-checkBox"
+                    classes={
+                      Object {
+                        "disabled": "HvBaseCheckbox-disabled",
+                        "root": "HvBaseCheckbox-root",
+                      }
+                    }
+                    disabled={false}
+                    id="hvcheckbox1-input"
+                    indeterminate={false}
+                    inputProps={
+                      Object {
+                        "aria-errormessage": undefined,
+                        "aria-invalid": undefined,
+                      }
+                    }
+                    onChange={[Function]}
+                    readOnly={false}
+                    semantic={false}
+                    value="on"
+                  >
+                    <WithStyles(ForwardRef(Checkbox))
+                      checked={false}
+                      checkedIcon={<CheckboxCheck />}
+                      className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                      color="default"
+                      disableRipple={true}
+                      disabled={false}
+                      icon={<Checkbox />}
+                      id="hvcheckbox1-input"
+                      indeterminate={false}
+                      indeterminateIcon={<CheckboxPartial />}
+                      inputProps={
+                        Object {
+                          "aria-errormessage": undefined,
+                          "aria-invalid": undefined,
+                        }
+                      }
+                      onChange={[Function]}
+                      readOnly={false}
+                      required={false}
+                      value="on"
+                    >
+                      <ForwardRef(Checkbox)
+                        checked={false}
+                        checkedIcon={<CheckboxCheck />}
+                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                        classes={
+                          Object {
+                            "checked": "Mui-checked",
+                            "colorPrimary": "MuiCheckbox-colorPrimary",
+                            "colorSecondary": "MuiCheckbox-colorSecondary",
+                            "disabled": "Mui-disabled",
+                            "indeterminate": "MuiCheckbox-indeterminate",
+                            "root": "MuiCheckbox-root",
+                          }
+                        }
+                        color="default"
+                        disableRipple={true}
+                        disabled={false}
+                        icon={<Checkbox />}
+                        id="hvcheckbox1-input"
+                        indeterminate={false}
+                        indeterminateIcon={<CheckboxPartial />}
+                        inputProps={
+                          Object {
+                            "aria-errormessage": undefined,
+                            "aria-invalid": undefined,
+                          }
+                        }
+                        onChange={[Function]}
+                        readOnly={false}
+                        required={false}
+                        value="on"
+                      >
+                        <WithStyles(ForwardRef(SwitchBase))
+                          checked={false}
+                          checkedIcon={
+                            <CheckboxCheck
+                              fontSize="default"
+                            />
+                          }
+                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                          classes={
+                            Object {
+                              "checked": "Mui-checked",
+                              "disabled": "Mui-disabled",
+                              "root": "MuiCheckbox-root",
+                            }
+                          }
+                          color="default"
+                          disableRipple={true}
+                          disabled={false}
+                          icon={
+                            <Checkbox
+                              fontSize="default"
+                            />
+                          }
+                          id="hvcheckbox1-input"
+                          inputProps={
+                            Object {
+                              "aria-errormessage": undefined,
+                              "aria-invalid": undefined,
+                              "data-indeterminate": false,
+                            }
+                          }
+                          onChange={[Function]}
+                          readOnly={false}
+                          required={false}
+                          type="checkbox"
+                          value="on"
+                        >
+                          <ForwardRef(SwitchBase)
+                            checked={false}
+                            checkedIcon={
+                              <CheckboxCheck
+                                fontSize="default"
+                              />
+                            }
+                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            classes={
+                              Object {
+                                "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                "input": "PrivateSwitchBase-input-4",
+                                "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
+                              }
+                            }
+                            color="default"
+                            disableRipple={true}
+                            disabled={false}
+                            icon={
+                              <Checkbox
+                                fontSize="default"
+                              />
+                            }
+                            id="hvcheckbox1-input"
+                            inputProps={
+                              Object {
+                                "aria-errormessage": undefined,
+                                "aria-invalid": undefined,
+                                "data-indeterminate": false,
+                              }
+                            }
+                            onChange={[Function]}
+                            readOnly={false}
+                            required={false}
+                            type="checkbox"
+                            value="on"
+                          >
+                            <WithStyles(ForwardRef(IconButton))
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                              color="default"
+                              component="span"
+                              disableRipple={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                            >
+                              <ForwardRef(IconButton)
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                classes={
+                                  Object {
+                                    "colorInherit": "MuiIconButton-colorInherit",
+                                    "colorPrimary": "MuiIconButton-colorPrimary",
+                                    "colorSecondary": "MuiIconButton-colorSecondary",
+                                    "disabled": "Mui-disabled",
+                                    "edgeEnd": "MuiIconButton-edgeEnd",
+                                    "edgeStart": "MuiIconButton-edgeStart",
+                                    "label": "MuiIconButton-label",
+                                    "root": "MuiIconButton-root",
+                                    "sizeSmall": "MuiIconButton-sizeSmall",
+                                  }
+                                }
+                                color="default"
+                                component="span"
+                                disableRipple={true}
+                                disabled={false}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                tabIndex={null}
+                              >
+                                <WithStyles(ForwardRef(ButtonBase))
+                                  centerRipple={true}
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  component="span"
+                                  disableRipple={true}
+                                  disabled={false}
+                                  focusRipple={true}
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  tabIndex={null}
+                                >
+                                  <ForwardRef(ButtonBase)
+                                    centerRipple={true}
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                    classes={
+                                      Object {
+                                        "disabled": "Mui-disabled",
+                                        "focusVisible": "Mui-focusVisible",
+                                        "root": "MuiButtonBase-root",
+                                      }
+                                    }
+                                    component="span"
+                                    disableRipple={true}
+                                    disabled={false}
+                                    focusRipple={true}
+                                    onBlur={[Function]}
+                                    onFocus={[Function]}
+                                    tabIndex={null}
+                                  >
+                                    <span
+                                      aria-disabled={false}
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                      onBlur={[Function]}
+                                      onDragLeave={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex={null}
+                                    >
+                                      <span
+                                        className="MuiIconButton-label"
+                                      >
+                                        <input
+                                          checked={false}
+                                          className="PrivateSwitchBase-input-4"
+                                          data-indeterminate={false}
+                                          disabled={false}
+                                          id="hvcheckbox1-input"
+                                          onChange={[Function]}
+                                          readOnly={false}
+                                          required={false}
+                                          type="checkbox"
+                                          value="on"
+                                        />
+                                        <Checkbox
+                                          fontSize="default"
+                                        >
+                                          <WithStyles(HvIconBase)
+                                            fontSize="default"
+                                            iconSize="S"
+                                            name="Checkbox"
+                                          >
+                                            <HvIconBase
+                                              classes={
+                                                Object {
+                                                  "l": "HvIconBase-l",
+                                                  "m": "HvIconBase-m",
+                                                  "root": "HvIconBase-root",
+                                                  "s": "HvIconBase-s",
+                                                  "xs": "HvIconBase-xs",
+                                                }
+                                              }
+                                              fontSize="default"
+                                              iconSize="S"
+                                              name="Checkbox"
+                                            >
+                                              <div
+                                                className="HvIconBase-root HvIconBase-s"
+                                                fontSize="default"
+                                                name="Checkbox"
+                                              >
+                                                <svg
+                                                  focusable={false}
+                                                  height={16}
+                                                  viewBox="0 0 16 16"
+                                                  width={16}
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    className="color0"
+                                                    d="M0 0h16v16H0z"
+                                                    fill="#FBFCFC"
+                                                  />
+                                                  <path
+                                                    className="color1"
+                                                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                    fill="#414141"
+                                                  />
+                                                </svg>
+                                              </div>
+                                            </HvIconBase>
+                                          </WithStyles(HvIconBase)>
+                                        </Checkbox>
+                                      </span>
+                                    </span>
+                                  </ForwardRef(ButtonBase)>
+                                </WithStyles(ForwardRef(ButtonBase))>
+                              </ForwardRef(IconButton)>
+                            </WithStyles(ForwardRef(IconButton))>
+                          </ForwardRef(SwitchBase)>
+                        </WithStyles(ForwardRef(SwitchBase))>
+                      </ForwardRef(Checkbox)>
+                    </WithStyles(ForwardRef(Checkbox))>
+                  </HvBaseCheckbox>
+                </WithStyles(HvBaseCheckbox)>
+                <WithStyles(HvLabel)
+                  className="HvCheckBox-label"
+                  htmlFor="hvcheckbox1-input"
+                  id="hvcheckbox1-label"
+                  label="Checkbox 1"
+                >
+                  <HvLabel
+                    className="HvCheckBox-label"
+                    classes={
+                      Object {
+                        "childGutter": "HvLabel-childGutter",
+                        "labelDisabled": "HvLabel-labelDisabled",
+                        "root": "HvLabel-root",
+                      }
+                    }
+                    htmlFor="hvcheckbox1-input"
+                    id="hvcheckbox1-label"
+                    label="Checkbox 1"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvCheckBox-label HvLabel-root"
+                      component="label"
+                      htmlFor="hvcheckbox1-input"
+                      id="hvcheckbox1-label"
+                      variant="highlightText"
+                    >
+                      <ForwardRef
+                        className="HvCheckBox-label HvLabel-root"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="label"
+                        htmlFor="hvcheckbox1-input"
+                        id="hvcheckbox1-label"
+                        variant="highlightText"
+                      >
+                        <label
+                          className="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+                          htmlFor="hvcheckbox1-input"
+                          id="hvcheckbox1-label"
+                        >
+                          Checkbox 1
+                        </label>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </HvLabel>
+                </WithStyles(HvLabel)>
+              </div>
+            </div>
+          </HvFormElement>
+        </WithId>
+      </WithStyles(WithId)>
+    </HvCheckBox>
+  </WithStyles(HvCheckBox)>,
+  <WithStyles(HvCheckBox)
+    defaultChecked={true}
+    label="Checkbox 2"
+  >
+    <HvCheckBox
+      classes={
+        Object {
+          "checkBox": "HvCheckBox-checkBox",
+          "container": "HvCheckBox-container",
+          "disabled": "HvCheckBox-disabled",
+          "label": "HvCheckBox-label",
+          "root": "HvCheckBox-root",
+        }
+      }
+      defaultChecked={true}
+      label="Checkbox 2"
+    >
+      <WithStyles(WithId)
+        className="HvCheckBox-root"
+        disabled={false}
+        readOnly={false}
+        required={false}
+        status="standBy"
+        value="on"
+      >
+        <WithId
+          className="HvCheckBox-root"
+          classes={
+            Object {
+              "root": "HvFormElement-root",
+            }
+          }
+          disabled={false}
+          readOnly={false}
+          required={false}
+          status="standBy"
+          value="on"
+        >
+          <HvFormElement
+            className="HvCheckBox-root"
+            classes={
+              Object {
+                "root": "HvFormElement-root",
+              }
+            }
+            disabled={false}
+            id="hv-form-element-4"
+            readOnly={false}
+            required={false}
+            status="standBy"
+            value="on"
+          >
+            <div
+              className="HvCheckBox-root HvFormElement-root"
+              id="hv-form-element-4"
+            >
+              <div
+                className="HvCheckBox-container"
+              >
+                <WithStyles(HvBaseCheckbox)
+                  checked={true}
+                  className="HvCheckBox-checkBox"
+                  disabled={false}
+                  id="hvcheckbox3-input"
+                  indeterminate={false}
+                  inputProps={
+                    Object {
+                      "aria-errormessage": undefined,
+                      "aria-invalid": undefined,
+                    }
+                  }
+                  onChange={[Function]}
+                  readOnly={false}
+                  semantic={false}
+                  value="on"
+                >
+                  <HvBaseCheckbox
+                    checked={true}
+                    className="HvCheckBox-checkBox"
+                    classes={
+                      Object {
+                        "disabled": "HvBaseCheckbox-disabled",
+                        "root": "HvBaseCheckbox-root",
+                      }
+                    }
+                    disabled={false}
+                    id="hvcheckbox3-input"
+                    indeterminate={false}
+                    inputProps={
+                      Object {
+                        "aria-errormessage": undefined,
+                        "aria-invalid": undefined,
+                      }
+                    }
+                    onChange={[Function]}
+                    readOnly={false}
+                    semantic={false}
+                    value="on"
+                  >
+                    <WithStyles(ForwardRef(Checkbox))
+                      checked={true}
+                      checkedIcon={<CheckboxCheck />}
+                      className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                      color="default"
+                      disableRipple={true}
+                      disabled={false}
+                      icon={<Checkbox />}
+                      id="hvcheckbox3-input"
+                      indeterminate={false}
+                      indeterminateIcon={<CheckboxPartial />}
+                      inputProps={
+                        Object {
+                          "aria-errormessage": undefined,
+                          "aria-invalid": undefined,
+                        }
+                      }
+                      onChange={[Function]}
+                      readOnly={false}
+                      required={false}
+                      value="on"
+                    >
+                      <ForwardRef(Checkbox)
+                        checked={true}
+                        checkedIcon={<CheckboxCheck />}
+                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                        classes={
+                          Object {
+                            "checked": "Mui-checked",
+                            "colorPrimary": "MuiCheckbox-colorPrimary",
+                            "colorSecondary": "MuiCheckbox-colorSecondary",
+                            "disabled": "Mui-disabled",
+                            "indeterminate": "MuiCheckbox-indeterminate",
+                            "root": "MuiCheckbox-root",
+                          }
+                        }
+                        color="default"
+                        disableRipple={true}
+                        disabled={false}
+                        icon={<Checkbox />}
+                        id="hvcheckbox3-input"
+                        indeterminate={false}
+                        indeterminateIcon={<CheckboxPartial />}
+                        inputProps={
+                          Object {
+                            "aria-errormessage": undefined,
+                            "aria-invalid": undefined,
+                          }
+                        }
+                        onChange={[Function]}
+                        readOnly={false}
+                        required={false}
+                        value="on"
+                      >
+                        <WithStyles(ForwardRef(SwitchBase))
+                          checked={true}
+                          checkedIcon={
+                            <CheckboxCheck
+                              fontSize="default"
+                            />
+                          }
+                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                          classes={
+                            Object {
+                              "checked": "Mui-checked",
+                              "disabled": "Mui-disabled",
+                              "root": "MuiCheckbox-root",
+                            }
+                          }
+                          color="default"
+                          disableRipple={true}
+                          disabled={false}
+                          icon={
+                            <Checkbox
+                              fontSize="default"
+                            />
+                          }
+                          id="hvcheckbox3-input"
+                          inputProps={
+                            Object {
+                              "aria-errormessage": undefined,
+                              "aria-invalid": undefined,
+                              "data-indeterminate": false,
+                            }
+                          }
+                          onChange={[Function]}
+                          readOnly={false}
+                          required={false}
+                          type="checkbox"
+                          value="on"
+                        >
+                          <ForwardRef(SwitchBase)
+                            checked={true}
+                            checkedIcon={
+                              <CheckboxCheck
+                                fontSize="default"
+                              />
+                            }
+                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            classes={
+                              Object {
+                                "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                "input": "PrivateSwitchBase-input-4",
+                                "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
+                              }
+                            }
+                            color="default"
+                            disableRipple={true}
+                            disabled={false}
+                            icon={
+                              <Checkbox
+                                fontSize="default"
+                              />
+                            }
+                            id="hvcheckbox3-input"
+                            inputProps={
+                              Object {
+                                "aria-errormessage": undefined,
+                                "aria-invalid": undefined,
+                                "data-indeterminate": false,
+                              }
+                            }
+                            onChange={[Function]}
+                            readOnly={false}
+                            required={false}
+                            type="checkbox"
+                            value="on"
+                          >
+                            <WithStyles(ForwardRef(IconButton))
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                              color="default"
+                              component="span"
+                              disableRipple={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                            >
+                              <ForwardRef(IconButton)
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                classes={
+                                  Object {
+                                    "colorInherit": "MuiIconButton-colorInherit",
+                                    "colorPrimary": "MuiIconButton-colorPrimary",
+                                    "colorSecondary": "MuiIconButton-colorSecondary",
+                                    "disabled": "Mui-disabled",
+                                    "edgeEnd": "MuiIconButton-edgeEnd",
+                                    "edgeStart": "MuiIconButton-edgeStart",
+                                    "label": "MuiIconButton-label",
+                                    "root": "MuiIconButton-root",
+                                    "sizeSmall": "MuiIconButton-sizeSmall",
+                                  }
+                                }
+                                color="default"
+                                component="span"
+                                disableRipple={true}
+                                disabled={false}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                tabIndex={null}
+                              >
+                                <WithStyles(ForwardRef(ButtonBase))
+                                  centerRipple={true}
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                  component="span"
+                                  disableRipple={true}
+                                  disabled={false}
+                                  focusRipple={true}
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  tabIndex={null}
+                                >
+                                  <ForwardRef(ButtonBase)
+                                    centerRipple={true}
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                    classes={
+                                      Object {
+                                        "disabled": "Mui-disabled",
+                                        "focusVisible": "Mui-focusVisible",
+                                        "root": "MuiButtonBase-root",
+                                      }
+                                    }
+                                    component="span"
+                                    disableRipple={true}
+                                    disabled={false}
+                                    focusRipple={true}
+                                    onBlur={[Function]}
+                                    onFocus={[Function]}
+                                    tabIndex={null}
+                                  >
+                                    <span
+                                      aria-disabled={false}
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                      onBlur={[Function]}
+                                      onDragLeave={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex={null}
+                                    >
+                                      <span
+                                        className="MuiIconButton-label"
+                                      >
+                                        <input
+                                          checked={true}
+                                          className="PrivateSwitchBase-input-4"
+                                          data-indeterminate={false}
+                                          disabled={false}
+                                          id="hvcheckbox3-input"
+                                          onChange={[Function]}
+                                          readOnly={false}
+                                          required={false}
+                                          type="checkbox"
+                                          value="on"
+                                        />
+                                        <CheckboxCheck
+                                          fontSize="default"
+                                        >
+                                          <WithStyles(HvIconBase)
+                                            fontSize="default"
+                                            iconSize="S"
+                                            name="CheckboxCheck"
+                                          >
+                                            <HvIconBase
+                                              classes={
+                                                Object {
+                                                  "l": "HvIconBase-l",
+                                                  "m": "HvIconBase-m",
+                                                  "root": "HvIconBase-root",
+                                                  "s": "HvIconBase-s",
+                                                  "xs": "HvIconBase-xs",
+                                                }
+                                              }
+                                              fontSize="default"
+                                              iconSize="S"
+                                              name="CheckboxCheck"
+                                            >
+                                              <div
+                                                className="HvIconBase-root HvIconBase-s"
+                                                fontSize="default"
+                                                name="CheckboxCheck"
+                                              >
+                                                <svg
+                                                  focusable={false}
+                                                  height={16}
+                                                  viewBox="0 0 16 16"
+                                                  width={16}
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    className="color0"
+                                                    d="M0 0h16v16H0z"
+                                                    fill="#414141"
+                                                  />
+                                                  <path
+                                                    className="color0"
+                                                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                    fill="#414141"
+                                                  />
+                                                  <path
+                                                    className="color1"
+                                                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                                    fill="#FBFCFC"
+                                                  />
+                                                </svg>
+                                              </div>
+                                            </HvIconBase>
+                                          </WithStyles(HvIconBase)>
+                                        </CheckboxCheck>
+                                      </span>
+                                    </span>
+                                  </ForwardRef(ButtonBase)>
+                                </WithStyles(ForwardRef(ButtonBase))>
+                              </ForwardRef(IconButton)>
+                            </WithStyles(ForwardRef(IconButton))>
+                          </ForwardRef(SwitchBase)>
+                        </WithStyles(ForwardRef(SwitchBase))>
+                      </ForwardRef(Checkbox)>
+                    </WithStyles(ForwardRef(Checkbox))>
+                  </HvBaseCheckbox>
+                </WithStyles(HvBaseCheckbox)>
+                <WithStyles(HvLabel)
+                  className="HvCheckBox-label"
+                  htmlFor="hvcheckbox3-input"
+                  id="hvcheckbox3-label"
+                  label="Checkbox 2"
+                >
+                  <HvLabel
+                    className="HvCheckBox-label"
+                    classes={
+                      Object {
+                        "childGutter": "HvLabel-childGutter",
+                        "labelDisabled": "HvLabel-labelDisabled",
+                        "root": "HvLabel-root",
+                      }
+                    }
+                    htmlFor="hvcheckbox3-input"
+                    id="hvcheckbox3-label"
+                    label="Checkbox 2"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvCheckBox-label HvLabel-root"
+                      component="label"
+                      htmlFor="hvcheckbox3-input"
+                      id="hvcheckbox3-label"
+                      variant="highlightText"
+                    >
+                      <ForwardRef
+                        className="HvCheckBox-label HvLabel-root"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="label"
+                        htmlFor="hvcheckbox3-input"
+                        id="hvcheckbox3-label"
+                        variant="highlightText"
+                      >
+                        <label
+                          className="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+                          htmlFor="hvcheckbox3-input"
+                          id="hvcheckbox3-label"
+                        >
+                          Checkbox 2
+                        </label>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </HvLabel>
+                </WithStyles(HvLabel)>
+              </div>
+            </div>
+          </HvFormElement>
+        </WithId>
+      </WithStyles(WithId)>
+    </HvCheckBox>
+  </WithStyles(HvCheckBox)>,
+  <WithStyles(HvCheckBox)
+    indeterminate={true}
+    label="Checkbox 3"
+  >
+    <HvCheckBox
+      classes={
+        Object {
+          "checkBox": "HvCheckBox-checkBox",
+          "container": "HvCheckBox-container",
+          "disabled": "HvCheckBox-disabled",
+          "label": "HvCheckBox-label",
+          "root": "HvCheckBox-root",
+        }
+      }
+      indeterminate={true}
+      label="Checkbox 3"
+    >
+      <WithStyles(WithId)
+        className="HvCheckBox-root"
+        disabled={false}
+        readOnly={false}
+        required={false}
+        status="standBy"
+        value="on"
+      >
+        <WithId
+          className="HvCheckBox-root"
+          classes={
+            Object {
+              "root": "HvFormElement-root",
+            }
+          }
+          disabled={false}
+          readOnly={false}
+          required={false}
+          status="standBy"
+          value="on"
+        >
+          <HvFormElement
+            className="HvCheckBox-root"
+            classes={
+              Object {
+                "root": "HvFormElement-root",
+              }
+            }
+            disabled={false}
+            id="hv-form-element-6"
+            readOnly={false}
+            required={false}
+            status="standBy"
+            value="on"
+          >
+            <div
+              className="HvCheckBox-root HvFormElement-root"
+              id="hv-form-element-6"
+            >
+              <div
+                className="HvCheckBox-container"
+              >
+                <WithStyles(HvBaseCheckbox)
+                  checked={false}
+                  className="HvCheckBox-checkBox"
+                  disabled={false}
+                  id="hvcheckbox5-input"
+                  indeterminate={true}
+                  inputProps={
+                    Object {
+                      "aria-errormessage": undefined,
+                      "aria-invalid": undefined,
+                    }
+                  }
+                  onChange={[Function]}
+                  readOnly={false}
+                  semantic={false}
+                  value="on"
+                >
+                  <HvBaseCheckbox
+                    checked={false}
+                    className="HvCheckBox-checkBox"
+                    classes={
+                      Object {
+                        "disabled": "HvBaseCheckbox-disabled",
+                        "root": "HvBaseCheckbox-root",
+                      }
+                    }
+                    disabled={false}
+                    id="hvcheckbox5-input"
+                    indeterminate={true}
+                    inputProps={
+                      Object {
+                        "aria-errormessage": undefined,
+                        "aria-invalid": undefined,
+                      }
+                    }
+                    onChange={[Function]}
+                    readOnly={false}
+                    semantic={false}
+                    value="on"
+                  >
+                    <WithStyles(ForwardRef(Checkbox))
+                      checked={false}
+                      checkedIcon={<CheckboxCheck />}
+                      className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                      color="default"
+                      disableRipple={true}
+                      disabled={false}
+                      icon={<Checkbox />}
+                      id="hvcheckbox5-input"
+                      indeterminate={true}
+                      indeterminateIcon={<CheckboxPartial />}
+                      inputProps={
+                        Object {
+                          "aria-errormessage": undefined,
+                          "aria-invalid": undefined,
+                        }
+                      }
+                      onChange={[Function]}
+                      readOnly={false}
+                      required={false}
+                      value="on"
+                    >
+                      <ForwardRef(Checkbox)
+                        checked={false}
+                        checkedIcon={<CheckboxCheck />}
+                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                        classes={
+                          Object {
+                            "checked": "Mui-checked",
+                            "colorPrimary": "MuiCheckbox-colorPrimary",
+                            "colorSecondary": "MuiCheckbox-colorSecondary",
+                            "disabled": "Mui-disabled",
+                            "indeterminate": "MuiCheckbox-indeterminate",
+                            "root": "MuiCheckbox-root",
+                          }
+                        }
+                        color="default"
+                        disableRipple={true}
+                        disabled={false}
+                        icon={<Checkbox />}
+                        id="hvcheckbox5-input"
+                        indeterminate={true}
+                        indeterminateIcon={<CheckboxPartial />}
+                        inputProps={
+                          Object {
+                            "aria-errormessage": undefined,
+                            "aria-invalid": undefined,
+                          }
+                        }
+                        onChange={[Function]}
+                        readOnly={false}
+                        required={false}
+                        value="on"
+                      >
+                        <WithStyles(ForwardRef(SwitchBase))
+                          checked={false}
+                          checkedIcon={
+                            <CheckboxPartial
+                              fontSize="default"
+                            />
+                          }
+                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                          classes={
+                            Object {
+                              "checked": "Mui-checked",
+                              "disabled": "Mui-disabled",
+                              "root": "MuiCheckbox-root MuiCheckbox-indeterminate",
+                            }
+                          }
+                          color="default"
+                          disableRipple={true}
+                          disabled={false}
+                          icon={
+                            <CheckboxPartial
+                              fontSize="default"
+                            />
+                          }
+                          id="hvcheckbox5-input"
+                          inputProps={
+                            Object {
+                              "aria-errormessage": undefined,
+                              "aria-invalid": undefined,
+                              "data-indeterminate": true,
+                            }
+                          }
+                          onChange={[Function]}
+                          readOnly={false}
+                          required={false}
+                          type="checkbox"
+                          value="on"
+                        >
+                          <ForwardRef(SwitchBase)
+                            checked={false}
+                            checkedIcon={
+                              <CheckboxPartial
+                                fontSize="default"
+                              />
+                            }
+                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            classes={
+                              Object {
+                                "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                "input": "PrivateSwitchBase-input-4",
+                                "root": "PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate",
+                              }
+                            }
+                            color="default"
+                            disableRipple={true}
+                            disabled={false}
+                            icon={
+                              <CheckboxPartial
+                                fontSize="default"
+                              />
+                            }
+                            id="hvcheckbox5-input"
+                            inputProps={
+                              Object {
+                                "aria-errormessage": undefined,
+                                "aria-invalid": undefined,
+                                "data-indeterminate": true,
+                              }
+                            }
+                            onChange={[Function]}
+                            readOnly={false}
+                            required={false}
+                            type="checkbox"
+                            value="on"
+                          >
+                            <WithStyles(ForwardRef(IconButton))
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                              color="default"
+                              component="span"
+                              disableRipple={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onFocus={[Function]}
+                              tabIndex={null}
+                            >
+                              <ForwardRef(IconButton)
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                classes={
+                                  Object {
+                                    "colorInherit": "MuiIconButton-colorInherit",
+                                    "colorPrimary": "MuiIconButton-colorPrimary",
+                                    "colorSecondary": "MuiIconButton-colorSecondary",
+                                    "disabled": "Mui-disabled",
+                                    "edgeEnd": "MuiIconButton-edgeEnd",
+                                    "edgeStart": "MuiIconButton-edgeStart",
+                                    "label": "MuiIconButton-label",
+                                    "root": "MuiIconButton-root",
+                                    "sizeSmall": "MuiIconButton-sizeSmall",
+                                  }
+                                }
+                                color="default"
+                                component="span"
+                                disableRipple={true}
+                                disabled={false}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                tabIndex={null}
+                              >
+                                <WithStyles(ForwardRef(ButtonBase))
+                                  centerRipple={true}
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  component="span"
+                                  disableRipple={true}
+                                  disabled={false}
+                                  focusRipple={true}
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  tabIndex={null}
+                                >
+                                  <ForwardRef(ButtonBase)
+                                    centerRipple={true}
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                    classes={
+                                      Object {
+                                        "disabled": "Mui-disabled",
+                                        "focusVisible": "Mui-focusVisible",
+                                        "root": "MuiButtonBase-root",
+                                      }
+                                    }
+                                    component="span"
+                                    disableRipple={true}
+                                    disabled={false}
+                                    focusRipple={true}
+                                    onBlur={[Function]}
+                                    onFocus={[Function]}
+                                    tabIndex={null}
+                                  >
+                                    <span
+                                      aria-disabled={false}
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                      onBlur={[Function]}
+                                      onDragLeave={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex={null}
+                                    >
+                                      <span
+                                        className="MuiIconButton-label"
+                                      >
+                                        <input
+                                          checked={false}
+                                          className="PrivateSwitchBase-input-4"
+                                          data-indeterminate={true}
+                                          disabled={false}
+                                          id="hvcheckbox5-input"
+                                          onChange={[Function]}
+                                          readOnly={false}
+                                          required={false}
+                                          type="checkbox"
+                                          value="on"
+                                        />
+                                        <CheckboxPartial
+                                          fontSize="default"
+                                        >
+                                          <WithStyles(HvIconBase)
+                                            fontSize="default"
+                                            iconSize="S"
+                                            name="CheckboxPartial"
+                                          >
+                                            <HvIconBase
+                                              classes={
+                                                Object {
+                                                  "l": "HvIconBase-l",
+                                                  "m": "HvIconBase-m",
+                                                  "root": "HvIconBase-root",
+                                                  "s": "HvIconBase-s",
+                                                  "xs": "HvIconBase-xs",
+                                                }
+                                              }
+                                              fontSize="default"
+                                              iconSize="S"
+                                              name="CheckboxPartial"
+                                            >
+                                              <div
+                                                className="HvIconBase-root HvIconBase-s"
+                                                fontSize="default"
+                                                name="CheckboxPartial"
+                                              >
+                                                <svg
+                                                  focusable={false}
+                                                  height={16}
+                                                  viewBox="0 0 16 16"
+                                                  width={16}
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    className="color0"
+                                                    d="M0 0h16v16H0z"
+                                                    fill="#FBFCFC"
+                                                  />
+                                                  <path
+                                                    className="color1"
+                                                    d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+                                                    fill="#414141"
+                                                  />
+                                                </svg>
+                                              </div>
+                                            </HvIconBase>
+                                          </WithStyles(HvIconBase)>
+                                        </CheckboxPartial>
+                                      </span>
+                                    </span>
+                                  </ForwardRef(ButtonBase)>
+                                </WithStyles(ForwardRef(ButtonBase))>
+                              </ForwardRef(IconButton)>
+                            </WithStyles(ForwardRef(IconButton))>
+                          </ForwardRef(SwitchBase)>
+                        </WithStyles(ForwardRef(SwitchBase))>
+                      </ForwardRef(Checkbox)>
+                    </WithStyles(ForwardRef(Checkbox))>
+                  </HvBaseCheckbox>
+                </WithStyles(HvBaseCheckbox)>
+                <WithStyles(HvLabel)
+                  className="HvCheckBox-label"
+                  htmlFor="hvcheckbox5-input"
+                  id="hvcheckbox5-label"
+                  label="Checkbox 3"
+                >
+                  <HvLabel
+                    className="HvCheckBox-label"
+                    classes={
+                      Object {
+                        "childGutter": "HvLabel-childGutter",
+                        "labelDisabled": "HvLabel-labelDisabled",
+                        "root": "HvLabel-root",
+                      }
+                    }
+                    htmlFor="hvcheckbox5-input"
+                    id="hvcheckbox5-label"
+                    label="Checkbox 3"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvCheckBox-label HvLabel-root"
+                      component="label"
+                      htmlFor="hvcheckbox5-input"
+                      id="hvcheckbox5-label"
+                      variant="highlightText"
+                    >
+                      <ForwardRef
+                        className="HvCheckBox-label HvLabel-root"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="label"
+                        htmlFor="hvcheckbox5-input"
+                        id="hvcheckbox5-label"
+                        variant="highlightText"
+                      >
+                        <label
+                          className="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
+                          htmlFor="hvcheckbox5-input"
+                          id="hvcheckbox5-label"
+                        >
+                          Checkbox 3
+                        </label>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </HvLabel>
+                </WithStyles(HvLabel)>
+              </div>
+            </div>
+          </HvFormElement>
+        </WithId>
+      </WithStyles(WithId)>
+    </HvCheckBox>
+  </WithStyles(HvCheckBox)>,
+]
+`;

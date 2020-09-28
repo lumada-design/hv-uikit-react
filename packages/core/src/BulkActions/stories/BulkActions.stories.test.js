@@ -38,7 +38,7 @@ export const WithMultiButton = () => {
   ]);
 
   const handleSelectAll = (e, checked = false) => {
-    setData(data.map(el => ({ ...el, selected: !checked })));
+    setData(data.map(el => ({ ...el, selected: checked })));
   };
 
   return (

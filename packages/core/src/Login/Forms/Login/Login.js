@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import Input from "../../../Input";
 import HvButton from "../../../Button";
-import HvCheckbox from "../../../Selectors/CheckBox";
+import HvCheckbox from "../../../CheckBox";
 import Title from "./Title";
 import MessageElement from "../MessageElement";
 import styles from "./styles";
@@ -189,7 +189,7 @@ class Login extends React.Component {
         >
           {allowRememberMe ? (
             <HvCheckbox
-              classes={{ labelTypography: classes.checkBoxTypography }}
+              classes={{ label: classes.checkBoxTypography }}
               label={rememberMeLabel}
               onChange={this.handleRememberMe}
             />

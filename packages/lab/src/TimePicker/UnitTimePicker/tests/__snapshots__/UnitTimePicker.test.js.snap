@@ -249,6 +249,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   >
                     <div
                       className="HvInput-root HvTimePickerUnitTimePicker-inputContainer HvFormElement-root"
+                      id="hv-input-2"
                       onBlur={[Function]}
                     >
                       <div
@@ -681,6 +682,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         </HvSuggestions>
                       </WithStyles(HvSuggestions)>
                       <WithStyles(HvWarningText)
+                        disableBorder={true}
                         id="hv-input-2-warning"
                       >
                         <HvWarningText
@@ -689,10 +691,12 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               "defaultIcon": "HvWarningText-defaultIcon",
                               "root": "HvWarningText-root",
                               "showText": "HvWarningText-showText",
+                              "topBorder": "HvWarningText-topBorder",
                               "topGutter": "HvWarningText-topGutter",
                               "warningText": "HvWarningText-warningText",
                             }
                           }
+                          disableBorder={true}
                           id="hv-input-2-warning"
                         >
                           <div
@@ -747,7 +751,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               aria-live="polite"
                               aria-relevant="additions text"
                               className="HvWarningText-warningText HvWarningText-topGutter"
-                              id="hv-input-2-warning-notification"
+                              id="hv-input-2-warning"
                             >
                               <ForwardRef
                                 aria-atomic="true"
@@ -780,14 +784,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
-                                id="hv-input-2-warning-notification"
+                                id="hv-input-2-warning"
                               >
                                 <p
                                   aria-atomic="true"
                                   aria-live="polite"
                                   aria-relevant="additions text"
                                   className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                                  id="hv-input-2-warning-notification"
+                                  id="hv-input-2-warning"
                                 />
                               </ForwardRef>
                             </WithStyles(ForwardRef)>

@@ -404,7 +404,7 @@ const HvInput = props => {
         suggestionValues={suggestionValues}
       />
 
-      <HvWarningText id={setId(id, "warning")}>
+      <HvWarningText disableBorder id={setId(id, "warning")}>
         {isStateInvalid ? externalWarningTextOverride || warningText : ""}
       </HvWarningText>
     </HvFormElement>

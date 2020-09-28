@@ -14,6 +14,7 @@ export default {
 
 export const Main = () => (
   <HvDropdown
+    aria-label="Main sample"
     multiSelect
     showSearch
     values={[
@@ -35,7 +36,7 @@ Main.story = {
   }
 };
 
-export const Empty = () => <HvDropdown id="dropdown1" />;
+export const Empty = () => <HvDropdown id="dropdown1" aria-label="Empty" />;
 
 Empty.story = {
   parameters: {
@@ -53,6 +54,7 @@ Empty.story = {
 export const SingleSelection = () => (
   <HvDropdown
     id="dropdown7"
+    aria-label="Single selection"
     onChange={item => console.log(item)}
     values={[
       { id: "id-1", label: "value 1", selected: true },
@@ -101,6 +103,7 @@ MultiSelection.story = {
 export const MultiSelectionNoSearch = () => (
   <HvDropdown
     id="dropdown5"
+    aria-label="No search"
     onChange={item => console.log(item)}
     multiSelect
     values={[
@@ -125,6 +128,7 @@ MultiSelectionNoSearch.story = {
 export const SingleSelectionWithSearch = () => (
   <HvDropdown
     id="dropdown6"
+    aria-label="With search"
     showSearch
     values={[
       { label: "value 1" },
@@ -151,6 +155,7 @@ SingleSelectionWithSearch.story = {
 export const SingleSelectionNoSelection = () => (
   <HvDropdown
     id="dropdown8"
+    aria-label="No default"
     hasTooltips
     values={[
       { label: "value 1" },
@@ -193,10 +198,24 @@ export const DifferentSizeAndPlacements = () => {
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
-        <StyledDropdown id="dropdown1" values={data} multiSelect showSearch placement="right" />
+        <StyledDropdown
+          id="dropdown1"
+          aria-label="Left"
+          values={data}
+          multiSelect
+          showSearch
+          placement="right"
+        />
       </div>
       <div>
-        <StyledDropdown id="dropdown2" values={data} multiSelect showSearch placement="left" />
+        <StyledDropdown
+          id="dropdown2"
+          aria-label="Right"
+          values={data}
+          multiSelect
+          showSearch
+          placement="left"
+        />
       </div>
     </div>
   );

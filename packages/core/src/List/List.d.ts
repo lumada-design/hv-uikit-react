@@ -74,6 +74,7 @@ export interface HvListProps
 
 export type HvListClassKey =
   | "root"
+  | "selectorRoot"
   | "selectorContainer"
   | "box"
   | "truncate"
@@ -81,6 +82,7 @@ export type HvListClassKey =
   | "itemSelector"
   | "icon"
   | "focus"
-  | "link";
+  | "link"
+  | "selectAllSelector";
 
 export default function HvList(props: HvListProps): JSX.Element | null;
