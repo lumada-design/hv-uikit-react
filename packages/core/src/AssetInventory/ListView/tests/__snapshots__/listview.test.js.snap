@@ -647,7 +647,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                               />
                                                               <div
                                                                 class="HvIconBase-root HvIconBase-s"
-                                                                font-size="default"
                                                                 name="Checkbox"
                                                               >
                                                                 <svg
@@ -814,7 +813,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                               />
                                                               <div
                                                                 class="HvIconBase-root HvIconBase-s"
-                                                                font-size="default"
                                                                 name="Checkbox"
                                                               >
                                                                 <svg
@@ -981,7 +979,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                               />
                                                               <div
                                                                 class="HvIconBase-root HvIconBase-s"
-                                                                font-size="default"
                                                                 name="Checkbox"
                                                               >
                                                                 <svg
@@ -1298,7 +1295,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                 />
                                                                 <div
                                                                   class="HvIconBase-root HvIconBase-s"
-                                                                  font-size="default"
                                                                   name="Checkbox"
                                                                 >
                                                                   <svg
@@ -1465,7 +1461,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                 />
                                                                 <div
                                                                   class="HvIconBase-root HvIconBase-s"
-                                                                  font-size="default"
                                                                   name="Checkbox"
                                                                 >
                                                                   <svg
@@ -1632,7 +1627,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                 />
                                                                 <div
                                                                   class="HvIconBase-root HvIconBase-s"
-                                                                  font-size="default"
                                                                   name="Checkbox"
                                                                 >
                                                                   <svg
@@ -2178,7 +2172,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                             />
                                                             <div
                                                               class="HvIconBase-root HvIconBase-s"
-                                                              font-size="default"
                                                               name="Checkbox"
                                                             >
                                                               <svg
@@ -2345,7 +2338,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                             />
                                                             <div
                                                               class="HvIconBase-root HvIconBase-s"
-                                                              font-size="default"
                                                               name="Checkbox"
                                                             >
                                                               <svg
@@ -2512,7 +2504,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                             />
                                                             <div
                                                               class="HvIconBase-root HvIconBase-s"
-                                                              font-size="default"
                                                               name="Checkbox"
                                                             >
                                                               <svg
@@ -2862,7 +2853,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                               />
                                                               <div
                                                                 class="HvIconBase-root HvIconBase-s"
-                                                                font-size="default"
                                                                 name="Checkbox"
                                                               >
                                                                 <svg
@@ -3029,7 +3019,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                               />
                                                               <div
                                                                 class="HvIconBase-root HvIconBase-s"
-                                                                font-size="default"
                                                                 name="Checkbox"
                                                               >
                                                                 <svg
@@ -3196,7 +3185,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                               />
                                                               <div
                                                                 class="HvIconBase-root HvIconBase-s"
-                                                                font-size="default"
                                                                 name="Checkbox"
                                                               >
                                                                 <svg
@@ -3580,7 +3568,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -3747,7 +3734,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -3914,7 +3900,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -4195,7 +4180,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -4362,7 +4346,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -4529,7 +4512,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -4872,11 +4854,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         >
                                                                           <WithStyles(ForwardRef(SwitchBase))
                                                                             checked={false}
-                                                                            checkedIcon={
-                                                                              <CheckboxCheck
-                                                                                fontSize="default"
-                                                                              />
-                                                                            }
+                                                                            checkedIcon={<CheckboxCheck />}
                                                                             className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                                                             classes={
                                                                               Object {
@@ -4888,11 +4866,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             color="default"
                                                                             disableRipple={true}
                                                                             disabled={false}
-                                                                            icon={
-                                                                              <Checkbox
-                                                                                fontSize="default"
-                                                                              />
-                                                                            }
+                                                                            icon={<Checkbox />}
                                                                             id={null}
                                                                             inputProps={
                                                                               Object {
@@ -4910,11 +4884,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           >
                                                                             <ForwardRef(SwitchBase)
                                                                               checked={false}
-                                                                              checkedIcon={
-                                                                                <CheckboxCheck
-                                                                                  fontSize="default"
-                                                                                />
-                                                                              }
+                                                                              checkedIcon={<CheckboxCheck />}
                                                                               className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                                                               classes={
                                                                                 Object {
@@ -4927,11 +4897,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                               color="default"
                                                                               disableRipple={true}
                                                                               disabled={false}
-                                                                              icon={
-                                                                                <Checkbox
-                                                                                  fontSize="default"
-                                                                                />
-                                                                              }
+                                                                              icon={<Checkbox />}
                                                                               id={null}
                                                                               inputProps={
                                                                                 Object {
@@ -5041,11 +5007,8 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                             type="checkbox"
                                                                                             value="1"
                                                                                           />
-                                                                                          <Checkbox
-                                                                                            fontSize="default"
-                                                                                          >
+                                                                                          <Checkbox>
                                                                                             <WithStyles(HvIconBase)
-                                                                                              fontSize="default"
                                                                                               iconSize="S"
                                                                                               name="Checkbox"
                                                                                             >
@@ -5059,13 +5022,11 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                                     "xs": "HvIconBase-xs",
                                                                                                   }
                                                                                                 }
-                                                                                                fontSize="default"
                                                                                                 iconSize="S"
                                                                                                 name="Checkbox"
                                                                                               >
                                                                                                 <div
                                                                                                   className="HvIconBase-root HvIconBase-s"
-                                                                                                  fontSize="default"
                                                                                                   name="Checkbox"
                                                                                                 >
                                                                                                   <svg
@@ -6215,7 +6176,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -6382,7 +6342,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -6549,7 +6508,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -6830,7 +6788,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -6997,7 +6954,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -7164,7 +7120,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -7507,11 +7462,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         >
                                                                           <WithStyles(ForwardRef(SwitchBase))
                                                                             checked={false}
-                                                                            checkedIcon={
-                                                                              <CheckboxCheck
-                                                                                fontSize="default"
-                                                                              />
-                                                                            }
+                                                                            checkedIcon={<CheckboxCheck />}
                                                                             className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                                                             classes={
                                                                               Object {
@@ -7523,11 +7474,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             color="default"
                                                                             disableRipple={true}
                                                                             disabled={false}
-                                                                            icon={
-                                                                              <Checkbox
-                                                                                fontSize="default"
-                                                                              />
-                                                                            }
+                                                                            icon={<Checkbox />}
                                                                             id={null}
                                                                             inputProps={
                                                                               Object {
@@ -7545,11 +7492,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           >
                                                                             <ForwardRef(SwitchBase)
                                                                               checked={false}
-                                                                              checkedIcon={
-                                                                                <CheckboxCheck
-                                                                                  fontSize="default"
-                                                                                />
-                                                                              }
+                                                                              checkedIcon={<CheckboxCheck />}
                                                                               className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                                                               classes={
                                                                                 Object {
@@ -7562,11 +7505,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                               color="default"
                                                                               disableRipple={true}
                                                                               disabled={false}
-                                                                              icon={
-                                                                                <Checkbox
-                                                                                  fontSize="default"
-                                                                                />
-                                                                              }
+                                                                              icon={<Checkbox />}
                                                                               id={null}
                                                                               inputProps={
                                                                                 Object {
@@ -7676,11 +7615,8 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                             type="checkbox"
                                                                                             value="2"
                                                                                           />
-                                                                                          <Checkbox
-                                                                                            fontSize="default"
-                                                                                          >
+                                                                                          <Checkbox>
                                                                                             <WithStyles(HvIconBase)
-                                                                                              fontSize="default"
                                                                                               iconSize="S"
                                                                                               name="Checkbox"
                                                                                             >
@@ -7694,13 +7630,11 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                                     "xs": "HvIconBase-xs",
                                                                                                   }
                                                                                                 }
-                                                                                                fontSize="default"
                                                                                                 iconSize="S"
                                                                                                 name="Checkbox"
                                                                                               >
                                                                                                 <div
                                                                                                   className="HvIconBase-root HvIconBase-s"
-                                                                                                  fontSize="default"
                                                                                                   name="Checkbox"
                                                                                                 >
                                                                                                   <svg
@@ -8850,7 +8784,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -9017,7 +8950,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -9184,7 +9116,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         />
                                                                         <div
                                                                           class="HvIconBase-root HvIconBase-s"
-                                                                          font-size="default"
                                                                           name="Checkbox"
                                                                         >
                                                                           <svg
@@ -9465,7 +9396,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -9632,7 +9562,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -9799,7 +9728,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           />
                                                                           <div
                                                                             class="HvIconBase-root HvIconBase-s"
-                                                                            font-size="default"
                                                                             name="Checkbox"
                                                                           >
                                                                             <svg
@@ -10142,11 +10070,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         >
                                                                           <WithStyles(ForwardRef(SwitchBase))
                                                                             checked={false}
-                                                                            checkedIcon={
-                                                                              <CheckboxCheck
-                                                                                fontSize="default"
-                                                                              />
-                                                                            }
+                                                                            checkedIcon={<CheckboxCheck />}
                                                                             className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                                                             classes={
                                                                               Object {
@@ -10158,11 +10082,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             color="default"
                                                                             disableRipple={true}
                                                                             disabled={false}
-                                                                            icon={
-                                                                              <Checkbox
-                                                                                fontSize="default"
-                                                                              />
-                                                                            }
+                                                                            icon={<Checkbox />}
                                                                             id={null}
                                                                             inputProps={
                                                                               Object {
@@ -10180,11 +10100,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           >
                                                                             <ForwardRef(SwitchBase)
                                                                               checked={false}
-                                                                              checkedIcon={
-                                                                                <CheckboxCheck
-                                                                                  fontSize="default"
-                                                                                />
-                                                                              }
+                                                                              checkedIcon={<CheckboxCheck />}
                                                                               className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                                                               classes={
                                                                                 Object {
@@ -10197,11 +10113,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                               color="default"
                                                                               disableRipple={true}
                                                                               disabled={false}
-                                                                              icon={
-                                                                                <Checkbox
-                                                                                  fontSize="default"
-                                                                                />
-                                                                              }
+                                                                              icon={<Checkbox />}
                                                                               id={null}
                                                                               inputProps={
                                                                                 Object {
@@ -10311,11 +10223,8 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                             type="checkbox"
                                                                                             value="3"
                                                                                           />
-                                                                                          <Checkbox
-                                                                                            fontSize="default"
-                                                                                          >
+                                                                                          <Checkbox>
                                                                                             <WithStyles(HvIconBase)
-                                                                                              fontSize="default"
                                                                                               iconSize="S"
                                                                                               name="Checkbox"
                                                                                             >
@@ -10329,13 +10238,11 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                                     "xs": "HvIconBase-xs",
                                                                                                   }
                                                                                                 }
-                                                                                                fontSize="default"
                                                                                                 iconSize="S"
                                                                                                 name="Checkbox"
                                                                                               >
                                                                                                 <div
                                                                                                   className="HvIconBase-root HvIconBase-s"
-                                                                                                  fontSize="default"
                                                                                                   name="Checkbox"
                                                                                                 >
                                                                                                   <svg

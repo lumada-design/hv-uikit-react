@@ -4,54 +4,54 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
 <WithStyles(ForwardRef)
   title={
     <div>
-      <ForwardRef(WithStyles)
+      <WithStyles(ForwardRef)
         variant="highlightText"
       >
         
-      </ForwardRef(WithStyles)>
+      </WithStyles(ForwardRef)>
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           Status
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div />
-        <ForwardRef(WithStyles)>
+        <WithStyles(ForwardRef)>
           Open
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
       </div>
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           Date
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div />
-        <ForwardRef(WithStyles)>
+        <WithStyles(ForwardRef)>
           12/08/2018
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
       </div>
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           Assignee
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div />
-        <ForwardRef(WithStyles)>
+        <WithStyles(ForwardRef)>
           Management
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
       </div>
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           Approval
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div />
-        <ForwardRef(WithStyles)>
+        <WithStyles(ForwardRef)>
           Not yet requested
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
       </div>
     </div>
   }
@@ -75,54 +75,54 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
     }
     title={
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             Status
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div />
-          <ForwardRef(WithStyles)>
+          <WithStyles(ForwardRef)>
             Open
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         </div>
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             Date
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div />
-          <ForwardRef(WithStyles)>
+          <WithStyles(ForwardRef)>
             12/08/2018
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         </div>
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             Assignee
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div />
-          <ForwardRef(WithStyles)>
+          <WithStyles(ForwardRef)>
             Management
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         </div>
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             Approval
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div />
-          <ForwardRef(WithStyles)>
+          <WithStyles(ForwardRef)>
             Not yet requested
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         </div>
       </div>
     }
@@ -134,9 +134,14 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
           "$$typeof": Symbol(react.forward_ref),
           "propTypes": Object {
             "children": [Function],
+            "disableStrictModeCompat": [Function],
             "in": [Function],
             "onEnter": [Function],
+            "onEntered": [Function],
+            "onEntering": [Function],
             "onExit": [Function],
+            "onExited": [Function],
+            "onExiting": [Function],
             "style": [Function],
             "timeout": [Function],
           },
@@ -158,54 +163,54 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
       placement="top"
       title={
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               Status
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div />
-            <ForwardRef(WithStyles)>
+            <WithStyles(ForwardRef)>
               Open
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           </div>
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               Date
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div />
-            <ForwardRef(WithStyles)>
+            <WithStyles(ForwardRef)>
               12/08/2018
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           </div>
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               Assignee
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div />
-            <ForwardRef(WithStyles)>
+            <WithStyles(ForwardRef)>
               Management
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           </div>
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               Approval
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div />
-            <ForwardRef(WithStyles)>
+            <WithStyles(ForwardRef)>
               Not yet requested
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           </div>
         </div>
       }
@@ -216,9 +221,14 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             "$$typeof": Symbol(react.forward_ref),
             "propTypes": Object {
               "children": [Function],
+              "disableStrictModeCompat": [Function],
               "in": [Function],
               "onEnter": [Function],
+              "onEntered": [Function],
+              "onEntering": [Function],
               "onExit": [Function],
+              "onExited": [Function],
+              "onExiting": [Function],
               "style": [Function],
               "timeout": [Function],
             },
@@ -249,54 +259,54 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
         placement="top"
         title={
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div>
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 variant="highlightText"
               >
                 Status
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
               <div />
-              <ForwardRef(WithStyles)>
+              <WithStyles(ForwardRef)>
                 Open
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             </div>
             <div>
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 variant="highlightText"
               >
                 Date
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
               <div />
-              <ForwardRef(WithStyles)>
+              <WithStyles(ForwardRef)>
                 12/08/2018
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             </div>
             <div>
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 variant="highlightText"
               >
                 Assignee
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
               <div />
-              <ForwardRef(WithStyles)>
+              <WithStyles(ForwardRef)>
                 Management
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             </div>
             <div>
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 variant="highlightText"
               >
                 Approval
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
               <div />
-              <ForwardRef(WithStyles)>
+              <WithStyles(ForwardRef)>
                 Not yet requested
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             </div>
           </div>
         }
@@ -352,32 +362,32 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
 <WithStyles(ForwardRef)
   title={
     <div>
-      <ForwardRef(WithStyles)
+      <WithStyles(ForwardRef)
         variant="highlightText"
       >
         January
-      </ForwardRef(WithStyles)>
+      </WithStyles(ForwardRef)>
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           Sales
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div />
-        <ForwardRef(WithStyles)>
+        <WithStyles(ForwardRef)>
           52,000 units
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
       </div>
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           Profit
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div />
-        <ForwardRef(WithStyles)>
+        <WithStyles(ForwardRef)>
           50%
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
       </div>
     </div>
   }
@@ -401,32 +411,32 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
     }
     title={
       <div>
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           January
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             Sales
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div />
-          <ForwardRef(WithStyles)>
+          <WithStyles(ForwardRef)>
             52,000 units
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         </div>
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             Profit
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div />
-          <ForwardRef(WithStyles)>
+          <WithStyles(ForwardRef)>
             50%
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         </div>
       </div>
     }
@@ -438,9 +448,14 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
           "$$typeof": Symbol(react.forward_ref),
           "propTypes": Object {
             "children": [Function],
+            "disableStrictModeCompat": [Function],
             "in": [Function],
             "onEnter": [Function],
+            "onEntered": [Function],
+            "onEntering": [Function],
             "onExit": [Function],
+            "onExited": [Function],
+            "onExiting": [Function],
             "style": [Function],
             "timeout": [Function],
           },
@@ -462,32 +477,32 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
       placement="top"
       title={
         <div>
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             January
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               Sales
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div />
-            <ForwardRef(WithStyles)>
+            <WithStyles(ForwardRef)>
               52,000 units
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           </div>
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               Profit
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div />
-            <ForwardRef(WithStyles)>
+            <WithStyles(ForwardRef)>
               50%
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           </div>
         </div>
       }
@@ -498,9 +513,14 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             "$$typeof": Symbol(react.forward_ref),
             "propTypes": Object {
               "children": [Function],
+              "disableStrictModeCompat": [Function],
               "in": [Function],
               "onEnter": [Function],
+              "onEntered": [Function],
+              "onEntering": [Function],
               "onExit": [Function],
+              "onExited": [Function],
+              "onExiting": [Function],
               "style": [Function],
               "timeout": [Function],
             },
@@ -531,32 +551,32 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
         placement="top"
         title={
           <div>
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               variant="highlightText"
             >
               January
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
             <div>
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 variant="highlightText"
               >
                 Sales
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
               <div />
-              <ForwardRef(WithStyles)>
+              <WithStyles(ForwardRef)>
                 52,000 units
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             </div>
             <div>
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 variant="highlightText"
               >
                 Profit
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
               <div />
-              <ForwardRef(WithStyles)>
+              <WithStyles(ForwardRef)>
                 50%
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             </div>
           </div>
         }
@@ -611,11 +631,11 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
 exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
 <WithStyles(ForwardRef)
   title={
-    <ForwardRef(WithStyles)
+    <WithStyles(ForwardRef)
       variant="highlightText"
     >
       Grid View
-    </ForwardRef(WithStyles)>
+    </WithStyles(ForwardRef)>
   }
 >
   <ForwardRef
@@ -635,11 +655,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
       }
     }
     title={
-      <ForwardRef(WithStyles)
+      <WithStyles(ForwardRef)
         variant="highlightText"
       >
         Grid View
-      </ForwardRef(WithStyles)>
+      </WithStyles(ForwardRef)>
     }
   >
     <WithStyles(ForwardRef(Tooltip))
@@ -648,9 +668,14 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
           "$$typeof": Symbol(react.forward_ref),
           "propTypes": Object {
             "children": [Function],
+            "disableStrictModeCompat": [Function],
             "in": [Function],
             "onEnter": [Function],
+            "onEntered": [Function],
+            "onEntering": [Function],
             "onExit": [Function],
+            "onExited": [Function],
+            "onExiting": [Function],
             "style": [Function],
             "timeout": [Function],
           },
@@ -671,11 +696,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
       enterDelay={300}
       placement="top"
       title={
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef)
           variant="highlightText"
         >
           Grid View
-        </ForwardRef(WithStyles)>
+        </WithStyles(ForwardRef)>
       }
     >
       <ForwardRef(Tooltip)
@@ -684,9 +709,14 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "propTypes": Object {
               "children": [Function],
+              "disableStrictModeCompat": [Function],
               "in": [Function],
               "onEnter": [Function],
+              "onEntered": [Function],
+              "onEntering": [Function],
               "onExit": [Function],
+              "onExited": [Function],
+              "onExiting": [Function],
               "style": [Function],
               "timeout": [Function],
             },
@@ -716,11 +746,11 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
         enterDelay={300}
         placement="top"
         title={
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef)
             variant="highlightText"
           >
             Grid View
-          </ForwardRef(WithStyles)>
+          </WithStyles(ForwardRef)>
         }
       >
         <button

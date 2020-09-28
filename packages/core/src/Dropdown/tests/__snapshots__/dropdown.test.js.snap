@@ -129,13 +129,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                 expanded={true}
                 onToggle={[Function]}
                 placeholder={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef)
                     className="HvDropdown-placeholder"
                     noWrap={true}
                     variant="normalText"
                   >
                     Select...
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
                 popperProps={Object {}}
                 role="combobox"
@@ -166,13 +166,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                   expanded={true}
                   onToggle={[Function]}
                   placeholder={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef)
                       className="HvDropdown-placeholder"
                       noWrap={true}
                       variant="normalText"
                     >
                       Select...
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                   popperProps={Object {}}
                   role="combobox"
@@ -470,6 +470,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                           role="tooltip"
                           style={
                             Object {
+                              "display": null,
                               "left": 0,
                               "position": "fixed",
                               "top": 0,
@@ -477,11 +478,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                             }
                           }
                         >
-                          <ForwardRef(ClickAwayListener)
+                          <ClickAwayListener
                             onClickAway={[Function]}
                           >
                             <div
+                              onClick={[Function]}
                               onKeyDown={[Function]}
+                              onTouchEnd={[Function]}
                             >
                               <div
                                 className="HvBaseDropdown-inputExtensionOpen"
@@ -753,13 +756,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                               autoFocus={false}
                                                               endAdornment={
                                                                 <React.Fragment>
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(HvAdornment)
                                                                     aria-label="clear button"
                                                                     icon={<CloseXS />}
                                                                     isVisible={false}
                                                                     onClick={[Function]}
                                                                   />
-                                                                  <ForwardRef(WithStyles)
+                                                                  <WithStyles(HvAdornment)
                                                                     icon={<Search />}
                                                                     isVisible={true}
                                                                   />
@@ -814,13 +817,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                 }
                                                                 endAdornment={
                                                                   <React.Fragment>
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(HvAdornment)
                                                                       aria-label="clear button"
                                                                       icon={<CloseXS />}
                                                                       isVisible={false}
                                                                       onClick={[Function]}
                                                                     />
-                                                                    <ForwardRef(WithStyles)
+                                                                    <WithStyles(HvAdornment)
                                                                       icon={<Search />}
                                                                       isVisible={true}
                                                                     />
@@ -872,13 +875,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                     disabled={false}
                                                                     endAdornment={
                                                                       <React.Fragment>
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(HvAdornment)
                                                                           aria-label="clear button"
                                                                           icon={<CloseXS />}
                                                                           isVisible={false}
                                                                           onClick={[Function]}
                                                                         />
-                                                                        <ForwardRef(WithStyles)
+                                                                        <WithStyles(HvAdornment)
                                                                           icon={<Search />}
                                                                           isVisible={true}
                                                                         />
@@ -952,13 +955,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                       disabled={false}
                                                                       endAdornment={
                                                                         <React.Fragment>
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(HvAdornment)
                                                                             aria-label="clear button"
                                                                             icon={<CloseXS />}
                                                                             isVisible={false}
                                                                             onClick={[Function]}
                                                                           />
-                                                                          <ForwardRef(WithStyles)
+                                                                          <WithStyles(HvAdornment)
                                                                             icon={<Search />}
                                                                             isVisible={true}
                                                                           />
@@ -1031,13 +1034,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                         disabled={false}
                                                                         endAdornment={
                                                                           <React.Fragment>
-                                                                            <ForwardRef(WithStyles)
+                                                                            <WithStyles(HvAdornment)
                                                                               aria-label="clear button"
                                                                               icon={<CloseXS />}
                                                                               isVisible={false}
                                                                               onClick={[Function]}
                                                                             />
-                                                                            <ForwardRef(WithStyles)
+                                                                            <WithStyles(HvAdornment)
                                                                               icon={<Search />}
                                                                               isVisible={true}
                                                                             />
@@ -1117,13 +1120,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                           disabled={false}
                                                                           endAdornment={
                                                                             <React.Fragment>
-                                                                              <ForwardRef(WithStyles)
+                                                                              <WithStyles(HvAdornment)
                                                                                 aria-label="clear button"
                                                                                 icon={<CloseXS />}
                                                                                 isVisible={false}
                                                                                 onClick={[Function]}
                                                                               />
-                                                                              <ForwardRef(WithStyles)
+                                                                              <WithStyles(HvAdornment)
                                                                                 icon={<Search />}
                                                                                 isVisible={true}
                                                                               />
@@ -2217,7 +2220,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                 </WithStyles(List)>
                               </div>
                             </div>
-                          </ForwardRef(ClickAwayListener)>
+                          </ClickAwayListener>
                         </div>
                       </Portal>
                     </ForwardRef(Portal)>
@@ -2371,7 +2374,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                 id="test-dropdown-dropdown"
                 onToggle={[Function]}
                 placeholder={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(ForwardRef)
                     className="HvDropdown-placeholder HvDropdown-selectionDisabled"
                     noWrap={true}
                     variant="normalText"
@@ -2380,7 +2383,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                       0
                     </b>
                      / 3
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
                 popperProps={Object {}}
                 role="combobox"
@@ -2412,7 +2415,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                   id="test-dropdown-dropdown"
                   onToggle={[Function]}
                   placeholder={
-                    <ForwardRef(WithStyles)
+                    <WithStyles(ForwardRef)
                       className="HvDropdown-placeholder HvDropdown-selectionDisabled"
                       noWrap={true}
                       variant="normalText"
@@ -2421,7 +2424,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                         0
                       </b>
                        / 3
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                   popperProps={Object {}}
                   role="combobox"

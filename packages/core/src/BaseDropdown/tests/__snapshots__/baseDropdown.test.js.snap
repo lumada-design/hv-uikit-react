@@ -570,7 +570,8 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
             >
               <div
                 role="tooltip"
-                style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                style="position: absolute; top: 0px; left: 0px; z-index: 1500;"
+                x-placement="bottom-start"
               >
                 <div>
                   <div
@@ -589,6 +590,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
             role="tooltip"
             style={
               Object {
+                "display": null,
                 "left": 0,
                 "position": "fixed",
                 "top": 0,
@@ -596,11 +598,13 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
               }
             }
           >
-            <ForwardRef(ClickAwayListener)
+            <ClickAwayListener
               onClickAway={[Function]}
             >
               <div
+                onClick={[Function]}
                 onKeyDown={[Function]}
+                onTouchEnd={[Function]}
               >
                 <div
                   className="HvBaseDropdown-inputExtensionOpen"
@@ -615,7 +619,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
                   id="hvbasedropdown2-children-container"
                 />
               </div>
-            </ForwardRef(ClickAwayListener)>
+            </ClickAwayListener>
           </div>
         </Portal>
       </ForwardRef(Portal)>

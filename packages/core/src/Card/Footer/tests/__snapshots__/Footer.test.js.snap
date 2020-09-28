@@ -313,7 +313,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 }
               }
               component={
-                <ForwardRef(WithStyles)
+                <WithStyles(HvButton)
                   aria-label="Dropdown menu"
                   category="ghost"
                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -322,7 +322,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   id="id-menu-icon-button"
                 >
                   <MoreOptionsVertical />
-                </ForwardRef(WithStyles)>
+                </WithStyles(HvButton)>
               }
               disablePortal={false}
               disabled={false}
@@ -354,7 +354,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   }
                 }
                 component={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(HvButton)
                     aria-label="Dropdown menu"
                     category="ghost"
                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -363,7 +363,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     id="id-menu-icon-button"
                   >
                     <MoreOptionsVertical />
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(HvButton)>
                 }
                 disablePortal={false}
                 disabled={false}
@@ -773,7 +773,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 }
               }
               component={
-                <ForwardRef(WithStyles)
+                <WithStyles(HvButton)
                   aria-label="Dropdown menu"
                   category="ghost"
                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -782,7 +782,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   id="id-menu-icon-button"
                 >
                   <MoreOptionsVertical />
-                </ForwardRef(WithStyles)>
+                </WithStyles(HvButton)>
               }
               disablePortal={false}
               disabled={false}
@@ -814,7 +814,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                   }
                 }
                 component={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(HvButton)
                     aria-label="Dropdown menu"
                     category="ghost"
                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -823,7 +823,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     id="id-menu-icon-button"
                   >
                     <MoreOptionsVertical />
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(HvButton)>
                 }
                 disablePortal={false}
                 disabled={false}
@@ -1527,7 +1527,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 }
               }
               component={
-                <ForwardRef(WithStyles)
+                <WithStyles(HvButton)
                   aria-label="Dropdown menu"
                   category="ghost"
                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1536,7 +1536,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   id="id-menu-icon-button"
                 >
                   <MoreOptionsVertical />
-                </ForwardRef(WithStyles)>
+                </WithStyles(HvButton)>
               }
               disablePortal={false}
               disabled={false}
@@ -1568,7 +1568,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   }
                 }
                 component={
-                  <ForwardRef(WithStyles)
+                  <WithStyles(HvButton)
                     aria-label="Dropdown menu"
                     category="ghost"
                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1577,7 +1577,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     id="id-menu-icon-button"
                   >
                     <MoreOptionsVertical />
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(HvButton)>
                 }
                 disablePortal={false}
                 disabled={false}

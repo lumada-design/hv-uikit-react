@@ -155,11 +155,7 @@ Array [
                       >
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={false}
-                          checkedIcon={
-                            <CheckboxCheck
-                              fontSize="default"
-                            />
-                          }
+                          checkedIcon={<CheckboxCheck />}
                           className="HvCheckBox-checkBox HvBaseCheckbox-root"
                           classes={
                             Object {
@@ -171,11 +167,7 @@ Array [
                           color="default"
                           disableRipple={true}
                           disabled={false}
-                          icon={
-                            <Checkbox
-                              fontSize="default"
-                            />
-                          }
+                          icon={<Checkbox />}
                           id="hvcheckbox1-input"
                           inputProps={
                             Object {
@@ -192,11 +184,7 @@ Array [
                         >
                           <ForwardRef(SwitchBase)
                             checked={false}
-                            checkedIcon={
-                              <CheckboxCheck
-                                fontSize="default"
-                              />
-                            }
+                            checkedIcon={<CheckboxCheck />}
                             className="HvCheckBox-checkBox HvBaseCheckbox-root"
                             classes={
                               Object {
@@ -209,11 +197,7 @@ Array [
                             color="default"
                             disableRipple={true}
                             disabled={false}
-                            icon={
-                              <Checkbox
-                                fontSize="default"
-                              />
-                            }
+                            icon={<Checkbox />}
                             id="hvcheckbox1-input"
                             inputProps={
                               Object {
@@ -321,11 +305,8 @@ Array [
                                           type="checkbox"
                                           value="on"
                                         />
-                                        <Checkbox
-                                          fontSize="default"
-                                        >
+                                        <Checkbox>
                                           <WithStyles(HvIconBase)
-                                            fontSize="default"
                                             iconSize="S"
                                             name="Checkbox"
                                           >
@@ -339,13 +320,11 @@ Array [
                                                   "xs": "HvIconBase-xs",
                                                 }
                                               }
-                                              fontSize="default"
                                               iconSize="S"
                                               name="Checkbox"
                                             >
                                               <div
                                                 className="HvIconBase-root HvIconBase-s"
-                                                fontSize="default"
                                                 name="Checkbox"
                                               >
                                                 <svg
@@ -614,11 +593,7 @@ Array [
                       >
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={true}
-                          checkedIcon={
-                            <CheckboxCheck
-                              fontSize="default"
-                            />
-                          }
+                          checkedIcon={<CheckboxCheck />}
                           className="HvCheckBox-checkBox HvBaseCheckbox-root"
                           classes={
                             Object {
@@ -630,11 +605,7 @@ Array [
                           color="default"
                           disableRipple={true}
                           disabled={false}
-                          icon={
-                            <Checkbox
-                              fontSize="default"
-                            />
-                          }
+                          icon={<Checkbox />}
                           id="hvcheckbox3-input"
                           inputProps={
                             Object {
@@ -651,11 +622,7 @@ Array [
                         >
                           <ForwardRef(SwitchBase)
                             checked={true}
-                            checkedIcon={
-                              <CheckboxCheck
-                                fontSize="default"
-                              />
-                            }
+                            checkedIcon={<CheckboxCheck />}
                             className="HvCheckBox-checkBox HvBaseCheckbox-root"
                             classes={
                               Object {
@@ -668,11 +635,7 @@ Array [
                             color="default"
                             disableRipple={true}
                             disabled={false}
-                            icon={
-                              <Checkbox
-                                fontSize="default"
-                              />
-                            }
+                            icon={<Checkbox />}
                             id="hvcheckbox3-input"
                             inputProps={
                               Object {
@@ -780,11 +743,8 @@ Array [
                                           type="checkbox"
                                           value="on"
                                         />
-                                        <CheckboxCheck
-                                          fontSize="default"
-                                        >
+                                        <CheckboxCheck>
                                           <WithStyles(HvIconBase)
-                                            fontSize="default"
                                             iconSize="S"
                                             name="CheckboxCheck"
                                           >
@@ -798,13 +758,11 @@ Array [
                                                   "xs": "HvIconBase-xs",
                                                 }
                                               }
-                                              fontSize="default"
                                               iconSize="S"
                                               name="CheckboxCheck"
                                             >
                                               <div
                                                 className="HvIconBase-root HvIconBase-s"
-                                                fontSize="default"
                                                 name="CheckboxCheck"
                                               >
                                                 <svg
@@ -1078,11 +1036,7 @@ Array [
                       >
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={false}
-                          checkedIcon={
-                            <CheckboxPartial
-                              fontSize="default"
-                            />
-                          }
+                          checkedIcon={<CheckboxPartial />}
                           className="HvCheckBox-checkBox HvBaseCheckbox-root"
                           classes={
                             Object {
@@ -1094,11 +1048,7 @@ Array [
                           color="default"
                           disableRipple={true}
                           disabled={false}
-                          icon={
-                            <CheckboxPartial
-                              fontSize="default"
-                            />
-                          }
+                          icon={<CheckboxPartial />}
                           id="hvcheckbox5-input"
                           inputProps={
                             Object {
@@ -1115,11 +1065,7 @@ Array [
                         >
                           <ForwardRef(SwitchBase)
                             checked={false}
-                            checkedIcon={
-                              <CheckboxPartial
-                                fontSize="default"
-                              />
-                            }
+                            checkedIcon={<CheckboxPartial />}
                             className="HvCheckBox-checkBox HvBaseCheckbox-root"
                             classes={
                               Object {
@@ -1132,11 +1078,7 @@ Array [
                             color="default"
                             disableRipple={true}
                             disabled={false}
-                            icon={
-                              <CheckboxPartial
-                                fontSize="default"
-                              />
-                            }
+                            icon={<CheckboxPartial />}
                             id="hvcheckbox5-input"
                             inputProps={
                               Object {
@@ -1244,11 +1186,8 @@ Array [
                                           type="checkbox"
                                           value="on"
                                         />
-                                        <CheckboxPartial
-                                          fontSize="default"
-                                        >
+                                        <CheckboxPartial>
                                           <WithStyles(HvIconBase)
-                                            fontSize="default"
                                             iconSize="S"
                                             name="CheckboxPartial"
                                           >
@@ -1262,13 +1201,11 @@ Array [
                                                   "xs": "HvIconBase-xs",
                                                 }
                                               }
-                                              fontSize="default"
                                               iconSize="S"
                                               name="CheckboxPartial"
                                             >
                                               <div
                                                 className="HvIconBase-root HvIconBase-s"
-                                                fontSize="default"
                                                 name="CheckboxPartial"
                                               >
                                                 <svg

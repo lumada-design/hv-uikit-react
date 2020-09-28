@@ -88,9 +88,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Unmark as favorite
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -119,9 +119,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Unmark as favorite
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -130,9 +130,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -162,9 +167,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Unmark as favorite
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -173,9 +178,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -214,9 +224,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Unmark as favorite
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -233,6 +243,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -424,9 +435,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Bookmark
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -455,9 +466,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Bookmark
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -466,9 +477,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -498,9 +514,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Bookmark
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -509,9 +525,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -550,9 +571,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Bookmark
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -569,6 +590,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -760,9 +782,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Go backwards
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -791,9 +813,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Go backwards
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -802,9 +824,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -834,9 +861,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Go backwards
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -845,9 +872,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -886,9 +918,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Go backwards
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -905,6 +937,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -1096,9 +1129,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Go up
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -1127,9 +1160,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Go up
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -1138,9 +1171,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -1170,9 +1208,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Go up
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -1181,9 +1219,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -1222,9 +1265,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Go up
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -1241,6 +1284,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -1422,9 +1466,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Go down
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -1453,9 +1497,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Go down
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -1464,9 +1508,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -1496,9 +1545,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Go down
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -1507,9 +1556,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -1548,9 +1602,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Go down
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -1567,6 +1621,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -1748,9 +1803,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Go forward
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -1779,9 +1834,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Go forward
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -1790,9 +1845,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -1822,9 +1882,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Go forward
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -1833,9 +1893,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -1874,9 +1939,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Go forward
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -1893,6 +1958,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -2074,9 +2140,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Like
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -2105,9 +2171,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Like
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -2116,9 +2182,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -2148,9 +2219,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Like
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -2159,9 +2230,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -2200,9 +2276,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Like
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -2219,6 +2295,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -2400,9 +2477,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Dislike
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -2431,9 +2508,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Dislike
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -2442,9 +2519,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -2474,9 +2556,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Dislike
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -2485,9 +2567,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -2526,9 +2613,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Dislike
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -2545,6 +2632,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -2726,9 +2814,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Turn on
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -2757,9 +2845,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Turn on
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -2768,9 +2856,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -2800,9 +2893,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Turn on
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -2811,9 +2904,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -2852,9 +2950,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Turn on
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -2871,6 +2969,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
@@ -3052,9 +3151,9 @@ Array [
                 onMouseDown={[Function]}
                 selected={false}
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Lock
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <ForwardRef
@@ -3083,9 +3182,9 @@ Array [
                   onMouseDown={[Function]}
                   selected={false}
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Lock
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <WithStyles(ForwardRef(Tooltip))
@@ -3094,9 +3193,14 @@ Array [
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -3126,9 +3230,9 @@ Array [
                     placement="top"
                     selected={false}
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Lock
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <ForwardRef(Tooltip)
@@ -3137,9 +3241,14 @@ Array [
                           "$$typeof": Symbol(react.forward_ref),
                           "propTypes": Object {
                             "children": [Function],
+                            "disableStrictModeCompat": [Function],
                             "in": [Function],
                             "onEnter": [Function],
+                            "onEntered": [Function],
+                            "onEntering": [Function],
                             "onExit": [Function],
+                            "onExited": [Function],
+                            "onExiting": [Function],
                             "style": [Function],
                             "timeout": [Function],
                           },
@@ -3178,9 +3287,9 @@ Array [
                       placement="top"
                       selected={false}
                       title={
-                        <ForwardRef(WithStyles)>
+                        <WithStyles(ForwardRef)>
                           Lock
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                     >
                       <button
@@ -3197,6 +3306,7 @@ Array [
                         onMouseDown={[Function]}
                         onMouseLeave={[Function]}
                         onMouseOver={[Function]}
+                        onTouchStart={[Function]}
                         selected={false}
                         title={null}
                         type="button"
