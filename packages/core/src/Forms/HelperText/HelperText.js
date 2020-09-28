@@ -11,7 +11,7 @@ import styles from "./styles";
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
  */
-const HvHelperText = props => {
+const HvHelperText = (props) => {
   const {
     children,
     notification = "",
@@ -36,7 +36,7 @@ const HvHelperText = props => {
           [classes.showText]: !isVisible,
           [classes.helperDisabled]: localDisabled,
           [classes.helperText]: !localDisabled,
-          [classes.topGutter]: !disableGutter
+          [classes.topGutter]: !disableGutter,
         })}
         {...others}
       >
@@ -49,7 +49,7 @@ const HvHelperText = props => {
           [classes.showText]: isVisible,
           [classes.helperDisabled]: localDisabled,
           [classes.helperText]: !localDisabled,
-          [classes.topGutter]: !disableGutter
+          [classes.topGutter]: !disableGutter,
         })}
         aria-live="polite"
         aria-atomic="true"
@@ -98,7 +98,7 @@ HvHelperText.propTypes = {
     /**
      * IE11 specific styling.
      */
-    "@global": PropTypes.string
+    "@global": PropTypes.string,
   }).isRequired,
   /**
    * The text to replace the description to shown an alert to the user.
@@ -111,7 +111,7 @@ HvHelperText.propTypes = {
   /**
    * If ´true´ the text won't include a top gutter.
    */
-  disableGutter: PropTypes.bool
+  disableGutter: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvHelperText" })(HvHelperText);

@@ -17,7 +17,7 @@ const Navigation = ({
   onTextClick,
   navigationText,
   isPreviousEnabled,
-  isNextEnabled
+  isNextEnabled,
 }) => {
   const onkeyDownHandler = (event, funcAction) => {
     if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space)) {
@@ -32,7 +32,7 @@ const Navigation = ({
         id={setId(id, "left")}
         className={`${classes.icon} ${isPreviousEnabled ? "" : classes.disabled}`}
         onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
-        onKeyDown={event =>
+        onKeyDown={(event) =>
           isNextEnabled ? onkeyDownHandler(event, onNavigatePrevious) : undefined
         }
         tabIndex={0}
@@ -43,7 +43,7 @@ const Navigation = ({
         className={`${typeof onTextClick === "function" ? classes.text : classes.textWithoutHover}`}
         role="presentation"
         onClick={onTextClick}
-        onKeyDown={onTextClick && (event => onkeyDownHandler(event, onTextClick))}
+        onKeyDown={onTextClick && ((event) => onkeyDownHandler(event, onTextClick))}
         tabIndex={onTextClick ? 0 : -1}
       >
         <HvTypography variant="normalText">{navigationText}</HvTypography>
@@ -53,7 +53,7 @@ const Navigation = ({
         id={setId(id, "right")}
         className={`${classes.icon} ${isNextEnabled ? "" : classes.disabled}`}
         onClick={isNextEnabled ? onNavigateNext : undefined}
-        onKeyDown={event => (isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined)}
+        onKeyDown={(event) => (isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined)}
         tabIndex={0}
       />
     </div>
@@ -92,7 +92,7 @@ Navigation.propTypes = {
   /**
    * Flag stating if the next button should be enabled or disabled.
    */
-  isNextEnabled: PropTypes.bool
+  isNextEnabled: PropTypes.bool,
 };
 
 Navigation.defaultProps = {
@@ -101,7 +101,7 @@ Navigation.defaultProps = {
   onTextClick: undefined,
   navigationText: "n/a",
   isPreviousEnabled: true,
-  isNextEnabled: true
+  isNextEnabled: true,
 };
 
 export default withStyles(styles, { name: "HvDatePickerNavigation" })(Navigation);

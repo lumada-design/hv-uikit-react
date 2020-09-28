@@ -10,7 +10,7 @@ import styles from "./styles";
 /**
  * The FormElement is a component used to contain and control components capable of receiving data.
  */
-const HvFormElement = props => {
+const HvFormElement = (props) => {
   const {
     id,
     name,
@@ -27,7 +27,7 @@ const HvFormElement = props => {
     "HvHelperText",
     "HvLabel",
     "HvSuggestions",
-    "HvBaseInput"
+    "HvBaseInput",
   ]);
   const contextValue = {
     elementId: id,
@@ -35,7 +35,7 @@ const HvFormElement = props => {
     elementStatus: status,
     elementValue: value,
     elementDisabled: disabled,
-    descriptors
+    descriptors,
   };
 
   return (
@@ -65,7 +65,7 @@ HvFormElement.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Components that will receive the form context values.
@@ -87,7 +87,7 @@ HvFormElement.propTypes = {
    * If `true` the form element and all of it's children are disabled which blocks interactions.
    * this value will be propagated to the children through the context.
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvFormElement" })(withId(HvFormElement));

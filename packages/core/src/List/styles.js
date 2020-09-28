@@ -1,36 +1,36 @@
-const selected = theme => ({
+const selected = (theme) => ({
   background: theme.hv.palette.accent.acce1,
   color: theme.hv.palette.atmosphere.atmo1,
   "& *": {
     background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1
-  }
+    color: theme.hv.palette.atmosphere.atmo1,
+  },
 });
 
-const hover = theme => ({
+const hover = (theme) => ({
   background: theme.hv.palette.atmosphere.atmo4,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
-  }
+    background: theme.hv.palette.atmosphere.atmo4,
+  },
 });
 
-const hoverActive = theme => ({
+const hoverActive = (theme) => ({
   ...selected(theme),
   "& svg *.color0": {
-    fill: theme.hv.palette.atmosphere.atmo1
-  }
+    fill: theme.hv.palette.atmosphere.atmo1,
+  },
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {},
   focus: {
-    ...hover(theme)
+    ...hover(theme),
   },
   list: {
     display: "block",
     padding: 0,
     margin: 0,
-    marginTop: 2
+    marginTop: 2,
   },
   listItem: {
     display: "flex",
@@ -42,59 +42,59 @@ const styles = theme => ({
     "&:not($disabled):not($selected):hover": hover(theme),
     "&:not($disabled):not($selector):hover:active": hoverActive(theme),
     "&:not(:last-child)": {
-      marginBottom: "8px"
+      marginBottom: "8px",
     },
     "&$condensed": {
-      marginBottom: 0
-    }
+      marginBottom: 0,
+    },
   },
   condensed: {},
   selector: {},
   selectorContainer: {
-    width: "100%"
+    width: "100%",
   },
   selected: selected(theme),
   selectAll: {},
   disabled: {
     cursor: "not-allowed",
     "& *": {
-      cursor: "not-allowed"
-    }
+      cursor: "not-allowed",
+    },
   },
   textDisabled: {
-    ...theme.hv.typography.placeholderText
+    ...theme.hv.typography.placeholderText,
   },
   label: {
-    padding: `0 ${theme.hv.spacing.xs}px`
+    padding: `0 ${theme.hv.spacing.xs}px`,
   },
   labelIconLeftPadding: {
-    paddingLeft: 0
+    paddingLeft: 0,
   },
   noIconLeftPadding: {
-    paddingLeft: `${theme.hv.spacing.md}px`
+    paddingLeft: `${theme.hv.spacing.md}px`,
   },
   truncate: {
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
   },
   box: {
     width: "32px",
     height: "32px",
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
   icon: {
     height: "30px",
     "& svg": {
       boxShadow: "none !important",
-      outline: "none !important"
-    }
+      outline: "none !important",
+    },
   },
   link: {
     "&:focus": {
-      boxShadow: "unset !important"
-    }
-  }
+      boxShadow: "unset !important",
+    },
+  },
 });
 
 export default styles;

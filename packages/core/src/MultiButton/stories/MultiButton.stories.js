@@ -6,9 +6,9 @@ export default {
   title: "Components/Multi Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",
   },
-  component: HvMultiButton
+  component: HvMultiButton,
 };
 
 export const Main = () => (
@@ -18,7 +18,7 @@ export const Main = () => (
       style={{ margin: "10px", width: "210px" }}
       buttons={[
         { id: "mixed_map", value: "Map", icon: <Map />, selected: true },
-        { id: "mixed_satellite", value: "Satellite", icon: <LocationPin /> }
+        { id: "mixed_satellite", value: "Satellite", icon: <LocationPin /> },
       ]}
     />
     <HvMultiButton
@@ -26,7 +26,7 @@ export const Main = () => (
       style={{ margin: "10px", width: "64px" }}
       buttons={[
         { id: "icon_map", icon: <Map />, selected: true, "aria-label": "Map" },
-        { id: "icon_satellite", icon: <LocationPin />, "aria-label": "Satellite" }
+        { id: "icon_satellite", icon: <LocationPin />, "aria-label": "Satellite" },
       ]}
     />
   </div>
@@ -38,7 +38,7 @@ export const OnlyLabels = () => (
     style={{ width: "210px" }}
     buttons={[
       { id: "map", value: "Map", selected: true },
-      { id: "satellite", value: "Satellite" }
+      { id: "satellite", value: "Satellite" },
     ]}
   />
 );
@@ -50,7 +50,7 @@ export const OnlyIcons = () => (
     style={{ width: "64px" }}
     buttons={[
       { id: "map", value: "Map", icon: <Map />, selected: true },
-      { id: "location", value: "Location", icon: <LocationPin /> }
+      { id: "location", value: "Location", icon: <LocationPin /> },
     ]}
   />
 );
@@ -67,7 +67,7 @@ export const MultipleSelection = () => (
       { id: "thursday", value: "T", selected: true },
       { id: "friday", value: "F" },
       { id: "saturday", value: "S", selected: true },
-      { id: "sunday", value: "S" }
+      { id: "sunday", value: "S" },
     ]}
   />
 );
@@ -85,7 +85,7 @@ export const VerticalOrientation = () => (
         { id: "map1", value: "Map", icon: <Map /> },
         { id: "location1", value: "Location", icon: <LocationPin /> },
         { id: "map2", value: "Map", icon: <Map /> },
-        { id: "location2", value: "Location", icon: <LocationPin /> }
+        { id: "location2", value: "Location", icon: <LocationPin /> },
       ]}
     />
     <HvMultiButton
@@ -99,7 +99,7 @@ export const VerticalOrientation = () => (
         { id: "map11", icon: <Map />, value: "Map 1" },
         { id: "location11", icon: <LocationPin />, value: "Location 1" },
         { id: "map12", icon: <Map />, value: "Map 2" },
-        { id: "location12", icon: <LocationPin />, value: "Location 2" }
+        { id: "location12", icon: <LocationPin />, value: "Location 2" },
       ]}
     />
   </div>
@@ -108,9 +108,9 @@ export const VerticalOrientation = () => (
 VerticalOrientation.story = {
   parameters: {
     docs: {
-      storyDescription: "MultiButton combinations with vertical orientation and multiple selection"
-    }
-  }
+      storyDescription: "MultiButton combinations with vertical orientation and multiple selection",
+    },
+  },
 };
 
 export const EnforcedSelection = () => (
@@ -122,7 +122,7 @@ export const EnforcedSelection = () => (
         { id: "map", value: "Map", icon: <Map />, selected: true, enforced: true },
         { id: "satellite", value: "Satellite", icon: <LocationPin /> },
         { id: "map1", value: "Chart", icon: <Map />, selected: true },
-        { id: "satellite1", value: "Place", icon: <LocationPin /> }
+        { id: "satellite1", value: "Place", icon: <LocationPin /> },
       ]}
     />
   </div>
@@ -132,9 +132,9 @@ EnforcedSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        'MultiButton element set as enforced cannot be toggled - In this case "Map" cannot be toggled on/off'
-    }
-  }
+        'MultiButton element set as enforced cannot be toggled - In this case "Map" cannot be toggled on/off',
+    },
+  },
 };
 
 export const MinimumSelection = () => (
@@ -149,7 +149,7 @@ export const MinimumSelection = () => (
         { id: "map1", value: "Chart", icon: <Map />, selected: true },
         { id: "satellite1", value: "Location 1", icon: <LocationPin /> },
         { id: "satellite2", value: "Location 2", icon: <LocationPin /> },
-        { id: "satellite3", value: "Location 3", icon: <LocationPin /> }
+        { id: "satellite3", value: "Location 3", icon: <LocationPin /> },
       ]}
     />
   </div>
@@ -159,9 +159,9 @@ MinimumSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Specify a number of minimum elements that must be active - in this case a minimum of 2"
-    }
-  }
+        "Specify a number of minimum elements that must be active - in this case a minimum of 2",
+    },
+  },
 };
 
 export const MaximumSelection = () => (
@@ -176,7 +176,7 @@ export const MaximumSelection = () => (
         { id: "map1", value: "Chart", icon: <Map /> },
         { id: "satellite1", value: "Location 1", icon: <LocationPin /> },
         { id: "satellite2", value: "Location 2", icon: <LocationPin /> },
-        { id: "satellite3", value: "Location 3", icon: <LocationPin /> }
+        { id: "satellite3", value: "Location 3", icon: <LocationPin /> },
       ]}
     />
   </div>
@@ -186,28 +186,28 @@ MaximumSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Specify a number of maximum elements that can be selected - in this case a maximum of 2"
-    }
-  }
+        "Specify a number of maximum elements that can be selected - in this case a maximum of 2",
+    },
+  },
 };
 
 export const DynamicContent = () => {
   const btnStyle = {
     width: "120px",
     height: "32px",
-    margin: "0 10px 30px 0"
+    margin: "0 10px 30px 0",
   };
 
   const buttons1 = [
     { id: "map", value: "Map", icon: <Map />, selected: true, enforced: true },
     { id: "satellite", value: "Satellite", icon: <LocationPin /> },
     { id: "map1", value: "Chart", icon: <Map />, selected: true },
-    { id: "satellite1", value: "Place", icon: <LocationPin /> }
+    { id: "satellite1", value: "Place", icon: <LocationPin /> },
   ];
 
   const buttons2 = [
     { id: "f1", value: "F1" },
-    { id: "f2", value: "F2", icon: <LocationPin /> }
+    { id: "f2", value: "F2", icon: <LocationPin /> },
   ];
 
   function MultiButtonDynamic() {
@@ -234,7 +234,7 @@ export const DynamicContent = () => {
 DynamicContent.story = {
   parameters: {
     docs: {
-      storyDescription: "Changes MultiButton properties, triggered by an external agent"
-    }
-  }
+      storyDescription: "Changes MultiButton properties, triggered by an external agent",
+    },
+  },
 };

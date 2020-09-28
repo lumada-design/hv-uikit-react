@@ -21,7 +21,7 @@ import {
   makeUTCDate,
   makeUTCToday,
   UTCToLocalDate,
-  zeroPad
+  zeroPad,
 } from "../utils";
 
 /* eslint-disable no-console */
@@ -227,14 +227,14 @@ describe("Calendar utils - getPreviousMonth", () => {
     for (let iMonth = 2; iMonth <= 12; iMonth += 1) {
       expect(getPreviousMonth(iMonth, 2000)).toEqual({
         month: iMonth - 1,
-        year: 2000
+        year: 2000,
       });
     }
   });
   it("should return month 12 and the previous year when the month is 1", () => {
     expect(getPreviousMonth(1, 2000)).toEqual({
       month: 12,
-      year: 1999
+      year: 1999,
     });
   });
 });
@@ -244,14 +244,14 @@ describe("Calendar utils - getNextMonth", () => {
     for (let iMonth = 1; iMonth <= 11; iMonth += 1) {
       expect(getNextMonth(iMonth, 2000)).toEqual({
         month: iMonth + 1,
-        year: 2000
+        year: 2000,
       });
     }
   });
   it("should return month 1 and the next year when the month is 12", () => {
     expect(getNextMonth(12, 2000)).toEqual({
       month: 1,
-      year: 2001
+      year: 2001,
     });
   });
 });
@@ -292,7 +292,7 @@ describe("Calendar utils - createDatesArray", () => {
     for (let iMonth = 1; iMonth <= 12; iMonth += 1) {
       datesArray = createDatesArray(iMonth, year);
       const currentMonthDates = datesArray.filter(
-        date => date.getUTCMonth() + 1 === iMonth && date.getUTCFullYear() === year
+        (date) => date.getUTCMonth() + 1 === iMonth && date.getUTCFullYear() === year
       );
       const monthDays = getMonthDays(iMonth, year);
 
@@ -305,7 +305,7 @@ describe("Calendar utils - createDatesArray", () => {
     const previousMonthDays = getMonthFirstDay(1, 2000);
 
     const previousMonthDates = datesArray.filter(
-      date => date.getUTCMonth() + 1 === 12 && date.getUTCFullYear() === 1999
+      (date) => date.getUTCMonth() + 1 === 12 && date.getUTCFullYear() === 1999
     );
     expect(previousMonthDates.length).toBe(previousMonthDays);
   });
@@ -314,13 +314,13 @@ describe("Calendar utils - createDatesArray", () => {
     const datesArray = createDatesArray(1, 2000);
 
     const previousMonthDates = datesArray.filter(
-      date => date.getUTCMonth() + 1 === 12 && date.getUTCFullYear() === 1999
+      (date) => date.getUTCMonth() + 1 === 12 && date.getUTCFullYear() === 1999
     );
     const currentMonthDates = datesArray.filter(
-      date => date.getUTCMonth() + 1 === 1 && date.getUTCFullYear() === 2000
+      (date) => date.getUTCMonth() + 1 === 1 && date.getUTCFullYear() === 2000
     );
     const nextMonthDates = datesArray.filter(
-      date => date.getUTCMonth() + 1 === 2 && date.getUTCFullYear() === 2000
+      (date) => date.getUTCMonth() + 1 === 2 && date.getUTCFullYear() === 2000
     );
 
     const totalAmountOfDates =

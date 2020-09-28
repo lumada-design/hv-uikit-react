@@ -13,7 +13,7 @@ describe("Linechart", () => {
   const trace1 = {
     x: [2300, 1000, 8500],
     y: ["January", "February", "March"],
-    name: "Sales Target"
+    name: "Sales Target",
   };
 
   const data = [trace1];
@@ -49,7 +49,7 @@ describe("Linechart", () => {
     const traceTest = {
       x: [2300, 1000, 8500],
       y: ["January", "February", "March"],
-      name: "Sales Target"
+      name: "Sales Target",
     };
 
     const overwrittenData = applyDataDefaults([traceTest], "area");
@@ -63,7 +63,7 @@ describe("Linechart", () => {
     const traceTest = {
       x: [2300, 1000, 8500],
       y: ["January", "February", "March"],
-      name: "Sales Target"
+      name: "Sales Target",
     };
     const overwrittenData = applyDataDefaults([traceTest], "line");
     expect(overwrittenData[0].mode).toBe("lines");
@@ -75,7 +75,7 @@ describe("Linechart", () => {
     const traceTest = {
       x: [2300, 1000, 8500],
       y: ["January", "February", "March"],
-      name: "Sales Target"
+      name: "Sales Target",
     };
     const overwrittenData = applyDataDefaults([traceTest], "stack");
     expect(overwrittenData[0].mode).toBe("lines");

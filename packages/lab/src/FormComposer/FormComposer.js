@@ -15,7 +15,7 @@ class HvFormComposer extends React.Component {
     const { groups } = this.props;
 
     this.state = {
-      componentValues: this.getInitialValuesFromComponents(groups)
+      componentValues: this.getInitialValuesFromComponents(groups),
     };
   }
 
@@ -25,10 +25,10 @@ class HvFormComposer extends React.Component {
    * @param {Object} groups - Initial group object containing all the component elements.
    * @return {Object} - { key (Component name): value (Value set on the component) }
    */
-  getInitialValuesFromComponents = groups => {
+  getInitialValuesFromComponents = (groups) => {
     const componentValues = {};
-    groups.forEach(group => {
-      group.children.forEach(child => {
+    groups.forEach((group) => {
+      group.children.forEach((child) => {
         componentValues[child.props.name] = child.props.value;
       });
     });
@@ -49,7 +49,7 @@ class HvFormComposer extends React.Component {
    *
    * @param {Function} originalHandler - The handler that was originally triggered.
    */
-  getValuesHandler = originalHandler => {
+  getValuesHandler = (originalHandler) => {
     if (originalHandler !== undefined && typeof originalHandler === "function") {
       originalHandler(this.getValues());
     }
@@ -84,13 +84,13 @@ class HvFormComposer extends React.Component {
       const key = `fc-${i}`;
       return React.cloneElement(child, {
         onClick: () => this.getValuesHandler(child.props.onClick),
-        key
+        key,
       });
     });
 
     const navigationOptions = [];
 
-    const groupedComponents = groups.map(group => {
+    const groupedComponents = groups.map((group) => {
       navigationOptions.push({ label: group.title, value: group.title });
 
       return (
@@ -104,7 +104,7 @@ class HvFormComposer extends React.Component {
               <div key={key}>
                 {React.cloneElement(child, {
                   onChange: (event, value) =>
-                    this.childOnChangeHandler(value, child.props.name, child.props.onChange)
+                    this.childOnChangeHandler(value, child.props.name, child.props.onChange),
                 })}
               </div>
             );
@@ -147,7 +147,7 @@ HvFormComposer.propTypes = {
   groups: PropTypes.arrayOf(
     shape({
       title: PropTypes.string,
-      children: PropTypes.node
+      children: PropTypes.node,
     })
   ).isRequired,
   /**
@@ -161,7 +161,7 @@ HvFormComposer.propTypes = {
   /**
    * Content to be shown on the footer.
    */
-  footerContent: PropTypes.node
+  footerContent: PropTypes.node,
 };
 
 /**
@@ -171,7 +171,7 @@ HvFormComposer.defaultProps = {
   mainTitle: "",
   hasNavigation: false,
   hasFooter: false,
-  footerContent: []
+  footerContent: [],
 };
 
 export default withStyles(styles, { name: "HvFormComposer" })(HvFormComposer);

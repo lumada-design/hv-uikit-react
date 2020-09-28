@@ -53,10 +53,10 @@ const DropDownMenu = ({
 
   const handleToggle = () => {
     setHasFocusTrap(true);
-    setOpen(prevOpen => !prevOpen);
+    setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = event => {
+  const handleClose = (event) => {
     setHasFocusTrap(false);
     const isButtonClick = anchorRef.current?.contains(event.target);
     if (!isButtonClick) {
@@ -65,7 +65,7 @@ const DropDownMenu = ({
   };
 
   // If the ESCAPE key is pressed the close handler must be called.
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     if (isKeypress(event, KeyboardCodes.Esc)) {
       handleClose(event);
     }
@@ -77,7 +77,7 @@ const DropDownMenu = ({
     event.preventDefault();
   };
 
-  const handleKeyboardToggle = event => {
+  const handleKeyboardToggle = (event) => {
     if (
       isKeypress(event, KeyboardCodes.SpaceBar) ||
       isKeypress(event, KeyboardCodes.Enter) ||
@@ -90,7 +90,7 @@ const DropDownMenu = ({
     }
   };
 
-  const handleListFlip = data => {
+  const handleListFlip = (data) => {
     const position = data.flipped;
     if (positionUp !== position) {
       setPositionUp(position);
@@ -109,7 +109,7 @@ const DropDownMenu = ({
         onClick={handleToggle}
         onKeyDown={handleKeyboardToggle}
         className={clsx(classes.icon, {
-          [classes.iconSelected]: open
+          [classes.iconSelected]: open,
         })}
         disabled={disabled}
         {...others}
@@ -123,8 +123,8 @@ const DropDownMenu = ({
         anchorEl={anchorRef.current}
         placement={`bottom-${placement === "left" ? "end" : "start"}`}
         popperOptions={{
-          onUpdate: data => handleListFlip(data),
-          onCreate: data => handleListFlip(data)
+          onUpdate: (data) => handleListFlip(data),
+          onCreate: (data) => handleListFlip(data),
         }}
       >
         <OutsideClickHandler onOutsideClick={handleClose}>
@@ -133,14 +133,14 @@ const DropDownMenu = ({
             createOptions={{
               escapeDeactivates: false,
               allowOutsideClick: true,
-              fallbackFocus: document.getElementById(setId(id, "icon-button"))
+              fallbackFocus: document.getElementById(setId(id, "icon-button")),
             }}
           >
             <div>
               {!positionUp && (
                 <div
                   className={clsx(classes.inputExtensionOpen, {
-                    [classes.inputExtensionLeftPosition]: placement === "left"
+                    [classes.inputExtensionLeftPosition]: placement === "left",
                   })}
                 />
               )}
@@ -161,7 +161,7 @@ const DropDownMenu = ({
                 <div
                   className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
                     [classes.inputExtensionFloatRight]: placement === "right",
-                    [classes.inputExtensionFloatLeft]: placement === "left"
+                    [classes.inputExtensionFloatLeft]: placement === "left",
                   })}
                 />
               )}
@@ -225,7 +225,7 @@ DropDownMenu.propTypes = {
     /**
      * Styles applied to the extension to go left when open up.
      */
-    inputExtensionLeftPosition: PropTypes.string
+    inputExtensionLeftPosition: PropTypes.string,
   }).isRequired,
   /**
    * Icon.
@@ -246,7 +246,7 @@ DropDownMenu.propTypes = {
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
       iconCallback: PropTypes.func,
-      showNavIcon: PropTypes.bool
+      showNavIcon: PropTypes.bool,
     })
   ).isRequired,
   /**
@@ -276,7 +276,7 @@ DropDownMenu.propTypes = {
   /**
    * If true it should be displayed open.
    */
-  expanded: PropTypes.bool
+  expanded: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDropDownMenu" })(withId(DropDownMenu));

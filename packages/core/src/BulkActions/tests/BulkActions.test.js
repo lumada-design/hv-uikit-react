@@ -81,7 +81,7 @@ describe("BulkActions with selection", () => {
   const onSelectAllPagesMock = jest.fn();
   const labels = {
     selectAll: "All mock",
-    selectAllPages: "All Pages mock"
+    selectAllPages: "All Pages mock",
   };
 
   it("should be defined", () => {

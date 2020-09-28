@@ -17,7 +17,7 @@ class UnitTimePicker extends React.Component {
       maxValue: TimePickerUnits[props.unit].max,
       currentValue: props.unitValue,
       isFocused: false,
-      isValid: true
+      isValid: true,
     };
   }
 
@@ -42,7 +42,7 @@ class UnitTimePicker extends React.Component {
     const { isFocused } = this.state;
 
     this.setState({
-      isFocused: !isFocused
+      isFocused: !isFocused,
     });
   };
 
@@ -81,10 +81,10 @@ class UnitTimePicker extends React.Component {
    * @param {Number} value - new time unit value
    * @memberof UnitTimePicker
    */
-  changeTimeUnit = value => {
+  changeTimeUnit = (value) => {
     const { onChangeUnitTimeValue } = this.props;
     this.setState({
-      currentValue: value
+      currentValue: value,
     });
     if (this.isUnitTimeValid(value)) {
       onChangeUnitTimeValue(value);
@@ -95,11 +95,11 @@ class UnitTimePicker extends React.Component {
    * Checks if the unit time is valid, meaning that is between the min and max values for the specific unit time
    * @memberof UnitTimePicker
    */
-  isUnitTimeValid = unitTime => {
+  isUnitTimeValid = (unitTime) => {
     const { unit } = this.props;
     const isValid = isUnitTimeInValidRange(unitTime, unit);
     this.setState({
-      isValid
+      isValid,
     });
     return isValid;
   };
@@ -134,8 +134,8 @@ class UnitTimePicker extends React.Component {
             input: classes.unitTimeInput,
             root: classes.inputContainer,
             inputRoot: clsx(classes.unitTimeInputRoot, {
-              [classes.unitTimeInputRootInvalid]: !isValid
-            })
+              [classes.unitTimeInputRootInvalid]: !isValid,
+            }),
           }}
           value={this.renderTimeUnit()}
           onChange={this.handleCurrentValueChange}
@@ -145,7 +145,7 @@ class UnitTimePicker extends React.Component {
           showInfo={false}
           validation={this.validateUnitTime}
           labels={{
-            placeholder: ""
+            placeholder: "",
           }}
         />
         <SubtractTimeIcon className={classes.subtractIcon} onClick={this.handleSubtractTime} />
@@ -166,7 +166,7 @@ UnitTimePicker.propTypes = {
     TimePickerUnits.HOUR_24.type,
     TimePickerUnits.HOUR_12.type,
     TimePickerUnits.MINUTE.type,
-    TimePickerUnits.SECOND.type
+    TimePickerUnits.SECOND.type,
   ]).isRequired,
   /**
    * Default unit time value
@@ -185,11 +185,11 @@ UnitTimePicker.propTypes = {
   /**
    * Callback function called when the unit time value changes
    */
-  onChangeUnitTimeValue: PropTypes.func.isRequired
+  onChangeUnitTimeValue: PropTypes.func.isRequired,
 };
 
 UnitTimePicker.defaultProps = {
-  unitValue: 0
+  unitValue: 0,
 };
 
 export default UnitTimePicker;

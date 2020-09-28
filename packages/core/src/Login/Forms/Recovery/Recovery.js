@@ -16,14 +16,14 @@ class Recovery extends React.Component {
     super();
     this.state = {
       email: "",
-      recoverStatus: "processing"
+      recoverStatus: "processing",
     };
   }
 
   /**
    * Sleep function.
    */
-  sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   /**
    * Submit of the Form. Asynchronous call of the passed recovery function.
@@ -31,7 +31,7 @@ class Recovery extends React.Component {
    * @param e
    * @returns {Promise<void>}
    */
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const { email } = this.state;
@@ -75,12 +75,12 @@ class Recovery extends React.Component {
       emailPlaceholder,
       recoveringMessage,
       cancelButton,
-      recoverButton
+      recoverButton,
     } = this.props;
     const { isRecovering, recoverStatus } = this.state;
 
     return (
-      <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
+      <form className={classes.root} onSubmit={(e) => this.handleSubmit(e)}>
         <HvTypography className={classes.title} variant="mTitle">
           {recoveryTitle}
         </HvTypography>
@@ -104,7 +104,7 @@ class Recovery extends React.Component {
           <Input
             labels={{
               inputLabel: emailLabel,
-              placeholder: emailPlaceholder
+              placeholder: emailPlaceholder,
             }}
             password={false}
             onChange={this.handleInputChange()}
@@ -117,7 +117,7 @@ class Recovery extends React.Component {
         <div
           className={clsx({
             [classes.buttonsContainer]: recoverStatus !== "error",
-            [classes.buttonsContainerError]: recoverStatus === "error"
+            [classes.buttonsContainerError]: recoverStatus === "error",
           })}
         >
           <HvButton
@@ -192,7 +192,7 @@ Recovery.propTypes = {
     /**
      * Styles applied to the message container.
      */
-    messageContainer: PropTypes.string
+    messageContainer: PropTypes.string,
   }).isRequired,
   /**
    * the function invoked for the recover action. The function must throw an exception if the request wasn't successful.
@@ -241,11 +241,11 @@ Recovery.propTypes = {
   /**
    * Message shown when an error occurs.
    */
-  recoveryErrorMessage: PropTypes.string.isRequired
+  recoveryErrorMessage: PropTypes.string.isRequired,
 };
 
 Recovery.defaultProps = {
-  okRecoveryIcon: null
+  okRecoveryIcon: null,
 };
 
 export default withStyles(styles, { name: "HvLoginRecovery" })(Recovery);

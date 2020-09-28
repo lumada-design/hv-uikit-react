@@ -9,10 +9,10 @@ export default {
   title: "Lab/Notification Panel",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvNotificationsPanel } from '@hv/uikit-react-lab/dist'"
+    usage: "import { HvNotificationsPanel } from '@hv/uikit-react-lab/dist'",
   },
   component: HvNotificationPanel,
-  decorators: [storyFn => <div style={{ height: "600px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ height: "600px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => {
@@ -20,14 +20,14 @@ export const Main = () => {
     panel: { top: "65px", height: "500px" },
     badgeBorder: {
       top: "-5px",
-      right: "-20px"
+      right: "-20px",
     },
     footer: {
       display: "flex",
       justifyContent: "flex-end",
       width: "100%",
-      cursor: "pointer"
-    }
+      cursor: "pointer",
+    },
   };
 
   const SimpleNotificationPanel = ({ classes }) => {
@@ -36,11 +36,11 @@ export const Main = () => {
       open: true,
       classes: {
         panel: classes.panel,
-        badgeBorder: classes.badgeBorder
+        badgeBorder: classes.badgeBorder,
       },
       header: {
         headerTitle: "Notifications",
-        headerCloseImg: <Close iconSize="XS" />
+        headerCloseImg: <Close iconSize="XS" />,
       },
       notifications: [
         {
@@ -48,16 +48,16 @@ export const Main = () => {
           title: "Test",
           isRead: false,
           date: new Date(),
-          icon: <Level5 semantic="sema6" />
+          icon: <Level5 semantic="sema6" />,
         },
         {
           id: "2",
           title: "Test 2",
           isRead: true,
-          date: new Date("6/19/2019")
-        }
+          date: new Date("6/19/2019"),
+        },
       ],
-      footer: <div className={classes.footer}>Mark All Read</div>
+      footer: <div className={classes.footer}>Mark All Read</div>,
     };
 
     return (
@@ -76,7 +76,7 @@ export const Main = () => {
         height: "100%",
         display: "flex",
         justifyContent: "flex-end",
-        position: "relative"
+        position: "relative",
       }}
     >
       <SimpleNotificationPanelWithStyles />

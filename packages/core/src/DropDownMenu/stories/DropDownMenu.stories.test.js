@@ -11,12 +11,12 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
+      page: null,
+    },
   },
   decorators: [
-    storyFn => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>
-  ]
+    (storyFn) => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>,
+  ],
 };
 
 // __________________________________
@@ -60,10 +60,10 @@ A11YOpen.story = {
       actions: [
         // open menu before testing
         "click element #dropdownmenu-open-icon-button",
-        "wait for element #dropdownmenu-open-list to be visible"
-      ]
-    }
-  }
+        "wait for element #dropdownmenu-open-list to be visible",
+      ],
+    },
+  },
 };
 
 // __________________________________
@@ -78,9 +78,9 @@ IconsOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-3/i }));
         return wait(() => screen.getByText("Label 3"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, Disabled Items opened
@@ -92,7 +92,7 @@ DisabledItemsOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-disableditems/i }));
         return wait(() => screen.getByText("Label 3"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

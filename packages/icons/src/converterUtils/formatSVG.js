@@ -11,10 +11,7 @@ module.exports = function formatSVG(svg) {
   const reg = /(>)\s*(<)(\/*)/g;
   const wsexp = / *(.*) +\n/g;
   const contexp = /(<.+>)(.+\n)/g;
-  svg = svg
-    .replace(reg, "$1\n$2$3")
-    .replace(wsexp, "$1\n")
-    .replace(contexp, "$1\n$2");
+  svg = svg.replace(reg, "$1\n$2$3").replace(wsexp, "$1\n").replace(contexp, "$1\n$2");
   const pad = 0;
   let formatted = "";
   const lines = svg.split("\n");
@@ -37,7 +34,7 @@ module.exports = function formatSVG(svg) {
     "other->single": 0,
     "other->closing": -1,
     "other->opening": 0,
-    "other->other": 0
+    "other->other": 0,
   };
 
   for (let i = 0; i < lines.length; i++) {

@@ -1,12 +1,12 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     position: "fixed",
     width: "100%",
     height: 40,
     backgroundColor: theme.hv.palette.accent.acce1,
     [theme.breakpoints.down("500")]: {
-      minWidth: "320px"
-    }
+      minWidth: "320px",
+    },
   },
   labelLeft: {
     float: "left",
@@ -18,8 +18,8 @@ const styles = theme => ({
     fontWeight: "600",
     color: theme.hv.palette.atmosphere.atmo3,
     [theme.breakpoints.down("500")]: {
-      display: "none"
-    }
+      display: "none",
+    },
   },
   labelRight: {
     float: "right",
@@ -34,9 +34,9 @@ const styles = theme => ({
       minWidth: "320px",
       float: "left",
       marginLeft: 20,
-      fontSize: "11px"
-    }
-  }
+      fontSize: "11px",
+    },
+  },
 });
 
 export default styles;

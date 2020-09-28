@@ -1,9 +1,9 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    height: 50
+    height: 50,
   },
   backgroundColor: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
   },
   header: {
     display: "flex",
@@ -13,9 +13,9 @@ const styles = theme => ({
     padding: `0 ${theme.hv.spacing.sm}px`,
     boxShadow: theme.hv.shadows[1],
     "& > *:not(nav)": {
-      zIndex: 2
-    }
-  }
+      zIndex: 2,
+    },
+  },
 });
 
 export default styles;

@@ -5,14 +5,14 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
+      page: null,
+    },
   },
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ width: 500, height: 200 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };

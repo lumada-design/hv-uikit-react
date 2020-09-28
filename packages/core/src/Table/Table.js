@@ -28,7 +28,7 @@ const ReactTableCheckbox = withCheckbox(ReactTable);
 
 const DEFAULT_LABELS = {
   titleText: "",
-  subtitleText: ""
+  subtitleText: "",
 };
 
 /**
@@ -45,7 +45,7 @@ const DEFAULT_LABELS = {
  *   Just one of this properties should be set (or none) has it isn't possible to have a table with
  *   expander and checkbox simultaneously.
  */
-const HvTable = props => {
+const HvTable = (props) => {
   const {
     id,
     classes,
@@ -113,8 +113,8 @@ const HvTable = props => {
   useEffect(() => {
     if (!idForCheckbox) return;
 
-    const dataIds = data.map(item => item[idForCheckbox]);
-    const updatedSelection = selection.filter(item => dataIds.includes(item));
+    const dataIds = data.map((item) => item[idForCheckbox]);
+    const updatedSelection = selection.filter((item) => dataIds.includes(item));
     setSelection(updatedSelection);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -126,9 +126,9 @@ const HvTable = props => {
    * @returns {Array} new data set
    */
   const sanitizedData = () =>
-    data.map(entry => {
+    data.map((entry) => {
       const newEntry = {};
-      Object.keys(entry).forEach(key => {
+      Object.keys(entry).forEach((key) => {
         newEntry[key] = entry[key] ?? "—";
       });
       return newEntry;
@@ -138,7 +138,7 @@ const HvTable = props => {
    * Pagination customizations.
    */
   const getPaginationProps = () => {
-    const PaginationComponent = paginationProps => (
+    const PaginationComponent = (paginationProps) => (
       <HvPagination
         {...paginationProps}
         id={setId(id, "pagination")}
@@ -156,19 +156,19 @@ const HvTable = props => {
           setCurrentPage(p);
           setCurrentPageSize(newPageSize);
           onPageSizeChange?.(newPageSize, p);
-        }
+        },
       }),
       ...(showPagination && {
-        onPageChange: p => {
+        onPageChange: (p) => {
           setExpanded({});
           setCurrentPage(p);
           onPageChange?.(p);
-        }
+        },
       }),
       ...(showPagination && pages && { pages }),
       ...((pageSize !== undefined && { defaultPageSize: pageSize }) ||
         (pageSize && { defaultPageSize: pageSize })),
-      ...{ showPageSizeOptions: showPageSize }
+      ...{ showPageSizeOptions: showPageSize },
     };
   };
 
@@ -177,7 +177,7 @@ const HvTable = props => {
    *
    * @param {Object} tableState - an Object containing information about the current state of the table.
    */
-  const onFetchDataInternal = tableState => {
+  const onFetchDataInternal = (tableState) => {
     const { pageSize: pageSizeT, page: pageT, sorted: sortedT } = tableState;
 
     if (!initiallyLoaded) return;
@@ -205,7 +205,7 @@ const HvTable = props => {
    *
    * @param sortedColumn - the column representation from the user.
    */
-  const onSortChange = sortedColumn => {
+  const onSortChange = (sortedColumn) => {
     setSorted(sortedColumn);
     setCurrentPage(0);
     setExpanded({});
@@ -219,7 +219,7 @@ const HvTable = props => {
   const getSortProps = () => ({
     sortable,
     ...(sortable && { defaultSorted }),
-    onSortedChange: onSortChange
+    onSortedChange: onSortChange,
   });
 
   /**
@@ -230,7 +230,7 @@ const HvTable = props => {
    */
   const toggleSelection = (event, key) => {
     const newSelection = selection.includes(key)
-      ? selection.filter(el => el !== key)
+      ? selection.filter((el) => el !== key)
       : [...selection, key];
 
     // update the state
@@ -244,7 +244,7 @@ const HvTable = props => {
     SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
     toggleSelection: (idSelection, shiftkey, row) => {
       toggleSelection(null, row[idForCheckbox]);
-    }
+    },
   });
 
   /**
@@ -269,7 +269,7 @@ const HvTable = props => {
       if (column.id === sorted[0].id) {
         const sortDirection = sorted[0].desc === true ? "descending" : "ascending";
         ariaSort = {
-          "aria-sort": sortDirection
+          "aria-sort": sortDirection,
         };
       } else ariaSort = { "aria-sort": undefined };
     }
@@ -291,7 +291,7 @@ const HvTable = props => {
       className:
         column.id !== "secondaryActions"
           ? setHeaderSortableClass(isSortable, classes.theadTh)
-          : clsx(classes.theadTh, "secondaryAction")
+          : clsx(classes.theadTh, "secondaryAction"),
     };
   };
 
@@ -303,8 +303,8 @@ const HvTable = props => {
   const getTBodyProps = () => ({
     role: "rowgroup",
     className: clsx(classes.tbody, {
-      [classes.tBodyEmpty]: data.length === 0
-    })
+      [classes.tBodyEmpty]: data.length === 0,
+    }),
   });
 
   /**
@@ -315,7 +315,7 @@ const HvTable = props => {
    */
   const getTrGroupProps = () => ({
     role: undefined,
-    className: classes.trGroups
+    className: classes.trGroups,
   });
 
   /**
@@ -323,18 +323,18 @@ const HvTable = props => {
    *
    * @param {numeric} rowIndex - The index of the row to toggle.
    */
-  const toggleExpand = rowIndex => {
+  const toggleExpand = (rowIndex) => {
     setExpanded({ [rowIndex]: !expanded[rowIndex] });
   };
 
-  const computeRowId = rowInfo => {
+  const computeRowId = (rowInfo) => {
     if (idForCheckbox && rowInfo?.original?.[idForCheckbox]) {
       return rowInfo.original[idForCheckbox];
     }
     return null;
   };
 
-  const computeRowElementId = rowInfo => {
+  const computeRowElementId = (rowInfo) => {
     const rowId = computeRowId(rowInfo);
 
     return (
@@ -367,12 +367,12 @@ const HvTable = props => {
       role: "row",
       "aria-selected": "false",
       ...expandedProps,
-      ...ariaRowIndex
+      ...ariaRowIndex,
     };
     if (subElementTemplate && rowInfo && rowInfo.row) {
       return {
         ...baseTrProps,
-        className: clsx(classes.tr, classes.pointer)
+        className: clsx(classes.tr, classes.pointer),
       };
     }
 
@@ -382,7 +382,7 @@ const HvTable = props => {
       return {
         ...baseTrProps,
         className: clsx(classes.tr, "selected"),
-        "aria-selected": "true"
+        "aria-selected": "true",
       };
     }
 
@@ -394,13 +394,13 @@ const HvTable = props => {
       role: "table",
       "aria-rowcount": rowCount || data.length,
       id: setId(id, "table"),
-      className: classes.table
+      className: classes.table,
     };
 
     if (tableProps) {
       return {
         ...baseTableProps,
-        caption: tableProps.tableCaption
+        caption: tableProps.tableCaption,
       };
     }
 
@@ -410,7 +410,7 @@ const HvTable = props => {
   const getTdProps = (state, rowInfo, column) => ({
     id: setId(computeRowElementId(rowInfo), "column", column.id),
     className: classes.td,
-    role: "cell"
+    role: "cell",
   });
 
   /**
@@ -425,7 +425,7 @@ const HvTable = props => {
    *
    * @param {object} event - the event that triggered the selection
    */
-  const togglePage = event => {
+  const togglePage = (event) => {
     const anySelected = selection.length > 0;
     const config = { currentPage, currentPageSize, paginationServerSide };
     const newSelection = anySelected ? [] : selectPage(idForCheckbox, tableRef, config);
@@ -439,7 +439,7 @@ const HvTable = props => {
    *
    * @param {object} event - the event that triggered the selection
    */
-  const toggleAll = event => {
+  const toggleAll = (event) => {
     const allSelected = selection.length === data.length;
     const newSelection = allSelected ? [] : selectPage(idForCheckbox, tableRef);
 
@@ -455,14 +455,14 @@ const HvTable = props => {
   const getTableStyles = () => tableStyleOverrides(classes);
 
   // Add dropdown menu column if secondaryActions exists in props
-  if (!!secondaryActions && !columns.some(col => col.accessor === "secondaryActions")) {
+  if (!!secondaryActions && !columns.some((col) => col.accessor === "secondaryActions")) {
     columns.push({
       headerText: "",
       accessor: "secondaryActions",
       cellType: "alpha-numeric",
       width: 33,
       sortable: false,
-      Cell: propsCell =>
+      Cell: (propsCell) =>
         propsCell.original.noActions ? null : (
           <DropDownMenu
             id={setId(computeRowElementId(propsCell))}
@@ -470,7 +470,7 @@ const HvTable = props => {
             original={propsCell.original}
             {...dropdownMenuProps}
           />
-        )
+        ),
     });
   }
 
@@ -525,7 +525,7 @@ const HvTable = props => {
           onSelectAllPages={toggleAll}
           showSelectAllPages={showSelectAllPages}
           labels={{
-            selectAllPages: `Select all ${data.length} items across all pages`
+            selectAllPages: `Select all ${data.length} items across all pages`,
           }}
           actions={actions}
           actionsCallback={(...args) => actionsCallback?.(...args, selection)}
@@ -556,7 +556,7 @@ const HvTable = props => {
         SubComponent={expanderComponent}
         expanded={expanded}
         keyField={idForCheckbox}
-        isSelected={key => isSelected(key, selection)}
+        isSelected={(key) => isSelected(key, selection)}
         NoDataComponent={getNoDataProps}
         getTrGroupProps={getTrGroupProps}
       />
@@ -673,7 +673,7 @@ HvTable.propTypes = {
     /**
      * Styles applied to the component table.
      */
-    table: PropTypes.string
+    table: PropTypes.string,
   }).isRequired,
   /**
    * The labels inside the table.
@@ -686,7 +686,7 @@ HvTable.propTypes = {
     /**
      * The subtitle that identifies the title, rendered outside of the table.
      */
-    subtitleText: PropTypes.string
+    subtitleText: PropTypes.string,
   }),
   /**
    * Labels for the pagination.
@@ -727,7 +727,7 @@ HvTable.propTypes = {
     /**
      * Aria-label passed to the page input.
      */
-    paginationInputLabel: PropTypes.string
+    paginationInputLabel: PropTypes.string,
   }),
   /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
@@ -744,7 +744,7 @@ HvTable.propTypes = {
       fixed: PropTypes.string,
       Cell: PropTypes.instanceOf(Object),
       sortable: PropTypes.bool,
-      width: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     })
   ).isRequired,
   /**
@@ -826,7 +826,7 @@ HvTable.propTypes = {
   secondaryActions: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
-      action: PropTypes.func
+      action: PropTypes.func,
     })
   ),
   /**
@@ -840,9 +840,9 @@ HvTable.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string,
         iconCallback: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       })
-    )
+    ),
   ]),
   /**
    *  Whether actions should be all disabled
@@ -858,7 +858,7 @@ HvTable.propTypes = {
   maxVisibleActions: PropTypes.number,
   column: PropTypes.shape({
     id: PropTypes.string,
-    sortable: PropTypes.bool
+    sortable: PropTypes.bool,
   }),
   /**
    *  Extra properties passed to the select all checkbox props.
@@ -881,7 +881,7 @@ HvTable.propTypes = {
   /**
    * Defines if the expanded row is collapsed when data changes.
    */
-  collapseOnDataChange: PropTypes.bool
+  collapseOnDataChange: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(HvTable)));

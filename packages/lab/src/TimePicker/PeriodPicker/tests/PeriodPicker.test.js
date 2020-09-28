@@ -49,12 +49,9 @@ describe("PeriodPicker", () => {
 
   it("render - should render all the elements", () => {
     expect(periodPickerComponent.find(AddIcon)).toHaveLength(1);
-    expect(
-      periodPickerComponent
-        .find("div")
-        .at(0)
-        .text()
-    ).toBe(periodPickerInstance.state.currentPeriod);
+    expect(periodPickerComponent.find("div").at(0).text()).toBe(
+      periodPickerInstance.state.currentPeriod
+    );
     expect(periodPickerComponent.find(SubIcon)).toHaveLength(1);
   });
 });

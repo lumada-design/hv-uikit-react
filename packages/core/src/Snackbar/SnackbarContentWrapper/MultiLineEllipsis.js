@@ -42,7 +42,7 @@ export default class TextTruncate extends Component {
     textElement: PropTypes.node,
     textTruncateChild: PropTypes.node,
     truncateText: PropTypes.string,
-    maxCalculateTimes: PropTypes.number
+    maxCalculateTimes: PropTypes.number,
   };
 
   static defaultProps = {
@@ -51,7 +51,7 @@ export default class TextTruncate extends Component {
     text: "",
     textElement: "span",
     truncateText: "…",
-    maxCalculateTimes: 10
+    maxCalculateTimes: 10,
   };
 
   componentDidMount() {
@@ -62,7 +62,7 @@ export default class TextTruncate extends Component {
       style["font-weight"],
       style["font-style"],
       style["font-size"],
-      style["font-family"]
+      style["font-family"],
     ].join(" ");
 
     docFragment.appendChild(canvas);
@@ -86,7 +86,7 @@ export default class TextTruncate extends Component {
     this.rafId = window.requestAnimationFrame(this.update.bind(this));
   };
 
-  onToggled = truncated => {
+  onToggled = (truncated) => {
     typeof this.props.onToggled === "function" &&
       setTimeout(() => this.props.onToggled(truncated), 0);
   };
@@ -106,7 +106,7 @@ export default class TextTruncate extends Component {
       style["font-style"],
       style["font-size"],
       style["font-family"],
-      style["letter-spacing"]
+      style["letter-spacing"],
     ].join(" ");
     this.canvas.font = font;
     this.forceUpdate();
@@ -285,11 +285,11 @@ export default class TextTruncate extends Component {
     const renderText =
       this.scope && line ? this.getRenderText() : createElement(textElement, props, text);
     const rootProps = {
-      ref: el => {
+      ref: (el) => {
         this.scope = el;
       },
       className: containerClassName,
-      style: { overflow: "hidden", fontWeight, fontStyle, fontSize, fontFamily }
+      style: { overflow: "hidden", fontWeight, fontStyle, fontSize, fontFamily },
     };
 
     this.scope && this.onCalculated();

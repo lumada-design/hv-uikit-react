@@ -28,12 +28,12 @@ Label.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Children component.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesLabel" })(Label);

@@ -386,7 +386,7 @@ describe("<DatePicker /> with custom properties", () => {
     applyLabel: "OK",
     cancelLabel: "GO BACK",
     title: "TESTING LABEL",
-    placeholder: "I'M THE PLACEHOLDER"
+    placeholder: "I'M THE PLACEHOLDER",
   };
 
   beforeEach(async () => {
@@ -491,8 +491,8 @@ describe("<DatePicker /> with custom properties", () => {
 
     const dummyEvent = {
       target: {
-        id: "testingDatePicker-icon-NOT"
-      }
+        id: "testingDatePicker-icon-NOT",
+      },
     };
 
     DatePickerInstance.handleCalendarClickAway(dummyEvent);

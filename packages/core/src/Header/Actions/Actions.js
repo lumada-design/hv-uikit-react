@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const Actions = props => {
+const Actions = (props) => {
   const { classes, className, children, ...others } = props;
   return (
     <div className={clsx(className, classes.root)} {...others}>
@@ -21,7 +21,7 @@ Actions.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Class names to be applied.
@@ -30,7 +30,7 @@ Actions.propTypes = {
   /**
    * Node to be rendered.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvHeaderActions" })(Actions);

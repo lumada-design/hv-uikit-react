@@ -1,4 +1,4 @@
-const tableStyleOverrides = classes => ({
+const tableStyleOverrides = (classes) => ({
   getProps: () => ({ className: classes.root }),
   getTableProps: () => ({ className: classes.table }),
   getTheadGroupProps: () => ({ className: classes.theadGroup }),
@@ -20,10 +20,10 @@ const tableStyleOverrides = classes => ({
   getPaginationProps: () => ({ className: classes.pagination }),
   getLoadingProps: () => ({ className: classes.loading }),
   getNoDataProps: () => ({ className: classes.noDate }),
-  getResizerProps: () => ({ className: classes.resizer })
+  getResizerProps: () => ({ className: classes.resizer }),
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     ...theme.hv.typography.normalText,
     fontFamily: theme.hv.typography.fontFamily,
@@ -51,67 +51,67 @@ const styles = theme => ({
           boxShadow: "none",
           "& > div": {
             width: "100%",
-            alignSelf: "baseline"
+            alignSelf: "baseline",
           },
           "& > div.rt-resizer": {
             width: `${theme.hv.spacing.xs}px`,
-            right: "-8px"
+            right: "-8px",
           },
           "&:first-child:not(.checkbox)": {
-            borderLeft: "none"
+            borderLeft: "none",
           },
           "&:nth-last-child(2).-secondaryActionsNeighbor": {
-            borderRightColor: theme.hv.palette.atmosphere.atmo5
+            borderRightColor: theme.hv.palette.atmosphere.atmo5,
           },
           "&:last-child": {
-            borderRight: "none"
+            borderRight: "none",
           },
           "&.secondaryAction": {
             minWidth: "30px",
             maxWidth: "30px",
-            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+            borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
           },
           "&.checkBox": {
             minWidth: "31px",
             maxWidth: "31px",
-            borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+            borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
           },
           "& ~.rt-th.rthfc-th-fixed-left-last": {
-            borderLeft: "none"
+            borderLeft: "none",
           },
           "&.rt-th.rthfc-th-fixed-left-last": {
-            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`,
           },
           "&.rt-th.rthfc-th-fixed-right-first": {
-            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`,
           },
           "&.sortable": {
             "&:hover > div > div > div ": {
-              visibility: "visible"
+              visibility: "visible",
             },
             "&:hover, &:focus-within": {
               // hover and focus in table header
-              background: theme.hv.palette.atmosphere.atmo4
-            }
-          }
-        }
+              background: theme.hv.palette.atmosphere.atmo4,
+            },
+          },
+        },
       },
       "& $tbody": {
         "-ms-overflow-y": "hidden",
         "& $trGroups": {
           borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
           "& $tr > div ": {
-            background: theme.hv.palette.atmosphere.atmo3
+            background: theme.hv.palette.atmosphere.atmo3,
           },
           "& $tr:hover > div ": {
-            background: theme.hv.palette.atmosphere.atmo4
+            background: theme.hv.palette.atmosphere.atmo4,
           },
           "& $tr.selected > div": {
-            background: theme.hv.palette.atmosphere.atmo1
+            background: theme.hv.palette.atmosphere.atmo1,
           },
           "& $tr.selected:hover > div": {
-            background: theme.hv.palette.atmosphere.atmo4
-          }
+            background: theme.hv.palette.atmosphere.atmo4,
+          },
         },
         "& $td": {
           background: theme.hv.palette.atmosphere.atmo2,
@@ -119,63 +119,63 @@ const styles = theme => ({
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
           "&.sortable": {
-            paddingLeft: "32px"
+            paddingLeft: "32px",
           },
           "&.alphaNumeric": {
             minWidth: "70px",
-            textAlign: "left"
+            textAlign: "left",
           },
           "&.link": {
             paddingLeft: "32px",
             "&:not(.sortable)": {
-              paddingLeft: `${theme.hv.spacing.xs}px`
-            }
+              paddingLeft: `${theme.hv.spacing.xs}px`,
+            },
           },
           "&.secondaryAction": {
             minWidth: "31px",
             maxWidth: "31px",
             padding: 0,
             borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-            overflow: "visible"
+            overflow: "visible",
           },
           "&:first-child": {
-            borderLeft: "none"
+            borderLeft: "none",
           },
           "&:last-child": {
-            borderRight: "none"
+            borderRight: "none",
           },
           "&.rt-td.rthfc-td-fixed-left-last": {
-            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`,
           },
           "&.rt-td.rthfc-td-fixed-right-first": {
-            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+            borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`,
           },
           "&$expand": {
-            paddingLeft: "0"
-          }
+            paddingLeft: "0",
+          },
         },
         "& .firstExpandable": {
-          paddingLeft: "0px"
+          paddingLeft: "0px",
         },
         "& .checkBox": {
           minWidth: "31px",
           maxWidth: "31px",
           padding: 0,
-          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
-        }
-      }
+          borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+        },
+      },
     },
     "& $td": {
       display: "flex",
-      alignItems: "center"
-    }
+      alignItems: "center",
+    },
   },
   table: {},
   theadGroup: {},
   theadGroupTr: {},
   theadGroupTh: {},
   thead: {
-    ...theme.hv.typography.labelText
+    ...theme.hv.typography.labelText,
   },
   theadTh: {},
 
@@ -184,7 +184,7 @@ const styles = theme => ({
   theadFilterTh: {},
   tbody: {},
   tBodyEmpty: {
-    minHeight: "calc(32px * 3)"
+    minHeight: "calc(32px * 3)",
   },
   trGroups: {},
   tr: {
@@ -193,8 +193,8 @@ const styles = theme => ({
       whiteSpace: "nowrap",
       overflow: "hidden",
       textOverflow: "ellipsis",
-      textAlign: "left"
-    }
+      textAlign: "left",
+    },
   },
   textContainer: {},
   // th: {}, TODO: There is a bug in the component, where this prop is not used
@@ -209,77 +209,77 @@ const styles = theme => ({
   rtSortIcon: {
     width: "32px",
     height: "32px",
-    position: "absolute"
+    position: "absolute",
   },
   sortedIconShown: {
-    visibility: "visible"
+    visibility: "visible",
   },
   sortedIconHidden: {
-    display: "none"
+    display: "none",
   },
   pointer: {
-    cursor: "pointer"
+    cursor: "pointer",
   },
   tableContainer: {},
   subtitle: {},
   title: {
-    marginBottom: `${theme.hv.spacing.sm}px`
+    marginBottom: `${theme.hv.spacing.sm}px`,
   },
   checkBoxBorder: {
     "&:nth-child(2)": {
-      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
-    }
+      borderLeft: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    },
   },
   checkBoxRow: {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    marginBottom: `${theme.hv.spacing.xs}px`
+    marginBottom: `${theme.hv.spacing.xs}px`,
   },
   centered: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
   alphaNumeric: {
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
   },
   numeric: {
     justifyContent: "flex-end",
-    textAlign: "right"
+    textAlign: "right",
   },
   link: {
     justifyContent: "flex-start",
     "& > a": {
       ...theme.hv.typography.inlineLink,
-      textDecoration: "none"
-    }
+      textDecoration: "none",
+    },
   },
   subComponentContainer: {
     width: "100%",
     height: "100%",
     borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     background: theme.hv.palette.atmosphere.atmo1,
-    padding: `${theme.hv.spacing.md}px 32px`
+    padding: `${theme.hv.spacing.md}px 32px`,
   },
   iconContainer: {
     width: "32px",
     height: "32px",
     "&:focus": {
       background: theme.hv.palette.atmosphere.atmo4,
-      outline: 0
-    }
+      outline: 0,
+    },
   },
   firstWithNumeric: {
-    width: "calc(100% - 32px)"
+    width: "calc(100% - 32px)",
   },
   checkBoxText: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   menuItem: {
     ...theme.hv.typography.normalText,
     textAlign: "right",
     marginBottom: "-6px",
-    marginTop: "-6px"
+    marginTop: "-6px",
   },
   expand: {},
   separatorContainer: {
@@ -289,14 +289,14 @@ const styles = theme => ({
     alignItems: "center",
     "&>svg": {
       display: "block",
-      margin: "0 auto"
-    }
+      margin: "0 auto",
+    },
   },
   tooltipAnchor: {
     whiteSpace: "nowrap",
     overflow: "hidden",
-    textOverflow: "ellipsis"
-  }
+    textOverflow: "ellipsis",
+  },
 });
 
 export default styles;

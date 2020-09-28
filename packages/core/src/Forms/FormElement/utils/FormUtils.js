@@ -10,13 +10,13 @@ const getDescriptorMap = (element, componentName) => {
   if (element.type?.__docgenInfo?.displayName?.includes(componentName)) {
     return {
       id: element.props?.id,
-      showWhen: element.props?.showWhen
+      showWhen: element.props?.showWhen,
     };
   }
   return null;
 };
 
-const initializeFieldIfEmpty = field => (isNil(field) || !Array.isArray(field) ? [] : field);
+const initializeFieldIfEmpty = (field) => (isNil(field) || !Array.isArray(field) ? [] : field);
 
 /**
  * Receives a descriptor checks whether if the name matches and updates it.
@@ -29,7 +29,7 @@ const initializeFieldIfEmpty = field => (isNil(field) || !Array.isArray(field) ?
 const updateDescriptors = (element, names, descriptors = {}) => {
   const newDescriptorsMap = { ...descriptors };
   let descriptorMap = {};
-  names.forEach(name => {
+  names.forEach((name) => {
     newDescriptorsMap[name] = initializeFieldIfEmpty(newDescriptorsMap[name]);
     descriptorMap = getDescriptorMap(element, name);
     descriptorMap ? newDescriptorsMap[name].push(descriptorMap) : null;
@@ -51,7 +51,7 @@ const findDescriptors = (children, names, descriptors = {}) => {
   let newDescriptorsMap = { ...descriptors };
   if (!isNil(children)) {
     if (Array.isArray(children)) {
-      children.forEach(child => {
+      children.forEach((child) => {
         newDescriptorsMap = updateDescriptors(child, names, newDescriptorsMap);
         if (child.props?.children) {
           newDescriptorsMap = findDescriptors(child.props.children, names, newDescriptorsMap);

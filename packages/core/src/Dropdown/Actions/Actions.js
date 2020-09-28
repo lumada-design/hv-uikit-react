@@ -45,14 +45,14 @@ Actions.propTypes = {
   /**
    * Label for apply button
    */
-  applyLabel: PropTypes.string
+  applyLabel: PropTypes.string,
 };
 
 Actions.defaultProps = {
   onCancel() {},
   onApply() {},
   cancelLabel: "Cancel",
-  applyLabel: "Apply"
+  applyLabel: "Apply",
 };
 
 export default withStyles(styles, { name: "HvDropdownActions" })(Actions);

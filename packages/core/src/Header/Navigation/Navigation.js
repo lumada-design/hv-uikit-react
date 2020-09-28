@@ -34,7 +34,7 @@ Navigation.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Class names to be applied.
@@ -49,7 +49,7 @@ Navigation.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
+      label: PropTypes.string.isRequired,
     })
   ).isRequired,
   /**
@@ -59,7 +59,7 @@ Navigation.propTypes = {
   /**
    * Callback triggered when any item is clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvHeaderNavigation" })(Navigation);

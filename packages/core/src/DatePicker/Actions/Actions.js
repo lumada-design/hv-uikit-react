@@ -46,8 +46,8 @@ Actions.propTypes = {
    */
   labels: PropTypes.shape({
     applyLabel: PropTypes.string,
-    cancelLabel: PropTypes.string
-  })
+    cancelLabel: PropTypes.string,
+  }),
 };
 
 Actions.defaultProps = {
@@ -56,8 +56,8 @@ Actions.defaultProps = {
   onApply() {},
   labels: {
     applyLabel: "Apply",
-    cancelLabel: "Cancel"
-  }
+    cancelLabel: "Cancel",
+  },
 };
 
 export default withStyles(styles, { name: "HvDatePickerActions" })(Actions);

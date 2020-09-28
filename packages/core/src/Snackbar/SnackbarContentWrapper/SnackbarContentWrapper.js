@@ -89,13 +89,13 @@ HvSnackbarContentWrapper.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       icon: PropTypes.func,
-      disabled: PropTypes.bool
-    })
+      disabled: PropTypes.bool,
+    }),
   ]),
   /**
    *  The callback function ran when an action is triggered, receiving ´action´ as param
    */
-  actionCallback: PropTypes.func
+  actionCallback: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvSnackbarContentWrapper" })(HvSnackbarContentWrapper);

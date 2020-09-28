@@ -1,29 +1,29 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     padding: "40px",
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
   },
   titleContainer: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
   },
   subtitle: {
-    marginTop: `${theme.hv.spacing.xs}px`
+    marginTop: `${theme.hv.spacing.xs}px`,
   },
   defaultColors: {
-    ...theme.hv.viz.palette.categorical
+    ...theme.hv.viz.palette.categorical,
   },
   vizText: {
     ...theme.hv.typography.vizText,
     fontFamily: theme.hv.typography.fontFamily,
-    fontSize: 10
+    fontSize: 10,
   },
   lineColor: theme.hv.palette.atmosphere.atmo6,
   gridColor: theme.hv.palette.atmosphere.atmo5,
   paddingTop: {
-    paddingTop: "20px"
+    paddingTop: "20px",
   },
-  plotColor: theme.hv.palette.atmosphere.atmo1
+  plotColor: theme.hv.palette.atmosphere.atmo1,
 });
 
 export default styles;

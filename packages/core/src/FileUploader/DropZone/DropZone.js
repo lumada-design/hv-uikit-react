@@ -19,7 +19,7 @@ const DropZone = ({
   disabled = false,
   acceptedFiles,
   maxFileSize,
-  onFilesAdded
+  onFilesAdded,
 }) => {
   const [dragState, setDrag] = useState(false);
   const inputRef = useRef();
@@ -32,12 +32,12 @@ const DropZone = ({
     setDrag(true);
   };
 
-  const onChangeHandler = evt => {
-    const filesToProcess = Object.keys(evt).map(e => evt[e]);
+  const onChangeHandler = (evt) => {
+    const filesToProcess = Object.keys(evt).map((e) => evt[e]);
 
     const newFiles = [];
 
-    filesToProcess.forEach(file => {
+    filesToProcess.forEach((file) => {
       const newFile = file;
 
       const isSizeAllowed = file.size <= maxFileSize;
@@ -86,11 +86,11 @@ const DropZone = ({
         id={setId(id, "button")}
         className={clsx(classes.dropZoneContainer, {
           [classes.dragAction]: dragState,
-          [classes.dropZoneContainerDisabled]: disabled
+          [classes.dropZoneContainerDisabled]: disabled,
         })}
         role="button"
         tabIndex={0}
-        onDragEnter={event => {
+        onDragEnter={(event) => {
           if (!disabled) {
             enterDropArea();
             event.stopPropagation();
@@ -99,14 +99,14 @@ const DropZone = ({
         }}
         onDragLeave={leaveDropArea}
         onDropCapture={leaveDropArea}
-        onDragOver={event => {
+        onDragOver={(event) => {
           if (!disabled) {
             enterDropArea();
             event.stopPropagation();
             event.preventDefault();
           }
         }}
-        onDrop={event => {
+        onDrop={(event) => {
           if (!disabled) {
             if (multiple === false && event.dataTransfer.files.length === 1) {
               event.stopPropagation();
@@ -115,7 +115,7 @@ const DropZone = ({
             }
           }
         }}
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           if (isKeypress(e, KeyboardCodes.Enter) || isKeypress(e, 32)) {
             inputRef.current.click();
           }
@@ -216,7 +216,7 @@ DropZone.propTypes = {
     /**
      * Style applied to the selected files.
      */
-    selectFilesText: PropTypes.string
+    selectFilesText: PropTypes.string,
   }).isRequired,
   /**
    * Labels to present in Fileuploader.
@@ -241,7 +241,7 @@ DropZone.propTypes = {
   /**
    * Function responsible for processing files added to the drop zone.
    */
-  onFilesAdded: PropTypes.func
+  onFilesAdded: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvFileUploaderDropZone" })(withId(DropZone));

@@ -1,10 +1,10 @@
 import { outlineStyles } from "../Focus/styles";
 import "focus-within-polyfill";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     minWidth: "150px",
-    maxWidth: "610px"
+    maxWidth: "610px",
   },
   inputRoot: {
     margin: "0",
@@ -19,12 +19,12 @@ const styles = theme => ({
       borderColor: theme.hv.palette.accent.acce1,
       background: theme.hv.palette.atmosphere.atmo1,
       "& $iconClear": {
-        visibility: "visible"
-      }
+        visibility: "visible",
+      },
     },
     "&:focus-within $iconClear": {
-      visibility: "visible"
-    }
+      visibility: "visible",
+    },
   },
   inputRootDisabled: {
     borderColor: theme.hv.palette.atmosphere.atmo6,
@@ -32,9 +32,9 @@ const styles = theme => ({
     "&:hover": {
       borderColor: theme.hv.palette.atmosphere.atmo6,
       background: theme.hv.palette.atmosphere.atmo4,
-      cursor: "not-allowed"
+      cursor: "not-allowed",
     },
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
   inputRootFocused: {
     borderStyle: "solid",
@@ -46,15 +46,15 @@ const styles = theme => ({
       borderStyle: "solid",
       borderWidth: "0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
+      background: theme.hv.palette.atmosphere.atmo1,
     },
-    "& $iconClear": { visibility: "visible" }
+    "& $iconClear": { visibility: "visible" },
   },
   inputRootInvalid: {
     borderColor: theme.hv.palette.semantic.sema4,
     "&:hover": {
-      borderColor: theme.hv.palette.semantic.sema4
-    }
+      borderColor: theme.hv.palette.semantic.sema4,
+    },
   },
   input: {
     height: `20px`,
@@ -66,29 +66,29 @@ const styles = theme => ({
     textOverflow: "ellipsis",
     "&::placeholder": {
       ...theme.hv.typography.placeholderText,
-      opacity: 1
+      opacity: 1,
     },
     "&::-ms-clear": {
-      display: "none"
-    }
+      display: "none",
+    },
   },
   inputDisabled: {
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
   multiLine: {
-    padding: 0
+    padding: 0,
   },
   labelContainer: {
     display: "flex",
     alignItems: "flex-end",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   label: {
     paddingBottom: "8px",
-    display: "block"
+    display: "block",
   },
   labelDisabled: {
-    color: theme.hv.palette.atmosphere.atmo7
+    color: theme.hv.palette.atmosphere.atmo7,
   },
   infoIconContainer: {
     height: "32px",
@@ -97,54 +97,54 @@ const styles = theme => ({
     justifyContent: "center",
     "& div": {
       alignSelf: "center",
-      marginTop: -2
-    }
+      marginTop: -2,
+    },
   },
   infoText: {
-    display: "block"
+    display: "block",
   },
   infoIcon: {
-    display: "none"
+    display: "none",
   },
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",
     height: 30,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   adornmentButton: {
     backgroundColor: "transparent",
     border: "none",
     padding: 0,
     margin: 0,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   icon: {
     width: 30,
-    height: 30
+    height: 30,
   },
   iconClear: {
-    visibility: "hidden"
+    visibility: "hidden",
   },
 
   suggestionsContainer: {
     width: "100%",
     position: "relative",
-    top: "-1px"
+    top: "-1px",
   },
   suggestionList: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
     padding: `${theme.hv.spacing.sm}px`,
     position: "absolute",
-    width: "100%"
+    width: "100%",
   },
   "@global": {
     "input:-webkit-autofill": {
       "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,
-      "-webkit-text-fill-color": theme.hv.typography.normalText.color
-    }
-  }
+      "-webkit-text-fill-color": theme.hv.typography.normalText.color,
+    },
+  },
 });
 
 export default styles;

@@ -18,7 +18,7 @@ import { buildLink } from "./addins";
  * @param {Object} classes - The classes to be applied.
  * @returns {function(*): *} A container that has the row value formatted if required.
  */
-const wrapper = (format, id) => data => (
+const wrapper = (format, id) => (data) => (
   <CellWithTooltip data={format ? format(data) : data.row._original[id]} />
 );
 
@@ -82,7 +82,7 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
           aria-label="row expander button"
           role="button"
           tabIndex="0"
-          onKeyDown={event => onKeyHandler(event, rest.row._viewIndex, toggleExpand)}
+          onKeyDown={(event) => onKeyHandler(event, rest.row._viewIndex, toggleExpand)}
           onClick={() => toggleExpand(rest.row._viewIndex)}
           aria-expanded={isExpanded}
         >
@@ -97,7 +97,7 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
           className={clsx({
             [classes.textContainer]: rest.column.cellType === "alpha-numeric",
             [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
-            [classes.firstWithNumeric]: rest.column.cellType === "numeric"
+            [classes.firstWithNumeric]: rest.column.cellType === "numeric",
           })}
         >
           {rest.row._original[rest.column.id]}
@@ -155,5 +155,5 @@ export {
   setColumnAlignment,
   setHeaderSortableClass,
   appendClassnames,
-  createExpanderButton
+  createExpanderButton,
 };

@@ -7,20 +7,20 @@ export default {
   title: "Foundation/Grid",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvGrid } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvGrid } from '@hv/uikit-react-core/dist'",
   },
-  component: HvGrid
+  component: HvGrid,
 };
 
 export const Main = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       marginTop: theme.spacing(2),
       flex: 1,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.sText,
     },
     paper: {
       padding: theme.spacing(2),
@@ -30,8 +30,8 @@ export const Main = () => {
       ...theme.hv.typography.sText,
       color: theme.hv.palette.base.base2,
       display: "flex",
-      alignItems: "center"
-    }
+      alignItems: "center",
+    },
   });
   const width = useWidth();
   const Example = withStyles(styles)(({ classes }) => (
@@ -94,7 +94,7 @@ const Box = ({ text, classes }) => (
   </div>
 );
 
-const styles = theme => ({
+const styles = (theme) => ({
   box: {
     backgroundColor: theme.hv.palette.semantic.sema7,
     display: "flex",
@@ -104,9 +104,9 @@ const styles = theme => ({
     "&>*": {
       margin: "auto",
       textAlign: "center",
-      color: theme.hv.palette.base.base2
-    }
-  }
+      color: theme.hv.palette.base.base2,
+    },
+  },
 });
 
 const StyledBox = withStyles(styles)(Box);
@@ -121,7 +121,7 @@ export const The12Columns = () => {
     border: "1px solid",
     borderColor: theme.hv.palette.atmosphere.atmo5,
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
-    marginTop: theme.hv.spacing.xs
+    marginTop: theme.hv.spacing.xs,
   };
 
   return (
@@ -129,7 +129,7 @@ export const The12Columns = () => {
       <HvTypography variant="highlightText">{title}</HvTypography>
       <div style={styledContainer}>
         <HvGrid container>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((value) => (
             <HvGrid key={value} item xs={1} sm={1} md={1} lg={1} xl={1}>
               <StyledBox text={value.toString()} />
             </HvGrid>
@@ -150,7 +150,7 @@ export const Behaviour = () => {
     border: "1px solid",
     borderColor: theme.hv.palette.atmosphere.atmo5,
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
-    marginTop: theme.hv.spacing.xs
+    marginTop: theme.hv.spacing.xs,
   };
 
   return (
@@ -189,7 +189,7 @@ Behaviour.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Change the size of the window to see the grid behaviour. The box will adjust following the define breakpoints."
-    }
-  }
+        "Change the size of the window to see the grid behaviour. The box will adjust following the define breakpoints.",
+    },
+  },
 };

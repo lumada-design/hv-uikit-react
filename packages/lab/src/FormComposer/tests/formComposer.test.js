@@ -11,8 +11,8 @@ describe("FormComposer", () => {
   const groups = [
     {
       title: "Group1",
-      children: [<input name="input1" onChange={value => value} />, <input name="input2" />]
-    }
+      children: [<input name="input1" onChange={(value) => value} />, <input name="input2" />],
+    },
   ];
 
   beforeEach(() => {

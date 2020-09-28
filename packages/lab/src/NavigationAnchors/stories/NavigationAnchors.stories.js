@@ -7,9 +7,9 @@ export default {
   title: "Lab/Navigation Anchors",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvNavigationAnchors } from '@hv/uikit-react-lab/dist'"
+    usage: "import { HvNavigationAnchors } from '@hv/uikit-react-lab/dist'",
   },
-  component: HvNavigationAnchors
+  component: HvNavigationAnchors,
 };
 
 export const Main = () => (
@@ -20,7 +20,7 @@ export const Main = () => (
     options={[
       { label: "Option1", value: "Value1" },
       { label: "Option2", value: "Value2" },
-      { label: "Option3", value: "Value3" }
+      { label: "Option3", value: "Value3" },
     ]}
   />
 );
@@ -30,7 +30,7 @@ export const WithScroll = () => {
     { label: "Option1", value: "Id1" },
     { label: "Option2", value: "Id2" },
     { label: "Option3", value: "Id3" },
-    { label: "Option4", value: "Id4" }
+    { label: "Option4", value: "Id4" },
   ];
 
   return (
@@ -47,7 +47,7 @@ export const WithScroll = () => {
         style={{
           width: "800px",
           height: "600px",
-          overflow: "auto"
+          overflow: "auto",
         }}
       >
         <div
@@ -55,7 +55,7 @@ export const WithScroll = () => {
           style={{
             height: "400px",
             backgroundColor: "#D1D2D3",
-            marginBottom: "20px"
+            marginBottom: "20px",
           }}
         />
         <div
@@ -63,7 +63,7 @@ export const WithScroll = () => {
           style={{
             height: "150px",
             backgroundColor: "#D1D2D3",
-            marginBottom: "20px"
+            marginBottom: "20px",
           }}
         />
         <div
@@ -71,7 +71,7 @@ export const WithScroll = () => {
           style={{
             height: "500px",
             backgroundColor: "#D1D2D3",
-            marginBottom: "20px"
+            marginBottom: "20px",
           }}
         />
         <div
@@ -79,7 +79,7 @@ export const WithScroll = () => {
           style={{
             height: "300px",
             backgroundColor: "#D1D2D3",
-            marginBottom: "20px"
+            marginBottom: "20px",
           }}
         />
       </div>
@@ -91,7 +91,7 @@ WithScroll.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Basic navigation anchors to provide a clickable area to show scrolling capabilities"
-    }
-  }
+        "Basic navigation anchors to provide a clickable area to show scrolling capabilities",
+    },
+  },
 };

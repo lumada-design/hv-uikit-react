@@ -24,25 +24,25 @@ describe("<Navigation />", () => {
           children: [
             {
               id: "01-01-01",
-              label: "Compute"
+              label: "Compute",
             },
             {
               id: "01-01-02",
-              label: "Storage"
+              label: "Storage",
             },
             {
               id: "01-01-03",
-              label: "Ethernet"
+              label: "Ethernet",
             },
             {
               id: "01-01-04",
               label: "Fiber Channel",
-              payload: { path: "/hello/world", params: { a: 2, b: "3" } }
-            }
-          ]
-        }
-      ]
-    }
+              payload: { path: "/hello/world", params: { a: 2, b: "3" } },
+            },
+          ],
+        },
+      ],
+    },
   ];
 
   describe("navigation", () => {

@@ -10,7 +10,7 @@ import diff from "deep-diff";
 import {
   ThemeProvider as MuiThemeProvider,
   StylesProvider as MuiStylesProvider,
-  createMuiTheme
+  createMuiTheme,
 } from "@material-ui/core";
 
 import { themeBuilder, generateClassName, CssBaseline, getTheme } from "../theme";
@@ -30,7 +30,7 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   const sourceTheme = cloneDeep(InputSourceTheme);
   const deleteDifference = "D";
   if (!isEmpty(targetTheme) && !isEmpty(sourceTheme)) {
-    diff.observableDiff(muiDefaultTheme, sourceTheme, difference => {
+    diff.observableDiff(muiDefaultTheme, sourceTheme, (difference) => {
       const partialCustomTheme = set({}, difference.path, difference.rhs);
       if (difference.kind !== deleteDifference) {
         // Do not include the differences of type "delete"
@@ -75,7 +75,7 @@ HvProvider.propTypes = {
   /**
    * Which of design system default themes to use.
    */
-  changeTheme: PropTypes.func
+  changeTheme: PropTypes.func,
 };
 
 export default HvProvider;

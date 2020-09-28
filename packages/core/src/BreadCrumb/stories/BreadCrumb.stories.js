@@ -5,9 +5,9 @@ export default {
   title: "Components/Breadcrumb",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'",
   },
-  component: HvBreadCrumb
+  component: HvBreadCrumb,
 };
 
 export const Main = () => {
@@ -20,7 +20,7 @@ export const Main = () => {
     { label: "Label 6", path: "route6" },
     { label: "Label 7", path: "route7" },
     { label: "Label 8", path: "route8" },
-    { label: "Label 9", path: "route9" }
+    { label: "Label 9", path: "route9" },
   ];
 
   return <HvBreadCrumb listRoute={data} id="breadcrumb1" aria-label="Breadcrumb" />;
@@ -34,7 +34,7 @@ export const LimitedToFivePaths = () => {
     { label: "Label 4", path: "route4" },
     { label: "Label 5", path: "route5" },
     { label: "Label 6", path: "route6" },
-    { label: "Label 7", path: "route7" }
+    { label: "Label 7", path: "route7" },
   ];
 
   return <HvBreadCrumb listRoute={data} maxVisible={5} id="breadcrumb2" aria-label="Breadcrumb" />;
@@ -43,9 +43,9 @@ export const LimitedToFivePaths = () => {
 LimitedToFivePaths.story = {
   parameters: {
     docs: {
-      storyDescription: "Breadcrumb sample with 5 out of 7 paths visible."
-    }
-  }
+      storyDescription: "Breadcrumb sample with 5 out of 7 paths visible.",
+    },
+  },
 };
 
 export const LimitedToTwoPaths = () => {
@@ -57,7 +57,7 @@ export const LimitedToTwoPaths = () => {
     { label: "Label 5", path: "route5" },
     { label: "Label 6", path: "route6" },
     { label: "Label 7", path: "route7" },
-    { label: "Label 8", path: "route8" }
+    { label: "Label 8", path: "route8" },
   ];
 
   return <HvBreadCrumb listRoute={data} maxVisible={2} id="breadcrumb3" aria-label="Breadcrumb" />;
@@ -66,9 +66,9 @@ export const LimitedToTwoPaths = () => {
 LimitedToTwoPaths.story = {
   parameters: {
     docs: {
-      storyDescription: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible"
-    }
-  }
+      storyDescription: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible",
+    },
+  },
 };
 
 export const WithURL = () => (
@@ -82,9 +82,9 @@ export const WithURL = () => (
 WithURL.story = {
   parameters: {
     docs: {
-      storyDescription: "Breadcrumb sample that generates the paths using an URL."
-    }
-  }
+      storyDescription: "Breadcrumb sample that generates the paths using an URL.",
+    },
+  },
 };
 
 export const WithURLLimited = () => {
@@ -101,9 +101,9 @@ export const WithURLLimited = () => {
 WithURLLimited.story = {
   parameters: {
     docs: {
-      storyDescription: "Breadcrumb sample that generates the limited paths using an URL."
-    }
-  }
+      storyDescription: "Breadcrumb sample that generates the limited paths using an URL.",
+    },
+  },
 };
 
 export const WithClickEvents = () => {
@@ -116,7 +116,7 @@ export const WithClickEvents = () => {
     { label: "Label 6", path: "route6" },
     { label: "Label 7", path: "route7" },
     { label: "Label 8", path: "route8" },
-    { label: "Label 9", path: "route9" }
+    { label: "Label 9", path: "route9" },
   ];
 
   return (
@@ -132,7 +132,7 @@ export const WithClickEvents = () => {
 WithClickEvents.story = {
   parameters: {
     docs: {
-      storyDescription: "Breadcrumb sample that has a onClick defined."
-    }
-  }
+      storyDescription: "Breadcrumb sample that has a onClick defined.",
+    },
+  },
 };

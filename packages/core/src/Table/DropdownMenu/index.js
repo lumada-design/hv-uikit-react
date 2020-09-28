@@ -7,8 +7,8 @@ import HvDropDownMenu from "../../DropDownMenu";
 const DropDownMenu = ({ id, secondaryActions, dropdownMenuProps, original }) => {
   const useStyles = makeStyles({
     inputExtensionOpen: {
-      width: "30px"
-    }
+      width: "30px",
+    },
   });
 
   const dropdownClasses = useStyles();

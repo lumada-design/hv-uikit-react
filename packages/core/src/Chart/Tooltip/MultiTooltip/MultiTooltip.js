@@ -12,7 +12,7 @@ const MultiTooltip = ({ classes, data }) => (
       </div>
     </div>
     <div className={classes.valuesContainer}>
-      {data?.elements?.map(element => (
+      {data?.elements?.map((element) => (
         <div key={element.name} className={classes.values}>
           <div className={classes.color} style={{ backgroundColor: element.color }} />
           <div className={classes.separatorColor} />
@@ -61,7 +61,7 @@ MultiTooltip.propTypes = {
     /**
      * Styles applied to the separator.
      */
-    separator: PropTypes.string
+    separator: PropTypes.string,
   }).isRequired,
   /**
    * Data of the tooltip.
@@ -87,10 +87,10 @@ MultiTooltip.propTypes = {
         /**
          * Value.
          */
-        value: PropTypes.number
+        value: PropTypes.number,
       })
-    )
-  }).isRequired
+    ),
+  }).isRequired,
 };
 
 const arePropsEqual = (prevProps, nextProps) => prevProps.data === nextProps.data;

@@ -41,7 +41,7 @@ describe("<Navigation />", () => {
       .find(HvDropLeftIcon)
       .at(0)
       .simulate("click", {
-        preventDefault() {}
+        preventDefault() {},
       });
 
     expect(onNavigatePreviousMock).toBeCalled();
@@ -54,7 +54,7 @@ describe("<Navigation />", () => {
       .find(HvDropRightIcon)
       .at(0)
       .simulate("click", {
-        preventDefault() {}
+        preventDefault() {},
       });
 
     expect(onNavigateNextMock).toBeCalled();
@@ -67,7 +67,7 @@ describe("<Navigation />", () => {
       .find("div")
       .at(2)
       .simulate("click", {
-        preventDefault() {}
+        preventDefault() {},
       });
 
     expect(onTextClickMock).toBeCalled();

@@ -36,7 +36,7 @@ export const getMonthDays = (month, year) => new Date(year, month, 0).getDate();
  * @param {Date} date - Date value.
  * @returns {number} The number of the day of the week (0 to 6).
  */
-export const getWeekdayNumber = date => date.getUTCDay();
+export const getWeekdayNumber = (date) => date.getUTCDay();
 
 /**
  * Creates a date in UTC timezone.
@@ -54,7 +54,7 @@ export const makeUTCDate = (year, month, day) => new Date(Date.UTC(year, month -
  * @param {string} isoStringDate ISO formatted date.
  * @returns {Date}
  */
-export const makeUTCDateFromISOString = isoStringDate => new Date(isoStringDate);
+export const makeUTCDateFromISOString = (isoStringDate) => new Date(isoStringDate);
 
 /**
  * Creates a new date object with today's date in UTC timezone.
@@ -73,7 +73,7 @@ export const makeUTCToday = () => {
  * @returns {Date}
  * @constructor
  */
-export const UTCToLocalDate = utcDate =>
+export const UTCToLocalDate = (utcDate) =>
   new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate());
 
 /**
@@ -92,7 +92,7 @@ export const getMonthFirstDay = (month, year) => getWeekdayNumber(makeUTCDate(ye
  * @param {Date} date - The date to be validated.
  * @returns {boolean} A flag stating if the date is valid or not.
  */
-export const isDate = date => {
+export const isDate = (date) => {
   const auxIsDate = Object.prototype.toString.call(date) === "[object Date]";
   const isValidDate = date && !Number.isNaN(date.valueOf());
 
@@ -105,7 +105,7 @@ export const isDate = date => {
  * @param {Date} date - The date to be validated.
  * @returns {boolean} A flag stating if the date is in a valid range or not.
  */
-export const isDateInValidRange = date => {
+export const isDateInValidRange = (date) => {
   if (!isDate(date)) {
     return false;
   }
@@ -160,13 +160,13 @@ export const isSameDay = (date1, date2) => {
  * @param {Date} date - The date to be formatted.
  * @returns {string || null} The formatted date in ISO format.
  */
-export const getDateISO = date => {
+export const getDateISO = (date) => {
   if (!isDate(date)) return null;
 
   return [
     date.getUTCFullYear(),
     zeroPad(date.getUTCMonth() + 1, 2),
-    zeroPad(date.getUTCDate(), 2)
+    zeroPad(date.getUTCDate(), 2),
   ].join("-");
 };
 
@@ -176,7 +176,7 @@ export const getDateISO = date => {
  * @param {string} isoStringDate - The string to be checked.
  * @returns {boolean} True if the received string is in a valid ISO format, false otherwise.
  */
-export const isValidISOString = isoStringDate => /\d{4}-\d{2}-\d{2}/.test(isoStringDate);
+export const isValidISOString = (isoStringDate) => /\d{4}-\d{2}-\d{2}/.test(isoStringDate);
 
 /**
  * Converts a ISO date string ("YYYY-MM-DD") into a new Date.
@@ -186,7 +186,7 @@ export const isValidISOString = isoStringDate => /\d{4}-\d{2}-\d{2}/.test(isoStr
  * @param {string} isoStringDate
  * @returns {Date} A new date created based on the ISO string.
  */
-export const convertISOStringDateToDate = isoStringDate => {
+export const convertISOStringDateToDate = (isoStringDate) => {
   if (isoStringDate !== "" && !isValidISOString(isoStringDate)) {
     // eslint-disable-next-line no-console
     console.warn(`The date must be in ISO format (YYYY-MM-DD): ${isoStringDate}`);
@@ -241,7 +241,7 @@ export const getNextMonth = (month, year) => {
  */
 export const getMonthNamesList = (locale, representationValue = REPRESENTATION_VALUES.LONG) => {
   const options = {
-    month: representationValue
+    month: representationValue,
   };
 
   return [...new Array(12)].map((n, index) => {
@@ -262,7 +262,7 @@ export const getWeekdayNamesList = (locale, representativeValue = REPRESENTATION
   for (let day = 4; day <= 10; day += 1) {
     weekdayNames.push(
       new Date(1970, 0, day).toLocaleString(locale, {
-        weekday: representativeValue
+        weekday: representativeValue,
       })
     );
   }
@@ -357,7 +357,7 @@ export const getValidVisibleDate = (visibleDate, selectedDate) => {
  * @param {string} locale - The locale to be checked
  * @returns {boolean} - True if the locale is valid, false otherwise.
  */
-export const isValidLocale = locale => {
+export const isValidLocale = (locale) => {
   try {
     if (Intl.DateTimeFormat.supportedLocalesOf(locale).length > 0) {
       return true;

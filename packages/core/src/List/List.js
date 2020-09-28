@@ -18,12 +18,12 @@ const DEFAULT_STATE = {
   allSelected: false,
   anySelected: false,
   anySelectableSelected: false,
-  allSelectableSelected: false
+  allSelectableSelected: false,
 };
 
 const DEFAULT_LABELS = {
   selectAll: "All",
-  selectionConjunction: "of"
+  selectionConjunction: "of",
 };
 
 /**
@@ -34,7 +34,7 @@ class List extends React.Component {
     super(props);
 
     this.state = {
-      ...DEFAULT_STATE
+      ...DEFAULT_STATE,
     };
     this.listRef = React.createRef();
   }
@@ -48,7 +48,7 @@ class List extends React.Component {
 
       return {
         values,
-        ...parsedState
+        ...parsedState,
       };
     }
 
@@ -132,7 +132,7 @@ class List extends React.Component {
         disabledClass={item.disabled}
         strategy={selectable ? "listbox" : "menu"}
         configuration={{
-          tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1
+          tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1,
         }}
         isDropdown
         classes={{ focus: classes.focus }}
@@ -142,13 +142,13 @@ class List extends React.Component {
           role={selectable ? "option" : "menuitem"}
           aria-disabled={item.disabled || undefined}
           aria-selected={multiSelect || selected ? selected : undefined}
-          onClick={evt => this.handleSelect(evt, item)}
+          onClick={(evt) => this.handleSelect(evt, item)}
           onKeyDown={() => {}}
           className={clsx(classes.listItem, {
             [classes.selected]: item.selected && !useSelector,
             [classes.condensed]: condensed,
             [classes.selector]: useSelector,
-            [classes.disabled]: item.disabled
+            [classes.disabled]: item.disabled,
           })}
         >
           {!useSelector && item.iconCallback && this.renderLeftIcon(item)}
@@ -174,10 +174,10 @@ class List extends React.Component {
           label={item.label}
           checked={item.selected}
           disabled={item.disabled}
-          onChange={evt => this.handleSelect(evt, item)}
+          onChange={(evt) => this.handleSelect(evt, item)}
           classes={{
             container: classes.selectorContainer,
-            icon: classes.icon
+            icon: classes.icon,
           }}
         />,
         item.label
@@ -201,7 +201,7 @@ class List extends React.Component {
           disabled={item.disabled}
           classes={{
             container: classes.selectorContainer,
-            icon: classes.icon
+            icon: classes.icon,
           }}
         />,
         item.label
@@ -212,7 +212,7 @@ class List extends React.Component {
     return this.renderItemText(item);
   };
 
-  renderItemText = item => {
+  renderItemText = (item) => {
     const { multiSelect, hasTooltips, classes } = this.props;
 
     const ItemText = wrapperTooltip(hasTooltips, this.renderText(item), item.label);
@@ -226,7 +226,7 @@ class List extends React.Component {
     );
   };
 
-  renderText = item => {
+  renderText = (item) => {
     const { classes } = this.props;
     const { hasLeftIcons } = this.state;
 
@@ -237,7 +237,7 @@ class List extends React.Component {
           [classes.selected]: item.selected,
           [classes.textDisabled]: item.disabled,
           [classes.labelIconLeftPadding]: item.iconCallback,
-          [classes.noIconLeftPadding]: !item.iconCallback && hasLeftIcons
+          [classes.noIconLeftPadding]: !item.iconCallback && hasLeftIcons,
         })}
       >
         {item.label}
@@ -251,11 +251,11 @@ class List extends React.Component {
     return <DropRight className={classes.box} iconSize="XS" />;
   };
 
-  renderLeftIcon = item => {
+  renderLeftIcon = (item) => {
     const newIcon = !isNil(item.iconCallback)
       ? item.iconCallback({
           isSelected: item.selected,
-          isDisabled: item.disabled
+          isDisabled: item.disabled,
         })
       : undefined;
 
@@ -384,7 +384,7 @@ List.propTypes = {
     /**
      * Styles applied to the link.
      */
-    link: PropTypes.string
+    link: PropTypes.string,
   }).isRequired,
   /**
    * The id of the root element
@@ -413,7 +413,7 @@ List.propTypes = {
       iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool,
       path: PropTypes.string,
-      params: PropTypes.instanceOf(Object)
+      params: PropTypes.instanceOf(Object),
     })
   ).isRequired,
   /**
@@ -436,7 +436,7 @@ List.propTypes = {
     /**
      * The label used in the middle of the multiselection count.
      */
-    selectionConjunction: PropTypes.string
+    selectionConjunction: PropTypes.string,
   }),
   /**
    * If true renders list items with radio or checkbox selectors.
@@ -475,7 +475,7 @@ List.propTypes = {
   /**
    * If ´true´ the dropdown will show tooltips when user mouseenter text in list
    */
-  hasTooltips: PropTypes.bool
+  hasTooltips: PropTypes.bool,
 };
 
 List.defaultProps = {
@@ -490,7 +490,7 @@ List.defaultProps = {
   singleSelectionToggle: true,
   condensed: false,
   onChange() {},
-  onClick() {}
+  onClick() {},
 };
 
 export default withStyles(styles, { name: "HvList" })(List);

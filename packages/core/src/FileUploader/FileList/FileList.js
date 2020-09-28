@@ -11,14 +11,14 @@ const FileList = ({
   list = [],
   progressConjunctionLabel,
   removeFileButtonLabel,
-  onFileRemoved
+  onFileRemoved,
 }) => {
   const hasFiles = list.length > 0;
   if (!hasFiles) return null;
 
   return (
     <ul id={id} className={classes.list}>
-      {list.map(data => (
+      {list.map((data) => (
         <li key={data.id}>
           <File
             id={setUid(id, data.id)}
@@ -57,7 +57,7 @@ FileList.propTypes = {
   /**
    * Value of aria-label to apply to remove file button in filelist
    * */
-  removeFileButtonLabel: PropTypes.string.isRequired
+  removeFileButtonLabel: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles, { name: "HvFileUploaderFileList" })(FileList);

@@ -27,11 +27,11 @@ AssetMultiButton.propTypes = {
   views: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      icon: PropTypes.node
+      icon: PropTypes.node,
     })
   ).isRequired,
   changeView: PropTypes.func.isRequired,
-  onViewChange: PropTypes.func
+  onViewChange: PropTypes.func,
 };
 
 const arePropsEqual = (prevProps, nextProps) => prevProps.views === nextProps.views;

@@ -9,7 +9,7 @@ const BREAKPOINT_GUTTERS = {
   sm: 1,
   md: 2,
   lg: 2,
-  xl: 2
+  xl: 2,
 };
 
 const SPACINGS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -61,7 +61,7 @@ HvGrid.propTypes = {
     "flex-start",
     "flex-end",
     "space-between",
-    "space-around"
+    "space-around",
   ]),
   /**
    * Defines the `align-items` style property.
@@ -112,7 +112,7 @@ HvGrid.propTypes = {
     "flex-end",
     "space-between",
     "space-around",
-    "space-evenly"
+    "space-evenly",
   ]),
   /**
    * Defines the number of grids the component is going to use.
@@ -154,7 +154,7 @@ HvGrid.propTypes = {
    * If `true`, it sets `min-width: 0` on the item.
    * Refer to the limitations section of the documentation to better understand the use case.
    */
-  zeroMinWidth: PropTypes.bool
+  zeroMinWidth: PropTypes.bool,
 };
 
 export default withStyles({}, { name: "HvGrid" })(HvGrid);

@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import { DialogActions, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvModalActions = props => {
+const HvModalActions = (props) => {
   const { classes, className, children, ...others } = props;
   return (
     <DialogActions
       classes={{
         root: classes.root,
-        spacing: classes.spacing
+        spacing: classes.spacing,
       }}
       className={className}
       {...others}
@@ -35,12 +35,12 @@ HvModalActions.propTypes = {
     /**
      * Style applied to the root of the component if disableSpacing is off.
      */
-    spacing: PropTypes.string
+    spacing: PropTypes.string,
   }).isRequired,
   /**
    * Actions of the modal.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvModalActions" })(HvModalActions);

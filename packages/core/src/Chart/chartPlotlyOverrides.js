@@ -22,7 +22,7 @@ const applyLayoutYaxisDefaults = (inputLayout, layoutStyles, yAxisTitle, isHoriz
   setterIfNil(layout.yaxis.title, "font", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
-    color: layoutStyles.vizText.color
+    color: layoutStyles.vizText.color,
   });
 
   setterIfNil(layout.yaxis, "fixedrange", true);
@@ -32,7 +32,7 @@ const applyLayoutYaxisDefaults = (inputLayout, layoutStyles, yAxisTitle, isHoriz
   setterIfNil(layout.yaxis, "tickfont", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
-    color: layoutStyles.vizText.color
+    color: layoutStyles.vizText.color,
   });
 
   setterIfNil(layout.yaxis, "gridcolor", layoutStyles.gridColor);
@@ -62,7 +62,7 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
   setterIfNil(layout.xaxis.title, "font", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
-    color: layoutStyles.vizText.color
+    color: layoutStyles.vizText.color,
   });
 
   setterIfNil(layout.xaxis, "fixedrange", true);
@@ -72,7 +72,7 @@ const applyLayoutXaxisDefaults = (inputLayout, layoutStyles, xAxisTitle, isHoriz
   setterIfNil(layout.xaxis, "tickfont", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
-    color: layoutStyles.vizText.color
+    color: layoutStyles.vizText.color,
   });
 
   setterIfNil(layout.xaxis, "gridcolor", layoutStyles.gridColor);
@@ -97,13 +97,13 @@ const applyLayoutLegendDefaults = (inputLayout, layoutStyles) => {
     y: 1.1,
     xanchor: "right",
     yanchor: "bottom",
-    orientation: "h"
+    orientation: "h",
   });
 
   setterIfNil(layout.legend, "font", {
     family: layoutStyles.vizText.fontFamily,
     size: layoutStyles.vizText.fontSize,
-    color: layoutStyles.vizText.color
+    color: layoutStyles.vizText.color,
   });
   return layout;
 };
@@ -119,7 +119,7 @@ const applyLayoutRootDefaults = (inputLayout, layoutStyles) => {
     l: 50,
     b: 50,
     t: 10,
-    pad: 0
+    pad: 0,
   });
 
   layout.plot_bgcolor = layoutStyles.plotColor;
@@ -149,8 +149,8 @@ export const applyLayoutDefaults = (inputLayout, theme, isHorizontal, xAxisTitle
   return layout;
 };
 
-export const applyConfigDefaults = config => ({
+export const applyConfigDefaults = (config) => ({
   responsive: true,
   displayModeBar: false,
-  ...config
+  ...config,
 });

@@ -24,7 +24,7 @@ import {
   isSameMonth,
   isValidLocale,
   makeUTCDate,
-  makeUTCToday
+  makeUTCToday,
 } from "./utils";
 
 import CalendarModel from "./model";
@@ -111,7 +111,7 @@ class Calendar extends React.Component {
    * @param {Date} date - The date to which the state will be changed to.
    * @memberOf Calendar
    */
-  selectDate = date => event => {
+  selectDate = (date) => (event) => {
     if (event) {
       event.preventDefault();
     }
@@ -130,7 +130,7 @@ class Calendar extends React.Component {
 
     this.setState({
       calendarModel: calendarModel.navigateTo(navOption, month),
-      viewMode: VIEW_MODE.CALENDAR
+      viewMode: VIEW_MODE.CALENDAR,
     });
     this.visibleDateChanged();
   };
@@ -178,7 +178,7 @@ class Calendar extends React.Component {
       visibleDate: validVisibleDate,
       calendarModel: new CalendarModel(visibleMonth, visibleYear),
       viewMode: VIEW_MODE.CALENDAR,
-      locale: validLocale
+      locale: validLocale,
     };
   };
 
@@ -297,7 +297,7 @@ class Calendar extends React.Component {
    * @param currentDate - The array representing the date [YYYY, MM, DD].
    * @memberOf Calendar
    */
-  renderCalendarDate = currentDate => {
+  renderCalendarDate = (currentDate) => {
     const { selectedDate, calendarModel, today, locale } = this.state;
     const { classes } = this.props;
 
@@ -334,7 +334,7 @@ class Calendar extends React.Component {
       <div
         className={classes.focusSelection}
         onClick={onClickFunc}
-        onKeyDown={event => this.arrowKeysFocus(event, onClickFunc, 7)}
+        onKeyDown={(event) => this.arrowKeysFocus(event, onClickFunc, 7)}
         role="presentation"
         tabIndex={0}
       >
@@ -400,7 +400,7 @@ class Calendar extends React.Component {
               key={key}
               role="presentation"
               onClick={onClick}
-              onKeyDown={event => this.arrowKeysFocus(event, onClick, 3)}
+              onKeyDown={(event) => this.arrowKeysFocus(event, onClick, 3)}
               tabIndex={0}
             >
               <HvTypography variant="normalText" className={className}>
@@ -482,7 +482,7 @@ Calendar.propTypes = {
   /**
    * Text to show in the header on range mode.
    */
-  label: PropTypes.string
+  label: PropTypes.string,
 };
 
 Calendar.defaultProps = {
@@ -493,7 +493,7 @@ Calendar.defaultProps = {
   handleDateChange: undefined,
   handleVisibleDateChange: undefined,
   rangeMode: false,
-  label: null
+  label: null,
 };
 
 export default withStyles(styles, { name: "HvDatePickerCalendar" })(Calendar);

@@ -11,7 +11,7 @@ const configuration = {
   subtitle: "subtitle",
   content: <div />,
   actions: "actions",
-  icon: "icon"
+  icon: "icon",
 };
 
 describe("Card", () => {
@@ -44,7 +44,7 @@ describe("Card", () => {
           onClick={onClickM}
           onChange={onChangeM}
           checkboxProps={{
-            value: "value"
+            value: "value",
           }}
         />
       </HvProvider>
@@ -70,7 +70,7 @@ describe("Card", () => {
           onClick={onClickM}
           onChange={onChangeM}
           checkboxProps={{
-            value: "value"
+            value: "value",
           }}
         />
       </HvProvider>

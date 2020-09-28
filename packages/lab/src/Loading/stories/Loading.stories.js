@@ -10,9 +10,9 @@ export default {
     componentSubtitle: null,
     usage: "import { HvLoading } from '@hv/uikit-react-lab/dist'",
     deprecated: true,
-    compNameToUse: "Loading component in Core package."
+    compNameToUse: "Loading component in Core package.",
   },
-  component: HvLoading
+  component: HvLoading,
 };
 
 export const Main = () => <HvLoading />;
@@ -22,7 +22,7 @@ export const WithDelay = () => <HvLoadingWithDelay delay={5000} />;
 WithDelay.story = {
   parameters: {
     docs: {
-      storyDescription: "A simple Loading example with Delay"
-    }
-  }
+      storyDescription: "A simple Loading example with Delay",
+    },
+  },
 };

@@ -1,3 +1,3 @@
-const getComponentName = Component => Component.displayName || Component.name || "";
+const getComponentName = (Component) => Component.displayName || Component.name || "";
 
 export default getComponentName;

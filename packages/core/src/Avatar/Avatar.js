@@ -16,7 +16,7 @@ const getColor = (theme, color, defaultColor) => theme.palette[color] || color |
  * Avatars can be used to represent a user or a brand.
  * They can show an image, an icon or the initial letters of a name, for example.
  */
-const HvAvatar = props => {
+const HvAvatar = (props) => {
   const {
     className,
     style,
@@ -61,7 +61,7 @@ const HvAvatar = props => {
   }
 
   const inlineStyle = {
-    ...style
+    ...style,
   };
 
   if (component != null && typeof component !== "string") {
@@ -128,7 +128,7 @@ HvAvatar.propTypes = {
     /**
      * Styles applied to the fallback icon.
      */
-    fallback: PropTypes.string
+    fallback: PropTypes.string,
   }).isRequired,
 
   /**
@@ -181,7 +181,7 @@ HvAvatar.propTypes = {
    * Attributes applied to the `img` element if the component is used to display an image.
    * It can be used to listen for the loading error event.
    */
-  imgProps: PropTypes.instanceOf(Object)
+  imgProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvAvatar" })(HvAvatar);

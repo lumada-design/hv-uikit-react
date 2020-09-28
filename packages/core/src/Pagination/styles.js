@@ -1,6 +1,6 @@
 import { outlineStyles } from "../Focus/styles";
 
-const styles = theme => {
+const styles = (theme) => {
   const hoverColor = theme.hv.palette.atmosphere.atmo4;
 
   return {
@@ -11,14 +11,14 @@ const styles = theme => {
       justifyContent: "center",
       alignItems: "stretch",
       flexWrap: "wrap",
-      marginTop: `${theme.hv.spacing.sm}px`
+      marginTop: `${theme.hv.spacing.sm}px`,
     },
     pageSizeOptions: {
       position: "absolute",
       marginRight: "40px",
       top: "50%",
       transform: "translateY(-50%)",
-      left: "0"
+      left: "0",
     },
     pageSizeOptionsSelect: {
       fontFamily: theme.hv.typography.fontFamily,
@@ -36,34 +36,34 @@ const styles = theme => {
       backgroundColor: "transparent",
       backgroundSize: "26px 26px",
       "&::-ms-expand": {
-        display: "none"
+        display: "none",
       },
       "&:hover:enabled": {
         cursor: "pointer",
-        backgroundColor: hoverColor
+        backgroundColor: hoverColor,
       },
       "&:focus": {
         backgroundColor: hoverColor,
-        ...outlineStyles
-      }
+        ...outlineStyles,
+      },
     },
     pageNavigator: {
       display: "flex",
       alignItems: "stretch",
       height: "32px",
       "&>*": {
-        margin: `0 ${theme.hv.spacing.xs / 2}px`
-      }
+        margin: `0 ${theme.hv.spacing.xs / 2}px`,
+      },
     },
     pageInfo: {
       display: "inline-block",
       whiteSpace: "nowrap",
       height: "32px",
-      lineHeight: "32px"
+      lineHeight: "32px",
     },
     pageJump: {
       display: "inline-block",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     pageSizeInput: {},
     pageSizeInputRoot: {
@@ -75,9 +75,9 @@ const styles = theme => {
         textAlign: "right",
         MozAppearance: "textfield",
         "&:focus": {
-          backgroundColor: hoverColor
-        }
-      }
+          backgroundColor: hoverColor,
+        },
+      },
     },
     pageSizeInputContainer: {
       width: "40px",
@@ -86,27 +86,27 @@ const styles = theme => {
       "& $pageSizeInputRoot": {
         backgroundColor: "transparent",
         "&:hover": {
-          backgroundColor: hoverColor
+          backgroundColor: hoverColor,
         },
         "&:focus": {
-          backgroundColor: hoverColor
+          backgroundColor: hoverColor,
         },
         '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
           WebkitAppearance: "none",
-          margin: 0
-        }
-      }
+          margin: 0,
+        },
+      },
     },
     iconContainer: {
       padding: 0,
       borderRadius: 0,
       "&:hover": {
-        backgroundColor: hoverColor
+        backgroundColor: hoverColor,
       },
       "&:focus": {
         backgroundColor: hoverColor,
-        ...outlineStyles
-      }
+        ...outlineStyles,
+      },
     },
     icon: {},
     selectDownIcon: {
@@ -115,8 +115,8 @@ const styles = theme => {
       pointerEvents: "none",
       left: "-32px",
       top: "2px",
-      width: 0
-    }
+      width: 0,
+    },
   };
 };
 

@@ -1,34 +1,34 @@
 // --------------------------- Values ---------------------------------
 
-const baseData = id => ({
+const baseData = (id) => ({
   id: `id_${id}`,
   probability: 90 + id,
   timeHorizon: 8 + id,
-  checkboxProps: { value: `id_${id}` }
+  checkboxProps: { value: `id_${id}` },
 });
 
-const compressorData = id => ({
+const compressorData = (id) => ({
   ...baseData(id),
   headerTitle: `Risk of downtime ${id + 1}`,
   status: 5,
   event: {
     description: `Risk of downtime on Truck ${id}`,
     timestamp: "2 minutes ago",
-    schedule: "fix now"
+    schedule: "fix now",
   },
-  relatedAssets: "Track A, Zone 15 Brake"
+  relatedAssets: "Track A, Zone 15 Brake",
 });
 
-const machineData = id => ({
+const machineData = (id) => ({
   ...baseData(id),
   headerTitle: `Track severe ${id + 1}`,
   status: 2,
   event: {
     description: `Track ${id} severe breakdown`,
     timestamp: "2 hours ago",
-    schedule: "fix 3rd shift"
+    schedule: "fix 3rd shift",
   },
-  relatedAssets: "Track B, Load 2 Brake"
+  relatedAssets: "Track B, Load 2 Brake",
 });
 
 /**
@@ -37,7 +37,7 @@ const machineData = id => ({
  * @param str
  * @returns {number}
  */
-const getHeaderNumber = str => Number(str.substr(0, str.indexOf(" ")));
+const getHeaderNumber = (str) => Number(str.substr(0, str.indexOf(" ")));
 
 /**
  * Sort ascending.
@@ -63,7 +63,7 @@ const sortDesc = (a, b) => getHeaderNumber(b.headerTitle) - getHeaderNumber(a.he
  * @returns {[]}
  */
 const valuesGenerator = (num = 50) =>
-  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
+  Array.from(Array(num).keys()).map((i) => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 let values = valuesGenerator();
 let searchString = "";
@@ -88,7 +88,7 @@ const getSlicePage = (values2, size, page) => {
  * @param data
  * @returns {boolean}
  */
-const searchFilter = data => data.headerTitle.toUpperCase().includes(searchString);
+const searchFilter = (data) => data.headerTitle.toUpperCase().includes(searchString);
 
 /**
  * Returns the data for the page.
@@ -132,6 +132,6 @@ const doSort = (type, size, page) => {
  * @param size
  * @returns {number}
  */
-const getPages = size => Math.ceil(values.filter(searchFilter).length / size);
+const getPages = (size) => Math.ceil(values.filter(searchFilter).length / size);
 
 export { fetchData, getPages, doSearch, doSort };

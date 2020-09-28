@@ -8,9 +8,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -25,9 +25,9 @@ ModalOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
         return wait(() => screen.getByRole("heading", { name: /switch model view\?/i }));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, modal with table open
@@ -39,9 +39,9 @@ TableOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Table"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, modal with inputs opened
@@ -53,7 +53,7 @@ inputsOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Inputs"));
         return wait(() => screen.getByRole("dialog"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

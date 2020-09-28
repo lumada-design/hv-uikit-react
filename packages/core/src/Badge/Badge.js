@@ -8,7 +8,7 @@ import styles from "./styles";
 /**
  * The badge is a component used to show the user that there is something new in the app.
  */
-const Badge = props => {
+const Badge = (props) => {
   const {
     classes,
     showCount = false,
@@ -33,7 +33,7 @@ const Badge = props => {
     [classes.showCount]: !label && renderedCountOrLabel,
     [classes.showLabel]: label,
     [classes.badgeIcon]: icon,
-    [classes.badgeOneDigit]: String(renderedCountOrLabel).length === 1
+    [classes.badgeOneDigit]: String(renderedCountOrLabel).length === 1,
   });
 
   return (
@@ -82,7 +82,7 @@ Badge.propTypes = {
     /**
      * Styles applied to the component badge container.
      */
-    badgeContainer: PropTypes.string
+    badgeContainer: PropTypes.string,
   }).isRequired,
   /**
    * Count is the number of unread notifications.
@@ -117,7 +117,7 @@ Badge.propTypes = {
   /**
    * Text variant.
    */
-  textVariant: PropTypes.string
+  textVariant: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvBadge" })(Badge);

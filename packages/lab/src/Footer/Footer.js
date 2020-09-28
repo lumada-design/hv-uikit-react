@@ -8,11 +8,11 @@ import styles from "./styles";
 /**
  * A footer component for identification, still in development
  */
-const HvFooter = props => {
+const HvFooter = (props) => {
   const {
     classes,
     labelLeftName = "Hitachi Vantara",
-    labelRightName = `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`
+    labelRightName = `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`,
   } = props;
 
   return (
@@ -39,10 +39,10 @@ HvFooter.propTypes = {
     /**
      *  Styles applied to label on the right.
      */
-    labelRight: PropTypes.string
+    labelRight: PropTypes.string,
   }).isRequired,
   labelLeftName: PropTypes.string,
-  labelRightName: PropTypes.string
+  labelRightName: PropTypes.string,
 };
 
 export default withDeprecate(

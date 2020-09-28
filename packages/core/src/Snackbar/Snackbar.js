@@ -6,12 +6,12 @@ import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import styles from "./styles";
 import { setId } from "../utils";
 
-const transLeft = props => <Slide {...props} direction="left" />;
-const transRight = props => <Slide {...props} direction="right" />;
-const transUp = props => <Slide {...props} direction="up" />;
-const transDown = props => <Slide {...props} direction="down" />;
+const transLeft = (props) => <Slide {...props} direction="left" />;
+const transRight = (props) => <Slide {...props} direction="right" />;
+const transUp = (props) => <Slide {...props} direction="up" />;
+const transDown = (props) => <Slide {...props} direction="down" />;
 
-const snackBarDirComponent = direction => {
+const snackBarDirComponent = (direction) => {
   switch (direction) {
     default:
     case "left":
@@ -51,11 +51,11 @@ const HvSnackbar = ({
 }) => {
   const anchorOriginOffset = {
     anchorOriginTop: {
-      top: `${offset}px`
+      top: `${offset}px`,
     },
     anchorOriginBottom: {
-      bottom: `${offset}px`
-    }
+      bottom: `${offset}px`,
+    },
   };
 
   return (
@@ -122,7 +122,7 @@ HvSnackbar.propTypes = {
     /**
      * Styles applied to the component when define as bottom right.
      */
-    anchorOriginBottomRight: PropTypes.string
+    anchorOriginBottomRight: PropTypes.string,
   }).isRequired,
   /**
    *  If true, Snackbar is open.
@@ -141,7 +141,7 @@ HvSnackbar.propTypes = {
    */
   anchorOrigin: PropTypes.shape({
     vertical: PropTypes.string,
-    horizontal: PropTypes.string
+    horizontal: PropTypes.string,
   }),
   /**
    * The number of milliseconds to wait before automatically calling the onClose function. onClose should then set the state of the open prop to hide the Snackbar
@@ -168,8 +168,8 @@ HvSnackbar.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       icon: PropTypes.func,
-      disabled: PropTypes.bool
-    })
+      disabled: PropTypes.bool,
+    }),
   ]),
   /**
    *  The callback function ran when an action is triggered, receiving ´action´ as param
@@ -190,7 +190,7 @@ HvSnackbar.propTypes = {
   /**
    * Others applied to the content of the snackbar.
    */
-  snackbarContentProps: PropTypes.instanceOf(Object)
+  snackbarContentProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvSnackbar" })(HvSnackbar);

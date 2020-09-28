@@ -52,16 +52,16 @@ const Chart = ({
 
   // Extract data from the plotly onHover event to be used to create the tooltip.
   const onHover = useCallback(
-    event => {
+    (event) => {
       const dataFromPoints = {
         title: isHorizontal ? event.points[0].y : event.points[0].x,
-        elements: []
+        elements: [],
       };
-      event.points.forEach(p => {
+      event.points.forEach((p) => {
         dataFromPoints.elements.push({
           color: p.fullData.marker ? p.fullData.marker.color : p.fullData.line.color,
           name: p.fullData.name,
-          value: isHorizontal ? p.x : p.y
+          value: isHorizontal ? p.x : p.y,
         });
       });
 
@@ -75,10 +75,10 @@ const Chart = ({
     setIsHover(false);
   }, []);
 
-  const onMouseMove = useCallback(event => {
+  const onMouseMove = useCallback((event) => {
     setCoordinates({
       x: event.clientX,
-      y: event.clientY
+      y: event.clientY,
     });
   }, []);
 
@@ -121,7 +121,7 @@ Chart.propTypes = {
     root: PropTypes.string,
     titleContainer: PropTypes.string,
     subtitle: PropTypes.string,
-    paddingTop: PropTypes.string
+    paddingTop: PropTypes.string,
   }),
   /**
    * Title of the chart.
@@ -158,7 +158,7 @@ Chart.propTypes = {
   /**
    * Defines the Y axis title.
    */
-  yAxisTitle: PropTypes.string
+  yAxisTitle: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvChart" })(Chart);

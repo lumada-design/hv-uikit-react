@@ -8,10 +8,10 @@ export default {
   title: "Components/Forms/Adornment",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAdornment } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvAdornment } from '@hv/uikit-react-core/dist'",
   },
   component: HvAdornment,
-  decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => {
@@ -21,7 +21,7 @@ export const Main = () => {
   const toggleType = () => {
     setPasswordType(!isPassword);
   };
-  const getIcon = isPass => (isPass ? <Preview /> : <PreviewOff />);
+  const getIcon = (isPass) => (isPass ? <Preview /> : <PreviewOff />);
 
   return (
     <HvFormElement value="p455w0rd" status="standBy">
@@ -50,7 +50,7 @@ export const DynamicAdornments = () => {
   const btnStyle = {
     width: "250px",
     height: "50px",
-    margin: "10px"
+    margin: "10px",
   };
   return (
     <>
@@ -91,7 +91,7 @@ export const DynamicAdornments = () => {
 DynamicAdornments.story = {
   parameters: {
     docs: {
-      storyDescription: "Adornment showcasing the ability to react to the form element status."
-    }
-  }
+      storyDescription: "Adornment showcasing the ability to react to the form element status.",
+    },
+  },
 };

@@ -190,7 +190,7 @@ describe("Avatar ", () => {
 
   describe("sizes", () => {
     it("should set default user icon size to size bellow", () => {
-      const getDefaultUserIcon = size => {
+      const getDefaultUserIcon = (size) => {
         const [, , rootNode] = mountAndReturnAvatarAndRootNode(
           <HvProvider>
             <HvAvatar size={size} />

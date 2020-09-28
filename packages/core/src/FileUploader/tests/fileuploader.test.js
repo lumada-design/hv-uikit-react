@@ -14,14 +14,14 @@ const fileList = [
     id: "1",
     name: "Screenshot 2019-12-05 at 17.15.43.png",
     size: 14100000,
-    type: "image/png"
+    type: "image/png",
   },
   {
     id: "2",
     name: "Screenshot 2019-12-05 at 12.03.13.png",
     size: 875000,
-    type: "image/png"
-  }
+    type: "image/png",
+  },
 ];
 
 const onClickCallback = jest.fn();
@@ -41,7 +41,7 @@ describe("FileUploader withStyles", () => {
     onFilesAdded: onClickCallback,
     onFileRemoved: onClickCallback,
     acceptedFiles: ["jpeg"],
-    maxFileSize: 12
+    maxFileSize: 12,
   };
 
   beforeEach(() => {
@@ -94,23 +94,19 @@ describe("FileUploader validations", () => {
           errorMessage: "File type not allowed for upload",
           name: "somefile.jpeg",
           size: 141,
-          type: "image/jpeg"
-        }
+          type: "image/jpeg",
+        },
       ],
       onFilesAdded: onClickCallback,
       onFileRemoved: onClickCallback,
       acceptedFiles: ["png"],
-      maxFileSize: 1
+      maxFileSize: 1,
     };
 
     uploadWrapper = setupComponent(faultyCompProps);
-    expect(
-      uploadWrapper
-        .find("File")
-        .find("p")
-        .at(1)
-        .text()
-    ).toEqual("File type not allowed for upload");
+    expect(uploadWrapper.find("File").find("p").at(1).text()).toEqual(
+      "File type not allowed for upload"
+    );
   });
 
   it("correctly display incorrect file size warning", () => {
@@ -122,22 +118,18 @@ describe("FileUploader validations", () => {
           errorMessage: "The file exceeds the maximum upload size",
           name: "somefile.jpeg",
           size: 141,
-          type: "image/jpeg"
-        }
+          type: "image/jpeg",
+        },
       ],
       onFilesAdded: onClickCallback,
       onFileRemoved: onClickCallback,
       acceptedFiles: ["png"],
-      maxFileSize: 5 * 1000
+      maxFileSize: 5 * 1000,
     };
 
     uploadWrapper = setupComponent(faultyCompProps);
-    expect(
-      uploadWrapper
-        .find("File")
-        .find("p")
-        .at(1)
-        .text()
-    ).toEqual("The file exceeds the maximum upload size");
+    expect(uploadWrapper.find("File").find("p").at(1).text()).toEqual(
+      "The file exceeds the maximum upload size"
+    );
   });
 });

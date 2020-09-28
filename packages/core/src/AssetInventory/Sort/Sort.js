@@ -6,7 +6,7 @@ import DropDown from "../../Dropdown";
 const sortOperationSetup = (metadata, selectedSort) => {
   const sortableCriteria = [];
 
-  metadata.forEach(element => {
+  metadata.forEach((element) => {
     if (element.sortable) {
       sortableCriteria.push({
         id: `${element.id}Asc`,
@@ -15,7 +15,7 @@ const sortOperationSetup = (metadata, selectedSort) => {
         accessor: element.accessor,
         type: "asc",
         sortFunction: element.sortFunction,
-        selected: `${element.id}Asc` === selectedSort
+        selected: `${element.id}Asc` === selectedSort,
       });
       sortableCriteria.push({
         id: `${element.id}Desc`,
@@ -24,7 +24,7 @@ const sortOperationSetup = (metadata, selectedSort) => {
         accessor: element.accessor,
         type: "desc",
         sortFunction: element.sortFunction,
-        selected: `${element.id}Desc` === selectedSort
+        selected: `${element.id}Desc` === selectedSort,
       });
     }
   });
@@ -32,7 +32,7 @@ const sortOperationSetup = (metadata, selectedSort) => {
   return sortableCriteria;
 };
 
-const sortByType = type => {
+const sortByType = (type) => {
   switch (type.toUpperCase()) {
     case "NUMERIC":
     case "ALPHA-NUMERIC":
@@ -68,7 +68,7 @@ const Sort = ({
   disablePortal = false,
   ...others
 }) => {
-  const innerSortValues = data => {
+  const innerSortValues = (data) => {
     onSelection(sortValues(data), data.id);
   };
 
@@ -103,7 +103,7 @@ Sort.propTypes = {
    * Labels.
    */
   labels: PropTypes.shape({
-    sortBy: PropTypes.string
+    sortBy: PropTypes.string,
   }).isRequired,
   /**
    * Metadata associated with the values.
@@ -117,7 +117,7 @@ Sort.propTypes = {
       sortable: PropTypes.bool,
       sortFunction: PropTypes.func,
       searchable: PropTypes.bool,
-      searchFunction: PropTypes.func
+      searchFunction: PropTypes.func,
     })
   ).isRequired,
   /**
@@ -127,7 +127,7 @@ Sort.propTypes = {
   /**
    * Disable portal on the dropdown
    */
-  disablePortal: PropTypes.bool
+  disablePortal: PropTypes.bool,
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

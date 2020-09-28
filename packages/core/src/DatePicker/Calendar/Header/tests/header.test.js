@@ -83,8 +83,8 @@ describe("<Header />", () => {
 
     const mockEvent = {
       target: {
-        value: "01-13-2010"
-      }
+        value: "01-13-2010",
+      },
     };
 
     HeaderInstance.onChangeHandler(mockEvent);

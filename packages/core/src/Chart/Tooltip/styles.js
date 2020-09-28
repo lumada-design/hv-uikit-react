@@ -2,8 +2,8 @@ const styles = {
   root: {
     position: "fixed",
     zIndex: 100,
-    pointerEvents: "none"
-  }
+    pointerEvents: "none",
+  },
 };
 
 export default styles;

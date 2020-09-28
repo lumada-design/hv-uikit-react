@@ -7,22 +7,22 @@ describe("Search ", () => {
       branch: "Marines",
       name: "Hartman",
       serialNumber: 542231,
-      birthDate: "1946-01-22"
+      birthDate: "1946-01-22",
     },
     {
       rank: "Private",
       branch: "Marines",
       name: "Leonard Lawrence",
       serialNumber: 9912313,
-      birthDate: "1971-04-24"
+      birthDate: "1971-04-24",
     },
     {
       rank: "Private",
       branch: "Army",
       name: "J.T. Davis",
       serialNumber: 9912314,
-      birthDate: "1971-07-14"
-    }
+      birthDate: "1971-07-14",
+    },
   ];
 
   it("should filter alpha-numeric", () => {
@@ -32,7 +32,7 @@ describe("Search ", () => {
       accessor: "name",
       cellType: "Alpha-numeric",
       searchable: true,
-      searchFunction: null
+      searchFunction: null,
     };
 
     const value = values[0];
@@ -52,7 +52,7 @@ describe("Search ", () => {
       accessor: "serialNumber",
       cellType: "numeric",
       searchable: true,
-      searchFunction: null
+      searchFunction: null,
     };
 
     const value = values[0];
@@ -72,7 +72,7 @@ describe("Search ", () => {
       accessor: "birthDate",
       cellType: "date",
       searchable: true,
-      searchFunction: null
+      searchFunction: null,
     };
 
     const value = values[0];
@@ -97,7 +97,7 @@ describe("Search ", () => {
         const searchValueYear = Number(splitted[2]);
         const valueDate = new Date(value).getFullYear();
         return searchValueYear === valueDate;
-      }
+      },
     };
 
     const value = values[0];
@@ -118,8 +118,8 @@ describe("Search ", () => {
         accessor: "rank",
         cellType: "Alpha-numeric",
         searchable: true,
-        searchFunction: null
-      }
+        searchFunction: null,
+      },
     ];
 
     let filteredValues = searchOperation("a", values, criteria1);
@@ -133,8 +133,8 @@ describe("Search ", () => {
         accessor: "serialNumber",
         cellType: "numeric",
         searchable: true,
-        searchFunction: null
-      }
+        searchFunction: null,
+      },
     ];
 
     filteredValues = searchOperation(2134, values, criteria2);
@@ -148,7 +148,7 @@ describe("Search ", () => {
         accessor: "branch",
         cellType: "Alpha-numeric",
         searchable: true,
-        searchFunction: null
+        searchFunction: null,
       },
       {
         id: "id",
@@ -156,7 +156,7 @@ describe("Search ", () => {
         accessor: "name",
         cellType: "Alpha-numeric",
         searchable: true,
-        searchFunction: null
+        searchFunction: null,
       },
       {
         id: "id",
@@ -164,8 +164,8 @@ describe("Search ", () => {
         accessor: "rank",
         cellType: "Alpha-numeric",
         searchable: true,
-        searchFunction: null
-      }
+        searchFunction: null,
+      },
     ];
 
     filteredValues = searchOperation("r", values, criteria3);

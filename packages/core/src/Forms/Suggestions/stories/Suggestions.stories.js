@@ -8,16 +8,16 @@ export default {
   title: "Components/Forms/Suggestions",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSuggestions } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvSuggestions } from '@hv/uikit-react-core/dist'",
   },
   component: HvSuggestions,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ width: 500, height: 200 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 const { Esc, Tab } = KeyboardCodes;
@@ -30,7 +30,7 @@ export const Main = () => {
   const inputRef = useRef(null);
 
   const handleChange = (e, val) => {
-    const matches = suggestions.filter(v => v.toUpperCase().startsWith(val.toUpperCase()));
+    const matches = suggestions.filter((v) => v.toUpperCase().startsWith(val.toUpperCase()));
     const newList = val.length >= 1 ? matches : [];
     setSuggestionList(newList);
     setOpen(newList.length > 0);
@@ -44,7 +44,7 @@ export const Main = () => {
     inputRef?.current?.focus();
   };
 
-  const handleSuggestionsKey = evt => {
+  const handleSuggestionsKey = (evt) => {
     if (isKeypress(evt, Esc)) {
       inputRef?.current?.focus();
       setOpen(false);
@@ -83,10 +83,10 @@ Main.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1703
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
         "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label"
-      ]
-    }
-  }
+        "label",
+      ],
+    },
+  },
 };
 
 export const ServerSideSuggestions = () => {
@@ -96,10 +96,10 @@ export const ServerSideSuggestions = () => {
   const inputRef = useRef(null);
 
   // Server-side mock function
-  const fetchCountries = input =>
-    new Promise(resolve => {
+  const fetchCountries = (input) =>
+    new Promise((resolve) => {
       const countries = countryList
-        .filter(c => c.toUpperCase().includes(input.toUpperCase()))
+        .filter((c) => c.toUpperCase().includes(input.toUpperCase()))
         .slice(0, 8);
 
       setTimeout(() => resolve(countries), 300);
@@ -109,7 +109,7 @@ export const ServerSideSuggestions = () => {
     setValue(val);
     setOpen(false);
     if (val.length < 1) return;
-    fetchCountries(val).then(countries => {
+    fetchCountries(val).then((countries) => {
       setSuggestionList(countries);
       setOpen(countries.length >= 1);
     });
@@ -122,7 +122,7 @@ export const ServerSideSuggestions = () => {
     inputRef?.current?.focus();
   };
 
-  const handleSuggestionsKey = evt => {
+  const handleSuggestionsKey = (evt) => {
     if (isKeypress(evt, Esc)) {
       inputRef?.current?.focus();
       setOpen(false);
@@ -161,10 +161,10 @@ ServerSideSuggestions.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1703
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
         "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label"
-      ]
-    }
-  }
+        "label",
+      ],
+    },
+  },
 };
 
 export const OpenWithDownArrow = () => {
@@ -175,7 +175,7 @@ export const OpenWithDownArrow = () => {
   const inputRef = useRef(null);
 
   const handleChange = (e, val) => {
-    const matches = suggestions.filter(v => v.toUpperCase().startsWith(val.toUpperCase()));
+    const matches = suggestions.filter((v) => v.toUpperCase().startsWith(val.toUpperCase()));
     const newList = val.length >= 1 ? matches : [];
     setSuggestionList(newList);
     setOpen(newList.length > 0);
@@ -189,14 +189,14 @@ export const OpenWithDownArrow = () => {
     inputRef?.current?.focus();
   };
 
-  const handleKey = e => {
+  const handleKey = (e) => {
     if (isKeypress(e, KeyboardCodes.ArrowDown)) {
       setOpen(true);
       document.getElementById("suggestions-list-item-0")?.focus();
     }
   };
 
-  const handleSuggestionsKey = evt => {
+  const handleSuggestionsKey = (evt) => {
     if (isKeypress(evt, Esc)) {
       inputRef?.current?.focus();
       setOpen(false);
@@ -244,8 +244,8 @@ OpenWithDownArrow.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1703
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
         "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label"
-      ]
-    }
-  }
+        "label",
+      ],
+    },
+  },
 };

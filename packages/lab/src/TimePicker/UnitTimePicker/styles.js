@@ -1,15 +1,15 @@
 const icon = {
   width: "32px",
   height: "32px",
-  cursor: "pointer"
+  cursor: "pointer",
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   unitTimeContainer: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   unitTimeInput: {
     ...theme.hv.typography.sTitle,
@@ -22,29 +22,29 @@ const styles = theme => ({
     "&::-webkit-outer-spin-button, &::-webkit-inner-spin-button": {
       "-webkit-appearance": "none",
       "-moz-appearance": "none",
-      margin: 0
+      margin: 0,
     },
     "&[type=number]": {
       "-webkit-appearance": "textfield",
-      "-moz-appearance": "textfield"
-    }
+      "-moz-appearance": "textfield",
+    },
   },
   unitTimeInputRoot: {},
   unitTimeInputRootInvalid: {
-    border: "1px red solid"
+    border: "1px red solid",
   },
   addIcon: {
     ...icon,
-    marginTop: `${theme.hv.spacing.sm}px`
+    marginTop: `${theme.hv.spacing.sm}px`,
   },
   subtractIcon: {
     ...icon,
-    marginBottom: `${theme.hv.spacing.sm}px`
+    marginBottom: `${theme.hv.spacing.sm}px`,
   },
   inputContainer: {
     minWidth: "40px",
-    maxWidth: "40px"
-  }
+    maxWidth: "40px",
+  },
 });
 
 export default styles;

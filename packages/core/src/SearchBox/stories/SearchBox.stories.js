@@ -5,30 +5,28 @@ export default {
   title: "Components/Searchbox",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSearchBox } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvSearchBox } from '@hv/uikit-react-core/dist'",
   },
-  component: HvSearchBox
+  component: HvSearchBox,
 };
 
 export const Main = () => {
-  const suggestionHandler = value => {
-    const random = Math.random()
-      .toString(36)
-      .substring(7);
+  const suggestionHandler = (value) => {
+    const random = Math.random().toString(36).substring(7);
     if (typeof value === "string" && value !== "") {
       return [
         {
           id: "2",
-          label: `${value} first suggestion`
+          label: `${value} first suggestion`,
         },
         {
           id: "3",
-          label: `${value} second suggestion`
+          label: `${value} second suggestion`,
         },
         {
           id: "4",
-          label: `${random} second suggestion`
-        }
+          label: `${random} second suggestion`,
+        },
       ];
     }
     return null;
@@ -38,7 +36,7 @@ export const Main = () => {
     <>
       <HvSearchBox
         suggestionListCallback={suggestionHandler}
-        suggestionSelectedCallback={item => console.log(`${item.label} selected`)}
+        suggestionSelectedCallback={(item) => console.log(`${item.label} selected`)}
         onChange={(event, value) => {
           console.log(`${value} submitted`);
           return value;
@@ -49,28 +47,26 @@ export const Main = () => {
 };
 
 Main.story = {
-  decorators: [storyFn => <div style={{ height: "160px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ height: "160px" }}>{storyFn()}</div>],
 };
 
 export const Disabled = () => {
-  const suggestionHandler = value => {
-    const random = Math.random()
-      .toString(36)
-      .substring(7);
+  const suggestionHandler = (value) => {
+    const random = Math.random().toString(36).substring(7);
     if (typeof value === "string" && value !== "") {
       return [
         {
           id: "2",
-          label: `${value} first suggestion`
+          label: `${value} first suggestion`,
         },
         {
           id: "3",
-          label: `${value} second suggestion`
+          label: `${value} second suggestion`,
         },
         {
           id: "4",
-          label: `${random} second suggestion`
-        }
+          label: `${random} second suggestion`,
+        },
       ];
     }
     return null;
@@ -79,7 +75,7 @@ export const Disabled = () => {
   return (
     <HvSearchBox
       suggestionListCallback={suggestionHandler}
-      suggestionSelectedCallback={item => alert(`${item.label} selected`)}
+      suggestionSelectedCallback={(item) => alert(`${item.label} selected`)}
       onSubmit={(event, value) => alert(`${value} submitted`)}
       disabled
     />
@@ -89,9 +85,9 @@ export const Disabled = () => {
 Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "Searchbox sample that does not use the suggestion box."
-    }
-  }
+      storyDescription: "Searchbox sample that does not use the suggestion box.",
+    },
+  },
 };
 
 export const WithoutSuggestion = () => {
@@ -101,7 +97,7 @@ export const WithoutSuggestion = () => {
 WithoutSuggestion.story = {
   parameters: {
     docs: {
-      storyDescription: "Searchbox sample that does not use the suggestion box."
-    }
-  }
+      storyDescription: "Searchbox sample that does not use the suggestion box.",
+    },
+  },
 };

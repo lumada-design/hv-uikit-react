@@ -8,7 +8,7 @@ import styles from "./styles";
 /**
  * A Footer is a way of providing extra information at the end of a page.
  */
-const HvFooter = props => {
+const HvFooter = (props) => {
   const {
     className,
     classes,
@@ -66,11 +66,11 @@ HvFooter.propTypes = {
     /**
      * Styles applied to the separator between copyright and links
      */
-    separator: PropTypes.string
+    separator: PropTypes.string,
   }).isRequired,
   name: PropTypes.node,
   copyright: PropTypes.node,
-  links: PropTypes.node
+  links: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvFooter" })(HvFooter);

@@ -7,12 +7,12 @@ export default {
   title: "Components/Dropdown Menu",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDropDownMenu } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvDropDownMenu } from '@hv/uikit-react-core/dist'",
   },
   component: HvDropDownMenu,
   decorators: [
-    storyFn => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>
-  ]
+    (storyFn) => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>,
+  ],
 };
 
 export const Main = () => (
@@ -31,7 +31,7 @@ export const Positioning = () => {
       onClick={(e, item) => setPosition(item.value)}
       dataList={[
         { label: "Left", value: "left" },
-        { label: "Right", value: "right" }
+        { label: "Right", value: "right" },
       ]}
     />
   );
@@ -40,13 +40,13 @@ export const Positioning = () => {
 Positioning.story = {
   parameters: {
     docs: {
-      storyDescription: "DropDownMenu with configurable positioning in the dropdown"
-    }
-  }
+      storyDescription: "DropDownMenu with configurable positioning in the dropdown",
+    },
+  },
 };
 
 export const WithIconsAndActions = () => {
-  const iconSelectedColor = Icon => ({ isSelected }) => (
+  const iconSelectedColor = (Icon) => ({ isSelected }) => (
     <Icon color={isSelected ? "atmo1" : undefined} />
   );
 
@@ -59,7 +59,7 @@ export const WithIconsAndActions = () => {
       dataList={[
         { label: "Label 1", iconCallback: iconSelectedColor(User) },
         { label: "Label 2", iconCallback: iconSelectedColor(Calendar) },
-        { label: "Label 3", iconCallback: iconSelectedColor(Plane) }
+        { label: "Label 3", iconCallback: iconSelectedColor(Plane) },
       ]}
     />
   );
@@ -69,16 +69,16 @@ WithIconsAndActions.story = {
   parameters: {
     docs: {
       storyDescription:
-        "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected"
+        "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected",
     },
     pa11y: {
       actions: [
         // open menu before testing
         "click element #dropdownmenu-with-icons-and-actions-icon-button",
-        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible"
-      ]
-    }
-  }
+        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible",
+      ],
+    },
+  },
 };
 
 export const Disabled = () => (
@@ -133,7 +133,7 @@ export const Controlled = () => {
 Controlled.story = {
   parameters: {
     docs: {
-      storyDescription: "DropDownMenu toggle opening controlled by an external button"
-    }
-  }
+      storyDescription: "DropDownMenu toggle opening controlled by an external button",
+    },
+  },
 };

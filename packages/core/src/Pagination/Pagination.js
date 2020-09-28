@@ -19,7 +19,7 @@ const DEFAULT_LABELS = {
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
   paginationLastPageTitle: "Last page",
-  paginationInputLabel: "Total pages for page input"
+  paginationInputLabel: "Total pages for page input",
 };
 
 const Pagination = ({
@@ -43,10 +43,10 @@ const Pagination = ({
   ...others
 }) => {
   const [statePage, setStatePage] = useState(page);
-  const getSafePage = inPage =>
+  const getSafePage = (inPage) =>
     Number.isNaN(inPage) ? page : Math.min(Math.max(inPage, 0), pages - 1);
 
-  const changePage = inPage => {
+  const changePage = (inPage) => {
     const outPage = getSafePage(inPage);
     setStatePage(outPage);
 
@@ -66,7 +66,7 @@ const Pagination = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, pageSize]);
 
-  const setColor = condition => (condition ? "atmo7" : undefined);
+  const setColor = (condition) => (condition ? "atmo7" : undefined);
   const FirstPage = () => <Start className={classes.icon} color={setColor(!canPrevious)} />;
   const PrevPage = () => <Backwards className={classes.icon} color={setColor(!canPrevious)} />;
   const NextPage = () => <Forwards className={classes.icon} color={setColor(!canNext)} />;
@@ -90,10 +90,10 @@ const Pagination = ({
               disabled={pageSize === 0}
               className={classes.pageSizeOptionsSelect}
               aria-label={labels.pageSizeSelectorDescription}
-              onChange={e => onPageSizeChange(Number(e.target.value))}
+              onChange={(e) => onPageSizeChange(Number(e.target.value))}
               value={pageSize}
             >
-              {pageSizeOptions.map(option => (
+              {pageSizeOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
@@ -132,18 +132,18 @@ const Pagination = ({
                 id={setId(id, "currentPage")}
                 labels={labels}
                 inputProps={{
-                  "aria-label": `${pages} ${labels.paginationInputLabel}`
+                  "aria-label": `${pages} ${labels.paginationInputLabel}`,
                 }}
                 classes={{
                   root: classes.pageSizeInputContainer,
                   input: classes.pageSizeInput,
-                  inputRoot: classes.pageSizeInputRoot
+                  inputRoot: classes.pageSizeInputRoot,
                 }}
                 onChange={(event, val) => setStatePage(val - 1)}
                 initialValue={`${statePage + 1}`}
                 value={`${statePage === "" ? "" : Number(statePage) + 1}`}
                 onBlur={applyPage}
-                onKeyDown={e => isKeypress(e, Codes.Enter) && applyPage()}
+                onKeyDown={(e) => isKeypress(e, Codes.Enter) && applyPage()}
                 validationIconVisible={false}
                 disabled={pageSize === 0}
                 disableClear
@@ -238,7 +238,7 @@ Pagination.propTypes = {
     /**
      * Styles applied to the page size dropdown icon.
      */
-    selectDownIcon: PropTypes.string
+    selectDownIcon: PropTypes.string,
   }).isRequired,
   /**
    * The number of pages the component has.
@@ -327,7 +327,7 @@ Pagination.propTypes = {
     /**
      * Aria-label passed to the page input.
      */
-    paginationInputLabel: PropTypes.string
+    paginationInputLabel: PropTypes.string,
   }),
   /**
    * Other props to show page component.
@@ -340,7 +340,7 @@ Pagination.propTypes = {
   /**
    * Extra properties passed to the input component representing the current pages.
    */
-  currentPageInputProps: PropTypes.instanceOf(Object)
+  currentPageInputProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvPagination" })(withLabels(DEFAULT_LABELS)(Pagination));

@@ -9,7 +9,7 @@ import styles from "./styles";
 /**
  * A Checkbox is a mechanism that allows user to select one or more options.
  */
-const HvCheckbox = props => {
+const HvCheckbox = (props) => {
   const {
     classes,
     className,
@@ -29,7 +29,7 @@ const HvCheckbox = props => {
   const labelClass = getLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
 
-  const onLocalChange = evt => {
+  const onLocalChange = (evt) => {
     const { screenX, screenY, clientX, clientY } = evt.nativeEvent;
     const isKeyEvent = screenX === 0 && screenY === 0 && clientX === 0 && clientY === 0;
 
@@ -47,12 +47,12 @@ const HvCheckbox = props => {
       labelPlacement={labelPlacement}
       disabled={disabled}
       className={clsx(labelClass, className, {
-        [classes.disableFocus]: isFocusDisabled
+        [classes.disableFocus]: isFocusDisabled,
       })}
       id={id}
       classes={{
         disabled: classes.labelDisabled,
-        label: classes.labelTypography
+        label: classes.labelTypography,
       }}
       control={
         <Checkbox
@@ -122,7 +122,7 @@ HvCheckbox.propTypes = {
      * Styles applied to the icon.
      */
     icon: PropTypes.string,
-    truncate: PropTypes.string
+    truncate: PropTypes.string,
   }).isRequired,
   /**
    * If `true` the checkbox is disabled and the onClick function will not be called.
@@ -164,7 +164,7 @@ HvCheckbox.propTypes = {
   /**
    * Extra properties passed to the MUI FormControlLabel component.
    */
-  formControlLabelProps: PropTypes.instanceOf(Object)
+  formControlLabelProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvCheckBox" })(HvCheckbox);

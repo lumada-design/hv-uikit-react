@@ -9,9 +9,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________

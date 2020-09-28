@@ -52,7 +52,7 @@ const HvCard = ({
     setSelected(checked);
   }, [checked]);
 
-  const clickActionHandler = evt => {
+  const clickActionHandler = (evt) => {
     if (isSelectable && selectOnClickAction) {
       onChange?.(evt);
       setSelected(!selected);
@@ -67,7 +67,7 @@ const HvCard = ({
     return fSelectable ? "checkbox" : "button";
   };
 
-  const KeyUpHandler = evt => {
+  const KeyUpHandler = (evt) => {
     if (
       (isKeypress(evt, KeyboardCodes.Enter) &&
         getRole(isSelectable, selectOnClickAction) !== "checkbox") ||
@@ -88,7 +88,7 @@ const HvCard = ({
     onClick: clickActionHandler,
     onKeyUp: KeyUpHandler,
     "aria-checked": isSelectable ? selected : undefined,
-    ...cardButtonProps
+    ...cardButtonProps,
   };
 
   const defaultContent = (
@@ -96,7 +96,7 @@ const HvCard = ({
       <Focus strategy="card" useFalseFocus disabled={internalCardButtonProps.tabIndex !== "0"}>
         <div
           className={clsx({
-            [classes.upperAreaSelectable]: internalCardButtonProps.tabIndex
+            [classes.upperAreaSelectable]: internalCardButtonProps.tabIndex,
           })}
           {...internalCardButtonProps}
         >
@@ -135,7 +135,7 @@ const HvCard = ({
           maxVisibleActions={maxVisibleActions}
           actionsAlignment={actionsAlignment}
           isSelectable={isSelectable}
-          onChange={event => {
+          onChange={(event) => {
             setSelected(event.target.checked);
             onChange?.(event);
           }}
@@ -152,7 +152,7 @@ const HvCard = ({
         <div
           className={clsx(classes.semanticContainer, {
             [classes[semantic]]: semantic,
-            [classes.semanticSelected]: selected
+            [classes.semanticSelected]: selected,
           })}
         />
         <Card
@@ -160,7 +160,7 @@ const HvCard = ({
           className={clsx(classes.cardContainer, className, {
             [classes.selectable]: isSelectable,
             [classes.cardContainerSelected]: selected,
-            [classes.selected]: selected
+            [classes.selected]: selected,
           })}
           {...others}
         >
@@ -239,7 +239,7 @@ HvCard.propTypes = {
     /**
      * Style applied to the component when it is selected.
      */
-    selected: PropTypes.string
+    selected: PropTypes.string,
   }).isRequired,
   /**
    * The content inside the card.
@@ -267,9 +267,9 @@ HvCard.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        icon: PropTypes.func
+        icon: PropTypes.func,
       })
-    )
+    ),
   ]),
   /**
    *  The callback function ran when an action is triggered, receiving ´action´ as param
@@ -318,7 +318,7 @@ HvCard.propTypes = {
     "sema16",
     "sema17",
     "sema18",
-    "sema19"
+    "sema19",
   ]),
   /**
    *  The function that will be executed when the upper part of the card is clicked.
@@ -359,7 +359,7 @@ HvCard.propTypes = {
   /**
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
-  maxVisibleActions: PropTypes.number
+  maxVisibleActions: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvCard" })(HvCard);

@@ -18,20 +18,20 @@ const DEFAULT_LABELS = {
   dropFiles: "Drop files here",
   fileSizeError: "The file exceeds the maximum upload size",
   fileTypeError: "File type not allowed for upload",
-  removeFileButtonLabel: "Remove File"
+  removeFileButtonLabel: "Remove File",
 };
 
 const fileList = [
   {
     name: "Screenshot 2019-12-05 at 17.15.43.png",
     size: 141,
-    type: "image/png"
+    type: "image/png",
   },
   {
     name: "Screenshot 2019-12-05 at 12.03.13.png",
     size: 875,
-    type: "image/png"
-  }
+    type: "image/png",
+  },
 ];
 
 const onClickCallback = jest.fn();
@@ -52,7 +52,7 @@ const compProps = {
   maxFileSize: 1,
   onDragEnter: onClickCallback,
   onDragLeave: onClickCallback,
-  onDropCapture: onClickCallback
+  onDropCapture: onClickCallback,
 };
 
 describe("Dropzone withStyles", () => {
@@ -72,7 +72,7 @@ describe("Dropzone withStyles", () => {
     wrapper = setupComponent({
       ...compProps,
       disabled: true,
-      multiple: false
+      multiple: false,
     });
     expect(wrapper.find(DropZone)).toMatchSnapshot();
   });

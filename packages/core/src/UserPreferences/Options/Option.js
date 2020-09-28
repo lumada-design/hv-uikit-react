@@ -13,18 +13,18 @@ const Option = ({ classes, id, className, label, icon, onClick, ...others }) => 
 
   const isSelected = id === optionsContext.selected;
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     if (!isSelected) {
       const payload = {
         id,
-        label
+        label,
       };
       optionsContext.onSelection(event, payload);
       onClick?.(event, payload);
     }
   };
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     if (!isKeypress(event, KeyboardCodes.Enter) && !isKeypress(event, KeyboardCodes.SpaceBar)) {
       return;
     }
@@ -41,7 +41,7 @@ const Option = ({ classes, id, className, label, icon, onClick, ...others }) => 
         role="button"
         className={clsx(className, classes.action, {
           [classes.noIcon]: !icon,
-          [classes.selected]: isSelected
+          [classes.selected]: isSelected,
         })}
         tabIndex={0}
         onKeyDown={handleKeyDown}
@@ -83,7 +83,7 @@ Option.propTypes = {
     /**
      * Style applied when selected.
      */
-    selected: PropTypes.string
+    selected: PropTypes.string,
   }).isRequired,
   /**
    * Visual label.
@@ -96,7 +96,7 @@ Option.propTypes = {
   /**
    * Callback called when clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesOption" })(WithId(Option));

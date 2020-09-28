@@ -1,16 +1,16 @@
-const styles = theme => ({
+const styles = (theme) => ({
   rootClosed: {
-    display: "none"
+    display: "none",
   },
   root: {
-    minWidth: `calc(100% - ${theme.hv.spacing.sm}px)`
+    minWidth: `calc(100% - ${theme.hv.spacing.sm}px)`,
   },
   anchorOriginTopCenter: {
-    top: `${theme.hv.spacing.xs}px`
+    top: `${theme.hv.spacing.xs}px`,
   },
   anchorOriginBottomCenter: {
-    bottom: `${theme.hv.spacing.xs}px`
-  }
+    bottom: `${theme.hv.spacing.xs}px`,
+  },
 });
 
 export default styles;

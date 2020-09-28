@@ -45,11 +45,7 @@ describe("<SearchBox />", () => {
       </HvProvider>
     );
 
-    wrapper
-      .find("#hv-search-box-1-input")
-      .at(0)
-      .props()
-      .onKeyDown({ keyCode: 13 }, "value");
+    wrapper.find("#hv-search-box-1-input").at(0).props().onKeyDown({ keyCode: 13 }, "value");
     expect(onSubmitMock).toHaveBeenCalled();
   });
 

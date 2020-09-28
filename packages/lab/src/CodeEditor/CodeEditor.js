@@ -11,7 +11,7 @@ export const DefaultCodeEditorOptions = {
   automaticLayout: true, // TODO add a resize event listener and manually resize?
   overviewRulerLanes: 0,
   minimap: {
-    enabled: true
+    enabled: true,
   },
   scrollBeyondLastLine: false,
   scrollbar: {
@@ -20,8 +20,8 @@ export const DefaultCodeEditorOptions = {
     verticalScrollbarSize: 20,
     horizontalScrollbarSize: 20,
     verticalSliderSize: 5,
-    horizontalSliderSize: 5
-  }
+    horizontalSliderSize: 5,
+  },
 };
 
 /**
@@ -32,7 +32,7 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...oth
   // merges the 2 objects together, overriding defaults with passed in options
   const mergedOptions = {
     ...DefaultCodeEditorOptions,
-    ...options
+    ...options,
   };
 
   return (
@@ -40,15 +40,15 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...oth
       <MonacoEditor
         defaultValue={defaultValue}
         options={mergedOptions}
-        editorWillMount={monaco => {
+        editorWillMount={(monaco) => {
           monaco.editor.defineTheme("hv", {
             base: theme.hv.type === "light" ? "vs" : "vs-dark",
             inherit: true,
             rules: [],
             colors: {
               "editor.background": theme.hv.palette.atmosphere.atmo1,
-              "editorLineNumber.foreground": theme.hv.palette.atmosphere.atmo7
-            }
+              "editorLineNumber.foreground": theme.hv.palette.atmosphere.atmo7,
+            },
           });
         }}
         theme={"hv"}
@@ -67,7 +67,7 @@ CodeEditor.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * The properties of the Monaco editor. Please check MonacoEditorProps from https://microsoft.github.io/monaco-editor/api/index.html
@@ -85,7 +85,7 @@ CodeEditor.propTypes = {
   /**
    * The properties of the editor object in Monaco. Please check editor.IEditorConstructionOptions in https://microsoft.github.io/monaco-editor/api/index.html
    */
-  options: PropTypes.instanceOf(Object)
+  options: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles)(withTheme(CodeEditor));

@@ -1,9 +1,9 @@
 import { outlineStyles } from "../../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     minWidth: "150px",
-    maxWidth: "610px"
+    maxWidth: "610px",
   },
   inputRoot: {
     margin: 0,
@@ -16,8 +16,8 @@ const styles = theme => ({
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
-    }
+      background: theme.hv.palette.atmosphere.atmo1,
+    },
   },
   inputRootDisabled: {
     borderColor: theme.hv.palette.atmosphere.atmo6,
@@ -25,9 +25,9 @@ const styles = theme => ({
     "&:hover": {
       borderColor: theme.hv.palette.atmosphere.atmo6,
       background: theme.hv.palette.atmosphere.atmo4,
-      cursor: "not-allowed"
+      cursor: "not-allowed",
     },
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
   inputRootFocused: {
     borderStyle: "solid",
@@ -39,14 +39,14 @@ const styles = theme => ({
       borderStyle: "solid",
       borderWidth: "0 0 1px 0",
       borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
-    }
+      background: theme.hv.palette.atmosphere.atmo1,
+    },
   },
   inputRootInvalid: {
     borderColor: theme.hv.palette.semantic.sema4,
     "&:hover": {
-      borderColor: theme.hv.palette.semantic.sema4
-    }
+      borderColor: theme.hv.palette.semantic.sema4,
+    },
   },
   input: {
     height: `20px`,
@@ -58,24 +58,24 @@ const styles = theme => ({
     textOverflow: "ellipsis",
     "&::placeholder": {
       ...theme.hv.typography.placeholderText,
-      opacity: 1
+      opacity: 1,
     },
     "&::-ms-clear": {
-      display: "none"
-    }
+      display: "none",
+    },
   },
   inputDisabled: {
-    cursor: "not-allowed"
+    cursor: "not-allowed",
   },
   multiLine: {
-    padding: 0
+    padding: 0,
   },
   "@global": {
     "input:-webkit-autofill": {
       "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,
-      "-webkit-text-fill-color": theme.hv.typography.normalText.color
-    }
-  }
+      "-webkit-text-fill-color": theme.hv.typography.normalText.color,
+    },
+  },
 });
 
 export default styles;

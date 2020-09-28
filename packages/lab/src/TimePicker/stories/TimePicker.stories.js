@@ -8,10 +8,10 @@ export default {
   title: "Lab/Time Picker",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTimePicker } from '@hv/uikit-react-lab/dist'"
+    usage: "import { HvTimePicker } from '@hv/uikit-react-lab/dist'",
   },
   component: HvTimePicker,
-  decorators: [storyFn => <div style={{ width: 200, minHeight: 200 }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ width: 200, minHeight: 200 }}>{storyFn()}</div>],
 };
 
 export const Main = () => <HvTimePicker locale="pt-pt" />;
@@ -20,9 +20,9 @@ Main.story = {
   parameters: {
     eyes: {
       // excluded due to dynamic date (which is the default that we intend to exemplify)
-      include: false
-    }
-  }
+      include: false,
+    },
+  },
 };
 
 export const Format12Hours = () => <HvTimePicker locale="en-US" />;
@@ -30,13 +30,13 @@ export const Format12Hours = () => <HvTimePicker locale="en-US" />;
 Format12Hours.story = {
   parameters: {
     docs: {
-      storyDescription: "TimePicker to select time in 12-hour format."
+      storyDescription: "TimePicker to select time in 12-hour format.",
     },
     eyes: {
       // excluded due to dynamic date (which is the default that we intend to exemplify)
-      include: false
-    }
-  }
+      include: false,
+    },
+  },
 };
 
 export const CustomDefault = () => (
@@ -46,16 +46,16 @@ export const CustomDefault = () => (
 CustomDefault.story = {
   parameters: {
     docs: {
-      storyDescription: "TimePicker with default custom set time. "
-    }
-  }
+      storyDescription: "TimePicker with default custom set time. ",
+    },
+  },
 };
 
 export const WithOnChange = () => {
   const timeProps = {
     hours: 9,
     minutes: 10,
-    seconds: 30
+    seconds: 30,
   };
 
   const ControlledTimePicker = () => {
@@ -79,7 +79,7 @@ export const WithOnChange = () => {
 WithOnChange.story = {
   parameters: {
     docs: {
-      storyDescription: "TimePicker triggers an onChange when some of values change. "
-    }
-  }
+      storyDescription: "TimePicker triggers an onChange when some of values change. ",
+    },
+  },
 };

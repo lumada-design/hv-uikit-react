@@ -6,9 +6,9 @@ export default {
   title: "Visualizations/Bar Chart",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBarchart } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBarchart } from '@hv/uikit-react-core/dist'",
   },
-  component: HvBarchart
+  component: HvBarchart,
 };
 
 export const Main = () => (
@@ -21,8 +21,8 @@ export const Main = () => (
       {
         x: ["January", "February", "March"],
         y: [2300, 1000, 8500],
-        name: "Sales Target"
-      }
+        name: "Sales Target",
+      },
     ]}
   />
 );
@@ -31,14 +31,14 @@ export const VerticalWithSingleTooltip = () => {
   const trace1 = {
     x: ["January", "February", "March"],
     y: [2300, 1000, 8500],
-    name: "Sales Target"
+    name: "Sales Target",
   };
 
   const data = [trace1];
 
   const layout = {
     xaxis: { title: { text: "2018" } },
-    yaxis: { title: { text: "Thousands of Dollars ($)" } }
+    yaxis: { title: { text: "Thousands of Dollars ($)" } },
   };
 
   return (
@@ -57,9 +57,9 @@ export const VerticalWithSingleTooltip = () => {
 VerticalWithSingleTooltip.story = {
   parameters: {
     docs: {
-      storyDescription: "Tooltip in single line mode."
-    }
-  }
+      storyDescription: "Tooltip in single line mode.",
+    },
+  },
 };
 
 export const GroupedVerticalBarchart = () => {
@@ -68,7 +68,7 @@ export const GroupedVerticalBarchart = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [6000, 3900, 1000], name: "Sales Per Rep" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 7500, 1100], name: "Monthly Sales" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 8500, 3000], name: "Target" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" }
+    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" },
   ];
 
   return (
@@ -85,9 +85,9 @@ export const GroupedVerticalBarchart = () => {
 GroupedVerticalBarchart.story = {
   parameters: {
     docs: {
-      storyDescription: "Representation of groups by using multiple bars."
-    }
-  }
+      storyDescription: "Representation of groups by using multiple bars.",
+    },
+  },
 };
 
 export const StackedVerticalBarchart = () => {
@@ -96,7 +96,7 @@ export const StackedVerticalBarchart = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [6000, 3900, 1000], name: "Sales Per Rep" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 7500, 1100], name: "Monthly Sales" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 8500, 3000], name: "Target" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" }
+    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" },
   ];
 
   return (
@@ -114,9 +114,9 @@ export const StackedVerticalBarchart = () => {
 StackedVerticalBarchart.story = {
   parameters: {
     docs: {
-      storyDescription: "Groups in stack mode."
-    }
-  }
+      storyDescription: "Groups in stack mode.",
+    },
+  },
 };
 
 export const SimpleHorizontalBarchart = () => (
@@ -130,8 +130,8 @@ export const SimpleHorizontalBarchart = () => (
       {
         x: [2300, 1000, 8500],
         y: ["January", "February", "March"],
-        name: "Sales Target"
-      }
+        name: "Sales Target",
+      },
     ]}
   />
 );
@@ -139,9 +139,9 @@ export const SimpleHorizontalBarchart = () => (
 SimpleHorizontalBarchart.story = {
   parameters: {
     docs: {
-      storyDescription: "Representation of horizontal chart."
-    }
-  }
+      storyDescription: "Representation of horizontal chart.",
+    },
+  },
 };
 
 export const HorizontalBarchartWithSingleTooltip = () => (
@@ -156,8 +156,8 @@ export const HorizontalBarchartWithSingleTooltip = () => (
       {
         x: [2300, 1000, 8500],
         y: ["January", "February", "March"],
-        name: "Sales Target"
-      }
+        name: "Sales Target",
+      },
     ]}
   />
 );
@@ -165,9 +165,9 @@ export const HorizontalBarchartWithSingleTooltip = () => (
 HorizontalBarchartWithSingleTooltip.story = {
   parameters: {
     docs: {
-      storyDescription: "Tooltip in single line mode."
-    }
-  }
+      storyDescription: "Tooltip in single line mode.",
+    },
+  },
 };
 
 export const GroupedHorizontalBarchart = () => {
@@ -176,7 +176,7 @@ export const GroupedHorizontalBarchart = () => {
     { y: ["Group 1", "Group 2", "Group 3"], x: [6000, 3900, 1000], name: "Sales Per Rep" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [3700, 7500, 1100], name: "Monthly Sales" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 8500, 3000], name: "Target" },
-    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" }
+    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" },
   ];
 
   return (
@@ -194,9 +194,9 @@ export const GroupedHorizontalBarchart = () => {
 GroupedHorizontalBarchart.story = {
   parameters: {
     docs: {
-      storyDescription: "Representation of groups by using multiple horizontal bars."
-    }
-  }
+      storyDescription: "Representation of groups by using multiple horizontal bars.",
+    },
+  },
 };
 
 export const StackedHorizontalBarchart = () => {
@@ -205,7 +205,7 @@ export const StackedHorizontalBarchart = () => {
     { y: ["Group 1", "Group 2", "Group 3"], x: [6000, 3900, 1000], name: "Sales Per Rep" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [3700, 7500, 1100], name: "Monthly Sales" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 8500, 3000], name: "Target" },
-    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" }
+    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" },
   ];
 
   return (
@@ -224,9 +224,9 @@ export const StackedHorizontalBarchart = () => {
 StackedHorizontalBarchart.story = {
   parameters: {
     docs: {
-      storyDescription: "Groups in stack mode."
-    }
-  }
+      storyDescription: "Groups in stack mode.",
+    },
+  },
 };
 
 export const WithIntervalUpdates = () => {
@@ -236,8 +236,8 @@ export const WithIntervalUpdates = () => {
     {
       x: ["January", "February", "March"],
       y: [2300, 1000, 8500],
-      name: "Sales Target"
-    }
+      name: "Sales Target",
+    },
   ]);
 
   useEffect(() => {
@@ -246,8 +246,8 @@ export const WithIntervalUpdates = () => {
         {
           x: ["January", "February", "March"],
           y: [r.next(1000, 3000), r.next(500, 3500), 8500],
-          name: "Sales Target"
-        }
+          name: "Sales Target",
+        },
       ]);
     }, 2000);
 
@@ -268,7 +268,7 @@ export const WithIntervalUpdates = () => {
 WithIntervalUpdates.story = {
   parameters: {
     docs: {
-      storyDescription: "Data updated each second."
-    }
-  }
+      storyDescription: "Data updated each second.",
+    },
+  },
 };

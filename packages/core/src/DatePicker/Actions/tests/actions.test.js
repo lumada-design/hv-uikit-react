@@ -13,7 +13,7 @@ describe("<Actions />", () => {
 
   const mockLabels = {
     applyLabel: "Apply Mock",
-    cancelLabel: "Cancel Mock"
+    cancelLabel: "Cancel Mock",
   };
 
   beforeEach(async () => {
@@ -35,7 +35,7 @@ describe("<Actions />", () => {
       .find(HvButton)
       .at(0)
       .simulate("click", {
-        preventDefault() {}
+        preventDefault() {},
       });
 
     expect(onCancelMock).toBeCalled();
@@ -48,7 +48,7 @@ describe("<Actions />", () => {
       .find(HvButton)
       .at(1)
       .simulate("click", {
-        preventDefault() {}
+        preventDefault() {},
       });
 
     expect(onApplyMock).toBeCalled();

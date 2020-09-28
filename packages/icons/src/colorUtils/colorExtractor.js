@@ -11,7 +11,7 @@ module.exports = function extractColors(fileData) {
 
   const result = {
     colorArray: [],
-    colorText: ""
+    colorText: "",
   };
 
   do {

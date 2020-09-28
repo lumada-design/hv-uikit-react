@@ -13,7 +13,7 @@ export const variantIcon = Object.freeze({
   success: () => <Success iconSize="M" semantic="sema1" />,
   warning: () => <Caution iconSize="M" semantic="sema3" />,
   error: () => <Fail iconSize="M" semantic="sema4" />,
-  info: () => <Info iconSize="M" />
+  info: () => <Info iconSize="M" />,
 });
 
 export const severityIcon = (severity, theme) => {
@@ -36,7 +36,7 @@ export const severityIcon = (severity, theme) => {
   return icon;
 };
 
-export const mapSeverityToVariant = severity => {
+export const mapSeverityToVariant = (severity) => {
   let variant;
   switch (severity.toLowerCase()) {
     case "catastrophic":

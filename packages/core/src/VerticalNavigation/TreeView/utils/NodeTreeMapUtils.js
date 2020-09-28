@@ -6,14 +6,14 @@ export default class NodeTreeMapUtils {
     newMap[nodeId] = {
       ...currentMap,
       children: childrenIds,
-      ...nodeData
+      ...nodeData,
     };
-    childrenIds.forEach(childId => {
+    childrenIds.forEach((childId) => {
       const currentChildMap = newMap[childId];
       // eslint-disable-next-line no-param-reassign
       newMap[childId] = {
         ...currentChildMap,
-        parent: nodeId
+        parent: nodeId,
       };
     });
 
@@ -28,10 +28,10 @@ export default class NodeTreeMapUtils {
       if (node.parent) {
         const parentNode = newMap[node.parent];
         if (parentNode && parentNode.children) {
-          const parentChildren = parentNode.children.filter(c => c !== nodeId);
+          const parentChildren = parentNode.children.filter((c) => c !== nodeId);
           newMap[node.parent] = {
             ...parentNode,
-            children: parentChildren
+            children: parentChildren,
           };
         }
       }

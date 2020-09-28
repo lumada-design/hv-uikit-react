@@ -12,13 +12,13 @@ import styles from "./styles";
 
 const DEFAULT_LABELS = {
   left: "Off",
-  right: "On"
+  right: "On",
 };
 
 /**
  * A Switch is a mechanism that allows user toggle between 2 options.
  */
-const HvSwitch = props => {
+const HvSwitch = (props) => {
   const {
     id,
     className,
@@ -39,19 +39,19 @@ const HvSwitch = props => {
     setClicked(checked);
   }, [checked]);
 
-  const onClickHandler = event => {
+  const onClickHandler = (event) => {
     const newState = !clickState;
     setClicked(newState);
     onChange?.(event, newState);
   };
 
-  const renderLabel = position => (
+  const renderLabel = (position) => (
     <div id={!isNil(id) ? setId(id, position, "button") : undefined}>
       <HvTypography
         className={clsx(classes[`${position}Label`], {
           [classes.disabledLabel]: disabled,
           [classes.labelSelected]: !disabled && !clickState,
-          [classes.labelDeselected]: !disabled && clickState
+          [classes.labelDeselected]: !disabled && clickState,
         })}
         onClick={disabled ? undefined : onClickHandler}
         aria-disabled={disabled}
@@ -86,7 +86,7 @@ const HvSwitch = props => {
             inputProps={{
               // dummy aria-label this component is not tabbable and it is just presentational.
               // the accessibility test were always failing because of the missing aria label.
-              "aria-label": "base switch"
+              "aria-label": "base switch",
             }}
             classes={{
               root: classes.switch,
@@ -94,7 +94,7 @@ const HvSwitch = props => {
               checked: classes.checked,
               track: classes.track,
               thumb: classes.thumb,
-              disabled: classes.disabled
+              disabled: classes.disabled,
             }}
             {...(displayIconChecked && { checkedIcon })}
           />
@@ -157,7 +157,7 @@ HvSwitch.propTypes = {
     /**
      * Styles applied to the internal SwitchBase component's disabled class.
      */
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
   }).isRequired,
   /**
    * Denotes selection state of switch component.
@@ -182,7 +182,7 @@ HvSwitch.propTypes = {
     /**
      * Label placed at the right of the switch.
      */
-    right: PropTypes.string
+    right: PropTypes.string,
   }),
   /**
    * The ID associated with the switch component.
@@ -199,7 +199,7 @@ HvSwitch.propTypes = {
   /**
    * Determine if custom icon in button should be displayed
    * */
-  displayIconChecked: PropTypes.bool
+  displayIconChecked: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvSwitch" })(withLabels(DEFAULT_LABELS)(HvSwitch));

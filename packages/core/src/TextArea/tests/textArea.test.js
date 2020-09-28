@@ -94,7 +94,7 @@ describe("TextArea Component", () => {
           labels={{
             startCount: "Inserted",
             middleCount: "of",
-            endCount: "available"
+            endCount: "available",
           }}
           maxCharQuantity={10}
         />
@@ -109,7 +109,7 @@ describe("TextArea Component", () => {
   const getInputInstance = (defaultProps, value) => {
     wrapper = mount(
       React.createElement(
-        props => (
+        (props) => (
           <HvProvider>
             <HvTextArea
               value={props.value}
@@ -135,7 +135,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const defaultProps = {
       initialValue: "example",
-      onChange: onChangeMock
+      onChange: onChangeMock,
     };
     const instance = getInputInstance(defaultProps, value);
     expect(instance.state.currentValueLength).toBe(4);
@@ -145,7 +145,7 @@ describe("TextArea Component", () => {
     const defaultProps = {
       initialValue: "four",
       maxCharQuantity: 5,
-      blockMax: true
+      blockMax: true,
     };
     const instance = getInputInstance(defaultProps, "onethousand");
     expect(instance.state.currentValueLength).toBe(5);
@@ -153,7 +153,7 @@ describe("TextArea Component", () => {
 
   it("shouldn't limit the current value length on change of value", () => {
     const defaultProps = {
-      initialValue: "four"
+      initialValue: "four",
     };
     const instance = getInputInstance(defaultProps, "onethousand");
     expect(instance.state.currentValueLength).toBe(11);

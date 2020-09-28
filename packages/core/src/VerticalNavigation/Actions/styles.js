@@ -1,20 +1,20 @@
 import { outlineStyles } from "../../Focus/styles";
 
-const hover = theme => ({
+const hover = (theme) => ({
   background: theme.hv.palette.atmosphere.atmo4,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
-  }
+    background: theme.hv.palette.atmosphere.atmo4,
+  },
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "block",
     background: theme.hv.palette.atmosphere.atmo1,
 
     "& :not(:last-child)": {
-      marginBottom: "8px"
-    }
+      marginBottom: "8px",
+    },
   },
 
   action: {
@@ -30,18 +30,18 @@ const styles = theme => ({
 
     "&:focus": {
       ...outlineStyles,
-      ...hover(theme)
+      ...hover(theme),
     },
 
     // cursor
     cursor: "pointer",
     "& *": {
-      cursor: "pointer"
-    }
+      cursor: "pointer",
+    },
   },
   noIcon: {
-    paddingLeft: `${theme.hv.spacing.xs}px`
-  }
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+  },
 });
 
 export default styles;

@@ -9,14 +9,14 @@ export default {
     componentSubtitle: null,
     usage: "import { HvLogin } from '@hv/uikit-react-core/dist'",
     deprecated: true,
-    compNameToUse: "HvLoginContainer component."
+    compNameToUse: "HvLoginContainer component.",
   },
   component: HvLogin,
-  decorators: [storyFn => <div style={{ display: "flex", height: "100vh" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ display: "flex", height: "100vh" }}>{storyFn()}</div>],
 };
 
 const callSimulation = () =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve();
     }, 2000);
@@ -38,9 +38,9 @@ export const Successful = () => (
 Successful.story = {
   parameters: {
     docs: {
-      storyDescription: "Login sample with a successful result on login attempt"
-    }
-  }
+      storyDescription: "Login sample with a successful result on login attempt",
+    },
+  },
 };
 
 export const Unsuccessful = () => (
@@ -56,9 +56,9 @@ export const Unsuccessful = () => (
 Unsuccessful.story = {
   parameters: {
     docs: {
-      storyDescription: "Login sample with an error result on login attempt"
-    }
-  }
+      storyDescription: "Login sample with an error result on login attempt",
+    },
+  },
 };
 
 export const NoRememberCredentials = () => (
@@ -73,9 +73,9 @@ export const NoRememberCredentials = () => (
 NoRememberCredentials.story = {
   parameters: {
     docs: {
-      storyDescription: 'Without "Forgot Your Credentials" or "Remember Me"'
-    }
-  }
+      storyDescription: 'Without "Forgot Your Credentials" or "Remember Me"',
+    },
+  },
 };
 
 export const CustomLabels = () => (
@@ -90,7 +90,7 @@ export const CustomLabels = () => (
       passwordInputLabel: "Password input label",
       passwordPlaceHolder: "Password placeholder",
       rememberMeLabel: "Remember me label",
-      loginButtonMessage: "Log message"
+      loginButtonMessage: "Log message",
     }}
   />
 );
@@ -98,9 +98,9 @@ export const CustomLabels = () => (
 CustomLabels.story = {
   parameters: {
     docs: {
-      storyDescription: "Login overriding some default labels"
-    }
-  }
+      storyDescription: "Login overriding some default labels",
+    },
+  },
 };
 
 export const CustomBackground = () => (
@@ -118,7 +118,7 @@ export const CustomMessage = () => (
     allowRecover={false}
     allowRememberMe={false}
     customMessage={{
-      text: "Here is some message.\nErrors will override it. Log in for error."
+      text: "Here is some message.\nErrors will override it. Log in for error.",
     }}
   />
 );

@@ -19,7 +19,7 @@ describe("Chart withStyles", () => {
     name: "Sales Target",
     type: "bar",
     orientation: "h",
-    hoverinfo: "none"
+    hoverinfo: "none",
   };
 
   const data = [trace1];

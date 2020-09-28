@@ -9,7 +9,7 @@ import { isKey, isOneOfKeys, setFocusTo, getFocusableChildren } from "./utils";
 import styles from "./styles";
 
 /* eslint-disable no-param-reassign */
-const Focus = props => {
+const Focus = (props) => {
   const {
     classes,
     children,
@@ -24,7 +24,7 @@ const Focus = props => {
     useArrows = true,
     useFalseFocus = false,
     filterClass,
-    navigationJump = 4
+    navigationJump = 4,
   } = props;
   const [showFocus, setShowFocus] = useState(null);
   const [childFocus, setChildFocus] = useState(null);
@@ -47,19 +47,19 @@ const Focus = props => {
 
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
-    const firstSelected = focuses.find(focus => focus.classList.contains(classes.selected));
+    const firstSelected = focuses.find((focus) => focus.classList.contains(classes.selected));
 
     if (!firstSelected) return;
-    focuses.forEach(focus => setTabIndex(focus, -1));
+    focuses.forEach((focus) => setTabIndex(focus, -1));
     setTabIndex(firstSelected, 0);
   };
 
-  const clearTabSiblings = el => {
-    getFocuses().forEach(focus => setTabIndex(focus, -1));
+  const clearTabSiblings = (el) => {
+    getFocuses().forEach((focus) => setTabIndex(focus, -1));
     setTabIndex(el, 0);
   };
 
-  const onFocusStrategy = evt => {
+  const onFocusStrategy = (evt) => {
     if (strategy === "listbox") {
       clearTabSiblings(evt.currentTarget);
     }
@@ -77,7 +77,7 @@ const Focus = props => {
     }
   };
 
-  const config = el => {
+  const config = (el) => {
     const { tabIndex } = configuration;
     if (!el || hasRunConfig) return;
     if (strategy === "card") {
@@ -91,7 +91,7 @@ const Focus = props => {
 
     const focusableChildren = getFocusableChildren(el);
     if (focusableChildren.length) {
-      focusableChildren.forEach(child => setTabIndex(child, -1));
+      focusableChildren.forEach((child) => setTabIndex(child, -1));
       setChildFocus(focusableChildren[0]);
     }
 
@@ -99,21 +99,21 @@ const Focus = props => {
     setHasRunConfig(true);
   };
 
-  const addFocusClass = evt => {
+  const addFocusClass = (evt) => {
     if (!useFalseFocus) {
       evt.currentTarget.classList.add(classes.focused);
-      classes.focus.split(" ").forEach(c => evt.currentTarget.classList.add(c));
+      classes.focus.split(" ").forEach((c) => evt.currentTarget.classList.add(c));
     }
   };
 
-  const removeFocusClass = evt => {
+  const removeFocusClass = (evt) => {
     if (!useFalseFocus) {
       evt.currentTarget.classList.remove(classes.focused);
-      classes.focus.split(" ").forEach(c => evt.currentTarget.classList.remove(c));
+      classes.focus.split(" ").forEach((c) => evt.currentTarget.classList.remove(c));
     }
   };
 
-  const onFocus = evt => {
+  const onFocus = (evt) => {
     addFocusClass(evt);
     setShowFocus(true);
     // give focus to child element if any focusable
@@ -122,13 +122,13 @@ const Focus = props => {
     onFocusStrategy(evt);
   };
 
-  const onBlur = evt => {
+  const onBlur = (evt) => {
     setShowFocus(false);
     removeFocusClass(evt);
     onBlurStrategy(evt);
   };
 
-  const onMouseDown = evt => {
+  const onMouseDown = (evt) => {
     const hasCard = !!evt.currentTarget?.querySelector(".HvCard-root");
     if (strategy === "grid" && hasCard) return;
 
@@ -153,7 +153,7 @@ const Focus = props => {
     right: (currentFocusIndex + 1) % jump === 0 || currentFocusIndex + 1 > listSize - 1,
     left: currentFocusIndex % jump === 0,
     up: currentFocusIndex - jump < 0,
-    down: currentFocusIndex + jump > listSize || currentFocusIndex + jump > listSize - 1
+    down: currentFocusIndex + jump > listSize || currentFocusIndex + jump > listSize - 1,
   });
 
   const onGridKeyDownHandler = (evt, focuses, focusesList, currentFocusIndex, jump) => {
@@ -232,10 +232,10 @@ const Focus = props => {
     }
   };
 
-  const onKeyDown = evt => {
+  const onKeyDown = (evt) => {
     const isDisabledFocusable = strategy === "menu";
     const focusesList = getFocuses().filter(
-      el => isDisabledFocusable || !el.classList.contains(classes.disabled)
+      (el) => isDisabledFocusable || !el.classList.contains(classes.disabled)
     );
 
     const currentFocus = focusesList.indexOf(evt.currentTarget);
@@ -246,7 +246,7 @@ const Focus = props => {
       previous: focusesList[currentFocus - 1],
       next: focusesList[currentFocus + 1],
       fall: focusesList[currentFocus + navigationJump],
-      jump: focusesList[currentFocus - navigationJump]
+      jump: focusesList[currentFocus - navigationJump],
     };
 
     if (strategy === "grid") {
@@ -256,11 +256,11 @@ const Focus = props => {
     onListHandler(evt, focuses, focusesList);
   };
 
-  const onKeyUp = evt => {
+  const onKeyUp = (evt) => {
     if (isBrowser("firefox")) evt.preventDefault();
   };
 
-  const focusWrapper = childrenToWrap => (
+  const focusWrapper = (childrenToWrap) => (
     <div className={classes.externalReference}>
       {childrenToWrap}
       {showFocus && <div className={classes.falseFocus} />}
@@ -275,7 +275,7 @@ const Focus = props => {
         className: clsx(children.props.className, [classes.root, filterClass], {
           [classes.selected]: selected,
           [classes.disabled]: disabledClass,
-          [classes.focusDisabled]: focusDisabled
+          [classes.focusDisabled]: focusDisabled,
         }),
         ref: config,
         onFocus,
@@ -283,7 +283,7 @@ const Focus = props => {
         onMouseDown,
         onKeyDown,
         onKeyUp,
-        selected
+        selected,
       })}
     </ConditionalWrapper>
   );
@@ -326,7 +326,7 @@ Focus.propTypes = {
     /**
      * Styles applied when focus customization is passed.
      */
-    focus: PropTypes.string
+    focus: PropTypes.string,
   }).isRequired,
   /**
    * The reference to the root element to hold all Focus' context.
@@ -379,7 +379,7 @@ Focus.propTypes = {
   /**
    * How much the navigation will skip when using the arrows.
    */
-  navigationJump: PropTypes.number
+  navigationJump: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvFocus" })(Focus);

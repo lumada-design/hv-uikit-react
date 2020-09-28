@@ -2,24 +2,24 @@ const styles = {
   root: {},
   icon: {
     width: 30,
-    height: 30
+    height: 30,
   },
   adornment: {
     backgroundColor: "transparent",
     border: "none",
     padding: 0,
     margin: 0,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   adornmentButton: {
-    cursor: "pointer"
+    cursor: "pointer",
   },
   adornmentIcon: {
-    cursor: "default"
+    cursor: "default",
   },
   hideIcon: {
-    display: "none"
-  }
+    display: "none",
+  },
 };
 
 export default styles;

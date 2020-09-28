@@ -9,9 +9,9 @@ export default {
   title: "Components/Pagination",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvPagination } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvPagination } from '@hv/uikit-react-core/dist'",
   },
-  component: HvPagination
+  component: HvPagination,
 };
 
 export const Main = () => {
@@ -22,7 +22,7 @@ export const ControlledSample = () => {
   const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
   const data = [...Array(64).keys()];
 
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       display: "flex",
       flexWrap: "wrap",
@@ -32,9 +32,9 @@ export const ControlledSample = () => {
         margin: "12px",
         textAlign: "center",
         borderRadius: "4px",
-        background: theme.hv.palette.atmosphere.atmo1
-      }
-    }
+        background: theme.hv.palette.atmosphere.atmo1,
+      },
+    },
   });
 
   const Container = withStyles(styles)(({ classes, children }) => (
@@ -50,7 +50,7 @@ export const ControlledSample = () => {
     return (
       <>
         <Container>
-          {data.slice(pageSize * page, pageSize * (page + 1)).map(i => (
+          {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
             <HvTypography key={i} component="span">
               {`Item ${i + 1}`}
             </HvTypography>
@@ -65,8 +65,8 @@ export const ControlledSample = () => {
           canNext={page < numPages - 1}
           pageSize={pageSize}
           pageSizeOptions={pageSizeOptions}
-          onPageChange={value => setPage(value)}
-          onPageSizeChange={value => setPageSize(value)}
+          onPageChange={(value) => setPage(value)}
+          onPageSizeChange={(value) => setPageSize(value)}
           labels={{ pageSizeEntryName: "items" }}
         />
       </>
@@ -79,31 +79,31 @@ export const ControlledSample = () => {
 ControlledSample.story = {
   parameters: {
     docs: {
-      storyDescription: "Pagination controlling a list of elements"
-    }
-  }
+      storyDescription: "Pagination controlling a list of elements",
+    },
+  },
 };
 
 export const CardViewSample = () => {
   const pageSizeOptions = [4, 8, 12, 24, 48];
-  const createData = num => {
+  const createData = (num) => {
     const variations = [
       {
         semantic: "sema2",
         subheader: "Compressor",
         mediaPath: compressorImage,
-        mediaTitle: "Compressor"
+        mediaTitle: "Compressor",
       },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leafImage, mediaTitle: "Leaf" }
+      { semantic: "sema3", subheader: "Plant", mediaPath: leafImage, mediaTitle: "Leaf" },
     ];
 
-    return [...Array(num).keys()].map(id => ({
+    return [...Array(num).keys()].map((id) => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       mediaHeight: 186,
       selected: false,
       checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
-      ...variations[id % variations.length]
+      ...variations[id % variations.length],
     }));
   };
 
@@ -114,8 +114,8 @@ export const CardViewSample = () => {
 
     const numPages = Math.ceil(data.length / pageSize);
 
-    const handleSelection = id => {
-      const el = data.find(element => element.id === id);
+    const handleSelection = (id) => {
+      const el = data.find((element) => element.id === id);
       el.selected = !el.selected;
       el.checkboxSelected = el.selected;
       setData(data);
@@ -129,9 +129,9 @@ export const CardViewSample = () => {
           icon={<Tool />}
           values={pageData}
           viewConfiguration={{
-            onSelection: event => handleSelection(event.target.value),
+            onSelection: (event) => handleSelection(event.target.value),
             isSelectable: true,
-            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
+            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
           }}
         />
         <p />
@@ -143,8 +143,8 @@ export const CardViewSample = () => {
           canNext={page < numPages - 1}
           pageSize={pageSize}
           pageSizeOptions={pageSizeOptions}
-          onPageChange={value => setPage(value)}
-          onPageSizeChange={value => setPageSize(value)}
+          onPageChange={(value) => setPage(value)}
+          onPageSizeChange={(value) => setPageSize(value)}
           labels={{ pageSizeEntryName: "assets" }}
         />
       </>
@@ -157,7 +157,7 @@ export const CardViewSample = () => {
 CardViewSample.story = {
   parameters: {
     docs: {
-      storyDescription: "Pagination controlling CardView's items"
-    }
-  }
+      storyDescription: "Pagination controlling CardView's items",
+    },
+  },
 };

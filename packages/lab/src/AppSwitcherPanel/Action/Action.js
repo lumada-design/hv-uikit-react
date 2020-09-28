@@ -20,7 +20,7 @@ export default class Action extends Component {
           <img
             className={classes.iconUrl}
             src={application.iconUrl}
-            onError={element => {
+            onError={(element) => {
               element.target.style.display = "none";
               this.setState({ validIconUrl: false });
             }}
@@ -43,7 +43,7 @@ export default class Action extends Component {
     /**
      * Handles the onClick event and triggers the appropriate callback if it exists.
      */
-    const handleOnClick = event => {
+    const handleOnClick = (event) => {
       const { onClickCallback } = this.props;
 
       if (onClickCallback) {
@@ -114,7 +114,7 @@ Action.propTypes = {
     /**
      * True when the application is selected, false otherwise.
      */
-    isSelected: PropTypes.bool
+    isSelected: PropTypes.bool,
   }).isRequired,
   /**
    * A Jss object used to override or extend the component styles.
@@ -127,11 +127,11 @@ Action.propTypes = {
   /**
    * Must return a boolean stating if the action element is selected or not.
    */
-  isSelectedCallback: PropTypes.func
+  isSelectedCallback: PropTypes.func,
 };
 
 Action.defaultProps = {
   target: "_top",
   onClickCallback: (event, application) => {},
-  isSelectedCallback: () => false
+  isSelectedCallback: () => false,
 };

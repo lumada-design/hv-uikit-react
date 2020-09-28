@@ -12,7 +12,7 @@ import { setId } from "../utils";
 import HvLink from "../Link";
 import styles from "./styles";
 
-const removeExtension = label =>
+const removeExtension = (label) =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
 
 const LastPathElement = ({ classes, label }) => (
@@ -23,7 +23,7 @@ const LastPathElement = ({ classes, label }) => (
 
 LastPathElement.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
 };
 
 const Page = ({ Component, onClick, elem, classes }) => (
@@ -47,9 +47,9 @@ Page.propTypes = {
   onClick: PropTypes.func,
   elem: PropTypes.shape({
     path: PropTypes.string,
-    label: PropTypes.string
+    label: PropTypes.string,
   }).isRequired,
-  classes: PropTypes.instanceOf(Object).isRequired
+  classes: PropTypes.instanceOf(Object).isRequired,
 };
 
 const PathElement = ({ classes, children }) => (
@@ -63,7 +63,7 @@ const PathElement = ({ classes, children }) => (
 
 PathElement.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
 
 const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {
@@ -87,7 +87,7 @@ const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {
 /**
  * A breadcrumb is a graphical control element frequently used as a navigational aid.
  */
-const BreadCrumb = props => {
+const BreadCrumb = (props) => {
   const {
     classes,
     className,
@@ -113,12 +113,12 @@ const BreadCrumb = props => {
     // get url without domain
     const urlWithoutDomain = url.replace(/^.*\/\/[^/]+/, "");
 
-    const pathNames = urlWithoutDomain.split("/").filter(x => x);
+    const pathNames = urlWithoutDomain.split("/").filter((x) => x);
 
     pathNames.map((elem, index) =>
       listPath.push({
         label: decodeURI(elem),
-        path: `${baseUrl}/${pathNames.slice(0, index + 1).join("/")}`
+        path: `${baseUrl}/${pathNames.slice(0, index + 1).join("/")}`,
       })
     );
   }
@@ -188,7 +188,7 @@ BreadCrumb.propTypes = {
     /**
      *  Styles applied to the list.
      */
-    orderedList: PropTypes.string
+    orderedList: PropTypes.string,
   }).isRequired,
   /**
    * List of breadcrumb.
@@ -196,7 +196,7 @@ BreadCrumb.propTypes = {
   listRoute: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
-      path: PropTypes.string
+      path: PropTypes.string,
     })
   ),
   /**
@@ -219,7 +219,7 @@ BreadCrumb.propTypes = {
   /**
    * Props passed down to the DropDownMenu sub-menu component.
    */
-  dropDownMenuProps: PropTypes.instanceOf(Object)
+  dropDownMenuProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);

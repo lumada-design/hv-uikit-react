@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import hoistNonReactStatics from "hoist-non-react-statics";
 
 const withDeprecate = (Component, msg = "") => {
-  const WithDeprecate = props => {
+  const WithDeprecate = (props) => {
     useEffect(() => {
       if (process.env.NODE_ENV !== "production") {
         // eslint-disable-next-line no-console

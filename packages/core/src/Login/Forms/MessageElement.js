@@ -6,7 +6,7 @@ const MessageElement = ({ iconElement, showMessage, icon, message }) => {
   const iconClone =
     iconElement != null
       ? React.cloneElement(iconElement, {
-          className: icon
+          className: icon,
         })
       : null;
 
@@ -34,12 +34,12 @@ MessageElement.propTypes = {
   /**
    * Message to be showed.
    */
-  message: PropTypes.string.isRequired
+  message: PropTypes.string.isRequired,
 };
 
 MessageElement.defaultProps = {
   iconElement: null,
-  icon: null
+  icon: null,
 };
 
 export default MessageElement;

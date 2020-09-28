@@ -5,16 +5,16 @@ export default {
   title: "Components/Footer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFooter } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvFooter } from '@hv/uikit-react-core/dist'",
   },
   component: HvFooter,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ padding: 10 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => <HvFooter />;
@@ -37,7 +37,7 @@ export const CustomLabels = () => {
 CustomLabels.story = {
   parameters: {
     docs: {
-      storyDescription: "Sample 2 description."
-    }
-  }
+      storyDescription: "Sample 2 description.",
+    },
+  },
 };

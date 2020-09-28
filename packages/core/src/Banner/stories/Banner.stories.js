@@ -8,15 +8,15 @@ export default {
   title: "Components/Notification/Banner",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBanner } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBanner } from '@hv/uikit-react-core/dist'",
   },
-  component: HvBanner
+  component: HvBanner,
 };
 
 const styles = {
   position: "relative",
   top: 0,
-  marginBottom: 10
+  marginBottom: 10,
 };
 
 export const Main = () => (
@@ -81,9 +81,9 @@ export const BannerController = () => {
 BannerController.story = {
   parameters: {
     docs: {
-      storyDescription: "Different Banner variants with actions and controlled by buttons"
-    }
-  }
+      storyDescription: "Different Banner variants with actions and controlled by buttons",
+    },
+  },
 };
 
 export const CustomIcon = () => (
@@ -98,9 +98,9 @@ export const CustomIcon = () => (
 CustomIcon.story = {
   parameters: {
     docs: {
-      storyDescription: "Banner with custom icon with base color on the semantic background"
-    }
-  }
+      storyDescription: "Banner with custom icon with base color on the semantic background",
+    },
+  },
 };
 
 export const CustomAction = () => (
@@ -119,18 +119,18 @@ CustomAction.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Banner can receive a component or object action that will render a semantic button"
-    }
-  }
+        "Banner can receive a component or object action that will render a semantic button",
+    },
+  },
 };
 
 export const BannerVariations = () => {
-  const actionArray = id => [
+  const actionArray = (id) => [
     { id: `action${id}_1`, label: "Action 1", disabled: false },
-    { id: `action${id}_2`, label: "Action 2", disabled: false }
+    { id: `action${id}_2`, label: "Action 2", disabled: false },
   ];
 
-  const BannerContent = props => (
+  const BannerContent = (props) => (
     <>
       <p />
       <HvBannerContent {...props} />

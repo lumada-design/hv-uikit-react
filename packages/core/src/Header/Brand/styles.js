@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     alignItems: "center",
@@ -7,15 +7,15 @@ const styles = theme => ({
     [theme.breakpoints.down("sm")]: {
       position: "absolute",
       left: "50%",
-      transform: "translate(-50%, 0)"
-    }
+      transform: "translate(-50%, 0)",
+    },
   },
   separator: {
     width: 1,
     height: `${theme.hv.spacing.sm}px`,
     margin: `0 ${theme.hv.spacing.xs}px`,
-    backgroundColor: theme.hv.palette.accent.acce1
-  }
+    backgroundColor: theme.hv.palette.accent.acce1,
+  },
 });
 
 export default styles;

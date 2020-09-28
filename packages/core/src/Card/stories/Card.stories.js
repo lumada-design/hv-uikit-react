@@ -10,7 +10,7 @@ import {
   Level1,
   Preview,
   Upload,
-  MoreOptionsVertical
+  MoreOptionsVertical,
 } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { HvButton, HvCard, HvKpi, HvTypography } from "../..";
@@ -23,17 +23,17 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      "import { HvCard, HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'"
+      "import { HvCard, HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'",
   },
   component: HvCard,
-  subcomponents: { HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent }
+  subcomponents: { HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent },
 };
 
 export const Main = () => {
   const textStyles = {
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
   };
 
   const SingleContent = () => (
@@ -75,7 +75,7 @@ export const AllComponents = () => {
   const configuration = {
     title: "Leaves Appear wilted and scorched",
     subtitleLeft: "Just now",
-    subtitleRight: "L20"
+    subtitleRight: "L20",
   };
 
   const strings = {
@@ -86,24 +86,24 @@ export const AllComponents = () => {
     cellBTitle: "Main Asset",
     cellBContent: "California wonder grain of wonderfullness",
     cellDTitle: "Est. date of failure",
-    cellDContent: "30-60 days"
+    cellDContent: "30-60 days",
   };
 
   const mediaStyles = {
     content: {
-      padding: `0 20px 0 20px`
+      padding: `0 20px 0 20px`,
     },
     item: {
-      padding: `0 0 20px 0`
+      padding: `0 0 20px 0`,
     },
     bottomItem: {
-      padding: "0"
+      padding: "0",
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   };
 
   const MultipleActionsWithMedia = () => {
@@ -115,7 +115,7 @@ export const AllComponents = () => {
       cellCTitle,
       cellCContent,
       cellDTitle,
-      cellDContent
+      cellDContent,
     } = strings;
 
     return (
@@ -160,12 +160,12 @@ export const AllComponents = () => {
     </div>
   );
 
-  const SubHeaderStyle = theme => ({
+  const SubHeaderStyle = (theme) => ({
     subtitleLeft: {
       borderRight: `1px solid ${theme.hv.palette.accent.acce1}`,
       paddingRight: "10px",
-      marginRight: "10px"
-    }
+      marginRight: "10px",
+    },
   });
 
   const StyledSubheader = withStyles(SubHeaderStyle)(SubHeader);
@@ -175,26 +175,26 @@ export const AllComponents = () => {
       id: "post",
       label: "Upload",
       iconCallback: () => <Upload />,
-      disabled: false
+      disabled: false,
     },
     {
       id: "get",
       label: "Preview",
       iconCallback: () => <Preview color="atmo7" />,
-      disabled: true
+      disabled: true,
     },
     {
       id: "put",
       label: "Add",
       iconCallback: () => <Add color="atmo7" />,
-      disabled: true
+      disabled: true,
     },
     {
       id: "delete",
       label: "Delete",
       iconCallback: () => <Delete />,
-      disabled: false
-    }
+      disabled: false,
+    },
   ];
 
   return (
@@ -210,27 +210,27 @@ export const AllComponents = () => {
         semantic="sema4"
         isSelectable
         cardButtonProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         headerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         footerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         checkboxProps={{
           value: "value",
           inputProps: {
-            "aria-label": "leaf input"
-          }
+            "aria-label": "leaf input",
+          },
         }}
         mediaPath={leaf}
         mediaHeight={160}
         mediaTitle="leafy leaf"
         mediaProps={{
-          "aria-label": "leafy leaf"
+          "aria-label": "leafy leaf",
         }}
-        onChange={event => console.log(`my value is ${event.target.value}`)}
+        onChange={(event) => console.log(`my value is ${event.target.value}`)}
       />
     </div>
   );
@@ -239,15 +239,15 @@ export const AllComponents = () => {
 AllComponents.story = {
   parameters: {
     docs: {
-      storyDescription: "A card that has all it's component defined."
-    }
-  }
+      storyDescription: "A card that has all it's component defined.",
+    },
+  },
 };
 
 export const MultipleActions = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
-    subtitle: "QTFCR27520007"
+    subtitle: "QTFCR27520007",
   };
 
   const strings = {
@@ -260,24 +260,24 @@ export const MultipleActions = () => {
     cellDTitle: "Est. date of failure",
     cellDContent: "30-60 days",
     cellETitle: "UUID",
-    cellEContent: "2101caf3-7cd4-1000-bdp95-d8c4971767c"
+    cellEContent: "2101caf3-7cd4-1000-bdp95-d8c4971767c",
   };
 
   const MultipleActionsStyles = {
     content: {
-      padding: `0 20px 0 20px`
+      padding: `0 20px 0 20px`,
     },
     item: {
-      padding: `0 0 20px 0`
+      padding: `0 0 20px 0`,
     },
     bottomItem: {
-      padding: "0"
+      padding: "0",
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   };
 
   const Content = () => {
@@ -291,7 +291,7 @@ export const MultipleActions = () => {
       cellDTitle,
       cellDContent,
       cellETitle,
-      cellEContent
+      cellEContent,
     } = strings;
 
     return (
@@ -338,7 +338,7 @@ export const MultipleActions = () => {
 
   const myActions = [
     { id: "view", label: "View", disabled: false },
-    { id: "share", label: "Share", disabled: false }
+    { id: "share", label: "Share", disabled: false },
   ];
 
   return (
@@ -352,20 +352,20 @@ export const MultipleActions = () => {
         checkboxProps={{
           value: "value",
           inputProps: {
-            "aria-label": "leaf input"
-          }
+            "aria-label": "leaf input",
+          },
         }}
         maxVisibleActions={2}
         cardButtonProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         headerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         footerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
-        onChange={event => console.log(`my value is ${event.target.value}`)}
+        onChange={(event) => console.log(`my value is ${event.target.value}`)}
       />
     </div>
   );
@@ -374,15 +374,15 @@ export const MultipleActions = () => {
 MultipleActions.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample that shows how to use multiple actions."
-    }
-  }
+      storyDescription: "A card sample that shows how to use multiple actions.",
+    },
+  },
 };
 
 export const NoActions = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
-    subtitle: "QTFCR27520007"
+    subtitle: "QTFCR27520007",
   };
 
   const strings = {
@@ -395,24 +395,24 @@ export const NoActions = () => {
     cellDTitle: "Est. date of failure",
     cellDContent: "30-60 days",
     cellETitle: "UUID",
-    cellEContent: "2101caf3-7cd4-1000-bdp95-d8c4971767c"
+    cellEContent: "2101caf3-7cd4-1000-bdp95-d8c4971767c",
   };
 
   const MultipleActionsStyles = {
     content: {
-      padding: `0 20px 0 20px`
+      padding: `0 20px 0 20px`,
     },
     item: {
-      padding: `0 0 20px 0`
+      padding: `0 0 20px 0`,
     },
     bottomItem: {
-      padding: "0"
+      padding: "0",
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   };
 
   const Content = () => {
@@ -426,7 +426,7 @@ export const NoActions = () => {
       cellDTitle,
       cellDContent,
       cellETitle,
-      cellEContent
+      cellEContent,
     } = strings;
 
     return (
@@ -480,19 +480,19 @@ export const NoActions = () => {
         checkboxProps={{
           value: "value",
           inputProps: {
-            "aria-label": "leaf input"
-          }
+            "aria-label": "leaf input",
+          },
         }}
         cardButtonProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         headerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         footerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
-        onChange={event => console.log(`my value is ${event.target.value}`)}
+        onChange={(event) => console.log(`my value is ${event.target.value}`)}
       />
     </div>
   );
@@ -501,15 +501,15 @@ export const NoActions = () => {
 NoActions.story = {
   parameters: {
     docs: {
-      storyDescription: "A Card without any actions."
-    }
-  }
+      storyDescription: "A Card without any actions.",
+    },
+  },
 };
 
 export const OnlyTitle = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
-    subtitle: "QTFCR27520007"
+    subtitle: "QTFCR27520007",
   };
 
   return (
@@ -519,19 +519,19 @@ export const OnlyTitle = () => {
         checkboxProps={{
           value: "value",
           inputProps: {
-            "aria-label": "leaf input"
-          }
+            "aria-label": "leaf input",
+          },
         }}
         cardButtonProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         headerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         footerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
-        onChange={event => console.log(`my value is ${event.target.value}`)}
+        onChange={(event) => console.log(`my value is ${event.target.value}`)}
       />
     </div>
   );
@@ -540,25 +540,25 @@ export const OnlyTitle = () => {
 OnlyTitle.story = {
   parameters: {
     docs: {
-      storyDescription: "A Card that only has a title."
-    }
-  }
+      storyDescription: "A Card that only has a title.",
+    },
+  },
 };
 
 export const KPICard = () => {
   const kpiStyles = {
     content: {
-      padding: `0 20px`
+      padding: `0 20px`,
     },
     item: {
-      padding: `0 0 20px 0`
-    }
+      padding: `0 0 20px 0`,
+    },
   };
 
-  const cardSpacing = theme => ({
+  const cardSpacing = (theme) => ({
     root: {
-      padding: theme.spacing(2)
-    }
+      padding: theme.spacing(2),
+    },
   });
 
   const data = {
@@ -566,12 +566,12 @@ export const KPICard = () => {
     firstContent: "Primary asset to be worked on, other asset, other asset",
     secondTitle: "Description",
     secondContent:
-      "Shaft may be bent, check for bends. Straighten if possible and replace shaft if necessary."
+      "Shaft may be bent, check for bends. Straighten if possible and replace shaft if necessary.",
   };
 
-  const ThroughputKpiTextConfiguration = score => ({
+  const ThroughputKpiTextConfiguration = (score) => ({
     title: "Confidence score",
-    indicator: `${score}%`
+    indicator: `${score}%`,
   });
 
   /* eslint react/prop-types: 0 */
@@ -609,12 +609,12 @@ export const KPICard = () => {
           isSelectable
           checkboxProps={{
             value: "value",
-            inputProps: { "aria-label": "leaf input" }
+            inputProps: { "aria-label": "leaf input" },
           }}
           cardButtonProps={{ "aria-label": "leaf" }}
           headerProps={{ "aria-label": "leaf" }}
           footerProps={{ "aria-label": "leaf" }}
-          onChange={event => console.log(`my value is ${event.target.value}`)}
+          onChange={(event) => console.log(`my value is ${event.target.value}`)}
         />
       </Grid>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
@@ -628,12 +628,12 @@ export const KPICard = () => {
           isSelectable
           checkboxProps={{
             value: "value",
-            inputProps: { "aria-label": "leaf input" }
+            inputProps: { "aria-label": "leaf input" },
           }}
           cardButtonProps={{ "aria-label": "leaf" }}
           headerProps={{ "aria-label": "leaf" }}
           footerProps={{ "aria-label": "leaf" }}
-          onChange={event => console.log(`my value is ${event.target.value}`)}
+          onChange={(event) => console.log(`my value is ${event.target.value}`)}
         />
       </Grid>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
@@ -645,12 +645,12 @@ export const KPICard = () => {
           isSelectable
           checkboxProps={{
             value: "value",
-            inputProps: { "aria-label": "leaf input" }
+            inputProps: { "aria-label": "leaf input" },
           }}
           cardButtonProps={{ "aria-label": "leaf" }}
           headerProps={{ "aria-label": "leaf" }}
           footerProps={{ "aria-label": "leaf" }}
-          onChange={event => console.log(`my value is ${event.target.value}`)}
+          onChange={(event) => console.log(`my value is ${event.target.value}`)}
         />
       </Grid>
     </Grid>
@@ -660,23 +660,23 @@ export const KPICard = () => {
 KPICard.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample combined with a kpi as content."
-    }
-  }
+      storyDescription: "A card sample combined with a kpi as content.",
+    },
+  },
 };
 
 export const WithComposition = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       width: "100%",
       paddingBottom: "0px",
       borderLeft: `1px solid ${theme.palette.grey.plain}`,
-      borderRight: `1px solid ${theme.palette.grey.plain}`
+      borderRight: `1px solid ${theme.palette.grey.plain}`,
     },
     media: {
       height: "100%",
-      width: "100%"
-    }
+      width: "100%",
+    },
   });
 
   const CustomMedia = withStyles(styles)(HvCardMedia);
@@ -686,26 +686,26 @@ export const WithComposition = () => {
       id: "post",
       label: "Upload",
       iconCallback: () => <Upload />,
-      disabled: false
+      disabled: false,
     },
     {
       id: "get",
       label: "Preview",
       iconCallback: () => <Preview />,
-      disabled: true
+      disabled: true,
     },
     {
       id: "put",
       label: "Add",
       iconCallback: () => <Add />,
-      disabled: true
+      disabled: true,
     },
     {
       id: "delete",
       label: "Delete",
       iconCallback: () => <Delete />,
-      disabled: false
-    }
+      disabled: false,
+    },
   ];
 
   return (
@@ -717,12 +717,12 @@ export const WithComposition = () => {
           checkboxProps={{
             value: "value",
             inputProps: {
-              "aria-label": "composed input"
-            }
+              "aria-label": "composed input",
+            },
           }}
           actions={myActions}
           isSelectable
-          onChange={event => console.log(`my value is ${event.target.value}`)}
+          onChange={(event) => console.log(`my value is ${event.target.value}`)}
         />
       </HvCard>
     </div>
@@ -732,9 +732,9 @@ export const WithComposition = () => {
 WithComposition.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample that shows how to compose card with subcomponents."
-    }
-  }
+      storyDescription: "A card sample that shows how to compose card with subcomponents.",
+    },
+  },
 };
 
 export const WithFooterComposition = () => {
@@ -750,16 +750,16 @@ export const WithFooterComposition = () => {
     </>
   );
 
-  const headerStyles = theme => ({
+  const headerStyles = (theme) => ({
     root: {
-      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-    }
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    },
   });
 
   const footerStyles = {
     root: {
-      borderTop: "none"
-    }
+      borderTop: "none",
+    },
   };
 
   const HeaderWithStyles = withStyles(headerStyles)(HvCardHeader);
@@ -774,10 +774,10 @@ export const WithFooterComposition = () => {
           checkboxProps={{
             value: "value",
             inputProps: {
-              "aria-label": "composed input"
-            }
+              "aria-label": "composed input",
+            },
           }}
-          onChange={event => console.log(`my value is ${event.target.value}`)}
+          onChange={(event) => console.log(`my value is ${event.target.value}`)}
         />
         <HeaderWithStyles headerTitle="Asset Avatar L90" subheader="Compressor" />
       </HvCard>
@@ -788,15 +788,15 @@ export const WithFooterComposition = () => {
 WithFooterComposition.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample that shows how to compose card with subcomponents."
-    }
-  }
+      storyDescription: "A card sample that shows how to compose card with subcomponents.",
+    },
+  },
 };
 
 export const AutomaticActions = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
-    subtitle: "QTFCR27520007"
+    subtitle: "QTFCR27520007",
   };
 
   const myActions = [
@@ -804,26 +804,26 @@ export const AutomaticActions = () => {
       id: "post",
       label: "Add",
       iconCallback: () => <Add />,
-      disabled: false
+      disabled: false,
     },
     {
       id: "get",
       label: "Preview",
       iconCallback: () => <Preview color="atmo7" />,
-      disabled: true
+      disabled: true,
     },
     {
       id: "put",
       label: "Upload",
       iconCallback: () => <Upload color="atmo7" />,
-      disabled: true
+      disabled: true,
     },
     {
       id: "delete",
       label: "Delete",
       iconCallback: () => <Delete />,
-      disabled: false
-    }
+      disabled: false,
+    },
   ];
 
   return (
@@ -838,19 +838,19 @@ export const AutomaticActions = () => {
         checkboxProps={{
           value: "value",
           inputProps: {
-            "aria-label": "composed input"
-          }
+            "aria-label": "composed input",
+          },
         }}
         cardButtonProps={{
-          "aria-label": "composed"
+          "aria-label": "composed",
         }}
         headerProps={{
-          "aria-label": "composed"
+          "aria-label": "composed",
         }}
         footerProps={{
-          "aria-label": "composed"
+          "aria-label": "composed",
         }}
-        onChange={event => console.log(`my value is ${event.target.value}`)}
+        onChange={(event) => console.log(`my value is ${event.target.value}`)}
         id="card"
       />
     </div>
@@ -860,9 +860,9 @@ export const AutomaticActions = () => {
 AutomaticActions.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample that shows how to construct the options of the footer."
-    }
-  }
+      storyDescription: "A card sample that shows how to construct the options of the footer.",
+    },
+  },
 };
 
 export const Selectable = () => {
@@ -870,15 +870,15 @@ export const Selectable = () => {
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   };
 
   const data = {
     firstTitle: "ID",
     firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
     secondTitle: "Last connected",
-    secondContent: "Aug 30, 2017 12:27:53 PM"
+    secondContent: "Aug 30, 2017 12:27:53 PM",
   };
 
   const SingleContent = () => (
@@ -921,22 +921,22 @@ export const Selectable = () => {
         mediaPath={compressor}
         mediaHeight={186}
         mediaProps={{
-          "aria-label": "Compressor"
+          "aria-label": "Compressor",
         }}
         checkboxProps={{
           value: "value",
           inputProps: {
-            "aria-label": "composed input"
-          }
+            "aria-label": "composed input",
+          },
         }}
         cardButtonProps={{
-          "aria-label": "Asset Avatar L90 press enter or space to select this card"
+          "aria-label": "Asset Avatar L90 press enter or space to select this card",
         }}
         headerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
         footerProps={{
-          "aria-label": "leaf"
+          "aria-label": "leaf",
         }}
       />
     </div>
@@ -947,31 +947,31 @@ Selectable.story = {
   parameters: {
     docs: {
       storyDescription:
-        "A card sample showcasing the ability to select in the content and click action."
-    }
-  }
+        "A card sample showcasing the ability to select in the content and click action.",
+    },
+  },
 };
 
 export const SelectableNoFooter = () => {
   const styles = {
     content: {
-      padding: `0 20px 0 20px`
+      padding: `0 20px 0 20px`,
     },
     item: {
-      padding: `0 0 20px 0`
+      padding: `0 0 20px 0`,
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   };
 
   const data = {
     firstTitle: "ID",
     firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
     secondTitle: "Last connected",
-    secondContent: "Aug 30, 2017 12:27:53 PM"
+    secondContent: "Aug 30, 2017 12:27:53 PM",
   };
 
   const SingleContent = () => (
@@ -1014,13 +1014,13 @@ export const SelectableNoFooter = () => {
         selectOnClickAction
         semantic="sema4"
         cardButtonProps={{
-          "aria-label": "Compressor"
+          "aria-label": "Compressor",
         }}
         headerProps={{
-          "aria-label": "Compressor"
+          "aria-label": "Compressor",
         }}
         footerProps={{
-          "aria-label": "Compressor"
+          "aria-label": "Compressor",
         }}
       />
     </div>
@@ -1030,31 +1030,31 @@ export const SelectableNoFooter = () => {
 SelectableNoFooter.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample showcasing the ability to select in the content."
-    }
-  }
+      storyDescription: "A card sample showcasing the ability to select in the content.",
+    },
+  },
 };
 
 export const WithClickAction = () => {
   const styles = {
     content: {
-      padding: `0 20px 0 20px`
+      padding: `0 20px 0 20px`,
     },
     item: {
-      padding: `0 0 20px 0`
+      padding: `0 0 20px 0`,
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   };
 
   const data = {
     firstTitle: "ID",
     firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
     secondTitle: "Last connected",
-    secondContent: "Aug 30, 2017 12:27:53 PM"
+    secondContent: "Aug 30, 2017 12:27:53 PM",
   };
 
   const SingleContent = () => (
@@ -1096,22 +1096,22 @@ export const WithClickAction = () => {
         mediaPath={compressor}
         mediaHeight={186}
         mediaProps={{
-          "aria-label": "Compressor"
+          "aria-label": "Compressor",
         }}
         cardButtonProps={{
-          "aria-label": "Asset Avatar L90 press enter or space to use this card main action"
+          "aria-label": "Asset Avatar L90 press enter or space to use this card main action",
         }}
         headerProps={{
-          "aria-label": "Compressor"
+          "aria-label": "Compressor",
         }}
         footerProps={{
-          "aria-label": "Compressor"
+          "aria-label": "Compressor",
         }}
         checkboxProps={{
           value: "value",
           inputProps: {
-            "aria-label": "leaf input"
-          }
+            "aria-label": "leaf input",
+          },
         }}
       />
     </div>
@@ -1121,7 +1121,7 @@ export const WithClickAction = () => {
 WithClickAction.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample showcasing the ability to click the content."
-    }
-  }
+      storyDescription: "A card sample showcasing the ability to click the content.",
+    },
+  },
 };

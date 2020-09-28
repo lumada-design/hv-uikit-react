@@ -57,7 +57,7 @@ Group.propTypes = {
     /**
      * Styles applied to the ul component.
      */
-    ul: PropTypes.string
+    ul: PropTypes.string,
   }).isRequired,
   /**
    * Label for the group.
@@ -70,7 +70,7 @@ Group.propTypes = {
   /**
    * Children component.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesGroup" })(withId(Group));

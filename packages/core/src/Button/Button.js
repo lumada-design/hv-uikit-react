@@ -8,7 +8,7 @@ import styles from "./styles";
 /**
  * A button refers to a graphical control element that provides the user a simple way to trigger an event.
  */
-const HvButton = props => {
+const HvButton = (props) => {
   const {
     id,
     classes,
@@ -23,7 +23,7 @@ const HvButton = props => {
   } = props;
 
   const buttonConfiguration = getMaterialConfiguration(classes, category);
-  const onClickHandler = event => {
+  const onClickHandler = (event) => {
     if (!disabled) onClick?.(event);
   };
 
@@ -31,7 +31,7 @@ const HvButton = props => {
     <Button
       className={clsx(className, {
         [classes.rootIcon]: category === "icon",
-        [classes[`${category}SVG`]]: overrideIconColors
+        [classes[`${category}SVG`]]: overrideIconColors,
       })}
       id={id}
       classes={buttonConfiguration.classes}
@@ -58,7 +58,7 @@ HvButton.propTypes = {
     "icon",
     "primary",
     "secondary",
-    "semantic"
+    "semantic",
   ]),
   /**
    * The content of the button.
@@ -120,7 +120,7 @@ HvButton.propTypes = {
     /**
      * Styles applied to the inspireRed primary button.
      */
-    startIcon: PropTypes.string
+    startIcon: PropTypes.string,
   }),
   /**
    * @ignore
@@ -146,7 +146,7 @@ HvButton.propTypes = {
   /**
    * Defines the default colors of the button are forced into the icon.
    */
-  overrideIconColors: PropTypes.bool
+  overrideIconColors: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvButton" })(HvButton);

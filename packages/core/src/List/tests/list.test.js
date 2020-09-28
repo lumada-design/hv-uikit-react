@@ -12,19 +12,19 @@ const mockDataSingleSelection = [{ label: "Value 1" }, { label: "Value 2" }, { l
 const mockDataSingleSelectionWithIds = [
   { label: "Value 1", id: "id-1" },
   { label: "Value 2", id: "id-2" },
-  { label: "Value 3", id: "id-3" }
+  { label: "Value 3", id: "id-3" },
 ];
 
 const mockDataSingleSelectionWithIcons = [
   { label: "Value 1", iconCallback: () => <LineChartIcon /> },
   { label: "Value 2" },
-  { label: "Value 3", showNavIcon: true }
+  { label: "Value 3", showNavIcon: true },
 ];
 
 const mockDataMultiSelection = [
   { label: "Value 1", selected: true },
   { label: "Value 2" },
-  { label: "Value 3", selected: true }
+  { label: "Value 3", selected: true },
 ];
 
 describe("<List />", () => {
@@ -74,7 +74,7 @@ describe("<List />", () => {
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: false },
-        { label: "Value 3", selected: false }
+        { label: "Value 3", selected: false },
       ]);
     });
 
@@ -90,7 +90,7 @@ describe("<List />", () => {
       expect(onChangeMock).toBeCalledWith([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: false },
-        { label: "Value 3", selected: false }
+        { label: "Value 3", selected: false },
       ]);
     });
 
@@ -104,7 +104,7 @@ describe("<List />", () => {
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: false },
         { label: "Value 2", selected: true },
-        { label: "Value 3", selected: false }
+        { label: "Value 3", selected: false },
       ]);
     });
   });
@@ -124,7 +124,7 @@ describe("<List />", () => {
       expect(instance.state.list).toEqual([
         { selected: true, id: "id-1", label: "Value 1" },
         { selected: false, id: "id-2", label: "Value 2" },
-        { selected: false, id: "id-3", label: "Value 3" }
+        { selected: false, id: "id-3", label: "Value 3" },
       ]);
     });
   });
@@ -174,7 +174,7 @@ describe("<List />", () => {
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: false },
-        { label: "Value 3", selected: true }
+        { label: "Value 3", selected: true },
       ]);
     });
 
@@ -187,7 +187,7 @@ describe("<List />", () => {
       expect(onChangeMock).toBeCalledWith([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: true },
-        { label: "Value 3", selected: true }
+        { label: "Value 3", selected: true },
       ]);
     });
 
@@ -199,24 +199,21 @@ describe("<List />", () => {
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: false },
         { label: "Value 2", selected: false },
-        { label: "Value 3", selected: true }
+        { label: "Value 3", selected: true },
       ]);
     });
 
     it("handleSelectAll should unselect all if any selected", () => {
       listComponent = wrapper.find("List");
       instance.handleSelectAll();
-      expect(instance.state.list.some(el => el.selected)).toEqual(false);
+      expect(instance.state.list.some((el) => el.selected)).toEqual(false);
     });
 
     it("handleSelect should be triggered when a single select item is clicked ", () => {
       listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelect = jest.fn();
-      listComponent
-        .find("li")
-        .at(0)
-        .simulate("click", {});
+      listComponent.find("li").at(0).simulate("click", {});
       expect(instance.handleSelect).toBeCalled();
     });
   });

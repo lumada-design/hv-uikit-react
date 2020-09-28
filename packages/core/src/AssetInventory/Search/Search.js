@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 import SearchBox from "../../SearchBox";
 
-const searchOperationSetup = (metadata = []) => metadata.filter(element => element.searchable);
+const searchOperationSetup = (metadata = []) => metadata.filter((element) => element.searchable);
 
 const filter = (value, criteria, searchValue) => {
   const evalValue = get(value, criteria.accessor);
@@ -25,8 +25,8 @@ const filter = (value, criteria, searchValue) => {
 const searchOperation = (searchValue, values, searchableCriteria) => {
   const filteredValues = [];
 
-  searchableCriteria.forEach(criteria => {
-    values.forEach(value => {
+  searchableCriteria.forEach((criteria) => {
+    values.forEach((value) => {
       if (filter(value, criteria, searchValue) && !filteredValues.includes(value))
         filteredValues.push(value);
     });
@@ -75,14 +75,14 @@ Search.propTypes = {
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string
+      id: PropTypes.string,
     })
   ).isRequired,
   /**
    * Labels.
    */
   labels: PropTypes.shape({
-    sortBy: PropTypes.string
+    sortBy: PropTypes.string,
   }).isRequired,
   /**
    * Metadata associated with the values.
@@ -96,7 +96,7 @@ Search.propTypes = {
       sortable: PropTypes.bool,
       sortFunction: PropTypes.func,
       searchable: PropTypes.bool,
-      searchFunction: PropTypes.func
+      searchFunction: PropTypes.func,
     })
   ).isRequired,
   /**
@@ -110,7 +110,7 @@ Search.propTypes = {
   /**
    * Search string
    */
-  searchString: PropTypes.string
+  searchString: PropTypes.string,
 };
 
 export default Search;

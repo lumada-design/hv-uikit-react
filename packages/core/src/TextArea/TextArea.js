@@ -17,7 +17,7 @@ const DEFAULT_LABELS = {
   requiredWarningText: "",
   startCount: "",
   middleCount: "/",
-  endCount: ""
+  endCount: "",
 };
 
 /**
@@ -32,7 +32,7 @@ class HvTextArea extends React.Component {
     this.state = {
       currentValueLength: initialValue !== undefined ? this.limitValue(initialValue).length : 0,
       autoScrolling: autoScroll,
-      overflow: initialValue ? this.isOverflow(initialValue) : false
+      overflow: initialValue ? this.isOverflow(initialValue) : false,
     };
     this.textInputRef = React.createRef();
   }
@@ -49,7 +49,7 @@ class HvTextArea extends React.Component {
       if (nextLength !== oldLength) {
         return {
           currentValueLength: nextLength,
-          overflow: maxCharQuantity && isOverflow
+          overflow: maxCharQuantity && isOverflow,
         };
       }
     }
@@ -71,7 +71,7 @@ class HvTextArea extends React.Component {
     }
   }
 
-  isOverflow = value => {
+  isOverflow = (value) => {
     const { maxCharQuantity } = this.props;
     return isNil(maxCharQuantity) ? false : value.length > maxCharQuantity;
   };
@@ -82,7 +82,7 @@ class HvTextArea extends React.Component {
    * @param value - string to evaluate
    * @returns {string|*} - string according the limit
    */
-  limitValue = value => {
+  limitValue = (value) => {
     const { maxCharQuantity, blockMax } = this.props;
 
     if (value === undefined || !blockMax) return value;
@@ -106,7 +106,7 @@ class HvTextArea extends React.Component {
     const scrollHandler = {
       handleEvent: () => {
         this.setState({ autoScrolling: this.isScrolledDown() });
-      }
+      },
     };
     this.textInputRef.current.addEventListener("scroll", scrollHandler);
   };
@@ -126,7 +126,7 @@ class HvTextArea extends React.Component {
 
     this.setState({
       currentValueLength: textAreaValue.length,
-      overflow: this.isOverflow(value)
+      overflow: this.isOverflow(value),
     });
     return textAreaValue;
   };
@@ -160,11 +160,11 @@ class HvTextArea extends React.Component {
             root: classes.container,
             input: clsx(classes.input, {
               [classes.resize]: !disabled && resizable,
-              [classes.defaultWith]: !resizable
+              [classes.defaultWith]: !resizable,
             }),
             inputRoot: classes.inputRoot,
             inputRootDisabled: classes.inputRootDisabled,
-            inputRootFocused: classes.inputRootFocused
+            inputRootFocused: classes.inputRootFocused,
           }}
           className={className}
           id={id}
@@ -191,7 +191,7 @@ class HvTextArea extends React.Component {
               aria-disabled={disabled}
               className={clsx({
                 [classes.disabled]: disabled,
-                [classes.invalid]: overflow
+                [classes.invalid]: overflow,
               })}
             >
               <>
@@ -263,7 +263,7 @@ HvTextArea.propTypes = {
     /**
      * Style applied container of the text area component.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * An Object containing the various text associated with the input.
@@ -308,7 +308,7 @@ HvTextArea.propTypes = {
     /**
      * Text after the max value.
      */
-    endCount: PropTypes.string
+    endCount: PropTypes.string,
   }),
   /**
    * The maximum allowed length of the characters, if this value is null or undefined no check
@@ -352,7 +352,7 @@ HvTextArea.propTypes = {
   /**
    * Props passed to the char count.
    */
-  countCharProps: PropTypes.instanceOf(Object)
+  countCharProps: PropTypes.instanceOf(Object),
 };
 
 HvTextArea.defaultProps = {
@@ -367,7 +367,7 @@ HvTextArea.defaultProps = {
   autoScroll: false,
   resizable: false,
   blockMax: false,
-  countCharProps: {}
+  countCharProps: {},
 };
 
 export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));

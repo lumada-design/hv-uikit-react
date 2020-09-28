@@ -1,25 +1,25 @@
 import { outlineStyles } from "../../Focus/styles";
 
-const hover = theme => ({
+const hover = (theme) => ({
   background: theme.hv.palette.atmosphere.atmo4,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
-  }
+    background: theme.hv.palette.atmosphere.atmo4,
+  },
 });
 
-const selected = theme => ({
+const selected = (theme) => ({
   background: theme.hv.palette.accent.acce1,
   color: theme.hv.palette.atmosphere.atmo1,
   "& *": {
     background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1
+    color: theme.hv.palette.atmosphere.atmo1,
   },
   "& svg *.color0": {
-    fill: theme.hv.palette.atmosphere.atmo1
-  }
+    fill: theme.hv.palette.atmosphere.atmo1,
+  },
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   optionsRoot: {},
   root: {
     display: "block",
@@ -28,8 +28,8 @@ const styles = theme => ({
     paddingTop: `${theme.hv.spacing.md}px`,
     background: theme.hv.palette.atmosphere.atmo1,
     "& :not(:last-child)": {
-      marginBottom: "8px"
-    }
+      marginBottom: "8px",
+    },
   },
   action: {
     width: "100%",
@@ -41,27 +41,27 @@ const styles = theme => ({
     "&:hover": hover(theme),
     "&:focus": {
       ...hover(theme),
-      ...outlineStyles
+      ...outlineStyles,
     },
     cursor: "pointer",
     "& *": {
-      cursor: "pointer"
-    }
+      cursor: "pointer",
+    },
   },
   noIcon: {
-    paddingLeft: `${theme.hv.spacing.xs}px`
+    paddingLeft: `${theme.hv.spacing.xs}px`,
   },
   li: {
-    listStyle: "none"
+    listStyle: "none",
   },
   selected: {
     ...selected(theme),
     "&:hover": selected(theme),
     "&:focus": {
       ...selected(theme),
-      ...outlineStyles
-    }
-  }
+      ...outlineStyles,
+    },
+  },
 });
 
 export default styles;
