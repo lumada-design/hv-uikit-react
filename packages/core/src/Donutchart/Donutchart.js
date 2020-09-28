@@ -69,7 +69,7 @@ Donutchart.propTypes = {
   /**
    * Sets the type of graph.
    */
-  type: PropTypes.oneOf(["regular", "thin"])
+  type: PropTypes.oneOf(["regular", "thin"]),
 };
 
 export default withStyles(styles, { name: "HvDonutchart" })(Donutchart);

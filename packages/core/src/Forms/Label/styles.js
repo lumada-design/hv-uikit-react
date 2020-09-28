@@ -1,13 +1,13 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    display: "inline-block"
+    display: "inline-block",
   },
   labelDisabled: {
-    color: theme.hv.palette.atmosphere.atmo5
+    color: theme.hv.palette.atmosphere.atmo5,
   },
   childGutter: {
-    marginBottom: 6
-  }
+    marginBottom: 6,
+  },
 });
 
 export default styles;

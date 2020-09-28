@@ -10,7 +10,7 @@ import {
   Favorite,
   FavoriteSelected,
   Preview,
-  Upload
+  Upload,
 } from "@hv/uikit-react-icons";
 import {
   HvActionContainer,
@@ -19,7 +19,7 @@ import {
   HvCheckBox,
   HvKpi,
   HvToggleButton,
-  HvTypography
+  HvTypography,
 } from "../..";
 import { HvCardMedia, HvCardHeader, HvCardFooter, HvCardContent } from "..";
 
@@ -31,17 +31,17 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      "import { HvCard, HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'"
+      "import { HvCard, HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'",
   },
   component: HvCard,
   subcomponents: { HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent },
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ margin: 20 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => (
@@ -68,21 +68,21 @@ export const AllComponents = () => {
     { title: "Priority", content: "High" },
     { title: "Main Asset", content: "California wonder grain of wonderfulness" },
     { title: "Probability score", content: "98%" },
-    { title: "Est. date of failure", content: "30-60 days" }
+    { title: "Est. date of failure", content: "30-60 days" },
   ];
 
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: theme.spacing(0, 0, "sm", 0)
+      padding: theme.spacing(0, 0, "sm", 0),
     },
     bottomItem: {
-      padding: 0
+      padding: 0,
     },
     subtitleLeft: {
       borderRight: `1px solid ${theme.palette.acce1}`,
       paddingRight: theme.spacing("xs"),
-      marginRight: theme.spacing("xs")
-    }
+      marginRight: theme.spacing("xs"),
+    },
   }));
 
   const classes = useStyles();
@@ -91,7 +91,7 @@ export const AllComponents = () => {
     { id: "post", label: "Upload", iconCallback: () => <Upload />, disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
     { id: "put", label: "Add", iconCallback: () => <Add color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   return (
@@ -102,7 +102,7 @@ export const AllComponents = () => {
       semantic="sema4"
       selected={checked}
       selectable
-      onClick={event => console.log(`my value is ${event.target.value}`)}
+      onClick={(event) => console.log(`my value is ${event.target.value}`)}
     >
       <HvCardHeader
         title="Leaves appear wilted and scorched"
@@ -168,9 +168,9 @@ export const AllComponents = () => {
 AllComponents.story = {
   parameters: {
     docs: {
-      storyDescription: "A card that has all it's component defined."
-    }
-  }
+      storyDescription: "A card that has all it's component defined.",
+    },
+  },
 };
 
 export const NoActions = () => {
@@ -179,16 +179,16 @@ export const NoActions = () => {
     { title: "Main Asset", content: "California wonder grain of wonderfulness" },
     { title: "Probability score", content: "98%" },
     { title: "Est. date of failure", content: "30-60 days" },
-    { title: "UUID", content: "2101caf3-7cd4-1000-bdp95-d8c4971767c" }
+    { title: "UUID", content: "2101caf3-7cd4-1000-bdp95-d8c4971767c" },
   ];
 
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: theme.spacing(0, 0, "sm", 0)
+      padding: theme.spacing(0, 0, "sm", 0),
     },
     bottomItem: {
-      padding: 0
-    }
+      padding: 0,
+    },
   }));
 
   const classes = useStyles();
@@ -237,9 +237,9 @@ export const NoActions = () => {
 NoActions.story = {
   parameters: {
     docs: {
-      storyDescription: "A Card without any actions."
-    }
-  }
+      storyDescription: "A Card without any actions.",
+    },
+  },
 };
 
 export const OnlyTitle = () => (
@@ -251,25 +251,25 @@ export const OnlyTitle = () => (
 OnlyTitle.story = {
   parameters: {
     docs: {
-      storyDescription: "A Card that only has a title."
-    }
-  }
+      storyDescription: "A Card that only has a title.",
+    },
+  },
 };
 
 export const KPICard = () => {
   const [checked, setChecked] = useState(0);
 
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: theme.spacing("sm", 0)
+      padding: theme.spacing("sm", 0),
     },
     bottomItem: {
-      padding: 0
+      padding: 0,
     },
     card: {
       margin: theme.spacing("sm"),
-      backgroundColor: theme.palette.atmo1
-    }
+      backgroundColor: theme.palette.atmo1,
+    },
   }));
 
   const classes = useStyles();
@@ -279,12 +279,12 @@ export const KPICard = () => {
     firstContent: "Primary asset to be worked on, other asset, other asset",
     secondTitle: "Description",
     secondContent:
-      "Shaft may be bent, check for bends. Straighten if possible and replace shaft if necessary."
+      "Shaft may be bent, check for bends. Straighten if possible and replace shaft if necessary.",
   };
 
-  const getKpiLabels = score => ({
+  const getKpiLabels = (score) => ({
     title: "Confidence score",
-    indicator: `${score}%`
+    indicator: `${score}%`,
   });
 
   /* eslint-disable react/prop-types */
@@ -350,9 +350,9 @@ export const KPICard = () => {
 KPICard.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample combined with a kpi as content."
-    }
-  }
+      storyDescription: "A card sample combined with a kpi as content.",
+    },
+  },
 };
 
 export const WithComposition = () => (
@@ -368,7 +368,7 @@ export const WithComposition = () => (
       <HvCheckBox
         value="value"
         inputProps={{ "aria-label": "leaf input" }}
-        onChange={event => console.log(`my value is ${event.target.value}`)}
+        onChange={(event) => console.log(`my value is ${event.target.value}`)}
       />
       <div style={{ flex: 1 }} />
       <HvActionsGeneric
@@ -376,7 +376,7 @@ export const WithComposition = () => (
           { id: "post", label: "Upload", iconCallback: () => <Upload />, disabled: false },
           { id: "get", label: "Preview", iconCallback: () => <Preview />, disabled: true },
           { id: "put", label: "Add", iconCallback: () => <Add />, disabled: true },
-          { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+          { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
         ]}
         maxVisibleActions={1}
         actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
@@ -388,9 +388,9 @@ export const WithComposition = () => (
 WithComposition.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample that shows how to compose card with subcomponents."
-    }
-  }
+      storyDescription: "A card sample that shows how to compose card with subcomponents.",
+    },
+  },
 };
 
 export const Selectable = () => {
@@ -403,8 +403,8 @@ export const Selectable = () => {
       margin: 0,
       border: 0,
       padding: 0,
-      width: "100%"
-    }
+      width: "100%",
+    },
   };
 
   const SingleContent = () => (
@@ -444,7 +444,7 @@ export const Selectable = () => {
         <HvActionsGeneric
           actions={[
             { id: "view", label: "View" },
-            { id: "dismiss", label: "Dismiss" }
+            { id: "dismiss", label: "Dismiss" },
           ]}
         />
       </HvActionContainer>
@@ -456,9 +456,9 @@ Selectable.story = {
   parameters: {
     docs: {
       storyDescription:
-        "A card sample showcasing the ability to select in the content and click action."
-    }
-  }
+        "A card sample showcasing the ability to select in the content and click action.",
+    },
+  },
 };
 
 export const SelectableNoFooter = () => {
@@ -495,7 +495,7 @@ export const SelectableNoFooter = () => {
 SelectableNoFooter.story = {
   parameters: {
     docs: {
-      storyDescription: "A card sample showcasing the ability to select in the content."
-    }
-  }
+      storyDescription: "A card sample showcasing the ability to select in the content.",
+    },
+  },
 };

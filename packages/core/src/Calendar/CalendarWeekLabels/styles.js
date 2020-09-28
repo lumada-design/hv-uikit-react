@@ -5,8 +5,8 @@ const styles = () => ({
     flexDirection: "column",
     textAlign: "center",
     height: "40px",
-    width: "40px"
-  }
+    width: "40px",
+  },
 });
 
 export default styles;

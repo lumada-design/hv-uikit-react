@@ -9,7 +9,7 @@ import {
   HvCardMedia,
   HvCardView,
   HvCheckBox,
-  HvTypography
+  HvTypography,
 } from "../../..";
 import compressor from "../../../Card/stories/resources/compressor.png";
 import leaf from "../../../Card/stories/resources/leaf.png";
@@ -20,16 +20,16 @@ export default {
   title: "Patterns/Asset Inventory/Card View",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCardView } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvCardView } from '@hv/uikit-react-core/dist'",
   },
   component: HvCardView,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ margin: 10 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => {
@@ -79,15 +79,15 @@ export const Main = () => {
   const values = (num = 10) => {
     const variations = [
       { semantic: "sema2", mediaPath: compressor, subtitle: "Compressor" },
-      { semantic: "sema3", mediaPath: leaf, subtitle: "Leaf" }
+      { semantic: "sema3", mediaPath: leaf, subtitle: "Leaf" },
     ];
 
-    return [...Array(num).keys()].map(id => ({
+    return [...Array(num).keys()].map((id) => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       mediaHeight: 160,
       selected: false,
-      ...variations[id % variations.length]
+      ...variations[id % variations.length],
     }));
   };
 
@@ -96,17 +96,17 @@ export const Main = () => {
     { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   const viewConfiguration = {
-    onSelection: event => console.log(event.target.value),
+    onSelection: (event) => console.log(event.target.value),
     breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
     maxVisibleActions: 1,
     actionsCallback: (e, id, action) =>
-      alert(`You have pressed card ${id} with action ${action.label}`)
+      alert(`You have pressed card ${id} with action ${action.label}`),
   };
 
   return (

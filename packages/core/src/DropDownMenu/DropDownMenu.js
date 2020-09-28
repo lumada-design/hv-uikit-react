@@ -46,7 +46,7 @@ const DropDownMenu = ({
   };
 
   // If the ESCAPE key is pressed inside the list, the close handler must be called.
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     if (isKeypress(event, KeyboardCodes.Tab)) {
       const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
@@ -61,7 +61,7 @@ const DropDownMenu = ({
       category={category}
       id={setId(id, "icon-button")}
       className={clsx(classes.icon, {
-        [classes.iconSelected]: open
+        [classes.iconSelected]: open,
       })}
       disabled={disabled}
       aria-label="Dropdown menu"
@@ -70,7 +70,9 @@ const DropDownMenu = ({
     </HvButton>
   );
 
-  const condensed = useMemo(() => dataList.every(el => !(el.icon || el.iconCallback)), [dataList]);
+  const condensed = useMemo(() => dataList.every((el) => !(el.icon || el.iconCallback)), [
+    dataList,
+  ]);
 
   return (
     <HvBaseDropdown
@@ -130,7 +132,7 @@ DropDownMenu.propTypes = {
     /**
      * Styles applied to the icon when selected.
      */
-    iconSelected: PropTypes.string
+    iconSelected: PropTypes.string,
   }).isRequired,
   /**
    * Icon.
@@ -151,7 +153,7 @@ DropDownMenu.propTypes = {
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
       iconCallback: PropTypes.func,
-      showNavIcon: PropTypes.bool
+      showNavIcon: PropTypes.bool,
     })
   ).isRequired,
   /**
@@ -181,7 +183,7 @@ DropDownMenu.propTypes = {
   /**
    * If true it should be displayed open.
    */
-  expanded: PropTypes.bool
+  expanded: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDropDownMenu" })(withId(DropDownMenu));

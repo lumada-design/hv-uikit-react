@@ -13,9 +13,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -26,7 +26,7 @@ const SingleContent = ({ classes }) => {
     firstTitle: "ID",
     firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
     secondTitle: "Last connected",
-    secondContent: "Aug 30, 2017 12:27:53 PM"
+    secondContent: "Aug 30, 2017 12:27:53 PM",
   };
 
   return (
@@ -48,18 +48,18 @@ const SingleContent = ({ classes }) => {
 };
 
 export const CustomActionsSelectable = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
+      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`,
     },
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   });
 
   const CustomSample = () => {
@@ -75,8 +75,8 @@ export const CustomActionsSelectable = () => {
           checkboxProps={{
             value: "l90",
             inputProps: {
-              "aria-label": "L90 input"
-            }
+              "aria-label": "L90 input",
+            },
           }}
           innerCardContent={<SingleContent classes={styles} />}
           onClick={() => setToggleA(!toggleA)}
@@ -92,18 +92,18 @@ export const CustomActionsSelectable = () => {
 };
 
 export const CustomActionsNotSelectable = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
+      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`,
     },
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   });
 
   const CustomSample = () => {
@@ -120,8 +120,8 @@ export const CustomActionsNotSelectable = () => {
           checkboxProps={{
             value: "l90",
             inputProps: {
-              "aria-label": "l90 input"
-            }
+              "aria-label": "l90 input",
+            },
           }}
           onClick={() => setToggleA(!toggleA)}
           onChange={() => setToggleB(!toggleB)}
@@ -156,7 +156,7 @@ export const Controlled = () => {
           mediaHeight={186}
           mediaTitle="Compressor"
           checkboxProps={{
-            inputProps: { "aria-label": "Check asset" }
+            inputProps: { "aria-label": "Check asset" },
           }}
         />
       </div>
@@ -177,7 +177,7 @@ SelectedOpened.story = {
         fireEvent.click(screen.getByRole("checkbox"));
         fireEvent.click(screen.getByLabelText("Dropdown menu"));
         return wait(() => screen.getByText("Delete"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

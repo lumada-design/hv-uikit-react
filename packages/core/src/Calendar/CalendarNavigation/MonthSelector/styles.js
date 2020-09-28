@@ -1,20 +1,20 @@
 import { outlineStyles } from "../../../Focus/styles";
 
-const styles = theme => {
+const styles = (theme) => {
   const hover = {
     backgroundColor: theme.palette.atmo3,
-    cursor: "pointer"
+    cursor: "pointer",
   };
 
   return {
     focusSelection: {
       "&:hover": {
-        ...hover
+        ...hover,
       },
       "&:focus": {
         ...hover,
-        ...outlineStyles
-      }
+        ...outlineStyles,
+      },
     },
     calendarMonthlyGrid: {
       marginTop: "100px",
@@ -26,7 +26,7 @@ const styles = theme => {
       flexFlow: "wrap",
       alignContent: "center",
       justifyContent: "space-evenly",
-      backgroundColor: theme.palette.atmo1
+      backgroundColor: theme.palette.atmo1,
     },
     calendarMonthlyCell: {
       display: "flex",
@@ -36,19 +36,19 @@ const styles = theme => {
       height: "40px",
       width: "92px",
       "&:hover": {
-        ...hover
-      }
+        ...hover,
+      },
     },
     calendarMonthlyCellSelected: {
       backgroundColor: theme.palette.atmo3,
       color: theme.palette.acce1,
       "&:hover": {
         backgroundColor: theme.palette.atmo3,
-        color: theme.palette.acce1
-      }
+        color: theme.palette.acce1,
+      },
     },
     normalWidth: {},
-    rangeModeWidth: {}
+    rangeModeWidth: {},
   };
 };
 

@@ -38,7 +38,7 @@ const ToggleButton = ({
     controlled: selected,
     default: Boolean(defaultSelected),
     name: "ToggleButton",
-    state: "selected"
+    state: "selected",
   });
 
   const content = children || (!isSelected ? notSelectedIcon : selectedIcon);
@@ -47,7 +47,7 @@ const ToggleButton = ({
     ? labels.selectedTitle && <HvTypography>{labels.selectedTitle}</HvTypography>
     : labels.notSelectedTitle && <HvTypography>{labels.notSelectedTitle}</HvTypography>;
 
-  const onClickHandler = e => {
+  const onClickHandler = (e) => {
     if (disabled) return;
 
     // this call does nothing unless the button state is uncontrolled
@@ -62,7 +62,7 @@ const ToggleButton = ({
         <button
           id={id}
           className={clsx(className, classes.root, {
-            [classes.disabled]: disabled
+            [classes.disabled]: disabled,
           })}
           type="button"
           disabled={disabled}
@@ -97,7 +97,7 @@ ToggleButton.propTypes = {
     /**
      * Styles applied when the button is focused.
      */
-    focus: PropTypes.string
+    focus: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -131,7 +131,7 @@ ToggleButton.propTypes = {
     /**
      * Description for not selected.
      */
-    notSelectedTitle: PropTypes.string
+    notSelectedTitle: PropTypes.string,
   }),
   /**
    * Function called when icon is clicked.
@@ -145,7 +145,7 @@ ToggleButton.propTypes = {
    * The content of the button.
    * When provided, it is its own responsibility to react to the selected state.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvToggleButton" })(

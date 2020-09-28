@@ -1,13 +1,13 @@
 const materialButtonConfiguration = Object.freeze({
   color: {
     primary: "primary",
-    secondary: "secondary"
+    secondary: "secondary",
   },
   variant: {
     outlined: "outlined",
     contained: "contained",
-    text: "text"
-  }
+    text: "text",
+  },
 });
 
 export default materialButtonConfiguration;

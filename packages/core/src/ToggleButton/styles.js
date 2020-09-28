@@ -1,6 +1,6 @@
 import { outlineStyles } from "../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     padding: 0,
     margin: 0,
@@ -11,19 +11,19 @@ const styles = theme => ({
     cursor: "pointer",
 
     "&:not($disabled):hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo3
-    }
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+    },
   },
   focus: {
     backgroundColor: theme.hv.palette.atmosphere.atmo3,
-    ...outlineStyles
+    ...outlineStyles,
   },
   disabled: {
     cursor: "not-allowed",
     "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo5
-    }
-  }
+      fill: theme.hv.palette.atmosphere.atmo5,
+    },
+  },
 });
 
 export default styles;

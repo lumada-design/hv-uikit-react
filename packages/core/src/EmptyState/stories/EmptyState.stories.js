@@ -7,9 +7,9 @@ export default {
   parameters: {
     v3: true,
     componentSubtitle: null,
-    usage: "import { HvEmptyState } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvEmptyState } from '@hv/uikit-react-core/dist'",
   },
-  component: HvEmptyState
+  component: HvEmptyState,
 };
 
 export const Main = () => {
@@ -36,9 +36,9 @@ WithAction.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Empty states that includes an action inside its content."
-    }
-  }
+      storyDescription: "Empty states that includes an action inside its content.",
+    },
+  },
 };
 
 export const CustomMessages = () => {
@@ -65,9 +65,9 @@ CustomMessages.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Empty states with message and action set as custom elements."
-    }
-  }
+      storyDescription: "Empty states with message and action set as custom elements.",
+    },
+  },
 };
 
 export const Minimal = () => (
@@ -82,7 +82,7 @@ Minimal.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Empty state without title and small icon."
-    }
-  }
+      storyDescription: "Empty state without title and small icon.",
+    },
+  },
 };

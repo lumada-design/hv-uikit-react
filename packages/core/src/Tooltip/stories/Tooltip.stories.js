@@ -9,9 +9,9 @@ export default {
   title: "Patterns/Tooltip",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTooltip } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvTooltip } from '@hv/uikit-react-core/dist'",
   },
-  component: HvTooltip
+  component: HvTooltip,
 };
 
 export const Main = () => {
@@ -22,8 +22,8 @@ export const Main = () => {
       justifyContent: "space-between",
       maxWidth: 600,
       margin: "0 auto",
-      paddingTop: 80
-    }
+      paddingTop: 80,
+    },
   };
 
   const data = <HvTypography>Grid View</HvTypography>;
@@ -62,7 +62,7 @@ const LongTextContainer = ({ children }) => (
       display: "flex",
       textAlign: "center",
       justifyContent: "center",
-      paddingTop: 90
+      paddingTop: 90,
     }}
   >
     {children}
@@ -70,7 +70,7 @@ const LongTextContainer = ({ children }) => (
 );
 
 LongText.story = {
-  decorators: [storyFn => <LongTextContainer>{storyFn()}</LongTextContainer>]
+  decorators: [(storyFn) => <LongTextContainer>{storyFn()}</LongTextContainer>],
 };
 
 export const Multiline = () => {
@@ -78,8 +78,8 @@ export const Multiline = () => {
     title: "January",
     elements: [
       { name: "Sales", value: "52,000 units" },
-      { name: "Profit", value: "50%" }
-    ]
+      { name: "Profit", value: "50%" },
+    ],
   };
 
   const TooltipContent = ({ classes }) => (
@@ -90,7 +90,7 @@ export const Multiline = () => {
         </div>
       </div>
       <div className={classes.valueWrapper}>
-        {title.elements.map(element => (
+        {title.elements.map((element) => (
           <div key={element.name} className={classes.values}>
             <HvTypography variant="highlightText">{element.name}</HvTypography>
             <div className={classes.separator} />
@@ -115,7 +115,7 @@ const MultilineContainer = ({ children }) => (
     style={{
       display: "flex",
       justifyContent: "center",
-      paddingTop: 170
+      paddingTop: 170,
     }}
   >
     {children}
@@ -123,7 +123,7 @@ const MultilineContainer = ({ children }) => (
 );
 
 Multiline.story = {
-  decorators: [storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>]
+  decorators: [(storyFn) => <MultilineContainer>{storyFn()}</MultilineContainer>],
 };
 
 export const MultilineWithoutHeader = () => {
@@ -131,12 +131,12 @@ export const MultilineWithoutHeader = () => {
     { name: "Status", value: "Open" },
     { name: "Date", value: "12/08/2018" },
     { name: "Assignee", value: "Management" },
-    { name: "Approval", value: "Not yet requested" }
+    { name: "Approval", value: "Not yet requested" },
   ];
 
   const TooltipContent = ({ classes }) => (
     <div className={classes.valueWrapper}>
-      {data.map(element => (
+      {data.map((element) => (
         <div key={element.name} className={classes.values}>
           <HvTypography variant="highlightText">{element.name}</HvTypography>
           <div className={classes.separator} />
@@ -156,5 +156,5 @@ export const MultilineWithoutHeader = () => {
 };
 
 MultilineWithoutHeader.story = {
-  decorators: [storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>]
+  decorators: [(storyFn) => <MultilineContainer>{storyFn()}</MultilineContainer>],
 };

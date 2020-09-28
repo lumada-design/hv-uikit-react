@@ -11,7 +11,7 @@ const FileList = ({ id, classes, list = [], removeFileButtonLabel, onFileRemoved
 
   return (
     <ul id={id} className={classes.list}>
-      {list.map(data => (
+      {list.map((data) => (
         <File
           key={data.id}
           id={setUid(id, data.id)}
@@ -44,7 +44,7 @@ FileList.propTypes = {
   /**
    * Value of aria-label to apply to remove file button in filelist
    * */
-  removeFileButtonLabel: PropTypes.string.isRequired
+  removeFileButtonLabel: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles, { name: "HvFileUploaderFileList" })(FileList);

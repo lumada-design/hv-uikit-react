@@ -7,16 +7,16 @@ export default {
   title: "Visualizations/KPI",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvKpi } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvKpi } from '@hv/uikit-react-core/dist'",
   },
   component: HvKpi,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ margin: 20 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => (
@@ -57,9 +57,9 @@ export const AverageService = () => (
 AverageService.story = {
   parameters: {
     docs: {
-      storyDescription: "A kpi showing the average service time."
-    }
-  }
+      storyDescription: "A kpi showing the average service time.",
+    },
+  },
 };
 
 export const IOPS = () => {
@@ -77,29 +77,29 @@ export const IOPS = () => {
           ["2013", 3000],
           ["2014", 2170],
           ["2015", 760],
-          ["2016", 630]
+          ["2016", 630],
         ]}
         options={{
           legend: "none",
           colors: ["red"],
           tooltip: {
-            trigger: "none"
+            trigger: "none",
           },
           hAxis: {
             minValue: 0,
             maxValue: 10,
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
+            baselineColor: "transparent",
           },
           backgroundColor: "transparent",
           vAxis: {
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
-          }
+            baselineColor: "transparent",
+          },
         }}
       />
     </div>
@@ -136,13 +136,13 @@ export const IOPS = () => {
 IOPS.story = {
   parameters: {
     docs: {
-      storyDescription: "A Kpi sample showcasing the total IOPS."
+      storyDescription: "A Kpi sample showcasing the total IOPS.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };
 
 export const StorageArray = () => (
@@ -174,29 +174,29 @@ export const Selectable = () => {
           ["2014", 2170],
           ["2015", 760],
           ["2016", 630],
-          ["2017", 130]
+          ["2017", 130],
         ]}
         options={{
           legend: "none",
           colors: ["green"],
           tooltip: {
-            trigger: "none"
+            trigger: "none",
           },
           hAxis: {
             minValue: 0,
             maxValue: 10,
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
+            baselineColor: "transparent",
           },
           backgroundColor: "transparent",
           vAxis: {
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
-          }
+            baselineColor: "transparent",
+          },
         }}
       />
     </div>
@@ -234,13 +234,13 @@ export const Selectable = () => {
 Selectable.story = {
   parameters: {
     docs: {
-      storyDescription: "A selectable kpi with the total numbers of event."
+      storyDescription: "A selectable kpi with the total numbers of event.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };
 
 export const SelectableSemantic = () => {
@@ -258,29 +258,29 @@ export const SelectableSemantic = () => {
           ["2013", 3000],
           ["2014", 2170],
           ["2015", 760],
-          ["2016", 630]
+          ["2016", 630],
         ]}
         options={{
           legend: "none",
           colors: ["red"],
           tooltip: {
-            trigger: "none"
+            trigger: "none",
           },
           hAxis: {
             minValue: 0,
             maxValue: 10,
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
+            baselineColor: "transparent",
           },
           backgroundColor: "transparent",
           vAxis: {
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
-          }
+            baselineColor: "transparent",
+          },
         }}
       />
     </div>
@@ -318,11 +318,11 @@ export const SelectableSemantic = () => {
 SelectableSemantic.story = {
   parameters: {
     docs: {
-      storyDescription: "A selectable kpi with the total numbers of event."
+      storyDescription: "A selectable kpi with the total numbers of event.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };

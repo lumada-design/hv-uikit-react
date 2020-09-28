@@ -8,9 +8,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -25,9 +25,9 @@ LimitedToTwoPathsOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button"));
         return wait(() => screen.getByText("Label 7"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, drop/open hidden breadCrumb items
@@ -39,7 +39,7 @@ WithURLLimitedOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button"));
         return wait(() => screen.getByText("DesignSystem"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

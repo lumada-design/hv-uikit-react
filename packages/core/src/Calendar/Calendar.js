@@ -101,7 +101,7 @@ HvCalendar.propTypes = {
    */
   value: PropTypes.oneOfType([
     PropTypes.instanceOf(Date),
-    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) })
+    PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) }),
   ]),
   /**
    * Controls the visible month of the Calendar
@@ -128,7 +128,7 @@ HvCalendar.propTypes = {
   /**
    * The minimum selectable date before this all values are disabled.
    */
-  minimumDate: PropTypes.instanceOf(Date)
+  minimumDate: PropTypes.instanceOf(Date),
 };
 
 export default withStyles(styles, { name: "HvCalendar" })(HvCalendar);

@@ -19,9 +19,9 @@ describe("timePickerFormatter", () => {
     global.Intl = {
       DateTimeFormat: () => ({
         resolvedOptions: () => ({
-          hour12: true
-        })
-      })
+          hour12: true,
+        }),
+      }),
     };
     expect(formatter.getTimeFormatForLocale("mockLocale")).toBe(TimeFormat.H12);
   });
@@ -29,9 +29,9 @@ describe("timePickerFormatter", () => {
     global.Intl = {
       DateTimeFormat: () => ({
         resolvedOptions: () => ({
-          hour12: false
-        })
-      })
+          hour12: false,
+        }),
+      }),
     };
     expect(formatter.getTimeFormatForLocale("mockLocale")).toBe(TimeFormat.H24);
   });
@@ -40,7 +40,7 @@ describe("timePickerFormatter", () => {
       hours: 1,
       minutes: 2,
       seconds: 3,
-      period: PeriodPickerOptions.AM
+      period: PeriodPickerOptions.AM,
     };
     expect(formatter.getFormattedTime(time)).toBe("01:02:03 AM");
     time.period = PeriodPickerOptions.PM;

@@ -31,7 +31,7 @@ const writeFile = (processedSVG, fileName) => {
   const file = path.resolve(componentOutputFolder, `${fileName}.js`);
   const fileTs = path.resolve(componentOutputFolder, `${fileName}.d.ts`);
 
-  fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, err => {
+  fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, (err) => {
     if (err) {
       if (err.code === "EEXIST") {
         printErrors(
@@ -125,7 +125,7 @@ const runUtil = (fileToRead, fileToWrite) => {
         svgOutput: output,
         componentName: processedFileToWrite,
         colors: colorObject.colorText,
-        defaultSizes: sizeObject
+        defaultSizes: sizeObject,
       };
 
       output = generateComponent(params);
@@ -134,7 +134,7 @@ const runUtil = (fileToRead, fileToWrite) => {
   });
 };
 
-const processFile = file => {
+const processFile = (file) => {
   const extension = path.extname(file); // extract extensions
   const fileName = path.basename(file); // extract file name extensions
 
@@ -150,7 +150,7 @@ const runUtilForAllInDir = () => {
     if (err) {
       return console.log(err);
     } // Get out early if not found
-    files.forEach(file => processFile(file));
+    files.forEach((file) => processFile(file));
   });
 };
 
@@ -159,7 +159,7 @@ const runUtilForJustFilesInDir = () => {
     if (err) {
       return console.log(err);
     } // Get out early if not found
-    files.forEach(file => {
+    files.forEach((file) => {
       const filePath = path.join(`${process.cwd()}/${inputPath}`, file);
       processFile(filePath);
     });
@@ -196,7 +196,7 @@ if (args.example) {
   process.exit(1);
 }
 
-fs.mkdir(outputPath, { recursive: true }, err => {
+fs.mkdir(outputPath, { recursive: true }, (err) => {
   if (err) throw err;
 });
 

@@ -12,7 +12,7 @@ import {
   Level5,
   List,
   Preview,
-  Upload
+  Upload,
 } from "@hv/uikit-react-icons";
 import {
   HvActionContainer,
@@ -29,7 +29,7 @@ import {
   HvListView,
   HvListViewCell,
   HvListViewRow,
-  HvTypography
+  HvTypography,
 } from "../..";
 import { doSearch, doSort, fetchData, getPages } from "./ServerSideTester";
 
@@ -39,12 +39,12 @@ export default {
   title: "Patterns/Asset Inventory",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAssetInventory } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvAssetInventory } from '@hv/uikit-react-core/dist'",
   },
-  component: HvAssetInventory
+  component: HvAssetInventory,
 };
 
-const getStatus = statusNumber => {
+const getStatus = (statusNumber) => {
   switch (statusNumber) {
     case 1:
       return { Icon: Level1, sema: "sema10" };
@@ -63,30 +63,30 @@ const getStatus = statusNumber => {
 
 export const Main = () => {
   // Styles
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     kpis: {
-      display: "flex"
+      display: "flex",
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs")
+      padding: theme.spacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`
-    }
+      margin: `0 ${theme.hv.spacing.xs}px`,
+    },
   }));
 
   const classes = useStyles();
@@ -147,7 +147,7 @@ export const Main = () => {
   };
 
   // ListRow renderer
-  const rowRenderer = value => {
+  const rowRenderer = (value) => {
     const status = getStatus(value.status);
     const { Icon } = status;
     const { id } = value;
@@ -197,12 +197,12 @@ export const Main = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Title ascending",
-        sortableLabelDesc: "Title descending"
+        sortableLabelDesc: "Title descending",
       },
       {
         id: "id2",
         accessor: "semantic",
-        cellType: "alpha-numeric"
+        cellType: "alpha-numeric",
       },
       {
         id: "id3",
@@ -211,7 +211,7 @@ export const Main = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Probability ascending",
-        sortableLabelDesc: "Probability descending"
+        sortableLabelDesc: "Probability descending",
       },
       {
         id: "id4",
@@ -219,20 +219,20 @@ export const Main = () => {
         cellType: "numeric",
         sortable: true,
         sortableLabelAsc: "TimeHorizon ascending",
-        sortableLabelDesc: "TimeHorizon descending"
+        sortableLabelDesc: "TimeHorizon descending",
       },
       {
         id: "id5",
         accessor: "event.schedule",
         cellType: "alpha-numeric",
-        searchable: true
+        searchable: true,
       },
       {
         id: "id6",
         accessor: "event.description",
         cellType: "alpha-numeric",
-        searchable: true
-      }
+        searchable: true,
+      },
     ],
     viewConfiguration: {
       breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
@@ -243,10 +243,10 @@ export const Main = () => {
         { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
         {
           title: "Related Assets",
-          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
-        }
-      ]
-    }
+          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+        },
+      ],
+    },
   };
 
   // Actions
@@ -255,40 +255,40 @@ export const Main = () => {
     { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   // Data
 
-  const compressorData = id => ({
+  const compressorData = (id) => ({
     headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "Fix now"
+      schedule: "Fix now",
     },
-    relatedAssets: "Track A, Zone 15 Brake"
+    relatedAssets: "Track A, Zone 15 Brake",
   });
 
-  const machineData = id => ({
+  const machineData = (id) => ({
     headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "Fix 3rd shift"
+      schedule: "Fix 3rd shift",
     },
-    relatedAssets: "Track B, Load 2 Brake"
+    relatedAssets: "Track B, Load 2 Brake",
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys(), id => ({
+    Array.from(Array(num).keys(), (id) => ({
       id: `id_${id}`,
       probability: 90 + id,
       timeHorizon: 8 + id,
       checkboxProps: { value: `id_${id}` },
-      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id)),
     }));
 
   return (
@@ -296,14 +296,14 @@ export const Main = () => {
       id="hv-assetinventory"
       values={values()}
       configuration={assetConfiguration}
-      onSelection={event => console.log(event.target.value)}
+      onSelection={(event) => console.log(event.target.value)}
       isSelectable
       actions={myActions}
       actionsCallback={(e, id, action) => console.log(`You have pressed action ${action.label}`)}
       searchProps={{ "aria-label": "Filters the data" }}
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
       ]}
       emptyComponent={
         <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
@@ -317,30 +317,30 @@ export const Main = () => {
 
 export const Configurations = () => {
   // Styles
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     kpis: {
-      display: "flex"
+      display: "flex",
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs")
+      padding: theme.spacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`
-    }
+      margin: `0 ${theme.hv.spacing.xs}px`,
+    },
   }));
 
   const classes = useStyles();
@@ -401,7 +401,7 @@ export const Configurations = () => {
   };
 
   // ListRow renderer
-  const rowRenderer = value => {
+  const rowRenderer = (value) => {
     const status = getStatus(value.status);
     const { Icon } = status;
     const { id } = value;
@@ -443,35 +443,35 @@ export const Configurations = () => {
 
   // --------------------------- Values ---------------------------------
 
-  const compressorData = id => ({
+  const compressorData = (id) => ({
     headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "Fix now"
+      schedule: "Fix now",
     },
-    relatedAssets: "Track A, Zone 15 Brake"
+    relatedAssets: "Track A, Zone 15 Brake",
   });
 
-  const machineData = id => ({
+  const machineData = (id) => ({
     headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "Fix 3rd shift"
+      schedule: "Fix 3rd shift",
     },
-    relatedAssets: "Track B, Load 2 Brake"
+    relatedAssets: "Track B, Load 2 Brake",
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys(), id => ({
+    Array.from(Array(num).keys(), (id) => ({
       id: `id_${id}`,
       probability: 90 + id,
       timeHorizon: 8 + id,
       checkboxProps: { value: `id_${id}` },
-      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id)),
     }));
 
   // ----------------------- Configuration ------------------------------
@@ -480,7 +480,7 @@ export const Configurations = () => {
     { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   const configuration = {
@@ -492,12 +492,12 @@ export const Configurations = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Title ascending",
-        sortableLabelDesc: "Title descending"
+        sortableLabelDesc: "Title descending",
       },
       {
         id: "id2",
         accessor: "semantic",
-        cellType: "alpha-numeric"
+        cellType: "alpha-numeric",
       },
       {
         id: "id3",
@@ -506,7 +506,7 @@ export const Configurations = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Probability ascending",
-        sortableLabelDesc: "Probability descending"
+        sortableLabelDesc: "Probability descending",
       },
       {
         id: "id4",
@@ -514,21 +514,21 @@ export const Configurations = () => {
         cellType: "numeric",
         sortable: true,
         sortableLabelAsc: "TimeHorizon ascending",
-        sortableLabelDesc: "TimeHorizon descending"
+        sortableLabelDesc: "TimeHorizon descending",
       },
       {
         id: "id5",
         accessor: "event.schedule",
         cellType: "alpha-numeric",
-        searchable: true
+        searchable: true,
       },
       {
         id: "id6",
         accessor: "event.description",
         cellType: "alpha-numeric",
-        searchable: true
-      }
-    ]
+        searchable: true,
+      },
+    ],
   };
 
   return (
@@ -536,7 +536,7 @@ export const Configurations = () => {
       id="hv-assetinventory"
       values={values()}
       configuration={configuration}
-      onSelection={event => console.log(event.target.value)}
+      onSelection={(event) => console.log(event.target.value)}
       isSelectable
       actions={myActions}
       actionsCallback={(e, id, action) =>
@@ -549,7 +549,7 @@ export const Configurations = () => {
       searchProps={{ "aria-label": "Filters the cards by title, probability and time horizon." }}
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
       ]}
       emptyComponent={
         <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
@@ -559,7 +559,7 @@ export const Configurations = () => {
         id="cardView"
         renderer={cardRenderer}
         viewConfiguration={{
-          breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
+          breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
         }}
       />
       <HvListView
@@ -573,9 +573,9 @@ export const Configurations = () => {
             { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
             {
               title: "Related Assets",
-              style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
-            }
-          ]
+              style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+            },
+          ],
         }}
       />
     </HvAssetInventory>
@@ -586,37 +586,37 @@ Configurations.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Search uses the headerTitle, schedule and probability. Sort uses the headerTitle, probability and timeHorizon"
-    }
-  }
+        "Search uses the headerTitle, schedule and probability. Sort uses the headerTitle, probability and timeHorizon",
+    },
+  },
 };
 
 export const ThreeViews = () => {
   // Styles
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     kpis: {
-      display: "flex"
+      display: "flex",
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs")
+      padding: theme.spacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`
-    }
+      margin: `0 ${theme.hv.spacing.xs}px`,
+    },
   }));
 
   const classes = useStyles();
@@ -677,7 +677,7 @@ export const ThreeViews = () => {
   };
 
   // ListRow renderer
-  const rowRenderer = value => {
+  const rowRenderer = (value) => {
     const status = getStatus(value.status);
     const { Icon } = status;
     const { id } = value;
@@ -721,7 +721,7 @@ export const ThreeViews = () => {
   const TextRender = ({ id, values }) => (
     <div id={id}>
       <HvGrid container>
-        {values.map(value => (
+        {values.map((value) => (
           <HvGrid item>
             <HvTypography variant="highlightText"> title</HvTypography>
             <HvTypography variant="normalText">{value.headerTitle}</HvTypography>
@@ -746,12 +746,12 @@ export const ThreeViews = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Title ascending",
-        sortableLabelDesc: "Title descending"
+        sortableLabelDesc: "Title descending",
       },
       {
         id: "id2",
         accessor: "semantic",
-        cellType: "alpha-numeric"
+        cellType: "alpha-numeric",
       },
       {
         id: "id3",
@@ -760,7 +760,7 @@ export const ThreeViews = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Probability ascending",
-        sortableLabelDesc: "Probability descending"
+        sortableLabelDesc: "Probability descending",
       },
       {
         id: "id4",
@@ -768,20 +768,20 @@ export const ThreeViews = () => {
         cellType: "numeric",
         sortable: true,
         sortableLabelAsc: "TimeHorizon ascending",
-        sortableLabelDesc: "TimeHorizon descending"
+        sortableLabelDesc: "TimeHorizon descending",
       },
       {
         id: "id5",
         accessor: "event.schedule",
         cellType: "alpha-numeric",
-        searchable: true
+        searchable: true,
       },
       {
         id: "id6",
         accessor: "event.description",
         cellType: "alpha-numeric",
-        searchable: true
-      }
+        searchable: true,
+      },
     ],
     viewConfiguration: {
       breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
@@ -792,10 +792,10 @@ export const ThreeViews = () => {
         { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
         {
           title: "Related Assets",
-          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
-        }
-      ]
-    }
+          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+        },
+      ],
+    },
   };
 
   // Actions
@@ -804,47 +804,47 @@ export const ThreeViews = () => {
     { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   // Data
 
-  const compressorData = id => ({
+  const compressorData = (id) => ({
     headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "Fix now"
+      schedule: "Fix now",
     },
-    relatedAssets: "Track A, Zone 15 Brake"
+    relatedAssets: "Track A, Zone 15 Brake",
   });
 
-  const machineData = id => ({
+  const machineData = (id) => ({
     headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "Fix 3rd shift"
+      schedule: "Fix 3rd shift",
     },
-    relatedAssets: "Track B, Load 2 Brake"
+    relatedAssets: "Track B, Load 2 Brake",
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys(), id => ({
+    Array.from(Array(num).keys(), (id) => ({
       id: `id_${id}`,
       probability: 90 + id,
       timeHorizon: 8 + id,
       checkboxProps: { value: `id_${id}` },
-      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id)),
     }));
 
   return (
     <HvAssetInventory
       values={values()}
       configuration={assetConfiguration}
-      onSelection={event => console.log(event.target.value)}
+      onSelection={(event) => console.log(event.target.value)}
       isSelectable
       hasBulkActions
       actions={myActions}
@@ -855,7 +855,7 @@ export const ThreeViews = () => {
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
         { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-        { id: "text-button", icon: <LeftAlign />, "aria-label": "Select text view" }
+        { id: "text-button", icon: <LeftAlign />, "aria-label": "Select text view" },
       ]}
     >
       <HvCardView id="card" renderer={cardRenderer} />
@@ -868,37 +868,37 @@ export const ThreeViews = () => {
 ThreeViews.story = {
   parameters: {
     docs: {
-      storyDescription: "Asset Inventory with third view, a custom TextRender"
-    }
-  }
+      storyDescription: "Asset Inventory with third view, a custom TextRender",
+    },
+  },
 };
 
 export const ServerSidePagination = () => {
   // Styles
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     kpis: {
-      display: "flex"
+      display: "flex",
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs")
+      padding: theme.spacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`
-    }
+      margin: `0 ${theme.hv.spacing.xs}px`,
+    },
   }));
 
   const classes = useStyles();
@@ -959,7 +959,7 @@ export const ServerSidePagination = () => {
   };
 
   // ListRow renderer
-  const rowRenderer = value => {
+  const rowRenderer = (value) => {
     const status = getStatus(value.status);
     const { Icon } = status;
     const { id } = value;
@@ -1005,7 +1005,7 @@ export const ServerSidePagination = () => {
     { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   const configuration = {
@@ -1017,9 +1017,9 @@ export const ServerSidePagination = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Title ascending",
-        sortableLabelDesc: "Title descending"
-      }
-    ]
+        sortableLabelDesc: "Title descending",
+      },
+    ],
   };
 
   const ServerSideAssetInventory = () => {
@@ -1028,16 +1028,16 @@ export const ServerSidePagination = () => {
     const [values, setValues] = useState(fetchData(4, 0));
     const [searchString, setSearchString] = useState("");
 
-    const onSort = sort => {
+    const onSort = (sort) => {
       setValues(doSort(sort.type, pageSize, page));
     };
 
-    const onPageChange = newPage => {
+    const onPageChange = (newPage) => {
       setPage(newPage);
       setValues(fetchData(pageSize, newPage));
     };
 
-    const onPageSizeChange = newPageSize => {
+    const onPageSizeChange = (newPageSize) => {
       setPageSize(newPageSize);
       setValues(fetchData(newPageSize, page));
     };
@@ -1053,7 +1053,7 @@ export const ServerSidePagination = () => {
         values={values}
         selectedValues={["id_1", "id_3", "id_4"]}
         configuration={configuration}
-        onSelection={event => console.log(event.target.value)}
+        onSelection={(event) => console.log(event.target.value)}
         isSelectable
         actions={myActions}
         actionsCallback={(e, id, action) =>
@@ -1077,14 +1077,14 @@ export const ServerSidePagination = () => {
         searchProps={{ "aria-label": "Filters data by title, probability and time horizon." }}
         multibuttonProps={[
           { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-          { id: "list-button", icon: <List />, "aria-label": "Select list view" }
+          { id: "list-button", icon: <List />, "aria-label": "Select list view" },
         ]}
       >
         <HvCardView
           id="card"
           renderer={cardRenderer}
           viewConfiguration={{
-            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
+            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
           }}
         />
         <HvListView
@@ -1098,9 +1098,9 @@ export const ServerSidePagination = () => {
               { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
               {
                 title: "Related Assets",
-                style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
-              }
-            ]
+                style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+              },
+            ],
           }}
         />
       </HvAssetInventory>
@@ -1112,37 +1112,37 @@ export const ServerSidePagination = () => {
 ServerSidePagination.story = {
   parameters: {
     docs: {
-      storyDescription: "Asset Inventory with a simulation of server-side pagination"
-    }
-  }
+      storyDescription: "Asset Inventory with a simulation of server-side pagination",
+    },
+  },
 };
 
 export const Accessibility = () => {
   // Styles
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     kpis: {
-      display: "flex"
+      display: "flex",
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs")
+      padding: theme.spacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs}px`,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`
-    }
+      margin: `0 ${theme.hv.spacing.xs}px`,
+    },
   }));
 
   const classes = useStyles();
@@ -1203,7 +1203,7 @@ export const Accessibility = () => {
   };
 
   // ListRow renderer
-  const rowRenderer = value => {
+  const rowRenderer = (value) => {
     const status = getStatus(value.status);
     const { Icon } = status;
     const { id } = value;
@@ -1254,12 +1254,12 @@ export const Accessibility = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Title ascending",
-        sortableLabelDesc: "Title descending"
+        sortableLabelDesc: "Title descending",
       },
       {
         id: "id2",
         accessor: "semantic",
-        cellType: "alpha-numeric"
+        cellType: "alpha-numeric",
       },
       {
         id: "id3",
@@ -1268,7 +1268,7 @@ export const Accessibility = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Probability ascending",
-        sortableLabelDesc: "Probability descending"
+        sortableLabelDesc: "Probability descending",
       },
       {
         id: "id4",
@@ -1276,20 +1276,20 @@ export const Accessibility = () => {
         cellType: "numeric",
         sortable: true,
         sortableLabelAsc: "TimeHorizon ascending",
-        sortableLabelDesc: "TimeHorizon descending"
+        sortableLabelDesc: "TimeHorizon descending",
       },
       {
         id: "id5",
         accessor: "event.schedule",
         cellType: "alpha-numeric",
-        searchable: true
+        searchable: true,
       },
       {
         id: "id6",
         accessor: "event.description",
         cellType: "alpha-numeric",
-        searchable: true
-      }
+        searchable: true,
+      },
     ],
     viewConfiguration: {
       breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
@@ -1300,10 +1300,10 @@ export const Accessibility = () => {
         { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
         {
           title: "Related Assets",
-          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
-        }
-      ]
-    }
+          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+        },
+      ],
+    },
   };
 
   // Actions
@@ -1312,47 +1312,47 @@ export const Accessibility = () => {
     { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   // Data
 
-  const compressorData = id => ({
+  const compressorData = (id) => ({
     headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "Fix now"
+      schedule: "Fix now",
     },
-    relatedAssets: "Track A, Zone 15 Brake"
+    relatedAssets: "Track A, Zone 15 Brake",
   });
 
-  const machineData = id => ({
+  const machineData = (id) => ({
     headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "Fix 3rd shift"
+      schedule: "Fix 3rd shift",
     },
-    relatedAssets: "Track B, Load 2 Brake"
+    relatedAssets: "Track B, Load 2 Brake",
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys(), id => ({
+    Array.from(Array(num).keys(), (id) => ({
       id: `id_${id}`,
       probability: 90 + id,
       timeHorizon: 8 + id,
       checkboxProps: { value: `id_${id}` },
-      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id)),
     }));
 
   return (
     <HvAssetInventory
       values={values()}
       configuration={assetConfiguration}
-      onSelection={event => console.log(event.target.value)}
+      onSelection={(event) => console.log(event.target.value)}
       isSelectable
       actions={myActions}
       actionsCallback={(e, id, action) =>
@@ -1361,7 +1361,7 @@ export const Accessibility = () => {
       searchProps={{ "aria-label": "Filters data" }}
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
       ]}
     >
       <HvCardView id="card" renderer={cardRenderer} />
@@ -1377,7 +1377,7 @@ Accessibility.story = {
         "Accessibility:<br/>" +
         "- Search: Create a label using aria-label using the searchProps. <br/>" +
         "- Sort: Use the labels.sortBy to create a aria-label. <br/>" +
-        "- MultiButton: Individual aria-label to create a label for each button using the multibuttonProps "
-    }
-  }
+        "- MultiButton: Individual aria-label to create a label for each button using the multibuttonProps ",
+    },
+  },
 };

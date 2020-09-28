@@ -8,7 +8,7 @@ import { setId } from "../utils";
  * @returns {*}
  */
 const setActionsId = (actions, id) => {
-  return actions?.map(action => ({ ...action, id: setId(action.id, id) }));
+  return actions?.map((action) => ({ ...action, id: setId(action.id, id) }));
 };
 
 export default setActionsId;

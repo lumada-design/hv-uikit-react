@@ -9,7 +9,7 @@ import styles from "./styles";
  * It can be horizontal or vertical and its size is defined by the content it holds inside and how it relates with surrounding patterns.
  * Regardless of its content, a panel look and feel should be consistent.
  */
-const HvPanel = props => {
+const HvPanel = (props) => {
   const { id, className, classes, children, ...others } = props;
 
   return (
@@ -39,8 +39,8 @@ HvPanel.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
-  }).isRequired
+    root: PropTypes.string,
+  }).isRequired,
 };
 
 export default withStyles(styles, { name: "HvPanel" })(HvPanel);

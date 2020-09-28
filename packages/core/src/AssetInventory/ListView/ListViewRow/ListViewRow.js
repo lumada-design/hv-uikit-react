@@ -13,7 +13,7 @@ import withId from "../../../withId";
 import setActionsId from "../../setActionsId";
 import Focus from "../../../Focus";
 
-const getValue = checkboxProps =>
+const getValue = (checkboxProps) =>
   checkboxProps && checkboxProps.value ? checkboxProps.value : false;
 
 const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
@@ -80,10 +80,10 @@ const row = (
     if (!isNil(columnConfiguration)) {
       return React.cloneElement(child, {
         style: {
-          ...columnConfiguration[index].style
+          ...columnConfiguration[index].style,
         },
         cellSpacing: columnConfiguration[index].spacing,
-        columnIndex: index
+        columnIndex: index,
       });
     }
     return child;
@@ -104,7 +104,7 @@ const row = (
         className={clsx(className, classes.root, {
           [classes.selectable]: renderSelectCell,
           [classes.selected]: checked,
-          [classes.notSelectable]: !renderSelectCell
+          [classes.notSelectable]: !renderSelectCell,
         })}
         {...others}
       >
@@ -133,7 +133,7 @@ const ListViewRow = ({
 }) => {
   return (
     <ListViewContextConsumer>
-      {contextConfiguration => {
+      {(contextConfiguration) => {
         const { containerRef } = contextConfiguration;
         if (contextConfiguration && isNil(viewConfiguration)) {
           return row(
@@ -190,7 +190,7 @@ ListViewRow.propTypes = {
     /**
      * Styles applied to the root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * The content inside the row.
@@ -242,8 +242,8 @@ ListViewRow.propTypes = {
     "atmo2",
     "atmo3",
     "atmo4",
-    "atmo5"
-  ])
+    "atmo5",
+  ]),
 };
 
 export default withStyles(styles, { name: "HvListViewRow" })(withId(ListViewRow));

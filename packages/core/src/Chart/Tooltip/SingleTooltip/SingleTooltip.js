@@ -28,7 +28,7 @@ SingleTooltip.propTypes = {
     /**
      * Styles applied to the separator between title and value.
      */
-    separator: PropTypes.string
+    separator: PropTypes.string,
   }).isRequired,
   /**
    * Title of the chart.
@@ -37,7 +37,7 @@ SingleTooltip.propTypes = {
   /**
    * Value of the chart.
    */
-  value: PropTypes.number.isRequired
+  value: PropTypes.number.isRequired,
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

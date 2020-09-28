@@ -1,20 +1,20 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     padding: `15px ${theme.hv.spacing.sm}px`,
-    position: "relative"
+    position: "relative",
   },
   title: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.xsTitle
+    ...theme.hv.typography.xsTitle,
   },
   titleShort: {
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.xsTitle,
-    marginRight: "30px"
+    marginRight: "30px",
   },
   subheader: {
     fontFamily: theme.hv.typography.fontFamily,
-    ...theme.hv.typography.normalText
+    ...theme.hv.typography.normalText,
   },
   action: {
     position: "absolute",
@@ -22,9 +22,9 @@ const styles = theme => ({
     marginTop: 0,
     marginRight: "0px",
     paddingLeft: `${theme.hv.spacing.xs}px`,
-    top: "15px"
+    top: "15px",
   },
-  content: {}
+  content: {},
 });
 
 export default styles;

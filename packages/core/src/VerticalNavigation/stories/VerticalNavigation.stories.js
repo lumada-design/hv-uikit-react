@@ -8,9 +8,9 @@ export default {
     v3: true,
     componentSubtitle: null,
     usage: "import { HvVerticalNavigation } from '@hv/uikit-react-core/dist'",
-    subcomponents: { Navigation, Actions, Action }
+    subcomponents: { Navigation, Actions, Action },
   },
-  component: HvVerticalNavigation
+  component: HvVerticalNavigation,
 };
 
 export const Main = () => {
@@ -25,24 +25,24 @@ export const Main = () => {
           data: [
             {
               id: "01-01-01",
-              label: "Compute"
+              label: "Compute",
             },
             {
               id: "01-01-02",
-              label: "Storage"
+              label: "Storage",
             },
             {
               id: "01-01-03",
-              label: "Ethernet"
+              label: "Ethernet",
             },
             {
               id: "01-01-04",
               label: "Fiber Channel",
-              payload: { path: "/hello/world", params: { a: 2, b: "3" } }
-            }
-          ]
-        }
-      ]
+              payload: { path: "/hello/world", params: { a: 2, b: "3" } },
+            },
+          ],
+        },
+      ],
     },
     {
       id: "02",
@@ -50,11 +50,11 @@ export const Main = () => {
       data: [
         {
           id: "02-01",
-          label: "Rest API"
+          label: "Rest API",
         },
         {
           id: "02-02",
-          label: "License"
+          label: "License",
         },
         {
           id: "02-03",
@@ -62,20 +62,20 @@ export const Main = () => {
           data: [
             {
               id: "02-03-01",
-              label: "Rest API"
+              label: "Rest API",
             },
             {
               id: "02-03-02",
-              label: "License"
-            }
-          ]
+              label: "License",
+            },
+          ],
         },
         {
           id: "02-04",
-          label: "Log Bundle"
-        }
-      ]
-    }
+          label: "Log Bundle",
+        },
+      ],
+    },
   ];
 
   const [value, setValue] = React.useState("02-03-02");
@@ -97,8 +97,8 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const WithoutActions = () => {
@@ -113,24 +113,24 @@ export const WithoutActions = () => {
           data: [
             {
               id: "01-01-01",
-              label: "Compute"
+              label: "Compute",
             },
             {
               id: "01-01-02",
-              label: "Storage"
+              label: "Storage",
             },
             {
               id: "01-01-03",
-              label: "Ethernet"
+              label: "Ethernet",
             },
             {
               id: "01-01-04",
               label: "Fiber Channel",
-              payload: { path: "/hello/world", params: { a: 2, b: "3" } }
-            }
-          ]
-        }
-      ]
+              payload: { path: "/hello/world", params: { a: 2, b: "3" } },
+            },
+          ],
+        },
+      ],
     },
     {
       id: "02",
@@ -138,11 +138,11 @@ export const WithoutActions = () => {
       data: [
         {
           id: "02-01",
-          label: "Rest API"
+          label: "Rest API",
         },
         {
           id: "02-02",
-          label: "License"
+          label: "License",
         },
         {
           id: "02-03",
@@ -150,20 +150,20 @@ export const WithoutActions = () => {
           data: [
             {
               id: "02-03-01",
-              label: "Rest API"
+              label: "Rest API",
             },
             {
               id: "02-03-02",
-              label: "License"
-            }
-          ]
+              label: "License",
+            },
+          ],
         },
         {
           id: "02-04",
-          label: "Log Bundle"
-        }
-      ]
-    }
+          label: "Log Bundle",
+        },
+      ],
+    },
   ];
 
   const [value, setValue] = React.useState("02-03-02");
@@ -184,8 +184,8 @@ export const WithoutActions = () => {
 
 WithoutActions.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Collapsable = () => {
@@ -200,24 +200,24 @@ export const Collapsable = () => {
           data: [
             {
               id: "01-01-01",
-              label: "Compute"
+              label: "Compute",
             },
             {
               id: "01-01-02",
-              label: "Storage"
+              label: "Storage",
             },
             {
               id: "01-01-03",
-              label: "Ethernet"
+              label: "Ethernet",
             },
             {
               id: "01-01-04",
               label: "Fiber Channel",
-              payload: { path: "/hello/world", params: { a: 2, b: "3" } }
-            }
-          ]
-        }
-      ]
+              payload: { path: "/hello/world", params: { a: 2, b: "3" } },
+            },
+          ],
+        },
+      ],
     },
     {
       id: "02",
@@ -225,11 +225,11 @@ export const Collapsable = () => {
       data: [
         {
           id: "02-01",
-          label: "Rest API"
+          label: "Rest API",
         },
         {
           id: "02-02",
-          label: "License"
+          label: "License",
         },
         {
           id: "02-03",
@@ -237,26 +237,26 @@ export const Collapsable = () => {
           data: [
             {
               id: "02-03-01",
-              label: "Rest API"
+              label: "Rest API",
             },
             {
               id: "02-03-02",
-              label: "License"
-            }
-          ]
+              label: "License",
+            },
+          ],
         },
         {
           id: "02-04",
-          label: "Log Bundle"
-        }
-      ]
-    }
+          label: "Log Bundle",
+        },
+      ],
+    },
   ];
 
   const [value, setValue] = useState("02-03-02");
 
   const sampleContainerStyle = {
-    height: "600px"
+    height: "600px",
   };
 
   return (
@@ -277,8 +277,8 @@ export const Collapsable = () => {
 
 Collapsable.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const CollapseOnExit = () => {
@@ -296,25 +296,25 @@ export const CollapseOnExit = () => {
             {
               id: "01-01-01",
               label: "Compute",
-              disabled: true
+              disabled: true,
             },
             {
               id: "01-01-02",
-              label: "Storage"
+              label: "Storage",
             },
             {
               id: "01-01-03",
-              label: "Ethernet"
+              label: "Ethernet",
             },
             {
               id: "01-01-04",
               label: "Fiber Channel",
               path: "/hello/world",
-              params: { a: 2, b: "3" }
-            }
-          ]
-        }
-      ]
+              params: { a: 2, b: "3" },
+            },
+          ],
+        },
+      ],
     },
     {
       id: "02",
@@ -322,11 +322,11 @@ export const CollapseOnExit = () => {
       data: [
         {
           id: "02-01",
-          label: "Rest API"
+          label: "Rest API",
         },
         {
           id: "02-02",
-          label: "License"
+          label: "License",
         },
         {
           id: "02-03",
@@ -334,20 +334,20 @@ export const CollapseOnExit = () => {
           data: [
             {
               id: "02-03-01",
-              label: "Rest API"
+              label: "Rest API",
             },
             {
               id: "02-03-02",
-              label: "License"
-            }
-          ]
+              label: "License",
+            },
+          ],
         },
         {
           id: "02-04",
-          label: "Log Bundle"
-        }
-      ]
-    }
+          label: "Log Bundle",
+        },
+      ],
+    },
   ];
 
   return (
@@ -373,6 +373,6 @@ export const CollapseOnExit = () => {
 
 CollapseOnExit.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };

@@ -3,10 +3,10 @@ const dawnTheme = require("@hv/uikit-common-themes/dist/dawn");
 const replaceColorsWithTheme = (defaultPalette, themePalette) => {
   let result = defaultPalette;
   const paletteArray = defaultPalette.split(",");
-  Object.keys(themePalette).forEach(categoryName => {
+  Object.keys(themePalette).forEach((categoryName) => {
     const categoryObject = themePalette[categoryName];
-    Object.keys(categoryObject).forEach(themeColorName => {
-      paletteArray.forEach(defaultColor => {
+    Object.keys(categoryObject).forEach((themeColorName) => {
+      paletteArray.forEach((defaultColor) => {
         const themeColor = `"${categoryObject[themeColorName]}"`;
         if (themeColor === defaultColor.toUpperCase()) {
           result = defaultPalette.replace(`${defaultColor}`, `theme.palette.${themeColorName}`);
@@ -28,10 +28,10 @@ module.exports = ({ svgOutput, componentName, colors, defaultSizes }) => {
   const themePalette = dawnTheme.palette;
 
   const selectors = ["Checkbox", "RadioButton"];
-  const isSelector = selectors.some(el => componentName.startsWith(el));
+  const isSelector = selectors.some((el) => componentName.startsWith(el));
   const hasSpecialSizeLevel = /^Level(\d)/g.test(componentName);
   const hasSpecialSizeXS = componentName.endsWith("XS");
-  const calcSize = size => (hasSpecialSizeLevel ? size + 8 : size);
+  const calcSize = (size) => (hasSpecialSizeLevel ? size + 8 : size);
 
   const themedPalette = colors
     .replace(/"#414141"/g, "theme.palette.acce1")

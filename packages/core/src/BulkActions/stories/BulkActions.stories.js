@@ -10,16 +10,16 @@ export default {
   title: "Components/Bulk Actions",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBulkActions } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBulkActions } from '@hv/uikit-react-core/dist'",
   },
   component: HvBulkActions,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ padding: 10 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => {
@@ -28,7 +28,7 @@ export const Main = () => {
     { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
     { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
     { id: "post", label: "Add", iconCallback: () => <Add /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> }
+    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
   ];
 
   return (
@@ -44,11 +44,11 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
@@ -59,9 +59,9 @@ const styles = theme => ({
       margin: theme.spacing("xs"),
       textAlign: "center",
       borderRadius: 4,
-      backgroundColor: theme.hv.palette.atmosphere.atmo1
-    }
-  }
+      backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    },
+  },
 });
 
 const SampleComponent = withStyles(styles)(({ classes, data, onChange }) => (
@@ -80,19 +80,19 @@ const SampleComponent = withStyles(styles)(({ classes, data, onChange }) => (
 ));
 
 export const Controlled = () => {
-  const addEntry = i => ({
+  const addEntry = (i) => ({
     id: `val${i + 1}`,
     value: `Value ${i + 1}`,
-    checked: false
+    checked: false,
   });
 
   const [data, setData] = useState(Array.from(Array(8), (el, i) => addEntry(i)));
 
   const handleSelectAll = (e, checked = false) => {
-    setData(data.map(el => ({ ...el, checked })));
+    setData(data.map((el) => ({ ...el, checked })));
   };
 
-  const handleSelectAllPages = e => handleSelectAll(e, true);
+  const handleSelectAllPages = (e) => handleSelectAll(e, true);
 
   const handleChange = (e, i, checked) => {
     const newData = [...data];
@@ -104,7 +104,7 @@ export const Controlled = () => {
     <div>
       <HvBulkActions
         numTotal={data.length}
-        numSelected={data.filter(el => el.checked).length}
+        numSelected={data.filter((el) => el.checked).length}
         onSelectAll={handleSelectAll}
         onSelectAllPages={handleSelectAllPages}
         maxVisibleActions={3}
@@ -116,8 +116,8 @@ export const Controlled = () => {
 
 Controlled.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const ControlledWithActions = () => {
@@ -125,18 +125,18 @@ export const ControlledWithActions = () => {
     { id: "add", label: "Add", iconCallback: () => <Add /> },
     { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
     { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> }
+    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
   ];
-  const addEntry = id => ({
+  const addEntry = (id) => ({
     id,
     value: `Value ${id}`,
-    checked: false
+    checked: false,
   });
 
   const [data, setData] = useState(Array.from(Array(8), (el, i) => addEntry(i)));
 
   const handleSelectAll = (e, checked = false) => {
-    setData(data.map(el => ({ ...el, checked })));
+    setData(data.map((el) => ({ ...el, checked })));
   };
 
   const handleChange = (e, i, checked) => {
@@ -146,17 +146,17 @@ export const ControlledWithActions = () => {
   };
 
   const handleAction = (e, id, action) => {
-    const selected = data.filter(el => el.checked);
+    const selected = data.filter((el) => el.checked);
     console.log(id, action);
     switch (action.id) {
       case "add": {
-        const newEls = selected.map(el => addEntry(`${el.id}-copy-${uniqueId()}`));
+        const newEls = selected.map((el) => addEntry(`${el.id}-copy-${uniqueId()}`));
         setData([...data, ...newEls]);
         break;
       }
       case "delete": {
-        const selectedIds = selected.map(el => el.id);
-        setData(data.filter(el => !selectedIds.includes(el.id)));
+        const selectedIds = selected.map((el) => el.id);
+        setData(data.filter((el) => !selectedIds.includes(el.id)));
         break;
       }
       case "lock":
@@ -170,7 +170,7 @@ export const ControlledWithActions = () => {
       <HvBulkActions
         id="bulkActions"
         numTotal={data.length}
-        numSelected={data.filter(el => el.checked).length}
+        numSelected={data.filter((el) => el.checked).length}
         onSelectAll={handleSelectAll}
         actions={actions}
         actionsCallback={handleAction}
@@ -183,8 +183,8 @@ export const ControlledWithActions = () => {
 
 ControlledWithActions.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const ControlledWithAllPages = () => {
@@ -193,12 +193,12 @@ export const ControlledWithAllPages = () => {
     { id: "add", label: "Add", iconCallback: () => <Add /> },
     { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
     { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> }
+    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
   ];
-  const addEntry = id => ({
+  const addEntry = (id) => ({
     id,
     value: `Value ${id}`,
-    checked: false
+    checked: false,
   });
 
   const [data, setData] = useState(Array.from(Array(18), (el, i) => addEntry(i)));
@@ -206,11 +206,11 @@ export const ControlledWithAllPages = () => {
   const [pageSize, setPageSize] = useState(pageSizeOptions[1]);
 
   const handleSelectAllPages = (checked = true) => {
-    setData(data.map(el => ({ ...el, checked })));
+    setData(data.map((el) => ({ ...el, checked })));
   };
 
   const handleSelectAll = () => {
-    if (data.some(el => el.checked)) {
+    if (data.some((el) => el.checked)) {
       handleSelectAllPages(false);
       return;
     }
@@ -234,17 +234,17 @@ export const ControlledWithAllPages = () => {
   };
 
   const handleAction = (e, id, action) => {
-    const selected = data.filter(el => el.checked);
+    const selected = data.filter((el) => el.checked);
     console.log(id, action);
     switch (action.id) {
       case "add": {
-        const newEls = selected.map(el => addEntry(`${el.id}-copy-${uniqueId()}`));
+        const newEls = selected.map((el) => addEntry(`${el.id}-copy-${uniqueId()}`));
         setData([...data, ...newEls]);
         break;
       }
       case "delete": {
-        const selectedIds = selected.map(el => el.id);
-        setData(data.filter(el => !selectedIds.includes(el.id)));
+        const selectedIds = selected.map((el) => el.id);
+        setData(data.filter((el) => !selectedIds.includes(el.id)));
         break;
       }
       case "lock":
@@ -260,7 +260,7 @@ export const ControlledWithAllPages = () => {
       <HvBulkActions
         id="bulkActions"
         numTotal={data.length}
-        numSelected={data.filter(el => el.checked).length}
+        numSelected={data.filter((el) => el.checked).length}
         onSelectAll={handleSelectAll}
         onSelectAllPages={handleSelectAllPages}
         actions={actions}
@@ -281,8 +281,8 @@ export const ControlledWithAllPages = () => {
         canNext={page < numPages - 1}
         pageSize={pageSize}
         pageSizeOptions={pageSizeOptions}
-        onPageChange={value => setPage(value)}
-        onPageSizeChange={value => setPageSize(value)}
+        onPageChange={(value) => setPage(value)}
+        onPageSizeChange={(value) => setPageSize(value)}
         labels={{ pageSizeEntryName: "items" }}
       />
     </>
@@ -291,6 +291,6 @@ export const ControlledWithAllPages = () => {
 
 ControlledWithAllPages.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };

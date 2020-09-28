@@ -51,7 +51,7 @@ export const selectPage = (idForCheckbox, tableRef, pageInfo = []) => {
   const {
     currentPage: page = 0,
     currentPageSize = Number.MAX_SAFE_INTEGER,
-    paginationServerSide
+    paginationServerSide,
   } = pageInfo;
 
   // we need to get at the internals of ReactTable
@@ -60,7 +60,7 @@ export const selectPage = (idForCheckbox, tableRef, pageInfo = []) => {
   const currentRecords = wrappedInstance.getResolvedState().sortedData;
 
   // we just map the IDs onto the result array
-  const selectedIds = currentRecords.map(item => item._original[idForCheckbox]);
+  const selectedIds = currentRecords.map((item) => item._original[idForCheckbox]);
 
   const newSelection = paginationServerSide
     ? selectedIds

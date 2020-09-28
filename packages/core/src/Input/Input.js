@@ -10,7 +10,7 @@ import {
   HvLabel,
   HvSuggestions,
   HvWarningText,
-  HvInfoMessage
+  HvInfoMessage,
 } from "..";
 import withId from "../withId";
 import withLabels from "../withLabels";
@@ -29,13 +29,13 @@ const DEFAULT_LABELS = {
   maxCharQuantityWarningText: "The value is too big",
   minCharQuantityWarningText: "The value is too short",
   requiredWarningText: "The value is required",
-  clearButtonLabel: "Clear the text"
+  clearButtonLabel: "Clear the text",
 };
 
 /**
  * An input is a graphical control element that allows the user to write text.
  */
-const HvInput = props => {
+const HvInput = (props) => {
   const {
     labels,
     classes,
@@ -122,7 +122,7 @@ const HvInput = props => {
    * this timeout with a node focus was used to solve the problem
    * because the reference to the input is lost when the component is updated.
    */
-  const handleClear = event => {
+  const handleClear = (event) => {
     const val = "";
     onChange?.(event, val);
     manageInputValueState(val, null);
@@ -141,7 +141,7 @@ const HvInput = props => {
   /**
    * Fills of the suggestion array.
    */
-  const suggestionHandler = val => {
+  const suggestionHandler = (val) => {
     const suggestionsArray = suggestionListCallback?.(val);
     if (suggestionsArray?.[0]?.label) {
       setSuggestionValues(suggestionsArray);
@@ -179,7 +179,7 @@ const HvInput = props => {
    * @param event
    * @returns {any}
    */
-  const getFocusedElement = event =>
+  const getFocusedElement = (event) =>
     isBrowser("ie") ? document.activeElement : event.relatedTarget;
 
   /**
@@ -188,7 +188,7 @@ const HvInput = props => {
    *
    * @returns {undefined}
    */
-  const onInputBlurHandler = event => {
+  const onInputBlurHandler = (event) => {
     // If the blur is executed when choosing an suggestion it should be ignored.
     if (suggestionRef?.current && suggestionRef?.current.contains(getFocusedElement(event))) return;
 
@@ -235,12 +235,12 @@ const HvInput = props => {
     onFocus?.(value);
   };
 
-  const getSuggestions = li => {
+  const getSuggestions = (li) => {
     const listEl = document.getElementById(setId(id, "suggestions-list"));
     return li != null ? listEl?.getElementsByTagName("li")?.[li] : listEl;
   };
 
-  const onSuggestionKeyDown = event => {
+  const onSuggestionKeyDown = (event) => {
     if (isKeypress(event, KeyboardCodes.Esc)) {
       suggestionClearHandler();
       focusInput();
@@ -254,7 +254,7 @@ const HvInput = props => {
    *
    * @param {Object} event - The event provided by the material ui input
    */
-  const onKeyDownHandler = event => {
+  const onKeyDownHandler = (event) => {
     if (isKeypress(event, KeyboardCodes.ArrowDown) && !!suggestionValues) {
       const li = getSuggestions(0);
       li?.focus();
@@ -267,7 +267,7 @@ const HvInput = props => {
    *
    * @param {Object} event - The event provided by the material ui input.
    */
-  const onContainerBlurHandler = event => {
+  const onContainerBlurHandler = (event) => {
     if (event.relatedTarget) {
       setTimeout(() => {
         const list = getSuggestions();
@@ -282,7 +282,7 @@ const HvInput = props => {
     const customIconEl =
       isValidElement(customFixedIcon) &&
       React.cloneElement(customFixedIcon, {
-        className: clsx(classes.icon, customFixedIcon.props.className)
+        className: clsx(classes.icon, customFixedIcon.props.className),
       });
 
     return (
@@ -341,7 +341,7 @@ const HvInput = props => {
             htmlFor={setId(id, "input")}
             aria-disabled={disabled}
             className={clsx(classes.label, {
-              [classes.labelDisabled]: disabled
+              [classes.labelDisabled]: disabled,
             })}
             label={
               <>
@@ -367,25 +367,25 @@ const HvInput = props => {
           inputRoot: classes.inputRoot,
           inputRootFocused: classes.inputRootFocused,
           inputDisabled: classes.inputDisabled,
-          multiLine: classes.multiLine
+          multiLine: classes.multiLine,
         }}
         className={clsx({
           [classes.inputRootDisabled]: disabled,
-          [classes.inputRootInvalid]: isStateInvalid
+          [classes.inputRootInvalid]: isStateInvalid,
         })}
         invalid={isStateInvalid}
         required={isRequired}
         onChange={onChangeHandler}
         inputProps={{
           ref: materialInputRef,
-          ...inputProps
+          ...inputProps,
         }}
         inputRef={inputRefProp || inputRef}
         {...(validationIconPosition === "right" && {
-          endAdornment: adornments
+          endAdornment: adornments,
         })}
         {...(validationIconPosition === "left" && {
-          startAdornment: adornments
+          startAdornment: adornments,
         })}
         {...others}
       />
@@ -394,7 +394,7 @@ const HvInput = props => {
         id={setId(id, "suggestions")}
         classes={{
           root: classes.suggestionsContainer,
-          list: classes.suggestionList
+          list: classes.suggestionList,
         }}
         expanded={!!suggestionValues}
         anchorEl={inputRef?.current?.parentElement}
@@ -511,7 +511,7 @@ HvInput.propTypes = {
     /**
      * IE11 specific styling.
      */
-    "@global": PropTypes.string
+    "@global": PropTypes.string,
   }).isRequired,
   /**
    * An Object containing the various texts associated with the input.
@@ -548,7 +548,7 @@ HvInput.propTypes = {
     /**
      * The label of the clear button.
      */
-    clearButtonLabel: PropTypes.string
+    clearButtonLabel: PropTypes.string,
   }),
   /**
    * Attributes applied to the input element.
@@ -657,7 +657,7 @@ HvInput.propTypes = {
   /**
    * Overrides any validation with a specific error/warning message to set in the warningText slot.
    */
-  externalWarningTextOverride: PropTypes.string
+  externalWarningTextOverride: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvInput" })(withLabels(DEFAULT_LABELS)(withId(HvInput)));

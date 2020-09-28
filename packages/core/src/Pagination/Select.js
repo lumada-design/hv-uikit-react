@@ -4,20 +4,20 @@ import React, { cloneElement, useState } from "react";
 import { withStyles } from "@material-ui/core";
 import { HvBaseDropdown, HvListContainer, HvListItem, HvPanel, HvTypography } from "..";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     borderRadius: 2,
     "& $header": {
       backgroundColor: "transparent",
-      borderColor: "transparent"
+      borderColor: "transparent",
     },
     "& $headerOpen": {
       backgroundColor: theme.palette.atmo1,
-      borderColor: theme.palette.atmo1
-    }
+      borderColor: theme.palette.atmo1,
+    },
   },
   header: {},
-  headerOpen: {}
+  headerOpen: {},
 });
 
 export const Option = ({ children, onClick }) => (
@@ -47,8 +47,8 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
     >
       <HvPanel>
         <HvListContainer selectable condensed>
-          {React.Children.map(children, child =>
-            cloneElement(child, { onClick: evt => handleSelect(evt, child.props.value) })
+          {React.Children.map(children, (child) =>
+            cloneElement(child, { onClick: (evt) => handleSelect(evt, child.props.value) })
           )}
         </HvListContainer>
       </HvPanel>

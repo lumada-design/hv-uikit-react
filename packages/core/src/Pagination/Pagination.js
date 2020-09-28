@@ -20,10 +20,10 @@ const DEFAULT_LABELS = {
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
   paginationLastPageTitle: "Last page",
-  paginationInputLabel: "Total pages for page input"
+  paginationInputLabel: "Total pages for page input",
 };
 
-const setColor = condition => (condition ? "atmo5" : undefined);
+const setColor = (condition) => (condition ? "atmo5" : undefined);
 
 const { Enter } = KeyboardCodes;
 
@@ -44,14 +44,14 @@ const Pagination = ({
   labels,
   showPageProps,
   navigationProps,
-  currentPageInputProps
+  currentPageInputProps,
 }) => {
   const [statePage, setStatePage] = useState(page);
 
-  const getSafePage = inPage =>
+  const getSafePage = (inPage) =>
     Number.isNaN(inPage) ? page : Math.min(Math.max(inPage, 0), pages - 1);
 
-  const changePage = inPage => {
+  const changePage = (inPage) => {
     const outPage = getSafePage(inPage);
     setStatePage(outPage);
 
@@ -77,18 +77,18 @@ const Pagination = ({
         id={setId(id, "currentPage")}
         labels={labels}
         inputProps={{
-          "aria-label": `${pages} ${labels.paginationInputLabel}`
+          "aria-label": `${pages} ${labels.paginationInputLabel}`,
         }}
         classes={{
           root: classes.pageSizeInputContainer,
           input: classes.pageSizeInput,
-          inputRoot: classes.pageSizeInputRoot
+          inputRoot: classes.pageSizeInputRoot,
         }}
         onChange={(event, val) => setStatePage(val - 1)}
         initialValue={`${statePage + 1}`}
         value={`${statePage === "" ? "" : Number(statePage) + 1}`}
         onBlur={applyPage}
-        onKeyDown={e => isKeypress(e, Enter) && applyPage()}
+        onKeyDown={(e) => isKeypress(e, Enter) && applyPage()}
         validationIconVisible={false}
         disabled={pageSize === 0}
         disableClear
@@ -114,7 +114,7 @@ const Pagination = ({
               onChange={(evt, val) => onPageSizeChange?.(val)}
               value={pageSize}
             >
-              {pageSizeOptions.map(option => (
+              {pageSizeOptions.map((option) => (
                 <Option key={option} value={option}>
                   {option}
                 </Option>
@@ -235,7 +235,7 @@ Pagination.propTypes = {
     /**
      * Styles applied to each navigation icon.
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
   }).isRequired,
   /**
    * The number of pages the component has.
@@ -324,7 +324,7 @@ Pagination.propTypes = {
     /**
      * Aria-label passed to the page input.
      */
-    paginationInputLabel: PropTypes.string
+    paginationInputLabel: PropTypes.string,
   }),
   /**
    * Other props to show page component.
@@ -337,7 +337,7 @@ Pagination.propTypes = {
   /**
    * Extra properties passed to the input component representing the current pages.
    */
-  currentPageInputProps: PropTypes.instanceOf(Object)
+  currentPageInputProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvPagination" })(withLabels(DEFAULT_LABELS)(Pagination));

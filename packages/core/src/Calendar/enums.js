@@ -4,7 +4,7 @@
 export const VIEW_MODE = {
   CALENDAR: "calendar",
   MONTHLY: "monthly",
-  YEARLY: "yearly"
+  YEARLY: "yearly",
 };
 
 /**
@@ -15,7 +15,7 @@ export const REPRESENTATION_VALUES = {
   SHORT: "short",
   NARROW: "narrow",
   NUMERIC: "numeric",
-  TWO_DIGIT: "2-digit"
+  TWO_DIGIT: "2-digit",
 };
 
 /**
@@ -27,5 +27,5 @@ export const NAV_OPTIONS = {
   NEXT_MONTH: "next_month",
   NEXT_YEAR: "next_year",
   MONTH: "month",
-  MONTH_YEAR: "month_year"
+  MONTH_YEAR: "month_year",
 };

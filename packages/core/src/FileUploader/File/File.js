@@ -119,7 +119,7 @@ File.propTypes = {
     /**
      * Style applied to the remove button.
      */
-    removeButton: PropTypes.string
+    removeButton: PropTypes.string,
   }).isRequired,
   /**
    * File information to be displayed
@@ -136,7 +136,7 @@ File.propTypes = {
     /**
      * The upload status.
      */
-    status: PropTypes.oneOf(["progress", "success", "fail"])
+    status: PropTypes.oneOf(["progress", "success", "fail"]),
   }).isRequired,
   /**
    * Callback fired when file is removed from list.
@@ -145,7 +145,7 @@ File.propTypes = {
   /**
    * Value of aria-label to apply to remove file button in filelist
    * */
-  removeFileButtonLabel: PropTypes.string.isRequired
+  removeFileButtonLabel: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles, { name: "HvFileUploaderFile" })(File);

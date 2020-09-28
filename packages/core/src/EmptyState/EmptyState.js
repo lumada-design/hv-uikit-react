@@ -12,13 +12,13 @@ const renderNode = (node, className, variant) =>
     </HvTypography>
   );
 
-const EmptyState = props => {
+const EmptyState = (props) => {
   const { classes, className, title, message, action, icon, ...others } = props;
   return (
     <div className={clsx(className, classes.root)} {...others}>
       <div
         className={clsx(classes.container, {
-          [classes.containerMessageOnly]: message && !(title || action)
+          [classes.containerMessageOnly]: message && !(title || action),
         })}
       >
         <div className={classes.iconContainer}>{icon}</div>
@@ -72,7 +72,7 @@ EmptyState.propTypes = {
     /**
      * Styles applied to the action message container class.
      */
-    actionContainer: PropTypes.string
+    actionContainer: PropTypes.string,
   }).isRequired,
   /**
    * The title to be shown.
@@ -89,7 +89,7 @@ EmptyState.propTypes = {
   /**
    *  Icon to be presented.
    */
-  icon: PropTypes.element.isRequired
+  icon: PropTypes.element.isRequired,
 };
 
 export default withStyles(styles, { name: "HvEmptyState" })(EmptyState);

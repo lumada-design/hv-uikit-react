@@ -131,7 +131,7 @@ describe("Snackbar ", () => {
           offset={offset}
           anchorOrigin={{
             vertical: "bottom",
-            horizontal: "right"
+            horizontal: "right",
           }}
         />
       </HvProvider>
@@ -149,7 +149,7 @@ describe("Snackbar ", () => {
           variant="success"
           action={{
             id: "testButton",
-            label: "test"
+            label: "test",
           }}
         />
       </HvProvider>

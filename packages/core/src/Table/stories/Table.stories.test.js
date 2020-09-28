@@ -6,7 +6,7 @@ import {
   WithExpanderAndCustomContent,
   WithCheckbox,
   WithCheckboxAndSecondaryActions,
-  Main
+  Main,
 } from "./Table.stories";
 
 export default {
@@ -14,9 +14,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -33,9 +33,9 @@ ContentExpanded.story = {
         return wait(
           () => screen.getAllByRole("table")[4] && document.querySelector("[id|=reactgooglegraph]")
         );
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, rows selected and unselected
@@ -49,9 +49,9 @@ mixSelection.story = {
         fireEvent.click(screen.getByRole("checkbox", { name: /select-3-select/i }));
         fireEvent.click(screen.getByRole("checkbox", { name: /select-7-select/i }));
         return wait(() => document.querySelectorAll("[aria-selected=true]")[2]);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, opened row action dropdownmenu
@@ -63,9 +63,9 @@ RowActionOpened.story = {
       runBefore() {
         fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
         return wait(() => screen.getByRole("menuitem", { name: /share/i }));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, all selected
@@ -77,9 +77,9 @@ AllRowsSelected.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("checkbox", { name: /all/i }));
         return wait(() => document.querySelectorAll("[aria-selected=true]")[9]);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, sort column
@@ -91,7 +91,7 @@ SortColumn.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /test-column-priority-sort-button/i }));
         return wait(() => screen.getByText("Event 2"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

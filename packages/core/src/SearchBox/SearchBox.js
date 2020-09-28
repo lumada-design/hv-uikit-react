@@ -9,12 +9,12 @@ import styles from "./styles";
 
 const DEFAULT_LABELS = {
   inputLabel: "",
-  placeholder: "Search"
+  placeholder: "Search",
 };
 
 const { Enter, Esc, Tab } = KeyboardCodes;
 
-const HvSearchBox = props => {
+const HvSearchBox = (props) => {
   const {
     classes,
     id,
@@ -54,7 +54,7 @@ const HvSearchBox = props => {
     changeValue(evt, val);
   };
 
-  const handleSuggestionsKey = evt => {
+  const handleSuggestionsKey = (evt) => {
     if (isKeypress(evt, Esc)) {
       inputRef?.current?.focus();
       setOpen(false);
@@ -78,7 +78,7 @@ const HvSearchBox = props => {
     <>
       <HvAdornment
         isVisible={value?.length > 0}
-        onClick={evt => {
+        onClick={(evt) => {
           changeValue(evt, "");
           setTimeout(() => {
             inputRef.current?.focus();
@@ -94,7 +94,7 @@ const HvSearchBox = props => {
     </>
   );
 
-  const handleKeyDown = evt => {
+  const handleKeyDown = (evt) => {
     if (isKeypress(evt, Enter)) {
       onSubmit?.(evt, value);
     }
@@ -138,7 +138,7 @@ HvSearchBox.propTypes = {
     /**
      * Styles applied to searchbox root.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -155,7 +155,7 @@ HvSearchBox.propTypes = {
     /**
      * Placeholder value.
      */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   }),
   /**
    * The initial value of the searchbox
@@ -207,7 +207,7 @@ HvSearchBox.propTypes = {
   /**
    * The initial value of the searchBox.
    */
-  initialValue: PropTypes.string
+  initialValue: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvSearchBox" })(withLabels(DEFAULT_LABELS)(HvSearchBox));

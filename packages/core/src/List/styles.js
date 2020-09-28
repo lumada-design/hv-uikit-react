@@ -1,55 +1,55 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {},
 
   selectorRoot: {
     width: "100%",
-    zIndex: 0
+    zIndex: 0,
   },
   selectorContainer: {
     "&:hover": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
 
     "&:focus-within": {
       backgroundColor: "transparent",
       outline: "none",
-      boxShadow: "none"
+      boxShadow: "none",
     },
     // IE fallback code (using focus-within-polyfill)
     "&.focus-within": {
       backgroundColor: "transparent",
       outline: "none",
-      boxShadow: "none"
-    }
+      boxShadow: "none",
+    },
   },
   truncate: {
     display: "inline-block",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
   },
 
   box: {
     width: "32px",
     height: "32px",
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
 
   itemSelector: {
     "&:not(:hover):not(.HvListItem-focus):not(:focus-within)": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
     "&:not(:hover):not(.HvListItem-focus):not(.focus-within)": {
-      backgroundColor: "transparent"
-    }
+      backgroundColor: "transparent",
+    },
   },
   link: {
     ...theme.hv.typography.normalText,
     textDecoration: "none",
 
     "&:focus": {
-      boxShadow: "unset !important"
-    }
+      boxShadow: "unset !important",
+    },
   },
 
   selectAllSelector: {
@@ -61,13 +61,13 @@ const styles = theme => ({
 
     // prevent the focus ring to be hidden by simbling hover background
     "&:focus-within": {
-      zIndex: 1
+      zIndex: 1,
     },
     // IE fallback code (using focus-within-polyfill)
     "&.focus-within": {
-      zIndex: 1
-    }
-  }
+      zIndex: 1,
+    },
+  },
 });
 
 export default styles;

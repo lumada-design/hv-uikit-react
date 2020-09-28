@@ -12,7 +12,7 @@ const Option = ({ classes, id, className, label, icon, onClick, ...others }) => 
 
   const isSelected = id === selected;
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     if (isSelected) return;
     const payload = { id, label };
 
@@ -26,7 +26,7 @@ const Option = ({ classes, id, className, label, icon, onClick, ...others }) => 
         id={id}
         category="ghost"
         className={clsx(className, classes.action, {
-          [classes.selected]: isSelected
+          [classes.selected]: isSelected,
         })}
         onClick={handleClick}
         startIcon={icon}
@@ -66,7 +66,7 @@ Option.propTypes = {
     /**
      * Style applied when selected.
      */
-    selected: PropTypes.string
+    selected: PropTypes.string,
   }).isRequired,
   /**
    * Visual label.
@@ -79,7 +79,7 @@ Option.propTypes = {
   /**
    * Callback called when clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesOption" })(WithId(Option));

@@ -10,16 +10,16 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
+      page: null,
+    },
   },
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ padding: 10 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 // __________________________________
@@ -34,18 +34,18 @@ export const WithMultiButton = () => {
     { id: "thursday", value: "T" },
     { id: "friday", value: "F" },
     { id: "saturday", value: "S" },
-    { id: "sunday", value: "S" }
+    { id: "sunday", value: "S" },
   ]);
 
   const handleSelectAll = (e, checked = false) => {
-    setData(data.map(el => ({ ...el, selected: checked })));
+    setData(data.map((el) => ({ ...el, selected: checked })));
   };
 
   return (
     <div>
       <HvBulkActions
         numTotal={data.length}
-        numSelected={data.filter(el => el.selected).length}
+        numSelected={data.filter((el) => el.selected).length}
         onSelectAll={handleSelectAll}
         onSelectAllPages={handleSelectAll}
         maxVisibleActions={3}
@@ -56,7 +56,7 @@ export const WithMultiButton = () => {
         style={{ width: "224px", margin: 10 }}
         buttons={data}
         onChange={(e, state = []) => {
-          setData(data.map(el => ({ ...el, selected: state.includes(el.id) })));
+          setData(data.map((el) => ({ ...el, selected: state.includes(el.id) })));
         }}
       />
     </div>
@@ -75,9 +75,9 @@ selected.story = {
       runBefore() {
         fireEvent.click(screen.getByText("All"));
         return wait(() => screen.getByText("8 of 8 items"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, indeterminate status
@@ -89,7 +89,7 @@ indeterminate.story = {
       runBefore() {
         fireEvent.click(screen.getByText("Value 3"));
         return wait(() => screen.getByText("1 of 8 items"));
-      }
-    }
-  }
+      },
+    },
+  },
 };

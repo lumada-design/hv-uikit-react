@@ -1,10 +1,10 @@
 import { outlineStyles } from "../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   a: {
     ...theme.hv.typography.link,
-    "&:focus": { ...outlineStyles }
-  }
+    "&:focus": { ...outlineStyles },
+  },
 });
 
 export default styles;

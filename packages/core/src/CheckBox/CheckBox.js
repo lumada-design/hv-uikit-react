@@ -22,7 +22,7 @@ import styles from "./styles";
  * It can also be used individually to represent the toggle of a single option, when
  * the Toogle Switch and Toggle Button aren't more appropriate.
  */
-const HvCheckBox = props => {
+const HvCheckBox = (props) => {
   const {
     classes,
     className,
@@ -57,28 +57,28 @@ const HvCheckBox = props => {
     controlled: checked,
     default: Boolean(defaultChecked),
     name: "HvCheckbox",
-    state: "checked"
+    state: "checked",
   });
 
   const [isIndeterminate, setIsIndeterminate] = useControlled({
     controlled: checked !== undefined ? indeterminate : undefined,
     default: Boolean(indeterminate),
     name: "HvCheckbox",
-    state: "indeterminate"
+    state: "indeterminate",
   });
 
   const [validationState, setValidationState] = useControlled({
     controlled: status,
     default: "standBy",
     name: "HvCheckbox",
-    state: "status"
+    state: "status",
   });
 
   const [validationMessage] = useControlled({
     controlled: statusMessage,
     default: "Required",
     name: "HvCheckbox",
-    state: "statusMessage"
+    state: "statusMessage",
   });
 
   const onLocalChange = useCallback(
@@ -120,7 +120,7 @@ const HvCheckBox = props => {
       inputProps={{
         "aria-invalid": validationState === "invalid" ? true : undefined,
         "aria-errormessage": validationState === "invalid" ? setId(elementId, "error") : undefined,
-        ...inputProps
+        ...inputProps,
       }}
     />
   );
@@ -140,7 +140,7 @@ const HvCheckBox = props => {
       {label ? (
         <div
           className={clsx(classes.container, {
-            [classes.disabled]: disabled
+            [classes.disabled]: disabled,
           })}
         >
           {checkbox}
@@ -189,7 +189,7 @@ HvCheckBox.propTypes = {
     /**
      * Styles applied to the label.
      */
-    label: PropTypes.string
+    label: PropTypes.string,
   }).isRequired,
 
   /**
@@ -279,7 +279,7 @@ HvCheckBox.propTypes = {
   /**
    * Properties passed on to the input element.
    */
-  inputProps: PropTypes.instanceOf(Object)
+  inputProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvCheckBox" })(HvCheckBox);

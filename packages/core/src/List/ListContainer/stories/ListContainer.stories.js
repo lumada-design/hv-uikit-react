@@ -12,17 +12,17 @@ import {
   HvRadio,
   HvCheckBox,
   HvBulkActions,
-  withTooltip
+  withTooltip,
 } from "../../..";
 
 export default {
   title: "Components/List",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvListContainer } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvListContainer } from '@hv/uikit-react-core/dist'",
   },
   component: HvListContainer,
-  subcomponents: { HvListItem }
+  subcomponents: { HvListItem },
 };
 
 export const Main = () => (
@@ -50,26 +50,47 @@ export const SingleSelection = () => {
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
       <HvListContainer selectable condensed>
-        <HvListItem onClick={event => handleListItemClick(event, 0)} selected={selectedItem === 0}>
+        <HvListItem
+          onClick={(event) => handleListItemClick(event, 0)}
+          selected={selectedItem === 0}
+        >
           98001, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 1)} selected={selectedItem === 1}>
+        <HvListItem
+          onClick={(event) => handleListItemClick(event, 1)}
+          selected={selectedItem === 1}
+        >
           98002, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 2)} selected={selectedItem === 2}>
+        <HvListItem
+          onClick={(event) => handleListItemClick(event, 2)}
+          selected={selectedItem === 2}
+        >
           98003, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 3)} selected={selectedItem === 3}>
+        <HvListItem
+          onClick={(event) => handleListItemClick(event, 3)}
+          selected={selectedItem === 3}
+        >
           98004, Store Manager
         </HvListItem>
         <HvListItem disabled>98005, Store Manager</HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 5)} selected={selectedItem === 5}>
+        <HvListItem
+          onClick={(event) => handleListItemClick(event, 5)}
+          selected={selectedItem === 5}
+        >
           98001, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 6)} selected={selectedItem === 6}>
+        <HvListItem
+          onClick={(event) => handleListItemClick(event, 6)}
+          selected={selectedItem === 6}
+        >
           98002, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 7)} selected={selectedItem === 7}>
+        <HvListItem
+          onClick={(event) => handleListItemClick(event, 7)}
+          selected={selectedItem === 7}
+        >
           98003, Store Manager
         </HvListItem>
       </HvListContainer>
@@ -90,28 +111,28 @@ export const SingleSelectionWithSelectors = () => {
         <HvListItem>
           <HvRadio
             label="98001, Store Manager"
-            onClick={event => handleListItemClick(event, 0)}
+            onClick={(event) => handleListItemClick(event, 0)}
             checked={selectedItem === 0}
           />
         </HvListItem>
         <HvListItem>
           <HvRadio
             label="98002, Store Manager"
-            onClick={event => handleListItemClick(event, 1)}
+            onClick={(event) => handleListItemClick(event, 1)}
             checked={selectedItem === 1}
           />
         </HvListItem>
         <HvListItem>
           <HvRadio
             label="98003, Store Manager"
-            onClick={event => handleListItemClick(event, 2)}
+            onClick={(event) => handleListItemClick(event, 2)}
             checked={selectedItem === 2}
           />
         </HvListItem>
         <HvListItem>
           <HvRadio
             label="98004, Store Manager"
-            onClick={event => handleListItemClick(event, 3)}
+            onClick={(event) => handleListItemClick(event, 3)}
             checked={selectedItem === 3}
             disabled
           />
@@ -119,7 +140,7 @@ export const SingleSelectionWithSelectors = () => {
         <HvListItem>
           <HvRadio
             label="98005, Store Manager"
-            onClick={event => handleListItemClick(event, 4)}
+            onClick={(event) => handleListItemClick(event, 4)}
             checked={selectedItem === 4}
           />
         </HvListItem>
@@ -134,33 +155,33 @@ export const MultiSelection = () => {
     1: true,
     2: false,
     3: false,
-    4: false
+    4: false,
   });
 
   const handleListItemClick = (_evt, index) => {
-    setSelectedItems(previousSelection => {
+    setSelectedItems((previousSelection) => {
       return {
         ...previousSelection,
-        [index]: !previousSelection[index]
+        [index]: !previousSelection[index],
       };
     });
   };
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
       <HvListContainer selectable multiSelect condensed>
-        <HvListItem onClick={event => handleListItemClick(event, 0)} selected={selectedItems[0]}>
+        <HvListItem onClick={(event) => handleListItemClick(event, 0)} selected={selectedItems[0]}>
           98001, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 1)} selected={selectedItems[1]}>
+        <HvListItem onClick={(event) => handleListItemClick(event, 1)} selected={selectedItems[1]}>
           98002, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 2)} selected={selectedItems[2]}>
+        <HvListItem onClick={(event) => handleListItemClick(event, 2)} selected={selectedItems[2]}>
           98003, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 3)} selected={selectedItems[3]}>
+        <HvListItem onClick={(event) => handleListItemClick(event, 3)} selected={selectedItems[3]}>
           98004, Store Manager
         </HvListItem>
-        <HvListItem onClick={event => handleListItemClick(event, 4)} selected={selectedItems[4]}>
+        <HvListItem onClick={(event) => handleListItemClick(event, 4)} selected={selectedItems[4]}>
           98005, Store Manager
         </HvListItem>
       </HvListContainer>
@@ -174,14 +195,14 @@ export const MultiSelectionWithSelectors = () => {
     1: true,
     2: false,
     3: false,
-    4: false
+    4: false,
   });
 
   const handleListItemClick = (_evt, index) => {
-    setSelectedItems(previousSelection => {
+    setSelectedItems((previousSelection) => {
       return {
         ...previousSelection,
-        [index]: !previousSelection[index]
+        [index]: !previousSelection[index],
       };
     });
   };
@@ -198,21 +219,21 @@ export const MultiSelectionWithSelectors = () => {
         <HvListItem>
           <HvCheckBox
             label="Arhauss is somewhere"
-            onClick={event => handleListItemClick(event, 0)}
+            onClick={(event) => handleListItemClick(event, 0)}
             checked={selectedItems[0]}
           />
         </HvListItem>
         <HvListItem>
           <HvCheckBox
             label="Allentown is not are 51"
-            onClick={event => handleListItemClick(event, 1)}
+            onClick={(event) => handleListItemClick(event, 1)}
             checked={selectedItems[1]}
           />
         </HvListItem>
         <HvListItem>
           <HvCheckBox
             label="Bergamo where you can eat"
-            onClick={event => handleListItemClick(event, 2)}
+            onClick={(event) => handleListItemClick(event, 2)}
             checked={selectedItems[2]}
           />
         </HvListItem>
@@ -220,14 +241,14 @@ export const MultiSelectionWithSelectors = () => {
           <HvCheckBox
             label="Bergen city"
             disabled
-            onClick={event => handleListItemClick(event, 3)}
+            onClick={(event) => handleListItemClick(event, 3)}
             checked={selectedItems[3]}
           />
         </HvListItem>
         <HvListItem>
           <HvCheckBox
             label="Boston of the Seven Seas"
-            onClick={event => handleListItemClick(event, 4)}
+            onClick={(event) => handleListItemClick(event, 4)}
             checked={selectedItems[4]}
           />
         </HvListItem>
@@ -239,14 +260,14 @@ export const MultiSelectionWithSelectors = () => {
 export const MultiSelectionWithSelectAll = () => {
   const useStyles = makeStyles(() => ({
     root: {
-      margin: 0
+      margin: 0,
     },
     selectAllContainer: {
-      width: "100%"
+      width: "100%",
     },
     selectAll: {
-      width: "100%"
-    }
+      width: "100%",
+    },
   }));
   const classes = useStyles();
 
@@ -255,14 +276,14 @@ export const MultiSelectionWithSelectAll = () => {
     1: true,
     2: false,
     3: false,
-    4: false
+    4: false,
   });
 
   const handleListItemClick = (_evt, index) => {
-    setSelectedItems(previousSelection => {
+    setSelectedItems((previousSelection) => {
       return {
         ...previousSelection,
-        [index]: !previousSelection[index]
+        [index]: !previousSelection[index],
       };
     });
   };
@@ -273,7 +294,7 @@ export const MultiSelectionWithSelectAll = () => {
       1: checked,
       2: checked,
       3: checked,
-      4: checked
+      4: checked,
     });
   };
 
@@ -284,7 +305,7 @@ export const MultiSelectionWithSelectAll = () => {
         classes={classes}
         onSelectAll={handleSelectAll}
         numTotal={Object.keys(selectedItems).length}
-        numSelected={Object.values(selectedItems).filter(el => el).length}
+        numSelected={Object.values(selectedItems).filter((el) => el).length}
       />
       <HvListContainer
         condensed
@@ -294,27 +315,27 @@ export const MultiSelectionWithSelectAll = () => {
       >
         <HvListItem
           startAdornment={<HvCheckBox label="Arhauss is somewhere" />}
-          onClick={event => handleListItemClick(event, 0)}
+          onClick={(event) => handleListItemClick(event, 0)}
           selected={selectedItems[0]}
         />
         <HvListItem
           startAdornment={<HvCheckBox label="Allentown is not are 51" />}
-          onClick={event => handleListItemClick(event, 1)}
+          onClick={(event) => handleListItemClick(event, 1)}
           selected={selectedItems[1]}
         />
         <HvListItem
           startAdornment={<HvCheckBox label="Bergamo where you can eat" />}
-          onClick={event => handleListItemClick(event, 2)}
+          onClick={(event) => handleListItemClick(event, 2)}
           selected={selectedItems[2]}
         />
         <HvListItem
           startAdornment={<HvCheckBox label="Bergen city" />}
-          onClick={event => handleListItemClick(event, 3)}
+          onClick={(event) => handleListItemClick(event, 3)}
           selected={selectedItems[3]}
         />
         <HvListItem
           startAdornment={<HvCheckBox label="Boston of the Seven Seas" />}
-          onClick={event => handleListItemClick(event, 4)}
+          onClick={(event) => handleListItemClick(event, 4)}
           selected={selectedItems[4]}
         />
       </HvListContainer>
@@ -371,15 +392,15 @@ export const WithTextOverflow = () => {
 
 export const WithTitle = () => {
   // Style link to prevent double-focus ring, bold, and underline
-  const StyledHvLink = withStyles(theme => ({
+  const StyledHvLink = withStyles((theme) => ({
     a: {
       ...theme.hv.typography.normalText,
       textDecoration: "none",
 
       "&:focus": {
-        boxShadow: "unset !important"
-      }
-    }
+        boxShadow: "unset !important",
+      },
+    },
   }))(HvLink);
 
   return (

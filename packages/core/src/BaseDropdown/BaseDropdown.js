@@ -44,7 +44,7 @@ const HvBaseDropdown = ({
   const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
 
   useEffect(() => {
-    setIsOpen(currentIsOpen => {
+    setIsOpen((currentIsOpen) => {
       const value = expanded && !disabled;
 
       if (currentIsOpen !== value) {
@@ -78,7 +78,7 @@ const HvBaseDropdown = ({
     if (width) setWidthInput(width);
   }, []);
 
-  const handleOutside = event => {
+  const handleOutside = (event) => {
     const isButtonClick = anchorHeaderRef.current?.contains(event.target);
     if (!isButtonClick) {
       setIsOpen(false);
@@ -88,7 +88,7 @@ const HvBaseDropdown = ({
   };
 
   const handleToggle = useCallback(
-    event => {
+    (event) => {
       if (event && !isKeypress(event, Tab)) {
         event.stopPropagation();
         event.preventDefault();
@@ -96,7 +96,7 @@ const HvBaseDropdown = ({
 
       // we are checking specifically for false because if "isKeypress" returns true or undefined it should continue
       const notControlKey = [Tab, Enter, Esc, ArrowDown, Space].every(
-        key => isKeypress(event, key) === false
+        (key) => isKeypress(event, key) === false
       );
 
       const ignoredCombinations =
@@ -119,7 +119,7 @@ const HvBaseDropdown = ({
         <HvTypography
           noWrap
           className={clsx(classes.placeholder, {
-            [classes.selectionDisabled]: disabled
+            [classes.selectionDisabled]: disabled,
           })}
           variant="placeholderText"
         >
@@ -146,7 +146,7 @@ const HvBaseDropdown = ({
           [classes.headerDisabled]: disabled,
           [classes.headerOpen]: isOpen,
           [classes.headerOpenUp]: isOpen && positionUp,
-          [classes.headerOpenDown]: isOpen && !positionUp
+          [classes.headerOpenDown]: isOpen && !positionUp,
         })}
         role="textbox"
         style={disabled ? { pointerEvents: "none" } : undefined}
@@ -166,7 +166,7 @@ const HvBaseDropdown = ({
    *
    * @param position
    */
-  const setterPosition = position => {
+  const setterPosition = (position) => {
     setPositionUp(position);
     onFlip?.(position);
   };
@@ -176,7 +176,7 @@ const HvBaseDropdown = ({
    *
    * @param data
    */
-  const handleContainerFlip = data => {
+  const handleContainerFlip = (data) => {
     const position = data.flipped;
     if (positionUp !== position) {
       setterPosition(position);
@@ -188,7 +188,7 @@ const HvBaseDropdown = ({
    *
    * @param data
    */
-  const handleContainerCreate = data => {
+  const handleContainerCreate = (data) => {
     getFirstAndLastFocus(
       document.getElementById(setId(elementId, "children-container"))
     )?.first?.focus();
@@ -202,7 +202,7 @@ const HvBaseDropdown = ({
   /**
    *  Handle keyboard inside children container.
    */
-  const handleContainerKeyDown = event => {
+  const handleContainerKeyDown = (event) => {
     if (isKeypress(event, Esc)) {
       handleToggle(event);
     }
@@ -225,7 +225,7 @@ const HvBaseDropdown = ({
       placement={bottom}
       popperOptions={{
         onUpdate: handleContainerFlip,
-        onCreate: handleContainerCreate
+        onCreate: handleContainerCreate,
       }}
       style={{ zIndex: theme.zIndex.tooltip }}
       {...popperProps}
@@ -236,7 +236,7 @@ const HvBaseDropdown = ({
           {!positionUp && (
             <div
               className={clsx(classes.inputExtensionOpen, {
-                [classes.inputExtensionLeftPosition]: placement === "left"
+                [classes.inputExtensionLeftPosition]: placement === "left",
               })}
               style={{ width: widthInput }}
             />
@@ -248,7 +248,7 @@ const HvBaseDropdown = ({
             <div
               className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
                 [classes.inputExtensionFloatRight]: placement === "right",
-                [classes.inputExtensionFloatLeft]: placement === "left"
+                [classes.inputExtensionFloatLeft]: placement === "left",
               })}
               style={{ width: widthInput }}
             />
@@ -363,7 +363,7 @@ HvBaseDropdown.propTypes = {
     /**
      * Styles applied when position is left and the position is up.
      */
-    inputExtensionFloatLeft: PropTypes.string
+    inputExtensionFloatLeft: PropTypes.string,
   }).isRequired,
   /**
    * Header placeholder. String or node.
@@ -413,7 +413,7 @@ HvBaseDropdown.propTypes = {
   /**
    * When expanded dropdown flips position.
    */
-  onFlip: PropTypes.func
+  onFlip: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvBaseDropdown" })(HvBaseDropdown);

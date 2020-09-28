@@ -7,12 +7,12 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",
-    v3: true
+    v3: true,
   },
-  component: HvMultiButton
+  component: HvMultiButton,
 };
 
-const range = n => Array.from(Array(n), (v, i) => i);
+const range = (n) => Array.from(Array(n), (v, i) => i);
 
 export const Main = () => {
   const [val, setVal] = useState(-1);
@@ -43,7 +43,7 @@ export const OnlyLabels = () => {
         <HvButton
           id={button.toLowerCase()}
           selected={selection === i}
-          onClick={evt => handleChange(evt, i)}
+          onClick={(evt) => handleChange(evt, i)}
         >
           {button}
         </HvButton>
@@ -56,12 +56,12 @@ export const OnlyIcons = () => {
   const [selection, setSelection] = useState([0]);
   const buttons = [
     { name: "Map", icon: <Map /> },
-    { name: "Location", icon: <LocationPin /> }
+    { name: "Location", icon: <LocationPin /> },
   ];
 
   const handleChange = (event, idx) => {
     const newSelection = selection.includes(idx)
-      ? selection.filter(v => v !== idx)
+      ? selection.filter((v) => v !== idx)
       : [...selection, idx];
     setSelection(newSelection);
   };
@@ -74,7 +74,7 @@ export const OnlyIcons = () => {
           icon
           aria-label={name}
           selected={selection.includes(i)}
-          onClick={evt => handleChange(evt, i)}
+          onClick={(evt) => handleChange(evt, i)}
         >
           {icon}
         </HvButton>
@@ -98,7 +98,7 @@ export const MultipleSelection = () => {
 
   const handleChange = (event, idx) => {
     const newSelection = selection.includes(idx)
-      ? selection.filter(v => v !== idx)
+      ? selection.filter((v) => v !== idx)
       : [...selection, idx];
     setSelection(newSelection);
   };
@@ -109,7 +109,7 @@ export const MultipleSelection = () => {
         <HvButton
           aria-label={button}
           selected={selection.includes(i)}
-          onClick={evt => handleChange(evt, i)}
+          onClick={(evt) => handleChange(evt, i)}
         >
           {button[0]}
         </HvButton>
@@ -127,12 +127,12 @@ export const VerticalOrientation = () => {
     { name: "Map", icon: <Map /> },
     { name: "Location", icon: <LocationPin /> },
     { name: "Map", icon: <Map /> },
-    { name: "Location", icon: <LocationPin /> }
+    { name: "Location", icon: <LocationPin /> },
   ];
 
   const handleChange = (event, idx) => {
     const newSelection = selection.includes(idx)
-      ? selection.filter(v => v !== idx)
+      ? selection.filter((v) => v !== idx)
       : [...selection, idx];
     setSelection(newSelection);
   };
@@ -144,7 +144,7 @@ export const VerticalOrientation = () => {
           <HvButton
             aria-label={name}
             selected={selection.includes(i)}
-            onClick={evt => handleChange(evt, i)}
+            onClick={(evt) => handleChange(evt, i)}
           >
             {icon}
           </HvButton>
@@ -156,7 +156,7 @@ export const VerticalOrientation = () => {
             aria-label={name}
             startIcon={icon}
             selected={selection.includes(i)}
-            onClick={evt => handleChange(evt, i)}
+            onClick={(evt) => handleChange(evt, i)}
           >
             {name}
           </HvButton>
@@ -169,9 +169,9 @@ export const VerticalOrientation = () => {
 VerticalOrientation.story = {
   parameters: {
     docs: {
-      storyDescription: "MultiButton combinations with vertical orientation and multiple selection"
-    }
-  }
+      storyDescription: "MultiButton combinations with vertical orientation and multiple selection",
+    },
+  },
 };
 
 export const EnforcedSelection = () => {
@@ -180,7 +180,7 @@ export const EnforcedSelection = () => {
   const handleChange = (event, idx) => {
     if (idx === 0) return; // enforced
     const newSelection = selection.includes(idx)
-      ? selection.filter(v => v !== idx)
+      ? selection.filter((v) => v !== idx)
       : [...selection, idx];
     setSelection(newSelection);
   };
@@ -188,12 +188,12 @@ export const EnforcedSelection = () => {
   return (
     <div style={{ width: "500px" }}>
       <HvMultiButton>
-        {range(5).map(i => (
+        {range(5).map((i) => (
           <HvButton
             id={`location${i + 1 || ""}`}
             startIcon={<LocationPin />}
             selected={selection.includes(i)}
-            onClick={evt => handleChange(evt, i)}
+            onClick={(evt) => handleChange(evt, i)}
           >
             {`Location ${i + 1}`}
           </HvButton>
@@ -207,9 +207,9 @@ EnforcedSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        'MultiButton element set as enforced cannot be toggled - In this case "Map" cannot be toggled on/off'
-    }
-  }
+        'MultiButton element set as enforced cannot be toggled - In this case "Map" cannot be toggled on/off',
+    },
+  },
 };
 
 export const MinimumSelection = () => {
@@ -217,7 +217,7 @@ export const MinimumSelection = () => {
 
   const handleChange = (event, idx) => {
     const newSelection = selection.includes(idx)
-      ? selection.filter(v => v !== idx)
+      ? selection.filter((v) => v !== idx)
       : [...selection, idx];
 
     if (newSelection.length >= 2) setSelection(newSelection);
@@ -226,12 +226,12 @@ export const MinimumSelection = () => {
   return (
     <div style={{ width: "800px" }}>
       <HvMultiButton>
-        {range(5).map(i => (
+        {range(5).map((i) => (
           <HvButton
             id={`location${i + 1}`}
             startIcon={<LocationPin />}
             selected={selection.includes(i)}
-            onClick={evt => handleChange(evt, i)}
+            onClick={(evt) => handleChange(evt, i)}
           >
             {`Location ${i + 1}`}
           </HvButton>
@@ -245,9 +245,9 @@ MinimumSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Specify a number of minimum elements that must be active - in this case a minimum of 2"
-    }
-  }
+        "Specify a number of minimum elements that must be active - in this case a minimum of 2",
+    },
+  },
 };
 
 export const MaximumSelection = () => {
@@ -255,7 +255,7 @@ export const MaximumSelection = () => {
 
   const handleChange = (event, idx) => {
     const newSelection = selection.includes(idx)
-      ? selection.filter(v => v !== idx)
+      ? selection.filter((v) => v !== idx)
       : [...selection, idx];
 
     if (newSelection.length <= 2) setSelection(newSelection);
@@ -264,12 +264,12 @@ export const MaximumSelection = () => {
   return (
     <div style={{ width: "800px" }}>
       <HvMultiButton>
-        {range(5).map(i => (
+        {range(5).map((i) => (
           <HvButton
             id={`location${i + 1}`}
             startIcon={<LocationPin />}
             selected={selection.includes(i)}
-            onClick={evt => handleChange(evt, i)}
+            onClick={(evt) => handleChange(evt, i)}
           >
             {`Location ${i + 1}`}
           </HvButton>
@@ -283,7 +283,7 @@ MaximumSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Specify a number of maximum elements that can be selected - in this case a maximum of 2"
-    }
-  }
+        "Specify a number of maximum elements that can be selected - in this case a maximum of 2",
+    },
+  },
 };

@@ -6,15 +6,15 @@ const isItemSelected = (item, newItem) => {
   return newItem[selectionKey] === selectionElement;
 };
 
-const checkIcons = list => !!list.filter(elem => elem.iconCallback).length;
+const checkIcons = (list) => !!list.filter((elem) => elem.iconCallback).length;
 
-const parseState = list => {
+const parseState = (list) => {
   const hasLeftIcons = checkIcons(list);
-  const selection = list.filter(elem => elem.selected);
+  const selection = list.filter((elem) => elem.selected);
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;
-  const anySelectableSelected = list.some(elem => elem.selected || elem.disabled);
-  const allSelectableSelected = list.every(elem => elem.selected || elem.disabled);
+  const anySelectableSelected = list.some((elem) => elem.selected || elem.disabled);
+  const allSelectableSelected = list.every((elem) => elem.selected || elem.disabled);
 
   return {
     list,
@@ -23,7 +23,7 @@ const parseState = list => {
     allSelected,
     anySelectableSelected,
     allSelectableSelected,
-    selection
+    selection,
   };
 };
 
@@ -31,7 +31,7 @@ const parseList = (list, item, props, selectAll) => {
   const { multiSelect, selectable, singleSelectionToggle } = props;
 
   let anySelected = false;
-  const newList = list.map(elem => {
+  const newList = list.map((elem) => {
     const newItem = { ...elem };
 
     // reset elem item

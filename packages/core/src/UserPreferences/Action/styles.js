@@ -1,9 +1,9 @@
 import { buttonStyles } from "../styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    ...buttonStyles(theme)
-  }
+    ...buttonStyles(theme),
+  },
 });
 
 export default styles;

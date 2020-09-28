@@ -7,12 +7,12 @@ export default {
   title: "Patterns/Dropdown Menu",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDropDownMenu } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvDropDownMenu } from '@hv/uikit-react-core/dist'",
   },
   component: HvDropDownMenu,
   decorators: [
-    storyFn => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>
-  ]
+    (storyFn) => <div style={{ display: "flex", justifyContent: "center" }}>{storyFn()}</div>,
+  ],
 };
 
 export const Main = () => (
@@ -25,8 +25,8 @@ export const Main = () => (
 Main.story = {
   parameters: {
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const Positioning = () => {
@@ -38,7 +38,7 @@ export const Positioning = () => {
       onClick={(e, item) => setPosition(item.value)}
       dataList={[
         { label: "Left", value: "left" },
-        { label: "Right", value: "right" }
+        { label: "Right", value: "right" },
       ]}
     />
   );
@@ -48,14 +48,14 @@ Positioning.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "DropDownMenu with configurable positioning in the dropdown"
+      storyDescription: "DropDownMenu with configurable positioning in the dropdown",
     },
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const WithIconsAndActions = () => {
-  const iconSelectedColor = Icon => ({ isSelected }) => (
+  const iconSelectedColor = (Icon) => ({ isSelected }) => (
     <Icon color={isSelected ? "atmo1" : undefined} />
   );
 
@@ -68,7 +68,7 @@ export const WithIconsAndActions = () => {
       dataList={[
         { label: "Label 1", iconCallback: iconSelectedColor(User) },
         { label: "Label 2", iconCallback: iconSelectedColor(Calendar) },
-        { label: "Label 3", iconCallback: iconSelectedColor(Plane) }
+        { label: "Label 3", iconCallback: iconSelectedColor(Plane) },
       ]}
     />
   );
@@ -79,17 +79,17 @@ WithIconsAndActions.story = {
     v3: true,
     docs: {
       storyDescription:
-        "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected"
+        "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected",
     },
     pa11y: {
       actions: [
         // open menu before testing
         "click element #dropdownmenu-with-icons-and-actions-icon-button",
-        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible"
-      ]
+        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible",
+      ],
     },
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const Disabled = () => (
@@ -105,8 +105,8 @@ export const Disabled = () => (
 
 Disabled.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const DisabledItems = () => (
@@ -120,8 +120,8 @@ export const DisabledItems = () => (
 DisabledItems.story = {
   parameters: {
     v3: true,
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };
 
 export const Controlled = () => {
@@ -146,7 +146,7 @@ export const Controlled = () => {
           aria-label="dropdownMenu-1"
           keepOpened={false}
           dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
-          onToggleOpen={s => {
+          onToggleOpen={(s) => {
             console.log(s);
           }}
         />
@@ -161,8 +161,8 @@ Controlled.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "DropDownMenu toggle opening controlled by an external button"
+      storyDescription: "DropDownMenu toggle opening controlled by an external button",
     },
-    eyes: { include: false }
-  }
+    eyes: { include: false },
+  },
 };

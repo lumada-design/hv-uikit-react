@@ -4,27 +4,27 @@ const styles = {
   root: {},
   icon: {
     width: 32,
-    height: 32
+    height: 32,
   },
   adornment: {
     backgroundColor: "transparent",
     border: "none",
     padding: 0,
     margin: 0,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   adornmentButton: {
     cursor: "pointer",
     "&:focus": {
-      ...outlineStyles
-    }
+      ...outlineStyles,
+    },
   },
   adornmentIcon: {
-    cursor: "default"
+    cursor: "default",
   },
   hideIcon: {
-    display: "none"
-  }
+    display: "none",
+  },
 };
 
 export default styles;

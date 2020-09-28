@@ -5,10 +5,10 @@ import {
   getMonthName,
   isDate,
   isSameMonth,
-  isValidLocale
+  isValidLocale,
 } from "../Calendar/utils";
 
-export const validateLocale = locale => (isValidLocale(locale) ? locale : DEFAULT_LOCALE);
+export const validateLocale = (locale) => (isValidLocale(locale) ? locale : DEFAULT_LOCALE);
 
 export const getFormattedDateRange = (date, locale, rep = REPRESENTATION_VALUES.SHORT) => {
   const { startDate, endDate } = date;

@@ -7,9 +7,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -21,7 +21,7 @@ export const ControlledState = () => {
   const labels = {
     placeholder: "input",
     inputLabel: "ex. us-east",
-    warningText: "this field is required"
+    warningText: "this field is required",
   };
 
   const handleDoneOnClick = () => setInputValidationState("invalid");

@@ -9,10 +9,7 @@ import materialButtonConfiguration from "../materialButtonConfiguration";
 describe("[v3] Button", () => {
   let wrapper;
 
-  const getMaterialButtonProps = ParentElement =>
-    ParentElement.children()
-      .children()
-      .props();
+  const getMaterialButtonProps = (ParentElement) => ParentElement.children().children().props();
 
   beforeEach(async () => {
     wrapper = mount(

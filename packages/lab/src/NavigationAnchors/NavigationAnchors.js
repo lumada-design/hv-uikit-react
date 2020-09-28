@@ -14,7 +14,7 @@ class NavigationAnchors extends React.Component {
     super(props);
     this.state = {
       selectedIndex: props.selectedIndex || 0,
-      throttle: false
+      throttle: false,
     };
   }
 
@@ -63,11 +63,11 @@ class NavigationAnchors extends React.Component {
         this.setState({ selectedIndex });
       }
       this.setState({
-        throttle: true
+        throttle: true,
       });
       setTimeout(() => {
         this.setState({
-          throttle: false
+          throttle: false,
         });
       }, 100);
     }
@@ -129,15 +129,15 @@ class NavigationAnchors extends React.Component {
         open
         classes={{
           paper: clsx(classes.drawerPaper, {
-            [classes.drawerPaperPositionInherit]: !floating
-          })
+            [classes.drawerPaperPositionInherit]: !floating,
+          }),
         }}
       >
         <List
           dense
           classes={{
             root: classes.listRoot,
-            dense: classes.listDense
+            dense: classes.listDense,
           }}
         >
           {options.map((option, index) => (
@@ -146,18 +146,18 @@ class NavigationAnchors extends React.Component {
               classes={{
                 selected: classes.listItemSelected,
                 root: classes.listItemRoot,
-                gutters: classes.listItemGutters
+                gutters: classes.listItemGutters,
               }}
               key={option.key || option.label}
-              onClick={event => this.handleListItemClick(event, option.value, index)}
+              onClick={(event) => this.handleListItemClick(event, option.value, index)}
               selected={selectedIndex === index}
             >
               <ListItemText
                 classes={{
                   primary: clsx({
-                    [classes.listItemTextSelected]: selectedIndex === index
+                    [classes.listItemTextSelected]: selectedIndex === index,
                   }),
-                  dense: classes.listItemTextDense
+                  dense: classes.listItemTextDense,
                 }}
                 primary={option.label}
               />
@@ -204,7 +204,7 @@ NavigationAnchors.propTypes = {
   /**
    * The Id of the scrollable container containing displayed elements
    */
-  scrollElementId: PropTypes.string
+  scrollElementId: PropTypes.string,
 };
 
 NavigationAnchors.defaultProps = {
@@ -212,7 +212,7 @@ NavigationAnchors.defaultProps = {
   onClick: undefined,
   floating: true,
   selectedIndex: 0,
-  scrollElementId: ""
+  scrollElementId: "",
 };
 
 export default withStyles(styles, { name: "HvNavigationAnchors" })(NavigationAnchors);

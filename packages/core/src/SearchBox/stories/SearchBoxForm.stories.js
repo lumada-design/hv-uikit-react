@@ -9,13 +9,13 @@ import {
   HvFormElement,
   HvLabel,
   HvBaseInput,
-  HvSuggestions
+  HvSuggestions,
 } from "../../..";
 import { KeyboardCodes, isKeypress } from "../../utils";
 import countryList from "../../Input/stories/countries";
 
 export default {
-  title: "Components/Forms/Search Box"
+  title: "Components/Forms/Search Box",
 };
 
 const { Esc, Tab } = KeyboardCodes;
@@ -46,8 +46,8 @@ export const Main = () => {
 
   const useStyles = makeStyles(() => ({
     formWidth: {
-      width: 250
-    }
+      width: 250,
+    },
   }));
 
   const classes = useStyles();
@@ -65,7 +65,7 @@ export const Main = () => {
   );
 };
 
-Main.story = { decorators: [storyFn => <div style={{ height: 40 }}>{storyFn()}</div>] };
+Main.story = { decorators: [(storyFn) => <div style={{ height: 40 }}>{storyFn()}</div>] };
 
 export const DynamicSearch = () => {
   const suggestions = countryList;
@@ -74,12 +74,12 @@ export const DynamicSearch = () => {
   const [value, setValue] = useState("");
   const inputRef = useRef(null);
 
-  const filterHighlighted = val =>
+  const filterHighlighted = (val) =>
     suggestions
-      .filter(v => v.toUpperCase().startsWith(val.toUpperCase()))
-      .map(v => ({
+      .filter((v) => v.toUpperCase().startsWith(val.toUpperCase()))
+      .map((v) => ({
         value: v,
-        label: parser(`<b>${v.replace(new RegExp(val, "gi"), "</b>$&<b>")}</b>`)
+        label: parser(`<b>${v.replace(new RegExp(val, "gi"), "</b>$&<b>")}</b>`),
       }));
 
   const handleChange = (evt, val) => {
@@ -95,7 +95,7 @@ export const DynamicSearch = () => {
     inputRef?.current?.focus();
   };
 
-  const handleSuggestionsKey = evt => {
+  const handleSuggestionsKey = (evt) => {
     if (isKeypress(evt, Esc)) {
       inputRef?.current?.focus();
       setOpen(false);
@@ -134,11 +134,11 @@ export const DynamicSearch = () => {
     inputBorderContainer: { height: 0 },
     inputPadder: {
       height: 10,
-      background: theme.hv.palette.atmosphere.atmo1
+      background: theme.hv.palette.atmosphere.atmo1,
     },
     formWidth: {
-      width: 250
-    }
+      width: 250,
+    },
   }));
 
   const classes = useStyles();
@@ -167,7 +167,7 @@ export const DynamicSearch = () => {
   );
 };
 
-DynamicSearch.story = { decorators: [storyFn => <div style={{ height: 300 }}>{storyFn()}</div>] };
+DynamicSearch.story = { decorators: [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>] };
 
 export const ScopedSearch = () => {
   const suggestions = countryList;
@@ -189,12 +189,12 @@ export const ScopedSearch = () => {
     }
   };
 
-  const filterHighlighted = val =>
+  const filterHighlighted = (val) =>
     filterGroup()
-      .filter(v => v.toUpperCase().includes(val.toUpperCase()))
-      .map(v => ({
+      .filter((v) => v.toUpperCase().includes(val.toUpperCase()))
+      .map((v) => ({
         value: v,
-        label: parser(v.replace(new RegExp(val, "gi"), "<b>$&</b>"))
+        label: parser(v.replace(new RegExp(val, "gi"), "<b>$&</b>")),
       }));
 
   const handleChange = (evt, val) => {
@@ -211,7 +211,7 @@ export const ScopedSearch = () => {
     inputRef?.current?.focus();
   };
 
-  const handleSuggestionsKey = evt => {
+  const handleSuggestionsKey = (evt) => {
     if (isKeypress(evt, Esc)) {
       inputRef?.current?.focus();
       setOpen(false);
@@ -249,26 +249,26 @@ export const ScopedSearch = () => {
 
   const useStyles = makeStyles(() => ({
     container: {
-      display: "flex"
+      display: "flex",
     },
 
     root: {
       width: 120,
       minWidth: "unset",
-      marginRight: 3
+      marginRight: 3,
     },
     width: {
       width: 120,
-      minWidth: "unset"
+      minWidth: "unset",
     },
     inputBorderContainer: { height: 0 },
     inputRoot: {
-      width: 260
+      width: 260,
     },
     inputPadder: {
       height: 10,
-      background: theme.hv.palette.atmosphere.atmo1
-    }
+      background: theme.hv.palette.atmosphere.atmo1,
+    },
   }));
 
   const classes = useStyles();
@@ -284,9 +284,9 @@ export const ScopedSearch = () => {
               root: classes.root,
               dropdown: classes.root,
               rootList: classes.width,
-              list: classes.width
+              list: classes.width,
             }}
-            onChange={val => {
+            onChange={(val) => {
               const newFilter = val?.label || "All";
               console.log("Filter:", newFilter);
               setFilter(newFilter);
@@ -301,7 +301,7 @@ export const ScopedSearch = () => {
               endAdornment={adornment}
               classes={{
                 root: classes.inputRoot,
-                inputBorderContainer: open && classes.inputBorderContainer
+                inputBorderContainer: open && classes.inputBorderContainer,
               }}
             />
             {open && <div className={classes.inputPadder} />}
@@ -320,4 +320,4 @@ export const ScopedSearch = () => {
   );
 };
 
-ScopedSearch.story = { decorators: [storyFn => <div style={{ height: 300 }}>{storyFn()}</div>] };
+ScopedSearch.story = { decorators: [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>] };

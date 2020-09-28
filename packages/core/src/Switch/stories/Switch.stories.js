@@ -9,9 +9,9 @@ export default {
   title: "Patterns/Selectors/Switch",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSwitch } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvSwitch } from '@hv/uikit-react-core/dist'",
   },
-  component: HvSwitch
+  component: HvSwitch,
 };
 
 export const Main = () => (
@@ -20,20 +20,20 @@ export const Main = () => (
 
 Main.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const OnChange = () => {
   const [state, setState] = useState(false);
 
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     on: {
-      color: theme.hv.palette.semantic.sema1
+      color: theme.hv.palette.semantic.sema1,
     },
     off: {
-      color: theme.hv.palette.semantic.sema14
-    }
+      color: theme.hv.palette.semantic.sema14,
+    },
   }));
 
   const StateString = () => {
@@ -62,24 +62,24 @@ export const OnChange = () => {
 OnChange.story = {
   parameters: {
     docs: {
-      storyDescription: "OnChange is called in the labels as in the switch itself."
+      storyDescription: "OnChange is called in the labels as in the switch itself.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const WithLabels = () => <HvSwitch />;
 
 WithLabels.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const LabelsDefinition = () => {
   const labels = {
     left: "Disconnect",
-    right: "Connect"
+    right: "Connect",
   };
 
   return <HvSwitch checked={false} labels={labels} aria-label="Server online" />;
@@ -87,16 +87,16 @@ export const LabelsDefinition = () => {
 
 LabelsDefinition.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Disabled = () => <HvSwitch disabled />;
 
 Disabled.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Controlled = () => {
@@ -104,7 +104,7 @@ export const Controlled = () => {
 
   return (
     <>
-      <Button onClick={() => setChecked(prev => !prev)}>Toggle</Button>
+      <Button onClick={() => setChecked((prev) => !prev)}>Toggle</Button>
       <p />
       <HvSwitch checked={checked} />
     </>
@@ -113,6 +113,6 @@ export const Controlled = () => {
 
 Controlled.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };

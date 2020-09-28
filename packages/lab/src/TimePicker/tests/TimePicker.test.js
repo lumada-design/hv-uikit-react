@@ -12,13 +12,13 @@ import PeriodPicker from "../PeriodPicker";
 
 jest.mock("../timePickerConverter", () => ({
   getTimeWithFormat24: jest.fn(() => "mockGetTimeWithFormat24"),
-  getHoursForTimeFormat: hours => hours
+  getHoursForTimeFormat: (hours) => hours,
 }));
 
 jest.mock("../timePickerFormatter", () => ({
   padTime: () => "mockPadTime",
   getFormattedTime: () => "mockGetFormattedTime",
-  getTimeFormatForLocale: () => "mockGetTimeFormatForLocale"
+  getTimeFormatForLocale: () => "mockGetTimeFormatForLocale",
 }));
 
 describe("TimePicker", () => {
@@ -30,7 +30,7 @@ describe("TimePicker", () => {
     hours: 10,
     minutes: 20,
     seconds: 30,
-    period: PeriodPickerOptions.PM
+    period: PeriodPickerOptions.PM,
   };
   const mockTitle = "mockTitle";
 
@@ -45,7 +45,7 @@ describe("TimePicker", () => {
           period={defaultSelectedTime.period}
           onChange={mockOnChange}
           labels={{
-            title: mockTitle
+            title: mockTitle,
           }}
         />
       </HvProvider>
@@ -71,8 +71,8 @@ describe("TimePicker", () => {
   it("handleTimeIconClick - should set the state accordingly", () => {
     const mockEvent = {
       currentTarget: {
-        parentElement: "mockParentElement"
-      }
+        parentElement: "mockParentElement",
+      },
     };
     timePickerComponent.setState({ timePopperOpen: false, mockEvent });
     const spy = jest.spyOn(timePickerInstance, "setTimePopperState");
@@ -91,7 +91,7 @@ describe("TimePicker", () => {
     timePickerInstance.handleHoursChange(11);
     expect(spy).toHaveBeenCalledWith({
       ...defaultSelectedTime,
-      hours: 11
+      hours: 11,
     });
   });
 
@@ -100,7 +100,7 @@ describe("TimePicker", () => {
     timePickerInstance.handleMinutesChange(21);
     expect(spy).toHaveBeenCalledWith({
       ...defaultSelectedTime,
-      minutes: 21
+      minutes: 21,
     });
   });
 
@@ -109,7 +109,7 @@ describe("TimePicker", () => {
     timePickerInstance.handleSecondsChange(31);
     expect(spy).toHaveBeenCalledWith({
       ...defaultSelectedTime,
-      seconds: 31
+      seconds: 31,
     });
   });
 
@@ -118,7 +118,7 @@ describe("TimePicker", () => {
     timePickerInstance.handleChangePeriod(PeriodPickerOptions.AM);
     expect(spy).toHaveBeenCalledWith({
       ...defaultSelectedTime,
-      period: PeriodPickerOptions.AM
+      period: PeriodPickerOptions.AM,
     });
   });
 
@@ -143,7 +143,7 @@ describe("TimePicker", () => {
       hours: 11,
       minutes: 21,
       seconds: 31,
-      period: PeriodPickerOptions.AM
+      period: PeriodPickerOptions.AM,
     };
     timePickerInstance.onSelectedTimeChange(mockSelectedTime);
     expect(timePickerInstance.state.selectedTime).toEqual(mockSelectedTime);
@@ -198,7 +198,7 @@ describe("TimePicker", () => {
   it("renderPopper - should render the popper", () => {
     timePickerComponent.setState({
       timePopperOpen: true,
-      timePopperAnchor: null
+      timePopperAnchor: null,
     });
     const spyRenderContent = jest.spyOn(timePickerInstance, "renderTimePopperContent");
     const PopperComp = timePickerInstance.renderPopper;

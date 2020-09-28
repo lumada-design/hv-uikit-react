@@ -20,7 +20,7 @@ const Loading = ({
   isActive = false,
   color,
   children,
-  others
+  others,
 }) => {
   const [resizeListener, sizes] = useResizeAware();
   const [overlayPosition, setOverlayPosition] = useState({});
@@ -34,12 +34,12 @@ const Loading = ({
         top: offsetTop,
         left: offsetLeft,
         height: clientHeight,
-        width: clientWidth
+        width: clientWidth,
       });
     }
   }, [children, sizes.width, sizes.height]);
 
-  const getColor = noColor => (color ? theme.palette[color] || color : theme.palette[noColor]);
+  const getColor = (noColor) => (color ? theme.palette[color] || color : theme.palette[noColor]);
 
   const size = small ? "small" : "regular";
   const colorVariant = color ? "Color" : "";
@@ -52,7 +52,7 @@ const Loading = ({
       {isActive && (
         <div className={clsx(className, classes.root)} {...others}>
           <div className={classes.barContainer}>
-            {range(0, 3).map(e => (
+            {range(0, 3).map((e) => (
               <div key={e} style={inline} className={clsx(classes.loadingBar, classes[variant])} />
             ))}
           </div>
@@ -109,7 +109,7 @@ Loading.propTypes = {
     /**
      * Style to display overlay.
      */
-    blur: PropTypes.string
+    blur: PropTypes.string,
   }).isRequired,
   /**
    * Indicates if the component should be render in a small size.
@@ -130,7 +130,7 @@ Loading.propTypes = {
   /**
    * Children
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvLoading" })(Loading);

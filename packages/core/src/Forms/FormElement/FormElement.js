@@ -10,7 +10,7 @@ import styles from "./styles";
 /**
  * The FormElement is a component used to contain and control components capable of receiving data.
  */
-const HvFormElement = props => {
+const HvFormElement = (props) => {
   const {
     id,
     name,
@@ -34,7 +34,7 @@ const HvFormElement = props => {
     "HvBaseInput",
     "HvBaseDropdown",
     "HvCalendar",
-    "HvCalendarHeader"
+    "HvCalendarHeader",
   ]);
   const contextValue = {
     elementId: id,
@@ -45,7 +45,7 @@ const HvFormElement = props => {
     elementRequired: required,
     elementReadOnly: readOnly,
     elementLocale: locale,
-    descriptors
+    descriptors,
   };
 
   return (
@@ -67,7 +67,7 @@ HvFormElement.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
 
   /**
@@ -115,7 +115,7 @@ HvFormElement.propTypes = {
   /**
    * Locale to be used by the calendar.
    */
-  locale: PropTypes.string
+  locale: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvFormElement" })(withId(HvFormElement));

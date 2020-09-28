@@ -11,7 +11,7 @@ import {
   HvCalendar,
   HvLabel,
   HvFormElement,
-  HvTypography
+  HvTypography,
 } from "..";
 import styles from "./styles";
 import withLabels from "../withLabels";
@@ -26,7 +26,7 @@ const DEFAULT_LABELS = {
   title: "",
   placeholder: "Select a date",
   rangeStart: "Start date",
-  rangeEnd: "End date"
+  rangeEnd: "End date",
 };
 
 /**
@@ -186,7 +186,7 @@ const HvDatePicker = ({
     </HvActionContainer>
   );
 
-  const renderInput = dateString => (
+  const renderInput = (dateString) => (
     <HvTypography variant={dateString ? "normalText" : "placeholderText"}>
       {dateString || labels.placeholder}
     </HvTypography>
@@ -259,7 +259,7 @@ HvDatePicker.propTypes = {
     /**
      * Text inside the input/dropdown
      */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   }),
   /**
    * A Jss Object used to override or extend the styles applied to the input/calendar box.
@@ -305,7 +305,7 @@ HvDatePicker.propTypes = {
   /**
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
-  escapeWithReference: PropTypes.bool
+  escapeWithReference: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDatePicker", index: 1 })(

@@ -1,18 +1,18 @@
 import "focus-within-polyfill";
 
-const styles = theme => {
+const styles = (theme) => {
   const show = {
     top: 2 * theme.hv.spacing.sm,
     transition: ["top"],
     boxShadow: theme.hv.shadows[1],
-    transitionDuration: 500
+    transitionDuration: 500,
   };
 
   const hide = {
     top: 0,
     transition: ["top"],
     boxShadow: "none",
-    transitionDuration: 300
+    transitionDuration: 300,
   };
 
   return {
@@ -20,12 +20,12 @@ const styles = theme => {
       left: 0,
       width: "100%",
       display: "flex",
-      justifyContent: "center"
+      justifyContent: "center",
     },
     menubar: {
       position: "relative",
       height: 2 * theme.hv.spacing.sm,
-      backgroundColor: theme.hv.palette.atmosphere.atmo1
+      backgroundColor: theme.hv.palette.atmosphere.atmo1,
     },
     menu: {
       position: "absolute",
@@ -33,45 +33,45 @@ const styles = theme => {
       zIndex: -2,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       "& li > div": {
-        marginTop: 4
-      }
+        marginTop: 4,
+      },
     },
     hidden: {
-      ...hide
+      ...hide,
     },
     active: {
-      ...show
+      ...show,
     },
     list: {
       margin: 0,
       padding: 0,
       display: "inherit",
       "&:hover $active": {
-        ...hide
+        ...hide,
       },
       "& li:hover > $hidden": {
-        ...show
+        ...show,
       },
 
       // IE fallback code (using focus-within-polyfill)
       "&.focus-within $active": {
         ...hide,
-        zIndex: -2
+        zIndex: -2,
       },
       "& li.focus-within > $hidden": {
         ...show,
-        zIndex: -1
+        zIndex: -1,
       },
 
       "&:focus-within $active": {
         ...hide,
-        zIndex: -2
+        zIndex: -2,
       },
       "& li:focus-within> $hidden": {
         ...show,
-        zIndex: -1
-      }
-    }
+        zIndex: -1,
+      },
+    },
   };
 };
 

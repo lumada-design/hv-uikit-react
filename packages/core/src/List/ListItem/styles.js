@@ -1,8 +1,8 @@
-const hover = theme => ({
-  backgroundColor: theme.hv.palette.atmosphere.atmo3
+const hover = (theme) => ({
+  backgroundColor: theme.hv.palette.atmosphere.atmo3,
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     color: theme.hv.palette.accent.acce1,
     ...theme.hv.typography.normalText,
@@ -21,37 +21,37 @@ const styles = theme => ({
     position: "relative",
 
     "&:not(:last-child)": {
-      marginBottom: "8px"
+      marginBottom: "8px",
     },
     "&$condensed": {
-      marginBottom: 0
-    }
+      marginBottom: 0,
+    },
   },
 
   gutters: {
     padding: `0 ${theme.hv.spacing.xs}px`,
 
     "&$withStartAdornment": {
-      paddingLeft: 0
+      paddingLeft: 0,
     },
     "&$withEndAdornment": {
-      paddingRight: 0
-    }
+      paddingRight: 0,
+    },
   },
 
   interactive: {
     cursor: "pointer",
     "&:not($disabled):not($selected):hover": hover(theme),
     "&$disabled": {
-      cursor: "not-allowed"
-    }
+      cursor: "not-allowed",
+    },
   },
 
   selected: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo3
+    backgroundColor: theme.hv.palette.atmosphere.atmo3,
   },
   disabled: {
-    color: theme.hv.palette.atmosphere.atmo5
+    color: theme.hv.palette.atmosphere.atmo5,
   },
 
   condensed: {},
@@ -63,28 +63,28 @@ const styles = theme => ({
 
     "& svg": {
       boxShadow: "none !important",
-      outline: "none !important"
+      outline: "none !important",
     },
     "$disabled>& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo5
-    }
+      fill: theme.hv.palette.atmosphere.atmo5,
+    },
   },
   endAdornment: {
     float: "right",
 
     "& svg": {
       boxShadow: "none !important",
-      outline: "none !important"
+      outline: "none !important",
     },
     "$disabled>& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo5
-    }
+      fill: theme.hv.palette.atmosphere.atmo5,
+    },
   },
 
   focus: {
     backgroundColor: theme.hv.palette.atmosphere.atmo3,
-    zIndex: 2
-  }
+    zIndex: 2,
+  },
 });
 
 export default styles;

@@ -1,35 +1,35 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {},
   controlsContainer: {
     display: "flex",
     paddingBottom: `${theme.hv.spacing.md}px`,
     justifyContent: "space-between",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
   },
   search: {
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
   },
   rightControls: {
     display: "flex",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
   },
   multiButtons: {
-    paddingLeft: `${theme.hv.spacing.md}px`
+    paddingLeft: `${theme.hv.spacing.md}px`,
   },
   viewContainer: {
     padding: theme.spacing("sm", 0),
-    width: "100%"
+    width: "100%",
   },
   sortContainer: {},
   searchBoxContainer: {
-    width: "250px"
+    width: "250px",
   },
   pagination: {
-    marginTop: 0
+    marginTop: 0,
   },
   bulkActions: {
-    marginBottom: 0
-  }
+    marginBottom: 0,
+  },
 });
 
 export default styles;

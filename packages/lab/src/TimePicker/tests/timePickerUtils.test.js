@@ -5,7 +5,7 @@ const mockType = "MOCK_TYPE";
 TimePickerUnits.MOCK_TYPE = {
   type: mockType,
   min: 0,
-  max: 23
+  max: 23,
 };
 
 describe("timePickerUtils", () => {

@@ -1,7 +1,7 @@
-const styles = theme => {
+const styles = (theme) => {
   const hover = {
     backgroundColor: theme.palette.atmo3,
-    cursor: "pointer"
+    cursor: "pointer",
   };
 
   return {
@@ -9,12 +9,12 @@ const styles = theme => {
       backgroundColor: theme.palette.atmo1,
       width: "320px",
       minHeight: "440px",
-      position: "relative"
+      position: "relative",
     },
     calendarWrapper: {
       overflow: "hidden",
       backgroundColor: theme.palette.atmo1,
-      padding: theme.spacing("sm")
+      padding: theme.spacing("sm"),
     },
     calendarGrid: {
       display: "flex",
@@ -26,46 +26,46 @@ const styles = theme => {
           borderLeft: `1px solid ${theme.palette.acce1}`,
           backgroundColor: theme.palette.atmo3,
           "&:hover": {
-            borderRight: `1px solid ${theme.palette.acce1}`
-          }
-        }
+            borderRight: `1px solid ${theme.palette.acce1}`,
+          },
+        },
       },
       "&:hover $cellsInRange": {
         backgroundColor: theme.palette.atmo3,
         "& $startBookend": {
           borderLeft: `1px solid ${theme.palette.acce1}`,
-          borderRight: "inherit"
-        }
+          borderRight: "inherit",
+        },
       },
       "& $cellsInRange:hover": {
         backgroundColor: theme.palette.atmo3,
         "& $calendarDate": {
-          borderRight: `1px solid ${theme.palette.acce1}`
-        }
+          borderRight: `1px solid ${theme.palette.acce1}`,
+        },
       },
       "& $cellsInRange:hover ~ $cellsInRange": {
-        backgroundColor: theme.palette.atmo1 // controls the right side of the hovered range
-      }
+        backgroundColor: theme.palette.atmo1, // controls the right side of the hovered range
+      },
     },
     navigationContainer: {
       display: "flex",
       justifyContent: "space-between",
-      padding: `${theme.spacing("xs")}px 0`
+      padding: `${theme.spacing("xs")}px 0`,
     },
     focusSelection: {
       "&:hover": {
-        ...hover
+        ...hover,
       },
       "&:focus": {
         ...hover,
         outlineColor: "#52A8EC",
         outlineStyle: "solid",
         outlineWidth: "1px",
-        outlineOffset: "-1px"
-      }
+        outlineOffset: "-1px",
+      },
     },
     navigationMonth: {
-      minWidth: "160px"
+      minWidth: "160px",
     },
     calendarDate: {
       display: "flex",
@@ -73,39 +73,39 @@ const styles = theme => {
       flexDirection: "column",
       textAlign: "center",
       height: "40px",
-      width: "40px"
+      width: "40px",
     },
     calendarDateNotInMonth: {
-      color: theme.palette.atmo5
+      color: theme.palette.atmo5,
     },
     calendarDateSelected: {
       backgroundColor: theme.palette.atmo3,
       color: theme.palette.acce1,
       "&:hover": {
-        ...hover
-      }
+        ...hover,
+      },
     },
     calendarDateInvalid: {
       "&:hover": {
         cursor: "not-allowed",
-        backgroundColor: "transparent"
-      }
+        backgroundColor: "transparent",
+      },
     },
     calendarDateInSelectionRange: {
-      backgroundColor: theme.palette.atmo3
+      backgroundColor: theme.palette.atmo3,
     },
     calendarDateDisabled: {
       color: theme.palette.atmo5,
-      cursor: "no-drop"
+      cursor: "no-drop",
     },
     startBookend: {
-      borderLeft: `1px solid ${theme.palette.acce1}`
+      borderLeft: `1px solid ${theme.palette.acce1}`,
     },
     endBookend: {
-      borderRight: `1px solid ${theme.palette.acce1}`
+      borderRight: `1px solid ${theme.palette.acce1}`,
     },
     cellsInRange: {},
-    cellsOutsideRange: {}
+    cellsOutsideRange: {},
   };
 };
 

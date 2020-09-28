@@ -13,7 +13,7 @@ const reducer = (state, action) => {
 const initialState = { itemFocused: null };
 const FocusContext = createContext(initialState);
 
-const FocusProvider = props => {
+const FocusProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { children } = props;
 
@@ -21,7 +21,7 @@ const FocusProvider = props => {
 };
 
 FocusProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export { FocusContext, FocusProvider };

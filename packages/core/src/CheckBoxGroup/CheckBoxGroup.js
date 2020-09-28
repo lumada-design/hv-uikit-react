@@ -26,7 +26,7 @@ const computeSelectAllState = (selected, total) => {
 /**
  *
  */
-const HvCheckBoxGroup = props => {
+const HvCheckBoxGroup = (props) => {
   const {
     classes,
     className,
@@ -78,24 +78,24 @@ const HvCheckBoxGroup = props => {
         selectedValues[i] = childIsSelected ? childValue : null;
       });
 
-      return selectedValues.filter(v => v != null);
+      return selectedValues.filter((v) => v != null);
     })(),
     name: "HvCheckboxGroup",
-    state: "value"
+    state: "value",
   });
 
   const [validationState, setValidationState] = useControlled({
     controlled: status,
     default: "standBy",
     name: "HvCheckboxGroup",
-    state: "status"
+    state: "status",
   });
 
   const [validationMessage] = useControlled({
     controlled: statusMessage,
     default: "Required",
     name: "HvCheckboxGroup",
-    state: "statusMessage"
+    state: "statusMessage",
   });
 
   const [allValues, selectedState] = useMemo(() => {
@@ -157,7 +157,7 @@ const HvCheckBoxGroup = props => {
         onChange: (evt, isChecked) =>
           onChildChangeInterceptor(i, child.props.onChange, evt, isChecked),
         disabled: disabled || child.props.disabled,
-        readOnly: readOnly || child.props.readOnly
+        readOnly: readOnly || child.props.readOnly,
       });
     });
   }, [children, disabled, name, onChildChangeInterceptor, readOnly, selectedState]);
@@ -221,7 +221,7 @@ const HvCheckBoxGroup = props => {
         aria-describedby={description && setId(elementId, "description")}
         className={clsx(classes.group, {
           [classes.vertical]: orientation === "vertical",
-          [classes.horizontal]: orientation === "horizontal"
+          [classes.horizontal]: orientation === "horizontal",
         })}
       >
         {showSelectAll && (
@@ -282,7 +282,7 @@ HvCheckBoxGroup.propTypes = {
     /**
      * Styles applied to the error area.
      */
-    error: PropTypes.string
+    error: PropTypes.string,
   }).isRequired,
 
   /**
@@ -377,7 +377,7 @@ HvCheckBoxGroup.propTypes = {
    * Their state will always be controlled by the group.
    * However the individual checkbox onChange callback will still be called be defined.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvCheckBoxGroup" })(HvCheckBoxGroup);

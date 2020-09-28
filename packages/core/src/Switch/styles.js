@@ -6,24 +6,24 @@ const thumbPosition = {
   position: "relative",
   left: -9,
   width: 12,
-  height: 12
+  height: 12,
 };
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "inline-flex",
     alignItems: "center",
     height: 32,
-    cursor: "pointer"
+    cursor: "pointer",
   },
   focus: {
-    ...outlineStyles
+    ...outlineStyles,
   },
 
   switch: {
     padding: 0,
     width: switchWidth,
-    height: 16
+    height: 16,
   },
 
   switchBase: {
@@ -32,18 +32,18 @@ const styles = theme => ({
     padding: 0,
     // increase CSS specificity
     "&:hover": {
-      backgroundColor: "transparent"
+      backgroundColor: "transparent",
     },
     "&$checked": {
       transform: "translateX(16px)",
       "& + $track": {
         opacity: 1,
-        backgroundColor: theme.hv.palette.accent.acce1
+        backgroundColor: theme.hv.palette.accent.acce1,
       },
       "&:hover": {
-        backgroundColor: "transparent"
-      }
-    }
+        backgroundColor: "transparent",
+      },
+    },
   },
 
   track: {
@@ -52,7 +52,7 @@ const styles = theme => ({
     left: 17,
     top: 8,
     border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo2
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
   },
 
   thumb: {
@@ -60,7 +60,7 @@ const styles = theme => ({
     border: `solid 1px ${theme.hv.palette.accent.acce1}`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     marginLeft: 2,
-    marginTop: 0
+    marginTop: 0,
   },
 
   checked: {},
@@ -69,31 +69,31 @@ const styles = theme => ({
     cursor: "not-allowed",
 
     "& $switch": {
-      cursor: "not-allowed"
+      cursor: "not-allowed",
     },
 
     "& $thumb": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`,
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`,
     },
 
     "& $switchBase + $track": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`,
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
-    }
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`,
+    },
   },
 
   disabledLabel: {
-    ...theme.hv.typography.placeholderText
+    ...theme.hv.typography.placeholderText,
   },
 
   leftLabel: {
-    paddingRight: `${theme.hv.spacing.xs}px`
+    paddingRight: `${theme.hv.spacing.xs}px`,
   },
 
   rightLabel: {
-    paddingLeft: `${theme.hv.spacing.xs}px`
-  }
+    paddingLeft: `${theme.hv.spacing.xs}px`,
+  },
 });
 
 export default styles;

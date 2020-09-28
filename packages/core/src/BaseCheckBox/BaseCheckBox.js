@@ -18,7 +18,7 @@ export const getSelectorIcons = (classes, options) => {
   return {
     checkbox: <CheckboxIcon color={color} className={classes.icon} />,
     checkboxPartial: <CheckboxPartial color={color} className={classes.icon} />,
-    checkboxChecked: <CheckboxCheck color={checkedColor} className={classes.icon} />
+    checkboxChecked: <CheckboxCheck color={checkedColor} className={classes.icon} />,
   };
 };
 
@@ -28,7 +28,7 @@ export const getSelectorIcons = (classes, options) => {
  * The Base Checkbox is a building block of the Checkbox form element. Don't used unless
  * implementing a custom use case not covered by the Checkbox form element.
  */
-const HvBaseCheckbox = props => {
+const HvBaseCheckbox = (props) => {
   const {
     classes,
     className,
@@ -50,7 +50,7 @@ const HvBaseCheckbox = props => {
   const icons = getSelectorIcons(classes, { disabled, semantic });
 
   const onLocalChange = useCallback(
-    evt => {
+    (evt) => {
       if (readOnly) {
         return;
       }
@@ -100,7 +100,7 @@ HvBaseCheckbox.propTypes = {
     /**
      * Styles applied to the checkbox when it is disabled.
      */
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
   }).isRequired,
 
   /**
@@ -164,7 +164,7 @@ HvBaseCheckbox.propTypes = {
   /**
    * Properties passed on to the input element.
    */
-  inputProps: PropTypes.instanceOf(Object)
+  inputProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvBaseCheckbox" })(HvBaseCheckbox);

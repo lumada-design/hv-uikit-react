@@ -9,13 +9,13 @@ export default {
   title: "Patterns/Asset Inventory/List View",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvListView, HvListViewRow, HvListViewCell } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvListView, HvListViewRow, HvListViewCell } from '@hv/uikit-react-core/dist'",
   },
   component: HvListView,
-  subcomponents: { HvListViewRow, HvListViewCell }
+  subcomponents: { HvListViewRow, HvListViewCell },
 };
 
-const getStatus = statusNumber => {
+const getStatus = (statusNumber) => {
   switch (statusNumber) {
     case 1:
       return { Icon: Level1, sema: "sema10" };
@@ -40,11 +40,11 @@ export const Main = () => {
       event: {
         description: "Risk of downtime on Truck 12",
         timestamp: "Just now",
-        schedule: "Fix 3rd shift"
+        schedule: "Fix 3rd shift",
       },
       probability: "88%",
       timeHorizon: "23h",
-      relatedAssets: "Track A, Load 1 Brake"
+      relatedAssets: "Track A, Load 1 Brake",
     },
     {
       id: "2",
@@ -52,11 +52,11 @@ export const Main = () => {
       event: {
         description: "Track severe breakdown",
         timestamp: "2 minutes ago",
-        schedule: "Fix now"
+        schedule: "Fix now",
       },
       probability: "92%",
       timeHorizon: "8h",
-      relatedAssets: "Track A, Zone 15 Brake"
+      relatedAssets: "Track A, Zone 15 Brake",
     },
     {
       id: "3",
@@ -64,12 +64,12 @@ export const Main = () => {
       event: {
         description: "Risk of downtime associated",
         timestamp: "2 hours ago",
-        schedule: "Fix 3rd shift"
+        schedule: "Fix 3rd shift",
       },
       probability: "90%",
       timeHorizon: "20h",
-      relatedAssets: "Track B, Load 2 Brake"
-    }
+      relatedAssets: "Track B, Load 2 Brake",
+    },
   ];
 
   const Row = ({ classes, status, value, id }) => {
@@ -80,7 +80,7 @@ export const Main = () => {
         id={id}
         checkboxProps={{
           value: value.id,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` },
         }}
       >
         <HvListViewCell semantic={sema} id={`icon${id}`} key={`icon${id}`}>
@@ -111,16 +111,16 @@ export const Main = () => {
     );
   };
 
-  const styles = theme => ({
+  const styles = (theme) => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: "10px"
-    }
+      marginRight: "10px",
+    },
   });
 
   const StyledRow = withStyles(styles)(Row);
@@ -135,17 +135,17 @@ export const Main = () => {
   );
 
   const configuration = {
-    onSelection: event => alert(`this ${event.target.value}`),
+    onSelection: (event) => alert(`this ${event.target.value}`),
     isSelectable: true,
     columnConfiguration: [
       { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
       { title: "Event", style: { width: "370px" } },
       { title: "Probability", style: { width: "93px" } },
       { title: "Time horizon", style: { width: "108px" } },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } }
+      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } },
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],
-    actionsCallback: (e, id, action) => alert(`You have pressed ${id} with action ${action.label}`)
+    actionsCallback: (e, id, action) => alert(`You have pressed ${id} with action ${action.label}`),
   };
 
   return (
@@ -166,11 +166,11 @@ export const NotSelectable = () => {
       event: {
         description: "Risk of downtime on Truck 12",
         timestamp: "Just now",
-        schedule: "Fix 3rd shift"
+        schedule: "Fix 3rd shift",
       },
       probability: "88%",
       timeHorizon: "23h",
-      relatedAssets: "Track A, Load 1 Brake"
+      relatedAssets: "Track A, Load 1 Brake",
     },
     {
       id: "2",
@@ -178,11 +178,11 @@ export const NotSelectable = () => {
       event: {
         description: "Track severe breakdown",
         timestamp: "2 minutes ago",
-        schedule: "Fix now"
+        schedule: "Fix now",
       },
       probability: "92%",
       timeHorizon: "8h",
-      relatedAssets: "Track A, Zone 15 Brake"
+      relatedAssets: "Track A, Zone 15 Brake",
     },
     {
       id: "3",
@@ -190,12 +190,12 @@ export const NotSelectable = () => {
       event: {
         description: "Risk of downtime associated",
         timestamp: "2 hours ago",
-        schedule: "Fix 3rd shift"
+        schedule: "Fix 3rd shift",
       },
       probability: "90%",
       timeHorizon: "20h",
-      relatedAssets: "Track B, Load 2 Brake"
-    }
+      relatedAssets: "Track B, Load 2 Brake",
+    },
   ];
 
   const Row = ({ classes, status, value, id }) => {
@@ -206,7 +206,7 @@ export const NotSelectable = () => {
         id={id}
         checkboxProps={{
           value: value.id,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` },
         }}
       >
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
@@ -236,12 +236,12 @@ export const NotSelectable = () => {
     );
   };
 
-  const styles = theme => ({
+  const styles = (theme) => ({
     timestamp: {
       padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
       marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+    },
   });
 
   const StyledRow = withStyles(styles)(Row);
@@ -256,17 +256,17 @@ export const NotSelectable = () => {
   );
 
   const configuration = {
-    onSelection: event => alert(`this ${event.target.value}`),
+    onSelection: (event) => alert(`this ${event.target.value}`),
     isSelectable: false,
     columnConfiguration: [
       { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
       { title: "Event", style: { width: "370px" } },
       { title: "Probability", style: { width: "93px" } },
       { title: "Time horizon", style: { width: "108px" } },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } }
+      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } },
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],
-    actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`)
+    actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`),
   };
 
   return <HvListView values={values} renderer={rowRenderer} viewConfiguration={configuration} />;
@@ -280,11 +280,11 @@ export const NotSelectableWithMenu = () => {
       event: {
         description: "Risk of downtime on Truck 12",
         timestamp: "Just now",
-        schedule: "Fix 3rd shift"
+        schedule: "Fix 3rd shift",
       },
       probability: "88%",
       timeHorizon: "23h",
-      relatedAssets: "Track A, Load 1 Brake"
+      relatedAssets: "Track A, Load 1 Brake",
     },
     {
       id: "2",
@@ -292,11 +292,11 @@ export const NotSelectableWithMenu = () => {
       event: {
         description: "Track severe breakdown",
         timestamp: "2 minutes ago",
-        schedule: "Fix now"
+        schedule: "Fix now",
       },
       probability: "92%",
       timeHorizon: "8h",
-      relatedAssets: "Track A, Zone 15 Brake"
+      relatedAssets: "Track A, Zone 15 Brake",
     },
     {
       id: "3",
@@ -304,12 +304,12 @@ export const NotSelectableWithMenu = () => {
       event: {
         description: "Risk of downtime associated",
         timestamp: "2 hours ago",
-        schedule: "Fix 3rd shift"
+        schedule: "Fix 3rd shift",
       },
       probability: "90%",
       timeHorizon: "20h",
-      relatedAssets: "Track B, Load 2 Brake"
-    }
+      relatedAssets: "Track B, Load 2 Brake",
+    },
   ];
 
   const Row = ({ classes, status, value, id }) => {
@@ -320,7 +320,7 @@ export const NotSelectableWithMenu = () => {
         id={id}
         checkboxProps={{
           value: value.id,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` },
         }}
       >
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
@@ -350,12 +350,12 @@ export const NotSelectableWithMenu = () => {
     );
   };
 
-  const styles = theme => ({
+  const styles = (theme) => ({
     timestamp: {
       padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
       marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+    },
   });
 
   const StyledRow = withStyles(styles)(Row);
@@ -370,23 +370,23 @@ export const NotSelectableWithMenu = () => {
   );
 
   const configuration = {
-    onSelection: event => alert(`this ${event.target.value}`),
+    onSelection: (event) => alert(`this ${event.target.value}`),
     isSelectable: false,
     columnConfiguration: [
       { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
       { title: "Event", style: { width: "370px" } },
       { title: "Probability", style: { width: "93px" } },
       { title: "Time horizon", style: { width: "108px" } },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } }
+      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } },
     ],
     actions: [
       { id: "1", label: "Dismiss", disabled: false },
       { id: "2", label: "Accept", disabled: false },
       { id: "3", label: "Decline", disabled: false },
-      { id: "4", label: "Eject", disabled: false }
+      { id: "4", label: "Eject", disabled: false },
     ],
     maxVisibleActions: 2,
-    actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`)
+    actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`),
   };
 
   return <HvListView values={values} renderer={rowRenderer} viewConfiguration={configuration} />;
@@ -396,7 +396,7 @@ NotSelectableWithMenu.story = {
   parameters: {
     docs: {
       storyDescription:
-        "List View that is not selectable with many actions, collapsed into a DropDownMenu"
-    }
-  }
+        "List View that is not selectable with many actions, collapsed into a DropDownMenu",
+    },
+  },
 };

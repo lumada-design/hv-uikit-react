@@ -9,7 +9,7 @@ import {
   HvAdornment,
   HvInfoMessage,
   HvWarningText,
-  setId
+  setId,
 } from "../../..";
 
 export default {
@@ -17,10 +17,10 @@ export default {
   parameters: {
     v3: true,
     componentSubtitle: null,
-    usage: "import { HvFormElement } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvFormElement } from '@hv/uikit-react-core/dist'",
   },
   component: HvFormElement,
-  decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => {
@@ -43,7 +43,7 @@ export const Main = () => {
     setElementValue(value);
   };
 
-  const onFocusHandler = event => {
+  const onFocusHandler = (event) => {
     const { type } = event.target;
     if (type === "button") return;
     if (!event.currentTarget.contains(document.activeElement) || elementStatus !== "standBy") {
@@ -63,14 +63,14 @@ export const Main = () => {
    *
    * @param event
    */
-  const onBlurHandler = event => {
+  const onBlurHandler = (event) => {
     if (event.relatedTarget === null || event?.relatedTarget?.id !== setId(inputId, "clear")) {
       setElement(event.target.value);
       setShowCloseAdornment(false);
     }
   };
 
-  const onMouseLeaveHandler = event => {
+  const onMouseLeaveHandler = (event) => {
     if (!event.currentTarget.contains(document.activeElement)) setShowCloseAdornment(false);
   };
 
@@ -80,8 +80,8 @@ export const Main = () => {
 
   return (
     <HvFormElement
-      onBlur={event => onBlurHandler(event)}
-      onFocus={event => onFocusHandler(event)}
+      onBlur={(event) => onBlurHandler(event)}
+      onFocus={(event) => onFocusHandler(event)}
       value={elementValue}
       status={elementStatus}
     >
@@ -93,7 +93,7 @@ export const Main = () => {
           placeholder="Insert your name"
           onChange={(event, value) => setElement(value, false)}
           onMouseEnter={onMouseEnterHandler}
-          onMouseLeave={event => onMouseLeaveHandler(event)}
+          onMouseLeave={(event) => onMouseLeaveHandler(event)}
           endAdornment={
             <>
               <HvAdornment
@@ -134,7 +134,7 @@ export const TextAreaFormElement = () => {
     setElementValue(value);
   };
 
-  const onFocusHandler = event => {
+  const onFocusHandler = (event) => {
     const { type } = event.target;
     if (type === "button") return;
     if (!event.currentTarget.contains(document.activeElement) || elementStatus !== "standBy") {
@@ -142,7 +142,7 @@ export const TextAreaFormElement = () => {
     }
   };
 
-  const onBlurHandler = event => {
+  const onBlurHandler = (event) => {
     if (event.relatedTarget === null || event.relatedTarget === undefined) {
       setElement(event.target.value);
     }
@@ -150,8 +150,8 @@ export const TextAreaFormElement = () => {
 
   return (
     <HvFormElement
-      onBlur={event => onBlurHandler(event)}
-      onFocus={event => onFocusHandler(event)}
+      onBlur={(event) => onBlurHandler(event)}
+      onFocus={(event) => onFocusHandler(event)}
       value={elementValue}
       status={elementStatus}
     >
@@ -178,9 +178,9 @@ TextAreaFormElement.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Form element propagating the invalid state to the input."
-    }
-  }
+      storyDescription: "Form element propagating the invalid state to the input.",
+    },
+  },
 };
 
 export const FormElementInvalid = () => {
@@ -199,9 +199,9 @@ FormElementInvalid.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Form element propagating the invalid state to the input."
-    }
-  }
+      storyDescription: "Form element propagating the invalid state to the input.",
+    },
+  },
 };
 
 export const FormElementValid = () => {
@@ -223,9 +223,9 @@ FormElementValid.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Form element propagating the valid state to the input."
-    }
-  }
+      storyDescription: "Form element propagating the valid state to the input.",
+    },
+  },
 };
 
 export const FormElementDisabled = () => {
@@ -244,7 +244,7 @@ FormElementDisabled.story = {
   parameters: {
     docs: {
       v3: true,
-      storyDescription: "Form element propagating the disabled state to the input."
+      storyDescription: "Form element propagating the disabled state to the input.",
     },
     pa11y: {
       ignore: [
@@ -252,8 +252,8 @@ FormElementDisabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
-  }
+        "color-contrast",
+      ],
+    },
+  },
 };

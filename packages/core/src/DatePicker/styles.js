@@ -1,9 +1,9 @@
 import { outlineStyles } from "../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     position: "relative",
-    width: 320
+    width: 320,
   },
   inputContainer: {
     position: "relative",
@@ -13,15 +13,15 @@ const styles = theme => ({
     paddingRight: theme.spacing("md"),
     fontFamily: theme.hv.typography.fontFamily,
     "&:focus": {
-      ...outlineStyles
-    }
+      ...outlineStyles,
+    },
   },
 
   dropdown: {
-    display: "block"
+    display: "block",
   },
   panel: {
-    backgroundColor: theme.palette.atmo1
+    backgroundColor: theme.palette.atmo1,
   },
 
   inputCalendarClosed: {
@@ -29,13 +29,13 @@ const styles = theme => ({
     borderRadius: 2,
     "&:hover": {
       cursor: "pointer",
-      border: `1px solid ${theme.palette.acce1}`
-    }
+      border: `1px solid ${theme.palette.acce1}`,
+    },
   },
   inputCalendarOpen: {
     boxShadow: theme.hv.shadows[1],
     border: `1px solid ${theme.palette.atmo1}`,
-    borderRadius: "2px 2px 0 0"
+    borderRadius: "2px 2px 0 0",
   },
   input: {
     border: "none",
@@ -45,46 +45,46 @@ const styles = theme => ({
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.normalText,
     "&:hover": {
-      cursor: "pointer"
+      cursor: "pointer",
     },
     "&:focus": {
-      outline: "none"
+      outline: "none",
     },
     "&::placeholder": {
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.placeholderText
+      ...theme.hv.typography.placeholderText,
     },
     "&::-moz-placeholder": {
-      lineHeight: "26px"
-    }
+      lineHeight: "26px",
+    },
   },
   icon: {
     position: "absolute",
     right: -1,
-    bottom: -1
+    bottom: -1,
   },
   label: {
-    display: "block"
+    display: "block",
   },
   action: {
     "&:first-child": {
-      marginRight: theme.spacing("xs")
-    }
+      marginRight: theme.spacing("xs"),
+    },
   },
 
   rangeMainContainer: {
     display: "flex",
     flexDirection: "column",
     backgroundColor: theme.palette.atmo1,
-    width: "640px"
+    width: "640px",
   },
   rangeCalendarsContainer: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   rangeCalendarContainer: {
-    width: "50%"
-  }
+    width: "50%",
+  },
 });
 
 export default styles;

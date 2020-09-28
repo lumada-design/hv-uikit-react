@@ -1,9 +1,9 @@
 const styles = {
   iconWrapper: {
-    cursor: "pointer"
+    cursor: "pointer",
   },
   panel: {},
-  badgeBorder: {}
+  badgeBorder: {},
 };
 
 export default styles;

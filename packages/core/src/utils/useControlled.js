@@ -20,7 +20,7 @@ export default function useControlled({ controlled, default: defaultProp, name, 
             "Elements should not switch from uncontrolled to controlled (or vice versa).",
             `Decide between using a controlled or uncontrolled ${name} ` +
               "element for the lifetime of the component.",
-            "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`."
+            "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.",
           ].join("\n")
         );
       }
@@ -33,14 +33,14 @@ export default function useControlled({ controlled, default: defaultProp, name, 
         console.error(
           [
             `A component is changing the default ${state} state of an uncontrolled ${name} after being initialized. ` +
-              `To suppress this warning opt to use a controlled ${name}.`
+              `To suppress this warning opt to use a controlled ${name}.`,
           ].join("\n")
         );
       }
     }, [JSON.stringify(defaultProp)]);
   }
 
-  const setValueIfUncontrolled = React.useCallback(newValue => {
+  const setValueIfUncontrolled = React.useCallback((newValue) => {
     if (!isControlled) {
       setValue(newValue);
     }

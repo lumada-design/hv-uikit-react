@@ -13,9 +13,9 @@ describe("Provider", () => {
       useNextVariants: true,
       suppressDeprecationWarnings: true,
       h1: {
-        fontSize: "4px"
-      }
-    }
+        fontSize: "4px",
+      },
+    },
   });
 
   beforeEach(async () => {

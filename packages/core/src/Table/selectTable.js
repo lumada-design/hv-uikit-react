@@ -11,14 +11,14 @@ import React from "react";
 import HvCheckBox from "../CheckBox";
 import { setId } from "../utils";
 
-const defaultSelectInputComponent = props => {
+const defaultSelectInputComponent = (props) => {
   return (
     <HvCheckBox
       inputProps={{ "aria-label": setId(props.id, "select") }}
       id={props.id}
       checked={props.checked}
       onChange={() => {}}
-      onClick={e => {
+      onClick={(e) => {
         const { shiftKey } = e;
         e.stopPropagation();
         props.onClick?.(props.id, shiftKey, props.row);
@@ -42,7 +42,7 @@ export default (Component, options) => {
         onClick: toggleSelection,
         selectType,
         row,
-        id: setId("select", row[keyField])
+        id: setId("select", row[keyField]),
       };
       return React.createElement(this.props.SelectInputComponent, inputProps);
     }
@@ -56,7 +56,7 @@ export default (Component, options) => {
         checked,
         onClick: toggleAll,
         selectType,
-        id: "select-all"
+        id: "select-all",
       };
 
       return React.createElement(SelectAllInputComponent, inputProps);
@@ -87,14 +87,14 @@ export default (Component, options) => {
         id: "_selector",
         accessor: () => "x", // this value is not important
         Header: this.headSelector.bind(this),
-        Cell: ci => {
+        Cell: (ci) => {
           return this.rowSelector.bind(this)(ci.original);
         },
         width: selectWidth || 30,
         filterable: false,
         sortable: false,
         resizable: false,
-        style: { textAlign: "center" }
+        style: { textAlign: "center" },
       };
 
       const columns =
@@ -102,16 +102,16 @@ export default (Component, options) => {
           ? [...originalCols, select]
           : [select, ...originalCols];
       const extra = {
-        columns
+        columns,
       };
-      return <Component {...rest} {...extra} ref={r => (this.wrappedInstance = r)} />;
+      return <Component {...rest} {...extra} ref={(r) => (this.wrappedInstance = r)} />;
     }
   };
 
   wrapper.displayName = "RTSelectTable";
   wrapper.defaultProps = {
     keyField: "_id",
-    isSelected: key => {
+    isSelected: (key) => {
       console.log("No isSelected handler provided:", { key });
     },
     selectAll: false,
@@ -123,7 +123,7 @@ export default (Component, options) => {
     },
     selectType: "checkbox",
     SelectInputComponent: defaultSelectInputComponent,
-    SelectAllInputComponent: defaultSelectInputComponent
+    SelectAllInputComponent: defaultSelectInputComponent,
   };
 
   return wrapper;

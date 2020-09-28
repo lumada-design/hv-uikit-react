@@ -5,28 +5,28 @@ export default {
   title: "Patterns/Search Box",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSearchBox } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvSearchBox } from '@hv/uikit-react-core/dist'",
   },
   component: HvSearchBox,
   decorators: [
-    Story => (
+    (Story) => (
       <div style={{ height: 100, width: 360 }}>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => {
-  const suggestionHandler = value => [
+  const suggestionHandler = (value) => [
     { id: "2", label: `${value} first suggestion` },
-    { id: "3", label: `${value} second suggestion` }
+    { id: "3", label: `${value} second suggestion` },
   ];
 
   return (
     <HvSearchBox
       suggestionListCallback={suggestionHandler}
-      suggestionSelectedCallback={item => console.log(`${item.label} selected`)}
+      suggestionSelectedCallback={(item) => console.log(`${item.label} selected`)}
       onChange={(event, value) => {
         console.log(`value: ${value}`);
       }}
@@ -43,7 +43,7 @@ export const WithoutSuggestion = () => {
 WithoutSuggestion.story = {
   parameters: {
     docs: {
-      storyDescription: "Searchbox sample that does not use the suggestion box."
-    }
-  }
+      storyDescription: "Searchbox sample that does not use the suggestion box.",
+    },
+  },
 };

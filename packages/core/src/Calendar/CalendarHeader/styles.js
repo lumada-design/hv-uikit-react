@@ -1,8 +1,8 @@
 import { outlineStyles } from "../../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   rangeLabel: {
-    paddingBottom: theme.spacing("xs")
+    paddingBottom: theme.spacing("xs"),
   },
   root: {
     marginTop: theme.spacing("xs"),
@@ -12,11 +12,11 @@ const styles = theme => ({
     borderLeft: "1px solid transparent",
     borderRight: "1px solid transparent",
     "&:hover, &:focus": {
-      borderBottom: `1px solid ${theme.palette.acce1}`
-    }
+      borderBottom: `1px solid ${theme.palette.acce1}`,
+    },
   },
   headerDayOfWeek: {
-    paddingLeft: theme.spacing("xs")
+    paddingLeft: theme.spacing("xs"),
   },
   headerDate: {},
   invalid: {},
@@ -28,16 +28,16 @@ const styles = theme => ({
     ...theme.hv.typography.xsTitle,
     width: "100%",
     "&::placeholder": {
-      color: theme.palette.atmo5
+      color: theme.palette.atmo5,
     },
     "&::-webkit-inner-spin-button, &::-webkit-calendar-picker-indicator": {
       " -webkit-appearance": "none",
-      display: "none"
+      display: "none",
     },
     "&:focus": {
-      ...outlineStyles
-    }
-  }
+      ...outlineStyles,
+    },
+  },
 });
 
 export default styles;

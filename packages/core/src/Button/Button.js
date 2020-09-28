@@ -8,7 +8,7 @@ import styles from "./styles";
 /**
  * A button refers to a graphical control element that provides the user a simple way to trigger an event.
  */
-const HvButton = props => {
+const HvButton = (props) => {
   const {
     id,
     classes,
@@ -29,7 +29,7 @@ const HvButton = props => {
     <Button
       className={clsx(className, {
         [classes.icon]: icon,
-        [classes[`${category}SVG`]]: overrideIconColors
+        [classes[`${category}SVG`]]: overrideIconColors,
       })}
       id={id}
       classes={buttonConfiguration.classes}
@@ -108,7 +108,7 @@ HvButton.propTypes = {
     /**
      * Styles applied to the button if keyboard focused.
      */
-    focusVisible: PropTypes.string
+    focusVisible: PropTypes.string,
   }),
   /**
    * @ignore
@@ -138,7 +138,7 @@ HvButton.propTypes = {
   /**
    * Defines the default colors of the button are forced into the icon.
    */
-  overrideIconColors: PropTypes.bool
+  overrideIconColors: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvButton" })(HvButton);

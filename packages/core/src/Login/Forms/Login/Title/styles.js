@@ -4,17 +4,17 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    width: "100%"
+    width: "100%",
   },
   logoImage: {
-    maxHeight: "80px"
+    maxHeight: "80px",
   },
   titleNoLogoComponent: {
-    marginTop: "80px"
+    marginTop: "80px",
   },
   separator: {
-    height: "15px"
-  }
+    height: "15px",
+  },
 };
 
 export default styles;

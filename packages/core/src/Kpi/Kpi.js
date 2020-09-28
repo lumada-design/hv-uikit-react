@@ -10,10 +10,10 @@ const DEFAULT_LABELS = {
   title: "",
   indicator: undefined,
   unit: undefined,
-  comparisonIndicatorInfo: undefined
+  comparisonIndicatorInfo: undefined,
 };
 
-const HvKpi = props => {
+const HvKpi = (props) => {
   const {
     classes,
     className,
@@ -134,7 +134,7 @@ HvKpi.propTypes = {
     /**
      * Styles applied to the component trend line.
      */
-    trendLine: PropTypes.string
+    trendLine: PropTypes.string,
   }).isRequired,
   /**
    * An Element that will be rendered to the left of the kpi indicator text.
@@ -167,7 +167,7 @@ HvKpi.propTypes = {
     /**
      * the text to the right of the visual comparison.
      */
-    comparisonIndicatorInfo: PropTypes.string
+    comparisonIndicatorInfo: PropTypes.string,
   }),
   /**
    *  The typography variant used in the main text indicator of the KPI
@@ -176,7 +176,7 @@ HvKpi.propTypes = {
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "normalText", "normalText"])
+  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "normalText", "normalText"]),
 };
 
 export default withStyles(styles, { name: "HvKpi" })(withLabels(DEFAULT_LABELS)(HvKpi));

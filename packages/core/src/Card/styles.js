@@ -1,16 +1,16 @@
 import mapValues from "lodash/mapValues";
 
-const semantics = theme =>
-  mapValues(theme.hv.palette.semantic, value => ({
-    backgroundColor: value
+const semantics = (theme) =>
+  mapValues(theme.hv.palette.semantic, (value) => ({
+    backgroundColor: value,
   }));
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    overflow: "visible"
+    overflow: "visible",
   },
   sema0: {
-    backgroundColor: theme.palette.atmo4
+    backgroundColor: theme.palette.atmo4,
   },
   ...semantics(theme),
   semanticContainer: {
@@ -18,20 +18,20 @@ const styles = theme => ({
     backgroundColor: theme.hv.palette.accent.acce0,
     "& > *": {
       position: "absolute",
-      zIndex: 1
-    }
+      zIndex: 1,
+    },
   },
   semanticBar: {
     width: "100%",
     height: 2,
     top: -1,
-    right: 0
+    right: 0,
   },
 
   icon: {
     top: 0,
     right: 0,
-    transform: "translate(50%, -50%)"
+    transform: "translate(50%, -50%)",
   },
   cardOutLine: {
     width: "98%",
@@ -42,31 +42,31 @@ const styles = theme => ({
     top: 0,
     left: "0.5%",
     backgroundColor: "transparent",
-    display: "none"
+    display: "none",
   },
   upperAreaReference: {
-    position: "relative"
+    position: "relative",
   },
   upperAreaSelectable: {
-    cursor: "pointer"
+    cursor: "pointer",
   },
   selectable: {
     "&:hover": {
-      outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
-    }
+      outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    },
   },
   selected: {
     outline: `1px solid ${theme.hv.palette.accent.acce1}`,
     "&:hover": {
-      outline: `1px solid ${theme.hv.palette.accent.acce1}`
+      outline: `1px solid ${theme.hv.palette.accent.acce1}`,
     },
     "& $semanticBar": {
-      height: 4
+      height: 4,
     },
     "& $sema0": {
-      backgroundColor: theme.palette.acce1
-    }
-  }
+      backgroundColor: theme.palette.acce1,
+    },
+  },
 });
 
 export default styles;

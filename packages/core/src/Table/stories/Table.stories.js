@@ -14,9 +14,9 @@ export default {
   parameters: {
     v3: true,
     componentSubtitle: null,
-    usage: "import { HvTable } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvTable } from '@hv/uikit-react-core/dist'",
   },
-  component: HvTable
+  component: HvTable,
 };
 
 export const Main = () => {
@@ -32,7 +32,7 @@ export const Main = () => {
       priority: "Critical",
       link: { displayText: "Asset 1", url: "blablabla" },
       subElementTitle: "cell_1",
-      subElementTitle2: "cell_2"
+      subElementTitle2: "cell_2",
     },
     {
       id: 13,
@@ -43,7 +43,7 @@ export const Main = () => {
       riskScore: "90",
       severity: "Catastrophic",
       priority: "High",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 12,
@@ -54,7 +54,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 11,
@@ -65,7 +65,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Low",
       priority: "Low",
-      link: { displayText: "Asset 3", url: "blablabla" }
+      link: { displayText: "Asset 3", url: "blablabla" },
     },
     {
       id: 10,
@@ -76,7 +76,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 8,
@@ -87,7 +87,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 7,
@@ -98,7 +98,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 6,
@@ -109,7 +109,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 5,
@@ -120,7 +120,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 4,
@@ -131,7 +131,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 3,
@@ -142,7 +142,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 2,
@@ -153,7 +153,7 @@ export const Main = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 1,
@@ -164,8 +164,8 @@ export const Main = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
-    }
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
   ];
 
   const getColumns = () => [
@@ -181,62 +181,62 @@ export const Main = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric"
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
       cellType: "alpha-numeric",
-      sortable: false
+      sortable: false,
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
       fixed: "right",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
 
   const [pageSize, setPageSize] = useState(10);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
@@ -270,62 +270,62 @@ export const Empty = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric"
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
       cellType: "alpha-numeric",
-      sortable: false
+      sortable: false,
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
       fixed: "right",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
 
   const [pageSize, setPageSize] = useState(0);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
@@ -349,9 +349,9 @@ Empty.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Table sample without data."
-    }
-  }
+      storyDescription: "Table sample without data.",
+    },
+  },
 };
 
 export const CustomEmpty = () => {
@@ -368,70 +368,70 @@ export const CustomEmpty = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric"
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
       cellType: "alpha-numeric",
-      sortable: false
+      sortable: false,
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
       fixed: "right",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
 
   const [pageSize, setPageSize] = useState(0);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
   const NoDataComponent = () => {
     const useStyles = makeStyles({
       root: {
-        padding: "30px"
-      }
+        padding: "30px",
+      },
     });
     const classes = useStyles();
     return (
@@ -465,9 +465,9 @@ CustomEmpty.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Table sample without data."
-    }
-  }
+      storyDescription: "Table sample without data.",
+    },
+  },
 };
 
 export const WithExpander = () => {
@@ -483,7 +483,7 @@ export const WithExpander = () => {
       priority: "Critical",
       link: { displayText: "Asset 1", url: "blablabla" },
       subElementTitle: "cell_1",
-      subElementTitle2: "cell_2"
+      subElementTitle2: "cell_2",
     },
     {
       id: 13,
@@ -494,7 +494,7 @@ export const WithExpander = () => {
       riskScore: "90",
       severity: "Catastrophic",
       priority: "High",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 12,
@@ -505,7 +505,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 11,
@@ -516,7 +516,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Low",
       priority: "Low",
-      link: { displayText: "Asset 3", url: "blablabla" }
+      link: { displayText: "Asset 3", url: "blablabla" },
     },
     {
       id: 10,
@@ -527,7 +527,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 8,
@@ -538,7 +538,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 7,
@@ -549,7 +549,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 6,
@@ -560,7 +560,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 5,
@@ -571,7 +571,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 4,
@@ -582,7 +582,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 3,
@@ -593,7 +593,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 2,
@@ -604,7 +604,7 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 1,
@@ -615,8 +615,8 @@ export const WithExpander = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
-    }
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
   ];
 
   const getColumns = () => [
@@ -632,66 +632,66 @@ export const WithExpander = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric"
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
       cellType: "alpha-numeric",
-      sortable: false
+      sortable: false,
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
       fixed: "right",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
 
   const [pageSize, setPageSize] = useState(10);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
-  const subElementTemplate = row => (
+  const subElementTemplate = (row) => (
     <div>
       <table>
         <tr>
@@ -727,9 +727,9 @@ WithExpander.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Table sample that shows the ability to add an expander."
-    }
-  }
+      storyDescription: "Table sample that shows the ability to add an expander.",
+    },
+  },
 };
 
 export const WithExpanderAndCustomContent = () => {
@@ -744,7 +744,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 18649,
       totalThroughput: 1963.28,
       averageServiceTime: 1.2,
-      averageReadTime: 1.83
+      averageReadTime: 1.83,
     },
     {
       id: 2,
@@ -756,7 +756,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 8652,
       totalThroughput: 1013.01,
       averageServiceTime: 5.16,
-      averageReadTime: 1.45
+      averageReadTime: 1.45,
     },
     {
       id: 4,
@@ -768,7 +768,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 10459,
       totalThroughput: 923.65,
       averageServiceTime: 1.38,
-      averageReadTime: 1.05
+      averageReadTime: 1.05,
     },
     {
       id: 5,
@@ -780,7 +780,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 10459,
       totalThroughput: 923.65,
       averageServiceTime: 1.38,
-      averageReadTime: 1.05
+      averageReadTime: 1.05,
     },
     {
       id: 6,
@@ -792,7 +792,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 10459,
       totalThroughput: 923.65,
       averageServiceTime: 1.38,
-      averageReadTime: 1.05
+      averageReadTime: 1.05,
     },
     {
       id: 7,
@@ -804,7 +804,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 18649,
       totalThroughput: 1963.28,
       averageServiceTime: 1.2,
-      averageReadTime: 1.83
+      averageReadTime: 1.83,
     },
     {
       id: 8,
@@ -816,7 +816,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 8652,
       totalThroughput: 1013.01,
       averageServiceTime: 5.16,
-      averageReadTime: 1.45
+      averageReadTime: 1.45,
     },
     {
       id: 9,
@@ -828,7 +828,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 10459,
       totalThroughput: 923.65,
       averageServiceTime: 1.38,
-      averageReadTime: 1.05
+      averageReadTime: 1.05,
     },
     {
       id: 10,
@@ -840,7 +840,7 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 10459,
       totalThroughput: 923.65,
       averageServiceTime: 1.38,
-      averageReadTime: 1.05
+      averageReadTime: 1.05,
     },
     {
       id: 11,
@@ -852,61 +852,61 @@ export const WithExpanderAndCustomContent = () => {
       totalIOPS: 10459,
       totalThroughput: 923.65,
       averageServiceTime: 1.38,
-      averageReadTime: 1.05
-    }
+      averageReadTime: 1.05,
+    },
   ];
 
   const getColumns = () => [
     {
       headerText: "Data Center",
       accessor: "dataCenter",
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Storage segment",
       width: 120,
       accessor: "storageSegment",
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Storage array",
       accessor: "storageArray",
-      cellType: "numeric"
+      cellType: "numeric",
     },
     {
       headerText: "Average compression rt",
       accessor: "averageCompression",
       minWidth: 150,
       cellType: "numeric",
-      Cell: cellData => `${cellData.row._original.averageCompression}:1`
+      Cell: (cellData) => `${cellData.row._original.averageCompression}:1`,
     },
     {
       headerText: "Total IOPS",
       accessor: "totalIOPS",
       cellType: "numeric",
-      Cell: cellData => cellData.row._original.totalIOPS.toLocaleString("en-US")
+      Cell: (cellData) => cellData.row._original.totalIOPS.toLocaleString("en-US"),
     },
     {
       headerText: "Total throughput",
       accessor: "totalThroughput",
       minWidth: 130,
       cellType: "numeric",
-      Cell: cellData => `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`
+      Cell: (cellData) => `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`,
     },
     {
       headerText: "Average service time",
       accessor: "averageServiceTime",
       minWidth: 130,
       cellType: "numeric",
-      Cell: cellData => `${cellData.row._original.averageServiceTime} ms`
+      Cell: (cellData) => `${cellData.row._original.averageServiceTime} ms`,
     },
     {
       headerText: "Average read time",
       accessor: "averageReadTime",
       minWidth: 130,
       cellType: "numeric",
-      Cell: cellData => `${cellData.row._original.averageReadTime} ms`
-    }
+      Cell: (cellData) => `${cellData.row._original.averageReadTime} ms`,
+    },
   ];
 
   const defaultSorted = [{ id: "name", desc: true }];
@@ -972,13 +972,13 @@ WithExpanderAndCustomContent.story = {
     v3: true,
     docs: {
       storyDescription:
-        "Table sample that shows the ability to add a complex expander and custom cell."
+        "Table sample that shows the ability to add a complex expander and custom cell.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };
 
 export const WithCheckbox = () => {
@@ -994,7 +994,7 @@ export const WithCheckbox = () => {
       priority: "Critical",
       link: { displayText: "Asset 1", url: "blablabla" },
       subElementTitle: "cell_1",
-      subElementTitle2: "cell_2"
+      subElementTitle2: "cell_2",
     },
     {
       pid: 13,
@@ -1005,7 +1005,7 @@ export const WithCheckbox = () => {
       riskScore: "90",
       severity: "Catastrophic",
       priority: "High",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       pid: 12,
@@ -1016,7 +1016,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 11,
@@ -1027,7 +1027,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Low",
       priority: "Low",
-      link: { displayText: "Asset 3", url: "blablabla" }
+      link: { displayText: "Asset 3", url: "blablabla" },
     },
     {
       pid: 10,
@@ -1038,7 +1038,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       pid: 8,
@@ -1049,7 +1049,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 7,
@@ -1060,7 +1060,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 6,
@@ -1071,7 +1071,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       pid: 5,
@@ -1082,7 +1082,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 4,
@@ -1093,7 +1093,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 3,
@@ -1104,7 +1104,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 2,
@@ -1115,7 +1115,7 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 1,
@@ -1126,8 +1126,8 @@ export const WithCheckbox = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
-    }
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
   ];
 
   const getColumns = () => [
@@ -1143,75 +1143,75 @@ export const WithCheckbox = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric"
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
       fixed: "right",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
 
   const [data, setData] = useState(initialData);
   const [pageSize, setPageSize] = useState(10);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
   const actions = [
     { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
     { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> }
+    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
   ];
 
   const handleAction = (event, id, action, selection = []) => {
     switch (action.id) {
       case "delete":
-        setData(data.filter(el => !selection.includes(el.pid)));
+        setData(data.filter((el) => !selection.includes(el.pid)));
         break;
       default:
         break;
@@ -1242,9 +1242,9 @@ WithCheckbox.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Table sample that shows the ability to add checkboxes."
-    }
-  }
+      storyDescription: "Table sample that shows the ability to add checkboxes.",
+    },
+  },
 };
 
 export const WithCheckboxCustomContent = () => {
@@ -1256,7 +1256,7 @@ export const WithCheckboxCustomContent = () => {
       sales: "2871.0",
       salesGrowth: "925.7",
       orderNumber: "10100",
-      color: "red"
+      color: "red",
     },
     {
       id: 2,
@@ -1265,7 +1265,7 @@ export const WithCheckboxCustomContent = () => {
       sales: "2765.9",
       salesGrowth: "119.3",
       orderNumber: "10100",
-      color: "orange"
+      color: "orange",
     },
     {
       id: 3,
@@ -1274,7 +1274,7 @@ export const WithCheckboxCustomContent = () => {
       sales: "3884.3",
       salesGrowth: "94.7",
       orderNumber: "10101",
-      color: "blue"
+      color: "blue",
     },
     {
       id: 4,
@@ -1283,7 +1283,7 @@ export const WithCheckboxCustomContent = () => {
       sales: "3746.7",
       salesGrowth: "30.2",
       orderNumber: "10102",
-      color: "yellow"
+      color: "yellow",
     },
     {
       id: 5,
@@ -1292,34 +1292,38 @@ export const WithCheckboxCustomContent = () => {
       sales: "5205.3",
       salesGrowth: "1000.6",
       orderNumber: "10102",
-      color: "green"
-    }
+      color: "green",
+    },
   ];
 
   const getColumns = () => [
     {
       headerText: "Customer",
       accessor: "customer",
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Dealsize",
       accessor: "dealSize",
-      cellType: "numeric"
+      cellType: "numeric",
     },
     {
       headerText: "Sales",
       accessor: "sales",
-      cellType: "numeric"
+      cellType: "numeric",
     },
     {
       headerText: "Sales Growth",
       cellType: "numeric",
       minWidth: 170,
-      Cell: cellData => {
+      Cell: (cellData) => {
         const value = [
           [" ", " ", { role: "style" }],
-          [" ", Number(cellData.row._original.salesGrowth), `color:${cellData.row._original.color}`]
+          [
+            " ",
+            Number(cellData.row._original.salesGrowth),
+            `color:${cellData.row._original.color}`,
+          ],
         ];
         return (
           <div style={{ display: "flex" }}>
@@ -1335,27 +1339,27 @@ export const WithCheckboxCustomContent = () => {
                   legend: "none",
                   hAxis: {
                     minValue: 0,
-                    maxValue: 1001
+                    maxValue: 1001,
                   },
-                  backgroundColor: "transparent"
+                  backgroundColor: "transparent",
                 }}
               />
             </div>
           </div>
         );
-      }
+      },
     },
     {
       headerText: "Order Number",
       accessor: "orderNumber",
-      cellType: "numeric"
-    }
+      cellType: "numeric",
+    },
   ];
 
   const [pageSize, setPageSize] = useState(10);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
@@ -1379,13 +1383,13 @@ WithCheckboxCustomContent.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Table sample that shows the ability to add use a checkbox."
+      storyDescription: "Table sample that shows the ability to add use a checkbox.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };
 
 export const WithCheckboxAndSecondaryActions = () => {
@@ -1401,7 +1405,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       priority: "Critical",
       link: { displayText: "Asset 1", url: "blablabla" },
       subElementTitle: "cell_1",
-      subElementTitle2: "cell_2"
+      subElementTitle2: "cell_2",
     },
     {
       pid: 13,
@@ -1412,7 +1416,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "90",
       severity: "Catastrophic",
       priority: "High",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       pid: 12,
@@ -1423,7 +1427,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 11,
@@ -1434,7 +1438,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Low",
       priority: "Low",
-      link: { displayText: "Asset 3", url: "blablabla" }
+      link: { displayText: "Asset 3", url: "blablabla" },
     },
     {
       pid: 10,
@@ -1445,7 +1449,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       pid: 8,
@@ -1456,7 +1460,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 7,
@@ -1467,7 +1471,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 6,
@@ -1478,7 +1482,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       pid: 5,
@@ -1490,7 +1494,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       severity: "Critical",
       priority: "Critical",
       link: { displayText: "Asset 1", url: "blablabla" },
-      noActions: true
+      noActions: true,
     },
     {
       pid: 4,
@@ -1501,7 +1505,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 3,
@@ -1513,7 +1517,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       severity: "Major",
       priority: "High",
       link: { displayText: "Asset 1", url: "blablabla" },
-      noActions: true
+      noActions: true,
     },
     {
       pid: 2,
@@ -1524,7 +1528,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       pid: 1,
@@ -1536,8 +1540,8 @@ export const WithCheckboxAndSecondaryActions = () => {
       severity: "Critical",
       priority: "Critical",
       link: { displayText: "Asset 1", url: "blablabla" },
-      noActions: true
-    }
+      noActions: true,
+    },
   ];
 
   const getColumns = () => [
@@ -1553,60 +1557,60 @@ export const WithCheckboxAndSecondaryActions = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
-      fixed: "left"
+      fixed: "left",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
   const [pageSize, setPageSize] = useState(10);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
@@ -1627,20 +1631,20 @@ export const WithCheckboxAndSecondaryActions = () => {
             label: "Share",
             action: (event, value) => {
               alert(`Sharing ${JSON.stringify(value)}`);
-            }
+            },
           },
           {
             label: "Hide",
             action: (event, value) => {
               alert(`Hiding ${JSON.stringify(value)}`);
-            }
+            },
           },
           {
             label: "Remove",
             action: (event, value) => {
               alert(`Removing ${JSON.stringify(value)}`);
-            }
-          }
+            },
+          },
         ]}
       />
     </div>
@@ -1651,9 +1655,9 @@ WithCheckboxAndSecondaryActions.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Table sample that shows the ability to add a secondary action column."
-    }
-  }
+      storyDescription: "Table sample that shows the ability to add a secondary action column.",
+    },
+  },
 };
 
 export const WithNullValues = () => {
@@ -1669,7 +1673,7 @@ export const WithNullValues = () => {
       priority: "Critical",
       link: { displayText: "Asset 1", url: "blablabla" },
       subElementTitle: "cell_1",
-      subElementTitle2: "cell_2"
+      subElementTitle2: "cell_2",
     },
     {
       id: 13,
@@ -1680,7 +1684,7 @@ export const WithNullValues = () => {
       riskScore: "90",
       severity: "Catastrophic",
       priority: "High",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 12,
@@ -1691,7 +1695,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 11,
@@ -1702,7 +1706,7 @@ export const WithNullValues = () => {
       riskScore: null,
       severity: "Low",
       priority: "Low",
-      link: { displayText: "Asset 3", url: "blablabla" }
+      link: { displayText: "Asset 3", url: "blablabla" },
     },
     {
       id: 10,
@@ -1713,7 +1717,7 @@ export const WithNullValues = () => {
       riskScore: null,
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 8,
@@ -1724,7 +1728,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 7,
@@ -1735,7 +1739,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 6,
@@ -1746,7 +1750,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 5,
@@ -1757,7 +1761,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Critical",
       priority: null,
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 4,
@@ -1768,7 +1772,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 3,
@@ -1779,7 +1783,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 2,
@@ -1790,7 +1794,7 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: null,
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 1,
@@ -1801,8 +1805,8 @@ export const WithNullValues = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
-    }
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
   ];
 
   const getColumns = () => [
@@ -1818,60 +1822,60 @@ export const WithNullValues = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
-      fixed: "left"
+      fixed: "left",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
   const [pageSize, setPageSize] = useState(10);
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const onPageSizeChange = newPageSize => {
+  const onPageSizeChange = (newPageSize) => {
     setPageSize(newPageSize);
   };
 
@@ -1895,9 +1899,9 @@ WithNullValues.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Table sample with that has cell values that are null."
-    }
-  }
+      storyDescription: "Table sample with that has cell values that are null.",
+    },
+  },
 };
 
 export const TableWithChangingData = () => {
@@ -1912,7 +1916,7 @@ export const TableWithChangingData = () => {
     { id: 7, name: "Katherine", surname: "Kubrick", email: "kubrick@mail.com" },
     { id: 8, name: "Peter", surname: "Portland", email: "portland@mail.com" },
     { id: 9, name: "Yuri", surname: "York", email: "york@mail.com" },
-    { id: 10, name: "Howard", surname: "Holmes", email: "holmes@mail.com" }
+    { id: 10, name: "Howard", surname: "Holmes", email: "holmes@mail.com" },
   ];
 
   const [enabledUsers, setEnabledUsers] = useState(initialData.slice(0, 5));
@@ -1924,37 +1928,37 @@ export const TableWithChangingData = () => {
       headerText: "ID",
       accessor: "id",
       cellType: "alpha-numeric",
-      width: 40
+      width: 40,
     },
     {
       headerText: "Name",
       accessor: "name",
       cellType: "alpha-numeric",
-      fixed: "left"
+      fixed: "left",
     },
     {
       headerText: "Surname",
       accessor: "surname",
       cellType: "alpha-numeric",
-      fixed: "left"
+      fixed: "left",
     },
     {
       headerText: "Email",
       accessor: "email",
       cellType: "alpha-numeric",
-      fixed: "left"
-    }
+      fixed: "left",
+    },
   ];
 
   const handleBulkDisable = (event, id, action, selection = []) => {
-    const elementsToMove = initialData.filter(el => selection.includes(el.id));
+    const elementsToMove = initialData.filter((el) => selection.includes(el.id));
     setDisabledUsers([...disabledUsers, ...elementsToMove]);
-    setEnabledUsers(enabledUsers.filter(el => !selection.includes(el.id)));
+    setEnabledUsers(enabledUsers.filter((el) => !selection.includes(el.id)));
   };
   const handleBulkEnable = (event, id, action, selection) => {
-    const elementsToMove = initialData.filter(el => selection.includes(el.id));
+    const elementsToMove = initialData.filter((el) => selection.includes(el.id));
     setEnabledUsers([...enabledUsers, ...elementsToMove]);
-    setDisabledUsers(disabledUsers.filter(el => !selection.includes(el.id)));
+    setDisabledUsers(disabledUsers.filter((el) => !selection.includes(el.id)));
   };
 
   const useStyles = makeStyles({
@@ -1963,9 +1967,9 @@ export const TableWithChangingData = () => {
       justifyContent: "space-evenly",
       "&>*": {
         flexGrow: 1,
-        margin: 20
-      }
-    }
+        margin: 20,
+      },
+    },
   });
   const classes = useStyles();
 
@@ -1982,8 +1986,8 @@ export const TableWithChangingData = () => {
         secondaryActions={[
           {
             label: "Disable",
-            action: (event, row) => handleBulkDisable(null, null, null, [row.id])
-          }
+            action: (event, row) => handleBulkDisable(null, null, null, [row.id]),
+          },
         ]}
         labels={{ titleText: "Enabled users" }}
       />
@@ -1998,8 +2002,8 @@ export const TableWithChangingData = () => {
         secondaryActions={[
           {
             label: "Enable",
-            action: (event, row) => handleBulkEnable(null, null, null, [row.id])
-          }
+            action: (event, row) => handleBulkEnable(null, null, null, [row.id]),
+          },
         ]}
         labels={{ titleText: "Disabled users" }}
       />
@@ -2011,16 +2015,16 @@ TableWithChangingData.story = {
   parameters: {
     v3: true,
     docs: {
-      storyDescription: "Sample showcasing the table component behavior with changing data."
-    }
-  }
+      storyDescription: "Sample showcasing the table component behavior with changing data.",
+    },
+  },
 };
 
 export const ServerSidePagination = () => {
   const start = new Date(2001, 0);
   const end = new Date(2020, 0);
 
-  const getRand = id => (Math.abs(Math.sin(id)) * 10 ** 4) % 1;
+  const getRand = (id) => (Math.abs(Math.sin(id)) * 10 ** 4) % 1;
   const getRandom = (id = 0, max = 100, min = 1) => {
     const r = getRand(id);
     return Math.floor(r * (max - min)) + min;
@@ -2040,7 +2044,7 @@ export const ServerSidePagination = () => {
       status: (status > 0.66 && "Open") || (status > 0.33 && "Pending") || "Closed",
       riskScore: getRandom(id),
       severity: (severity > 0.66 && "Critical") || (severity > 0.33 && "Moderate") || "Low",
-      priority: (priority > 0.66 && "Critical") || (priority > 0.33 && "Moderate") || "Low"
+      priority: (priority > 0.66 && "Critical") || (priority > 0.33 && "Moderate") || "Low",
     };
   };
 
@@ -2052,28 +2056,28 @@ export const ServerSidePagination = () => {
     console.log("Fetch data: sorted -> ", JSON.stringify(sorted));
     console.log("Fetch data: pageSize -> ", JSON.stringify(pageSize));
     console.log("Fetch data: cursor -> ", JSON.stringify(cursor));
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       // You can retrieve your data however you want, in this case, we will just use some local data.
       const filteredData = serverData;
       // You can also use the sorting in your request, but again, you are responsible for applying it.
       const sortedData = orderBy(
         filteredData,
-        sorted.map(sort => {
-          return row => {
+        sorted.map((sort) => {
+          return (row) => {
             if (row[sort.id] === null || row[sort.id] === undefined) {
               return -Infinity;
             }
             return typeof row[sort.id] === "string" ? row[sort.id].toLowerCase() : row[sort.id];
           };
         }),
-        sorted.map(d => (d.desc ? "desc" : "asc"))
+        sorted.map((d) => (d.desc ? "desc" : "asc"))
       );
       // You must return an object containing the rows of the current page, and optionally the total pages number.
       const res = {
         cursor,
         rows: sortedData.slice(Number(cursor), Number(cursor) + pageSize),
         pages: Math.ceil(filteredData.length / pageSize),
-        dataSize: sortedData.length
+        dataSize: sortedData.length,
       };
       // Here we'll simulate a server response with 500ms of delay.
       setTimeout(() => resolve(res), 500);
@@ -2090,7 +2094,7 @@ export const ServerSidePagination = () => {
         cursor: undefined,
         sorted: [{ id: "name", desc: true }],
         dataSize: 10,
-        pageSize: 10
+        pageSize: 10,
       };
       this.fetchData = this.fetchData.bind(this);
     }
@@ -2113,53 +2117,53 @@ export const ServerSidePagination = () => {
           const aReverse = Number(a.split(" ")[1]);
           const bReverse = Number(b.split(" ")[1]);
           return aReverse > bReverse ? 1 : -1;
-        }
+        },
       },
       {
         headerText: "Time",
         accessor: "createdDate",
-        format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
-        cellType: "numeric"
+        format: (value) => moment(value.original.createdDate).format("MM/DD/YYYY"),
+        cellType: "numeric",
       },
       {
         headerText: "Status",
         accessor: "status",
-        format: value => value.original.status.toLowerCase(),
+        format: (value) => value.original.status.toLowerCase(),
         style: { textTransform: "capitalize" },
-        cellType: "alpha-numeric"
+        cellType: "alpha-numeric",
       },
       {
         headerText: "Probability",
         accessor: "riskScore",
-        format: value => `${value.original.riskScore}%`,
-        cellType: "numeric"
+        format: (value) => `${value.original.riskScore}%`,
+        cellType: "numeric",
       },
       {
         headerText: "Severity",
         accessor: "severity",
-        format: value => value.original.severity.toLowerCase(),
+        format: (value) => value.original.severity.toLowerCase(),
         style: { textTransform: "capitalize" },
         cellType: "alpha-numeric",
-        sortable: false
+        sortable: false,
       },
       {
         headerText: "Priority",
         accessor: "priority",
-        format: value => value.original.priority.toLowerCase(),
+        format: (value) => value.original.priority.toLowerCase(),
         style: { textTransform: "capitalize" },
-        cellType: "alpha-numeric"
-      }
+        cellType: "alpha-numeric",
+      },
     ];
 
-    onPageSizeChange = newPageSize => {
+    onPageSizeChange = (newPageSize) => {
       this.setState({
-        pageSize: newPageSize
+        pageSize: newPageSize,
       });
     };
 
     handleAction = (event, id, action, selection = []) => {
       const { pageSize, cursor, sorted } = this.state;
-      serverData = serverData.filter(el => !selection.includes(el.id));
+      serverData = serverData.filter((el) => !selection.includes(el.id));
       this.fetchData(cursor, pageSize, sorted);
     };
 
@@ -2167,13 +2171,13 @@ export const ServerSidePagination = () => {
       // Whenever the table model changes, or the user sorts or changes pages, this method gets called and passed the current table model.
       // You can set the `loading` prop of the table to true to use the built-in one or show you're own loading bar if you want.
       // Request the data however you want.  Here, we'll use our mocked service we created earlier
-      requestData(pageSize, cursor, sorted).then(res => {
+      requestData(pageSize, cursor, sorted).then((res) => {
         // Now just get the rows of data to your React Table (and update anything else like total pages or loading)
         this.setState({
           cursor: res.cursor,
           data: res.rows,
           pages: res.pages,
-          dataSize: res.dataSize
+          dataSize: res.dataSize,
         });
       });
     }
@@ -2211,9 +2215,9 @@ ServerSidePagination.story = {
     v3: true,
     docs: {
       storyDescription:
-        "Table sample that shows how to use the table with server side pagination. Bulk Actions"
-    }
-  }
+        "Table sample that shows how to use the table with server side pagination. Bulk Actions",
+    },
+  },
 };
 
 export const ConditionalPaginationDisplay = () => {
@@ -2227,7 +2231,7 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 7,
@@ -2238,7 +2242,7 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 6,
@@ -2249,7 +2253,7 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Moderate",
       priority: "Medium",
-      link: { displayText: "Asset 2", url: "blablabla" }
+      link: { displayText: "Asset 2", url: "blablabla" },
     },
     {
       id: 5,
@@ -2260,7 +2264,7 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 4,
@@ -2271,7 +2275,7 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 3,
@@ -2282,7 +2286,7 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Major",
       priority: "High",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 2,
@@ -2293,7 +2297,7 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
+      link: { displayText: "Asset 1", url: "blablabla" },
     },
     {
       id: 1,
@@ -2304,8 +2308,8 @@ export const ConditionalPaginationDisplay = () => {
       riskScore: "98",
       severity: "Critical",
       priority: "Critical",
-      link: { displayText: "Asset 1", url: "blablabla" }
-    }
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
   ];
 
   const getColumns = () => [
@@ -2321,56 +2325,56 @@ export const ConditionalPaginationDisplay = () => {
         const aReverse = Number(a.split(" ")[1]);
         const bReverse = Number(b.split(" ")[1]);
         return aReverse > bReverse ? 1 : -1;
-      }
+      },
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric"
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Probability",
       accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
     },
     {
       headerText: "Severity",
       accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
+      format: (value) => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
       cellType: "alpha-numeric",
-      sortable: false
+      sortable: false,
     },
     {
       headerText: "Priority",
       accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
+      format: (value) => value.original.priority.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Asset",
       accessor: "asset",
       cellType: "link",
       fixed: "right",
-      sortable: false
-    }
+      sortable: false,
+    },
   ];
 
   return (
@@ -2391,7 +2395,7 @@ ConditionalPaginationDisplay.story = {
     v3: true,
     docs: {
       storyDescription:
-        "Table pagination control conditionally displayed. In this case, when there are not enough records for multiple pages, Pagination can be disabled"
-    }
-  }
+        "Table pagination control conditionally displayed. In this case, when there are not enough records for multiple pages, Pagination can be disabled",
+    },
+  },
 };

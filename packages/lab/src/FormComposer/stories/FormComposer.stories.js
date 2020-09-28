@@ -9,9 +9,9 @@ export default {
   title: "Lab/FormComposer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFormComposer } from '@hv/uikit-react-lab/dist'"
+    usage: "import { HvFormComposer } from '@hv/uikit-react-lab/dist'",
   },
-  component: HvFormComposer
+  component: HvFormComposer,
 };
 
 /**
@@ -21,13 +21,13 @@ export const Main = () => {
   const inputTextConfiguration = {
     inputLabel: "Default",
     placeholder: "Placeholder value",
-    infoText: "Info text is here"
+    infoText: "Info text is here",
   };
 
-  const inputStyles = theme => ({
+  const inputStyles = (theme) => ({
     root: {
-      padding: `${theme.hv.spacing.xs}px 0`
-    }
+      padding: `${theme.hv.spacing.xs}px 0`,
+    },
   });
 
   const CustomInput = withStyles(inputStyles)(HvInput);
@@ -39,7 +39,7 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 1"
+            inputLabel: "Input 1",
           }}
           name="input1"
           onChange={(event, value) => value}
@@ -48,12 +48,12 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 2"
+            inputLabel: "Input 2",
           }}
           name="input2"
           initialValue="Some text 2"
-        />
-      ]
+        />,
+      ],
     },
     {
       title: "Group2",
@@ -61,7 +61,7 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 3"
+            inputLabel: "Input 3",
           }}
           name="input3"
           initialValue="Some text 3"
@@ -69,11 +69,11 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 4"
+            inputLabel: "Input 4",
           }}
           name="input4"
-        />
-      ]
+        />,
+      ],
     },
     {
       title: "Group3",
@@ -81,18 +81,18 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 5"
+            inputLabel: "Input 5",
           }}
           name="input5"
         />,
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 6"
+            inputLabel: "Input 6",
           }}
           name="input6"
-        />
-      ]
+        />,
+      ],
     },
     {
       title: "Group4",
@@ -100,18 +100,18 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 7"
+            inputLabel: "Input 7",
           }}
           name="input7"
         />,
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 8"
+            inputLabel: "Input 8",
           }}
           name="input8"
-        />
-      ]
+        />,
+      ],
     },
     {
       title: "Group5",
@@ -119,18 +119,18 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 9"
+            inputLabel: "Input 9",
           }}
           name="input9"
         />,
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 10"
+            inputLabel: "Input 10",
           }}
           name="input10"
-        />
-      ]
+        />,
+      ],
     },
     {
       title: "Group6",
@@ -138,25 +138,25 @@ export const Main = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 11"
+            inputLabel: "Input 11",
           }}
           name="input11"
         />,
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 12"
+            inputLabel: "Input 12",
           }}
           name="input12"
-        />
-      ]
-    }
+        />,
+      ],
+    },
   ];
 
-  const buttonStyles = theme => ({
+  const buttonStyles = (theme) => ({
     root: {
-      marginLeft: `${theme.hv.spacing.sm}px`
-    }
+      marginLeft: `${theme.hv.spacing.sm}px`,
+    },
   });
 
   const CustomButton = withStyles(buttonStyles)(HvButton);
@@ -171,12 +171,12 @@ export const Main = () => {
       Cancel
     </CustomButton>,
     <CustomButton
-      onClick={componentValues => {
+      onClick={(componentValues) => {
         console.log(componentValues);
       }}
     >
       Save
-    </CustomButton>
+    </CustomButton>,
   ];
 
   return (
@@ -194,32 +194,32 @@ export const WithComposition = () => {
   const inputTextConfiguration = {
     inputLabel: "Default",
     placeholder: "Placeholder value",
-    infoText: "Info text is here"
+    infoText: "Info text is here",
   };
 
   const data = [
     {
       label: "value 1",
-      selected: false
+      selected: false,
     },
     {
       label: "value 2",
-      selected: false
+      selected: false,
     },
     {
       label: "value 3",
-      selected: true
+      selected: true,
     },
     {
       label: "value 4",
-      selected: false
-    }
+      selected: false,
+    },
   ];
 
-  const inputStyles = theme => ({
+  const inputStyles = (theme) => ({
     container: {
-      padding: `${theme.hv.spacing.xs}px 0`
-    }
+      padding: `${theme.hv.spacing.xs}px 0`,
+    },
   });
 
   const CustomInput = withStyles(inputStyles)(HvInput);
@@ -231,7 +231,7 @@ export const WithComposition = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 1"
+            inputLabel: "Input 1",
           }}
           name="input1"
           onChange={(event, value) => value}
@@ -240,26 +240,26 @@ export const WithComposition = () => {
         <CustomInput
           labels={{
             ...inputTextConfiguration,
-            inputLabel: "Input 2"
+            inputLabel: "Input 2",
           }}
           name="input2"
           initialValue="Some text 2"
-        />
-      ]
+        />,
+      ],
     },
     {
       title: "Group 2 - Dropdown",
       children: [
         <HvDropdown name="dropdown1" values={data} multiSelect showSearch label="Dropdown 1" />,
-        <HvDropdown name="dropdown2" values={data} multiSelect showSearch label="Dropdown 2" />
-      ]
-    }
+        <HvDropdown name="dropdown2" values={data} multiSelect showSearch label="Dropdown 2" />,
+      ],
+    },
   ];
 
-  const buttonStyles = theme => ({
+  const buttonStyles = (theme) => ({
     root: {
-      marginLeft: `${theme.hv.spacing.sm}px`
-    }
+      marginLeft: `${theme.hv.spacing.sm}px`,
+    },
   });
 
   const CustomButton = withStyles(buttonStyles)(HvButton);
@@ -274,12 +274,12 @@ export const WithComposition = () => {
       Cancel
     </CustomButton>,
     <CustomButton
-      onClick={componentValues => {
+      onClick={(componentValues) => {
         console.log(componentValues);
       }}
     >
       Save
-    </CustomButton>
+    </CustomButton>,
   ];
 
   return (
@@ -296,7 +296,7 @@ export const WithComposition = () => {
 WithComposition.story = {
   parameters: {
     docs: {
-      storyDescription: "Example of the form composer using multiple components."
-    }
-  }
+      storyDescription: "Example of the form composer using multiple components.",
+    },
+  },
 };

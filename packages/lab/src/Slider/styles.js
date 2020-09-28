@@ -1,13 +1,13 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     "& .rc-slider-handle": {
       cursor: "pointer",
       marginTop: "-8px",
       "&:active": {
-        cursor: "grab"
-      }
+        cursor: "grab",
+      },
     },
-    zIndex: 0
+    zIndex: 0,
   },
   dot: {
     position: "absolute",
@@ -20,19 +20,19 @@ const styles = theme => ({
     backgroundColor: theme.hv.palette.atmosphere.atmo7,
     cursor: "pointer",
     verticalAlign: "middle",
-    zIndex: "-3"
+    zIndex: "-3",
   },
   rail: {
     backgroundColor: theme.hv.palette.atmosphere.atmo7,
     height: "1px",
-    zIndex: "-3"
+    zIndex: "-3",
   },
   knobInner: {
     borderColor: "transparent",
     boxShadow: "none",
     backgroundColor: theme.hv.palette.accent.acce1,
     width: "16px",
-    height: "16px"
+    height: "16px",
   },
   knobOuter: {
     position: "relative",
@@ -44,10 +44,10 @@ const styles = theme => ({
     height: "32px",
     top: "-80%",
     left: "-80%",
-    zIndex: "-1"
+    zIndex: "-1",
   },
   knobHidden: {
-    display: "none"
+    display: "none",
   },
   knobHiddenLast: {
     borderColor: "transparent",
@@ -59,18 +59,18 @@ const styles = theme => ({
     marginTop: "0px",
     left: "100%",
     touchAction: "none",
-    cursor: "default"
+    cursor: "default",
   },
   track: {
     backgroundColor: theme.hv.palette.accent.acce1,
     height: "3px",
     zIndex: "-1",
-    marginTop: "-1px"
+    marginTop: "-1px",
   },
   mark: {
     ...theme.hv.typography.vizText,
     fontFamily: theme.hv.typography.fontFamily,
-    top: "-2px"
+    top: "-2px",
   },
   sliderTooltip: {
     "& .rc-slider-tooltip-inner": {
@@ -82,12 +82,12 @@ const styles = theme => ({
       padding: `${theme.hv.spacing.sm}px`,
       ...theme.hv.typography.infoText,
       fontFamily: theme.hv.typography.fontFamily,
-      boxShadow: "none"
+      boxShadow: "none",
     },
     "& .rc-slider-tooltip-arrow": {
-      visibility: "hidden"
-    }
-  }
+      visibility: "hidden",
+    },
+  },
 });
 
 export default styles;

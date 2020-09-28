@@ -33,7 +33,7 @@ export const validateCharLength = (value, maxCharQuantity, minCharQuantity) => {
  * @param {Number || String} num - The value to test.
  * @returns {Boolean} - `true` if the value is a number `false` otherwise.
  */
-export const isNumeric = num =>
+export const isNumeric = (num) =>
   // to prevent Number( <spaces> ) = 0
   num.trim().length > 0 && !Number.isNaN(Number(num));
 
@@ -43,7 +43,7 @@ export const isNumeric = num =>
  * @param {String} email - The value to test.
  * @returns {Boolean} - `true` if the value is an email `false` otherwise.
  */
-export const isEmail = email => {
+export const isEmail = (email) => {
   const regexp = new RegExp(
     "^[^\\s]+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$"
   );

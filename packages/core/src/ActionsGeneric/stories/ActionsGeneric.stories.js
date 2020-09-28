@@ -7,21 +7,21 @@ export default {
   title: "Components/ActionsGeneric",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvActionsGeneric } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvActionsGeneric } from '@hv/uikit-react-core/dist'",
   },
   component: HvActionsGeneric,
   decorators: [
-    Story => (
+    (Story) => (
       <div
         style={{
           display: "flex",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => (
@@ -30,7 +30,7 @@ export const Main = () => (
       { id: "add", label: "Add", iconCallback: () => <Add /> },
       { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
       { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-      { id: "put", label: "Preview", iconCallback: () => <Preview /> }
+      { id: "put", label: "Preview", iconCallback: () => <Preview /> },
     ]}
     maxVisibleActions={2}
   />

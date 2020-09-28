@@ -19,9 +19,9 @@ const FlexDecorator = ({ children }) => {
       alignItems: "center",
       flexWrap: "wrap",
       "& > *": {
-        margin: "0 10px 5px 0"
-      }
-    }
+        margin: "0 10px 5px 0",
+      },
+    },
   });
 
   const classes = useStyles();
@@ -33,16 +33,16 @@ export default {
   title: "Patterns/Avatar",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAvatar } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvAvatar } from '@hv/uikit-react-core/dist'",
   },
   component: HvAvatar,
   decorators: [
-    Story => (
+    (Story) => (
       <FlexDecorator>
         <Story />
       </FlexDecorator>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => (
@@ -56,6 +56,7 @@ export const Main = () => (
   </>
 );
 
+// eslint-disable-next-line react/prop-types
 export const ImageAvatars = () => (
   <>
     <HvAvatar alt="Ben" src={man1} />
@@ -69,11 +70,12 @@ ImageAvatars.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Image avatars can be created by passing standard img props src or srcSet to the component."
-    }
-  }
+        "Image avatars can be created by passing standard img props src or srcSet to the component.",
+    },
+  },
 };
 
+// eslint-disable-next-line react/prop-types
 export const LetterAvatars = () => (
   <>
     <HvAvatar>BM</HvAvatar>
@@ -86,11 +88,12 @@ LetterAvatars.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Avatars containing simple characters can be created by passing a string as children."
-    }
-  }
+        "Avatars containing simple characters can be created by passing a string as children.",
+    },
+  },
 };
 
+// eslint-disable-next-line react/prop-types
 export const IconAvatars = () => (
   <>
     <HvAvatar>
@@ -112,11 +115,12 @@ IconAvatars.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Icon avatars are created by passing an icon as children. Its size and color aren't Avatar's responsibility."
-    }
-  }
+        "Icon avatars are created by passing an icon as children. Its size and color aren't Avatar's responsibility.",
+    },
+  },
 };
 
+// eslint-disable-next-line react/prop-types
 export const Fallbacks = () => (
   <>
     <HvAvatar id="fallback_to_children" alt="Clara Soul" src="/broken-image.jpg">
@@ -131,11 +135,12 @@ Fallbacks.story = {
   parameters: {
     docs: {
       storyDescription:
-        "If there is an error loading the avatar image, the component falls back to an alternative in the following order: the provided children, the first letter of the alt text and finally the generic User icon."
-    }
-  }
+        "If there is an error loading the avatar image, the component falls back to an alternative in the following order: the provided children, the first letter of the alt text and finally the generic User icon.",
+    },
+  },
 };
 
+// eslint-disable-next-line react/prop-types
 export const Sizes = () => (
   <>
     <HvAvatar backgroundColor="sema6" size="S">
@@ -152,11 +157,12 @@ Sizes.story = {
   parameters: {
     docs: {
       storyDescription:
-        "You can change the size of the avatar with the size property (S, M, L). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size."
-    }
-  }
+        "You can change the size of the avatar with the size property (S, M, L). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size.",
+    },
+  },
 };
 
+// eslint-disable-next-line react/prop-types
 export const Buttons = () => {
   const AvatarButton = ({ children, ...other }) => (
     <HvButton aria-label="Open the user profile" icon overrideIconColors={false} {...other}>
@@ -189,7 +195,7 @@ Buttons.story = {
   parameters: {
     docs: {
       storyDescription:
-        "You can change the component used for the root node, for instance for rendering a HvButton. All other properties are spread in the root node, such as event callbacks."
-    }
-  }
+        "You can change the component used for the root node, for instance for rendering a HvButton. All other properties are spread in the root node, such as event callbacks.",
+    },
+  },
 };

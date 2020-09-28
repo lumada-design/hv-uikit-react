@@ -7,7 +7,7 @@ import {
   Main,
   LimitedToFivePaths,
   LimitedToTwoPaths,
-  WithURL
+  WithURL,
 } from "../stories/BreadCrumb.stories";
 
 describe("Breadcrumb", () => {

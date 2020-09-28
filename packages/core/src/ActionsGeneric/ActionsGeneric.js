@@ -30,7 +30,7 @@ const ActionsGeneric = ({
         category={category}
         className={classes.button}
         disabled={actDisabled ?? disabled}
-        onClick={event => actionsCallback?.(event, id, action)}
+        onClick={(event) => actionsCallback?.(event, id, action)}
         startIcon={iconCallback?.({ isDisabled: disabled })}
         {...other}
       >
@@ -56,7 +56,7 @@ const ActionsGeneric = ({
           classes={{
             root: classes.dropDownMenu,
             icon: classes.dropDownMenuButton,
-            iconSelected: classes.dropDownMenuButtonSelected
+            iconSelected: classes.dropDownMenuButtonSelected,
           }}
           icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
@@ -74,7 +74,7 @@ const ActionsGeneric = ({
   return (
     <div
       className={clsx(className, classes.root, {
-        [classes.actionContainer]: actionOverflow
+        [classes.actionContainer]: actionOverflow,
       })}
       {...others}
     >
@@ -117,7 +117,7 @@ ActionsGeneric.propTypes = {
     /**
      * Styles applied to the DropDownMenu IconButton component when it is selected.
      */
-    dropDownMenuButtonSelected: PropTypes.string
+    dropDownMenuButtonSelected: PropTypes.string,
   }).isRequired,
   /**
    * Component identifier.
@@ -142,9 +142,9 @@ ActionsGeneric.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string,
         iconCallback: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       })
-    )
+    ),
   ]),
   /**
    *  The callback function ran when an action is triggered, receiving `action` as param
@@ -153,7 +153,7 @@ ActionsGeneric.propTypes = {
   /**
    *  The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
    */
-  maxVisibleActions: PropTypes.number
+  maxVisibleActions: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvActionsGeneric" })(ActionsGeneric);

@@ -6,30 +6,30 @@ export default {
   title: "Patterns/Action Bar/Action Container",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvActionContainer } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvActionContainer } from '@hv/uikit-react-core/dist'",
   },
-  component: HvActionContainer
+  component: HvActionContainer,
 };
 
 export const Main = () => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     container: {
       position: "relative",
       margin: "auto",
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
       height: "150px",
-      width: "400px"
+      width: "400px",
     },
     actionBar: {
       position: "absolute",
-      bottom: "0"
+      bottom: "0",
     },
     space: {
-      flex: 1
+      flex: 1,
     },
     buttonSeparator: {
-      marginRight: theme.hv.spacing.xs
-    }
+      marginRight: theme.hv.spacing.xs,
+    },
   }));
 
   const classes = useStyles();
@@ -58,24 +58,24 @@ export const Main = () => {
 };
 
 export const DualAction = () => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     container: {
       position: "relative",
       margin: "auto",
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
       height: "150px",
-      width: "400px"
+      width: "400px",
     },
     actionBar: {
       position: "absolute",
-      bottom: "0"
+      bottom: "0",
     },
     space: {
-      flex: 1
+      flex: 1,
     },
     buttonSeparator: {
-      marginRight: theme.hv.spacing.xs
-    }
+      marginRight: theme.hv.spacing.xs,
+    },
   }));
 
   const classes = useStyles();
@@ -100,30 +100,30 @@ export const DualAction = () => {
 DualAction.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the action bar pattern with only two actions."
-    }
-  }
+      storyDescription: "Showcasing the action bar pattern with only two actions.",
+    },
+  },
 };
 
 export const VariedActionBar = () => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     container: {
       position: "relative",
       margin: "auto",
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
       height: "150px",
-      width: "400px"
+      width: "400px",
     },
     actionBar: {
       position: "absolute",
-      bottom: "0"
+      bottom: "0",
     },
     space: {
-      flex: 1
+      flex: 1,
     },
     buttonSeparator: {
-      marginRight: theme.hv.spacing.xs
-    }
+      marginRight: theme.hv.spacing.xs,
+    },
   }));
 
   const classes = useStyles();
@@ -155,7 +155,7 @@ export const VariedActionBar = () => {
 VariedActionBar.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the action bar pattern with only two actions."
-    }
-  }
+      storyDescription: "Showcasing the action bar pattern with only two actions.",
+    },
+  },
 };

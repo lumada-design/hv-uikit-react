@@ -10,7 +10,7 @@ import styles from "./styles";
 /**
  * Component used to showcase the char counter of an input.
  */
-const HvCharCounter = props => {
+const HvCharCounter = (props) => {
   const {
     separator = "/",
     maxCharQuantity,
@@ -34,7 +34,7 @@ const HvCharCounter = props => {
       id={localId}
       className={clsx(className, classes.root, {
         [classes.counterDisabled]: localDisabled,
-        [classes.gutter]: !disableGutter
+        [classes.gutter]: !disableGutter,
       })}
       aria-live="polite"
       aria-disabled={localDisabled}
@@ -44,7 +44,7 @@ const HvCharCounter = props => {
         id={currentId}
         className={clsx({
           [classes.overloaded]: isOverloaded && !localDisabled,
-          [classes.counterDisabled]: localDisabled
+          [classes.counterDisabled]: localDisabled,
         })}
         variant="highlightText"
         component="label"
@@ -55,7 +55,7 @@ const HvCharCounter = props => {
         id={maxQuantityId}
         className={clsx({
           [classes.overloaded]: isOverloaded && !localDisabled,
-          [classes.counterDisabled]: localDisabled
+          [classes.counterDisabled]: localDisabled,
         })}
         variant="normalText"
         component="label"
@@ -94,7 +94,7 @@ HvCharCounter.propTypes = {
     /**
      * Separation for the counter.
      */
-    gutter: PropTypes.string
+    gutter: PropTypes.string,
   }).isRequired,
   /**
    * The string that separtes the current char quantity from the max quantity.
@@ -115,7 +115,7 @@ HvCharCounter.propTypes = {
   /**
    * If `true` the info message won't have margins.
    */
-  disableGutter: PropTypes.bool
+  disableGutter: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvCharCounter" })(HvCharCounter);

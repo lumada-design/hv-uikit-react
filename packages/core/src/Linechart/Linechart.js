@@ -28,7 +28,7 @@ const Linechart = ({
   const chartData = useMemo(() => applyDataDefaults(data, type), [data, type]);
   const chartLayout = useMemo(() => applyLayoutDefaults(layout, rangeSlider), [
     layout,
-    rangeSlider
+    rangeSlider,
   ]);
 
   return (
@@ -76,7 +76,7 @@ Linechart.propTypes = {
   /**
    * Defines it should present a range slider.
    */
-  rangeSlider: PropTypes.bool
+  rangeSlider: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvLinechart" })(Linechart);

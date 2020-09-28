@@ -1,6 +1,6 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    pointerEvents: "none"
+    pointerEvents: "none",
   },
   tooltip: {
     maxWidth: 532,
@@ -16,8 +16,8 @@ const styles = theme => ({
       textOverflow: "ellipsis",
       overflow: "hidden",
       wordBreak: "break-word",
-      color: theme.hv.palette.accent.acce1
-    }
+      color: theme.hv.palette.accent.acce1,
+    },
   },
   tooltipMulti: {
     maxWidth: 532,
@@ -32,40 +32,40 @@ const styles = theme => ({
       boxOrient: "vertical",
       textOverflow: "ellipsis",
       overflow: "hidden",
-      color: theme.hv.palette.accent.acce1
-    }
+      color: theme.hv.palette.accent.acce1,
+    },
   },
   popper: {
-    opacity: 1
+    opacity: 1,
   },
   title: {
     padding: "15px 20px",
-    borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
+    borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
   },
   valuesContainer: {
-    padding: `${theme.hv.spacing.sm}px`
+    padding: `${theme.hv.spacing.sm}px`,
   },
   values: {
     display: "flex",
     justifyContent: "space-between",
     paddingBottom: "10px",
     "&:last-child": {
-      paddingBottom: 0
-    }
+      paddingBottom: 0,
+    },
   },
   color: {
     width: `${theme.hv.spacing.xs}px`,
-    height: theme.hv.typography.vizText.lineHeight
+    height: theme.hv.typography.vizText.lineHeight,
   },
   separator: {
-    width: `${theme.hv.spacing.xs}px`
+    width: `${theme.hv.spacing.xs}px`,
   },
   separatorColor: {
-    width: "5px"
+    width: "5px",
   },
   valueWrapper: {
-    padding: `${theme.hv.spacing.sm}px`
-  }
+    padding: `${theme.hv.spacing.sm}px`,
+  },
 });
 
 export default styles;

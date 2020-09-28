@@ -15,19 +15,19 @@ const muiButton = {
     lineHeight: "14px",
     "&:hover,&:focus": {},
     "&:active": {},
-    "&$disabled": {}
+    "&$disabled": {},
   },
   sizeSmall: {
     fontSize: "14px",
-    padding: "7px 12px"
+    padding: "7px 12px",
   },
   containedPrimary: {
     "&$disabled": {
       backgroundColor: palette.primary.main,
       color: palette.primary.contrastText,
-      opacity: "0.5"
-    }
-  }
+      opacity: "0.5",
+    },
+  },
 };
 
 export default muiButton;

@@ -8,10 +8,10 @@ export default {
   title: "Patterns/LoginContainer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLoginContainer } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvLoginContainer } from '@hv/uikit-react-core/dist'",
   },
   component: HvLoginContainer,
-  decorators: [storyFn => <div style={{ display: "flex", height: "100vh" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ display: "flex", height: "100vh" }}>{storyFn()}</div>],
 };
 
 export const Main = () => {
@@ -65,7 +65,7 @@ export const CustomBackground = () => {
               { id: "id-1", label: "Domain 1" },
               { id: "id-2", label: "Domain 2" },
               { id: "id-3", label: "Domain 3" },
-              { id: "id-4", label: "Domain 4" }
+              { id: "id-4", label: "Domain 4" },
             ]}
           />
         </HvLabel>
@@ -85,7 +85,7 @@ export const CustomBackground = () => {
 CustomBackground.story = {
   parameters: {
     docs: {
-      storyDescription: "Login container with custom background."
-    }
-  }
+      storyDescription: "Login container with custom background.",
+    },
+  },
 };

@@ -9,7 +9,7 @@ import styles from "./styles";
 
 const Action = ({ className, classes, id, label = "", icon, onClick, ...others }) => {
   const handleKeyDown = useCallback(
-    event => {
+    (event) => {
       if (
         onClick == null ||
         (!isKeypress(event, KeyboardCodes.Enter) && !isKeypress(event, KeyboardCodes.SpaceBar))
@@ -55,7 +55,7 @@ Action.propTypes = {
     /**
      * Style applied when no icon is present.
      */
-    noIcon: PropTypes.string
+    noIcon: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the action.
@@ -72,7 +72,7 @@ Action.propTypes = {
   /**
    * Callback called when clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigationAction" })(Action);

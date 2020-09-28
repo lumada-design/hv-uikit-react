@@ -11,7 +11,7 @@ import React from "react";
  */
 const expander = (subElementTemplate, classes) => {
   return subElementTemplate
-    ? row => <div className={classes.subComponentContainer}>{subElementTemplate(row)}</div>
+    ? (row) => <div className={classes.subComponentContainer}>{subElementTemplate(row)}</div>
     : undefined;
 };
 

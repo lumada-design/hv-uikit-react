@@ -1,17 +1,17 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.xs}px`,
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
   },
   leftContainer: {
     alignSelf: "flex-start",
-    marginRight: "auto"
+    marginRight: "auto",
   },
   rightContainer: {
     alignSelf: "flex-end",
-    marginLeft: "auto"
-  }
+    marginLeft: "auto",
+  },
 });
 
 export default styles;

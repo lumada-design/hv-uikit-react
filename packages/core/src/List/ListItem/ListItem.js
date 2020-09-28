@@ -17,7 +17,7 @@ const applyClassNameAndStateToElement = (element, selected, disabled, onClick, c
       className: clsx(className, element?.props?.className),
       checked: !!selected,
       disabled,
-      onChange: evt => onClick?.(evt)
+      onChange: (evt) => onClick?.(evt),
     });
   }
 
@@ -27,7 +27,7 @@ const applyClassNameAndStateToElement = (element, selected, disabled, onClick, c
 const applyClassNameToElement = (element, className) => {
   if (element != null) {
     return React.cloneElement(element, {
-      className: clsx(className, element?.props?.className)
+      className: clsx(className, element?.props?.className),
     });
   }
 
@@ -37,7 +37,7 @@ const applyClassNameToElement = (element, className) => {
 /**
  * ListItem description/documentation paragraph
  */
-const HvListItem = props => {
+const HvListItem = (props) => {
   const {
     id,
     className,
@@ -62,7 +62,7 @@ const HvListItem = props => {
     condensed: condensedContext,
     disableGutters: disableGuttersContext,
     interactive: interactiveContext,
-    selectable
+    selectable,
   } = useContext(HvListContext);
 
   const condensed = condensedProp != null ? condensedProp : condensedContext;
@@ -117,7 +117,7 @@ const HvListItem = props => {
           [classes.selected]: selected,
           [classes.disabled]: disabled,
           [classes.withStartAdornment]: startAdornment != null,
-          [classes.withEndAdornment]: endAdornment != null
+          [classes.withEndAdornment]: endAdornment != null,
         })}
         {...others}
       >
@@ -146,7 +146,7 @@ const HvListItem = props => {
       startAdornment,
       endAdornment,
       others,
-      listItemContent
+      listItemContent,
     ]
   );
 
@@ -158,7 +158,7 @@ const HvListItem = props => {
       strategy={containerRole === "listbox" ? "listbox" : "menu"}
       classes={{ focus: classes.focus }}
       configuration={{
-        tabIndex
+        tabIndex,
       }}
     >
       {listItem}
@@ -227,7 +227,7 @@ HvListItem.propTypes = {
     /**
      * Styles applied when the item is focused.
      */
-    focus: PropTypes.string
+    focus: PropTypes.string,
   }).isRequired,
   /**
    * Overrides the implicit list item role.
@@ -286,7 +286,7 @@ HvListItem.propTypes = {
   /**
    * @ignore
    */
-  tabIndex: PropTypes.number
+  tabIndex: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvListItem" })(HvListItem);

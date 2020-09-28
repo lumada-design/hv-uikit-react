@@ -7,7 +7,7 @@ import styles from "./styles";
  * Tab is a graphical control element that allows multiple documents or panels to be contained within a single window,
  * using tabs as a navigational widget for switching between sets of documents.
  */
-const HvTabs = props => {
+const HvTabs = (props) => {
   const { classes, ...others } = props;
 
   return (
@@ -16,7 +16,7 @@ const HvTabs = props => {
         root: classes.root,
         flexContainer: classes.flexContainer,
         indicator: classes.indicator,
-        scroller: classes.scroller
+        scroller: classes.scroller,
       }}
       TabIndicatorProps={{ children: <div /> }}
       {...others}
@@ -56,7 +56,7 @@ HvTabs.propTypes = {
     /**
      * Styles applied to the `TabIndicator` component.
      */
-    scroller: PropTypes.string
+    scroller: PropTypes.string,
   }).isRequired,
   /**
    * Callback fired when the value changes.
@@ -69,7 +69,7 @@ HvTabs.propTypes = {
    * 	The value of the currently selected Tab. If you don't want any selected Tab, you can set this property to `false`.
    */
   // eslint-disable-next-line react/forbid-prop-types
-  value: PropTypes.any
+  value: PropTypes.any,
 };
 
 export default withStyles(styles, { name: "HvTabs" })(HvTabs);

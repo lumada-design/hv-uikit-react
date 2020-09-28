@@ -7,9 +7,9 @@ export default {
   title: "Components/Panel",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvPanel } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvPanel } from '@hv/uikit-react-core/dist'",
   },
-  component: HvPanel
+  component: HvPanel,
 };
 
 export const Main = () => <HvPanel>Panel Content</HvPanel>;
@@ -25,12 +25,12 @@ export const WithScroll = () => {
 };
 
 export const FullWidth = () => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     editButton: {
       position: "absolute",
       top: theme.hv.spacing.sm,
-      right: theme.hv.spacing.sm
-    }
+      right: theme.hv.spacing.sm,
+    },
   }));
 
   const classes = useStyles();
@@ -46,18 +46,18 @@ export const FullWidth = () => {
 };
 
 export const Modal = () => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     closeButton: {
       position: "absolute",
       top: theme.hv.spacing.sm,
-      right: theme.hv.spacing.sm
+      right: theme.hv.spacing.sm,
     },
     overlay: {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
       opacity: 0.8,
       width: "100%",
-      padding: theme.hv.spacing.md
-    }
+      padding: theme.hv.spacing.md,
+    },
   }));
 
   const theme = useTheme();

@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     minHeight: "68px",
@@ -7,26 +7,26 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px`,
 
     "&$read": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo2
-    }
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
+    },
   },
   read: {},
   iconContainer: {
     width: "32px",
-    marginRight: `${theme.hv.spacing.sm}px`
+    marginRight: `${theme.hv.spacing.sm}px`,
   },
   title: {
     ...theme.hv.typography.highlightText,
     marginBottom: "5px",
 
     "&$read": {
-      ...theme.hv.typography.normalText
-    }
+      ...theme.hv.typography.normalText,
+    },
   },
   timeContainer: {
     ...theme.hv.typography.vizText,
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   bullet: {
     width: "6px",
@@ -36,10 +36,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.common.black,
 
     "&$hide": {
-      display: "none"
-    }
+      display: "none",
+    },
   },
-  hide: {}
+  hide: {},
 });
 
 export default styles;

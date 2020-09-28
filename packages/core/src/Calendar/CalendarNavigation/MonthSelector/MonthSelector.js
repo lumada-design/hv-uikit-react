@@ -29,7 +29,7 @@ const HvMonthSelector = ({
     <div
       className={clsx(classes.calendarMonthlyGrid, {
         [classes.rangeModeWidth]: rangeMode,
-        [classes.normalWidth]: !rangeMode
+        [classes.normalWidth]: !rangeMode,
       })}
     >
       {listMonthNamesShort.map((monthName, index) => (
@@ -37,18 +37,18 @@ const HvMonthSelector = ({
           className={classes.focusSelection}
           key={monthName}
           role="button"
-          onClick={event => {
+          onClick={(event) => {
             onChange(event, NAV_OPTIONS.MONTH, index + 1);
             onViewModeChange(VIEW_MODE.CALENDAR);
           }}
-          onKeyDown={event => onKeyDownHandler(event, index)}
+          onKeyDown={(event) => onKeyDownHandler(event, index)}
           tabIndex={0}
           {...others}
         >
           <HvTypography
             variant="normalText"
             className={clsx(classes.calendarMonthlyCell, {
-              [classes.calendarMonthlyCellSelected]: index + 1 === visibleMonth
+              [classes.calendarMonthlyCellSelected]: index + 1 === visibleMonth,
             })}
           >
             {monthName}
@@ -88,7 +88,7 @@ HvMonthSelector.propTypes = {
    * Controls the visible month of the Calendar
    */
   visibleYear: PropTypes.number,
-  rangeMode: PropTypes.bool
+  rangeMode: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvMonthSelector" })(HvMonthSelector);

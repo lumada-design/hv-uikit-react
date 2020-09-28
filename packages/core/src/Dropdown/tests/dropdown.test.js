@@ -12,7 +12,7 @@ const mockData = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3"
 const mockDataWithIds = [
   { id: "id-1", label: "Value 1" },
   { id: "id-2", label: "Value 2" },
-  { id: "id-3", label: "Value 3" }
+  { id: "id-3", label: "Value 3" },
 ];
 
 describe("[V3] <Dropdown />", () => {
@@ -124,7 +124,7 @@ describe("[V3] <Dropdown />", () => {
         .find("HvButton")
         .at(0)
         .simulate("click", {
-          preventDefault() {}
+          preventDefault() {},
         });
 
       expect(onChangeMock).toBeCalled();

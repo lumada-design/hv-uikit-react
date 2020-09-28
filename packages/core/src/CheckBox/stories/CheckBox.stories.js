@@ -12,9 +12,9 @@ const FlexDecorator = ({ children }) => {
       alignItems: "center",
       flexWrap: "wrap",
       "& > *": {
-        margin: "0 10px 5px 0"
-      }
-    }
+        margin: "0 10px 5px 0",
+      },
+    },
   });
 
   const classes = useStyles();
@@ -26,17 +26,17 @@ export default {
   title: "Components/Forms/Checkbox",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCheckBox } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvCheckBox } from '@hv/uikit-react-core/dist'",
   },
   component: HvCheckBox,
   subcomponents: { HvBaseCheckBox },
   decorators: [
-    Story => (
+    (Story) => (
       <FlexDecorator>
         <Story />
       </FlexDecorator>
-    )
-  ]
+    ),
+  ],
 };
 
 export const Main = () => {
@@ -51,8 +51,8 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Disabled = () => (
@@ -66,7 +66,7 @@ export const Disabled = () => (
 Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "Disabled checkboxes."
+      storyDescription: "Disabled checkboxes.",
     },
     pa11y: {
       ignore: [
@@ -74,11 +74,11 @@ Disabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
+        "color-contrast",
+      ],
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const ReadOnly = () => (
@@ -92,10 +92,10 @@ export const ReadOnly = () => (
 ReadOnly.story = {
   parameters: {
     docs: {
-      storyDescription: "Not editable checkboxes."
+      storyDescription: "Not editable checkboxes.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const WithoutLabel = () => (
@@ -110,10 +110,10 @@ WithoutLabel.story = {
   parameters: {
     docs: {
       storyDescription:
-        "A checkboxes without labels. The accessible name is provided via the `aria-label` property in `inputProps`."
+        "A checkboxes without labels. The accessible name is provided via the `aria-label` property in `inputProps`.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Required = () => (
@@ -125,10 +125,10 @@ export const Required = () => (
 Required.story = {
   parameters: {
     docs: {
-      storyDescription: "Required checkbox. Uncheck to show default error message."
+      storyDescription: "Required checkbox. Uncheck to show default error message.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const Controlled = () => {
@@ -150,10 +150,10 @@ Controlled.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs."
+        "Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };
 
 export const ErrorMessage = () => (
@@ -166,9 +166,9 @@ ErrorMessage.story = {
       ignore: [
         "region",
         // aria-errormessage value is being reported as invalid, but the references an existing ID
-        "aria-valid-attr-value"
-      ]
+        "aria-valid-attr-value",
+      ],
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

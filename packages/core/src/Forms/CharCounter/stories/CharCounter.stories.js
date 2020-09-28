@@ -6,9 +6,9 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCharCounter } from '@hv/uikit-react-core/dist'",
-    v3: true
+    v3: true,
   },
-  component: HvCharCounter
+  component: HvCharCounter,
 };
 
 export const Main = () => (
@@ -22,7 +22,7 @@ export const DisabledCharCounter = () => (
 DisabledCharCounter.story = {
   parameters: {
     docs: {
-      storyDescription: "Char counter showcasing the disabled state."
+      storyDescription: "Char counter showcasing the disabled state.",
     },
     v3: true,
     pa11y: {
@@ -31,10 +31,10 @@ DisabledCharCounter.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
-  }
+        "color-contrast",
+      ],
+    },
+  },
 };
 
 export const OverloadedCharCounter = () => (
@@ -44,8 +44,8 @@ export const OverloadedCharCounter = () => (
 OverloadedCharCounter.story = {
   parameters: {
     docs: {
-      storyDescription: "Char counter showcasing the overloaded state."
+      storyDescription: "Char counter showcasing the overloaded state.",
     },
-    v3: true
-  }
+    v3: true,
+  },
 };

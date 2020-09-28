@@ -30,10 +30,10 @@ const HvComposedNavigation = ({
         <Navigation
           id={setId(id, "navigation-month")}
           navigationText={monthName}
-          onNavigatePrevious={event => {
+          onNavigatePrevious={(event) => {
             onChange?.(event, NAV_OPTIONS.PREVIOUS_MONTH);
           }}
-          onNavigateNext={event => {
+          onNavigateNext={(event) => {
             onChange?.(event, NAV_OPTIONS.NEXT_MONTH);
           }}
           onTextClick={() => {
@@ -48,10 +48,10 @@ const HvComposedNavigation = ({
       <Navigation
         id={setId(id, "navigation-year")}
         navigationText={visibleYear.toString()}
-        onNavigatePrevious={event => {
+        onNavigatePrevious={(event) => {
           onChange?.(event, NAV_OPTIONS.PREVIOUS_YEAR);
         }}
-        onNavigateNext={event => {
+        onNavigateNext={(event) => {
           onChange?.(event, NAV_OPTIONS.NEXT_YEAR);
         }}
         isPreviousEnabled={previousYearValid}
@@ -89,7 +89,7 @@ HvComposedNavigation.propTypes = {
   /**
    * Controls the visible month of the Calendar
    */
-  visibleYear: PropTypes.number
+  visibleYear: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvComposedNavigation" })(HvComposedNavigation);

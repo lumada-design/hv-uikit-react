@@ -7,7 +7,7 @@ import styles from "./styles";
 /**
  * A card is a container for a few short and related pieces of content. It roughly resembles a playing card in size and shape and is intended as a linked short representation of a conceptual unit. For that reason, this pattern must be used as an entry-point for further information.
  */
-const HvCard = props => {
+const HvCard = (props) => {
   const {
     classes,
     className,
@@ -24,14 +24,14 @@ const HvCard = props => {
       aria-selected={selectable ? selected : undefined}
       className={clsx(classes.root, className, {
         [classes.selectable]: selectable,
-        [classes.selected]: selected
+        [classes.selected]: selected,
       })}
       {...others}
     >
       <div className={classes.semanticContainer}>
         <div
           className={clsx(classes.semanticBar, {
-            [classes[semantic]]: semantic
+            [classes[semantic]]: semantic,
           })}
         />
         <div className={classes.icon}>{icon}</div>
@@ -73,7 +73,7 @@ HvCard.propTypes = {
     /**
      * Style applied to the component when it is selected.
      */
-    selected: PropTypes.string
+    selected: PropTypes.string,
   }).isRequired,
   /**
    * The content inside the card.
@@ -106,7 +106,7 @@ HvCard.propTypes = {
     "sema16",
     "sema17",
     "sema18",
-    "sema19"
+    "sema19",
   ]),
   /**
    * Whether the card is selectable.
@@ -115,7 +115,7 @@ HvCard.propTypes = {
   /**
    * Whether the card is currently selected.
    */
-  selected: PropTypes.bool
+  selected: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvCard" })(HvCard);

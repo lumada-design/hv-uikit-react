@@ -1,6 +1,6 @@
 import { outlineStyles } from "../../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   dropZoneContainer: {
     position: "relative",
     width: "100%",
@@ -10,29 +10,29 @@ const styles = theme => ({
     background: `${theme.hv.palette.atmosphere.atmo2}`,
     "&:hover": {
       background: `${theme.hv.palette.atmosphere.atmo1}`,
-      border: `1px dotted ${theme.hv.palette.accent.acce1}`
+      border: `1px dotted ${theme.hv.palette.accent.acce1}`,
     },
     "&:focus": {
       background: `${theme.hv.palette.atmosphere.atmo1}`,
-      ...outlineStyles
-    }
+      ...outlineStyles,
+    },
   },
   dropZoneContainerDisabled: {
     "&$dropZoneContainer": {
       background: `${theme.hv.palette.atmosphere.atmo3}`,
       border: `1px dotted ${theme.hv.palette.atmosphere.atmo4}`,
-      cursor: "not-allowed"
+      cursor: "not-allowed",
     },
     "& $dragText": {
-      color: theme.hv.palette.atmosphere.atmo5
+      color: theme.hv.palette.atmosphere.atmo5,
     },
     "& $selectFilesText": {
-      color: theme.hv.palette.atmosphere.atmo5
-    }
+      color: theme.hv.palette.atmosphere.atmo5,
+    },
   },
   dragAction: {
     background: `${theme.hv.palette.atmosphere.atmo1}`,
-    border: `1px dotted ${theme.hv.palette.accent.acce1}`
+    border: `1px dotted ${theme.hv.palette.accent.acce1}`,
   },
   inputArea: {
     opacity: 0,
@@ -41,13 +41,13 @@ const styles = theme => ({
     height: "100%",
     cursor: "pointer",
     "&:disabled": {
-      cursor: "not-allowed"
-    }
+      cursor: "not-allowed",
+    },
   },
   dropArea: {
     display: "flex",
     margin: `${theme.hv.spacing.md}px auto`,
-    minHeight: 40
+    minHeight: 40,
   },
   dropZoneLabelsGroup: {
     display: "flex",
@@ -55,24 +55,24 @@ const styles = theme => ({
     justifyContent: "start",
     "& label:nth-child(1)": {},
     "& p:nth-child(2)": {
-      marginLeft: "auto"
-    }
+      marginLeft: "auto",
+    },
   },
   dropZoneAreaLabels: {
     display: "flex",
     width: 115,
-    margin: "auto"
+    margin: "auto",
   },
   dropZoneAreaIcon: {
     margin: "auto",
-    marginRight: `${theme.hv.spacing.xs}px`
+    marginRight: `${theme.hv.spacing.xs}px`,
   },
   dragText: {
-    ...theme.hv.typography.normalText
+    ...theme.hv.typography.normalText,
   },
   selectFilesText: {
-    ...theme.hv.typography.highlightText
-  }
+    ...theme.hv.typography.highlightText,
+  },
 });
 
 export default styles;

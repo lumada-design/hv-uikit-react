@@ -4,7 +4,7 @@
  *  @param {Object} event - The event object to extract the number from.
  *  @returns {Number | undefined} - The corresponding number or undefined if it does not exist.
  */
-const getKeyCodeFromEvent = event => (event ? event.keyCode : undefined);
+const getKeyCodeFromEvent = (event) => (event ? event.keyCode : undefined);
 
 /**
  *  Check whether the key code is an enter.

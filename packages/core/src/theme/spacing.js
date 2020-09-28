@@ -1,4 +1,4 @@
-const spacing = theme => key => {
+const spacing = (theme) => (key) => {
   switch (typeof key) {
     case "string":
       return Number(theme.spacing[key]) || 0;

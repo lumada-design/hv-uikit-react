@@ -9,7 +9,7 @@ import { getSelected } from "../utils";
 import styles from "./styles";
 import ActionContainer from "../../ActionBar";
 
-const valuesExist = values => !isNil(values) && values?.length > 0;
+const valuesExist = (values) => !isNil(values) && values?.length > 0;
 
 const List = ({
   id,
@@ -31,13 +31,13 @@ const List = ({
 
   const newLabels = {
     selectAll: labels.selectAll,
-    selectionConjunction: labels.multiSelectionConjunction
+    selectionConjunction: labels.multiSelectionConjunction,
   };
 
   /**
    * Update states associated with select all.
    */
-  const updateSelectAll = listValues => {
+  const updateSelectAll = (listValues) => {
     if (!listValues) return;
     const nbrSelected = getSelected(listValues).length;
     const hasSelection = nbrSelected > 0;
@@ -65,14 +65,14 @@ const List = ({
    *
    * @param {String} str - The value that is being looked.
    */
-  const handleSearch = str => {
+  const handleSearch = (str) => {
     const results = list
-      ? list.filter(value => value.label.toLowerCase().indexOf(str.toLowerCase()) >= 0)
+      ? list.filter((value) => value.label.toLowerCase().indexOf(str.toLowerCase()) >= 0)
       : null;
 
     if (!isNil(results)) {
-      const newList = list.map(elem => {
-        const isResult = results.find(result => result.label === elem.label);
+      const newList = list.map((elem) => {
+        const isResult = results.find((result) => result.label === elem.label);
         return { ...elem, isHidden: !isResult };
       });
 
@@ -103,7 +103,7 @@ const List = ({
    *
    */
   const handleSelectAll = () => {
-    const newList = list.map(elem => ({ ...elem, selected: !anySelected }));
+    const newList = list.map((elem) => ({ ...elem, selected: !anySelected }));
     setList(newList);
     updateSelectAll(newList);
   };
@@ -150,14 +150,14 @@ const List = ({
    *
    * @returns {*}
    */
-  const cleanHidden = lst => lst.map(item => ({ ...item, isHidden: false }));
+  const cleanHidden = (lst) => lst.map((item) => ({ ...item, isHidden: false }));
 
   /**
    * When selecting the state list is updated with the corresponding selection.
    *
    * @param listValues - elements selected.
    */
-  const onSelection = listValues => {
+  const onSelection = (listValues) => {
     if (!multiSelect) {
       onChange(cleanHidden(listValues), true, true, true);
     } else {
@@ -261,7 +261,7 @@ List.propTypes = {
   /**
    * If `true`, selection can be toggled when single selection.
    */
-  singleSelectionToggle: PropTypes.bool.isRequired
+  singleSelectionToggle: PropTypes.bool.isRequired,
 };
 
 export default withStyles(styles, { name: "HvDropdownList" })(List);

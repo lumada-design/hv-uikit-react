@@ -14,16 +14,16 @@ describe("User withStyles", () => {
   const options = [
     {
       label: "Option1",
-      value: "Value1"
+      value: "Value1",
     },
     {
       label: "Option2",
-      value: "Value2"
+      value: "Value2",
     },
     {
       label: "Option3",
-      value: "Value3"
-    }
+      value: "Value3",
+    },
   ];
 
   beforeEach(async () => {

@@ -8,9 +8,9 @@ export default {
   title: "Visualizations/Line Chart",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLinechart } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvLinechart } from '@hv/uikit-react-core/dist'",
   },
-  component: HvLinechart
+  component: HvLinechart,
 };
 
 const getMonthNamesArray = () => [
@@ -25,7 +25,7 @@ const getMonthNamesArray = () => [
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 
 export const Main = () => (
@@ -34,8 +34,8 @@ export const Main = () => (
       {
         x: getMonthNamesArray(),
         y: [5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119, 2146],
-        name: "Sales Target"
-      }
+        name: "Sales Target",
+      },
     ]}
   />
 );
@@ -45,8 +45,8 @@ export const WithArea = () => {
     {
       x: getMonthNamesArray(),
       y: [5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119, 2146],
-      name: "Sales Target"
-    }
+      name: "Sales Target",
+    },
   ];
 
   return <HvLinechart data={data} type="area" />;
@@ -55,9 +55,9 @@ export const WithArea = () => {
 WithArea.story = {
   parameters: {
     docs: {
-      storyDescription: "Colors the area below it."
-    }
-  }
+      storyDescription: "Colors the area below it.",
+    },
+  },
 };
 
 export const CustomLinechartGrouped = () => {
@@ -65,8 +65,8 @@ export const CustomLinechartGrouped = () => {
     wrapper: {
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "flex-end"
-    }
+      alignItems: "flex-end",
+    },
   });
 
   const ChartHeader = withStyles(styles)(({ classes, children }) => (
@@ -78,43 +78,43 @@ export const CustomLinechartGrouped = () => {
     {
       x: timeRange,
       y: [3400, 5929, 1803, 6470, 6853, 7517],
-      name: "Input Feed Rate"
+      name: "Input Feed Rate",
     },
     {
       x: timeRange,
       y: [3022, 3005, 2517, 8397, 6587, 6648],
-      name: "Output Feed"
+      name: "Output Feed",
     },
     {
       x: timeRange,
       y: [3900, 4971, 2694, 2177, 7756, 1717],
-      name: "Availability"
-    }
+      name: "Availability",
+    },
   ];
 
   const countriesObject = [];
 
-  ["Canada", "East Timor", "Portugal", "Spain", "Sweden"].forEach(country =>
+  ["Canada", "East Timor", "Portugal", "Spain", "Sweden"].forEach((country) =>
     countriesObject.push({ label: country })
   );
 
   const useStyles = makeStyles(() => ({
     root: {
-      width: 250
+      width: 250,
     },
     label: { paddingBottom: 6 },
 
     titlePadding: { marginTop: 10 },
     selectorPadding: {
-      marginRight: 20
+      marginRight: 20,
     },
     dropdownPlacement: {
-      marginLeft: 10
+      marginLeft: 10,
     },
     controllerGroup: {
       display: "flex",
-      alignItems: "flex-end"
-    }
+      alignItems: "flex-end",
+    },
   }));
 
   const classes = useStyles();
@@ -143,7 +143,7 @@ export const CustomLinechartGrouped = () => {
               { label: "Last 0.5h" },
               { label: "Last 1.5h", selected: true },
               { label: "Last 24h" },
-              { label: "Last 48h" }
+              { label: "Last 48h" },
             ]}
           />
           <HvDropDownMenu
@@ -162,9 +162,9 @@ export const CustomLinechartGrouped = () => {
 CustomLinechartGrouped.story = {
   parameters: {
     docs: {
-      storyDescription: "Line chart with title and controls."
-    }
-  }
+      storyDescription: "Line chart with title and controls.",
+    },
+  },
 };
 
 export const LinechartGrouped = () => {
@@ -173,18 +173,18 @@ export const LinechartGrouped = () => {
     {
       x: months,
       y: [3400, 5929, 1803, 6470, 6853, 7517, 5636, 4280, 7238, 6889, 8268, 2751],
-      name: "Sales Target"
+      name: "Sales Target",
     },
     {
       x: months,
       y: [3022, 3005, 2517, 8397, 6587, 6648, 8067, 2723, 7523, 7853, 4819, 3820],
-      name: "Sales Per Rep"
+      name: "Sales Per Rep",
     },
     {
       x: months,
       y: [3900, 4971, 2694, 2177, 7756, 1717, 3308, 2200, 2294, 1771, 2324, 6705],
-      name: "Monthly Sales"
-    }
+      name: "Monthly Sales",
+    },
   ];
 
   return <HvLinechart title="Multiple lines" subtitle="Sales performance (YTD)" data={data} />;
@@ -193,9 +193,9 @@ export const LinechartGrouped = () => {
 LinechartGrouped.story = {
   parameters: {
     docs: {
-      storyDescription: "Representation of groups by using multiple lines."
-    }
-  }
+      storyDescription: "Representation of groups by using multiple lines.",
+    },
+  },
 };
 
 export const GroupedWithArea = () => {
@@ -204,7 +204,7 @@ export const GroupedWithArea = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [3000, 3900, 1000], name: "Sales Per Rep" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 7500, 1100], name: "Monthly Sales" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [9000, 8500, 8700], name: "Target" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [7000, 8000, 6500], name: "Cash" }
+    { x: ["Group 1", "Group 2", "Group 3"], y: [7000, 8000, 6500], name: "Cash" },
   ];
 
   return <HvLinechart title="Multiple lines" subtitle="Sales performance (YTD)" data={data} />;
@@ -213,9 +213,9 @@ export const GroupedWithArea = () => {
 GroupedWithArea.story = {
   parameters: {
     docs: {
-      storyDescription: "Groups using colored areas."
-    }
-  }
+      storyDescription: "Groups using colored areas.",
+    },
+  },
 };
 
 export const LinechartStacked = () => {
@@ -224,7 +224,7 @@ export const LinechartStacked = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [6000, 1000, 1000], name: "Sales Per Rep" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 7500, 1100], name: "Monthly Sales" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 8500, 3000], name: "Target" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" }
+    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" },
   ];
 
   return (
@@ -240,17 +240,17 @@ export const LinechartStacked = () => {
 LinechartStacked.story = {
   parameters: {
     docs: {
-      storyDescription: "Groups in stack mode."
-    }
-  }
+      storyDescription: "Groups in stack mode.",
+    },
+  },
 };
 
 export const TimeRepresentation = () => {
   const r = new Random();
-  const rand = diff => r.next() * diff - diff / 2;
+  const rand = (diff) => r.next() * diff - diff / 2;
 
   const generateDates = (num = 100, startDate = new Date(2020, 0)) =>
-    Array.from(Array(num).keys()).map(i =>
+    Array.from(Array(num).keys()).map((i) =>
       new Date(new Date(startDate).setDate(startDate.getDate() + i)).toISOString().slice(0, 10)
     );
 
@@ -267,7 +267,7 @@ export const TimeRepresentation = () => {
 
   const data = [
     { x: dates, y: values, name: "Sales Target" },
-    { x: dates, y: values.map(v => v + rand(8)), name: "Sales Volume" }
+    { x: dates, y: values.map((v) => v + rand(8)), name: "Sales Volume" },
   ];
 
   return (
@@ -283,21 +283,21 @@ export const TimeRepresentation = () => {
 TimeRepresentation.story = {
   parameters: {
     docs: {
-      storyDescription: "Representation of time related data."
+      storyDescription: "Representation of time related data.",
     },
     eyes: {
       // story excluded due inconsistent component alignment and relative position, opened 1822 issue
-      include: false
-    }
-  }
+      include: false,
+    },
+  },
 };
 
 export const WithIntervalUpdates = () => {
   const r = new Random();
-  const rand = diff => r.next() * diff - diff / 2;
+  const rand = (diff) => r.next() * diff - diff / 2;
 
   const generateDates = (initialDate, num = 200) =>
-    Array.from(Array(num).keys()).map(i =>
+    Array.from(Array(num).keys()).map((i) =>
       new Date(new Date(initialDate).setDate(initialDate.getDate() + i)).toISOString().slice(0, 10)
     );
 
@@ -318,7 +318,7 @@ export const WithIntervalUpdates = () => {
 
   const [data, setData] = useState(generateData(values.current));
 
-  const addDaysToCurrentDate = num => {
+  const addDaysToCurrentDate = (num) => {
     const currentDay = new Date(date.current);
     date.current = new Date(currentDay.setDate(currentDay.getDate() + num));
   };
@@ -353,7 +353,7 @@ export const WithIntervalUpdates = () => {
 WithIntervalUpdates.story = {
   parameters: {
     docs: {
-      storyDescription: "Data updated each second."
-    }
-  }
+      storyDescription: "Data updated each second.",
+    },
+  },
 };

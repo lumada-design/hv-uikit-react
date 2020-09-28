@@ -38,7 +38,7 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
         name: "Mock App 1",
         iconUrl: "http://mockapp1/icon",
         url: "http://mockapp1/",
-        target: "_top"
+        target: "_top",
       },
       {
         id: "app-2",
@@ -46,17 +46,17 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
         iconUrl: "http://mockapp2/icon",
         description: "Mock App 2 Description",
         url: "http://mockapp2/",
-        target: "_blank"
+        target: "_blank",
       },
       {
         id: "app-3",
         name: "Mock App 3",
         iconUrl: "http://mockapp2/icon",
         description: "Mock App 2 Description",
-        url: "http://mockapp2/"
-      }
+        url: "http://mockapp2/",
+      },
     ],
-    footer: undefined
+    footer: undefined,
   };
 
   beforeEach(async () => {
@@ -99,34 +99,34 @@ describe("<AppSwitcherPanel /> Applications without a name or url should not be 
         iconUrl: "http://mockapp1/icon",
         description: "Mock App 1 Description",
         url: "http://mockapp1/",
-        target: "_top"
+        target: "_top",
       },
       {
         id: "app-2",
         iconUrl: "http://mockapp2/icon",
         description: "Mock App 2 Description",
         url: "http://mockapp2/",
-        target: "_blank"
+        target: "_blank",
       },
       {
         id: "app-3",
         name: "Mock App 3",
         iconUrl: "http://mockapp3/icon",
-        description: "Mock App 3 Description"
+        description: "Mock App 3 Description",
       },
       {
         id: "app-4",
         iconUrl: "http://mockapp4/icon",
-        description: "Mock App 4 Description"
+        description: "Mock App 4 Description",
       },
       {
         id: "app-5",
         name: "Mock App 5 - VALID without description",
         iconUrl: "http://mockapp5/icon",
-        url: "http://mockapp5/"
-      }
+        url: "http://mockapp5/",
+      },
     ],
-    footer: undefined
+    footer: undefined,
   };
 
   beforeEach(async () => {

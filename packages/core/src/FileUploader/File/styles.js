@@ -1,9 +1,9 @@
-const styles = theme => ({
+const styles = (theme) => ({
   progressbarBack: {
     position: "absolute",
     top: "-1px",
     width: "100%",
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
   },
   progressbar: {
     position: "absolute",
@@ -12,27 +12,27 @@ const styles = theme => ({
     height: 2,
     border: `1px solid ${theme.hv.palette.accent.acce1}`,
     "&::-moz-progress-bar": {
-      background: theme.hv.palette.accent.acce1
-    }
+      background: theme.hv.palette.accent.acce1,
+    },
   },
   progressTextContainer: {
-    display: "flex"
+    display: "flex",
   },
   icon: {
     width: 32,
     height: 32,
-    margin: theme.spacing(0, "xs")
+    margin: theme.spacing(0, "xs"),
   },
   removeButton: {
     position: "absolute",
     margin: theme.spacing(0, "xs"),
     right: 0,
-    top: 20
+    top: 20,
   },
   fail: {
-    color: theme.palette.sema4
+    color: theme.palette.sema4,
   },
-  nameText: {}
+  nameText: {},
 });
 
 export default styles;

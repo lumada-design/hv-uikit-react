@@ -15,7 +15,7 @@ const Loading = ({ classes, size, position, text }) => {
     <div
       className={clsx(classes.loading, {
         [classes.centerPosition]: position === "center",
-        [classes.inlinePosition]: position === "inline"
+        [classes.inlinePosition]: position === "inline",
       })}
     >
       <div>
@@ -64,7 +64,7 @@ Loading.propTypes = {
     /**
      * The class applied to the character counter when it is disabled.
      */
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
   }).isRequired,
   /**
    * The size of the loading indicator.
@@ -78,14 +78,14 @@ Loading.propTypes = {
   /**
    * The text to be displayed.
    */
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 Loading.defaultProps = {
   size: "regular",
   position: "center",
   text: "",
-  classes: {}
+  classes: {},
 };
 
 export default withDeprecate(
