@@ -14,6 +14,8 @@ export interface FileUploaderLabelsProp extends HvDropZoneLabelsProp {
   removeFileButtonLabel: string;
 }
 
+export type HvFileUploaderClassKey = "root";
+
 export interface FileUploaderProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFileUploaderClassKey> {
   /**
@@ -49,7 +51,5 @@ export interface FileUploaderProps
    */
   onFileRemoved?: FileEvent;
 }
-
-export type HvFileUploaderClassKey = "root";
 
 export default function HvFileUploader(props: FileUploaderProps): JSX.Element | null;

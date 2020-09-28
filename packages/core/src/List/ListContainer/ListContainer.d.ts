@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvListContainerClassKey = "root";
+
 export interface HvListContainerProps
   extends StandardProps<React.HTMLAttributes<HTMLUListElement>, HvListContainerClassKey> {
   /**
@@ -41,7 +43,5 @@ export interface HvListContainerProps
    */
   children?: React.ReactNode;
 }
-
-export type HvListContainerClassKey = "root";
 
 export default function HvListContainer(props: HvListContainerProps): JSX.Element | null;

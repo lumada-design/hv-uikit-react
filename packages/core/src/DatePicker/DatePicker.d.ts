@@ -1,6 +1,35 @@
 import { StandardProps } from "@material-ui/core";
 import { HvFormElementProps } from "..";
 
+export type HvDatePickerClassKey =
+  | "inputCalendarClosed"
+  | "inputCalendarOpen"
+  | "noBorderTop"
+  | "noBorderBottom"
+  | "input"
+  | "icon"
+  | "iconClear"
+  | "datePickerContainer"
+  | "label"
+  | "calendarContainer"
+  | "singleCalendarFooter"
+  | "rangeMainContainer"
+  | "rangeCalendarsContainer"
+  | "rangeLeftCalendarContainer"
+  | "rangeRightCalendarContainer"
+  | "rangeFooterLeft"
+  | "rangeFooterRight"
+  | "actionsContainer"
+  | "borderTopNone"
+  | "borderBottomNone"
+  | "borderTopDisplay"
+  | "borderBottomDisplay"
+  | "popperRoot"
+  | "listBorderDown"
+  | "listBorderUp"
+  | "calendarOpenDown"
+  | "calendarOpenUp";
+
 export interface HvDatePickerProps
   extends StandardProps<HvFormElementProps, HvDatePickerClassKey, "onChange"> {
   /**
@@ -74,34 +103,5 @@ export interface HvDatePickerProps
    */
   escapeWithReference?: boolean;
 }
-
-export type HvDatePickerClassKey =
-  | "inputCalendarClosed"
-  | "inputCalendarOpen"
-  | "noBorderTop"
-  | "noBorderBottom"
-  | "input"
-  | "icon"
-  | "iconClear"
-  | "datePickerContainer"
-  | "label"
-  | "calendarContainer"
-  | "singleCalendarFooter"
-  | "rangeMainContainer"
-  | "rangeCalendarsContainer"
-  | "rangeLeftCalendarContainer"
-  | "rangeRightCalendarContainer"
-  | "rangeFooterLeft"
-  | "rangeFooterRight"
-  | "actionsContainer"
-  | "borderTopNone"
-  | "borderBottomNone"
-  | "borderTopDisplay"
-  | "borderBottomDisplay"
-  | "popperRoot"
-  | "listBorderDown"
-  | "listBorderUp"
-  | "calendarOpenDown"
-  | "calendarOpenUp";
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

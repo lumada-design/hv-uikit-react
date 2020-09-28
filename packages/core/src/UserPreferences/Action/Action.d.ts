@@ -2,6 +2,8 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvTypographyProps } from "../..";
 
+export type HvUserPreferenceActionClassKey = "root";
+
 export interface Payload {
   /**
    * the id to be applied to the root element.
@@ -30,8 +32,6 @@ export interface HvUserPreferenceActionProps
    */
   onClick: (event: Event, payload: Payload) => void;
 }
-
-export type HvUserPreferenceActionClassKey = "root";
 
 export default function HvUserPreferencesAction(
   props: HvUserPreferenceActionProps

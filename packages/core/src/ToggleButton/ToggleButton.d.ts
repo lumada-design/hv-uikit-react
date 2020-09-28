@@ -12,6 +12,8 @@ export type HvToggleButtonLabelsProp = {
   notSelectedTitle?: string;
 };
 
+export type HvToggleButtonClassKey = "root" | "icon" | "disabled";
+
 export interface HvToggleButtonProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvToggleButtonClassKey> {
   /**
@@ -39,7 +41,5 @@ export interface HvToggleButtonProps
    */
   notSelectedIcon: React.ReactNode;
 }
-
-export type HvToggleButtonClassKey = "root" | "icon" | "disabled";
 
 export default function HvToggleButton(props: HvToggleButtonProps): JSX.Element | null;

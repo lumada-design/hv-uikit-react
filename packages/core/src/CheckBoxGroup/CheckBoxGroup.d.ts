@@ -3,6 +3,15 @@ import { StandardProps } from "@material-ui/core";
 
 import { HvFormStatus } from "../Forms/FormElement";
 
+export type HvCheckBoxGroupClassKey =
+  | "root"
+  | "label"
+  | "group"
+  | "vertical"
+  | "horizontal"
+  | "selectAll"
+  | "error";
+
 export interface HvCheckBoxGroupProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvCheckBoxGroupClassKey, "onChange"> {
   /**
@@ -99,14 +108,5 @@ export interface HvCheckBoxGroupProps
    */
   children: React.ReactNode;
 }
-
-export type HvCheckBoxGroupClassKey =
-  | "root"
-  | "label"
-  | "group"
-  | "vertical"
-  | "horizontal"
-  | "selectAll"
-  | "error";
 
 export default function HvCheckBoxGroup(props: HvCheckBoxGroupProps): JSX.Element | null;

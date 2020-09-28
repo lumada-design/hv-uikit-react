@@ -1,6 +1,8 @@
 import React from "react";
 import { DialogTitleProps, StandardProps } from "@material-ui/core";
 
+export type HvModalTitleClassKey = "root" | "messageContainer" | "textWithIcon" | "icon";
+
 export interface HvModalTitleProps extends StandardProps<DialogTitleProps, HvModalTitleClassKey> {
   /**
    * Variant of the modal.
@@ -15,7 +17,5 @@ export interface HvModalTitleProps extends StandardProps<DialogTitleProps, HvMod
    */
   customIcon?: React.ReactNode;
 }
-
-export type HvModalTitleClassKey = "root" | "messageContainer" | "textWithIcon" | "icon";
 
 export default function HvModalTitle(props: HvModalTitleProps): JSX.Element | null;

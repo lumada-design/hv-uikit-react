@@ -41,6 +41,22 @@ export interface HvTextAreaLabelsProp {
   requiredWarningText: string;
 }
 
+export type HvTextAreaClassKey =
+  | "root"
+  | "input"
+  | "resize"
+  | "inputRoot"
+  | "inputRootDisabled"
+  | "inputRootFocused"
+  | "defaultWith"
+  | "characterCounter"
+  | "inline"
+  | "separator"
+  | "maxCharacter"
+  | "currentCounter"
+  | "disabled"
+  | "container";
+
 export interface HvTextAreaProps
   extends StandardProps<HvBaseInputProps, HvTextAreaClassKey, "onChange" | "onBlur"> {
   /**
@@ -122,21 +138,5 @@ export interface HvTextAreaProps
    */
   warningProps: HvWarningTextProps;
 }
-
-export type HvTextAreaClassKey =
-  | "root"
-  | "input"
-  | "resize"
-  | "inputRoot"
-  | "inputRootDisabled"
-  | "inputRootFocused"
-  | "defaultWith"
-  | "characterCounter"
-  | "inline"
-  | "separator"
-  | "maxCharacter"
-  | "currentCounter"
-  | "disabled"
-  | "container";
 
 export default function HvTextArea(props: HvTextAreaProps): JSX.Element | null;

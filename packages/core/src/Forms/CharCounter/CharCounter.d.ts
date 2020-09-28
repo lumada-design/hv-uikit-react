@@ -1,5 +1,7 @@
 import { StandardProps } from "@material-ui/core";
 
+export type HvCharCounterClassKey = "root" | "counterDisabled" | "overloaded" | "gutter";
+
 export interface HvCharCounterProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvCharCounterClassKey> {
   /**
@@ -23,7 +25,5 @@ export interface HvCharCounterProps
    */
   disableGutter?: boolean;
 }
-
-export type HvCharCounterClassKey = "root" | "counterDisabled" | "overloaded" | "gutter";
 
 export default function HvCharCounter(props: HvCharCounterProps): JSX.Element | null;

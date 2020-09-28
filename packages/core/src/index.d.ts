@@ -149,23 +149,6 @@ export { default as HvUserPreferences } from "./UserPreferences";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 export * from "./VerticalNavigation";
 
-export interface HvTheme {
-  type: string;
-  name: string;
-  palette: HvThemePalette;
-  typography: HvThemeTypography;
-  spacing: HvThemeSpacing;
-  viz: HvThemeVizPalette;
-}
-
-export interface HvThemePalette {
-  accent: HvAccentColors;
-  atmosphere: HvAtmosphereColors;
-  base: HvBaseColors;
-  semantic: HvSemanticColors;
-  support: HvSupportColors;
-}
-
 export type HvAccentColorKeys = "acce0" | "acce1" | "acce2" | "acce2h" | "acce3";
 export type HvAtmosphereColorKeys =
   | "atmo1"
@@ -207,10 +190,6 @@ export type HvSemanticColors = Record<HvSemanticColorKeys, string>;
 
 export type HvSupportColors = Record<string, string>;
 
-export interface HvThemeTypography extends Map<string, HvThemeTypographyDefinition> {
-  fontFamily: string;
-}
-
 export interface HvThemeTypographyDefinition {
   color: string;
   fontSize: string;
@@ -228,4 +207,26 @@ export interface HvThemeVizPalette {
     sequential: Map<string, string>;
     polarized: Map<string, string>;
   };
+}
+
+
+export interface HvThemePalette {
+  accent: HvAccentColors;
+  atmosphere: HvAtmosphereColors;
+  base: HvBaseColors;
+  semantic: HvSemanticColors;
+  support: HvSupportColors;
+}
+
+export interface HvThemeTypography extends Map<string, HvThemeTypographyDefinition> {
+  fontFamily: string;
+}
+
+export interface HvTheme {
+  type: string;
+  name: string;
+  palette: HvThemePalette;
+  typography: HvThemeTypography;
+  spacing: HvThemeSpacing;
+  viz: HvThemeVizPalette;
 }

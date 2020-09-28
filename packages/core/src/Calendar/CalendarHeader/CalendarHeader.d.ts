@@ -6,6 +6,14 @@ export interface DateRangeProp {
   endDate: Date;
 }
 
+export type HvHeaderClassKey =
+  | "rangeLabel"
+  | "background"
+  | "headerDayOfWeek"
+  | "headerDate"
+  | "invalid"
+  | "input";
+
 export interface HvHeaderCalendarProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvHeaderClassKey, "onChange" | "onBlur" | "onFocus"> {
   /**
@@ -28,13 +36,5 @@ export interface HvHeaderCalendarProps
    */
   showEndDate?: boolean;
 }
-
-export type HvHeaderClassKey =
-  | "rangeLabel"
-  | "background"
-  | "headerDayOfWeek"
-  | "headerDate"
-  | "invalid"
-  | "input";
 
 export default function HvHeaderCalendar(props: HvHeaderCalendarProps): JSX.Element | null;

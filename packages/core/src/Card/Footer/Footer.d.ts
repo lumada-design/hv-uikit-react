@@ -13,6 +13,8 @@ export interface HvCardFooterCommonProps extends HvActionsGenericCommonProps {
   isSelectable?: boolean;
 }
 
+export type HvCardFooterClassKey = "root" | "leftContainer" | "rightContainer";
+
 export interface HvCardFooterProps
   extends StandardProps<CardActionsProps, HvCardFooterClassKey>,
     HvCardFooterCommonProps {
@@ -25,7 +27,5 @@ export interface HvCardFooterProps
    */
   checkboxProps: HvCheckBoxProps;
 }
-
-export type HvCardFooterClassKey = "root" | "leftContainer" | "rightContainer";
 
 export default function HvCardFooter(props: HvCardFooterProps): JSX.Element | null;

@@ -1,6 +1,8 @@
 import { StandardProps } from "@material-ui/core";
 import { HvInputProps } from "../Input";
 
+export type HvSearchBoxClassKey = "root";
+
 export interface HvSearchBoxProps
   extends StandardProps<HvInputProps, HvSearchBoxClassKey, "onSubmit"> {
   /**
@@ -9,7 +11,5 @@ export interface HvSearchBoxProps
    */
   onSubmit?: (event: Event, value: string) => void;
 }
-
-export type HvSearchBoxClassKey = "root";
 
 export default function HvSearchBox(props: HvSearchBoxProps): JSX.Element | null;

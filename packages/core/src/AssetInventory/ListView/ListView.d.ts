@@ -14,6 +14,8 @@ export interface ListViewConfiguration extends ViewConfiguration {
   }[];
 }
 
+export type HvListViewClassKey = "root" | "elements" | "tableBody" | "tableHead";
+
 export interface HvListViewProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvListViewClassKey> {
   /**
@@ -53,7 +55,5 @@ export interface HvListViewProps
    */
   metadata?: AssetInventoryMetadata;
 }
-
-export type HvListViewClassKey = "root" | "elements" | "tableBody" | "tableHead";
 
 export default function HvListView(props: HvListViewProps): JSX.Element | null;

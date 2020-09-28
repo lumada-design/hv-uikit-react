@@ -29,15 +29,15 @@ export interface HvActionsGenericCommonProps {
   maxVisibleActions?: number;
 }
 
-export interface HvActionsGenericProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvActionsGenericClassKey>,
-    HvActionsGenericCommonProps {}
-
 export type HvActionsGenericClassKey =
   | "button"
   | "actionContainer"
   | "dropDownMenu"
   | "dropDownMenuButton"
   | "dropDownMenuButtonSelected";
+
+export interface HvActionsGenericProps
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvActionsGenericClassKey>,
+    HvActionsGenericCommonProps {}
 
 export default function HvActionsGeneric(props: HvActionsGenericProps): JSX.Element | null;

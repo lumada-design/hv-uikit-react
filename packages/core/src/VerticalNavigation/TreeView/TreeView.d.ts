@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvVerticalNavigationTreeViewClassKey = "root";
+
 export interface HvVerticalNavigationTreeViewProps
   extends StandardProps<
     React.HTMLAttributes<HTMLUListElement>,
@@ -30,8 +32,6 @@ export interface HvVerticalNavigationTreeViewProps
    */
   onChange?: (nodeId: string) => void;
 }
-
-export type HvVerticalNavigationTreeViewClassKey = "root";
 
 export default function HvVerticalNavigationTreeView(
   props: HvVerticalNavigationTreeViewProps

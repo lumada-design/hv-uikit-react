@@ -3,6 +3,8 @@ import { StandardProps } from "@material-ui/core";
 import { HvTypographyProps } from "../../Typography";
 import { Payload } from "../Action";
 
+export type HvUserPreferencesOptionClassKey = "action" | "noIcon" | "li";
+
 export interface HvOptionProps
   extends StandardProps<HvTypographyProps, HvUserPreferencesOptionClassKey, "onClick"> {
   /**
@@ -20,7 +22,5 @@ export interface HvOptionProps
    */
   onClick: (event: Event, payload: Payload) => void;
 }
-
-export type HvUserPreferencesOptionClassKey = "action" | "noIcon" | "li";
 
 export default function HvUserPreferencesOption(props: HvOptionProps): JSX.Element | null;

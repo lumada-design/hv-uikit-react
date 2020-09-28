@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvListViewCellClassKey = "root" | "semanticBar";
+
 export interface HvListViewCellProps
   extends StandardProps<React.HTMLAttributes<HTMLTableCellElement>, HvListViewCellClassKey> {
   /**
@@ -42,7 +44,5 @@ export interface HvListViewCellProps
     | "atmo5"
     | "atmo6";
 }
-
-export type HvListViewCellClassKey = "root" | "semanticBar";
 
 export default function HvListViewCell(props: HvListViewCellProps): JSX.Element | null;

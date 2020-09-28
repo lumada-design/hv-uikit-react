@@ -31,6 +31,15 @@ export interface DropDownLabelsProp extends ListLabelsProp {
   multiSelectionConjunction?: string;
 }
 
+export type HvDropdownClassKey =
+  | "root"
+  | "dropdown"
+  | "label"
+  | "arrow"
+  | "truncate"
+  | "selectionDisabled"
+  | "rootList";
+
 export interface HvDropdownProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropdownClassKey, "onChange"> {
   /**
@@ -87,14 +96,5 @@ export interface HvDropdownProps
    */
   popperProps?: Partial<PopperProps>;
 }
-
-export type HvDropdownClassKey =
-  | "root"
-  | "dropdown"
-  | "label"
-  | "arrow"
-  | "truncate"
-  | "selectionDisabled"
-  | "rootList";
 
 export default function HvDropdown(props: HvDropdownProps): JSX.Element | null;

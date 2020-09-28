@@ -20,6 +20,8 @@ export interface NavigationData {
   data?: NavigationData[];
 }
 
+export type HvNavigationClassKey = "root";
+
 export interface HvVerticalNavigationNavigationProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvNavigationClassKey, "onClick"> {
   /**
@@ -45,8 +47,6 @@ export interface HvVerticalNavigationNavigationProps
    */
   onClick?: (event: MouseEvent, selectedItem: NavigationData) => void;
 }
-
-export type HvNavigationClassKey = "root";
 
 export default function HvVerticalNavigationNavigation(
   props: HvVerticalNavigationNavigationProps

@@ -2,6 +2,16 @@ import React from "react";
 import { StandardProps, BoxProps } from "@material-ui/core";
 import { HvSemanticColorKeys } from "..";
 
+export type HvCardClassKey =
+  | HvSemanticColorKeys
+  | "root"
+  | "semanticContainer"
+  | "icon"
+  | "sema0"
+  | "semanticBar"
+  | "selectable"
+  | "selected";
+
 export interface HvCardProps extends StandardProps<BoxProps, HvCardClassKey> {
   /**
    *  The renderable content inside the icon slot of the header.
@@ -20,15 +30,5 @@ export interface HvCardProps extends StandardProps<BoxProps, HvCardClassKey> {
    */
   selected?: boolean;
 }
-
-export type HvCardClassKey =
-  | HvSemanticColorKeys
-  | "root"
-  | "semanticContainer"
-  | "icon"
-  | "sema0"
-  | "semanticBar"
-  | "selectable"
-  | "selected";
 
 export default function HvCard(props: HvCardProps): JSX.Element | null;

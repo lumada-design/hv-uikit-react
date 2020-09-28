@@ -2,6 +2,14 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
+export type HvBulkActionsClassKey =
+  | "root"
+  | "semantic"
+  | "actions"
+  | "selectAllContainer"
+  | "selectAll"
+  | "selectAllPages";
+  
 export interface HvBulkActionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBulkActionsClassKey>,
     HvActionsGenericCommonProps {
@@ -42,13 +50,5 @@ export interface HvBulkActionsProps
    */
   semantic?: boolean;
 }
-
-export type HvBulkActionsClassKey =
-  | "root"
-  | "semantic"
-  | "actions"
-  | "selectAllContainer"
-  | "selectAll"
-  | "selectAllPages";
 
 export default function HvBulkActions(props: HvBulkActionsProps): JSX.Element | null;

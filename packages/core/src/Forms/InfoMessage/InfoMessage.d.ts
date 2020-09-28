@@ -1,5 +1,7 @@
 import { StandardProps } from "@material-ui/core";
 
+export type HvInfoMessageClassKey = "root" | "infoDisabled" | "gutter";
+
 export interface HvInfoMessageProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInfoMessageClassKey> {
   /**
@@ -11,7 +13,5 @@ export interface HvInfoMessageProps
    */
   disableGutter?: boolean;
 }
-
-export type HvInfoMessageClassKey = "root" | "infoDisabled" | "gutter";
 
 export default function HvInfoMessage(props: HvInfoMessageProps): JSX.Element | null;

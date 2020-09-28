@@ -7,6 +7,8 @@ export interface NavigationItemProp {
   path?: string;
 }
 
+export type HvHeaderNavigationClassKey = "root";
+
 export interface HvHeaderNavigationProps
   extends StandardProps<
     React.HTMLAttributes<HTMLDivElement>,
@@ -29,7 +31,5 @@ export interface HvHeaderNavigationProps
    */
   onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
 }
-
-export type HvHeaderNavigationClassKey = "root";
 
 export default function HvHeaderNavigation(props: HvHeaderNavigationProps): JSX.Element | null;

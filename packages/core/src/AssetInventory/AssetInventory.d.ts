@@ -55,6 +55,17 @@ export type AssetInventoryMetadata = {
   searchFunction?: (entryValue: any, searchValue: any) => boolean;
 };
 
+export type ClassKey =
+  | "root"
+  | "controlsContainer"
+  | "search"
+  | "rightControls"
+  | "multiButtons"
+  | "viewContainer"
+  | "sortContainer"
+  | "searchBoxContainer"
+  | "pagination";
+
 export interface HvAssetInventoryProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey>,
     HvActionsGenericCommonProps,
@@ -165,16 +176,5 @@ export interface HvAssetInventoryProps
    */
   emptyComponent: React.ReactNode;
 }
-
-export type ClassKey =
-  | "root"
-  | "controlsContainer"
-  | "search"
-  | "rightControls"
-  | "multiButtons"
-  | "viewContainer"
-  | "sortContainer"
-  | "searchBoxContainer"
-  | "pagination";
 
 export default function HvAssetInventory(props: HvAssetInventoryProps): JSX.Element | null;
