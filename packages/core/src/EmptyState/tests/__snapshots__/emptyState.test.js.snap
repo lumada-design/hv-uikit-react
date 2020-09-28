@@ -184,18 +184,18 @@ exports[`[v3] <EmptyState /> with Element title/message/action should render cor
 exports[`[v3] <HvEmptyState /> with String title/message should render correctly 1`] = `
 <WithStyles(EmptyState)
   action={
-    <ForwardRef(WithStyles)
+    <WithStyles(ForwardRef)
       component="div"
     >
       <div>
         Here are some helpful links instead:
       </div>
-      <ForwardRef(WithStyles)
+      <WithStyles(HvLink)
         route="/"
       >
         Online Help
-      </ForwardRef(WithStyles)>
-    </ForwardRef(WithStyles)>
+      </WithStyles(HvLink)>
+    </WithStyles(ForwardRef)>
   }
   icon={
     <Ghost
@@ -206,26 +206,26 @@ exports[`[v3] <HvEmptyState /> with String title/message should render correctly
   }
   id="empty-state-custom-message"
   message={
-    <ForwardRef(WithStyles)>
+    <WithStyles(ForwardRef)>
       404 Not Found
-    </ForwardRef(WithStyles)>
+    </WithStyles(ForwardRef)>
   }
   title="This page can't be displayed"
 >
   <EmptyState
     action={
-      <ForwardRef(WithStyles)
+      <WithStyles(ForwardRef)
         component="div"
       >
         <div>
           Here are some helpful links instead:
         </div>
-        <ForwardRef(WithStyles)
+        <WithStyles(HvLink)
           route="/"
         >
           Online Help
-        </ForwardRef(WithStyles)>
-      </ForwardRef(WithStyles)>
+        </WithStyles(HvLink)>
+      </WithStyles(ForwardRef)>
     }
     classes={
       Object {
@@ -248,9 +248,9 @@ exports[`[v3] <HvEmptyState /> with String title/message should render correctly
     }
     id="empty-state-custom-message"
     message={
-      <ForwardRef(WithStyles)>
+      <WithStyles(ForwardRef)>
         404 Not Found
-      </ForwardRef(WithStyles)>
+      </WithStyles(ForwardRef)>
     }
     title="This page can't be displayed"
   >

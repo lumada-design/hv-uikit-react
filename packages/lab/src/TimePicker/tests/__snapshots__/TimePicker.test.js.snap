@@ -72,11 +72,13 @@ exports[`TimePicker should render correctly 1`] = `
     period="PM"
     seconds={30}
   >
-    <ForwardRef(ClickAwayListener)
+    <ClickAwayListener
       onClickAway={[Function]}
     >
       <div
         className="HvTimePicker-timePickerContainer"
+        onClick={[Function]}
+        onTouchEnd={[Function]}
       >
         <WithStyles(ForwardRef)
           className="HvTimePicker-label"
@@ -89,22 +91,23 @@ exports[`TimePicker should render correctly 1`] = `
                 "3xlTitle": "HvTypography-3xlTitle",
                 "4xlTitle": "HvTypography-4xlTitle",
                 "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
+                "disabledButtonText": "HvTypography-disabledButtonText",
                 "highlightText": "HvTypography-highlightText",
+                "infoText": "HvTypography-infoText",
+                "inlineLink": "HvTypography-inlineLink",
                 "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
+                "labelText": "HvTypography-labelText",
                 "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
                 "normalText": "HvTypography-normalText",
                 "placeholderText": "HvTypography-placeholderText",
                 "root": "HvTypography-root",
+                "sLink": "HvTypography-sLink",
+                "sText": "HvTypography-sText",
                 "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
                 "selectedNavText": "HvTypography-selectedNavText",
+                "selectedText": "HvTypography-selectedText",
                 "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
                 "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
                 "xsTitle": "HvTypography-xsTitle",
                 "xxlTitle": "HvTypography-xxlTitle",
                 "xxsTitle": "HvTypography-xxsTitle",
@@ -112,11 +115,11 @@ exports[`TimePicker should render correctly 1`] = `
             }
             variant="labelText"
           >
-            <span
-              className="HvTimePicker-label HvTypography-root"
+            <p
+              className="HvTimePicker-label HvTypography-root HvTypography-labelText"
             >
               mockTitle
-            </span>
+            </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
         <div
@@ -190,7 +193,7 @@ exports[`TimePicker should render correctly 1`] = `
           }
         />
       </div>
-    </ForwardRef(ClickAwayListener)>
+    </ClickAwayListener>
   </HvTimePicker>
 </WithStyles(HvTimePicker)>
 `;

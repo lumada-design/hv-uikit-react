@@ -37,7 +37,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
         }
       }
       control={
-        <ForwardRef(WithStyles)
+        <WithStyles(ForwardRef(Radio))
           checkedIcon={
             <RadioButtonSelected
               className="HvRadioButton-icon"
@@ -77,7 +77,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
           }
         }
         control={
-          <ForwardRef(WithStyles)
+          <WithStyles(ForwardRef(Radio))
             checkedIcon={
               <RadioButtonSelected
                 className="HvRadioButton-icon"
@@ -178,7 +178,6 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                 }
                 color="default"
                 disableRipple={true}
-                disabled={false}
                 icon={
                   <RadioButtonUnselected
                     className="HvRadioButton-icon"
@@ -211,7 +210,6 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                   }
                   color="default"
                   disableRipple={true}
-                  disabled={false}
                   icon={
                     <RadioButtonUnselected
                       className="HvRadioButton-icon"
@@ -232,7 +230,6 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                     color="default"
                     component="span"
                     disableRipple={true}
-                    disabled={false}
                     onBlur={[Function]}
                     onFocus={[Function]}
                     tabIndex={null}
@@ -255,7 +252,6 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                       color="default"
                       component="span"
                       disableRipple={true}
-                      disabled={false}
                       onBlur={[Function]}
                       onFocus={[Function]}
                       tabIndex={null}
@@ -311,7 +307,6 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                               <input
                                 aria-label="Simple radio button"
                                 className="PrivateSwitchBase-input-8"
-                                disabled={false}
                                 onChange={[Function]}
                                 type="radio"
                                 value=""

@@ -47,12 +47,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
         <div
           className="HvVerticalNavigationVerticalContainer-root HvVerticalNavigationVerticalContainer-withAnchorBar HvVerticalNavigationVerticalContainer-static"
         >
-          <ForwardRef(ClickAwayListener)
+          <ClickAwayListener
             onClickAway={[Function]}
           >
             <div
               className="HvVerticalNavigationVerticalContainer-verticalContainer"
               id="sample3-container"
+              onClick={[Function]}
+              onTouchEnd={[Function]}
             >
               <div
                 className="HvVerticalNavigationVerticalContainer-anchorBar"
@@ -463,7 +465,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                 </WithStyles(HvButton)>
               </div>
             </div>
-          </ForwardRef(ClickAwayListener)>
+          </ClickAwayListener>
         </div>
       </VerticalContainer>
     </WithStyles(VerticalContainer)>
@@ -518,12 +520,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
         <div
           className="HvVerticalNavigationVerticalContainer-root HvVerticalNavigationVerticalContainer-withAnchorBar HvVerticalNavigationVerticalContainer-static"
         >
-          <ForwardRef(ClickAwayListener)
+          <ClickAwayListener
             onClickAway={[Function]}
           >
             <div
               className="HvVerticalNavigationVerticalContainer-verticalContainer"
               id="sample3-container"
+              onClick={[Function]}
+              onTouchEnd={[Function]}
             >
               <div
                 className="HvVerticalNavigationVerticalContainer-anchorBar"
@@ -934,7 +938,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                 </WithStyles(HvButton)>
               </div>
             </div>
-          </ForwardRef(ClickAwayListener)>
+          </ClickAwayListener>
         </div>
       </VerticalContainer>
     </WithStyles(VerticalContainer)>
@@ -993,11 +997,13 @@ exports[`[v3] <VerticalNavigation /> [v3] non-collapsable open vertical navigati
         <div
           className="HvVerticalNavigationVerticalContainer-root HvVerticalNavigationVerticalContainer-fixed"
         >
-          <ForwardRef(ClickAwayListener)
+          <ClickAwayListener
             onClickAway={[Function]}
           >
             <div
               className="HvVerticalNavigationVerticalContainer-verticalContainer"
+              onClick={[Function]}
+              onTouchEnd={[Function]}
             >
               <div
                 className="HvVerticalNavigationVerticalContainer-contentContainer"
@@ -1015,7 +1021,7 @@ exports[`[v3] <VerticalNavigation /> [v3] non-collapsable open vertical navigati
                 </div>
               </div>
             </div>
-          </ForwardRef(ClickAwayListener)>
+          </ClickAwayListener>
         </div>
       </VerticalContainer>
     </WithStyles(VerticalContainer)>
@@ -1074,13 +1080,15 @@ exports[`[v3] <VerticalNavigation /> [v3] non-collapsable open vertical navigati
         <div
           className="HvVerticalNavigationVerticalContainer-root HvVerticalNavigationVerticalContainer-fixed"
         >
-          <ForwardRef(ClickAwayListener)
+          <ClickAwayListener
             onClickAway={[Function]}
           >
             <div
               className="HvVerticalNavigationVerticalContainer-verticalContainer"
+              onClick={[Function]}
+              onTouchEnd={[Function]}
             />
-          </ForwardRef(ClickAwayListener)>
+          </ClickAwayListener>
         </div>
       </VerticalContainer>
     </WithStyles(VerticalContainer)>

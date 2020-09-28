@@ -88,13 +88,13 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
           id="bulkActions-select"
           indeterminate={false}
           label={
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               component="span"
             >
               <b>
                 All
               </b>
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           }
           onChange={[Function]}
           semantic={false}
@@ -114,13 +114,13 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
             id="bulkActions-select"
             indeterminate={false}
             label={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
               >
                 <b>
                   All
                 </b>
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
             semantic={false}
@@ -265,11 +265,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             >
                               <WithStyles(ForwardRef(SwitchBase))
                                 checked={false}
-                                checkedIcon={
-                                  <CheckboxCheck
-                                    fontSize="default"
-                                  />
-                                }
+                                checkedIcon={<CheckboxCheck />}
                                 className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                 classes={
                                   Object {
@@ -281,11 +277,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                 color="default"
                                 disableRipple={true}
                                 disabled={false}
-                                icon={
-                                  <Checkbox
-                                    fontSize="default"
-                                  />
-                                }
+                                icon={<Checkbox />}
                                 id="bulkActions-select-input"
                                 inputProps={
                                   Object {
@@ -302,11 +294,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               >
                                 <ForwardRef(SwitchBase)
                                   checked={false}
-                                  checkedIcon={
-                                    <CheckboxCheck
-                                      fontSize="default"
-                                    />
-                                  }
+                                  checkedIcon={<CheckboxCheck />}
                                   className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                   classes={
                                     Object {
@@ -319,11 +307,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                   color="default"
                                   disableRipple={true}
                                   disabled={false}
-                                  icon={
-                                    <Checkbox
-                                      fontSize="default"
-                                    />
-                                  }
+                                  icon={<Checkbox />}
                                   id="bulkActions-select-input"
                                   inputProps={
                                     Object {
@@ -431,11 +415,8 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                                 type="checkbox"
                                                 value="on"
                                               />
-                                              <Checkbox
-                                                fontSize="default"
-                                              >
+                                              <Checkbox>
                                                 <WithStyles(HvIconBase)
-                                                  fontSize="default"
                                                   iconSize="S"
                                                   name="Checkbox"
                                                 >
@@ -449,13 +430,11 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                                         "xs": "HvIconBase-xs",
                                                       }
                                                     }
-                                                    fontSize="default"
                                                     iconSize="S"
                                                     name="Checkbox"
                                                   >
                                                     <div
                                                       className="HvIconBase-root HvIconBase-s"
-                                                      fontSize="default"
                                                       name="Checkbox"
                                                     >
                                                       <svg
@@ -497,13 +476,13 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         htmlFor="bulkActions-select-input"
                         id="bulkActions-select-label"
                         label={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef)
                             component="span"
                           >
                             <b>
                               All
                             </b>
-                          </ForwardRef(WithStyles)>
+                          </WithStyles(ForwardRef)>
                         }
                       >
                         <HvLabel
@@ -518,13 +497,13 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           htmlFor="bulkActions-select-input"
                           id="bulkActions-select-label"
                           label={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef)
                               component="span"
                             >
                               <b>
                                 All
                               </b>
-                            </ForwardRef(WithStyles)>
+                            </WithStyles(ForwardRef)>
                           }
                         >
                           <WithStyles(ForwardRef)
@@ -1231,7 +1210,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                       }
                     }
                     component={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(HvButton)
                         aria-label="Dropdown menu"
                         category="ghost"
                         className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1242,7 +1221,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         <MoreOptionsVertical
                           color="atmo5"
                         />
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(HvButton)>
                     }
                     disablePortal={false}
                     disabled={true}
@@ -1274,7 +1253,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         }
                       }
                       component={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(HvButton)
                           aria-label="Dropdown menu"
                           category="ghost"
                           className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1285,7 +1264,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           <MoreOptionsVertical
                             color="atmo5"
                           />
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(HvButton)>
                       }
                       disablePortal={false}
                       disabled={true}
@@ -1622,13 +1601,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
           className="HvBulkActions-selectAll"
           indeterminate={false}
           label={
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               component="span"
             >
               <b>
                 All
               </b>
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           }
           onChange={[Function]}
           semantic={false}
@@ -1647,13 +1626,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
             }
             indeterminate={false}
             label={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
               >
                 <b>
                   All
                 </b>
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
             semantic={false}
@@ -1796,11 +1775,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             >
                               <WithStyles(ForwardRef(SwitchBase))
                                 checked={false}
-                                checkedIcon={
-                                  <CheckboxCheck
-                                    fontSize="default"
-                                  />
-                                }
+                                checkedIcon={<CheckboxCheck />}
                                 className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                 classes={
                                   Object {
@@ -1812,11 +1787,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                 color="default"
                                 disableRipple={true}
                                 disabled={false}
-                                icon={
-                                  <Checkbox
-                                    fontSize="default"
-                                  />
-                                }
+                                icon={<Checkbox />}
                                 id="hvcheckbox1-input"
                                 inputProps={
                                   Object {
@@ -1833,11 +1804,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               >
                                 <ForwardRef(SwitchBase)
                                   checked={false}
-                                  checkedIcon={
-                                    <CheckboxCheck
-                                      fontSize="default"
-                                    />
-                                  }
+                                  checkedIcon={<CheckboxCheck />}
                                   className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                   classes={
                                     Object {
@@ -1850,11 +1817,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                   color="default"
                                   disableRipple={true}
                                   disabled={false}
-                                  icon={
-                                    <Checkbox
-                                      fontSize="default"
-                                    />
-                                  }
+                                  icon={<Checkbox />}
                                   id="hvcheckbox1-input"
                                   inputProps={
                                     Object {
@@ -1962,11 +1925,8 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                                 type="checkbox"
                                                 value="on"
                                               />
-                                              <Checkbox
-                                                fontSize="default"
-                                              >
+                                              <Checkbox>
                                                 <WithStyles(HvIconBase)
-                                                  fontSize="default"
                                                   iconSize="S"
                                                   name="Checkbox"
                                                 >
@@ -1980,13 +1940,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                                         "xs": "HvIconBase-xs",
                                                       }
                                                     }
-                                                    fontSize="default"
                                                     iconSize="S"
                                                     name="Checkbox"
                                                   >
                                                     <div
                                                       className="HvIconBase-root HvIconBase-s"
-                                                      fontSize="default"
                                                       name="Checkbox"
                                                     >
                                                       <svg
@@ -2028,13 +1986,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         htmlFor="hvcheckbox1-input"
                         id="hvcheckbox1-label"
                         label={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef)
                             component="span"
                           >
                             <b>
                               All
                             </b>
-                          </ForwardRef(WithStyles)>
+                          </WithStyles(ForwardRef)>
                         }
                       >
                         <HvLabel
@@ -2049,13 +2007,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           htmlFor="hvcheckbox1-input"
                           id="hvcheckbox1-label"
                           label={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef)
                               component="span"
                             >
                               <b>
                                 All
                               </b>
-                            </ForwardRef(WithStyles)>
+                            </WithStyles(ForwardRef)>
                           }
                         >
                           <WithStyles(ForwardRef)
@@ -2974,7 +2932,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                       }
                     }
                     component={
-                      <ForwardRef(WithStyles)
+                      <WithStyles(HvButton)
                         aria-label="Dropdown menu"
                         category="ghost"
                         className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -2985,7 +2943,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         <MoreOptionsVertical
                           color="atmo5"
                         />
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(HvButton)>
                     }
                     disablePortal={false}
                     disabled={true}
@@ -3017,7 +2975,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         }
                       }
                       component={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(HvButton)
                           aria-label="Dropdown menu"
                           category="ghost"
                           className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -3028,7 +2986,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           <MoreOptionsVertical
                             color="atmo5"
                           />
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(HvButton)>
                       }
                       disablePortal={false}
                       disabled={true}
@@ -3529,7 +3487,6 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                         "base2",
                                       ]
                                     }
-                                    fontSize="default"
                                   />
                                 }
                                 className="HvCheckBox-checkBox HvBaseCheckbox-root"
@@ -3551,7 +3508,6 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                         "base2",
                                       ]
                                     }
-                                    fontSize="default"
                                   />
                                 }
                                 id="hvcheckbox8-input"
@@ -3578,7 +3534,6 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                           "base2",
                                         ]
                                       }
-                                      fontSize="default"
                                     />
                                   }
                                   className="HvCheckBox-checkBox HvBaseCheckbox-root"
@@ -3601,7 +3556,6 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                           "base2",
                                         ]
                                       }
-                                      fontSize="default"
                                     />
                                   }
                                   id="hvcheckbox8-input"
@@ -3718,10 +3672,8 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                                     "base2",
                                                   ]
                                                 }
-                                                fontSize="default"
                                               >
                                                 <WithStyles(HvIconBase)
-                                                  fontSize="default"
                                                   iconSize="S"
                                                   name="CheckboxPartial"
                                                 >
@@ -3735,13 +3687,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                                         "xs": "HvIconBase-xs",
                                                       }
                                                     }
-                                                    fontSize="default"
                                                     iconSize="S"
                                                     name="CheckboxPartial"
                                                   >
                                                     <div
                                                       className="HvIconBase-root HvIconBase-s"
-                                                      fontSize="default"
                                                       name="CheckboxPartial"
                                                     >
                                                       <svg
@@ -3941,7 +3891,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
           className="HvBulkActions-selectAll"
           indeterminate={true}
           label={
-            <ForwardRef(WithStyles)
+            <WithStyles(ForwardRef)
               component="span"
             >
               <React.Fragment>
@@ -3950,7 +3900,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                 </b>
                  / 5
               </React.Fragment>
-            </ForwardRef(WithStyles)>
+            </WithStyles(ForwardRef)>
           }
           onChange={[Function]}
           semantic={true}
@@ -3969,7 +3919,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
             }
             indeterminate={true}
             label={
-              <ForwardRef(WithStyles)
+              <WithStyles(ForwardRef)
                 component="span"
               >
                 <React.Fragment>
@@ -3978,7 +3928,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                   </b>
                    / 5
                 </React.Fragment>
-              </ForwardRef(WithStyles)>
+              </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
             semantic={true}
@@ -4183,7 +4133,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                         "base2",
                                       ]
                                     }
-                                    fontSize="default"
                                   />
                                 }
                                 className="HvCheckBox-checkBox HvBaseCheckbox-root"
@@ -4205,7 +4154,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                         "base2",
                                       ]
                                     }
-                                    fontSize="default"
                                   />
                                 }
                                 id="hvcheckbox4-input"
@@ -4232,7 +4180,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                           "base2",
                                         ]
                                       }
-                                      fontSize="default"
                                     />
                                   }
                                   className="HvCheckBox-checkBox HvBaseCheckbox-root"
@@ -4255,7 +4202,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                           "base2",
                                         ]
                                       }
-                                      fontSize="default"
                                     />
                                   }
                                   id="hvcheckbox4-input"
@@ -4372,10 +4318,8 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                                     "base2",
                                                   ]
                                                 }
-                                                fontSize="default"
                                               >
                                                 <WithStyles(HvIconBase)
-                                                  fontSize="default"
                                                   iconSize="S"
                                                   name="CheckboxPartial"
                                                 >
@@ -4389,13 +4333,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                                         "xs": "HvIconBase-xs",
                                                       }
                                                     }
-                                                    fontSize="default"
                                                     iconSize="S"
                                                     name="CheckboxPartial"
                                                   >
                                                     <div
                                                       className="HvIconBase-root HvIconBase-s"
-                                                      fontSize="default"
                                                       name="CheckboxPartial"
                                                     >
                                                       <svg
@@ -4437,7 +4379,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                         htmlFor="hvcheckbox4-input"
                         id="hvcheckbox4-label"
                         label={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef)
                             component="span"
                           >
                             <React.Fragment>
@@ -4446,7 +4388,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                               </b>
                                / 5
                             </React.Fragment>
-                          </ForwardRef(WithStyles)>
+                          </WithStyles(ForwardRef)>
                         }
                       >
                         <HvLabel
@@ -4461,7 +4403,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                           htmlFor="hvcheckbox4-input"
                           id="hvcheckbox4-label"
                           label={
-                            <ForwardRef(WithStyles)
+                            <WithStyles(ForwardRef)
                               component="span"
                             >
                               <React.Fragment>
@@ -4470,7 +4412,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                 </b>
                                  / 5
                               </React.Fragment>
-                            </ForwardRef(WithStyles)>
+                            </WithStyles(ForwardRef)>
                           }
                         >
                           <WithStyles(ForwardRef)

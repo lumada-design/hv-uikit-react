@@ -316,11 +316,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(SwitchBase))
                                       checked={false}
-                                      checkedIcon={
-                                        <CheckboxPartial
-                                          fontSize="default"
-                                        />
-                                      }
+                                      checkedIcon={<CheckboxPartial />}
                                       className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                       classes={
                                         Object {
@@ -332,11 +328,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       color="default"
                                       disableRipple={true}
                                       disabled={false}
-                                      icon={
-                                        <CheckboxPartial
-                                          fontSize="default"
-                                        />
-                                      }
+                                      icon={<CheckboxPartial />}
                                       id="hvcheckbox13-input"
                                       inputProps={
                                         Object {
@@ -353,11 +345,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     >
                                       <ForwardRef(SwitchBase)
                                         checked={false}
-                                        checkedIcon={
-                                          <CheckboxPartial
-                                            fontSize="default"
-                                          />
-                                        }
+                                        checkedIcon={<CheckboxPartial />}
                                         className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                         classes={
                                           Object {
@@ -370,11 +358,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                         color="default"
                                         disableRipple={true}
                                         disabled={false}
-                                        icon={
-                                          <CheckboxPartial
-                                            fontSize="default"
-                                          />
-                                        }
+                                        icon={<CheckboxPartial />}
                                         id="hvcheckbox13-input"
                                         inputProps={
                                           Object {
@@ -482,11 +466,8 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                       type="checkbox"
                                                       value="on"
                                                     />
-                                                    <CheckboxPartial
-                                                      fontSize="default"
-                                                    >
+                                                    <CheckboxPartial>
                                                       <WithStyles(HvIconBase)
-                                                        fontSize="default"
                                                         iconSize="S"
                                                         name="CheckboxPartial"
                                                       >
@@ -500,13 +481,11 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                               "xs": "HvIconBase-xs",
                                                             }
                                                           }
-                                                          fontSize="default"
                                                           iconSize="S"
                                                           name="CheckboxPartial"
                                                         >
                                                           <div
                                                             className="HvIconBase-root HvIconBase-s"
-                                                            fontSize="default"
                                                             name="CheckboxPartial"
                                                           >
                                                             <svg
@@ -789,11 +768,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(SwitchBase))
                                       checked={false}
-                                      checkedIcon={
-                                        <CheckboxCheck
-                                          fontSize="default"
-                                        />
-                                      }
+                                      checkedIcon={<CheckboxCheck />}
                                       className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                       classes={
                                         Object {
@@ -805,11 +780,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       color="default"
                                       disableRipple={true}
                                       disabled={false}
-                                      icon={
-                                        <Checkbox
-                                          fontSize="default"
-                                        />
-                                      }
+                                      icon={<Checkbox />}
                                       id="hvcheckbox15-input"
                                       inputProps={
                                         Object {
@@ -827,11 +798,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     >
                                       <ForwardRef(SwitchBase)
                                         checked={false}
-                                        checkedIcon={
-                                          <CheckboxCheck
-                                            fontSize="default"
-                                          />
-                                        }
+                                        checkedIcon={<CheckboxCheck />}
                                         className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                         classes={
                                           Object {
@@ -844,11 +811,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                         color="default"
                                         disableRipple={true}
                                         disabled={false}
-                                        icon={
-                                          <Checkbox
-                                            fontSize="default"
-                                          />
-                                        }
+                                        icon={<Checkbox />}
                                         id="hvcheckbox15-input"
                                         inputProps={
                                           Object {
@@ -958,11 +921,8 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                       type="checkbox"
                                                       value="1"
                                                     />
-                                                    <Checkbox
-                                                      fontSize="default"
-                                                    >
+                                                    <Checkbox>
                                                       <WithStyles(HvIconBase)
-                                                        fontSize="default"
                                                         iconSize="S"
                                                         name="Checkbox"
                                                       >
@@ -976,13 +936,11 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                               "xs": "HvIconBase-xs",
                                                             }
                                                           }
-                                                          fontSize="default"
                                                           iconSize="S"
                                                           name="Checkbox"
                                                         >
                                                           <div
                                                             className="HvIconBase-root HvIconBase-s"
-                                                            fontSize="default"
                                                             name="Checkbox"
                                                           >
                                                             <svg
@@ -1265,11 +1223,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(SwitchBase))
                                       checked={true}
-                                      checkedIcon={
-                                        <CheckboxCheck
-                                          fontSize="default"
-                                        />
-                                      }
+                                      checkedIcon={<CheckboxCheck />}
                                       className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                       classes={
                                         Object {
@@ -1281,11 +1235,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       color="default"
                                       disableRipple={true}
                                       disabled={false}
-                                      icon={
-                                        <Checkbox
-                                          fontSize="default"
-                                        />
-                                      }
+                                      icon={<Checkbox />}
                                       id="hvcheckbox17-input"
                                       inputProps={
                                         Object {
@@ -1303,11 +1253,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     >
                                       <ForwardRef(SwitchBase)
                                         checked={true}
-                                        checkedIcon={
-                                          <CheckboxCheck
-                                            fontSize="default"
-                                          />
-                                        }
+                                        checkedIcon={<CheckboxCheck />}
                                         className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                         classes={
                                           Object {
@@ -1320,11 +1266,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                         color="default"
                                         disableRipple={true}
                                         disabled={false}
-                                        icon={
-                                          <Checkbox
-                                            fontSize="default"
-                                          />
-                                        }
+                                        icon={<Checkbox />}
                                         id="hvcheckbox17-input"
                                         inputProps={
                                           Object {
@@ -1434,11 +1376,8 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                       type="checkbox"
                                                       value="2"
                                                     />
-                                                    <CheckboxCheck
-                                                      fontSize="default"
-                                                    >
+                                                    <CheckboxCheck>
                                                       <WithStyles(HvIconBase)
-                                                        fontSize="default"
                                                         iconSize="S"
                                                         name="CheckboxCheck"
                                                       >
@@ -1452,13 +1391,11 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                               "xs": "HvIconBase-xs",
                                                             }
                                                           }
-                                                          fontSize="default"
                                                           iconSize="S"
                                                           name="CheckboxCheck"
                                                         >
                                                           <div
                                                             className="HvIconBase-root HvIconBase-s"
-                                                            fontSize="default"
                                                             name="CheckboxCheck"
                                                           >
                                                             <svg
@@ -1746,11 +1683,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(SwitchBase))
                                       checked={false}
-                                      checkedIcon={
-                                        <CheckboxCheck
-                                          fontSize="default"
-                                        />
-                                      }
+                                      checkedIcon={<CheckboxCheck />}
                                       className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                       classes={
                                         Object {
@@ -1762,11 +1695,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       color="default"
                                       disableRipple={true}
                                       disabled={false}
-                                      icon={
-                                        <Checkbox
-                                          fontSize="default"
-                                        />
-                                      }
+                                      icon={<Checkbox />}
                                       id="hvcheckbox19-input"
                                       inputProps={
                                         Object {
@@ -1784,11 +1713,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     >
                                       <ForwardRef(SwitchBase)
                                         checked={false}
-                                        checkedIcon={
-                                          <CheckboxCheck
-                                            fontSize="default"
-                                          />
-                                        }
+                                        checkedIcon={<CheckboxCheck />}
                                         className="HvCheckBox-checkBox HvBaseCheckbox-root"
                                         classes={
                                           Object {
@@ -1801,11 +1726,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                         color="default"
                                         disableRipple={true}
                                         disabled={false}
-                                        icon={
-                                          <Checkbox
-                                            fontSize="default"
-                                          />
-                                        }
+                                        icon={<Checkbox />}
                                         id="hvcheckbox19-input"
                                         inputProps={
                                           Object {
@@ -1915,11 +1836,8 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                       type="checkbox"
                                                       value="3"
                                                     />
-                                                    <Checkbox
-                                                      fontSize="default"
-                                                    >
+                                                    <Checkbox>
                                                       <WithStyles(HvIconBase)
-                                                        fontSize="default"
                                                         iconSize="S"
                                                         name="Checkbox"
                                                       >
@@ -1933,13 +1851,11 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                               "xs": "HvIconBase-xs",
                                                             }
                                                           }
-                                                          fontSize="default"
                                                           iconSize="S"
                                                           name="Checkbox"
                                                         >
                                                           <div
                                                             className="HvIconBase-root HvIconBase-s"
-                                                            fontSize="default"
                                                             name="Checkbox"
                                                           >
                                                             <svg

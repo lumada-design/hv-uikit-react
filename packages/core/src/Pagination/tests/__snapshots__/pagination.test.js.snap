@@ -206,9 +206,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                 id="pagination-pageSize"
                 onToggle={[Function]}
                 placeholder={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     12
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <HvBaseDropdown
@@ -239,9 +239,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   id="pagination-pageSize"
                   onToggle={[Function]}
                   placeholder={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       12
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <div
@@ -425,9 +425,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               title={
-                <ForwardRef(WithStyles)>
+                <WithStyles(ForwardRef)>
                   First page
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
             >
               <ForwardRef
@@ -447,9 +447,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   }
                 }
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     First page
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <WithStyles(ForwardRef(Tooltip))
@@ -458,9 +458,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -481,9 +486,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   enterDelay={300}
                   placement="top"
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       First page
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <ForwardRef(Tooltip)
@@ -492,9 +497,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -524,9 +534,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                     enterDelay={300}
                     placement="top"
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         First page
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <div
@@ -818,9 +828,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               title={
-                <ForwardRef(WithStyles)>
+                <WithStyles(ForwardRef)>
                   Previous page
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
             >
               <ForwardRef
@@ -840,9 +850,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   }
                 }
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Previous page
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <WithStyles(ForwardRef(Tooltip))
@@ -851,9 +861,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -874,9 +889,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   enterDelay={300}
                   placement="top"
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Previous page
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <ForwardRef(Tooltip)
@@ -885,9 +900,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -917,9 +937,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                     enterDelay={300}
                     placement="top"
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Previous page
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <div
@@ -2118,9 +2138,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               title={
-                <ForwardRef(WithStyles)>
+                <WithStyles(ForwardRef)>
                   Next page
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
             >
               <ForwardRef
@@ -2140,9 +2160,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   }
                 }
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Next page
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <WithStyles(ForwardRef(Tooltip))
@@ -2151,9 +2171,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -2174,9 +2199,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   enterDelay={300}
                   placement="top"
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Next page
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <ForwardRef(Tooltip)
@@ -2185,9 +2210,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -2217,9 +2247,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                     enterDelay={300}
                     placement="top"
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Next page
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <div
@@ -2509,9 +2539,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               title={
-                <ForwardRef(WithStyles)>
+                <WithStyles(ForwardRef)>
                   Last page
-                </ForwardRef(WithStyles)>
+                </WithStyles(ForwardRef)>
               }
             >
               <ForwardRef
@@ -2531,9 +2561,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   }
                 }
                 title={
-                  <ForwardRef(WithStyles)>
+                  <WithStyles(ForwardRef)>
                     Last page
-                  </ForwardRef(WithStyles)>
+                  </WithStyles(ForwardRef)>
                 }
               >
                 <WithStyles(ForwardRef(Tooltip))
@@ -2542,9 +2572,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -2565,9 +2600,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                   enterDelay={300}
                   placement="top"
                   title={
-                    <ForwardRef(WithStyles)>
+                    <WithStyles(ForwardRef)>
                       Last page
-                    </ForwardRef(WithStyles)>
+                    </WithStyles(ForwardRef)>
                   }
                 >
                   <ForwardRef(Tooltip)
@@ -2576,9 +2611,14 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "propTypes": Object {
                           "children": [Function],
+                          "disableStrictModeCompat": [Function],
                           "in": [Function],
                           "onEnter": [Function],
+                          "onEntered": [Function],
+                          "onEntering": [Function],
                           "onExit": [Function],
+                          "onExited": [Function],
+                          "onExiting": [Function],
                           "style": [Function],
                           "timeout": [Function],
                         },
@@ -2608,9 +2648,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                     enterDelay={300}
                     placement="top"
                     title={
-                      <ForwardRef(WithStyles)>
+                      <WithStyles(ForwardRef)>
                         Last page
-                      </ForwardRef(WithStyles)>
+                      </WithStyles(ForwardRef)>
                     }
                   >
                     <div

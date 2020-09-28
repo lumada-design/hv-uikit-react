@@ -27,8 +27,10 @@ exports[`[v3] Header should be able to render 1`] = `
         classes={
           Object {
             "colorDefault": "MuiAppBar-colorDefault",
+            "colorInherit": "MuiAppBar-colorInherit",
             "colorPrimary": "MuiAppBar-colorPrimary HvHeader-backgroundColor",
             "colorSecondary": "MuiAppBar-colorSecondary",
+            "colorTransparent": "MuiAppBar-colorTransparent",
             "positionAbsolute": "MuiAppBar-positionAbsolute",
             "positionFixed": "MuiAppBar-positionFixed",
             "positionRelative": "MuiAppBar-positionRelative",

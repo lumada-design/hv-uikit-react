@@ -1913,7 +1913,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 }
                               }
                               control={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(ForwardRef(Radio))
                                   checked={false}
                                   checkedIcon={
                                     <RadioButtonSelected
@@ -1949,7 +1949,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   }
                                 }
                                 control={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(ForwardRef(Radio))
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
@@ -2039,7 +2039,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         }
                                         color="default"
                                         disableRipple={true}
-                                        disabled={false}
                                         icon={
                                           <RadioButtonUnselected
                                             className="HvRadioButton-icon"
@@ -2068,7 +2067,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           }
                                           color="default"
                                           disableRipple={true}
-                                          disabled={false}
                                           icon={
                                             <RadioButtonUnselected
                                               className="HvRadioButton-icon"
@@ -2084,7 +2082,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                             color="default"
                                             component="span"
                                             disableRipple={true}
-                                            disabled={false}
                                             onBlur={[Function]}
                                             onFocus={[Function]}
                                             tabIndex={null}
@@ -2107,7 +2104,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                               color="default"
                                               component="span"
                                               disableRipple={true}
-                                              disabled={false}
                                               onBlur={[Function]}
                                               onFocus={[Function]}
                                               tabIndex={null}
@@ -2163,7 +2159,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                       <input
                                                         checked={false}
                                                         className="PrivateSwitchBase-input-4"
-                                                        disabled={false}
                                                         onChange={[Function]}
                                                         type="radio"
                                                         value=""
@@ -2736,7 +2731,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 }
                               }
                               control={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(ForwardRef(Radio))
                                   checked={false}
                                   checkedIcon={
                                     <RadioButtonSelected
@@ -2772,7 +2767,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   }
                                 }
                                 control={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(ForwardRef(Radio))
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
@@ -2862,7 +2857,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         }
                                         color="default"
                                         disableRipple={true}
-                                        disabled={false}
                                         icon={
                                           <RadioButtonUnselected
                                             className="HvRadioButton-icon"
@@ -2891,7 +2885,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           }
                                           color="default"
                                           disableRipple={true}
-                                          disabled={false}
                                           icon={
                                             <RadioButtonUnselected
                                               className="HvRadioButton-icon"
@@ -2907,7 +2900,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                             color="default"
                                             component="span"
                                             disableRipple={true}
-                                            disabled={false}
                                             onBlur={[Function]}
                                             onFocus={[Function]}
                                             tabIndex={null}
@@ -2930,7 +2922,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                               color="default"
                                               component="span"
                                               disableRipple={true}
-                                              disabled={false}
                                               onBlur={[Function]}
                                               onFocus={[Function]}
                                               tabIndex={null}
@@ -2986,7 +2977,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                       <input
                                                         checked={false}
                                                         className="PrivateSwitchBase-input-4"
-                                                        disabled={false}
                                                         onChange={[Function]}
                                                         type="radio"
                                                         value=""
@@ -3559,7 +3549,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                 }
                               }
                               control={
-                                <ForwardRef(WithStyles)
+                                <WithStyles(ForwardRef(Radio))
                                   checked={false}
                                   checkedIcon={
                                     <RadioButtonSelected
@@ -3595,7 +3585,7 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                   }
                                 }
                                 control={
-                                  <ForwardRef(WithStyles)
+                                  <WithStyles(ForwardRef(Radio))
                                     checked={false}
                                     checkedIcon={
                                       <RadioButtonSelected
@@ -3685,7 +3675,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                         }
                                         color="default"
                                         disableRipple={true}
-                                        disabled={false}
                                         icon={
                                           <RadioButtonUnselected
                                             className="HvRadioButton-icon"
@@ -3714,7 +3703,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                           }
                                           color="default"
                                           disableRipple={true}
-                                          disabled={false}
                                           icon={
                                             <RadioButtonUnselected
                                               className="HvRadioButton-icon"
@@ -3730,7 +3718,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                             color="default"
                                             component="span"
                                             disableRipple={true}
-                                            disabled={false}
                                             onBlur={[Function]}
                                             onFocus={[Function]}
                                             tabIndex={null}
@@ -3753,7 +3740,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                               color="default"
                                               component="span"
                                               disableRipple={true}
-                                              disabled={false}
                                               onBlur={[Function]}
                                               onFocus={[Function]}
                                               tabIndex={null}
@@ -3809,7 +3795,6 @@ exports[`[v3] <List /> Single selection with selectors should render correctly 1
                                                       <input
                                                         checked={false}
                                                         className="PrivateSwitchBase-input-4"
-                                                        disabled={false}
                                                         onChange={[Function]}
                                                         type="radio"
                                                         value=""

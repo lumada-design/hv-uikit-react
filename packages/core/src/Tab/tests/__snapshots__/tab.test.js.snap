@@ -81,7 +81,9 @@ exports[`v3 Tab withStyles should render correctly 1`] = `
           focusRipple={true}
           focusVisibleClassName="HvTab-focusVisible"
           onClick={[Function]}
+          onFocus={[Function]}
           role="tab"
+          tabIndex={-1}
         >
           <ForwardRef(ButtonBase)
             className="MuiTab-root HvTab-root MuiTab-textColorInherit"
@@ -104,7 +106,9 @@ exports[`v3 Tab withStyles should render correctly 1`] = `
             focusRipple={true}
             focusVisibleClassName="HvTab-focusVisible"
             onClick={[Function]}
+            onFocus={[Function]}
             role="tab"
+            tabIndex={-1}
           >
             <ForwardRef
               aria-disabled={false}
@@ -122,7 +126,7 @@ exports[`v3 Tab withStyles should render correctly 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="tab"
-              tabIndex={0}
+              tabIndex={-1}
             >
               <WithStyles(ForwardRef(ButtonBase))
                 aria-disabled={false}
@@ -141,7 +145,7 @@ exports[`v3 Tab withStyles should render correctly 1`] = `
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
                 role="tab"
-                tabIndex={0}
+                tabIndex={-1}
               >
                 <ForwardRef(ButtonBase)
                   aria-disabled={false}
@@ -168,7 +172,7 @@ exports[`v3 Tab withStyles should render correctly 1`] = `
                   onTouchMove={[Function]}
                   onTouchStart={[Function]}
                   role="tab"
-                  tabIndex={0}
+                  tabIndex={-1}
                 >
                   <button
                     aria-disabled={false}
@@ -187,7 +191,7 @@ exports[`v3 Tab withStyles should render correctly 1`] = `
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     role="tab"
-                    tabIndex={0}
+                    tabIndex={-1}
                     type="button"
                   >
                     <span

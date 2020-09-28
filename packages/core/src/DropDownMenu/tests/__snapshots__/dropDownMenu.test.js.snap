@@ -72,7 +72,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
           }
         }
         component={
-          <ForwardRef(WithStyles)
+          <WithStyles(HvButton)
             aria-label="Dropdown menu"
             className="HvDropDownMenu-icon"
             disabled={false}
@@ -80,7 +80,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
             id="drop-down-menu-11-icon-button"
           >
             <MoreOptionsVertical />
-          </ForwardRef(WithStyles)>
+          </WithStyles(HvButton)>
         }
         disablePortal={false}
         disabled={false}
@@ -112,7 +112,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
             }
           }
           component={
-            <ForwardRef(WithStyles)
+            <WithStyles(HvButton)
               aria-label="Dropdown menu"
               className="HvDropDownMenu-icon"
               disabled={false}
@@ -120,7 +120,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
               id="drop-down-menu-11-icon-button"
             >
               <MoreOptionsVertical />
-            </ForwardRef(WithStyles)>
+            </WithStyles(HvButton)>
           }
           disablePortal={false}
           disabled={false}
@@ -470,7 +470,7 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
           }
         }
         component={
-          <ForwardRef(WithStyles)
+          <WithStyles(HvButton)
             aria-label="Dropdown menu"
             className="HvDropDownMenu-icon"
             disabled={false}
@@ -478,7 +478,7 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
             id="drop-down-menu-9-icon-button"
           >
             <MoreOptionsVertical />
-          </ForwardRef(WithStyles)>
+          </WithStyles(HvButton)>
         }
         disablePortal={false}
         disabled={false}
@@ -510,7 +510,7 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
             }
           }
           component={
-            <ForwardRef(WithStyles)
+            <WithStyles(HvButton)
               aria-label="Dropdown menu"
               className="HvDropDownMenu-icon"
               disabled={false}
@@ -518,7 +518,7 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
               id="drop-down-menu-9-icon-button"
             >
               <MoreOptionsVertical />
-            </ForwardRef(WithStyles)>
+            </WithStyles(HvButton)>
           }
           disablePortal={false}
           disabled={false}
@@ -829,7 +829,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
           }
         }
         component={
-          <ForwardRef(WithStyles)
+          <WithStyles(HvButton)
             aria-label="Dropdown menu"
             className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
             disabled={false}
@@ -837,7 +837,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
             id="drop-down-menu-10-icon-button"
           >
             <MoreOptionsVertical />
-          </ForwardRef(WithStyles)>
+          </WithStyles(HvButton)>
         }
         disablePortal={false}
         disabled={false}
@@ -869,7 +869,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
             }
           }
           component={
-            <ForwardRef(WithStyles)
+            <WithStyles(HvButton)
               aria-label="Dropdown menu"
               className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
               disabled={false}
@@ -877,7 +877,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
               id="drop-down-menu-10-icon-button"
             >
               <MoreOptionsVertical />
-            </ForwardRef(WithStyles)>
+            </WithStyles(HvButton)>
           }
           disablePortal={false}
           disabled={false}
@@ -1160,7 +1160,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                   >
                     <div
                       role="tooltip"
-                      style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                      style="position: absolute; z-index: 1500; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+                      x-placement="bottom-start"
                     >
                       <div>
                         <div
@@ -1209,7 +1210,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                     </div>
                     <div
                       role="tooltip"
-                      style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                      style="position: absolute; z-index: 1500; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+                      x-placement="bottom-start"
                     >
                       <div>
                         <div
@@ -1258,7 +1260,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                     </div>
                     <div
                       role="tooltip"
-                      style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                      style="position: absolute; z-index: 1500; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform;"
+                      x-placement="bottom-start"
                     >
                       <div>
                         <div
@@ -1277,7 +1280,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                               role="menu"
                             >
                               <li
-                                class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled focus-visible HvFocus-focused HvFocus-focus HvListItem-focus"
+                                data-focus-visible-added=""
                                 id="drop-down-menu-6-list-item-0"
                                 role="menuitem"
                                 tabindex="0"
@@ -1307,7 +1311,8 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                     </div>
                     <div
                       role="tooltip"
-                      style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                      style="position: absolute; top: 0px; left: 0px; z-index: 1500;"
+                      x-placement="bottom-start"
                     >
                       <div>
                         <div
@@ -1361,6 +1366,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                   role="tooltip"
                   style={
                     Object {
+                      "display": null,
                       "left": 0,
                       "position": "fixed",
                       "top": 0,
@@ -1368,11 +1374,13 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                     }
                   }
                 >
-                  <ForwardRef(ClickAwayListener)
+                  <ClickAwayListener
                     onClickAway={[Function]}
                   >
                     <div
+                      onClick={[Function]}
                       onKeyDown={[Function]}
+                      onTouchEnd={[Function]}
                     >
                       <div
                         className="HvBaseDropdown-inputExtensionOpen"
@@ -1979,7 +1987,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                         </WithStyles(HvPanel)>
                       </div>
                     </div>
-                  </ForwardRef(ClickAwayListener)>
+                  </ClickAwayListener>
                 </div>
               </Portal>
             </ForwardRef(Portal)>
@@ -2063,7 +2071,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
           }
         }
         component={
-          <ForwardRef(WithStyles)
+          <WithStyles(HvButton)
             aria-label="Dropdown menu"
             className="HvDropDownMenu-icon"
             disabled={false}
@@ -2071,7 +2079,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
             id="drop-down-menu-3-icon-button"
           >
             <MoreOptionsVertical />
-          </ForwardRef(WithStyles)>
+          </WithStyles(HvButton)>
         }
         disablePortal={false}
         disabled={false}
@@ -2103,7 +2111,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
             }
           }
           component={
-            <ForwardRef(WithStyles)
+            <WithStyles(HvButton)
               aria-label="Dropdown menu"
               className="HvDropDownMenu-icon"
               disabled={false}
@@ -2111,7 +2119,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
               id="drop-down-menu-3-icon-button"
             >
               <MoreOptionsVertical />
-            </ForwardRef(WithStyles)>
+            </WithStyles(HvButton)>
           }
           disablePortal={false}
           disabled={false}
@@ -2461,7 +2469,7 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
           }
         }
         component={
-          <ForwardRef(WithStyles)
+          <WithStyles(HvButton)
             aria-label="Dropdown menu"
             className="HvDropDownMenu-icon"
             disabled={false}
@@ -2469,7 +2477,7 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
             id="drop-down-menu-1-icon-button"
           >
             <MoreOptionsVertical />
-          </ForwardRef(WithStyles)>
+          </WithStyles(HvButton)>
         }
         disablePortal={false}
         disabled={false}
@@ -2501,7 +2509,7 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
             }
           }
           component={
-            <ForwardRef(WithStyles)
+            <WithStyles(HvButton)
               aria-label="Dropdown menu"
               className="HvDropDownMenu-icon"
               disabled={false}
@@ -2509,7 +2517,7 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
               id="drop-down-menu-1-icon-button"
             >
               <MoreOptionsVertical />
-            </ForwardRef(WithStyles)>
+            </WithStyles(HvButton)>
           }
           disablePortal={false}
           disabled={false}
@@ -2820,7 +2828,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
           }
         }
         component={
-          <ForwardRef(WithStyles)
+          <WithStyles(HvButton)
             aria-label="Dropdown menu"
             className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
             disabled={false}
@@ -2828,7 +2836,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
             id="drop-down-menu-2-icon-button"
           >
             <MoreOptionsVertical />
-          </ForwardRef(WithStyles)>
+          </WithStyles(HvButton)>
         }
         disablePortal={false}
         disabled={false}
@@ -2860,7 +2868,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
             }
           }
           component={
-            <ForwardRef(WithStyles)
+            <WithStyles(HvButton)
               aria-label="Dropdown menu"
               className="HvDropDownMenu-icon HvDropDownMenu-iconSelected"
               disabled={false}
@@ -2868,7 +2876,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
               id="drop-down-menu-2-icon-button"
             >
               <MoreOptionsVertical />
-            </ForwardRef(WithStyles)>
+            </WithStyles(HvButton)>
           }
           disablePortal={false}
           disabled={false}
@@ -3151,7 +3159,8 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                   >
                     <div
                       role="tooltip"
-                      style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                      style="position: absolute; top: 0px; left: 0px; z-index: 1500;"
+                      x-placement="bottom-start"
                     >
                       <div>
                         <div
@@ -3205,6 +3214,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                   role="tooltip"
                   style={
                     Object {
+                      "display": null,
                       "left": 0,
                       "position": "fixed",
                       "top": 0,
@@ -3212,11 +3222,13 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                     }
                   }
                 >
-                  <ForwardRef(ClickAwayListener)
+                  <ClickAwayListener
                     onClickAway={[Function]}
                   >
                     <div
+                      onClick={[Function]}
                       onKeyDown={[Function]}
+                      onTouchEnd={[Function]}
                     >
                       <div
                         className="HvBaseDropdown-inputExtensionOpen"
@@ -3823,7 +3835,7 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                         </WithStyles(HvPanel)>
                       </div>
                     </div>
-                  </ForwardRef(ClickAwayListener)>
+                  </ClickAwayListener>
                 </div>
               </Portal>
             </ForwardRef(Portal)>
