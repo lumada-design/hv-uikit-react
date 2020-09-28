@@ -4,7 +4,10 @@ import { StandardProps } from "@material-ui/core";
 export type HvFormStatus =
   | "standBy"
   | "valid"
-  | "invalid"
+  | "invalid";
+
+export type HvFormElementClassKey =
+| "root";
 
 export interface HvFormElementProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFormElementClassKey> {
@@ -44,8 +47,5 @@ export interface HvFormElementProps
    */
   status?: HvFormStatus;
 }
-
-export type HvFormElementClassKey =
-  | "root"
 
 export default function HvFormElement(props: HvFormElementProps): JSX.Element | null;

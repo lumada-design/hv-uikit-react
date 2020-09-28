@@ -1,5 +1,14 @@
 import { StandardProps } from "@material-ui/core";
 
+export type HvWarningTextClassKey =
+  | "root"
+  | "warningText"
+  | "topBorder"
+  | "topGutter"
+  | "showText"
+  | "defaultIcon"
+  | "@global";
+
 export interface HvWarningTextProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvWarningTextClassKey> {
   /**
@@ -23,14 +32,5 @@ export interface HvWarningTextProps
    */
   disableBorder?: boolean;
 }
-
-export type HvWarningTextClassKey =
-  | "root"
-  | "warningText"
-  | "topBorder"
-  | "topGutter"
-  | "showText"
-  | "defaultIcon"
-  | "@global";
 
 export default function HvWarningText(props: HvWarningTextProps): JSX.Element | null;

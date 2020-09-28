@@ -1,6 +1,8 @@
 import { StandardProps } from "@material-ui/core";
 import { HvVerticalNavigationContainerProps } from "./VerticalContainer";
 
+export type HvVerticalNavigationClassKey = "root" | "noCollapse";
+
 export interface HvVerticalNavigationProps
   extends StandardProps<HvVerticalNavigationContainerProps, HvVerticalNavigationClassKey> {
   /**
@@ -8,7 +10,5 @@ export interface HvVerticalNavigationProps
    */
   isCollapsable?: boolean;
 }
-
-export type HvVerticalNavigationClassKey = "root" | "noCollapse";
 
 export default function HvVerticalNavigation(props: HvVerticalNavigationProps): JSX.Element | null;

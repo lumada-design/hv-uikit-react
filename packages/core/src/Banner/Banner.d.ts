@@ -8,6 +8,12 @@ export type ActionsPositionProp = "auto" | "inline" | "bottom-right";
 
 export type SemanticVariantTypes = "success" | "warning" | "error" | "info" | "default";
 
+export type HvBannerClassKey =
+  | "root"
+  | "rootClosed"
+  | "anchorOriginTopCenter"
+  | "anchorOriginBottomCenter";
+
 /**
  * Interface shared between HvBanner and HvSnackbar
  */
@@ -51,11 +57,5 @@ export interface HvBannerProps
    */
   bannerContentProps?: SnackbarContentProps;
 }
-
-export type HvBannerClassKey =
-  | "root"
-  | "rootClosed"
-  | "anchorOriginTopCenter"
-  | "anchorOriginBottomCenter";
 
 export default function HvBanner(props: HvBannerProps): JSX.Element | null;

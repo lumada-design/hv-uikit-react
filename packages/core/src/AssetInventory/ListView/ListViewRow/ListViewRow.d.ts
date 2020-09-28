@@ -3,6 +3,8 @@ import { StandardProps } from "@material-ui/core";
 import { ListViewConfiguration } from "..";
 import { HvCheckBoxProps } from "../../..";
 
+export type HvListViewRowClassKey = "root";
+
 export interface HvListViewRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableSectionElement>, HvListViewRowClassKey> {
   /**
@@ -54,7 +56,5 @@ export interface HvListViewRowProps
     | "atmo5"
     | "atmo6";
 }
-
-export type HvListViewRowClassKey = "root";
 
 export default function HvListViewRow(props: HvListViewRowProps): JSX.Element | null;

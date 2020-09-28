@@ -1,5 +1,7 @@
 import { StandardProps } from "@material-ui/core";
 
+export type HvLabelClassKey = "root" | "labelDisabled" | "childGutter";
+
 export interface HvLabelProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvLabelClassKey> {
   /**
@@ -19,7 +21,5 @@ export interface HvLabelProps
    */
   required?: boolean;
 }
-
-export type HvLabelClassKey = "root" | "labelDisabled" | "childGutter";
 
 export default function HvLabel(props: HvLabelProps): JSX.Element | null;

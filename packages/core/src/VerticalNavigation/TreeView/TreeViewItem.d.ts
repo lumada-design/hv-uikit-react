@@ -1,6 +1,5 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { SyntheticEvent } from "react";
 
 export type HvVerticalNavigationTreeViewItemClassKey =
   | "node"

@@ -80,6 +80,20 @@ export interface HvPaginationCommonProps {
   onPageSizeChange?: (pageSize: number) => void;
 }
 
+export type HvPaginationClassKey =
+  | "root"
+  | "pageSizeOptions"
+  | "pageSizeOptionsSelect"
+  | "pageNavigator"
+  | "pageInfo"
+  | "pageJump"
+  | "pageSizeInput"
+  | "pageSizeInputRoot"
+  | "pageSizeInputContainer"
+  | "iconContainer"
+  | "icon"
+  | "selectDownIcon";
+
 export interface HvPaginationProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvPaginationClassKey>,
     HvPaginationCommonProps {
@@ -104,19 +118,5 @@ export interface HvPaginationProps
    */
   currentPageInputProps?: HvInputProps;
 }
-
-export type HvPaginationClassKey =
-  | "root"
-  | "pageSizeOptions"
-  | "pageSizeOptionsSelect"
-  | "pageNavigator"
-  | "pageInfo"
-  | "pageJump"
-  | "pageSizeInput"
-  | "pageSizeInputRoot"
-  | "pageSizeInputContainer"
-  | "iconContainer"
-  | "icon"
-  | "selectDownIcon";
 
 export default function HvPagination(props: HvPaginationProps): JSX.Element | null;

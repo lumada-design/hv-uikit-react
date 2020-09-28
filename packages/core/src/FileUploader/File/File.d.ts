@@ -22,6 +22,13 @@ export interface File {
 
 export type FileEvent = (file: File) => void;
 
+export type HvFileClassKey =
+  | "progressbar"
+  | "progressbarBack"
+  | "nameText"
+  | "progressTextContainer"
+  | "removeButton";
+
 export interface FileProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFileClassKey> {
   /**
@@ -37,12 +44,5 @@ export interface FileProps
    * */
   removeFileButtonLabel: string;
 }
-
-export type HvFileClassKey =
-  | "progressbar"
-  | "progressbarBack"
-  | "nameText"
-  | "progressTextContainer"
-  | "removeButton";
 
 export default function HvFile(props: FileProps): JSX.Element | null;

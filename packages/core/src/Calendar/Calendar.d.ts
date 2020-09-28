@@ -6,6 +6,10 @@ export interface DateRangeProp {
   endDate?: Date;
 }
 
+export type HvCalendarClassKey =
+  | "rangeCalendarContainer"
+  | "singleCalendar"
+
 export type visibilitySelectorActions = "previous_month" | "next_month" | "previous_year" | "next_year" | "month"
 
 export interface HvCalendarProps
@@ -56,9 +60,5 @@ export interface HvCalendarProps
    */
   minimumDate?: string;
 }
-
-export type HvCalendarClassKey =
-  | "rangeCalendarContainer"
-  | "singleCalendar"
 
 export default function HvCalendar(props: HvCalendarProps): JSX.Element | null;

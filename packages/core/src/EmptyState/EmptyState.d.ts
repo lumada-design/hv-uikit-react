@@ -1,6 +1,16 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvEmptyStateClassKey =
+  | "root"
+  | "container"
+  | "containerMessageOnly"
+  | "iconContainer"
+  | "textContainer"
+  | "titleContainer"
+  | "messageContainer"
+  | "actionContainer";
+
 export interface HvEmptyStateProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvEmptyStateClassKey, "title"> {
   /**
@@ -20,15 +30,5 @@ export interface HvEmptyStateProps
    */
   icon: React.ReactNode;
 }
-
-export type HvEmptyStateClassKey =
-  | "root"
-  | "container"
-  | "containerMessageOnly"
-  | "iconContainer"
-  | "textContainer"
-  | "titleContainer"
-  | "messageContainer"
-  | "actionContainer";
 
 export default function HvEmptyState(props: HvEmptyStateProps): JSX.Element | null;

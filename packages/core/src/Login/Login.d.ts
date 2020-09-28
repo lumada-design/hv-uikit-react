@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvLoginClassKey = "container" | "rightContainer" | "panelPosition";
+
 export interface LoginLabelsProp {
   /**
    * The welcome message
@@ -151,7 +153,5 @@ export interface LoginProps
     text: string;
   };
 }
-
-export type HvLoginClassKey = "container" | "rightContainer" | "panelPosition";
 
 export default function HvTooltip(props: LoginProps): JSX.Element | null;

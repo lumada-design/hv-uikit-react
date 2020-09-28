@@ -3,6 +3,8 @@ import { StandardProps } from "@material-ui/core";
 import { HvBaseCheckBoxProps } from "../BaseCheckBox";
 import { HvFormStatus } from "../Forms/FormElement";
 
+export type HvCheckBoxClassKey = "root" | "container" | "disabled" | "checkBox" | "label";
+
 export interface HvCheckBoxProps extends StandardProps<HvBaseCheckBoxProps, HvCheckBoxClassKey> {
   /**
    * The label of the form element.
@@ -26,7 +28,5 @@ export interface HvCheckBoxProps extends StandardProps<HvBaseCheckBoxProps, HvCh
    */
   statusMessage?: React.ReactNode;
 }
-
-export type HvCheckBoxClassKey = "root" | "container" | "disabled" | "checkBox" | "label";
 
 export default function HvCheckBox(props: HvCheckBoxProps): JSX.Element | null;

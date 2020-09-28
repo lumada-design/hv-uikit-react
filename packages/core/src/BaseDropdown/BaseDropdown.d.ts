@@ -2,6 +2,24 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { PopperProps } from "@material-ui/core/Popper";
 
+export type HvBaseDropdownClassKey =
+  | "root"
+  | "header"
+  | "headerOpen"
+  | "headerOpenUp"
+  | "headerOpenDown"
+  | "headerDisabled"
+  | "arrow"
+  | "selection"
+  | "truncate"
+  | "selectionDisabled"
+  | "panel"
+  | "inputExtensionOpen"
+  | "inputExtensionLeftPosition"
+  | "inputExtensionOpenShadow"
+  | "inputExtensionFloatRight"
+  | "inputExtensionFloatLeft";
+
 export interface HvBaseDropdownProps
   extends StandardProps<
     React.HTMLAttributes<HTMLDivElement>,
@@ -65,23 +83,5 @@ export interface HvBaseDropdownProps
    */
   onFlip?: (flipped: boolean) => void;
 }
-
-export type HvBaseDropdownClassKey =
-  | "root"
-  | "header"
-  | "headerOpen"
-  | "headerOpenUp"
-  | "headerOpenDown"
-  | "headerDisabled"
-  | "arrow"
-  | "selection"
-  | "truncate"
-  | "selectionDisabled"
-  | "panel"
-  | "inputExtensionOpen"
-  | "inputExtensionLeftPosition"
-  | "inputExtensionOpenShadow"
-  | "inputExtensionFloatRight"
-  | "inputExtensionFloatLeft";
 
 export default function HvBaseDropdown(props: HvBaseDropdownProps): JSX.Element | null;

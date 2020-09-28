@@ -16,6 +16,28 @@ export interface HvInputLabelsProp {
   clearButtonLabel?: string;
 }
 
+export type HvInputClassKey =
+  | "root"
+  | "inputRoot"
+  | "inputRootDisabled"
+  | "inputRootInvalid"
+  | "inputRootFocused"
+  | "input"
+  | "inputDisabled"
+  | "suggestionsContainer"
+  | "suggestionList"
+  | "multiLine"
+  | "label"
+  | "labelDisabled"
+  | "labelContainer"
+  | "infoText"
+  | "text"
+  | "textInfo"
+  | "textWarning"
+  | "showText"
+  | "icon"
+  | "iconClear";
+
 export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey, "onChange"> {
   /**
    * An Object containing the various text associated with the input.
@@ -128,27 +150,5 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
     value: string
   ) => string | undefined | void;
 }
-
-export type HvInputClassKey =
-  | "root"
-  | "inputRoot"
-  | "inputRootDisabled"
-  | "inputRootInvalid"
-  | "inputRootFocused"
-  | "input"
-  | "inputDisabled"
-  | "suggestionsContainer"
-  | "suggestionList"
-  | "multiLine"
-  | "label"
-  | "labelDisabled"
-  | "labelContainer"
-  | "infoText"
-  | "text"
-  | "textInfo"
-  | "textWarning"
-  | "showText"
-  | "icon"
-  | "iconClear";
 
 export default function HvInput(props: HvInputProps): JSX.Element | null;

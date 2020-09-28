@@ -1,6 +1,15 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvBadgeClassKey =
+  | "root"
+  | "badgeContainer"
+  | "badge"
+  | "badgeIcon"
+  | "showCount"
+  | "showLabel"
+  | "badgeOneDigit";
+
 export interface HvBadgeProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBadgeClassKey> {
   /**
@@ -38,14 +47,5 @@ export interface HvBadgeProps
    */
   textVariant?: string;
 }
-
-export type HvBadgeClassKey =
-  | "root"
-  | "badgeContainer"
-  | "badge"
-  | "badgeIcon"
-  | "showCount"
-  | "showLabel"
-  | "badgeOneDigit";
 
 export default function HvBadge(props: HvBadgeProps): JSX.Element | null;

@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvAvatarClassKey = "root" | "S" | "M" | "L" | "img" | "fallback";
+
 export interface HvAvatarProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvAvatarClassKey> {
   /**
@@ -50,7 +52,5 @@ export interface HvAvatarProps
    */
   imgProps?: React.HTMLAttributes<HTMLImageElement>;
 }
-
-export type HvAvatarClassKey = "root" | "S" | "M" | "L" | "img" | "fallback";
 
 export default function HvAvatar(props: HvAvatarProps): JSX.Element | null;

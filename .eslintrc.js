@@ -15,7 +15,7 @@ module.exports = {
 
     // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
     "no-unused-expressions": "off",
-
+    "react/forbid-prop-types": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -40,7 +40,16 @@ module.exports = {
       files: ["*.ts"],
       env: { browser: true, es6: true, node: true },
       rules: {
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            "types": {
+              "object": false,
+              "Function": false
+            }
+          }
+        ]
       },
       extends: [
         "eslint:recommended",
@@ -58,7 +67,7 @@ module.exports = {
       settings: {
         "import/resolver": {
           typescript: {
-            directory: "./packages/*/tsconfig.json"
+            project: "./packages/*/tsconfig.json"
           }
         }
       }

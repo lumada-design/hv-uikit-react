@@ -1,5 +1,18 @@
 import { StandardProps, InputProps } from "@material-ui/core";
 
+export type HvBaseInputClassKey =
+  | "root"
+  | "inputRoot"
+  | "disabledRoot"
+  | "invalidRoot"
+  | "inputBorderContainer"
+  | "inputRootDisabled"
+  | "inputRootFocused"
+  | "input"
+  | "inputDisabled"
+  | "multiLine"
+  | "@global";
+
 export interface HvBaseInputProps
   extends StandardProps<InputProps, HvBaseInputClassKey, "onChange">{
   /**
@@ -18,18 +31,5 @@ export interface HvBaseInputProps
    */
   invalid?: boolean;
 }
-
-export type HvBaseInputClassKey =
-  | "root"
-  | "inputRoot"
-  | "disabledRoot"
-  | "invalidRoot"
-  | "inputBorderContainer"
-  | "inputRootDisabled"
-  | "inputRootFocused"
-  | "input"
-  | "inputDisabled"
-  | "multiLine"
-  | "@global";
 
 export default function HvBaseInput(props: HvBaseInputProps): JSX.Element | null;

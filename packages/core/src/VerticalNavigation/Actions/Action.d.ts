@@ -3,6 +3,8 @@ import { StandardProps } from "@material-ui/core";
 import { NavigationData } from "../Navigation";
 import { HvTypographyProps } from "../../Typography";
 
+export type HvActionClassKey = "action" | "noIcon";
+
 export interface HvActionProps
   extends StandardProps<HvTypographyProps, HvActionClassKey, "onClick"> {
   /**
@@ -20,7 +22,5 @@ export interface HvActionProps
    */
   onClick: (event: Event, selectedItem: NavigationData) => void;
 }
-
-export type HvActionClassKey = "action" | "noIcon";
 
 export default function HvVerticalNavigationAction(props: HvActionProps): JSX.Element | null;

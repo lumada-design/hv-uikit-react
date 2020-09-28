@@ -5,6 +5,8 @@ import { ViewConfiguration } from "../ViewConfiguration";
 
 export type SizeProps = true | false | "auto" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
+export type HvCardViewClassKey = "root" | "elements";
+
 export interface CardViewConfiguration extends ViewConfiguration {
   /**
    * Defines the number of columns the component is going to use. Check the Grid component
@@ -59,7 +61,5 @@ export interface HvCardViewProps
    */
   viewConfiguration?: CardViewConfiguration;
 }
-
-export type HvCardViewClassKey = "root" | "elements";
 
 export default function HvCardView(props: HvCardViewProps): JSX.Element | null;

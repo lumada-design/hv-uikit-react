@@ -2,6 +2,8 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { File, FileEvent } from "../File";
 
+export type HvFileListClassKey = "list";
+
 export interface FileListProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFileListClassKey> {
   /**
@@ -17,7 +19,5 @@ export interface FileListProps
    * */
   removeFileButtonLabel: string;
 }
-
-export type HvFileListClassKey = "list";
 
 export default function HvFileList(props: FileListProps): JSX.Element | null;

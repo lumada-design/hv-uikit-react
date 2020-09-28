@@ -1,6 +1,19 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvListItemClassKey =
+  | "root"
+  | "gutters"
+  | "interactive"
+  | "selected"
+  | "disabled"
+  | "condensed"
+  | "withStartAdornment"
+  | "withEndAdornment"
+  | "startAdornment"
+  | "endAdornment"
+  | "focus";
+
 export interface HvListItemProps
   extends StandardProps<React.HTMLAttributes<HTMLLIElement>, HvListItemClassKey> {
   /**
@@ -69,18 +82,5 @@ export interface HvListItemProps
    */
   tabIndex?: number;
 }
-
-export type HvListItemClassKey =
-  | "root"
-  | "gutters"
-  | "interactive"
-  | "selected"
-  | "disabled"
-  | "condensed"
-  | "withStartAdornment"
-  | "withEndAdornment"
-  | "startAdornment"
-  | "endAdornment"
-  | "focus";
 
 export default function HvListItem(props: HvListItemProps): JSX.Element | null;

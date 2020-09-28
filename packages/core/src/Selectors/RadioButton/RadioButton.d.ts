@@ -1,6 +1,17 @@
 import { StandardProps, RadioProps, FormControlProps } from "@material-ui/core";
 import { LabelPositions } from "..";
 
+export type HvRadioButtonClassKey =
+  | "container"
+  | "disableFocus"
+  | "labelTypography"
+  | "labelDisabled"
+  | "labelEnd"
+  | "labelStart"
+  | "radio"
+  | "icon"
+  | "disabledBorder";
+
 export interface HvRadioButtonProps extends StandardProps<RadioProps, HvRadioButtonClassKey> {
   /**
    * The label to be added to the radio button.
@@ -26,15 +37,5 @@ export interface HvRadioButtonProps extends StandardProps<RadioProps, HvRadioBut
   formControlLabelProps?: FormControlProps;
 }
 
-export type HvRadioButtonClassKey =
-  | "container"
-  | "disableFocus"
-  | "labelTypography"
-  | "labelDisabled"
-  | "labelEnd"
-  | "labelStart"
-  | "radio"
-  | "icon"
-  | "disabledBorder";
 
 export default function HvRadioButton(props: HvRadioButtonProps): JSX.Element | null;

@@ -1,6 +1,19 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvVerticalNavigationContainerClassKey =
+  | "root"
+  | "fixed"
+  | "relative"
+  | "absolute"
+  | "static"
+  | "withAnchorBar"
+  | "verticalContainer"
+  | "anchorBar"
+  | "button"
+  | "separator"
+  | "contentContainer";
+
 export interface HvVerticalNavigationContainerProps
   extends StandardProps<
     React.HTMLAttributes<HTMLDivElement>,
@@ -32,19 +45,6 @@ export interface HvVerticalNavigationContainerProps
    */
   closeOnExit?: boolean;
 }
-
-export type HvVerticalNavigationContainerClassKey =
-  | "root"
-  | "fixed"
-  | "relative"
-  | "absolute"
-  | "static"
-  | "withAnchorBar"
-  | "verticalContainer"
-  | "anchorBar"
-  | "button"
-  | "separator"
-  | "contentContainer";
 
 export default function HvVerticalNavigationContainer(
   props: HvVerticalNavigationContainerProps

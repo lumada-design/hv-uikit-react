@@ -37,6 +37,18 @@ export interface HvDropZoneLabelsProp {
   fileTypeError: string;
 }
 
+export type HvDropZoneClassKey =
+  | "dropZoneContainer"
+  | "dropZoneLabelsGroup"
+  | "dragAction"
+  | "dropZoneContainerDisabled"
+  | "inputArea"
+  | "dropArea"
+  | "dropZoneAreaLabels"
+  | "dropZoneAreaIcon"
+  | "dragText"
+  | "selectFilesText";
+
 export interface DropZoneProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropZoneClassKey> {
   /**
@@ -64,17 +76,5 @@ export interface DropZoneProps
    */
   onFilesAdded?: FileEvent;
 }
-
-export type HvDropZoneClassKey =
-  | "dropZoneContainer"
-  | "dropZoneLabelsGroup"
-  | "dragAction"
-  | "dropZoneContainerDisabled"
-  | "inputArea"
-  | "dropArea"
-  | "dropZoneAreaLabels"
-  | "dropZoneAreaIcon"
-  | "dragText"
-  | "selectFilesText";
 
 export default function DropZone(props: DropZoneProps): JSX.Element | null;

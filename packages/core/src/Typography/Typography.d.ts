@@ -1,6 +1,27 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvTypographyClassKey =
+  | "5xlTitle"
+  | "4xlTitle"
+  | "3xlTitle"
+  | "xxlTitle"
+  | "xlTitle"
+  | "lTitle"
+  | "mTitle"
+  | "sTitle"
+  | "xsTitle"
+  | "xxsTitle"
+  | "highlightText"
+  | "normalText"
+  | "placeholderText"
+  | "link"
+  | "disabledText"
+  | "selectedNavText"
+  | "vizText"
+  | "vizTextDisabled"
+  | "xsInlineLink";
+
 export interface HvTypographyProps
   extends StandardProps<React.HTMLAttributes<HTMLSpanElement>, HvTypographyClassKey> {
   /**
@@ -47,26 +68,5 @@ export interface HvTypographyProps
    */
   noWrap: boolean;
 }
-
-export type HvTypographyClassKey =
-  | "5xlTitle"
-  | "4xlTitle"
-  | "3xlTitle"
-  | "xxlTitle"
-  | "xlTitle"
-  | "lTitle"
-  | "mTitle"
-  | "sTitle"
-  | "xsTitle"
-  | "xxsTitle"
-  | "highlightText"
-  | "normalText"
-  | "placeholderText"
-  | "link"
-  | "disabledText"
-  | "selectedNavText"
-  | "vizText"
-  | "vizTextDisabled"
-  | "xsInlineLink";
 
 export default function HvTypography(props: HvTypographyProps): JSX.Element | null;

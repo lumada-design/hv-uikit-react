@@ -1,5 +1,7 @@
 import { StandardProps, CheckboxProps } from "@material-ui/core";
 
+export type HvBaseCheckBoxClassKey = "root" | "disabled";
+
 export interface HvBaseCheckBoxProps extends StandardProps<CheckboxProps, HvBaseCheckBoxClassKey, "onChange"> {
   /**
    * Id to be applied to the root node.
@@ -63,7 +65,5 @@ export interface HvBaseCheckBoxProps extends StandardProps<CheckboxProps, HvBase
    */
   inputProps: object;
 }
-
-export type HvBaseCheckBoxClassKey = "root" | "disabled";
 
 export default function HvBaseCheckBox(props: HvBaseCheckBoxProps): JSX.Element | null;

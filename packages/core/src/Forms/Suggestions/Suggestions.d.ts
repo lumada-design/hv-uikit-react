@@ -2,6 +2,8 @@ import * as React from "react";
 import { StandardProps, PopperProps } from "@material-ui/core";
 import { ListValueProp } from "../..";
 
+export type HvSuggestionsClassKey = "root" | "popper" | "list";
+
 export interface HvSuggestionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSuggestionsClassKey> {
   /**
@@ -25,7 +27,5 @@ export interface HvSuggestionsProps
    */
   onSuggestionSelected?: (event: MouseEvent, item: ListValueProp) => void;
 }
-
-export type HvSuggestionsClassKey = "root" | "popper" | "list";
 
 export default function HvSuggestions(props: HvSuggestionsProps): JSX.Element | null;

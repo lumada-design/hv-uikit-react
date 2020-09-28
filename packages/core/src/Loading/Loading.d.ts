@@ -1,6 +1,14 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvLoadingClassKey =
+  | "root"
+  | "barContainer"
+  | "loadingBar"
+  | "loadingText"
+  | "overlay"
+  | "blur";
+
 export interface HvLoadingProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvLoadingClassKey> {
   /**
@@ -24,13 +32,5 @@ export interface HvLoadingProps
    */
   children?: React.ReactNode;
 }
-
-export type HvLoadingClassKey =
-  | "root"
-  | "barContainer"
-  | "loadingBar"
-  | "loadingText"
-  | "overlay"
-  | "blur";
 
 export default function HvLoading(props: HvLoadingProps): JSX.Element | null;

@@ -18,6 +18,19 @@ export interface ListLabelsProp {
   selectionConjunction?: string;
 }
 
+export type HvListClassKey =
+  | "root"
+  | "selectorRoot"
+  | "selectorContainer"
+  | "box"
+  | "truncate"
+  | "item"
+  | "itemSelector"
+  | "icon"
+  | "focus"
+  | "link"
+  | "selectAllSelector";
+
 export interface HvListProps
   extends StandardProps<React.HTMLAttributes<HTMLUListElement>, HvListClassKey> {
   /**
@@ -71,18 +84,5 @@ export interface HvListProps
    */
   hasTooltips?: boolean;
 }
-
-export type HvListClassKey =
-  | "root"
-  | "selectorRoot"
-  | "selectorContainer"
-  | "box"
-  | "truncate"
-  | "item"
-  | "itemSelector"
-  | "icon"
-  | "focus"
-  | "link"
-  | "selectAllSelector";
 
 export default function HvList(props: HvListProps): JSX.Element | null;
