@@ -105,8 +105,10 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
             classes={
               Object {
                 "checkBox": "HvCheckBox-checkBox",
+                "checkBoxFocusVisible": "HvCheckBox-checkBoxFocusVisible",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -181,7 +183,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             "aria-invalid": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         semantic={false}
                         value="on"
@@ -204,7 +208,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               "aria-invalid": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           semantic={false}
                           value="on"
@@ -226,7 +232,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                 "aria-invalid": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -258,7 +266,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                   "aria-invalid": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -286,7 +296,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                     "data-indeterminate": false,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -316,7 +328,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       "data-indeterminate": false,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
@@ -330,6 +344,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
@@ -353,6 +368,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
@@ -364,6 +380,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
@@ -382,6 +399,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span
@@ -1618,8 +1636,10 @@ exports[`[v3] BulkActions should render correctly 1`] = `
             classes={
               Object {
                 "checkBox": "HvCheckBox-checkBox",
+                "checkBoxFocusVisible": "HvCheckBox-checkBoxFocusVisible",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -1691,7 +1711,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             "aria-invalid": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         semantic={false}
                         value="on"
@@ -1714,7 +1736,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               "aria-invalid": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           semantic={false}
                           value="on"
@@ -1736,7 +1760,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                 "aria-invalid": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -1768,7 +1794,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                   "aria-invalid": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -1796,7 +1824,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                     "data-indeterminate": false,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -1826,7 +1856,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       "data-indeterminate": false,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
@@ -1840,6 +1872,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
@@ -1863,6 +1896,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
@@ -1874,6 +1908,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
@@ -1892,6 +1927,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span
@@ -3276,8 +3312,10 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
             classes={
               Object {
                 "checkBox": "HvCheckBox-checkBox",
+                "checkBoxFocusVisible": "HvCheckBox-checkBoxFocusVisible",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -3341,7 +3379,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                             "aria-invalid": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         semantic={true}
                         value="on"
@@ -3364,7 +3404,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                               "aria-invalid": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           semantic={true}
                           value="on"
@@ -3413,7 +3455,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                 "aria-invalid": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -3472,7 +3516,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                   "aria-invalid": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -3518,7 +3564,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                     "data-indeterminate": true,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -3566,7 +3614,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                       "data-indeterminate": true,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
@@ -3580,6 +3630,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
@@ -3603,6 +3654,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
@@ -3614,6 +3666,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
@@ -3632,6 +3685,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span
@@ -3911,8 +3965,10 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
             classes={
               Object {
                 "checkBox": "HvCheckBox-checkBox",
+                "checkBoxFocusVisible": "HvCheckBox-checkBoxFocusVisible",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -3987,7 +4043,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                             "aria-invalid": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         semantic={true}
                         value="on"
@@ -4010,7 +4068,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                               "aria-invalid": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           semantic={true}
                           value="on"
@@ -4059,7 +4119,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                 "aria-invalid": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -4118,7 +4180,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                   "aria-invalid": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -4164,7 +4228,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                     "data-indeterminate": true,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -4212,7 +4278,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                       "data-indeterminate": true,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
@@ -4226,6 +4294,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
@@ -4249,6 +4318,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
@@ -4260,6 +4330,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
@@ -4278,6 +4349,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span

@@ -13,16 +13,6 @@ const styles = (theme) => ({
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
 
-    "&:focus-within": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
-      ...outlineStyles,
-    },
-    // IE fallback code (using focus-within-polyfill)
-    "&.focus-within": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
-      ...outlineStyles,
-    },
-
     // ensure more specificity than .HvBaseCheckbox-root:focus-within svg
     "& $checkBox:focus-within div>svg": {
       outline: "none",
@@ -58,6 +48,14 @@ const styles = (theme) => ({
       // not spreading theme.hv.typography.placeholderText, it overrides too many things
       color: theme.hv.palette.atmosphere.atmo5,
       cursor: "not-allowed",
+    },
+  },
+  focusVisible: {
+    ...outlineStyles,
+  },
+  checkBoxFocusVisible: {
+    "& svg": {
+      ...outlineStyles,
     },
   },
 });
