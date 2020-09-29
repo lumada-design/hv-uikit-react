@@ -6,36 +6,36 @@ Documentation
 Force Tags    keyboard    v3
 
 *** Test Cases ***
-Focus next element when TAB keyboard is pressed on focused tab
+Focus next element when ARROW_RIGHT keyboard is pressed on focused tab
     Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
     Element Should Be Focused            tabs-tab1
-    Press Keys                           NONE             TAB
+    Press Keys                           NONE             ARROW_RIGHT
     Element Should Be Focused            tabs-tab2
 
-Focus next enabled element and jumps disabled elements when TAB is pressed
-    Go To                                ${patterns}tabs--text-size
+Focus last element when ARROW_LEFT keyboard is pressed on first tab
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
     Element Should Be Focused            tabs-tab1
-    Press Keys                           NONE             TAB
+    Press Keys                           NONE             ARROW_LEFT
     Element Should Be Focused            tabs-tab3
 
-Focus previous element when using SHIFT+TAB on a focused element
+Focus previous element when using ARROW_LEFT on a focused element
     Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab2
     Element Should Be Focused            tabs-tab2
-    Press Keys                           NONE             SHIFT+TAB
+    Press Keys                           NONE             ARROW_LEFT
     Element Should Be Focused            tabs-tab1
 
-Focus previous element and jumps disabled elements when using SHIFT TAB on a focused element
-    Go To                                ${patterns}tabs--text-size
+Focus first element when ARROW_RIGHT keyboard is pressed on last tab
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab3
     Element Should Be Focused            tabs-tab3
-    Press Keys                           NONE             SHIFT+TAB
+    Press Keys                           NONE             ARROW_RIGHT
     Element Should Be Focused            tabs-tab1
 
 Selection does not change when selecting a selected element when using SPACE
@@ -58,27 +58,25 @@ Selection does not change when selecting a selected element when using ENTER
     Element Attribute Value Should Be    tabs-tab1        aria-selected  true
     Element Attribute Value Should Be    tabs-tab2        aria-selected  false
 
-Next element of the tabs can be selected when using TAB and SPACE having a tab element focused
+Next element of the tabs can be selected when using ARROW_RIGHT and SPACE having a tab element focused
     Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
-    Press Keys                           NONE             TAB
+    Press Keys                           NONE             ARROW_RIGHT
     Press Keys                           NONE             SPACE
     Element Attribute Value Should Be    tabs-tab1        aria-selected  false
     Element Attribute Value Should Be    tabs-tab2        aria-selected  true
 
-Next element of the tabs can be selected when using TAB and ENTER having a tab element focused
+Next element of the tabs can be selected when using ARROW_RIGHT and ENTER having a tab element focused
     Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
-    Press Keys                           NONE             TAB
+    Press Keys                           NONE             ARROW_RIGHT
     Press Keys                           NONE             ENTER
     Element Attribute Value Should Be    tabs-tab1        aria-selected  false
     Element Attribute Value Should Be    tabs-tab2        aria-selected  true
 
 *** Comments ***
-Blocked test waiting resolution of https://github.com/mui-org/material-ui/issues/6955
-- moves focus to the last tab when Left Arrow is pressed on focused first tab
-- moves focus to previous tab when Left Arrow is pressed
-- moves focus to the first tab when Right Arrow is pressed on focused last tab
-- moves focus to next tab when Right Arrow is pressed
+Blocked test waiting resolution of https://github.com/mui-org/material-ui/issues/21233
+- Focus next enabled element and jumps disabled elements when TAB is pressed
+- Focus previous element and jumps disabled elements when using SHIFT TAB on a focused element
