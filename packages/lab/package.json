@@ -27,7 +27,7 @@
     "test:clean": "npx del-cli dist/**/tests",
     "prepare": "npm run build",
     "link": "npm link",
-    "lint:prettier": "npx prettier --check \"src/**/*.js\"",
+    "lint:prettier": "npx prettier -config ../../prettier.config.js --check \"src/**/*.js\"",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
     "ts-check": "npx tsc -p tsconfig.json"
   },
