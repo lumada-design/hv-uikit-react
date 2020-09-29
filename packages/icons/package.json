@@ -28,6 +28,7 @@
     "prepare": "npm run build",
     "link": "npm link",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
+    "lint:prettier": "npx prettier -config ../../prettier.config.js --check \"src/**/*.js\"",
     "ts-check": "npx tsc -p tsconfig.json"
   },
   "peerDependencies": {
