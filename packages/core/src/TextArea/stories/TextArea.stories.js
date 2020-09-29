@@ -5,15 +5,15 @@ export default {
   title: "Components/Text Area",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTextArea } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvTextArea } from '@hv/uikit-react-core/dist'",
   },
-  component: HvTextArea
+  component: HvTextArea,
 };
 
 export const Main = () => {
   const labels = {
     inputLabel: "Label",
-    placeholder: "Enter value"
+    placeholder: "Enter value",
   };
 
   return <HvTextArea label="Text Area" labels={labels} id="test" width={610} />;
@@ -22,7 +22,7 @@ export const Main = () => {
 export const Resizable = () => {
   const labels = {
     inputLabel: "Label",
-    placeholder: "Enter value"
+    placeholder: "Enter value",
   };
 
   return <HvTextArea label="Text Area" labels={labels} id="test" rows={5} resizable />;
@@ -31,9 +31,9 @@ export const Resizable = () => {
 Resizable.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area that allow resizing."
-    }
-  }
+      storyDescription: "Text area that allow resizing.",
+    },
+  },
 };
 
 export const LimitedBlocking = () => {
@@ -41,7 +41,7 @@ export const LimitedBlocking = () => {
 
   const labels = {
     inputLabel: "Label",
-    placeholder: "Enter value"
+    placeholder: "Enter value",
   };
 
   const setCounter = (event, data) => {
@@ -65,9 +65,9 @@ LimitedBlocking.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Text area that limits the quantity of character that can be introduced in the text area."
-    }
-  }
+        "Text area that limits the quantity of character that can be introduced in the text area.",
+    },
+  },
 };
 
 export const LimitedWithCustomLabels = () => {
@@ -76,7 +76,7 @@ export const LimitedWithCustomLabels = () => {
     placeholder: "Enter value",
     startCount: "Inserted",
     middleCount: "of",
-    endCount: "allowed"
+    endCount: "allowed",
   };
 
   return <HvTextArea rows={5} labels={labels} maxCharQuantity={10} />;
@@ -85,15 +85,15 @@ export const LimitedWithCustomLabels = () => {
 LimitedWithCustomLabels.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area char count with a custom labels."
-    }
-  }
+      storyDescription: "Text area char count with a custom labels.",
+    },
+  },
 };
 
 export const Disabled = () => {
   const labels = {
     inputLabel: "Label",
-    placeholder: "Enter value"
+    placeholder: "Enter value",
   };
 
   return <HvTextArea label="Text Area" rows={5} labels={labels} maxCharQuantity={1500} disabled />;
@@ -102,9 +102,9 @@ export const Disabled = () => {
 Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area that does not allows any interaction."
-    }
-  }
+      storyDescription: "Text area that does not allows any interaction.",
+    },
+  },
 };
 
 export const Controlled = () => {
@@ -112,7 +112,7 @@ export const Controlled = () => {
 
   const btnStyle = {
     width: 120,
-    marginRight: 20
+    marginRight: 20,
   };
 
   return (
@@ -142,9 +142,9 @@ export const Controlled = () => {
 Controlled.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area value altered from an outside component."
-    }
-  }
+      storyDescription: "Text area value altered from an outside component.",
+    },
+  },
 };
 
 export const ControlledLimited = () => {
@@ -153,7 +153,7 @@ export const ControlledLimited = () => {
 
   const btnStyle = {
     width: 120,
-    marginRight: 20
+    marginRight: 20,
   };
 
   return (
@@ -192,7 +192,7 @@ export const ControlledLimited = () => {
 ControlledLimited.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area value altered from an outside component."
-    }
-  }
+      storyDescription: "Text area value altered from an outside component.",
+    },
+  },
 };

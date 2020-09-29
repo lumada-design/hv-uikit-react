@@ -8,10 +8,10 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
+      page: null,
+    },
   },
-  decorators: [storyFn => <div style={{ height: "600px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ height: "600px" }}>{storyFn()}</div>],
 };
 
 // __________________________________
@@ -26,9 +26,9 @@ DefaultValueOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /date input/i }));
         return wait(() => screen.getByText("January"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, datepicker months opened
@@ -41,9 +41,9 @@ DatepickerMonths.story = {
         fireEvent.click(screen.getByRole("button", { name: /date input/i }));
         fireEvent.click(screen.getByText("January"));
         return wait(() => screen.getByText("Dec"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, dateRange default value opened
@@ -55,9 +55,9 @@ RangeValuesOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("textbox", { name: /date input/i }));
         return wait(() => screen.getByText("June"));
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, dateRange months opened
@@ -71,7 +71,7 @@ RangeMonthsOpened.story = {
         fireEvent.click(screen.getAllByText("June")[0]);
         fireEvent.click(screen.getAllByText("June")[0]);
         return wait(() => screen.getAllByText("Dec")[1]);
-      }
-    }
-  }
+      },
+    },
+  },
 };

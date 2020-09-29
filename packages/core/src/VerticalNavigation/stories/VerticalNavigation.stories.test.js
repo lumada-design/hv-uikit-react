@@ -8,9 +8,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -25,9 +25,9 @@ CollapsableOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /open/i }));
         return wait(() => screen.getAllByRole("list")[0]);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 // test scenario, Collapsable On Exit open
@@ -39,7 +39,7 @@ CollapseOnExitOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /open/i }));
         return wait(() => screen.getByRole("navigation", { name: /example 2 navigation/i }));
-      }
-    }
-  }
+      },
+    },
+  },
 };

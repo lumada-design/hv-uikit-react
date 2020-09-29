@@ -8,27 +8,27 @@ export default {
   title: "Foundation/Container",
   parameters: {
     componentSubtitle: null,
-    usage: "import {HvContainer} from '@hv/uikit-react-core/dist'"
+    usage: "import {HvContainer} from '@hv/uikit-react-core/dist'",
   },
-  component: HvContainer
+  component: HvContainer,
 };
 
 export const Main = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       border: "1px solid",
       borderColor: theme.hv.palette.atmosphere.atmo5,
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.sText,
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,
-      height: 125
-    }
+      height: 125,
+    },
   });
 
   const width = useWidth();
@@ -43,20 +43,20 @@ export const Main = () => {
 };
 
 export const SmMaxWidth = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.sText,
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,
-      height: 125
-    }
+      height: 125,
+    },
   });
 
   const width = useWidth();
@@ -73,26 +73,26 @@ export const SmMaxWidth = () => {
 SmMaxWidth.story = {
   parameters: {
     docs: {
-      storyDescription: "The Container with its size set to (640)."
-    }
-  }
+      storyDescription: "The Container with its size set to (640).",
+    },
+  },
 };
 
 export const FullWidth = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.sText,
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,
-      height: 125
-    }
+      height: 125,
+    },
   });
 
   const width = useWidth();
@@ -109,7 +109,7 @@ export const FullWidth = () => {
 FullWidth.story = {
   parameters: {
     docs: {
-      storyDescription: "The Container with no max size."
-    }
-  }
+      storyDescription: "The Container with no max size.",
+    },
+  },
 };

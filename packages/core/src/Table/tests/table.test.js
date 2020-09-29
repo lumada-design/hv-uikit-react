@@ -51,12 +51,12 @@ describe("Hv Table", () => {
     const data = [
       { id: 1, t1: "test1", link: { displayText: "mock", url: "mock" } },
       { id: 2, t1: "test2", link: { displayText: "mock", url: "mock" } },
-      { id: 3, t1: "test3", link: { displayText: "mock", url: "mock" } }
+      { id: 3, t1: "test3", link: { displayText: "mock", url: "mock" } },
     ];
     const column = [
       { Header: "column 1", cellType: "alpha-numeric" },
       { Header: "column 2", cellType: "numeric" },
-      { Header: "column 3", cellType: "link" }
+      { Header: "column 3", cellType: "link" },
     ];
     const defaultSorted = [{ id: 1, desc: true }];
 
@@ -81,7 +81,7 @@ describe("Hv Table", () => {
             columns={[
               { id: 1, Header: "column 1" },
               { id: 2, Header: "column 2" },
-              { id: 3, Header: "column 3" }
+              { id: 3, Header: "column 3" },
             ]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
           />
@@ -174,12 +174,12 @@ describe("Hv Table", () => {
     it("should render extra column for secondary actions", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
-        numeric: "numeric-random"
+        numeric: "numeric-random",
       };
       const columns = [
         { id: 1, Header: "column 1", desc: false },
         { id: 2, Header: "column 2" },
-        { id: 3, Header: "column 3" }
+        { id: 3, Header: "column 3" },
       ];
       wrapper = mount(
         <HvProvider>
@@ -191,12 +191,12 @@ describe("Hv Table", () => {
             secondaryActions={[
               {
                 label: "label 1",
-                action: () => {}
+                action: () => {},
               },
               {
                 label: "label 2",
-                action: () => {}
-              }
+                action: () => {},
+              },
             ]}
           />
         </HvProvider>
@@ -210,12 +210,12 @@ describe("Hv Table", () => {
     it("should not render secondary actions when noActions set", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
-        numeric: "numeric-random"
+        numeric: "numeric-random",
       };
       const columns = [
         { id: 1, Header: "column 1", desc: false },
         { id: 2, Header: "column 2" },
-        { id: 3, Header: "column 3" }
+        { id: 3, Header: "column 3" },
       ];
       wrapper = mount(
         <HvProvider>
@@ -227,12 +227,12 @@ describe("Hv Table", () => {
             secondaryActions={[
               {
                 label: "label 1",
-                action: () => {}
+                action: () => {},
               },
               {
                 label: "label 2",
-                action: () => {}
-              }
+                action: () => {},
+              },
             ]}
           />
         </HvProvider>

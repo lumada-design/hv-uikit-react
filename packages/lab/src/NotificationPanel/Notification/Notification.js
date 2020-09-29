@@ -7,7 +7,7 @@ export default class Notification extends Component {
   // TODO: figure out rules for how time should be presented
   getTime = () => {
     const {
-      notification: { date, isRead }
+      notification: { date, isRead },
     } = this.props;
 
     if (!isRead) {
@@ -27,7 +27,7 @@ export default class Notification extends Component {
   render() {
     const {
       classes,
-      notification: { title, isRead, icon }
+      notification: { title, isRead, icon },
     } = this.props;
 
     return (
@@ -69,6 +69,6 @@ Notification.propTypes = {
     /**
      * renderable icon that denotes the status of the notification
      */
-    icon: PropTypes.element
-  }).isRequired
+    icon: PropTypes.element,
+  }).isRequired,
 };

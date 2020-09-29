@@ -8,15 +8,15 @@ export default {
   title: "Components/Notification/Snackbar",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSnackbar } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvSnackbar } from '@hv/uikit-react-core/dist'",
   },
-  component: HvSnackbar
+  component: HvSnackbar,
 };
 
 const styles = {
   position: "relative",
   top: 0,
-  marginBottom: 10
+  marginBottom: 10,
 };
 
 export const Main = () => (
@@ -74,9 +74,9 @@ export const SnackbarController = () => {
 SnackbarController.story = {
   parameters: {
     docs: {
-      storyDescription: "Different Snackbar variants with controller"
-    }
-  }
+      storyDescription: "Different Snackbar variants with controller",
+    },
+  },
 };
 
 export const CustomIcon = () => (
@@ -94,9 +94,9 @@ export const CustomIcon = () => (
 CustomIcon.story = {
   parameters: {
     docs: {
-      storyDescription: "Snackbar with custom icon"
-    }
-  }
+      storyDescription: "Snackbar with custom icon",
+    },
+  },
 };
 
 export const CustomAction = () => (
@@ -117,9 +117,9 @@ CustomAction.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Snackbar can receive a component or object action that will render a semantic button"
-    }
-  }
+        "Snackbar can receive a component or object action that will render a semantic button",
+    },
+  },
 };
 
 export const SnackbarVariations = () => (

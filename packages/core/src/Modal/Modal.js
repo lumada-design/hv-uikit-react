@@ -27,12 +27,12 @@ const HvModal = ({
 }) => {
   const [focusableQueue, setFocusableQueue] = useState(null);
 
-  const measuredRef = useCallback(node => {
+  const measuredRef = useCallback((node) => {
     if (node) {
       const focusableList = getFocusableList(node);
       setFocusableQueue({
         first: focusableList[1],
-        last: focusableList[focusableList.length - 2]
+        last: focusableList[focusableList.length - 2],
       });
       if (isNil(firstFocusable)) focusableList[1].focus();
       else {
@@ -53,7 +53,7 @@ const HvModal = ({
     ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
 
-  const keyDownHandler = event => {
+  const keyDownHandler = (event) => {
     if (isKeypress(event, KeyboardCodes.Tab) && !isNil(event.target) && !isNil(focusableQueue)) {
       if (event.shiftKey && event.target === focusableQueue.first) {
         focusableQueue.last.focus();
@@ -89,13 +89,13 @@ const HvModal = ({
       open={open}
       PaperProps={{
         classes: {
-          root: classes.paper
-        }
+          root: classes.paper,
+        },
       }}
       BackdropProps={{
         classes: {
-          root: classes.background
-        }
+          root: classes.background,
+        },
       }}
       onClose={(event, reason) => onClose(event, reason)}
       onKeyDown={keyDownHandler}
@@ -106,7 +106,7 @@ const HvModal = ({
           id={setId(id, "close")}
           className={classes.closeButton}
           category="ghost"
-          onClick={event => onClose(event)}
+          onClick={(event) => onClose(event)}
           aria-label={buttonTitle}
         >
           <CloseButtonTooltipWrapper />
@@ -145,7 +145,7 @@ HvModal.propTypes = {
     /**
      * Style applied to the close button.
      */
-    closeButton: PropTypes.string
+    closeButton: PropTypes.string,
   }).isRequired,
   /**
    * Components of the modal.
@@ -166,7 +166,7 @@ HvModal.propTypes = {
   /**
    * Title for the button close.
    */
-  buttonTitle: PropTypes.string
+  buttonTitle: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvModal" })(HvModal);

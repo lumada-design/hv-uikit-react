@@ -5,7 +5,7 @@ import {
   UpXS as ArrowUp,
   Level2Average as Average,
   BottomXS as ArrowDown,
-  Level3Bad
+  Level3Bad,
 } from "@hv/uikit-react-icons/dist";
 import { HvKpi, HvTypography, HvCard } from "../..";
 
@@ -13,9 +13,9 @@ export default {
   title: "Visualizations/KPI",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvKpi } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvKpi } from '@hv/uikit-react-core/dist'",
   },
-  component: HvKpi
+  component: HvKpi,
 };
 
 export const Main = () => {
@@ -24,12 +24,12 @@ export const Main = () => {
     indicator: "9.99",
     unit: "Units",
     comparisonIndicatorInfo: "info comparison",
-    comparisonIndicator: "99%"
+    comparisonIndicator: "99%",
   };
 
   const kpiContainer = {
     minWidth: "190px",
-    padding: "20px"
+    padding: "20px",
   };
 
   return (
@@ -45,7 +45,7 @@ export const AverageService = () => {
     indicator: "124 14",
     unit: "",
     comparisonIndicatorInfo: "vs last 24h.",
-    comparisonIndicator: "10%"
+    comparisonIndicator: "10%",
   };
 
   const KpiVisualAverage = () => (
@@ -59,7 +59,7 @@ export const AverageService = () => {
 
   const kpiContainer = {
     minWidth: "190px",
-    padding: "20px"
+    padding: "20px",
   };
 
   return (
@@ -76,9 +76,9 @@ export const AverageService = () => {
 AverageService.story = {
   parameters: {
     docs: {
-      storyDescription: "A kpi showing the average service time."
-    }
-  }
+      storyDescription: "A kpi showing the average service time.",
+    },
+  },
 };
 
 export const Iops = () => {
@@ -87,7 +87,7 @@ export const Iops = () => {
     indicator: "113 277",
     unit: "",
     comparisonIndicatorInfo: "vs last 24h.",
-    comparisonIndicator: "0,15%"
+    comparisonIndicator: "0,15%",
   };
 
   const IopsComparisonVisualAverage = () => (
@@ -107,7 +107,7 @@ export const Iops = () => {
         position: "relative",
         left: "-8px",
         top: "10px",
-        pointerEvents: "none"
+        pointerEvents: "none",
       }}
     >
       <Chart
@@ -120,29 +120,29 @@ export const Iops = () => {
           ["2013", 3000],
           ["2014", 2170],
           ["2015", 760],
-          ["2016", 630]
+          ["2016", 630],
         ]}
         options={{
           legend: "none",
           colors: ["red"],
           tooltip: {
-            trigger: "none"
+            trigger: "none",
           },
           hAxis: {
             minValue: 0,
             maxValue: 10,
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
+            baselineColor: "transparent",
           },
           backgroundColor: "transparent",
           vAxis: {
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
-          }
+            baselineColor: "transparent",
+          },
         }}
       />
     </div>
@@ -150,7 +150,7 @@ export const Iops = () => {
 
   const kpiContainer = {
     minWidth: "190px",
-    padding: "20px"
+    padding: "20px",
   };
 
   return (
@@ -168,13 +168,13 @@ export const Iops = () => {
 Iops.story = {
   parameters: {
     docs: {
-      storyDescription: "A Kpi sample showcasing the total IOPS."
+      storyDescription: "A Kpi sample showcasing the total IOPS.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };
 
 export const TotalThroughput = () => {
@@ -183,7 +183,7 @@ export const TotalThroughput = () => {
     indicator: "16,699.82",
     unit: "MB/S",
     comparisonIndicatorInfo: "vs last 24h.",
-    comparisonIndicator: "60%"
+    comparisonIndicator: "60%",
   };
 
   const ThroughputComparisonVisual = () => (
@@ -197,7 +197,7 @@ export const TotalThroughput = () => {
 
   const kpiContainer = {
     minWidth: "190px",
-    padding: "20px"
+    padding: "20px",
   };
 
   return (
@@ -214,9 +214,9 @@ export const TotalThroughput = () => {
 TotalThroughput.story = {
   parameters: {
     docs: {
-      storyDescription: "A kpi showing the throughput."
-    }
-  }
+      storyDescription: "A kpi showing the throughput.",
+    },
+  },
 };
 
 export const StorageArray = () => {
@@ -225,12 +225,12 @@ export const StorageArray = () => {
     indicator: "27",
     unit: "",
     comparisonIndicatorInfo: "vs last 24h.",
-    comparisonIndicator: "-5 units"
+    comparisonIndicator: "-5 units",
   };
 
   const kpiContainer = {
     minWidth: "190px",
-    padding: "20px"
+    padding: "20px",
   };
 
   return (
@@ -243,20 +243,20 @@ export const StorageArray = () => {
 StorageArray.story = {
   parameters: {
     docs: {
-      storyDescription: "A kpi showing the throughput."
-    }
-  }
+      storyDescription: "A kpi showing the throughput.",
+    },
+  },
 };
 
 export const Nodes = () => {
   const labels = {
     title: "Nodes",
-    indicator: "34 677"
+    indicator: "34 677",
   };
 
   const kpiContainer = {
     minWidth: "190px",
-    padding: "20px"
+    padding: "20px",
   };
 
   return (
@@ -269,9 +269,9 @@ export const Nodes = () => {
 Nodes.story = {
   parameters: {
     docs: {
-      storyDescription: "A kpi showing the number of nodes."
-    }
-  }
+      storyDescription: "A kpi showing the number of nodes.",
+    },
+  },
 };
 
 export const Selectable = () => {
@@ -280,7 +280,7 @@ export const Selectable = () => {
     indicator: "508K",
     unit: "",
     comparisonIndicatorInfo: "vs last 24h.",
-    comparisonIndicator: "82,05%"
+    comparisonIndicator: "82,05%",
   };
 
   const IopsComparisonVisualAverage = () => (
@@ -300,7 +300,7 @@ export const Selectable = () => {
         position: "relative",
         left: "-8px",
         top: "10px",
-        pointerEvents: "none"
+        pointerEvents: "none",
       }}
     >
       <Chart
@@ -314,36 +314,36 @@ export const Selectable = () => {
           ["2014", 2170],
           ["2015", 760],
           ["2016", 630],
-          ["2017", 130]
+          ["2017", 130],
         ]}
         options={{
           legend: "none",
           colors: ["green"],
           tooltip: {
-            trigger: "none"
+            trigger: "none",
           },
           hAxis: {
             minValue: 0,
             maxValue: 10,
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
+            baselineColor: "transparent",
           },
           backgroundColor: "transparent",
           vAxis: {
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
-          }
+            baselineColor: "transparent",
+          },
         }}
       />
     </div>
   );
 
   const kpiContainer = {
-    paddingTop: "20px"
+    paddingTop: "20px",
   };
 
   const KpiT = () => (
@@ -374,13 +374,13 @@ export const Selectable = () => {
 Selectable.story = {
   parameters: {
     docs: {
-      storyDescription: "A selectable kpi with the total numbers of event."
+      storyDescription: "A selectable kpi with the total numbers of event.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };
 
 export const SelectableNoSemantic = () => {
@@ -389,7 +389,7 @@ export const SelectableNoSemantic = () => {
     indicator: "508K",
     unit: "",
     comparisonIndicatorInfo: "vs last 24h.",
-    comparisonIndicator: "82,05%"
+    comparisonIndicator: "82,05%",
   };
 
   const IopsComparisonVisualAverage = () => (
@@ -409,7 +409,7 @@ export const SelectableNoSemantic = () => {
         position: "relative",
         left: "-8px",
         top: "10px",
-        pointerEvents: "none"
+        pointerEvents: "none",
       }}
     >
       <Chart
@@ -422,36 +422,36 @@ export const SelectableNoSemantic = () => {
           ["2013", 3000],
           ["2014", 2170],
           ["2015", 760],
-          ["2016", 630]
+          ["2016", 630],
         ]}
         options={{
           legend: "none",
           colors: ["red"],
           tooltip: {
-            trigger: "none"
+            trigger: "none",
           },
           hAxis: {
             minValue: 0,
             maxValue: 10,
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
+            baselineColor: "transparent",
           },
           backgroundColor: "transparent",
           vAxis: {
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
-          }
+            baselineColor: "transparent",
+          },
         }}
       />
     </div>
   );
 
   const kpiContainer = {
-    paddingTop: "20px"
+    paddingTop: "20px",
   };
 
   const KpiT = () => (
@@ -483,13 +483,13 @@ export const SelectableNoSemantic = () => {
 SelectableNoSemantic.story = {
   parameters: {
     docs: {
-      storyDescription: "A selectable kpi with the total numbers of event."
+      storyDescription: "A selectable kpi with the total numbers of event.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };
 
 export const SelectableNoTrendIcon = () => {
@@ -498,7 +498,7 @@ export const SelectableNoTrendIcon = () => {
     indicator: "222",
     unit: "",
     comparisonIndicatorInfo: "vs last 24h.",
-    comparisonIndicator: "0,37%"
+    comparisonIndicator: "0,37%",
   };
 
   const IopsComparisonVisualAverage = () => (
@@ -517,7 +517,7 @@ export const SelectableNoTrendIcon = () => {
         position: "relative",
         left: "-8px",
         top: "4px",
-        pointerEvents: "none"
+        pointerEvents: "none",
       }}
     >
       <Chart
@@ -530,36 +530,36 @@ export const SelectableNoTrendIcon = () => {
           ["2013", 3000],
           ["2014", 1170],
           ["2015", 760],
-          ["2016", 2890]
+          ["2016", 2890],
         ]}
         options={{
           legend: "none",
           colors: ["#E68C17"],
           tooltip: {
-            trigger: "none"
+            trigger: "none",
           },
           hAxis: {
             minValue: 0,
             maxValue: 10,
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
+            baselineColor: "transparent",
           },
           backgroundColor: "transparent",
           vAxis: {
             gridlines: {
-              color: "transparent"
+              color: "transparent",
             },
-            baselineColor: "transparent"
-          }
+            baselineColor: "transparent",
+          },
         }}
       />
     </div>
   );
 
   const kpiContainer = {
-    paddingTop: "20px"
+    paddingTop: "20px",
   };
 
   const KpiT = () => (
@@ -591,11 +591,11 @@ export const SelectableNoTrendIcon = () => {
 SelectableNoTrendIcon.story = {
   parameters: {
     docs: {
-      storyDescription: "A selectable kpi with the total numbers of event."
+      storyDescription: "A selectable kpi with the total numbers of event.",
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]"
-    }
-  }
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+    },
+  },
 };

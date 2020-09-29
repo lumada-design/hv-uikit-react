@@ -1,7 +1,7 @@
 import React from "react";
 import { Fail, Success } from "@hv/uikit-react-icons/dist";
 
-const iconVariants = variant => {
+const iconVariants = (variant) => {
   switch (variant) {
     case "success":
       return <Success iconSize="S" color="sema1" />;

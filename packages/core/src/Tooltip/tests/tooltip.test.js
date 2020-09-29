@@ -4,10 +4,10 @@ import React from "react";
 import { mount } from "enzyme";
 import { HvProvider, HvTooltip, HvTypography } from "../..";
 
-const createTitle = data => (
+const createTitle = (data) => (
   <div>
     <HvTypography variant="labelText">{data.title || ""}</HvTypography>
-    {data.elements.map(element => (
+    {data.elements.map((element) => (
       <div key={element.name}>
         <HvTypography variant="labelText">{element.name}</HvTypography>
         <div />
@@ -58,8 +58,8 @@ describe("Multi Line Tooltip - No Header", () => {
       { name: "Status", value: "Open" },
       { name: "Date", value: "12/08/2018" },
       { name: "Assignee", value: "Management" },
-      { name: "Approval", value: "Not yet requested" }
-    ]
+      { name: "Approval", value: "Not yet requested" },
+    ],
   };
 
   const title = createTitle(data);
@@ -95,8 +95,8 @@ describe("Multi Line Tooltip - With Header", () => {
     title: "January",
     elements: [
       { name: "Sales", value: "52,000 units" },
-      { name: "Profit", value: "50%" }
-    ]
+      { name: "Profit", value: "50%" },
+    ],
   };
 
   const title = createTitle(data);

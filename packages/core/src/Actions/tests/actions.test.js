@@ -12,7 +12,7 @@ const actions = [
   { id: "post", label: "Add", iconCallback: () => <Add />, disabled: true },
   { id: "get", label: "Preview", iconCallback: () => <Upload /> },
   { id: "put", label: "Upload", iconCallback: () => <Delete /> },
-  { id: "delete", label: "Delete", iconCallback: () => <Preview /> }
+  { id: "delete", label: "Delete", iconCallback: () => <Preview /> },
 ];
 
 describe("Actions with array", () => {

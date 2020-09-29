@@ -6,7 +6,7 @@ import {
   Delete,
   MoreOptionsVertical,
   Preview,
-  Tool
+  Tool,
 } from "@hv/uikit-react-icons/dist";
 import { HvButton, HvCard, HvCardFooter, HvCardMedia, HvCardView, HvTypography } from "../../..";
 import compressor from "../../../Card/stories/resources/compressor.png";
@@ -18,9 +18,9 @@ export default {
   title: "Components/Asset Inventory/Card View",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCardView } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvCardView } from '@hv/uikit-react-core/dist'",
   },
-  component: HvCardView
+  component: HvCardView,
 };
 
 export const Main = () => {
@@ -30,23 +30,23 @@ export const Main = () => {
         semantic: "sema2",
         subheader: "Compressor",
         mediaPath: compressor,
-        mediaTitle: "Compressor"
+        mediaTitle: "Compressor",
       },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" },
     ];
 
-    return [...Array(num).keys()].map(id => ({
+    return [...Array(num).keys()].map((id) => ({
       id: `id_${id + 1}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       checkboxValue: `id_${id + 1}`,
       checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
       data: {
         firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
-        secondContent: "Jun 30, 2015 12:27:53 PM"
+        secondContent: "Jun 30, 2015 12:27:53 PM",
       },
       mediaHeight: 186,
       selected: false,
-      ...variations[id % variations.length]
+      ...variations[id % variations.length],
     }));
   };
 
@@ -55,16 +55,16 @@ export const Main = () => {
     { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   const viewConfiguration = {
-    onSelection: event => console.log(event.target.checked),
+    onSelection: (event) => console.log(event.target.checked),
     breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
     actionsCallback: (e, id, action) =>
-      alert(`You have pressed card ${id} with action ${action.label}`)
+      alert(`You have pressed card ${id} with action ${action.label}`),
   };
 
   return (
@@ -73,18 +73,18 @@ export const Main = () => {
 };
 
 export const DefaultRender = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
+      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`,
     },
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
+      whiteSpace: "nowrap",
+    },
   });
 
   // ---------------- InnerContent ----------------
@@ -114,7 +114,7 @@ export const DefaultRender = () => {
     </>
   );
 
-  const innerContentFunc = values => <InnerContent classes={styles} values={values} />;
+  const innerContentFunc = (values) => <InnerContent classes={styles} values={values} />;
 
   // -------------------- Data --------------------
 
@@ -124,23 +124,23 @@ export const DefaultRender = () => {
         semantic: "sema2",
         subheader: "Compressor",
         mediaPath: compressor,
-        mediaTitle: "Compressor"
+        mediaTitle: "Compressor",
       },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" },
     ];
 
-    return [...Array(num).keys()].map(id => ({
+    return [...Array(num).keys()].map((id) => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       checkboxValue: `id_${id}`,
       checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
       data: {
         firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
-        secondContent: "Jun 30, 2015 12:27:53 PM"
+        secondContent: "Jun 30, 2015 12:27:53 PM",
       },
       mediaHeight: 186,
       selected: false,
-      ...variations[id % variations.length]
+      ...variations[id % variations.length],
     }));
   };
 
@@ -149,16 +149,16 @@ export const DefaultRender = () => {
     { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   const viewConfiguration = {
-    onSelection: event => console.log(event.target.value),
+    onSelection: (event) => console.log(event.target.value),
     breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
     actionsCallback: (e, id, action) =>
-      alert(`You have pressed card ${id} with action ${action.label}`)
+      alert(`You have pressed card ${id} with action ${action.label}`),
   };
 
   return (
@@ -173,17 +173,17 @@ export const DefaultRender = () => {
 };
 
 export const CustomRender = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       width: "100%",
       paddingBottom: "0px",
       borderLeft: `1px solid ${theme.palette.grey.plain}`,
-      borderRight: `1px solid ${theme.palette.grey.plain}`
+      borderRight: `1px solid ${theme.palette.grey.plain}`,
     },
     media: {
       height: "100%",
-      width: "100%"
-    }
+      width: "100%",
+    },
   });
 
   // ------------------ Render --------------------
@@ -201,7 +201,7 @@ export const CustomRender = () => {
         onChange={viewConfiguration.onSelection}
         checkboxProps={{
           value: value.checkboxValue,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` },
         }}
       />
     </HvCard>
@@ -215,17 +215,17 @@ export const CustomRender = () => {
         semantic: "sema2",
         subheader: "Compressor",
         mediaPath: compressor,
-        mediaTitle: "Compressor"
+        mediaTitle: "Compressor",
       },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" },
     ];
 
-    return [...Array(num).keys()].map(id => ({
+    return [...Array(num).keys()].map((id) => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       mediaHeight: 186,
       selected: false,
-      ...variations[id % variations.length]
+      ...variations[id % variations.length],
     }));
   };
 
@@ -234,16 +234,16 @@ export const CustomRender = () => {
     { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   const viewConfiguration = {
-    onSelection: event => console.log(event.target.value),
+    onSelection: (event) => console.log(event.target.value),
     breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
     actionsCallback: (e, id, action) =>
-      alert(`You have pressed card ${id} with action ${action.label}`)
+      alert(`You have pressed card ${id} with action ${action.label}`),
   };
 
   return (
@@ -258,17 +258,17 @@ export const CustomRender = () => {
 };
 
 export const CustomRenderAndActions = () => {
-  const styles = theme => ({
+  const styles = (theme) => ({
     root: {
       width: "100%",
       paddingBottom: "0px",
       borderLeft: `1px solid ${theme.palette.grey.plain}`,
-      borderRight: `1px solid ${theme.palette.grey.plain}`
+      borderRight: `1px solid ${theme.palette.grey.plain}`,
     },
     media: {
       height: "100%",
-      width: "100%"
-    }
+      width: "100%",
+    },
   });
 
   const CustomMedia = withStyles(styles)(HvCardMedia);
@@ -285,16 +285,16 @@ export const CustomRenderAndActions = () => {
     </>
   );
 
-  const actionsStyles = theme => ({
+  const actionsStyles = (theme) => ({
     smallButton: {
       width: "32px",
       minWidth: "32px",
       padding: 0,
       color: theme.palette.grey.inspire,
       "& span": {
-        color: theme.palette.grey.inspire
-      }
-    }
+        color: theme.palette.grey.inspire,
+      },
+    },
   });
 
   const StyledActions = withStyles(actionsStyles)(Actions);
@@ -308,7 +308,7 @@ export const CustomRenderAndActions = () => {
         onChange={viewConfiguration.onSelection}
         checkboxProps={{
           value: value.checkboxValue,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` },
         }}
       />
     </HvCard>
@@ -322,25 +322,25 @@ export const CustomRenderAndActions = () => {
         semantic: "sema2",
         subheader: "Compressor",
         mediaPath: compressor,
-        mediaTitle: "Compressor"
+        mediaTitle: "Compressor",
       },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" },
     ];
 
-    return [...Array(num).keys()].map(id => ({
+    return [...Array(num).keys()].map((id) => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       mediaHeight: 186,
       selected: false,
-      ...variations[id % variations.length]
+      ...variations[id % variations.length],
     }));
   };
 
   // --------------- Configuration ----------------
   const viewConfiguration = {
-    onSelection: event => alert(event.target.value),
+    onSelection: (event) => alert(event.target.value),
     breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
-    isSelectable: true
+    isSelectable: true,
   };
 
   return (

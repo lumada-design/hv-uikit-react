@@ -21,7 +21,7 @@ import { setId } from "../utils";
 const DEFAULT_LABELS = {
   sortBy: "Sort by",
   inputLabel: "",
-  placeholder: "Search"
+  placeholder: "Search",
 };
 
 /**
@@ -43,7 +43,7 @@ class AssetInventory extends React.Component {
       selectedView,
       children,
       searchString,
-      sortOptionId
+      sortOptionId,
     } = this.props;
 
     const innerPageSize = pageSize || pageSizeOptions[0];
@@ -71,7 +71,7 @@ class AssetInventory extends React.Component {
       originalSearchString: searchString,
       // sort
       selectedSort: sortOptionId,
-      originalSelectedSort: sortOptionId
+      originalSelectedSort: sortOptionId,
     };
   }
 
@@ -93,7 +93,7 @@ class AssetInventory extends React.Component {
         )
           ? props.selectedValues
           : state.selectedValues,
-        pageSize: props.pageSize
+        pageSize: props.pageSize,
       };
     }
 
@@ -107,7 +107,7 @@ class AssetInventory extends React.Component {
         originalSelectedView:
           props.selectedView !== state.originalSelectedView
             ? props.selectedView
-            : state.originalSelectedView
+            : state.originalSelectedView,
       };
     }
 
@@ -121,7 +121,7 @@ class AssetInventory extends React.Component {
         selectedSort:
           props.sortOptionId !== state.originalSelectedSort
             ? props.sortOptionId
-            : state.sortOptionId
+            : state.sortOptionId,
       };
     }
     if (props.searchString !== state.originalSearchString) {
@@ -134,7 +134,7 @@ class AssetInventory extends React.Component {
         searchString:
           props.searchString !== state.originalSearchString
             ? props.searchString
-            : state.searchString
+            : state.searchString,
       };
     }
 
@@ -142,7 +142,7 @@ class AssetInventory extends React.Component {
       result = {
         ...result,
         originalPageSize: props.pageSize,
-        pageSize: props.pageSize
+        pageSize: props.pageSize,
       };
     }
 
@@ -160,14 +160,14 @@ class AssetInventory extends React.Component {
     const selectedId = id[0];
 
     this.setState({
-      selectedView: selectedId
+      selectedView: selectedId,
     });
   };
 
-  setViewValues = returnedViewValues => {
+  setViewValues = (returnedViewValues) => {
     const { pageSize, page } = this.state;
     this.setState({
-      viewValues: this.getPaginationData(returnedViewValues, pageSize, page)
+      viewValues: this.getPaginationData(returnedViewValues, pageSize, page),
     });
   };
 
@@ -216,11 +216,11 @@ class AssetInventory extends React.Component {
       classes,
       onSortChange,
       disablePortal,
-      sortProps
+      sortProps,
     } = this.props;
     const { selectedSort } = this.state;
     const dropDownLabel = {
-      title: labels.sortBy
+      title: labels.sortBy,
     };
 
     return (
@@ -239,25 +239,25 @@ class AssetInventory extends React.Component {
     );
   };
 
-  paginationOnPageChange = page => {
+  paginationOnPageChange = (page) => {
     const { values, pageSize } = this.state;
 
     const pageData = values.slice(pageSize * page, pageSize * (page + 1));
 
     this.setState({
       page,
-      viewValues: pageData
+      viewValues: pageData,
     });
   };
 
-  paginationOnPageSizeChange = newPageSize => {
+  paginationOnPageSizeChange = (newPageSize) => {
     const { values, page } = this.state;
 
     const pageData = values.slice(newPageSize * page, newPageSize * (page + 1));
 
     this.setState({
       pageSize: newPageSize,
-      viewValues: pageData
+      viewValues: pageData,
     });
   };
 
@@ -270,7 +270,7 @@ class AssetInventory extends React.Component {
       pageSizeOptions,
       classes,
       onPageChange,
-      onPageSizeChange
+      onPageSizeChange,
     } = this.props;
 
     const { pageSize, page, values } = this.state;
@@ -291,7 +291,7 @@ class AssetInventory extends React.Component {
       <Pagination
         id={setId(id, "pagination")}
         classes={{
-          root: classes.pagination
+          root: classes.pagination,
         }}
         pages={numPages}
         page={page}
@@ -306,7 +306,7 @@ class AssetInventory extends React.Component {
     );
   };
 
-  innerOnSelection = onSelection => event => {
+  innerOnSelection = (onSelection) => (event) => {
     const { selectedValues } = this.state;
     const id = event.target.value;
 
@@ -316,7 +316,7 @@ class AssetInventory extends React.Component {
     } else {
       const index = selectedValues.indexOf(id);
       if (index > -1) {
-        list = selectedValues.filter(item => item !== id);
+        list = selectedValues.filter((item) => item !== id);
       }
     }
     this.setState({ selectedValues: list });
@@ -324,7 +324,7 @@ class AssetInventory extends React.Component {
   };
 
   propsFillerManager = (source, target, props) => {
-    props.forEach(prop => this.propsFiller(source, target, prop[0], prop[1]));
+    props.forEach((prop) => this.propsFiller(source, target, prop[0], prop[1]));
   };
 
   propsFiller = (source, target, propName, value) => {
@@ -341,7 +341,7 @@ class AssetInventory extends React.Component {
       actions,
       maxVisibleActions,
       actionsCallback,
-      configuration
+      configuration,
     } = this.props;
 
     let childProps = {};
@@ -359,7 +359,7 @@ class AssetInventory extends React.Component {
       ["isSelectable", isSelectable],
       ["actions", actions],
       ["maxVisibleActions", maxVisibleActions],
-      ["actionsCallback", actionsCallback]
+      ["actionsCallback", actionsCallback],
     ]);
 
     return childProps;
@@ -375,7 +375,7 @@ class AssetInventory extends React.Component {
     const { children } = this.props;
 
     const view = Array.isArray(children)
-      ? children.find(element => element.props.id === selectedView)
+      ? children.find((element) => element.props.id === selectedView)
       : children;
 
     const childProps = this.fillChildProp(view);
@@ -383,7 +383,7 @@ class AssetInventory extends React.Component {
     return React.cloneElement(view, {
       values: viewValues,
       selectedValues,
-      viewConfiguration: childProps
+      viewConfiguration: childProps,
     });
   }
 
@@ -408,26 +408,26 @@ class AssetInventory extends React.Component {
       configuration,
       hasPagination,
       onViewChange,
-      multibuttonProps
+      multibuttonProps,
     } = this.props;
 
     const { selectedView } = this.state;
 
     const showButtons = children.length > 1;
-    const showSort = find(configuration.metadata, element => element.sortable);
-    const showSearch = find(configuration.metadata, element => element.searchable);
+    const showSort = find(configuration.metadata, (element) => element.sortable);
+    const showSearch = find(configuration.metadata, (element) => element.searchable);
     const showRightControls = showButtons || showSort;
     const views = [];
 
     const align = !showSearch ? "flex-end" : "space-between";
 
-    React.Children.forEach(children, child => {
-      const other = multibuttonProps.find(elem => elem.id === child.props.id);
+    React.Children.forEach(children, (child) => {
+      const other = multibuttonProps.find((elem) => elem.id === child.props.id);
       views.push({
         icon: child.props.icon,
         selected: child.props.id === selectedView,
         ...other,
-        id: setId(child.props.id, "button")
+        id: setId(child.props.id, "button"),
       });
     });
 
@@ -521,7 +521,7 @@ AssetInventory.propTypes = {
     /**
      * Styles applied to the pagination component.
      */
-    pagination: PropTypes.string
+    pagination: PropTypes.string,
   }).isRequired,
   /**
    * Views components.
@@ -532,7 +532,7 @@ AssetInventory.propTypes = {
    */
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string
+      id: PropTypes.string,
     })
   ).isRequired,
   /**
@@ -550,7 +550,7 @@ AssetInventory.propTypes = {
     /**
      * the placeholder value of the search box.
      */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   }),
   /**
    * Contains the metadata for the values and the necessary configuration for the views,
@@ -566,10 +566,10 @@ AssetInventory.propTypes = {
         sortable: PropTypes.bool,
         sortFunction: PropTypes.func,
         searchable: PropTypes.bool,
-        searchFunction: PropTypes.func
+        searchFunction: PropTypes.func,
       })
     ).isRequired,
-    viewConfiguration: PropTypes.instanceOf(Object)
+    viewConfiguration: PropTypes.instanceOf(Object),
   }).isRequired,
   /**
    * Callback evoked in the selection of the card.
@@ -583,7 +583,7 @@ AssetInventory.propTypes = {
       id: PropTypes.string,
       label: PropTypes.string,
       icon: PropTypes.func,
-      disabled: PropTypes.bool
+      disabled: PropTypes.bool,
     })
   ),
   /**
@@ -681,14 +681,14 @@ AssetInventory.propTypes = {
    */
   multibuttonProps: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string
+      id: PropTypes.string,
     })
   ),
 
   /**
    *  Extra properties passed to the pagination.
    */
-  paginationProps: PropTypes.instanceOf(Object)
+  paginationProps: PropTypes.instanceOf(Object),
 };
 
 AssetInventory.defaultProps = {
@@ -720,7 +720,7 @@ AssetInventory.defaultProps = {
   searchProps: undefined,
   sortProps: undefined,
   multibuttonProps: [],
-  paginationProps: undefined
+  paginationProps: undefined,
 };
 
 export default withStyles(styles, { name: "HvAssetInventory" })(

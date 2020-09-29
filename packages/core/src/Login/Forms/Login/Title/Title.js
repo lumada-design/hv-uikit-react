@@ -27,7 +27,7 @@ const Title = ({ classes, logo, titleText, titleComponent }) => {
       <HvTypography
         variant="mTitle"
         className={clsx(classes.titleContainer, {
-          [classes.titleNoLogoComponent]: !logo
+          [classes.titleNoLogoComponent]: !logo,
         })}
       >
         {titleText}
@@ -60,7 +60,7 @@ Title.propTypes = {
     /**
      * Styles applied to the separator.
      */
-    separator: PropTypes.string
+    separator: PropTypes.string,
   }).isRequired,
   /**
    * The welcome message
@@ -73,13 +73,13 @@ Title.propTypes = {
   /**
    * A component to replace the welcome message
    */
-  titleComponent: PropTypes.node
+  titleComponent: PropTypes.node,
 };
 
 Title.defaultProps = {
   logo: null,
   titleText: "Welcome",
-  titleComponent: null
+  titleComponent: null,
 };
 
 export default withStyles(styles, { name: "HvLoginTitle" })(Title);

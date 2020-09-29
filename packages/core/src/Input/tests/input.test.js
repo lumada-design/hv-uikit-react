@@ -15,10 +15,10 @@ const labels = {
   warningText: "warningText",
   maxCharQuantityWarningText: "maxCharQuantityWarningText",
   minCharQuantityWarningText: "minCharQuantityWarningText",
-  requiredWarningText: "requiredWarningText"
+  requiredWarningText: "requiredWarningText",
 };
 
-const getInputProps = ParentElement => ParentElement.find(HvInput).props();
+const getInputProps = (ParentElement) => ParentElement.find(HvInput).props();
 
 describe("Input", () => {
   let wrapper;
@@ -67,7 +67,7 @@ describe("Input", () => {
       <HvProvider>
         <HvInput
           inputProps={{
-            maxLength: 250
+            maxLength: 250,
           }}
         />
       </HvProvider>

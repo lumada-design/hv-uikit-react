@@ -11,7 +11,7 @@ import {
   People,
   Research,
   User,
-  WhiteBoard
+  WhiteBoard,
 } from "@hv/uikit-react-icons/dist";
 import HvButton from "../../Button";
 import HvUserPreferences, { Action, Actions, Group, Label, Option, Options } from "..";
@@ -21,9 +21,9 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvUserPreferences } from '@hv/uikit-react-core/dist'",
-    subcomponents: { Action, Actions, Group, Options, Option, Label }
+    subcomponents: { Action, Actions, Group, Options, Option, Label },
   },
-  component: HvUserPreferences
+  component: HvUserPreferences,
 };
 
 export const Main = () => (
@@ -121,7 +121,7 @@ export const WithOpenControl = () => {
 WithOpenControl.story = {
   parameters: {
     docs: {
-      storyDescription: "User Preferences controlled."
-    }
-  }
+      storyDescription: "User Preferences controlled.",
+    },
+  },
 };

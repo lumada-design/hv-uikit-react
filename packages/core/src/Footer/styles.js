@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "flex",
     alignItems: "center",
@@ -12,13 +12,13 @@ const styles = theme => ({
     [theme.breakpoints.only("xs")]: {
       height: "unset",
       flexDirection: "column",
-      padding: theme.spacing("sm")
-    }
+      padding: theme.spacing("sm"),
+    },
   },
   name: {
     [theme.breakpoints.only("xs")]: {
-      marginBottom: theme.spacing("xs")
-    }
+      marginBottom: theme.spacing("xs"),
+    },
   },
   rightContainer: {
     display: "flex",
@@ -28,14 +28,14 @@ const styles = theme => ({
     [theme.breakpoints.only("xs")]: {
       flexDirection: "column",
       textAlign: "center",
-      marginLeft: "unset"
-    }
+      marginLeft: "unset",
+    },
   },
   copyright: {
     [theme.breakpoints.only("xs")]: {
       flexDirection: "column",
-      marginBottom: theme.spacing("xs")
-    }
+      marginBottom: theme.spacing("xs"),
+    },
   },
   separator: {
     width: 1,
@@ -43,10 +43,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.acce1,
     margin: theme.spacing(0, "xs"),
     [theme.breakpoints.only("xs")]: {
-      display: "none"
-    }
+      display: "none",
+    },
   },
-  links: {}
+  links: {},
 });
 
 export default styles;

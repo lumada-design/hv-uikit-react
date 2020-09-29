@@ -3,7 +3,7 @@ export const outlineStyles = {
   outlineStyle: "solid",
   outlineWidth: "0px",
   outlineOffset: "-1px",
-  boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)"
+  boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
 };
 
 const styles = {
@@ -13,20 +13,20 @@ const styles = {
   focusDisabled: {
     outline: "none",
     "& *:focus": {
-      outline: "none"
+      outline: "none",
     },
     "& *": {
-      outline: "none !important"
-    }
+      outline: "none !important",
+    },
   },
   focused: {
     ...outlineStyles,
     "@media (-webkit-min-device-pixel-ratio:0)": {
-      ...outlineStyles
-    }
+      ...outlineStyles,
+    },
   },
   externalReference: {
-    position: "relative"
+    position: "relative",
   },
   falseFocus: {
     width: "98%",
@@ -35,14 +35,14 @@ const styles = {
     zIndex: "1",
     ...outlineStyles,
     "@media (-webkit-min-device-pixel-ratio:0)": {
-      ...outlineStyles
+      ...outlineStyles,
     },
     top: 0,
     left: "0.5%",
     backgroundColor: "transparent",
-    pointerEvents: "none"
+    pointerEvents: "none",
   },
-  focus: {}
+  focus: {},
 };
 
 export default styles;

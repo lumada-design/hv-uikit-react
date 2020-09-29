@@ -9,10 +9,10 @@ export default {
     componentSubtitle: null,
     usage: "import { HvFooter } from '@hv/uikit-react-lab/dist'",
     deprecated: true,
-    compNameToUse: "Footer component in Core package."
+    compNameToUse: "Footer component in Core package.",
   },
   component: HvFooter,
-  decorators: [storyFn => <div style={{ height: "45px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ height: "45px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => <HvFooter />;

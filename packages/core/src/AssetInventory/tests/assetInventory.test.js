@@ -7,7 +7,7 @@ import Search from "../Search/Search";
 describe("Asset Inventory ", () => {
   let wrapper;
 
-  const MockView = id => <div id={id} />;
+  const MockView = (id) => <div id={id} />;
 
   const setupComponent = (props, children = <MockView id="id" />) => (
     <HvProvider>
@@ -22,20 +22,20 @@ describe("Asset Inventory ", () => {
       id: "1",
       name: "AA",
       birthday: "1900-01-01",
-      number: 20
+      number: 20,
     },
     {
       id: "2",
       name: "HH",
       birthday: "1950-01-01",
-      number: 92
+      number: 92,
     },
     {
       id: "3",
       name: "ZZ",
       birthday: "1923-01-01",
-      number: 1
-    }
+      number: 1,
+    },
   ];
 
   beforeEach(() => {
@@ -59,9 +59,9 @@ describe("Asset Inventory ", () => {
           cellType: "alpha-numeric",
           sortable: true,
           sortableLabelAsc: "Name ascending",
-          sortableLabelDesc: "Name descending"
-        }
-      ]
+          sortableLabelDesc: "Name descending",
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -77,9 +77,9 @@ describe("Asset Inventory ", () => {
         {
           id: "id1",
           accessor: "name",
-          cellType: "alpha-numeric"
-        }
-      ]
+          cellType: "alpha-numeric",
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -96,9 +96,9 @@ describe("Asset Inventory ", () => {
           id: "id1",
           accessor: "name",
           cellType: "alpha-numeric",
-          searchable: true
-        }
-      ]
+          searchable: true,
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -114,9 +114,9 @@ describe("Asset Inventory ", () => {
         {
           id: "id1",
           accessor: "name",
-          cellType: "alpha-numeric"
-        }
-      ]
+          cellType: "alpha-numeric",
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -133,9 +133,9 @@ describe("Asset Inventory ", () => {
           id: "id1",
           accessor: "name",
           cellType: "alpha-numeric",
-          searchable: true
-        }
-      ]
+          searchable: true,
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -160,9 +160,9 @@ describe("Asset Inventory ", () => {
           id: "id1",
           accessor: "number",
           cellType: "numeric",
-          searchable: true
-        }
-      ]
+          searchable: true,
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -187,9 +187,9 @@ describe("Asset Inventory ", () => {
           accessor: "number",
           cellType: "numeric",
           searchable: true,
-          searchFunction: (evalValue, searchValue) => evalValue > searchValue
-        }
-      ]
+          searchFunction: (evalValue, searchValue) => evalValue > searchValue,
+        },
+      ],
     };
 
     wrapper = mount(setupComponent({ values, configuration }));
@@ -226,27 +226,27 @@ describe("Asset Inventory ", () => {
         <MockView id="view1" key="view1">
           test1
         </MockView>,
-        <MockView id="view2" key="view2" />
+        <MockView id="view2" key="view2" />,
       ])
     );
 
-    let view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
+    let view = wrapper.findWhere((n) => n.type() === MockView && n.prop("id") === "view1");
 
     expect(view.exists()).toBe(true);
 
-    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
+    view = wrapper.findWhere((n) => n.type() === MockView && n.prop("id") === "view2");
 
     expect(view.exists()).toBe(false);
 
     wrapper
-      .findWhere(n => n.type() === "button" && n.prop("id") === "view2-button")
+      .findWhere((n) => n.type() === "button" && n.prop("id") === "view2-button")
       .simulate("click");
 
-    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
+    view = wrapper.findWhere((n) => n.type() === MockView && n.prop("id") === "view2");
 
     expect(view.exists()).toBe(true);
 
-    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
+    view = wrapper.findWhere((n) => n.type() === MockView && n.prop("id") === "view1");
 
     expect(view.exists()).toBe(false);
   });
@@ -275,28 +275,28 @@ describe("Asset Inventory ", () => {
     const val = [
       {
         id: "1",
-        name: "AA"
+        name: "AA",
       },
       {
         id: "2",
-        name: "BB"
+        name: "BB",
       },
       {
         id: "3",
-        name: "CC"
+        name: "CC",
       },
       {
         id: "4",
-        name: "DD"
+        name: "DD",
       },
       {
         id: "5",
-        name: "EE"
+        name: "EE",
       },
       {
         id: "6",
-        name: "FF"
-      }
+        name: "FF",
+      },
     ];
 
     wrapper = mount(
@@ -305,7 +305,7 @@ describe("Asset Inventory ", () => {
         values: val,
         configuration: mockConfiguration,
         hasPagination: true,
-        pageSize: 2
+        pageSize: 2,
       })
     );
 
@@ -314,7 +314,7 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues.length).toBe(2);
 
     const totalPages = wrapper.findWhere(
-      n => n.type() === "span" && n.prop("id") === "hv-pagination-pagination-totalPages"
+      (n) => n.type() === "span" && n.prop("id") === "hv-pagination-pagination-totalPages"
     );
 
     expect(totalPages.text()).toBe("3");
@@ -324,28 +324,28 @@ describe("Asset Inventory ", () => {
     const val = [
       {
         id: "1",
-        name: "AA"
+        name: "AA",
       },
       {
         id: "2",
-        name: "BB"
+        name: "BB",
       },
       {
         id: "3",
-        name: "CC"
+        name: "CC",
       },
       {
         id: "4",
-        name: "DD"
+        name: "DD",
       },
       {
         id: "5",
-        name: "EE"
+        name: "EE",
       },
       {
         id: "6",
-        name: "FF"
-      }
+        name: "FF",
+      },
     ];
 
     wrapper = mount(
@@ -354,7 +354,7 @@ describe("Asset Inventory ", () => {
         values: val,
         configuration: mockConfiguration,
         hasPagination: true,
-        pageSize: 2
+        pageSize: 2,
       })
     );
 
@@ -365,7 +365,7 @@ describe("Asset Inventory ", () => {
 
     wrapper
       .findWhere(
-        n => n.type() === "button" && n.prop("id") === "hv-pagination-pagination-nextPage-button"
+        (n) => n.type() === "button" && n.prop("id") === "hv-pagination-pagination-nextPage-button"
       )
       .simulate("click");
 

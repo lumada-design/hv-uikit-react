@@ -6,26 +6,26 @@ const html = {
   MozOsxFontSmoothing: "grayscale", // Antialiasing.
   // Change from `box-sizing: content-box` so that `width`
   // is not affected by `padding` or `border`.
-  boxSizing: "border-box"
+  boxSizing: "border-box",
 };
 
-const body = theme => ({
+const body = (theme) => ({
   color: theme.hv.palette.accent.acce1,
   ...theme.hv.typography.normalText,
   backgroundColor: theme.hv.palette.atmosphere.atmo3,
   "@media print": {
-    backgroundColor: "white"
-  }
+    backgroundColor: "white",
+  },
 });
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   "@global": {
     html,
     "*, *::before, *::after": {
-      boxSizing: "inherit"
+      boxSizing: "inherit",
     },
     "strong, b": {
-      fontWeight: theme.typography.fontWeightBold
+      fontWeight: theme.typography.fontWeightBold,
     },
     body: {
       margin: 0,
@@ -33,10 +33,10 @@ const useStyles = makeStyles(theme => ({
       // Add support for document.body.requestFullScreen().
       // Other elements, if background transparent, are not supported.
       "&::backdrop": {
-        backgroundColor: theme.hv.palette.atmosphere.atmo3
-      }
-    }
-  }
+        backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      },
+    },
+  },
 }));
 
 /**

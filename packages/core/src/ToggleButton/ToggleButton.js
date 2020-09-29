@@ -45,7 +45,7 @@ const ToggleButton = ({
   const title = isSelected ? labels.selectedTitle : labels.notSelectedTitle;
   const WrappedIcon = title ? withTooltip(StyledIcon, title) : StyledIcon;
 
-  const onClickHandler = e => {
+  const onClickHandler = (e) => {
     if (disabled) return;
 
     setIsSelected(!isSelected);
@@ -57,7 +57,7 @@ const ToggleButton = ({
     <button
       id={id}
       className={clsx(className, classes.root, {
-        [classes.disabled]: disabled
+        [classes.disabled]: disabled,
       })}
       type="button"
       aria-pressed={isSelected}
@@ -89,7 +89,7 @@ ToggleButton.propTypes = {
     /**
      * Style applied when disabled.
      */
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -118,7 +118,7 @@ ToggleButton.propTypes = {
     /**
      * Description for not selected.
      */
-    notSelectedTitle: PropTypes.string
+    notSelectedTitle: PropTypes.string,
   }),
   /**
    * Function called when icon is clicked.
@@ -131,7 +131,7 @@ ToggleButton.propTypes = {
   /**
    * Denotes if component is active or not.
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvToggleButton" })(

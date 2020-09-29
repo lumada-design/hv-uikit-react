@@ -8,7 +8,7 @@ import createTypography from "./typography";
 import createPalette from "./palette";
 import createSpacing from "./spacing";
 
-const getTheme = uiKitTheme => {
+const getTheme = (uiKitTheme) => {
   switch (uiKitTheme) {
     default:
     case "dawn":
@@ -18,7 +18,7 @@ const getTheme = uiKitTheme => {
   }
 };
 
-const themeBuilder = theme => {
+const themeBuilder = (theme) => {
   const themeSpacing = createSpacing(theme);
   const themePalette = createPalette(theme);
   const themeTypography = createTypography(themePalette, theme);
@@ -29,7 +29,7 @@ const themeBuilder = theme => {
     palette: themePalette,
     typography: themeTypography,
     shape: {
-      borderRadius: 0
+      borderRadius: 0,
     },
     breakpoints: {
       values: {
@@ -37,34 +37,34 @@ const themeBuilder = theme => {
         sm: 600,
         md: 960,
         lg: 1270,
-        xl: 1920
-      }
+        xl: 1920,
+      },
     },
     props: {
       MuiButtonBase: {
-        disableRipple: true
+        disableRipple: true,
       },
       MuiInput: {
-        disableUnderline: true
-      }
+        disableUnderline: true,
+      },
     },
     overrides: {
       MuiPaper: {
         root: {
-          backgroundColor: theme.palette.atmosphere.atmo1
-        }
+          backgroundColor: theme.palette.atmosphere.atmo1,
+        },
       },
       MuiAppBar: {
-        ...muiAppBarOverrides(theme)
+        ...muiAppBarOverrides(theme),
       },
       MuiToolbar: {
-        ...muiToolbarOverrides(theme)
+        ...muiToolbarOverrides(theme),
       },
       MuiIconButton: {
-        ...muiIconButtonOverrides(theme)
-      }
+        ...muiIconButtonOverrides(theme),
+      },
     },
-    hv: theme
+    hv: theme,
   });
 };
 

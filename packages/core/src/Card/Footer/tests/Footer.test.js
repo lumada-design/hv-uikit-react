@@ -10,17 +10,17 @@ import Footer from "..";
 const myActions = [
   {
     id: "view",
-    label: "View"
+    label: "View",
   },
   {
     id: "delete",
-    label: "Delete"
+    label: "Delete",
   },
   {
     id: "update",
     label: "Update",
-    disabled: true
-  }
+    disabled: true,
+  },
 ];
 
 describe("Footer", () => {

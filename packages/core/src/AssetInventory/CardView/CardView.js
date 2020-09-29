@@ -18,12 +18,14 @@ const DEFAULT_VIEW_CONFIGURATION = {
     sm: false,
     md: false,
     lg: false,
-    xl: false
+    xl: false,
   },
-  actions: null
+  actions: null,
 };
 
-const CardRenderChooser = (viewConfiguration, render, cardContent, metadata, cardProps) => data => {
+const CardRenderChooser = (viewConfiguration, render, cardContent, metadata, cardProps) => (
+  data
+) => {
   const actions = setActionsId(viewConfiguration.actions, data.id);
 
   return render ? (
@@ -147,7 +149,7 @@ CardView.propTypes = {
     /**
      * Styles applied to the component that contains the elements class.
      */
-    elements: PropTypes.string
+    elements: PropTypes.string,
   }).isRequired,
   /**
    * Icon used in the multi button in the assert inventory.
@@ -165,7 +167,7 @@ CardView.propTypes = {
       sortable: PropTypes.bool,
       sortFunction: PropTypes.func,
       searchable: PropTypes.bool,
-      searchFunction: PropTypes.func
+      searchFunction: PropTypes.func,
     })
   ),
   /**
@@ -221,9 +223,9 @@ CardView.propTypes = {
       sm: PropTypes.oneOf(sizeProps),
       md: PropTypes.oneOf(sizeProps),
       lg: PropTypes.oneOf(sizeProps),
-      xl: PropTypes.oneOf(sizeProps)
-    })
-  })
+      xl: PropTypes.oneOf(sizeProps),
+    }),
+  }),
 };
 
 export default withStyles(styles, { name: "HvCardView" })(CardView);

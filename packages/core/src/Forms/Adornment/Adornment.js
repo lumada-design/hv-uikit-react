@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core";
 import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
-const HvAdornment = props => {
+const HvAdornment = (props) => {
   const {
     id,
     classes,
@@ -30,7 +30,7 @@ const HvAdornment = props => {
       tabIndex={-1}
       aria-controls={HvBaseInput?.[0]?.id}
       className={clsx(className, classes.root, classes.adornment, classes.adornmentButton, {
-        [classes.hideIcon]: !displayIcon
+        [classes.hideIcon]: !displayIcon,
       })}
       onClick={onClick}
       onKeyDown={() => {}}
@@ -42,7 +42,7 @@ const HvAdornment = props => {
     <div
       id={id}
       className={clsx(className, classes.root, classes.adornment, classes.adornmentIcon, {
-        [classes.hideIcon]: !displayIcon
+        [classes.hideIcon]: !displayIcon,
       })}
       role="presentation"
       {...others}
@@ -92,7 +92,7 @@ HvAdornment.propTypes = {
     /**
      * Styles applied to the icon when it's supposed to be hidden.
      */
-    hideIcon: PropTypes.string
+    hideIcon: PropTypes.string,
   }),
   /**
    * The icon to be added into the input.
@@ -109,7 +109,7 @@ HvAdornment.propTypes = {
   /**
    * If this property is defined the adornment visibility will be exclusively controlled by this value.
    */
-  isVisible: PropTypes.bool
+  isVisible: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvAdornment" })(HvAdornment);

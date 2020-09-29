@@ -5,59 +5,59 @@ import { NodeTreeNavigationUtils } from "../utils";
 describe("NodeTreeNavigationUtils", () => {
   const nodeMap = {
     [-1]: {
-      children: ["A", "B", "C"]
+      children: ["A", "B", "C"],
     },
     A: {
       parent: -1,
       children: ["A1", "A2", "A3"],
-      label: "a"
+      label: "a",
     },
     A1: {
       parent: "A",
-      label: "d"
+      label: "d",
     },
     A2: {
       parent: "A",
-      label: "e"
+      label: "e",
     },
     A3: {
       parent: "A",
       children: ["A3a", "A3b", "A3c"],
-      label: "f"
+      label: "f",
     },
     A3a: {
       parent: "A3",
-      label: "i"
+      label: "i",
     },
     A3b: {
       parent: "A3",
-      label: "b"
+      label: "b",
     },
     A3c: {
       parent: "A3",
-      label: "j"
+      label: "j",
     },
     B: {
       parent: -1,
-      label: "b"
+      label: "b",
     },
     C: {
       parent: -1,
       children: ["C1", "C2", "C3"],
-      label: "c"
+      label: "c",
     },
     C1: {
       parent: "C",
-      label: "g"
+      label: "g",
     },
     C2: {
       parent: "C",
-      label: "g"
+      label: "g",
     },
     C3: {
       parent: "C",
-      label: "h"
-    }
+      label: "h",
+    },
   };
 
   describe("getNextNode", () => {
@@ -75,7 +75,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("with childs and expanded, should return first child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
-        nodeId => nodeId === "A",
+        (nodeId) => nodeId === "A",
         nodeMap,
         "A"
       );
@@ -99,7 +99,7 @@ describe("NodeTreeNavigationUtils", () => {
   describe("getPreviousNode", () => {
     it("if first child, should return its parent", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        nodeId => nodeId === "A",
+        (nodeId) => nodeId === "A",
         nodeMap,
         "A1"
       );
@@ -121,7 +121,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if previous simbling has childs and is expanded, should return its last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        nodeId => nodeId === "A",
+        (nodeId) => nodeId === "A",
         nodeMap,
         "B"
       );
@@ -131,7 +131,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if previous simbling has grandchilds but its last child is collapsed, should return the last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        nodeId => nodeId === "A",
+        (nodeId) => nodeId === "A",
         nodeMap,
         "B"
       );
@@ -141,7 +141,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if previous simbling has grandchilds and is expanded, should return its last grandchild", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
-        nodeId => nodeId === "A" || nodeId === "A3",
+        (nodeId) => nodeId === "A" || nodeId === "A3",
         nodeMap,
         "B"
       );
@@ -158,7 +158,7 @@ describe("NodeTreeNavigationUtils", () => {
     });
 
     it("if last top node is expanded, return last child", () => {
-      const foundNodeId = NodeTreeNavigationUtils.getLastNode(nodeId => nodeId === "C", nodeMap);
+      const foundNodeId = NodeTreeNavigationUtils.getLastNode((nodeId) => nodeId === "C", nodeMap);
 
       expect(foundNodeId).toEqual("C3");
     });
@@ -177,7 +177,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if expanded, return its last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
-        nodeId => nodeId === "A",
+        (nodeId) => nodeId === "A",
         nodeMap,
         "A"
       );
@@ -187,7 +187,7 @@ describe("NodeTreeNavigationUtils", () => {
 
     it("if last child is expanded, return the last grandchild", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(
-        nodeId => nodeId === "A" || nodeId === "A3",
+        (nodeId) => nodeId === "A" || nodeId === "A3",
         nodeMap,
         "A"
       );

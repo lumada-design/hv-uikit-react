@@ -6,7 +6,7 @@ import styles from "./styles";
 /**
  * The media container.
  */
-const Media = props => {
+const Media = (props) => {
   const { classes, id, className, mediaPath = "", title, mediaHeight, onClick, ...others } = props;
 
   return (
@@ -45,7 +45,7 @@ Media.propTypes = {
     /**
      * Styles applied to the root element if component="video, audio, picture, iframe, or img".
      */
-    media: PropTypes.string
+    media: PropTypes.string,
   }).isRequired,
   /**
    *  The title of the media.
@@ -62,7 +62,7 @@ Media.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvCardMedia" })(Media);

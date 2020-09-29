@@ -10,7 +10,7 @@ import {
   Level5,
   List,
   Preview,
-  Upload
+  Upload,
 } from "@hv/uikit-react-icons/dist";
 import { withStyles } from "@material-ui/core";
 import React from "react";
@@ -24,7 +24,7 @@ import {
   HvListView,
   HvListViewCell,
   HvListViewRow,
-  HvTypography
+  HvTypography,
 } from "../..";
 
 export default {
@@ -32,16 +32,16 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
 // Extended pa11y test scenarios
 
 export const AccessibilityList = () => {
-  const getStatus = statusNumber => {
+  const getStatus = (statusNumber) => {
     switch (statusNumber) {
       case 1:
         return { Icon: Level1, sema: "sema10" };
@@ -60,26 +60,26 @@ export const AccessibilityList = () => {
 
   // Card Renderer
 
-  const kpiStyles = theme => ({
+  const kpiStyles = (theme) => ({
     content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
+      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`,
     },
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
     },
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
+      whiteSpace: "nowrap",
     },
     kpis: {
-      display: "flex"
+      display: "flex",
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
       marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+    },
   });
 
   const CardContent = ({ classes, values }) => (
@@ -173,25 +173,25 @@ export const AccessibilityList = () => {
     );
   };
 
-  const stylesRow = theme => ({
+  const stylesRow = (theme) => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
       marginRight: `${theme.hv.spacing.xs}px`,
-      marginTop: "2px"
+      marginTop: "2px",
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`
-    }
+      margin: `0 ${theme.hv.spacing.xs}px`,
+    },
   });
 
   const StyledRow = withStyles(stylesRow)(Row);
 
-  const rowRenderer = value => (
+  const rowRenderer = (value) => (
     <StyledRow status={getStatus(value.status)} value={value} id={value.id} key={value.id} />
   );
 
@@ -206,12 +206,12 @@ export const AccessibilityList = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Title ascending",
-        sortableLabelDesc: "Title descending"
+        sortableLabelDesc: "Title descending",
       },
       {
         id: "id2",
         accessor: "semantic",
-        cellType: "alpha-numeric"
+        cellType: "alpha-numeric",
       },
       {
         id: "id3",
@@ -220,7 +220,7 @@ export const AccessibilityList = () => {
         searchable: true,
         sortable: true,
         sortableLabelAsc: "Probability ascending",
-        sortableLabelDesc: "Probability descending"
+        sortableLabelDesc: "Probability descending",
       },
       {
         id: "id4",
@@ -228,20 +228,20 @@ export const AccessibilityList = () => {
         cellType: "numeric",
         sortable: true,
         sortableLabelAsc: "TimeHorizon ascending",
-        sortableLabelDesc: "TimeHorizon descending"
+        sortableLabelDesc: "TimeHorizon descending",
       },
       {
         id: "id5",
         accessor: "event.schedule",
         cellType: "alpha-numeric",
-        searchable: true
+        searchable: true,
       },
       {
         id: "id6",
         accessor: "event.description",
         cellType: "alpha-numeric",
-        searchable: true
-      }
+        searchable: true,
+      },
     ],
     viewConfiguration: {
       breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
@@ -252,10 +252,10 @@ export const AccessibilityList = () => {
         { title: "Time horizon", style: { minWidth: "108px" } },
         {
           title: "Related Assets",
-          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
-        }
-      ]
-    }
+          style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+        },
+      ],
+    },
   };
 
   // Actions
@@ -264,40 +264,40 @@ export const AccessibilityList = () => {
     { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
+    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
   ];
 
   // Data
 
-  const compressorData = id => ({
+  const compressorData = (id) => ({
     headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "Fix now"
+      schedule: "Fix now",
     },
-    relatedAssets: "Track A, Zone 15 Brake"
+    relatedAssets: "Track A, Zone 15 Brake",
   });
 
-  const machineData = id => ({
+  const machineData = (id) => ({
     headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "Fix 3rd shift"
+      schedule: "Fix 3rd shift",
     },
-    relatedAssets: "Track B, Load 2 Brake"
+    relatedAssets: "Track B, Load 2 Brake",
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys(), id => ({
+    Array.from(Array(num).keys(), (id) => ({
       id: `id_${id}`,
       probability: 90 + id,
       timeHorizon: 8 + id,
       checkboxProps: { value: `id_${id}` },
-      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id)),
     }));
 
   return (
@@ -305,7 +305,7 @@ export const AccessibilityList = () => {
       values={values()}
       selectedView="list"
       configuration={assetConfiguration}
-      onSelection={event => console.log(event.target.value)}
+      onSelection={(event) => console.log(event.target.value)}
       isSelectable
       actions={myActions}
       actionsCallback={(e, id, action) =>
@@ -314,7 +314,7 @@ export const AccessibilityList = () => {
       searchProps={{ ariaLabel: "Filters data" }}
       multibuttonProps={[
         { id: "card", "aria-label": "Select card view", title: "Card view" },
-        { id: "list", "aria-label": "Select list view", title: "List view" }
+        { id: "list", "aria-label": "Select list view", title: "List view" },
       ]}
       sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >

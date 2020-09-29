@@ -29,10 +29,10 @@ const ListView = ({
 }) => {
   const hasValues = values.length > 0;
 
-  const GridDisplay = containerRef => {
+  const GridDisplay = (containerRef) => {
     const enhancedViewConfiguration = {
       containerRef,
-      ...viewConfiguration
+      ...viewConfiguration,
     };
 
     return (
@@ -107,7 +107,7 @@ ListView.propTypes = {
     columnConfiguration: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.String,
-        style: PropTypes.instanceOf(Object)
+        style: PropTypes.instanceOf(Object),
       })
     ),
     maxVisibleActions: PropTypes.number,
@@ -117,11 +117,11 @@ ListView.propTypes = {
         PropTypes.shape({
           id: PropTypes.string.isRequired,
           label: PropTypes.string.isRequired,
-          icon: PropTypes.func
+          icon: PropTypes.func,
         })
-      )
+      ),
     ]),
-    actionsCallback: PropTypes.func
+    actionsCallback: PropTypes.func,
   }),
   /**
    * A Jss Object used to override or extend the styles applied.
@@ -142,7 +142,7 @@ ListView.propTypes = {
     /**
      * Styles applied to the table body.
      */
-    tableBody: PropTypes.string
+    tableBody: PropTypes.string,
   }).isRequired,
   /**
    * The function that will be used to render the list,
@@ -170,9 +170,9 @@ ListView.propTypes = {
       sortable: PropTypes.bool,
       sortFunction: PropTypes.func,
       searchable: PropTypes.bool,
-      searchFunction: PropTypes.func
+      searchFunction: PropTypes.func,
     })
-  )
+  ),
 };
 
 export default withStyles(styles, { name: "HvListView" })(ListView);

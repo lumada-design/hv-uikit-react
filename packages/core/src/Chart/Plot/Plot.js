@@ -70,7 +70,7 @@ Plot.propTypes = {
   /**
    * Plot revision.
    */
-  revision: PropTypes.number
+  revision: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvChartPlot" })(Plot);

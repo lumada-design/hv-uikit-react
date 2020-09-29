@@ -22,7 +22,7 @@ class Login extends React.Component {
       username: "",
       isLogging: false,
       rememberMe: false,
-      loginError: false
+      loginError: false,
     };
   }
 
@@ -30,7 +30,7 @@ class Login extends React.Component {
     this.isMounted = true;
 
     this.setState({
-      username: localStorage.getItem("username") != null ? localStorage.getItem("username") : ""
+      username: localStorage.getItem("username") != null ? localStorage.getItem("username") : "",
     });
   }
 
@@ -54,7 +54,7 @@ class Login extends React.Component {
    * @param e
    * @returns {Promise<void>}
    */
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     // Prevent the submit if the component isn't fully loaded.
@@ -86,7 +86,7 @@ class Login extends React.Component {
    *
    * @param e
    */
-  handleRememberMe = e => {
+  handleRememberMe = (e) => {
     this.setState({ rememberMe: e.target.checked });
   };
 
@@ -96,7 +96,7 @@ class Login extends React.Component {
    * @param name
    * @returns {function(*): *}
    */
-  handleInputChange = name => (event, value) => {
+  handleInputChange = (name) => (event, value) => {
     this.setState({ [name]: value });
     return value;
   };
@@ -122,7 +122,7 @@ class Login extends React.Component {
       rememberMeLabel,
       incorrectCredentialsMessage,
       customMessage,
-      formProps
+      formProps,
     } = this.props;
     const { isLogging, loginError } = this.state;
 
@@ -134,7 +134,7 @@ class Login extends React.Component {
       <form
         {...formProps}
         className={clsx(classes.root, formProps.className)}
-        onSubmit={e => this.handleSubmit(e)}
+        onSubmit={(e) => this.handleSubmit(e)}
       >
         <div className={classes.title}>
           <Title titleText={titleText} logo={logo} titleComponent={titleComponent} />
@@ -158,7 +158,7 @@ class Login extends React.Component {
             labels={{
               inputLabel: userNameInputLabel,
               placeholder: userNamePlaceHolder,
-              infoText: ""
+              infoText: "",
             }}
             name="username"
             disabled={isLoading}
@@ -172,7 +172,7 @@ class Login extends React.Component {
             labels={{
               inputLabel: passwordInputLabel,
               placeholder: passwordPlaceHolder,
-              infoText: ""
+              infoText: "",
             }}
             name="password"
             disabled={isLoading}
@@ -184,7 +184,7 @@ class Login extends React.Component {
         <div
           className={clsx({
             [classes.buttonsContainerWithRemember]: allowRememberMe,
-            [classes.buttonsContainer]: !allowRememberMe
+            [classes.buttonsContainer]: !allowRememberMe,
           })}
         >
           {allowRememberMe ? (
@@ -286,7 +286,7 @@ Login.propTypes = {
     /**
      * Styles applied to the error message container.
      */
-    errorMessageContainer: PropTypes.string
+    errorMessageContainer: PropTypes.string,
   }).isRequired,
   /**
    * The function invoked for the login action
@@ -368,7 +368,7 @@ Login.propTypes = {
   /**
    * Additional props for form element
    */
-  formProps: PropTypes.instanceOf(Object)
+  formProps: PropTypes.instanceOf(Object),
 };
 
 Login.defaultProps = {
@@ -380,7 +380,7 @@ Login.defaultProps = {
   errorLoginIcon: null,
   isLoading: false,
   customMessage: null,
-  formProps: {}
+  formProps: {},
 };
 
 export default withStyles(styles, { name: "HvLoginLogin" })(Login);

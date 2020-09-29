@@ -11,7 +11,7 @@ const ModalContent = ({ classes, className, children }) => {
   return (
     <DialogContent
       className={clsx(className, classes.root, {
-        [classes.textContent]: isString
+        [classes.textContent]: isString,
       })}
     >
       {!isString && children}
@@ -36,12 +36,12 @@ ModalContent.propTypes = {
     /**
      * Style applied when the content is a string.
      */
-    textContent: PropTypes.string
+    textContent: PropTypes.string,
   }).isRequired,
   /**
    * Content to be render.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvModalContent" })(ModalContent);

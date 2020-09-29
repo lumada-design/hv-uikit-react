@@ -5,10 +5,10 @@ export default {
   title: "Components/Forms/Base Input",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'",
   },
   component: HvBaseInput,
-  decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => {
@@ -20,7 +20,7 @@ export const Main = () => {
         id="main-input"
         placeholder="Insert data"
         inputProps={{
-          "aria-labelledby": inputLabelId
+          "aria-labelledby": inputLabelId,
         }}
       />
     </HvLabel>
@@ -34,7 +34,7 @@ export const DisabledInput = () => {
       aria-label="disabled input"
       placeholder="Insert data"
       inputProps={{
-        "aria-label": "disabled input"
+        "aria-label": "disabled input",
       }}
       disabled
     />
@@ -44,9 +44,9 @@ export const DisabledInput = () => {
 DisabledInput.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the disabled input style."
-    }
-  }
+      storyDescription: "Showcasing the disabled input style.",
+    },
+  },
 };
 
 export const InvalidInput = () => {
@@ -57,7 +57,7 @@ export const InvalidInput = () => {
       invalid
       placeholder="Insert data"
       inputProps={{
-        "aria-label": "invalid input"
+        "aria-label": "invalid input",
       }}
     />
   );
@@ -66,7 +66,7 @@ export const InvalidInput = () => {
 InvalidInput.story = {
   parameters: {
     docs: {
-      storyDescription: "Showcasing the input in Invalid State."
-    }
-  }
+      storyDescription: "Showcasing the input in Invalid State.",
+    },
+  },
 };

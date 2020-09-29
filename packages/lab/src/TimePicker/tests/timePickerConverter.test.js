@@ -23,7 +23,7 @@ describe("timePickerConverter", () => {
       hours: 8,
       minutes: 30,
       seconds: 40,
-      period: PeriodPickerOptions.AM
+      period: PeriodPickerOptions.AM,
     };
     expect(converters.getTimeWithFormat24(time, TimeFormat.H12)).toEqual(time);
   });
@@ -32,11 +32,11 @@ describe("timePickerConverter", () => {
       hours: 8,
       minutes: 30,
       seconds: 40,
-      period: PeriodPickerOptions.PM
+      period: PeriodPickerOptions.PM,
     };
     expect(converters.getTimeWithFormat24(time, TimeFormat.H12)).toEqual({
       ...time,
-      hours: 20
+      hours: 20,
     });
   });
   it("getTimeWithFormat24 - should return the time with more hours set to 0 if in 12h format with hours set to 12 and PM period", () => {
@@ -44,11 +44,11 @@ describe("timePickerConverter", () => {
       hours: 12,
       minutes: 30,
       seconds: 40,
-      period: PeriodPickerOptions.AM
+      period: PeriodPickerOptions.AM,
     };
     expect(converters.getTimeWithFormat24(time, TimeFormat.H12)).toEqual({
       ...time,
-      hours: 0
+      hours: 0,
     });
   });
 });

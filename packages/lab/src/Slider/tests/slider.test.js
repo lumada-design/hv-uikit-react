@@ -9,25 +9,25 @@ describe("Slider ", () => {
   const knobProperties = [
     {
       color: "#72cccb",
-      dragColor: "#96d9d8"
+      dragColor: "#96d9d8",
     },
     {
       color: "#f9dc37",
-      dragColor: "#fbe56a"
+      dragColor: "#fbe56a",
     },
     {
       color: "#ff9100",
-      dragColor: "#ffa733"
+      dragColor: "#ffa733",
     },
     {
       color: "#cc0000",
-      dragColor: "#ff0000"
+      dragColor: "#ff0000",
     },
     {
       color: "#cc0000",
       fixed: true,
-      hidden: true
-    }
+      hidden: true,
+    },
   ];
 
   const knobPropertiesDefaults = [10, 20, 30, 40, 100];
@@ -35,25 +35,25 @@ describe("Slider ", () => {
   const knobPropertiesScaled = [
     {
       color: "#72cccb",
-      dragColor: "#96d9d8"
+      dragColor: "#96d9d8",
     },
     {
       color: "#f9dc37",
-      dragColor: "#fbe56a"
+      dragColor: "#fbe56a",
     },
     {
       color: "#ff9100",
-      dragColor: "#ffa733"
+      dragColor: "#ffa733",
     },
     {
       color: "#cc0000",
-      dragColor: "#ff0000"
+      dragColor: "#ff0000",
     },
     {
       color: "#cc0000",
       fixed: true,
-      hidden: true
-    }
+      hidden: true,
+    },
   ];
 
   const knobPropertiesScaledDefaults = [0.1, 0.2, 0.3, 0.4, 1];
@@ -198,10 +198,10 @@ describe("Slider ", () => {
   });
 
   it("should call onChange method just once, adjusting the values to the scale", () => {
-    const onChangeMock = rest => {
+    const onChangeMock = (rest) => {
       expect(rest).toEqual({
         knobsPosition: [11, 25, 37, 48, 100],
-        knobsValues: [0.11, 0.25, 0.37, 0.48, 0.7000000000000001]
+        knobsValues: [0.11, 0.25, 0.37, 0.48, 0.7000000000000001],
       });
     };
 
@@ -243,9 +243,9 @@ describe("Slider ", () => {
       [
         {
           knobsPosition: [10, 20, 40, 99, 100],
-          knobsValues: [10, 20, 40, 99, 100]
-        }
-      ]
+          knobsValues: [10, 20, 40, 99, 100],
+        },
+      ],
     ]);
   });
 });

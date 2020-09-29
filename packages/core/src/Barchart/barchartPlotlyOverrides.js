@@ -20,7 +20,7 @@ export const applyLayoutDefaults = (inputLayout, stack) => {
 export const applyDataDefaults = (inputData, isHorizontal) => {
   const data = inputData;
 
-  data.forEach(trace => {
+  data.forEach((trace) => {
     setterIfNil(trace, "type", "bar");
     setterIfNil(trace, "hoverinfo", "none");
     if (isHorizontal) setterIfNil(trace, "orientation", "h");

@@ -8,17 +8,17 @@ export default {
   title: "Components/Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvButton } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvButton } from '@hv/uikit-react-core/dist'",
   },
-  component: HvButton
+  component: HvButton,
 };
 
 // any other clever way of doing this?
 // the sample source code will have HvButtonWithMargin instead of HvButton...
 const HvButtonWithMargin = withStyles({
   root: {
-    margin: "0 5px"
-  }
+    margin: "0 5px",
+  },
 })(HvButton);
 
 export const MainStory = () => {
@@ -26,7 +26,7 @@ export const MainStory = () => {
     backgroundColor: "#D3E3F6",
     width: "100px",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   };
 
   return (
@@ -51,9 +51,9 @@ export const PrimaryButton = () => (
 PrimaryButton.story = {
   parameters: {
     docs: {
-      storyDescription: "Primary Button with click action."
-    }
-  }
+      storyDescription: "Primary Button with click action.",
+    },
+  },
 };
 
 export const PrimaryDisabledButton = () => (
@@ -65,9 +65,9 @@ export const PrimaryDisabledButton = () => (
 PrimaryDisabledButton.story = {
   parameters: {
     docs: {
-      storyDescription: "Disabled button that doesn't allow any interaction."
-    }
-  }
+      storyDescription: "Disabled button that doesn't allow any interaction.",
+    },
+  },
 };
 
 export const SecondaryButton = () => (
@@ -79,9 +79,9 @@ export const SecondaryButton = () => (
 SecondaryButton.story = {
   parameters: {
     docs: {
-      storyDescription: "Secondary button."
-    }
-  }
+      storyDescription: "Secondary button.",
+    },
+  },
 };
 
 export const GhostButton = () => (
@@ -100,9 +100,9 @@ GhostButton.story = {
   name: "Ghost Button",
   parameters: {
     docs: {
-      storyDescription: "Ghost button with click action."
-    }
-  }
+      storyDescription: "Ghost button with click action.",
+    },
+  },
 };
 
 export const GhostSecondaryButton = () => (
@@ -121,9 +121,9 @@ GhostSecondaryButton.story = {
   name: "Ghost Secondary Button",
   parameters: {
     docs: {
-      storyDescription: "Ghost Secondary button with click action."
-    }
-  }
+      storyDescription: "Ghost Secondary button with click action.",
+    },
+  },
 };
 
 export const SemanticButton = () => {
@@ -131,7 +131,7 @@ export const SemanticButton = () => {
     backgroundColor: "#D3E3F6",
     width: "100px",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   };
   return (
     <div style={semanticButtonStyling}>
@@ -152,7 +152,7 @@ SemanticButton.story = {
   name: "Semantic Button",
   parameters: {
     docs: {
-      storyDescription: "Semantic button with click action."
-    }
-  }
+      storyDescription: "Semantic button with click action.",
+    },
+  },
 };

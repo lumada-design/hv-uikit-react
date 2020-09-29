@@ -23,7 +23,7 @@ const ModalTitle = ({
     icon = React.cloneElement(customIcon, { className: classes.icon });
   } else if (showIcon) {
     icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
-      className: classes.icon
+      className: classes.icon,
     });
   }
 
@@ -64,7 +64,7 @@ ModalTitle.propTypes = {
     /**
      * Style applied to the icon.
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
   }).isRequired,
   /**
    * Variant of the modal.
@@ -81,7 +81,7 @@ ModalTitle.propTypes = {
   /**
    * Node to be render.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvModalTitle" })(ModalTitle);

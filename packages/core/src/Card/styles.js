@@ -1,14 +1,14 @@
 import mapValues from "lodash/mapValues";
 
-const styles = theme => {
-  const semantics = mapValues(theme.hv.palette.semantic, value => ({
+const styles = (theme) => {
+  const semantics = mapValues(theme.hv.palette.semantic, (value) => ({
     position: "absolute",
     backgroundColor: value,
     width: "100%",
     height: "2px",
     top: -1,
     right: 0,
-    zIndex: 1
+    zIndex: 1,
   }));
 
   return {
@@ -16,12 +16,12 @@ const styles = theme => {
     cardContentWrapper: {
       position: "relative",
       marginTop: 5,
-      backgroundColor: theme.hv.palette.accent.acce0
+      backgroundColor: theme.hv.palette.accent.acce0,
     },
     cardContainer: {
       boxSizing: "content-box",
       position: "relative",
-      marginTop: "-4px"
+      marginTop: "-4px",
     },
     sema0: {
       position: "absolute",
@@ -30,15 +30,15 @@ const styles = theme => {
       height: "2px",
       top: -1,
       right: 0,
-      zIndex: 1
+      zIndex: 1,
     },
     ...semantics,
     semanticSelected: {
-      height: "4px"
+      height: "4px",
     },
     semanticContainer: {
       width: "100%",
-      position: "absolute"
+      position: "absolute",
     },
     cardOutLine: {
       width: "98%",
@@ -49,25 +49,25 @@ const styles = theme => {
       top: 0,
       left: "0.5%",
       backgroundColor: "transparent",
-      display: "none"
+      display: "none",
     },
     upperAreaReference: {
-      position: "relative"
+      position: "relative",
     },
     upperAreaSelectable: {
-      cursor: "pointer"
+      cursor: "pointer",
     },
     selectable: {
       "&:hover": {
-        outline: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-      }
+        outline: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+      },
     },
     selected: {
       outline: `1px solid ${theme.hv.palette.accent.acce1}`,
       "&:hover": {
-        outline: `1px solid ${theme.hv.palette.accent.acce1}`
-      }
-    }
+        outline: `1px solid ${theme.hv.palette.accent.acce1}`,
+      },
+    },
   };
 };
 

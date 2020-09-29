@@ -51,7 +51,7 @@ LoadingWithDelay.propTypes = {
     /**
      * The class applied to the character counter when it is disabled.
      */
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
   }).isRequired,
   /**
    * The size of the loading indicator.
@@ -69,7 +69,7 @@ LoadingWithDelay.propTypes = {
   /**
    * The amount of milliseconds that the component should wait before showing the Loading
    */
-  delay: PropTypes.number
+  delay: PropTypes.number,
 };
 
 export default withDeprecate(

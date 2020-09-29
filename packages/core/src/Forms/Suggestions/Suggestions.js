@@ -11,7 +11,7 @@ import styles from "./styles";
 /**
  * A pop-out list of options
  */
-const HvSuggestions = props => {
+const HvSuggestions = (props) => {
   const {
     id,
     className,
@@ -30,7 +30,7 @@ const HvSuggestions = props => {
   return (
     <div id={localId} className={clsx(className, classes.root)} {...others}>
       <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
-        <OutsideClickHandler onOutsideClick={e => onClose?.(e)}>
+        <OutsideClickHandler onOutsideClick={(e) => onClose?.(e)}>
           <HvList
             className={classes.list}
             id={setId(id, "list")}
@@ -69,7 +69,7 @@ HvSuggestions.propTypes = {
     /**
      * Styles applied to the suggestion list container.
      */
-    list: PropTypes.string
+    list: PropTypes.string,
   }).isRequired,
   /**
    * Whether suggestions is visible.
@@ -92,7 +92,7 @@ HvSuggestions.propTypes = {
       iconCallback: PropTypes.func,
       showNavIcon: PropTypes.bool,
       path: PropTypes.string,
-      params: PropTypes.instanceOf(Object)
+      params: PropTypes.instanceOf(Object),
     })
   ),
   /**
@@ -102,7 +102,7 @@ HvSuggestions.propTypes = {
   /**
    * Function called when a suggestion is selected
    */
-  onSuggestionSelected: PropTypes.func
+  onSuggestionSelected: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvSuggestions" })(HvSuggestions);

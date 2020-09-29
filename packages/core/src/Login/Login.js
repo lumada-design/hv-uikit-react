@@ -33,7 +33,7 @@ const DEFAULT_LABELS = {
   cancelButton: "Cancel",
   recoverButton: "Recover",
   recoveringMessage: "Recovering",
-  incorrectCredentialsMessage: "Incorrect Username and/or Password. Please try again."
+  incorrectCredentialsMessage: "Incorrect Username and/or Password. Please try again.",
 };
 
 /**
@@ -44,7 +44,7 @@ class HvLogin extends React.Component {
     super();
     this.state = {
       inRecoveryMode: false,
-      isLoading: true
+      isLoading: true,
     };
   }
 
@@ -61,7 +61,7 @@ class HvLogin extends React.Component {
    * should be render (Login or Recover).
    */
   switchForms = () => {
-    this.setState(prevState => ({ inRecoveryMode: !prevState.inRecoveryMode }));
+    this.setState((prevState) => ({ inRecoveryMode: !prevState.inRecoveryMode }));
   };
 
   render() {
@@ -82,7 +82,7 @@ class HvLogin extends React.Component {
       labels,
       customMessage,
       formClasses,
-      formProps
+      formProps,
     } = this.props;
     const { inRecoveryMode, isLoading } = this.state;
     const backgroundLoginImg = !backgroundImage.length ? defaultBackImage : backgroundImage;
@@ -137,7 +137,7 @@ class HvLogin extends React.Component {
         style={{
           backgroundImage: `url(${backgroundLoginImg})`,
           backgroundSize: `${backgroundImageSize}`,
-          margin: 0
+          margin: 0,
         }}
       >
         <HvGrid item xs={false} sm={false} md={8} lg={8} xl={8} className={classes.panelPosition}>
@@ -179,7 +179,7 @@ HvLogin.propTypes = {
     /**
      * Styles applied to the grid.
      */
-    panelPosition: PropTypes.string
+    panelPosition: PropTypes.string,
   }).isRequired,
 
   /**
@@ -189,7 +189,7 @@ HvLogin.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }),
   /**
    * the function invoked for the log in
@@ -318,19 +318,19 @@ HvLogin.propTypes = {
     /**
      * Message presented when an error occurs recovering the credentials.
      */
-    incorrectCredentialsMessage: PropTypes.string
+    incorrectCredentialsMessage: PropTypes.string,
   }),
   /**
    * A custom message to be shown in the error area.
    * Will be overridden by any error messages.
    */
   customMessage: PropTypes.shape({
-    text: PropTypes.string
+    text: PropTypes.string,
   }),
   /**
    * Additional props for form element
    */
-  formProps: PropTypes.instanceOf(Object)
+  formProps: PropTypes.instanceOf(Object),
 };
 
 HvLogin.defaultProps = {
@@ -347,7 +347,7 @@ HvLogin.defaultProps = {
   errorLoginIcon: <Fail semantic="sema4" />,
   customMessage: {},
   formClasses: null,
-  formProps: {}
+  formProps: {},
 };
 
 export default withDeprecate(

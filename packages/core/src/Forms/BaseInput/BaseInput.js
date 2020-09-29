@@ -10,7 +10,7 @@ import styles from "./styles";
  * An Input component that only posses the most basic functionalities.
  * It should be used alongside the other form elements to construct a proper accessible form.
  */
-const HvBaseInput = props => {
+const HvBaseInput = (props) => {
   const {
     placeholder,
     classes,
@@ -33,10 +33,10 @@ const HvBaseInput = props => {
     elementStatus,
     elementValue,
     elementDisabled,
-    descriptors = {}
+    descriptors = {},
   } = useContext(HvFormElementContext);
 
-  const onChangeHandler = event => {
+  const onChangeHandler = (event) => {
     onChange?.(event, event.target.value);
   };
 
@@ -59,11 +59,11 @@ const HvBaseInput = props => {
         input: classes.input,
         focused: classes.inputRootFocused,
         disabled: classes.inputDisabled,
-        multiline: classes.multiLine
+        multiline: classes.multiLine,
       }}
       className={clsx(classes.inputRoot, className, {
         [classes.inputRootDisabled]: localDisabled,
-        [classes.inputRootInvalid]: localInvalid
+        [classes.inputRootInvalid]: localInvalid,
       })}
       inputProps={{
         required,
@@ -72,7 +72,7 @@ const HvBaseInput = props => {
         "aria-describedby": HvHelperText?.[0]?.id,
         "aria-labelledby": HvLabel?.[0]?.id,
         "aria-controls": HvSuggestions?.[0]?.id,
-        ...inputProps
+        ...inputProps,
       }}
       inputRef={inputRef}
       multiline={multiline}
@@ -129,7 +129,7 @@ HvBaseInput.propTypes = {
     /**
      * IE11 specific styling.
      */
-    "@global": PropTypes.string
+    "@global": PropTypes.string,
   }).isRequired,
   /**
    * Label inside the input used to help user.
@@ -171,7 +171,7 @@ HvBaseInput.propTypes = {
   /**
    * Denotes if the input is in an invalid state.
    */
-  invalid: PropTypes.bool
+  invalid: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvBaseInput" })(HvBaseInput);

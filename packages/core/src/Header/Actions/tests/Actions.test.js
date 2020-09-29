@@ -6,12 +6,12 @@ import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
 import Actions from "..";
 
-window.matchMedia = jest.fn().mockImplementation(query => ({
+window.matchMedia = jest.fn().mockImplementation((query) => ({
   matches: true,
   media: query,
   onchange: null,
   addListener: jest.fn(),
-  removeListener: jest.fn()
+  removeListener: jest.fn(),
 }));
 
 describe("Actions withStyles", () => {

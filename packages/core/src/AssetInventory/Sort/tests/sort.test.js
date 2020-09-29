@@ -6,20 +6,20 @@ describe("Sort ", () => {
       id: 1,
       name: "Z",
       serialNumber: 542231,
-      birthDate: "1946-01-22"
+      birthDate: "1946-01-22",
     },
     {
       id: 2,
       name: "H",
       serialNumber: 9912313,
-      birthDate: "1971-04-24"
+      birthDate: "1971-04-24",
     },
     {
       id: 3,
       name: "A",
       serialNumber: 9912314,
-      birthDate: "1971-07-14"
-    }
+      birthDate: "1971-07-14",
+    },
   ];
 
   it("should sort by alpha-numeric", () => {
@@ -30,8 +30,8 @@ describe("Sort ", () => {
         accessor: "name",
         cellType: "Alpha-numeric",
         sortable: true,
-        searchFunction: null
-      }
+        searchFunction: null,
+      },
     ];
 
     const criterion = sortOperationSetup(metadata);
@@ -62,8 +62,8 @@ describe("Sort ", () => {
         accessor: "birthDate",
         cellType: "date",
         sortable: true,
-        searchFunction: null
-      }
+        searchFunction: null,
+      },
     ];
 
     const criterion = sortOperationSetup(metadata);

@@ -7,9 +7,9 @@ export default {
   title: "Components/Selectors/Toggle Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvToggleButton } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvToggleButton } from '@hv/uikit-react-core/dist'",
   },
-  component: HvToggleButton
+  component: HvToggleButton,
 };
 
 export const Main = () => (
@@ -19,7 +19,7 @@ export const Main = () => (
     selectedIcon={Lock}
     labels={{
       notSelectedTitle: "Close lock",
-      selectedTitle: "Open lock"
+      selectedTitle: "Open lock",
     }}
   />
 );
@@ -45,7 +45,7 @@ export const Controlled = () => {
           onClick={toggleState}
           labels={{
             notSelectedTitle: "Close lock",
-            selectedTitle: "Open lock"
+            selectedTitle: "Open lock",
           }}
         />
       </div>
@@ -56,9 +56,9 @@ export const Controlled = () => {
 Controlled.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a toggle button with state."
-    }
-  }
+      storyDescription: "A sample showcasing a toggle button with state.",
+    },
+  },
 };
 
 export const Disabled = () => (
@@ -69,7 +69,7 @@ export const Disabled = () => (
     disabled
     labels={{
       notSelectedTitle: "Turn on light",
-      selectedTitle: "Turn off light"
+      selectedTitle: "Turn off light",
     }}
   />
 );
@@ -77,9 +77,9 @@ export const Disabled = () => (
 Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a disabled toggle button."
-    }
-  }
+      storyDescription: "A sample showcasing a disabled toggle button.",
+    },
+  },
 };
 
 export const Animated = () => (
@@ -89,7 +89,7 @@ export const Animated = () => (
     aria-label="Eye"
     labels={{
       notSelectedTitle: "Don't Show",
-      selectedTitle: "Show"
+      selectedTitle: "Show",
     }}
   />
 );
@@ -97,7 +97,7 @@ export const Animated = () => (
 Animated.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a toggle button with a custom animated icon."
-    }
-  }
+      storyDescription: "A sample showcasing a toggle button with a custom animated icon.",
+    },
+  },
 };

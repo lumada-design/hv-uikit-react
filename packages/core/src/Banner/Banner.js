@@ -10,7 +10,7 @@ import styles from "./styles";
  * A Banner displays an important, succinct message. The banner provides actions for users to address (or dismiss the banner).
  * It requires an user action to close. Banners should appear at the top of the screen, below a top app bar.
  */
-const HvBanner = props => {
+const HvBanner = (props) => {
   const {
     id,
     classes,
@@ -34,16 +34,16 @@ const HvBanner = props => {
 
   const anchorOriginOffset = {
     anchorOriginTop: {
-      top: `${offset || 0}px`
+      top: `${offset || 0}px`,
     },
     anchorOriginBottom: {
-      bottom: `${offset || 0}px`
-    }
+      bottom: `${offset || 0}px`,
+    },
   };
 
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
-  const SlideTransition = properties => <Slide {...properties} direction={transitionDirection} />;
+  const SlideTransition = (properties) => <Slide {...properties} direction={transitionDirection} />;
 
   return (
     <Snackbar
@@ -53,7 +53,7 @@ const HvBanner = props => {
       classes={{
         root: open ? classes.root : classes.rootClosed,
         anchorOriginTopCenter: classes.anchorOriginTopCenter,
-        anchorOriginBottomCenter: classes.anchorOriginBottomCenter
+        anchorOriginBottomCenter: classes.anchorOriginBottomCenter,
       }}
       anchorOrigin={anchorOriginBanner}
       TransitionComponent={SlideTransition}
@@ -105,7 +105,7 @@ HvBanner.propTypes = {
     /**
      * Styles applied to the component when define as bottom.
      */
-    anchorOriginBottomCenter: PropTypes.string
+    anchorOriginBottomCenter: PropTypes.string,
   }).isRequired,
   /**
    *  If true, Snackbar is open.
@@ -145,9 +145,9 @@ HvBanner.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         icon: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       })
-    )
+    ),
   ]),
   /**
    *  The callback function ran when an action is triggered, receiving ´action´ as param
@@ -172,7 +172,7 @@ HvBanner.propTypes = {
   /**
    * Props to pass down to the Banner Wrapper. An object `actionProps` can be included to be passed as others to actions.
    */
-  bannerContentProps: PropTypes.instanceOf(Object)
+  bannerContentProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvBanner" })(HvBanner);

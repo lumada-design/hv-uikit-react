@@ -19,13 +19,13 @@ const DEFAULT_LABELS = {
   cancelLabel: "Cancel",
   applyLabel: "Apply",
   multiSelectionAction: "Selected",
-  multiSelectionConjunction: "of"
+  multiSelectionConjunction: "of",
 };
 
 const DEFAULT_STATE = {
   selectionLabel: null,
   anchorEl: null,
-  values: []
+  values: [],
 };
 
 /**
@@ -41,7 +41,7 @@ class HvDropdown extends React.Component {
 
     this.state = {
       isOpen: expanded,
-      ...DEFAULT_STATE
+      ...DEFAULT_STATE,
     };
   }
 
@@ -51,7 +51,7 @@ class HvDropdown extends React.Component {
         isOpen: props.expanded,
         selectionLabel: getSelectionLabel(props.values, props.labels, props.multiSelect),
         anchorEl: null,
-        values: props.values
+        values: props.values,
       };
     }
 
@@ -82,7 +82,7 @@ class HvDropdown extends React.Component {
     const anchor = event ? event.currentTarget.parentElement : null;
     this.setState({
       isOpen: !isOpen,
-      anchorEl: anchor
+      anchorEl: anchor,
     });
   }
 
@@ -150,11 +150,11 @@ class HvDropdown extends React.Component {
         id={headerId}
         aria-labelledby={selectionLabelId}
         className={clsx(classes.header, {
-          [classes.headerDisabled]: disabled
+          [classes.headerDisabled]: disabled,
         })}
-        onKeyDown={evt => this.handleToggle(evt)}
+        onKeyDown={(evt) => this.handleToggle(evt)}
         // Used instead of onClick because of OutsideClickHandler used in the List
-        onMouseUp={evt => this.handleToggle(evt)}
+        onMouseUp={(evt) => this.handleToggle(evt)}
         role="textbox"
         ref={this.ref}
         tabIndex={0}
@@ -165,7 +165,7 @@ class HvDropdown extends React.Component {
           id={selectionLabelId}
           variant="normalText"
           className={clsx(classes.selection, classes.truncate, {
-            [classes.selectionDisabled]: disabled
+            [classes.selectionDisabled]: disabled,
           })}
         >
           {selectionLabel}
@@ -193,7 +193,7 @@ class HvDropdown extends React.Component {
       classes,
       placement,
       // TODO: convert component to functional so we don't to destructure here
-      popperProps
+      popperProps,
     } = this.props;
     const { isOpen, values, anchorEl } = this.state;
 
@@ -202,7 +202,7 @@ class HvDropdown extends React.Component {
         id={setId(id, "values")}
         classes={{
           rootList: classes.rootList,
-          list: classes.list
+          list: classes.list,
         }}
         values={values}
         multiSelect={multiSelect}
@@ -243,12 +243,12 @@ class HvDropdown extends React.Component {
           aria-controls={isOpen ? setId(id, "values") : undefined}
           aria-labelledby={selectionLabelId}
           aria-describedby={labels.title ? setId(id, "label") : undefined}
-          ref={el => {
+          ref={(el) => {
             this.node = el;
           }}
           className={clsx(classes.root, className, {
             [classes.rootDisabled]: disabled,
-            [classes.rootOpen]: isOpen
+            [classes.rootOpen]: isOpen,
           })}
         >
           {this.renderHeader(selectionLabelId)}
@@ -323,7 +323,7 @@ HvDropdown.propTypes = {
     /**
      * Styles applied when the selection is disabled.
      */
-    rootList: PropTypes.string
+    rootList: PropTypes.string,
   }).isRequired,
   /**
    * The list to be rendered by the dropdown.
@@ -336,7 +336,7 @@ HvDropdown.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       label: PropTypes.string.isRequired,
-      selected: PropTypes.bool
+      selected: PropTypes.bool,
     })
   ),
   /**
@@ -398,7 +398,7 @@ HvDropdown.propTypes = {
     /**
      * The label used in the middle of the multiselection count.
      */
-    multiSelectionConjunction: PropTypes.string
+    multiSelectionConjunction: PropTypes.string,
   }),
   /**
    * If ´true´ and none element selected,
@@ -430,7 +430,7 @@ HvDropdown.propTypes = {
   /**
    * An object containing props to be wired to the popper component.
    */
-  popperProps: PropTypes.shape()
+  popperProps: PropTypes.shape(),
 };
 
 HvDropdown.defaultProps = {
@@ -449,7 +449,7 @@ HvDropdown.defaultProps = {
   hasTooltips: false,
   singleSelectionToggle: true,
   placement: undefined,
-  popperProps: {}
+  popperProps: {},
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(

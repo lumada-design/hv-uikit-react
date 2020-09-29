@@ -12,7 +12,7 @@ import styles from "./styles";
 const getChildIdToLabel = (children, childName) => {
   let childId = "";
   if (Array.isArray(children)) {
-    childId = React.Children.forEach(child => {
+    childId = React.Children.forEach((child) => {
       const foundId = getDescriptorMap(child, childName)?.id;
       if (!isNil(foundId)) {
         childId = childId.concat(`${foundId} `);
@@ -28,7 +28,7 @@ const getChildIdToLabel = (children, childName) => {
  * Component used in conjunction with other form elements, to give extra information about status.
  * If it receives a children, the component will set itself as a label for the children.
  */
-const HvLabel = props => {
+const HvLabel = (props) => {
   const { label, children, classes, className, id, disabled, ...others } = props;
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const childId = children ? getChildIdToLabel(children, "HvBaseInput") : undefined;
@@ -41,7 +41,7 @@ const HvLabel = props => {
         id={localId}
         className={clsx(className, classes.root, {
           [classes.labelDisabled]: localDisabled,
-          [classes.childGutter]: !isNil(children)
+          [classes.childGutter]: !isNil(children),
         })}
         variant="labelText"
         component="label"
@@ -79,7 +79,7 @@ HvLabel.propTypes = {
     /**
      * Separation between the label and the children.
      */
-    childGutter: PropTypes.string
+    childGutter: PropTypes.string,
   }).isRequired,
   /**
    * The children to label.
@@ -93,7 +93,7 @@ HvLabel.propTypes = {
   /**
    * If ´true´ the label is disabled.
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvLabel" })(HvLabel);

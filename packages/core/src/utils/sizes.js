@@ -1,4 +1,4 @@
-export const decreaseSize = size => {
+export const decreaseSize = (size) => {
   switch (size) {
     case "XL":
       return "L";
@@ -15,7 +15,7 @@ export const decreaseSize = size => {
   }
 };
 
-export const increaseSize = size => {
+export const increaseSize = (size) => {
   switch (size) {
     case "XS":
       return "S";

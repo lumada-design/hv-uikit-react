@@ -12,7 +12,7 @@ const MessageContainer = ({
   icon,
   actionsOnMessage,
   actionsOnMessageCallback,
-  message
+  message,
 }) => (
   <>
     {icon && <div className={classes.iconContainer}>{icon}</div>}
@@ -59,14 +59,14 @@ MessageContainer.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         icon: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       })
-    )
+    ),
   ]),
   /**
    * The callback function ran when an action is triggered, receiving ´actionsOnMessage´ as param
    */
-  actionsOnMessageCallback: PropTypes.func
+  actionsOnMessageCallback: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvMessageContainer" })(MessageContainer);

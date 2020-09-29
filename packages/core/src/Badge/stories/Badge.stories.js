@@ -6,16 +6,16 @@ import { HvBadge, HvButton, HvTab, HvTabs } from "../..";
 const container = {
   width: 400,
   display: "flex",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
 };
 
 export default {
   title: "Components/Badge",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBadge } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBadge } from '@hv/uikit-react-core/dist'",
   },
-  component: HvBadge
+  component: HvBadge,
 };
 
 export const Main = () => (
@@ -29,7 +29,7 @@ export const Main = () => (
 );
 
 Main.story = {
-  decorators: [storyFn => <div style={container}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={container}>{storyFn()}</div>],
 };
 
 export const WithIcon = () => (
@@ -44,12 +44,12 @@ export const WithIcon = () => (
 );
 
 WithIcon.story = {
-  decorators: [storyFn => <div style={container}>{storyFn()}</div>],
+  decorators: [(storyFn) => <div style={container}>{storyFn()}</div>],
   parameters: {
     docs: {
-      storyDescription: "Badge sample that uses a custom icon."
-    }
-  }
+      storyDescription: "Badge sample that uses a custom icon.",
+    },
+  },
 };
 
 export const WithText = () => (
@@ -64,12 +64,12 @@ export const WithText = () => (
 );
 
 WithText.story = {
-  decorators: [storyFn => <div style={{ ...container, width: 800 }}>{storyFn()}</div>],
+  decorators: [(storyFn) => <div style={{ ...container, width: 800 }}>{storyFn()}</div>],
   parameters: {
     docs: {
-      storyDescription: "Badge sample using only text."
-    }
-  }
+      storyDescription: "Badge sample using only text.",
+    },
+  },
 };
 
 export const WithState = () => {
@@ -88,9 +88,9 @@ export const WithState = () => {
 WithState.story = {
   parameters: {
     docs: {
-      storyDescription: "Badge sample using react hooks to set the number of events."
-    }
-  }
+      storyDescription: "Badge sample using react hooks to set the number of events.",
+    },
+  },
 };
 
 export const WithTabs = () => {
@@ -100,20 +100,20 @@ export const WithTabs = () => {
     setValue(newValue);
   };
 
-  const StyledTab = withStyles(theme => ({
+  const StyledTab = withStyles((theme) => ({
     root: {
       fontSize: theme.hv.typography.sTitle.fontSize,
       minHeight: "inherit",
-      justifyContent: "center"
+      justifyContent: "center",
     },
     labelContainer: {
       padding: "21px 40px",
       maxWidth: "unset",
       width: 265,
       justifyContent: "center",
-      display: "flex"
-    }
-  }))(props => <HvTab {...props} />);
+      display: "flex",
+    },
+  }))((props) => <HvTab {...props} />);
 
   return (
     <HvTabs value={value} onChange={handleChange}>
@@ -126,7 +126,7 @@ export const WithTabs = () => {
 WithState.story = {
   parameters: {
     docs: {
-      storyDescription: "Badges applied to Tabs component."
-    }
-  }
+      storyDescription: "Badges applied to Tabs component.",
+    },
+  },
 };

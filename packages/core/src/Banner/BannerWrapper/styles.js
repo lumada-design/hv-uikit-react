@@ -1,38 +1,38 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     minWidth: "100%",
     position: "relative",
     display: "flex",
-    flexWrap: "nowrap"
+    flexWrap: "nowrap",
   },
   message: {
     display: "flex",
     alignItems: "center",
     padding: `${theme.hv.spacing.xs}px 0`,
-    paddingLeft: `${theme.hv.spacing.sm}px`
+    paddingLeft: `${theme.hv.spacing.sm}px`,
   },
   action: {
     padding: theme.spacing("xs"),
     marginRight: 0,
     flex: "0 0 auto",
-    placeSelf: "stretch"
+    placeSelf: "stretch",
   },
   baseVariant: {
-    padding: 0
+    padding: 0,
   },
   success: {
-    backgroundColor: theme.hv.palette.semantic.sema8
+    backgroundColor: theme.hv.palette.semantic.sema8,
   },
   error: {
-    backgroundColor: theme.hv.palette.semantic.sema9
+    backgroundColor: theme.hv.palette.semantic.sema9,
   },
   default: {
-    backgroundColor: theme.hv.palette.semantic.sema7
+    backgroundColor: theme.hv.palette.semantic.sema7,
   },
   outContainer: {
     width: "100%",
-    position: "relative"
-  }
+    position: "relative",
+  },
 });
 
 export default styles;

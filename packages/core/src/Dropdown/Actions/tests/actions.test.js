@@ -29,7 +29,7 @@ describe("<Actions />", () => {
       .find(HvButton)
       .at(0)
       .simulate("click", {
-        preventDefault() {}
+        preventDefault() {},
       });
 
     expect(onCancelMock).toBeCalled();
@@ -42,7 +42,7 @@ describe("<Actions />", () => {
       .find(HvButton)
       .at(1)
       .simulate("click", {
-        preventDefault() {}
+        preventDefault() {},
       });
 
     expect(onApplyMock).toBeCalled();

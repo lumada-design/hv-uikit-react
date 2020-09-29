@@ -1,6 +1,6 @@
 import { outlineStyles } from "../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     minWidth: 70,
     padding: "13px 20px",
@@ -8,13 +8,13 @@ const styles = theme => ({
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.normalText,
     "&:focus, &:hover": {
-      background: theme.hv.palette.atmosphere.atmo4
+      background: theme.hv.palette.atmosphere.atmo4,
     },
     "&$selected": {
       fontWeight: 600,
       "&:hover": {
-        background: theme.hv.palette.atmosphere.atmo4
-      }
+        background: theme.hv.palette.atmosphere.atmo4,
+      },
     },
     "&$disabled": {
       color: theme.hv.palette.atmosphere.atmo7,
@@ -22,16 +22,16 @@ const styles = theme => ({
       pointerEvents: "all",
       opacity: 1,
       "&:focus, &:hover": {
-        background: "none"
-      }
+        background: "none",
+      },
     },
-    opacity: 1
+    opacity: 1,
   },
   focusVisible: {
-    ...outlineStyles
+    ...outlineStyles,
   },
   selected: {},
-  disabled: {}
+  disabled: {},
 });
 
 export default styles;

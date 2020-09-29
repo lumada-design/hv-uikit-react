@@ -46,10 +46,10 @@ const List = ({
 
   const newLabels = {
     selectAll: labels.selectAll,
-    selectionConjunction: labels.multiSelectionConjunction
+    selectionConjunction: labels.multiSelectionConjunction,
   };
 
-  const applyFocusRef = useCallback(node => {
+  const applyFocusRef = useCallback((node) => {
     const dropdownHeader = headerRef?.current;
     if (node) {
       const focusableList = getFocusableList(node);
@@ -83,9 +83,9 @@ const List = ({
    *
    * @param {String} str - The value that is being looked.
    */
-  const handleSearch = str => {
+  const handleSearch = (str) => {
     const results = list
-      ? list.filter(value => {
+      ? list.filter((value) => {
           const valNormalized = value.label.toLowerCase();
           const strNormalized = str.toLowerCase();
           return valNormalized.indexOf(strNormalized) >= 0;
@@ -93,9 +93,9 @@ const List = ({
       : null;
 
     if (!isNil(results)) {
-      const newList = list.map(elem => {
+      const newList = list.map((elem) => {
         const newElem = { ...elem };
-        const isResult = results.find(result => result.label === elem.label);
+        const isResult = results.find((result) => result.label === elem.label);
         newElem.isHidden = !isResult;
         return newElem;
       });
@@ -127,7 +127,7 @@ const List = ({
    *
    * @param selection
    */
-  const updateSelectionLabel = selection => {
+  const updateSelectionLabel = (selection) => {
     const { selectAll, multiSelectionConjunction } = labels;
     const selected = getSelected(selection);
 
@@ -154,7 +154,7 @@ const List = ({
   /**
    * Update states associated with select all.
    */
-  const updateSelectAll = selection => {
+  const updateSelectAll = (selection) => {
     if (!selection) return;
     const selected = getSelected(selection);
     const hasSelection = selected.length > 0;
@@ -171,7 +171,7 @@ const List = ({
    * @memberof List
    */
   const handleSelectAll = () => {
-    const newList = list.map(elem => ({ ...elem, selected: !anySelected }));
+    const newList = list.map((elem) => ({ ...elem, selected: !anySelected }));
 
     setList(newList);
     updateSelectAll(newList);
@@ -197,8 +197,8 @@ const List = ({
    *
    * @returns {*}
    */
-  const cleanHidden = lst =>
-    lst.forEach(item => {
+  const cleanHidden = (lst) =>
+    lst.forEach((item) => {
       // eslint-disable-next-line no-param-reassign
       item.isHidden = false;
     });
@@ -208,7 +208,7 @@ const List = ({
    *
    * @param selected - elements selected.
    */
-  const onSelection = selected => {
+  const onSelection = (selected) => {
     updateSelectAll(selected);
 
     if (multiSelect) {
@@ -228,7 +228,7 @@ const List = ({
    * If the handler is called by the onClickAway it is evaluated if the click was done in the header
    * to prevent the double toggle.
    */
-  const handleCancel = event => {
+  const handleCancel = (event) => {
     setList(clone(prevList));
     setSearchStr("");
     updateSelectAll(prevList);
@@ -253,7 +253,7 @@ const List = ({
    *
    * @param evt
    */
-  const handleKeyDown = evt => {
+  const handleKeyDown = (evt) => {
     if (isKeypress(evt, KeyboardCodes.Esc)) {
       handleCancel(evt);
     }
@@ -280,14 +280,14 @@ const List = ({
    *
    * @param data
    */
-  const handleListFlip = data => {
+  const handleListFlip = (data) => {
     const position = data.flipped;
     if (positionUp !== position) {
       setPositionUp(position);
     }
   };
 
-  const handleListCreate = data => {
+  const handleListCreate = (data) => {
     const position = data.flipped;
     if (!created) {
       setPositionUp(position);
@@ -303,7 +303,7 @@ const List = ({
       {!positionUp && (
         <div
           className={clsx(classes.inputExtensionOpen, {
-            [classes.inputExtensionLeftPosition]: placement === "left"
+            [classes.inputExtensionLeftPosition]: placement === "left",
           })}
         />
       )}
@@ -311,7 +311,7 @@ const List = ({
       <div
         className={clsx(classes.list, classes.listClosed, {
           [classes.listOpenDown]: isOpen && !positionUp,
-          [classes.listOpenUp]: isOpen && positionUp
+          [classes.listOpenUp]: isOpen && positionUp,
         })}
         onKeyDown={handleKeyDown}
       >
@@ -319,7 +319,7 @@ const List = ({
 
         <div
           className={clsx(classes.rootList, {
-            [classes.marginTop]: positionUp && showList
+            [classes.marginTop]: positionUp && showList,
           })}
         >
           {showSearch && renderSearch()}
@@ -350,7 +350,7 @@ const List = ({
         <div
           className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
             [classes.inputExtensionFloatRight]: placement === "right",
-            [classes.inputExtensionFloatLeft]: placement === "left"
+            [classes.inputExtensionFloatLeft]: placement === "left",
           })}
         />
       )}
@@ -367,14 +367,14 @@ const List = ({
       anchorEl={anchorEl}
       placement={bottom}
       popperOptions={{
-        onUpdate: data => handleListFlip(data),
-        onCreate: data => handleListCreate(data)
+        onUpdate: (data) => handleListFlip(data),
+        onCreate: (data) => handleListCreate(data),
       }}
       style={{ zIndex: theme.zIndex.tooltip }}
       ref={applyFocusRef}
       {...popperProps}
     >
-      <OutsideClickHandler onOutsideClick={e => handleCancel(e)}>
+      <OutsideClickHandler onOutsideClick={(e) => handleCancel(e)}>
         {renderInnerList()}
       </OutsideClickHandler>
     </Popper>
@@ -453,7 +453,7 @@ List.propTypes = {
   /**
    * A reference to the dropdown header used for refocusing the element.
    */
-  headerRef: PropTypes.instanceOf(Object)
+  headerRef: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvDropdownList" })(List);

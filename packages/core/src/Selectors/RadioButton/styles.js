@@ -1,23 +1,23 @@
 import { outlineStyles } from "../../Focus/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   container: {
     height: "32px",
     marginRight: 0,
     marginLeft: 0,
     "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
     },
     "&:focus-within:not(.disableFocus)": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4,
       "& svg": {
         borderRadius: "50%",
-        ...outlineStyles
-      }
-    }
+        ...outlineStyles,
+      },
+    },
   },
   disableFocus: {
-    outline: "none !important"
+    outline: "none !important",
   },
   labelTypography: {
     overflow: "hidden",
@@ -25,30 +25,30 @@ const styles = theme => ({
     whiteSpace: "nowrap",
     ...theme.hv.typography.normalText,
     "&$labelDisabled": {
-      ...theme.hv.typography.placeholderText
-    }
+      ...theme.hv.typography.placeholderText,
+    },
   },
   labelDisabled: {
     backgroundColor: "transparent",
     cursor: "not-allowed",
     "&:hover": {
       backgroundColor: "transparent",
-      cursor: "not-allowed"
-    }
+      cursor: "not-allowed",
+    },
   },
   labelEnd: {
-    paddingRight: "8px"
+    paddingRight: "8px",
   },
   labelStart: {
-    paddingLeft: "8px"
+    paddingLeft: "8px",
   },
   radio: {
-    padding: 0
+    padding: 0,
   },
   icon: {
     width: "32px",
-    height: "32px"
-  }
+    height: "32px",
+  },
 });
 
 export default styles;

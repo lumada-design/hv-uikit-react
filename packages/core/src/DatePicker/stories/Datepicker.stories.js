@@ -6,10 +6,10 @@ export default {
   title: "Components/Date Picker",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDatePicker } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvDatePicker } from '@hv/uikit-react-core/dist'",
   },
   component: HvDatePicker,
-  decorators: [storyFn => <div style={{ height: "600px" }}>{storyFn()}</div>]
+  decorators: [(storyFn) => <div style={{ height: "600px" }}>{storyFn()}</div>],
 };
 
 export const Main = () => <HvDatePicker id="DatePicker" />;
@@ -23,10 +23,10 @@ Main.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };
 
 export const DefaultValue = () => <HvDatePicker id="DatePicker" value="1970-01-01" />;
@@ -34,7 +34,7 @@ export const DefaultValue = () => <HvDatePicker id="DatePicker" value="1970-01-0
 DefaultValue.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker sample with a value already set."
+      storyDescription: "Datepicker sample with a value already set.",
     },
     pa11y: {
       ignore: [
@@ -43,10 +43,10 @@ DefaultValue.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };
 
 export const Localized = () => {
@@ -59,7 +59,7 @@ export const Localized = () => {
         type="text"
         value={locale}
         style={{ marginBottom: "20px", width: "150px" }}
-        onChange={value => setLocale(value)}
+        onChange={(value) => setLocale(value)}
       />
       <HvDatePicker locale={locale} id="DatePicker" />
     </>
@@ -69,7 +69,7 @@ export const Localized = () => {
 Localized.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker sample with values localized."
+      storyDescription: "Datepicker sample with values localized.",
     },
     pa11y: {
       ignore: [
@@ -78,10 +78,10 @@ Localized.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };
 
 export const WithActions = () => <HvDatePicker showActions value="1970-01-02" id="DatePicker" />;
@@ -89,7 +89,7 @@ export const WithActions = () => <HvDatePicker showActions value="1970-01-02" id
 WithActions.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker with action buttons at the bottom."
+      storyDescription: "Datepicker with action buttons at the bottom.",
     },
     pa11y: {
       ignore: [
@@ -98,10 +98,10 @@ WithActions.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };
 
 export const WithCustomLabels = () => (
@@ -109,7 +109,7 @@ export const WithCustomLabels = () => (
     showActions
     labels={{
       title: "This is the title for the date picker",
-      placeholder: "Custom placeholder"
+      placeholder: "Custom placeholder",
     }}
   />
 );
@@ -117,7 +117,7 @@ export const WithCustomLabels = () => (
 WithCustomLabels.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker with actions buttons at the bottom that have custom labels."
+      storyDescription: "Datepicker with actions buttons at the bottom that have custom labels.",
     },
     pa11y: {
       ignore: [
@@ -130,10 +130,10 @@ WithCustomLabels.story = {
         // TODO: BUG Custom label isn't a real label
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "button-name",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name"
-      ]
-    }
-  }
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+      ],
+    },
+  },
 };
 
 export const RangeMode = () => (
@@ -142,7 +142,7 @@ export const RangeMode = () => (
     labels={{
       applyLabel: "Apply",
       cancelLabel: "Cancel",
-      placeholder: "Select a range"
+      placeholder: "Select a range",
     }}
   />
 );
@@ -150,7 +150,7 @@ export const RangeMode = () => (
 RangeMode.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker in range mode allowing the selection of more than one value."
+      storyDescription: "Datepicker in range mode allowing the selection of more than one value.",
     },
     pa11y: {
       ignore: [
@@ -159,10 +159,10 @@ RangeMode.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };
 
 export const RangeWithValues = () => {
@@ -171,7 +171,7 @@ export const RangeWithValues = () => {
     cancelLabel: "Cancel",
     placeholder: "Select a range",
     rangeStart: "Start date",
-    rangeEnd: "End date"
+    rangeEnd: "End date",
   };
 
   return (
@@ -188,7 +188,7 @@ export const RangeWithValues = () => {
 RangeWithValues.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker in range mode with values already set."
+      storyDescription: "Datepicker in range mode with values already set.",
     },
     pa11y: {
       ignore: [
@@ -197,10 +197,10 @@ RangeWithValues.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };
 
 export const NearInvalid = () => <HvDatePicker value="1000-01-01" />;
@@ -208,7 +208,7 @@ export const NearInvalid = () => <HvDatePicker value="1000-01-01" />;
 NearInvalid.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker in range mode with invalid near invalid dates."
+      storyDescription: "Datepicker in range mode with invalid near invalid dates.",
     },
     pa11y: {
       ignore: [
@@ -217,22 +217,17 @@ NearInvalid.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };
 
 export const WithValueChange = () => {
   const Example = () => {
     const [date, setDate] = useState("2020-01-01");
 
-    const addDay = () =>
-      setDate(
-        moment(date)
-          .add(1, "day")
-          .format("YYYY-MM-DD")
-      );
+    const addDay = () => setDate(moment(date).add(1, "day").format("YYYY-MM-DD"));
 
     return (
       <>
@@ -240,7 +235,7 @@ export const WithValueChange = () => {
           Add a day
         </HvButton>
         <p />
-        <HvDatePicker id="DatePicker" value={date} onChange={d => setDate(d)} />
+        <HvDatePicker id="DatePicker" value={date} onChange={(d) => setDate(d)} />
       </>
     );
   };
@@ -257,8 +252,8 @@ WithValueChange.story = {
         // https://github.com/lumada-design/hv-uikit-react/issues/1692
         "label",
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
-      ]
-    }
-  }
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
 };

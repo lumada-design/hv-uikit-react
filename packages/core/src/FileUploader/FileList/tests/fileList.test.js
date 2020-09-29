@@ -17,7 +17,7 @@ const files = [
     name: "Screenshot 2019-12-05 at 17.15.43.png",
     size: 14106,
     type: "image/png",
-    webkitRelativePath: ""
+    webkitRelativePath: "",
   },
   {
     id: "2",
@@ -27,8 +27,8 @@ const files = [
     name: "Screenshot 2019-12-05 at 12.03.13.png",
     size: 875,
     type: "image/png",
-    webkitRelativePath: ""
-  }
+    webkitRelativePath: "",
+  },
 ];
 
 describe("FileList withStyles", () => {

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import hoistNonReactStatics from "hoist-non-react-statics";
 
-const withLabels = defaultLabels => Component => {
+const withLabels = (defaultLabels) => (Component) => {
   const WithLabels = ({ labels, ...others }) => (
     <Component {...others} labels={{ ...defaultLabels, ...labels }} />
   );
@@ -12,7 +12,7 @@ const withLabels = defaultLabels => Component => {
      * Labels to be applied in the component.
      */
     // eslint-disable-next-line react/forbid-prop-types
-    labels: PropTypes.object
+    labels: PropTypes.object,
   };
 
   // make it visible to documentation

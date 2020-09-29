@@ -39,7 +39,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
         classes={{
           root: classes.root,
           message: classes.message,
-          action: classes.action
+          action: classes.action,
         }}
         className={clsx(classes[variant], classes.baseVariant)}
         message={
@@ -48,7 +48,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
             icon={icon}
             {...(effectiveActionsPosition === "inline" && {
               actionsOnMessage: actions,
-              actionsOnMessageCallback: actionsCallback
+              actionsOnMessageCallback: actionsCallback,
             })}
             message={content}
           />
@@ -59,7 +59,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
             onClose={onClose}
             {...(effectiveActionsPosition === "bottom-right" && {
               action: actions,
-              actionCallback: actionsCallback
+              actionCallback: actionsCallback,
             })}
             {...actionProps}
           />
@@ -109,9 +109,9 @@ HvBannerContentWrapper.propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         icon: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       })
-    )
+    ),
   ]),
   /**
    *  The callback function ran when an action is triggered, receiving ´action´ as param
@@ -124,7 +124,7 @@ HvBannerContentWrapper.propTypes = {
   /**
    * The props to pass down to the Action Container.
    */
-  actionProps: PropTypes.instanceOf(Object)
+  actionProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvBannerContentWrapper" })(HvBannerContentWrapper);

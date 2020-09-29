@@ -1,39 +1,39 @@
-const styles = theme => {
+const styles = (theme) => {
   const hover = {
     backgroundColor: theme.palette.atmo4,
-    cursor: "pointer"
+    cursor: "pointer",
   };
 
   return {
     calendarWrapper: {
       overflow: "hidden",
       backgroundColor: theme.palette.atmo1,
-      padding: theme.spacing("sm")
+      padding: theme.spacing("sm"),
     },
     calendarGrid: {
       display: "flex",
       flexFlow: "wrap",
-      width: "280px"
+      width: "280px",
     },
     navigationContainer: {
       display: "flex",
       justifyContent: "space-between",
-      padding: `${theme.spacing("xs")}px 0`
+      padding: `${theme.spacing("xs")}px 0`,
     },
     focusSelection: {
       "&:hover": {
-        ...hover
+        ...hover,
       },
       "&:focus": {
         ...hover,
         outlineColor: "#52A8EC",
         outlineStyle: "solid",
         outlineWidth: "1px",
-        outlineOffset: "-1px"
-      }
+        outlineOffset: "-1px",
+      },
     },
     navigationMonth: {
-      minWidth: "160px"
+      minWidth: "160px",
     },
     calendarDay: {
       display: "flex",
@@ -41,7 +41,7 @@ const styles = theme => {
       flexDirection: "column",
       textAlign: "center",
       height: "40px",
-      width: "40px"
+      width: "40px",
     },
     calendarDate: {
       display: "flex",
@@ -49,23 +49,23 @@ const styles = theme => {
       flexDirection: "column",
       textAlign: "center",
       height: "40px",
-      width: "40px"
+      width: "40px",
     },
     calendarDateNotInMonth: {
-      color: theme.palette.atmo7
+      color: theme.palette.atmo7,
     },
     calendarDateSelected: {
       backgroundColor: theme.palette.acce1,
       color: theme.palette.atmo1,
       "&:hover": {
-        ...hover
-      }
+        ...hover,
+      },
     },
     calendarDateInvalid: {
       "&:hover": {
         cursor: "not-allowed",
-        backgroundColor: "transparent"
-      }
+        backgroundColor: "transparent",
+      },
     },
     calendarMonthlyGrid: {
       top: "0",
@@ -79,13 +79,13 @@ const styles = theme => {
       flexFlow: "wrap",
       alignContent: "center",
       justifyContent: "space-evenly",
-      backgroundColor: theme.palette.atmo1
+      backgroundColor: theme.palette.atmo1,
     },
     normalWidth: {
-      width: "calc(100% - 2px)" // 2px for the borders.
+      width: "calc(100% - 2px)", // 2px for the borders.
     },
     rangeModeWidth: {
-      width: "calc((100% / 2) - 2px)" // 100% divided by two to handle the range situation minus 2px for the borders.
+      width: "calc((100% / 2) - 2px)", // 100% divided by two to handle the range situation minus 2px for the borders.
     },
     calendarMonthlyCell: {
       display: "flex",
@@ -95,17 +95,17 @@ const styles = theme => {
       height: "40px",
       width: "92px",
       "&:hover": {
-        ...hover
-      }
+        ...hover,
+      },
     },
     calendarMonthlyCellSelected: {
       backgroundColor: theme.palette.acce1,
       color: theme.palette.atmo1,
       "&:hover": {
         backgroundColor: theme.palette.acce1,
-        color: theme.palette.atmo1
-      }
-    }
+        color: theme.palette.atmo1,
+      },
+    },
   };
 };
 

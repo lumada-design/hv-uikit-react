@@ -12,7 +12,7 @@ const setterIfNil = (object, property, value) => {
 export const applyDataDefaults = (inputData, type) => {
   const data = inputData;
 
-  data.forEach(trace => {
+  data.forEach((trace) => {
     setterIfNil(trace, "hoverinfo", "none");
     setterIfNil(trace, "mode", "lines");
 
@@ -44,7 +44,7 @@ export const applyLayoutDefaults = (inputLayout, rangeSlider) => {
     setterIfNil(layout, "xaxis", {});
 
     setterIfNil(layout.xaxis, "rangeslider", {
-      visible: true
+      visible: true,
     });
   }
 

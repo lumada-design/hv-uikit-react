@@ -106,7 +106,7 @@ describe("UnitTimePicker", () => {
 
   it("handleAddTime - should update the currentValue to the minimum possible value when it reaches the maximum", () => {
     unitTimePickerComponent.setState({
-      currentValue: TimePickerUnits.MINUTE.max
+      currentValue: TimePickerUnits.MINUTE.max,
     });
     unitTimePickerInstance.handleAddTime();
     expect(unitTimePickerInstance.state.currentValue).toBe(TimePickerUnits.MINUTE.min);
@@ -119,7 +119,7 @@ describe("UnitTimePicker", () => {
 
   it("handleSubtractTime - should update the currentValue to the minimum possible value when it reaches the maximum", () => {
     unitTimePickerComponent.setState({
-      currentValue: TimePickerUnits.MINUTE.min
+      currentValue: TimePickerUnits.MINUTE.min,
     });
     unitTimePickerInstance.handleSubtractTime();
     expect(unitTimePickerInstance.state.currentValue).toBe(TimePickerUnits.MINUTE.max);

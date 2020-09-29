@@ -3,7 +3,7 @@ import focusStyles from "../../../Focus/styles";
 
 const { focused, focusDisabled, externalReference, falseFocus } = focusStyles;
 
-const styles = theme => {
+const styles = (theme) => {
   const hoverColor = theme.hv.palette.atmosphere.atmo4;
 
   return {
@@ -11,52 +11,52 @@ const styles = theme => {
       display: "inline",
       "&:hover": {
         "& > [role='button']": {
-          backgroundColor: hoverColor
+          backgroundColor: hoverColor,
         },
         "&:focus-within": {
           "& > [role='button']": {
-            backgroundColor: hoverColor
-          }
-        }
+            backgroundColor: hoverColor,
+          },
+        },
       },
       // IE fallback code (using focus-within-polyfill)
       "&.focus-within": {
         "& > [role='button']": {
-          backgroundColor: hoverColor
-        }
-      }
+          backgroundColor: hoverColor,
+        },
+      },
     },
     selectedItem: {
       borderTop: `2px solid ${theme.hv.palette.accent.acce3}`,
-      paddingTop: "2px"
+      paddingTop: "2px",
     },
     notSelectedItem: {
-      marginTop: "4px"
+      marginTop: "4px",
     },
     button: {
       border: "none",
       cursor: "pointer",
       padding: `6px ${theme.hv.spacing.sm}px`,
       "&:active": {
-        outline: "none"
+        outline: "none",
       },
       "&:focus": {
-        backgroundColor: hoverColor
-      }
+        backgroundColor: hoverColor,
+      },
     },
     contentFocusDisabled: {
-      ...focusDisabled
+      ...focusDisabled,
     },
     contentFocused: {
-      ...focused
+      ...focused,
     },
     externalReference: {
-      ...externalReference
+      ...externalReference,
     },
     falseFocus: {
       ...falseFocus,
-      top: "4px"
-    }
+      top: "4px",
+    },
   };
 };
 

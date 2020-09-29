@@ -6,7 +6,7 @@ import HvBadge from "@hv/uikit-react-core/dist/Badge";
 const EnterKeyCode = 13;
 
 export default class Panel extends Component {
-  onKeyDownClose = e => {
+  onKeyDownClose = (e) => {
     if (e.keyCode === EnterKeyCode) {
       const { onClose } = this.props;
       onClose();
@@ -21,9 +21,9 @@ export default class Panel extends Component {
       notifications,
       onClose,
       footer,
-      children
+      children,
     } = this.props;
-    const newNotificationCount = _.filter(notifications, notification => !notification.isRead)
+    const newNotificationCount = _.filter(notifications, (notification) => !notification.isRead)
       .length;
 
     return (
@@ -66,7 +66,7 @@ Panel.propTypes = {
       /**
        * 'true' if notification has been read; 'false' otherwise
        */
-      isRead: PropTypes.bool.isRequired
+      isRead: PropTypes.bool.isRequired,
     }).isRequired
   ),
   /**
@@ -76,7 +76,7 @@ Panel.propTypes = {
     /**
      * styles applied to the panel
      */
-    panel: PropTypes.string
+    panel: PropTypes.string,
   }).isRequired,
   /**
    * The function that will be executed when the panel is closed
@@ -93,7 +93,7 @@ Panel.propTypes = {
     /**
      * The icon that denoted close functionality
      */
-    headerCloseImg: PropTypes.element.isRequired
+    headerCloseImg: PropTypes.element.isRequired,
   }).isRequired,
   /**
    * The renderable footer element
@@ -102,11 +102,11 @@ Panel.propTypes = {
   /**
    * Node to be rendered
    */
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Panel.defaultProps = {
   open: false,
   notifications: [],
-  children: null
+  children: null,
 };

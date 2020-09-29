@@ -10,7 +10,7 @@ const Action = ({ classes, className, id, label, icon, onClick, ...others }) => 
   const payload = { id, label };
 
   const handleKeyDown = useCallback(
-    event => {
+    (event) => {
       if (!isKeypress(event, KeyboardCodes.Enter) && !isKeypress(event, KeyboardCodes.SpaceBar)) {
         return;
       }
@@ -19,7 +19,7 @@ const Action = ({ classes, className, id, label, icon, onClick, ...others }) => 
     [onClick, payload]
   );
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     onClick?.(event, payload);
   };
 
@@ -27,7 +27,7 @@ const Action = ({ classes, className, id, label, icon, onClick, ...others }) => 
     () =>
       icon &&
       React.cloneElement(icon, {
-        boxStyles: { width: "32px", height: "32px" }
+        boxStyles: { width: "32px", height: "32px" },
       }),
     [icon]
   );
@@ -37,7 +37,7 @@ const Action = ({ classes, className, id, label, icon, onClick, ...others }) => 
       id={id}
       category="ghost"
       className={clsx(className, classes.action, {
-        [classes.noIcon]: !icon
+        [classes.noIcon]: !icon,
       })}
       tabIndex={0}
       onKeyDown={handleKeyDown}
@@ -70,7 +70,7 @@ Action.propTypes = {
     /**
      * Style applied when no icon is present.
      */
-    noIcon: PropTypes.string
+    noIcon: PropTypes.string,
   }).isRequired,
   /**
    * Visual label.
@@ -83,7 +83,7 @@ Action.propTypes = {
   /**
    * Callback called when clicked.
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesAction" })(Action);

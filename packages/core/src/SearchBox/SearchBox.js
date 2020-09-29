@@ -17,7 +17,7 @@ import styles from "./styles";
 
 const DEFAULT_LABELS = {
   inputLabel: "",
-  placeholder: "Search"
+  placeholder: "Search",
 };
 
 /**
@@ -40,12 +40,12 @@ const onKeyDownHandler = (handlers, event, value) => {
  *
  *  @param disabled - contains the onKeyDown event
  */
-const changeIconColor = disabled => (
+const changeIconColor = (disabled) => (
   <SearchIcon
     color={disabled ? "atmo7" : undefined}
     boxStyles={{
       width: "30px",
-      height: "30px"
+      height: "30px",
     }}
   />
 );
@@ -96,7 +96,7 @@ const onBlurHandler = (contextValues, value) => {
   onBlur?.(value);
 };
 
-const HvSearchBox = props => {
+const HvSearchBox = (props) => {
   const {
     classes,
     id,
@@ -157,7 +157,7 @@ HvSearchBox.propTypes = {
     /**
      * Styles applied to searchbox root.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -174,7 +174,7 @@ HvSearchBox.propTypes = {
     /**
      * Placeholder value.
      */
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   }),
   /**
    * The initial value of the searchbox
@@ -230,7 +230,7 @@ HvSearchBox.propTypes = {
   /**
    * Arial Label.
    */
-  ariaLabel: PropTypes.string
+  ariaLabel: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvSearchBox" })(withLabels(DEFAULT_LABELS)(HvSearchBox));

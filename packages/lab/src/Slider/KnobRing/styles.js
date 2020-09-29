@@ -1,4 +1,4 @@
-const styles = props => {
+const styles = (props) => {
   const { hoverColor, dragging } = props;
   let borderValue = "0px solid transparent";
   if (!dragging && hoverColor) {
@@ -17,12 +17,12 @@ const styles = props => {
       top: "-82%",
       left: "-82%",
       "&:hover": {
-        border: borderValue
+        border: borderValue,
       },
       "&:active": {
-        border: borderValue
-      }
-    }
+        border: borderValue,
+      },
+    },
   };
 };
 

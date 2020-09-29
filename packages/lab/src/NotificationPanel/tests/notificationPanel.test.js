@@ -13,7 +13,7 @@ const baseProps = {
   icon: <img alt="test" src="test" />,
   header: {
     headerTitle: "Test title",
-    headerCloseImg: <img alt="test" src="testCloseImg" />
+    headerCloseImg: <img alt="test" src="testCloseImg" />,
   },
   notifications: [
     {
@@ -21,22 +21,22 @@ const baseProps = {
       title: "Test",
       isRead: false,
       date: moment.tz("Europe/Lisbon"),
-      icon: <img alt="test" src="test warning" />
+      icon: <img alt="test" src="test warning" />,
     },
     {
       id: "2",
       title: "Test 2",
       isRead: true,
-      date: moment.tz("Europe/Lisbon").subtract(1, "day")
+      date: moment.tz("Europe/Lisbon").subtract(1, "day"),
     },
     {
       id: "3",
       title: "Test 2",
       isRead: true,
-      date: moment.tz("Europe/Lisbon").subtract(1, "month")
-    }
+      date: moment.tz("Europe/Lisbon").subtract(1, "month"),
+    },
   ],
-  footer: <div className="footer" />
+  footer: <div className="footer" />,
 };
 
 describe("Hv NotificationPanel", () => {
@@ -115,29 +115,11 @@ describe("Hv NotificationPanel", () => {
 
       expect(notifications.length).toEqual(3);
 
-      expect(
-        notifications
-          .children()
-          .at(0)
-          .instance()
-          .getTime()
-      ).toEqual("a few seconds ago");
+      expect(notifications.children().at(0).instance().getTime()).toEqual("a few seconds ago");
 
-      expect(
-        notifications
-          .children()
-          .at(1)
-          .instance()
-          .getTime()
-      ).toEqual("Sun, 6:14 PM");
+      expect(notifications.children().at(1).instance().getTime()).toEqual("Sun, 6:14 PM");
 
-      expect(
-        notifications
-          .children()
-          .at(2)
-          .instance()
-          .getTime()
-      ).toEqual("24 May 2019, 6:14 PM");
+      expect(notifications.children().at(2).instance().getTime()).toEqual("24 May 2019, 6:14 PM");
     });
   });
 });

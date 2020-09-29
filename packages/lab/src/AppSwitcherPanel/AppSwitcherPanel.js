@@ -11,7 +11,7 @@ export default class AppSwitcherPanel extends Component {
     const { id } = this.props;
 
     this.state = {
-      internalId: id || uniqueId("hv-appswitcherpanel-")
+      internalId: id || uniqueId("hv-appswitcherpanel-"),
     };
   }
 
@@ -25,7 +25,7 @@ export default class AppSwitcherPanel extends Component {
       header,
       footer,
       onActionClickedCallback,
-      isActionSelectedCallback
+      isActionSelectedCallback,
     } = this.props;
 
     const actionClicked = (event, application) => {
@@ -118,7 +118,7 @@ AppSwitcherPanel.propTypes = {
       /**
        * True when the application is selected, false otherwise.
        */
-      isSelected: PropTypes.bool
+      isSelected: PropTypes.bool,
     })
   ).isRequired,
   /**
@@ -136,7 +136,7 @@ AppSwitcherPanel.propTypes = {
   /**
    * Must return a boolean stating if the action element is selected or not.
    */
-  isActionSelectedCallback: PropTypes.element.func
+  isActionSelectedCallback: PropTypes.element.func,
 };
 
 AppSwitcherPanel.defaultProps = {
@@ -144,5 +144,5 @@ AppSwitcherPanel.defaultProps = {
   title: "Apps",
   footer: undefined,
   onActionClickedCallback: (event, application) => {},
-  isActionSelectedCallback: () => false
+  isActionSelectedCallback: () => false,
 };

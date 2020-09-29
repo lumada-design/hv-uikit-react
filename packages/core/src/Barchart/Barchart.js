@@ -57,7 +57,7 @@ const Barchart = ({
    *
    * (this is effectively more an effect than a callback)
    */
-  const recalculateBarWidth = useCallback(ref => {
+  const recalculateBarWidth = useCallback((ref) => {
     // use the data and layout info directly from the plotly ref
     // as it's always the most uptodate version.
     const plotData = ref.current.props.data;
@@ -81,7 +81,7 @@ const Barchart = ({
       if (greaterThan90 && !isAlreadyGreaterThan90) {
         const newWidth = (MAX_BAR_WIDTH / plotWidth) * numberOfGroup;
 
-        const newData = plotData.map(subData => {
+        const newData = plotData.map((subData) => {
           return { ...subData, width: newWidth };
         });
 
@@ -89,7 +89,7 @@ const Barchart = ({
       }
 
       if (!greaterThan90 && isAlreadyGreaterThan90) {
-        const newData = plotData.map(subData => {
+        const newData = plotData.map((subData) => {
           return { ...subData, width: undefined };
         });
 
@@ -163,7 +163,7 @@ Barchart.propTypes = {
   /**
    * Defines the title of the Y axis.
    */
-  yAxisTitle: PropTypes.string
+  yAxisTitle: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvBarchart" })(Barchart);

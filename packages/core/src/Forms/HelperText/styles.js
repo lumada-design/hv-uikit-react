@@ -1,22 +1,22 @@
-const styles = theme => ({
+const styles = (theme) => ({
   topGutter: { marginTop: 8 },
   helperDisabled: {
     color: theme.hv.palette.atmosphere.atmo7,
-    display: "none"
+    display: "none",
   },
   helperText: {
     color: theme.hv.palette.accent.acce1,
-    display: "none"
+    display: "none",
   },
   showText: {
-    display: "block"
+    display: "block",
   },
   "@global": {
     "input:-webkit-autofill": {
       "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,
-      "-webkit-text-fill-color": theme.hv.typography.normalText.color
-    }
-  }
+      "-webkit-text-fill-color": theme.hv.typography.normalText.color,
+    },
+  },
 });
 
 export default styles;

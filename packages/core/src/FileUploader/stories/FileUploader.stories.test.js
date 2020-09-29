@@ -6,9 +6,9 @@ export default {
   parameters: {
     docs: {
       disable: true,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };
 
 // __________________________________
@@ -22,7 +22,7 @@ export const AutomationSample = () => {
       size: 141,
       progress: 41,
       status: "success",
-      type: "image/png"
+      type: "image/png",
     },
     {
       id: "uploaded-file-2",
@@ -30,7 +30,7 @@ export const AutomationSample = () => {
       size: 875,
       progress: 456,
       status: "progress",
-      type: "image/png"
+      type: "image/png",
     },
     {
       id: "uploaded-file-3",
@@ -39,7 +39,7 @@ export const AutomationSample = () => {
       progress: 41,
       status: "fail",
       type: "image/png",
-      errorMessage: "The file exceeds the maximum upload size"
+      errorMessage: "The file exceeds the maximum upload size",
     },
     {
       id: "uploaded-file-4",
@@ -48,8 +48,8 @@ export const AutomationSample = () => {
       progress: 1075,
       status: "fail",
       type: "image/png",
-      errorMessage: "File type not allowed for upload"
-    }
+      errorMessage: "File type not allowed for upload",
+    },
   ];
 
   const Sample = () => {
@@ -78,7 +78,7 @@ export const AutomationSample = () => {
 
       // the new state must always be a new list, so it must be cloned
       // otherwise the list elements changes wouldn't be detected
-      setList(previousList => [...previousList]);
+      setList((previousList) => [...previousList]);
     };
 
     function addFile(file, setList) {
@@ -98,7 +98,7 @@ export const AutomationSample = () => {
       // we're adding the new file to the top of the list
       // depending on the use case, we could also add to the bottom,
       // order them alphabetically, etc.
-      setList(previousList => [newFile, ...previousList]);
+      setList((previousList) => [newFile, ...previousList]);
     }
 
     const removeFile = (fileToRemove, setList) => {
@@ -107,7 +107,7 @@ export const AutomationSample = () => {
 
       // the filename isn't necessarly unique (e.g. the user can add two different files
       // from different folders with the same), so an individual ID is created in each file
-      setList(previousList => previousList.filter(file => file.id !== fileToRemove.id));
+      setList((previousList) => previousList.filter((file) => file.id !== fileToRemove.id));
     };
     const [list, setList] = useState(files);
 
@@ -117,10 +117,10 @@ export const AutomationSample = () => {
         acceptedFiles={["jpg", "jpeg", "png"]}
         maxFileSize={2 * 1000 ** 2}
         fileList={list}
-        onFilesAdded={newFiles => {
-          newFiles.forEach(newFile => addFile(newFile, setList));
+        onFilesAdded={(newFiles) => {
+          newFiles.forEach((newFile) => addFile(newFile, setList));
         }}
-        onFileRemoved={removedFile => {
+        onFileRemoved={(removedFile) => {
           removeFile(removedFile, setList);
         }}
       />
@@ -138,8 +138,8 @@ AutomationSample.story = {
         // TODO: BUG Upload failed error message color with insufficient contrast:
         // https://github.com/lumada-design/hv-uikit-react/issues/1696
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
-  }
+        "color-contrast",
+      ],
+    },
+  },
 };

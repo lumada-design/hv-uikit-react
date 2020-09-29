@@ -19,7 +19,7 @@ const Options = ({ classes, className, onClick, children, ...others }) => {
   const optionsStateContext = useMemo(
     () => ({
       selected,
-      onSelection
+      onSelection,
     }),
     [selected, onSelection]
   );
@@ -43,7 +43,7 @@ Options.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    optionsRoot: PropTypes.string
+    optionsRoot: PropTypes.string,
   }),
   /**
    * Function call when a option is chosen.
@@ -52,7 +52,7 @@ Options.propTypes = {
   /**
    * Children component.
    */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { name: "HvUserPreferencesOptions" })(Options);

@@ -9,7 +9,7 @@ import styles from "./styles";
  * parse button properties and if any buttons are preset as selected
  * set the state with their ids
  * */
-const getInitialState = buttons => buttons.filter(item => item.selected).map(item => item.id);
+const getInitialState = (buttons) => buttons.filter((item) => item.selected).map((item) => item.id);
 
 const MultiButton = ({
   id,
@@ -88,10 +88,10 @@ const MultiButton = ({
       <HvButton
         key={`btnkey_${idx + 1}`}
         id={bId}
-        onClick={event => handleClick(event, idx)}
+        onClick={(event) => handleClick(event, idx)}
         className={clsx(classes.button, {
           [classes.isSelected]: isSelected,
-          [classes.isUnselected]: !isSelected
+          [classes.isUnselected]: !isSelected,
         })}
         category="ghost"
         aria-label={value}
@@ -108,7 +108,7 @@ const MultiButton = ({
     <div
       id={id}
       className={clsx(className, classes.root, {
-        [classes.vertical]: vertical
+        [classes.vertical]: vertical,
       })}
       {...others}
     >
@@ -157,7 +157,7 @@ MultiButton.propTypes = {
     /**
      * Styles applied to the button when it's not selected.
      */
-    isUnselected: PropTypes.string
+    isUnselected: PropTypes.string,
   }).isRequired,
   /**
    * If the multibutton is to be displayed vertically.
@@ -199,7 +199,7 @@ MultiButton.propTypes = {
       /**
        * Specify if item can be toggled or not.
        */
-      enforced: PropTypes.bool
+      enforced: PropTypes.bool,
     })
   ).isRequired,
   /**
@@ -213,7 +213,7 @@ MultiButton.propTypes = {
   /**
    * Specify maximum number of selections in component
    */
-  maxSelection: PropTypes.number
+  maxSelection: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvMultiButton" })(MultiButton);

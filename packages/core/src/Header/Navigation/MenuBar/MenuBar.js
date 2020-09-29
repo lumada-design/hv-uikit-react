@@ -10,17 +10,17 @@ const MenuBar = ({ classes, id, data = [], onClick, type }) => {
   const selectionPath = useContext(SelectionContext);
 
   const isMenu = type === "menu";
-  const isActive = isMenu && data.filter(item => item.id === selectionPath[1]).length > 0;
+  const isActive = isMenu && data.filter((item) => item.id === selectionPath[1]).length > 0;
 
   return (
     <div
       className={clsx(classes.root, classes[`${type}`], {
         [classes.hidden]: isMenu,
-        [classes.active]: isActive
+        [classes.active]: isActive,
       })}
     >
       <ul id={id} className={classes.list} onFocus={() => {}}>
-        {data.map(item => (
+        {data.map((item) => (
           <MenuItem key={item.id} item={item} type={type} onClick={onClick} />
         ))}
       </ul>
@@ -56,7 +56,7 @@ MenuBar.propTypes = {
     /**
      * Styles applied to the list.
      */
-    list: PropTypes.string
+    list: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -71,7 +71,7 @@ MenuBar.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
+      label: PropTypes.string.isRequired,
     })
   ),
   /**
@@ -81,7 +81,7 @@ MenuBar.propTypes = {
   /**
    * The type of menu.
    */
-  type: PropTypes.oneOf(["menubar", "menu"]).isRequired
+  type: PropTypes.oneOf(["menubar", "menu"]).isRequired,
 };
 
 export default withStyles(styles, { name: "HvHeaderMenuBar" })(MenuBar);

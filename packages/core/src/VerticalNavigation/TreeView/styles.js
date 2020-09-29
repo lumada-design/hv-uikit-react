@@ -2,39 +2,39 @@ import focusStyles from "../../Focus/styles";
 
 const { focused, focusDisabled } = focusStyles;
 
-const selected = theme => ({
+const selected = (theme) => ({
   background: theme.hv.palette.accent.acce1,
   color: theme.hv.palette.atmosphere.atmo1,
   "& *": {
     background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1
+    color: theme.hv.palette.atmosphere.atmo1,
   },
   "& svg *.color0": {
-    fill: theme.hv.palette.atmosphere.atmo1
-  }
+    fill: theme.hv.palette.atmosphere.atmo1,
+  },
 });
 
-const hover = theme => ({
+const hover = (theme) => ({
   background: theme.hv.palette.atmosphere.atmo4,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
-  }
+    background: theme.hv.palette.atmosphere.atmo4,
+  },
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   /* role="tree" root element */
   root: {
     display: "block",
     background: theme.hv.palette.atmosphere.atmo1,
     padding: `0px`,
     margin: "0",
-    listStyle: "none"
+    listStyle: "none",
   },
 
   /* role="group" element */
   group: {
     margin: "8px 0 0 0",
-    padding: 0
+    padding: 0,
   },
 
   /* role="treeitem" element */
@@ -42,7 +42,7 @@ const styles = theme => ({
     listStyle: "none",
     minHeight: "32px",
     "&:not(:last-child)": {
-      marginBottom: "8px"
+      marginBottom: "8px",
     },
 
     // level indentation
@@ -50,26 +50,26 @@ const styles = theme => ({
     "&[data-hasicon]>$content": { paddingLeft: `0px` },
     // 1st, no icon
     "&:not([data-hasicon])>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1}px`
+      paddingLeft: `${theme.hv.spacing.xs * 1}px`,
     },
 
     // 2nd, with icon
     "&[data-hasicon]>$group>$node>$content": {
-      paddingLeft: `${32 + theme.hv.spacing.sm * 1}px`
+      paddingLeft: `${32 + theme.hv.spacing.sm * 1}px`,
     },
     // 2nd, no icon
     "&:not([data-hasicon])>$group>$node>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 1}px`
+      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 1}px`,
     },
 
     // 3rd, with icon
     "&[data-hasicon]>$group>$node>$group>$node>$content": {
-      paddingLeft: `${32 + theme.hv.spacing.sm * 2}px`
+      paddingLeft: `${32 + theme.hv.spacing.sm * 2}px`,
     },
     // 3rd, no icon
     "&:not([data-hasicon])>$group>$node>$group>$node>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 2}px`
-    }
+      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 2}px`,
+    },
   },
 
   /* role="treeitem" element states */
@@ -77,10 +77,10 @@ const styles = theme => ({
   selectable: {},
   unselectable: {},
   collapsed: {
-    "&>$group": { display: "none" }
+    "&>$group": { display: "none" },
   },
   expanded: {
-    "&>$group": { display: "block" }
+    "&>$group": { display: "block" },
   },
   selected: {},
   unselected: {},
@@ -89,10 +89,10 @@ const styles = theme => ({
   withIcon: {},
 
   contentFocusDisabled: {
-    ...focusDisabled
+    ...focusDisabled,
   },
   contentFocused: {
-    ...focused
+    ...focused,
   },
 
   /* role="button" element */
@@ -115,21 +115,21 @@ const styles = theme => ({
     ":not($disabled):not($selected)>&:focus": hover(theme),
 
     "&[disabled], &:active": {
-      outline: "none"
+      outline: "none",
     },
 
     // cursor
     cursor: "pointer",
     "& *": {
-      cursor: "pointer"
+      cursor: "pointer",
     },
     "$disabled>&": {
       cursor: "not-allowed",
       "& *": {
-        cursor: "not-allowed"
-      }
-    }
-  }
+        cursor: "not-allowed",
+      },
+    },
+  },
 });
 
 export default styles;

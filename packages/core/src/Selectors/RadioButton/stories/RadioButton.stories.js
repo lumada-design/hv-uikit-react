@@ -5,9 +5,9 @@ export default {
   title: "Components/Selectors/Radio",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvRadio } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvRadio } from '@hv/uikit-react-core/dist'",
   },
-  component: HvRadio
+  component: HvRadio,
 };
 
 export const Main = () => {
@@ -22,7 +22,7 @@ Disabled.story = {
   parameters: {
     docs: {
       storyDescription:
-        "A sample showcasing a disabled radio button that does not allows interaction."
+        "A sample showcasing a disabled radio button that does not allows interaction.",
     },
     pa11y: {
       ignore: [
@@ -30,10 +30,10 @@ Disabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
-  }
+        "color-contrast",
+      ],
+    },
+  },
 };
 
 export const CheckedDisabled = () => (
@@ -44,7 +44,7 @@ CheckedDisabled.story = {
   parameters: {
     docs: {
       storyDescription:
-        "A sample showcasing a checked and disabled radio button that does not allows interaction."
+        "A sample showcasing a checked and disabled radio button that does not allows interaction.",
     },
     pa11y: {
       ignore: [
@@ -52,10 +52,10 @@ CheckedDisabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
-    }
-  }
+        "color-contrast",
+      ],
+    },
+  },
 };
 
 export const Label = () => <HvRadio id="radio1" label="Label" />;
@@ -63,9 +63,9 @@ export const Label = () => <HvRadio id="radio1" label="Label" />;
 Label.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a radio button that includes a label."
-    }
-  }
+      storyDescription: "A sample showcasing a radio button that includes a label.",
+    },
+  },
 };
 
 export const WithClickAction = () => (
@@ -73,7 +73,7 @@ export const WithClickAction = () => (
     id="check-click"
     label="Click me!"
     value="A"
-    onChange={event => console.log(`my value is ${event.target.value}`)}
+    onChange={(event) => console.log(`my value is ${event.target.value}`)}
   />
 );
 
@@ -81,9 +81,9 @@ WithClickAction.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Returns the value when clicked, check the browser console to see the result."
-    }
-  }
+        "Returns the value when clicked, check the browser console to see the result.",
+    },
+  },
 };
 
 export const WithClickActionDisabled = () => (
@@ -92,7 +92,7 @@ export const WithClickActionDisabled = () => (
     label="Click me!"
     value="A"
     disabled
-    onChange={event => console.log(`my value is ${event.target.value}`)}
+    onChange={(event) => console.log(`my value is ${event.target.value}`)}
   />
 );
 
@@ -100,7 +100,7 @@ WithClickActionDisabled.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Dos not return the value when clicked because is disabled, check the browser console to see the result."
+        "Dos not return the value when clicked because is disabled, check the browser console to see the result.",
     },
     pa11y: {
       ignore: [
@@ -108,11 +108,11 @@ WithClickActionDisabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
-      ]
+        "color-contrast",
+      ],
     },
-    eyes: { waitBeforeScreenshot: ".MuiFormControlLabel-label" }
-  }
+    eyes: { waitBeforeScreenshot: ".MuiFormControlLabel-label" },
+  },
 };
 
 export const WithState = () => {
@@ -121,7 +121,7 @@ export const WithState = () => {
   const nothing = "";
   const [checkedRadio, setCheckedRadio] = useState(valueA);
 
-  const onChangeRadio = value => () => {
+  const onChangeRadio = (value) => () => {
     setCheckedRadio(checkedRadio !== value ? value : nothing);
   };
 
@@ -146,7 +146,7 @@ export const WithState = () => {
 WithState.story = {
   parameters: {
     docs: {
-      storyDescription: "Demostration of how to set the state of the radio button"
-    }
-  }
+      storyDescription: "Demostration of how to set the state of the radio button",
+    },
+  },
 };

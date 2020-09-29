@@ -21,7 +21,7 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
   const isSelected = selectionPath[isMenu ? 1 : 0] === item.id;
   const hasSubLevel = data && data.length;
 
-  const actionHandler = event => {
+  const actionHandler = (event) => {
     if (
       event.type === "click" ||
       isKeypress(event, KeyboardCodes.Enter) ||
@@ -36,12 +36,12 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
     }
   };
 
-  const handleFocus = event => {
+  const handleFocus = (event) => {
     setUseFocus(true);
     dispatch({ type: "setItemFocused", itemFocused: event.currentTarget });
   };
 
-  const focusWrapper = childrenToWrap => (
+  const focusWrapper = (childrenToWrap) => (
     <div className={classes.externalReference}>
       {childrenToWrap}
       {useFocus && <div className={classes.falseFocus} />}
@@ -54,7 +54,7 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
       key={item.label}
       className={clsx(classes.root, classes[`${type}Item`], {
         [classes.selectedItem]: !isMenu && isSelected,
-        [classes.notSelectedItem]: !isMenu && !isSelected
+        [classes.notSelectedItem]: !isMenu && !isSelected,
       })}
     >
       <ConditionalWrapper condition={isIe} wrapper={focusWrapper}>
@@ -62,7 +62,7 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
           role="button"
           className={clsx(classes.button, {
             [classes.contentFocused]: useFocus && !isIe,
-            [classes.contentFocusDisabled]: isIe || !useFocus
+            [classes.contentFocusDisabled]: isIe || !useFocus,
           })}
           onClick={actionHandler}
           onKeyDown={actionHandler}
@@ -116,7 +116,7 @@ MenuItem.propTypes = {
     /**
      * Style applied to simulated a focus in ie.
      */
-    falseFocus: PropTypes.string
+    falseFocus: PropTypes.string,
   }).isRequired,
   /**
    * Id to be applied to the root node.
@@ -134,9 +134,9 @@ MenuItem.propTypes = {
     data: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired
+        label: PropTypes.string.isRequired,
       })
-    )
+    ),
   }).isRequired,
   /**
    * Callback triggered when item is clicked.
@@ -145,7 +145,7 @@ MenuItem.propTypes = {
   /**
    * The type of menu.
    */
-  type: PropTypes.oneOf(["menubar", "menu"]).isRequired
+  type: PropTypes.oneOf(["menubar", "menu"]).isRequired,
 };
 
 export default withStyles(styles, { name: "HvHeaderMenuItem" })(MenuItem);

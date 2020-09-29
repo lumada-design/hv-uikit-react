@@ -5,7 +5,7 @@ import { TimeFormat } from "./enums";
  * @param {Number} value - unit time value
  * @returns The unit time value with two digits
  */
-const padTime = value => {
+const padTime = (value) => {
   if (!value || value < 0) {
     return "00";
   }
@@ -20,9 +20,9 @@ const padTime = value => {
  * @param {String} locale - locale
  * @returns {TimeFormat} the time format for the given locale (12 or 24)
  */
-const getTimeFormatForLocale = locale => {
+const getTimeFormatForLocale = (locale) => {
   const options = {
-    hour: "numeric"
+    hour: "numeric",
   };
   const dateTimeFormat = new Intl.DateTimeFormat(locale, options);
   const isInHour12Format = dateTimeFormat.resolvedOptions().hour12;
@@ -39,7 +39,7 @@ const getTimeFormatForLocale = locale => {
  *
  * @returns {String} formatted time
  */
-const getFormattedTime = time => {
+const getFormattedTime = (time) => {
   const { hours, minutes, seconds } = time;
 
   let timeToRender = `${padTime(hours)}:${padTime(minutes)}:${padTime(seconds)}`;

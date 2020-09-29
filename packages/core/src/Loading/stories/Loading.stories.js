@@ -9,9 +9,9 @@ export default {
   title: "Components/Loading",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLoading } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvLoading } from '@hv/uikit-react-core/dist'",
   },
-  component: HvLoading
+  component: HvLoading,
 };
 
 export const Main = () => {
@@ -91,7 +91,7 @@ export const DeterminateLoading = () => {
 
     useEffect(() => {
       const interval = setInterval(() => {
-        setValue(v => (v >= 75 ? 0 : Math.round((v + 1.3) * 100) / 100));
+        setValue((v) => (v >= 75 ? 0 : Math.round((v + 1.3) * 100) / 100));
       }, 1000);
       return () => clearInterval(interval);
     }, []);
@@ -104,7 +104,7 @@ export const DeterminateLoading = () => {
 
     useEffect(() => {
       const interval = setInterval(() => {
-        setValue(v => (v === 100 ? 0 : v + 5));
+        setValue((v) => (v === 100 ? 0 : v + 5));
       }, 1000);
       return () => clearInterval(interval);
     }, []);
@@ -131,78 +131,78 @@ const Table = () => {
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection ",
-      status: "Open"
+      status: "Open",
     },
     {
       id: 13,
       name: "Event 2",
       createdDate: "10/14/2018",
       eventType: "Risk of failure profile",
-      status: "Pending"
+      status: "Pending",
     },
     {
       id: 12,
       name: "Event 3",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Closed"
+      status: "Closed",
     },
     {
       id: 11,
       name: "Event 4",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Open"
+      status: "Open",
     },
     {
       id: 10,
       name: "Event 5",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Pending"
+      status: "Pending",
     },
     {
       id: 8,
       name: "Event 6",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Closed"
+      status: "Closed",
     },
     {
       id: 7,
       name: "Event 7",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Open"
+      status: "Open",
     },
     {
       id: 6,
       name: "Event 8",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Pending"
+      status: "Pending",
     },
     {
       id: 5,
       name: "Event 9",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Open"
+      status: "Open",
     },
     {
       id: 4,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Closed"
+      status: "Closed",
     },
     {
       id: 3,
       name: "Event 10",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
-      status: "Open"
-    }
+      status: "Open",
+    },
   ];
 
   const getColumns = () => [
@@ -210,28 +210,28 @@ const Table = () => {
       headerText: "Title",
       accessor: "name",
       cellType: "alpha-numeric",
-      fixed: "left"
+      fixed: "left",
     },
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric"
+      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric",
     },
     {
       headerText: "Event Type",
       accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
     },
     {
       headerText: "Status",
       accessor: "status",
-      format: value => value.original.status.toLowerCase(),
+      format: (value) => value.original.status.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
-    }
+      cellType: "alpha-numeric",
+    },
   ];
 
   return (
@@ -268,7 +268,7 @@ Hoc.story = {
   parameters: {
     docs: {
       storyDescription:
-        "If a children is passed the component works as a HOC (High Order Component), wrapping the children and creating a overlay."
-    }
-  }
+        "If a children is passed the component works as a HOC (High Order Component), wrapping the children and creating a overlay.",
+    },
+  },
 };

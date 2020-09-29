@@ -7,7 +7,7 @@ import { setId, isKeypress, KeyboardCodes } from "../../../utils";
 import HvTypography from "../../../Typography";
 import styles from "./styles";
 
-const format = date => date.format("D MMM YYYY");
+const format = (date) => date.format("D MMM YYYY");
 
 class Header extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Header extends React.Component {
       weekDay: value && value.isValid() ? value.format("ddd") : null,
       isInvalid: false,
       // eslint-disable-next-line no-underscore-dangle
-      localeFormat: moment().creationData().locale._longDateFormat.L
+      localeFormat: moment().creationData().locale._longDateFormat.L,
     };
   }
 
@@ -34,7 +34,7 @@ class Header extends React.Component {
         prevValue: value,
         showValue: value ? format(value) : null,
         value,
-        weekDay: value && value.isValid() ? value.format("ddd") : null
+        weekDay: value && value.isValid() ? value.format("ddd") : null,
       };
     }
     return null;
@@ -78,7 +78,7 @@ class Header extends React.Component {
           showValue: newShowValue,
           value: momentDate,
           prevValue: momentDate,
-          weekDay: momentDate.format("ddd")
+          weekDay: momentDate.format("ddd"),
         });
         onSelection(momentDate.toDate(), shouldCloseCalendar);
       } else {
@@ -101,7 +101,7 @@ class Header extends React.Component {
     const { value } = this.state;
     if (value)
       this.setState({
-        showValue: value.format("L")
+        showValue: value.format("L"),
       });
   };
 
@@ -110,7 +110,7 @@ class Header extends React.Component {
    *
    * @param event
    */
-  onKeyDownHandler = event => {
+  onKeyDownHandler = (event) => {
     if (isKeypress(event, KeyboardCodes.Enter)) {
       this.checkInputData(true);
     }
@@ -121,11 +121,11 @@ class Header extends React.Component {
    *
    * @param event
    */
-  onChangeHandler = event => {
+  onChangeHandler = (event) => {
     const newValue = event.target.value;
     this.setState({
       value: newValue,
-      showValue: newValue
+      showValue: newValue,
     });
   };
 
@@ -143,7 +143,7 @@ class Header extends React.Component {
         <div
           id={setId(id, "header")}
           className={clsx(classes.background, {
-            [classes.invalid]: isInvalid
+            [classes.invalid]: isInvalid,
           })}
         >
           <div className={classes.headerDayOfWeek}>
@@ -191,13 +191,13 @@ Header.propTypes = {
   /**
    * Callback to define the input date.
    */
-  onSelection: PropTypes.func.isRequired
+  onSelection: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {
   id: undefined,
   inputDate: null,
-  topText: null
+  topText: null,
 };
 
 export default withStyles(styles, { name: "HvDatePickerHeader" })(Header);

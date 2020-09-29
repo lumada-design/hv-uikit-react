@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: "none",
     position: "absolute",
@@ -6,18 +6,18 @@ const styles = theme => ({
     height: "500px",
     right: 0,
     backgroundColor: theme.palette.common.white,
-    boxShadow: `0 2px 12px rgba(65, 65, 65, 0.12)` // rgb color corresponds to #414141;
+    boxShadow: `0 2px 12px rgba(65, 65, 65, 0.12)`, // rgb color corresponds to #414141;
   },
   titleContainer: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   title: {
-    marginRight: "5px"
+    marginRight: "5px",
   },
   open: {
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   panel: {},
   header: {
@@ -28,14 +28,14 @@ const styles = theme => ({
     height: "52px",
     padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px`,
     borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-    marginBottom: `${theme.hv.spacing.sm}px`
+    marginBottom: `${theme.hv.spacing.sm}px`,
   },
   close: {
-    cursor: "pointer"
+    cursor: "pointer",
   },
   notificationsContainer: {
     flex: 1,
-    margin: `${theme.hv.spacing.xs}px 0`
+    margin: `${theme.hv.spacing.xs}px 0`,
   },
   footerContainer: {
     ...theme.hv.typography.highlightText,
@@ -43,8 +43,8 @@ const styles = theme => ({
     alignItems: "center",
     height: "52px",
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-    padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px`
-  }
+    padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px`,
+  },
 });
 
 export default styles;

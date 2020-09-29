@@ -15,27 +15,27 @@ class HvNotificationPanel extends Component {
     super(props);
 
     this.state = {
-      open: props.open
+      open: props.open,
     };
   }
 
   handleIconClick = () => {
-    this.setState(prevState => ({
-      open: !prevState.open
+    this.setState((prevState) => ({
+      open: !prevState.open,
     }));
   };
 
-  handleIconKeyDown = e => {
+  handleIconKeyDown = (e) => {
     if (e.keyCode === 13) {
-      this.setState(prevState => ({
-        open: !prevState.open
+      this.setState((prevState) => ({
+        open: !prevState.open,
       }));
     }
   };
 
   onClose = () => {
     this.setState({
-      open: false
+      open: false,
     });
   };
 
@@ -43,19 +43,19 @@ class HvNotificationPanel extends Component {
     const { classes, icon, header, footer, notifications } = this.props;
     const { open } = this.state;
 
-    const n = map(notifications, notification => (
+    const n = map(notifications, (notification) => (
       <Notification key={notification.id} notification={notification} />
     ));
 
     const panelProps = {
       open,
       classes: {
-        panel: classes.panel
+        panel: classes.panel,
       },
       onClose: this.onClose,
       header,
       footer,
-      notifications
+      notifications,
     };
 
     return (
@@ -96,7 +96,7 @@ HvNotificationPanel.propTypes = {
     /**
      * styles object applied to badgeContainer
      */
-    badgeBorder: PropTypes.any
+    badgeBorder: PropTypes.any,
   }).isRequired,
   /**
    * renderable element that opens the notification panel
@@ -113,7 +113,7 @@ HvNotificationPanel.propTypes = {
     /**
      * The icon that denoted close functionality
      */
-    headerCloseImg: PropTypes.element.isRequired
+    headerCloseImg: PropTypes.element.isRequired,
   }).isRequired,
   /**
    * Array of notification object to be rendered inside the panel
@@ -123,17 +123,17 @@ HvNotificationPanel.propTypes = {
       /**
        * Id of notification
        */
-      id: PropTypes.string.isRequired
+      id: PropTypes.string.isRequired,
     })
   ).isRequired,
   /**
    * renderable footer element
    */
-  footer: PropTypes.element.isRequired
+  footer: PropTypes.element.isRequired,
 };
 
 HvNotificationPanel.defaultProps = {
-  open: false
+  open: false,
 };
 
 export default withStyles(styles, { name: "HvNotificationPanel" })(HvNotificationPanel);

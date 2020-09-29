@@ -26,7 +26,7 @@ const defaultVariantMapping = {
   infoText: "p",
   sLink: "p",
   sText: "p",
-  vizText: "p"
+  vizText: "p",
 };
 
 const HvTypography = React.forwardRef((props, ref) => {
@@ -151,7 +151,7 @@ HvTypography.propTypes = {
     /**
      * Styles applied to the xxlTitle variant
      */
-    xxlTitle: PropTypes.string
+    xxlTitle: PropTypes.string,
   }),
   /**
    * @ignore
@@ -197,8 +197,8 @@ HvTypography.propTypes = {
     "xlTitle",
     "xsTitle",
     "xxlTitle",
-    "xxsTitle"
-  ])
+    "xxsTitle",
+  ]),
 };
 
 export default withStyles(styles, { name: "HvTypography" })(HvTypography);
