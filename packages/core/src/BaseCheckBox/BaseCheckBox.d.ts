@@ -1,8 +1,9 @@
 import { StandardProps, CheckboxProps } from "@material-ui/core";
 
-export type HvBaseCheckBoxClassKey = "root" | "disabled";
+export type HvBaseCheckBoxClassKey = "root" | "disabled" | "focusVisible";
 
-export interface HvBaseCheckBoxProps extends StandardProps<CheckboxProps, HvBaseCheckBoxClassKey, "onChange"> {
+export interface HvBaseCheckBoxProps
+  extends StandardProps<CheckboxProps, HvBaseCheckBoxClassKey, "onChange"> {
   /**
    * Id to be applied to the root node.
    */
@@ -23,17 +24,17 @@ export interface HvBaseCheckBoxProps extends StandardProps<CheckboxProps, HvBase
   value?: any;
 
   /**
-   * Indicates that the input is disabled.
+   * Indicates that user input is required.
    */
-  disabled?: boolean;
+  required?: boolean;
   /**
    * Indicates that the input is not editable.
    */
   readOnly?: boolean;
   /**
-   * Indicates that user input is required.
+   * Indicates that the input is disabled.
    */
-  required?: boolean;
+  disabled?: boolean;
 
   /**
    * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.

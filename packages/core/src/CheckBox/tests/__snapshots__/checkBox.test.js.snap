@@ -8,9 +8,10 @@ Array [
     <HvCheckBox
       classes={
         Object {
-          "checkBox": "HvCheckBox-checkBox",
+          "checkbox": "HvCheckBox-checkbox",
           "container": "HvCheckBox-container",
           "disabled": "HvCheckBox-disabled",
+          "focusVisible": "HvCheckBox-focusVisible",
           "label": "HvCheckBox-label",
           "root": "HvCheckBox-root",
         }
@@ -61,7 +62,7 @@ Array [
               >
                 <WithStyles(HvBaseCheckbox)
                   checked={false}
-                  className="HvCheckBox-checkBox"
+                  className="HvCheckBox-checkbox"
                   disabled={false}
                   id="hvcheckbox1-input"
                   indeterminate={false}
@@ -74,7 +75,9 @@ Array [
                       "aria-labelledby": undefined,
                     }
                   }
+                  onBlur={[Function]}
                   onChange={[Function]}
+                  onFocusVisible={[Function]}
                   readOnly={false}
                   required={false}
                   semantic={false}
@@ -82,10 +85,11 @@ Array [
                 >
                   <HvBaseCheckbox
                     checked={false}
-                    className="HvCheckBox-checkBox"
+                    className="HvCheckBox-checkbox"
                     classes={
                       Object {
                         "disabled": "HvBaseCheckbox-disabled",
+                        "focusVisible": "HvBaseCheckbox-focusVisible",
                         "root": "HvBaseCheckbox-root",
                       }
                     }
@@ -101,7 +105,9 @@ Array [
                         "aria-labelledby": undefined,
                       }
                     }
+                    onBlur={[Function]}
                     onChange={[Function]}
+                    onFocusVisible={[Function]}
                     readOnly={false}
                     required={false}
                     semantic={false}
@@ -110,7 +116,7 @@ Array [
                     <WithStyles(ForwardRef(Checkbox))
                       checked={false}
                       checkedIcon={<CheckboxCheck />}
-                      className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                      className="HvCheckBox-checkbox HvBaseCheckbox-root"
                       color="default"
                       disableRipple={true}
                       disabled={false}
@@ -127,7 +133,9 @@ Array [
                           "aria-labelledby": undefined,
                         }
                       }
+                      onBlur={[Function]}
                       onChange={[Function]}
+                      onFocusVisible={[Function]}
                       readOnly={false}
                       required={false}
                       value="on"
@@ -135,7 +143,7 @@ Array [
                       <ForwardRef(Checkbox)
                         checked={false}
                         checkedIcon={<CheckboxCheck />}
-                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                        className="HvCheckBox-checkbox HvBaseCheckbox-root"
                         classes={
                           Object {
                             "checked": "Mui-checked",
@@ -162,7 +170,9 @@ Array [
                             "aria-labelledby": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
                         value="on"
@@ -170,7 +180,7 @@ Array [
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={false}
                           checkedIcon={<CheckboxCheck />}
-                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                          className="HvCheckBox-checkbox HvBaseCheckbox-root"
                           classes={
                             Object {
                               "checked": "Mui-checked",
@@ -193,7 +203,9 @@ Array [
                               "data-indeterminate": false,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           required={false}
                           type="checkbox"
@@ -202,7 +214,7 @@ Array [
                           <ForwardRef(SwitchBase)
                             checked={false}
                             checkedIcon={<CheckboxCheck />}
-                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             classes={
                               Object {
                                 "checked": "PrivateSwitchBase-checked-2 Mui-checked",
@@ -226,24 +238,27 @@ Array [
                                 "data-indeterminate": false,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             type="checkbox"
                             value="on"
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                               color="default"
                               component="span"
                               disableRipple={true}
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
+                              onFocusVisible={[Function]}
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -263,22 +278,24 @@ Array [
                                 disabled={false}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
+                                onFocusVisible={[Function]}
                                 tabIndex={null}
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                   component="span"
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
+                                  onFocusVisible={[Function]}
                                   tabIndex={null}
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -292,11 +309,12 @@ Array [
                                     focusRipple={true}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -465,9 +483,10 @@ Array [
     <HvCheckBox
       classes={
         Object {
-          "checkBox": "HvCheckBox-checkBox",
+          "checkbox": "HvCheckBox-checkbox",
           "container": "HvCheckBox-container",
           "disabled": "HvCheckBox-disabled",
+          "focusVisible": "HvCheckBox-focusVisible",
           "label": "HvCheckBox-label",
           "root": "HvCheckBox-root",
         }
@@ -519,7 +538,7 @@ Array [
               >
                 <WithStyles(HvBaseCheckbox)
                   checked={true}
-                  className="HvCheckBox-checkBox"
+                  className="HvCheckBox-checkbox"
                   disabled={false}
                   id="hvcheckbox3-input"
                   indeterminate={false}
@@ -532,7 +551,9 @@ Array [
                       "aria-labelledby": undefined,
                     }
                   }
+                  onBlur={[Function]}
                   onChange={[Function]}
+                  onFocusVisible={[Function]}
                   readOnly={false}
                   required={false}
                   semantic={false}
@@ -540,10 +561,11 @@ Array [
                 >
                   <HvBaseCheckbox
                     checked={true}
-                    className="HvCheckBox-checkBox"
+                    className="HvCheckBox-checkbox"
                     classes={
                       Object {
                         "disabled": "HvBaseCheckbox-disabled",
+                        "focusVisible": "HvBaseCheckbox-focusVisible",
                         "root": "HvBaseCheckbox-root",
                       }
                     }
@@ -559,7 +581,9 @@ Array [
                         "aria-labelledby": undefined,
                       }
                     }
+                    onBlur={[Function]}
                     onChange={[Function]}
+                    onFocusVisible={[Function]}
                     readOnly={false}
                     required={false}
                     semantic={false}
@@ -568,7 +592,7 @@ Array [
                     <WithStyles(ForwardRef(Checkbox))
                       checked={true}
                       checkedIcon={<CheckboxCheck />}
-                      className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                      className="HvCheckBox-checkbox HvBaseCheckbox-root"
                       color="default"
                       disableRipple={true}
                       disabled={false}
@@ -585,7 +609,9 @@ Array [
                           "aria-labelledby": undefined,
                         }
                       }
+                      onBlur={[Function]}
                       onChange={[Function]}
+                      onFocusVisible={[Function]}
                       readOnly={false}
                       required={false}
                       value="on"
@@ -593,7 +619,7 @@ Array [
                       <ForwardRef(Checkbox)
                         checked={true}
                         checkedIcon={<CheckboxCheck />}
-                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                        className="HvCheckBox-checkbox HvBaseCheckbox-root"
                         classes={
                           Object {
                             "checked": "Mui-checked",
@@ -620,7 +646,9 @@ Array [
                             "aria-labelledby": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
                         value="on"
@@ -628,7 +656,7 @@ Array [
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={true}
                           checkedIcon={<CheckboxCheck />}
-                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                          className="HvCheckBox-checkbox HvBaseCheckbox-root"
                           classes={
                             Object {
                               "checked": "Mui-checked",
@@ -651,7 +679,9 @@ Array [
                               "data-indeterminate": false,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           required={false}
                           type="checkbox"
@@ -660,7 +690,7 @@ Array [
                           <ForwardRef(SwitchBase)
                             checked={true}
                             checkedIcon={<CheckboxCheck />}
-                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             classes={
                               Object {
                                 "checked": "PrivateSwitchBase-checked-2 Mui-checked",
@@ -684,24 +714,27 @@ Array [
                                 "data-indeterminate": false,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             type="checkbox"
                             value="on"
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
                               color="default"
                               component="span"
                               disableRipple={true}
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
+                              onFocusVisible={[Function]}
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -721,22 +754,24 @@ Array [
                                 disabled={false}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
+                                onFocusVisible={[Function]}
                                 tabIndex={null}
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
                                   component="span"
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
+                                  onFocusVisible={[Function]}
                                   tabIndex={null}
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -750,11 +785,12 @@ Array [
                                     focusRipple={true}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -928,9 +964,10 @@ Array [
     <HvCheckBox
       classes={
         Object {
-          "checkBox": "HvCheckBox-checkBox",
+          "checkbox": "HvCheckBox-checkbox",
           "container": "HvCheckBox-container",
           "disabled": "HvCheckBox-disabled",
+          "focusVisible": "HvCheckBox-focusVisible",
           "label": "HvCheckBox-label",
           "root": "HvCheckBox-root",
         }
@@ -982,7 +1019,7 @@ Array [
               >
                 <WithStyles(HvBaseCheckbox)
                   checked={false}
-                  className="HvCheckBox-checkBox"
+                  className="HvCheckBox-checkbox"
                   disabled={false}
                   id="hvcheckbox5-input"
                   indeterminate={true}
@@ -995,7 +1032,9 @@ Array [
                       "aria-labelledby": undefined,
                     }
                   }
+                  onBlur={[Function]}
                   onChange={[Function]}
+                  onFocusVisible={[Function]}
                   readOnly={false}
                   required={false}
                   semantic={false}
@@ -1003,10 +1042,11 @@ Array [
                 >
                   <HvBaseCheckbox
                     checked={false}
-                    className="HvCheckBox-checkBox"
+                    className="HvCheckBox-checkbox"
                     classes={
                       Object {
                         "disabled": "HvBaseCheckbox-disabled",
+                        "focusVisible": "HvBaseCheckbox-focusVisible",
                         "root": "HvBaseCheckbox-root",
                       }
                     }
@@ -1022,7 +1062,9 @@ Array [
                         "aria-labelledby": undefined,
                       }
                     }
+                    onBlur={[Function]}
                     onChange={[Function]}
+                    onFocusVisible={[Function]}
                     readOnly={false}
                     required={false}
                     semantic={false}
@@ -1031,7 +1073,7 @@ Array [
                     <WithStyles(ForwardRef(Checkbox))
                       checked={false}
                       checkedIcon={<CheckboxCheck />}
-                      className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                      className="HvCheckBox-checkbox HvBaseCheckbox-root"
                       color="default"
                       disableRipple={true}
                       disabled={false}
@@ -1048,7 +1090,9 @@ Array [
                           "aria-labelledby": undefined,
                         }
                       }
+                      onBlur={[Function]}
                       onChange={[Function]}
+                      onFocusVisible={[Function]}
                       readOnly={false}
                       required={false}
                       value="on"
@@ -1056,7 +1100,7 @@ Array [
                       <ForwardRef(Checkbox)
                         checked={false}
                         checkedIcon={<CheckboxCheck />}
-                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                        className="HvCheckBox-checkbox HvBaseCheckbox-root"
                         classes={
                           Object {
                             "checked": "Mui-checked",
@@ -1083,7 +1127,9 @@ Array [
                             "aria-labelledby": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
                         value="on"
@@ -1091,7 +1137,7 @@ Array [
                         <WithStyles(ForwardRef(SwitchBase))
                           checked={false}
                           checkedIcon={<CheckboxPartial />}
-                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                          className="HvCheckBox-checkbox HvBaseCheckbox-root"
                           classes={
                             Object {
                               "checked": "Mui-checked",
@@ -1114,7 +1160,9 @@ Array [
                               "data-indeterminate": true,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           required={false}
                           type="checkbox"
@@ -1123,7 +1171,7 @@ Array [
                           <ForwardRef(SwitchBase)
                             checked={false}
                             checkedIcon={<CheckboxPartial />}
-                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             classes={
                               Object {
                                 "checked": "PrivateSwitchBase-checked-2 Mui-checked",
@@ -1147,24 +1195,27 @@ Array [
                                 "data-indeterminate": true,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             type="checkbox"
                             value="on"
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
                               color="default"
                               component="span"
                               disableRipple={true}
                               disabled={false}
                               onBlur={[Function]}
                               onFocus={[Function]}
+                              onFocusVisible={[Function]}
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1184,22 +1235,24 @@ Array [
                                 disabled={false}
                                 onBlur={[Function]}
                                 onFocus={[Function]}
+                                onFocusVisible={[Function]}
                                 tabIndex={null}
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
                                   component="span"
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
                                   onBlur={[Function]}
                                   onFocus={[Function]}
+                                  onFocusVisible={[Function]}
                                   tabIndex={null}
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -1213,11 +1266,12 @@ Array [
                                     focusRipple={true}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}

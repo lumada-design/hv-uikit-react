@@ -104,9 +104,10 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
             className="HvBulkActions-selectAll"
             classes={
               Object {
-                "checkBox": "HvCheckBox-checkBox",
+                "checkbox": "HvCheckBox-checkbox",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -171,7 +172,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                     >
                       <WithStyles(HvBaseCheckbox)
                         checked={false}
-                        className="HvCheckBox-checkBox"
+                        className="HvCheckBox-checkbox"
                         disabled={false}
                         id="bulkActions-select-input"
                         indeterminate={false}
@@ -184,7 +185,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             "aria-labelledby": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
                         semantic={false}
@@ -192,10 +195,11 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                       >
                         <HvBaseCheckbox
                           checked={false}
-                          className="HvCheckBox-checkBox"
+                          className="HvCheckBox-checkbox"
                           classes={
                             Object {
                               "disabled": "HvBaseCheckbox-disabled",
+                              "focusVisible": "HvBaseCheckbox-focusVisible",
                               "root": "HvBaseCheckbox-root",
                             }
                           }
@@ -211,7 +215,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               "aria-labelledby": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           required={false}
                           semantic={false}
@@ -220,7 +226,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           <WithStyles(ForwardRef(Checkbox))
                             checked={false}
                             checkedIcon={<CheckboxCheck />}
-                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             color="default"
                             disableRipple={true}
                             disabled={false}
@@ -237,7 +243,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                 "aria-labelledby": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -245,7 +253,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             <ForwardRef(Checkbox)
                               checked={false}
                               checkedIcon={<CheckboxCheck />}
-                              className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                              className="HvCheckBox-checkbox HvBaseCheckbox-root"
                               classes={
                                 Object {
                                   "checked": "Mui-checked",
@@ -272,7 +280,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                   "aria-labelledby": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -280,7 +290,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               <WithStyles(ForwardRef(SwitchBase))
                                 checked={false}
                                 checkedIcon={<CheckboxCheck />}
-                                className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
                                     "checked": "Mui-checked",
@@ -303,7 +313,9 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                     "data-indeterminate": false,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -312,7 +324,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                 <ForwardRef(SwitchBase)
                                   checked={false}
                                   checkedIcon={<CheckboxCheck />}
-                                  className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                   classes={
                                     Object {
                                       "checked": "PrivateSwitchBase-checked-6 Mui-checked",
@@ -336,24 +348,27 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       "data-indeterminate": false,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
                                   value="on"
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                    className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                      className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -373,22 +388,24 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -402,11 +419,12 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -1637,9 +1655,10 @@ exports[`[v3] BulkActions should render correctly 1`] = `
             className="HvBulkActions-selectAll"
             classes={
               Object {
-                "checkBox": "HvCheckBox-checkBox",
+                "checkbox": "HvCheckBox-checkbox",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -1701,7 +1720,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     >
                       <WithStyles(HvBaseCheckbox)
                         checked={false}
-                        className="HvCheckBox-checkBox"
+                        className="HvCheckBox-checkbox"
                         disabled={false}
                         id="hvcheckbox1-input"
                         indeterminate={false}
@@ -1714,7 +1733,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             "aria-labelledby": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
                         semantic={false}
@@ -1722,10 +1743,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                       >
                         <HvBaseCheckbox
                           checked={false}
-                          className="HvCheckBox-checkBox"
+                          className="HvCheckBox-checkbox"
                           classes={
                             Object {
                               "disabled": "HvBaseCheckbox-disabled",
+                              "focusVisible": "HvBaseCheckbox-focusVisible",
                               "root": "HvBaseCheckbox-root",
                             }
                           }
@@ -1741,7 +1763,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               "aria-labelledby": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           required={false}
                           semantic={false}
@@ -1750,7 +1774,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           <WithStyles(ForwardRef(Checkbox))
                             checked={false}
                             checkedIcon={<CheckboxCheck />}
-                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             color="default"
                             disableRipple={true}
                             disabled={false}
@@ -1767,7 +1791,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                 "aria-labelledby": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -1775,7 +1801,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             <ForwardRef(Checkbox)
                               checked={false}
                               checkedIcon={<CheckboxCheck />}
-                              className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                              className="HvCheckBox-checkbox HvBaseCheckbox-root"
                               classes={
                                 Object {
                                   "checked": "Mui-checked",
@@ -1802,7 +1828,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                   "aria-labelledby": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -1810,7 +1838,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               <WithStyles(ForwardRef(SwitchBase))
                                 checked={false}
                                 checkedIcon={<CheckboxCheck />}
-                                className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
                                     "checked": "Mui-checked",
@@ -1833,7 +1861,9 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                     "data-indeterminate": false,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -1842,7 +1872,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                 <ForwardRef(SwitchBase)
                                   checked={false}
                                   checkedIcon={<CheckboxCheck />}
-                                  className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                   classes={
                                     Object {
                                       "checked": "PrivateSwitchBase-checked-2 Mui-checked",
@@ -1866,24 +1896,27 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       "data-indeterminate": false,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
                                   value="on"
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                    className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                      className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -1903,22 +1936,24 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -1932,11 +1967,12 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -3315,9 +3351,10 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
             className="HvBulkActions-selectAll"
             classes={
               Object {
-                "checkBox": "HvCheckBox-checkBox",
+                "checkbox": "HvCheckBox-checkbox",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -3371,7 +3408,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                     >
                       <WithStyles(HvBaseCheckbox)
                         checked={true}
-                        className="HvCheckBox-checkBox"
+                        className="HvCheckBox-checkbox"
                         disabled={false}
                         id="hvcheckbox8-input"
                         indeterminate={true}
@@ -3384,7 +3421,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                             "aria-labelledby": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
                         semantic={true}
@@ -3392,10 +3431,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                       >
                         <HvBaseCheckbox
                           checked={true}
-                          className="HvCheckBox-checkBox"
+                          className="HvCheckBox-checkbox"
                           classes={
                             Object {
                               "disabled": "HvBaseCheckbox-disabled",
+                              "focusVisible": "HvBaseCheckbox-focusVisible",
                               "root": "HvBaseCheckbox-root",
                             }
                           }
@@ -3411,7 +3451,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                               "aria-labelledby": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           required={false}
                           semantic={true}
@@ -3429,7 +3471,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                 }
                               />
                             }
-                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             color="default"
                             disableRipple={true}
                             disabled={false}
@@ -3464,7 +3506,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                 "aria-labelledby": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -3481,7 +3525,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                   }
                                 />
                               }
-                              className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                              className="HvCheckBox-checkbox HvBaseCheckbox-root"
                               classes={
                                 Object {
                                   "checked": "Mui-checked",
@@ -3526,7 +3570,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                   "aria-labelledby": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -3543,7 +3589,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                     }
                                   />
                                 }
-                                className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
                                     "checked": "Mui-checked",
@@ -3575,7 +3621,9 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                     "data-indeterminate": true,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -3593,7 +3641,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                       }
                                     />
                                   }
-                                  className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                   classes={
                                     Object {
                                       "checked": "PrivateSwitchBase-checked-15 Mui-checked",
@@ -3626,24 +3674,27 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                       "data-indeterminate": true,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
                                   value="on"
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                    className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                      className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -3663,22 +3714,24 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -3692,11 +3745,12 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -3970,9 +4024,10 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
             className="HvBulkActions-selectAll"
             classes={
               Object {
-                "checkBox": "HvCheckBox-checkBox",
+                "checkbox": "HvCheckBox-checkbox",
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
+                "focusVisible": "HvCheckBox-focusVisible",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -4037,7 +4092,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                     >
                       <WithStyles(HvBaseCheckbox)
                         checked={true}
-                        className="HvCheckBox-checkBox"
+                        className="HvCheckBox-checkbox"
                         disabled={false}
                         id="hvcheckbox4-input"
                         indeterminate={true}
@@ -4050,7 +4105,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                             "aria-labelledby": undefined,
                           }
                         }
+                        onBlur={[Function]}
                         onChange={[Function]}
+                        onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
                         semantic={true}
@@ -4058,10 +4115,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                       >
                         <HvBaseCheckbox
                           checked={true}
-                          className="HvCheckBox-checkBox"
+                          className="HvCheckBox-checkbox"
                           classes={
                             Object {
                               "disabled": "HvBaseCheckbox-disabled",
+                              "focusVisible": "HvBaseCheckbox-focusVisible",
                               "root": "HvBaseCheckbox-root",
                             }
                           }
@@ -4077,7 +4135,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                               "aria-labelledby": undefined,
                             }
                           }
+                          onBlur={[Function]}
                           onChange={[Function]}
+                          onFocusVisible={[Function]}
                           readOnly={false}
                           required={false}
                           semantic={true}
@@ -4095,7 +4155,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                 }
                               />
                             }
-                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             color="default"
                             disableRipple={true}
                             disabled={false}
@@ -4130,7 +4190,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                 "aria-labelledby": undefined,
                               }
                             }
+                            onBlur={[Function]}
                             onChange={[Function]}
+                            onFocusVisible={[Function]}
                             readOnly={false}
                             required={false}
                             value="on"
@@ -4147,7 +4209,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                   }
                                 />
                               }
-                              className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                              className="HvCheckBox-checkbox HvBaseCheckbox-root"
                               classes={
                                 Object {
                                   "checked": "Mui-checked",
@@ -4192,7 +4254,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                   "aria-labelledby": undefined,
                                 }
                               }
+                              onBlur={[Function]}
                               onChange={[Function]}
+                              onFocusVisible={[Function]}
                               readOnly={false}
                               required={false}
                               value="on"
@@ -4209,7 +4273,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                     }
                                   />
                                 }
-                                className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
                                     "checked": "Mui-checked",
@@ -4241,7 +4305,9 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                     "data-indeterminate": true,
                                   }
                                 }
+                                onBlur={[Function]}
                                 onChange={[Function]}
+                                onFocusVisible={[Function]}
                                 readOnly={false}
                                 required={false}
                                 type="checkbox"
@@ -4259,7 +4325,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                       }
                                     />
                                   }
-                                  className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                  className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                   classes={
                                     Object {
                                       "checked": "PrivateSwitchBase-checked-11 Mui-checked",
@@ -4292,24 +4358,27 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                       "data-indeterminate": true,
                                     }
                                   }
+                                  onBlur={[Function]}
                                   onChange={[Function]}
+                                  onFocusVisible={[Function]}
                                   readOnly={false}
                                   required={false}
                                   type="checkbox"
                                   value="on"
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                    className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
                                     disabled={false}
                                     onBlur={[Function]}
                                     onFocus={[Function]}
+                                    onFocusVisible={[Function]}
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                      className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -4329,22 +4398,24 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                       disabled={false}
                                       onBlur={[Function]}
                                       onFocus={[Function]}
+                                      onFocusVisible={[Function]}
                                       tabIndex={null}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
                                         focusRipple={true}
                                         onBlur={[Function]}
                                         onFocus={[Function]}
+                                        onFocusVisible={[Function]}
                                         tabIndex={null}
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -4358,11 +4429,12 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                           focusRipple={true}
                                           onBlur={[Function]}
                                           onFocus={[Function]}
+                                          onFocusVisible={[Function]}
                                           tabIndex={null}
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}

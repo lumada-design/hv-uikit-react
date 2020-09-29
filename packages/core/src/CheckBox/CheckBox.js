@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 
 import PropTypes from "prop-types";
 import clsx from "clsx";
@@ -51,10 +51,32 @@ const HvCheckBox = (props) => {
     semantic = false,
 
     inputProps,
+
+    onFocusVisible,
+    onBlur,
+
     ...others
   } = props;
 
   const elementId = useUniqueId(id, "hvcheckbox");
+
+  const [focusVisible, setFocusVisible] = useState(false);
+
+  const onFocusVisibleCallback = useCallback(
+    (evt) => {
+      setFocusVisible(true);
+      onFocusVisible?.(evt);
+    },
+    [onFocusVisible]
+  );
+
+  const onBlurCallback = useCallback(
+    (evt) => {
+      setFocusVisible(false);
+      onBlur?.(evt);
+    },
+    [onBlur]
+  );
 
   const [isChecked, setIsChecked] = useControlled({
     controlled: checked,
@@ -108,11 +130,13 @@ const HvCheckBox = (props) => {
   // or if the checked state is uncontrolled and required is true
   const canShowError = status !== undefined || (required && checked === undefined);
 
+  const hasLabel = label != null;
+
   const checkbox = (
     <HvBaseCheckBox
-      id={label ? setId(elementId, "input") : null}
+      id={hasLabel ? setId(elementId, "input") : null}
       name={name}
-      className={clsx(classes.checkBox)}
+      className={classes.checkbox}
       disabled={disabled}
       readOnly={readOnly}
       required={required}
@@ -129,6 +153,8 @@ const HvCheckBox = (props) => {
         "aria-describedby": ariaDescribedBy,
         ...inputProps,
       }}
+      onFocusVisible={onFocusVisibleCallback}
+      onBlur={onBlurCallback}
     />
   );
 
@@ -141,10 +167,12 @@ const HvCheckBox = (props) => {
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(className, classes.root)}
+      className={clsx(className, classes.root, {
+        [classes.focusVisible]: focusVisible && label,
+      })}
       {...others}
     >
-      {label ? (
+      {hasLabel ? (
         <div
           className={clsx(classes.container, {
             [classes.disabled]: disabled,
@@ -162,7 +190,13 @@ const HvCheckBox = (props) => {
         checkbox
       )}
       {canShowError && (
-        <HvWarningText id={setId(elementId, "error")}>{validationMessage}</HvWarningText>
+        <HvWarningText
+          id={setId(elementId, "error")}
+          disableAdornment={!hasLabel}
+          hideText={!hasLabel}
+        >
+          {validationMessage}
+        </HvWarningText>
       )}
     </HvFormElement>
   );
@@ -192,11 +226,15 @@ HvCheckBox.propTypes = {
     /**
      * Styles applied to the HvBaseCheckbox.
      */
-    checkBox: PropTypes.string,
+    checkbox: PropTypes.string,
     /**
      * Styles applied to the label.
      */
     label: PropTypes.string,
+    /**
+     * Class applied to the root element if keyboard focused.
+     */
+    focusVisible: PropTypes.string,
   }).isRequired,
 
   /**
@@ -299,6 +337,16 @@ HvCheckBox.propTypes = {
    * Properties passed on to the input element.
    */
   inputProps: PropTypes.instanceOf(Object),
+
+  /**
+   * Callback fired when the component is focused with a keyboard.
+   * We trigger a `onFocus` callback too.
+   */
+  onFocusVisible: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onBlur: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvCheckBox" })(HvCheckBox);

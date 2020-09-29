@@ -12,33 +12,12 @@ const styles = (theme) => ({
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
-
-    "&:focus-within": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
-      ...outlineStyles,
-    },
-    // IE fallback code (using focus-within-polyfill)
-    "&.focus-within": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
-      ...outlineStyles,
-    },
-
-    // ensure more specificity than .HvBaseCheckbox-root:focus-within svg
-    "& $checkBox:focus-within div>svg": {
-      outline: "none",
-      boxShadow: "none",
-    },
-    // IE fallback code (using focus-within-polyfill)
-    "& $checkBox.focus-within div>svg": {
-      outline: "none",
-      boxShadow: "none",
-    },
   },
   disabled: {
     cursor: "not-allowed",
   },
 
-  checkBox: {},
+  checkbox: {},
 
   label: {
     // ensure more specificity than .HvTypography-highlightText
@@ -58,6 +37,15 @@ const styles = (theme) => ({
       // not spreading theme.hv.typography.placeholderText, it overrides too many things
       color: theme.hv.palette.atmosphere.atmo5,
       cursor: "not-allowed",
+    },
+  },
+  focusVisible: {
+    ...outlineStyles,
+
+    // ensure more specificity than .HvBaseCheckbox-root.HvBaseCheckbox-focusVisible svg
+    "& $checkbox div>svg": {
+      outline: "none",
+      boxShadow: "none",
     },
   },
 });

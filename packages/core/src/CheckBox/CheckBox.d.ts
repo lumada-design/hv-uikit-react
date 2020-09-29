@@ -3,7 +3,13 @@ import { StandardProps } from "@material-ui/core";
 import { HvBaseCheckBoxProps } from "../BaseCheckBox";
 import { HvFormStatus } from "../Forms/FormElement";
 
-export type HvCheckBoxClassKey = "root" | "container" | "disabled" | "checkBox" | "label";
+export type HvCheckBoxClassKey =
+  | "root"
+  | "container"
+  | "disabled"
+  | "checkBox"
+  | "label"
+  | "focusVisible";
 
 export interface HvCheckBoxProps extends StandardProps<HvBaseCheckBoxProps, HvCheckBoxClassKey> {
   /**

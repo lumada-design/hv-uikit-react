@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useState, useCallback } from "react";
 
 import PropTypes from "prop-types";
 import clsx from "clsx";
@@ -32,20 +32,48 @@ const HvBaseCheckbox = (props) => {
   const {
     classes,
     className,
+
     id,
     name,
     value = "on",
-    disabled = false,
+
     required = false,
     readOnly = false,
+    disabled = false,
+
     checked,
     indeterminate,
     defaultChecked,
+
     semantic = false,
+
     onChange,
+
     inputProps,
+
+    onFocusVisible,
+    onBlur,
+
     ...others
   } = props;
+
+  const [focusVisible, setFocusVisible] = useState(false);
+
+  const onFocusVisibleCallback = useCallback(
+    (evt) => {
+      setFocusVisible(true);
+      onFocusVisible?.(evt);
+    },
+    [onFocusVisible]
+  );
+
+  const onBlurCallback = useCallback(
+    (evt) => {
+      setFocusVisible(false);
+      onBlur?.(evt);
+    },
+    [onBlur]
+  );
 
   const icons = getSelectorIcons(classes, { disabled, semantic });
 
@@ -64,7 +92,10 @@ const HvBaseCheckbox = (props) => {
     <Checkbox
       id={id}
       name={name}
-      className={clsx(className, classes.root, { [classes.disabled]: disabled })}
+      className={clsx(className, classes.root, {
+        [classes.disabled]: disabled,
+        [classes.focusVisible]: focusVisible,
+      })}
       icon={icons.checkbox}
       indeterminateIcon={icons.checkboxPartial}
       checkedIcon={icons.checkboxChecked}
@@ -79,6 +110,8 @@ const HvBaseCheckbox = (props) => {
       defaultChecked={defaultChecked}
       indeterminate={indeterminate}
       inputProps={inputProps}
+      onFocusVisible={onFocusVisibleCallback}
+      onBlur={onBlurCallback}
       {...others}
     />
   );
@@ -101,6 +134,10 @@ HvBaseCheckbox.propTypes = {
      * Styles applied to the checkbox when it is disabled.
      */
     disabled: PropTypes.string,
+    /**
+     * Class applied to the root element if keyboard focused.
+     */
+    focusVisible: PropTypes.string,
   }).isRequired,
 
   /**
@@ -165,6 +202,16 @@ HvBaseCheckbox.propTypes = {
    * Properties passed on to the input element.
    */
   inputProps: PropTypes.instanceOf(Object),
+
+  /**
+   * Callback fired when the component is focused with a keyboard.
+   * We trigger a `onFocus` callback too.
+   */
+  onFocusVisible: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onBlur: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvBaseCheckbox" })(HvBaseCheckbox);
