@@ -99,7 +99,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       "focusVisible": "HvTab-focusVisible",
                       "root": "HvTab-root",
                       "selected": "HvTab-selected",
-                      "tabBorder": "HvTab-tabBorder",
                     }
                   }
                   disabled={false}
@@ -119,12 +118,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         "disabled": "HvTab-disabled",
                         "root": "HvTab-root",
                         "selected": "HvTab-selected",
-                      }
-                    }
-                    component={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "render": [Function],
                       }
                     }
                     disableRipple={true}
@@ -156,12 +149,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           "wrapper": "MuiTab-wrapper",
                         }
                       }
-                      component={
-                        Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "render": [Function],
-                        }
-                      }
                       disableRipple={true}
                       disableTouchRipple={true}
                       disabled={false}
@@ -179,12 +166,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-selected={true}
                         className="MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
-                        component={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "render": [Function],
-                          }
-                        }
                         disableRipple={true}
                         disableTouchRipple={true}
                         disabled={false}
@@ -206,12 +187,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               "root": "MuiButtonBase-root",
                             }
                           }
-                          component={
-                            Object {
-                              "$$typeof": Symbol(react.forward_ref),
-                              "render": [Function],
-                            }
-                          }
                           disableRipple={true}
                           disableTouchRipple={true}
                           disabled={false}
@@ -223,10 +198,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           role="tab"
                           tabIndex={0}
                         >
-                          <ForwardRef
-                            aria-disabled={false}
+                          <button
                             aria-selected={true}
                             className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
+                            disabled={false}
                             id="tabs-tab1"
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -242,92 +217,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchStart={[Function]}
                             role="tab"
                             tabIndex={0}
+                            type="button"
                           >
-                            <WithStyles(ForwardRef(ButtonBase))
-                              aria-disabled={false}
-                              aria-selected={true}
-                              className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
-                              disabled={false}
-                              id="tabs-tab1"
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onDragLeave={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchMove={[Function]}
-                              onTouchStart={[Function]}
-                              role="tab"
-                              tabIndex={0}
+                            <span
+                              className="MuiTab-wrapper"
                             >
-                              <ForwardRef(ButtonBase)
-                                aria-disabled={false}
-                                aria-selected={true}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
-                                classes={
-                                  Object {
-                                    "disabled": "Mui-disabled",
-                                    "focusVisible": "Mui-focusVisible",
-                                    "root": "MuiButtonBase-root",
-                                  }
-                                }
-                                disableRipple={true}
-                                disabled={false}
-                                id="tabs-tab1"
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onDragLeave={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
-                                role="tab"
-                                tabIndex={0}
-                              >
-                                <button
-                                  aria-disabled={false}
-                                  aria-selected={true}
-                                  className="MuiButtonBase-root MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
-                                  disabled={false}
-                                  id="tabs-tab1"
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onDragLeave={[Function]}
-                                  onFocus={[Function]}
-                                  onKeyDown={[Function]}
-                                  onKeyUp={[Function]}
-                                  onMouseDown={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseUp={[Function]}
-                                  onTouchEnd={[Function]}
-                                  onTouchMove={[Function]}
-                                  onTouchStart={[Function]}
-                                  role="tab"
-                                  tabIndex={0}
-                                  type="button"
-                                >
-                                  <span
-                                    className="MuiTab-wrapper"
-                                  >
-                                    Clickable tab 1
-                                  </span>
-                                  <div
-                                    className="HvTab-tabBorder"
-                                    role="presentation"
-                                  />
-                                </button>
-                              </ForwardRef(ButtonBase)>
-                            </WithStyles(ForwardRef(ButtonBase))>
-                          </ForwardRef>
+                              Clickable tab 1
+                            </span>
+                          </button>
                         </ForwardRef(ButtonBase)>
                       </WithStyles(ForwardRef(ButtonBase))>
                     </ForwardRef(Tab)>
@@ -352,7 +249,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       "focusVisible": "HvTab-focusVisible",
                       "root": "HvTab-root",
                       "selected": "HvTab-selected",
-                      "tabBorder": "HvTab-tabBorder",
                     }
                   }
                   disabled={false}
@@ -372,12 +268,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         "disabled": "HvTab-disabled",
                         "root": "HvTab-root",
                         "selected": "HvTab-selected",
-                      }
-                    }
-                    component={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "render": [Function],
                       }
                     }
                     disableRipple={true}
@@ -409,12 +299,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           "wrapper": "MuiTab-wrapper",
                         }
                       }
-                      component={
-                        Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "render": [Function],
-                        }
-                      }
                       disableRipple={true}
                       disableTouchRipple={true}
                       disabled={false}
@@ -432,12 +316,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-selected={false}
                         className="MuiTab-root HvTab-root MuiTab-textColorInherit"
-                        component={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "render": [Function],
-                          }
-                        }
                         disableRipple={true}
                         disableTouchRipple={true}
                         disabled={false}
@@ -459,12 +337,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               "root": "MuiButtonBase-root",
                             }
                           }
-                          component={
-                            Object {
-                              "$$typeof": Symbol(react.forward_ref),
-                              "render": [Function],
-                            }
-                          }
                           disableRipple={true}
                           disableTouchRipple={true}
                           disabled={false}
@@ -476,10 +348,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           role="tab"
                           tabIndex={-1}
                         >
-                          <ForwardRef
-                            aria-disabled={false}
+                          <button
                             aria-selected={false}
                             className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
+                            disabled={false}
                             id="tabs-tab2"
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -495,92 +367,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchStart={[Function]}
                             role="tab"
                             tabIndex={-1}
+                            type="button"
                           >
-                            <WithStyles(ForwardRef(ButtonBase))
-                              aria-disabled={false}
-                              aria-selected={false}
-                              className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
-                              disabled={false}
-                              id="tabs-tab2"
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onDragLeave={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchMove={[Function]}
-                              onTouchStart={[Function]}
-                              role="tab"
-                              tabIndex={-1}
+                            <span
+                              className="MuiTab-wrapper"
                             >
-                              <ForwardRef(ButtonBase)
-                                aria-disabled={false}
-                                aria-selected={false}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
-                                classes={
-                                  Object {
-                                    "disabled": "Mui-disabled",
-                                    "focusVisible": "Mui-focusVisible",
-                                    "root": "MuiButtonBase-root",
-                                  }
-                                }
-                                disableRipple={true}
-                                disabled={false}
-                                id="tabs-tab2"
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onDragLeave={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
-                                role="tab"
-                                tabIndex={-1}
-                              >
-                                <button
-                                  aria-disabled={false}
-                                  aria-selected={false}
-                                  className="MuiButtonBase-root MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
-                                  disabled={false}
-                                  id="tabs-tab2"
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onDragLeave={[Function]}
-                                  onFocus={[Function]}
-                                  onKeyDown={[Function]}
-                                  onKeyUp={[Function]}
-                                  onMouseDown={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseUp={[Function]}
-                                  onTouchEnd={[Function]}
-                                  onTouchMove={[Function]}
-                                  onTouchStart={[Function]}
-                                  role="tab"
-                                  tabIndex={-1}
-                                  type="button"
-                                >
-                                  <span
-                                    className="MuiTab-wrapper"
-                                  >
-                                    Clickable tab 2
-                                  </span>
-                                  <div
-                                    className="HvTab-tabBorder"
-                                    role="presentation"
-                                  />
-                                </button>
-                              </ForwardRef(ButtonBase)>
-                            </WithStyles(ForwardRef(ButtonBase))>
-                          </ForwardRef>
+                              Clickable tab 2
+                            </span>
+                          </button>
                         </ForwardRef(ButtonBase)>
                       </WithStyles(ForwardRef(ButtonBase))>
                     </ForwardRef(Tab)>
@@ -605,7 +399,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       "focusVisible": "HvTab-focusVisible",
                       "root": "HvTab-root",
                       "selected": "HvTab-selected",
-                      "tabBorder": "HvTab-tabBorder",
                     }
                   }
                   disabled={false}
@@ -625,12 +418,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         "disabled": "HvTab-disabled",
                         "root": "HvTab-root",
                         "selected": "HvTab-selected",
-                      }
-                    }
-                    component={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "render": [Function],
                       }
                     }
                     disableRipple={true}
@@ -662,12 +449,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           "wrapper": "MuiTab-wrapper",
                         }
                       }
-                      component={
-                        Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "render": [Function],
-                        }
-                      }
                       disableRipple={true}
                       disableTouchRipple={true}
                       disabled={false}
@@ -685,12 +466,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       <WithStyles(ForwardRef(ButtonBase))
                         aria-selected={false}
                         className="MuiTab-root HvTab-root MuiTab-textColorInherit"
-                        component={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "render": [Function],
-                          }
-                        }
                         disableRipple={true}
                         disableTouchRipple={true}
                         disabled={false}
@@ -712,12 +487,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               "root": "MuiButtonBase-root",
                             }
                           }
-                          component={
-                            Object {
-                              "$$typeof": Symbol(react.forward_ref),
-                              "render": [Function],
-                            }
-                          }
                           disableRipple={true}
                           disableTouchRipple={true}
                           disabled={false}
@@ -729,10 +498,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           role="tab"
                           tabIndex={-1}
                         >
-                          <ForwardRef
-                            aria-disabled={false}
+                          <button
                             aria-selected={false}
                             className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
+                            disabled={false}
                             id="tabs-tab3"
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -748,92 +517,14 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchStart={[Function]}
                             role="tab"
                             tabIndex={-1}
+                            type="button"
                           >
-                            <WithStyles(ForwardRef(ButtonBase))
-                              aria-disabled={false}
-                              aria-selected={false}
-                              className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
-                              disabled={false}
-                              id="tabs-tab3"
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onDragLeave={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchMove={[Function]}
-                              onTouchStart={[Function]}
-                              role="tab"
-                              tabIndex={-1}
+                            <span
+                              className="MuiTab-wrapper"
                             >
-                              <ForwardRef(ButtonBase)
-                                aria-disabled={false}
-                                aria-selected={false}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
-                                classes={
-                                  Object {
-                                    "disabled": "Mui-disabled",
-                                    "focusVisible": "Mui-focusVisible",
-                                    "root": "MuiButtonBase-root",
-                                  }
-                                }
-                                disableRipple={true}
-                                disabled={false}
-                                id="tabs-tab3"
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onDragLeave={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
-                                role="tab"
-                                tabIndex={-1}
-                              >
-                                <button
-                                  aria-disabled={false}
-                                  aria-selected={false}
-                                  className="MuiButtonBase-root MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
-                                  disabled={false}
-                                  id="tabs-tab3"
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onDragLeave={[Function]}
-                                  onFocus={[Function]}
-                                  onKeyDown={[Function]}
-                                  onKeyUp={[Function]}
-                                  onMouseDown={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseUp={[Function]}
-                                  onTouchEnd={[Function]}
-                                  onTouchMove={[Function]}
-                                  onTouchStart={[Function]}
-                                  role="tab"
-                                  tabIndex={-1}
-                                  type="button"
-                                >
-                                  <span
-                                    className="MuiTab-wrapper"
-                                  >
-                                    Clickable tab 3
-                                  </span>
-                                  <div
-                                    className="HvTab-tabBorder"
-                                    role="presentation"
-                                  />
-                                </button>
-                              </ForwardRef(ButtonBase)>
-                            </WithStyles(ForwardRef(ButtonBase))>
-                          </ForwardRef>
+                              Clickable tab 3
+                            </span>
+                          </button>
                         </ForwardRef(ButtonBase)>
                       </WithStyles(ForwardRef(ButtonBase))>
                     </ForwardRef(Tab)>

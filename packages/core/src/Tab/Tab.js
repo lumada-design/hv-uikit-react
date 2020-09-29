@@ -1,19 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Tab, ButtonBase, withStyles } from "@material-ui/core";
+import { Tab, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const HvTab = (props) => {
   const { classes, ...others } = props;
-
-  const TabSubstitute = React.forwardRef((subprops, ref) => {
-    return (
-      <ButtonBase disabled={others.disabled} ref={ref} {...subprops}>
-        {subprops.children}
-        <div role="presentation" className={classes.tabBorder} />
-      </ButtonBase>
-    );
-  });
 
   return (
     <Tab
@@ -24,7 +15,6 @@ const HvTab = (props) => {
       }}
       disableRipple
       disableTouchRipple
-      component={TabSubstitute}
       focusVisibleClassName={classes.focusVisible}
       {...others}
     />

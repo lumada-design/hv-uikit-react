@@ -9,8 +9,8 @@ const styles = (theme) => ({
     textTransform: "none",
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.normalText,
-    "&:focus, &:hover": {
-      "& $tabBorder": {
+    "&:hover": {
+      "&::after": {
         height: "1px",
         backgroundColor: theme.hv.palette.atmosphere.atmo5,
       },
@@ -26,7 +26,7 @@ const styles = (theme) => ({
       cursor: "not-allowed",
       pointerEvents: "all",
       opacity: 1,
-      "&:focus, &:hover": {
+      "&:hover": {
         background: "none",
         "& $tabBorder": {
           backgroundColor: theme.hv.palette.atmosphere.atmo4,
@@ -34,14 +34,15 @@ const styles = (theme) => ({
       },
     },
     opacity: 1,
-  },
-  tabBorder: {
-    position: "absolute",
-    left: 0,
-    top: "calc(100% - 1px)",
-    height: "1px",
-    width: "100%",
-    backgroundColor: theme.hv.palette.atmosphere.atmo4,
+    "&::after": {
+      position: "absolute",
+      left: 0,
+      top: "calc(100% - 1px)",
+      height: "1px",
+      width: "100%",
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      content: "''",
+    },
   },
   focusVisible: {
     ...outlineStyles,
