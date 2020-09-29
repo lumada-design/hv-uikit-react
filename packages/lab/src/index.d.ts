@@ -1,14 +1,8 @@
 export { default as HvCodeEditor } from "./CodeEditor";
 export * from "./CodeEditor";
 
-export { default as HvFooter } from "./Footer";
-export * from "./Footer";
-
 export { default as HvFormComposer } from "./FormComposer";
 export * from "./FormComposer";
-
-export { default as HvLoading } from "./Loading";
-export * from "./Loading";
 
 export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export * from "./NavigationAnchors";
