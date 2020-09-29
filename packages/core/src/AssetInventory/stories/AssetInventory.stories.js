@@ -553,8 +553,8 @@ export const Configurations = () => {
       ]}
       paginationProps={{
         labels: {
-          pageSizeEntryName: "assets"
-        }
+          pageSizeEntryName: "assets",
+        },
       }}
       emptyComponent={
         <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
