@@ -53,6 +53,7 @@ const HvAssetInventory = props => {
     hasBulkActions = false,
     hasPagination = false,
     paginationServerSide = false,
+    paginationProps,
     onPageChange,
     onPageSizeChange,
     onSelection,
@@ -207,7 +208,7 @@ const HvAssetInventory = props => {
         pageSizeOptions={pageSizeOptions}
         onPageChange={onPageChangeInternal}
         onPageSizeChange={onPageSizeChangeInternal}
-        labels={{ pageSizeEntryName: "assets" }}
+        {...paginationProps}
       />
     );
   };
@@ -555,6 +556,10 @@ HvAssetInventory.propTypes = {
       icon: PropTypes.node
     })
   ),
+  /**
+   *  Extra properties passed to the pagination.
+   */
+  paginationProps: PropTypes.instanceOf(Object),
   /**
    * Component to the present when no data is available.
    */

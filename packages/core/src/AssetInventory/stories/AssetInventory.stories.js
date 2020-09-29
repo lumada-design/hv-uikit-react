@@ -551,6 +551,11 @@ export const Configurations = () => {
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
         { id: "list-button", icon: <List />, "aria-label": "Select list view" }
       ]}
+      paginationProps={{
+        labels: {
+          pageSizeEntryName: "assets"
+        }
+      }}
       emptyComponent={
         <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
       }

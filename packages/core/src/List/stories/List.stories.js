@@ -1,8 +1,6 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-
 import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
-
 import { HvList, HvTypography } from "../..";
 
 const styles = theme => ({

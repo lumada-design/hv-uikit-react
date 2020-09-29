@@ -161,6 +161,10 @@ export interface HvAssetInventoryProps
    */
   multibuttonProps?: object;
   /**
+   * Other props passed to the pagination.
+   */
+  paginationProps?: HvPaginationCommonProps;
+  /**
    * Component to the present when no data is available.
    */
   emptyComponent: React.ReactNode;

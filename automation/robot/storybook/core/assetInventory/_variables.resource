@@ -29,6 +29,6 @@ ${row4}               css:#listView ul>li:nth-child(4)
 ${row5}               css:#listView ul>li:nth-child(5)
 ${row6}               css:#listView ul>li:nth-child(6)
 ${rows}               css:#listView ul>li
-${searchBox}          css:input[type='text']
+${searchBox}          css:input[type=text]
 ${secondCheckbox}     css:input[value='id_1']
 ${sortTitleDesc}      css:#hv-assetinventory-sort-values-list-item-1
