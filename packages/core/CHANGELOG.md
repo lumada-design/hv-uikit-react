@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.0...@hv/uikit-react-core@2.12.1) (2020-09-29)
+
+
+### Bug Fixes
+
+* **assetinventory:** page size not changing. HVUIKIT-5549  ([#1996](https://github.com/pentaho/hv-uikit-react/issues/1996)) ([e07afd8](https://github.com/pentaho/hv-uikit-react/commit/e07afd80e06906a1777a0b492c80422f69d1d3d5))
+
+
+
+
+
 # [2.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.11.4...@hv/uikit-react-core@2.12.0) (2020-09-25)
 
 
