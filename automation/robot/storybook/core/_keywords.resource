@@ -55,7 +55,7 @@ get elements text
     [Documentation]
     ...    get text of a node list
     [Arguments]    ${csslocator}
-    ${csslocator}=    Replace String        ${csslocator}    css:    ${EMPTY}
+    ${csslocator}=    Remove String    ${csslocator}    css:
     ${values}         Execute Javascript
     ...   return Array.from(document.querySelectorAll("${csslocator}"))
     ...   \.map(function(el){return el.innerText.trim();}).join(',')
@@ -74,6 +74,23 @@ open browser webdriver
     [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
     Open Browser    ${url}    ${browser}    options=add_argument("--headless")
     Set Window Size    1920    1080
+
+scroll to element
+    [Documentation]    work around for selenium keyword "Scroll Element Into View"
+    ...                MoveTargetOutOfBoundsException error
+    ...                - ${element}  must be a css locator
+    [Arguments]    ${element}
+    ${element}    Remove String    ${element}    css:
+    Execute Javascript             document.querySelector("${element}").scrollIntoView(true);
+
+select dropdown value
+    [Documentation]    selects a dropdown value given the dropdown locator and value to select
+    [Arguments]    ${dropdown}    ${value}
+    Wait Until Element Is Enabled       ${dropdown}
+    Click Element                       ${dropdown}
+    Wait Until Element Is Visible       css:ul[role='listbox']
+    Click Element                       //li[@role='option' and text()='${value}']
+    Wait Until Element Is Not Visible   css:ul[role='listbox']
 
 set focus and press keys
     [Documentation]
@@ -94,11 +111,3 @@ wait until element attribute not contain
     [Arguments]    ${locator}    ${attribute}    ${value}
     Wait Until Keyword Succeeds    5x    1s
     ...    element attribute value should not contain    ${locator}    ${attribute}    ${value}
-
-Select Dropdown Value
-    [Documentation]    selects a dropdown value given the dropdown locator and value to select
-    [Arguments]    ${dropdown}    ${value}
-    Click Element                       ${dropdown}
-    Wait Until Element Is Visible       css:ul[role='listbox']
-    Click Element                       //li[@role='option' and text()='${value}']
-    Wait Until Element Is Not Visible   css:ul[role='listbox']
