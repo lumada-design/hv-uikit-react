@@ -15,8 +15,8 @@ export default {
 
 export const Main = () => {
   const [selectionDate, setSelectionDate] = useState({
-    startDate: new Date("2020-08-15"),
-    endDate: new Date("2020-08-29"),
+    startDate: new Date(2020, 7, 15),
+    endDate: new Date(2020, 7, 29),
   });
 
   const [visibleMonth, setVisibleMonth] = useState(8);
@@ -69,8 +69,8 @@ export const Main = () => {
   };
 
   const availableDates = {
-    minimumDate: new Date("2020-06-01"),
-    maximumDate: new Date("2020-12-10"),
+    minimumDate: new Date(2020, 5, 1),
+    maximumDate: new Date(2020, 11, 10),
   };
 
   return (
@@ -94,7 +94,7 @@ export const Main = () => {
 };
 
 export const SingleDate = () => {
-  const [selectionDate, setSelectionDate] = useState(new Date("2020-08-15"));
+  const [selectionDate, setSelectionDate] = useState(new Date(2020, 7, 15));
 
   const [visibleMonth, setVisibleMonth] = useState(8);
   const [visibleYear, setVisibleYear] = useState(2020);
@@ -140,8 +140,8 @@ export const SingleDate = () => {
             onVisibleDateChange={visibleDateChangeHandler}
             visibleMonth={visibleMonth}
             visibleYear={visibleYear}
-            minimumDate={new Date("2020-06-01")}
-            maximumDate={new Date("2020-12-10")}
+            minimumDate={new Date(2020, 5, 1)}
+            maximumDate={new Date(2020, 11, 10)}
           />
         </HvLabel>
       </HvFormElement>
@@ -157,7 +157,7 @@ SingleDate.story = {
 
 export const Localized = () => {
   const [locale, setLocale] = useState("en-US");
-  const [selectionDate, setSelectionDate] = useState(new Date("2020-08-19"));
+  const [selectionDate, setSelectionDate] = useState(new Date(2020, 7, 19));
   const [visibleMonth, setVisibleMonth] = useState(8);
   const [visibleYear, setVisibleYear] = useState(2020);
 
@@ -212,8 +212,8 @@ export const Localized = () => {
               onVisibleDateChange={visibleDateChangeHandler}
               visibleMonth={visibleMonth}
               visibleYear={visibleYear}
-              minimumDate={new Date("2020-06-01")}
-              maximumDate={new Date("2020-12-10")}
+              minimumDate={new Date(2020, 5, 1)}
+              maximumDate={new Date(2020, 11, 10)}
             />
           </HvLabel>
         </HvFormElement>

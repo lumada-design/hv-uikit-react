@@ -82,12 +82,12 @@ HvFormElement.propTypes = {
 
   /**
    * Name of the form element.
-   * Part of a name/value pair, should be the name property of the undeling native input, if any.
+   * Part of a name/value pair, should be the name property of the underling native input, if any.
    */
   name: PropTypes.string,
   /**
    * Current value of the form element.
-   * Part of a name/value pair, should be the value property of the undeling native input, if any.
+   * Part of a name/value pair, should be the value property of the underling native input, if any.
    */
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any,

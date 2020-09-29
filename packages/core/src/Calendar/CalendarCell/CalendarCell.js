@@ -31,7 +31,7 @@ const HvCalendarCell = ({
   const buttonEl = useRef(null);
   const { startDate, endDate } = calendarValue;
   const isCellToday = isSameDay(value, today);
-  const isCellSelected = calendarValue && isSameDay(value, calendarValue);
+  const isCellSelected = isSameDay(calendarValue, value);
   const inMonth = isSameMonth(value, firstDayOfCurrentMonth);
   const isCellAfterStartingDate = rangeMode ? value >= startDate : false;
   const isCellStartingDate = rangeMode ? isSameDay(value, startDate) : false;
@@ -73,7 +73,7 @@ const HvCalendarCell = ({
           [classes.endBookend]: inMonth && endBookend && rangeMode,
         })}
       >
-        {value.getUTCDate()}
+        {value.getDate()}
       </HvTypography>
     </button>
   );

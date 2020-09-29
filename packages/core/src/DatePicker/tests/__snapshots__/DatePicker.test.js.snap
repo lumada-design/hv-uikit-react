@@ -75,7 +75,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
             "root": "HvDatePicker-root",
           }
         }
-        id="hv-date-picker-20"
+        id="hv-date-picker-23"
         labels={
           Object {
             "applyLabel": "Apply",
@@ -91,7 +91,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
       >
         <WithStyles(WithId)
           className="HvDatePicker-root"
-          id="hv-date-picker-20"
+          id="hv-date-picker-23"
           locale="en-US"
           value={2019-01-01T00:00:00.000Z}
         >
@@ -102,7 +102,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                 "root": "HvFormElement-root",
               }
             }
-            id="hv-date-picker-20"
+            id="hv-date-picker-23"
             locale="en-US"
             value={2019-01-01T00:00:00.000Z}
           >
@@ -113,16 +113,17 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                   "root": "HvFormElement-root",
                 }
               }
-              id="hv-date-picker-20"
+              id="hv-date-picker-23"
               locale="en-US"
               value={2019-01-01T00:00:00.000Z}
             >
               <div
                 className="HvDatePicker-root HvFormElement-root"
+                id="hv-date-picker-23"
               >
                 <WithStyles(HvLabel)
                   className="HvDatePicker-label"
-                  id="hv-date-picker-20-label"
+                  id="hv-date-picker-23-label"
                   label=""
                 >
                   <HvLabel
@@ -134,13 +135,13 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                         "root": "HvLabel-root",
                       }
                     }
-                    id="hv-date-picker-20-label"
+                    id="hv-date-picker-23-label"
                     label=""
                   >
                     <WithStyles(ForwardRef)
                       className="HvDatePicker-label HvLabel-root"
                       component="label"
-                      id="hv-date-picker-20-label"
+                      id="hv-date-picker-23-label"
                       variant="highlightText"
                     >
                       <ForwardRef
@@ -172,16 +173,16 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                           }
                         }
                         component="label"
-                        id="hv-date-picker-20-label"
+                        id="hv-date-picker-23-label"
                         variant="highlightText"
                       >
                         <label
                           className="HvDatePicker-label HvLabel-root HvTypography-root HvTypography-highlightText"
-                          id="hv-date-picker-20-label"
+                          id="hv-date-picker-23-label"
                         />
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
-                    <WithStyles(WithId)
+                    <WithStyles(HvBaseDropdown)
                       adornment={
                         <Calendar
                           className="HvDatePicker-icon"
@@ -198,11 +199,11 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                       onClickOutside={[Function]}
                       onToggle={[Function]}
                       placeholder={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(ForwardRef)
                           variant="normalText"
                         >
                           1 Jan 2019
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                       placement="right"
                       popperProps={
@@ -215,7 +216,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                         }
                       }
                     >
-                      <WithId
+                      <HvBaseDropdown
                         adornment={
                           <Calendar
                             className="HvDatePicker-icon"
@@ -246,11 +247,11 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                         onClickOutside={[Function]}
                         onToggle={[Function]}
                         placeholder={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef)
                             variant="normalText"
                           >
                             1 Jan 2019
-                          </ForwardRef(WithStyles)>
+                          </WithStyles(ForwardRef)>
                         }
                         placement="right"
                         popperProps={
@@ -263,188 +264,133 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                           }
                         }
                       >
-                        <HvBaseDropdown
-                          adornment={
-                            <Calendar
-                              className="HvDatePicker-icon"
-                            />
-                          }
-                          classes={
-                            Object {
-                              "arrow": "HvBaseDropdown-arrow",
-                              "header": "HvBaseDropdown-header",
-                              "headerDisabled": "HvBaseDropdown-headerDisabled",
-                              "headerOpen": "HvBaseDropdown-headerOpen",
-                              "headerOpenDown": "HvBaseDropdown-headerOpenDown",
-                              "headerOpenUp": "HvBaseDropdown-headerOpenUp",
-                              "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
-                              "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
-                              "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
-                              "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
-                              "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
-                              "panel": "HvBaseDropdown-panel HvDatePicker-panel",
-                              "placeholder": "HvBaseDropdown-placeholder",
-                              "root": "HvBaseDropdown-root HvDatePicker-dropdown",
-                              "selection": "HvBaseDropdown-selection",
-                              "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                            }
-                          }
-                          disablePortal={true}
-                          expanded={false}
-                          id="hv-base-dropdown-21"
-                          onClickOutside={[Function]}
-                          onToggle={[Function]}
-                          placeholder={
-                            <ForwardRef(WithStyles)
-                              variant="normalText"
-                            >
-                              1 Jan 2019
-                            </ForwardRef(WithStyles)>
-                          }
-                          placement="right"
-                          popperProps={
-                            Object {
-                              "modifiers": Object {
-                                "preventOverflow": Object {
-                                  "escapeWithReference": true,
-                                },
-                              },
-                            }
-                          }
+                        <div
+                          aria-expanded={false}
+                          className="HvBaseDropdown-root HvDatePicker-dropdown"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="combobox"
+                          tabIndex={-1}
                         >
                           <div
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-labelledby="hv-date-picker-20-selectionPlaceholder"
-                            className="HvBaseDropdown-root HvDatePicker-dropdown"
-                            id="hv-date-picker-20"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={-1}
+                            className="HvBaseDropdown-header"
+                            role="textbox"
+                            tabIndex={0}
                           >
                             <div
-                              aria-labelledby="hv-date-picker-20-selectionPlaceholder"
-                              className="HvBaseDropdown-header"
-                              id="hv-date-picker-20-header"
-                              role="textbox"
-                              tabIndex={0}
+                              className="HvBaseDropdown-selection"
                             >
-                              <div
-                                className="HvBaseDropdown-selection"
-                                id="hv-date-picker-20-selectionPlaceholder"
+                              <WithStyles(ForwardRef)
+                                variant="normalText"
                               >
-                                <WithStyles(ForwardRef)
+                                <ForwardRef
+                                  classes={
+                                    Object {
+                                      "3xlTitle": "HvTypography-3xlTitle",
+                                      "4xlTitle": "HvTypography-4xlTitle",
+                                      "5xlTitle": "HvTypography-5xlTitle",
+                                      "disabledText": "HvTypography-disabledText",
+                                      "highlightText": "HvTypography-highlightText",
+                                      "lTitle": "HvTypography-lTitle",
+                                      "link": "HvTypography-link",
+                                      "mTitle": "HvTypography-mTitle",
+                                      "noWrap": "HvTypography-noWrap",
+                                      "normalText": "HvTypography-normalText",
+                                      "placeholderText": "HvTypography-placeholderText",
+                                      "root": "HvTypography-root",
+                                      "sTitle": "HvTypography-sTitle",
+                                      "sectionTitle": "HvTypography-sectionTitle",
+                                      "selectedNavText": "HvTypography-selectedNavText",
+                                      "vizText": "HvTypography-vizText",
+                                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                      "xlTitle": "HvTypography-xlTitle",
+                                      "xsInlineLink": "HvTypography-xsInlineLink",
+                                      "xsTitle": "HvTypography-xsTitle",
+                                      "xxlTitle": "HvTypography-xxlTitle",
+                                      "xxsTitle": "HvTypography-xxsTitle",
+                                    }
+                                  }
                                   variant="normalText"
                                 >
-                                  <ForwardRef
-                                    classes={
-                                      Object {
-                                        "3xlTitle": "HvTypography-3xlTitle",
-                                        "4xlTitle": "HvTypography-4xlTitle",
-                                        "5xlTitle": "HvTypography-5xlTitle",
-                                        "disabledText": "HvTypography-disabledText",
-                                        "highlightText": "HvTypography-highlightText",
-                                        "lTitle": "HvTypography-lTitle",
-                                        "link": "HvTypography-link",
-                                        "mTitle": "HvTypography-mTitle",
-                                        "noWrap": "HvTypography-noWrap",
-                                        "normalText": "HvTypography-normalText",
-                                        "placeholderText": "HvTypography-placeholderText",
-                                        "root": "HvTypography-root",
-                                        "sTitle": "HvTypography-sTitle",
-                                        "sectionTitle": "HvTypography-sectionTitle",
-                                        "selectedNavText": "HvTypography-selectedNavText",
-                                        "vizText": "HvTypography-vizText",
-                                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                        "xlTitle": "HvTypography-xlTitle",
-                                        "xsInlineLink": "HvTypography-xsInlineLink",
-                                        "xsTitle": "HvTypography-xsTitle",
-                                        "xxlTitle": "HvTypography-xxlTitle",
-                                        "xxsTitle": "HvTypography-xxsTitle",
-                                      }
-                                    }
-                                    variant="normalText"
+                                  <p
+                                    className="HvTypography-root HvTypography-normalText"
                                   >
-                                    <p
-                                      className="HvTypography-root HvTypography-normalText"
-                                    >
-                                      1 Jan 2019
-                                    </p>
-                                  </ForwardRef>
-                                </WithStyles(ForwardRef)>
-                              </div>
-                              <Calendar
+                                    1 Jan 2019
+                                  </p>
+                                </ForwardRef>
+                              </WithStyles(ForwardRef)>
+                            </div>
+                            <Calendar
+                              className="HvDatePicker-icon"
+                            >
+                              <WithStyles(HvIconBase)
                                 className="HvDatePicker-icon"
+                                iconSize="S"
+                                name="Calendar"
                               >
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   className="HvDatePicker-icon"
+                                  classes={
+                                    Object {
+                                      "l": "HvIconBase-l",
+                                      "m": "HvIconBase-m",
+                                      "root": "HvIconBase-root",
+                                      "s": "HvIconBase-s",
+                                      "xs": "HvIconBase-xs",
+                                    }
+                                  }
                                   iconSize="S"
                                   name="Calendar"
                                 >
-                                  <HvIconBase
-                                    className="HvDatePicker-icon"
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
                                     name="Calendar"
                                   >
-                                    <div
-                                      className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
-                                      name="Calendar"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
-                              </Calendar>
-                            </div>
+                                      <path
+                                        className="color0"
+                                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
+                              </WithStyles(HvIconBase)>
+                            </Calendar>
                           </div>
-                          <ForwardRef(Popper)
-                            anchorEl={null}
-                            disablePortal={true}
-                            modifiers={
-                              Object {
-                                "preventOverflow": Object {
-                                  "escapeWithReference": true,
-                                },
-                              }
+                        </div>
+                        <ForwardRef(Popper)
+                          anchorEl={null}
+                          disablePortal={true}
+                          modifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "escapeWithReference": true,
+                              },
                             }
-                            open={false}
-                            placement="bottom-start"
-                            popperOptions={
-                              Object {
-                                "onCreate": [Function],
-                                "onUpdate": [Function],
-                              }
+                          }
+                          open={false}
+                          placement="bottom-start"
+                          popperOptions={
+                            Object {
+                              "onCreate": [Function],
+                              "onUpdate": [Function],
                             }
-                            style={
-                              Object {
-                                "zIndex": 1500,
-                              }
+                          }
+                          style={
+                            Object {
+                              "zIndex": 1500,
                             }
-                          />
-                        </HvBaseDropdown>
-                      </WithId>
-                    </WithStyles(WithId)>
+                          }
+                        />
+                      </HvBaseDropdown>
+                    </WithStyles(HvBaseDropdown)>
                   </HvLabel>
                 </WithStyles(HvLabel)>
               </div>
@@ -471,7 +417,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
   }
   locale="en-US"
   showActions={true}
-  value={2019-01-05T00:00:00.000Z}
+  value={2019-01-05T12:00:00.000Z}
 >
   <WithLabels
     classes={
@@ -503,7 +449,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
     }
     locale="en-US"
     showActions={true}
-    value={2019-01-05T00:00:00.000Z}
+    value={2019-01-05T12:00:00.000Z}
   >
     <WithId
       classes={
@@ -537,7 +483,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
       }
       locale="en-US"
       showActions={true}
-      value={2019-01-05T00:00:00.000Z}
+      value={2019-01-05T12:00:00.000Z}
     >
       <HvDatePicker
         classes={
@@ -571,13 +517,13 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
         }
         locale="en-US"
         showActions={true}
-        value={2019-01-05T00:00:00.000Z}
+        value={2019-01-05T12:00:00.000Z}
       >
         <WithStyles(WithId)
           className="HvDatePicker-root"
           id="testingDatePicker"
           locale="en-US"
-          value={2019-01-05T00:00:00.000Z}
+          value={2019-01-05T12:00:00.000Z}
         >
           <WithId
             className="HvDatePicker-root"
@@ -588,7 +534,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
             }
             id="testingDatePicker"
             locale="en-US"
-            value={2019-01-05T00:00:00.000Z}
+            value={2019-01-05T12:00:00.000Z}
           >
             <HvFormElement
               className="HvDatePicker-root"
@@ -599,10 +545,11 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
               }
               id="testingDatePicker"
               locale="en-US"
-              value={2019-01-05T00:00:00.000Z}
+              value={2019-01-05T12:00:00.000Z}
             >
               <div
                 className="HvDatePicker-root HvFormElement-root"
+                id="testingDatePicker"
               >
                 <WithStyles(HvLabel)
                   className="HvDatePicker-label"
@@ -667,7 +614,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                         </label>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
-                    <WithStyles(WithId)
+                    <WithStyles(HvBaseDropdown)
                       adornment={
                         <Calendar
                           className="HvDatePicker-icon"
@@ -684,11 +631,11 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                       onClickOutside={[Function]}
                       onToggle={[Function]}
                       placeholder={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(ForwardRef)
                           variant="normalText"
                         >
                           5 Jan 2019
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                       placement="left"
                       popperProps={
@@ -701,7 +648,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                         }
                       }
                     >
-                      <WithId
+                      <HvBaseDropdown
                         adornment={
                           <Calendar
                             className="HvDatePicker-icon"
@@ -732,11 +679,11 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                         onClickOutside={[Function]}
                         onToggle={[Function]}
                         placeholder={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef)
                             variant="normalText"
                           >
                             5 Jan 2019
-                          </ForwardRef(WithStyles)>
+                          </WithStyles(ForwardRef)>
                         }
                         placement="left"
                         popperProps={
@@ -749,188 +696,133 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                           }
                         }
                       >
-                        <HvBaseDropdown
-                          adornment={
-                            <Calendar
-                              className="HvDatePicker-icon"
-                            />
-                          }
-                          classes={
-                            Object {
-                              "arrow": "HvBaseDropdown-arrow",
-                              "header": "HvBaseDropdown-header",
-                              "headerDisabled": "HvBaseDropdown-headerDisabled",
-                              "headerOpen": "HvBaseDropdown-headerOpen",
-                              "headerOpenDown": "HvBaseDropdown-headerOpenDown",
-                              "headerOpenUp": "HvBaseDropdown-headerOpenUp",
-                              "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
-                              "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
-                              "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
-                              "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
-                              "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
-                              "panel": "HvBaseDropdown-panel HvDatePicker-panel",
-                              "placeholder": "HvBaseDropdown-placeholder",
-                              "root": "HvBaseDropdown-root HvDatePicker-dropdown",
-                              "selection": "HvBaseDropdown-selection",
-                              "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                            }
-                          }
-                          disablePortal={true}
-                          expanded={false}
-                          id="hv-base-dropdown-44"
-                          onClickOutside={[Function]}
-                          onToggle={[Function]}
-                          placeholder={
-                            <ForwardRef(WithStyles)
-                              variant="normalText"
-                            >
-                              5 Jan 2019
-                            </ForwardRef(WithStyles)>
-                          }
-                          placement="left"
-                          popperProps={
-                            Object {
-                              "modifiers": Object {
-                                "preventOverflow": Object {
-                                  "escapeWithReference": true,
-                                },
-                              },
-                            }
-                          }
+                        <div
+                          aria-expanded={false}
+                          className="HvBaseDropdown-root HvDatePicker-dropdown"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="combobox"
+                          tabIndex={-1}
                         >
                           <div
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-labelledby="testingDatePicker-selectionPlaceholder"
-                            className="HvBaseDropdown-root HvDatePicker-dropdown"
-                            id="testingDatePicker"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={-1}
+                            className="HvBaseDropdown-header"
+                            role="textbox"
+                            tabIndex={0}
                           >
                             <div
-                              aria-labelledby="testingDatePicker-selectionPlaceholder"
-                              className="HvBaseDropdown-header"
-                              id="testingDatePicker-header"
-                              role="textbox"
-                              tabIndex={0}
+                              className="HvBaseDropdown-selection"
                             >
-                              <div
-                                className="HvBaseDropdown-selection"
-                                id="testingDatePicker-selectionPlaceholder"
+                              <WithStyles(ForwardRef)
+                                variant="normalText"
                               >
-                                <WithStyles(ForwardRef)
+                                <ForwardRef
+                                  classes={
+                                    Object {
+                                      "3xlTitle": "HvTypography-3xlTitle",
+                                      "4xlTitle": "HvTypography-4xlTitle",
+                                      "5xlTitle": "HvTypography-5xlTitle",
+                                      "disabledText": "HvTypography-disabledText",
+                                      "highlightText": "HvTypography-highlightText",
+                                      "lTitle": "HvTypography-lTitle",
+                                      "link": "HvTypography-link",
+                                      "mTitle": "HvTypography-mTitle",
+                                      "noWrap": "HvTypography-noWrap",
+                                      "normalText": "HvTypography-normalText",
+                                      "placeholderText": "HvTypography-placeholderText",
+                                      "root": "HvTypography-root",
+                                      "sTitle": "HvTypography-sTitle",
+                                      "sectionTitle": "HvTypography-sectionTitle",
+                                      "selectedNavText": "HvTypography-selectedNavText",
+                                      "vizText": "HvTypography-vizText",
+                                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                      "xlTitle": "HvTypography-xlTitle",
+                                      "xsInlineLink": "HvTypography-xsInlineLink",
+                                      "xsTitle": "HvTypography-xsTitle",
+                                      "xxlTitle": "HvTypography-xxlTitle",
+                                      "xxsTitle": "HvTypography-xxsTitle",
+                                    }
+                                  }
                                   variant="normalText"
                                 >
-                                  <ForwardRef
-                                    classes={
-                                      Object {
-                                        "3xlTitle": "HvTypography-3xlTitle",
-                                        "4xlTitle": "HvTypography-4xlTitle",
-                                        "5xlTitle": "HvTypography-5xlTitle",
-                                        "disabledText": "HvTypography-disabledText",
-                                        "highlightText": "HvTypography-highlightText",
-                                        "lTitle": "HvTypography-lTitle",
-                                        "link": "HvTypography-link",
-                                        "mTitle": "HvTypography-mTitle",
-                                        "noWrap": "HvTypography-noWrap",
-                                        "normalText": "HvTypography-normalText",
-                                        "placeholderText": "HvTypography-placeholderText",
-                                        "root": "HvTypography-root",
-                                        "sTitle": "HvTypography-sTitle",
-                                        "sectionTitle": "HvTypography-sectionTitle",
-                                        "selectedNavText": "HvTypography-selectedNavText",
-                                        "vizText": "HvTypography-vizText",
-                                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                        "xlTitle": "HvTypography-xlTitle",
-                                        "xsInlineLink": "HvTypography-xsInlineLink",
-                                        "xsTitle": "HvTypography-xsTitle",
-                                        "xxlTitle": "HvTypography-xxlTitle",
-                                        "xxsTitle": "HvTypography-xxsTitle",
-                                      }
-                                    }
-                                    variant="normalText"
+                                  <p
+                                    className="HvTypography-root HvTypography-normalText"
                                   >
-                                    <p
-                                      className="HvTypography-root HvTypography-normalText"
-                                    >
-                                      5 Jan 2019
-                                    </p>
-                                  </ForwardRef>
-                                </WithStyles(ForwardRef)>
-                              </div>
-                              <Calendar
+                                    5 Jan 2019
+                                  </p>
+                                </ForwardRef>
+                              </WithStyles(ForwardRef)>
+                            </div>
+                            <Calendar
+                              className="HvDatePicker-icon"
+                            >
+                              <WithStyles(HvIconBase)
                                 className="HvDatePicker-icon"
+                                iconSize="S"
+                                name="Calendar"
                               >
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   className="HvDatePicker-icon"
+                                  classes={
+                                    Object {
+                                      "l": "HvIconBase-l",
+                                      "m": "HvIconBase-m",
+                                      "root": "HvIconBase-root",
+                                      "s": "HvIconBase-s",
+                                      "xs": "HvIconBase-xs",
+                                    }
+                                  }
                                   iconSize="S"
                                   name="Calendar"
                                 >
-                                  <HvIconBase
-                                    className="HvDatePicker-icon"
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
                                     name="Calendar"
                                   >
-                                    <div
-                                      className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
-                                      name="Calendar"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
-                              </Calendar>
-                            </div>
+                                      <path
+                                        className="color0"
+                                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
+                              </WithStyles(HvIconBase)>
+                            </Calendar>
                           </div>
-                          <ForwardRef(Popper)
-                            anchorEl={null}
-                            disablePortal={true}
-                            modifiers={
-                              Object {
-                                "preventOverflow": Object {
-                                  "escapeWithReference": true,
-                                },
-                              }
+                        </div>
+                        <ForwardRef(Popper)
+                          anchorEl={null}
+                          disablePortal={true}
+                          modifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "escapeWithReference": true,
+                              },
                             }
-                            open={false}
-                            placement="bottom-end"
-                            popperOptions={
-                              Object {
-                                "onCreate": [Function],
-                                "onUpdate": [Function],
-                              }
+                          }
+                          open={false}
+                          placement="bottom-end"
+                          popperOptions={
+                            Object {
+                              "onCreate": [Function],
+                              "onUpdate": [Function],
                             }
-                            style={
-                              Object {
-                                "zIndex": 1500,
-                              }
+                          }
+                          style={
+                            Object {
+                              "zIndex": 1500,
                             }
-                          />
-                        </HvBaseDropdown>
-                      </WithId>
-                    </WithStyles(WithId)>
+                          }
+                        />
+                      </HvBaseDropdown>
+                    </WithStyles(HvBaseDropdown)>
                   </HvLabel>
                 </WithStyles(HvLabel)>
               </div>
@@ -1050,6 +942,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
             >
               <div
                 className="HvDatePicker-root HvFormElement-root"
+                id="hv-date-picker-3"
               >
                 <WithStyles(HvLabel)
                   className="HvDatePicker-label"
@@ -1112,7 +1005,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                         />
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
-                    <WithStyles(WithId)
+                    <WithStyles(HvBaseDropdown)
                       adornment={
                         <Calendar
                           className="HvDatePicker-icon"
@@ -1129,11 +1022,11 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                       onClickOutside={[Function]}
                       onToggle={[Function]}
                       placeholder={
-                        <ForwardRef(WithStyles)
+                        <WithStyles(ForwardRef)
                           variant="placeholderText"
                         >
                           Select a date
-                        </ForwardRef(WithStyles)>
+                        </WithStyles(ForwardRef)>
                       }
                       placement="right"
                       popperProps={
@@ -1146,7 +1039,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                         }
                       }
                     >
-                      <WithId
+                      <HvBaseDropdown
                         adornment={
                           <Calendar
                             className="HvDatePicker-icon"
@@ -1177,11 +1070,11 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                         onClickOutside={[Function]}
                         onToggle={[Function]}
                         placeholder={
-                          <ForwardRef(WithStyles)
+                          <WithStyles(ForwardRef)
                             variant="placeholderText"
                           >
                             Select a date
-                          </ForwardRef(WithStyles)>
+                          </WithStyles(ForwardRef)>
                         }
                         placement="right"
                         popperProps={
@@ -1194,188 +1087,133 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                           }
                         }
                       >
-                        <HvBaseDropdown
-                          adornment={
-                            <Calendar
-                              className="HvDatePicker-icon"
-                            />
-                          }
-                          classes={
-                            Object {
-                              "arrow": "HvBaseDropdown-arrow",
-                              "header": "HvBaseDropdown-header",
-                              "headerDisabled": "HvBaseDropdown-headerDisabled",
-                              "headerOpen": "HvBaseDropdown-headerOpen",
-                              "headerOpenDown": "HvBaseDropdown-headerOpenDown",
-                              "headerOpenUp": "HvBaseDropdown-headerOpenUp",
-                              "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
-                              "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
-                              "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
-                              "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
-                              "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
-                              "panel": "HvBaseDropdown-panel HvDatePicker-panel",
-                              "placeholder": "HvBaseDropdown-placeholder",
-                              "root": "HvBaseDropdown-root HvDatePicker-dropdown",
-                              "selection": "HvBaseDropdown-selection",
-                              "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                            }
-                          }
-                          disablePortal={true}
-                          expanded={false}
-                          id="hv-base-dropdown-4"
-                          onClickOutside={[Function]}
-                          onToggle={[Function]}
-                          placeholder={
-                            <ForwardRef(WithStyles)
-                              variant="placeholderText"
-                            >
-                              Select a date
-                            </ForwardRef(WithStyles)>
-                          }
-                          placement="right"
-                          popperProps={
-                            Object {
-                              "modifiers": Object {
-                                "preventOverflow": Object {
-                                  "escapeWithReference": true,
-                                },
-                              },
-                            }
-                          }
+                        <div
+                          aria-expanded={false}
+                          className="HvBaseDropdown-root HvDatePicker-dropdown"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="combobox"
+                          tabIndex={-1}
                         >
                           <div
-                            aria-expanded={false}
-                            aria-haspopup="listbox"
-                            aria-labelledby="hv-date-picker-3-selectionPlaceholder"
-                            className="HvBaseDropdown-root HvDatePicker-dropdown"
-                            id="hv-date-picker-3"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            tabIndex={-1}
+                            className="HvBaseDropdown-header"
+                            role="textbox"
+                            tabIndex={0}
                           >
                             <div
-                              aria-labelledby="hv-date-picker-3-selectionPlaceholder"
-                              className="HvBaseDropdown-header"
-                              id="hv-date-picker-3-header"
-                              role="textbox"
-                              tabIndex={0}
+                              className="HvBaseDropdown-selection"
                             >
-                              <div
-                                className="HvBaseDropdown-selection"
-                                id="hv-date-picker-3-selectionPlaceholder"
+                              <WithStyles(ForwardRef)
+                                variant="placeholderText"
                               >
-                                <WithStyles(ForwardRef)
+                                <ForwardRef
+                                  classes={
+                                    Object {
+                                      "3xlTitle": "HvTypography-3xlTitle",
+                                      "4xlTitle": "HvTypography-4xlTitle",
+                                      "5xlTitle": "HvTypography-5xlTitle",
+                                      "disabledText": "HvTypography-disabledText",
+                                      "highlightText": "HvTypography-highlightText",
+                                      "lTitle": "HvTypography-lTitle",
+                                      "link": "HvTypography-link",
+                                      "mTitle": "HvTypography-mTitle",
+                                      "noWrap": "HvTypography-noWrap",
+                                      "normalText": "HvTypography-normalText",
+                                      "placeholderText": "HvTypography-placeholderText",
+                                      "root": "HvTypography-root",
+                                      "sTitle": "HvTypography-sTitle",
+                                      "sectionTitle": "HvTypography-sectionTitle",
+                                      "selectedNavText": "HvTypography-selectedNavText",
+                                      "vizText": "HvTypography-vizText",
+                                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                      "xlTitle": "HvTypography-xlTitle",
+                                      "xsInlineLink": "HvTypography-xsInlineLink",
+                                      "xsTitle": "HvTypography-xsTitle",
+                                      "xxlTitle": "HvTypography-xxlTitle",
+                                      "xxsTitle": "HvTypography-xxsTitle",
+                                    }
+                                  }
                                   variant="placeholderText"
                                 >
-                                  <ForwardRef
-                                    classes={
-                                      Object {
-                                        "3xlTitle": "HvTypography-3xlTitle",
-                                        "4xlTitle": "HvTypography-4xlTitle",
-                                        "5xlTitle": "HvTypography-5xlTitle",
-                                        "disabledText": "HvTypography-disabledText",
-                                        "highlightText": "HvTypography-highlightText",
-                                        "lTitle": "HvTypography-lTitle",
-                                        "link": "HvTypography-link",
-                                        "mTitle": "HvTypography-mTitle",
-                                        "noWrap": "HvTypography-noWrap",
-                                        "normalText": "HvTypography-normalText",
-                                        "placeholderText": "HvTypography-placeholderText",
-                                        "root": "HvTypography-root",
-                                        "sTitle": "HvTypography-sTitle",
-                                        "sectionTitle": "HvTypography-sectionTitle",
-                                        "selectedNavText": "HvTypography-selectedNavText",
-                                        "vizText": "HvTypography-vizText",
-                                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                        "xlTitle": "HvTypography-xlTitle",
-                                        "xsInlineLink": "HvTypography-xsInlineLink",
-                                        "xsTitle": "HvTypography-xsTitle",
-                                        "xxlTitle": "HvTypography-xxlTitle",
-                                        "xxsTitle": "HvTypography-xxsTitle",
-                                      }
-                                    }
-                                    variant="placeholderText"
+                                  <p
+                                    className="HvTypography-root HvTypography-placeholderText"
                                   >
-                                    <p
-                                      className="HvTypography-root HvTypography-placeholderText"
-                                    >
-                                      Select a date
-                                    </p>
-                                  </ForwardRef>
-                                </WithStyles(ForwardRef)>
-                              </div>
-                              <Calendar
+                                    Select a date
+                                  </p>
+                                </ForwardRef>
+                              </WithStyles(ForwardRef)>
+                            </div>
+                            <Calendar
+                              className="HvDatePicker-icon"
+                            >
+                              <WithStyles(HvIconBase)
                                 className="HvDatePicker-icon"
+                                iconSize="S"
+                                name="Calendar"
                               >
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   className="HvDatePicker-icon"
+                                  classes={
+                                    Object {
+                                      "l": "HvIconBase-l",
+                                      "m": "HvIconBase-m",
+                                      "root": "HvIconBase-root",
+                                      "s": "HvIconBase-s",
+                                      "xs": "HvIconBase-xs",
+                                    }
+                                  }
                                   iconSize="S"
                                   name="Calendar"
                                 >
-                                  <HvIconBase
-                                    className="HvDatePicker-icon"
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
                                     name="Calendar"
                                   >
-                                    <div
-                                      className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
-                                      name="Calendar"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
-                              </Calendar>
-                            </div>
+                                      <path
+                                        className="color0"
+                                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
+                              </WithStyles(HvIconBase)>
+                            </Calendar>
                           </div>
-                          <ForwardRef(Popper)
-                            anchorEl={null}
-                            disablePortal={true}
-                            modifiers={
-                              Object {
-                                "preventOverflow": Object {
-                                  "escapeWithReference": true,
-                                },
-                              }
+                        </div>
+                        <ForwardRef(Popper)
+                          anchorEl={null}
+                          disablePortal={true}
+                          modifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "escapeWithReference": true,
+                              },
                             }
-                            open={false}
-                            placement="bottom-start"
-                            popperOptions={
-                              Object {
-                                "onCreate": [Function],
-                                "onUpdate": [Function],
-                              }
+                          }
+                          open={false}
+                          placement="bottom-start"
+                          popperOptions={
+                            Object {
+                              "onCreate": [Function],
+                              "onUpdate": [Function],
                             }
-                            style={
-                              Object {
-                                "zIndex": 1500,
-                              }
+                          }
+                          style={
+                            Object {
+                              "zIndex": 1500,
                             }
-                          />
-                        </HvBaseDropdown>
-                      </WithId>
-                    </WithStyles(WithId)>
+                          }
+                        />
+                      </HvBaseDropdown>
+                    </WithStyles(HvBaseDropdown)>
                   </HvLabel>
                 </WithStyles(HvLabel)>
               </div>

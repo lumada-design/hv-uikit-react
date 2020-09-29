@@ -4,12 +4,12 @@ import { validateDate } from "../DatePicker/utils";
 
 export default function useVisibleDate(defaultDate) {
   const [visibleDate, setVisibleDate] = useState(validateDate(defaultDate));
-  const [visibleMonth, setVisibleMonth] = useState(visibleDate?.getUTCMonth() + 1);
-  const [visibleYear, setVisibleYear] = useState(visibleDate?.getUTCFullYear());
+  const [visibleMonth, setVisibleMonth] = useState(visibleDate?.getMonth() + 1);
+  const [visibleYear, setVisibleYear] = useState(visibleDate?.getFullYear());
 
   useEffect(() => {
-    setVisibleMonth(visibleDate?.getUTCMonth() + 1);
-    setVisibleYear(visibleDate?.getUTCFullYear());
+    setVisibleMonth(visibleDate?.getMonth() + 1);
+    setVisibleYear(visibleDate?.getFullYear());
   }, [visibleDate]);
 
   const handleVisibleDateChange = (event, action, index) => {

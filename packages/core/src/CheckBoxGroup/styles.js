@@ -15,7 +15,7 @@ const styles = (theme) => ({
   vertical: {
     flexDirection: "column",
 
-    // prevent the focus ring to be hidden by simbling hover background
+    // prevent the focus ring to be hidden by sibling hover background
     "&>*": {
       zIndex: 0,
     },

@@ -61,19 +61,19 @@ describe("[v3] NodeTreeNavigationUtils", () => {
   };
 
   describe("[v3] getNextNode", () => {
-    it("no childs, should return next simbling", () => {
+    it("no children, should return next sibling", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "B");
 
       expect(foundNodeId).toEqual("C");
     });
 
-    it("with childs but collapsed, should return next simbling", () => {
+    it("with children but collapsed, should return next sibling", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "A");
 
       expect(foundNodeId).toEqual("B");
     });
 
-    it("with childs and expanded, should return first child", () => {
+    it("with children and expanded, should return first child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(
         (nodeId) => nodeId === "A",
         nodeMap,
@@ -83,13 +83,13 @@ describe("[v3] NodeTreeNavigationUtils", () => {
       expect(foundNodeId).toEqual("A1");
     });
 
-    it("if last child, should return parent's next simbling", () => {
+    it("if last child, should return parent's next sibling", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "A3");
 
       expect(foundNodeId).toEqual("B");
     });
 
-    it("if last grandchild, should return grandparent's next simbling", () => {
+    it("if last grandchild, should return grandparent's next sibling", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "A3c");
 
       expect(foundNodeId).toEqual("B");
@@ -107,19 +107,19 @@ describe("[v3] NodeTreeNavigationUtils", () => {
       expect(foundNodeId).toEqual("A");
     });
 
-    it("if previous simbling has no childs, should return it", () => {
+    it("if previous sibling has no children, should return it", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(() => false, nodeMap, "C");
 
       expect(foundNodeId).toEqual("B");
     });
 
-    it("if previous simbling has childs but is collapsed, should return it", () => {
+    it("if previous sibling has children but is collapsed, should return it", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(() => false, nodeMap, "B");
 
       expect(foundNodeId).toEqual("A");
     });
 
-    it("if previous simbling has childs and is expanded, should return its last child", () => {
+    it("if previous sibling has children and is expanded, should return its last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A",
         nodeMap,
@@ -129,7 +129,7 @@ describe("[v3] NodeTreeNavigationUtils", () => {
       expect(foundNodeId).toEqual("A3");
     });
 
-    it("if previous simbling has grandchilds but its last child is collapsed, should return the last child", () => {
+    it("if previous sibling has grandchildren but its last child is collapsed, should return the last child", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A",
         nodeMap,
@@ -139,7 +139,7 @@ describe("[v3] NodeTreeNavigationUtils", () => {
       expect(foundNodeId).toEqual("A3");
     });
 
-    it("if previous simbling has grandchilds and is expanded, should return its last grandchild", () => {
+    it("if previous sibling has grandchildren and is expanded, should return its last grandchild", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A" || nodeId === "A3",
         nodeMap,

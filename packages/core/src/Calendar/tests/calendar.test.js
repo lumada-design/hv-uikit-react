@@ -2,7 +2,6 @@ import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../Provider";
 import { HvComposedNavigation } from "../CalendarNavigation";
-import { makeUTCDate } from "../utils";
 import { HvCalendar } from "..";
 
 describe("v3 <Calendar /> with minimum configuration", () => {
@@ -23,7 +22,7 @@ describe("v3 <Calendar /> with minimum configuration", () => {
 
 describe("v3 <Calendar /> with configurations", () => {
   let wrapper;
-  const selectedDate = makeUTCDate(1970, 1, 1);
+  const selectedDate = new Date(1970, 0, 1);
 
   const handleDateChangeMock = jest.fn();
 

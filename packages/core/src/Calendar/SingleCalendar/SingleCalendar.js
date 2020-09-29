@@ -9,7 +9,7 @@ import { isKeypress, KeyboardCodes, setId } from "../../utils";
 import styles from "./styles";
 import { HvFormElementContext } from "../../Forms/FormElement";
 import { VIEW_MODE } from "../enums";
-import { makeUTCToday, isRange, makeUTCDate } from "../utils";
+import { isRange, isDate } from "../utils";
 import { generateCalendarModel } from "../model";
 import CalendarCell from "../CalendarCell";
 import CalendarHeader from "../CalendarHeader";
@@ -38,17 +38,17 @@ const HvSingleCalendar = ({
   const { descriptors = {} } = useContext(HvFormElementContext);
   const { HvCalendarHeader } = descriptors;
 
-  const today = makeUTCToday();
+  const today = new Date();
   const localValue = isNil(value) ? today : value;
 
   const [calViewMode, setCalViewMode] = useState(VIEW_MODE.CALENDAR);
 
   const rangeMode = isRange(localValue);
-  const isDateSelectionMode = rangeMode && isNil(localValue.endDate);
+  const isDateSelectionMode = rangeMode && !isDate(localValue.endDate);
   const calModel = rangeMode
     ? generateCalendarModel(localValue.startDate, visibleMonth, visibleYear)
     : generateCalendarModel(localValue, visibleMonth, visibleYear);
-  const firstDayOfCurrentMonth = makeUTCDate(calModel.year, calModel.month, 1);
+  const firstDayOfCurrentMonth = new Date(calModel.year, calModel.month - 1, 1);
 
   const handleChange = (event, date) => {
     event?.preventDefault();
@@ -68,7 +68,7 @@ const HvSingleCalendar = ({
     return undefined;
   };
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     // This code is very brittle and should be managed with the focus wrapper
     const el = document?.activeElement;
     const parent = el?.parentElement?.parentElement;
@@ -122,7 +122,7 @@ const HvSingleCalendar = ({
       onChange={onVisibleDateChange}
       onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
       visibleYear={visibleYear || today.getFullYear()}
-      visibleMonth={visibleMonth || today.getMonth()}
+      visibleMonth={visibleMonth || today.getMonth() + 1}
     />
   );
 
@@ -132,7 +132,7 @@ const HvSingleCalendar = ({
       locale={locale}
       onChange={onVisibleDateChange}
       onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
-      visibleMonth={visibleMonth || today.getMonth()}
+      visibleMonth={visibleMonth || today.getMonth() + 1}
       rangeMode={rangeMode}
     />
   );
@@ -177,7 +177,7 @@ HvSingleCalendar.propTypes = {
      */
     calendarWrapper: PropTypes.string,
     /**
-     * Styles applied to the element containing the cells that representes each date.
+     * Styles applied to the element containing the cells that represents each date.
      */
     calendarGrid: PropTypes.string,
     /**

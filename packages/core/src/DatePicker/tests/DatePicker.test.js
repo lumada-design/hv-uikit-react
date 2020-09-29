@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
 import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker } from "../..";
 import SingleCalendar from "../../Calendar/SingleCalendar";
-import { isSameDay, makeUTCDate } from "../../Calendar/utils";
+import { isSameDay } from "../../Calendar/utils";
 
 describe("[v3] <DatePicker /> with minimum configuration", () => {
   let wrapper;
@@ -59,7 +59,7 @@ describe("[v3] <DatePicker /> with Single Calendar mode", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvDatePicker value={makeUTCDate(2019, 1, 1)} locale="en-US" />
+        <HvDatePicker value={new Date(2019, 0, 1)} locale="en-US" />
       </HvProvider>
     );
   });
@@ -92,7 +92,7 @@ describe("[v3] <DatePicker /> with Single Calendar mode", () => {
     wrapper.find(CalendarIcon).simulate("click");
     const calendarInstance = wrapper.find(HvDatePicker);
 
-    const sameDay = isSameDay(calendarInstance.prop("value"), makeUTCDate(2019, 1, 1, 12));
+    const sameDay = isSameDay(calendarInstance.prop("value"), new Date(2019, 0, 1, 12));
     expect(sameDay).toEqual(true);
   });
 });
@@ -106,8 +106,8 @@ describe("[v3] <DatePicker /> with Range Calendar mode", () => {
         <HvDatePicker
           rangeMode
           locale="en-US"
-          startValue={makeUTCDate(2019, 1, 5, 12)}
-          endValue={makeUTCDate(2019, 1, 10, 12)}
+          startValue={new Date(2019, 0, 5, 12)}
+          endValue={new Date(2019, 0, 10, 12)}
         />
       </HvProvider>
     );
@@ -148,7 +148,7 @@ describe("[v3] <DatePicker /> with custom properties", () => {
       <HvProvider>
         <HvDatePicker
           locale="en-US"
-          value={makeUTCDate(2019, 1, 5, 12)}
+          value={new Date(2019, 0, 5, 12)}
           labels={labels}
           horizontalPlacement="left"
           showActions

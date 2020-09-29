@@ -13,8 +13,8 @@ export default class CalendarModel {
   /**
    * Updates the model with the received month and year
    *
-   * @param {number} month - Number of the month.
-   * @param {number} year - Number of the year. *
+   * @param {number} month - Number of the month (1 to 12).
+   * @param {number} year - Number of the year.
    * @memberOf CalendarModel
    */
   updateModel = (month, year) => {

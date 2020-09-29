@@ -37,7 +37,7 @@ const HvCalendarHeader = ({
   const [dateValue, setDateValue] = useState(localValue);
   const [editedValue, setEditedValue] = useState(null);
   const [displayValue, setDisplayValue] = useState("");
-  const [weekDayDisplay, setWeekDayDisplay] = useState("");
+  const [weekdayDisplay, setWeekdayDisplay] = useState("");
 
   const localId = id ?? setId(elementId, "calendarHeader");
   const localLocale = locale ?? elementLocale;
@@ -48,16 +48,16 @@ const HvCalendarHeader = ({
 
   const inputValue = editedValue ?? displayValue;
   const localeFormat = moment.localeData().longDateFormat("L");
-  const isValidValue = !!inputValue && moment.utc(localValue, "L").isValid();
+  const isValidValue = !!inputValue && moment(localValue, "L").isValid();
 
   useEffect(() => {
     setDateValue(localValue);
     if (isValidValue) {
-      setDisplayValue(moment.utc(localValue, "L").format("D MMM YYYY"));
-      setWeekDayDisplay(moment.utc(localValue, "L").format("ddd"));
+      setDisplayValue(moment(localValue, "L").format("D MMM YYYY"));
+      setWeekdayDisplay(moment(localValue, "L").format("ddd"));
     } else {
       setDisplayValue(localValue);
-      setWeekDayDisplay("");
+      setWeekdayDisplay("");
     }
   }, [localValue, isValidValue, localLocale]);
 
@@ -67,7 +67,7 @@ const HvCalendarHeader = ({
       setEditedValue(null);
       return;
     }
-    const dateParsed = moment.utc(editedValue, "L").toDate();
+    const dateParsed = moment(editedValue, "L").toDate();
     if (!isSameDay(dateParsed, dateValue)) {
       setDateValue(dateParsed);
       onChange?.(event, dateParsed);
@@ -78,7 +78,7 @@ const HvCalendarHeader = ({
   const keyDownHandler = (event) => {
     if (!isKeypress(event, Enter) || isNil(editedValue) || editedValue === "") return;
     event.preventDefault();
-    const dateParsed = moment.utc(editedValue, "L").toDate();
+    const dateParsed = moment(editedValue, "L").toDate();
 
     if (!isSameDay(dateParsed, dateValue)) {
       setDateValue(dateParsed);
@@ -88,7 +88,7 @@ const HvCalendarHeader = ({
   };
 
   const onFocusHandler = (event) => {
-    const formattedDate = isValidValue ? moment.utc(localValue).format("L") : localValue;
+    const formattedDate = isValidValue ? moment(localValue).format("L") : localValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);
   };
@@ -105,7 +105,7 @@ const HvCalendarHeader = ({
       })}
     >
       <HvTypography variant="normalText" className={classes.headerDayOfWeek}>
-        {weekDayDisplay || "\u00A0"}
+        {weekdayDisplay || "\u00A0"}
       </HvTypography>
       <div className={classes.headerDate}>
         <input

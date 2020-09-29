@@ -94,7 +94,7 @@ ListView.propTypes = {
   emptyComponent: PropTypes.node,
   /**
    * Configuration used to setup various properties of the view.
-   * This configuration is propagated to the known childs of the asset inventory through context.
+   * This configuration is propagated to the known children of the asset inventory through context.
    */
   viewConfiguration: PropTypes.shape({
     onSelection: PropTypes.func,

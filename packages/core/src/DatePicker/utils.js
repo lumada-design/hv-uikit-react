@@ -6,16 +6,21 @@ import {
   isDate,
   isSameMonth,
   isValidLocale,
-  makeUTCDate,
 } from "../Calendar/utils";
 
-export const getUTCNextMonth = (date = new Date()) =>
-  new Date(date.getUTCFullYear(), date.getUTCMonth() + 1, 1);
-
-export const isVisibleDate = (date, { visibleYear, visibleMonth }) => {
-  const date1 = makeUTCDate(visibleYear, visibleMonth, 1);
-  const date2 = getUTCNextMonth(date1);
-  return isSameMonth(date, date1) || isSameMonth(date, date2);
+/**
+ * Validates if a given date is visible according to the provided visible month and year numbers.
+ *
+ * @param {Date} date The date object to be validated.
+ * @param {Object} visibleDate - The month and year numeric values of a visible date.
+ * @param {number} visibleDate.visibleMonth number The number of the month (1 to 12).
+ * @param {number} visibleDate.visibleYear number The number of the year.
+ * @returns {boolean} `true` if the date is considered visible, `false` otherwise
+ */
+export const isVisibleDate = (date, visibleDate) => {
+  const { visibleYear, visibleMonth } = visibleDate;
+  const date1 = new Date(visibleYear, visibleMonth - 1, 1);
+  return isSameMonth(date, date1);
 };
 
 export const validateDate = (date) => (isDate(date) && date) || new Date();
@@ -25,7 +30,7 @@ export const validateLocale = (locale) => (isValidLocale(locale) ? locale : DEFA
 export const getFormattedDateRange = (date, locale, rep = REPRESENTATION_VALUES.SHORT) => {
   const { startDate, endDate } = date;
   const monthYear = `${getMonthName(startDate, locale, rep)} ${startDate.getFullYear()}`;
-  return `${startDate.getUTCDate()} - ${endDate.getUTCDate()} ${monthYear}`;
+  return `${startDate.getDate()} - ${endDate.getDate()} ${monthYear}`;
 };
 
 export const getSingleDateLabel = (date, locale) =>

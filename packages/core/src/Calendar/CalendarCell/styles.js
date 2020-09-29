@@ -9,6 +9,7 @@ const styles = (theme) => {
       cursor: "pointer",
       border: 0,
       padding: 0,
+      margin: 0,
       backgroundColor: "inherit",
     },
     calendarContainer: {

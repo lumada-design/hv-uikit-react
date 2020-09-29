@@ -262,7 +262,7 @@ export const TimeRepresentation = () => {
     return values;
   };
 
-  const dates = generateDates(200, new Date("2015-02-17"));
+  const dates = generateDates(200, new Date(2015, 1, 17));
   const values = generateValues(dates.length, 200, 8);
 
   const data = [
@@ -309,7 +309,7 @@ export const WithIntervalUpdates = () => {
     return values;
   };
 
-  const date = useRef(new Date("2020-01-01"));
+  const date = useRef(new Date(2020, 1, 1));
   const values = useRef(generateValues(200));
 
   const generateData = () => {

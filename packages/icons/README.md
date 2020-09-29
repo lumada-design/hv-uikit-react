@@ -1,6 +1,6 @@
 # @hv/uikit-react-icons
 
-This package provides the Hitachi Vantara's Design System icons packaged as a set of React components.
+This package provides the Hitachi Vantara Design System icons packaged as a set of React components.
 
 ## Installation
 

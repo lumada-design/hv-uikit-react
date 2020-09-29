@@ -10,7 +10,7 @@ const styles = (theme) => ({
     marginBottom: theme.spacing("xs"),
   },
   selectAllContainer: {
-    // prevent the focus ring to be hidden by simbling hover background
+    // prevent the focus ring to be hidden by sibling hover background
     "&": {
       position: "relative",
       zIndex: 0,

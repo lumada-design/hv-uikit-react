@@ -23,70 +23,23 @@ export const DEFAULT_LOCALE = "en";
 export const zeroPad = (value, length) => `${value}`.padStart(length, "0");
 
 /**
- * Returns the number of days in a month for a given year.
+ * Returns the number of days in the month given a month and year.
  *
- * @param {number} month - Number of the month.
+ * @param {number} month - Number of the month (1 to 12).
  * @param {number} year - Number of the year.
  * @returns {number} The number of days in a month for the received year.
  */
 export const getMonthDays = (month, year) => new Date(year, month, 0).getDate();
 
 /**
- * Gets the year day number for the received date.
+ * Gets the week day of the first day of a given month and year.
  * From 0 (Sunday) to 6 (Saturday).
  *
- * @param {Date} date - Date value.
- * @returns {number} The number of the day of the week (0 to 6).
- */
-export const getWeekdayNumber = (date) => date.getUTCDay();
-
-/**
- * Creates a date in UTC timezone.
- *
- * @param {number} year
- * @param {number} month
- * @param {number} day
- * @returns {Date}
- */
-export const makeUTCDate = (year, month, day = 1) => new Date(Date.UTC(year, month - 1, day, 0));
-
-/**
- * Creates a date in UTC timezone from an ISO string.
- *
- * @param {string} isoStringDate ISO formatted date.
- * @returns {Date}
- */
-export const makeUTCDateFromISOString = (isoStringDate) => new Date(isoStringDate);
-
-/**
- * Creates a new date object with today's date in UTC timezone.
- *
- * @returns {Date}
- */
-export const makeUTCToday = () => {
-  const today = new Date();
-  return makeUTCDate(today.getFullYear(), today.getMonth() + 1, today.getDate());
-};
-
-/**
- * Convert a date from UTC timezone to local timezone.
- *
- * @param utcDate
- * @returns {Date}
- * @constructor
- */
-export const UTCToLocalDate = (utcDate) =>
-  new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate());
-
-/**
- * Returns the first day of the month for a given year.
- * From 0 (Sunday) to 6 (Saturday).
- *
- * @param {number} month - Number of the month.
+ * @param {number} month - Number of the month (1 to 12).
  * @param {number} year - Number of the year.
- * @returns {number} The first day of the month for the received year.
+ * @returns {number} The zero indexed week day where 0 is Sunday (0 to 6).
  */
-export const getMonthFirstDay = (month, year) => getWeekdayNumber(makeUTCDate(year, month, 1));
+export const getMonthFirstWeekday = (month, year) => new Date(year, month - 1, 1).getDay();
 
 /**
  * Checks if the received date is a valid date.
@@ -94,27 +47,8 @@ export const getMonthFirstDay = (month, year) => getWeekdayNumber(makeUTCDate(ye
  * @param {Date} date - The date to be validated.
  * @returns {boolean} A flag stating if the date is valid or not.
  */
-export const isDate = (date) => {
-  const auxIsDate = Object.prototype.toString.call(date) === "[object Date]";
-  const isValidDate = date && !Number.isNaN(date.valueOf());
-
-  return auxIsDate && isValidDate;
-};
-
-/**
- * Checks if the received date is between `1000-01-01` and `9999-12-31`.
- *
- * @param {Date} date - The date to be validated.
- * @returns {boolean} A flag stating if the date is in a valid range or not.
- */
-export const isDateInValidRange = (date) => {
-  if (!isDate(date)) {
-    return false;
-  }
-
-  const year = date.getUTCFullYear();
-  return year >= 1000 && year <= 9999;
-};
+export const isDate = (date) =>
+  Object.prototype.toString.call(date) === "[object Date]" && !Number.isNaN(date.valueOf());
 
 /**
  * Checks if two dates are in the same month and year.
@@ -155,43 +89,9 @@ export const isSameDay = (date1, date2) => {
 export const getDateISO = (date) => {
   if (!isDate(date)) return null;
 
-  return [
-    date.getUTCFullYear(),
-    zeroPad(date.getUTCMonth() + 1, 2),
-    zeroPad(date.getUTCDate(), 2),
-  ].join("-");
-};
-
-/**
- * Checks if a string is a valid ISO formatted date.
- *
- * @param {string} isoStringDate - The string to be checked.
- * @returns {boolean} True if the received string is in a valid ISO format, false otherwise.
- */
-export const isValidISOString = (isoStringDate) => /\d{4}-\d{2}-\d{2}/.test(isoStringDate);
-
-/**
- * Converts a ISO date string ("YYYY-MM-DD") into a new Date.
- * This is needed because when creating a new date in javascript using a ISO date string the timezone applied will
- * always be UTC instead of local time.
- *
- * @param {string} isoStringDate
- * @returns {Date} A new date created based on the ISO string.
- */
-export const convertISOStringDateToDate = (isoStringDate) => {
-  if (isoStringDate !== "" && !isValidISOString(isoStringDate)) {
-    // eslint-disable-next-line no-console
-    console.warn(`The date must be in ISO format (YYYY-MM-DD): ${isoStringDate}`);
-    return null;
-  }
-  const convertedDate = makeUTCDateFromISOString(isoStringDate);
-  if (!isDate(convertedDate) || !isDateInValidRange(convertedDate)) {
-    // eslint-disable-next-line no-console
-    console.warn(`The received date is invalid: ${isoStringDate}`);
-    return null;
-  }
-
-  return convertedDate;
+  return [date.getFullYear(), zeroPad(date.getMonth() + 1, 2), zeroPad(date.getDate(), 2)].join(
+    "-"
+  );
 };
 
 /**
@@ -275,11 +175,7 @@ export const getMonthName = (
   date = new Date(),
   locale,
   representationValue = REPRESENTATION_VALUES.LONG
-) => {
-  const monthIndex = date.getUTCMonth();
-  const auxDate = new Date(1970, monthIndex, 1);
-  return new Intl.DateTimeFormat(locale, { month: representationValue }).format(auxDate);
-};
+) => new Intl.DateTimeFormat(locale, { month: representationValue }).format(date);
 
 /**
  * Formats the received date according to Design System specifications.
@@ -290,19 +186,19 @@ export const getMonthName = (
  * @returns {string} The formatted date as a string.
  */
 export const getFormattedDate = (date, locale, rep = REPRESENTATION_VALUES.SHORT) =>
-  `${date.getUTCDate()} ${getMonthName(date, locale, rep)} ${date.getUTCFullYear()}`;
+  `${date.getDate()} ${getMonthName(date, locale, rep)} ${date.getFullYear()}`;
 /**
  * Creates an array of 42 days. The complete current month and enough days from the previous and next months to fill
  * the 42 positions.
  *
- * @param {number} month - The number of the month.
+ * @param {number} month - The number of the month (1 to 12).
  * @param {number} year - The number of the year.
  * @returns {Array} The array of dates.
  */
 export const createDatesArray = (month, year) => {
   // Initializes the variables needed to calculate the dates for the received month and year
   const monthDays = getMonthDays(month, year);
-  const daysFromPrevMonth = getMonthFirstDay(month, year);
+  const daysFromPrevMonth = getMonthFirstWeekday(month, year);
   const daysFromNextMonth = CALENDAR_WEEKS * 7 - (daysFromPrevMonth + monthDays);
   const prevMonthYear = getPreviousMonth(month, year);
   const nextMonthYear = getNextMonth(month, year);
@@ -311,35 +207,18 @@ export const createDatesArray = (month, year) => {
   // Creates the arrays for the dates for previous, current and next months
   const prevMonthDates = [...new Array(daysFromPrevMonth)].map((n, index) => {
     const day = index + 1 + (prevMonthDays - daysFromPrevMonth);
-    return makeUTCDate(prevMonthYear.year, prevMonthYear.month, day);
+    return new Date(prevMonthYear.year, prevMonthYear.month - 1, day);
   });
   const currentMonthDates = [...new Array(monthDays)].map((n, index) => {
     const day = index + 1;
-    return makeUTCDate(year, month, day);
+    return new Date(year, month - 1, day);
   });
   const nextMonthDates = [...new Array(daysFromNextMonth)].map((n, index) => {
     const day = index + 1;
-    return makeUTCDate(nextMonthYear.year, nextMonthYear.month, day);
+    return new Date(nextMonthYear.year, nextMonthYear.month - 1, day);
   });
 
   return [...prevMonthDates, ...currentMonthDates, ...nextMonthDates];
-};
-
-/**
- * Checks if the visibleDate is valid, if not returns the selectedDate or Today's days if none if is valid.
- *
- * @param {Date} visibleDate - The initial visibleDate value.
- * @param {Date} selectedDate - The selectedDate value.
- * @returns Date The valid date to be used as the visible date
- */
-export const getValidVisibleDate = (visibleDate, selectedDate) => {
-  if (isDate(visibleDate)) {
-    return visibleDate;
-  }
-  if (isDate(selectedDate)) {
-    return selectedDate;
-  }
-  return makeUTCToday();
 };
 
 /**
@@ -366,32 +245,6 @@ export const isValidLocale = (locale) => {
     console.error(error.message);
     return false;
   }
-};
-
-/**
- * Checks if the previous year / month is a valid date.
- *
- * @param {number} year - The year.
- * @param {number} month - The month.
- * @returns {boolean} - True if the previous date is valid, false otherwise.
- */
-export const isPreviousDateValid = (year, month) => {
-  const previousMonthYear = getPreviousMonth(month, year);
-
-  return isDateInValidRange(makeUTCDate(previousMonthYear.year, previousMonthYear.month, 1));
-};
-
-/**
- * Checks if the next year / month is a valid date.
- *
- * @param {number} year - The year.
- * @param {number} month - The month.
- * @returns {boolean} - True if the next date is valid, false otherwise.
- */
-export const isNextDateValid = (year, month) => {
-  const nextMonthYear = getNextMonth(month, year);
-
-  return isDateInValidRange(makeUTCDate(nextMonthYear.year, nextMonthYear.month, 1));
 };
 
 export const isRange = (date) => typeof date === "object" && "startDate" in date;
@@ -424,5 +277,5 @@ export const checkIfDateIsDisabled = (date, minimumDate, maximumDate) => {
 
   const convertedDate = moment(date).format("YYYY-MM-DD");
 
-  return convertedDate <= modStartDate || convertedDate >= modEndDate;
+  return convertedDate < modStartDate || convertedDate > modEndDate;
 };
