@@ -3,8 +3,9 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import React from "react";
 
-import { isKeypress, KeyboardCodes } from "../utils";
 import CellWithTooltip from "./CellWithTooltip";
+
+import HvButton from "../Button";
 
 import { buildLink } from "./addins";
 
@@ -65,24 +66,16 @@ const setHeaderSortableClass = (sortableProp, existingClassNames) =>
 const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand) => {
   const newColumns = columns;
 
-  const onKeyHandler = (event, rowIndex, toggleExpandCallback) => {
-    if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.SpaceBar)) {
-      event.preventDefault();
-      toggleExpandCallback(rowIndex);
-    }
-  };
-
   if (subElementTemplate) {
     newColumns[0].className = clsx(newColumns[0].className, classes.expand);
     // eslint-disable-next-line react/prop-types
     newColumns[0].Cell = ({ isExpanded, ...rest }) => (
       <>
-        <div
+        <HvButton
+          icon
           className={clsx(classes.iconContainer)}
           aria-label="row expander button"
-          role="button"
           tabIndex="0"
-          onKeyDown={(event) => onKeyHandler(event, rest.row._viewIndex, toggleExpand)}
           onClick={() => toggleExpand(rest.row._viewIndex)}
           aria-expanded={isExpanded}
         >
@@ -91,7 +84,7 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
           ) : (
             <Down className={classes.separatorContainer} width="10px" height="10px" />
           )}
-        </div>
+        </HvButton>
 
         <div
           className={clsx(classes.expand, {

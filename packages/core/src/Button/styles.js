@@ -32,6 +32,7 @@ const styles = (theme) => {
       minHeight: "inherit",
       minWidth: "inherit",
       ...theme.hv.typography.highlightText,
+      borderRadius: 0,
     },
 
     primary: {
