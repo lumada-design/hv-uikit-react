@@ -569,8 +569,9 @@ exports[`v3 Input should not have the validation section 1`] = `
                     classes={
                       Object {
                         "defaultIcon": "HvWarningText-defaultIcon",
+                        "hideText": "HvWarningText-hideText",
                         "root": "HvWarningText-root",
-                        "showText": "HvWarningText-showText",
+                        "show": "HvWarningText-show",
                         "topBorder": "HvWarningText-topBorder",
                         "topGutter": "HvWarningText-topGutter",
                         "warningText": "HvWarningText-warningText",
@@ -1292,8 +1293,9 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                     classes={
                       Object {
                         "defaultIcon": "HvWarningText-defaultIcon",
+                        "hideText": "HvWarningText-hideText",
                         "root": "HvWarningText-root",
-                        "showText": "HvWarningText-showText",
+                        "show": "HvWarningText-show",
                         "topBorder": "HvWarningText-topBorder",
                         "topGutter": "HvWarningText-topGutter",
                         "warningText": "HvWarningText-warningText",
@@ -1975,8 +1977,9 @@ exports[`v3 Input should render correctly 1`] = `
                     classes={
                       Object {
                         "defaultIcon": "HvWarningText-defaultIcon",
+                        "hideText": "HvWarningText-hideText",
                         "root": "HvWarningText-root",
-                        "showText": "HvWarningText-showText",
+                        "show": "HvWarningText-show",
                         "topBorder": "HvWarningText-topBorder",
                         "topGutter": "HvWarningText-topGutter",
                         "warningText": "HvWarningText-warningText",

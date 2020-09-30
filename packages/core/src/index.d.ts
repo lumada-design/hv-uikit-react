@@ -122,11 +122,14 @@ export * from "./Radio";
 export { default as HvRadioGroup } from "./RadioGroup";
 export * from "./RadioGroup";
 
-export { default as HvSnackbar } from "./Snackbar";
-export * from "./Snackbar";
+export { default as HvBaseSwitch } from "./BaseSwitch";
+export * from "./BaseSwitch";
 
 export { default as HvSwitch } from "./Switch";
 export * from "./Switch";
+
+export { default as HvSnackbar } from "./Snackbar";
+export * from "./Snackbar";
 
 export { default as HvTab } from "./Tab";
 export * from "./Tab";

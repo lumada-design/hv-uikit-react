@@ -635,8 +635,9 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                               classes={
                                 Object {
                                   "defaultIcon": "HvWarningText-defaultIcon",
+                                  "hideText": "HvWarningText-hideText",
                                   "root": "HvWarningText-root",
-                                  "showText": "HvWarningText-showText",
+                                  "show": "HvWarningText-show",
                                   "topBorder": "HvWarningText-topBorder",
                                   "topGutter": "HvWarningText-topGutter",
                                   "warningText": "HvWarningText-warningText",
@@ -1252,8 +1253,9 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                               classes={
                                 Object {
                                   "defaultIcon": "HvWarningText-defaultIcon",
+                                  "hideText": "HvWarningText-hideText",
                                   "root": "HvWarningText-root",
-                                  "showText": "HvWarningText-showText",
+                                  "show": "HvWarningText-show",
                                   "topBorder": "HvWarningText-topBorder",
                                   "topGutter": "HvWarningText-topGutter",
                                   "warningText": "HvWarningText-warningText",
@@ -1864,8 +1866,9 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                               classes={
                                 Object {
                                   "defaultIcon": "HvWarningText-defaultIcon",
+                                  "hideText": "HvWarningText-hideText",
                                   "root": "HvWarningText-root",
-                                  "showText": "HvWarningText-showText",
+                                  "show": "HvWarningText-show",
                                   "topBorder": "HvWarningText-topBorder",
                                   "topGutter": "HvWarningText-topGutter",
                                   "warningText": "HvWarningText-warningText",

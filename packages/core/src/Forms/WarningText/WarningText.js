@@ -23,6 +23,8 @@ const HvWarningText = (props) => {
     disabled,
     disableGutter = false,
     disableBorder = false,
+    disableAdornment = false,
+    hideText = false,
     ...others
   } = props;
 
@@ -37,22 +39,23 @@ const HvWarningText = (props) => {
   return (
     <div
       className={clsx(className, classes.root, {
-        [classes.showText]: showWarning,
+        [classes.show]: showWarning,
         [classes.topBorder]: !disableBorder,
       })}
     >
-      {localAdornment}
+      {!disableAdornment && localAdornment}
       <HvTypography
         id={setId(localId)}
         className={clsx(classes.warningText, {
           [classes.topGutter]: !disableGutter,
+          [classes.hideText]: hideText,
         })}
         aria-live="polite"
         aria-atomic="true"
         aria-relevant="additions text"
         {...others}
       >
-        {content}
+        {showWarning && content}
       </HvTypography>
     </div>
   );
@@ -90,7 +93,7 @@ HvWarningText.propTypes = {
     /**
      * Styles applied when the text should be shown.
      */
-    showText: PropTypes.string,
+    show: PropTypes.string,
     /**
      * Separation between text and upper element.
      */
@@ -99,6 +102,11 @@ HvWarningText.propTypes = {
      * The top border.
      */
     topBorder: PropTypes.string,
+    /**
+     * Styles applied to the text when the error are is active
+     * but the text is to be not visible.
+     */
+    hideText: PropTypes.string,
     /**
      * IE11 specific styling.
      */
@@ -124,6 +132,14 @@ HvWarningText.propTypes = {
    * If `true` the text won't include the top border.
    */
   disableBorder: PropTypes.bool,
+  /**
+   * If `true` the adornment icon isn't shown.
+   */
+  disableAdornment: PropTypes.bool,
+  /**
+   * If `true` the text isn't shown.
+   */
+  hideText: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvWarningText" })(HvWarningText);

@@ -53,9 +53,11 @@ export { default as HvBaseRadio } from "./BaseRadio";
 export { default as HvRadio } from "./Radio";
 export { default as HvRadioGroup } from "./RadioGroup";
 
+export { default as HvBaseSwitch } from "./BaseSwitch";
+export { default as HvSwitch } from "./Switch";
+
 export { default as HvSnackbar } from "./Snackbar";
 export * from "./Snackbar";
-export { default as HvSwitch } from "./Switch";
 export { default as HvTab } from "./Tab";
 export { default as HvTable } from "./Table";
 export { default as HvTabs } from "./Tabs";

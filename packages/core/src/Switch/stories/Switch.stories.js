@@ -1,21 +1,50 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
-import { HvSwitch } from "../..";
+import { HvSwitch, HvBaseSwitch } from "../..";
 import Typography from "../../Typography";
 import Button from "../../Button";
 
+// eslint-disable-next-line react/prop-types
+const FlexDecorator = ({ children }) => {
+  const useStyles = makeStyles({
+    root: {
+      display: "flex",
+      alignItems: "center",
+      flexWrap: "wrap",
+      "& > *": {
+        margin: "0 10px 5px 0",
+      },
+    },
+  });
+
+  const classes = useStyles();
+
+  return <div className={classes.root}>{children}</div>;
+};
+
 export default {
-  title: "Patterns/Selectors/Switch",
+  title: "Components/Forms/Switch",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvSwitch } from '@hv/uikit-react-core/dist'",
   },
   component: HvSwitch,
+  subcomponents: { HvBaseSwitch },
+  decorators: [
+    (Story) => (
+      <FlexDecorator>
+        <Story />
+      </FlexDecorator>
+    ),
+  ],
 };
 
 export const Main = () => (
-  <HvSwitch checked id="Switch-no-labels" showLabels={false} aria-label="Engine Control" />
+  <>
+    <HvSwitch aria-label="Engine 1" />
+    <HvSwitch defaultChecked aria-label="Engine 2" />
+  </>
 );
 
 Main.story = {
@@ -24,7 +53,63 @@ Main.story = {
   },
 };
 
-export const OnChange = () => {
+export const Disabled = () => (
+  <>
+    <HvSwitch disabled aria-label="Engine 1" />
+    <HvSwitch defaultChecked disabled aria-label="Engine 2" />
+  </>
+);
+
+Disabled.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Disabled switches.",
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
+      ],
+    },
+    v3: true,
+  },
+};
+
+export const ReadOnly = () => (
+  <>
+    <HvSwitch readOnly aria-label="Engine 1" />
+    <HvSwitch defaultChecked readOnly aria-label="Engine 2" />
+  </>
+);
+
+ReadOnly.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Not editable switches.",
+    },
+    v3: true,
+  },
+};
+
+export const Required = () => (
+  <>
+    <HvSwitch required defaultChecked aria-label="Engine 1" />
+  </>
+);
+
+Required.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Required switch. Uncheck to show the error state.",
+    },
+    v3: true,
+  },
+};
+
+export const Controlled = () => {
   const [state, setState] = useState(false);
 
   const useStyles = makeStyles((theme) => ({
@@ -47,66 +132,15 @@ export const OnChange = () => {
 
   return (
     <>
+      <Button onClick={() => setState((prev) => !prev)}>Toggle</Button>
+      <p />
       <HvSwitch
         checked={state}
-        id="Switch-no-labels"
         aria-label="Engine Control"
-        onChange={() => setState(!state)}
+        onChange={(_evt, newChecked) => setState(newChecked)}
       />
       <p />
       <StateString state={state} />
-    </>
-  );
-};
-
-OnChange.story = {
-  parameters: {
-    docs: {
-      storyDescription: "OnChange is called in the labels as in the switch itself.",
-    },
-    v3: true,
-  },
-};
-
-export const WithLabels = () => <HvSwitch />;
-
-WithLabels.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
-export const LabelsDefinition = () => {
-  const labels = {
-    left: "Disconnect",
-    right: "Connect",
-  };
-
-  return <HvSwitch checked={false} labels={labels} aria-label="Server online" />;
-};
-
-LabelsDefinition.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
-export const Disabled = () => <HvSwitch disabled />;
-
-Disabled.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
-export const Controlled = () => {
-  const [checked, setChecked] = useState(false);
-
-  return (
-    <>
-      <Button onClick={() => setChecked((prev) => !prev)}>Toggle</Button>
-      <p />
-      <HvSwitch checked={checked} />
     </>
   );
 };
