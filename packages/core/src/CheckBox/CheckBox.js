@@ -35,6 +35,9 @@ const HvCheckBox = (props) => {
     disabled = false,
 
     label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
 
     checked,
     defaultChecked = false,
@@ -112,6 +115,7 @@ const HvCheckBox = (props) => {
       className={clsx(classes.checkBox)}
       disabled={disabled}
       readOnly={readOnly}
+      required={required}
       onChange={onLocalChange}
       value={value}
       checked={isChecked}
@@ -120,6 +124,9 @@ const HvCheckBox = (props) => {
       inputProps={{
         "aria-invalid": validationState === "invalid" ? true : undefined,
         "aria-errormessage": validationState === "invalid" ? setId(elementId, "error") : undefined,
+        "aria-label": ariaLabel,
+        "aria-labelledby": ariaLabelledBy,
+        "aria-describedby": ariaDescribedBy,
         ...inputProps,
       }}
     />
@@ -219,6 +226,18 @@ HvCheckBox.propTypes = {
    * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
    */
   label: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-labelledby": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
 
   /**
    * Indicates that the form element is disabled.

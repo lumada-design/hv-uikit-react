@@ -25,7 +25,7 @@ export const getSelectorIcons = (classes, options) => {
 /**
  * A Checkbox is a mechanism that allows user to select one or more options.
  *
- * The Base Checkbox is a building block of the Checkbox form element. Don't used unless
+ * The Base Checkbox is a building block of the Checkbox form element. Don't use unless
  * implementing a custom use case not covered by the Checkbox form element.
  */
 const HvBaseCheckbox = (props) => {

@@ -100,9 +100,9 @@ ReadOnly.story = {
 
 export const WithoutLabel = () => (
   <>
-    <HvCheckBox inputProps={{ "aria-label": "Checkbox 1" }} />
-    <HvCheckBox defaultChecked inputProps={{ "aria-label": "Checkbox 2" }} />
-    <HvCheckBox indeterminate inputProps={{ "aria-label": "Checkbox 3" }} />
+    <HvCheckBox aria-label="Checkbox 1" />
+    <HvCheckBox defaultChecked aria-label="Checkbox 2" />
+    <HvCheckBox indeterminate aria-label="Checkbox 3" />
   </>
 );
 
@@ -110,7 +110,7 @@ WithoutLabel.story = {
   parameters: {
     docs: {
       storyDescription:
-        "A checkboxes without labels. The accessible name is provided via the `aria-label` property in `inputProps`.",
+        "Checkboxes without labels. The accessible name is provided via the `aria-label` property.",
     },
     v3: true,
   },

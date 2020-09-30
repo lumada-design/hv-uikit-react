@@ -177,12 +177,16 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         indeterminate={false}
                         inputProps={
                           Object {
+                            "aria-describedby": undefined,
                             "aria-errormessage": undefined,
                             "aria-invalid": undefined,
+                            "aria-label": undefined,
+                            "aria-labelledby": undefined,
                           }
                         }
                         onChange={[Function]}
                         readOnly={false}
+                        required={false}
                         semantic={false}
                         value="on"
                       >
@@ -200,12 +204,16 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           indeterminate={false}
                           inputProps={
                             Object {
+                              "aria-describedby": undefined,
                               "aria-errormessage": undefined,
                               "aria-invalid": undefined,
+                              "aria-label": undefined,
+                              "aria-labelledby": undefined,
                             }
                           }
                           onChange={[Function]}
                           readOnly={false}
+                          required={false}
                           semantic={false}
                           value="on"
                         >
@@ -222,8 +230,11 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             indeterminateIcon={<CheckboxPartial />}
                             inputProps={
                               Object {
+                                "aria-describedby": undefined,
                                 "aria-errormessage": undefined,
                                 "aria-invalid": undefined,
+                                "aria-label": undefined,
+                                "aria-labelledby": undefined,
                               }
                             }
                             onChange={[Function]}
@@ -254,8 +265,11 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               indeterminateIcon={<CheckboxPartial />}
                               inputProps={
                                 Object {
+                                  "aria-describedby": undefined,
                                   "aria-errormessage": undefined,
                                   "aria-invalid": undefined,
+                                  "aria-label": undefined,
+                                  "aria-labelledby": undefined,
                                 }
                               }
                               onChange={[Function]}
@@ -281,8 +295,11 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                 id="bulkActions-select-input"
                                 inputProps={
                                   Object {
+                                    "aria-describedby": undefined,
                                     "aria-errormessage": undefined,
                                     "aria-invalid": undefined,
+                                    "aria-label": undefined,
+                                    "aria-labelledby": undefined,
                                     "data-indeterminate": false,
                                   }
                                 }
@@ -311,8 +328,11 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                   id="bulkActions-select-input"
                                   inputProps={
                                     Object {
+                                      "aria-describedby": undefined,
                                       "aria-errormessage": undefined,
                                       "aria-invalid": undefined,
+                                      "aria-label": undefined,
+                                      "aria-labelledby": undefined,
                                       "data-indeterminate": false,
                                     }
                                   }
@@ -1687,12 +1707,16 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         indeterminate={false}
                         inputProps={
                           Object {
+                            "aria-describedby": undefined,
                             "aria-errormessage": undefined,
                             "aria-invalid": undefined,
+                            "aria-label": undefined,
+                            "aria-labelledby": undefined,
                           }
                         }
                         onChange={[Function]}
                         readOnly={false}
+                        required={false}
                         semantic={false}
                         value="on"
                       >
@@ -1710,12 +1734,16 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           indeterminate={false}
                           inputProps={
                             Object {
+                              "aria-describedby": undefined,
                               "aria-errormessage": undefined,
                               "aria-invalid": undefined,
+                              "aria-label": undefined,
+                              "aria-labelledby": undefined,
                             }
                           }
                           onChange={[Function]}
                           readOnly={false}
+                          required={false}
                           semantic={false}
                           value="on"
                         >
@@ -1732,8 +1760,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             indeterminateIcon={<CheckboxPartial />}
                             inputProps={
                               Object {
+                                "aria-describedby": undefined,
                                 "aria-errormessage": undefined,
                                 "aria-invalid": undefined,
+                                "aria-label": undefined,
+                                "aria-labelledby": undefined,
                               }
                             }
                             onChange={[Function]}
@@ -1764,8 +1795,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               indeterminateIcon={<CheckboxPartial />}
                               inputProps={
                                 Object {
+                                  "aria-describedby": undefined,
                                   "aria-errormessage": undefined,
                                   "aria-invalid": undefined,
+                                  "aria-label": undefined,
+                                  "aria-labelledby": undefined,
                                 }
                               }
                               onChange={[Function]}
@@ -1791,8 +1825,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                 id="hvcheckbox1-input"
                                 inputProps={
                                   Object {
+                                    "aria-describedby": undefined,
                                     "aria-errormessage": undefined,
                                     "aria-invalid": undefined,
+                                    "aria-label": undefined,
+                                    "aria-labelledby": undefined,
                                     "data-indeterminate": false,
                                   }
                                 }
@@ -1821,8 +1858,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                   id="hvcheckbox1-input"
                                   inputProps={
                                     Object {
+                                      "aria-describedby": undefined,
                                       "aria-errormessage": undefined,
                                       "aria-invalid": undefined,
+                                      "aria-label": undefined,
+                                      "aria-labelledby": undefined,
                                       "data-indeterminate": false,
                                     }
                                   }
@@ -3337,12 +3377,16 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                         indeterminate={true}
                         inputProps={
                           Object {
+                            "aria-describedby": undefined,
                             "aria-errormessage": undefined,
                             "aria-invalid": undefined,
+                            "aria-label": undefined,
+                            "aria-labelledby": undefined,
                           }
                         }
                         onChange={[Function]}
                         readOnly={false}
+                        required={false}
                         semantic={true}
                         value="on"
                       >
@@ -3360,12 +3404,16 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                           indeterminate={true}
                           inputProps={
                             Object {
+                              "aria-describedby": undefined,
                               "aria-errormessage": undefined,
                               "aria-invalid": undefined,
+                              "aria-label": undefined,
+                              "aria-labelledby": undefined,
                             }
                           }
                           onChange={[Function]}
                           readOnly={false}
+                          required={false}
                           semantic={true}
                           value="on"
                         >
@@ -3409,8 +3457,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                             }
                             inputProps={
                               Object {
+                                "aria-describedby": undefined,
                                 "aria-errormessage": undefined,
                                 "aria-invalid": undefined,
+                                "aria-label": undefined,
+                                "aria-labelledby": undefined,
                               }
                             }
                             onChange={[Function]}
@@ -3468,8 +3519,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                               }
                               inputProps={
                                 Object {
+                                  "aria-describedby": undefined,
                                   "aria-errormessage": undefined,
                                   "aria-invalid": undefined,
+                                  "aria-label": undefined,
+                                  "aria-labelledby": undefined,
                                 }
                               }
                               onChange={[Function]}
@@ -3513,8 +3567,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                 id="hvcheckbox8-input"
                                 inputProps={
                                   Object {
+                                    "aria-describedby": undefined,
                                     "aria-errormessage": undefined,
                                     "aria-invalid": undefined,
+                                    "aria-label": undefined,
+                                    "aria-labelledby": undefined,
                                     "data-indeterminate": true,
                                   }
                                 }
@@ -3561,8 +3618,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                   id="hvcheckbox8-input"
                                   inputProps={
                                     Object {
+                                      "aria-describedby": undefined,
                                       "aria-errormessage": undefined,
                                       "aria-invalid": undefined,
+                                      "aria-label": undefined,
+                                      "aria-labelledby": undefined,
                                       "data-indeterminate": true,
                                     }
                                   }
@@ -3983,12 +4043,16 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                         indeterminate={true}
                         inputProps={
                           Object {
+                            "aria-describedby": undefined,
                             "aria-errormessage": undefined,
                             "aria-invalid": undefined,
+                            "aria-label": undefined,
+                            "aria-labelledby": undefined,
                           }
                         }
                         onChange={[Function]}
                         readOnly={false}
+                        required={false}
                         semantic={true}
                         value="on"
                       >
@@ -4006,12 +4070,16 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                           indeterminate={true}
                           inputProps={
                             Object {
+                              "aria-describedby": undefined,
                               "aria-errormessage": undefined,
                               "aria-invalid": undefined,
+                              "aria-label": undefined,
+                              "aria-labelledby": undefined,
                             }
                           }
                           onChange={[Function]}
                           readOnly={false}
+                          required={false}
                           semantic={true}
                           value="on"
                         >
@@ -4055,8 +4123,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                             }
                             inputProps={
                               Object {
+                                "aria-describedby": undefined,
                                 "aria-errormessage": undefined,
                                 "aria-invalid": undefined,
+                                "aria-label": undefined,
+                                "aria-labelledby": undefined,
                               }
                             }
                             onChange={[Function]}
@@ -4114,8 +4185,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                               }
                               inputProps={
                                 Object {
+                                  "aria-describedby": undefined,
                                   "aria-errormessage": undefined,
                                   "aria-invalid": undefined,
+                                  "aria-label": undefined,
+                                  "aria-labelledby": undefined,
                                 }
                               }
                               onChange={[Function]}
@@ -4159,8 +4233,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                 id="hvcheckbox4-input"
                                 inputProps={
                                   Object {
+                                    "aria-describedby": undefined,
                                     "aria-errormessage": undefined,
                                     "aria-invalid": undefined,
+                                    "aria-label": undefined,
+                                    "aria-labelledby": undefined,
                                     "data-indeterminate": true,
                                   }
                                 }
@@ -4207,8 +4284,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                   id="hvcheckbox4-input"
                                   inputProps={
                                     Object {
+                                      "aria-describedby": undefined,
                                       "aria-errormessage": undefined,
                                       "aria-invalid": undefined,
+                                      "aria-label": undefined,
+                                      "aria-labelledby": undefined,
                                       "data-indeterminate": true,
                                     }
                                   }

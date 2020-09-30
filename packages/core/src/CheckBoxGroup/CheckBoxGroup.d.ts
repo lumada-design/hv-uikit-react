@@ -21,7 +21,7 @@ export interface HvCheckBoxGroupProps
 
   /**
    * The form element name.
-   * It is propagated for the children checkboxes, unless they already have one.
+   * It is propagated to the children checkboxes, unless they already have one.
    */
   name?: string;
   /**
@@ -53,12 +53,12 @@ export interface HvCheckBoxGroupProps
 
   /**
    * Indicates that the form element is disabled.
-   * If `true` the state is propagated for the children checkboxes.
+   * If `true` the state is propagated to the children checkboxes.
    */
   disabled?: boolean;
   /**
    * Indicates that the form element is not editable.
-   * If `true` the state is propagated for the children checkboxes.
+   * If `true` the state is propagated to the children checkboxes.
    */
   readOnly?: boolean;
   /**
@@ -104,7 +104,7 @@ export interface HvCheckBoxGroupProps
    * The checkboxes that are part of the group.
    *
    * Their state will always be controlled by the group.
-   * However the individual checkbox onChange callback will still be called be defined.
+   * However the individual checkbox onChange callback will still be called if defined.
    */
   children: React.ReactNode;
 }

@@ -12,6 +12,12 @@ const styles = (theme) => ({
         ...outlineStyles,
       },
     },
+    // IE fallback code (using focus-within-polyfill)
+    "&.focus-within": {
+      "& svg": {
+        ...outlineStyles,
+      },
+    },
   },
   disabled: {
     // ensure more specificity than .MuiButtonBase-root.Mui-disabled and .MuiIconButton-root.Mui-disabled

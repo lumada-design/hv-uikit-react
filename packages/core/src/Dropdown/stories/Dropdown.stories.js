@@ -167,12 +167,14 @@ export const SingleSelectionNoSelection = () => (
   />
 );
 
-SingleSelectionNoSelection.parameters = {
-  pa11y: {
-    ignore: ["region"],
+SingleSelectionNoSelection.story = {
+  parameters: {
+    pa11y: {
+      ignore: ["region"],
+    },
+    v3: true,
+    eyes: { include: false },
   },
-  v3: true,
-  eyes: { include: false },
 };
 
 export const DifferentSizeAndPlacements = () => {
