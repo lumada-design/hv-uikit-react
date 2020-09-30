@@ -19,8 +19,10 @@ export const Main = () => (
   </HvCheckBoxGroup>
 );
 
-Main.parameters = {
-  v3: true,
+Main.story = {
+  parameters: {
+    v3: true,
+  },
 };
 
 export const Horizontal = () => (
@@ -35,13 +37,15 @@ export const Horizontal = () => (
   </HvCheckBoxGroup>
 );
 
-Horizontal.parameters = {
-  docs: {
-    description: {
-      story: "Layout checkboxes horizontally.",
+Horizontal.story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Layout checkboxes horizontally.",
+      },
     },
+    v3: true,
   },
-  v3: true,
 };
 
 export const Disabled = () => (
@@ -57,22 +61,24 @@ export const Disabled = () => (
   </HvCheckBoxGroup>
 );
 
-Disabled.parameters = {
-  docs: {
-    description: {
-      story: "Disabled checkbox group.",
+Disabled.story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Disabled checkbox group.",
+      },
     },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
+      ],
+    },
+    v3: true,
   },
-  pa11y: {
-    ignore: [
-      "region",
-      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-      "color-contrast",
-    ],
-  },
-  v3: true,
 };
 
 export const ReadOnly = () => (
@@ -83,13 +89,15 @@ export const ReadOnly = () => (
   </HvCheckBoxGroup>
 );
 
-ReadOnly.parameters = {
-  docs: {
-    description: {
-      story: "Not editable checkbox group.",
+ReadOnly.story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Not editable checkbox group.",
+      },
     },
+    v3: true,
   },
-  v3: true,
 };
 
 export const WithoutLabel = () => (
@@ -100,14 +108,16 @@ export const WithoutLabel = () => (
   </HvCheckBoxGroup>
 );
 
-WithoutLabel.parameters = {
-  docs: {
-    description: {
-      story:
-        "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
+WithoutLabel.story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
+      },
     },
+    v3: true,
   },
-  v3: true,
 };
 
 export const Required = () => (
@@ -120,13 +130,15 @@ export const Required = () => (
   </>
 );
 
-Required.parameters = {
-  docs: {
-    description: {
-      story: "Required checkbox group. Uncheck all checkboxes to show default error message.",
+Required.story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Required checkbox group. Uncheck all checkboxes to show default error message.",
+      },
     },
+    v3: true,
   },
-  v3: true,
 };
 
 export const Controlled = () => {
@@ -151,13 +163,15 @@ export const Controlled = () => {
   );
 };
 
-Controlled.parameters = {
-  docs: {
-    description: {
-      story: "Controlled checkbox group.",
+Controlled.story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Controlled checkbox group.",
+      },
     },
+    v3: true,
   },
-  v3: true,
 };
 
 export const ErrorMessage = () => (
@@ -168,13 +182,15 @@ export const ErrorMessage = () => (
   </HvCheckBoxGroup>
 );
 
-ErrorMessage.parameters = {
-  pa11y: {
-    ignore: [
-      "region",
-      // aria-errormessage value is being reported as invalid, but the references an existing ID
-      "aria-valid-attr-value",
-    ],
+ErrorMessage.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // aria-errormessage value is being reported as invalid, but the references an existing ID
+        "aria-valid-attr-value",
+      ],
+    },
+    v3: true,
   },
-  v3: true,
 };

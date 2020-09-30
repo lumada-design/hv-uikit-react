@@ -104,8 +104,6 @@ export * from "./Provider";
 export { default as HvSearchBox } from "./SearchBox";
 export * from "./SearchBox";
 
-export * from "./Selectors";
-
 export { default as HvBaseCheckBox } from "./BaseCheckBox";
 export * from "./BaseCheckBox";
 
@@ -115,11 +113,23 @@ export * from "./CheckBox";
 export { default as HvCheckBoxGroup } from "./CheckBoxGroup";
 export * from "./CheckBoxGroup";
 
-export { default as HvSnackbar } from "./Snackbar";
-export * from "./Snackbar";
+export { default as HvBaseRadio } from "./BaseRadio";
+export * from "./BaseRadio";
+
+export { default as HvRadio } from "./Radio";
+export * from "./Radio";
+
+export { default as HvRadioGroup } from "./RadioGroup";
+export * from "./RadioGroup";
+
+export { default as HvBaseSwitch } from "./BaseSwitch";
+export * from "./BaseSwitch";
 
 export { default as HvSwitch } from "./Switch";
 export * from "./Switch";
+
+export { default as HvSnackbar } from "./Snackbar";
+export * from "./Snackbar";
 
 export { default as HvTab } from "./Tab";
 export * from "./Tab";

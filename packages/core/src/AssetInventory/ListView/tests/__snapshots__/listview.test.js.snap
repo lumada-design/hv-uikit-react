@@ -633,7 +633,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
@@ -799,7 +799,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
@@ -965,7 +965,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
@@ -1281,7 +1281,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
@@ -1447,7 +1447,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
@@ -1613,7 +1613,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
@@ -2158,7 +2158,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                       >
                                                         <span
                                                           aria-disabled="false"
-                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                         >
                                                           <span
                                                             class="MuiIconButton-label"
@@ -2324,7 +2324,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                       >
                                                         <span
                                                           aria-disabled="false"
-                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                         >
                                                           <span
                                                             class="MuiIconButton-label"
@@ -2490,7 +2490,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                       >
                                                         <span
                                                           aria-disabled="false"
-                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                         >
                                                           <span
                                                             class="MuiIconButton-label"
@@ -2839,7 +2839,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
@@ -3005,7 +3005,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
@@ -3171,7 +3171,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
@@ -3554,7 +3554,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -3720,7 +3720,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -3886,7 +3886,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -4166,7 +4166,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -4332,7 +4332,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -4498,7 +4498,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -4697,9 +4697,10 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           className="HvListViewRow-checkboxPlacement"
                                                           classes={
                                                             Object {
-                                                              "checkBox": "HvCheckBox-checkBox",
+                                                              "checkbox": "HvCheckBox-checkbox",
                                                               "container": "HvCheckBox-container",
                                                               "disabled": "HvCheckBox-disabled",
+                                                              "focusVisible": "HvCheckBox-focusVisible",
                                                               "label": "HvCheckBox-label",
                                                               "root": "HvCheckBox-root",
                                                             }
@@ -4756,28 +4757,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                 >
                                                                   <WithStyles(HvBaseCheckbox)
                                                                     checked={false}
-                                                                    className="HvCheckBox-checkBox"
+                                                                    className="HvCheckBox-checkbox"
                                                                     disabled={false}
                                                                     id={null}
                                                                     indeterminate={false}
                                                                     inputProps={
                                                                       Object {
+                                                                        "aria-describedby": undefined,
                                                                         "aria-errormessage": undefined,
                                                                         "aria-invalid": undefined,
                                                                         "aria-label": "Select Asset 11",
+                                                                        "aria-labelledby": undefined,
                                                                       }
                                                                     }
+                                                                    onBlur={[Function]}
                                                                     onChange={[Function]}
+                                                                    onFocusVisible={[Function]}
                                                                     readOnly={false}
+                                                                    required={false}
                                                                     semantic={false}
                                                                     value="1"
                                                                   >
                                                                     <HvBaseCheckbox
                                                                       checked={false}
-                                                                      className="HvCheckBox-checkBox"
+                                                                      className="HvCheckBox-checkbox"
                                                                       classes={
                                                                         Object {
                                                                           "disabled": "HvBaseCheckbox-disabled",
+                                                                          "focusVisible": "HvBaseCheckbox-focusVisible",
                                                                           "root": "HvBaseCheckbox-root",
                                                                         }
                                                                       }
@@ -4786,20 +4793,25 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                       indeterminate={false}
                                                                       inputProps={
                                                                         Object {
+                                                                          "aria-describedby": undefined,
                                                                           "aria-errormessage": undefined,
                                                                           "aria-invalid": undefined,
                                                                           "aria-label": "Select Asset 11",
+                                                                          "aria-labelledby": undefined,
                                                                         }
                                                                       }
+                                                                      onBlur={[Function]}
                                                                       onChange={[Function]}
+                                                                      onFocusVisible={[Function]}
                                                                       readOnly={false}
+                                                                      required={false}
                                                                       semantic={false}
                                                                       value="1"
                                                                     >
                                                                       <WithStyles(ForwardRef(Checkbox))
                                                                         checked={false}
                                                                         checkedIcon={<CheckboxCheck />}
-                                                                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                         color="default"
                                                                         disableRipple={true}
                                                                         disabled={false}
@@ -4809,12 +4821,16 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         indeterminateIcon={<CheckboxPartial />}
                                                                         inputProps={
                                                                           Object {
+                                                                            "aria-describedby": undefined,
                                                                             "aria-errormessage": undefined,
                                                                             "aria-invalid": undefined,
                                                                             "aria-label": "Select Asset 11",
+                                                                            "aria-labelledby": undefined,
                                                                           }
                                                                         }
+                                                                        onBlur={[Function]}
                                                                         onChange={[Function]}
+                                                                        onFocusVisible={[Function]}
                                                                         readOnly={false}
                                                                         required={false}
                                                                         value="1"
@@ -4822,7 +4838,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         <ForwardRef(Checkbox)
                                                                           checked={false}
                                                                           checkedIcon={<CheckboxCheck />}
-                                                                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                          className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                           classes={
                                                                             Object {
                                                                               "checked": "Mui-checked",
@@ -4842,12 +4858,16 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           indeterminateIcon={<CheckboxPartial />}
                                                                           inputProps={
                                                                             Object {
+                                                                              "aria-describedby": undefined,
                                                                               "aria-errormessage": undefined,
                                                                               "aria-invalid": undefined,
                                                                               "aria-label": "Select Asset 11",
+                                                                              "aria-labelledby": undefined,
                                                                             }
                                                                           }
+                                                                          onBlur={[Function]}
                                                                           onChange={[Function]}
+                                                                          onFocusVisible={[Function]}
                                                                           readOnly={false}
                                                                           required={false}
                                                                           value="1"
@@ -4855,7 +4875,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           <WithStyles(ForwardRef(SwitchBase))
                                                                             checked={false}
                                                                             checkedIcon={<CheckboxCheck />}
-                                                                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                             classes={
                                                                               Object {
                                                                                 "checked": "Mui-checked",
@@ -4870,13 +4890,17 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             id={null}
                                                                             inputProps={
                                                                               Object {
+                                                                                "aria-describedby": undefined,
                                                                                 "aria-errormessage": undefined,
                                                                                 "aria-invalid": undefined,
                                                                                 "aria-label": "Select Asset 11",
+                                                                                "aria-labelledby": undefined,
                                                                                 "data-indeterminate": false,
                                                                               }
                                                                             }
+                                                                            onBlur={[Function]}
                                                                             onChange={[Function]}
+                                                                            onFocusVisible={[Function]}
                                                                             readOnly={false}
                                                                             required={false}
                                                                             type="checkbox"
@@ -4885,7 +4909,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             <ForwardRef(SwitchBase)
                                                                               checked={false}
                                                                               checkedIcon={<CheckboxCheck />}
-                                                                              className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                              className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                               classes={
                                                                                 Object {
                                                                                   "checked": "PrivateSwitchBase-checked-4 Mui-checked",
@@ -4901,30 +4925,35 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                               id={null}
                                                                               inputProps={
                                                                                 Object {
+                                                                                  "aria-describedby": undefined,
                                                                                   "aria-errormessage": undefined,
                                                                                   "aria-invalid": undefined,
                                                                                   "aria-label": "Select Asset 11",
+                                                                                  "aria-labelledby": undefined,
                                                                                   "data-indeterminate": false,
                                                                                 }
                                                                               }
+                                                                              onBlur={[Function]}
                                                                               onChange={[Function]}
+                                                                              onFocusVisible={[Function]}
                                                                               readOnly={false}
                                                                               required={false}
                                                                               type="checkbox"
                                                                               value="1"
                                                                             >
                                                                               <WithStyles(ForwardRef(IconButton))
-                                                                                className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                 color="default"
                                                                                 component="span"
                                                                                 disableRipple={true}
                                                                                 disabled={false}
                                                                                 onBlur={[Function]}
                                                                                 onFocus={[Function]}
+                                                                                onFocusVisible={[Function]}
                                                                                 tabIndex={null}
                                                                               >
                                                                                 <ForwardRef(IconButton)
-                                                                                  className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                  className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                   classes={
                                                                                     Object {
                                                                                       "colorInherit": "MuiIconButton-colorInherit",
@@ -4944,22 +4973,24 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                   disabled={false}
                                                                                   onBlur={[Function]}
                                                                                   onFocus={[Function]}
+                                                                                  onFocusVisible={[Function]}
                                                                                   tabIndex={null}
                                                                                 >
                                                                                   <WithStyles(ForwardRef(ButtonBase))
                                                                                     centerRipple={true}
-                                                                                    className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                    className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                     component="span"
                                                                                     disableRipple={true}
                                                                                     disabled={false}
                                                                                     focusRipple={true}
                                                                                     onBlur={[Function]}
                                                                                     onFocus={[Function]}
+                                                                                    onFocusVisible={[Function]}
                                                                                     tabIndex={null}
                                                                                   >
                                                                                     <ForwardRef(ButtonBase)
                                                                                       centerRipple={true}
-                                                                                      className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                      className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                       classes={
                                                                                         Object {
                                                                                           "disabled": "Mui-disabled",
@@ -4973,11 +5004,12 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                       focusRipple={true}
                                                                                       onBlur={[Function]}
                                                                                       onFocus={[Function]}
+                                                                                      onFocusVisible={[Function]}
                                                                                       tabIndex={null}
                                                                                     >
                                                                                       <span
                                                                                         aria-disabled={false}
-                                                                                        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                         onBlur={[Function]}
                                                                                         onDragLeave={[Function]}
                                                                                         onFocus={[Function]}
@@ -6162,7 +6194,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -6328,7 +6360,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -6494,7 +6526,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -6774,7 +6806,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -6940,7 +6972,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -7106,7 +7138,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -7305,9 +7337,10 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           className="HvListViewRow-checkboxPlacement"
                                                           classes={
                                                             Object {
-                                                              "checkBox": "HvCheckBox-checkBox",
+                                                              "checkbox": "HvCheckBox-checkbox",
                                                               "container": "HvCheckBox-container",
                                                               "disabled": "HvCheckBox-disabled",
+                                                              "focusVisible": "HvCheckBox-focusVisible",
                                                               "label": "HvCheckBox-label",
                                                               "root": "HvCheckBox-root",
                                                             }
@@ -7364,28 +7397,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                 >
                                                                   <WithStyles(HvBaseCheckbox)
                                                                     checked={false}
-                                                                    className="HvCheckBox-checkBox"
+                                                                    className="HvCheckBox-checkbox"
                                                                     disabled={false}
                                                                     id={null}
                                                                     indeterminate={false}
                                                                     inputProps={
                                                                       Object {
+                                                                        "aria-describedby": undefined,
                                                                         "aria-errormessage": undefined,
                                                                         "aria-invalid": undefined,
                                                                         "aria-label": "Select Asset 21",
+                                                                        "aria-labelledby": undefined,
                                                                       }
                                                                     }
+                                                                    onBlur={[Function]}
                                                                     onChange={[Function]}
+                                                                    onFocusVisible={[Function]}
                                                                     readOnly={false}
+                                                                    required={false}
                                                                     semantic={false}
                                                                     value="2"
                                                                   >
                                                                     <HvBaseCheckbox
                                                                       checked={false}
-                                                                      className="HvCheckBox-checkBox"
+                                                                      className="HvCheckBox-checkbox"
                                                                       classes={
                                                                         Object {
                                                                           "disabled": "HvBaseCheckbox-disabled",
+                                                                          "focusVisible": "HvBaseCheckbox-focusVisible",
                                                                           "root": "HvBaseCheckbox-root",
                                                                         }
                                                                       }
@@ -7394,20 +7433,25 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                       indeterminate={false}
                                                                       inputProps={
                                                                         Object {
+                                                                          "aria-describedby": undefined,
                                                                           "aria-errormessage": undefined,
                                                                           "aria-invalid": undefined,
                                                                           "aria-label": "Select Asset 21",
+                                                                          "aria-labelledby": undefined,
                                                                         }
                                                                       }
+                                                                      onBlur={[Function]}
                                                                       onChange={[Function]}
+                                                                      onFocusVisible={[Function]}
                                                                       readOnly={false}
+                                                                      required={false}
                                                                       semantic={false}
                                                                       value="2"
                                                                     >
                                                                       <WithStyles(ForwardRef(Checkbox))
                                                                         checked={false}
                                                                         checkedIcon={<CheckboxCheck />}
-                                                                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                         color="default"
                                                                         disableRipple={true}
                                                                         disabled={false}
@@ -7417,12 +7461,16 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         indeterminateIcon={<CheckboxPartial />}
                                                                         inputProps={
                                                                           Object {
+                                                                            "aria-describedby": undefined,
                                                                             "aria-errormessage": undefined,
                                                                             "aria-invalid": undefined,
                                                                             "aria-label": "Select Asset 21",
+                                                                            "aria-labelledby": undefined,
                                                                           }
                                                                         }
+                                                                        onBlur={[Function]}
                                                                         onChange={[Function]}
+                                                                        onFocusVisible={[Function]}
                                                                         readOnly={false}
                                                                         required={false}
                                                                         value="2"
@@ -7430,7 +7478,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         <ForwardRef(Checkbox)
                                                                           checked={false}
                                                                           checkedIcon={<CheckboxCheck />}
-                                                                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                          className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                           classes={
                                                                             Object {
                                                                               "checked": "Mui-checked",
@@ -7450,12 +7498,16 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           indeterminateIcon={<CheckboxPartial />}
                                                                           inputProps={
                                                                             Object {
+                                                                              "aria-describedby": undefined,
                                                                               "aria-errormessage": undefined,
                                                                               "aria-invalid": undefined,
                                                                               "aria-label": "Select Asset 21",
+                                                                              "aria-labelledby": undefined,
                                                                             }
                                                                           }
+                                                                          onBlur={[Function]}
                                                                           onChange={[Function]}
+                                                                          onFocusVisible={[Function]}
                                                                           readOnly={false}
                                                                           required={false}
                                                                           value="2"
@@ -7463,7 +7515,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           <WithStyles(ForwardRef(SwitchBase))
                                                                             checked={false}
                                                                             checkedIcon={<CheckboxCheck />}
-                                                                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                             classes={
                                                                               Object {
                                                                                 "checked": "Mui-checked",
@@ -7478,13 +7530,17 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             id={null}
                                                                             inputProps={
                                                                               Object {
+                                                                                "aria-describedby": undefined,
                                                                                 "aria-errormessage": undefined,
                                                                                 "aria-invalid": undefined,
                                                                                 "aria-label": "Select Asset 21",
+                                                                                "aria-labelledby": undefined,
                                                                                 "data-indeterminate": false,
                                                                               }
                                                                             }
+                                                                            onBlur={[Function]}
                                                                             onChange={[Function]}
+                                                                            onFocusVisible={[Function]}
                                                                             readOnly={false}
                                                                             required={false}
                                                                             type="checkbox"
@@ -7493,7 +7549,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             <ForwardRef(SwitchBase)
                                                                               checked={false}
                                                                               checkedIcon={<CheckboxCheck />}
-                                                                              className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                              className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                               classes={
                                                                                 Object {
                                                                                   "checked": "PrivateSwitchBase-checked-4 Mui-checked",
@@ -7509,30 +7565,35 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                               id={null}
                                                                               inputProps={
                                                                                 Object {
+                                                                                  "aria-describedby": undefined,
                                                                                   "aria-errormessage": undefined,
                                                                                   "aria-invalid": undefined,
                                                                                   "aria-label": "Select Asset 21",
+                                                                                  "aria-labelledby": undefined,
                                                                                   "data-indeterminate": false,
                                                                                 }
                                                                               }
+                                                                              onBlur={[Function]}
                                                                               onChange={[Function]}
+                                                                              onFocusVisible={[Function]}
                                                                               readOnly={false}
                                                                               required={false}
                                                                               type="checkbox"
                                                                               value="2"
                                                                             >
                                                                               <WithStyles(ForwardRef(IconButton))
-                                                                                className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                 color="default"
                                                                                 component="span"
                                                                                 disableRipple={true}
                                                                                 disabled={false}
                                                                                 onBlur={[Function]}
                                                                                 onFocus={[Function]}
+                                                                                onFocusVisible={[Function]}
                                                                                 tabIndex={null}
                                                                               >
                                                                                 <ForwardRef(IconButton)
-                                                                                  className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                  className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                   classes={
                                                                                     Object {
                                                                                       "colorInherit": "MuiIconButton-colorInherit",
@@ -7552,22 +7613,24 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                   disabled={false}
                                                                                   onBlur={[Function]}
                                                                                   onFocus={[Function]}
+                                                                                  onFocusVisible={[Function]}
                                                                                   tabIndex={null}
                                                                                 >
                                                                                   <WithStyles(ForwardRef(ButtonBase))
                                                                                     centerRipple={true}
-                                                                                    className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                    className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                     component="span"
                                                                                     disableRipple={true}
                                                                                     disabled={false}
                                                                                     focusRipple={true}
                                                                                     onBlur={[Function]}
                                                                                     onFocus={[Function]}
+                                                                                    onFocusVisible={[Function]}
                                                                                     tabIndex={null}
                                                                                   >
                                                                                     <ForwardRef(ButtonBase)
                                                                                       centerRipple={true}
-                                                                                      className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                      className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                       classes={
                                                                                         Object {
                                                                                           "disabled": "Mui-disabled",
@@ -7581,11 +7644,12 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                       focusRipple={true}
                                                                                       onBlur={[Function]}
                                                                                       onFocus={[Function]}
+                                                                                      onFocusVisible={[Function]}
                                                                                       tabIndex={null}
                                                                                     >
                                                                                       <span
                                                                                         aria-disabled={false}
-                                                                                        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                         onBlur={[Function]}
                                                                                         onDragLeave={[Function]}
                                                                                         onFocus={[Function]}
@@ -8770,7 +8834,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -8936,7 +9000,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -9102,7 +9166,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
@@ -9382,7 +9446,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -9548,7 +9612,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -9714,7 +9778,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
@@ -9913,9 +9977,10 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           className="HvListViewRow-checkboxPlacement"
                                                           classes={
                                                             Object {
-                                                              "checkBox": "HvCheckBox-checkBox",
+                                                              "checkbox": "HvCheckBox-checkbox",
                                                               "container": "HvCheckBox-container",
                                                               "disabled": "HvCheckBox-disabled",
+                                                              "focusVisible": "HvCheckBox-focusVisible",
                                                               "label": "HvCheckBox-label",
                                                               "root": "HvCheckBox-root",
                                                             }
@@ -9972,28 +10037,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                 >
                                                                   <WithStyles(HvBaseCheckbox)
                                                                     checked={false}
-                                                                    className="HvCheckBox-checkBox"
+                                                                    className="HvCheckBox-checkbox"
                                                                     disabled={false}
                                                                     id={null}
                                                                     indeterminate={false}
                                                                     inputProps={
                                                                       Object {
+                                                                        "aria-describedby": undefined,
                                                                         "aria-errormessage": undefined,
                                                                         "aria-invalid": undefined,
                                                                         "aria-label": "Select Asset 31",
+                                                                        "aria-labelledby": undefined,
                                                                       }
                                                                     }
+                                                                    onBlur={[Function]}
                                                                     onChange={[Function]}
+                                                                    onFocusVisible={[Function]}
                                                                     readOnly={false}
+                                                                    required={false}
                                                                     semantic={false}
                                                                     value="3"
                                                                   >
                                                                     <HvBaseCheckbox
                                                                       checked={false}
-                                                                      className="HvCheckBox-checkBox"
+                                                                      className="HvCheckBox-checkbox"
                                                                       classes={
                                                                         Object {
                                                                           "disabled": "HvBaseCheckbox-disabled",
+                                                                          "focusVisible": "HvBaseCheckbox-focusVisible",
                                                                           "root": "HvBaseCheckbox-root",
                                                                         }
                                                                       }
@@ -10002,20 +10073,25 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                       indeterminate={false}
                                                                       inputProps={
                                                                         Object {
+                                                                          "aria-describedby": undefined,
                                                                           "aria-errormessage": undefined,
                                                                           "aria-invalid": undefined,
                                                                           "aria-label": "Select Asset 31",
+                                                                          "aria-labelledby": undefined,
                                                                         }
                                                                       }
+                                                                      onBlur={[Function]}
                                                                       onChange={[Function]}
+                                                                      onFocusVisible={[Function]}
                                                                       readOnly={false}
+                                                                      required={false}
                                                                       semantic={false}
                                                                       value="3"
                                                                     >
                                                                       <WithStyles(ForwardRef(Checkbox))
                                                                         checked={false}
                                                                         checkedIcon={<CheckboxCheck />}
-                                                                        className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                        className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                         color="default"
                                                                         disableRipple={true}
                                                                         disabled={false}
@@ -10025,12 +10101,16 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         indeterminateIcon={<CheckboxPartial />}
                                                                         inputProps={
                                                                           Object {
+                                                                            "aria-describedby": undefined,
                                                                             "aria-errormessage": undefined,
                                                                             "aria-invalid": undefined,
                                                                             "aria-label": "Select Asset 31",
+                                                                            "aria-labelledby": undefined,
                                                                           }
                                                                         }
+                                                                        onBlur={[Function]}
                                                                         onChange={[Function]}
+                                                                        onFocusVisible={[Function]}
                                                                         readOnly={false}
                                                                         required={false}
                                                                         value="3"
@@ -10038,7 +10118,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                         <ForwardRef(Checkbox)
                                                                           checked={false}
                                                                           checkedIcon={<CheckboxCheck />}
-                                                                          className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                          className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                           classes={
                                                                             Object {
                                                                               "checked": "Mui-checked",
@@ -10058,12 +10138,16 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           indeterminateIcon={<CheckboxPartial />}
                                                                           inputProps={
                                                                             Object {
+                                                                              "aria-describedby": undefined,
                                                                               "aria-errormessage": undefined,
                                                                               "aria-invalid": undefined,
                                                                               "aria-label": "Select Asset 31",
+                                                                              "aria-labelledby": undefined,
                                                                             }
                                                                           }
+                                                                          onBlur={[Function]}
                                                                           onChange={[Function]}
+                                                                          onFocusVisible={[Function]}
                                                                           readOnly={false}
                                                                           required={false}
                                                                           value="3"
@@ -10071,7 +10155,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                           <WithStyles(ForwardRef(SwitchBase))
                                                                             checked={false}
                                                                             checkedIcon={<CheckboxCheck />}
-                                                                            className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                            className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                             classes={
                                                                               Object {
                                                                                 "checked": "Mui-checked",
@@ -10086,13 +10170,17 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             id={null}
                                                                             inputProps={
                                                                               Object {
+                                                                                "aria-describedby": undefined,
                                                                                 "aria-errormessage": undefined,
                                                                                 "aria-invalid": undefined,
                                                                                 "aria-label": "Select Asset 31",
+                                                                                "aria-labelledby": undefined,
                                                                                 "data-indeterminate": false,
                                                                               }
                                                                             }
+                                                                            onBlur={[Function]}
                                                                             onChange={[Function]}
+                                                                            onFocusVisible={[Function]}
                                                                             readOnly={false}
                                                                             required={false}
                                                                             type="checkbox"
@@ -10101,7 +10189,7 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                             <ForwardRef(SwitchBase)
                                                                               checked={false}
                                                                               checkedIcon={<CheckboxCheck />}
-                                                                              className="HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                              className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                               classes={
                                                                                 Object {
                                                                                   "checked": "PrivateSwitchBase-checked-4 Mui-checked",
@@ -10117,30 +10205,35 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                               id={null}
                                                                               inputProps={
                                                                                 Object {
+                                                                                  "aria-describedby": undefined,
                                                                                   "aria-errormessage": undefined,
                                                                                   "aria-invalid": undefined,
                                                                                   "aria-label": "Select Asset 31",
+                                                                                  "aria-labelledby": undefined,
                                                                                   "data-indeterminate": false,
                                                                                 }
                                                                               }
+                                                                              onBlur={[Function]}
                                                                               onChange={[Function]}
+                                                                              onFocusVisible={[Function]}
                                                                               readOnly={false}
                                                                               required={false}
                                                                               type="checkbox"
                                                                               value="3"
                                                                             >
                                                                               <WithStyles(ForwardRef(IconButton))
-                                                                                className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                 color="default"
                                                                                 component="span"
                                                                                 disableRipple={true}
                                                                                 disabled={false}
                                                                                 onBlur={[Function]}
                                                                                 onFocus={[Function]}
+                                                                                onFocusVisible={[Function]}
                                                                                 tabIndex={null}
                                                                               >
                                                                                 <ForwardRef(IconButton)
-                                                                                  className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                  className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                   classes={
                                                                                     Object {
                                                                                       "colorInherit": "MuiIconButton-colorInherit",
@@ -10160,22 +10253,24 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                   disabled={false}
                                                                                   onBlur={[Function]}
                                                                                   onFocus={[Function]}
+                                                                                  onFocusVisible={[Function]}
                                                                                   tabIndex={null}
                                                                                 >
                                                                                   <WithStyles(ForwardRef(ButtonBase))
                                                                                     centerRipple={true}
-                                                                                    className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                    className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                     component="span"
                                                                                     disableRipple={true}
                                                                                     disabled={false}
                                                                                     focusRipple={true}
                                                                                     onBlur={[Function]}
                                                                                     onFocus={[Function]}
+                                                                                    onFocusVisible={[Function]}
                                                                                     tabIndex={null}
                                                                                   >
                                                                                     <ForwardRef(ButtonBase)
                                                                                       centerRipple={true}
-                                                                                      className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                      className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                       classes={
                                                                                         Object {
                                                                                           "disabled": "Mui-disabled",
@@ -10189,11 +10284,12 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                       focusRipple={true}
                                                                                       onBlur={[Function]}
                                                                                       onFocus={[Function]}
+                                                                                      onFocusVisible={[Function]}
                                                                                       tabIndex={null}
                                                                                     >
                                                                                       <span
                                                                                         aria-disabled={false}
-                                                                                        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox HvBaseCheckbox-root"
+                                                                                        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                                                                         onBlur={[Function]}
                                                                                         onDragLeave={[Function]}
                                                                                         onFocus={[Function]}

@@ -9,12 +9,24 @@ const styles = (theme) => ({
   warningText: {
     color: theme.hv.palette.semantic.sema4,
     paddingRight: theme.hv.spacing.xs,
+    "&:first-child": {
+      paddingLeft: theme.hv.spacing.xs,
+    },
   },
   defaultIcon: {
     minWidth: "32px",
   },
-  showText: {
+  show: {
     display: "flex",
+  },
+  hideText: {
+    // display none or visibility hidden prevents
+    // browser to trigger the aria-alert
+    width: 0,
+    height: 0,
+    padding: 0,
+    margin: 0,
+    overflow: "hidden",
   },
   "@global": {
     "input:-webkit-autofill": {

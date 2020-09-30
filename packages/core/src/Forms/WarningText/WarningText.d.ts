@@ -31,6 +31,14 @@ export interface HvWarningTextProps
    * If `true` the text won't include the top border.
    */
   disableBorder?: boolean;
+  /**
+   * If `true` the adornment icon isn't shown.
+   */
+  disableAdornment?: boolean;
+  /**
+   * If `true` the text isn't shown.
+   */
+  hideText?: boolean;
 }
 
 export default function HvWarningText(props: HvWarningTextProps): JSX.Element | null;

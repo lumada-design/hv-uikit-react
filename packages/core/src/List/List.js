@@ -154,9 +154,9 @@ const HvList = (props) => {
           checked={item.selected}
           disabled={item.disabled}
           classes={{
+            root: classes.selectorRoot,
             container: classes.selectorContainer,
-            labelTypography: classes.truncate,
-            icon: classes.icon,
+            label: classes.truncate,
           }}
         />,
         item.label
@@ -245,10 +245,6 @@ HvList.propTypes = {
      * Styles applied when the list item text when truncate.
      */
     truncate: PropTypes.string,
-    /**
-     * Styles applied to the icon of the selector.
-     */
-    icon: PropTypes.string,
     /**
      * Styles applied to the list item.
      */

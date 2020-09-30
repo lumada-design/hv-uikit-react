@@ -42,6 +42,7 @@ const HvCheckBoxGroup = (props) => {
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     description,
+    "aria-describedby": ariaDescribedBy,
 
     onChange,
 
@@ -218,7 +219,9 @@ const HvCheckBoxGroup = (props) => {
         aria-labelledby={ariaLabelledBy}
         aria-invalid={validationState === "invalid" ? true : undefined}
         aria-errormessage={validationState === "invalid" ? setId(elementId, "error") : undefined}
-        aria-describedby={description && setId(elementId, "description")}
+        aria-describedby={
+          ariaDescribedBy != null ? ariaDescribedBy : description && setId(elementId, "description")
+        }
         className={clsx(classes.group, {
           [classes.vertical]: orientation === "vertical",
           [classes.horizontal]: orientation === "horizontal",
@@ -292,7 +295,7 @@ HvCheckBoxGroup.propTypes = {
 
   /**
    * The form element name.
-   * It is propagated for the children checkboxes, unless they already have one.
+   * It is propagated to the children checkboxes, unless they already have one.
    */
   name: PropTypes.string,
   /**
@@ -321,15 +324,19 @@ HvCheckBoxGroup.propTypes = {
    * Provide additional descriptive text for the form element.
    */
   description: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
 
   /**
    * Indicates that the form element is disabled.
-   * If `true` the state is propagated for the children checkboxes.
+   * If `true` the state is propagated to the children checkboxes.
    */
   disabled: PropTypes.bool,
   /**
    * Indicates that the form element is not editable.
-   * If `true` the state is propagated for the children checkboxes.
+   * If `true` the state is propagated to the children checkboxes.
    */
   readOnly: PropTypes.bool,
   /**
@@ -375,7 +382,7 @@ HvCheckBoxGroup.propTypes = {
    * The checkboxes that are part of the group.
    *
    * Their state will always be controlled by the group.
-   * However the individual checkbox onChange callback will still be called be defined.
+   * However the individual checkbox onChange callback will still be called if defined.
    */
   children: PropTypes.node,
 };
