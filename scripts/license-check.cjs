@@ -12,9 +12,7 @@ const moduleRoot = findRoot(process.cwd());
 
 let packageJson = null;
 try {
-  packageJson = JSON.parse(
-    fs.readFileSync(path.resolve(moduleRoot, "package.json"))
-  );
+  packageJson = JSON.parse(fs.readFileSync(path.resolve(moduleRoot, "package.json")));
 } catch (error) {
   console.error("Error reading current package descriptor.");
   process.exit(1);
@@ -22,26 +20,22 @@ try {
 
 let config = null;
 try {
-  config = JSON.parse(
-    fs.readFileSync(process.argv[2])
-  );
+  config = JSON.parse(fs.readFileSync(process.argv[2]));
 } catch (error) {
   console.error("Error reading license-check configuration.");
   process.exit(1);
 }
 
-const allowedLicenses =
-config.allowedLicenses.map(l => licenseCorrect(l) || l) || [];
+const allowedLicenses = config.allowedLicenses.map((l) => licenseCorrect(l) || l) || [];
 const allowedPackages = config.allowedPackages || [];
 const production = config.production || true;
 const allowUnknown = config.allowUnknown || false;
 
 function isAllowedPackage(dependency) {
   return allowedPackages.some(
-    allowedPackage =>
+    (allowedPackage) =>
       allowedPackage.name === dependency.name &&
-      (allowedPackage.version == null ||
-        allowedPackage.version === dependency.version)
+      (allowedPackage.version == null || allowedPackage.version === dependency.version)
   );
 }
 
@@ -51,11 +45,11 @@ function isAllowedLicense(licenses) {
   }
 
   if (Array.isArray(licenses)) {
-    return licenses.every(license => isAllowedLicense(license));
+    return licenses.every((license) => isAllowedLicense(license));
   }
 
   const license = licenseCorrect(licenses) || licenses;
-  return allowedLicenses.some(allowedLicense => {
+  return allowedLicenses.some((allowedLicense) => {
     try {
       return licenseSatisfies(allowedLicense, license);
     } catch (e) {
@@ -68,20 +62,11 @@ function dependencyToString(dep) {
   let type = "transitive";
   if (packageJson.dependencies && packageJson.dependencies[dep.name]) {
     type = "dependency";
-  } else if (
-    packageJson.devDependencies &&
-    packageJson.devDependencies[dep.name]
-  ) {
+  } else if (packageJson.devDependencies && packageJson.devDependencies[dep.name]) {
     type = "devDependency";
-  } else if (
-    packageJson.peerDependencies &&
-    packageJson.peerDependencies[dep.name]
-  ) {
+  } else if (packageJson.peerDependencies && packageJson.peerDependencies[dep.name]) {
     type = "peerDependency";
-  } else if (
-    packageJson.optionalDependencies &&
-    packageJson.optionalDependencies[dep.name]
-  ) {
+  } else if (packageJson.optionalDependencies && packageJson.optionalDependencies[dep.name]) {
     type = "optionalDependency";
   }
 
@@ -92,14 +77,14 @@ function parsePackageId(pckId) {
   const parts = pckId.split("@");
   return {
     version: parts.pop(),
-    name: (parts.length > 1 ? "@" : "") + parts[parts.length - 1]
+    name: (parts.length > 1 ? "@" : "") + parts[parts.length - 1],
   };
 }
 
 licenseChecker.init(
   {
     start: moduleRoot,
-    production
+    production,
   },
   (err, packages) => {
     if (err) {
@@ -111,10 +96,10 @@ licenseChecker.init(
     let numberOfErrors = 0;
     let numberOfWarnings = 0;
 
-    Object.keys(packages).forEach(pckId => {
+    Object.keys(packages).forEach((pckId) => {
       const dep = {
         ...parsePackageId(pckId),
-        ...packages[pckId]
+        ...packages[pckId],
       };
 
       // don't check the current package
@@ -150,9 +135,7 @@ licenseChecker.init(
         `License check: ${numberOfPackages} packages checked, ${numberOfWarnings} unknown licenses detected.`
       );
     } else {
-      console.log(
-        `License check: ${numberOfPackages} packages checked, no problems detected.`
-      );
+      console.log(`License check: ${numberOfPackages} packages checked, no problems detected.`);
     }
   }
 );

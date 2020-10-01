@@ -16,7 +16,7 @@ export default ({
   primarySlot,
   usageSlot,
   propsSlot,
-  storiesSlot
+  storiesSlot,
 }) => {
   return (
     <>

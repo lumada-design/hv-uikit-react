@@ -11,7 +11,7 @@ import {
   getStorybookTheme,
   getStoredTheme,
   setStoredTheme,
-  getManagerStylesOverrides
+  getManagerStylesOverrides,
 } from "./index";
 
 const ThemeSelector = ({ api }) => {

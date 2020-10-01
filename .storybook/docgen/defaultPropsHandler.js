@@ -31,7 +31,7 @@ function getDefaultValue(path) {
       computed:
         types.CallExpression.check(node) ||
         types.MemberExpression.check(node) ||
-        types.Identifier.check(node)
+        types.Identifier.check(node),
     };
   }
 
@@ -40,10 +40,10 @@ function getDefaultValue(path) {
 
 function getDefaultValuesFromProps(properties, documentation) {
   properties
-    .filter(propertyPath => types.Property.check(propertyPath.node))
+    .filter((propertyPath) => types.Property.check(propertyPath.node))
     // Don't evaluate property if component is functional and the node is not an AssignmentPattern
-    .filter(propertyPath => types.AssignmentPattern.check(propertyPath.get("value").node))
-    .forEach(propertyPath => {
+    .filter((propertyPath) => types.AssignmentPattern.check(propertyPath.get("value").node))
+    .forEach((propertyPath) => {
       const propName = getPropertyName(propertyPath);
       if (!propName) return;
 
@@ -64,10 +64,10 @@ function getPropsPath(functionBody) {
   var propsPath;
   // visitVariableDeclarator, can't use visit body.node since it looses scope information
   functionBody
-    .filter(path => {
+    .filter((path) => {
       return types.VariableDeclaration.check(path.node);
     })
-    .forEach(path => {
+    .forEach((path) => {
       const declaratorPath = path.get("declarations", 0);
       if (declaratorPath.get("init", "name").value === "props") {
         propsPath = declaratorPath.get("id");

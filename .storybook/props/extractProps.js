@@ -5,7 +5,7 @@ import { enhancePropTypesProps } from "@storybook/addon-docs/dist/frameworks/rea
 import sortProps from "./sortProps";
 
 const extractSubSection = (extractedProps, propName, defaultValues = {}) => {
-  const prop = extractedProps.find(prop => prop.propDef.name === propName);
+  const prop = extractedProps.find((prop) => prop.propDef.name === propName);
   if (prop) {
     if (prop?.docgenInfo?.type?.name === "shape" && prop?.docgenInfo?.type?.value) {
       prop.propDef.description += "<br><strong>Check the " + propName + " section bellow.</strong>";
@@ -19,15 +19,15 @@ const extractSubSection = (extractedProps, propName, defaultValues = {}) => {
         } catch (e) {}
       }
 
-      return Object.keys(prop.docgenInfo.type.value).map(name => {
+      return Object.keys(prop.docgenInfo.type.value).map((name) => {
         const { name: type, description, required } = prop.docgenInfo.type.value[name];
         const propDef = {
           name,
           description,
           required,
           type: {
-            summary: type
-          }
+            summary: type,
+          },
         };
 
         let defaultValue = null;
@@ -39,7 +39,7 @@ const extractSubSection = (extractedProps, propName, defaultValues = {}) => {
 
         if (defaultValue) {
           propDef.defaultValue = {
-            summary: type === "string" ? '"' + defaultValue + '"' : defaultValue
+            summary: type === "string" ? '"' + defaultValue + '"' : defaultValue,
           };
         }
 
@@ -49,7 +49,7 @@ const extractSubSection = (extractedProps, propName, defaultValues = {}) => {
   }
 };
 
-export const extractProps = component => {
+export const extractProps = (component) => {
   // eslint-disable-next-line react/forbid-foreign-prop-types
   if (!hasDocgen(component)) {
     if (component.Naked) {
@@ -78,8 +78,8 @@ export const extractProps = component => {
           "labels",
           component.defaultLabels ? component.defaultLabels : {}
         )
-      )
-    }
+      ),
+    },
   };
 
   return result;

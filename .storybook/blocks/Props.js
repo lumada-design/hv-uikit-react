@@ -11,7 +11,7 @@ import { getComponentName } from "@storybook/addon-docs/dist/blocks/utils";
 
 import { extractProps } from "../props/extractProps";
 
-const filterRows = (rows, exclude) => rows && rows.filter(row => !exclude.includes(row.name));
+const filterRows = (rows, exclude) => rows && rows.filter((row) => !exclude.includes(row.name));
 
 export const getComponentProps = (component, { exclude }) => {
   if (!component) {
@@ -24,10 +24,10 @@ export const getComponentProps = (component, { exclude }) => {
       const { sections } = props;
       if (rows) {
         props = {
-          rows: filterRows(rows, exclude)
+          rows: filterRows(rows, exclude),
         };
       } else if (sections) {
-        Object.keys(sections).forEach(section => {
+        Object.keys(sections).forEach((section) => {
           sections[section] = filterRows(sections[section], exclude);
         });
       }
@@ -54,11 +54,11 @@ export const getComponent = (props = {}, context) => {
   return target;
 };
 
-const PropsContainer = props => {
+const PropsContainer = (props) => {
   const context = useContext(DocsContext);
   const { slot, components } = props;
   const {
-    parameters: { subcomponents }
+    parameters: { subcomponents },
   } = context;
 
   let allComponents = components;
@@ -78,7 +78,7 @@ const PropsContainer = props => {
   Object.entries(allComponents).forEach(([label, component]) => {
     tabs.push({
       label,
-      table: getComponentProps(component, props, context)
+      table: getComponentProps(component, props, context),
     });
   });
 
@@ -102,7 +102,7 @@ const PropsContainer = props => {
 };
 
 PropsContainer.defaultProps = {
-  of: "."
+  of: ".",
 };
 
 export { PropsContainer as Props };

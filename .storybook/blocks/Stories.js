@@ -4,7 +4,7 @@
 import React, { useContext } from "react";
 import { DocsContext, DocsStory, Heading } from "@storybook/addon-docs/blocks";
 
-const getDocsStories = context => {
+const getDocsStories = (context) => {
   const { storyStore, selectedKind } = context;
 
   if (!storyStore) {
@@ -13,7 +13,7 @@ const getDocsStories = context => {
 
   return storyStore
     .getStoriesForKind(selectedKind)
-    .filter(s => !(s.parameters && s.parameters.docs && s.parameters.docs.disable));
+    .filter((s) => !(s.parameters && s.parameters.docs && s.parameters.docs.disable));
 };
 
 export const Stories = ({ slot, title }) => {
@@ -29,11 +29,13 @@ export const Stories = ({ slot, title }) => {
   return (
     <>
       <Heading>{title}</Heading>
-      {stories.map(story => story && <DocsStory key={story.id} {...story} expanded withToolbar />)}
+      {stories.map(
+        (story) => story && <DocsStory key={story.id} {...story} expanded withToolbar />
+      )}
     </>
   );
 };
 
 Stories.defaultProps = {
-  title: "Stories"
+  title: "Stories",
 };
