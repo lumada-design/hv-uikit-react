@@ -9,6 +9,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import {HvContainer} from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.0",
   },
   component: HvContainer,
 };

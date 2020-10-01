@@ -11,6 +11,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBulkActions } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.0",
   },
   component: HvBulkActions,
   decorators: [

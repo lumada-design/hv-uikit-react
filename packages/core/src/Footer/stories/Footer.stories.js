@@ -6,6 +6,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvFooter } from '@hv/uikit-react-core/dist'",
+
+    dsVersion: "3.2.0",
   },
   component: HvFooter,
   decorators: [

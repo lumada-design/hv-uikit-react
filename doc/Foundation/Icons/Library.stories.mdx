@@ -4,9 +4,14 @@ import { ActualSize } from "@hv/uikit-react-icons/dist";
 import * as iconComponentList from "@hv/uikit-react-icons/dist";
 import { FemaleRunning } from "@hv/uikit-react-icons/dist/pictograms";
 import * as iconPictogramComponentList from "@hv/uikit-react-icons/dist/pictograms";
+import MaturityStatus from "../../../.storybook/blocks/ExportedMaturityStatus";
+import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
+<Meta title="Foundation/Icons/Library" parameters={{ maturityStatus: componentDefinitions.stable, dsVersion: componentDefinitions.dsVersion3, }} />
 
-<Meta title="Foundation/Icons/Library" />
+<br />
+<MaturityStatus />
+<br />
 
 # Icon library
 
@@ -28,13 +33,11 @@ This will be the result:
   <ActualSize />
 </Preview>
 
-
 <Preview>
   <Story name="Icons">
-    <IconLibrary icons={iconComponentList}/>
+    <IconLibrary icons={iconComponentList} />
   </Story>
 </Preview>
-
 
 # Pictograms library
 
@@ -55,7 +58,6 @@ This will be the result:
 <Preview>
   <FemaleRunning />
 </Preview>
-
 
 <Preview>
   <Story name="Pictograms">

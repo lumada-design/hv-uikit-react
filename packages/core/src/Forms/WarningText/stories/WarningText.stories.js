@@ -6,6 +6,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvWarningText } from '@hv/uikit-react-core/dist'",
+    v3: true,
+    dsVersion: "3.2.0",
   },
   component: HvWarningText,
   decorators: [(storyFn) => <div style={{ width: "300px" }}>{storyFn()}</div>],

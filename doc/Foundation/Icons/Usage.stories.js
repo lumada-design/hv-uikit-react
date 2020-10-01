@@ -1,11 +1,15 @@
 import React from "react";
 import { Bookmark, CheckboxCheck, Level4, Level5, Machine } from "@hv/uikit-react-icons/dist";
 
+import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
+
 export default {
   title: "Foundation/Icons/Usage",
   parameters: {
     componentSubtitle: null,
     usage: "import { Bookmark, CheckboxCheck } from '@hv/uikit-react-icons/dist'",
+    maturityStatus: componentDefinitions.stable,
+    dsVersion: componentDefinitions.dsVersion3,
   },
   component: Bookmark,
 };

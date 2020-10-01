@@ -8,6 +8,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvGrid } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.0",
   },
   component: HvGrid,
 };

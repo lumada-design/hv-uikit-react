@@ -8,6 +8,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDropdown } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.0",
   },
   component: HvDropdown,
 };

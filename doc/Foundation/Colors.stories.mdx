@@ -1,9 +1,17 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import Colors from "./Colors";
+import MaturityStatus from "../../.storybook/blocks/ExportedMaturityStatus";
 
-<Meta title="Foundation/Colors" />
+import componentDefinitions from "../../doc/GetStarted/ComponentVersioningTable/versions";
+
+
+<Meta title="Foundation/Colors" parameters={{ maturityStatus: componentDefinitions.stable, dsVersion: componentDefinitions.dsVersion3,  }} />
 
 # Color palette
+
+<br/>
+<MaturityStatus />
+<br/>
 
 <br/>
 

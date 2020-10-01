@@ -21,6 +21,8 @@ export default {
     componentSubtitle: null,
     usage: "import { HvUserPreferences } from '@hv/uikit-react-core/dist'",
     subcomponents: { Action, Actions, Group, Options, Option, Label },
+
+    dsVersion: "3.2.0",
   },
   component: HvUserPreferences,
 };

@@ -1,0 +1,44 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+import ComponentsTable from "./ComponentVersioningTable/ComponentsTable";
+import coreTableData from "./ComponentVersioningTable/CoreComponentData";
+import coreComponentTableConfig from "./ComponentVersioningTable/coreComponentTableConfig";
+
+import labComponentData from "./ComponentVersioningTable/LabComponentData";
+import labComponentTableConfig from "./ComponentVersioningTable/labComponentTableConfig";
+
+import { HvProvider, HvTypography } from "../../packages/core/src/..";
+
+<Meta title="Get Started/Component List" />
+
+# Component List
+
+<br />
+<br />
+
+## Core
+
+<HvProvider>
+  <HvTypography variant="normalText" style={{ width: 900 }}>
+    DS 3.x is implemented by UI Kit v3, while DS 1.x is implemented by{" "}
+    <a href="https://lumada-design.github.io/uikit/master/?path=/docs/*">UI Kit v2</a>. The use of
+    UI Kit v1 is strongly unadvised and is only supported on products that already used it before
+    the release of UI Kit v2. You can find its documentation{" "}
+    <a href="https://lumada-design.github.io/uikit/v1.x/">here</a>.
+  </HvTypography>
+</HvProvider>
+
+<br />
+<HvProvider>
+  <ComponentsTable tableData={coreTableData} tableColumnsConfig={coreComponentTableConfig} />
+</HvProvider>
+
+<br />
+<br />
+
+## Lab
+
+<br />
+<HvProvider>
+  <ComponentsTable tableData={labComponentData} tableColumnsConfig={labComponentTableConfig} />
+</HvProvider>
