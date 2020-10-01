@@ -26,6 +26,7 @@ TAB sequence
     [Tags]    keyboard
     Click Element                    ${calendarRight} ${month}
     Wait Until Element Is Enabled    ${monthGrid}
+    Set Focus To Element             ${calendarRight} input
     Repeat Keyword                   12 times
     ...    Press Keys                NONE    TAB
     Element Should Be Focused        ${monthGrid}:nth-child(12)

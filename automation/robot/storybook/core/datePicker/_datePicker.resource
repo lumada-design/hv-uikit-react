@@ -21,6 +21,7 @@ ${year-}               css:[id*=year-left]
 ${year}                css:[id*=year][role]
 ${year+}               css:[id*=year-right]
 
+
 *** Keywords ***
 get date
     [Documentation]
@@ -38,7 +39,7 @@ get date
 open datePicker sample
     [Documentation]     Open the sample and then open the calendar
     [Arguments]    ${sample}
-    Go To                             ${patterns}date-picker--${sample}
+    Go To                             ${forms}date-picker--${sample}
     Wait Until Element Is Visible     ${datePickerHeader}
     Click Element                     ${datePickerHeader}
     Wait Until Element Is Visible     ${calendar}

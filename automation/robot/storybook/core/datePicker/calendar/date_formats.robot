@@ -8,15 +8,15 @@ Force Tags       v3
 
 
 *** Test Cases ***      INPUT
-format m d yy           8 5 20
-format m dd yy          8 05 20
-format mm d yyyy        08 5 2020
-format mm dd yyyy       08 05 2020
-format mmddyy           080520
-format mm-dd-yy         08-05-20
-format mm.dd.yy         08.05.20
-format mm\\dd\\yy       08\\05\\20
-format mm/dd/yy         08/05/20
+format m d yy           7 5 12
+format m dd yy          7 05 12
+format mm d yyyy        07 5 2012
+format mm dd yyyy       07 05 2012
+format mmddyy           070512
+format mm-dd-yy         07-05-12
+format mm.dd.yy         07.05.12
+format mm\\dd\\yy       07\\05\\12
+format mm/dd/yy         07/05/12
 
 invalid format
     [Template]    NONE
@@ -37,4 +37,4 @@ verify date when it is inserted distinct formats
     Wait Until Element Is Enabled        ${input}
     force input                          ${input}    ${format}
     Press Keys                           NONE    ENTER
-    Element Attribute Value Should Be    ${input}    value    5 Aug 2020
+    Element Attribute Value Should Be    ${input}    value    5 Jul 2012

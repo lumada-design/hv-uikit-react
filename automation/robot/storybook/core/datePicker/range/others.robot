@@ -7,11 +7,13 @@ Force Tags    v3
 
 *** Test Cases ***
 current date as default value when it is empty
-    ${yyyy}   ${day}   Get Time        year day
-    ${monthName}   Get Current Date    result_format=%B
-    Element Text Should Be             ${calendarLeft} ${month}    ${monthName}
-    Element Text Should Be             ${calendarLeft} ${year}    ${yyyy}
-    Element Text Should Be             ${calendarLeft} ${daySelected}    ${day}
+    ${yyyy}   Get Time                  year
+    ${day}   Get Current Date           result_format=%e
+    ${day}                              Evaluate  '${day}'.replace(' ','')
+    ${monthName}    Get Current Date    result_format=%B
+    Element Text Should Be              ${calendarLeft} ${month}    ${monthName}
+    Element Text Should Be              ${calendarLeft} ${year}    ${yyyy}
+    Element Text Should Be              ${calendarLeft} ${daySelected}    ${day}
 
 shows calendar with the month of first date when input date
     Force input               ${calendarLeft} input    03 01 2000

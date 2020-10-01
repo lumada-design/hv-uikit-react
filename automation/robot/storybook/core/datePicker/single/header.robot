@@ -21,7 +21,9 @@ input locale pt-PT date
     [Setup]    Open DatePicker sample     localized
     Force input                ${input}      20/08/2014
     Press Keys                 NONE    ENTER
-    Element Text Should Be     ${datePickerHeader}    20 ago. 2014
+    Element Should Contain     ${datePickerHeader}    20
+    Element Should Contain     ${datePickerHeader}    ago   ignore_case=True
+    Element Should Contain     ${datePickerHeader}    2014
 
 input and pick a date
     Force input               ${input}    02/07/1977

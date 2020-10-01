@@ -8,9 +8,9 @@ Force Tags       keyboard    v3
 
 
 *** Test Cases ***      TABS    TO
-None to January         1       ${monthGrid}\[.="Jan"]
-March to April          4       ${monthGrid}\[.="Apr"]
-January to December     12      ${monthGrid}\[.="Dec"]
+None to January         1       ${jan}
+March to April          4       ${apr}
+January to December     12      ${dec}
 
 
 *** Keywords ***
@@ -22,6 +22,13 @@ verify month keyboard tab sequence
     Wait Until Element Is Enabled    ${month}
     Click Element                    ${month}
     Wait Until Element Is Visible    ${monthGrid}
+    Set Focus To Element             ${input}
     Repeat Keyword	                 ${repeat} times
     ...   Press keys                 NONE    TAB
     Element Should Be Focused        ${to}
+
+
+*** Variables ***
+${jan}    css:.HvMonthSelector-calendarMonthlyGrid>div:nth-child(1)
+${apr}    css:.HvMonthSelector-calendarMonthlyGrid>div:nth-child(4)
+${dec}    css:.HvMonthSelector-calendarMonthlyGrid>div:nth-child(12)
