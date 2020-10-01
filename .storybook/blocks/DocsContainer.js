@@ -15,7 +15,7 @@ export default ({ context, children }) => {
   docsContext.parameters = { ...context.parameters };
   docsContext.parameters.options = {
     ...context.parameters.options,
-    theme: theme
+    theme: theme,
   };
 
   return (

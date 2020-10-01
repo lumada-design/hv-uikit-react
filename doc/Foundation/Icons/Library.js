@@ -7,7 +7,7 @@ const iconContainer = {
   width: "140px",
   display: "inherit",
   flexDirection: "column",
-  alignItems: "center"
+  alignItems: "center",
 };
 
 const widerIconContainer = {
@@ -16,21 +16,21 @@ const widerIconContainer = {
   width: "200px",
   display: "inherit",
   flexDirection: "column",
-  alignItems: "center"
+  alignItems: "center",
 };
 
 const dropdownSizes = [
   { id: "0", label: "XS" },
   { id: "1", label: "S", selected: true },
   { id: "2", label: "M" },
-  { id: "3", label: "L" }
+  { id: "3", label: "L" },
 ];
 
 const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
   const keys = Array.from(new Set([...Object.keys(iconsLibrary)])).sort();
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {keys.map(icon => (
+      {keys.map((icon) => (
         <Icon
           widerSpacing={widerSpacing}
           key={icon}
@@ -62,7 +62,7 @@ const Icons = ({ icons, widerSpacing }) => {
           values={dropdownSizes}
           multiSelect={false}
           labels={{ title: "Size selector" }}
-          onChange={item => setIconSize(item)}
+          onChange={(item) => setIconSize(item)}
           notifyChangesOnFirstRender
         />
       </div>

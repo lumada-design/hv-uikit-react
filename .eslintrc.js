@@ -23,9 +23,9 @@ module.exports = {
         js: "never",
         jsx: "never",
         ts: "never",
-        tsx: "never"
-      }
-    ]
+        tsx: "never",
+      },
+    ],
   },
   overrides: [
     {
@@ -33,8 +33,8 @@ module.exports = {
       rules: {
         "no-console": "off",
         "no-alert": "off",
-        "no-any": 0
-      }
+        "no-any": 0,
+      },
     },
     {
       files: ["*.ts"],
@@ -44,44 +44,44 @@ module.exports = {
         "@typescript-eslint/ban-types": [
           "error",
           {
-            "types": {
-              "object": false,
-              "Function": false
-            }
-          }
-        ]
+            types: {
+              object: false,
+              Function: false,
+            },
+          },
+        ],
       },
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
       ],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaFeatures: { jsx: true },
         ecmaVersion: 2020,
         sourceType: "module",
-        project: "./tsconfig.json"
+        project: "./tsconfig.json",
       },
       plugins: ["@typescript-eslint"],
       settings: {
         "import/resolver": {
           typescript: {
-            project: "./packages/*/tsconfig.json"
-          }
-        }
-      }
-    }
+            project: "./packages/*/tsconfig.json",
+          },
+        },
+      },
+    },
   ],
   settings: {
     react: {
       pragma: "React",
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   env: {
     browser: true,
     node: true,
-    jest: true
-  }
+    jest: true,
+  },
 };

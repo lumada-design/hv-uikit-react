@@ -5,9 +5,9 @@ export default {
   title: "Foundation/Icons/Usage",
   parameters: {
     componentSubtitle: null,
-    usage: "import { Bookmark, CheckboxCheck } from '@hv/uikit-react-icons/dist'"
+    usage: "import { Bookmark, CheckboxCheck } from '@hv/uikit-react-icons/dist'",
   },
-  component: Bookmark
+  component: Bookmark,
 };
 
 export const Main = () => <CheckboxCheck />;
@@ -17,9 +17,9 @@ export const IconSize = () => <CheckboxCheck iconSize="M" />;
 IconSize.story = {
   parameters: {
     docs: {
-      storyDescription: "Overrides Generic Icon size using standard sizes"
-    }
-  }
+      storyDescription: "Overrides Generic Icon size using standard sizes",
+    },
+  },
 };
 
 export const CustomColors = () => (
@@ -29,9 +29,9 @@ export const CustomColors = () => (
 CustomColors.story = {
   parameters: {
     docs: {
-      storyDescription: "Overriding Icon colors with palette colors"
-    }
-  }
+      storyDescription: "Overriding Icon colors with palette colors",
+    },
+  },
 };
 
 export const DecorativeIcon = () => <Machine role="presentation" iconSize="M" />;
@@ -39,9 +39,9 @@ export const DecorativeIcon = () => <Machine role="presentation" iconSize="M" />
 DecorativeIcon.story = {
   parameters: {
     docs: {
-      storyDescription: "Icon with decorative meaning using the hidden attribute for accessibility"
-    }
-  }
+      storyDescription: "Icon with decorative meaning using the hidden attribute for accessibility",
+    },
+  },
 };
 
 export const SemanticIcon = () => (
@@ -52,9 +52,9 @@ SemanticIcon.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Icon with semantic meaning using the title and role attributes for accessibility"
-    }
-  }
+        "Icon with semantic meaning using the title and role attributes for accessibility",
+    },
+  },
 };
 
 export const CustomSize = () => (
@@ -64,9 +64,9 @@ export const CustomSize = () => (
 CustomSize.story = {
   parameters: {
     docs: {
-      storyDescription: "Overrides Icon size using non standard sizes"
-    }
-  }
+      storyDescription: "Overrides Icon size using non standard sizes",
+    },
+  },
 };
 
 export const InvertedColors = () => <Level5 iconSize="L" inverted role="img" title="Critical!" />;
@@ -74,7 +74,7 @@ export const InvertedColors = () => <Level5 iconSize="L" inverted role="img" tit
 InvertedColors.story = {
   parameters: {
     docs: {
-      storyDescription: "Inverts Generic Icon colors"
-    }
-  }
+      storyDescription: "Inverts Generic Icon colors",
+    },
+  },
 };

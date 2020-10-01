@@ -30,7 +30,7 @@ export default function storybookThemeFromUiKitTheme(theme) {
       // warning: "#E69D00",
       // critical: "#FFFFFF",
       defaultText: theme.palette.accent.acce1,
-      inverseText: theme.palette.accent.acce0
+      inverseText: theme.palette.accent.acce0,
     },
     colorPrimary: theme.palette.accent.acce2,
     colorSecondary: theme.palette.accent.acce1,
@@ -41,7 +41,7 @@ export default function storybookThemeFromUiKitTheme(theme) {
     background: {
       app: theme.palette.atmosphere.atmo3,
       bar: theme.palette.atmosphere.atmo3,
-      content: theme.palette.atmosphere.atmo1
+      content: theme.palette.atmosphere.atmo1,
       // gridCellSize: 10,
       // hoverable: "rgba(250,250,252,.1)",
       // positive: "#E1FFD4",
@@ -60,7 +60,7 @@ export default function storybookThemeFromUiKitTheme(theme) {
 
     // Typography
     typography: {
-      fonts: { base: theme.typography.fontFamily.join(", "), mono: "monospace" }
+      fonts: { base: theme.typography.fontFamily.join(", "), mono: "monospace" },
       // weight: { regular: 400, bold: 700, black: 900 },
       // size: { s1: 12, s2: 14, s3: 16, m1: 20, m2: 24, m3: 28, l1: 32, l2: 40, l3: 48, code: 90 }
     },
@@ -72,7 +72,7 @@ export default function storybookThemeFromUiKitTheme(theme) {
       border: theme.palette.atmosphere.atmo6,
       background: theme.palette.atmosphere.atmo1,
       color: theme.palette.accent.acce1,
-      borderRadius: 1
+      borderRadius: 1,
     },
     inputBg: theme.palette.atmosphere.atmo1,
     inputBorder: theme.palette.atmosphere.atmo6,
@@ -83,6 +83,6 @@ export default function storybookThemeFromUiKitTheme(theme) {
     brandUrl: undefined,
     brandImage: undefined,
 
-    hv: theme
+    hv: theme,
   });
 }

@@ -7,7 +7,7 @@ import styles from "./styles";
 /**
  * ComponentName description/documentation paragraph
  */
-const HvComponentName = props => {
+const HvComponentName = (props) => {
   const { className, classes, ...others } = props;
 
   return (
@@ -29,8 +29,8 @@ HvComponentName.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
-  }).isRequired
+    root: PropTypes.string,
+  }).isRequired,
 };
 
 export default withStyles(styles, { name: "HvComponentName" })(HvComponentName);

@@ -54,7 +54,7 @@ const createComponent = (name, packageName, templateName) => {
   // read component files recursively
   const files = read(srcDir);
 
-  files.forEach(file => {
+  files.forEach((file) => {
     const srcPath = `${srcDir}/${file}`;
     const distPath = `${distDir}/${file}`;
 
