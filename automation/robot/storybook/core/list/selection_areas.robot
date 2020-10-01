@@ -9,7 +9,7 @@ Force Tags    v3
 *** Keywords ***
 select an option by locator
     [Arguments]                          ${sample}                     ${option}        ${locator}
-    Go To                                ${patterns}list--${sample}
+    Go To                                ${components}list--${sample}
     Wait Until Element Is Visible        ${list}
     Click Element                        css:#${option} ${locator}
     Element Attribute Value Should Be    ${option}                     aria-selected    true

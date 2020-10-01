@@ -5,7 +5,7 @@ import { HvButton, HvSnackbar, HvSnackbarContent, HvTypography } from "../..";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Patterns/Notification/Snackbar",
+  title: "Components/Snackbar",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvSnackbar } from '@hv/uikit-react-core/dist'",

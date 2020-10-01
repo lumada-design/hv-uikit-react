@@ -24,7 +24,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 export default {
-  title: "Components/Forms/Switch",
+  title: "Forms/Switch",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvSwitch } from '@hv/uikit-react-core/dist'",

@@ -4,7 +4,7 @@ import { Add, Delete, Lock, Preview } from "@hv/uikit-react-icons";
 import HvActionsGeneric from "..";
 
 export default {
-  title: "Components/ActionsGeneric",
+  title: "Components/Actions Generic",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvActionsGeneric } from '@hv/uikit-react-core/dist'",

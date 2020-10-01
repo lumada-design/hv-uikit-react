@@ -15,7 +15,7 @@ import { KeyboardCodes, isKeypress } from "../../../utils";
 import countryList from "../../../Input/stories/countries";
 
 export default {
-  title: "Components/Forms/Suggestions",
+  title: "Forms/Form Element/Suggestions",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvSuggestions } from '@hv/uikit-react-core/dist'",

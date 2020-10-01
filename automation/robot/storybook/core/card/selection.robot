@@ -22,7 +22,7 @@ Verify selectable card behavior
     ...   | locator       | where (area) should click on the card     |
     ...   | isSelected    | flag (true or false) if card is selected  |
 
-    Go To                                ${patterns}card--${card}
+    Go To                                ${components}card--${card}
     Wait Until Element Is Enabled        ${locator}
     Click Element                        ${locator}
     Run Keyword If                       '${isSelected}'=='true'       Verify card is selected

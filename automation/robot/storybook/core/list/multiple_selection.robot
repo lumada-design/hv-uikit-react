@@ -2,7 +2,7 @@
 Variables        variables.yaml
 Resource         ../_keywords.resource
 Test Setup       Run Keywords
-...              Go To                                                        ${patterns}list--multi-selection-with-select-all
+...              Go To                                                        ${components}list--multi-selection-with-select-all
 ...              AND                                                          Wait Until Element Is Visible                       ${list}
 Documentation    options selections just for lists with multiple selection
 Force Tags    v3
@@ -10,7 +10,7 @@ Force Tags    v3
 
 *** Test Cases ***
 unable to select a disabled option when click on it
-    Go To                                  ${patterns}list--multi-selection-with-selectors
+    Go To                                  ${components}list--multi-selection-with-selectors
     Wait Until Element Is Visible          ${option4}
     Page Should Contain Element            ${selectedItems}                                   limit=1
     Page Should Contain Element            ${iconChecked}                                     limit=1

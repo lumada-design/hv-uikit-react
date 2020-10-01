@@ -1,7 +1,7 @@
 *** Setting ***
 Resource       ../_keywords.resource
 Suite Setup    Run Keywords
-...            Go To    ${patterns}input--disabled
+...            Go To    ${forms}input--disabled
 ...            AND    Wait Until Element Is Visible    ${input}
 Force Tags      v3
 

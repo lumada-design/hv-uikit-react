@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _resources.resource
 Test Setup    Run Keywords
-...           Go To    ${patterns}dropdown--single-selection
+...           Go To    ${forms}dropdown--single-selection
 ...           AND    Wait Until Element Is Enabled    ${dropdown}
 ...           AND    Click Element                    ${dropdownHeader}
 ...           AND    Wait Until Element Is Visible    ${listBox}
@@ -23,7 +23,7 @@ Close dropdown when is clicked out of dropdown area
 
 Dropdown does not open when it is disable
     [Setup]    NONE
-    Go To                            ${patterns}dropdown--disabled
+    Go To                            ${forms}dropdown--disabled
     Wait Until Element Is Visible    ${dropdown}
     mouses does not open dropdown    ${dropdown}
     mouses does not open dropdown    ${dropdownHeader}

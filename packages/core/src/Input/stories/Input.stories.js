@@ -6,7 +6,7 @@ import { HvButton, HvInput } from "../..";
 import countryNamesArray from "./countries";
 
 export default {
-  title: "Patterns/Input",
+  title: "Forms/Input",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvInput } from '@hv/uikit-react-core/dist'",

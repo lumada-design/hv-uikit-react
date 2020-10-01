@@ -8,7 +8,7 @@ import HvHeader, { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation } from "..
 import HitachiLogo from "./assets/HitachiLogo";
 
 export default {
-  title: "Patterns/Navigation System/Horizontal Navigation",
+  title: "Components/Header",
   parameters: {
     v3: true,
     componentSubtitle: null,

@@ -15,7 +15,7 @@ Verify card is not selected
 
 Verify selectable card behavior
     [Arguments]    ${locator}    ${keyBoards}    ${selected}
-    Go To                            ${patterns}card--selectable
+    Go To                            ${components}card--selectable
     Wait Until Element Is Enabled    ${locator}
     set focus and press keys         ${locator}               ${keyBoards}
     Run Keyword If                   '${selected}'=='true'    Verify card is selected
@@ -31,7 +31,7 @@ do not select card with keys ALT and ENTER on checkbox    ${checkbox}       ALT+
 select card with keys SPACE on checkbox                   ${checkbox}       SPACE         true
 focus checkbox with keys TAB on content/header
     [Template]                       NONE
-    Go To                            ${patterns}card--selectable
+    Go To                            ${components}card--selectable
     Wait Until Element Is Enabled    ${aboveFooter}
     set focus and press keys         ${aboveFooter}    TAB  TAB
     Element Should Be Focused        ${Checkbox}

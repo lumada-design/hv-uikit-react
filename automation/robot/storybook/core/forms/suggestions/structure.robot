@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _resource.resource
 Test Setup    Run Keywords
-...           Go To    ${components}forms-suggestions--main
+...           Go To    ${forms}form-element-suggestions--main
 ...           AND    Wait Until Element Is Enabled    ${input}
 Force Tags    v3
 
@@ -17,7 +17,7 @@ update suggestions when input is being changed
 
 update suggestions by server side when input is being changed
     [Setup]    NONE
-    Go To                               ${components}forms-suggestions--server-side-suggestions
+    Go To                               ${forms}form-element-suggestions--server-side-suggestions
     Wait Until Element Is Enabled       ${input}
     Press Keys                          ${input}    tu
     Wait Until Page Contains            Tunisia

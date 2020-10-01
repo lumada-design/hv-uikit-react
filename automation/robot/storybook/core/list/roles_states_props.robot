@@ -19,7 +19,7 @@ verify list has role listbox
     [Documentation]
     ...    - An element that contains or owns all the listbox options has role listbox.
     ...
-    Go To                                ${patterns}list--single-selection-with-icon
+    Go To                                ${components}list--single-selection-with-icon
     Wait Until Element Is Visible        ${list}
     Element Attribute Value Should Be    ${list}    role    listbox
 
@@ -27,7 +27,7 @@ verify each option in the listbox has role option
     [Documentation]
     ...    - Each option in the listbox has role option...
     ...
-    Go To                                ${patterns}list--single-selection-with-icon
+    Go To                                ${components}list--single-selection-with-icon
     Wait Until Element Is Visible        ${list}
     Element Attribute Value Should Be    ${option1}    role    option
 
@@ -36,7 +36,7 @@ verify list has aria-labelledby
     ...    - If the listbox is not part of another widget, then it has a visible label referenced
     ...      by aria-labelledby on the element with role listbox
     ...
-    Go To                                ${patterns}list--single-selection-with-icon
+    Go To                                ${components}list--single-selection-with-icon
     Wait Until Element Is Visible        ${list}
     Element Attribute Value Should Be    ${list}
     ...    aria-label    Single Selection List with Left Icons Title
@@ -45,7 +45,7 @@ verify single select listbox has aria-selected true
     [Documentation]
     ...    - In a single-select listbox, the selected option has aria-selected set to true.
     ...
-    Go To                                ${patterns}list--single-selection-with-icon
+    Go To                                ${components}list--single-selection-with-icon
     Wait Until Element Is Visible        ${list}
     Element Attribute Value Should Be    ${option3}    aria-selected    true
 
@@ -53,7 +53,7 @@ verify multiple selection listbox has role aria-multiselectable set to true
     [Documentation]
     ...    - The element with role listbox has aria-multiselectable set to true.
     ...
-    Go To                                ${patterns}list--multi-selection-with-select-all
+    Go To                                ${components}list--multi-selection-with-select-all
     Wait Until Element Is Visible        ${list}
     Element Attribute Value Should Be    ${list}    aria-multiselectable    true
 
@@ -61,7 +61,7 @@ verify multiple selection listbox has all selected options with aria-selected se
     [Documentation]
     ...    - All selected options have aria-selected set to true.
     ...
-    Go To                                ${patterns}list--multi-selection-with-select-all
+    Go To                                ${components}list--multi-selection-with-select-all
     Wait Until Element Is Visible        ${list}
     Click Element                        ${option1}
     Click Element                        ${option2}
@@ -73,7 +73,7 @@ verify multiple selection listbox has all not selected options with aria-selecte
     [Documentation]
     ...    - All options that are not selected have aria-selected set to false.
     ...
-    Go To                                ${patterns}list--multi-selection-with-select-all
+    Go To                                ${components}list--multi-selection-with-select-all
     Wait Until Element Is Visible        ${list}
     Click Element                        ${option1}
     Element Attribute Value Should Be    ${option1}    aria-selected    true

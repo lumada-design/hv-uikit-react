@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _resources.resource
 Test Setup    Run Keywords
-...           Go To    ${components}basedropdown--with-content
+...           Go To    ${components}base-dropdown--with-content
 ...           AND    Wait Until Element Is Enabled    ${dropdown}
 Force Tags    keyboard, v3
 

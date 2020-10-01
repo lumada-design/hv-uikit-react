@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core";
 import { HvDropdown } from "../..";
 
 export default {
-  title: "Patterns/Dropdown",
+  title: "Forms/Dropdown",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDropdown } from '@hv/uikit-react-core/dist'",

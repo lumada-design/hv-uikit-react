@@ -15,7 +15,7 @@ import { KeyboardCodes, isKeypress } from "../../utils";
 import countryList from "../../Input/stories/countries";
 
 export default {
-  title: "Components/Forms/Search Box",
+  title: "Forms/Search Box",
 };
 
 const { Esc, Tab } = KeyboardCodes;

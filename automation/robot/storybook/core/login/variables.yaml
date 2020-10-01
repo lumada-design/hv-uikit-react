@@ -1,6 +1,0 @@
-input_username:       css:input[name='username']
-input_password:       css:input[type='password']
-checkbox_remember:    css:input[type='checkbox']
-label_remember:       css:div[class*=buttonsContainerWithRemember]>label
-button_login:         css:button[type=submit]
-button_forgot:        xpath://button[contains(.,'Forgot')]

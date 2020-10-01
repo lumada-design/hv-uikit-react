@@ -38,7 +38,7 @@ switch to Off when checkbox is focused and is pressed SPACE
 
 switch state when is controlled by other component
     [Setup]                             NONE
-    Go To                               ${components}forms-switch--controlled
+    Go To                               ${forms}switch--controlled
     Wait Until Page Contains Element    ${switchControlled}
     Checkbox Should not Be Selected     ${switchControlled}
     Click Button                        Toggle

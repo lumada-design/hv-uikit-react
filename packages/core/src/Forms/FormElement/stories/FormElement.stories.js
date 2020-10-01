@@ -13,7 +13,7 @@ import {
 } from "../../..";
 
 export default {
-  title: "Components/Forms/Form Element",
+  title: "Forms/Form Element",
   parameters: {
     v3: true,
     componentSubtitle: null,

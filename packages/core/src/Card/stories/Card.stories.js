@@ -27,7 +27,7 @@ import compressor from "./resources/compressor.png";
 import leaf from "./resources/leaf.png";
 
 export default {
-  title: "Patterns/Card",
+  title: "Components/Card",
   parameters: {
     componentSubtitle: null,
     usage:
