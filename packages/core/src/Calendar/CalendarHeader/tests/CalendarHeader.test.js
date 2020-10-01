@@ -5,7 +5,8 @@ import CalendarHeader from "..";
 
 describe("v3 <CalendarHeader />", () => {
   let wrapper;
-  const inputDate = new Date(2020, 0, 1, 0);
+  // use static UTC dates for snapshot testing
+  const inputDate = new Date(Date.UTC(2020, 0, 1, 0));
   const locale = "en-US";
 
   beforeEach(async () => {

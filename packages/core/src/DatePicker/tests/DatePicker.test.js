@@ -57,9 +57,10 @@ describe("[v3] <DatePicker /> with Single Calendar mode", () => {
   let wrapper;
 
   beforeEach(async () => {
+    // use static UTC dates for snapshot testing
     wrapper = mount(
       <HvProvider>
-        <HvDatePicker value={new Date(2019, 0, 1)} locale="en-US" />
+        <HvDatePicker value={new Date(Date.UTC(2019, 0, 1))} locale="en-US" />
       </HvProvider>
     );
   });
@@ -148,7 +149,8 @@ describe("[v3] <DatePicker /> with custom properties", () => {
       <HvProvider>
         <HvDatePicker
           locale="en-US"
-          value={new Date(2019, 0, 5, 12)}
+          // use static UTC dates for snapshot testing
+          value={new Date(Date.UTC(2019, 0, 5, 12))}
           labels={labels}
           horizontalPlacement="left"
           showActions
