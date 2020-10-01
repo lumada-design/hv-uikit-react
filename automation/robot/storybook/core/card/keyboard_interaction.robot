@@ -33,5 +33,5 @@ focus checkbox with keys TAB on content/header
     [Template]                       NONE
     Go To                            ${components}card--selectable
     Wait Until Element Is Enabled    ${aboveFooter}
-    set focus and press keys         ${aboveFooter}    TAB  TAB
+    set focus and press keys         ${aboveFooter}    TAB
     Element Should Be Focused        ${Checkbox}

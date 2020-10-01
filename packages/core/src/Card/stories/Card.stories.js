@@ -395,7 +395,8 @@ WithComposition.story = {
 
 export const Selectable = () => {
   const [checked, setChecked] = useState(false);
-  const styles = {
+
+  const useStyles = makeStyles(() => ({
     button: {
       cursor: "pointer",
       textAlign: "inherit",
@@ -404,34 +405,54 @@ export const Selectable = () => {
       border: 0,
       padding: 0,
       width: "100%",
+      "&:focus": {
+        outline: "none",
+      },
     },
-  };
+    text: {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+    },
+  }));
+
+  const classes = useStyles();
 
   const SingleContent = () => (
     <HvCardContent>
       <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">ID</HvTypography>
-        <HvTypography style={styles.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
+        <HvTypography className={classes.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </div>
       <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">Last connected</HvTypography>
-        <HvTypography style={styles.text}>Aug 30, 2017 12:27:53 PM</HvTypography>
+        <HvTypography className={classes.text}>Aug 30, 2017 12:27:53 PM</HvTypography>
       </div>
     </HvCardContent>
   );
 
-  return (
-    <HvCard bgcolor="atmo1" style={{ width: 360 }} selectable selected={checked}>
+  const CardClickableContent = ({ children }) => {
+    return (
       <button
         type="button"
-        style={styles.button}
+        category="semantic"
+        className={classes.button}
         onClick={() => setChecked(!checked)}
         aria-label="Asset Avatar L90 press enter or space to select this card"
+        tabIndex={-1}
       >
+        {children}
+      </button>
+    );
+  };
+
+  return (
+    <HvCard bgcolor="atmo1" style={{ width: 360 }} selectable selected={checked}>
+      <CardClickableContent>
         <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
         <HvCardMedia component="img" image={compressor} height={140} title="Compressor" />
         <SingleContent />
-      </button>
+      </CardClickableContent>
       <HvActionContainer>
         <HvCheckBox
           onChange={() => setChecked(!checked)}
