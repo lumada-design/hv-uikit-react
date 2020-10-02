@@ -9,22 +9,21 @@ function getStories(url, filter) {
   const clientAPI = window.__STORYBOOK_CLIENT_API__;
   const stories = clientAPI.raw();
 
+  const hasPa11ySet = (s) => s.parameters && s.parameters.pa11y != null;
+
+  const isCoreComponent = (s) => {
+    const includedPaths = ["Components/", "Forms/", "Widgets/"];
+    return s.kind && includedPaths.some((p) => s.kind.startsWith(p));
+  };
+
+  const hasExplicitDisable = (s) =>
+    s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== false;
+
   return Promise.resolve(
     stories
-      .filter(
-        (s) =>
-          // test only core components
-          (s.kind && (s.kind.indexOf("Components/") === 0 || s.kind.indexOf("Patterns/") === 0)) ||
-          // allow lab components if they provide a pa11y configuration (even if empty)
-          (s.parameters != null && s.parameters.pa11y != null)
-      )
-      .filter(
-        (s) =>
-          s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== false
-      )
-      // TODO Remove before major release
-      .filter((s) => s.parameters != null && s.parameters.v3)
-      .filter((s) => filter == null || s.id.indexOf(filter.toLowerCase()) !== -1)
+      .filter((s) => hasPa11ySet(s) || isCoreComponent(s))
+      .filter(hasExplicitDisable)
+      .filter((s) => filter == null || s.id.includes(filter.toLowerCase()))
       .map((s) => ({
         url: url + "?id=" + s.id,
         ...s.parameters.pa11y,
