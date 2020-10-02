@@ -95,6 +95,10 @@ export interface HvDatePickerProps
    */
   onChange?: (date?: string) => void;
   /**
+   * If `true` the datepicker is disabled unable to be interacted, if `false` it is enabled.
+   */
+  disabled?: boolean;
+  /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
   disablePortal?: boolean;

@@ -37,6 +37,7 @@ const HvDatePicker = ({
   className,
   labels,
   classes,
+  disabled = false,
   value,
   startValue,
   endValue,
@@ -180,6 +181,7 @@ const HvDatePicker = ({
   return (
     <HvFormElement
       id={id}
+      disabled={disabled}
       className={clsx(classes.root, className)}
       value={dateValue}
       locale={locale}
@@ -188,6 +190,7 @@ const HvDatePicker = ({
       <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title}>
         <HvBaseDropdown
           classes={{ root: classes.dropdown, panel: classes.panel }}
+          disabled={disabled}
           disablePortal={disablePortal}
           placement={horizontalPlacement}
           expanded={calendarOpen}
@@ -292,6 +295,10 @@ HvDatePicker.propTypes = {
    * Callback function to be triggered when the input value is changed
    */
   onChange: PropTypes.func,
+  /**
+   * If `true` the datepicker is disabled unable to be interacted, if `false` it is enabled.
+   */
+  disabled: PropTypes.bool,
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */

@@ -42,7 +42,56 @@ change locale result format
     ${monthName}                         Get Current Date    result_format=%B
     Element Text Should Be               ${month}    ${monthName}    ignore_case=true
 
+mouse events does not open when it is disabled
+    [Documentation]
+    ...     use case: it can be disabled and if so not interactable
+    [Setup]    NONE
+    Go To                              ${forms}date-picker--disabled
+    Wait Until Element Is Visible      ${datePickerHeader}
+    mouses does not open datepicker    ${datePickerRoot}
+    mouses does not open datepicker    ${datePickerCombobox}
+    mouses does not open datepicker    ${datePickerHeader}
+    mouses does not open datepicker    ${datePickerPlaceHolder}
+    mouses does not open datepicker    ${datePickerIcon}
+
+
+keyboard eevents does not open when it is disabled
+    [Documentation]
+    ...     use case: it can be disabled and if so not interactable
+    [Setup]    NONE
+    Go To                                ${forms}date-picker--disabled
+    Wait Until Element Is Visible        ${datePickerHeader}
+    keyboard does not open datepicker    ${datePickerRoot}
+    keyboard does not open datepicker    ${datePickerCombobox}
+    keyboard does not open datepicker    ${datePickerHeader}
+    keyboard does not open datepicker    ${datePickerPlaceHolder}
+    keyboard does not open datepicker    ${datePickerIcon}
+
 
 *** Variables ***
-${localInput}    css:input
-${weekday}       css:HvCalendarHeader-headerDayOfWeek
+${datePickerCombobox}       css:[role=combobox]
+${datePickerIcon}           css:.HvDatePicker-icon
+${datePickerPlaceHolder}    css:.HvBaseDropdown-selection
+${datePickerRoot}           css:.HvDatePicker-root
+${localInput}               css:input
+${weekday}                  css:HvCalendarHeader-headerDayOfWeek
+
+
+*** Keywords ***
+mouses does not open datepicker
+    [Documentation]    Any mouse interactions does not open datepicker
+    [Arguments]    ${Element}
+    Run Keyword And Ignore Error     Click Element    ${Element}
+    Element Should Not Be Visible    ${calendar}
+    Run Keyword And Ignore Error     Double Click Element    ${Element}
+    Element Should Not Be Visible    ${calendar}
+    Run Keyword And Ignore Error     Mouse Over    ${Element}
+    Element Should Not Be Visible    ${calendar}
+
+keyboard does not open datepicker
+    [Documentation]    Any keyboard interactions does not open datepicker
+    [Arguments]    ${Element}
+    Press Keys                       ${Element}    ENTER
+    Element Should Not Be Visible    ${calendar}
+    Press Keys                       ${Element}    SPACE
+    Element Should Not Be Visible    ${calendar}

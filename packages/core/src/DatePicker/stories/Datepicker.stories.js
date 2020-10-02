@@ -324,3 +324,20 @@ export const WithSelectionList = () => {
     />
   );
 };
+
+export const Disabled = () => <HvDatePicker id="DatePicker" disabled />;
+
+Disabled.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
+};
