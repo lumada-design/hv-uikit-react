@@ -35,6 +35,7 @@ const HvBaseDropdown = ({
 
   const [created, setCreated] = useUpdated(false);
   const anchorHeaderRef = useRef(null);
+  const containerRef = useRef(null);
 
   const elementId = useUniqueId(id, "hvbasedropdown");
 
@@ -178,9 +179,7 @@ const HvBaseDropdown = ({
    * @param data
    */
   const handleContainerCreate = (data) => {
-    getFirstAndLastFocus(
-      document.getElementById(setId(elementId, "children-container"))
-    )?.first?.focus();
+    getFirstAndLastFocus(containerRef.current)?.first?.focus();
     if (!created) {
       const position = data.flipped;
       setterPosition(position);
@@ -195,10 +194,8 @@ const HvBaseDropdown = ({
     if (isKeypress(event, Esc)) {
       handleToggle(event);
     }
-    if (isKeypress(event, Tab)) {
-      const focusList = getFirstAndLastFocus(
-        document.getElementById(setId(elementId, "children-container"))
-      );
+    if (isKeypress(event, Tab) && !event.shiftKey) {
+      const focusList = getFirstAndLastFocus(containerRef.current);
       if (document.activeElement === focusList?.last) {
         event.preventDefault();
         focusList?.first?.focus();
@@ -230,7 +227,11 @@ const HvBaseDropdown = ({
               style={{ width: widthInput }}
             />
           )}
-          <div id={setId(elementId, "children-container")} className={classes.panel}>
+          <div
+            id={setId(elementId, "children-container")}
+            ref={containerRef}
+            className={classes.panel}
+          >
             {children}
           </div>
           {positionUp && (
