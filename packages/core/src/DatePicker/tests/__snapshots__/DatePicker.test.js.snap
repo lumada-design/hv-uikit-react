@@ -3,7 +3,7 @@
 exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1`] = `
 <WithStyles(WithLabels)
   locale="en-US"
-  value={2019-01-01T00:00:00.000Z}
+  value={2019-01-01T12:00:00.000Z}
 >
   <WithLabels
     classes={
@@ -24,7 +24,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
       }
     }
     locale="en-US"
-    value={2019-01-01T00:00:00.000Z}
+    value={2019-01-01T12:00:00.000Z}
   >
     <WithId
       classes={
@@ -55,7 +55,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
         }
       }
       locale="en-US"
-      value={2019-01-01T00:00:00.000Z}
+      value={2019-01-01T12:00:00.000Z}
     >
       <HvDatePicker
         classes={
@@ -87,13 +87,14 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
           }
         }
         locale="en-US"
-        value={2019-01-01T00:00:00.000Z}
+        value={2019-01-01T12:00:00.000Z}
       >
         <WithStyles(WithId)
           className="HvDatePicker-root"
+          disabled={false}
           id="hv-date-picker-23"
           locale="en-US"
-          value={2019-01-01T00:00:00.000Z}
+          value={2019-01-01T12:00:00.000Z}
         >
           <WithId
             className="HvDatePicker-root"
@@ -102,9 +103,10 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                 "root": "HvFormElement-root",
               }
             }
+            disabled={false}
             id="hv-date-picker-23"
             locale="en-US"
-            value={2019-01-01T00:00:00.000Z}
+            value={2019-01-01T12:00:00.000Z}
           >
             <HvFormElement
               className="HvDatePicker-root"
@@ -113,9 +115,10 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                   "root": "HvFormElement-root",
                 }
               }
+              disabled={false}
               id="hv-date-picker-23"
               locale="en-US"
-              value={2019-01-01T00:00:00.000Z}
+              value={2019-01-01T12:00:00.000Z}
             >
               <div
                 className="HvDatePicker-root HvFormElement-root"
@@ -195,6 +198,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                         }
                       }
                       disablePortal={true}
+                      disabled={false}
                       expanded={false}
                       onClickOutside={[Function]}
                       onToggle={[Function]}
@@ -243,6 +247,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                           }
                         }
                         disablePortal={true}
+                        disabled={false}
                         expanded={false}
                         onClickOutside={[Function]}
                         onToggle={[Function]}
@@ -521,6 +526,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
       >
         <WithStyles(WithId)
           className="HvDatePicker-root"
+          disabled={false}
           id="testingDatePicker"
           locale="en-US"
           value={2019-01-05T12:00:00.000Z}
@@ -532,6 +538,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                 "root": "HvFormElement-root",
               }
             }
+            disabled={false}
             id="testingDatePicker"
             locale="en-US"
             value={2019-01-05T12:00:00.000Z}
@@ -543,6 +550,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                   "root": "HvFormElement-root",
                 }
               }
+              disabled={false}
               id="testingDatePicker"
               locale="en-US"
               value={2019-01-05T12:00:00.000Z}
@@ -627,6 +635,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                         }
                       }
                       disablePortal={true}
+                      disabled={false}
                       expanded={false}
                       onClickOutside={[Function]}
                       onToggle={[Function]}
@@ -675,6 +684,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                           }
                         }
                         disablePortal={true}
+                        disabled={false}
                         expanded={false}
                         onClickOutside={[Function]}
                         onToggle={[Function]}
@@ -917,6 +927,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
       >
         <WithStyles(WithId)
           className="HvDatePicker-root"
+          disabled={false}
           id="hv-date-picker-3"
           locale="en"
         >
@@ -927,6 +938,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                 "root": "HvFormElement-root",
               }
             }
+            disabled={false}
             id="hv-date-picker-3"
             locale="en"
           >
@@ -937,6 +949,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                   "root": "HvFormElement-root",
                 }
               }
+              disabled={false}
               id="hv-date-picker-3"
               locale="en"
             >
@@ -1018,6 +1031,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                         }
                       }
                       disablePortal={true}
+                      disabled={false}
                       expanded={false}
                       onClickOutside={[Function]}
                       onToggle={[Function]}
@@ -1066,6 +1080,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                           }
                         }
                         disablePortal={true}
+                        disabled={false}
                         expanded={false}
                         onClickOutside={[Function]}
                         onToggle={[Function]}

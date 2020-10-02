@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
 import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker } from "../..";
 import SingleCalendar from "../../Calendar/SingleCalendar";
-import { isSameDay } from "../../Calendar/utils";
+import { isSameDay, makeUTCDate } from "../../Calendar/utils";
 
 describe("[v3] <DatePicker /> with minimum configuration", () => {
   let wrapper;
@@ -57,10 +57,10 @@ describe("[v3] <DatePicker /> with Single Calendar mode", () => {
   let wrapper;
 
   beforeEach(async () => {
-    // use static UTC dates for snapshot testing
+    // use UTC 12:00 date to minimize issues for snapshots created in different timezones
     wrapper = mount(
       <HvProvider>
-        <HvDatePicker value={new Date(Date.UTC(2019, 0, 1))} locale="en-US" />
+        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />
       </HvProvider>
     );
   });
@@ -149,8 +149,8 @@ describe("[v3] <DatePicker /> with custom properties", () => {
       <HvProvider>
         <HvDatePicker
           locale="en-US"
-          // use static UTC dates for snapshot testing
-          value={new Date(Date.UTC(2019, 0, 5, 12))}
+          // use UTC 12:00 date to minimize issues for snapshots created in different timezones
+          value={makeUTCDate(2019, 0, 5, 12)}
           labels={labels}
           horizontalPlacement="left"
           showActions

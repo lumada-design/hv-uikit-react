@@ -42,6 +42,18 @@ export const getMonthDays = (month, year) => new Date(year, month, 0).getDate();
 export const getMonthFirstWeekday = (month, year) => new Date(year, month - 1, 1).getDay();
 
 /**
+ * Creates a `Date` instance in UTC timezone.
+ *
+ * @param {number} year - The year of the date.
+ * @param {number} monthIndex - The zero indexed month of the year (0 to 11).
+ * @param {number} day - The day of the month.
+ * @param {number} [hour=1] - The hour of the day.
+ * @returns {Date} A `Date` instance in UTC timezone.
+ */
+export const makeUTCDate = (year, monthIndex, day, hour = 1) =>
+  new Date(Date.UTC(year, monthIndex, day, hour));
+
+/**
  * Checks if the received date is a valid date.
  *
  * @param {Date} date - The date to be validated.
@@ -130,16 +142,14 @@ const uppercaseFirstLetter = (monthName) => monthName[0].toUpperCase() + monthNa
  * Returns a list with the names of all the months localized in the received locale and representation value.
  *
  * @param {string} locale - The locale to be applied to the Intl format.
- * @param {string} [representationValue=REPRESENTATION_VALUES.LONG] - The locale to be applied to the Intl format.
+ * @param {string} [representationValue=REPRESENTATION_VALUES.LONG] - The representation value for the month.
  * @returns {Array} An array with all the months names.
  */
 export const getMonthNamesList = (locale, representationValue = REPRESENTATION_VALUES.LONG) => {
-  const options = {
-    month: representationValue,
-  };
+  const options = { month: representationValue, timeZone: "UTC" };
 
   return [...new Array(12)].map((n, index) => {
-    const auxDate = new Date(1970, index, 1);
+    const auxDate = makeUTCDate(1970, index, 1);
     return uppercaseFirstLetter(Intl.DateTimeFormat(locale, options).format(auxDate));
   });
 };
@@ -147,18 +157,18 @@ export const getMonthNamesList = (locale, representationValue = REPRESENTATION_V
 /**
  * Returns a list with the names of all the weekdays localized in the received locale and representation value.
  *
- * @param {string} locale - The locale to be applied to the Intl format.
- * @param {string} representativeValue - The locale to be applied to the Intl format.
+ * @param {string} locale - The locale to be applied.
+ * @param {string} representationValue - The representation value for the weekday.
  * @returns {Array} An array with all the weekday names.
  */
-export const getWeekdayNamesList = (locale, representativeValue = REPRESENTATION_VALUES.LONG) => {
+export const getWeekdayNamesList = (locale, representationValue = REPRESENTATION_VALUES.LONG) => {
+  const options = { weekday: representationValue, timeZone: "UTC" };
   const weekdayNames = [];
+
   for (let day = 4; day <= 10; day += 1) {
-    weekdayNames.push(
-      new Date(1970, 0, day).toLocaleString(locale, {
-        weekday: representativeValue,
-      })
-    );
+    const auxDate = makeUTCDate(1970, 0, day);
+
+    weekdayNames.push(Intl.DateTimeFormat(locale, options).format(auxDate));
   }
   return weekdayNames;
 };
@@ -166,22 +176,19 @@ export const getWeekdayNamesList = (locale, representativeValue = REPRESENTATION
 /**
  * Returns the name of the month for the supplied month localized in the received locale and representation value.
  *
- * @param {number} monthIndex - Month which we want to retrieve the name. (0 January ... 11 December).
+ * @param {Date} date - The date from which the month name is extracted.
  * @param {string} locale - The locale to be applied to the Intl format.
  * @param {string} [representationValue=REPRESENTATION_VALUES.LONG] - The locale to be applied to the Intl format.
  * @returns {string} The name of the month.
  */
-export const getMonthName = (
-  date = new Date(),
-  locale,
-  representationValue = REPRESENTATION_VALUES.LONG
-) => new Intl.DateTimeFormat(locale, { month: representationValue }).format(date);
+export const getMonthName = (date, locale, representationValue = REPRESENTATION_VALUES.LONG) =>
+  new Intl.DateTimeFormat(locale, { month: representationValue }).format(date);
 
 /**
  * Formats the received date according to Design System specifications.
  * Currently: day month, year => `14 Aug, 2019`.
  *
- * @param {date} date - Date to be formatted.
+ * @param {Date} date - UTC date to be formatted.
  * @param {string} locale - The locale to be applied to the Intl format.
  * @returns {string} The formatted date as a string.
  */

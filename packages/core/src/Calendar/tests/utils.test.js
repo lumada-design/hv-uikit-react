@@ -14,6 +14,7 @@ import {
   isSameMonth,
   isValidLocale,
   zeroPad,
+  makeUTCDate,
 } from "../utils";
 
 /* eslint-disable no-console */
@@ -60,6 +61,15 @@ describe("Calendar utils - getMonthFirstWeekday", () => {
   });
   it("should return 1 when the first day of the month is a Monday", () => {
     expect(getMonthFirstWeekday(6, 2009)).toBe(1);
+  });
+});
+
+describe("Calendar utils - makeUTCDate", () => {
+  it("should create a date object in UTC timezone", () => {
+    const date = makeUTCDate(2009, 1, 1);
+    expect(date.getUTCFullYear()).toEqual(2009);
+    expect(date.getUTCMonth()).toEqual(1);
+    expect(date.getUTCDate()).toEqual(1);
   });
 });
 
