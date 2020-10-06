@@ -47,7 +47,7 @@ export default {
 export const Main = () => (
   <HvCard bgcolor="atmo1" style={{ width: 360 }}>
     <HvCardHeader title="Asset Avatar L90" subheader="Compressor" aria-label="Compressor" />
-    <HvCardMedia component="img" aria-label="Compressor" height={140} image={compressor} />
+    <HvCardMedia component="img" alt="Compressor" height={140} image={compressor} />
     <HvCardContent>
       <div style={{ paddingTop: "20px" }}>
         <HvTypography variant="highlightText">ID</HvTypography>
@@ -139,13 +139,7 @@ export const AllComponents = () => {
           </Grid>
         </Grid>
       </HvCardContent>
-      <HvCardMedia
-        component="img"
-        title="leafy leaf"
-        aria-label="leafy leaf"
-        height={160}
-        image={leaf}
-      />
+      <HvCardMedia component="img" alt="leafy leaf" height={160} image={leaf} />
       <HvActionContainer aria-label="Leaf">
         <HvCheckBox
           id="controller"
@@ -362,7 +356,7 @@ export const WithComposition = () => (
       component="img"
       image={leaf}
       height={160}
-      aria-label="leafy leaf"
+      alt="leafy leaf"
     />
     <HvActionContainer aria-label="Composed card">
       <HvCheckBox
@@ -450,7 +444,7 @@ export const Selectable = () => {
     <HvCard bgcolor="atmo1" style={{ width: 360 }} selectable selected={checked}>
       <CardClickableContent>
         <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
-        <HvCardMedia component="img" image={compressor} height={140} title="Compressor" />
+        <HvCardMedia component="img" image={compressor} height={140} alt="Compressor" />
         <SingleContent />
       </CardClickableContent>
       <HvActionContainer>
@@ -460,7 +454,11 @@ export const Selectable = () => {
           value="value"
           inputProps={{ "aria-label": "leaf input" }}
         />
-        <HvToggleButton selectedIcon={<FavoriteSelected />} notSelectedIcon={<Favorite />} />
+        <HvToggleButton
+          aria-label="Star"
+          selectedIcon={<FavoriteSelected />}
+          notSelectedIcon={<Favorite />}
+        />
         <div style={{ flex: 1 }} />
         <HvActionsGeneric
           actions={[

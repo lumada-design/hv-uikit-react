@@ -25,19 +25,18 @@ export const Main = () => {
 
   return (
     <HvSearchBox
+      inputProps={{ "aria-label": "Search" }}
       suggestionListCallback={suggestionHandler}
       suggestionSelectedCallback={(item) => console.log(`${item.label} selected`)}
-      onChange={(event, value) => {
-        console.log(`value: ${value}`);
-      }}
+      onChange={console.log}
     />
   );
 };
 
-export const Disabled = () => <HvSearchBox disabled />;
+export const Disabled = () => <HvSearchBox disabled inputProps={{ "aria-label": "Search" }} />;
 
 export const WithoutSuggestion = () => {
-  return <HvSearchBox onSubmit={(event, value) => console.log(`${value} submitted`)} />;
+  return <HvSearchBox inputProps={{ "aria-label": "Search" }} onSubmit={console.log} />;
 };
 
 WithoutSuggestion.story = {

@@ -42,6 +42,7 @@ const HvBaseDropdown = ({
   const theme = useTheme();
 
   const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
+  const ariaRole = role || (component == null ? "combobox" : undefined);
 
   useEffect(() => {
     setIsOpen((currentIsOpen) => {
@@ -138,7 +139,7 @@ const HvBaseDropdown = ({
           [classes.headerOpenUp]: isOpen && positionUp,
           [classes.headerOpenDown]: isOpen && !positionUp,
         })}
-        role="textbox"
+        role={ariaRole === "combobox" ? "textbox" : undefined}
         style={disabled ? { pointerEvents: "none" } : undefined}
         aria-controls={isOpen ? setId(elementId, "children-container") : undefined}
         aria-label={others["aria-label"] ?? undefined}
@@ -253,7 +254,7 @@ const HvBaseDropdown = ({
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
         id={id}
-        role={role || (component == null ? "combobox" : undefined)}
+        role={ariaRole}
         aria-expanded={isOpen}
         aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
         ref={anchorHeaderRef}

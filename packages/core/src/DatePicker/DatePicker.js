@@ -189,6 +189,7 @@ const HvDatePicker = ({
     >
       <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title}>
         <HvBaseDropdown
+          role="dialog"
           classes={{ root: classes.dropdown, panel: classes.panel }}
           disabled={disabled}
           disablePortal={disablePortal}
