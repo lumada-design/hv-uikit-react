@@ -5,7 +5,7 @@ Force Tags        wai-aria-practices
 
 
 *** Test Cases ***
-aria-haspopup    ${dropDownMenu}    aria-haspopup    true
+aria-haspopup    ${dropDownMenu}    aria-haspopup    menu
 aria-expanded    ${dropDownMenu}    aria-expanded    true
 aria-label       ${dropDownMenu}    aria-label       dropdownMenu-DisabledItems
 role menu        ${droppedMenu}     role             menu

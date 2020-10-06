@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _verticalNavigation.resource
 Test Setup        Run Keywords
-...               Go To    ${components}navigation-system-vertical-navigation--collapsable    AND
+...               Go To    ${components}vertical-navigation--collapsable    AND
 ...               expand vertical navigation
 Documentation     Test Cases based on Design System Version 1.2.0
 

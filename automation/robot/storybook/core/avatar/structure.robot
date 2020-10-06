@@ -1,14 +1,14 @@
 *** Setting ***
 Resource       ../_keywords.resource
 Suite Setup    Run Keywords
-...            Go To    ${layout}avatar--fallbacks    AND
+...            Go To    ${components}avatar--fallbacks    AND
 ...            Wait Until Element Is Visible    ${fallbackToDefaultUserIcon}
 
 
 *** Variables ***
 ${fallbackToChildren}           id:fallback_to_children
 ${fallbackToAlt}                id:falback_to_alt
-${fallbackToDefaultUserIcon}    css:#fallback_to_default_icon>div[class*="HvIconUser-root"]
+${fallbackToDefaultUserIcon}    css:#fallback_to_default_icon>div[name="User"]
 
 
 *** Test Cases ***

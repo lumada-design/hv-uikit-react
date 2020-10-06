@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _verticalNavigation.resource
 Test Setup        Run Keywords
-...               Go To    ${components}navigation-system-vertical-navigation--collapsable    AND
+...               Go To    ${components}vertical-navigation--collapsable    AND
 ...               Wait Until Element Is Visible    ${burger}
 Documentation     Test Cases based on Design System Version 1.2.0
 
@@ -28,9 +28,3 @@ keep the focus when item is selected with keyboard
     Press Keys                                         NONE    ENTER
     Element Should Be Focused                          ${item1.1}>div
 
-focus action item when action item is selected
-    Click Element                               ${burger}
-    Wait Until Element Is Visible               ${expanded}
-    Wait Until Page Does Not Contain Element    ${action2}:focus
-    Click Element                               ${action2}
-    Element Should Be Focused                   ${action2}

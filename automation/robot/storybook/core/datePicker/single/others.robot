@@ -68,7 +68,7 @@ keyboard eevents does not open when it is disabled
 
 
 *** Variables ***
-${datePickerCombobox}       css:[role=combobox]
+${datePickerCombobox}       css:.HvDatePicker-dropdown
 ${datePickerIcon}           css:.HvDatePicker-icon
 ${datePickerPlaceHolder}    css:.HvBaseDropdown-selection
 ${datePickerRoot}           css:.HvDatePicker-root
