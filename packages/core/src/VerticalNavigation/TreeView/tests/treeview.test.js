@@ -8,12 +8,12 @@ import HvProvider from "../../../Provider";
 
 import TreeView, { TreeViewItem } from "../index";
 
-describe("[v3] <TreeView />", () => {
+describe("<TreeView />", () => {
   const onChangeMock = jest.fn();
 
   let wrapper;
 
-  describe("[v3] navigation tree", () => {
+  describe("navigation tree", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
@@ -50,7 +50,7 @@ describe("[v3] <TreeView />", () => {
     });
   });
 
-  describe("[v3] treeview", () => {
+  describe("treeview", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>

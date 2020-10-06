@@ -55,7 +55,7 @@ const compProps = {
   onDropCapture: onClickCallback,
 };
 
-describe("[v3] Dropzone withStyles", () => {
+describe("Dropzone withStyles", () => {
   beforeEach(() => {
     wrapper = setupComponent(compProps);
   });

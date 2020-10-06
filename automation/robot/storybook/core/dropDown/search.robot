@@ -6,7 +6,6 @@ Test Setup       Run Keywords
 ...              AND    Click Element                    ${dropdownHeader}
 ...              AND    Wait Until Element Is Visible    ${listBox}
 Documentation    A search can be used to filter the available options
-Force Tags       v3
 
 
 *** Test Cases ***

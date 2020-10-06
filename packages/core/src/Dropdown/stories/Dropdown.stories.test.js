@@ -11,7 +11,6 @@ export default {
       disable: true,
       page: null,
     },
-    v3: true,
   },
 };
 
@@ -34,7 +33,6 @@ SingleSelectedValue.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -67,7 +65,6 @@ LongLabel.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -92,7 +89,6 @@ General.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -115,7 +111,6 @@ SingleSelection.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -140,7 +135,6 @@ MultiSelection.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -164,7 +158,6 @@ MultiSelectionNoSearch.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -187,7 +180,6 @@ SingleSelectionWithSearch.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -212,7 +204,6 @@ SingleSelectionNoDefault.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };
 
@@ -270,6 +261,5 @@ DifferentSizeAndPlacements.story = {
     docs: {
       disable: true,
     },
-    v3: true,
   },
 };

@@ -1,7 +1,6 @@
 *** Setting ***
 Library       DateTime
 Resource      ../_datePicker.resource
-Force Tags    v3
 
 
 *** Test Cases ***

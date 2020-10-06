@@ -4,7 +4,6 @@ Resource         ../_datePicker.resource
 Test Setup       open datePicker sample    with-selection-list
 Documentation    Use Cases:
 ...              - Supports the ability to add a custom shortcuts for dates(e.g: today)
-Force Tags       v3
 
 
 *** Test Cases ***

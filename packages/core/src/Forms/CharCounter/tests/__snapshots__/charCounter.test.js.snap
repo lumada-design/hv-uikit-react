@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 charCounter should render correctly 1`] = `
+exports[`charCounter should render correctly 1`] = `
 <WithStyles(HvCharCounter)
   currentCharQuantity={0}
   id="charCounter"

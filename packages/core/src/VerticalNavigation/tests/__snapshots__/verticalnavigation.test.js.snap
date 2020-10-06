@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation should render correctly 1`] = `
+exports[`<VerticalNavigation /> collapsable closed vertical navigation should render correctly 1`] = `
 <WithStyles(VerticalNavigation)
   id="sample3"
   isCollapsable={true}
@@ -459,7 +459,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
 </WithStyles(VerticalNavigation)>
 `;
 
-exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation should render correctly 1`] = `
+exports[`<VerticalNavigation /> collapsable open vertical navigation should render correctly 1`] = `
 <WithStyles(VerticalNavigation)
   id="sample3"
   isCollapsable={true}
@@ -918,7 +918,7 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
 </WithStyles(VerticalNavigation)>
 `;
 
-exports[`[v3] <VerticalNavigation /> [v3] non-collapsable open vertical navigation should render correctly 1`] = `
+exports[`<VerticalNavigation /> non-collapsable open vertical navigation should render correctly 1`] = `
 <WithStyles(VerticalNavigation)
   isCollapsable={false}
   isOpen={true}
@@ -1001,7 +1001,7 @@ exports[`[v3] <VerticalNavigation /> [v3] non-collapsable open vertical navigati
 </WithStyles(VerticalNavigation)>
 `;
 
-exports[`[v3] <VerticalNavigation /> [v3] non-collapsable open vertical navigation should render correctly 2`] = `
+exports[`<VerticalNavigation /> non-collapsable open vertical navigation should render correctly 2`] = `
 <WithStyles(VerticalNavigation)
   isCollapsable={false}
   isOpen={false}

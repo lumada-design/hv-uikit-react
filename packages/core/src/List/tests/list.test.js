@@ -13,7 +13,7 @@ const mockDataSingleSelectionWithIcons = [
   { label: "Value 3", showNavIcon: true },
 ];
 
-describe("[v3] <List />", () => {
+describe("<List />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
   global.window.event = { type: "mousedown" };

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 Input should not have the validation section 1`] = `
+exports[`Input should not have the validation section 1`] = `
 <WithStyles(WithLabels)
   showInfo={false}
 >
@@ -674,7 +674,7 @@ exports[`v3 Input should not have the validation section 1`] = `
 </WithStyles(WithLabels)>
 `;
 
-exports[`v3 Input should pass other props to the child input component 1`] = `
+exports[`Input should pass other props to the child input component 1`] = `
 <WithStyles(WithLabels)
   inputProps={
     Object {
@@ -1383,7 +1383,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
 </WithStyles(WithLabels)>
 `;
 
-exports[`v3 Input should render correctly 1`] = `
+exports[`Input should render correctly 1`] = `
 <WithStyles(WithLabels)>
   <WithLabels
     classes={

@@ -3,7 +3,6 @@ Resource      _keywords.resource
 Test Setup    Run Keywords
 ...           Go To  ${layout}asset-inventory--configurations
 ...           AND    Wait Until Element Is Enabled    hv-assetinventory
-Force Tags    v3
 
 
 *** Test Cases ***

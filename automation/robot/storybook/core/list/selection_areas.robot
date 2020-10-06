@@ -3,7 +3,6 @@ Variables        variables.yaml
 Resource         ../_keywords.resource
 Test Template    select an option by locator
 Documentation    select a option clicking in different areas icon, label, input
-Force Tags    v3
 
 
 *** Keywords ***

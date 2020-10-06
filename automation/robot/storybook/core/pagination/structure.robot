@@ -3,7 +3,6 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${widgets}pagination--controlled-sample
 ...           AND    Wait Until Element Is Visible    ${input}
-Force Tags  v3
 
 *** Variables ***
 ${input}        css:input

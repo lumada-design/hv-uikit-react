@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] Action Bar should render correctly 1`] = `
+exports[`Action Bar should render correctly 1`] = `
 <WithStyles(ActionContainer)
   className="makeStyles-actionBar-2"
 >

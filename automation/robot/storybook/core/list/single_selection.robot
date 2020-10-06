@@ -2,7 +2,6 @@
 Variables        variables.yaml
 Resource         ../_keywords.resource
 Documentation    options selections just for lists with single selection
-Force Tags    v3
 
 
 *** Test Cases ***

@@ -7,7 +7,7 @@ import { Backdrop } from "@material-ui/core";
 import HvProvider from "../../Provider";
 import Modal from "..";
 
-describe("[v3] Modal withStyles", () => {
+describe("Modal withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
@@ -23,7 +23,7 @@ describe("[v3] Modal withStyles", () => {
   });
 });
 
-describe("[v3] Modal Component", () => {
+describe("Modal Component", () => {
   let wrapper;
   const onCloseMock = jest.fn();
   const open = true;

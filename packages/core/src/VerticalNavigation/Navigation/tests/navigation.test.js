@@ -7,7 +7,7 @@ import HvProvider from "../../../Provider";
 
 import Navigation from "../index";
 
-describe("[v3] <Navigation />", () => {
+describe("<Navigation />", () => {
   const onChangeMock = jest.fn();
 
   let wrapper;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 Custom Pagination should render correctly 1`] = `
+exports[`Custom Pagination should render correctly 1`] = `
 <WithStyles(WithLabels)
   canNext={true}
   canPrevious={false}

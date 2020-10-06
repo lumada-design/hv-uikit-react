@@ -9,7 +9,7 @@ import Stop from "@hv/uikit-react-icons/dist/Stop";
 import HvProvider from "../../../Provider";
 import Actions, { Action } from "../index";
 
-describe("[v3] Actions", () => {
+describe("Actions", () => {
   let wrapper;
 
   it("should be able to render", () => {

@@ -2,7 +2,6 @@
 Resource          table.resource
 Test Template     show correct rows and pages when rows per page is changed
 Documentation     selection of rows per page
-Force Tags        v3
 
 *** Test Cases ***        url                           per page    populated    nº pages
 client side - 5 rows      ${visualizations}table--with-checkbox             5     5     3

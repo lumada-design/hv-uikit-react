@@ -62,12 +62,6 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Disabled = () => {
   const [checkedValue, setCheckedValue] = useState("1");
 
@@ -107,7 +101,6 @@ Disabled.story = {
         "color-contrast",
       ],
     },
-    v3: true,
   },
 };
 
@@ -141,7 +134,6 @@ ReadOnly.story = {
     docs: {
       storyDescription: "Not editable radio buttons.",
     },
-    v3: true,
   },
 };
 
@@ -174,7 +166,6 @@ WithoutLabel.story = {
       storyDescription:
         "Radio buttons without labels. The accessible name is provided via the `aria-label` property.",
     },
-    v3: true,
   },
 };
 
@@ -191,6 +182,5 @@ ErrorMessage.story = {
         "aria-valid-attr-value",
       ],
     },
-    v3: true,
   },
 };

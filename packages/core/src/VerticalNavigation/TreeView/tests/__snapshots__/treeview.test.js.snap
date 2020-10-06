@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] <TreeView /> [v3] navigation tree should render correctly 1`] = `
+exports[`<TreeView /> navigation tree should render correctly 1`] = `
 <WithStyles(TreeView)
   mode="navigation"
   onChange={[MockFunction]}
@@ -1199,7 +1199,7 @@ exports[`[v3] <TreeView /> [v3] navigation tree should render correctly 1`] = `
 </WithStyles(TreeView)>
 `;
 
-exports[`[v3] <TreeView /> [v3] treeview should render correctly 1`] = `
+exports[`<TreeView /> treeview should render correctly 1`] = `
 <WithStyles(TreeView)
   onChange={[MockFunction]}
   selected="4"

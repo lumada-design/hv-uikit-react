@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 Suggestions should render correctly 1`] = `
+exports[`Suggestions should render correctly 1`] = `
 <WithStyles(HvSuggestions)
   expanded={false}
   onClose={[Function]}

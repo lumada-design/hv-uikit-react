@@ -149,12 +149,6 @@ export const SingleDate = () => {
   );
 };
 
-SingleDate.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Localized = () => {
   const [locale, setLocale] = useState("en-US");
   const [selectionDate, setSelectionDate] = useState(new Date(2020, 7, 19));
@@ -224,7 +218,6 @@ export const Localized = () => {
 
 Localized.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Warning: Changing this sample locale changes the locale for all samples.",
     },

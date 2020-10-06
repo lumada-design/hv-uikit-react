@@ -6,7 +6,7 @@ import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker } from "../..";
 import SingleCalendar from "../../Calendar/SingleCalendar";
 import { isSameDay, makeUTCDate } from "../../Calendar/utils";
 
-describe("[v3] <DatePicker /> with minimum configuration", () => {
+describe("<DatePicker /> with minimum configuration", () => {
   let wrapper;
   let DatePickerComponent;
 
@@ -53,7 +53,7 @@ describe("[v3] <DatePicker /> with minimum configuration", () => {
   });
 });
 
-describe("[v3] <DatePicker /> with Single Calendar mode", () => {
+describe("<DatePicker /> with Single Calendar mode", () => {
   let wrapper;
 
   beforeEach(async () => {
@@ -98,7 +98,7 @@ describe("[v3] <DatePicker /> with Single Calendar mode", () => {
   });
 });
 
-describe("[v3] <DatePicker /> with Range Calendar mode", () => {
+describe("<DatePicker /> with Range Calendar mode", () => {
   let wrapper;
 
   beforeEach(async () => {
@@ -135,7 +135,7 @@ describe("[v3] <DatePicker /> with Range Calendar mode", () => {
   });
 });
 
-describe("[v3] <DatePicker /> with custom properties", () => {
+describe("<DatePicker /> with custom properties", () => {
   let wrapper;
   const labels = {
     applyLabel: "OK",

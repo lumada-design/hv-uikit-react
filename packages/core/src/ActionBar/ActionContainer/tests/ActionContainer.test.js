@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import { Main } from "../../stories/ActionBar.stories";
 import { HvActionContainer, HvProvider } from "../../..";
 
-describe("[v3] Action Bar", () => {
+describe("Action Bar", () => {
   const wrapper = mount(
     <HvProvider>
       <Main />

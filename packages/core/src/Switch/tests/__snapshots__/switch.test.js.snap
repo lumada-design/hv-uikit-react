@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] Switch withStyles should render correctly 1`] = `
+exports[`Switch withStyles should render correctly 1`] = `
 Array [
   <WithStyles(HvSwitch)
     aria-label="Engine 1"

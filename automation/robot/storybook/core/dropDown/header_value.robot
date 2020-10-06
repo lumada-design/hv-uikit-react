@@ -1,6 +1,5 @@
 *** Setting ***
 Resource         _resources.resource
-Force Tags       v3
 Documentation    Verify value on top head section of dropdown for uses cases:
 
 

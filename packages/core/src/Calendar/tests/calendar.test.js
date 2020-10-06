@@ -4,7 +4,7 @@ import HvProvider from "../../Provider";
 import { HvComposedNavigation } from "../CalendarNavigation";
 import { HvCalendar } from "..";
 
-describe("v3 <Calendar /> with minimum configuration", () => {
+describe("<Calendar /> with minimum configuration", () => {
   let wrapper;
 
   beforeEach(async () => {
@@ -20,7 +20,7 @@ describe("v3 <Calendar /> with minimum configuration", () => {
   });
 });
 
-describe("v3 <Calendar /> with configurations", () => {
+describe("<Calendar /> with configurations", () => {
   let wrapper;
   const selectedDate = new Date(1970, 0, 1);
 

@@ -4,7 +4,6 @@ Test Setup       Open DatePicker sample     range-mode
 Documentation    Use Cases:
 ...              - Date picker header should display the date selected or the range,
 ...                even if it is still being picked
-Force Tags       v3
 
 
 *** Test Cases ***

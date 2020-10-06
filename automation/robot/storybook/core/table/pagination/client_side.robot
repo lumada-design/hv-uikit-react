@@ -7,7 +7,6 @@ Test Template     Run Keyword
 Test Teardown     Run Keyword If Test Failed
 ...               Capture Page Screenshot    ${SUITE_NAME}${TEST_NAME}.png
 Documentation     in all Test Cases was assumed the buttons are enabled
-Force Tags        v3
 
 *** Test Cases ***
 current page increase when is clicked next page            click next page

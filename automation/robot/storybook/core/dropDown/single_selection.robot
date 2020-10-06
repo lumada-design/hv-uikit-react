@@ -5,7 +5,6 @@ Test Setup    Run Keywords
 ...           AND    Wait Until Element Is Enabled    ${dropdown}
 ...           AND    Click Element                    ${dropdownHeader}
 ...           AND    Wait Until Element Is Visible    ${listBox}
-Force Tags    v3
 
 
 *** Test Cases ***

@@ -6,7 +6,7 @@ import { HvRadio, HvProvider } from "../..";
 
 import { Main } from "../stories/Radio.stories";
 
-describe("[v3] RadioButton", () => {
+describe("RadioButton", () => {
   let wrapper;
 
   beforeEach(async () => {

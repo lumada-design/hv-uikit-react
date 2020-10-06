@@ -3,7 +3,7 @@ Resource         ../_keywords.resource
 Test Setup       Run Keywords
 ...              Go To    ${forms}input--suggestion
 ...              AND    Wait Until Element Is Enabled    ${input}
-Force Tags       keyboard    bug-ie    v3
+Force Tags       keyboard    bug-ie
 Documentation    https://github.com/lumada-design/hv-uikit-react/issues/1750
 
 

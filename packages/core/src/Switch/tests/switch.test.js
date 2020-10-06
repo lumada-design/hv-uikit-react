@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import { HvProvider, HvSwitch } from "../..";
 import { Main } from "../stories/Switch.stories";
 
-describe("[v3] Switch withStyles", () => {
+describe("Switch withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {

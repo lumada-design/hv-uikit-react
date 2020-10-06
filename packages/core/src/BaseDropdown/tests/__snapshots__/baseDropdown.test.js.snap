@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] BaseDropDown closes on double click 1`] = `
+exports[`BaseDropDown closes on double click 1`] = `
 <WithStyles(HvBaseDropdown)
   aria-label="Main sample"
   placeholder="Placeholder..."
@@ -186,7 +186,7 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
 </WithStyles(HvBaseDropdown)>
 `;
 
-exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
+exports[`BaseDropDown is rendered correctly and behaves as expected 1`] = `
 <WithStyles(HvBaseDropdown)
   aria-label="Main sample"
   placeholder="Placeholder..."
@@ -329,7 +329,7 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
 </WithStyles(HvBaseDropdown)>
 `;
 
-exports[`[v3] BaseDropDown opens on click 1`] = `
+exports[`BaseDropDown opens on click 1`] = `
 <WithStyles(HvBaseDropdown)
   aria-label="Main sample"
   placeholder="Placeholder..."

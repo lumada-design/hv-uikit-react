@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _resources.resource
 Test Template     verify dropped dropdownmenu has attributes
-Force Tags        wai-aria-practices, v3
+Force Tags        wai-aria-practices
 
 
 *** Test Cases ***

@@ -2,7 +2,6 @@
 Library       DateTime
 Test Setup    Open DatePicker sample    range-mode
 Resource      ../_datePicker.resource
-Force Tags    v3
 
 
 *** Test Cases ***

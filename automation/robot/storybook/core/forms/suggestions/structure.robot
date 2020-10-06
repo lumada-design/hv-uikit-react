@@ -3,7 +3,6 @@ Resource      _resource.resource
 Test Setup    Run Keywords
 ...           Go To    ${forms}form-element-suggestions--main
 ...           AND    Wait Until Element Is Enabled    ${input}
-Force Tags    v3
 
 
 *** Test Cases ***

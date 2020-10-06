@@ -3,7 +3,7 @@ Resource         ../table.resource
 Test Setup       Run Keywords
 ...              Go To    ${visualizations}table--table-with-changing-data    AND
 ...              Wait Until Page Contains Element    ${table1 all}
-Force Tags       bug-ie-webdriver v3
+Force Tags       bug-ie-webdriver
 Documentation    bug-ie-webdriver https://github.com/lumada-design/hv-uikit-react/issues/1708
 
 

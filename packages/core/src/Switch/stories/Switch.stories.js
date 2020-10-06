@@ -47,12 +47,6 @@ export const Main = () => (
   </>
 );
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Disabled = () => (
   <>
     <HvSwitch disabled aria-label="Engine 1" />
@@ -74,7 +68,6 @@ Disabled.story = {
         "color-contrast",
       ],
     },
-    v3: true,
   },
 };
 
@@ -90,7 +83,6 @@ ReadOnly.story = {
     docs: {
       storyDescription: "Not editable switches.",
     },
-    v3: true,
   },
 };
 
@@ -105,7 +97,6 @@ Required.story = {
     docs: {
       storyDescription: "Required switch. Uncheck to show the error state.",
     },
-    v3: true,
   },
 };
 
@@ -143,10 +134,4 @@ export const Controlled = () => {
       <StateString state={state} />
     </>
   );
-};
-
-Controlled.story = {
-  parameters: {
-    v3: true,
-  },
 };

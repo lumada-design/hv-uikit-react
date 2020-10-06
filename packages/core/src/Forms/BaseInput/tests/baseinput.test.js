@@ -10,7 +10,7 @@ const inputProps = {
   "aria-label": "Input Label",
 };
 
-describe("v3 Input", () => {
+describe("Input", () => {
   let wrapper;
 
   const getInputProps = (ParentElement) => ParentElement.find(BaseInput).props();

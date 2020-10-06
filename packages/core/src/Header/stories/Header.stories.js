@@ -10,7 +10,6 @@ import HitachiLogo from "./assets/HitachiLogo";
 export default {
   title: "Components/Header",
   parameters: {
-    v3: true,
     componentSubtitle: null,
     usage: "import { HvHeader } from '@hv/uikit-react-core/dist'",
     subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
@@ -108,7 +107,6 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
-    v3: true,
     eyes: {
       // waiting until all elements are rendered (issue #1794)
       waitBeforeScreenshot: ".HvHeaderMenuBar-active",

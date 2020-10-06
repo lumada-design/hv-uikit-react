@@ -19,12 +19,6 @@ export const Main = () => (
   </HvCheckBoxGroup>
 );
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Horizontal = () => (
   <HvCheckBoxGroup
     orientation="horizontal"
@@ -44,7 +38,6 @@ Horizontal.story = {
         story: "Layout checkboxes horizontally.",
       },
     },
-    v3: true,
   },
 };
 
@@ -77,7 +70,6 @@ Disabled.story = {
         "color-contrast",
       ],
     },
-    v3: true,
   },
 };
 
@@ -96,7 +88,6 @@ ReadOnly.story = {
         story: "Not editable checkbox group.",
       },
     },
-    v3: true,
   },
 };
 
@@ -116,7 +107,6 @@ WithoutLabel.story = {
           "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
       },
     },
-    v3: true,
   },
 };
 
@@ -137,7 +127,6 @@ Required.story = {
         story: "Required checkbox group. Uncheck all checkboxes to show default error message.",
       },
     },
-    v3: true,
   },
 };
 
@@ -170,7 +159,6 @@ Controlled.story = {
         story: "Controlled checkbox group.",
       },
     },
-    v3: true,
   },
 };
 
@@ -191,6 +179,5 @@ ErrorMessage.story = {
         "aria-valid-attr-value",
       ],
     },
-    v3: true,
   },
 };

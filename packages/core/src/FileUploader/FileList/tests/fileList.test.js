@@ -31,7 +31,7 @@ const files = [
   },
 ];
 
-describe("[v3] FileList withStyles", () => {
+describe("FileList withStyles", () => {
   it("should be defined", () => {
     wrapper = mount(
       <HvProvider>

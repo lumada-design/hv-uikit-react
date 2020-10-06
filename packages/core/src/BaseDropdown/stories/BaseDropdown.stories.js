@@ -17,7 +17,6 @@ export const Main = () => <HvBaseDropdown placeholder="Placeholder..." aria-labe
 
 Main.story = {
   parameters: {
-    v3: true,
     pa11y: {
       ignore: ["region"],
     },
@@ -36,12 +35,6 @@ export const WithContent = () => {
       </HvPanel>
     </HvBaseDropdown>
   );
-};
-
-WithContent.story = {
-  parameters: {
-    v3: true,
-  },
 };
 
 export const WithForms = () => {
@@ -65,12 +58,6 @@ export const WithForms = () => {
   );
 };
 
-WithForms.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Controlled = () => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
@@ -90,12 +77,6 @@ export const Controlled = () => {
       </HvBaseDropdown>
     </>
   );
-};
-
-Controlled.story = {
-  parameters: {
-    v3: true,
-  },
 };
 
 export const Custom = () => {
@@ -127,10 +108,4 @@ export const Custom = () => {
       </HvPanel>
     </HvBaseDropdown>
   );
-};
-
-Custom.story = {
-  parameters: {
-    v3: true,
-  },
 };

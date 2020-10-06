@@ -6,7 +6,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'",
-    v3: true,
   },
   component: HvBreadCrumb,
 };
@@ -25,12 +24,6 @@ export const Main = () => {
   ];
 
   return <HvBreadCrumb listRoute={data} id="breadcrumb1" aria-label="Breadcrumb" />;
-};
-
-Main.story = {
-  parameters: {
-    v3: true,
-  },
 };
 
 export const LimitedToFivePaths = () => {
@@ -52,7 +45,6 @@ LimitedToFivePaths.story = {
     docs: {
       storyDescription: "Breadcrumb sample with 5 out of 7 paths visible.",
     },
-    v3: true,
   },
 };
 
@@ -76,7 +68,6 @@ LimitedToTwoPaths.story = {
     docs: {
       storyDescription: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible",
     },
-    v3: true,
   },
 };
 
@@ -93,7 +84,6 @@ WithURL.story = {
     docs: {
       storyDescription: "Breadcrumb sample that generates the paths using an URL.",
     },
-    v3: true,
   },
 };
 
@@ -113,7 +103,6 @@ WithURLLimited.story = {
     docs: {
       storyDescription: "Breadcrumb sample that generates the limited paths using an URL.",
     },
-    v3: true,
   },
 };
 
@@ -145,6 +134,5 @@ WithClickEvents.story = {
     docs: {
       storyDescription: "Breadcrumb sample that has a onClick defined.",
     },
-    v3: true,
   },
 };

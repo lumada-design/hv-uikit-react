@@ -20,7 +20,7 @@ jest.mock(
     }
 );
 
-describe("[v3] BaseDropDown", () => {
+describe("BaseDropDown", () => {
   let wrapper;
   let baseDropdown;
   const SPACE = " ";

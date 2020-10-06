@@ -3,7 +3,6 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${tests}switch--with-state
 ...           AND    Wait Until Element Is Enabled    ${switchChecked}
-Force Tags    v3
 
 
 *** Test Cases ***

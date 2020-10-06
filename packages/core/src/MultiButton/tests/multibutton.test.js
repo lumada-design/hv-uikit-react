@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import { HvProvider, HvMultiButton } from "../..";
 import { Main, OnlyIcons, OnlyLabels } from "../stories/MultiButton.stories";
 
-describe("[v3] Multibutton withStyles - Icons Only", () => {
+describe("Multibutton withStyles - Icons Only", () => {
   const wrapper = mount(
     <HvProvider>
       <OnlyIcons />
@@ -28,7 +28,7 @@ describe("[v3] Multibutton withStyles - Icons Only", () => {
   });
 });
 
-describe("[v3] Multibutton - Text Only", () => {
+describe("Multibutton - Text Only", () => {
   const wrapper = mount(
     <HvProvider>
       <OnlyLabels />
@@ -45,7 +45,7 @@ describe("[v3] Multibutton - Text Only", () => {
   });
 });
 
-describe("[v3] Multibutton - Text and Icons", () => {
+describe("Multibutton - Text and Icons", () => {
   const wrapper = mount(
     <HvProvider>
       <Main />

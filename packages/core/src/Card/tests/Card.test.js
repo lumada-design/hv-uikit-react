@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import { HvActionsGeneric, HvCard, HvCheckBox, HvProvider } from "../..";
 import { Main, AllComponents } from "../stories/Card.stories";
 
-describe("[v3] Card", () => {
+describe("Card", () => {
   let wrapper;
 
   it("should be able to render with every property defined", () => {

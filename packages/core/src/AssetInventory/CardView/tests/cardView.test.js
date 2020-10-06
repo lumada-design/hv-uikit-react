@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import { HvCard, HvCardView, HvProvider } from "../../..";
 import { Main } from "../stories/CardView.stories";
 
-describe("[v3] CardView", () => {
+describe("CardView", () => {
   const wrapper = mount(
     <HvProvider>
       <Main />

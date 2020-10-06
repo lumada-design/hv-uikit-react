@@ -4,7 +4,7 @@ Test Template    verify keyboard tab sequence
 Documentation    Use Cases:
 ...              - Clicking in the month should open a month selector,
 ...              which via click navigates to the desired month
-Force Tags       keyboard    v3
+Force Tags       keyboard
 
 
 *** Test Cases ***                 FROM            TO

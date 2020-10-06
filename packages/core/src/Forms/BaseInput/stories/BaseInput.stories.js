@@ -6,7 +6,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'",
-    v3: true,
   },
   component: HvBaseInput,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
@@ -48,7 +47,6 @@ MultiLine.story = {
     docs: {
       storyDescription: "Showcasing the multiline input style.",
     },
-    v3: true,
   },
 };
 
@@ -73,7 +71,6 @@ MultiLineResize.story = {
     docs: {
       storyDescription: "Showcasing the multiline input style with resizing.",
     },
-    v3: true,
   },
 };
 
@@ -96,7 +93,6 @@ DisabledInput.story = {
     docs: {
       storyDescription: "Showcasing the disabled input style.",
     },
-    v3: true,
   },
 };
 
@@ -121,7 +117,6 @@ DisabledMultiLine.story = {
     docs: {
       storyDescription: "Showcasing the disabled multiline input style.",
     },
-    v3: true,
   },
 };
 
@@ -144,7 +139,6 @@ InvalidInput.story = {
     docs: {
       storyDescription: "Showcasing the input in Invalid State.",
     },
-    v3: true,
   },
 };
 
@@ -169,6 +163,5 @@ InvalidMultiLine.story = {
     docs: {
       storyDescription: "Showcasing the invalid multiline input style.",
     },
-    v3: true,
   },
 };

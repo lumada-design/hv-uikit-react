@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _resources.resource
 Test Template     Verify selectable card behavior
-Force Tags        v3    keyboard
+Force Tags        keyboard
 
 
 *** Keywords ***

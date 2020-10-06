@@ -3,7 +3,6 @@ Resource      _resources.resource
 Test Setup    Run Keywords
 ...           Go To    ${widgets}dropdown-menu--disabled-items
 ...           AND      Wait Until Element Is Enabled    ${dropDownMenu}
-Force Tags  v3
 
 *** Test Cases ***
 open dropdown menu when click dropdown button

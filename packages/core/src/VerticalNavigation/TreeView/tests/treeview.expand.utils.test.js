@@ -2,7 +2,7 @@
 
 import { NodeTreeExpandUtils } from "../utils";
 
-describe("[v3] NodeTreeExpandUtils", () => {
+describe("NodeTreeExpandUtils", () => {
   const nodeMap = {
     [-1]: {
       children: ["A", "B", "C"],
@@ -60,7 +60,7 @@ describe("[v3] NodeTreeExpandUtils", () => {
     },
   };
 
-  describe("[v3] isExpanded", () => {
+  describe("isExpanded", () => {
     it("return true if present", () => {
       const result = NodeTreeExpandUtils.isExpanded(["A", "A3", "C"], "A3");
 
@@ -74,7 +74,7 @@ describe("[v3] NodeTreeExpandUtils", () => {
     });
   });
 
-  describe("[v3] toggle", () => {
+  describe("toggle", () => {
     it("remove if present", () => {
       const expanded = ["A", "A3", "C"];
       const result = NodeTreeExpandUtils.toggle(expanded, "A3");

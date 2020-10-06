@@ -16,7 +16,7 @@ const setupComponent = (props = {}) =>
     </HvProvider>
   );
 
-describe("[v3] VerticalContainer withStyles", () => {
+describe("VerticalContainer withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {

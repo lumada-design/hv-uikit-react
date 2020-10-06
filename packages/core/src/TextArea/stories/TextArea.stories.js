@@ -4,7 +4,6 @@ import { HvTextArea, HvButton, HvInput } from "../..";
 export default {
   title: "Forms/Text Area",
   parameters: {
-    v3: true,
     componentSubtitle: null,
     usage: "import { HvTextArea } from '@hv/uikit-react-core/dist'",
   },
@@ -32,7 +31,6 @@ export const Resizable = () => {
 
 Resizable.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area that allow resizing.",
     },
@@ -69,7 +67,6 @@ export const LimitedBlocking = () => {
 
 LimitedBlocking.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription:
         "Text area that limits the quantity of character that can be introduced in the text area.",
@@ -99,7 +96,6 @@ export const LimitedWithCustomLabels = () => {
 
 LimitedWithCustomLabels.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area char count with a custom labels.",
     },
@@ -118,7 +114,6 @@ export const Disabled = () => {
 
 Disabled.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area that does not allows any interaction.",
     },
@@ -173,7 +168,6 @@ export const ControlledLimited = () => {
 
 ControlledLimited.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area value altered from an outside component.",
     },
@@ -201,7 +195,6 @@ export const customValidation = () => {
 
 customValidation.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area value that can't contain numbers.",
     },
@@ -247,7 +240,6 @@ export const ControlledValidation = () => {
 
 ControlledValidation.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area value altered from an outside component.",
     },

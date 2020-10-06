@@ -3,7 +3,6 @@ Resource      ../table.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--server-side-pagination
 ...           AND    Wait Until Element Is Visible    ${table}
-Force Tags    v3
 
 *** Test Cases ***
 remove selection when pagination is moved to next page

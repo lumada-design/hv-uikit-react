@@ -4,7 +4,6 @@ Test Setup        Run Keywords
 ...               Go To    ${visualizations}table--with-checkbox
 ...               AND    Wait Until Element Is Visible    ${table}
 Test Template     Run Keyword
-Force Tags        v3
 
 *** Test Cases ***
 enable actions when any row is selected

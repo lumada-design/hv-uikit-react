@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1`] = `
+exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = `
 <WithStyles(WithLabels)
   locale="en-US"
   value={2019-01-01T12:00:00.000Z}
@@ -408,7 +408,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
 </WithStyles(WithLabels)>
 `;
 
-exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] = `
+exports[`<DatePicker /> with custom properties should render correctly 1`] = `
 <WithStyles(WithLabels)
   horizontalPlacement="left"
   id="testingDatePicker"
@@ -845,7 +845,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
 </WithStyles(WithLabels)>
 `;
 
-exports[`[v3] <DatePicker /> with minimum configuration should render correctly 1`] = `
+exports[`<DatePicker /> with minimum configuration should render correctly 1`] = `
 <WithStyles(WithLabels)>
   <WithLabels
     classes={

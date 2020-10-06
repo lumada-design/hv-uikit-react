@@ -20,12 +20,12 @@ jest.mock(
     }
 );
 
-describe("[v3] DropDownMenu", () => {
+describe("DropDownMenu", () => {
   let wrapper;
   const SPACE = " ";
   const ENTER = "Enter";
 
-  describe("[v3] component without portal", () => {
+  describe("component without portal", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
@@ -103,7 +103,7 @@ describe("[v3] DropDownMenu", () => {
     });
   });
 
-  describe("[v3] component with portal", () => {
+  describe("component with portal", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>

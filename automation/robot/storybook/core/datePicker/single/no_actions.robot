@@ -7,7 +7,6 @@ Documentation    Use Cases:
 ...              - Selecting a date, closes the date picker and selects the chosen date
 ...              2. Allows selection of a single date
 ...              3. If no buttons are used, the onChange should be triggered on date click
-Force Tags       v3
 
 
 *** Test Cases ***

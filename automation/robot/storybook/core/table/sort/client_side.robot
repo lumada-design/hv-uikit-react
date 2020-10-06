@@ -3,7 +3,7 @@ Resource      _keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--main
 ...           AND    Wait Until Element Is Visible    ${table}
-Force Tags    bug-infrastructure-ie v3
+Force Tags    bug-infrastructure-ie
 
 *** Test Cases ***
 sort column by ascending when column is not sorted and her header is clicked

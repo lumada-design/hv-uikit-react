@@ -14,7 +14,7 @@ window.matchMedia = jest.fn().mockImplementation((query) => ({
   removeListener: jest.fn(),
 }));
 
-describe("[v3] Actions withStyles", () => {
+describe("Actions withStyles", () => {
   let wrapper;
 
   it("should be able to render", () => {

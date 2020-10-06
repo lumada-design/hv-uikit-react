@@ -5,7 +5,7 @@ Test Setup        Run Keywords
 ...               AND    Wait Until Element Is Visible    ${table}
 Test Teardown     Run Keyword If Test Failed
 ...               Capture Page Screenshot    ${SUITE_NAME}${TEST_NAME}.png
-Force Tags        keyboard    bug-infrastructure-ie    v3
+Force Tags        keyboard    bug-infrastructure-ie
 Documentation     https://www.w3.org/TR/wai-aria-practices/#table
 ...               mouse vs keyboard problem
 ...               https://github.com/lumada-design/hv-uikit-react/issues/1631

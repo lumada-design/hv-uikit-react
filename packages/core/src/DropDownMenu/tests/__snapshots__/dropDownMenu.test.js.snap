@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`] = `
+exports[`DropDownMenu component with portal closes on double click 1`] = `
 <WithStyles(WithId)
   dataList={
     Array [
@@ -384,7 +384,7 @@ exports[`[v3] DropDownMenu [v3] component with portal closes on double click 1`]
 </WithStyles(WithId)>
 `;
 
-exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and behaves as expected 1`] = `
+exports[`DropDownMenu component with portal is rendered correctly and behaves as expected 1`] = `
 <WithStyles(WithId)
   dataList={
     Array [
@@ -729,7 +729,7 @@ exports[`[v3] DropDownMenu [v3] component with portal is rendered correctly and 
 </WithStyles(WithId)>
 `;
 
-exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
+exports[`DropDownMenu component with portal opens on click 1`] = `
 <WithStyles(WithId)
   dataList={
     Array [
@@ -1957,7 +1957,7 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
 </WithStyles(WithId)>
 `;
 
-exports[`[v3] DropDownMenu [v3] component without portal closes on double click 1`] = `
+exports[`DropDownMenu component without portal closes on double click 1`] = `
 <WithStyles(WithId)
   dataList={
     Array [
@@ -2341,7 +2341,7 @@ exports[`[v3] DropDownMenu [v3] component without portal closes on double click 
 </WithStyles(WithId)>
 `;
 
-exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly and behaves as expected 1`] = `
+exports[`DropDownMenu component without portal is rendered correctly and behaves as expected 1`] = `
 <WithStyles(WithId)
   dataList={
     Array [
@@ -2686,7 +2686,7 @@ exports[`[v3] DropDownMenu [v3] component without portal is rendered correctly a
 </WithStyles(WithId)>
 `;
 
-exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
+exports[`DropDownMenu component without portal opens on click 1`] = `
 <WithStyles(WithId)
   dataList={
     Array [

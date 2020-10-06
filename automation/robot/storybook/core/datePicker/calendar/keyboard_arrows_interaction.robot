@@ -1,7 +1,7 @@
 *** Setting ***
 Resource         ../_datePicker.resource
 Test Template    focus day as arrow interaction
-Force Tags       keyboard    v3
+Force Tags       keyboard
 
 
 *** Test Cases ***                                         from          arrow          to

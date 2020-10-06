@@ -4,7 +4,6 @@ Test Template    verify date when it is inserted distinct formats
 Documentation    Use Cases:
 ...              - Date input can be typed without special characters
 ...              - Dates can be typed and if valid applied to the calendar
-Force Tags       v3
 
 
 *** Test Cases ***      INPUT

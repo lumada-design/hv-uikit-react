@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] <Navigation /> navigation should render correctly 1`] = `
+exports[`<Navigation /> navigation should render correctly 1`] = `
 <WithStyles(Navigation)
   data={
     Array [

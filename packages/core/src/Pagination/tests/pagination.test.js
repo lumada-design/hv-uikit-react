@@ -7,7 +7,7 @@ import { HvInput, HvPagination, HvProvider } from "../..";
 import { Main, ControlledSample } from "../stories/Pagination.stories";
 import Select from "../Select";
 
-describe("v3 Default Pagination", () => {
+describe("Default Pagination", () => {
   const wrapper = mount(
     <HvProvider>
       <Main />
@@ -34,7 +34,7 @@ describe("v3 Default Pagination", () => {
   });
 });
 
-describe("v3 Pagination without pageJump Input", () => {
+describe("Pagination without pageJump Input", () => {
   const wrapper = mount(
     <HvProvider>
       <HvPagination showPageJump={false} />
@@ -47,7 +47,7 @@ describe("v3 Pagination without pageJump Input", () => {
   });
 });
 
-describe("v3 Pagination without pageSize select", () => {
+describe("Pagination without pageSize select", () => {
   const wrapper = mount(
     <HvProvider>
       <HvPagination showPageSizeOptions={false} />
@@ -60,7 +60,7 @@ describe("v3 Pagination without pageSize select", () => {
   });
 });
 
-describe("v3 Custom Pagination", () => {
+describe("Custom Pagination", () => {
   const wrapper = mount(
     <HvProvider>
       <ControlledSample />

@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
 import Brand from "../index";
 
-describe("[v3] Brand withStyles", () => {
+describe("Brand withStyles", () => {
   let wrapper;
 
   it("should be able to render", () => {

@@ -56,6 +56,5 @@ WithState.story = {
         "color-contrast",
       ],
     },
-    v3: true,
   },
 };

@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import SearchBox from "../index";
 import HvProvider from "../../Provider";
 
-describe("[v3] <SearchBox />", () => {
+describe("<SearchBox />", () => {
   const onChangeMock = jest.fn();
 
   it("has default props", () => {

@@ -4,7 +4,7 @@ Test Setup       Run Keywords
 ...              Go To    ${visualizations}table--server-side-pagination
 ...              AND    Wait Until Element Is Enabled    ${pagination_input}
 Test Template    Run Keyword
-Force Tags       bug-ie-webdriver v3
+Force Tags       bug-ie-webdriver
 Documentation    in all Test Cases was assumed the buttons are enabled
 ...              https://github.com/lumada-design/hv-uikit-react/issues/1708
 

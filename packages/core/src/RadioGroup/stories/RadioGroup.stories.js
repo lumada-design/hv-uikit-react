@@ -19,12 +19,6 @@ export const Main = () => (
   </HvRadioGroup>
 );
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Horizontal = () => (
   <HvRadioGroup
     orientation="horizontal"
@@ -44,7 +38,6 @@ Horizontal.story = {
         story: "Layout checkboxes horizontally.",
       },
     },
-    v3: true,
   },
 };
 
@@ -72,7 +65,6 @@ Disabled.story = {
         "color-contrast",
       ],
     },
-    v3: true,
   },
 };
 
@@ -91,7 +83,6 @@ ReadOnly.story = {
         story: "Not editable checkbox group.",
       },
     },
-    v3: true,
   },
 };
 
@@ -111,7 +102,6 @@ WithoutLabel.story = {
           "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
       },
     },
-    v3: true,
   },
 };
 
@@ -152,7 +142,6 @@ Controlled.story = {
         story: "Controlled checkbox group.",
       },
     },
-    v3: true,
   },
 };
 
@@ -173,6 +162,5 @@ ErrorMessage.story = {
         "aria-valid-attr-value",
       ],
     },
-    v3: true,
   },
 };

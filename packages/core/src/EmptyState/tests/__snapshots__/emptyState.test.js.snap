@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] <EmptyState /> with Element title/message/action should render correctly 1`] = `
+exports[`<EmptyState /> with Element title/message/action should render correctly 1`] = `
 <WithStyles(EmptyState)
   action={<MockAction />}
   icon={<div />}
@@ -181,7 +181,7 @@ exports[`[v3] <EmptyState /> with Element title/message/action should render cor
 </WithStyles(EmptyState)>
 `;
 
-exports[`[v3] <HvEmptyState /> with String title/message should render correctly 1`] = `
+exports[`<HvEmptyState /> with String title/message should render correctly 1`] = `
 <WithStyles(EmptyState)
   action={
     <WithStyles(ForwardRef)

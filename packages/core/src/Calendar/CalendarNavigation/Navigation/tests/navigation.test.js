@@ -6,7 +6,7 @@ import HvProvider from "../../../../Provider";
 
 import Navigation from "..";
 
-describe("v3 <Navigation />", () => {
+describe("<Navigation />", () => {
   let wrapper;
   let navigationComponent;
 

@@ -5,12 +5,12 @@ import { mount } from "enzyme";
 import { HvProvider, HvVerticalNavigation } from "../..";
 import { Main, Collapsable } from "../stories/VerticalNavigation.stories";
 
-describe("[v3] <VerticalNavigation />", () => {
+describe("<VerticalNavigation />", () => {
   const toggleOpenCallbackMock = jest.fn();
 
   let wrapper;
 
-  describe("[v3] collapsable closed vertical navigation", () => {
+  describe("collapsable closed vertical navigation", () => {
     wrapper = mount(
       <HvProvider>
         <Main />
@@ -22,7 +22,7 @@ describe("[v3] <VerticalNavigation />", () => {
     });
   });
 
-  describe("[v3] collapsable open vertical navigation", () => {
+  describe("collapsable open vertical navigation", () => {
     wrapper = mount(
       <HvProvider>
         <Collapsable />
@@ -34,7 +34,7 @@ describe("[v3] <VerticalNavigation />", () => {
     });
   });
 
-  describe("[v3] non-collapsable open vertical navigation", () => {
+  describe("non-collapsable open vertical navigation", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
@@ -56,7 +56,7 @@ describe("[v3] <VerticalNavigation />", () => {
     });
   });
 
-  describe("[v3] non-collapsable open vertical navigation", () => {
+  describe("non-collapsable open vertical navigation", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
