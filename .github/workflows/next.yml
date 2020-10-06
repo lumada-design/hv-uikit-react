@@ -261,7 +261,7 @@ jobs:
     name: Test Robot (Windows)
     needs: Build-Documentation
     runs-on: [self-hosted, Windows]
-    timeout-minutes: 150
+    timeout-minutes: 200
     strategy:
       fail-fast: false
       matrix:
