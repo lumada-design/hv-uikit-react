@@ -249,48 +249,34 @@ Array [
                         type="button"
                       >
                         <FavoriteSelected>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="FavoriteSelected"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="FavoriteSelected"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="FavoriteSelected"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M7.96825 12.24129l4.375 2.625-.875-5.25 3.5-3.5-4.624-.639-2.376-4.611-2.37 4.611-4.63.639 3.5 3.5-.87 5.25z"
-                                    fill="#414141"
-                                  />
-                                  <path
-                                    className="color0"
-                                    d="M2.96825 15.86629l.998-6.03421-3.998-4.0102 5.32639-.73736L7.96925-.13371l2.67857 5.21823 5.32043.73836-3.997 4.0092 1.003 6.03321-5.005-3.01213zm5.001-4.1734l3.67063 2.21211-.73313-4.4152 2.94742-2.9564L10 6 7.96925 2.04155 5.94147 6l-3.86012.53436 2.94643 2.95541-.72917 4.41423z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M7.96825 12.24129l4.375 2.625-.875-5.25 3.5-3.5-4.624-.639-2.376-4.611-2.37 4.611-4.63.639 3.5 3.5-.87 5.25z"
+                                  fill="#414141"
+                                />
+                                <path
+                                  className="color0"
+                                  d="M2.96825 15.86629l.998-6.03421-3.998-4.0102 5.32639-.73736L7.96925-.13371l2.67857 5.21823 5.32043.73836-3.997 4.0092 1.003 6.03321-5.005-3.01213zm5.001-4.1734l3.67063 2.21211-.73313-4.4152 2.94742-2.9564L10 6 7.96925 2.04155 5.94147 6l-3.86012.53436 2.94643 2.95541-.72917 4.41423z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </FavoriteSelected>
                       </button>
                       <ForwardRef(Popper)
@@ -596,48 +582,34 @@ Array [
                         type="button"
                       >
                         <Bookmark>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="Bookmark"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="Bookmark"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="Bookmark"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M3 0h10v16l-5-5-5 5z"
-                                    fill="#F0F0F0"
-                                  />
-                                  <path
-                                    className="color1"
-                                    d="M4 1v12.586l3.293-3.293L8 9.586l.707.707L12 13.586V1H4M3 0h10v16l-5-5-5 5z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M3 0h10v16l-5-5-5 5z"
+                                  fill="#F0F0F0"
+                                />
+                                <path
+                                  className="color1"
+                                  d="M4 1v12.586l3.293-3.293L8 9.586l.707.707L12 13.586V1H4M3 0h10v16l-5-5-5 5z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </Bookmark>
                       </button>
                       <ForwardRef(Popper)
@@ -943,48 +915,34 @@ Array [
                         type="button"
                       >
                         <BackwardsEmpty>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="BackwardsEmpty"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="BackwardsEmpty"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="BackwardsEmpty"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
-                                    fill="#414141"
-                                  />
-                                  <path
-                                    className="color0"
-                                    d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
+                                  fill="#414141"
+                                />
+                                <path
+                                  className="color0"
+                                  d="M11 2.414v11.172L5.414 8 11 2.414M12 0L4 8l8 8z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </BackwardsEmpty>
                       </button>
                       <ForwardRef(Popper)
@@ -1290,43 +1248,29 @@ Array [
                         type="button"
                       >
                         <UpEmpty>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="UpEmpty"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="UpEmpty"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="UpEmpty"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M2.414 11h11.172L8 5.414 2.414 11M0 12l8-8 8 8z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M2.414 11h11.172L8 5.414 2.414 11M0 12l8-8 8 8z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </UpEmpty>
                       </button>
                       <ForwardRef(Popper)
@@ -1627,43 +1571,29 @@ Array [
                         type="button"
                       >
                         <DownEmpty>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="DownEmpty"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="DownEmpty"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="DownEmpty"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M13.586 5H2.414L8 10.586 13.586 5M16 4l-8 8-8-8z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M13.586 5H2.414L8 10.586 13.586 5M16 4l-8 8-8-8z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </DownEmpty>
                       </button>
                       <ForwardRef(Popper)
@@ -1964,43 +1894,29 @@ Array [
                         type="button"
                       >
                         <ForwardsEmpty>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="ForwardsEmpty"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="ForwardsEmpty"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="ForwardsEmpty"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M5 2.414v11.172L10.586 8 5 2.414M4 0l8 8-8 8z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M5 2.414v11.172L10.586 8 5 2.414M4 0l8 8-8 8z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </ForwardsEmpty>
                       </button>
                       <ForwardRef(Popper)
@@ -2301,43 +2217,29 @@ Array [
                         type="button"
                       >
                         <Like>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="Like"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="Like"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="Like"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M13.69343 5.0065h-3.663l-.049-2.372c0-2.408-2.588-2.641-3.591-2.641-.241 0-.391.013-.391.013v3.755a3.128 3.128 0 01-2 2.912v-.667h-4v10h4v-.373a5.48109 5.48109 0 001.976.373h5.8c3 0 3.254-2.227 3.254-2.227l.97-6.215a2.49 2.49 0 00-2.306-2.558zm-10.694 10h-2v-8h2zm11.039-1.381v.031a1.549 1.549 0 01-.345.676 2.43 2.43 0 01-1.921.674h-5.8a4.97388 4.97388 0 01-1.3-.184 1.56 1.56 0 01-.573-.285.268.268 0 01-.1-.231v-6.55a5.5399 5.5399 0 001.032-.5 3.963 3.963 0 001.968-3.495v-2.736a3.70009 3.70009 0 011.141.292 1.3 1.3 0 01.841 1.317v.02l.05 2.373.02.979h4.587a1.96111 1.96111 0 01.744.27 1.357 1.357 0 01.617 1.217z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M13.69343 5.0065h-3.663l-.049-2.372c0-2.408-2.588-2.641-3.591-2.641-.241 0-.391.013-.391.013v3.755a3.128 3.128 0 01-2 2.912v-.667h-4v10h4v-.373a5.48109 5.48109 0 001.976.373h5.8c3 0 3.254-2.227 3.254-2.227l.97-6.215a2.49 2.49 0 00-2.306-2.558zm-10.694 10h-2v-8h2zm11.039-1.381v.031a1.549 1.549 0 01-.345.676 2.43 2.43 0 01-1.921.674h-5.8a4.97388 4.97388 0 01-1.3-.184 1.56 1.56 0 01-.573-.285.268.268 0 01-.1-.231v-6.55a5.5399 5.5399 0 001.032-.5 3.963 3.963 0 001.968-3.495v-2.736a3.70009 3.70009 0 011.141.292 1.3 1.3 0 01.841 1.317v.02l.05 2.373.02.979h4.587a1.96111 1.96111 0 01.744.27 1.357 1.357 0 01.617 1.217z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </Like>
                       </button>
                       <ForwardRef(Popper)
@@ -2638,43 +2540,29 @@ Array [
                         type="button"
                       >
                         <Dislike>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="Dislike"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="Dislike"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="Dislike"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M.00057 8.435l.973-6.215s.258-2.227 3.254-2.227h5.8a5.481 5.481 0 011.973.373v-.373h4v10h-4v-.667a3.128 3.128 0 00-2 2.912v3.755s-.15.014-.391.014c-1 0-3.591-.234-3.591-2.642l-.049-2.372h-3.663a2.49 2.49 0 01-2.306-2.558zm13 .558h2v-8h-2zm-12-.486a1.355 1.355 0 00.616 1.216 1.96111 1.96111 0 00.744.27h4.587l.02.979.05 2.373v.02a1.3 1.3 0 00.841 1.317 3.70009 3.70009 0 001.142.292v-2.736a3.963 3.963 0 011.968-3.491 5.54112 5.54112 0 011.032-.504v-6.55a.268.268 0 00-.1-.227 1.56 1.56 0 00-.573-.285 4.9742 4.9742 0 00-1.303-.188h-5.8a2.43 2.43 0 00-1.916.674 1.549 1.549 0 00-.345.676v.031z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M.00057 8.435l.973-6.215s.258-2.227 3.254-2.227h5.8a5.481 5.481 0 011.973.373v-.373h4v10h-4v-.667a3.128 3.128 0 00-2 2.912v3.755s-.15.014-.391.014c-1 0-3.591-.234-3.591-2.642l-.049-2.372h-3.663a2.49 2.49 0 01-2.306-2.558zm13 .558h2v-8h-2zm-12-.486a1.355 1.355 0 00.616 1.216 1.96111 1.96111 0 00.744.27h4.587l.02.979.05 2.373v.02a1.3 1.3 0 00.841 1.317 3.70009 3.70009 0 001.142.292v-2.736a3.963 3.963 0 011.968-3.491 5.54112 5.54112 0 011.032-.504v-6.55a.268.268 0 00-.1-.227 1.56 1.56 0 00-.573-.285 4.9742 4.9742 0 00-1.303-.188h-5.8a2.43 2.43 0 00-1.916.674 1.549 1.549 0 00-.345.676v.031z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </Dislike>
                       </button>
                       <ForwardRef(Popper)
@@ -2975,43 +2863,29 @@ Array [
                         type="button"
                       >
                         <LightOff>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="LightOff"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="LightOff"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="LightOff"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M5 15h6v1H5zm5-2H6v-1.5l-.4-.3a4 4 0 114.8 0l-.4.3V13m1-1a5 5 0 10-6 0v2h6z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M5 15h6v1H5zm5-2H6v-1.5l-.4-.3a4 4 0 114.8 0l-.4.3V13m1-1a5 5 0 10-6 0v2h6z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </LightOff>
                       </button>
                       <ForwardRef(Popper)
@@ -3312,43 +3186,29 @@ Array [
                         type="button"
                       >
                         <Unlock>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="Unlock"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="Unlock"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="Unlock"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M8.5 12h-1V8h1zM14 4v12H2V4h2V0h6v1H5v3zm-1 1H3v10h10z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M8.5 12h-1V8h1zM14 4v12H2V4h2V0h6v1H5v3zm-1 1H3v10h10z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </Unlock>
                       </button>
                       <ForwardRef(Popper)

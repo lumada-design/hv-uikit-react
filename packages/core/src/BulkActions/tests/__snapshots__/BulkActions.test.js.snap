@@ -454,48 +454,34 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                                 value="on"
                                               />
                                               <Checkbox>
-                                                <WithStyles(HvIconBase)
+                                                <HvIconBase
                                                   iconSize="S"
                                                   name="Checkbox"
                                                 >
-                                                  <HvIconBase
-                                                    classes={
-                                                      Object {
-                                                        "l": "HvIconBase-l",
-                                                        "m": "HvIconBase-m",
-                                                        "root": "HvIconBase-root",
-                                                        "s": "HvIconBase-s",
-                                                        "xs": "HvIconBase-xs",
-                                                      }
-                                                    }
-                                                    iconSize="S"
+                                                  <div
+                                                    className="HvIconBase-root HvIconBase-s"
                                                     name="Checkbox"
                                                   >
-                                                    <div
-                                                      className="HvIconBase-root HvIconBase-s"
-                                                      name="Checkbox"
+                                                    <svg
+                                                      focusable={false}
+                                                      height={16}
+                                                      viewBox="0 0 16 16"
+                                                      width={16}
+                                                      xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                      <svg
-                                                        focusable={false}
-                                                        height={16}
-                                                        viewBox="0 0 16 16"
-                                                        width={16}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                      >
-                                                        <path
-                                                          className="color0"
-                                                          d="M0 0h16v16H0z"
-                                                          fill="#FBFCFC"
-                                                        />
-                                                        <path
-                                                          className="color1"
-                                                          d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                          fill="#414141"
-                                                        />
-                                                      </svg>
-                                                    </div>
-                                                  </HvIconBase>
-                                                </WithStyles(HvIconBase)>
+                                                      <path
+                                                        className="color0"
+                                                        d="M0 0h16v16H0z"
+                                                        fill="#FBFCFC"
+                                                      />
+                                                      <path
+                                                        className="color1"
+                                                        d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                        fill="#414141"
+                                                      />
+                                                    </svg>
+                                                  </div>
+                                                </HvIconBase>
                                               </Checkbox>
                                             </span>
                                           </span>
@@ -881,43 +867,29 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
                               <Add>
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   iconSize="S"
                                   name="Add"
                                 >
-                                  <HvIconBase
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvIconBase-root HvIconBase-s"
                                     name="Add"
                                   >
-                                    <div
-                                      className="HvIconBase-root HvIconBase-s"
-                                      name="Add"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
+                                      <path
+                                        className="color0"
+                                        d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
                               </Add>
                             </span>
                             Add
@@ -1087,43 +1059,29 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
                               <Delete>
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   iconSize="S"
                                   name="Delete"
                                 >
-                                  <HvIconBase
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvIconBase-root HvIconBase-s"
                                     name="Delete"
                                   >
-                                    <div
-                                      className="HvIconBase-root HvIconBase-s"
-                                      name="Delete"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
+                                      <path
+                                        className="color0"
+                                        d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
                               </Delete>
                             </span>
                             Delete
@@ -1474,43 +1432,29 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                         <MoreOptionsVertical
                                           color="atmo5"
                                         >
-                                          <WithStyles(HvIconBase)
+                                          <HvIconBase
                                             iconSize="S"
                                             name="MoreOptionsVertical"
                                           >
-                                            <HvIconBase
-                                              classes={
-                                                Object {
-                                                  "l": "HvIconBase-l",
-                                                  "m": "HvIconBase-m",
-                                                  "root": "HvIconBase-root",
-                                                  "s": "HvIconBase-s",
-                                                  "xs": "HvIconBase-xs",
-                                                }
-                                              }
-                                              iconSize="S"
+                                            <div
+                                              className="HvIconBase-root HvIconBase-s"
                                               name="MoreOptionsVertical"
                                             >
-                                              <div
-                                                className="HvIconBase-root HvIconBase-s"
-                                                name="MoreOptionsVertical"
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
                                               >
-                                                <svg
-                                                  focusable={false}
-                                                  height={16}
-                                                  viewBox="0 0 16 16"
-                                                  width={16}
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    className="color0"
-                                                    d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                                                    fill="#999999"
-                                                  />
-                                                </svg>
-                                              </div>
-                                            </HvIconBase>
-                                          </WithStyles(HvIconBase)>
+                                                <path
+                                                  className="color0"
+                                                  d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                                  fill="#999999"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
                                         </MoreOptionsVertical>
                                       </span>
                                     </button>
@@ -2002,48 +1946,34 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                                 value="on"
                                               />
                                               <Checkbox>
-                                                <WithStyles(HvIconBase)
+                                                <HvIconBase
                                                   iconSize="S"
                                                   name="Checkbox"
                                                 >
-                                                  <HvIconBase
-                                                    classes={
-                                                      Object {
-                                                        "l": "HvIconBase-l",
-                                                        "m": "HvIconBase-m",
-                                                        "root": "HvIconBase-root",
-                                                        "s": "HvIconBase-s",
-                                                        "xs": "HvIconBase-xs",
-                                                      }
-                                                    }
-                                                    iconSize="S"
+                                                  <div
+                                                    className="HvIconBase-root HvIconBase-s"
                                                     name="Checkbox"
                                                   >
-                                                    <div
-                                                      className="HvIconBase-root HvIconBase-s"
-                                                      name="Checkbox"
+                                                    <svg
+                                                      focusable={false}
+                                                      height={16}
+                                                      viewBox="0 0 16 16"
+                                                      width={16}
+                                                      xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                      <svg
-                                                        focusable={false}
-                                                        height={16}
-                                                        viewBox="0 0 16 16"
-                                                        width={16}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                      >
-                                                        <path
-                                                          className="color0"
-                                                          d="M0 0h16v16H0z"
-                                                          fill="#FBFCFC"
-                                                        />
-                                                        <path
-                                                          className="color1"
-                                                          d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                          fill="#414141"
-                                                        />
-                                                      </svg>
-                                                    </div>
-                                                  </HvIconBase>
-                                                </WithStyles(HvIconBase)>
+                                                      <path
+                                                        className="color0"
+                                                        d="M0 0h16v16H0z"
+                                                        fill="#FBFCFC"
+                                                      />
+                                                      <path
+                                                        className="color1"
+                                                        d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                        fill="#414141"
+                                                      />
+                                                    </svg>
+                                                  </div>
+                                                </HvIconBase>
                                               </Checkbox>
                                             </span>
                                           </span>
@@ -2437,43 +2367,29 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
                               <Upload>
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   iconSize="S"
                                   name="Upload"
                                 >
-                                  <HvIconBase
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvIconBase-root HvIconBase-s"
                                     name="Upload"
                                   >
-                                    <div
-                                      className="HvIconBase-root HvIconBase-s"
-                                      name="Upload"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M16 11v5H0v-5h1v4h14v-4zM7.5 1.90015V13h1V1.90015l4.1 4.2.8-.80005-5.4-5.3-5.4 5.30005.8.80005z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
+                                      <path
+                                        className="color0"
+                                        d="M16 11v5H0v-5h1v4h14v-4zM7.5 1.90015V13h1V1.90015l4.1 4.2.8-.80005-5.4-5.3-5.4 5.30005.8.80005z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
                               </Upload>
                             </span>
                             Upload
@@ -2643,43 +2559,29 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
                               <Lock>
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   iconSize="S"
                                   name="Lock"
                                 >
-                                  <HvIconBase
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvIconBase-root HvIconBase-s"
                                     name="Lock"
                                   >
-                                    <div
-                                      className="HvIconBase-root HvIconBase-s"
-                                      name="Lock"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M12 4V0H4v4H2v12h12V4zM5 1h6v3H5zm8 14H3V5h10zM7.5 8h1v4h-1z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
+                                      <path
+                                        className="color0"
+                                        d="M12 4V0H4v4H2v12h12V4zM5 1h6v3H5zm8 14H3V5h10zM7.5 8h1v4h-1z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
                               </Lock>
                             </span>
                             Lock
@@ -2849,43 +2751,29 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
                               <Delete>
-                                <WithStyles(HvIconBase)
+                                <HvIconBase
                                   iconSize="S"
                                   name="Delete"
                                 >
-                                  <HvIconBase
-                                    classes={
-                                      Object {
-                                        "l": "HvIconBase-l",
-                                        "m": "HvIconBase-m",
-                                        "root": "HvIconBase-root",
-                                        "s": "HvIconBase-s",
-                                        "xs": "HvIconBase-xs",
-                                      }
-                                    }
-                                    iconSize="S"
+                                  <div
+                                    className="HvIconBase-root HvIconBase-s"
                                     name="Delete"
                                   >
-                                    <div
-                                      className="HvIconBase-root HvIconBase-s"
-                                      name="Delete"
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={16}
-                                        viewBox="0 0 16 16"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </WithStyles(HvIconBase)>
+                                      <path
+                                        className="color0"
+                                        d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
                               </Delete>
                             </span>
                             Delete
@@ -3234,43 +3122,29 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         <MoreOptionsVertical
                                           color="atmo5"
                                         >
-                                          <WithStyles(HvIconBase)
+                                          <HvIconBase
                                             iconSize="S"
                                             name="MoreOptionsVertical"
                                           >
-                                            <HvIconBase
-                                              classes={
-                                                Object {
-                                                  "l": "HvIconBase-l",
-                                                  "m": "HvIconBase-m",
-                                                  "root": "HvIconBase-root",
-                                                  "s": "HvIconBase-s",
-                                                  "xs": "HvIconBase-xs",
-                                                }
-                                              }
-                                              iconSize="S"
+                                            <div
+                                              className="HvIconBase-root HvIconBase-s"
                                               name="MoreOptionsVertical"
                                             >
-                                              <div
-                                                className="HvIconBase-root HvIconBase-s"
-                                                name="MoreOptionsVertical"
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
                                               >
-                                                <svg
-                                                  focusable={false}
-                                                  height={16}
-                                                  viewBox="0 0 16 16"
-                                                  width={16}
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    className="color0"
-                                                    d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                                                    fill="#999999"
-                                                  />
-                                                </svg>
-                                              </div>
-                                            </HvIconBase>
-                                          </WithStyles(HvIconBase)>
+                                                <path
+                                                  className="color0"
+                                                  d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                                  fill="#999999"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
                                         </MoreOptionsVertical>
                                       </span>
                                     </button>
@@ -3787,48 +3661,34 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                                   ]
                                                 }
                                               >
-                                                <WithStyles(HvIconBase)
+                                                <HvIconBase
                                                   iconSize="S"
                                                   name="CheckboxPartial"
                                                 >
-                                                  <HvIconBase
-                                                    classes={
-                                                      Object {
-                                                        "l": "HvIconBase-l",
-                                                        "m": "HvIconBase-m",
-                                                        "root": "HvIconBase-root",
-                                                        "s": "HvIconBase-s",
-                                                        "xs": "HvIconBase-xs",
-                                                      }
-                                                    }
-                                                    iconSize="S"
+                                                  <div
+                                                    className="HvIconBase-root HvIconBase-s"
                                                     name="CheckboxPartial"
                                                   >
-                                                    <div
-                                                      className="HvIconBase-root HvIconBase-s"
-                                                      name="CheckboxPartial"
+                                                    <svg
+                                                      focusable={false}
+                                                      height={16}
+                                                      viewBox="0 0 16 16"
+                                                      width={16}
+                                                      xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                      <svg
-                                                        focusable={false}
-                                                        height={16}
-                                                        viewBox="0 0 16 16"
-                                                        width={16}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                      >
-                                                        <path
-                                                          className="color0"
-                                                          d="M0 0h16v16H0z"
-                                                          fill="#FBFCFC"
-                                                        />
-                                                        <path
-                                                          className="color1"
-                                                          d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
-                                                          fill="#414141"
-                                                        />
-                                                      </svg>
-                                                    </div>
-                                                  </HvIconBase>
-                                                </WithStyles(HvIconBase)>
+                                                      <path
+                                                        className="color0"
+                                                        d="M0 0h16v16H0z"
+                                                        fill="#FBFCFC"
+                                                      />
+                                                      <path
+                                                        className="color1"
+                                                        d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+                                                        fill="#414141"
+                                                      />
+                                                    </svg>
+                                                  </div>
+                                                </HvIconBase>
                                               </CheckboxPartial>
                                             </span>
                                           </span>
@@ -4471,48 +4331,34 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                                   ]
                                                 }
                                               >
-                                                <WithStyles(HvIconBase)
+                                                <HvIconBase
                                                   iconSize="S"
                                                   name="CheckboxPartial"
                                                 >
-                                                  <HvIconBase
-                                                    classes={
-                                                      Object {
-                                                        "l": "HvIconBase-l",
-                                                        "m": "HvIconBase-m",
-                                                        "root": "HvIconBase-root",
-                                                        "s": "HvIconBase-s",
-                                                        "xs": "HvIconBase-xs",
-                                                      }
-                                                    }
-                                                    iconSize="S"
+                                                  <div
+                                                    className="HvIconBase-root HvIconBase-s"
                                                     name="CheckboxPartial"
                                                   >
-                                                    <div
-                                                      className="HvIconBase-root HvIconBase-s"
-                                                      name="CheckboxPartial"
+                                                    <svg
+                                                      focusable={false}
+                                                      height={16}
+                                                      viewBox="0 0 16 16"
+                                                      width={16}
+                                                      xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                      <svg
-                                                        focusable={false}
-                                                        height={16}
-                                                        viewBox="0 0 16 16"
-                                                        width={16}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                      >
-                                                        <path
-                                                          className="color0"
-                                                          d="M0 0h16v16H0z"
-                                                          fill="#FBFCFC"
-                                                        />
-                                                        <path
-                                                          className="color1"
-                                                          d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
-                                                          fill="#414141"
-                                                        />
-                                                      </svg>
-                                                    </div>
-                                                  </HvIconBase>
-                                                </WithStyles(HvIconBase)>
+                                                      <path
+                                                        className="color0"
+                                                        d="M0 0h16v16H0z"
+                                                        fill="#FBFCFC"
+                                                      />
+                                                      <path
+                                                        className="color1"
+                                                        d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+                                                        fill="#414141"
+                                                      />
+                                                    </svg>
+                                                  </div>
+                                                </HvIconBase>
                                               </CheckboxPartial>
                                             </span>
                                           </span>

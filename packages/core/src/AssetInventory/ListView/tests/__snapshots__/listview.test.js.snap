@@ -5040,48 +5040,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                             value="1"
                                                                                           />
                                                                                           <Checkbox>
-                                                                                            <WithStyles(HvIconBase)
+                                                                                            <HvIconBase
                                                                                               iconSize="S"
                                                                                               name="Checkbox"
                                                                                             >
-                                                                                              <HvIconBase
-                                                                                                classes={
-                                                                                                  Object {
-                                                                                                    "l": "HvIconBase-l",
-                                                                                                    "m": "HvIconBase-m",
-                                                                                                    "root": "HvIconBase-root",
-                                                                                                    "s": "HvIconBase-s",
-                                                                                                    "xs": "HvIconBase-xs",
-                                                                                                  }
-                                                                                                }
-                                                                                                iconSize="S"
+                                                                                              <div
+                                                                                                className="HvIconBase-root HvIconBase-s"
                                                                                                 name="Checkbox"
                                                                                               >
-                                                                                                <div
-                                                                                                  className="HvIconBase-root HvIconBase-s"
-                                                                                                  name="Checkbox"
+                                                                                                <svg
+                                                                                                  focusable={false}
+                                                                                                  height={16}
+                                                                                                  viewBox="0 0 16 16"
+                                                                                                  width={16}
+                                                                                                  xmlns="http://www.w3.org/2000/svg"
                                                                                                 >
-                                                                                                  <svg
-                                                                                                    focusable={false}
-                                                                                                    height={16}
-                                                                                                    viewBox="0 0 16 16"
-                                                                                                    width={16}
-                                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                                  >
-                                                                                                    <path
-                                                                                                      className="color0"
-                                                                                                      d="M0 0h16v16H0z"
-                                                                                                      fill="#FBFCFC"
-                                                                                                    />
-                                                                                                    <path
-                                                                                                      className="color1"
-                                                                                                      d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                                                                      fill="#414141"
-                                                                                                    />
-                                                                                                  </svg>
-                                                                                                </div>
-                                                                                              </HvIconBase>
-                                                                                            </WithStyles(HvIconBase)>
+                                                                                                  <path
+                                                                                                    className="color0"
+                                                                                                    d="M0 0h16v16H0z"
+                                                                                                    fill="#FBFCFC"
+                                                                                                  />
+                                                                                                  <path
+                                                                                                    className="color1"
+                                                                                                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                                                                    fill="#414141"
+                                                                                                  />
+                                                                                                </svg>
+                                                                                              </div>
+                                                                                            </HvIconBase>
                                                                                           </Checkbox>
                                                                                         </span>
                                                                                       </span>
@@ -5169,48 +5155,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           <Level3Bad
                                                             semantic="sema12"
                                                           >
-                                                            <WithStyles(HvIconBase)
+                                                            <HvIconBase
                                                               iconSize="S"
                                                               name="Level3Bad"
                                                             >
-                                                              <HvIconBase
-                                                                classes={
-                                                                  Object {
-                                                                    "l": "HvIconBase-l",
-                                                                    "m": "HvIconBase-m",
-                                                                    "root": "HvIconBase-root",
-                                                                    "s": "HvIconBase-s",
-                                                                    "xs": "HvIconBase-xs",
-                                                                  }
-                                                                }
-                                                                iconSize="S"
+                                                              <div
+                                                                className="HvIconBase-root HvIconBase-s"
                                                                 name="Level3Bad"
                                                               >
-                                                                <div
-                                                                  className="HvIconBase-root HvIconBase-s"
-                                                                  name="Level3Bad"
+                                                                <svg
+                                                                  focusable={false}
+                                                                  height={24}
+                                                                  viewBox="0 0 24 24"
+                                                                  width={24}
+                                                                  xmlns="http://www.w3.org/2000/svg"
                                                                 >
-                                                                  <svg
-                                                                    focusable={false}
-                                                                    height={24}
-                                                                    viewBox="0 0 24 24"
-                                                                    width={24}
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                  >
-                                                                    <path
-                                                                      className="color0"
-                                                                      d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                      fill="#CF4E38"
-                                                                    />
-                                                                    <path
-                                                                      className="color1"
-                                                                      d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                      fill="#f9f9f9"
-                                                                    />
-                                                                  </svg>
-                                                                </div>
-                                                              </HvIconBase>
-                                                            </WithStyles(HvIconBase)>
+                                                                  <path
+                                                                    className="color0"
+                                                                    d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
+                                                                    fill="#CF4E38"
+                                                                  />
+                                                                  <path
+                                                                    className="color1"
+                                                                    d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
+                                                                    fill="#f9f9f9"
+                                                                  />
+                                                                </svg>
+                                                              </div>
+                                                            </HvIconBase>
                                                           </Level3Bad>
                                                         </div>
                                                       </ListViewCell>
@@ -7680,48 +7652,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                             value="2"
                                                                                           />
                                                                                           <Checkbox>
-                                                                                            <WithStyles(HvIconBase)
+                                                                                            <HvIconBase
                                                                                               iconSize="S"
                                                                                               name="Checkbox"
                                                                                             >
-                                                                                              <HvIconBase
-                                                                                                classes={
-                                                                                                  Object {
-                                                                                                    "l": "HvIconBase-l",
-                                                                                                    "m": "HvIconBase-m",
-                                                                                                    "root": "HvIconBase-root",
-                                                                                                    "s": "HvIconBase-s",
-                                                                                                    "xs": "HvIconBase-xs",
-                                                                                                  }
-                                                                                                }
-                                                                                                iconSize="S"
+                                                                                              <div
+                                                                                                className="HvIconBase-root HvIconBase-s"
                                                                                                 name="Checkbox"
                                                                                               >
-                                                                                                <div
-                                                                                                  className="HvIconBase-root HvIconBase-s"
-                                                                                                  name="Checkbox"
+                                                                                                <svg
+                                                                                                  focusable={false}
+                                                                                                  height={16}
+                                                                                                  viewBox="0 0 16 16"
+                                                                                                  width={16}
+                                                                                                  xmlns="http://www.w3.org/2000/svg"
                                                                                                 >
-                                                                                                  <svg
-                                                                                                    focusable={false}
-                                                                                                    height={16}
-                                                                                                    viewBox="0 0 16 16"
-                                                                                                    width={16}
-                                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                                  >
-                                                                                                    <path
-                                                                                                      className="color0"
-                                                                                                      d="M0 0h16v16H0z"
-                                                                                                      fill="#FBFCFC"
-                                                                                                    />
-                                                                                                    <path
-                                                                                                      className="color1"
-                                                                                                      d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                                                                      fill="#414141"
-                                                                                                    />
-                                                                                                  </svg>
-                                                                                                </div>
-                                                                                              </HvIconBase>
-                                                                                            </WithStyles(HvIconBase)>
+                                                                                                  <path
+                                                                                                    className="color0"
+                                                                                                    d="M0 0h16v16H0z"
+                                                                                                    fill="#FBFCFC"
+                                                                                                  />
+                                                                                                  <path
+                                                                                                    className="color1"
+                                                                                                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                                                                    fill="#414141"
+                                                                                                  />
+                                                                                                </svg>
+                                                                                              </div>
+                                                                                            </HvIconBase>
                                                                                           </Checkbox>
                                                                                         </span>
                                                                                       </span>
@@ -7809,48 +7767,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           <Level5
                                                             semantic="sema14"
                                                           >
-                                                            <WithStyles(HvIconBase)
+                                                            <HvIconBase
                                                               iconSize="S"
                                                               name="Level5"
                                                             >
-                                                              <HvIconBase
-                                                                classes={
-                                                                  Object {
-                                                                    "l": "HvIconBase-l",
-                                                                    "m": "HvIconBase-m",
-                                                                    "root": "HvIconBase-root",
-                                                                    "s": "HvIconBase-s",
-                                                                    "xs": "HvIconBase-xs",
-                                                                  }
-                                                                }
-                                                                iconSize="S"
+                                                              <div
+                                                                className="HvIconBase-root HvIconBase-s"
                                                                 name="Level5"
                                                               >
-                                                                <div
-                                                                  className="HvIconBase-root HvIconBase-s"
-                                                                  name="Level5"
+                                                                <svg
+                                                                  focusable={false}
+                                                                  height={24}
+                                                                  viewBox="0 0 24 24"
+                                                                  width={24}
+                                                                  xmlns="http://www.w3.org/2000/svg"
                                                                 >
-                                                                  <svg
-                                                                    focusable={false}
-                                                                    height={24}
-                                                                    viewBox="0 0 24 24"
-                                                                    width={24}
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                  >
-                                                                    <path
-                                                                      className="color0"
-                                                                      d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                      fill="#BA2626"
-                                                                    />
-                                                                    <path
-                                                                      className="color1"
-                                                                      d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                      fill="#f9f9f9"
-                                                                    />
-                                                                  </svg>
-                                                                </div>
-                                                              </HvIconBase>
-                                                            </WithStyles(HvIconBase)>
+                                                                  <path
+                                                                    className="color0"
+                                                                    d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
+                                                                    fill="#BA2626"
+                                                                  />
+                                                                  <path
+                                                                    className="color1"
+                                                                    d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
+                                                                    fill="#f9f9f9"
+                                                                  />
+                                                                </svg>
+                                                              </div>
+                                                            </HvIconBase>
                                                           </Level5>
                                                         </div>
                                                       </ListViewCell>
@@ -10320,48 +10264,34 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                                                             value="3"
                                                                                           />
                                                                                           <Checkbox>
-                                                                                            <WithStyles(HvIconBase)
+                                                                                            <HvIconBase
                                                                                               iconSize="S"
                                                                                               name="Checkbox"
                                                                                             >
-                                                                                              <HvIconBase
-                                                                                                classes={
-                                                                                                  Object {
-                                                                                                    "l": "HvIconBase-l",
-                                                                                                    "m": "HvIconBase-m",
-                                                                                                    "root": "HvIconBase-root",
-                                                                                                    "s": "HvIconBase-s",
-                                                                                                    "xs": "HvIconBase-xs",
-                                                                                                  }
-                                                                                                }
-                                                                                                iconSize="S"
+                                                                                              <div
+                                                                                                className="HvIconBase-root HvIconBase-s"
                                                                                                 name="Checkbox"
                                                                                               >
-                                                                                                <div
-                                                                                                  className="HvIconBase-root HvIconBase-s"
-                                                                                                  name="Checkbox"
+                                                                                                <svg
+                                                                                                  focusable={false}
+                                                                                                  height={16}
+                                                                                                  viewBox="0 0 16 16"
+                                                                                                  width={16}
+                                                                                                  xmlns="http://www.w3.org/2000/svg"
                                                                                                 >
-                                                                                                  <svg
-                                                                                                    focusable={false}
-                                                                                                    height={16}
-                                                                                                    viewBox="0 0 16 16"
-                                                                                                    width={16}
-                                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                                  >
-                                                                                                    <path
-                                                                                                      className="color0"
-                                                                                                      d="M0 0h16v16H0z"
-                                                                                                      fill="#FBFCFC"
-                                                                                                    />
-                                                                                                    <path
-                                                                                                      className="color1"
-                                                                                                      d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                                                                      fill="#414141"
-                                                                                                    />
-                                                                                                  </svg>
-                                                                                                </div>
-                                                                                              </HvIconBase>
-                                                                                            </WithStyles(HvIconBase)>
+                                                                                                  <path
+                                                                                                    className="color0"
+                                                                                                    d="M0 0h16v16H0z"
+                                                                                                    fill="#FBFCFC"
+                                                                                                  />
+                                                                                                  <path
+                                                                                                    className="color1"
+                                                                                                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                                                                    fill="#414141"
+                                                                                                  />
+                                                                                                </svg>
+                                                                                              </div>
+                                                                                            </HvIconBase>
                                                                                           </Checkbox>
                                                                                         </span>
                                                                                       </span>
@@ -10449,50 +10379,36 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
                                                           <Level1
                                                             semantic="sema10"
                                                           >
-                                                            <WithStyles(HvIconBase)
+                                                            <HvIconBase
                                                               iconSize="S"
                                                               name="Level1"
                                                             >
-                                                              <HvIconBase
-                                                                classes={
-                                                                  Object {
-                                                                    "l": "HvIconBase-l",
-                                                                    "m": "HvIconBase-m",
-                                                                    "root": "HvIconBase-root",
-                                                                    "s": "HvIconBase-s",
-                                                                    "xs": "HvIconBase-xs",
-                                                                  }
-                                                                }
-                                                                iconSize="S"
+                                                              <div
+                                                                className="HvIconBase-root HvIconBase-s"
                                                                 name="Level1"
                                                               >
-                                                                <div
-                                                                  className="HvIconBase-root HvIconBase-s"
-                                                                  name="Level1"
+                                                                <svg
+                                                                  focusable={false}
+                                                                  height={24}
+                                                                  viewBox="0 0 24 24"
+                                                                  width={24}
+                                                                  xmlns="http://www.w3.org/2000/svg"
                                                                 >
-                                                                  <svg
-                                                                    focusable={false}
-                                                                    height={24}
-                                                                    viewBox="0 0 24 24"
-                                                                    width={24}
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                  >
-                                                                    <circle
-                                                                      className="color0"
-                                                                      cx={12}
-                                                                      cy={12}
-                                                                      fill="#CE703D"
-                                                                      r={12}
-                                                                    />
-                                                                    <path
-                                                                      className="color1"
-                                                                      d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                      fill="#f9f9f9"
-                                                                    />
-                                                                  </svg>
-                                                                </div>
-                                                              </HvIconBase>
-                                                            </WithStyles(HvIconBase)>
+                                                                  <circle
+                                                                    className="color0"
+                                                                    cx={12}
+                                                                    cy={12}
+                                                                    fill="#CE703D"
+                                                                    r={12}
+                                                                  />
+                                                                  <path
+                                                                    className="color1"
+                                                                    d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                    fill="#f9f9f9"
+                                                                  />
+                                                                </svg>
+                                                              </div>
+                                                            </HvIconBase>
                                                           </Level1>
                                                         </div>
                                                       </ListViewCell>

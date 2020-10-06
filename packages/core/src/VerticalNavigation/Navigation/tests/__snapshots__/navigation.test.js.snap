@@ -328,43 +328,29 @@ exports[`[v3] <Navigation /> navigation should render correctly 1`] = `
                         tabIndex={0}
                       >
                         <Play>
-                          <WithStyles(HvIconBase)
+                          <HvIconBase
                             iconSize="S"
                             name="Play"
                           >
-                            <HvIconBase
-                              classes={
-                                Object {
-                                  "l": "HvIconBase-l",
-                                  "m": "HvIconBase-m",
-                                  "root": "HvIconBase-root",
-                                  "s": "HvIconBase-s",
-                                  "xs": "HvIconBase-xs",
-                                }
-                              }
-                              iconSize="S"
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
                               name="Play"
                             >
-                              <div
-                                className="HvIconBase-root HvIconBase-s"
-                                name="Play"
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  focusable={false}
-                                  height={16}
-                                  viewBox="0 0 16 16"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </HvIconBase>
-                          </WithStyles(HvIconBase)>
+                                <path
+                                  className="color0"
+                                  d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
                         </Play>
                         System
                       </div>
