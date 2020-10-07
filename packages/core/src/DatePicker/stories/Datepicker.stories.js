@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { HvButton, HvDatePicker, HvInput } from "../..";
+import { HvButton, HvList, HvDatePicker, HvInput } from "../..";
 
 export default {
   title: "Forms/Date Picker",
@@ -35,7 +35,7 @@ Main.story = {
   },
 };
 
-export const DefaultValue = () => <HvDatePicker id="DatePicker" value={new Date()} />;
+export const DefaultValue = () => <HvDatePicker id="DatePicker" value={new Date(2020, 9, 10)} />;
 
 DefaultValue.story = {
   parameters: {
@@ -255,6 +255,79 @@ export const WithValueChange = () => {
 };
 
 WithValueChange.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      ],
+    },
+  },
+};
+
+export const WithSelectionList = () => {
+  const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
+  const [endDate, setEndDate] = useState(new Date(2020, 8, 10));
+
+  const handleClick = (evt, item) => {
+    console.log(item);
+    const today = new Date();
+    const [d, m, y] = [today.getDate(), today.getMonth(), today.getFullYear()];
+
+    switch (item.label) {
+      case "Last 7 days": {
+        setStartDate(new Date(y, m, d - 7));
+        setEndDate(new Date(y, m, d));
+        break;
+      }
+      case "This month": {
+        setStartDate(new Date(y, m, 1));
+        setEndDate(new Date(y, m, d));
+        break;
+      }
+      case "This year": {
+        setStartDate(new Date(y, 0, 1));
+        setEndDate(new Date(y, m, d));
+        break;
+      }
+      default:
+        break;
+    }
+  };
+
+  const options = (
+    <HvList
+      style={{ padding: "40px 20px", minWidth: 160 }}
+      selectable={false}
+      values={[
+        { label: "Today", disabled: true },
+        { label: "Yesterday", disabled: true },
+        { label: "Last 7 days" },
+        { label: "This month" },
+        { label: "This year" },
+      ]}
+      onClick={handleClick}
+    />
+  );
+
+  return (
+    <HvDatePicker
+      id="DatePicker"
+      startAdornment={options}
+      rangeMode
+      startValue={startDate}
+      endValue={endDate}
+    />
+  );
+};
+
+export const Disabled = () => <HvDatePicker id="DatePicker" disabled />;
+
+Disabled.story = {
   parameters: {
     pa11y: {
       ignore: [

@@ -16,9 +16,9 @@ import {
 import styles from "./styles";
 import withLabels from "../withLabels";
 import withId from "../withId";
-import { DEFAULT_LOCALE, isDate, isSameDay } from "../Calendar/utils";
-import { getDateLabel, validateLocale } from "./utils";
-import { NAV_OPTIONS } from "../Calendar/enums";
+import { DEFAULT_LOCALE, isDate } from "../Calendar/utils";
+import { getDateLabel, isVisibleDate, validateLocale } from "./utils";
+import useVisibleDate from "../Calendar/useVisibleDate";
 
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
@@ -37,10 +37,12 @@ const HvDatePicker = ({
   className,
   labels,
   classes,
+  disabled = false,
   value,
   startValue,
   endValue,
   rangeMode = false,
+  startAdornment,
   horizontalPlacement = "right",
   locale: localeProp = DEFAULT_LOCALE,
   showActions = false,
@@ -57,9 +59,7 @@ const HvDatePicker = ({
   );
   const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
 
-  const visibleDate = (isDate(startDate) && startDate) || new Date();
-  const [visibleMonth, setVisibleMonth] = useState(visibleDate?.getMonth() + 1);
-  const [visibleYear, setVisibleYear] = useState(visibleDate?.getFullYear());
+  const [visibleDate, setVisibleDate, onVisibleDateChange] = useVisibleDate(startDate);
 
   useEffect(() => {
     setStartDate(rangeMode ? startValue : value, true);
@@ -72,53 +72,17 @@ const HvDatePicker = ({
   }, [localeProp]);
 
   useEffect(() => {
-    if (!calendarOpen) return;
-    setVisibleMonth(visibleDate?.getMonth() + 1);
-    setVisibleYear(visibleDate?.getFullYear());
-  }, [visibleDate, calendarOpen]);
-
-  const handleVisibleDateChange = (event, action, index) => {
-    switch (action) {
-      case NAV_OPTIONS.PREVIOUS_MONTH: {
-        const previousMonth = visibleMonth - 1;
-        if (previousMonth < 1) {
-          setVisibleMonth(12);
-          setVisibleYear(visibleYear - 1);
-        } else {
-          setVisibleMonth(previousMonth);
-        }
-        break;
-      }
-      case NAV_OPTIONS.NEXT_MONTH: {
-        const nextMonth = visibleMonth + 1;
-        if (nextMonth > 12) {
-          setVisibleMonth(1);
-          setVisibleYear(visibleYear + 1);
-        } else {
-          setVisibleMonth(nextMonth);
-        }
-        break;
-      }
-      case NAV_OPTIONS.PREVIOUS_YEAR:
-        setVisibleYear(visibleYear - 1);
-        break;
-      case NAV_OPTIONS.NEXT_YEAR:
-        setVisibleYear(visibleYear + 1);
-        break;
-      case NAV_OPTIONS.MONTH:
-        setVisibleMonth(index);
-        break;
-      default:
-        break;
-    }
-  };
+    if (!startDate || isVisibleDate(startDate, visibleDate)) return;
+    setVisibleDate(startDate);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startDate]);
 
   /**
    * Handles the `Apply` action. Both single and ranged modes are handled here.
    */
   const handleApply = () => {
     setStartDate(startDate, true);
-    setEndDate(endDate, true);
+    setEndDate(endDate ?? startDate, true);
 
     onChange?.(startDate, endDate);
 
@@ -135,15 +99,20 @@ const HvDatePicker = ({
     setCalendarOpen(false);
   };
 
-  const handleCalendarClickAway = () => {
+  const handleCalendarClose = () => {
     const shouldSave = !(rangeMode || showActions);
     shouldSave ? handleApply() : handleCancel();
   };
 
-  const handleDateChange = (event, newDate) => {
-    const autoSave = !showActions && !rangeMode;
+  const handleToggle = (evt, open) => {
+    setCalendarOpen(open);
+    if (!open) handleCalendarClose();
+  };
 
-    if (!isDate(newDate) || isSameDay(startDate, newDate) || isSameDay(endDate, newDate)) return;
+  const handleDateChange = (event, newDate) => {
+    if (!isDate(newDate)) return;
+
+    const autoSave = !showActions && !rangeMode;
 
     if (rangeMode) {
       if (!startDate || (startDate && endDate) || newDate < startDate) {
@@ -159,6 +128,21 @@ const HvDatePicker = ({
     if (autoSave) {
       setCalendarOpen(false);
       onChange?.(newDate);
+    }
+  };
+
+  const handleInputDateChange = (event, newDate, position) => {
+    if (!isDate(newDate)) return;
+
+    if (!rangeMode) {
+      handleDateChange(event, newDate);
+      return;
+    }
+
+    if (position === "left") {
+      setStartDate(newDate > endDate ? endDate : newDate);
+    } else if (position === "right") {
+      setEndDate(newDate < startDate ? startDate : newDate);
     }
   };
 
@@ -195,26 +179,39 @@ const HvDatePicker = ({
   const dateValue = rangeMode ? { startDate, endDate } : startDate;
 
   return (
-    <HvFormElement id={id} className={clsx(classes.root, className)} value={dateValue} {...others}>
+    <HvFormElement
+      id={id}
+      disabled={disabled}
+      className={clsx(classes.root, className)}
+      value={dateValue}
+      locale={locale}
+      {...others}
+    >
       <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title}>
         <HvBaseDropdown
           classes={{ root: classes.dropdown, panel: classes.panel }}
+          disabled={disabled}
           disablePortal={disablePortal}
           placement={horizontalPlacement}
           expanded={calendarOpen}
-          onToggle={(evt, open) => setCalendarOpen(open)}
-          onClickOutside={handleCalendarClickAway}
+          onToggle={handleToggle}
+          onClickOutside={handleCalendarClose}
           placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
           adornment={<Calendar className={classes.icon} />}
           popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
         >
+          {
+            /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+            // necessary because `HvBaseDropdown` re-render auto-focus
+          }
+          <div tabIndex={0} />
           <HvCalendar
             id={setId(id, "calendar")}
-            visibleMonth={visibleMonth}
-            visibleYear={visibleYear}
-            onVisibleDateChange={handleVisibleDateChange}
+            startAdornment={startAdornment}
             onChange={handleDateChange}
-            locale={locale}
+            onInputChange={handleInputDateChange}
+            onVisibleDateChange={onVisibleDateChange}
+            {...visibleDate}
           />
           {(rangeMode || showActions) && renderActions()}
         </HvBaseDropdown>
@@ -299,6 +296,10 @@ HvDatePicker.propTypes = {
    */
   onChange: PropTypes.func,
   /**
+   * If `true` the datepicker is disabled unable to be interacted, if `false` it is enabled.
+   */
+  disabled: PropTypes.bool,
+  /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
   disablePortal: PropTypes.bool,
@@ -306,6 +307,10 @@ HvDatePicker.propTypes = {
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
   escapeWithReference: PropTypes.bool,
+  /**
+   * An element placed before the Calendar
+   */
+  startAdornment: PropTypes.node,
 };
 
 export default withStyles(styles, { name: "HvDatePicker", index: 1 })(

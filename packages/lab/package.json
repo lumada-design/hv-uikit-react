@@ -1,7 +1,7 @@
 {
   "name": "@hv/uikit-react-lab",
   "version": "2.5.14",
-  "description": "A collection of contributed React components for the Hitachi Vantara's Design System.",
+  "description": "A collection of contributed React components for the Hitachi Vantara Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
   "author": {

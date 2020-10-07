@@ -4,17 +4,6 @@ Library     String
 Resource    _variables.resource
 
 *** Keywords ***
-clean input
-    [Documentation]
-    ...   it uses keyboards to select and delete input content
-    ...    - check if input has clean button (works better)
-    ...    - keyword Input Text, option clear=True did not work in some cases
-    [Arguments]       ${locator}
-    Run Keyword If    '${BROWSER.lower()}'=='ie'
-    ...    Press Keys    ${locator}    CTRL+A+DELETE   #IE11 keyboards case incompatible
-    ...    ELSE
-    ...    Press Keys    ${locator}    CTRL+a+DELETE
-
 element attribute value should contain
     [Documentation]
     ...   attribute must has a specific substring
@@ -47,9 +36,9 @@ force input
     [Documentation]
     ...    Cleans the input locator and sets with the string value.
     ...     - note: check "clean input" documentation
-    [Arguments]        ${locator}    ${string}
-    Clean input        ${locator}
-    Input Text         ${locator}    ${string}
+    [Arguments]    ${locator}    ${string}
+    Press Keys    ${locator}    CTRL+a    DELETE
+    Input Text    ${locator}    ${string}
 
 get elements text
     [Documentation]
@@ -72,7 +61,8 @@ open browser webdriver
     ...   - url        (by default about:blank)
     ...   - browser    (by defautl is assuming Global variable ${BROWSER} )
     [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
-    Open Browser    ${url}    ${browser}    options=add_argument("--headless")
+    Open Browser    ${url}    ${browser}
+    ...             options=add_argument("--headless");add_argument("--lang=en-US")
     Set Window Size    1920    1080
 
 scroll to element

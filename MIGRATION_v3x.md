@@ -175,12 +175,14 @@ The props `actions`, `actionsCallback`, `maxVisibleActions`, `actionsAlignment` 
 
 ### DatePicker
 
+This component now only accepts `Date` objects. `Date` internally uses time values in UTC, but the basic methods to fetch the date and time or its components all work in the local time zone and offset. When generating dates, remember that parsing strings is strongly discouraged due to browser differences and inconsistencies. Note: `new Date("YYYY-MM-DD")` does not produce the same time value as `new Date("MM/DD/YYYY")` when the local time zone is not UTC.
+
 - `value`, `startValue`, and `endValue` changed from date `string` to `Date` object
 
 ```diff
 <HvDatePicker
--  value="2020-10-10"
-+  value={new Date("2020-10-10")}
+-  value="2020-10-18"
++  value={new Date(2020, 9, 18)}
 />
 ```
 

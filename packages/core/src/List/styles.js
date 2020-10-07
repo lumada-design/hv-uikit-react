@@ -59,7 +59,7 @@ const styles = (theme) => ({
     position: "relative",
     zIndex: 0,
 
-    // prevent the focus ring to be hidden by simbling hover background
+    // prevent the focus ring to be hidden by sibling hover background
     "&:focus-within": {
       zIndex: 1,
     },

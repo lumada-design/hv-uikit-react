@@ -1,5 +1,5 @@
 import CalendarModel from "../model";
-import { getMonthDays, makeUTCToday } from "../utils";
+import { getMonthDays } from "../utils";
 
 let calendarModelInstance;
 
@@ -14,10 +14,10 @@ describe("CalendarModel", () => {
   });
 
   it("should create a calendar model object with today month and year when input parameters aren't supplied", () => {
-    const today = makeUTCToday();
+    const today = new Date();
     calendarModelInstance = new CalendarModel();
-    expect(calendarModelInstance.month).toBe(today.getUTCMonth() + 1);
-    expect(calendarModelInstance.year).toBe(today.getUTCFullYear());
+    expect(calendarModelInstance.month).toBe(today.getMonth() + 1);
+    expect(calendarModelInstance.year).toBe(today.getFullYear());
   });
 
   it("should create a `dates` property with 42 positions", () => {
@@ -26,7 +26,7 @@ describe("CalendarModel", () => {
 
   it("should have all the days of the month available in the dates array", () => {
     const currentDates = calendarModelInstance.dates.filter(
-      (date) => date.getUTCMonth() + 1 === 1 && date.getUTCFullYear() === 2000
+      (date) => date.getMonth() + 1 === 1 && date.getFullYear() === 2000
     );
 
     expect(currentDates.length).toBe(getMonthDays(1, 2000));

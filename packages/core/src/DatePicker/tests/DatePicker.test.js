@@ -4,9 +4,9 @@ import { mount } from "enzyme";
 import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
 import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker } from "../..";
 import SingleCalendar from "../../Calendar/SingleCalendar";
-import { isSameDay } from "../../Calendar/utils";
+import { isSameDay, makeUTCDate } from "../../Calendar/utils";
 
-describe("<DatePicker /> with minimum configuration", () => {
+describe("[v3] <DatePicker /> with minimum configuration", () => {
   let wrapper;
   let DatePickerComponent;
 
@@ -21,6 +21,10 @@ describe("<DatePicker /> with minimum configuration", () => {
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
+  });
+
+  it("should render correctly", () => {
+    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
   });
 
   it("should not render an actions component", () => {
@@ -49,19 +53,24 @@ describe("<DatePicker /> with minimum configuration", () => {
   });
 });
 
-describe("<DatePicker /> with Single Calendar mode", () => {
+describe("[v3] <DatePicker /> with Single Calendar mode", () => {
   let wrapper;
 
   beforeEach(async () => {
+    // use UTC 12:00 date to minimize issues for snapshots created in different timezones
     wrapper = mount(
       <HvProvider>
-        <HvDatePicker value={new Date(2019, 1, 1, 12)} locale="en-US" />
+        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />
       </HvProvider>
     );
   });
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
+  });
+
+  it("should render correctly", () => {
+    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
   });
 
   it("should not render any Calendar component", () => {
@@ -84,12 +93,12 @@ describe("<DatePicker /> with Single Calendar mode", () => {
     wrapper.find(CalendarIcon).simulate("click");
     const calendarInstance = wrapper.find(HvDatePicker);
 
-    const sameDay = isSameDay(calendarInstance.prop("value"), new Date(2019, 1, 1, 12));
+    const sameDay = isSameDay(calendarInstance.prop("value"), new Date(2019, 0, 1, 12));
     expect(sameDay).toEqual(true);
   });
 });
 
-describe("<DatePicker /> with Range Calendar mode", () => {
+describe("[v3] <DatePicker /> with Range Calendar mode", () => {
   let wrapper;
 
   beforeEach(async () => {
@@ -98,8 +107,8 @@ describe("<DatePicker /> with Range Calendar mode", () => {
         <HvDatePicker
           rangeMode
           locale="en-US"
-          startValue={new Date(2019, 1, 5, 12)}
-          endValue={new Date(2019, 1, 10, 12)}
+          startValue={new Date(2019, 0, 5, 12)}
+          endValue={new Date(2019, 0, 10, 12)}
         />
       </HvProvider>
     );
@@ -126,7 +135,7 @@ describe("<DatePicker /> with Range Calendar mode", () => {
   });
 });
 
-describe("<DatePicker /> with custom properties", () => {
+describe("[v3] <DatePicker /> with custom properties", () => {
   let wrapper;
   const labels = {
     applyLabel: "OK",
@@ -140,7 +149,8 @@ describe("<DatePicker /> with custom properties", () => {
       <HvProvider>
         <HvDatePicker
           locale="en-US"
-          value={new Date(2019, 1, 5, 12)}
+          // use UTC 12:00 date to minimize issues for snapshots created in different timezones
+          value={makeUTCDate(2019, 0, 5, 12)}
           labels={labels}
           horizontalPlacement="left"
           showActions
@@ -152,6 +162,10 @@ describe("<DatePicker /> with custom properties", () => {
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
+  });
+
+  it("should render correctly", () => {
+    expect(wrapper.find(HvDatePicker)).toMatchSnapshot();
   });
 
   it("should show an Actions component when opening the calendar", () => {

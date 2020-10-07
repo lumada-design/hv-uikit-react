@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Navigation from "../Navigation";
 import { setId } from "../../../utils";
-import { isPreviousDateValid, isNextDateValid, getMonthNamesList } from "../../utils";
+import { getMonthNamesList } from "../../utils";
 import { NAV_OPTIONS, VIEW_MODE, REPRESENTATION_VALUES } from "../../enums";
 import styles from "./styles";
 
@@ -19,10 +19,6 @@ const HvComposedNavigation = ({
 }) => {
   const listMonthNamesLong = getMonthNamesList(locale, REPRESENTATION_VALUES.LONG);
   const monthName = listMonthNamesLong[visibleMonth - 1];
-  const previousYearValid = isPreviousDateValid(visibleYear, 1);
-  const nextYearValid = isNextDateValid(visibleYear, 12);
-  const previousMonthValid = isPreviousDateValid(visibleYear, visibleMonth);
-  const nextMonthValid = isNextDateValid(visibleYear, visibleMonth);
 
   return (
     <div className={classes.navigationContainer} {...others}>
@@ -40,8 +36,6 @@ const HvComposedNavigation = ({
             onViewModeChange(VIEW_MODE.MONTHLY);
           }}
           className={classes.navigationMonth}
-          isPreviousEnabled={previousMonthValid}
-          isNextEnabled={nextMonthValid}
         />
       </div>
 
@@ -54,8 +48,6 @@ const HvComposedNavigation = ({
         onNavigateNext={(event) => {
           onChange?.(event, NAV_OPTIONS.NEXT_YEAR);
         }}
-        isPreviousEnabled={previousYearValid}
-        isNextEnabled={nextYearValid}
       />
     </div>
   );

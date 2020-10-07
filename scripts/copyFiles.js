@@ -12,7 +12,7 @@ function generateLicenseHeader() {
 
   return (
     "/*\n" +
-    ` * Copyright ${date.getUTCFullYear()} Hitachi Vantara Corporation\n` +
+    ` * Copyright ${date.getFullYear()} Hitachi Vantara Corporation\n` +
     " *\n" +
     ' * Licensed under the Apache License, Version 2.0 (the "License");\n' +
     " * you may not use this file except in compliance with the License.\n" +

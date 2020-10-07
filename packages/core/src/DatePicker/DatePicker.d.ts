@@ -95,6 +95,10 @@ export interface HvDatePickerProps
    */
   onChange?: (date?: string) => void;
   /**
+   * If `true` the datepicker is disabled unable to be interacted, if `false` it is enabled.
+   */
+  disabled?: boolean;
+  /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
   disablePortal?: boolean;
@@ -102,6 +106,10 @@ export interface HvDatePickerProps
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
   escapeWithReference?: boolean;
+  /**
+   * An element placed before the Calendar
+   */
+  startAdornment: React.ReactNode;
 }
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

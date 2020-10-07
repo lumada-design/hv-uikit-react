@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -16,9 +16,9 @@ import styles from "./styles";
 const HvCalendarCell = ({
   classes,
   onChange,
+  onKeyDown,
   calendarValue,
   firstDayOfCurrentMonth,
-  arrowKeysFocus,
   value,
   isDateSelectionMode,
   today,
@@ -28,9 +28,10 @@ const HvCalendarCell = ({
   rangeMode = false,
   ...others
 }) => {
+  const buttonEl = useRef(null);
   const { startDate, endDate } = calendarValue;
   const isCellToday = isSameDay(value, today);
-  const isCellSelected = calendarValue && isSameDay(value, calendarValue);
+  const isCellSelected = isSameDay(calendarValue, value);
   const inMonth = isSameMonth(value, firstDayOfCurrentMonth);
   const isCellAfterStartingDate = rangeMode ? value >= startDate : false;
   const isCellStartingDate = rangeMode ? isSameDay(value, startDate) : false;
@@ -43,19 +44,21 @@ const HvCalendarCell = ({
 
   const handleClick = (event) => {
     onChange?.(event, value);
+    setTimeout(() => buttonEl?.current?.focus());
   };
 
   const handleKeyDown = (event) => {
-    arrowKeysFocus?.(event, handleClick, 7);
+    onKeyDown?.(event);
   };
 
-  const DateDisplay = () => (
-    <div
+  const renderDate = () => (
+    <button
+      ref={buttonEl}
+      type="button"
+      disabled={isDateDisabled}
       className={clsx(classes.cellContainer, { [classes.focusSelection]: inMonth })}
-      onClick={!isDateDisabled ? handleClick : undefined}
+      onClick={handleClick}
       onKeyDown={handleKeyDown}
-      role="button"
-      tabIndex={0}
       {...others}
     >
       <HvTypography
@@ -72,12 +75,13 @@ const HvCalendarCell = ({
       >
         {value.getDate()}
       </HvTypography>
-    </div>
+    </button>
   );
 
   return (
     <HvTooltip
       key={getDateISO(value)}
+      enterDelay={600}
       title={<HvTypography noWrap>{getFormattedDate(value, locale)}</HvTypography>}
     >
       <div
@@ -86,7 +90,7 @@ const HvCalendarCell = ({
           [classes.cellsOutsideRange]: rangeMode && !isSelecting,
         })}
       >
-        <DateDisplay />
+        {renderDate()}
       </div>
     </HvTooltip>
   );
@@ -126,7 +130,7 @@ HvCalendarCell.propTypes = {
    */
   onFocus: PropTypes.func,
   calendarModel: PropTypes.instanceOf(Object),
-  arrowKeysFocus: PropTypes.func,
+  onKeyDown: PropTypes.func,
   today: PropTypes.instanceOf(Date),
   minimumDate: PropTypes.instanceOf(Date),
   maximumDate: PropTypes.instanceOf(Date),

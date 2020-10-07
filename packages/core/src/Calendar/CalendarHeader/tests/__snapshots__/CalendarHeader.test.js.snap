@@ -4,7 +4,7 @@ exports[`v3 <CalendarHeader /> should render correctly 1`] = `
 <WithStyles(HvCalendarHeader)
   id="default"
   locale="en-US"
-  value={2020-01-01T00:00:00.000Z}
+  value={2020-01-01T12:00:00.000Z}
 >
   <HvCalendarHeader
     classes={
@@ -19,7 +19,7 @@ exports[`v3 <CalendarHeader /> should render correctly 1`] = `
     }
     id="default"
     locale="en-US"
-    value={2020-01-01T00:00:00.000Z}
+    value={2020-01-01T12:00:00.000Z}
   >
     <div
       className="HvCalendarHeader-root"
@@ -77,6 +77,7 @@ exports[`v3 <CalendarHeader /> should render correctly 1`] = `
           onFocus={[Function]}
           onKeyDown={[Function]}
           placeholder="MM/DD/YYYY"
+          type="text"
           value="1 Jan 2020"
         />
       </div>

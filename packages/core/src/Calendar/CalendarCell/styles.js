@@ -5,8 +5,12 @@ const styles = (theme) => {
   };
 
   return {
-    root: {
+    cellContainer: {
       cursor: "pointer",
+      border: 0,
+      padding: 0,
+      margin: 0,
+      backgroundColor: "inherit",
     },
     calendarContainer: {
       backgroundColor: theme.palette.atmo1,

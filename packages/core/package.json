@@ -1,7 +1,7 @@
 {
   "name": "@hv/uikit-react-core",
   "version": "2.12.1",
-  "description": "A collection of React components for the Hitachi Vantara's Design System.",
+  "description": "A collection of React components for the Hitachi Vantara Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
   "main": "dist/index.js",
@@ -71,6 +71,7 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/lodash": "^4.14.161",
     "@types/plotly.js": "^1.50.19",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
