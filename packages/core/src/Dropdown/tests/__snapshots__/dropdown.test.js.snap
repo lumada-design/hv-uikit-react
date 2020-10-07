@@ -243,45 +243,30 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                         className="HvBaseDropdown-arrow HvDropdown-arrow"
                         iconSize="XS"
                       >
-                        <WithStyles(HvIconBase)
+                        <HvIconBase
                           className="HvBaseDropdown-arrow HvDropdown-arrow"
                           iconSize="XS"
                           name="DropUpXS"
                         >
-                          <HvIconBase
-                            className="HvBaseDropdown-arrow HvDropdown-arrow"
-                            classes={
-                              Object {
-                                "l": "HvIconBase-l",
-                                "m": "HvIconBase-m",
-                                "root": "HvIconBase-root",
-                                "s": "HvIconBase-s",
-                                "xs": "HvIconBase-xs",
-                              }
-                            }
-                            iconSize="XS"
+                          <div
+                            className="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
                             name="DropUpXS"
                           >
-                            <div
-                              className="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
-                              name="DropUpXS"
+                            <svg
+                              focusable={false}
+                              height={12}
+                              viewBox="0 0 12 12"
+                              width={12}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                focusable={false}
-                                height={12}
-                                viewBox="0 0 12 12"
-                                width={12}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  className="color0"
-                                  d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </HvIconBase>
-                        </WithStyles(HvIconBase)>
+                              <path
+                                className="color0"
+                                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                                fill="#414141"
+                              />
+                            </svg>
+                          </div>
+                        </HvIconBase>
                       </DropUpXS>
                     </div>
                   </div>
@@ -1245,43 +1230,29 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                     className="HvAdornment-icon"
                                                                                   >
                                                                                     <CloseXS>
-                                                                                      <WithStyles(HvIconBase)
+                                                                                      <HvIconBase
                                                                                         iconSize="XS"
                                                                                         name="CloseXS"
                                                                                       >
-                                                                                        <HvIconBase
-                                                                                          classes={
-                                                                                            Object {
-                                                                                              "l": "HvIconBase-l",
-                                                                                              "m": "HvIconBase-m",
-                                                                                              "root": "HvIconBase-root",
-                                                                                              "s": "HvIconBase-s",
-                                                                                              "xs": "HvIconBase-xs",
-                                                                                            }
-                                                                                          }
-                                                                                          iconSize="XS"
+                                                                                        <div
+                                                                                          className="HvIconBase-root HvIconBase-xs"
                                                                                           name="CloseXS"
                                                                                         >
-                                                                                          <div
-                                                                                            className="HvIconBase-root HvIconBase-xs"
-                                                                                            name="CloseXS"
+                                                                                          <svg
+                                                                                            focusable={false}
+                                                                                            height={12}
+                                                                                            viewBox="0 0 12 12"
+                                                                                            width={12}
+                                                                                            xmlns="http://www.w3.org/2000/svg"
                                                                                           >
-                                                                                            <svg
-                                                                                              focusable={false}
-                                                                                              height={12}
-                                                                                              viewBox="0 0 12 12"
-                                                                                              width={12}
-                                                                                              xmlns="http://www.w3.org/2000/svg"
-                                                                                            >
-                                                                                              <path
-                                                                                                className="color0"
-                                                                                                d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                                                                                                fill="#414141"
-                                                                                              />
-                                                                                            </svg>
-                                                                                          </div>
-                                                                                        </HvIconBase>
-                                                                                      </WithStyles(HvIconBase)>
+                                                                                            <path
+                                                                                              className="color0"
+                                                                                              d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
+                                                                                              fill="#414141"
+                                                                                            />
+                                                                                          </svg>
+                                                                                        </div>
+                                                                                      </HvIconBase>
                                                                                     </CloseXS>
                                                                                   </div>
                                                                                 </button>
@@ -1313,43 +1284,29 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                     className="HvAdornment-icon"
                                                                                   >
                                                                                     <Search>
-                                                                                      <WithStyles(HvIconBase)
+                                                                                      <HvIconBase
                                                                                         iconSize="S"
                                                                                         name="Search"
                                                                                       >
-                                                                                        <HvIconBase
-                                                                                          classes={
-                                                                                            Object {
-                                                                                              "l": "HvIconBase-l",
-                                                                                              "m": "HvIconBase-m",
-                                                                                              "root": "HvIconBase-root",
-                                                                                              "s": "HvIconBase-s",
-                                                                                              "xs": "HvIconBase-xs",
-                                                                                            }
-                                                                                          }
-                                                                                          iconSize="S"
+                                                                                        <div
+                                                                                          className="HvIconBase-root HvIconBase-s"
                                                                                           name="Search"
                                                                                         >
-                                                                                          <div
-                                                                                            className="HvIconBase-root HvIconBase-s"
-                                                                                            name="Search"
+                                                                                          <svg
+                                                                                            focusable={false}
+                                                                                            height={16}
+                                                                                            viewBox="0 0 16 16"
+                                                                                            width={16}
+                                                                                            xmlns="http://www.w3.org/2000/svg"
                                                                                           >
-                                                                                            <svg
-                                                                                              focusable={false}
-                                                                                              height={16}
-                                                                                              viewBox="0 0 16 16"
-                                                                                              width={16}
-                                                                                              xmlns="http://www.w3.org/2000/svg"
-                                                                                            >
-                                                                                              <path
-                                                                                                className="color0"
-                                                                                                d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
-                                                                                                fill="#414141"
-                                                                                              />
-                                                                                            </svg>
-                                                                                          </div>
-                                                                                        </HvIconBase>
-                                                                                      </WithStyles(HvIconBase)>
+                                                                                            <path
+                                                                                              className="color0"
+                                                                                              d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                                                                                              fill="#414141"
+                                                                                            />
+                                                                                          </svg>
+                                                                                        </div>
+                                                                                      </HvIconBase>
                                                                                     </Search>
                                                                                   </div>
                                                                                 </div>
@@ -2504,45 +2461,30 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                         color="atmo5"
                         iconSize="XS"
                       >
-                        <WithStyles(HvIconBase)
+                        <HvIconBase
                           className="HvBaseDropdown-arrow HvDropdown-arrow"
                           iconSize="XS"
                           name="DropDownXS"
                         >
-                          <HvIconBase
-                            className="HvBaseDropdown-arrow HvDropdown-arrow"
-                            classes={
-                              Object {
-                                "l": "HvIconBase-l",
-                                "m": "HvIconBase-m",
-                                "root": "HvIconBase-root",
-                                "s": "HvIconBase-s",
-                                "xs": "HvIconBase-xs",
-                              }
-                            }
-                            iconSize="XS"
+                          <div
+                            className="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
                             name="DropDownXS"
                           >
-                            <div
-                              className="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
-                              name="DropDownXS"
+                            <svg
+                              focusable={false}
+                              height={12}
+                              viewBox="0 0 12 12"
+                              width={12}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                focusable={false}
-                                height={12}
-                                viewBox="0 0 12 12"
-                                width={12}
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  className="color0"
-                                  d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                                  fill="#999999"
-                                />
-                              </svg>
-                            </div>
-                          </HvIconBase>
-                        </WithStyles(HvIconBase)>
+                              <path
+                                className="color0"
+                                d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                                fill="#999999"
+                              />
+                            </svg>
+                          </div>
+                        </HvIconBase>
                       </DropDownXS>
                     </div>
                   </div>

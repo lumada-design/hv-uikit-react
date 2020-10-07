@@ -502,48 +502,34 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                       value="1"
                                                     />
                                                     <RadioButtonUnselected>
-                                                      <WithStyles(HvIconBase)
+                                                      <HvIconBase
                                                         iconSize="S"
                                                         name="RadioButtonUnselected"
                                                       >
-                                                        <HvIconBase
-                                                          classes={
-                                                            Object {
-                                                              "l": "HvIconBase-l",
-                                                              "m": "HvIconBase-m",
-                                                              "root": "HvIconBase-root",
-                                                              "s": "HvIconBase-s",
-                                                              "xs": "HvIconBase-xs",
-                                                            }
-                                                          }
-                                                          iconSize="S"
+                                                        <div
+                                                          className="HvIconBase-root HvIconBase-s"
                                                           name="RadioButtonUnselected"
                                                         >
-                                                          <div
-                                                            className="HvIconBase-root HvIconBase-s"
-                                                            name="RadioButtonUnselected"
+                                                          <svg
+                                                            focusable={false}
+                                                            height={16}
+                                                            viewBox="0 0 16 16"
+                                                            width={16}
+                                                            xmlns="http://www.w3.org/2000/svg"
                                                           >
-                                                            <svg
-                                                              focusable={false}
-                                                              height={16}
-                                                              viewBox="0 0 16 16"
-                                                              width={16}
-                                                              xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                              <path
-                                                                className="color0"
-                                                                d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                                fill="#FBFCFC"
-                                                              />
-                                                              <path
-                                                                className="color1"
-                                                                d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                                                fill="#414141"
-                                                              />
-                                                            </svg>
-                                                          </div>
-                                                        </HvIconBase>
-                                                      </WithStyles(HvIconBase)>
+                                                            <path
+                                                              className="color0"
+                                                              d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                                              fill="#FBFCFC"
+                                                            />
+                                                            <path
+                                                              className="color1"
+                                                              d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                              fill="#414141"
+                                                            />
+                                                          </svg>
+                                                        </div>
+                                                      </HvIconBase>
                                                     </RadioButtonUnselected>
                                                   </span>
                                                 </span>
@@ -652,45 +638,30 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                   className="HvWarningText-defaultIcon"
                                   semantic="sema4"
                                 >
-                                  <WithStyles(HvIconBase)
+                                  <HvIconBase
                                     className="HvWarningText-defaultIcon"
                                     iconSize="S"
                                     name="Fail"
                                   >
-                                    <HvIconBase
-                                      className="HvWarningText-defaultIcon"
-                                      classes={
-                                        Object {
-                                          "l": "HvIconBase-l",
-                                          "m": "HvIconBase-m",
-                                          "root": "HvIconBase-root",
-                                          "s": "HvIconBase-s",
-                                          "xs": "HvIconBase-xs",
-                                        }
-                                      }
-                                      iconSize="S"
+                                    <div
+                                      className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                                       name="Fail"
                                     >
-                                      <div
-                                        className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
-                                        name="Fail"
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          focusable={false}
-                                          height={16}
-                                          viewBox="0 0 16 16"
-                                          width={16}
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            className="color0"
-                                            d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                            fill="#C62828"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </HvIconBase>
-                                  </WithStyles(HvIconBase)>
+                                        <path
+                                          className="color0"
+                                          d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                          fill="#C62828"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
                                 </Fail>
                                 <WithStyles(ForwardRef)
                                   aria-atomic="true"
@@ -1115,53 +1086,39 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                       value="2"
                                                     />
                                                     <RadioButtonSelected>
-                                                      <WithStyles(HvIconBase)
+                                                      <HvIconBase
                                                         iconSize="S"
                                                         name="RadioButtonSelected"
                                                       >
-                                                        <HvIconBase
-                                                          classes={
-                                                            Object {
-                                                              "l": "HvIconBase-l",
-                                                              "m": "HvIconBase-m",
-                                                              "root": "HvIconBase-root",
-                                                              "s": "HvIconBase-s",
-                                                              "xs": "HvIconBase-xs",
-                                                            }
-                                                          }
-                                                          iconSize="S"
+                                                        <div
+                                                          className="HvIconBase-root HvIconBase-s"
                                                           name="RadioButtonSelected"
                                                         >
-                                                          <div
-                                                            className="HvIconBase-root HvIconBase-s"
-                                                            name="RadioButtonSelected"
+                                                          <svg
+                                                            focusable={false}
+                                                            height={16}
+                                                            viewBox="0 0 16 16"
+                                                            width={16}
+                                                            xmlns="http://www.w3.org/2000/svg"
                                                           >
-                                                            <svg
-                                                              focusable={false}
-                                                              height={16}
-                                                              viewBox="0 0 16 16"
-                                                              width={16}
-                                                              xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                              <path
-                                                                className="color0"
-                                                                d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                                fill="#414141"
-                                                              />
-                                                              <path
-                                                                className="color0"
-                                                                d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                                                fill="#414141"
-                                                              />
-                                                              <path
-                                                                className="color1"
-                                                                d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                                                fill="#FBFCFC"
-                                                              />
-                                                            </svg>
-                                                          </div>
-                                                        </HvIconBase>
-                                                      </WithStyles(HvIconBase)>
+                                                            <path
+                                                              className="color0"
+                                                              d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                                              fill="#414141"
+                                                            />
+                                                            <path
+                                                              className="color0"
+                                                              d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                              fill="#414141"
+                                                            />
+                                                            <path
+                                                              className="color1"
+                                                              d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
+                                                              fill="#FBFCFC"
+                                                            />
+                                                          </svg>
+                                                        </div>
+                                                      </HvIconBase>
                                                     </RadioButtonSelected>
                                                   </span>
                                                 </span>
@@ -1270,45 +1227,30 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                   className="HvWarningText-defaultIcon"
                                   semantic="sema4"
                                 >
-                                  <WithStyles(HvIconBase)
+                                  <HvIconBase
                                     className="HvWarningText-defaultIcon"
                                     iconSize="S"
                                     name="Fail"
                                   >
-                                    <HvIconBase
-                                      className="HvWarningText-defaultIcon"
-                                      classes={
-                                        Object {
-                                          "l": "HvIconBase-l",
-                                          "m": "HvIconBase-m",
-                                          "root": "HvIconBase-root",
-                                          "s": "HvIconBase-s",
-                                          "xs": "HvIconBase-xs",
-                                        }
-                                      }
-                                      iconSize="S"
+                                    <div
+                                      className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                                       name="Fail"
                                     >
-                                      <div
-                                        className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
-                                        name="Fail"
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          focusable={false}
-                                          height={16}
-                                          viewBox="0 0 16 16"
-                                          width={16}
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            className="color0"
-                                            d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                            fill="#C62828"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </HvIconBase>
-                                  </WithStyles(HvIconBase)>
+                                        <path
+                                          className="color0"
+                                          d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                          fill="#C62828"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
                                 </Fail>
                                 <WithStyles(ForwardRef)
                                   aria-atomic="true"
@@ -1733,48 +1675,34 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                                       value="3"
                                                     />
                                                     <RadioButtonUnselected>
-                                                      <WithStyles(HvIconBase)
+                                                      <HvIconBase
                                                         iconSize="S"
                                                         name="RadioButtonUnselected"
                                                       >
-                                                        <HvIconBase
-                                                          classes={
-                                                            Object {
-                                                              "l": "HvIconBase-l",
-                                                              "m": "HvIconBase-m",
-                                                              "root": "HvIconBase-root",
-                                                              "s": "HvIconBase-s",
-                                                              "xs": "HvIconBase-xs",
-                                                            }
-                                                          }
-                                                          iconSize="S"
+                                                        <div
+                                                          className="HvIconBase-root HvIconBase-s"
                                                           name="RadioButtonUnselected"
                                                         >
-                                                          <div
-                                                            className="HvIconBase-root HvIconBase-s"
-                                                            name="RadioButtonUnselected"
+                                                          <svg
+                                                            focusable={false}
+                                                            height={16}
+                                                            viewBox="0 0 16 16"
+                                                            width={16}
+                                                            xmlns="http://www.w3.org/2000/svg"
                                                           >
-                                                            <svg
-                                                              focusable={false}
-                                                              height={16}
-                                                              viewBox="0 0 16 16"
-                                                              width={16}
-                                                              xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                              <path
-                                                                className="color0"
-                                                                d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                                fill="#FBFCFC"
-                                                              />
-                                                              <path
-                                                                className="color1"
-                                                                d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                                                fill="#414141"
-                                                              />
-                                                            </svg>
-                                                          </div>
-                                                        </HvIconBase>
-                                                      </WithStyles(HvIconBase)>
+                                                            <path
+                                                              className="color0"
+                                                              d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                                              fill="#FBFCFC"
+                                                            />
+                                                            <path
+                                                              className="color1"
+                                                              d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                              fill="#414141"
+                                                            />
+                                                          </svg>
+                                                        </div>
+                                                      </HvIconBase>
                                                     </RadioButtonUnselected>
                                                   </span>
                                                 </span>
@@ -1883,45 +1811,30 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                   className="HvWarningText-defaultIcon"
                                   semantic="sema4"
                                 >
-                                  <WithStyles(HvIconBase)
+                                  <HvIconBase
                                     className="HvWarningText-defaultIcon"
                                     iconSize="S"
                                     name="Fail"
                                   >
-                                    <HvIconBase
-                                      className="HvWarningText-defaultIcon"
-                                      classes={
-                                        Object {
-                                          "l": "HvIconBase-l",
-                                          "m": "HvIconBase-m",
-                                          "root": "HvIconBase-root",
-                                          "s": "HvIconBase-s",
-                                          "xs": "HvIconBase-xs",
-                                        }
-                                      }
-                                      iconSize="S"
+                                    <div
+                                      className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                                       name="Fail"
                                     >
-                                      <div
-                                        className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
-                                        name="Fail"
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          focusable={false}
-                                          height={16}
-                                          viewBox="0 0 16 16"
-                                          width={16}
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            className="color0"
-                                            d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                            fill="#C62828"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </HvIconBase>
-                                  </WithStyles(HvIconBase)>
+                                        <path
+                                          className="color0"
+                                          d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                          fill="#C62828"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
                                 </Fail>
                                 <WithStyles(ForwardRef)
                                   aria-atomic="true"

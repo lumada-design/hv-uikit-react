@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
-const styles = () => ({
+const styles = {
   root: {
     display: "flex",
     "& svg": {
@@ -26,9 +26,12 @@ const styles = () => ({
     width: 112,
     height: 112,
   },
-});
+};
 
-const HvIconBase = ({ classes, className, children, iconSize, ...others }) => {
+const useStyles = makeStyles(styles, { name: "HvIconBase" });
+
+const HvIconBase = ({ className, children, iconSize, ...others }) => {
+  const classes = useStyles();
   const sizeClass = classes[iconSize?.toLowerCase()] || classes.s;
 
   return (
@@ -124,4 +127,4 @@ HvIconBase.propTypes = {
   svgProps: PropTypes.instanceOf(Object),
 };
 
-export default withStyles(styles, { name: "HvIconBase" })(HvIconBase);
+export default HvIconBase;

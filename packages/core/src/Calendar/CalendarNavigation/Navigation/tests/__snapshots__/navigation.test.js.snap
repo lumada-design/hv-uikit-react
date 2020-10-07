@@ -34,7 +34,7 @@ exports[`v3 <Navigation /> should render correctly 1`] = `
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <WithStyles(HvIconBase)
+        <HvIconBase
           className="HvCalendarNavigation-icon"
           iconSize="XS"
           id="id1-left"
@@ -43,48 +43,29 @@ exports[`v3 <Navigation /> should render correctly 1`] = `
           onKeyDown={[Function]}
           tabIndex={0}
         >
-          <HvIconBase
-            className="HvCalendarNavigation-icon"
-            classes={
-              Object {
-                "l": "HvIconBase-l",
-                "m": "HvIconBase-m",
-                "root": "HvIconBase-root",
-                "s": "HvIconBase-s",
-                "xs": "HvIconBase-xs",
-              }
-            }
-            iconSize="XS"
+          <div
+            className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
             id="id1-left"
             name="DropLeftXS"
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex={0}
           >
-            <div
-              className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
-              id="id1-left"
-              name="DropLeftXS"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              tabIndex={0}
+            <svg
+              focusable={false}
+              height={12}
+              viewBox="0 0 12 12"
+              width={12}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable={false}
-                height={12}
-                viewBox="0 0 12 12"
-                width={12}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  className="color0"
-                  d="M3.35 5.99994l4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </HvIconBase>
-        </WithStyles(HvIconBase)>
+              <path
+                className="color0"
+                d="M3.35 5.99994l4.6-4.6.7.7L4.75 6l3.9 3.9-.7.7z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
+        </HvIconBase>
       </DropLeftXS>
       <div
         className="HvCalendarNavigation-text"
@@ -141,7 +122,7 @@ exports[`v3 <Navigation /> should render correctly 1`] = `
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        <WithStyles(HvIconBase)
+        <HvIconBase
           className="HvCalendarNavigation-icon"
           iconSize="XS"
           id="id1-right"
@@ -150,48 +131,29 @@ exports[`v3 <Navigation /> should render correctly 1`] = `
           onKeyDown={[Function]}
           tabIndex={0}
         >
-          <HvIconBase
-            className="HvCalendarNavigation-icon"
-            classes={
-              Object {
-                "l": "HvIconBase-l",
-                "m": "HvIconBase-m",
-                "root": "HvIconBase-root",
-                "s": "HvIconBase-s",
-                "xs": "HvIconBase-xs",
-              }
-            }
-            iconSize="XS"
+          <div
+            className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
             id="id1-right"
             name="DropRightXS"
             onClick={[Function]}
             onKeyDown={[Function]}
             tabIndex={0}
           >
-            <div
-              className="HvCalendarNavigation-icon HvIconBase-root HvIconBase-xs"
-              id="id1-right"
-              name="DropRightXS"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              tabIndex={0}
+            <svg
+              focusable={false}
+              height={12}
+              viewBox="0 0 12 12"
+              width={12}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                focusable={false}
-                height={12}
-                viewBox="0 0 12 12"
-                width={12}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  className="color0"
-                  d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                  fill="#414141"
-                />
-              </svg>
-            </div>
-          </HvIconBase>
-        </WithStyles(HvIconBase)>
+              <path
+                className="color0"
+                d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
+        </HvIconBase>
       </DropRightXS>
     </div>
   </Navigation>
