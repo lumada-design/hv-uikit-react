@@ -1,27 +1,34 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import React, { useRef, useState, useEffect, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
+
 import isNil from "lodash/isNil";
+
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { setId } from "../utils";
-import { HvFormElement, HvBaseInput, HvLabel, HvWarningText, HvCharCounter } from "..";
-import { validateCharLength } from "../Input/validations";
+
+import { setId, useControlled } from "../utils";
+
+import {
+  HvFormElement,
+  HvBaseInput,
+  HvLabel,
+  HvInfoMessage,
+  HvWarningText,
+  HvCharCounter,
+  useUniqueId,
+} from "..";
+
+import validationStates, { isInvalid } from "../Forms/FormElement/validationStates";
+import {
+  DEFAULT_ERROR_MESSAGES,
+  validationTypes,
+  hasBuiltInValidations,
+  validateInput,
+  computeValidationState,
+  computeValidationMessage,
+} from "../BaseInput/validations";
+
 import styles from "./styles";
-import withLabels from "../withLabels";
-
-const DEFAULT_LABELS = {
-  inputLabel: "",
-  placeholder: "",
-  warningText: "",
-  maxCharQuantityWarningText: "",
-  requiredWarningText: "",
-  middleCount: "/",
-};
-
-const VALIDATION_STATES = {
-  standBy: "standBy",
-  invalid: "invalid",
-};
 
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
@@ -30,32 +37,137 @@ const VALIDATION_STATES = {
 const HvTextArea = (props) => {
   const {
     classes,
-    className = "",
-    name,
+    className,
+
     id,
-    labels,
-    maxCharQuantity,
-    rows = 1,
-    initialValue,
-    validationState: validationStateProp,
+    name,
+
     value: valueProp,
-    isRequired = false,
+    defaultValue = "",
+
+    required = false,
+    readOnly = false,
     disabled = false,
+
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+
+    onChange,
+
+    status,
+    statusMessage,
+
+    placeholder,
+
+    autoFocus = false,
+
+    middleCountLabel = "/",
+
+    rows = 1,
     resizable = false,
     autoScroll = false,
+
+    hideCounter = false,
+
+    validationMessages,
+
+    maxCharQuantity,
+    minCharQuantity,
     validation,
-    onChange,
-    onBlur,
+
     blockMax = false,
-    countCharProps,
-    formElementProps,
-    warningProps,
-    labelProps,
+
+    inputRef: inputRefProp,
+    onBlur,
+    onFocus,
+
+    inputProps = {},
+    countCharProps = {},
+
     ...others
   } = props;
 
+  const elementId = useUniqueId(id, "hvtextarea");
+
+  const inputRef = useRef(inputRefProp || null);
+
+  const [focused, setFocused] = React.useState(false);
+
+  // signals that the user has manually edited the input value
+  const isDirty = useRef(false);
+
+  // value related state
+  const [value, setValue] = useControlled({
+    controlled: valueProp,
+    default: defaultValue,
+    name: "HvInput",
+    state: "value",
+  });
+
+  const isEmptyValue = value == null || value === "";
+
+  // validation related state
+  const [validationState, setValidationState] = useControlled({
+    controlled: status,
+    default: validationStates.standBy,
+    name: "HvInput",
+    state: "status",
+  });
+
+  const [validationMessage, setValidationMessage] = useControlled({
+    controlled: statusMessage,
+    default: "",
+    name: "HvInput",
+    state: "statusMessage",
+  });
+
+  // validationMessages reference tends to change, as users will not useState for it;
+  // dependencies must be more explicit and:
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const errorMessages = useMemo(() => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }), [
+    validationMessages?.error,
+    validationMessages?.requiredError,
+    validationMessages?.minCharError,
+    validationMessages?.maxCharError,
+  ]);
+
   const isOverflow = (currentValue) =>
     isNil(maxCharQuantity) ? false : currentValue.length > maxCharQuantity;
+
+  // validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
+  // and returns the validity state of the input.
+  const performValidation = useCallback(() => {
+    const inputValidity = validateInput(
+      inputRef.current,
+      value,
+      required,
+      minCharQuantity,
+      maxCharQuantity,
+      validationTypes.none,
+      validation
+    );
+
+    // this will only run if status is uncontrolled
+    setValidationState(computeValidationState(inputValidity, isEmptyValue));
+
+    // this will only run if statusMessage is uncontrolled
+    setValidationMessage(computeValidationMessage(inputValidity, errorMessages));
+
+    return inputValidity;
+  }, [
+    errorMessages,
+    isEmptyValue,
+    maxCharQuantity,
+    minCharQuantity,
+    required,
+    setValidationMessage,
+    setValidationState,
+    validation,
+    value,
+  ]);
 
   /**
    * Limit the string to the maxCharQuantity length.
@@ -68,28 +180,15 @@ const HvTextArea = (props) => {
     return !isOverflow(currentValue) ? currentValue : currentValue.substring(0, maxCharQuantity);
   };
 
-  const isInvalid = (compareState) => compareState === VALIDATION_STATES.invalid;
-  const textInputRef = useRef(null);
-  const [value, setValue] = useState(initialValue);
-  const [currentValueLength, setCurrentValueLength] = useState(
-    initialValue !== undefined ? limitValue(initialValue).length : 0
-  );
-  const [validationState, setValidationState] = useState(
-    validationStateProp || VALIDATION_STATES.standBy
-  );
-  const [warningText, setWarningText] = useState(
-    isInvalid(validationStateProp) ? labels.warningText : null
-  );
-  const [overflow, setOverflow] = useState(initialValue ? isOverflow(initialValue) : false);
   const [autoScrolling, setAutoScrolling] = useState(autoScroll);
 
   const isScrolledDown = () => {
-    const el = textInputRef.current;
+    const el = inputRef.current;
     return el == null || el.scrollHeight - el.scrollTop === el.clientHeight;
   };
 
   const scrollDown = () => {
-    const el = textInputRef.current;
+    const el = inputRef.current;
     if (el != null) {
       el.scrollTop = el.scrollHeight - el.clientHeight;
     }
@@ -101,53 +200,8 @@ const HvTextArea = (props) => {
         setAutoScrolling(isScrolledDown());
       },
     };
-    textInputRef.current.addEventListener("scroll", scrollHandler);
+    inputRef.current.addEventListener("scroll", scrollHandler);
   }, []);
-
-  const checkEmptyValue = (valueToTest = "") => {
-    let validationStateResult = VALIDATION_STATES.standBy;
-    let warningTextResult = null;
-    if (!valueToTest && isRequired) {
-      validationStateResult = VALIDATION_STATES.invalid;
-      warningTextResult = labels.requiredWarningText;
-    }
-    return {
-      validationStateResult,
-      warningTextResult,
-    };
-  };
-
-  const validateValue = useCallback(
-    (valueToTest = "") => {
-      let validationStateResult;
-      let warningTextResult = null;
-
-      if (
-        validationStateProp === VALIDATION_STATES.invalid ||
-        validation?.(valueToTest) === false
-      ) {
-        // testing for false because if undefined validation does not exist
-        return {
-          validationStateResult: VALIDATION_STATES.invalid,
-          warningTextResult: labels.warningText,
-        };
-      }
-      const isValidLength = validateCharLength(valueToTest, maxCharQuantity, null);
-
-      if (isValidLength) {
-        validationStateResult = VALIDATION_STATES.standBy;
-      } else if (!isValidLength) {
-        validationStateResult = VALIDATION_STATES.invalid;
-        warningTextResult = labels.maxCharQuantityWarningText;
-      }
-
-      return {
-        validationStateResult,
-        warningTextResult,
-      };
-    },
-    [labels, maxCharQuantity, validation, validationStateProp]
-  );
 
   /**
    * Validates the text area updating the state and modifying the warning text, also executes
@@ -156,16 +210,24 @@ const HvTextArea = (props) => {
    * @returns {undefined}
    */
   const onContainerBlurHandler = (event) => {
-    if (event.relatedTarget) return;
-    const emptyResult = checkEmptyValue(value);
-    const validationResult = validateValue(value);
-    const wText = emptyResult.warningTextResult || validationResult.warningTextResult;
-    const vResult = emptyResult.warningTextResult
-      ? emptyResult.validationStateResult
-      : validationState.validationStateResult;
-    setValidationState(vResult);
-    setWarningText(wText);
-    onBlur?.(event, value, vResult);
+    setFocused(false);
+
+    const inputValidity = performValidation();
+
+    onBlur?.(event, value, inputValidity);
+  };
+
+  /**
+   * Updates the state putting again the value from the state because the input value is
+   * not automatically manage, it also executes the onFocus function from the user passing the value
+   */
+  const onFocusHandler = (event) => {
+    setFocused(true);
+
+    // reset validation status to standBy (only when status is uncontrolled)
+    setValidationState(validationStates.standBy);
+
+    onFocus?.(event, value);
   };
 
   /**
@@ -175,11 +237,14 @@ const HvTextArea = (props) => {
    * @param {String} value - The value provided by the HvInput
    */
   const onChangeHandler = (event, currentValue) => {
+    isDirty.current = true;
+
     const limitedValue = blockMax ? limitValue(currentValue) : currentValue;
-    onChange?.(event, limitedValue);
+
+    // set the input value (only when value is uncontrolled)
     setValue(limitedValue);
-    setCurrentValueLength(limitedValue.length);
-    setOverflow(isOverflow(limitedValue));
+
+    onChange?.(event, limitedValue);
   };
 
   useEffect(() => {
@@ -190,12 +255,38 @@ const HvTextArea = (props) => {
     if (autoScrolling) {
       scrollDown();
     }
-    const valueToUse = valueProp || value || "";
-    const { validationStateResult, warningTextResult } = validateValue(valueToUse);
-    setCurrentValueLength(valueToUse?.length);
-    setValidationState(validationStateResult);
-    setWarningText(warningTextResult);
-  }, [autoScroll, autoScrolling, value, valueProp, validateValue, addScrollListener]);
+  }, [addScrollListener, autoScroll, autoScrolling]);
+
+  // run initial validation after first render
+  // and also when any validation condition changes
+  useEffect(() => {
+    if (focused || (!isDirty.current && isEmptyValue)) {
+      // skip validation if currently focused or if empty and
+      // the user never manually edited the input value
+      return;
+    }
+
+    performValidation();
+  }, [focused, isEmptyValue, performValidation]);
+
+  const hasLabel = label != null;
+  const hasDescription = description != null;
+  const hasCounter = maxCharQuantity != null && !hideCounter;
+
+  // error message area will only be needed if the status property is being controlled
+  // or if any of the built-in validations are active
+  const canShowError =
+    status !== undefined ||
+    hasBuiltInValidations(
+      required,
+      validationTypes.none,
+      minCharQuantity,
+      // if blockMax is true maxCharQuantity will never produce an error
+      // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity
+      maxCharQuantity != null && (blockMax !== true || value != null) ? maxCharQuantity : null,
+      validation,
+      inputProps
+    );
 
   const isStateInvalid = isInvalid(validationState);
 
@@ -203,53 +294,90 @@ const HvTextArea = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      className={clsx(classes.root, className, { [classes.rootResizable]: resizable })}
-      onBlur={onContainerBlurHandler}
-      value={valueProp || value}
-      status={validationStateProp || validationState}
+      value={value}
+      status={validationState}
       disabled={disabled}
-      {...formElementProps}
+      required={required}
+      readOnly={readOnly}
+      className={clsx(classes.root, className, {
+        [classes.resizable]: resizable,
+        [classes.disabled]: disabled,
+        [classes.invalid]: isStateInvalid,
+      })}
+      onBlur={onContainerBlurHandler}
     >
-      <div className={classes.labelContainer}>
-        {labels.inputLabel && (
-          <HvLabel
-            id={setId(id, "label")}
-            htmlFor={setId(id, "input")}
-            aria-disabled={disabled}
-            label={
-              <>
-                {labels.inputLabel}
-                {isRequired && <span aria-hidden="true">*</span>}
-              </>
-            }
-            {...labelProps}
-          />
-        )}
-        {maxCharQuantity && (
-          <HvCharCounter
-            id={setId(id, "charCounter")}
-            separator={labels.middleCount}
-            currentCharQuantity={currentValueLength}
-            maxCharQuantity={maxCharQuantity}
-            {...countCharProps}
-          />
-        )}
-      </div>
+      {(hasLabel || hasDescription || hasCounter) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel
+              className={classes.label}
+              id={setId(id, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+            />
+          )}
+
+          {hasDescription && (
+            <HvInfoMessage className={classes.description} id={setId(elementId, "description")}>
+              {description}
+            </HvInfoMessage>
+          )}
+
+          {hasCounter && (
+            <HvCharCounter
+              id={setId(elementId, "charCounter")}
+              className={classes.characterCounter}
+              separator={middleCountLabel}
+              currentCharQuantity={value.length}
+              maxCharQuantity={maxCharQuantity}
+              {...countCharProps}
+            />
+          )}
+        </div>
+      )}
+
       <HvBaseInput
-        className={className}
-        id={setId(id, "input")}
+        classes={{
+          root: classes.baseInput,
+          input: classes.input,
+          inputResizable: classes.inputResizable,
+        }}
+        id={hasLabel ? setId(elementId, "input") : null}
+        name={name}
+        value={value}
+        required={required}
+        readOnly={readOnly}
+        disabled={disabled}
         onChange={onChangeHandler}
-        placeholder={labels.placeholder}
+        autoFocus={autoFocus}
+        onFocus={onFocusHandler}
+        placeholder={placeholder}
+        invalid={isStateInvalid}
         resizable={resizable}
         multiline
         rows={rows}
-        inputRef={textInputRef}
-        aria-invalid={overflow || undefined}
+        inputProps={{
+          "aria-label": ariaLabel,
+          "aria-labelledby": ariaLabelledBy,
+          "aria-invalid": isStateInvalid ? true : undefined,
+          "aria-errormessage": isStateInvalid ? setId(elementId, "error") : undefined,
+          "aria-describedby":
+            ariaDescribedBy != null
+              ? ariaDescribedBy
+              : description && setId(elementId, "description"),
+          "aria-controls": maxCharQuantity ? setId(elementId, "charCounter") : undefined,
+
+          ...inputProps,
+        }}
+        inputRef={inputRef}
         {...others}
       />
-      <HvWarningText disableBorder id={setId(id, "warning")} {...warningProps}>
-        {isStateInvalid ? warningText : ""}
-      </HvWarningText>
+
+      {canShowError && (
+        <HvWarningText id={setId(elementId, "error")} disableBorder>
+          {validationMessage}
+        </HvWarningText>
+      )}
     </HvFormElement>
   );
 };
@@ -260,137 +388,184 @@ HvTextArea.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Id to be applied to the root node.
-   */
-  id: PropTypes.string,
-  /**
-   * Component name identifier to be used in the context.
-   */
-  name: PropTypes.string,
-  /**
-   * The current state of the text area.
-   */
-  validationState: PropTypes.oneOf(["standBy", "invalid"]),
-  /**
-   * If `true` the the text area value must be filled on blur or else the validation fails.
-   */
-  isRequired: PropTypes.bool,
-  /**
-   *  Styles applied to the Drawer Paper element.
+   * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.PropTypes.shape({
     /**
-     * Style applied on the text area input box.
+     * Styles applied to the root container of the textarea.
      */
-    input: PropTypes.string,
-    /**
-     * Style applied when resizable is `true`. Can be used to set max/min width.
-     */
-    resize: PropTypes.string,
+    root: PropTypes.string,
     /**
      * Style applied to the root when resizable is `true`.
      */
-    rootResizable: PropTypes.string,
+    disabled: PropTypes.string,
     /**
-     * Styles applied to input root which is comprising of everything but the labels and descriptions.
+     * Style applied to the root when resizable is `true`.
      */
-    inputRoot: PropTypes.string,
+    resizable: PropTypes.string,
     /**
-     * Styles applied to input root when it is disabled.
+     * Style applied to the root when resizable is `true`.
      */
-    inputRootDisabled: PropTypes.string,
+    invalid: PropTypes.string,
+
     /**
-     * Styles applied to input root when it is focused.
+     * Styles applied to the base input root which is comprising of everything but the labels and descriptions.
      */
-    inputRootFocused: PropTypes.string,
+    baseInput: PropTypes.string,
+
     /**
-     * Styles applied to text area container that holds the label and counter.
+     * Style applied on the text area element.
+     */
+    input: PropTypes.string,
+    /**
+     * Styles applied to text area element element when it is resizable. Can be used to set max/min width.
+     */
+    inputResizable: PropTypes.string,
+
+    /**
+     * Styles applied to text area container that holds the label, description and counter.
      */
     labelContainer: PropTypes.string,
     /**
-     * Style applied defining the width when resizable is `false`.
+     * Styles applied to the label element.
      */
-    defaultWith: PropTypes.string,
+    label: PropTypes.string,
+    /**
+     * Styles applied to the label element.
+     */
+    description: PropTypes.string,
     /**
      * Style applied on the character counter.
      */
     characterCounter: PropTypes.string,
-    /**
-     * Style applied to the character counter when it is disabled.
-     */
-    disabled: PropTypes.string,
-    /**
-     * Style applied to the character counter when it the `maxCharQuantity` is reach.
-     */
-    invalid: PropTypes.string,
-    /**
-     * Style applied to the input container.
-     */
-    container: PropTypes.string,
-    /**
-     * Style applied container of the text area component.
-     */
-    root: PropTypes.string,
   }).isRequired,
+
   /**
-   * An Object containing the various text associated with the input.
+   * Id to be applied to the form element root node.
    */
-  labels: PropTypes.shape({
-    /**
-     * The label on top of the input.
-     */
-    inputLabel: PropTypes.string,
-    /**
-     * The placeholder value of the input.
-     */
-    placeholder: PropTypes.string,
-    /**
-     * The default value of the info text below the input.
-     */
-    infoText: PropTypes.string,
-    /**
-     * The value when a validation fails.
-     */
-    warningText: PropTypes.string,
-    /**
-     * The message that appears when there are too many characters.
-     */
-    maxCharQuantityWarningText: PropTypes.string,
-    /**
-     * The message that appears when there are too few characters.
-     */
-    minCharQuantityWarningText: PropTypes.string,
-    /**
-     * The message that appears when the input is empty and required.
-     */
-    requiredWarningText: PropTypes.string,
-    /**
-     * Text between the current char counter and max value.
-     */
-    middleCount: PropTypes.string,
-  }),
+  id: PropTypes.string,
   /**
-   * The maximum allowed length of the characters, if this value is null or undefined no check
-   * will be performed.
+   * The form element name.
    */
-  maxCharQuantity: PropTypes.number,
+  name: PropTypes.string,
+
   /**
-   * The number of rows of the text area
-   */
-  rows: PropTypes.number,
-  /**
-   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
+   * The value of the form element.
    */
   value: PropTypes.string,
   /**
-   * The initial value of the input.
+   * When uncontrolled, defines the initial input value.
    */
-  initialValue: PropTypes.string,
+  defaultValue: PropTypes.string,
+
   /**
-   * The function that will be executed onChange, allows modification of the input,
-   * it receives the value. If a new value should be presented it must returned it.
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
+   */
+  label: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-labelledby": PropTypes.string,
+  /**
+   * Provide additional descriptive text for the form element.
+   */
+  description: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
+
+  /**
+   * Indicates that the form element is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Indicates that the form element is not editable.
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  required: PropTypes.bool,
+
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to `checked`, depending of the values of both `required` and `checked`.
+   */
+  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  /**
+   * The error message to show when `status` is "invalid".
+   */
+  statusMessage: PropTypes.string,
+
+  /**
+   * The function that will be executed onChange.
    */
   onChange: PropTypes.func,
+
+  /**
+   * The placeholder value of the input.
+   */
+  placeholder: PropTypes.string,
+
+  /**
+   * Text between the current char counter and max value.
+   */
+  middleCountLabel: PropTypes.string,
+
+  /**
+   * An Object containing the various texts associated with the input.
+   */
+  validationMessages: PropTypes.shape({
+    /**
+     * The value when a validation fails.
+     */
+    error: PropTypes.string,
+    /**
+     * The message that appears when there are too many characters.
+     */
+    maxCharError: PropTypes.string,
+    /**
+     * The message that appears when there are too few characters.
+     */
+    minCharError: PropTypes.string,
+    /**
+     * The message that appears when the input is empty and required.
+     */
+    requiredError: PropTypes.string,
+  }),
+
+  /**
+   * Attributes applied to the input element.
+   */
+  inputProps: PropTypes.instanceOf(Object),
+  /**
+   * Allows passing a ref to the underlying input
+   */
+  inputRef: PropTypes.shape({ current: PropTypes.any }),
+
+  /**
+   * The function that will be executed onBlur, allows checking the validation state,
+   * it receives the value and the validation state (`invalid`, `valid`).
+   */
+  onBlur: PropTypes.func,
+  /**
+   * The function that will be executed onBlur, allows checking the value state,
+   * it receives the value.
+   */
+  onFocus: PropTypes.func,
+
   /**
    * The custom validation function, it receives the value and must return
    * either `true` for valid or `false` for invalid, default validations would only
@@ -398,14 +573,25 @@ HvTextArea.propTypes = {
    */
   validation: PropTypes.func,
   /**
-   * The function that will be executed onBlur, allows checking the validation state,
-   * it receives the value and the validation state (`empty`, `filled`, `invalid`, `valid`).
+   * If `true` it should autofocus.
    */
-  onBlur: PropTypes.func,
+  autoFocus: PropTypes.bool,
+
   /**
-   * If `true` the text area is disabled.
+   * The maximum allowed length of the characters, if this value is null no check
+   * will be performed.
    */
-  disabled: PropTypes.bool,
+  maxCharQuantity: PropTypes.number,
+  /**
+   * The minimum allowed length of the characters, if this value is null no check
+   * will be perform.
+   */
+  minCharQuantity: PropTypes.number,
+
+  /**
+   * The number of rows of the text area
+   */
+  rows: PropTypes.number,
   /**
    * If `true` the component is resizable.
    */
@@ -420,21 +606,14 @@ HvTextArea.propTypes = {
    */
   blockMax: PropTypes.bool,
   /**
-   * Props passed to the HvbaseInput component.
+   * If `true` the character counter isn't shown even if maxCharQuantity is set.
    */
-  formElementProps: PropTypes.instanceOf(Object),
+  hideCounter: PropTypes.bool,
+
   /**
    * Props passed to the HvCharCount component.
    */
   countCharProps: PropTypes.instanceOf(Object),
-  /**
-   * Props passed to the HvLabel component.
-   */
-  labelProps: PropTypes.instanceOf(Object),
-  /**
-   * Props passed to the HvWarning component.
-   */
-  warningProps: PropTypes.instanceOf(Object),
 };
 
-export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));
+export default withStyles(styles, { name: "HvTextArea" })(HvTextArea);

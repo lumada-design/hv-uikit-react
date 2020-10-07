@@ -69,7 +69,7 @@ HvWarningText.propTypes = {
   /**
    * The description to be shown by this helper text
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /**
    * Id to be applied to the root node.
    */

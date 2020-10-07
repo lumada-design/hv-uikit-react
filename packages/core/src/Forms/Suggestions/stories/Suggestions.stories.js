@@ -72,9 +72,14 @@ export const Main = () => {
   const values = suggestionList.map((label, id) => ({ id: String(id), label })).slice(0, 6);
 
   return (
-    <HvFormElement value={value}>
+    <HvFormElement>
       <HvLabel id="countries" label="Select country">
-        <HvBaseInput inputRef={inputRef} placeholder="Insert country" onChange={handleChange} />
+        <HvBaseInput
+          value={value}
+          inputRef={inputRef}
+          placeholder="Insert country"
+          onChange={handleChange}
+        />
         <HvSuggestions
           expanded={open}
           anchorEl={inputRef.current?.parentElement}
@@ -152,9 +157,14 @@ export const ServerSideSuggestions = () => {
   const values = suggestionList.map((label, id) => ({ id: String(id), label })).slice(0, 6);
 
   return (
-    <HvFormElement value={value}>
+    <HvFormElement>
       <HvLabel id="countries" label="Select country">
-        <HvBaseInput inputRef={inputRef} placeholder="Insert country" onChange={handleChange} />
+        <HvBaseInput
+          value={value}
+          inputRef={inputRef}
+          placeholder="Insert country"
+          onChange={handleChange}
+        />
         <HvSuggestions
           expanded={open}
           anchorEl={inputRef.current?.parentElement}
@@ -228,9 +238,10 @@ export const OpenWithDownArrow = () => {
   const values = suggestionList.map((label, id) => ({ id: String(id), label })).slice(0, 6);
 
   return (
-    <HvFormElement value={value}>
+    <HvFormElement>
       <HvLabel id="countries" label="Select country">
         <HvBaseInput
+          value={value}
           inputRef={inputRef}
           placeholder="Insert country"
           onChange={handleChange}
@@ -342,9 +353,14 @@ export const WithHighlighter = () => {
         Change mode
       </HvButton>
       <p />
-      <HvFormElement value={value}>
+      <HvFormElement>
         <HvLabel id="countries" label="Select country">
-          <HvBaseInput inputRef={inputRef} placeholder="Insert country" onChange={handleChange} />
+          <HvBaseInput
+            value={value}
+            inputRef={inputRef}
+            placeholder="Insert country"
+            onChange={handleChange}
+          />
           <HvSuggestions
             expanded={open}
             anchorEl={inputRef.current?.parentElement}

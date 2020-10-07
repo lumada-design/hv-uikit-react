@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { HvButton, HvTypography, HvLabel, HvBaseInput, HvLoginContainer, HvDropdown } from "../..";
+import { HvButton, HvTypography, HvInput, HvLoginContainer, HvDropdown } from "../..";
 import customBackground from "./background-custom.jpg";
 import useStyles from "./styles";
 
@@ -24,17 +24,20 @@ export const Main = () => {
       <div className={classes.root}>
         <HvTypography variant="mTitle">Welcome</HvTypography>
 
-        <HvLabel id="username-label" label="Username" classes={{ root: classes.input }}>
-          <HvBaseInput id="username-input" placeholder="Enter text" />
-        </HvLabel>
+        <HvInput
+          name="username"
+          label="Username"
+          placeholder="Enter text"
+          classes={{ root: classes.input }}
+        />
 
-        <HvLabel id="password-label" label="Password" classes={{ root: classes.input }}>
-          <HvBaseInput
-            id="password-input"
-            placeholder="Enter text"
-            inputProps={{ type: "password" }}
-          />
-        </HvLabel>
+        <HvInput
+          name="password"
+          label="Password"
+          placeholder="Enter text"
+          type="password"
+          classes={{ root: classes.input }}
+        />
 
         <HvButton
           type="submit"
@@ -52,25 +55,35 @@ export const CustomBackground = () => {
   const classes = useStyles();
 
   return (
-    <HvLoginContainer customBackground={customBackground}>
+    <HvLoginContainer
+      customBackground={customBackground}
+      className={classes.customBackgroundPosition}
+    >
       <div className={classes.root}>
         <HvTypography variant="mTitle">Welcome</HvTypography>
 
-        <HvLabel id="username-label" label="Username" classes={{ root: classes.input }}>
-          <HvBaseInput id="username-input" placeholder="Enter text" />
-        </HvLabel>
+        <HvInput
+          name="username"
+          label="Username"
+          placeholder="Enter text"
+          classes={{ root: classes.input }}
+        />
 
-        <HvLabel id="domain-label" label="Domain" classes={{ root: classes.input }}>
-          <HvDropdown
-            id="domain-dropdown"
-            values={[
-              { id: "id-1", label: "Domain 1" },
-              { id: "id-2", label: "Domain 2" },
-              { id: "id-3", label: "Domain 3" },
-              { id: "id-4", label: "Domain 4" },
-            ]}
-          />
-        </HvLabel>
+        <HvDropdown
+          name="domain"
+          labels={{ title: "Domain" }}
+          classes={{
+            root: classes.input,
+            dropdown: classes.dropdownWidthFix,
+            rootList: classes.dropdownWidthFix,
+          }}
+          values={[
+            { id: "id-1", label: "Domain 1" },
+            { id: "id-2", label: "Domain 2" },
+            { id: "id-3", label: "Domain 3" },
+            { id: "id-4", label: "Domain 4" },
+          ]}
+        />
 
         <HvButton
           type="submit"

@@ -79,6 +79,8 @@ const Pagination = ({
         labels={labels}
         inputProps={{
           "aria-label": `${pages} ${labels.paginationInputLabel}`,
+          // we really want the native number input
+          type: "number",
         }}
         classes={{
           root: classes.pageSizeInputContainer,
@@ -86,14 +88,11 @@ const Pagination = ({
           inputRoot: classes.pageSizeInputRoot,
         }}
         onChange={(event, val) => setStatePage(val - 1)}
-        initialValue={`${statePage + 1}`}
         value={`${statePage === "" ? "" : Number(statePage) + 1}`}
         onBlur={applyPage}
         onKeyDown={(e) => isKeypress(e, Enter) && applyPage()}
-        validationIconVisible={false}
         disabled={pageSize === 0}
         disableClear
-        type="number"
         {...currentPageInputProps}
       />
     </div>

@@ -15,7 +15,7 @@ ${dropdownHeader}     css:#hv-assetinventory-sort-dropdown
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${firstCheckbox}      css:input[value='id_0']
 ${listViewButton}     css:#list-button
-${pageCurrent}        css:#hv-assetinventory-pagination-currentPage-input
+${pageCurrent}        css:input[class*=pageSizeInput]
 ${pageLast}           css:#hv-assetinventory-pagination-lastPage-button
 ${pageNavigator}      css:div[class=HvPagination-pageNavigator]
 ${pageNext}           css:#hv-assetinventory-pagination-nextPage-button

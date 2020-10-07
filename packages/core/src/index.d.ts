@@ -60,6 +60,9 @@ export * from "./Grid";
 export { default as HvHeader } from "./Header";
 export * from "./Header";
 
+export { default as HvBaseInput } from "./BaseInput";
+export * from "./BaseInput";
+
 export { default as HvInput } from "./Input";
 export * from "./Input";
 

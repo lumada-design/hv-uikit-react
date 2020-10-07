@@ -18,12 +18,6 @@ export default {
  * Basic example of the form composer - Using only the Input component from the UI-KIT
  */
 export const Main = () => {
-  const inputTextConfiguration = {
-    inputLabel: "Default",
-    placeholder: "Placeholder value",
-    infoText: "Info text is here",
-  };
-
   const inputStyles = (theme) => ({
     root: {
       padding: `${theme.hv.spacing.xs}px 0`,
@@ -37,21 +31,19 @@ export const Main = () => {
       title: "Group1",
       children: [
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 1",
-          }}
+          label="Input 1"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input1"
           onChange={(event, value) => value}
-          initialValue="Some text 1"
+          defaultValue="Some text 1"
         />,
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 2",
-          }}
+          label="Input 2"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input2"
-          initialValue="Some text 2"
+          defaultValue="Some text 2"
         />,
       ],
     },
@@ -59,18 +51,16 @@ export const Main = () => {
       title: "Group2",
       children: [
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 3",
-          }}
+          label="Input 3"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input3"
-          initialValue="Some text 3"
+          defaultValue="Some text 3"
         />,
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 4",
-          }}
+          label="Input 4"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input4"
         />,
       ],
@@ -79,17 +69,15 @@ export const Main = () => {
       title: "Group3",
       children: [
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 5",
-          }}
+          label="Input 5"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input5"
         />,
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 6",
-          }}
+          label="Input 6"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input6"
         />,
       ],
@@ -98,17 +86,15 @@ export const Main = () => {
       title: "Group4",
       children: [
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 7",
-          }}
+          label="Input 7"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input7"
         />,
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 8",
-          }}
+          label="Input 8"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input8"
         />,
       ],
@@ -117,17 +103,15 @@ export const Main = () => {
       title: "Group5",
       children: [
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 9",
-          }}
+          label="Input 9"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input9"
         />,
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 10",
-          }}
+          label="Input 10"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input10"
         />,
       ],
@@ -136,17 +120,15 @@ export const Main = () => {
       title: "Group6",
       children: [
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 11",
-          }}
+          label="Input 11"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input11"
         />,
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 12",
-          }}
+          label="Input 12"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input12"
         />,
       ],
@@ -229,21 +211,19 @@ export const WithComposition = () => {
       title: "Group 1 - Input",
       children: [
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 1",
-          }}
+          label="Input 1"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input1"
           onChange={(event, value) => value}
-          initialValue="Some text 1"
+          defaultValue="Some text 1"
         />,
         <CustomInput
-          labels={{
-            ...inputTextConfiguration,
-            inputLabel: "Input 2",
-          }}
+          label="Input 2"
+          description="Info text is here"
+          placeholder="Placeholder value"
           name="input2"
-          initialValue="Some text 2"
+          defaultValue="Some text 2"
         />,
       ],
     },

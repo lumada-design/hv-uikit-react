@@ -199,7 +199,6 @@ const HvCheckBoxGroup = (props) => {
       required={required}
       readOnly={readOnly}
       className={clsx(className, classes.root)}
-      {...others}
     >
       {label && (
         <HvLabel
@@ -226,6 +225,7 @@ const HvCheckBoxGroup = (props) => {
           [classes.vertical]: orientation === "vertical",
           [classes.horizontal]: orientation === "horizontal",
         })}
+        {...others}
       >
         {showSelectAll && (
           <HvCheckBox

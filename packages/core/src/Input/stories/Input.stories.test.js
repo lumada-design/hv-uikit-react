@@ -15,17 +15,29 @@ export default {
 // __________________________________
 // Extended robot test scenarios
 
-export const ControlledState = () => {
-  const [inputValidationState, setInputValidationState] = useState("empty");
-
-  const labels = {
-    placeholder: "input",
-    inputLabel: "ex. us-east",
-    warningText: "this field is required",
+export const Limited = () => {
+  const validationMessages = {
+    maxCharError: "Max characters exceeded",
   };
 
+  return (
+    <HvInput
+      id="limited-input"
+      label="Postal code"
+      description="Group of letters and numbers added to your address to assist the sorting of mail"
+      placeholder="Insert your postal code"
+      validationMessages={validationMessages}
+      maxCharQuantity={5}
+      showValidationIcon
+    />
+  );
+};
+
+export const ControlledState = () => {
+  const [inputValidationState, setInputValidationState] = useState("standBy");
+
   const handleDoneOnClick = () => setInputValidationState("invalid");
-  const handleClearOnClick = () => setInputValidationState("empty");
+  const handleClearOnClick = () => setInputValidationState("standBy");
 
   return (
     <>
@@ -44,7 +56,14 @@ export const ControlledState = () => {
         Clear
       </HvButton>
 
-      <HvInput id="validation" labels={labels} isRequired validationState={inputValidationState} />
+      <HvInput
+        id="validation"
+        required
+        label="ex. us-east"
+        placeholder="input"
+        status={inputValidationState}
+        statusMessage="this field is required"
+      />
     </>
   );
 };

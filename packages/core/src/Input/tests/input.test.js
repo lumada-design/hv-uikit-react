@@ -78,7 +78,7 @@ describe("Input", () => {
   it("should show the custom map icon", () => {
     wrapper = mount(
       <HvProvider>
-        <HvInput labels={labels} customFixedIcon={<Map />} />
+        <HvInput labels={labels} endAdornment={<Map />} />
       </HvProvider>
     );
     const inputComponent = wrapper.find(Map);

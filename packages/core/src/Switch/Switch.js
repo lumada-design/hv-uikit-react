@@ -104,7 +104,6 @@ const HvSwitch = (props) => {
       required={required}
       readOnly={readOnly}
       className={clsx(className, classes.root)}
-      {...others}
     >
       {label && (
         <HvLabel
@@ -132,6 +131,7 @@ const HvSwitch = (props) => {
           "aria-describedby": ariaDescribedBy,
           ...inputProps,
         }}
+        {...others}
       />
       {canShowError && (
         <HvWarningText

@@ -14,5 +14,5 @@ ${option2}           css:ul[role=listbox]>li:nth-child(2)
 ${option3}           css:ul[role=listbox]>li:nth-child(3)
 ${option4}           css:ul[role=listbox]>li:nth-child(4)
 ${options}           css:ul[role=listbox]>li
-${searchInput}       css:input[id$='search-input']
+${searchInput}       css:input[placeholder=Search]
 ${selectAll}         css:input[id*='select-all']

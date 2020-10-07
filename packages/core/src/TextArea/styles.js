@@ -1,66 +1,39 @@
-import { outlineStyles } from "../Focus/styles";
-
-const styles = (theme) => ({
+const styles = {
   root: {
     display: "inline-block",
     width: "100%",
   },
-  rootResizable: {
+  resizable: {
     width: "auto",
   },
-  input: {
-    height: "auto",
-    padding: "5px 10px",
-    overflow: "auto",
-    marginLeft: "0px",
-    marginRight: "0px",
-    minHeight: "21px",
+  disabled: {},
+  invalid: {},
+
+  baseInput: {},
+
+  input: {},
+  inputResizable: {
+    resize: "auto",
     minWidth: "150px",
     maxWidth: "610px",
   },
-  resize: {
-    resize: "auto",
-    width: "100%",
+
+  labelContainer: {},
+  label: {
+    display: "block",
+    float: "left",
+    paddingBottom: "6px",
   },
-  defaultWith: {
-    width: "610px",
+  description: {
+    display: "block",
+    float: "left",
   },
-  inputRoot: {
-    borderWidth: "1px",
-    "&:hover": {
-      borderWidth: "1px",
-    },
-  },
-  inputRootDisabled: {
-    background: theme.hv.palette.atmosphere.atmo2,
-    "&:hover": {
-      background: theme.hv.palette.atmosphere.atmo2,
-    },
-  },
-  inputRootFocused: {
-    borderWidth: "1px",
-    ...outlineStyles,
-    "&:hover": {
-      borderWidth: "1px",
-    },
-  },
-  labelContainer: {
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    marginBottom: 6,
-  },
-  container: {},
   characterCounter: {
+    display: "block",
+    float: "right",
     textAlign: "right",
-    paddingTop: theme.hv.spacing.xs,
+    paddingBottom: "6px",
   },
-  disabled: {
-    ...theme.hv.typography.normalText,
-  },
-  invalid: {
-    color: theme.hv.palette.accent.acce3,
-  },
-});
+};
 
 export default styles;

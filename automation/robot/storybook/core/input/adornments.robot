@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${forms}input--limited
+...           Go To    ${tests}input--limited
 ...           AND    Wait Until Element Is Enabled    ${input}
 
 

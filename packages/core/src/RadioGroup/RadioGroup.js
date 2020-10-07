@@ -126,7 +126,6 @@ const HvRadioGroup = (props) => {
       required={required}
       readOnly={readOnly}
       className={clsx(className, classes.root)}
-      {...others}
     >
       {label && (
         <HvLabel
@@ -153,6 +152,7 @@ const HvRadioGroup = (props) => {
           [classes.vertical]: orientation === "vertical",
           [classes.horizontal]: orientation === "horizontal",
         })}
+        {...others}
       >
         {modifiedChildren}
       </div>

@@ -10,49 +10,47 @@ export default {
     dsVersion: "3.2.0",
   },
   component: HvTextArea,
-  decorators: [
-    (Story) => (
-      <div style={{ width: "600px", height: "400px" }}>
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
 };
 
-export const Main = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
+export const Main = () => <HvTextArea id="main" label="Label" placeholder="Enter value" rows={5} />;
+
+export const LimitedWithCustomLabels = () => {
+  const validationMessages = {
+    requiredError: "This text area can't be empty",
+    maxCharError: "too many characters",
   };
 
-  return <HvTextArea labels={labels} id="main" rows={5} />;
+  return (
+    <HvTextArea
+      id="limited-custom-label"
+      rows={5}
+      label="Label"
+      description="You can write past the limit"
+      placeholder="Enter value"
+      middleCountLabel="of"
+      validationMessages={validationMessages}
+      required
+      maxCharQuantity={10}
+    />
+  );
 };
 
-export const Resizable = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-  };
-
-  return <HvTextArea labels={labels} id="resize" rows={5} maxCharQuantity={1000} resizable />;
-};
-
-Resizable.story = {
+LimitedWithCustomLabels.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area that allow resizing.",
+      storyDescription: "Text area char count with a custom labels.",
     },
   },
 };
 
 export const LimitedBlocking = () => {
-  const [textLength, setTextLength] = useState(0);
-
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-    maxCharQuantityWarningText: "too many characters",
+  const validationMessages = {
+    requiredError: "This text area can't be empty",
+    maxCharError: "too many characters",
   };
+
+  const [textLength, setTextLength] = useState(0);
 
   const setCounter = (event, data) => {
     setTextLength(data.length);
@@ -62,12 +60,14 @@ export const LimitedBlocking = () => {
   return (
     <HvTextArea
       id="limited-blocking"
-      initialValue="some text"
+      defaultValue="some text"
       rows={5}
-      labels={labels}
+      label="Label"
+      placeholder="Enter value"
       maxCharQuantity={10}
       blockMax
       onChange={setCounter}
+      validationMessages={validationMessages}
       countCharProps={{ "aria-label": `You have inserted ${textLength} characters` }}
     />
   );
@@ -82,43 +82,35 @@ LimitedBlocking.story = {
   },
 };
 
-export const LimitedWithCustomLabels = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-    middleCount: "of",
-    maxCharQuantityWarningText: "too many characters",
-    requiredWarningText: "This text area can't be empty",
-  };
+export const Resizable = () => (
+  <HvTextArea
+    id="resize"
+    label="Label"
+    placeholder="Enter value"
+    rows={5}
+    maxCharQuantity={1000}
+    resizable
+  />
+);
 
-  return (
-    <HvTextArea
-      id="limited-custom-label"
-      rows={5}
-      labels={labels}
-      isRequired
-      maxCharQuantity={10}
-    />
-  );
-};
-
-LimitedWithCustomLabels.story = {
+Resizable.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area char count with a custom labels.",
+      storyDescription: "Text area that allow resizing.",
     },
   },
 };
 
-export const Disabled = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-    maxCharQuantityWarningText: "too many characters",
-  };
-
-  return <HvTextArea id="disabled" rows={5} labels={labels} maxCharQuantity={1500} disabled />;
-};
+export const Disabled = () => (
+  <HvTextArea
+    id="disabled"
+    rows={5}
+    label="Label"
+    placeholder="Enter value"
+    maxCharQuantity={1500}
+    disabled
+  />
+);
 
 Disabled.story = {
   parameters: {
@@ -128,19 +120,52 @@ Disabled.story = {
   },
 };
 
+export const ReadOnly = () => (
+  <HvTextArea
+    readOnly
+    rows={5}
+    label="Label"
+    placeholder="Enter value"
+    defaultValue="You can't change this..."
+  />
+);
+
+ReadOnly.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Not editable text area.",
+    },
+  },
+};
+
+export const WithoutLabel = () => (
+  <HvTextArea aria-label="The label" placeholder="Enter value" rows={5} />
+);
+
+WithoutLabel.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Text area without label. The accessible name is provided via the `aria-label` property.",
+    },
+  },
+};
+
 export const CustomValidation = () => {
+  const validationMessages = {
+    error: "This text area has a number",
+    maxCharError: "too many characters",
+  };
+
   const hasNumber = (value) => /\d/.test(value);
   return (
     <>
       <HvTextArea
         id="custom-validation"
         rows={5}
-        labels={{
-          inputLabel: "Label",
-          placeholder: "Enter value",
-          warningText: "This text area has a number",
-          maxCharQuantityWarningText: "too many characters",
-        }}
+        label="Label"
+        placeholder="Enter value"
+        validationMessages={validationMessages}
         validation={(value) => !hasNumber(value)}
       />
     </>

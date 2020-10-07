@@ -5,8 +5,9 @@ const styles = (theme) => ({
     minWidth: "150px",
     maxWidth: "610px",
   },
+
   inputRoot: {
-    "&:hover, &:focus-within": {
+    "&:hover": {
       "& $iconClear": {
         visibility: "visible",
       },
@@ -14,25 +15,26 @@ const styles = (theme) => ({
     "&:focus-within $iconClear": {
       visibility: "visible",
     },
-  },
-  inputRootDisabled: {
-    cursor: "not-allowed",
+    // IE fallback code (using focus-within-polyfill)
+    "&.focus-within $iconClear": {
+      visibility: "visible",
+    },
   },
   inputRootFocused: {
     "& $iconClear": { visibility: "visible" },
   },
-  inputRootInvalid: {},
+  inputRootDisabled: {
+    cursor: "not-allowed",
+  },
+  inputRootMultiline: {
+    padding: 0,
+  },
   input: {
     "&::-ms-clear": {
       display: "none",
     },
   },
-  inputDisabled: {
-    cursor: "not-allowed",
-  },
-  multiLine: {
-    padding: 0,
-  },
+
   labelContainer: {
     display: "flex",
     alignItems: "flex-start",
@@ -41,7 +43,8 @@ const styles = (theme) => ({
     paddingBottom: "6px",
     display: "block",
   },
-  labelDisabled: {},
+  description: {},
+
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",
@@ -75,6 +78,7 @@ const styles = (theme) => ({
     position: "absolute",
     width: "100%",
   },
+
   "@global": {
     "input:-webkit-autofill": {
       "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,

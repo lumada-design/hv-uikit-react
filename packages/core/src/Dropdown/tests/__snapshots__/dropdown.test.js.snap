@@ -339,7 +339,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                             >
                                               <input
                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                id="hvdropdown1-values-search-input"
                                                 placeholder="Search"
                                                 rows="10"
                                                 type="text"
@@ -403,7 +402,7 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                               </div>
                                             </div>
                                             <div
-                                              class="HvBaseInput-inputBorderContainer"
+                                              class="HvBaseInput-invalidBorderContainer"
                                               role="presentation"
                                             />
                                           </div>
@@ -741,13 +740,13 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                               autoFocus={false}
                                                               endAdornment={
                                                                 <React.Fragment>
-                                                                  <WithStyles(HvAdornment)
+                                                                  <WithStyles(ForwardRef)
                                                                     aria-label="clear button"
                                                                     icon={<CloseXS />}
                                                                     isVisible={false}
                                                                     onClick={[Function]}
                                                                   />
-                                                                  <WithStyles(HvAdornment)
+                                                                  <WithStyles(ForwardRef)
                                                                     icon={<Search />}
                                                                     isVisible={true}
                                                                   />
@@ -757,7 +756,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                 Object {
                                                                   "current": <input
                                                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                    id="hvdropdown1-values-search-input"
                                                                     placeholder="Search"
                                                                     rows="10"
                                                                     type="text"
@@ -786,29 +784,28 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                 autoFocus={false}
                                                                 classes={
                                                                   Object {
-                                                                    "disabledRoot": "HvBaseInput-disabledRoot",
+                                                                    "disabled": "HvBaseInput-disabled",
                                                                     "input": "HvBaseInput-input",
-                                                                    "inputBorderContainer": "HvBaseInput-inputBorderContainer",
-                                                                    "inputDisabled": "HvBaseInput-inputDisabled",
+                                                                    "inputResizable": "HvBaseInput-inputResizable",
                                                                     "inputRoot": "HvBaseInput-inputRoot",
                                                                     "inputRootDisabled": "HvBaseInput-inputRootDisabled",
                                                                     "inputRootFocused": "HvBaseInput-inputRootFocused",
-                                                                    "invalidRoot": "HvBaseInput-invalidRoot",
-                                                                    "multiLine": "HvBaseInput-multiLine",
-                                                                    "resize": "HvBaseInput-resize",
+                                                                    "inputRootMultiline": "HvBaseInput-inputRootMultiline",
+                                                                    "invalid": "HvBaseInput-invalid",
+                                                                    "invalidBorderContainer": "HvBaseInput-invalidBorderContainer",
+                                                                    "resizable": "HvBaseInput-resizable",
                                                                     "root": "HvBaseInput-root",
-                                                                    "rootResizable": "HvBaseInput-rootResizable",
                                                                   }
                                                                 }
                                                                 endAdornment={
                                                                   <React.Fragment>
-                                                                    <WithStyles(HvAdornment)
+                                                                    <WithStyles(ForwardRef)
                                                                       aria-label="clear button"
                                                                       icon={<CloseXS />}
                                                                       isVisible={false}
                                                                       onClick={[Function]}
                                                                     />
-                                                                    <WithStyles(HvAdornment)
+                                                                    <WithStyles(ForwardRef)
                                                                       icon={<Search />}
                                                                       isVisible={true}
                                                                     />
@@ -818,7 +815,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                   Object {
                                                                     "current": <input
                                                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                      id="hvdropdown1-values-search-input"
                                                                       placeholder="Search"
                                                                       rows="10"
                                                                       type="text"
@@ -848,38 +844,32 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                 >
                                                                   <WithStyles(ForwardRef(Input))
                                                                     autoFocus={false}
-                                                                    className="HvBaseInput-inputRoot"
                                                                     classes={
                                                                       Object {
-                                                                        "disabled": "HvBaseInput-inputDisabled",
+                                                                        "disabled": "HvBaseInput-inputRootDisabled",
                                                                         "focused": "HvBaseInput-inputRootFocused",
                                                                         "input": "HvBaseInput-input",
-                                                                        "multiline": "HvBaseInput-multiLine",
+                                                                        "multiline": "HvBaseInput-inputRootMultiline",
+                                                                        "root": "HvBaseInput-inputRoot",
                                                                       }
                                                                     }
                                                                     disabled={false}
                                                                     endAdornment={
                                                                       <React.Fragment>
-                                                                        <WithStyles(HvAdornment)
+                                                                        <WithStyles(ForwardRef)
                                                                           aria-label="clear button"
                                                                           icon={<CloseXS />}
                                                                           isVisible={false}
                                                                           onClick={[Function]}
                                                                         />
-                                                                        <WithStyles(HvAdornment)
+                                                                        <WithStyles(ForwardRef)
                                                                           icon={<Search />}
                                                                           isVisible={true}
                                                                         />
                                                                       </React.Fragment>
                                                                     }
-                                                                    id="hvdropdown1-values-search-input"
                                                                     inputProps={
                                                                       Object {
-                                                                        "aria-controls": undefined,
-                                                                        "aria-describedby": undefined,
-                                                                        "aria-invalid": undefined,
-                                                                        "aria-labelledby": undefined,
-                                                                        "aria-required": undefined,
                                                                         "required": false,
                                                                       }
                                                                     }
@@ -887,7 +877,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                       Object {
                                                                         "current": <input
                                                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                          id="hvdropdown1-values-search-input"
                                                                           placeholder="Search"
                                                                           rows="10"
                                                                           type="text"
@@ -899,8 +888,9 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                     onChange={[Function]}
                                                                     onKeyDown={[Function]}
                                                                     placeholder="Search"
+                                                                    readOnly={false}
                                                                     rows={10}
-                                                                    value=""
+                                                                    type="text"
                                                                     values={
                                                                       Array [
                                                                         Object {
@@ -917,11 +907,10 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                   >
                                                                     <ForwardRef(Input)
                                                                       autoFocus={false}
-                                                                      className="HvBaseInput-inputRoot"
                                                                       classes={
                                                                         Object {
                                                                           "colorSecondary": "MuiInput-colorSecondary",
-                                                                          "disabled": "Mui-disabled HvBaseInput-inputDisabled",
+                                                                          "disabled": "Mui-disabled HvBaseInput-inputRootDisabled",
                                                                           "error": "Mui-error",
                                                                           "focused": "Mui-focused HvBaseInput-inputRootFocused",
                                                                           "formControl": "MuiInput-formControl",
@@ -931,8 +920,8 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                           "inputMultiline": "MuiInput-inputMultiline",
                                                                           "inputTypeSearch": "MuiInput-inputTypeSearch",
                                                                           "marginDense": "MuiInput-marginDense",
-                                                                          "multiline": "MuiInput-multiline HvBaseInput-multiLine",
-                                                                          "root": "MuiInput-root",
+                                                                          "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline",
+                                                                          "root": "MuiInput-root HvBaseInput-inputRoot",
                                                                           "underline": "MuiInput-underline",
                                                                         }
                                                                       }
@@ -940,26 +929,20 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                       disabled={false}
                                                                       endAdornment={
                                                                         <React.Fragment>
-                                                                          <WithStyles(HvAdornment)
+                                                                          <WithStyles(ForwardRef)
                                                                             aria-label="clear button"
                                                                             icon={<CloseXS />}
                                                                             isVisible={false}
                                                                             onClick={[Function]}
                                                                           />
-                                                                          <WithStyles(HvAdornment)
+                                                                          <WithStyles(ForwardRef)
                                                                             icon={<Search />}
                                                                             isVisible={true}
                                                                           />
                                                                         </React.Fragment>
                                                                       }
-                                                                      id="hvdropdown1-values-search-input"
                                                                       inputProps={
                                                                         Object {
-                                                                          "aria-controls": undefined,
-                                                                          "aria-describedby": undefined,
-                                                                          "aria-invalid": undefined,
-                                                                          "aria-labelledby": undefined,
-                                                                          "aria-required": undefined,
                                                                           "required": false,
                                                                         }
                                                                       }
@@ -967,7 +950,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                         Object {
                                                                           "current": <input
                                                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                            id="hvdropdown1-values-search-input"
                                                                             placeholder="Search"
                                                                             rows="10"
                                                                             type="text"
@@ -979,8 +961,9 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                       onChange={[Function]}
                                                                       onKeyDown={[Function]}
                                                                       placeholder="Search"
+                                                                      readOnly={false}
                                                                       rows={10}
-                                                                      value=""
+                                                                      type="text"
                                                                       values={
                                                                         Array [
                                                                           Object {
@@ -997,11 +980,10 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                     >
                                                                       <WithStyles(ForwardRef(InputBase))
                                                                         autoFocus={false}
-                                                                        className="HvBaseInput-inputRoot"
                                                                         classes={
                                                                           Object {
                                                                             "colorSecondary": "MuiInput-colorSecondary",
-                                                                            "disabled": "Mui-disabled HvBaseInput-inputDisabled",
+                                                                            "disabled": "Mui-disabled HvBaseInput-inputRootDisabled",
                                                                             "error": "Mui-error",
                                                                             "focused": "Mui-focused HvBaseInput-inputRootFocused",
                                                                             "formControl": "MuiInput-formControl",
@@ -1011,36 +993,30 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                             "inputMultiline": "MuiInput-inputMultiline",
                                                                             "inputTypeSearch": "MuiInput-inputTypeSearch",
                                                                             "marginDense": "MuiInput-marginDense",
-                                                                            "multiline": "MuiInput-multiline HvBaseInput-multiLine",
-                                                                            "root": "MuiInput-root",
+                                                                            "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline",
+                                                                            "root": "MuiInput-root HvBaseInput-inputRoot",
                                                                             "underline": null,
                                                                           }
                                                                         }
                                                                         disabled={false}
                                                                         endAdornment={
                                                                           <React.Fragment>
-                                                                            <WithStyles(HvAdornment)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="clear button"
                                                                               icon={<CloseXS />}
                                                                               isVisible={false}
                                                                               onClick={[Function]}
                                                                             />
-                                                                            <WithStyles(HvAdornment)
+                                                                            <WithStyles(ForwardRef)
                                                                               icon={<Search />}
                                                                               isVisible={true}
                                                                             />
                                                                           </React.Fragment>
                                                                         }
                                                                         fullWidth={false}
-                                                                        id="hvdropdown1-values-search-input"
                                                                         inputComponent="input"
                                                                         inputProps={
                                                                           Object {
-                                                                            "aria-controls": undefined,
-                                                                            "aria-describedby": undefined,
-                                                                            "aria-invalid": undefined,
-                                                                            "aria-labelledby": undefined,
-                                                                            "aria-required": undefined,
                                                                             "required": false,
                                                                           }
                                                                         }
@@ -1048,7 +1024,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                           Object {
                                                                             "current": <input
                                                                               class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                              id="hvdropdown1-values-search-input"
                                                                               placeholder="Search"
                                                                               rows="10"
                                                                               type="text"
@@ -1060,9 +1035,9 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                         onChange={[Function]}
                                                                         onKeyDown={[Function]}
                                                                         placeholder="Search"
+                                                                        readOnly={false}
                                                                         rows={10}
                                                                         type="text"
-                                                                        value=""
                                                                         values={
                                                                           Array [
                                                                             Object {
@@ -1079,13 +1054,12 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                       >
                                                                         <ForwardRef(InputBase)
                                                                           autoFocus={false}
-                                                                          className="HvBaseInput-inputRoot"
                                                                           classes={
                                                                             Object {
                                                                               "adornedEnd": "MuiInputBase-adornedEnd",
                                                                               "adornedStart": "MuiInputBase-adornedStart",
                                                                               "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                                                                              "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputDisabled",
+                                                                              "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled",
                                                                               "error": "Mui-error Mui-error",
                                                                               "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused",
                                                                               "formControl": "MuiInputBase-formControl MuiInput-formControl",
@@ -1098,35 +1072,29 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                               "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
                                                                               "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
                                                                               "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                                                                              "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-multiLine",
-                                                                              "root": "MuiInputBase-root MuiInput-root",
+                                                                              "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline",
+                                                                              "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot",
                                                                             }
                                                                           }
                                                                           disabled={false}
                                                                           endAdornment={
                                                                             <React.Fragment>
-                                                                              <WithStyles(HvAdornment)
+                                                                              <WithStyles(ForwardRef)
                                                                                 aria-label="clear button"
                                                                                 icon={<CloseXS />}
                                                                                 isVisible={false}
                                                                                 onClick={[Function]}
                                                                               />
-                                                                              <WithStyles(HvAdornment)
+                                                                              <WithStyles(ForwardRef)
                                                                                 icon={<Search />}
                                                                                 isVisible={true}
                                                                               />
                                                                             </React.Fragment>
                                                                           }
                                                                           fullWidth={false}
-                                                                          id="hvdropdown1-values-search-input"
                                                                           inputComponent="input"
                                                                           inputProps={
                                                                             Object {
-                                                                              "aria-controls": undefined,
-                                                                              "aria-describedby": undefined,
-                                                                              "aria-invalid": undefined,
-                                                                              "aria-labelledby": undefined,
-                                                                              "aria-required": undefined,
                                                                               "required": false,
                                                                             }
                                                                           }
@@ -1134,7 +1102,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                             Object {
                                                                               "current": <input
                                                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                                id="hvdropdown1-values-search-input"
                                                                                 placeholder="Search"
                                                                                 rows="10"
                                                                                 type="text"
@@ -1146,9 +1113,9 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                           onChange={[Function]}
                                                                           onKeyDown={[Function]}
                                                                           placeholder="Search"
+                                                                          readOnly={false}
                                                                           rows={10}
                                                                           type="text"
-                                                                          value=""
                                                                           values={
                                                                             Array [
                                                                               Object {
@@ -1184,25 +1151,24 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                               autoFocus={false}
                                                                               className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
                                                                               disabled={false}
-                                                                              id="hvdropdown1-values-search-input"
                                                                               onAnimationStart={[Function]}
                                                                               onBlur={[Function]}
                                                                               onChange={[Function]}
                                                                               onFocus={[Function]}
                                                                               onKeyDown={[Function]}
                                                                               placeholder="Search"
+                                                                              readOnly={false}
                                                                               required={false}
                                                                               rows={10}
                                                                               type="text"
-                                                                              value=""
                                                                             />
-                                                                            <WithStyles(HvAdornment)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="clear button"
                                                                               icon={<CloseXS />}
                                                                               isVisible={false}
                                                                               onClick={[Function]}
                                                                             >
-                                                                              <HvAdornment
+                                                                              <ForwardRef
                                                                                 aria-label="clear button"
                                                                                 classes={
                                                                                   Object {
@@ -1256,13 +1222,13 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                                     </CloseXS>
                                                                                   </div>
                                                                                 </button>
-                                                                              </HvAdornment>
-                                                                            </WithStyles(HvAdornment)>
-                                                                            <WithStyles(HvAdornment)
+                                                                              </ForwardRef>
+                                                                            </WithStyles(ForwardRef)>
+                                                                            <WithStyles(ForwardRef)
                                                                               icon={<Search />}
                                                                               isVisible={true}
                                                                             >
-                                                                              <HvAdornment
+                                                                              <ForwardRef
                                                                                 classes={
                                                                                   Object {
                                                                                     "adornment": "HvAdornment-adornment",
@@ -1310,15 +1276,15 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                                     </Search>
                                                                                   </div>
                                                                                 </div>
-                                                                              </HvAdornment>
-                                                                            </WithStyles(HvAdornment)>
+                                                                              </ForwardRef>
+                                                                            </WithStyles(ForwardRef)>
                                                                           </div>
                                                                         </ForwardRef(InputBase)>
                                                                       </WithStyles(ForwardRef(InputBase))>
                                                                     </ForwardRef(Input)>
                                                                   </WithStyles(ForwardRef(Input))>
                                                                   <div
-                                                                    className="HvBaseInput-inputBorderContainer"
+                                                                    className="HvBaseInput-invalidBorderContainer"
                                                                     role="presentation"
                                                                   />
                                                                 </div>
@@ -1332,7 +1298,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                 >
                                                                   <input
                                                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                    id="hvdropdown1-values-search-input"
                                                                     placeholder="Search"
                                                                     rows="10"
                                                                     type="text"
@@ -1410,7 +1375,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                   >
                                                                     <input
                                                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                      id="hvdropdown1-values-search-input"
                                                                       placeholder="Search"
                                                                       rows="10"
                                                                       type="text"
@@ -1500,7 +1464,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                                       >
                                                                         <input
                                                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                          id="hvdropdown1-values-search-input"
                                                                           placeholder="Search"
                                                                           rows="10"
                                                                           type="text"

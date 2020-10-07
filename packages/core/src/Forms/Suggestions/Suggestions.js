@@ -85,14 +85,8 @@ HvSuggestions.propTypes = {
   suggestionValues: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      label: PropTypes.string.isRequired,
-      selected: PropTypes.bool,
-      disabled: PropTypes.bool,
-      isHidden: PropTypes.bool,
-      iconCallback: PropTypes.func,
-      showNavIcon: PropTypes.bool,
-      path: PropTypes.string,
-      params: PropTypes.instanceOf(Object),
+      label: PropTypes.node.isRequired,
+      value: PropTypes.any,
     })
   ),
   /**

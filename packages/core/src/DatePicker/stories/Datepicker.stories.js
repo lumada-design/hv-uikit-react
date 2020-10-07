@@ -58,19 +58,19 @@ DefaultValue.story = {
 };
 
 export const Localized = () => {
-  const [locale, setLocale] = useState("pt-PT");
+  const initialLocale = "pt-PT";
+  const [locale, setLocale] = useState(initialLocale);
 
   return (
     <>
       <div style={{ marginBottom: "20px", width: "150px" }}>
         <HvInput
-          labels={{ inputLabel: "Locale" }}
+          label="Locale"
           type="text"
-          value={locale}
+          defaultValue={initialLocale}
           style={{ marginBottom: "20px", width: "150px" }}
-          onChange={(value) => {
-            const chosenLocale = value.currentTarget.value;
-            if (chosenLocale.match(/[a-z]{2}-[A-Z]{2}/g)) {
+          onChange={(_evt, chosenLocale) => {
+            if (chosenLocale.match(/^[a-z]{2}-[A-Z]{2}$/g)) {
               setLocale(chosenLocale);
             }
           }}
