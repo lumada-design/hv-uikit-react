@@ -1,47 +1,56 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To                            ${tests}switch--with-state    AND
-...           Wait Until Element Is Enabled    ${switchUnchecked}
+...           Go To    ${tests}switch--with-state
+...           AND    Wait Until Element Is Enabled    ${switchChecked}
 Force Tags    v3
 
 
-*** Variables ***
-${switchUnchecked}            css:#checkState1-input
-${switchChecked}              css:#checkState2-input
-${switchDisabledUnchecked}    css:#checkState3-input
-${switchDisabledChecked}      css:#checkState4-input
-${switchControlled}           css:input[type=checkbox]
-
 *** Test Cases ***
-switch to off,on,off when checkbox is clicked 3 times
-    Checkbox Should Be Selected        ${switchChecked}
-    Click Element                      ${switchChecked}
-    Checkbox Should not Be Selected    ${switchChecked}
-    Click Element                      ${switchChecked}
-    Checkbox Should Be Selected        ${switchChecked}
-    Click Element                      ${switchChecked}
-    Checkbox Should not Be Selected    ${switchChecked}
+switch when checkbox is clicked
+    Click Element                      ${switchChecked}>span
+    Checkbox Should not Be Selected    ${switchChecked} input
+    Click Element                      ${switchChecked}>span
+    Checkbox Should Be Selected        ${switchChecked} input
+    Click Element                      ${switchChecked}>span
+    Checkbox Should not Be Selected    ${switchChecked} input
 
-does not switch when disabled element is clicked
-    Checkbox Should Be Selected     ${switchDisabledChecked}
-    Run Keyword And Ignore Error    Click Element               ${switchDisabledChecked}
-    Checkbox Should Be Selected     ${switchDisabledChecked}
+switch when label is clicked
+    Checkbox Should Be Selected        ${switchChecked} input
+    Click Element                      ${switchChecked}>label
+    Checkbox Should not Be Selected    ${switchChecked} input
+    Click Element                      ${switchChecked}>label
+    Checkbox Should Be Selected        ${switchChecked} input
+    Click Element                      ${switchChecked}>label
+    Checkbox Should not Be Selected    ${switchChecked} input
 
-switch to Off when checkbox is focused and is pressed SPACE
-    [Tags]                             keyboard
-    Checkbox Should Be Selected        ${switchChecked}
-    set focus and press keys           ${switchChecked}    SPACE
-    Checkbox Should not Be Selected    ${switchChecked}
-    Press keys                         NONE                SPACE
-    Checkbox Should Be Selected        ${switchChecked}
+switch when is pressed SPACE
+    [Tags]    keyboard
+    Checkbox Should Be Selected        ${switchChecked} input
+    set focus and press keys           ${switchChecked} input    SPACE
+    Checkbox Should not Be Selected    ${switchChecked} input
+    Press keys                         NONE    SPACE
+    Checkbox Should Be Selected        ${switchChecked} input
 
-switch state when is controlled by other component
-    [Setup]                             NONE
-    Go To                               ${forms}switch--controlled
+switch when is controlled by other component
+    [Setup]    Go To                    ${forms}switch--controlled
     Wait Until Page Contains Element    ${switchControlled}
     Checkbox Should not Be Selected     ${switchControlled}
     Click Button                        Toggle
     Checkbox Should Be Selected         ${switchControlled}
     Click Button                        Toggle
     Checkbox Should not Be Selected     ${switchControlled}
+
+does not switch when is disabled
+    Checkbox Should Be Selected     ${switchDisabled} input
+    Run Keyword And Ignore Error
+    ...    Click Element            ${switchDisabled}
+    Checkbox Should Be Selected     ${switchDisabled} input
+    set focus and press keys        ${switchDisabled} input    SPACE
+    Checkbox Should Be Selected     ${switchDisabled} input
+
+
+*** Variables ***
+${switchChecked}       css:#checkState2
+${switchDisabled}      css:#checkState4
+${switchControlled}    css:input[type=checkbox]
