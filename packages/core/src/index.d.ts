@@ -1,5 +1,5 @@
-export { default as HvActionsGeneric } from "./ActionsGeneric";
-export * from "./ActionsGeneric";
+export { default as HvActionContainer } from "./ActionBar/ActionContainer";
+export * from "./ActionBar/ActionContainer";
 
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
@@ -215,7 +215,6 @@ export interface HvThemeVizPalette {
     polarized: Map<string, string>;
   };
 }
-
 
 export interface HvThemePalette {
   accent: HvAccentColors;

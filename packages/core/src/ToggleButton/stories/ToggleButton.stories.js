@@ -26,7 +26,7 @@ import {
 } from "@hv/uikit-react-icons/dist";
 import Eye from "./Eye";
 
-import { HvToggleButton, HvButton } from "../..";
+import { HvToggleButton } from "../..";
 
 // eslint-disable-next-line react/prop-types
 const FlexDecorator = ({ children }) => {
@@ -159,41 +159,6 @@ export const Main = () => (
     />
   </>
 );
-
-export const Controlled = () => {
-  const [select, setSelect] = useState(false);
-
-  const toggleState = () => setSelect(!select);
-
-  const label = select ? "Open lock" : "Close lock";
-
-  return (
-    <>
-      <HvButton style={{ marginBottom: "12px" }} onClick={toggleState}>
-        {label}
-      </HvButton>
-      <HvToggleButton
-        aria-label="Lock"
-        selected={select}
-        notSelectedIcon={<Unlock />}
-        selectedIcon={<Lock />}
-        onClick={toggleState}
-        labels={{
-          notSelectedTitle: "Close lock",
-          selectedTitle: "Open lock",
-        }}
-      />
-    </>
-  );
-};
-
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a toggle button with state.",
-    },
-  },
-};
 
 export const Disabled = () => (
   <HvToggleButton

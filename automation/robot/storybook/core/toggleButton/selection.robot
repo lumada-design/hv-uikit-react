@@ -4,7 +4,7 @@ Resource    ../_keywords.resource
 
 *** Test Cases ***
 change the state to closed and opened when toggle button is clicked 2 times
-    Go To                                ${forms}toggle-button--controlled
+    Go To                                ${tests}toggle-button--controlled
     Wait Until Element Is Visible        ${toggleButton}
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
     Click Element                        ${toggleButton}
@@ -14,7 +14,7 @@ change the state to closed and opened when toggle button is clicked 2 times
 
 change state when toggle button is focused and is pressed ENTER
     [Tags]    Keyboard
-    Go To                                ${forms}toggle-button--controlled
+    Go To                                ${tests}toggle-button--controlled
     Wait Until Element Is Visible        ${toggleButton}
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
     set focus and press keys             ${toggleButton}    ENTER
@@ -24,7 +24,7 @@ change state when toggle button is focused and is pressed ENTER
 
 change state when toggle button is focused and is pressed SPACE
     [Tags]    Keyboard
-    Go To                                ${forms}toggle-button--controlled
+    Go To                                ${tests}toggle-button--controlled
     Wait Until Element Is Visible        ${toggleButton}
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
     set focus and press keys             ${toggleButton}    SPACE

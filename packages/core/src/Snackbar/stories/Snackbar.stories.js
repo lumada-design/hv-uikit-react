@@ -112,7 +112,7 @@ export const CustomAction = () => (
       label="This is a snackbar."
       showIcon
       action={{ id: "post", label: "Action", disabled: false }}
-      actionCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
+      actionCallback={(evt, id, action) => alert(`clicked ${id} with ${action.label}`)}
     />
   </div>
 );
