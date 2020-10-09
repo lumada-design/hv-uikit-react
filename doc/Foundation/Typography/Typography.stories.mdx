@@ -1,17 +1,24 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import Typography from "./Typography";
+import MaturityStatus from "../../../.storybook/blocks/ExportedMaturityStatus";
+import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
-<Meta title="Foundation/Typography" />
+<Meta title="Foundation/Typography" parameters={{ maturityStatus: componentDefinitions.stable, dsVersion: componentDefinitions.dsVersion3, }} />
+
+
 
 # Typography
 
+<br/>
+<MaturityStatus />
 <br/>
 
 The UI-Kit uses **[Open Sans](https://fonts.google.com/specimen/Open+Sans)** as the default font, according to the Design System guidelines. Open Sans is an open source font that was designed and optimized for print, web, and mobile interfaces, and has excellent legibility characteristics in its letterforms.
 
 You will **need to ensure** that the font link is referred in your application's code, since it cannot be loaded automatically by the UI Kit.
 
-<br/><br/>
+<br/>
+<br/>
 
 ### Setup
 

@@ -9,6 +9,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvAdornment } from '@hv/uikit-react-core/dist'",
+    v3: true,
+    dsVersion: "3.2.0",
   },
   component: HvAdornment,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

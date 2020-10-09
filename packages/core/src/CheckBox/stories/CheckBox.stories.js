@@ -27,6 +27,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCheckBox } from '@hv/uikit-react-core/dist'",
+    dsVersion: "3.2.0",
   },
   component: HvCheckBox,
   subcomponents: { HvBaseCheckBox },

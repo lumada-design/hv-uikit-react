@@ -8,9 +8,11 @@ import { Usage } from "./Usage";
 import { Props } from "./Props";
 import { Stories } from "./Stories";
 import { Deprecated } from "./Deprecated";
+import { MaturityStatus } from "./MaturityStatus";
 
 export default ({
   titleSlot,
+  maturityStatusSlot,
   subtitleSlot,
   descriptionSlot,
   primarySlot,
@@ -21,6 +23,7 @@ export default ({
   return (
     <>
       <Title slot={titleSlot} />
+      <MaturityStatus slot={maturityStatusSlot} />
       <Subtitle slot={subtitleSlot} />
       <Description slot={descriptionSlot} />
       <Usage code={usageSlot} />

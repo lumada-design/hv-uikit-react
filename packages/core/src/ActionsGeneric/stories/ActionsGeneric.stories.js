@@ -8,6 +8,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvActionsGeneric } from '@hv/uikit-react-core/dist'",
+    dsVersion: "3.2.0",
   },
   component: HvActionsGeneric,
   decorators: [
