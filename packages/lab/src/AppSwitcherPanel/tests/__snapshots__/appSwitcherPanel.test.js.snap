@@ -415,6 +415,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -1236,6 +1237,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     },
                   },
                 },
+                "hvSpacing": [Function],
                 "mixins": Object {
                   "gutters": [Function],
                   "toolbar": Object {
@@ -2143,6 +2145,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     },
                   },
                 },
+                "hvSpacing": [Function],
                 "mixins": Object {
                   "gutters": [Function],
                   "toolbar": Object {
@@ -3051,6 +3054,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -3870,6 +3874,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     },
                   },
                 },
+                "hvSpacing": [Function],
                 "mixins": Object {
                   "gutters": [Function],
                   "toolbar": Object {
@@ -4739,6 +4744,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     },
                   },
                 },
+                "hvSpacing": [Function],
                 "mixins": Object {
                   "gutters": [Function],
                   "toolbar": Object {
@@ -5648,6 +5654,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     },
                   },
                 },
+                "hvSpacing": [Function],
                 "mixins": Object {
                   "gutters": [Function],
                   "toolbar": Object {

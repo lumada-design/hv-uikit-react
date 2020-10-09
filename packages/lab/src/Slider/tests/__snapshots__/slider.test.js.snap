@@ -421,6 +421,7 @@ exports[`Slider  should render correctly 1`] = `
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {

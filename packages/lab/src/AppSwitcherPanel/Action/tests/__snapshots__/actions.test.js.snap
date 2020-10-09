@@ -359,6 +359,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -1255,6 +1256,7 @@ exports[`<Action /> with description should render correctly 1`] = `
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -2165,6 +2167,7 @@ exports[`<Action /> without description should render correctly 1`] = `
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {

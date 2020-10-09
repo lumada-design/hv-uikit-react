@@ -368,6 +368,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -1176,6 +1177,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               },
             },
           },
+          "hvSpacing": [Function],
           "mixins": Object {
             "gutters": [Function],
             "toolbar": Object {
@@ -1989,6 +1991,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 },
               },
             },
+            "hvSpacing": [Function],
             "mixins": Object {
               "gutters": [Function],
               "toolbar": Object {
@@ -2888,6 +2891,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -3695,6 +3699,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               },
             },
           },
+          "hvSpacing": [Function],
           "mixins": Object {
             "gutters": [Function],
             "toolbar": Object {
@@ -4507,6 +4512,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 },
               },
             },
+            "hvSpacing": [Function],
             "mixins": Object {
               "gutters": [Function],
               "toolbar": Object {
@@ -5427,6 +5433,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -6236,6 +6243,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               },
             },
           },
+          "hvSpacing": [Function],
           "mixins": Object {
             "gutters": [Function],
             "toolbar": Object {
@@ -7048,6 +7056,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 },
               },
             },
+            "hvSpacing": [Function],
             "mixins": Object {
               "gutters": [Function],
               "toolbar": Object {
@@ -7989,6 +7998,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             },
           },
         },
+        "hvSpacing": [Function],
         "mixins": Object {
           "gutters": [Function],
           "toolbar": Object {
@@ -8793,6 +8803,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               },
             },
           },
+          "hvSpacing": [Function],
           "mixins": Object {
             "gutters": [Function],
             "toolbar": Object {
@@ -9604,6 +9615,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 },
               },
             },
+            "hvSpacing": [Function],
             "mixins": Object {
               "gutters": [Function],
               "toolbar": Object {
