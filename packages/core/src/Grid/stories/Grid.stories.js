@@ -19,13 +19,13 @@ export const Main = () => {
     root: {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
-      marginTop: theme.spacing(2),
+      marginTop: theme.hvSpacing(2),
       flex: 1,
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.normalText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       height: 150,
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,

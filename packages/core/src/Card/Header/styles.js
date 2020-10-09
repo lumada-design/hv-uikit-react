@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   root: {
-    padding: `15px ${theme.hv.spacing.sm}px`,
+    padding: theme.hvSpacing("15px", "sm"),
     position: "relative",
   },
   title: {
@@ -21,7 +21,7 @@ const styles = (theme) => ({
     right: 20,
     marginTop: 0,
     marginRight: "0px",
-    paddingLeft: `${theme.hv.spacing.xs}px`,
+    paddingLeft: theme.hv.spacing.xs,
     top: "15px",
   },
   content: {},

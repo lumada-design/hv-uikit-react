@@ -2,10 +2,10 @@ import { outlineStyles } from "../../Focus/styles";
 
 const styles = (theme) => ({
   rangeLabel: {
-    paddingBottom: theme.spacing("xs"),
+    paddingBottom: theme.hvSpacing("xs"),
   },
   root: {
-    marginTop: theme.spacing("xs"),
+    marginTop: theme.hvSpacing("xs"),
     backgroundColor: theme.palette.atmo1,
     borderBottom: `1px solid ${theme.palette.atmo4}`,
     borderTop: "1px solid transparent",
@@ -16,14 +16,14 @@ const styles = (theme) => ({
     },
   },
   headerDayOfWeek: {
-    paddingLeft: theme.spacing("xs"),
+    paddingLeft: theme.hvSpacing("xs"),
   },
   headerDate: {},
   invalid: {},
   input: {
     border: "none",
     backgroundColor: "transparent",
-    padding: `5px ${theme.spacing("xs")}px`,
+    padding: `5px ${theme.hvSpacing("xs")}px`,
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.xsTitle,
     width: "100%",

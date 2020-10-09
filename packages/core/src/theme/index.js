@@ -6,7 +6,7 @@ import muiToolbarOverrides from "./overrides/muiToolbar";
 import muiIconButtonOverrides from "./overrides/muiIconButton";
 import createTypography from "./typography";
 import createPalette from "./palette";
-import createSpacing from "./spacing";
+import createSpacing, { hvSpacing } from "./spacing";
 
 const getTheme = (uiKitTheme) => {
   switch (uiKitTheme) {
@@ -25,7 +25,12 @@ const themeBuilder = (theme) => {
 
   return createMuiTheme({
     shadows: Array(25).fill("none"),
+
+    // MUI's spacing doesn't cover our use cases because of regression:
+    // https://github.com/mui-org/material-ui/issues/21278
     spacing: themeSpacing,
+    hvSpacing: hvSpacing(themeSpacing),
+
     palette: themePalette,
     typography: themeTypography,
     shape: {

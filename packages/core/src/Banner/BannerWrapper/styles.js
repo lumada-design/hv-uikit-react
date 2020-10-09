@@ -8,11 +8,11 @@ const styles = (theme) => ({
   message: {
     display: "flex",
     alignItems: "center",
-    padding: `${theme.hv.spacing.xs}px 0`,
-    paddingLeft: `${theme.hv.spacing.sm}px`,
+    padding: theme.hvSpacing("xs", 0),
+    paddingLeft: theme.hv.spacing.sm,
   },
   action: {
-    padding: theme.spacing("xs"),
+    padding: theme.hvSpacing("xs"),
     marginRight: 0,
     flex: "0 0 auto",
     placeSelf: "stretch",

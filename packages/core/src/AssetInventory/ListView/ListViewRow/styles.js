@@ -9,8 +9,8 @@ const styles = (theme) => ({
     display: "table-row",
   },
   button: {
-    padding: `0 ${theme.hv.spacing.xs}px`,
-    marginRight: `${theme.hv.spacing.xs}px`,
+    padding: theme.hvSpacing(0, "xs"),
+    marginRight: theme.hv.spacing.xs,
     position: "relative",
   },
   dropdownMenu: {
@@ -32,8 +32,8 @@ const styles = (theme) => ({
     width: 1,
     whiteSpace: "nowrap",
     alignItems: "center",
-    paddingLeft: `${theme.hv.spacing.xs}px`,
-    paddingRight: `${theme.hv.spacing.xs}px`,
+    paddingLeft: theme.hv.spacing.xs,
+    paddingRight: theme.hv.spacing.xs,
     "&::before": {
       content: "''",
       height: "100%",

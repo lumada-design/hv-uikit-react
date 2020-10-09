@@ -6,7 +6,7 @@ const styles = (theme) => ({
     color: theme.hv.palette.atmosphere.atmo5,
   },
   gutter: {
-    padding: `0 0 6px ${theme.hv.spacing.xs}px`,
+    padding: theme.hvSpacing(0, 0, "6px", "xs"),
   },
 });
 

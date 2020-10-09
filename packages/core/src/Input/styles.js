@@ -71,7 +71,7 @@ const styles = (theme) => ({
   suggestionList: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: theme.hv.spacing.sm,
     position: "absolute",
     width: "100%",
   },

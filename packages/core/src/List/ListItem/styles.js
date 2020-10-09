@@ -29,7 +29,7 @@ const styles = (theme) => ({
   },
 
   gutters: {
-    padding: `0 ${theme.hv.spacing.xs}px`,
+    padding: theme.hvSpacing(0, "xs"),
 
     "&$withStartAdornment": {
       paddingLeft: 0,

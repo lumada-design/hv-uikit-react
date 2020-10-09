@@ -20,7 +20,7 @@ const styles = (theme) => ({
     display: "block",
   },
   selectionDisabled: {
-    lineHeight: `${theme.hv.spacing.md}px`,
+    lineHeight: theme.hv.spacing.md,
   },
 });
 

@@ -57,7 +57,7 @@ const styles = (theme) => ({
             alignSelf: "baseline",
           },
           "& > div.rt-resizer": {
-            width: `${theme.hv.spacing.xs}px`,
+            width: theme.hv.spacing.xs,
             right: "-8px",
           },
           "&:first-child:not(.checkbox)": {
@@ -147,7 +147,7 @@ const styles = (theme) => ({
         "& $td": {
           background: "transparent",
           border: "0 solid transparent",
-          padding: `0px ${theme.hv.spacing.xs}px`,
+          padding: theme.hvSpacing(0, "xs"),
           minWidth: "72px",
           "&.sortable": {
             paddingLeft: "32px",
@@ -159,7 +159,7 @@ const styles = (theme) => ({
           "&.link": {
             paddingLeft: "32px",
             "&:not(.sortable)": {
-              paddingLeft: `${theme.hv.spacing.xs}px`,
+              paddingLeft: theme.hv.spacing.xs,
             },
           },
           "&.secondaryAction": {
@@ -255,7 +255,7 @@ const styles = (theme) => ({
   tableContainer: {},
   subtitle: {},
   title: {
-    marginBottom: `${theme.hv.spacing.sm}px`,
+    marginBottom: theme.hv.spacing.sm,
   },
   checkBoxBorder: {
     "&:nth-child(2)": {
@@ -266,7 +266,7 @@ const styles = (theme) => ({
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    marginBottom: `${theme.hv.spacing.xs}px`,
+    marginBottom: theme.hv.spacing.xs,
   },
   centered: {
     justifyContent: "center",
@@ -290,7 +290,7 @@ const styles = (theme) => ({
     height: "100%",
     borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     background: theme.hv.palette.atmosphere.atmo1,
-    padding: `${theme.hv.spacing.md}px 32px`,
+    padding: theme.hvSpacing("md", "32px"),
   },
   iconContainer: {
     marginLeft: 5,

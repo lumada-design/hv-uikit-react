@@ -16,7 +16,7 @@ const styles = (theme) => {
   return {
     root: {
       position: "relative",
-      padding: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px 0`,
+      padding: theme.hvSpacing("xs", 0, "xs", 0),
       display: "table-cell",
       verticalAlign: "middle",
     },

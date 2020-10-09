@@ -10,7 +10,7 @@ const styles = (theme) => ({
     alignItems: "center",
     width: "100%",
     height: "100%",
-    padding: `0 ${theme.hv.spacing.sm}px`,
+    padding: theme.hvSpacing(0, "sm"),
     boxShadow: theme.hv.shadows[1],
     "& > *:not(nav)": {
       zIndex: 2,

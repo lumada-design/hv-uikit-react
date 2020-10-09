@@ -54,8 +54,8 @@ const styles = (theme) => ({
   selection: {
     display: "flex",
     alignItems: "center",
-    height: `${theme.hv.spacing.md}px `,
-    padding: `0 ${theme.hv.spacing.md}px 0 ${theme.hv.spacing.xs}px`,
+    height: theme.hv.spacing.md,
+    padding: theme.hvSpacing(0, "md", 0, "xs"),
   },
   placeholder: {
     display: "block",
@@ -68,7 +68,7 @@ const styles = (theme) => ({
     boxShadow: theme.hv.shadows[1],
   },
   inputExtensionOpen: {
-    height: `${theme.hv.spacing.xs}px`,
+    height: theme.hv.spacing.xs,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
   },
   inputExtensionLeftPosition: {

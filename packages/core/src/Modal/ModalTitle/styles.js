@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   root: {
-    padding: theme.spacing("sm"),
+    padding: theme.hvSpacing("sm"),
     margin: 0,
     display: "flex",
     justifyContent: "space-between",
@@ -10,10 +10,10 @@ const styles = (theme) => ({
     alignItems: "center",
   },
   textWithIcon: {
-    marginLeft: theme.spacing("xs"),
+    marginLeft: theme.hvSpacing("xs"),
   },
   icon: {
-    marginRight: `${theme.hv.spacing.md}px`,
+    marginRight: theme.hv.spacing.md,
     width: 48,
     height: 48,
   },

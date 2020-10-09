@@ -368,8 +368,8 @@ export const ControlledWithButtons = () => {
   const useStyles = makeStyles((theme) => ({
     container: {
       "& button": {
-        marginRight: theme.spacing("xs"),
-        marginBottom: theme.spacing("md"),
+        marginRight: theme.hvSpacing("xs"),
+        marginBottom: theme.hvSpacing("md"),
       },
     },
   }));

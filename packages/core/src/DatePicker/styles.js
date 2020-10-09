@@ -9,8 +9,8 @@ const styles = (theme) => ({
     position: "relative",
     background: theme.palette.atmo1,
     height: 32,
-    paddingLeft: theme.spacing("xs"),
-    paddingRight: theme.spacing("md"),
+    paddingLeft: theme.hvSpacing("xs"),
+    paddingRight: theme.hvSpacing("md"),
     fontFamily: theme.hv.typography.fontFamily,
     "&:focus": {
       ...outlineStyles,
@@ -68,7 +68,7 @@ const styles = (theme) => ({
   },
   action: {
     "&:first-child": {
-      marginRight: theme.spacing("xs"),
+      marginRight: theme.hvSpacing("xs"),
     },
   },
 

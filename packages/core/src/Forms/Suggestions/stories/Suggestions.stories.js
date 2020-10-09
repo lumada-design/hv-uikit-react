@@ -336,7 +336,7 @@ export const WithHighlighter = () => {
         <b>{mode}</b>
       </HvTypography>
       <HvButton
-        style={{ margin: theme.spacing("xs", 0, "md") }}
+        style={{ margin: theme.hvSpacing("xs", 0, "md") }}
         onClick={() => setMode(mode === "auto-complete" ? "auto-suggest" : "auto-complete")}
       >
         Change mode

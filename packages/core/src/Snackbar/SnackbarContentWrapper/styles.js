@@ -3,7 +3,7 @@ const styles = (theme) => ({
     width: "310px",
     minHeight: "52px",
     maxHeight: "92px",
-    padding: theme.spacing("xs"),
+    padding: theme.hvSpacing("xs"),
   },
   success: {
     backgroundColor: theme.hv.palette.semantic.sema8,
@@ -27,7 +27,7 @@ const styles = (theme) => ({
   },
   messageText: {
     ...theme.hv.typography.normalText,
-    padding: `0 ${theme.hv.spacing.xs}px`,
+    padding: theme.hvSpacing(0, "xs"),
     color: theme.hv.palette.base.base2,
     fontFamily: theme.hv.typography.fontFamily,
     maxHeight: "72px",

@@ -40,7 +40,7 @@ const styles = (theme) => ({
     },
   },
   noIcon: {
-    paddingLeft: `${theme.hv.spacing.xs}px`,
+    paddingLeft: theme.hv.spacing.xs,
   },
 });
 
