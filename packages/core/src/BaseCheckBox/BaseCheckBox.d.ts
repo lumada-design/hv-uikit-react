@@ -16,8 +16,8 @@ export interface HvBaseCheckBoxProps
   /**
    * The value of the input.
    *
-   * Is up to the application's logic when to consider the submition of this value.
-   * Generaly it should be used only when the checkbox is neither unchecked nor indeterminate.
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the checkbox is neither unchecked nor indeterminate.
    *
    * The default value is "on".
    */
@@ -47,14 +47,14 @@ export interface HvBaseCheckBoxProps
    */
   defaultChecked?: boolean;
   /**
-   * If `true` the checkbox visualy shows the indeterminate state.
+   * If `true` the checkbox visually shows the indeterminate state.
    */
   indeterminate?: boolean;
 
   /**
    * The callback fired when the checkbox is pressed.
    */
-  onChange: (event: Event, checked: boolean, value: any) => void;
+  onChange?: (event: Event, checked: boolean, value: any) => void;
 
   /**
    * Whether the selector should use semantic colors.
@@ -64,7 +64,7 @@ export interface HvBaseCheckBoxProps
   /**
    * Properties passed on to the input element.
    */
-  inputProps: object;
+  inputProps?: object;
 }
 
 export default function HvBaseCheckBox(props: HvBaseCheckBoxProps): JSX.Element | null;

@@ -152,8 +152,8 @@ HvBaseCheckbox.propTypes = {
   /**
    * The value of the input.
    *
-   * Is up to the application's logic when to consider the submition of this value.
-   * Generaly it should be used only when the checkbox is neither unchecked nor indeterminate.
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the checkbox is neither unchecked nor indeterminate.
    *
    * The default value is "on".
    */
@@ -184,7 +184,7 @@ HvBaseCheckbox.propTypes = {
    */
   defaultChecked: PropTypes.bool,
   /**
-   * If `true` the checkbox visualy shows the indeterminate state.
+   * If `true` the checkbox visually shows the indeterminate state.
    */
   indeterminate: PropTypes.bool,
 

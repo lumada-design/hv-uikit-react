@@ -19,7 +19,7 @@ export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassK
   /**
    * Whether the Button is an icon-only button.
    */
-  icon: boolean;
+  icon?: boolean;
   /**
    * Category of button to use
    */

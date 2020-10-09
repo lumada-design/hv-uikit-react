@@ -3,7 +3,16 @@
 import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
 
-import { HvCard, HvSwitch, HvTypography } from "../..";
+import {
+  HvActionContainer,
+  HvCard,
+  HvCardContent,
+  HvCardHeader,
+  HvCardMedia,
+  HvCheckBox,
+  HvSwitch,
+  HvTypography,
+} from "../..";
 
 import { AllComponents } from "./Card.stories";
 import compressor from "./resources/compressor.png";
@@ -68,22 +77,26 @@ export const CustomActionsSelectable = () => {
     return (
       <div style={{ width: "360px" }}>
         <HvCard
-          headerTitle={toggleA ? "Asset Avatar L90" : "onClickAction()"}
-          subheader={toggleB ? "Compressor" : "onChange()"}
           id="cardId"
           aria-label="Asset Avatar L90 press enter or space to select this card"
-          checkboxProps={{
-            value: "l90",
-            inputProps: {
-              "aria-label": "L90 input",
-            },
-          }}
-          innerCardContent={<SingleContent classes={styles} />}
           onClick={() => setToggleA(!toggleA)}
-          onChange={() => setToggleB(!toggleB)}
-          isSelectable
-          selectOnClickAction
-        />
+          selectable
+        >
+          <HvCardHeader
+            title={toggleA ? "Asset Avatar L90" : "onClickAction()"}
+            subheader={toggleB ? "Compressor" : "onChange()"}
+          />
+          <HvCardContent>
+            <SingleContent classes={styles} />
+          </HvCardContent>
+          <HvActionContainer>
+            <HvCheckBox
+              onChange={() => setToggleB(!toggleB)}
+              value="l90"
+              inputProps={{ "aria-label": "l90 input" }}
+            />
+          </HvActionContainer>
+        </HvCard>
       </div>
     );
   };
@@ -112,21 +125,26 @@ export const CustomActionsNotSelectable = () => {
     return (
       <div style={{ width: "360px" }}>
         <HvCard
-          headerTitle={toggleA ? "Asset Avatar L90" : "onClickAction()"}
-          subheader={toggleB ? "Compressor" : "onChange()"}
           id="cardId"
-          innerCardContent={<SingleContent classes={styles} />}
           aria-label="Asset Avatar L90 press enter or space to use this card main action"
-          checkboxProps={{
-            value: "l90",
-            inputProps: {
-              "aria-label": "l90 input",
-            },
-          }}
           onClick={() => setToggleA(!toggleA)}
-          onChange={() => setToggleB(!toggleB)}
-          isSelectable
-        />
+          selectable
+        >
+          <HvCardHeader
+            title={toggleA ? "Asset Avatar L90" : "onClickAction()"}
+            subheader={toggleB ? "Compressor" : "onChange()"}
+          />
+          <HvCardContent>
+            <SingleContent classes={styles} />
+          </HvCardContent>
+          <HvActionContainer>
+            <HvCheckBox
+              onChange={() => setToggleB(!toggleB)}
+              value="l90"
+              inputProps={{ "aria-label": "l90 input" }}
+            />
+          </HvActionContainer>
+        </HvCard>
       </div>
     );
   };
@@ -146,19 +164,17 @@ export const Controlled = () => {
         onChange={() => setChecked(!checked)}
       />
       <div style={{ width: 360, paddingTop: 10 }}>
-        <HvCard
-          headerTitle="Asset Avatar L90"
-          subheader="Compressor"
-          id="controlled"
-          isSelectable
-          checked={checked}
-          mediaPath={compressor}
-          mediaHeight={186}
-          mediaTitle="Compressor"
-          checkboxProps={{
-            inputProps: { "aria-label": "Check asset" },
-          }}
-        />
+        <HvCard id="controlled" selectable selected={checked}>
+          <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
+          <HvCardMedia component="img" image={compressor} height={186} title="Compressor" />
+          <HvActionContainer>
+            <HvCheckBox
+              value="l90"
+              checked={checked}
+              inputProps={{ "aria-label": "Check asset" }}
+            />
+          </HvActionContainer>
+        </HvCard>
       </div>
     </>
   );
@@ -167,7 +183,7 @@ export const Controlled = () => {
 // __________________________________
 // Extended applitools test scenarios
 
-// test scenario, card selected and dropdownmenu opned
+// test scenario, card selected and dropdownmenu open
 export const SelectedOpened = () => AllComponents();
 
 SelectedOpened.story = {

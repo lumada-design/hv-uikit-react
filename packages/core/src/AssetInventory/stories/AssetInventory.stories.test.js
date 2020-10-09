@@ -16,9 +16,14 @@ import { withStyles } from "@material-ui/core";
 import React from "react";
 
 import {
+  HvActionContainer,
+  HvActionsGeneric,
   HvAssetInventory,
   HvCard,
+  HvCardContent,
+  HvCardHeader,
   HvCardView,
+  HvCheckBox,
   HvGrid,
   HvKpi,
   HvListView,
@@ -116,18 +121,25 @@ export const AccessibilityList = () => {
     const StyledIcon = <Icon semantic={sema} />;
 
     return (
-      <HvCard
-        icon={StyledIcon}
-        headerTitle={data.headerTitle}
-        innerCardContent={<StyledCardContent values={data} icon={StyledIcon} />}
-        semantic={sema}
-        checkboxProps={{ value: data.id, inputProps: { "aria-label": `Select ${data.id}` } }}
-        onChange={viewConfiguration.onSelection}
-        isSelectable={viewConfiguration.isSelectable}
-        actions={viewConfiguration.actions}
-        maxVisibleActions={viewConfiguration.maxVisibleActions}
-        actionsCallback={viewConfiguration.actionsCallback}
-      />
+      <HvCard icon={StyledIcon} semantic={sema} selectable={viewConfiguration.isSelectable}>
+        <HvCardHeader title={data.headerTitle} />
+        <HvCardContent>
+          <StyledCardContent values={data} icon={StyledIcon} />
+        </HvCardContent>
+        <HvActionContainer>
+          <HvCheckBox
+            id={data.id}
+            onChange={viewConfiguration.onSelection}
+            value={data.id}
+            inputProps={{ "aria-label": `Select ${data.id}` }}
+          />
+          <HvActionsGeneric
+            actions={viewConfiguration.actions}
+            actionsCallback={viewConfiguration.actionsCallback}
+            maxVisibleActions={viewConfiguration.maxVisibleActions}
+          />
+        </HvActionContainer>
+      </HvCard>
     );
   };
 
@@ -313,13 +325,13 @@ export const AccessibilityList = () => {
       }
       searchProps={{ ariaLabel: "Filters data" }}
       multibuttonProps={[
-        { id: "card", "aria-label": "Select card view", title: "Card view" },
-        { id: "list", "aria-label": "Select list view", title: "List view" },
+        { id: "card", icon: <Cards />, "aria-label": "Select card view", title: "Card view" },
+        { id: "list", icon: <List />, "aria-label": "Select list view", title: "List view" },
       ]}
       sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
-      <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
-      <HvListView id="list" icon={<List />} renderer={rowRenderer} />
+      <HvCardView id="card" renderer={cardRenderer} />
+      <HvListView id="list" renderer={rowRenderer} />
     </HvAssetInventory>
   );
 };

@@ -15,8 +15,8 @@ export interface HvBaseSwitchProps extends StandardProps<SwitchProps, HvBaseSwit
   /**
    * The value of the input.
    *
-   * Is up to the application's logic when to consider the submition of this value.
-   * Generaly it should be used only when the checkbox is neither unchecked nor indeterminate.
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the checkbox is neither unchecked nor indeterminate.
    *
    * The default value is "on".
    */

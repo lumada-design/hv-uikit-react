@@ -9,7 +9,8 @@ export type HvCheckBoxClassKey =
   | "disabled"
   | "checkBox"
   | "label"
-  | "focusVisible";
+  | "focusVisible"
+  | "labelTypography";
 
 export interface HvCheckBoxProps extends StandardProps<HvBaseCheckBoxProps, HvCheckBoxClassKey> {
   /**
