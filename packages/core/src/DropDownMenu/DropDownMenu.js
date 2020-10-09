@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { IconButton, Popper, withStyles } from "@material-ui/core";
-import FocusTrap from "focus-trap-react";
 import OutsideClickHandler from "react-outside-click-handler";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import { isKeypress, KeyboardCodes } from "../utils";
@@ -32,12 +31,31 @@ const DropDownMenu = ({
   const didMountRef = useRef(false);
   const [open, setOpen] = useState(expanded && !disabled);
   const [positionUp, setPositionUp] = useState(false);
-  const [hasFocusTrap, setHasFocusTrap] = useState(true);
   const anchorRef = React.useRef(null);
+  const listContainerRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
+
+  const getFirstListItem = () =>
+    listContainerRef?.current
+      ? Array.from(listContainerRef.current.getElementsByTagName("li"))[0]
+      : undefined;
+
+  const handleFocusOnToggle = () => {
+    if (open) {
+      setTimeout(() => {
+        const itemToFocus = getFirstListItem();
+        itemToFocus?.focus();
+      });
+    } else {
+      setTimeout(() => {
+        anchorRef.current.focus();
+      });
+    }
+  };
 
   useEffect(() => {
     if (didMountRef.current) {
+      handleFocusOnToggle();
       onToggleOpen?.(open);
     } else {
       didMountRef.current = true;
@@ -52,12 +70,10 @@ const DropDownMenu = ({
   }, [expanded, disabled]);
 
   const handleToggle = () => {
-    setHasFocusTrap(true);
     setOpen((prevOpen) => !prevOpen);
   };
 
   const handleClose = (event) => {
-    setHasFocusTrap(false);
     const isButtonClick = anchorRef.current?.contains(event.target);
     if (!isButtonClick) {
       setOpen(false);
@@ -128,45 +144,36 @@ const DropDownMenu = ({
         }}
       >
         <OutsideClickHandler onOutsideClick={handleClose}>
-          <FocusTrap
-            active={hasFocusTrap}
-            createOptions={{
-              escapeDeactivates: false,
-              allowOutsideClick: true,
-              fallbackFocus: document.getElementById(setId(id, "icon-button")),
-            }}
-          >
-            <div>
-              {!positionUp && (
-                <div
-                  className={clsx(classes.inputExtensionOpen, {
-                    [classes.inputExtensionLeftPosition]: placement === "left",
-                  })}
-                />
-              )}
-              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-              <div className={classes.menuList} onKeyDown={handleKeyDown}>
-                <List
-                  id={setId(id, "list")}
-                  values={dataList}
-                  selectable={false}
-                  condensed
-                  onClick={(event, item) => {
-                    if (!keepOpened) setOpen(false);
-                    onClick?.(event, item);
-                  }}
-                />
-              </div>
-              {positionUp && (
-                <div
-                  className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
-                    [classes.inputExtensionFloatRight]: placement === "right",
-                    [classes.inputExtensionFloatLeft]: placement === "left",
-                  })}
-                />
-              )}
+          <div>
+            {!positionUp && (
+              <div
+                className={clsx(classes.inputExtensionOpen, {
+                  [classes.inputExtensionLeftPosition]: placement === "left",
+                })}
+              />
+            )}
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+            <div className={classes.menuList} onKeyDown={handleKeyDown} ref={listContainerRef}>
+              <List
+                id={setId(id, "list")}
+                values={dataList}
+                selectable={false}
+                condensed
+                onClick={(event, item) => {
+                  if (!keepOpened) setOpen(false);
+                  onClick?.(event, item);
+                }}
+              />
             </div>
-          </FocusTrap>
+            {positionUp && (
+              <div
+                className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
+                  [classes.inputExtensionFloatRight]: placement === "right",
+                  [classes.inputExtensionFloatLeft]: placement === "left",
+                })}
+              />
+            )}
+          </div>
         </OutsideClickHandler>
       </Popper>
     </div>

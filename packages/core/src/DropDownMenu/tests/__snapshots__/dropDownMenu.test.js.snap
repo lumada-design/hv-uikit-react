@@ -1403,32 +1403,73 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   useCapture={true}
                 >
                   <div>
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={true}
-                      createOptions={
-                        Object {
-                          "allowOutsideClick": true,
-                          "escapeDeactivates": false,
-                          "fallbackFocus": null,
-                        }
-                      }
-                      focusTrapOptions={Object {}}
-                      paused={false}
-                    >
-                      <div>
-                        <div
-                          className="HvDropDownMenu-inputExtensionOpen"
-                        />
-                        <div
-                          className="HvDropDownMenu-menuList"
-                          onKeyDown={[Function]}
+                    <div>
+                      <div
+                        className="HvDropDownMenu-inputExtensionOpen"
+                      />
+                      <div
+                        className="HvDropDownMenu-menuList"
+                        onKeyDown={[Function]}
+                      >
+                        <WithStyles(List)
+                          condensed={true}
+                          id="drop-down-menu-10-list"
+                          onClick={[Function]}
+                          selectable={false}
+                          values={
+                            Array [
+                              Object {
+                                "label": "Label 1",
+                              },
+                              Object {
+                                "label": "Label 2",
+                              },
+                              Object {
+                                "label": "Label 3",
+                              },
+                            ]
+                          }
                         >
-                          <WithStyles(List)
+                          <List
+                            classes={
+                              Object {
+                                "box": "HvList-box",
+                                "condensed": "HvList-condensed",
+                                "disabled": "HvList-disabled",
+                                "focus": "HvList-focus",
+                                "icon": "HvList-icon",
+                                "label": "HvList-label",
+                                "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+                                "link": "HvList-link",
+                                "list": "HvList-list",
+                                "listItem": "HvList-listItem",
+                                "noIconLeftPadding": "HvList-noIconLeftPadding",
+                                "root": "HvList-root",
+                                "selectAll": "HvList-selectAll",
+                                "selected": "HvList-selected",
+                                "selector": "HvList-selector",
+                                "selectorContainer": "HvList-selectorContainer",
+                                "textDisabled": "HvList-textDisabled",
+                                "truncate": "HvList-truncate",
+                              }
+                            }
                             condensed={true}
+                            hasTooltips={false}
                             id="drop-down-menu-10-list"
+                            labels={
+                              Object {
+                                "selectAll": "All",
+                                "selectionConjunction": "of",
+                              }
+                            }
+                            multiSelect={false}
+                            onChange={[Function]}
                             onClick={[Function]}
+                            selectDefault={false}
                             selectable={false}
+                            showSelectAll={false}
+                            singleSelectionToggle={true}
+                            useSelector={false}
                             values={
                               Array [
                                 Object {
@@ -1443,72 +1484,91 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               ]
                             }
                           >
-                            <List
-                              classes={
-                                Object {
-                                  "box": "HvList-box",
-                                  "condensed": "HvList-condensed",
-                                  "disabled": "HvList-disabled",
-                                  "focus": "HvList-focus",
-                                  "icon": "HvList-icon",
-                                  "label": "HvList-label",
-                                  "labelIconLeftPadding": "HvList-labelIconLeftPadding",
-                                  "link": "HvList-link",
-                                  "list": "HvList-list",
-                                  "listItem": "HvList-listItem",
-                                  "noIconLeftPadding": "HvList-noIconLeftPadding",
-                                  "root": "HvList-root",
-                                  "selectAll": "HvList-selectAll",
-                                  "selected": "HvList-selected",
-                                  "selector": "HvList-selector",
-                                  "selectorContainer": "HvList-selectorContainer",
-                                  "textDisabled": "HvList-textDisabled",
-                                  "truncate": "HvList-truncate",
-                                }
-                              }
-                              condensed={true}
-                              hasTooltips={false}
-                              id="drop-down-menu-10-list"
-                              labels={
-                                Object {
-                                  "selectAll": "All",
-                                  "selectionConjunction": "of",
-                                }
-                              }
-                              multiSelect={false}
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              selectDefault={false}
-                              selectable={false}
-                              showSelectAll={false}
-                              singleSelectionToggle={true}
-                              useSelector={false}
-                              values={
-                                Array [
-                                  Object {
-                                    "label": "Label 1",
-                                  },
-                                  Object {
-                                    "label": "Label 2",
-                                  },
-                                  Object {
-                                    "label": "Label 3",
-                                  },
-                                ]
-                              }
+                            <div
+                              className="HvList-root"
                             >
-                              <div
-                                className="HvList-root"
+                              <ul
+                                className="HvList-list"
+                                id="drop-down-menu-10-list"
+                                role="menu"
                               >
-                                <ul
-                                  className="HvList-list"
-                                  id="drop-down-menu-10-list"
-                                  role="menu"
+                                <WithStyles(Focus)
+                                  classes={
+                                    Object {
+                                      "focus": "HvList-focus",
+                                    }
+                                  }
+                                  configuration={
+                                    Object {
+                                      "tabIndex": 0,
+                                    }
+                                  }
+                                  isDropdown={true}
+                                  key="0"
+                                  rootRef={
+                                    Object {
+                                      "current": <div
+                                        class="HvList-root"
+                                      >
+                                        <ul
+                                          class="HvList-list"
+                                          id="drop-down-menu-10-list"
+                                          role="menu"
+                                        >
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-0"
+                                            role="menuitem"
+                                            tabindex="0"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 1
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-1"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 2
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-2"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 3
+                                            </p>
+                                          </li>
+                                        </ul>
+                                      </div>,
+                                    }
+                                  }
+                                  selected={false}
+                                  strategy="menu"
                                 >
-                                  <WithStyles(Focus)
+                                  <Focus
                                     classes={
                                       Object {
-                                        "focus": "HvList-focus",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focus": "HvFocus-focus HvList-focus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -1517,7 +1577,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       }
                                     }
                                     isDropdown={true}
-                                    key="0"
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -1571,146 +1630,147 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     selected={false}
                                     strategy="menu"
                                   >
-                                    <Focus
-                                      classes={
-                                        Object {
-                                          "disabled": "HvFocus-disabled",
-                                          "externalReference": "HvFocus-externalReference",
-                                          "falseFocus": "HvFocus-falseFocus",
-                                          "focus": "HvFocus-focus HvList-focus",
-                                          "focusDisabled": "HvFocus-focusDisabled",
-                                          "focused": "HvFocus-focused",
-                                          "root": "HvFocus-root",
-                                          "selected": "HvFocus-selected",
-                                        }
-                                      }
-                                      configuration={
-                                        Object {
-                                          "tabIndex": 0,
-                                        }
-                                      }
-                                      isDropdown={true}
-                                      rootRef={
-                                        Object {
-                                          "current": <div
-                                            class="HvList-root"
-                                          >
-                                            <ul
-                                              class="HvList-list"
-                                              id="drop-down-menu-10-list"
-                                              role="menu"
-                                            >
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-0"
-                                                role="menuitem"
-                                                tabindex="0"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-1"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-2"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </li>
-                                            </ul>
-                                          </div>,
-                                        }
-                                      }
-                                      selected={false}
-                                      strategy="menu"
+                                    <ConditionalWrapper
+                                      condition={false}
+                                      wrapper={[Function]}
                                     >
-                                      <ConditionalWrapper
-                                        condition={false}
-                                        wrapper={[Function]}
+                                      <li
+                                        className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                        id="drop-down-menu-10-list-item-0"
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        role="menuitem"
+                                        selected={false}
                                       >
-                                        <li
-                                          className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                          id="drop-down-menu-10-list-item-0"
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          onKeyUp={[Function]}
-                                          onMouseDown={[Function]}
-                                          role="menuitem"
-                                          selected={false}
-                                        >
-                                          <ComponentFunction>
-                                            <WithStyles(ForwardRef)
+                                        <ComponentFunction>
+                                          <WithStyles(ForwardRef)
+                                            className="HvList-label HvList-truncate"
+                                            variant="normalText"
+                                          >
+                                            <ForwardRef
                                               className="HvList-label HvList-truncate"
+                                              classes={
+                                                Object {
+                                                  "3xlTitle": "HvTypography-3xlTitle",
+                                                  "4xlTitle": "HvTypography-4xlTitle",
+                                                  "5xlTitle": "HvTypography-5xlTitle",
+                                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                                  "highlightText": "HvTypography-highlightText",
+                                                  "infoText": "HvTypography-infoText",
+                                                  "inlineLink": "HvTypography-inlineLink",
+                                                  "lTitle": "HvTypography-lTitle",
+                                                  "labelText": "HvTypography-labelText",
+                                                  "mTitle": "HvTypography-mTitle",
+                                                  "normalText": "HvTypography-normalText",
+                                                  "placeholderText": "HvTypography-placeholderText",
+                                                  "root": "HvTypography-root",
+                                                  "sLink": "HvTypography-sLink",
+                                                  "sText": "HvTypography-sText",
+                                                  "sTitle": "HvTypography-sTitle",
+                                                  "selectedNavText": "HvTypography-selectedNavText",
+                                                  "selectedText": "HvTypography-selectedText",
+                                                  "vizText": "HvTypography-vizText",
+                                                  "xlTitle": "HvTypography-xlTitle",
+                                                  "xsTitle": "HvTypography-xsTitle",
+                                                  "xxlTitle": "HvTypography-xxlTitle",
+                                                  "xxsTitle": "HvTypography-xxsTitle",
+                                                }
+                                              }
                                               variant="normalText"
                                             >
-                                              <ForwardRef
-                                                className="HvList-label HvList-truncate"
-                                                classes={
-                                                  Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle",
-                                                    "4xlTitle": "HvTypography-4xlTitle",
-                                                    "5xlTitle": "HvTypography-5xlTitle",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText",
-                                                    "highlightText": "HvTypography-highlightText",
-                                                    "infoText": "HvTypography-infoText",
-                                                    "inlineLink": "HvTypography-inlineLink",
-                                                    "lTitle": "HvTypography-lTitle",
-                                                    "labelText": "HvTypography-labelText",
-                                                    "mTitle": "HvTypography-mTitle",
-                                                    "normalText": "HvTypography-normalText",
-                                                    "placeholderText": "HvTypography-placeholderText",
-                                                    "root": "HvTypography-root",
-                                                    "sLink": "HvTypography-sLink",
-                                                    "sText": "HvTypography-sText",
-                                                    "sTitle": "HvTypography-sTitle",
-                                                    "selectedNavText": "HvTypography-selectedNavText",
-                                                    "selectedText": "HvTypography-selectedText",
-                                                    "vizText": "HvTypography-vizText",
-                                                    "xlTitle": "HvTypography-xlTitle",
-                                                    "xsTitle": "HvTypography-xsTitle",
-                                                    "xxlTitle": "HvTypography-xxlTitle",
-                                                    "xxsTitle": "HvTypography-xxsTitle",
-                                                  }
-                                                }
-                                                variant="normalText"
+                                              <p
+                                                className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
                                               >
-                                                <p
-                                                  className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </ForwardRef>
-                                            </WithStyles(ForwardRef)>
-                                          </ComponentFunction>
-                                        </li>
-                                      </ConditionalWrapper>
-                                    </Focus>
-                                  </WithStyles(Focus)>
-                                  <WithStyles(Focus)
+                                                Label 1
+                                              </p>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
+                                        </ComponentFunction>
+                                      </li>
+                                    </ConditionalWrapper>
+                                  </Focus>
+                                </WithStyles(Focus)>
+                                <WithStyles(Focus)
+                                  classes={
+                                    Object {
+                                      "focus": "HvList-focus",
+                                    }
+                                  }
+                                  configuration={
+                                    Object {
+                                      "tabIndex": -1,
+                                    }
+                                  }
+                                  isDropdown={true}
+                                  key="1"
+                                  rootRef={
+                                    Object {
+                                      "current": <div
+                                        class="HvList-root"
+                                      >
+                                        <ul
+                                          class="HvList-list"
+                                          id="drop-down-menu-10-list"
+                                          role="menu"
+                                        >
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-0"
+                                            role="menuitem"
+                                            tabindex="0"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 1
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-1"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 2
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-2"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 3
+                                            </p>
+                                          </li>
+                                        </ul>
+                                      </div>,
+                                    }
+                                  }
+                                  selected={false}
+                                  strategy="menu"
+                                >
+                                  <Focus
                                     classes={
                                       Object {
-                                        "focus": "HvList-focus",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focus": "HvFocus-focus HvList-focus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -1719,7 +1779,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       }
                                     }
                                     isDropdown={true}
-                                    key="1"
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -1773,146 +1832,147 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     selected={false}
                                     strategy="menu"
                                   >
-                                    <Focus
-                                      classes={
-                                        Object {
-                                          "disabled": "HvFocus-disabled",
-                                          "externalReference": "HvFocus-externalReference",
-                                          "falseFocus": "HvFocus-falseFocus",
-                                          "focus": "HvFocus-focus HvList-focus",
-                                          "focusDisabled": "HvFocus-focusDisabled",
-                                          "focused": "HvFocus-focused",
-                                          "root": "HvFocus-root",
-                                          "selected": "HvFocus-selected",
-                                        }
-                                      }
-                                      configuration={
-                                        Object {
-                                          "tabIndex": -1,
-                                        }
-                                      }
-                                      isDropdown={true}
-                                      rootRef={
-                                        Object {
-                                          "current": <div
-                                            class="HvList-root"
-                                          >
-                                            <ul
-                                              class="HvList-list"
-                                              id="drop-down-menu-10-list"
-                                              role="menu"
-                                            >
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-0"
-                                                role="menuitem"
-                                                tabindex="0"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-1"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-2"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </li>
-                                            </ul>
-                                          </div>,
-                                        }
-                                      }
-                                      selected={false}
-                                      strategy="menu"
+                                    <ConditionalWrapper
+                                      condition={false}
+                                      wrapper={[Function]}
                                     >
-                                      <ConditionalWrapper
-                                        condition={false}
-                                        wrapper={[Function]}
+                                      <li
+                                        className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                        id="drop-down-menu-10-list-item-1"
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        role="menuitem"
+                                        selected={false}
                                       >
-                                        <li
-                                          className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                          id="drop-down-menu-10-list-item-1"
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          onKeyUp={[Function]}
-                                          onMouseDown={[Function]}
-                                          role="menuitem"
-                                          selected={false}
-                                        >
-                                          <ComponentFunction>
-                                            <WithStyles(ForwardRef)
+                                        <ComponentFunction>
+                                          <WithStyles(ForwardRef)
+                                            className="HvList-label HvList-truncate"
+                                            variant="normalText"
+                                          >
+                                            <ForwardRef
                                               className="HvList-label HvList-truncate"
+                                              classes={
+                                                Object {
+                                                  "3xlTitle": "HvTypography-3xlTitle",
+                                                  "4xlTitle": "HvTypography-4xlTitle",
+                                                  "5xlTitle": "HvTypography-5xlTitle",
+                                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                                  "highlightText": "HvTypography-highlightText",
+                                                  "infoText": "HvTypography-infoText",
+                                                  "inlineLink": "HvTypography-inlineLink",
+                                                  "lTitle": "HvTypography-lTitle",
+                                                  "labelText": "HvTypography-labelText",
+                                                  "mTitle": "HvTypography-mTitle",
+                                                  "normalText": "HvTypography-normalText",
+                                                  "placeholderText": "HvTypography-placeholderText",
+                                                  "root": "HvTypography-root",
+                                                  "sLink": "HvTypography-sLink",
+                                                  "sText": "HvTypography-sText",
+                                                  "sTitle": "HvTypography-sTitle",
+                                                  "selectedNavText": "HvTypography-selectedNavText",
+                                                  "selectedText": "HvTypography-selectedText",
+                                                  "vizText": "HvTypography-vizText",
+                                                  "xlTitle": "HvTypography-xlTitle",
+                                                  "xsTitle": "HvTypography-xsTitle",
+                                                  "xxlTitle": "HvTypography-xxlTitle",
+                                                  "xxsTitle": "HvTypography-xxsTitle",
+                                                }
+                                              }
                                               variant="normalText"
                                             >
-                                              <ForwardRef
-                                                className="HvList-label HvList-truncate"
-                                                classes={
-                                                  Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle",
-                                                    "4xlTitle": "HvTypography-4xlTitle",
-                                                    "5xlTitle": "HvTypography-5xlTitle",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText",
-                                                    "highlightText": "HvTypography-highlightText",
-                                                    "infoText": "HvTypography-infoText",
-                                                    "inlineLink": "HvTypography-inlineLink",
-                                                    "lTitle": "HvTypography-lTitle",
-                                                    "labelText": "HvTypography-labelText",
-                                                    "mTitle": "HvTypography-mTitle",
-                                                    "normalText": "HvTypography-normalText",
-                                                    "placeholderText": "HvTypography-placeholderText",
-                                                    "root": "HvTypography-root",
-                                                    "sLink": "HvTypography-sLink",
-                                                    "sText": "HvTypography-sText",
-                                                    "sTitle": "HvTypography-sTitle",
-                                                    "selectedNavText": "HvTypography-selectedNavText",
-                                                    "selectedText": "HvTypography-selectedText",
-                                                    "vizText": "HvTypography-vizText",
-                                                    "xlTitle": "HvTypography-xlTitle",
-                                                    "xsTitle": "HvTypography-xsTitle",
-                                                    "xxlTitle": "HvTypography-xxlTitle",
-                                                    "xxsTitle": "HvTypography-xxsTitle",
-                                                  }
-                                                }
-                                                variant="normalText"
+                                              <p
+                                                className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
                                               >
-                                                <p
-                                                  className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </ForwardRef>
-                                            </WithStyles(ForwardRef)>
-                                          </ComponentFunction>
-                                        </li>
-                                      </ConditionalWrapper>
-                                    </Focus>
-                                  </WithStyles(Focus)>
-                                  <WithStyles(Focus)
+                                                Label 2
+                                              </p>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
+                                        </ComponentFunction>
+                                      </li>
+                                    </ConditionalWrapper>
+                                  </Focus>
+                                </WithStyles(Focus)>
+                                <WithStyles(Focus)
+                                  classes={
+                                    Object {
+                                      "focus": "HvList-focus",
+                                    }
+                                  }
+                                  configuration={
+                                    Object {
+                                      "tabIndex": -1,
+                                    }
+                                  }
+                                  isDropdown={true}
+                                  key="2"
+                                  rootRef={
+                                    Object {
+                                      "current": <div
+                                        class="HvList-root"
+                                      >
+                                        <ul
+                                          class="HvList-list"
+                                          id="drop-down-menu-10-list"
+                                          role="menu"
+                                        >
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-0"
+                                            role="menuitem"
+                                            tabindex="0"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 1
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-1"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 2
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-10-list-item-2"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 3
+                                            </p>
+                                          </li>
+                                        </ul>
+                                      </div>,
+                                    }
+                                  }
+                                  selected={false}
+                                  strategy="menu"
+                                >
+                                  <Focus
                                     classes={
                                       Object {
-                                        "focus": "HvList-focus",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focus": "HvFocus-focus HvList-focus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -1921,7 +1981,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       }
                                     }
                                     isDropdown={true}
-                                    key="2"
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -1975,149 +2034,76 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     selected={false}
                                     strategy="menu"
                                   >
-                                    <Focus
-                                      classes={
-                                        Object {
-                                          "disabled": "HvFocus-disabled",
-                                          "externalReference": "HvFocus-externalReference",
-                                          "falseFocus": "HvFocus-falseFocus",
-                                          "focus": "HvFocus-focus HvList-focus",
-                                          "focusDisabled": "HvFocus-focusDisabled",
-                                          "focused": "HvFocus-focused",
-                                          "root": "HvFocus-root",
-                                          "selected": "HvFocus-selected",
-                                        }
-                                      }
-                                      configuration={
-                                        Object {
-                                          "tabIndex": -1,
-                                        }
-                                      }
-                                      isDropdown={true}
-                                      rootRef={
-                                        Object {
-                                          "current": <div
-                                            class="HvList-root"
-                                          >
-                                            <ul
-                                              class="HvList-list"
-                                              id="drop-down-menu-10-list"
-                                              role="menu"
-                                            >
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-0"
-                                                role="menuitem"
-                                                tabindex="0"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-1"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-10-list-item-2"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </li>
-                                            </ul>
-                                          </div>,
-                                        }
-                                      }
-                                      selected={false}
-                                      strategy="menu"
+                                    <ConditionalWrapper
+                                      condition={false}
+                                      wrapper={[Function]}
                                     >
-                                      <ConditionalWrapper
-                                        condition={false}
-                                        wrapper={[Function]}
+                                      <li
+                                        className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                        id="drop-down-menu-10-list-item-2"
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        role="menuitem"
+                                        selected={false}
                                       >
-                                        <li
-                                          className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                          id="drop-down-menu-10-list-item-2"
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          onKeyUp={[Function]}
-                                          onMouseDown={[Function]}
-                                          role="menuitem"
-                                          selected={false}
-                                        >
-                                          <ComponentFunction>
-                                            <WithStyles(ForwardRef)
+                                        <ComponentFunction>
+                                          <WithStyles(ForwardRef)
+                                            className="HvList-label HvList-truncate"
+                                            variant="normalText"
+                                          >
+                                            <ForwardRef
                                               className="HvList-label HvList-truncate"
+                                              classes={
+                                                Object {
+                                                  "3xlTitle": "HvTypography-3xlTitle",
+                                                  "4xlTitle": "HvTypography-4xlTitle",
+                                                  "5xlTitle": "HvTypography-5xlTitle",
+                                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                                  "highlightText": "HvTypography-highlightText",
+                                                  "infoText": "HvTypography-infoText",
+                                                  "inlineLink": "HvTypography-inlineLink",
+                                                  "lTitle": "HvTypography-lTitle",
+                                                  "labelText": "HvTypography-labelText",
+                                                  "mTitle": "HvTypography-mTitle",
+                                                  "normalText": "HvTypography-normalText",
+                                                  "placeholderText": "HvTypography-placeholderText",
+                                                  "root": "HvTypography-root",
+                                                  "sLink": "HvTypography-sLink",
+                                                  "sText": "HvTypography-sText",
+                                                  "sTitle": "HvTypography-sTitle",
+                                                  "selectedNavText": "HvTypography-selectedNavText",
+                                                  "selectedText": "HvTypography-selectedText",
+                                                  "vizText": "HvTypography-vizText",
+                                                  "xlTitle": "HvTypography-xlTitle",
+                                                  "xsTitle": "HvTypography-xsTitle",
+                                                  "xxlTitle": "HvTypography-xxlTitle",
+                                                  "xxsTitle": "HvTypography-xxsTitle",
+                                                }
+                                              }
                                               variant="normalText"
                                             >
-                                              <ForwardRef
-                                                className="HvList-label HvList-truncate"
-                                                classes={
-                                                  Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle",
-                                                    "4xlTitle": "HvTypography-4xlTitle",
-                                                    "5xlTitle": "HvTypography-5xlTitle",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText",
-                                                    "highlightText": "HvTypography-highlightText",
-                                                    "infoText": "HvTypography-infoText",
-                                                    "inlineLink": "HvTypography-inlineLink",
-                                                    "lTitle": "HvTypography-lTitle",
-                                                    "labelText": "HvTypography-labelText",
-                                                    "mTitle": "HvTypography-mTitle",
-                                                    "normalText": "HvTypography-normalText",
-                                                    "placeholderText": "HvTypography-placeholderText",
-                                                    "root": "HvTypography-root",
-                                                    "sLink": "HvTypography-sLink",
-                                                    "sText": "HvTypography-sText",
-                                                    "sTitle": "HvTypography-sTitle",
-                                                    "selectedNavText": "HvTypography-selectedNavText",
-                                                    "selectedText": "HvTypography-selectedText",
-                                                    "vizText": "HvTypography-vizText",
-                                                    "xlTitle": "HvTypography-xlTitle",
-                                                    "xsTitle": "HvTypography-xsTitle",
-                                                    "xxlTitle": "HvTypography-xxlTitle",
-                                                    "xxsTitle": "HvTypography-xxsTitle",
-                                                  }
-                                                }
-                                                variant="normalText"
+                                              <p
+                                                className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
                                               >
-                                                <p
-                                                  className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </ForwardRef>
-                                            </WithStyles(ForwardRef)>
-                                          </ComponentFunction>
-                                        </li>
-                                      </ConditionalWrapper>
-                                    </Focus>
-                                  </WithStyles(Focus)>
-                                </ul>
-                              </div>
-                            </List>
-                          </WithStyles(List)>
-                        </div>
+                                                Label 3
+                                              </p>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
+                                        </ComponentFunction>
+                                      </li>
+                                    </ConditionalWrapper>
+                                  </Focus>
+                                </WithStyles(Focus)>
+                              </ul>
+                            </div>
+                          </List>
+                        </WithStyles(List)>
                       </div>
-                    </FocusTrap>
+                    </div>
                   </div>
                 </OutsideClickHandler>
               </div>
@@ -3344,32 +3330,73 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                   useCapture={true}
                 >
                   <div>
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={true}
-                      createOptions={
-                        Object {
-                          "allowOutsideClick": true,
-                          "escapeDeactivates": false,
-                          "fallbackFocus": null,
-                        }
-                      }
-                      focusTrapOptions={Object {}}
-                      paused={false}
-                    >
-                      <div>
-                        <div
-                          className="HvDropDownMenu-inputExtensionOpen"
-                        />
-                        <div
-                          className="HvDropDownMenu-menuList"
-                          onKeyDown={[Function]}
+                    <div>
+                      <div
+                        className="HvDropDownMenu-inputExtensionOpen"
+                      />
+                      <div
+                        className="HvDropDownMenu-menuList"
+                        onKeyDown={[Function]}
+                      >
+                        <WithStyles(List)
+                          condensed={true}
+                          id="drop-down-menu-2-list"
+                          onClick={[Function]}
+                          selectable={false}
+                          values={
+                            Array [
+                              Object {
+                                "label": "Label 1",
+                              },
+                              Object {
+                                "label": "Label 2",
+                              },
+                              Object {
+                                "label": "Label 3",
+                              },
+                            ]
+                          }
                         >
-                          <WithStyles(List)
+                          <List
+                            classes={
+                              Object {
+                                "box": "HvList-box",
+                                "condensed": "HvList-condensed",
+                                "disabled": "HvList-disabled",
+                                "focus": "HvList-focus",
+                                "icon": "HvList-icon",
+                                "label": "HvList-label",
+                                "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+                                "link": "HvList-link",
+                                "list": "HvList-list",
+                                "listItem": "HvList-listItem",
+                                "noIconLeftPadding": "HvList-noIconLeftPadding",
+                                "root": "HvList-root",
+                                "selectAll": "HvList-selectAll",
+                                "selected": "HvList-selected",
+                                "selector": "HvList-selector",
+                                "selectorContainer": "HvList-selectorContainer",
+                                "textDisabled": "HvList-textDisabled",
+                                "truncate": "HvList-truncate",
+                              }
+                            }
                             condensed={true}
+                            hasTooltips={false}
                             id="drop-down-menu-2-list"
+                            labels={
+                              Object {
+                                "selectAll": "All",
+                                "selectionConjunction": "of",
+                              }
+                            }
+                            multiSelect={false}
+                            onChange={[Function]}
                             onClick={[Function]}
+                            selectDefault={false}
                             selectable={false}
+                            showSelectAll={false}
+                            singleSelectionToggle={true}
+                            useSelector={false}
                             values={
                               Array [
                                 Object {
@@ -3384,72 +3411,91 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               ]
                             }
                           >
-                            <List
-                              classes={
-                                Object {
-                                  "box": "HvList-box",
-                                  "condensed": "HvList-condensed",
-                                  "disabled": "HvList-disabled",
-                                  "focus": "HvList-focus",
-                                  "icon": "HvList-icon",
-                                  "label": "HvList-label",
-                                  "labelIconLeftPadding": "HvList-labelIconLeftPadding",
-                                  "link": "HvList-link",
-                                  "list": "HvList-list",
-                                  "listItem": "HvList-listItem",
-                                  "noIconLeftPadding": "HvList-noIconLeftPadding",
-                                  "root": "HvList-root",
-                                  "selectAll": "HvList-selectAll",
-                                  "selected": "HvList-selected",
-                                  "selector": "HvList-selector",
-                                  "selectorContainer": "HvList-selectorContainer",
-                                  "textDisabled": "HvList-textDisabled",
-                                  "truncate": "HvList-truncate",
-                                }
-                              }
-                              condensed={true}
-                              hasTooltips={false}
-                              id="drop-down-menu-2-list"
-                              labels={
-                                Object {
-                                  "selectAll": "All",
-                                  "selectionConjunction": "of",
-                                }
-                              }
-                              multiSelect={false}
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              selectDefault={false}
-                              selectable={false}
-                              showSelectAll={false}
-                              singleSelectionToggle={true}
-                              useSelector={false}
-                              values={
-                                Array [
-                                  Object {
-                                    "label": "Label 1",
-                                  },
-                                  Object {
-                                    "label": "Label 2",
-                                  },
-                                  Object {
-                                    "label": "Label 3",
-                                  },
-                                ]
-                              }
+                            <div
+                              className="HvList-root"
                             >
-                              <div
-                                className="HvList-root"
+                              <ul
+                                className="HvList-list"
+                                id="drop-down-menu-2-list"
+                                role="menu"
                               >
-                                <ul
-                                  className="HvList-list"
-                                  id="drop-down-menu-2-list"
-                                  role="menu"
+                                <WithStyles(Focus)
+                                  classes={
+                                    Object {
+                                      "focus": "HvList-focus",
+                                    }
+                                  }
+                                  configuration={
+                                    Object {
+                                      "tabIndex": 0,
+                                    }
+                                  }
+                                  isDropdown={true}
+                                  key="0"
+                                  rootRef={
+                                    Object {
+                                      "current": <div
+                                        class="HvList-root"
+                                      >
+                                        <ul
+                                          class="HvList-list"
+                                          id="drop-down-menu-2-list"
+                                          role="menu"
+                                        >
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-0"
+                                            role="menuitem"
+                                            tabindex="0"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 1
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-1"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 2
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-2"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 3
+                                            </p>
+                                          </li>
+                                        </ul>
+                                      </div>,
+                                    }
+                                  }
+                                  selected={false}
+                                  strategy="menu"
                                 >
-                                  <WithStyles(Focus)
+                                  <Focus
                                     classes={
                                       Object {
-                                        "focus": "HvList-focus",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focus": "HvFocus-focus HvList-focus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -3458,7 +3504,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       }
                                     }
                                     isDropdown={true}
-                                    key="0"
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -3512,146 +3557,147 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     selected={false}
                                     strategy="menu"
                                   >
-                                    <Focus
-                                      classes={
-                                        Object {
-                                          "disabled": "HvFocus-disabled",
-                                          "externalReference": "HvFocus-externalReference",
-                                          "falseFocus": "HvFocus-falseFocus",
-                                          "focus": "HvFocus-focus HvList-focus",
-                                          "focusDisabled": "HvFocus-focusDisabled",
-                                          "focused": "HvFocus-focused",
-                                          "root": "HvFocus-root",
-                                          "selected": "HvFocus-selected",
-                                        }
-                                      }
-                                      configuration={
-                                        Object {
-                                          "tabIndex": 0,
-                                        }
-                                      }
-                                      isDropdown={true}
-                                      rootRef={
-                                        Object {
-                                          "current": <div
-                                            class="HvList-root"
-                                          >
-                                            <ul
-                                              class="HvList-list"
-                                              id="drop-down-menu-2-list"
-                                              role="menu"
-                                            >
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-0"
-                                                role="menuitem"
-                                                tabindex="0"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-1"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-2"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </li>
-                                            </ul>
-                                          </div>,
-                                        }
-                                      }
-                                      selected={false}
-                                      strategy="menu"
+                                    <ConditionalWrapper
+                                      condition={false}
+                                      wrapper={[Function]}
                                     >
-                                      <ConditionalWrapper
-                                        condition={false}
-                                        wrapper={[Function]}
+                                      <li
+                                        className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                        id="drop-down-menu-2-list-item-0"
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        role="menuitem"
+                                        selected={false}
                                       >
-                                        <li
-                                          className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                          id="drop-down-menu-2-list-item-0"
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          onKeyUp={[Function]}
-                                          onMouseDown={[Function]}
-                                          role="menuitem"
-                                          selected={false}
-                                        >
-                                          <ComponentFunction>
-                                            <WithStyles(ForwardRef)
+                                        <ComponentFunction>
+                                          <WithStyles(ForwardRef)
+                                            className="HvList-label HvList-truncate"
+                                            variant="normalText"
+                                          >
+                                            <ForwardRef
                                               className="HvList-label HvList-truncate"
+                                              classes={
+                                                Object {
+                                                  "3xlTitle": "HvTypography-3xlTitle",
+                                                  "4xlTitle": "HvTypography-4xlTitle",
+                                                  "5xlTitle": "HvTypography-5xlTitle",
+                                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                                  "highlightText": "HvTypography-highlightText",
+                                                  "infoText": "HvTypography-infoText",
+                                                  "inlineLink": "HvTypography-inlineLink",
+                                                  "lTitle": "HvTypography-lTitle",
+                                                  "labelText": "HvTypography-labelText",
+                                                  "mTitle": "HvTypography-mTitle",
+                                                  "normalText": "HvTypography-normalText",
+                                                  "placeholderText": "HvTypography-placeholderText",
+                                                  "root": "HvTypography-root",
+                                                  "sLink": "HvTypography-sLink",
+                                                  "sText": "HvTypography-sText",
+                                                  "sTitle": "HvTypography-sTitle",
+                                                  "selectedNavText": "HvTypography-selectedNavText",
+                                                  "selectedText": "HvTypography-selectedText",
+                                                  "vizText": "HvTypography-vizText",
+                                                  "xlTitle": "HvTypography-xlTitle",
+                                                  "xsTitle": "HvTypography-xsTitle",
+                                                  "xxlTitle": "HvTypography-xxlTitle",
+                                                  "xxsTitle": "HvTypography-xxsTitle",
+                                                }
+                                              }
                                               variant="normalText"
                                             >
-                                              <ForwardRef
-                                                className="HvList-label HvList-truncate"
-                                                classes={
-                                                  Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle",
-                                                    "4xlTitle": "HvTypography-4xlTitle",
-                                                    "5xlTitle": "HvTypography-5xlTitle",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText",
-                                                    "highlightText": "HvTypography-highlightText",
-                                                    "infoText": "HvTypography-infoText",
-                                                    "inlineLink": "HvTypography-inlineLink",
-                                                    "lTitle": "HvTypography-lTitle",
-                                                    "labelText": "HvTypography-labelText",
-                                                    "mTitle": "HvTypography-mTitle",
-                                                    "normalText": "HvTypography-normalText",
-                                                    "placeholderText": "HvTypography-placeholderText",
-                                                    "root": "HvTypography-root",
-                                                    "sLink": "HvTypography-sLink",
-                                                    "sText": "HvTypography-sText",
-                                                    "sTitle": "HvTypography-sTitle",
-                                                    "selectedNavText": "HvTypography-selectedNavText",
-                                                    "selectedText": "HvTypography-selectedText",
-                                                    "vizText": "HvTypography-vizText",
-                                                    "xlTitle": "HvTypography-xlTitle",
-                                                    "xsTitle": "HvTypography-xsTitle",
-                                                    "xxlTitle": "HvTypography-xxlTitle",
-                                                    "xxsTitle": "HvTypography-xxsTitle",
-                                                  }
-                                                }
-                                                variant="normalText"
+                                              <p
+                                                className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
                                               >
-                                                <p
-                                                  className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </ForwardRef>
-                                            </WithStyles(ForwardRef)>
-                                          </ComponentFunction>
-                                        </li>
-                                      </ConditionalWrapper>
-                                    </Focus>
-                                  </WithStyles(Focus)>
-                                  <WithStyles(Focus)
+                                                Label 1
+                                              </p>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
+                                        </ComponentFunction>
+                                      </li>
+                                    </ConditionalWrapper>
+                                  </Focus>
+                                </WithStyles(Focus)>
+                                <WithStyles(Focus)
+                                  classes={
+                                    Object {
+                                      "focus": "HvList-focus",
+                                    }
+                                  }
+                                  configuration={
+                                    Object {
+                                      "tabIndex": -1,
+                                    }
+                                  }
+                                  isDropdown={true}
+                                  key="1"
+                                  rootRef={
+                                    Object {
+                                      "current": <div
+                                        class="HvList-root"
+                                      >
+                                        <ul
+                                          class="HvList-list"
+                                          id="drop-down-menu-2-list"
+                                          role="menu"
+                                        >
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-0"
+                                            role="menuitem"
+                                            tabindex="0"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 1
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-1"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 2
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-2"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 3
+                                            </p>
+                                          </li>
+                                        </ul>
+                                      </div>,
+                                    }
+                                  }
+                                  selected={false}
+                                  strategy="menu"
+                                >
+                                  <Focus
                                     classes={
                                       Object {
-                                        "focus": "HvList-focus",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focus": "HvFocus-focus HvList-focus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -3660,7 +3706,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       }
                                     }
                                     isDropdown={true}
-                                    key="1"
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -3714,146 +3759,147 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     selected={false}
                                     strategy="menu"
                                   >
-                                    <Focus
-                                      classes={
-                                        Object {
-                                          "disabled": "HvFocus-disabled",
-                                          "externalReference": "HvFocus-externalReference",
-                                          "falseFocus": "HvFocus-falseFocus",
-                                          "focus": "HvFocus-focus HvList-focus",
-                                          "focusDisabled": "HvFocus-focusDisabled",
-                                          "focused": "HvFocus-focused",
-                                          "root": "HvFocus-root",
-                                          "selected": "HvFocus-selected",
-                                        }
-                                      }
-                                      configuration={
-                                        Object {
-                                          "tabIndex": -1,
-                                        }
-                                      }
-                                      isDropdown={true}
-                                      rootRef={
-                                        Object {
-                                          "current": <div
-                                            class="HvList-root"
-                                          >
-                                            <ul
-                                              class="HvList-list"
-                                              id="drop-down-menu-2-list"
-                                              role="menu"
-                                            >
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-0"
-                                                role="menuitem"
-                                                tabindex="0"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-1"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-2"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </li>
-                                            </ul>
-                                          </div>,
-                                        }
-                                      }
-                                      selected={false}
-                                      strategy="menu"
+                                    <ConditionalWrapper
+                                      condition={false}
+                                      wrapper={[Function]}
                                     >
-                                      <ConditionalWrapper
-                                        condition={false}
-                                        wrapper={[Function]}
+                                      <li
+                                        className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                        id="drop-down-menu-2-list-item-1"
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        role="menuitem"
+                                        selected={false}
                                       >
-                                        <li
-                                          className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                          id="drop-down-menu-2-list-item-1"
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          onKeyUp={[Function]}
-                                          onMouseDown={[Function]}
-                                          role="menuitem"
-                                          selected={false}
-                                        >
-                                          <ComponentFunction>
-                                            <WithStyles(ForwardRef)
+                                        <ComponentFunction>
+                                          <WithStyles(ForwardRef)
+                                            className="HvList-label HvList-truncate"
+                                            variant="normalText"
+                                          >
+                                            <ForwardRef
                                               className="HvList-label HvList-truncate"
+                                              classes={
+                                                Object {
+                                                  "3xlTitle": "HvTypography-3xlTitle",
+                                                  "4xlTitle": "HvTypography-4xlTitle",
+                                                  "5xlTitle": "HvTypography-5xlTitle",
+                                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                                  "highlightText": "HvTypography-highlightText",
+                                                  "infoText": "HvTypography-infoText",
+                                                  "inlineLink": "HvTypography-inlineLink",
+                                                  "lTitle": "HvTypography-lTitle",
+                                                  "labelText": "HvTypography-labelText",
+                                                  "mTitle": "HvTypography-mTitle",
+                                                  "normalText": "HvTypography-normalText",
+                                                  "placeholderText": "HvTypography-placeholderText",
+                                                  "root": "HvTypography-root",
+                                                  "sLink": "HvTypography-sLink",
+                                                  "sText": "HvTypography-sText",
+                                                  "sTitle": "HvTypography-sTitle",
+                                                  "selectedNavText": "HvTypography-selectedNavText",
+                                                  "selectedText": "HvTypography-selectedText",
+                                                  "vizText": "HvTypography-vizText",
+                                                  "xlTitle": "HvTypography-xlTitle",
+                                                  "xsTitle": "HvTypography-xsTitle",
+                                                  "xxlTitle": "HvTypography-xxlTitle",
+                                                  "xxsTitle": "HvTypography-xxsTitle",
+                                                }
+                                              }
                                               variant="normalText"
                                             >
-                                              <ForwardRef
-                                                className="HvList-label HvList-truncate"
-                                                classes={
-                                                  Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle",
-                                                    "4xlTitle": "HvTypography-4xlTitle",
-                                                    "5xlTitle": "HvTypography-5xlTitle",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText",
-                                                    "highlightText": "HvTypography-highlightText",
-                                                    "infoText": "HvTypography-infoText",
-                                                    "inlineLink": "HvTypography-inlineLink",
-                                                    "lTitle": "HvTypography-lTitle",
-                                                    "labelText": "HvTypography-labelText",
-                                                    "mTitle": "HvTypography-mTitle",
-                                                    "normalText": "HvTypography-normalText",
-                                                    "placeholderText": "HvTypography-placeholderText",
-                                                    "root": "HvTypography-root",
-                                                    "sLink": "HvTypography-sLink",
-                                                    "sText": "HvTypography-sText",
-                                                    "sTitle": "HvTypography-sTitle",
-                                                    "selectedNavText": "HvTypography-selectedNavText",
-                                                    "selectedText": "HvTypography-selectedText",
-                                                    "vizText": "HvTypography-vizText",
-                                                    "xlTitle": "HvTypography-xlTitle",
-                                                    "xsTitle": "HvTypography-xsTitle",
-                                                    "xxlTitle": "HvTypography-xxlTitle",
-                                                    "xxsTitle": "HvTypography-xxsTitle",
-                                                  }
-                                                }
-                                                variant="normalText"
+                                              <p
+                                                className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
                                               >
-                                                <p
-                                                  className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </ForwardRef>
-                                            </WithStyles(ForwardRef)>
-                                          </ComponentFunction>
-                                        </li>
-                                      </ConditionalWrapper>
-                                    </Focus>
-                                  </WithStyles(Focus)>
-                                  <WithStyles(Focus)
+                                                Label 2
+                                              </p>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
+                                        </ComponentFunction>
+                                      </li>
+                                    </ConditionalWrapper>
+                                  </Focus>
+                                </WithStyles(Focus)>
+                                <WithStyles(Focus)
+                                  classes={
+                                    Object {
+                                      "focus": "HvList-focus",
+                                    }
+                                  }
+                                  configuration={
+                                    Object {
+                                      "tabIndex": -1,
+                                    }
+                                  }
+                                  isDropdown={true}
+                                  key="2"
+                                  rootRef={
+                                    Object {
+                                      "current": <div
+                                        class="HvList-root"
+                                      >
+                                        <ul
+                                          class="HvList-list"
+                                          id="drop-down-menu-2-list"
+                                          role="menu"
+                                        >
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-0"
+                                            role="menuitem"
+                                            tabindex="0"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 1
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-1"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 2
+                                            </p>
+                                          </li>
+                                          <li
+                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                            id="drop-down-menu-2-list-item-2"
+                                            role="menuitem"
+                                            tabindex="-1"
+                                          >
+                                            <p
+                                              class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
+                                            >
+                                              Label 3
+                                            </p>
+                                          </li>
+                                        </ul>
+                                      </div>,
+                                    }
+                                  }
+                                  selected={false}
+                                  strategy="menu"
+                                >
+                                  <Focus
                                     classes={
                                       Object {
-                                        "focus": "HvList-focus",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focus": "HvFocus-focus HvList-focus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -3862,7 +3908,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       }
                                     }
                                     isDropdown={true}
-                                    key="2"
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -3916,149 +3961,76 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     selected={false}
                                     strategy="menu"
                                   >
-                                    <Focus
-                                      classes={
-                                        Object {
-                                          "disabled": "HvFocus-disabled",
-                                          "externalReference": "HvFocus-externalReference",
-                                          "falseFocus": "HvFocus-falseFocus",
-                                          "focus": "HvFocus-focus HvList-focus",
-                                          "focusDisabled": "HvFocus-focusDisabled",
-                                          "focused": "HvFocus-focused",
-                                          "root": "HvFocus-root",
-                                          "selected": "HvFocus-selected",
-                                        }
-                                      }
-                                      configuration={
-                                        Object {
-                                          "tabIndex": -1,
-                                        }
-                                      }
-                                      isDropdown={true}
-                                      rootRef={
-                                        Object {
-                                          "current": <div
-                                            class="HvList-root"
-                                          >
-                                            <ul
-                                              class="HvList-list"
-                                              id="drop-down-menu-2-list"
-                                              role="menu"
-                                            >
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-0"
-                                                role="menuitem"
-                                                tabindex="0"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 1
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-1"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 2
-                                                </p>
-                                              </li>
-                                              <li
-                                                class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                                id="drop-down-menu-2-list-item-2"
-                                                role="menuitem"
-                                                tabindex="-1"
-                                              >
-                                                <p
-                                                  class="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </li>
-                                            </ul>
-                                          </div>,
-                                        }
-                                      }
-                                      selected={false}
-                                      strategy="menu"
+                                    <ConditionalWrapper
+                                      condition={false}
+                                      wrapper={[Function]}
                                     >
-                                      <ConditionalWrapper
-                                        condition={false}
-                                        wrapper={[Function]}
+                                      <li
+                                        className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
+                                        id="drop-down-menu-2-list-item-2"
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        role="menuitem"
+                                        selected={false}
                                       >
-                                        <li
-                                          className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
-                                          id="drop-down-menu-2-list-item-2"
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          onKeyUp={[Function]}
-                                          onMouseDown={[Function]}
-                                          role="menuitem"
-                                          selected={false}
-                                        >
-                                          <ComponentFunction>
-                                            <WithStyles(ForwardRef)
+                                        <ComponentFunction>
+                                          <WithStyles(ForwardRef)
+                                            className="HvList-label HvList-truncate"
+                                            variant="normalText"
+                                          >
+                                            <ForwardRef
                                               className="HvList-label HvList-truncate"
+                                              classes={
+                                                Object {
+                                                  "3xlTitle": "HvTypography-3xlTitle",
+                                                  "4xlTitle": "HvTypography-4xlTitle",
+                                                  "5xlTitle": "HvTypography-5xlTitle",
+                                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                                  "highlightText": "HvTypography-highlightText",
+                                                  "infoText": "HvTypography-infoText",
+                                                  "inlineLink": "HvTypography-inlineLink",
+                                                  "lTitle": "HvTypography-lTitle",
+                                                  "labelText": "HvTypography-labelText",
+                                                  "mTitle": "HvTypography-mTitle",
+                                                  "normalText": "HvTypography-normalText",
+                                                  "placeholderText": "HvTypography-placeholderText",
+                                                  "root": "HvTypography-root",
+                                                  "sLink": "HvTypography-sLink",
+                                                  "sText": "HvTypography-sText",
+                                                  "sTitle": "HvTypography-sTitle",
+                                                  "selectedNavText": "HvTypography-selectedNavText",
+                                                  "selectedText": "HvTypography-selectedText",
+                                                  "vizText": "HvTypography-vizText",
+                                                  "xlTitle": "HvTypography-xlTitle",
+                                                  "xsTitle": "HvTypography-xsTitle",
+                                                  "xxlTitle": "HvTypography-xxlTitle",
+                                                  "xxsTitle": "HvTypography-xxsTitle",
+                                                }
+                                              }
                                               variant="normalText"
                                             >
-                                              <ForwardRef
-                                                className="HvList-label HvList-truncate"
-                                                classes={
-                                                  Object {
-                                                    "3xlTitle": "HvTypography-3xlTitle",
-                                                    "4xlTitle": "HvTypography-4xlTitle",
-                                                    "5xlTitle": "HvTypography-5xlTitle",
-                                                    "disabledButtonText": "HvTypography-disabledButtonText",
-                                                    "highlightText": "HvTypography-highlightText",
-                                                    "infoText": "HvTypography-infoText",
-                                                    "inlineLink": "HvTypography-inlineLink",
-                                                    "lTitle": "HvTypography-lTitle",
-                                                    "labelText": "HvTypography-labelText",
-                                                    "mTitle": "HvTypography-mTitle",
-                                                    "normalText": "HvTypography-normalText",
-                                                    "placeholderText": "HvTypography-placeholderText",
-                                                    "root": "HvTypography-root",
-                                                    "sLink": "HvTypography-sLink",
-                                                    "sText": "HvTypography-sText",
-                                                    "sTitle": "HvTypography-sTitle",
-                                                    "selectedNavText": "HvTypography-selectedNavText",
-                                                    "selectedText": "HvTypography-selectedText",
-                                                    "vizText": "HvTypography-vizText",
-                                                    "xlTitle": "HvTypography-xlTitle",
-                                                    "xsTitle": "HvTypography-xsTitle",
-                                                    "xxlTitle": "HvTypography-xxlTitle",
-                                                    "xxsTitle": "HvTypography-xxsTitle",
-                                                  }
-                                                }
-                                                variant="normalText"
+                                              <p
+                                                className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
                                               >
-                                                <p
-                                                  className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
-                                                >
-                                                  Label 3
-                                                </p>
-                                              </ForwardRef>
-                                            </WithStyles(ForwardRef)>
-                                          </ComponentFunction>
-                                        </li>
-                                      </ConditionalWrapper>
-                                    </Focus>
-                                  </WithStyles(Focus)>
-                                </ul>
-                              </div>
-                            </List>
-                          </WithStyles(List)>
-                        </div>
+                                                Label 3
+                                              </p>
+                                            </ForwardRef>
+                                          </WithStyles(ForwardRef)>
+                                        </ComponentFunction>
+                                      </li>
+                                    </ConditionalWrapper>
+                                  </Focus>
+                                </WithStyles(Focus)>
+                              </ul>
+                            </div>
+                          </List>
+                        </WithStyles(List)>
                       </div>
-                    </FocusTrap>
+                    </div>
                   </div>
                 </OutsideClickHandler>
               </div>
