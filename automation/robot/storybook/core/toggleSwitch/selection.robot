@@ -33,15 +33,14 @@ switch to different state when any label is clicked
     Checkbox Should Be Selected        ${switch} input
 
 does not switch when disabled element is clicked
-    [Setup]    NONE
-    Go To                               ${components}selectors-switch--disabled
+    [Setup]    Go To                    ${components}selectors-switch--disabled
     Wait Until Page Contains Element    ${switch}
     Checkbox Should Be Selected         ${switch} input
     Run Keyword And Ignore Error        Click Element      ${switch}
     Checkbox Should Be Selected         ${switch} input
 
 does not switch when is clicked any label of disabled element
-    Go To                               ${components}selectors-switch--disabled
+    [Setup]    Go To                    ${components}selectors-switch--disabled
     Wait Until Page Contains Element    ${switch}
     Checkbox Should Be Selected         ${switch} input
     Run Keyword And Ignore Error        Click Element      ${rightLabel}
@@ -58,8 +57,7 @@ switch to Off when checkbox is focused and is pressed SPACE
     Checkbox Should Be Selected        ${switch} input
 
 switch state when is controlled by other component
-    [Setup]    NONE
-    Go To                               ${components}selectors-switch--controlled
+    [Setup]    Go To                    ${components}selectors-switch--controlled
     Wait Until Page Contains Element    ${switch}
     Checkbox Should not Be Selected     ${switch} input
     Click Button                        Toggle
