@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] BulkActions controlled with actions should render correctly 1`] = `
+exports[`BulkActions controlled with actions should render correctly 1`] = `
 <WithStyles(HvBulkActions)
   actions={
     Array [
@@ -1495,7 +1495,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
 </WithStyles(HvBulkActions)>
 `;
 
-exports[`[v3] BulkActions should render correctly 1`] = `
+exports[`BulkActions should render correctly 1`] = `
 <WithStyles(HvBulkActions)
   actions={
     Array [
@@ -3185,7 +3185,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
 </WithStyles(HvBulkActions)>
 `;
 
-exports[`[v3] BulkActions with custom label should render correctly 1`] = `
+exports[`BulkActions with custom label should render correctly 1`] = `
 <WithStyles(HvBulkActions)
   numSelected={2}
   numTotal={5}
@@ -3813,7 +3813,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
 </WithStyles(HvBulkActions)>
 `;
 
-exports[`[v3] BulkActions with selection should render correctly 1`] = `
+exports[`BulkActions with selection should render correctly 1`] = `
 <WithStyles(HvBulkActions)
   labels={
     Object {

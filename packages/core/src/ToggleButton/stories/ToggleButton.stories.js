@@ -158,12 +158,6 @@ export const Main = () => (
   </>
 );
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Controlled = () => {
   const [select, setSelect] = useState(false);
 
@@ -196,7 +190,6 @@ Controlled.story = {
     docs: {
       storyDescription: "A sample showcasing a toggle button with state.",
     },
-    v3: true,
   },
 };
 
@@ -218,7 +211,6 @@ Disabled.story = {
     docs: {
       storyDescription: "A sample showcasing a disabled toggle button.",
     },
-    v3: true,
   },
 };
 
@@ -247,7 +239,6 @@ UsingChildren.story = {
     docs: {
       storyDescription: "A sample using children to provide the toggle button content.",
     },
-    v3: true,
   },
 };
 
@@ -276,6 +267,5 @@ Animated.story = {
     docs: {
       storyDescription: "A sample showcasing a toggle button with a custom animated icon.",
     },
-    v3: true,
   },
 };

@@ -30,7 +30,6 @@ export const ModalOpened = () => Main();
 
 ModalOpened.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
@@ -45,7 +44,6 @@ export const TableOpened = () => CustomContent();
 
 TableOpened.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Table"));
@@ -60,7 +58,6 @@ export const inputsOpened = () => CustomContent();
 
 inputsOpened.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Inputs"));
@@ -75,7 +72,6 @@ export const sNoRename = () => NoRename();
 
 sNoRename.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
@@ -90,7 +86,6 @@ export const sDeleteConfirmation = () => DeleteConfirmation();
 
 sDeleteConfirmation.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
@@ -105,7 +100,6 @@ export const sRemoveSchedule = () => RemoveSchedule();
 
 sRemoveSchedule.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
@@ -120,7 +114,6 @@ export const sAccessibility = () => Accessibility();
 
 sAccessibility.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Open modal"));
@@ -135,7 +128,6 @@ export const sCustomIcon = () => CustomIcon();
 
 sCustomIcon.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Custom icon"));
@@ -150,7 +142,6 @@ export const sTextAndSemanticNoIcon = () => TextAndSemantic();
 
 sTextAndSemanticNoIcon.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("No icon"));
@@ -165,7 +156,6 @@ export const sTextAndSemanticWarning = () => TextAndSemantic();
 
 sTextAndSemanticWarning.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Warning"));
@@ -180,7 +170,6 @@ export const sTextAndSemanticInfo = () => TextAndSemantic();
 
 sTextAndSemanticInfo.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Info"));
@@ -195,7 +184,6 @@ export const sTextAndSemanticError = () => TextAndSemantic();
 
 sTextAndSemanticError.story = {
   parameters: {
-    v3: true,
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Error"));

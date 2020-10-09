@@ -14,8 +14,11 @@ import { setId } from "../utils";
 const defaultSelectInputComponent = (props) => {
   return (
     <HvCheckBox
-      inputProps={{ "aria-label": setId(props.id, "select") }}
       id={props.id}
+      inputProps={{
+        id: setId(props.id, "input"),
+        "aria-label": setId(props.id, "select"),
+      }}
       checked={props.checked}
       onChange={() => {}}
       onClick={(e) => {

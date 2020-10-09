@@ -130,9 +130,3 @@ export const SmokeTests = () => (
     </HvGrid>
   </>
 );
-
-SmokeTests.story = {
-  parameters: {
-    v3: true,
-  },
-};

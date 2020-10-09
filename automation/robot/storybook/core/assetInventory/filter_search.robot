@@ -4,7 +4,6 @@ Test Setup        Run Keywords
 ...               Go To     ${layout}asset-inventory--configurations
 ...               AND       Wait Until Element Is Enabled    hv-assetinventory
 Test Template     validate search
-Force Tags        v3
 
 
 *** Test Cases ***        filter    assertion          numItems

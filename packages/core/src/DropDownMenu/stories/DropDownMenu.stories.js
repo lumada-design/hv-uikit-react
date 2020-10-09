@@ -24,7 +24,6 @@ export const Main = () => (
 
 Main.story = {
   parameters: {
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -46,7 +45,6 @@ export const Positioning = () => {
 
 Positioning.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "DropDownMenu with configurable positioning in the dropdown",
     },
@@ -76,7 +74,6 @@ export const WithIconsAndActions = () => {
 
 WithIconsAndActions.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription:
         "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected",
@@ -103,12 +100,6 @@ export const Disabled = () => (
   />
 );
 
-Disabled.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const DisabledItems = () => (
   <HvDropDownMenu
     id="dpmDisabledItems"
@@ -119,7 +110,6 @@ export const DisabledItems = () => (
 
 DisabledItems.story = {
   parameters: {
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -159,7 +149,6 @@ export const Controlled = () => {
 
 Controlled.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "DropDownMenu toggle opening controlled by an external button",
     },

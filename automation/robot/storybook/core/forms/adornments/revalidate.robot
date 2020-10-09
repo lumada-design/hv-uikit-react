@@ -11,7 +11,6 @@ Documentation
 ...             - used locator of label that redirects to input
 ...             - Set Selenium Speed    0.1 seconds
 Suite Teardown    Set Selenium Speed    0 seconds
-Force Tags        v3
 
 
 *** Test Cases ***

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] Asset Inventory  should render correctly 1`] = `
+exports[`Asset Inventory  should render correctly 1`] = `
 <WithStyles(WithLabels)
   configuration={Array []}
   values={

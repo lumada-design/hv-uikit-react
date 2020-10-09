@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] ToggleButton should render correctly 1`] = `
+exports[`ToggleButton should render correctly 1`] = `
 Array [
   <WithStyles(WithLabels)
     aria-label="Favorite"

@@ -6,7 +6,7 @@ import { HvCheckBox, HvProvider } from "../..";
 
 import { Main } from "../stories/CheckBox.stories";
 
-describe("[v3] CheckBox", () => {
+describe("CheckBox", () => {
   let wrapper;
 
   beforeEach(async () => {

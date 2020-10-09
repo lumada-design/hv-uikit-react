@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { Main } from "../stories/Footer.stories";
 import { HvProvider, HvFooter } from "../..";
 
-describe("[v3] Footer", () => {
+describe("Footer", () => {
   let wrapper;
 
   it("should be defined", () => {

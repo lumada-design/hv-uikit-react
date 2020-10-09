@@ -28,9 +28,3 @@ export const Required = () => (
     <HvRadio label="Radio 3" value="3" />
   </HvRadioGroup>
 );
-
-Required.story = {
-  parameters: {
-    v3: true,
-  },
-};

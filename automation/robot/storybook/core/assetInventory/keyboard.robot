@@ -3,7 +3,7 @@ Resource         _keywords.resource
 Test Setup       Run Keywords
 ...              Go To    ${layout}asset-inventory--configurations
 ...              AND    Wait Until Element Is Visible    ${card1}
-Force Tags       v3 keyboard
+Force Tags       keyboard
 Documentation    https://www.w3.org/TR/wai-aria-practices/examples/grid/dataGrids.html
 
 

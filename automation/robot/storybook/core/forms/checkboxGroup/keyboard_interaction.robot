@@ -1,6 +1,6 @@
 *** Setting ***
 Resource        _checkboxgroup.resource
-Force Tags      keyboard    v3
+Force Tags      keyboard
 
 
 *** Test Cases ***

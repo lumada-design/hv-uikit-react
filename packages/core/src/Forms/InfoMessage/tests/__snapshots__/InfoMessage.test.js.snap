@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 InfoMessage should render correctly 1`] = `
+exports[`InfoMessage should render correctly 1`] = `
 <WithStyles(HvInfoMessage)
   id="base"
 >

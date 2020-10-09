@@ -3,7 +3,7 @@ Resource         ../_datePicker.resource
 Test Setup       Open DatePicker sample    with-actions
 Documentation    Use Cases:
 ...              - Can be focused and opened
-Force Tags       v3     keyboard
+Force Tags       keyboard
 
 
 *** Test Cases ***

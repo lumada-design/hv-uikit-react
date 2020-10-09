@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
+exports[`<Dropdown />  with defaults should render correctly 1`] = `
 <WithStyles(WithLabels)
   expanded={true}
   onChange={[MockFunction]}
@@ -2193,7 +2193,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
 </WithStyles(WithLabels)>
 `;
 
-exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`] = `
+exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
 <WithStyles(WithLabels)
   disabled={true}
   expanded={true}

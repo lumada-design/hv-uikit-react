@@ -49,12 +49,6 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const Disabled = () => (
   <>
     <HvCheckBox disabled label="Checkbox 1" />
@@ -77,7 +71,6 @@ Disabled.story = {
         "color-contrast",
       ],
     },
-    v3: true,
   },
 };
 
@@ -94,7 +87,6 @@ ReadOnly.story = {
     docs: {
       storyDescription: "Not editable checkboxes.",
     },
-    v3: true,
   },
 };
 
@@ -112,7 +104,6 @@ WithoutLabel.story = {
       storyDescription:
         "Checkboxes without labels. The accessible name is provided via the `aria-label` property.",
     },
-    v3: true,
   },
 };
 
@@ -127,7 +118,6 @@ Required.story = {
     docs: {
       storyDescription: "Required checkbox. Uncheck to show default error message.",
     },
-    v3: true,
   },
 };
 
@@ -152,7 +142,6 @@ Controlled.story = {
       storyDescription:
         "Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.",
     },
-    v3: true,
   },
 };
 
@@ -169,6 +158,5 @@ ErrorMessage.story = {
         "aria-valid-attr-value",
       ],
     },
-    v3: true,
   },
 };

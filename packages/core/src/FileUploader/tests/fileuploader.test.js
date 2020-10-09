@@ -33,7 +33,7 @@ const setupComponent = (props = {}) =>
     </HvProvider>
   );
 
-describe("[v3] FileUploader withStyles", () => {
+describe("FileUploader withStyles", () => {
   let wrapper;
 
   const compProps = {
@@ -82,7 +82,7 @@ describe("[v3] FileUploader withStyles", () => {
   });
 });
 
-describe("[v3] FileUploader validations", () => {
+describe("FileUploader validations", () => {
   let uploadWrapper;
 
   it("correctly display incorrect file type warning", () => {

@@ -6,7 +6,7 @@ import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uiki
 import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, withTooltip } from "../../..";
 
 export default {
-  title: "Components/List",
+  title: "Components/List/List Container",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvListContainer } from '@hv/uikit-react-core/dist'",
@@ -39,7 +39,7 @@ export const SingleSelection = () => {
 
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer selectable condensed>
+      <HvListContainer selectable condensed aria-label="Stores">
         <HvListItem
           onClick={(event) => handleListItemClick(event, 0)}
           selected={selectedItem === 0}
@@ -107,7 +107,7 @@ export const MultiSelection = () => {
   };
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer selectable multiSelect condensed>
+      <HvListContainer selectable multiSelect condensed aria-label="Stores">
         <HvListItem onClick={(event) => handleListItemClick(event, 0)} selected={selectedItems[0]}>
           98001, Store Manager
         </HvListItem>

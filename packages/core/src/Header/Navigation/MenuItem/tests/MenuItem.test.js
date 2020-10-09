@@ -5,7 +5,7 @@ import HvProvider from "../../../../Provider";
 import SelectionContext from "../../utils/SelectionContext";
 import MenuItem from "../index";
 
-describe("[v3] MenuItem withStyles", () => {
+describe("MenuItem withStyles", () => {
   let wrapper;
 
   it("should be able to render", () => {

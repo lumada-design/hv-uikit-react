@@ -1,7 +1,6 @@
 *** Setting ***
 Resource      ../_datePicker.resource
 Test Setup    Open DatePicker sample    range-with-values
-Force Tags    v3
 
 
 *** Test Cases ***

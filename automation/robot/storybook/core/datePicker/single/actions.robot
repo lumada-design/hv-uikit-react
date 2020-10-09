@@ -7,7 +7,6 @@ Documentation    Use Cases:
 ...               - Cancel closes the date picker and cancels the operation
 ...               - Apply closes the date picker and applies the date
 ...              Allows selection of a single date
-Force Tags       v3
 
 
 *** Test Cases ***

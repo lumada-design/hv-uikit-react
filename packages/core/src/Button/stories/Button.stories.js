@@ -15,7 +15,6 @@ export default {
   title: "Components/Button",
   parameters: {
     componentSubtitle: null,
-    v3: true,
     usage: "import { HvButton } from '@hv/uikit-react-core/dist'",
   },
   component: HvButton,
@@ -69,7 +68,6 @@ DisabledButtons.story = {
     docs: {
       storyDescription: "Disabled buttons that don't allow any interaction.",
     },
-    v3: true,
   },
   decorators: [
     (Story) => (
@@ -159,6 +157,5 @@ Icons.story = {
     docs: {
       storyDescription: "Various Button configurations with icons and icons + text.",
     },
-    v3: true,
   },
 };

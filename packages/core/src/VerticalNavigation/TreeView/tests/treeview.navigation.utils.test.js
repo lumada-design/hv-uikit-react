@@ -2,7 +2,7 @@
 
 import { NodeTreeNavigationUtils } from "../utils";
 
-describe("[v3] NodeTreeNavigationUtils", () => {
+describe("NodeTreeNavigationUtils", () => {
   const nodeMap = {
     [-1]: {
       children: ["A", "B", "C"],
@@ -60,7 +60,7 @@ describe("[v3] NodeTreeNavigationUtils", () => {
     },
   };
 
-  describe("[v3] getNextNode", () => {
+  describe("getNextNode", () => {
     it("no children, should return next sibling", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNextNode(() => false, nodeMap, "B");
 
@@ -96,7 +96,7 @@ describe("[v3] NodeTreeNavigationUtils", () => {
     });
   });
 
-  describe("[v3] getPreviousNode", () => {
+  describe("getPreviousNode", () => {
     it("if first child, should return its parent", () => {
       const foundNodeId = NodeTreeNavigationUtils.getPreviousNode(
         (nodeId) => nodeId === "A",
@@ -150,7 +150,7 @@ describe("[v3] NodeTreeNavigationUtils", () => {
     });
   });
 
-  describe("[v3] getLastNode", () => {
+  describe("getLastNode", () => {
     it("if last top node is collapsed or childless, return last node", () => {
       const foundNodeId = NodeTreeNavigationUtils.getLastNode(() => false, nodeMap);
 
@@ -196,7 +196,7 @@ describe("[v3] NodeTreeNavigationUtils", () => {
     });
   });
 
-  describe("[v3] getNodeByFirstCharacter", () => {
+  describe("getNodeByFirstCharacter", () => {
     it("if not found, should return null", () => {
       const foundNodeId = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap,

@@ -3,7 +3,7 @@ Resource      _resources.resource
 Test Setup    Run Keywords
 ...           Go To    ${forms}dropdown--multi-selection    AND
 ...           Wait Until Element Is Enabled    ${dropdown}
-Force Tags    keyboard    v3
+Force Tags    keyboard
 
 
 *** Test Cases ***

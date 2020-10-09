@@ -2,7 +2,6 @@
 Resource         _checkboxgroup.resource
 Test Setup       open checkbox group sample    main
 Documentation    verify states transitions
-Force Tags       v3
 
 
 *** Test Cases ***

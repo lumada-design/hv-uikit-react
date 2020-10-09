@@ -6,7 +6,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCharCounter } from '@hv/uikit-react-core/dist'",
-    v3: true,
   },
   component: HvCharCounter,
 };
@@ -24,7 +23,6 @@ DisabledCharCounter.story = {
     docs: {
       storyDescription: "Char counter showcasing the disabled state.",
     },
-    v3: true,
     pa11y: {
       ignore: [
         "region",
@@ -46,6 +44,5 @@ OverloadedCharCounter.story = {
     docs: {
       storyDescription: "Char counter showcasing the overloaded state.",
     },
-    v3: true,
   },
 };

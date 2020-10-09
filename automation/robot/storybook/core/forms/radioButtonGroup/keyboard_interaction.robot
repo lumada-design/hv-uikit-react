@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _radioButtonGroup.resource
-Force Tags    keyboard    v3
+Force Tags    keyboard
 
 
 *** Test Cases ***

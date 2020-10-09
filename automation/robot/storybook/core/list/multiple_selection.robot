@@ -5,7 +5,6 @@ Test Setup       Run Keywords
 ...              Go To                                                        ${components}list--multi-selection-with-select-all
 ...              AND                                                          Wait Until Element Is Visible                       ${list}
 Documentation    options selections just for lists with multiple selection
-Force Tags    v3
 
 
 *** Test Cases ***

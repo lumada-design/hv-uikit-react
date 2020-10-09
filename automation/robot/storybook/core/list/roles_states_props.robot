@@ -1,7 +1,7 @@
 *** Setting ***
 Variables        variables.yaml
 Resource         ../_keywords.resource
-Force Tags       v3 wai-aria-practices
+Force Tags       wai-aria-practices
 Documentation    https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_props
 ...
 ...    doc parts not applied by UIKIT team: \n

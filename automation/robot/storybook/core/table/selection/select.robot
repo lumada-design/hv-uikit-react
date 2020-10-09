@@ -3,7 +3,6 @@ Resource      ../table.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--with-checkbox
 ...           AND    Wait Until Element Is Visible    ${table}
-Force Tags    v3
 
 *** Test Cases ***
 checkboxes are selected when checkbox all is selected

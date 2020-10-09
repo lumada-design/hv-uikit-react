@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] FileUploader withStyles should render correctly 1`] = `
+exports[`FileUploader withStyles should render correctly 1`] = `
 <WithStyles(WithLabels)
   acceptedFiles={
     Array [

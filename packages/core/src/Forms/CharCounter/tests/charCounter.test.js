@@ -7,7 +7,7 @@ import { HvProvider, HvCharCounter } from "../../..";
 
 /* eslint-disable no-console */
 
-describe("v3 charCounter", () => {
+describe("charCounter", () => {
   let wrapper;
 
   beforeEach(async () => {

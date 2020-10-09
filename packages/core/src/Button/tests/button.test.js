@@ -6,7 +6,7 @@ import { Download } from "@hv/uikit-react-icons";
 import { HvButton, HvProvider } from "../..";
 import materialButtonConfiguration from "../materialButtonConfiguration";
 
-describe("[v3] Button", () => {
+describe("Button", () => {
   let wrapper;
 
   const getMaterialButtonProps = (ParentElement) => ParentElement.children().children().props();

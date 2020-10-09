@@ -15,7 +15,6 @@ import {
 export default {
   title: "Forms/Form Element",
   parameters: {
-    v3: true,
     componentSubtitle: null,
     usage: "import { HvFormElement } from '@hv/uikit-react-core/dist'",
   },
@@ -176,7 +175,6 @@ export const TextAreaFormElement = () => {
 
 TextAreaFormElement.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Form element propagating the invalid state to the input.",
     },
@@ -197,7 +195,6 @@ export const FormElementInvalid = () => {
 
 FormElementInvalid.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Form element propagating the invalid state to the input.",
     },
@@ -221,7 +218,6 @@ export const FormElementValid = () => {
 
 FormElementValid.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Form element propagating the valid state to the input.",
     },
@@ -243,7 +239,6 @@ export const FormElementDisabled = () => {
 FormElementDisabled.story = {
   parameters: {
     docs: {
-      v3: true,
       storyDescription: "Form element propagating the disabled state to the input.",
     },
     pa11y: {

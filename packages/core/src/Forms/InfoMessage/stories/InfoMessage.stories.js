@@ -6,7 +6,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvInfoMessage } from '@hv/uikit-react-core/dist'",
-    v3: true,
   },
   component: HvInfoMessage,
 };
@@ -26,7 +25,6 @@ DisabledInfoMessage.story = {
     docs: {
       storyDescription: "Info message showcasing the disabled state.",
     },
-    v3: true,
     pa11y: {
       ignore: [
         "region",

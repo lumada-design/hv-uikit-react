@@ -7,7 +7,7 @@ import HvProvider from "../../../Provider";
 
 /* eslint-disable no-console */
 
-describe("v3 Label", () => {
+describe("Label", () => {
   let wrapper;
 
   beforeEach(async () => {

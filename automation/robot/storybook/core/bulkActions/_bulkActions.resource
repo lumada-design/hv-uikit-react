@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Variables ***
 ${actionAdd}            id:add
 ${actionDelete}         id:delete
-${actionMore}           bulkActions-actions-menu
+${actionMore}           bulkActions-actions-menu-icon-button
 ${actionsDroppedList}   bulkActions-actions-menu-list
 ${actionsDropped}       css:ul[id*=bulkActions-actions-menu-list]>li
 ${actionsButtons}       css:div[class*=actionContainer] button

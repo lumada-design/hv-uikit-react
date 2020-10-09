@@ -18,24 +18,25 @@ export default {
   ],
 };
 
-export const Main = () => <HvDatePicker id="DatePicker" />;
+export const Main = () => <HvDatePicker id="DatePicker" aria-label="Date" />;
 
 Main.story = {
   parameters: {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
 };
 
-export const DefaultValue = () => <HvDatePicker id="DatePicker" value={new Date(2020, 9, 10)} />;
+export const DefaultValue = () => (
+  <HvDatePicker id="DatePicker" aria-label="Date" value={new Date(2020, 9, 10)} />
+);
 
 DefaultValue.story = {
   parameters: {
@@ -45,11 +46,10 @@ DefaultValue.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
@@ -74,7 +74,7 @@ export const Localized = () => {
           }}
         />
       </div>
-      <HvDatePicker locale={locale} id="DatePicker" />
+      <HvDatePicker locale={locale} id="DatePicker" aria-label="Date" />
     </>
   );
 };
@@ -87,18 +87,17 @@ Localized.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
 };
 
 export const WithActions = () => (
-  <HvDatePicker showActions value={new Date(1970, 1, 2)} id="DatePicker" />
+  <HvDatePicker showActions value={new Date(1970, 1, 2)} id="DatePicker" aria-label="Date" />
 );
 
 WithActions.story = {
@@ -109,11 +108,10 @@ WithActions.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
@@ -121,6 +119,7 @@ WithActions.story = {
 
 export const WithCustomLabels = () => (
   <HvDatePicker
+    aria-label="Date"
     showActions
     labels={{
       title: "This is the title for the date picker",
@@ -137,15 +136,10 @@ WithCustomLabels.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        // TODO: BUG Custom label isn't a real label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "button-name",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
@@ -153,6 +147,7 @@ WithCustomLabels.story = {
 
 export const RangeMode = () => (
   <HvDatePicker
+    aria-label="Date"
     rangeMode
     labels={{
       applyLabel: "Apply",
@@ -170,11 +165,10 @@ RangeMode.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
@@ -192,6 +186,7 @@ export const RangeWithValues = () => {
   return (
     <HvDatePicker
       id="DatePicker"
+      aria-label="Date"
       labels={labels}
       rangeMode
       startValue={new Date(2019, 6, 5)}
@@ -208,17 +203,16 @@ RangeWithValues.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
 };
 
-export const NearInvalid = () => <HvDatePicker value={new Date(1000, 0, 1)} />;
+export const NearInvalid = () => <HvDatePicker aria-label="Date" value={new Date(1000, 0, 1)} />;
 
 NearInvalid.story = {
   parameters: {
@@ -228,11 +222,10 @@ NearInvalid.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
@@ -249,7 +242,7 @@ export const WithValueChange = () => {
         Add a day
       </HvButton>
       <p />
-      <HvDatePicker id="DatePicker" value={date} onChange={(d) => setDate(d)} />
+      <HvDatePicker id="DatePicker" aria-label="Date" value={date} onChange={(d) => setDate(d)} />
     </>
   );
 };
@@ -259,11 +252,10 @@ WithValueChange.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },
@@ -317,6 +309,7 @@ export const WithSelectionList = () => {
   return (
     <HvDatePicker
       id="DatePicker"
+      aria-label="Date"
       startAdornment={options}
       rangeMode
       startValue={startDate}
@@ -332,11 +325,10 @@ Disabled.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Input has no label
-        // https://github.com/lumada-design/hv-uikit-react/issues/1692
-        "label",
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
       ],
     },
   },

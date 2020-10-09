@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { Main } from "../stories/Suggestions.stories";
 import { HvProvider, HvSuggestions } from "../../..";
 
-describe("v3 Suggestions", () => {
+describe("Suggestions", () => {
   let wrapper;
 
   it("should be defined", () => {

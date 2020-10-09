@@ -6,4 +6,4 @@ exports[`TextArea Component should render correctly if opened 1`] = `
 />
 `;
 
-exports[`v3 TextArea should render correctly 1`] = `null`;
+exports[`TextArea should render correctly 1`] = `null`;

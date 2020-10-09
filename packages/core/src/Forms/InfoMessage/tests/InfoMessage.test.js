@@ -7,7 +7,7 @@ import { HvProvider, HvInfoMessage } from "../../..";
 
 /* eslint-disable no-console */
 
-describe("v3 InfoMessage", () => {
+describe("InfoMessage", () => {
   let wrapper;
 
   beforeEach(async () => {

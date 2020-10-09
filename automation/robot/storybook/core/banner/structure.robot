@@ -3,7 +3,6 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}banner--banner-controller
 ...           AND    Wait Until Page Contains    success
-Force Tags    v3
 
 *** Variables ***
 ${banner}             banner2-content

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import parser from "html-react-parser";
-import { makeStyles, useTheme } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { CloseXS, Search } from "@hv/uikit-react-icons";
 import {
   HvAdornment,
@@ -19,6 +19,7 @@ export default {
 };
 
 const { Esc, Tab } = KeyboardCodes;
+
 export const Main = () => {
   const [value, setValue] = useState("");
   const inputRef = useRef(null);
@@ -28,7 +29,7 @@ export const Main = () => {
   };
 
   const adornment = (
-    <>
+    <div aria-hidden="true">
       <HvAdornment
         isVisible={value.length > 0}
         onClick={() => {
@@ -38,24 +39,15 @@ export const Main = () => {
           });
         }}
         icon={<CloseXS />}
-        aria-label="clear button"
       />
       <HvAdornment isVisible={value.length === 0} icon={<Search />} />
-    </>
+    </div>
   );
 
-  const useStyles = makeStyles(() => ({
-    formWidth: {
-      width: 250,
-    },
-  }));
-
-  const classes = useStyles();
-
   return (
-    <HvFormElement value={value} className={classes.formWidth}>
+    <HvFormElement value={value}>
       <HvBaseInput
-        ariaLabel="Select country"
+        inputProps={{ "aria-label": "Select country" }}
         inputRef={inputRef}
         placeholder="Search"
         onChange={handleChange}
@@ -65,7 +57,15 @@ export const Main = () => {
   );
 };
 
-Main.story = { decorators: [(storyFn) => <div style={{ height: 40 }}>{storyFn()}</div>] };
+Main.story = {
+  decorators: [
+    (Story) => (
+      <div style={{ width: 250, height: 40 }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
 
 export const DynamicSearch = () => {
   const suggestions = countryList;
@@ -109,7 +109,7 @@ export const DynamicSearch = () => {
   };
 
   const adornment = (
-    <>
+    <div aria-hidden="true">
       <HvAdornment
         isVisible={value.length > 0}
         onClick={() => {
@@ -119,35 +119,31 @@ export const DynamicSearch = () => {
           });
         }}
         icon={<CloseXS />}
-        aria-label="clear button"
       />
       <HvAdornment
         isVisible={value.length === 0}
         onClick={() => setOpen(value.length > 0)}
         icon={<Search />}
       />
-    </>
+    </div>
   );
 
-  const theme = useTheme();
-  const useStyles = makeStyles(() => ({
+  const useStyles = makeStyles((theme) => ({
     inputBorderContainer: { height: 0 },
     inputPadder: {
       height: 10,
       background: theme.hv.palette.atmosphere.atmo1,
-    },
-    formWidth: {
-      width: 250,
     },
   }));
 
   const classes = useStyles();
 
   return (
-    <HvFormElement value={value} className={classes.formWidth}>
+    <HvFormElement value={value}>
       <HvLabel id="countries" label="Select country">
         <HvBaseInput
           inputRef={inputRef}
+          inputProps={{ "aria-label": "Select country" }}
           placeholder="Insert country"
           onChange={handleChange}
           endAdornment={adornment}
@@ -167,7 +163,15 @@ export const DynamicSearch = () => {
   );
 };
 
-DynamicSearch.story = { decorators: [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>] };
+DynamicSearch.story = {
+  decorators: [
+    (Story) => (
+      <div style={{ width: 250, height: 300 }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
 
 export const ScopedSearch = () => {
   const suggestions = countryList;
@@ -225,7 +229,7 @@ export const ScopedSearch = () => {
   };
 
   const adornment = (
-    <>
+    <div aria-hidden="true">
       <HvAdornment
         isVisible={value.length > 0}
         onClick={() => {
@@ -235,19 +239,16 @@ export const ScopedSearch = () => {
           });
         }}
         icon={<CloseXS />}
-        aria-label="clear button"
       />
       <HvAdornment
         isVisible={value.length === 0}
         onClick={() => setOpen(value.length > 0)}
         icon={<Search />}
       />
-    </>
+    </div>
   );
 
-  const theme = useTheme();
-
-  const useStyles = makeStyles(() => ({
+  const useStyles = makeStyles((theme) => ({
     container: {
       display: "flex",
     },
@@ -280,6 +281,7 @@ export const ScopedSearch = () => {
       <HvLabel id="countries" label="Select country">
         <div className={classes.container}>
           <HvDropdown
+            aria-label="Select country"
             classes={{
               root: classes.root,
               dropdown: classes.root,
@@ -297,6 +299,7 @@ export const ScopedSearch = () => {
             <HvBaseInput
               inputRef={inputRef}
               placeholder="Insert country"
+              inputProps={{ "aria-label": "Select country" }}
               onChange={handleChange}
               endAdornment={adornment}
               classes={{

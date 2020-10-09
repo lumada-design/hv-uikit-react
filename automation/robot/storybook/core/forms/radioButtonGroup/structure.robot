@@ -1,7 +1,6 @@
 *** Setting ***
 Resource      _radioButtonGroup.resource
 Test Setup    open radio button group sample    main
-Force Tags    v3
 
 
 *** Test Cases ***

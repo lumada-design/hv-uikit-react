@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] Card should be able to render with every property defined 1`] = `
+exports[`Card should be able to render with every property defined 1`] = `
 <WithStyles(HvCard)
   bgcolor="atmo1"
   style={
@@ -250,13 +250,13 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
           </Header>
         </WithStyles(Header)>
         <WithStyles(Media)
-          aria-label="Compressor"
+          alt="Compressor"
           component="img"
           height={140}
           image="IMAGE_MOCK"
         >
           <Media
-            aria-label="Compressor"
+            alt="Compressor"
             classes={
               Object {
                 "media": "HvCardMedia-media",
@@ -268,7 +268,7 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
             image="IMAGE_MOCK"
           >
             <WithStyles(ForwardRef(CardMedia))
-              aria-label="Compressor"
+              alt="Compressor"
               classes={
                 Object {
                   "media": "HvCardMedia-media",
@@ -281,7 +281,7 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
               role="img"
             >
               <ForwardRef(CardMedia)
-                aria-label="Compressor"
+                alt="Compressor"
                 classes={
                   Object {
                     "img": "MuiCardMedia-img",
@@ -295,7 +295,7 @@ exports[`[v3] Card should be able to render with every property defined 1`] = `
                 role="img"
               >
                 <img
-                  aria-label="Compressor"
+                  alt="Compressor"
                   className="MuiCardMedia-root HvCardMedia-root MuiCardMedia-media HvCardMedia-media MuiCardMedia-img"
                   height={140}
                   role="img"

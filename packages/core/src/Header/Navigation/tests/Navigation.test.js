@@ -12,7 +12,7 @@ window.matchMedia = jest.fn().mockImplementation((query) => ({
   removeListener: jest.fn(),
 }));
 
-describe("[v3] Navigation withStyles", () => {
+describe("Navigation withStyles", () => {
   let wrapper;
 
   it("should be able to render", () => {

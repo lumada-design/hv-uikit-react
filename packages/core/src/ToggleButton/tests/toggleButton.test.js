@@ -8,7 +8,7 @@ import { Main } from "../stories/ToggleButton.stories";
 
 let wrapper;
 
-describe("[v3] ToggleButton", () => {
+describe("ToggleButton", () => {
   wrapper = mount(
     <HvProvider>
       <Main />

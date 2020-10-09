@@ -15,12 +15,6 @@ export const Main = () => {
   return <HvPagination />;
 };
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const ControlledSample = () => {
   const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
   const data = [...Array(64).keys()];
@@ -78,6 +72,5 @@ ControlledSample.story = {
     docs: {
       storyDescription: "Pagination controlling a list of elements",
     },
-    v3: true,
   },
 };

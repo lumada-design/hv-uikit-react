@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] Header should be able to render 1`] = `
+exports[`Header should be able to render 1`] = `
 <WithStyles(HvHeader)
   position="relative"
 >

@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { HvEmptyState, HvProvider } from "../..";
 import { CustomMessages } from "../stories/EmptyState.stories";
 
-describe("[v3] <HvEmptyState /> with String title/message", () => {
+describe("<HvEmptyState /> with String title/message", () => {
   const wrapper = mount(
     <HvProvider>
       <CustomMessages />
@@ -21,7 +21,7 @@ describe("[v3] <HvEmptyState /> with String title/message", () => {
   });
 });
 
-describe("[v3] <EmptyState /> with Element title/message/action", () => {
+describe("<EmptyState /> with Element title/message/action", () => {
   const MockTitle = () => <div>mockTitle</div>;
   const MockMessage = () => <div>mockMessage</div>;
   const MockAction = () => <div>mockAction</div>;

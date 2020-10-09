@@ -28,7 +28,6 @@ export const Main = () => (
 
 Main.story = {
   parameters: {
-    v3: true,
     pa11y: {
       ignore: ["region"],
     },
@@ -40,7 +39,6 @@ export const Empty = () => <HvDropdown id="dropdown1" aria-label="Empty" />;
 
 Empty.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Dropdown with no values",
     },
@@ -73,7 +71,6 @@ SingleSelection.story = {
     pa11y: {
       ignore: ["region"],
     },
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -95,7 +92,6 @@ export const MultiSelection = () => (
 
 MultiSelection.story = {
   parameters: {
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -120,7 +116,6 @@ MultiSelectionNoSearch.story = {
     pa11y: {
       ignore: ["region"],
     },
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -147,7 +142,6 @@ SingleSelectionWithSearch.story = {
     pa11y: {
       ignore: ["region"],
     },
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -172,7 +166,6 @@ SingleSelectionNoSelection.story = {
     pa11y: {
       ignore: ["region"],
     },
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -231,7 +224,6 @@ DifferentSizeAndPlacements.story = {
     pa11y: {
       ignore: ["region"],
     },
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -270,7 +262,6 @@ Disabled.story = {
         "color-contrast",
       ],
     },
-    v3: true,
     eyes: { include: false },
   },
 };

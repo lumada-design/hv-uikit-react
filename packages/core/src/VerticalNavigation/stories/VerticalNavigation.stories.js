@@ -5,7 +5,6 @@ import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
 export default {
   title: "Components/Vertical Navigation",
   parameters: {
-    v3: true,
     componentSubtitle: null,
     usage: "import { HvVerticalNavigation } from '@hv/uikit-react-core/dist'",
     subcomponents: { Navigation, Actions, Action },
@@ -95,12 +94,6 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const WithoutActions = () => {
   const navigationData = [
     {
@@ -180,12 +173,6 @@ export const WithoutActions = () => {
       />
     </HvVerticalNavigation>
   );
-};
-
-WithoutActions.story = {
-  parameters: {
-    v3: true,
-  },
 };
 
 export const Collapsable = () => {
@@ -273,12 +260,6 @@ export const Collapsable = () => {
       </HvVerticalNavigation>
     </div>
   );
-};
-
-Collapsable.story = {
-  parameters: {
-    v3: true,
-  },
 };
 
 export const CollapseOnExit = () => {
@@ -369,10 +350,4 @@ export const CollapseOnExit = () => {
       </HvVerticalNavigation>
     </div>
   );
-};
-
-CollapseOnExit.story = {
-  parameters: {
-    v3: true,
-  },
 };

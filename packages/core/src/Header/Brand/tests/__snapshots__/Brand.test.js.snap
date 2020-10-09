@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] Brand withStyles should be able to render 1`] = `
+exports[`Brand withStyles should be able to render 1`] = `
 <WithStyles(Brand)
   name="test"
 >

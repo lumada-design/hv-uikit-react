@@ -6,7 +6,7 @@ import { mount, shallow } from "enzyme";
 import { HvProvider, HvTextArea } from "../..";
 import { Main } from "../stories/TextArea.stories";
 
-describe("v3 TextArea", () => {
+describe("TextArea", () => {
   let wrapper;
 
   beforeEach(async () => {

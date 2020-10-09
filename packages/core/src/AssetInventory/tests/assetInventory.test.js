@@ -3,7 +3,7 @@ import { mount, shallow } from "enzyme";
 import { HvProvider, HvAssetInventory } from "../..";
 import Search from "../Search/Search";
 
-describe("[v3] Asset Inventory ", () => {
+describe("Asset Inventory ", () => {
   let wrapper;
 
   const MockView = (id) => <div id={id} />;

@@ -3,7 +3,6 @@ Resource      ../table.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--with-checkbox
 ...           AND    Wait Until Element Is Visible    ${table}
-Force Tags    v3
 
 *** Test Cases ***
 indeterminate state on parent checkbox when she is unselected and is clicked

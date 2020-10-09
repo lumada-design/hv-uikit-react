@@ -4,7 +4,6 @@ Test Setup        Run Keywords
 ...               Go To    ${layout}asset-inventory--configurations
 ...               AND    Wait Until Element Is Visible    hv-assetinventory
 Test Template     Run Keyword
-Force Tags        v3
 
 
 *** Test Cases ***   | pageSize | Number of Items | number of pages

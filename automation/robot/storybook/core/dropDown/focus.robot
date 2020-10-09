@@ -3,7 +3,6 @@ Resource         _resources.resource
 Test Template    should focus the first element
 Documentation    verify where is the focus when dropdown is opened
 ...              complementary Test Cases on dropdown_keyboard_navigation.robot
-Force Tags       v3
 
 
 *** Test Cases ***         Story                           Element

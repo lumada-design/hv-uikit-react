@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 Tab withStyles should render correctly 1`] = `
+exports[`Tab withStyles should render correctly 1`] = `
 <WithStyles(HvTab)
   label="Clickable Tab"
 >

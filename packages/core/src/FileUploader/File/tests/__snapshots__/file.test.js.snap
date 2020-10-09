@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] File withStyles - Invalid File should render correctly 1`] = `
+exports[`File withStyles - Invalid File should render correctly 1`] = `
 <WithStyles(File)
   data={
     Object {
@@ -309,7 +309,7 @@ exports[`[v3] File withStyles - Invalid File should render correctly 1`] = `
 </WithStyles(File)>
 `;
 
-exports[`[v3] File withStyles - Valid File should render correctly 1`] = `
+exports[`File withStyles - Valid File should render correctly 1`] = `
 <WithStyles(File)
   data={
     Object {

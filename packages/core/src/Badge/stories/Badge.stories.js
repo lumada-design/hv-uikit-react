@@ -13,7 +13,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBadge } from '@hv/uikit-react-core/dist'",
-    v3: true,
   },
   component: HvBadge,
 };
@@ -49,7 +48,6 @@ WithIcon.story = {
     docs: {
       storyDescription: "Badge sample that uses a custom icon.",
     },
-    v3: true,
   },
 };
 
@@ -70,7 +68,6 @@ WithText.story = {
     docs: {
       storyDescription: "Badge sample using only text.",
     },
-    v3: true,
   },
 };
 
@@ -92,6 +89,5 @@ WithState.story = {
     docs: {
       storyDescription: "Badge sample using react hooks to set the number of events.",
     },
-    v3: true,
   },
 };

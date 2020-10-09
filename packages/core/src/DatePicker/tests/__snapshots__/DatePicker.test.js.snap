@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1`] = `
+exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = `
 <WithStyles(WithLabels)
   locale="en-US"
   value={2019-01-01T12:00:00.000Z}
@@ -219,6 +219,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                           },
                         }
                       }
+                      role="dialog"
                     >
                       <HvBaseDropdown
                         adornment={
@@ -268,18 +269,18 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                             },
                           }
                         }
+                        role="dialog"
                       >
                         <div
                           aria-expanded={false}
                           className="HvBaseDropdown-root HvDatePicker-dropdown"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="combobox"
+                          role="dialog"
                           tabIndex={-1}
                         >
                           <div
                             className="HvBaseDropdown-header"
-                            role="textbox"
                             tabIndex={0}
                           >
                             <div
@@ -328,45 +329,30 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
                             <Calendar
                               className="HvDatePicker-icon"
                             >
-                              <WithStyles(HvIconBase)
+                              <HvIconBase
                                 className="HvDatePicker-icon"
                                 iconSize="S"
                                 name="Calendar"
                               >
-                                <HvIconBase
-                                  className="HvDatePicker-icon"
-                                  classes={
-                                    Object {
-                                      "l": "HvIconBase-l",
-                                      "m": "HvIconBase-m",
-                                      "root": "HvIconBase-root",
-                                      "s": "HvIconBase-s",
-                                      "xs": "HvIconBase-xs",
-                                    }
-                                  }
-                                  iconSize="S"
+                                <div
+                                  className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
                                   name="Calendar"
                                 >
-                                  <div
-                                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
-                                    name="Calendar"
+                                  <svg
+                                    focusable={false}
+                                    height={16}
+                                    viewBox="0 0 16 16"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height={16}
-                                      viewBox="0 0 16 16"
-                                      width={16}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        className="color0"
-                                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </HvIconBase>
-                              </WithStyles(HvIconBase)>
+                                    <path
+                                      className="color0"
+                                      d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                                      fill="#414141"
+                                    />
+                                  </svg>
+                                </div>
+                              </HvIconBase>
                             </Calendar>
                           </div>
                         </div>
@@ -408,7 +394,7 @@ exports[`[v3] <DatePicker /> with Single Calendar mode should render correctly 1
 </WithStyles(WithLabels)>
 `;
 
-exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] = `
+exports[`<DatePicker /> with custom properties should render correctly 1`] = `
 <WithStyles(WithLabels)
   horizontalPlacement="left"
   id="testingDatePicker"
@@ -656,6 +642,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                           },
                         }
                       }
+                      role="dialog"
                     >
                       <HvBaseDropdown
                         adornment={
@@ -705,18 +692,18 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                             },
                           }
                         }
+                        role="dialog"
                       >
                         <div
                           aria-expanded={false}
                           className="HvBaseDropdown-root HvDatePicker-dropdown"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="combobox"
+                          role="dialog"
                           tabIndex={-1}
                         >
                           <div
                             className="HvBaseDropdown-header"
-                            role="textbox"
                             tabIndex={0}
                           >
                             <div
@@ -765,45 +752,30 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
                             <Calendar
                               className="HvDatePicker-icon"
                             >
-                              <WithStyles(HvIconBase)
+                              <HvIconBase
                                 className="HvDatePicker-icon"
                                 iconSize="S"
                                 name="Calendar"
                               >
-                                <HvIconBase
-                                  className="HvDatePicker-icon"
-                                  classes={
-                                    Object {
-                                      "l": "HvIconBase-l",
-                                      "m": "HvIconBase-m",
-                                      "root": "HvIconBase-root",
-                                      "s": "HvIconBase-s",
-                                      "xs": "HvIconBase-xs",
-                                    }
-                                  }
-                                  iconSize="S"
+                                <div
+                                  className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
                                   name="Calendar"
                                 >
-                                  <div
-                                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
-                                    name="Calendar"
+                                  <svg
+                                    focusable={false}
+                                    height={16}
+                                    viewBox="0 0 16 16"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height={16}
-                                      viewBox="0 0 16 16"
-                                      width={16}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        className="color0"
-                                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </HvIconBase>
-                              </WithStyles(HvIconBase)>
+                                    <path
+                                      className="color0"
+                                      d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                                      fill="#414141"
+                                    />
+                                  </svg>
+                                </div>
+                              </HvIconBase>
                             </Calendar>
                           </div>
                         </div>
@@ -845,7 +817,7 @@ exports[`[v3] <DatePicker /> with custom properties should render correctly 1`] 
 </WithStyles(WithLabels)>
 `;
 
-exports[`[v3] <DatePicker /> with minimum configuration should render correctly 1`] = `
+exports[`<DatePicker /> with minimum configuration should render correctly 1`] = `
 <WithStyles(WithLabels)>
   <WithLabels
     classes={
@@ -1052,6 +1024,7 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                           },
                         }
                       }
+                      role="dialog"
                     >
                       <HvBaseDropdown
                         adornment={
@@ -1101,18 +1074,18 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                             },
                           }
                         }
+                        role="dialog"
                       >
                         <div
                           aria-expanded={false}
                           className="HvBaseDropdown-root HvDatePicker-dropdown"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="combobox"
+                          role="dialog"
                           tabIndex={-1}
                         >
                           <div
                             className="HvBaseDropdown-header"
-                            role="textbox"
                             tabIndex={0}
                           >
                             <div
@@ -1161,45 +1134,30 @@ exports[`[v3] <DatePicker /> with minimum configuration should render correctly 
                             <Calendar
                               className="HvDatePicker-icon"
                             >
-                              <WithStyles(HvIconBase)
+                              <HvIconBase
                                 className="HvDatePicker-icon"
                                 iconSize="S"
                                 name="Calendar"
                               >
-                                <HvIconBase
-                                  className="HvDatePicker-icon"
-                                  classes={
-                                    Object {
-                                      "l": "HvIconBase-l",
-                                      "m": "HvIconBase-m",
-                                      "root": "HvIconBase-root",
-                                      "s": "HvIconBase-s",
-                                      "xs": "HvIconBase-xs",
-                                    }
-                                  }
-                                  iconSize="S"
+                                <div
+                                  className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
                                   name="Calendar"
                                 >
-                                  <div
-                                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
-                                    name="Calendar"
+                                  <svg
+                                    focusable={false}
+                                    height={16}
+                                    viewBox="0 0 16 16"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height={16}
-                                      viewBox="0 0 16 16"
-                                      width={16}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        className="color0"
-                                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </HvIconBase>
-                              </WithStyles(HvIconBase)>
+                                    <path
+                                      className="color0"
+                                      d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                                      fill="#414141"
+                                    />
+                                  </svg>
+                                </div>
+                              </HvIconBase>
                             </Calendar>
                           </div>
                         </div>

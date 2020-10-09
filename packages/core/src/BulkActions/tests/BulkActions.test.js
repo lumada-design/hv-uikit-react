@@ -5,7 +5,7 @@ import { mount } from "enzyme";
 import { Main, ControlledWithActions } from "../stories/BulkActions.stories";
 import { HvActionsGeneric, HvProvider, HvBulkActions, HvDropDownMenu, HvCheckBox } from "../..";
 
-describe("[v3] BulkActions", () => {
+describe("BulkActions", () => {
   let wrapper;
 
   it("should be defined", () => {
@@ -37,7 +37,7 @@ describe("[v3] BulkActions", () => {
   });
 });
 
-describe("[v3] BulkActions controlled with actions", () => {
+describe("BulkActions controlled with actions", () => {
   let wrapper;
 
   it("should be defined", () => {
@@ -69,7 +69,7 @@ describe("[v3] BulkActions controlled with actions", () => {
   });
 });
 
-describe("[v3] BulkActions with selection", () => {
+describe("BulkActions with selection", () => {
   let wrapper;
   const onSelectAllMock = jest.fn();
   const onSelectAllPagesMock = jest.fn();
@@ -121,7 +121,7 @@ describe("[v3] BulkActions with selection", () => {
   */
 });
 
-describe("[v3] BulkActions with custom label", () => {
+describe("BulkActions with custom label", () => {
   let wrapper;
   const labelMock = "MockLabel";
 

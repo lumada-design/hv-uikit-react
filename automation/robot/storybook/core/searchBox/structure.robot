@@ -1,5 +1,4 @@
 *** Setting ***
-Force Tags  v3
 Resource    ../_keywords.resource
 
 

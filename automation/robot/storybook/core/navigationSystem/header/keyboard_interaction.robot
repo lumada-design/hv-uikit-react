@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _header.resource
 Test Setup        Run Keywords
-...               Go To    ${components}navigation-system-horizontal-navigation--main
+...               Go To    ${components}header--main
 ...               AND   Wait Until Element Is Visible    ${header}
 Force Tags        keyboard    bug-infrastructure-ie
 Documentation    Test Cases based on Design System Version 1.2.0

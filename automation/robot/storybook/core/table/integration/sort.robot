@@ -3,7 +3,6 @@ Resource      ../table.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--with-checkbox
 ...           AND    Wait Until Element Is Visible    ${table}
-Force Tags    v3
 
 *** Variables ***
 ${ascending_values_2}    Title,Event 5,Event 6,Event 7,Event 8,Event 9

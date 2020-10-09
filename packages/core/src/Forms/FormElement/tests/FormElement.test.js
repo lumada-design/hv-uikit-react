@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import { HvFormElement, HvBaseInput, HvWarningText, HvLabel } from "../../..";
 import HvProvider from "../../../Provider";
 
-describe.only("v3 FormElement ", () => {
+describe.only("FormElement ", () => {
   let wrapper;
 
   beforeEach(() => {

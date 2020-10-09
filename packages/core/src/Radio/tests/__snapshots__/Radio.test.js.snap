@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] RadioButton should render correctly 1`] = `
+exports[`RadioButton should render correctly 1`] = `
 Array [
   <WithStyles(HvRadio)
     checked={false}

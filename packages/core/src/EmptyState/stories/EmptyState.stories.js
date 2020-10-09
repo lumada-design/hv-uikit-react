@@ -5,7 +5,6 @@ import { HvEmptyState, HvLink, HvTypography } from "../..";
 export default {
   title: "Components/Empty State",
   parameters: {
-    v3: true,
     componentSubtitle: null,
     usage: "import { HvEmptyState } from '@hv/uikit-react-core/dist'",
   },
@@ -34,7 +33,6 @@ export const WithAction = () => (
 
 WithAction.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Empty states that includes an action inside its content.",
     },
@@ -63,7 +61,6 @@ export const CustomMessages = () => {
 
 CustomMessages.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Empty states with message and action set as custom elements.",
     },
@@ -80,7 +77,6 @@ export const Minimal = () => (
 
 Minimal.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Empty state without title and small icon.",
     },

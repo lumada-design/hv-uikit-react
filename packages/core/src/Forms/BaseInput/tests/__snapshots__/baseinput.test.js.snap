@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 Input should render correctly 1`] = `
+exports[`Input should render correctly 1`] = `
 <WithStyles(HvBaseInput)
   inputProps={
     Object {
@@ -211,7 +211,7 @@ exports[`v3 Input should render correctly 1`] = `
 </WithStyles(HvBaseInput)>
 `;
 
-exports[`v3 Input should render the Input component with the multiline style 1`] = `
+exports[`Input should render the Input component with the multiline style 1`] = `
 <WithStyles(HvBaseInput)
   multiline={true}
   placeholder="test"

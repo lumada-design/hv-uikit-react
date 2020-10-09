@@ -15,7 +15,7 @@ const mockDataWithIds = [
   { id: "id-3", label: "Value 3" },
 ];
 
-describe("[V3] <Dropdown />", () => {
+describe("<Dropdown />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
   global.window.event = jest.fn();
@@ -23,7 +23,7 @@ describe("[V3] <Dropdown />", () => {
   let wrapper;
   let dropdownComponent;
 
-  describe("[V3]  with defaults", () => {
+  describe(" with defaults", () => {
     const onChangeMock = jest.fn();
 
     beforeEach(async () => {
@@ -66,7 +66,7 @@ describe("[V3] <Dropdown />", () => {
     });
   });
 
-  describe("[V3] <Dropdown /> disabled", () => {
+  describe("<Dropdown /> disabled", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
@@ -80,7 +80,7 @@ describe("[V3] <Dropdown />", () => {
     });
   });
 
-  describe("[V3] <Dropdown /> onChange prop called in multiselect", () => {
+  describe("<Dropdown /> onChange prop called in multiselect", () => {
     const onChangeMock = jest.fn();
 
     beforeEach(async () => {

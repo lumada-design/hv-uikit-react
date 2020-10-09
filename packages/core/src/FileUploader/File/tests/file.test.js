@@ -28,7 +28,7 @@ const dataSuccess = {
 
 const onClickCallback = jest.fn();
 
-describe("[v3] File withStyles - Invalid File", () => {
+describe("File withStyles - Invalid File", () => {
   wrapper = mount(
     <HvProvider>
       <File
@@ -54,7 +54,7 @@ describe("[v3] File withStyles - Invalid File", () => {
   });
 });
 
-describe("[v3] File withStyles - Valid File", () => {
+describe("File withStyles - Valid File", () => {
   wrapper = mount(
     <HvProvider>
       <File

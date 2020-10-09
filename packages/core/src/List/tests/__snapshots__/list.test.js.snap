@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[v3] <List /> Single selection should render correctly 1`] = `
+exports[`<List /> Single selection should render correctly 1`] = `
 <WithStyles(HvList)
   onChange={[MockFunction]}
   onClick={[MockFunction]}
@@ -533,7 +533,7 @@ exports[`[v3] <List /> Single selection should render correctly 1`] = `
 </WithStyles(HvList)>
 `;
 
-exports[`[v3] <List /> Single selection with icons should render correctly 1`] = `
+exports[`<List /> Single selection with icons should render correctly 1`] = `
 <WithStyles(HvList)
   values={
     Array [
@@ -1355,7 +1355,7 @@ exports[`[v3] <List /> Single selection with icons should render correctly 1`] =
 </WithStyles(HvList)>
 `;
 
-exports[`[v3] <List /> Single selection with selectors should render correctly 1`] = `
+exports[`<List /> Single selection with selectors should render correctly 1`] = `
 <WithStyles(HvList)
   selectDefault={true}
   useSelector={true}

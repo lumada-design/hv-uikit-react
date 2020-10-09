@@ -37,7 +37,6 @@ export const KeyboardNavigation = () => (
 
 KeyboardNavigation.story = {
   parameters: {
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -55,7 +54,6 @@ export const A11YClosed = () => (
 
 A11YClosed.story = {
   parameters: {
-    v3: true,
     eyes: { include: false },
   },
 };
@@ -70,7 +68,6 @@ export const A11YOpen = () => (
 
 A11YOpen.story = {
   parameters: {
-    v3: true,
     pa11y: {
       actions: [
         // open menu before testing
@@ -89,7 +86,6 @@ A11YOpen.story = {
 export const sWithIconsAndActions = () => WithIconsAndActions();
 
 sWithIconsAndActions.story = {
-  v3: true,
   parameters: {
     eyes: {
       runBefore() {
@@ -104,7 +100,6 @@ sWithIconsAndActions.story = {
 export const sDisabledItems = () => DisabledItems();
 
 sDisabledItems.story = {
-  v3: true,
   parameters: {
     eyes: {
       runBefore() {

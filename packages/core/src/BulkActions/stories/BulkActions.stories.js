@@ -42,12 +42,6 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 const styles = (theme) => ({
   root: {
     display: "flex",
@@ -114,12 +108,6 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
-  parameters: {
-    v3: true,
-  },
-};
-
 export const ControlledWithActions = () => {
   const actions = [
     { id: "add", label: "Add", iconCallback: () => <Add /> },
@@ -179,12 +167,6 @@ export const ControlledWithActions = () => {
       <SampleComponent data={data} onChange={handleChange} />
     </div>
   );
-};
-
-ControlledWithActions.story = {
-  parameters: {
-    v3: true,
-  },
 };
 
 export const ControlledWithAllPages = () => {
@@ -287,10 +269,4 @@ export const ControlledWithAllPages = () => {
       />
     </>
   );
-};
-
-ControlledWithAllPages.story = {
-  parameters: {
-    v3: true,
-  },
 };
