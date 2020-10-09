@@ -293,8 +293,13 @@ const styles = (theme) => ({
     padding: `${theme.hv.spacing.md}px 32px`,
   },
   iconContainer: {
-    width: "32px",
-    height: "32px",
+    marginLeft: 5,
+    marginRight: 5,
+    width: "25px",
+    height: "25px",
+    minWidth: "unset",
+    minHeight: "unset",
+    borderRadius: 0,
     "&:focus": {
       background: theme.hv.palette.atmosphere.atmo3,
       outline: 0,

@@ -170,7 +170,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const expander = wrapper.find({ role: "button" });
+      const expander = wrapper.find("button");
       expect(expander.length).toEqual(3);
     });
 

@@ -6,7 +6,7 @@ Test Setup    Run Keywords
 
 *** Variables ***
 ${banner}             banner2-content
-${closeIconButton}    css:[role=button][class*=closeAction]
+${closeIconButton}    css:[class*=closeAction]
 ${messageActions}     banner2-content-message-actions
 ${messageText}        banner2-content-message-text
 

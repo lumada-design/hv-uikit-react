@@ -3,22 +3,23 @@ import PropTypes, { oneOfType } from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Close from "@hv/uikit-react-icons/dist/CloseXS";
 import ActionsGeneric from "../../../ActionsGeneric";
+import HvButton from "../../../Button";
 import styles from "./styles";
 
 const ActionContainer = ({ id, classes, onClose, action, actionCallback, ...others }) => {
   return (
     <div className={classes.actionContainer}>
-      <div
+      <HvButton
+        icon
         className={classes.closeAction}
-        role="button"
+        category="semantic"
         aria-label="Close"
         onClick={onClose}
         tabIndex={0}
-        onKeyDown={onClose}
         {...others}
       >
         <Close iconSize="XS" className={classes.iconContainer} color="base2" />
-      </div>
+      </HvButton>
       {action && (
         <div className={classes.actionsInnerContainer}>
           <ActionsGeneric
