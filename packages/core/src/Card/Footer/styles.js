@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   root: {
-    padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.xs}px`,
+    padding: theme.hvSpacing("sm", "xs"),
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
   },

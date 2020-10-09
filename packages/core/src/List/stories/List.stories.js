@@ -8,7 +8,7 @@ const styles = (theme) => ({
     display: "inline-block",
     minWidth: 200,
     maxWidth: 260,
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: theme.hv.spacing.sm,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
   },
 });

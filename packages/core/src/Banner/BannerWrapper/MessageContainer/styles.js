@@ -7,8 +7,8 @@ const styles = (theme) => ({
     marginRight: 10,
   },
   iconContainer: {
-    marginRight: `${theme.hv.spacing.xs}px`,
-    marginLeft: `${-theme.hv.spacing.xs}px`,
+    marginRight: theme.hv.spacing.xs,
+    marginLeft: -theme.hv.spacing.xs,
   },
   actionMessageContainer: {
     flex: "0 0 auto",

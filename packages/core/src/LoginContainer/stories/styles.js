@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     width: 120,
     float: "right",
-    marginTop: `${theme.hv.spacing.lg}px`,
+    marginTop: theme.hv.spacing.lg,
   },
   sentenceCase: {
     textTransform: `full-size-kana`,

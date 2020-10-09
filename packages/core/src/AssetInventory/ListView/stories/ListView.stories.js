@@ -113,7 +113,7 @@ export const Main = () => {
 
   const styles = (theme) => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
+      padding: theme.hvSpacing("2px", "xs", 0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
@@ -238,7 +238,7 @@ export const NotSelectable = () => {
 
   const styles = (theme) => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
+      padding: theme.hvSpacing("2px", "xs", 0, "xs"),
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
     },
@@ -352,7 +352,7 @@ export const NotSelectableWithMenu = () => {
 
   const styles = (theme) => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
+      padding: theme.hvSpacing("2px", "xs", 0, "xs"),
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
     },

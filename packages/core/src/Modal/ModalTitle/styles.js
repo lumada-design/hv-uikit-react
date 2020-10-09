@@ -13,7 +13,7 @@ const styles = (theme) => ({
     marginLeft: theme.hvSpacing("xs"),
   },
   icon: {
-    marginRight: `${theme.hv.spacing.md}px`,
+    marginRight: theme.hv.spacing.md,
     width: 48,
     height: 48,
   },

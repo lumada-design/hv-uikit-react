@@ -12,8 +12,8 @@ const styles = (theme) => ({
   },
   separator: {
     width: 1,
-    height: `${theme.hv.spacing.sm}px`,
-    margin: `0 ${theme.hv.spacing.xs}px`,
+    height: theme.hv.spacing.sm,
+    margin: theme.hvSpacing(0, "xs"),
     backgroundColor: theme.hv.palette.accent.acce1,
   },
 });

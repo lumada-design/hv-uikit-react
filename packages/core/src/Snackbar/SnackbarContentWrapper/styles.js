@@ -27,7 +27,7 @@ const styles = (theme) => ({
   },
   messageText: {
     ...theme.hv.typography.normalText,
-    padding: `0 ${theme.hv.spacing.xs}px`,
+    padding: theme.hvSpacing(0, "xs"),
     color: theme.hv.palette.base.base2,
     fontFamily: theme.hv.typography.fontFamily,
     maxHeight: "72px",

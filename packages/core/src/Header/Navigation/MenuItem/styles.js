@@ -36,7 +36,7 @@ const styles = (theme) => {
     button: {
       border: "none",
       cursor: "pointer",
-      padding: `8px ${theme.hv.spacing.sm}px`,
+      padding: theme.hvSpacing("8px", "sm"),
       "&:active": {
         outline: "none",
       },

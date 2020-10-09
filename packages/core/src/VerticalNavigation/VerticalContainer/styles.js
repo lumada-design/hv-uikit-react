@@ -34,10 +34,10 @@ const styles = (theme) => ({
     width: "52px",
     height: "100%",
     overflow: "hidden",
-    padding: `${theme.hv.spacing.xs}px`,
+    padding: theme.hv.spacing.xs,
   },
   button: {
-    marginTop: `${theme.hv.spacing.xs}px`,
+    marginTop: theme.hv.spacing.xs,
     width: "32px",
     height: "32px",
   },

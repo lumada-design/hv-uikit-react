@@ -65,15 +65,15 @@ export const Main = () => {
   // Styles
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
+      padding: theme.hvSpacing(0, 0, "sm", 0),
     },
     kpis: {
       display: "flex",
     },
     timestamp: {
-      paddingRight: `${theme.hv.spacing.xs}px`,
+      paddingRight: theme.hv.spacing.xs,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     timestamp2: {
       padding: theme.hvSpacing(0, "xs"),
@@ -82,10 +82,10 @@ export const Main = () => {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`,
+      margin: theme.hvSpacing(0, "xs"),
     },
   }));
 
@@ -319,15 +319,15 @@ export const Configurations = () => {
   // Styles
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
+      padding: theme.hvSpacing(0, 0, "sm", 0),
     },
     kpis: {
       display: "flex",
     },
     timestamp: {
-      paddingRight: `${theme.hv.spacing.xs}px`,
+      paddingRight: theme.hv.spacing.xs,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     timestamp2: {
       padding: theme.hvSpacing(0, "xs"),
@@ -336,10 +336,10 @@ export const Configurations = () => {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`,
+      margin: theme.hvSpacing(0, "xs"),
     },
   }));
 
@@ -600,15 +600,15 @@ export const ThreeViews = () => {
   // Styles
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
+      padding: theme.hvSpacing(0, 0, "sm", 0),
     },
     kpis: {
       display: "flex",
     },
     timestamp: {
-      paddingRight: `${theme.hv.spacing.xs}px`,
+      paddingRight: theme.hv.spacing.xs,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     timestamp2: {
       padding: theme.hvSpacing(0, "xs"),
@@ -617,10 +617,10 @@ export const ThreeViews = () => {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`,
+      margin: theme.hvSpacing(0, "xs"),
     },
   }));
 
@@ -882,15 +882,15 @@ export const ServerSidePagination = () => {
   // Styles
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
+      padding: theme.hvSpacing(0, 0, "sm", 0),
     },
     kpis: {
       display: "flex",
     },
     timestamp: {
-      paddingRight: `${theme.hv.spacing.xs}px`,
+      paddingRight: theme.hv.spacing.xs,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     timestamp2: {
       padding: theme.hvSpacing(0, "xs"),
@@ -899,10 +899,10 @@ export const ServerSidePagination = () => {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`,
+      margin: theme.hvSpacing(0, "xs"),
     },
   }));
 
@@ -1126,15 +1126,15 @@ export const Accessibility = () => {
   // Styles
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`,
+      padding: theme.hvSpacing(0, 0, "sm", 0),
     },
     kpis: {
       display: "flex",
     },
     timestamp: {
-      paddingRight: `${theme.hv.spacing.xs}px`,
+      paddingRight: theme.hv.spacing.xs,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     timestamp2: {
       padding: theme.hvSpacing(0, "xs"),
@@ -1143,10 +1143,10 @@ export const Accessibility = () => {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
+      marginRight: theme.hv.spacing.xs,
     },
     icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`,
+      margin: theme.hvSpacing(0, "xs"),
     },
   }));
 

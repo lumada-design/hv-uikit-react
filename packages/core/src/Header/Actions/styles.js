@@ -4,7 +4,7 @@ const styles = (theme) => ({
     alignItems: "center",
     marginLeft: "auto",
     "& > *": {
-      marginLeft: `${theme.hv.spacing.xs}px`,
+      marginLeft: theme.hv.spacing.xs,
     },
   },
 });

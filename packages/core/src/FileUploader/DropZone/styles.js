@@ -46,7 +46,7 @@ const styles = (theme) => ({
   },
   dropArea: {
     display: "flex",
-    margin: `${theme.hv.spacing.md}px auto`,
+    margin: theme.hvSpacing("md", "auto"),
     minHeight: 40,
   },
   dropZoneLabelsGroup: {
@@ -65,7 +65,7 @@ const styles = (theme) => ({
   },
   dropZoneAreaIcon: {
     margin: "auto",
-    marginRight: `${theme.hv.spacing.xs}px`,
+    marginRight: theme.hv.spacing.xs,
   },
   dragText: {
     ...theme.hv.typography.normalText,

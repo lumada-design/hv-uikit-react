@@ -1,8 +1,8 @@
 const styles = (theme) => ({
   root: {
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-    margin: `${theme.hv.spacing.xs}px 0 0`,
-    padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px  0`,
+    margin: theme.hvSpacing("xs", 0, 0),
+    padding: theme.hvSpacing("xs", "sm", 0),
   },
   label: {
     marginBottom: `5px`,

@@ -33,7 +33,7 @@ const styles = (theme) => ({
     alignItems: "center",
   },
   spacingToTheRight: {
-    marginRight: `${theme.hv.spacing.xs}px`,
+    marginRight: theme.hv.spacing.xs,
   },
   trendLine: {
     float: "right",

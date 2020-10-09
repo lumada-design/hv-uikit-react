@@ -2,7 +2,7 @@ const styles = (theme) => ({
   root: {},
   controlsContainer: {
     display: "flex",
-    paddingBottom: `${theme.hv.spacing.md}px`,
+    paddingBottom: theme.hv.spacing.md,
     justifyContent: "space-between",
     alignItems: "flex-end",
   },
@@ -14,7 +14,7 @@ const styles = (theme) => ({
     alignItems: "flex-end",
   },
   multiButtons: {
-    paddingLeft: `${theme.hv.spacing.md}px`,
+    paddingLeft: theme.hv.spacing.md,
   },
   viewContainer: {
     padding: theme.hvSpacing("sm", 0),

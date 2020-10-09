@@ -15,7 +15,7 @@ const styles = (theme) => ({
     width: 0,
   },
   badge: {
-    borderRadius: `${theme.hv.spacing.xs}px`,
+    borderRadius: theme.hv.spacing.xs,
     backgroundColor: theme.hv.palette.accent.acce1,
     float: "left",
     minHeight: "8px",

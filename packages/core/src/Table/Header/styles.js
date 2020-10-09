@@ -12,14 +12,14 @@ const styles = (theme) => ({
   },
   headerTextContainer: {
     minWidth: 0,
-    padding: `6px ${theme.hv.spacing.xs}px 6px 0px`,
+    padding: theme.hvSpacing("6px", "xs", "6px", 0),
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
   },
   headerNotSortable: {
     width: `calc(100% - ${theme.hv.spacing.xs}px)`,
-    marginLeft: `${theme.hv.spacing.xs}px`,
+    marginLeft: theme.hv.spacing.xs,
   },
   headerSortable: {
     maxWidth: "calc(100% - 32px)",

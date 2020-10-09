@@ -8,8 +8,8 @@ const styles = (theme) => ({
   message: {
     display: "flex",
     alignItems: "center",
-    padding: `${theme.hv.spacing.xs}px 0`,
-    paddingLeft: `${theme.hv.spacing.sm}px`,
+    padding: theme.hvSpacing("xs", 0),
+    paddingLeft: theme.hv.spacing.sm,
   },
   action: {
     padding: theme.hvSpacing("xs"),
