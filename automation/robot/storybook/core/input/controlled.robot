@@ -21,7 +21,7 @@ clean input when pressed button clear value
     Textfield Value Should Be    ${input}    ${empty}
 
 block chars insertion when input already has max 25 chars
-    Go To                            ${forms}input--custom-props
+    [Setup]     Go To                ${forms}input--custom-props
     Wait Until Element Is Visible    ${input}
     Input Text                       ${input}    123456789012345678901234567890
     Textfield Value Should Be        ${input}    1234567890123456789012345
