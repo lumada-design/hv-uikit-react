@@ -75,19 +75,26 @@ Disabled.story = {
 };
 
 export const InvalidState = () => {
+  const [validationState, setValidationState] = useState("invalid");
+  const [errorMessage, setErrorMessage] = useState("This is invalid just because I said so.");
+
   const labels = {
     placeholder: "Insert last name",
     infoText: "Please enter your last name",
     inputLabel: "Last name",
-    warningText: "This is invalid just because I said so",
-    maxCharQuantityWarningText: "Max characters exceeded",
   };
   return (
     <HvInput
       id="invalid-state-input"
       labels={labels}
       initialValue="Not a name!"
-      validationState="invalid"
+      validationState={validationState}
+      externalWarningTextOverride={errorMessage}
+      onFocus={(value) => setValidationState(value ? "filled" : "empty")}
+      onBlur={() => {
+        setValidationState("invalid");
+        setErrorMessage("Nice try, but this will always be invalid. I told you!");
+      }}
     />
   );
 };
@@ -96,7 +103,7 @@ InvalidState.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Input created in invalid state showing the error message and the failed validation icon.",
+        "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the externalWarningTextOverride property, or else it will always default to labels.warningText. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
     },
   },
 };
