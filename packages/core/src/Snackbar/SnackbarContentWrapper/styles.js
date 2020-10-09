@@ -3,7 +3,7 @@ const styles = (theme) => ({
     width: "310px",
     minHeight: "52px",
     maxHeight: "92px",
-    padding: theme.spacing("xs"),
+    padding: theme.hvSpacing("xs"),
   },
   success: {
     backgroundColor: theme.hv.palette.semantic.sema8,

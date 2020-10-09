@@ -21,11 +21,11 @@ const styles = (theme) => ({
   icon: {
     width: 32,
     height: 32,
-    margin: theme.spacing(0, "xs"),
+    margin: theme.hvSpacing(0, "xs"),
   },
   removeButton: {
     position: "absolute",
-    margin: theme.spacing(0, "xs"),
+    margin: theme.hvSpacing(0, "xs"),
     right: 0,
     top: 20,
   },

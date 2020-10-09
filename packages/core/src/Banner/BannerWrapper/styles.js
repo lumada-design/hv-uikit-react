@@ -12,7 +12,7 @@ const styles = (theme) => ({
     paddingLeft: `${theme.hv.spacing.sm}px`,
   },
   action: {
-    padding: theme.spacing("xs"),
+    padding: theme.hvSpacing("xs"),
     marginRight: 0,
     flex: "0 0 auto",
     placeSelf: "stretch",

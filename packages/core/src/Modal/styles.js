@@ -14,8 +14,8 @@ const styles = (theme) => ({
     padding: 0,
     minWidth: "unset",
     position: "absolute",
-    top: theme.spacing("sm"),
-    right: theme.spacing("sm"),
+    top: theme.hvSpacing("sm"),
+    right: theme.hvSpacing("sm"),
   },
 });
 

@@ -18,7 +18,7 @@ const styles = (theme) => ({
     },
   },
   separatorContainer: {
-    margin: theme.spacing(0, "xs"),
+    margin: theme.hvSpacing(0, "xs"),
   },
   orderedList: {
     display: "flex",

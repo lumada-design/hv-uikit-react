@@ -76,7 +76,7 @@ export const Main = () => {
       marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs"),
+      padding: theme.hvSpacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
@@ -330,7 +330,7 @@ export const Configurations = () => {
       marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs"),
+      padding: theme.hvSpacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
@@ -611,7 +611,7 @@ export const ThreeViews = () => {
       marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs"),
+      padding: theme.hvSpacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
@@ -893,7 +893,7 @@ export const ServerSidePagination = () => {
       marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs"),
+      padding: theme.hvSpacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
@@ -1137,7 +1137,7 @@ export const Accessibility = () => {
       marginRight: `${theme.hv.spacing.xs}px`,
     },
     timestamp2: {
-      padding: theme.spacing(0, "xs"),
+      padding: theme.hvSpacing(0, "xs"),
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,

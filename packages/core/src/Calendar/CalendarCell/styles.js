@@ -23,13 +23,13 @@ const styles = (theme) => {
     calendarWrapper: {
       overflow: "hidden",
       backgroundColor: theme.palette.atmo1,
-      padding: theme.spacing("sm"),
+      padding: theme.hvSpacing("sm"),
     },
     calendarGrid: {},
     navigationContainer: {
       display: "flex",
       justifyContent: "space-between",
-      padding: theme.spacing("xs", 0),
+      padding: theme.hvSpacing("xs", 0),
     },
     focusSelection: {
       "&:hover": {

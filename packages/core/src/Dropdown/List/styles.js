@@ -4,10 +4,10 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.atmo1,
   },
   listContainer: {
-    padding: theme.spacing("sm"),
+    padding: theme.hvSpacing("sm"),
   },
   searchContainer: {
-    marginBottom: theme.spacing("xs"),
+    marginBottom: theme.hvSpacing("xs"),
   },
   selectAllContainer: {
     // prevent the focus ring to be hidden by sibling hover background

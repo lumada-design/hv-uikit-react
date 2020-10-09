@@ -3,7 +3,7 @@ const styles = (theme) => ({
     display: "flex",
     alignItems: "center",
     flexDirection: "row",
-    padding: theme.spacing(0, "sm"),
+    padding: theme.hvSpacing(0, "sm"),
     height: 40,
     bottom: 0,
     zIndex: theme.zIndex.appBar,
@@ -12,12 +12,12 @@ const styles = (theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "unset",
       flexDirection: "column",
-      padding: theme.spacing("sm"),
+      padding: theme.hvSpacing("sm"),
     },
   },
   name: {
     [theme.breakpoints.down("sm")]: {
-      marginBottom: theme.spacing("xs"),
+      marginBottom: theme.hvSpacing("xs"),
     },
   },
   rightContainer: {
@@ -34,14 +34,14 @@ const styles = (theme) => ({
   copyright: {
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      marginBottom: theme.spacing("xs"),
+      marginBottom: theme.hvSpacing("xs"),
     },
   },
   separator: {
     width: 1,
     height: 16,
     backgroundColor: theme.palette.acce1,
-    margin: theme.spacing(0, "xs"),
+    margin: theme.hvSpacing(0, "xs"),
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },

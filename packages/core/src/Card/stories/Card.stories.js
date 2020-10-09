@@ -73,15 +73,15 @@ export const AllComponents = () => {
 
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: theme.spacing(0, 0, "sm", 0),
+      padding: theme.hvSpacing(0, 0, "sm", 0),
     },
     bottomItem: {
       padding: 0,
     },
     subtitleLeft: {
       borderRight: `1px solid ${theme.palette.acce1}`,
-      paddingRight: theme.spacing("xs"),
-      marginRight: theme.spacing("xs"),
+      paddingRight: theme.hvSpacing("xs"),
+      marginRight: theme.hvSpacing("xs"),
     },
   }));
 
@@ -178,7 +178,7 @@ export const NoActions = () => {
 
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: theme.spacing(0, 0, "sm", 0),
+      padding: theme.hvSpacing(0, 0, "sm", 0),
     },
     bottomItem: {
       padding: 0,
@@ -255,13 +255,13 @@ export const KPICard = () => {
 
   const useStyles = makeStyles((theme) => ({
     item: {
-      padding: theme.spacing("sm", 0),
+      padding: theme.hvSpacing("sm", 0),
     },
     bottomItem: {
       padding: 0,
     },
     card: {
-      margin: theme.spacing("sm"),
+      margin: theme.hvSpacing("sm"),
       backgroundColor: theme.palette.atmo1,
     },
   }));

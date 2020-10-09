@@ -14,7 +14,7 @@ const styles = (theme) => {
     calendarWrapper: {
       overflow: "hidden",
       backgroundColor: theme.palette.atmo1,
-      padding: theme.spacing("sm"),
+      padding: theme.hvSpacing("sm"),
     },
     calendarGrid: {
       display: "flex",
@@ -50,7 +50,7 @@ const styles = (theme) => {
     navigationContainer: {
       display: "flex",
       justifyContent: "space-between",
-      padding: `${theme.spacing("xs")}px 0`,
+      padding: `${theme.hvSpacing("xs")}px 0`,
     },
     focusSelection: {
       "&:hover": {

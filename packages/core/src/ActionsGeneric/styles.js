@@ -2,7 +2,7 @@ const styles = (theme) => ({
   root: {},
   button: {
     "&:not(:last-child)": {
-      marginRight: theme.spacing("xs"),
+      marginRight: theme.hvSpacing("xs"),
     },
   },
   actionContainer: {

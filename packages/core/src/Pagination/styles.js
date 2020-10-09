@@ -40,7 +40,7 @@ const styles = (theme) => {
     },
     pageSizeOptionsSelect: {
       display: "inline-block",
-      margin: theme.spacing(0, "xs"),
+      margin: theme.hvSpacing(0, "xs"),
     },
     pageSizeTextContainer: {
       height: "32px",

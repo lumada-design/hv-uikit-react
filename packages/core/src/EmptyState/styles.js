@@ -40,14 +40,14 @@ const styles = (theme) => ({
   },
   titleContainer: {
     marginTop: 5,
-    marginBottom: theme.spacing("xs"),
+    marginBottom: theme.hvSpacing("xs"),
     [theme.breakpoints.only("xs")]: {
-      marginTop: theme.spacing("sm"),
+      marginTop: theme.hvSpacing("sm"),
     },
   },
   messageContainer: {},
   actionContainer: {
-    marginTop: theme.spacing("sm"),
+    marginTop: theme.hvSpacing("sm"),
   },
 });
 

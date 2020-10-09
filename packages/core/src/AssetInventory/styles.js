@@ -17,7 +17,7 @@ const styles = (theme) => ({
     paddingLeft: `${theme.hv.spacing.md}px`,
   },
   viewContainer: {
-    padding: theme.spacing("sm", 0),
+    padding: theme.hvSpacing("sm", 0),
     width: "100%",
   },
   sortContainer: {},
