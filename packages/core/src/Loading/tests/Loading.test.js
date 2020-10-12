@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import HvButton from "../../Button";
 import HvProvider from "../../Provider";
 import Loading from "../Loading";
-import { Hoc, Main } from "../stories/Loading.stories";
+import { WithChildren, Main } from "../stories/Loading.stories";
 
 describe("Loading", () => {
   it("should show Loading ", () => {
@@ -22,7 +22,7 @@ describe("Loading", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <Hoc />
+        <WithChildren />
       </HvProvider>
     );
 

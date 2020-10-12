@@ -164,7 +164,7 @@ export const AllComponents = () => {
 AllComponents.story = {
   parameters: {
     docs: {
-      storyDescription: "A card that has all it's component defined.",
+      storyDescription: "A Card with header, content, image, and actions.",
     },
   },
 };
@@ -351,44 +351,6 @@ KPICard.story = {
   },
 };
 
-export const WithComposition = () => (
-  <HvCard bgcolor="atmo1" style={{ width: "500px" }}>
-    <HvCardMedia
-      style={{ paddingBottom: 0 }}
-      component="img"
-      image={leaf}
-      height={160}
-      alt="leafy leaf"
-    />
-    <HvActionContainer aria-label="Composed card">
-      <HvCheckBox
-        value="value"
-        inputProps={{ "aria-label": "leaf input" }}
-        onChange={(event) => console.log(`my value is ${event.target.value}`)}
-      />
-      <div style={{ flex: 1 }} />
-      <HvActionsGeneric
-        actions={[
-          { id: "post", label: "Upload", iconCallback: () => <Upload />, disabled: false },
-          { id: "get", label: "Preview", iconCallback: () => <Preview />, disabled: true },
-          { id: "put", label: "Add", iconCallback: () => <Add />, disabled: true },
-          { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
-        ]}
-        maxVisibleActions={1}
-        actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
-      />
-    </HvActionContainer>
-  </HvCard>
-);
-
-WithComposition.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A card sample that shows how to compose card with subcomponents.",
-    },
-  },
-};
-
 export const Selectable = () => {
   const [checked, setChecked] = useState(false);
 
@@ -405,11 +367,6 @@ export const Selectable = () => {
         outline: "none",
       },
     },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-    },
   }));
 
   const classes = useStyles();
@@ -418,11 +375,11 @@ export const Selectable = () => {
     <HvCardContent>
       <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">ID</HvTypography>
-        <HvTypography className={classes.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
+        <HvTypography noWrap>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </div>
       <div style={{ marginTop: "20px" }}>
         <HvTypography variant="highlightText">Last connected</HvTypography>
-        <HvTypography className={classes.text}>Aug 30, 2017 12:27:53 PM</HvTypography>
+        <HvTypography noWrap>Aug 30, 2017 12:27:53 PM</HvTypography>
       </div>
     </HvCardContent>
   );

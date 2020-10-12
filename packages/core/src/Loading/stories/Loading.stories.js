@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
-import HvTable from "../../Table";
-import HvButton from "../../Button";
-import HvLoading from "../Loading";
-import Typography from "../../Typography";
+import { HvButton, HvLoading, HvTypography } from "../..";
+import TableExample from "./TableExample";
+
+/* eslint-disable react/prop-types */
 
 export default {
   title: "Components/Loading",
@@ -24,11 +23,10 @@ export const Main = () => {
   );
 };
 
-export const IndeterminateLoading = () => {
-  // eslint-disable-next-line react/prop-types
+export const Indeterminate = () => {
   const ExampleBox = ({ text, children }) => (
     <div>
-      <Typography>{text}</Typography>
+      <HvTypography>{text}</HvTypography>
       {children}
     </div>
   );
@@ -47,8 +45,7 @@ export const IndeterminateLoading = () => {
   );
 };
 
-export const IndeterminateLoadingOnButtons = () => {
-  // eslint-disable-next-line react/prop-types
+export const IndeterminateButtons = () => {
   const ExampleBox = ({ text, category, color }) => {
     const [isLoading, setIsLoading] = useState(false);
 
@@ -63,7 +60,7 @@ export const IndeterminateLoadingOnButtons = () => {
 
     return (
       <div style={{ textAlign: "center" }}>
-        <Typography style={{ paddingBottom: "5px" }}>{text}</Typography>
+        <HvTypography style={{ paddingBottom: "5px" }}>{text}</HvTypography>
         <HvButton category={category} onClick={activateTimer}>
           {(!isLoading && "Submit") || <HvLoading small isActive={isLoading} color={color} />}
         </HvButton>
@@ -79,198 +76,61 @@ export const IndeterminateLoadingOnButtons = () => {
   );
 };
 
-export const DeterminateLoading = () => {
-  // eslint-disable-next-line react/prop-types
+export const Determinate = () => {
   const ExampleBox = ({ text, children }) => (
     <div>
-      <Typography>{text}</Typography>
+      <HvTypography>{text}</HvTypography>
       {children}
     </div>
   );
 
-  const Progress = () => {
+  const Progress = ({ text, inc }) => {
     const [value, setValue] = useState(0);
 
     useEffect(() => {
       const interval = setInterval(() => {
-        setValue((v) => (v >= 75 ? 0 : Math.round((v + 1.3) * 100) / 100));
-      }, 1000);
+        setValue(inc);
+      }, 500);
       return () => clearInterval(interval);
-    }, []);
+    }, [inc]);
 
-    return <HvLoading isActive text={`${value}M/75M`} />;
-  };
-
-  const Percentage = () => {
-    const [value, setValue] = useState(0);
-
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setValue((v) => (v === 100 ? 0 : v + 5));
-      }, 1000);
-      return () => clearInterval(interval);
-    }, []);
-
-    return <HvLoading isActive text={`${value}%`} />;
+    return <HvLoading isActive text={text?.(value)} />;
   };
 
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
       <ExampleBox text="Determine w/ percentages">
-        <Percentage />
+        <Progress text={(v) => `${v}%`} inc={(v) => (v === 100 ? 0 : v + 5)} />
       </ExampleBox>
       <ExampleBox text="Determine w/ progress">
-        <Progress />
+        <Progress text={(v) => `${v}M/75M`} inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))} />
       </ExampleBox>
     </div>
   );
 };
 
-const Table = () => {
-  const data = [
-    {
-      id: 14,
-      name: "Event 1",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection ",
-      status: "Open",
-    },
-    {
-      id: 13,
-      name: "Event 2",
-      createdDate: "10/14/2018",
-      eventType: "Risk of failure profile",
-      status: "Pending",
-    },
-    {
-      id: 12,
-      name: "Event 3",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Closed",
-    },
-    {
-      id: 11,
-      name: "Event 4",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-    {
-      id: 10,
-      name: "Event 5",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Pending",
-    },
-    {
-      id: 8,
-      name: "Event 6",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Closed",
-    },
-    {
-      id: 7,
-      name: "Event 7",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-    {
-      id: 6,
-      name: "Event 8",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Pending",
-    },
-    {
-      id: 5,
-      name: "Event 9",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-    {
-      id: 4,
-      name: "Event 1",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Closed",
-    },
-    {
-      id: 3,
-      name: "Event 10",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-  ];
-
-  const getColumns = () => [
-    {
-      headerText: "Title",
-      accessor: "name",
-      cellType: "alpha-numeric",
-      fixed: "left",
-    },
-    {
-      headerText: "Time",
-      accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric",
-    },
-    {
-      headerText: "Event Type",
-      accessor: "eventType",
-      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
-    },
-    {
-      headerText: "Status",
-      accessor: "status",
-      format: (value) => value.original.status.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
-    },
-  ];
-
-  return (
-    <div style={{ padding: "10px" }}>
-      <HvTable
-        data={data}
-        id="test"
-        columns={getColumns()}
-        defaultPageSize={10}
-        resizable={false}
-      />
-    </div>
-  );
-};
-
-export const Hoc = () => {
+export const WithChildren = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>
       <HvButton id="buttonLoading" onClick={() => setIsLoading(!isLoading)}>
-        {isLoading ? "Disable" : "Activate"}
+        {isLoading ? "Deactivate" : "Activate"}
       </HvButton>
       <HvLoading isActive={isLoading} text="Loading">
         <div>
-          <Table />
+          <TableExample />
         </div>
       </HvLoading>
     </>
   );
 };
 
-Hoc.story = {
+WithChildren.story = {
   parameters: {
     docs: {
       storyDescription:
-        "If a children is passed the component works as a HOC (High Order Component), wrapping the children and creating a overlay.",
+        "If a children is passed the component wraps it, creating a overlay. You can control whether it's active with the `isActive` prop.",
     },
   },
 };
