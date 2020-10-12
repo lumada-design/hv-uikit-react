@@ -54,9 +54,6 @@ export * from "./FileUploader";
 export { default as HvFooter } from "./Footer";
 export * from "./Footer";
 
-export { default as HvActionContainer } from "./ActionBar/ActionContainer";
-export * from "./ActionBar/ActionContainer";
-
 export { default as HvGrid } from "./Grid";
 export * from "./Grid";
 

@@ -16,30 +16,30 @@ const DSVersion = (props) => {
     >
       <title>{svgTitle}</title>
       <linearGradient id="s" x2="0" y2="100%">
-        <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
-        <stop offset="1" stop-opacity=".1" />
+        <stop offset="0" stopColor="#bbb" stopOpacity=".1" />
+        <stop offset="1" stopOpacity=".1" />
       </linearGradient>
       <clipPath id="r">
         <rect width="64" height="20" rx="3" fill="#fff" />
       </clipPath>
-      <g clip-path="url(#r)">
+      <g clipPath="url(#r)">
         <rect width="25" height="20" fill="#555" />
         <rect x="25" width="39" height="20" fill="#007ec6" />
         <rect width="64" height="20" fill="url(#s)" />
       </g>
       <g
         fill="#fff"
-        text-anchor="middle"
-        font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
-        text-rendering="geometricPrecision"
-        font-size="110"
+        textAnchor="middle"
+        fontFamily="Verdana,Geneva,DejaVu Sans,sans-serif"
+        textRendering="geometricPrecision"
+        fontSize="110"
       >
         <text
           aria-hidden="true"
           x="135"
           y="150"
           fill="#010101"
-          fill-opacity=".3"
+          fillOpacity=".3"
           transform="scale(.1)"
           textLength="150"
         >
@@ -53,7 +53,7 @@ const DSVersion = (props) => {
           x="435"
           y="150"
           fill="#010101"
-          fill-opacity=".3"
+          fillOpacity=".3"
           transform="scale(.1)"
           textLength="290"
         >
