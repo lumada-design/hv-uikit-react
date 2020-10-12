@@ -23,30 +23,30 @@ const Stable = ({}) => {
         >
           <title>Design System Stable</title>
           <linearGradient id="a" x2="0" y2="100%">
-            <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
-            <stop offset="1" stop-opacity=".1" />
+            <stop offset="0" stopColor="#bbb" stopOpacity=".1" />
+            <stop offset="1" stopOpacity=".1" />
           </linearGradient>
           <clipPath id="b">
             <rect width="50" height="20" rx="3" fill="#fff" />
           </clipPath>
-          <g clip-path="url(#b)">
+          <g clipPath="url(#b)">
             <rect width="0" height="20" fill="#97ca00" />
             <rect x="0" width="50" height="20" fill="#97ca00" />
             <rect width="50" height="20" fill="url(#a)" />
           </g>
           <g
             fill="#fff"
-            text-anchor="middle"
-            font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
-            text-rendering="geometricPrecision"
-            font-size="110"
+            textAnchor="middle"
+            fontFamily="Verdana,Geneva,DejaVu Sans,sans-serif"
+            textRendering="geometricPrecision"
+            fontSize="110"
           >
             <text
               aria-hidden="true"
               x="245"
               y="150"
               fill="#010101"
-              fill-opacity=".3"
+              fillOpacity=".3"
               transform="scale(.1)"
               textLength="390"
             >
