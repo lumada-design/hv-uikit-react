@@ -284,7 +284,6 @@ jobs:
         with:
           storybook-url: http://localhost:9002
           browser: ${{ matrix.browser }}
-          includes: v3
           excludes: |
             bug-${{ matrix.browser }}
             bug-${{ matrix.browser }}-webdriver
