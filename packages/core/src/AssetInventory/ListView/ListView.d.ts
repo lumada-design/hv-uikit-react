@@ -19,16 +19,12 @@ export type HvListViewClassKey = "root" | "elements" | "tableBody" | "tableHead"
 export interface HvListViewProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvListViewClassKey> {
   /**
-   * Icon used in the multi button in the asset inventory.
-   */
-  icon: React.ReactNode;
-  /**
    * Component to the present when no data is available.
    */
-  emptyComponent: React.ReactNode;
+  emptyComponent?: React.ReactNode;
   /**
    * Configuration used to setup various properties of the view.
-   * This configuration is propagated to the known childs of the asset inventory through context.
+   * This configuration is propagated to the known children of the asset inventory through context.
    */
   viewConfiguration?: ListViewConfiguration;
   /**

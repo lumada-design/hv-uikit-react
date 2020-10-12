@@ -178,7 +178,7 @@ export interface HvAssetInventoryProps
   /**
    * Component to the present when no data is available.
    */
-  emptyComponent: React.ReactNode;
+  emptyComponent?: React.ReactNode;
 }
 
 export default function HvAssetInventory(props: HvAssetInventoryProps): JSX.Element | null;

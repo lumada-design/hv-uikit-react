@@ -1,2 +1,2 @@
-export { default as ActionsGeneric } from "./ActionsGeneric";
+export { default } from "./ActionsGeneric";
 export * from "./ActionsGeneric";

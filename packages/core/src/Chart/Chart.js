@@ -147,6 +147,10 @@ Chart.propTypes = {
    * Defines the Y axis title.
    */
   yAxisTitle: PropTypes.string,
+  /**
+   * Defines the chart subtitle.
+   */
+  subtitle: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvChart" })(Chart);

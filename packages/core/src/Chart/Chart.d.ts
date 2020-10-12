@@ -16,6 +16,10 @@ export interface HvChartProps extends StandardProps<HvPlotProps, HvChartClassKey
    * Defines the Y axis title.
    */
   yAxisTitle?: string;
+  /**
+   * Defines the chart subtitle.
+   */
+  subtitle?: string;
 }
 
 export default function HvChart(props: HvChartProps): JSX.Element | null;

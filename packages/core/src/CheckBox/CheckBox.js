@@ -20,7 +20,7 @@ import styles from "./styles";
  * which the user <b>may select any number of options</b> to complete their task.
  *
  * It can also be used individually to represent the toggle of a single option, when
- * the Toogle Switch and Toggle Button aren't more appropriate.
+ * the Toggle Switch and Toggle Button aren't more appropriate.
  */
 const HvCheckBox = (props) => {
   const {
@@ -249,8 +249,8 @@ HvCheckBox.propTypes = {
   /**
    * The value of the form element.
    *
-   * Is up to the application's logic when to consider the submition of this value.
-   * Generaly it should be used only when the checkbox is neither unchecked nor indeterminate.
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the checkbox is neither unchecked nor indeterminate.
    *
    * The default value is "on".
    */
@@ -301,7 +301,7 @@ HvCheckBox.propTypes = {
    */
   defaultChecked: PropTypes.bool,
   /**
-   * If `true` the checkbox visualy shows the indeterminate state.
+   * If `true` the checkbox visually shows the indeterminate state.
    *
    * When the checkbox is uncontrolled the indeterminate state is cleared after any change
    * to the checked state. However, if controlled the user must also control the indeterminate

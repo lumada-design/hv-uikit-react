@@ -24,10 +24,6 @@ export interface CardViewConfiguration extends ViewConfiguration {
 export interface HvCardViewProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvCardViewClassKey> {
   /**
-   * Icon used in the multi button in the asset inventory.
-   */
-  icon: React.ReactNode;
-  /**
    * Metadata associated with the values.
    */
   metadata?: AssetInventoryMetadata[];
@@ -55,7 +51,7 @@ export interface HvCardViewProps
   /**
    * Component to the present when no data is available.
    */
-  emptyComponent: React.ReactNode;
+  emptyComponent?: React.ReactNode;
   /**
    * Configuration settings for the view.
    */

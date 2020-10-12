@@ -66,7 +66,7 @@ export interface HvTypographyProps
    * Note that text overflow can only happen with block or inline-block level elements
    * (the element needs to have a width in order to overflow).
    */
-  noWrap: boolean;
+  noWrap?: boolean;
 }
 
 export default function HvTypography(props: HvTypographyProps): JSX.Element | null;
