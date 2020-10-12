@@ -37,7 +37,7 @@ const styles = (theme) => ({
     },
   },
   menuList: {
-    padding: theme.spacing("sm"),
+    padding: theme.hvSpacing("sm"),
     whiteSpace: "nowrap",
     backgroundColor: theme.palette.atmo1,
     boxShadow: theme.hv.shadows[1],

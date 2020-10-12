@@ -11,7 +11,7 @@ const styles = (theme) => ({
   list: {
     backgroundColor: theme.palette.atmo1,
     boxShadow: theme.hv.shadows[1],
-    padding: theme.spacing("sm"),
+    padding: theme.hvSpacing("sm"),
   },
 });
 

@@ -47,8 +47,8 @@ const styles = (theme) => ({
     flexWrap: "wrap",
     "&>*": {
       width: 160,
-      padding: theme.spacing("xs"),
-      margin: theme.spacing("xs"),
+      padding: theme.hvSpacing("xs"),
+      margin: theme.hvSpacing("xs"),
       textAlign: "center",
       borderRadius: 4,
       backgroundColor: theme.hv.palette.atmosphere.atmo1,

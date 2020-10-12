@@ -21,7 +21,7 @@ const styles = (theme) => {
         ...outlineStyles,
       },
       minWidth: "70px",
-      padding: theme.spacing(0, "xs"),
+      padding: theme.hvSpacing(0, "xs"),
       cursor: "pointer",
       height: "32px",
       minHeight: "32px",

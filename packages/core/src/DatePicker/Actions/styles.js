@@ -5,7 +5,7 @@ const styles = (theme) => ({
       color: theme.palette.acce1,
     },
     "&:nth-child(1)": {
-      marginRight: theme.spacing("xs"),
+      marginRight: theme.hvSpacing("xs"),
     },
   },
 });

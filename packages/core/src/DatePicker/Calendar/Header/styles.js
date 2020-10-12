@@ -13,10 +13,10 @@ const styles = (theme) => ({
   },
   headerDayOfWeek: {
     paddingTop: "5px",
-    paddingLeft: theme.spacing("xs"),
+    paddingLeft: theme.hvSpacing("xs"),
   },
   headerDate: {
-    padding: `5px ${theme.spacing("xs")}px`,
+    padding: theme.hvSpacing("5px", "xs"),
   },
   invalid: {
     border: `1px solid ${theme.palette.sema4}`,

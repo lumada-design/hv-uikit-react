@@ -23,7 +23,7 @@ export const Main = () => {
       ...theme.hv.typography.sText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,
@@ -51,7 +51,7 @@ export const SmMaxWidth = () => {
       ...theme.hv.typography.sText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,
@@ -87,7 +87,7 @@ export const FullWidth = () => {
       ...theme.hv.typography.sText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,

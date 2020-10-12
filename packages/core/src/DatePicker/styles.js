@@ -13,8 +13,8 @@ const styles = (theme) => ({
     position: "relative",
     background: theme.palette.atmo1,
     height: "32px",
-    paddingLeft: theme.spacing("xs"),
-    paddingRight: theme.spacing("md"),
+    paddingLeft: theme.hvSpacing("xs"),
+    paddingRight: theme.hvSpacing("md"),
     fontFamily: theme.hv.typography.fontFamily,
     "&:focus": {
       ...outlineStyles,
@@ -71,7 +71,7 @@ const styles = (theme) => ({
     width: "320px",
   },
   label: {
-    marginBottom: theme.spacing("xs"),
+    marginBottom: theme.hvSpacing("xs"),
     display: "block",
   },
   calendarContainer: {
@@ -79,7 +79,7 @@ const styles = (theme) => ({
     width: "320px",
   },
   singleCalendarFooter: {
-    padding: theme.spacing("sm"),
+    padding: theme.hvSpacing("sm"),
     textAlign: "right",
     borderTop: `3px solid ${theme.palette.atmo2}`,
   },
@@ -110,7 +110,7 @@ const styles = (theme) => ({
   rangeFooterRight: {
     width: "50%",
     textAlign: "right",
-    padding: theme.spacing("sm"),
+    padding: theme.hvSpacing("sm"),
   },
   actionsContainer: {
     textAlign: "right",

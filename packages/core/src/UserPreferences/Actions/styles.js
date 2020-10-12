@@ -10,7 +10,7 @@ const hover = (theme) => ({
 const styles = (theme) => ({
   root: {
     display: "block",
-    padding: `${theme.spacing("xs")}px ${theme.spacing("sm")}px 0 ${theme.spacing("sm")}px`,
+    padding: theme.hvSpacing("xs", "sm", 0, "sm"),
     background: theme.hv.palette.atmosphere.atmo1,
 
     "& :not(:last-child)": {
