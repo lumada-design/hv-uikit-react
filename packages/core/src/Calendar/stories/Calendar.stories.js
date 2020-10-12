@@ -222,5 +222,8 @@ Localized.story = {
     docs: {
       storyDescription: "Warning: Changing this sample locale changes the locale for all samples.",
     },
+    eyes: {
+      waitBeforeScreenshot: "#locale-calendar-header-header-input",
+    },
   },
 };
