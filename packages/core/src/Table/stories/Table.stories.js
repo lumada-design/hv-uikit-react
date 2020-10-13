@@ -2208,6 +2208,9 @@ ServerSidePagination.story = {
       storyDescription:
         "Table sample that shows how to use the table with server side pagination. Bulk Actions",
     },
+    eyes: {
+      waitBeforeScreenshot: "div[role=cell][id*='createdDate']",
+    },
   },
 };
 
