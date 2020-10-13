@@ -23,7 +23,7 @@ const FlexDecorator = ({ children }) => {
 };
 
 export default {
-  title: "Components/Forms/Radio Button",
+  title: "Forms/Radio Button",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvRadio } from '@hv/uikit-react-core/dist'",

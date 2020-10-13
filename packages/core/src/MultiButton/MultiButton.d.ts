@@ -13,6 +13,10 @@ export type HvMultiButtonClassKey =
 export interface HvMultiButtonProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvMultiButtonClassKey, "onChange"> {
   /**
+   * If all the buttons are disabled.
+   */
+  disabled?: boolean;
+  /**
    * If the MultiButton is to be displayed vertically.
    */
   vertical?: boolean;

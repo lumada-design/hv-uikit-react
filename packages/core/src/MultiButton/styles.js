@@ -7,6 +7,12 @@ const styles = (theme) => ({
     background: theme.hv.palette.atmosphere.atmo2,
     position: "relative",
     zIndex: 0,
+
+    // prevent the focus ring to be hidden by sibling hover background
+    "&>.HvButton-focusVisible": {
+      zIndex: 5,
+    },
+
     "& button$button": {
       height: 32,
       width: "100%",
@@ -80,6 +86,12 @@ const styles = (theme) => ({
       },
       "&:first-child, &:last-child": {
         border: `solid 1px ${theme.hv.palette.accent.acce1}`,
+      },
+
+      // prevent the focus ring to be hidden by sibling hover background
+      // even when selected
+      "&.HvButton-focusVisible": {
+        zIndex: 5,
       },
     },
   },
