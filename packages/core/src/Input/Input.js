@@ -14,7 +14,7 @@ import {
 } from "..";
 import withId from "../withId";
 import withLabels from "../withLabels";
-import { isKeypress, KeyboardCodes, setId } from "../utils";
+import { isKeypress, KeyboardCodes, setId, useControlled } from "../utils";
 import validationTypes from "./validationTypes";
 import validationStates, { isInvalid } from "./validationStates";
 import { validateCharLength, validateInput, validationIcon } from "./validations";
@@ -51,7 +51,7 @@ const HvInput = (props) => {
     validationIconPosition = "right",
     showInfo = true,
     validationType = validationTypes.none,
-    validationState: validationStateProp = validationStates.empty,
+    validationState: validationStateProp,
     maxCharQuantity,
     minCharQuantity,
     validation,
@@ -71,10 +71,21 @@ const HvInput = (props) => {
   } = props;
   const [value, setValue] = useState(valueProp || initialValue);
   const [suggestionValues, setSuggestionValues] = useState(null);
-  const [validationState, setValidationState] = useState(validationStateProp);
-  const [warningText, setWarningText] = useState(
-    isInvalid(validationStateProp) ? labels.warningText : null
-  );
+
+  // validation related state
+  const [validationState, setValidationState] = useControlled({
+    controlled: validationStateProp,
+    default: value ? validationStates.filled : validationStates.empty,
+    name: "HvInput",
+    state: "validationState",
+  });
+
+  const [warningText, setWarningText] = useControlled({
+    controlled: externalWarningTextOverride,
+    default: labels.warningText,
+    name: "HvInput",
+    state: "externalWarningTextOverride",
+  });
 
   const materialInputRef = useRef(null);
   const inputRef = useRef(inputRefProp || null);
@@ -83,13 +94,6 @@ const HvInput = (props) => {
   useEffect(() => {
     if (valueProp != null) setValue(valueProp);
   }, [valueProp]);
-
-  useEffect(() => {
-    if (validationStateProp != null) {
-      setValidationState(validationStateProp);
-      setWarningText(isInvalid(validationStateProp) ? labels.warningText : null);
-    }
-  }, [validationStateProp, labels.warningText]);
 
   useEffect(() => {
     suggestionRef.current = document.getElementById(setId(id, "suggestions"));
@@ -103,8 +107,13 @@ const HvInput = (props) => {
    * @param {*} warnText - the error text below the input.
    */
   const manageInputValueState = (val, warnText) => {
-    setValidationState(val ? validationStates.filled : validationStates.empty);
-    setWarningText(warnText);
+    setValidationState(() => {
+      // this will only run if validationState is uncontrolled
+      setWarningText(warnText);
+
+      return val ? validationStates.filled : validationStates.empty;
+    });
+
     setValue(val);
   };
 
@@ -221,8 +230,13 @@ const HvInput = (props) => {
       }
     }
 
-    setValidationState(validationStateResult);
-    setWarningText(warningTextResult);
+    setValidationState(() => {
+      // this will only run if validationState is uncontrolled
+      setWarningText(warningTextResult);
+
+      return validationStateResult;
+    });
+
     onBlur?.(value, validationStateResult);
   };
 
@@ -405,7 +419,7 @@ const HvInput = (props) => {
       />
 
       <HvWarningText disableBorder id={setId(id, "warning")}>
-        {isStateInvalid ? externalWarningTextOverride || warningText : ""}
+        {isStateInvalid ? warningText : ""}
       </HvWarningText>
     </HvFormElement>
   );

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.2...@hv/uikit-react-core@2.12.3) (2020-10-12)
+
+
+### Bug Fixes
+
+* **input:** allow control of validationState HVUIKIT-5554 [#2018](https://github.com/pentaho/hv-uikit-react/issues/2018) ([10e1e7c](https://github.com/pentaho/hv-uikit-react/commit/10e1e7c6edd8ab2aac28971a8872cd8b96a5da1f))
+
+
+
+
+
 ## [2.12.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.1...@hv/uikit-react-core@2.12.2) (2020-09-30)
 
 
