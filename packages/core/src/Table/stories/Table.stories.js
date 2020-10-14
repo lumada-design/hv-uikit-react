@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
 import { makeStyles } from "@material-ui/core/styles";
 import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
 
-import { HvEmptyState, HvTable } from "../..";
+import { HvEmptyState, HvTable, HvButton } from "../..";
 
 /* eslint-disable no-underscore-dangle */
 
@@ -2094,6 +2094,99 @@ TableWithChangingData.story = {
   parameters: {
     docs: {
       storyDescription: "Sample showcasing the table component behavior with changing data.",
+    },
+  },
+};
+
+export const TableWithGrowingDataAndNoPagination = () => {
+  const MAX_EVENT_NUMBER = 20;
+
+  const initialData = [
+    {
+      number: 1,
+      description: "Event 1",
+    },
+    {
+      number: 2,
+      description: "Event 2",
+    },
+    {
+      number: 3,
+      description: "Event 3",
+    },
+    {
+      number: 4,
+      description: "Event 4",
+    },
+  ];
+
+  const getColumns = () => [
+    {
+      headerText: "Number",
+      accessor: "number",
+      cellType: "numeric",
+      width: 100,
+    },
+    {
+      headerText: "Description",
+      accessor: "name",
+      cellType: "alpha-numeric",
+    },
+  ];
+
+  const [data, setData] = useState(initialData);
+
+  // Keep the ref always pointing to the current data value.
+  const dataRef = useRef();
+  dataRef.current = data;
+
+  const createEvent = (number) => ({ number, description: `Event ${number}` });
+
+  useEffect(() => {
+    if (data.length + 1 > MAX_EVENT_NUMBER) {
+      return undefined;
+    }
+
+    const timeout = setTimeout(() => {
+      // Update, unless data has been changed in the meantime by the restart button.
+      if (dataRef.current === data) {
+        setData(data.concat(createEvent(data.length + 1)));
+      }
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  });
+
+  const restartSample = () => {
+    setData(initialData);
+  };
+
+  const onPageSizeChange = (newPageSize) => {
+    console.log(`onPageSizeChange: ${newPageSize}`);
+  };
+
+  return (
+    <div>
+      <HvButton onClick={restartSample}>Restart</HvButton>
+      <p>&nbsp;</p>
+      <HvTable
+        id="table"
+        data={data}
+        columns={getColumns()}
+        resizable={false}
+        showPagination={false}
+        onPageSizeChange={onPageSizeChange}
+      />
+    </div>
+  );
+};
+
+TableWithGrowingDataAndNoPagination.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Table sample that shows the ability to continuously update the page size as data grows, " +
+        "when the pagination control is not shown.",
     },
   },
 };
