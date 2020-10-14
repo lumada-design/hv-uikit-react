@@ -101,9 +101,6 @@ export * from "./Pagination";
 export { default as HvProvider } from "./Provider";
 export * from "./Provider";
 
-export { default as HvSearchBox } from "./SearchBox";
-export * from "./SearchBox";
-
 export { default as HvBaseCheckBox } from "./BaseCheckBox";
 export * from "./BaseCheckBox";
 

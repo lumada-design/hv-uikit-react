@@ -10,7 +10,7 @@ ${checkBox1}          xpath:(//input[@type='checkbox'])[1]
 ${checkBox2}          xpath:(//input[@type='checkbox'])[2]
 ${checkBox3}          xpath:(//input[@type='checkbox'])[3]
 ${checkBox4}          xpath:(//input[@type='checkbox'])[4]
-${clearText}          css:button[aria-label='clear button']
+${clearText}          css:button[aria-label='Clear the text']
 ${dropdownHeader}     css:#hv-assetinventory-sort-dropdown
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${firstCheckbox}      css:input[value='id_0']
@@ -29,6 +29,6 @@ ${row4}               css:#listView ul>li:nth-child(4)
 ${row5}               css:#listView ul>li:nth-child(5)
 ${row6}               css:#listView ul>li:nth-child(6)
 ${rows}               css:#listView ul>li
-${searchBox}          css:input[type=text]
+${searchBox}          css:input[type=search]
 ${secondCheckbox}     css:input[value='id_1']
 ${sortTitleDesc}      css:#hv-assetinventory-sort-values-list-item-1

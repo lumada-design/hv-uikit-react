@@ -233,6 +233,7 @@ const HvInput = (props) => {
   const [suggestionValues, setSuggestionValues] = useState(null);
 
   const canShowSuggestions = suggestionListCallback != null;
+  const hasSuggestions = !!suggestionValues;
 
   const materialInputRef = useRef(null);
   const suggestionRef = useRef({});
@@ -285,6 +286,11 @@ const HvInput = (props) => {
 
     focusInput();
     suggestionClearHandler();
+
+    if (type === "search") {
+      // trigger the onEnter callback when the user selects an option in a search box
+      onEnter?.(event, newValue);
+    }
   };
 
   const onChangeHandler = (event, newValue) => {
@@ -355,7 +361,7 @@ const HvInput = (props) => {
    * @param {Object} event - The event provided by the material ui input
    */
   const onKeyDownHandler = (event) => {
-    if (isKeypress(event, KeyboardCodes.ArrowDown) && !!suggestionValues) {
+    if (isKeypress(event, KeyboardCodes.ArrowDown) && hasSuggestions) {
       const li = getSuggestions(0);
       li?.focus();
     } else if (isKeypress(event, KeyboardCodes.Enter)) {
@@ -589,7 +595,9 @@ const HvInput = (props) => {
       disabled={disabled}
       required={required}
       readOnly={readOnly}
-      className={clsx(classes.root, className)}
+      className={clsx(classes.root, className, {
+        [classes.hasSuggestions]: hasSuggestions,
+      })}
       onBlur={onContainerBlurHandler}
     >
       {(hasLabel || hasDescription) && (
@@ -631,6 +639,7 @@ const HvInput = (props) => {
           inputRootFocused: classes.inputRootFocused,
           inputRootDisabled: classes.inputRootDisabled,
           inputRootMultiline: classes.inputRootMultiline,
+          inputBorderContainer: classes.inputBorderContainer,
         }}
         invalid={isStateInvalid}
         inputProps={{
@@ -657,19 +666,22 @@ const HvInput = (props) => {
       />
 
       {canShowSuggestions && (
-        <HvSuggestions
-          id={setId(elementId, "suggestions")}
-          classes={{
-            root: classes.suggestionsContainer,
-            list: classes.suggestionList,
-          }}
-          expanded={!!suggestionValues}
-          anchorEl={inputRef?.current?.parentElement}
-          onClose={suggestionClearHandler}
-          onKeyDown={onSuggestionKeyDown}
-          onSuggestionSelected={suggestionSelectedHandler}
-          suggestionValues={suggestionValues}
-        />
+        <>
+          {hasSuggestions && <div role="presentation" className={classes.inputExtension} />}
+          <HvSuggestions
+            id={setId(elementId, "suggestions")}
+            classes={{
+              root: classes.suggestionsContainer,
+              list: classes.suggestionList,
+            }}
+            expanded={hasSuggestions}
+            anchorEl={inputRef?.current?.parentElement}
+            onClose={suggestionClearHandler}
+            onKeyDown={onSuggestionKeyDown}
+            onSuggestionSelected={suggestionSelectedHandler}
+            suggestionValues={suggestionValues}
+          />
+        </>
       )}
 
       {canShowError && (
@@ -694,11 +706,19 @@ HvInput.propTypes = {
      * Styles applied to the root container of the input.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the root container when the suggestion list is open.
+     */
+    hasSuggestions: PropTypes.string,
 
     /**
      * Styles applied to input root which is comprising of everything but the labels and descriptions.
      */
     inputRoot: PropTypes.string,
+    /**
+     * Styles applied to the base input border element.
+     */
+    inputBorderContainer: PropTypes.string,
     /**
      * Styles applied to input root when it is focused.
      */
@@ -745,6 +765,11 @@ HvInput.propTypes = {
      * Styles applied to the icon used to clean the input.
      */
     iconClear: PropTypes.string,
+
+    /**
+     * Styles applied to the input extension shown when the suggestions list is visible.
+     */
+    inputExtension: PropTypes.string,
 
     /**
      * Styles applied to the container of the suggestions list.

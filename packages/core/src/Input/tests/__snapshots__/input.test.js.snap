@@ -10,9 +10,12 @@ exports[`Input should not have the validation section 1`] = `
         "adornmentButton": "HvInput-adornmentButton",
         "adornmentsBox": "HvInput-adornmentsBox",
         "description": "HvInput-description",
+        "hasSuggestions": "HvInput-hasSuggestions",
         "icon": "HvInput-icon",
         "iconClear": "HvInput-iconClear",
         "input": "HvInput-input",
+        "inputBorderContainer": "HvInput-inputBorderContainer",
+        "inputExtension": "HvInput-inputExtension",
         "inputRoot": "HvInput-inputRoot",
         "inputRootDisabled": "HvInput-inputRootDisabled",
         "inputRootFocused": "HvInput-inputRootFocused",
@@ -32,9 +35,12 @@ exports[`Input should not have the validation section 1`] = `
           "adornmentButton": "HvInput-adornmentButton",
           "adornmentsBox": "HvInput-adornmentsBox",
           "description": "HvInput-description",
+          "hasSuggestions": "HvInput-hasSuggestions",
           "icon": "HvInput-icon",
           "iconClear": "HvInput-iconClear",
           "input": "HvInput-input",
+          "inputBorderContainer": "HvInput-inputBorderContainer",
+          "inputExtension": "HvInput-inputExtension",
           "inputRoot": "HvInput-inputRoot",
           "inputRootDisabled": "HvInput-inputRootDisabled",
           "inputRootFocused": "HvInput-inputRootFocused",
@@ -105,6 +111,7 @@ exports[`Input should not have the validation section 1`] = `
                 classes={
                   Object {
                     "input": "HvInput-input",
+                    "inputBorderContainer": "HvInput-inputBorderContainer",
                     "inputRoot": "HvInput-inputRoot",
                     "inputRootDisabled": "HvInput-inputRootDisabled",
                     "inputRootFocused": "HvInput-inputRootFocused",
@@ -162,7 +169,7 @@ exports[`Input should not have the validation section 1`] = `
                     Object {
                       "disabled": "HvBaseInput-disabled",
                       "input": "HvBaseInput-input HvInput-input",
-                      "inputBorderContainer": "HvBaseInput-inputBorderContainer",
+                      "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
                       "inputResizable": "HvBaseInput-inputResizable",
                       "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot",
                       "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
@@ -512,7 +519,7 @@ exports[`Input should not have the validation section 1`] = `
                       </ForwardRef(Input)>
                     </WithStyles(ForwardRef(Input))>
                     <div
-                      className="HvBaseInput-inputBorderContainer"
+                      className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                       role="presentation"
                     />
                   </div>
@@ -541,9 +548,12 @@ exports[`Input should pass other props to the child input component 1`] = `
         "adornmentButton": "HvInput-adornmentButton",
         "adornmentsBox": "HvInput-adornmentsBox",
         "description": "HvInput-description",
+        "hasSuggestions": "HvInput-hasSuggestions",
         "icon": "HvInput-icon",
         "iconClear": "HvInput-iconClear",
         "input": "HvInput-input",
+        "inputBorderContainer": "HvInput-inputBorderContainer",
+        "inputExtension": "HvInput-inputExtension",
         "inputRoot": "HvInput-inputRoot",
         "inputRootDisabled": "HvInput-inputRootDisabled",
         "inputRootFocused": "HvInput-inputRootFocused",
@@ -567,9 +577,12 @@ exports[`Input should pass other props to the child input component 1`] = `
           "adornmentButton": "HvInput-adornmentButton",
           "adornmentsBox": "HvInput-adornmentsBox",
           "description": "HvInput-description",
+          "hasSuggestions": "HvInput-hasSuggestions",
           "icon": "HvInput-icon",
           "iconClear": "HvInput-iconClear",
           "input": "HvInput-input",
+          "inputBorderContainer": "HvInput-inputBorderContainer",
+          "inputExtension": "HvInput-inputExtension",
           "inputRoot": "HvInput-inputRoot",
           "inputRootDisabled": "HvInput-inputRootDisabled",
           "inputRootFocused": "HvInput-inputRootFocused",
@@ -644,6 +657,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 classes={
                   Object {
                     "input": "HvInput-input",
+                    "inputBorderContainer": "HvInput-inputBorderContainer",
                     "inputRoot": "HvInput-inputRoot",
                     "inputRootDisabled": "HvInput-inputRootDisabled",
                     "inputRootFocused": "HvInput-inputRootFocused",
@@ -703,7 +717,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                     Object {
                       "disabled": "HvBaseInput-disabled",
                       "input": "HvBaseInput-input HvInput-input",
-                      "inputBorderContainer": "HvBaseInput-inputBorderContainer",
+                      "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
                       "inputResizable": "HvBaseInput-inputResizable",
                       "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot",
                       "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
@@ -1063,7 +1077,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                       </ForwardRef(Input)>
                     </WithStyles(ForwardRef(Input))>
                     <div
-                      className="HvBaseInput-inputBorderContainer"
+                      className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                       role="presentation"
                     />
                   </div>
@@ -1189,9 +1203,12 @@ exports[`Input should render correctly 1`] = `
         "adornmentButton": "HvInput-adornmentButton",
         "adornmentsBox": "HvInput-adornmentsBox",
         "description": "HvInput-description",
+        "hasSuggestions": "HvInput-hasSuggestions",
         "icon": "HvInput-icon",
         "iconClear": "HvInput-iconClear",
         "input": "HvInput-input",
+        "inputBorderContainer": "HvInput-inputBorderContainer",
+        "inputExtension": "HvInput-inputExtension",
         "inputRoot": "HvInput-inputRoot",
         "inputRootDisabled": "HvInput-inputRootDisabled",
         "inputRootFocused": "HvInput-inputRootFocused",
@@ -1210,9 +1227,12 @@ exports[`Input should render correctly 1`] = `
           "adornmentButton": "HvInput-adornmentButton",
           "adornmentsBox": "HvInput-adornmentsBox",
           "description": "HvInput-description",
+          "hasSuggestions": "HvInput-hasSuggestions",
           "icon": "HvInput-icon",
           "iconClear": "HvInput-iconClear",
           "input": "HvInput-input",
+          "inputBorderContainer": "HvInput-inputBorderContainer",
+          "inputExtension": "HvInput-inputExtension",
           "inputRoot": "HvInput-inputRoot",
           "inputRootDisabled": "HvInput-inputRootDisabled",
           "inputRootFocused": "HvInput-inputRootFocused",
@@ -1282,6 +1302,7 @@ exports[`Input should render correctly 1`] = `
                 classes={
                   Object {
                     "input": "HvInput-input",
+                    "inputBorderContainer": "HvInput-inputBorderContainer",
                     "inputRoot": "HvInput-inputRoot",
                     "inputRootDisabled": "HvInput-inputRootDisabled",
                     "inputRootFocused": "HvInput-inputRootFocused",
@@ -1338,7 +1359,7 @@ exports[`Input should render correctly 1`] = `
                     Object {
                       "disabled": "HvBaseInput-disabled",
                       "input": "HvBaseInput-input HvInput-input",
-                      "inputBorderContainer": "HvBaseInput-inputBorderContainer",
+                      "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
                       "inputResizable": "HvBaseInput-inputResizable",
                       "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot",
                       "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
@@ -1682,7 +1703,7 @@ exports[`Input should render correctly 1`] = `
                       </ForwardRef(Input)>
                     </WithStyles(ForwardRef(Input))>
                     <div
-                      className="HvBaseInput-inputBorderContainer"
+                      className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                       role="presentation"
                     />
                   </div>

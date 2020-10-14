@@ -6,6 +6,8 @@ const styles = (theme) => ({
     maxWidth: "610px",
   },
 
+  hasSuggestions: {},
+
   inputRoot: {
     "&:hover": {
       "& $iconClear": {
@@ -69,14 +71,24 @@ const styles = (theme) => ({
   suggestionsContainer: {
     width: "100%",
     position: "relative",
-    top: "-1px",
   },
   suggestionList: {
+    // ensure more specificity than .HvSuggestions-root .HvSuggestions-list
+    "$root $suggestionsContainer &": {
+      width: "100%",
+    },
+  },
+
+  inputExtension: {
+    height: theme.hv.spacing.xs,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
-    padding: theme.hv.spacing.sm,
-    position: "absolute",
-    width: "100%",
+    boxShadow: `0px 8px 0px ${theme.hv.palette.atmosphere.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
+  },
+
+  inputBorderContainer: {
+    "$hasSuggestions &": {
+      display: "none",
+    },
   },
 
   "@global": {
