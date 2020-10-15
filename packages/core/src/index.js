@@ -71,7 +71,6 @@ export { default as HvPanel } from "./Panel";
 // HOCs
 export { default as withId } from "./withId";
 export { default as withLabels } from "./withLabels";
-export { default as withSemantic } from "./withSemantic";
 export { default as withTooltip } from "./withTooltip";
 
 // Hooks
