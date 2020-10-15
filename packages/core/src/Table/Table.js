@@ -499,6 +499,7 @@ const HvTable = (props) => {
         <HvBulkActions
           id={setId(id, "select-all")}
           aria-controls={setId(id, "table")}
+          classes={{ root: classes.bulkActions }}
           numTotal={dataSize ?? data.length}
           numSelected={selection.length}
           onSelectAll={togglePage}
@@ -654,6 +655,10 @@ HvTable.propTypes = {
      * Styles applied to the component table.
      */
     table: PropTypes.string,
+    /**
+     * Styles applied to the HvBulkActions component.
+     */
+    bulkActions: PropTypes.string,
   }).isRequired,
   /**
    * Labels for the pagination.

@@ -28,7 +28,7 @@ const styles = (theme) => ({
     marginTop: 0,
   },
   bulkActions: {
-    marginBottom: 0,
+    margin: theme.hvSpacing("sm", 0, 0),
   },
 });
 

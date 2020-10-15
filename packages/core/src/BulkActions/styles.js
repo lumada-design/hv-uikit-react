@@ -4,7 +4,6 @@ const styles = (theme) => ({
   root: {
     display: "flex",
     backgroundColor: theme.palette.atmo1,
-    margin: theme.hvSpacing("sm", 0, "xs"),
   },
   semantic: {
     backgroundColor: theme.palette.sema7,
