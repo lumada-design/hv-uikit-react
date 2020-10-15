@@ -23,11 +23,8 @@ iteratable when is readOnly but not selectable
 
 not iteratable when is disabled
     [Setup]    open checkbox sample    disabled
-    Press Keys                          css:body    TAB
-    Run Keyword If                      '${BROWSER.lower()}'=='ie'
-    ...    Element Should Be Focused    css:html
-    ...    ELSE
-    ...    Element Should Be Focused    css:body
+    Press Keys                     css:body    TAB
+    html body should be focused
 
 TAB sequence
     [Setup]    open checkbox sample    main

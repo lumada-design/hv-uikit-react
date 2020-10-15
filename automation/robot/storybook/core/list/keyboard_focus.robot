@@ -1,80 +1,76 @@
 *** Setting ***
-Variables         variables.yaml
-Resource          ../_keywords.resource
-Force Tags        keyboard    issue
-Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
+Resource         _list.resource
+Test Setup       open list sample    multi-selection-with-select-all
+Documentation    https://www.w3.org/TR/wai-aria-practices/#Listbox
+Force Tags       keyboard
 
 
 *** Test Cases ***
-focus next option when pressing DOWN on option
-    [Tags]    bug-ie-webdriver
-    Go To                                       ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible               ${list}
-    set focus and press keys                    ${option1}    DOWN
-    element attribute value should contain      ${option2}    class    focused
-    Press Keys                                  ${None}       DOWN
-    element attribute value should contain      ${option3}    class    focused
-    wait until element attribute not contain    ${option2}    class    focused
+focus next and previous option when focus is on option and is pressed DOWN and UP
+    set focus and press keys     ${option}(1)    DOWN
+    Element Should Be Focused    ${option}(2)
+    Press Keys                   ${None}    DOWN    DOWN    DOWN
+    Element Should Be Focused    ${option}(5)
+    Press Keys                   ${None}    UP    UP    UP    UP
+    Element Should Be Focused    ${option}(1)
 
-focus the previous option when pressing UP on option
-    [Tags]    bug-ie-webdriver
-    Go To                                       ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible               ${list}
-    set focus and press keys                    ${option5}    UP
-    element attribute value should contain      ${option4}    class    focused
-    Press Keys                                  ${None}       UP
-    element attribute value should contain      ${option3}    class    focused
-    wait until element attribute not contain    ${option4}    class    focused
+loop option navigation when using UP and DOWN
+    [Documentation]   focus the first option when pressing DOWN on last option
+    ...               focus the last option when pressing UP on first option
+    set focus and press keys      ${option}(5)    DOWN
+    Element Should Be Focused     ${option}(1)
+    Press Keys                    ${None}    UP
+    Element Should Be Focused     ${option}(5)
 
-focus the first option when pressing DOWN on last option
-    Go To                                     ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible             ${list}
-    set focus and press keys                  ${option5}    DOWN
-    element attribute value should contain    ${option1}    class    focused
+jump focus to next enable option when is a simple list
+    [Setup]    open list sample    multi-selection-with-selectors
+    Set Focus and press keys     ${option}(3)    DOWN
+    Element Should Be Focused    ${option}(5)
 
-focus the last option when pressing UP on first option
-    Go To                                     ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible             ${list}
-    set focus and press keys                  ${option1}    UP
-    element attribute value should contain    ${option5}    class    focused
+jump focus to first and last option when is pressed HOME and END
+    Set Focus and press keys     ${option}(2)    END
+    Element Should Be Focused    ${option}(5)
+    Press Keys                   NONE   HOME
+    Element Should Be Focused    ${option}(1)
 
-exit focus from list when pressing TAB on option
-    [Tags]    bug-ie-webdriver
-    Go To                                       ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible               ${list}
-    set focus and press keys                    ${option1}    TAB
-    wait until element attribute not contain    ${option1}    class    focused
-    wait until element attribute not contain    ${option2}    class    focused
-
-focus first option when a list (no default options selected) is focused
-    Go To                                     ${tests}list--test-list-not-selected
-    Wait Until Element Is Visible             ${list}
-    Element Should Be Visible                 anchorButton
-    set focus and press keys                  anchorButton    TAB
-    Element Attribute Value Should Be         ${option1}      aria-selected    ${None}
-    element attribute value should contain    ${option1}      class            focused
-
-focus selected option when a list (default options selected) is focused
+TAB focus first selected option when a list (default options selected) is focused
     [Documentation]
     ...    If one or more options are selected before the listbox receives focus,
     ...    focus is set on the first option in the list that is selected.
-    Go To                                     ${tests}list--test-list-focusable-selection
-    Wait Until Element Is Visible             ${list}
-    Element Should Be Visible                 anchorButton
-    set focus and press keys                  anchorButton    TAB
-    element attribute value should contain    ${option3}      class            focused
-    Element Attribute Value Should Be         ${option3}      aria-selected    true
+    list option should be selected    ${option}(3)
+    Press Keys                        NONE   TAB    TAB
+    Element Should Be Focused         ${option}(3)
+
+TAB focus first option when a list (no default options selected) is focused
+    [Setup]    open test list sample      test-list-not-selected
+    list option should not be selected    ${option}(1)
+    set focus and press keys              anchorButton    TAB
+    Element Should Be Focused             ${option}(1)
+
+TAB sequence
+    Press Keys                   NONE   TAB
+    Element Should Be Focused    ${allOption} input
+    Press Keys                   NONE   TAB
+    Element Should Be Focused    ${option}(3) input
+    Press Keys                   NONE   TAB
+    html body should be focused
 
 focus disabled option when is a list menu
-    Go To                                     ${tests}list--test-list-selectable-disabled
-    Wait Until Element Is Visible             ${menubar}
-    Element Should Be Visible                 anchorButton
-    set focus and press keys                  anchorButton    TAB
-    element attribute value should contain    ${option1}      class    focused
-    element attribute value should contain    ${option1}      class    disabled
+    [Setup]    open test list sample    test-list-selectable-disabled
+    set focus and press keys     anchorButton    TAB
+    Element Should Be Focused    ${option}(1)
 
-jump focus to next enable option when is a simple/pure list
-    Go To                                     ${components}list--multi-selection-with-selectors
-    Wait Until Element Is Visible             ${list}
-    Set Focus and press keys                  ${option3}    DOWN
-    element attribute value should contain    ${option5}    class            focused
+keep pseudo focus on option when it is pressed
+    [Documentation]    focus keywords will fail here
+    [Tags]   TTT
+    list option should not be selected    ${option}(1)
+    Click Element                         ${option}(1)
+    list option should be selected        ${option}(1)
+    Press Keys                            NONE    SPACE
+    list option should not be selected    ${option}(1)
+    Press Keys                            NONE    SPACE
+    list option should be selected        ${option}(1)
+
+
+*** Comments ***
+was out of implementation the Type-ahead and the others optional Keyboard Interaction

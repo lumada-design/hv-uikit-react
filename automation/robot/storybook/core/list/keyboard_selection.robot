@@ -1,63 +1,45 @@
 *** Setting ***
-Variables        variables.yaml
-Resource         ../_keywords.resource
-Force Tags       keyboard
+Resource         _list.resource
+Test Setup       open list sample    single-selection-with-icon
 Documentation    https://www.w3.org/TR/wai-aria-practices/#Listbox
+Force Tags       keyboard
 
 
 *** Test Cases ***
-select an option when pressing ENTER on it (single selection)
-    Go To                                ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
-    Set Focus To Element                 ${option5}
-    Press Keys                           ${None}       ENTER
-    Element Attribute Value Should Be    ${option5}    aria-selected    true
+select an option when pressing ENTER on it for single selection
+    list option should not be selected   ${option}(5)
+    set focus and press keys             ${option}(5)    ENTER
+    list option should be selected       ${option}(5)
 
-unselect an option when pressing ENTER on selected option (single selection)
-    Go To                                ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option3}    aria-selected    true
-    Set Focus To Element                 ${option3}
-    Press Keys                           ${None}       ENTER
-    Element Attribute Value Should Be    ${option3}    aria-selected    ${None}
+unselect an option when pressing ENTER for single selection
+    list option should be selected        ${option}(3)
+    set focus and press keys              ${option}(5)    ENTER
+    list option should not be selected    ${option}(3)
 
-select an option when pressing SPACE on it (single selection)
-    Go To                                ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
-    Set Focus To Element                 ${option5}
-    Press Keys                           ${None}       SPACE
-    Element Attribute Value Should Be    ${option5}    aria-selected    true
+select an option when pressing SPACE on it for single selection
+    list option should not be selected    ${option}(5)
+    set focus and press keys              ${option}(5)    SPACE
+    list option should be selected        ${option}(5)
 
-unselect an option when pressing SPACE on selected option (single selection)
-    Go To                                ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option3}    aria-selected    true
-    Set Focus To Element                 ${option3}
-    Press Keys                           ${None}       SPACE
-    Element Attribute Value Should Be    ${option3}    aria-selected    ${None}
+unselect an option when pressing SPACE on selected option for single selection
+    list option should be selected        ${option}(3)
+    set focus and press keys              ${option}(3)    SPACE
+    list option should not be selected    ${option}(3)
 
-select an option when pressing SPACE on it (multiple selection)
-    Go To                                ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option5}    aria-selected    false
-    Set Focus To Element                 ${option5}
-    Press Keys                           ${None}       SPACE
-    Element Attribute Value Should Be    ${option5}    aria-selected    true
+does not selected option when pressing ENTER on it (multiple selection)
+    [Setup]    open list sample    multi-selection-with-select-all
+    list option should not be selected    ${option}(5)
+    set focus and press keys              ${option}(5)    ENTER
+    list option should not be selected    ${option}(5)
 
-unselect an option when pressing SPACE on selected option (multiple selection)
-    Go To                                ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option3}    aria-selected    true
-    Set Focus To Element                 ${option3}
-    Press Keys                           ${None}       SPACE
-    Element Attribute Value Should Be    ${option3}    aria-selected    false
+select an option when pressing SPACE on it for multiple selection
+    [Setup]    open list sample    multi-selection-with-select-all
+    list option should not be selected    ${option}(5)
+    set focus and press keys              ${option}(5)    SPACE
+    list option should be selected        ${option}(5)
 
-don't selected option when pressing ENTER on it (multiple selection)
-    Go To                                ${components}list--multi-selection-with-select-all
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option5}    aria-selected    false
-    Set Focus To Element                 ${option5}
-    Press Keys                           ${None}       ENTER
-    Element Attribute Value Should Be    ${option5}    aria-selected    false
+unselect an option when pressing SPACE on selected option for multiple selection
+    [Setup]    open list sample    multi-selection-with-select-all
+    list option should be selected        ${option}(3)
+    set focus and press keys              ${option}(3)    SPACE
+    list option should not be selected    ${option}(3)

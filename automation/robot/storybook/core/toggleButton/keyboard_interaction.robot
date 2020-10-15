@@ -32,7 +32,4 @@ TAB sequence
 not iteratable when is disabled
     [Setup]    open toggle button sample    disabled
     Press Keys                          css:body    TAB
-    Run Keyword If                      '${BROWSER.lower()}'=='ie'
-    ...    Element Should Be Focused    css:html
-    ...    ELSE
-    ...    Element Should Be Focused    css:body
+    html body should be focused

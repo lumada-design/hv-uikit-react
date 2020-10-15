@@ -28,10 +28,7 @@ TAB sequence
     Press Keys                          css:body    TAB
     Element Should Be Focused           ${radio}(1) input
     Press Keys                          NONE    TAB
-    Run Keyword If                      '${BROWSER.lower()}'=='ie'
-    ...    Element Should Be Focused    css:html
-    ...    ELSE
-    ...    Element Should Be Focused    css:body
+    html body should be focused
 
 SPACE checks the focused radio button if it is not already checked
     [Setup]   open radioButton sample    main
