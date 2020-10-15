@@ -592,6 +592,7 @@ exports[`Tooltip withStyles should render correctly 1`] = `
               "separator": "HvChartMultiTooltip-separator",
               "separatorColor": "HvChartMultiTooltip-separatorColor",
               "title": "HvChartMultiTooltip-title",
+              "valueNameWrapper": "HvChartMultiTooltip-valueNameWrapper",
               "values": "HvChartMultiTooltip-values",
               "valuesContainer": "HvChartMultiTooltip-valuesContainer",
             }
