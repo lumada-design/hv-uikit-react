@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../../Provider";
+import HvProvider from "../../Provider";
 import BaseInput from "..";
 
 const inputProps = {

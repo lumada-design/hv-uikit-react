@@ -5,7 +5,10 @@ import { withStyles } from "@material-ui/core";
 import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
-const HvAdornment = (props) => {
+const preventDefault = (event) => event.preventDefault();
+const noop = () => {};
+
+const HvAdornment = React.forwardRef((props, ref) => {
   const {
     id,
     classes,
@@ -26,6 +29,7 @@ const HvAdornment = (props) => {
   return isClickable ? (
     <button
       id={id}
+      ref={ref}
       type="button"
       tabIndex={-1}
       aria-controls={HvBaseInput?.[0]?.id}
@@ -33,7 +37,8 @@ const HvAdornment = (props) => {
         [classes.hideIcon]: !displayIcon,
       })}
       onClick={onClick}
-      onKeyDown={() => {}}
+      onMouseDown={preventDefault}
+      onKeyDown={noop}
       {...others}
     >
       <div className={classes.icon}>{icon}</div>
@@ -41,6 +46,7 @@ const HvAdornment = (props) => {
   ) : (
     <div
       id={id}
+      ref={ref}
       className={clsx(className, classes.root, classes.adornment, classes.adornmentIcon, {
         [classes.hideIcon]: !displayIcon,
       })}
@@ -50,7 +56,7 @@ const HvAdornment = (props) => {
       <div className={classes.icon}>{icon}</div>
     </div>
   );
-};
+});
 
 HvAdornment.propTypes = {
   /**

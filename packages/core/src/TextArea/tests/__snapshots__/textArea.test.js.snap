@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextArea Component should render correctly if opened 1`] = `
-<WithStyles(WithLabels)
+<WithStyles(HvTextArea)
   rows={4}
 />
 `;

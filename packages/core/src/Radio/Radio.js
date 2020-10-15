@@ -115,6 +115,7 @@ const HvRadio = (props) => {
       }}
       onFocusVisible={onFocusVisibleCallback}
       onBlur={onBlurCallback}
+      {...others}
     />
   );
 
@@ -128,7 +129,6 @@ const HvRadio = (props) => {
       required={required}
       readOnly={readOnly}
       className={clsx(className, classes.root)}
-      {...others}
     >
       {label ? (
         <div

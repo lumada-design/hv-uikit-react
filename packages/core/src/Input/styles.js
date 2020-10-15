@@ -5,8 +5,11 @@ const styles = (theme) => ({
     minWidth: "150px",
     maxWidth: "610px",
   },
+
+  hasSuggestions: {},
+
   inputRoot: {
-    "&:hover, &:focus-within": {
+    "&:hover": {
       "& $iconClear": {
         visibility: "visible",
       },
@@ -14,25 +17,26 @@ const styles = (theme) => ({
     "&:focus-within $iconClear": {
       visibility: "visible",
     },
-  },
-  inputRootDisabled: {
-    cursor: "not-allowed",
+    // IE fallback code (using focus-within-polyfill)
+    "&.focus-within $iconClear": {
+      visibility: "visible",
+    },
   },
   inputRootFocused: {
     "& $iconClear": { visibility: "visible" },
   },
-  inputRootInvalid: {},
+  inputRootDisabled: {
+    cursor: "not-allowed",
+  },
+  inputRootMultiline: {
+    padding: 0,
+  },
   input: {
     "&::-ms-clear": {
       display: "none",
     },
   },
-  inputDisabled: {
-    cursor: "not-allowed",
-  },
-  multiLine: {
-    padding: 0,
-  },
+
   labelContainer: {
     display: "flex",
     alignItems: "flex-start",
@@ -41,7 +45,8 @@ const styles = (theme) => ({
     paddingBottom: "6px",
     display: "block",
   },
-  labelDisabled: {},
+  description: {},
+
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",
@@ -66,15 +71,26 @@ const styles = (theme) => ({
   suggestionsContainer: {
     width: "100%",
     position: "relative",
-    top: "-1px",
   },
   suggestionList: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
-    padding: theme.hv.spacing.sm,
-    position: "absolute",
-    width: "100%",
+    // ensure more specificity than .HvSuggestions-root .HvSuggestions-list
+    "$root $suggestionsContainer &": {
+      width: "100%",
+    },
   },
+
+  inputExtension: {
+    height: theme.hv.spacing.xs,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    boxShadow: `0px 8px 0px ${theme.hv.palette.atmosphere.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
+  },
+
+  inputBorderContainer: {
+    "$hasSuggestions &": {
+      display: "none",
+    },
+  },
+
   "@global": {
     "input:-webkit-autofill": {
       "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,

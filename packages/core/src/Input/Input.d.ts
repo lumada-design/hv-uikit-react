@@ -1,127 +1,137 @@
-import { StandardProps, InputProps } from "@material-ui/core";
+import { StandardProps } from "@material-ui/core";
+
+import { HvBaseInputProps, HvBaseInputValidationMessagesProps } from "../BaseInput";
+
+import { HvFormStatus } from "../Forms/FormElement";
 
 export interface InputSuggestion {
   id: string;
   label: string;
+  value: string;
 }
 
-export interface HvInputLabelsProp {
-  inputLabel?: string;
-  placeholder?: string;
-  infoText?: string;
-  warningText?: string;
-  maxCharQuantityWarningText?: string;
-  minCharQuantityWarningText?: string;
-  requiredWarningText?: string;
+export interface InputLabelsProp {
+  /**
+   * The label of the clear button.
+   */
   clearButtonLabel?: string;
+
+  /**
+   * The label of the reveal password button.
+   */
+  revealPasswordButtonLabel?: string;
+  /**
+   * The tooltip of the reveal password button when the password is hidden.
+   */
+  revealPasswordButtonClickToShowTooltip?: string;
+  /**
+   * The tooltip of the reveal password button when the password is revealed.
+   */
+  revealPasswordButtonClickToHideTooltip?: string;
+
+  /**
+   * The label of the search button.
+   */
+  searchButtonLabel?: string;
 }
 
 export type HvInputClassKey =
   | "root"
   | "inputRoot"
-  | "inputRootDisabled"
-  | "inputRootInvalid"
   | "inputRootFocused"
+  | "inputRootDisabled"
+  | "inputRootMultiline"
   | "input"
-  | "inputDisabled"
-  | "suggestionsContainer"
-  | "suggestionList"
-  | "multiLine"
-  | "label"
-  | "labelDisabled"
   | "labelContainer"
-  | "infoText"
-  | "text"
-  | "textInfo"
-  | "textWarning"
-  | "showText"
+  | "label"
+  | "description"
+  | "adornmentsBox"
+  | "adornmentButton"
   | "icon"
-  | "iconClear";
+  | "iconClear"
+  | "suggestionsContainer"
+  | "suggestionList";
 
-export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey, "onChange"> {
+export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputClassKey, "onChange"> {
   /**
-   * An Object containing the various text associated with the input.
+   * The label of the form element.
    *
-   * - inputLabel: the label on top of the input.
-   * - placeholder: the placeholder value of the input.
-   * - infoText: the default value of the info text below the input.
-   * - warningText: the value when a validation fails.
-   * - maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * - minCharQuantityWarningText: the message that appears when there are too few characters.
-   * - requiredWarningText: the message that appears when the input is empty and required.
-   * - clearButtonLabel: the label of the clear button.
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided instead.
    */
-  labels?: HvInputLabelsProp;
+  label?: React.ReactNode;
   /**
-   * Attributes applied to the input element.
+   * @ignore
    */
-  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  "aria-label"?: string;
   /**
-   * Allows passing a ref to the underlying input
+   * @ignore
    */
-  inputRef?: React.Ref<unknown>;
+  "aria-labelledby"?: string;
   /**
-   * If `true` the input is disabled.
+   * Provide additional descriptive text for the form element.
    */
-  disabled?: boolean;
+  description?: React.ReactNode;
+
   /**
-   * If `true` the input value must be filled on blur or else the validation fails.
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to the state.
    */
-  isRequired?: boolean;
+  status?: HvFormStatus;
   /**
-   * If `true` the input is of type password hiding the value.
+   * The error message to show when `status` is "invalid".
    */
-  password?: boolean;
+  statusMessage?: React.ReactNode;
+
+  /**
+   * Internal labels.
+   */
+  labels?: InputLabelsProp;
+
+  /**
+   * An Object containing the various texts associated with the input.
+   */
+  validationMessages?: HvBaseInputValidationMessagesProps;
+
   /**
    * The function that will be executed to received an array of objects that has a label and id to create list of suggestion
    */
   suggestionListCallback?: (value: string) => InputSuggestion[];
-  /**
-   * The function that will be executed after selecting a value in the suggestion list
-   */
-  suggestionSelectedCallback?: (suggestion: InputSuggestion) => void;
-  /**
-   * If `true` information label is shown, `false` otherwise.
-   */
-  showInfo?: boolean;
+
   /**
    * The custom validation function, it receives the value and must return
    * either `true` for valid or `false` for invalid, default validations would only
    * occur if this function is null or undefined
    */
   validation?: (value: string) => boolean;
-  /**
-   * The value of the input, when controlled.
-   */
-  value?: string;
-  /**
-   * The initial value of the input, when uncontrolled.
-   */
-  initialValue?: string;
+
   /**
    * If `true` it should autofocus.
    */
   autoFocus?: boolean;
-  /**
-   * The initial state of the input.
-   */
-  validationState?: "empty" | "filled" | "invalid" | "valid";
-  /**
-   * If `true` the validation icon is visible, `false` otherwise
-   */
-  validationIconVisible?: boolean;
+
   /**
    * If `true` the clear button is disabled if `false` is enable
    */
   disableClear?: boolean;
+
   /**
-   * The icon position of the input. It is recommended to use the provided validationIconPosition object to set this value.
+   * If `true` the validation icon adorment is visible. Defaults to `false`.
+   * 
+   * Currently, DS specifications define only a positive feedback icon;
+   * errors are signaled through the border style and by displaying the error message.
    */
-  validationIconPosition?: "left" | "right";
+  showValidationIcon?: boolean;
+
   /**
    * a custom icon to be added into the input.
    */
-  customFixedIcon?: React.ReactNode;
+  endAdornment?: React.ReactNode;
+
   /**
    * The maximum allowed length of the characters, if this value is null no check
    * will be performed.
@@ -132,23 +142,6 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
    * will be perform.
    */
   minCharQuantity?: number;
-  /**
-   * Which type of default validation should the input perform. It is recommended to use the provided ValidationTypes object to set this value.
-   */
-  validationType?: "none" | "number" | "email";
-  /**
-   * Overrides any validation with a specific error/warning message to set in the warningText slot.
-   */
-  externalWarningTextOverride?: string;
-  /**
-   * Called back when the value is changed.
-   * Return the new value to be accepted, or undefined/void to accept as it is.
-   * The event can be undefined when the clear button is clicked.
-   */
-  onChange?: (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined,
-    value: string
-  ) => string | undefined | void;
 }
 
 export default function HvInput(props: HvInputProps): JSX.Element | null;

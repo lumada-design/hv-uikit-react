@@ -60,6 +60,9 @@ export * from "./Grid";
 export { default as HvHeader } from "./Header";
 export * from "./Header";
 
+export { default as HvBaseInput } from "./BaseInput";
+export * from "./BaseInput";
+
 export { default as HvInput } from "./Input";
 export * from "./Input";
 
@@ -97,9 +100,6 @@ export * from "./Pagination";
 
 export { default as HvProvider } from "./Provider";
 export * from "./Provider";
-
-export { default as HvSearchBox } from "./SearchBox";
-export * from "./SearchBox";
 
 export { default as HvBaseCheckBox } from "./BaseCheckBox";
 export * from "./BaseCheckBox";

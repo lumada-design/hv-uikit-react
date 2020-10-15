@@ -4,7 +4,7 @@ import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../../utils";
-import { HvButton, HvCheckBox, HvList, HvSearchBox, HvTypography } from "../..";
+import { HvButton, HvCheckBox, HvList, HvInput, HvTypography } from "../..";
 import { getSelected } from "../utils";
 import styles from "./styles";
 import ActionContainer from "../../ActionBar";
@@ -24,7 +24,7 @@ const List = ({
   singleSelectionToggle,
   ...others
 }) => {
-  const [searchStr, setSearchStr] = useState(null);
+  const [searchStr, setSearchStr] = useState("");
   const [list, setList] = useState(clone(values));
   const [allSelected, setAllSelected] = useState(false);
   const [anySelected, setAnySelected] = useState(false);
@@ -89,10 +89,10 @@ const List = ({
    */
   const renderSearch = () => (
     <div className={classes.searchContainer}>
-      <HvSearchBox
+      <HvInput
         id={setId(id, "search")}
+        type="search"
         value={searchStr}
-        values={values}
         onChange={(event, str) => handleSearch(str)}
       />
     </div>

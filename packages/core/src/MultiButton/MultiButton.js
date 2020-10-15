@@ -5,7 +5,15 @@ import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const HvMultiButton = (props) => {
-  const { className, children, classes, category = "ghost", vertical = false, ...others } = props;
+  const {
+    className,
+    children,
+    classes,
+    disabled = false,
+    vertical = false,
+    category = "ghost",
+    ...others
+  } = props;
 
   return (
     <div
@@ -14,15 +22,18 @@ const HvMultiButton = (props) => {
       })}
       {...others}
     >
-      {React.Children.map(children, (child) =>
-        cloneElement(child, {
+      {React.Children.map(children, (child) => {
+        const childIsSelected = !!child.props.selected;
+
+        return cloneElement(child, {
           category,
-          overrideIconColors: false,
+          disabled: disabled || child.props.disabled,
           className: clsx(child.props.className, classes.button, {
-            [classes.selected]: child.props.selected,
+            [classes.selected]: childIsSelected,
           }),
-        })
-      )}
+          "aria-pressed": childIsSelected,
+        });
+      })}
     </div>
   );
 };
@@ -57,6 +68,10 @@ HvMultiButton.propTypes = {
      */
     selected: PropTypes.string,
   }).isRequired,
+  /**
+   * If all the buttons are disabled.
+   */
+  disabled: PropTypes.bool,
   /**
    * If the MultiButton is to be displayed vertically.
    */

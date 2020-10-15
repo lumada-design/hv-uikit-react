@@ -3,7 +3,7 @@ import { LocationPin, Map } from "@hv/uikit-react-icons";
 import { HvButton, HvMultiButton } from "../..";
 
 export default {
-  title: "Forms/Multi Button",
+  title: "Components/Multi Button",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",
@@ -85,14 +85,68 @@ export const OnlyIcons = () => {
   );
 };
 
-export const Disabled = () => (
-  <HvMultiButton style={{ width: "320px" }}>
-    <HvButton selected>Potato</HvButton>
-    <HvButton disabled>Onion</HvButton>
-    <HvButton disabled>Carrot</HvButton>
-    <HvButton disabled>Tomato</HvButton>
-  </HvMultiButton>
-);
+export const Disabled = () => {
+  const [selection, setSelection] = useState([0]);
+
+  const toggleIndex = (idx) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter((v) => v !== idx)
+      : [...selection, idx];
+
+    setSelection(newSelection);
+  };
+
+  return (
+    <HvMultiButton disabled style={{ margin: "10px", width: "320px" }}>
+      <HvButton selected={selection.includes(0)} onClick={() => toggleIndex(0)}>
+        Potato
+      </HvButton>
+      <HvButton selected={selection.includes(1)} onClick={() => toggleIndex(1)}>
+        Onion
+      </HvButton>
+      <HvButton selected={selection.includes(2)} onClick={() => toggleIndex(2)}>
+        Carrot
+      </HvButton>
+      <HvButton selected={selection.includes(3)} startIcon={<Map />} onClick={() => toggleIndex(3)}>
+        Tomato
+      </HvButton>
+    </HvMultiButton>
+  );
+};
+
+export const DisabledItem = () => {
+  const [selection, setSelection] = useState([0]);
+
+  const toggleIndex = (idx) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter((v) => v !== idx)
+      : [...selection, idx];
+
+    setSelection(newSelection);
+  };
+
+  return (
+    <HvMultiButton style={{ margin: "10px", width: "320px" }}>
+      <HvButton selected={selection.includes(0)} onClick={() => toggleIndex(0)}>
+        Potato
+      </HvButton>
+      <HvButton disabled selected={selection.includes(1)} onClick={() => toggleIndex(1)}>
+        Onion
+      </HvButton>
+      <HvButton selected={selection.includes(2)} onClick={() => toggleIndex(2)}>
+        Carrot
+      </HvButton>
+      <HvButton
+        disabled
+        selected={selection.includes(3)}
+        startIcon={<Map />}
+        onClick={() => toggleIndex(3)}
+      >
+        Tomato
+      </HvButton>
+    </HvMultiButton>
+  );
+};
 
 export const MultipleSelection = () => {
   const [selection, setSelection] = useState([0, 2, 3, 5]);

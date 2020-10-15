@@ -21,6 +21,7 @@ const styles = {
   },
   adornmentIcon: {
     cursor: "default",
+    pointerEvents: "none",
   },
   hideIcon: {
     display: "none",

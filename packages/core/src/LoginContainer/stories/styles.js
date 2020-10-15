@@ -20,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
   sentenceCase: {
     textTransform: `full-size-kana`,
   },
+  customBackgroundPosition: {
+    backgroundSize: "cover",
+  },
+  dropdownWidthFix: {
+    width: "100%",
+  },
 }));
 
 export default useStyles;

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Adornment should render correctly 1`] = `
-<WithStyles(HvAdornment)
+<WithStyles(ForwardRef)
   icon={<CloseXS />}
 >
-  <HvAdornment
+  <ForwardRef
     classes={
       Object {
         "adornment": "HvAdornment-adornment",
@@ -51,6 +51,6 @@ exports[`Adornment should render correctly 1`] = `
         </CloseXS>
       </div>
     </div>
-  </HvAdornment>
-</WithStyles(HvAdornment)>
+  </ForwardRef>
+</WithStyles(ForwardRef)>
 `;

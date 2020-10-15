@@ -16,7 +16,7 @@ ${month-}              css:[id$=month-left]
 ${month}               css:[id$=month]
 ${month+}              css:[id$=month-right]
 ${monthGrid}           xpath://div[contains(@class,"calendarMonthlyGrid")]/div
-${x}                   css:button[title="Clear the text"]
+${x}                   css:button[aria-label="Clear the text"]
 ${year-}               css:[id*=year-left]
 ${year}                css:[id*=year][role]
 ${year+}               css:[id*=year-right]

@@ -16,4 +16,4 @@ present and clear warning when controlled by outside
 
 *** Variables ***
 ${input}      css:input[type=text]
-${warning}    css:#validation-warning
+${warning}    css:#validation-error

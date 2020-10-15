@@ -37,7 +37,7 @@ const HvAssetInventory = (props) => {
     selectedValues: selectedValuesProp = [],
     selectedView: selectedViewProp = 0,
     children,
-    searchString: searchStringProp,
+    searchString: searchStringProp = "",
     sortOptionId,
     labels,
     configuration,

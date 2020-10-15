@@ -26,8 +26,10 @@ export * from "./Forms";
 export { default as HvActionContainer } from "./ActionBar";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";
+
+export { default as HvBaseInput } from "./BaseInput";
 export { default as HvInput } from "./Input";
-export { default as HvSearchBox } from "./SearchBox";
+
 export { default as HvKpi } from "./Kpi";
 export { default as HvLinechart } from "./Linechart";
 export { default as HvLink } from "./Link";

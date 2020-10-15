@@ -155,6 +155,7 @@ const HvCheckBox = (props) => {
       }}
       onFocusVisible={onFocusVisibleCallback}
       onBlur={onBlurCallback}
+      {...others}
     />
   );
 
@@ -170,7 +171,6 @@ const HvCheckBox = (props) => {
       className={clsx(className, classes.root, {
         [classes.focusVisible]: focusVisible && label,
       })}
-      {...others}
     >
       {hasLabel ? (
         <div

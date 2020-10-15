@@ -1,53 +1,69 @@
 *** Setting ***
+Resource      _multiButton.resource
+Force Tags    v3
 Resource       ../_keywords.resource
 
 
 *** Test Cases ***
-multiButton when just allow single selection
-    Go To                            ${forms}multi-button--only-labels
-    Wait Until Element Is Visible    css:#map[class*=HvMultiButton-selected]
-    Click Button                     satellite
-    Element Should Be Visible        css:#satellite[class*=HvMultiButton-selected]
-    Element Should Not Be Visible    css:#map[class*=HvMultiButton-selected]
+switch selection
+    [Documentation]    use case:
+    ...    Single and Multi Selection
+    ...    just 1 button can be as pressed
+    [Setup]    open multiButton sample    only-labels
+    multiButton selection should be     True False
+    Click Button                        ${button}(1)
+    multiButton selection should be     True False
+    Click Button                        ${button}(2)
+    multiButton selection should be     False True
 
-multiButton removing all selections
-    Go To                            ${forms}multi-button--only-icons
-    Wait Until Element Is Visible    css:#map[class*=HvMultiButton-selected]
-    Click Button                     map
-    Element Should Not Be Visible    css:#location[class*=HvMultiButton-selected]
-    Element Should Not Be Visible    css:#map[class*=HvMultiButton-selected]
+individual selection
+    [Documentation]    use case:
+    ...    Single and Multi Selection
+    ...    all button can be as pressed or not
+    [Setup]    Open multiButton sample    only-icons
+    multiButton selection should be     True False
+    Click Button                        ${button}(2)
+    multiButton selection should be     True True
+    Click Button                        ${button}(1)
+    Click Button                        ${button}(2)
+    multiButton selection should be     False False
 
-multiButton select all buttons
-    Go To                            ${forms}multi-button--only-icons
-    Wait Until Element Is Visible    css:#map[class*=HvMultiButton-selected]
-    Click Button                     location
-    Element Should Be Visible        css:#map[class*=HvMultiButton-selected]
-    Element Should Be Visible        css:#location[class*=HvMultiButton-selected]
+unable change Enforced selection on 1st button
+    [Documentation]    use case: change selection when button has Enforced Selection
+    [Setup]    Open multiButton sample    enforced-selection
+    multiButton selection should be    True False False False False
+    Click Button                       ${button}(1)
+    Click Button                       ${button}(2)
+    multiButton selection should be    True True False False False
 
-multiButton unable unselect a fixed selection
-    Go To                            ${forms}multi-button--enforced-selection
-    Wait Until Element Is Visible    css:#location1[class*=HvMultiButton-selected]
-    Click Button                     location1
-    Element Should Be Visible        css:#location1[class*=HvMultiButton-selected]
+minimum selection 2 buttons
+    [Setup]    Open multiButton sample    minimum-selection
+    multiButton selection should be    False True True False False
+    Click Button                       ${button}(2)
+    Click Button                       ${button}(3)
+    multiButton selection should be    False True True False False
+    Click Button                       ${button}(1)
+    Click Button                       ${button}(2)
+    multiButton selection should be    True False True False False
 
-multiButton minimum selection
-    Go To                            ${forms}multi-button--minimum-selection
-    Wait Until Element Is Visible    location1
-    Element Should Be Visible        css:#location2[class*=HvMultiButton-selected]
-    Element Should Be Visible        css:#location3[class*=HvMultiButton-selected]
-    Click Button                     location3
-    Element Should Be Visible        css:#location3[class*=HvMultiButton-selected]
-    Click Button                     location1
-    Click Button                     location3
-    Element Should Be Visible        css:#location1[class*=HvMultiButton-selected]
-    Element Should Not Be Visible    css:#location3[class*=HvMultiButton-selected]
+maximum selection 2 buttons
+    [Setup]    Open multiButton sample    maximum-selection
+    multiButton selection should be    False False False False False
+    Click Button                       ${button}(1)
+    Click Button                       ${button}(2)
+    Click Button                       ${button}(3)
+    multiButton selection should be    True True False False False
+    Click Button                       ${button}(2)
+    Click Button                       ${button}(3)
+    multiButton selection should be    True False True False False
 
-multiButton maximun selection
-    Go To                            ${forms}multi-button--maximum-selection
-    Wait Until Element Is Visible    location1
-    Click Button                     location1
-    Click Button                     location2
-    Click Button                     location3
-    Element Should Be Visible        css:#location1[class*=HvMultiButton-selected]
-    Element Should Be Visible        css:#location2[class*=HvMultiButton-selected]
-    Element Should Not Be Visible    css:#location3[class*=HvMultiButton-selected]
+selection is blocked when disabled
+    [Documentation]    use case:
+    ...    Buttons can be disabled
+    [Setup]    Open multiButton sample    disabled
+    multiButton selection should be    True False False False
+    Click Button                       ${button}(1)
+    Click Button                       ${button}(2)
+    Click Button                       ${button}(3)
+    Click Button                       ${button}(4)
+    multiButton selection should be    True False False False

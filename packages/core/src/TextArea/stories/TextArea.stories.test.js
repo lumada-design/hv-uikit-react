@@ -19,6 +19,10 @@ export default {
 };
 
 export const ControlledLimited = () => {
+  const validationMessages = {
+    maxCharError: "too many characters",
+  };
+
   const [value, setValue] = useState("Initial State");
   const [maxChar, setMaxChar] = useState(10);
 
@@ -43,21 +47,19 @@ export const ControlledLimited = () => {
 
       <HvInput
         style={{ marginBottom: 30 }}
+        label="Limit"
         value={String(maxChar)}
-        onChange={(e, newLimit) => setMaxChar(Number(newLimit))}
-        labels={{ inputLabel: "Limit" }}
+        onChange={(_e, newLimit) => setMaxChar(Number(newLimit))}
       />
 
       <HvTextArea
         id="controlled-limited"
         value={value}
         rows={5}
-        labels={{
-          inputLabel: "Label",
-          placeholder: "Enter value",
-          maxCharQuantityWarningText: "too many characters",
-        }}
-        onChange={(e, newValue) => setValue(newValue)}
+        label="Label"
+        placeholder="Enter value"
+        validationMessages={validationMessages}
+        onChange={(_e, newValue) => setValue(newValue)}
         maxCharQuantity={maxChar}
       />
     </>
@@ -66,7 +68,6 @@ export const ControlledLimited = () => {
 
 ControlledLimited.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area value altered from an outside component.",
     },
@@ -75,7 +76,7 @@ ControlledLimited.story = {
 
 export const ControlledValidation = () => {
   const [value, setValue] = useState("Initial State");
-  const [validationState, setValidationState] = useState("standBy");
+  const [validationState, setvalidationState] = useState("standBy");
 
   const btnStyle = {
     width: 120,
@@ -84,10 +85,10 @@ export const ControlledValidation = () => {
 
   return (
     <>
-      <HvButton style={btnStyle} onClick={() => setValidationState("standBy")}>
+      <HvButton style={btnStyle} onClick={() => setvalidationState("standBy")}>
         stand by
       </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValidationState("invalid")}>
+      <HvButton style={btnStyle} onClick={() => setvalidationState("invalid")}>
         invalid
       </HvButton>
 
@@ -97,14 +98,11 @@ export const ControlledValidation = () => {
         id="controlled-validation"
         value={value}
         rows={5}
-        validationState={validationState}
-        labels={{
-          inputLabel: "Label",
-          placeholder: "Enter value",
-          warningText: "This text area is invalid",
-          maxCharQuantityWarningText: "too many characters",
-        }}
-        onChange={(e, newValue) => setValue(newValue)}
+        label="Label"
+        placeholder="Enter value"
+        status={validationState}
+        statusMessage="This text area is invalid"
+        onChange={(_e, newValue) => setValue(newValue)}
       />
     </>
   );
@@ -112,7 +110,6 @@ export const ControlledValidation = () => {
 
 ControlledValidation.story = {
   parameters: {
-    v3: true,
     docs: {
       storyDescription: "Text area value altered from an outside component.",
     },

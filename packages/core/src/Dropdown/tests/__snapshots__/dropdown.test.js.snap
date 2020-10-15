@@ -320,97 +320,61 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                         class="HvDropdownList-searchContainer"
                                       >
                                         <div
-                                          class="HvSearchBox-root HvFormElement-root"
+                                          class="HvInput-root HvFormElement-root"
                                           id="hvdropdown1-values-search"
                                         >
-                                          <label
-                                            class="HvLabel-root HvTypography-root HvTypography-highlightText"
-                                            for=""
-                                            id="hvdropdown1-values-search-label"
-                                          >
-                                            
-                                          </label>
                                           <div
                                             class="HvBaseInput-root"
                                           >
                                             <div
-                                              class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInputBase-adornedEnd"
-                                              values="[object Object],[object Object],[object Object]"
+                                              class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
                                             >
                                               <input
-                                                class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
+                                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
                                                 id="hvdropdown1-values-search-input"
-                                                placeholder="Search"
                                                 rows="10"
-                                                type="text"
+                                                type="search"
                                                 value=""
                                               />
-                                              <button
-                                                aria-label="clear button"
-                                                class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentButton HvAdornment-hideIcon"
-                                                tabindex="-1"
-                                                type="button"
-                                              >
-                                                <div
-                                                  class="HvAdornment-icon"
-                                                >
-                                                  <div
-                                                    class="HvIconBase-root HvIconBase-xs"
-                                                    name="CloseXS"
-                                                  >
-                                                    <svg
-                                                      focusable="false"
-                                                      height="12"
-                                                      viewBox="0 0 12 12"
-                                                      width="12"
-                                                      xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                      <path
-                                                        class="color0"
-                                                        d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                                                        fill="#414141"
-                                                      />
-                                                    </svg>
-                                                  </div>
-                                                </div>
-                                              </button>
                                               <div
-                                                class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
-                                                role="presentation"
+                                                aria-hidden="true"
+                                                class="HvInput-adornmentsBox"
                                               >
                                                 <div
-                                                  class="HvAdornment-icon"
+                                                  aria-label="Search"
+                                                  class="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                                                  role="presentation"
                                                 >
                                                   <div
-                                                    class="HvIconBase-root HvIconBase-s"
-                                                    name="Search"
+                                                    class="HvAdornment-icon"
                                                   >
-                                                    <svg
-                                                      focusable="false"
-                                                      height="16"
-                                                      viewBox="0 0 16 16"
-                                                      width="16"
-                                                      xmlns="http://www.w3.org/2000/svg"
+                                                    <div
+                                                      class="HvIconBase-root HvIconBase-s"
+                                                      name="Search"
                                                     >
-                                                      <path
-                                                        class="color0"
-                                                        d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
-                                                        fill="#414141"
-                                                      />
-                                                    </svg>
+                                                      <svg
+                                                        focusable="false"
+                                                        height="16"
+                                                        viewBox="0 0 16 16"
+                                                        width="16"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                      >
+                                                        <path
+                                                          class="color0"
+                                                          d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                                                          fill="#414141"
+                                                        />
+                                                      </svg>
+                                                    </div>
                                                   </div>
                                                 </div>
                                               </div>
                                             </div>
                                             <div
-                                              class="HvBaseInput-inputBorderContainer"
+                                              class="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
                                               role="presentation"
                                             />
                                           </div>
-                                          <div
-                                            class="HvSuggestions-root"
-                                            id="hvdropdown1-values-search-suggestions"
-                                          />
                                         </div>
                                       </div>
                                       <ul
@@ -578,81 +542,86 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                           <WithStyles(WithLabels)
                                             id="hvdropdown1-values-search"
                                             onChange={[Function]}
-                                            value={null}
-                                            values={
-                                              Array [
-                                                Object {
-                                                  "label": "Value 1",
-                                                },
-                                                Object {
-                                                  "label": "Value 2",
-                                                },
-                                                Object {
-                                                  "label": "Value 3",
-                                                },
-                                              ]
-                                            }
+                                            type="search"
+                                            value=""
                                           >
                                             <WithLabels
                                               classes={
                                                 Object {
-                                                  "root": "HvSearchBox-root",
+                                                  "adornmentButton": "HvInput-adornmentButton",
+                                                  "adornmentsBox": "HvInput-adornmentsBox",
+                                                  "description": "HvInput-description",
+                                                  "hasSuggestions": "HvInput-hasSuggestions",
+                                                  "icon": "HvInput-icon",
+                                                  "iconClear": "HvInput-iconClear",
+                                                  "input": "HvInput-input",
+                                                  "inputBorderContainer": "HvInput-inputBorderContainer",
+                                                  "inputExtension": "HvInput-inputExtension",
+                                                  "inputRoot": "HvInput-inputRoot",
+                                                  "inputRootDisabled": "HvInput-inputRootDisabled",
+                                                  "inputRootFocused": "HvInput-inputRootFocused",
+                                                  "inputRootMultiline": "HvInput-inputRootMultiline",
+                                                  "label": "HvInput-label",
+                                                  "labelContainer": "HvInput-labelContainer",
+                                                  "root": "HvInput-root",
+                                                  "suggestionList": "HvInput-suggestionList",
+                                                  "suggestionsContainer": "HvInput-suggestionsContainer",
                                                 }
                                               }
                                               id="hvdropdown1-values-search"
                                               onChange={[Function]}
-                                              value={null}
-                                              values={
-                                                Array [
-                                                  Object {
-                                                    "label": "Value 1",
-                                                  },
-                                                  Object {
-                                                    "label": "Value 2",
-                                                  },
-                                                  Object {
-                                                    "label": "Value 3",
-                                                  },
-                                                ]
-                                              }
+                                              type="search"
+                                              value=""
                                             >
-                                              <HvSearchBox
+                                              <HvInput
                                                 classes={
                                                   Object {
-                                                    "root": "HvSearchBox-root",
+                                                    "adornmentButton": "HvInput-adornmentButton",
+                                                    "adornmentsBox": "HvInput-adornmentsBox",
+                                                    "description": "HvInput-description",
+                                                    "hasSuggestions": "HvInput-hasSuggestions",
+                                                    "icon": "HvInput-icon",
+                                                    "iconClear": "HvInput-iconClear",
+                                                    "input": "HvInput-input",
+                                                    "inputBorderContainer": "HvInput-inputBorderContainer",
+                                                    "inputExtension": "HvInput-inputExtension",
+                                                    "inputRoot": "HvInput-inputRoot",
+                                                    "inputRootDisabled": "HvInput-inputRootDisabled",
+                                                    "inputRootFocused": "HvInput-inputRootFocused",
+                                                    "inputRootMultiline": "HvInput-inputRootMultiline",
+                                                    "label": "HvInput-label",
+                                                    "labelContainer": "HvInput-labelContainer",
+                                                    "root": "HvInput-root",
+                                                    "suggestionList": "HvInput-suggestionList",
+                                                    "suggestionsContainer": "HvInput-suggestionsContainer",
                                                   }
                                                 }
                                                 id="hvdropdown1-values-search"
                                                 labels={
                                                   Object {
-                                                    "inputLabel": "",
-                                                    "placeholder": "Search",
+                                                    "clearButtonLabel": "Clear the text",
+                                                    "revealPasswordButtonClickToHideTooltip": "Click to hide password.",
+                                                    "revealPasswordButtonClickToShowTooltip": "Click to show password.",
+                                                    "revealPasswordButtonLabel": "Reveal password",
+                                                    "searchButtonLabel": "Search",
                                                   }
                                                 }
                                                 onChange={[Function]}
-                                                value={null}
-                                                values={
-                                                  Array [
-                                                    Object {
-                                                      "label": "Value 1",
-                                                    },
-                                                    Object {
-                                                      "label": "Value 2",
-                                                    },
-                                                    Object {
-                                                      "label": "Value 3",
-                                                    },
-                                                  ]
-                                                }
+                                                type="search"
+                                                value=""
                                               >
                                                 <WithStyles(WithId)
-                                                  className="HvSearchBox-root"
+                                                  className="HvInput-root"
                                                   disabled={false}
                                                   id="hvdropdown1-values-search"
+                                                  onBlur={[Function]}
+                                                  readOnly={false}
+                                                  required={false}
+                                                  status="standBy"
                                                   value=""
                                                 >
                                                   <WithId
-                                                    className="HvSearchBox-root"
+                                                    className="HvInput-root"
                                                     classes={
                                                       Object {
                                                         "root": "HvFormElement-root",
@@ -660,10 +629,14 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                     }
                                                     disabled={false}
                                                     id="hvdropdown1-values-search"
+                                                    onBlur={[Function]}
+                                                    readOnly={false}
+                                                    required={false}
+                                                    status="standBy"
                                                     value=""
                                                   >
                                                     <HvFormElement
-                                                      className="HvSearchBox-root"
+                                                      className="HvInput-root"
                                                       classes={
                                                         Object {
                                                           "root": "HvFormElement-root",
@@ -671,913 +644,562 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                       }
                                                       disabled={false}
                                                       id="hvdropdown1-values-search"
+                                                      onBlur={[Function]}
+                                                      readOnly={false}
+                                                      required={false}
+                                                      status="standBy"
                                                       value=""
                                                     >
                                                       <div
-                                                        className="HvSearchBox-root HvFormElement-root"
+                                                        className="HvInput-root HvFormElement-root"
                                                         id="hvdropdown1-values-search"
+                                                        onBlur={[Function]}
                                                       >
-                                                        <WithStyles(HvLabel)
-                                                          label=""
+                                                        <WithStyles(HvBaseInput)
+                                                          autoFocus={false}
+                                                          classes={
+                                                            Object {
+                                                              "input": "HvInput-input",
+                                                              "inputBorderContainer": "HvInput-inputBorderContainer",
+                                                              "inputRoot": "HvInput-inputRoot",
+                                                              "inputRootDisabled": "HvInput-inputRootDisabled",
+                                                              "inputRootFocused": "HvInput-inputRootFocused",
+                                                              "inputRootMultiline": "HvInput-inputRootMultiline",
+                                                            }
+                                                          }
+                                                          disabled={false}
+                                                          endAdornment={
+                                                            <div
+                                                              aria-hidden="true"
+                                                              className="HvInput-adornmentsBox"
+                                                            >
+                                                              <WithStyles(ForwardRef)
+                                                                aria-label="Search"
+                                                                className="HvInput-adornmentButton"
+                                                                icon={<Search />}
+                                                              />
+                                                            </div>
+                                                          }
+                                                          id="hvdropdown1-values-search-input"
+                                                          inputProps={
+                                                            Object {
+                                                              "aria-controls": undefined,
+                                                              "aria-describedby": undefined,
+                                                              "aria-errormessage": undefined,
+                                                              "aria-invalid": undefined,
+                                                              "aria-label": undefined,
+                                                              "aria-labelledby": undefined,
+                                                              "autoComplete": undefined,
+                                                              "ref": Object {
+                                                                "current": <input
+                                                                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                  id="hvdropdown1-values-search-input"
+                                                                  rows="10"
+                                                                  type="search"
+                                                                  value=""
+                                                                />,
+                                                              },
+                                                            }
+                                                          }
+                                                          inputRef={
+                                                            Object {
+                                                              "current": <input
+                                                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                id="hvdropdown1-values-search-input"
+                                                                rows="10"
+                                                                type="search"
+                                                                value=""
+                                                              />,
+                                                            }
+                                                          }
+                                                          invalid={false}
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onFocus={[Function]}
+                                                          onKeyDown={[Function]}
+                                                          readOnly={false}
+                                                          required={false}
+                                                          type="search"
+                                                          value=""
                                                         >
-                                                          <HvLabel
+                                                          <HvBaseInput
+                                                            autoFocus={false}
                                                             classes={
                                                               Object {
-                                                                "childGutter": "HvLabel-childGutter",
-                                                                "labelDisabled": "HvLabel-labelDisabled",
-                                                                "root": "HvLabel-root",
+                                                                "disabled": "HvBaseInput-disabled",
+                                                                "input": "HvBaseInput-input HvInput-input",
+                                                                "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
+                                                                "inputResizable": "HvBaseInput-inputResizable",
+                                                                "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot",
+                                                                "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                                                "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                                                "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                                                "invalid": "HvBaseInput-invalid",
+                                                                "resizable": "HvBaseInput-resizable",
+                                                                "root": "HvBaseInput-root",
                                                               }
                                                             }
-                                                            label=""
-                                                          >
-                                                            <WithStyles(ForwardRef)
-                                                              className="HvLabel-root"
-                                                              component="label"
-                                                              htmlFor=""
-                                                              id="hvdropdown1-values-search-label"
-                                                              variant="highlightText"
-                                                            >
-                                                              <ForwardRef
-                                                                className="HvLabel-root"
-                                                                classes={
-                                                                  Object {
-                                                                    "3xlTitle": "HvTypography-3xlTitle",
-                                                                    "4xlTitle": "HvTypography-4xlTitle",
-                                                                    "5xlTitle": "HvTypography-5xlTitle",
-                                                                    "disabledText": "HvTypography-disabledText",
-                                                                    "highlightText": "HvTypography-highlightText",
-                                                                    "lTitle": "HvTypography-lTitle",
-                                                                    "link": "HvTypography-link",
-                                                                    "mTitle": "HvTypography-mTitle",
-                                                                    "noWrap": "HvTypography-noWrap",
-                                                                    "normalText": "HvTypography-normalText",
-                                                                    "placeholderText": "HvTypography-placeholderText",
-                                                                    "root": "HvTypography-root",
-                                                                    "sTitle": "HvTypography-sTitle",
-                                                                    "sectionTitle": "HvTypography-sectionTitle",
-                                                                    "selectedNavText": "HvTypography-selectedNavText",
-                                                                    "vizText": "HvTypography-vizText",
-                                                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                                                    "xlTitle": "HvTypography-xlTitle",
-                                                                    "xsInlineLink": "HvTypography-xsInlineLink",
-                                                                    "xsTitle": "HvTypography-xsTitle",
-                                                                    "xxlTitle": "HvTypography-xxlTitle",
-                                                                    "xxsTitle": "HvTypography-xxsTitle",
-                                                                  }
-                                                                }
-                                                                component="label"
-                                                                htmlFor=""
-                                                                id="hvdropdown1-values-search-label"
-                                                                variant="highlightText"
+                                                            disabled={false}
+                                                            endAdornment={
+                                                              <div
+                                                                aria-hidden="true"
+                                                                className="HvInput-adornmentsBox"
                                                               >
-                                                                <label
-                                                                  className="HvLabel-root HvTypography-root HvTypography-highlightText"
-                                                                  htmlFor=""
-                                                                  id="hvdropdown1-values-search-label"
+                                                                <WithStyles(ForwardRef)
+                                                                  aria-label="Search"
+                                                                  className="HvInput-adornmentButton"
+                                                                  icon={<Search />}
                                                                 />
-                                                              </ForwardRef>
-                                                            </WithStyles(ForwardRef)>
-                                                            <WithStyles(HvBaseInput)
-                                                              autoFocus={false}
-                                                              endAdornment={
-                                                                <React.Fragment>
-                                                                  <WithStyles(HvAdornment)
-                                                                    aria-label="clear button"
-                                                                    icon={<CloseXS />}
-                                                                    isVisible={false}
-                                                                    onClick={[Function]}
-                                                                  />
-                                                                  <WithStyles(HvAdornment)
-                                                                    icon={<Search />}
-                                                                    isVisible={true}
-                                                                  />
-                                                                </React.Fragment>
-                                                              }
-                                                              inputRef={
-                                                                Object {
+                                                              </div>
+                                                            }
+                                                            id="hvdropdown1-values-search-input"
+                                                            inputProps={
+                                                              Object {
+                                                                "aria-controls": undefined,
+                                                                "aria-describedby": undefined,
+                                                                "aria-errormessage": undefined,
+                                                                "aria-invalid": undefined,
+                                                                "aria-label": undefined,
+                                                                "aria-labelledby": undefined,
+                                                                "autoComplete": undefined,
+                                                                "ref": Object {
                                                                   "current": <input
-                                                                    class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
+                                                                    class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
                                                                     id="hvdropdown1-values-search-input"
-                                                                    placeholder="Search"
                                                                     rows="10"
-                                                                    type="text"
+                                                                    type="search"
                                                                     value=""
                                                                   />,
-                                                                }
+                                                                },
                                                               }
-                                                              onChange={[Function]}
-                                                              onKeyDown={[Function]}
-                                                              placeholder="Search"
-                                                              values={
-                                                                Array [
-                                                                  Object {
-                                                                    "label": "Value 1",
-                                                                  },
-                                                                  Object {
-                                                                    "label": "Value 2",
-                                                                  },
-                                                                  Object {
-                                                                    "label": "Value 3",
-                                                                  },
-                                                                ]
+                                                            }
+                                                            inputRef={
+                                                              Object {
+                                                                "current": <input
+                                                                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                  id="hvdropdown1-values-search-input"
+                                                                  rows="10"
+                                                                  type="search"
+                                                                  value=""
+                                                                />,
                                                               }
+                                                            }
+                                                            invalid={false}
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            onFocus={[Function]}
+                                                            onKeyDown={[Function]}
+                                                            readOnly={false}
+                                                            required={false}
+                                                            type="search"
+                                                            value=""
+                                                          >
+                                                            <div
+                                                              className="HvBaseInput-root"
                                                             >
-                                                              <HvBaseInput
+                                                              <WithStyles(ForwardRef(Input))
                                                                 autoFocus={false}
                                                                 classes={
                                                                   Object {
-                                                                    "disabledRoot": "HvBaseInput-disabledRoot",
-                                                                    "input": "HvBaseInput-input",
-                                                                    "inputBorderContainer": "HvBaseInput-inputBorderContainer",
-                                                                    "inputDisabled": "HvBaseInput-inputDisabled",
-                                                                    "inputRoot": "HvBaseInput-inputRoot",
-                                                                    "inputRootDisabled": "HvBaseInput-inputRootDisabled",
-                                                                    "inputRootFocused": "HvBaseInput-inputRootFocused",
-                                                                    "invalidRoot": "HvBaseInput-invalidRoot",
-                                                                    "multiLine": "HvBaseInput-multiLine",
-                                                                    "resize": "HvBaseInput-resize",
-                                                                    "root": "HvBaseInput-root",
-                                                                    "rootResizable": "HvBaseInput-rootResizable",
+                                                                    "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                                                    "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                                                    "input": "HvBaseInput-input HvInput-input",
+                                                                    "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                                                    "root": "HvBaseInput-inputRoot HvInput-inputRoot",
                                                                   }
                                                                 }
+                                                                disabled={false}
                                                                 endAdornment={
-                                                                  <React.Fragment>
-                                                                    <WithStyles(HvAdornment)
-                                                                      aria-label="clear button"
-                                                                      icon={<CloseXS />}
-                                                                      isVisible={false}
-                                                                      onClick={[Function]}
-                                                                    />
-                                                                    <WithStyles(HvAdornment)
+                                                                  <div
+                                                                    aria-hidden="true"
+                                                                    className="HvInput-adornmentsBox"
+                                                                  >
+                                                                    <WithStyles(ForwardRef)
+                                                                      aria-label="Search"
+                                                                      className="HvInput-adornmentButton"
                                                                       icon={<Search />}
-                                                                      isVisible={true}
                                                                     />
-                                                                  </React.Fragment>
+                                                                  </div>
+                                                                }
+                                                                id="hvdropdown1-values-search-input"
+                                                                inputProps={
+                                                                  Object {
+                                                                    "aria-controls": undefined,
+                                                                    "aria-describedby": undefined,
+                                                                    "aria-errormessage": undefined,
+                                                                    "aria-invalid": undefined,
+                                                                    "aria-label": undefined,
+                                                                    "aria-labelledby": undefined,
+                                                                    "autoComplete": undefined,
+                                                                    "ref": Object {
+                                                                      "current": <input
+                                                                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                        id="hvdropdown1-values-search-input"
+                                                                        rows="10"
+                                                                        type="search"
+                                                                        value=""
+                                                                      />,
+                                                                    },
+                                                                    "required": false,
+                                                                  }
                                                                 }
                                                                 inputRef={
                                                                   Object {
                                                                     "current": <input
-                                                                      class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
+                                                                      class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
                                                                       id="hvdropdown1-values-search-input"
-                                                                      placeholder="Search"
                                                                       rows="10"
-                                                                      type="text"
+                                                                      type="search"
                                                                       value=""
                                                                     />,
                                                                   }
                                                                 }
+                                                                multiline={false}
+                                                                onBlur={[Function]}
                                                                 onChange={[Function]}
+                                                                onFocus={[Function]}
                                                                 onKeyDown={[Function]}
-                                                                placeholder="Search"
-                                                                values={
-                                                                  Array [
-                                                                    Object {
-                                                                      "label": "Value 1",
-                                                                    },
-                                                                    Object {
-                                                                      "label": "Value 2",
-                                                                    },
-                                                                    Object {
-                                                                      "label": "Value 3",
-                                                                    },
-                                                                  ]
-                                                                }
+                                                                readOnly={false}
+                                                                rows={10}
+                                                                type="search"
+                                                                value=""
                                                               >
-                                                                <div
-                                                                  className="HvBaseInput-root"
+                                                                <ForwardRef(Input)
+                                                                  autoFocus={false}
+                                                                  classes={
+                                                                    Object {
+                                                                      "colorSecondary": "MuiInput-colorSecondary",
+                                                                      "disabled": "Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                                                      "error": "Mui-error",
+                                                                      "focused": "Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                                                      "formControl": "MuiInput-formControl",
+                                                                      "fullWidth": "MuiInput-fullWidth",
+                                                                      "input": "MuiInput-input HvBaseInput-input HvInput-input",
+                                                                      "inputMarginDense": "MuiInput-inputMarginDense",
+                                                                      "inputMultiline": "MuiInput-inputMultiline",
+                                                                      "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                                                      "marginDense": "MuiInput-marginDense",
+                                                                      "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                                                      "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot",
+                                                                      "underline": "MuiInput-underline",
+                                                                    }
+                                                                  }
+                                                                  disableUnderline={true}
+                                                                  disabled={false}
+                                                                  endAdornment={
+                                                                    <div
+                                                                      aria-hidden="true"
+                                                                      className="HvInput-adornmentsBox"
+                                                                    >
+                                                                      <WithStyles(ForwardRef)
+                                                                        aria-label="Search"
+                                                                        className="HvInput-adornmentButton"
+                                                                        icon={<Search />}
+                                                                      />
+                                                                    </div>
+                                                                  }
+                                                                  id="hvdropdown1-values-search-input"
+                                                                  inputProps={
+                                                                    Object {
+                                                                      "aria-controls": undefined,
+                                                                      "aria-describedby": undefined,
+                                                                      "aria-errormessage": undefined,
+                                                                      "aria-invalid": undefined,
+                                                                      "aria-label": undefined,
+                                                                      "aria-labelledby": undefined,
+                                                                      "autoComplete": undefined,
+                                                                      "ref": Object {
+                                                                        "current": <input
+                                                                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                          id="hvdropdown1-values-search-input"
+                                                                          rows="10"
+                                                                          type="search"
+                                                                          value=""
+                                                                        />,
+                                                                      },
+                                                                      "required": false,
+                                                                    }
+                                                                  }
+                                                                  inputRef={
+                                                                    Object {
+                                                                      "current": <input
+                                                                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                        id="hvdropdown1-values-search-input"
+                                                                        rows="10"
+                                                                        type="search"
+                                                                        value=""
+                                                                      />,
+                                                                    }
+                                                                  }
+                                                                  multiline={false}
+                                                                  onBlur={[Function]}
+                                                                  onChange={[Function]}
+                                                                  onFocus={[Function]}
+                                                                  onKeyDown={[Function]}
+                                                                  readOnly={false}
+                                                                  rows={10}
+                                                                  type="search"
+                                                                  value=""
                                                                 >
-                                                                  <WithStyles(ForwardRef(Input))
+                                                                  <WithStyles(ForwardRef(InputBase))
                                                                     autoFocus={false}
-                                                                    className="HvBaseInput-inputRoot"
                                                                     classes={
                                                                       Object {
-                                                                        "disabled": "HvBaseInput-inputDisabled",
-                                                                        "focused": "HvBaseInput-inputRootFocused",
-                                                                        "input": "HvBaseInput-input",
-                                                                        "multiline": "HvBaseInput-multiLine",
+                                                                        "colorSecondary": "MuiInput-colorSecondary",
+                                                                        "disabled": "Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                                                        "error": "Mui-error",
+                                                                        "focused": "Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                                                        "formControl": "MuiInput-formControl",
+                                                                        "fullWidth": "MuiInput-fullWidth",
+                                                                        "input": "MuiInput-input HvBaseInput-input HvInput-input",
+                                                                        "inputMarginDense": "MuiInput-inputMarginDense",
+                                                                        "inputMultiline": "MuiInput-inputMultiline",
+                                                                        "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                                                        "marginDense": "MuiInput-marginDense",
+                                                                        "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                                                        "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot",
+                                                                        "underline": null,
                                                                       }
                                                                     }
                                                                     disabled={false}
                                                                     endAdornment={
-                                                                      <React.Fragment>
-                                                                        <WithStyles(HvAdornment)
-                                                                          aria-label="clear button"
-                                                                          icon={<CloseXS />}
-                                                                          isVisible={false}
-                                                                          onClick={[Function]}
-                                                                        />
-                                                                        <WithStyles(HvAdornment)
+                                                                      <div
+                                                                        aria-hidden="true"
+                                                                        className="HvInput-adornmentsBox"
+                                                                      >
+                                                                        <WithStyles(ForwardRef)
+                                                                          aria-label="Search"
+                                                                          className="HvInput-adornmentButton"
                                                                           icon={<Search />}
-                                                                          isVisible={true}
                                                                         />
-                                                                      </React.Fragment>
+                                                                      </div>
                                                                     }
+                                                                    fullWidth={false}
                                                                     id="hvdropdown1-values-search-input"
+                                                                    inputComponent="input"
                                                                     inputProps={
                                                                       Object {
                                                                         "aria-controls": undefined,
                                                                         "aria-describedby": undefined,
+                                                                        "aria-errormessage": undefined,
                                                                         "aria-invalid": undefined,
+                                                                        "aria-label": undefined,
                                                                         "aria-labelledby": undefined,
-                                                                        "aria-required": undefined,
+                                                                        "autoComplete": undefined,
+                                                                        "ref": Object {
+                                                                          "current": <input
+                                                                            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                            id="hvdropdown1-values-search-input"
+                                                                            rows="10"
+                                                                            type="search"
+                                                                            value=""
+                                                                          />,
+                                                                        },
                                                                         "required": false,
                                                                       }
                                                                     }
                                                                     inputRef={
                                                                       Object {
                                                                         "current": <input
-                                                                          class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
+                                                                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
                                                                           id="hvdropdown1-values-search-input"
-                                                                          placeholder="Search"
                                                                           rows="10"
-                                                                          type="text"
+                                                                          type="search"
                                                                           value=""
                                                                         />,
                                                                       }
                                                                     }
                                                                     multiline={false}
+                                                                    onBlur={[Function]}
                                                                     onChange={[Function]}
+                                                                    onFocus={[Function]}
                                                                     onKeyDown={[Function]}
-                                                                    placeholder="Search"
+                                                                    readOnly={false}
                                                                     rows={10}
+                                                                    type="search"
                                                                     value=""
-                                                                    values={
-                                                                      Array [
-                                                                        Object {
-                                                                          "label": "Value 1",
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Value 2",
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Value 3",
-                                                                        },
-                                                                      ]
-                                                                    }
                                                                   >
-                                                                    <ForwardRef(Input)
+                                                                    <ForwardRef(InputBase)
                                                                       autoFocus={false}
-                                                                      className="HvBaseInput-inputRoot"
                                                                       classes={
                                                                         Object {
-                                                                          "colorSecondary": "MuiInput-colorSecondary",
-                                                                          "disabled": "Mui-disabled HvBaseInput-inputDisabled",
-                                                                          "error": "Mui-error",
-                                                                          "focused": "Mui-focused HvBaseInput-inputRootFocused",
-                                                                          "formControl": "MuiInput-formControl",
-                                                                          "fullWidth": "MuiInput-fullWidth",
-                                                                          "input": "MuiInput-input HvBaseInput-input",
-                                                                          "inputMarginDense": "MuiInput-inputMarginDense",
-                                                                          "inputMultiline": "MuiInput-inputMultiline",
-                                                                          "inputTypeSearch": "MuiInput-inputTypeSearch",
-                                                                          "marginDense": "MuiInput-marginDense",
-                                                                          "multiline": "MuiInput-multiline HvBaseInput-multiLine",
-                                                                          "root": "MuiInput-root",
-                                                                          "underline": "MuiInput-underline",
+                                                                          "adornedEnd": "MuiInputBase-adornedEnd",
+                                                                          "adornedStart": "MuiInputBase-adornedStart",
+                                                                          "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
+                                                                          "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                                                          "error": "Mui-error Mui-error",
+                                                                          "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                                                          "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                                                                          "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                                                                          "input": "MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input",
+                                                                          "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                                                          "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                                                          "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                                                          "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                                                                          "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                                                                          "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                                                                          "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
+                                                                          "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                                                          "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot",
                                                                         }
                                                                       }
-                                                                      disableUnderline={true}
                                                                       disabled={false}
                                                                       endAdornment={
-                                                                        <React.Fragment>
-                                                                          <WithStyles(HvAdornment)
-                                                                            aria-label="clear button"
-                                                                            icon={<CloseXS />}
-                                                                            isVisible={false}
-                                                                            onClick={[Function]}
-                                                                          />
-                                                                          <WithStyles(HvAdornment)
+                                                                        <div
+                                                                          aria-hidden="true"
+                                                                          className="HvInput-adornmentsBox"
+                                                                        >
+                                                                          <WithStyles(ForwardRef)
+                                                                            aria-label="Search"
+                                                                            className="HvInput-adornmentButton"
                                                                             icon={<Search />}
-                                                                            isVisible={true}
                                                                           />
-                                                                        </React.Fragment>
+                                                                        </div>
                                                                       }
+                                                                      fullWidth={false}
                                                                       id="hvdropdown1-values-search-input"
+                                                                      inputComponent="input"
                                                                       inputProps={
                                                                         Object {
                                                                           "aria-controls": undefined,
                                                                           "aria-describedby": undefined,
+                                                                          "aria-errormessage": undefined,
                                                                           "aria-invalid": undefined,
+                                                                          "aria-label": undefined,
                                                                           "aria-labelledby": undefined,
-                                                                          "aria-required": undefined,
+                                                                          "autoComplete": undefined,
+                                                                          "ref": Object {
+                                                                            "current": <input
+                                                                              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                              id="hvdropdown1-values-search-input"
+                                                                              rows="10"
+                                                                              type="search"
+                                                                              value=""
+                                                                            />,
+                                                                          },
                                                                           "required": false,
                                                                         }
                                                                       }
                                                                       inputRef={
                                                                         Object {
                                                                           "current": <input
-                                                                            class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
+                                                                            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
                                                                             id="hvdropdown1-values-search-input"
-                                                                            placeholder="Search"
                                                                             rows="10"
-                                                                            type="text"
+                                                                            type="search"
                                                                             value=""
                                                                           />,
                                                                         }
                                                                       }
                                                                       multiline={false}
+                                                                      onBlur={[Function]}
                                                                       onChange={[Function]}
+                                                                      onFocus={[Function]}
                                                                       onKeyDown={[Function]}
-                                                                      placeholder="Search"
+                                                                      readOnly={false}
                                                                       rows={10}
+                                                                      type="search"
                                                                       value=""
-                                                                      values={
-                                                                        Array [
-                                                                          Object {
-                                                                            "label": "Value 1",
-                                                                          },
-                                                                          Object {
-                                                                            "label": "Value 2",
-                                                                          },
-                                                                          Object {
-                                                                            "label": "Value 3",
-                                                                          },
-                                                                        ]
-                                                                      }
-                                                                    >
-                                                                      <WithStyles(ForwardRef(InputBase))
-                                                                        autoFocus={false}
-                                                                        className="HvBaseInput-inputRoot"
-                                                                        classes={
-                                                                          Object {
-                                                                            "colorSecondary": "MuiInput-colorSecondary",
-                                                                            "disabled": "Mui-disabled HvBaseInput-inputDisabled",
-                                                                            "error": "Mui-error",
-                                                                            "focused": "Mui-focused HvBaseInput-inputRootFocused",
-                                                                            "formControl": "MuiInput-formControl",
-                                                                            "fullWidth": "MuiInput-fullWidth",
-                                                                            "input": "MuiInput-input HvBaseInput-input",
-                                                                            "inputMarginDense": "MuiInput-inputMarginDense",
-                                                                            "inputMultiline": "MuiInput-inputMultiline",
-                                                                            "inputTypeSearch": "MuiInput-inputTypeSearch",
-                                                                            "marginDense": "MuiInput-marginDense",
-                                                                            "multiline": "MuiInput-multiline HvBaseInput-multiLine",
-                                                                            "root": "MuiInput-root",
-                                                                            "underline": null,
-                                                                          }
-                                                                        }
-                                                                        disabled={false}
-                                                                        endAdornment={
-                                                                          <React.Fragment>
-                                                                            <WithStyles(HvAdornment)
-                                                                              aria-label="clear button"
-                                                                              icon={<CloseXS />}
-                                                                              isVisible={false}
-                                                                              onClick={[Function]}
-                                                                            />
-                                                                            <WithStyles(HvAdornment)
-                                                                              icon={<Search />}
-                                                                              isVisible={true}
-                                                                            />
-                                                                          </React.Fragment>
-                                                                        }
-                                                                        fullWidth={false}
-                                                                        id="hvdropdown1-values-search-input"
-                                                                        inputComponent="input"
-                                                                        inputProps={
-                                                                          Object {
-                                                                            "aria-controls": undefined,
-                                                                            "aria-describedby": undefined,
-                                                                            "aria-invalid": undefined,
-                                                                            "aria-labelledby": undefined,
-                                                                            "aria-required": undefined,
-                                                                            "required": false,
-                                                                          }
-                                                                        }
-                                                                        inputRef={
-                                                                          Object {
-                                                                            "current": <input
-                                                                              class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                              id="hvdropdown1-values-search-input"
-                                                                              placeholder="Search"
-                                                                              rows="10"
-                                                                              type="text"
-                                                                              value=""
-                                                                            />,
-                                                                          }
-                                                                        }
-                                                                        multiline={false}
-                                                                        onChange={[Function]}
-                                                                        onKeyDown={[Function]}
-                                                                        placeholder="Search"
-                                                                        rows={10}
-                                                                        type="text"
-                                                                        value=""
-                                                                        values={
-                                                                          Array [
-                                                                            Object {
-                                                                              "label": "Value 1",
-                                                                            },
-                                                                            Object {
-                                                                              "label": "Value 2",
-                                                                            },
-                                                                            Object {
-                                                                              "label": "Value 3",
-                                                                            },
-                                                                          ]
-                                                                        }
-                                                                      >
-                                                                        <ForwardRef(InputBase)
-                                                                          autoFocus={false}
-                                                                          className="HvBaseInput-inputRoot"
-                                                                          classes={
-                                                                            Object {
-                                                                              "adornedEnd": "MuiInputBase-adornedEnd",
-                                                                              "adornedStart": "MuiInputBase-adornedStart",
-                                                                              "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                                                                              "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputDisabled",
-                                                                              "error": "Mui-error Mui-error",
-                                                                              "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused",
-                                                                              "formControl": "MuiInputBase-formControl MuiInput-formControl",
-                                                                              "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
-                                                                              "input": "MuiInputBase-input MuiInput-input HvBaseInput-input",
-                                                                              "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
-                                                                              "inputAdornedStart": "MuiInputBase-inputAdornedStart",
-                                                                              "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
-                                                                              "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
-                                                                              "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
-                                                                              "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
-                                                                              "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                                                                              "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-multiLine",
-                                                                              "root": "MuiInputBase-root MuiInput-root",
-                                                                            }
-                                                                          }
-                                                                          disabled={false}
-                                                                          endAdornment={
-                                                                            <React.Fragment>
-                                                                              <WithStyles(HvAdornment)
-                                                                                aria-label="clear button"
-                                                                                icon={<CloseXS />}
-                                                                                isVisible={false}
-                                                                                onClick={[Function]}
-                                                                              />
-                                                                              <WithStyles(HvAdornment)
-                                                                                icon={<Search />}
-                                                                                isVisible={true}
-                                                                              />
-                                                                            </React.Fragment>
-                                                                          }
-                                                                          fullWidth={false}
-                                                                          id="hvdropdown1-values-search-input"
-                                                                          inputComponent="input"
-                                                                          inputProps={
-                                                                            Object {
-                                                                              "aria-controls": undefined,
-                                                                              "aria-describedby": undefined,
-                                                                              "aria-invalid": undefined,
-                                                                              "aria-labelledby": undefined,
-                                                                              "aria-required": undefined,
-                                                                              "required": false,
-                                                                            }
-                                                                          }
-                                                                          inputRef={
-                                                                            Object {
-                                                                              "current": <input
-                                                                                class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                                id="hvdropdown1-values-search-input"
-                                                                                placeholder="Search"
-                                                                                rows="10"
-                                                                                type="text"
-                                                                                value=""
-                                                                              />,
-                                                                            }
-                                                                          }
-                                                                          multiline={false}
-                                                                          onChange={[Function]}
-                                                                          onKeyDown={[Function]}
-                                                                          placeholder="Search"
-                                                                          rows={10}
-                                                                          type="text"
-                                                                          value=""
-                                                                          values={
-                                                                            Array [
-                                                                              Object {
-                                                                                "label": "Value 1",
-                                                                              },
-                                                                              Object {
-                                                                                "label": "Value 2",
-                                                                              },
-                                                                              Object {
-                                                                                "label": "Value 3",
-                                                                              },
-                                                                            ]
-                                                                          }
-                                                                        >
-                                                                          <div
-                                                                            className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInputBase-adornedEnd"
-                                                                            onClick={[Function]}
-                                                                            values={
-                                                                              Array [
-                                                                                Object {
-                                                                                  "label": "Value 1",
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Value 2",
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Value 3",
-                                                                                },
-                                                                              ]
-                                                                            }
-                                                                          >
-                                                                            <input
-                                                                              autoFocus={false}
-                                                                              className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                              disabled={false}
-                                                                              id="hvdropdown1-values-search-input"
-                                                                              onAnimationStart={[Function]}
-                                                                              onBlur={[Function]}
-                                                                              onChange={[Function]}
-                                                                              onFocus={[Function]}
-                                                                              onKeyDown={[Function]}
-                                                                              placeholder="Search"
-                                                                              required={false}
-                                                                              rows={10}
-                                                                              type="text"
-                                                                              value=""
-                                                                            />
-                                                                            <WithStyles(HvAdornment)
-                                                                              aria-label="clear button"
-                                                                              icon={<CloseXS />}
-                                                                              isVisible={false}
-                                                                              onClick={[Function]}
-                                                                            >
-                                                                              <HvAdornment
-                                                                                aria-label="clear button"
-                                                                                classes={
-                                                                                  Object {
-                                                                                    "adornment": "HvAdornment-adornment",
-                                                                                    "adornmentButton": "HvAdornment-adornmentButton",
-                                                                                    "adornmentIcon": "HvAdornment-adornmentIcon",
-                                                                                    "hideIcon": "HvAdornment-hideIcon",
-                                                                                    "icon": "HvAdornment-icon",
-                                                                                    "root": "HvAdornment-root",
-                                                                                  }
-                                                                                }
-                                                                                icon={<CloseXS />}
-                                                                                isVisible={false}
-                                                                                onClick={[Function]}
-                                                                              >
-                                                                                <button
-                                                                                  aria-label="clear button"
-                                                                                  className="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentButton HvAdornment-hideIcon"
-                                                                                  onClick={[Function]}
-                                                                                  onKeyDown={[Function]}
-                                                                                  tabIndex={-1}
-                                                                                  type="button"
-                                                                                >
-                                                                                  <div
-                                                                                    className="HvAdornment-icon"
-                                                                                  >
-                                                                                    <CloseXS>
-                                                                                      <HvIconBase
-                                                                                        iconSize="XS"
-                                                                                        name="CloseXS"
-                                                                                      >
-                                                                                        <div
-                                                                                          className="HvIconBase-root HvIconBase-xs"
-                                                                                          name="CloseXS"
-                                                                                        >
-                                                                                          <svg
-                                                                                            focusable={false}
-                                                                                            height={12}
-                                                                                            viewBox="0 0 12 12"
-                                                                                            width={12}
-                                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                                          >
-                                                                                            <path
-                                                                                              className="color0"
-                                                                                              d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                                                                                              fill="#414141"
-                                                                                            />
-                                                                                          </svg>
-                                                                                        </div>
-                                                                                      </HvIconBase>
-                                                                                    </CloseXS>
-                                                                                  </div>
-                                                                                </button>
-                                                                              </HvAdornment>
-                                                                            </WithStyles(HvAdornment)>
-                                                                            <WithStyles(HvAdornment)
-                                                                              icon={<Search />}
-                                                                              isVisible={true}
-                                                                            >
-                                                                              <HvAdornment
-                                                                                classes={
-                                                                                  Object {
-                                                                                    "adornment": "HvAdornment-adornment",
-                                                                                    "adornmentButton": "HvAdornment-adornmentButton",
-                                                                                    "adornmentIcon": "HvAdornment-adornmentIcon",
-                                                                                    "hideIcon": "HvAdornment-hideIcon",
-                                                                                    "icon": "HvAdornment-icon",
-                                                                                    "root": "HvAdornment-root",
-                                                                                  }
-                                                                                }
-                                                                                icon={<Search />}
-                                                                                isVisible={true}
-                                                                              >
-                                                                                <div
-                                                                                  className="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
-                                                                                  role="presentation"
-                                                                                >
-                                                                                  <div
-                                                                                    className="HvAdornment-icon"
-                                                                                  >
-                                                                                    <Search>
-                                                                                      <HvIconBase
-                                                                                        iconSize="S"
-                                                                                        name="Search"
-                                                                                      >
-                                                                                        <div
-                                                                                          className="HvIconBase-root HvIconBase-s"
-                                                                                          name="Search"
-                                                                                        >
-                                                                                          <svg
-                                                                                            focusable={false}
-                                                                                            height={16}
-                                                                                            viewBox="0 0 16 16"
-                                                                                            width={16}
-                                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                                          >
-                                                                                            <path
-                                                                                              className="color0"
-                                                                                              d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
-                                                                                              fill="#414141"
-                                                                                            />
-                                                                                          </svg>
-                                                                                        </div>
-                                                                                      </HvIconBase>
-                                                                                    </Search>
-                                                                                  </div>
-                                                                                </div>
-                                                                              </HvAdornment>
-                                                                            </WithStyles(HvAdornment)>
-                                                                          </div>
-                                                                        </ForwardRef(InputBase)>
-                                                                      </WithStyles(ForwardRef(InputBase))>
-                                                                    </ForwardRef(Input)>
-                                                                  </WithStyles(ForwardRef(Input))>
-                                                                  <div
-                                                                    className="HvBaseInput-inputBorderContainer"
-                                                                    role="presentation"
-                                                                  />
-                                                                </div>
-                                                              </HvBaseInput>
-                                                            </WithStyles(HvBaseInput)>
-                                                            <WithStyles(HvSuggestions)
-                                                              anchorEl={
-                                                                <div
-                                                                  class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInputBase-adornedEnd"
-                                                                  values="[object Object],[object Object],[object Object]"
-                                                                >
-                                                                  <input
-                                                                    class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                    id="hvdropdown1-values-search-input"
-                                                                    placeholder="Search"
-                                                                    rows="10"
-                                                                    type="text"
-                                                                    value=""
-                                                                  />
-                                                                  <button
-                                                                    aria-label="clear button"
-                                                                    class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentButton HvAdornment-hideIcon"
-                                                                    tabindex="-1"
-                                                                    type="button"
-                                                                  >
-                                                                    <div
-                                                                      class="HvAdornment-icon"
                                                                     >
                                                                       <div
-                                                                        class="HvIconBase-root HvIconBase-xs"
-                                                                        name="CloseXS"
-                                                                      >
-                                                                        <svg
-                                                                          focusable="false"
-                                                                          height="12"
-                                                                          viewBox="0 0 12 12"
-                                                                          width="12"
-                                                                          xmlns="http://www.w3.org/2000/svg"
-                                                                        >
-                                                                          <path
-                                                                            class="color0"
-                                                                            d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                                                                            fill="#414141"
-                                                                          />
-                                                                        </svg>
-                                                                      </div>
-                                                                    </div>
-                                                                  </button>
-                                                                  <div
-                                                                    class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
-                                                                    role="presentation"
-                                                                  >
-                                                                    <div
-                                                                      class="HvAdornment-icon"
-                                                                    >
-                                                                      <div
-                                                                        class="HvIconBase-root HvIconBase-s"
-                                                                        name="Search"
-                                                                      >
-                                                                        <svg
-                                                                          focusable="false"
-                                                                          height="16"
-                                                                          viewBox="0 0 16 16"
-                                                                          width="16"
-                                                                          xmlns="http://www.w3.org/2000/svg"
-                                                                        >
-                                                                          <path
-                                                                            class="color0"
-                                                                            d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
-                                                                            fill="#414141"
-                                                                          />
-                                                                        </svg>
-                                                                      </div>
-                                                                    </div>
-                                                                  </div>
-                                                                </div>
-                                                              }
-                                                              expanded={false}
-                                                              onClose={[Function]}
-                                                              onKeyDown={[Function]}
-                                                              onSuggestionSelected={[Function]}
-                                                              suggestionValues={Array []}
-                                                            >
-                                                              <HvSuggestions
-                                                                anchorEl={
-                                                                  <div
-                                                                    class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInputBase-adornedEnd"
-                                                                    values="[object Object],[object Object],[object Object]"
-                                                                  >
-                                                                    <input
-                                                                      class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
-                                                                      id="hvdropdown1-values-search-input"
-                                                                      placeholder="Search"
-                                                                      rows="10"
-                                                                      type="text"
-                                                                      value=""
-                                                                    />
-                                                                    <button
-                                                                      aria-label="clear button"
-                                                                      class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentButton HvAdornment-hideIcon"
-                                                                      tabindex="-1"
-                                                                      type="button"
-                                                                    >
-                                                                      <div
-                                                                        class="HvAdornment-icon"
-                                                                      >
-                                                                        <div
-                                                                          class="HvIconBase-root HvIconBase-xs"
-                                                                          name="CloseXS"
-                                                                        >
-                                                                          <svg
-                                                                            focusable="false"
-                                                                            height="12"
-                                                                            viewBox="0 0 12 12"
-                                                                            width="12"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                          >
-                                                                            <path
-                                                                              class="color0"
-                                                                              d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                                                                              fill="#414141"
-                                                                            />
-                                                                          </svg>
-                                                                        </div>
-                                                                      </div>
-                                                                    </button>
-                                                                    <div
-                                                                      class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
-                                                                      role="presentation"
-                                                                    >
-                                                                      <div
-                                                                        class="HvAdornment-icon"
-                                                                      >
-                                                                        <div
-                                                                          class="HvIconBase-root HvIconBase-s"
-                                                                          name="Search"
-                                                                        >
-                                                                          <svg
-                                                                            focusable="false"
-                                                                            height="16"
-                                                                            viewBox="0 0 16 16"
-                                                                            width="16"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                          >
-                                                                            <path
-                                                                              class="color0"
-                                                                              d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
-                                                                              fill="#414141"
-                                                                            />
-                                                                          </svg>
-                                                                        </div>
-                                                                      </div>
-                                                                    </div>
-                                                                  </div>
-                                                                }
-                                                                classes={
-                                                                  Object {
-                                                                    "list": "HvSuggestions-list",
-                                                                    "popper": "HvSuggestions-popper",
-                                                                    "root": "HvSuggestions-root",
-                                                                  }
-                                                                }
-                                                                expanded={false}
-                                                                onClose={[Function]}
-                                                                onKeyDown={[Function]}
-                                                                onSuggestionSelected={[Function]}
-                                                                suggestionValues={Array []}
-                                                              >
-                                                                <div
-                                                                  className="HvSuggestions-root"
-                                                                  id="hvdropdown1-values-search-suggestions"
-                                                                  onKeyDown={[Function]}
-                                                                >
-                                                                  <ForwardRef(Popper)
-                                                                    anchorEl={
-                                                                      <div
-                                                                        class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInputBase-adornedEnd"
-                                                                        values="[object Object],[object Object],[object Object]"
+                                                                        className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot MuiInputBase-adornedEnd"
+                                                                        onClick={[Function]}
                                                                       >
                                                                         <input
-                                                                          class="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputAdornedEnd"
+                                                                          autoFocus={false}
+                                                                          className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch"
+                                                                          disabled={false}
                                                                           id="hvdropdown1-values-search-input"
-                                                                          placeholder="Search"
-                                                                          rows="10"
-                                                                          type="text"
+                                                                          onAnimationStart={[Function]}
+                                                                          onBlur={[Function]}
+                                                                          onChange={[Function]}
+                                                                          onFocus={[Function]}
+                                                                          onKeyDown={[Function]}
+                                                                          readOnly={false}
+                                                                          required={false}
+                                                                          rows={10}
+                                                                          type="search"
                                                                           value=""
                                                                         />
-                                                                        <button
-                                                                          aria-label="clear button"
-                                                                          class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentButton HvAdornment-hideIcon"
-                                                                          tabindex="-1"
-                                                                          type="button"
-                                                                        >
-                                                                          <div
-                                                                            class="HvAdornment-icon"
-                                                                          >
-                                                                            <div
-                                                                              class="HvIconBase-root HvIconBase-xs"
-                                                                              name="CloseXS"
-                                                                            >
-                                                                              <svg
-                                                                                focusable="false"
-                                                                                height="12"
-                                                                                viewBox="0 0 12 12"
-                                                                                width="12"
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                              >
-                                                                                <path
-                                                                                  class="color0"
-                                                                                  d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                                                                                  fill="#414141"
-                                                                                />
-                                                                              </svg>
-                                                                            </div>
-                                                                          </div>
-                                                                        </button>
                                                                         <div
-                                                                          class="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
-                                                                          role="presentation"
+                                                                          aria-hidden="true"
+                                                                          className="HvInput-adornmentsBox"
                                                                         >
-                                                                          <div
-                                                                            class="HvAdornment-icon"
+                                                                          <WithStyles(ForwardRef)
+                                                                            aria-label="Search"
+                                                                            className="HvInput-adornmentButton"
+                                                                            icon={<Search />}
                                                                           >
-                                                                            <div
-                                                                              class="HvIconBase-root HvIconBase-s"
-                                                                              name="Search"
+                                                                            <ForwardRef
+                                                                              aria-label="Search"
+                                                                              className="HvInput-adornmentButton"
+                                                                              classes={
+                                                                                Object {
+                                                                                  "adornment": "HvAdornment-adornment",
+                                                                                  "adornmentButton": "HvAdornment-adornmentButton",
+                                                                                  "adornmentIcon": "HvAdornment-adornmentIcon",
+                                                                                  "hideIcon": "HvAdornment-hideIcon",
+                                                                                  "icon": "HvAdornment-icon",
+                                                                                  "root": "HvAdornment-root",
+                                                                                }
+                                                                              }
+                                                                              icon={<Search />}
                                                                             >
-                                                                              <svg
-                                                                                focusable="false"
-                                                                                height="16"
-                                                                                viewBox="0 0 16 16"
-                                                                                width="16"
-                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                              <div
+                                                                                aria-label="Search"
+                                                                                className="HvInput-adornmentButton HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
+                                                                                role="presentation"
                                                                               >
-                                                                                <path
-                                                                                  class="color0"
-                                                                                  d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
-                                                                                  fill="#414141"
-                                                                                />
-                                                                              </svg>
-                                                                            </div>
-                                                                          </div>
+                                                                                <div
+                                                                                  className="HvAdornment-icon"
+                                                                                >
+                                                                                  <Search>
+                                                                                    <HvIconBase
+                                                                                      iconSize="S"
+                                                                                      name="Search"
+                                                                                    >
+                                                                                      <div
+                                                                                        className="HvIconBase-root HvIconBase-s"
+                                                                                        name="Search"
+                                                                                      >
+                                                                                        <svg
+                                                                                          focusable={false}
+                                                                                          height={16}
+                                                                                          viewBox="0 0 16 16"
+                                                                                          width={16}
+                                                                                          xmlns="http://www.w3.org/2000/svg"
+                                                                                        >
+                                                                                          <path
+                                                                                            className="color0"
+                                                                                            d="M15.06836 14.51807l-4.569-4.56885a5.96162 5.96162 0 10-.71692.697l4.57892 4.57886zM5.90155 11A4.95119 4.95119 0 011 6c-.00031-.033-.00031-.06567 0-.09863A4.95089 4.95089 0 016 1q.04926-.00073.09851 0A4.95079 4.95079 0 0111 6q.00056.04906 0 .09839A4.95109 4.95109 0 016 11q-.04917.00036-.09845 0z"
+                                                                                            fill="#414141"
+                                                                                          />
+                                                                                        </svg>
+                                                                                      </div>
+                                                                                    </HvIconBase>
+                                                                                  </Search>
+                                                                                </div>
+                                                                              </div>
+                                                                            </ForwardRef>
+                                                                          </WithStyles(ForwardRef)>
                                                                         </div>
                                                                       </div>
-                                                                    }
-                                                                    className="HvSuggestions-popper"
-                                                                    disablePortal={true}
-                                                                    open={false}
-                                                                  />
-                                                                </div>
-                                                              </HvSuggestions>
-                                                            </WithStyles(HvSuggestions)>
-                                                          </HvLabel>
-                                                        </WithStyles(HvLabel)>
+                                                                    </ForwardRef(InputBase)>
+                                                                  </WithStyles(ForwardRef(InputBase))>
+                                                                </ForwardRef(Input)>
+                                                              </WithStyles(ForwardRef(Input))>
+                                                              <div
+                                                                className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                                                                role="presentation"
+                                                              />
+                                                            </div>
+                                                          </HvBaseInput>
+                                                        </WithStyles(HvBaseInput)>
                                                       </div>
                                                     </HvFormElement>
                                                   </WithId>
                                                 </WithStyles(WithId)>
-                                              </HvSearchBox>
+                                              </HvInput>
                                             </WithLabels>
                                           </WithStyles(WithLabels)>
                                         </div>
