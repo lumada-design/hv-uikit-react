@@ -198,7 +198,7 @@ const HvDatePicker = ({
           onToggle={handleToggle}
           onClickOutside={handleCalendarClose}
           placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
-          adornment={<Calendar className={classes.icon} />}
+          adornment={<Calendar className={classes.icon} color={disabled ? "atmo5" : undefined} />}
           popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
         >
           {

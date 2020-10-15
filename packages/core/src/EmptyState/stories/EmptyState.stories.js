@@ -18,7 +18,7 @@ export const Main = () => {
     <HvEmptyState
       title="No data routes"
       message="After you start adding Data Routes, they will appear in here."
-      icon={<Info iconSize="M" color="acce1" />}
+      icon={<Info />}
     />
   );
 };
@@ -29,7 +29,7 @@ export const WithAction = () => (
     title="Start building data routes"
     message="Before we create any dashboard we need to get some data."
     action={<HvLink route="/">Create a new data route</HvLink>}
-    icon={<BarChart iconSize="M" color="acce1" role="presentation" />}
+    icon={<BarChart role="presentation" />}
   />
 );
 
@@ -56,7 +56,7 @@ export const CustomMessages = () => {
       title="This page can't be displayed"
       message={CustomMessage}
       action={CustomAction}
-      icon={<Ghost iconSize="M" color="acce1" role="presentation" />}
+      icon={<Ghost role="presentation" />}
     />
   );
 };

@@ -189,7 +189,9 @@ export const FormElementInvalid = () => {
         <HvInfoMessage id="invalid-info-message"> Do not put numbers.</HvInfoMessage>
         <HvBaseInput id="invalid-input" />
       </HvLabel>
-      <HvWarningText id="invalid-warning-text">Names do not contain numbers.</HvWarningText>
+      <HvWarningText id="invalid-warning-text" disableBorder>
+        Names do not contain numbers.
+      </HvWarningText>
     </HvFormElement>
   );
 };

@@ -230,6 +230,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       "panel": "HvBaseDropdown-panel",
                       "placeholder": "HvBaseDropdown-placeholder",
                       "root": "HvBaseDropdown-root HvSelect-root-8",
+                      "rootDisabled": "HvBaseDropdown-rootDisabled",
                       "selection": "HvBaseDropdown-selection",
                       "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                     }

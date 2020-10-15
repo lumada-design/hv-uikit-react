@@ -107,6 +107,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
               "panel": "HvBaseDropdown-panel",
               "placeholder": "HvBaseDropdown-placeholder",
               "root": "HvBaseDropdown-root HvDropDownMenu-root",
+              "rootDisabled": "HvBaseDropdown-rootDisabled",
               "selection": "HvBaseDropdown-selection",
               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
             }
@@ -491,6 +492,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
               "panel": "HvBaseDropdown-panel",
               "placeholder": "HvBaseDropdown-placeholder",
               "root": "HvBaseDropdown-root HvDropDownMenu-root",
+              "rootDisabled": "HvBaseDropdown-rootDisabled",
               "selection": "HvBaseDropdown-selection",
               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
             }
@@ -836,6 +838,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
               "panel": "HvBaseDropdown-panel",
               "placeholder": "HvBaseDropdown-placeholder",
               "root": "HvBaseDropdown-root HvDropDownMenu-root",
+              "rootDisabled": "HvBaseDropdown-rootDisabled",
               "selection": "HvBaseDropdown-selection",
               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
             }
@@ -2064,6 +2067,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
               "panel": "HvBaseDropdown-panel",
               "placeholder": "HvBaseDropdown-placeholder",
               "root": "HvBaseDropdown-root HvDropDownMenu-root",
+              "rootDisabled": "HvBaseDropdown-rootDisabled",
               "selection": "HvBaseDropdown-selection",
               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
             }
@@ -2448,6 +2452,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
               "panel": "HvBaseDropdown-panel",
               "placeholder": "HvBaseDropdown-placeholder",
               "root": "HvBaseDropdown-root HvDropDownMenu-root",
+              "rootDisabled": "HvBaseDropdown-rootDisabled",
               "selection": "HvBaseDropdown-selection",
               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
             }
@@ -2793,6 +2798,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
               "panel": "HvBaseDropdown-panel",
               "placeholder": "HvBaseDropdown-placeholder",
               "root": "HvBaseDropdown-root HvDropDownMenu-root",
+              "rootDisabled": "HvBaseDropdown-rootDisabled",
               "selection": "HvBaseDropdown-selection",
               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
             }

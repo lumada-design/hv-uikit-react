@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Edit, Close } from "@hv/uikit-react-icons";
-import { HvPanel, HvButton } from "../..";
+import { HvPanel, HvButton, HvTypography } from "../..";
 
 export default {
   title: "Components/Panel",
@@ -14,7 +14,11 @@ export default {
   component: HvPanel,
 };
 
-export const Main = () => <HvPanel>Panel Content</HvPanel>;
+export const Main = () => (
+  <HvPanel>
+    <HvTypography>Panel Content</HvTypography>
+  </HvPanel>
+);
 
 export const WithScroll = () => {
   const theme = useTheme();
@@ -32,6 +36,8 @@ export const FullWidth = () => {
       position: "absolute",
       top: theme.hv.spacing.sm,
       right: theme.hv.spacing.sm,
+      width: "32px",
+      height: "32px",
     },
   }));
 
@@ -39,7 +45,7 @@ export const FullWidth = () => {
 
   return (
     <HvPanel width="100%" height="200px">
-      <div>Panel Content</div>
+      <HvTypography>Panel Content</HvTypography>
       <HvButton icon className={classes.editButton} aria-label="Edit">
         <Edit />
       </HvButton>
@@ -53,6 +59,8 @@ export const Modal = () => {
       position: "absolute",
       top: theme.hv.spacing.sm,
       right: theme.hv.spacing.sm,
+      width: "32px",
+      height: "32px",
     },
     overlay: {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
@@ -69,7 +77,7 @@ export const Modal = () => {
   return (
     <div className={classes.overlay}>
       <HvPanel width="100%" height="200px" boxShadow={theme.hv.shadows[1]}>
-        <div>Panel Content</div>
+        <HvTypography>Panel Content</HvTypography>
         <HvButton icon className={classes.closeButton} aria-label="Close">
           <Close />
         </HvButton>

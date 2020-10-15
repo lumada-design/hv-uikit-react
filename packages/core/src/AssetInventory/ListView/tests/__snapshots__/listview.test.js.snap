@@ -7242,6 +7242,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               "panel": "HvBaseDropdown-panel",
                                                                               "placeholder": "HvBaseDropdown-placeholder",
                                                                               "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                                                                              "rootDisabled": "HvBaseDropdown-rootDisabled",
                                                                               "selection": "HvBaseDropdown-selection",
                                                                               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                                                                             }
@@ -10721,6 +10722,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               "panel": "HvBaseDropdown-panel",
                                                                               "placeholder": "HvBaseDropdown-placeholder",
                                                                               "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                                                                              "rootDisabled": "HvBaseDropdown-rootDisabled",
                                                                               "selection": "HvBaseDropdown-selection",
                                                                               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                                                                             }
@@ -14202,6 +14204,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               "panel": "HvBaseDropdown-panel",
                                                                               "placeholder": "HvBaseDropdown-placeholder",
                                                                               "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                                                                              "rootDisabled": "HvBaseDropdown-rootDisabled",
                                                                               "selection": "HvBaseDropdown-selection",
                                                                               "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                                                                             }

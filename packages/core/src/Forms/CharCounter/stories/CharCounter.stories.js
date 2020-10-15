@@ -10,6 +10,13 @@ export default {
     dsVersion: "3.2.0",
   },
   component: HvCharCounter,
+  decorators: [
+    (Story) => (
+      <div style={{ display: "flex" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Main = () => (
