@@ -27,6 +27,12 @@ export const Main = () => {
   );
 };
 
+Main.story = {
+  parameters: {
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  },
+};
+
 export const FullWidth = () => {
   const [value, setValue] = useState(0);
   const handleChange = (e, newValue) => setValue(newValue);
@@ -45,6 +51,7 @@ FullWidth.story = {
     docs: {
       storyDescription: "Tabs occupying the full width of the available space",
     },
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
   },
 };
 
@@ -77,6 +84,7 @@ ContentChanging.story = {
     docs: {
       storyDescription: "Tabs changing the content to display according to the selected tab",
     },
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
   },
 };
 
@@ -100,6 +108,12 @@ export const TextSize = () => {
   );
 };
 
+TextSize.story = {
+  parameters: {
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  },
+};
+
 export const CenteredTabs = () => {
   const [value, setValue] = useState(0);
   const handleChange = (e, newValue) => setValue(newValue);
@@ -119,6 +133,12 @@ export const CenteredTabs = () => {
       <HvTab label="Clickable tab" />
     </HvTabs>
   );
+};
+
+CenteredTabs.story = {
+  parameters: {
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  },
 };
 
 export const WithBadges = () => {
@@ -153,5 +173,6 @@ WithBadges.story = {
     docs: {
       storyDescription: "Badges applied to Tabs component.",
     },
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
   },
 };

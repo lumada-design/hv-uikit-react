@@ -94,6 +94,14 @@ export const Main = () => {
   );
 };
 
+Main.story = {
+  parameters: {
+    eyes: {
+      waitBeforeScreenshot: ".HvCalendar-root",
+    },
+  },
+};
+
 export const SingleDate = () => {
   const [selectionDate, setSelectionDate] = useState(new Date(2020, 7, 15));
 
@@ -148,6 +156,14 @@ export const SingleDate = () => {
       </HvFormElement>
     </div>
   );
+};
+
+SingleDate.story = {
+  parameters: {
+    eyes: {
+      waitBeforeScreenshot: ".HvCalendar-root",
+    },
+  },
 };
 
 export const Localized = () => {
@@ -223,7 +239,7 @@ Localized.story = {
       storyDescription: "Warning: Changing this sample locale changes the locale for all samples.",
     },
     eyes: {
-      waitBeforeScreenshot: "#locale-calendar-header-header-input",
+      waitBeforeScreenshot: ".HvCalendar-root",
     },
   },
 };
