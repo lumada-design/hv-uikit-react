@@ -3,8 +3,11 @@ Resource      ../_keywords.resource
 
 
 *** Variables ***
-${searchBox}      css:#dynamic
-${clearButton}    ${searchBox} [name=CloseXS]
+${searchBox}       css:.HvInput-root
+${clearButton}     ${searchBox} [name=CloseXS]
+${searchButton}    ${searchBox} button[aria-label=Search]
+${resultItems}     css:.HvPanel-root>div
+${suggestion}      ${searchBox} li
 
 
 *** Keywords ***
