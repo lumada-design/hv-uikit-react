@@ -49,9 +49,7 @@ Help us to maximize the effort we can spend fixing issues and adding new feature
 Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
 
 #### Branch Structure
-All contributions should target the `master` branch (or `v1.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
-
-The `alpha` branch is used for UI Kit team developments and its release cycle is longer. All stable releases are tagged ([view tags](https://github.com/pentaho/hv-uikit-react/tags)).
+All contributions should target the `master` branch (or `v1.x` if targeting the previous major versions). Maintainers will be responsible for reviewing and merging the Pull Request.
 
 #### Setup
 1. Pull the latest `master` branch.  
