@@ -86,11 +86,11 @@ export const OnlyIcons = () => {
 };
 
 export const Disabled = () => (
-  <HvMultiButton style={{ margin: "10px", width: "320px" }}>
-    <HvButton selected>Avocado</HvButton>
-    <HvButton disabled>Banana</HvButton>
-    <HvButton>Carrot</HvButton>
-    <HvButton startIcon={<Map />}>Map</HvButton>
+  <HvMultiButton style={{ width: "320px" }}>
+    <HvButton selected>Potato</HvButton>
+    <HvButton disabled>Onion</HvButton>
+    <HvButton disabled>Carrot</HvButton>
+    <HvButton disabled>Tomato</HvButton>
   </HvMultiButton>
 );
 
@@ -141,7 +141,7 @@ export const VerticalOrientation = () => {
 
   return (
     <div style={{ display: "flex" }}>
-      <HvMultiButton icon vertical style={{ margin: "10px", width: "32px" }}>
+      <HvMultiButton icon vertical style={{ width: "32px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
             aria-label={name}
@@ -152,7 +152,7 @@ export const VerticalOrientation = () => {
           </HvButton>
         ))}
       </HvMultiButton>
-      <HvMultiButton vertical style={{ margin: "10px", width: "120px" }}>
+      <HvMultiButton vertical style={{ marginLeft: "20px", width: "120px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
             aria-label={name}
@@ -171,7 +171,8 @@ export const VerticalOrientation = () => {
 VerticalOrientation.story = {
   parameters: {
     docs: {
-      storyDescription: "MultiButton combinations with vertical orientation and multiple selection",
+      storyDescription:
+        "MultiButton combinations with **vertical orientation** and **multiple selection**.",
     },
   },
 };
@@ -188,7 +189,7 @@ export const EnforcedSelection = () => {
   };
 
   return (
-    <div style={{ width: "500px" }}>
+    <div style={{ width: "600px" }}>
       <HvMultiButton>
         {range(5).map((i) => (
           <HvButton
@@ -209,7 +210,7 @@ EnforcedSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        'MultiButton element set as enforced cannot be toggled - In this case "Map" cannot be toggled on/off',
+        'MultiButton element set as enforced cannot be toggled - In this case **"Location 1" cannot be toggled on/off**.',
     },
   },
 };
@@ -247,7 +248,7 @@ MinimumSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Specify a number of minimum elements that must be active - in this case a minimum of 2",
+        "Specify a number of minimum elements that must be active - in this case a **minimum of 2**.",
     },
   },
 };
@@ -285,7 +286,7 @@ MaximumSelection.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Specify a number of maximum elements that can be selected - in this case a maximum of 2",
+        "Specify a number of maximum elements that can be selected - in this case a **maximum of 2**.",
     },
   },
 };

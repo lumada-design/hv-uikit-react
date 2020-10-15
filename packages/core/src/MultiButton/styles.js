@@ -1,14 +1,14 @@
 const styles = (theme) => ({
   root: {
     display: "flex",
-    height: 30,
+    height: 32,
     alignItems: "center",
     transition: "none",
     background: theme.hv.palette.atmosphere.atmo2,
     position: "relative",
     zIndex: 0,
     "& button$button": {
-      height: 30,
+      height: 32,
       width: "100%",
       minWidth: 32,
       maxWidth: 200,
@@ -22,7 +22,7 @@ const styles = (theme) => ({
       borderRadius: 0,
       ...theme.hv.typography.normalText,
       "&:active": {
-        backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
+        backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`,
       },
       "&:disabled": {
         color: theme.hv.palette.atmosphere.atmo5,
@@ -129,7 +129,7 @@ const styles = (theme) => ({
         marginTop: -1,
       },
       "&$selected": {
-        height: 30,
+        height: 32,
         width: `calc(100% + 2px) !important`,
         background: theme.hv.palette.atmosphere.atmo1,
         ...theme.hv.typography.highlightText,
