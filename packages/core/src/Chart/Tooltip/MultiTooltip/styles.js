@@ -6,7 +6,7 @@ const styles = (theme) => ({
     zIndex: 100,
   },
   title: {
-    padding: theme.spacing("15px", "sm"),
+    padding: theme.hvSpacing("15px", "sm"),
     borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
   },
   valuesContainer: {
@@ -14,11 +14,16 @@ const styles = (theme) => ({
   },
   values: {
     display: "flex",
+    justifyContent: "space-between",
     alignItems: "center",
     paddingBottom: theme.hv.spacing.sm,
     "&:last-child": {
       paddingBottom: 0,
     },
+  },
+  valueNameWrapper: {
+    display: "flex",
+    alignItems: "center",
   },
   color: {
     width: theme.hv.spacing.xs,
