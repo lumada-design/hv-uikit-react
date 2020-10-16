@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
@@ -2099,8 +2099,6 @@ TableWithChangingData.story = {
 };
 
 export const TableWithGrowingDataAndNoPagination = () => {
-  const MAX_EVENT_NUMBER = 20;
-
   const initialData = [
     {
       number: 1,
@@ -2136,29 +2134,10 @@ export const TableWithGrowingDataAndNoPagination = () => {
 
   const [data, setData] = useState(initialData);
 
-  // Keep the ref always pointing to the current data value.
-  const dataRef = useRef();
-  dataRef.current = data;
-
   const createEvent = (number) => ({ number, description: `Event ${number}` });
 
-  useEffect(() => {
-    if (data.length + 1 > MAX_EVENT_NUMBER) {
-      return undefined;
-    }
-
-    const timeout = setTimeout(() => {
-      // Update, unless data has been changed in the meantime by the restart button.
-      if (dataRef.current === data) {
-        setData(data.concat(createEvent(data.length + 1)));
-      }
-    }, 1000);
-
-    return () => clearTimeout(timeout);
-  });
-
-  const restartSample = () => {
-    setData(initialData);
+  const addEvent = () => {
+    setData(data.concat(createEvent(data.length + 1)));
   };
 
   const onPageSizeChange = (newPageSize) => {
@@ -2167,7 +2146,7 @@ export const TableWithGrowingDataAndNoPagination = () => {
 
   return (
     <div>
-      <HvButton onClick={restartSample}>Restart</HvButton>
+      <HvButton onClick={addEvent}>Add row</HvButton>
       <p>&nbsp;</p>
       <HvTable
         id="table"
