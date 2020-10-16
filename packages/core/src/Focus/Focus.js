@@ -135,6 +135,8 @@ const Focus = (props) => {
     setTabIndex(evt.currentTarget, 0);
     // remove focus outline unless explicitly enabled
     if (!focusOnClick) {
+      // TODO this piece of code works only because onMouseDown is happening after the focus event
+      // There is nothing in here that guarantees the order of these events, so it may present a problem in the future
       removeFocusClass(evt);
       setShowFocus(false);
     }
