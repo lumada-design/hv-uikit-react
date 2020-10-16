@@ -67,19 +67,15 @@ const HvInput = (props) => {
   const [suggestionValues, setSuggestionValues] = useState(null);
 
   // validation related state
-  const [validationState, setValidationState] = useControlled({
-    controlled: validationStateProp,
-    default: value ? validationStates.filled : validationStates.empty,
-    name: "HvInput",
-    state: "validationState",
-  });
+  const [validationState, setValidationState] = useControlled(
+    validationStateProp,
+    value ? validationStates.filled : validationStates.empty
+  );
 
-  const [warningText, setWarningText] = useControlled({
-    controlled: externalWarningTextOverride,
-    default: labels.warningText,
-    name: "HvInput",
-    state: "externalWarningTextOverride",
-  });
+  const [warningText, setWarningText] = useControlled(
+    externalWarningTextOverride,
+    labels.warningText
+  );
 
   const materialInputRef = useRef(null);
   const inputRef = useRef(inputRefProp || null);
