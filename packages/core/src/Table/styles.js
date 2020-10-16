@@ -336,6 +336,9 @@ const styles = (theme) => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
   },
+  bulkActions: {
+    margin: theme.hvSpacing("sm", 0, "xs"),
+  },
 });
 
 export default styles;
