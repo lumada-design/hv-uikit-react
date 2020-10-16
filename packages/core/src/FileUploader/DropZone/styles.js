@@ -14,6 +14,7 @@ const styles = (theme) => ({
     },
     "&:focus": {
       background: `${theme.hv.palette.atmosphere.atmo1}`,
+      border: `1px dotted ${theme.hv.palette.accent.acce1}`,
       ...outlineStyles,
     },
   },
