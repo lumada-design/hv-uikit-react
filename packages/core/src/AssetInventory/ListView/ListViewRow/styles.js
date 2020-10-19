@@ -21,11 +21,17 @@ const styles = (theme) => ({
     "&:hover": {
       outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     },
+    "&:focus": {
+      outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    },
   },
   selected: {
     outline: `1px solid ${theme.hv.palette.accent.acce1}`,
     "&:hover": {
       outline: `1px solid ${theme.hv.palette.accent.acce1}`,
+    },
+    "&:focus": {
+      outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     },
   },
   actionSeparator: {

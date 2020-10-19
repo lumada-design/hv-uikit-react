@@ -139,10 +139,10 @@ export const Main = () => {
     isSelectable: true,
     columnConfiguration: [
       { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
-      { title: "Event", style: { width: "370px" } },
-      { title: "Probability", style: { width: "93px" } },
-      { title: "Time horizon", style: { width: "108px" } },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } },
+      { title: "Event", style: { minWidth: "370px", paddingLeft: "30px" } },
+      { title: "Probability", style: { minWidth: "93px" } },
+      { title: "Time horizon", style: { minWidth: "108px" } },
+      { title: "Related Assets", style: { minWidth: "195px", paddingLeft: "30px" } },
     ],
     actions: [
       { id: "1", label: "Dismiss", disabled: false },
