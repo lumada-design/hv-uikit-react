@@ -1,8 +1,11 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${tests}input--limited
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource        ../_keywords.resource
+Test Setup      Run Keywords
+...             Go To    ${tests}input--limited
+...             AND    Wait Until Element Is Enabled    ${input}
+Documentation
+...    opened firefox webdriver error https://github.com/mozilla/geckodriver/issues/1742
+...    - as work around was used locator of label that redirects to input
 
 
 *** Test Cases ***
@@ -33,10 +36,9 @@ does not show validation adornment icons when input was clean
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited
-    Input Text                           ${input}    Jo
-    Press Keys                           NONE    TAB
+    Press Keys                           ${input}   Jo    TAB
     wait until element is Visible        ${adornment_accepted}
-    Press Keys                           ${input}    ao
+    Click Element                        ${label}
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited by clicking in label

@@ -25,8 +25,7 @@ clean input when it is not focused and clean button is pressed
 
 show clean button when input is not empty and is focused and mouse is hover it
     Input Text                           ${input}    Joao
-    Press Keys                           NONE    TAB
-    Mouse Over                           ${description}
+    Double Click Element                 ${description}
     Wait Until Element Is Not Visible    ${clean_button}
     Double Click Element                 ${input}
     wait until Element Is Visible        ${clean_button}
@@ -65,4 +64,4 @@ does not show clean button when input is cleaned
 *** Variables ***
 ${clean_button}    css:div[name*=Close]
 ${input}           css:input
-${description}     css:label
+${description}     css:.HvInput-description

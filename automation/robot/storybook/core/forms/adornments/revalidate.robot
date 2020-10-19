@@ -4,13 +4,13 @@ Suite Setup      Set Selenium Speed    0.1 seconds
 Test Setup       Run Keywords
 ...              Go To    ${forms}form-element--main
 ...              AND    Wait Until Element Is Enabled    ${input}
+Suite Teardown    Set Selenium Speed    0 seconds
 Documentation
 ...             was verified a firefox webdriver error!!
 ...             - Was opened https://github.com/mozilla/geckodriver/issues/1742
 ...             work around :
 ...             - used locator of label that redirects to input
 ...             - Set Selenium Speed    0.1 seconds
-Suite Teardown    Set Selenium Speed    0 seconds
 
 
 *** Test Cases ***

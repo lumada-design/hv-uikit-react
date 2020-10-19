@@ -26,16 +26,21 @@ close when calendar is focused and is pressed ESCAPE
     Wait Until Element Is Not Visible    ${calendar}
 
 TAB sequence
-    Repeat Keyword               49 times
-    ...    Press Keys            NONE    TAB
-    Element Should Be Focused    ${cancel}
+    Repeat Keyword                      9 times
+    ...    Press Keys                   NONE    TAB
+    Wait Until Page Contains Element    ${cancel}:focus
 
 TAB sequence when is pressed selector button
-    set focus and press keys     ${year+}    ENTER
-    Repeat Keyword               49 times
-    ...    Press Keys            NONE    TAB
-    Element Should Be Focused    ${cancel}
+    set focus and press keys           ${year+}    ENTER
+    Repeat Keyword                     9 times
+    ...    Press Keys                  NONE    TAB
+    Wait Until Page Contains Element   ${cancel}:focus
 
 SHIFT-TAB sequence from Cancel to Apply
-    set focus and press keys     ${cancel}    SHIFT+TAB
-    Element Should Be Focused    ${apply}
+    [Tags]    bug-ie-webdriver
+    # bug-ie-webdriver focus goes to unknown div
+    # <div tabindex="0" class="focus-visible" data-focus-visible-added=""></div>
+    set focus and press keys            ${apply}    TAB
+    Wait Until Page Contains Element    ${cancel}:focus
+    Press keys                          NONE    SHIFT+TAB
+    Wait Until Page Contains Element    ${apply}:focus

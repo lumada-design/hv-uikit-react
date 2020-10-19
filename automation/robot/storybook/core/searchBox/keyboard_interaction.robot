@@ -1,7 +1,9 @@
 *** Setting ***
-Resource      _searchBox.resource
-Test Setup    open searchBox sample     dynamic-search
-Force Tags    keyboard
+Resource          _searchBox.resource
+Suite Setup       reduce Selenium Speed for ie keyboard events    0.5s
+Test Setup        open searchBox sample     dynamic-search
+Suite Teardown    Set Selenium Speed    0s
+Force Tags        keyboard
 
 
 *** Test Cases ***
@@ -16,23 +18,21 @@ focus first suggestion option when input is focused and is pressed TAB
     [Documentation]
     ...   use cases:
     ...   Can be focused
-    Press Keys                   NONE    TAB
-    Element Should Be Focused    ${searchBox} input
-    Press Keys                   NONE    P    TAB
+    Press Keys                   ${searchBox} input    P    TAB
+    #Press Keys                   NONE    TAB
+    #Element Should Be Focused    ${searchBox} input
+    #Press Keys                   NONE    P    TAB
     Element Should Be Focused    ${suggestion}:first-child
 
 Tab sequence
     [Documentation]
     ...   use cases:
     ...   Clear button is only usable with mouse (a clean shortcut)
-    Press Keys                          NONE    TAB
-    Element Should Be Focused           ${searchBox} input
-    Press Keys                          NONE    P     TAB
-    Element Should Be Focused           ${suggestion}:first-child
-    Press Keys                          NONE    TAB
-    Element Should Be Focused           ${searchBox} input
-    Press Keys                          NONE    TAB
-    Element Should Be Focused           css:body
+    Press Keys                   ${searchBox} input    P    TAB
+    Press Keys                   NONE    TAB
+    Element Should Be Focused    ${searchBox} input
+    Press Keys                   NONE    TAB
+    html body should be focused
 
 return focus to input when suggestion is focused and is pressed ESCAPE
     Press Keys                          ${searchBox} input    P    TAB
@@ -42,12 +42,12 @@ return focus to input when suggestion is focused and is pressed ESCAPE
     Element Should Be Focused           ${searchBox} input
 
 change suggestion focus when pressed arrows up and down
-    Press Keys                          ${searchBox} input    P    TAB
-    Element Should Be Focused           ${suggestion}:first-child
-    Press Keys                          NONE    ARROW_UP
-    Element Should Be Focused           ${suggestion}:last-child
-    Press Keys                          NONE    ARROW_DOWN    ARROW_DOWN
-    Element Should Be Focused           ${suggestion}:nth-child(2)
+    Press Keys                   ${searchBox} input    P    TAB
+    Element Should Be Focused    ${suggestion}:first-child
+    Press Keys                   NONE    ARROW_UP
+    Element Should Be Focused    ${suggestion}:last-child
+    Press Keys                   NONE    ARROW_DOWN    ARROW_DOWN
+    Element Should Be Focused    ${suggestion}:nth-child(2)
 
 select and close suggestions when it is focused and is pressed ENTER
     Press Keys                           ${searchBox} input    po

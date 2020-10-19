@@ -31,5 +31,8 @@ TAB sequence
     Element Should Be Focused    ${cancel}
 
 SHIFT-TAB sequence from Cancel to Apply
+    [Tags]    bug-ie-webdriver
+    # bug-ie-webdriver focus goes to unknown div
+    # <div tabindex="0" class="focus-visible" data-focus-visible-added=""></div>
     set focus and press keys     ${cancel}    SHIFT+TAB
     Element Should Be Focused    ${apply}
