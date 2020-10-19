@@ -1,0 +1,32 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+import themesPackage from "../../packages/themes/package.json";
+import corePackage from "../../packages/core/package.json";
+import labPackage from "../../packages/lab/package.json";
+import iconsPackage from "../../packages/icons/package.json";
+
+<Meta title="Get Started/Accessibility" />
+
+# Accessibility
+
+The **UI kit** follows the two most commonly encountered conformance guidelines for accessibility. They are:
+
+<ul>
+  <li>
+    <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG</a> - Globally accepted
+    standard
+  </li>
+  <li>
+    <a href="https://www.section508.gov/">Section 508</a> - US federal agencies
+  </li>
+</ul>
+
+WCAG 2.0 has 3 levels of conformance; A, AA and AAA (in order of conformance). As meeting WCAG 2.0 level AA guidelines also meets the Section 508 standards, it's likely the standard that most organizations will want to target.
+
+The [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/#grid) provides valuable insight on how to make the grid highly accessible.
+
+To make sure our developed components follow the we target our development and tests to those two standards. Since many of our components are custom,
+there is always room for improvement or areas where the accessibility of a component can be improved. If there is any component where this can be improved, please reach out to us.
+
+Even knowing we develop a component library compliant to these standards, the application is the one responsible for making sure the individual components are configured correctly and the integration of those components build an accessible application.
+So it is very important to know that the **UI kit enables the development of standard compliant applications, nothing more**.

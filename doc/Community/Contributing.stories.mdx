@@ -66,7 +66,7 @@ Be sure that an issue describes the problem you're fixing, or documents the desi
 
 #### Branch Structure
 
-All contributions should target the `master` branch (or `v1.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
+All contributions should target the `master` branch (or `v2.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
 
 #### Setup
 
@@ -150,3 +150,5 @@ Test your changes by running our test commands:
   ```
   npm run test:watch
   ```
+
+We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), selenium based tests (using Robot Framework) to validate the behavioural part and visual tests using Applitools. Please keep an eye on the pull request result for detailed feedback.
