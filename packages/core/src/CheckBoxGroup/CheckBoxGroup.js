@@ -59,9 +59,9 @@ const HvCheckBoxGroup = (props) => {
 
   const elementId = useUniqueId(id, "hvcheckboxgroup");
 
-  const [value, setValue] = useControlled({
-    controlled: valueProp,
-    default: (() => {
+  const [value, setValue] = useControlled(
+    valueProp,
+    (() => {
       // when uncontrolled, extract the initial selected values from the children own state
       const selectedValues = [];
 
@@ -80,24 +80,12 @@ const HvCheckBoxGroup = (props) => {
       });
 
       return selectedValues.filter((v) => v != null);
-    })(),
-    name: "HvCheckboxGroup",
-    state: "value",
-  });
+    })()
+  );
 
-  const [validationState, setValidationState] = useControlled({
-    controlled: status,
-    default: "standBy",
-    name: "HvCheckboxGroup",
-    state: "status",
-  });
+  const [validationState, setValidationState] = useControlled(status, "standBy");
 
-  const [validationMessage] = useControlled({
-    controlled: statusMessage,
-    default: "Required",
-    name: "HvCheckboxGroup",
-    state: "statusMessage",
-  });
+  const [validationMessage] = useControlled(statusMessage, "Required");
 
   const [allValues, selectedState] = useMemo(() => {
     const childValues = [];

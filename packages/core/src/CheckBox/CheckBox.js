@@ -78,33 +78,16 @@ const HvCheckBox = (props) => {
     [onBlur]
   );
 
-  const [isChecked, setIsChecked] = useControlled({
-    controlled: checked,
-    default: Boolean(defaultChecked),
-    name: "HvCheckbox",
-    state: "checked",
-  });
+  const [isChecked, setIsChecked] = useControlled(checked, Boolean(defaultChecked));
 
-  const [isIndeterminate, setIsIndeterminate] = useControlled({
-    controlled: checked !== undefined ? indeterminate : undefined,
-    default: Boolean(indeterminate),
-    name: "HvCheckbox",
-    state: "indeterminate",
-  });
+  const [isIndeterminate, setIsIndeterminate] = useControlled(
+    checked !== undefined ? indeterminate : undefined,
+    Boolean(indeterminate)
+  );
 
-  const [validationState, setValidationState] = useControlled({
-    controlled: status,
-    default: "standBy",
-    name: "HvCheckbox",
-    state: "status",
-  });
+  const [validationState, setValidationState] = useControlled(status, "standBy");
 
-  const [validationMessage] = useControlled({
-    controlled: statusMessage,
-    default: "Required",
-    name: "HvCheckbox",
-    state: "statusMessage",
-  });
+  const [validationMessage] = useControlled(statusMessage, "Required");
 
   const onLocalChange = useCallback(
     (evt, newChecked) => {

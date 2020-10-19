@@ -61,7 +61,7 @@ describe("Hv Table", () => {
     ];
     const defaultSorted = [{ id: 1, desc: true }];
 
-    it("and if 'columns' is avaialble it is rendered", () => {
+    it("and if 'columns' is available it is rendered", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
@@ -107,7 +107,7 @@ describe("Hv Table", () => {
       expect(rowCount).toBe(3);
     });
 
-    it("and if 'defaultPageSize' is provided, default Page Size is set", () => {
+    it("and if 'pageSize' is provided and showPagination is true, defaultPageSize is set", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
@@ -121,6 +121,79 @@ describe("Hv Table", () => {
       const pageSize = wrapper.find(Select);
       expect(pageSize.props().value).toBe(5);
     });
+
+    it("and if 'pageSize' is provided and showPagination is false, pageSize is set, even after first render", () => {
+      wrapper = mount(
+        <HvTable
+          columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
+          data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
+          pageSize={5}
+          showPagination={false}
+        />,
+        {
+          wrappingComponent: HvProvider,
+        }
+      );
+
+      const getRowCount = () => wrapper.find(".rt-td").length;
+
+      expect(getRowCount()).toBe(5);
+
+      wrapper.setProps({ pageSize: 6 });
+
+      expect(getRowCount()).toBe(6);
+    });
+
+    it("and if `pageSize` is not provided and showPagination is false, rows grow when 'data' grows", () => {
+      const initialData = [{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }];
+
+      wrapper = mount(
+        <HvTable
+          columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
+          data={initialData}
+          showPagination={false}
+        />,
+        {
+          wrappingComponent: HvProvider,
+        }
+      );
+
+      const getRowCount = () => wrapper.find(".rt-td").length;
+
+      expect(getRowCount()).toBe(3);
+
+      const newRow = { t1: "test4" };
+      wrapper.setProps({ data: initialData.concat(newRow) });
+
+      expect(getRowCount()).toBe(4);
+    });
+
+    it(
+      "and if `pageSize` is not provided and showPagination is false, " +
+        "onPageSizeChange is called when page size changes",
+      () => {
+        const initialData = [{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }];
+
+        const onPageSizeChange = jest.fn();
+
+        wrapper = mount(
+          <HvTable
+            columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
+            data={initialData}
+            showPagination={false}
+            onPageSizeChange={onPageSizeChange}
+          />,
+          {
+            wrappingComponent: HvProvider,
+          }
+        );
+
+        const newRow = { t1: "test4" };
+        wrapper.setProps({ data: initialData.concat(newRow) });
+
+        expect(onPageSizeChange).toHaveBeenCalledTimes(1);
+      }
+    );
 
     it("and if 'data' is empty, don't render pagination", () => {
       wrapper = mount(

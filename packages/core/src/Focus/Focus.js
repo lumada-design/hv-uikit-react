@@ -105,10 +105,12 @@ const Focus = (props) => {
     }
   };
 
-  const removeFocusClass = (evt) => {
+  const removeFocusClass = () => {
     if (!useFalseFocus) {
-      evt.currentTarget.classList.remove(classes.focused);
-      classes.focus.split(" ").forEach((c) => evt.currentTarget.classList.remove(c));
+      getFocuses().forEach((element) => {
+        element.classList.remove(classes.focused);
+        classes.focus.split(" ").forEach((c) => element.classList.remove(c));
+      });
     }
   };
 

@@ -51,26 +51,11 @@ const HvSwitch = (props) => {
 
   const elementId = useUniqueId(id, "hvswitch");
 
-  const [isChecked, setIsChecked] = useControlled({
-    controlled: checked,
-    default: Boolean(defaultChecked),
-    name: "HvSwitch",
-    state: "checked",
-  });
+  const [isChecked, setIsChecked] = useControlled(checked, Boolean(defaultChecked));
 
-  const [validationState, setValidationState] = useControlled({
-    controlled: status,
-    default: "standBy",
-    name: "HvSwitch",
-    state: "status",
-  });
+  const [validationState, setValidationState] = useControlled(status, "standBy");
 
-  const [validationMessage] = useControlled({
-    controlled: statusMessage,
-    default: "Required",
-    name: "HvSwitch",
-    state: "statusMessage",
-  });
+  const [validationMessage] = useControlled(statusMessage, "Required");
 
   const onLocalChange = useCallback(
     (evt, newChecked) => {

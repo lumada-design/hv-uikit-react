@@ -100,29 +100,14 @@ const HvTextArea = (props) => {
   const isDirty = useRef(false);
 
   // value related state
-  const [value, setValue] = useControlled({
-    controlled: valueProp,
-    default: defaultValue,
-    name: "HvInput",
-    state: "value",
-  });
+  const [value, setValue] = useControlled(valueProp, defaultValue);
 
   const isEmptyValue = value == null || value === "";
 
   // validation related state
-  const [validationState, setValidationState] = useControlled({
-    controlled: status,
-    default: validationStates.standBy,
-    name: "HvInput",
-    state: "status",
-  });
+  const [validationState, setValidationState] = useControlled(status, validationStates.standBy);
 
-  const [validationMessage, setValidationMessage] = useControlled({
-    controlled: statusMessage,
-    default: "",
-    name: "HvInput",
-    state: "statusMessage",
-  });
+  const [validationMessage, setValidationMessage] = useControlled(statusMessage, "");
 
   // validationMessages reference tends to change, as users will not useState for it;
   // dependencies must be more explicit and:

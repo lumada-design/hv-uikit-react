@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.3...@hv/uikit-react-core@2.12.4) (2020-10-15)
+
+
+### Bug Fixes
+
+* **focus:** asset inventory focus not disappearing. HVUIKIT-5394 ([6bb22ac](https://github.com/pentaho/hv-uikit-react/commit/6bb22acce7ee9c4931d3bb21b7a15e5a519d043f))
+* **input:** allow control of validationState HVUIKIT-5554 [#2018](https://github.com/pentaho/hv-uikit-react/issues/2018) ([10e1e7c](https://github.com/pentaho/hv-uikit-react/commit/10e1e7c6edd8ab2aac28971a8872cd8b96a5da1f))
+
+
+
+
+
 ## [2.12.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.2...@hv/uikit-react-core@2.12.3) (2020-10-12)
 
 

@@ -34,12 +34,7 @@ const ToggleButton = ({
   children,
   ...others
 }) => {
-  const [isSelected, setIsSelected] = useControlled({
-    controlled: selected,
-    default: Boolean(defaultSelected),
-    name: "ToggleButton",
-    state: "selected",
-  });
+  const [isSelected, setIsSelected] = useControlled(selected, Boolean(defaultSelected));
 
   const content = children || (!isSelected ? notSelectedIcon : selectedIcon);
 

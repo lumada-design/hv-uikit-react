@@ -45,9 +45,9 @@ const HvRadioGroup = (props) => {
 
   const elementId = useUniqueId(id, "hvradiogroup");
 
-  const [value, setValue] = useControlled({
-    controlled: valueProp,
-    default: (() => {
+  const [value, setValue] = useControlled(
+    valueProp,
+    (() => {
       // when uncontrolled, extract the initial selected value from the children own state
       let selectedValue = null;
 
@@ -73,10 +73,8 @@ const HvRadioGroup = (props) => {
       }
 
       return selectedValue;
-    })(),
-    name: "HvRadioGroup",
-    state: "value",
-  });
+    })()
+  );
 
   const onChildChangeInterceptor = useCallback(
     (childOnChange, evt, isChecked, newValue) => {

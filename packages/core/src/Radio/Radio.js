@@ -75,12 +75,7 @@ const HvRadio = (props) => {
     [onBlur]
   );
 
-  const [isChecked, setIsChecked] = useControlled({
-    controlled: checked,
-    default: Boolean(defaultChecked),
-    name: "HvRadio",
-    state: "checked",
-  });
+  const [isChecked, setIsChecked] = useControlled(checked, Boolean(defaultChecked));
 
   const onLocalChange = useCallback(
     (evt, newChecked) => {

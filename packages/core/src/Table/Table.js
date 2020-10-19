@@ -115,6 +115,18 @@ const HvTable = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, idForCheckbox]);
 
+  useEffect(() => {
+    // When showPagination is true, pageSize is totally managed by the pagination component.
+    // Avoid running the first time, when pageSize and currentPageSize will already be equal.
+    if (!showPagination && pageSize !== currentPageSize) {
+      setCurrentPageSize(pageSize);
+      onPageSizeChange?.(pageSize, currentPage);
+    }
+
+    // Need not track dependencies for onPageSizeChange and currentPage.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showPagination, pageSize]);
+
   /**
    * Returns data set with nulls replaced by em dashes.
    *
@@ -144,26 +156,24 @@ const HvTable = (props) => {
 
     return {
       showPagination: data.length > 0 && showPagination,
-      ...(showPagination && { PaginationComponent }),
+      showPageSizeOptions: showPageSize,
       ...(showPagination && {
+        PaginationComponent,
         onPageSizeChange: (newPageSize, p) => {
           setExpanded({});
           setCurrentPage(p);
           setCurrentPageSize(newPageSize);
           onPageSizeChange?.(newPageSize, p);
         },
-      }),
-      ...(showPagination && {
         onPageChange: (p) => {
           setExpanded({});
           setCurrentPage(p);
           onPageChange?.(p);
         },
+        ...(pages && { pages }),
       }),
-      ...(showPagination && pages && { pages }),
-      ...((pageSize !== undefined && { defaultPageSize: pageSize }) ||
-        (pageSize && { defaultPageSize: pageSize })),
-      ...{ showPageSizeOptions: showPageSize },
+      ...((pageSize || pageSize !== undefined) &&
+        (showPagination ? { defaultPageSize: pageSize } : { pageSize })),
     };
   };
 
