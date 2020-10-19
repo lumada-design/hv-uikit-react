@@ -349,6 +349,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     "panel": "HvBaseDropdown-panel",
                     "placeholder": "HvBaseDropdown-placeholder",
                     "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                    "rootDisabled": "HvBaseDropdown-rootDisabled",
                     "selection": "HvBaseDropdown-selection",
                     "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                   }
@@ -795,6 +796,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     "panel": "HvBaseDropdown-panel",
                     "placeholder": "HvBaseDropdown-placeholder",
                     "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                    "rootDisabled": "HvBaseDropdown-rootDisabled",
                     "selection": "HvBaseDropdown-selection",
                     "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                   }
@@ -1535,6 +1537,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     "panel": "HvBaseDropdown-panel",
                     "placeholder": "HvBaseDropdown-placeholder",
                     "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                    "rootDisabled": "HvBaseDropdown-rootDisabled",
                     "selection": "HvBaseDropdown-selection",
                     "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                   }

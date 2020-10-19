@@ -4,6 +4,12 @@ const styles = (theme) => ({
   root: {
     display: "inline-block",
   },
+  rootDisabled: {
+    cursor: "not-allowed",
+    "&:focus": {
+      outline: "none",
+    },
+  },
   header: {
     cursor: "pointer",
     userSelect: "none",

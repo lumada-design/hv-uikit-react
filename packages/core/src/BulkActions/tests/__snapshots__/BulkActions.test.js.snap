@@ -1244,6 +1244,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           "panel": "HvBaseDropdown-panel",
                           "placeholder": "HvBaseDropdown-placeholder",
                           "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                          "rootDisabled": "HvBaseDropdown-rootDisabled",
                           "selection": "HvBaseDropdown-selection",
                           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                         }
@@ -1272,7 +1273,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       <div
                         aria-expanded={false}
                         aria-haspopup="menu"
-                        className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
+                        className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu HvBaseDropdown-rootDisabled"
                         id="bulkActions-actions-menu"
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -2934,6 +2935,7 @@ exports[`BulkActions should render correctly 1`] = `
                           "panel": "HvBaseDropdown-panel",
                           "placeholder": "HvBaseDropdown-placeholder",
                           "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
+                          "rootDisabled": "HvBaseDropdown-rootDisabled",
                           "selection": "HvBaseDropdown-selection",
                           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                         }
@@ -2962,7 +2964,7 @@ exports[`BulkActions should render correctly 1`] = `
                       <div
                         aria-expanded={false}
                         aria-haspopup="menu"
-                        className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
+                        className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu HvBaseDropdown-rootDisabled"
                         id="drop-down-menu-3"
                         onClick={[Function]}
                         onKeyDown={[Function]}

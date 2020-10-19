@@ -243,6 +243,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                             "panel": "HvBaseDropdown-panel HvDatePicker-panel",
                             "placeholder": "HvBaseDropdown-placeholder",
                             "root": "HvBaseDropdown-root HvDatePicker-dropdown",
+                            "rootDisabled": "HvBaseDropdown-rootDisabled",
                             "selection": "HvBaseDropdown-selection",
                             "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                           }
@@ -666,6 +667,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                             "panel": "HvBaseDropdown-panel HvDatePicker-panel",
                             "placeholder": "HvBaseDropdown-placeholder",
                             "root": "HvBaseDropdown-root HvDatePicker-dropdown",
+                            "rootDisabled": "HvBaseDropdown-rootDisabled",
                             "selection": "HvBaseDropdown-selection",
                             "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                           }
@@ -1048,6 +1050,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                             "panel": "HvBaseDropdown-panel HvDatePicker-panel",
                             "placeholder": "HvBaseDropdown-placeholder",
                             "root": "HvBaseDropdown-root HvDatePicker-dropdown",
+                            "rootDisabled": "HvBaseDropdown-rootDisabled",
                             "selection": "HvBaseDropdown-selection",
                             "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                           }

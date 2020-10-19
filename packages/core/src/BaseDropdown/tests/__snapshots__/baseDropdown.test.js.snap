@@ -23,6 +23,7 @@ exports[`BaseDropDown closes on double click 1`] = `
         "panel": "HvBaseDropdown-panel",
         "placeholder": "HvBaseDropdown-placeholder",
         "root": "HvBaseDropdown-root",
+        "rootDisabled": "HvBaseDropdown-rootDisabled",
         "selection": "HvBaseDropdown-selection",
         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
       }
@@ -209,6 +210,7 @@ exports[`BaseDropDown is rendered correctly and behaves as expected 1`] = `
         "panel": "HvBaseDropdown-panel",
         "placeholder": "HvBaseDropdown-placeholder",
         "root": "HvBaseDropdown-root",
+        "rootDisabled": "HvBaseDropdown-rootDisabled",
         "selection": "HvBaseDropdown-selection",
         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
       }
@@ -352,6 +354,7 @@ exports[`BaseDropDown opens on click 1`] = `
         "panel": "HvBaseDropdown-panel",
         "placeholder": "HvBaseDropdown-placeholder",
         "root": "HvBaseDropdown-root",
+        "rootDisabled": "HvBaseDropdown-rootDisabled",
         "selection": "HvBaseDropdown-selection",
         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
       }

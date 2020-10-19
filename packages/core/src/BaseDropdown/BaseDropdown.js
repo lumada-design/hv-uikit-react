@@ -258,7 +258,9 @@ const HvBaseDropdown = ({
         aria-expanded={isOpen}
         aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
         ref={anchorHeaderRef}
-        className={clsx(className, classes.root)}
+        className={clsx(className, classes.root, {
+          [classes.rootDisabled]: disabled,
+        })}
         onKeyDown={handleToggle}
         onClick={handleToggle}
         tabIndex={-1}
@@ -295,6 +297,10 @@ HvBaseDropdown.propTypes = {
      * Styles applied to the root.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the root when disabled.
+     */
+    rootDisabled: PropTypes.string,
     /**
      * Styles applied to the header
      */

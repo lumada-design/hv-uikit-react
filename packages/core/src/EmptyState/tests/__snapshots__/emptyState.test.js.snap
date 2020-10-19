@@ -199,8 +199,6 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
   }
   icon={
     <Ghost
-      color="acce1"
-      iconSize="M"
       role="presentation"
     />
   }
@@ -241,8 +239,6 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
     }
     icon={
       <Ghost
-        color="acce1"
-        iconSize="M"
         role="presentation"
       />
     }
@@ -265,25 +261,23 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
           className="HvEmptyState-iconContainer"
         >
           <Ghost
-            color="acce1"
-            iconSize="M"
             role="presentation"
           >
             <HvIconBase
-              iconSize="M"
+              iconSize="S"
               name="Ghost"
               role="presentation"
             >
               <div
-                className="HvIconBase-root HvIconBase-m"
+                className="HvIconBase-root HvIconBase-s"
                 name="Ghost"
                 role="presentation"
               >
                 <svg
                   focusable={false}
-                  height={32}
+                  height={16}
                   viewBox="0 0 16 16"
-                  width={32}
+                  width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path

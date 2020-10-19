@@ -110,3 +110,7 @@ export const Custom = () => {
     </HvBaseDropdown>
   );
 };
+
+export const disabled = () => (
+  <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" disabled />
+);

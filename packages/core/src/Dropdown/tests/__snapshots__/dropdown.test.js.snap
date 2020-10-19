@@ -157,6 +157,7 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                       "panel": "HvBaseDropdown-panel",
                       "placeholder": "HvBaseDropdown-placeholder",
                       "root": "HvBaseDropdown-root HvDropdown-dropdown",
+                      "rootDisabled": "HvBaseDropdown-rootDisabled",
                       "selection": "HvBaseDropdown-selection",
                       "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                     }
@@ -1984,6 +1985,7 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
                       "panel": "HvBaseDropdown-panel",
                       "placeholder": "HvBaseDropdown-placeholder",
                       "root": "HvBaseDropdown-root HvDropdown-dropdown",
+                      "rootDisabled": "HvBaseDropdown-rootDisabled",
                       "selection": "HvBaseDropdown-selection",
                       "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                     }
@@ -2010,7 +2012,7 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
                 >
                   <div
                     aria-expanded={false}
-                    className="HvBaseDropdown-root HvDropdown-dropdown"
+                    className="HvBaseDropdown-root HvDropdown-dropdown HvBaseDropdown-rootDisabled"
                     id="test-dropdown-dropdown"
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -2114,7 +2116,7 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
                     anchorEl={
                       <div
                         aria-expanded="false"
-                        class="HvBaseDropdown-root HvDropdown-dropdown"
+                        class="HvBaseDropdown-root HvDropdown-dropdown HvBaseDropdown-rootDisabled"
                         id="test-dropdown-dropdown"
                         role="combobox"
                         tabindex="-1"
