@@ -1,43 +1,29 @@
 // based in https://raw.githubusercontent.com/mui-org/material-ui/next/packages/material-ui/src/utils/useControlled.js
-
-/* eslint-disable react-hooks/rules-of-hooks, react-hooks/exhaustive-deps, no-console */
+// modifications:
+// 1. renamed default to initialState, to convey the same meaning of the useState hook.
+// 2. removed the console error when initialState changes; that is acceptable and just ignored, like in useState.
+// 3. the console error regarding switching from controlled to uncontrolled (or vice-versa) is sent synchronously
+//    so the stacktrace shows the caller
+// 4. given that, the hook signature was simplified, no need for metadata
 
 import * as React from "react";
 
-export default function useControlled({ controlled, default: defaultProp, name, state = "value" }) {
-  const { current: isControlled } = React.useRef(controlled !== undefined);
-  const [valueState, setValue] = React.useState(defaultProp);
-  const value = isControlled ? controlled : valueState;
+export default function useControlled(controlledProp, initialState) {
+  const { current: isControlled } = React.useRef(controlledProp !== undefined);
+  const [valueState, setValue] = React.useState(initialState);
+  const value = isControlled ? controlledProp : valueState;
 
-  if (process.env.NODE_ENV !== "production") {
-    React.useEffect(() => {
-      if (isControlled !== (controlled !== undefined)) {
-        console.error(
-          [
-            `A component is changing the ${
-              isControlled ? "" : "un"
-            }controlled ${state} state of ${name} to be ${isControlled ? "un" : ""}controlled.`,
-            "Elements should not switch from uncontrolled to controlled (or vice versa).",
-            `Decide between using a controlled or uncontrolled ${name} ` +
-              "element for the lifetime of the component.",
-            "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.",
-          ].join("\n")
-        );
-      }
-    }, [controlled]);
-
-    const { current: defaultValue } = React.useRef(defaultProp);
-
-    React.useEffect(() => {
-      if (!isControlled && defaultValue !== defaultProp) {
-        console.error(
-          [
-            `A component is changing the default ${state} state of an uncontrolled ${name} after being initialized. ` +
-              `To suppress this warning opt to use a controlled ${name}.`,
-          ].join("\n")
-        );
-      }
-    }, [JSON.stringify(defaultProp)]);
+  if (process.env.NODE_ENV !== "production" && isControlled !== (controlledProp !== undefined)) {
+    console.error(
+      [
+        `A component is changing the ${isControlled ? "" : "un"}controlled state to be ${
+          isControlled ? "un" : ""
+        }controlled.`,
+        "Elements should not switch from uncontrolled to controlled (or vice versa).",
+        "Decide between using a controlled or uncontrolled element for the lifetime of the component.",
+        "The nature of the state is determined during the first render, it's considered controlled if the value is not `undefined`.",
+      ].join("\n")
+    );
   }
 
   const setValueIfUncontrolled = React.useCallback((newValue) => {
