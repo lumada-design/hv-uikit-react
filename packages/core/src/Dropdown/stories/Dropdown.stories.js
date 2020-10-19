@@ -12,6 +12,13 @@ export default {
     dsVersion: "3.2.0",
   },
   component: HvDropdown,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: 10 }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Main = () => (
