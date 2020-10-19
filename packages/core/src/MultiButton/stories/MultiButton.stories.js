@@ -97,7 +97,7 @@ export const Disabled = () => {
   };
 
   return (
-    <HvMultiButton disabled style={{ margin: "10px", width: "320px" }}>
+    <HvMultiButton disabled style={{ width: "320px" }}>
       <HvButton selected={selection.includes(0)} onClick={() => toggleIndex(0)}>
         Potato
       </HvButton>
@@ -107,7 +107,7 @@ export const Disabled = () => {
       <HvButton selected={selection.includes(2)} onClick={() => toggleIndex(2)}>
         Carrot
       </HvButton>
-      <HvButton selected={selection.includes(3)} startIcon={<Map />} onClick={() => toggleIndex(3)}>
+      <HvButton selected={selection.includes(3)} onClick={() => toggleIndex(3)}>
         Tomato
       </HvButton>
     </HvMultiButton>
@@ -126,22 +126,17 @@ export const DisabledItem = () => {
   };
 
   return (
-    <HvMultiButton style={{ margin: "10px", width: "320px" }}>
+    <HvMultiButton style={{ width: "320px" }}>
       <HvButton selected={selection.includes(0)} onClick={() => toggleIndex(0)}>
         Potato
       </HvButton>
-      <HvButton disabled selected={selection.includes(1)} onClick={() => toggleIndex(1)}>
+      <HvButton selected={selection.includes(1)} onClick={() => toggleIndex(1)}>
         Onion
       </HvButton>
-      <HvButton selected={selection.includes(2)} onClick={() => toggleIndex(2)}>
+      <HvButton disabled selected={selection.includes(2)} onClick={() => toggleIndex(2)}>
         Carrot
       </HvButton>
-      <HvButton
-        disabled
-        selected={selection.includes(3)}
-        startIcon={<Map />}
-        onClick={() => toggleIndex(3)}
-      >
+      <HvButton selected={selection.includes(3)} onClick={() => toggleIndex(3)}>
         Tomato
       </HvButton>
     </HvMultiButton>
