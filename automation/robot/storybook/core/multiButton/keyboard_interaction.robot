@@ -9,8 +9,8 @@ TAB disable buttons
     ...    Buttons can be focused
     ...    Does not focus a disable button
     [Setup]    Open multiButton sample    disabled-item
-    Press Keys                   ${button}(1)    TAB
-    Element Should Be Focused    ${button}(3)
+    Press Keys                   ${button}(2)    TAB
+    Element Should Be Focused    ${button}(4)
 
 TAB on enforced selection
     [Documentation]    use case:
