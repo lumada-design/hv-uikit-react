@@ -86,8 +86,6 @@ exports[`Navigation withStyles should be able to render 1`] = `
                     classes={
                       Object {
                         "button": "HvHeaderMenuItem-button",
-                        "contentFocusDisabled": "HvHeaderMenuItem-contentFocusDisabled",
-                        "contentFocused": "HvHeaderMenuItem-contentFocused",
                         "externalReference": "HvHeaderMenuItem-externalReference",
                         "falseFocus": "HvHeaderMenuItem-falseFocus",
                         "notSelectedItem": "HvHeaderMenuItem-notSelectedItem",
@@ -113,8 +111,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                         wrapper={[Function]}
                       >
                         <div
-                          className="HvHeaderMenuItem-button HvHeaderMenuItem-contentFocusDisabled"
-                          onBlur={[Function]}
+                          className="HvHeaderMenuItem-button"
                           onClick={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
