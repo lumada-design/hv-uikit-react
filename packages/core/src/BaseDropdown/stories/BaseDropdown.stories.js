@@ -44,7 +44,7 @@ export const WithForms = () => {
     <HvFormElement id="withForms">
       <HvLabel
         id="withForms-label"
-        style={{ paddingBottom: "8px", display: "block" }}
+        style={{ paddingBottom: "6px", display: "block" }}
         label="Label"
       />
       <HvBaseDropdown placeholder="Placeholder..." aria-labelledby="withForms-label">

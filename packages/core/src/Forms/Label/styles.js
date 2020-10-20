@@ -6,7 +6,7 @@ const styles = (theme) => ({
     color: theme.hv.palette.atmosphere.atmo5,
   },
   childGutter: {
-    marginBottom: 6,
+    paddingBottom: "6px",
   },
 });
 

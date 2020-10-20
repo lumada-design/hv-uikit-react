@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core/";
+import { withStyles, useTheme } from "@material-ui/core";
 import { Ungroup } from "@hv/uikit-react-icons/dist";
 
 import {
@@ -204,36 +204,14 @@ Accessibility.story = {
 };
 
 export const CustomContent = () => {
-  const inputStyles = {
-    root: {
-      width: 555,
-    },
-    label: {
-      paddingTop: 0,
-      paddingBottom: "10px",
-      display: "block",
-    },
-    infoText: {
-      paddingBottom: 20,
-    },
-  };
-
-  const textAreaStyles = {
-    root: {
-      paddingTop: 30,
-      width: 555,
-    },
-  };
-
   const contentStyles = {
     paper: {
       width: "100%",
     },
   };
 
-  const InputWithStyles = withStyles(inputStyles)(HvInput);
-  const TextAreaWithStyles = withStyles(textAreaStyles)(HvTextArea);
   const ModalWithStyles = withStyles(contentStyles)(SimpleModal);
+  const theme = useTheme();
 
   return (
     <>
@@ -286,22 +264,18 @@ export const CustomContent = () => {
         title={<HvModalTitle showIcon={false}>Work request</HvModalTitle>}
         content={
           <HvModalContent>
-            <InputWithStyles
-              labels={{
-                placeholder: "Enter text",
-                inputLabel: "Title",
-              }}
-              fullWidth
-              showInfo={false}
+            <HvInput
+              id="input-simple-sample"
+              label="Title"
+              placeholder="Enter text"
+              style={{ marginBottom: theme.hv.spacing.md }}
             />
-            <TextAreaWithStyles
-              id="outlined-with-placeholder"
-              labels={{
-                placeholder: "Enter text",
-                inputLabel: "Description",
-              }}
-              multiline
+            <HvTextArea
+              id="main"
+              label="Description"
+              placeholder="Enter text"
               rows={3}
+              style={{ width: "520px" }}
             />
           </HvModalContent>
         }
@@ -363,17 +337,13 @@ export const RemoveSchedule = () => {
 export const DeleteConfirmation = () => {
   const [open, setOpen] = useState(false);
 
-  const labels = {
-    placeholder: "Enter text",
-  };
-
   const styledString = () => (
     <div>
       This Execution and all its dependencies will be deleted permanently.
       <br />
       Confirm by typing
       <b>
-        {"\u00A0"} Cleanse Raw Retail Store Date {"\u00A0"}
+        {"\u00A0"}Cleanse Raw Retail Store Date{"\u00A0"}
       </b>
       below.
       <br />
@@ -396,7 +366,7 @@ export const DeleteConfirmation = () => {
         <HvModalContent indentContent>
           {styledString()}
           <div style={{ marginTop: 20 }}>
-            <HvInput labels={labels} id="input-simple-sample" showInfo={false} />
+            <HvInput id="input-simple-sample" placeholder="Enter text" />
           </div>
         </HvModalContent>
         <HvModalActions>

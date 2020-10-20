@@ -50,7 +50,7 @@ const styles = (theme) => ({
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",
-    height: 30,
+    height: "30px",
     justifyContent: "center",
   },
   adornmentButton: {
@@ -61,8 +61,8 @@ const styles = (theme) => ({
     cursor: "pointer",
   },
   icon: {
-    width: 30,
-    height: 30,
+    width: "30px",
+    height: "30px",
   },
   iconClear: {
     visibility: "hidden",

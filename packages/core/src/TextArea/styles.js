@@ -32,7 +32,7 @@ const styles = {
     display: "block",
     float: "right",
     textAlign: "right",
-    paddingBottom: "6px",
+    marginBottom: "6px",
   },
 };
 

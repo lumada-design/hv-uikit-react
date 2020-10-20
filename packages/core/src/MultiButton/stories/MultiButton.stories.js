@@ -12,6 +12,13 @@ export default {
     dsVersion: "3.2.0",
   },
   component: HvMultiButton,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: 10 }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const range = (n) => Array.from(Array(n), (v, i) => i);
