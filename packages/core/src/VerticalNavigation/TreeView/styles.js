@@ -1,6 +1,4 @@
-import focusStyles from "../../Focus/styles";
-
-const { focused, focusDisabled } = focusStyles;
+import { outlineStyles } from "../../Focus/styles";
 
 const selected = (theme) => ({
   background: theme.hv.palette.atmosphere.atmo3,
@@ -87,13 +85,6 @@ const styles = (theme) => ({
   noIcon: {},
   withIcon: {},
 
-  contentFocusDisabled: {
-    ...focusDisabled,
-  },
-  contentFocused: {
-    ...focused,
-  },
-
   /* role="button" element */
   content: {
     width: "100%",
@@ -116,6 +107,14 @@ const styles = (theme) => ({
 
     "&[disabled], &:active": {
       outline: "none",
+    },
+
+    "&:focus": {
+      outline: "none",
+    },
+
+    "&.focus-visible": {
+      ...outlineStyles,
     },
 
     // cursor

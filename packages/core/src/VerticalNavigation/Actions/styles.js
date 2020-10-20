@@ -29,8 +29,11 @@ const styles = (theme) => ({
     "&:hover": hover(theme),
 
     "&:focus": {
+      outline: "none",
+    },
+
+    "&.focus-visible": {
       ...outlineStyles,
-      ...hover(theme),
     },
 
     // cursor
