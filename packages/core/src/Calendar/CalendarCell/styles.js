@@ -10,7 +10,11 @@ const styles = (theme) => {
       border: 0,
       padding: 0,
       margin: 0,
-      backgroundColor: "inherit",
+      backgroundColor: "transparent",
+    },
+    dateWrapper: {
+      width: "40px",
+      height: "40px",
     },
     calendarContainer: {
       backgroundColor: theme.palette.atmo1,

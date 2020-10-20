@@ -18,7 +18,10 @@ const styles = {
     maxWidth: "610px",
   },
 
-  labelContainer: {},
+  labelContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
   label: {
     display: "block",
     float: "left",

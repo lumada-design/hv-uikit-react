@@ -52,6 +52,9 @@ const styles = (theme) => ({
     flexDirection: "row",
     height: 30,
     justifyContent: "center",
+    position: "absolute",
+    top: 1,
+    right: 1,
   },
   adornmentButton: {
     backgroundColor: "transparent",

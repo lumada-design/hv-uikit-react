@@ -193,6 +193,9 @@ export const ScopedSearch = () => {
       minWidth: "unset",
       marginRight: 3,
     },
+    dropdown: {
+      width: "100%",
+    },
     width: {
       width: 160,
       minWidth: "unset",
@@ -257,7 +260,7 @@ export const ScopedSearch = () => {
           aria-label="Filter country"
           classes={{
             root: classes.root,
-            dropdown: classes.root,
+            dropdown: classes.dropdown,
             rootList: classes.width,
           }}
           onChange={(val) => {
