@@ -12,7 +12,7 @@ const styles = (theme) => ({
   },
   headerTextContainer: {
     minWidth: 0,
-    padding: theme.hvSpacing("6px", "xs", "6px", 0),
+    padding: theme.hvSpacing("8px", "xs", "8px", 0),
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",

@@ -52,7 +52,7 @@ const styles = (theme) => ({
   },
   dropZoneLabelsGroup: {
     display: "flex",
-    marginBottom: 5,
+    paddingBottom: "6px",
     justifyContent: "start",
     "& label:nth-child(1)": {},
     "& p:nth-child(2)": {

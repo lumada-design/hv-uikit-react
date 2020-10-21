@@ -14,7 +14,7 @@ const styles = (theme) => ({
   rootList: {},
   arrow: {},
   label: {
-    paddingBottom: "8px",
+    paddingBottom: "6px",
   },
   placeholder: {
     display: "block",
