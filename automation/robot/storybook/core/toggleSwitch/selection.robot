@@ -48,20 +48,3 @@ controlled toggle switch
     Click Element                      ${switches}
     Wait Until Page Contains           The switch is Off
     Checkbox Should not Be Selected    ${switches} input
-
-TAB sequence
-    [Tags]    keyboard
-    [Setup]    open toggle switch sample    main
-    Press Keys                   css:body    TAB
-    Element Should Be Focused    ${switch}(1) input
-    Press Keys                   NONE    TAB
-    Element Should Be Focused    ${switch}(2) input
-
-switch when is pressed SPACE
-    [Tags]    keyboard
-    [Setup]    open toggle switch sample    main
-    Checkbox Should not Be Selected    ${switch}(1) input
-    Press Keys                         css:body    TAB    SPACE
-    Checkbox Should Be Selected        ${switch}(1) input
-    Press Keys                         NONE    SPACE
-    Checkbox Should not Be Selected    ${switch}(1) input

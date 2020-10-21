@@ -26,7 +26,7 @@ change date names in locale pt-PT
     Click Element                        ${datePickerHeader}
     Wait Until Element Is Visible        ${calendar}
     Element Attribute Value Should Be    ${calendar} input    value    20 ago 2014
-    Element Text Should Be               ${month}    Agosto
+    Element Text Should Be               ${month}    agosto    ignore_case=true
     Page Should Not Contain              ${weekday}    Qua
 
 change locale result format

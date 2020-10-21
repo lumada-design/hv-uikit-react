@@ -31,7 +31,7 @@ multi selection is changed
     Go To                                ${forms}dropdown--multi-selection
     Wait Until Element Is Visible        ${dropdown}
     Element Text Should Be               ${dropdownHeader}    1 / 4
-    Click Element                        ${dropdownHeader}
+    Click Element                        ${dropdown}
     Wait Until Element Is Visible        ${listBox}
     click Element                        ${option3}
     Click Button                         Apply

@@ -53,6 +53,18 @@ get elements text
     #.map(el => el.innerText).join(',')
     [Return]          ${values}
 
+html body should be focused
+    [Documentation]    ie11 has focus on css:html the other browser on css:body
+    Run Keyword If    '${BROWSER.lower()}'=='ie'
+    ...    Element Should Be Focused    css:html
+    ...    ELSE
+    ...    Element Should Be Focused    css:body
+
+reduce selenium speed for ie keyboard events
+    [Documentation]   avoid error on IE webdriver when is sent keyboard instruction "too fast"
+    [Arguments]    ${time}
+    Run Keyword If    '${BROWSER.lower()}'=='ie'    Set Selenium Speed    ${time}
+
 open browser webdriver
     [Documentation]
     ...   Opens browser with blank page and window-size=1920,1080 (width,height),
