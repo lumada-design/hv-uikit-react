@@ -82,26 +82,27 @@ exports[` AssetInventory ListView should render correctly 1`] = `
         },
         Object {
           "style": Object {
-            "width": "370px",
+            "minWidth": "370px",
+            "paddingLeft": "30px",
           },
           "title": "Event",
         },
         Object {
           "style": Object {
-            "width": "93px",
+            "minWidth": "93px",
           },
           "title": "Probability",
         },
         Object {
           "style": Object {
-            "width": "108px",
+            "minWidth": "108px",
           },
           "title": "Time horizon",
         },
         Object {
           "style": Object {
+            "minWidth": "195px",
             "paddingLeft": "30px",
-            "width": "195px",
           },
           "title": "Related Assets",
         },
@@ -201,26 +202,27 @@ exports[` AssetInventory ListView should render correctly 1`] = `
           },
           Object {
             "style": Object {
-              "width": "370px",
+              "minWidth": "370px",
+              "paddingLeft": "30px",
             },
             "title": "Event",
           },
           Object {
             "style": Object {
-              "width": "93px",
+              "minWidth": "93px",
             },
             "title": "Probability",
           },
           Object {
             "style": Object {
-              "width": "108px",
+              "minWidth": "108px",
             },
             "title": "Time horizon",
           },
           Object {
             "style": Object {
+              "minWidth": "195px",
               "paddingLeft": "30px",
-              "width": "195px",
             },
             "title": "Related Assets",
           },
@@ -557,26 +559,27 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         },
                                         Object {
                                           "style": Object {
-                                            "width": "370px",
+                                            "minWidth": "370px",
+                                            "paddingLeft": "30px",
                                           },
                                           "title": "Event",
                                         },
                                         Object {
                                           "style": Object {
-                                            "width": "93px",
+                                            "minWidth": "93px",
                                           },
                                           "title": "Probability",
                                         },
                                         Object {
                                           "style": Object {
-                                            "width": "108px",
+                                            "minWidth": "108px",
                                           },
                                           "title": "Time horizon",
                                         },
                                         Object {
                                           "style": Object {
+                                            "minWidth": "195px",
                                             "paddingLeft": "30px",
-                                            "width": "195px",
                                           },
                                           "title": "Related Assets",
                                         },
@@ -620,7 +623,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -631,7 +634,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -642,7 +645,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -653,7 +656,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -751,7 +754,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="description1"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <div
                                                           style="display: inline-flex;"
@@ -780,7 +783,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="probability1"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -791,7 +794,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="timeHorizon1"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -802,7 +805,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="relatedAssets1"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -967,7 +970,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="description2"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <div
                                                           style="display: inline-flex;"
@@ -996,7 +999,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="probability2"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -1007,7 +1010,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="timeHorizon2"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -1018,7 +1021,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="relatedAssets2"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -1185,7 +1188,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="description3"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <div
                                                           style="display: inline-flex;"
@@ -1214,7 +1217,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="probability3"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -1225,7 +1228,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="timeHorizon3"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -1236,7 +1239,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="relatedAssets3"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -1371,26 +1374,27 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                           },
                                           Object {
                                             "style": Object {
-                                              "width": "370px",
+                                              "minWidth": "370px",
+                                              "paddingLeft": "30px",
                                             },
                                             "title": "Event",
                                           },
                                           Object {
                                             "style": Object {
-                                              "width": "93px",
+                                              "minWidth": "93px",
                                             },
                                             "title": "Probability",
                                           },
                                           Object {
                                             "style": Object {
-                                              "width": "108px",
+                                              "minWidth": "108px",
                                             },
                                             "title": "Time horizon",
                                           },
                                           Object {
                                             "style": Object {
+                                              "minWidth": "195px",
                                               "paddingLeft": "30px",
-                                              "width": "195px",
                                             },
                                             "title": "Related Assets",
                                           },
@@ -1434,7 +1438,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="1"
-                                                          style="width: 370px;"
+                                                          style="min-width: 370px; padding-left: 30px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1445,7 +1449,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="2"
-                                                          style="width: 93px;"
+                                                          style="min-width: 93px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1456,7 +1460,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="3"
-                                                          style="width: 108px;"
+                                                          style="min-width: 108px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1467,7 +1471,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="4"
-                                                          style="width: 195px; padding-left: 30px;"
+                                                          style="min-width: 195px; padding-left: 30px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1565,7 +1569,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="description1"
-                                                          style="width: 370px;"
+                                                          style="min-width: 370px; padding-left: 30px;"
                                                         >
                                                           <div
                                                             style="display: inline-flex;"
@@ -1594,7 +1598,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="probability1"
-                                                          style="width: 93px;"
+                                                          style="min-width: 93px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -1605,7 +1609,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="timeHorizon1"
-                                                          style="width: 108px;"
+                                                          style="min-width: 108px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -1616,7 +1620,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="relatedAssets1"
-                                                          style="width: 195px; padding-left: 30px;"
+                                                          style="min-width: 195px; padding-left: 30px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -1781,7 +1785,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="description2"
-                                                          style="width: 370px;"
+                                                          style="min-width: 370px; padding-left: 30px;"
                                                         >
                                                           <div
                                                             style="display: inline-flex;"
@@ -1810,7 +1814,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="probability2"
-                                                          style="width: 93px;"
+                                                          style="min-width: 93px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -1821,7 +1825,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="timeHorizon2"
-                                                          style="width: 108px;"
+                                                          style="min-width: 108px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -1832,7 +1836,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="relatedAssets2"
-                                                          style="width: 195px; padding-left: 30px;"
+                                                          style="min-width: 195px; padding-left: 30px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -1999,7 +2003,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="description3"
-                                                          style="width: 370px;"
+                                                          style="min-width: 370px; padding-left: 30px;"
                                                         >
                                                           <div
                                                             style="display: inline-flex;"
@@ -2028,7 +2032,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="probability3"
-                                                          style="width: 93px;"
+                                                          style="min-width: 93px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -2039,7 +2043,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="timeHorizon3"
-                                                          style="width: 108px;"
+                                                          style="min-width: 108px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -2050,7 +2054,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root"
                                                           id="relatedAssets3"
-                                                          style="width: 195px; padding-left: 30px;"
+                                                          style="min-width: 195px; padding-left: 30px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-normalText"
@@ -2207,8 +2211,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         key="th1"
                                         style={
                                           Object {
+                                            "minWidth": "370px",
+                                            "paddingLeft": "30px",
                                             "textAlign": undefined,
-                                            "width": "370px",
                                           }
                                         }
                                       >
@@ -2258,8 +2263,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         key="th2"
                                         style={
                                           Object {
+                                            "minWidth": "93px",
                                             "textAlign": undefined,
-                                            "width": "93px",
                                           }
                                         }
                                       >
@@ -2309,8 +2314,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         key="th3"
                                         style={
                                           Object {
+                                            "minWidth": "108px",
                                             "textAlign": undefined,
-                                            "width": "108px",
                                           }
                                         }
                                       >
@@ -2360,9 +2365,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         key="th4"
                                         style={
                                           Object {
+                                            "minWidth": "195px",
                                             "paddingLeft": "30px",
                                             "textAlign": undefined,
-                                            "width": "195px",
                                           }
                                         }
                                       >
@@ -2462,7 +2467,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="1"
-                                                      style="width: 370px;"
+                                                      style="min-width: 370px; padding-left: 30px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2473,7 +2478,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="2"
-                                                      style="width: 93px;"
+                                                      style="min-width: 93px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2484,7 +2489,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="3"
-                                                      style="width: 108px;"
+                                                      style="min-width: 108px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2495,7 +2500,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="4"
-                                                      style="width: 195px; padding-left: 30px;"
+                                                      style="min-width: 195px; padding-left: 30px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2593,7 +2598,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="description1"
-                                                      style="width: 370px;"
+                                                      style="min-width: 370px; padding-left: 30px;"
                                                     >
                                                       <div
                                                         style="display: inline-flex;"
@@ -2622,7 +2627,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="probability1"
-                                                      style="width: 93px;"
+                                                      style="min-width: 93px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -2633,7 +2638,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="timeHorizon1"
-                                                      style="width: 108px;"
+                                                      style="min-width: 108px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -2644,7 +2649,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="relatedAssets1"
-                                                      style="width: 195px; padding-left: 30px;"
+                                                      style="min-width: 195px; padding-left: 30px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -2809,7 +2814,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="description2"
-                                                      style="width: 370px;"
+                                                      style="min-width: 370px; padding-left: 30px;"
                                                     >
                                                       <div
                                                         style="display: inline-flex;"
@@ -2838,7 +2843,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="probability2"
-                                                      style="width: 93px;"
+                                                      style="min-width: 93px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -2849,7 +2854,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="timeHorizon2"
-                                                      style="width: 108px;"
+                                                      style="min-width: 108px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -2860,7 +2865,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="relatedAssets2"
-                                                      style="width: 195px; padding-left: 30px;"
+                                                      style="min-width: 195px; padding-left: 30px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -3027,7 +3032,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="description3"
-                                                      style="width: 370px;"
+                                                      style="min-width: 370px; padding-left: 30px;"
                                                     >
                                                       <div
                                                         style="display: inline-flex;"
@@ -3056,7 +3061,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="probability3"
-                                                      style="width: 93px;"
+                                                      style="min-width: 93px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -3067,7 +3072,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="timeHorizon3"
-                                                      style="width: 108px;"
+                                                      style="min-width: 108px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -3078,7 +3083,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root"
                                                       id="relatedAssets3"
-                                                      style="width: 195px; padding-left: 30px;"
+                                                      style="min-width: 195px; padding-left: 30px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-normalText"
@@ -3245,26 +3250,27 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         },
                                         Object {
                                           "style": Object {
-                                            "width": "370px",
+                                            "minWidth": "370px",
+                                            "paddingLeft": "30px",
                                           },
                                           "title": "Event",
                                         },
                                         Object {
                                           "style": Object {
-                                            "width": "93px",
+                                            "minWidth": "93px",
                                           },
                                           "title": "Probability",
                                         },
                                         Object {
                                           "style": Object {
-                                            "width": "108px",
+                                            "minWidth": "108px",
                                           },
                                           "title": "Time horizon",
                                         },
                                         Object {
                                           "style": Object {
+                                            "minWidth": "195px",
                                             "paddingLeft": "30px",
-                                            "width": "195px",
                                           },
                                           "title": "Related Assets",
                                         },
@@ -3308,7 +3314,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -3319,7 +3325,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -3330,7 +3336,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -3341,7 +3347,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -3439,7 +3445,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="description1"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <div
                                                           style="display: inline-flex;"
@@ -3468,7 +3474,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="probability1"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3479,7 +3485,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="timeHorizon1"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3490,7 +3496,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="relatedAssets1"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3655,7 +3661,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="description2"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <div
                                                           style="display: inline-flex;"
@@ -3684,7 +3690,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="probability2"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3695,7 +3701,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="timeHorizon2"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3706,7 +3712,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="relatedAssets2"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3873,7 +3879,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="description3"
-                                                        style="width: 370px;"
+                                                        style="min-width: 370px; padding-left: 30px;"
                                                       >
                                                         <div
                                                           style="display: inline-flex;"
@@ -3902,7 +3908,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="probability3"
-                                                        style="width: 93px;"
+                                                        style="min-width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3913,7 +3919,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="timeHorizon3"
-                                                        style="width: 108px;"
+                                                        style="min-width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -3924,7 +3930,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root"
                                                         id="relatedAssets3"
-                                                        style="width: 195px; padding-left: 30px;"
+                                                        style="min-width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-normalText"
@@ -4174,7 +4180,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4185,7 +4191,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4196,7 +4202,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4207,7 +4213,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4305,7 +4311,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description1"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -4334,7 +4340,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability1"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4345,7 +4351,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon1"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4356,7 +4362,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets1"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4521,7 +4527,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description2"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -4550,7 +4556,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability2"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4561,7 +4567,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon2"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4572,7 +4578,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets2"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4739,7 +4745,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description3"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -4768,7 +4774,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability3"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4779,7 +4785,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon3"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4790,7 +4796,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets3"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -4936,7 +4942,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4947,7 +4953,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4958,7 +4964,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4969,7 +4975,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -5067,7 +5073,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description1"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -5096,7 +5102,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability1"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5107,7 +5113,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon1"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5118,7 +5124,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets1"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5283,7 +5289,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description2"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -5312,7 +5318,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability2"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5323,7 +5329,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon2"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5334,7 +5340,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets2"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5501,7 +5507,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description3"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -5530,7 +5536,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability3"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5541,7 +5547,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon3"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -5552,7 +5558,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets3"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -6173,7 +6179,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="description1"
                                                       style={
                                                         Object {
-                                                          "width": "370px",
+                                                          "minWidth": "370px",
+                                                          "paddingLeft": "30px",
                                                         }
                                                       }
                                                     >
@@ -6213,7 +6220,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="description1"
                                                         style={
                                                           Object {
-                                                            "width": "370px",
+                                                            "minWidth": "370px",
+                                                            "paddingLeft": "30px",
                                                           }
                                                         }
                                                       >
@@ -6222,7 +6230,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="description1"
                                                           style={
                                                             Object {
-                                                              "width": "370px",
+                                                              "minWidth": "370px",
+                                                              "paddingLeft": "30px",
                                                             }
                                                           }
                                                         >
@@ -6376,7 +6385,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="probability1"
                                                       style={
                                                         Object {
-                                                          "width": "93px",
+                                                          "minWidth": "93px",
                                                         }
                                                       }
                                                     >
@@ -6416,7 +6425,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="probability1"
                                                         style={
                                                           Object {
-                                                            "width": "93px",
+                                                            "minWidth": "93px",
                                                           }
                                                         }
                                                       >
@@ -6425,7 +6434,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="probability1"
                                                           style={
                                                             Object {
-                                                              "width": "93px",
+                                                              "minWidth": "93px",
                                                             }
                                                           }
                                                         >
@@ -6474,7 +6483,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="timeHorizon1"
                                                       style={
                                                         Object {
-                                                          "width": "108px",
+                                                          "minWidth": "108px",
                                                         }
                                                       }
                                                     >
@@ -6514,7 +6523,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="timeHorizon1"
                                                         style={
                                                           Object {
-                                                            "width": "108px",
+                                                            "minWidth": "108px",
                                                           }
                                                         }
                                                       >
@@ -6523,7 +6532,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="timeHorizon1"
                                                           style={
                                                             Object {
-                                                              "width": "108px",
+                                                              "minWidth": "108px",
                                                             }
                                                           }
                                                         >
@@ -6572,8 +6581,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="relatedAssets1"
                                                       style={
                                                         Object {
+                                                          "minWidth": "195px",
                                                           "paddingLeft": "30px",
-                                                          "width": "195px",
                                                         }
                                                       }
                                                     >
@@ -6613,8 +6622,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="relatedAssets1"
                                                         style={
                                                           Object {
+                                                            "minWidth": "195px",
                                                             "paddingLeft": "30px",
-                                                            "width": "195px",
                                                           }
                                                         }
                                                       >
@@ -6623,8 +6632,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="relatedAssets1"
                                                           style={
                                                             Object {
+                                                              "minWidth": "195px",
                                                               "paddingLeft": "30px",
-                                                              "width": "195px",
                                                             }
                                                           }
                                                         >
@@ -7654,7 +7663,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7665,7 +7674,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7676,7 +7685,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7687,7 +7696,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7785,7 +7794,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description1"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -7814,7 +7823,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability1"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -7825,7 +7834,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon1"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -7836,7 +7845,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets1"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -8001,7 +8010,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description2"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -8030,7 +8039,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability2"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -8041,7 +8050,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon2"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -8052,7 +8061,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets2"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -8219,7 +8228,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description3"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -8248,7 +8257,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability3"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -8259,7 +8268,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon3"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -8270,7 +8279,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets3"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -8416,7 +8425,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8427,7 +8436,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8438,7 +8447,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8449,7 +8458,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8547,7 +8556,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description1"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -8576,7 +8585,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability1"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -8587,7 +8596,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon1"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -8598,7 +8607,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets1"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -8763,7 +8772,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description2"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -8792,7 +8801,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability2"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -8803,7 +8812,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon2"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -8814,7 +8823,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets2"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -8981,7 +8990,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description3"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -9010,7 +9019,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability3"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -9021,7 +9030,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon3"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -9032,7 +9041,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets3"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -9653,7 +9662,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="description2"
                                                       style={
                                                         Object {
-                                                          "width": "370px",
+                                                          "minWidth": "370px",
+                                                          "paddingLeft": "30px",
                                                         }
                                                       }
                                                     >
@@ -9693,7 +9703,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="description2"
                                                         style={
                                                           Object {
-                                                            "width": "370px",
+                                                            "minWidth": "370px",
+                                                            "paddingLeft": "30px",
                                                           }
                                                         }
                                                       >
@@ -9702,7 +9713,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="description2"
                                                           style={
                                                             Object {
-                                                              "width": "370px",
+                                                              "minWidth": "370px",
+                                                              "paddingLeft": "30px",
                                                             }
                                                           }
                                                         >
@@ -9856,7 +9868,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="probability2"
                                                       style={
                                                         Object {
-                                                          "width": "93px",
+                                                          "minWidth": "93px",
                                                         }
                                                       }
                                                     >
@@ -9896,7 +9908,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="probability2"
                                                         style={
                                                           Object {
-                                                            "width": "93px",
+                                                            "minWidth": "93px",
                                                           }
                                                         }
                                                       >
@@ -9905,7 +9917,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="probability2"
                                                           style={
                                                             Object {
-                                                              "width": "93px",
+                                                              "minWidth": "93px",
                                                             }
                                                           }
                                                         >
@@ -9954,7 +9966,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="timeHorizon2"
                                                       style={
                                                         Object {
-                                                          "width": "108px",
+                                                          "minWidth": "108px",
                                                         }
                                                       }
                                                     >
@@ -9994,7 +10006,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="timeHorizon2"
                                                         style={
                                                           Object {
-                                                            "width": "108px",
+                                                            "minWidth": "108px",
                                                           }
                                                         }
                                                       >
@@ -10003,7 +10015,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="timeHorizon2"
                                                           style={
                                                             Object {
-                                                              "width": "108px",
+                                                              "minWidth": "108px",
                                                             }
                                                           }
                                                         >
@@ -10052,8 +10064,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="relatedAssets2"
                                                       style={
                                                         Object {
+                                                          "minWidth": "195px",
                                                           "paddingLeft": "30px",
-                                                          "width": "195px",
                                                         }
                                                       }
                                                     >
@@ -10093,8 +10105,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="relatedAssets2"
                                                         style={
                                                           Object {
+                                                            "minWidth": "195px",
                                                             "paddingLeft": "30px",
-                                                            "width": "195px",
                                                           }
                                                         }
                                                       >
@@ -10103,8 +10115,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="relatedAssets2"
                                                           style={
                                                             Object {
+                                                              "minWidth": "195px",
                                                               "paddingLeft": "30px",
-                                                              "width": "195px",
                                                             }
                                                           }
                                                         >
@@ -11134,7 +11146,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -11145,7 +11157,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -11156,7 +11168,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -11167,7 +11179,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -11265,7 +11277,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description1"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -11294,7 +11306,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability1"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11305,7 +11317,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon1"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11316,7 +11328,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets1"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11481,7 +11493,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description2"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -11510,7 +11522,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability2"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11521,7 +11533,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon2"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11532,7 +11544,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets2"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11699,7 +11711,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="description3"
-                                                                  style="width: 370px;"
+                                                                  style="min-width: 370px; padding-left: 30px;"
                                                                 >
                                                                   <div
                                                                     style="display: inline-flex;"
@@ -11728,7 +11740,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="probability3"
-                                                                  style="width: 93px;"
+                                                                  style="min-width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11739,7 +11751,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="timeHorizon3"
-                                                                  style="width: 108px;"
+                                                                  style="min-width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11750,7 +11762,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root"
                                                                   id="relatedAssets3"
-                                                                  style="width: 195px; padding-left: 30px;"
+                                                                  style="min-width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-normalText"
@@ -11896,7 +11908,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11907,7 +11919,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11918,7 +11930,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11929,7 +11941,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -12027,7 +12039,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description1"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -12056,7 +12068,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability1"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12067,7 +12079,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon1"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12078,7 +12090,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets1"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12243,7 +12255,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description2"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -12272,7 +12284,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability2"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12283,7 +12295,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon2"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12294,7 +12306,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets2"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12461,7 +12473,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="description3"
-                                                                    style="width: 370px;"
+                                                                    style="min-width: 370px; padding-left: 30px;"
                                                                   >
                                                                     <div
                                                                       style="display: inline-flex;"
@@ -12490,7 +12502,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="probability3"
-                                                                    style="width: 93px;"
+                                                                    style="min-width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12501,7 +12513,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="timeHorizon3"
-                                                                    style="width: 108px;"
+                                                                    style="min-width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -12512,7 +12524,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root"
                                                                     id="relatedAssets3"
-                                                                    style="width: 195px; padding-left: 30px;"
+                                                                    style="min-width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-normalText"
@@ -13135,7 +13147,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="description3"
                                                       style={
                                                         Object {
-                                                          "width": "370px",
+                                                          "minWidth": "370px",
+                                                          "paddingLeft": "30px",
                                                         }
                                                       }
                                                     >
@@ -13175,7 +13188,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="description3"
                                                         style={
                                                           Object {
-                                                            "width": "370px",
+                                                            "minWidth": "370px",
+                                                            "paddingLeft": "30px",
                                                           }
                                                         }
                                                       >
@@ -13184,7 +13198,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="description3"
                                                           style={
                                                             Object {
-                                                              "width": "370px",
+                                                              "minWidth": "370px",
+                                                              "paddingLeft": "30px",
                                                             }
                                                           }
                                                         >
@@ -13338,7 +13353,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="probability3"
                                                       style={
                                                         Object {
-                                                          "width": "93px",
+                                                          "minWidth": "93px",
                                                         }
                                                       }
                                                     >
@@ -13378,7 +13393,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="probability3"
                                                         style={
                                                           Object {
-                                                            "width": "93px",
+                                                            "minWidth": "93px",
                                                           }
                                                         }
                                                       >
@@ -13387,7 +13402,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="probability3"
                                                           style={
                                                             Object {
-                                                              "width": "93px",
+                                                              "minWidth": "93px",
                                                             }
                                                           }
                                                         >
@@ -13436,7 +13451,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="timeHorizon3"
                                                       style={
                                                         Object {
-                                                          "width": "108px",
+                                                          "minWidth": "108px",
                                                         }
                                                       }
                                                     >
@@ -13476,7 +13491,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="timeHorizon3"
                                                         style={
                                                           Object {
-                                                            "width": "108px",
+                                                            "minWidth": "108px",
                                                           }
                                                         }
                                                       >
@@ -13485,7 +13500,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="timeHorizon3"
                                                           style={
                                                             Object {
-                                                              "width": "108px",
+                                                              "minWidth": "108px",
                                                             }
                                                           }
                                                         >
@@ -13534,8 +13549,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                       key="relatedAssets3"
                                                       style={
                                                         Object {
+                                                          "minWidth": "195px",
                                                           "paddingLeft": "30px",
-                                                          "width": "195px",
                                                         }
                                                       }
                                                     >
@@ -13575,8 +13590,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                         id="relatedAssets3"
                                                         style={
                                                           Object {
+                                                            "minWidth": "195px",
                                                             "paddingLeft": "30px",
-                                                            "width": "195px",
                                                           }
                                                         }
                                                       >
@@ -13585,8 +13600,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           id="relatedAssets3"
                                                           style={
                                                             Object {
+                                                              "minWidth": "195px",
                                                               "paddingLeft": "30px",
-                                                              "width": "195px",
                                                             }
                                                           }
                                                         >
