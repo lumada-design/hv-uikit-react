@@ -46,6 +46,7 @@ const styles = (theme) => ({
     display: "block",
   },
   description: {},
+  error: {},
 
   adornmentsBox: {
     display: "flex",

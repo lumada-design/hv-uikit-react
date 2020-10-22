@@ -144,7 +144,8 @@ const HvRadioGroup = (props) => {
         aria-invalid={status === "invalid" ? true : undefined}
         aria-errormessage={status === "invalid" ? setId(elementId, "error") : undefined}
         aria-describedby={
-          ariaDescribedBy != null ? ariaDescribedBy : description && setId(elementId, "description")
+          [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
+          undefined
         }
         className={clsx(classes.group, {
           [classes.vertical]: orientation === "vertical",

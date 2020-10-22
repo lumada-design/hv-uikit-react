@@ -10,6 +10,7 @@ exports[`Input should not have the validation section 1`] = `
         "adornmentButton": "HvInput-adornmentButton",
         "adornmentsBox": "HvInput-adornmentsBox",
         "description": "HvInput-description",
+        "error": "HvInput-error",
         "hasSuggestions": "HvInput-hasSuggestions",
         "icon": "HvInput-icon",
         "iconClear": "HvInput-iconClear",
@@ -513,6 +514,7 @@ exports[`Input should pass other props to the child input component 1`] = `
         "adornmentButton": "HvInput-adornmentButton",
         "adornmentsBox": "HvInput-adornmentsBox",
         "description": "HvInput-description",
+        "error": "HvInput-error",
         "hasSuggestions": "HvInput-hasSuggestions",
         "icon": "HvInput-icon",
         "iconClear": "HvInput-iconClear",
@@ -1011,10 +1013,12 @@ exports[`Input should pass other props to the child input component 1`] = `
               </HvBaseInput>
             </WithStyles(HvBaseInput)>
             <WithStyles(HvWarningText)
+              className="HvInput-error"
               disableBorder={true}
               id="hvinput33-error"
             >
               <HvWarningText
+                className="HvInput-error"
                 classes={
                   Object {
                     "defaultIcon": "HvWarningText-defaultIcon",
@@ -1030,7 +1034,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                 id="hvinput33-error"
               >
                 <div
-                  className="HvWarningText-root"
+                  className="HvInput-error HvWarningText-root"
                 >
                   <Fail
                     className="HvWarningText-defaultIcon"
@@ -1129,6 +1133,7 @@ exports[`Input should render correctly 1`] = `
         "adornmentButton": "HvInput-adornmentButton",
         "adornmentsBox": "HvInput-adornmentsBox",
         "description": "HvInput-description",
+        "error": "HvInput-error",
         "hasSuggestions": "HvInput-hasSuggestions",
         "icon": "HvInput-icon",
         "iconClear": "HvInput-iconClear",

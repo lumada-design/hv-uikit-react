@@ -588,7 +588,7 @@ const HvInput = (props) => {
         <div className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
-              id={setId(id, "label")}
+              id={setId(elementId, "label")}
               className={classes.label}
               htmlFor={setId(elementId, "input")}
               label={label}
@@ -669,7 +669,7 @@ const HvInput = (props) => {
       )}
 
       {canShowError && (
-        <HvWarningText id={setId(elementId, "error")} disableBorder>
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
           {validationMessage}
         </HvWarningText>
       )}
@@ -732,6 +732,11 @@ HvInput.propTypes = {
      * Styles applied to the icon information text.
      */
     description: PropTypes.string,
+
+    /**
+     * Styles applied to the error area.
+     */
+    error: PropTypes.string,
 
     /**
      * Styles applied to the div around the adornment.

@@ -35,9 +35,7 @@ export const Horizontal = () => (
 Horizontal.story = {
   parameters: {
     docs: {
-      description: {
-        story: "Layout checkboxes horizontally.",
-      },
+      storyDescription: "Layout checkboxes horizontally.",
     },
   },
 };
@@ -53,9 +51,7 @@ export const Disabled = () => (
 Disabled.story = {
   parameters: {
     docs: {
-      description: {
-        story: "Disabled checkbox group.",
-      },
+      storyDescription: "Disabled checkbox group.",
     },
     pa11y: {
       ignore: [
@@ -80,9 +76,7 @@ export const ReadOnly = () => (
 ReadOnly.story = {
   parameters: {
     docs: {
-      description: {
-        story: "Not editable checkbox group.",
-      },
+      storyDescription: "Not editable checkbox group.",
     },
   },
 };
@@ -98,10 +92,8 @@ export const WithoutLabel = () => (
 WithoutLabel.story = {
   parameters: {
     docs: {
-      description: {
-        story:
-          "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
-      },
+      storyDescription:
+        "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
     },
   },
 };
@@ -139,9 +131,7 @@ export const Controlled = () => {
 Controlled.story = {
   parameters: {
     docs: {
-      description: {
-        story: "Controlled checkbox group.",
-      },
+      storyDescription: "Controlled checkbox group.",
     },
   },
 };
@@ -159,7 +149,9 @@ ErrorMessage.story = {
     pa11y: {
       ignore: [
         "region",
-        // aria-errormessage value is being reported as invalid, but the references an existing ID
+        // aria-errormessage value is being reported as invalid because axe-core forces
+        // the referenced error element to have aria-live="assertive", when the spec does not
+        // https://github.com/dequelabs/axe-core/pull/2590
         "aria-valid-attr-value",
       ],
     },

@@ -562,6 +562,7 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                 "adornmentButton": "HvInput-adornmentButton",
                                                 "adornmentsBox": "HvInput-adornmentsBox",
                                                 "description": "HvInput-description",
+                                                "error": "HvInput-error",
                                                 "hasSuggestions": "HvInput-hasSuggestions",
                                                 "icon": "HvInput-icon",
                                                 "iconClear": "HvInput-iconClear",

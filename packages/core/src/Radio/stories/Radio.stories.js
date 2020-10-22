@@ -179,7 +179,9 @@ ErrorMessage.story = {
     pa11y: {
       ignore: [
         "region",
-        // aria-errormessage value is being reported as invalid, but the references an existing ID
+        // aria-errormessage value is being reported as invalid because axe-core forces
+        // the referenced error element to have aria-live="assertive", when the spec does not
+        // https://github.com/dequelabs/axe-core/pull/2590
         "aria-valid-attr-value",
       ],
     },

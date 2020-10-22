@@ -341,7 +341,7 @@ export const SearchAsYouType = () => {
         label="Filter countries"
         placeholder="Search"
         onChange={handleSearch}
-        inputProps={{ autocomplete: "off" }}
+        inputProps={{ autoComplete: "off" }}
       />
       <HvPanel maxWidth="610px" height="230px" marginTop="20px" padding="5px">
         <HvTypography variant="highlightText">Countries of Europe</HvTypography>

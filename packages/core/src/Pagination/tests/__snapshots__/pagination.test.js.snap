@@ -1219,6 +1219,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     "adornmentButton": "HvInput-adornmentButton",
                     "adornmentsBox": "HvInput-adornmentsBox",
                     "description": "HvInput-description",
+                    "error": "HvInput-error",
                     "hasSuggestions": "HvInput-hasSuggestions",
                     "icon": "HvInput-icon",
                     "iconClear": "HvInput-iconClear",
@@ -1740,10 +1741,12 @@ exports[`Custom Pagination should render correctly 1`] = `
                           </HvBaseInput>
                         </WithStyles(HvBaseInput)>
                         <WithStyles(HvWarningText)
+                          className="HvInput-error"
                           disableBorder={true}
                           id="pagination-currentPage-error"
                         >
                           <HvWarningText
+                            className="HvInput-error"
                             classes={
                               Object {
                                 "defaultIcon": "HvWarningText-defaultIcon",
@@ -1759,7 +1762,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             id="pagination-currentPage-error"
                           >
                             <div
-                              className="HvWarningText-root"
+                              className="HvInput-error HvWarningText-root"
                             >
                               <Fail
                                 className="HvWarningText-defaultIcon"
