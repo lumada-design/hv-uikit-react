@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { Main } from "../stories/ListContainer.stories";
-import { HvProvider, HvListContainer } from "../../..";
+import { HvProvider, HvListContainer } from "../..";
 
 describe("ListContainer", () => {
   let wrapper;

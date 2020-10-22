@@ -34,6 +34,8 @@ export { default as HvKpi } from "./Kpi";
 export { default as HvLinechart } from "./Linechart";
 export { default as HvLink } from "./Link";
 
+export { default as HvListContainer } from "./ListContainer";
+export * from "./ListContainer";
 export { default as HvList } from "./List";
 export { default as HvListContext } from "./List/ListContext";
 export { default as HvListContainer } from "./List/ListContainer";

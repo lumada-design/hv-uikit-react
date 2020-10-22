@@ -40,36 +40,40 @@ const applyClassNameToElement = (element, className) => {
 const HvListItem = (props) => {
   const {
     id,
+
     className,
     classes,
+
     role,
-    interactive: interactiveProp,
     selected,
     disabled,
+
+    interactive: interactiveProp,
     condensed: condensedProp,
     disableGutters: disableGuttersProp,
+
     startAdornment,
     endAdornment,
+
     onClick,
+
     children,
+
     tabIndex,
+
     ...others
   } = props;
 
   const {
     topContainerRef,
-    containerRole,
     condensed: condensedContext,
     disableGutters: disableGuttersContext,
     interactive: interactiveContext,
-    selectable,
   } = useContext(HvListContext);
 
   const condensed = condensedProp != null ? condensedProp : condensedContext;
   const disableGutters = disableGuttersProp != null ? disableGuttersProp : disableGuttersContext;
   const interactive = interactiveProp != null ? interactiveProp : interactiveContext;
-
-  const itemRole = role || (containerRole === "listbox" ? "option" : undefined);
 
   const clonedStartAdornment = useMemo(
     () =>
@@ -98,16 +102,19 @@ const HvListItem = (props) => {
     [children, clonedEndAdornment, clonedStartAdornment]
   );
 
-  const listItem = useMemo(
-    () => (
+  const listItem = useMemo(() => {
+    const roleOptionAriaProps =
+      role === "option" || role === "menuitem"
+        ? {
+            "aria-disabled": disabled || undefined,
+            "aria-selected": selected,
+          }
+        : {};
+
+    return (
       <li
         id={id}
-        aria-disabled={disabled || undefined}
-        // "option": A selectable item in a select list.
-        // Authors MUST ensure elements with role "option" are contained in, or owned by, an element with the role "listbox".
-        // Elements with the role "option" have an implicit aria-selected value of "false".
-        role={itemRole}
-        aria-selected={selectable ? selected : undefined}
+        role={role}
         onClick={onClick}
         onKeyDown={() => {}}
         className={clsx(className, classes.root, {
@@ -119,43 +126,42 @@ const HvListItem = (props) => {
           [classes.withStartAdornment]: startAdornment != null,
           [classes.withEndAdornment]: endAdornment != null,
         })}
+        {...roleOptionAriaProps}
         {...others}
       >
         {listItemContent}
       </li>
-    ),
-    [
-      id,
-      disabled,
-      itemRole,
-      selectable,
-      selected,
-      onClick,
-      className,
-      classes.root,
-      classes.gutters,
-      classes.condensed,
-      classes.interactive,
-      classes.selected,
-      classes.disabled,
-      classes.withStartAdornment,
-      classes.withEndAdornment,
-      disableGutters,
-      condensed,
-      interactive,
-      startAdornment,
-      endAdornment,
-      others,
-      listItemContent,
-    ]
-  );
+    );
+  }, [
+    id,
+    role,
+    onClick,
+    className,
+    classes.root,
+    classes.gutters,
+    classes.condensed,
+    classes.interactive,
+    classes.selected,
+    classes.disabled,
+    classes.withStartAdornment,
+    classes.withEndAdornment,
+    disableGutters,
+    condensed,
+    interactive,
+    selected,
+    disabled,
+    startAdornment,
+    endAdornment,
+    others,
+    listItemContent,
+  ]);
 
   return interactive ? (
     <Focus
       rootRef={topContainerRef}
       selected={selected}
       disabledClass={disabled || undefined}
-      strategy={containerRole === "listbox" ? "listbox" : "menu"}
+      strategy={role === "option" ? "listbox" : "menu"}
       classes={{ focus: classes.focus }}
       configuration={{
         tabIndex,
@@ -229,16 +235,12 @@ HvListItem.propTypes = {
      */
     focus: PropTypes.string,
   }).isRequired,
+
   /**
    * Overrides the implicit list item role.
    * It defaults to "option" if unspecified and the container list role is "listbox".
    */
   role: PropTypes.string,
-  /**
-   * If the list item is focusable and reacts to mouse over events.
-   * Defaults to true if the container list is interactive, false otherwise.
-   */
-  interactive: PropTypes.bool,
   /**
    * Indicates if the list item is selected.
    */
@@ -247,6 +249,12 @@ HvListItem.propTypes = {
    * If true, the list item will be disabled.
    */
   disabled: PropTypes.bool,
+
+  /**
+   * If the list item is focusable and reacts to mouse over events.
+   * Defaults to true if the container list is interactive, false otherwise.
+   */
+  interactive: PropTypes.bool,
   /**
    * If `true` compacts the vertical spacing intended to separate the list items.
    * Defaults to the value set in container list.
@@ -257,6 +265,7 @@ HvListItem.propTypes = {
    * Defaults to the value set in container list.
    */
   disableGutters: PropTypes.bool,
+
   /**
    * Element placed before the children.
    * Also removes the left padding (gutter).
@@ -274,15 +283,18 @@ HvListItem.propTypes = {
    * If unwanted, the element should be placed directly as a child.
    */
   endAdornment: PropTypes.node,
+
   /**
    * The function executed when the item is pressed.
    * @param event React.MouseEvent<HTMLElement>
    */
   onClick: PropTypes.func,
+
   /**
    * The list item content.
    */
   children: PropTypes.node,
+
   /**
    * @ignore
    */

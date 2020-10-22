@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-import HvListContext from "../ListContext";
+import HvListContext from "./ListContext";
 
 /**
  * A <b>list</b> is any enumeration of a set of items.
@@ -18,10 +18,7 @@ const HvListContainer = (props) => {
     id,
     className,
     classes,
-    role,
-    interactive: interactiveProp,
-    selectable,
-    multiSelect,
+    interactive = false,
     condensed,
     disableGutters,
     children,
@@ -29,19 +26,14 @@ const HvListContainer = (props) => {
   } = props;
 
   const containerRef = useRef(null);
-  const containerRole = role || (selectable ? "listbox" : undefined);
-
-  const interactive = interactiveProp != null ? interactiveProp : selectable;
 
   const { topContainerRef, nesting = -1 } = useContext(HvListContext);
 
   const listContext = {
     topContainerRef: topContainerRef || containerRef,
-    containerRole,
     condensed,
     disableGutters,
     interactive,
-    selectable,
     nesting: nesting + 1,
   };
 
@@ -70,14 +62,7 @@ const HvListContainer = (props) => {
 
   return (
     <HvListContext.Provider value={listContext}>
-      <ul
-        ref={containerRef}
-        id={id}
-        className={clsx(className, classes.root)}
-        role={containerRole}
-        aria-multiselectable={(selectable && multiSelect) || undefined}
-        {...others}
-      >
+      <ul ref={containerRef} id={id} className={clsx(className, classes.root)} {...others}>
         {renderChildren()}
       </ul>
     </HvListContext.Provider>
@@ -103,22 +88,10 @@ HvListContainer.propTypes = {
     root: PropTypes.string,
   }).isRequired,
   /**
-   * Overrides the implicit list role. It defaults to "listbox" if unspecified and the list is selectable.
-   */
-  role: PropTypes.string,
-  /**
    * If the list items should be focusable and react to mouse over events.
    * Defaults to true if the list is selectable, false otherwise.
    */
   interactive: PropTypes.bool,
-  /**
-   * If the list represents a set of selectable items.
-   */
-  selectable: PropTypes.bool,
-  /**
-   * If the is list is selectable, indicates that the user may select more than one item from the current selectable list items.
-   */
-  multiSelect: PropTypes.bool,
   /**
    * If `true` compact the vertical spacing between list items.
    */
