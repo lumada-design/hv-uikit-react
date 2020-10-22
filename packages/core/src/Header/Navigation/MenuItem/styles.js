@@ -1,7 +1,7 @@
 import "focus-within-polyfill";
-import focusStyles from "../../../Focus/styles";
+import focusStyles, { outlineStyles } from "../../../Focus/styles";
 
-const { focused, focusDisabled, externalReference, falseFocus } = focusStyles;
+const { externalReference, falseFocus } = focusStyles;
 
 const styles = (theme) => {
   const hoverColor = theme.hv.palette.atmosphere.atmo3;
@@ -41,14 +41,12 @@ const styles = (theme) => {
         outline: "none",
       },
       "&:focus": {
+        outline: "none",
         backgroundColor: hoverColor,
       },
-    },
-    contentFocusDisabled: {
-      ...focusDisabled,
-    },
-    contentFocused: {
-      ...focused,
+      "&.focus-visible": {
+        ...outlineStyles,
+      },
     },
     externalReference: {
       ...externalReference,
