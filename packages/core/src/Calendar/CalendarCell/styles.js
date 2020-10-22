@@ -1,3 +1,5 @@
+import { outlineStyles } from "../../Focus/styles";
+
 const styles = (theme) => {
   const hover = {
     backgroundColor: theme.palette.atmo3,
@@ -36,11 +38,11 @@ const styles = (theme) => {
         ...hover,
       },
       "&:focus": {
+        outline: "none",
+      },
+      "&.focus-visible": {
         ...hover,
-        outlineColor: "#52A8EC",
-        outlineStyle: "solid",
-        outlineWidth: "1px",
-        outlineOffset: "-1px",
+        ...outlineStyles,
       },
     },
     navigationMonth: {
@@ -64,6 +66,7 @@ const styles = (theme) => {
     },
     calendarDateNotInMonth: {
       color: theme.palette.atmo5,
+      cursor: "not-allowed",
     },
     calendarDateSelected: {
       backgroundColor: theme.palette.atmo3,
@@ -130,8 +133,16 @@ const styles = (theme) => {
     endBookend: {
       borderRight: `1px solid ${theme.palette.acce1}`,
     },
-    cellsInRange: {},
-    cellsOutsideRange: {},
+    cellsInRange: {
+      "&:focus": {
+        outside: "none",
+      },
+    },
+    cellsOutsideRange: {
+      "&:focus": {
+        outside: "none",
+      },
+    },
   };
 };
 

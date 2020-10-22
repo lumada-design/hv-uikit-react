@@ -15,6 +15,9 @@ const styles = (theme) => ({
       cursor: "pointer",
     },
     "&:focus": {
+      outline: "none",
+    },
+    "&.focus-visible": {
       backgroundColor: theme.palette.atmo3,
       cursor: "pointer",
       ...outlineStyles,
@@ -39,6 +42,9 @@ const styles = (theme) => ({
       cursor: "pointer",
     },
     "&:focus": {
+      outline: "none",
+    },
+    "&.focus-visible": {
       backgroundColor: theme.palette.atmo3,
       cursor: "pointer",
       ...outlineStyles,

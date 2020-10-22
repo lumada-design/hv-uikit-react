@@ -13,6 +13,7 @@ exports[`<CalendarHeader /> should render correctly 1`] = `
         "headerDayOfWeek": "HvCalendarHeader-headerDayOfWeek",
         "input": "HvCalendarHeader-input",
         "invalid": "HvCalendarHeader-invalid",
+        "invalidMessageStyling": "HvCalendarHeader-invalidMessageStyling",
         "rangeLabel": "HvCalendarHeader-rangeLabel",
         "root": "HvCalendarHeader-root",
       }

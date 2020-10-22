@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
+import { Info } from "@hv/uikit-react-icons/dist";
 import moment from "moment";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
@@ -48,25 +49,29 @@ const HvCalendarHeader = ({
 
   const inputValue = editedValue ?? displayValue;
   const localeFormat = moment.localeData().longDateFormat("L");
-  const isValidValue = !!inputValue && moment(localValue, "L").isValid();
+  const [isInvalidValue, setIsInvalidValue] = useState(!!inputValue);
 
   useEffect(() => {
     setDateValue(localValue);
-    if (isValidValue) {
+    if (!isInvalidValue && !!localValue) {
       setDisplayValue(moment(localValue, "L").format("D MMM YYYY"));
       setWeekdayDisplay(moment(localValue, "L").format("ddd"));
     } else {
       setDisplayValue(localValue);
       setWeekdayDisplay("");
     }
-  }, [localValue, isValidValue, localLocale]);
+  }, [localValue, isInvalidValue, localLocale]);
 
   const onBlurHandler = (event) => {
     if (isNil(editedValue)) return;
+
     if (editedValue === "") {
       setEditedValue(null);
       return;
     }
+
+    const validatedInputValue = !moment(editedValue, "L").isValid();
+    setIsInvalidValue(validatedInputValue);
     const dateParsed = moment(editedValue, "L").toDate();
     if (!isSameDay(dateParsed, dateValue)) {
       setDateValue(dateParsed);
@@ -88,7 +93,8 @@ const HvCalendarHeader = ({
   };
 
   const onFocusHandler = (event) => {
-    const formattedDate = isValidValue ? moment(localValue).format("L") : localValue;
+    const formattedDate =
+      !isInvalidValue && !!localValue ? moment(localValue).format("L") : localValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);
   };
@@ -96,33 +102,40 @@ const HvCalendarHeader = ({
   const onChangeHandler = (event) => {
     setEditedValue(event.target.value);
   };
-
   return (
-    <div
-      id={localId}
-      className={clsx(classes.root, {
-        [classes.invalid]: !isValidValue,
-      })}
-    >
-      <HvTypography variant="normalText" className={classes.headerDayOfWeek}>
-        {weekdayDisplay || "\u00A0"}
-      </HvTypography>
-      <div className={classes.headerDate}>
-        <input
-          type="text"
-          id={setId(localId, "header-input")}
-          placeholder={localeFormat}
-          value={inputValue}
-          className={classes.input}
-          onBlur={onBlurHandler}
-          onFocus={onFocusHandler}
-          onChange={onChangeHandler}
-          onKeyDown={keyDownHandler}
-          aria-labelledby={HvLabel?.[0]?.id}
-          {...others}
-        />
+    <>
+      <div
+        id={localId}
+        className={clsx(classes.root, {
+          [classes.invalid]: isInvalidValue,
+        })}
+      >
+        <HvTypography variant="normalText" className={classes.headerDayOfWeek}>
+          {weekdayDisplay || "\u00A0"}
+        </HvTypography>
+        <div className={classes.headerDate}>
+          <input
+            type="text"
+            id={setId(localId, "header-input")}
+            placeholder={localeFormat}
+            value={inputValue}
+            className={classes.input}
+            onBlur={onBlurHandler}
+            onFocus={onFocusHandler}
+            onChange={onChangeHandler}
+            onKeyDown={keyDownHandler}
+            aria-labelledby={HvLabel?.[0]?.id}
+            {...others}
+          />
+        </div>
       </div>
-    </div>
+      {isInvalidValue && (
+        <HvTypography variant="selectedNavText" className={classes.invalidMessageStyling}>
+          <Info color={["acce3"]} iconSize="S" />
+          Invalid date
+        </HvTypography>
+      )}
+    </>
   );
 };
 
