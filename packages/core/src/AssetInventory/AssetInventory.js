@@ -4,14 +4,13 @@ import find from "lodash/find";
 import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
 import MultiButton from "./Multibutton/Multibutton";
-import withLabels from "../withLabels";
 import Search from "./Search/Search";
 import Sort from "./Sort/Sort";
 import HvGrid from "../Grid";
 import HvPagination from "../Pagination";
 import HvBulkActions from "../BulkActions";
 import styles from "./styles";
-import { setId } from "../utils";
+import { setId, useLabels } from "../utils";
 
 const DEFAULT_LABELS = {
   sortBy: "Sort by",
@@ -39,7 +38,7 @@ const HvAssetInventory = (props) => {
     children,
     searchString: searchStringProp = "",
     sortOptionId,
-    labels,
+    labels: labelsProp,
     configuration,
     onSearch,
     searchProps,
@@ -66,6 +65,8 @@ const HvAssetInventory = (props) => {
     multibuttonProps = [],
     emptyComponent = null,
   } = props;
+
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const innerPageSize = pageSizeProp || pageSizeOptions[0];
   const innerPageValues = getPaginationData(props, valuesProp, innerPageSize, pageProp);
@@ -566,6 +567,4 @@ HvAssetInventory.propTypes = {
   emptyComponent: PropTypes.node,
 };
 
-export default withStyles(styles, { name: "HvAssetInventory" })(
-  withLabels(DEFAULT_LABELS)(HvAssetInventory)
-);
+export default withStyles(styles, { name: "HvAssetInventory" })(HvAssetInventory);

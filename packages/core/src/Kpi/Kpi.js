@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
 import styles from "./styles";
-import withLabels from "../withLabels";
+import { useLabels } from "../utils";
 
 const DEFAULT_LABELS = {
   title: "",
@@ -18,7 +18,7 @@ const HvKpi = (props) => {
     classes,
     className,
     id,
-    labels,
+    labels: labelsProp,
     visualIndicator = null,
     visualComparison = null,
     trendIndicator = null,
@@ -27,6 +27,7 @@ const HvKpi = (props) => {
     ...others
   } = props;
 
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const InternalVisualComparison = typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
@@ -179,4 +180,4 @@ HvKpi.propTypes = {
   indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "normalText", "normalText"]),
 };
 
-export default withStyles(styles, { name: "HvKpi" })(withLabels(DEFAULT_LABELS)(HvKpi));
+export default withStyles(styles, { name: "HvKpi" })(HvKpi);

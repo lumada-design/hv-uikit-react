@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import { Calendar } from "@hv/uikit-react-icons";
 import clsx from "clsx";
-import { setId, useSavedState } from "../utils";
+import { setId, useSavedState, useLabels } from "../utils";
 import {
   HvActionContainer,
   HvBaseDropdown,
@@ -14,7 +14,6 @@ import {
   HvTypography,
 } from "..";
 import styles from "./styles";
-import withLabels from "../withLabels";
 import withId from "../withId";
 import { DEFAULT_LOCALE, isDate } from "../Calendar/utils";
 import { getDateLabel, isVisibleDate, validateLocale } from "./utils";
@@ -35,7 +34,7 @@ const DEFAULT_LABELS = {
 const HvDatePicker = ({
   id,
   className,
-  labels,
+  labels: labelsProp,
   classes,
   disabled = false,
   value,
@@ -51,6 +50,7 @@ const HvDatePicker = ({
   escapeWithReference = true,
   ...others
 }) => {
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const [locale, setLocale] = useState(validateLocale(localeProp));
   const [calendarOpen, setCalendarOpen] = useState(false);
 
@@ -314,6 +314,4 @@ HvDatePicker.propTypes = {
   startAdornment: PropTypes.node,
 };
 
-export default withStyles(styles, { name: "HvDatePicker", index: 1 })(
-  withLabels(DEFAULT_LABELS)(withId(HvDatePicker))
-);
+export default withStyles(styles, { name: "HvDatePicker", index: 1 })(withId(HvDatePicker));

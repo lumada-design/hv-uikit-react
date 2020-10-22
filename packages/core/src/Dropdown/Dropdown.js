@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { setId } from "../utils";
+import { setId, useLabels } from "../utils";
 import { HvBaseDropdown, HvFormElement, HvLabel, HvTypography, useUniqueId } from "..";
-import withLabels from "../withLabels";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
 import styles from "./styles";
@@ -34,7 +33,7 @@ const HvDropdown = ({
   expanded = false,
   onChange,
   notifyChangesOnFirstRender = false,
-  labels,
+  labels: labelsProp,
   "aria-label": ariaLabel,
   "aria-labelledby": ariaLabelledBy,
   hasTooltips = false,
@@ -43,6 +42,7 @@ const HvDropdown = ({
   placement,
   popperProps = {},
 }) => {
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const elementId = useUniqueId(id, "hvdropdown");
 
   const [isOpen, setIsOpen] = useState(expanded);
@@ -288,4 +288,4 @@ HvDropdown.propTypes = {
   popperProps: PropTypes.shape(),
 };
 
-export default withStyles(styles, { name: "HvDropdown" })(withLabels(DEFAULT_LABELS)(HvDropdown));
+export default withStyles(styles, { name: "HvDropdown" })(HvDropdown);

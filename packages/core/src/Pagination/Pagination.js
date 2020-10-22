@@ -5,8 +5,7 @@ import { withStyles } from "@material-ui/core";
 import { Start, End, Backwards, Forwards } from "@hv/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import { HvInput, HvTypography } from "..";
-import withLabels from "../withLabels";
-import { setId } from "../utils";
+import { setId, useLabels } from "../utils";
 import ButtonIconTooltip from "./ButtonIconTooltip";
 import Select, { Option } from "./Select";
 import styles from "./styles";
@@ -41,12 +40,13 @@ const Pagination = ({
   canNext = false,
   onPageChange,
   onPageSizeChange,
-  labels,
+  labels: labelsProp,
   showPageProps,
   navigationProps,
   currentPageInputProps,
   ...others
 }) => {
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const [statePage, setStatePage] = useState(page);
 
   const getSafePage = (inPage) =>
@@ -340,4 +340,4 @@ Pagination.propTypes = {
   currentPageInputProps: PropTypes.instanceOf(Object),
 };
 
-export default withStyles(styles, { name: "HvPagination" })(withLabels(DEFAULT_LABELS)(Pagination));
+export default withStyles(styles, { name: "HvPagination" })(Pagination);

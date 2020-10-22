@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import withLabels from "../withLabels";
-import { setId } from "../utils/setId";
+import { setId, useLabels } from "../utils";
 import DropZone from "./DropZone";
 import FileList from "./FileList";
 import styles from "./styles";
@@ -21,7 +20,7 @@ const DEFAULT_LABELS = {
 const FileUploader = ({
   id,
   className,
-  labels,
+  labels: labelsProp,
   fileList,
   multiple = true,
   disabled = false,
@@ -31,6 +30,8 @@ const FileUploader = ({
   onFileRemoved,
   ...others
 }) => {
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+
   return (
     <div id={id} className={className} {...others}>
       <DropZone
@@ -152,6 +153,4 @@ FileUploader.propTypes = {
   onFileRemoved: PropTypes.func,
 };
 
-export default withStyles(styles, { name: "HvFileUploader" })(
-  withLabels(DEFAULT_LABELS)(FileUploader)
-);
+export default withStyles(styles, { name: "HvFileUploader" })(FileUploader);
