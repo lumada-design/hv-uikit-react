@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from "react";
-import { Email, Energy, Ghost, LogOut, WhiteBoard } from "@hv/uikit-react-icons/dist";
+import { Email, Energy, Ghost, WhiteBoard } from "@hv/uikit-react-icons/dist";
 import HvButton from "../../Button";
 import HvUserPreferences, { Action, Actions, Group, Label, Option, Options } from "..";
 
@@ -32,9 +32,8 @@ export const TwoButtons = () => {
       >
         <Actions>
           <Action
+            label="Log Out"
             id="action1"
-            label="Logout"
-            icon={<LogOut />}
             onClick={(event, data) => {
               console.log(`action ${data.label} selected`);
             }}

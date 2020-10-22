@@ -1,5 +1,5 @@
 const isCoreComponent = (kind) => {
-  const includedPaths = ["Components/", "Forms/", "Widgets/", "Tests/"];
+  const includedPaths = ["Components/", "Forms/", "Widgets/", "Tests/", "Layout/"];
   return includedPaths.some((p) => kind.startsWith(p));
 };
 

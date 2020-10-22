@@ -12,6 +12,13 @@ export default {
       page: null,
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: 10, maxWidth: "1000px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const SingleSelectedValue = () => (
