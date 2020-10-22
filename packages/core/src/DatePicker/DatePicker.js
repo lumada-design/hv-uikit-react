@@ -21,7 +21,7 @@ import styles from "./styles";
 import withId from "../withId";
 import { DEFAULT_LOCALE, isDate } from "../Calendar/utils";
 import { getDateLabel, isVisibleDate, validateLocale } from "./utils";
-import useVisibleDate from "../Calendar/useVisibleDate";
+import useVisibleDate from "./useVisibleDate";
 
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
@@ -87,7 +87,6 @@ const HvDatePicker = (props) => {
     rangeMode ? startValue : value
   );
   const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
-
   const [visibleDate, setVisibleDate, onVisibleDateChange] = useVisibleDate(startDate);
 
   useEffect(() => {

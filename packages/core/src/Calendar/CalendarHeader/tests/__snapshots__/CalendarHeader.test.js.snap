@@ -12,7 +12,9 @@ exports[`<CalendarHeader /> should render correctly 1`] = `
         "headerDate": "HvCalendarHeader-headerDate",
         "headerDayOfWeek": "HvCalendarHeader-headerDayOfWeek",
         "input": "HvCalendarHeader-input",
+        "inputBorderContainer": "HvCalendarHeader-inputBorderContainer",
         "invalid": "HvCalendarHeader-invalid",
+        "invalidMessageStyling": "HvCalendarHeader-invalidMessageStyling",
         "rangeLabel": "HvCalendarHeader-rangeLabel",
         "root": "HvCalendarHeader-root",
       }
@@ -82,6 +84,13 @@ exports[`<CalendarHeader /> should render correctly 1`] = `
         />
       </div>
     </div>
+    <div
+      style={
+        Object {
+          "height": 32,
+        }
+      }
+    />
   </HvCalendarHeader>
 </WithStyles(HvCalendarHeader)>
 `;

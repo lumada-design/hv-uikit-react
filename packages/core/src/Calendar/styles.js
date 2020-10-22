@@ -12,7 +12,11 @@ const styles = (theme) => ({
         "& > div": {
           "& > div:nth-child(3)": {
             "& > div": {
-              backgroundColor: theme.palette.atmo1,
+              "& > div": {
+                "&[data-calendarCell='calendarCell']": {
+                  backgroundColor: theme.palette.atmo1,
+                },
+              },
             },
           },
         },

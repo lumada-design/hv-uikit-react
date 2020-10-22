@@ -46,6 +46,9 @@ const styles = (theme) => {
       "& $cellsInRange:hover ~ $cellsInRange": {
         backgroundColor: theme.palette.atmo1, // controls the right side of the hovered range
       },
+      "& $cellsOutsideRange:hover ~ $cellsInRange": {
+        backgroundColor: theme.palette.atmo1, // control the right side when hovering outside of the range
+      },
     },
     navigationContainer: {
       display: "flex",
@@ -57,11 +60,7 @@ const styles = (theme) => {
         ...hover,
       },
       "&:focus": {
-        ...hover,
-        outlineColor: "#52A8EC",
-        outlineStyle: "solid",
-        outlineWidth: "1px",
-        outlineOffset: "-1px",
+        outline: "none",
       },
     },
     navigationMonth: {
