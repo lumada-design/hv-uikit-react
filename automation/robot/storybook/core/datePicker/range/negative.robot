@@ -31,23 +31,10 @@ replace date in wrong format
     [Documentation]    restore previous date
     wait until element has value    ${calendarLeft} input    5 Jul 2019
     wait until element has value    ${calendarRight} input    10 Jul 2019
-    Force input                     ${calendarRight} input    22 02 2020
+    Force input                     ${calendarRight} input    02 22 2020
     Press Keys                      NONE    TAB
     wait until element has value    ${calendarLeft} input    5 Jul 2019
     wait until element has value    ${calendarRight} input    10 Jul 2019
-
-input invalid format
-    [Documentation]
-    ...    - does not convert or save the inserted value, just keep it on input
-    ...    - complementary tests at datePicker\calendar\date_formats.robot
-    [Setup]    Open DatePicker sample    range-mode
-    Force input                     ${calendarLeft} input    22 02 2020
-    Force input                     ${calendarRight} input    22 02 2020
-    wait until element has value    ${calendarLeft} input    22 02 2020
-    wait until element has value    ${calendarRight} input    22 02 2020
-    Element Text Should Be          ${datePickerHeader}    Select a range
-    Click Button                    Apply
-    Element Text Should Be          ${datePickerHeader}    Select a range
 
 try clean input date
     [Documentation]    restore previous date
