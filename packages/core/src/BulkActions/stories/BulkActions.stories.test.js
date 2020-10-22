@@ -1,8 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
-import React, { useState } from "react";
+import React from "react";
 
-import { HvBulkActions, HvMultiButton } from "../..";
 import { ControlledWithActions } from "./BulkActions.stories";
 
 export default {
@@ -20,47 +19,6 @@ export default {
       </div>
     ),
   ],
-};
-
-// __________________________________
-// Extended pa11y test scenarios
-
-export const WithMultiButton = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [data, setData] = useState([
-    { id: "monday", value: "M" },
-    { id: "tuesday", value: "T" },
-    { id: "wednesday", value: "W" },
-    { id: "thursday", value: "T" },
-    { id: "friday", value: "F" },
-    { id: "saturday", value: "S" },
-    { id: "sunday", value: "S" },
-  ]);
-
-  const handleSelectAll = (e, checked = false) => {
-    setData(data.map((el) => ({ ...el, selected: checked })));
-  };
-
-  return (
-    <div>
-      <HvBulkActions
-        numTotal={data.length}
-        numSelected={data.filter((el) => el.selected).length}
-        onSelectAll={handleSelectAll}
-        onSelectAllPages={handleSelectAll}
-        maxVisibleActions={3}
-      />
-      <HvMultiButton
-        multi
-        type="text"
-        style={{ width: "224px", margin: 10 }}
-        buttons={data}
-        onChange={(e, state = []) => {
-          setData(data.map((el) => ({ ...el, selected: state.includes(el.id) })));
-        }}
-      />
-    </div>
-  );
 };
 
 // __________________________________
