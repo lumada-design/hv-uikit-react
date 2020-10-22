@@ -12,6 +12,6 @@ open suggestion sample
 *** Variables ***
 ${input}                  css:input[type=text]
 ${label}                  id:countries
-${suggestion_list}        css:ul[role=menu]
-${suggestion_options}     css:ul[role=menu]>li
+${suggestion_list}        css:ul[role=listbox]
+${suggestion_options}     css:ul[role=listbox]>li
 ${suggestion_Portugal}    xpath://li[.='Portugal']

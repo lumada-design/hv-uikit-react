@@ -54,9 +54,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
       condensed={false}
       disableGutters={false}
       interactive={true}
-      multiSelect={false}
       role="listbox"
-      selectable={true}
     >
       <HvListContainer
         className="HvList-root"
@@ -68,9 +66,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
         condensed={false}
         disableGutters={false}
         interactive={true}
-        multiSelect={false}
         role="listbox"
-        selectable={true}
       >
         <ul
           className="HvList-root HvListContainer-root"
@@ -585,9 +581,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
       condensed={false}
       disableGutters={false}
       interactive={true}
-      multiSelect={false}
       role="listbox"
-      selectable={true}
     >
       <HvListContainer
         className="HvList-root"
@@ -599,9 +593,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
         condensed={false}
         disableGutters={false}
         interactive={true}
-        multiSelect={false}
         role="listbox"
-        selectable={true}
       >
         <ul
           className="HvList-root HvListContainer-root"
@@ -1407,10 +1399,8 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
       condensed={false}
       disableGutters={true}
       interactive={true}
-      multiSelect={false}
       role="listbox"
       selectDefault={true}
-      selectable={true}
     >
       <HvListContainer
         className="HvList-root"
@@ -1422,10 +1412,8 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
         condensed={false}
         disableGutters={true}
         interactive={true}
-        multiSelect={false}
         role="listbox"
         selectDefault={true}
-        selectable={true}
       >
         <ul
           className="HvList-root HvListContainer-root"

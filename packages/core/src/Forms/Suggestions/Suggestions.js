@@ -3,7 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import OutsideClickHandler from "react-outside-click-handler";
 import { Popper, withStyles } from "@material-ui/core";
-import { HvList } from "../..";
+import { HvSelectionList, HvListItem } from "../..";
 import { setId } from "../../utils";
 import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
@@ -31,14 +31,21 @@ const HvSuggestions = (props) => {
     <div id={localId} className={clsx(className, classes.root)} {...others}>
       <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
         <OutsideClickHandler onOutsideClick={(e) => onClose?.(e)}>
-          <HvList
+          <HvSelectionList
             className={classes.list}
             id={setId(id, "list")}
-            condensed
-            values={suggestionValues}
-            onClick={onSuggestionSelected}
-            selectable={false}
-          />
+            onChange={onSuggestionSelected}
+          >
+            {suggestionValues?.map((item, i) => {
+              const itemKey = item.id || setId("item", i);
+
+              return (
+                <HvListItem key={itemKey} value={item} disabled={item.disabled || undefined}>
+                  {item.label}
+                </HvListItem>
+              );
+            })}
+          </HvSelectionList>
         </OutsideClickHandler>
       </Popper>
     </div>
