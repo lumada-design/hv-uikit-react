@@ -124,7 +124,7 @@ export const CustomStackedVerticalBarchart = () => {
         <div className={classes.controllerGroup}>
           <HvDropdown
             id="dropdown2"
-            labels={{ title: "Time Period" }}
+            label="Time Period"
             placement="left"
             classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
             values={[

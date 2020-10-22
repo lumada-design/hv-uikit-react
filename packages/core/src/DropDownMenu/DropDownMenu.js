@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import { DropRightXS } from "@hv/uikit-react-icons";
 import { getPrevNextFocus, isKeypress, KeyboardCodes } from "../utils";
-import { HvButton, HvList, HvPanel, HvBaseDropdown, setId } from "..";
+import { HvButton, HvListContainer, HvListItem, HvPanel, HvBaseDropdown, setId } from "..";
 import styles from "./styles";
 import withId from "../withId";
 
@@ -37,8 +38,6 @@ const DropDownMenu = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [expanded, disabled]);
-
-  const listId = setId(id, "list");
 
   const handleClose = () => {
     onToggleOpen?.(false);
@@ -74,6 +73,17 @@ const DropDownMenu = ({
     dataList,
   ]);
 
+  const renderLeftIcon = (item) =>
+    item.iconCallback?.({
+      isSelected: item.selected,
+      isDisabled: item.disabled,
+    });
+
+  const handleClick = (event, item) => {
+    if (!keepOpened) handleClose();
+    onClick?.(event, item);
+  };
+
   return (
     <HvBaseDropdown
       id={id}
@@ -84,7 +94,7 @@ const DropDownMenu = ({
       aria-haspopup="menu"
       placement={placement}
       disablePortal={disablePortal}
-      onToggle={(e, s) => {
+      onToggle={(_e, s) => {
         setOpen(s);
         onToggleOpen?.(s);
       }}
@@ -92,17 +102,34 @@ const DropDownMenu = ({
       {...others}
     >
       <HvPanel>
-        <HvList
-          id={listId}
-          values={dataList}
-          selectable={false}
+        <HvListContainer
+          id={setId(id, "list")}
+          role="menu"
+          interactive
           condensed={condensed}
-          onClick={(event, item) => {
-            if (!keepOpened) handleClose();
-            onClick?.(event, item);
-          }}
           onKeyDown={handleKeyDown}
-        />
+        >
+          {dataList.map((item, i) => {
+            const startAdornment = renderLeftIcon(item);
+
+            return (
+              <HvListItem
+                // there is nothing unique about the items
+                // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md#when-not-to-use-it
+                // eslint-disable-next-line react/no-array-index-key
+                key={i}
+                id={setId(id, "list", "item", i)}
+                role="menuitem"
+                disabled={item.disabled || undefined}
+                onClick={(evt) => handleClick(evt, item)}
+                startAdornment={startAdornment}
+                endAdornment={item.showNavIcon && <DropRightXS iconSize="XS" />}
+              >
+                {item.label}
+              </HvListItem>
+            );
+          })}
+        </HvListContainer>
       </HvPanel>
     </HvBaseDropdown>
   );

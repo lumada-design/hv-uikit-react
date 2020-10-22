@@ -3,7 +3,16 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { setId, useLabels } from "../utils";
-import { HvBaseDropdown, HvFormElement, HvLabel, HvTypography, useUniqueId } from "..";
+import {
+  HvBaseDropdown,
+  HvFormElement,
+  HvLabel,
+  HvInfoMessage,
+  HvWarningText,
+  HvTypography,
+  useUniqueId,
+  useControlled,
+} from "..";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
 import styles from "./styles";
@@ -15,39 +24,59 @@ const DEFAULT_LABELS = {
   applyLabel: "Apply",
   searchPlaceholder: "Search",
   multiSelectionConjunction: "/",
-  // internal label, used when no select is passed.
-  selectSingle: "Select...",
 };
 
 /**
  * A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
  */
-const HvDropdown = ({
-  className,
-  id,
-  classes,
-  values,
-  multiSelect = false,
-  showSearch = false,
-  disabled = false,
-  expanded = false,
-  onChange,
-  notifyChangesOnFirstRender = false,
-  labels: labelsProp,
-  "aria-label": ariaLabel,
-  "aria-labelledby": ariaLabelledBy,
-  hasTooltips = false,
-  disablePortal = false,
-  singleSelectionToggle = true,
-  placement,
-  popperProps = {},
-}) => {
+const HvDropdown = (props) => {
+  const {
+    classes,
+    className,
+
+    id,
+    name,
+
+    required = false,
+    disabled = false,
+
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+
+    placeholder = "Select...",
+
+    onChange,
+
+    status,
+    statusMessage,
+
+    values,
+    multiSelect = false,
+    showSearch = false,
+    expanded = false,
+    notifyChangesOnFirstRender = false,
+    labels: labelsProp,
+    hasTooltips = false,
+    disablePortal = false,
+    singleSelectionToggle = true,
+    placement,
+    popperProps = {},
+  } = props;
+
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
+
   const elementId = useUniqueId(id, "hvdropdown");
+
+  const [validationState, setValidationState] = useControlled(status, "standBy");
+
+  const [validationMessage] = useControlled(statusMessage, "Required");
 
   const [isOpen, setIsOpen] = useState(expanded);
   const [selectionLabel, setSelectionLabel] = useState(
-    getSelectionLabel(values, labels, multiSelect)
+    getSelectionLabel(values, labels, placeholder, multiSelect)
   );
   const [internalValues, setInternalValues] = useState(values);
 
@@ -70,10 +99,40 @@ const HvDropdown = ({
     const selected = getSelected(listValues);
     if (commitChanges) {
       setInternalValues(listValues);
-      setSelectionLabel(getSelectionLabel(listValues, labels, multiSelect));
+      setSelectionLabel(getSelectionLabel(listValues, labels, placeholder, multiSelect));
+
+      setValidationState(() => {
+        // this will only run if status is uncontrolled
+        if (required && selected.length === 0) {
+          return "invalid";
+        }
+
+        return "valid";
+      });
     }
     if (toggle) setIsOpen(false);
     if (notifyChanges) onChange?.(multiSelect ? selected : selected[0]);
+  };
+
+  const onToggle = (_e, open) => {
+    setIsOpen(open);
+
+    if (!open) {
+      // also run built-in validation when closing without changes
+      // as the user "touched" the input
+      setValidationState(() => {
+        // this will only run if status is uncontrolled
+        if (required) {
+          const hasSelection = getSelected(internalValues).length > 0;
+
+          if (!hasSelection) {
+            return "invalid";
+          }
+        }
+
+        return "valid";
+      });
+    }
   };
 
   const buildHeaderLabel = () => {
@@ -102,20 +161,35 @@ const HvDropdown = ({
     );
   };
 
+  const hasLabel = label != null;
+  const hasDescription = description != null;
+
+  // error message area will only be needed if the status is being controlled
+  // or if required is true
+  const canShowError = status !== undefined || required;
+
   return (
     <HvFormElement
       id={id}
-      className={clsx(className, classes.root)}
-      disabled={disabled}
+      name={name}
       value={getSelected(internalValues)}
+      status={validationState}
+      disabled={disabled}
+      required={required}
+      className={clsx(className, classes.root)}
     >
-      {labels.title && (
-        <HvLabel
-          id={setId(elementId, "label")}
-          aria-disabled={disabled}
-          className={classes.label}
-          label={labels.title}
-        />
+      {(hasLabel || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel id={setId(elementId, "label")} label={label} className={classes.label} />
+          )}
+
+          {hasDescription && (
+            <HvInfoMessage id={setId(elementId, "description")} className={classes.description}>
+              {description}
+            </HvInfoMessage>
+          )}
+        </div>
       )}
       <HvBaseDropdown
         id={setId(id, "dropdown")}
@@ -126,10 +200,18 @@ const HvDropdown = ({
         placement={placement}
         popperProps={popperProps}
         placeholder={buildHeaderLabel()}
-        onToggle={(e, s) => setIsOpen(s)}
+        onToggle={onToggle}
         role="combobox"
-        aria-labelledby={ariaLabelledBy || labels.title ? setId(elementId, "label") : undefined}
         aria-label={ariaLabel}
+        aria-labelledby={
+          [label && setId(elementId, "label"), ariaLabelledBy].join(" ").trim() || undefined
+        }
+        aria-invalid={validationState === "invalid" ? true : undefined}
+        aria-errormessage={validationState === "invalid" ? setId(elementId, "error") : undefined}
+        aria-describedby={
+          [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
+          undefined
+        }
       >
         <List
           id={setId(elementId, "values")}
@@ -144,9 +226,14 @@ const HvDropdown = ({
           notifyChangesOnFirstRender={notifyChangesOnFirstRender}
           hasTooltips={hasTooltips}
           singleSelectionToggle={singleSelectionToggle}
-          aria-labelledby={labels.title ? setId(elementId, "label") : undefined}
+          aria-labelledby={hasLabel ? setId(elementId, "label") : undefined}
         />
       </HvBaseDropdown>
+      {canShowError && (
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
+          {validationMessage}
+        </HvWarningText>
+      )}
     </HvFormElement>
   );
 };
@@ -157,10 +244,6 @@ HvDropdown.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Id to be applied to the root node.
-   */
-  id: PropTypes.string,
-  /**
    * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.shape({
@@ -168,14 +251,30 @@ HvDropdown.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+
+    /**
+     * Styles applied to the container of the labels elements.
+     */
+    labelContainer: PropTypes.string,
+    /**
+     * Styles applied to the label element.
+     */
+    label: PropTypes.string,
+    /**
+     * Styles applied to the icon information text.
+     */
+    description: PropTypes.string,
+
+    /**
+     * Styles applied to the error area.
+     */
+    error: PropTypes.string,
+
     /**
      * Styles applied to the dropdown.
      */
     dropdown: PropTypes.string,
-    /**
-     * Styles applied to the label.
-     */
-    label: PropTypes.string,
+
     /**
      * Styles applied to the arrow
      */
@@ -193,6 +292,74 @@ HvDropdown.propTypes = {
      */
     rootList: PropTypes.string,
   }).isRequired,
+
+  /**
+   * Id to be applied to the form element root node.
+   */
+  id: PropTypes.string,
+
+  /**
+   * The form element name.
+   */
+  name: PropTypes.string,
+
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided instead.
+   */
+  label: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-labelledby": PropTypes.string,
+  /**
+   * Provide additional descriptive text for the form element.
+   */
+  description: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
+
+  /**
+   * The placeholder value when nothing is selected.
+   */
+  placeholder: PropTypes.string,
+
+  /**
+   * Indicates that the form element is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  required: PropTypes.bool,
+
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to the state.
+   */
+  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  /**
+   * The error message to show when `status` is "invalid". Defaults to "Required".
+   */
+  statusMessage: PropTypes.node,
+
+  /**
+   * The callback fired when the value changes.
+   */
+  onChange: PropTypes.func,
+
   /**
    * The list to be rendered by the dropdown.
    */
@@ -213,17 +380,9 @@ HvDropdown.propTypes = {
    */
   showSearch: PropTypes.bool,
   /**
-   * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
-   */
-  disabled: PropTypes.bool,
-  /**
    * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded: PropTypes.bool,
-  /**
-   * A function to be executed whenever a item is selected in the dropdown, the function receives the selected item(s).
-   */
-  onChange: PropTypes.func,
   /**
    * If 'true' the dropdown will notify on the first render.
    */
@@ -232,10 +391,6 @@ HvDropdown.propTypes = {
    * An object containing all the labels for the dropdown.
    */
   labels: PropTypes.shape({
-    /**
-     * Title for the dropdown.
-     */
-    title: PropTypes.string,
     /**
      * Label for overwrite the default header behaviour.
      */
@@ -257,14 +412,6 @@ HvDropdown.propTypes = {
      */
     multiSelectionConjunction: PropTypes.string,
   }),
-  /**
-   * @ignore
-   */
-  "aria-label": PropTypes.string,
-  /**
-   * @ignore
-   */
-  "aria-labelledby": PropTypes.string,
   /**
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */

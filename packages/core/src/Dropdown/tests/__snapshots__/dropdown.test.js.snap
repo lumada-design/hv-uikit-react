@@ -23,8 +23,11 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
     classes={
       Object {
         "arrow": "HvDropdown-arrow",
+        "description": "HvDropdown-description",
         "dropdown": "HvDropdown-dropdown",
+        "error": "HvDropdown-error",
         "label": "HvDropdown-label",
+        "labelContainer": "HvDropdown-labelContainer",
         "placeholder": "HvDropdown-placeholder",
         "root": "HvDropdown-root",
         "rootList": "HvDropdown-rootList",
@@ -51,6 +54,8 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
     <WithStyles(WithId)
       className="HvDropdown-root"
       disabled={false}
+      required={false}
+      status="standBy"
       value={Array []}
     >
       <WithId
@@ -61,6 +66,8 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
           }
         }
         disabled={false}
+        required={false}
+        status="standBy"
         value={Array []}
       >
         <HvFormElement
@@ -72,6 +79,8 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
           }
           disabled={false}
           id="hv-form-element-2"
+          required={false}
+          status="standBy"
           value={Array []}
         >
           <div
@@ -471,7 +480,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                     "searchPlaceholder": "Search",
                                     "select": undefined,
                                     "selectAll": undefined,
-                                    "selectSingle": "Select...",
                                   }
                                 }
                                 multiSelect={false}
@@ -515,7 +523,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                       "searchPlaceholder": "Search",
                                       "select": undefined,
                                       "selectAll": undefined,
-                                      "selectSingle": "Select...",
                                     }
                                   }
                                   multiSelect={false}
@@ -1287,9 +1294,7 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                             disableGutters={false}
                                             id="hvdropdown1-values-list"
                                             interactive={true}
-                                            multiSelect={false}
                                             role="listbox"
-                                            selectable={true}
                                           >
                                             <HvListContainer
                                               className="HvList-root"
@@ -1302,9 +1307,7 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                               disableGutters={false}
                                               id="hvdropdown1-values-list"
                                               interactive={true}
-                                              multiSelect={false}
                                               role="listbox"
-                                              selectable={true}
                                             >
                                               <ul
                                                 className="HvList-root HvListContainer-root"
@@ -1845,8 +1848,11 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
     classes={
       Object {
         "arrow": "HvDropdown-arrow",
+        "description": "HvDropdown-description",
         "dropdown": "HvDropdown-dropdown",
+        "error": "HvDropdown-error",
         "label": "HvDropdown-label",
+        "labelContainer": "HvDropdown-labelContainer",
         "placeholder": "HvDropdown-placeholder",
         "root": "HvDropdown-root",
         "rootList": "HvDropdown-rootList",
@@ -1876,6 +1882,8 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
       className="HvDropdown-root"
       disabled={true}
       id="test-dropdown"
+      required={false}
+      status="valid"
       value={Array []}
     >
       <WithId
@@ -1887,6 +1895,8 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
         }
         disabled={true}
         id="test-dropdown"
+        required={false}
+        status="valid"
         value={Array []}
       >
         <HvFormElement
@@ -1898,6 +1908,8 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
           }
           disabled={true}
           id="test-dropdown"
+          required={false}
+          status="valid"
           value={Array []}
         >
           <div
