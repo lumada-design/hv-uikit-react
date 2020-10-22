@@ -18,7 +18,7 @@ import {
 
 import { themeBuilder, generateClassName, CssBaseline, getTheme } from "../theme";
 
-import { ConfigProvider } from "../config/context";
+import { ConfigProvider } from "./context";
 
 /**
  * Augments the target theme with the differences found in the source theme.
