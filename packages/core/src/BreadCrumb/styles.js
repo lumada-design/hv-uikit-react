@@ -12,6 +12,7 @@ const styles = (theme) => ({
     textDecoration: "none",
     maxWidth: "170px",
     fontWeight: 400,
+    color: theme.hv.palette.accent.acce1,
     "&:hover": {
       cursor: "pointer",
       textDecoration: "underline",

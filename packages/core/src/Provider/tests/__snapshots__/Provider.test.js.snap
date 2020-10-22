@@ -160,7 +160,7 @@ exports[`Provider should render correctly 1`] = `
                 "lineHeight": "40px",
               },
               "link": Object {
-                "color": "#414141",
+                "color": "#2064B4",
                 "fontSize": "12px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
@@ -232,7 +232,7 @@ exports[`Provider should render correctly 1`] = `
                 "lineHeight": "40px",
               },
               "xsInlineLink": Object {
-                "color": "#414141",
+                "color": "#2064B4",
                 "fontSize": "10px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
