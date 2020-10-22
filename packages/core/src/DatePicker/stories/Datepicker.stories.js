@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HvButton, HvList, HvDatePicker, HvInput } from "../..";
+import { HvButton, HvListContainer, HvListItem, HvDatePicker, HvInput } from "../..";
 
 export default {
   title: "Forms/Date Picker",
@@ -122,10 +122,8 @@ export const WithCustomLabels = () => (
   <HvDatePicker
     aria-label="Date"
     showActions
-    labels={{
-      title: "This is the title for the date picker",
-      placeholder: "Custom placeholder",
-    }}
+    label="This is the title for the date picker"
+    placeholder="Custom placeholder"
   />
 );
 
@@ -149,11 +147,11 @@ WithCustomLabels.story = {
 export const RangeMode = () => (
   <HvDatePicker
     aria-label="Date"
+    placeholder="Select a range"
     rangeMode
     labels={{
       applyLabel: "Apply",
       cancelLabel: "Cancel",
-      placeholder: "Select a range",
     }}
   />
 );
@@ -179,7 +177,6 @@ export const RangeWithValues = () => {
   const labels = {
     applyLabel: "Apply",
     cancelLabel: "Cancel",
-    placeholder: "Select a range",
     rangeStart: "Start date",
     rangeEnd: "End date",
   };
@@ -188,6 +185,7 @@ export const RangeWithValues = () => {
     <HvDatePicker
       id="DatePicker"
       aria-label="Date"
+      placeholder="Select a range"
       labels={labels}
       rangeMode
       startValue={new Date(2019, 6, 5)}
@@ -266,12 +264,12 @@ export const WithSelectionList = () => {
   const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
   const [endDate, setEndDate] = useState(new Date(2020, 8, 10));
 
-  const handleClick = (evt, item) => {
+  const handleClick = (item) => {
     console.log(item);
     const today = new Date();
     const [d, m, y] = [today.getDate(), today.getMonth(), today.getFullYear()];
 
-    switch (item.label) {
+    switch (item) {
       case "Last 7 days": {
         setStartDate(new Date(y, m, d - 7));
         setEndDate(new Date(y, m, d));
@@ -293,18 +291,23 @@ export const WithSelectionList = () => {
   };
 
   const options = (
-    <HvList
-      style={{ padding: "40px 20px", minWidth: 160 }}
-      selectable={false}
-      values={[
-        { label: "Today", disabled: true },
-        { label: "Yesterday", disabled: true },
-        { label: "Last 7 days" },
-        { label: "This month" },
-        { label: "This year" },
-      ]}
-      onClick={handleClick}
-    />
+    <HvListContainer role="menu" style={{ padding: "40px 20px", minWidth: 160 }} interactive>
+      <HvListItem role="menuitem" disabled>
+        Today
+      </HvListItem>
+      <HvListItem role="menuitem" disabled>
+        Yesterday
+      </HvListItem>
+      <HvListItem role="menuitem" onClick={() => handleClick("Last 7 days")}>
+        Last 7 days
+      </HvListItem>
+      <HvListItem role="menuitem" onClick={() => handleClick("This month")}>
+        This month
+      </HvListItem>
+      <HvListItem role="menuitem" onClick={() => handleClick("This year")}>
+        This year
+      </HvListItem>
+    </HvListContainer>
   );
 
   return (
@@ -319,7 +322,9 @@ export const WithSelectionList = () => {
   );
 };
 
-export const Disabled = () => <HvDatePicker id="DatePicker" disabled />;
+export const Disabled = () => (
+  <HvDatePicker id="DatePicker" disabled aria-label="Disabled date picker" />
+);
 
 Disabled.story = {
   parameters: {
