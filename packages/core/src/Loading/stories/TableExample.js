@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 import { HvTable } from "../..";
 
 const Table = () => {
@@ -93,7 +92,6 @@ const Table = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
