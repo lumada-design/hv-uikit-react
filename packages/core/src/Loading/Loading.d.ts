@@ -5,7 +5,7 @@ export type HvLoadingClassKey =
   | "root"
   | "barContainer"
   | "loadingBar"
-  | "loadingText"
+  | "label"
   | "overlay"
   | "blur";
 
@@ -18,19 +18,15 @@ export interface HvLoadingProps
   /**
    * The text to be displayed.
    */
-  text?: string;
+  label?: string;
   /**
-   * Activates the loading visualization.
+   * Whether the loading animation is hidden.
    */
-  isActive?: boolean;
+  hidden?: boolean;
   /**
    * Color applied to the bars.
    */
   color?: string;
-  /**
-   * Children
-   */
-  children?: React.ReactNode;
 }
 
 export default function HvLoading(props: HvLoadingProps): JSX.Element | null;
