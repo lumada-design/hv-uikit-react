@@ -1,10 +1,6 @@
 *** Setting ***
-Resource      _resources.resource
-Test Setup    Run Keywords
-...           Go To    ${forms}dropdown--multi-selection
-...           AND    Wait Until Element Is Enabled    ${dropdown}
-...           AND    Click Element                    ${dropdownHeader}
-...           AND    Wait Until Element Is Visible    ${listBox}
+Resource      _dropDown.resource
+Test Setup    open dropdown sample    ${forms}    multi-selection
 
 
 *** Test Cases ***
@@ -27,8 +23,8 @@ select all options when checked all option
     Page Should Contain Element      ${aria-selected}    limit=4
 
 unselect all when is unselected all options one by one
-    Element Attribute Value Should Be    ${option2}    aria-selected    true
-    Click Element                        ${option2}
+    Element Attribute Value Should Be    ${option}(2)    aria-selected    true
+    Click Element                        ${option}(2)
     Page Should Not Contain Element      ${aria-selected}
     Click Button                         Apply
     Click Element                        ${dropdown}

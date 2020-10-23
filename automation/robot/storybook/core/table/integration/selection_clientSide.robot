@@ -1,8 +1,7 @@
 *** Setting ***
-Resource      ../table.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--with-checkbox
-...           AND    Wait Until Element Is Visible    ${table}
+Resource      ../_table.resource
+Test Setup    open table sample    ${visualizations}    with-checkbox
+
 
 *** Test Cases ***
 keep selection when pagination is moved to next page
@@ -30,5 +29,5 @@ keep selection when number of rows per table is changed
 keep selection when column is sorted by
     [Documentation]    selection vs sort by
     Select Checkbox                ${row_10_checkbox}
-    Click Element                  ${header_2}
+    Click Element                  ${header}(2)
     Checkbox Should Be Selected    ${row_4_checkbox}

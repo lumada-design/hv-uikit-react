@@ -1,37 +1,34 @@
 *** Setting ***
-Resource          _resources.resource
-Test Template     Verify selectable card behavior
-Force Tags        keyboard
+Resource      _card.resource
+Test Setup    open card sample    ${components}    selectable
+Force Tags    keyboard
 
 
-*** Keywords ***
-Verify card is selected
-    Element Attribute Value Should Be    ${aboveFooter}    aria-selected    true
-    Checkbox Should Be Selected          ${Checkbox}
+*** Test Cases ***
+Tab sequence on complex card
+    Press Keys                          ${card}   TAB
+    Wait Until Page Contains Element    ${checkbox}:focus
+    Press Keys                          NONE  TAB
+    Wait Until Page Contains Element    ${buttonStar}:focus
+    Press Keys                          NONE  TAB
+    Wait Until Page Contains Element    ${buttonView}:focus
+    Press Keys                          NONE  TAB
+    Wait Until Page Contains Element    ${buttonDismiss}:focus
 
-Verify card is not selected
-    Element Attribute Value Should Be    ${aboveFooter}    aria-selected    false
-    Checkbox Should Not Be Selected      ${Checkbox}
+interact with checkbox in card
+    Checkbox Should Not Be Selected    ${checkbox}
+    set focus and press keys           ${checkbox}    SPACE
+    Checkbox Should Be Selected        ${checkbox}
 
-Verify selectable card behavior
-    [Arguments]    ${locator}    ${keyBoards}    ${selected}
-    Go To                            ${components}card--selectable
-    Wait Until Element Is Enabled    ${locator}
-    set focus and press keys         ${locator}               ${keyBoards}
-    Run Keyword If                   '${selected}'=='true'    Verify card is selected
-    ...                              ELSE                     Verify card is not selected
-    set focus and press keys         ${locator}               ${keyBoards}
-    Verify card is not selected
+#TO DO
+#interact with simple card
+#    [Documentation]
+#    ...    https://insightgroup.atlassian.net/browse/HVUIKIT-5574
+#    ...    waiting for this dev
+#    ...    test goal is focus/activate a simple(naked, no other components) card
 
 
-*** Test Cases ***                                        locator           keyBoards     selected
-select card with keys ALT and ENTER on content/header     ${aboveFooter}    ALT+RETURN    false
-do not select card with keys ALT and ENTER on footer      ${footer}         ALT+RETURN    |
-do not select card with keys ALT and ENTER on checkbox    ${checkbox}       ALT+RETURN    |
-select card with keys SPACE on checkbox                   ${checkbox}       SPACE         true
-focus checkbox with keys TAB on content/header
-    [Template]                       NONE
-    Go To                            ${components}card--selectable
-    Wait Until Element Is Enabled    ${aboveFooter}
-    set focus and press keys         ${aboveFooter}    TAB
-    Element Should Be Focused        ${Checkbox}
+*** Variables ***
+${buttonStar}       css:button[aria-label=Star]
+${buttonView}       css:#view
+${buttonDismiss}    css:#dismiss

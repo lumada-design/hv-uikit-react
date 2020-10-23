@@ -1,8 +1,6 @@
 *** Setting ***
 Resource          _header.resource
-Test Setup        Run Keywords
-...               Go To    ${components}header--main
-...               AND   Wait Until Element Is Visible    ${header}
+Test Setup        open header sample    ${components}    main
 Force Tags        keyboard    bug-infrastructure-ie
 Documentation    Test Cases based on Design System Version 1.2.0
 

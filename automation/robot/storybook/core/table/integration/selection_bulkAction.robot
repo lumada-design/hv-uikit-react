@@ -1,8 +1,6 @@
 *** Setting ***
-Resource         ../table.resource
-Test Setup       Run Keywords
-...              Go To    ${visualizations}table--table-with-changing-data    AND
-...              Wait Until Page Contains Element    ${table1 all}
+Resource         ../_table.resource
+Test Setup       open table sample    ${visualizations}    table-with-changing-data   
 Force Tags       bug-ie-webdriver
 Documentation    bug-ie-webdriver https://github.com/lumada-design/hv-uikit-react/issues/1708
 

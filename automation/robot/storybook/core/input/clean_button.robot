@@ -1,8 +1,10 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${forms}input--main
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource      _input.resource
+Test Setup    open input sample    ${forms}    main
+Documentation
+...           complementary tests on:
+...           Suite: ...\automation\robot\storybook\core\input\adornments.robot
+...           Test Case: show adornment and clean button when mouse hover unfocused filled input
 
 
 *** Test Cases ***
@@ -53,15 +55,3 @@ does not show clean button when input is cleaned
     Double Click Element                 ${input}
     Press Keys                           NONE    DELETE
     Wait Until Element Is Not Visible    ${clean_button}
-
-
-*** Comments ***
-    complementary tests on:
-    Suite: ...\automation\robot\storybook\core\input\adornments.robot
-    Test Case: show adornment and clean button when mouse hover unfocused filled input
-
-
-*** Variables ***
-${clean_button}    css:div[name*=Close]
-${input}           css:input
-${description}     css:.HvInput-description

@@ -50,7 +50,6 @@ not editable when is disabled
 
 radio button group has id, required, name and value attributes
     [Setup]    go to    ${tests}forms-radio-button-group--required
-    Wait Until Element Is Enabled        ${radioButtonGroup}
     Element Attribute Value Should Be    ${radioButtonGroup}    id    HvRadioGroup
     Page Should Contain Element          ${radioButtons} input[value]    limit=3
     Page Should Contain Element          ${radioButtons} input[required]    limit=3

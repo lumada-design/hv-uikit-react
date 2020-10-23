@@ -6,7 +6,7 @@ Documentation    https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-
 
 *** Test Cases ***
 TAB focus checked radio button
-    open radio button group sample    horizontal
+    [Setup]    open radio button group sample    horizontal
     Press Keys                        ${label}    TAB
     Element Should Be Focused         ${radio}(2) :checked
 
@@ -17,7 +17,7 @@ TAB first radio button in the group when none of the radio buttons are checked
     Element Should Be Focused        ${radio}(1) input
 
 TAB sequence
-    open radio button group sample    horizontal
+    [Setup]    open radio button group sample    horizontal
     Press Keys                        ${label}    TAB
     Element Should Be Focused         ${radio}(2) :checked
     Press Keys                        NONE    TAB

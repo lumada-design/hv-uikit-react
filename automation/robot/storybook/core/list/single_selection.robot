@@ -1,46 +1,30 @@
 *** Setting ***
-Variables        variables.yaml
-Resource         ../_keywords.resource
+Resource         _list.resource
+Test Setup       open list sample    single-selection-with-icon
 Documentation    options selections just for lists with single selection
 
 
 *** Test Cases ***
-remove a selected option when click on it (single selection list)
-    Go To                                ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option3}          aria-selected    true
-    Click Element                        ${option3}
-    Element Attribute Value Should Be    ${option3}          aria-selected    ${None}
-    Page Should Not Contain Element      ${selectedItems}
+unselect option when click on it
+    list option should be selected        ${option}(3)
+    Click Element                         ${option}(3)
+    list option should not be selected    ${option}(3)
 
-change selected option when click on other option (single selection list)
-    Go To                                ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible        ${list}
-    Element Attribute Value Should Be    ${option3}    aria-selected    true
-    Element Attribute Value Should Be    ${option2}    aria-selected    ${None}
-    Click Element                        ${option2}
-    Element Attribute Value Should Be    ${option3}    aria-selected    ${None}
-    Element Attribute Value Should Be    ${option2}    aria-selected    true
+change selected option when click on other option
+    list option should be selected        ${option}(3)
+    list option should not be selected    ${option}(2)
+    Click Element                         ${option}(2)
+    list option should not be selected    ${option}(3)
+    list option should be selected        ${option}(2)
 
 unable to select disabled option when click on it
-    Go To                                  ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible          ${list}
-    Element Attribute Value Should Be      ${option4}       aria-selected    ${None}
-    Run Keyword And Continue On Failure    Click Element    ${option4}
-    Element Attribute Value Should Be      ${option4}       aria-selected    ${None}
+    list option should not be selected     ${option}(4)
+    Click Element                          ${option}(4)
+    list option should not be selected     ${option}(4)
 
-unable to select disabled option when all list options are disabled
-    Go To                                ${components}list--main
-    Wait Until Element Is Visible        ${menubar}
-    Click Element                        ${option1}
-    Element Attribute Value Should Be    ${option1}    aria-selected    ${None}
-    Click Element                        ${option5}
-    Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
-
-verify menu options have correct option attributed when is a menu list
-    Go To                                ${components}list--main
-    Wait Until Element Is Visible        ${menubar}
-    Click Element                        ${option1}
-    Element Attribute Value Should Be    ${option1}    role    menuitem
-    Click Element                        ${option5}
-    Element Attribute Value Should Be    ${option5}    role    menuitem
+unable to select any option when selectable property is false
+    [Setup]    open list sample    main
+    Click Element                         ${option}(1)
+    list option should not be selected    ${option}(1)
+    Click Element                         ${option}(5)
+    list option should not be selected    ${option}(5)

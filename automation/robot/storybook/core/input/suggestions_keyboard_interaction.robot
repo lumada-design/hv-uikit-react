@@ -1,8 +1,6 @@
 *** Setting ***
-Resource         ../_keywords.resource
-Test Setup       Run Keywords
-...              Go To    ${forms}input--suggestion
-...              AND    Wait Until Element Is Enabled    ${input}
+Resource         _input.resource
+Test Setup       open input sample    ${forms}    suggestion
 Force Tags       keyboard    bug-ie
 Documentation    https://github.com/lumada-design/hv-uikit-react/issues/1750
 

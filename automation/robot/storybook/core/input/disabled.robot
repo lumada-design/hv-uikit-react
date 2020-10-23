@@ -1,5 +1,5 @@
 *** Setting ***
-Resource       ../_keywords.resource
+Resource       _input.resource
 Suite Setup    Run Keywords
 ...            Go To    ${forms}input--disabled
 ...            AND    Wait Until Element Is Visible    ${input}

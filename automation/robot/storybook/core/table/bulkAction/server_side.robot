@@ -1,8 +1,6 @@
 *** Setting ***
-Resource          ../table.resource
-Test Setup        Run Keywords
-...               Go To    ${visualizations}table--server-side-pagination
-...               AND    Wait Until Element Is Visible    ${table}
+Resource          ../_table.resource
+Test Setup        open table sample    ${visualizations}    server-side-pagination
 Test Template     Run Keyword
 
 *** Test Cases ***

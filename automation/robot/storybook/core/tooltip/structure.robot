@@ -1,8 +1,9 @@
 *** Setting ***
 Resource      ../_keywords.resource
-Test Setup    Run Keywords
+Suite Setup   Run Keywords
 ...           Go To    ${components}tooltip--long-text    AND
 ...           Wait Until Element Is Visible    ${tooltipPlaceholder}
+Test Teardown     Double Click Element     css:body
 Force Tags    bug-ie-webdriver
 
 
@@ -13,11 +14,6 @@ Force Tags    bug-ie-webdriver
 
 2 - react event handler does not trust when actions "mouse hover are repeated, using Firefox or IE
     similar: https://github.com/SeleniumHQ/selenium/issues/6741
-
-
-*** Variables ***
-${tooltipPlaceholder}   css:p[class*=HvTypography-root]
-${placeholder}          css:body
 
 
 *** Test Cases ***
@@ -34,7 +30,7 @@ tooltip is triggered when item is focused
 
 tooltip is dismissed when mouse leaves touch target
     [Tags]    keyboard
-    Press Keys                          ${placeholder}           TAB
+    Press Keys                          ${placeholder}    TAB
     Wait Until Page Contains            Tooltips can showcase
     Mouse Out                           ${tooltipPlaceholder}
     Wait Until Page Does Not Contain    Tooltips can showcase
@@ -45,3 +41,8 @@ tooltip is dismissed when is removed the item focus
     Wait Until Page Contains            Tooltips can showcase
     Press Keys                          ${tooltipPlaceholder}    TAB
     Wait Until Page Does Not Contain    Tooltips can showcase
+
+
+*** Variables ***
+${tooltipPlaceholder}   css:p[class*=HvTypography-root]
+${placeholder}          css:body

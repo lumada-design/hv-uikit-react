@@ -1,15 +1,10 @@
 *** Setting ***
-Resource          _verticalNavigation.resource
-Test Setup        Run Keywords
-...               Go To    ${components}vertical-navigation--collapsable    AND
-...               expand vertical navigation
-Documentation     Test Cases based on Design System Version 1.2.0
-
-
-*** Comments ***
-complementary test cases:
-- Test Suite "verticalNavigation_keyboard_interaction.robot"
-- Test Case "escape: close vertical navigation menu when ESCAPE is pressed"
+Resource      _verticalNavigation.resource
+Test Setup    open vertical navigation sample    ${components}    collapsable
+Documentation
+...    complementary test cases:
+...    - Test Suite "verticalNavigation_keyboard_interaction.robot"
+...    - Test Case "escape: close vertical navigation menu when ESCAPE is pressed"
 
 
 *** Test Cases ***
@@ -26,9 +21,7 @@ does not close vertical anchor bar when vertical navigation menu is closed
     Element Should Be Visible            ${anchorBar}
 
 closeOnExit property close menu when is clicked any area out of vertical navigation
-    [Setup]    NONE
-    Go To    ${components}vertical-navigation--collapse-on-exit
-    expand vertical navigation
+    [Setup]    open vertical navigation sample    ${components}    collapse-on-exit
     Click Element                        css:body
     Wait Until Element Is Not Visible    ${items}
 

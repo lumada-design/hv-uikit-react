@@ -1,9 +1,8 @@
 *** Setting ***
-Resource      _resources.resource
-Test Setup    Run Keywords
-...           Go To    ${components}base-dropdown--with-content
-...           AND    Wait Until Element Is Enabled    ${dropdown}
-Force Tags    keyboard
+Resource         _resources.resource
+Test Setup       open basedropdown sample    with-content
+Force Tags       keyboard
+Documentation    https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-6
 
 
 *** Test Cases ***

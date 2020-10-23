@@ -3,11 +3,6 @@ Resource    ../_keywords.resource
 Library     String
 
 
-*** Variables ***
-${multiButton}    css:\.HvMultiButton-root
-${button}         css:\.HvMultiButton-root>button:nth-child
-
-
 *** Keywords ***
 Open multiButton sample
     [Arguments]    ${sample}
@@ -27,3 +22,8 @@ multiButton selection should be
     ...    ELSE
     ...    Element Attribute Value Should Be    ${button}(${${index}+1})    aria-pressed    false
     END
+
+
+*** Variables ***
+${multiButton}    css:\.HvMultiButton-root
+${button}         css:\.HvMultiButton-root>button:nth-child

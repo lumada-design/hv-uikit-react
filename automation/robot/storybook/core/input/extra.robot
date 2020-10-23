@@ -1,8 +1,6 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${forms}input--password
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource      _input.resource
+Test Setup    open input sample    ${forms}    password
 
 
 *** Test Cases ***
@@ -20,6 +18,4 @@ placeholder - show placeholder when input rendered
 
 
 *** Variables ***
-${input}         css:input
-${label}         css:label
-${helperText}    css:#password-input-error
+${label}     css:label

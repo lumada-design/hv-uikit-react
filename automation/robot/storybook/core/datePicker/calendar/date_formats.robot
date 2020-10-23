@@ -6,16 +6,16 @@ Documentation    Use Cases:
 ...              - Dates can be typed and if valid applied to the calendar
 
 
-*** Test Cases ***      INPUT
-format m d yy           7 5 12
-format m dd yy          7 05 12
-format mm d yyyy        07 5 2012
-format mm dd yyyy       07 05 2012
-format mmddyy           070512
-format mm-dd-yy         07-05-12
-format mm.dd.yy         07.05.12
-format mm\\dd\\yy       07\\05\\12
-format mm/dd/yy         07/05/12
+*** Test Cases ***         INPUT
+format m d yy              7 5 12
+format m dd yy             7 05 12
+format mm d yyyy           07 5 2012
+format mm dd yyyy          07 05 2012
+format mmddyy              070512
+format mm-dd-yy            07-05-12
+format dots on mm dd yy    07.05.12
+format mm\\dd\\yy          07\\05\\12
+format mm/dd/yy            07/05/12
 
 invalid format
     [Template]    NONE

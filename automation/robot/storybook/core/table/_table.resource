@@ -2,17 +2,20 @@
 Resource     ../_keywords.resource
 
 
+*** Keywords ***
+open table sample
+    [Arguments]    ${dir}    ${sample}
+    go to                            ${dir}table--${sample}
+    Wait Until Element Is Enabled    ${table}
+
+
 *** Variables ***
 ${bulkAction_buttons}           css:[class*=HvBulkActions-actions] button
 ${bulkAction_checkbox}          css:input[id*=select-all]
 ${button_expand}                css:[aria-label='row expander button']
 ${cells}                        css:[role=table] [role=row] [role=cell]
-${header_1}                     css:[role=columnheader]:nth-child(1)
-${header_2}                     css:[role=columnheader]:nth-child(2)
-${header_3}                     css:[role=columnheader]:nth-child(3)
-${header_7}                     css:[role=columnheader]:nth-child(7)
-${header_8}                     css:[role=columnheader]:nth-child(8)
-${headers}                      css:[role=table] [role=row] [scope=col]
+${header}                       ${headers}:nth-child
+${headers}                      css:[role=columnheader]
 ${pagination_count_of_pages}    css:[id$=pagination-totalPages]
 ${pagination_first_page}        css:button[aria-label='First Page']
 ${pagination_input}             css:input[aria-label*='page input']

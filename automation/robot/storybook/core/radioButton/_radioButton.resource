@@ -2,11 +2,6 @@
 Resource    ../_keywords.resource
 
 
-*** Variables ***
-${radioButtons}    css:.HvRadio-root
-${radio}           ${radioButtons}\:nth-child
-
-
 *** Keywords ***
 open radioButton sample
     [Arguments]     ${sample}
@@ -20,3 +15,8 @@ radioButton should be selected
 radioButton should not be selected
     [Arguments]     ${cssLocator}
     Element Attribute Value Should Be    ${cssLocator} input+div   name    RadioButtonUnselected
+
+
+*** Variables ***
+${radioButtons}    css:.HvRadio-root
+${radio}           ${radioButtons}\:nth-child
