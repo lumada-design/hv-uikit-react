@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import moment from "moment";
 import { HvButton, HvList, HvDatePicker, HvInput } from "../..";
 
 export default {
@@ -236,7 +235,7 @@ NearInvalid.story = {
 export const WithValueChange = () => {
   const [date, setDate] = useState(new Date(2020, 0, 1));
 
-  const addDay = () => setDate(moment(date).add(1, "day").toDate());
+  const addDay = () => setDate(new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1));
 
   return (
     <>

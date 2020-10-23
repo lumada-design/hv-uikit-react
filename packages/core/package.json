@@ -34,6 +34,7 @@
   "peerDependencies": {
     "@material-ui/core": "^4.11.0",
     "core-js": "^3.6.5",
+    "plotly.js-basic-dist": "^1.55.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -50,7 +51,6 @@
     "html-react-parser": "^0.14.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
-    "plotly.js-basic-dist": "^1.55.2",
     "prop-types": "^15.7.2",
     "react-debounce-render": "^7.0.0",
     "react-google-charts": "^3.0.15",

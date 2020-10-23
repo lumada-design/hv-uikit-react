@@ -1,7 +1,6 @@
 import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
 import { makeStyles } from "@material-ui/core/styles";
 import orderBy from "lodash/orderBy";
-import moment from "moment";
 import React, { useState } from "react";
 import Chart from "react-google-charts";
 
@@ -187,7 +186,6 @@ export const Main = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -276,7 +274,6 @@ export const Empty = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -373,7 +370,6 @@ export const CustomEmpty = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -636,7 +632,6 @@ export const WithExpander = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -1145,7 +1140,6 @@ export const WithCheckbox = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -1557,7 +1551,6 @@ export const WithCheckboxAndSecondaryActions = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
       fixed: "left",
     },
@@ -1821,7 +1814,6 @@ export const WithNullValues = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
       fixed: "left",
     },
@@ -2104,7 +2096,7 @@ export const ServerSidePagination = () => {
     return {
       id,
       name: `Event ${id}`,
-      createdDate: randomDate(id),
+      createdDate: randomDate(id).toDateString(),
       status: (status > 0.66 && "Open") || (status > 0.33 && "Pending") || "Closed",
       riskScore: getRandom(id),
       severity: (severity > 0.66 && "Critical") || (severity > 0.33 && "Moderate") || "Low",
@@ -2186,7 +2178,6 @@ export const ServerSidePagination = () => {
       {
         headerText: "Time",
         accessor: "createdDate",
-        format: (value) => moment(value.original.createdDate).format("MM/DD/YYYY"),
         cellType: "numeric",
       },
       {
@@ -2396,7 +2387,6 @@ export const ConditionalPaginationDisplay = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
