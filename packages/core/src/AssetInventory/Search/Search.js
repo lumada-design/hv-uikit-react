@@ -36,17 +36,7 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
   return filteredValues;
 };
 
-const Search = ({
-  id = undefined,
-  label,
-  placeholder,
-  searchString = undefined,
-  onFilter,
-  onSearch = null,
-  values,
-  metadata,
-  ...others
-}) => {
+const Search = ({ id, labels, searchString, onFilter, onSearch, values, metadata, ...others }) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
   const handler = (event, value) => {
@@ -59,11 +49,11 @@ const Search = ({
     <HvInput
       id={setId(id, "search")}
       type="search"
-      label={label}
-      placeholder={placeholder}
+      placeholder={labels.placeholder}
       value={searchString}
       onChange={onSearch || handler}
       role="search"
+      aria-label={labels.inputLabel}
       {...others}
     />
   );
@@ -117,6 +107,10 @@ Search.propTypes = {
    * Search string
    */
   searchString: PropTypes.string,
+  /**
+   * Labels passed from the `HvAssetInventory`
+   */
+  labels: PropTypes.instanceOf(Object),
 };
 
 export default Search;

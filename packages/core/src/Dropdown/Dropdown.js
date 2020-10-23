@@ -14,6 +14,7 @@ const DEFAULT_LABELS = {
   selectAll: undefined,
   cancelLabel: "Cancel",
   applyLabel: "Apply",
+  searchPlaceholder: "Search",
   multiSelectionConjunction: "/",
   // internal label, used when no select is passed.
   selectSingle: "Select...",

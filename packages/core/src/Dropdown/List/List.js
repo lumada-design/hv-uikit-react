@@ -93,6 +93,7 @@ const List = ({
         id={setId(id, "search")}
         type="search"
         value={searchStr}
+        placeholder={labels.searchPlaceholder}
         onChange={(event, str) => handleSearch(str)}
       />
     </div>
