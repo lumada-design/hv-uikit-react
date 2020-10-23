@@ -25,7 +25,9 @@ const styles = (theme) => ({
       backgroundColor: fade(theme.palette.base1, 0.3),
     },
   },
-  selectAllContainer: {},
+  selectAllContainer: {
+    display: "flex",
+  },
   selectAll: {},
   selectAllPages: {},
   actions: {
