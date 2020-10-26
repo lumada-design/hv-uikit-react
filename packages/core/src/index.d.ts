@@ -89,8 +89,8 @@ export * from "./Loading";
 export { default as HvLoginContainer } from "./LoginContainer";
 export * from "./LoginContainer";
 
-export { default as HvModal } from "./Modal";
-export * from "./Modal";
+export { default as HvDialog } from "./Dialog";
+export * from "./Dialog";
 
 export { default as HvMultiButton } from "./MultiButton";
 export * from "./MultiButton";
