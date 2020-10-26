@@ -2,11 +2,6 @@
 Resource    ../_keywords.resource
 
 
-*** Variables ***
-${buttons}    css:button.HvToggleButton-root
-${button}     ${buttons}:nth-child
-
-
 *** Keywords ***
 open toggle button sample
     [Arguments]     ${sample}
@@ -22,3 +17,8 @@ toggle button should not be selected
     [Arguments]    ${locator}    ${nameAttribute}
     Element Attribute Value Should Be    ${locator}    aria-pressed    false
     Element Attribute Value Should Be    ${locator}>div    name    ${nameAttribute}
+
+
+*** Variables ***
+${buttons}    css:button.HvToggleButton-root
+${button}     ${buttons}:nth-child

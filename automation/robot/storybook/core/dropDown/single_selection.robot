@@ -1,10 +1,6 @@
 *** Setting ***
-Resource      _resources.resource
-Test Setup    Run Keywords
-...           Go To    ${forms}dropdown--single-selection
-...           AND    Wait Until Element Is Enabled    ${dropdown}
-...           AND    Click Element                    ${dropdownHeader}
-...           AND    Wait Until Element Is Visible    ${listBox}
+Resource      _dropDown.resource
+Test Setup    open dropdown sample    ${forms}    single-selection
 
 
 *** Test Cases ***
@@ -13,7 +9,7 @@ Open and close dropdown when is clicked header section
     Wait Until Element Is Not Visible    ${listBox}
 
 Close dropdown when it is selected an option
-    Click Element                        ${option1}
+    Click Element                        ${option}(1)
     Wait Until Element Is Not Visible    ${listBox}
 
 Close dropdown when is clicked out of dropdown area
@@ -21,15 +17,15 @@ Close dropdown when is clicked out of dropdown area
     Wait Until Element Is Not Visible    ${listBox}
 
 Dropdown does not open when it is disable
-    [Setup]    NONE
-    Go To                            ${forms}dropdown--disabled
-    Wait Until Element Is Visible    ${dropdown}
-    mouses does not open dropdown    ${dropdown}
-    mouses does not open dropdown    ${dropdownHeader}
-    keyboard does not open dropdown  ${dropdown}   ENTER
-    keyboard does not open dropdown  ${dropdown}   SPACE
-    keyboard does not open dropdown  ${dropdownHeader}   ENTER
-    keyboard does not open dropdown  ${dropdownHeader}   SPACE
+    [Setup]    Go To    ${forms}dropdown--disabled
+    Wait Until Element Is Visible      ${dropdown}
+    mouses does not open dropdown      ${dropdown}
+    mouses does not open dropdown      ${dropdownHeader}
+    keyboard does not open dropdown    ${dropdown}   ENTER
+    keyboard does not open dropdown    ${dropdown}   SPACE
+    keyboard does not open dropdown    ${dropdownHeader}   ENTER
+    keyboard does not open dropdown    ${dropdownHeader}   SPACE
+
 
 *** Keywords ***
 mouses does not open dropdown

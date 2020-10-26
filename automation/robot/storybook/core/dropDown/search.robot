@@ -1,10 +1,6 @@
 *** Setting ***
-Resource         _resources.resource
-Test Setup       Run Keywords
-...              Go To    ${forms}dropdown--multi-selection
-...              AND    Wait Until Element Is Enabled    ${dropdown}
-...              AND    Click Element                    ${dropdownHeader}
-...              AND    Wait Until Element Is Visible    ${listBox}
+Resource         _dropDown.resource
+Test Setup       open dropdown sample    ${forms}     multi-selection
 Documentation    A search can be used to filter the available options
 
 
@@ -14,6 +10,14 @@ filter options for multi selection
     Input Text                     ${searchInput}    2
     Page Should Contain Element    ${options}    limit=1
 
+filter options for single selection
+    [Setup]    open dropdown sample    ${forms}     single-selection-with-search    
+    Page Should Contain Element      ${options}    limit=4
+    Input Text                       ${searchInput}    2
+    Page Should Contain Element      ${options}    limit=1
+    Click Element                    ${option}(1)
+    Element Text Should Be           ${dropdownHeader}    Select...    ignore_case=True
+
 return empty list
     Page Should Contain Element    ${options}    limit=4
     Input Text                     ${searchInput}    123
@@ -21,7 +25,7 @@ return empty list
 
 select option not returned by filter
     Page Should Contain Element          ${aria-selected}    limit=1
-    Click Element                        ${option1}
+    Click Element                        ${option}(1)
     Input Text                           ${searchInput}    3
     Click Button                         Apply
     Wait Until Element Is Not Visible    ${listBox}
@@ -30,18 +34,7 @@ select option not returned by filter
 select option returned by filter
     Page Should Contain Element          ${aria-selected}    limit=1
     Input Text                           ${searchInput}    2
-    Click Element                        ${option1}
+    Click Element                        ${option}(1)
     Click Button                         Apply
     Wait Until Element Is Not Visible    ${listBox}
     Element Text Should Be               ${dropdownHeader}    0 / 4
-
-filter options for single selection
-    Go To                            ${forms}dropdown--single-selection-with-search
-    Wait Until Element Is Enabled    ${dropdown}
-    Click Element                    ${dropdownHeader}
-    Wait Until Element Is Visible    ${listBox}
-    Page Should Contain Element      ${options}    limit=4
-    Input Text                       ${searchInput}    2
-    Page Should Contain Element      ${options}    limit=1
-    Click Element                    ${option1}
-    Element Text Should Be           ${dropdownHeader}    Select...    ignore_case=True

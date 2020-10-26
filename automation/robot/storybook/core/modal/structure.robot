@@ -1,13 +1,10 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Variables     variables.yaml
-Test Setup    Run Keywords
-...           Go To    ${components}modal--text-and-semantic
-...           AND    Wait Until Element Is Enabled    ${buttonWarning}
-Force Tags    keyboard
+Resource      _modal.resource
+Test Setup    open modal sample    ${components}    text-and-semantic
+
 
 *** Test Cases ***
-focus first element (close button) when modal is opened
+focus first element close button when modal is opened
     Click Button                                ${buttonWarning}
     Wait Until Element Is Visible               ${dialog}
     Element Should Be Focused                   ${dialogCloseButton}

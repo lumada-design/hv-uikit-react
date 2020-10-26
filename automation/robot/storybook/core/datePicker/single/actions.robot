@@ -17,7 +17,6 @@ close and apply selection
     Element Text Should Be               ${datePickerHeader}    9 Jan 1970
 
 close and ignore selection when header is clicked
-    [Tags]    error v3
     ${date}    Get Text                  ${datePickerHeader}
     Force input                          ${input}    07/12/1982
     Click Element                        ${datePickerHeader}

@@ -1,8 +1,6 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${forms}input--controlled-with-buttons
-...           AND    Wait Until Element Is Visible    ${input}
+Resource      _input.resource
+Test Setup    open input sample    ${forms}    controlled-with-buttons
 
 
 *** Test Cases ***
@@ -25,7 +23,3 @@ block chars insertion when input already has max 25 chars
     Wait Until Element Is Visible    ${input}
     Input Text                       ${input}    123456789012345678901234567890
     Textfield Value Should Be        ${input}    1234567890123456789012345
-
-
-*** Variables ***
-${input}    css:input

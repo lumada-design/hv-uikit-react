@@ -1,8 +1,6 @@
 *** Setting ***
-Resource        ../_keywords.resource
-Test Setup      Run Keywords
-...             Go To    ${tests}input--limited
-...             AND    Wait Until Element Is Enabled    ${input}
+Resource        _input.resource
+Test Setup      open input sample   ${tests}    limited
 Documentation
 ...    opened firefox webdriver error https://github.com/mozilla/geckodriver/issues/1742
 ...    - as work around was used locator of label that redirects to input
@@ -86,11 +84,3 @@ show adornment and clean button when mouse hover unfocused filled input
     Mouse Over                       ${input}
     Wait Until Element Is Visible    ${clean_button}
     Wait Until Element Is Visible    ${adornment_accepted}
-
-
-*** Variables ***
-${adornment_accepted}    css:div[name*='Success']
-${adornment_failed}      css:div[name*='Fail']
-${clean_button}          css:div[name*='Close']
-${input}                 css:#limited-input-input
-${label}                 css:#limited-input-label

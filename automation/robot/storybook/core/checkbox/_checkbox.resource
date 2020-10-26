@@ -3,12 +3,12 @@ Resource    ../_keywords.resource
 
 
 *** Variables ***
-${checkboxs}     css:.HvCheckBox-root
+${checkboxs}    css:.HvCheckBox-root
 ${checkbox}     css:.HvCheckBox-root:nth-child
 
 
 *** Keywords ***
 open checkbox sample
-    [Arguments]     ${sample}
+    [Arguments]    ${sample}
     go to                            ${forms}checkbox--${sample}
     Wait Until Element Is Enabled    ${checkboxs}

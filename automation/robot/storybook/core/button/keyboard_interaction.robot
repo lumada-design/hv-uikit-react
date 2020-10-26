@@ -9,19 +9,19 @@ Force Tags     keyboard
 *** Test Cases ***
 tab: move focus to next button when TAB is pressed
     Set Focus To Element         default
-    Press Keys                   None         TAB
+    Press Keys                   None    TAB
     Element Should Be Focused    secondary
-    Press Keys                   None         SHIFT+TAB
+    Press Keys                   None    SHIFT+TAB
     Element Should Be Focused    default
 
 space: activates the button when it is focused and is pressed SPACE
     Set Focus To Element         secondary
-    Press Keys                   None         SPACE
+    Press Keys                   None    SPACE
     Alert Should Be Present
     Element Should Be Focused    secondary
 
 enter: activates the button when it is focused and is pressed ENTER
     Set Focus To Element         secondary
-    Press Keys                   None         ENTER
+    Press Keys                   None    ENTER
     Alert Should Be Present
     Element Should Be Focused    secondary

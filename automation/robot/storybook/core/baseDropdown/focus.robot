@@ -1,8 +1,6 @@
 *** Setting ***
 Resource         _resources.resource
-Test Setup       Run Keywords
-...              Go To    ${components}base-dropdown--with-content
-...              AND    Wait Until Element Is Enabled    ${dropdown}
+Test Setup       open basedropdown sample    with-content
 Documentation    please look complementary Test Cases on dropdown_keyboard_navigation.robot
 
 

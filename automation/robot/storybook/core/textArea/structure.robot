@@ -4,28 +4,35 @@ Resource    ../_keywords.resource
 
 *** Test Cases ***
 change input content with another component
-    Go To                            ${tests}text-area--controlled-validation
-    Wait Until Element Is Enabled    css:textarea
-    Element Text Should Be           css:textarea      Initial State
-    Page Should Not Contain          This text area is invalid
-    Click Button                     invalid
-    Wait Until Page Contains         This text area is invalid
+    [Setup]    open textarea sample    ${tests}    controlled-validation
+    Element Text Should Be      ${textarea}    Initial State
+    Page Should Not Contain     This text area is invalid
+    Click Button                invalid
+    Wait Until Page Contains    This text area is invalid
 
 change input limit with another component
-    Go To                            ${tests}text-area--controlled-limited
-    Wait Until Element Is Enabled    css:input
-    Click Element                    css:input
-    Wait Until Element Is Visible    ${button clean input}
-    Click Button                     ${button clean input}
-    Input Text                       css:input    11
+    [Setup]    open textarea sample    ${tests}    controlled-limited
+    Click Element                    ${input}
+    Wait Until Element Is Visible    ${cleanText}
+    Click Button                     ${cleanText}
+    Input Text                       ${input}    11
     Click Button                     Second value
-    Wait Until Element Contains      css:textarea    Second valu
+    Wait Until Element Contains      ${textarea}    Second valu
 
 unable to insert text
-    Go To                               ${forms}text-area--disabled
-    Wait Until Page Contains Element    css:textarea
-    Element Should Be Disabled          css:textarea
+    [Setup]    go to    ${forms}text-area--disabled
+    Wait Until Page Contains Element    ${textarea}
+    Element Should Be Disabled          ${textarea}
+
+
+*** Keywords ***
+open textarea sample
+    [Arguments]    ${dir}    ${sample}
+    go to                            ${dir}text-area--${sample}
+    Wait Until Element Is Enabled    ${textarea}
 
 
 *** Variables ***
-${button clean input}   css:button[aria-label='Clear the text']
+${cleanText}    css:button[aria-label='Clear the text']
+${textarea}     css:textarea
+${input}        css:input

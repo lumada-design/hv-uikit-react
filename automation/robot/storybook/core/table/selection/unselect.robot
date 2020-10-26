@@ -1,8 +1,7 @@
 *** Setting ***
-Resource      ../table.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--with-checkbox
-...           AND    Wait Until Element Is Visible    ${table}
+Resource      ../_table.resource
+Test Setup    open table sample    ${visualizations}    with-checkbox
+
 
 *** Test Cases ***
 indeterminate state on parent checkbox when she is unselected and is clicked

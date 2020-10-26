@@ -1,11 +1,7 @@
 *** Setting ***
-Resource      table.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--with-expander-and-custom-content
-...           AND    Wait Until Element Is Visible    ${table}
+Resource      _table.resource
+Test Setup    open table sample    ${visualizations}    with-expander-and-custom-content
 
-*** Variables ***
-${header_company}    xpath://th[text()='Company']
 
 *** Test Cases ***
 expand line when expander button is clicked
@@ -22,7 +18,7 @@ shrink expanded line when expander button is clicked
 shrink expanded line when any column is sorted
     Click Element                       ${button_expand}
     Wait Until Page Contains            Company
-    Click Element                       ${header_2}
+    Click Element                       ${header}(2)
     Wait Until Page Does Not Contain    Company
 
 shrink expanded line when it is changed the navigation page
@@ -43,3 +39,7 @@ do not shrink data when any part of expanded area is clicked
     Wait Until Page Contains    Company
     Click Element               ${header_company}
     Page Should Contain         Company
+
+
+*** Variables ***
+${header_company}    xpath://th[text()='Company']

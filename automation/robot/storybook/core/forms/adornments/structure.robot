@@ -1,8 +1,6 @@
 *** Setting ***
-Resource      _resource.resource
-Test Setup    Run Keywords
-...           Go To    ${forms}form-element--main
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource      _adornments.resource
+Test Setup    open adornment sample    ${forms}    main
 
 
 *** Test Cases ***

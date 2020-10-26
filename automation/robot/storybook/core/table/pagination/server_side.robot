@@ -1,8 +1,6 @@
 *** Setting ***
 Resource         _pagination.resource
-Test Setup       Run Keywords
-...              Go To    ${visualizations}table--server-side-pagination
-...              AND    Wait Until Element Is Enabled    ${pagination_input}
+Test Setup       open table sample    ${visualizations}    server-side-pagination
 Test Template    Run Keyword
 Force Tags       bug-ie-webdriver
 Documentation    in all Test Cases was assumed the buttons are enabled

@@ -1,8 +1,7 @@
 *** Setting ***
 Resource      _keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--main
-...           AND    Wait Until Element Is Visible    ${table}
+Test Setup    open table sample    ${visualizations}    main
+
 
 *** Test Cases ***
 sort column by ascending when column is not sorted and her header is clicked

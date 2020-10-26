@@ -1,8 +1,6 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${tests}input--controlled-state
-...           AND    Wait Until Element Is Visible    ${input}
+Resource      _input.resource
+Test Setup    open input sample    ${tests}    controlled-state
 
 
 *** Test Cases ***

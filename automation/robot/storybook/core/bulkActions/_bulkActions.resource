@@ -2,20 +2,20 @@
 Resource    ../_keywords.resource
 
 
+*** Keywords ***
+open bulk action sample
+    [Arguments]    ${sample}
+    Go To    ${widgets}bulk-actions--${sample}
+    Wait Until Page Contains Element    ${parentCheckbox}
+
+
 *** Variables ***
-${actionAdd}            id:add
-${actionDelete}         id:delete
-${actionMore}           bulkActions-actions-menu-icon-button
-${actionsDroppedList}   bulkActions-actions-menu-list
-${actionsDropped}       css:ul[id*=bulkActions-actions-menu-list]>li
+${actionAdd}            css:#add
+${actionDelete}         css:#delete
+${actionMore}           css:#bulkActions-actions-menu-icon-button
 ${actionsButtons}       css:div[class*=actionContainer] button
-${checkbox0}            id:0-input
-${checkbox1}            id:1-input
-${checkbox2}            id:2-input
-${checkbox3}            id:3-input
-${checkbox4}            id:4-input
-${checkbox5}            id:5-input
-${checkbox6}            id:6-input
-${checkbox7}            id:7-input
+${actionsDropped}       css:ul[id*=bulkActions-actions-menu-list]>li
+${actionsDroppedList}   css:#bulkActions-actions-menu-list
+${checkbox}             xpath:(//input[@type="checkbox"])
 ${checkboxs}            css:#bulkActions ~ div input
-${parentCheckbox}       id:bulkActions-select-input
+${parentCheckbox}       css:#bulkActions-select-input

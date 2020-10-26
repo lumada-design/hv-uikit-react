@@ -1,9 +1,7 @@
 *** Setting ***
-Resource          _keywords.resource
-Test Setup        Run Keywords
-...               Go To     ${layout}asset-inventory--configurations
-...               AND       Wait Until Element Is Enabled    hv-assetinventory
-Test Template     validate search
+Resource         _assetInventory.resource
+Test Setup       open assetInventory sample    configurations
+Test Template    validate search
 
 
 *** Test Cases ***        filter    assertion          numItems
@@ -14,7 +12,7 @@ search for Probability    97        Track severe 8     1
 list view filter rows when search for Event Title
     [Documentation]    traceability: issue 1522
     [Template]    NONE
-    Click Element      ${listViewButton}
+    Click Element      ${buttonListView}
     Select Dropdown Value               ${pageSize}     10
     scroll to element                   ${searchBox}
     Press Keys                          ${searchBox}    track 7
@@ -42,7 +40,7 @@ remove search when user click button clear the text
     scroll to element                   ${searchBox}
     Press Keys                          ${searchBox}    97
     Wait Until Page Contains Element    ${cards}        limit=1
-    Click Button                        ${clearText}
+    Click Button                        ${buttonClearText}
     Wait Until Page Contains Element    ${cards}        limit=10
 
 
