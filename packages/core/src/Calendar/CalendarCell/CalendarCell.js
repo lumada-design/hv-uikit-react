@@ -85,7 +85,7 @@ const HvCalendarCell = ({
       title={<HvTypography noWrap>{getFormattedDate(value, locale)}</HvTypography>}
     >
       <div
-        className={clsx({
+        className={clsx(classes.dateWrapper, {
           [classes.cellsInRange]: inMonth && rangeMode && isSelecting,
           [classes.cellsOutsideRange]: rangeMode && !isSelecting,
         })}

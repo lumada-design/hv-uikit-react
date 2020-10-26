@@ -8,7 +8,7 @@ const styles = (theme) => ({
     marginBottom: `5px`,
   },
   ul: {
-    paddingInlineStart: 0,
+    padding: 0,
     margin: 0,
     "& > :not(:last-child)": {
       paddingBottom: "8px",

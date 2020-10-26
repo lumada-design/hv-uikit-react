@@ -1913,7 +1913,7 @@ export const TableWithChangingData = () => {
       headerText: "ID",
       accessor: "id",
       cellType: "alpha-numeric",
-      width: 40,
+      width: 50,
     },
     {
       headerText: "Name",

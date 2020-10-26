@@ -12,7 +12,7 @@ const styles = (theme) => ({
   },
   closeButton: {
     padding: 0,
-    minWidth: "unset",
+    minWidth: "inherit",
     position: "absolute",
     top: theme.hvSpacing("sm"),
     right: theme.hvSpacing("sm"),
