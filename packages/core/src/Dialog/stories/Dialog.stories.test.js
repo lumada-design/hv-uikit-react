@@ -25,21 +25,21 @@ export default {
 // __________________________________
 // Extended applitools test scenarios
 
-// test scenario, modal open
+// test scenario, dialog open
 export const DialogOpened = () => Main();
 
 DialogOpened.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open modal"));
+        fireEvent.click(screen.getByText("Open dialog"));
         return wait(() => screen.getByRole("heading", { name: /switch model view\?/i }));
       },
     },
   },
 };
 
-// test scenario, modal with table open
+// test scenario, dialog with table open
 export const TableOpened = () => CustomContent();
 
 TableOpened.story = {
@@ -53,7 +53,7 @@ TableOpened.story = {
   },
 };
 
-// test scenario, modal with inputs opened
+// test scenario, dialog with inputs opened
 export const inputsOpened = () => CustomContent();
 
 inputsOpened.story = {
@@ -74,56 +74,56 @@ sNoRename.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open modal"));
+        fireEvent.click(screen.getByText("Open dialog"));
         return wait(() => screen.getByRole("dialog"));
       },
     },
   },
 };
 
-// open modal DeleteConfirmation
+// open dialog DeleteConfirmation
 export const sDeleteConfirmation = () => DeleteConfirmation();
 
 sDeleteConfirmation.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open modal"));
+        fireEvent.click(screen.getByText("Open dialog"));
         return wait(() => screen.getByRole("dialog"));
       },
     },
   },
 };
 
-// open modal DeleteConfirmation
+// open dialog DeleteConfirmation
 export const sRemoveSchedule = () => RemoveSchedule();
 
 sRemoveSchedule.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open modal"));
+        fireEvent.click(screen.getByText("Open dialog"));
         return wait(() => screen.getByRole("dialog"));
       },
     },
   },
 };
 
-// open modal DeleteConfirmation
+// open dialog DeleteConfirmation
 export const sAccessibility = () => Accessibility();
 
 sAccessibility.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open modal"));
+        fireEvent.click(screen.getByText("Open dialog"));
         return wait(() => screen.getByRole("dialog"));
       },
     },
   },
 };
 
-// open modal CustomIcon
+// open dialog CustomIcon
 export const sCustomIcon = () => CustomIcon();
 
 sCustomIcon.story = {
@@ -137,7 +137,7 @@ sCustomIcon.story = {
   },
 };
 
-// open modal TextAndSemantic no icon
+// open dialog TextAndSemantic no icon
 export const sTextAndSemanticNoIcon = () => TextAndSemantic();
 
 sTextAndSemanticNoIcon.story = {
@@ -151,7 +151,7 @@ sTextAndSemanticNoIcon.story = {
   },
 };
 
-// open modal TextAndSemantic Warning
+// open dialog TextAndSemantic Warning
 export const sTextAndSemanticWarning = () => TextAndSemantic();
 
 sTextAndSemanticWarning.story = {
@@ -165,7 +165,7 @@ sTextAndSemanticWarning.story = {
   },
 };
 
-// open modal TextAndSemantic info
+// open dialog TextAndSemantic info
 export const sTextAndSemanticInfo = () => TextAndSemantic();
 
 sTextAndSemanticInfo.story = {
@@ -179,7 +179,7 @@ sTextAndSemanticInfo.story = {
   },
 };
 
-// open modal TextAndSemantic Error
+// open dialog TextAndSemantic Error
 export const sTextAndSemanticError = () => TextAndSemantic();
 
 sTextAndSemanticError.story = {

@@ -1,5 +1,5 @@
 *** Setting ***
-Resource      _modal.resource
+Resource      _dialog.resource
 Test Setup    open modal sample    ${components}    text-and-semantic
 
 
