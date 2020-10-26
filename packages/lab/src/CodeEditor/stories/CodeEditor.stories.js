@@ -9,7 +9,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvCodeEditor } from '@hv/uikit-react-lab/dist'",
     maturityStatus: "immature",
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvCodeEditor,
   decorators: [(storyFn) => <div style={{ height: "270px" }}>{storyFn()}</div>],

@@ -10,7 +10,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvAdornment } from '@hv/uikit-react-core/dist'",
     v3: true,
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvAdornment,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

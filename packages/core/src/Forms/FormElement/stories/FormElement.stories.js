@@ -17,7 +17,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvFormElement } from '@hv/uikit-react-core/dist'",
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvFormElement,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

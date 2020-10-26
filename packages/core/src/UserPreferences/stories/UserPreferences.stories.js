@@ -22,7 +22,7 @@ export default {
     usage: "import { HvUserPreferences } from '@hv/uikit-react-core/dist'",
     subcomponents: { Action, Actions, Group, Options, Option, Label },
 
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvUserPreferences,
 };

@@ -9,7 +9,7 @@ export default {
     usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",
     v3: true,
     maturityStatus: "stable",
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvMultiButton,
   decorators: [

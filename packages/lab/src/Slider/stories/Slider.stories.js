@@ -11,7 +11,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvSlider } from '@hv/uikit-react-lab/dist'",
     maturityStatus: "immature",
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvSlider,
   decorators: [(storyFn) => <div style={{ height: "45px" }}>{storyFn()}</div>],
