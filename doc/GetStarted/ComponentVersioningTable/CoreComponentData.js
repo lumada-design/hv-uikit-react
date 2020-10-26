@@ -256,8 +256,8 @@ const CoreComponentData = [
 
   {
     id: 31,
-    component: "Modal",
-    path: "https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Modal",
+    component: "Dialog",
+    path: "https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Dialog",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: "notStable",
