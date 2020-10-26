@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FileUploader withStyles should render correctly 1`] = `
-<WithStyles(WithLabels)
+<WithStyles(FileUploader)
   acceptedFiles={
     Array [
       "jpeg",
@@ -27,7 +27,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
   onFileRemoved={[MockFunction]}
   onFilesAdded={[MockFunction]}
 >
-  <WithLabels
+  <FileUploader
     acceptedFiles={
       Array [
         "jpeg",
@@ -54,53 +54,51 @@ exports[`FileUploader withStyles should render correctly 1`] = `
     onFileRemoved={[MockFunction]}
     onFilesAdded={[MockFunction]}
   >
-    <FileUploader
-      acceptedFiles={
-        Array [
-          "jpeg",
-        ]
-      }
+    <div
       classes={Object {}}
-      fileList={
-        Array [
-          Object {
-            "id": "1",
-            "name": "Screenshot 2019-12-05 at 17.15.43.png",
-            "size": 14100000,
-            "type": "image/png",
-          },
-          Object {
-            "id": "2",
-            "name": "Screenshot 2019-12-05 at 12.03.13.png",
-            "size": 875000,
-            "type": "image/png",
-          },
-        ]
-      }
-      labels={
-        Object {
-          "drag": "Drag and drop or",
-          "dropFiles": "Drop files here",
-          "dropzone": "Label",
-          "fileSizeError": "The file exceeds the maximum upload size",
-          "fileTypeError": "File type not allowed for upload",
-          "removeFileButtonLabel": "Remove File",
-          "selectFiles": "Select files",
-          "sizeWarning": "Max. file size:",
-        }
-      }
-      maxFileSize={12}
-      onFileRemoved={[MockFunction]}
-      onFilesAdded={[MockFunction]}
     >
-      <div
-        classes={Object {}}
+      <WithStyles(WithId)
+        acceptedFiles={
+          Array [
+            "jpeg",
+          ]
+        }
+        disabled={false}
+        labels={
+          Object {
+            "drag": "Drag and drop or",
+            "dropFiles": "Drop files here",
+            "dropzone": "Label",
+            "fileSizeError": "The file exceeds the maximum upload size",
+            "fileTypeError": "File type not allowed for upload",
+            "removeFileButtonLabel": "Remove File",
+            "selectFiles": "Select files",
+            "sizeWarning": "Max. file size:",
+          }
+        }
+        maxFileSize={12}
+        multiple={true}
+        onFilesAdded={[MockFunction]}
       >
-        <WithStyles(WithId)
+        <WithId
           acceptedFiles={
             Array [
               "jpeg",
             ]
+          }
+          classes={
+            Object {
+              "dragAction": "HvFileUploaderDropZone-dragAction",
+              "dragText": "HvFileUploaderDropZone-dragText",
+              "dropArea": "HvFileUploaderDropZone-dropArea",
+              "dropZoneAreaIcon": "HvFileUploaderDropZone-dropZoneAreaIcon",
+              "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels",
+              "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer",
+              "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled",
+              "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup",
+              "inputArea": "HvFileUploaderDropZone-inputArea",
+              "selectFilesText": "HvFileUploaderDropZone-selectFilesText",
+            }
           }
           disabled={false}
           labels={
@@ -119,7 +117,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           multiple={true}
           onFilesAdded={[MockFunction]}
         >
-          <WithId
+          <DropZone
             acceptedFiles={
               Array [
                 "jpeg",
@@ -140,6 +138,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               }
             }
             disabled={false}
+            id="drop-zone-3"
             labels={
               Object {
                 "drag": "Drag and drop or",
@@ -156,279 +155,266 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             multiple={true}
             onFilesAdded={[MockFunction]}
           >
-            <DropZone
-              acceptedFiles={
-                Array [
-                  "jpeg",
-                ]
-              }
-              classes={
-                Object {
-                  "dragAction": "HvFileUploaderDropZone-dragAction",
-                  "dragText": "HvFileUploaderDropZone-dragText",
-                  "dropArea": "HvFileUploaderDropZone-dropArea",
-                  "dropZoneAreaIcon": "HvFileUploaderDropZone-dropZoneAreaIcon",
-                  "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels",
-                  "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer",
-                  "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled",
-                  "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup",
-                  "inputArea": "HvFileUploaderDropZone-inputArea",
-                  "selectFilesText": "HvFileUploaderDropZone-selectFilesText",
-                }
-              }
-              disabled={false}
-              id="drop-zone-2"
-              labels={
-                Object {
-                  "drag": "Drag and drop or",
-                  "dropFiles": "Drop files here",
-                  "dropzone": "Label",
-                  "fileSizeError": "The file exceeds the maximum upload size",
-                  "fileTypeError": "File type not allowed for upload",
-                  "removeFileButtonLabel": "Remove File",
-                  "selectFiles": "Select files",
-                  "sizeWarning": "Max. file size:",
-                }
-              }
-              maxFileSize={12}
-              multiple={true}
-              onFilesAdded={[MockFunction]}
+            <div
+              aria-label="File Dropzone"
+              className="HvFileUploaderDropZone-dropZoneLabelsGroup"
+              id="drop-zone-3"
             >
-              <div
-                aria-label="File Dropzone"
-                className="HvFileUploaderDropZone-dropZoneLabelsGroup"
-                id="drop-zone-2"
+              <WithStyles(ForwardRef)
+                component="label"
+                htmlFor="drop-zone-3-input-file"
+                id="drop-zone-3-input-file-label"
+                variant="highlightText"
               >
-                <WithStyles(ForwardRef)
+                <ForwardRef
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "disabledText": "HvTypography-disabledText",
+                      "highlightText": "HvTypography-highlightText",
+                      "lTitle": "HvTypography-lTitle",
+                      "link": "HvTypography-link",
+                      "mTitle": "HvTypography-mTitle",
+                      "noWrap": "HvTypography-noWrap",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
+                      "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "vizText": "HvTypography-vizText",
+                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsInlineLink": "HvTypography-xsInlineLink",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
+                    }
+                  }
                   component="label"
-                  htmlFor="drop-zone-2-input-file"
-                  id="drop-zone-2-input-file-label"
+                  htmlFor="drop-zone-3-input-file"
+                  id="drop-zone-3-input-file-label"
                   variant="highlightText"
                 >
-                  <ForwardRef
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledText": "HvTypography-disabledText",
-                        "highlightText": "HvTypography-highlightText",
-                        "lTitle": "HvTypography-lTitle",
-                        "link": "HvTypography-link",
-                        "mTitle": "HvTypography-mTitle",
-                        "noWrap": "HvTypography-noWrap",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "root": "HvTypography-root",
-                        "sTitle": "HvTypography-sTitle",
-                        "sectionTitle": "HvTypography-sectionTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "vizText": "HvTypography-vizText",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsInlineLink": "HvTypography-xsInlineLink",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
-                    }
-                    component="label"
-                    htmlFor="drop-zone-2-input-file"
-                    id="drop-zone-2-input-file-label"
-                    variant="highlightText"
+                  <label
+                    className="HvTypography-root HvTypography-highlightText"
+                    htmlFor="drop-zone-3-input-file"
+                    id="drop-zone-3-input-file-label"
                   >
-                    <label
-                      className="HvTypography-root HvTypography-highlightText"
-                      htmlFor="drop-zone-2-input-file"
-                      id="drop-zone-2-input-file-label"
-                    >
-                      Label
-                    </label>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)>
-                  <ForwardRef
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledText": "HvTypography-disabledText",
-                        "highlightText": "HvTypography-highlightText",
-                        "lTitle": "HvTypography-lTitle",
-                        "link": "HvTypography-link",
-                        "mTitle": "HvTypography-mTitle",
-                        "noWrap": "HvTypography-noWrap",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "root": "HvTypography-root",
-                        "sTitle": "HvTypography-sTitle",
-                        "sectionTitle": "HvTypography-sectionTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "vizText": "HvTypography-vizText",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsInlineLink": "HvTypography-xsInlineLink",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
+                    Label
+                  </label>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <WithStyles(ForwardRef)>
+                <ForwardRef
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "disabledText": "HvTypography-disabledText",
+                      "highlightText": "HvTypography-highlightText",
+                      "lTitle": "HvTypography-lTitle",
+                      "link": "HvTypography-link",
+                      "mTitle": "HvTypography-mTitle",
+                      "noWrap": "HvTypography-noWrap",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
+                      "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "vizText": "HvTypography-vizText",
+                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsInlineLink": "HvTypography-xsInlineLink",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
                     }
-                  >
-                    <p
-                      className="HvTypography-root HvTypography-normalText"
-                    >
-                      Max. file size: 12.00B
-                    </p>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)>
-                  <ForwardRef
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledText": "HvTypography-disabledText",
-                        "highlightText": "HvTypography-highlightText",
-                        "lTitle": "HvTypography-lTitle",
-                        "link": "HvTypography-link",
-                        "mTitle": "HvTypography-mTitle",
-                        "noWrap": "HvTypography-noWrap",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "root": "HvTypography-root",
-                        "sTitle": "HvTypography-sTitle",
-                        "sectionTitle": "HvTypography-sectionTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "vizText": "HvTypography-vizText",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsInlineLink": "HvTypography-xsInlineLink",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
-                    }
-                  >
-                    <p
-                      className="HvTypography-root HvTypography-normalText"
-                    >
-                       (jpeg)
-                    </p>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-              </div>
-              <div
-                className="HvFileUploaderDropZone-dropZoneContainer"
-                id="drop-zone-2-button"
-                onDragEnter={[Function]}
-                onDragLeave={[Function]}
-                onDragOver={[Function]}
-                onDrop={[Function]}
-                onDropCapture={[Function]}
-                onKeyDown={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                <input
-                  className="HvFileUploaderDropZone-inputArea"
-                  disabled={false}
-                  id="drop-zone-2-input-file"
-                  multiple={true}
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  title="Drag and drop or Select files"
-                  type="file"
-                />
-                <div
-                  className="HvFileUploaderDropZone-dropArea"
+                  }
                 >
-                  <Doc
-                    className="HvFileUploaderDropZone-dropZoneAreaIcon"
-                    color="acce1"
-                    iconSize="M"
+                  <p
+                    className="HvTypography-root HvTypography-normalText"
                   >
-                    <HvIconBase
-                      className="HvFileUploaderDropZone-dropZoneAreaIcon"
-                      iconSize="M"
+                    Max. file size: 12.00B
+                  </p>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <WithStyles(ForwardRef)>
+                <ForwardRef
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "disabledText": "HvTypography-disabledText",
+                      "highlightText": "HvTypography-highlightText",
+                      "lTitle": "HvTypography-lTitle",
+                      "link": "HvTypography-link",
+                      "mTitle": "HvTypography-mTitle",
+                      "noWrap": "HvTypography-noWrap",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
+                      "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "vizText": "HvTypography-vizText",
+                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsInlineLink": "HvTypography-xsInlineLink",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
+                    }
+                  }
+                >
+                  <p
+                    className="HvTypography-root HvTypography-normalText"
+                  >
+                     (jpeg)
+                  </p>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+            </div>
+            <div
+              className="HvFileUploaderDropZone-dropZoneContainer"
+              id="drop-zone-3-button"
+              onDragEnter={[Function]}
+              onDragLeave={[Function]}
+              onDragOver={[Function]}
+              onDrop={[Function]}
+              onDropCapture={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <input
+                className="HvFileUploaderDropZone-inputArea"
+                disabled={false}
+                id="drop-zone-3-input-file"
+                multiple={true}
+                onChange={[Function]}
+                onClick={[Function]}
+                tabIndex={-1}
+                title="Drag and drop or Select files"
+                type="file"
+              />
+              <div
+                className="HvFileUploaderDropZone-dropArea"
+              >
+                <Doc
+                  className="HvFileUploaderDropZone-dropZoneAreaIcon"
+                  color="acce1"
+                  iconSize="M"
+                >
+                  <HvIconBase
+                    className="HvFileUploaderDropZone-dropZoneAreaIcon"
+                    iconSize="M"
+                    name="Doc"
+                  >
+                    <div
+                      className="HvFileUploaderDropZone-dropZoneAreaIcon HvIconBase-root HvIconBase-m"
                       name="Doc"
                     >
-                      <div
-                        className="HvFileUploaderDropZone-dropZoneAreaIcon HvIconBase-root HvIconBase-m"
-                        name="Doc"
+                      <svg
+                        focusable={false}
+                        height={32}
+                        viewBox="0 0 16 16"
+                        width={32}
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          focusable={false}
-                          height={32}
-                          viewBox="0 0 16 16"
-                          width={32}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            className="color0"
-                            d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                    </HvIconBase>
-                  </Doc>
-                  <div
-                    className="HvFileUploaderDropZone-dropZoneAreaLabels"
+                        <path
+                          className="color0"
+                          d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </Doc>
+                <div
+                  className="HvFileUploaderDropZone-dropZoneAreaLabels"
+                >
+                  <WithStyles(ForwardRef)
+                    className="HvFileUploaderDropZone-dragText"
                   >
-                    <WithStyles(ForwardRef)
+                    <ForwardRef
                       className="HvFileUploaderDropZone-dragText"
-                    >
-                      <ForwardRef
-                        className="HvFileUploaderDropZone-dragText"
-                        classes={
-                          Object {
-                            "3xlTitle": "HvTypography-3xlTitle",
-                            "4xlTitle": "HvTypography-4xlTitle",
-                            "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledText": "HvTypography-disabledText",
-                            "highlightText": "HvTypography-highlightText",
-                            "lTitle": "HvTypography-lTitle",
-                            "link": "HvTypography-link",
-                            "mTitle": "HvTypography-mTitle",
-                            "noWrap": "HvTypography-noWrap",
-                            "normalText": "HvTypography-normalText",
-                            "placeholderText": "HvTypography-placeholderText",
-                            "root": "HvTypography-root",
-                            "sTitle": "HvTypography-sTitle",
-                            "sectionTitle": "HvTypography-sectionTitle",
-                            "selectedNavText": "HvTypography-selectedNavText",
-                            "vizText": "HvTypography-vizText",
-                            "vizTextDisabled": "HvTypography-vizTextDisabled",
-                            "xlTitle": "HvTypography-xlTitle",
-                            "xsInlineLink": "HvTypography-xsInlineLink",
-                            "xsTitle": "HvTypography-xsTitle",
-                            "xxlTitle": "HvTypography-xxlTitle",
-                            "xxsTitle": "HvTypography-xxsTitle",
-                          }
+                      classes={
+                        Object {
+                          "3xlTitle": "HvTypography-3xlTitle",
+                          "4xlTitle": "HvTypography-4xlTitle",
+                          "5xlTitle": "HvTypography-5xlTitle",
+                          "disabledText": "HvTypography-disabledText",
+                          "highlightText": "HvTypography-highlightText",
+                          "lTitle": "HvTypography-lTitle",
+                          "link": "HvTypography-link",
+                          "mTitle": "HvTypography-mTitle",
+                          "noWrap": "HvTypography-noWrap",
+                          "normalText": "HvTypography-normalText",
+                          "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
+                          "sTitle": "HvTypography-sTitle",
+                          "sectionTitle": "HvTypography-sectionTitle",
+                          "selectedNavText": "HvTypography-selectedNavText",
+                          "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
+                          "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
+                          "xsTitle": "HvTypography-xsTitle",
+                          "xxlTitle": "HvTypography-xxlTitle",
+                          "xxsTitle": "HvTypography-xxsTitle",
                         }
+                      }
+                    >
+                      <p
+                        className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
                       >
-                        <p
-                          className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
+                        Drag and drop or
+                        <span
+                          className="HvFileUploaderDropZone-selectFilesText"
                         >
-                          Drag and drop or
-                          <span
-                            className="HvFileUploaderDropZone-selectFilesText"
-                          >
-                             Select files
-                          </span>
-                        </p>
-                      </ForwardRef>
-                    </WithStyles(ForwardRef)>
-                  </div>
+                           Select files
+                        </span>
+                      </p>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
                 </div>
               </div>
-            </DropZone>
-          </WithId>
-        </WithStyles(WithId)>
-        <WithStyles(FileList)
+            </div>
+          </DropZone>
+        </WithId>
+      </WithStyles(WithId)>
+      <WithStyles(FileList)
+        list={
+          Array [
+            Object {
+              "id": "1",
+              "name": "Screenshot 2019-12-05 at 17.15.43.png",
+              "size": 14100000,
+              "type": "image/png",
+            },
+            Object {
+              "id": "2",
+              "name": "Screenshot 2019-12-05 at 12.03.13.png",
+              "size": 875000,
+              "type": "image/png",
+            },
+          ]
+        }
+        onFileRemoved={[MockFunction]}
+        removeFileButtonLabel="Remove File"
+      >
+        <FileList
+          classes={
+            Object {
+              "list": "HvFileUploaderFileList-list",
+            }
+          }
           list={
             Array [
               Object {
@@ -448,35 +434,34 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           onFileRemoved={[MockFunction]}
           removeFileButtonLabel="Remove File"
         >
-          <FileList
-            classes={
-              Object {
-                "list": "HvFileUploaderFileList-list",
-              }
-            }
-            list={
-              Array [
+          <ul
+            className="HvFileUploaderFileList-list"
+          >
+            <WithStyles(File)
+              data={
                 Object {
                   "id": "1",
                   "name": "Screenshot 2019-12-05 at 17.15.43.png",
                   "size": 14100000,
                   "type": "image/png",
-                },
-                Object {
-                  "id": "2",
-                  "name": "Screenshot 2019-12-05 at 12.03.13.png",
-                  "size": 875000,
-                  "type": "image/png",
-                },
-              ]
-            }
-            onFileRemoved={[MockFunction]}
-            removeFileButtonLabel="Remove File"
-          >
-            <ul
-              className="HvFileUploaderFileList-list"
+                }
+              }
+              key="1"
+              onFileRemoved={[MockFunction]}
+              removeFileButtonLabel="Remove File"
             >
-              <WithStyles(File)
+              <File
+                classes={
+                  Object {
+                    "fail": "HvFileUploaderFile-fail",
+                    "icon": "HvFileUploaderFile-icon",
+                    "nameText": "HvFileUploaderFile-nameText",
+                    "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
+                    "progressbar": "HvFileUploaderFile-progressbar",
+                    "progressbarBack": "HvFileUploaderFile-progressbarBack",
+                    "removeButton": "HvFileUploaderFile-removeButton",
+                  }
+                }
                 data={
                   Object {
                     "id": "1",
@@ -485,44 +470,62 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     "type": "image/png",
                   }
                 }
-                key="1"
                 onFileRemoved={[MockFunction]}
                 removeFileButtonLabel="Remove File"
               >
-                <File
-                  classes={
-                    Object {
-                      "fail": "HvFileUploaderFile-fail",
-                      "icon": "HvFileUploaderFile-icon",
-                      "nameText": "HvFileUploaderFile-nameText",
-                      "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-                      "progressbar": "HvFileUploaderFile-progressbar",
-                      "progressbarBack": "HvFileUploaderFile-progressbarBack",
-                      "removeButton": "HvFileUploaderFile-removeButton",
-                    }
-                  }
-                  data={
-                    Object {
-                      "id": "1",
-                      "name": "Screenshot 2019-12-05 at 17.15.43.png",
-                      "size": 14100000,
-                      "type": "image/png",
-                    }
-                  }
-                  onFileRemoved={[MockFunction]}
-                  removeFileButtonLabel="Remove File"
-                >
-                  <li>
-                    <div
-                      className="HvFileUploaderFile-icon"
-                    />
-                    <WithStyles(ForwardRef)
+                <li>
+                  <div
+                    className="HvFileUploaderFile-icon"
+                  />
+                  <WithStyles(ForwardRef)
+                    className="HvFileUploaderFile-nameText"
+                    noWrap={true}
+                    variant="highlightText"
+                  >
+                    <ForwardRef
                       className="HvFileUploaderFile-nameText"
+                      classes={
+                        Object {
+                          "3xlTitle": "HvTypography-3xlTitle",
+                          "4xlTitle": "HvTypography-4xlTitle",
+                          "5xlTitle": "HvTypography-5xlTitle",
+                          "disabledText": "HvTypography-disabledText",
+                          "highlightText": "HvTypography-highlightText",
+                          "lTitle": "HvTypography-lTitle",
+                          "link": "HvTypography-link",
+                          "mTitle": "HvTypography-mTitle",
+                          "noWrap": "HvTypography-noWrap",
+                          "normalText": "HvTypography-normalText",
+                          "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
+                          "sTitle": "HvTypography-sTitle",
+                          "sectionTitle": "HvTypography-sectionTitle",
+                          "selectedNavText": "HvTypography-selectedNavText",
+                          "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
+                          "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
+                          "xsTitle": "HvTypography-xsTitle",
+                          "xxlTitle": "HvTypography-xxlTitle",
+                          "xxsTitle": "HvTypography-xxsTitle",
+                        }
+                      }
                       noWrap={true}
                       variant="highlightText"
                     >
+                      <p
+                        className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                      >
+                        Screenshot 2019-12-05 at 17.15.43.png
+                      </p>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
+                  <span
+                    className="HvFileUploaderFile-progressTextContainer"
+                  >
+                     | 
+                    <WithStyles(ForwardRef)>
                       <ForwardRef
-                        className="HvFileUploaderFile-nameText"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -549,168 +552,150 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
-                        noWrap={true}
-                        variant="highlightText"
                       >
                         <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvTypography-root HvTypography-normalText"
                         >
-                          Screenshot 2019-12-05 at 17.15.43.png
+                           / 14.10MB
                         </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
-                    <span
-                      className="HvFileUploaderFile-progressTextContainer"
-                    >
-                       | 
-                      <WithStyles(ForwardRef)>
-                        <ForwardRef
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "noWrap": "HvTypography-noWrap",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                        >
-                          <p
-                            className="HvTypography-root HvTypography-normalText"
-                          >
-                             / 14.10MB
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </span>
-                    <WithStyles(ForwardRef(IconButton))
+                  </span>
+                  <WithStyles(ForwardRef(IconButton))
+                    aria-label="Remove File"
+                    category="ghost"
+                    className="HvFileUploaderFile-removeButton"
+                    onClick={[Function]}
+                  >
+                    <ForwardRef(IconButton)
                       aria-label="Remove File"
                       category="ghost"
                       className="HvFileUploaderFile-removeButton"
+                      classes={
+                        Object {
+                          "colorInherit": "MuiIconButton-colorInherit",
+                          "colorPrimary": "MuiIconButton-colorPrimary",
+                          "colorSecondary": "MuiIconButton-colorSecondary",
+                          "disabled": "Mui-disabled",
+                          "edgeEnd": "MuiIconButton-edgeEnd",
+                          "edgeStart": "MuiIconButton-edgeStart",
+                          "label": "MuiIconButton-label",
+                          "root": "MuiIconButton-root",
+                          "sizeSmall": "MuiIconButton-sizeSmall",
+                        }
+                      }
                       onClick={[Function]}
                     >
-                      <ForwardRef(IconButton)
+                      <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Remove File"
                         category="ghost"
-                        className="HvFileUploaderFile-removeButton"
-                        classes={
-                          Object {
-                            "colorInherit": "MuiIconButton-colorInherit",
-                            "colorPrimary": "MuiIconButton-colorPrimary",
-                            "colorSecondary": "MuiIconButton-colorSecondary",
-                            "disabled": "Mui-disabled",
-                            "edgeEnd": "MuiIconButton-edgeEnd",
-                            "edgeStart": "MuiIconButton-edgeStart",
-                            "label": "MuiIconButton-label",
-                            "root": "MuiIconButton-root",
-                            "sizeSmall": "MuiIconButton-sizeSmall",
-                          }
-                        }
+                        centerRipple={true}
+                        className="MuiIconButton-root HvFileUploaderFile-removeButton"
+                        disabled={false}
+                        focusRipple={true}
                         onClick={[Function]}
                       >
-                        <WithStyles(ForwardRef(ButtonBase))
+                        <ForwardRef(ButtonBase)
                           aria-label="Remove File"
                           category="ghost"
                           centerRipple={true}
                           className="MuiIconButton-root HvFileUploaderFile-removeButton"
+                          classes={
+                            Object {
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "root": "MuiButtonBase-root",
+                            }
+                          }
+                          disableRipple={true}
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
                         >
-                          <ForwardRef(ButtonBase)
+                          <button
                             aria-label="Remove File"
                             category="ghost"
-                            centerRipple={true}
-                            className="MuiIconButton-root HvFileUploaderFile-removeButton"
-                            classes={
-                              Object {
-                                "disabled": "Mui-disabled",
-                                "focusVisible": "Mui-focusVisible",
-                                "root": "MuiButtonBase-root",
-                              }
-                            }
-                            disableRipple={true}
+                            className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
                             disabled={false}
-                            focusRipple={true}
+                            onBlur={[Function]}
                             onClick={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
                           >
-                            <button
-                              aria-label="Remove File"
-                              category="ghost"
-                              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
-                              disabled={false}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onDragLeave={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchMove={[Function]}
-                              onTouchStart={[Function]}
-                              tabIndex={0}
-                              type="button"
+                            <span
+                              className="MuiIconButton-label"
                             >
-                              <span
-                                className="MuiIconButton-label"
+                              <Close
+                                iconSize="XS"
                               >
-                                <Close
+                                <HvIconBase
                                   iconSize="XS"
+                                  name="Close"
                                 >
-                                  <HvIconBase
-                                    iconSize="XS"
+                                  <div
+                                    className="HvIconBase-root HvIconBase-xs"
                                     name="Close"
                                   >
-                                    <div
-                                      className="HvIconBase-root HvIconBase-xs"
-                                      name="Close"
+                                    <svg
+                                      focusable={false}
+                                      height={12}
+                                      viewBox="0 0 16 16"
+                                      width={12}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={12}
-                                        viewBox="0 0 16 16"
-                                        width={12}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </Close>
-                              </span>
-                            </button>
-                          </ForwardRef(ButtonBase)>
-                        </WithStyles(ForwardRef(ButtonBase))>
-                      </ForwardRef(IconButton)>
-                    </WithStyles(ForwardRef(IconButton))>
-                  </li>
-                </File>
-              </WithStyles(File)>
-              <WithStyles(File)
+                                      <path
+                                        className="color0"
+                                        d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
+                              </Close>
+                            </span>
+                          </button>
+                        </ForwardRef(ButtonBase)>
+                      </WithStyles(ForwardRef(ButtonBase))>
+                    </ForwardRef(IconButton)>
+                  </WithStyles(ForwardRef(IconButton))>
+                </li>
+              </File>
+            </WithStyles(File)>
+            <WithStyles(File)
+              data={
+                Object {
+                  "id": "2",
+                  "name": "Screenshot 2019-12-05 at 12.03.13.png",
+                  "size": 875000,
+                  "type": "image/png",
+                }
+              }
+              key="2"
+              onFileRemoved={[MockFunction]}
+              removeFileButtonLabel="Remove File"
+            >
+              <File
+                classes={
+                  Object {
+                    "fail": "HvFileUploaderFile-fail",
+                    "icon": "HvFileUploaderFile-icon",
+                    "nameText": "HvFileUploaderFile-nameText",
+                    "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
+                    "progressbar": "HvFileUploaderFile-progressbar",
+                    "progressbarBack": "HvFileUploaderFile-progressbarBack",
+                    "removeButton": "HvFileUploaderFile-removeButton",
+                  }
+                }
                 data={
                   Object {
                     "id": "2",
@@ -719,44 +704,62 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     "type": "image/png",
                   }
                 }
-                key="2"
                 onFileRemoved={[MockFunction]}
                 removeFileButtonLabel="Remove File"
               >
-                <File
-                  classes={
-                    Object {
-                      "fail": "HvFileUploaderFile-fail",
-                      "icon": "HvFileUploaderFile-icon",
-                      "nameText": "HvFileUploaderFile-nameText",
-                      "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-                      "progressbar": "HvFileUploaderFile-progressbar",
-                      "progressbarBack": "HvFileUploaderFile-progressbarBack",
-                      "removeButton": "HvFileUploaderFile-removeButton",
-                    }
-                  }
-                  data={
-                    Object {
-                      "id": "2",
-                      "name": "Screenshot 2019-12-05 at 12.03.13.png",
-                      "size": 875000,
-                      "type": "image/png",
-                    }
-                  }
-                  onFileRemoved={[MockFunction]}
-                  removeFileButtonLabel="Remove File"
-                >
-                  <li>
-                    <div
-                      className="HvFileUploaderFile-icon"
-                    />
-                    <WithStyles(ForwardRef)
+                <li>
+                  <div
+                    className="HvFileUploaderFile-icon"
+                  />
+                  <WithStyles(ForwardRef)
+                    className="HvFileUploaderFile-nameText"
+                    noWrap={true}
+                    variant="highlightText"
+                  >
+                    <ForwardRef
                       className="HvFileUploaderFile-nameText"
+                      classes={
+                        Object {
+                          "3xlTitle": "HvTypography-3xlTitle",
+                          "4xlTitle": "HvTypography-4xlTitle",
+                          "5xlTitle": "HvTypography-5xlTitle",
+                          "disabledText": "HvTypography-disabledText",
+                          "highlightText": "HvTypography-highlightText",
+                          "lTitle": "HvTypography-lTitle",
+                          "link": "HvTypography-link",
+                          "mTitle": "HvTypography-mTitle",
+                          "noWrap": "HvTypography-noWrap",
+                          "normalText": "HvTypography-normalText",
+                          "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
+                          "sTitle": "HvTypography-sTitle",
+                          "sectionTitle": "HvTypography-sectionTitle",
+                          "selectedNavText": "HvTypography-selectedNavText",
+                          "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
+                          "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
+                          "xsTitle": "HvTypography-xsTitle",
+                          "xxlTitle": "HvTypography-xxlTitle",
+                          "xxsTitle": "HvTypography-xxsTitle",
+                        }
+                      }
                       noWrap={true}
                       variant="highlightText"
                     >
+                      <p
+                        className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                      >
+                        Screenshot 2019-12-05 at 12.03.13.png
+                      </p>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
+                  <span
+                    className="HvFileUploaderFile-progressTextContainer"
+                  >
+                     | 
+                    <WithStyles(ForwardRef)>
                       <ForwardRef
-                        className="HvFileUploaderFile-nameText"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
@@ -783,172 +786,129 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
-                        noWrap={true}
-                        variant="highlightText"
                       >
                         <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
+                          className="HvTypography-root HvTypography-normalText"
                         >
-                          Screenshot 2019-12-05 at 12.03.13.png
+                           / 875.00kB
                         </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
-                    <span
-                      className="HvFileUploaderFile-progressTextContainer"
-                    >
-                       | 
-                      <WithStyles(ForwardRef)>
-                        <ForwardRef
-                          classes={
-                            Object {
-                              "3xlTitle": "HvTypography-3xlTitle",
-                              "4xlTitle": "HvTypography-4xlTitle",
-                              "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledText": "HvTypography-disabledText",
-                              "highlightText": "HvTypography-highlightText",
-                              "lTitle": "HvTypography-lTitle",
-                              "link": "HvTypography-link",
-                              "mTitle": "HvTypography-mTitle",
-                              "noWrap": "HvTypography-noWrap",
-                              "normalText": "HvTypography-normalText",
-                              "placeholderText": "HvTypography-placeholderText",
-                              "root": "HvTypography-root",
-                              "sTitle": "HvTypography-sTitle",
-                              "sectionTitle": "HvTypography-sectionTitle",
-                              "selectedNavText": "HvTypography-selectedNavText",
-                              "vizText": "HvTypography-vizText",
-                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                              "xlTitle": "HvTypography-xlTitle",
-                              "xsInlineLink": "HvTypography-xsInlineLink",
-                              "xsTitle": "HvTypography-xsTitle",
-                              "xxlTitle": "HvTypography-xxlTitle",
-                              "xxsTitle": "HvTypography-xxsTitle",
-                            }
-                          }
-                        >
-                          <p
-                            className="HvTypography-root HvTypography-normalText"
-                          >
-                             / 875.00kB
-                          </p>
-                        </ForwardRef>
-                      </WithStyles(ForwardRef)>
-                    </span>
-                    <WithStyles(ForwardRef(IconButton))
+                  </span>
+                  <WithStyles(ForwardRef(IconButton))
+                    aria-label="Remove File"
+                    category="ghost"
+                    className="HvFileUploaderFile-removeButton"
+                    onClick={[Function]}
+                  >
+                    <ForwardRef(IconButton)
                       aria-label="Remove File"
                       category="ghost"
                       className="HvFileUploaderFile-removeButton"
+                      classes={
+                        Object {
+                          "colorInherit": "MuiIconButton-colorInherit",
+                          "colorPrimary": "MuiIconButton-colorPrimary",
+                          "colorSecondary": "MuiIconButton-colorSecondary",
+                          "disabled": "Mui-disabled",
+                          "edgeEnd": "MuiIconButton-edgeEnd",
+                          "edgeStart": "MuiIconButton-edgeStart",
+                          "label": "MuiIconButton-label",
+                          "root": "MuiIconButton-root",
+                          "sizeSmall": "MuiIconButton-sizeSmall",
+                        }
+                      }
                       onClick={[Function]}
                     >
-                      <ForwardRef(IconButton)
+                      <WithStyles(ForwardRef(ButtonBase))
                         aria-label="Remove File"
                         category="ghost"
-                        className="HvFileUploaderFile-removeButton"
-                        classes={
-                          Object {
-                            "colorInherit": "MuiIconButton-colorInherit",
-                            "colorPrimary": "MuiIconButton-colorPrimary",
-                            "colorSecondary": "MuiIconButton-colorSecondary",
-                            "disabled": "Mui-disabled",
-                            "edgeEnd": "MuiIconButton-edgeEnd",
-                            "edgeStart": "MuiIconButton-edgeStart",
-                            "label": "MuiIconButton-label",
-                            "root": "MuiIconButton-root",
-                            "sizeSmall": "MuiIconButton-sizeSmall",
-                          }
-                        }
+                        centerRipple={true}
+                        className="MuiIconButton-root HvFileUploaderFile-removeButton"
+                        disabled={false}
+                        focusRipple={true}
                         onClick={[Function]}
                       >
-                        <WithStyles(ForwardRef(ButtonBase))
+                        <ForwardRef(ButtonBase)
                           aria-label="Remove File"
                           category="ghost"
                           centerRipple={true}
                           className="MuiIconButton-root HvFileUploaderFile-removeButton"
+                          classes={
+                            Object {
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "root": "MuiButtonBase-root",
+                            }
+                          }
+                          disableRipple={true}
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
                         >
-                          <ForwardRef(ButtonBase)
+                          <button
                             aria-label="Remove File"
                             category="ghost"
-                            centerRipple={true}
-                            className="MuiIconButton-root HvFileUploaderFile-removeButton"
-                            classes={
-                              Object {
-                                "disabled": "Mui-disabled",
-                                "focusVisible": "Mui-focusVisible",
-                                "root": "MuiButtonBase-root",
-                              }
-                            }
-                            disableRipple={true}
+                            className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
                             disabled={false}
-                            focusRipple={true}
+                            onBlur={[Function]}
                             onClick={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
                           >
-                            <button
-                              aria-label="Remove File"
-                              category="ghost"
-                              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
-                              disabled={false}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onDragLeave={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchMove={[Function]}
-                              onTouchStart={[Function]}
-                              tabIndex={0}
-                              type="button"
+                            <span
+                              className="MuiIconButton-label"
                             >
-                              <span
-                                className="MuiIconButton-label"
+                              <Close
+                                iconSize="XS"
                               >
-                                <Close
+                                <HvIconBase
                                   iconSize="XS"
+                                  name="Close"
                                 >
-                                  <HvIconBase
-                                    iconSize="XS"
+                                  <div
+                                    className="HvIconBase-root HvIconBase-xs"
                                     name="Close"
                                   >
-                                    <div
-                                      className="HvIconBase-root HvIconBase-xs"
-                                      name="Close"
+                                    <svg
+                                      focusable={false}
+                                      height={12}
+                                      viewBox="0 0 16 16"
+                                      width={12}
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height={12}
-                                        viewBox="0 0 16 16"
-                                        width={12}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </HvIconBase>
-                                </Close>
-                              </span>
-                            </button>
-                          </ForwardRef(ButtonBase)>
-                        </WithStyles(ForwardRef(ButtonBase))>
-                      </ForwardRef(IconButton)>
-                    </WithStyles(ForwardRef(IconButton))>
-                  </li>
-                </File>
-              </WithStyles(File)>
-            </ul>
-          </FileList>
-        </WithStyles(FileList)>
-      </div>
-    </FileUploader>
-  </WithLabels>
-</WithStyles(WithLabels)>
+                                      <path
+                                        className="color0"
+                                        d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
+                              </Close>
+                            </span>
+                          </button>
+                        </ForwardRef(ButtonBase)>
+                      </WithStyles(ForwardRef(ButtonBase))>
+                    </ForwardRef(IconButton)>
+                  </WithStyles(ForwardRef(IconButton))>
+                </li>
+              </File>
+            </WithStyles(File)>
+          </ul>
+        </FileList>
+      </WithStyles(FileList)>
+    </div>
+  </FileUploader>
+</WithStyles(FileUploader)>
 `;

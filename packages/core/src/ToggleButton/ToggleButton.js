@@ -5,10 +5,9 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
 import { HvTooltip, HvTypography } from "..";
-import withLabels from "../withLabels";
 import Focus from "../Focus";
 
-import useControlled from "../utils/useControlled";
+import { useLabels, useControlled } from "../utils";
 
 import styles from "./styles";
 
@@ -26,7 +25,7 @@ const ToggleButton = ({
   id,
   defaultSelected,
   selected,
-  labels,
+  labels: labelsProp,
   notSelectedIcon,
   selectedIcon = null,
   onClick,
@@ -34,6 +33,7 @@ const ToggleButton = ({
   children,
   ...others
 }) => {
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const [isSelected, setIsSelected] = useControlled(selected, Boolean(defaultSelected));
 
   const content = children || (!isSelected ? notSelectedIcon : selectedIcon);
@@ -143,6 +143,4 @@ ToggleButton.propTypes = {
   children: PropTypes.node,
 };
 
-export default withStyles(styles, { name: "HvToggleButton" })(
-  withLabels(DEFAULT_LABELS)(ToggleButton)
-);
+export default withStyles(styles, { name: "HvToggleButton" })(ToggleButton);

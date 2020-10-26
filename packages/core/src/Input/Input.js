@@ -19,9 +19,7 @@ import {
   useUniqueId,
 } from "..";
 
-import withLabels from "../withLabels";
-
-import { isBrowser, isKeypress, KeyboardCodes, setId, useControlled } from "../utils";
+import { isBrowser, isKeypress, KeyboardCodes, setId, useControlled, useLabels } from "../utils";
 
 import validationStates, { isValid, isInvalid } from "../Forms/FormElement/validationStates";
 import {
@@ -91,7 +89,7 @@ const HvInput = (props) => {
 
     autoFocus = false,
 
-    labels,
+    labels: labelsProp,
 
     validationMessages,
 
@@ -119,6 +117,7 @@ const HvInput = (props) => {
     ...others
   } = props;
 
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const elementId = useUniqueId(id, "hvinput");
 
   const inputRef = useRef(inputRefProp || null);
@@ -994,4 +993,4 @@ HvInput.propTypes = {
   minCharQuantity: PropTypes.number,
 };
 
-export default withStyles(styles, { name: "HvInput" })(withLabels(DEFAULT_LABELS)(HvInput));
+export default withStyles(styles, { name: "HvInput" })(HvInput);
