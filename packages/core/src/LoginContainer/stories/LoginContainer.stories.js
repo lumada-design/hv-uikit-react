@@ -10,7 +10,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvLoginContainer } from '@hv/uikit-react-core/dist'",
 
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvLoginContainer,
   decorators: [(storyFn) => <div style={{ display: "flex", height: "100vh" }}>{storyFn()}</div>],

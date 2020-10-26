@@ -14,7 +14,7 @@ export default {
     usage: "import { HvHeader } from '@hv/uikit-react-core/dist'",
     subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
 
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvHeader,
   decorators: [(storyFn) => <div style={{ minHeight: 100 }}>{storyFn()}</div>],

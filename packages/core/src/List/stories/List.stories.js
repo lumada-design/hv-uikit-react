@@ -25,7 +25,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvList } from '@hv/uikit-react-core/dist'",
     maturityStatus: "stable",
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvList,
   decorators: [(storyFn) => <ListContainer>{storyFn()}</ListContainer>],

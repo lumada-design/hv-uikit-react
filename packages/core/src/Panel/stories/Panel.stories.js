@@ -9,7 +9,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvPanel } from '@hv/uikit-react-core/dist'",
     maturityStatus: "stable",
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvPanel,
 };

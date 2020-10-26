@@ -33,7 +33,7 @@ export default {
     usage:
       "import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'",
 
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvCard,
   subcomponents: { HvCardHeader, HvCardMedia, HvCardContent },

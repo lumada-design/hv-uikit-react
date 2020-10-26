@@ -11,7 +11,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvInput } from '@hv/uikit-react-core/dist'",
     maturityStatus: "stable",
-    dsVersion: "3.2.0",
+    dsVersion: "3.2.1",
   },
   component: HvInput,
   subcomponents: { HvBaseInput },
