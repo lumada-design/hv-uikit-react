@@ -33,7 +33,6 @@ Array [
         readOnly={false}
         required={false}
         status="standBy"
-        value="1"
       >
         <WithId
           className="HvRadio-root"
@@ -47,7 +46,6 @@ Array [
           readOnly={false}
           required={false}
           status="standBy"
-          value="1"
         >
           <HvFormElement
             className="HvRadio-root"
@@ -62,7 +60,6 @@ Array [
             readOnly={false}
             required={false}
             status="standBy"
-            value="1"
           >
             <div
               className="HvRadio-root HvFormElement-root"
@@ -600,7 +597,6 @@ Array [
         readOnly={false}
         required={false}
         status="standBy"
-        value="2"
       >
         <WithId
           className="HvRadio-root"
@@ -614,7 +610,6 @@ Array [
           readOnly={false}
           required={false}
           status="standBy"
-          value="2"
         >
           <HvFormElement
             className="HvRadio-root"
@@ -629,7 +624,6 @@ Array [
             readOnly={false}
             required={false}
             status="standBy"
-            value="2"
           >
             <div
               className="HvRadio-root HvFormElement-root"

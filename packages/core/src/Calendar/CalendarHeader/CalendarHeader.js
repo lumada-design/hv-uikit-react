@@ -7,7 +7,11 @@ import { withStyles } from "@material-ui/core";
 import { setId, isKeypress, KeyboardCodes } from "../../utils";
 import HvTypography from "../../Typography";
 import styles from "./styles";
-import { HvFormElementContext } from "../../Forms/FormElement";
+import {
+  HvFormElementContext,
+  HvFormElementValueContext,
+  HvFormElementDescriptorsContext,
+} from "../../Forms/FormElement";
 import { isRange, isSameDay } from "../utils";
 
 const { Enter } = KeyboardCodes;
@@ -22,10 +26,9 @@ const HvCalendarHeader = ({
   onFocus,
   ...others
 }) => {
-  const { elementId, elementValue, elementLocale, descriptors = {} } = useContext(
-    HvFormElementContext
-  );
-  const { HvLabel } = descriptors;
+  const { elementId, elementLocale } = useContext(HvFormElementContext);
+  const elementValue = useContext(HvFormElementValueContext);
+  const { label } = useContext(HvFormElementDescriptorsContext);
 
   const preLocalValue = value ?? elementValue ?? "";
   let localValue = preLocalValue;
@@ -118,13 +121,16 @@ const HvCalendarHeader = ({
           onFocus={onFocusHandler}
           onChange={onChangeHandler}
           onKeyDown={keyDownHandler}
-          aria-labelledby={HvLabel?.[0]?.id}
+          aria-labelledby={label?.[0]?.id}
           {...others}
         />
       </div>
     </div>
   );
 };
+
+// TODO: refactor this out
+HvCalendarHeader.formElementType = "HvCalendarHeader";
 
 HvCalendarHeader.propTypes = {
   /**

@@ -60,31 +60,33 @@ const styles = (theme) => ({
     },
   },
   invalid: {
-    "& $inputBorderContainer": {
-      backgroundColor: theme.hv.palette.semantic.sema4,
-    },
-    "&:hover $inputBorderContainer": {
-      backgroundColor: theme.hv.palette.semantic.sema4,
-    },
-    "& $inputRootMultiline": {
-      "& $input": {
-        border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+    "&:not($disabled)": {
+      "& $inputBorderContainer": {
+        backgroundColor: theme.hv.palette.semantic.sema4,
       },
-    },
-    "&:hover $inputRootMultiline": {
-      "& $input": {
-        border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+      "&:hover $inputBorderContainer": {
+        backgroundColor: theme.hv.palette.semantic.sema4,
       },
-    },
-    "&:focus-within $inputRootMultiline": {
-      "& $input": {
-        border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+      "& $inputRootMultiline": {
+        "& $input": {
+          border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+        },
       },
-    },
-    // IE fallback code (using focus-within-polyfill)
-    "&.focus-within $inputRootMultiline": {
-      "& $input": {
-        border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+      "&:hover $inputRootMultiline": {
+        "& $input": {
+          border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+        },
+      },
+      "&:focus-within $inputRootMultiline": {
+        "& $input": {
+          border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+        },
+      },
+      // IE fallback code (using focus-within-polyfill)
+      "&.focus-within $inputRootMultiline": {
+        "& $input": {
+          border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+        },
       },
     },
   },

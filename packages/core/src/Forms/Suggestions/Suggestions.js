@@ -9,7 +9,7 @@ import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
 /**
- * A pop-out list of options
+ * Allow text input boxes to trigger the display of one or more predictions of the user's intended value.
  */
 const HvSuggestions = (props) => {
   const {
@@ -33,7 +33,7 @@ const HvSuggestions = (props) => {
         <OutsideClickHandler onOutsideClick={(e) => onClose?.(e)}>
           <HvSelectionList
             className={classes.list}
-            id={setId(id, "list")}
+            id={setId(localId, "list")}
             onChange={onSuggestionSelected}
           >
             {suggestionValues?.map((item, i) => {
@@ -51,6 +51,8 @@ const HvSuggestions = (props) => {
     </div>
   );
 };
+
+HvSuggestions.formElementType = "controlled";
 
 HvSuggestions.propTypes = {
   /**

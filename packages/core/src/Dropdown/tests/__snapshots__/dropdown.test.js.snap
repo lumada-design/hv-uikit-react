@@ -56,7 +56,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
       disabled={false}
       required={false}
       status="standBy"
-      value={Array []}
     >
       <WithId
         className="HvDropdown-root"
@@ -68,7 +67,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
         disabled={false}
         required={false}
         status="standBy"
-        value={Array []}
       >
         <HvFormElement
           className="HvDropdown-root"
@@ -81,7 +79,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
           id="hv-form-element-2"
           required={false}
           status="standBy"
-          value={Array []}
         >
           <div
             className="HvDropdown-root HvFormElement-root"
@@ -601,7 +598,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                               readOnly={false}
                                               required={false}
                                               status="standBy"
-                                              value=""
                                             >
                                               <WithId
                                                 className="HvInput-root"
@@ -616,7 +612,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                 readOnly={false}
                                                 required={false}
                                                 status="standBy"
-                                                value=""
                                               >
                                                 <HvFormElement
                                                   className="HvInput-root"
@@ -631,7 +626,6 @@ exports[`<Dropdown />  with defaults should render correctly 1`] = `
                                                   readOnly={false}
                                                   required={false}
                                                   status="standBy"
-                                                  value=""
                                                 >
                                                   <div
                                                     className="HvInput-root HvFormElement-root"
@@ -1884,7 +1878,6 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
       id="test-dropdown"
       required={false}
       status="valid"
-      value={Array []}
     >
       <WithId
         className="HvDropdown-root"
@@ -1897,7 +1890,6 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
         id="test-dropdown"
         required={false}
         status="valid"
-        value={Array []}
       >
         <HvFormElement
           className="HvDropdown-root"
@@ -1910,7 +1902,6 @@ exports[`<Dropdown /> <Dropdown /> disabled should render correctly 1`] = `
           id="test-dropdown"
           required={false}
           status="valid"
-          value={Array []}
         >
           <div
             className="HvDropdown-root HvFormElement-root"

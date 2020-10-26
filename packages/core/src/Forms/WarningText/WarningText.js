@@ -10,7 +10,7 @@ import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
- * Component used in conjunction with other form elements, to give extra information about status.
+ * Provides the user with an error descriptive text for when the form element is in an invalid state.
  */
 const HvWarningText = (props) => {
   const {
@@ -31,7 +31,7 @@ const HvWarningText = (props) => {
   const { elementId, elementStatus, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
   const localVisible = !isNil(isVisible) ? isVisible : elementStatus === "invalid";
-  const localId = id ?? setId(elementId, "text");
+  const localId = id ?? setId(elementId, "error");
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";
   const localAdornment = adornment || <Fail className={classes.defaultIcon} semantic="sema4" />;
@@ -45,7 +45,7 @@ const HvWarningText = (props) => {
     >
       {!disableAdornment && localAdornment}
       <HvTypography
-        id={setId(localId)}
+        id={localId}
         className={clsx(classes.warningText, {
           [classes.topGutter]: !disableGutter,
           [classes.hideText]: hideText,
@@ -60,6 +60,8 @@ const HvWarningText = (props) => {
     </div>
   );
 };
+
+HvWarningText.formElementType = "errormessage";
 
 HvWarningText.propTypes = {
   /**

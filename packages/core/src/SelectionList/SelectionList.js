@@ -19,7 +19,10 @@ import { setId, useControlled } from "../utils";
 import styles from "./styles";
 
 /**
+ * Allows the user to select one or more items from a list of choices.
  *
+ * Although it supports multi-selection, DS recommends the use of a selection list
+ * when it’s clear that the user can only select just one option from the range provided.
  */
 const HvSelectionList = (props) => {
   const {
@@ -174,7 +177,6 @@ const HvSelectionList = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={validationState}
       disabled={disabled}
       required={required}

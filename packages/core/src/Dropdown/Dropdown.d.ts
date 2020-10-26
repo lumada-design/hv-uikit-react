@@ -1,13 +1,9 @@
-import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { PopperProps } from "@material-ui/core/Popper";
 import { ListLabelsProp, ListValueProp } from "../List";
+import { HvFormElementProps } from "..";
 
 export interface DropDownLabelsProp extends ListLabelsProp {
-  /**
-   * Title for the dropdown.
-   */
-  title?: string;
   /**
    * The default when there are no options available.
    */
@@ -33,15 +29,17 @@ export interface DropDownLabelsProp extends ListLabelsProp {
 
 export type HvDropdownClassKey =
   | "root"
-  | "dropdown"
+  | "labelContainer"
   | "label"
+  | "description"
+  | "dropdown"
   | "arrow"
-  | "truncate"
+  | "placeholder"
   | "selectionDisabled"
   | "rootList";
 
 export interface HvDropdownProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropdownClassKey, "onChange"> {
+  extends StandardProps<HvFormElementProps, HvDropdownClassKey, "onChange"> {
   /**
    * The list to be rendered by the dropdown.
    */

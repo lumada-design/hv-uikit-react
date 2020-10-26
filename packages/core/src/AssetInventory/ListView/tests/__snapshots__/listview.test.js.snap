@@ -5707,7 +5707,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             readOnly={false}
                                                             required={false}
                                                             status="standBy"
-                                                            value="1"
                                                           >
                                                             <WithId
                                                               className="HvListViewRow-checkboxPlacement HvCheckBox-root"
@@ -5721,7 +5720,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               readOnly={false}
                                                               required={false}
                                                               status="standBy"
-                                                              value="1"
                                                             >
                                                               <HvFormElement
                                                                 className="HvListViewRow-checkboxPlacement HvCheckBox-root"
@@ -5735,7 +5733,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 readOnly={false}
                                                                 required={false}
                                                                 status="standBy"
-                                                                value="1"
                                                               >
                                                                 <div
                                                                   className="HvListViewRow-checkboxPlacement HvCheckBox-root HvFormElement-root"
@@ -9190,7 +9187,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             readOnly={false}
                                                             required={false}
                                                             status="standBy"
-                                                            value="2"
                                                           >
                                                             <WithId
                                                               className="HvListViewRow-checkboxPlacement HvCheckBox-root"
@@ -9204,7 +9200,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               readOnly={false}
                                                               required={false}
                                                               status="standBy"
-                                                              value="2"
                                                             >
                                                               <HvFormElement
                                                                 className="HvListViewRow-checkboxPlacement HvCheckBox-root"
@@ -9218,7 +9213,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 readOnly={false}
                                                                 required={false}
                                                                 status="standBy"
-                                                                value="2"
                                                               >
                                                                 <div
                                                                   className="HvListViewRow-checkboxPlacement HvCheckBox-root HvFormElement-root"
@@ -12673,7 +12667,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             readOnly={false}
                                                             required={false}
                                                             status="standBy"
-                                                            value="3"
                                                           >
                                                             <WithId
                                                               className="HvListViewRow-checkboxPlacement HvCheckBox-root"
@@ -12687,7 +12680,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               readOnly={false}
                                                               required={false}
                                                               status="standBy"
-                                                              value="3"
                                                             >
                                                               <HvFormElement
                                                                 className="HvListViewRow-checkboxPlacement HvCheckBox-root"
@@ -12701,7 +12693,6 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                 readOnly={false}
                                                                 required={false}
                                                                 status="standBy"
-                                                                value="3"
                                                               >
                                                                 <div
                                                                   className="HvListViewRow-checkboxPlacement HvCheckBox-root HvFormElement-root"

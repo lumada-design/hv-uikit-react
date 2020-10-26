@@ -177,8 +177,6 @@ export const RangeWithValues = () => {
   const labels = {
     applyLabel: "Apply",
     cancelLabel: "Cancel",
-    rangeStart: "Start date",
-    rangeEnd: "End date",
   };
 
   return (

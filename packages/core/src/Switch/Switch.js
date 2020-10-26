@@ -83,7 +83,6 @@ const HvSwitch = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={validationState}
       disabled={disabled}
       required={required}

@@ -45,17 +45,18 @@ exports[`Input should render correctly 1`] = `
             "root": "HvBaseInput-inputRoot",
           }
         }
-        disabled={false}
         inputProps={
           Object {
+            "aria-controls": undefined,
+            "aria-describedby": undefined,
             "aria-label": "Input Label",
-            "required": false,
+            "aria-labelledby": undefined,
+            "required": undefined,
           }
         }
         multiline={false}
         onChange={[Function]}
         placeholder="test"
-        readOnly={false}
         rows={10}
         type="text"
       >
@@ -79,17 +80,18 @@ exports[`Input should render correctly 1`] = `
             }
           }
           disableUnderline={true}
-          disabled={false}
           inputProps={
             Object {
+              "aria-controls": undefined,
+              "aria-describedby": undefined,
               "aria-label": "Input Label",
-              "required": false,
+              "aria-labelledby": undefined,
+              "required": undefined,
             }
           }
           multiline={false}
           onChange={[Function]}
           placeholder="test"
-          readOnly={false}
           rows={10}
           type="text"
         >
@@ -112,19 +114,20 @@ exports[`Input should render correctly 1`] = `
                 "underline": null,
               }
             }
-            disabled={false}
             fullWidth={false}
             inputComponent="input"
             inputProps={
               Object {
+                "aria-controls": undefined,
+                "aria-describedby": undefined,
                 "aria-label": "Input Label",
-                "required": false,
+                "aria-labelledby": undefined,
+                "required": undefined,
               }
             }
             multiline={false}
             onChange={[Function]}
             placeholder="test"
-            readOnly={false}
             rows={10}
             type="text"
           >
@@ -151,19 +154,20 @@ exports[`Input should render correctly 1`] = `
                   "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot",
                 }
               }
-              disabled={false}
               fullWidth={false}
               inputComponent="input"
               inputProps={
                 Object {
+                  "aria-controls": undefined,
+                  "aria-describedby": undefined,
                   "aria-label": "Input Label",
-                  "required": false,
+                  "aria-labelledby": undefined,
+                  "required": undefined,
                 }
               }
               multiline={false}
               onChange={[Function]}
               placeholder="test"
-              readOnly={false}
               rows={10}
               type="text"
             >
@@ -174,14 +178,11 @@ exports[`Input should render correctly 1`] = `
                 <input
                   aria-label="Input Label"
                   className="MuiInputBase-input MuiInput-input HvBaseInput-input"
-                  disabled={false}
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   placeholder="test"
-                  readOnly={false}
-                  required={false}
                   rows={10}
                   type="text"
                 />
@@ -236,16 +237,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
             "root": "HvBaseInput-inputRoot",
           }
         }
-        disabled={false}
         inputProps={
           Object {
-            "required": false,
+            "aria-controls": undefined,
+            "aria-describedby": undefined,
+            "aria-labelledby": undefined,
+            "required": undefined,
           }
         }
         multiline={true}
         onChange={[Function]}
         placeholder="test"
-        readOnly={false}
         rows={10}
         type="text"
       >
@@ -269,16 +271,17 @@ exports[`Input should render the Input component with the multiline style 1`] = 
             }
           }
           disableUnderline={true}
-          disabled={false}
           inputProps={
             Object {
-              "required": false,
+              "aria-controls": undefined,
+              "aria-describedby": undefined,
+              "aria-labelledby": undefined,
+              "required": undefined,
             }
           }
           multiline={true}
           onChange={[Function]}
           placeholder="test"
-          readOnly={false}
           rows={10}
           type="text"
         >
@@ -301,18 +304,19 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                 "underline": null,
               }
             }
-            disabled={false}
             fullWidth={false}
             inputComponent="input"
             inputProps={
               Object {
-                "required": false,
+                "aria-controls": undefined,
+                "aria-describedby": undefined,
+                "aria-labelledby": undefined,
+                "required": undefined,
               }
             }
             multiline={true}
             onChange={[Function]}
             placeholder="test"
-            readOnly={false}
             rows={10}
             type="text"
           >
@@ -339,18 +343,19 @@ exports[`Input should render the Input component with the multiline style 1`] = 
                   "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot",
                 }
               }
-              disabled={false}
               fullWidth={false}
               inputComponent="input"
               inputProps={
                 Object {
-                  "required": false,
+                  "aria-controls": undefined,
+                  "aria-describedby": undefined,
+                  "aria-labelledby": undefined,
+                  "required": undefined,
                 }
               }
               multiline={true}
               onChange={[Function]}
               placeholder="test"
-              readOnly={false}
               rows={10}
               type="text"
             >
@@ -360,14 +365,11 @@ exports[`Input should render the Input component with the multiline style 1`] = 
               >
                 <textarea
                   className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputMultiline MuiInput-inputMultiline"
-                  disabled={false}
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   placeholder="test"
-                  readOnly={false}
-                  required={false}
                   rows={10}
                 />
               </div>

@@ -24,7 +24,9 @@ const computeSelectAllState = (selected, total) => {
 };
 
 /**
+ * A group of checkboxes.
  *
+ * A checkbox group is a type of selection list that allow the user to select multiple options through the use of checkboxes.
  */
 const HvCheckBoxGroup = (props) => {
   const {
@@ -181,7 +183,6 @@ const HvCheckBoxGroup = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={validationState}
       disabled={disabled}
       required={required}
@@ -284,6 +285,7 @@ HvCheckBoxGroup.propTypes = {
 
   /**
    * The form element name.
+   *
    * It is propagated to the children checkboxes, unless they already have one.
    */
   name: PropTypes.string,

@@ -133,7 +133,6 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               readOnly={false}
               required={false}
               status="standBy"
-              value="on"
             >
               <WithId
                 className="HvBulkActions-selectAll HvCheckBox-root"
@@ -147,7 +146,6 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 readOnly={false}
                 required={false}
                 status="standBy"
-                value="on"
               >
                 <HvFormElement
                   className="HvBulkActions-selectAll HvCheckBox-root"
@@ -161,7 +159,6 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   readOnly={false}
                   required={false}
                   status="standBy"
-                  value="on"
                 >
                   <div
                     className="HvBulkActions-selectAll HvCheckBox-root HvFormElement-root"
@@ -1627,7 +1624,6 @@ exports[`BulkActions should render correctly 1`] = `
               readOnly={false}
               required={false}
               status="standBy"
-              value="on"
             >
               <WithId
                 className="HvBulkActions-selectAll HvCheckBox-root"
@@ -1640,7 +1636,6 @@ exports[`BulkActions should render correctly 1`] = `
                 readOnly={false}
                 required={false}
                 status="standBy"
-                value="on"
               >
                 <HvFormElement
                   className="HvBulkActions-selectAll HvCheckBox-root"
@@ -1654,7 +1649,6 @@ exports[`BulkActions should render correctly 1`] = `
                   readOnly={false}
                   required={false}
                   status="standBy"
-                  value="on"
                 >
                   <div
                     className="HvBulkActions-selectAll HvCheckBox-root HvFormElement-root"
@@ -3246,7 +3240,6 @@ exports[`BulkActions with custom label should render correctly 1`] = `
               readOnly={false}
               required={false}
               status="standBy"
-              value="on"
             >
               <WithId
                 className="HvBulkActions-selectAll HvCheckBox-root"
@@ -3259,7 +3252,6 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                 readOnly={false}
                 required={false}
                 status="standBy"
-                value="on"
               >
                 <HvFormElement
                   className="HvBulkActions-selectAll HvCheckBox-root"
@@ -3273,7 +3265,6 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                   readOnly={false}
                   required={false}
                   status="standBy"
-                  value="on"
                 >
                   <div
                     className="HvBulkActions-selectAll HvCheckBox-root HvFormElement-root"
@@ -3916,7 +3907,6 @@ exports[`BulkActions with selection should render correctly 1`] = `
               readOnly={false}
               required={false}
               status="standBy"
-              value="on"
             >
               <WithId
                 className="HvBulkActions-selectAll HvCheckBox-root"
@@ -3929,7 +3919,6 @@ exports[`BulkActions with selection should render correctly 1`] = `
                 readOnly={false}
                 required={false}
                 status="standBy"
-                value="on"
               >
                 <HvFormElement
                   className="HvBulkActions-selectAll HvCheckBox-root"
@@ -3943,7 +3932,6 @@ exports[`BulkActions with selection should render correctly 1`] = `
                   readOnly={false}
                   required={false}
                   status="standBy"
-                  value="on"
                 >
                   <div
                     className="HvBulkActions-selectAll HvCheckBox-root HvFormElement-root"

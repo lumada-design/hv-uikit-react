@@ -2,33 +2,15 @@ import { StandardProps } from "@material-ui/core";
 import { HvFormElementProps } from "..";
 
 export type HvDatePickerClassKey =
-  | "inputCalendarClosed"
-  | "inputCalendarOpen"
-  | "noBorderTop"
-  | "noBorderBottom"
-  | "input"
-  | "icon"
-  | "iconClear"
-  | "datePickerContainer"
+  | "root"
+  | "labelContainer"
   | "label"
-  | "calendarContainer"
-  | "singleCalendarFooter"
-  | "rangeMainContainer"
-  | "rangeCalendarsContainer"
-  | "rangeLeftCalendarContainer"
-  | "rangeRightCalendarContainer"
-  | "rangeFooterLeft"
-  | "rangeFooterRight"
-  | "actionsContainer"
-  | "borderTopNone"
-  | "borderBottomNone"
-  | "borderTopDisplay"
-  | "borderBottomDisplay"
-  | "popperRoot"
-  | "listBorderDown"
-  | "listBorderUp"
-  | "calendarOpenDown"
-  | "calendarOpenUp";
+  | "description"
+  | "error"
+  | "dropdown"
+  | "panel"
+  | "action"
+  | "icon";
 
 export interface HvDatePickerProps
   extends StandardProps<HvFormElementProps, HvDatePickerClassKey, "onChange"> {
@@ -44,23 +26,13 @@ export interface HvDatePickerProps
      * Cancel button label.
      */
     cancelLabel?: string;
-    /**
-     * Text above the input/dropdown.
-     */
-    title?: string;
-    /**
-     * Start date label.
-     */
-    rangeStart?: string;
-    /**
-     * End date label.
-     */
-    rangeEnd?: string;
-    /**
-     * Text inside the input/dropdown
-     */
-    placeholder?: string;
   };
+
+  /**
+   * The placeholder value when nothing is selected.
+   */
+  placeholder?: string;
+
   /**
    * The initial value of the input when in single calendar mode.
    */
@@ -94,10 +66,6 @@ export interface HvDatePickerProps
    * Callback function to be triggered when the input value is changed
    */
   onChange?: (date?: string) => void;
-  /**
-   * If `true` the datepicker is disabled unable to be interacted, if `false` it is enabled.
-   */
-  disabled?: boolean;
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */

@@ -29,11 +29,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
       readOnly={false}
       required={false}
       status="standBy"
-      value={
-        Array [
-          "2",
-        ]
-      }
     >
       <WithId
         className="HvCheckBoxGroup-root"
@@ -47,11 +42,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
         readOnly={false}
         required={false}
         status="standBy"
-        value={
-          Array [
-            "2",
-          ]
-        }
       >
         <HvFormElement
           className="HvCheckBoxGroup-root"
@@ -66,11 +56,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
           readOnly={false}
           required={false}
           status="standBy"
-          value={
-            Array [
-              "2",
-            ]
-          }
         >
           <div
             className="HvCheckBoxGroup-root HvFormElement-root"
@@ -185,7 +170,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="standBy"
-                    value="on"
                   >
                     <WithId
                       className="HvCheckBoxGroup-selectAll HvCheckBox-root"
@@ -198,7 +182,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="standBy"
-                      value="on"
                     >
                       <HvFormElement
                         className="HvCheckBoxGroup-selectAll HvCheckBox-root"
@@ -212,7 +195,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                         readOnly={false}
                         required={false}
                         status="standBy"
-                        value="on"
                       >
                         <div
                           className="HvCheckBoxGroup-selectAll HvCheckBox-root HvFormElement-root"
@@ -655,7 +637,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="standBy"
-                    value="1"
                   >
                     <WithId
                       className="HvCheckBox-root"
@@ -669,7 +650,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="standBy"
-                      value="1"
                     >
                       <HvFormElement
                         className="HvCheckBox-root"
@@ -684,7 +664,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                         readOnly={false}
                         required={false}
                         status="standBy"
-                        value="1"
                       >
                         <div
                           className="HvCheckBox-root HvFormElement-root"
@@ -1134,7 +1113,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="standBy"
-                    value="2"
                   >
                     <WithId
                       className="HvCheckBox-root"
@@ -1148,7 +1126,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="standBy"
-                      value="2"
                     >
                       <HvFormElement
                         className="HvCheckBox-root"
@@ -1163,7 +1140,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                         readOnly={false}
                         required={false}
                         status="standBy"
-                        value="2"
                       >
                         <div
                           className="HvCheckBox-root HvFormElement-root"
@@ -1618,7 +1594,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="standBy"
-                    value="3"
                   >
                     <WithId
                       className="HvCheckBox-root"
@@ -1632,7 +1607,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="standBy"
-                      value="3"
                     >
                       <HvFormElement
                         className="HvCheckBox-root"
@@ -1647,7 +1621,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                         readOnly={false}
                         required={false}
                         status="standBy"
-                        value="3"
                       >
                         <div
                           className="HvCheckBox-root HvFormElement-root"

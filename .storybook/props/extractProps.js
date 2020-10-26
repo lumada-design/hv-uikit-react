@@ -57,9 +57,9 @@ export const extractProps = (component) => {
       // shouldn't be needed because we are https://reactjs.org/docs/higher-order-components.html#static-methods-must-be-copied-over
       return extractProps(component.Naked);
     } else if (isForwardRef(component) || component.render) {
-      return extractProps(component.render().type, defaultLabels);
+      return extractProps(component.render().type);
     } else if (isMemo(component)) {
-      return extractProps(component.type().type, defaultLabels);
+      return extractProps(component.type().type);
     }
   }
 

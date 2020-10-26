@@ -57,6 +57,10 @@ function getDefaultValuesFromProps(properties, documentation) {
 
 function getRenderBody(componentDefinition) {
   var value = resolveToValue(componentDefinition);
+  if (isReactForwardRefCall(value)) {
+    const inner = value.get("arguments", 0);
+    return inner.get("body", "body");
+  }
   return value.get("body", "body");
 }
 
@@ -78,9 +82,14 @@ function getPropsPath(functionBody) {
 }
 
 module.exports = function defaultPropsHandler(documentation, componentDefinition) {
+  // enable the try-catch to debug
+  // try {
   var renderBody = getRenderBody(componentDefinition);
   var props = getPropsPath(renderBody);
   if (props !== undefined) {
     getDefaultValuesFromProps(props.get("properties"), documentation);
   }
+  // } catch (e) {
+  //   console.error(e);
+  // }
 };

@@ -21,6 +21,7 @@ export interface HvCheckBoxGroupProps
 
   /**
    * The form element name.
+   *
    * It is propagated to the children checkboxes, unless they already have one.
    */
   name?: string;

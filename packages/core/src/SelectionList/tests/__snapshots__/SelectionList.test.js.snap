@@ -30,7 +30,6 @@ exports[`SelectionList should render correctly 1`] = `
       readOnly={false}
       required={false}
       status="standBy"
-      value="2"
     >
       <WithId
         className="HvSelectionList-root"
@@ -44,7 +43,6 @@ exports[`SelectionList should render correctly 1`] = `
         readOnly={false}
         required={false}
         status="standBy"
-        value="2"
       >
         <HvFormElement
           className="HvSelectionList-root"
@@ -59,7 +57,6 @@ exports[`SelectionList should render correctly 1`] = `
           readOnly={false}
           required={false}
           status="standBy"
-          value="2"
         >
           <div
             className="HvSelectionList-root HvFormElement-root"

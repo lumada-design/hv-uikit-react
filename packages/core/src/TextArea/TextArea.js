@@ -31,8 +31,7 @@ import {
 import styles from "./styles";
 
 /**
- * A text area component wrapping the input box, it allows the input of paragraph of text.
- * alongside this it can provide a validation for the max character quantity
+ * A text area is a multiline text input box, with an optional character counter when there is a length limit.
  */
 const HvTextArea = (props) => {
   const {
@@ -279,7 +278,6 @@ const HvTextArea = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={validationState}
       disabled={disabled}
       required={required}

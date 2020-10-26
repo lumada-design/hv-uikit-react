@@ -26,12 +26,11 @@ import useVisibleDate from "../Calendar/useVisibleDate";
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
   cancelLabel: "Cancel",
-  rangeStart: "Start date",
-  rangeEnd: "End date",
 };
 
 /**
- * A graphical widget which allows the user to select a date.
+ * A date picker, popup calendar or date range picker is a graphical user
+ * interface widget which allows the user to select a date from a calendar.
  */
 const HvDatePicker = (props) => {
   const {
@@ -430,22 +429,6 @@ HvDatePicker.propTypes = {
      * Cancel button label.
      */
     cancelLabel: PropTypes.string,
-    /**
-     * Text above the input/dropdown.
-     */
-    title: PropTypes.string,
-    /**
-     * Start date label.
-     */
-    rangeStart: PropTypes.string,
-    /**
-     * End date label.
-     */
-    rangeEnd: PropTypes.string,
-    /**
-     * Text inside the input/dropdown
-     */
-    placeholder: PropTypes.string,
   }),
 
   /**

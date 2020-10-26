@@ -1272,7 +1272,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   readOnly={false}
                   required={false}
                   status="valid"
-                  value="1"
                 >
                   <WithId
                     className="HvInput-root HvPagination-pageSizeInputContainer"
@@ -1287,7 +1286,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="valid"
-                    value="1"
                   >
                     <HvFormElement
                       className="HvInput-root HvPagination-pageSizeInputContainer"
@@ -1302,7 +1300,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="valid"
-                      value="1"
                     >
                       <div
                         className="HvInput-root HvPagination-pageSizeInputContainer HvFormElement-root"

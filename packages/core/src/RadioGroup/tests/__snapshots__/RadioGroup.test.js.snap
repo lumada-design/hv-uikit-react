@@ -27,7 +27,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
       readOnly={false}
       required={false}
       status="standBy"
-      value="2"
     >
       <WithId
         className="HvRadioGroup-root"
@@ -41,7 +40,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
         readOnly={false}
         required={false}
         status="standBy"
-        value="2"
       >
         <HvFormElement
           className="HvRadioGroup-root"
@@ -56,7 +54,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
           readOnly={false}
           required={false}
           status="standBy"
-          value="2"
         >
           <div
             className="HvRadioGroup-root HvFormElement-root"
@@ -179,7 +176,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="standBy"
-                    value="1"
                   >
                     <WithId
                       className="HvRadio-root"
@@ -193,7 +189,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="standBy"
-                      value="1"
                     >
                       <HvFormElement
                         className="HvRadio-root"
@@ -208,7 +203,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                         readOnly={false}
                         required={false}
                         status="standBy"
-                        value="1"
                       >
                         <div
                           className="HvRadio-root HvFormElement-root"
@@ -763,7 +757,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="standBy"
-                    value="2"
                   >
                     <WithId
                       className="HvRadio-root"
@@ -777,7 +770,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="standBy"
-                      value="2"
                     >
                       <HvFormElement
                         className="HvRadio-root"
@@ -792,7 +784,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                         readOnly={false}
                         required={false}
                         status="standBy"
-                        value="2"
                       >
                         <div
                           className="HvRadio-root HvFormElement-root"
@@ -1352,7 +1343,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     readOnly={false}
                     required={false}
                     status="standBy"
-                    value="3"
                   >
                     <WithId
                       className="HvRadio-root"
@@ -1366,7 +1356,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                       readOnly={false}
                       required={false}
                       status="standBy"
-                      value="3"
                     >
                       <HvFormElement
                         className="HvRadio-root"
@@ -1381,7 +1370,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                         readOnly={false}
                         required={false}
                         status="standBy"
-                        value="3"
                       >
                         <div
                           className="HvRadio-root HvFormElement-root"

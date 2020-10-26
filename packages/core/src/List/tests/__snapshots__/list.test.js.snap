@@ -2085,7 +2085,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               readOnly={false}
                               required={false}
                               status="standBy"
-                              value="on"
                             >
                               <WithId
                                 className="HvRadio-root HvList-selectorRoot"
@@ -2098,7 +2097,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 readOnly={false}
                                 required={false}
                                 status="standBy"
-                                value="on"
                               >
                                 <HvFormElement
                                   className="HvRadio-root HvList-selectorRoot"
@@ -2112,7 +2110,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   readOnly={false}
                                   required={false}
                                   status="standBy"
-                                  value="on"
                                 >
                                   <div
                                     className="HvRadio-root HvList-selectorRoot HvFormElement-root"
@@ -3284,7 +3281,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               readOnly={false}
                               required={false}
                               status="standBy"
-                              value="on"
                             >
                               <WithId
                                 className="HvRadio-root HvList-selectorRoot"
@@ -3297,7 +3293,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 readOnly={false}
                                 required={false}
                                 status="standBy"
-                                value="on"
                               >
                                 <HvFormElement
                                   className="HvRadio-root HvList-selectorRoot"
@@ -3311,7 +3306,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   readOnly={false}
                                   required={false}
                                   status="standBy"
-                                  value="on"
                                 >
                                   <div
                                     className="HvRadio-root HvList-selectorRoot HvFormElement-root"
@@ -4483,7 +4477,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               readOnly={false}
                               required={false}
                               status="standBy"
-                              value="on"
                             >
                               <WithId
                                 className="HvRadio-root HvList-selectorRoot"
@@ -4496,7 +4489,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 readOnly={false}
                                 required={false}
                                 status="standBy"
-                                value="on"
                               >
                                 <HvFormElement
                                   className="HvRadio-root HvList-selectorRoot"
@@ -4510,7 +4502,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   readOnly={false}
                                   required={false}
                                   status="standBy"
-                                  value="on"
                                 >
                                   <div
                                     className="HvRadio-root HvList-selectorRoot HvFormElement-root"

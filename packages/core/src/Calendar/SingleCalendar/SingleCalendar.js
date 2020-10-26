@@ -7,7 +7,7 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { isKeypress, KeyboardCodes, setId } from "../../utils";
 import styles from "./styles";
-import { HvFormElementContext } from "../../Forms/FormElement";
+import { HvFormElementDescriptorsContext } from "../../Forms/FormElement";
 import { VIEW_MODE } from "../enums";
 import { isRange, isDate } from "../utils";
 import { generateCalendarModel } from "../model";
@@ -35,8 +35,8 @@ const HvSingleCalendar = ({
   children,
   ...others
 }) => {
-  const { descriptors = {} } = useContext(HvFormElementContext);
-  const { HvCalendarHeader } = descriptors;
+  // TODO: refactor this out
+  const { HvCalendarHeader } = useContext(HvFormElementDescriptorsContext);
 
   const today = new Date();
   const localValue = isNil(value) ? today : value;

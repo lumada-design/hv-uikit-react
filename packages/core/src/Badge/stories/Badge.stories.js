@@ -13,7 +13,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBadge } from '@hv/uikit-react-core/dist'",
-    v3: true,
     dsVersion: "3.2.1",
   },
   component: HvBadge,

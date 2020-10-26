@@ -24,7 +24,6 @@ Array [
         readOnly={false}
         required={false}
         status="standBy"
-        value="on"
       >
         <WithId
           className="HvCheckBox-root"
@@ -37,7 +36,6 @@ Array [
           readOnly={false}
           required={false}
           status="standBy"
-          value="on"
         >
           <HvFormElement
             className="HvCheckBox-root"
@@ -51,7 +49,6 @@ Array [
             readOnly={false}
             required={false}
             status="standBy"
-            value="on"
           >
             <div
               className="HvCheckBox-root HvFormElement-root"
@@ -486,7 +483,6 @@ Array [
         readOnly={false}
         required={false}
         status="standBy"
-        value="on"
       >
         <WithId
           className="HvCheckBox-root"
@@ -499,7 +495,6 @@ Array [
           readOnly={false}
           required={false}
           status="standBy"
-          value="on"
         >
           <HvFormElement
             className="HvCheckBox-root"
@@ -513,7 +508,6 @@ Array [
             readOnly={false}
             required={false}
             status="standBy"
-            value="on"
           >
             <div
               className="HvCheckBox-root HvFormElement-root"
@@ -953,7 +947,6 @@ Array [
         readOnly={false}
         required={false}
         status="standBy"
-        value="on"
       >
         <WithId
           className="HvCheckBox-root"
@@ -966,7 +959,6 @@ Array [
           readOnly={false}
           required={false}
           status="standBy"
-          value="on"
         >
           <HvFormElement
             className="HvCheckBox-root"
@@ -980,7 +972,6 @@ Array [
             readOnly={false}
             required={false}
             status="standBy"
-            value="on"
           >
             <div
               className="HvCheckBox-root HvFormElement-root"

@@ -54,7 +54,7 @@ function eventTargetIsInsideContainer(container, event) {
 }
 
 /**
- * An input is a graphical control element that allows the user to write text.
+ * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
 const HvInput = (props) => {
   const {
@@ -574,7 +574,6 @@ const HvInput = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={validationState}
       disabled={disabled}
       required={required}

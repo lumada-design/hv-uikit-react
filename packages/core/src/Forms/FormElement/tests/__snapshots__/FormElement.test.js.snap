@@ -3,7 +3,6 @@
 exports[`FormElement  should render correctly 1`] = `
 <WithStyles(WithId)
   status="valid"
-  value="George"
 >
   <WithStyles(HvLabel)
     id="test"
@@ -11,6 +10,7 @@ exports[`FormElement  should render correctly 1`] = `
     label="First name"
   >
     <WithStyles(HvBaseInput)
+      defaultValue="George"
       id="id-test"
       placeholder="Insert your name"
     />
@@ -26,6 +26,7 @@ exports[`FormElement  should render correctly 1`] = `
 
 exports[`FormElement  should render correctly 2`] = `
 <WithStyles(HvBaseInput)
+  defaultValue="George"
   id="id-test"
   placeholder="Insert your name"
 />

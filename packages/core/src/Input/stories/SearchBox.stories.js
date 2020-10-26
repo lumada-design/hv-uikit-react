@@ -6,6 +6,8 @@ import { makeStyles } from "@material-ui/core";
 
 import { Fail } from "@hv/uikit-react-icons";
 
+import DocsPage from "../../../../../.storybook/blocks/DocsPage";
+
 import { HvDropdown, HvInput, HvPanel, HvTypography, HvEmptyState } from "../../..";
 
 import countryList, { continents, countries } from "./countries";
@@ -15,10 +17,21 @@ export default {
   parameters: {
     usage: "import { HvInput } from '@hv/uikit-react-core/dist'",
     componentSubtitle: (
-      <small>Note: only the Basic Search variant is labelled Stable by Design System.</small>
+      <small style={{ fontWeight: 600, fontSize: "12px", margin: 0 }}>
+        Note: only the Basic Search variant is labelled Stable by Design System.
+      </small>
     ),
     maturityStatus: "stable",
     dsVersion: "3.2.1",
+    docs: {
+      page: () => (
+        <DocsPage
+          descriptionSlot={() =>
+            "A search box is a text input box with the dedicated function of accepting user input to be searched for in a database. Search boxes are commonly accompanied by a search button/icon to submit the query. However, the search button should be omitted in the filter as you type mode, where the trigger is automatic and related to the text string."
+          }
+        />
+      ),
+    },
   },
 };
 

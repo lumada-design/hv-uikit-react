@@ -21,7 +21,6 @@ Array [
         readOnly={false}
         required={false}
         status="standBy"
-        value="on"
       >
         <WithId
           className="HvSwitch-root"
@@ -34,7 +33,6 @@ Array [
           readOnly={false}
           required={false}
           status="standBy"
-          value="on"
         >
           <HvFormElement
             className="HvSwitch-root"
@@ -48,7 +46,6 @@ Array [
             readOnly={false}
             required={false}
             status="standBy"
-            value="on"
           >
             <div
               className="HvSwitch-root HvFormElement-root"
@@ -398,7 +395,6 @@ Array [
         readOnly={false}
         required={false}
         status="standBy"
-        value="on"
       >
         <WithId
           className="HvSwitch-root"
@@ -411,7 +407,6 @@ Array [
           readOnly={false}
           required={false}
           status="standBy"
-          value="on"
         >
           <HvFormElement
             className="HvSwitch-root"
@@ -425,7 +420,6 @@ Array [
             readOnly={false}
             required={false}
             status="standBy"
-            value="on"
           >
             <div
               className="HvSwitch-root HvFormElement-root"

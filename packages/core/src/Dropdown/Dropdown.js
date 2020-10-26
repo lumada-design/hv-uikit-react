@@ -27,7 +27,7 @@ const DEFAULT_LABELS = {
 };
 
 /**
- * A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
+ * A dropdown list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
  */
 const HvDropdown = (props) => {
   const {
@@ -172,7 +172,6 @@ const HvDropdown = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={getSelected(internalValues)}
       status={validationState}
       disabled={disabled}
       required={required}

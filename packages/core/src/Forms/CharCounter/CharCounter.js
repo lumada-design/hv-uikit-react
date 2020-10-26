@@ -8,7 +8,10 @@ import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
- * Component used to showcase the char counter of an input.
+ * Displays the capacity and current usage of a text input box (character count by default).
+ *
+ * Use the character counter when there is a character or word limit.
+ * By itself it doesn't block the user from going above the limit.
  */
 const HvCharCounter = (props) => {
   const {
@@ -65,6 +68,8 @@ const HvCharCounter = (props) => {
     </div>
   );
 };
+
+HvCharCounter.formElementType = "controlled";
 
 HvCharCounter.propTypes = {
   /**
