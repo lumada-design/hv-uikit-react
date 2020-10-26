@@ -21,7 +21,7 @@ import {
   HvToggleButton,
   HvTypography,
 } from "../..";
-import { HvCardMedia, HvCardHeader, HvCardFooter, HvCardContent } from "..";
+import { HvCardMedia, HvCardHeader, HvCardContent } from "..";
 
 import compressor from "./resources/compressor.png";
 import leaf from "./resources/leaf.png";
@@ -31,12 +31,12 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      "import { HvCard, HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'",
+      "import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'",
 
     dsVersion: "3.2.0",
   },
   component: HvCard,
-  subcomponents: { HvCardHeader, HvCardFooter, HvCardMedia, HvCardContent },
+  subcomponents: { HvCardHeader, HvCardMedia, HvCardContent },
   decorators: [
     (Story) => (
       <div style={{ margin: 20 }}>
