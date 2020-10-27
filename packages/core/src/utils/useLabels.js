@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 const useLabels = (defaultLabels, labels) => {
-  const [state, setState] = useState({ ...defaultLabels, ...labels });
-
-  useEffect(() => {
-    setState({ ...defaultLabels, ...labels });
+  const merged = React.useMemo(() => {
+    return { ...defaultLabels, ...labels };
   }, [defaultLabels, labels]);
 
-  return state;
+  return merged;
 };
 
 export default useLabels;
