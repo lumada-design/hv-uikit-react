@@ -2,7 +2,9 @@ import React, { useMemo } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import withId from "../../withId";
+
+import useUniqueId from "../../useUniqueId";
+
 import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
 import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
@@ -40,9 +42,11 @@ const HvFormElement = (props) => {
     ...others
   } = props;
 
+  const elementId = useUniqueId(id, "hvformelement");
+
   const contextValue = useMemo(
     () => ({
-      elementId: id,
+      elementId,
       elementName: name,
       elementStatus: status,
       elementDisabled: disabled,
@@ -50,7 +54,7 @@ const HvFormElement = (props) => {
       elementReadOnly: readOnly,
       elementLocale: locale,
     }),
-    [disabled, id, locale, name, readOnly, required, status]
+    [disabled, elementId, locale, name, readOnly, required, status]
   );
 
   const descriptors = useMemo(() => findDescriptors(children), [children]);
@@ -161,4 +165,4 @@ HvFormElement.propTypes = {
   locale: PropTypes.string,
 };
 
-export default withStyles(styles, { name: "HvFormElement" })(withId(HvFormElement));
+export default withStyles(styles, { name: "HvFormElement" })(HvFormElement);

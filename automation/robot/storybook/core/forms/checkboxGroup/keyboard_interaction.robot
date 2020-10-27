@@ -6,7 +6,7 @@ Force Tags      keyboard
 *** Test Cases ***
 iteratable by tab when is readonly
     [Setup]    open checkbox group sample    read-only
-    Press Keys                    ${label}    TAB
+    Press Keys                    css:\#readonly-label    TAB
     Element Should Be Focused     ${all} input
     Press Keys                    NONE    TAB
     Element Should Be Focused     ${checkbox2} input

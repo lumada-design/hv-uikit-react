@@ -5,7 +5,7 @@ Test Setup    open checkbox group sample    main
 
 *** Test Cases ***
 checkbox group has id
-    Element Attribute Value Should Be    ${checkboxGroup}    id    hv-form-element-2
+    Element Attribute Value Should Be    ${checkboxGroup}    id    main
 
 children checkboxes have name attribute
     Page Should Contain Element    ${checkboxGroup}\ input[name]    limit=3

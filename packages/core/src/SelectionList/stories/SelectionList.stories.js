@@ -13,7 +13,12 @@ export default {
 };
 
 export const Main = () => (
-  <HvSelectionList label="Choose your favorite items" name="favorite" onChange={console.log}>
+  <HvSelectionList
+    id="main"
+    label="Choose your favorite items"
+    name="favorite"
+    onChange={console.log}
+  >
     <HvListItem value="1">ListItem 1</HvListItem>
     <HvListItem value="2" selected>
       ListItem 2

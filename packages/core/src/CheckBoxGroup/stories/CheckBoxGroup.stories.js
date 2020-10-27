@@ -13,7 +13,7 @@ export default {
 };
 
 export const Main = () => (
-  <HvCheckBoxGroup showSelectAll label="Choose your favorite checkboxes" name="favorite">
+  <HvCheckBoxGroup id="main" showSelectAll label="Choose your favorite checkboxes" name="favorite">
     <HvCheckBox label="Checkbox 1" value="1" />
     <HvCheckBox label="Checkbox 2" value="2" checked />
     <HvCheckBox label="Checkbox 3" value="3" />
