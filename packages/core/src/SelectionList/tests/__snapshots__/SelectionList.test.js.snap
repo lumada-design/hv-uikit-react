@@ -2,6 +2,7 @@
 
 exports[`SelectionList should render correctly 1`] = `
 <WithStyles(HvSelectionList)
+  id="main"
   label="Choose your favorite items"
   name="favorite"
   onChange={[Function]}
@@ -19,19 +20,21 @@ exports[`SelectionList should render correctly 1`] = `
         "vertical": "HvSelectionList-vertical",
       }
     }
+    id="main"
     label="Choose your favorite items"
     name="favorite"
     onChange={[Function]}
   >
-    <WithStyles(WithId)
+    <WithStyles(HvFormElement)
       className="HvSelectionList-root"
       disabled={false}
+      id="main"
       name="favorite"
       readOnly={false}
       required={false}
       status="standBy"
     >
-      <WithId
+      <HvFormElement
         className="HvSelectionList-root"
         classes={
           Object {
@@ -39,155 +42,201 @@ exports[`SelectionList should render correctly 1`] = `
           }
         }
         disabled={false}
+        id="main"
         name="favorite"
         readOnly={false}
         required={false}
         status="standBy"
       >
-        <HvFormElement
-          className="HvSelectionList-root"
-          classes={
-            Object {
-              "root": "HvFormElement-root",
-            }
-          }
-          disabled={false}
-          id="hv-form-element-4"
-          name="favorite"
-          readOnly={false}
-          required={false}
-          status="standBy"
+        <div
+          className="HvSelectionList-root HvFormElement-root"
+          id="main"
         >
-          <div
-            className="HvSelectionList-root HvFormElement-root"
-            id="hv-form-element-4"
+          <WithStyles(HvLabel)
+            className="HvSelectionList-label"
+            id="main-label"
+            label="Choose your favorite items"
           >
-            <WithStyles(HvLabel)
+            <HvLabel
               className="HvSelectionList-label"
-              id="hvselectionlist3-label"
+              classes={
+                Object {
+                  "childGutter": "HvLabel-childGutter",
+                  "labelDisabled": "HvLabel-labelDisabled",
+                  "root": "HvLabel-root",
+                }
+              }
+              id="main-label"
               label="Choose your favorite items"
             >
-              <HvLabel
-                className="HvSelectionList-label"
-                classes={
-                  Object {
-                    "childGutter": "HvLabel-childGutter",
-                    "labelDisabled": "HvLabel-labelDisabled",
-                    "root": "HvLabel-root",
-                  }
-                }
-                id="hvselectionlist3-label"
-                label="Choose your favorite items"
+              <WithStyles(ForwardRef)
+                className="HvSelectionList-label HvLabel-root"
+                component="label"
+                id="main-label"
+                variant="highlightText"
               >
-                <WithStyles(ForwardRef)
+                <ForwardRef
                   className="HvSelectionList-label HvLabel-root"
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "disabledText": "HvTypography-disabledText",
+                      "highlightText": "HvTypography-highlightText",
+                      "lTitle": "HvTypography-lTitle",
+                      "link": "HvTypography-link",
+                      "mTitle": "HvTypography-mTitle",
+                      "noWrap": "HvTypography-noWrap",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
+                      "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "vizText": "HvTypography-vizText",
+                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsInlineLink": "HvTypography-xsInlineLink",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
+                    }
+                  }
                   component="label"
-                  id="hvselectionlist3-label"
+                  id="main-label"
                   variant="highlightText"
                 >
-                  <ForwardRef
-                    className="HvSelectionList-label HvLabel-root"
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledText": "HvTypography-disabledText",
-                        "highlightText": "HvTypography-highlightText",
-                        "lTitle": "HvTypography-lTitle",
-                        "link": "HvTypography-link",
-                        "mTitle": "HvTypography-mTitle",
-                        "noWrap": "HvTypography-noWrap",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "root": "HvTypography-root",
-                        "sTitle": "HvTypography-sTitle",
-                        "sectionTitle": "HvTypography-sectionTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "vizText": "HvTypography-vizText",
-                        "vizTextDisabled": "HvTypography-vizTextDisabled",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsInlineLink": "HvTypography-xsInlineLink",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
-                    }
-                    component="label"
-                    id="hvselectionlist3-label"
-                    variant="highlightText"
+                  <label
+                    className="HvSelectionList-label HvLabel-root HvTypography-root HvTypography-highlightText"
+                    id="main-label"
                   >
-                    <label
-                      className="HvSelectionList-label HvLabel-root HvTypography-root HvTypography-highlightText"
-                      id="hvselectionlist3-label"
-                    >
-                      Choose your favorite items
-                    </label>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-              </HvLabel>
-            </WithStyles(HvLabel)>
-            <WithStyles(HvListContainer)
-              aria-labelledby="hvselectionlist3-label"
+                    Choose your favorite items
+                  </label>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+            </HvLabel>
+          </WithStyles(HvLabel)>
+          <WithStyles(HvListContainer)
+            aria-labelledby="main-label"
+            className="HvSelectionList-listbox HvSelectionList-vertical"
+            condensed={true}
+            id="main-listbox"
+            interactive={true}
+            role="listbox"
+          >
+            <HvListContainer
+              aria-labelledby="main-label"
               className="HvSelectionList-listbox HvSelectionList-vertical"
+              classes={
+                Object {
+                  "root": "HvListContainer-root",
+                }
+              }
               condensed={true}
-              id="hvselectionlist3-listbox"
+              id="main-listbox"
               interactive={true}
               role="listbox"
             >
-              <HvListContainer
-                aria-labelledby="hvselectionlist3-label"
-                className="HvSelectionList-listbox HvSelectionList-vertical"
-                classes={
-                  Object {
-                    "root": "HvListContainer-root",
-                  }
-                }
-                condensed={true}
-                id="hvselectionlist3-listbox"
-                interactive={true}
+              <ul
+                aria-labelledby="main-label"
+                className="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
+                id="main-listbox"
                 role="listbox"
               >
-                <ul
-                  aria-labelledby="hvselectionlist3-label"
-                  className="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
-                  id="hvselectionlist3-listbox"
-                  role="listbox"
+                <WithStyles(HvListItem)
+                  key=".$.0"
+                  onClick={[Function]}
+                  role="option"
+                  selected={false}
+                  tabIndex={-1}
+                  value="1"
                 >
-                  <WithStyles(HvListItem)
-                    key=".$.0"
+                  <HvListItem
+                    classes={
+                      Object {
+                        "condensed": "HvListItem-condensed",
+                        "disabled": "HvListItem-disabled",
+                        "endAdornment": "HvListItem-endAdornment",
+                        "focus": "HvListItem-focus",
+                        "gutters": "HvListItem-gutters",
+                        "interactive": "HvListItem-interactive",
+                        "root": "HvListItem-root",
+                        "selected": "HvListItem-selected",
+                        "startAdornment": "HvListItem-startAdornment",
+                        "withEndAdornment": "HvListItem-withEndAdornment",
+                        "withStartAdornment": "HvListItem-withStartAdornment",
+                      }
+                    }
                     onClick={[Function]}
                     role="option"
                     selected={false}
                     tabIndex={-1}
                     value="1"
                   >
-                    <HvListItem
+                    <WithStyles(Focus)
                       classes={
                         Object {
-                          "condensed": "HvListItem-condensed",
-                          "disabled": "HvListItem-disabled",
-                          "endAdornment": "HvListItem-endAdornment",
                           "focus": "HvListItem-focus",
-                          "gutters": "HvListItem-gutters",
-                          "interactive": "HvListItem-interactive",
-                          "root": "HvListItem-root",
-                          "selected": "HvListItem-selected",
-                          "startAdornment": "HvListItem-startAdornment",
-                          "withEndAdornment": "HvListItem-withEndAdornment",
-                          "withStartAdornment": "HvListItem-withStartAdornment",
                         }
                       }
-                      onClick={[Function]}
-                      role="option"
+                      configuration={
+                        Object {
+                          "tabIndex": -1,
+                        }
+                      }
+                      rootRef={
+                        Object {
+                          "current": <ul
+                            aria-labelledby="main-label"
+                            class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
+                            id="main-listbox"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="false"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="-1"
+                              value="1"
+                            >
+                              ListItem 1
+                            </li>
+                            <li
+                              aria-selected="true"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="0"
+                              value="2"
+                            >
+                              ListItem 2
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="-1"
+                              value="3"
+                            >
+                              ListItem 3
+                            </li>
+                          </ul>,
+                        }
+                      }
                       selected={false}
-                      tabIndex={-1}
-                      value="1"
+                      strategy="listbox"
                     >
-                      <WithStyles(Focus)
+                      <Focus
                         classes={
                           Object {
-                            "focus": "HvListItem-focus",
+                            "disabled": "HvFocus-disabled",
+                            "externalReference": "HvFocus-externalReference",
+                            "falseFocus": "HvFocus-falseFocus",
+                            "focus": "HvFocus-focus HvListItem-focus",
+                            "focusDisabled": "HvFocus-focusDisabled",
+                            "focused": "HvFocus-focused",
+                            "root": "HvFocus-root",
+                            "selected": "HvFocus-selected",
                           }
                         }
                         configuration={
@@ -198,9 +247,9 @@ exports[`SelectionList should render correctly 1`] = `
                         rootRef={
                           Object {
                             "current": <ul
-                              aria-labelledby="hvselectionlist3-label"
+                              aria-labelledby="main-label"
                               class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
-                              id="hvselectionlist3-listbox"
+                              id="main-listbox"
                               role="listbox"
                             >
                               <li
@@ -236,123 +285,123 @@ exports[`SelectionList should render correctly 1`] = `
                         selected={false}
                         strategy="listbox"
                       >
-                        <Focus
-                          classes={
-                            Object {
-                              "disabled": "HvFocus-disabled",
-                              "externalReference": "HvFocus-externalReference",
-                              "falseFocus": "HvFocus-falseFocus",
-                              "focus": "HvFocus-focus HvListItem-focus",
-                              "focusDisabled": "HvFocus-focusDisabled",
-                              "focused": "HvFocus-focused",
-                              "root": "HvFocus-root",
-                              "selected": "HvFocus-selected",
-                            }
-                          }
-                          configuration={
-                            Object {
-                              "tabIndex": -1,
-                            }
-                          }
-                          rootRef={
-                            Object {
-                              "current": <ul
-                                aria-labelledby="hvselectionlist3-label"
-                                class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
-                                id="hvselectionlist3-listbox"
-                                role="listbox"
-                              >
-                                <li
-                                  aria-selected="false"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="-1"
-                                  value="1"
-                                >
-                                  ListItem 1
-                                </li>
-                                <li
-                                  aria-selected="true"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="0"
-                                  value="2"
-                                >
-                                  ListItem 2
-                                </li>
-                                <li
-                                  aria-selected="false"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="-1"
-                                  value="3"
-                                >
-                                  ListItem 3
-                                </li>
-                              </ul>,
-                            }
-                          }
-                          selected={false}
-                          strategy="listbox"
+                        <ConditionalWrapper
+                          condition={false}
+                          wrapper={[Function]}
                         >
-                          <ConditionalWrapper
-                            condition={false}
-                            wrapper={[Function]}
+                          <li
+                            aria-selected={false}
+                            className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            role="option"
+                            selected={false}
+                            value="1"
                           >
-                            <li
-                              aria-selected={false}
-                              className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              role="option"
-                              selected={false}
-                              value="1"
-                            >
-                              ListItem 1
-                            </li>
-                          </ConditionalWrapper>
-                        </Focus>
-                      </WithStyles(Focus)>
-                    </HvListItem>
-                  </WithStyles(HvListItem)>
-                  <WithStyles(HvListItem)
-                    key=".$.1"
+                            ListItem 1
+                          </li>
+                        </ConditionalWrapper>
+                      </Focus>
+                    </WithStyles(Focus)>
+                  </HvListItem>
+                </WithStyles(HvListItem)>
+                <WithStyles(HvListItem)
+                  key=".$.1"
+                  onClick={[Function]}
+                  role="option"
+                  selected={true}
+                  tabIndex={0}
+                  value="2"
+                >
+                  <HvListItem
+                    classes={
+                      Object {
+                        "condensed": "HvListItem-condensed",
+                        "disabled": "HvListItem-disabled",
+                        "endAdornment": "HvListItem-endAdornment",
+                        "focus": "HvListItem-focus",
+                        "gutters": "HvListItem-gutters",
+                        "interactive": "HvListItem-interactive",
+                        "root": "HvListItem-root",
+                        "selected": "HvListItem-selected",
+                        "startAdornment": "HvListItem-startAdornment",
+                        "withEndAdornment": "HvListItem-withEndAdornment",
+                        "withStartAdornment": "HvListItem-withStartAdornment",
+                      }
+                    }
                     onClick={[Function]}
                     role="option"
                     selected={true}
                     tabIndex={0}
                     value="2"
                   >
-                    <HvListItem
+                    <WithStyles(Focus)
                       classes={
                         Object {
-                          "condensed": "HvListItem-condensed",
-                          "disabled": "HvListItem-disabled",
-                          "endAdornment": "HvListItem-endAdornment",
                           "focus": "HvListItem-focus",
-                          "gutters": "HvListItem-gutters",
-                          "interactive": "HvListItem-interactive",
-                          "root": "HvListItem-root",
-                          "selected": "HvListItem-selected",
-                          "startAdornment": "HvListItem-startAdornment",
-                          "withEndAdornment": "HvListItem-withEndAdornment",
-                          "withStartAdornment": "HvListItem-withStartAdornment",
                         }
                       }
-                      onClick={[Function]}
-                      role="option"
+                      configuration={
+                        Object {
+                          "tabIndex": 0,
+                        }
+                      }
+                      rootRef={
+                        Object {
+                          "current": <ul
+                            aria-labelledby="main-label"
+                            class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
+                            id="main-listbox"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="false"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="-1"
+                              value="1"
+                            >
+                              ListItem 1
+                            </li>
+                            <li
+                              aria-selected="true"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="0"
+                              value="2"
+                            >
+                              ListItem 2
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="-1"
+                              value="3"
+                            >
+                              ListItem 3
+                            </li>
+                          </ul>,
+                        }
+                      }
                       selected={true}
-                      tabIndex={0}
-                      value="2"
+                      strategy="listbox"
                     >
-                      <WithStyles(Focus)
+                      <Focus
                         classes={
                           Object {
-                            "focus": "HvListItem-focus",
+                            "disabled": "HvFocus-disabled",
+                            "externalReference": "HvFocus-externalReference",
+                            "falseFocus": "HvFocus-falseFocus",
+                            "focus": "HvFocus-focus HvListItem-focus",
+                            "focusDisabled": "HvFocus-focusDisabled",
+                            "focused": "HvFocus-focused",
+                            "root": "HvFocus-root",
+                            "selected": "HvFocus-selected",
                           }
                         }
                         configuration={
@@ -363,9 +412,9 @@ exports[`SelectionList should render correctly 1`] = `
                         rootRef={
                           Object {
                             "current": <ul
-                              aria-labelledby="hvselectionlist3-label"
+                              aria-labelledby="main-label"
                               class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
-                              id="hvselectionlist3-listbox"
+                              id="main-listbox"
                               role="listbox"
                             >
                               <li
@@ -401,123 +450,123 @@ exports[`SelectionList should render correctly 1`] = `
                         selected={true}
                         strategy="listbox"
                       >
-                        <Focus
-                          classes={
-                            Object {
-                              "disabled": "HvFocus-disabled",
-                              "externalReference": "HvFocus-externalReference",
-                              "falseFocus": "HvFocus-falseFocus",
-                              "focus": "HvFocus-focus HvListItem-focus",
-                              "focusDisabled": "HvFocus-focusDisabled",
-                              "focused": "HvFocus-focused",
-                              "root": "HvFocus-root",
-                              "selected": "HvFocus-selected",
-                            }
-                          }
-                          configuration={
-                            Object {
-                              "tabIndex": 0,
-                            }
-                          }
-                          rootRef={
-                            Object {
-                              "current": <ul
-                                aria-labelledby="hvselectionlist3-label"
-                                class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
-                                id="hvselectionlist3-listbox"
-                                role="listbox"
-                              >
-                                <li
-                                  aria-selected="false"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="-1"
-                                  value="1"
-                                >
-                                  ListItem 1
-                                </li>
-                                <li
-                                  aria-selected="true"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="0"
-                                  value="2"
-                                >
-                                  ListItem 2
-                                </li>
-                                <li
-                                  aria-selected="false"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="-1"
-                                  value="3"
-                                >
-                                  ListItem 3
-                                </li>
-                              </ul>,
-                            }
-                          }
-                          selected={true}
-                          strategy="listbox"
+                        <ConditionalWrapper
+                          condition={false}
+                          wrapper={[Function]}
                         >
-                          <ConditionalWrapper
-                            condition={false}
-                            wrapper={[Function]}
+                          <li
+                            aria-selected={true}
+                            className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            role="option"
+                            selected={true}
+                            value="2"
                           >
-                            <li
-                              aria-selected={true}
-                              className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              role="option"
-                              selected={true}
-                              value="2"
-                            >
-                              ListItem 2
-                            </li>
-                          </ConditionalWrapper>
-                        </Focus>
-                      </WithStyles(Focus)>
-                    </HvListItem>
-                  </WithStyles(HvListItem)>
-                  <WithStyles(HvListItem)
-                    key=".$.2"
+                            ListItem 2
+                          </li>
+                        </ConditionalWrapper>
+                      </Focus>
+                    </WithStyles(Focus)>
+                  </HvListItem>
+                </WithStyles(HvListItem)>
+                <WithStyles(HvListItem)
+                  key=".$.2"
+                  onClick={[Function]}
+                  role="option"
+                  selected={false}
+                  tabIndex={-1}
+                  value="3"
+                >
+                  <HvListItem
+                    classes={
+                      Object {
+                        "condensed": "HvListItem-condensed",
+                        "disabled": "HvListItem-disabled",
+                        "endAdornment": "HvListItem-endAdornment",
+                        "focus": "HvListItem-focus",
+                        "gutters": "HvListItem-gutters",
+                        "interactive": "HvListItem-interactive",
+                        "root": "HvListItem-root",
+                        "selected": "HvListItem-selected",
+                        "startAdornment": "HvListItem-startAdornment",
+                        "withEndAdornment": "HvListItem-withEndAdornment",
+                        "withStartAdornment": "HvListItem-withStartAdornment",
+                      }
+                    }
                     onClick={[Function]}
                     role="option"
                     selected={false}
                     tabIndex={-1}
                     value="3"
                   >
-                    <HvListItem
+                    <WithStyles(Focus)
                       classes={
                         Object {
-                          "condensed": "HvListItem-condensed",
-                          "disabled": "HvListItem-disabled",
-                          "endAdornment": "HvListItem-endAdornment",
                           "focus": "HvListItem-focus",
-                          "gutters": "HvListItem-gutters",
-                          "interactive": "HvListItem-interactive",
-                          "root": "HvListItem-root",
-                          "selected": "HvListItem-selected",
-                          "startAdornment": "HvListItem-startAdornment",
-                          "withEndAdornment": "HvListItem-withEndAdornment",
-                          "withStartAdornment": "HvListItem-withStartAdornment",
                         }
                       }
-                      onClick={[Function]}
-                      role="option"
+                      configuration={
+                        Object {
+                          "tabIndex": -1,
+                        }
+                      }
+                      rootRef={
+                        Object {
+                          "current": <ul
+                            aria-labelledby="main-label"
+                            class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
+                            id="main-listbox"
+                            role="listbox"
+                          >
+                            <li
+                              aria-selected="false"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="-1"
+                              value="1"
+                            >
+                              ListItem 1
+                            </li>
+                            <li
+                              aria-selected="true"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="0"
+                              value="2"
+                            >
+                              ListItem 2
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              role="option"
+                              tabindex="-1"
+                              value="3"
+                            >
+                              ListItem 3
+                            </li>
+                          </ul>,
+                        }
+                      }
                       selected={false}
-                      tabIndex={-1}
-                      value="3"
+                      strategy="listbox"
                     >
-                      <WithStyles(Focus)
+                      <Focus
                         classes={
                           Object {
-                            "focus": "HvListItem-focus",
+                            "disabled": "HvFocus-disabled",
+                            "externalReference": "HvFocus-externalReference",
+                            "falseFocus": "HvFocus-falseFocus",
+                            "focus": "HvFocus-focus HvListItem-focus",
+                            "focusDisabled": "HvFocus-focusDisabled",
+                            "focused": "HvFocus-focused",
+                            "root": "HvFocus-root",
+                            "selected": "HvFocus-selected",
                           }
                         }
                         configuration={
@@ -528,9 +577,9 @@ exports[`SelectionList should render correctly 1`] = `
                         rootRef={
                           Object {
                             "current": <ul
-                              aria-labelledby="hvselectionlist3-label"
+                              aria-labelledby="main-label"
                               class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
-                              id="hvselectionlist3-listbox"
+                              id="main-listbox"
                               role="listbox"
                             >
                               <li
@@ -566,96 +615,36 @@ exports[`SelectionList should render correctly 1`] = `
                         selected={false}
                         strategy="listbox"
                       >
-                        <Focus
-                          classes={
-                            Object {
-                              "disabled": "HvFocus-disabled",
-                              "externalReference": "HvFocus-externalReference",
-                              "falseFocus": "HvFocus-falseFocus",
-                              "focus": "HvFocus-focus HvListItem-focus",
-                              "focusDisabled": "HvFocus-focusDisabled",
-                              "focused": "HvFocus-focused",
-                              "root": "HvFocus-root",
-                              "selected": "HvFocus-selected",
-                            }
-                          }
-                          configuration={
-                            Object {
-                              "tabIndex": -1,
-                            }
-                          }
-                          rootRef={
-                            Object {
-                              "current": <ul
-                                aria-labelledby="hvselectionlist3-label"
-                                class="HvSelectionList-listbox HvSelectionList-vertical HvListContainer-root"
-                                id="hvselectionlist3-listbox"
-                                role="listbox"
-                              >
-                                <li
-                                  aria-selected="false"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="-1"
-                                  value="1"
-                                >
-                                  ListItem 1
-                                </li>
-                                <li
-                                  aria-selected="true"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="0"
-                                  value="2"
-                                >
-                                  ListItem 2
-                                </li>
-                                <li
-                                  aria-selected="false"
-                                  class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                                  role="option"
-                                  tabindex="-1"
-                                  value="3"
-                                >
-                                  ListItem 3
-                                </li>
-                              </ul>,
-                            }
-                          }
-                          selected={false}
-                          strategy="listbox"
+                        <ConditionalWrapper
+                          condition={false}
+                          wrapper={[Function]}
                         >
-                          <ConditionalWrapper
-                            condition={false}
-                            wrapper={[Function]}
+                          <li
+                            aria-selected={false}
+                            className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            role="option"
+                            selected={false}
+                            value="3"
                           >
-                            <li
-                              aria-selected={false}
-                              className="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              role="option"
-                              selected={false}
-                              value="3"
-                            >
-                              ListItem 3
-                            </li>
-                          </ConditionalWrapper>
-                        </Focus>
-                      </WithStyles(Focus)>
-                    </HvListItem>
-                  </WithStyles(HvListItem)>
-                </ul>
-              </HvListContainer>
-            </WithStyles(HvListContainer)>
-          </div>
-        </HvFormElement>
-      </WithId>
-    </WithStyles(WithId)>
+                            ListItem 3
+                          </li>
+                        </ConditionalWrapper>
+                      </Focus>
+                    </WithStyles(Focus)>
+                  </HvListItem>
+                </WithStyles(HvListItem)>
+              </ul>
+            </HvListContainer>
+          </WithStyles(HvListContainer)>
+        </div>
+      </HvFormElement>
+    </WithStyles(HvFormElement)>
   </HvSelectionList>
 </WithStyles(HvSelectionList)>
 `;

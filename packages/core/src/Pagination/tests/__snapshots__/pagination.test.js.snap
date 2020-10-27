@@ -284,52 +284,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   </div>
                 </div>
                 <ForwardRef(Popper)
-                  anchorEl={
-                    <div
-                      aria-expanded="false"
-                      aria-label="Select how many to display"
-                      class="HvPagination-pageSizeOptionsSelect HvBaseDropdown-root HvSelect-root-8"
-                      id="pagination-pageSize"
-                      role="combobox"
-                      tabindex="-1"
-                    >
-                      <div
-                        aria-label="Select how many to display"
-                        class="HvBaseDropdown-header HvSelect-header-9"
-                        id="pagination-pageSize-header"
-                        role="textbox"
-                        tabindex="0"
-                      >
-                        <div
-                          class="HvBaseDropdown-selection"
-                        >
-                          <p
-                            class="HvTypography-root HvTypography-normalText"
-                          >
-                            12
-                          </p>
-                        </div>
-                        <div
-                          class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
-                          name="DropDownXS"
-                        >
-                          <svg
-                            focusable="false"
-                            height="12"
-                            viewBox="0 0 12 12"
-                            width="12"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              class="color0"
-                              d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                              fill="#414141"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  }
+                  anchorEl={null}
                   disablePortal={false}
                   open={false}
                   placement="bottom-start"
@@ -1264,7 +1219,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 onKeyDown={[Function]}
                 value="1"
               >
-                <WithStyles(WithId)
+                <WithStyles(HvFormElement)
                   className="HvInput-root HvPagination-pageSizeInputContainer"
                   disabled={false}
                   id="pagination-currentPage"
@@ -1273,7 +1228,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   required={false}
                   status="valid"
                 >
-                  <WithId
+                  <HvFormElement
                     className="HvInput-root HvPagination-pageSizeInputContainer"
                     classes={
                       Object {
@@ -1287,35 +1242,85 @@ exports[`Custom Pagination should render correctly 1`] = `
                     required={false}
                     status="valid"
                   >
-                    <HvFormElement
-                      className="HvInput-root HvPagination-pageSizeInputContainer"
-                      classes={
-                        Object {
-                          "root": "HvFormElement-root",
-                        }
-                      }
-                      disabled={false}
+                    <div
+                      className="HvInput-root HvPagination-pageSizeInputContainer HvFormElement-root"
                       id="pagination-currentPage"
                       onBlur={[Function]}
-                      readOnly={false}
-                      required={false}
-                      status="valid"
                     >
-                      <div
-                        className="HvInput-root HvPagination-pageSizeInputContainer HvFormElement-root"
-                        id="pagination-currentPage"
+                      <WithStyles(HvBaseInput)
+                        autoFocus={false}
+                        classes={
+                          Object {
+                            "input": "HvInput-input HvPagination-pageSizeInput",
+                            "inputBorderContainer": "HvInput-inputBorderContainer",
+                            "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                            "inputRootDisabled": "HvInput-inputRootDisabled",
+                            "inputRootFocused": "HvInput-inputRootFocused",
+                            "inputRootMultiline": "HvInput-inputRootMultiline",
+                          }
+                        }
+                        disabled={false}
+                        endAdornment={null}
+                        id="pagination-currentPage-input"
+                        inputProps={
+                          Object {
+                            "aria-controls": undefined,
+                            "aria-describedby": undefined,
+                            "aria-errormessage": undefined,
+                            "aria-invalid": undefined,
+                            "aria-label": "6 Total pages for page input",
+                            "aria-labelledby": undefined,
+                            "autoComplete": undefined,
+                            "ref": Object {
+                              "current": <input
+                                aria-label="6 Total pages for page input"
+                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
+                                id="pagination-currentPage-input"
+                                rows="10"
+                                type="number"
+                                value="1"
+                              />,
+                            },
+                            "type": "number",
+                          }
+                        }
+                        inputRef={
+                          Object {
+                            "current": <input
+                              aria-label="6 Total pages for page input"
+                              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
+                              id="pagination-currentPage-input"
+                              rows="10"
+                              type="number"
+                              value="1"
+                            />,
+                          }
+                        }
+                        invalid={false}
                         onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        readOnly={false}
+                        required={false}
+                        type="text"
+                        value="1"
                       >
-                        <WithStyles(HvBaseInput)
+                        <HvBaseInput
                           autoFocus={false}
                           classes={
                             Object {
-                              "input": "HvInput-input HvPagination-pageSizeInput",
-                              "inputBorderContainer": "HvInput-inputBorderContainer",
-                              "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
-                              "inputRootDisabled": "HvInput-inputRootDisabled",
-                              "inputRootFocused": "HvInput-inputRootFocused",
-                              "inputRootMultiline": "HvInput-inputRootMultiline",
+                              "disabled": "HvBaseInput-disabled",
+                              "input": "HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
+                              "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
+                              "inputResizable": "HvBaseInput-inputResizable",
+                              "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                              "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                              "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                              "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                              "invalid": "HvBaseInput-invalid",
+                              "resizable": "HvBaseInput-resizable",
+                              "root": "HvBaseInput-root",
                             }
                           }
                           disabled={false}
@@ -1365,36 +1370,48 @@ exports[`Custom Pagination should render correctly 1`] = `
                           type="text"
                           value="1"
                         >
-                          <HvBaseInput
-                            autoFocus={false}
-                            classes={
-                              Object {
-                                "disabled": "HvBaseInput-disabled",
-                                "input": "HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
-                                "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
-                                "inputResizable": "HvBaseInput-inputResizable",
-                                "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
-                                "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                                "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                "invalid": "HvBaseInput-invalid",
-                                "resizable": "HvBaseInput-resizable",
-                                "root": "HvBaseInput-root",
+                          <div
+                            className="HvBaseInput-root"
+                          >
+                            <WithStyles(ForwardRef(Input))
+                              autoFocus={false}
+                              classes={
+                                Object {
+                                  "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                  "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                  "input": "HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
+                                  "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                  "root": "HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                                }
                               }
-                            }
-                            disabled={false}
-                            endAdornment={null}
-                            id="pagination-currentPage-input"
-                            inputProps={
-                              Object {
-                                "aria-controls": undefined,
-                                "aria-describedby": undefined,
-                                "aria-errormessage": undefined,
-                                "aria-invalid": undefined,
-                                "aria-label": "6 Total pages for page input",
-                                "aria-labelledby": undefined,
-                                "autoComplete": undefined,
-                                "ref": Object {
+                              disabled={false}
+                              endAdornment={null}
+                              id="pagination-currentPage-input"
+                              inputProps={
+                                Object {
+                                  "aria-controls": undefined,
+                                  "aria-describedby": undefined,
+                                  "aria-errormessage": undefined,
+                                  "aria-invalid": undefined,
+                                  "aria-label": "6 Total pages for page input",
+                                  "aria-labelledby": undefined,
+                                  "autoComplete": undefined,
+                                  "ref": Object {
+                                    "current": <input
+                                      aria-label="6 Total pages for page input"
+                                      class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
+                                      id="pagination-currentPage-input"
+                                      rows="10"
+                                      type="number"
+                                      value="1"
+                                    />,
+                                  },
+                                  "required": false,
+                                  "type": "number",
+                                }
+                              }
+                              inputRef={
+                                Object {
                                   "current": <input
                                     aria-label="6 Total pages for page input"
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
@@ -1403,46 +1420,39 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     type="number"
                                     value="1"
                                   />,
-                                },
-                                "type": "number",
+                                }
                               }
-                            }
-                            inputRef={
-                              Object {
-                                "current": <input
-                                  aria-label="6 Total pages for page input"
-                                  class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
-                                  id="pagination-currentPage-input"
-                                  rows="10"
-                                  type="number"
-                                  value="1"
-                                />,
-                              }
-                            }
-                            invalid={false}
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            readOnly={false}
-                            required={false}
-                            type="text"
-                            value="1"
-                          >
-                            <div
-                              className="HvBaseInput-root"
+                              multiline={false}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              readOnly={false}
+                              rows={10}
+                              type="text"
+                              value="1"
                             >
-                              <WithStyles(ForwardRef(Input))
+                              <ForwardRef(Input)
                                 autoFocus={false}
                                 classes={
                                   Object {
-                                    "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                                    "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                    "input": "HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
-                                    "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                    "root": "HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                                    "colorSecondary": "MuiInput-colorSecondary",
+                                    "disabled": "Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                    "error": "Mui-error",
+                                    "focused": "Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                    "formControl": "MuiInput-formControl",
+                                    "fullWidth": "MuiInput-fullWidth",
+                                    "input": "MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
+                                    "inputMarginDense": "MuiInput-inputMarginDense",
+                                    "inputMultiline": "MuiInput-inputMultiline",
+                                    "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                    "marginDense": "MuiInput-marginDense",
+                                    "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                    "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                                    "underline": "MuiInput-underline",
                                   }
                                 }
+                                disableUnderline={true}
                                 disabled={false}
                                 endAdornment={null}
                                 id="pagination-currentPage-input"
@@ -1491,7 +1501,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 type="text"
                                 value="1"
                               >
-                                <ForwardRef(Input)
+                                <WithStyles(ForwardRef(InputBase))
                                   autoFocus={false}
                                   classes={
                                     Object {
@@ -1508,13 +1518,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                       "marginDense": "MuiInput-marginDense",
                                       "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
                                       "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
-                                      "underline": "MuiInput-underline",
+                                      "underline": null,
                                     }
                                   }
-                                  disableUnderline={true}
                                   disabled={false}
                                   endAdornment={null}
+                                  fullWidth={false}
                                   id="pagination-currentPage-input"
+                                  inputComponent="input"
                                   inputProps={
                                     Object {
                                       "aria-controls": undefined,
@@ -1560,24 +1571,28 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   type="text"
                                   value="1"
                                 >
-                                  <WithStyles(ForwardRef(InputBase))
+                                  <ForwardRef(InputBase)
                                     autoFocus={false}
                                     classes={
                                       Object {
-                                        "colorSecondary": "MuiInput-colorSecondary",
-                                        "disabled": "Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                                        "error": "Mui-error",
-                                        "focused": "Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                        "formControl": "MuiInput-formControl",
-                                        "fullWidth": "MuiInput-fullWidth",
-                                        "input": "MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
-                                        "inputMarginDense": "MuiInput-inputMarginDense",
-                                        "inputMultiline": "MuiInput-inputMultiline",
-                                        "inputTypeSearch": "MuiInput-inputTypeSearch",
-                                        "marginDense": "MuiInput-marginDense",
-                                        "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                        "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
-                                        "underline": null,
+                                        "adornedEnd": "MuiInputBase-adornedEnd",
+                                        "adornedStart": "MuiInputBase-adornedStart",
+                                        "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
+                                        "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                        "error": "Mui-error Mui-error",
+                                        "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                        "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                                        "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                                        "input": "MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
+                                        "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                        "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                        "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                        "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                                        "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                                        "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                                        "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
+                                        "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                        "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
                                       }
                                     }
                                     disabled={false}
@@ -1630,222 +1645,147 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     type="text"
                                     value="1"
                                   >
-                                    <ForwardRef(InputBase)
-                                      autoFocus={false}
-                                      classes={
-                                        Object {
-                                          "adornedEnd": "MuiInputBase-adornedEnd",
-                                          "adornedStart": "MuiInputBase-adornedStart",
-                                          "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                                          "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                                          "error": "Mui-error Mui-error",
-                                          "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                          "formControl": "MuiInputBase-formControl MuiInput-formControl",
-                                          "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
-                                          "input": "MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
-                                          "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
-                                          "inputAdornedStart": "MuiInputBase-inputAdornedStart",
-                                          "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
-                                          "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
-                                          "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
-                                          "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
-                                          "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                                          "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                          "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
-                                        }
-                                      }
-                                      disabled={false}
-                                      endAdornment={null}
-                                      fullWidth={false}
-                                      id="pagination-currentPage-input"
-                                      inputComponent="input"
-                                      inputProps={
-                                        Object {
-                                          "aria-controls": undefined,
-                                          "aria-describedby": undefined,
-                                          "aria-errormessage": undefined,
-                                          "aria-invalid": undefined,
-                                          "aria-label": "6 Total pages for page input",
-                                          "aria-labelledby": undefined,
-                                          "autoComplete": undefined,
-                                          "ref": Object {
-                                            "current": <input
-                                              aria-label="6 Total pages for page input"
-                                              class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
-                                              id="pagination-currentPage-input"
-                                              rows="10"
-                                              type="number"
-                                              value="1"
-                                            />,
-                                          },
-                                          "required": false,
-                                          "type": "number",
-                                        }
-                                      }
-                                      inputRef={
-                                        Object {
-                                          "current": <input
-                                            aria-label="6 Total pages for page input"
-                                            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
-                                            id="pagination-currentPage-input"
-                                            rows="10"
-                                            type="number"
-                                            value="1"
-                                          />,
-                                        }
-                                      }
-                                      multiline={false}
-                                      onBlur={[Function]}
-                                      onChange={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      readOnly={false}
-                                      rows={10}
-                                      type="text"
-                                      value="1"
+                                    <div
+                                      className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                      onClick={[Function]}
                                     >
-                                      <div
-                                        className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
-                                        onClick={[Function]}
-                                      >
-                                        <input
-                                          aria-label="6 Total pages for page input"
-                                          autoFocus={false}
-                                          className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
-                                          disabled={false}
-                                          id="pagination-currentPage-input"
-                                          onAnimationStart={[Function]}
-                                          onBlur={[Function]}
-                                          onChange={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          readOnly={false}
-                                          required={false}
-                                          rows={10}
-                                          type="number"
-                                          value="1"
-                                        />
-                                      </div>
-                                    </ForwardRef(InputBase)>
-                                  </WithStyles(ForwardRef(InputBase))>
-                                </ForwardRef(Input)>
-                              </WithStyles(ForwardRef(Input))>
-                              <div
-                                className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
-                                role="presentation"
-                              />
-                            </div>
-                          </HvBaseInput>
-                        </WithStyles(HvBaseInput)>
-                        <WithStyles(HvWarningText)
+                                      <input
+                                        aria-label="6 Total pages for page input"
+                                        autoFocus={false}
+                                        className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
+                                        disabled={false}
+                                        id="pagination-currentPage-input"
+                                        onAnimationStart={[Function]}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        readOnly={false}
+                                        required={false}
+                                        rows={10}
+                                        type="number"
+                                        value="1"
+                                      />
+                                    </div>
+                                  </ForwardRef(InputBase)>
+                                </WithStyles(ForwardRef(InputBase))>
+                              </ForwardRef(Input)>
+                            </WithStyles(ForwardRef(Input))>
+                            <div
+                              className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                              role="presentation"
+                            />
+                          </div>
+                        </HvBaseInput>
+                      </WithStyles(HvBaseInput)>
+                      <WithStyles(HvWarningText)
+                        className="HvInput-error"
+                        disableBorder={true}
+                        id="pagination-currentPage-error"
+                      >
+                        <HvWarningText
                           className="HvInput-error"
+                          classes={
+                            Object {
+                              "defaultIcon": "HvWarningText-defaultIcon",
+                              "hideText": "HvWarningText-hideText",
+                              "root": "HvWarningText-root",
+                              "show": "HvWarningText-show",
+                              "topBorder": "HvWarningText-topBorder",
+                              "topGutter": "HvWarningText-topGutter",
+                              "warningText": "HvWarningText-warningText",
+                            }
+                          }
                           disableBorder={true}
                           id="pagination-currentPage-error"
                         >
-                          <HvWarningText
-                            className="HvInput-error"
-                            classes={
-                              Object {
-                                "defaultIcon": "HvWarningText-defaultIcon",
-                                "hideText": "HvWarningText-hideText",
-                                "root": "HvWarningText-root",
-                                "show": "HvWarningText-show",
-                                "topBorder": "HvWarningText-topBorder",
-                                "topGutter": "HvWarningText-topGutter",
-                                "warningText": "HvWarningText-warningText",
-                              }
-                            }
-                            disableBorder={true}
-                            id="pagination-currentPage-error"
+                          <div
+                            className="HvInput-error HvWarningText-root"
                           >
-                            <div
-                              className="HvInput-error HvWarningText-root"
+                            <Fail
+                              className="HvWarningText-defaultIcon"
+                              semantic="sema4"
                             >
-                              <Fail
+                              <HvIconBase
                                 className="HvWarningText-defaultIcon"
-                                semantic="sema4"
+                                iconSize="S"
+                                name="Fail"
                               >
-                                <HvIconBase
-                                  className="HvWarningText-defaultIcon"
-                                  iconSize="S"
+                                <div
+                                  className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                                   name="Fail"
                                 >
-                                  <div
-                                    className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
-                                    name="Fail"
+                                  <svg
+                                    focusable={false}
+                                    height={16}
+                                    viewBox="0 0 16 16"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height={16}
-                                      viewBox="0 0 16 16"
-                                      width={16}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        className="color0"
-                                        d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                        fill="#C62828"
-                                      />
-                                    </svg>
-                                  </div>
-                                </HvIconBase>
-                              </Fail>
-                              <WithStyles(ForwardRef)
+                                    <path
+                                      className="color0"
+                                      d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                      fill="#C62828"
+                                    />
+                                  </svg>
+                                </div>
+                              </HvIconBase>
+                            </Fail>
+                            <WithStyles(ForwardRef)
+                              aria-atomic="true"
+                              aria-live="polite"
+                              aria-relevant="additions text"
+                              className="HvWarningText-warningText HvWarningText-topGutter"
+                              id="pagination-currentPage-error"
+                            >
+                              <ForwardRef
                                 aria-atomic="true"
                                 aria-live="polite"
                                 aria-relevant="additions text"
                                 className="HvWarningText-warningText HvWarningText-topGutter"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledText": "HvTypography-disabledText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "link": "HvTypography-link",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
                                 id="pagination-currentPage-error"
                               >
-                                <ForwardRef
+                                <p
                                   aria-atomic="true"
                                   aria-live="polite"
                                   aria-relevant="additions text"
-                                  className="HvWarningText-warningText HvWarningText-topGutter"
-                                  classes={
-                                    Object {
-                                      "3xlTitle": "HvTypography-3xlTitle",
-                                      "4xlTitle": "HvTypography-4xlTitle",
-                                      "5xlTitle": "HvTypography-5xlTitle",
-                                      "disabledText": "HvTypography-disabledText",
-                                      "highlightText": "HvTypography-highlightText",
-                                      "lTitle": "HvTypography-lTitle",
-                                      "link": "HvTypography-link",
-                                      "mTitle": "HvTypography-mTitle",
-                                      "noWrap": "HvTypography-noWrap",
-                                      "normalText": "HvTypography-normalText",
-                                      "placeholderText": "HvTypography-placeholderText",
-                                      "root": "HvTypography-root",
-                                      "sTitle": "HvTypography-sTitle",
-                                      "sectionTitle": "HvTypography-sectionTitle",
-                                      "selectedNavText": "HvTypography-selectedNavText",
-                                      "vizText": "HvTypography-vizText",
-                                      "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                      "xlTitle": "HvTypography-xlTitle",
-                                      "xsInlineLink": "HvTypography-xsInlineLink",
-                                      "xsTitle": "HvTypography-xsTitle",
-                                      "xxlTitle": "HvTypography-xxlTitle",
-                                      "xxsTitle": "HvTypography-xxsTitle",
-                                    }
-                                  }
+                                  className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
                                   id="pagination-currentPage-error"
-                                >
-                                  <p
-                                    aria-atomic="true"
-                                    aria-live="polite"
-                                    aria-relevant="additions text"
-                                    className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                                    id="pagination-currentPage-error"
-                                  />
-                                </ForwardRef>
-                              </WithStyles(ForwardRef)>
-                            </div>
-                          </HvWarningText>
-                        </WithStyles(HvWarningText)>
-                      </div>
-                    </HvFormElement>
-                  </WithId>
-                </WithStyles(WithId)>
+                                />
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </div>
+                        </HvWarningText>
+                      </WithStyles(HvWarningText)>
+                    </div>
+                  </HvFormElement>
+                </WithStyles(HvFormElement)>
               </HvInput>
             </WithStyles(HvInput)>
           </div>

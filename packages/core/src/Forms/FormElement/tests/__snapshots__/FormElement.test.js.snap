@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormElement  should render correctly 1`] = `
-<WithStyles(WithId)
+<WithStyles(HvFormElement)
   status="valid"
 >
   <WithStyles(HvLabel)
@@ -21,7 +21,7 @@ exports[`FormElement  should render correctly 1`] = `
   >
     warning
   </WithStyles(HvWarningText)>
-</WithStyles(WithId)>
+</WithStyles(HvFormElement)>
 `;
 
 exports[`FormElement  should render correctly 2`] = `

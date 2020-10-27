@@ -1477,7 +1477,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-14"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -1566,7 +1565,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-16"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -1655,7 +1653,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-18"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -1773,7 +1770,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-14"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -1862,7 +1858,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-16"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -1951,7 +1946,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-18"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -2079,14 +2073,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             }
                             label="Value 1"
                           >
-                            <WithStyles(WithId)
+                            <WithStyles(HvFormElement)
                               className="HvRadio-root HvList-selectorRoot"
                               disabled={false}
                               readOnly={false}
                               required={false}
                               status="standBy"
                             >
-                              <WithId
+                              <HvFormElement
                                 className="HvRadio-root HvList-selectorRoot"
                                 classes={
                                   Object {
@@ -2098,29 +2092,43 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 required={false}
                                 status="standBy"
                               >
-                                <HvFormElement
-                                  className="HvRadio-root HvList-selectorRoot"
-                                  classes={
-                                    Object {
-                                      "root": "HvFormElement-root",
-                                    }
-                                  }
-                                  disabled={false}
-                                  id="hv-form-element-14"
-                                  readOnly={false}
-                                  required={false}
-                                  status="standBy"
+                                <div
+                                  className="HvRadio-root HvList-selectorRoot HvFormElement-root"
                                 >
                                   <div
-                                    className="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                                    id="hv-form-element-14"
+                                    className="HvRadio-container HvList-selectorContainer"
                                   >
-                                    <div
-                                      className="HvRadio-container HvList-selectorContainer"
+                                    <WithStyles(HvBaseRadio)
+                                      checked={false}
+                                      className="HvRadio-radio"
+                                      disabled={false}
+                                      id="hvradio13-input"
+                                      inputProps={
+                                        Object {
+                                          "aria-describedby": undefined,
+                                          "aria-errormessage": undefined,
+                                          "aria-invalid": undefined,
+                                          "aria-label": undefined,
+                                          "aria-labelledby": undefined,
+                                        }
+                                      }
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocusVisible={[Function]}
+                                      readOnly={false}
+                                      semantic={false}
+                                      value="on"
                                     >
-                                      <WithStyles(HvBaseRadio)
+                                      <HvBaseRadio
                                         checked={false}
                                         className="HvRadio-radio"
+                                        classes={
+                                          Object {
+                                            "disabled": "HvBaseRadio-disabled",
+                                            "focusVisible": "HvBaseRadio-focusVisible",
+                                            "root": "HvBaseRadio-root",
+                                          }
+                                        }
                                         disabled={false}
                                         id="hvradio13-input"
                                         inputProps={
@@ -2139,17 +2147,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         semantic={false}
                                         value="on"
                                       >
-                                        <HvBaseRadio
+                                        <WithStyles(ForwardRef(Radio))
                                           checked={false}
-                                          className="HvRadio-radio"
-                                          classes={
-                                            Object {
-                                              "disabled": "HvBaseRadio-disabled",
-                                              "focusVisible": "HvBaseRadio-focusVisible",
-                                              "root": "HvBaseRadio-root",
-                                            }
-                                          }
+                                          checkedIcon={<RadioButtonSelected />}
+                                          className="HvRadio-radio HvBaseRadio-root"
+                                          color="default"
+                                          disableRipple={true}
                                           disabled={false}
+                                          icon={<RadioButtonUnselected />}
                                           id="hvradio13-input"
                                           inputProps={
                                             Object {
@@ -2164,13 +2169,22 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                           onChange={[Function]}
                                           onFocusVisible={[Function]}
                                           readOnly={false}
-                                          semantic={false}
+                                          required={false}
                                           value="on"
                                         >
-                                          <WithStyles(ForwardRef(Radio))
+                                          <ForwardRef(Radio)
                                             checked={false}
                                             checkedIcon={<RadioButtonSelected />}
                                             className="HvRadio-radio HvBaseRadio-root"
+                                            classes={
+                                              Object {
+                                                "checked": "Mui-checked",
+                                                "colorPrimary": "MuiRadio-colorPrimary",
+                                                "colorSecondary": "MuiRadio-colorSecondary",
+                                                "disabled": "Mui-disabled",
+                                                "root": "MuiRadio-root",
+                                              }
+                                            }
                                             color="default"
                                             disableRipple={true}
                                             disabled={false}
@@ -2192,15 +2206,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             required={false}
                                             value="on"
                                           >
-                                            <ForwardRef(Radio)
+                                            <WithStyles(ForwardRef(SwitchBase))
                                               checked={false}
                                               checkedIcon={<RadioButtonSelected />}
                                               className="HvRadio-radio HvBaseRadio-root"
                                               classes={
                                                 Object {
                                                   "checked": "Mui-checked",
-                                                  "colorPrimary": "MuiRadio-colorPrimary",
-                                                  "colorSecondary": "MuiRadio-colorSecondary",
                                                   "disabled": "Mui-disabled",
                                                   "root": "MuiRadio-root",
                                                 }
@@ -2224,17 +2236,19 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                               onFocusVisible={[Function]}
                                               readOnly={false}
                                               required={false}
+                                              type="radio"
                                               value="on"
                                             >
-                                              <WithStyles(ForwardRef(SwitchBase))
+                                              <ForwardRef(SwitchBase)
                                                 checked={false}
                                                 checkedIcon={<RadioButtonSelected />}
                                                 className="HvRadio-radio HvBaseRadio-root"
                                                 classes={
                                                   Object {
-                                                    "checked": "Mui-checked",
-                                                    "disabled": "Mui-disabled",
-                                                    "root": "MuiRadio-root",
+                                                    "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                                    "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                                    "input": "PrivateSwitchBase-input-4",
+                                                    "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                                   }
                                                 }
                                                 color="default"
@@ -2259,42 +2273,32 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 type="radio"
                                                 value="on"
                                               >
-                                                <ForwardRef(SwitchBase)
-                                                  checked={false}
-                                                  checkedIcon={<RadioButtonSelected />}
-                                                  className="HvRadio-radio HvBaseRadio-root"
-                                                  classes={
-                                                    Object {
-                                                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
-                                                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
-                                                      "input": "PrivateSwitchBase-input-4",
-                                                      "root": "PrivateSwitchBase-root-1 MuiRadio-root",
-                                                    }
-                                                  }
+                                                <WithStyles(ForwardRef(IconButton))
+                                                  className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                   color="default"
+                                                  component="span"
                                                   disableRipple={true}
                                                   disabled={false}
-                                                  icon={<RadioButtonUnselected />}
-                                                  id="hvradio13-input"
-                                                  inputProps={
-                                                    Object {
-                                                      "aria-describedby": undefined,
-                                                      "aria-errormessage": undefined,
-                                                      "aria-invalid": undefined,
-                                                      "aria-label": undefined,
-                                                      "aria-labelledby": undefined,
-                                                    }
-                                                  }
                                                   onBlur={[Function]}
-                                                  onChange={[Function]}
+                                                  onFocus={[Function]}
                                                   onFocusVisible={[Function]}
-                                                  readOnly={false}
-                                                  required={false}
-                                                  type="radio"
-                                                  value="on"
+                                                  tabIndex={null}
                                                 >
-                                                  <WithStyles(ForwardRef(IconButton))
+                                                  <ForwardRef(IconButton)
                                                     className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                                    classes={
+                                                      Object {
+                                                        "colorInherit": "MuiIconButton-colorInherit",
+                                                        "colorPrimary": "MuiIconButton-colorPrimary",
+                                                        "colorSecondary": "MuiIconButton-colorSecondary",
+                                                        "disabled": "Mui-disabled",
+                                                        "edgeEnd": "MuiIconButton-edgeEnd",
+                                                        "edgeStart": "MuiIconButton-edgeStart",
+                                                        "label": "MuiIconButton-label",
+                                                        "root": "MuiIconButton-root",
+                                                        "sizeSmall": "MuiIconButton-sizeSmall",
+                                                      }
+                                                    }
                                                     color="default"
                                                     component="span"
                                                     disableRipple={true}
@@ -2304,33 +2308,28 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                     onFocusVisible={[Function]}
                                                     tabIndex={null}
                                                   >
-                                                    <ForwardRef(IconButton)
-                                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                      classes={
-                                                        Object {
-                                                          "colorInherit": "MuiIconButton-colorInherit",
-                                                          "colorPrimary": "MuiIconButton-colorPrimary",
-                                                          "colorSecondary": "MuiIconButton-colorSecondary",
-                                                          "disabled": "Mui-disabled",
-                                                          "edgeEnd": "MuiIconButton-edgeEnd",
-                                                          "edgeStart": "MuiIconButton-edgeStart",
-                                                          "label": "MuiIconButton-label",
-                                                          "root": "MuiIconButton-root",
-                                                          "sizeSmall": "MuiIconButton-sizeSmall",
-                                                        }
-                                                      }
-                                                      color="default"
+                                                    <WithStyles(ForwardRef(ButtonBase))
+                                                      centerRipple={true}
+                                                      className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                       component="span"
                                                       disableRipple={true}
                                                       disabled={false}
+                                                      focusRipple={true}
                                                       onBlur={[Function]}
                                                       onFocus={[Function]}
                                                       onFocusVisible={[Function]}
                                                       tabIndex={null}
                                                     >
-                                                      <WithStyles(ForwardRef(ButtonBase))
+                                                      <ForwardRef(ButtonBase)
                                                         centerRipple={true}
                                                         className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                                        classes={
+                                                          Object {
+                                                            "disabled": "Mui-disabled",
+                                                            "focusVisible": "Mui-focusVisible",
+                                                            "root": "MuiButtonBase-root",
+                                                          }
+                                                        }
                                                         component="span"
                                                         disableRipple={true}
                                                         disabled={false}
@@ -2340,273 +2339,253 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                         onFocusVisible={[Function]}
                                                         tabIndex={null}
                                                       >
-                                                        <ForwardRef(ButtonBase)
-                                                          centerRipple={true}
-                                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                          classes={
-                                                            Object {
-                                                              "disabled": "Mui-disabled",
-                                                              "focusVisible": "Mui-focusVisible",
-                                                              "root": "MuiButtonBase-root",
-                                                            }
-                                                          }
-                                                          component="span"
-                                                          disableRipple={true}
-                                                          disabled={false}
-                                                          focusRipple={true}
+                                                        <span
+                                                          aria-disabled={false}
+                                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                           onBlur={[Function]}
+                                                          onDragLeave={[Function]}
                                                           onFocus={[Function]}
-                                                          onFocusVisible={[Function]}
+                                                          onKeyDown={[Function]}
+                                                          onKeyUp={[Function]}
+                                                          onMouseDown={[Function]}
+                                                          onMouseLeave={[Function]}
+                                                          onMouseUp={[Function]}
+                                                          onTouchEnd={[Function]}
+                                                          onTouchMove={[Function]}
+                                                          onTouchStart={[Function]}
                                                           tabIndex={null}
                                                         >
                                                           <span
-                                                            aria-disabled={false}
-                                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                            onBlur={[Function]}
-                                                            onDragLeave={[Function]}
-                                                            onFocus={[Function]}
-                                                            onKeyDown={[Function]}
-                                                            onKeyUp={[Function]}
-                                                            onMouseDown={[Function]}
-                                                            onMouseLeave={[Function]}
-                                                            onMouseUp={[Function]}
-                                                            onTouchEnd={[Function]}
-                                                            onTouchMove={[Function]}
-                                                            onTouchStart={[Function]}
-                                                            tabIndex={null}
+                                                            className="MuiIconButton-label"
                                                           >
-                                                            <span
-                                                              className="MuiIconButton-label"
-                                                            >
-                                                              <input
-                                                                checked={false}
-                                                                className="PrivateSwitchBase-input-4"
-                                                                disabled={false}
-                                                                id="hvradio13-input"
-                                                                onChange={[Function]}
-                                                                readOnly={false}
-                                                                required={false}
-                                                                type="radio"
-                                                                value="on"
-                                                              />
-                                                              <RadioButtonUnselected>
-                                                                <HvIconBase
-                                                                  iconSize="S"
+                                                            <input
+                                                              checked={false}
+                                                              className="PrivateSwitchBase-input-4"
+                                                              disabled={false}
+                                                              id="hvradio13-input"
+                                                              onChange={[Function]}
+                                                              readOnly={false}
+                                                              required={false}
+                                                              type="radio"
+                                                              value="on"
+                                                            />
+                                                            <RadioButtonUnselected>
+                                                              <HvIconBase
+                                                                iconSize="S"
+                                                                name="RadioButtonUnselected"
+                                                              >
+                                                                <div
+                                                                  className="HvIconBase-root HvIconBase-s"
                                                                   name="RadioButtonUnselected"
                                                                 >
-                                                                  <div
-                                                                    className="HvIconBase-root HvIconBase-s"
-                                                                    name="RadioButtonUnselected"
+                                                                  <svg
+                                                                    focusable={false}
+                                                                    height={16}
+                                                                    viewBox="0 0 16 16"
+                                                                    width={16}
+                                                                    xmlns="http://www.w3.org/2000/svg"
                                                                   >
-                                                                    <svg
-                                                                      focusable={false}
-                                                                      height={16}
-                                                                      viewBox="0 0 16 16"
-                                                                      width={16}
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                    >
-                                                                      <path
-                                                                        className="color0"
-                                                                        d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                                        fill="#FBFCFC"
-                                                                      />
-                                                                      <path
-                                                                        className="color1"
-                                                                        d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                                                        fill="#414141"
-                                                                      />
-                                                                    </svg>
-                                                                  </div>
-                                                                </HvIconBase>
-                                                              </RadioButtonUnselected>
-                                                            </span>
+                                                                    <path
+                                                                      className="color0"
+                                                                      d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                                                      fill="#FBFCFC"
+                                                                    />
+                                                                    <path
+                                                                      className="color1"
+                                                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                                      fill="#414141"
+                                                                    />
+                                                                  </svg>
+                                                                </div>
+                                                              </HvIconBase>
+                                                            </RadioButtonUnselected>
                                                           </span>
-                                                        </ForwardRef(ButtonBase)>
-                                                      </WithStyles(ForwardRef(ButtonBase))>
-                                                    </ForwardRef(IconButton)>
-                                                  </WithStyles(ForwardRef(IconButton))>
-                                                </ForwardRef(SwitchBase)>
-                                              </WithStyles(ForwardRef(SwitchBase))>
-                                            </ForwardRef(Radio)>
-                                          </WithStyles(ForwardRef(Radio))>
-                                        </HvBaseRadio>
-                                      </WithStyles(HvBaseRadio)>
-                                      <WithStyles(HvLabel)
+                                                        </span>
+                                                      </ForwardRef(ButtonBase)>
+                                                    </WithStyles(ForwardRef(ButtonBase))>
+                                                  </ForwardRef(IconButton)>
+                                                </WithStyles(ForwardRef(IconButton))>
+                                              </ForwardRef(SwitchBase)>
+                                            </WithStyles(ForwardRef(SwitchBase))>
+                                          </ForwardRef(Radio)>
+                                        </WithStyles(ForwardRef(Radio))>
+                                      </HvBaseRadio>
+                                    </WithStyles(HvBaseRadio)>
+                                    <WithStyles(HvLabel)
+                                      className="HvRadio-label HvList-truncate"
+                                      htmlFor="hvradio13-input"
+                                      id="hvradio13-label"
+                                      label="Value 1"
+                                    >
+                                      <HvLabel
                                         className="HvRadio-label HvList-truncate"
+                                        classes={
+                                          Object {
+                                            "childGutter": "HvLabel-childGutter",
+                                            "labelDisabled": "HvLabel-labelDisabled",
+                                            "root": "HvLabel-root",
+                                          }
+                                        }
                                         htmlFor="hvradio13-input"
                                         id="hvradio13-label"
                                         label="Value 1"
                                       >
-                                        <HvLabel
-                                          className="HvRadio-label HvList-truncate"
-                                          classes={
-                                            Object {
-                                              "childGutter": "HvLabel-childGutter",
-                                              "labelDisabled": "HvLabel-labelDisabled",
-                                              "root": "HvLabel-root",
-                                            }
-                                          }
+                                        <WithStyles(ForwardRef)
+                                          className="HvRadio-label HvList-truncate HvLabel-root"
+                                          component="label"
                                           htmlFor="hvradio13-input"
                                           id="hvradio13-label"
-                                          label="Value 1"
+                                          variant="highlightText"
                                         >
-                                          <WithStyles(ForwardRef)
+                                          <ForwardRef
                                             className="HvRadio-label HvList-truncate HvLabel-root"
+                                            classes={
+                                              Object {
+                                                "3xlTitle": "HvTypography-3xlTitle",
+                                                "4xlTitle": "HvTypography-4xlTitle",
+                                                "5xlTitle": "HvTypography-5xlTitle",
+                                                "disabledText": "HvTypography-disabledText",
+                                                "highlightText": "HvTypography-highlightText",
+                                                "lTitle": "HvTypography-lTitle",
+                                                "link": "HvTypography-link",
+                                                "mTitle": "HvTypography-mTitle",
+                                                "noWrap": "HvTypography-noWrap",
+                                                "normalText": "HvTypography-normalText",
+                                                "placeholderText": "HvTypography-placeholderText",
+                                                "root": "HvTypography-root",
+                                                "sTitle": "HvTypography-sTitle",
+                                                "sectionTitle": "HvTypography-sectionTitle",
+                                                "selectedNavText": "HvTypography-selectedNavText",
+                                                "vizText": "HvTypography-vizText",
+                                                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                                "xlTitle": "HvTypography-xlTitle",
+                                                "xsInlineLink": "HvTypography-xsInlineLink",
+                                                "xsTitle": "HvTypography-xsTitle",
+                                                "xxlTitle": "HvTypography-xxlTitle",
+                                                "xxsTitle": "HvTypography-xxsTitle",
+                                              }
+                                            }
                                             component="label"
                                             htmlFor="hvradio13-input"
                                             id="hvradio13-label"
                                             variant="highlightText"
                                           >
-                                            <ForwardRef
-                                              className="HvRadio-label HvList-truncate HvLabel-root"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle",
-                                                  "4xlTitle": "HvTypography-4xlTitle",
-                                                  "5xlTitle": "HvTypography-5xlTitle",
-                                                  "disabledText": "HvTypography-disabledText",
-                                                  "highlightText": "HvTypography-highlightText",
-                                                  "lTitle": "HvTypography-lTitle",
-                                                  "link": "HvTypography-link",
-                                                  "mTitle": "HvTypography-mTitle",
-                                                  "noWrap": "HvTypography-noWrap",
-                                                  "normalText": "HvTypography-normalText",
-                                                  "placeholderText": "HvTypography-placeholderText",
-                                                  "root": "HvTypography-root",
-                                                  "sTitle": "HvTypography-sTitle",
-                                                  "sectionTitle": "HvTypography-sectionTitle",
-                                                  "selectedNavText": "HvTypography-selectedNavText",
-                                                  "vizText": "HvTypography-vizText",
-                                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                                  "xlTitle": "HvTypography-xlTitle",
-                                                  "xsInlineLink": "HvTypography-xsInlineLink",
-                                                  "xsTitle": "HvTypography-xsTitle",
-                                                  "xxlTitle": "HvTypography-xxlTitle",
-                                                  "xxsTitle": "HvTypography-xxsTitle",
-                                                }
-                                              }
-                                              component="label"
+                                            <label
+                                              className="HvRadio-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
                                               htmlFor="hvradio13-input"
                                               id="hvradio13-label"
-                                              variant="highlightText"
                                             >
-                                              <label
-                                                className="HvRadio-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
-                                                htmlFor="hvradio13-input"
-                                                id="hvradio13-label"
-                                              >
-                                                Value 1
-                                              </label>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </HvLabel>
-                                      </WithStyles(HvLabel)>
-                                    </div>
-                                    <WithStyles(HvWarningText)
+                                              Value 1
+                                            </label>
+                                          </ForwardRef>
+                                        </WithStyles(ForwardRef)>
+                                      </HvLabel>
+                                    </WithStyles(HvLabel)>
+                                  </div>
+                                  <WithStyles(HvWarningText)
+                                    id="hvradio13-error"
+                                  >
+                                    <HvWarningText
+                                      classes={
+                                        Object {
+                                          "defaultIcon": "HvWarningText-defaultIcon",
+                                          "hideText": "HvWarningText-hideText",
+                                          "root": "HvWarningText-root",
+                                          "show": "HvWarningText-show",
+                                          "topBorder": "HvWarningText-topBorder",
+                                          "topGutter": "HvWarningText-topGutter",
+                                          "warningText": "HvWarningText-warningText",
+                                        }
+                                      }
                                       id="hvradio13-error"
                                     >
-                                      <HvWarningText
-                                        classes={
-                                          Object {
-                                            "defaultIcon": "HvWarningText-defaultIcon",
-                                            "hideText": "HvWarningText-hideText",
-                                            "root": "HvWarningText-root",
-                                            "show": "HvWarningText-show",
-                                            "topBorder": "HvWarningText-topBorder",
-                                            "topGutter": "HvWarningText-topGutter",
-                                            "warningText": "HvWarningText-warningText",
-                                          }
-                                        }
-                                        id="hvradio13-error"
+                                      <div
+                                        className="HvWarningText-root HvWarningText-topBorder"
                                       >
-                                        <div
-                                          className="HvWarningText-root HvWarningText-topBorder"
+                                        <Fail
+                                          className="HvWarningText-defaultIcon"
+                                          semantic="sema4"
                                         >
-                                          <Fail
+                                          <HvIconBase
                                             className="HvWarningText-defaultIcon"
-                                            semantic="sema4"
+                                            iconSize="S"
+                                            name="Fail"
                                           >
-                                            <HvIconBase
-                                              className="HvWarningText-defaultIcon"
-                                              iconSize="S"
+                                            <div
+                                              className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                                               name="Fail"
                                             >
-                                              <div
-                                                className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
-                                                name="Fail"
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
                                               >
-                                                <svg
-                                                  focusable={false}
-                                                  height={16}
-                                                  viewBox="0 0 16 16"
-                                                  width={16}
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    className="color0"
-                                                    d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                                    fill="#C62828"
-                                                  />
-                                                </svg>
-                                              </div>
-                                            </HvIconBase>
-                                          </Fail>
-                                          <WithStyles(ForwardRef)
+                                                <path
+                                                  className="color0"
+                                                  d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                                  fill="#C62828"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </Fail>
+                                        <WithStyles(ForwardRef)
+                                          aria-atomic="true"
+                                          aria-live="polite"
+                                          aria-relevant="additions text"
+                                          className="HvWarningText-warningText HvWarningText-topGutter"
+                                          id="hvradio13-error"
+                                        >
+                                          <ForwardRef
                                             aria-atomic="true"
                                             aria-live="polite"
                                             aria-relevant="additions text"
                                             className="HvWarningText-warningText HvWarningText-topGutter"
+                                            classes={
+                                              Object {
+                                                "3xlTitle": "HvTypography-3xlTitle",
+                                                "4xlTitle": "HvTypography-4xlTitle",
+                                                "5xlTitle": "HvTypography-5xlTitle",
+                                                "disabledText": "HvTypography-disabledText",
+                                                "highlightText": "HvTypography-highlightText",
+                                                "lTitle": "HvTypography-lTitle",
+                                                "link": "HvTypography-link",
+                                                "mTitle": "HvTypography-mTitle",
+                                                "noWrap": "HvTypography-noWrap",
+                                                "normalText": "HvTypography-normalText",
+                                                "placeholderText": "HvTypography-placeholderText",
+                                                "root": "HvTypography-root",
+                                                "sTitle": "HvTypography-sTitle",
+                                                "sectionTitle": "HvTypography-sectionTitle",
+                                                "selectedNavText": "HvTypography-selectedNavText",
+                                                "vizText": "HvTypography-vizText",
+                                                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                                "xlTitle": "HvTypography-xlTitle",
+                                                "xsInlineLink": "HvTypography-xsInlineLink",
+                                                "xsTitle": "HvTypography-xsTitle",
+                                                "xxlTitle": "HvTypography-xxlTitle",
+                                                "xxsTitle": "HvTypography-xxsTitle",
+                                              }
+                                            }
                                             id="hvradio13-error"
                                           >
-                                            <ForwardRef
+                                            <p
                                               aria-atomic="true"
                                               aria-live="polite"
                                               aria-relevant="additions text"
-                                              className="HvWarningText-warningText HvWarningText-topGutter"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle",
-                                                  "4xlTitle": "HvTypography-4xlTitle",
-                                                  "5xlTitle": "HvTypography-5xlTitle",
-                                                  "disabledText": "HvTypography-disabledText",
-                                                  "highlightText": "HvTypography-highlightText",
-                                                  "lTitle": "HvTypography-lTitle",
-                                                  "link": "HvTypography-link",
-                                                  "mTitle": "HvTypography-mTitle",
-                                                  "noWrap": "HvTypography-noWrap",
-                                                  "normalText": "HvTypography-normalText",
-                                                  "placeholderText": "HvTypography-placeholderText",
-                                                  "root": "HvTypography-root",
-                                                  "sTitle": "HvTypography-sTitle",
-                                                  "sectionTitle": "HvTypography-sectionTitle",
-                                                  "selectedNavText": "HvTypography-selectedNavText",
-                                                  "vizText": "HvTypography-vizText",
-                                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                                  "xlTitle": "HvTypography-xlTitle",
-                                                  "xsInlineLink": "HvTypography-xsInlineLink",
-                                                  "xsTitle": "HvTypography-xsTitle",
-                                                  "xxlTitle": "HvTypography-xxlTitle",
-                                                  "xxsTitle": "HvTypography-xxsTitle",
-                                                }
-                                              }
+                                              className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
                                               id="hvradio13-error"
-                                            >
-                                              <p
-                                                aria-atomic="true"
-                                                aria-live="polite"
-                                                aria-relevant="additions text"
-                                                className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                                                id="hvradio13-error"
-                                              />
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </div>
-                                      </HvWarningText>
-                                    </WithStyles(HvWarningText)>
-                                  </div>
-                                </HvFormElement>
-                              </WithId>
-                            </WithStyles(WithId)>
+                                            />
+                                          </ForwardRef>
+                                        </WithStyles(ForwardRef)>
+                                      </div>
+                                    </HvWarningText>
+                                  </WithStyles(HvWarningText)>
+                                </div>
+                              </HvFormElement>
+                            </WithStyles(HvFormElement)>
                           </HvRadio>
                         </WithStyles(HvRadio)>
                       </ComponentFunction>
@@ -2673,7 +2652,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-14"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -2762,7 +2740,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-16"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -2851,7 +2828,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-18"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -2969,7 +2945,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-14"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -3058,7 +3033,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-16"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -3147,7 +3121,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-18"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -3275,14 +3248,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             }
                             label="Value 2"
                           >
-                            <WithStyles(WithId)
+                            <WithStyles(HvFormElement)
                               className="HvRadio-root HvList-selectorRoot"
                               disabled={false}
                               readOnly={false}
                               required={false}
                               status="standBy"
                             >
-                              <WithId
+                              <HvFormElement
                                 className="HvRadio-root HvList-selectorRoot"
                                 classes={
                                   Object {
@@ -3294,29 +3267,43 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 required={false}
                                 status="standBy"
                               >
-                                <HvFormElement
-                                  className="HvRadio-root HvList-selectorRoot"
-                                  classes={
-                                    Object {
-                                      "root": "HvFormElement-root",
-                                    }
-                                  }
-                                  disabled={false}
-                                  id="hv-form-element-16"
-                                  readOnly={false}
-                                  required={false}
-                                  status="standBy"
+                                <div
+                                  className="HvRadio-root HvList-selectorRoot HvFormElement-root"
                                 >
                                   <div
-                                    className="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                                    id="hv-form-element-16"
+                                    className="HvRadio-container HvList-selectorContainer"
                                   >
-                                    <div
-                                      className="HvRadio-container HvList-selectorContainer"
+                                    <WithStyles(HvBaseRadio)
+                                      checked={false}
+                                      className="HvRadio-radio"
+                                      disabled={false}
+                                      id="hvradio15-input"
+                                      inputProps={
+                                        Object {
+                                          "aria-describedby": undefined,
+                                          "aria-errormessage": undefined,
+                                          "aria-invalid": undefined,
+                                          "aria-label": undefined,
+                                          "aria-labelledby": undefined,
+                                        }
+                                      }
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocusVisible={[Function]}
+                                      readOnly={false}
+                                      semantic={false}
+                                      value="on"
                                     >
-                                      <WithStyles(HvBaseRadio)
+                                      <HvBaseRadio
                                         checked={false}
                                         className="HvRadio-radio"
+                                        classes={
+                                          Object {
+                                            "disabled": "HvBaseRadio-disabled",
+                                            "focusVisible": "HvBaseRadio-focusVisible",
+                                            "root": "HvBaseRadio-root",
+                                          }
+                                        }
                                         disabled={false}
                                         id="hvradio15-input"
                                         inputProps={
@@ -3335,17 +3322,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         semantic={false}
                                         value="on"
                                       >
-                                        <HvBaseRadio
+                                        <WithStyles(ForwardRef(Radio))
                                           checked={false}
-                                          className="HvRadio-radio"
-                                          classes={
-                                            Object {
-                                              "disabled": "HvBaseRadio-disabled",
-                                              "focusVisible": "HvBaseRadio-focusVisible",
-                                              "root": "HvBaseRadio-root",
-                                            }
-                                          }
+                                          checkedIcon={<RadioButtonSelected />}
+                                          className="HvRadio-radio HvBaseRadio-root"
+                                          color="default"
+                                          disableRipple={true}
                                           disabled={false}
+                                          icon={<RadioButtonUnselected />}
                                           id="hvradio15-input"
                                           inputProps={
                                             Object {
@@ -3360,13 +3344,22 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                           onChange={[Function]}
                                           onFocusVisible={[Function]}
                                           readOnly={false}
-                                          semantic={false}
+                                          required={false}
                                           value="on"
                                         >
-                                          <WithStyles(ForwardRef(Radio))
+                                          <ForwardRef(Radio)
                                             checked={false}
                                             checkedIcon={<RadioButtonSelected />}
                                             className="HvRadio-radio HvBaseRadio-root"
+                                            classes={
+                                              Object {
+                                                "checked": "Mui-checked",
+                                                "colorPrimary": "MuiRadio-colorPrimary",
+                                                "colorSecondary": "MuiRadio-colorSecondary",
+                                                "disabled": "Mui-disabled",
+                                                "root": "MuiRadio-root",
+                                              }
+                                            }
                                             color="default"
                                             disableRipple={true}
                                             disabled={false}
@@ -3388,15 +3381,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             required={false}
                                             value="on"
                                           >
-                                            <ForwardRef(Radio)
+                                            <WithStyles(ForwardRef(SwitchBase))
                                               checked={false}
                                               checkedIcon={<RadioButtonSelected />}
                                               className="HvRadio-radio HvBaseRadio-root"
                                               classes={
                                                 Object {
                                                   "checked": "Mui-checked",
-                                                  "colorPrimary": "MuiRadio-colorPrimary",
-                                                  "colorSecondary": "MuiRadio-colorSecondary",
                                                   "disabled": "Mui-disabled",
                                                   "root": "MuiRadio-root",
                                                 }
@@ -3420,17 +3411,19 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                               onFocusVisible={[Function]}
                                               readOnly={false}
                                               required={false}
+                                              type="radio"
                                               value="on"
                                             >
-                                              <WithStyles(ForwardRef(SwitchBase))
+                                              <ForwardRef(SwitchBase)
                                                 checked={false}
                                                 checkedIcon={<RadioButtonSelected />}
                                                 className="HvRadio-radio HvBaseRadio-root"
                                                 classes={
                                                   Object {
-                                                    "checked": "Mui-checked",
-                                                    "disabled": "Mui-disabled",
-                                                    "root": "MuiRadio-root",
+                                                    "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                                    "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                                    "input": "PrivateSwitchBase-input-4",
+                                                    "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                                   }
                                                 }
                                                 color="default"
@@ -3455,42 +3448,32 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 type="radio"
                                                 value="on"
                                               >
-                                                <ForwardRef(SwitchBase)
-                                                  checked={false}
-                                                  checkedIcon={<RadioButtonSelected />}
-                                                  className="HvRadio-radio HvBaseRadio-root"
-                                                  classes={
-                                                    Object {
-                                                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
-                                                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
-                                                      "input": "PrivateSwitchBase-input-4",
-                                                      "root": "PrivateSwitchBase-root-1 MuiRadio-root",
-                                                    }
-                                                  }
+                                                <WithStyles(ForwardRef(IconButton))
+                                                  className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                   color="default"
+                                                  component="span"
                                                   disableRipple={true}
                                                   disabled={false}
-                                                  icon={<RadioButtonUnselected />}
-                                                  id="hvradio15-input"
-                                                  inputProps={
-                                                    Object {
-                                                      "aria-describedby": undefined,
-                                                      "aria-errormessage": undefined,
-                                                      "aria-invalid": undefined,
-                                                      "aria-label": undefined,
-                                                      "aria-labelledby": undefined,
-                                                    }
-                                                  }
                                                   onBlur={[Function]}
-                                                  onChange={[Function]}
+                                                  onFocus={[Function]}
                                                   onFocusVisible={[Function]}
-                                                  readOnly={false}
-                                                  required={false}
-                                                  type="radio"
-                                                  value="on"
+                                                  tabIndex={null}
                                                 >
-                                                  <WithStyles(ForwardRef(IconButton))
+                                                  <ForwardRef(IconButton)
                                                     className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                                    classes={
+                                                      Object {
+                                                        "colorInherit": "MuiIconButton-colorInherit",
+                                                        "colorPrimary": "MuiIconButton-colorPrimary",
+                                                        "colorSecondary": "MuiIconButton-colorSecondary",
+                                                        "disabled": "Mui-disabled",
+                                                        "edgeEnd": "MuiIconButton-edgeEnd",
+                                                        "edgeStart": "MuiIconButton-edgeStart",
+                                                        "label": "MuiIconButton-label",
+                                                        "root": "MuiIconButton-root",
+                                                        "sizeSmall": "MuiIconButton-sizeSmall",
+                                                      }
+                                                    }
                                                     color="default"
                                                     component="span"
                                                     disableRipple={true}
@@ -3500,33 +3483,28 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                     onFocusVisible={[Function]}
                                                     tabIndex={null}
                                                   >
-                                                    <ForwardRef(IconButton)
-                                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                      classes={
-                                                        Object {
-                                                          "colorInherit": "MuiIconButton-colorInherit",
-                                                          "colorPrimary": "MuiIconButton-colorPrimary",
-                                                          "colorSecondary": "MuiIconButton-colorSecondary",
-                                                          "disabled": "Mui-disabled",
-                                                          "edgeEnd": "MuiIconButton-edgeEnd",
-                                                          "edgeStart": "MuiIconButton-edgeStart",
-                                                          "label": "MuiIconButton-label",
-                                                          "root": "MuiIconButton-root",
-                                                          "sizeSmall": "MuiIconButton-sizeSmall",
-                                                        }
-                                                      }
-                                                      color="default"
+                                                    <WithStyles(ForwardRef(ButtonBase))
+                                                      centerRipple={true}
+                                                      className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                       component="span"
                                                       disableRipple={true}
                                                       disabled={false}
+                                                      focusRipple={true}
                                                       onBlur={[Function]}
                                                       onFocus={[Function]}
                                                       onFocusVisible={[Function]}
                                                       tabIndex={null}
                                                     >
-                                                      <WithStyles(ForwardRef(ButtonBase))
+                                                      <ForwardRef(ButtonBase)
                                                         centerRipple={true}
                                                         className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                                        classes={
+                                                          Object {
+                                                            "disabled": "Mui-disabled",
+                                                            "focusVisible": "Mui-focusVisible",
+                                                            "root": "MuiButtonBase-root",
+                                                          }
+                                                        }
                                                         component="span"
                                                         disableRipple={true}
                                                         disabled={false}
@@ -3536,273 +3514,253 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                         onFocusVisible={[Function]}
                                                         tabIndex={null}
                                                       >
-                                                        <ForwardRef(ButtonBase)
-                                                          centerRipple={true}
-                                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                          classes={
-                                                            Object {
-                                                              "disabled": "Mui-disabled",
-                                                              "focusVisible": "Mui-focusVisible",
-                                                              "root": "MuiButtonBase-root",
-                                                            }
-                                                          }
-                                                          component="span"
-                                                          disableRipple={true}
-                                                          disabled={false}
-                                                          focusRipple={true}
+                                                        <span
+                                                          aria-disabled={false}
+                                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                           onBlur={[Function]}
+                                                          onDragLeave={[Function]}
                                                           onFocus={[Function]}
-                                                          onFocusVisible={[Function]}
+                                                          onKeyDown={[Function]}
+                                                          onKeyUp={[Function]}
+                                                          onMouseDown={[Function]}
+                                                          onMouseLeave={[Function]}
+                                                          onMouseUp={[Function]}
+                                                          onTouchEnd={[Function]}
+                                                          onTouchMove={[Function]}
+                                                          onTouchStart={[Function]}
                                                           tabIndex={null}
                                                         >
                                                           <span
-                                                            aria-disabled={false}
-                                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                            onBlur={[Function]}
-                                                            onDragLeave={[Function]}
-                                                            onFocus={[Function]}
-                                                            onKeyDown={[Function]}
-                                                            onKeyUp={[Function]}
-                                                            onMouseDown={[Function]}
-                                                            onMouseLeave={[Function]}
-                                                            onMouseUp={[Function]}
-                                                            onTouchEnd={[Function]}
-                                                            onTouchMove={[Function]}
-                                                            onTouchStart={[Function]}
-                                                            tabIndex={null}
+                                                            className="MuiIconButton-label"
                                                           >
-                                                            <span
-                                                              className="MuiIconButton-label"
-                                                            >
-                                                              <input
-                                                                checked={false}
-                                                                className="PrivateSwitchBase-input-4"
-                                                                disabled={false}
-                                                                id="hvradio15-input"
-                                                                onChange={[Function]}
-                                                                readOnly={false}
-                                                                required={false}
-                                                                type="radio"
-                                                                value="on"
-                                                              />
-                                                              <RadioButtonUnselected>
-                                                                <HvIconBase
-                                                                  iconSize="S"
+                                                            <input
+                                                              checked={false}
+                                                              className="PrivateSwitchBase-input-4"
+                                                              disabled={false}
+                                                              id="hvradio15-input"
+                                                              onChange={[Function]}
+                                                              readOnly={false}
+                                                              required={false}
+                                                              type="radio"
+                                                              value="on"
+                                                            />
+                                                            <RadioButtonUnselected>
+                                                              <HvIconBase
+                                                                iconSize="S"
+                                                                name="RadioButtonUnselected"
+                                                              >
+                                                                <div
+                                                                  className="HvIconBase-root HvIconBase-s"
                                                                   name="RadioButtonUnselected"
                                                                 >
-                                                                  <div
-                                                                    className="HvIconBase-root HvIconBase-s"
-                                                                    name="RadioButtonUnselected"
+                                                                  <svg
+                                                                    focusable={false}
+                                                                    height={16}
+                                                                    viewBox="0 0 16 16"
+                                                                    width={16}
+                                                                    xmlns="http://www.w3.org/2000/svg"
                                                                   >
-                                                                    <svg
-                                                                      focusable={false}
-                                                                      height={16}
-                                                                      viewBox="0 0 16 16"
-                                                                      width={16}
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                    >
-                                                                      <path
-                                                                        className="color0"
-                                                                        d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                                        fill="#FBFCFC"
-                                                                      />
-                                                                      <path
-                                                                        className="color1"
-                                                                        d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                                                        fill="#414141"
-                                                                      />
-                                                                    </svg>
-                                                                  </div>
-                                                                </HvIconBase>
-                                                              </RadioButtonUnselected>
-                                                            </span>
+                                                                    <path
+                                                                      className="color0"
+                                                                      d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                                                      fill="#FBFCFC"
+                                                                    />
+                                                                    <path
+                                                                      className="color1"
+                                                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                                      fill="#414141"
+                                                                    />
+                                                                  </svg>
+                                                                </div>
+                                                              </HvIconBase>
+                                                            </RadioButtonUnselected>
                                                           </span>
-                                                        </ForwardRef(ButtonBase)>
-                                                      </WithStyles(ForwardRef(ButtonBase))>
-                                                    </ForwardRef(IconButton)>
-                                                  </WithStyles(ForwardRef(IconButton))>
-                                                </ForwardRef(SwitchBase)>
-                                              </WithStyles(ForwardRef(SwitchBase))>
-                                            </ForwardRef(Radio)>
-                                          </WithStyles(ForwardRef(Radio))>
-                                        </HvBaseRadio>
-                                      </WithStyles(HvBaseRadio)>
-                                      <WithStyles(HvLabel)
+                                                        </span>
+                                                      </ForwardRef(ButtonBase)>
+                                                    </WithStyles(ForwardRef(ButtonBase))>
+                                                  </ForwardRef(IconButton)>
+                                                </WithStyles(ForwardRef(IconButton))>
+                                              </ForwardRef(SwitchBase)>
+                                            </WithStyles(ForwardRef(SwitchBase))>
+                                          </ForwardRef(Radio)>
+                                        </WithStyles(ForwardRef(Radio))>
+                                      </HvBaseRadio>
+                                    </WithStyles(HvBaseRadio)>
+                                    <WithStyles(HvLabel)
+                                      className="HvRadio-label HvList-truncate"
+                                      htmlFor="hvradio15-input"
+                                      id="hvradio15-label"
+                                      label="Value 2"
+                                    >
+                                      <HvLabel
                                         className="HvRadio-label HvList-truncate"
+                                        classes={
+                                          Object {
+                                            "childGutter": "HvLabel-childGutter",
+                                            "labelDisabled": "HvLabel-labelDisabled",
+                                            "root": "HvLabel-root",
+                                          }
+                                        }
                                         htmlFor="hvradio15-input"
                                         id="hvradio15-label"
                                         label="Value 2"
                                       >
-                                        <HvLabel
-                                          className="HvRadio-label HvList-truncate"
-                                          classes={
-                                            Object {
-                                              "childGutter": "HvLabel-childGutter",
-                                              "labelDisabled": "HvLabel-labelDisabled",
-                                              "root": "HvLabel-root",
-                                            }
-                                          }
+                                        <WithStyles(ForwardRef)
+                                          className="HvRadio-label HvList-truncate HvLabel-root"
+                                          component="label"
                                           htmlFor="hvradio15-input"
                                           id="hvradio15-label"
-                                          label="Value 2"
+                                          variant="highlightText"
                                         >
-                                          <WithStyles(ForwardRef)
+                                          <ForwardRef
                                             className="HvRadio-label HvList-truncate HvLabel-root"
+                                            classes={
+                                              Object {
+                                                "3xlTitle": "HvTypography-3xlTitle",
+                                                "4xlTitle": "HvTypography-4xlTitle",
+                                                "5xlTitle": "HvTypography-5xlTitle",
+                                                "disabledText": "HvTypography-disabledText",
+                                                "highlightText": "HvTypography-highlightText",
+                                                "lTitle": "HvTypography-lTitle",
+                                                "link": "HvTypography-link",
+                                                "mTitle": "HvTypography-mTitle",
+                                                "noWrap": "HvTypography-noWrap",
+                                                "normalText": "HvTypography-normalText",
+                                                "placeholderText": "HvTypography-placeholderText",
+                                                "root": "HvTypography-root",
+                                                "sTitle": "HvTypography-sTitle",
+                                                "sectionTitle": "HvTypography-sectionTitle",
+                                                "selectedNavText": "HvTypography-selectedNavText",
+                                                "vizText": "HvTypography-vizText",
+                                                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                                "xlTitle": "HvTypography-xlTitle",
+                                                "xsInlineLink": "HvTypography-xsInlineLink",
+                                                "xsTitle": "HvTypography-xsTitle",
+                                                "xxlTitle": "HvTypography-xxlTitle",
+                                                "xxsTitle": "HvTypography-xxsTitle",
+                                              }
+                                            }
                                             component="label"
                                             htmlFor="hvradio15-input"
                                             id="hvradio15-label"
                                             variant="highlightText"
                                           >
-                                            <ForwardRef
-                                              className="HvRadio-label HvList-truncate HvLabel-root"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle",
-                                                  "4xlTitle": "HvTypography-4xlTitle",
-                                                  "5xlTitle": "HvTypography-5xlTitle",
-                                                  "disabledText": "HvTypography-disabledText",
-                                                  "highlightText": "HvTypography-highlightText",
-                                                  "lTitle": "HvTypography-lTitle",
-                                                  "link": "HvTypography-link",
-                                                  "mTitle": "HvTypography-mTitle",
-                                                  "noWrap": "HvTypography-noWrap",
-                                                  "normalText": "HvTypography-normalText",
-                                                  "placeholderText": "HvTypography-placeholderText",
-                                                  "root": "HvTypography-root",
-                                                  "sTitle": "HvTypography-sTitle",
-                                                  "sectionTitle": "HvTypography-sectionTitle",
-                                                  "selectedNavText": "HvTypography-selectedNavText",
-                                                  "vizText": "HvTypography-vizText",
-                                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                                  "xlTitle": "HvTypography-xlTitle",
-                                                  "xsInlineLink": "HvTypography-xsInlineLink",
-                                                  "xsTitle": "HvTypography-xsTitle",
-                                                  "xxlTitle": "HvTypography-xxlTitle",
-                                                  "xxsTitle": "HvTypography-xxsTitle",
-                                                }
-                                              }
-                                              component="label"
+                                            <label
+                                              className="HvRadio-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
                                               htmlFor="hvradio15-input"
                                               id="hvradio15-label"
-                                              variant="highlightText"
                                             >
-                                              <label
-                                                className="HvRadio-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
-                                                htmlFor="hvradio15-input"
-                                                id="hvradio15-label"
-                                              >
-                                                Value 2
-                                              </label>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </HvLabel>
-                                      </WithStyles(HvLabel)>
-                                    </div>
-                                    <WithStyles(HvWarningText)
+                                              Value 2
+                                            </label>
+                                          </ForwardRef>
+                                        </WithStyles(ForwardRef)>
+                                      </HvLabel>
+                                    </WithStyles(HvLabel)>
+                                  </div>
+                                  <WithStyles(HvWarningText)
+                                    id="hvradio15-error"
+                                  >
+                                    <HvWarningText
+                                      classes={
+                                        Object {
+                                          "defaultIcon": "HvWarningText-defaultIcon",
+                                          "hideText": "HvWarningText-hideText",
+                                          "root": "HvWarningText-root",
+                                          "show": "HvWarningText-show",
+                                          "topBorder": "HvWarningText-topBorder",
+                                          "topGutter": "HvWarningText-topGutter",
+                                          "warningText": "HvWarningText-warningText",
+                                        }
+                                      }
                                       id="hvradio15-error"
                                     >
-                                      <HvWarningText
-                                        classes={
-                                          Object {
-                                            "defaultIcon": "HvWarningText-defaultIcon",
-                                            "hideText": "HvWarningText-hideText",
-                                            "root": "HvWarningText-root",
-                                            "show": "HvWarningText-show",
-                                            "topBorder": "HvWarningText-topBorder",
-                                            "topGutter": "HvWarningText-topGutter",
-                                            "warningText": "HvWarningText-warningText",
-                                          }
-                                        }
-                                        id="hvradio15-error"
+                                      <div
+                                        className="HvWarningText-root HvWarningText-topBorder"
                                       >
-                                        <div
-                                          className="HvWarningText-root HvWarningText-topBorder"
+                                        <Fail
+                                          className="HvWarningText-defaultIcon"
+                                          semantic="sema4"
                                         >
-                                          <Fail
+                                          <HvIconBase
                                             className="HvWarningText-defaultIcon"
-                                            semantic="sema4"
+                                            iconSize="S"
+                                            name="Fail"
                                           >
-                                            <HvIconBase
-                                              className="HvWarningText-defaultIcon"
-                                              iconSize="S"
+                                            <div
+                                              className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                                               name="Fail"
                                             >
-                                              <div
-                                                className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
-                                                name="Fail"
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
                                               >
-                                                <svg
-                                                  focusable={false}
-                                                  height={16}
-                                                  viewBox="0 0 16 16"
-                                                  width={16}
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    className="color0"
-                                                    d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                                    fill="#C62828"
-                                                  />
-                                                </svg>
-                                              </div>
-                                            </HvIconBase>
-                                          </Fail>
-                                          <WithStyles(ForwardRef)
+                                                <path
+                                                  className="color0"
+                                                  d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                                  fill="#C62828"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </Fail>
+                                        <WithStyles(ForwardRef)
+                                          aria-atomic="true"
+                                          aria-live="polite"
+                                          aria-relevant="additions text"
+                                          className="HvWarningText-warningText HvWarningText-topGutter"
+                                          id="hvradio15-error"
+                                        >
+                                          <ForwardRef
                                             aria-atomic="true"
                                             aria-live="polite"
                                             aria-relevant="additions text"
                                             className="HvWarningText-warningText HvWarningText-topGutter"
+                                            classes={
+                                              Object {
+                                                "3xlTitle": "HvTypography-3xlTitle",
+                                                "4xlTitle": "HvTypography-4xlTitle",
+                                                "5xlTitle": "HvTypography-5xlTitle",
+                                                "disabledText": "HvTypography-disabledText",
+                                                "highlightText": "HvTypography-highlightText",
+                                                "lTitle": "HvTypography-lTitle",
+                                                "link": "HvTypography-link",
+                                                "mTitle": "HvTypography-mTitle",
+                                                "noWrap": "HvTypography-noWrap",
+                                                "normalText": "HvTypography-normalText",
+                                                "placeholderText": "HvTypography-placeholderText",
+                                                "root": "HvTypography-root",
+                                                "sTitle": "HvTypography-sTitle",
+                                                "sectionTitle": "HvTypography-sectionTitle",
+                                                "selectedNavText": "HvTypography-selectedNavText",
+                                                "vizText": "HvTypography-vizText",
+                                                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                                "xlTitle": "HvTypography-xlTitle",
+                                                "xsInlineLink": "HvTypography-xsInlineLink",
+                                                "xsTitle": "HvTypography-xsTitle",
+                                                "xxlTitle": "HvTypography-xxlTitle",
+                                                "xxsTitle": "HvTypography-xxsTitle",
+                                              }
+                                            }
                                             id="hvradio15-error"
                                           >
-                                            <ForwardRef
+                                            <p
                                               aria-atomic="true"
                                               aria-live="polite"
                                               aria-relevant="additions text"
-                                              className="HvWarningText-warningText HvWarningText-topGutter"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle",
-                                                  "4xlTitle": "HvTypography-4xlTitle",
-                                                  "5xlTitle": "HvTypography-5xlTitle",
-                                                  "disabledText": "HvTypography-disabledText",
-                                                  "highlightText": "HvTypography-highlightText",
-                                                  "lTitle": "HvTypography-lTitle",
-                                                  "link": "HvTypography-link",
-                                                  "mTitle": "HvTypography-mTitle",
-                                                  "noWrap": "HvTypography-noWrap",
-                                                  "normalText": "HvTypography-normalText",
-                                                  "placeholderText": "HvTypography-placeholderText",
-                                                  "root": "HvTypography-root",
-                                                  "sTitle": "HvTypography-sTitle",
-                                                  "sectionTitle": "HvTypography-sectionTitle",
-                                                  "selectedNavText": "HvTypography-selectedNavText",
-                                                  "vizText": "HvTypography-vizText",
-                                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                                  "xlTitle": "HvTypography-xlTitle",
-                                                  "xsInlineLink": "HvTypography-xsInlineLink",
-                                                  "xsTitle": "HvTypography-xsTitle",
-                                                  "xxlTitle": "HvTypography-xxlTitle",
-                                                  "xxsTitle": "HvTypography-xxsTitle",
-                                                }
-                                              }
+                                              className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
                                               id="hvradio15-error"
-                                            >
-                                              <p
-                                                aria-atomic="true"
-                                                aria-live="polite"
-                                                aria-relevant="additions text"
-                                                className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                                                id="hvradio15-error"
-                                              />
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </div>
-                                      </HvWarningText>
-                                    </WithStyles(HvWarningText)>
-                                  </div>
-                                </HvFormElement>
-                              </WithId>
-                            </WithStyles(WithId)>
+                                            />
+                                          </ForwardRef>
+                                        </WithStyles(ForwardRef)>
+                                      </div>
+                                    </HvWarningText>
+                                  </WithStyles(HvWarningText)>
+                                </div>
+                              </HvFormElement>
+                            </WithStyles(HvFormElement)>
                           </HvRadio>
                         </WithStyles(HvRadio)>
                       </ComponentFunction>
@@ -3869,7 +3827,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-14"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -3958,7 +3915,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-16"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -4047,7 +4003,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <div
                           class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                          id="hv-form-element-18"
                         >
                           <div
                             class="HvRadio-container HvList-selectorContainer"
@@ -4165,7 +4120,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-14"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -4254,7 +4208,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-16"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -4343,7 +4296,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                         >
                           <div
                             class="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                            id="hv-form-element-18"
                           >
                             <div
                               class="HvRadio-container HvList-selectorContainer"
@@ -4471,14 +4423,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             }
                             label="Value 3"
                           >
-                            <WithStyles(WithId)
+                            <WithStyles(HvFormElement)
                               className="HvRadio-root HvList-selectorRoot"
                               disabled={false}
                               readOnly={false}
                               required={false}
                               status="standBy"
                             >
-                              <WithId
+                              <HvFormElement
                                 className="HvRadio-root HvList-selectorRoot"
                                 classes={
                                   Object {
@@ -4490,29 +4442,43 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 required={false}
                                 status="standBy"
                               >
-                                <HvFormElement
-                                  className="HvRadio-root HvList-selectorRoot"
-                                  classes={
-                                    Object {
-                                      "root": "HvFormElement-root",
-                                    }
-                                  }
-                                  disabled={false}
-                                  id="hv-form-element-18"
-                                  readOnly={false}
-                                  required={false}
-                                  status="standBy"
+                                <div
+                                  className="HvRadio-root HvList-selectorRoot HvFormElement-root"
                                 >
                                   <div
-                                    className="HvRadio-root HvList-selectorRoot HvFormElement-root"
-                                    id="hv-form-element-18"
+                                    className="HvRadio-container HvList-selectorContainer"
                                   >
-                                    <div
-                                      className="HvRadio-container HvList-selectorContainer"
+                                    <WithStyles(HvBaseRadio)
+                                      checked={false}
+                                      className="HvRadio-radio"
+                                      disabled={false}
+                                      id="hvradio17-input"
+                                      inputProps={
+                                        Object {
+                                          "aria-describedby": undefined,
+                                          "aria-errormessage": undefined,
+                                          "aria-invalid": undefined,
+                                          "aria-label": undefined,
+                                          "aria-labelledby": undefined,
+                                        }
+                                      }
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocusVisible={[Function]}
+                                      readOnly={false}
+                                      semantic={false}
+                                      value="on"
                                     >
-                                      <WithStyles(HvBaseRadio)
+                                      <HvBaseRadio
                                         checked={false}
                                         className="HvRadio-radio"
+                                        classes={
+                                          Object {
+                                            "disabled": "HvBaseRadio-disabled",
+                                            "focusVisible": "HvBaseRadio-focusVisible",
+                                            "root": "HvBaseRadio-root",
+                                          }
+                                        }
                                         disabled={false}
                                         id="hvradio17-input"
                                         inputProps={
@@ -4531,17 +4497,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         semantic={false}
                                         value="on"
                                       >
-                                        <HvBaseRadio
+                                        <WithStyles(ForwardRef(Radio))
                                           checked={false}
-                                          className="HvRadio-radio"
-                                          classes={
-                                            Object {
-                                              "disabled": "HvBaseRadio-disabled",
-                                              "focusVisible": "HvBaseRadio-focusVisible",
-                                              "root": "HvBaseRadio-root",
-                                            }
-                                          }
+                                          checkedIcon={<RadioButtonSelected />}
+                                          className="HvRadio-radio HvBaseRadio-root"
+                                          color="default"
+                                          disableRipple={true}
                                           disabled={false}
+                                          icon={<RadioButtonUnselected />}
                                           id="hvradio17-input"
                                           inputProps={
                                             Object {
@@ -4556,13 +4519,22 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                           onChange={[Function]}
                                           onFocusVisible={[Function]}
                                           readOnly={false}
-                                          semantic={false}
+                                          required={false}
                                           value="on"
                                         >
-                                          <WithStyles(ForwardRef(Radio))
+                                          <ForwardRef(Radio)
                                             checked={false}
                                             checkedIcon={<RadioButtonSelected />}
                                             className="HvRadio-radio HvBaseRadio-root"
+                                            classes={
+                                              Object {
+                                                "checked": "Mui-checked",
+                                                "colorPrimary": "MuiRadio-colorPrimary",
+                                                "colorSecondary": "MuiRadio-colorSecondary",
+                                                "disabled": "Mui-disabled",
+                                                "root": "MuiRadio-root",
+                                              }
+                                            }
                                             color="default"
                                             disableRipple={true}
                                             disabled={false}
@@ -4584,15 +4556,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             required={false}
                                             value="on"
                                           >
-                                            <ForwardRef(Radio)
+                                            <WithStyles(ForwardRef(SwitchBase))
                                               checked={false}
                                               checkedIcon={<RadioButtonSelected />}
                                               className="HvRadio-radio HvBaseRadio-root"
                                               classes={
                                                 Object {
                                                   "checked": "Mui-checked",
-                                                  "colorPrimary": "MuiRadio-colorPrimary",
-                                                  "colorSecondary": "MuiRadio-colorSecondary",
                                                   "disabled": "Mui-disabled",
                                                   "root": "MuiRadio-root",
                                                 }
@@ -4616,17 +4586,19 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                               onFocusVisible={[Function]}
                                               readOnly={false}
                                               required={false}
+                                              type="radio"
                                               value="on"
                                             >
-                                              <WithStyles(ForwardRef(SwitchBase))
+                                              <ForwardRef(SwitchBase)
                                                 checked={false}
                                                 checkedIcon={<RadioButtonSelected />}
                                                 className="HvRadio-radio HvBaseRadio-root"
                                                 classes={
                                                   Object {
-                                                    "checked": "Mui-checked",
-                                                    "disabled": "Mui-disabled",
-                                                    "root": "MuiRadio-root",
+                                                    "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                                    "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                                    "input": "PrivateSwitchBase-input-4",
+                                                    "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                                   }
                                                 }
                                                 color="default"
@@ -4651,42 +4623,32 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 type="radio"
                                                 value="on"
                                               >
-                                                <ForwardRef(SwitchBase)
-                                                  checked={false}
-                                                  checkedIcon={<RadioButtonSelected />}
-                                                  className="HvRadio-radio HvBaseRadio-root"
-                                                  classes={
-                                                    Object {
-                                                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
-                                                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
-                                                      "input": "PrivateSwitchBase-input-4",
-                                                      "root": "PrivateSwitchBase-root-1 MuiRadio-root",
-                                                    }
-                                                  }
+                                                <WithStyles(ForwardRef(IconButton))
+                                                  className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                   color="default"
+                                                  component="span"
                                                   disableRipple={true}
                                                   disabled={false}
-                                                  icon={<RadioButtonUnselected />}
-                                                  id="hvradio17-input"
-                                                  inputProps={
-                                                    Object {
-                                                      "aria-describedby": undefined,
-                                                      "aria-errormessage": undefined,
-                                                      "aria-invalid": undefined,
-                                                      "aria-label": undefined,
-                                                      "aria-labelledby": undefined,
-                                                    }
-                                                  }
                                                   onBlur={[Function]}
-                                                  onChange={[Function]}
+                                                  onFocus={[Function]}
                                                   onFocusVisible={[Function]}
-                                                  readOnly={false}
-                                                  required={false}
-                                                  type="radio"
-                                                  value="on"
+                                                  tabIndex={null}
                                                 >
-                                                  <WithStyles(ForwardRef(IconButton))
+                                                  <ForwardRef(IconButton)
                                                     className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                                    classes={
+                                                      Object {
+                                                        "colorInherit": "MuiIconButton-colorInherit",
+                                                        "colorPrimary": "MuiIconButton-colorPrimary",
+                                                        "colorSecondary": "MuiIconButton-colorSecondary",
+                                                        "disabled": "Mui-disabled",
+                                                        "edgeEnd": "MuiIconButton-edgeEnd",
+                                                        "edgeStart": "MuiIconButton-edgeStart",
+                                                        "label": "MuiIconButton-label",
+                                                        "root": "MuiIconButton-root",
+                                                        "sizeSmall": "MuiIconButton-sizeSmall",
+                                                      }
+                                                    }
                                                     color="default"
                                                     component="span"
                                                     disableRipple={true}
@@ -4696,33 +4658,28 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                     onFocusVisible={[Function]}
                                                     tabIndex={null}
                                                   >
-                                                    <ForwardRef(IconButton)
-                                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                      classes={
-                                                        Object {
-                                                          "colorInherit": "MuiIconButton-colorInherit",
-                                                          "colorPrimary": "MuiIconButton-colorPrimary",
-                                                          "colorSecondary": "MuiIconButton-colorSecondary",
-                                                          "disabled": "Mui-disabled",
-                                                          "edgeEnd": "MuiIconButton-edgeEnd",
-                                                          "edgeStart": "MuiIconButton-edgeStart",
-                                                          "label": "MuiIconButton-label",
-                                                          "root": "MuiIconButton-root",
-                                                          "sizeSmall": "MuiIconButton-sizeSmall",
-                                                        }
-                                                      }
-                                                      color="default"
+                                                    <WithStyles(ForwardRef(ButtonBase))
+                                                      centerRipple={true}
+                                                      className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                       component="span"
                                                       disableRipple={true}
                                                       disabled={false}
+                                                      focusRipple={true}
                                                       onBlur={[Function]}
                                                       onFocus={[Function]}
                                                       onFocusVisible={[Function]}
                                                       tabIndex={null}
                                                     >
-                                                      <WithStyles(ForwardRef(ButtonBase))
+                                                      <ForwardRef(ButtonBase)
                                                         centerRipple={true}
                                                         className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                                        classes={
+                                                          Object {
+                                                            "disabled": "Mui-disabled",
+                                                            "focusVisible": "Mui-focusVisible",
+                                                            "root": "MuiButtonBase-root",
+                                                          }
+                                                        }
                                                         component="span"
                                                         disableRipple={true}
                                                         disabled={false}
@@ -4732,273 +4689,253 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                         onFocusVisible={[Function]}
                                                         tabIndex={null}
                                                       >
-                                                        <ForwardRef(ButtonBase)
-                                                          centerRipple={true}
-                                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                          classes={
-                                                            Object {
-                                                              "disabled": "Mui-disabled",
-                                                              "focusVisible": "Mui-focusVisible",
-                                                              "root": "MuiButtonBase-root",
-                                                            }
-                                                          }
-                                                          component="span"
-                                                          disableRipple={true}
-                                                          disabled={false}
-                                                          focusRipple={true}
+                                                        <span
+                                                          aria-disabled={false}
+                                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                                           onBlur={[Function]}
+                                                          onDragLeave={[Function]}
                                                           onFocus={[Function]}
-                                                          onFocusVisible={[Function]}
+                                                          onKeyDown={[Function]}
+                                                          onKeyUp={[Function]}
+                                                          onMouseDown={[Function]}
+                                                          onMouseLeave={[Function]}
+                                                          onMouseUp={[Function]}
+                                                          onTouchEnd={[Function]}
+                                                          onTouchMove={[Function]}
+                                                          onTouchStart={[Function]}
                                                           tabIndex={null}
                                                         >
                                                           <span
-                                                            aria-disabled={false}
-                                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
-                                                            onBlur={[Function]}
-                                                            onDragLeave={[Function]}
-                                                            onFocus={[Function]}
-                                                            onKeyDown={[Function]}
-                                                            onKeyUp={[Function]}
-                                                            onMouseDown={[Function]}
-                                                            onMouseLeave={[Function]}
-                                                            onMouseUp={[Function]}
-                                                            onTouchEnd={[Function]}
-                                                            onTouchMove={[Function]}
-                                                            onTouchStart={[Function]}
-                                                            tabIndex={null}
+                                                            className="MuiIconButton-label"
                                                           >
-                                                            <span
-                                                              className="MuiIconButton-label"
-                                                            >
-                                                              <input
-                                                                checked={false}
-                                                                className="PrivateSwitchBase-input-4"
-                                                                disabled={false}
-                                                                id="hvradio17-input"
-                                                                onChange={[Function]}
-                                                                readOnly={false}
-                                                                required={false}
-                                                                type="radio"
-                                                                value="on"
-                                                              />
-                                                              <RadioButtonUnselected>
-                                                                <HvIconBase
-                                                                  iconSize="S"
+                                                            <input
+                                                              checked={false}
+                                                              className="PrivateSwitchBase-input-4"
+                                                              disabled={false}
+                                                              id="hvradio17-input"
+                                                              onChange={[Function]}
+                                                              readOnly={false}
+                                                              required={false}
+                                                              type="radio"
+                                                              value="on"
+                                                            />
+                                                            <RadioButtonUnselected>
+                                                              <HvIconBase
+                                                                iconSize="S"
+                                                                name="RadioButtonUnselected"
+                                                              >
+                                                                <div
+                                                                  className="HvIconBase-root HvIconBase-s"
                                                                   name="RadioButtonUnselected"
                                                                 >
-                                                                  <div
-                                                                    className="HvIconBase-root HvIconBase-s"
-                                                                    name="RadioButtonUnselected"
+                                                                  <svg
+                                                                    focusable={false}
+                                                                    height={16}
+                                                                    viewBox="0 0 16 16"
+                                                                    width={16}
+                                                                    xmlns="http://www.w3.org/2000/svg"
                                                                   >
-                                                                    <svg
-                                                                      focusable={false}
-                                                                      height={16}
-                                                                      viewBox="0 0 16 16"
-                                                                      width={16}
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                    >
-                                                                      <path
-                                                                        className="color0"
-                                                                        d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                                        fill="#FBFCFC"
-                                                                      />
-                                                                      <path
-                                                                        className="color1"
-                                                                        d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                                                        fill="#414141"
-                                                                      />
-                                                                    </svg>
-                                                                  </div>
-                                                                </HvIconBase>
-                                                              </RadioButtonUnselected>
-                                                            </span>
+                                                                    <path
+                                                                      className="color0"
+                                                                      d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                                                      fill="#FBFCFC"
+                                                                    />
+                                                                    <path
+                                                                      className="color1"
+                                                                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                                      fill="#414141"
+                                                                    />
+                                                                  </svg>
+                                                                </div>
+                                                              </HvIconBase>
+                                                            </RadioButtonUnselected>
                                                           </span>
-                                                        </ForwardRef(ButtonBase)>
-                                                      </WithStyles(ForwardRef(ButtonBase))>
-                                                    </ForwardRef(IconButton)>
-                                                  </WithStyles(ForwardRef(IconButton))>
-                                                </ForwardRef(SwitchBase)>
-                                              </WithStyles(ForwardRef(SwitchBase))>
-                                            </ForwardRef(Radio)>
-                                          </WithStyles(ForwardRef(Radio))>
-                                        </HvBaseRadio>
-                                      </WithStyles(HvBaseRadio)>
-                                      <WithStyles(HvLabel)
+                                                        </span>
+                                                      </ForwardRef(ButtonBase)>
+                                                    </WithStyles(ForwardRef(ButtonBase))>
+                                                  </ForwardRef(IconButton)>
+                                                </WithStyles(ForwardRef(IconButton))>
+                                              </ForwardRef(SwitchBase)>
+                                            </WithStyles(ForwardRef(SwitchBase))>
+                                          </ForwardRef(Radio)>
+                                        </WithStyles(ForwardRef(Radio))>
+                                      </HvBaseRadio>
+                                    </WithStyles(HvBaseRadio)>
+                                    <WithStyles(HvLabel)
+                                      className="HvRadio-label HvList-truncate"
+                                      htmlFor="hvradio17-input"
+                                      id="hvradio17-label"
+                                      label="Value 3"
+                                    >
+                                      <HvLabel
                                         className="HvRadio-label HvList-truncate"
+                                        classes={
+                                          Object {
+                                            "childGutter": "HvLabel-childGutter",
+                                            "labelDisabled": "HvLabel-labelDisabled",
+                                            "root": "HvLabel-root",
+                                          }
+                                        }
                                         htmlFor="hvradio17-input"
                                         id="hvradio17-label"
                                         label="Value 3"
                                       >
-                                        <HvLabel
-                                          className="HvRadio-label HvList-truncate"
-                                          classes={
-                                            Object {
-                                              "childGutter": "HvLabel-childGutter",
-                                              "labelDisabled": "HvLabel-labelDisabled",
-                                              "root": "HvLabel-root",
-                                            }
-                                          }
+                                        <WithStyles(ForwardRef)
+                                          className="HvRadio-label HvList-truncate HvLabel-root"
+                                          component="label"
                                           htmlFor="hvradio17-input"
                                           id="hvradio17-label"
-                                          label="Value 3"
+                                          variant="highlightText"
                                         >
-                                          <WithStyles(ForwardRef)
+                                          <ForwardRef
                                             className="HvRadio-label HvList-truncate HvLabel-root"
+                                            classes={
+                                              Object {
+                                                "3xlTitle": "HvTypography-3xlTitle",
+                                                "4xlTitle": "HvTypography-4xlTitle",
+                                                "5xlTitle": "HvTypography-5xlTitle",
+                                                "disabledText": "HvTypography-disabledText",
+                                                "highlightText": "HvTypography-highlightText",
+                                                "lTitle": "HvTypography-lTitle",
+                                                "link": "HvTypography-link",
+                                                "mTitle": "HvTypography-mTitle",
+                                                "noWrap": "HvTypography-noWrap",
+                                                "normalText": "HvTypography-normalText",
+                                                "placeholderText": "HvTypography-placeholderText",
+                                                "root": "HvTypography-root",
+                                                "sTitle": "HvTypography-sTitle",
+                                                "sectionTitle": "HvTypography-sectionTitle",
+                                                "selectedNavText": "HvTypography-selectedNavText",
+                                                "vizText": "HvTypography-vizText",
+                                                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                                "xlTitle": "HvTypography-xlTitle",
+                                                "xsInlineLink": "HvTypography-xsInlineLink",
+                                                "xsTitle": "HvTypography-xsTitle",
+                                                "xxlTitle": "HvTypography-xxlTitle",
+                                                "xxsTitle": "HvTypography-xxsTitle",
+                                              }
+                                            }
                                             component="label"
                                             htmlFor="hvradio17-input"
                                             id="hvradio17-label"
                                             variant="highlightText"
                                           >
-                                            <ForwardRef
-                                              className="HvRadio-label HvList-truncate HvLabel-root"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle",
-                                                  "4xlTitle": "HvTypography-4xlTitle",
-                                                  "5xlTitle": "HvTypography-5xlTitle",
-                                                  "disabledText": "HvTypography-disabledText",
-                                                  "highlightText": "HvTypography-highlightText",
-                                                  "lTitle": "HvTypography-lTitle",
-                                                  "link": "HvTypography-link",
-                                                  "mTitle": "HvTypography-mTitle",
-                                                  "noWrap": "HvTypography-noWrap",
-                                                  "normalText": "HvTypography-normalText",
-                                                  "placeholderText": "HvTypography-placeholderText",
-                                                  "root": "HvTypography-root",
-                                                  "sTitle": "HvTypography-sTitle",
-                                                  "sectionTitle": "HvTypography-sectionTitle",
-                                                  "selectedNavText": "HvTypography-selectedNavText",
-                                                  "vizText": "HvTypography-vizText",
-                                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                                  "xlTitle": "HvTypography-xlTitle",
-                                                  "xsInlineLink": "HvTypography-xsInlineLink",
-                                                  "xsTitle": "HvTypography-xsTitle",
-                                                  "xxlTitle": "HvTypography-xxlTitle",
-                                                  "xxsTitle": "HvTypography-xxsTitle",
-                                                }
-                                              }
-                                              component="label"
+                                            <label
+                                              className="HvRadio-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
                                               htmlFor="hvradio17-input"
                                               id="hvradio17-label"
-                                              variant="highlightText"
                                             >
-                                              <label
-                                                className="HvRadio-label HvList-truncate HvLabel-root HvTypography-root HvTypography-highlightText"
-                                                htmlFor="hvradio17-input"
-                                                id="hvradio17-label"
-                                              >
-                                                Value 3
-                                              </label>
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </HvLabel>
-                                      </WithStyles(HvLabel)>
-                                    </div>
-                                    <WithStyles(HvWarningText)
+                                              Value 3
+                                            </label>
+                                          </ForwardRef>
+                                        </WithStyles(ForwardRef)>
+                                      </HvLabel>
+                                    </WithStyles(HvLabel)>
+                                  </div>
+                                  <WithStyles(HvWarningText)
+                                    id="hvradio17-error"
+                                  >
+                                    <HvWarningText
+                                      classes={
+                                        Object {
+                                          "defaultIcon": "HvWarningText-defaultIcon",
+                                          "hideText": "HvWarningText-hideText",
+                                          "root": "HvWarningText-root",
+                                          "show": "HvWarningText-show",
+                                          "topBorder": "HvWarningText-topBorder",
+                                          "topGutter": "HvWarningText-topGutter",
+                                          "warningText": "HvWarningText-warningText",
+                                        }
+                                      }
                                       id="hvradio17-error"
                                     >
-                                      <HvWarningText
-                                        classes={
-                                          Object {
-                                            "defaultIcon": "HvWarningText-defaultIcon",
-                                            "hideText": "HvWarningText-hideText",
-                                            "root": "HvWarningText-root",
-                                            "show": "HvWarningText-show",
-                                            "topBorder": "HvWarningText-topBorder",
-                                            "topGutter": "HvWarningText-topGutter",
-                                            "warningText": "HvWarningText-warningText",
-                                          }
-                                        }
-                                        id="hvradio17-error"
+                                      <div
+                                        className="HvWarningText-root HvWarningText-topBorder"
                                       >
-                                        <div
-                                          className="HvWarningText-root HvWarningText-topBorder"
+                                        <Fail
+                                          className="HvWarningText-defaultIcon"
+                                          semantic="sema4"
                                         >
-                                          <Fail
+                                          <HvIconBase
                                             className="HvWarningText-defaultIcon"
-                                            semantic="sema4"
+                                            iconSize="S"
+                                            name="Fail"
                                           >
-                                            <HvIconBase
-                                              className="HvWarningText-defaultIcon"
-                                              iconSize="S"
+                                            <div
+                                              className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
                                               name="Fail"
                                             >
-                                              <div
-                                                className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
-                                                name="Fail"
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
                                               >
-                                                <svg
-                                                  focusable={false}
-                                                  height={16}
-                                                  viewBox="0 0 16 16"
-                                                  width={16}
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    className="color0"
-                                                    d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                                    fill="#C62828"
-                                                  />
-                                                </svg>
-                                              </div>
-                                            </HvIconBase>
-                                          </Fail>
-                                          <WithStyles(ForwardRef)
+                                                <path
+                                                  className="color0"
+                                                  d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                                  fill="#C62828"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </Fail>
+                                        <WithStyles(ForwardRef)
+                                          aria-atomic="true"
+                                          aria-live="polite"
+                                          aria-relevant="additions text"
+                                          className="HvWarningText-warningText HvWarningText-topGutter"
+                                          id="hvradio17-error"
+                                        >
+                                          <ForwardRef
                                             aria-atomic="true"
                                             aria-live="polite"
                                             aria-relevant="additions text"
                                             className="HvWarningText-warningText HvWarningText-topGutter"
+                                            classes={
+                                              Object {
+                                                "3xlTitle": "HvTypography-3xlTitle",
+                                                "4xlTitle": "HvTypography-4xlTitle",
+                                                "5xlTitle": "HvTypography-5xlTitle",
+                                                "disabledText": "HvTypography-disabledText",
+                                                "highlightText": "HvTypography-highlightText",
+                                                "lTitle": "HvTypography-lTitle",
+                                                "link": "HvTypography-link",
+                                                "mTitle": "HvTypography-mTitle",
+                                                "noWrap": "HvTypography-noWrap",
+                                                "normalText": "HvTypography-normalText",
+                                                "placeholderText": "HvTypography-placeholderText",
+                                                "root": "HvTypography-root",
+                                                "sTitle": "HvTypography-sTitle",
+                                                "sectionTitle": "HvTypography-sectionTitle",
+                                                "selectedNavText": "HvTypography-selectedNavText",
+                                                "vizText": "HvTypography-vizText",
+                                                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                                "xlTitle": "HvTypography-xlTitle",
+                                                "xsInlineLink": "HvTypography-xsInlineLink",
+                                                "xsTitle": "HvTypography-xsTitle",
+                                                "xxlTitle": "HvTypography-xxlTitle",
+                                                "xxsTitle": "HvTypography-xxsTitle",
+                                              }
+                                            }
                                             id="hvradio17-error"
                                           >
-                                            <ForwardRef
+                                            <p
                                               aria-atomic="true"
                                               aria-live="polite"
                                               aria-relevant="additions text"
-                                              className="HvWarningText-warningText HvWarningText-topGutter"
-                                              classes={
-                                                Object {
-                                                  "3xlTitle": "HvTypography-3xlTitle",
-                                                  "4xlTitle": "HvTypography-4xlTitle",
-                                                  "5xlTitle": "HvTypography-5xlTitle",
-                                                  "disabledText": "HvTypography-disabledText",
-                                                  "highlightText": "HvTypography-highlightText",
-                                                  "lTitle": "HvTypography-lTitle",
-                                                  "link": "HvTypography-link",
-                                                  "mTitle": "HvTypography-mTitle",
-                                                  "noWrap": "HvTypography-noWrap",
-                                                  "normalText": "HvTypography-normalText",
-                                                  "placeholderText": "HvTypography-placeholderText",
-                                                  "root": "HvTypography-root",
-                                                  "sTitle": "HvTypography-sTitle",
-                                                  "sectionTitle": "HvTypography-sectionTitle",
-                                                  "selectedNavText": "HvTypography-selectedNavText",
-                                                  "vizText": "HvTypography-vizText",
-                                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                                  "xlTitle": "HvTypography-xlTitle",
-                                                  "xsInlineLink": "HvTypography-xsInlineLink",
-                                                  "xsTitle": "HvTypography-xsTitle",
-                                                  "xxlTitle": "HvTypography-xxlTitle",
-                                                  "xxsTitle": "HvTypography-xxsTitle",
-                                                }
-                                              }
+                                              className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
                                               id="hvradio17-error"
-                                            >
-                                              <p
-                                                aria-atomic="true"
-                                                aria-live="polite"
-                                                aria-relevant="additions text"
-                                                className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
-                                                id="hvradio17-error"
-                                              />
-                                            </ForwardRef>
-                                          </WithStyles(ForwardRef)>
-                                        </div>
-                                      </HvWarningText>
-                                    </WithStyles(HvWarningText)>
-                                  </div>
-                                </HvFormElement>
-                              </WithId>
-                            </WithStyles(WithId)>
+                                            />
+                                          </ForwardRef>
+                                        </WithStyles(ForwardRef)>
+                                      </div>
+                                    </HvWarningText>
+                                  </WithStyles(HvWarningText)>
+                                </div>
+                              </HvFormElement>
+                            </WithStyles(HvFormElement)>
                           </HvRadio>
                         </WithStyles(HvRadio)>
                       </ComponentFunction>

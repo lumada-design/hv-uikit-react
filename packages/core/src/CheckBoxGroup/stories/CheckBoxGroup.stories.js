@@ -71,7 +71,7 @@ Disabled.story = {
 };
 
 export const ReadOnly = () => (
-  <HvCheckBoxGroup showSelectAll readOnly label="Can't change anything">
+  <HvCheckBoxGroup id="readonly" showSelectAll readOnly label="Can't change anything">
     <HvCheckBox label="Checkbox 1" value="1" />
     <HvCheckBox label="Checkbox 2" value="2" checked />
     <HvCheckBox label="Checkbox 3" value="3" />
