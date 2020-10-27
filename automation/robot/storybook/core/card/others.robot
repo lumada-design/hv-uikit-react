@@ -6,9 +6,8 @@ Test Setup    open card sample    ${components}    all-components
 *** Test Cases ***
 controlled card selection by switch
   [Setup]    open card sample    ${tests}    controlled
-  Checkbox Should Not Be Selected    ${externalCheckbox}
   Checkbox Should Not Be Selected    ${checkbox}
-  Select Checkbox                    ${externalCheckbox}
+  click Element                      ${externalCheckbox}
   Checkbox Should Be Selected        ${checkbox}
 
 activates option included on drop down
@@ -25,6 +24,6 @@ does not activates disabled option on drop down
 
 
 *** Variables ***
-${externalCheckbox}    css:input[type=checkbox]
+${externalCheckbox}    css:#controller
 ${optionPreview}       css:li \[name=Preview]
 ${optionDelete}        css:li \[name=Delete]
