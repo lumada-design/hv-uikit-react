@@ -14,6 +14,7 @@ export interface HvRadioGroupProps
 
   /**
    * The form element name.
+   *
    * It is propagated to the children radio buttons, unless they already have one (which they shouldn't).
    */
   name?: string;

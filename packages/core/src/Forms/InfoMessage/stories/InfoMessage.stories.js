@@ -2,12 +2,10 @@ import React from "react";
 import { HvInfoMessage } from "../../..";
 
 export default {
-  title: "Forms/Form Element/Info Message",
+  title: "Forms/Form Element Blocks/Info Message",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvInfoMessage } from '@hv/uikit-react-core/dist'",
-    v3: true,
-    dsVersion: "3.2.1",
   },
   component: HvInfoMessage,
 };

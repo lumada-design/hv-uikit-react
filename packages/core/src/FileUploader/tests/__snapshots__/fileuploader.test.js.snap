@@ -138,7 +138,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               }
             }
             disabled={false}
-            id="drop-zone-3"
+            id="drop-zone-2"
             labels={
               Object {
                 "drag": "Drag and drop or",
@@ -158,12 +158,12 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             <div
               aria-label="File Dropzone"
               className="HvFileUploaderDropZone-dropZoneLabelsGroup"
-              id="drop-zone-3"
+              id="drop-zone-2"
             >
               <WithStyles(ForwardRef)
                 component="label"
-                htmlFor="drop-zone-3-input-file"
-                id="drop-zone-3-input-file-label"
+                htmlFor="drop-zone-2-input-file"
+                id="drop-zone-2-input-file-label"
                 variant="highlightText"
               >
                 <ForwardRef
@@ -194,14 +194,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                   }
                   component="label"
-                  htmlFor="drop-zone-3-input-file"
-                  id="drop-zone-3-input-file-label"
+                  htmlFor="drop-zone-2-input-file"
+                  id="drop-zone-2-input-file-label"
                   variant="highlightText"
                 >
                   <label
                     className="HvTypography-root HvTypography-highlightText"
-                    htmlFor="drop-zone-3-input-file"
-                    id="drop-zone-3-input-file-label"
+                    htmlFor="drop-zone-2-input-file"
+                    id="drop-zone-2-input-file-label"
                   >
                     Label
                   </label>
@@ -282,7 +282,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             </div>
             <div
               className="HvFileUploaderDropZone-dropZoneContainer"
-              id="drop-zone-3-button"
+              id="drop-zone-2-button"
               onDragEnter={[Function]}
               onDragLeave={[Function]}
               onDragOver={[Function]}
@@ -295,7 +295,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               <input
                 className="HvFileUploaderDropZone-inputArea"
                 disabled={false}
-                id="drop-zone-3-input-file"
+                id="drop-zone-2-input-file"
                 multiple={true}
                 onChange={[Function]}
                 onClick={[Function]}

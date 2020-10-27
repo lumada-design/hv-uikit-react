@@ -5,6 +5,7 @@ const styles = (theme) => ({
       backgroundColor: theme.palette.atmo1,
       boxShadow: theme.hv.shadows[1],
       padding: theme.hvSpacing("sm"),
+      width: "100%",
     },
   },
   popper: {

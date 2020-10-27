@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import React, { cloneElement, useState } from "react";
+import React, { useState } from "react";
 import { withStyles } from "@material-ui/core";
-import { HvBaseDropdown, HvListContainer, HvListItem, HvPanel, HvTypography } from "..";
+import { HvBaseDropdown, HvSelectionList, HvListItem, HvPanel, HvTypography } from "..";
 
 const styles = (theme) => ({
   root: {
@@ -20,9 +20,7 @@ const styles = (theme) => ({
   headerOpen: {},
 });
 
-export const Option = ({ children, onClick }) => (
-  <HvListItem onClick={onClick}>{children}</HvListItem>
-);
+export const Option = ({ children, ...others }) => <HvListItem {...others}>{children}</HvListItem>;
 
 const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) => {
   const [open, setOpen] = useState(false);
@@ -32,7 +30,7 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
     setOpen(false);
   };
 
-  const handleToggle = (evt, s) => {
+  const handleToggle = (_evt, s) => {
     setOpen(s);
   };
 
@@ -46,11 +44,9 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
       {...others}
     >
       <HvPanel>
-        <HvListContainer selectable condensed>
-          {React.Children.map(children, (child) =>
-            cloneElement(child, { onClick: (evt) => handleSelect(evt, child.props.value) })
-          )}
-        </HvListContainer>
+        <HvSelectionList value={value} onChange={handleSelect}>
+          {children}
+        </HvSelectionList>
       </HvPanel>
     </HvBaseDropdown>
   );

@@ -31,8 +31,7 @@ import {
 import styles from "./styles";
 
 /**
- * A text area component wrapping the input box, it allows the input of paragraph of text.
- * alongside this it can provide a validation for the max character quantity
+ * A text area is a multiline text input box, with an optional character counter when there is a length limit.
  */
 const HvTextArea = (props) => {
   const {
@@ -279,7 +278,6 @@ const HvTextArea = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={validationState}
       disabled={disabled}
       required={required}
@@ -291,7 +289,7 @@ const HvTextArea = (props) => {
       })}
       onBlur={onContainerBlurHandler}
     >
-      {(hasLabel || hasDescription || hasCounter) && (
+      {(hasLabel || hasDescription) && (
         <div className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
@@ -307,18 +305,18 @@ const HvTextArea = (props) => {
               {description}
             </HvInfoMessage>
           )}
-
-          {hasCounter && (
-            <HvCharCounter
-              id={setId(elementId, "charCounter")}
-              className={classes.characterCounter}
-              separator={middleCountLabel}
-              currentCharQuantity={value.length}
-              maxCharQuantity={maxCharQuantity}
-              {...countCharProps}
-            />
-          )}
         </div>
+      )}
+
+      {hasCounter && (
+        <HvCharCounter
+          id={setId(elementId, "charCounter")}
+          className={classes.characterCounter}
+          separator={middleCountLabel}
+          currentCharQuantity={value.length}
+          maxCharQuantity={maxCharQuantity}
+          {...countCharProps}
+        />
       )}
 
       <HvBaseInput

@@ -71,7 +71,7 @@ export const CustomBackground = () => {
 
         <HvDropdown
           name="domain"
-          labels={{ title: "Domain" }}
+          label="Domain"
           classes={{
             root: classes.input,
             dropdown: classes.dropdownWidthFix,

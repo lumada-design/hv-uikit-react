@@ -4,6 +4,7 @@ const styles = (theme) => ({
   root: {
     position: "relative",
     width: 320,
+    display: "inline-block",
   },
   inputContainer: {
     position: "relative",
@@ -16,6 +17,17 @@ const styles = (theme) => ({
       ...outlineStyles,
     },
   },
+
+  labelContainer: {
+    display: "flex",
+    alignItems: "flex-start",
+  },
+  label: {
+    paddingBottom: "6px",
+    display: "block",
+  },
+  description: {},
+  error: {},
 
   dropdown: {
     display: "block",
@@ -62,9 +74,6 @@ const styles = (theme) => ({
     position: "absolute",
     right: -1,
     bottom: -1,
-  },
-  label: {
-    display: "block",
   },
   action: {
     "&:first-child": {

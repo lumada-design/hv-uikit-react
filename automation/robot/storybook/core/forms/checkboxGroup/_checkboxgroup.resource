@@ -16,4 +16,4 @@ ${checkbox2}        css:.HvCheckBoxGroup-group>div:nth-child(2)
 ${checkbox3}        css:.HvCheckBoxGroup-group>div:nth-child(3)
 ${checkbox4}        css:.HvCheckBoxGroup-group>div:nth-child(4)
 ${checkboxGroup}    css:.HvCheckBoxGroup-root
-${label}            css:\#hvcheckboxgroup1-label
+${label}            css:\#main-label

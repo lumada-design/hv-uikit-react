@@ -23,8 +23,8 @@ const hasSelected = (list) => getSelected(list).length > 0;
  *
  * @returns {Object} - the selection label
  */
-const getSelectionLabel = (list = [], labels, multiSelect) => {
-  const { select, selectSingle } = labels;
+const getSelectionLabel = (list = [], labels, placeholder, multiSelect) => {
+  const { select } = labels;
   const selected = getSelected(list);
 
   if (select) return { selected: select };
@@ -35,7 +35,7 @@ const getSelectionLabel = (list = [], labels, multiSelect) => {
       total: list.length,
     };
   }
-  return { selected: selected.length > 0 ? selected[0].label : selectSingle };
+  return { selected: selected.length > 0 ? selected[0].label : placeholder };
 };
 
 export { getSelectionLabel, getSelected, hasSelected };

@@ -3,14 +3,13 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { HvFormElementContext } from "../FormElement";
-import { getChildIdToLabel } from "../FormElement/utils/FormUtils";
+import { findDescriptors } from "../FormElement/utils/FormUtils";
 import { HvTypography } from "../..";
 import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
- * Component used in conjunction with other form elements, to give extra information about status.
- * If it receives a children, the component will set itself as a label for the children.
+ * Provides the user with a recognizable name of the form element.
  */
 const HvLabel = (props) => {
   const {
@@ -31,7 +30,7 @@ const HvLabel = (props) => {
 
   const localId = id ?? setId(elementId, "label");
 
-  const forId = htmlForProp || (children ? getChildIdToLabel(children, "HvBaseInput") : undefined);
+  const forId = htmlForProp || findDescriptors(children)?.input?.[0]?.id;
 
   return (
     <>
@@ -53,6 +52,8 @@ const HvLabel = (props) => {
     </>
   );
 };
+
+HvLabel.formElementType = "label";
 
 HvLabel.propTypes = {
   /**

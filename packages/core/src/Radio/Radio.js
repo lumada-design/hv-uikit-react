@@ -118,7 +118,6 @@ const HvRadio = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={status || "standBy"}
       disabled={disabled}
       required={required}

@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
 import styles from "./styles";
+
+import {
+  HvFormElementContext,
+  HvFormElementDescriptorsContext,
+  buildFormElementPropsFromContext,
+  buildAriaPropsFromContext,
+} from "../Forms/FormElement";
 
 /**
  * An Input component that only posses the most basic functionalities.
@@ -19,9 +26,9 @@ const HvBaseInput = (props) => {
     value,
     defaultValue,
 
-    required = false,
-    readOnly = false,
-    disabled = false,
+    required,
+    readOnly,
+    disabled,
 
     onChange,
 
@@ -39,6 +46,19 @@ const HvBaseInput = (props) => {
     ...others
   } = props;
 
+  const formElementContext = useContext(HvFormElementContext);
+  const formElementProps = buildFormElementPropsFromContext(props, formElementContext);
+
+  const localInvalid = invalid || formElementProps.status === "invalid";
+
+  const formElementDescriptorsContext = useContext(HvFormElementDescriptorsContext);
+  const ariaProps = buildAriaPropsFromContext(
+    inputProps,
+    formElementDescriptorsContext,
+    localInvalid,
+    id
+  );
+
   const onChangeHandler = (event) => {
     onChange?.(event, event.target.value);
   };
@@ -46,20 +66,20 @@ const HvBaseInput = (props) => {
   return (
     <div
       className={clsx(classes.root, className, {
-        [classes.disabled]: disabled,
-        [classes.invalid]: invalid,
+        [classes.disabled]: formElementProps.disabled,
+        [classes.invalid]: localInvalid,
         [classes.resizable]: multiline && resizable,
       })}
     >
       <Input
         id={id}
-        name={name}
+        name={formElementProps.name}
         value={value}
         defaultValue={defaultValue}
         type={type}
         placeholder={placeholder}
-        readOnly={readOnly}
-        disabled={disabled}
+        readOnly={formElementProps.readOnly}
+        disabled={formElementProps.disabled}
         onChange={onChangeHandler}
         classes={{
           root: classes.inputRoot,
@@ -67,13 +87,14 @@ const HvBaseInput = (props) => {
           disabled: classes.inputRootDisabled,
           multiline: classes.inputRootMultiline,
           input: clsx(classes.input, {
-            [classes.inputResizable]: !disabled && resizable,
+            [classes.inputResizable]: !formElementProps.disabled && resizable,
           }),
         }}
         inputProps={{
           // avoid the required attribute at the root node
-          required,
+          required: formElementProps.required,
           ...inputProps,
+          ...ariaProps,
         }}
         inputRef={inputRef}
         multiline={multiline}
@@ -84,6 +105,8 @@ const HvBaseInput = (props) => {
     </div>
   );
 };
+
+HvBaseInput.formElementType = "input";
 
 HvBaseInput.propTypes = {
   /**

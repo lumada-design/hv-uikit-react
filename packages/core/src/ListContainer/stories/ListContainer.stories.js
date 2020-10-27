@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { withStyles } from "@material-ui/core";
 import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
 
-import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, withTooltip } from "../../..";
+import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, withTooltip } from "../..";
 
 export default {
   title: "Components/List/List Container",
@@ -39,7 +39,7 @@ export const SingleSelection = () => {
 
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer selectable condensed aria-label="Stores">
+      <HvListContainer interactive condensed aria-label="Stores">
         <HvListItem
           onClick={(event) => handleListItemClick(event, 0)}
           selected={selectedItem === 0}
@@ -107,7 +107,7 @@ export const MultiSelection = () => {
   };
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer selectable multiSelect condensed aria-label="Stores">
+      <HvListContainer interactive multiSelect condensed aria-label="Stores">
         <HvListItem onClick={(event) => handleListItemClick(event, 0)} selected={selectedItems[0]}>
           98001, Store Manager
         </HvListItem>
@@ -130,7 +130,7 @@ export const MultiSelection = () => {
 
 export const WithIcons = () => (
   <HvPanel m="10px" style={{ float: "left" }}>
-    <HvListContainer selectable aria-label="Single Selection List with Left Icons Title">
+    <HvListContainer interactive aria-label="Single Selection List with Left Icons Title">
       <HvListItem startAdornment={<User />}>Advanced server DS120</HvListItem>
       <HvListItem startAdornment={<Calendar />}>Advanced server DS122</HvListItem>
       <HvListItem startAdornment={<Machine />}>Advanced server DS250</HvListItem>
@@ -159,7 +159,7 @@ export const WithNavigationIcons = () => (
 export const WithTextOverflow = () => {
   return (
     <HvPanel width="200px">
-      <HvListContainer condensed selectable aria-label="Single Selection List Title">
+      <HvListContainer condensed interactive aria-label="Single Selection List Title">
         <HvListItem>Share</HvListItem>
         <HvListItem>Edit</HvListItem>
         <HvListItem>Remove</HvListItem>

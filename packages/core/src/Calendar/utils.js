@@ -254,7 +254,7 @@ export const isValidLocale = (locale) => {
   }
 };
 
-export const isRange = (date) => typeof date === "object" && "startDate" in date;
+export const isRange = (date) => date != null && typeof date === "object" && "startDate" in date;
 
 /**
  * Checks if the date falls within a specified date range.

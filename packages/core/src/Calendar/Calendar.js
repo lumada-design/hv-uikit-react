@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../utils";
 import styles from "./styles";
-import { HvFormElementContext } from "../Forms/FormElement";
+import { HvFormElementContext, HvFormElementValueContext } from "../Forms/FormElement";
 import { isRange } from "./utils";
 import SingleCalendar from "./SingleCalendar";
 
@@ -22,7 +22,8 @@ const HvCalendar = ({
   onVisibleDateChange,
   ...others
 }) => {
-  const { elementId, elementValue, elementLocale } = useContext(HvFormElementContext);
+  const { elementId, elementLocale } = useContext(HvFormElementContext);
+  const elementValue = useContext(HvFormElementValueContext);
   const localValue = value ?? elementValue;
   const localId = id ?? setId(elementId, "single-calendar");
   const rangeMode = isRange(localValue);

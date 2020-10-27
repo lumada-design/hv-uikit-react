@@ -40,6 +40,7 @@ addParameters({
         ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
         "Components",
         "Forms",
+        ["Form Element", "Form Element Blocks"],
         "Visualizations",
         "Widgets",
         "Layout",

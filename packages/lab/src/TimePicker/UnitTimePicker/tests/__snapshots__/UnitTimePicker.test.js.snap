@@ -82,6 +82,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               "adornmentButton": "HvInput-adornmentButton",
               "adornmentsBox": "HvInput-adornmentsBox",
               "description": "HvInput-description",
+              "error": "HvInput-error",
               "hasSuggestions": "HvInput-hasSuggestions",
               "icon": "HvInput-icon",
               "iconClear": "HvInput-iconClear",
@@ -111,16 +112,15 @@ exports[`UnitTimePicker should render correctly 1`] = `
           showInfo={false}
           value="30"
         >
-          <WithStyles(WithId)
+          <WithStyles(HvFormElement)
             className="HvInput-root HvTimePickerUnitTimePicker-inputContainer"
             disabled={false}
             onBlur={[Function]}
             readOnly={false}
             required={false}
             status="valid"
-            value="30"
           >
-            <WithId
+            <HvFormElement
               className="HvInput-root HvTimePickerUnitTimePicker-inputContainer"
               classes={
                 Object {
@@ -132,38 +132,83 @@ exports[`UnitTimePicker should render correctly 1`] = `
               readOnly={false}
               required={false}
               status="valid"
-              value="30"
             >
-              <HvFormElement
-                className="HvInput-root HvTimePickerUnitTimePicker-inputContainer"
-                classes={
-                  Object {
-                    "root": "HvFormElement-root",
-                  }
-                }
-                disabled={false}
-                id="hv-form-element-6"
+              <div
+                className="HvInput-root HvTimePickerUnitTimePicker-inputContainer HvFormElement-root"
                 onBlur={[Function]}
-                readOnly={false}
-                required={false}
-                status="valid"
-                value="30"
               >
-                <div
-                  className="HvInput-root HvTimePickerUnitTimePicker-inputContainer HvFormElement-root"
-                  id="hv-form-element-6"
+                <WithStyles(HvBaseInput)
+                  autoFocus={false}
+                  classes={
+                    Object {
+                      "input": "HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
+                      "inputBorderContainer": "HvInput-inputBorderContainer",
+                      "inputRoot": "HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
+                      "inputRootDisabled": "HvInput-inputRootDisabled",
+                      "inputRootFocused": "HvInput-inputRootFocused",
+                      "inputRootMultiline": "HvInput-inputRootMultiline",
+                    }
+                  }
+                  disabled={false}
+                  endAdornment={null}
+                  id="hvinput5-input"
+                  inputProps={
+                    Object {
+                      "aria-controls": undefined,
+                      "aria-describedby": undefined,
+                      "aria-errormessage": undefined,
+                      "aria-invalid": undefined,
+                      "aria-label": undefined,
+                      "aria-labelledby": undefined,
+                      "autoComplete": undefined,
+                      "ref": Object {
+                        "current": <input
+                          class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                          id="hvinput5-input"
+                          rows="10"
+                          type="text"
+                          value="30"
+                        />,
+                      },
+                    }
+                  }
+                  inputRef={
+                    Object {
+                      "current": <input
+                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                        id="hvinput5-input"
+                        rows="10"
+                        type="text"
+                        value="30"
+                      />,
+                    }
+                  }
+                  invalid={false}
                   onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={false}
+                  required={false}
+                  showInfo={false}
+                  type="text"
+                  value="30"
                 >
-                  <WithStyles(HvBaseInput)
+                  <HvBaseInput
                     autoFocus={false}
                     classes={
                       Object {
-                        "input": "HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-                        "inputBorderContainer": "HvInput-inputBorderContainer",
-                        "inputRoot": "HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
-                        "inputRootDisabled": "HvInput-inputRootDisabled",
-                        "inputRootFocused": "HvInput-inputRootFocused",
-                        "inputRootMultiline": "HvInput-inputRootMultiline",
+                        "disabled": "HvBaseInput-disabled",
+                        "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
+                        "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
+                        "inputResizable": "HvBaseInput-inputResizable",
+                        "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
+                        "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                        "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                        "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                        "invalid": "HvBaseInput-invalid",
+                        "resizable": "HvBaseInput-resizable",
+                        "root": "HvBaseInput-root",
                       }
                     }
                     disabled={false}
@@ -211,36 +256,46 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     type="text"
                     value="30"
                   >
-                    <HvBaseInput
-                      autoFocus={false}
-                      classes={
-                        Object {
-                          "disabled": "HvBaseInput-disabled",
-                          "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-                          "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
-                          "inputResizable": "HvBaseInput-inputResizable",
-                          "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
-                          "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                          "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                          "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                          "invalid": "HvBaseInput-invalid",
-                          "resizable": "HvBaseInput-resizable",
-                          "root": "HvBaseInput-root",
+                    <div
+                      className="HvBaseInput-root"
+                    >
+                      <WithStyles(ForwardRef(Input))
+                        autoFocus={false}
+                        classes={
+                          Object {
+                            "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                            "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                            "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
+                            "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                            "root": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
+                          }
                         }
-                      }
-                      disabled={false}
-                      endAdornment={null}
-                      id="hvinput5-input"
-                      inputProps={
-                        Object {
-                          "aria-controls": undefined,
-                          "aria-describedby": undefined,
-                          "aria-errormessage": undefined,
-                          "aria-invalid": undefined,
-                          "aria-label": undefined,
-                          "aria-labelledby": undefined,
-                          "autoComplete": undefined,
-                          "ref": Object {
+                        disabled={false}
+                        endAdornment={null}
+                        id="hvinput5-input"
+                        inputProps={
+                          Object {
+                            "aria-controls": undefined,
+                            "aria-describedby": undefined,
+                            "aria-errormessage": undefined,
+                            "aria-invalid": undefined,
+                            "aria-label": undefined,
+                            "aria-labelledby": undefined,
+                            "autoComplete": undefined,
+                            "ref": Object {
+                              "current": <input
+                                class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                id="hvinput5-input"
+                                rows="10"
+                                type="text"
+                                value="30"
+                              />,
+                            },
+                            "required": false,
+                          }
+                        }
+                        inputRef={
+                          Object {
                             "current": <input
                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                               id="hvinput5-input"
@@ -248,45 +303,40 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               type="text"
                               value="30"
                             />,
-                          },
+                          }
                         }
-                      }
-                      inputRef={
-                        Object {
-                          "current": <input
-                            class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
-                            id="hvinput5-input"
-                            rows="10"
-                            type="text"
-                            value="30"
-                          />,
-                        }
-                      }
-                      invalid={false}
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      readOnly={false}
-                      required={false}
-                      showInfo={false}
-                      type="text"
-                      value="30"
-                    >
-                      <div
-                        className="HvBaseInput-root"
+                        multiline={false}
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        readOnly={false}
+                        rows={10}
+                        showInfo={false}
+                        type="text"
+                        value="30"
                       >
-                        <WithStyles(ForwardRef(Input))
+                        <ForwardRef(Input)
                           autoFocus={false}
                           classes={
                             Object {
-                              "disabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                              "focused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                              "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-                              "multiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                              "root": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
+                              "colorSecondary": "MuiInput-colorSecondary",
+                              "disabled": "Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                              "error": "Mui-error",
+                              "focused": "Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                              "formControl": "MuiInput-formControl",
+                              "fullWidth": "MuiInput-fullWidth",
+                              "input": "MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
+                              "inputMarginDense": "MuiInput-inputMarginDense",
+                              "inputMultiline": "MuiInput-inputMultiline",
+                              "inputTypeSearch": "MuiInput-inputTypeSearch",
+                              "marginDense": "MuiInput-marginDense",
+                              "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                              "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
+                              "underline": "MuiInput-underline",
                             }
                           }
+                          disableUnderline={true}
                           disabled={false}
                           endAdornment={null}
                           id="hvinput5-input"
@@ -333,7 +383,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           type="text"
                           value="30"
                         >
-                          <ForwardRef(Input)
+                          <WithStyles(ForwardRef(InputBase))
                             autoFocus={false}
                             classes={
                               Object {
@@ -350,13 +400,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "marginDense": "MuiInput-marginDense",
                                 "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
                                 "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
-                                "underline": "MuiInput-underline",
+                                "underline": null,
                               }
                             }
-                            disableUnderline={true}
                             disabled={false}
                             endAdornment={null}
+                            fullWidth={false}
                             id="hvinput5-input"
+                            inputComponent="input"
                             inputProps={
                               Object {
                                 "aria-controls": undefined,
@@ -400,24 +451,28 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             type="text"
                             value="30"
                           >
-                            <WithStyles(ForwardRef(InputBase))
+                            <ForwardRef(InputBase)
                               autoFocus={false}
                               classes={
                                 Object {
-                                  "colorSecondary": "MuiInput-colorSecondary",
-                                  "disabled": "Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                                  "error": "Mui-error",
-                                  "focused": "Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                  "formControl": "MuiInput-formControl",
-                                  "fullWidth": "MuiInput-fullWidth",
-                                  "input": "MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-                                  "inputMarginDense": "MuiInput-inputMarginDense",
-                                  "inputMultiline": "MuiInput-inputMultiline",
-                                  "inputTypeSearch": "MuiInput-inputTypeSearch",
-                                  "marginDense": "MuiInput-marginDense",
-                                  "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                  "root": "MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
-                                  "underline": null,
+                                  "adornedEnd": "MuiInputBase-adornedEnd",
+                                  "adornedStart": "MuiInputBase-adornedStart",
+                                  "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
+                                  "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
+                                  "error": "Mui-error Mui-error",
+                                  "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
+                                  "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                                  "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                                  "input": "MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
+                                  "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                  "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                  "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                  "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                                  "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                                  "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                                  "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
+                                  "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
+                                  "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
                                 }
                               }
                               disabled={false}
@@ -468,115 +523,42 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               type="text"
                               value="30"
                             >
-                              <ForwardRef(InputBase)
-                                autoFocus={false}
-                                classes={
-                                  Object {
-                                    "adornedEnd": "MuiInputBase-adornedEnd",
-                                    "adornedStart": "MuiInputBase-adornedStart",
-                                    "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                                    "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
-                                    "error": "Mui-error Mui-error",
-                                    "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused HvInput-inputRootFocused",
-                                    "formControl": "MuiInputBase-formControl MuiInput-formControl",
-                                    "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
-                                    "input": "MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-                                    "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
-                                    "inputAdornedStart": "MuiInputBase-inputAdornedStart",
-                                    "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
-                                    "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
-                                    "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
-                                    "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
-                                    "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                                    "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
-                                    "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
-                                  }
-                                }
-                                disabled={false}
-                                endAdornment={null}
-                                fullWidth={false}
-                                id="hvinput5-input"
-                                inputComponent="input"
-                                inputProps={
-                                  Object {
-                                    "aria-controls": undefined,
-                                    "aria-describedby": undefined,
-                                    "aria-errormessage": undefined,
-                                    "aria-invalid": undefined,
-                                    "aria-label": undefined,
-                                    "aria-labelledby": undefined,
-                                    "autoComplete": undefined,
-                                    "ref": Object {
-                                      "current": <input
-                                        class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
-                                        id="hvinput5-input"
-                                        rows="10"
-                                        type="text"
-                                        value="30"
-                                      />,
-                                    },
-                                    "required": false,
-                                  }
-                                }
-                                inputRef={
-                                  Object {
-                                    "current": <input
-                                      class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
-                                      id="hvinput5-input"
-                                      rows="10"
-                                      type="text"
-                                      value="30"
-                                    />,
-                                  }
-                                }
-                                multiline={false}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                readOnly={false}
-                                rows={10}
+                              <div
+                                className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot"
+                                onClick={[Function]}
                                 showInfo={false}
-                                type="text"
-                                value="30"
                               >
-                                <div
-                                  className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot"
-                                  onClick={[Function]}
-                                  showInfo={false}
-                                >
-                                  <input
-                                    autoFocus={false}
-                                    className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
-                                    disabled={false}
-                                    id="hvinput5-input"
-                                    onAnimationStart={[Function]}
-                                    onBlur={[Function]}
-                                    onChange={[Function]}
-                                    onFocus={[Function]}
-                                    onKeyDown={[Function]}
-                                    readOnly={false}
-                                    required={false}
-                                    rows={10}
-                                    type="text"
-                                    value="30"
-                                  />
-                                </div>
-                              </ForwardRef(InputBase)>
-                            </WithStyles(ForwardRef(InputBase))>
-                          </ForwardRef(Input)>
-                        </WithStyles(ForwardRef(Input))>
-                        <div
-                          className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
-                          role="presentation"
-                        />
-                      </div>
-                    </HvBaseInput>
-                  </WithStyles(HvBaseInput)>
-                </div>
-              </HvFormElement>
-            </WithId>
-          </WithStyles(WithId)>
+                                <input
+                                  autoFocus={false}
+                                  className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                  disabled={false}
+                                  id="hvinput5-input"
+                                  onAnimationStart={[Function]}
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  readOnly={false}
+                                  required={false}
+                                  rows={10}
+                                  type="text"
+                                  value="30"
+                                />
+                              </div>
+                            </ForwardRef(InputBase)>
+                          </WithStyles(ForwardRef(InputBase))>
+                        </ForwardRef(Input)>
+                      </WithStyles(ForwardRef(Input))>
+                      <div
+                        className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                        role="presentation"
+                      />
+                    </div>
+                  </HvBaseInput>
+                </WithStyles(HvBaseInput)>
+              </div>
+            </HvFormElement>
+          </WithStyles(HvFormElement)>
         </HvInput>
       </WithStyles(HvInput)>
       <DropDownXS

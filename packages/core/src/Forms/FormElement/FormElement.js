@@ -1,59 +1,78 @@
-import React from "react";
+import React, { useMemo } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import withId from "../../withId";
+
+import useUniqueId from "../../useUniqueId";
+
 import { findDescriptors } from "./utils/FormUtils";
 import { HvFormElementContextProvider } from "./context/FormElementContext";
+import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
+import { HvFormElementDescriptorsContextProvider } from "./context/FormElementDescriptorsContext";
 import styles from "./styles";
 
 /**
- * The FormElement is a component used to contain and control components capable of receiving data.
+ * The FormElement intends to establish the base API for form elements and also to
+ * ensure state consistency among children in relation to ids, validation status, etc..
+ *
+ * FormElement and its provided building blocks can be used when implementing a custom
+ * use case not covered by ready-to-use form elements.
+ * Most of these form elements offer a Base version with minimal wiring and logic, with
+ * the intent of also serving as building blocks for such cases.
  */
 const HvFormElement = (props) => {
   const {
-    id,
-    name,
     classes,
     className,
+
     children,
-    status = "standBy",
+
+    id,
+    name,
     value,
+
     disabled = false,
     required = false,
     readOnly = false,
+
+    status = "standBy",
+
     locale = "en-US",
+
     ...others
   } = props;
-  const descriptors = findDescriptors(children, [
-    "HvLabel",
-    "HvSuggestions",
-    "HvInfoMessage",
-    "HvCharCounter",
-    "HvWarningText",
-    "HvBaseInput",
-    "HvBaseDropdown",
-    "HvCalendar",
-    "HvCalendarHeader",
-  ]);
-  const contextValue = {
-    elementId: id,
-    elementName: name,
-    elementStatus: status,
-    elementValue: value,
-    elementDisabled: disabled,
-    elementRequired: required,
-    elementReadOnly: readOnly,
-    elementLocale: locale,
-    descriptors,
-  };
+
+  const elementId = useUniqueId(id, "hvformelement");
+
+  const contextValue = useMemo(
+    () => ({
+      elementId,
+      elementName: name,
+      elementStatus: status,
+      elementDisabled: disabled,
+      elementRequired: required,
+      elementReadOnly: readOnly,
+      elementLocale: locale,
+    }),
+    [disabled, elementId, locale, name, readOnly, required, status]
+  );
+
+  const descriptors = useMemo(() => findDescriptors(children), [children]);
 
   return (
     <div id={id} className={clsx(className, classes.root)} {...others}>
-      <HvFormElementContextProvider value={contextValue}>{children}</HvFormElementContextProvider>
+      <HvFormElementContextProvider value={contextValue}>
+        <HvFormElementValueContextProvider value={value}>
+          <HvFormElementDescriptorsContextProvider value={descriptors}>
+            {children}
+          </HvFormElementDescriptorsContextProvider>
+        </HvFormElementValueContextProvider>
+      </HvFormElementContextProvider>
     </div>
   );
 };
+
+HvFormElement.formElementType = "formelement";
 
 HvFormElement.propTypes = {
   /**
@@ -82,15 +101,29 @@ HvFormElement.propTypes = {
 
   /**
    * Name of the form element.
-   * Part of a name/value pair, should be the name property of the underling native input, if any.
+   *
+   * Part of a name/value pair, should be the name property of the underling native input.
    */
   name: PropTypes.string,
   /**
    * Current value of the form element.
-   * Part of a name/value pair, should be the value property of the underling native input, if any.
+   *
+   * Part of a name/value pair, should be the value property of the underling native input.
    */
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any,
+
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided instead.
+   */
+  label: PropTypes.node,
+  /**
+   * Provide additional descriptive text for the form element.
+   */
+  description: PropTypes.node,
 
   /**
    * Whether the form element is disabled.
@@ -106,16 +139,30 @@ HvFormElement.propTypes = {
   required: PropTypes.bool,
 
   /**
-   * Represents the status of this form element,
-   * where valid is correct, invalid is incorrect and standby means no validations had run.
-   * this value will be propagated to the children through the context.
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to the state.
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  /**
+   * The error message to show when `status` is "invalid".
+   */
+  statusMessage: PropTypes.string,
 
   /**
+   * The callback fired when the value changes.
+   */
+  onChange: PropTypes.func,
+
+  /**
+   * @ignore
+   *
    * Locale to be used by the calendar.
    */
   locale: PropTypes.string,
 };
 
-export default withStyles(styles, { name: "HvFormElement" })(withId(HvFormElement));
+export default withStyles(styles, { name: "HvFormElement" })(HvFormElement);

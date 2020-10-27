@@ -212,7 +212,7 @@ export const Localized = () => {
             { id: "pt-PT", label: "Portuguese" },
             { id: "en-US", label: "English" },
           ]}
-          labels={{ title: "Select language" }}
+          label="Select language"
         />
         <HvFormElement value={selectionDate} locale={locale}>
           <HvLabel id="locale-label" label="Calendar that changes location">

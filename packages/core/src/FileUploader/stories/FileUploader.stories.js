@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvFileUploader } from "../..";
 
 export default {
-  title: "Widgets/File Uploader",
+  title: "Forms/File Uploader",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvFileUploader } from '@hv/uikit-react-core/dist'",

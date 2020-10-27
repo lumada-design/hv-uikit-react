@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormElement  should render correctly 1`] = `
-<WithStyles(WithId)
+<WithStyles(HvFormElement)
   status="valid"
-  value="George"
 >
   <WithStyles(HvLabel)
     id="test"
@@ -11,6 +10,7 @@ exports[`FormElement  should render correctly 1`] = `
     label="First name"
   >
     <WithStyles(HvBaseInput)
+      defaultValue="George"
       id="id-test"
       placeholder="Insert your name"
     />
@@ -21,11 +21,12 @@ exports[`FormElement  should render correctly 1`] = `
   >
     warning
   </WithStyles(HvWarningText)>
-</WithStyles(WithId)>
+</WithStyles(HvFormElement)>
 `;
 
 exports[`FormElement  should render correctly 2`] = `
 <WithStyles(HvBaseInput)
+  defaultValue="George"
   id="id-test"
   placeholder="Insert your name"
 />

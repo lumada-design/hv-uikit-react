@@ -8,7 +8,7 @@ import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
- * Component used in conjunction with other form elements, to give extra information about status.
+ * Provides the user with additional descriptive text for the form element.
  */
 const HvInfoMessage = (props) => {
   const {
@@ -23,7 +23,7 @@ const HvInfoMessage = (props) => {
   } = props;
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
-  const localId = id ?? setId(elementId, "info");
+  const localId = id ?? setId(elementId, "description");
 
   return (
     <>
@@ -42,6 +42,8 @@ const HvInfoMessage = (props) => {
     </>
   );
 };
+
+HvInfoMessage.formElementType = "description";
 
 HvInfoMessage.propTypes = {
   /**

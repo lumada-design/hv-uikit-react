@@ -17,6 +17,10 @@ const DEFAULT_LABELS = {
   removeFileButtonLabel: "Remove File",
 };
 
+/**
+ * Let the user choose one or more files from their device storage. Once chosen,
+ * the files can be uploaded to a server or manipulated on the client side.
+ */
 const FileUploader = ({
   id,
   className,

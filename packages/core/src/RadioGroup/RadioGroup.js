@@ -12,7 +12,9 @@ import { setId, useControlled } from "../utils";
 import styles from "./styles";
 
 /**
+ * A group of radio buttons.
  *
+ * A radio group is a type of selection list that can only have a single entry checked at any one time.
  */
 const HvRadioGroup = (props) => {
   const {
@@ -118,7 +120,6 @@ const HvRadioGroup = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={status || "standBy"}
       disabled={disabled}
       required={required}
@@ -144,7 +145,8 @@ const HvRadioGroup = (props) => {
         aria-invalid={status === "invalid" ? true : undefined}
         aria-errormessage={status === "invalid" ? setId(elementId, "error") : undefined}
         aria-describedby={
-          ariaDescribedBy != null ? ariaDescribedBy : description && setId(elementId, "description")
+          [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
+          undefined
         }
         className={clsx(classes.group, {
           [classes.vertical]: orientation === "vertical",

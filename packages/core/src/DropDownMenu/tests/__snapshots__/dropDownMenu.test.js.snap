@@ -1427,10 +1427,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       disableGutters={false}
                                       id="drop-down-menu-10-list"
                                       interactive={true}
-                                      multiSelect={false}
                                       onKeyDown={[Function]}
                                       role="menu"
-                                      selectable={false}
                                     >
                                       <HvListContainer
                                         className="HvList-root"
@@ -1443,10 +1441,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         disableGutters={false}
                                         id="drop-down-menu-10-list"
                                         interactive={true}
-                                        multiSelect={false}
                                         onKeyDown={[Function]}
                                         role="menu"
-                                        selectable={false}
                                       >
                                         <ul
                                           className="HvList-root HvListContainer-root"
@@ -3236,10 +3232,8 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       disableGutters={false}
                                       id="drop-down-menu-2-list"
                                       interactive={true}
-                                      multiSelect={false}
                                       onKeyDown={[Function]}
                                       role="menu"
-                                      selectable={false}
                                     >
                                       <HvListContainer
                                         className="HvList-root"
@@ -3252,10 +3246,8 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         disableGutters={false}
                                         id="drop-down-menu-2-list"
                                         interactive={true}
-                                        multiSelect={false}
                                         onKeyDown={[Function]}
                                         role="menu"
-                                        selectable={false}
                                       >
                                         <ul
                                           className="HvList-root HvListContainer-root"

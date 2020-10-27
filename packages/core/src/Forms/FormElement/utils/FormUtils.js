@@ -1,90 +1,102 @@
-import isNil from "lodash/isNil";
+import React from "react";
 
 /**
- * Returns a descriptor in case the element being checked matches with the name.
- *
- * @param {Array} element - The current element being checked.
- * @param {string} componentName - The name of the component this function should scan i.e.: HvWarningText.
- */
-const getDescriptorMap = (element, componentName) => {
-  if (element?.type?.__docgenInfo?.displayName?.includes(componentName)) {
-    return {
-      id: element.props?.id,
-      showWhen: element.props?.showWhen,
-    };
-  }
-  return null;
-};
-
-const initializeFieldIfEmpty = (field) => (isNil(field) || !Array.isArray(field) ? [] : field);
-
-/**
- * Receives a descriptor checks whether if the name matches and updates it.
- *
- * @param {Array} element - The current element being checked.
- * @param {Array} names - An array with the names of the components this function should scan i.e.: HvWarningText.
- * @param {Object} descriptors - descriptors to update.
- *
- */
-const updateDescriptors = (element, names, descriptors = {}) => {
-  const newDescriptorsMap = { ...descriptors };
-  let descriptorMap = {};
-  names.forEach((name) => {
-    newDescriptorsMap[name] = initializeFieldIfEmpty(newDescriptorsMap[name]);
-    descriptorMap = getDescriptorMap(element, name);
-    descriptorMap ? newDescriptorsMap[name].push(descriptorMap) : null;
-  });
-  return newDescriptorsMap;
-};
-
-/**
- * Scans the FormElement children looking for the Id's of the children that matches the provided names.
+ * Scans the element's children looking for the children IDs that match the different form element types.
  * This function will produce an object that has a key for each provided name
  * Inside each key there will be an array with each id of the found descriptor.
  *
  * @param {Array} children - The children inside the form element to scan.
- * @param {Array} names - An array with the names of the components this function should scan i.e.: HvWarningText.
- * @param {Object} descriptors - Already found descriptors used for recursion.
+ * @param {Object} descriptors - Initial descriptors map (used for recursion).
  *
  */
-const findDescriptors = (children, names, descriptors = {}) => {
-  let newDescriptorsMap = { ...descriptors };
-  if (!isNil(children)) {
-    if (Array.isArray(children)) {
-      children.forEach((child) => {
-        newDescriptorsMap = updateDescriptors(child, names, newDescriptorsMap);
-        if (child?.props?.children) {
-          newDescriptorsMap = findDescriptors(child.props.children, names, newDescriptorsMap);
-        }
+const findDescriptors = (
+  children,
+  descriptors = {
+    input: [],
+    label: [],
+    description: [],
+    controlled: [],
+    errormessage: [],
+
+    // TODO: refactor this out
+    HvCalendarHeader: [],
+  }
+) => {
+  React.Children.forEach(children, (child) => {
+    if (child?.type?.formElementType && child.props?.id) {
+      descriptors[child.type.formElementType]?.push({
+        id: child.props?.id,
+        htmlFor: child.props?.htmlFor,
       });
-    } else {
-      newDescriptorsMap = updateDescriptors(children, names, newDescriptorsMap);
-      if (children.props?.children) {
-        newDescriptorsMap = findDescriptors(children.props.children, names, newDescriptorsMap);
-      }
     }
-    return newDescriptorsMap;
-  }
-  return newDescriptorsMap;
+
+    if (child?.type?.formElementType !== "formelement") {
+      findDescriptors(child?.props?.children, descriptors);
+    }
+  });
+
+  return descriptors;
 };
 
-const getChildIdToLabel = (children, childName) => {
-  let childId = "";
-  if (Array.isArray(children)) {
-    children.forEach((child) => {
-      const foundId = getDescriptorMap(child, childName)?.id;
-      if (!isNil(foundId)) {
-        if (childId === "") {
-          childId = childId.concat(`${foundId}`);
-          return;
-        }
-        childId = childId.concat(` ${foundId}`);
-      }
-    });
-  } else {
-    childId = getDescriptorMap(children, childName)?.id;
-  }
-  return childId;
+const getIdReferenceListFor = (formElementType, descriptors, filterFor = null) => {
+  const referenceList = descriptors?.[formElementType]
+    ?.filter((d) => d.htmlFor !== filterFor)
+    ?.map((d) => d.id)
+    .join(" ")
+    .trim();
+
+  return referenceList !== "" ? referenceList : undefined;
 };
 
-export { getDescriptorMap, findDescriptors, updateDescriptors, getChildIdToLabel };
+const getIdReferenceFor = (formElementType, descriptors, filterFor = null) => {
+  const referenceList = descriptors?.[formElementType]
+    ?.filter((d) => d.htmlFor !== filterFor)
+    ?.map((d) => d.id)?.[0];
+
+  return referenceList !== "" ? referenceList : undefined;
+};
+
+const buildFormElementPropsFromContext = (props, context) => {
+  return {
+    name: props.name || context?.elementName,
+    disabled: props.disabled !== undefined ? props.disabled : context?.elementDisabled,
+    readOnly: props.readOnly !== undefined ? props.readOnly : context?.elementReadOnly,
+    required: props.required !== undefined ? props.required : context?.elementRequired,
+    status: props.status || context?.elementStatus,
+  };
+};
+
+const buildAriaPropsFromContext = (props, context, isInvalid, inputId) => {
+  const arias = {
+    "aria-labelledby":
+      props?.["aria-labelledby"] !== undefined
+        ? props?.["aria-labelledby"]
+        : getIdReferenceListFor("label", context?.descriptors, inputId),
+    "aria-describedby":
+      props?.["aria-describedby"] !== undefined
+        ? props?.["aria-describedby"]
+        : getIdReferenceListFor("description", context?.descriptors),
+    "aria-controls":
+      props?.["aria-controls"] !== undefined
+        ? props?.["aria-controls"]
+        : getIdReferenceListFor("controlled", context?.descriptors),
+  };
+
+  if (isInvalid) {
+    arias["aria-invalid"] = isInvalid;
+    arias["aria-errormessage"] =
+      props?.["aria-errormessage"] !== undefined
+        ? props?.["aria-errormessage"]
+        : getIdReferenceFor("errormessage", context?.descriptors);
+  }
+
+  return arias;
+};
+
+export {
+  findDescriptors,
+  getIdReferenceListFor,
+  getIdReferenceFor,
+  buildFormElementPropsFromContext,
+  buildAriaPropsFromContext,
+};

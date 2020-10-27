@@ -39,14 +39,15 @@ export const validationTypes = Object.freeze({
  * @returns {String}    - the validation type.
  */
 export const computeValidationType = (type) => {
-  if (type === "number") {
-    return validationTypes.number;
-  }
-  if (type === "email") {
-    return validationTypes.email;
-  }
+  switch (type) {
+    case "number":
+      return validationTypes.number;
+    case "email":
+      return validationTypes.email;
 
-  return validationTypes.none;
+    default:
+      return validationTypes.none;
+  }
 };
 
 /**

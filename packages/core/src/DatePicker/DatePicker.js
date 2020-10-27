@@ -10,8 +10,12 @@ import {
   HvButton,
   HvCalendar,
   HvLabel,
+  HvInfoMessage,
   HvFormElement,
+  HvWarningText,
   HvTypography,
+  useUniqueId,
+  useControlled,
 } from "..";
 import styles from "./styles";
 import withId from "../withId";
@@ -22,35 +26,60 @@ import useVisibleDate from "../Calendar/useVisibleDate";
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
   cancelLabel: "Cancel",
-  title: "",
-  placeholder: "Select a date",
-  rangeStart: "Start date",
-  rangeEnd: "End date",
 };
 
 /**
- * A graphical widget which allows the user to select a date.
+ * A date picker, popup calendar or date range picker is a graphical user
+ * interface widget which allows the user to select a date from a calendar.
  */
-const HvDatePicker = ({
-  id,
-  className,
-  labels: labelsProp,
-  classes,
-  disabled = false,
-  value,
-  startValue,
-  endValue,
-  rangeMode = false,
-  startAdornment,
-  horizontalPlacement = "right",
-  locale: localeProp = DEFAULT_LOCALE,
-  showActions = false,
-  onChange,
-  disablePortal = true,
-  escapeWithReference = true,
-  ...others
-}) => {
+const HvDatePicker = (props) => {
+  const {
+    classes,
+    className,
+
+    id,
+    name,
+
+    required = false,
+    disabled = false,
+
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
+
+    onChange,
+
+    status,
+    statusMessage,
+
+    placeholder,
+
+    labels: labelsProp,
+
+    value,
+    startValue,
+    endValue,
+
+    rangeMode = false,
+    startAdornment,
+    horizontalPlacement = "right",
+    locale: localeProp = DEFAULT_LOCALE,
+    showActions = false,
+    disablePortal = true,
+    escapeWithReference = true,
+    ...others
+  } = props;
+
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
+
+  const elementId = useUniqueId(id, "hvdatepicker");
+
+  const [validationState, setValidationState] = useControlled(status, "standBy");
+
+  const [validationMessage] = useControlled(statusMessage, "Required");
+
   const [locale, setLocale] = useState(validateLocale(localeProp));
   const [calendarOpen, setCalendarOpen] = useState(false);
 
@@ -86,6 +115,15 @@ const HvDatePicker = ({
 
     onChange?.(startDate, endDate);
 
+    setValidationState(() => {
+      // this will only run if status is uncontrolled
+      if (required && (!isDate(startDate) || (rangeMode && !isDate(endDate)))) {
+        return "invalid";
+      }
+
+      return "valid";
+    });
+
     setCalendarOpen(false);
   };
 
@@ -95,6 +133,15 @@ const HvDatePicker = ({
   const handleCancel = () => {
     rollbackStartDate();
     rollbackEndDate();
+
+    setValidationState(() => {
+      // this will only run if status is uncontrolled
+      if (required && (!isDate(startDate) || (rangeMode && !isDate(endDate)))) {
+        return "invalid";
+      }
+
+      return "valid";
+    });
 
     setCalendarOpen(false);
   };
@@ -172,64 +219,204 @@ const HvDatePicker = ({
 
   const renderInput = (dateString) => (
     <HvTypography variant={dateString ? "normalText" : "placeholderText"}>
-      {dateString || labels.placeholder}
+      {dateString || placeholder}
     </HvTypography>
   );
 
   const dateValue = rangeMode ? { startDate, endDate } : startDate;
 
+  const hasLabel = label != null;
+  const hasDescription = description != null;
+
+  // error message area will only be needed if the status is being controlled
+  // or if required is true
+  const canShowError = status !== undefined || required;
+
   return (
     <HvFormElement
       id={id}
-      disabled={disabled}
-      className={clsx(classes.root, className)}
+      name={name}
       value={dateValue}
+      status={validationState}
+      disabled={disabled}
+      required={required}
+      className={clsx(className, classes.root)}
       locale={locale}
       {...others}
     >
-      <HvLabel id={setId(id, "label")} className={classes.label} label={labels.title}>
-        <HvBaseDropdown
-          role="dialog"
-          classes={{ root: classes.dropdown, panel: classes.panel }}
-          disabled={disabled}
-          disablePortal={disablePortal}
-          placement={horizontalPlacement}
-          expanded={calendarOpen}
-          onToggle={handleToggle}
-          onClickOutside={handleCalendarClose}
-          placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
-          adornment={<Calendar className={classes.icon} color={disabled ? "atmo5" : undefined} />}
-          popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
-        >
-          {
-            /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-            // necessary because `HvBaseDropdown` re-render auto-focus
-          }
-          <div tabIndex={0} />
-          <HvCalendar
-            id={setId(id, "calendar")}
-            startAdornment={startAdornment}
-            onChange={handleDateChange}
-            onInputChange={handleInputDateChange}
-            onVisibleDateChange={onVisibleDateChange}
-            {...visibleDate}
-          />
-          {(rangeMode || showActions) && renderActions()}
-        </HvBaseDropdown>
-      </HvLabel>
+      {(hasLabel || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+              className={classes.label}
+            />
+          )}
+
+          {hasDescription && (
+            <HvInfoMessage id={setId(elementId, "description")} className={classes.description}>
+              {description}
+            </HvInfoMessage>
+          )}
+        </div>
+      )}
+      <HvBaseDropdown
+        role="combobox"
+        classes={{ root: classes.dropdown, panel: classes.panel }}
+        disabled={disabled}
+        disablePortal={disablePortal}
+        placement={horizontalPlacement}
+        expanded={calendarOpen}
+        onToggle={handleToggle}
+        onClickOutside={handleCalendarClose}
+        placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
+        adornment={<Calendar className={classes.icon} color={disabled ? "atmo5" : undefined} />}
+        popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
+        aria-haspopup="dialog"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-invalid={validationState === "invalid" ? true : undefined}
+        aria-errormessage={validationState === "invalid" ? setId(elementId, "error") : undefined}
+        aria-describedby={
+          [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
+          undefined
+        }
+      >
+        {
+          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+          // necessary because `HvBaseDropdown` re-render auto-focus
+        }
+        <div tabIndex={0} />
+        <HvCalendar
+          id={setId(id, "calendar")}
+          startAdornment={startAdornment}
+          onChange={handleDateChange}
+          onInputChange={handleInputDateChange}
+          onVisibleDateChange={onVisibleDateChange}
+          {...visibleDate}
+        />
+        {(rangeMode || showActions) && renderActions()}
+      </HvBaseDropdown>
+      {canShowError && (
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
+          {validationMessage}
+        </HvWarningText>
+      )}
     </HvFormElement>
   );
 };
 
 HvDatePicker.propTypes = {
   /**
-   * Id to be applied to the root node.
-   */
-  id: PropTypes.string,
-  /**
-   * Class name to be applied.
+   * Class names to be applied.
    */
   className: PropTypes.string,
+  /**
+   * A Jss Object used to override or extend the component styles applied.
+   */
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+
+    /**
+     * Styles applied to the container of the labels elements.
+     */
+    labelContainer: PropTypes.string,
+    /**
+     * Styles applied to the label element.
+     */
+    label: PropTypes.string,
+    /**
+     * Styles applied to the icon information text.
+     */
+    description: PropTypes.string,
+
+    /**
+     * Styles applied to the error area.
+     */
+    error: PropTypes.string,
+
+    /**
+     * Styles applied to the dropdown.
+     */
+    dropdown: PropTypes.string,
+
+    panel: PropTypes.string,
+    action: PropTypes.string,
+    icon: PropTypes.string,
+  }).isRequired,
+
+  /**
+   * Id to be applied to the form element root node.
+   */
+  id: PropTypes.string,
+
+  /**
+   * The form element name.
+   */
+  name: PropTypes.string,
+
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided instead.
+   */
+  label: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-labelledby": PropTypes.string,
+  /**
+   * Provide additional descriptive text for the form element.
+   */
+  description: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
+
+  /**
+   * The placeholder value when nothing is selected.
+   */
+  placeholder: PropTypes.string,
+
+  /**
+   * Indicates that the form element is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  required: PropTypes.bool,
+
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to the state.
+   */
+  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  /**
+   * The error message to show when `status` is "invalid". Defaults to "Required".
+   */
+  statusMessage: PropTypes.node,
+
+  /**
+   * The callback fired when the value changes.
+   */
+  onChange: PropTypes.func,
+
   /**
    * An object containing all the labels for the datepicker.
    */
@@ -242,27 +429,8 @@ HvDatePicker.propTypes = {
      * Cancel button label.
      */
     cancelLabel: PropTypes.string,
-    /**
-     * Text above the input/dropdown.
-     */
-    title: PropTypes.string,
-    /**
-     * Start date label.
-     */
-    rangeStart: PropTypes.string,
-    /**
-     * End date label.
-     */
-    rangeEnd: PropTypes.string,
-    /**
-     * Text inside the input/dropdown
-     */
-    placeholder: PropTypes.string,
   }),
-  /**
-   * A Jss Object used to override or extend the styles applied to the input/calendar box.
-   */
-  classes: PropTypes.instanceOf(Object).isRequired,
+
   /**
    * The initial value of the input when in single calendar mode.
    */
@@ -292,14 +460,6 @@ HvDatePicker.propTypes = {
    * Controls if actions buttons are visible at the calendar.
    */
   showActions: PropTypes.bool,
-  /**
-   * Callback function to be triggered when the input value is changed
-   */
-  onChange: PropTypes.func,
-  /**
-   * If `true` the datepicker is disabled unable to be interacted, if `false` it is enabled.
-   */
-  disabled: PropTypes.bool,
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */

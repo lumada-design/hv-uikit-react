@@ -204,9 +204,8 @@ const HvList = (props) => {
           role={selectable ? "listbox" : "menu"}
           interactive
           condensed={condensed}
-          selectable={selectable}
-          multiSelect={multiSelect}
           disableGutters={useSelector}
+          aria-multiselectable={(selectable && multiSelect) || undefined}
           {...others}
         >
           {list.filter((it) => !it.isHidden).map((item, i) => renderListItem(item, i))}

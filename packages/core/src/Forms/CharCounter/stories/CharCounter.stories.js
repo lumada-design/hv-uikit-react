@@ -2,12 +2,10 @@ import React from "react";
 import { HvCharCounter } from "../../..";
 
 export default {
-  title: "Forms/Form Element/Char Counter",
+  title: "Forms/Form Element Blocks/Char Counter",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCharCounter } from '@hv/uikit-react-core/dist'",
-    v3: true,
-    dsVersion: "3.2.1",
   },
   component: HvCharCounter,
   decorators: [

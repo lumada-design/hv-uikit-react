@@ -54,7 +54,7 @@ function eventTargetIsInsideContainer(container, event) {
 }
 
 /**
- * An input is a graphical control element that allows the user to write text.
+ * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
 const HvInput = (props) => {
   const {
@@ -574,7 +574,6 @@ const HvInput = (props) => {
     <HvFormElement
       id={id}
       name={name}
-      value={value}
       status={validationState}
       disabled={disabled}
       required={required}
@@ -588,7 +587,7 @@ const HvInput = (props) => {
         <div className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
-              id={setId(id, "label")}
+              id={setId(elementId, "label")}
               className={classes.label}
               htmlFor={setId(elementId, "input")}
               label={label}
@@ -669,7 +668,7 @@ const HvInput = (props) => {
       )}
 
       {canShowError && (
-        <HvWarningText id={setId(elementId, "error")} disableBorder>
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
           {validationMessage}
         </HvWarningText>
       )}
@@ -732,6 +731,11 @@ HvInput.propTypes = {
      * Styles applied to the icon information text.
      */
     description: PropTypes.string,
+
+    /**
+     * Styles applied to the error area.
+     */
+    error: PropTypes.string,
 
     /**
      * Styles applied to the div around the adornment.

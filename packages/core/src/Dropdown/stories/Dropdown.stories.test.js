@@ -49,7 +49,7 @@ export const LongLabel = () => (
     expanded
     multiSelect
     showSearch
-    labels={{ title: "Dropdown" }}
+    label="Dropdown"
     values={[
       { label: "value 1" },
       { label: "value 2" },
@@ -127,7 +127,7 @@ export const MultiSelection = () => (
     id="dropdown2"
     multiSelect
     showSearch
-    labels={{ title: "Dropdown Title" }}
+    label="Dropdown Title"
     values={[
       { label: "value 1" },
       { label: "value 2", selected: true },
