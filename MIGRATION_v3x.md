@@ -249,6 +249,15 @@ textDisabled
 ```
 The `selectDefault` prop was removed
 
+### Loading
+
+Loading is now visible by default. To hide it, use `hidden` prop.
+Removed option to pass `children` and use component as a wrapper "HOC". We still provide a sample of an `HvLoading` wrapping a component.
+
+- `text` renamed to `label`
+- `isActive` renamed to `hidden`, and is not visible by default (`hidden=false`)
+- `loadingText` class renamed to `label` (`classes.label`)
+
 ### Login
 
 Component was removed - use `HvLoginContainer` instead.

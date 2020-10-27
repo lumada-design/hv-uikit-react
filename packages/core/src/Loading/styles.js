@@ -1,5 +1,3 @@
-import hexToRgbA from "../utils/hexToRgbA";
-
 const interval = 0.11;
 
 const bars = {
@@ -34,8 +32,10 @@ const styles = (theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    width: "100%",
-    height: "100%",
+  },
+
+  hidden: {
+    display: "none",
   },
 
   barContainer: {
@@ -102,19 +102,8 @@ const styles = (theme) => ({
     },
   },
 
-  loadingText: {
+  label: {
     marginTop: "15px",
-  },
-
-  overlay: {
-    position: "absolute",
-    transition: "background-Color .2s ease",
-    zIndex: -1,
-  },
-
-  blur: {
-    backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1),
-    zIndex: theme.zIndex.drawer,
   },
 });
 

@@ -1,6 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import clsx from "clsx";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import useResizeAware from "react-resize-aware";
+import { makeStyles } from "@material-ui/core";
 import { HvButton, HvLoading, HvTypography } from "../..";
 import TableExample from "./TableExample";
+import hexToRgbA from "../../utils/hexToRgbA";
 
 /* eslint-disable react/prop-types */
 
@@ -15,38 +20,16 @@ export default {
   component: HvLoading,
 };
 
-export const Main = () => {
-  return (
-    <div style={{ display: "flex" }}>
-      <HvLoading isActive />
-    </div>
-  );
-};
+export const Main = () => (
+  <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
+    <HvLoading />
+    <HvLoading label="Loading" />
+    <HvLoading small />
+  </div>
+);
 
-export const Indeterminate = () => {
-  const ExampleBox = ({ text, children }) => (
-    <div>
-      <HvTypography>{text}</HvTypography>
-      {children}
-    </div>
-  );
-  return (
-    <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox text="Large Loading">
-        <HvLoading isActive />
-      </ExampleBox>
-      <ExampleBox text="Large Loading w/ label">
-        <HvLoading isActive text="Loading" />
-      </ExampleBox>
-      <ExampleBox text="Small Loading">
-        <HvLoading isActive small />
-      </ExampleBox>
-    </div>
-  );
-};
-
-export const IndeterminateButtons = () => {
-  const ExampleBox = ({ text, category, color }) => {
+export const Buttons = () => {
+  const ExampleBox = ({ label, category, color }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const activateTimer = () => {
@@ -60,31 +43,31 @@ export const IndeterminateButtons = () => {
 
     return (
       <div style={{ textAlign: "center" }}>
-        <HvTypography style={{ paddingBottom: "5px" }}>{text}</HvTypography>
+        <HvTypography style={{ paddingBottom: "5px" }}>{label}</HvTypography>
         <HvButton category={category} onClick={activateTimer}>
-          {(!isLoading && "Submit") || <HvLoading small isActive={isLoading} color={color} />}
+          {(!isLoading && "Submit") || <HvLoading small hidden={!isLoading} color={color} />}
         </HvButton>
       </div>
     );
   };
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox category="primary" text="Primary button" color="base1" />
-      <ExampleBox category="secondary" text="Secondary button" />
-      <ExampleBox category="ghost" text="Ghost button" />
+      <ExampleBox category="primary" label="Primary button" color="base1" />
+      <ExampleBox category="secondary" label="Secondary button" />
+      <ExampleBox category="ghost" label="Ghost button" />
     </div>
   );
 };
 
 export const Determinate = () => {
-  const ExampleBox = ({ text, children }) => (
+  const ExampleBox = ({ label, children }) => (
     <div>
-      <HvTypography>{text}</HvTypography>
+      <HvTypography>{label}</HvTypography>
       {children}
     </div>
   );
 
-  const Progress = ({ text, inc }) => {
+  const Progress = ({ label, inc }) => {
     const [value, setValue] = useState(0);
 
     useEffect(() => {
@@ -94,34 +77,78 @@ export const Determinate = () => {
       return () => clearInterval(interval);
     }, [inc]);
 
-    return <HvLoading isActive text={text?.(value)} />;
+    return <HvLoading label={label?.(value)} />;
   };
 
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox text="Determine w/ percentages">
-        <Progress text={(v) => `${v}%`} inc={(v) => (v === 100 ? 0 : v + 5)} />
+      <ExampleBox label="Determine w/ percentages">
+        <Progress label={(v) => `${v}%`} inc={(v) => (v === 100 ? 0 : v + 5)} />
       </ExampleBox>
-      <ExampleBox text="Determine w/ progress">
-        <Progress text={(v) => `${v}M/75M`} inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))} />
+      <ExampleBox label="Determine w/ progress">
+        <Progress label={(v) => `${v}M/75M`} inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))} />
       </ExampleBox>
     </div>
   );
 };
 
 export const WithChildren = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const useStyles = makeStyles((theme) => ({
+    loading: {
+      width: "100%",
+      height: "100%",
+    },
+    overlay: {
+      position: "absolute",
+      transition: "background-Color .2s ease",
+      zIndex: -1,
+    },
+    blur: {
+      backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1),
+      zIndex: theme.zIndex.drawer,
+    },
+  }));
+
+  const LoadingContainer = ({ children, hidden, ...others }) => {
+    const ref = useRef(null);
+    const classes = useStyles();
+    const [resizeListener, sizes] = useResizeAware();
+    const [overlayPosition, setOverlayPosition] = useState({});
+
+    useEffect(() => {
+      if (children && ref.current) {
+        const { clientHeight, clientWidth, offsetTop, offsetLeft } = ref.current;
+        setOverlayPosition({
+          top: offsetTop,
+          left: offsetLeft,
+          height: clientHeight,
+          width: clientWidth,
+        });
+      }
+    }, [children, sizes.width, sizes.height]);
+
+    return (
+      <>
+        <div
+          style={{ ...overlayPosition }}
+          className={clsx(classes.overlay, { [classes.blur]: !hidden })}
+        >
+          <HvLoading classes={{ root: classes.loading }} hidden={hidden} {...others} />
+        </div>
+        {resizeListener}
+        <div ref={ref}>{children}</div>
+      </>
+    );
+  };
 
   return (
     <>
-      <HvButton id="buttonLoading" onClick={() => setIsLoading(!isLoading)}>
-        {isLoading ? "Deactivate" : "Activate"}
-      </HvButton>
-      <HvLoading isActive={isLoading} text="Loading">
-        <div>
-          <TableExample />
-        </div>
-      </HvLoading>
+      <HvButton onClick={() => setLoading(!loading)}>{loading ? "Disable" : "Enable"}</HvButton>
+      <LoadingContainer hidden={!loading}>
+        <TableExample />
+      </LoadingContainer>
     </>
   );
 };
@@ -130,7 +157,7 @@ WithChildren.story = {
   parameters: {
     docs: {
       storyDescription:
-        "If a children is passed the component wraps it, creating a overlay. You can control whether it's active with the `isActive` prop.",
+        "If a children is passed the component wraps it, creating a overlay. You can control whether it's hidden with the `hidden` prop.",
     },
   },
 };
