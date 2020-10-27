@@ -8,7 +8,7 @@ import background from "./resources/background.svg";
 /**
  * Container layout for the login form.
  */
-const LoginContainer = ({ id, className, classes, children, customBackground, ...others }) => {
+const HvLogin = ({ id, className, classes, children, customBackground, ...others }) => {
   return (
     <div
       id={id}
@@ -23,7 +23,7 @@ const LoginContainer = ({ id, className, classes, children, customBackground, ..
   );
 };
 
-LoginContainer.propTypes = {
+HvLogin.propTypes = {
   /**
    * Id to be applied to the root node.
    */
@@ -55,4 +55,4 @@ LoginContainer.propTypes = {
   customBackground: PropTypes.string,
 };
 
-export default withStyles(styles, { name: "HvLoginContainer" })(LoginContainer);
+export default withStyles(styles, { name: "HvLogin" })(HvLogin);
