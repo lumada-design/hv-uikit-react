@@ -14,6 +14,16 @@ export type HvSelectionListClassKey =
 export interface HvSelectionListProps
   extends StandardProps<HvFormElementProps, HvSelectionListClassKey, "onChange"> {
   /**
+   * Indicates that the user may select more than one item from the current selectable list items.
+   */
+  multiple?: boolean;
+
+  /**
+   * If `true`, selection can be toggled when single selection.
+   */
+  singleSelectionToggle?: boolean;
+
+  /**
    * Indicates whether the list items group's orientation is horizontal or vertical.
    *
    * Defaults to vertical.

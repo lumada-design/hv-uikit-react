@@ -52,6 +52,7 @@ const HvSelectionList = (props) => {
     orientation = "vertical",
 
     multiple = false,
+    singleSelectionToggle = false,
 
     children,
     ...others
@@ -125,7 +126,7 @@ const HvSelectionList = (props) => {
             }
           });
         } else {
-          newValue = !selectedState[index] ? allValues[index] : null;
+          newValue = singleSelectionToggle && selectedState[index] ? null : allValues[index];
         }
 
         onChange?.(evt, newValue);
@@ -153,6 +154,7 @@ const HvSelectionList = (props) => {
       selectedState,
       setValidationState,
       setValue,
+      singleSelectionToggle,
     ]
   );
 
@@ -279,7 +281,7 @@ HvSelectionList.propTypes = {
    * When defined the selection list state becomes controlled.
    */
   // eslint-disable-next-line react/forbid-prop-types
-  value: PropTypes.oneOf([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
+  value: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
   /**
    * When uncontrolled, defines the initial value.
    */
@@ -346,6 +348,11 @@ HvSelectionList.propTypes = {
    * Indicates that the user may select more than one item from the current selectable list items.
    */
   multiple: PropTypes.bool,
+
+  /**
+   * If `true`, selection can be toggled when single selection.
+   */
+  singleSelectionToggle: PropTypes.bool,
 
   /**
    * Indicates whether the list orientation is horizontal or vertical.
