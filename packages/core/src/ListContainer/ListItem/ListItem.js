@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useContext, useMemo } from "react";
+import React, { useCallback, useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 
 import clsx from "clsx";
@@ -75,16 +75,25 @@ const HvListItem = (props) => {
   const disableGutters = disableGuttersProp != null ? disableGuttersProp : disableGuttersContext;
   const interactive = interactiveProp != null ? interactiveProp : interactiveContext;
 
+  const handleOnClick = useCallback(
+    (evt) => {
+      if (!disabled) {
+        onClick?.(evt);
+      }
+    },
+    [disabled, onClick]
+  );
+
   const clonedStartAdornment = useMemo(
     () =>
       applyClassNameAndStateToElement(
         startAdornment,
         selected,
         disabled,
-        onClick,
+        handleOnClick,
         classes.startAdornment
       ),
-    [classes.startAdornment, disabled, onClick, selected, startAdornment]
+    [classes.startAdornment, disabled, handleOnClick, selected, startAdornment]
   );
   const clonedEndAdornment = useMemo(
     () => applyClassNameToElement(endAdornment, classes.endAdornment),
@@ -115,7 +124,7 @@ const HvListItem = (props) => {
       <li
         id={id}
         role={role}
-        onClick={onClick}
+        onClick={handleOnClick}
         onKeyDown={() => {}}
         className={clsx(className, classes.root, {
           [classes.gutters]: !disableGutters,
@@ -133,9 +142,11 @@ const HvListItem = (props) => {
       </li>
     );
   }, [
-    id,
     role,
-    onClick,
+    disabled,
+    selected,
+    id,
+    handleOnClick,
     className,
     classes.root,
     classes.gutters,
@@ -148,8 +159,6 @@ const HvListItem = (props) => {
     disableGutters,
     condensed,
     interactive,
-    selected,
-    disabled,
     startAdornment,
     endAdornment,
     others,
