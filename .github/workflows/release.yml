@@ -70,8 +70,8 @@ jobs:
           npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
           npm config set always-auth true
 
-          git config --global user.name $GITHUB_ACTOR
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Publish (Lerna)
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
