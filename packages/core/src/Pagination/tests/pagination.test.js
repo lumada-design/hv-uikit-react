@@ -4,7 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import { HvInput, HvPagination, HvProvider } from "../..";
-import { Main, ControlledSample } from "../stories/Pagination.stories";
+import { Main } from "../stories/Pagination.stories";
 import Select from "../Select";
 
 describe("Default Pagination", () => {
@@ -57,21 +57,5 @@ describe("Pagination without pageSize select", () => {
   it("should NOT render the select", () => {
     const input = wrapper.find("select");
     expect(input.length).toBe(0);
-  });
-});
-
-describe("Custom Pagination", () => {
-  const wrapper = mount(
-    <HvProvider>
-      <ControlledSample />
-    </HvProvider>
-  );
-
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvPagination)).toMatchSnapshot();
   });
 });

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
 
-import { Add, Delete, Lock, Preview, Upload } from "@hv/uikit-react-icons";
+import { Add, Delete, Lock, Preview } from "@hv/uikit-react-icons";
 
 import { HvBulkActions, HvCheckBox, HvPagination } from "../..";
 
@@ -22,26 +22,6 @@ export default {
       </div>
     ),
   ],
-};
-
-export const Main = () => {
-  const actions = [
-    { id: "get", label: "Upload", iconCallback: () => <Upload /> },
-    { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
-    { id: "post", label: "Add", iconCallback: () => <Add /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
-  ];
-
-  return (
-    <HvBulkActions
-      actions={actions}
-      actionsCallback={(e, id, action) => {
-        console.log("Action data:", action);
-      }}
-      maxVisibleActions={3}
-    />
-  );
 };
 
 const styles = (theme) => ({
@@ -75,7 +55,7 @@ const SampleComponent = withStyles(styles)(({ classes, data, onChange }) => (
   </div>
 ));
 
-export const Controlled = () => {
+export const Main = () => {
   const addEntry = (i) => ({
     id: `val${i + 1}`,
     value: `Value ${i + 1}`,
@@ -110,7 +90,7 @@ export const Controlled = () => {
   );
 };
 
-export const ControlledWithActions = () => {
+export const WithActions = () => {
   const actions = [
     { id: "add", label: "Add", iconCallback: () => <Add /> },
     { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
@@ -171,7 +151,7 @@ export const ControlledWithActions = () => {
   );
 };
 
-export const ControlledWithAllPages = () => {
+export const WithPagination = () => {
   const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
   const actions = [
     { id: "add", label: "Add", iconCallback: () => <Add /> },

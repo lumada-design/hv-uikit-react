@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Main, ControlledWithActions } from "../stories/BulkActions.stories";
+import { Main, WithActions } from "../stories/BulkActions.stories";
 import { HvActionsGeneric, HvProvider, HvBulkActions, HvDropDownMenu, HvCheckBox } from "../..";
 
 describe("BulkActions", () => {
@@ -27,7 +27,7 @@ describe("BulkActions", () => {
   });
 
   it("should render a HvCheckbox component", () => {
-    const component = wrapper.find(HvCheckBox).find("input");
+    const component = wrapper.find(HvBulkActions).find(HvCheckBox).find("input");
     expect(component.length).toBe(1);
   });
 
@@ -43,7 +43,7 @@ describe("BulkActions controlled with actions", () => {
   it("should be defined", () => {
     wrapper = mount(
       <HvProvider>
-        <ControlledWithActions />
+        <WithActions />
       </HvProvider>
     );
     expect(wrapper).toBeDefined();
