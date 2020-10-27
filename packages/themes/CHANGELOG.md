@@ -6,20 +6,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # 3.0.0 (2020-10-30)
 
 
-### Bug Fixes
-
-* **styleguide:** adjust undefinedState color in Wicked theme. ([a3f6df6](https://github.com/pentaho/hv-uikit-react/commit/a3f6df670b770bc4e698b24119bf73aed177bd20))
-* **styleguide:** color adjustment. [#1817](https://github.com/pentaho/hv-uikit-react/issues/1817) ([45e6f12](https://github.com/pentaho/hv-uikit-react/commit/45e6f12b738c7b186321f6559674ed8a94b1dc20))
-* **Styleguide:** correct .atmo5 HEX color in Undefined State. [#1773](https://github.com/pentaho/hv-uikit-react/issues/1773) ([b458953](https://github.com/pentaho/hv-uikit-react/commit/b4589537f0767f54e15bb422e6e9169c33874bc9))
-
-
 ### Features
-
-* **dropdown:** upgrade to DS 3.1. [#1741](https://github.com/pentaho/hv-uikit-react/issues/1741) ([3bda3ac](https://github.com/pentaho/hv-uikit-react/commit/3bda3ac3e4d7ffeff71c9d99056a62e1385552d2))
-* **styleguides:** adjust link colors. HVUIKIT-5572 ([9503bde](https://github.com/pentaho/hv-uikit-react/commit/9503bdebf786b95d90caa9631416aa62fc45e10b))
-* **theme:** colors and typography ([814f2d1](https://github.com/pentaho/hv-uikit-react/commit/814f2d1fb1e9e4069c009effeac4af5d3977c467))
-* **typography:** update tokens library. [#1824](https://github.com/pentaho/hv-uikit-react/issues/1824) ([780d101](https://github.com/pentaho/hv-uikit-react/commit/780d1012be15cb4a5e5982946ed0444f30cce063))
-
+* Themes updated according to **version 3.2.1** of Design System including Typography and Colors 
 
 
 

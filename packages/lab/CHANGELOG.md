@@ -6,42 +6,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # [3.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.5.20...@hv/uikit-react-lab@3.0.0) (2020-10-30)
 
 
-### Bug Fixes
-
-* **code-editor:** remove reference to atmo7 no longer valid ([da46c5f](https://github.com/pentaho/hv-uikit-react/commit/da46c5fa65b728380cd2c7f38cd3bef64c616156))
-* **datepicker:** removed UTC conversions ([b5a81e4](https://github.com/pentaho/hv-uikit-react/commit/b5a81e4d387500ee11ffac54fc4c35f92240092d))
-* **icons:** jest warnings ([a640559](https://github.com/pentaho/hv-uikit-react/commit/a640559cf9bb8a313ebcbfbb5f8e91cd0b350ce7))
-* **lab:** add ts indexes. HVUIKIT-5471 ([9e038e6](https://github.com/pentaho/hv-uikit-react/commit/9e038e64fa641e4f5b7df62416a04783e4ef712a))
-* **list:** component ux review. HVUIKIT-5416 ([1d72bf7](https://github.com/pentaho/hv-uikit-react/commit/1d72bf755ee835faa523f55531f3dfe8da7e0e1e))
-* **styleguide:** color adjustment. [#1817](https://github.com/pentaho/hv-uikit-react/issues/1817) ([45e6f12](https://github.com/pentaho/hv-uikit-react/commit/45e6f12b738c7b186321f6559674ed8a94b1dc20))
-* **Styleguide:** correct .atmo5 HEX color in Undefined State. [#1773](https://github.com/pentaho/hv-uikit-react/issues/1773) ([b458953](https://github.com/pentaho/hv-uikit-react/commit/b4589537f0767f54e15bb422e6e9169c33874bc9))
-
-
 ### Features
-
-* **button:** upgrade button to ds3.0 .[#1738](https://github.com/pentaho/hv-uikit-react/issues/1738) ([71f3ff7](https://github.com/pentaho/hv-uikit-react/commit/71f3ff70a24a3ddb732a69dcf9064f75ca58385e))
-* **checkboxgroup:** adds checkbox group HVUIKIT-5524 ([bbe2b16](https://github.com/pentaho/hv-uikit-react/commit/bbe2b16f9946a94d0b429b408e314697c36b365f))
-* **docs:** add information about component status. HVUIKIT-5522 ([87065ed](https://github.com/pentaho/hv-uikit-react/commit/87065ed44887fa281e8fd090ef2867f027d96100))
-* **dropdown:** upgrade to DS 3.1. [#1741](https://github.com/pentaho/hv-uikit-react/issues/1741) ([3bda3ac](https://github.com/pentaho/hv-uikit-react/commit/3bda3ac3e4d7ffeff71c9d99056a62e1385552d2))
-* **icons:** updated library according to latest DS version. [#1779](https://github.com/pentaho/hv-uikit-react/issues/1779) ([5225745](https://github.com/pentaho/hv-uikit-react/commit/52257456a83277098fcfe5b8fb3cad6727978152))
-* **input:** component breakdown and ds 3.x update. ([#1829](https://github.com/pentaho/hv-uikit-react/issues/1829)) ([fe80025](https://github.com/pentaho/hv-uikit-react/commit/fe80025763bfdf42514c27565877db9a9cab789b)), closes [infomessage.#1762](https://github.com/infomessage./issues/1762) [warningtext.#1762](https://github.com/warningtext./issues/1762) [border.#1762](https://github.com/border./issues/1762) [1.#1762](https://github.com/1./issues/1762)
-* **lab:** remove deprecated components. HVUIKIT-5471 ([6305de6](https://github.com/pentaho/hv-uikit-react/commit/6305de6eec80b76a0b567e98e0b3412a359bae02))
-* **searchbox:** remove searchbox widget and refactor samples HVUIKIT-5474 ([a4c9a3a](https://github.com/pentaho/hv-uikit-react/commit/a4c9a3aaf698e0b255cb218fd4a1dfa73fcffb0b))
-* **styleguides:** adjust link colors. HVUIKIT-5572 ([9503bde](https://github.com/pentaho/hv-uikit-react/commit/9503bdebf786b95d90caa9631416aa62fc45e10b))
-* remove deprecated components from lab ([d74bd09](https://github.com/pentaho/hv-uikit-react/commit/d74bd092c74b5ed476e5ad495ed2bf826d2ade41))
-* standardize input and textarea API HVUIKIT-5474 ([dba1e44](https://github.com/pentaho/hv-uikit-react/commit/dba1e4406c550f916ad84124e583c3e8741702fa))
-* **tabs:** styles update. HVUIKIT-5481 ([#1892](https://github.com/pentaho/hv-uikit-react/issues/1892)) ([128f951](https://github.com/pentaho/hv-uikit-react/commit/128f9512a6c620a3e7e8aaaf98c18beffc457588))
-* **textarea:** text area update.HVUIKIT-5456 ([c1ee717](https://github.com/pentaho/hv-uikit-react/commit/c1ee717d4dcd2ab9df35b597e05bb50b16f5619b))
-* **typography:** replace using DS 3.1. [#1803](https://github.com/pentaho/hv-uikit-react/issues/1803) ([0326c01](https://github.com/pentaho/hv-uikit-react/commit/0326c01a2afbb22e112b820dda584ba0095258c8))
-* **typography:** update tokens library. [#1824](https://github.com/pentaho/hv-uikit-react/issues/1824) ([780d101](https://github.com/pentaho/hv-uikit-react/commit/780d1012be15cb4a5e5982946ed0444f30cce063))
-
-
-### Reverts
-
-* Revert "docs: upgrade storybook to 6.0.21 HVUIKIT-5472 (#1947)" ([765bb63](https://github.com/pentaho/hv-uikit-react/commit/765bb63cab698e04b920d06cba90c45592c437c9)), closes [#1947](https://github.com/pentaho/hv-uikit-react/issues/1947)
-
-
-
+* Removed all deprecated components in favor of its usage from the main core package
 
 
 ## [2.5.20](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.5.19...@hv/uikit-react-lab@2.5.20) (2020-10-27)
@@ -63,6 +29,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ## [2.5.18](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.5.17...@hv/uikit-react-lab@2.5.18) (2020-10-20)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
+
 
 
 
