@@ -63,7 +63,6 @@ const sortValues = ({ accessor, sortFunction: externalSortFunction, type, cellTy
 
 const Sort = ({
   id,
-  labels,
   selected,
   onSelection,
   metadata,
@@ -78,7 +77,6 @@ const Sort = ({
   return (
     <HvDropdown
       id={setId(id, "sort")}
-      labels={labels}
       values={sortOperationSetup(metadata, selected)}
       onChange={onSortChange || innerSortValues}
       singleSelectionToggle={false}
