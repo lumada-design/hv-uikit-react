@@ -1,18 +1,18 @@
 import React from "react";
 import clsx from "clsx";
-import { HvButton, HvTypography, HvInput, HvLoginContainer, HvDropdown } from "../..";
+import { HvButton, HvTypography, HvInput, HvLogin, HvDropdown } from "../..";
 import customBackground from "./background-custom.jpg";
 import useStyles from "./styles";
 
 export default {
-  title: "Layout/Login Container",
+  title: "Components/Login Container",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLoginContainer } from '@hv/uikit-react-core/dist'",
+    usage: "import { HvLogin } from '@hv/uikit-react-core/dist'",
 
     dsVersion: "3.2.1",
   },
-  component: HvLoginContainer,
+  component: HvLogin,
   decorators: [(storyFn) => <div style={{ display: "flex", height: "100vh" }}>{storyFn()}</div>],
 };
 
@@ -20,7 +20,7 @@ export const Main = () => {
   const classes = useStyles();
 
   return (
-    <HvLoginContainer>
+    <HvLogin>
       <div className={classes.root}>
         <HvTypography variant="mTitle">Welcome</HvTypography>
 
@@ -47,7 +47,7 @@ export const Main = () => {
           Login
         </HvButton>
       </div>
-    </HvLoginContainer>
+    </HvLogin>
   );
 };
 
@@ -55,10 +55,7 @@ export const CustomBackground = () => {
   const classes = useStyles();
 
   return (
-    <HvLoginContainer
-      customBackground={customBackground}
-      className={classes.customBackgroundPosition}
-    >
+    <HvLogin customBackground={customBackground} className={classes.customBackgroundPosition}>
       <div className={classes.root}>
         <HvTypography variant="mTitle">Welcome</HvTypography>
 
@@ -93,7 +90,7 @@ export const CustomBackground = () => {
           Login
         </HvButton>
       </div>
-    </HvLoginContainer>
+    </HvLogin>
   );
 };
 
