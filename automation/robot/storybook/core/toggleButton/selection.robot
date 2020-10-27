@@ -12,16 +12,6 @@ state transition
     Click Element                            ${button}(1)
     toggle button should be selected         ${button}(1)    FavoriteSelected
 
-show label tooltip when mouse hover toggle button
-    [Tags]    bug-ie-webdriver
-    [Setup]    open toggle button sample    main
-    Mouse Over                  ${button}(1)
-    Wait Until Page Contains    Unmark as favorite
-    Click Element               ${button}(1)
-    Mouse Over                  css:body
-    Mouse Over                  ${button}(1)
-    Wait Until Page Contains    Mark as favorite
-
 controlled toggle button
     [Setup]    go to    ${tests}toggle-button--controlled
     Wait Until Element Is Visible           ${buttons}
@@ -38,15 +28,6 @@ impossible change toggle button when is disabled
     toggle button should not be selected    ${button}(1)    LightOff
     Click Element                           ${button}(1)
     toggle button should not be selected    ${button}(1)    LightOff
-
-show label tooltip when mouse hover disabled toggle button
-    [Tags]    bug-ie-webdriver    bug-firefox-webdriver
-    [Setup]    open toggle button sample    disabled
-    Mouse Over                  ${button}(1)
-    Wait Until Page Contains    Turn on light
-    Mouse Over                  css:body
-    Mouse Over                  ${button}(1)
-    Wait Until Page Contains    Turn on light
 
 
 *** Comments ***
