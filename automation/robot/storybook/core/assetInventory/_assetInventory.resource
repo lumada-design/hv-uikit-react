@@ -17,7 +17,7 @@ focus assertion by Browser
 
 open assetInventory sample
     [Arguments]    ${sample}
-    Go To     ${layout}asset-inventory--${sample}
+    Go To     ${components}asset-inventory--${sample}
     Wait Until Element Is Enabled    ${assetInventory}
 
 
