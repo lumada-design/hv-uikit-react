@@ -1,11 +1,29 @@
-name: Next Nightly
+# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
+#
+# An example using curl:
+# curl \
+#  -H "Accept: application/vnd.github.everest-preview+json" \
+#  -H "Authorization: token <user-token>" \
+#  --request POST \
+#  --data "{\"event_type\": \"v2x\"}" \
+#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
+
+name: v2.x Nightly
 on:
   schedule:
-    - cron: "0 7 * * *" # daily at 07:00
+    - cron: "0 3 * * *" # daily at 03:00
+  repository_dispatch:
+    types: [v2x]
   workflow_dispatch:
 
 # flow:
-# +------------------------------------+          +-------------------+
+#      +------------+
+#      |Notify-Start|
+#      +-----+------+
+#            |
+#            +----------------------------------------------+
+#            |                                              |
+# +----------v-------------------------+          +---------v---------+
 # |Static-Checks (Licenses, Lint, Jest)|          |Build-Documentation|
 # +----------+-------------------------+          +---------+---------+
 #            |                                              |
@@ -13,25 +31,50 @@ on:
 #            |                   |           |              |                         |
 #            |             +-----v----+ +----v-----+ +------v----------------+ +------v-----------+
 #            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)| |Robot-Windows (ie)|
-#            |             +--------+-+ +--+-------+ +------+----------------+ +------+-----------+
-#            |                      |      |                |                         |
-#            |                    +-v------v-+              |                         |
-#            +------------------->|Notify-End|<-------------+-------------------------+
-#                                 +----------+
+#            |             +-----+----+ +----+-----+ +------+----------------+ +------+-----------+
+#            |                   |           |              |                         |
+#            +-------------------+-----+-----+--------------+-------------------------+
+#                                      |
+#                   +----------+       |        +-------+
+#                   |Notify End|<------+------->|Release|
+#                   +----------+                +-------+
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
 
 jobs:
+  Notify-Start:
+    name: Notify Start
+    runs-on: [self-hosted, Linux]
+    steps:
+      - name: Notify
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
+                  "footer": "by ${{github.actor}}"
+                }
+              ]
+            }
+
   Static-Checks:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
+    needs: [Notify-Start]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "next"
+          ref: "v2.x"
 
       - uses: actions/setup-node@v1
         with:
@@ -57,12 +100,13 @@ jobs:
   Build-Documentation:
     name: Build Documentation
     runs-on: [self-hosted, Linux]
+    needs: [Notify-Start]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "next"
+          ref: "v2.x"
 
       - uses: actions/setup-node@v1
         with:
@@ -110,7 +154,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "next"
+          ref: "v2.x"
 
       - uses: actions/setup-node@v1
         with:
@@ -162,7 +206,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "next"
+          ref: "v2.x"
 
       - uses: actions/setup-node@v1
         with:
@@ -228,7 +272,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "next"
+          ref: "v2.x"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
@@ -271,7 +315,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "next"
+          ref: "v2.x"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
@@ -352,3 +396,16 @@ jobs:
                 }
               ]
             }
+
+  Release:
+    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    runs-on: [self-hosted, Linux]
+    steps:
+      - name: Trigger Release
+        # repo scope personal token is required to generate a dispatch event
+        run: |
+          curl -X POST \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
+            -d '{"event_type": "v2-release"}'
