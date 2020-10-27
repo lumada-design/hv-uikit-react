@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.6...@hv/uikit-react-core@2.13.0) (2020-10-27)
+
+
+### Features
+
+* **table:** add page control capability. [#2067](https://github.com/pentaho/hv-uikit-react/issues/2067)  ([9882ac6](https://github.com/pentaho/hv-uikit-react/commit/9882ac6724ea241d5681e3f50cba01363965b9c4))
+
+
+
+
+
 ## [2.12.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.5...@hv/uikit-react-core@2.12.6) (2020-10-22)
 
 **Note:** Version bump only for package @hv/uikit-react-core
