@@ -29,11 +29,11 @@ input end date previous of start date
 
 replace date in wrong format
     [Documentation]    restore previous date
-    wait until element has value    ${calendarLeft} input    5 Jul 2019
+    wait until element has value    ${calendarLeft} input     5 Jul 2019
     wait until element has value    ${calendarRight} input    10 Jul 2019
-    Force input                     ${calendarRight} input    02 22 2020
+    Force input                     ${calendarLeft} input     02/22/2020
     Press Keys                      NONE    TAB
-    wait until element has value    ${calendarLeft} input    5 Jul 2019
+    wait until element has value    ${calendarLeft} input     10 Jul 2019
     wait until element has value    ${calendarRight} input    10 Jul 2019
 
 try clean input date

@@ -18,7 +18,6 @@ input a date
 
 input locale pt-PT date
     [Setup]    Open DatePicker sample     localized
-    Click Element              ${radioPT}
     Force input                ${input}      20/08/2014
     Press Keys                 NONE    ENTER
     Element Should Contain     ${datePickerHeader}    20

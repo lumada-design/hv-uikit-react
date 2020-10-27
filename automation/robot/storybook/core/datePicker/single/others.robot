@@ -15,26 +15,24 @@ current date as default value when it is empty
     Element Text Should Be               ${daySelected}    ${day}
 
 change date names in locale pt-PT
-    [setup]    Open DatePicker sample    localized
-    Click Element                        ${pt_radio}
+    [setup]   open datePicker sample     localized
     Element Attribute Value Should Be    ${calendar} input   placeholder   DD/MM/YYYY
     Force input                          ${calendar} input    20/08/2014
     Press Keys                           NONE    ENTER
     Wait Until Element Is Not Visible    ${calendar}
     Click Element                        ${datePickerHeader}
     Wait Until Element Is Visible        ${calendar}
-    Element Attribute Value Should Be    ${calendar} input    value    20 ago 2014
+    Element Attribute Value Should Be    ${calendar} input    value    20 ago. 2014
     Element Text Should Be               ${month}    agosto    ignore_case=true
-    Page Should Not Contain              ${weekday}    Qua
+    Page Should Not Contain              ${weekday}    qua.
 
 change locale result format
-    [setup]    Open DatePicker sample    localized
-    Click Element                        ${pt_radio}
-    Force input                          ${calendar} input    02/04/2020
-    Press Keys                           NONE    ENTER
-    Wait Until Page Contains             2 abr. 2020
-    Click Element                        ${en_radio}
-    Wait Until Page Contains             2 Apr 2020
+    [setup]    open datePicker sample     localized
+    Force input                      ${calendar} input    02/04/2020
+    Press Keys                       NONE    ENTER
+    Wait Until Page Contains         2 abr. 2020
+    Click Element                    ${en_radio}
+    Wait Until Page Contains         2 Apr 2020
 
 mouse events does not open when it is disabled
     [Documentation]
