@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 import isNil from "lodash/isNil";
 import { REPRESENTATION_VALUES } from "./enums";
 
@@ -269,20 +269,29 @@ export const dateInProvidedValueRange = (date, providedValueRange) => {
   if (!isRange(providedValueRange) || isNil(endDate)) return false;
   const localEndDate = endDate;
 
-  const modStartDate = moment(startDate).format("YYYY-MM-DD");
-  const modEndDate = moment(localEndDate).format("YYYY-MM-DD");
+  const modStartDate = dayjs(startDate).format("YYYY-MM-DD");
+  const modEndDate = dayjs(localEndDate).format("YYYY-MM-DD");
 
-  const convertedDate = moment(date).format("YYYY-MM-DD");
+  const convertedDate = dayjs(date).format("YYYY-MM-DD");
 
   return convertedDate >= modStartDate && convertedDate <= modEndDate;
 };
 
 export const checkIfDateIsDisabled = (date, minimumDate, maximumDate) => {
   if (!minimumDate && !maximumDate) return false;
-  const modStartDate = minimumDate ? moment(minimumDate).format("YYYY-MM-DD") : undefined;
-  const modEndDate = maximumDate ? moment(maximumDate).format("YYYY-MM-DD") : undefined;
+  const modStartDate = minimumDate ? dayjs(minimumDate).format("YYYY-MM-DD") : undefined;
+  const modEndDate = maximumDate ? dayjs(maximumDate).format("YYYY-MM-DD") : undefined;
 
-  const convertedDate = moment(date).format("YYYY-MM-DD");
+  const convertedDate = dayjs(date).format("YYYY-MM-DD");
 
   return convertedDate < modStartDate || convertedDate > modEndDate;
+};
+
+export const formatDMY = (date, locale) => {
+  const [d, m, y] = [
+    new Intl.DateTimeFormat(locale, { day: "numeric" }).format(date),
+    new Intl.DateTimeFormat(locale, { month: "short" }).format(date),
+    new Intl.DateTimeFormat(locale, { year: "numeric" }).format(date),
+  ];
+  return `${d} ${m} ${y}`;
 };

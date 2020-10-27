@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
+import dayjs from "dayjs";
+import localeData from "dayjs/plugin/localeData";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
@@ -12,14 +15,18 @@ import {
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
 } from "../../Forms/FormElement";
-import { isRange, isSameDay } from "../utils";
+import { isRange, isSameDay, formatDMY } from "../utils";
+
+dayjs.extend(localeData);
+dayjs.extend(localizedFormat);
+dayjs.extend(customParseFormat);
 
 const { Enter } = KeyboardCodes;
 
 const HvCalendarHeader = ({
   id,
   value,
-  locale,
+  locale: localeProp,
   classes,
   onChange,
   showEndDate,
@@ -30,11 +37,9 @@ const HvCalendarHeader = ({
   const elementValue = useContext(HvFormElementValueContext);
   const { label } = useContext(HvFormElementDescriptorsContext);
 
-  const preLocalValue = value ?? elementValue ?? "";
-  let localValue = preLocalValue;
-
-  if (isRange(preLocalValue)) {
-    localValue = showEndDate ? preLocalValue.endDate : preLocalValue.startDate;
+  let localValue = value ?? elementValue ?? "";
+  if (isRange(localValue)) {
+    localValue = showEndDate ? localValue.endDate : localValue.startDate;
   }
 
   const [dateValue, setDateValue] = useState(localValue);
@@ -43,26 +48,38 @@ const HvCalendarHeader = ({
   const [weekdayDisplay, setWeekdayDisplay] = useState("");
 
   const localId = id ?? setId(elementId, "calendarHeader");
-  const localLocale = locale ?? elementLocale;
-
-  // TODO: This component should not be setting the global moment locale because it affects all instances of components
-  // that are using the moment library
-  moment.locale(localLocale);
+  const locale = localeProp ?? elementLocale ?? "en";
 
   const inputValue = editedValue ?? displayValue;
-  const localeFormat = moment.localeData().longDateFormat("L");
-  const isValidValue = !!inputValue && moment(localValue, "L").isValid();
+  const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");
+  const isValidValue = !!inputValue && dayjs(localValue).isValid();
 
   useEffect(() => {
     setDateValue(localValue);
     if (isValidValue) {
-      setDisplayValue(moment(localValue, "L").format("D MMM YYYY"));
-      setWeekdayDisplay(moment(localValue, "L").format("ddd"));
+      const weekday = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(localValue);
+      setDisplayValue(formatDMY(localValue, locale));
+      setWeekdayDisplay(weekday);
     } else {
       setDisplayValue(localValue);
       setWeekdayDisplay("");
     }
-  }, [localValue, isValidValue, localLocale]);
+  }, [localValue, isValidValue, locale]);
+
+  const handleNewDate = (event, date) => {
+    // attempt to format in locale data, or fallback to default
+    const localeParsedDate = dayjs(date, localeFormat);
+    const dateParsed = localeParsedDate.isValid()
+      ? localeParsedDate.toDate()
+      : dayjs(date).toDate();
+
+    // prevent extra updates
+    if (!isSameDay(dateParsed, dateValue)) {
+      setDateValue(dateParsed);
+      onChange?.(event, dateParsed);
+    }
+    setEditedValue(null);
+  };
 
   const onBlurHandler = (event) => {
     if (isNil(editedValue)) return;
@@ -70,28 +87,19 @@ const HvCalendarHeader = ({
       setEditedValue(null);
       return;
     }
-    const dateParsed = moment(editedValue, "L").toDate();
-    if (!isSameDay(dateParsed, dateValue)) {
-      setDateValue(dateParsed);
-      onChange?.(event, dateParsed);
-    }
-    setEditedValue(null);
+
+    handleNewDate(event, editedValue);
   };
 
   const keyDownHandler = (event) => {
     if (!isKeypress(event, Enter) || isNil(editedValue) || editedValue === "") return;
     event.preventDefault();
-    const dateParsed = moment(editedValue, "L").toDate();
 
-    if (!isSameDay(dateParsed, dateValue)) {
-      setDateValue(dateParsed);
-      onChange?.(event, dateParsed);
-    }
-    setEditedValue(null);
+    handleNewDate(event, editedValue);
   };
 
   const onFocusHandler = (event) => {
-    const formattedDate = isValidValue ? moment(localValue).format("L") : localValue;
+    const formattedDate = isValidValue ? dayjs(localValue).locale(locale).format("L") : localValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);
   };

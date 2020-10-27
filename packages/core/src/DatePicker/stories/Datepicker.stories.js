@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { HvButton, HvListContainer, HvListItem, HvDatePicker, HvInput } from "../..";
+import { HvButton, HvListContainer, HvListItem, HvDatePicker, HvRadioGroup, HvRadio } from "../..";
+
+import "dayjs/locale/pt";
+import "dayjs/locale/en";
+import "dayjs/locale/fr";
 
 export default {
   title: "Forms/Date Picker",
@@ -57,23 +61,25 @@ DefaultValue.story = {
 };
 
 export const Localized = () => {
-  const initialLocale = "pt-PT";
+  // Locales must be imported beforehand:
+  // import "dayjs/locale/pt";
+  const initialLocale = "pt";
   const [locale, setLocale] = useState(initialLocale);
 
   return (
     <>
       <div style={{ marginBottom: "20px", width: "150px" }}>
-        <HvInput
-          label="Locale"
-          type="text"
-          defaultValue={initialLocale}
-          style={{ marginBottom: "20px", width: "150px" }}
-          onChange={(_evt, chosenLocale) => {
-            if (chosenLocale.match(/^[a-z]{2}-[A-Z]{2}$/g)) {
-              setLocale(chosenLocale);
-            }
+        <HvRadioGroup
+          orientation="horizontal"
+          value={locale}
+          onChange={(event, value) => {
+            setLocale(value);
           }}
-        />
+        >
+          <HvRadio label="English" value="en" />
+          <HvRadio label="French" value="fr" />
+          <HvRadio label="Portuguese" value="pt" />
+        </HvRadioGroup>
       </div>
       <HvDatePicker locale={locale} id="DatePicker" aria-label="Date" />
     </>
@@ -83,7 +89,8 @@ export const Localized = () => {
 Localized.story = {
   parameters: {
     docs: {
-      storyDescription: "Datepicker sample with values localized.",
+      storyDescription:
+        "Datepicker sample with values localized. Locales should be loaded by the user.",
     },
     pa11y: {
       ignore: [

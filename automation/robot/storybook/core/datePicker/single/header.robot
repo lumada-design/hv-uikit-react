@@ -12,7 +12,7 @@ pick a date
     Element Text Should Be    ${datePickerHeader}    7 Feb 1970
 
 input a date
-    Force input               ${input}    12 07 1982
+    Force input               ${input}    12/07/1982
     Press Keys                NONE    TAB
     Element Text Should Be    ${datePickerHeader}    7 Dec 1982
 
@@ -29,3 +29,7 @@ input and pick a date
     Press Keys                NONE    TAB
     Click Element             ${day}\[9]
     Element Text Should Be    ${datePickerHeader}    7 Feb 1977
+
+
+*** Variables ***
+${radioPT}    css:input[type=radio][value=pt]

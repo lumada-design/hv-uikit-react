@@ -167,7 +167,7 @@ SingleDate.story = {
 };
 
 export const Localized = () => {
-  const [locale, setLocale] = useState("en-US");
+  const [locale, setLocale] = useState("en");
   const [selectionDate, setSelectionDate] = useState(new Date(2020, 7, 19));
   const [visibleMonth, setVisibleMonth] = useState(8);
   const [visibleYear, setVisibleYear] = useState(2020);
@@ -209,8 +209,8 @@ export const Localized = () => {
           id="dropdown7"
           onChange={(item) => setLocale(item.id)}
           values={[
-            { id: "pt-PT", label: "Portuguese" },
-            { id: "en-US", label: "English" },
+            { id: "pt", label: "Portuguese" },
+            { id: "en", label: "English" },
           ]}
           label="Select language"
         />
@@ -236,7 +236,8 @@ export const Localized = () => {
 Localized.story = {
   parameters: {
     docs: {
-      storyDescription: "Warning: Changing this sample locale changes the locale for all samples.",
+      storyDescription:
+        "Warning: Changing this sample locale changes the locale for all samples. Locales should be loaded by the user.",
     },
     eyes: {
       waitBeforeScreenshot: ".HvCalendar-root",
