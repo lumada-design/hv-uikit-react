@@ -289,7 +289,7 @@ const HvTextArea = (props) => {
       })}
       onBlur={onContainerBlurHandler}
     >
-      {(hasLabel || hasDescription || hasCounter) && (
+      {(hasLabel || hasDescription) && (
         <div className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
@@ -305,18 +305,18 @@ const HvTextArea = (props) => {
               {description}
             </HvInfoMessage>
           )}
-
-          {hasCounter && (
-            <HvCharCounter
-              id={setId(elementId, "charCounter")}
-              className={classes.characterCounter}
-              separator={middleCountLabel}
-              currentCharQuantity={value.length}
-              maxCharQuantity={maxCharQuantity}
-              {...countCharProps}
-            />
-          )}
         </div>
+      )}
+
+      {hasCounter && (
+        <HvCharCounter
+          id={setId(elementId, "charCounter")}
+          className={classes.characterCounter}
+          separator={middleCountLabel}
+          currentCharQuantity={value.length}
+          maxCharQuantity={maxCharQuantity}
+          {...countCharProps}
+        />
       )}
 
       <HvBaseInput

@@ -19,8 +19,9 @@ const styles = {
   },
 
   labelContainer: {
+    float: "left",
     display: "flex",
-    justifyContent: "space-between",
+    alignItems: "flex-start",
   },
   label: {
     display: "block",
