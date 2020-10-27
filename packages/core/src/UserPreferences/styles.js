@@ -29,9 +29,9 @@ export const buttonStyles = (theme) => ({
   "&:hover": hover(theme),
 
   "&:focus": {
-    ...hover(theme),
-    ...outlineStyles,
+    outline: "none",
   },
+  "&.focus-visible": { ...hover(theme), ...outlineStyles },
 });
 
 const styles = (theme) => ({
