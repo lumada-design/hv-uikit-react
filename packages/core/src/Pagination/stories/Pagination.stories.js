@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import { HvPagination, HvTypography } from "../..";
 
 export default {
-  title: "Widgets/Pagination",
+  title: "Components/Pagination",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvPagination } from '@hv/uikit-react-core/dist'",
