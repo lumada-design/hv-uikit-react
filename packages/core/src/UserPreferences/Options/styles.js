@@ -13,6 +13,9 @@ const styles = (theme) => ({
     ...selected(theme),
     "&:hover": selected(theme),
     "&:focus": {
+      outline: "none",
+    },
+    "&.focus-visible": {
       ...selected(theme),
       ...outlineStyles,
     },
