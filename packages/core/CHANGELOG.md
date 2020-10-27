@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.6...@hv/uikit-react-core@2.13.0) (2020-10-27)
+
+
+### Features
+
+* **table:** add page control capability. [#2067](https://github.com/pentaho/hv-uikit-react/issues/2067)  ([9882ac6](https://github.com/pentaho/hv-uikit-react/commit/9882ac6724ea241d5681e3f50cba01363965b9c4))
+
+
+
+
+
+## [2.12.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.5...@hv/uikit-react-core@2.12.6) (2020-10-22)
+
+**Note:** Version bump only for package @hv/uikit-react-core
+
+
+
+
+
+## [2.12.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.4...@hv/uikit-react-core@2.12.5) (2020-10-20)
+
+
+### Bug Fixes
+
+* **table:** take pageSize changes into account. [#2034](https://github.com/pentaho/hv-uikit-react/issues/2034) ([8ad11b1](https://github.com/pentaho/hv-uikit-react/commit/8ad11b1ad6ebe3014144bedcfbdd708cfb56ca21)), closes [#2028](https://github.com/pentaho/hv-uikit-react/issues/2028)
+* remove erroneous warning from useControlled ([ffb91a0](https://github.com/pentaho/hv-uikit-react/commit/ffb91a0044246a1b95ca1e902d4ba772c0705be3))
+
+
+
+
+
 ## [2.12.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.3...@hv/uikit-react-core@2.12.4) (2020-10-15)
 
 

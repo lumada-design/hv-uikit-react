@@ -98,6 +98,10 @@ const HvTable = (props) => {
   }, []);
 
   useEffect(() => {
+    if (page !== currentPage) setCurrentPage(page);
+  }, [page]);
+
+  useEffect(() => {
     if (collapseOnDataChange) setExpanded({});
   }, [data, collapseOnDataChange]);
 
@@ -174,6 +178,7 @@ const HvTable = (props) => {
       }),
       ...((pageSize || pageSize !== undefined) &&
         (showPagination ? { defaultPageSize: pageSize } : { pageSize })),
+      ...{ page: currentPage },
     };
   };
 
