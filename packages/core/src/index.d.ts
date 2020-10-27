@@ -86,8 +86,8 @@ export * from "./List";
 export { default as HvLoading } from "./Loading";
 export * from "./Loading";
 
-export { default as HvLoginContainer } from "./LoginContainer";
-export * from "./LoginContainer";
+export { default as HvLogin } from "./Login";
+export * from "./Login";
 
 export { default as HvDialog } from "./Dialog";
 export * from "./Dialog";

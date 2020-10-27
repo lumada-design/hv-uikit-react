@@ -42,7 +42,7 @@ export { default as HvList } from "./List";
 export { default as HvSelectionList } from "./SelectionList";
 
 export { default as HvLoading } from "./Loading";
-export { default as HvLoginContainer } from "./LoginContainer";
+export { default as HvLogin } from "./Login";
 export { default as HvDialog } from "./Dialog";
 export * from "./Dialog";
 export { default as HvMultiButton } from "./MultiButton";
