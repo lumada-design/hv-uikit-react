@@ -23,7 +23,7 @@ focus day as arrow interaction
     [Documentation]    verify if focus moves ${from} ${to} other day
     ...                when is an arrow ${arrow}
     [Arguments]    ${from}    ${arrow}     ${to}
-    Go To                            ${components}calendar--single-date
+    Go To                            ${tests}calendar--single-date
     Wait Until Element Is Enabled    ${from}
     set focus and press keys         ${from}    ${arrow}
     Element Should Be Focused        ${to}

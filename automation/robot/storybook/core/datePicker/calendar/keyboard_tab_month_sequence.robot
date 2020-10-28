@@ -18,7 +18,7 @@ verify month keyboard tab sequence
     [Documentation]   verify if focus moves to an element ${to} other element
     ...               when is pressed TAB x times
     [Arguments]    ${repeat}    ${to}
-    Go To                            ${components}calendar--single-date
+    Go To                            ${tests}calendar--single-date
     Wait Until Element Is Enabled    ${month}
     Click Element                    ${month}
     Wait Until Element Is Visible    ${monthGrid}

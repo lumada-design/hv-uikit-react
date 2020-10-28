@@ -21,7 +21,7 @@ verify date when it is inserted distinct formats
     [Documentation]   verify if focus moves ${from} an element ${to} other element
     ...               when is pressed TAB
     [Arguments]    ${format}
-    Go To                                ${components}calendar--single-date
+    Go To                                ${tests}calendar--single-date
     Wait Until Element Is Enabled        ${input}
     force input                          ${input}    ${format}
     Press Keys                           NONE    ENTER

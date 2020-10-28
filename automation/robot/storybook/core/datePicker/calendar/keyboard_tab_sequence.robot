@@ -22,7 +22,7 @@ verify keyboard tab sequence
     [Documentation]    verify if focus moves ${from} an element ${to} other element
     ...                when is pressed TAB
     [Arguments]    ${from}    ${to}
-    Go To                            ${components}calendar--single-date
+    Go To                            ${tests}calendar--single-date
     Wait Until Element Is Enabled    ${from}
     set focus and press keys         ${from}    TAB
     Element Should Be Focused        ${to}
