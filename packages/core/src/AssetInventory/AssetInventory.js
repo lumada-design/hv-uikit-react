@@ -56,6 +56,7 @@ class AssetInventory extends React.Component {
       pageSize: innerPageSize,
       originalPageSize: innerPageSize,
       page,
+      originalPage: page,
       // original values to compare in the getDerivedStateFromProps
       originalValues: values.slice(),
       // Data for manipulation (search and sorts)
@@ -143,6 +144,14 @@ class AssetInventory extends React.Component {
         ...result,
         originalPageSize: props.pageSize,
         pageSize: props.pageSize,
+      };
+    }
+
+    if (props.page !== state.originalPage) {
+      result = {
+        ...result,
+        originalPage: props.page,
+        page: props.page,
       };
     }
 
