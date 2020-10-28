@@ -1,16 +1,17 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import { HvActionContainer, HvButton, HvDropDownMenu } from "../..";
+import { HvActionsGeneric, HvActionBar, HvButton, HvDropDownMenu } from "../..";
 
 export default {
-  title: "Components/Action Container",
+  title: "Components/Action Bar",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvActionContainer } from '@hv/uikit-react-core/dist'",
+    usage: "import { HvActionBar } from '@hv/uikit-react-core/dist'",
     maturityStatus: "stable",
     dsVersion: "3.2.1",
   },
-  component: HvActionContainer,
+  component: HvActionBar,
+  subcomponents: { HvActionsGeneric },
 };
 
 export const Main = () => {
@@ -37,7 +38,7 @@ export const Main = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <HvActionContainer className={classes.actionBar}>
+      <HvActionBar className={classes.actionBar}>
         <HvButton category="ghost" onClick={() => console.log("Help action")}>
           Help
         </HvButton>
@@ -54,7 +55,7 @@ export const Main = () => {
         <HvButton category="ghost" onClick={() => console.log("Cancel action")}>
           Cancel
         </HvButton>
-      </HvActionContainer>
+      </HvActionBar>
     </div>
   );
 };
@@ -83,7 +84,7 @@ export const DualAction = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <HvActionContainer className={classes.actionBar}>
+      <HvActionBar className={classes.actionBar}>
         <HvButton
           className={classes.buttonSeparator}
           category="ghost"
@@ -94,7 +95,7 @@ export const DualAction = () => {
         <HvButton category="ghost" onClick={() => console.log("Cancel action")}>
           Cancel
         </HvButton>
-      </HvActionContainer>
+      </HvActionBar>
     </div>
   );
 };
@@ -131,7 +132,7 @@ export const VariedActionBar = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <HvActionContainer className={classes.actionBar}>
+      <HvActionBar className={classes.actionBar}>
         <HvButton category="ghost" onClick={() => console.log("Help action")}>
           Help
         </HvButton>
@@ -149,7 +150,7 @@ export const VariedActionBar = () => {
           onClick={(e, item) => console.log(item.label)}
           dataList={[{ label: "Delete" }, { label: "Update" }]}
         />
-      </HvActionContainer>
+      </HvActionBar>
     </div>
   );
 };

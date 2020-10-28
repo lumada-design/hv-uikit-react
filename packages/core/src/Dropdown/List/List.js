@@ -4,10 +4,9 @@ import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../../utils";
-import { HvButton, HvCheckBox, HvList, HvInput, HvTypography } from "../..";
+import { HvActionBar, HvButton, HvCheckBox, HvList, HvInput, HvTypography } from "../..";
 import { getSelected } from "../utils";
 import styles from "./styles";
-import ActionContainer from "../../ActionBar";
 
 const valuesExist = (values) => !isNil(values) && values?.length > 0;
 
@@ -173,7 +172,7 @@ const List = ({
   const renderActions = () => {
     const { applyLabel, cancelLabel } = labels;
     return (
-      <ActionContainer id={setId(id, "actions")}>
+      <HvActionBar id={setId(id, "actions")}>
         <HvButton
           id={setId(id, "actions-apply")}
           onClick={() => onChange(cleanHidden(list), true, true, true)}
@@ -188,7 +187,7 @@ const List = ({
         >
           {cancelLabel}
         </HvButton>
-      </ActionContainer>
+      </HvActionBar>
     );
   };
 

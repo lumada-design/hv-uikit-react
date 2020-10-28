@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { HvActionContainer, HvActionsGeneric, HvCard, HvCardContent, HvGrid } from "../..";
+import { HvActionBar, HvActionsGeneric, HvCard, HvCardContent, HvGrid } from "../..";
 import Focus from "../../Focus";
 import styles from "./styles";
 import setActionsId from "../setActionsId";
@@ -34,13 +34,13 @@ const CardRenderChooser = (viewConfiguration, render, cardContent, metadata, car
     <HvCard onChange={onSelection} selectable={isSelectable} {...data} {...cardProps}>
       <HvCardContent>{cardContent?.(data)}</HvCardContent>
       {actions && (
-        <HvActionContainer>
+        <HvActionBar>
           <HvActionsGeneric
             actions={actions}
             actionsCallback={actionsCallback}
             maxVisibleActions={maxVisibleActions}
           />
-        </HvActionContainer>
+        </HvActionBar>
       )}
     </HvCard>
   );

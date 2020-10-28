@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import { Main } from "../../stories/ActionBar.stories";
-import { HvActionContainer, HvProvider } from "../../..";
+import { Main } from "../stories/ActionBar.stories";
+import { HvActionBar, HvProvider } from "../..";
 
 describe("Action Bar", () => {
   const wrapper = mount(
@@ -15,6 +15,6 @@ describe("Action Bar", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(HvActionContainer)).toMatchSnapshot();
+    expect(wrapper.find(HvActionBar)).toMatchSnapshot();
   });
 });

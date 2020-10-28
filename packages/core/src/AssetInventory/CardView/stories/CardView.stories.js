@@ -1,7 +1,7 @@
 import React from "react";
 import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons";
 import {
-  HvActionContainer,
+  HvActionBar,
   HvActionsGeneric,
   HvCard,
   HvCardContent,
@@ -57,7 +57,7 @@ export const Main = () => {
         <HvTypography variant="highlightText">Last connected</HvTypography>
         <HvTypography noWrap>Jun 30, 2015 12:27:53 PM</HvTypography>
       </HvCardContent>
-      <HvActionContainer aria-label="Leaf">
+      <HvActionBar aria-label="Leaf">
         {viewConfiguration.isSelectable && (
           <HvCheckBox
             onChange={viewConfiguration.onSelection}
@@ -71,7 +71,7 @@ export const Main = () => {
           maxVisibleActions={viewConfiguration.maxVisibleActions}
           actionsCallback={viewConfiguration.actionsCallback}
         />
-      </HvActionContainer>
+      </HvActionBar>
     </HvCard>
   );
 
