@@ -12,6 +12,13 @@ const useStyles = makeStyles((theme) => ({
   input: {
     marginTop: 40,
   },
+  dropdown: {
+    marginTop: 38,
+    width: "100%",
+  },
+  checkbox: {
+    marginTop: 60,
+  },
   submit: {
     width: 120,
     float: "right",
