@@ -1,5 +1,5 @@
 *** Settings ***
-Library     SeleniumLibrary    timeout=15s    #version 4.5.0
+Library     SeleniumLibrary    timeout=30s    #version 4.5.0
 Library     String
 Resource    _variables.resource
 

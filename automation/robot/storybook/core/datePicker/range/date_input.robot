@@ -8,50 +8,50 @@ Documentation    Use Cases:
 
 *** Test Cases ***
 input both dates
-    Force input                          ${calendarLeft} input    12 07 1982
-    Press Keys                           NONE    TAB
-    Force input                          ${calendarRight} input   01 01 2000
-    Press Keys                           NONE    TAB
-    Element Attribute Value Should Be    ${calendarLeft} input    value    7 Dec 1982
-    Element Attribute Value Should Be    ${calendarRight} input   value    1 Jan 2000
-    Element Should Contain               ${datePickerHeader}      7 Dec 1982 - 1 Jan 2000
+    Force input                   ${calendarLeft} input    12 07 1982
+    Press Keys                    NONE    TAB
+    Force input                   ${calendarRight} input   01 01 2000
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarLeft} input    7 Dec 1982
+    wait until input has value    ${calendarRight} input    1 Jan 2000
+    Element Should Contain        ${datePickerHeader}      7 Dec 1982 - 1 Jan 2000
 
 just start date
-    Force input                          ${calendarLeft} input    12 07 1982
-    Press Keys                           NONE    TAB
-    Element Attribute Value Should Be    ${calendarLeft} input    value    7 Dec 1982
-    Element Should Contain               ${datePickerHeader}      7 Dec 1982
+    Force input                   ${calendarLeft} input    12 07 1982
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarLeft} input    7 Dec 1982
+    Element Should Contain        ${datePickerHeader}      7 Dec 1982
 
 just end date
-    Force input                          ${calendarRight} input    01 01 2000
-    Press Keys                           NONE    TAB
-    Element Attribute Value Should Be    ${calendarRight} input    value    1 Jan 2000
-    Element Attribute Value Should Be    ${calendarLeft} input     value    ${empty}
-    Element Should Contain               ${datePickerHeader}       Select a range
+    Force input                   ${calendarRight} input    01 01 2000
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarRight} input    1 Jan 2000
+    wait until input has value    ${calendarLeft} input     ${empty}
+    Element Should Contain        ${datePickerHeader}       Select a range
 
 end is previous than start
-    Force input                          ${calendarLeft} input     01 01 2000
-    Press Keys                           NONE    TAB
-    Force input                          ${calendarRight} input    12 07 1982
-    Press Keys                           NONE    TAB
-    Element Attribute Value Should Be    ${calendarLeft} input     value    1 Jan 2000
-    Element Attribute Value Should Be    ${calendarRight} input    value    1 Jan 2000
-    Element Text Should Be               ${datePickerHeader}       1 - 1 Jan 2000
+    Force input                   ${calendarLeft} input     01 01 2000
+    Press Keys                    NONE    TAB
+    Force input                   ${calendarRight} input    12 07 1982
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarLeft} input     1 Jan 2000
+    wait until input has value    ${calendarRight} input    1 Jan 2000
+    Element Text Should Be        ${datePickerHeader}       1 - 1 Jan 2000
 
 start is forward than end
-    Force input                          ${calendarLeft} input     01 01 1980
-    Press Keys                           NONE    TAB
-    Force input                          ${calendarRight} input    12 07 1982
-    Press Keys                           NONE    TAB
-    Force input                          ${calendarLeft} input     01 01 2000
-    Press Keys                           NONE    TAB
-    Element Attribute Value Should Be    ${calendarLeft} input     value    7 Dec 1982
-    Element Attribute Value Should Be    ${calendarRight} input    value    7 Dec 1982
+    Force input                   ${calendarLeft} input     01 01 1980
+    Press Keys                    NONE    TAB
+    Force input                   ${calendarRight} input    12 07 1982
+    Press Keys                    NONE    TAB
+    Force input                   ${calendarLeft} input     01 01 2000
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarLeft} input     7 Dec 1982
+    wait until input has value    ${calendarRight} input    7 Dec 1982
     Element Text Should Be               ${datePickerHeader}       7 - 7 Dec 1982
 
 input start date and pick end date
-    Force input                          ${calendarLeft} input     12 07 1982
-    Press Keys                           NONE  ENTER
-    Click Element                        ${day}\[50]
-    Element Attribute Value Should Be    ${calendarRight} input    value    2 Jan 1983
-    Element Text Should Be               ${datePickerHeader}       7 Dec 1982 - 2 Jan 1983
+    Force input                   ${calendarLeft} input     12 07 1982
+    Press Keys                    NONE  ENTER
+    Click Element                 ${day}\[50]
+    wait until input has value    ${calendarRight} input    2 Jan 1983
+    Element Text Should Be        ${datePickerHeader}       7 Dec 1982 - 2 Jan 1983

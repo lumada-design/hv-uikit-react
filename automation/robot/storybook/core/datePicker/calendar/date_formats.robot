@@ -1,6 +1,7 @@
 *** Setting ***
 Resource         ../_datePicker.resource
 Test Template    verify date when it is inserted distinct formats
+Library          String
 Documentation    Use Cases:
 ...              - Date input can be typed without special characters
 ...              - Dates can be typed and if valid applied to the calendar
@@ -21,8 +22,8 @@ verify date when it is inserted distinct formats
     [Documentation]   verify if focus moves ${from} an element ${to} other element
     ...               when is pressed TAB
     [Arguments]    ${format}
-    Go To                                ${components}calendar--single-date
-    Wait Until Element Is Enabled        ${input}
-    force input                          ${input}    ${format}
-    Press Keys                           NONE    ENTER
-    Element Attribute Value Should Be    ${input}    value    5 Jul 2012
+    Go To                            ${components}calendar--single-date
+    Wait Until Element Is Enabled    ${input}
+    force input                      ${input}    ${format}
+    Press Keys                       NONE    ENTER
+    wait until input has value       ${input}    5 Jul 2012

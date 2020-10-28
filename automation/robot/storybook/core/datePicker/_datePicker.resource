@@ -1,6 +1,5 @@
 *** Setting ***
-Resource      ../_keywords.resource
-
+Resource    ../_keywords.resource
 
 *** Variables ***
 ${apply}               css:button[id*=apply]
@@ -44,8 +43,16 @@ open datePicker sample
     Click Element                     ${datePickerHeader}
     Wait Until Element Is Visible     ${calendar}
 
-wait until element has value
+wait until input has value
     [Documentation]
-    [Arguments]     ${element}     ${value}
-    Wait Until Keyword Succeeds    2x    700ms
-    ...    Element Attribute Value Should Be    ${element}    value    ${value}
+    [Arguments]     ${locator}    ${value}
+    Wait Until Keyword Succeeds    2x    1s
+    ...    input value should be    ${locator}    ${value}
+
+input value should be
+    [Documentation]
+    ...   normalize strings since IE returns date string with strange chars/encode
+    [Arguments]    ${locator}    ${value}
+    ${Attribute}    Get Element Attribute     ${locator}    value
+    ${Attribute}    Encode String To Bytes    ${Attribute}    ASCII    errors=ignore      #*1
+    Should Be Equal As Strings                ${Attribute}    ${value}    ignore_case=true
