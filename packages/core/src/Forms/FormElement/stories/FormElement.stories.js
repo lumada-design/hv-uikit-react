@@ -4,7 +4,6 @@ import React, { useRef, useState } from "react";
 import {
   HvFormElement,
   HvBaseInput,
-  HvCharCounter,
   HvLabel,
   HvAdornment,
   HvInfoMessage,
@@ -169,7 +168,6 @@ export const FormElementDisabled = () => {
     <HvFormElement disabled status="invalid">
       <HvLabel label="First name">
         <HvInfoMessage id="the-disabled-description">Info message here</HvInfoMessage>
-        <HvCharCounter id="the-disabled-char-counter" currentCharQuantity={0} maxCharQuantity={0} />
         <HvBaseInput id="the-disabled-input" placeholder="Insert your name" />
       </HvLabel>
       <HvWarningText id="the-disabled-error">Names do not contain numbers.</HvWarningText>
