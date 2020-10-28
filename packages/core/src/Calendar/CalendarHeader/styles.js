@@ -19,11 +19,21 @@ const styles = (theme) => ({
     paddingLeft: theme.hvSpacing("xs"),
   },
   headerDate: {},
+  invalidMessageStyling: {
+    display: "flex",
+    alignItems: "center",
+    color: theme.hv.palette.semantic.sema4,
+  },
+  inputBorderContainer: {
+    backgroundColor: theme.hv.palette.semantic.sema4,
+    height: 1,
+    marginTop: -1,
+  },
   invalid: {},
   input: {
     border: "none",
     backgroundColor: "transparent",
-    padding: `5px ${theme.hvSpacing("xs")}px`,
+    padding: `5px ${theme.hvSpacing("xs")}`,
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.xsTitle,
     width: "100%",
@@ -35,6 +45,9 @@ const styles = (theme) => ({
       display: "none",
     },
     "&:focus": {
+      outline: "none",
+    },
+    "&.focus-visible": {
       ...outlineStyles,
     },
   },

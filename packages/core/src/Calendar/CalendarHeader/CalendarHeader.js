@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
+import { Info } from "@hv/uikit-react-icons/dist";
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -52,42 +53,48 @@ const HvCalendarHeader = ({
 
   const inputValue = editedValue ?? displayValue;
   const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");
-  const isValidValue = !!inputValue && dayjs(localValue).isValid();
 
+  const [isValidValue, setIsValidValue] = useState(
+    inputValue.length === 0 || (!!inputValue && dayjs(localValue).isValid())
+  );
+
+  const validateInput = (incomingValid) => dayjs(incomingValid).isValid();
   useEffect(() => {
-    setDateValue(localValue);
-    if (isValidValue) {
+    const valid = validateInput(localValue);
+    setIsValidValue(valid);
+    if (valid) {
       const weekday = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(localValue);
       setDisplayValue(formatDMY(localValue, locale));
+      setEditedValue(null);
       setWeekdayDisplay(weekday);
-    } else {
-      setDisplayValue(localValue);
-      setWeekdayDisplay("");
     }
-  }, [localValue, isValidValue, locale]);
+  }, [localValue, locale]);
 
   const handleNewDate = (event, date) => {
     // attempt to format in locale data, or fallback to default
     const localeParsedDate = dayjs(date, localeFormat);
-    const dateParsed = localeParsedDate.isValid()
-      ? localeParsedDate.toDate()
-      : dayjs(date).toDate();
 
+    const isValidInput = localeParsedDate.isValid();
+    const dateParsed = isValidInput ? localeParsedDate.toDate() : dayjs(date).toDate();
     // prevent extra updates
     if (!isSameDay(dateParsed, dateValue)) {
       setDateValue(dateParsed);
       onChange?.(event, dateParsed);
     }
-    setEditedValue(null);
+
+    setIsValidValue(isValidInput);
+    if (isValidInput) {
+      setEditedValue(null);
+    }
   };
 
   const onBlurHandler = (event) => {
     if (isNil(editedValue)) return;
     if (editedValue === "") {
+      setIsValidValue(true);
       setEditedValue(null);
       return;
     }
-
     handleNewDate(event, editedValue);
   };
 
@@ -99,7 +106,7 @@ const HvCalendarHeader = ({
   };
 
   const onFocusHandler = (event) => {
-    const formattedDate = isValidValue ? dayjs(localValue).locale(locale).format("L") : localValue;
+    const formattedDate = isValidValue ? dayjs(localValue).locale(locale).format("L") : editedValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);
   };
@@ -107,33 +114,45 @@ const HvCalendarHeader = ({
   const onChangeHandler = (event) => {
     setEditedValue(event.target.value);
   };
-
   return (
-    <div
-      id={localId}
-      className={clsx(classes.root, {
-        [classes.invalid]: !isValidValue,
-      })}
-    >
-      <HvTypography variant="normalText" className={classes.headerDayOfWeek}>
-        {weekdayDisplay || "\u00A0"}
-      </HvTypography>
-      <div className={classes.headerDate}>
-        <input
-          type="text"
-          id={setId(localId, "header-input")}
-          placeholder={localeFormat}
-          value={inputValue}
-          className={classes.input}
-          onBlur={onBlurHandler}
-          onFocus={onFocusHandler}
-          onChange={onChangeHandler}
-          onKeyDown={keyDownHandler}
-          aria-labelledby={label?.[0]?.id}
-          {...others}
-        />
+    <>
+      <div
+        id={localId}
+        className={clsx(classes.root, {
+          [classes.invalid]: !isValidValue && inputValue !== "",
+        })}
+      >
+        <HvTypography variant="normalText" className={classes.headerDayOfWeek}>
+          {weekdayDisplay || "\u00A0"}
+        </HvTypography>
+        <div className={classes.headerDate}>
+          <input
+            type="text"
+            id={setId(localId, "header-input")}
+            placeholder={localeFormat}
+            value={inputValue}
+            className={classes.input}
+            onBlur={onBlurHandler}
+            onFocus={onFocusHandler}
+            onChange={onChangeHandler}
+            onKeyDown={keyDownHandler}
+            aria-labelledby={label?.[0]?.id}
+            {...others}
+          />
+        </div>
       </div>
-    </div>
+      {!isValidValue && inputValue !== "" && (
+        <div role="presentation" className={classes.inputBorderContainer} />
+      )}
+      <div style={{ height: 32 }}>
+        {!isValidValue && inputValue !== "" && (
+          <HvTypography variant="normalText" className={classes.invalidMessageStyling}>
+            <Info color="acce3" iconSize="S" />
+            Invalid date
+          </HvTypography>
+        )}
+      </div>
+    </>
   );
 };
 

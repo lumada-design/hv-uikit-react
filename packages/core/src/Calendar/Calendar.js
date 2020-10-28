@@ -14,6 +14,8 @@ const HvCalendar = ({
   value,
   visibleMonth,
   visibleYear,
+  rightVisibleMonth,
+  rightVisibleYear,
   minimumDate,
   maximumDate,
   startAdornment,
@@ -47,10 +49,6 @@ const HvCalendar = ({
     />
   );
 
-  const nextMonth = clampedMonth + 1;
-  const rightVisibleYear = nextMonth > 12 ? visibleYear + 1 : visibleYear;
-  const rightVisibleMonth = nextMonth > 12 ? 1 : nextMonth;
-
   const rangeCalendar = (
     <div className={classes.rangeCalendarContainer}>
       <SingleCalendar
@@ -64,9 +62,12 @@ const HvCalendar = ({
         maximumDate={maximumDate}
         onChange={onChange}
         onInputChange={(evt, date) => onInputChange(evt, date, "left")}
-        onVisibleDateChange={onVisibleDateChange}
+        onVisibleDateChange={(event, action, index) =>
+          onVisibleDateChange?.(event, action, index, "left")
+        }
         {...others}
       />
+
       <SingleCalendar
         className={classes.singleCalendar}
         id={rightCalendarId}
@@ -78,7 +79,9 @@ const HvCalendar = ({
         maximumDate={maximumDate}
         onChange={onChange}
         onInputChange={(evt, date) => onInputChange(evt, date, "right")}
-        onVisibleDateChange={onVisibleDateChange}
+        onVisibleDateChange={(event, action, index) => {
+          onVisibleDateChange?.(event, action, index, "right");
+        }}
         showEndDate
         {...others}
       />
@@ -119,9 +122,17 @@ HvCalendar.propTypes = {
    */
   visibleMonth: PropTypes.number,
   /**
-   * Controls the visible month of the Calendar
+   * Controls the visible year of the Calendar
    */
   visibleYear: PropTypes.number,
+  /**
+   * Controls the visible month of the Calendar on the right side of the datepicker
+   */
+  rightVisibleMonth: PropTypes.number,
+  /**
+   * Controls the visible year of the Calendar on the right side of the datepicker
+   */
+  rightVisibleYear: PropTypes.number,
   /**
    * Callback function to be triggered when the selected date has changed.
    */
@@ -136,6 +147,7 @@ HvCalendar.propTypes = {
    * previous_month, next_month, previous_year, next_year,month
    */
   onVisibleDateChange: PropTypes.func,
+
   /**
    * The maximum selectable date after this all values are disabled.
    */

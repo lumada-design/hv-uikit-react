@@ -23,7 +23,9 @@ export default {
   ],
 };
 
-export const Main = () => <HvDatePicker id="DatePicker" aria-label="Date" />;
+export const Main = () => (
+  <HvDatePicker id="DatePicker" placeholder="Select date" aria-label="Date" />
+);
 
 Main.story = {
   parameters: {
@@ -40,7 +42,12 @@ Main.story = {
 };
 
 export const DefaultValue = () => (
-  <HvDatePicker id="DatePicker" aria-label="Date" value={new Date(2020, 9, 10)} />
+  <HvDatePicker
+    id="DatePicker"
+    aria-label="Date"
+    placeholder="Select date"
+    value={new Date(2020, 9, 10)}
+  />
 );
 
 DefaultValue.story = {
@@ -81,7 +88,7 @@ export const Localized = () => {
           <HvRadio label="Portuguese" value="pt" />
         </HvRadioGroup>
       </div>
-      <HvDatePicker locale={locale} id="DatePicker" aria-label="Date" />
+      <HvDatePicker locale={locale} id="DatePicker" placeholder="Select date" aria-label="Date" />
     </>
   );
 };
@@ -105,7 +112,13 @@ Localized.story = {
 };
 
 export const WithActions = () => (
-  <HvDatePicker showActions value={new Date(1970, 1, 2)} id="DatePicker" aria-label="Date" />
+  <HvDatePicker
+    showActions
+    value={new Date(1970, 1, 2)}
+    id="DatePicker"
+    placeholder="Select date"
+    aria-label="Date"
+  />
 );
 
 WithActions.story = {
@@ -156,6 +169,8 @@ export const RangeMode = () => (
     aria-label="Date"
     placeholder="Select a range"
     rangeMode
+    startValue={new Date(2020, 1, 1)}
+    endValue={new Date(2020, 1, 10)}
     labels={{
       applyLabel: "Apply",
       cancelLabel: "Cancel",
@@ -164,6 +179,35 @@ export const RangeMode = () => (
 );
 
 RangeMode.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Datepicker in range mode allowing the selection of more than one value.",
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast",
+      ],
+    },
+  },
+};
+
+export const RangeModeWithNoValues = () => (
+  <HvDatePicker
+    aria-label="Date"
+    placeholder="Select a range"
+    rangeMode
+    labels={{
+      applyLabel: "Apply",
+      cancelLabel: "Cancel",
+    }}
+  />
+);
+
+RangeModeWithNoValues.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker in range mode allowing the selection of more than one value.",
@@ -216,7 +260,9 @@ RangeWithValues.story = {
   },
 };
 
-export const NearInvalid = () => <HvDatePicker aria-label="Date" value={new Date(1000, 0, 1)} />;
+export const NearInvalid = () => (
+  <HvDatePicker aria-label="Date" placeholder="Select date" value={new Date(1000, 0, 1)} />
+);
 
 NearInvalid.story = {
   parameters: {
@@ -246,7 +292,13 @@ export const WithValueChange = () => {
         Add a day
       </HvButton>
       <p />
-      <HvDatePicker id="DatePicker" aria-label="Date" value={date} onChange={(d) => setDate(d)} />
+      <HvDatePicker
+        id="DatePicker"
+        aria-label="Date"
+        placeholder="Select date"
+        value={date}
+        onChange={(d) => setDate(d)}
+      />
     </>
   );
 };
@@ -323,12 +375,18 @@ export const WithSelectionList = () => {
       rangeMode
       startValue={startDate}
       endValue={endDate}
+      placeholder="Select date"
     />
   );
 };
 
 export const Disabled = () => (
-  <HvDatePicker id="DatePicker" disabled aria-label="Disabled date picker" />
+  <HvDatePicker
+    id="DatePicker"
+    placeholder="Select date"
+    disabled
+    aria-label="Disabled date picker"
+  />
 );
 
 Disabled.story = {

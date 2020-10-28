@@ -55,10 +55,11 @@ const HvCalendarCell = ({
     <button
       ref={buttonEl}
       type="button"
-      disabled={isDateDisabled}
       className={clsx(classes.cellContainer, { [classes.focusSelection]: inMonth })}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
+      disabled={isDateDisabled || !inMonth}
+      data-in-month={inMonth}
       {...others}
     >
       <HvTypography
@@ -89,6 +90,7 @@ const HvCalendarCell = ({
           [classes.cellsInRange]: inMonth && rangeMode && isSelecting,
           [classes.cellsOutsideRange]: rangeMode && !isSelecting,
         })}
+        data-calendarCell="calendarCell"
       >
         {renderDate()}
       </div>

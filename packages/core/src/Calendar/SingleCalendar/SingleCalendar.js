@@ -49,6 +49,7 @@ const HvSingleCalendar = ({
     ? generateCalendarModel(localValue.startDate, visibleMonth, visibleYear)
     : generateCalendarModel(localValue, visibleMonth, visibleYear);
   const firstDayOfCurrentMonth = new Date(calModel.year, calModel.month - 1, 1);
+  const firstDayOfCurrentMonthTime = firstDayOfCurrentMonth.getTime();
 
   const handleChange = (event, date) => {
     event?.preventDefault();
@@ -83,8 +84,11 @@ const HvSingleCalendar = ({
     const child = getNavChild(event, siblings, elIndex);
 
     if (child) {
-      event?.preventDefault();
-      child?.focus();
+      const inMonth = child.getAttribute("data-in-month");
+      if (inMonth === "true") {
+        event?.preventDefault();
+        child?.focus();
+      }
     }
   };
 
@@ -99,7 +103,7 @@ const HvSingleCalendar = ({
       <CalendarCell
         classes={classes}
         key={index}
-        tabIndex={index === 0 ? 0 : -1}
+        tabIndex={currentDate.getTime() === firstDayOfCurrentMonthTime ? 0 : -1}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         value={currentDate}
@@ -115,17 +119,6 @@ const HvSingleCalendar = ({
     );
   };
 
-  const navigation = (
-    <HvComposedNavigation
-      id={id}
-      locale={locale}
-      onChange={onVisibleDateChange}
-      onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
-      visibleYear={visibleYear || today.getFullYear()}
-      visibleMonth={visibleMonth || today.getMonth() + 1}
-    />
-  );
-
   const monthSelector = (
     <HvMonthSelector
       id={id}
@@ -137,10 +130,20 @@ const HvSingleCalendar = ({
     />
   );
 
-  const calendarGrid = (
-    <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
-      <CalendarWeekLabels locale={locale} />
-      {calModel.dates.map(renderCalendarDate)}
+  const navigationAndCalendar = (
+    <div className="calendarWrapper">
+      <HvComposedNavigation
+        id={id}
+        locale={locale}
+        onChange={onVisibleDateChange}
+        onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+        visibleYear={visibleYear || today.getFullYear()}
+        visibleMonth={visibleMonth || today.getMonth() + 1}
+      />
+      <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
+        <CalendarWeekLabels locale={locale} />
+        {calModel.dates.map(renderCalendarDate)}
+      </div>
     </div>
   );
 
@@ -154,9 +157,8 @@ const HvSingleCalendar = ({
           showEndDate={showEndDate && !isDateSelectionMode}
         />
         <>
-          {calViewMode === VIEW_MODE.CALENDAR && navigation}
+          {calViewMode === VIEW_MODE.CALENDAR && navigationAndCalendar}
           {calViewMode === VIEW_MODE.MONTHLY && monthSelector}
-          {calViewMode === VIEW_MODE.CALENDAR && calendarGrid}
         </>
       </div>
     </div>
