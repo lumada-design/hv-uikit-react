@@ -9,7 +9,10 @@ const styles = {
   disabled: {},
   invalid: {},
 
-  baseInput: {},
+  baseInput: {
+    clear: "both",
+    float: "left",
+  },
 
   input: {},
   inputResizable: {
