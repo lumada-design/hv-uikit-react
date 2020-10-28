@@ -107,11 +107,11 @@ export const SingleSelectionWithIcon = () => {
   );
 
   const data = [
-    { label: "Advanced server DS120", iconCallback: ColoredIcon(User) },
-    { label: "Advanced server DS122", iconCallback: ColoredIcon(Calendar) },
-    { label: "Advanced server DS250", selected: true, iconCallback: ColoredIcon(Machine) },
-    { label: "Advanced server DS530", disabled: true, iconCallback: ColoredIcon(Plane) },
-    { label: "Advanced server DS555", iconCallback: ColoredIcon(LineChart) },
+    { label: "Advanced server DS120", icon: ColoredIcon(User) },
+    { label: "Advanced server DS122", icon: ColoredIcon(Calendar) },
+    { label: "Advanced server DS250", selected: true, icon: ColoredIcon(Machine) },
+    { label: "Advanced server DS530", disabled: true, icon: ColoredIcon(Plane) },
+    { label: "Advanced server DS555", icon: ColoredIcon(LineChart) },
   ];
 
   return (

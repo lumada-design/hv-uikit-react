@@ -826,7 +826,7 @@ HvTable.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string,
-        iconCallback: PropTypes.func,
+        icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
         disabled: PropTypes.bool,
       })
     ),

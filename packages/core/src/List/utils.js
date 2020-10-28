@@ -6,7 +6,7 @@ const isItemSelected = (item, newItem) => {
   return newItem[selectionKey] === selectionElement;
 };
 
-const checkIcons = (list) => !!list.filter((elem) => elem.iconCallback).length;
+const checkIcons = (list) => !!list.filter((elem) => elem.icon).length;
 
 const parseState = (list) => {
   const hasLeftIcons = checkIcons(list);

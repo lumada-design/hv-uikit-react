@@ -90,10 +90,10 @@ export const AllComponents = () => {
   const classes = useStyles();
 
   const myActions = [
-    { id: "post", label: "Upload", iconCallback: () => <Upload />, disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
-    { id: "put", label: "Add", iconCallback: () => <Add color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
+    { id: "post", label: "Upload", icon: <Upload />, disabled: false },
+    { id: "get", label: "Preview", icon: <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Add", icon: <Add color="atmo5" />, disabled: true },
+    { id: "delete", label: "Delete", icon: <Delete />, disabled: false },
   ];
 
   return (

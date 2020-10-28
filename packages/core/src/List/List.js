@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { isValidElement, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
@@ -68,10 +68,12 @@ const HvList = (props) => {
   };
 
   const renderLeftIcon = (item) =>
-    item.iconCallback?.({
-      isSelected: item.selected,
-      isDisabled: item.disabled,
-    });
+    isValidElement(item.icon)
+      ? item.icon
+      : item.icon?.({
+          isSelected: item.selected,
+          isDisabled: item.disabled,
+        });
 
   const renderSelectAll = () => {
     const { selectAll, selectionConjunction } = labels;
@@ -171,7 +173,7 @@ const HvList = (props) => {
     const selected = item.selected || false;
 
     let startAdornment = null;
-    if (!useSelector && item.iconCallback) {
+    if (!useSelector && item.icon) {
       startAdornment = renderLeftIcon(item);
     }
 
@@ -273,7 +275,7 @@ HvList.propTypes = {
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
    * - isHidden: Is item visible.
-   * - iconCallback: The icon.
+   * - icon: The icon.
    * - showNavIcon: If true renders the navigation icon on the right.
    * - path: The path to navigate to.
    */
@@ -285,7 +287,7 @@ HvList.propTypes = {
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
       isHidden: PropTypes.bool,
-      iconCallback: PropTypes.func,
+      icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
       showNavIcon: PropTypes.bool,
       path: PropTypes.string,
       params: PropTypes.instanceOf(Object),

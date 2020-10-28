@@ -94,10 +94,10 @@ export const Main = () => {
 
   // --------------- Configuration ----------------
   const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false },
+    { id: "post", label: "Add", icon: <Add />, disabled: false },
+    { id: "get", label: "Preview", icon: <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", icon: <Upload color="atmo5" />, disabled: true },
+    { id: "delete", label: "Delete", icon: <Delete />, disabled: false },
   ];
 
   const viewConfiguration = {

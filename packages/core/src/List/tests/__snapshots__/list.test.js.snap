@@ -534,7 +534,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
   values={
     Array [
       Object {
-        "iconCallback": [Function],
+        "icon": <LineChart />,
         "label": "Value 1",
       },
       Object {
@@ -563,7 +563,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
     values={
       Array [
         Object {
-          "iconCallback": [Function],
+          "icon": <LineChart />,
           "label": "Value 1",
         },
         Object {

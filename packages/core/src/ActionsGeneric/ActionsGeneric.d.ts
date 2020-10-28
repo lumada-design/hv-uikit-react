@@ -5,7 +5,7 @@ import { HvButtonCategories } from "../Button";
 export type ActionGeneric = {
   id: string;
   label: string;
-  iconCallback?: (params: { isDisabled?: boolean }) => React.ReactNode;
+  icon?: React.ReactNode | ((params: { isDisabled?: boolean }) => React.ReactNode);
   disabled?: boolean;
 };
 

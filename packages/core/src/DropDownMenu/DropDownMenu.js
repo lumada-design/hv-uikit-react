@@ -70,9 +70,7 @@ const DropDownMenu = ({
     </HvButton>
   );
 
-  const condensed = useMemo(() => dataList.every((el) => !(el.icon || el.iconCallback)), [
-    dataList,
-  ]);
+  const condensed = useMemo(() => dataList.every((el) => !el.icon), [dataList]);
 
   return (
     <HvBaseDropdown
@@ -144,7 +142,7 @@ DropDownMenu.propTypes = {
    * - label: The label of the element to be rendered.
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
-   * - iconCallback: The icon node to be rendered on the left.
+   * - icon: The icon node to be rendered on the left.
    * - showNavIcon: If true renders the navigation icon on the right.
    */
   dataList: PropTypes.arrayOf(
@@ -152,7 +150,7 @@ DropDownMenu.propTypes = {
       label: PropTypes.string.isRequired,
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
-      iconCallback: PropTypes.func,
+      icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
       showNavIcon: PropTypes.bool,
     })
   ).isRequired,
