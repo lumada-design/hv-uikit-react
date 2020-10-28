@@ -1,5 +1,6 @@
 // components
 export { default as HvActionsGeneric } from "./ActionsGeneric";
+export { default as HvActionBar } from "./ActionBar";
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 export { default as HvAvatar } from "./Avatar";
@@ -23,7 +24,6 @@ export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFileUploader } from "./FileUploader";
 export { default as HvFooter } from "./Footer";
 export * from "./Forms";
-export { default as HvActionContainer } from "./ActionBar";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";
 

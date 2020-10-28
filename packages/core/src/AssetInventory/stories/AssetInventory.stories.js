@@ -15,7 +15,7 @@ import {
   Upload,
 } from "@hv/uikit-react-icons";
 import {
-  HvActionContainer,
+  HvActionBar,
   HvActionsGeneric,
   HvAssetInventory,
   HvCard,
@@ -128,7 +128,7 @@ export const Main = () => {
             </HvGrid>
           </HvGrid>
         </HvCardContent>
-        <HvActionContainer aria-label="Leaf">
+        <HvActionBar aria-label="Leaf">
           {viewConfiguration.isSelectable && (
             <HvCheckBox
               checked={data.checked}
@@ -143,7 +143,7 @@ export const Main = () => {
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
           />
-        </HvActionContainer>
+        </HvActionBar>
       </HvCard>
     );
   };
@@ -382,7 +382,7 @@ export const Configurations = () => {
             </HvGrid>
           </HvGrid>
         </HvCardContent>
-        <HvActionContainer aria-label="Leaf">
+        <HvActionBar aria-label="Leaf">
           {viewConfiguration.isSelectable && (
             <HvCheckBox
               checked={data.checked}
@@ -397,7 +397,7 @@ export const Configurations = () => {
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
           />
-        </HvActionContainer>
+        </HvActionBar>
       </HvCard>
     );
   };
@@ -663,7 +663,7 @@ export const ThreeViews = () => {
             </HvGrid>
           </HvGrid>
         </HvCardContent>
-        <HvActionContainer aria-label="Leaf">
+        <HvActionBar aria-label="Leaf">
           {viewConfiguration.isSelectable && (
             <HvCheckBox
               checked={data.checked}
@@ -678,7 +678,7 @@ export const ThreeViews = () => {
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
           />
-        </HvActionContainer>
+        </HvActionBar>
       </HvCard>
     );
   };
@@ -945,7 +945,7 @@ export const ServerSidePagination = () => {
             </HvGrid>
           </HvGrid>
         </HvCardContent>
-        <HvActionContainer aria-label="Leaf">
+        <HvActionBar aria-label="Leaf">
           {viewConfiguration.isSelectable && (
             <HvCheckBox
               checked={data.checked}
@@ -960,7 +960,7 @@ export const ServerSidePagination = () => {
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
           />
-        </HvActionContainer>
+        </HvActionBar>
       </HvCard>
     );
   };
@@ -1189,7 +1189,7 @@ export const Accessibility = () => {
             </HvGrid>
           </HvGrid>
         </HvCardContent>
-        <HvActionContainer aria-label="Leaf">
+        <HvActionBar aria-label="Leaf">
           {viewConfiguration.isSelectable && (
             <HvCheckBox
               checked={data.checked}
@@ -1204,7 +1204,7 @@ export const Accessibility = () => {
             maxVisibleActions={viewConfiguration.maxVisibleActions}
             actionsCallback={viewConfiguration.actionsCallback}
           />
-        </HvActionContainer>
+        </HvActionBar>
       </HvCard>
     );
   };

@@ -5,9 +5,9 @@ import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 /**
- * This component is used as a building block for the Action bar pattern, it's objective is to provide the .
+ * This component acts as a container for the Action Bar pattern.
  */
-const ActionContainer = (props) => {
+const HvActionBar = (props) => {
   const { classes, className, id, children, ...others } = props;
 
   return (
@@ -17,7 +17,7 @@ const ActionContainer = (props) => {
   );
 };
 
-ActionContainer.propTypes = {
+HvActionBar.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -41,4 +41,4 @@ ActionContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default withStyles(styles, { name: "HvActionContainer" })(ActionContainer);
+export default withStyles(styles, { name: "HvActionBar" })(HvActionBar);

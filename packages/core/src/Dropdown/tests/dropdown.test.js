@@ -2,8 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import HvProvider from "../../Provider";
-import HvCheckBox from "../../CheckBox/CheckBox";
+import { HvActionBar, HvCheckBox, HvProvider } from "../..";
 import List from "../List";
 import Dropdown from "..";
 
@@ -120,7 +119,7 @@ describe("<Dropdown />", () => {
 
     it("onChange should be triggered when action apply is clicked ", () => {
       dropdownComponent
-        .find("ActionContainer")
+        .find(HvActionBar)
         .find("HvButton")
         .at(0)
         .simulate("click", {

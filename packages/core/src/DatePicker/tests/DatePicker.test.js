@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
-import { HvActionContainer, HvProvider, HvCalendar, HvDatePicker } from "../..";
+import { HvActionBar, HvProvider, HvCalendar, HvDatePicker } from "../..";
 import SingleCalendar from "../../Calendar/SingleCalendar";
 import { isSameDay, makeUTCDate } from "../../Calendar/utils";
 
@@ -28,7 +28,7 @@ describe("<DatePicker /> with minimum configuration", () => {
   });
 
   it("should not render an actions component", () => {
-    expect(DatePickerComponent.find(HvActionContainer).length).toBe(0);
+    expect(DatePickerComponent.find(HvActionBar).length).toBe(0);
   });
 
   it("should not render any Calendar component", () => {
@@ -49,7 +49,7 @@ describe("<DatePicker /> with minimum configuration", () => {
   it("should not show an Actions component when opening the calendar", () => {
     wrapper.find(CalendarIcon).simulate("click");
 
-    expect(wrapper.find(HvActionContainer).length).toBe(0);
+    expect(wrapper.find(HvActionBar).length).toBe(0);
   });
 });
 
@@ -86,7 +86,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
   it("should not show an Actions component when opening the calendar", () => {
     wrapper.find(CalendarIcon).simulate("click");
 
-    expect(wrapper.find(HvActionContainer).length).toBe(0);
+    expect(wrapper.find(HvActionBar).length).toBe(0);
   });
 
   it("should have the Calendar component with the same selected date as the received value property", () => {
@@ -131,7 +131,7 @@ describe("<DatePicker /> with Range Calendar mode", () => {
   it("should show an Actions component when opening the calendars", () => {
     wrapper.find(CalendarIcon).simulate("click");
 
-    expect(wrapper.find(HvActionContainer).length).toBe(1);
+    expect(wrapper.find(HvActionBar).length).toBe(1);
   });
 });
 
@@ -170,6 +170,6 @@ describe("<DatePicker /> with custom properties", () => {
 
   it("should show an Actions component when opening the calendar", () => {
     wrapper.find(CalendarIcon).simulate("click");
-    expect(wrapper.find(HvActionContainer).length).toBe(1);
+    expect(wrapper.find(HvActionBar).length).toBe(1);
   });
 });

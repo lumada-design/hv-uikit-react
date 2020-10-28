@@ -13,7 +13,7 @@ import {
   Upload,
 } from "@hv/uikit-react-icons";
 import {
-  HvActionContainer,
+  HvActionBar,
   HvActionsGeneric,
   HvCard,
   HvCheckBox,
@@ -142,7 +142,7 @@ export const AllComponents = () => {
         </Grid>
       </HvCardContent>
       <HvCardMedia component="img" alt="leafy leaf" height={160} image={leaf} />
-      <HvActionContainer aria-label="Leaf">
+      <HvActionBar aria-label="Leaf">
         <HvCheckBox
           id="controller"
           onChange={() => setChecked(!checked)}
@@ -156,7 +156,7 @@ export const AllComponents = () => {
           maxVisibleActions={1}
           actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
         />
-      </HvActionContainer>
+      </HvActionBar>
     </HvCard>
   );
 };
@@ -305,7 +305,7 @@ export const KPICard = () => {
   );
 
   const CardFooter = ({ n }) => (
-    <HvActionContainer aria-label="Leaf">
+    <HvActionBar aria-label="Leaf">
       <HvCheckBox
         onChange={() => setChecked(n)}
         checked={checked === n}
@@ -313,7 +313,7 @@ export const KPICard = () => {
         inputProps={{ "aria-label": "leaf input" }}
       />
       <div style={{ flex: 1 }} />
-    </HvActionContainer>
+    </HvActionBar>
   );
 
   return (
@@ -406,7 +406,7 @@ export const Selectable = () => {
         <HvCardMedia component="img" image={compressor} height={140} alt="Compressor" />
         <SingleContent />
       </CardClickableContent>
-      <HvActionContainer>
+      <HvActionBar>
         <HvCheckBox
           onChange={() => setChecked(!checked)}
           checked={checked}
@@ -425,7 +425,7 @@ export const Selectable = () => {
             { id: "dismiss", label: "Dismiss" },
           ]}
         />
-      </HvActionContainer>
+      </HvActionBar>
     </HvCard>
   );
 };

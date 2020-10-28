@@ -1,5 +1,5 @@
-export { default as HvActionContainer } from "./ActionBar/ActionContainer";
-export * from "./ActionBar/ActionContainer";
+export { default as HvActionBar } from "./ActionBar";
+export * from "./ActionBar";
 
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";

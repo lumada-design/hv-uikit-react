@@ -3,7 +3,7 @@
 import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
 
-import { HvActionContainer, HvCard, HvCardHeader, HvCardMedia, HvCheckBox, HvSwitch } from "../..";
+import { HvActionBar, HvCard, HvCardHeader, HvCardMedia, HvCheckBox, HvSwitch } from "../..";
 
 import { AllComponents } from "./Card.stories";
 import compressor from "./resources/compressor.png";
@@ -36,13 +36,13 @@ export const Controlled = () => {
         <HvCard id="controlled" selectable selected={checked}>
           <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
           <HvCardMedia component="img" image={compressor} height={186} title="Compressor" />
-          <HvActionContainer>
+          <HvActionBar>
             <HvCheckBox
               value="l90"
               checked={checked}
               inputProps={{ "aria-label": "Check asset" }}
             />
-          </HvActionContainer>
+          </HvActionBar>
         </HvCard>
       </div>
     </>

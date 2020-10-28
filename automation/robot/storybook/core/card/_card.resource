@@ -14,7 +14,7 @@ ${aboveFooter}    ${card} [aria-selected]
 ${card}           css:.HvCard-root
 ${checkbox}       ${card} input[type=checkbox]
 ${content}        ${card} .HvCardContent-content
-${footer}         ${card} .HvActionContainer-root > div[style]
+${footer}         ${card} .HvActionBar-root > div[style]
 ${header}         ${card} .HvCardHeader-title
 ${subHeader}      ${card} .HvCardHeader-subheader
 ${dropMenu}       ${card} \[aria-label='Dropdown menu']

@@ -5,7 +5,7 @@ import { Calendar } from "@hv/uikit-react-icons";
 import clsx from "clsx";
 import { setId, useSavedState, useLabels } from "../utils";
 import {
-  HvActionContainer,
+  HvActionBar,
   HvBaseDropdown,
   HvButton,
   HvCalendar,
@@ -197,7 +197,7 @@ const HvDatePicker = (props) => {
    * Renders the container for the action elements.
    */
   const renderActions = () => (
-    <HvActionContainer>
+    <HvActionBar>
       <HvButton
         id={setId(id, "action", "apply")}
         className={classes.action}
@@ -214,7 +214,7 @@ const HvDatePicker = (props) => {
       >
         {labels.cancelLabel}
       </HvButton>
-    </HvActionContainer>
+    </HvActionBar>
   );
 
   const renderInput = (dateString) => (

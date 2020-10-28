@@ -103,7 +103,7 @@ The icon `category` (`category="icon"`) was promoted to a prop, so its possible 
 `HvCard` must now be built using `children` composition, and as so, all the "hoisted" props from `HvCard`'s sub-components were removed.
 
 We recommend you build it using `HvCardHeader`, `HvCardContent` and `HvCardMedia`, although it's not necessary.
-`HvCardFooter` was removed, and we recommend you replace it with `HvActionContainer`.
+`HvCardFooter` was removed, and we recommend you replace it with `HvActionBar`.
 
 It's internal selection control was also removed, and you can control selection using the `selectable`, `selected`.
 
@@ -112,7 +112,7 @@ It's internal selection control was also removed, and you can control selection 
 
 - `cardButtonProps` removed.
 - `checkboxProps` removed.
-- `footerProps` removed, build the card with `HvActionContainer`.
+- `footerProps` removed, build the card with `HvActionBar`.
 - `contentProps` removed, pass these props directly to `HvCardContent`.
 
 - `innerCardContent` removed, pass `children` instead.
@@ -149,14 +149,14 @@ The props `actions`, `actionsCallback`, `maxVisibleActions`, `actionsAlignment` 
 -  maxVisibleActions={1}
 -  actionsAlignment="left"
 >
-+  <HvActionContainer>
++  <HvActionBar>
 +    <HvActionsGeneric
 +      actions=[]
 +      actionsCallback={() => {}}
 +      maxVisibleActions={1}
 +      actionsAlignment="left"
 +    />
-+  </HvActionContainer>
++  </HvActionBar>
 </HvCard>
 ```
 

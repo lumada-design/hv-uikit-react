@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Action Bar should render correctly 1`] = `
-<WithStyles(ActionContainer)
+<WithStyles(HvActionBar)
   className="makeStyles-actionBar-2"
 >
-  <ActionContainer
+  <HvActionBar
     className="makeStyles-actionBar-2"
     classes={
       Object {
-        "root": "HvActionContainer-root",
+        "root": "HvActionBar-root",
       }
     }
   >
     <div
-      className="HvActionContainer-root makeStyles-actionBar-2"
+      className="HvActionBar-root makeStyles-actionBar-2"
     >
       <WithStyles(HvButton)
         category="ghost"
@@ -459,6 +459,6 @@ exports[`Action Bar should render correctly 1`] = `
         </HvButton>
       </WithStyles(HvButton)>
     </div>
-  </ActionContainer>
-</WithStyles(ActionContainer)>
+  </HvActionBar>
+</WithStyles(HvActionBar)>
 `;
