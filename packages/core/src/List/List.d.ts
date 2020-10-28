@@ -7,7 +7,7 @@ export interface ListValueProp {
   selected?: boolean;
   disabled?: boolean;
   isHidden?: boolean;
-  iconCallback?: (params: { isDisabled?: boolean; isSelected?: boolean }) => React.ReactNode;
+  icon?: React.ReactNode | ((params: { isDisabled?: boolean; isSelected?: boolean }) => React.ReactNode);
   showNavIcon?: boolean;
   path?: string;
   params?: object;
@@ -41,11 +41,10 @@ export interface HvListProps
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
    * - isHidden: Is item visible.
-   * - iconCallback: The icon.
+   * - icon: The icon.
    * - showNavIcon: If true renders the navigation icon on the right.
    * - path: The path to navigate to.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
   values: ListValueProp[];
   /**
    * If true renders a multi select list.

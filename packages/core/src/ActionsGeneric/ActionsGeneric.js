@@ -1,4 +1,4 @@
-import React from "react";
+import React, { isValidElement } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
@@ -17,11 +17,13 @@ const ActionsGeneric = ({
   maxVisibleActions = Infinity,
   ...others
 }) => {
-  if (!Array.isArray(actions)) return React.isValidElement(actions) ? actions : null;
+  if (!Array.isArray(actions)) return isValidElement(actions) ? actions : null;
 
   const renderButton = (action, idx) => {
-    const { disabled: actDisabled, iconCallback, label, ...other } = action;
+    const { disabled: actDisabled, icon, label, ...other } = action;
     const actionId = setId(id, idx, "action", action.id);
+
+    const renderedIcon = isValidElement(icon) ? icon : icon?.({ isDisabled: disabled });
 
     return (
       <HvButton
@@ -31,7 +33,7 @@ const ActionsGeneric = ({
         className={classes.button}
         disabled={actDisabled ?? disabled}
         onClick={(event) => actionsCallback?.(event, id, action)}
-        startIcon={iconCallback?.({ isDisabled: disabled })}
+        startIcon={renderedIcon}
         {...other}
       >
         {label}
@@ -141,7 +143,7 @@ ActionsGeneric.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string,
-        iconCallback: PropTypes.func,
+        icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
         disabled: PropTypes.bool,
       })
     ),

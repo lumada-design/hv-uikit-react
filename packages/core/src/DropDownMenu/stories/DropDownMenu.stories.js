@@ -66,9 +66,9 @@ export const WithIconsAndActions = () => {
       onClick={(e, item) => console.log(item.label)}
       aria-label="dropdownMenu-3"
       dataList={[
-        { label: "Label 1", iconCallback: iconSelectedColor(User) },
-        { label: "Label 2", iconCallback: iconSelectedColor(Calendar) },
-        { label: "Label 3", iconCallback: iconSelectedColor(Plane) },
+        { label: "Label 1", icon: iconSelectedColor(User) },
+        { label: "Label 2", icon: iconSelectedColor(Calendar) },
+        { label: "Label 3", icon: iconSelectedColor(Plane) },
       ]}
     />
   );

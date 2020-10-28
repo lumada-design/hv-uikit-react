@@ -92,10 +92,10 @@ export const Main = () => {
 
 export const WithActions = () => {
   const actions = [
-    { id: "add", label: "Add", iconCallback: () => <Add /> },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
-    { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
+    { id: "add", label: "Add", icon: <Add /> },
+    { id: "delete", label: "Delete", icon: <Delete /> },
+    { id: "lock", label: "Lock", icon: <Lock /> },
+    { id: "put", label: "Preview", icon: <Preview /> },
   ];
   const addEntry = (id) => ({
     id,
@@ -154,10 +154,10 @@ export const WithActions = () => {
 export const WithPagination = () => {
   const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
   const actions = [
-    { id: "add", label: "Add", iconCallback: () => <Add /> },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
-    { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
+    { id: "add", label: "Add", icon: <Add /> },
+    { id: "delete", label: "Delete", icon: <Delete /> },
+    { id: "lock", label: "Lock", icon: <Lock /> },
+    { id: "put", label: "Preview", icon: <Preview /> },
   ];
   const addEntry = (id) => ({
     id,

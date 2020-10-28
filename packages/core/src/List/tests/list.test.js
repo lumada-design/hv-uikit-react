@@ -8,7 +8,7 @@ import { HvList, HvProvider } from "../..";
 const mockDataSingleSelection = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3" }];
 
 const mockDataSingleSelectionWithIcons = [
-  { label: "Value 1", iconCallback: () => <LineChart /> },
+  { label: "Value 1", icon: <LineChart /> },
   { label: "Value 2" },
   { label: "Value 3", showNavIcon: true },
 ];

@@ -5,22 +5,22 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
   actions={
     Array [
       Object {
-        "iconCallback": [Function],
+        "icon": <Add />,
         "id": "add",
         "label": "Add",
       },
       Object {
-        "iconCallback": [Function],
+        "icon": <Delete />,
         "id": "delete",
         "label": "Delete",
       },
       Object {
-        "iconCallback": [Function],
+        "icon": <Lock />,
         "id": "lock",
         "label": "Lock",
       },
       Object {
-        "iconCallback": [Function],
+        "icon": <Preview />,
         "id": "put",
         "label": "Preview",
       },
@@ -37,22 +37,22 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
     actions={
       Array [
         Object {
-          "iconCallback": [Function],
+          "icon": <Add />,
           "id": "add",
           "label": "Add",
         },
         Object {
-          "iconCallback": [Function],
+          "icon": <Delete />,
           "id": "delete",
           "label": "Delete",
         },
         Object {
-          "iconCallback": [Function],
+          "icon": <Lock />,
           "id": "lock",
           "label": "Lock",
         },
         Object {
-          "iconCallback": [Function],
+          "icon": <Preview />,
           "id": "put",
           "label": "Preview",
         },
@@ -616,22 +616,22 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
         actions={
           Array [
             Object {
-              "iconCallback": [Function],
+              "icon": <Add />,
               "id": "add",
               "label": "Add",
             },
             Object {
-              "iconCallback": [Function],
+              "icon": <Delete />,
               "id": "delete",
               "label": "Delete",
             },
             Object {
-              "iconCallback": [Function],
+              "icon": <Lock />,
               "id": "lock",
               "label": "Lock",
             },
             Object {
-              "iconCallback": [Function],
+              "icon": <Preview />,
               "id": "put",
               "label": "Preview",
             },
@@ -652,22 +652,22 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
           actions={
             Array [
               Object {
-                "iconCallback": [Function],
+                "icon": <Add />,
                 "id": "add",
                 "label": "Add",
               },
               Object {
-                "iconCallback": [Function],
+                "icon": <Delete />,
                 "id": "delete",
                 "label": "Delete",
               },
               Object {
-                "iconCallback": [Function],
+                "icon": <Lock />,
                 "id": "lock",
                 "label": "Lock",
               },
               Object {
-                "iconCallback": [Function],
+                "icon": <Preview />,
                 "id": "put",
                 "label": "Preview",
               },
@@ -1088,12 +1088,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               dataList={
                 Array [
                   Object {
-                    "iconCallback": [Function],
+                    "icon": <Lock />,
                     "id": "lock",
                     "label": "Lock",
                   },
                   Object {
-                    "iconCallback": [Function],
+                    "icon": <Preview />,
                     "id": "put",
                     "label": "Preview",
                   },
@@ -1123,12 +1123,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 dataList={
                   Array [
                     Object {
-                      "iconCallback": [Function],
+                      "icon": <Lock />,
                       "id": "lock",
                       "label": "Lock",
                     },
                     Object {
-                      "iconCallback": [Function],
+                      "icon": <Preview />,
                       "id": "put",
                       "label": "Preview",
                     },
@@ -1158,12 +1158,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   dataList={
                     Array [
                       Object {
-                        "iconCallback": [Function],
+                        "icon": <Lock />,
                         "id": "lock",
                         "label": "Lock",
                       },
                       Object {
-                        "iconCallback": [Function],
+                        "icon": <Preview />,
                         "id": "put",
                         "label": "Preview",
                       },

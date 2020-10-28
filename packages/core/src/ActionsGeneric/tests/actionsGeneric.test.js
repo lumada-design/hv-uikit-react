@@ -9,10 +9,10 @@ import HvDropDownMenu from "../../DropDownMenu";
 import ActionsGeneric from "..";
 
 const actions = [
-  { id: "post", label: "Add", iconCallback: () => <Add />, disabled: true },
-  { id: "get", label: "Preview", iconCallback: () => <Upload /> },
-  { id: "put", label: "Upload", iconCallback: () => <Delete /> },
-  { id: "delete", label: "Delete", iconCallback: () => <Preview /> },
+  { id: "post", label: "Add", icon: <Add />, disabled: true },
+  { id: "get", label: "Preview", icon: <Upload /> },
+  { id: "put", label: "Upload", icon: <Delete /> },
+  { id: "delete", label: "Delete", icon: <Preview /> },
 ];
 
 describe("Actions with array", () => {

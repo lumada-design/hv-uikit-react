@@ -1194,9 +1194,9 @@ export const WithCheckbox = () => {
   };
 
   const actions = [
-    { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
-    { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
+    { id: "delete", label: "Delete", icon: <Delete /> },
+    { id: "lock", label: "Lock", icon: <Lock /> },
+    { id: "put", label: "Preview", icon: <Preview /> },
   ];
 
   const handleAction = (event, id, action, selection = []) => {
@@ -2245,7 +2245,7 @@ export const ServerSidePagination = () => {
           id="test"
           idForCheckbox="id"
           data={data}
-          actions={[{ id: "delete", label: "Delete", iconCallback: () => <Delete /> }]}
+          actions={[{ id: "delete", label: "Delete", icon: <Delete /> }]}
           actionsCallback={this.handleAction}
           columns={this.getColumns()}
           defaultPageSize={10}
