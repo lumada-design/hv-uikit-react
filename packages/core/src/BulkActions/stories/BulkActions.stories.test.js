@@ -2,7 +2,7 @@
 import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React from "react";
 
-import { ControlledWithActions } from "./BulkActions.stories";
+import { WithActions } from "./BulkActions.stories";
 
 export default {
   title: "Tests/Bulk Actions",
@@ -25,7 +25,7 @@ export default {
 // Extended applitools test scenarios
 
 // test scenario, selected
-export const selected = () => ControlledWithActions();
+export const selected = () => <WithActions />;
 
 selected.story = {
   parameters: {
@@ -39,7 +39,7 @@ selected.story = {
 };
 
 // test scenario, indeterminate status
-export const indeterminate = () => ControlledWithActions();
+export const indeterminate = () => <WithActions />;
 
 indeterminate.story = {
   parameters: {

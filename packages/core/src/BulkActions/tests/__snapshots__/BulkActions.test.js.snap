@@ -311,10 +311,10 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
-                                    "checked": "PrivateSwitchBase-checked-6 Mui-checked",
-                                    "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
-                                    "input": "PrivateSwitchBase-input-8",
-                                    "root": "PrivateSwitchBase-root-5 MuiCheckbox-root",
+                                    "checked": "PrivateSwitchBase-checked-7 Mui-checked",
+                                    "disabled": "PrivateSwitchBase-disabled-8 Mui-disabled",
+                                    "input": "PrivateSwitchBase-input-9",
+                                    "root": "PrivateSwitchBase-root-6 MuiCheckbox-root",
                                   }
                                 }
                                 color="default"
@@ -341,7 +341,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 value="on"
                               >
                                 <WithStyles(ForwardRef(IconButton))
-                                  className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                                  className="PrivateSwitchBase-root-6 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                   color="default"
                                   component="span"
                                   disableRipple={true}
@@ -352,7 +352,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   tabIndex={null}
                                 >
                                   <ForwardRef(IconButton)
-                                    className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                                    className="PrivateSwitchBase-root-6 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                     classes={
                                       Object {
                                         "colorInherit": "MuiIconButton-colorInherit",
@@ -377,7 +377,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(ButtonBase))
                                       centerRipple={true}
-                                      className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                                      className="MuiIconButton-root PrivateSwitchBase-root-6 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                       component="span"
                                       disableRipple={true}
                                       disabled={false}
@@ -389,7 +389,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                     >
                                       <ForwardRef(ButtonBase)
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-6 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                         classes={
                                           Object {
                                             "disabled": "Mui-disabled",
@@ -408,7 +408,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                       >
                                         <span
                                           aria-disabled={false}
-                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-6 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                           onBlur={[Function]}
                                           onDragLeave={[Function]}
                                           onFocus={[Function]}
@@ -427,7 +427,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                           >
                                             <input
                                               checked={false}
-                                              className="PrivateSwitchBase-input-8"
+                                              className="PrivateSwitchBase-input-9"
                                               data-indeterminate={false}
                                               disabled={false}
                                               id="bulkActions-select-input"
@@ -1481,69 +1481,13 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
 
 exports[`BulkActions should render correctly 1`] = `
 <WithStyles(HvBulkActions)
-  actions={
-    Array [
-      Object {
-        "iconCallback": [Function],
-        "id": "get",
-        "label": "Upload",
-      },
-      Object {
-        "iconCallback": [Function],
-        "id": "lock",
-        "label": "Lock",
-      },
-      Object {
-        "iconCallback": [Function],
-        "id": "delete",
-        "label": "Delete",
-      },
-      Object {
-        "iconCallback": [Function],
-        "id": "post",
-        "label": "Add",
-      },
-      Object {
-        "iconCallback": [Function],
-        "id": "put",
-        "label": "Preview",
-      },
-    ]
-  }
-  actionsCallback={[Function]}
   maxVisibleActions={3}
+  numSelected={0}
+  numTotal={8}
+  onSelectAll={[Function]}
+  onSelectAllPages={[Function]}
 >
   <HvBulkActions
-    actions={
-      Array [
-        Object {
-          "iconCallback": [Function],
-          "id": "get",
-          "label": "Upload",
-        },
-        Object {
-          "iconCallback": [Function],
-          "id": "lock",
-          "label": "Lock",
-        },
-        Object {
-          "iconCallback": [Function],
-          "id": "delete",
-          "label": "Delete",
-        },
-        Object {
-          "iconCallback": [Function],
-          "id": "post",
-          "label": "Add",
-        },
-        Object {
-          "iconCallback": [Function],
-          "id": "put",
-          "label": "Preview",
-        },
-      ]
-    }
-    actionsCallback={[Function]}
     classes={
       Object {
         "actions": "HvBulkActions-actions",
@@ -1555,6 +1499,10 @@ exports[`BulkActions should render correctly 1`] = `
       }
     }
     maxVisibleActions={3}
+    numSelected={0}
+    numTotal={8}
+    onSelectAll={[Function]}
+    onSelectAllPages={[Function]}
   >
     <div
       className="HvBulkActions-root"
@@ -2088,36 +2036,6 @@ exports[`BulkActions should render correctly 1`] = `
         </WithStyles(HvCheckBox)>
       </div>
       <WithStyles(ActionsGeneric)
-        actions={
-          Array [
-            Object {
-              "iconCallback": [Function],
-              "id": "get",
-              "label": "Upload",
-            },
-            Object {
-              "iconCallback": [Function],
-              "id": "lock",
-              "label": "Lock",
-            },
-            Object {
-              "iconCallback": [Function],
-              "id": "delete",
-              "label": "Delete",
-            },
-            Object {
-              "iconCallback": [Function],
-              "id": "post",
-              "label": "Add",
-            },
-            Object {
-              "iconCallback": [Function],
-              "id": "put",
-              "label": "Preview",
-            },
-          ]
-        }
-        actionsCallback={[Function]}
         category="ghost"
         classes={
           Object {
@@ -2128,36 +2046,6 @@ exports[`BulkActions should render correctly 1`] = `
         maxVisibleActions={3}
       >
         <ActionsGeneric
-          actions={
-            Array [
-              Object {
-                "iconCallback": [Function],
-                "id": "get",
-                "label": "Upload",
-              },
-              Object {
-                "iconCallback": [Function],
-                "id": "lock",
-                "label": "Lock",
-              },
-              Object {
-                "iconCallback": [Function],
-                "id": "delete",
-                "label": "Delete",
-              },
-              Object {
-                "iconCallback": [Function],
-                "id": "post",
-                "label": "Add",
-              },
-              Object {
-                "iconCallback": [Function],
-                "id": "put",
-                "label": "Preview",
-              },
-            ]
-          }
-          actionsCallback={[Function]}
           category="ghost"
           classes={
             Object {
@@ -2173,978 +2061,8 @@ exports[`BulkActions should render correctly 1`] = `
           maxVisibleActions={3}
         >
           <div
-            className="HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer"
-          >
-            <WithStyles(HvButton)
-              category="ghost"
-              className="HvActionsGeneric-button"
-              disabled={true}
-              id="get"
-              key="0"
-              onClick={[Function]}
-              startIcon={<Upload />}
-            >
-              <HvButton
-                category="ghost"
-                className="HvActionsGeneric-button"
-                classes={
-                  Object {
-                    "focusVisible": "HvButton-focusVisible",
-                    "ghost": "HvButton-ghost",
-                    "ghostDisabled": "HvButton-ghostDisabled",
-                    "ghostSVG": "HvButton-ghostSVG",
-                    "icon": "HvButton-icon",
-                    "iconSVG": "HvButton-iconSVG",
-                    "primary": "HvButton-primary",
-                    "primaryDisabled": "HvButton-primaryDisabled",
-                    "primarySVG": "HvButton-primarySVG",
-                    "root": "HvButton-root",
-                    "secondary": "HvButton-secondary",
-                    "secondaryDisabled": "HvButton-secondaryDisabled",
-                    "secondarySVG": "HvButton-secondarySVG",
-                    "semantic": "HvButton-semantic",
-                    "semanticDisabled": "HvButton-semanticDisabled",
-                    "semanticSVG": "HvButton-semanticSVG",
-                    "startIcon": "HvButton-startIcon",
-                  }
-                }
-                disabled={true}
-                id="get"
-                onClick={[Function]}
-                startIcon={<Upload />}
-              >
-                <WithStyles(ForwardRef(Button))
-                  className="HvActionsGeneric-button HvButton-ghostSVG"
-                  classes={
-                    Object {
-                      "containedPrimary": "HvButton-primary",
-                      "disabled": "HvButton-ghostDisabled",
-                      "outlinedPrimary": "HvButton-secondary",
-                      "root": "HvButton-root",
-                      "startIcon": "HvButton-startIcon",
-                      "textPrimary": "HvButton-ghost",
-                    }
-                  }
-                  color="primary"
-                  disableRipple={true}
-                  disabled={true}
-                  focusVisibleClassName="HvButton-focusVisible"
-                  id="get"
-                  onClick={[Function]}
-                  startIcon={<Upload />}
-                  variant="text"
-                >
-                  <ForwardRef(Button)
-                    className="HvActionsGeneric-button HvButton-ghostSVG"
-                    classes={
-                      Object {
-                        "colorInherit": "MuiButton-colorInherit",
-                        "contained": "MuiButton-contained",
-                        "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
-                        "containedSecondary": "MuiButton-containedSecondary",
-                        "containedSizeLarge": "MuiButton-containedSizeLarge",
-                        "containedSizeSmall": "MuiButton-containedSizeSmall",
-                        "disableElevation": "MuiButton-disableElevation",
-                        "disabled": "Mui-disabled HvButton-ghostDisabled",
-                        "endIcon": "MuiButton-endIcon",
-                        "focusVisible": "Mui-focusVisible",
-                        "fullWidth": "MuiButton-fullWidth",
-                        "iconSizeLarge": "MuiButton-iconSizeLarge",
-                        "iconSizeMedium": "MuiButton-iconSizeMedium",
-                        "iconSizeSmall": "MuiButton-iconSizeSmall",
-                        "label": "MuiButton-label",
-                        "outlined": "MuiButton-outlined",
-                        "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
-                        "outlinedSecondary": "MuiButton-outlinedSecondary",
-                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                        "root": "MuiButton-root HvButton-root",
-                        "sizeLarge": "MuiButton-sizeLarge",
-                        "sizeSmall": "MuiButton-sizeSmall",
-                        "startIcon": "MuiButton-startIcon HvButton-startIcon",
-                        "text": "MuiButton-text",
-                        "textPrimary": "MuiButton-textPrimary HvButton-ghost",
-                        "textSecondary": "MuiButton-textSecondary",
-                        "textSizeLarge": "MuiButton-textSizeLarge",
-                        "textSizeSmall": "MuiButton-textSizeSmall",
-                      }
-                    }
-                    color="primary"
-                    disableRipple={true}
-                    disabled={true}
-                    focusVisibleClassName="HvButton-focusVisible"
-                    id="get"
-                    onClick={[Function]}
-                    startIcon={<Upload />}
-                    variant="text"
-                  >
-                    <WithStyles(ForwardRef(ButtonBase))
-                      className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                      component="button"
-                      disableRipple={true}
-                      disabled={true}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                      id="get"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <ForwardRef(ButtonBase)
-                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                        classes={
-                          Object {
-                            "disabled": "Mui-disabled",
-                            "focusVisible": "Mui-focusVisible",
-                            "root": "MuiButtonBase-root",
-                          }
-                        }
-                        component="button"
-                        disableRipple={true}
-                        disabled={true}
-                        focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                        id="get"
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        <button
-                          className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
-                          disabled={true}
-                          id="get"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onDragLeave={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseLeave={[Function]}
-                          onMouseUp={[Function]}
-                          onTouchEnd={[Function]}
-                          onTouchMove={[Function]}
-                          onTouchStart={[Function]}
-                          tabIndex={-1}
-                          type="button"
-                        >
-                          <span
-                            className="MuiButton-label"
-                          >
-                            <span
-                              className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
-                            >
-                              <Upload>
-                                <HvIconBase
-                                  iconSize="S"
-                                  name="Upload"
-                                >
-                                  <div
-                                    className="HvIconBase-root HvIconBase-s"
-                                    name="Upload"
-                                  >
-                                    <svg
-                                      focusable={false}
-                                      height={16}
-                                      viewBox="0 0 16 16"
-                                      width={16}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        className="color0"
-                                        d="M16 11v5H0v-5h1v4h14v-4zM7.5 1.90015V13h1V1.90015l4.1 4.2.8-.80005-5.4-5.3-5.4 5.30005.8.80005z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </HvIconBase>
-                              </Upload>
-                            </span>
-                            Upload
-                          </span>
-                        </button>
-                      </ForwardRef(ButtonBase)>
-                    </WithStyles(ForwardRef(ButtonBase))>
-                  </ForwardRef(Button)>
-                </WithStyles(ForwardRef(Button))>
-              </HvButton>
-            </WithStyles(HvButton)>
-            <WithStyles(HvButton)
-              category="ghost"
-              className="HvActionsGeneric-button"
-              disabled={true}
-              id="lock"
-              key="1"
-              onClick={[Function]}
-              startIcon={<Lock />}
-            >
-              <HvButton
-                category="ghost"
-                className="HvActionsGeneric-button"
-                classes={
-                  Object {
-                    "focusVisible": "HvButton-focusVisible",
-                    "ghost": "HvButton-ghost",
-                    "ghostDisabled": "HvButton-ghostDisabled",
-                    "ghostSVG": "HvButton-ghostSVG",
-                    "icon": "HvButton-icon",
-                    "iconSVG": "HvButton-iconSVG",
-                    "primary": "HvButton-primary",
-                    "primaryDisabled": "HvButton-primaryDisabled",
-                    "primarySVG": "HvButton-primarySVG",
-                    "root": "HvButton-root",
-                    "secondary": "HvButton-secondary",
-                    "secondaryDisabled": "HvButton-secondaryDisabled",
-                    "secondarySVG": "HvButton-secondarySVG",
-                    "semantic": "HvButton-semantic",
-                    "semanticDisabled": "HvButton-semanticDisabled",
-                    "semanticSVG": "HvButton-semanticSVG",
-                    "startIcon": "HvButton-startIcon",
-                  }
-                }
-                disabled={true}
-                id="lock"
-                onClick={[Function]}
-                startIcon={<Lock />}
-              >
-                <WithStyles(ForwardRef(Button))
-                  className="HvActionsGeneric-button HvButton-ghostSVG"
-                  classes={
-                    Object {
-                      "containedPrimary": "HvButton-primary",
-                      "disabled": "HvButton-ghostDisabled",
-                      "outlinedPrimary": "HvButton-secondary",
-                      "root": "HvButton-root",
-                      "startIcon": "HvButton-startIcon",
-                      "textPrimary": "HvButton-ghost",
-                    }
-                  }
-                  color="primary"
-                  disableRipple={true}
-                  disabled={true}
-                  focusVisibleClassName="HvButton-focusVisible"
-                  id="lock"
-                  onClick={[Function]}
-                  startIcon={<Lock />}
-                  variant="text"
-                >
-                  <ForwardRef(Button)
-                    className="HvActionsGeneric-button HvButton-ghostSVG"
-                    classes={
-                      Object {
-                        "colorInherit": "MuiButton-colorInherit",
-                        "contained": "MuiButton-contained",
-                        "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
-                        "containedSecondary": "MuiButton-containedSecondary",
-                        "containedSizeLarge": "MuiButton-containedSizeLarge",
-                        "containedSizeSmall": "MuiButton-containedSizeSmall",
-                        "disableElevation": "MuiButton-disableElevation",
-                        "disabled": "Mui-disabled HvButton-ghostDisabled",
-                        "endIcon": "MuiButton-endIcon",
-                        "focusVisible": "Mui-focusVisible",
-                        "fullWidth": "MuiButton-fullWidth",
-                        "iconSizeLarge": "MuiButton-iconSizeLarge",
-                        "iconSizeMedium": "MuiButton-iconSizeMedium",
-                        "iconSizeSmall": "MuiButton-iconSizeSmall",
-                        "label": "MuiButton-label",
-                        "outlined": "MuiButton-outlined",
-                        "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
-                        "outlinedSecondary": "MuiButton-outlinedSecondary",
-                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                        "root": "MuiButton-root HvButton-root",
-                        "sizeLarge": "MuiButton-sizeLarge",
-                        "sizeSmall": "MuiButton-sizeSmall",
-                        "startIcon": "MuiButton-startIcon HvButton-startIcon",
-                        "text": "MuiButton-text",
-                        "textPrimary": "MuiButton-textPrimary HvButton-ghost",
-                        "textSecondary": "MuiButton-textSecondary",
-                        "textSizeLarge": "MuiButton-textSizeLarge",
-                        "textSizeSmall": "MuiButton-textSizeSmall",
-                      }
-                    }
-                    color="primary"
-                    disableRipple={true}
-                    disabled={true}
-                    focusVisibleClassName="HvButton-focusVisible"
-                    id="lock"
-                    onClick={[Function]}
-                    startIcon={<Lock />}
-                    variant="text"
-                  >
-                    <WithStyles(ForwardRef(ButtonBase))
-                      className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                      component="button"
-                      disableRipple={true}
-                      disabled={true}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                      id="lock"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <ForwardRef(ButtonBase)
-                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                        classes={
-                          Object {
-                            "disabled": "Mui-disabled",
-                            "focusVisible": "Mui-focusVisible",
-                            "root": "MuiButtonBase-root",
-                          }
-                        }
-                        component="button"
-                        disableRipple={true}
-                        disabled={true}
-                        focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                        id="lock"
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        <button
-                          className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
-                          disabled={true}
-                          id="lock"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onDragLeave={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseLeave={[Function]}
-                          onMouseUp={[Function]}
-                          onTouchEnd={[Function]}
-                          onTouchMove={[Function]}
-                          onTouchStart={[Function]}
-                          tabIndex={-1}
-                          type="button"
-                        >
-                          <span
-                            className="MuiButton-label"
-                          >
-                            <span
-                              className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
-                            >
-                              <Lock>
-                                <HvIconBase
-                                  iconSize="S"
-                                  name="Lock"
-                                >
-                                  <div
-                                    className="HvIconBase-root HvIconBase-s"
-                                    name="Lock"
-                                  >
-                                    <svg
-                                      focusable={false}
-                                      height={16}
-                                      viewBox="0 0 16 16"
-                                      width={16}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        className="color0"
-                                        d="M12 4V0H4v4H2v12h12V4zM5 1h6v3H5zm8 14H3V5h10zM7.5 8h1v4h-1z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </HvIconBase>
-                              </Lock>
-                            </span>
-                            Lock
-                          </span>
-                        </button>
-                      </ForwardRef(ButtonBase)>
-                    </WithStyles(ForwardRef(ButtonBase))>
-                  </ForwardRef(Button)>
-                </WithStyles(ForwardRef(Button))>
-              </HvButton>
-            </WithStyles(HvButton)>
-            <WithStyles(HvButton)
-              category="ghost"
-              className="HvActionsGeneric-button"
-              disabled={true}
-              id="delete"
-              key="2"
-              onClick={[Function]}
-              startIcon={<Delete />}
-            >
-              <HvButton
-                category="ghost"
-                className="HvActionsGeneric-button"
-                classes={
-                  Object {
-                    "focusVisible": "HvButton-focusVisible",
-                    "ghost": "HvButton-ghost",
-                    "ghostDisabled": "HvButton-ghostDisabled",
-                    "ghostSVG": "HvButton-ghostSVG",
-                    "icon": "HvButton-icon",
-                    "iconSVG": "HvButton-iconSVG",
-                    "primary": "HvButton-primary",
-                    "primaryDisabled": "HvButton-primaryDisabled",
-                    "primarySVG": "HvButton-primarySVG",
-                    "root": "HvButton-root",
-                    "secondary": "HvButton-secondary",
-                    "secondaryDisabled": "HvButton-secondaryDisabled",
-                    "secondarySVG": "HvButton-secondarySVG",
-                    "semantic": "HvButton-semantic",
-                    "semanticDisabled": "HvButton-semanticDisabled",
-                    "semanticSVG": "HvButton-semanticSVG",
-                    "startIcon": "HvButton-startIcon",
-                  }
-                }
-                disabled={true}
-                id="delete"
-                onClick={[Function]}
-                startIcon={<Delete />}
-              >
-                <WithStyles(ForwardRef(Button))
-                  className="HvActionsGeneric-button HvButton-ghostSVG"
-                  classes={
-                    Object {
-                      "containedPrimary": "HvButton-primary",
-                      "disabled": "HvButton-ghostDisabled",
-                      "outlinedPrimary": "HvButton-secondary",
-                      "root": "HvButton-root",
-                      "startIcon": "HvButton-startIcon",
-                      "textPrimary": "HvButton-ghost",
-                    }
-                  }
-                  color="primary"
-                  disableRipple={true}
-                  disabled={true}
-                  focusVisibleClassName="HvButton-focusVisible"
-                  id="delete"
-                  onClick={[Function]}
-                  startIcon={<Delete />}
-                  variant="text"
-                >
-                  <ForwardRef(Button)
-                    className="HvActionsGeneric-button HvButton-ghostSVG"
-                    classes={
-                      Object {
-                        "colorInherit": "MuiButton-colorInherit",
-                        "contained": "MuiButton-contained",
-                        "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
-                        "containedSecondary": "MuiButton-containedSecondary",
-                        "containedSizeLarge": "MuiButton-containedSizeLarge",
-                        "containedSizeSmall": "MuiButton-containedSizeSmall",
-                        "disableElevation": "MuiButton-disableElevation",
-                        "disabled": "Mui-disabled HvButton-ghostDisabled",
-                        "endIcon": "MuiButton-endIcon",
-                        "focusVisible": "Mui-focusVisible",
-                        "fullWidth": "MuiButton-fullWidth",
-                        "iconSizeLarge": "MuiButton-iconSizeLarge",
-                        "iconSizeMedium": "MuiButton-iconSizeMedium",
-                        "iconSizeSmall": "MuiButton-iconSizeSmall",
-                        "label": "MuiButton-label",
-                        "outlined": "MuiButton-outlined",
-                        "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
-                        "outlinedSecondary": "MuiButton-outlinedSecondary",
-                        "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                        "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                        "root": "MuiButton-root HvButton-root",
-                        "sizeLarge": "MuiButton-sizeLarge",
-                        "sizeSmall": "MuiButton-sizeSmall",
-                        "startIcon": "MuiButton-startIcon HvButton-startIcon",
-                        "text": "MuiButton-text",
-                        "textPrimary": "MuiButton-textPrimary HvButton-ghost",
-                        "textSecondary": "MuiButton-textSecondary",
-                        "textSizeLarge": "MuiButton-textSizeLarge",
-                        "textSizeSmall": "MuiButton-textSizeSmall",
-                      }
-                    }
-                    color="primary"
-                    disableRipple={true}
-                    disabled={true}
-                    focusVisibleClassName="HvButton-focusVisible"
-                    id="delete"
-                    onClick={[Function]}
-                    startIcon={<Delete />}
-                    variant="text"
-                  >
-                    <WithStyles(ForwardRef(ButtonBase))
-                      className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                      component="button"
-                      disableRipple={true}
-                      disabled={true}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                      id="delete"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <ForwardRef(ButtonBase)
-                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                        classes={
-                          Object {
-                            "disabled": "Mui-disabled",
-                            "focusVisible": "Mui-focusVisible",
-                            "root": "MuiButtonBase-root",
-                          }
-                        }
-                        component="button"
-                        disableRipple={true}
-                        disabled={true}
-                        focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                        id="delete"
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        <button
-                          className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
-                          disabled={true}
-                          id="delete"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onDragLeave={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseLeave={[Function]}
-                          onMouseUp={[Function]}
-                          onTouchEnd={[Function]}
-                          onTouchMove={[Function]}
-                          onTouchStart={[Function]}
-                          tabIndex={-1}
-                          type="button"
-                        >
-                          <span
-                            className="MuiButton-label"
-                          >
-                            <span
-                              className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
-                            >
-                              <Delete>
-                                <HvIconBase
-                                  iconSize="S"
-                                  name="Delete"
-                                >
-                                  <div
-                                    className="HvIconBase-root HvIconBase-s"
-                                    name="Delete"
-                                  >
-                                    <svg
-                                      focusable={false}
-                                      height={16}
-                                      viewBox="0 0 16 16"
-                                      width={16}
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        className="color0"
-                                        d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </HvIconBase>
-                              </Delete>
-                            </span>
-                            Delete
-                          </span>
-                        </button>
-                      </ForwardRef(ButtonBase)>
-                    </WithStyles(ForwardRef(ButtonBase))>
-                  </ForwardRef(Button)>
-                </WithStyles(ForwardRef(Button))>
-              </HvButton>
-            </WithStyles(HvButton)>
-            <WithStyles(WithId)
-              category="ghost"
-              classes={
-                Object {
-                  "icon": "HvActionsGeneric-dropDownMenuButton",
-                  "iconSelected": "HvActionsGeneric-dropDownMenuButtonSelected",
-                  "root": "HvActionsGeneric-dropDownMenu",
-                }
-              }
-              dataList={
-                Array [
-                  Object {
-                    "iconCallback": [Function],
-                    "id": "post",
-                    "label": "Add",
-                  },
-                  Object {
-                    "iconCallback": [Function],
-                    "id": "put",
-                    "label": "Preview",
-                  },
-                ]
-              }
-              disablePortal={false}
-              disabled={true}
-              icon={
-                <MoreOptionsVertical
-                  color="atmo5"
-                />
-              }
-              keepOpened={false}
-              onClick={[Function]}
-              placement="left"
-            >
-              <WithId
-                category="ghost"
-                classes={
-                  Object {
-                    "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
-                    "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
-                    "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
-                  }
-                }
-                dataList={
-                  Array [
-                    Object {
-                      "iconCallback": [Function],
-                      "id": "post",
-                      "label": "Add",
-                    },
-                    Object {
-                      "iconCallback": [Function],
-                      "id": "put",
-                      "label": "Preview",
-                    },
-                  ]
-                }
-                disablePortal={false}
-                disabled={true}
-                icon={
-                  <MoreOptionsVertical
-                    color="atmo5"
-                  />
-                }
-                keepOpened={false}
-                onClick={[Function]}
-                placement="left"
-              >
-                <DropDownMenu
-                  category="ghost"
-                  classes={
-                    Object {
-                      "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
-                      "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
-                      "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
-                    }
-                  }
-                  dataList={
-                    Array [
-                      Object {
-                        "iconCallback": [Function],
-                        "id": "post",
-                        "label": "Add",
-                      },
-                      Object {
-                        "iconCallback": [Function],
-                        "id": "put",
-                        "label": "Preview",
-                      },
-                    ]
-                  }
-                  disablePortal={false}
-                  disabled={true}
-                  icon={
-                    <MoreOptionsVertical
-                      color="atmo5"
-                    />
-                  }
-                  id="drop-down-menu-3"
-                  keepOpened={false}
-                  onClick={[Function]}
-                  placement="left"
-                >
-                  <WithStyles(HvBaseDropdown)
-                    aria-haspopup="menu"
-                    classes={
-                      Object {
-                        "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
-                      }
-                    }
-                    component={
-                      <WithStyles(HvButton)
-                        aria-label="Dropdown menu"
-                        category="ghost"
-                        className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
-                        disabled={true}
-                        icon={true}
-                        id="drop-down-menu-3-icon-button"
-                      >
-                        <MoreOptionsVertical
-                          color="atmo5"
-                        />
-                      </WithStyles(HvButton)>
-                    }
-                    disablePortal={false}
-                    disabled={true}
-                    expanded={false}
-                    id="drop-down-menu-3"
-                    onToggle={[Function]}
-                    placement="left"
-                  >
-                    <HvBaseDropdown
-                      aria-haspopup="menu"
-                      classes={
-                        Object {
-                          "arrow": "HvBaseDropdown-arrow",
-                          "header": "HvBaseDropdown-header",
-                          "headerDisabled": "HvBaseDropdown-headerDisabled",
-                          "headerOpen": "HvBaseDropdown-headerOpen",
-                          "headerOpenDown": "HvBaseDropdown-headerOpenDown",
-                          "headerOpenUp": "HvBaseDropdown-headerOpenUp",
-                          "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
-                          "inputExtensionFloatRight": "HvBaseDropdown-inputExtensionFloatRight",
-                          "inputExtensionLeftPosition": "HvBaseDropdown-inputExtensionLeftPosition",
-                          "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
-                          "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
-                          "panel": "HvBaseDropdown-panel",
-                          "placeholder": "HvBaseDropdown-placeholder",
-                          "root": "HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
-                          "rootDisabled": "HvBaseDropdown-rootDisabled",
-                          "selection": "HvBaseDropdown-selection",
-                          "selectionDisabled": "HvBaseDropdown-selectionDisabled",
-                        }
-                      }
-                      component={
-                        <WithStyles(HvButton)
-                          aria-label="Dropdown menu"
-                          category="ghost"
-                          className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
-                          disabled={true}
-                          icon={true}
-                          id="drop-down-menu-3-icon-button"
-                        >
-                          <MoreOptionsVertical
-                            color="atmo5"
-                          />
-                        </WithStyles(HvButton)>
-                      }
-                      disablePortal={false}
-                      disabled={true}
-                      expanded={false}
-                      id="drop-down-menu-3"
-                      onToggle={[Function]}
-                      placement="left"
-                    >
-                      <div
-                        aria-expanded={false}
-                        aria-haspopup="menu"
-                        className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu HvBaseDropdown-rootDisabled"
-                        id="drop-down-menu-3"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        tabIndex={-1}
-                      >
-                        <WithStyles(HvButton)
-                          aria-label="Dropdown menu"
-                          category="ghost"
-                          className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
-                          disabled={true}
-                          icon={true}
-                          id="drop-down-menu-3-icon-button"
-                        >
-                          <HvButton
-                            aria-label="Dropdown menu"
-                            category="ghost"
-                            className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
-                            classes={
-                              Object {
-                                "focusVisible": "HvButton-focusVisible",
-                                "ghost": "HvButton-ghost",
-                                "ghostDisabled": "HvButton-ghostDisabled",
-                                "ghostSVG": "HvButton-ghostSVG",
-                                "icon": "HvButton-icon",
-                                "iconSVG": "HvButton-iconSVG",
-                                "primary": "HvButton-primary",
-                                "primaryDisabled": "HvButton-primaryDisabled",
-                                "primarySVG": "HvButton-primarySVG",
-                                "root": "HvButton-root",
-                                "secondary": "HvButton-secondary",
-                                "secondaryDisabled": "HvButton-secondaryDisabled",
-                                "secondarySVG": "HvButton-secondarySVG",
-                                "semantic": "HvButton-semantic",
-                                "semanticDisabled": "HvButton-semanticDisabled",
-                                "semanticSVG": "HvButton-semanticSVG",
-                                "startIcon": "HvButton-startIcon",
-                              }
-                            }
-                            disabled={true}
-                            icon={true}
-                            id="drop-down-menu-3-icon-button"
-                          >
-                            <WithStyles(ForwardRef(Button))
-                              aria-label="Dropdown menu"
-                              className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
-                              classes={
-                                Object {
-                                  "containedPrimary": "HvButton-primary",
-                                  "disabled": "HvButton-ghostDisabled",
-                                  "outlinedPrimary": "HvButton-secondary",
-                                  "root": "HvButton-root",
-                                  "startIcon": "HvButton-startIcon",
-                                  "textPrimary": "HvButton-ghost",
-                                }
-                              }
-                              color="primary"
-                              disableRipple={true}
-                              disabled={true}
-                              focusVisibleClassName="HvButton-focusVisible"
-                              id="drop-down-menu-3-icon-button"
-                              variant="text"
-                            >
-                              <ForwardRef(Button)
-                                aria-label="Dropdown menu"
-                                className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiButton-colorInherit",
-                                    "contained": "MuiButton-contained",
-                                    "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
-                                    "containedSecondary": "MuiButton-containedSecondary",
-                                    "containedSizeLarge": "MuiButton-containedSizeLarge",
-                                    "containedSizeSmall": "MuiButton-containedSizeSmall",
-                                    "disableElevation": "MuiButton-disableElevation",
-                                    "disabled": "Mui-disabled HvButton-ghostDisabled",
-                                    "endIcon": "MuiButton-endIcon",
-                                    "focusVisible": "Mui-focusVisible",
-                                    "fullWidth": "MuiButton-fullWidth",
-                                    "iconSizeLarge": "MuiButton-iconSizeLarge",
-                                    "iconSizeMedium": "MuiButton-iconSizeMedium",
-                                    "iconSizeSmall": "MuiButton-iconSizeSmall",
-                                    "label": "MuiButton-label",
-                                    "outlined": "MuiButton-outlined",
-                                    "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
-                                    "outlinedSecondary": "MuiButton-outlinedSecondary",
-                                    "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                                    "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                                    "root": "MuiButton-root HvButton-root",
-                                    "sizeLarge": "MuiButton-sizeLarge",
-                                    "sizeSmall": "MuiButton-sizeSmall",
-                                    "startIcon": "MuiButton-startIcon HvButton-startIcon",
-                                    "text": "MuiButton-text",
-                                    "textPrimary": "MuiButton-textPrimary HvButton-ghost",
-                                    "textSecondary": "MuiButton-textSecondary",
-                                    "textSizeLarge": "MuiButton-textSizeLarge",
-                                    "textSizeSmall": "MuiButton-textSizeSmall",
-                                  }
-                                }
-                                color="primary"
-                                disableRipple={true}
-                                disabled={true}
-                                focusVisibleClassName="HvButton-focusVisible"
-                                id="drop-down-menu-3-icon-button"
-                                variant="text"
-                              >
-                                <WithStyles(ForwardRef(ButtonBase))
-                                  aria-label="Dropdown menu"
-                                  className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                                  component="button"
-                                  disableRipple={true}
-                                  disabled={true}
-                                  focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                                  id="drop-down-menu-3-icon-button"
-                                  type="button"
-                                >
-                                  <ForwardRef(ButtonBase)
-                                    aria-label="Dropdown menu"
-                                    className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
-                                    classes={
-                                      Object {
-                                        "disabled": "Mui-disabled",
-                                        "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
-                                      }
-                                    }
-                                    component="button"
-                                    disableRipple={true}
-                                    disabled={true}
-                                    focusRipple={true}
-                                    focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
-                                    id="drop-down-menu-3-icon-button"
-                                    type="button"
-                                  >
-                                    <button
-                                      aria-label="Dropdown menu"
-                                      className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
-                                      disabled={true}
-                                      id="drop-down-menu-3-icon-button"
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={-1}
-                                      type="button"
-                                    >
-                                      <span
-                                        className="MuiButton-label"
-                                      >
-                                        <MoreOptionsVertical
-                                          color="atmo5"
-                                        >
-                                          <HvIconBase
-                                            iconSize="S"
-                                            name="MoreOptionsVertical"
-                                          >
-                                            <div
-                                              className="HvIconBase-root HvIconBase-s"
-                                              name="MoreOptionsVertical"
-                                            >
-                                              <svg
-                                                focusable={false}
-                                                height={16}
-                                                viewBox="0 0 16 16"
-                                                width={16}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  className="color0"
-                                                  d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                                                  fill="#999999"
-                                                />
-                                              </svg>
-                                            </div>
-                                          </HvIconBase>
-                                        </MoreOptionsVertical>
-                                      </span>
-                                    </button>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(Button)>
-                            </WithStyles(ForwardRef(Button))>
-                          </HvButton>
-                        </WithStyles(HvButton)>
-                      </div>
-                      <ForwardRef(Popper)
-                        anchorEl={null}
-                        disablePortal={false}
-                        open={false}
-                        placement="bottom-end"
-                        popperOptions={
-                          Object {
-                            "onCreate": [Function],
-                            "onUpdate": [Function],
-                          }
-                        }
-                        style={
-                          Object {
-                            "zIndex": 1500,
-                          }
-                        }
-                      />
-                    </HvBaseDropdown>
-                  </WithStyles(HvBaseDropdown)>
-                </DropDownMenu>
-              </WithId>
-            </WithStyles(WithId)>
-          </div>
+            className="HvActionsGeneric-root HvBulkActions-actions"
+          />
         </ActionsGeneric>
       </WithStyles(ActionsGeneric)>
     </div>
@@ -3234,7 +2152,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       checked={true}
                       className="HvCheckBox-checkbox"
                       disabled={false}
-                      id="hvcheckbox8-input"
+                      id="hvcheckbox7-input"
                       indeterminate={true}
                       inputProps={
                         Object {
@@ -3264,7 +2182,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                           }
                         }
                         disabled={false}
-                        id="hvcheckbox8-input"
+                        id="hvcheckbox7-input"
                         indeterminate={true}
                         inputProps={
                           Object {
@@ -3309,7 +2227,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                               }
                             />
                           }
-                          id="hvcheckbox8-input"
+                          id="hvcheckbox7-input"
                           indeterminate={true}
                           indeterminateIcon={
                             <CheckboxPartial
@@ -3373,7 +2291,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                 }
                               />
                             }
-                            id="hvcheckbox8-input"
+                            id="hvcheckbox7-input"
                             indeterminate={true}
                             indeterminateIcon={
                               <CheckboxPartial
@@ -3434,7 +2352,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                   }
                                 />
                               }
-                              id="hvcheckbox8-input"
+                              id="hvcheckbox7-input"
                               inputProps={
                                 Object {
                                   "aria-describedby": undefined,
@@ -3468,10 +2386,10 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                 className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
-                                    "checked": "PrivateSwitchBase-checked-15 Mui-checked",
-                                    "disabled": "PrivateSwitchBase-disabled-16 Mui-disabled",
-                                    "input": "PrivateSwitchBase-input-17",
-                                    "root": "PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate",
+                                    "checked": "PrivateSwitchBase-checked-16 Mui-checked",
+                                    "disabled": "PrivateSwitchBase-disabled-17 Mui-disabled",
+                                    "input": "PrivateSwitchBase-input-18",
+                                    "root": "PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate",
                                   }
                                 }
                                 color="default"
@@ -3487,7 +2405,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                     }
                                   />
                                 }
-                                id="hvcheckbox8-input"
+                                id="hvcheckbox7-input"
                                 inputProps={
                                   Object {
                                     "aria-describedby": undefined,
@@ -3507,7 +2425,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                 value="on"
                               >
                                 <WithStyles(ForwardRef(IconButton))
-                                  className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                  className="PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
                                   color="default"
                                   component="span"
                                   disableRipple={true}
@@ -3518,7 +2436,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                   tabIndex={null}
                                 >
                                   <ForwardRef(IconButton)
-                                    className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                    className="PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
                                     classes={
                                       Object {
                                         "colorInherit": "MuiIconButton-colorInherit",
@@ -3543,7 +2461,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(ButtonBase))
                                       centerRipple={true}
-                                      className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                      className="MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
                                       component="span"
                                       disableRipple={true}
                                       disabled={false}
@@ -3555,7 +2473,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                     >
                                       <ForwardRef(ButtonBase)
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
                                         classes={
                                           Object {
                                             "disabled": "Mui-disabled",
@@ -3574,7 +2492,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                       >
                                         <span
                                           aria-disabled={false}
-                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-15 Mui-checked"
+                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
                                           onBlur={[Function]}
                                           onDragLeave={[Function]}
                                           onFocus={[Function]}
@@ -3593,10 +2511,10 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                           >
                                             <input
                                               checked={true}
-                                              className="PrivateSwitchBase-input-17"
+                                              className="PrivateSwitchBase-input-18"
                                               data-indeterminate={true}
                                               disabled={false}
-                                              id="hvcheckbox8-input"
+                                              id="hvcheckbox7-input"
                                               onChange={[Function]}
                                               readOnly={false}
                                               required={false}
@@ -3654,8 +2572,8 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     </WithStyles(HvBaseCheckbox)>
                     <WithStyles(HvLabel)
                       className="HvCheckBox-label"
-                      htmlFor="hvcheckbox8-input"
-                      id="hvcheckbox8-label"
+                      htmlFor="hvcheckbox7-input"
+                      id="hvcheckbox7-label"
                       label="MockLabel"
                     >
                       <HvLabel
@@ -3667,15 +2585,15 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             "root": "HvLabel-root",
                           }
                         }
-                        htmlFor="hvcheckbox8-input"
-                        id="hvcheckbox8-label"
+                        htmlFor="hvcheckbox7-input"
+                        id="hvcheckbox7-label"
                         label="MockLabel"
                       >
                         <WithStyles(ForwardRef)
                           className="HvCheckBox-label HvLabel-root"
                           component="label"
-                          htmlFor="hvcheckbox8-input"
-                          id="hvcheckbox8-label"
+                          htmlFor="hvcheckbox7-input"
+                          id="hvcheckbox7-label"
                           variant="highlightText"
                         >
                           <ForwardRef
@@ -3707,14 +2625,14 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                               }
                             }
                             component="label"
-                            htmlFor="hvcheckbox8-input"
-                            id="hvcheckbox8-label"
+                            htmlFor="hvcheckbox7-input"
+                            id="hvcheckbox7-label"
                             variant="highlightText"
                           >
                             <label
                               className="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
-                              htmlFor="hvcheckbox8-input"
-                              id="hvcheckbox8-label"
+                              htmlFor="hvcheckbox7-input"
+                              id="hvcheckbox7-label"
                             >
                               MockLabel
                             </label>
@@ -3886,7 +2804,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       checked={true}
                       className="HvCheckBox-checkbox"
                       disabled={false}
-                      id="hvcheckbox4-input"
+                      id="hvcheckbox3-input"
                       indeterminate={true}
                       inputProps={
                         Object {
@@ -3916,7 +2834,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                           }
                         }
                         disabled={false}
-                        id="hvcheckbox4-input"
+                        id="hvcheckbox3-input"
                         indeterminate={true}
                         inputProps={
                           Object {
@@ -3961,7 +2879,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                               }
                             />
                           }
-                          id="hvcheckbox4-input"
+                          id="hvcheckbox3-input"
                           indeterminate={true}
                           indeterminateIcon={
                             <CheckboxPartial
@@ -4025,7 +2943,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 }
                               />
                             }
-                            id="hvcheckbox4-input"
+                            id="hvcheckbox3-input"
                             indeterminate={true}
                             indeterminateIcon={
                               <CheckboxPartial
@@ -4086,7 +3004,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                   }
                                 />
                               }
-                              id="hvcheckbox4-input"
+                              id="hvcheckbox3-input"
                               inputProps={
                                 Object {
                                   "aria-describedby": undefined,
@@ -4120,10 +3038,10 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
-                                    "checked": "PrivateSwitchBase-checked-11 Mui-checked",
-                                    "disabled": "PrivateSwitchBase-disabled-12 Mui-disabled",
-                                    "input": "PrivateSwitchBase-input-13",
-                                    "root": "PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate",
+                                    "checked": "PrivateSwitchBase-checked-12 Mui-checked",
+                                    "disabled": "PrivateSwitchBase-disabled-13 Mui-disabled",
+                                    "input": "PrivateSwitchBase-input-14",
+                                    "root": "PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-indeterminate",
                                   }
                                 }
                                 color="default"
@@ -4139,7 +3057,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                     }
                                   />
                                 }
-                                id="hvcheckbox4-input"
+                                id="hvcheckbox3-input"
                                 inputProps={
                                   Object {
                                     "aria-describedby": undefined,
@@ -4159,7 +3077,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 value="on"
                               >
                                 <WithStyles(ForwardRef(IconButton))
-                                  className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                  className="PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-12 Mui-checked"
                                   color="default"
                                   component="span"
                                   disableRipple={true}
@@ -4170,7 +3088,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                   tabIndex={null}
                                 >
                                   <ForwardRef(IconButton)
-                                    className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                    className="PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-12 Mui-checked"
                                     classes={
                                       Object {
                                         "colorInherit": "MuiIconButton-colorInherit",
@@ -4195,7 +3113,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(ButtonBase))
                                       centerRipple={true}
-                                      className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                      className="MuiIconButton-root PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-12 Mui-checked"
                                       component="span"
                                       disableRipple={true}
                                       disabled={false}
@@ -4207,7 +3125,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                     >
                                       <ForwardRef(ButtonBase)
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-12 Mui-checked"
                                         classes={
                                           Object {
                                             "disabled": "Mui-disabled",
@@ -4226,7 +3144,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                       >
                                         <span
                                           aria-disabled={false}
-                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-11 Mui-checked"
+                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-12 Mui-checked"
                                           onBlur={[Function]}
                                           onDragLeave={[Function]}
                                           onFocus={[Function]}
@@ -4245,10 +3163,10 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                           >
                                             <input
                                               checked={true}
-                                              className="PrivateSwitchBase-input-13"
+                                              className="PrivateSwitchBase-input-14"
                                               data-indeterminate={true}
                                               disabled={false}
-                                              id="hvcheckbox4-input"
+                                              id="hvcheckbox3-input"
                                               onChange={[Function]}
                                               readOnly={false}
                                               required={false}
@@ -4306,8 +3224,8 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     </WithStyles(HvBaseCheckbox)>
                     <WithStyles(HvLabel)
                       className="HvCheckBox-label"
-                      htmlFor="hvcheckbox4-input"
-                      id="hvcheckbox4-label"
+                      htmlFor="hvcheckbox3-input"
+                      id="hvcheckbox3-label"
                       label={
                         <WithStyles(ForwardRef)
                           component="span"
@@ -4330,8 +3248,8 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             "root": "HvLabel-root",
                           }
                         }
-                        htmlFor="hvcheckbox4-input"
-                        id="hvcheckbox4-label"
+                        htmlFor="hvcheckbox3-input"
+                        id="hvcheckbox3-label"
                         label={
                           <WithStyles(ForwardRef)
                             component="span"
@@ -4348,8 +3266,8 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         <WithStyles(ForwardRef)
                           className="HvCheckBox-label HvLabel-root"
                           component="label"
-                          htmlFor="hvcheckbox4-input"
-                          id="hvcheckbox4-label"
+                          htmlFor="hvcheckbox3-input"
+                          id="hvcheckbox3-label"
                           variant="highlightText"
                         >
                           <ForwardRef
@@ -4381,14 +3299,14 @@ exports[`BulkActions with selection should render correctly 1`] = `
                               }
                             }
                             component="label"
-                            htmlFor="hvcheckbox4-input"
-                            id="hvcheckbox4-label"
+                            htmlFor="hvcheckbox3-input"
+                            id="hvcheckbox3-label"
                             variant="highlightText"
                           >
                             <label
                               className="HvCheckBox-label HvLabel-root HvTypography-root HvTypography-highlightText"
-                              htmlFor="hvcheckbox4-input"
-                              id="hvcheckbox4-label"
+                              htmlFor="hvcheckbox3-input"
+                              id="hvcheckbox3-label"
                             >
                               <WithStyles(ForwardRef)
                                 component="span"

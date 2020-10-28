@@ -1,6 +1,6 @@
 *** Setting ***
 Resource      _bulkActions.resource
-Test Setup    open bulk action sample    controlled-with-actions
+Test Setup    open bulk action sample    with-actions
 Force Tags    keyboard
 
 
