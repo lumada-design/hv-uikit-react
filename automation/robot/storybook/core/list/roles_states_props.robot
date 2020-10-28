@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _list.resource
-Test Setup       open list sample    single-selection-with-icon
+Test Setup       open test list sample    single-selection-with-icon
 Documentation    https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_props
 Force Tags       wai-aria-practices
 
@@ -20,11 +20,11 @@ single select listbox has aria-selected true
     Element Attribute Value Should Be    ${option}(3)    aria-selected    true
 
 multiple selection listbox has role aria-multiselectable set to true
-    [Setup]    open list sample    multi-selection-with-select-all
+    [Setup]    open test list sample    multi-selection-with-select-all
     Element Attribute Value Should Be    ${list}    aria-multiselectable    true
 
 multiple selection listbox has all selected options with aria-selected set to true
-    [Setup]    open list sample    multi-selection-with-select-all
+    [Setup]    open test list sample    multi-selection-with-select-all
     Click Element                        ${option}(1)
     Click Element                        ${option}(2)
     Element Attribute Value Should Be    ${option}(1)    aria-selected    true
@@ -32,7 +32,7 @@ multiple selection listbox has all selected options with aria-selected set to tr
     Element Attribute Value Should Be    ${option}(3)    aria-selected    true
 
 multiple selection listbox has all not selected options with aria-selected set to false
-    [Setup]    open list sample    multi-selection-with-select-all
+    [Setup]    open test list sample    multi-selection-with-select-all
     Click Element                        ${option}(1)
     Element Attribute Value Should Be    ${option}(1)    aria-selected    true
     Element Attribute Value Should Be    ${option}(2)    aria-selected    false

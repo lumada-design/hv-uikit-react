@@ -3,11 +3,6 @@ Resource     ../_keywords.resource
 
 
 *** Keywords ***
-open list sample
-    [Arguments]    ${sample}
-    Go To                            ${components}list--${sample}
-    Wait Until Element Is Visible    ${list}
-
 open test list sample
     [Arguments]    ${sample}
     Go To                            ${tests}list--${sample}

@@ -14,7 +14,7 @@ click on checkbox       multi-selection-with-select-all    ${option}(5)    input
 *** Keywords ***
 select list option when locator area is clicked
     [Arguments]    ${sample}    ${option}    ${locator}
-    open list sample                     ${sample}
+    open test list sample                     ${sample}
     list option should not be selected   ${option}
     Click Element                        ${option} ${locator}
     list option should be selected       ${option}

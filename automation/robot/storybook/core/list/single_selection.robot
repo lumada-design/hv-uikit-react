@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _list.resource
-Test Setup       open list sample    single-selection-with-icon
+Test Setup       open test list sample    single-selection-with-icon
 Documentation    options selections just for lists with single selection
 
 
@@ -23,7 +23,7 @@ unable to select disabled option when click on it
     list option should not be selected     ${option}(4)
 
 unable to select any option when selectable property is false
-    [Setup]    open list sample    main
+    [Setup]    open test list sample    main
     Click Element                         ${option}(1)
     list option should not be selected    ${option}(1)
     Click Element                         ${option}(5)
