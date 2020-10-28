@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { HvCalendar, HvCalendarHeader, HvFormElement, HvLabel, HvDropdown } from "../..";
 
 export default {
-  title: "Components/Calendar",
+  title: "Tests/Calendar",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCalendar } from '@hv/uikit-react-core/dist'",
