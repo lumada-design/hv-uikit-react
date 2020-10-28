@@ -1,17 +1,16 @@
 *** Setting ***
 Resource      ../_datePicker.resource
-Test Setup    Open DatePicker sample    range-mode
+Test Setup    Open DatePicker sample    range-mode-with-no-values
 
 
 *** Test Cases ***
-change both calendar years when is clicked previous year
+Does not change both calendar years when is clicked previous year
     [Documentation]   when dates are empty
     ${yearL}    Get Time            year
     ${yearR}    Get Text            ${calendarRight} ${year}
     Element Text Should Be          ${calendarleft} ${year}    ${yearL}
     Click Element                   ${calendarleft} ${year-}
     ${yearL}   Convert To String    ${${yearL}-1}
-    ${yearR}   Convert To String    ${${yearR}-1}
     Element Text Should Be          ${calendarleft} ${year}    ${yearL}
     Element Text Should Be          ${calendarRight} ${year}    ${yearR}
 

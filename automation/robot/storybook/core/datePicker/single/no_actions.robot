@@ -14,7 +14,7 @@ close and apply selection when mouse pick a day
     [Setup]    Open DatePicker sample    with-value-change
     Click Element                        ${day}\[8]
     Wait Until Element Is Not Visible    ${calendar}    2s
-    Element Text Should Be               ${datePickerHeader}    4 Jan 2020
+    Element Text Should Be               ${datePickerHeader}    8 Jan 2020
 
 close and apply selection selection when input date and click outside
     Force input                          ${input}    12/07/1982
