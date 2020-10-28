@@ -63,6 +63,7 @@ export const Determinate = () => {
   const ExampleBox = ({ label, children }) => (
     <div>
       <HvTypography>{label}</HvTypography>
+      <br />
       {children}
     </div>
   );
