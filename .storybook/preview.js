@@ -42,8 +42,6 @@ addParameters({
         "Forms",
         ["Form Element", "Form Element Blocks"],
         "Visualizations",
-        "Widgets",
-        "Layout",
         "Lab",
         "Community",
         ["Overview", "Release Schedule", "Contributing"],

@@ -159,7 +159,7 @@ const HvAssetInventory = (props) => {
       <div className={classes.sortContainer}>
         <Sort
           id={id}
-          labels={{ title: labels.sortBy }}
+          aria-label={labels.sortBy}
           metadata={configuration.metadata}
           selected={selectedSort}
           onSelection={onSort}

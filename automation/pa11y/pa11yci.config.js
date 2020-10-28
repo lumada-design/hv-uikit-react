@@ -12,7 +12,7 @@ function getStories(url, filter) {
   const hasPa11ySet = (s) => s.parameters && s.parameters.pa11y != null;
 
   const isCoreComponent = (s) => {
-    const includedPaths = ["Components/", "Forms/", "Widgets/"];
+    const includedPaths = ["Components/", "Forms/"];
     return s.kind && includedPaths.some((p) => s.kind.startsWith(p));
   };
 

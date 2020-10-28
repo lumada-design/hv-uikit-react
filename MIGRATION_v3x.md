@@ -247,6 +247,7 @@ selected
 selector
 textDisabled
 ```
+
 The `selectDefault` prop was removed
 
 ### Loading
@@ -260,7 +261,11 @@ Removed option to pass `children` and use component as a wrapper "HOC". We still
 
 ### Login
 
-Component was removed - use `HvLoginContainer` instead.
+Component was replaced for `HvLoginContainer`.
+
+### LoginContainer
+
+Component was renamed to `HvLogin`.
 
 ### Multi-Button
 
