@@ -34,6 +34,7 @@ const styles = (theme) => ({
     "&>*": {
       marginLeft: theme.hv.spacing.sm,
     },
+    width: "calc(100% + 20px)", // compensate the negative margin left which increases the width
   },
 
   selectAll: {
