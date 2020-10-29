@@ -28,7 +28,7 @@ input and pick a date
     Force input               ${input}    02/07/1977
     Press Keys                NONE    TAB
     Click Element             ${day}\[9]
-    Element Text Should Be    ${datePickerHeader}    7 Feb 1977
+    Element Text Should Be    ${datePickerHeader}    9 Feb 1977
 
 
 *** Variables ***

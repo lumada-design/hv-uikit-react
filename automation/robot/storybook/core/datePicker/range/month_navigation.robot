@@ -11,7 +11,7 @@ click previous month on left calendar when date is empty
     Element Text Should Be    ${calendarRight} ${month}    August
     Click Element             ${calendarLeft} ${month-}
     Element Text Should Be    ${calendarLeft} ${month}    June
-    Element Text Should Be    ${calendarRight} ${month}    July
+    Element Text Should Be    ${calendarRight} ${month}    August
 
 click next month on left calendar when date is empty
     [Documentation]    verify both calendars forward one month
@@ -34,7 +34,7 @@ click next month on right calendar
     Element Text Should Be    ${calendarLeft} ${month}    July
     Element Text Should Be    ${calendarRight} ${month}    August
     Click Element             ${calendarRight} ${month+}
-    Element Text Should Be    ${calendarLeft} ${month}    August
+    Element Text Should Be    ${calendarLeft} ${month}    July
     Element Text Should Be    ${calendarRight} ${month}    September
 
 click next month until next January
@@ -54,7 +54,7 @@ click previous month until previous December
     Repeat Keyword            7 times
     ...    Click Element      ${calendarLeft} ${month-}
     Element Text Should Be    ${calendarLeft} ${month}    December
-    Element Text Should Be    ${calendarRight} ${month}    January
+    Element Text Should Be    ${calendarRight} ${month}    August
     Element Text Should Be    ${calendarLeft} ${year}    2018
     Element Text Should Be    ${calendarRight} ${year}    2019
 

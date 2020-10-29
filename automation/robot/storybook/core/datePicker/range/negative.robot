@@ -4,43 +4,45 @@ Test Setup    Open DatePicker sample    range-with-values
 
 
 *** Test Cases ***
-pick end date previous of start date
-    [Documentation]    override start date
-    Click Element                   ${day}\[32]
-    wait until element has value    ${calendarLeft} input    31 Jul 2019
-    Click Element                   ${day}\[44]
-    wait until element has value    ${calendarLeft} input   29 Jul 2019
-    wait until element has value    ${calendarRight} input   29 Jul 2019
-    Element Text Should Be          ${datePickerHeader}    29 Jul 2019
-
-Apply an empty date
-    [Setup]    Open DatePicker sample    range-mode
-    Click Button              Apply
-    Element Text Should Be    ${datePickerHeader}    Select a range
-
 input end date previous of start date
     [Documentation]    restore previous date
-    wait until element has value    ${calendarLeft} input    5 Jul 2019
-    Force input                     ${calendarRight} input    12 07 1982
-    Press Keys                      NONE    TAB
-    wait until element has value    ${calendarLeft} input    5 Jul 2019
-    wait until element has value    ${calendarRight} input   5 Jul 2019
-    Element Text Should Be          ${datePickerHeader}    5 - 5 Jul 2019
+    wait until input has value    ${calendarLeft} input    5 Jul 2019
+    Force input                   ${calendarRight} input    12 07 1982
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarLeft} input    5 Jul 2019
+    wait until input has value    ${calendarRight} input   5 Jul 2019
+    Element Text Should Be        ${datePickerHeader}    5 - 5 Jul 2019
 
 replace date in wrong format
     [Documentation]    restore previous date
-    wait until element has value    ${calendarLeft} input     5 Jul 2019
-    wait until element has value    ${calendarRight} input    10 Jul 2019
-    Force input                     ${calendarLeft} input     02/22/2020
-    Press Keys                      NONE    TAB
-    wait until element has value    ${calendarLeft} input     10 Jul 2019
-    wait until element has value    ${calendarRight} input    10 Jul 2019
+    wait until input has value    ${calendarLeft} input     5 Jul 2019
+    wait until input has value    ${calendarRight} input    10 Jul 2019
+    Force input                   ${calendarLeft} input     02/22/2020
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarLeft} input     10 Jul 2019
+    wait until input has value    ${calendarRight} input    10 Jul 2019
 
 try clean input date
     [Documentation]    restore previous date
-    wait until element has value    ${calendarLeft} input    5 Jul 2019
-    wait until element has value    ${calendarRight} input    10 Jul 2019
-    Force input                     ${calendarRight} input    ${empty}
-    Press Keys                      NONE    TAB
-    wait until element has value    ${calendarLeft} input    5 Jul 2019
-    wait until element has value    ${calendarRight} input    10 Jul 2019
+    wait until input has value    ${calendarLeft} input    5 Jul 2019
+    wait until input has value    ${calendarRight} input    10 Jul 2019
+    Force input                   ${calendarRight} input    ${empty}
+    Press Keys                    NONE    TAB
+    wait until input has value    ${calendarLeft} input    5 Jul 2019
+    wait until input has value    ${calendarRight} input    10 Jul 2019
+
+not possible pick days of other month
+    input value should be    ${calendarLeft} input    5 Jul 2019
+    input value should be    ${calendarRight} input    10 Jul 2019
+    Click Element            ${xcalendar1DayOut}\[1]
+    Click Element            ${xcalendar1DayOut}\[7]
+    Click Element            ${xcalendar2DayOut}\[1]
+    Click Element            ${xcalendar2DayOut}\[7]
+    input value should be    ${calendarLeft} input    5 Jul 2019
+    input value should be    ${calendarRight} input    10 Jul 2019
+
+
+*** Variables ***
+${xcalendar1DayOut}    xpath:((//div[@class='HvSingleCalendar-calendarGrid'])[1]${xdayOut})
+${xcalendar2DayOut}    xpath:((//div[@class='HvSingleCalendar-calendarGrid'])[2]${xdayOut})
+${xdayOut}          //button[@data-in-month='false']

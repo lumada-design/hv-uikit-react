@@ -50,14 +50,14 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
           "root": "HvDatePicker-root",
         }
       }
-      id="hv-date-picker-23"
+      id="hv-date-picker-39"
       locale="en-US"
       value={2019-01-01T12:00:00.000Z}
     >
       <WithStyles(HvFormElement)
         className="HvDatePicker-root"
         disabled={false}
-        id="hv-date-picker-23"
+        id="hv-date-picker-39"
         locale="en-US"
         required={false}
         status="standBy"
@@ -71,7 +71,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             }
           }
           disabled={false}
-          id="hv-date-picker-23"
+          id="hv-date-picker-39"
           locale="en-US"
           required={false}
           status="standBy"
@@ -79,7 +79,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
         >
           <div
             className="HvDatePicker-root HvFormElement-root"
-            id="hv-date-picker-23"
+            id="hv-date-picker-39"
           >
             <WithStyles(HvBaseDropdown)
               adornment={
@@ -258,7 +258,49 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                   </div>
                 </div>
                 <ForwardRef(Popper)
-                  anchorEl={null}
+                  anchorEl={
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="dialog"
+                      class="HvBaseDropdown-root HvDatePicker-dropdown"
+                      role="combobox"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="HvBaseDropdown-header"
+                        role="textbox"
+                        tabindex="0"
+                      >
+                        <div
+                          class="HvBaseDropdown-selection"
+                        >
+                          <p
+                            class="HvTypography-root HvTypography-normalText"
+                          >
+                            1 Jan 2019
+                          </p>
+                        </div>
+                        <div
+                          class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
+                          name="Calendar"
+                        >
+                          <svg
+                            focusable="false"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class="color0"
+                              d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                              fill="#414141"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  }
                   disablePortal={true}
                   modifiers={
                     Object {
@@ -581,7 +623,49 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                   </div>
                 </div>
                 <ForwardRef(Popper)
-                  anchorEl={null}
+                  anchorEl={
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="dialog"
+                      class="HvBaseDropdown-root HvDatePicker-dropdown"
+                      role="combobox"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="HvBaseDropdown-header"
+                        role="textbox"
+                        tabindex="0"
+                      >
+                        <div
+                          class="HvBaseDropdown-selection"
+                        >
+                          <p
+                            class="HvTypography-root HvTypography-normalText"
+                          >
+                            5 Jan 2019
+                          </p>
+                        </div>
+                        <div
+                          class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
+                          name="Calendar"
+                        >
+                          <svg
+                            focusable="false"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class="color0"
+                              d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                              fill="#414141"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  }
                   disablePortal={true}
                   modifiers={
                     Object {
@@ -659,12 +743,12 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
           "root": "HvDatePicker-root",
         }
       }
-      id="hv-date-picker-3"
+      id="hv-date-picker-5"
     >
       <WithStyles(HvFormElement)
         className="HvDatePicker-root"
         disabled={false}
-        id="hv-date-picker-3"
+        id="hv-date-picker-5"
         locale="en"
         required={false}
         status="standBy"
@@ -677,14 +761,14 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             }
           }
           disabled={false}
-          id="hv-date-picker-3"
+          id="hv-date-picker-5"
           locale="en"
           required={false}
           status="standBy"
         >
           <div
             className="HvDatePicker-root HvFormElement-root"
-            id="hv-date-picker-3"
+            id="hv-date-picker-5"
           >
             <WithStyles(HvBaseDropdown)
               adornment={
@@ -857,7 +941,47 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                   </div>
                 </div>
                 <ForwardRef(Popper)
-                  anchorEl={null}
+                  anchorEl={
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="dialog"
+                      class="HvBaseDropdown-root HvDatePicker-dropdown"
+                      role="combobox"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="HvBaseDropdown-header"
+                        role="textbox"
+                        tabindex="0"
+                      >
+                        <div
+                          class="HvBaseDropdown-selection"
+                        >
+                          <p
+                            class="HvTypography-root HvTypography-placeholderText"
+                          />
+                        </div>
+                        <div
+                          class="HvDatePicker-icon HvIconBase-root HvIconBase-s"
+                          name="Calendar"
+                        >
+                          <svg
+                            focusable="false"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class="color0"
+                              d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                              fill="#414141"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  }
                   disablePortal={true}
                   modifiers={
                     Object {
