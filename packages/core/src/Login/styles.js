@@ -4,7 +4,7 @@ const styles = (theme) => ({
   root: {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "bottom",
-    backgroundSize: "100%",
+    backgroundSize: "cover",
     width: "100%",
     height: "100%",
     padding: 0,

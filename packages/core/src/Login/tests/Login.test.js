@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../Provider";
-import LoginContainer from "..";
+import Login from "..";
 
 const MockFrom = () => <>Mock Form</>;
 
@@ -13,9 +13,9 @@ describe("Login ", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <LoginContainer>
+        <Login>
           <MockFrom />
-        </LoginContainer>
+        </Login>
       </HvProvider>
     );
   });
@@ -25,8 +25,7 @@ describe("Login ", () => {
   });
 
   it("should render the Login component", () => {
-    const loginContainerComponent = wrapper.find(LoginContainer);
-
-    expect(loginContainerComponent.length).toBe(1);
+    const loginComponent = wrapper.find(Login);
+    expect(loginComponent.length).toBe(1);
   });
 });
