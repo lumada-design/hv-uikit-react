@@ -9,8 +9,10 @@ export default function useVisibleDate(defaultDate) {
 
   const [rightVisibleMonth, setRightVisibleMonth] = useState(visibleDate?.getMonth() + 2);
   const [rightVisibleYear, setRightVisibleYear] = useState(visibleDate?.getFullYear());
+  const [visibleDateUpdated, setVisibleDateUpdated] = useState(false);
 
   useEffect(() => {
+    if (!visibleDateUpdated) return;
     const {
       updatedVisibleMonth,
       updatedVisibleYear,
@@ -29,7 +31,19 @@ export default function useVisibleDate(defaultDate) {
     setVisibleYear(updatedVisibleYear);
     setRightVisibleMonth(updatedRightVisibleMonth);
     setRightVisibleYear(updatedRightVisibleYear);
-  }, [visibleDate, visibleMonth, visibleYear, rightVisibleMonth, rightVisibleYear]);
+    setVisibleDateUpdated(false);
+  }, [
+    visibleDate,
+    visibleMonth,
+    visibleYear,
+    rightVisibleMonth,
+    rightVisibleYear,
+    visibleDateUpdated,
+  ]);
+
+  useEffect(() => {
+    setVisibleDateUpdated(true);
+  }, [visibleDate]);
 
   const handleVisibleDateChange = (event, action, index, direction) => {
     const {

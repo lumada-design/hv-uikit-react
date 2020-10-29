@@ -188,6 +188,10 @@ const HvDatePicker = (props) => {
     if (position === "left") {
       setStartDate(newDate > endDate ? endDate : newDate);
     } else if (position === "right") {
+      if (!startDate) {
+        setStartDate(newDate > endDate ? endDate : newDate);
+        return;
+      }
       setEndDate(newDate < startDate ? startDate : newDate);
     }
   };
