@@ -12,6 +12,9 @@ const renderNode = (node, className, variant) =>
     </HvTypography>
   );
 
+/**
+ * Empty states communicate that there’s no information, data or values to display in a given context.
+ */
 const EmptyState = (props) => {
   const { classes, className, title, message, action, icon, ...others } = props;
   return (

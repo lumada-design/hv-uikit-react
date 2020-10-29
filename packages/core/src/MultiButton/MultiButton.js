@@ -4,6 +4,9 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
+/**
+ * Multi-buttons are grouped sets of buttons displayed horizontal or vertically in the same container.
+ */
 const HvMultiButton = (props) => {
   const {
     className,

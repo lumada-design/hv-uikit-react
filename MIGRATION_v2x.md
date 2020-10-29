@@ -2,47 +2,49 @@
 
 **Table of Contents**
 
-- [Package Changes](#package-changes)
-- [Material-UI v4](#material-ui-v4)
-- [Provider Changes](#provider-changes)
-- [Layout Changes](#layout-changes)
-- [Icons Changes](#icons-changes)
-- [Component Changes](#component-changes)
-  - [Asset Inventory](#asset-inventory)
-  - [Button](#button)
-  - [Card](#card)
-  - [Checkbox](#checkbox)
-  - [Dropdown](#dropdown)
-  - [Dropdown Menu](#dropdown-menu)
-  - [Input](#input)
-  - [KPI](#kpi)
-  - [List](#list)
-  - [Login](#login)
-  - [Modal](#modal)
-  - [Multi-Button](#multi-button)
-  - [Radio Button](#radio-button)
-  - [Snackbar](#snackbar)
-  - [Tabs](#tabs)
-  - [Table](#table)
-  - [Text Area](#text-area)
-  - [Toggle Button](#toggle-button)
-  - [Tooltip](#tooltip)
-
+- [Migration Guide](#migration-guide)
+- [From v1.x to v2.x](#from-v1x-to-v2x)
+  - [Package Changes](#package-changes)
+  - [Material-UI v4](#material-ui-v4)
+  - [Provider Changes](#provider-changes)
+  - [Layout Changes](#layout-changes)
+  - [Icons Changes](#icons-changes)
+  - [Component Changes](#component-changes)
+    - [Asset Inventory](#asset-inventory)
+      - [List View Row](#list-view-row)
+    - [Button](#button)
+    - [Card](#card)
+    - [Checkbox](#checkbox)
+    - [Dropdown](#dropdown)
+    - [Dropdown Menu](#dropdown-menu)
+    - [Input](#input)
+    - [KPI](#kpi)
+    - [List](#list)
+    - [Login](#login)
+    - [Modal](#modal)
+    - [Multi-Button](#multi-button)
+    - [Radio Button](#radio-button)
+    - [Snackbar](#snackbar)
+    - [Tabs](#tabs)
+    - [Table](#table)
+    - [Text Area](#text-area)
+    - [Toggle Button](#toggle-button)
+    - [Tooltip](#tooltip)
 
 # From v1.x to v2.x
 
 ## Package Changes
 
-- Package `@hv/uikit-common-themes` moved from the [hv-uikit-common](https://github.com/pentaho/hv-uikit-common) repository to [this](https://github.com/pentaho/hv-uikit-react) repository. The package will continue to be published under the same name, only the repository changed.
+- Package `@hv/uikit-common-themes` moved from the [hv-uikit-common](https://github.com/pentaho/hv-uikit-common) repository to [this](https://github.com/pentaho/hv-uikit-react) repository. The package will continue to be published under the same name, only the repository's location has changed.
 
-- Packages `@hv/uikit-common-icons` and `@hv/uikit-common-utils` are now deprecated, are will no longer receive updates. You can still use the other releases if you need them. As for their contents:
+- Packages `@hv/uikit-common-icons` and `@hv/uikit-common-utils` are now deprecated, and will no longer receive updates. You can still use the other releases, if you need them. As for their contents:
 
   - `@hv/uikit-common-icons` was integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/` folder.
   - `@hv/uikit-common-utils` was integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
 
 ## Material-UI v4
 
-Material UI was upgraded from v3 to v4, and is now a peer-depencency of our packages.
+Material UI has been from v3 to v4, and is now a peer-depencency of our packages.
 You have to install it in your project, or upgrade if you're already using it and follow their [migration guide](https://material-ui.com/guides/migration-v3/).
 
 ## Provider Changes
@@ -51,7 +53,7 @@ The routing was removed from the provider. The component `HvLink` that used the 
 
 ## Layout Changes
 
-The greater change is our layout component (the Grid) is the definition of spacing, that now uses a 7.5px factor. For example if we passed a spacing of 2, the resulting spacing between containers is 15px.
+The greater change in our layout component (the Grid) is the definition of spacing, that now uses a 7.5px factor. For example if we passed a spacing of 2, the resulting spacing between containers is 15px.
 
 ## Icons Changes
 
@@ -65,13 +67,13 @@ To import an icon you should use (using `Checkbox` as an example):
 +import { Checkbox } from "@hv/uikit-react-icons/dist";
 ```
 
-- Icon box dimensions are now according to Design System specifications by default.
+- Icon box dimensions now follow Design System specifications by default.
 
 ## Component Changes
 
-With our first major release several components where reviewed in order to remove properties already marked as deprecated. The following list lists all breaking changes that you must fix.
+With our first major release, several components where reviewed in order to remove properties already marked as deprecated. The following list details all breaking changes that you must fix.
 
-- Component's event function props now always pass `event` as first parameter (`onClick`, `onChange`, etc.)
+- Components' event function props now always pass `event` as first parameter (`onClick`, `onChange`, etc.)
 
 ```diff
 -<HvList onClick={(data, event)} />
@@ -86,11 +88,13 @@ With our first major release several components where reviewed in order to remov
 ### Asset Inventory
 
 - `searchBoxLabels` and `labels` merged into `labels`
-- #### List View Row
-  - `checkboxSemantic` renamed to `semantic`
-  - `checkboxSelected` renamed to `checked`
-  - `checkboxValue` renamed to `checkboxProps.value`
-  - `checkboxIndeterminate` renamed to `checkboxProps.indeterminate`
+
+#### List View Row
+
+- `checkboxSemantic` renamed to `semantic`
+- `checkboxSelected` renamed to `checked`
+- `checkboxValue` renamed to `checkboxProps.value`
+- `checkboxIndeterminate` renamed to `checkboxProps.indeterminate`
 
 ### Button
 
@@ -104,16 +108,16 @@ With our first major release several components where reviewed in order to remov
 - `checkboxSelected` renamed to `checked`
 - Removed prop `actionItemWidth`. Use CSS to change the width if necessary
 
-Some of Card's props that are passed down to the Card's sub-components were grouped into a single prop. This applies if a Card is not built using composition. The new group props are the following: `mediaProps`, `checkboxProps`, `cardButtonProps`
+Some of the Cards' props that are passed down to the Cards' sub-components were grouped into a single prop. This applies if a Card is not built using composition. The new group props are the following: `mediaProps`, `checkboxProps`, `cardButtonProps`
 
 - `checkboxValue` changed to `checkboxProps.value`
 - `checkboxLabel` changed to `checkboxProps.label`
 - `checkboxIndeterminate` changed to `checkboxProps.indeterminate`
 
-As for the accessibility aria-\* props, you should pass them directly to the sub-component by composition of using the grouped props:
+As for the accessibility aria-\* props, you should pass them directly to the sub-component by composition, using the grouped props:
 
 - `mediaAriaLabel`, `mediaAriaLabelledBy`, `mediaAriaDescribedBy` removed. You should instead pass these props to `mediaProps`
-- `checkboxAriaLabel`, `checkboxAriaLabelledBy`, `checkboxAriaDescribedBy` were removed. You should instead pass these props to `checkboxProps`
+- `checkboxAriaLabel`, `checkboxAriaLabelledBy`, `checkboxAriaDescribedBy` removed. You should instead pass these props to `checkboxProps`
 - `defaultAriaLabel`, `defaultAriaLabelledBy`, `defaultAriaDescribedBy` removed. You should instead pass these props to `cardButtonProps`
 
 - #### Card Header
@@ -141,7 +145,7 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
 
 - #### Card Media
   - `mediaTitle` renamed to `title`
-  - `mediaContainer` class rename to `root`
+  - `mediaContainer` class renamed to `root`
   - `mediaAriaLabel` removed. Pass `aria-label` directly
   - `mediaAriaLabelledBy` removed. Pass `aria-labelledby` directly
   - `mediaAriaDescribedBy` removed. Pass `aria-describedby` directly

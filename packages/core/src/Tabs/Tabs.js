@@ -4,8 +4,8 @@ import { Tabs, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 /**
- * Tab is a graphical control element that allows multiple documents or panels to be contained within a single window,
- * using tabs as a navigational widget for switching between sets of documents.
+ * A Tab is a graphical control element that allows multiple documents or panels to be contained within a single window.
+ * Tabs can be used as a navigational widget for switching between sets of documents.
  */
 const HvTabs = (props) => {
   const { classes, ...others } = props;

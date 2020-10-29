@@ -26,7 +26,7 @@ const computeSelectAllState = (selected, total) => {
 /**
  * A group of checkboxes.
  *
- * A checkbox group is a type of selection list that allow the user to select multiple options through the use of checkboxes.
+ * A checkbox group is a type of selection list that allows the user to select multiple options through the use of checkboxes.
  */
 const HvCheckBoxGroup = (props) => {
   const {

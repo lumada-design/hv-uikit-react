@@ -9,7 +9,7 @@ import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
- * Provides the user with a recognizable name of the form element.
+ * Provides the user with a recognizable name for a given form element.
  */
 const HvLabel = (props) => {
   const {

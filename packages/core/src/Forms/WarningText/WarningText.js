@@ -10,7 +10,7 @@ import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
- * Provides the user with an error descriptive text for when the form element is in an invalid state.
+ * Provides the user with a descriptive text, signaling an error, for when the form element is in an invalid state.
  */
 const HvWarningText = (props) => {
   const {
