@@ -75,7 +75,7 @@ export const Localized = () => {
 
   return (
     <>
-      <div style={{ marginBottom: "20px", width: "150px" }}>
+      <div style={{ marginBottom: "20px", width: "400px" }}>
         <HvRadioGroup
           orientation="horizontal"
           value={locale}
@@ -88,7 +88,12 @@ export const Localized = () => {
           <HvRadio label="Portuguese" value="pt" />
         </HvRadioGroup>
       </div>
-      <HvDatePicker locale={locale} id="DatePicker" placeholder="Select date" aria-label="Date" />
+      <HvDatePicker
+        placeholder={`Select a date in ${locale}`}
+        locale={locale}
+        id="DatePicker"
+        aria-label="Date"
+      />
     </>
   );
 };
@@ -383,7 +388,7 @@ export const WithSelectionList = () => {
 export const Disabled = () => (
   <HvDatePicker
     id="DatePicker"
-    placeholder="Select date"
+    placeholder="Can't select a date now"
     disabled
     aria-label="Disabled date picker"
   />

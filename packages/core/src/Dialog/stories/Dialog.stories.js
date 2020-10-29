@@ -275,7 +275,7 @@ export const CustomContent = () => {
               label="Description"
               placeholder="Enter text"
               rows={3}
-              style={{ width: "520px" }}
+              style={{ width: "560px" }}
             />
           </HvDialogContent>
         }

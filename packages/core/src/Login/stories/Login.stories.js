@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { HvButton, HvTypography, HvInput, HvLogin, HvDropdown } from "../..";
+import { HvButton, HvCheckBox, HvTypography, HvInput, HvLogin, HvDropdown } from "../..";
 import customBackground from "./background-custom.jpg";
 import useStyles from "./styles";
 
@@ -70,7 +70,7 @@ export const CustomBackground = () => {
           name="domain"
           label="Domain"
           classes={{
-            root: classes.input,
+            root: classes.dropdown,
             dropdown: classes.dropdownWidthFix,
             rootList: classes.dropdownWidthFix,
           }}
@@ -81,6 +81,8 @@ export const CustomBackground = () => {
             { id: "id-4", label: "Domain 4" },
           ]}
         />
+
+        <HvCheckBox classes={{ root: classes.checkbox }} label="Remember me" />
 
         <HvButton
           type="submit"
