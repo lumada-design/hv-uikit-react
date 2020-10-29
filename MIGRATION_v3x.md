@@ -37,7 +37,7 @@
 
 The view icons must now be passed to the `multibuttonProps` prop, via the `icon` key instead of the views (`CardView`/`ListView`).
 
-The `selectedView` prop now receives the **index** of the view, instead of the `id` of the MultiButton button passed in `multibuttonProps`. As so, the `id` key is no longer strictly necessary.
+The `selectedView` prop now receives the view **index**, instead of the MultiButton button `id` passed in `multibuttonProps`. The `id` key is no longer strictly necessary.
 
 - `iconCallback` renamed to `icon`. You can now pass a React element directly, as well as the callback.
 
@@ -70,11 +70,11 @@ The `emptyComponent` prop present in the `CardView`/`ListView` should be used in
 
 #### CardView
 
-- `icon` removed, pass it to `multibuttonProps` as described above.
+- `icon` removed, pass it via `multibuttonProps` as described above.
 
 #### ListView
 
-- `icon` removed, pass it to `multibuttonProps` as described above.
+- `icon` removed, pass it via `multibuttonProps` as described above.
 
 ### Badge
 
@@ -86,7 +86,7 @@ The `emptyComponent` prop present in the `CardView`/`ListView` should be used in
 
 ### Button
 
-The icon `category` (`category="icon"`) was promoted to a prop, so its possible to use icon Buttons with a category other than ghost (still defaults to ghost).
+The icon `category` (`category="icon"`) was promoted to a prop, so it's possible to use icon Buttons with a category other than ghost (still defaults to ghost).
 
 ```diff
 <HvButton
@@ -104,13 +104,13 @@ The icon `category` (`category="icon"`) was promoted to a prop, so its possible 
 
 `HvCard` must now be built using `children` composition, and as so, all the "hoisted" props from `HvCard`'s sub-components were removed.
 
-We recommend you build it using `HvCardHeader`, `HvCardContent` and `HvCardMedia`, although it's not necessary.
+We recommend you build it using `HvCardHeader`, `HvCardContent` and `HvCardMedia`, although it's not strictly necessary.
 `HvCardFooter` was removed, and we recommend you replace it with `HvActionBar`.
 
-It's internal selection control was also removed, and you can control selection using the `selectable`, `selected`.
+Its internal selection control was also removed, and you can control the selection mechanism using the `selectable`, `selected`.
 
 - `isSelectable` renamed to `selectable`.
-- `checked` renamed to `selected`, and is no longed tied to a selection checkbox.
+- `checked` renamed to `selected`, and is no longer tied to a selection checkbox.
 
 - `cardButtonProps` removed.
 - `checkboxProps` removed.
@@ -141,7 +141,7 @@ It's internal selection control was also removed, and you can control selection 
 
 This component has been removed.
 
-You can use `HvActionsGeneric` to obtain a similar container, and `HvActionsGeneric` for the same actions API.
+You can use `HvActionsGeneric` to obtain a similar container, and `HvActionsGeneric` to get the same API actions.
 The props `actions`, `actionsCallback`, `maxVisibleActions`, `actionsAlignment` "hoisted" from `HvActionsGeneric` were removed from `HvCard`.
 
 ```diff
@@ -177,7 +177,7 @@ The props `actions`, `actionsCallback`, `maxVisibleActions`, `actionsAlignment` 
 
 ### DatePicker
 
-This component now only accepts `Date` objects. `Date` internally uses time values in UTC, but the basic methods to fetch the date and time or its components all work in the local time zone and offset. When generating dates, remember that parsing strings is strongly discouraged due to browser differences and inconsistencies. Note: `new Date("YYYY-MM-DD")` does not produce the same time value as `new Date("MM/DD/YYYY")` when the local time zone is not UTC.
+This component now only accepts `Date` objects. `Date` internally uses time values in UTC, but the basic methods to fetch the date and time or its components all work in the local time zone and offset. When generating dates, remember that parsing strings is strongly discouraged, due to browser differences and inconsistencies; i.e., `new Date("YYYY-MM-DD")` does not produce the same time value as `new Date("MM/DD/YYYY")` when the local time zone is not UTC.
 
 - `value`, `startValue`, and `endValue` changed from date `string` to `Date` object
 
@@ -324,7 +324,7 @@ The Multi-Button is now built through composition and offers no control.
 ### ToggleButton
 
 - no longer adds a tooltip, which means it needs to be configured externally through composition. Example added to explain how to do it
-- built using the Button, instead using a custom button
+- built using the Button component, rather than customizing a button element
 
 ### Tooltip
 

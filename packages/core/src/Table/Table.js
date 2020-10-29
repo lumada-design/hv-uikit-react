@@ -28,18 +28,25 @@ const ReactTableCheckbox = withCheckbox(ReactTable);
 // TODO deprecate header labels in 2.x
 
 /**
- * Table component. This component offers:
- * - A standard table;
- * - Table with expander;
- * - Table with checkbox.
+ * A Table gathers relational data, it displays values arranged to allow quick numerical analysis
+ * like comparison and sorting.
+ *
+ * This component offers:
+ * <ul>
+ * <li>A standard table</li>
+ * <li>Table with expander</li>
+ * <li>Table with checkbox</li>
+ * </ul>
  *
  * The type is defined by the existence of the properties:
- *  - subElementTemplate: Creates a table with expander;
- *  - idForCheckbox: Creates a table with checkboxes;
- *  - None: Creates a simple table.
+ * <ul>
+ * <li>subElementTemplate: Creates a table with expander</li>
+ * <li>idForCheckbox: Creates a table with checkboxes</li>
+ * <li>None: Creates a simple table</li>
+ * </ul>
  *
- *   Just one of this properties should be set (or none) has it isn't possible to have a table with
- *   expander and checkbox simultaneously.
+ * Only one of these properties should be set (or none), as it isn't possible to have a table with
+ * an expander and checkbox simultaneously.
  */
 const HvTable = (props) => {
   const {

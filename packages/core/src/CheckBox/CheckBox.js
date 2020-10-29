@@ -14,7 +14,7 @@ import HvBaseCheckBox from "../BaseCheckBox";
 import styles from "./styles";
 
 /**
- * A Checkbox is a mechanism that allows user to select one or more options.
+ * A Checkbox is a mechanism that allows the user to select one or more options.
  *
  * Usually used in a Checkbox Group to present the user with a range of options from
  * which the user <b>may select any number of options</b> to complete their task.

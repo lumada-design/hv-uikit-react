@@ -7,8 +7,8 @@ import styles from "./styles";
 import { setId } from "../utils";
 
 /**
- * Bulk Actions allow users to perform an action to a single or multiple items,
- * also known as "batch production" of multiple items at once, one stage at a time.
+ * Bulk Actions allow users to perform an action on a single or multiple items.
+ * Also known as "batch production" of multiple items at once, one stage at a time.
  */
 const HvBulkActions = (props) => {
   const {

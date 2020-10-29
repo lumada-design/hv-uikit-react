@@ -6,7 +6,7 @@ import styles from "./styles";
 
 /**
  * A panel is a container used in a variety of patterns (e.g. dropdown, filter group, details section).
- * It can be horizontal or vertical and its size is defined by the content it holds inside and how it relates with surrounding patterns.
+ * It can be horizontal or vertical and its size is defined by its content and how it relates to surrounding patterns.
  * Regardless of its content, a panel look and feel should be consistent.
  */
 const HvPanel = (props) => {

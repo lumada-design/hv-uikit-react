@@ -9,7 +9,7 @@ import styles from "./styles";
 import withId from "../withId";
 
 /**
- * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
+ * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
 const DropDownMenu = ({
   id,

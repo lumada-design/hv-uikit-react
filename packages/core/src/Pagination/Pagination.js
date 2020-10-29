@@ -26,6 +26,10 @@ const setColor = (condition) => (condition ? "atmo5" : undefined);
 
 const { Enter } = KeyboardCodes;
 
+/**
+ * Pagination is the process of dividing a document into discrete pages. It relates to how users interact
+ * with structured content on a website or application.
+ */
 const Pagination = ({
   classes,
   className,

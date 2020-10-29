@@ -12,7 +12,7 @@ import { getFocusableList } from "../utils/focusableElementFinder";
 
 /**
  * The Dialog component provides a solid foundation for creating dialogs, popovers, lightboxes, etc.
- * It is created by the composition of DialogTitle, DialogContent and DialogActions, passed as child elements.
+ * It is created by the composition of DialogTitle, DialogContent and DialogActions components, passed as child elements.
  */
 const HvDialog = ({
   classes,

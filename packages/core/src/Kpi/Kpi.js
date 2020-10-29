@@ -13,6 +13,12 @@ const DEFAULT_LABELS = {
   comparisonIndicatorInfo: undefined,
 };
 
+/**
+ * Key Performance Indicator is a type of performance measurement. It monitors a business indicator
+ * and its success/failure against a given target. KPIs are the first item read on a dashboard.
+ * Communicates simple, immediate and vital information for operational decision making.
+ */
+
 const HvKpi = (props) => {
   const {
     classes,

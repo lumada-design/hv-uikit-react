@@ -26,8 +26,8 @@ const snackBarDirComponent = (direction) => {
 };
 
 /**
- * A Snackbar provides a brief messages about app processes.
- * It is dismissed automatically after an interval.
+ * A Snackbar provides brief messages about app processes.
+ * It is dismissed automatically after a given interval.
  */
 const HvSnackbar = ({
   classes,

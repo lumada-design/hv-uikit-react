@@ -8,9 +8,8 @@ import styles from "./styles";
 /**
  * Donut charts nicely convey the part-whole relationship and they have become
  * the most recognizable chart types for representing proportions in business and data statistics.
- *
- * Our implementation uses as base Plotly. If you have a specific case
- * that we don't cover directly, the Plotly [documentation](https://plotly.com/javascript/) is a good starting point.
+ * Our implementation leverages the Plotly charting library. If you have a specific case
+ * that we don't cover, the Plotly [documentation](https://plotly.com/javascript/) is a good starting point.
  */
 const Donutchart = ({
   id,
