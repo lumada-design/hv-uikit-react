@@ -1,6 +1,6 @@
 *** Setting ***
 Resource         _list.resource
-Test Setup       open list sample    multi-selection-with-select-all
+Test Setup       open test list sample    multi-selection-with-select-all
 Documentation    https://www.w3.org/TR/wai-aria-practices/#Listbox
 Force Tags       keyboard
 
@@ -23,7 +23,7 @@ loop option navigation when using UP and DOWN
     Element Should Be Focused     ${option}(5)
 
 jump focus to next enable option when is a simple list
-    [Setup]    open list sample    multi-selection-with-selectors
+    [Setup]    open test list sample    multi-selection-with-selectors
     Set Focus and press keys     ${option}(3)    DOWN
     Element Should Be Focused    ${option}(5)
 

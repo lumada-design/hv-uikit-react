@@ -233,6 +233,11 @@ Component was removed. Construct KPIs using the `HvCard` component
 
 ### List
 
+We encourage the use of the `HvListContainer` component to achieve the use cases covered
+by the list.
+Use cases related with selections like a list with checkbox, radio-buttons
+please check the `HvRadioGroup` and/or `HvCheckBoxGroup`
+
 The following `classes` were removed:
 
 ```
