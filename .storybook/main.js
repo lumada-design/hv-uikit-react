@@ -136,6 +136,7 @@ module.exports = {
       "@hv/uikit-react-core/dist": corePackageSrc,
       "@hv/uikit-react-lab/dist": labPackageSrc,
       "@hv/uikit-react-icons/dist": iconsPackageBin,
+      "react-hook-form": "react-hook-form/dist/index.ie11",
     };
 
     return config;

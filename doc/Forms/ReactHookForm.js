@@ -1,6 +1,6 @@
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm, Controller } from "react-hook-form/dist/index.ie11";
+import { yupResolver } from "@hookform/resolvers/dist/ie11/yup";
 import * as yup from "yup";
 import {
   HvInput,
