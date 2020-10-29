@@ -39,6 +39,8 @@ The view icons must now be passed to the `multibuttonProps` prop, via the `icon`
 
 The `selectedView` prop now receives the **index** of the view, instead of the `id` of the MultiButton button passed in `multibuttonProps`. As so, the `id` key is no longer strictly necessary.
 
+- `iconCallback` renamed to `icon`. You can now pass a React element directly, as well as the callback.
+
 ```diff
 <HvAssetInventory
 -  multibuttonProps={[{id: "cardV"}, {id: "listV"}]}
@@ -267,6 +269,8 @@ Component was replaced for `HvLoginContainer`.
 ### LoginContainer
 
 Component was renamed to `HvLogin`.
+
+- `customBackground` renamed to `background`.
 
 ### Multi-Button
 

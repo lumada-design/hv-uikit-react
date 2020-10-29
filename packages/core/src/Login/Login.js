@@ -3,18 +3,18 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
-import background from "./resources/background.svg";
+import bg from "./resources/background.svg";
 
 /**
  * Container layout for the login form.
  */
-const HvLogin = ({ id, className, classes, children, customBackground, ...others }) => {
+const HvLogin = ({ id, className, classes, children, background, ...others }) => {
   return (
     <div
       id={id}
       className={clsx(className, classes.root)}
       style={{
-        backgroundImage: `url(${customBackground || background})`,
+        backgroundImage: `url(${background || bg})`,
       }}
       {...others}
     >
@@ -50,9 +50,9 @@ HvLogin.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   *  The path for the custom background image.
+   *  The path for the background image.
    */
-  customBackground: PropTypes.string,
+  background: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvLogin" })(HvLogin);
