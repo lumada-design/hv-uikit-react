@@ -7,10 +7,10 @@ Resource      ../_datePicker.resource
 *** Test Cases ***
 show placeholder when dates are empty
     [Setup]    Open DatePicker sample   range-mode-with-no-values
-    Element Text Should Be    ${calendarLeft} input   ${empty}
-    Element Text Should Be    ${calendarRight} input   ${empty}
-    Wait Until Page Contains Element   ${calendarLeft} input\[placeholder=MM/DD/YYYY]
-    Wait Until Page Contains Element   ${calendarRight} input\[placeholder=MM/DD/YYYY]
+    Element Text Should Be         ${calendarLeft} input   ${empty}
+    Element Text Should Be         ${calendarRight} input   ${empty}
+    Page Should Contain Element    ${calendarLeft} input\[placeholder='MM/DD/YYYY']
+    Page Should Contain Element    ${calendarRight} input\[placeholder='MM/DD/YYYY']
 
 shows calendar month when input date
     [Tags]    run-any-way
