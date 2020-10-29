@@ -11,8 +11,8 @@ Documentation    Use Cases:
 format m d yy                7 5 12
 format m dd yy               7 05 12
 format mm d yyyy             07 5 2012
-format mm dd yyyy            07 05 2012
-format mm-dd-yy              07-05-12
+#format mm dd yyyy           07 05 2012    not supported by firefox
+#format mm-dd-yy             07-05-12      not supported by firefox
 format dots on mm dd yy      07.05.12
 format slash mm dd yy        07/05/12
 
