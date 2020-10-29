@@ -6,9 +6,9 @@ export type HvLoginClassKey = "container" | "item" | "formContainer";
 export interface HvLoginProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvLoginClassKey> {
   /**
-   *  The path for the custom background image.
+   *  The path for the background image.
    */
-  customBackground?: string;
+  background?: string;
 }
 
 export default function HvLogin(props: HvLoginProps): JSX.Element | null;

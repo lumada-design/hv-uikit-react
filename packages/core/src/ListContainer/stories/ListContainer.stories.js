@@ -6,10 +6,12 @@ import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uiki
 import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, withTooltip } from "../..";
 
 export default {
-  title: "Components/List/List Container",
+  title: "Components/List",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvListContainer } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvListContainer,
   subcomponents: { HvListItem },

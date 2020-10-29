@@ -5,7 +5,7 @@ Resource    ../_keywords.resource
 *** Keywords ***
 open basedropdown sample
     [Arguments]    ${sample}
-    Go To    ${components}base-dropdown--${sample}
+    Go To    ${tests}base-dropdown--${sample}
     Wait Until Element Is Enabled    ${dropdown}
 
 

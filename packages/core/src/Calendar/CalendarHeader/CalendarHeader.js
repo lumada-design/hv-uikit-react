@@ -42,7 +42,6 @@ const HvCalendarHeader = ({
   if (isRange(localValue)) {
     localValue = showEndDate ? localValue.endDate : localValue.startDate;
   }
-
   const [dateValue, setDateValue] = useState(localValue);
   const [editedValue, setEditedValue] = useState(null);
   const [displayValue, setDisplayValue] = useState("");
@@ -63,6 +62,7 @@ const HvCalendarHeader = ({
     const valid = validateInput(localValue);
     setIsValidValue(valid);
     if (valid) {
+      if (!localValue) return;
       const weekday = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(localValue);
       setDisplayValue(formatDMY(localValue, locale));
       setEditedValue(null);
@@ -106,6 +106,7 @@ const HvCalendarHeader = ({
   };
 
   const onFocusHandler = (event) => {
+    if (!localValue) return;
     const formattedDate = isValidValue ? dayjs(localValue).locale(locale).format("L") : editedValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);

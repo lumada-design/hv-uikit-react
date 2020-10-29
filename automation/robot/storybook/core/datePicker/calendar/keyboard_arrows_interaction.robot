@@ -12,10 +12,10 @@ focus previous day when pressed arrow left on Sunday       ${day}\[8]     ARROW_
 focus vertical ascending day when pressed arrow up         ${day}\[8]     ARROW_UP       ${day}\[1]
 focus vertical descending day when pressed arrow down      ${day}\[1]     ARROW_DOWN     ${day}\[8]
 # --- when focus does not move ---
-keep focus when pressed right on last day                  ${day}\[42]    ARROW_RIGHT    ${day}\[42]
+keep focus when pressed right on last day                  ${day}\[31]    ARROW_RIGHT    ${day}\[31]
 keep focus when pressed left on first day                  ${day}\[1]     ARROW_LEFT     ${day}\[1]
 keep focus when pressed up on first day                    ${day}\[1]     ARROW_UP       ${day}\[1]
-keep focus day when pressed down on last day               ${day}\[42]    ARROW_DOWN     ${day}\[42]
+keep focus day when pressed down on last day               ${day}\[31]    ARROW_DOWN     ${day}\[31]
 
 
 *** Keywords ***

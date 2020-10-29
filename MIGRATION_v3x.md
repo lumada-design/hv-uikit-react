@@ -39,6 +39,8 @@ The view icons must now be passed to the `multibuttonProps` prop, via the `icon`
 
 The `selectedView` prop now receives the view **index**, instead of the MultiButton button `id` passed in `multibuttonProps`. The `id` key is no longer strictly necessary.
 
+- `iconCallback` renamed to `icon`. You can now pass a React element directly, as well as the callback.
+
 ```diff
 <HvAssetInventory
 -  multibuttonProps={[{id: "cardV"}, {id: "listV"}]}
@@ -231,6 +233,11 @@ Component was removed. Construct KPIs using the `HvCard` component
 
 ### List
 
+We encourage the use of the `HvListContainer` component to achieve the use cases covered
+by the list.
+Use cases related with selections like a list with checkbox, radio-buttons
+please check the `HvRadioGroup` and/or `HvCheckBoxGroup`
+
 The following `classes` were removed:
 
 ```
@@ -267,6 +274,8 @@ Component was replaced for `HvLoginContainer`.
 ### LoginContainer
 
 Component was renamed to `HvLogin`.
+
+- `customBackground` renamed to `background`.
 
 ### Multi-Button
 

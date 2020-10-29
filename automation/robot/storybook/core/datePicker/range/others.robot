@@ -5,23 +5,26 @@ Resource      ../_datePicker.resource
 
 
 *** Test Cases ***
-current date as default value when it is empty
-    ${yyyy}   Get Time                  year
-    ${day}   Get Current Date           result_format=%e
-    ${day}                              Evaluate  '${day}'.replace(' ','')
-    ${monthName}    Get Current Date    result_format=%B
-    Element Text Should Be              ${calendarLeft} ${month}    ${monthName}
-    Element Text Should Be              ${calendarLeft} ${year}    ${yyyy}
-    Element Text Should Be              ${calendarLeft} ${daySelected}    ${day}
+show placeholder when dates are empty
+    [Setup]    Open DatePicker sample   range-mode-with-no-values
+    Element Text Should Be         ${calendarLeft} input   ${empty}
+    Element Text Should Be         ${calendarRight} input   ${empty}
+    Page Should Contain Element    ${calendarLeft} input\[placeholder='MM/DD/YYYY']
+    Page Should Contain Element    ${calendarRight} input\[placeholder='MM/DD/YYYY']
 
-shows calendar with the month of first date when input date
-    Force input               ${calendarLeft} input    03 01 2000
-    Force input               ${calendarRight} input    07 30 2000
-    Press Keys                NONE    ENTER
-    Element Text Should Be    ${calendarLeft} ${month}    March
-    Element Text Should Be    ${calendarRight} ${month}    April
+shows calendar month when input date
+    [Tags]    run-any-way
+    [Documentation]    Bug  https://insightgroup.atlassian.net/browse/HVUIKIT-5605
+    Force input                     ${calendarLeft} input    03 01 2000
+    Force input                     ${calendarRight} input    07 30 2000
+    Press Keys                      NONE    ENTER
+    Element Text Should Be          ${calendarLeft} ${month}    March
+    Run Keyword And Expect Error    *
+    ...   Element Text Should Be    ${calendarRight} ${month}    July
 
-shows calendar with the month of first date when opened
+shows calendar month when reopen edited calendar
+    [Tags]    run-any-way
+    [Documentation]    Bug  https://insightgroup.atlassian.net/browse/HVUIKIT-5605
     Force input                       ${calendarLeft} input    03 01 2000
     Force input                       ${calendarRight} input    07 30 2000
     Press Keys                        NONE    ENTER
@@ -29,7 +32,8 @@ shows calendar with the month of first date when opened
     Click Element                     ${datePickerHeader}
     Wait Until Element Is Visible     ${calendar}
     Element Text Should Be            ${calendarLeft} ${month}    March
-    Element Text Should Be            ${calendarRight} ${month}    April
+    Run Keyword And Expect Error      *
+    ...   Element Text Should Be      ${calendarRight} ${month}    July
 
 
 *** Variables ***

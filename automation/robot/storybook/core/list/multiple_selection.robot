@@ -1,12 +1,12 @@
 *** Setting ***
 Resource         _list.resource
-Test Setup       open list sample    multi-selection-with-select-all
+Test Setup       open test list sample    multi-selection-with-select-all
 Documentation    options selections just for lists with multiple selection
 
 
 *** Test Cases ***
 unable to select a disabled option when click on it
-    [Setup]    open list sample    multi-selection-with-selectors
+    [Setup]    open test list sample    multi-selection-with-selectors
     Page Should Contain Element    ${selectedItems}    limit=1
     Click Element                  ${option}(4)
     Page Should Contain Element    ${selectedItems}    limit=1
