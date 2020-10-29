@@ -5,6 +5,8 @@ import DSVersion from "../../../.storybook/blocks/resources/DSVersion.js";
 
 import componentDefinitions from "../ComponentVersioningTable/versions";
 
+import { HvLink } from "../../../packages/core/src/..";
+
 const dsVersion3 = componentDefinitions.dsVersion3;
 const dsVersion1 = componentDefinitions.dsVersion1;
 
@@ -17,7 +19,9 @@ const coreComponentTableConfig = [
       return (
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
-            <a href={`${cellData.row._original.path}`}>{cellData.row._original.component}</a>
+            <HvLink route={`${cellData.row._original.path}`}>
+              {cellData.row._original.component}
+            </HvLink>
           </div>
         </div>
       );
