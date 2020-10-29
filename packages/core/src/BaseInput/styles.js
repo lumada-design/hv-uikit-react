@@ -146,7 +146,7 @@ const styles = (theme) => ({
     },
   },
   inputResizable: {
-    resize: "auto",
+    resize: "both",
     width: "100%",
   },
 
