@@ -10,15 +10,15 @@ open toggle button sample
 
 toggle button should be selected
     [Arguments]    ${locator}    ${nameAttribute}
-    Element Attribute Value Should Be    ${locator}    aria-pressed    true
-    Element Attribute Value Should Be    ${locator}>div    name    ${nameAttribute}
+    Wait Until Page Contains Element     ${locator}\[aria-pressed=true]
+    Wait Until Page Contains Element     ${locator} \[name=${nameAttribute}]
 
 toggle button should not be selected
     [Arguments]    ${locator}    ${nameAttribute}
-    Element Attribute Value Should Be    ${locator}    aria-pressed    false
-    Element Attribute Value Should Be    ${locator}>div    name    ${nameAttribute}
+    Wait Until Page Contains Element     ${locator}\[aria-pressed=false]
+    Wait Until Page Contains Element     ${locator} \[name=${nameAttribute}]
 
 
 *** Variables ***
-${buttons}    css:button.HvToggleButton-root
+${buttons}    css:button.HvButton-root
 ${button}     ${buttons}:nth-child

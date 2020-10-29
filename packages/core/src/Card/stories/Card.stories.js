@@ -413,11 +413,13 @@ export const Selectable = () => {
           value="value"
           inputProps={{ "aria-label": "leaf input" }}
         />
-        <HvToggleButton
-          aria-label="Star"
-          selectedIcon={<FavoriteSelected />}
-          notSelectedIcon={<Favorite />}
-        />
+        <div style={{ width: 32, height: 32 }}>
+          <HvToggleButton
+            aria-label="Star"
+            selectedIcon={<FavoriteSelected />}
+            notSelectedIcon={<Favorite />}
+          />
+        </div>
         <div style={{ flex: 1 }} />
         <HvActionsGeneric
           actions={[

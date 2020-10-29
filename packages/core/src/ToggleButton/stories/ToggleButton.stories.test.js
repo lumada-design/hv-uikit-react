@@ -29,10 +29,6 @@ export const Controlled = () => {
         notSelectedIcon={<Unlock />}
         selectedIcon={<Lock />}
         onClick={toggleState}
-        labels={{
-          notSelectedTitle: "Close lock",
-          selectedTitle: "Open lock",
-        }}
       />
     </>
   );

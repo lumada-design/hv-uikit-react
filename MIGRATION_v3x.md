@@ -199,6 +199,7 @@ rootDisabled
 rootOpen
 selection
 ```
+
 The `selectDefault` prop was removed
 
 ### DropDownMenu
@@ -310,6 +311,11 @@ The Multi-Button is now built through composition and offers no control.
 
 - `startCount` removed.
 - `endCount` removed.
+
+### ToggleButton
+
+- no longer adds a tooltip, which means it needs to be configured externally through composition. Example added to explain how to do it
+- built using the Button, instead using a custom button
 
 ### Tooltip
 
