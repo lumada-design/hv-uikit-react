@@ -5,15 +5,12 @@ Resource      ../_datePicker.resource
 
 
 *** Test Cases ***
-current date as default value when it is empty
+show placeholder when dates are empty
     [Setup]    Open DatePicker sample   range-mode-with-no-values
-    ${yyyy}    Get Time                 year
-    ${day}   Get Current Date           result_format=%e
-    ${day}                              Evaluate  '${day}'.replace(' ','')
-    ${monthName}    Get Current Date    result_format=%B
-    Element Text Should Be              ${calendarLeft} ${month}    ${monthName}
-    Element Text Should Be              ${calendarLeft} ${year}    ${yyyy}
-    Element Text Should Be              ${calendarLeft} ${daySelected}    ${day}
+    Element Text Should Be         ${calendarLeft} input   ${empty}
+    Element Text Should Be         ${calendarRight} input   ${empty}
+    Page Should Contain Element    ${calendarLeft} input\[placeholder='MM/DD/YYYY']
+    Page Should Contain Element    ${calendarRight} input\[placeholder='MM/DD/YYYY']
 
 shows calendar month when input date
     [Tags]    run-any-way
