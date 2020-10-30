@@ -1,7 +1,6 @@
 *** Setting ***
 Resource      _multiButton.resource
-Force Tags    v3
-Resource       ../_keywords.resource
+Resource      ../_keywords.resource
 
 
 *** Test Cases ***

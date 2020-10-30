@@ -27,13 +27,13 @@ aria-rowcount as total number of table rows on correct tag when a paginated tabl
 role as row on correct tags when a paginated table is rendered
     Element Attribute Value Should Be    ${rows_populated}    role    row
     Page Should Contain Element          ${rows_populated}    limit=10
-    Click Button                         ${pagination_next_page}
+    Click Button                         ${nav_next_page}
     Page Should Contain Element          ${rows_populated}    limit=3
 
 role as cell on correct DOM tags when a paginated table is rendered
     Element Attribute Value Should Be    ${cells}    role    cell
     Page Should Contain Element          css:[role=cell]    limit=90
-    Click Button                         ${pagination_next_page}
+    Click Button                         ${nav_next_page}
     Page Should Contain Element          css:[role=cell]    limit=90
     Select Dropdown Value                ${rows_per_page}    5
     Page Should Contain Element          css:[role=cell]    limit=45
@@ -49,18 +49,18 @@ aria-sort ascending or descending when a column is order by
 
 aria-selected as boolean when a row is selected and unselected
     [Setup]    open table sample    ${visualizations}    with-checkbox
-    Page Should Contain Element          css:[aria-selected=false]    limit=10
-    Click Element                        ${row_1_checkbox}
-    Element Attribute Value Should Be    ${row_1}    aria-selected    true
-    Click Element                        ${row_1_checkbox}
-    Element Attribute Value Should Be    ${row_1}    aria-selected    false
-    Select Checkbox                      ${bulkAction_checkbox}
-    Page Should Contain Element          css:[aria-selected=true]     limit=10
+    Page Should Contain Element          ${rows} [aria-selected=false]    limit=10
+    Page Should Contain Element          ${rows} [aria-selected=true]    limit=0
+    Select Checkbox                      ${row}(1) ${checkBox}
+    Wait Until Page Contains Element     ${row}(1) [aria-selected=true]
+    Unselect Checkbox                    ${row}(1) ${checkBox}
+    Wait Until Page Contains Element     ${row}(1) [aria-selected=false]
 
 aria-expanded as boolean when a row is expanded and shrink
     [Setup]    open table sample    ${visualizations}    with-expander-and-custom-content
-    Page Should Not Contain Element      css:[aria-expanded=true]
-    Click Element                        ${button_expand}
-    Element Attribute Value Should Be    ${row_1}    aria-expanded    true
-    Click Element                        ${button_expand}
-    Element Attribute Value Should Be    ${row_1}    aria-expanded    ${None}
+    Page Should Not Contain Element           ${rows} [aria-expanded=true]
+    Click Element                             ${button_expand}
+    Wait Until Page Contains Element          ${row}(1) [aria-expanded=true]
+    Click Element                             ${button_expand}
+    Wait Until Page Does Not Contain Element  ${row}(1) [aria-expanded=true]
+    Page Should Not Contain Element           ${rows} [aria-expanded=true]
