@@ -8,26 +8,33 @@ Documentation    Use Cases:
 
 *** Test Cases ***
 pick just initial date and left end date empty
-    [Setup]   Open DatePicker sample    range-mode
+    [Tags]    bug-ie-webdriver
+    [Setup]   Open DatePicker sample    range-mode-with-no-values
     ${dd}    Get Text                   ${xcalendar1Day}\[1]
     Click Element                       ${xcalendar1Day}\[1]
+    Wait Until Element Is Enabled       ${calendarLeft} input
     ${date}    Get Element Attribute    ${calendarLeft} input    value
     Click Button                        Apply
-    Element Text Should Be              ${datePickerHeader}    ${dd} - ${date}
+    Element Should Contain              ${datePickerHeader}    ${dd}
+    Element Should Contain              ${datePickerHeader}    ${date}
 
 pick initial on left and end date on right calendar
-    Click Element                 ${xcalendar1Day}\[3]
-    Click Element                 ${xcalendar2Day}\[7]
-    wait until input has value    ${calendarLeft} input    3 Jul 2019
-    wait until input has value    ${calendarRight} input    7 Aug 2019
-    Element Text Should Be        ${datePickerHeader}    3 Jul 2019 - 7 Aug 2019
+    [Tags]    bug-ie-webdriver
+    Click Element                    ${xcalendar1Day}\[3]
+    wait until input has value       ${calendarLeft} input    3 Jul 2019
+    wait Until Element Is Enabled    ${xcalendar2Day}\[7]
+    Click Element                    ${xcalendar2Day}\[7]
+    wait until input has value       ${calendarRight} input    7 Aug 2019
+    Element Text Should Be           ${datePickerHeader}    3 Jul 2019 - 7 Aug 2019
 
 pick both dates on left calendar
-    Click Element                 ${xcalendar1Day}\[2]
-    Click Element                 ${xcalendar2Day}\[7]
-    wait until input has value    ${calendarLeft} input    2 Jul 2019
-    wait until input has value    ${calendarRight} input    7 Aug 2019
-    Element Text Should Be        ${datePickerHeader}    2 Jul 2019 - 7 Aug 2019
+    [Tags]    bug-ie-webdriver
+    Click Element                    ${xcalendar1Day}\[2]
+    wait Until Element Is Enabled    ${xcalendar2Day}\[7]
+    Click Element                    ${xcalendar2Day}\[7]
+    wait until input has value       ${calendarLeft} input    2 Jul 2019
+    wait until input has value       ${calendarRight} input    7 Aug 2019
+    Element Text Should Be           ${datePickerHeader}    2 Jul 2019 - 7 Aug 2019
 
 just apply default values
     [Documentation]    does not select any date, just apply the default selection

@@ -32,6 +32,7 @@ try clean input date
     wait until input has value    ${calendarRight} input    10 Jul 2019
 
 not possible pick days of other month
+    [Tags]    bug-ie-webdriver
     input value should be    ${calendarLeft} input    5 Jul 2019
     input value should be    ${calendarRight} input    10 Jul 2019
     Click Element            ${xcalendar1DayOut}\[1]
