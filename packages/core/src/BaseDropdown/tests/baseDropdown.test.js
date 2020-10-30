@@ -4,7 +4,7 @@ import { Popper } from "@material-ui/core";
 
 import { HvProvider } from "../..";
 import HvBaseDropDown from "..";
-import { Main } from "../stories/BaseDropdown.stories";
+import { Main } from "../stories/BaseDropdown.stories.test";
 
 jest.mock(
   "popper.js",
