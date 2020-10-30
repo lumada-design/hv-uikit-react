@@ -29,7 +29,9 @@ module.exports = {
   ],
   // asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
   include: ({ name, kind, parameters }) =>
-    (isCoreComponent(kind) && !kind.includes("Components/Dialog")) ||
+    (isCoreComponent(kind) &&
+      !kind.includes("Components/Dialog") &&
+      !kind.includes("Components/Asset Inventory")) ||
     (kind.includes("Visualizations/") &&
       !kind.includes("Visualizations/Bar Chart") &&
       !kind.includes("Visualizations/Line Chart")),
