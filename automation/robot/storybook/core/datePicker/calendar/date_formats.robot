@@ -8,13 +8,15 @@ Documentation    Use Cases:
 
 
 *** Test Cases ***           INPUT
-format m d yy                7 5 12
-format m dd yy               7 05 12
-format mm d yyyy             07 5 2012
-#format mm dd yyyy           07 05 2012    not supported by firefox
+#format m d yy               7 5 12        not supported by ie
+#format m dd yy              7 05 12       not supported by ie
+#format mm d yyyy            07 5 2012     not supported by ie
+#format mm dd yy             07 05 12      not supported by ie
+format mm dd yyyy            07 05 2012
 #format mm-dd-yy             07-05-12      not supported by firefox
-format dots on mm dd yy      07.05.12
-format slash mm dd yy        07/05/12
+#format dots on mm dd yy     07.05.12      not supported by firefox
+#format slash mm dd yy       07/05/12      not supported by ie
+format slash mm dd yyyy      07/05/2012
 
 
 *** Keywords ***
