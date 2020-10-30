@@ -1,8 +1,6 @@
 *** Setting ***
-Resource      _resource.resource
-Test Setup    Run Keywords
-...           Go To    ${components}forms-suggestions--main
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource      _suggestions.resource
+Test Setup    open suggestion sample    main
 
 
 *** Test Cases ***
@@ -15,9 +13,7 @@ update suggestions when input is being changed
     Page Should Contain Element         ${suggestion_options}    limit=2
 
 update suggestions by server side when input is being changed
-    [Setup]    NONE
-    Go To                               ${components}forms-suggestions--server-side-suggestions
-    Wait Until Element Is Enabled       ${input}
+    [Setup]     open suggestion sample    server-side-suggestions
     Press Keys                          ${input}    tu
     Wait Until Page Contains            Tunisia
     Press Keys                          NONE    g

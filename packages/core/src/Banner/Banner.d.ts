@@ -1,12 +1,18 @@
 import * as React from "react";
 import { StandardProps, SnackbarProps, SnackbarContentProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
 export type TransitionDirectionProp = "up" | "down" | "left" | "right";
 
 export type ActionsPositionProp = "auto" | "inline" | "bottom-right";
 
 export type SemanticVariantTypes = "success" | "warning" | "error" | "info" | "default";
+
+export type HvBannerClassKey =
+  | "root"
+  | "rootClosed"
+  | "anchorOriginTopCenter"
+  | "anchorOriginBottomCenter";
 
 /**
  * Interface shared between HvBanner and HvSnackbar
@@ -40,7 +46,7 @@ export interface NotificationsCommonProps {
 
 export interface HvBannerProps
   extends StandardProps<SnackbarProps, HvBannerClassKey>,
-    HvActionsCommonProps,
+    HvActionsGenericCommonProps,
     NotificationsCommonProps {
   /**
    * The position property of the header.
@@ -51,11 +57,5 @@ export interface HvBannerProps
    */
   bannerContentProps?: SnackbarContentProps;
 }
-
-export type HvBannerClassKey =
-  | "root"
-  | "rootClosed"
-  | "anchorOriginTopCenter"
-  | "anchorOriginBottomCenter";
 
 export default function HvBanner(props: HvBannerProps): JSX.Element | null;

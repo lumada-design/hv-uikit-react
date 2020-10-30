@@ -1,61 +1,40 @@
 import React, { useState } from "react";
 import isEmpty from "lodash/isEmpty";
-import { Map } from "@hv/uikit-react-icons/dist";
-import { HvButton, HvInput } from "../..";
+import { makeStyles } from "@material-ui/core";
+import { Map } from "@hv/uikit-react-icons";
+import { HvButton, HvInput, HvBaseInput } from "../..";
 import countryNamesArray from "./countries";
 
 export default {
-  title: "Components/Input",
+  title: "Forms/Input",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvInput } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvInput,
+  subcomponents: { HvBaseInput },
 };
 
-export const Main = () => {
-  const labels = {
-    placeholder: "Insert first name",
-    infoText: "Please enter your first name",
-    inputLabel: "First name",
-    warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded",
-  };
+export const Main = () => (
+  <HvInput
+    id="input-simple-sample"
+    label="First name"
+    description="Please enter your first name"
+    placeholder="Insert first name"
+  />
+);
 
-  return <HvInput labels={labels} id="input-simple-sample" />;
-};
-
-export const WithIconInfo = () => {
-  const labels = {
-    placeholder: "Insert first name",
-    infoText: "Please enter your first name",
-    inputLabel: "First name",
-    warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded",
-  };
-
-  return <HvInput labels={labels} id="input-simple-with-info-icon-sample" infoIcon />;
-};
-
-WithIconInfo.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Showing the info icon instead of the info text bellow the input.",
-    },
-  },
-};
-
-export const Disabled = () => {
-  const labels = {
-    placeholder: "Insert first name",
-    infoText: "Please enter your first name",
-    inputLabel: "First name",
-    warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded",
-  };
-
-  return <HvInput labels={labels} disabled id="input-disabled-sample" />;
-};
+export const Disabled = () => (
+  <HvInput
+    id="input-disabled-sample"
+    disabled
+    label="First name"
+    description="Please enter your first name"
+    placeholder="Insert first name"
+  />
+);
 
 Disabled.story = {
   parameters: {
@@ -74,22 +53,113 @@ Disabled.story = {
   },
 };
 
+export const ReadOnly = () => (
+  <HvInput
+    readOnly
+    label="First name"
+    description="Please enter your first name"
+    placeholder="Insert first name"
+    defaultValue="You can't change this..."
+  />
+);
+
+ReadOnly.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Not editable input.",
+    },
+  },
+};
+
+export const WithoutLabel = () => (
+  <HvInput aria-label="First name" placeholder="Insert first name" />
+);
+
+WithoutLabel.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Input without label. The accessible name is provided via the `aria-label` property.",
+    },
+  },
+};
+
+export const Required = () => (
+  <HvInput
+    required
+    label="First name"
+    placeholder="Insert first name"
+    defaultValue="Clear this text"
+  />
+);
+
+Required.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Required input value. Clear the input to show default error message.",
+    },
+  },
+};
+
+export const ControlledWithButtons = () => {
+  const useStyles = makeStyles((theme) => ({
+    container: {
+      "& button": {
+        marginRight: theme.hvSpacing("xs"),
+        marginBottom: theme.hvSpacing("md"),
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
+  const [value, setValue] = useState("Initial value");
+
+  // to be possible to change the input value by user action
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div className={classes.container}>
+      <HvButton category="secondary" onClick={() => setValue("First value")}>
+        First value
+      </HvButton>
+      <HvButton category="secondary" onClick={() => setValue("Second value")}>
+        Second value
+      </HvButton>
+      <HvButton category="secondary" onClick={() => setValue("Third value")}>
+        Third value
+      </HvButton>
+      <HvButton category="secondary" onClick={() => setValue("")}>
+        Clear value
+      </HvButton>
+      <HvInput label="Label" placeholder="Enter value" value={value} onChange={handleChange} />
+    </div>
+  );
+};
+
+ControlledWithButtons.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Changing the input value from outside the input component.",
+    },
+  },
+};
+
 export const InvalidState = () => {
   const [validationState, setValidationState] = useState("invalid");
   const [errorMessage, setErrorMessage] = useState("This is invalid just because I said so.");
 
-  const labels = {
-    placeholder: "Insert last name",
-    infoText: "Please enter your last name",
-    inputLabel: "Last name",
-  };
   return (
     <HvInput
       id="invalid-state-input"
-      labels={labels}
-      initialValue="Not a name!"
-      validationState={validationState}
-      externalWarningTextOverride={errorMessage}
+      label="Last name"
+      description="Please enter your last name"
+      placeholder="Insert last name"
+      defaultValue="Not a name!"
+      status={validationState}
+      statusMessage={errorMessage}
       onFocus={(value) => setValidationState(value ? "filled" : "empty")}
       onBlur={() => {
         setValidationState("invalid");
@@ -105,82 +175,36 @@ InvalidState.story = {
       storyDescription:
         "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the externalWarningTextOverride property, or else it will always default to labels.warningText. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
     },
-  },
-};
-
-export const NoValidation = () => {
-  const labels = {
-    placeholder: "Type an animal name",
-    infoText: "A living organism that feeds on organic matter",
-    inputLabel: "What's your favorite animal?",
-  };
-  return <HvInput id="no-validation-input" labels={labels} showInfo={false} />;
-};
-
-NoValidation.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input without any type of validation not showing validation icons.",
-    },
-  },
-};
-
-export const Limited = () => {
-  const labels = {
-    placeholder: "Insert your postal code",
-    infoText: "Group of letters and numbers added to your address to assist the sorting of mail",
-    inputLabel: "Postal code",
-    maxCharQuantityWarningText: "Max characters exceeded",
-  };
-  return <HvInput id="limited-input" labels={labels} maxCharQuantity={5} />;
-};
-
-Limited.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input that limits the maximum text length to 5.",
-    },
-  },
-};
-
-export const NumericLimited = () => {
-  const labels = {
-    placeholder: "Insert a number",
-    infoText: "Enter a numeric value",
-    inputLabel: "Weight",
-    warningText: "Value is not a number",
-    maxCharQuantityWarningText: "Number is too big",
-    requiredWarningText: "The number is required",
-  };
-
-  return <HvInput id="numeric-input" labels={labels} maxCharQuantity={5} validationType="number" />;
-};
-
-NumericLimited.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input that only accepts numbers and limits the maximum length to 5.",
+    pa11y: {
+      ignore: [
+        "region",
+        // aria-errormessage value is being reported as invalid because axe-core forces
+        // the referenced error element to have aria-live="assertive", when the spec does not
+        // https://github.com/dequelabs/axe-core/pull/2590
+        "aria-valid-attr-value",
+      ],
     },
   },
 };
 
 export const NumericRequired = () => {
-  const labels = {
-    placeholder: "Insert a number",
-    infoText: "Enter a numeric value",
-    inputLabel: "Height",
-    warningText: "Value is not a number",
-    maxCharQuantityWarningText: "Number is too big",
-    requiredWarningText: "The number is required",
+  const validationMessages = {
+    requiredError: "The number is required",
+    maxCharError: "Number is too big",
+    typeMismatchError: "Value is not a number",
   };
 
   return (
     <HvInput
       id="numeric-required-input"
-      isRequired
-      labels={labels}
+      type="number"
+      label="Height"
+      description="Enter a numeric value"
+      placeholder="Insert a number"
+      validationMessages={validationMessages}
+      required
       maxCharQuantity={5}
-      validationType="number"
+      showValidationIcon
     />
   );
 };
@@ -195,14 +219,21 @@ NumericRequired.story = {
 };
 
 export const Email = () => {
-  const labels = {
-    placeholder: "example@domain.com",
-    infoText: "Enter your email",
-    inputLabel: "Email",
-    warningText: "please add the right email format: your.name@hitachivantara.com",
+  const validationMessages = {
+    typeMismatchError: "Please add the right email format: your.name@hitachivantara.com",
   };
 
-  return <HvInput id="email-input" labels={labels} validationType="email" />;
+  return (
+    <HvInput
+      id="email-input"
+      type="email"
+      label="Email"
+      description="Enter your email"
+      placeholder="example@domain.com"
+      validationMessages={validationMessages}
+      showValidationIcon
+    />
+  );
 };
 
 Email.story = {
@@ -214,25 +245,25 @@ Email.story = {
 };
 
 export const Password = () => {
-  const labels = {
-    placeholder: "Must have at least 6 character",
-    infoText: "Enter your password",
-    inputLabel: "Password",
-    warningText: "Wrong password",
-    maxCharQuantityWarningText: "Your password has more than 12 characters",
-    minCharQuantityWarningText: "Your password has less than 6 characters",
-    requiredWarningText: "Your password is required",
+  const validationMessages = {
+    error: "Wrong password",
+    requiredError: "Your password is required",
+    minCharError: "Your password has less than 6 characters",
+    maxCharError: "Your password has more than 12 characters",
   };
 
   return (
     <HvInput
       id="password-input"
-      labels={labels}
-      validation={(value) => value === "password"}
-      password
-      isRequired
+      label="Password"
+      description="Enter your password"
+      placeholder="Must have at least 6 character"
+      type="password"
+      required
       maxCharQuantity={12}
       minCharQuantity={6}
+      validation={(value) => value === "password"}
+      validationMessages={validationMessages}
     />
   );
 };
@@ -241,25 +272,31 @@ Password.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Password required input that only accepts the value ´password´ and limits the value between 6 or 12 characters.",
+        "Password required input that only accepts the value `password` and limits the value between 6 or 12 characters.",
     },
   },
 };
 
+export const Search = () => {
+  return (
+    <HvInput aria-label="Basic search" placeholder="Search" type="search" onEnter={console.log} />
+  );
+};
+
 export const CustomValidation = () => {
-  const labels = {
-    placeholder: "Insert 'hello'",
-    infoText: "You must input the text 'hello'",
-    inputLabel: "Compliment me",
-    warningText: "You didn't write 'hello'",
+  const validationMessages = {
+    error: "You didn't write 'hello'",
   };
 
   return (
     <HvInput
       id="custom-validation-input"
-      labels={labels}
-      infoIcon
+      label="Compliment me"
+      description="You must input the text 'hello'"
+      placeholder="Insert 'hello'"
+      validationMessages={validationMessages}
       validation={(value) => value.includes("hello")}
+      showValidationIcon
     />
   );
 };
@@ -268,55 +305,28 @@ CustomValidation.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Input with a custom validation function, it validates if the input contains the value ´hello´.",
-    },
-  },
-};
-
-export const DefaultValue = () => {
-  const labels = {
-    placeholder: "example@domain.com",
-    infoText: "Enter your email",
-    inputLabel: "Email",
-    warningText: "Please add the right email format: your.name@hitachivantara.com",
-  };
-
-  return (
-    <HvInput
-      id="default-value-input"
-      labels={labels}
-      validationType="email"
-      initialValue="example@exam.com"
-    />
-  );
-};
-
-DefaultValue.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input with an default value already in place.",
+        "Input with a custom validation function, it validates if the input contains the value `hello`.",
     },
   },
 };
 
 export const EventDemonstration = () => {
-  const labels = {
-    placeholder: "Insert text",
-    infoText: "Look at the browser's developer console to see the event handlers output",
-    inputLabel: "Text I will modify",
-  };
+  const [value, setValue] = useState("");
 
   return (
     <HvInput
       id="event-demostration-input"
-      labels={labels}
-      onFocus={(value) => {
-        console.log(`my value is ${value}`);
+      label="Text I will modify"
+      description="Look at the browser's developer console to see the event handlers output"
+      placeholder="Insert text"
+      value={value}
+      onFocus={(_event, newValue) => {
+        console.log(`my value is ${newValue}`);
       }}
-      onBlur={(value, validationState) => {
-        console.log(`my value is ${value} and my validation state is ${validationState}`);
+      onBlur={(_event, newValue, validationState) => {
+        console.log(`my value is ${newValue} and my validation state is`, validationState);
       }}
-      onChange={(event, value) => `${value}.`}
+      onChange={(_event, newValue) => setValue(`${newValue}.`)}
     />
   );
 };
@@ -329,101 +339,30 @@ EventDemonstration.story = {
   },
 };
 
-export const CustomProps = () => {
-  const labels = {
-    placeholder: "Insert text",
-    infoText: "Try to write more than 25 characters",
-    inputLabel: "Short story of your life",
-  };
-
-  return (
-    <HvInput
-      id="extraProps-input"
-      labels={labels}
-      inputProps={{
-        maxLength: 25,
-      }}
-    />
-  );
-};
+export const CustomProps = () => (
+  <HvInput
+    id="extraProps-input"
+    label="Short story of your life"
+    description="Try to write more than 25 characters"
+    placeholder="Insert text"
+    inputProps={{
+      minLength: 5,
+      maxLength: 25,
+    }}
+  />
+);
 
 CustomProps.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Using the input props to inject custom props, this input will block values exceeding 25 character.",
-    },
-  },
-};
-
-export const Controlled = () => {
-  const [value, setValue] = useState("Initial value");
-
-  return (
-    <HvInput
-      id="inputControlled"
-      labels={{ inputLabel: "Label", placeholder: "Enter value" }}
-      value={value}
-      onChange={(event, newValue) => setValue(newValue)}
-    />
-  );
-};
-
-export const ControlledWithButtons = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-  };
-
-  const btnStyle = {
-    width: "50px",
-    height: "50px",
-    margin: "10px",
-  };
-  const [value, setValue] = useState("Initial value");
-
-  // to be possible to change the input value by user action
-  const setterValue = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <>
-      <HvButton style={btnStyle} onClick={() => setValue("First value")}>
-        First value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Second value")}>
-        Second value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Third value")}>
-        Third value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("")}>
-        Clear value
-      </HvButton>
-      <HvInput labels={labels} value={value} onChange={setterValue} />
-    </>
-  );
-};
-
-ControlledWithButtons.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Changing the input value from outside the input component.",
+        "Using the input props to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
     },
   },
 };
 
 export const Suggestion = () => {
   const [value, setValue] = useState("");
-
-  const labels = {
-    placeholder: "Country",
-    infoText: "Info",
-    inputLabel: "Select a country",
-    warningText: "Error",
-    maxCharQuantityWarningText: "Max characters exceeded",
-  };
 
   const countries = countryNamesArray;
 
@@ -443,14 +382,14 @@ export const Suggestion = () => {
 
   return (
     <HvInput
-      labels={labels}
       id="suggestions"
+      label="Select a country"
+      placeholder="Country"
       value={value}
-      onChange={(e, val) => setValue(val)}
+      onChange={(_e, val) => setValue(val)}
       validation={(val) => val.includes("a")}
       suggestionListCallback={suggestionHandler}
-      suggestionSelectedCallback={(item) => setValue(item.label)}
-      customFixedIcon={<Map />}
+      endAdornment={<Map />}
     />
   );
 };

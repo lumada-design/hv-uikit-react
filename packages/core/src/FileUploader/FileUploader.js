@@ -1,17 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import withLabels from "../withLabels";
-import { setId } from "../utils/setId";
+import { setId, useLabels } from "../utils";
 import DropZone from "./DropZone";
 import FileList from "./FileList";
 import styles from "./styles";
 
 const DEFAULT_LABELS = {
   dropzone: "Label",
-  progressConjunction: "of",
   sizeWarning: "Max. file size:",
-  acceptedFiles: "Accepted files:",
   drag: "Drag and drop or",
   selectFiles: "Select files",
   dropFiles: "Drop files here",
@@ -20,10 +17,14 @@ const DEFAULT_LABELS = {
   removeFileButtonLabel: "Remove File",
 };
 
+/**
+ * Lets the user choose one or more files from their device storage. Once chosen,
+ * the files can be uploaded to a server or manipulated on the client side.
+ */
 const FileUploader = ({
   id,
   className,
-  labels,
+  labels: labelsProp,
   fileList,
   multiple = true,
   disabled = false,
@@ -33,6 +34,8 @@ const FileUploader = ({
   onFileRemoved,
   ...others
 }) => {
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+
   return (
     <div id={id} className={className} {...others}>
       <DropZone
@@ -47,7 +50,6 @@ const FileUploader = ({
       <FileList
         id={setId(id, "filelist")}
         list={fileList}
-        progressConjunctionLabel={labels.progressConjunction}
         onFileRemoved={onFileRemoved}
         removeFileButtonLabel={labels.removeFileButtonLabel}
       />
@@ -67,17 +69,12 @@ FileUploader.propTypes = {
   /**
    * An object containing all the labels.
    *
-   * - progressConjunction: The label used in the middle of the progress message.
    */
   labels: PropTypes.shape({
     /**
      *
      */
     acceptedFiles: PropTypes.string,
-    /**
-     *
-     */
-    progressConjunction: PropTypes.string,
     /**
      * DropZone area label.
      */
@@ -160,6 +157,4 @@ FileUploader.propTypes = {
   onFileRemoved: PropTypes.func,
 };
 
-export default withStyles(styles, { name: "HvFileUploader" })(
-  withLabels(DEFAULT_LABELS)(FileUploader)
-);
+export default withStyles(styles, { name: "HvFileUploader" })(FileUploader);

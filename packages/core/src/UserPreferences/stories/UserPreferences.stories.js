@@ -7,13 +7,12 @@ import {
   GameController,
   Ghost,
   Help,
-  LogOut,
   People,
   Research,
   User,
   WhiteBoard,
-} from "@hv/uikit-react-icons/dist";
-import HvButton from "../../Button";
+} from "@hv/uikit-react-icons";
+import { HvButton } from "../..";
 import HvUserPreferences, { Action, Actions, Group, Label, Option, Options } from "..";
 
 export default {
@@ -22,6 +21,8 @@ export default {
     componentSubtitle: null,
     usage: "import { HvUserPreferences } from '@hv/uikit-react-core/dist'",
     subcomponents: { Action, Actions, Group, Options, Option, Label },
+
+    dsVersion: "3.2.1",
   },
   component: HvUserPreferences,
 };
@@ -35,13 +36,12 @@ export const Main = () => (
     <Actions>
       <Action
         label="Log Out"
-        icon={<LogOut />}
         onClick={(event, data) => {
-          alert(`action ${data.label} selected`);
+          console.log(`action ${data.label} selected`);
         }}
       />
     </Actions>
-    <Options onClick={(event, payload) => alert(`id:${payload.id} label:${payload.label}`)}>
+    <Options onClick={(event, payload) => console.log(`id:${payload.id} label:${payload.label}`)}>
       <Group>
         <Option label="Personal Information" icon={<User />} />
         <Option label="Manage Groups" icon={<People />} />
@@ -83,8 +83,7 @@ export const WithOpenControl = () => {
       >
         <Actions>
           <Action
-            label="Logout"
-            icon={<LogOut />}
+            label="Log Out"
             onClick={(event, data) => {
               console.log(`action ${data.label} selected`);
             }}

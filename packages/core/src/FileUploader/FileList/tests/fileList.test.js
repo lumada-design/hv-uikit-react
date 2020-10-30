@@ -37,7 +37,6 @@ describe("FileList withStyles", () => {
       <HvProvider>
         <FileList
           list={files}
-          progressConjunctionLabel="progressConjunctionLabel"
           removeFileButtonLabel="removeFileButtonLabel"
           onFileRemoved={() => {}}
         />

@@ -19,7 +19,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
       style={
         Object {
           "backgroundColor": "#414141",
-          "color": "#FFFFFF",
+          "color": "#FBFCFC",
         }
       }
     >
@@ -39,7 +39,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
         style={
           Object {
             "backgroundColor": "#414141",
-            "color": "#FFFFFF",
+            "color": "#FBFCFC",
           }
         }
       >
@@ -48,48 +48,40 @@ exports[`Avatar  default avatar snapshot 1`] = `
           style={
             Object {
               "backgroundColor": "#414141",
-              "color": "#FFFFFF",
+              "color": "#FBFCFC",
             }
           }
         >
-          <WithStyles(User)
+          <User
             className="HvAvatar-fallback"
             color="atmo1"
             iconSize="XS"
           >
-            <User
+            <HvIconBase
               className="HvAvatar-fallback"
-              classes={
-                Object {
-                  "root": "HvIconUser-root",
-                  "rootL": "HvIconUser-rootL",
-                  "rootM": "HvIconUser-rootM",
-                  "rootS": "HvIconUser-rootS",
-                  "rootXs": "HvIconUser-rootXs",
-                }
-              }
-              color="atmo1"
               iconSize="XS"
+              name="User"
             >
               <div
-                className="HvAvatar-fallback HvIconUser-root HvIconUser-rootXs"
+                className="HvAvatar-fallback HvIconBase-root HvIconBase-xs"
+                name="User"
               >
                 <svg
                   focusable={false}
-                  height="12px"
+                  height={12}
                   viewBox="0 0 16 16"
-                  width="12px"
+                  width={12}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     className="color0"
                     d="M9.6 8.7A4.49656 4.49656 0 008.03809 0Q8.019-.00007 8 0a4.481 4.481 0 00-4.5 4.46194q-.00009.019 0 .03808A4.563 4.563 0 006.4 8.7 7.687 7.687 0 00.5 16h1a6.487 6.487 0 016.474-6.5H8a6.487 6.487 0 016.5 6.474V16h1a7.493 7.493 0 00-5.9-7.3zM4.5 4.5A3.543 3.543 0 018 1a3.543 3.543 0 013.5 3.5A3.543 3.543 0 018 8a3.543 3.543 0 01-3.5-3.5z"
-                    fill="#FFFFFF"
+                    fill="#FBFCFC"
                   />
                 </svg>
               </div>
-            </User>
-          </WithStyles(User)>
+            </HvIconBase>
+          </User>
         </div>
       </ForwardRef(Avatar)>
     </WithStyles(ForwardRef(Avatar))>
@@ -116,7 +108,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
       style={
         Object {
           "backgroundColor": "#414141",
-          "color": "#FFFFFF",
+          "color": "#FBFCFC",
         }
       }
     >
@@ -136,7 +128,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
         style={
           Object {
             "backgroundColor": "#414141",
-            "color": "#FFFFFF",
+            "color": "#FBFCFC",
           }
         }
       >
@@ -145,50 +137,37 @@ exports[`Avatar  icon avatar snapshot 1`] = `
           style={
             Object {
               "backgroundColor": "#414141",
-              "color": "#FFFFFF",
+              "color": "#FBFCFC",
             }
           }
         >
-          <WithStyles(LogIn)
+          <LogIn
             iconSize="XS"
           >
-            <LogIn
-              classes={
-                Object {
-                  "root": "HvIconLogIn-root",
-                  "rootL": "HvIconLogIn-rootL",
-                  "rootM": "HvIconLogIn-rootM",
-                  "rootS": "HvIconLogIn-rootS",
-                  "rootXs": "HvIconLogIn-rootXs",
-                }
-              }
+            <HvIconBase
               iconSize="XS"
+              name="LogIn"
             >
               <div
-                className="HvIconLogIn-root HvIconLogIn-rootXs"
+                className="HvIconBase-root HvIconBase-xs"
+                name="LogIn"
               >
                 <svg
                   focusable={false}
-                  height="12px"
+                  height={12}
                   viewBox="0 0 16 16"
-                  width="12px"
+                  width={12}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
+                  <path
                     className="color0"
+                    d="M16 16H6v-1h9V1H6V0h10zm-7.69995-4.5L9 12.2 13.2 8 9 3.8l-.69995.7 3 3H1v1h10.30005z"
                     fill="#414141"
-                  >
-                    <path
-                      d="M15.99545 0h-10v1h9v14h-9v1h10z"
-                    />
-                    <path
-                      d="M7.29549 12l.7.7 4.19991-4.2-4.19995-4.2-.7.7 3 3h-10.3v1h10.3z"
-                    />
-                  </g>
+                  />
                 </svg>
               </div>
-            </LogIn>
-          </WithStyles(LogIn)>
+            </HvIconBase>
+          </LogIn>
         </div>
       </ForwardRef(Avatar)>
     </WithStyles(ForwardRef(Avatar))>
@@ -280,7 +259,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
       style={
         Object {
           "backgroundColor": "#414141",
-          "color": "#FFFFFF",
+          "color": "#FBFCFC",
         }
       }
     >
@@ -300,7 +279,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
         style={
           Object {
             "backgroundColor": "#414141",
-            "color": "#FFFFFF",
+            "color": "#FBFCFC",
           }
         }
       >
@@ -309,7 +288,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
           style={
             Object {
               "backgroundColor": "#414141",
-              "color": "#FFFFFF",
+              "color": "#FBFCFC",
             }
           }
         >

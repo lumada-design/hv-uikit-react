@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   root: {
-    borderSpacing: `0 ${theme.hv.spacing.xs}px`,
+    borderSpacing: theme.hvSpacing(0, "xs"),
     width: "100%",
     display: "table",
   },

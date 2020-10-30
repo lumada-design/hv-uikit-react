@@ -21,7 +21,7 @@ const Group = ({ id, className, classes, label, children, labelProps, ...others 
         <Typography
           component="div"
           id={labelId}
-          variant="labelText"
+          variant="highlightText"
           className={classes.label}
           {...labelProps}
         >

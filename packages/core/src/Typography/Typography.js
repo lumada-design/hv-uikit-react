@@ -17,16 +17,13 @@ const defaultVariantMapping = {
   xxsTitle: "h6",
   highlightText: "p",
   normalText: "p",
-  selectedText: "p",
-  disabledButtonText: "p",
   placeholderText: "p",
-  inlineLink: "p",
+  link: "p",
+  disabledText: "p",
   selectedNavText: "p",
-  labelText: "p",
-  infoText: "p",
-  sLink: "p",
-  sText: "p",
   vizText: "p",
+  vizTextDisabled: "p",
+  xsInlineLink: "p",
 };
 
 const HvTypography = React.forwardRef((props, ref) => {
@@ -38,6 +35,7 @@ const HvTypography = React.forwardRef((props, ref) => {
     className,
     component,
     children,
+    noWrap = false,
     ...others
   } = props;
   const Component = component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
@@ -46,7 +44,9 @@ const HvTypography = React.forwardRef((props, ref) => {
     <Component
       id={id}
       ref={ref}
-      className={clsx(className, classes.root, classes[variant])}
+      className={clsx(className, classes.root, classes[variant], {
+        [classes.noWrap]: noWrap,
+      })}
       {...others}
     >
       {children}
@@ -69,41 +69,25 @@ HvTypography.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the 3xlTitle variant
+     * Styles applied to the 5xlTitle variant
      */
-    "3xlTitle": PropTypes.string,
+    "5xlTitle": PropTypes.string,
     /**
      * Styles applied to the 4xlTitle variant
      */
     "4xlTitle": PropTypes.string,
     /**
-     * Styles applied to the 5xlTitle variant.
+     * Styles applied to the 3xlTitle variant.
      */
-    "5xlTitle": PropTypes.string,
+    "3xlTitle": PropTypes.string,
     /**
-     * Styles applied to the disabledButtonText variant
+     * Styles applied to the xxlTitle variant
      */
-    disabledButtonText: PropTypes.string,
+    xxlTitle: PropTypes.string,
     /**
-     * Styles applied to the disabledText variant
+     * Styles applied to the xlTitle variant
      */
-    disabledText: PropTypes.string,
-    /**
-     * Styles applied to the highlightText variant
-     */
-    highlightText: PropTypes.string,
-    /**
-     * Styles applied to the infoText variant
-     */
-    infoText: PropTypes.string,
-    /**
-     * Styles applied to the inlineLink variant
-     */
-    inlineLink: PropTypes.string,
-    /**
-     * Styles applied to the labelText variant
-     */
-    labelText: PropTypes.string,
+    xlTitle: PropTypes.string,
     /**
      * Styles applied to the lTitle variant
      */
@@ -113,6 +97,22 @@ HvTypography.propTypes = {
      */
     mTitle: PropTypes.string,
     /**
+     * Styles applied to the sTitle variant
+     */
+    sTitle: PropTypes.string,
+    /**
+     * Styles applied to the xsTitle variant
+     */
+    xsTitle: PropTypes.string,
+    /**
+     * Styles applied to the xxsTitle variant
+     */
+    xxsTitle: PropTypes.string,
+    /**
+     * Styles applied to the highlightText variant
+     */
+    highlightText: PropTypes.string,
+    /**
      * Styles applied to the normalText variant
      */
     normalText: PropTypes.string,
@@ -121,37 +121,33 @@ HvTypography.propTypes = {
      */
     placeholderText: PropTypes.string,
     /**
+     * Styles applied to the link variant
+     */
+    link: PropTypes.string,
+    /**
+     * Styles applied to the disabledText variant
+     */
+    disabledText: PropTypes.string,
+    /**
      * Styles applied to the selectedNavText variant
      */
     selectedNavText: PropTypes.string,
-    /**
-     * Styles applied to the sLink variant
-     */
-    sLink: PropTypes.string,
-    /**
-     * Styles applied to the sText variant
-     */
-    sText: PropTypes.string,
-    /**
-     * Styles applied to the sTitle variant
-     */
-    sTitle: PropTypes.string,
     /**
      * Styles applied to the vizText variant
      */
     vizText: PropTypes.string,
     /**
-     * Styles applied to the xlTitle variant
+     * Styles applied to the vizTextDisabled variant
      */
-    xlTitle: PropTypes.string,
+    vizTextDisabled: PropTypes.string,
     /**
-     * Styles applied to the xsTitle variant
+     * Styles applied to the xsInlineLink variant
      */
-    xsTitle: PropTypes.string,
+    xsInlineLink: PropTypes.string,
     /**
-     * Styles applied to the xxlTitle variant
+     * Styles applied to the root root element if noWrap is used
      */
-    xxlTitle: PropTypes.string,
+    noWrap: PropTypes.string,
   }),
   /**
    * @ignore
@@ -175,30 +171,33 @@ HvTypography.propTypes = {
    * The selected typography.
    */
   variant: PropTypes.oneOf([
-    "3xlTitle",
-    "4xlTitle",
     "5xlTitle",
-    "disabledButtonText",
-    "disabledText",
-    "highlightText",
-    "infoText",
-    "inlineLink",
-    "labelText",
+    "4xlTitle",
+    "3xlTitle",
+    "xxlTitle",
+    "xlTitle",
     "lTitle",
     "mTitle",
+    "sTitle",
+    "xsTitle",
+    "xxsTitle",
+    "highlightText",
     "normalText",
     "placeholderText",
+    "link",
+    "disabledText",
     "selectedNavText",
-    "selectedText",
-    "sLink",
-    "sText",
-    "sTitle",
     "vizText",
-    "xlTitle",
-    "xsTitle",
-    "xxlTitle",
-    "xxsTitle",
+    "vizTextDisabled",
+    "xsInlineLink",
   ]),
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   */
+  noWrap: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvTypography" })(HvTypography);

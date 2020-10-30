@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel should render correctly 1`] = `
+<WithStyles(HvPanel)>
+  <HvPanel
+    classes={
+      Object {
+        "root": "HvPanel-root",
+      }
+    }
+  >
+    <Styled(MuiBox)
+      className="HvPanel-root"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-1 HvPanel-root"
+      >
+        <WithStyles(ForwardRef)>
+          <ForwardRef
+            classes={
+              Object {
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
+              }
+            }
+          >
+            <p
+              className="HvTypography-root HvTypography-normalText"
+            >
+              Panel Content
+            </p>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
+      </div>
+    </Styled(MuiBox)>
+  </HvPanel>
+</WithStyles(HvPanel)>
+`;

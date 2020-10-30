@@ -1,9 +1,5 @@
 {
-  "allowedLicenses": [
-    "Apache-2.0",
-    "BSD-3-Clause",
-    "MIT"
-  ],
+  "allowedLicenses": ["Apache-2.0", "ISC", "BSD-2-Clause", "BSD-3-Clause", "MIT", "W3C"],
   "allowedPackages": [],
   "production": true,
   "allowUnknown": false

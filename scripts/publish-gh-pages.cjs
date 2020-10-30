@@ -21,14 +21,14 @@ const getParameter = (paramName, defaultValue) => {
   return value;
 };
 
-const getBranchName = async options => {
+const getBranchName = async (options) => {
   const { stdout } = await exec("git symbolic-ref --short HEAD", {
-    ...options
+    ...options,
   });
   return stdout.trim();
 };
 
-const getLastCommit = async options => {
+const getLastCommit = async (options) => {
   const { stdout } = await exec("git log -1 --pretty=%B", { ...options });
   return `docs: storybook for ${stdout.trim()}`;
 };
@@ -38,7 +38,7 @@ Promise.all([
   getParameter("branch", "gh-pages"),
   getParameter("folder", getBranchName),
   getParameter("message", getLastCommit),
-  getParameter("tag")
+  getParameter("tag"),
 ])
   .then(([remote, branch, dest, message, tag]) => {
     ghpages.publish("dist", {
@@ -49,11 +49,11 @@ Promise.all([
       tag,
       user: {
         name: "github-actions-bot",
-        email: "support+actions@github.com"
-      }
+        email: "support+actions@github.com",
+      },
     });
   })
-  .catch(err => {
+  .catch((err) => {
     // eslint-disable-next-line no-console
     console.error(err);
   });

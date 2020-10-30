@@ -104,7 +104,7 @@ Action.propTypes = {
      */
     description: PropTypes.string,
     /**
-     *  URL where the application is accesible.
+     *  URL where the application is accessible.
      */
     url: PropTypes.string.isRequired,
     /**

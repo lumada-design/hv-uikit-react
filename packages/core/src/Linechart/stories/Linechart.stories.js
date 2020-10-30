@@ -1,12 +1,16 @@
+import { makeStyles } from "@material-ui/core";
+import withStyles from "@material-ui/core/styles/withStyles";
 import React, { useState, useEffect, useRef } from "react";
 import { Random } from "../../utils";
-import HvLinechart from "../Linechart";
+import { HvLinechart, HvDropDownMenu, HvTypography, HvDropdown } from "../..";
 
 export default {
   title: "Visualizations/Line Chart",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvLinechart } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvLinechart,
 };
@@ -28,10 +32,6 @@ const getMonthNamesArray = () => [
 
 export const Main = () => (
   <HvLinechart
-    title="Simple line"
-    subtitle="Sales performance (YTD)"
-    xAxisTitle="2018"
-    yAxisTitle="Thousands of Dollars ($)"
     data={[
       {
         x: getMonthNamesArray(),
@@ -51,22 +51,120 @@ export const WithArea = () => {
     },
   ];
 
-  return (
-    <HvLinechart
-      title="Simple line with area"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      type="area"
-      xAxisTitle="2018"
-      yAxisTitle="Thousands of Dollars ($)"
-    />
-  );
+  return <HvLinechart data={data} type="area" />;
 };
 
 WithArea.story = {
   parameters: {
     docs: {
       storyDescription: "Colors the area below it.",
+    },
+  },
+};
+
+export const CustomLinechartGrouped = () => {
+  const styles = () => ({
+    wrapper: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-end",
+    },
+  });
+
+  const ChartHeader = withStyles(styles)(({ classes, children }) => (
+    <div className={classes.wrapper}>{children}</div>
+  ));
+
+  const timeRange = ["8:30", "9:00", "9:30", "10:00", "10:30", "11:00"];
+  const data = [
+    {
+      x: timeRange,
+      y: [3400, 5929, 1803, 6470, 6853, 7517],
+      name: "Input Feed Rate",
+    },
+    {
+      x: timeRange,
+      y: [3022, 3005, 2517, 8397, 6587, 6648],
+      name: "Output Feed",
+    },
+    {
+      x: timeRange,
+      y: [3900, 4971, 2694, 2177, 7756, 1717],
+      name: "Availability",
+    },
+  ];
+
+  const countriesObject = [];
+
+  ["Canada", "East Timor", "Portugal", "Spain", "Sweden"].forEach((country) =>
+    countriesObject.push({ label: country })
+  );
+
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 250,
+    },
+    label: { paddingBottom: 6 },
+
+    titlePadding: { marginTop: 10 },
+    selectorPadding: {
+      marginRight: 20,
+    },
+    dropdownPlacement: {
+      marginLeft: 10,
+    },
+    controllerGroup: {
+      display: "flex",
+      alignItems: "flex-end",
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <>
+      <ChartHeader>
+        <HvTypography className={classes.titlePadding} variant="xsTitle">
+          Server Status Summary
+        </HvTypography>
+        <div className={classes.controllerGroup}>
+          <HvDropdown
+            className={classes.selectorPadding}
+            id="dropdown1"
+            classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
+            labels="Country"
+            values={countriesObject}
+            placement="left"
+          />
+          <HvDropdown
+            id="dropdown2"
+            labels="Time Period"
+            placement="left"
+            classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
+            values={[
+              { label: "Last 0.5h" },
+              { label: "Last 1.5h", selected: true },
+              { label: "Last 24h" },
+              { label: "Last 48h" },
+            ]}
+          />
+          <HvDropDownMenu
+            className={classes.dropdownPlacement}
+            onClick={(e, item) => console.log(item.label)}
+            dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+            placement="left"
+          />
+        </div>
+      </ChartHeader>
+      <HvLinechart data={data} />
+    </>
+  );
+};
+
+CustomLinechartGrouped.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Line chart with title and controls.",
     },
   },
 };
@@ -91,15 +189,7 @@ export const LinechartGrouped = () => {
     },
   ];
 
-  return (
-    <HvLinechart
-      title="Multiple lines"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      xAxisTitle="2018"
-      yAxisTitle="Thousands of Dollars ($)"
-    />
-  );
+  return <HvLinechart title="Multiple lines" subtitle="Sales performance (YTD)" data={data} />;
 };
 
 LinechartGrouped.story = {
@@ -119,15 +209,7 @@ export const GroupedWithArea = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [7000, 8000, 6500], name: "Cash" },
   ];
 
-  return (
-    <HvLinechart
-      title="Multiple lines"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      xAxisTitle="2018"
-      yAxisTitle="Thousands of Dollars ($)"
-    />
-  );
+  return <HvLinechart title="Multiple lines" subtitle="Sales performance (YTD)" data={data} />;
 };
 
 GroupedWithArea.story = {
@@ -153,8 +235,6 @@ export const LinechartStacked = () => {
       subtitle="Sales performance (YTD)"
       data={data}
       type="stack"
-      xAxisTitle="Axis description"
-      yAxisTitle="Thousands of Dollars ($)"
     />
   );
 };
@@ -184,7 +264,7 @@ export const TimeRepresentation = () => {
     return values;
   };
 
-  const dates = generateDates(200, new Date("2015-02-17"));
+  const dates = generateDates(200, new Date(2015, 1, 17));
   const values = generateValues(dates.length, 200, 8);
 
   const data = [
@@ -198,8 +278,6 @@ export const TimeRepresentation = () => {
       title="Time series with range slider"
       subtitle="Sales performance (YTD)"
       data={data}
-      xAxisTitle="Date"
-      yAxisTitle="Thousands of Dollars ($)"
     />
   );
 };
@@ -233,7 +311,7 @@ export const WithIntervalUpdates = () => {
     return values;
   };
 
-  const date = useRef(new Date("2020-01-01"));
+  const date = useRef(new Date(2020, 1, 1));
   const values = useRef(generateValues(200));
 
   const generateData = () => {
@@ -268,8 +346,6 @@ export const WithIntervalUpdates = () => {
       title="Sales performance"
       subtitle="Monthly progress"
       data={data}
-      xAxisTitle="Date"
-      yAxisTitle="Thousands of Dollars ($)"
       // TODO #1588 Remove fixed height (plotly bug)
       style={{ height: 450 }}
     />

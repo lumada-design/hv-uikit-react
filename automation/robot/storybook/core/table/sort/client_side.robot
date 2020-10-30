@@ -1,8 +1,6 @@
 *** Setting ***
 Resource      _keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--main
-...           AND    Wait Until Element Is Visible    ${table}
+Test Setup    open table sample    ${visualizations}    main
 Force Tags    bug-infrastructure-ie
 
 

@@ -4,16 +4,26 @@ import { withStyles } from "@material-ui/core";
 import { HvDropdown } from "../..";
 
 export default {
-  title: "Components/Dropdown",
+  title: "Forms/Dropdown",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDropdown } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvDropdown,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: 10 }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Main = () => (
   <HvDropdown
+    aria-label="Main sample"
     multiSelect
     showSearch
     values={[
@@ -30,10 +40,11 @@ Main.story = {
     pa11y: {
       ignore: ["region"],
     },
+    eyes: { include: false },
   },
 };
 
-export const Empty = () => <HvDropdown id="dropdown1" />;
+export const Empty = () => <HvDropdown id="dropdown1" aria-label="Empty" />;
 
 Empty.story = {
   parameters: {
@@ -43,15 +54,17 @@ Empty.story = {
     pa11y: {
       ignore: ["region"],
     },
+    eyes: { include: false },
   },
 };
 
 export const SingleSelection = () => (
   <HvDropdown
     id="dropdown7"
+    aria-label="Single selection"
     onChange={(item) => console.log(item)}
     values={[
-      { id: "id-1", label: "value 1" },
+      { id: "id-1", label: "value 1", selected: true },
       { id: "id-2", label: "value 2" },
       { id: "id-3", label: "value 3" },
       { id: "id-4", label: "value 4" },
@@ -67,6 +80,7 @@ SingleSelection.story = {
     pa11y: {
       ignore: ["region"],
     },
+    eyes: { include: false },
   },
 };
 
@@ -75,7 +89,7 @@ export const MultiSelection = () => (
     id="dropdown2"
     multiSelect
     showSearch
-    labels={{ title: "Dropdown Title" }}
+    label="Dropdown Title"
     values={[
       { label: "value 1" },
       { label: "value 2", selected: true },
@@ -85,9 +99,16 @@ export const MultiSelection = () => (
   />
 );
 
+MultiSelection.story = {
+  parameters: {
+    eyes: { include: false },
+  },
+};
+
 export const MultiSelectionNoSearch = () => (
   <HvDropdown
     id="dropdown5"
+    aria-label="No search"
     onChange={(item) => console.log(item)}
     multiSelect
     values={[
@@ -104,12 +125,14 @@ MultiSelectionNoSearch.story = {
     pa11y: {
       ignore: ["region"],
     },
+    eyes: { include: false },
   },
 };
 
 export const SingleSelectionWithSearch = () => (
   <HvDropdown
     id="dropdown6"
+    aria-label="With search"
     showSearch
     values={[
       { label: "value 1" },
@@ -128,12 +151,14 @@ SingleSelectionWithSearch.story = {
     pa11y: {
       ignore: ["region"],
     },
+    eyes: { include: false },
   },
 };
 
 export const SingleSelectionNoSelection = () => (
   <HvDropdown
     id="dropdown8"
+    aria-label="No default"
     hasTooltips
     values={[
       { label: "value 1" },
@@ -150,6 +175,7 @@ SingleSelectionNoSelection.story = {
     pa11y: {
       ignore: ["region"],
     },
+    eyes: { include: false },
   },
 };
 
@@ -166,11 +192,8 @@ export const DifferentSizeAndPlacements = () => {
   ];
 
   const styles = () => ({
-    rootList: {
-      width: "520px",
-    },
-    list: {
-      maxWidth: "none",
+    dropdown: {
+      width: "180px",
     },
   });
 
@@ -179,10 +202,24 @@ export const DifferentSizeAndPlacements = () => {
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
-        <StyledDropdown id="dropdown1" values={data} multiSelect showSearch placement="right" />
+        <StyledDropdown
+          id="dropdown1"
+          aria-label="Left"
+          values={data}
+          multiSelect
+          showSearch
+          placement="right"
+        />
       </div>
       <div>
-        <StyledDropdown id="dropdown2" values={data} multiSelect showSearch placement="left" />
+        <StyledDropdown
+          id="dropdown2"
+          aria-label="Right"
+          values={data}
+          multiSelect
+          showSearch
+          placement="left"
+        />
       </div>
     </div>
   );
@@ -196,6 +233,7 @@ DifferentSizeAndPlacements.story = {
     pa11y: {
       ignore: ["region"],
     },
+    eyes: { include: false },
   },
 };
 
@@ -233,39 +271,6 @@ Disabled.story = {
         "color-contrast",
       ],
     },
-  },
-};
-
-export const Expanded = () => (
-  <HvDropdown
-    id="dropdown12"
-    expanded
-    multiSelect
-    showSearch
-    hasTooltips
-    labels={{ title: "Dropdown" }}
-    values={[
-      { label: "value 1" },
-      { label: "value 2" },
-      { label: "value 3", selected: true },
-      { label: "value 4" },
-      { label: "value 5 value 5 value 5 555555555555 value value 5" },
-      { label: "value 6" },
-      { label: "value 7" },
-      { label: "value 8", selected: true },
-      { label: "value 9", selected: true },
-      { label: "value 10" },
-      { label: "value 11" },
-      { label: "value 12" },
-    ]}
-  />
-);
-
-Expanded.story = {
-  parameters: {
-    docs: {
-      inlineStories: false,
-    },
-    eyes: { waitBeforeScreenshot: "[id*=search-input]:focus" },
+    eyes: { include: false },
   },
 };

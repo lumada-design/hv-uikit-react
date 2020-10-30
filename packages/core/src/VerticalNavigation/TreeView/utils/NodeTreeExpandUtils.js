@@ -35,10 +35,10 @@ export default class NodeTreeExpandUtils {
       toReturn.push(nodeId);
     }
 
-    const visibleChilds =
+    const visibleChildren =
       nodeId === -1 || expanded === true || NodeTreeExpandUtils.isExpanded(expanded, nodeId);
 
-    if (visibleChilds) {
+    if (visibleChildren) {
       const node = nodeMap[nodeId];
 
       if (node && node.children) {

@@ -11,8 +11,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
       Object {
         "collapsed": "HvVerticalNavigationTreeView-collapsed",
         "content": "HvVerticalNavigationTreeView-content",
-        "contentFocusDisabled": "HvVerticalNavigationTreeView-contentFocusDisabled",
-        "contentFocused": "HvVerticalNavigationTreeView-contentFocused",
         "disabled": "HvVerticalNavigationTreeView-disabled",
         "expanded": "HvVerticalNavigationTreeView-expanded",
         "group": "HvVerticalNavigationTreeView-group",
@@ -34,7 +32,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
       className="HvVerticalNavigationTreeView-root"
     >
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<Play />}
         label="System"
         nodeId="1"
       >
@@ -43,8 +41,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
             Object {
               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
               "content": "HvVerticalNavigationTreeViewItem-content",
-              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -58,7 +54,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<Play />}
           label="System"
           nodeId="1"
         >
@@ -67,24 +63,24 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
             data-hasicon={true}
           >
             <WithStyles(ForwardRef)
-              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+              className="HvVerticalNavigationTreeViewItem-content"
               component="div"
               innerRef={
                 Object {
                   "current": <div
-                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     role="button"
                     tabindex="0"
                   >
                     <div
-                      class="HvIconPlay-root HvIconPlay-rootS"
-                      style="width: 32px; height: 32px;"
+                      class="HvIconBase-root HvIconBase-s"
+                      name="Play"
                     >
                       <svg
                         focusable="false"
-                        height="16px"
+                        height="16"
                         viewBox="0 0 16 16"
-                        width="16px"
+                        width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -98,100 +94,66 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   </div>,
                 }
               }
-              onBlur={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <ForwardRef
-                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                className="HvVerticalNavigationTreeViewItem-content"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "disabledText": "HvTypography-disabledText",
                     "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
                     "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
+                    "link": "HvTypography-link",
                     "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
                     "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
                     "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
                     "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                     "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
                     "xsTitle": "HvTypography-xsTitle",
                     "xxlTitle": "HvTypography-xxlTitle",
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
                 component="div"
-                onBlur={[Function]}
                 onClick={[Function]}
-                onFocus={[Function]}
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={0}
-                variant="normalText"
               >
                 <div
-                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                  onBlur={[Function]}
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                   onClick={[Function]}
-                  onFocus={[Function]}
                   onKeyDown={[Function]}
                   role="button"
                   tabIndex={0}
                 >
-                  <WithStyles(Play)
-                    boxStyles={
-                      Object {
-                        "height": "32px",
-                        "width": "32px",
-                      }
-                    }
-                  >
-                    <Play
-                      boxStyles={
-                        Object {
-                          "height": "32px",
-                          "width": "32px",
-                        }
-                      }
-                      classes={
-                        Object {
-                          "root": "HvIconPlay-root",
-                          "rootL": "HvIconPlay-rootL",
-                          "rootM": "HvIconPlay-rootM",
-                          "rootS": "HvIconPlay-rootS",
-                          "rootXs": "HvIconPlay-rootXs",
-                        }
-                      }
+                  <Play>
+                    <HvIconBase
+                      iconSize="S"
+                      name="Play"
                     >
                       <div
-                        className="HvIconPlay-root HvIconPlay-rootS"
-                        style={
-                          Object {
-                            "height": "32px",
-                            "width": "32px",
-                          }
-                        }
+                        className="HvIconBase-root HvIconBase-s"
+                        name="Play"
                       >
                         <svg
                           focusable={false}
-                          height="16px"
+                          height={16}
                           viewBox="0 0 16 16"
-                          width="16px"
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -201,8 +163,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           />
                         </svg>
                       </div>
-                    </Play>
-                  </WithStyles(Play)>
+                    </HvIconBase>
+                  </Play>
                   System
                 </div>
               </ForwardRef>
@@ -219,8 +181,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -241,12 +201,12 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="0"
                           >
@@ -254,57 +214,48 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={0}
@@ -326,8 +277,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -350,12 +299,12 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-disabled"
                           >
                             <WithStyles(ForwardRef)
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="0"
                                   >
@@ -363,57 +312,48 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="normalText"
                             >
                               <ForwardRef
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="normalText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={0}
@@ -434,8 +374,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -457,13 +395,13 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           >
                             <WithStyles(ForwardRef)
                               aria-current="page"
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
                                     aria-current="page"
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-selectedText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="0"
                                   >
@@ -471,59 +409,50 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="selectedText"
                             >
                               <ForwardRef
                                 aria-current="page"
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="selectedText"
                               >
                                 <div
                                   aria-current="page"
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-selectedText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={0}
@@ -545,8 +474,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -568,12 +495,12 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-unselectable"
                           >
                             <WithStyles(ForwardRef)
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="0"
                                   >
@@ -581,57 +508,48 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="normalText"
                             >
                               <ForwardRef
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="normalText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={0}
@@ -661,8 +579,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -692,12 +608,12 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                           >
                             <WithStyles(ForwardRef)
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="0"
                                   >
@@ -705,57 +621,48 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="normalText"
                             >
                               <ForwardRef
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="normalText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={0}
@@ -776,7 +683,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
         </TreeViewItem>
       </WithStyles(TreeViewItem)>
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<Stop />}
         label="Administration"
         nodeId="7"
       >
@@ -785,8 +692,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
             Object {
               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
               "content": "HvVerticalNavigationTreeViewItem-content",
-              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -800,7 +705,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<Stop />}
           label="Administration"
           nodeId="7"
         >
@@ -809,24 +714,24 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
             data-hasicon={true}
           >
             <WithStyles(ForwardRef)
-              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+              className="HvVerticalNavigationTreeViewItem-content"
               component="div"
               innerRef={
                 Object {
                   "current": <div
-                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     role="button"
                     tabindex="0"
                   >
                     <div
-                      class="HvIconStop-root HvIconStop-rootS"
-                      style="width: 32px; height: 32px;"
+                      class="HvIconBase-root HvIconBase-s"
+                      name="Stop"
                     >
                       <svg
                         focusable="false"
-                        height="16px"
+                        height="16"
                         viewBox="0 0 16 16"
-                        width="16px"
+                        width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -840,100 +745,66 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   </div>,
                 }
               }
-              onBlur={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <ForwardRef
-                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                className="HvVerticalNavigationTreeViewItem-content"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "disabledText": "HvTypography-disabledText",
                     "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
                     "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
+                    "link": "HvTypography-link",
                     "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
                     "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
                     "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
                     "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                     "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
                     "xsTitle": "HvTypography-xsTitle",
                     "xxlTitle": "HvTypography-xxlTitle",
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
                 component="div"
-                onBlur={[Function]}
                 onClick={[Function]}
-                onFocus={[Function]}
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={0}
-                variant="normalText"
               >
                 <div
-                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                  onBlur={[Function]}
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                   onClick={[Function]}
-                  onFocus={[Function]}
                   onKeyDown={[Function]}
                   role="button"
                   tabIndex={0}
                 >
-                  <WithStyles(Stop)
-                    boxStyles={
-                      Object {
-                        "height": "32px",
-                        "width": "32px",
-                      }
-                    }
-                  >
-                    <Stop
-                      boxStyles={
-                        Object {
-                          "height": "32px",
-                          "width": "32px",
-                        }
-                      }
-                      classes={
-                        Object {
-                          "root": "HvIconStop-root",
-                          "rootL": "HvIconStop-rootL",
-                          "rootM": "HvIconStop-rootM",
-                          "rootS": "HvIconStop-rootS",
-                          "rootXs": "HvIconStop-rootXs",
-                        }
-                      }
+                  <Stop>
+                    <HvIconBase
+                      iconSize="S"
+                      name="Stop"
                     >
                       <div
-                        className="HvIconStop-root HvIconStop-rootS"
-                        style={
-                          Object {
-                            "height": "32px",
-                            "width": "32px",
-                          }
-                        }
+                        className="HvIconBase-root HvIconBase-s"
+                        name="Stop"
                       >
                         <svg
                           focusable={false}
-                          height="16px"
+                          height={16}
                           viewBox="0 0 16 16"
-                          width="16px"
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -943,8 +814,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           />
                         </svg>
                       </div>
-                    </Stop>
-                  </WithStyles(Stop)>
+                    </HvIconBase>
+                  </Stop>
                   Administration
                 </div>
               </ForwardRef>
@@ -961,8 +832,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -983,12 +852,12 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="0"
                           >
@@ -996,57 +865,48 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={0}
@@ -1067,8 +927,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1089,12 +947,12 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="0"
                           >
@@ -1102,57 +960,48 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={0}
@@ -1173,8 +1022,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1195,12 +1042,12 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="0"
                           >
@@ -1208,57 +1055,48 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={0}
@@ -1289,8 +1127,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
       Object {
         "collapsed": "HvVerticalNavigationTreeView-collapsed",
         "content": "HvVerticalNavigationTreeView-content",
-        "contentFocusDisabled": "HvVerticalNavigationTreeView-contentFocusDisabled",
-        "contentFocused": "HvVerticalNavigationTreeView-contentFocused",
         "disabled": "HvVerticalNavigationTreeView-disabled",
         "expanded": "HvVerticalNavigationTreeView-expanded",
         "group": "HvVerticalNavigationTreeView-group",
@@ -1312,7 +1148,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
       role="tree"
     >
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<Play />}
         label="System"
         nodeId="1"
       >
@@ -1321,8 +1157,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
             Object {
               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
               "content": "HvVerticalNavigationTreeViewItem-content",
-              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1336,7 +1170,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<Play />}
           label="System"
           nodeId="1"
         >
@@ -1346,24 +1180,24 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
             role="treeitem"
           >
             <WithStyles(ForwardRef)
-              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+              className="HvVerticalNavigationTreeViewItem-content"
               component="div"
               innerRef={
                 Object {
                   "current": <div
-                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     role="button"
                     tabindex="-1"
                   >
                     <div
-                      class="HvIconPlay-root HvIconPlay-rootS"
-                      style="width: 32px; height: 32px;"
+                      class="HvIconBase-root HvIconBase-s"
+                      name="Play"
                     >
                       <svg
                         focusable="false"
-                        height="16px"
+                        height="16"
                         viewBox="0 0 16 16"
-                        width="16px"
+                        width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1377,100 +1211,66 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   </div>,
                 }
               }
-              onBlur={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               onKeyDown={[Function]}
               role="button"
               tabIndex={-1}
-              variant="normalText"
             >
               <ForwardRef
-                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                className="HvVerticalNavigationTreeViewItem-content"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "disabledText": "HvTypography-disabledText",
                     "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
                     "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
+                    "link": "HvTypography-link",
                     "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
                     "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
                     "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
                     "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                     "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
                     "xsTitle": "HvTypography-xsTitle",
                     "xxlTitle": "HvTypography-xxlTitle",
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
                 component="div"
-                onBlur={[Function]}
                 onClick={[Function]}
-                onFocus={[Function]}
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={-1}
-                variant="normalText"
               >
                 <div
-                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                  onBlur={[Function]}
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                   onClick={[Function]}
-                  onFocus={[Function]}
                   onKeyDown={[Function]}
                   role="button"
                   tabIndex={-1}
                 >
-                  <WithStyles(Play)
-                    boxStyles={
-                      Object {
-                        "height": "32px",
-                        "width": "32px",
-                      }
-                    }
-                  >
-                    <Play
-                      boxStyles={
-                        Object {
-                          "height": "32px",
-                          "width": "32px",
-                        }
-                      }
-                      classes={
-                        Object {
-                          "root": "HvIconPlay-root",
-                          "rootL": "HvIconPlay-rootL",
-                          "rootM": "HvIconPlay-rootM",
-                          "rootS": "HvIconPlay-rootS",
-                          "rootXs": "HvIconPlay-rootXs",
-                        }
-                      }
+                  <Play>
+                    <HvIconBase
+                      iconSize="S"
+                      name="Play"
                     >
                       <div
-                        className="HvIconPlay-root HvIconPlay-rootS"
-                        style={
-                          Object {
-                            "height": "32px",
-                            "width": "32px",
-                          }
-                        }
+                        className="HvIconBase-root HvIconBase-s"
+                        name="Play"
                       >
                         <svg
                           focusable={false}
-                          height="16px"
+                          height={16}
                           viewBox="0 0 16 16"
-                          width="16px"
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -1480,8 +1280,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           />
                         </svg>
                       </div>
-                    </Play>
-                  </WithStyles(Play)>
+                    </HvIconBase>
+                  </Play>
                   System
                 </div>
               </ForwardRef>
@@ -1499,8 +1299,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1522,12 +1320,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     role="treeitem"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="-1"
                           >
@@ -1535,57 +1333,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={-1}
@@ -1608,8 +1397,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1633,12 +1420,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             role="treeitem"
                           >
                             <WithStyles(ForwardRef)
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="-1"
                                   >
@@ -1646,57 +1433,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={-1}
-                              variant="normalText"
                             >
                               <ForwardRef
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={-1}
-                                variant="normalText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={-1}
@@ -1717,8 +1495,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1741,12 +1517,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             role="treeitem"
                           >
                             <WithStyles(ForwardRef)
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-selectedText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="0"
                                   >
@@ -1754,57 +1530,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="selectedText"
                             >
                               <ForwardRef
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="selectedText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-selectedText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={0}
@@ -1826,8 +1593,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1850,12 +1615,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             role="treeitem"
                           >
                             <WithStyles(ForwardRef)
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="-1"
                                   >
@@ -1863,57 +1628,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={-1}
-                              variant="normalText"
                             >
                               <ForwardRef
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={-1}
-                                variant="normalText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={-1}
@@ -1943,8 +1699,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             Object {
                               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                               "content": "HvVerticalNavigationTreeViewItem-content",
-                              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -1975,12 +1729,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             role="treeitem"
                           >
                             <WithStyles(ForwardRef)
-                              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                              className="HvVerticalNavigationTreeViewItem-content"
                               component="div"
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="-1"
                                   >
@@ -1988,57 +1742,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   </div>,
                                 }
                               }
-                              onBlur={[Function]}
                               onClick={[Function]}
-                              onFocus={[Function]}
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={-1}
-                              variant="normalText"
                             >
                               <ForwardRef
-                                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                                className="HvVerticalNavigationTreeViewItem-content"
                                 classes={
                                   Object {
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
+                                    "noWrap": "HvTypography-noWrap",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
+                                    "sectionTitle": "HvTypography-sectionTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
                                   }
                                 }
                                 component="div"
-                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={-1}
-                                variant="normalText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                                  onBlur={[Function]}
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                   onClick={[Function]}
-                                  onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   role="button"
                                   tabIndex={-1}
@@ -2059,7 +1804,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
         </TreeViewItem>
       </WithStyles(TreeViewItem)>
       <WithStyles(TreeViewItem)
-        icon={<ForwardRef(WithStyles) />}
+        icon={<Stop />}
         label="Administration"
         nodeId="7"
       >
@@ -2068,8 +1813,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
             Object {
               "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
               "content": "HvVerticalNavigationTreeViewItem-content",
-              "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-              "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
               "disabled": "HvVerticalNavigationTreeViewItem-disabled",
               "expanded": "HvVerticalNavigationTreeViewItem-expanded",
               "group": "HvVerticalNavigationTreeViewItem-group",
@@ -2083,7 +1826,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
             }
           }
-          icon={<ForwardRef(WithStyles) />}
+          icon={<Stop />}
           label="Administration"
           nodeId="7"
         >
@@ -2093,24 +1836,24 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
             role="treeitem"
           >
             <WithStyles(ForwardRef)
-              className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+              className="HvVerticalNavigationTreeViewItem-content"
               component="div"
               innerRef={
                 Object {
                   "current": <div
-                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                     role="button"
                     tabindex="-1"
                   >
                     <div
-                      class="HvIconStop-root HvIconStop-rootS"
-                      style="width: 32px; height: 32px;"
+                      class="HvIconBase-root HvIconBase-s"
+                      name="Stop"
                     >
                       <svg
                         focusable="false"
-                        height="16px"
+                        height="16"
                         viewBox="0 0 16 16"
-                        width="16px"
+                        width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -2124,100 +1867,66 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   </div>,
                 }
               }
-              onBlur={[Function]}
               onClick={[Function]}
-              onFocus={[Function]}
               onKeyDown={[Function]}
               role="button"
               tabIndex={-1}
-              variant="normalText"
             >
               <ForwardRef
-                className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                className="HvVerticalNavigationTreeViewItem-content"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "disabledText": "HvTypography-disabledText",
                     "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
                     "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
+                    "link": "HvTypography-link",
                     "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
                     "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
                     "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
                     "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                     "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
                     "xsTitle": "HvTypography-xsTitle",
                     "xxlTitle": "HvTypography-xxlTitle",
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
                 component="div"
-                onBlur={[Function]}
                 onClick={[Function]}
-                onFocus={[Function]}
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={-1}
-                variant="normalText"
               >
                 <div
-                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                  onBlur={[Function]}
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                   onClick={[Function]}
-                  onFocus={[Function]}
                   onKeyDown={[Function]}
                   role="button"
                   tabIndex={-1}
                 >
-                  <WithStyles(Stop)
-                    boxStyles={
-                      Object {
-                        "height": "32px",
-                        "width": "32px",
-                      }
-                    }
-                  >
-                    <Stop
-                      boxStyles={
-                        Object {
-                          "height": "32px",
-                          "width": "32px",
-                        }
-                      }
-                      classes={
-                        Object {
-                          "root": "HvIconStop-root",
-                          "rootL": "HvIconStop-rootL",
-                          "rootM": "HvIconStop-rootM",
-                          "rootS": "HvIconStop-rootS",
-                          "rootXs": "HvIconStop-rootXs",
-                        }
-                      }
+                  <Stop>
+                    <HvIconBase
+                      iconSize="S"
+                      name="Stop"
                     >
                       <div
-                        className="HvIconStop-root HvIconStop-rootS"
-                        style={
-                          Object {
-                            "height": "32px",
-                            "width": "32px",
-                          }
-                        }
+                        className="HvIconBase-root HvIconBase-s"
+                        name="Stop"
                       >
                         <svg
                           focusable={false}
-                          height="16px"
+                          height={16}
                           viewBox="0 0 16 16"
-                          width="16px"
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2227,8 +1936,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           />
                         </svg>
                       </div>
-                    </Stop>
-                  </WithStyles(Stop)>
+                    </HvIconBase>
+                  </Stop>
                   Administration
                 </div>
               </ForwardRef>
@@ -2246,8 +1955,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -2269,12 +1976,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     role="treeitem"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="-1"
                           >
@@ -2282,57 +1989,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={-1}
@@ -2353,8 +2051,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -2376,12 +2072,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     role="treeitem"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="-1"
                           >
@@ -2389,57 +2085,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={-1}
@@ -2460,8 +2147,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     Object {
                       "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                       "content": "HvVerticalNavigationTreeViewItem-content",
-                      "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                      "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                       "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                       "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                       "group": "HvVerticalNavigationTreeViewItem-group",
@@ -2483,12 +2168,12 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     role="treeitem"
                   >
                     <WithStyles(ForwardRef)
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
                       innerRef={
                         Object {
                           "current": <div
-                            class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                             role="button"
                             tabindex="-1"
                           >
@@ -2496,57 +2181,48 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           </div>,
                         }
                       }
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                        className="HvVerticalNavigationTreeViewItem-content"
                         classes={
                           Object {
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
                         component="div"
-                        onBlur={[Function]}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
-                          className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                          onBlur={[Function]}
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           onClick={[Function]}
-                          onFocus={[Function]}
                           onKeyDown={[Function]}
                           role="button"
                           tabIndex={-1}

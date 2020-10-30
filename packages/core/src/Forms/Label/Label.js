@@ -2,38 +2,35 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import isNil from "lodash/isNil";
 import { HvFormElementContext } from "../FormElement";
-import { getDescriptorMap } from "../FormElement/utils/FormUtils";
+import { findDescriptors } from "../FormElement/utils/FormUtils";
 import { HvTypography } from "../..";
 import { setId } from "../../utils";
 import styles from "./styles";
 
-const getChildIdToLabel = (children, childName) => {
-  let childId = "";
-  if (Array.isArray(children)) {
-    childId = React.Children.forEach((child) => {
-      const foundId = getDescriptorMap(child, childName)?.id;
-      if (!isNil(foundId)) {
-        childId = childId.concat(`${foundId} `);
-      }
-    });
-  } else {
-    childId = getDescriptorMap(children, childName)?.id;
-  }
-  return childId;
-};
-
 /**
- * Component used in conjunction with other form elements, to give extra information about status.
- * If it receives a children, the component will set itself as a label for the children.
+ * Provides the user with a recognizable name for a given form element.
  */
 const HvLabel = (props) => {
-  const { label, children, classes, className, id, disabled, ...others } = props;
-  const { elementId, elementDisabled } = useContext(HvFormElementContext);
-  const childId = children ? getChildIdToLabel(children, "HvBaseInput") : undefined;
+  const {
+    label,
+    children,
+    classes,
+    className,
+    id,
+    disabled,
+    required,
+    htmlFor: htmlForProp,
+    ...others
+  } = props;
+  const { elementId, elementDisabled, elementRequired } = useContext(HvFormElementContext);
+
   const localDisabled = disabled || elementDisabled;
+  const localRequired = required || elementRequired;
+
   const localId = id ?? setId(elementId, "label");
+
+  const forId = htmlForProp || findDescriptors(children)?.input?.[0]?.id;
 
   return (
     <>
@@ -41,19 +38,22 @@ const HvLabel = (props) => {
         id={localId}
         className={clsx(className, classes.root, {
           [classes.labelDisabled]: localDisabled,
-          [classes.childGutter]: !isNil(children),
+          [classes.childGutter]: children && label,
         })}
-        variant="labelText"
+        variant="highlightText"
         component="label"
-        htmlFor={childId}
+        htmlFor={forId}
         {...others}
       >
         {label}
+        {localRequired && <span aria-hidden="true">*</span>}
       </HvTypography>
       {children}
     </>
   );
 };
+
+HvLabel.formElementType = "label";
 
 HvLabel.propTypes = {
   /**
@@ -91,9 +91,17 @@ HvLabel.propTypes = {
    */
   label: PropTypes.node,
   /**
-   * If ´true´ the label is disabled.
+   * The id of the form element the label is bound to.
+   */
+  htmlFor: PropTypes.string,
+  /**
+   * If `true` the label is displayed with a disabled style.
    */
   disabled: PropTypes.bool,
+  /**
+   * If `true`, the label will indicate that the form element is required (an `*` after the label text).
+   */
+  required: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvLabel" })(HvLabel);

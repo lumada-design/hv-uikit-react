@@ -6,7 +6,7 @@ import getMaterialConfiguration from "./materialConfigurarion";
 import styles from "./styles";
 
 /**
- * A button refers to a graphical control element that provides the user a simple way to trigger an event.
+ * A button refers to a graphical control element that provides the user with a simple way to trigger an event.
  */
 const HvButton = (props) => {
   const {
@@ -16,21 +16,19 @@ const HvButton = (props) => {
     children,
     disabled,
     onClick,
-    category = "primary",
+    icon = false,
+    category: categoryProp,
     startIcon,
     overrideIconColors = true,
     ...others
   } = props;
-
+  const category = categoryProp ?? (icon ? "ghost" : "primary");
   const buttonConfiguration = getMaterialConfiguration(classes, category);
-  const onClickHandler = (event) => {
-    if (!disabled) onClick?.(event);
-  };
 
   return (
     <Button
       className={clsx(className, {
-        [classes.rootIcon]: category === "icon",
+        [classes.icon]: icon,
         [classes[`${category}SVG`]]: overrideIconColors,
       })}
       id={id}
@@ -39,8 +37,9 @@ const HvButton = (props) => {
       color={buttonConfiguration.color}
       disabled={disabled}
       disableRipple
-      onClick={onClickHandler}
+      onClick={onClick}
       startIcon={startIcon}
+      focusVisibleClassName={classes.focusVisible}
       {...others}
     >
       {children}
@@ -52,14 +51,7 @@ HvButton.propTypes = {
   /**
    * Category of button to use
    */
-  category: PropTypes.oneOf([
-    "ghost",
-    "ghostSecondary",
-    "icon",
-    "primary",
-    "secondary",
-    "semantic",
-  ]),
+  category: PropTypes.oneOf(["ghost", "primary", "secondary", "semantic"]),
   /**
    * The content of the button.
    */
@@ -78,14 +70,6 @@ HvButton.propTypes = {
      */
     ghostDisabled: PropTypes.string,
     /**
-     * Styles applied to the secondary ghost button.
-     */
-    ghostSecondary: PropTypes.string,
-    /**
-     * Styles applied to the secondary ghost button when it is disabled.
-     */
-    ghostSecondaryDisabled: PropTypes.string,
-    /**
      * Styles applied to the primary button.
      */
     primary: PropTypes.string,
@@ -100,7 +84,7 @@ HvButton.propTypes = {
     /**
      * Styles applied to the component root when category is icon.
      */
-    rootIcon: PropTypes.string,
+    icon: PropTypes.string,
     /**
      * Styles applied to the secondary button.
      */
@@ -118,9 +102,13 @@ HvButton.propTypes = {
      */
     semanticDisabled: PropTypes.string,
     /**
-     * Styles applied to the inspireRed primary button.
+     * Styles applied to the button's left icon.
      */
     startIcon: PropTypes.string,
+    /**
+     * Styles applied to the button if keyboard focused.
+     */
+    focusVisible: PropTypes.string,
   }),
   /**
    * @ignore
@@ -139,6 +127,10 @@ HvButton.propTypes = {
    * @param event React.MouseEvent<HTMLButtonElement>
    */
   onClick: PropTypes.func,
+  /**
+   * Whether the Button is an icon-only button.
+   */
+  icon: PropTypes.bool,
   /**
    * Element placed before the children.
    */

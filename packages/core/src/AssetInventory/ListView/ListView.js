@@ -17,7 +17,6 @@ const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata })
 const ListView = ({
   className,
   id,
-  icon,
   viewConfiguration,
   classes,
   renderer,
@@ -90,16 +89,12 @@ ListView.propTypes = {
    */
   id: PropTypes.string,
   /**
-   * Icon used in the multi button in the assert inventory.
-   */
-  icon: PropTypes.node.isRequired,
-  /**
    * Component to the present when no data is available.
    */
   emptyComponent: PropTypes.node,
   /**
    * Configuration used to setup various properties of the view.
-   * This configuration is propagated to the known childs of the asset inventory through context.
+   * This configuration is propagated to the known children of the asset inventory through context.
    */
   viewConfiguration: PropTypes.shape({
     onSelection: PropTypes.func,

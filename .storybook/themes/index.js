@@ -8,7 +8,7 @@ const wickedTheme = storybookThemeFromUiKitTheme(wicked);
 
 export { dawnTheme, wickedTheme };
 
-export const getStorybookTheme = theme => (theme === "wicked" ? wickedTheme : dawnTheme);
+export const getStorybookTheme = (theme) => (theme === "wicked" ? wickedTheme : dawnTheme);
 
 export const getStoredTheme = () => {
   const stored = window.localStorage.getItem(UIKIT_THEME);
@@ -20,7 +20,7 @@ export const getStoredTheme = () => {
   return "dawn";
 };
 
-export const setStoredTheme = theme => {
+export const setStoredTheme = (theme) => {
   window.localStorage.setItem(UIKIT_THEME, theme);
 };
 

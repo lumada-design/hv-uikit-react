@@ -1,5 +1,6 @@
 const styles = (theme) => ({
   root: {
+    minHeight: 0,
     overflow: "visible",
   },
   indicator: {
@@ -11,7 +12,6 @@ const styles = (theme) => ({
       backgroundColor: `${theme.hv.palette.accent.acce1}`,
     },
     height: 2,
-    top: 0,
   },
   scroller: {
     // fixes inline style included in material ui tab in https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/Tabs/Tabs.js#L125
@@ -20,7 +20,11 @@ const styles = (theme) => ({
       borderTop: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
     },
   },
-  flexContainer: {},
+  flexContainer: {
+    "& button:first-child": {
+      marginLeft: "3px",
+    },
+  },
 });
 
 export default styles;

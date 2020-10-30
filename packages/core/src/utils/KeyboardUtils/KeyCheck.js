@@ -11,7 +11,7 @@ const getKeyCodeFromEvent = (event) => (event ? event.keyCode : undefined);
  *
  *  @param {Number} number - The number to make the comparison.
  *  @param {Number} keycode - The number to check.
- *  @returns - ´true´ if the keycode is not enter, ´false´ if the keycode is correspond to enter or undefined.
+ *  @returns - `true` if the keycode is not enter, `false` if the keycode is correspond to enter or undefined.
  */
 const isKeycode = (number, keyCode) =>
   number === null || number === undefined ? undefined : number === keyCode;
@@ -21,7 +21,7 @@ const isKeycode = (number, keyCode) =>
  *
  *  @param {Object} event - The event object to extract the number from.
  *  @param {Number} keycode - The number to check.
- *  @returns - ´true´ if the keycode is the corresponding key, ´false´ if the keycode is corresponding key or undefined if the event does not exist or is not a keypress.
+ *  @returns - `true` if the keycode is the corresponding key, `false` if the keycode is corresponding key or undefined if the event does not exist or is not a keypress.
  */
 const isKeypress = (event, keyCode) => isKeycode(getKeyCodeFromEvent(event), keyCode);
 

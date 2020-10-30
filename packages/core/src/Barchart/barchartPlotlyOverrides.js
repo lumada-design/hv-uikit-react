@@ -8,11 +8,21 @@ const setterIfNil = (object, property, value) => {
 /**
  * Auxiliary functions to set the layout in order to follow the DS guideline.
  */
-export const applyLayoutDefaults = (inputLayout, stack) => {
+export const applyLayoutDefaults = (inputLayout, stack, isHorizontal) => {
   const layout = inputLayout === undefined ? {} : clone(inputLayout);
   setterIfNil(layout, "bargap", 0.25);
   setterIfNil(layout, "bargroupgap", 0.25);
   if (stack) setterIfNil(layout, "barmode", "stack");
+
+  setterIfNil(layout, "yaxis", {});
+  setterIfNil(layout, "xaxis", {});
+
+  if (isHorizontal) {
+    setterIfNil(layout.yaxis, "showline", true);
+    setterIfNil(layout.xaxis, "showline", false);
+  } else {
+    setterIfNil(layout.yaxis, "showline", false);
+  }
 
   return layout;
 };

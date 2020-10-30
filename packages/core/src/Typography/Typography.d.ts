@@ -1,6 +1,27 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvTypographyClassKey =
+  | "5xlTitle"
+  | "4xlTitle"
+  | "3xlTitle"
+  | "xxlTitle"
+  | "xlTitle"
+  | "lTitle"
+  | "mTitle"
+  | "sTitle"
+  | "xsTitle"
+  | "xxsTitle"
+  | "highlightText"
+  | "normalText"
+  | "placeholderText"
+  | "link"
+  | "disabledText"
+  | "selectedNavText"
+  | "vizText"
+  | "vizTextDisabled"
+  | "xsInlineLink";
+
 export interface HvTypographyProps
   extends StandardProps<React.HTMLAttributes<HTMLSpanElement>, HvTypographyClassKey> {
   /**
@@ -19,17 +40,13 @@ export interface HvTypographyProps
     | "xxsTitle"
     | "highlightText"
     | "normalText"
-    | "selectedText"
-    | "disabledButtonText"
     | "placeholderText"
-    | "inlineLink"
+    | "link"
+    | "disabledText"
     | "selectedNavText"
-    | "labelText"
-    | "infoText"
-    | "sLink"
-    | "sText"
     | "vizText"
-    | "disabledText";
+    | "vizTextDisabled"
+    | "xsInlineLink";
 
   /**
    * The component used for the root node.
@@ -42,29 +59,14 @@ export interface HvTypographyProps
    * If `true`, the text will have a bottom margin.
    */
   paragraph?: boolean;
-}
 
-export type HvTypographyClassKey =
-  | "5xlTitle"
-  | "4xlTitle"
-  | "3xlTitle"
-  | "xxlTitle"
-  | "xlTitle"
-  | "lTitle"
-  | "mTitle"
-  | "sTitle"
-  | "xsTitle"
-  | "highlightText"
-  | "normalText"
-  | "disabledButtonText"
-  | "placeholderText"
-  | "inlineLink"
-  | "selectedNavText"
-  | "labelText"
-  | "infoText"
-  | "sLink"
-  | "sText"
-  | "vizText"
-  | "disabledText";
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   */
+  noWrap?: boolean;
+}
 
 export default function HvTypography(props: HvTypographyProps): JSX.Element | null;

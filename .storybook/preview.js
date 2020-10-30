@@ -39,21 +39,22 @@ addParameters({
         "Foundation",
         ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
         "Components",
+        "Forms",
+        ["Main", "Form Element", "Form Element Blocks"],
         "Visualizations",
         "Lab",
-        "Templates",
         "Community",
-        ["Overview", "Release Schedule", "Contributing"]
-      ]
-    })
-  }
+        ["Overview", "Release Schedule", "Contributing"],
+      ],
+    }),
+  },
 });
 
 addParameters({
   docs: {
     page: DocsPage,
-    container: DocsContainer
-  }
+    container: DocsContainer,
+  },
 });
 
 const channel = addons.getChannel();
@@ -86,4 +87,4 @@ const App = ({ story: Story }) => {
   );
 };
 
-addDecorator(story => <App story={story} />);
+addDecorator((story) => <App story={story} />);

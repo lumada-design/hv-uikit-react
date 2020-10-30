@@ -8,44 +8,43 @@ import { Code } from "@hv/uikit-react-icons/dist";
 import IconButton from "@material-ui/core/IconButton";
 import { useTheme } from "@material-ui/core";
 
-const styles = theme => ({
+const styles = (theme) => ({
   group: {
     margin: "10px",
     padding: "10px",
-    width: "450px"
+    width: "450px",
   },
   groupName: {
     ...theme.hv.typography.mTitle,
-    marginBottom: 15
+    marginBottom: 15,
   },
   typographyInfoContainer: {
     marginTop: "10px",
     padding: "10px",
-    backgroundColor: theme.hv.palette.atmosphere.atmo4
+    backgroundColor: theme.hv.palette.atmosphere.atmo4,
   },
   sentenceContainer: {
     display: "flex",
     padding: "10px",
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
   },
   container: {
     display: "flex",
-    paddingBottom: "5px"
+    paddingBottom: "5px",
   },
   iconCode: {
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
   icon: {
     width: 32,
-    height: 32
-  }
+    height: 32,
+  },
 });
 
-const text =
-  "ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
+const text = "The quick brown fox jumps over the lazy dog.";
 
 const CodeButton = ({ classes, onClick }) => (
-  <IconButton className={classes.iconCode} aria-label="Delete" onClick={onClick}>
+  <IconButton className={classes.iconCode} aria-label="View code" onClick={onClick}>
     <Code className={classes.icon} />
   </IconButton>
 );
@@ -69,7 +68,7 @@ const Group = ({ classes, name, typography }) => {
           customStyle={{
             margin: 0,
             borderRadius: 0,
-            fontSize: 14
+            fontSize: 14,
           }}
         >
           {JSON.stringify(typography, null, 4)}
@@ -90,8 +89,8 @@ const Typography = ({ classes }) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys
-        .filter(item => !Array.isArray(typography[item]))
-        .map(group => (
+        .filter((item) => !Array.isArray(typography[item]))
+        .map((group) => (
           <Group
             key={`group_${group}`}
             classes={classes}

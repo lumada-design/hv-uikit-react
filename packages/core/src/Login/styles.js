@@ -1,22 +1,20 @@
 import { fade, hexToRgb } from "@material-ui/core";
 
 const styles = (theme) => ({
-  container: {
-    background: `0 / auto`,
-    justifyContent: "flex-end",
-    width: "100%",
-    height: "100%",
+  root: {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "bottom",
+    backgroundSize: "cover",
+    width: "100%",
+    height: "100%",
+    padding: 0,
+    margin: "-1px 0 0 0",
   },
-  root: {},
-  rightContainer: {
+  formContainer: {
     background: fade(hexToRgb(theme.hv.palette.atmosphere.atmo2), 1),
-    position: "relative",
+    marginLeft: "auto",
     maxWidth: 500,
-  },
-  panelPosition: {
-    position: "absolute",
+    height: "100%",
   },
 });
 

@@ -9,13 +9,13 @@ module.exports = {
       {
         devDependencies: true,
         optionalDependencies: false,
-        peerDependencies: false
-      }
-    ]
+        peerDependencies: false,
+      },
+    ],
   },
   env: {
     browser: false,
     node: true,
-    jest: false
-  }
+    jest: false,
+  },
 };

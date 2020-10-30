@@ -8,7 +8,7 @@ function defaultValueHandler(documentation) {
       if (match) {
         value.defaultValue = {
           value: match[1],
-          computed: false
+          computed: false,
         };
       }
     }

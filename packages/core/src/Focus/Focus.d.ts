@@ -3,6 +3,17 @@ import { StandardProps } from "@material-ui/core";
 
 export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
+export type ClassKey =
+  | "root"
+  | "selected"
+  | "disabled"
+  | "focusDisabled"
+  | "focusGridDisabled"
+  | "focused"
+  | "externalReference"
+  | "falseFocus"
+  | "focus";
+
 export interface HvFocusProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey> {
   /**
@@ -58,16 +69,5 @@ export interface HvFocusProps
    */
   navigationJump: number;
 }
-
-export type ClassKey =
-  | "root"
-  | "selected"
-  | "disabled"
-  | "focusDisabled"
-  | "focusGridDisabled"
-  | "focused"
-  | "externalReference"
-  | "falseFocus"
-  | "focus";
 
 export default function HvFocus(props: HvFocusProps): JSX.Element | null;

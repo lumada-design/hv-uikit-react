@@ -12,6 +12,19 @@ export interface HvSwitchLabelsProp {
   right: string;
 }
 
+export type HvSwitchClassKey =
+  | "root"
+  | "switch"
+  | "switchBase"
+  | "disabledLabel"
+  | "labelSelected"
+  | "labelDeselected"
+  | "checkedIcon"
+  | "checked"
+  | "track"
+  | "thumb"
+  | "disabled";
+
 export interface HvSwitchProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSwitchClassKey, "onChange"> {
   /**
@@ -43,18 +56,5 @@ export interface HvSwitchProps
    */
   onChange: (event: Event, state: boolean) => void;
 }
-
-export type HvSwitchClassKey =
-  | "root"
-  | "switch"
-  | "switchBase"
-  | "disabledLabel"
-  | "labelSelected"
-  | "labelDeselected"
-  | "checkedIcon"
-  | "checked"
-  | "track"
-  | "thumb"
-  | "disabled";
 
 export default function HvSwitch(props: HvSwitchProps): JSX.Element | null;

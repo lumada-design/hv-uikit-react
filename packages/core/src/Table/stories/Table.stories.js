@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import moment from "moment";
-import Chart from "react-google-charts";
-import orderBy from "lodash/orderBy";
-import { makeStyles } from "@material-ui/core/styles";
 import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+import { makeStyles } from "@material-ui/core/styles";
+import orderBy from "lodash/orderBy";
+import React, { useState } from "react";
+import Chart from "react-google-charts";
 
 import { HvEmptyState, HvTable, HvButton } from "../..";
 
@@ -14,6 +13,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTable } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvTable,
 };
@@ -185,7 +186,6 @@ export const Main = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -239,11 +239,6 @@ export const Main = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
-
   return (
     <div style={{ padding: "10px" }}>
       <HvTable
@@ -254,7 +249,6 @@ export const Main = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -280,7 +274,6 @@ export const Empty = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -334,11 +327,6 @@ export const Empty = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
-
   return (
     <div style={{ padding: "10px" }}>
       <HvTable
@@ -349,7 +337,6 @@ export const Empty = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -383,7 +370,6 @@ export const CustomEmpty = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -437,11 +423,6 @@ export const CustomEmpty = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
-
   const NoDataComponent = () => {
     const useStyles = makeStyles({
       root: {
@@ -469,7 +450,6 @@ export const CustomEmpty = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         noDataComponent={<NoDataComponent />}
       />
@@ -652,7 +632,6 @@ export const WithExpander = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -706,11 +685,6 @@ export const WithExpander = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
-
   const subElementTemplate = (row) => (
     <div>
       <table>
@@ -736,7 +710,6 @@ export const WithExpander = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         subElementTemplate={subElementTemplate}
         onPageSizeChange={onPageSizeChange}
       />
@@ -759,7 +732,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Bob Route",
       storageSegment: "Open systems",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.62,
       totalIOPS: 18649,
       totalThroughput: 1963.28,
@@ -771,7 +744,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.7,
       totalIOPS: 8652,
       totalThroughput: 1013.01,
@@ -783,7 +756,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Chris1",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -795,7 +768,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Jeans Data Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -807,7 +780,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -819,7 +792,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Bob Route",
       storageSegment: "Open systems",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.62,
       totalIOPS: 18649,
       totalThroughput: 1963.28,
@@ -831,7 +804,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2.5,
+
       averageCompression: 1.7,
       totalIOPS: 8652,
       totalThroughput: 1013.01,
@@ -843,7 +816,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Chris1",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -855,7 +828,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Jeans Data Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -867,7 +840,7 @@ export const WithExpanderAndCustomContent = () => {
       dataCenter: "Captain America Route",
       storageSegment: "Tandem",
       storageArray: 3,
-      allocateVsCapability: 2,
+
       averageCompression: 1.91,
       totalIOPS: 10459,
       totalThroughput: 923.65,
@@ -892,40 +865,6 @@ export const WithExpanderAndCustomContent = () => {
       headerText: "Storage array",
       accessor: "storageArray",
       cellType: "numeric",
-    },
-    {
-      headerText: "Allocated vs avail.capability",
-      cellType: "numeric",
-      minWidth: 140,
-      Cell: (cellData) => {
-        const value = [
-          [" ", " ", { role: "style" }],
-          [" ", Number(cellData.row._original.allocateVsCapability), "color:black"],
-        ];
-        return (
-          <div style={{ display: "flex" }}>
-            <div style={{ paddingRight: "5px", alignSelf: "center" }}>
-              {cellData.row._original.allocateVsCapability}
-              /1 TB
-            </div>
-            <Chart
-              width="80px"
-              height="30px"
-              chartType="BarChart"
-              loader={<div>Loading Chart</div>}
-              data={value}
-              options={{
-                legend: "none",
-                hAxis: {
-                  minValue: 0,
-                  maxValue: 3,
-                },
-                backgroundColor: "transparent",
-              }}
-            />
-          </div>
-        );
-      },
     },
     {
       headerText: "Average compression rt",
@@ -964,11 +903,6 @@ export const WithExpanderAndCustomContent = () => {
   ];
 
   const defaultSorted = [{ id: "name", desc: true }];
-
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
 
   const subElementTemplate = () => (
     <div>
@@ -1020,7 +954,6 @@ export const WithExpanderAndCustomContent = () => {
         defaultPageSize={10}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         subElementTemplate={subElementTemplate}
       />
     </div>
@@ -1207,7 +1140,6 @@ export const WithCheckbox = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -1261,15 +1193,10 @@ export const WithCheckbox = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
-
   const actions = [
-    { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
-    { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
-    { id: "put", label: "Preview", iconCallback: () => <Preview /> },
+    { id: "delete", label: "Delete", icon: <Delete /> },
+    { id: "lock", label: "Lock", icon: <Lock /> },
+    { id: "put", label: "Preview", icon: <Preview /> },
   ];
 
   const handleAction = (event, id, action, selection = []) => {
@@ -1292,7 +1219,6 @@ export const WithCheckbox = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         idForCheckbox="pid"
         actions={actions}
@@ -1427,11 +1353,6 @@ export const WithCheckboxCustomContent = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "Sales overview",
-    subtitleText: "Click on a row to see store details",
-  };
-
   return (
     <div>
       <HvTable
@@ -1442,7 +1363,6 @@ export const WithCheckboxCustomContent = () => {
         onPageSizeChange={onPageSizeChange}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         idForCheckbox="id"
       />
     </div>
@@ -1631,7 +1551,6 @@ export const WithCheckboxAndSecondaryActions = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
       fixed: "left",
     },
@@ -1683,11 +1602,6 @@ export const WithCheckboxAndSecondaryActions = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
-
   return (
     <div>
       <HvTable
@@ -1698,7 +1612,6 @@ export const WithCheckboxAndSecondaryActions = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         idForCheckbox="pid"
         secondaryActions={[
@@ -1901,7 +1814,6 @@ export const WithNullValues = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
       fixed: "left",
     },
@@ -1953,11 +1865,6 @@ export const WithNullValues = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle",
-  };
-
   return (
     <div>
       <HvTable
@@ -1968,7 +1875,6 @@ export const WithNullValues = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -2007,7 +1913,7 @@ export const TableWithChangingData = () => {
       headerText: "ID",
       accessor: "id",
       cellType: "alpha-numeric",
-      width: 40,
+      width: 50,
     },
     {
       headerText: "Name",
@@ -2190,7 +2096,7 @@ export const ServerSidePagination = () => {
     return {
       id,
       name: `Event ${id}`,
-      createdDate: randomDate(id),
+      createdDate: randomDate(id).toDateString(),
       status: (status > 0.66 && "Open") || (status > 0.33 && "Pending") || "Closed",
       riskScore: getRandom(id),
       severity: (severity > 0.66 && "Critical") || (severity > 0.33 && "Moderate") || "Low",
@@ -2272,7 +2178,6 @@ export const ServerSidePagination = () => {
       {
         headerText: "Time",
         accessor: "createdDate",
-        format: (value) => moment(value.original.createdDate).format("MM/DD/YYYY"),
         cellType: "numeric",
       },
       {
@@ -2334,16 +2239,13 @@ export const ServerSidePagination = () => {
 
     render() {
       const { pages, pageSize, dataSize, sorted, data } = this.state;
-      const labels = {
-        titleText: "This is a title",
-        subtitleText: "This is a subtitle",
-      };
+
       return (
         <HvTable
           id="test"
           idForCheckbox="id"
           data={data}
-          actions={[{ id: "delete", label: "Delete", iconCallback: () => <Delete /> }]}
+          actions={[{ id: "delete", label: "Delete", icon: <Delete /> }]}
           actionsCallback={this.handleAction}
           columns={this.getColumns()}
           defaultPageSize={10}
@@ -2352,7 +2254,6 @@ export const ServerSidePagination = () => {
           pages={pages}
           resizable={false}
           defaultSorted={sorted}
-          labels={labels}
           onPageSizeChange={this.onPageSizeChange}
           paginationServerSide
           onFetchData={this.fetchData} // Request new data when things change
@@ -2369,6 +2270,187 @@ ServerSidePagination.story = {
     docs: {
       storyDescription:
         "Table sample that shows how to use the table with server side pagination. Bulk Actions",
+    },
+    eyes: {
+      waitBeforeScreenshot: "div[role=cell][id*='createdDate']",
+    },
+  },
+};
+
+export const ConditionalPaginationDisplay = () => {
+  const data = [
+    {
+      id: 8,
+      name: "Event 6",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Closed",
+      riskScore: "98",
+      severity: "Major",
+      priority: "High",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      id: 7,
+      name: "Event 7",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      id: 6,
+      name: "Event 8",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Pending",
+      riskScore: "98",
+      severity: "Moderate",
+      priority: "Medium",
+      link: { displayText: "Asset 2", url: "blablabla" },
+    },
+    {
+      id: 5,
+      name: "Event 9",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      id: 4,
+      name: "Event 1",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Closed",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      id: 3,
+      name: "Event 10",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Major",
+      priority: "High",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      id: 2,
+      name: "Event 11",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      id: 1,
+      name: "Event 12",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+  ];
+
+  const getColumns = () => [
+    {
+      headerText: "Title",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left",
+      sortMethod: (a, b) => {
+        if (a === b) {
+          return 0;
+        }
+        const aReverse = Number(a.split(" ")[1]);
+        const bReverse = Number(b.split(" ")[1]);
+        return aReverse > bReverse ? 1 : -1;
+      },
+    },
+    {
+      headerText: "Time",
+      accessor: "createdDate",
+      cellType: "numeric",
+    },
+    {
+      headerText: "Event Type",
+      accessor: "eventType",
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+    },
+    {
+      headerText: "Status",
+      accessor: "status",
+      format: (value) => value.original.status.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+    },
+    {
+      headerText: "Probability",
+      accessor: "riskScore",
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
+    },
+    {
+      headerText: "Severity",
+      accessor: "severity",
+      format: (value) => value.original.severity.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+      sortable: false,
+    },
+    {
+      headerText: "Priority",
+      accessor: "priority",
+      format: (value) => value.original.priority.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+    },
+    {
+      headerText: "Asset",
+      accessor: "asset",
+      cellType: "link",
+      fixed: "right",
+      sortable: false,
+    },
+  ];
+
+  return (
+    <div>
+      <HvTable
+        data={data}
+        columns={getColumns()}
+        defaultPageSize={10}
+        resizable={false}
+        showPagination={false}
+      />
+    </div>
+  );
+};
+
+ConditionalPaginationDisplay.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Table pagination control conditionally displayed. In this case, when there are not enough records for multiple pages, Pagination can be disabled",
     },
   },
 };

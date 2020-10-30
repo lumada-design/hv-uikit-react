@@ -5,6 +5,8 @@ import { ViewConfiguration } from "../ViewConfiguration";
 
 export type SizeProps = true | false | "auto" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
+export type HvCardViewClassKey = "root" | "elements";
+
 export interface CardViewConfiguration extends ViewConfiguration {
   /**
    * Defines the number of columns the component is going to use. Check the Grid component
@@ -21,10 +23,6 @@ export interface CardViewConfiguration extends ViewConfiguration {
 
 export interface HvCardViewProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvCardViewClassKey> {
-  /**
-   * Icon used in the multi button in the asset inventory.
-   */
-  icon: React.ReactNode;
   /**
    * Metadata associated with the values.
    */
@@ -53,13 +51,11 @@ export interface HvCardViewProps
   /**
    * Component to the present when no data is available.
    */
-  emptyComponent: React.ReactNode;
+  emptyComponent?: React.ReactNode;
   /**
    * Configuration settings for the view.
    */
   viewConfiguration?: CardViewConfiguration;
 }
-
-export type HvCardViewClassKey = "root" | "elements";
 
 export default function HvCardView(props: HvCardViewProps): JSX.Element | null;

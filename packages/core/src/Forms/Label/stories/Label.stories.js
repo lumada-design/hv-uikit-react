@@ -2,7 +2,7 @@ import React from "react";
 import { HvLabel } from "../../..";
 
 export default {
-  title: "Components/Forms/Label",
+  title: "Forms/Form Element Blocks/Label",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvLabel } from '@hv/uikit-react-core/dist'",

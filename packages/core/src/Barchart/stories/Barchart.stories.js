@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Random } from "../../utils";
-import HvBarchart from "../Barchart";
+import { makeStyles } from "@material-ui/core";
+import withStyles from "@material-ui/core/styles/withStyles";
+import React from "react";
+import { HvBarchart, HvDropDownMenu, HvDropdown, HvTypography } from "../..";
 
 export default {
   title: "Visualizations/Bar Chart",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBarchart } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvBarchart,
 };
 
 export const Main = () => (
   <HvBarchart
-    title="Simple Vertical Bar Chart"
-    subtitle="Sales performance (YTD)"
-    xAxisTitle="Thousands of Dollars ($)"
-    yAxisTitle="Axis description"
     data={[
       {
         x: ["January", "February", "March"],
@@ -36,22 +35,7 @@ export const VerticalWithSingleTooltip = () => {
 
   const data = [trace1];
 
-  const layout = {
-    xaxis: { title: { text: "2018" } },
-    yaxis: { title: { text: "Thousands of Dollars ($)" } },
-  };
-
-  return (
-    <HvBarchart
-      title="Simple Vertical Bar Chart"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      tooltipType="single"
-      xAxisTitle="Thousands of Dollars ($)"
-      yAxisTitle="Axis description"
-      layout={layout}
-    />
-  );
+  return <HvBarchart data={data} tooltipType="single" />;
 };
 
 VerticalWithSingleTooltip.story = {
@@ -68,24 +52,106 @@ export const GroupedVerticalBarchart = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [6000, 3900, 1000], name: "Sales Per Rep" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [3700, 7500, 1100], name: "Monthly Sales" },
     { x: ["Group 1", "Group 2", "Group 3"], y: [2100, 8500, 3000], name: "Target" },
-    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" },
+    { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 8400], name: "Cash" },
   ];
 
-  return (
-    <HvBarchart
-      title="Grouped Vertical Bar Chart"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      xAxisTitle="Thousands of Dollars ($)"
-      yAxisTitle="Axis description"
-    />
-  );
+  return <HvBarchart data={data} />;
 };
 
 GroupedVerticalBarchart.story = {
   parameters: {
     docs: {
       storyDescription: "Representation of groups by using multiple bars.",
+    },
+  },
+};
+
+export const CustomStackedVerticalBarchart = () => {
+  const styles = () => ({
+    wrapper: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-end",
+    },
+  });
+
+  const ChartHeader = withStyles(styles)(({ classes, children }) => (
+    <div className={classes.wrapper}>{children}</div>
+  ));
+
+  const data = [
+    {
+      x: ["ASR3", "HAL9", "DR21", "HY54", "KW65", "RE98", "ZX52", "UI56"],
+      y: [50, 350, 420, 310, 390, 420, 200, 430],
+      name: "Uploads",
+    },
+    {
+      x: ["ASR3", "HAL9", "DR21", "HY54", "KW65", "RE98", "ZX52", "UI56"],
+      y: [370, 80, 60, 280, 310, 320, 110, 190],
+      name: "Downloads",
+    },
+  ];
+
+  const layout = {
+    yaxis: {
+      ticksuffix: " Gb",
+    },
+  };
+
+  const useStyles = makeStyles(() => ({
+    root: {
+      width: 250,
+    },
+    label: { paddingBottom: 6 },
+    titlePadding: { marginTop: 10 },
+    dropdownPlacement: {
+      marginLeft: 10,
+    },
+    controllerGroup: {
+      display: "flex",
+      alignItems: "flex-end",
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <>
+      <ChartHeader>
+        <HvTypography className={classes.titlePadding} variant="xsTitle">
+          Server Status Summary
+        </HvTypography>
+        <div className={classes.controllerGroup}>
+          <HvDropdown
+            id="dropdown2"
+            label="Time Period"
+            placement="left"
+            classes={{ root: classes.root, dropdown: classes.root, label: classes.label }}
+            values={[
+              { label: "Last 0.5h" },
+              { label: "Last 1.5h", selected: true },
+              { label: "Last 24h" },
+              { label: "Last 48h" },
+            ]}
+          />
+          <HvDropDownMenu
+            className={classes.dropdownPlacement}
+            onClick={(e, item) => console.log(item.label)}
+            dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+            placement="left"
+          />
+        </div>
+      </ChartHeader>
+
+      <HvBarchart stack data={data} layout={layout} />
+    </>
+  );
+};
+
+CustomStackedVerticalBarchart.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Bar chart with title and controls.",
     },
   },
 };
@@ -99,16 +165,7 @@ export const StackedVerticalBarchart = () => {
     { x: ["Group 1", "Group 2", "Group 3"], y: [500, 8000, 9500], name: "Cash" },
   ];
 
-  return (
-    <HvBarchart
-      stack
-      title="Stacked Vertical Bar Chart"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      xAxisTitle="Thousands of Dollars ($)"
-      yAxisTitle="Axis description"
-    />
-  );
+  return <HvBarchart stack data={data} />;
 };
 
 StackedVerticalBarchart.story = {
@@ -122,10 +179,6 @@ StackedVerticalBarchart.story = {
 export const SimpleHorizontalBarchart = () => (
   <HvBarchart
     horizontal
-    title="Simple Horizontal Bar Chart"
-    subtitle="Sales performance (YTD)"
-    xAxisTitle="Thousands of Dollars ($)"
-    yAxisTitle="2018"
     data={[
       {
         x: [2300, 1000, 8500],
@@ -147,11 +200,7 @@ SimpleHorizontalBarchart.story = {
 export const HorizontalBarchartWithSingleTooltip = () => (
   <HvBarchart
     horizontal
-    title="Simple Horizontal Bar Chart"
-    subtitle="Sales performance (YTD)"
     tooltipType="single"
-    xAxisTitle="Thousands of Dollars ($)"
-    yAxisTitle="2018"
     data={[
       {
         x: [2300, 1000, 8500],
@@ -176,19 +225,10 @@ export const GroupedHorizontalBarchart = () => {
     { y: ["Group 1", "Group 2", "Group 3"], x: [6000, 3900, 1000], name: "Sales Per Rep" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [3700, 7500, 1100], name: "Monthly Sales" },
     { y: ["Group 1", "Group 2", "Group 3"], x: [2100, 8500, 3000], name: "Target" },
-    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" },
+    { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 8400], name: "Cash" },
   ];
 
-  return (
-    <HvBarchart
-      horizontal
-      title="Grouped Horizontal Bar Chart"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      xAxisTitle="Thousands of Dollars ($)"
-      yAxisTitle="Axis description"
-    />
-  );
+  return <HvBarchart horizontal data={data} />;
 };
 
 GroupedHorizontalBarchart.story = {
@@ -208,67 +248,13 @@ export const StackedHorizontalBarchart = () => {
     { y: ["Group 1", "Group 2", "Group 3"], x: [500, 8000, 9500], name: "Cash" },
   ];
 
-  return (
-    <HvBarchart
-      stack
-      title="Stacked Horizontal Bar Chart"
-      subtitle="Sales performance (YTD)"
-      data={data}
-      horizontal
-      xAxisTitle="Thousands of Dollars ($)"
-      yAxisTitle="Axis description"
-    />
-  );
+  return <HvBarchart stack data={data} horizontal />;
 };
 
 StackedHorizontalBarchart.story = {
   parameters: {
     docs: {
       storyDescription: "Groups in stack mode.",
-    },
-  },
-};
-
-export const WithIntervalUpdates = () => {
-  const r = new Random();
-
-  const [data, setData] = useState([
-    {
-      x: ["January", "February", "March"],
-      y: [2300, 1000, 8500],
-      name: "Sales Target",
-    },
-  ]);
-
-  useEffect(() => {
-    const interval = setTimeout(() => {
-      setData([
-        {
-          x: ["January", "February", "March"],
-          y: [r.next(1000, 3000), r.next(500, 3500), 8500],
-          name: "Sales Target",
-        },
-      ]);
-    }, 2000);
-
-    return () => clearTimeout(interval);
-  });
-
-  return (
-    <HvBarchart
-      title="Simple Vertical Bar Chart"
-      subtitle="Sales performance (YTD)"
-      xAxisTitle="Thousands of Dollars ($)"
-      yAxisTitle="Axis description"
-      data={data}
-    />
-  );
-};
-
-WithIntervalUpdates.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Data updated each second.",
     },
   },
 };

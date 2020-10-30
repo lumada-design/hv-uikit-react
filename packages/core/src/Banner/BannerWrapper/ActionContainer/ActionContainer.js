@@ -2,26 +2,32 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Close from "@hv/uikit-react-icons/dist/CloseXS";
-import Actions from "../../../Actions";
+import ActionsGeneric from "../../../ActionsGeneric";
+import HvButton from "../../../Button";
 import styles from "./styles";
 
 const ActionContainer = ({ id, classes, onClose, action, actionCallback, ...others }) => {
   return (
     <div className={classes.actionContainer}>
-      <div
+      <HvButton
+        icon
         className={classes.closeAction}
-        role="button"
+        category="semantic"
         aria-label="Close"
         onClick={onClose}
         tabIndex={0}
-        onKeyDown={onClose}
         {...others}
       >
         <Close iconSize="XS" className={classes.iconContainer} color="base2" />
-      </div>
+      </HvButton>
       {action && (
         <div className={classes.actionsInnerContainer}>
-          <Actions id={id} category="semantic" actions={action} actionsCallback={actionCallback} />
+          <ActionsGeneric
+            id={id}
+            category="semantic"
+            actions={action}
+            actionsCallback={actionCallback}
+          />
         </div>
       )}
     </div>
@@ -40,7 +46,7 @@ ActionContainer.propTypes = {
   /**
    * onClose function.
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /**
    * Actions to display.
    */
@@ -56,7 +62,7 @@ ActionContainer.propTypes = {
     ),
   ]),
   /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   *  The callback function ran when an action is triggered, receiving `action` as param
    */
   actionCallback: PropTypes.func,
 };

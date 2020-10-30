@@ -65,8 +65,8 @@ describe("Avatar ", () => {
         </HvProvider>
       );
 
-      const childs = rootNode.children();
-      expect(childs.length).toBe(1);
+      const children = rootNode.children();
+      expect(children.length).toBe(1);
       expect(rootNode.text()).toBe("");
     });
 

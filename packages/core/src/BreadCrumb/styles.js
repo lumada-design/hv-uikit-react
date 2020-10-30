@@ -11,28 +11,27 @@ const styles = (theme) => ({
   link: {
     textDecoration: "none",
     maxWidth: "170px",
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
+    fontWeight: 400,
+    color: theme.hv.palette.accent.acce1,
     "&:hover": {
       cursor: "pointer",
-      textDecoration: "none",
-      color: theme.hv.palette.accent.acce2h,
+      textDecoration: "underline",
     },
   },
-  separator: {
-    display: "contents",
-  },
   separatorContainer: {
-    width: "32px",
-    height: "32px",
+    margin: theme.hvSpacing(0, "xs"),
   },
   orderedList: {
     display: "flex",
   },
   a: {
-    "&:focus > div > p": {
-      color: theme.hv.palette.accent.acce2h,
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "underline",
+    },
+    "&:focus > p": {
+      color: theme.hv.palette.accent.acce1,
+      textDecoration: "underline",
     },
   },
 });

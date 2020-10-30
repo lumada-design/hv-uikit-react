@@ -1,107 +1,133 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback } from "react";
+
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import isNil from "lodash/isNil";
-import { Switch, withStyles } from "@material-ui/core";
-import CheckMark from "@hv/uikit-react-icons/dist/CompletedStep";
-import { setId } from "../utils";
-import withLabels from "../withLabels";
-import HvTypography from "../Typography";
-import Focus from "../Focus";
+
+import { withStyles } from "@material-ui/core";
+
+import { HvFormElement, HvLabel, HvWarningText, useUniqueId } from "..";
+
+import { setId, useControlled } from "../utils";
+
+import HvBaseSwitch from "../BaseSwitch";
+
 import styles from "./styles";
 
-const DEFAULT_LABELS = {
-  left: "Off",
-  right: "On",
-};
-
 /**
- * A Switch is a mechanism that allows user toggle between 2 options.
+ * A Switch is <b>binary</b> and work as a digital on/off button.
+ *
+ * Use when two states are <b>opposite</b> and to trigger immediate
+ * changes in the system.
  */
 const HvSwitch = (props) => {
   const {
-    id,
-    className,
     classes,
-    checked = true,
+    className,
+
+    id,
+    name,
+    value = "on",
+    required = false,
+    readOnly = false,
     disabled = false,
+
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+
+    checked,
+    defaultChecked = false,
+
     onChange,
-    labels,
-    showLabels = true,
-    value = "",
-    displayIconChecked = false,
+
+    status,
+    statusMessage,
+
+    inputProps,
+
     ...others
   } = props;
 
-  const [clickState, setClicked] = useState(checked);
+  const elementId = useUniqueId(id, "hvswitch");
 
-  useEffect(() => {
-    setClicked(checked);
-  }, [checked]);
+  const [isChecked, setIsChecked] = useControlled(checked, Boolean(defaultChecked));
 
-  const onClickHandler = (event) => {
-    const newState = !clickState;
-    setClicked(newState);
-    onChange?.(event, newState);
-  };
+  const [validationState, setValidationState] = useControlled(status, "standBy");
 
-  const renderLabel = (position) => (
-    <div id={!isNil(id) ? setId(id, position, "button") : undefined}>
-      <HvTypography
-        className={clsx(classes[`${position}Label`], {
-          [classes.disabledLabel]: disabled,
-          [classes.labelSelected]: !disabled && !clickState,
-          [classes.labelDeselected]: !disabled && clickState,
-        })}
-        onClick={disabled ? undefined : onClickHandler}
-        aria-disabled={disabled}
-      >
-        {labels[position]}
-      </HvTypography>
-    </div>
+  const [validationMessage] = useControlled(statusMessage, "Required");
+
+  const onLocalChange = useCallback(
+    (evt, newChecked) => {
+      setIsChecked(() => {
+        // this will only run if uncontrolled
+        if (required && !newChecked) {
+          setValidationState("invalid");
+        } else {
+          setValidationState("valid");
+        }
+
+        return newChecked;
+      });
+
+      onChange?.(evt, newChecked, value);
+    },
+    [onChange, required, setIsChecked, setValidationState, value]
   );
 
-  const checkedIcon = <CheckMark width="14px" height="14px" className={classes.checkedIcon} />;
+  // error message area will only be needed if the status is being controlled
+  // or if the checked state is uncontrolled and required is true
+  const canShowError = status !== undefined || (required && checked === undefined);
 
   return (
-    <div className={clsx(classes.root, className)}>
-      {showLabels && renderLabel("left")}
-      <Focus strategy="card" useFalseFocus>
-        <div
-          className={classes.root}
-          onClick={disabled ? undefined : onClickHandler}
-          onKeyDown={disabled ? undefined : onClickHandler}
-          role="checkbox"
-          tabIndex="0"
-          aria-checked={clickState}
-          aria-disabled={disabled}
-          id={id}
-          {...others}
+    <HvFormElement
+      id={id}
+      name={name}
+      status={validationState}
+      disabled={disabled}
+      required={required}
+      readOnly={readOnly}
+      className={clsx(className, classes.root)}
+    >
+      {label && (
+        <HvLabel
+          id={setId(elementId, "label")}
+          htmlFor={setId(elementId, "input")}
+          label={label}
+          className={clsx(classes.label)}
+        />
+      )}
+      <HvBaseSwitch
+        id={label ? setId(elementId, "input") : null}
+        name={name}
+        disabled={disabled}
+        readOnly={readOnly}
+        required={required}
+        onChange={onLocalChange}
+        value={value}
+        checked={isChecked}
+        inputProps={{
+          "aria-invalid": validationState === "invalid" ? true : undefined,
+          "aria-errormessage":
+            validationState === "invalid" ? setId(elementId, "error") : undefined,
+          "aria-label": ariaLabel,
+          "aria-labelledby": ariaLabelledBy,
+          "aria-describedby": ariaDescribedBy,
+          ...inputProps,
+        }}
+        {...others}
+      />
+      {canShowError && (
+        <HvWarningText
+          id={setId(elementId, "error")}
+          className={clsx(classes.error)}
+          disableAdornment
+          hideText
         >
-          <Switch
-            tabIndex="-1"
-            checked={clickState}
-            disabled={disabled}
-            value={value}
-            inputProps={{
-              // dummy aria-label this component is not tabbable and it is just presentational.
-              // the accessibility test were always failing because of the missing aria label.
-              "aria-label": "base switch",
-            }}
-            classes={{
-              root: classes.switch,
-              switchBase: classes.switchBase,
-              checked: classes.checked,
-              track: classes.track,
-              thumb: classes.thumb,
-              disabled: classes.disabled,
-            }}
-            {...(displayIconChecked && { checkedIcon })}
-          />
-        </div>
-      </Focus>
-      {showLabels && renderLabel("right")}
-    </div>
+          {validationMessage}
+        </HvWarningText>
+      )}
+    </HvFormElement>
   );
 };
 
@@ -111,95 +137,110 @@ HvSwitch.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * A Jss Object used to override or extend the styles applied to the Switch Component.
+   * A Jss Object used to override or extend the styles applied to the switch.
    */
   classes: PropTypes.shape({
     /**
-     * Styles applied to the root element.
+     * Styles applied to the component.
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the internal Switch component's root class.
+     * Styles applied to the label.
      */
-    switch: PropTypes.string,
+    label: PropTypes.string,
     /**
-     * Styles applied to the internal SwitchBase component's root class.
+     * Styles applied to the error area.
      */
-    switchBase: PropTypes.string,
-    /**
-     * Styles applied to the labels when they are disabled.
-     */
-    disabledLabel: PropTypes.string,
-    /**
-     * Styles applied to the labels when they are selected.
-     */
-    labelSelected: PropTypes.string,
-    /**
-     * Styles applied to the labels when they are disabled.
-     */
-    labelDeselected: PropTypes.string,
-    /**
-     * Styles applied to the checked icon.
-     */
-    checkedIcon: PropTypes.string,
-    /**
-     * Pseudo-class applied to the internal SwitchBase component's checked class.
-     */
-    checked: PropTypes.string,
-    /**
-     * Styles applied to the track element.
-     */
-    track: PropTypes.string,
-    /**
-     * Styles used to create the thumb passed to the internal SwitchBase component icon prop.
-     */
-    thumb: PropTypes.string,
-    /**
-     * Styles applied to the internal SwitchBase component's disabled class.
-     */
-    disabled: PropTypes.string,
+    error: PropTypes.string,
   }).isRequired,
+
   /**
-   * Denotes selection state of switch component.
+   * Id to be applied to the form element root node.
    */
-  checked: PropTypes.bool,
+  id: PropTypes.string,
+
   /**
-   * Denotes if component is active or not.
+   * The form element name.
+   */
+  name: PropTypes.string,
+  /**
+   * The value of the form element.
+   *
+   * Is up to the application's logic when to consider the submission of this value.
+   * Generally it should be used only when the switch is neither unchecked nor indeterminate.
+   *
+   * The default value is "on".
+   */
+  // eslint-disable-next-line react/forbid-prop-types
+  value: PropTypes.any,
+
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
+   */
+  label: PropTypes.node,
+  /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-labelledby": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
+
+  /**
+   * Indicates that the form element is disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * Callback function to be triggered when the input value is changed
+   * Indicates that the form element is not editable.
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  required: PropTypes.bool,
+
+  /**
+   * If `true` the switch is selected, if set to `false` the switch is not selected.
+   *
+   * When defined the switch state becomes controlled.
+   */
+  checked: PropTypes.bool,
+  /**
+   * When uncontrolled, defines the initial checked state.
+   */
+  defaultChecked: PropTypes.bool,
+
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to `checked`, depending of the values of both `required` and `checked`.
+   */
+  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  /**
+   * The error message to show when `status` is "invalid". Defaults to "Required".
+   */
+  statusMessage: PropTypes.string,
+
+  /**
+   * The callback fired when the switch is pressed.
    */
   onChange: PropTypes.func,
+
   /**
-   * An Object containing the various text associated with the switch.
+   * Properties passed on to the input element.
    */
-  labels: PropTypes.shape({
-    /**
-     * Label placed at the left of the switch.
-     */
-    left: PropTypes.string,
-    /**
-     * Label placed at the right of the switch.
-     */
-    right: PropTypes.string,
-  }),
-  /**
-   * The ID associated with the switch component.
-   */
-  id: PropTypes.string,
-  /**
-   * Value assigned to the Switch Component.
-   */
-  value: PropTypes.string,
-  /**
-   * Determine if labels should be displayed alongside component
-   */
-  showLabels: PropTypes.bool,
-  /**
-   * Determine if custom icon in button should be displayed
-   * */
-  displayIconChecked: PropTypes.bool,
+  inputProps: PropTypes.instanceOf(Object),
 };
 
-export default withStyles(styles, { name: "HvSwitch" })(withLabels(DEFAULT_LABELS)(HvSwitch));
+export default withStyles(styles, { name: "HvSwitch" })(HvSwitch);

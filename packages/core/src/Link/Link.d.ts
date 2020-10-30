@@ -1,6 +1,9 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+// TODO: should have root or "component" class?
+export type HvLinkClassKey = "a";
+
 export interface HvLinkProps
   extends StandardProps<React.HTMLAttributes<HTMLElement | HTMLAnchorElement>, HvLinkClassKey> {
   /**
@@ -22,7 +25,5 @@ export interface HvLinkProps
   Component?: React.ElementType<React.HTMLAttributes<HTMLElement>>;
 }
 
-// TODO: should have root or "component" class?
-export type HvLinkClassKey = "a";
 
 export default function HvLink(props: HvLinkProps): JSX.Element | null;

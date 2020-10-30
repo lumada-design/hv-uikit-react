@@ -1,98 +1,160 @@
 import React, { useState } from "react";
-import { Lock, Unlock, LightOff, LightOn } from "@hv/uikit-react-icons/dist";
-import { HvToggleButton, HvButton } from "../..";
+
+import { makeStyles } from "@material-ui/core/styles";
+
+import {
+  Favorite,
+  FavoriteSelected,
+  BackwardsEmpty,
+  BackwardsSelected,
+  UpEmpty,
+  UpSelected,
+  DownEmpty,
+  DownSelected,
+  ForwardsEmpty,
+  ForwardsSelected,
+  Like,
+  LikeSelected,
+  Dislike,
+  DislikeSelected,
+  LightOff,
+  LightOn,
+  Unlock,
+  Lock,
+} from "@hv/uikit-react-icons/dist";
 import Eye from "./Eye";
 
+import { HvToggleButton, HvTooltip, HvTypography } from "../..";
+
+// eslint-disable-next-line react/prop-types
+const FlexDecorator = ({ children }) => {
+  const useStyles = makeStyles({
+    root: {
+      display: "flex",
+      alignItems: "end",
+      flexWrap: "wrap",
+      "& > *": {
+        margin: "0 10px 5px 0",
+      },
+    },
+  });
+
+  const classes = useStyles();
+
+  return <div className={classes.root}>{children}</div>;
+};
+
 export default {
-  title: "Components/Selectors/Toggle Button",
+  title: "Components/Toggle Button",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvToggleButton } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvToggleButton,
+  decorators: [
+    (Story) => (
+      <FlexDecorator>
+        <Story />
+      </FlexDecorator>
+    ),
+  ],
 };
 
 export const Main = () => (
-  <HvToggleButton
-    aria-label="Lock"
-    notSelectedIcon={Unlock}
-    selectedIcon={Lock}
-    labels={{
-      notSelectedTitle: "Close lock",
-      selectedTitle: "Open lock",
-    }}
-  />
+  <>
+    <HvToggleButton
+      defaultSelected
+      aria-label="Favorite"
+      notSelectedIcon={<Favorite />}
+      selectedIcon={<FavoriteSelected />}
+    />
+    <HvToggleButton
+      aria-label="Backwards"
+      notSelectedIcon={<BackwardsEmpty />}
+      selectedIcon={<BackwardsSelected />}
+    />
+    <HvToggleButton aria-label="Up" notSelectedIcon={<UpEmpty />} selectedIcon={<UpSelected />} />
+    <HvToggleButton
+      disabled
+      aria-label="Down"
+      notSelectedIcon={<DownEmpty />}
+      selectedIcon={<DownSelected />}
+    />
+    <HvToggleButton
+      aria-label="Forward"
+      notSelectedIcon={<ForwardsEmpty />}
+      selectedIcon={<ForwardsSelected />}
+    />
+    <HvToggleButton aria-label="Like" notSelectedIcon={<Like />} selectedIcon={<LikeSelected />} />
+    <HvToggleButton
+      aria-label="Dislike"
+      notSelectedIcon={<Dislike />}
+      selectedIcon={<DislikeSelected />}
+    />
+    <HvToggleButton aria-label="Light" notSelectedIcon={<LightOff />} selectedIcon={<LightOn />} />
+    <HvToggleButton aria-label="Lock" notSelectedIcon={<Unlock />} selectedIcon={<Lock />} />
+  </>
 );
 
-export const Controlled = () => {
-  const [select, setSelect] = useState(true);
-
-  const toggleState = () => setSelect(!select);
-
-  const label = select ? "Open lock" : "Close lock";
-
+export const Disabled = () => {
   return (
-    <>
-      <HvButton style={{ marginBottom: "12px" }} onClick={toggleState}>
-        {label}
-      </HvButton>
+    <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
       <div>
-        <HvToggleButton
-          aria-label="Lock"
-          selected={select}
-          notSelectedIcon={Unlock}
-          selectedIcon={Lock}
-          onClick={toggleState}
-          labels={{
-            notSelectedTitle: "Close lock",
-            selectedTitle: "Open lock",
-          }}
-        />
+        <HvToggleButton disabled aria-label="Light">
+          <LightOff />
+        </HvToggleButton>
       </div>
-    </>
+    </HvTooltip>
   );
 };
-
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a toggle button with state.",
-    },
-  },
-};
-
-export const Disabled = () => (
-  <HvToggleButton
-    aria-label="Light"
-    notSelectedIcon={LightOff}
-    selectedIcon={LightOn}
-    disabled
-    labels={{
-      notSelectedTitle: "Turn on light",
-      selectedTitle: "Turn off light",
-    }}
-  />
-);
 
 Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a disabled toggle button.",
+      storyDescription:
+        "A sample showcasing a disabled toggle button combined with a tooltip. There is a known limitation with the Button Forward ref, but adding a div around the Tooltip fixes it temporarily.",
     },
   },
 };
 
-export const Animated = () => (
-  <HvToggleButton
-    notSelectedIcon={Eye}
-    animated
-    aria-label="Eye"
-    labels={{
-      notSelectedTitle: "Don't Show",
-      selectedTitle: "Show",
-    }}
-  />
-);
+export const Tooltip = () => {
+  const [selected, setSelected] = useState(false);
+
+  const tooltip = <HvTypography>{selected ? "Turn off" : "Turn on"}</HvTypography>;
+
+  return (
+    <HvTooltip title={tooltip}>
+      <div>
+        <HvToggleButton aria-label="Light" onClick={() => setSelected(!selected)}>
+          {selected ? <LightOn /> : <LightOff />}
+        </HvToggleButton>
+      </div>
+    </HvTooltip>
+  );
+};
+
+Tooltip.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "A sample showcasing a tooltip changing its content combined with the toggle button. The same Tooltip Forward Ref combination with Button known limitation as the previous sample is applied here.",
+    },
+  },
+};
+
+export const Animated = () => {
+  const [select, setSelect] = useState(true);
+
+  const toggleState = () => setSelect(!select);
+
+  return (
+    <HvToggleButton selected={select} onClick={toggleState} aria-label="Eye">
+      <Eye className={select ? "selected" : "notSelected"} />
+    </HvToggleButton>
+  );
+};
 
 Animated.story = {
   parameters: {

@@ -1,6 +1,14 @@
 import { StandardProps } from "@material-ui/core";
 import { HvFormStatus } from "../FormElement";
 
+export type HvAdornmentClassKey =
+  | "root"
+  | "icon"
+  | "adornment"
+  | "adornmentIcon"
+  | "adornmentButton"
+  | "hideIcon"
+
 export interface HvAdornmentProps
 extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvAdornmentClassKey> {
   /**
@@ -16,13 +24,5 @@ extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvAdornmentClassKey>
    */
   isVisible?: boolean;
 }
-
-export type HvAdornmentClassKey =
-  | "root"
-  | "icon"
-  | "adornment"
-  | "adornmentIcon"
-  | "adornmentButton"
-  | "hideIcon"
 
 export default function HvAdornment(props: HvAdornmentProps): JSX.Element | null;

@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart, Fail, Ghost } from "@hv/uikit-react-icons/dist";
+import { BarChart, Fail, Info, Ghost } from "@hv/uikit-react-icons/dist";
 import { HvEmptyState, HvLink, HvTypography } from "../..";
 
 export default {
@@ -7,6 +7,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvEmptyState } from '@hv/uikit-react-core/dist'",
+
+    dsVersion: "3.2.1",
   },
   component: HvEmptyState,
 };
@@ -16,7 +18,7 @@ export const Main = () => {
     <HvEmptyState
       title="No data routes"
       message="After you start adding Data Routes, they will appear in here."
-      icon={<Fail iconSize="L" color="atmo7" />}
+      icon={<Info />}
     />
   );
 };
@@ -27,7 +29,7 @@ export const WithAction = () => (
     title="Start building data routes"
     message="Before we create any dashboard we need to get some data."
     action={<HvLink route="/">Create a new data route</HvLink>}
-    icon={<BarChart iconSize="L" color="atmo7" role="presentation" />}
+    icon={<BarChart role="presentation" />}
   />
 );
 
@@ -54,7 +56,7 @@ export const CustomMessages = () => {
       title="This page can't be displayed"
       message={CustomMessage}
       action={CustomAction}
-      icon={<Ghost iconSize="L" color="atmo7" role="presentation" />}
+      icon={<Ghost role="presentation" />}
     />
   );
 };

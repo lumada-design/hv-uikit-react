@@ -1,66 +1,50 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${components}selectors-switch--main    AND
-...           Wait Until Element Is Enabled    ${switch}
-
-
-*** Variables ***
-${switch}        css:[role=checkbox]
-${leftLabel}     css:[class*=leftLabel]
-${rightLabel}    css:[class*=rightLabel]
+Resource      _toggleSwitch.resource
 
 
 *** Test Cases ***
-switch to off,on,off when checkbox is clicked 3 times
-    Checkbox Should Be Selected        ${switch} input
-    Click Element                      ${switch}
-    Checkbox Should not Be Selected    ${switch} input
-    Click Element                      ${switch}
-    Checkbox Should Be Selected        ${switch} input
-    Click Element                      ${switch}
-    Checkbox Should not Be Selected    ${switch} input
+state transition
+    [Documentation]   change state when element is clicked
+    [Setup]    open toggle switch sample    main
+    Checkbox Should not Be Selected    ${switch}(1) input
+    Click Element                      ${switch}(1)
+    Checkbox Should Be Selected        ${switch}(1) input
+    Click Element                      ${switch}(1)
+    Checkbox Should not Be Selected    ${switch}(1) input
 
-switch to different state when any label is clicked
-    Checkbox Should Be Selected        ${switch} input
-    Click Element                      ${leftLabel}
-    Checkbox Should not Be Selected    ${switch} input
-    Click Element                      ${leftLabel}
-    Checkbox Should Be Selected        ${switch} input
-    Click Element                      ${rightLabel}
-    Checkbox Should not Be Selected    ${switch} input
-    Click Element                      ${rightLabel}
-    Checkbox Should Be Selected        ${switch} input
+disabled toggle switch
+    [Setup]    open toggle switch sample    disabled
+    Checkbox Should not Be Selected    ${switch}(1) input
+    Click Element                      ${switch}(1)
+    Checkbox Should not Be Selected    ${switch}(1) input
 
-does not switch when disabled element is clicked
-    [Setup]    Go To                    ${components}selectors-switch--disabled
-    Wait Until Page Contains Element    ${switch}
-    Checkbox Should Be Selected         ${switch} input
-    Run Keyword And Ignore Error        Click Element      ${switch}
-    Checkbox Should Be Selected         ${switch} input
+read only toggle switch
+    [Setup]    open toggle switch sample    read-only
+    Checkbox Should not Be Selected    ${switch}(1) input
+    Click Element                      ${switch}(1)
+    Checkbox Should not Be Selected    ${switch}(1) input
+    Checkbox Should Be Selected        ${switch}(2) input
+    Click Element                      ${switch}(2)
+    Checkbox Should Be Selected        ${switch}(2) input
 
-does not switch when is clicked any label of disabled element
-    [Setup]    Go To                    ${components}selectors-switch--disabled
-    Wait Until Page Contains Element    ${switch}
-    Checkbox Should Be Selected         ${switch} input
-    Run Keyword And Ignore Error        Click Element      ${rightLabel}
-    Checkbox Should Be Selected         ${switch} input
-    Run Keyword And Ignore Error        Click Element      ${leftLabel}
-    Checkbox Should Be Selected         ${switch} input
+required toggle switch
+    [Setup]    open toggle switch sample    required
+    Element Should Not Be Visible      ${warningText}
+    Checkbox Should Be Selected        ${switch}(1) input
+    Click Element                      ${switch}(1)
+    Checkbox Should not Be Selected    ${switch}(1) input
+    Wait Until Element Is Visible      ${warningText}
+    Click Element                      ${switch}(1)
+    Checkbox Should Be Selected        ${switch}(1) input
+    Wait Until Element Is Not Visible  ${warningText}
 
-switch to Off when checkbox is focused and is pressed SPACE
-    [Tags]    keyboard
-    Checkbox Should Be Selected        ${switch} input
-    set focus and press keys           ${switch}          SPACE
-    Checkbox Should not Be Selected    ${switch} input
-    Press keys                         NONE               SPACE
-    Checkbox Should Be Selected        ${switch} input
-
-switch state when is controlled by other component
-    [Setup]    Go To                    ${components}selectors-switch--controlled
-    Wait Until Page Contains Element    ${switch}
-    Checkbox Should not Be Selected     ${switch} input
-    Click Button                        Toggle
-    Checkbox Should Be Selected         ${switch} input
-    Click Button                        Toggle
-    Checkbox Should not Be Selected     ${switch} input
+controlled toggle switch
+    [Setup]    open toggle switch sample    controlled
+    Page Should Contain                The switch is Off
+    Checkbox Should not Be Selected    ${switches} input
+    Click Button                       Toggle
+    Wait Until Page Contains           The switch is On
+    Checkbox Should Be Selected        ${switches} input
+    Click Element                      ${switches}
+    Wait Until Page Contains           The switch is Off
+    Checkbox Should not Be Selected    ${switches} input

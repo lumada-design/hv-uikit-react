@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 
-const styles = (theme) => ({
+const styles = {
   box: {
     width: 32,
     height: 32,
@@ -11,12 +11,8 @@ const styles = (theme) => ({
     "&>svg": {
       margin: "auto",
     },
-    "&:hover": {
-      cursor: "pointer",
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-    },
   },
-});
+};
 
 const Eye = (props) => {
   const { classes, className = "notSelected", theme, ...other } = props;
@@ -25,7 +21,6 @@ const Eye = (props) => {
   return (
     <div className={classes.box}>
       <svg
-        id="previewOff"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         height={16}
@@ -36,11 +31,11 @@ const Eye = (props) => {
         <defs>
           <style
             dangerouslySetInnerHTML={{
-              __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.hv.palette.accent.acce1}; } .selected > rect{ fill: none; animation: dash_out .2s ease-in-out; } .notSelected > rect{ fill: ${theme.hv.palette.accent.acce1}; animation: dash_in .2s ease-in-out; } @keyframes dash_in { from { width: 0; } to { width: 19.8; } } @keyframes dash_out { from { width: 19.8; fill: ${theme.hv.palette.accent.acce1}; } to { width: 0; fill: ${theme.hv.palette.accent.acce1}; } }`,
+              __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.hv.palette.accent.acce1}; } .dash { fill: ${theme.hv.palette.accent.acce1}; transition: width .2s ease-in-out; } .selected .dash { width: 19.8px; } .notSelected .dash { width: 0px; }`,
             }}
           />
         </defs>
-        <g id="eye">
+        <g>
           <path
             id="fc623adc-be5e-469d-9072-f0580ca88767"
             className="cls-1"
@@ -63,11 +58,10 @@ const Eye = (props) => {
           </g>
         </g>
         <rect
-          id="dash"
+          className="dash"
           x="-1.9"
           y="7.5"
-          width="19.8"
-          height={1}
+          height="1"
           transform="translate(-3.31 7.36) rotate(-45)"
         />
       </svg>

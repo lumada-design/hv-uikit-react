@@ -4,8 +4,8 @@ import clsx from "clsx";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
-import HvCheckbox from "../../../Selectors/CheckBox";
-import Actions from "../../../Actions";
+import HvCheckbox from "../../../CheckBox";
+import ActionsGeneric from "../../../ActionsGeneric";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
@@ -38,7 +38,7 @@ const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semanti
 const actionsCell = (classes, id, viewConfiguration) => {
   return (
     <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
-      <Actions
+      <ActionsGeneric
         id={id}
         actions={setActionsId(viewConfiguration.actions, id)}
         actionsCallback={viewConfiguration.actionsCallback}
@@ -201,12 +201,13 @@ ListViewRow.propTypes = {
    */
   onSelection: PropTypes.func,
   /**
-   * ´true´ if the row should have a checkbox in the the left part to be selectable ´false´ if it is not required.
+   * `true` if the row should have a checkbox in the the left part to be selectable `false` if it is not required.
    */
   isSelectable: PropTypes.bool,
   /**
-   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
-   * note: if this value is specified the state of the checkbox must be managed
+   * Whether the checkbox is selected or not.
+   *
+   * Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
    */
   checked: PropTypes.bool,
   /**
@@ -242,7 +243,6 @@ ListViewRow.propTypes = {
     "atmo3",
     "atmo4",
     "atmo5",
-    "atmo6",
   ]),
 };
 

@@ -16,13 +16,13 @@
 
 #### npm registry
 
-Our packages are being published to an Hitachi Vantara npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
+Our packages are being published to an Hitachi Vantara npm registry. If you want to use this project please make sure you have `.npmrc` config file with one of the following lines:
 
 ```
-@hv:registry=https://nexus.pentaho.org/repository/group-npm/
+@hv:registry=https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
 ```
 
-Please check that your npmrc has this by running `npm config ls -l`; otherwise you can add it to the config by running `npm config edit`, or the installation step below will not work.
+Please check that your `.npmrc` has this by running `npm config ls -l`; otherwise you can add it to the config by running `npm config edit`, or the installation step below will not work.
 
 ### Installation
 
@@ -66,14 +66,9 @@ It will startup the UI Development Environment [Storybook](https://storybook.js.
 npm run doc
 ```
 
-#### documentation
-
-Interested in running our documentation just to explore what we have, but don't want to bootstrap the project?
-Please download our latest [documentation package](https://nexus.pentaho.org/#browse/search/npm=name.raw%3Duikit-react-doc) and open its index.html file.
-
 ## Changelog
 
-Recently Updated? Please read the packages changelog: [core](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/core/CHANGELOG.md), [lab](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/lab/CHANGELOG.md), [icons](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/icons/CHANGELOG.md), [doc](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/doc/CHANGELOG.md).
+Recently Updated? Please read the packages changelog: [core](https://github.com/pentaho/hv-uikit-react/blob/master/packages/core/CHANGELOG.md), [lab](https://github.com/pentaho/hv-uikit-react/blob/master/packages/lab/CHANGELOG.md), [icons](https://github.com/pentaho/hv-uikit-react/blob/master/packages/icons/CHANGELOG.md), [themes](https://github.com/pentaho/hv-uikit-react/blob/master/packages/themes/CHANGELOG.md).
 
 ## Contributing
 
@@ -82,11 +77,11 @@ You need to ask to be added as a project member, to be able to contribute:
 - **#ui-kit** slack channel on the [hitachivantara-eng](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) workspace.
 - **#ui-kit** slack channel on the [hitachi-design](https://hitachi-design.slack.com/messages/CGC1E37J9/) workspace.
 
-Please check out our [Contribution Guidelines](https://github.com/pentaho/hv-uikit-react/blob/alpha/CONTRIBUTING.md) for detailed information.
+Please check out our [Contribution Guidelines](https://github.com/pentaho/hv-uikit-react/blob/master/CONTRIBUTING.md) for detailed information.
 
 ## License
 
-This project is licensed under the terms of the [Apache 2.0 license](https://github.com/pentaho/hv-uikit-react/blob/alpha/LICENSE.md).
+This project is licensed under the terms of the [Apache 2.0 license](https://github.com/pentaho/hv-uikit-react/blob/master/LICENSE.md).
 
 ## Team
 

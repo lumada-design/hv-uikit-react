@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import _ from "lodash";
+import filter from "lodash/filter";
 import HvBadge from "@hv/uikit-react-core/dist/Badge";
 
 const EnterKeyCode = 13;
@@ -23,7 +23,7 @@ export default class Panel extends Component {
       footer,
       children,
     } = this.props;
-    const newNotificationCount = _.filter(notifications, (notification) => !notification.isRead)
+    const newNotificationCount = filter(notifications, (notification) => !notification.isRead)
       .length;
 
     return (

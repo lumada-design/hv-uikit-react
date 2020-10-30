@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { Info, Map } from "@hv/uikit-react-icons";
+import { Map } from "@hv/uikit-react-icons";
 import { HvInput, HvProvider } from "../..";
 
 /* eslint-disable no-console */
@@ -75,36 +75,13 @@ describe("Input", () => {
     expect(wrapper.find(HvInput)).toMatchSnapshot();
   });
 
-  it("should show the info icon", () => {
-    wrapper = mount(
-      <HvProvider>
-        <HvInput infoIcon labels={labels} />
-      </HvProvider>
-    );
-    const inputComponent = wrapper.find(Info);
-    expect(inputComponent.length).toBe(1);
-  });
-
   it("should show the custom map icon", () => {
     wrapper = mount(
       <HvProvider>
-        <HvInput labels={labels} customFixedIcon={<Map />} />
+        <HvInput labels={labels} endAdornment={<Map />} />
       </HvProvider>
     );
     const inputComponent = wrapper.find(Map);
     expect(inputComponent.length).toBe(1);
-  });
-
-  it("should show the info label and not the info icon", () => {
-    wrapper = mount(
-      <HvProvider>
-        <HvInput labels={labels} />
-      </HvProvider>
-    );
-
-    const iconInfo = wrapper.find(Info);
-    expect(iconInfo.length).toBe(0);
-    const labelParagraph = wrapper.find("p");
-    expect(labelParagraph.length).toBe(2);
   });
 });

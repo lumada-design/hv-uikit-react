@@ -5,18 +5,16 @@ exports[`Button should render correctly 1`] = `
   <HvButton
     classes={
       Object {
+        "focusVisible": "HvButton-focusVisible",
         "ghost": "HvButton-ghost",
         "ghostDisabled": "HvButton-ghostDisabled",
         "ghostSVG": "HvButton-ghostSVG",
-        "ghostSecondary": "HvButton-ghostSecondary",
-        "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
-        "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+        "icon": "HvButton-icon",
         "iconSVG": "HvButton-iconSVG",
         "primary": "HvButton-primary",
         "primaryDisabled": "HvButton-primaryDisabled",
         "primarySVG": "HvButton-primarySVG",
         "root": "HvButton-root",
-        "rootIcon": "HvButton-rootIcon",
         "secondary": "HvButton-secondary",
         "secondaryDisabled": "HvButton-secondaryDisabled",
         "secondarySVG": "HvButton-secondarySVG",
@@ -41,7 +39,7 @@ exports[`Button should render correctly 1`] = `
       }
       color="primary"
       disableRipple={true}
-      onClick={[Function]}
+      focusVisibleClassName="HvButton-focusVisible"
       variant="contained"
     >
       <ForwardRef(Button)
@@ -81,7 +79,7 @@ exports[`Button should render correctly 1`] = `
         }
         color="primary"
         disableRipple={true}
-        onClick={[Function]}
+        focusVisibleClassName="HvButton-focusVisible"
         variant="contained"
       >
         <WithStyles(ForwardRef(ButtonBase))
@@ -90,8 +88,7 @@ exports[`Button should render correctly 1`] = `
           disableRipple={true}
           disabled={false}
           focusRipple={true}
-          focusVisibleClassName="Mui-focusVisible"
-          onClick={[Function]}
+          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
           type="button"
         >
           <ForwardRef(ButtonBase)
@@ -107,15 +104,13 @@ exports[`Button should render correctly 1`] = `
             disableRipple={true}
             disabled={false}
             focusRipple={true}
-            focusVisibleClassName="Mui-focusVisible"
-            onClick={[Function]}
+            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
             type="button"
           >
             <button
               className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
               disabled={false}
               onBlur={[Function]}
-              onClick={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}

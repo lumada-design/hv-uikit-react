@@ -1,14 +1,25 @@
 import { ButtonProps, StandardProps } from "@material-ui/core";
 
-export type HvButtonCategories =
+export type HvButtonCategories = "primary" | "secondary" | "ghost" | "semantic";
+
+export type HvButtonClassKey =
+  | "root"
+  | "icon"
   | "primary"
+  | "primaryDisabled"
   | "secondary"
+  | "secondaryDisabled"
   | "ghost"
-  | "ghostSecondary"
+  | "ghostDisabled"
   | "semantic"
-  | "icon";
+  | "semanticDisabled"
+  | "startIcon";
 
 export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassKey> {
+  /**
+   * Whether the Button is an icon-only button.
+   */
+  icon?: boolean;
   /**
    * Category of button to use
    */
@@ -19,20 +30,5 @@ export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassK
    */
   overrideIconColors?: boolean;
 }
-
-export type HvButtonClassKey =
-  | "root"
-  | "rootIcon"
-  | "primary"
-  | "primaryDisabled"
-  | "secondary"
-  | "secondaryDisabled"
-  | "ghost"
-  | "ghostDisabled"
-  | "ghostSecondary"
-  | "ghostSecondaryDisabled"
-  | "semantic"
-  | "semanticDisabled"
-  | "startIcon";
 
 export default function HvButton(props: HvButtonProps): JSX.Element | null;

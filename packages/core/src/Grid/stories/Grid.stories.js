@@ -8,6 +8,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvGrid } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvGrid,
 };
@@ -15,19 +17,19 @@ export default {
 export const Main = () => {
   const styles = (theme) => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
-      marginTop: theme.spacing(2),
+      marginTop: theme.hvSpacing(2),
       flex: 1,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       height: 150,
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
       color: theme.hv.palette.base.base2,
       display: "flex",
       alignItems: "center",
@@ -90,7 +92,7 @@ export const Main = () => {
 
 const Box = ({ text, classes }) => (
   <div className={classes.box}>
-    <HvTypography variant="sText">{text}</HvTypography>
+    <HvTypography>{text}</HvTypography>
   </div>
 );
 
@@ -119,7 +121,7 @@ export const The12Columns = () => {
 
   const styledContainer = {
     border: "1px solid",
-    borderColor: theme.hv.palette.atmosphere.atmo5,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
     marginTop: theme.hv.spacing.xs,
   };
@@ -148,7 +150,7 @@ export const Behaviour = () => {
 
   const styledContainer = {
     border: "1px solid",
-    borderColor: theme.hv.palette.atmosphere.atmo5,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
     marginTop: theme.hv.spacing.xs,
   };

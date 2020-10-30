@@ -1,8 +1,19 @@
-import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvFormElementProps } from "..";
+
+export type HvDatePickerClassKey =
+  | "root"
+  | "labelContainer"
+  | "label"
+  | "description"
+  | "error"
+  | "dropdown"
+  | "panel"
+  | "action"
+  | "icon";
 
 export interface HvDatePickerProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvDatePickerClassKey, "onChange"> {
+  extends StandardProps<HvFormElementProps, HvDatePickerClassKey, "onChange"> {
   /**
    * An Object containing the various text associated with the input.
    */
@@ -15,23 +26,13 @@ export interface HvDatePickerProps
      * Cancel button label.
      */
     cancelLabel?: string;
-    /**
-     * Text above the input/dropdown.
-     */
-    title?: string;
-    /**
-     * Start date label.
-     */
-    rangeStart?: string;
-    /**
-     * End date label.
-     */
-    rangeEnd?: string;
-    /**
-     * Text inside the input/dropdown
-     */
-    placeholder?: string;
   };
+
+  /**
+   * The placeholder value when nothing is selected.
+   */
+  placeholder?: string;
+
   /**
    * The initial value of the input when in single calendar mode.
    */
@@ -73,35 +74,10 @@ export interface HvDatePickerProps
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
   escapeWithReference?: boolean;
+  /**
+   * An element placed before the Calendar
+   */
+  startAdornment: React.ReactNode;
 }
-
-export type HvDatePickerClassKey =
-  | "inputCalendarClosed"
-  | "inputCalendarOpen"
-  | "noBorderTop"
-  | "noBorderBottom"
-  | "input"
-  | "icon"
-  | "iconClear"
-  | "datePickerContainer"
-  | "label"
-  | "calendarContainer"
-  | "singleCalendarFooter"
-  | "rangeMainContainer"
-  | "rangeCalendarsContainer"
-  | "rangeLeftCalendarContainer"
-  | "rangeRightCalendarContainer"
-  | "rangeFooterLeft"
-  | "rangeFooterRight"
-  | "actionsContainer"
-  | "borderTopNone"
-  | "borderBottomNone"
-  | "borderTopDisplay"
-  | "borderBottomDisplay"
-  | "popperRoot"
-  | "listBorderDown"
-  | "listBorderUp"
-  | "calendarOpenDown"
-  | "calendarOpenUp";
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

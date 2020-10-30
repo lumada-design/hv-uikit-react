@@ -1,10 +1,7 @@
 *** Setting ***
-Resource          ../table.resource
-Test Setup        Run Keywords
-...               Go To    ${visualizations}table--server-side-pagination
-...               AND    Wait Until Element Is Visible    ${table}
+Resource          ../_table.resource
+Test Setup        open table sample    ${visualizations}    server-side-pagination
 Test Template     Run Keyword
-
 
 *** Test Cases ***
 enable actions when any row is selected
@@ -26,9 +23,9 @@ show previous page when it is deleted all rows of last page
     Click Button                        ${pagination_last_page}
     Wait Until Page Contains Element    ${rows_populated}    timeout=5s    limit=3
     select Checkbox                     ${bulkAction_checkbox}
-    Wait Until Page Contains            3 of 553 items
+    Wait Until Page Contains            3 / 553
     Click Button                        Delete
     Wait Until Page Contains Element    ${rows_populated}    timeout=5s    limit=10
     select Checkbox                     ${bulkAction_checkbox}
-    Wait Until Page Contains            10 of 550 items
+    Wait Until Page Contains            10 / 550
     Textfield Value Should Be           ${pagination_input}    55

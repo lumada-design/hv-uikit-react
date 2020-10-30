@@ -26,7 +26,7 @@ export default function sortProps(extractedProps, order = []) {
 
     return nameA.localeCompare(nameB, undefined, {
       numeric: true,
-      sensitivity: "accent"
+      sensitivity: "accent",
     });
   });
 }

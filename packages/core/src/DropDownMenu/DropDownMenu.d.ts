@@ -2,6 +2,8 @@ import * as React from "react";
 import { IconButtonProps, StandardProps } from "@material-ui/core";
 import { ListValueProp } from "../List";
 
+export type HvDropDownMenuClassKey = "icon" | "iconSelected";
+
 export interface HvDropDownMenuProps
   extends StandardProps<IconButtonProps, HvDropDownMenuClassKey, "onClick"> {
   /**
@@ -14,7 +16,7 @@ export interface HvDropDownMenuProps
    * - label: The label of the element to be rendered.
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
-   * - iconCallback: The icon node to be rendered on the left.
+   * - icon: The icon node to be rendered on the left.
    * - showNavIcon: If true renders the navigation icon on the right.
    */
   dataList: ListValueProp[];
@@ -47,17 +49,5 @@ export interface HvDropDownMenuProps
    */
   expanded?: boolean;
 }
-
-export type HvDropDownMenuClassKey =
-  | "root"
-  | "popper"
-  | "icon"
-  | "iconSelected"
-  | "menuList"
-  | "inputExtensionOpen"
-  | "inputExtensionOpenShadow"
-  | "inputExtensionFloatRight"
-  | "inputExtensionFloatLeft"
-  | "inputExtensionLeftPosition";
 
 export default function HvDropDownMenu(props: HvDropDownMenuProps): JSX.Element | null;

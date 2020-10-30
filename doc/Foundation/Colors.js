@@ -5,38 +5,38 @@ import capitalize from "lodash/capitalize";
 import { withStyles } from "@material-ui/core";
 import { HvTypography } from "@hv/uikit-react-core/dist";
 
-const styles = theme => ({
+const styles = (theme) => ({
   colorGroup: {
     paddingBottom: theme.hv.spacing.xl,
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
   },
   title: {
-    paddingBottom: theme.hv.spacing.md
+    paddingBottom: theme.hv.spacing.md,
   },
   groupName: {
     marginTop: theme.hv.spacing.md,
-    marginBottom: theme.hv.spacing.sm
+    marginBottom: theme.hv.spacing.sm,
   },
   colors: {
     display: "flex",
     flexWrap: "wrap",
     alignItems: "flex-start",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   colorContainer: {
     marginRight: theme.hv.spacing.sm,
-    marginBottom: theme.hv.spacing.md
+    marginBottom: theme.hv.spacing.md,
   },
   colorSquare: {
     width: 130,
     height: 130,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-    marginBottom: theme.hv.spacing.xs
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    marginBottom: theme.hv.spacing.xs,
   },
   colorName: {
     display: "flex",
-    alignItems: "baseline"
-  }
+    alignItems: "baseline",
+  },
 });
 
 const Group = ({ classes, name, colors }) => {
@@ -52,9 +52,9 @@ const Group = ({ classes, name, colors }) => {
           <div key={idx} className={classes.colorContainer}>
             <div className={classes.colorSquare} style={{ backgroundColor: colors[color] }} />
             <span className={classes.colorName}>
-              <HvTypography variant="labelText">{color}</HvTypography>
+              <HvTypography variant="highlightText">{color}</HvTypography>
               &nbsp;
-              <HvTypography variant="infoText">({colors[color]})</HvTypography>
+              <HvTypography variant="normalText"> {colors[color]}</HvTypography>
             </span>
           </div>
         ))}

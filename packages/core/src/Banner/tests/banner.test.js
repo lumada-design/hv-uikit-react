@@ -6,7 +6,7 @@ import { HvButton, HvBanner, HvProvider } from "../..";
 
 import Banner from "..";
 import HvBannerContentWrapper from "../BannerWrapper";
-import iconVariants from "../../utils/iconVariants";
+import iconVariant from "../../utils/iconVariant";
 
 describe("Banner ", () => {
   const wrapper = mount(
@@ -84,6 +84,11 @@ describe("Banner ", () => {
   });
 
   it("should render a action on the message", () => {
+    const myButton = (
+      <div id="buttonWrapper">
+        <HvButton id="myActionButton">button</HvButton>
+      </div>
+    );
     const buttonComponent = mount(
       <HvProvider>
         <HvBanner
@@ -91,12 +96,12 @@ describe("Banner ", () => {
           label="label"
           variant="default"
           open
-          actions={<HvButton>button</HvButton>}
+          actions={myButton}
           actionsPosition="inline"
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(HvButton);
+    ).find("#buttonWrapper");
     expect(buttonComponent.length).toBe(1);
   });
 
@@ -118,11 +123,16 @@ describe("Banner ", () => {
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(HvButton);
+    );
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should render a action on the action container", () => {
+    const myButton = (
+      <div id="buttonWrapper">
+        <HvButton id="myActionButton">button</HvButton>
+      </div>
+    );
     const buttonComponent = mount(
       <HvProvider>
         <HvBanner
@@ -130,13 +140,13 @@ describe("Banner ", () => {
           variant="default"
           open
           label="label"
-          actions={<HvButton>button</HvButton>}
+          actions={myButton}
           actionsPosition="bottom-right"
           onClose={() => {}}
         />
       </HvProvider>
     ).find(HvButton);
-    expect(buttonComponent.length).toBe(1);
+    expect(buttonComponent.find("button").find("#myActionButton").length).toBe(1);
   });
 
   it("should render a action by passing a structure on the action container", () => {
@@ -158,7 +168,7 @@ describe("Banner ", () => {
         />
       </HvProvider>
     ).find(HvButton);
-    expect(buttonComponent.length).toBe(1);
+    expect(buttonComponent.find("button").find("#testButton").length).toBe(1);
   });
 
   it("should render with the correct offset", () => {
@@ -181,8 +191,9 @@ describe("Banner ", () => {
   });
 
   it("should return the severity variant", () => {
-    const error = mount(iconVariants("error")).find("Fail");
+    const error = mount(iconVariant("error")).find(Fail);
     expect(error.length).toBe(1);
-    expect(iconVariants("test")).toBe(null);
+    const invalid = iconVariant("test");
+    expect(invalid).toBe(null);
   });
 });

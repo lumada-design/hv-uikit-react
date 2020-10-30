@@ -36,7 +36,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
             "label": "SCPodF",
           },
         ],
-        "icon": <ForwardRef(WithStyles) />,
+        "icon": <Play />,
         "id": "01",
         "label": "System",
       },
@@ -86,7 +86,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
               "label": "SCPodF",
             },
           ],
-          "icon": <ForwardRef(WithStyles) />,
+          "icon": <Play />,
           "id": "01",
           "label": "System",
         },
@@ -111,8 +111,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
             Object {
               "collapsed": "HvVerticalNavigationTreeView-collapsed",
               "content": "HvVerticalNavigationTreeView-content",
-              "contentFocusDisabled": "HvVerticalNavigationTreeView-contentFocusDisabled",
-              "contentFocused": "HvVerticalNavigationTreeView-contentFocused",
               "disabled": "HvVerticalNavigationTreeView-disabled",
               "expanded": "HvVerticalNavigationTreeView-expanded",
               "group": "HvVerticalNavigationTreeView-group",
@@ -134,7 +132,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
             className="HvVerticalNavigationTreeView-root"
           >
             <WithStyles(TreeViewItem)
-              icon={<ForwardRef(WithStyles) />}
+              icon={<Play />}
               key="01"
               label="System"
               nodeId="01"
@@ -171,7 +169,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                       "label": "SCPodF",
                     },
                   ],
-                  "icon": <ForwardRef(WithStyles) />,
+                  "icon": <Play />,
                   "id": "01",
                   "label": "System",
                 }
@@ -182,8 +180,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                   Object {
                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
                     "content": "HvVerticalNavigationTreeViewItem-content",
-                    "contentFocusDisabled": "HvVerticalNavigationTreeViewItem-contentFocusDisabled",
-                    "contentFocused": "HvVerticalNavigationTreeViewItem-contentFocused",
                     "disabled": "HvVerticalNavigationTreeViewItem-disabled",
                     "expanded": "HvVerticalNavigationTreeViewItem-expanded",
                     "group": "HvVerticalNavigationTreeViewItem-group",
@@ -197,7 +193,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                   }
                 }
-                icon={<ForwardRef(WithStyles) />}
+                icon={<Play />}
                 label="System"
                 nodeId="01"
                 payload={
@@ -233,7 +229,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         "label": "SCPodF",
                       },
                     ],
-                    "icon": <ForwardRef(WithStyles) />,
+                    "icon": <Play />,
                     "id": "01",
                     "label": "System",
                   }
@@ -244,24 +240,24 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                   data-hasicon={true}
                 >
                   <WithStyles(ForwardRef)
-                    className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                    className="HvVerticalNavigationTreeViewItem-content"
                     component="div"
                     innerRef={
                       Object {
                         "current": <div
-                          class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
+                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                           role="button"
                           tabindex="0"
                         >
                           <div
-                            class="HvIconPlay-root HvIconPlay-rootS"
-                            style="width: 32px; height: 32px;"
+                            class="HvIconBase-root HvIconBase-s"
+                            name="Play"
                           >
                             <svg
                               focusable="false"
-                              height="16px"
+                              height="16"
                               viewBox="0 0 16 16"
-                              width="16px"
+                              width="16"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -275,100 +271,66 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         </div>,
                       }
                     }
-                    onBlur={[Function]}
                     onClick={[Function]}
-                    onFocus={[Function]}
                     onKeyDown={[Function]}
                     role="button"
                     tabIndex={0}
-                    variant="normalText"
                   >
                     <ForwardRef
-                      className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
+                      className="HvVerticalNavigationTreeViewItem-content"
                       classes={
                         Object {
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
+                          "noWrap": "HvTypography-noWrap",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
+                          "sectionTitle": "HvTypography-sectionTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
                         }
                       }
                       component="div"
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <div
-                        className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
-                        onBlur={[Function]}
+                        className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
                       >
-                        <WithStyles(Play)
-                          boxStyles={
-                            Object {
-                              "height": "32px",
-                              "width": "32px",
-                            }
-                          }
-                        >
-                          <Play
-                            boxStyles={
-                              Object {
-                                "height": "32px",
-                                "width": "32px",
-                              }
-                            }
-                            classes={
-                              Object {
-                                "root": "HvIconPlay-root",
-                                "rootL": "HvIconPlay-rootL",
-                                "rootM": "HvIconPlay-rootM",
-                                "rootS": "HvIconPlay-rootS",
-                                "rootXs": "HvIconPlay-rootXs",
-                              }
-                            }
+                        <Play>
+                          <HvIconBase
+                            iconSize="S"
+                            name="Play"
                           >
                             <div
-                              className="HvIconPlay-root HvIconPlay-rootS"
-                              style={
-                                Object {
-                                  "height": "32px",
-                                  "width": "32px",
-                                }
-                              }
+                              className="HvIconBase-root HvIconBase-s"
+                              name="Play"
                             >
                               <svg
                                 focusable={false}
-                                height="16px"
+                                height={16}
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -378,8 +340,8 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                 />
                               </svg>
                             </div>
-                          </Play>
-                        </WithStyles(Play)>
+                          </HvIconBase>
+                        </Play>
                         System
                       </div>
                     </ForwardRef>

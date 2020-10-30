@@ -8,20 +8,22 @@ const MultiTooltip = ({ classes, data }) => (
   <div className={classes.root}>
     <div className={classes.title}>
       <div>
-        <Typography variant="labelText">{data.title}</Typography>
+        <Typography variant="highlightText">{data.title}</Typography>
       </div>
     </div>
     <div className={classes.valuesContainer}>
       {data?.elements?.map((element) => (
         <div key={element.name} className={classes.values}>
-          <div className={classes.color} style={{ backgroundColor: element.color }} />
-          <div className={classes.separatorColor} />
-          <div>
-            <Typography variant="labelText">{element.name}</Typography>
+          <div className={classes.valueNameWrapper}>
+            <div className={classes.color} style={{ backgroundColor: element.color }} />
+            <div className={classes.separatorColor} />
+            <div>
+              <Typography variant="highlightText">{element.name}</Typography>
+            </div>
+            <div className={classes.separator} />
           </div>
-          <div className={classes.separator} />
           <div>
-            <Typography variant="sText">{element.value}</Typography>
+            <Typography>{element.value}</Typography>
           </div>
         </div>
       ))}
@@ -46,6 +48,10 @@ MultiTooltip.propTypes = {
      * Styles applied to the values container.
      */
     valuesContainer: PropTypes.string,
+    /**
+     * Styling applied to the elements describing a data.
+     */
+    valueNameWrapper: PropTypes.string,
     /**
      * Styles applied to the values.
      */

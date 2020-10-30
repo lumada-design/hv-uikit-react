@@ -21,7 +21,6 @@ const Focus = (props) => {
     focusOnClick = false,
     focusDisabled = true,
     strategy = "listbox",
-    useArrows = true,
     useFalseFocus = false,
     filterClass,
     navigationJump = 4,
@@ -138,6 +137,8 @@ const Focus = (props) => {
     setTabIndex(evt.currentTarget, 0);
     // remove focus outline unless explicitly enabled
     if (!focusOnClick) {
+      // TODO this piece of code works only because onMouseDown is happening after the focus event
+      // There is nothing in here that guarantees the order of these events, so it may present a problem in the future
       removeFocusClass(evt);
       setShowFocus(false);
     }
@@ -162,62 +163,83 @@ const Focus = (props) => {
     const { ArrowUp, ArrowDown, Home, End, ArrowLeft, ArrowRight, Enter, SpaceBar } = KeyboardCodes;
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
-    if (isOneOfKeys(evt, [ArrowUp, ArrowDown, Home, End])) {
+    if (
+      !isOneOfKeys(evt, [ArrowUp, ArrowDown, ArrowLeft, ArrowRight, Home, End, SpaceBar, Enter]) ||
+      (childFocusIsInput && isKey(evt, Enter))
+    ) {
+      // nothing to do
+      return;
+    }
+
+    // we'll do something with the key so prevent default and stop propagation
+    // except for Enter and SpaceBar
+    if (!isOneOfKeys(evt, [Enter, SpaceBar])) {
       evt.preventDefault();
       evt.stopPropagation();
     }
 
-    if (isOneOfKeys(evt, [Enter, SpaceBar]) || !useArrows) {
-      // trigger click on enter unless child focus is input
-      if ((!childFocusIsInput && isKey(evt, Enter)) || isKey(evt, SpaceBar))
-        if (isBrowser("firefox")) evt.target.click();
-        else evt.currentTarget.click();
-      return;
-    }
-
     const blockedKeys = getEnabledKeys(currentFocusIndex, jump, focusesList.length);
 
-    switch (true) {
-      case ArrowUp === evt.keyCode && !blockedKeys.up:
-        focusAndUpdateIndex(focuses.jump || focuses.last, evt.current, focusesList);
+    switch (evt.keyCode) {
+      case SpaceBar:
+      case Enter:
+        if (isBrowser("firefox")) {
+          evt.target.click();
+        } else {
+          evt.currentTarget.click();
+        }
         break;
-      case ArrowDown === evt.keyCode && !blockedKeys.down:
-        focusAndUpdateIndex(focuses.fall || focuses.first, evt.current, focusesList);
+      case ArrowUp:
+        if (!blockedKeys.up) {
+          focusAndUpdateIndex(focuses.jump || focuses.last, evt.current, focusesList);
+        }
         break;
-      case ArrowLeft === evt.keyCode && !blockedKeys.left:
-        focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
+      case ArrowDown:
+        if (!blockedKeys.down) {
+          focusAndUpdateIndex(focuses.fall || focuses.first, evt.current, focusesList);
+        }
         break;
-      case ArrowRight === evt.keyCode && !blockedKeys.right:
-        focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
+      case ArrowLeft:
+        if (!blockedKeys.left) {
+          focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
+        }
         break;
-      case Home === evt.keyCode:
+      case ArrowRight:
+        if (!blockedKeys.right) {
+          focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
+        }
+        break;
+      case Home:
         focusAndUpdateIndex(focuses.first, evt.current, focusesList);
         break;
-      case End === evt.keyCode:
+      case End:
         focusAndUpdateIndex(focuses.last, evt.current, focusesList);
         break;
       default:
     }
   };
 
-  const onListHandler = (evt, focuses, focusesList) => {
+  const onVerticalArrangementHandler = (evt, focuses, focusesList) => {
     const { ArrowUp, ArrowDown, Home, End, Enter, SpaceBar } = KeyboardCodes;
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
-    if (isOneOfKeys(evt, [ArrowUp, ArrowDown, Home, End, SpaceBar])) {
-      evt.preventDefault();
-      evt.stopPropagation();
-    }
-
-    if (isOneOfKeys(evt, [Enter, SpaceBar]) || !useArrows) {
-      // trigger click on enter unless child focus is input
-      if ((!childFocusIsInput && isKey(evt, Enter)) || isKey(evt, SpaceBar)) {
-        evt.currentTarget.click();
-      }
+    if (
+      !isOneOfKeys(evt, [ArrowUp, ArrowDown, Home, End, SpaceBar, Enter]) ||
+      (childFocusIsInput && isKey(evt, Enter))
+    ) {
+      // nothing to do
       return;
     }
 
+    // we'll do something with the key so prevent default and stop propagation
+    evt.preventDefault();
+    evt.stopPropagation();
+
     switch (evt.keyCode) {
+      case SpaceBar:
+      case Enter:
+        evt.currentTarget.click();
+        break;
       case ArrowUp:
         focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
         break;
@@ -234,7 +256,31 @@ const Focus = (props) => {
     }
   };
 
+  const onSingleHandler = (evt) => {
+    const { Enter, SpaceBar } = KeyboardCodes;
+    const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
+
+    if (!isOneOfKeys(evt, [SpaceBar, Enter]) || (childFocusIsInput && isKey(evt, Enter))) {
+      // nothing to do
+      return;
+    }
+
+    // we'll do something with the key so prevent default and stop propagation
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    evt.currentTarget.click();
+  };
+
   const onKeyDown = (evt) => {
+    if (rootRef.current == null) {
+      // operating outside of a composite widget
+      // nothing to manage, just style and trigger clicks
+      onSingleHandler(evt);
+      return;
+    }
+
+    // TODO keep the smart default, but allow to explictly override if disabled elements should be focusable
     const isDisabledFocusable = strategy === "menu";
     const focusesList = getFocuses().filter(
       (el) => isDisabledFocusable || !el.classList.contains(classes.disabled)
@@ -255,12 +301,17 @@ const Focus = (props) => {
       onGridKeyDownHandler(evt, focuses, focusesList, currentFocus, navigationJump);
       return;
     }
-    onListHandler(evt, focuses, focusesList);
+
+    // TODO add property for specifing the composite widget orientation
+    // TODO implement handler for horizontal orientation
+    onVerticalArrangementHandler(evt, focuses, focusesList);
   };
 
   const onKeyUp = (evt) => {
     if (isBrowser("firefox")) evt.preventDefault();
   };
+
+  if (disabled) return children;
 
   const focusWrapper = (childrenToWrap) => (
     <div className={classes.externalReference}>
@@ -268,8 +319,6 @@ const Focus = (props) => {
       {showFocus && <div className={classes.falseFocus} />}
     </div>
   );
-
-  if (disabled) return children;
 
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
@@ -366,10 +415,6 @@ Focus.propTypes = {
    * Indicates that the disabled class should be applied.
    */
   disabledClass: PropTypes.bool,
-  /**
-   * Use up/ down keyboard arrows to control focus.
-   */
-  useArrows: PropTypes.bool,
   /**
    * Uses an absolute positioned div as a focus.
    */

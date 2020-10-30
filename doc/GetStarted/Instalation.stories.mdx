@@ -4,23 +4,24 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Install UI Kit React
 
-<br/>
+<br />
 
 ### npm registry
 
 Our packages are being published to an <b>Hitachi Vantara npm registry</b>. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
 
 ```
-@hv:registry=https://nexus.pentaho.org/repository/group-npm/
+@hv:registry=https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
 ```
 
 Please check that your npmrc has this by running `npm config ls -l`; otherwise you can add it to the config by running `npm config edit`, or the installation step below will not work.
 
 ### Installation
 
+- themes - `npm install @hv/uikit-common-themes`
+- icons - `npm install @hv/uikit-react-icons`
 - core - `npm install @hv/uikit-react-core`
 - lab - `npm install @hv/uikit-react-lab`
-- icons - `npm install @hv/uikit-react-icons`
 
 To always have the latest development version of the UIkit, even before a release, you may want to use npm with the `latest` tag.
 

@@ -1,32 +1,98 @@
 import { StandardProps } from "@material-ui/core";
-import { HvInputLabelsProp, HvInputProps } from "../Input";
+import { HvCharCounterProps } from "../Forms/CharCounter";
 
-export interface HvTextAreaLabelsProp extends HvInputLabelsProp {
+import { HvBaseInputProps, HvBaseInputValidationMessagesProps } from "../BaseInput";
+
+import { HvFormStatus } from "../Forms/FormElement";
+
+export type HvTextAreaClassKey =
+  | "root"
+  | "disabled"
+  | "resizable"
+  | "invalid"
+  | "baseInput"
+  | "input"
+  | "inputResizable"
+  | "labelContainer"
+  | "label"
+  | "description"
+  | "characterCounter";
+
+export interface HvTextAreaProps
+  extends StandardProps<HvBaseInputProps, HvTextAreaClassKey, "onChange" | "onBlur"> {
   /**
-   * Text before the current char counter.
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided instead.
    */
-  startCount: string;
+  label?: React.ReactNode;
+  /**
+   * @ignore
+   */
+  "aria-label"?: string;
+  /**
+   * @ignore
+   */
+  "aria-labelledby"?: string;
+  /**
+   * Provide additional descriptive text for the form element.
+   */
+  description?: React.ReactNode;
+
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to the state.
+   */
+  status?: HvFormStatus;
+  /**
+   * The error message to show when `status` is "invalid".
+   */
+  statusMessage?: React.ReactNode;
+
   /**
    * Text between the current char counter and max value.
    */
-  middleCount: string;
-  /**
-   * Text after the max value.
-   */
-  endCount: string;
-}
+  middleCountLabel: string;
 
-export interface HvTextAreaProps extends StandardProps<HvInputProps, HvTextAreaClassKey, "labels"> {
   /**
-   * An Object containing the various text associated with the input.
+   * An Object containing the various texts associated with the input.
    */
-  labels?: HvTextAreaLabelsProp;
+  validationMessages?: HvBaseInputValidationMessagesProps;
+
+  /**
+   * The custom validation function, it receives the value and must return
+   * either `true` for valid or `false` for invalid, default validations would only
+   * occur if this function is null or undefined
+   */
+  validation?: (value: string) => boolean;
+
+  /**
+   * If `true` it should autofocus.
+   */
+  autoFocus?: boolean;
+
+  /**
+   * The maximum allowed length of the characters, if this value is null no check
+   * will be performed.
+   */
+  maxCharQuantity?: number;
+  /**
+   * The minimum allowed length of the characters, if this value is null no check
+   * will be perform.
+   */
+  minCharQuantity?: number;
+
   /**
    * The number of rows of the text area
    */
   rows?: number;
   /**
-   * If ´true´ the component is resizable.
+   * If `true` the component is resizable.
    */
   resizable?: boolean;
   /**
@@ -39,25 +105,14 @@ export interface HvTextAreaProps extends StandardProps<HvInputProps, HvTextAreaC
    */
   blockMax?: boolean;
   /**
+   * If `true` the character counter isn't shown even if maxCharQuantity is set.
+   */
+  hideCounter?: boolean;
+
+  /**
    * Props passed to the char count.
    */
-  countCharProps?: object;
+  countCharProps?: HvCharCounterProps;
 }
-
-export type HvTextAreaClassKey =
-  | "root"
-  | "input"
-  | "resize"
-  | "inputRoot"
-  | "inputRootDisabled"
-  | "inputRootFocused"
-  | "defaultWith"
-  | "characterCounter"
-  | "inline"
-  | "separator"
-  | "maxCharacter"
-  | "currentCounter"
-  | "disabled"
-  | "container";
 
 export default function HvTextArea(props: HvTextAreaProps): JSX.Element | null;

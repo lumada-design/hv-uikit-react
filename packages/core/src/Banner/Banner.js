@@ -7,8 +7,8 @@ import HvBannerContentWrapper from "./BannerWrapper";
 import styles from "./styles";
 
 /**
- * A Banner displays an important, succinct message. The banner provides actions for users to address (or dismiss the banner).
- * It requires an user action to close. Banners should appear at the top of the screen, below a top app bar.
+ * A Banner displays an important and succinct message. It can also provide actions for the user to address, or dismiss.
+ * It requires a user action, for it to be dismissed. Banners should appear at the top of the screen, below a top app bar.
  */
 const HvBanner = (props) => {
   const {
@@ -114,7 +114,7 @@ HvBanner.propTypes = {
   /**
    * Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway.
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /**
    * The message to display.
    */
@@ -150,7 +150,7 @@ HvBanner.propTypes = {
     ),
   ]),
   /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   *  The callback function ran when an action is triggered, receiving `action` as param
    */
   actionsCallback: PropTypes.func,
   /**

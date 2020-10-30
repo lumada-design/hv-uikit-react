@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
-import SearchBox from "../../SearchBox";
+import HvInput from "../../Input";
+import { setId } from "../../utils";
 
 const searchOperationSetup = (metadata = []) => metadata.filter((element) => element.searchable);
 
@@ -35,16 +36,7 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
   return filteredValues;
 };
 
-const Search = ({
-  id = undefined,
-  labels,
-  searchString = undefined,
-  onFilter,
-  onSearch = null,
-  values,
-  metadata,
-  ...others
-}) => {
+const Search = ({ id, labels, searchString, onFilter, onSearch, values, metadata, ...others }) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
   const handler = (event, value) => {
@@ -54,12 +46,14 @@ const Search = ({
   };
 
   return (
-    <SearchBox
-      id={`search_${id}`}
-      labels={labels}
+    <HvInput
+      id={setId(id, "search")}
+      type="search"
+      placeholder={labels.placeholder}
       value={searchString}
       onChange={onSearch || handler}
       role="search"
+      aria-label={labels.inputLabel}
       {...others}
     />
   );
@@ -79,11 +73,13 @@ Search.propTypes = {
     })
   ).isRequired,
   /**
-   * Labels.
+   * The label of the input.
    */
-  labels: PropTypes.shape({
-    sortBy: PropTypes.string,
-  }).isRequired,
+  label: PropTypes.node,
+  /**
+   * The placeholder value of the input.
+   */
+  placeholder: PropTypes.string,
   /**
    * Metadata associated with the values.
    */
@@ -111,6 +107,10 @@ Search.propTypes = {
    * Search string
    */
   searchString: PropTypes.string,
+  /**
+   * Labels passed from the `HvAssetInventory`
+   */
+  labels: PropTypes.instanceOf(Object),
 };
 
 export default Search;

@@ -1,8 +1,9 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${components}input--limited
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource        _input.resource
+Test Setup      open input sample   ${tests}    limited
+Documentation
+...    opened firefox webdriver error https://github.com/mozilla/geckodriver/issues/1742
+...    - as work around was used locator of label that redirects to input
 
 
 *** Test Cases ***
@@ -33,10 +34,9 @@ does not show validation adornment icons when input was clean
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited
-    Input Text                           ${input}    Jo
-    Press Keys                           NONE    TAB
+    Press Keys                           ${input}   Jo    TAB
     wait until element is Visible        ${adornment_accepted}
-    Press Keys                           ${input}    ao
+    Click Element                        ${label}
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited by clicking in label
@@ -84,11 +84,3 @@ show adornment and clean button when mouse hover unfocused filled input
     Mouse Over                       ${input}
     Wait Until Element Is Visible    ${clean_button}
     Wait Until Element Is Visible    ${adornment_accepted}
-
-
-*** Variables ***
-${adornment_accepted}    css:div [class*=IconSuccess]
-${adornment_failed}      css:div [class*=IconFail]
-${clean_button}          css:button [class*=IconClose]
-${input}                 css:#limited-input-input
-${label}                 css:#limited-input-label

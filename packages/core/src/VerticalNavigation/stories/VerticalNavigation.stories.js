@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
-import { LogOut, OpenBook, Operation, Tool, User, Stop, Play } from "@hv/uikit-react-icons/dist";
 import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
 
 export default {
-  title: "Components/Navigation System/Vertical Navigation",
+  title: "Components/Vertical Navigation",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvVerticalNavigation } from '@hv/uikit-react-core/dist'",
     subcomponents: { Navigation, Actions, Action },
+    maturityStatus: "unstable",
+    dsVersion: "3.2.1",
   },
   component: HvVerticalNavigation,
 };
@@ -18,7 +19,6 @@ export const Main = () => {
     {
       id: "01",
       label: "System",
-      icon: <Tool />,
       data: [
         {
           id: "01-01",
@@ -48,7 +48,6 @@ export const Main = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
       data: [
         {
           id: "02-01",
@@ -93,30 +92,6 @@ export const Main = () => {
         }}
         data={navigationData}
       />
-
-      <Actions>
-        <Action
-          label="User"
-          icon={<User />}
-          onClick={(event) => {
-            console.log("Action 1", event);
-          }}
-        />
-        <Action
-          label="Documentation"
-          icon={<OpenBook />}
-          onClick={(event) => {
-            console.log("Action 2", event);
-          }}
-        />
-        <Action
-          label="Logout"
-          icon={<LogOut />}
-          onClick={(event) => {
-            console.log("Action 3", event);
-          }}
-        />
-      </Actions>
     </HvVerticalNavigation>
   );
 };
@@ -126,7 +101,6 @@ export const WithoutActions = () => {
     {
       id: "01",
       label: "System",
-      icon: <Tool />,
       data: [
         {
           id: "01-01",
@@ -156,7 +130,6 @@ export const WithoutActions = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
       data: [
         {
           id: "02-01",
@@ -196,7 +169,6 @@ export const WithoutActions = () => {
         label="Example 1 navigation"
         selected={value}
         onClick={(event, data) => {
-          console.log(data);
           setValue(data.id);
         }}
         data={navigationData}
@@ -210,7 +182,6 @@ export const Collapsable = () => {
     {
       id: "01",
       label: "System",
-      icon: <Tool />,
       data: [
         {
           id: "01-01",
@@ -240,7 +211,6 @@ export const Collapsable = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
       data: [
         {
           id: "02-01",
@@ -285,35 +255,10 @@ export const Collapsable = () => {
           label="Example 2 navigation"
           selected={value}
           onClick={(event, data) => {
-            console.log(data);
             setValue(data.id);
           }}
           data={navigationData}
         />
-
-        <Actions>
-          <Action
-            label="User"
-            icon={<User />}
-            onClick={(event) => {
-              console.log("Action 1", event);
-            }}
-          />
-          <Action
-            label="Documentation"
-            icon={<OpenBook />}
-            onClick={(event) => {
-              console.log("Action 2", event);
-            }}
-          />
-          <Action
-            label="Logout"
-            icon={<LogOut />}
-            onClick={(event) => {
-              console.log("Action 3", event);
-            }}
-          />
-        </Actions>
       </HvVerticalNavigation>
     </div>
   );
@@ -326,7 +271,6 @@ export const CollapseOnExit = () => {
     {
       id: "01",
       label: "System",
-      icon: <Play />,
       data: [
         {
           id: "01-01",
@@ -358,7 +302,6 @@ export const CollapseOnExit = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Stop />,
       data: [
         {
           id: "02-01",
@@ -402,34 +345,10 @@ export const CollapseOnExit = () => {
           label="Example 2 navigation"
           selected={value}
           onClick={(event, data) => {
-            console.log(data);
             setValue(data.id);
           }}
           data={navigationData}
         />
-
-        <Actions>
-          <Action
-            label="Action 1"
-            icon={<Play />}
-            onClick={(event) => {
-              console.log("Action 1", event);
-            }}
-          />
-          <Action
-            label="Action 2"
-            onClick={(event) => {
-              console.log("Action 2", event);
-            }}
-          />
-          <Action
-            label="Action 3"
-            icon={<Stop />}
-            onClick={(event) => {
-              console.log("Action 3", event);
-            }}
-          />
-        </Actions>
       </HvVerticalNavigation>
     </div>
   );

@@ -1,16 +1,14 @@
 *** Setting ***
-Resource      ../table.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--with-checkbox
-...           AND    Wait Until Element Is Visible    ${table}
+Resource      ../_table.resource
+Test Setup    open table sample    ${visualizations}    with-checkbox
 
 
 *** Test Cases ***
 checkboxes are selected when checkbox all is selected
     [Documentation]    unselected - selected
-    Select From List By Value      ${rows_per_page}    20
+    Select Dropdown Value          ${rows_per_page}    20
     Click Element                  ${bulkAction_checkbox}
-    Wait Until Page Contains       13 of 13 items
+    Wait Until Page Contains       13 / 13
     Page Should Contain Element    ${rows_selected}    limit=13
     checkbox Should Be Selected    ${bulkAction_checkbox}
 
@@ -18,7 +16,7 @@ parent checkbox are indeterminate when any checkbox is selected
     [Documentation]    unselected - indeterminate
     Element Attribute Value Should Be    ${bulkAction_checkbox}    data-indeterminate    false
     Select Checkbox                      ${row_1_checkbox}
-    Wait Until Page Contains             1 of 13 items
+    Wait Until Page Contains             1 / 13
     Page Should Contain Element          ${rows_selected}    limit=1
     Element Attribute Value Should Be    ${bulkAction_checkbox}    data-indeterminate    true
 
@@ -27,7 +25,7 @@ checkboxes are selected when select all button is clicked
     Select Checkbox                ${row_1_checkbox}
     Wait Until Page Contains       Select all
     Click Button                   Select all 13 items across all pages
-    Wait Until Page Contains       13 of 13 items
+    Wait Until Page Contains       13 / 13
     Page Should Contain Element    ${rows_selected}    limit=10
     checkbox Should Be Selected    ${bulkAction_checkbox}
 
@@ -38,6 +36,6 @@ checkboxes are selected when they are selected one by one
     Select Checkbox                ${row_1_checkbox}
     Select Checkbox                ${row_2_checkbox}
     Select Checkbox                ${row_3_checkbox}
-    Wait Until Page Contains       13 of 13 items
+    Wait Until Page Contains       13 / 13
     Page Should Contain Element    ${rows_selected}    limit=3
     checkbox Should Be Selected    ${bulkAction_checkbox}

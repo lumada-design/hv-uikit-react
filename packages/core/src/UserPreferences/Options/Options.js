@@ -25,7 +25,7 @@ const Options = ({ classes, className, onClick, children, ...others }) => {
   );
 
   return (
-    <div className={clsx(className, classes.optionsRoot)} {...others}>
+    <div className={clsx(className, classes.root)} {...others}>
       <OptionsContext.Provider value={optionsStateContext}>{children}</OptionsContext.Provider>
     </div>
   );
@@ -43,7 +43,7 @@ Options.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    optionsRoot: PropTypes.string,
+    root: PropTypes.string,
   }),
   /**
    * Function call when a option is chosen.

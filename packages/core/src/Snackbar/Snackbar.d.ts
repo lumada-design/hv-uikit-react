@@ -1,19 +1,6 @@
 import { StandardProps, SnackbarProps } from "@material-ui/core";
-import { Action } from "../Actions";
+import { ActionGeneric } from "../ActionsGeneric";
 import { NotificationsCommonProps } from "../Banner";
-
-export interface HvSnackbarProps
-  extends StandardProps<SnackbarProps, HvSnackbarClassKey, "action">,
-    NotificationsCommonProps {
-  /**
-   * Action to display.
-   */
-  action?: React.ReactNode | Action;
-  /**
-   * The callback function ran when an action is triggered, receiving ´action´ as param
-   */
-  actionCallback?: (id: string, action: Action) => void;
-}
 
 export type HvSnackbarClassKey =
   // | "root"
@@ -23,5 +10,19 @@ export type HvSnackbarClassKey =
   | "anchorOriginBottomCenter"
   | "anchorOriginBottomLeft"
   | "anchorOriginBottomRight";
+  
+export interface HvSnackbarProps
+  extends StandardProps<SnackbarProps, HvSnackbarClassKey, "action">,
+    NotificationsCommonProps {
+  /**
+   * Action to display.
+   */
+  action?: React.ReactNode | ActionGeneric;
+  /**
+   * The callback function ran when an action is triggered, receiving `action` as param
+   */
+  actionCallback?: (id: string, action: ActionGeneric) => void;
+}
+
 
 export default function HvSnackbar(props: HvSnackbarProps): JSX.Element | null;

@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { SnackbarContent, withStyles } from "@material-ui/core";
 import TextTruncate from "./MultiLineEllipsis";
-import iconVariants from "../../utils/iconVariants";
+import iconVariant from "../../utils/iconVariant";
 import { setId } from "../../utils";
-import Actions from "../../Actions";
+import ActionsGeneric from "../../ActionsGeneric";
 import styles from "./styles";
 
 const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
@@ -19,7 +19,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
     actionCallback,
     ...others
   } = props;
-  const icon = customIcon || (showIcon && iconVariants(variant));
+  const icon = customIcon || (showIcon && iconVariant(variant, "base2"));
   const innerAction = React.isValidElement(action) ? action : [action];
 
   return (
@@ -40,7 +40,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
           />
           {action && (
             <div id={setId(id, "action")} className={classes.action}>
-              <Actions
+              <ActionsGeneric
                 id={id}
                 category="semantic"
                 actions={innerAction}
@@ -93,7 +93,7 @@ HvSnackbarContentWrapper.propTypes = {
     }),
   ]),
   /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   *  The callback function ran when an action is triggered, receiving `action` as param
    */
   actionCallback: PropTypes.func,
 };

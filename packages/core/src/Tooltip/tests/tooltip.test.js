@@ -6,12 +6,12 @@ import { HvProvider, HvTooltip, HvTypography } from "../..";
 
 const createTitle = (data) => (
   <div>
-    <HvTypography variant="labelText">{data.title || ""}</HvTypography>
+    <HvTypography variant="highlightText">{data.title || ""}</HvTypography>
     {data.elements.map((element) => (
       <div key={element.name}>
-        <HvTypography variant="labelText">{element.name}</HvTypography>
+        <HvTypography variant="highlightText">{element.name}</HvTypography>
         <div />
-        <HvTypography variant="sText">{element.value}</HvTypography>
+        <HvTypography>{element.value}</HvTypography>
       </div>
     ))}
   </div>
@@ -29,7 +29,7 @@ describe("Single Line Tooltip", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvTooltip title={<HvTypography variant="labelText">Grid View</HvTypography>}>
+        <HvTooltip title={<HvTypography variant="highlightText">Grid View</HvTypography>}>
           {Anchor}
         </HvTooltip>
       </HvProvider>

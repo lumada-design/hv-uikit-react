@@ -29,8 +29,11 @@ const styles = (theme) => ({
     "&:hover": hover(theme),
 
     "&:focus": {
+      outline: "none",
+    },
+
+    "&.focus-visible": {
       ...outlineStyles,
-      ...hover(theme),
     },
 
     // cursor
@@ -40,7 +43,7 @@ const styles = (theme) => ({
     },
   },
   noIcon: {
-    paddingLeft: `${theme.hv.spacing.xs}px`,
+    paddingLeft: theme.hv.spacing.xs,
   },
 });
 

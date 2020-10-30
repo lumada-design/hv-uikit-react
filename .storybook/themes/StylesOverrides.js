@@ -1,21 +1,21 @@
-export const getManagerStylesOverrides = theme => ({
+export const getManagerStylesOverrides = (theme) => ({
   ".sidebar-container": {
     ".sidebar-item.selected": {
-      color: theme.hv.palette.atmosphere.atmo1
+      color: theme.hv.palette.atmosphere.atmo1,
     },
 
     form: {
       borderBottomColor: theme.hv.palette.atmosphere.atmo6,
 
       "&:hover, &:focus-within": {
-        borderBottomColor: theme.hv.palette.accent.acce1
-      }
+        borderBottomColor: theme.hv.palette.accent.acce1,
+      },
     },
 
     /* hide shortcuts button */
     ".sidebar-header button": {
-      display: "none"
-    }
+      display: "none",
+    },
   },
 
   ".simplebar-wrapper": {
@@ -30,17 +30,17 @@ export const getManagerStylesOverrides = theme => ({
 
             "& + a": {
               // same margin than the separator
-              marginLeft: "15px"
-            }
-          }
-        })
-  }
+              marginLeft: "15px",
+            },
+          },
+        }),
+  },
 });
 
-export const getDocsStylesOverrides = theme => ({
+export const getDocsStylesOverrides = (theme) => ({
   // removes the transformation buttons from toolbar
   ".simplebar-content > div >div:first-of-type > button ": {
-    display: "none"
+    display: "none",
   },
   // each story has a transformation applied (used by buttons of the toolbar), even if no
   // transformation is used.
@@ -49,13 +49,14 @@ export const getDocsStylesOverrides = theme => ({
   ".sbdocs": {
     " & > div > div > div": {
       transform: "unset !important",
-      WebkitTransform: "unset !important"
+      WebkitTransform: "unset !important",
     },
     'a[class*="sbdocs"]': {
-      ...theme.hv.typography.inlineLink
+      ...theme.hv.typography.link,
+      fontSize: 14,
     },
     "&.sbdocs-wrapper": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo2
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
     },
 
     "& > .sbdocs-content": {
@@ -65,27 +66,27 @@ export const getDocsStylesOverrides = theme => ({
       ".docblock-source > div": {
         backgroundColor: theme.hv.palette.atmosphere.atmo1,
         "& > button": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo1
-        }
+          backgroundColor: theme.hv.palette.atmosphere.atmo1,
+        },
       },
 
       "table.docblock-propstable": {
         "tbody.docblock-propstable-body": {
           "tr > th": {
             // important because https://github.com/storybookjs/storybook/blob/v5.3.18/lib/components/src/blocks/PropsTable/SectionRow.tsx#L19
-            backgroundColor: theme.hv.palette.atmosphere.atmo1 + " !important"
+            backgroundColor: theme.hv.palette.atmosphere.atmo1 + " !important",
           },
           "tr:not(:first-of-type)": {
-            borderTopColor: theme.hv.palette.atmosphere.atmo5
-          }
-        }
+            borderTopColor: theme.hv.palette.atmosphere.atmo4,
+          },
+        },
       },
 
       "& > h2": {
-        borderBottomColor: theme.hv.palette.atmosphere.atmo6,
+        borderBottomColor: theme.hv.palette.atmosphere.atmo4,
         paddingBottom: theme.hv.spacing.xs,
-        marginBottom: theme.hv.spacing.sm
-      }
-    }
-  }
+        marginBottom: theme.hv.spacing.sm,
+      },
+    },
+  },
 });

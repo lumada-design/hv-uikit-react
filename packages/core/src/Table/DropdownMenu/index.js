@@ -18,7 +18,7 @@ const DropDownMenu = ({ id, secondaryActions, dropdownMenuProps, original }) => 
       classes={{ inputExtensionOpen: dropdownClasses.inputExtensionOpen }}
       id={id}
       disablePortal={false}
-      icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
+      icon={<MoreVert style={{ width: 30, height: 30 }} />}
       dataList={secondaryActions}
       onClick={(event, item) => {
         event.stopPropagation();

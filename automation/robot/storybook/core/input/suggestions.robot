@@ -1,8 +1,6 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${components}input--suggestion
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource      _input.resource
+Test Setup    open input sample    ${forms}    suggestion
 
 
 *** Test Cases ***
@@ -13,17 +11,6 @@ update suggestions when input is being changed
     Wait Until Page Does Not Contain    Pakistan
     Page Should Contain                 Portugal
     Page Should Contain Element         ${suggestion_options}    limit=2
-
-update suggestions by server side when input is being changed
-    [Setup]    NONE
-    Go To                               ${components}forms-suggestions--server-side-suggestions
-    Wait Until Element Is Enabled       ${input}
-    Press Keys                          ${input}    tu
-    Wait Until Page Contains            Tunisia
-    Press Keys                          NONE    g
-    Wait Until Page Does Not Contain    Tunisia
-    Wait Until Page Contains            Portugal
-    Page Should Contain Element         ${suggestion_options}    limit=1
 
 close suggestions list when a suggestion item is selected
     Press Keys                           ${input}    po
@@ -36,7 +23,7 @@ select correctly suggestion when suggestion text area is pressed
     [Tags]     bug-ie-webdriver
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
-    Click Element                        xpath://p[.='Portugal']
+    Click Element                        xpath://li[.='Portugal']
     Wait Until Element Is Not Visible    ${suggestion_list}
     Textfield Value Should Be            ${input}    Portugal
 
@@ -64,6 +51,6 @@ close suggestions list when input is cleaned
 *** Variables ***
 ${input}                 css:input[type=text]
 ${label}                 css:#suggestions-label
-${suggestion_list}       css:ul[role=menu]
-${suggestion_options}    css:ul[role=menu]>li
+${suggestion_list}       css:ul[role=listbox]
+${suggestion_options}    css:ul[role=listbox]>li
 ${suggestion_Portugal}   xpath://li[.='Portugal']

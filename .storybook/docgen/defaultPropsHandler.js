@@ -31,7 +31,7 @@ function getDefaultValue(path) {
       computed:
         types.CallExpression.check(node) ||
         types.MemberExpression.check(node) ||
-        types.Identifier.check(node)
+        types.Identifier.check(node),
     };
   }
 
@@ -40,10 +40,10 @@ function getDefaultValue(path) {
 
 function getDefaultValuesFromProps(properties, documentation) {
   properties
-    .filter(propertyPath => types.Property.check(propertyPath.node))
+    .filter((propertyPath) => types.Property.check(propertyPath.node))
     // Don't evaluate property if component is functional and the node is not an AssignmentPattern
-    .filter(propertyPath => types.AssignmentPattern.check(propertyPath.get("value").node))
-    .forEach(propertyPath => {
+    .filter((propertyPath) => types.AssignmentPattern.check(propertyPath.get("value").node))
+    .forEach((propertyPath) => {
       const propName = getPropertyName(propertyPath);
       if (!propName) return;
 
@@ -57,6 +57,10 @@ function getDefaultValuesFromProps(properties, documentation) {
 
 function getRenderBody(componentDefinition) {
   var value = resolveToValue(componentDefinition);
+  if (isReactForwardRefCall(value)) {
+    const inner = value.get("arguments", 0);
+    return inner.get("body", "body");
+  }
   return value.get("body", "body");
 }
 
@@ -64,10 +68,10 @@ function getPropsPath(functionBody) {
   var propsPath;
   // visitVariableDeclarator, can't use visit body.node since it looses scope information
   functionBody
-    .filter(path => {
+    .filter((path) => {
       return types.VariableDeclaration.check(path.node);
     })
-    .forEach(path => {
+    .forEach((path) => {
       const declaratorPath = path.get("declarations", 0);
       if (declaratorPath.get("init", "name").value === "props") {
         propsPath = declaratorPath.get("id");
@@ -78,9 +82,14 @@ function getPropsPath(functionBody) {
 }
 
 module.exports = function defaultPropsHandler(documentation, componentDefinition) {
+  // enable the try-catch to debug
+  // try {
   var renderBody = getRenderBody(componentDefinition);
   var props = getPropsPath(renderBody);
   if (props !== undefined) {
     getDefaultValuesFromProps(props.get("properties"), documentation);
   }
+  // } catch (e) {
+  //   console.error(e);
+  // }
 };

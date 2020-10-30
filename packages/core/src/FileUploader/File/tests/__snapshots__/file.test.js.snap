@@ -14,8 +14,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
   }
   onFileRemoved={[MockFunction]}
   onFilesAdded={[Function]}
-  progressConjunctionLabel="progressConjunctionLabel"
-  removeFileButtonLabel="progressConjunctionLabel"
+  removeFileButtonLabel="removeFileButtonLabel"
   unit="mb"
 >
   <File
@@ -42,291 +41,270 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
     }
     onFileRemoved={[MockFunction]}
     onFilesAdded={[Function]}
-    progressConjunctionLabel="progressConjunctionLabel"
-    removeFileButtonLabel="progressConjunctionLabel"
+    removeFileButtonLabel="removeFileButtonLabel"
     unit="mb"
   >
-    <WithStyles(Success)
-      className="HvFileUploaderFile-icon"
-      color="sema1"
-    >
+    <li>
       <Success
         className="HvFileUploaderFile-icon"
-        classes={
-          Object {
-            "root": "HvIconSuccess-root",
-            "rootL": "HvIconSuccess-rootL",
-            "rootM": "HvIconSuccess-rootM",
-            "rootS": "HvIconSuccess-rootS",
-            "rootXs": "HvIconSuccess-rootXs",
-          }
-        }
         color="sema1"
       >
-        <div
-          className="HvFileUploaderFile-icon HvIconSuccess-root HvIconSuccess-rootS"
+        <HvIconBase
+          className="HvFileUploaderFile-icon"
+          iconSize="S"
+          name="Success"
         >
-          <svg
-            focusable={false}
-            height="16px"
-            viewBox="0 0 16 16"
-            width="16px"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="HvFileUploaderFile-icon HvIconBase-root HvIconBase-s"
+            name="Success"
           >
-            <path
-              className="color0"
-              d="M7.034 11.74L4.647 9.353l.707-.707 1.613 1.613 4.65-5.58.768.641z"
-              fill="#63A621"
-            />
-            <path
-              className="color0"
-              d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-              fill="#63A621"
-            />
-          </svg>
-        </div>
+            <svg
+              focusable={false}
+              height={16}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="color0"
+                d="M6.387 12L4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 01-4.943-2.057A7.023 7.023 0 118 15m8-7a8 8 0 10-8 8 8 8 0 008-8z"
+                fill="#59941B"
+              />
+            </svg>
+          </div>
+        </HvIconBase>
       </Success>
-    </WithStyles(Success)>
-    <WithStyles(ForwardRef)
-      className="HvFileUploaderFile-nameText"
-      variant="sText"
-    >
-      <ForwardRef
+      <WithStyles(ForwardRef)
         className="HvFileUploaderFile-nameText"
-        classes={
-          Object {
-            "3xlTitle": "HvTypography-3xlTitle",
-            "4xlTitle": "HvTypography-4xlTitle",
-            "5xlTitle": "HvTypography-5xlTitle",
-            "disabledButtonText": "HvTypography-disabledButtonText",
-            "highlightText": "HvTypography-highlightText",
-            "infoText": "HvTypography-infoText",
-            "inlineLink": "HvTypography-inlineLink",
-            "lTitle": "HvTypography-lTitle",
-            "labelText": "HvTypography-labelText",
-            "mTitle": "HvTypography-mTitle",
-            "normalText": "HvTypography-normalText",
-            "placeholderText": "HvTypography-placeholderText",
-            "root": "HvTypography-root",
-            "sLink": "HvTypography-sLink",
-            "sText": "HvTypography-sText",
-            "sTitle": "HvTypography-sTitle",
-            "selectedNavText": "HvTypography-selectedNavText",
-            "selectedText": "HvTypography-selectedText",
-            "vizText": "HvTypography-vizText",
-            "xlTitle": "HvTypography-xlTitle",
-            "xsTitle": "HvTypography-xsTitle",
-            "xxlTitle": "HvTypography-xxlTitle",
-            "xxsTitle": "HvTypography-xxsTitle",
-          }
-        }
-        variant="sText"
-      >
-        <p
-          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
-        >
-          somefile.png
-        </p>
-      </ForwardRef>
-    </WithStyles(ForwardRef)>
-    <span
-      className="HvFileUploaderFile-progressTextContainer"
-    >
-      <WithStyles(ForwardRef)
-        variant="labelText"
+        noWrap={true}
+        variant="highlightText"
       >
         <ForwardRef
+          className="HvFileUploaderFile-nameText"
           classes={
             Object {
               "3xlTitle": "HvTypography-3xlTitle",
               "4xlTitle": "HvTypography-4xlTitle",
               "5xlTitle": "HvTypography-5xlTitle",
-              "disabledButtonText": "HvTypography-disabledButtonText",
+              "disabledText": "HvTypography-disabledText",
               "highlightText": "HvTypography-highlightText",
-              "infoText": "HvTypography-infoText",
-              "inlineLink": "HvTypography-inlineLink",
               "lTitle": "HvTypography-lTitle",
-              "labelText": "HvTypography-labelText",
+              "link": "HvTypography-link",
               "mTitle": "HvTypography-mTitle",
+              "noWrap": "HvTypography-noWrap",
               "normalText": "HvTypography-normalText",
               "placeholderText": "HvTypography-placeholderText",
               "root": "HvTypography-root",
-              "sLink": "HvTypography-sLink",
-              "sText": "HvTypography-sText",
               "sTitle": "HvTypography-sTitle",
+              "sectionTitle": "HvTypography-sectionTitle",
               "selectedNavText": "HvTypography-selectedNavText",
-              "selectedText": "HvTypography-selectedText",
               "vizText": "HvTypography-vizText",
+              "vizTextDisabled": "HvTypography-vizTextDisabled",
               "xlTitle": "HvTypography-xlTitle",
+              "xsInlineLink": "HvTypography-xsInlineLink",
               "xsTitle": "HvTypography-xsTitle",
               "xxlTitle": "HvTypography-xxlTitle",
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="labelText"
+          noWrap={true}
+          variant="highlightText"
         >
           <p
-            className="HvTypography-root HvTypography-labelText"
+            className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
           >
-            25.00B
+            somefile.png
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
-      <WithStyles(ForwardRef)
-        variant="sText"
+      <span
+        className="HvFileUploaderFile-progressTextContainer"
       >
-        <ForwardRef
-          classes={
-            Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledButtonText": "HvTypography-disabledButtonText",
-              "highlightText": "HvTypography-highlightText",
-              "infoText": "HvTypography-infoText",
-              "inlineLink": "HvTypography-inlineLink",
-              "lTitle": "HvTypography-lTitle",
-              "labelText": "HvTypography-labelText",
-              "mTitle": "HvTypography-mTitle",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sLink": "HvTypography-sLink",
-              "sText": "HvTypography-sText",
-              "sTitle": "HvTypography-sTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "selectedText": "HvTypography-selectedText",
-              "vizText": "HvTypography-vizText",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
-            }
-          }
-          variant="sText"
+         | 
+        <WithStyles(ForwardRef)
+          variant="highlightText"
         >
-          <p
-            className="HvTypography-root HvTypography-sText"
+          <ForwardRef
+            classes={
+              Object {
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
+              }
+            }
+            variant="highlightText"
           >
-             progressConjunctionLabel 875.00B
-          </p>
-        </ForwardRef>
-      </WithStyles(ForwardRef)>
-    </span>
-    <WithStyles(ForwardRef(IconButton))
-      aria-label="progressConjunctionLabel"
-      category="ghost"
-      className="HvFileUploaderFile-removeButton"
-      onClick={[Function]}
-    >
-      <ForwardRef(IconButton)
-        aria-label="progressConjunctionLabel"
+            <p
+              className="HvTypography-root HvTypography-highlightText"
+            >
+              25.00B
+            </p>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
+        <WithStyles(ForwardRef)>
+          <ForwardRef
+            classes={
+              Object {
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
+              }
+            }
+          >
+            <p
+              className="HvTypography-root HvTypography-normalText"
+            >
+               / 875.00B
+            </p>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
+      </span>
+      <WithStyles(ForwardRef(IconButton))
+        aria-label="removeFileButtonLabel"
         category="ghost"
         className="HvFileUploaderFile-removeButton"
-        classes={
-          Object {
-            "colorInherit": "MuiIconButton-colorInherit",
-            "colorPrimary": "MuiIconButton-colorPrimary",
-            "colorSecondary": "MuiIconButton-colorSecondary",
-            "disabled": "Mui-disabled",
-            "edgeEnd": "MuiIconButton-edgeEnd",
-            "edgeStart": "MuiIconButton-edgeStart",
-            "label": "MuiIconButton-label",
-            "root": "MuiIconButton-root",
-            "sizeSmall": "MuiIconButton-sizeSmall",
-          }
-        }
         onClick={[Function]}
       >
-        <WithStyles(ForwardRef(ButtonBase))
-          aria-label="progressConjunctionLabel"
+        <ForwardRef(IconButton)
+          aria-label="removeFileButtonLabel"
           category="ghost"
-          centerRipple={true}
-          className="MuiIconButton-root HvFileUploaderFile-removeButton"
-          disabled={false}
-          focusRipple={true}
+          className="HvFileUploaderFile-removeButton"
+          classes={
+            Object {
+              "colorInherit": "MuiIconButton-colorInherit",
+              "colorPrimary": "MuiIconButton-colorPrimary",
+              "colorSecondary": "MuiIconButton-colorSecondary",
+              "disabled": "Mui-disabled",
+              "edgeEnd": "MuiIconButton-edgeEnd",
+              "edgeStart": "MuiIconButton-edgeStart",
+              "label": "MuiIconButton-label",
+              "root": "MuiIconButton-root",
+              "sizeSmall": "MuiIconButton-sizeSmall",
+            }
+          }
           onClick={[Function]}
         >
-          <ForwardRef(ButtonBase)
-            aria-label="progressConjunctionLabel"
+          <WithStyles(ForwardRef(ButtonBase))
+            aria-label="removeFileButtonLabel"
             category="ghost"
             centerRipple={true}
             className="MuiIconButton-root HvFileUploaderFile-removeButton"
-            classes={
-              Object {
-                "disabled": "Mui-disabled",
-                "focusVisible": "Mui-focusVisible",
-                "root": "MuiButtonBase-root",
-              }
-            }
-            disableRipple={true}
             disabled={false}
             focusRipple={true}
             onClick={[Function]}
           >
-            <button
-              aria-label="progressConjunctionLabel"
+            <ForwardRef(ButtonBase)
+              aria-label="removeFileButtonLabel"
               category="ghost"
-              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
+              centerRipple={true}
+              className="MuiIconButton-root HvFileUploaderFile-removeButton"
+              classes={
+                Object {
+                  "disabled": "Mui-disabled",
+                  "focusVisible": "Mui-focusVisible",
+                  "root": "MuiButtonBase-root",
+                }
+              }
+              disableRipple={true}
               disabled={false}
-              onBlur={[Function]}
+              focusRipple={true}
               onClick={[Function]}
-              onDragLeave={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex={0}
-              type="button"
             >
-              <span
-                className="MuiIconButton-label"
+              <button
+                aria-label="removeFileButtonLabel"
+                category="ghost"
+                className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
               >
-                <WithStyles(Close)
-                  iconSize="XS"
+                <span
+                  className="MuiIconButton-label"
                 >
                   <Close
-                    classes={
-                      Object {
-                        "root": "HvIconClose-root",
-                        "rootL": "HvIconClose-rootL",
-                        "rootM": "HvIconClose-rootM",
-                        "rootS": "HvIconClose-rootS",
-                        "rootXs": "HvIconClose-rootXs",
-                      }
-                    }
                     iconSize="XS"
                   >
-                    <div
-                      className="HvIconClose-root HvIconClose-rootXs"
+                    <HvIconBase
+                      iconSize="XS"
+                      name="Close"
                     >
-                      <svg
-                        focusable={false}
-                        height="12px"
-                        viewBox="0 0 16 16"
-                        width="12px"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="HvIconBase-root HvIconBase-xs"
+                        name="Close"
                       >
-                        <path
-                          className="color0"
-                          d="M14 2.7l-.7-.7L8 7.3 2.7 2l-.7.7L7.3 8 2 13.3l.7.7L8 8.7l5.3 5.3.7-.7L8.7 8z"
-                          fill="#414141"
-                        />
-                      </svg>
-                    </div>
+                        <svg
+                          focusable={false}
+                          height={12}
+                          viewBox="0 0 16 16"
+                          width={12}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </HvIconBase>
                   </Close>
-                </WithStyles(Close)>
-              </span>
-            </button>
-          </ForwardRef(ButtonBase)>
-        </WithStyles(ForwardRef(ButtonBase))>
-      </ForwardRef(IconButton)>
-    </WithStyles(ForwardRef(IconButton))>
+                </span>
+              </button>
+            </ForwardRef(ButtonBase)>
+          </WithStyles(ForwardRef(ButtonBase))>
+        </ForwardRef(IconButton)>
+      </WithStyles(ForwardRef(IconButton))>
+    </li>
   </File>
 </WithStyles(File)>
 `;
@@ -345,8 +323,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
   }
   onFileRemoved={[MockFunction]}
   onFilesAdded={[Function]}
-  progressConjunctionLabel="progressConjunctionLabel"
-  removeFileButtonLabel="progressConjunctionLabel"
+  removeFileButtonLabel="removeFileButtonLabel"
   unit="mb"
 >
   <File
@@ -373,291 +350,270 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
     }
     onFileRemoved={[MockFunction]}
     onFilesAdded={[Function]}
-    progressConjunctionLabel="progressConjunctionLabel"
-    removeFileButtonLabel="progressConjunctionLabel"
+    removeFileButtonLabel="removeFileButtonLabel"
     unit="mb"
   >
-    <WithStyles(Success)
-      className="HvFileUploaderFile-icon"
-      color="sema1"
-    >
+    <li>
       <Success
         className="HvFileUploaderFile-icon"
-        classes={
-          Object {
-            "root": "HvIconSuccess-root",
-            "rootL": "HvIconSuccess-rootL",
-            "rootM": "HvIconSuccess-rootM",
-            "rootS": "HvIconSuccess-rootS",
-            "rootXs": "HvIconSuccess-rootXs",
-          }
-        }
         color="sema1"
       >
-        <div
-          className="HvFileUploaderFile-icon HvIconSuccess-root HvIconSuccess-rootS"
+        <HvIconBase
+          className="HvFileUploaderFile-icon"
+          iconSize="S"
+          name="Success"
         >
-          <svg
-            focusable={false}
-            height="16px"
-            viewBox="0 0 16 16"
-            width="16px"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            className="HvFileUploaderFile-icon HvIconBase-root HvIconBase-s"
+            name="Success"
           >
-            <path
-              className="color0"
-              d="M7.034 11.74L4.647 9.353l.707-.707 1.613 1.613 4.65-5.58.768.641z"
-              fill="#63A621"
-            />
-            <path
-              className="color0"
-              d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-              fill="#63A621"
-            />
-          </svg>
-        </div>
+            <svg
+              focusable={false}
+              height={16}
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="color0"
+                d="M6.387 12L4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 01-4.943-2.057A7.023 7.023 0 118 15m8-7a8 8 0 10-8 8 8 8 0 008-8z"
+                fill="#59941B"
+              />
+            </svg>
+          </div>
+        </HvIconBase>
       </Success>
-    </WithStyles(Success)>
-    <WithStyles(ForwardRef)
-      className="HvFileUploaderFile-nameText"
-      variant="sText"
-    >
-      <ForwardRef
+      <WithStyles(ForwardRef)
         className="HvFileUploaderFile-nameText"
-        classes={
-          Object {
-            "3xlTitle": "HvTypography-3xlTitle",
-            "4xlTitle": "HvTypography-4xlTitle",
-            "5xlTitle": "HvTypography-5xlTitle",
-            "disabledButtonText": "HvTypography-disabledButtonText",
-            "highlightText": "HvTypography-highlightText",
-            "infoText": "HvTypography-infoText",
-            "inlineLink": "HvTypography-inlineLink",
-            "lTitle": "HvTypography-lTitle",
-            "labelText": "HvTypography-labelText",
-            "mTitle": "HvTypography-mTitle",
-            "normalText": "HvTypography-normalText",
-            "placeholderText": "HvTypography-placeholderText",
-            "root": "HvTypography-root",
-            "sLink": "HvTypography-sLink",
-            "sText": "HvTypography-sText",
-            "sTitle": "HvTypography-sTitle",
-            "selectedNavText": "HvTypography-selectedNavText",
-            "selectedText": "HvTypography-selectedText",
-            "vizText": "HvTypography-vizText",
-            "xlTitle": "HvTypography-xlTitle",
-            "xsTitle": "HvTypography-xsTitle",
-            "xxlTitle": "HvTypography-xxlTitle",
-            "xxsTitle": "HvTypography-xxsTitle",
-          }
-        }
-        variant="sText"
-      >
-        <p
-          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
-        >
-          somefile.png
-        </p>
-      </ForwardRef>
-    </WithStyles(ForwardRef)>
-    <span
-      className="HvFileUploaderFile-progressTextContainer"
-    >
-      <WithStyles(ForwardRef)
-        variant="labelText"
+        noWrap={true}
+        variant="highlightText"
       >
         <ForwardRef
+          className="HvFileUploaderFile-nameText"
           classes={
             Object {
               "3xlTitle": "HvTypography-3xlTitle",
               "4xlTitle": "HvTypography-4xlTitle",
               "5xlTitle": "HvTypography-5xlTitle",
-              "disabledButtonText": "HvTypography-disabledButtonText",
+              "disabledText": "HvTypography-disabledText",
               "highlightText": "HvTypography-highlightText",
-              "infoText": "HvTypography-infoText",
-              "inlineLink": "HvTypography-inlineLink",
               "lTitle": "HvTypography-lTitle",
-              "labelText": "HvTypography-labelText",
+              "link": "HvTypography-link",
               "mTitle": "HvTypography-mTitle",
+              "noWrap": "HvTypography-noWrap",
               "normalText": "HvTypography-normalText",
               "placeholderText": "HvTypography-placeholderText",
               "root": "HvTypography-root",
-              "sLink": "HvTypography-sLink",
-              "sText": "HvTypography-sText",
               "sTitle": "HvTypography-sTitle",
+              "sectionTitle": "HvTypography-sectionTitle",
               "selectedNavText": "HvTypography-selectedNavText",
-              "selectedText": "HvTypography-selectedText",
               "vizText": "HvTypography-vizText",
+              "vizTextDisabled": "HvTypography-vizTextDisabled",
               "xlTitle": "HvTypography-xlTitle",
+              "xsInlineLink": "HvTypography-xsInlineLink",
               "xsTitle": "HvTypography-xsTitle",
               "xxlTitle": "HvTypography-xxlTitle",
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="labelText"
+          noWrap={true}
+          variant="highlightText"
         >
           <p
-            className="HvTypography-root HvTypography-labelText"
+            className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText HvTypography-noWrap"
           >
-            25.00B
+            somefile.png
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
-      <WithStyles(ForwardRef)
-        variant="sText"
+      <span
+        className="HvFileUploaderFile-progressTextContainer"
       >
-        <ForwardRef
-          classes={
-            Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledButtonText": "HvTypography-disabledButtonText",
-              "highlightText": "HvTypography-highlightText",
-              "infoText": "HvTypography-infoText",
-              "inlineLink": "HvTypography-inlineLink",
-              "lTitle": "HvTypography-lTitle",
-              "labelText": "HvTypography-labelText",
-              "mTitle": "HvTypography-mTitle",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sLink": "HvTypography-sLink",
-              "sText": "HvTypography-sText",
-              "sTitle": "HvTypography-sTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "selectedText": "HvTypography-selectedText",
-              "vizText": "HvTypography-vizText",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
-            }
-          }
-          variant="sText"
+         | 
+        <WithStyles(ForwardRef)
+          variant="highlightText"
         >
-          <p
-            className="HvTypography-root HvTypography-sText"
+          <ForwardRef
+            classes={
+              Object {
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
+              }
+            }
+            variant="highlightText"
           >
-             progressConjunctionLabel 875.00B
-          </p>
-        </ForwardRef>
-      </WithStyles(ForwardRef)>
-    </span>
-    <WithStyles(ForwardRef(IconButton))
-      aria-label="progressConjunctionLabel"
-      category="ghost"
-      className="HvFileUploaderFile-removeButton"
-      onClick={[Function]}
-    >
-      <ForwardRef(IconButton)
-        aria-label="progressConjunctionLabel"
+            <p
+              className="HvTypography-root HvTypography-highlightText"
+            >
+              25.00B
+            </p>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
+        <WithStyles(ForwardRef)>
+          <ForwardRef
+            classes={
+              Object {
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
+              }
+            }
+          >
+            <p
+              className="HvTypography-root HvTypography-normalText"
+            >
+               / 875.00B
+            </p>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
+      </span>
+      <WithStyles(ForwardRef(IconButton))
+        aria-label="removeFileButtonLabel"
         category="ghost"
         className="HvFileUploaderFile-removeButton"
-        classes={
-          Object {
-            "colorInherit": "MuiIconButton-colorInherit",
-            "colorPrimary": "MuiIconButton-colorPrimary",
-            "colorSecondary": "MuiIconButton-colorSecondary",
-            "disabled": "Mui-disabled",
-            "edgeEnd": "MuiIconButton-edgeEnd",
-            "edgeStart": "MuiIconButton-edgeStart",
-            "label": "MuiIconButton-label",
-            "root": "MuiIconButton-root",
-            "sizeSmall": "MuiIconButton-sizeSmall",
-          }
-        }
         onClick={[Function]}
       >
-        <WithStyles(ForwardRef(ButtonBase))
-          aria-label="progressConjunctionLabel"
+        <ForwardRef(IconButton)
+          aria-label="removeFileButtonLabel"
           category="ghost"
-          centerRipple={true}
-          className="MuiIconButton-root HvFileUploaderFile-removeButton"
-          disabled={false}
-          focusRipple={true}
+          className="HvFileUploaderFile-removeButton"
+          classes={
+            Object {
+              "colorInherit": "MuiIconButton-colorInherit",
+              "colorPrimary": "MuiIconButton-colorPrimary",
+              "colorSecondary": "MuiIconButton-colorSecondary",
+              "disabled": "Mui-disabled",
+              "edgeEnd": "MuiIconButton-edgeEnd",
+              "edgeStart": "MuiIconButton-edgeStart",
+              "label": "MuiIconButton-label",
+              "root": "MuiIconButton-root",
+              "sizeSmall": "MuiIconButton-sizeSmall",
+            }
+          }
           onClick={[Function]}
         >
-          <ForwardRef(ButtonBase)
-            aria-label="progressConjunctionLabel"
+          <WithStyles(ForwardRef(ButtonBase))
+            aria-label="removeFileButtonLabel"
             category="ghost"
             centerRipple={true}
             className="MuiIconButton-root HvFileUploaderFile-removeButton"
-            classes={
-              Object {
-                "disabled": "Mui-disabled",
-                "focusVisible": "Mui-focusVisible",
-                "root": "MuiButtonBase-root",
-              }
-            }
-            disableRipple={true}
             disabled={false}
             focusRipple={true}
             onClick={[Function]}
           >
-            <button
-              aria-label="progressConjunctionLabel"
+            <ForwardRef(ButtonBase)
+              aria-label="removeFileButtonLabel"
               category="ghost"
-              className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
+              centerRipple={true}
+              className="MuiIconButton-root HvFileUploaderFile-removeButton"
+              classes={
+                Object {
+                  "disabled": "Mui-disabled",
+                  "focusVisible": "Mui-focusVisible",
+                  "root": "MuiButtonBase-root",
+                }
+              }
+              disableRipple={true}
               disabled={false}
-              onBlur={[Function]}
+              focusRipple={true}
               onClick={[Function]}
-              onDragLeave={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex={0}
-              type="button"
             >
-              <span
-                className="MuiIconButton-label"
+              <button
+                aria-label="removeFileButtonLabel"
+                category="ghost"
+                className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="button"
               >
-                <WithStyles(Close)
-                  iconSize="XS"
+                <span
+                  className="MuiIconButton-label"
                 >
                   <Close
-                    classes={
-                      Object {
-                        "root": "HvIconClose-root",
-                        "rootL": "HvIconClose-rootL",
-                        "rootM": "HvIconClose-rootM",
-                        "rootS": "HvIconClose-rootS",
-                        "rootXs": "HvIconClose-rootXs",
-                      }
-                    }
                     iconSize="XS"
                   >
-                    <div
-                      className="HvIconClose-root HvIconClose-rootXs"
+                    <HvIconBase
+                      iconSize="XS"
+                      name="Close"
                     >
-                      <svg
-                        focusable={false}
-                        height="12px"
-                        viewBox="0 0 16 16"
-                        width="12px"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="HvIconBase-root HvIconBase-xs"
+                        name="Close"
                       >
-                        <path
-                          className="color0"
-                          d="M14 2.7l-.7-.7L8 7.3 2.7 2l-.7.7L7.3 8 2 13.3l.7.7L8 8.7l5.3 5.3.7-.7L8.7 8z"
-                          fill="#414141"
-                        />
-                      </svg>
-                    </div>
+                        <svg
+                          focusable={false}
+                          height={12}
+                          viewBox="0 0 16 16"
+                          width={12}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </HvIconBase>
                   </Close>
-                </WithStyles(Close)>
-              </span>
-            </button>
-          </ForwardRef(ButtonBase)>
-        </WithStyles(ForwardRef(ButtonBase))>
-      </ForwardRef(IconButton)>
-    </WithStyles(ForwardRef(IconButton))>
+                </span>
+              </button>
+            </ForwardRef(ButtonBase)>
+          </WithStyles(ForwardRef(ButtonBase))>
+        </ForwardRef(IconButton)>
+      </WithStyles(ForwardRef(IconButton))>
+    </li>
   </File>
 </WithStyles(File)>
 `;

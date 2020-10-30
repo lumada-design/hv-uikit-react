@@ -2,6 +2,8 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { File, FileEvent } from "../File";
 
+export type HvFileListClassKey = "list";
+
 export interface FileListProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFileListClassKey> {
   /**
@@ -12,17 +14,10 @@ export interface FileListProps
    * Callback fired when file is removed from list.
    */
   onFileRemoved?: FileEvent;
-
-  /**
-   * File upload progress message conjunction.
-   */
-  progressConjunctionLabel: string;
   /**
    * Value of aria-label to apply to remove file button in FileList
    * */
   removeFileButtonLabel: string;
 }
-
-export type HvFileListClassKey = "list";
 
 export default function HvFileList(props: FileListProps): JSX.Element | null;

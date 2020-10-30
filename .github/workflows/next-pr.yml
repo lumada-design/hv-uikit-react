@@ -42,7 +42,7 @@ jobs:
         run: npm run lint
 
       - name: Test
-        run: npm run test -- -- -- --testNamePattern="\[v3\]" --coverage=false
+        run: npm run test
 
   Build-Documentation:
     name: Build Documentation

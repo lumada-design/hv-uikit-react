@@ -2,7 +2,7 @@ const styles = (theme) => ({
   root: {},
   controlsContainer: {
     display: "flex",
-    paddingBottom: `${theme.hv.spacing.md}px`,
+    paddingBottom: theme.hv.spacing.md,
     justifyContent: "space-between",
     alignItems: "flex-end",
   },
@@ -14,10 +14,10 @@ const styles = (theme) => ({
     alignItems: "flex-end",
   },
   multiButtons: {
-    paddingLeft: `${theme.hv.spacing.md}px`,
+    paddingLeft: theme.hv.spacing.md,
   },
   viewContainer: {
-    padding: `${theme.hv.spacing.md}px 0`,
+    padding: theme.hvSpacing("sm", 0),
     width: "100%",
   },
   sortContainer: {},
@@ -26,6 +26,9 @@ const styles = (theme) => ({
   },
   pagination: {
     marginTop: 0,
+  },
+  bulkActions: {
+    margin: theme.hvSpacing("sm", 0, 0),
   },
 });
 

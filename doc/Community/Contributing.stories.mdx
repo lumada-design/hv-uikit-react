@@ -65,12 +65,12 @@ Help us to maximize the effort we can spend fixing issues and adding new feature
 Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
 
 #### Branch Structure
-All contributions should target the `master` branch (or `v1.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
 
-The `alpha` branch is used for UI Kit team developments and its release cycle is longer. All stable releases are tagged ([view tags](https://github.com/pentaho/hv-uikit-react/tags)).
+All contributions should target the `master` branch (or `v2.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
 
 #### Setup
-1. Pull the latest `master` branch.  
+
+1. Pull the latest `master` branch.
 2. Always work and submit pull requests from a branch:
    ```
    $ git checkout -b YOUR_BRANCH_NAME master
@@ -150,3 +150,5 @@ Test your changes by running our test commands:
   ```
   npm run test:watch
   ```
+
+We also execute regression tests in all pull requests and releases against the a11y standards (accessibility static analysis), selenium based tests (using Robot Framework) to validate the behavioural part and visual tests using Applitools. Please keep an eye on the pull request result for detailed feedback.

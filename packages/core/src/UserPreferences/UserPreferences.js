@@ -11,7 +11,7 @@ import Typography from "../Typography";
 /**
  * User preferences are a group of configurable settings that can be customized for a particular user.
  *
- * Our implementation of the user preferences is divided in:
+ * Our implementation of the User Preferences component is divided in:
  * <ul>
  * <li>Actions - container for actions</li>
  * <li>Action - action button</li>
@@ -20,7 +20,7 @@ import Typography from "../Typography";
  * <li>Label - Label typography.</li>
  * <li>Option - Option button</li>
  * </ul>
- * To build the user preferences a composition of these elements should be used.
+ * To build the User Preferences component, a composition of these elements should be used.
  *
  */
 const HvUserPreferences = ({
@@ -116,7 +116,7 @@ const HvUserPreferences = ({
           {userInfo && (
             <div className={classes.userInfo}>
               <Typography variant="highlightText">{userInfo.label1}</Typography>
-              <Typography variant="sText">{userInfo.label2}</Typography>
+              <Typography>{userInfo.label2}</Typography>
             </div>
           )}
           {children}

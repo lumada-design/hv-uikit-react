@@ -35,8 +35,7 @@ describe("File withStyles - Invalid File", () => {
         data={dataFail}
         onFilesAdded={() => {}}
         onFileRemoved={() => {}}
-        progressConjunctionLabel="progressConjunctionLabel"
-        removeFileButtonLabel="progressConjunctionLabel"
+        removeFileButtonLabel="removeFileButtonLabel"
       />
     </HvProvider>
   );
@@ -63,8 +62,7 @@ describe("File withStyles - Valid File", () => {
         unit="mb"
         onFilesAdded={() => {}}
         onFileRemoved={onClickCallback}
-        progressConjunctionLabel="progressConjunctionLabel"
-        removeFileButtonLabel="progressConjunctionLabel"
+        removeFileButtonLabel="removeFileButtonLabel"
       />
     </HvProvider>
   );

@@ -1,21 +1,23 @@
 *** Setting ***
-Resource          _keywords.resource
-Test Setup        Run Keywords
-...               Go To    ${components}asset-inventory--configurations
-...               AND    Wait Until Element Is Visible    hv-assetinventory
-Test Template     validate search
+Resource         _assetInventory.resource
+Test Setup       open assetInventory sample    configurations
+Test Template    validate search
 
 
-*** Test Cases ***
-filter just specific card when search for Event Title    ${cards}    5    trac      Track severe 8
-filter just specific card when search for Event fix      ${cards}    5    fix n     Fix now
-filter just specific card when search for Probability    ${cards}    1    97        Track severe 8
+*** Test Cases ***        filter    assertion          numItems
+search for Event Title    trac      Track severe 8     5
+search for Event fix      fix n     Fix now            5
+search for Probability    97        Track severe 8     1
 
 list view filter rows when search for Event Title
     [Documentation]    traceability: issue 1522
     [Template]    NONE
-    Click Element    ${listViewButton}
-    validate search    ${rows}    1    track 7      Track 7 severe breakdown
+    Click Element      ${buttonListView}
+    Select Dropdown Value               ${pageSize}     10
+    scroll to element                   ${searchBox}
+    Press Keys                          ${searchBox}    track 7
+    Wait Until Page Contains            Track 7 severe breakdown
+    Wait Until Page Contains Element    ${rows}         limit=1
 
 hide cards and pagination when search does not return data
     [Template]    NONE
@@ -25,24 +27,29 @@ hide cards and pagination when search does not return data
 
 show all results when user delete search text
     [Template]    NONE
-    Select From List By Value      ${pageSize}     10
-    Press Keys                     ${searchBox}    97
-    Page Should Contain Element    ${cards}        limit=1
-    Press Keys                     ${searchBox}    BACKSPACE    BACKSPACE
-    Page Should Contain Element    ${cards}        limit=10
+    Select Dropdown Value               ${pageSize}     10
+    scroll to element                   ${searchBox}
+    Press Keys                          ${searchBox}    97
+    Wait Until Page Contains Element    ${cards}        limit=1
+    Press Keys                          ${searchBox}    BACKSPACE    BACKSPACE
+    Wait Until Page Contains Element    ${cards}        limit=10
 
 remove search when user click button clear the text
     [Template]    NONE
-    Select From List By Value      ${pageSize}     10
-    Press Keys                     ${searchBox}    97
-    Page Should Contain Element    ${cards}        limit=1
-    Click Button                   ${clearText}
-    Page Should Contain Element    ${cards}        limit=10
+    Select Dropdown Value               ${pageSize}     10
+    scroll to element                   ${searchBox}
+    Press Keys                          ${searchBox}    97
+    Wait Until Page Contains Element    ${cards}        limit=1
+    Click Button                        ${buttonClearText}
+    Wait Until Page Contains Element    ${cards}        limit=10
+
 
 *** Keywords ***
 validate search
-    [Arguments]    ${items}    ${numItems}    ${search}    ${Assertion}
-    Select From List By Value      ${pageSize}     10
-    Press Keys                     ${searchBox}    ${search}
-    Wait Until Page Contains       ${Assertion}
-    Page Should Contain Element    ${items}        limit=${numItems}
+    [Documentation]    filter specific cards that contains ${filter} text
+    [Arguments]        ${filter}    ${assertion}    ${numItems}
+    Select Dropdown Value               ${pageSize}     10
+    scroll to element                   ${searchBox}
+    Press Keys                          ${searchBox}    ${filter}
+    Wait Until Page Contains            ${assertion}
+    Wait Until Page Contains Element    ${cards}        limit=${numItems}

@@ -1,9 +1,8 @@
 *** Setting ***
-Resource      _resource.resource
-Test Setup    Run Keywords
-...           Go To    ${components}forms-suggestions--main
-...           AND    Wait Until Element Is Enabled    ${input}
+Resource      _suggestions.resource
+Test Setup    open suggestion sample    main
 Force Tags    keyboard
+
 
 *** Test Cases ***
 focus first suggestion option when input is focused and is pressed TAB

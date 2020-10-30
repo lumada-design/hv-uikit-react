@@ -7,6 +7,9 @@ import isEmpty from "lodash/isEmpty";
 import cloneDeep from "lodash/cloneDeep";
 import diff from "deep-diff";
 
+import "focus-within-polyfill";
+import "focus-visible";
+
 import {
   ThemeProvider as MuiThemeProvider,
   StylesProvider as MuiStylesProvider,
@@ -15,7 +18,7 @@ import {
 
 import { themeBuilder, generateClassName, CssBaseline, getTheme } from "../theme";
 
-import { ConfigProvider } from "../config/context";
+import { ConfigProvider } from "./context";
 
 /**
  * Augments the target theme with the differences found in the source theme.

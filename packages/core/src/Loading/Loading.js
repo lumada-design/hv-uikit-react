@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import useResizeAware from "react-resize-aware";
+import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import range from "lodash/range";
@@ -8,76 +7,41 @@ import { HvTypography } from "../..";
 import styles from "./styles";
 
 /**
- * The Loading component as two forms of working:
- * - As a normal component inline when no children is passed;
- * - As a HOC when a children is passed
+ * Loading provides feedback about a process that is taking place in the application.
  */
-const Loading = ({
+const HvLoading = ({
   className,
   classes,
   small = false,
-  text,
-  isActive = false,
+  label,
+  hidden = false,
   color,
-  children,
-  others,
+  ...others
 }) => {
-  const [resizeListener, sizes] = useResizeAware();
-  const [overlayPosition, setOverlayPosition] = useState({});
-  const ref = useRef();
   const theme = useTheme();
 
-  useEffect(() => {
-    if (children && ref.current) {
-      const { clientHeight, clientWidth, offsetTop, offsetLeft } = ref.current;
-      setOverlayPosition({
-        top: offsetTop,
-        left: offsetLeft,
-        height: clientHeight,
-        width: clientWidth,
-      });
-    }
-  }, [children, sizes.width, sizes.height]);
-
-  const getColor = (noColor) => (color ? theme.palette[color] || color : theme.palette[noColor]);
+  const getColor = (colorName) =>
+    color ? theme.palette[color] || color : theme.palette[colorName];
 
   const size = small ? "small" : "regular";
   const colorVariant = color ? "Color" : "";
   const variant = `${size}${colorVariant}`;
 
-  const inline = { background: getColor(small ? "acce1" : "acce3") };
+  const inline = { backgroundColor: getColor(small ? "acce1" : "acce3") };
 
-  const barsRender = () => (
-    <>
-      {isActive && (
-        <div className={clsx(className, classes.root)} {...others}>
-          <div className={classes.barContainer}>
-            {range(0, 3).map((e) => (
-              <div key={e} style={inline} className={clsx(classes.loadingBar, classes[variant])} />
-            ))}
-          </div>
-          {text && <HvTypography className={classes.loadingText}>{text}</HvTypography>}
-        </div>
-      )}
-    </>
-  );
-
-  const hocRender = () => (
-    <>
-      <div
-        style={{ ...overlayPosition }}
-        className={clsx(classes.overlay, { [classes.blur]: isActive })}
-      >
-        {barsRender()}
+  return (
+    <div className={clsx(className, classes.root, { [classes.hidden]: hidden })} {...others}>
+      <div className={classes.barContainer}>
+        {range(0, 3).map((e) => (
+          <div key={e} style={inline} className={clsx(classes.loadingBar, classes[variant])} />
+        ))}
       </div>
-      {resizeListener}
-      {React.cloneElement(children, { ref })}
-    </>
+      {label && <HvTypography className={classes.label}>{label}</HvTypography>}
+    </div>
   );
-
-  return children ? hocRender() : barsRender();
 };
-Loading.propTypes = {
+
+HvLoading.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -99,9 +63,9 @@ Loading.propTypes = {
      */
     loadingBar: PropTypes.string,
     /**
-     * Style applied to the text.
+     * Style applied to the label text.
      */
-    loadingText: PropTypes.string,
+    label: PropTypes.string,
     /**
      * Style applied to the overlay
      */
@@ -110,27 +74,27 @@ Loading.propTypes = {
      * Style to display overlay.
      */
     blur: PropTypes.string,
+    /**
+     * Style applied when when animation is hidden.
+     */
+    hidden: PropTypes.string,
   }).isRequired,
   /**
    * Indicates if the component should be render in a small size.
    */
   small: PropTypes.bool,
   /**
-   * The text to be displayed.
+   * The label to be displayed.
    */
-  text: PropTypes.string,
+  label: PropTypes.node,
   /**
-   * Activates the loading visualization.
+   * Whether the loading animation is hidden.
    */
-  isActive: PropTypes.bool,
+  hidden: PropTypes.bool,
   /**
    * Color applied to the bars.
    */
   color: PropTypes.string,
-  /**
-   * Children
-   */
-  children: PropTypes.node,
 };
 
-export default withStyles(styles, { name: "HvLoading" })(Loading);
+export default withStyles(styles, { name: "HvLoading" })(HvLoading);

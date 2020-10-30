@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { HvFormElement, HvBaseInput, HvHelperText, HvLabel } from "../../..";
+import { HvFormElement, HvBaseInput, HvWarningText, HvLabel } from "../../..";
 import HvProvider from "../../../Provider";
 
 describe.only("FormElement ", () => {
@@ -9,13 +9,13 @@ describe.only("FormElement ", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <HvFormElement value="George" status="valid">
+        <HvFormElement status="valid">
           <HvLabel key="1" id="test" label="First name">
-            <HvBaseInput id="id-test" placeholder="Insert your name" />
+            <HvBaseInput id="id-test" placeholder="Insert your name" defaultValue="George" />
           </HvLabel>
-          <HvHelperText key="2" id="infotext-main" notification="warning">
-            Write your name in this input do not put numbers
-          </HvHelperText>
+          <HvWarningText key="2" id="infotext-main">
+            warning
+          </HvWarningText>
         </HvFormElement>
       </HvProvider>
     );
@@ -28,6 +28,6 @@ describe.only("FormElement ", () => {
   it("should render correctly", () => {
     expect(wrapper.find(HvFormElement)).toMatchSnapshot();
     expect(wrapper.find(HvBaseInput)).toMatchSnapshot();
-    expect(wrapper.find(HvHelperText)).toMatchSnapshot();
+    expect(wrapper.find(HvWarningText)).toMatchSnapshot();
   });
 });

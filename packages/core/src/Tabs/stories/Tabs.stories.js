@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core/";
+import { withStyles, makeStyles } from "@material-ui/core/";
 import { HvBadge, HvTabs, HvTab, HvTypography } from "../..";
 
 export default {
@@ -7,6 +7,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTabs, HvTab } from '@hv/uikit-react-core/dist'",
+
+    dsVersion: "3.2.1",
   },
   component: HvTabs,
   subcomponents: { HvTab },
@@ -23,6 +25,12 @@ export const Main = () => {
       <HvTab id="tabs-tab3" label="Clickable tab 3" />
     </HvTabs>
   );
+};
+
+Main.story = {
+  parameters: {
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  },
 };
 
 export const FullWidth = () => {
@@ -43,6 +51,7 @@ FullWidth.story = {
     docs: {
       storyDescription: "Tabs occupying the full width of the available space",
     },
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
   },
 };
 
@@ -75,6 +84,7 @@ ContentChanging.story = {
     docs: {
       storyDescription: "Tabs changing the content to display according to the selected tab",
     },
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
   },
 };
 
@@ -84,6 +94,7 @@ export const TextSize = () => {
 
   const StyledTab = withStyles((theme) => ({
     root: {
+      minHeight: 48,
       ...theme.hv.typography.sTitle,
     },
   }))((props) => <HvTab {...props} />);
@@ -97,21 +108,37 @@ export const TextSize = () => {
   );
 };
 
+TextSize.story = {
+  parameters: {
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  },
+};
+
 export const CenteredTabs = () => {
   const [value, setValue] = useState(0);
   const handleChange = (e, newValue) => setValue(newValue);
 
-  const StyledTabs = withStyles({
-    flexContainer: { justifyContent: "center" },
-  })((props) => <HvTabs {...props} />);
+  const classes = makeStyles({
+    content: {
+      "& div div": {
+        justifyContent: "center",
+      },
+    },
+  })();
 
   return (
-    <StyledTabs value={value} onChange={handleChange}>
+    <HvTabs className={classes.content} value={value} onChange={handleChange}>
       <HvTab label="Clickable tab" />
       <HvTab label="Clickable tab" />
       <HvTab label="Clickable tab" />
-    </StyledTabs>
+    </HvTabs>
   );
+};
+
+CenteredTabs.story = {
+  parameters: {
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  },
 };
 
 export const WithBadges = () => {
@@ -122,8 +149,11 @@ export const WithBadges = () => {
     const StyledTab = withStyles((theme) => ({
       root: {
         ...theme.hv.typography.sTitle,
-        minHeight: "inherit",
+        minHeight: 48,
         justifyContent: "center",
+        "&$selected": {
+          fontWeight: theme.hv.typography.highlightText.fontWeight,
+        },
       },
     }))((props) => <HvTab {...props} />);
 
@@ -143,5 +173,6 @@ WithBadges.story = {
     docs: {
       storyDescription: "Badges applied to Tabs component.",
     },
+    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
   },
 };

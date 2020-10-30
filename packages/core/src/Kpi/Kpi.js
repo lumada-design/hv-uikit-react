@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
 import styles from "./styles";
-import withLabels from "../withLabels";
+import { useLabels } from "../utils";
 
 const DEFAULT_LABELS = {
   title: "",
@@ -13,12 +13,18 @@ const DEFAULT_LABELS = {
   comparisonIndicatorInfo: undefined,
 };
 
+/**
+ * Key Performance Indicator is a type of performance measurement. It monitors a business indicator
+ * and its success/failure against a given target. KPIs are the first item read on a dashboard.
+ * Communicates simple, immediate and vital information for operational decision making.
+ */
+
 const HvKpi = (props) => {
   const {
     classes,
     className,
     id,
-    labels,
+    labels: labelsProp,
     visualIndicator = null,
     visualComparison = null,
     trendIndicator = null,
@@ -27,6 +33,7 @@ const HvKpi = (props) => {
     ...others
   } = props;
 
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const InternalVisualComparison = typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
@@ -176,7 +183,7 @@ HvKpi.propTypes = {
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "sText", "infoText"]),
+  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "normalText", "normalText"]),
 };
 
-export default withStyles(styles, { name: "HvKpi" })(withLabels(DEFAULT_LABELS)(HvKpi));
+export default withStyles(styles, { name: "HvKpi" })(HvKpi);

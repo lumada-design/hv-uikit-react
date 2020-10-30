@@ -6,26 +6,31 @@ const styles = (theme) => ({
     zIndex: 100,
   },
   title: {
-    padding: `${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px`,
+    padding: theme.hvSpacing("15px", "sm"),
     borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
   },
   valuesContainer: {
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: theme.hv.spacing.sm,
   },
   values: {
     display: "flex",
+    justifyContent: "space-between",
     alignItems: "center",
-    paddingBottom: `${theme.hv.spacing.sm}px`,
+    paddingBottom: theme.hv.spacing.sm,
     "&:last-child": {
       paddingBottom: 0,
     },
   },
+  valueNameWrapper: {
+    display: "flex",
+    alignItems: "center",
+  },
   color: {
-    width: `${theme.hv.spacing.xs}px`,
-    height: `${theme.hv.spacing.xs}px`,
+    width: theme.hv.spacing.xs,
+    height: theme.hv.spacing.xs,
   },
   separator: {
-    width: `${theme.hv.spacing.xs}px`,
+    width: theme.hv.spacing.xs,
   },
   separatorColor: {
     width: "5px",

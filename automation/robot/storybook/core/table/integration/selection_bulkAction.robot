@@ -1,10 +1,9 @@
 *** Setting ***
-Resource         ../table.resource
-Test Setup       Run Keywords
-...              Go To    ${visualizations}table--table-with-changing-data    AND
-...              Wait Until Page Contains Element    ${table1 all}
+Resource         ../_table.resource
+Test Setup       open table sample    ${visualizations}    table-with-changing-data   
 Force Tags       bug-ie-webdriver
 Documentation    bug-ie-webdriver https://github.com/lumada-design/hv-uikit-react/issues/1708
+
 
 *** Test Cases ***
 selection count label 1 is correctly updated when is removed rows
@@ -13,7 +12,7 @@ selection count label 1 is correctly updated when is removed rows
     Select CheckBox           ${checkBox 5}
     Click Button              Disable
     Select CheckBox           ${table1 all}
-    Element Should Contain    ${table1 label}    3 of 3   ignore_case=True
+    Element Should Contain    ${table1 label}    3 / 3   ignore_case=True
 
 selection count label 2 is correctly updated when is added rows
     [Documentation]    selection vs bulk actions
@@ -21,7 +20,7 @@ selection count label 2 is correctly updated when is added rows
     Select CheckBox           ${checkBox 5}
     Select CheckBox           ${checkBox 6}
     Click Button              Disable
-    Element Should Contain    ${table2 label}    1 of 7   ignore_case=True
+    Element Should Contain    ${table2 label}    1 / 7   ignore_case=True
 
 selection count label 1 is correctly updated when hidden values are added
     [Documentation]    selection vs bulk actions vs pagination
@@ -29,7 +28,7 @@ selection count label 1 is correctly updated when hidden values are added
     select 2 hidden rows
     Click Button              Enable
     Select CheckBox           ${table1 all}
-    Element Should Contain    ${table1 label}    2 of 2   ignore_case=True
+    Element Should Contain    ${table1 label}    2 / 2   ignore_case=True
 
 selection count label 2 is correctly updated when hidden values are removed
     [Documentation]    selection vs bulk actions vs pagination
@@ -37,7 +36,7 @@ selection count label 2 is correctly updated when hidden values are removed
     select 2 hidden rows
     Click Button              Enable
     Select CheckBox           ${table2 all}
-    Element Should Contain    ${table2 label}    5 of 8   ignore_case=True
+    Element Should Contain    ${table2 label}    5 / 8   ignore_case=True
 
 
 *** Keywords ***

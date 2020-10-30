@@ -1,8 +1,6 @@
 *** Setting ***
 Resource      _bulkActions.resource
-Test Setup    Run Keywords
-...           Go To    ${components}bulk-actions--controlled-with-actions    AND
-...           Wait Until Page Contains Element    ${parentCheckbox}
+Test Setup    open bulk action sample    with-actions
 
 
 *** Test Cases ***
@@ -12,11 +10,11 @@ collect all values when all items are selected
     Wait Until Element Is Not Visible    ${checkboxs}
 
 collect specific values when some items are selected
-    Select Checkbox                      ${checkbox0}
-    Select Checkbox                      ${checkbox7}
+    Select Checkbox                      ${checkbox}\[2]
+    Select Checkbox                      ${checkbox}\[9]
     Click Element                        ${actionDelete}
-    Wait Until Element Is Not Visible    ${checkbox0}
-    Wait Until Element Is Not Visible    ${checkbox7}
+    Wait Until Element Is Not Visible    ${checkbox}\[2]
+    Wait Until Element Is Not Visible    ${checkbox}\[9]
     Page Should Contain Element          ${checkboxs}    limit=6
 
 bulk actions are disable when no item is selected
@@ -26,7 +24,7 @@ bulk actions are disable when no item is selected
 enable bulk action when checkbox is indeterminate
     Unselect Checkbox                    ${parentCheckbox}
     Element Should Be Disabled           ${actionsButtons}
-    Select Checkbox                      ${checkbox7}
+    Select Checkbox                      ${checkbox}\[9]
     Element Attribute Value Should Be    ${parentCheckbox}    data-indeterminate    true
     Element Should Be Enabled            ${actionsButtons}
 
@@ -44,9 +42,9 @@ disable bulk actions when unselect all checkbox
 
 disable bulk actions when unselect the unique selected item
     Unselect Checkbox             ${parentCheckbox}
-    Select Checkbox               ${checkbox1}
+    Select Checkbox               ${checkbox}\[3]
     Element Should Be Enabled     ${actionsButtons}
-    Unselect Checkbox             ${checkbox1}
+    Unselect Checkbox             ${checkbox}\[3]
     Element Should Be Disabled    ${actionsButtons}
 
 filter max actions visible when maxVisibleActions is defined

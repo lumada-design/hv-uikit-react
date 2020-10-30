@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { HvDropdown, HvTypography } from "@hv/uikit-react-core/dist";
-import * as iconComponentList from "@hv/uikit-react-icons/dist";
 
 const iconContainer = {
   margin: "5px",
@@ -8,30 +7,44 @@ const iconContainer = {
   width: "140px",
   display: "inherit",
   flexDirection: "column",
-  alignItems: "center"
+  alignItems: "center",
+};
+
+const widerIconContainer = {
+  margin: "15px",
+  padding: "15px",
+  width: "200px",
+  display: "inherit",
+  flexDirection: "column",
+  alignItems: "center",
 };
 
 const dropdownSizes = [
   { id: "0", label: "XS" },
   { id: "1", label: "S", selected: true },
   { id: "2", label: "M" },
-  { id: "3", label: "L" }
+  { id: "3", label: "L" },
 ];
 
-const keys = Array.from(new Set([...Object.keys(iconComponentList)])).sort();
-
-const Group = ({ iconSize }) => {
+const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
+  const keys = Array.from(new Set([...Object.keys(iconsLibrary)])).sort();
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {keys.map(icon => (
-        <Icon key={icon} name={icon} Component={iconComponentList[icon]} iconSize={iconSize} />
+      {keys.map((icon) => (
+        <Icon
+          widerSpacing={widerSpacing}
+          key={icon}
+          name={icon}
+          Component={iconsLibrary[icon]}
+          iconSize={iconSize}
+        />
       ))}
     </div>
   );
 };
 
-const Icon = ({ name, Component, iconSize }) => (
-  <div style={iconContainer}>
+const Icon = ({ widerSpacing, name, Component, iconSize }) => (
+  <div style={widerSpacing ? widerIconContainer : iconContainer}>
     <Component iconSize={iconSize && iconSize.label} />
     <HvTypography style={{ margin: "6px 0" }} variant="placeholderText">
       {name}
@@ -39,7 +52,7 @@ const Icon = ({ name, Component, iconSize }) => (
   </div>
 );
 
-const Icons = () => {
+const Icons = ({ icons, widerSpacing }) => {
   const [iconSize, setIconSize] = useState(null);
 
   return (
@@ -49,11 +62,11 @@ const Icons = () => {
           values={dropdownSizes}
           multiSelect={false}
           labels={{ title: "Size selector" }}
-          onChange={item => setIconSize(item)}
+          onChange={(item) => setIconSize(item)}
           notifyChangesOnFirstRender
         />
       </div>
-      <Group iconSize={iconSize} />
+      <Group iconSize={iconSize} widerSpacing={widerSpacing} iconsLibrary={icons} />
     </div>
   );
 };

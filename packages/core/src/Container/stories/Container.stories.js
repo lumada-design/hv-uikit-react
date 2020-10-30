@@ -9,6 +9,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import {HvContainer} from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvContainer,
 };
@@ -17,13 +19,13 @@ export const Main = () => {
   const styles = (theme) => ({
     root: {
       border: "1px solid",
-      borderColor: theme.hv.palette.atmosphere.atmo5,
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      borderColor: theme.hv.palette.atmosphere.atmo4,
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,
@@ -45,13 +47,13 @@ export const Main = () => {
 export const SmMaxWidth = () => {
   const styles = (theme) => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,
@@ -81,13 +83,13 @@ SmMaxWidth.story = {
 export const FullWidth = () => {
   const styles = (theme) => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
     },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.hvSpacing(2),
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
       color: theme.hv.palette.base.base2,

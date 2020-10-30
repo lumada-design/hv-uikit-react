@@ -1,55 +1,45 @@
 *** Setting ***
-Resource    ../_keywords.resource
-
-
-*** Variables ***
-${1stRadioButton}         id:radio1-input
-${2ndRadioButton}         id:radio2-input
-${radioSelected}          css:div[class*='RadioButtonSelected']
-${radioNotSelected}       css:div[class*='RadioButtonUnselected']
-${1stRadioButtonLabel}    xpath://span[text()='Label']
+Resource    _radioButton.resource
 
 
 *** Test Cases ***
-select radio button by clicking in input
-    go to                                ${components}selectors-radio--label
-    Wait Until Page Contains Element     ${1stRadioButton}
-    Element Should not Be Visible        ${radioSelected}
-    Element Should Be Visible            ${radioNotSelected}
-    Click Element                        ${1stRadioButton}
-    Element Should Be Visible            ${radioSelected}
-    Element Should not Be Visible        ${radioNotSelected}
+select a radio button
+    [Setup]    open radioButton sample    without-label
+    radioButton should not be selected    ${radio}(1)
+    radioButton should be selected        ${radio}(2)
+    click Element                         ${radio}(1)
+    radioButton should be selected        ${radio}(1)
+    radioButton should not be selected    ${radio}(2)
 
-select radio button by clicking in label
-    go to                                ${components}selectors-radio--label
-    Wait Until Page Contains Element     ${1stRadioButton}
-    Element Should not Be Visible        ${radioSelected}
-    Element Should Be Visible            ${radioNotSelected}
-    Click Element                        ${1stRadioButtonLabel}
-    Element Should Be Visible            ${radioSelected}
-    Element Should not Be Visible        ${radioNotSelected}
+select radio button when clicks on label
+    [Setup]    open radioButton sample    main
+    radioButton should not be selected    ${radio}(1)
+    radioButton should not be selected    ${radio}(2)
+    click Element                         ${radio}(2) label
+    radioButton should not be selected    ${radio}(1)
+    radioButton should be selected        ${radio}(2)
 
-unable select radio button when is disabled
-    go to                                ${components}selectors-radio--disabled
-    Wait Until Page Contains Element     ${1stRadioButton}
-    Run Keyword And Ignore Error         Click Element    ${1stRadioButton}
-    Element Should Be Disabled           ${1stRadioButton}
-    Element Should Be Visible            ${radioNotSelected}
-    Element Should not Be Visible        ${radioSelected}
+impossible unselect
+    [Setup]    open radioButton sample    main
+    click Element                         ${radio}(1)
+    radioButton should be selected        ${radio}(1)
+    click Element                         ${radio}(1)
+    radioButton should be selected        ${radio}(1)
 
-unable unselect checked radio button when is disabled
-    go to                                ${components}selectors-radio--checked-disabled
-    Wait Until Page Contains Element     ${1stRadioButton}
-    Run Keyword And Ignore Error         Click Element    ${1stRadioButton}
-    Element Should Be Disabled           ${1stRadioButton}
-    Element Should Be Visible            ${radioSelected}
-    Element Should not Be Visible        ${radioNotSelected}
+impossible select on a readOnly radio button
+    [Setup]    open radioButton sample    read-only
+    radioButton should not be selected    ${radio}(1)
+    radioButton should be selected        ${radio}(2)
+    click Element                         ${radio}(1)
+    click Element                         ${radio}(2)
+    radioButton should not be selected    ${radio}(1)
+    radioButton should be selected        ${radio}(2)
 
-radio button with state management
-    go to                                ${components}selectors-radio--with-state
-    Wait Until Element Is Enabled        ${1stRadioButton}
-    Element Attribute Value Should Be    ${1stRadioButton}    checked    true
-    Element Attribute Value Should Be    ${2ndRadioButton}    checked    ${None}
-    Click Element                        ${2ndRadioButton}
-    Element Attribute Value Should Be    ${1stRadioButton}    checked    ${None}
-    Element Attribute Value Should Be    ${2ndRadioButton}    checked    true
+impossible select on a disabled radio button
+    [Setup]    open radioButton sample    disabled
+    radioButton should be selected        ${radio}(1)
+    radioButton should not be selected    ${radio}(2)
+    click Element                         ${radio}(1)
+    click Element                         ${radio}(2)
+    radioButton should be selected        ${radio}(1)
+    radioButton should not be selected    ${radio}(2)

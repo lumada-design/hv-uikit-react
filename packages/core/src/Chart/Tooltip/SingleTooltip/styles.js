@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   root: {
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: theme.hv.spacing.sm,
     display: "flex",
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     boxShadow: theme.hv.shadows[1],
@@ -8,7 +8,7 @@ const styles = (theme) => ({
     zIndex: 100,
   },
   separator: {
-    width: `${theme.hv.spacing.xs}px`,
+    width: theme.hv.spacing.xs,
   },
 });
 

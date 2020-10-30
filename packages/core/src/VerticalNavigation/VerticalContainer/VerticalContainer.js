@@ -110,7 +110,7 @@ const VerticalContainer = ({
           buttonRef={buttonRef}
           onClick={() => toggleOpen()}
           aria-label={buttonAriaLabel || (open && "close") || (!open && "open")}
-          category="icon"
+          icon
         >
           <Menu />
         </Button>

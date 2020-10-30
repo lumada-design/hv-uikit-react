@@ -7,19 +7,19 @@ import { styles as containerStyles } from "@material-ui/core/Container/Container
 const styles = (theme) => ({
   ...containerStyles(theme),
   root: {
-    paddingLeft: theme.spacing(1),
-    paddingRight: theme.spacing(1),
-    ...theme.hv.typography.sText,
+    paddingLeft: theme.hvSpacing(1),
+    paddingRight: theme.hvSpacing(1),
+    ...theme.hv.typography.normalText,
     color: theme.hv.palette.base.base2,
     [theme.breakpoints.up("md")]: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2),
+      paddingLeft: theme.hvSpacing(2),
+      paddingRight: theme.hvSpacing(2),
     },
   },
 });
 
 /**
- * The Container is the element responsible to create and add the margins to the page, and make them react to the current screen size. We override the default maxWidth to xl
+ * The Container is the element responsible for creating and adding margins to the page, and making them react to the current screen size. Default maxWidth is overridden to xl.
  */
 const HvContainer = ({ maxWidth = "xl", fixed, ...others }) => {
   return <Container maxWidth={maxWidth} fixed={fixed} {...others} />;

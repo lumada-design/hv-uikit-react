@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -22,20 +22,10 @@ const Action = ({ className, classes, id, label = "", icon, onClick, ...others }
     [onClick]
   );
 
-  const renderedIcon = useMemo(
-    () =>
-      icon &&
-      React.cloneElement(icon, {
-        boxStyles: { width: "32px", height: "32px" },
-      }),
-    [icon]
-  );
-
   return (
     <HvTypography
       id={setId(id, "button")}
       component="div"
-      variant="normalText"
       role="button"
       className={clsx(className, classes.action, { [classes.noIcon]: !icon })}
       tabIndex={0}
@@ -43,7 +33,7 @@ const Action = ({ className, classes, id, label = "", icon, onClick, ...others }
       onClick={onClick}
       {...others}
     >
-      {renderedIcon}
+      {icon}
       {label}
     </HvTypography>
   );

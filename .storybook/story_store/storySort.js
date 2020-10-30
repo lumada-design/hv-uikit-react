@@ -54,7 +54,7 @@ const storySort = (options = {}) => (a, b) => {
       // Otherwise, use alphabetical order.
       return nameA.localeCompare(nameB, options.locales ? options.locales : undefined, {
         numeric: true,
-        sensitivity: "accent"
+        sensitivity: "accent",
       });
     }
 

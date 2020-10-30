@@ -1,16 +1,15 @@
 *** Setting ***
-Resource         _resource.resource
-Suite Setup      Set Selenium Speed    0.1 seconds
-Test Setup       Run Keywords
-...              Go To    ${components}forms-form-element--main
-...              AND    Wait Until Element Is Enabled    ${input}
-Documentation
-...             was verified a firefox webdriver error!!
-...             - Was opened https://github.com/mozilla/geckodriver/issues/1742
-...             work around :
-...             - used locator of label that redirects to input
-...             - Set Selenium Speed    0.1 seconds
+Resource          _adornments.resource
+Suite Setup       Set Selenium Speed    0.1 seconds
+Test Setup        open adornment sample    ${forms}    main
 Suite Teardown    Set Selenium Speed    0 seconds
+Documentation
+...    was verified a firefox webdriver error!!
+...    - Was opened https://github.com/mozilla/geckodriver/issues/1742
+...    work around :
+...    - used locator of label that redirects to input
+...    - Set Selenium Speed    0.1 seconds
+
 
 *** Test Cases ***
 does not show validation adornment icons when input was cleaned
@@ -29,7 +28,7 @@ does not show previous adornment when input is being edited
 
 does not show previous adornment when input is being edited by clicking in label
     Input Text                       ${input}    Joao
-    Click Element                    ${label}
+    Click Element                    ${input}
     Wait Until Element Is Visible    ${input}:focus
     Element Should Not Be Visible    ${adornment_accepted}
 
@@ -47,7 +46,7 @@ revalidate adornments when input value is changed - accepted to accepted
     Wait Until Element Is Visible    ${adornment_accepted}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE
-    Press Keys                       ${label}    Goncalves    TAB
+    Press Keys                       ${input}    Goncalves    TAB
     Wait Until Element Is Visible    ${adornment_accepted}
     Element Should Not Be Visible    ${adornment_failed}
 
@@ -56,7 +55,7 @@ revalidate input when focus goes out - failed to failed
     Wait Until Element Is Visible    ${adornment_failed}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE
-    Press Keys                       ${label}    1a    TAB
+    Press Keys                       ${input}    1a    TAB
     Wait Until Element Is Visible    ${adornment_failed}
     Element Should Not Be Visible    ${adornment_accepted}
 

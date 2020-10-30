@@ -7,6 +7,8 @@ export type PlotData = PlotlyPlotData;
 export type PlotLayout = Layout;
 export type PlotConfig = Config;
 
+export type HvPlotClassKey = "";
+
 export interface HvPlotProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvPlotClassKey> {
   /**
@@ -38,7 +40,5 @@ export interface HvPlotProps
    */
   revision?: number;
 }
-
-export type HvPlotClassKey = "";
 
 export default function HvPlot(props: HvPlotProps): JSX.Element | null;

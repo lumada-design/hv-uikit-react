@@ -1,53 +1,35 @@
-import React, { useEffect, useState } from "react";
-import moment from "moment";
-import HvTable from "../../Table";
-import HvButton from "../../Button";
-import HvLoading from "../Loading";
-import Typography from "../../Typography";
+import React, { useEffect, useRef, useState } from "react";
+import clsx from "clsx";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import useResizeAware from "react-resize-aware";
+import { makeStyles } from "@material-ui/core";
+import { HvButton, HvLoading, HvTypography } from "../..";
+import TableExample from "./TableExample";
+import hexToRgbA from "../../utils/hexToRgbA";
+
+/* eslint-disable react/prop-types */
 
 export default {
   title: "Components/Loading",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvLoading } from '@hv/uikit-react-core/dist'",
+
+    dsVersion: "3.2.1",
   },
   component: HvLoading,
 };
 
-export const Main = () => {
-  return (
-    <div style={{ display: "flex" }}>
-      <HvLoading isActive />
-    </div>
-  );
-};
+export const Main = () => (
+  <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
+    <HvLoading />
+    <HvLoading label="Loading" />
+    <HvLoading small />
+  </div>
+);
 
-export const IndeterminateLoading = () => {
-  // eslint-disable-next-line react/prop-types
-  const ExampleBox = ({ text, children }) => (
-    <div>
-      <Typography>{text}</Typography>
-      {children}
-    </div>
-  );
-  return (
-    <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox text="Large Loading">
-        <HvLoading isActive />
-      </ExampleBox>
-      <ExampleBox text="Large Loading w/ label">
-        <HvLoading isActive text="Loading" />
-      </ExampleBox>
-      <ExampleBox text="Small Loading">
-        <HvLoading isActive small />
-      </ExampleBox>
-    </div>
-  );
-};
-
-export const IndeterminateLoadingOnButtons = () => {
-  // eslint-disable-next-line react/prop-types
-  const ExampleBox = ({ text, category, color }) => {
+export const Buttons = () => {
+  const ExampleBox = ({ label, category, color }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const activateTimer = () => {
@@ -61,214 +43,122 @@ export const IndeterminateLoadingOnButtons = () => {
 
     return (
       <div style={{ textAlign: "center" }}>
-        <Typography style={{ paddingBottom: "5px" }}>{text}</Typography>
+        <HvTypography style={{ paddingBottom: "5px" }}>{label}</HvTypography>
         <HvButton category={category} onClick={activateTimer}>
-          {(!isLoading && "Submit") || <HvLoading small isActive={isLoading} color={color} />}
+          {(!isLoading && "Submit") || <HvLoading small hidden={!isLoading} color={color} />}
         </HvButton>
       </div>
     );
   };
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox category="primary" text="Primary button" color="base1" />
-      <ExampleBox category="secondary" text="Secondary button" />
-      <ExampleBox category="ghost" text="Ghost button" />
+      <ExampleBox category="primary" label="Primary button" color="base1" />
+      <ExampleBox category="secondary" label="Secondary button" />
+      <ExampleBox category="ghost" label="Ghost button" />
     </div>
   );
 };
 
-export const DeterminateLoading = () => {
-  // eslint-disable-next-line react/prop-types
-  const ExampleBox = ({ text, children }) => (
+export const Determinate = () => {
+  const ExampleBox = ({ label, children }) => (
     <div>
-      <Typography>{text}</Typography>
+      <HvTypography>{label}</HvTypography>
+      <br />
       {children}
     </div>
   );
 
-  const Progress = () => {
+  const Progress = ({ label, inc }) => {
     const [value, setValue] = useState(0);
 
     useEffect(() => {
       const interval = setInterval(() => {
-        setValue((v) => (v >= 75 ? 0 : Math.round((v + 1.3) * 100) / 100));
-      }, 1000);
+        setValue(inc);
+      }, 500);
       return () => clearInterval(interval);
-    }, []);
+    }, [inc]);
 
-    return <HvLoading isActive text={`${value}M/75M`} />;
-  };
-
-  const Percentage = () => {
-    const [value, setValue] = useState(0);
-
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setValue((v) => (v === 100 ? 0 : v + 5));
-      }, 1000);
-      return () => clearInterval(interval);
-    }, []);
-
-    return <HvLoading isActive text={`${value}%`} />;
+    return <HvLoading label={label?.(value)} />;
   };
 
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <ExampleBox text="Determine w/ percentages">
-        <Percentage />
+      <ExampleBox label="Determine w/ percentages">
+        <Progress label={(v) => `${v}%`} inc={(v) => (v === 100 ? 0 : v + 5)} />
       </ExampleBox>
-      <ExampleBox text="Determine w/ progress">
-        <Progress />
+      <ExampleBox label="Determine w/ progress">
+        <Progress label={(v) => `${v}M/75M`} inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))} />
       </ExampleBox>
     </div>
   );
 };
 
-const Table = () => {
-  const data = [
-    {
-      id: 14,
-      name: "Event 1",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection ",
-      status: "Open",
-    },
-    {
-      id: 13,
-      name: "Event 2",
-      createdDate: "10/14/2018",
-      eventType: "Risk of failure profile",
-      status: "Pending",
-    },
-    {
-      id: 12,
-      name: "Event 3",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Closed",
-    },
-    {
-      id: 11,
-      name: "Event 4",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-    {
-      id: 10,
-      name: "Event 5",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Pending",
-    },
-    {
-      id: 8,
-      name: "Event 6",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Closed",
-    },
-    {
-      id: 7,
-      name: "Event 7",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-    {
-      id: 6,
-      name: "Event 8",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Pending",
-    },
-    {
-      id: 5,
-      name: "Event 9",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-    {
-      id: 4,
-      name: "Event 1",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Closed",
-    },
-    {
-      id: 3,
-      name: "Event 10",
-      createdDate: "10/14/2018",
-      eventType: "Anomaly detection",
-      status: "Open",
-    },
-  ];
+export const WithChildren = () => {
+  const [loading, setLoading] = useState(true);
 
-  const getColumns = () => [
-    {
-      headerText: "Title",
-      accessor: "name",
-      cellType: "alpha-numeric",
-      fixed: "left",
+  const useStyles = makeStyles((theme) => ({
+    loading: {
+      width: "100%",
+      height: "100%",
     },
-    {
-      headerText: "Time",
-      accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
-      cellType: "numeric",
+    overlay: {
+      position: "absolute",
+      transition: "background-Color .2s ease",
+      zIndex: -1,
     },
-    {
-      headerText: "Event Type",
-      accessor: "eventType",
-      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
+    blur: {
+      backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1),
+      zIndex: theme.zIndex.drawer,
     },
-    {
-      headerText: "Status",
-      accessor: "status",
-      format: (value) => value.original.status.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
-    },
-  ];
+  }));
 
-  return (
-    <div style={{ padding: "10px" }}>
-      <HvTable
-        data={data}
-        id="test"
-        columns={getColumns()}
-        defaultPageSize={10}
-        resizable={false}
-      />
-    </div>
-  );
-};
+  const LoadingContainer = ({ children, hidden, ...others }) => {
+    const ref = useRef(null);
+    const classes = useStyles();
+    const [resizeListener, sizes] = useResizeAware();
+    const [overlayPosition, setOverlayPosition] = useState({});
 
-export const Hoc = () => {
-  const [isLoading, setIsLoading] = useState(false);
+    useEffect(() => {
+      if (children && ref.current) {
+        const { clientHeight, clientWidth, offsetTop, offsetLeft } = ref.current;
+        setOverlayPosition({
+          top: offsetTop,
+          left: offsetLeft,
+          height: clientHeight,
+          width: clientWidth,
+        });
+      }
+    }, [children, sizes.width, sizes.height]);
+
+    return (
+      <>
+        <div
+          style={{ ...overlayPosition }}
+          className={clsx(classes.overlay, { [classes.blur]: !hidden })}
+        >
+          <HvLoading classes={{ root: classes.loading }} hidden={hidden} {...others} />
+        </div>
+        {resizeListener}
+        <div ref={ref}>{children}</div>
+      </>
+    );
+  };
 
   return (
     <>
-      <HvButton id="buttonLoading" onClick={() => setIsLoading(!isLoading)}>
-        {isLoading ? "Disable" : "Activate"}
-      </HvButton>
-      <HvLoading isActive={isLoading} text="Loading">
-        <div>
-          <Table />
-        </div>
-      </HvLoading>
+      <HvButton onClick={() => setLoading(!loading)}>{loading ? "Disable" : "Enable"}</HvButton>
+      <LoadingContainer hidden={!loading}>
+        <TableExample />
+      </LoadingContainer>
     </>
   );
 };
 
-Hoc.story = {
+WithChildren.story = {
   parameters: {
     docs: {
       storyDescription:
-        "If a children is passed the component works as a HOC (High Order Component), wrapping the children and creating a overlay.",
+        "If a children is passed the component wraps it, creating a overlay. You can control whether it's hidden with the `hidden` prop.",
     },
   },
 };

@@ -96,7 +96,7 @@ const KeyboardCodes = Object.freeze({
   graveAccent: 192,
   openBracket: 219,
   backSlash: 220,
-  closeBraket: 221,
+  closeBracket: 221,
   singleQuote: 222,
 });
 

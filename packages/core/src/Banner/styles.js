@@ -6,10 +6,10 @@ const styles = (theme) => ({
     minWidth: `calc(100% - ${theme.hv.spacing.sm}px)`,
   },
   anchorOriginTopCenter: {
-    top: `${theme.hv.spacing.xs}px`,
+    top: theme.hv.spacing.xs,
   },
   anchorOriginBottomCenter: {
-    bottom: `${theme.hv.spacing.xs}px`,
+    bottom: theme.hv.spacing.xs,
   },
 });
 

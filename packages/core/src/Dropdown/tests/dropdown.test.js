@@ -2,10 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { act } from "react-dom/test-utils";
-import HvProvider from "../../Provider";
-import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
-import Typography from "../../Typography";
+import { HvActionBar, HvCheckBox, HvProvider } from "../..";
 import List from "../List";
 import Dropdown from "..";
 
@@ -24,10 +21,8 @@ describe("<Dropdown />", () => {
 
   let wrapper;
   let dropdownComponent;
-  let listComponent;
-  let instance;
 
-  describe("with defaults", () => {
+  describe(" with defaults", () => {
     const onChangeMock = jest.fn();
 
     beforeEach(async () => {
@@ -40,7 +35,7 @@ describe("<Dropdown />", () => {
 
       wrapper = mount(
         <HvProvider>
-          <Dropdown values={mockData} onChange={onChangeMock} showSearch selectDefault expanded />
+          <Dropdown values={mockData} onChange={onChangeMock} showSearch expanded />
         </HvProvider>
       );
 
@@ -50,11 +45,6 @@ describe("<Dropdown />", () => {
 
     it("should render correctly", () => {
       expect(wrapper.find(Dropdown)).toMatchSnapshot();
-    });
-
-    it("default value is selected", () => {
-      listComponent = wrapper.find(List).find(Typography);
-      expect(listComponent.at(1).prop("variant")).toBe("infoText");
     });
 
     it("onChange is triggered on first render when required", () => {
@@ -73,47 +63,9 @@ describe("<Dropdown />", () => {
 
       expect(onChangeMock).toHaveBeenCalled();
     });
-
-    it("handleToggle updates state accordingly", () => {
-      act(() => {
-        wrapper = mount(
-          <HvProvider>
-            <Dropdown values={mockData} onChange={onChangeMock} showSearch selectDefault />
-          </HvProvider>
-        );
-      });
-
-      dropdownComponent = wrapper.find("HvDropdown");
-      instance = dropdownComponent.instance();
-      instance.handleToggle();
-
-      expect(instance.state.isOpen).toBe(true);
-    });
   });
 
-  describe("<Dropdown /> with selectDefault false", () => {
-    beforeEach(async () => {
-      wrapper = mount(
-        <HvProvider>
-          <Dropdown values={mockData} selectDefault={false} expanded />
-        </HvProvider>
-      );
-    });
-
-    it("should render correctly", () => {
-      expect(wrapper.find(Dropdown)).toMatchSnapshot();
-    });
-
-    it("no default value is selected", () => {
-      listComponent = wrapper.find(Typography);
-
-      for (let i = 1; i < listComponent.length; i += i) {
-        expect(listComponent.at(i).prop("variant")).toBe("normalText");
-      }
-    });
-  });
-
-  describe("<Dropdown /> with multiselect and search", () => {
+  describe("<Dropdown /> disabled", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
@@ -124,27 +76,6 @@ describe("<Dropdown />", () => {
 
     it("should render correctly", () => {
       expect(wrapper.find(Dropdown)).toMatchSnapshot();
-    });
-
-    it("<Dropdown /> handleToggle should do nothing if disabled", () => {
-      dropdownComponent = wrapper.find("HvDropdown");
-      instance = dropdownComponent.instance();
-
-      instance.handleToggle();
-
-      expect(instance.state.isOpen).toBe(true);
-    });
-
-    it("handleToggle should be triggered when header is clicked", () => {
-      dropdownComponent = wrapper.find("HvDropdown");
-      instance = dropdownComponent.instance();
-      instance.handleToggle = jest.fn();
-
-      const header = dropdownComponent.find("#test-dropdown-header");
-      header.simulate("mouseUp");
-
-      expect(instance.handleToggle).toBeCalled();
-      expect(instance.state.isOpen).toBe(true);
     });
   });
 
@@ -163,11 +94,10 @@ describe("<Dropdown />", () => {
           />
         </HvProvider>
       );
+      dropdownComponent = wrapper.find(List);
     });
 
     it("onChange shouldn't be triggered when a multi select item is selected ", () => {
-      dropdownComponent = wrapper.find(List);
-
       dropdownComponent
         .find(HvCheckBox)
         .at(1)
@@ -178,8 +108,6 @@ describe("<Dropdown />", () => {
     });
 
     it("onChange shouldn't be triggered when All checkbox is selected ", () => {
-      dropdownComponent = wrapper.find(List);
-
       dropdownComponent
         .find(HvCheckBox)
         .at(0)
@@ -190,11 +118,8 @@ describe("<Dropdown />", () => {
     });
 
     it("onChange should be triggered when action apply is clicked ", () => {
-      dropdownComponent = wrapper.find(List);
-      instance = dropdownComponent.instance();
-
       dropdownComponent
-        .find("Actions")
+        .find(HvActionBar)
         .find("HvButton")
         .at(0)
         .simulate("click", {

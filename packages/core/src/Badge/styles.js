@@ -1,5 +1,5 @@
 const labelBaseStyle = (theme) => ({
-  ...theme.hv.typography.labelText,
+  ...theme.hv.typography.highlightText,
   fontFamily: theme.hv.typography.fontFamily,
   padding: "0 5px",
   wordBreak: "keep-all",
@@ -15,11 +15,11 @@ const styles = (theme) => ({
     width: 0,
   },
   badge: {
-    borderRadius: `${theme.hv.spacing.xs}px`,
+    borderRadius: theme.hv.spacing.xs,
     backgroundColor: theme.hv.palette.accent.acce1,
     float: "left",
-    minHeight: "6px",
-    minWidth: "6px",
+    minHeight: "8px",
+    minWidth: "8px",
   },
   badgeIcon: {
     position: "relative",

@@ -1,48 +1,56 @@
 import React, { useState } from "react";
-import { HvTextArea, HvButton, HvInput } from "../..";
+import { HvTextArea } from "../..";
 
 export default {
-  title: "Components/Text Area",
+  title: "Forms/Text Area",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTextArea } from '@hv/uikit-react-core/dist'",
+
+    dsVersion: "3.2.1",
   },
   component: HvTextArea,
+  decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],
 };
 
-export const Main = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
+export const Main = () => <HvTextArea id="main" label="Label" placeholder="Enter value" rows={5} />;
+
+export const LimitedWithCustomLabels = () => {
+  const validationMessages = {
+    requiredError: "This text area can't be empty",
+    maxCharError: "too many characters",
   };
 
-  return <HvTextArea label="Text Area" labels={labels} id="test" width={610} />;
+  return (
+    <HvTextArea
+      id="limited-custom-label"
+      rows={5}
+      label="Label"
+      description="You can write past the limit"
+      placeholder="Enter value"
+      middleCountLabel="of"
+      validationMessages={validationMessages}
+      required
+      maxCharQuantity={10}
+    />
+  );
 };
 
-export const Resizable = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-  };
-
-  return <HvTextArea label="Text Area" labels={labels} id="test" rows={5} resizable />;
-};
-
-Resizable.story = {
+LimitedWithCustomLabels.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area that allow resizing.",
+      storyDescription: "Text area char count with a custom labels.",
     },
   },
 };
 
 export const LimitedBlocking = () => {
-  const [textLength, setTextLength] = useState(0);
-
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
+  const validationMessages = {
+    requiredError: "This text area can't be empty",
+    maxCharError: "too many characters",
   };
+
+  const [textLength, setTextLength] = useState(0);
 
   const setCounter = (event, data) => {
     setTextLength(data.length);
@@ -51,11 +59,15 @@ export const LimitedBlocking = () => {
 
   return (
     <HvTextArea
+      id="limited-blocking"
+      defaultValue="some text"
       rows={5}
-      labels={labels}
+      label="Label"
+      placeholder="Enter value"
       maxCharQuantity={10}
       blockMax
       onChange={setCounter}
+      validationMessages={validationMessages}
       countCharProps={{ "aria-label": `You have inserted ${textLength} characters` }}
     />
   );
@@ -70,34 +82,35 @@ LimitedBlocking.story = {
   },
 };
 
-export const LimitedWithCustomLabels = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-    startCount: "Inserted",
-    middleCount: "of",
-    endCount: "allowed",
-  };
+export const Resizable = () => (
+  <HvTextArea
+    id="resize"
+    label="Label"
+    placeholder="Enter value"
+    rows={5}
+    maxCharQuantity={1000}
+    resizable
+  />
+);
 
-  return <HvTextArea rows={5} labels={labels} maxCharQuantity={10} />;
-};
-
-LimitedWithCustomLabels.story = {
+Resizable.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area char count with a custom labels.",
+      storyDescription: "Text area that allow resizing.",
     },
   },
 };
 
-export const Disabled = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value",
-  };
-
-  return <HvTextArea label="Text Area" rows={5} labels={labels} maxCharQuantity={1500} disabled />;
-};
+export const Disabled = () => (
+  <HvTextArea
+    id="disabled"
+    rows={5}
+    label="Label"
+    placeholder="Enter value"
+    maxCharQuantity={1500}
+    disabled
+  />
+);
 
 Disabled.story = {
   parameters: {
@@ -107,92 +120,62 @@ Disabled.story = {
   },
 };
 
-export const Controlled = () => {
-  const [value, setValue] = useState("Initial State");
+export const ReadOnly = () => (
+  <HvTextArea
+    readOnly
+    rows={5}
+    label="Label"
+    placeholder="Enter value"
+    defaultValue="You can't change this..."
+  />
+);
 
-  const btnStyle = {
-    width: 120,
-    marginRight: 20,
-  };
-
-  return (
-    <>
-      <HvButton style={btnStyle} onClick={() => setValue("First value")}>
-        First value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Second value")}>
-        Second value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Third value")}>
-        Third value
-      </HvButton>
-
-      <p />
-
-      <HvTextArea
-        value={value}
-        rows={5}
-        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
-        onChange={(e, newValue) => setValue(newValue)}
-      />
-    </>
-  );
-};
-
-Controlled.story = {
+ReadOnly.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area value altered from an outside component.",
+      storyDescription: "Not editable text area.",
     },
   },
 };
 
-export const ControlledLimited = () => {
-  const [value, setValue] = useState("Initial State");
-  const [maxChar, setMaxChar] = useState(10);
+export const WithoutLabel = () => (
+  <HvTextArea aria-label="The label" placeholder="Enter value" rows={5} />
+);
 
-  const btnStyle = {
-    width: 120,
-    marginRight: 20,
+WithoutLabel.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Text area without label. The accessible name is provided via the `aria-label` property.",
+    },
+  },
+};
+
+export const CustomValidation = () => {
+  const validationMessages = {
+    error: "This text area has a number",
+    maxCharError: "too many characters",
   };
 
+  const hasNumber = (value) => /\d/.test(value);
   return (
     <>
-      <HvButton style={btnStyle} onClick={() => setValue("First value")}>
-        First value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Second value")}>
-        Second value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Third value")}>
-        Third value
-      </HvButton>
-
-      <p />
-
-      <HvInput
-        style={{ marginBottom: 30 }}
-        value={String(maxChar)}
-        onChange={(e, newLimit) => setMaxChar(Number(newLimit))}
-        labels={{ inputLabel: "Limit" }}
-      />
-
       <HvTextArea
-        value={value}
+        id="custom-validation"
         rows={5}
-        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
-        onChange={(e, newValue) => setValue(newValue)}
-        maxCharQuantity={maxChar}
-        blockMax
+        label="Label"
+        placeholder="Enter value"
+        validationMessages={validationMessages}
+        validation={(value) => !hasNumber(value)}
       />
     </>
   );
 };
 
-ControlledLimited.story = {
+CustomValidation.story = {
   parameters: {
     docs: {
-      storyDescription: "Text area value altered from an outside component.",
+      storyDescription: "Text area value that can't contain numbers.",
     },
   },
 };

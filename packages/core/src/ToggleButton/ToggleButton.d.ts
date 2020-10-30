@@ -1,45 +1,26 @@
-import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvButtonProps } from "../Button";
 
-export type HvToggleButtonLabelsProp = {
-  /**
-   * Description for selected.
-   */
-  selectedTitle?: string;
-  /**
-   * Description for not selected.
-   */
-  notSelectedTitle?: string;
-};
+export type HvToggleButtonClassKey = "";
 
-export interface HvToggleButtonProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvToggleButtonClassKey> {
+export interface HvToggleButtonProps extends StandardProps<HvButtonProps, HvToggleButtonClassKey> {
   /**
-   * Defines if it is a animated SVG.
+   * When uncontrolled, defines the initial selected state.
    */
-  animated?: boolean;
-  /**
-   * Denotes if component is active or not.
-   */
-  disabled?: boolean;
+  defaultSelected: boolean;
   /**
    * Defines if the button is selected.
+   * When defined the button state becomes controlled.
    */
-  selected?: boolean;
+  selected: boolean;
   /**
-   * Labels.
+   * Icon for when selected. Ignored if the component has children.
    */
-  labels?: HvToggleButtonLabelsProp;
+  selectedIcon?: React.ReactNode;
   /**
-   * Icon for when selected.
+   * Icon for when not selected. Ignored if the component has children.
    */
-  selectedIcon?: React.ComponentType<any>;
-  /**
-   * Icon for when not selected.
-   */
-  notSelectedIcon: React.ComponentType<any>;
+  notSelectedIcon: React.ReactNode;
 }
-
-export type HvToggleButtonClassKey = "root" | "icon" | "disabled";
 
 export default function HvToggleButton(props: HvToggleButtonProps): JSX.Element | null;

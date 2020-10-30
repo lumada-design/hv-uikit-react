@@ -20,6 +20,18 @@ export interface HvKpiLabelProps {
   comparisonIndicatorInfo?: string;
 }
 
+export type HvKpiClassKey =
+  | "kpiContainer"
+  | "visualIndicatorContainer"
+  | "comparisons"
+  | "comparisonContainer"
+  | "comparisonComposition"
+  | "indicatorsContainer"
+  | "indicatorText"
+  | "indicatorUnit"
+  | "spacingToTheRight"
+  | "trendLine";
+
 export interface HvKpiProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvKpiClassKey> {
   /**
@@ -47,17 +59,5 @@ export interface HvKpiProps
    */
   indicatorUnitTextVariant?: "sTitle" | "sText" | "infoText";
 }
-
-export type HvKpiClassKey =
-  | "kpiContainer"
-  | "visualIndicatorContainer"
-  | "comparisons"
-  | "comparisonContainer"
-  | "comparisonComposition"
-  | "indicatorsContainer"
-  | "indicatorText"
-  | "indicatorUnit"
-  | "spacingToTheRight"
-  | "trendLine";
 
 export default function HvKpi(props: HvKpiProps): JSX.Element | null;

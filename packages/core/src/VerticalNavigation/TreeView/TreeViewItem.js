@@ -1,4 +1,7 @@
-import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+/* eslint-disable jsx-a11y/role-supports-aria-props */
+// TODO review aria-disabled and aria-expanded added conditionally to a no tree item li
+
+import React, { useCallback, useContext, useEffect, useMemo, useRef } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
@@ -60,7 +63,6 @@ const TreeViewItem = (props) => {
 
   const listItemRef = useRef(null);
   const actionableRef = useRef(null);
-  const [useFocus, setUseFocus] = useState(false);
 
   const expandable = Boolean(Array.isArray(children) ? children.length : children);
 
@@ -94,7 +96,6 @@ const TreeViewItem = (props) => {
 
   const handleClick = useCallback(
     (event) => {
-      setUseFocus(false);
       if (!tabbable) {
         focus(nodeId);
       }
@@ -232,35 +233,20 @@ const TreeViewItem = (props) => {
     }
   }, [treeviewMode, tabbable]);
 
-  const renderedIcon = useMemo(
-    () =>
-      icon &&
-      React.cloneElement(icon, {
-        boxStyles: { width: "32px", height: "32px" },
-      }),
-    [icon]
-  );
-
   const renderedContent = useMemo(
     () => (
       <HvTypography
         id={setId(id, "button")}
         component="div"
-        variant={selectable && selected ? "selectedText" : "normalText"}
         role="button"
         innerRef={actionableRef}
-        className={clsx(classes.content, {
-          [classes.contentFocused]: useFocus,
-          [classes.contentFocusDisabled]: !useFocus,
-        })}
+        className={clsx(classes.content)}
         tabIndex={tabbable ? 0 : -1}
         onKeyDown={handleKeyDown}
-        onFocus={() => setUseFocus(true)}
-        onBlur={() => setUseFocus(false)}
         onClick={handleClick}
         aria-current={!treeviewMode && selectable && selected ? "page" : undefined}
       >
-        {renderedIcon}
+        {icon}
         {label}
       </HvTypography>
     ),
@@ -268,11 +254,10 @@ const TreeViewItem = (props) => {
       classes,
       handleClick,
       handleKeyDown,
-      useFocus,
       id,
       label,
       treeviewMode,
-      renderedIcon,
+      icon,
       selectable,
       selected,
       tabbable,
@@ -370,14 +355,6 @@ TreeViewItem.propTypes = {
      * Style applied when item is unselectable.
      */
     unselected: PropTypes.string,
-    /**
-     * Style applied when element is focused by keyboard.
-     */
-    contentFocused: PropTypes.string,
-    /**
-     * Style applied when element is focused by click.
-     */
-    contentFocusDisabled: PropTypes.string,
   }).isRequired,
   /**
    * Is the node disabled.

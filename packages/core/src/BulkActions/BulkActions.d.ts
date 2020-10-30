@@ -1,33 +1,26 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
-export interface HvBulkActionsLabelsProp {
-  /**
-   * Label applied to the Select All when no item is selected.
-   */
-  selectAll?: string;
-  /**
-   * Label applied to the Select All across all pages.
-   */
-  selectAllPages?: string;
-  /**
-   * Label applied to the Select All across all pages when all elements are selected.
-   */
-  deselectAllPages: string;
-}
-
+export type HvBulkActionsClassKey =
+  | "root"
+  | "semantic"
+  | "actions"
+  | "selectAllContainer"
+  | "selectAll"
+  | "selectAllPages";
+  
 export interface HvBulkActionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBulkActionsClassKey>,
-    HvActionsCommonProps {
-  /**
-   * Labels
-   */
-  labels?: HvBulkActionsLabelsProp;
+    HvActionsGenericCommonProps {
   /**
    * Custom label for select all checkbox
    */
   selectAllLabel?: React.ReactNode;
+  /**
+   * Custom label for select all pages button
+   */
+  selectAllPagesLabel?: React.ReactNode;
   /**
    * Whether select all pages element should be visible
    */
@@ -52,14 +45,10 @@ export interface HvBulkActionsProps
    *  Whether actions should be all disabled
    */
   actionsDisabled?: boolean;
+  /**
+   * Whether the bulk actions should use the semantic styles when there are selected elements.
+   */
+  semantic?: boolean;
 }
-
-export type HvBulkActionsClassKey =
-  | "root"
-  | "editMode"
-  | "actions"
-  | "selectAllContainer"
-  | "selectAll"
-  | "selectAllPages";
 
 export default function HvBulkActions(props: HvBulkActionsProps): JSX.Element | null;

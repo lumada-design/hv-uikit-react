@@ -1,0 +1,383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render correctly 1`] = `
+<WithStyles(HvBaseInput)
+  inputProps={
+    Object {
+      "aria-label": "Input Label",
+    }
+  }
+  placeholder="test"
+>
+  <HvBaseInput
+    classes={
+      Object {
+        "disabled": "HvBaseInput-disabled",
+        "input": "HvBaseInput-input",
+        "inputBorderContainer": "HvBaseInput-inputBorderContainer",
+        "inputResizable": "HvBaseInput-inputResizable",
+        "inputRoot": "HvBaseInput-inputRoot",
+        "inputRootDisabled": "HvBaseInput-inputRootDisabled",
+        "inputRootFocused": "HvBaseInput-inputRootFocused",
+        "inputRootMultiline": "HvBaseInput-inputRootMultiline",
+        "invalid": "HvBaseInput-invalid",
+        "resizable": "HvBaseInput-resizable",
+        "root": "HvBaseInput-root",
+      }
+    }
+    inputProps={
+      Object {
+        "aria-label": "Input Label",
+      }
+    }
+    placeholder="test"
+  >
+    <div
+      className="HvBaseInput-root"
+    >
+      <WithStyles(ForwardRef(Input))
+        classes={
+          Object {
+            "disabled": "HvBaseInput-inputRootDisabled",
+            "focused": "HvBaseInput-inputRootFocused",
+            "input": "HvBaseInput-input",
+            "multiline": "HvBaseInput-inputRootMultiline",
+            "root": "HvBaseInput-inputRoot",
+          }
+        }
+        inputProps={
+          Object {
+            "aria-controls": undefined,
+            "aria-describedby": undefined,
+            "aria-label": "Input Label",
+            "aria-labelledby": undefined,
+            "required": undefined,
+          }
+        }
+        multiline={false}
+        onChange={[Function]}
+        placeholder="test"
+        rows={10}
+        type="text"
+      >
+        <ForwardRef(Input)
+          classes={
+            Object {
+              "colorSecondary": "MuiInput-colorSecondary",
+              "disabled": "Mui-disabled HvBaseInput-inputRootDisabled",
+              "error": "Mui-error",
+              "focused": "Mui-focused HvBaseInput-inputRootFocused",
+              "formControl": "MuiInput-formControl",
+              "fullWidth": "MuiInput-fullWidth",
+              "input": "MuiInput-input HvBaseInput-input",
+              "inputMarginDense": "MuiInput-inputMarginDense",
+              "inputMultiline": "MuiInput-inputMultiline",
+              "inputTypeSearch": "MuiInput-inputTypeSearch",
+              "marginDense": "MuiInput-marginDense",
+              "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline",
+              "root": "MuiInput-root HvBaseInput-inputRoot",
+              "underline": "MuiInput-underline",
+            }
+          }
+          disableUnderline={true}
+          inputProps={
+            Object {
+              "aria-controls": undefined,
+              "aria-describedby": undefined,
+              "aria-label": "Input Label",
+              "aria-labelledby": undefined,
+              "required": undefined,
+            }
+          }
+          multiline={false}
+          onChange={[Function]}
+          placeholder="test"
+          rows={10}
+          type="text"
+        >
+          <WithStyles(ForwardRef(InputBase))
+            classes={
+              Object {
+                "colorSecondary": "MuiInput-colorSecondary",
+                "disabled": "Mui-disabled HvBaseInput-inputRootDisabled",
+                "error": "Mui-error",
+                "focused": "Mui-focused HvBaseInput-inputRootFocused",
+                "formControl": "MuiInput-formControl",
+                "fullWidth": "MuiInput-fullWidth",
+                "input": "MuiInput-input HvBaseInput-input",
+                "inputMarginDense": "MuiInput-inputMarginDense",
+                "inputMultiline": "MuiInput-inputMultiline",
+                "inputTypeSearch": "MuiInput-inputTypeSearch",
+                "marginDense": "MuiInput-marginDense",
+                "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline",
+                "root": "MuiInput-root HvBaseInput-inputRoot",
+                "underline": null,
+              }
+            }
+            fullWidth={false}
+            inputComponent="input"
+            inputProps={
+              Object {
+                "aria-controls": undefined,
+                "aria-describedby": undefined,
+                "aria-label": "Input Label",
+                "aria-labelledby": undefined,
+                "required": undefined,
+              }
+            }
+            multiline={false}
+            onChange={[Function]}
+            placeholder="test"
+            rows={10}
+            type="text"
+          >
+            <ForwardRef(InputBase)
+              classes={
+                Object {
+                  "adornedEnd": "MuiInputBase-adornedEnd",
+                  "adornedStart": "MuiInputBase-adornedStart",
+                  "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
+                  "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled",
+                  "error": "Mui-error Mui-error",
+                  "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused",
+                  "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                  "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                  "input": "MuiInputBase-input MuiInput-input HvBaseInput-input",
+                  "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                  "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                  "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                  "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                  "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                  "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                  "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
+                  "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline",
+                  "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot",
+                }
+              }
+              fullWidth={false}
+              inputComponent="input"
+              inputProps={
+                Object {
+                  "aria-controls": undefined,
+                  "aria-describedby": undefined,
+                  "aria-label": "Input Label",
+                  "aria-labelledby": undefined,
+                  "required": undefined,
+                }
+              }
+              multiline={false}
+              onChange={[Function]}
+              placeholder="test"
+              rows={10}
+              type="text"
+            >
+              <div
+                className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot"
+                onClick={[Function]}
+              >
+                <input
+                  aria-label="Input Label"
+                  className="MuiInputBase-input MuiInput-input HvBaseInput-input"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="test"
+                  rows={10}
+                  type="text"
+                />
+              </div>
+            </ForwardRef(InputBase)>
+          </WithStyles(ForwardRef(InputBase))>
+        </ForwardRef(Input)>
+      </WithStyles(ForwardRef(Input))>
+      <div
+        className="HvBaseInput-inputBorderContainer"
+        role="presentation"
+      />
+    </div>
+  </HvBaseInput>
+</WithStyles(HvBaseInput)>
+`;
+
+exports[`Input should render the Input component with the multiline style 1`] = `
+<WithStyles(HvBaseInput)
+  multiline={true}
+  placeholder="test"
+>
+  <HvBaseInput
+    classes={
+      Object {
+        "disabled": "HvBaseInput-disabled",
+        "input": "HvBaseInput-input",
+        "inputBorderContainer": "HvBaseInput-inputBorderContainer",
+        "inputResizable": "HvBaseInput-inputResizable",
+        "inputRoot": "HvBaseInput-inputRoot",
+        "inputRootDisabled": "HvBaseInput-inputRootDisabled",
+        "inputRootFocused": "HvBaseInput-inputRootFocused",
+        "inputRootMultiline": "HvBaseInput-inputRootMultiline",
+        "invalid": "HvBaseInput-invalid",
+        "resizable": "HvBaseInput-resizable",
+        "root": "HvBaseInput-root",
+      }
+    }
+    multiline={true}
+    placeholder="test"
+  >
+    <div
+      className="HvBaseInput-root"
+    >
+      <WithStyles(ForwardRef(Input))
+        classes={
+          Object {
+            "disabled": "HvBaseInput-inputRootDisabled",
+            "focused": "HvBaseInput-inputRootFocused",
+            "input": "HvBaseInput-input",
+            "multiline": "HvBaseInput-inputRootMultiline",
+            "root": "HvBaseInput-inputRoot",
+          }
+        }
+        inputProps={
+          Object {
+            "aria-controls": undefined,
+            "aria-describedby": undefined,
+            "aria-labelledby": undefined,
+            "required": undefined,
+          }
+        }
+        multiline={true}
+        onChange={[Function]}
+        placeholder="test"
+        rows={10}
+        type="text"
+      >
+        <ForwardRef(Input)
+          classes={
+            Object {
+              "colorSecondary": "MuiInput-colorSecondary",
+              "disabled": "Mui-disabled HvBaseInput-inputRootDisabled",
+              "error": "Mui-error",
+              "focused": "Mui-focused HvBaseInput-inputRootFocused",
+              "formControl": "MuiInput-formControl",
+              "fullWidth": "MuiInput-fullWidth",
+              "input": "MuiInput-input HvBaseInput-input",
+              "inputMarginDense": "MuiInput-inputMarginDense",
+              "inputMultiline": "MuiInput-inputMultiline",
+              "inputTypeSearch": "MuiInput-inputTypeSearch",
+              "marginDense": "MuiInput-marginDense",
+              "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline",
+              "root": "MuiInput-root HvBaseInput-inputRoot",
+              "underline": "MuiInput-underline",
+            }
+          }
+          disableUnderline={true}
+          inputProps={
+            Object {
+              "aria-controls": undefined,
+              "aria-describedby": undefined,
+              "aria-labelledby": undefined,
+              "required": undefined,
+            }
+          }
+          multiline={true}
+          onChange={[Function]}
+          placeholder="test"
+          rows={10}
+          type="text"
+        >
+          <WithStyles(ForwardRef(InputBase))
+            classes={
+              Object {
+                "colorSecondary": "MuiInput-colorSecondary",
+                "disabled": "Mui-disabled HvBaseInput-inputRootDisabled",
+                "error": "Mui-error",
+                "focused": "Mui-focused HvBaseInput-inputRootFocused",
+                "formControl": "MuiInput-formControl",
+                "fullWidth": "MuiInput-fullWidth",
+                "input": "MuiInput-input HvBaseInput-input",
+                "inputMarginDense": "MuiInput-inputMarginDense",
+                "inputMultiline": "MuiInput-inputMultiline",
+                "inputTypeSearch": "MuiInput-inputTypeSearch",
+                "marginDense": "MuiInput-marginDense",
+                "multiline": "MuiInput-multiline HvBaseInput-inputRootMultiline",
+                "root": "MuiInput-root HvBaseInput-inputRoot",
+                "underline": null,
+              }
+            }
+            fullWidth={false}
+            inputComponent="input"
+            inputProps={
+              Object {
+                "aria-controls": undefined,
+                "aria-describedby": undefined,
+                "aria-labelledby": undefined,
+                "required": undefined,
+              }
+            }
+            multiline={true}
+            onChange={[Function]}
+            placeholder="test"
+            rows={10}
+            type="text"
+          >
+            <ForwardRef(InputBase)
+              classes={
+                Object {
+                  "adornedEnd": "MuiInputBase-adornedEnd",
+                  "adornedStart": "MuiInputBase-adornedStart",
+                  "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
+                  "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputRootDisabled",
+                  "error": "Mui-error Mui-error",
+                  "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused",
+                  "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                  "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                  "input": "MuiInputBase-input MuiInput-input HvBaseInput-input",
+                  "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                  "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                  "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                  "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                  "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                  "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                  "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
+                  "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline",
+                  "root": "MuiInputBase-root MuiInput-root HvBaseInput-inputRoot",
+                }
+              }
+              fullWidth={false}
+              inputComponent="input"
+              inputProps={
+                Object {
+                  "aria-controls": undefined,
+                  "aria-describedby": undefined,
+                  "aria-labelledby": undefined,
+                  "required": undefined,
+                }
+              }
+              multiline={true}
+              onChange={[Function]}
+              placeholder="test"
+              rows={10}
+              type="text"
+            >
+              <div
+                className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInputBase-multiline MuiInput-multiline HvBaseInput-inputRootMultiline"
+                onClick={[Function]}
+              >
+                <textarea
+                  className="MuiInputBase-input MuiInput-input HvBaseInput-input MuiInputBase-inputMultiline MuiInput-inputMultiline"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="test"
+                  rows={10}
+                />
+              </div>
+            </ForwardRef(InputBase)>
+          </WithStyles(ForwardRef(InputBase))>
+        </ForwardRef(Input)>
+      </WithStyles(ForwardRef(Input))>
+    </div>
+  </HvBaseInput>
+</WithStyles(HvBaseInput)>
+`;

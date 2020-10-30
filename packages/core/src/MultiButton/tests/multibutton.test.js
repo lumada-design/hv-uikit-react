@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { HvProvider } from "../..";
+import { HvProvider, HvMultiButton } from "../..";
 import { Main, OnlyIcons, OnlyLabels } from "../stories/MultiButton.stories";
 
 describe("Multibutton withStyles - Icons Only", () => {
@@ -18,12 +18,12 @@ describe("Multibutton withStyles - Icons Only", () => {
   });
 
   it("should render the Multibutton component", () => {
-    const multiButtonComponent = wrapper.find("MultiButton");
+    const multiButtonComponent = wrapper.find(HvMultiButton);
     expect(multiButtonComponent.length).toBe(1);
   });
 
   it("should render the inner buttons and match to definitions", () => {
-    const multiButtonComponent = wrapper.find("MultiButton");
+    const multiButtonComponent = wrapper.find(HvMultiButton);
     expect(multiButtonComponent.length).toBe(1);
   });
 });
@@ -40,7 +40,7 @@ describe("Multibutton - Text Only", () => {
   });
 
   it("should render the Multibutton component", () => {
-    const multiButtonComponent = wrapper.find("MultiButton");
+    const multiButtonComponent = wrapper.find(HvMultiButton);
     expect(multiButtonComponent.length).toBe(1);
   });
 });
@@ -57,7 +57,7 @@ describe("Multibutton - Text and Icons", () => {
   });
 
   it("should render the Multibutton component", () => {
-    const multiButtonComponent = wrapper.find("MultiButton");
-    expect(multiButtonComponent.length).toBe(2);
+    const multiButtonComponent = wrapper.find(HvMultiButton);
+    expect(multiButtonComponent.length).toBe(1);
   });
 });

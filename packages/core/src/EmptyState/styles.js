@@ -30,23 +30,20 @@ const styles = (theme) => ({
     overflow: "hidden",
     fontFamily: theme.hv.typography.fontFamily,
     [theme.breakpoints.up("sm")]: {
-      marginLeft: "16px",
-      paddingLeft: "4px",
+      marginLeft: theme.hvSpacing("xs"),
     },
     "& a": {
-      ...theme.hv.typography.inlineLink,
+      ...theme.hv.typography.link,
       textDecoration: "none",
     },
   },
   titleContainer: {
-    margin: "5px 0",
-    [theme.breakpoints.only("xs")]: {
-      marginTop: `${theme.hv.spacing.sm}px`,
-    },
+    marginTop: 2,
+    marginBottom: 25,
   },
   messageContainer: {},
   actionContainer: {
-    marginTop: `${theme.hv.spacing.sm}px`,
+    marginTop: theme.hvSpacing("sm"),
   },
 });
 

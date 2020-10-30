@@ -3,6 +3,13 @@ Resource    ../../_keywords.resource
 
 
 *** Keywords ***
+open vertical navigation sample
+    [Arguments]    ${dir}    ${sample}
+    Go To                            ${dir}vertical-navigation--${sample}
+    Wait Until Element Is Visible    ${burger}
+    Click Element                    ${burger}
+    Wait Until Element Is Visible    ${items}
+
 vertical navigation item should be selected
     [Arguments]    ${locator}
     [Documentation]    verify if locator contains selectedItem in class attribute
@@ -13,10 +20,6 @@ vertical navigation item should not be selected
     [Documentation]    verify if locator contains selectedItem in class attribute
     wait until element attribute contain    ${locator}    class    -unselected
 
-expand vertical navigation
-    Wait Until Element Is Visible    ${burger}
-    Click Element                    ${burger}
-    Wait Until Element Is Visible    ${items}
 
 *** Variables ***
 ${action1}         css:div[class*=Actions-root]>div:nth-child(1)

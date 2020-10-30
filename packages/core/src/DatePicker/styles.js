@@ -1,27 +1,44 @@
 import { outlineStyles } from "../Focus/styles";
 
-const icon = {
-  position: "absolute",
-  right: 0,
-  bottom: 0,
-  width: "30px",
-  height: "30px",
-};
-
 const styles = (theme) => ({
   root: {
     position: "relative",
+    width: 320,
+    display: "inline-block",
+  },
+  inputContainer: {
+    position: "relative",
     background: theme.palette.atmo1,
-    height: "32px",
-    paddingLeft: theme.spacing("xs"),
-    paddingRight: theme.spacing("md"),
+    height: 32,
+    paddingLeft: theme.hvSpacing("xs"),
+    paddingRight: theme.hvSpacing("md"),
     fontFamily: theme.hv.typography.fontFamily,
     "&:focus": {
       ...outlineStyles,
     },
   },
+
+  labelContainer: {
+    display: "flex",
+    alignItems: "flex-start",
+  },
+  label: {
+    paddingBottom: "6px",
+    display: "block",
+  },
+  description: {},
+  error: {},
+
+  dropdown: {
+    display: "block",
+  },
+  panel: {
+    backgroundColor: theme.palette.atmo1,
+  },
+
   inputCalendarClosed: {
-    border: `1px solid ${theme.palette.atmo6}`,
+    border: `1px solid ${theme.palette.atmo4}`,
+    borderRadius: 2,
     "&:hover": {
       cursor: "pointer",
       border: `1px solid ${theme.palette.acce1}`,
@@ -30,12 +47,7 @@ const styles = (theme) => ({
   inputCalendarOpen: {
     boxShadow: theme.hv.shadows[1],
     border: `1px solid ${theme.palette.atmo1}`,
-  },
-  noBorderTop: {
-    borderTop: "none",
-  },
-  noBorderBottom: {
-    borderBottom: "none",
+    borderRadius: "2px 2px 0 0",
   },
   input: {
     border: "none",
@@ -54,35 +66,21 @@ const styles = (theme) => ({
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.placeholderText,
     },
-  },
-  icon: {
-    ...icon,
-    cursor: "pointer",
-    "&:focus": {
-      ...outlineStyles,
+    "&::-moz-placeholder": {
+      lineHeight: "26px",
     },
   },
-  iconClear: {
-    ...icon,
-    cursor: "pointer",
+  icon: {
+    position: "absolute",
+    right: -1,
+    bottom: -1,
   },
-  datePickerContainer: {
-    position: "relative",
-    width: "320px",
+  action: {
+    "&:first-child": {
+      marginRight: theme.hvSpacing("xs"),
+    },
   },
-  label: {
-    marginBottom: theme.spacing("xs"),
-    display: "block",
-  },
-  calendarContainer: {
-    backgroundColor: theme.palette.atmo1,
-    width: "320px",
-  },
-  singleCalendarFooter: {
-    padding: theme.spacing("sm"),
-    textAlign: "right",
-    borderTop: `3px solid ${theme.palette.atmo2}`,
-  },
+
   rangeMainContainer: {
     display: "flex",
     flexDirection: "column",
@@ -93,61 +91,8 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "row",
   },
-  rangeLeftCalendarContainer: {
+  rangeCalendarContainer: {
     width: "50%",
-  },
-  rangeRightCalendarContainer: {
-    width: "50%",
-  },
-  rangeCalendarsFooter: {
-    display: "flex",
-    flexDirection: "row",
-    borderTop: `3px solid ${theme.palette.atmo2}`,
-  },
-  rangeFooterLeft: {
-    width: "50%",
-  },
-  rangeFooterRight: {
-    width: "50%",
-    textAlign: "right",
-    padding: theme.spacing("sm"),
-  },
-  actionsContainer: {
-    textAlign: "right",
-  },
-  borderTopNone: {
-    borderTop: "none",
-  },
-  borderBottomNone: {
-    borderBottom: "none",
-  },
-  borderTopDisplay: {
-    borderTop: `1px solid ${theme.palette.acce1}`,
-  },
-  borderBottomDisplay: {
-    borderBottom: `1px solid ${theme.palette.acce1}`,
-  },
-  popperRoot: {
-    display: "block",
-  },
-  listBorderDown: {
-    height: "10px",
-    width: "320px",
-    background: theme.palette.atmo1,
-  },
-  listBorderUp: {
-    height: "10px",
-    boxShadow: " 0px -5px 5px -4px rgba(65,65,65,.12)",
-    width: "320px",
-    background: theme.palette.atmo1,
-  },
-  calendarOpenDown: {
-    background: theme.palette.atmo1,
-    boxShadow: theme.hv.shadows[1],
-  },
-  calendarOpenUp: {
-    background: theme.palette.atmo1,
-    boxShadow: theme.hv.shadows[1],
   },
 });
 

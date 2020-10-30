@@ -12,7 +12,7 @@ Documentation     in all Test Cases was assumed the buttons are enabled
 *** Test Cases ***
 current page increase when is clicked next page
     click next page
-    Input Text                   css:input[type=text]    e
+    Input Text                   css:input[type=search]    e
     click next page
-    Input Text                   css:input[type=text]    v
+    Input Text                   css:input[type=search]    v
     click next page

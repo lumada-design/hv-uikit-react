@@ -27,8 +27,10 @@ exports[`Header should be able to render 1`] = `
         classes={
           Object {
             "colorDefault": "MuiAppBar-colorDefault",
+            "colorInherit": "MuiAppBar-colorInherit",
             "colorPrimary": "MuiAppBar-colorPrimary HvHeader-backgroundColor",
             "colorSecondary": "MuiAppBar-colorSecondary",
+            "colorTransparent": "MuiAppBar-colorTransparent",
             "positionAbsolute": "MuiAppBar-positionAbsolute",
             "positionFixed": "MuiAppBar-positionFixed",
             "positionRelative": "MuiAppBar-positionRelative",
@@ -90,25 +92,22 @@ exports[`Header should be able to render 1`] = `
                 className="HvHeader-header"
               >
                 <WithStyles(HvButton)
-                  category="icon"
+                  icon={true}
                   onClick={[Function]}
                 >
                   <HvButton
-                    category="icon"
                     classes={
                       Object {
+                        "focusVisible": "HvButton-focusVisible",
                         "ghost": "HvButton-ghost",
                         "ghostDisabled": "HvButton-ghostDisabled",
                         "ghostSVG": "HvButton-ghostSVG",
-                        "ghostSecondary": "HvButton-ghostSecondary",
-                        "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
-                        "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+                        "icon": "HvButton-icon",
                         "iconSVG": "HvButton-iconSVG",
                         "primary": "HvButton-primary",
                         "primaryDisabled": "HvButton-primaryDisabled",
                         "primarySVG": "HvButton-primarySVG",
                         "root": "HvButton-root",
-                        "rootIcon": "HvButton-rootIcon",
                         "secondary": "HvButton-secondary",
                         "secondaryDisabled": "HvButton-secondaryDisabled",
                         "secondarySVG": "HvButton-secondarySVG",
@@ -118,10 +117,11 @@ exports[`Header should be able to render 1`] = `
                         "startIcon": "HvButton-startIcon",
                       }
                     }
+                    icon={true}
                     onClick={[Function]}
                   >
                     <WithStyles(ForwardRef(Button))
-                      className="HvButton-iconSVG HvButton-rootIcon"
+                      className="HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
                           "containedPrimary": "HvButton-primary",
@@ -134,11 +134,12 @@ exports[`Header should be able to render 1`] = `
                       }
                       color="primary"
                       disableRipple={true}
+                      focusVisibleClassName="HvButton-focusVisible"
                       onClick={[Function]}
                       variant="text"
                     >
                       <ForwardRef(Button)
-                        className="HvButton-iconSVG HvButton-rootIcon"
+                        className="HvButton-icon HvButton-ghostSVG"
                         classes={
                           Object {
                             "colorInherit": "MuiButton-colorInherit",
@@ -174,21 +175,22 @@ exports[`Header should be able to render 1`] = `
                         }
                         color="primary"
                         disableRipple={true}
+                        focusVisibleClassName="HvButton-focusVisible"
                         onClick={[Function]}
                         variant="text"
                       >
                         <WithStyles(ForwardRef(ButtonBase))
-                          className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                          className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           component="button"
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           onClick={[Function]}
                           type="button"
                         >
                           <ForwardRef(ButtonBase)
-                            className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                            className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             classes={
                               Object {
                                 "disabled": "Mui-disabled",
@@ -200,12 +202,12 @@ exports[`Header should be able to render 1`] = `
                             disableRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="Mui-focusVisible"
+                            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                             onClick={[Function]}
                             type="button"
                           >
                             <button
-                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -225,37 +227,31 @@ exports[`Header should be able to render 1`] = `
                               <span
                                 className="MuiButton-label"
                               >
-                                <WithStyles(Menu)>
-                                  <Menu
-                                    classes={
-                                      Object {
-                                        "root": "HvIconMenu-root",
-                                        "rootL": "HvIconMenu-rootL",
-                                        "rootM": "HvIconMenu-rootM",
-                                        "rootS": "HvIconMenu-rootS",
-                                        "rootXs": "HvIconMenu-rootXs",
-                                      }
-                                    }
+                                <Menu>
+                                  <HvIconBase
+                                    iconSize="S"
+                                    name="Menu"
                                   >
                                     <div
-                                      className="HvIconMenu-root HvIconMenu-rootS"
+                                      className="HvIconBase-root HvIconBase-s"
+                                      name="Menu"
                                     >
                                       <svg
                                         focusable={false}
-                                        height="16px"
+                                        height={16}
                                         viewBox="0 0 16 16"
-                                        width="16px"
+                                        width={16}
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
                                           className="color0"
-                                          d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
+                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
                                           fill="#414141"
                                         />
                                       </svg>
                                     </div>
-                                  </Menu>
-                                </WithStyles(Menu)>
+                                  </HvIconBase>
+                                </Menu>
                               </span>
                             </button>
                           </ForwardRef(ButtonBase)>
@@ -356,23 +352,22 @@ exports[`Header should be able to render 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
+                              "noWrap": "HvTypography-noWrap",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
+                              "sectionTitle": "HvTypography-sectionTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -403,26 +398,23 @@ exports[`Header should be able to render 1`] = `
                     >
                       <WithStyles(HvButton)
                         aria-label="Open Notifications panel"
-                        category="icon"
+                        icon={true}
                         onClick={[Function]}
                       >
                         <HvButton
                           aria-label="Open Notifications panel"
-                          category="icon"
                           classes={
                             Object {
+                              "focusVisible": "HvButton-focusVisible",
                               "ghost": "HvButton-ghost",
                               "ghostDisabled": "HvButton-ghostDisabled",
                               "ghostSVG": "HvButton-ghostSVG",
-                              "ghostSecondary": "HvButton-ghostSecondary",
-                              "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
-                              "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+                              "icon": "HvButton-icon",
                               "iconSVG": "HvButton-iconSVG",
                               "primary": "HvButton-primary",
                               "primaryDisabled": "HvButton-primaryDisabled",
                               "primarySVG": "HvButton-primarySVG",
                               "root": "HvButton-root",
-                              "rootIcon": "HvButton-rootIcon",
                               "secondary": "HvButton-secondary",
                               "secondaryDisabled": "HvButton-secondaryDisabled",
                               "secondarySVG": "HvButton-secondarySVG",
@@ -432,11 +424,12 @@ exports[`Header should be able to render 1`] = `
                               "startIcon": "HvButton-startIcon",
                             }
                           }
+                          icon={true}
                           onClick={[Function]}
                         >
                           <WithStyles(ForwardRef(Button))
                             aria-label="Open Notifications panel"
-                            className="HvButton-iconSVG HvButton-rootIcon"
+                            className="HvButton-icon HvButton-ghostSVG"
                             classes={
                               Object {
                                 "containedPrimary": "HvButton-primary",
@@ -449,12 +442,13 @@ exports[`Header should be able to render 1`] = `
                             }
                             color="primary"
                             disableRipple={true}
+                            focusVisibleClassName="HvButton-focusVisible"
                             onClick={[Function]}
                             variant="text"
                           >
                             <ForwardRef(Button)
                               aria-label="Open Notifications panel"
-                              className="HvButton-iconSVG HvButton-rootIcon"
+                              className="HvButton-icon HvButton-ghostSVG"
                               classes={
                                 Object {
                                   "colorInherit": "MuiButton-colorInherit",
@@ -490,23 +484,24 @@ exports[`Header should be able to render 1`] = `
                               }
                               color="primary"
                               disableRipple={true}
+                              focusVisibleClassName="HvButton-focusVisible"
                               onClick={[Function]}
                               variant="text"
                             >
                               <WithStyles(ForwardRef(ButtonBase))
                                 aria-label="Open Notifications panel"
-                                className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                                className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                 component="button"
                                 disableRipple={true}
                                 disabled={false}
                                 focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
+                                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                 onClick={[Function]}
                                 type="button"
                               >
                                 <ForwardRef(ButtonBase)
                                   aria-label="Open Notifications panel"
-                                  className="MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                                  className="MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                   classes={
                                     Object {
                                       "disabled": "Mui-disabled",
@@ -518,13 +513,13 @@ exports[`Header should be able to render 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible"
+                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                                   onClick={[Function]}
                                   type="button"
                                 >
                                   <button
                                     aria-label="Open Notifications panel"
-                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-iconSVG HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
+                                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}
@@ -546,7 +541,7 @@ exports[`Header should be able to render 1`] = `
                                     >
                                       <WithStyles(Badge)
                                         count={1}
-                                        icon={<ForwardRef(WithStyles) />}
+                                        icon={<Alert />}
                                       >
                                         <Badge
                                           classes={
@@ -561,43 +556,37 @@ exports[`Header should be able to render 1`] = `
                                             }
                                           }
                                           count={1}
-                                          icon={<ForwardRef(WithStyles) />}
+                                          icon={<Alert />}
                                         >
                                           <div
                                             aria-label={null}
                                             className="HvBadge-root"
                                           >
-                                            <WithStyles(Alert)>
-                                              <Alert
-                                                classes={
-                                                  Object {
-                                                    "root": "HvIconAlert-root",
-                                                    "rootL": "HvIconAlert-rootL",
-                                                    "rootM": "HvIconAlert-rootM",
-                                                    "rootS": "HvIconAlert-rootS",
-                                                    "rootXs": "HvIconAlert-rootXs",
-                                                  }
-                                                }
+                                            <Alert>
+                                              <HvIconBase
+                                                iconSize="S"
+                                                name="Alert"
                                               >
                                                 <div
-                                                  className="HvIconAlert-root HvIconAlert-rootS"
+                                                  className="HvIconBase-root HvIconBase-s"
+                                                  name="Alert"
                                                 >
                                                   <svg
                                                     focusable={false}
-                                                    height="16px"
+                                                    height={16}
                                                     viewBox="0 0 16 16"
-                                                    width="16px"
+                                                    width={16}
                                                     xmlns="http://www.w3.org/2000/svg"
                                                   >
                                                     <path
                                                       className="color0"
-                                                      d="M13.99545 11.9943V8a5.884 5.884 0 00-4-5.666v-.2496A2.04829 2.04829 0 008.64737.10308 2.0067 2.0067 0 005.99545 2v.334a5.884 5.884 0 00-4 5.666v3.9943h-2v1h6v.92143A2.04816 2.04816 0 007.34369 15.897 2.0067 2.0067 0 009.99545 14v-1.0057h6v-1zm-7-9.9943a1 1 0 012 0v.086a5.85578 5.85578 0 00-2 0zm2 12a1 1 0 01-2 0v-1.0057h2zm4-2.0057h-10V8.18256A5.12136 5.12136 0 016.96152 3.098a5.00551 5.00551 0 016.03393 4.8963z"
+                                                      d="M14 12V8a5.884 5.884 0 00-4-5.666V2a2 2 0 00-4 0v.334A5.884 5.884 0 002 8v4H0v1h6v1a2 2 0 004 0v-1h6v-1zM7 2a1 1 0 012 0v.086a5.85679 5.85679 0 00-2 0zm2 12a1 1 0 01-2 0v-1h2zm-6-2V8a5 5 0 0110 0v4z"
                                                       fill="#414141"
                                                     />
                                                   </svg>
                                                 </div>
-                                              </Alert>
-                                            </WithStyles(Alert)>
+                                              </HvIconBase>
+                                            </Alert>
                                             <div
                                               className="HvBadge-badgeContainer"
                                             >

@@ -1,17 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { fireEvent, screen, wait } from "@testing-library/dom/dist/@testing-library/dom.umd";
-
-import moment from "moment";
+import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
+
+import { HvTable, HvInput } from "../..";
 import {
-  Main,
+  WithExpanderAndCustomContent,
   WithCheckbox,
   WithCheckboxAndSecondaryActions,
-  WithExpanderAndCustomContent,
+  Main,
 } from "./Table.stories";
-import HvTable from "..";
-import HvSearchBox from "../../SearchBox";
 
 export default {
   title: "Tests/Table",
@@ -269,7 +267,6 @@ export const WithSearch = () => {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: (value) => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
     },
     {
@@ -328,7 +325,8 @@ export const WithSearch = () => {
 
   return (
     <div style={{ padding: "10px" }}>
-      <HvSearchBox
+      <HvInput
+        type="search"
         onChange={(e, value) => {
           const filteredData = data.filter((dt) =>
             dt.name.toUpperCase().includes(value.toUpperCase())

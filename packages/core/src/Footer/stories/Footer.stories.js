@@ -6,6 +6,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvFooter } from '@hv/uikit-react-core/dist'",
+
+    dsVersion: "3.2.1",
   },
   component: HvFooter,
   decorators: [
@@ -24,9 +26,9 @@ export const CustomLabels = () => {
     <HvFooter
       id="sample2"
       name="Hitachi Vantara"
-      copyright="© Hitachi Vantara Corporation 2018"
+      copyright="© Hitachi Vantara Corporation 2020"
       links={
-        <HvTypography component="div" variant="inlineLink">
+        <HvTypography component="div" variant="link">
           <HvLink route="https://www.hitachivantara.com">License information</HvLink>
         </HvTypography>
       }

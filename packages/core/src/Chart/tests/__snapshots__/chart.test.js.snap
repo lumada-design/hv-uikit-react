@@ -29,12 +29,10 @@ exports[`Chart withStyles should render correctly 1`] = `
       Object {
         "defaultColors": "HvChart-defaultColors",
         "gridColor": "HvChart-gridColor",
+        "legendText": "HvChart-legendText",
         "lineColor": "HvChart-lineColor",
-        "paddingTop": "HvChart-paddingTop",
         "plotColor": "HvChart-plotColor",
         "root": "HvChart-root",
-        "subtitle": "HvChart-subtitle",
-        "titleContainer": "HvChart-titleContainer",
         "vizText": "HvChart-vizText",
       }
     }
@@ -64,14 +62,6 @@ exports[`Chart withStyles should render correctly 1`] = `
       className="HvChart-root"
     >
       <div
-        className="HvChart-titleContainer"
-      >
-        <div
-          className="HvChart-subtitle"
-        />
-      </div>
-      <div
-        className=""
         onMouseMove={[Function]}
       >
         <WithStyles(Plot)
@@ -105,65 +95,60 @@ exports[`Chart withStyles should render correctly 1`] = `
             Object {
               "autosize": true,
               "colorway": Array [
-                "#2DB3E0",
-                "#FF990D",
-                "#D31F6B",
-                "#FFD00A",
-                "#18C38A",
-                "#098CB2",
-                "#EA5B86",
-                "#9B469B",
-                "#F4763D",
-                "#419393",
-                "#58C9DD",
-                "#F8C189",
-                "#528BBF",
-                "#DE64BD",
-                "#73BF9C",
+                "#6EAFFF",
+                "#FFAB5C",
+                "#5CD1B2",
                 "#9672C1",
-                "#EB95AF",
+                "#ED6868",
+                "#58C9DD",
+                "#FFDB70",
+                "#4AB573",
                 "#646A98",
-                "#D88136",
-                "#309B59",
+                "#EB7397",
+                "#33ABCC",
+                "#F8C169",
+                "#DE64BD",
+                "#419393",
+                "#F5996E",
+                "#528BBF",
+                "#EB95AF",
+                "#73BF9C",
+                "#B55984",
+                "#F7B552",
               ],
               "legend": Object {
                 "font": Object {
                   "color": "#414141",
-                  "family": Array [
-                    "'Open Sans'",
-                    "Arial",
-                    "Helvetica",
-                    "sans-serif",
-                  ],
-                  "size": 10,
+                  "family": undefined,
+                  "size": "12px",
                 },
                 "orientation": "h",
-                "x": 1,
-                "xanchor": "right",
-                "y": 1.1,
-                "yanchor": "bottom",
+                "x": 0.5,
+                "xanchor": "center",
+                "y": 1.15,
+                "yanchor": "middle",
               },
               "margin": Object {
                 "b": 50,
                 "l": 50,
                 "pad": 0,
-                "t": 10,
+                "t": 50,
               },
-              "paper_bgcolor": "#FFFFFF",
-              "plot_bgcolor": "#FFFFFF",
+              "paper_bgcolor": "transparent",
+              "plot_bgcolor": "transparent",
               "xaxis": Object {
                 "automargin": true,
                 "autorange": true,
                 "fixedrange": true,
-                "gridcolor": "#DEDEDE",
-                "linecolor": "#BCBCBC",
+                "gridcolor": "#CCCED0",
+                "linecolor": "#CCCED0",
                 "linewidth": 1,
                 "range": Array [
                   0,
                   8947.368421052632,
                 ],
                 "showgrid": true,
-                "tickcolor": "#BCBCBC",
+                "showline": false,
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -174,7 +159,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                   ],
                   "size": 10,
                 },
-                "ticklen": 2,
+                "ticks": "",
                 "title": Object {
                   "font": Object {
                     "color": "#414141",
@@ -194,15 +179,15 @@ exports[`Chart withStyles should render correctly 1`] = `
                 "automargin": true,
                 "autorange": true,
                 "fixedrange": true,
-                "gridcolor": "#DEDEDE",
-                "linecolor": "#BCBCBC",
+                "gridcolor": "#CCCED0",
+                "linecolor": "#CCCED0",
                 "linewidth": 1,
                 "range": Array [
                   -0.5,
                   2.5,
                 ],
                 "showgrid": false,
-                "tickcolor": "#BCBCBC",
+                "showline": true,
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -213,7 +198,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                   ],
                   "size": 10,
                 },
-                "ticklen": 2,
+                "ticks": "",
                 "title": Object {
                   "font": Object {
                     "color": "#414141",
@@ -266,65 +251,60 @@ exports[`Chart withStyles should render correctly 1`] = `
               Object {
                 "autosize": true,
                 "colorway": Array [
-                  "#2DB3E0",
-                  "#FF990D",
-                  "#D31F6B",
-                  "#FFD00A",
-                  "#18C38A",
-                  "#098CB2",
-                  "#EA5B86",
-                  "#9B469B",
-                  "#F4763D",
-                  "#419393",
-                  "#58C9DD",
-                  "#F8C189",
-                  "#528BBF",
-                  "#DE64BD",
-                  "#73BF9C",
+                  "#6EAFFF",
+                  "#FFAB5C",
+                  "#5CD1B2",
                   "#9672C1",
-                  "#EB95AF",
+                  "#ED6868",
+                  "#58C9DD",
+                  "#FFDB70",
+                  "#4AB573",
                   "#646A98",
-                  "#D88136",
-                  "#309B59",
+                  "#EB7397",
+                  "#33ABCC",
+                  "#F8C169",
+                  "#DE64BD",
+                  "#419393",
+                  "#F5996E",
+                  "#528BBF",
+                  "#EB95AF",
+                  "#73BF9C",
+                  "#B55984",
+                  "#F7B552",
                 ],
                 "legend": Object {
                   "font": Object {
                     "color": "#414141",
-                    "family": Array [
-                      "'Open Sans'",
-                      "Arial",
-                      "Helvetica",
-                      "sans-serif",
-                    ],
-                    "size": 10,
+                    "family": undefined,
+                    "size": "12px",
                   },
                   "orientation": "h",
-                  "x": 1,
-                  "xanchor": "right",
-                  "y": 1.1,
-                  "yanchor": "bottom",
+                  "x": 0.5,
+                  "xanchor": "center",
+                  "y": 1.15,
+                  "yanchor": "middle",
                 },
                 "margin": Object {
                   "b": 50,
                   "l": 50,
                   "pad": 0,
-                  "t": 10,
+                  "t": 50,
                 },
-                "paper_bgcolor": "#FFFFFF",
-                "plot_bgcolor": "#FFFFFF",
+                "paper_bgcolor": "transparent",
+                "plot_bgcolor": "transparent",
                 "xaxis": Object {
                   "automargin": true,
                   "autorange": true,
                   "fixedrange": true,
-                  "gridcolor": "#DEDEDE",
-                  "linecolor": "#BCBCBC",
+                  "gridcolor": "#CCCED0",
+                  "linecolor": "#CCCED0",
                   "linewidth": 1,
                   "range": Array [
                     0,
                     8947.368421052632,
                   ],
                   "showgrid": true,
-                  "tickcolor": "#BCBCBC",
+                  "showline": false,
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -335,7 +315,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                     ],
                     "size": 10,
                   },
-                  "ticklen": 2,
+                  "ticks": "",
                   "title": Object {
                     "font": Object {
                       "color": "#414141",
@@ -355,15 +335,15 @@ exports[`Chart withStyles should render correctly 1`] = `
                   "automargin": true,
                   "autorange": true,
                   "fixedrange": true,
-                  "gridcolor": "#DEDEDE",
-                  "linecolor": "#BCBCBC",
+                  "gridcolor": "#CCCED0",
+                  "linecolor": "#CCCED0",
                   "linewidth": 1,
                   "range": Array [
                     -0.5,
                     2.5,
                   ],
                   "showgrid": false,
-                  "tickcolor": "#BCBCBC",
+                  "showline": true,
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -374,7 +354,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                     ],
                     "size": 10,
                   },
-                  "ticklen": 2,
+                  "ticks": "",
                   "title": Object {
                     "font": Object {
                       "color": "#414141",
@@ -428,65 +408,60 @@ exports[`Chart withStyles should render correctly 1`] = `
                 Object {
                   "autosize": true,
                   "colorway": Array [
-                    "#2DB3E0",
-                    "#FF990D",
-                    "#D31F6B",
-                    "#FFD00A",
-                    "#18C38A",
-                    "#098CB2",
-                    "#EA5B86",
-                    "#9B469B",
-                    "#F4763D",
-                    "#419393",
-                    "#58C9DD",
-                    "#F8C189",
-                    "#528BBF",
-                    "#DE64BD",
-                    "#73BF9C",
+                    "#6EAFFF",
+                    "#FFAB5C",
+                    "#5CD1B2",
                     "#9672C1",
-                    "#EB95AF",
+                    "#ED6868",
+                    "#58C9DD",
+                    "#FFDB70",
+                    "#4AB573",
                     "#646A98",
-                    "#D88136",
-                    "#309B59",
+                    "#EB7397",
+                    "#33ABCC",
+                    "#F8C169",
+                    "#DE64BD",
+                    "#419393",
+                    "#F5996E",
+                    "#528BBF",
+                    "#EB95AF",
+                    "#73BF9C",
+                    "#B55984",
+                    "#F7B552",
                   ],
                   "legend": Object {
                     "font": Object {
                       "color": "#414141",
-                      "family": Array [
-                        "'Open Sans'",
-                        "Arial",
-                        "Helvetica",
-                        "sans-serif",
-                      ],
-                      "size": 10,
+                      "family": undefined,
+                      "size": "12px",
                     },
                     "orientation": "h",
-                    "x": 1,
-                    "xanchor": "right",
-                    "y": 1.1,
-                    "yanchor": "bottom",
+                    "x": 0.5,
+                    "xanchor": "center",
+                    "y": 1.15,
+                    "yanchor": "middle",
                   },
                   "margin": Object {
                     "b": 50,
                     "l": 50,
                     "pad": 0,
-                    "t": 10,
+                    "t": 50,
                   },
-                  "paper_bgcolor": "#FFFFFF",
-                  "plot_bgcolor": "#FFFFFF",
+                  "paper_bgcolor": "transparent",
+                  "plot_bgcolor": "transparent",
                   "xaxis": Object {
                     "automargin": true,
                     "autorange": true,
                     "fixedrange": true,
-                    "gridcolor": "#DEDEDE",
-                    "linecolor": "#BCBCBC",
+                    "gridcolor": "#CCCED0",
+                    "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
                       0,
                       8947.368421052632,
                     ],
                     "showgrid": true,
-                    "tickcolor": "#BCBCBC",
+                    "showline": false,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -497,7 +472,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                       ],
                       "size": 10,
                     },
-                    "ticklen": 2,
+                    "ticks": "",
                     "title": Object {
                       "font": Object {
                         "color": "#414141",
@@ -517,15 +492,15 @@ exports[`Chart withStyles should render correctly 1`] = `
                     "automargin": true,
                     "autorange": true,
                     "fixedrange": true,
-                    "gridcolor": "#DEDEDE",
-                    "linecolor": "#BCBCBC",
+                    "gridcolor": "#CCCED0",
+                    "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
                       -0.5,
                       2.5,
                     ],
                     "showgrid": false,
-                    "tickcolor": "#BCBCBC",
+                    "showline": true,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -536,7 +511,7 @@ exports[`Chart withStyles should render correctly 1`] = `
                       ],
                       "size": 10,
                     },
-                    "ticklen": 2,
+                    "ticks": "",
                     "title": Object {
                       "font": Object {
                         "color": "#414141",
@@ -617,6 +592,7 @@ exports[`Tooltip withStyles should render correctly 1`] = `
               "separator": "HvChartMultiTooltip-separator",
               "separatorColor": "HvChartMultiTooltip-separatorColor",
               "title": "HvChartMultiTooltip-title",
+              "valueNameWrapper": "HvChartMultiTooltip-valueNameWrapper",
               "values": "HvChartMultiTooltip-values",
               "valuesContainer": "HvChartMultiTooltip-valuesContainer",
             }
@@ -631,7 +607,7 @@ exports[`Tooltip withStyles should render correctly 1`] = `
             >
               <div>
                 <WithStyles(ForwardRef)
-                  variant="labelText"
+                  variant="highlightText"
                 >
                   <ForwardRef
                     classes={
@@ -639,32 +615,31 @@ exports[`Tooltip withStyles should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="labelText"
+                    variant="highlightText"
                   >
                     <p
-                      className="HvTypography-root HvTypography-labelText"
+                      className="HvTypography-root HvTypography-highlightText"
                     />
                   </ForwardRef>
                 </WithStyles(ForwardRef)>

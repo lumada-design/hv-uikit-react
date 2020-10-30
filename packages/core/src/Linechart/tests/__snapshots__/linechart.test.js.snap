@@ -40,10 +40,6 @@ exports[`Linechart should render correctly 1`] = `
       },
     ]
   }
-  subtitle="Sales performance (YTD)"
-  title="Simple line"
-  xAxisTitle="2018"
-  yAxisTitle="Thousands of Dollars ($)"
 >
   <Linechart
     classes={Object {}}
@@ -85,10 +81,6 @@ exports[`Linechart should render correctly 1`] = `
         },
       ]
     }
-    subtitle="Sales performance (YTD)"
-    title="Simple line"
-    xAxisTitle="2018"
-    yAxisTitle="Thousands of Dollars ($)"
   >
     <WithStyles(Chart)
       classes={Object {}}
@@ -130,24 +122,99 @@ exports[`Linechart should render correctly 1`] = `
           },
         ]
       }
-      layout={Object {}}
-      subtitle="Sales performance (YTD)"
-      title="Simple line"
+      layout={
+        Object {
+          "xaxis": Object {
+            "automargin": true,
+            "autorange": true,
+            "fixedrange": true,
+            "gridcolor": "#CCCED0",
+            "linecolor": "#CCCED0",
+            "linewidth": 1,
+            "range": Array [
+              0,
+              11,
+            ],
+            "showgrid": true,
+            "showline": true,
+            "tickfont": Object {
+              "color": "#414141",
+              "family": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "size": 10,
+            },
+            "ticks": "",
+            "title": Object {
+              "font": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+            },
+            "type": "category",
+            "zeroline": false,
+          },
+          "yaxis": Object {
+            "automargin": true,
+            "autorange": true,
+            "fixedrange": true,
+            "gridcolor": "#CCCED0",
+            "linecolor": "#CCCED0",
+            "linewidth": 1,
+            "range": Array [
+              1244.0555555555557,
+              8162.944444444444,
+            ],
+            "showgrid": true,
+            "showline": false,
+            "tickfont": Object {
+              "color": "#414141",
+              "family": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "size": 10,
+            },
+            "ticks": "",
+            "title": Object {
+              "font": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+            },
+            "type": "linear",
+            "zeroline": false,
+          },
+        }
+      }
       tooltipType="multiple"
-      xAxisTitle="2018"
-      yAxisTitle="Thousands of Dollars ($)"
     >
       <Chart
         classes={
           Object {
             "defaultColors": "HvChart-defaultColors",
             "gridColor": "HvChart-gridColor",
+            "legendText": "HvChart-legendText",
             "lineColor": "HvChart-lineColor",
-            "paddingTop": "HvChart-paddingTop",
             "plotColor": "HvChart-plotColor",
             "root": "HvChart-root",
-            "subtitle": "HvChart-subtitle",
-            "titleContainer": "HvChart-titleContainer",
             "vizText": "HvChart-vizText",
           }
         }
@@ -189,106 +256,94 @@ exports[`Linechart should render correctly 1`] = `
             },
           ]
         }
-        layout={Object {}}
-        subtitle="Sales performance (YTD)"
-        title="Simple line"
+        layout={
+          Object {
+            "xaxis": Object {
+              "automargin": true,
+              "autorange": true,
+              "fixedrange": true,
+              "gridcolor": "#CCCED0",
+              "linecolor": "#CCCED0",
+              "linewidth": 1,
+              "range": Array [
+                0,
+                11,
+              ],
+              "showgrid": true,
+              "showline": true,
+              "tickfont": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+              "ticks": "",
+              "title": Object {
+                "font": Object {
+                  "color": "#414141",
+                  "family": Array [
+                    "'Open Sans'",
+                    "Arial",
+                    "Helvetica",
+                    "sans-serif",
+                  ],
+                  "size": 10,
+                },
+              },
+              "type": "category",
+              "zeroline": false,
+            },
+            "yaxis": Object {
+              "automargin": true,
+              "autorange": true,
+              "fixedrange": true,
+              "gridcolor": "#CCCED0",
+              "linecolor": "#CCCED0",
+              "linewidth": 1,
+              "range": Array [
+                1244.0555555555557,
+                8162.944444444444,
+              ],
+              "showgrid": true,
+              "showline": false,
+              "tickfont": Object {
+                "color": "#414141",
+                "family": Array [
+                  "'Open Sans'",
+                  "Arial",
+                  "Helvetica",
+                  "sans-serif",
+                ],
+                "size": 10,
+              },
+              "ticks": "",
+              "title": Object {
+                "font": Object {
+                  "color": "#414141",
+                  "family": Array [
+                    "'Open Sans'",
+                    "Arial",
+                    "Helvetica",
+                    "sans-serif",
+                  ],
+                  "size": 10,
+                },
+              },
+              "type": "linear",
+              "zeroline": false,
+            },
+          }
+        }
         tooltipType="multiple"
-        xAxisTitle="2018"
-        yAxisTitle="Thousands of Dollars ($)"
       >
         <div
           className="HvChart-root"
         >
           <div
-            className="HvChart-titleContainer"
-          >
-            <WithStyles(ForwardRef)
-              variant="mTitle"
-            >
-              <ForwardRef
-                classes={
-                  Object {
-                    "3xlTitle": "HvTypography-3xlTitle",
-                    "4xlTitle": "HvTypography-4xlTitle",
-                    "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
-                    "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
-                    "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
-                    "mTitle": "HvTypography-mTitle",
-                    "normalText": "HvTypography-normalText",
-                    "placeholderText": "HvTypography-placeholderText",
-                    "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
-                    "sTitle": "HvTypography-sTitle",
-                    "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
-                    "vizText": "HvTypography-vizText",
-                    "xlTitle": "HvTypography-xlTitle",
-                    "xsTitle": "HvTypography-xsTitle",
-                    "xxlTitle": "HvTypography-xxlTitle",
-                    "xxsTitle": "HvTypography-xxsTitle",
-                  }
-                }
-                variant="mTitle"
-              >
-                <h3
-                  className="HvTypography-root HvTypography-mTitle"
-                >
-                  Simple line
-                </h3>
-              </ForwardRef>
-            </WithStyles(ForwardRef)>
-            <div
-              className="HvChart-subtitle"
-            >
-              <WithStyles(ForwardRef)
-                variant="sText"
-              >
-                <ForwardRef
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "disabledButtonText": "HvTypography-disabledButtonText",
-                      "highlightText": "HvTypography-highlightText",
-                      "infoText": "HvTypography-infoText",
-                      "inlineLink": "HvTypography-inlineLink",
-                      "lTitle": "HvTypography-lTitle",
-                      "labelText": "HvTypography-labelText",
-                      "mTitle": "HvTypography-mTitle",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "root": "HvTypography-root",
-                      "sLink": "HvTypography-sLink",
-                      "sText": "HvTypography-sText",
-                      "sTitle": "HvTypography-sTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "selectedText": "HvTypography-selectedText",
-                      "vizText": "HvTypography-vizText",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
-                    }
-                  }
-                  variant="sText"
-                >
-                  <p
-                    className="HvTypography-root HvTypography-sText"
-                  >
-                    Sales performance (YTD)
-                  </p>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-            </div>
-          </div>
-          <div
-            className="HvChart-paddingTop"
             onMouseMove={[Function]}
           >
             <WithStyles(Plot)
@@ -340,65 +395,60 @@ exports[`Linechart should render correctly 1`] = `
                 Object {
                   "autosize": true,
                   "colorway": Array [
-                    "#2DB3E0",
-                    "#FF990D",
-                    "#D31F6B",
-                    "#FFD00A",
-                    "#18C38A",
-                    "#098CB2",
-                    "#EA5B86",
-                    "#9B469B",
-                    "#F4763D",
-                    "#419393",
-                    "#58C9DD",
-                    "#F8C189",
-                    "#528BBF",
-                    "#DE64BD",
-                    "#73BF9C",
+                    "#6EAFFF",
+                    "#FFAB5C",
+                    "#5CD1B2",
                     "#9672C1",
-                    "#EB95AF",
+                    "#ED6868",
+                    "#58C9DD",
+                    "#FFDB70",
+                    "#4AB573",
                     "#646A98",
-                    "#D88136",
-                    "#309B59",
+                    "#EB7397",
+                    "#33ABCC",
+                    "#F8C169",
+                    "#DE64BD",
+                    "#419393",
+                    "#F5996E",
+                    "#528BBF",
+                    "#EB95AF",
+                    "#73BF9C",
+                    "#B55984",
+                    "#F7B552",
                   ],
                   "legend": Object {
                     "font": Object {
                       "color": "#414141",
-                      "family": Array [
-                        "'Open Sans'",
-                        "Arial",
-                        "Helvetica",
-                        "sans-serif",
-                      ],
-                      "size": 10,
+                      "family": undefined,
+                      "size": "12px",
                     },
                     "orientation": "h",
-                    "x": 1,
-                    "xanchor": "right",
-                    "y": 1.1,
-                    "yanchor": "bottom",
+                    "x": 0.5,
+                    "xanchor": "center",
+                    "y": 1.15,
+                    "yanchor": "middle",
                   },
                   "margin": Object {
                     "b": 50,
                     "l": 50,
                     "pad": 0,
-                    "t": 10,
+                    "t": 50,
                   },
-                  "paper_bgcolor": "#FFFFFF",
-                  "plot_bgcolor": "#FFFFFF",
+                  "paper_bgcolor": "transparent",
+                  "plot_bgcolor": "transparent",
                   "xaxis": Object {
                     "automargin": true,
                     "autorange": true,
                     "fixedrange": true,
-                    "gridcolor": "#DEDEDE",
-                    "linecolor": "#BCBCBC",
+                    "gridcolor": "#CCCED0",
+                    "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
                       0,
                       11,
                     ],
-                    "showgrid": false,
-                    "tickcolor": "#BCBCBC",
+                    "showgrid": true,
+                    "showline": true,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -409,7 +459,7 @@ exports[`Linechart should render correctly 1`] = `
                       ],
                       "size": 10,
                     },
-                    "ticklen": 2,
+                    "ticks": "",
                     "title": Object {
                       "font": Object {
                         "color": "#414141",
@@ -421,7 +471,6 @@ exports[`Linechart should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
-                      "text": "2018",
                     },
                     "type": "category",
                     "zeroline": false,
@@ -430,15 +479,15 @@ exports[`Linechart should render correctly 1`] = `
                     "automargin": true,
                     "autorange": true,
                     "fixedrange": true,
-                    "gridcolor": "#DEDEDE",
-                    "linecolor": "#BCBCBC",
+                    "gridcolor": "#CCCED0",
+                    "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
                       1244.0555555555557,
                       8162.944444444444,
                     ],
                     "showgrid": true,
-                    "tickcolor": "#BCBCBC",
+                    "showline": false,
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -449,7 +498,7 @@ exports[`Linechart should render correctly 1`] = `
                       ],
                       "size": 10,
                     },
-                    "ticklen": 2,
+                    "ticks": "",
                     "title": Object {
                       "font": Object {
                         "color": "#414141",
@@ -461,7 +510,6 @@ exports[`Linechart should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
-                      "text": "Thousands of Dollars ($)",
                     },
                     "type": "linear",
                     "zeroline": false,
@@ -470,7 +518,6 @@ exports[`Linechart should render correctly 1`] = `
               }
               onHover={[Function]}
               onUnHover={[Function]}
-              title="Simple line"
             >
               <Plot
                 classes={Object {}}
@@ -522,65 +569,60 @@ exports[`Linechart should render correctly 1`] = `
                   Object {
                     "autosize": true,
                     "colorway": Array [
-                      "#2DB3E0",
-                      "#FF990D",
-                      "#D31F6B",
-                      "#FFD00A",
-                      "#18C38A",
-                      "#098CB2",
-                      "#EA5B86",
-                      "#9B469B",
-                      "#F4763D",
-                      "#419393",
-                      "#58C9DD",
-                      "#F8C189",
-                      "#528BBF",
-                      "#DE64BD",
-                      "#73BF9C",
+                      "#6EAFFF",
+                      "#FFAB5C",
+                      "#5CD1B2",
                       "#9672C1",
-                      "#EB95AF",
+                      "#ED6868",
+                      "#58C9DD",
+                      "#FFDB70",
+                      "#4AB573",
                       "#646A98",
-                      "#D88136",
-                      "#309B59",
+                      "#EB7397",
+                      "#33ABCC",
+                      "#F8C169",
+                      "#DE64BD",
+                      "#419393",
+                      "#F5996E",
+                      "#528BBF",
+                      "#EB95AF",
+                      "#73BF9C",
+                      "#B55984",
+                      "#F7B552",
                     ],
                     "legend": Object {
                       "font": Object {
                         "color": "#414141",
-                        "family": Array [
-                          "'Open Sans'",
-                          "Arial",
-                          "Helvetica",
-                          "sans-serif",
-                        ],
-                        "size": 10,
+                        "family": undefined,
+                        "size": "12px",
                       },
                       "orientation": "h",
-                      "x": 1,
-                      "xanchor": "right",
-                      "y": 1.1,
-                      "yanchor": "bottom",
+                      "x": 0.5,
+                      "xanchor": "center",
+                      "y": 1.15,
+                      "yanchor": "middle",
                     },
                     "margin": Object {
                       "b": 50,
                       "l": 50,
                       "pad": 0,
-                      "t": 10,
+                      "t": 50,
                     },
-                    "paper_bgcolor": "#FFFFFF",
-                    "plot_bgcolor": "#FFFFFF",
+                    "paper_bgcolor": "transparent",
+                    "plot_bgcolor": "transparent",
                     "xaxis": Object {
                       "automargin": true,
                       "autorange": true,
                       "fixedrange": true,
-                      "gridcolor": "#DEDEDE",
-                      "linecolor": "#BCBCBC",
+                      "gridcolor": "#CCCED0",
+                      "linecolor": "#CCCED0",
                       "linewidth": 1,
                       "range": Array [
                         0,
                         11,
                       ],
-                      "showgrid": false,
-                      "tickcolor": "#BCBCBC",
+                      "showgrid": true,
+                      "showline": true,
                       "tickfont": Object {
                         "color": "#414141",
                         "family": Array [
@@ -591,7 +633,7 @@ exports[`Linechart should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
-                      "ticklen": 2,
+                      "ticks": "",
                       "title": Object {
                         "font": Object {
                           "color": "#414141",
@@ -603,7 +645,6 @@ exports[`Linechart should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
-                        "text": "2018",
                       },
                       "type": "category",
                       "zeroline": false,
@@ -612,15 +653,15 @@ exports[`Linechart should render correctly 1`] = `
                       "automargin": true,
                       "autorange": true,
                       "fixedrange": true,
-                      "gridcolor": "#DEDEDE",
-                      "linecolor": "#BCBCBC",
+                      "gridcolor": "#CCCED0",
+                      "linecolor": "#CCCED0",
                       "linewidth": 1,
                       "range": Array [
                         1244.0555555555557,
                         8162.944444444444,
                       ],
                       "showgrid": true,
-                      "tickcolor": "#BCBCBC",
+                      "showline": false,
                       "tickfont": Object {
                         "color": "#414141",
                         "family": Array [
@@ -631,7 +672,7 @@ exports[`Linechart should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
-                      "ticklen": 2,
+                      "ticks": "",
                       "title": Object {
                         "font": Object {
                           "color": "#414141",
@@ -643,7 +684,6 @@ exports[`Linechart should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
-                        "text": "Thousands of Dollars ($)",
                       },
                       "type": "linear",
                       "zeroline": false,
@@ -652,7 +692,6 @@ exports[`Linechart should render correctly 1`] = `
                 }
                 onHover={[Function]}
                 onUnHover={[Function]}
-                title="Simple line"
               >
                 <PlotlyComponent
                   classes={Object {}}
@@ -705,65 +744,60 @@ exports[`Linechart should render correctly 1`] = `
                     Object {
                       "autosize": true,
                       "colorway": Array [
-                        "#2DB3E0",
-                        "#FF990D",
-                        "#D31F6B",
-                        "#FFD00A",
-                        "#18C38A",
-                        "#098CB2",
-                        "#EA5B86",
-                        "#9B469B",
-                        "#F4763D",
-                        "#419393",
-                        "#58C9DD",
-                        "#F8C189",
-                        "#528BBF",
-                        "#DE64BD",
-                        "#73BF9C",
+                        "#6EAFFF",
+                        "#FFAB5C",
+                        "#5CD1B2",
                         "#9672C1",
-                        "#EB95AF",
+                        "#ED6868",
+                        "#58C9DD",
+                        "#FFDB70",
+                        "#4AB573",
                         "#646A98",
-                        "#D88136",
-                        "#309B59",
+                        "#EB7397",
+                        "#33ABCC",
+                        "#F8C169",
+                        "#DE64BD",
+                        "#419393",
+                        "#F5996E",
+                        "#528BBF",
+                        "#EB95AF",
+                        "#73BF9C",
+                        "#B55984",
+                        "#F7B552",
                       ],
                       "legend": Object {
                         "font": Object {
                           "color": "#414141",
-                          "family": Array [
-                            "'Open Sans'",
-                            "Arial",
-                            "Helvetica",
-                            "sans-serif",
-                          ],
-                          "size": 10,
+                          "family": undefined,
+                          "size": "12px",
                         },
                         "orientation": "h",
-                        "x": 1,
-                        "xanchor": "right",
-                        "y": 1.1,
-                        "yanchor": "bottom",
+                        "x": 0.5,
+                        "xanchor": "center",
+                        "y": 1.15,
+                        "yanchor": "middle",
                       },
                       "margin": Object {
                         "b": 50,
                         "l": 50,
                         "pad": 0,
-                        "t": 10,
+                        "t": 50,
                       },
-                      "paper_bgcolor": "#FFFFFF",
-                      "plot_bgcolor": "#FFFFFF",
+                      "paper_bgcolor": "transparent",
+                      "plot_bgcolor": "transparent",
                       "xaxis": Object {
                         "automargin": true,
                         "autorange": true,
                         "fixedrange": true,
-                        "gridcolor": "#DEDEDE",
-                        "linecolor": "#BCBCBC",
+                        "gridcolor": "#CCCED0",
+                        "linecolor": "#CCCED0",
                         "linewidth": 1,
                         "range": Array [
                           0,
                           11,
                         ],
-                        "showgrid": false,
-                        "tickcolor": "#BCBCBC",
+                        "showgrid": true,
+                        "showline": true,
                         "tickfont": Object {
                           "color": "#414141",
                           "family": Array [
@@ -774,7 +808,7 @@ exports[`Linechart should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
-                        "ticklen": 2,
+                        "ticks": "",
                         "title": Object {
                           "font": Object {
                             "color": "#414141",
@@ -786,7 +820,6 @@ exports[`Linechart should render correctly 1`] = `
                             ],
                             "size": 10,
                           },
-                          "text": "2018",
                         },
                         "type": "category",
                         "zeroline": false,
@@ -795,15 +828,15 @@ exports[`Linechart should render correctly 1`] = `
                         "automargin": true,
                         "autorange": true,
                         "fixedrange": true,
-                        "gridcolor": "#DEDEDE",
-                        "linecolor": "#BCBCBC",
+                        "gridcolor": "#CCCED0",
+                        "linecolor": "#CCCED0",
                         "linewidth": 1,
                         "range": Array [
                           1244.0555555555557,
                           8162.944444444444,
                         ],
                         "showgrid": true,
-                        "tickcolor": "#BCBCBC",
+                        "showline": false,
                         "tickfont": Object {
                           "color": "#414141",
                           "family": Array [
@@ -814,7 +847,7 @@ exports[`Linechart should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
-                        "ticklen": 2,
+                        "ticks": "",
                         "title": Object {
                           "font": Object {
                             "color": "#414141",
@@ -826,7 +859,6 @@ exports[`Linechart should render correctly 1`] = `
                             ],
                             "size": 10,
                           },
-                          "text": "Thousands of Dollars ($)",
                         },
                         "type": "linear",
                         "zeroline": false,
@@ -842,7 +874,6 @@ exports[`Linechart should render correctly 1`] = `
                       "position": "relative",
                     }
                   }
-                  title="Simple line"
                   useResizeHandler={false}
                 >
                   <div

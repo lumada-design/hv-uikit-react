@@ -3,7 +3,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core";
-import { ConfigProvider } from "../../config/context";
+import { ConfigProvider } from "../context";
 import HvProvider from "../Provider";
 
 describe("Provider", () => {

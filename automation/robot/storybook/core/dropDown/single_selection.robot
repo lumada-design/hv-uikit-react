@@ -1,58 +1,45 @@
 *** Setting ***
-Resource      _resources.resource
-Test Setup    Run Keywords
-...           Go To    ${iframeSingleSelectionSearch}    AND
-...           Wait Until Element Is Enabled    ${dropdown}
-
-
-
-*** Comments ***
-theses list did not compatible with list selenium keywords
+Resource      _dropDown.resource
+Test Setup    open dropdown sample    ${forms}    single-selection
 
 
 *** Test Cases ***
-Open and close dropdown when click the input (top part of the dropdown)
-    Click Element                        ${dropdownHeader}
-    Wait Until Element Is Visible        ${listBox}
+Open and close dropdown when is clicked header section
     Click Element                        ${dropdownHeader}
     Wait Until Element Is Not Visible    ${listBox}
 
-close dropdown and save selection when select an item on simple dropdown
-    Element Text Should Be               ${dropdown} p    value 2
-    Click Element                        ${dropdown}
-    Click Element                        ${option4}
-    Element Text Should Be               ${dropdown} p    value 4
+Close dropdown when it is selected an option
+    Click Element                        ${option}(1)
+    Wait Until Element Is Not Visible    ${listBox}
 
-change selection and keep single selection when activated other value on single selection dropdown
-    Element Text Should Be               ${dropdown} p       value 2
-    Click Element                        ${dropdown}
-    Element Attribute Value Should Be    ${option2}          aria-selected    true
-    Click Element                        ${option3}
-    Element Text Should Be               ${dropdown} p       value 3
-    Click Element                        ${dropdown}
-    Page Should Contain Element          ${aria-selected}    limit=1
-    Element Attribute Value Should Be    ${option3}          aria-selected    true
+Close dropdown when is clicked out of dropdown area
+    Click Element                        css:body
+    Wait Until Element Is Not Visible    ${listBox}
 
-filter search results and enable selection when user input search values
-    Element Text Should Be           ${dropdown}       value 2
-    Click Element                    ${dropdown}
-    Input Text                       ${searchInput}    3
-    Page Should Contain Element      ${options}        limit=1
-    Click Element                    ${option1}
-    Element Text Should Be           ${dropdown}       value 3
+Dropdown does not open when it is disable
+    [Setup]    Go To    ${forms}dropdown--disabled
+    Wait Until Element Is Visible      ${dropdown}
+    mouses does not open dropdown      ${dropdown}
+    mouses does not open dropdown      ${dropdownHeader}
+    keyboard does not open dropdown    ${dropdown}   ENTER
+    keyboard does not open dropdown    ${dropdown}   SPACE
+    keyboard does not open dropdown    ${dropdownHeader}   ENTER
+    keyboard does not open dropdown    ${dropdownHeader}   SPACE
 
-clean searched values when previous was done a search
-    Element Text Should Be           ${dropdown}       value 2
-    Click Element                    ${dropdown}
-    Input Text                       ${searchInput}    3
-    Click Element                    ${option1}
-    Element Text Should Be           ${dropdown}       value 3
-    Click Element                    ${dropdown}
-    Page Should Contain Element      ${options}        limit=4
 
-show an empty dropdown when is activated
-    [Setup]    NONE
-    Go To                              ${iframeEmpty}
-    Wait Until Element Is Enabled      ${dropdown}
-    Click Element                      ${dropdown}
-    Page Should Not Contain Element    ${options}
+*** Keywords ***
+mouses does not open dropdown
+    [Documentation]    Any mouse interactions does not open dropdown
+    [Arguments]    ${Element}
+    Run Keyword And Ignore Error     Click Element    ${Element}
+    Element Should Not Be Visible    ${listBox}
+    Run Keyword And Ignore Error     Double Click Element    ${Element}
+    Element Should Not Be Visible    ${listBox}
+    Run Keyword And Ignore Error     Mouse Over    ${Element}
+    Element Should Not Be Visible    ${listBox}
+
+keyboard does not open dropdown
+    [Documentation]    Any keyboard interactions does not open dropdown
+    [Arguments]    ${Element}   ${keyboard}
+    Press Keys                       ${Element}   ${keyboard}
+    Element Should Not Be Visible    ${listBox}

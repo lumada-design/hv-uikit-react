@@ -2,56 +2,57 @@ import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { HvButton, HvCheckBox, HvTypography } from "..";
-import Actions from "../Actions";
-import withLabels from "../withLabels";
+import { HvActionsGeneric, HvButton, HvCheckBox, HvTypography } from "..";
 import styles from "./styles";
 import { setId } from "../utils";
 
-export const DEFAULT_LABELS = {
-  selectAll: "All",
-  selectAllPages: "Select all from all pages",
-  deselectAllPages: "Unselect all",
-};
-
 /**
- * Bulk Actions allow users to perform an action to a single or multiple items,
- * also known as "batch production" of multiple items at once, one stage at a time.
+ * Bulk Actions allow users to perform an action on a single or multiple items.
+ * Also known as "batch production" of multiple items at once, one stage at a time.
  */
 const HvBulkActions = (props) => {
   const {
     id,
     className,
     classes,
-    labels,
     numTotal = 0,
     numSelected = 0,
     onSelectAll,
     onSelectAllPages,
     selectAllLabel,
+    selectAllPagesLabel,
     showSelectAllPages = false,
+    semantic = true,
     actions,
     actionsCallback,
     actionsDisabled,
     maxVisibleActions,
     ...others
   } = props;
-  const [editMode, setEditMode] = useState(false);
+  const [anySelected, setAnySelected] = useState(false);
+
+  const isSemantic = semantic && anySelected;
 
   useEffect(() => {
-    setEditMode(numSelected > 0);
+    setAnySelected(numSelected > 0);
   }, [numSelected]);
 
   const defaultSelectAllLabel = (
-    <HvTypography component="span" variant="normalText">
-      {!editMode ? (
-        <b>{labels.selectAll}</b>
+    <HvTypography component="span">
+      {!anySelected ? (
+        <b>All</b>
       ) : (
         <>
           <b>{numSelected}</b>
-          {` of ${numTotal} items`}
+          {` / ${numTotal}`}
         </>
       )}
+    </HvTypography>
+  );
+
+  const defaultSelectAllPagesLabel = (
+    <HvTypography style={{ color: "inherit" }} variant="highlightText" component="span">
+      {`Select all ${numTotal} items across all pages`}
     </HvTypography>
   );
 
@@ -59,7 +60,7 @@ const HvBulkActions = (props) => {
     <div
       id={id}
       className={clsx(className, classes.root, {
-        [classes.editMode]: editMode,
+        [classes.semantic]: isSemantic,
       })}
       {...others}
     >
@@ -68,26 +69,26 @@ const HvBulkActions = (props) => {
           id={setId(id, "select")}
           className={classes.selectAll}
           checked={numSelected > 0}
-          semantic={editMode}
+          semantic={isSemantic}
           onChange={(...args) => onSelectAll?.(...args)}
           indeterminate={numSelected > 0 && numSelected < numTotal}
           label={selectAllLabel ?? defaultSelectAllLabel}
         />
-        {showSelectAllPages && editMode && (
+        {showSelectAllPages && anySelected && numSelected < numTotal && (
           <HvButton
             id={setId(id, "pages")}
             className={classes.selectAllPages}
-            category={editMode ? "semantic" : "ghost"}
+            category={isSemantic ? "semantic" : "ghost"}
             onClick={(...args) => onSelectAllPages?.(...args)}
           >
-            {numSelected === numTotal ? labels.deselectAllPages : labels.selectAllPages}
+            {selectAllPagesLabel ?? defaultSelectAllPagesLabel}
           </HvButton>
         )}
       </div>
-      <Actions
+      <HvActionsGeneric
         id={setId(id, "actions")}
         classes={{ root: classes.actions }}
-        category={editMode ? "semantic" : "ghost"}
+        category={isSemantic ? "semantic" : "ghost"}
         actions={actions}
         disabled={actionsDisabled ?? numSelected === 0}
         actionsCallback={actionsCallback}
@@ -115,9 +116,9 @@ HvBulkActions.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the component root class when in edit mode.
+     * Styles applied to the component root class when semantic and there are selected elements.
      */
-    editMode: PropTypes.string,
+    semantic: PropTypes.string,
     /**
      * Styles applied to the Actions root class.
      */
@@ -136,26 +137,13 @@ HvBulkActions.propTypes = {
     selectAllPages: PropTypes.string,
   }).isRequired,
   /**
-   * Labels
-   */
-  labels: PropTypes.shape({
-    /**
-     * Label applied to the Select All when no item is selected.
-     */
-    selectAll: PropTypes.string,
-    /**
-     * Label applied to the Select All across all pages.
-     */
-    selectAllPages: PropTypes.string,
-    /**
-     * Label applied to the Select All across all pages when all elements are selected.
-     */
-    deselectAllPages: PropTypes.string,
-  }),
-  /**
    * Custom label for select all checkbox
    */
   selectAllLabel: PropTypes.node,
+  /**
+   * Custom label for select all pages button
+   */
+  selectAllPagesLabel: PropTypes.node,
   /**
    * Whether select all pages element should be visible
    */
@@ -177,6 +165,10 @@ HvBulkActions.propTypes = {
    */
   onSelectAllPages: PropTypes.func,
   /**
+   * Whether the bulk actions should use the semantic styles when there are selected elements.
+   */
+  semantic: PropTypes.bool,
+  /**
    * The renderable content inside the right actions slot,
    * or an Array of actions `{ id, label, icon, disabled, ... }`
    */
@@ -186,7 +178,7 @@ HvBulkActions.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string,
-        iconCallback: PropTypes.func,
+        icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
         disabled: PropTypes.bool,
       })
     ),
@@ -205,6 +197,4 @@ HvBulkActions.propTypes = {
   maxVisibleActions: PropTypes.number,
 };
 
-export default withStyles(styles, { name: "HvBulkActions" })(
-  withLabels(DEFAULT_LABELS)(HvBulkActions)
-);
+export default withStyles(styles, { name: "HvBulkActions" })(HvBulkActions);

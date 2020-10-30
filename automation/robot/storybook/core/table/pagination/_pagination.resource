@@ -1,5 +1,5 @@
 *** Setting ***
-Resource    ../table.resource
+Resource    ../_table.resource
 
 
 *** Keywords ***

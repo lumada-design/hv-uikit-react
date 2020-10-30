@@ -1,16 +1,14 @@
 *** Setting ***
-Resource      ../table.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--with-checkbox
-...           AND    Wait Until Element Is Visible    ${table}
+Resource      ../_table.resource
+Test Setup    open table sample    ${visualizations}    with-checkbox
 
 
 *** Test Cases ***
 indeterminate state on parent checkbox when she is unselected and is clicked
     [Documentation]    unselected - indeterminate
-    Select From List By Value            ${rows_per_page}    5
+    Select Dropdown Value                ${rows_per_page}    5
     Click Element                        ${bulkAction_checkbox}
-    Wait Until Page Contains             5 of 13 items
+    Wait Until Page Contains             5 / 13
     Page Should Contain Element          ${rows_selected}    limit=5
     Element Attribute Value Should Be    ${bulkAction_checkbox}    data-indeterminate    true
 
@@ -51,7 +49,7 @@ indeterminate state on parent checkbox when one of all selected checkboxes is un
     Wait Until Page Contains             Select all
     Click Button                         Select all 13 items across all pages
     Unselect Checkbox                    ${row_1_checkbox}
-    Wait Until Page Contains             12 of 13 items
+    Wait Until Page Contains             12 / 13
     Page Should Contain Element          ${rows_selected}    limit=9
     Element Attribute Value Should Be    ${bulkAction_checkbox}    data-indeterminate    true
 
@@ -61,6 +59,6 @@ select and unselect multiple rows when checkboxes are clicked
     Click Element                        ${row_5_checkbox}
     Click Element                        ${row_10_checkbox}
     Click Element                        ${row_5_checkbox}
-    Wait Until Page Contains             2 of 13 items
+    Wait Until Page Contains             2 / 13
     Page Should Contain Element          ${rows_selected}    limit=2
     Element Attribute Value Should Be    ${bulkAction_checkbox}  data-indeterminate  true

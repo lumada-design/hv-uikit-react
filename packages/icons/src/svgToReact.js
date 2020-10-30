@@ -134,20 +134,34 @@ const runUtil = (fileToRead, fileToWrite) => {
   });
 };
 
+const processFile = (file) => {
+  const extension = path.extname(file); // extract extensions
+  const fileName = path.basename(file); // extract file name extensions
+
+  if (extension === ".svg") {
+    // variable instantiated up top
+    const componentName = createComponentName(file, fileName);
+    runUtil(file, componentName);
+  }
+};
+
 const runUtilForAllInDir = () => {
   recursive(`${process.cwd()}/${inputPath}`, (err, files) => {
     if (err) {
       return console.log(err);
-    } // GEt out early if not found
-    files.forEach((file) => {
-      const extention = path.extname(file); // extract extensions
-      const fileName = path.basename(file); // extract file name extensions
+    } // Get out early if not found
+    files.forEach((file) => processFile(file));
+  });
+};
 
-      if (extention === ".svg") {
-        // variable instantiated up top
-        const componentName = createComponentName(file, fileName);
-        runUtil(file, componentName);
-      }
+const runUtilForJustFilesInDir = () => {
+  const files = fs.readdir(`${process.cwd()}/${inputPath}`, (err, files) => {
+    if (err) {
+      return console.log(err);
+    } // Get out early if not found
+    files.forEach((file) => {
+      const filePath = path.join(`${process.cwd()}/${inputPath}`, file);
+      processFile(filePath);
     });
   });
 };
@@ -162,7 +176,7 @@ const args = yargs // reading arguments from the command line
 
 // Resolve arguments
 const firstArg = args._[0];
-const newFileName = args._[1] || "MyComponent";
+const secondArgs = args._[1] || "MyComponent";
 const outputPath = args.output;
 const inputPath = args.input;
 const { rmStyle, format } = args;
@@ -191,7 +205,8 @@ fs.writeFile(path.resolve(process.cwd(), outputPath, `index.d.ts`), "", () => {}
 
 // Main entry point
 if (firstArg === "dir") {
-  runUtilForAllInDir();
+  if (secondArgs === "flatten") runUtilForAllInDir();
+  else runUtilForJustFilesInDir();
 } else {
-  runUtil(svg, newFileName);
+  runUtil(svg, secondArgs);
 }

@@ -7,7 +7,7 @@ export interface ListValueProp {
   selected?: boolean;
   disabled?: boolean;
   isHidden?: boolean;
-  iconCallback?: (params: { isDisabled?: boolean; isSelected?: boolean }) => React.ReactNode;
+  icon?: React.ReactNode | ((params: { isDisabled?: boolean; isSelected?: boolean }) => React.ReactNode);
   showNavIcon?: boolean;
   path?: string;
   params?: object;
@@ -17,6 +17,19 @@ export interface ListLabelsProp {
   selectAll?: string;
   selectionConjunction?: string;
 }
+
+export type HvListClassKey =
+  | "root"
+  | "selectorRoot"
+  | "selectorContainer"
+  | "box"
+  | "truncate"
+  | "item"
+  | "itemSelector"
+  | "icon"
+  | "focus"
+  | "link"
+  | "selectAllSelector";
 
 export interface HvListProps
   extends StandardProps<React.HTMLAttributes<HTMLUListElement>, HvListClassKey> {
@@ -28,11 +41,10 @@ export interface HvListProps
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
    * - isHidden: Is item visible.
-   * - iconCallback: The icon.
+   * - icon: The icon.
    * - showNavIcon: If true renders the navigation icon on the right.
    * - path: The path to navigate to.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
   values: ListValueProp[];
   /**
    * If true renders a multi select list.
@@ -55,45 +67,21 @@ export interface HvListProps
    */
   useSelector?: boolean;
   /**
-   * If ´true´ the list items will show the selection state.
+   * If `true` the list items will show the selection state.
    */
   selectable?: boolean;
   /**
-   * If ´true´ and none element selected,
-   * single select has default (first) label selected.
-   */
-  selectDefault?: boolean;
-  /**
-   * If ´true´, selection can be toggled when single selection.
+   * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle?: boolean;
   /**
-   * If ´true´ the list will be rendered without vertical spacing.
+   * If `true` the list will be rendered without vertical spacing.
    */
   condensed?: boolean;
   /**
-   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips?: boolean;
 }
-
-export type HvListClassKey =
-  | "root"
-  | "listItem"
-  | "condensed"
-  | "disabled"
-  | "selector"
-  | "selectorContainer"
-  | "selected"
-  | "selectAll"
-  | "textDisabled"
-  | "label"
-  | "box"
-  | "labelIconLeftPadding"
-  | "noIconLeftPadding"
-  | "truncate"
-  | "icon"
-  | "focus"
-  | "link";
 
 export default function HvList(props: HvListProps): JSX.Element | null;

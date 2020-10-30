@@ -19,8 +19,6 @@ const styles = (theme) => ({
     display: "inline-flex",
     minHeight: "16px",
     alignItems: "flex-end",
-    marginTop: `${theme.hv.spacing.xs}px`,
-    marginBottom: `${theme.hv.spacing.xs}px`,
   },
   indicatorUnit: {
     alignSelf: "flex-end",
@@ -35,7 +33,7 @@ const styles = (theme) => ({
     alignItems: "center",
   },
   spacingToTheRight: {
-    marginRight: `${theme.hv.spacing.xs}px`,
+    marginRight: theme.hv.spacing.xs,
   },
   trendLine: {
     float: "right",

@@ -1,8 +1,6 @@
 *** Setting ***
-Resource         ../_keywords.resource
-Test Setup       Run Keywords
-...              Go To    ${components}input--suggestion
-...              AND    Wait Until Element Is Enabled    ${input}
+Resource         _input.resource
+Test Setup       open input sample    ${forms}    suggestion
 Force Tags       keyboard    bug-ie
 Documentation    https://github.com/lumada-design/hv-uikit-react/issues/1750
 
@@ -60,6 +58,6 @@ focus options suggestions when pressed UP or DOWM
 *** Variables ***
 ${input}                 css:input[type=text]
 ${label}                 css:#suggestions-label
-${suggestion_list}       css:ul[role=menu]
-${suggestion_options}    css:ul[role=menu]>li
+${suggestion_list}       css:ul[role=listbox]
+${suggestion_options}    css:ul[role=listbox]>li
 ${suggestion_Portugal}   xpath://li[.='Portugal']

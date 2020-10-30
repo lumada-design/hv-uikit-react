@@ -10,35 +10,39 @@ const iconsPackageBin = path.resolve(__dirname, "../packages/icons/bin");
 
 const excludePaths = [/node_modules/, /dist/];
 
+const excludingTests = !!process.env.EXCLUDE_TEST_STORIES;
+
+const searchPaths = [];
+searchPaths.push("../doc/**/*.stories.@(js|mdx)");
+searchPaths.push("../packages/core/src/**/*.stories.@(js|mdx)");
+searchPaths.push("../packages/lab/src/**/*.stories.@(js|mdx)");
+
+if (!excludingTests) {
+  searchPaths.push("../packages/core/src/**/stories/*.test.@(js|mdx)");
+}
+
 module.exports = {
   // to avoid a manual setup, we must keep the "stories" suffix at least for mdx
   // see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/docspage.md#story-file-names
-  stories: [
-    "../doc/**/*.stories.@(js|mdx)",
-    "../packages/core/src/**/*.stories.@(js|mdx)",
-    ...(!process.env.EXCLUDE_TEST_STORIES
-      ? ["../packages/core/src/**/stories/*.test.@(js|mdx)"]
-      : []),
-    "../packages/lab/src/**/*.stories.js"
-  ],
+  stories: searchPaths,
   addons: [
     "@storybook/addon-actions",
     "@storybook/addon-links",
     {
       name: "@storybook/addon-docs",
       options: {
-        configureJSX: true
-      }
+        configureJSX: true,
+      },
     },
-    __dirname + "/themes/register"
+    "./.storybook/themes/register",
   ],
 
-  webpackFinal: async config => {
+  webpackFinal: async (config) => {
     const rules = config.module.rules;
 
     // Fix for https://github.com/storybooks/storybook/issues/3346
     // 6.0 already have https://github.com/storybookjs/storybook/pull/8822
-    const jsRule = config.module.rules.find(rule => rule.test.test(".js"));
+    const jsRule = config.module.rules.find((rule) => rule.test.test(".js"));
     jsRule.include = [__dirname, docFolder, corePackageSrc, labPackageSrc, iconsPackageBin];
     jsRule.exclude = excludePaths;
     const babelLoader = jsRule.use.find(({ loader }) => loader === "babel-loader");
@@ -48,7 +52,7 @@ module.exports = {
     const babelLoaderPlugins = babelLoader.options.plugins;
 
     let docgenPlugin = babelLoaderPlugins.find(
-      plugin =>
+      (plugin) =>
         plugin.includes("babel-plugin-react-docgen") ||
         (Array.isArray(plugin) &&
           plugin.length > 0 &&
@@ -60,7 +64,7 @@ module.exports = {
       docgenPlugin = [docgenPluginName, { DOC_GEN_COLLECTION_NAME: "STORYBOOK_REACT_CLASSES" }];
 
       babelLoaderPlugins[
-        babelLoaderPlugins.findIndex(plugin => plugin.includes("babel-plugin-react-docgen"))
+        babelLoaderPlugins.findIndex((plugin) => plugin.includes("babel-plugin-react-docgen"))
       ] = docgenPlugin;
     }
 
@@ -81,14 +85,14 @@ module.exports = {
       ...docgenPluginOptions.handlers,
       "react-docgen-deprecation-handler",
       path.resolve(__dirname, "docgen/defaultPropsHandler"),
-      path.resolve(__dirname, "docgen/defaultValuePropsHandler")
+      path.resolve(__dirname, "docgen/defaultValuePropsHandler"),
     ];
 
     // patch Storybook's sortProps because it doesn't handle wrapped components
     config.plugins.push(
       new NormalModuleReplacementPlugin(
         /(.*)addon-docs\/dist\/frameworks\/react\/propTypes\/sortProps(\.*)/,
-        function(resource) {
+        function (resource) {
           resource.request = path.resolve(__dirname, "patches/sortProps.js");
           if (resource.resource) {
             resource.resource = resource.request;
@@ -104,25 +108,25 @@ module.exports = {
           // "javascript",
           "json",
           // "typescript", // needed for JavaScript, adds the required HTML worker
-          "yaml"
-        ]
+          "yaml",
+        ],
       })
     );
 
     // rule for txt files
     rules.push({
       test: /\.txt$/i,
-      use: "raw-loader"
+      use: "raw-loader",
     });
 
     // specific rule for templates' svg files
-    const fileLoaderRule = rules.find(rule => rule.test.test(".svg"));
+    const fileLoaderRule = rules.find((rule) => rule.test.test(".svg"));
     fileLoaderRule.exclude = path.resolve(__dirname, "../samples/templates");
 
     rules.push({
       test: /\.svg$/,
       include: path.resolve(__dirname, "../samples/templates"),
-      use: "@svgr/webpack"
+      use: "@svgr/webpack",
     });
 
     // not sure it is really needed, as stories can import components
@@ -131,9 +135,10 @@ module.exports = {
       ...config.resolve.alias,
       "@hv/uikit-react-core/dist": corePackageSrc,
       "@hv/uikit-react-lab/dist": labPackageSrc,
-      "@hv/uikit-react-icons/dist": iconsPackageBin
+      "@hv/uikit-react-icons/dist": iconsPackageBin,
+      "react-hook-form": "react-hook-form/dist/index.ie11",
     };
 
     return config;
-  }
+  },
 };

@@ -1,5 +1,5 @@
+import { Fail } from "@hv/uikit-react-icons/dist";
 import React from "react";
-import Fail from "@hv/uikit-react-icons/dist/Fail";
 import HvEmptyState from "../../EmptyState";
 import useStyles from "./styles";
 

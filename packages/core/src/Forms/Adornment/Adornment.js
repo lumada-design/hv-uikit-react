@@ -2,10 +2,24 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { HvFormElementContext } from "../FormElement";
+import { HvFormElementContext, HvFormElementDescriptorsContext } from "../FormElement";
 import styles from "./styles";
 
-const HvAdornment = (props) => {
+const preventDefault = (event) => event.preventDefault();
+const noop = () => {};
+
+/**
+ * Allows to add a decorative icon or an action to a form element, usually on the right side of an input.
+ * E.g., the reveal password button.
+ *
+ * In addition to the showWhen feature, which uses the form element's context validation state to determine
+ * its visibility, this component also ensures that it does not steal focus from the input and that it is
+ * not accessible using the keyboard.
+ *
+ * As such, its functionality, if any, for accessibility purposes must be provided through an alternative mean,
+ * or by using a regular icon button or toggle button instead.
+ */
+const HvAdornment = React.forwardRef((props, ref) => {
   const {
     id,
     classes,
@@ -16,8 +30,10 @@ const HvAdornment = (props) => {
     isVisible = undefined,
     ...others
   } = props;
-  const { elementStatus = "", descriptors = {} } = useContext(HvFormElementContext);
-  const { HvBaseInput } = descriptors;
+
+  const { elementStatus = "" } = useContext(HvFormElementContext);
+
+  const { input } = useContext(HvFormElementDescriptorsContext);
 
   const displayIcon = isVisible ?? (showWhen === "" || elementStatus === showWhen);
 
@@ -26,14 +42,16 @@ const HvAdornment = (props) => {
   return isClickable ? (
     <button
       id={id}
+      ref={ref}
       type="button"
       tabIndex={-1}
-      aria-controls={HvBaseInput?.[0]?.id}
+      aria-controls={input?.[0]?.id}
       className={clsx(className, classes.root, classes.adornment, classes.adornmentButton, {
         [classes.hideIcon]: !displayIcon,
       })}
       onClick={onClick}
-      onKeyDown={() => {}}
+      onMouseDown={preventDefault}
+      onKeyDown={noop}
       {...others}
     >
       <div className={classes.icon}>{icon}</div>
@@ -41,6 +59,7 @@ const HvAdornment = (props) => {
   ) : (
     <div
       id={id}
+      ref={ref}
       className={clsx(className, classes.root, classes.adornment, classes.adornmentIcon, {
         [classes.hideIcon]: !displayIcon,
       })}
@@ -50,7 +69,7 @@ const HvAdornment = (props) => {
       <div className={classes.icon}>{icon}</div>
     </div>
   );
-};
+});
 
 HvAdornment.propTypes = {
   /**

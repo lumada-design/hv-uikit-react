@@ -1,57 +1,47 @@
 *** Setting ***
-Variables        variables.yaml
-Resource         ../_keywords.resource
-Test Setup       Run Keywords
-...              Go To    ${components}list--multi-selection-with-select-all
-...              AND    Wait Until Element Is Visible    ${list}
+Resource         _list.resource
+Test Setup       open test list sample    multi-selection-with-select-all
 Documentation    options selections just for lists with multiple selection
 
 
 *** Test Cases ***
 unable to select a disabled option when click on it
-    Go To                                  ${components}list--multi-selection-with-selectors
-    Wait Until Element Is Visible          ${option4}
-    Page Should Contain Element            ${selectedItems}       limit=1
-    Page Should Contain Element            ${iconChecked}         limit=1
-    Run Keyword And Continue On Failure    Click Element          ${option4}
-    Page Should Contain Element            ${selectedItems}       limit=1
-    Page Should Contain Element            ${iconChecked}         limit=1
-
-select all options when clicking in header option 'all'
+    [Setup]    open test list sample    multi-selection-with-selectors
     Page Should Contain Element    ${selectedItems}    limit=1
-    Page Should Contain Element    ${iconChecked}    limit=1
-    Click Element                  ${headerItem}    # deselect exist one
-    Click Element                  ${headerItem}    # select all
-    Page Should Contain Element    ${selectedItems}    limit=5
-    Page Should Contain Element    ${iconChecked}    limit=6
-    Element Text Should Be         ${headerItemLabel}    5 of 5
-
-show 'all' in header option when is selected all options one by one
+    Click Element                  ${option}(4)
     Page Should Contain Element    ${selectedItems}    limit=1
-    Page Should Contain Element    ${iconChecked}    limit=1
-    Click Element                  ${option1}
-    Click Element                  ${option2}
-    Click Element                  ${option4}
-    Click Element                  ${option5}
-    Page Should Contain Element    ${selectedItems}    limit=5
-    Page Should Contain Element    ${iconChecked}    limit=6
-    Element Text Should Be         ${headerItemLabel}    5 of 5
 
-remove list indeterminate state when click in header option all and list is in indeterminate state
+select all options when clicking in header option all
+    Page Should Contain Element    ${selectedItems}    limit=1
+    Click Element                  ${allOption}
+    Page Should Contain Element    ${selectedItems}    limit=0
+    Click Element                  ${allOption}
+    Page Should Contain Element    ${selectedItems}    limit=5
+    Element Text Should Be         ${allOption} label    5 / 5
+
+show all in header option when is selected all options one by one
+    Page Should Contain Element    ${selectedItems}    limit=1
+    Click Element                  ${option}(1)
+    Click Element                  ${option}(2)
+    Click Element                  ${option}(4)
+    Click Element                  ${option}(5)
+    Page Should Contain Element    ${selectedItems}    limit=5
+    Element Text Should Be         ${allOption} label    5 / 5
+
+remove list indeterminate state when click in header option all
     Page Should Contain Element        ${selectedItems}    limit=1
-    Click Element                      ${headerItem}    # deselect exist one
+    Click Element                      ${allOption}
     Page Should Not Contain Element    ${selectedItems}
-    Page Should Not Contain Element    ${iconChecked}
-    Element Text Should Be             ${headerItemLabel}    All
+    Element Text Should Be             ${allOption} label    Select All (5)
 
 remove list indeterminate state when unselect the unique selected option
-    Page Should Contain Element          ${selectedItems}       limit=1
-    Click Element                        ${option3}
+    Element Attribute Value Should Be    ${allOption}-input    data-indeterminate    true
+    Page Should Contain Element          ${selectedItems}    limit=1
+    Click Element                        ${option}(3)
     Page Should Not Contain Element      ${selectedItems}
-    Page Should Not Contain Element      ${iconChecked}
-    Element Text Should Be               ${headerItemLabel}    All
-    Element Attribute Value Should Be    ${headerItem}    data-indeterminate    ${None}
+    Element Text Should Be               ${allOption} label    Select All (5)
+    Element Attribute Value Should Be    ${allOption}-input    data-indeterminate    false
 
 verify list indeterminate state when one option is selected
     Page Should Contain Element          ${selectedItems}    limit=1
-    Element Attribute Value Should Be    ${headerItem}-input    data-indeterminate    true
+    Element Attribute Value Should Be    ${allOption}-input    data-indeterminate    true

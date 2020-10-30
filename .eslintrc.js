@@ -15,7 +15,7 @@ module.exports = {
 
     // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
     "no-unused-expressions": "off",
-
+    "react/forbid-prop-types": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -23,56 +23,65 @@ module.exports = {
         js: "never",
         jsx: "never",
         ts: "never",
-        tsx: "never"
-      }
-    ]
+        tsx: "never",
+      },
+    ],
   },
   overrides: [
     {
-      files: ["*.stories.js"],
+      files: ["*.stories.js", "*.stories.test.js"],
       rules: {
         "no-console": "off",
         "no-alert": "off",
-        "no-any": 0
-      }
+        "no-any": 0,
+      },
     },
     {
       files: ["*.ts"],
       env: { browser: true, es6: true, node: true },
       rules: {
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            types: {
+              object: false,
+              Function: false,
+            },
+          },
+        ],
       },
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
       ],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaFeatures: { jsx: true },
         ecmaVersion: 2020,
         sourceType: "module",
-        project: "./tsconfig.json"
+        project: "./tsconfig.json",
       },
       plugins: ["@typescript-eslint"],
       settings: {
         "import/resolver": {
           typescript: {
-            directory: "./packages/*/tsconfig.json"
-          }
-        }
-      }
-    }
+            project: "./packages/*/tsconfig.json",
+          },
+        },
+      },
+    },
   ],
   settings: {
     react: {
       pragma: "React",
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   env: {
     browser: true,
     node: true,
-    jest: true
-  }
+    jest: true,
+  },
 };

@@ -5,7 +5,7 @@ const styles = (theme) => ({
     position: "relative",
     width: "100%",
     display: "flex",
-    border: `1px dotted ${theme.hv.palette.atmosphere.atmo6}`,
+    border: `1px dotted ${theme.hv.palette.atmosphere.atmo4}`,
     cursor: "pointer",
     background: `${theme.hv.palette.atmosphere.atmo2}`,
     "&:hover": {
@@ -14,25 +14,21 @@ const styles = (theme) => ({
     },
     "&:focus": {
       background: `${theme.hv.palette.atmosphere.atmo1}`,
+      border: `1px dotted ${theme.hv.palette.accent.acce1}`,
       ...outlineStyles,
     },
   },
   dropZoneContainerDisabled: {
     "&$dropZoneContainer": {
-      background: `${theme.hv.palette.atmosphere.atmo4}`,
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+      background: `${theme.hv.palette.atmosphere.atmo3}`,
+      border: `1px dotted ${theme.hv.palette.atmosphere.atmo4}`,
       cursor: "not-allowed",
-      "&:hover": {
-        background: `${theme.hv.palette.atmosphere.atmo4}`,
-        border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-        cursor: "not-allowed",
-      },
     },
     "& $dragText": {
-      color: theme.hv.palette.atmosphere.atmo6,
+      color: theme.hv.palette.atmosphere.atmo5,
     },
     "& $selectFilesText": {
-      color: theme.hv.palette.atmosphere.atmo6,
+      color: theme.hv.palette.atmosphere.atmo5,
     },
   },
   dragAction: {
@@ -51,17 +47,15 @@ const styles = (theme) => ({
   },
   dropArea: {
     display: "flex",
-    margin: `${theme.hv.spacing.md}px auto`,
+    margin: theme.hvSpacing("md", "auto"),
     minHeight: 40,
   },
   dropZoneLabelsGroup: {
     display: "flex",
-    marginBottom: 5,
-    "& label:nth-child(1)": {
-      marginRight: `${theme.hv.spacing.sm}px`,
-    },
-    "& p:nth-child(3)": {
-      marginRight: `${theme.hv.spacing.sm}px`,
+    paddingBottom: "6px",
+    justifyContent: "start",
+    "& label:nth-child(1)": {},
+    "& p:nth-child(2)": {
       marginLeft: "auto",
     },
   },
@@ -72,7 +66,7 @@ const styles = (theme) => ({
   },
   dropZoneAreaIcon: {
     margin: "auto",
-    marginRight: `${theme.hv.spacing.xs}px`,
+    marginRight: theme.hv.spacing.xs,
   },
   dragText: {
     ...theme.hv.typography.normalText,

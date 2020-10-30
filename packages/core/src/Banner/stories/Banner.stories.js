@@ -5,10 +5,11 @@ import { HvButton, HvBanner, HvBannerContent, HvTypography } from "../..";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Notification/Banner",
+  title: "Components/Banner",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBanner } from '@hv/uikit-react-core/dist'",
+    dsVersion: "3.2.1",
   },
   component: HvBanner,
 };
@@ -21,13 +22,14 @@ const styles = {
 
 export const Main = () => (
   <>
-    <HvBanner open variant="default" style={styles} label="This is a banner." />
+    <HvBanner open variant="default" style={styles} label="This is an informational message." />
     <HvBanner open variant="success" showIcon style={styles} label="This is a success message." />
+    <HvBanner open variant="warning" showIcon style={styles} label="This is an alert message." />
     <HvBanner open variant="error" showIcon style={styles} label="This is an error message." />
     <HvBanner
       open
       style={styles}
-      label="This is a banner with action."
+      label="This is a banner with an action."
       actions={[{ id: "post", label: "Action" }]}
       actionsCallback={(e, id, action) => console.log(`Clicked ${action.label}`)}
     />
@@ -58,7 +60,7 @@ export const BannerController = () => {
         <HvBanner
           open={open}
           onClose={handleClose}
-          offset={0}
+          offset={10}
           variant={variant}
           showIcon
           actions={<HvButton category="semantic">Action</HvButton>}
@@ -70,7 +72,7 @@ export const BannerController = () => {
   };
 
   return (
-    <div style={{ marginTop: 60 }}>
+    <div>
       <SimpleBanner id="banner1" variant="default" label="This is a banner." />
       <SimpleBanner id="banner2" variant="success" label="This is a success banner." />
       <SimpleBanner id="banner3" variant="error" label="This is an error banner." />
@@ -81,8 +83,9 @@ export const BannerController = () => {
 BannerController.story = {
   parameters: {
     docs: {
-      storyDescription: "Different Banner variants with actions and controlled by buttons",
+      storyDescription: "Different Banner variants with actions and controlled by buttons.",
     },
+    eyes: { include: false },
   },
 };
 
@@ -98,7 +101,7 @@ export const CustomIcon = () => (
 CustomIcon.story = {
   parameters: {
     docs: {
-      storyDescription: "Banner with custom icon with base color on the semantic background",
+      storyDescription: "Banner with custom icon with base color on the semantic background.",
     },
   },
 };
@@ -119,7 +122,7 @@ CustomAction.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Banner can receive a component or object action that will render a semantic button",
+        "Banner can receive a component or object action that will render a semantic button.",
     },
   },
 };
@@ -142,6 +145,7 @@ export const BannerVariations = () => {
       <HvTypography variant="xsTitle">Semantics</HvTypography>
       <BannerContent content="This is a default banner." variant="default" />
       <BannerContent content="This is a success banner." variant="success" showIcon />
+      <BannerContent content="This is a warning banner." variant="warning" showIcon />
       <BannerContent content="This is an error banner." variant="error" showIcon />
       <p />
       <HvTypography variant="xsTitle">Actions</HvTypography>

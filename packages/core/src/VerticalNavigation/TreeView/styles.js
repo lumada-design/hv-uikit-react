@@ -1,13 +1,10 @@
-import focusStyles from "../../Focus/styles";
-
-const { focused, focusDisabled } = focusStyles;
+import { outlineStyles } from "../../Focus/styles";
 
 const selected = (theme) => ({
-  background: theme.hv.palette.accent.acce1,
-  color: theme.hv.palette.atmosphere.atmo1,
+  background: theme.hv.palette.atmosphere.atmo3,
+  borderLeft: `2px solid ${theme.hv.palette.accent.acce3}`,
   "& *": {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1,
+    background: theme.hv.palette.atmosphere.atmo3,
   },
   "& svg *.color0": {
     fill: theme.hv.palette.atmosphere.atmo1,
@@ -15,9 +12,9 @@ const selected = (theme) => ({
 });
 
 const hover = (theme) => ({
-  background: theme.hv.palette.atmosphere.atmo4,
+  background: theme.hv.palette.atmosphere.atmo3,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4,
+    background: theme.hv.palette.atmosphere.atmo3,
   },
 });
 
@@ -50,25 +47,25 @@ const styles = (theme) => ({
     "&[data-hasicon]>$content": { paddingLeft: `0px` },
     // 1st, no icon
     "&:not([data-hasicon])>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1}px`,
+      paddingLeft: theme.hv.spacing.xs * 1,
     },
 
     // 2nd, with icon
     "&[data-hasicon]>$group>$node>$content": {
-      paddingLeft: `${32 + theme.hv.spacing.sm * 1}px`,
+      paddingLeft: 32 + theme.hv.spacing.xs * 2,
     },
     // 2nd, no icon
     "&:not([data-hasicon])>$group>$node>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 1}px`,
+      paddingLeft: theme.hv.spacing.xs * 2,
     },
 
     // 3rd, with icon
     "&[data-hasicon]>$group>$node>$group>$node>$content": {
-      paddingLeft: `${32 + theme.hv.spacing.sm * 2}px`,
+      paddingLeft: 32 + theme.hv.spacing.xs * 3,
     },
     // 3rd, no icon
     "&:not([data-hasicon])>$group>$node>$group>$node>$content": {
-      paddingLeft: `${theme.hv.spacing.xs * 1 + theme.hv.spacing.sm * 2}px`,
+      paddingLeft: theme.hv.spacing.xs * 3,
     },
   },
 
@@ -88,13 +85,6 @@ const styles = (theme) => ({
   noIcon: {},
   withIcon: {},
 
-  contentFocusDisabled: {
-    ...focusDisabled,
-  },
-  contentFocused: {
-    ...focused,
-  },
-
   /* role="button" element */
   content: {
     width: "100%",
@@ -102,7 +92,8 @@ const styles = (theme) => ({
     justifyContent: "flex-start",
     alignItems: "center",
     height: "32px",
-    color: theme.hv.palette.atmosphere.acce1,
+    color: theme.hv.palette.accent.acce1,
+    borderLeft: `2px solid transparent`,
 
     // selected state
     "$selected>&": selected(theme),
@@ -116,6 +107,14 @@ const styles = (theme) => ({
 
     "&[disabled], &:active": {
       outline: "none",
+    },
+
+    "&:focus": {
+      outline: "none",
+    },
+
+    "&.focus-visible": {
+      ...outlineStyles,
     },
 
     // cursor

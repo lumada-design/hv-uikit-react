@@ -14,6 +14,7 @@ export default function useControlled(controlledProp, initialState) {
   const value = isControlled ? controlledProp : valueState;
 
   if (process.env.NODE_ENV !== "production" && isControlled !== (controlledProp !== undefined)) {
+    // eslint-disable-next-line no-console
     console.error(
       [
         `A component is changing the ${isControlled ? "" : "un"}controlled state to be ${
@@ -26,11 +27,14 @@ export default function useControlled(controlledProp, initialState) {
     );
   }
 
-  const setValueIfUncontrolled = React.useCallback((newValue) => {
-    if (!isControlled) {
-      setValue(newValue);
-    }
-  }, []);
+  const setValueIfUncontrolled = React.useCallback(
+    (newValue) => {
+      if (!isControlled) {
+        setValue(newValue);
+      }
+    },
+    [isControlled]
+  );
 
   return [value, setValueIfUncontrolled];
 }

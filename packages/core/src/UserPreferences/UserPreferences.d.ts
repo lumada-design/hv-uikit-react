@@ -1,6 +1,16 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvUserPreferencesClassKey =
+  | "root"
+  | "fixed"
+  | "relative"
+  | "absolute"
+  | "static"
+  | "container"
+  | "contentContainer"
+  | "userInfo";
+
 export interface HvUserPreferencesProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvUserPreferencesClassKey> {
   /**
@@ -31,15 +41,5 @@ export interface HvUserPreferencesProps
     label2: string;
   };
 }
-
-export type HvUserPreferencesClassKey =
-  | "root"
-  | "fixed"
-  | "relative"
-  | "absolute"
-  | "static"
-  | "container"
-  | "contentContainer"
-  | "userInfo";
 
 export default function HvUserPreferences(props: HvUserPreferencesProps): JSX.Element | null;

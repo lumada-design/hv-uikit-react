@@ -1,10 +1,9 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 import { CardViewConfiguration } from "./CardView";
 import { ListViewConfiguration } from "./ListView";
 import { ListValueProp } from "../List";
-import { MultiButtonData } from "../MultiButton";
 import { HvPaginationCommonProps } from "../Pagination";
 
 export interface AssetInventoryConfiguration extends ListViewConfiguration, CardViewConfiguration {}
@@ -56,9 +55,20 @@ export type AssetInventoryMetadata = {
   searchFunction?: (entryValue: any, searchValue: any) => boolean;
 };
 
+export type ClassKey =
+  | "root"
+  | "controlsContainer"
+  | "search"
+  | "rightControls"
+  | "multiButtons"
+  | "viewContainer"
+  | "sortContainer"
+  | "searchBoxContainer"
+  | "pagination";
+
 export interface HvAssetInventoryProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey>,
-    HvActionsCommonProps,
+    HvActionsGenericCommonProps,
     HvPaginationCommonProps {
   /**
    * Data passed to the component.
@@ -112,7 +122,11 @@ export interface HvAssetInventoryProps
    */
   selectedView?: string;
   /**
-   * Defines if it has pagination.
+   * Defines whether the Asset Inventory includes the bulk actions component.
+   */
+  hasBulkActions?: boolean;
+  /**
+   * Defines whether the Asset Inventory includes the pagination component.
    */
   hasPagination?: boolean;
   /**
@@ -130,7 +144,7 @@ export interface HvAssetInventoryProps
   /**
    * View change callback.
    */
-  onViewChange?: (event: React.FormEvent<HTMLDivElement>, value: MultiButtonData[]) => void;
+  onViewChange?: (event: React.FormEvent<HTMLDivElement>, index: number) => void;
   /**
    * Visual indication of the sort applied. The id is given by the metadata.id+Asc or metadata.id+Desc.
    */
@@ -161,17 +175,10 @@ export interface HvAssetInventoryProps
    * Other props passed to the pagination.
    */
   paginationProps?: HvPaginationCommonProps;
+  /**
+   * Component to the present when no data is available.
+   */
+  emptyComponent?: React.ReactNode;
 }
-
-export type ClassKey =
-  | "root"
-  | "controlsContainer"
-  | "search"
-  | "rightControls"
-  | "multiButtons"
-  | "viewContainer"
-  | "sortContainer"
-  | "searchBoxContainer"
-  | "pagination";
 
 export default function HvAssetInventory(props: HvAssetInventoryProps): JSX.Element | null;

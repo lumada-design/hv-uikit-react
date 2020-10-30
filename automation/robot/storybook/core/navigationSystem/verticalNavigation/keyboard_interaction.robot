@@ -1,8 +1,6 @@
 *** Setting ***
 Resource          _verticalNavigation.resource
-Test Setup        Run Keywords
-...               Go To    ${components}navigation-system-vertical-navigation--collapsable    AND
-...               expand vertical navigation
+Test Setup        open vertical navigation sample    ${components}    collapsable
 Force Tags        keyboard
 Documentation     Test Cases based on Design System Version 1.2.0
 

@@ -6,6 +6,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'",
+    dsVersion: "3.2.1",
   },
   component: HvBreadCrumb,
 };

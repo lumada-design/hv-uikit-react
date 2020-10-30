@@ -1,16 +1,13 @@
 *** Setting ***
-Resource      ../table.resource
-Test Setup    Run Keywords
-...           Go To    ${visualizations}table--server-side-pagination
-...           AND    Wait Until Element Is Visible    ${table}
-
+Resource      ../_table.resource
+Test Setup    open table sample    ${visualizations}    server-side-pagination
 
 *** Test Cases ***
 remove selection when pagination is moved to next page
     [Documentation]    selection vs pagination
     Wait Until Element Is Enabled               ${row_10_checkbox}
     Select Checkbox                             ${row_10_checkbox}
-    Select From List By Value                   ${rows_per_page}    5
+    Select Dropdown Value                       ${rows_per_page}    5
     Wait Until Page Contains Element            ${rows_populated}
     Wait Until Element Is Enabled               ${pagination_next_page}
     Click Element                               ${pagination_next_page}
@@ -36,8 +33,8 @@ remove selection when a selected row goes to next page
     Wait Until Element Is Enabled       ${row_1_checkbox}
     Select Checkbox                     ${row_1_checkbox}
     Select Checkbox                     ${row_10_checkbox}
-    Select From List By Value           ${rows_per_page}   5
-    Wait Until Page Contains            1 of 553 items
+    Select Dropdown Value               ${rows_per_page}   5
+    Wait Until Page Contains            1 / 553
     Page Should Contain Element         ${rows_selected}    limit=1
 
 keep selection when number of rows per table is increased
@@ -45,18 +42,18 @@ keep selection when number of rows per table is increased
     Wait Until Element Is Enabled       ${row_1_checkbox}
     Select Checkbox                     ${row_1_checkbox}
     Select Checkbox                     ${row_10_checkbox}
-    Select From List By Value           ${rows_per_page}   20
+    Select Dropdown Value               ${rows_per_page}     20
     Wait Until Page Contains Element    ${rows_populated}    timeout=5s    limit=20
     Checkbox Should Be Selected         ${row_1_checkbox}
     Checkbox Should Be Selected         ${row_10_checkbox}
 
 remove selection when column is sorted by
     [Documentation]    selection vs sort by
-    Wait Until Element Is Enabled               ${header_2}
-    Click Element                               ${header_2}
+    Wait Until Element Is Enabled               ${header}(2)
+    Click Element                               ${header}(2)
     Wait Until Element Is Enabled               ${row_1_checkbox}
     Select Checkbox                             ${row_1_checkbox}
-    Click Element                               ${header_2}
-    Click Element                               ${header_2}
+    Click Element                               ${header}(2)
+    Click Element                               ${header}(2)
     Wait Until Page Contains                    All
     wait Until Page Does Not Contain Element    ${rows_selected}

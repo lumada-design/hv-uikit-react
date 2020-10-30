@@ -43,28 +43,28 @@ const styles = (theme) => ({
     borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
   },
   valuesContainer: {
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: theme.hv.spacing.sm,
   },
   values: {
     display: "flex",
     justifyContent: "space-between",
-    paddingBottom: "15px",
+    paddingBottom: "10px",
     "&:last-child": {
       paddingBottom: 0,
     },
   },
   color: {
-    width: `${theme.hv.spacing.xs}px`,
+    width: theme.hv.spacing.xs,
     height: theme.hv.typography.vizText.lineHeight,
   },
   separator: {
-    width: `${theme.hv.spacing.xs}px`,
+    width: theme.hv.spacing.xs,
   },
   separatorColor: {
     width: "5px",
   },
   valueWrapper: {
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: theme.hv.spacing.sm,
   },
 });
 

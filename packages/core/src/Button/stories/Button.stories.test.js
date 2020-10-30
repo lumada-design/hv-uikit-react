@@ -24,7 +24,11 @@ export const SmokeTests = () => (
         Enable
       </HvGrid>
       <HvGrid item xl={2}>
-        <HvButton id="default" startIcon={<Caution />} onClick={() => alert("default")}>
+        <HvButton
+          id="default"
+          startIcon={<Caution color="base1" />}
+          onClick={() => alert("default")}
+        >
           default
         </HvButton>
       </HvGrid>
@@ -46,16 +50,6 @@ export const SmokeTests = () => (
           onClick={() => alert("ghost")}
         >
           ghost
-        </HvButton>
-      </HvGrid>
-      <HvGrid item xl={2}>
-        <HvButton
-          id="ghostSecondary"
-          category="ghostSecondary"
-          startIcon={<Caution />}
-          onClick={() => alert("ghostSecondary")}
-        >
-          ghostSecondary
         </HvButton>
       </HvGrid>
       <HvGrid item xl={2}>
@@ -103,17 +97,6 @@ export const SmokeTests = () => (
           onClick={() => alert("disabled ghost")}
         >
           disabled ghost
-        </HvButton>
-      </HvGrid>
-      <HvGrid item xl={2}>
-        <HvButton
-          id="disabledGhostSecondary"
-          disabled
-          category="ghostSecondary"
-          startIcon={<Caution />}
-          onClick={() => alert("disabled ghostSecondary")}
-        >
-          disabled ghostSecondary
         </HvButton>
       </HvGrid>
       <HvGrid item xl={2}>

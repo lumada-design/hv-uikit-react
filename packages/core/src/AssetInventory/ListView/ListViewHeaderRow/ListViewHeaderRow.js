@@ -18,7 +18,7 @@ const renderHeaderCells = (classes, columnConfiguration) =>
         id={index}
         key={keyIndex}
       >
-        <HvTypography variant="labelText">{configuration.title || ""}</HvTypography>
+        <HvTypography variant="highlightText">{configuration.title || ""}</HvTypography>
       </div>
     );
   });

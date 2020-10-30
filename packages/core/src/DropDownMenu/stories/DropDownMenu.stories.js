@@ -8,6 +8,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDropDownMenu } from '@hv/uikit-react-core/dist'",
+    maturityStatus: "stable",
+    dsVersion: "3.2.1",
   },
   component: HvDropDownMenu,
   decorators: [
@@ -21,6 +23,12 @@ export const Main = () => (
     dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
   />
 );
+
+Main.story = {
+  parameters: {
+    eyes: { include: false },
+  },
+};
 
 export const Positioning = () => {
   const [position, setPosition] = useState("right");
@@ -42,6 +50,7 @@ Positioning.story = {
     docs: {
       storyDescription: "DropDownMenu with configurable positioning in the dropdown",
     },
+    eyes: { include: false },
   },
 };
 
@@ -57,9 +66,9 @@ export const WithIconsAndActions = () => {
       onClick={(e, item) => console.log(item.label)}
       aria-label="dropdownMenu-3"
       dataList={[
-        { label: "Label 1", iconCallback: iconSelectedColor(User) },
-        { label: "Label 2", iconCallback: iconSelectedColor(Calendar) },
-        { label: "Label 3", iconCallback: iconSelectedColor(Plane) },
+        { label: "Label 1", icon: iconSelectedColor(User) },
+        { label: "Label 2", icon: iconSelectedColor(Calendar) },
+        { label: "Label 3", icon: iconSelectedColor(Plane) },
       ]}
     />
   );
@@ -78,6 +87,7 @@ WithIconsAndActions.story = {
         "wait for element #dropdownmenu-with-icons-and-actions-list to be visible",
       ],
     },
+    eyes: { include: false },
   },
 };
 
@@ -99,6 +109,12 @@ export const DisabledItems = () => (
     dataList={[{ label: "Label 1" }, { label: "Label 2", disabled: true }, { label: "Label 3" }]}
   />
 );
+
+DisabledItems.story = {
+  parameters: {
+    eyes: { include: false },
+  },
+};
 
 export const Controlled = () => {
   const ControlledDropdownMenu = () => {
@@ -122,6 +138,9 @@ export const Controlled = () => {
           aria-label="dropdownMenu-1"
           keepOpened={false}
           dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+          onToggleOpen={(s) => {
+            console.log(s);
+          }}
         />
       </>
     );
@@ -135,5 +154,6 @@ Controlled.story = {
     docs: {
       storyDescription: "DropDownMenu toggle opening controlled by an external button",
     },
+    eyes: { include: false },
   },
 };

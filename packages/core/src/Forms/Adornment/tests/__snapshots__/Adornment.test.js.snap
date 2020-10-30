@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Adornment should render correctly 1`] = `
-<WithStyles(HvAdornment)
-  icon={<ForwardRef(WithStyles) />}
+<WithStyles(ForwardRef)
+  icon={<CloseXS />}
 >
-  <HvAdornment
+  <ForwardRef
     classes={
       Object {
         "adornment": "HvAdornment-adornment",
@@ -15,7 +15,7 @@ exports[`Adornment should render correctly 1`] = `
         "root": "HvAdornment-root",
       }
     }
-    icon={<ForwardRef(WithStyles) />}
+    icon={<CloseXS />}
   >
     <div
       className="HvAdornment-root HvAdornment-adornment HvAdornment-adornmentIcon"
@@ -24,26 +24,20 @@ exports[`Adornment should render correctly 1`] = `
       <div
         className="HvAdornment-icon"
       >
-        <WithStyles(CloseXS)>
-          <CloseXS
-            classes={
-              Object {
-                "root": "HvIconCloseXS-root",
-                "rootL": "HvIconCloseXS-rootL",
-                "rootM": "HvIconCloseXS-rootM",
-                "rootS": "HvIconCloseXS-rootS",
-                "rootXs": "HvIconCloseXS-rootXs",
-              }
-            }
+        <CloseXS>
+          <HvIconBase
+            iconSize="XS"
+            name="CloseXS"
           >
             <div
-              className="HvIconCloseXS-root HvIconCloseXS-rootXs"
+              className="HvIconBase-root HvIconBase-xs"
+              name="CloseXS"
             >
               <svg
                 focusable={false}
-                height="12px"
+                height={12}
                 viewBox="0 0 12 12"
-                width="12px"
+                width={12}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -53,10 +47,10 @@ exports[`Adornment should render correctly 1`] = `
                 />
               </svg>
             </div>
-          </CloseXS>
-        </WithStyles(CloseXS)>
+          </HvIconBase>
+        </CloseXS>
       </div>
     </div>
-  </HvAdornment>
-</WithStyles(HvAdornment)>
+  </ForwardRef>
+</WithStyles(ForwardRef)>
 `;

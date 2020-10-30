@@ -1,19 +1,8 @@
-import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import * as React from "react";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 import { ListValueProp } from "../List";
 import { PaginationLabelsProp } from "../Pagination";
-import { HvActionsCommonProps } from "../Actions";
-
-export interface TableLabel {
-  /**
-   * The title that identifies the title, rendered outside of the table.
-   */
-  titleText?: string;
-  /**
-   * The subtitle that identifies the title, rendered outside of the table.
-   */
-  subtitleText?: string;
-}
 
 export interface TableColumn {
   /**
@@ -74,18 +63,64 @@ export interface SecondaryAction extends ListValueProp {
   action?: (event: React.FormEvent<HTMLDivElement>, row: object) => void;
 }
 
+
+export type HvTableClassKey =
+  | "root"
+  | "table"
+  | "theadGroup"
+  | "theadGroupTr"
+  | "theadGroupTh"
+  | "thead"
+  | "theadTh"
+  | "theadFilter"
+  | "theadFilterTr"
+  | "theadFilterTh"
+  | "tbody"
+  | "tBodyEmpty"
+  | "trGroups"
+  | "tr"
+  | "textContainer"
+  | "td"
+  | "tfoot"
+  | "tfootTr"
+  | "tfootTh"
+  | "pagination"
+  | "loading"
+  | "noDate"
+  | "resizer"
+  | "rtSortIcon"
+  | "sortedIconShown"
+  | "sortedIconHidden"
+  | "pointer"
+  | "tableContainer"
+  | "subtitle"
+  | "title"
+  | "checkBoxBorder"
+  | "checkBoxRow"
+  | "centered"
+  | "alphaNumeric"
+  | "numeric"
+  | "link"
+  | "subComponentContainer"
+  | "iconContainer"
+  | "firstWithNumeric"
+  | "lockIcon"
+  | "lockIconSelected"
+  | "trashIcon"
+  | "trashIconSelected"
+  | "checkBoxText"
+  | "menuItem"
+  | "expand"
+  | "separatorContainer";
+
 export interface HvTableProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvTableClassKey>,
-    HvActionsCommonProps {
+    HvActionsGenericCommonProps {
   /**
    * Unique class name used to identify the fixed table
    */
   uniqClassName?: string;
 
-  /**
-   * The labels inside the table.
-   */
-  labels?: TableLabel;
   /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
    * Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
@@ -126,7 +161,7 @@ export interface HvTableProps
   /**
    * Callback to notify when the page size changes
    */
-  onPageSizeChange?: (...args: any[]) => any;
+  onPageSizeChange?: (pageSize: number) => void;
 
   /**
    * Boolean to enable or disable the server side pagination mechanism
@@ -219,54 +254,5 @@ export interface HvTableProps
    */
   collapseOnDataChange?: boolean;
 }
-
-export type HvTableClassKey =
-  | "root"
-  | "table"
-  | "theadGroup"
-  | "theadGroupTr"
-  | "theadGroupTh"
-  | "thead"
-  | "theadTh"
-  | "theadFilter"
-  | "theadFilterTr"
-  | "theadFilterTh"
-  | "tbody"
-  | "tBodyEmpty"
-  | "trGroups"
-  | "tr"
-  | "textContainer"
-  | "td"
-  | "tfoot"
-  | "tfootTr"
-  | "tfootTh"
-  | "pagination"
-  | "loading"
-  | "noDate"
-  | "resizer"
-  | "rtSortIcon"
-  | "sortedIconShown"
-  | "sortedIconHidden"
-  | "pointer"
-  | "tableContainer"
-  | "subtitle"
-  | "title"
-  | "checkBoxBorder"
-  | "checkBoxRow"
-  | "centered"
-  | "alphaNumeric"
-  | "numeric"
-  | "link"
-  | "subComponentContainer"
-  | "iconContainer"
-  | "firstWithNumeric"
-  | "lockIcon"
-  | "lockIconSelected"
-  | "trashIcon"
-  | "trashIconSelected"
-  | "checkBoxText"
-  | "menuItem"
-  | "expand"
-  | "separatorContainer";
 
 export default function HvTable(props: HvTableProps): JSX.Element | null;

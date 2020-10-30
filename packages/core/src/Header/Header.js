@@ -4,7 +4,7 @@ import { AppBar, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 /**
- * The header should be informative and provide the most important information about the digital product so that users could scan it in split seconds.
+ * The header should be informative and provide the most important information about the digital product so that users can scan it in split seconds.
  *
  * Our implementation of the Header is divided in:
  * <ul>

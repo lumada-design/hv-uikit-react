@@ -1,18 +1,33 @@
-import { semanticStyles } from "../withSemantic";
+import fade from "../utils/hexToRgbA";
 
 const styles = (theme) => ({
   root: {
     display: "flex",
     backgroundColor: theme.palette.atmo1,
-    margin: theme.spacing("sm", 0, "xs"),
   },
-  editMode: {
+  semantic: {
     backgroundColor: theme.palette.sema7,
-    "& $selectAll": {
-      ...semanticStyles(theme),
+    "& $selectAll div": {
+      color: theme.palette.base2,
+      "&:hover:not(:disabled)": {
+        backgroundColor: fade(theme.palette.base1, 0.3),
+      },
+      "& *": {
+        color: theme.palette.base2,
+        backgroundColor: "transparent",
+      },
+    },
+    "& $selectAll:focus-within div": {
+      backgroundColor: fade(theme.palette.base1, 0.3),
+    },
+    // IE fallback code (using focus-within-polyfill)
+    "& $selectAll.focus-within div": {
+      backgroundColor: fade(theme.palette.base1, 0.3),
     },
   },
-  selectAllContainer: {},
+  selectAllContainer: {
+    display: "flex",
+  },
   selectAll: {},
   selectAllPages: {},
   actions: {

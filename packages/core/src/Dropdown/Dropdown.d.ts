@@ -1,13 +1,9 @@
-import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { PopperProps } from "@material-ui/core/Popper";
 import { ListLabelsProp, ListValueProp } from "../List";
+import { HvFormElementProps } from "..";
 
 export interface DropDownLabelsProp extends ListLabelsProp {
-  /**
-   * Title for the dropdown.
-   */
-  title?: string;
   /**
    * The default when there are no options available.
    */
@@ -31,26 +27,37 @@ export interface DropDownLabelsProp extends ListLabelsProp {
   multiSelectionConjunction?: string;
 }
 
+export type HvDropdownClassKey =
+  | "root"
+  | "labelContainer"
+  | "label"
+  | "description"
+  | "dropdown"
+  | "arrow"
+  | "placeholder"
+  | "selectionDisabled"
+  | "rootList";
+
 export interface HvDropdownProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropdownClassKey, "onChange"> {
+  extends StandardProps<HvFormElementProps, HvDropdownClassKey, "onChange"> {
   /**
    * The list to be rendered by the dropdown.
    */
   values?: ListValueProp[];
   /**
-   * If ´true´ the dropdown is multiselect, if ´false´ the dropdown is single select.
+   * If `true` the dropdown is multiselect, if `false` the dropdown is single select.
    */
   multiSelect?: boolean;
   /**
-   * If ´true´ the dropdown is rendered with a search bar, if ´false´ there won't be a search bar.
+   * If `true` the dropdown is rendered with a search bar, if `false` there won't be a search bar.
    */
   showSearch?: boolean;
   /**
-   * If ´true´ the dropdown is disabled unable to be interacted, if ´false´ it is enabled.
+   * If `true` the dropdown is disabled unable to be interacted, if `false` it is enabled.
    */
   disabled?: boolean;
   /**
-   * If ´true´ the dropdown starts opened if ´false´ it starts closed.
+   * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded?: boolean;
   /**
@@ -62,12 +69,7 @@ export interface HvDropdownProps
    */
   labels?: DropDownLabelsProp;
   /**
-   * If ´true´ and none element selected,
-   * single select has default (first) label selected.
-   */
-  selectDefault?: boolean;
-  /**
-   * If ´true´ the dropdown will show tooltips when user mouseenter text in list
+   * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips?: boolean;
   /**
@@ -76,7 +78,7 @@ export interface HvDropdownProps
    */
   disablePortal?: boolean;
   /**
-   * If ´true´, selection can be toggled when single selection.
+   * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle?: boolean;
   /**
@@ -88,24 +90,9 @@ export interface HvDropdownProps
    */
   onChange?: (selected: ListValueProp | ListValueProp[] | undefined) => void;
   /**
-   * Properties passed to the undelying Popper component
+   * Properties passed to the underlying Popper component
    */
   popperProps?: Partial<PopperProps>;
 }
-
-export type HvDropdownClassKey =
-  | "root"
-  | "rootOpen"
-  | "rootDisabled"
-  | "rootList"
-  | "list"
-  | "label"
-  | "header"
-  | "selection"
-  | "arrow"
-  | "headerDisabled"
-  | "icon"
-  | "truncate"
-  | "selectionDisabled";
 
 export default function HvDropdown(props: HvDropdownProps): JSX.Element | null;

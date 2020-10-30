@@ -1,16 +1,22 @@
+const isCoreComponent = (kind) => {
+  const includedPaths = ["Components/", "Forms/", "Tests/"];
+  return includedPaths.some((p) => kind.startsWith(p));
+};
+
 module.exports = {
-  // showLogs: true,
   matchLevel: "Strict",
   puppeteerOptions: { args: ["--no-sandbox", "--disable-setuid-sandbox"], ignoreHTTPSErrors: true },
   runInDocker: true,
   variations: () => ["theme:wicked"],
+
+  appName: "v3 pre-release",
 
   browser: [
     { width: 1920, height: 1080, name: "ie11" },
     { width: 1920, height: 1080, name: "chrome" },
     { width: 1920, height: 1080, name: "firefox" },
     { width: 1920, height: 1080, name: "safari" },
-    { width: 1920, height: 1080, name: "edgechromium" }
+    // { width: 1920, height: 1080, name: "edgechromium" },
 
     // { width: 1920, height: 1080, name: "chrome-one-versionsback" },
     // { width: 1920, height: 1080, name: "firefox-one-version-back" },
@@ -21,11 +27,13 @@ module.exports = {
     // { width: 1920, height: 1080, name: "firefox-two-versions-back" },
     // { width: 1920, height: 1080, name: "safari-two-versions-back" }
   ],
-  //asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
+  // asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
   include: ({ name, kind, parameters }) =>
-    (kind.includes("Components") && !kind.includes("Components/Asset Inventory")) ||
-    (kind.includes("Visualizations") &&
+    (isCoreComponent(kind) &&
+      !kind.includes("Components/Dialog") &&
+      !kind.includes("Components/Asset Inventory")) ||
+    (kind.includes("Visualizations/") &&
       !kind.includes("Visualizations/Bar Chart") &&
       !kind.includes("Visualizations/Line Chart")),
-  concurrency: 10
+  concurrency: 10,
 };

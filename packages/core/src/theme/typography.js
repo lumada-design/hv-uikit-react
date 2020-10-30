@@ -26,7 +26,7 @@ const typography = (palette, theme) =>
       ...theme.typography.highlightText,
     },
     subtitle2: {
-      ...theme.typography.labelText,
+      ...theme.typography.highlightText,
     },
     button: {
       ...theme.typography.highlightText,

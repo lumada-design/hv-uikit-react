@@ -35,6 +35,12 @@ export const KeyboardNavigation = () => (
   </>
 );
 
+KeyboardNavigation.story = {
+  parameters: {
+    eyes: { include: false },
+  },
+};
+
 // __________________________________
 // Extended pa11y test scenarios
 
@@ -45,6 +51,12 @@ export const A11YClosed = () => (
     dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
   />
 );
+
+A11YClosed.story = {
+  parameters: {
+    eyes: { include: false },
+  },
+};
 
 export const A11YOpen = () => (
   <HvDropDownMenu
@@ -63,6 +75,7 @@ A11YOpen.story = {
         "wait for element #dropdownmenu-open-list to be visible",
       ],
     },
+    eyes: { include: false },
   },
 };
 
@@ -70,9 +83,9 @@ A11YOpen.story = {
 // Extended applitools test scenarios
 
 // test scenario, With Icons And Actions opened
-export const IconsOpened = () => WithIconsAndActions();
+export const sWithIconsAndActions = () => WithIconsAndActions();
 
-IconsOpened.story = {
+sWithIconsAndActions.story = {
   parameters: {
     eyes: {
       runBefore() {
@@ -84,9 +97,9 @@ IconsOpened.story = {
 };
 
 // test scenario, Disabled Items opened
-export const DisabledItemsOpened = () => DisabledItems();
+export const sDisabledItems = () => DisabledItems();
 
-DisabledItemsOpened.story = {
+sDisabledItems.story = {
   parameters: {
     eyes: {
       runBefore() {

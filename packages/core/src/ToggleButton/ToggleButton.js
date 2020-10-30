@@ -1,139 +1,69 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import withTooltip from "../withTooltip";
-import withLabels from "../withLabels";
+
+import { HvButton } from "..";
+import { useControlled } from "../utils";
+
 import styles from "./styles";
 
-const DEFAULT_LABELS = { selectedTitle: "", notSelectedTitle: "" };
-
 /**
- * A toggle button is a mechanism that allows users to change between 2 options.
+ * A two-state button that can be either off (not pressed) or on (pressed).
+ * Wraps the Button component, but adds the aria-pressed attribute.
+ *
+ * Use when two instances are opposite and the on/off analogy doesn’t apply (Ex: Locked / Unlocked).
+ * Only well known icons should be used, otherwise use a single checkbox for the same situation.
  */
 const ToggleButton = ({
-  classes,
-  className,
-  id,
-  selected = false,
-  labels,
+  defaultSelected,
+  selected,
   notSelectedIcon,
   selectedIcon = null,
-  animated = false,
   onClick,
-  disabled = false,
+  children,
   ...others
 }) => {
-  const [isSelected, setIsSelected] = useState(selected);
-
-  /**
-   * Update state when prop selected is changed.
-   */
-  useEffect(() => {
-    setIsSelected(selected);
-  }, [selected]);
-
-  const Icon = animated || !isSelected ? notSelectedIcon : selectedIcon;
-  const StyledIcon = () => (
-    <Icon
-      className={clsx(
-        classes.icon,
-        animated ? { notSelected: !isSelected, selected: isSelected } : {}
-      )}
-    />
-  );
-  const title = isSelected ? labels.selectedTitle : labels.notSelectedTitle;
-  const WrappedIcon = title ? withTooltip(StyledIcon, title) : StyledIcon;
+  const [isSelected, setIsSelected] = useControlled(selected, Boolean(defaultSelected));
 
   const onClickHandler = (e) => {
-    if (disabled) return;
-
     setIsSelected(!isSelected);
-
-    if (onClick) onClick(e, !isSelected);
+    onClick?.(e, !isSelected);
   };
 
   return (
-    <button
-      id={id}
-      className={clsx(className, classes.root, {
-        [classes.disabled]: disabled,
-      })}
-      type="button"
-      aria-pressed={isSelected}
-      onClick={onClickHandler}
-      {...others}
-    >
-      <WrappedIcon />
-    </button>
+    <HvButton icon aria-pressed={isSelected} onClick={onClickHandler} {...others}>
+      {children || (!isSelected ? notSelectedIcon : selectedIcon)}
+    </HvButton>
   );
 };
 
 ToggleButton.propTypes = {
   /**
-   * Class names to be applied.
+   * When uncontrolled, defines the initial selected state.
    */
-  className: PropTypes.string,
-  /**
-   * A Jss Object used to override or extend the styles applied to the component.
-   */
-  classes: PropTypes.shape({
-    /**
-     * Style applied to the root.
-     */
-    root: PropTypes.string,
-    /**
-     * Style applied to the icon.
-     */
-    icon: PropTypes.string,
-    /**
-     * Style applied when disabled.
-     */
-    disabled: PropTypes.string,
-  }).isRequired,
-  /**
-   * Id to be applied to the root node.
-   */
-  id: PropTypes.string,
+  defaultSelected: PropTypes.bool,
   /**
    * Defines if the button is selected.
+   * When defined the button state becomes controlled.
    */
   selected: PropTypes.bool,
   /**
-   * Icon for when not selected.
+   * Icon for when not selected. Ignored if the component has children.
    */
-  notSelectedIcon: PropTypes.instanceOf(Object).isRequired,
+  notSelectedIcon: PropTypes.node,
   /**
-   * Icon for when selected.
+   * Icon for when selected. Ignored if the component has children.
    */
-  selectedIcon: PropTypes.instanceOf(Object),
-  /**
-   *
-   */
-  labels: PropTypes.shape({
-    /**
-     * Description for selected.
-     */
-    selectedTitle: PropTypes.string,
-    /**
-     * Description for not selected.
-     */
-    notSelectedTitle: PropTypes.string,
-  }),
+  selectedIcon: PropTypes.node,
   /**
    * Function called when icon is clicked.
    */
   onClick: PropTypes.func,
   /**
-   * Defines if it is a animated SVG.
+   * The content of the button.
+   * When provided, it is its own responsibility to react to the selected state.
    */
-  animated: PropTypes.bool,
-  /**
-   * Denotes if component is active or not.
-   */
-  disabled: PropTypes.bool,
+  children: PropTypes.node,
 };
 
-export default withStyles(styles, { name: "HvToggleButton" })(
-  withLabels(DEFAULT_LABELS)(ToggleButton)
-);
+export default withStyles(styles, { name: "HvToggleButton" })(ToggleButton);

@@ -5,10 +5,12 @@ import { HvButton, HvSnackbar, HvSnackbarContent, HvTypography } from "../..";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Notification/Snackbar",
+  title: "Components/Snackbar",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvSnackbar } from '@hv/uikit-react-core/dist'",
+
+    dsVersion: "3.2.1",
   },
   component: HvSnackbar,
 };
@@ -84,6 +86,7 @@ export const CustomIcon = () => (
     <HvSnackbar
       open
       offset={0}
+      style={{ position: "relative" }}
       id="snackbar2"
       label="This is a snackbar with a custom icon."
       customIcon={<Info color="base2" />}
@@ -105,10 +108,11 @@ export const CustomAction = () => (
       open
       id="actionStructure"
       offset={0}
+      style={{ position: "relative" }}
       label="This is a snackbar."
       showIcon
       action={{ id: "post", label: "Action", disabled: false }}
-      actionCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
+      actionCallback={(evt, id, action) => alert(`clicked ${id} with ${action.label}`)}
     />
   </div>
 );

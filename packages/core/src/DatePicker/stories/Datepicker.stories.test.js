@@ -11,7 +11,7 @@ export default {
       page: null,
     },
   },
-  decorators: [(storyFn) => <div style={{ height: "600px" }}>{storyFn()}</div>],
+  decorators: [(storyFn) => <div style={{ height: "600px", padding: 10 }}>{storyFn()}</div>],
 };
 
 // __________________________________

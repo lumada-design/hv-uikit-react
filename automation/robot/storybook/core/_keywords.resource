@@ -4,17 +4,6 @@ Library     String
 Resource    _variables.resource
 
 *** Keywords ***
-clean input
-    [Documentation]
-    ...   it uses keyboards to select and delete input content
-    ...    - check if input has clean button (works better)
-    ...    - keyword Input Text, option clear=True did not work in some cases
-    [Arguments]       ${locator}
-    Run Keyword If    '${BROWSER.lower()}'=='ie'
-    ...    Press Keys    ${locator}    CTRL+A+DELETE   #IE11 keyboards case incompatible
-    ...    ELSE
-    ...    Press Keys    ${locator}    CTRL+a+DELETE
-
 element attribute value should contain
     [Documentation]
     ...   attribute must has a specific substring
@@ -47,15 +36,15 @@ force input
     [Documentation]
     ...    Cleans the input locator and sets with the string value.
     ...     - note: check "clean input" documentation
-    [Arguments]        ${locator}    ${string}
-    Clean input        ${locator}
-    Input Text         ${locator}    ${string}
+    [Arguments]    ${locator}    ${string}
+    Press Keys    ${locator}    CTRL+a    DELETE
+    Input Text    ${locator}    ${string}
 
 get elements text
     [Documentation]
     ...    get text of a node list
     [Arguments]    ${csslocator}
-    ${csslocator}=    Replace String        ${csslocator}    css:    ${EMPTY}
+    ${csslocator}=    Remove String    ${csslocator}    css:
     ${values}         Execute Javascript
     ...   return Array.from(document.querySelectorAll("${csslocator}"))
     ...   \.map(function(el){return el.innerText.trim();}).join(',')
@@ -63,6 +52,18 @@ get elements text
     #return Array.from(document.querySelectorAll("${csslocator}"))
     #.map(el => el.innerText).join(',')
     [Return]          ${values}
+
+html body should be focused
+    [Documentation]    ie11 has focus on css:html the other browser on css:body
+    Run Keyword If    '${BROWSER.lower()}'=='ie'
+    ...    Element Should Be Focused    css:html
+    ...    ELSE
+    ...    Element Should Be Focused    css:body
+
+reduce selenium speed for ie keyboard events
+    [Documentation]   avoid error on IE webdriver when is sent keyboard instruction "too fast"
+    [Arguments]    ${time}
+    Run Keyword If    '${BROWSER.lower()}'=='ie'    Set Selenium Speed    ${time}
 
 open browser webdriver
     [Documentation]
@@ -72,8 +73,26 @@ open browser webdriver
     ...   - url        (by default about:blank)
     ...   - browser    (by defautl is assuming Global variable ${BROWSER} )
     [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
-    Open Browser    ${url}    ${browser}    options=add_argument("--headless")
+    Open Browser    ${url}    ${browser}
+    ...             options=add_argument("--headless");add_argument("--lang=en-US")
     Set Window Size    1920    1080
+
+scroll to element
+    [Documentation]    work around for selenium keyword "Scroll Element Into View"
+    ...                MoveTargetOutOfBoundsException error
+    ...                - ${element}  must be a css locator
+    [Arguments]    ${element}
+    ${element}    Remove String    ${element}    css:
+    Execute Javascript             document.querySelector("${element}").scrollIntoView(true);
+
+select dropdown value
+    [Documentation]    selects a dropdown value given the dropdown locator and value to select
+    [Arguments]    ${dropdown}    ${value}
+    Wait Until Element Is Enabled       ${dropdown}
+    Click Element                       ${dropdown}
+    Wait Until Element Is Visible       css:ul[role='listbox']
+    Click Element                       //li[@role='option' and text()='${value}']
+    Wait Until Element Is Not Visible   css:ul[role='listbox']
 
 set focus and press keys
     [Documentation]
@@ -94,4 +113,3 @@ wait until element attribute not contain
     [Arguments]    ${locator}    ${attribute}    ${value}
     Wait Until Keyword Succeeds    5x    1s
     ...    element attribute value should not contain    ${locator}    ${attribute}    ${value}
-

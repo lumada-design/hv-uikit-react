@@ -1,8 +1,6 @@
 *** Setting ***
-Resource      ../_keywords.resource
-Test Setup    Run Keywords
-...           Go To    ${components}input--controlled-with-buttons
-...           AND    Wait Until Element Is Visible    ${input}
+Resource      _input.resource
+Test Setup    open input sample    ${forms}    controlled-with-buttons
 
 
 *** Test Cases ***
@@ -21,11 +19,7 @@ clean input when pressed button clear value
     Textfield Value Should Be    ${input}    ${empty}
 
 block chars insertion when input already has max 25 chars
-    [Setup]     Go To                ${components}input--custom-props
+    [Setup]     Go To                ${forms}input--custom-props
     Wait Until Element Is Visible    ${input}
     Input Text                       ${input}    123456789012345678901234567890
     Textfield Value Should Be        ${input}    1234567890123456789012345
-
-
-*** Variables ***
-${input}    css:input

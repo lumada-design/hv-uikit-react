@@ -34,6 +34,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvAvatar } from '@hv/uikit-react-core/dist'",
+    dsVersion: "3.2.1",
   },
   component: HvAvatar,
   decorators: [
@@ -56,6 +57,7 @@ export const Main = () => (
   </>
 );
 
+// eslint-disable-next-line react/prop-types
 export const ImageAvatars = () => (
   <>
     <HvAvatar alt="Ben" src={man1} />
@@ -74,6 +76,7 @@ ImageAvatars.story = {
   },
 };
 
+// eslint-disable-next-line react/prop-types
 export const LetterAvatars = () => (
   <>
     <HvAvatar>BM</HvAvatar>
@@ -91,6 +94,7 @@ LetterAvatars.story = {
   },
 };
 
+// eslint-disable-next-line react/prop-types
 export const IconAvatars = () => (
   <>
     <HvAvatar>
@@ -117,6 +121,7 @@ IconAvatars.story = {
   },
 };
 
+// eslint-disable-next-line react/prop-types
 export const Fallbacks = () => (
   <>
     <HvAvatar id="fallback_to_children" alt="Clara Soul" src="/broken-image.jpg">
@@ -136,6 +141,7 @@ Fallbacks.story = {
   },
 };
 
+// eslint-disable-next-line react/prop-types
 export const Sizes = () => (
   <>
     <HvAvatar backgroundColor="sema6" size="S">
@@ -157,14 +163,10 @@ Sizes.story = {
   },
 };
 
+// eslint-disable-next-line react/prop-types
 export const Buttons = () => {
   const AvatarButton = ({ children, ...other }) => (
-    <HvButton
-      aria-label="Open the user profile"
-      category="icon"
-      overrideIconColors={false}
-      {...other}
-    >
+    <HvButton aria-label="Open the user profile" icon overrideIconColors={false} {...other}>
       {children}
     </HvButton>
   );

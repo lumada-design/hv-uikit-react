@@ -6,7 +6,7 @@ import Typography from "../Typography";
 import styles from "./styles";
 
 /**
- * The badge is a component used to show the user that there is something new in the app.
+ * The badge is a component used to notify the user that something has occurred, in the app context.
  */
 const Badge = (props) => {
   const {

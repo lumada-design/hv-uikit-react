@@ -1,8 +1,6 @@
 *** Setting ***
 Resource      _bulkActions.resource
-Test Setup    Run Keywords
-...           Go To    ${components}bulk-actions--controlled-with-actions    AND
-...           Wait Until Page Contains Element    ${parentCheckbox}
+Test Setup    open bulk action sample    with-actions
 Force Tags    keyboard
 
 
@@ -16,17 +14,10 @@ tab sequence from checkbox to actions when actions are enable
     Press Keys                   NONE    TAB
     Element Should Be Focused    ${actionMore}
     Press Keys                   NONE    TAB
-    Element Should Be Focused    ${checkbox0}
+    Element Should Be Focused    ${checkbox}\[2]
 
 tab sequence from checkbox to next page element when actions are disable
     Select Checkbox              ${parentCheckbox}
     Unselect Checkbox            ${parentCheckbox}
     Press Keys                   NONE    TAB
-    Element Should Be Focused    ${checkbox0}
-
-#space select and unselect check box
-#    Unselect Checkbox                  ${parentCheckbox}
-#    Press Keys                         NONE    TAB    SPACE
-#    Checkbox Should Be Selected        ${parentCheckbox}
-#    Press Keys                         NONE    SPACE
-#    Checkbox Should Not Be Selected    ${parentCheckbox}
+    Element Should Be Focused    ${checkbox}\[2]

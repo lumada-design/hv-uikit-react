@@ -1,15 +1,8 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}notification-banner--banner-controller
+...           Go To    ${components}banner--banner-controller
 ...           AND    Wait Until Page Contains    success
-
-
-*** Variables ***
-${banner}             banner2-content
-${closeIconButton}    css:[role=button][class*=closeAction]
-${messageActions}     banner2-content-message-actions
-${messageText}        banner2-content-message-text
 
 
 *** Test Cases ***
@@ -24,3 +17,10 @@ banner close it
     Wait Until Element Is Visible        ${banner}
     Click Element                        ${closeIconButton}
     Wait Until Element Is Not Visible    ${banner}
+
+
+*** Variables ***
+${banner}             banner2-content
+${closeIconButton}    css:[class*=closeAction]
+${messageActions}     banner2-content-message-actions
+${messageText}        banner2-content-message-text

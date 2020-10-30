@@ -3,6 +3,8 @@ import { StandardProps } from "@material-ui/core";
 import { ListViewConfiguration } from "..";
 import { HvCheckBoxProps } from "../../..";
 
+export type HvListViewRowClassKey = "root";
+
 export interface HvListViewRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableSectionElement>, HvListViewRowClassKey> {
   /**
@@ -14,9 +16,9 @@ export interface HvListViewRowProps
    */
   onSelection?: (event: React.FormEvent<HTMLDivElement>) => void;
   /**
-   *  ´true´ if the checkbox is selected or ´false´ if not selected.
+   * Whether the checkbox is selected or not.
    *
-   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
+   * Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
    */
   checked?: boolean;
   /**
@@ -54,7 +56,5 @@ export interface HvListViewRowProps
     | "atmo5"
     | "atmo6";
 }
-
-export type HvListViewRowClassKey = "root";
 
 export default function HvListViewRow(props: HvListViewRowProps): JSX.Element | null;

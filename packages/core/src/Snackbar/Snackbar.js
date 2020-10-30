@@ -26,8 +26,8 @@ const snackBarDirComponent = (direction) => {
 };
 
 /**
- * A Snackbar provides a brief messages about app processes.
- * It is dismissed automatically after an interval.
+ * A Snackbar provides brief messages about app processes.
+ * It is dismissed automatically after a given interval.
  */
 const HvSnackbar = ({
   classes,
@@ -172,7 +172,7 @@ HvSnackbar.propTypes = {
     }),
   ]),
   /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
+   *  The callback function ran when an action is triggered, receiving `action` as param
    */
   actionCallback: PropTypes.func,
   /**

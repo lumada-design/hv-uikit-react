@@ -4,7 +4,8 @@ import React from "react";
 import { mount } from "enzyme";
 
 import { HvInput, HvPagination, HvProvider } from "../..";
-import { Main, ControlledSample } from "../stories/Pagination.stories";
+import { Main } from "../stories/Pagination.stories";
+import Select from "../Select";
 
 describe("Default Pagination", () => {
   const wrapper = mount(
@@ -27,8 +28,8 @@ describe("Default Pagination", () => {
     expect(input.length).toBe(1);
   });
 
-  it("should render the pageSize select", () => {
-    const input = wrapper.find("select");
+  it("should render the pageSize dropdown", () => {
+    const input = wrapper.find(Select);
     expect(input.length).toBe(1);
   });
 });
@@ -56,21 +57,5 @@ describe("Pagination without pageSize select", () => {
   it("should NOT render the select", () => {
     const input = wrapper.find("select");
     expect(input.length).toBe(0);
-  });
-});
-
-describe("Custom Pagination", () => {
-  const wrapper = mount(
-    <HvProvider>
-      <ControlledSample />
-    </HvProvider>
-  );
-
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
-
-  it("should render correctly", () => {
-    expect(wrapper.find(HvPagination)).toMatchSnapshot();
   });
 });
