@@ -1,6 +1,17 @@
-const isCoreComponent = (kind) => {
-  const includedPaths = ["Components/", "Forms/", "Tests/"];
+const isIncludedPath = (kind) => {
+  const includedPaths = ["Components/", "Forms/", "Tests/", "Visualizations/"];
   return includedPaths.some((p) => kind.startsWith(p));
+};
+
+const isExcludedSample = (kind) => {
+  const excludedSamples = [
+    "Components/Asset Inventory",
+    "Components/Dialog",
+    "Components/Loading",
+    "Visualizations/Bar Chart",
+    "Visualizations/Line Chart",
+  ];
+  return excludedSamples.some((p) => kind.includes(p));
 };
 
 module.exports = {
@@ -28,12 +39,7 @@ module.exports = {
     // { width: 1920, height: 1080, name: "safari-two-versions-back" }
   ],
   // asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
-  include: ({ name, kind, parameters }) =>
-    (isCoreComponent(kind) &&
-      !kind.includes("Components/Dialog") &&
-      !kind.includes("Components/Asset Inventory")) ||
-    (kind.includes("Visualizations/") &&
-      !kind.includes("Visualizations/Bar Chart") &&
-      !kind.includes("Visualizations/Line Chart")),
+
+  include: ({ name, kind, parameters }) => isIncludedPath(kind) && !isExcludedSample(kind),
   concurrency: 10,
 };
