@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.3.2...@hv/uikit-react-icons@3.0.0) (2020-10-30)
+
+
+### Bug Fixes
+
+* **datepicker:** removed UTC conversions ([b5a81e4](https://github.com/pentaho/hv-uikit-react/commit/b5a81e4d387500ee11ffac54fc4c35f92240092d))
+* **icons:** adjust name. [#1779](https://github.com/pentaho/hv-uikit-react/issues/1779) ([f4838a1](https://github.com/pentaho/hv-uikit-react/commit/f4838a1f0da48ac9ccc25bdb6babd77e594032c7))
+* **icons:** color array. HVUIKIT-5517 ([966b057](https://github.com/pentaho/hv-uikit-react/commit/966b057ce9ec4f64d04b95cc027320f9f60e354f))
+* **icons:** jest warnings ([a640559](https://github.com/pentaho/hv-uikit-react/commit/a640559cf9bb8a313ebcbfbb5f8e91cd0b350ce7))
+* **icons:** rename "Level" icons. [#1779](https://github.com/pentaho/hv-uikit-react/issues/1779) ([1a0113d](https://github.com/pentaho/hv-uikit-react/commit/1a0113dc79bd2055ed2af11a4153fccc117606c4))
+
+
+### Features
+
+* **icons:** added missing icons. [#1779](https://github.com/pentaho/hv-uikit-react/issues/1779) ([2b8000b](https://github.com/pentaho/hv-uikit-react/commit/2b8000bde441d24f472de6101a27e6601d5b1eab))
+* **icons:** create division between regular icons & pictograms. [#1779](https://github.com/pentaho/hv-uikit-react/issues/1779) ([d8e7dc4](https://github.com/pentaho/hv-uikit-react/commit/d8e7dc4fad31cf6ede4de2b306c10e90961eef6a))
+* **icons:** extract baseicon component. HVUIKIT-5517 ([446b79a](https://github.com/pentaho/hv-uikit-react/commit/446b79a6e4b8be31807fddded0d2707ec4811da9))
+* **icons:** update library. HVUIKIT-5593 ([f6a457d](https://github.com/pentaho/hv-uikit-react/commit/f6a457ded16d5e64c60fcaf4fbc8fff30f1e5c1e))
+* **icons:** updated library according to latest DS version. [#1779](https://github.com/pentaho/hv-uikit-react/issues/1779) ([5225745](https://github.com/pentaho/hv-uikit-react/commit/52257456a83277098fcfe5b8fb3cad6727978152))
+
+
+
+
+
 ## 2.3.3 (2020-10-22)
 
 **Note:** Version bump only for package @hv/uikit-react-icons
