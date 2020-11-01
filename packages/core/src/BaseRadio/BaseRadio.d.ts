@@ -47,7 +47,7 @@ export interface HvBaseRadioProps
   /**
    * The callback fired when the radio button is pressed.
    */
-  onChange: (event: Event, checked: boolean, value: any) => void;
+  onChange?: (event: Event, checked: boolean, value: any) => void;
 
   /**
    * Whether the selector should use semantic colors.
@@ -57,7 +57,7 @@ export interface HvBaseRadioProps
   /**
    * Properties passed on to the input element.
    */
-  inputProps: object;
+  inputProps?: object;
 }
 
 export default function HvBaseRadio(props: HvBaseRadioProps): JSX.Element | null;

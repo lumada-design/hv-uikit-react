@@ -142,6 +142,14 @@ export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputCla
    * will be perform.
    */
   minCharQuantity?: number;
+
+  /**
+   * Called back when the value is changed.
+   */
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: string
+  ) => void;
 }
 
 export default function HvInput(props: HvInputProps): JSX.Element | null;
