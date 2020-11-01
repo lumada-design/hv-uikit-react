@@ -24,7 +24,7 @@ export interface HvCardProps extends StandardProps<BoxProps, HvCardClassKey> {
   /**
    * Whether the card is selectable.
    */
-  selectable: boolean;
+  selectable?: boolean;
   /**
    * Whether the card is currently selected.
    */

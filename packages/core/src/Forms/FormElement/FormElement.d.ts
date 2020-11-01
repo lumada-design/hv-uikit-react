@@ -10,7 +10,7 @@ export interface HvFormElementProps
   /**
    * Components that will receive the form context values.
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
 
   /**
    * Name of the form element.
