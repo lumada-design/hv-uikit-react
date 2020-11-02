@@ -7,7 +7,7 @@
       "registry": "https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/"
     },
     "version": {
-      "allowBranch": ["master", "alpha", "feat/*", "bug/*"],
+      "allowBranch": ["v2.x"],
       "message": "chore(release): publish",
       "conventionalCommits": true,
       "createRelease": "github"
