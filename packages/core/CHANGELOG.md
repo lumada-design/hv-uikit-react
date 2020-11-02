@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.13.0...@hv/uikit-react-core@2.14.0) (2020-11-02)
+
+
+### Features
+
+* **assetinventory:** allow props page alterations. [#2089](https://github.com/pentaho/hv-uikit-react/issues/2089) ([#2090](https://github.com/pentaho/hv-uikit-react/issues/2090)) ([b64b1ee](https://github.com/pentaho/hv-uikit-react/commit/b64b1eea1d66995ab3b641e601f6d0deec1ebcaa))
+
+
+
+
+
 # [2.13.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.12.6...@hv/uikit-react-core@2.13.0) (2020-10-27)
 
 
