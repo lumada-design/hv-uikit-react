@@ -73,7 +73,7 @@ open browser webdriver
     ...   - browser    (by defautl is assuming Global variable ${BROWSER} )
     [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
     Open Browser    ${url}    ${browser}    options=add_argument("--headless")
-    Set Window Size    1920    1080
+    Set Window Size    1920    1080    True
 
 set focus and press keys
     [Documentation]
@@ -94,4 +94,3 @@ wait until element attribute not contain
     [Arguments]    ${locator}    ${attribute}    ${value}
     Wait Until Keyword Succeeds    5x    1s
     ...    element attribute value should not contain    ${locator}    ${attribute}    ${value}
-
