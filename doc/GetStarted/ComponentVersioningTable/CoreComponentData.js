@@ -8,7 +8,7 @@ const CoreComponentData = [
   {
     id: 1,
     component: "Action Bar",
-    path: "https://github.com/lumada-design/hv-uikit-react/tree/next/packages/core/src/ActionBar",
+    path: "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/core/src/ActionBar",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: "notStable",
@@ -123,7 +123,8 @@ const CoreComponentData = [
   {
     id: 15,
     component: "Donut Chart",
-    path: "https://github.com/lumada-design/hv-uikit-react/tree/next/packages/core/src/Donutchart",
+    path:
+      "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/core/src/Donutchart",
     uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
     status: "stable",
@@ -363,7 +364,7 @@ const CoreComponentData = [
     id: 43,
     component: "User Preferences",
     path:
-      "https://github.com/lumada-design/hv-uikit-react/tree/next/packages/core/src/UserPreferences",
+      "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/core/src/UserPreferences",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: "notStable",
@@ -372,7 +373,7 @@ const CoreComponentData = [
     id: 44,
     component: "Vertical Navigation",
     path:
-      "https://github.com/lumada-design/hv-uikit-react/tree/next/packages/core/src/VerticalNavigation",
+      "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/core/src/VerticalNavigation",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: "notStable",
