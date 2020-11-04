@@ -42,6 +42,10 @@ export interface HvTextAreaProps extends StandardProps<HvInputProps, HvTextAreaC
    * Props passed to the char count.
    */
   countCharProps?: object;
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  isRequired?: boolean;
 }
 
 export type HvTextAreaClassKey =
