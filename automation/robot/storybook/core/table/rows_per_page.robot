@@ -24,5 +24,5 @@ show correct rows and pages when rows per page is changed
     open table sample                    ${visualizations}    ${sample}
     Select Dropdown Value                ${rows_per_page}    ${per_page}
     Wait Until Page Contains Element     ${rows_populated}    timeout=5s    limit=${populated}
-    Page Should Contain Element          ${rows_counted}    limit=${per_page}
-    elements text should be              ${pagination_count_of_pages}    ${pages}
+    Page Should Contain Element          ${rows}    limit=${per_page}
+    elements text should be              ${nav_count_of_pages}    ${pages}

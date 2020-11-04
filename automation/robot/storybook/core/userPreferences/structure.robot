@@ -1,26 +1,17 @@
 *** Setting ***
-Resource       ../_keywords.resource
-Suite Setup    Run Keywords
-...            Go To    ${components}user-preferences--with-open-control
-...            AND    Wait Until Element Is Visible    ${userPreferences}
+Resource       _userPreferences.resource
+Suite Setup    open userPreferences sample    ${components}    with-open-control
 
 
 *** Test Cases ***
 close and open with button
-    Click Element                       ${button}
-    Wait Until Element Is Not Visible   ${userPreferencesContainer}
-    Click Element                       ${button}
-    Wait until Element Is Visible       ${userPreferencesContainer}
+    Click Button                         Close
+    Wait Until Element Is Not Visible    ${userPreferences}
+    Click Button                         Open
+    Wait until Element Is Visible        ${userPreferences}
 
 close with outside
-    Click Element                       ${outside}
-    Wait Until Element Is Not Visible   ${userPreferencesContainer}
-    Click Element                       ${button}
-    Wait until Element Is Visible       ${userPreferencesContainer}
-
-
-*** Variables ***
-${button}                       id:controller
-${outside}                      css:body
-${userPreferences}              id:user-preferences-controlled
-${userPreferencesContainer}     css:div[class*='contentContainer']
+    Click Element                        css:body
+    Wait Until Element Is Not Visible    ${userPreferences}
+    Click Button                         Open
+    Wait until Element Is Visible        ${userPreferences}

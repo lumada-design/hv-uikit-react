@@ -1,74 +1,62 @@
 *** Setting ***
 Resource          _table.resource
 Test Setup        open table sample    ${visualizations}    with-checkbox
-Force Tags        keyboard    bug-infrastructure-ie
+Force Tags        keyboard
 Documentation     https://www.w3.org/TR/wai-aria-practices/#table
 ...               mouse vs keyboard problem
 ...               https://github.com/lumada-design/hv-uikit-react/issues/1631
 
 
 *** Test Cases ***
-change focus to next sortable column header when pressed TAB on column header
+move focus to next sortable column header when pressed TAB on column header
     set focus and press keys             ${header}(2)     TAB
-    Element Should Be Focused            ${header_2_button}
-    Element Attribute Value Should Be    ${header_2_button}    tabindex    0
+    Wait Until Page Contains Element     ${header}(2) ${button}:focus
     Press Keys                           None    TAB    TAB    TAB    TAB    TAB    TAB
-    Element Should Be Focused            ${header_8_button}
-    Element Attribute Value Should Be    ${header_8_button}    tabindex    0
+    Wait Until Page Contains Element     ${header}(8) ${button}:focus
+
+move focus to previous sortable column header when pressed SHIFT+TAB on column header
+    set focus and press keys             ${header}(8)    SHIFT+TAB
+    Wait Until Page Contains Element     ${header}(7) ${button}:focus
+
+move focus to row selection when pressed TAB on last sortable column header
+    [Documentation]    the column 9 should not receive focus
+    set focus and press keys            ${header}(8)    TAB
+    Wait Until Page Contains Element    ${header}(8) ${button}:focus
+    Press Keys                          None    TAB
+    Wait Until Page Contains Element    ${row}(1) ${checkBox}:focus
+
+move focus to pagination when pressed TAB on rows selection
+    set focus and press keys            ${rows_per_page}>div     TAB
+    Wait Until Page Contains Element    ${nav_input}:focus
 
 sort the column ascending and descending when is pressed ENTER focused column header
     set focus and press keys             ${header}(2)     TAB
-    Element Should Be Focused            ${header_2_button}
+    Wait Until Page Contains Element     ${header}(2) ${button}:focus
     Press Keys                           None    ENTER
-    Element Attribute Value Should Be    ${header}(2)    aria-sort    ascending
+    Wait Until Page Contains Element     ${header}(2)[aria-sort=ascending]
     Press Keys                           None    ENTER
-    Element Attribute Value Should Be    ${header}(2)    aria-sort    descending
+    Wait Until Page Contains Element     ${header}(2)[aria-sort=descending]
 
 sort the column ascending and descending when is pressed SPACE focused column header
-    set focus and press keys             ${header}(2)    TAB
-    Element Should Be Focused            ${header_2_button}
-    Press Keys                           None     SPACE
-    Element Attribute Value Should Be    ${header}(2)    aria-sort    ascending
+    set focus and press keys             ${header}(2)     TAB
+    Wait Until Page Contains Element     ${header}(2) ${button}:focus
     Press Keys                           None    SPACE
-    Element Attribute Value Should Be    ${header}(2)    aria-sort    descending
-
-change focus to previous sortable column header when pressed SHIFT+TAB on column header
-    set focus and press keys             ${header}(8)    SHIFT+TAB
-    Element Should Be Focused            ${header_7_button}
-    Element Attribute Value Should Be    ${header_7_button}    tabindex    0
-
-jump focus to row selection when pressed TAB on last sortable column header
-    [Documentation]    the column 9 should not receive focus
-    set focus and press keys     ${header}(8)    TAB
-    Element Should Be Focused    ${header_8_button}
-    Press Keys                   None    TAB
-    Element Should Be Focused    ${row_1_checkbox}
-
-change focus to rows selection when pressed TAB on last iterable column header
-    set focus and press keys     ${header_8_button}    TAB
-    Element Should Be Focused    ${row_1_checkbox}
-
-change focus to pagination when pressed TAB on rows selection
-    set focus and press keys     ${rows_per_page}>div     TAB
-    Element Should Be Focused    ${pagination_input}
+    Wait Until Page Contains Element     ${header}(2)[aria-sort=ascending]
+    Press Keys                           None    SPACE
+    Wait Until Page Contains Element     ${header}(2)[aria-sort=descending]
 
 select and unselect a checkbox when pressed space on table checkbox row
-    Checkbox Should Not Be Selected    ${row_10_checkbox}
-    set focus and press keys           ${row_10_checkbox}    SPACE
-    Checkbox Should Be Selected        ${row_10_checkbox}
+    Checkbox Should Not Be Selected    ${row}(10) ${checkBox}
+    set focus and press keys           ${row}(10) ${checkBox}    SPACE
+    Checkbox Should Be Selected        ${row}(10) ${checkBox}
     Press Keys                         None    SPACE
-    Checkbox Should Not Be Selected    ${row_10_checkbox}
+    Checkbox Should Not Be Selected    ${row}(10) ${checkBox}
 
-show less rows when focus is on rows per page dropdown and is pressed UP ARROW
-    set focus and press keys     ${rows_per_page}     TAB
-
-pagination space: change the page index when SPACE is pressed on pagination button
-    Textfield Value Should Be    ${pagination_input}    1
-    set focus and press keys     ${pagination_next_page}     SPACE
-    Textfield Value Should Be    ${pagination_input}    2
+change the page index when SPACE is pressed on pagination button
+    Textfield Value Should Be    ${nav_input}    1
+    set focus and press keys     ${nav_next_page}     SPACE
+    Textfield Value Should Be    ${nav_input}    2
 
 
 *** Variables ***
-${header_2_button}    ${header}(2) [role=button]
-${header_8_button}    ${header}(8) [role=button]
-${header_7_button}    ${header}(7) [role=button]
+${button}    [role=button]

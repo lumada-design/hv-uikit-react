@@ -46,7 +46,6 @@ focus disabled option when is a list menu
 
 keep pseudo focus on option when it is pressed
     [Documentation]    focus keywords will fail here
-    [Tags]   TTT
     list option should not be selected    ${option}(1)
     Click Element                         ${option}(1)
     list option should be selected        ${option}(1)
