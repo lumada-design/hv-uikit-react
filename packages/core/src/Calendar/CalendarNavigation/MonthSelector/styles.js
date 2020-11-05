@@ -20,7 +20,7 @@ const styles = (theme) => {
       },
     },
     calendarMonthlyGrid: {
-      marginTop: "100px",
+      marginTop: "50px",
       marginLeft: "-20px",
       display: "flex",
       zIndex: "10",
