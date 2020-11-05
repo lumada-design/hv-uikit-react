@@ -196,3 +196,23 @@ ControlledLimited.story = {
     },
   },
 };
+
+export const RequiredTextArea = () => {
+  const labels = {
+    inputLabel: "Label",
+    placeholder: "Enter value",
+    startCount: "Inserted",
+    middleCount: "of",
+    endCount: "allowed",
+  };
+
+  return <HvTextArea rows={5} labels={labels} maxCharQuantity={10} isRequired />;
+};
+
+RequiredTextArea.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Text area char count with a custom labels and required input.",
+    },
+  },
+};

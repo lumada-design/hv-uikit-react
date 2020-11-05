@@ -147,6 +147,7 @@ class HvTextArea extends React.Component {
       onChange,
       blockMax,
       countCharProps,
+      isRequired,
       ...others
     } = this.props;
 
@@ -181,6 +182,7 @@ class HvTextArea extends React.Component {
           inputRef={this.textInputRef}
           validationState={(overflow && "invalid") || undefined}
           aria-invalid={overflow || undefined}
+          isRequired={isRequired}
           {...others}
         />
         {maxCharQuantity && (
@@ -353,6 +355,10 @@ HvTextArea.propTypes = {
    * Props passed to the char count.
    */
   countCharProps: PropTypes.instanceOf(Object),
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  isRequired: PropTypes.bool,
 };
 
 HvTextArea.defaultProps = {
@@ -368,6 +374,7 @@ HvTextArea.defaultProps = {
   resizable: false,
   blockMax: false,
   countCharProps: {},
+  isRequired: false,
 };
 
 export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));
