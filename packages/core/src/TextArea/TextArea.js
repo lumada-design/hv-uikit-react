@@ -9,12 +9,6 @@ import styles from "./styles";
 import withLabels from "../withLabels";
 
 const DEFAULT_LABELS = {
-  inputLabel: "",
-  placeholder: "",
-  warningText: "",
-  maxCharQuantityWarningText: "",
-  minCharQuantityWarningText: "",
-  requiredWarningText: "",
   startCount: "",
   middleCount: "/",
   endCount: "",
@@ -173,6 +167,7 @@ class HvTextArea extends React.Component {
           value={this.limitValue(value)}
           onChange={this.onChangeHandler}
           multiline
+          maxCharQuantity={maxCharQuantity}
           rows={rows}
           disabled={disabled}
           showInfo={false}

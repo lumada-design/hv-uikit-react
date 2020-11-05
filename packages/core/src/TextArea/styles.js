@@ -43,7 +43,7 @@ const styles = (theme) => ({
   container: {},
   characterCounter: {
     textAlign: "right",
-    paddingTop: theme.hv.spacing.xs,
+    paddingTop: 8,
   },
   disabled: {
     ...theme.hv.typography.infoText,
