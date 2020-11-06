@@ -74,7 +74,7 @@ open browser webdriver
     [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
     Open Browser    ${url}    ${browser}    options=add_argument("--headless")
     # Average browser window size (https://css-tricks.com/screen-resolution-notequalto-browser-window/)
-    Set Window Size    1366    784    True
+    Set Window Size    1366    784
 
 set focus and press keys
     [Documentation]
