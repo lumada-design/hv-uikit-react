@@ -50,8 +50,6 @@ const HvProvider = ({ children, theme = null, uiKitTheme = "dawn", changeTheme =
   const rawUiKitTheme = getTheme(uiKitTheme);
   const customTheme = applyCustomTheme(themeBuilder(rawUiKitTheme), theme);
 
-  window.hvTheme = customTheme;
-
   return (
     <MuiStylesProvider generateClassName={generateClassName}>
       <MuiThemeProvider theme={customTheme}>
