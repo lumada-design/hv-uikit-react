@@ -96,9 +96,7 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
-    eyes: {
-      waitBeforeScreenshot: ".HvCalendar-root",
-    },
+    eyes: { include: false },
   },
 };
 
@@ -160,9 +158,7 @@ export const SingleDate = () => {
 
 SingleDate.story = {
   parameters: {
-    eyes: {
-      waitBeforeScreenshot: ".HvCalendar-root",
-    },
+    eyes: { include: false },
   },
 };
 
@@ -239,8 +235,6 @@ Localized.story = {
       storyDescription:
         "Warning: Changing this sample locale changes the locale for all samples. Locales should be loaded by the user.",
     },
-    eyes: {
-      waitBeforeScreenshot: ".HvCalendar-root",
-    },
+    eyes: { include: false },
   },
 };
