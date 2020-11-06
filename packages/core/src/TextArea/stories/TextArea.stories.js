@@ -77,9 +77,10 @@ export const LimitedWithCustomLabels = () => {
     startCount: "Inserted",
     middleCount: "of",
     endCount: "allowed",
+    maxCharQuantityWarningText: "Character quantity exceeded",
   };
 
-  return <HvTextArea rows={5} labels={labels} maxCharQuantity={10} />;
+  return <HvTextArea rows={5} labels={labels} maxCharQuantity={40} />;
 };
 
 LimitedWithCustomLabels.story = {
