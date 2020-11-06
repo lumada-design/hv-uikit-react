@@ -23,6 +23,19 @@ const computeSelectAllState = (selected, total) => {
   return "some";
 };
 
+const getValueFromSelectedChildren = (children) => {
+  const selectedValues = React.Children.toArray(children)
+    .map((child) => {
+      const childIsControlled = child.props.checked !== undefined;
+      const childIsSelected = childIsControlled ? child.props.checked : child.props.defaultChecked;
+
+      return childIsSelected ? child.props.value : undefined;
+    })
+    .filter((v) => v !== undefined);
+
+  return selectedValues;
+};
+
 /**
  * A group of checkboxes.
  *
@@ -36,6 +49,8 @@ const HvCheckBoxGroup = (props) => {
     id,
     name,
     value: valueProp,
+    defaultValue,
+
     required = false,
     readOnly = false,
     disabled = false,
@@ -63,26 +78,11 @@ const HvCheckBoxGroup = (props) => {
 
   const [value, setValue] = useControlled(
     valueProp,
-    (() => {
-      // when uncontrolled, extract the initial selected values from the children own state
-      const selectedValues = [];
-
-      React.Children.toArray(children).forEach((child, i) => {
-        const childIsControlled = child.props.checked !== undefined;
-        const childValue = child.props.value;
-
-        let childIsSelected = false;
-        if (childIsControlled) {
-          childIsSelected = child.props.checked;
-        } else {
-          childIsSelected = child.props.defaultChecked;
-        }
-
-        selectedValues[i] = childIsSelected ? childValue : null;
-      });
-
-      return selectedValues.filter((v) => v != null);
-    })()
+    defaultValue !== undefined
+      ? defaultValue
+      : // when uncontrolled and no default value is given,
+        // extract the initial selected values from the children own state
+        () => getValueFromSelectedChildren(children)
   );
 
   const [validationState, setValidationState] = useControlled(status, "standBy");
@@ -295,6 +295,10 @@ HvCheckBoxGroup.propTypes = {
    * When defined the checkbox group state becomes controlled.
    */
   value: PropTypes.arrayOf(PropTypes.any),
+  /**
+   * When uncontrolled, defines the initial value.
+   */
+  defaultValue: PropTypes.arrayOf(PropTypes.any),
 
   /**
    * The label of the form element.
