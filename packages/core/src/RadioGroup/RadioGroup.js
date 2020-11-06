@@ -11,6 +11,23 @@ import { setId, useControlled } from "../utils";
 
 import styles from "./styles";
 
+const getValueFromSelectedChildren = (children) => {
+  const childrenArray = React.Children.toArray(children);
+  const childrenCount = childrenArray.length;
+  for (let i = 0; i !== childrenCount; i += 1) {
+    const child = childrenArray[i];
+
+    const childIsControlled = child.props.checked !== undefined;
+    const childIsSelected = childIsControlled ? child.props.checked : child.props.defaultChecked;
+
+    if (childIsSelected) {
+      return child.props.value;
+    }
+  }
+
+  return null;
+};
+
 /**
  * A group of radio buttons.
  *
@@ -24,6 +41,8 @@ const HvRadioGroup = (props) => {
     id,
     name,
     value: valueProp,
+    defaultValue,
+
     required = false,
     readOnly = false,
     disabled = false,
@@ -49,33 +68,11 @@ const HvRadioGroup = (props) => {
 
   const [value, setValue] = useControlled(
     valueProp,
-    (() => {
-      // when uncontrolled, extract the initial selected value from the children own state
-      let selectedValue = null;
-
-      const childrenArray = React.Children.toArray(children);
-      const childrenCount = childrenArray.length;
-      for (let i = 0; i !== childrenCount; i += 1) {
-        const child = childrenArray[i];
-
-        const childIsControlled = child.props.checked !== undefined;
-        const childValue = child.props.value;
-
-        let childIsSelected = false;
-        if (childIsControlled) {
-          childIsSelected = child.props.checked;
-        } else {
-          childIsSelected = child.props.defaultChecked;
-        }
-
-        if (childIsSelected) {
-          selectedValue = childValue;
-          break;
-        }
-      }
-
-      return selectedValue;
-    })()
+    defaultValue !== undefined
+      ? defaultValue
+      : // when uncontrolled and no default value is given,
+        // extract the initial selected values from the children own state
+        () => getValueFromSelectedChildren(children)
   );
 
   const onChildChangeInterceptor = useCallback(
@@ -217,6 +214,11 @@ HvRadioGroup.propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any,
+  /**
+   * When uncontrolled, defines the initial value.
+   */
+  // eslint-disable-next-line react/forbid-prop-types
+  defaultValue: PropTypes.any,
 
   /**
    * The label of the form element.

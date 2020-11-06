@@ -30,7 +30,11 @@ export interface HvCheckBoxGroupProps
    *
    * When defined the checkbox group state becomes controlled.
    */
-  value: any[];
+  value?: any[];
+  /**
+   * When uncontrolled, defines the initial value.
+   */
+  defaultValue?: any[];
 
   /**
    * The label of the form element.

@@ -100,70 +100,37 @@ const HvListItem = (props) => {
     [classes.endAdornment, endAdornment]
   );
 
-  const listItemContent = useMemo(
-    () => (
-      <>
-        {clonedStartAdornment}
-        {children}
-        {clonedEndAdornment}
-      </>
-    ),
-    [children, clonedEndAdornment, clonedStartAdornment]
+  const roleOptionAriaProps =
+    role === "option" || role === "menuitem"
+      ? {
+          "aria-disabled": disabled || undefined,
+          "aria-selected": selected,
+        }
+      : {};
+
+  const listItem = (
+    <li
+      id={id}
+      role={role}
+      onClick={handleOnClick}
+      onKeyDown={() => {}}
+      className={clsx(className, classes.root, {
+        [classes.gutters]: !disableGutters,
+        [classes.condensed]: condensed,
+        [classes.interactive]: interactive,
+        [classes.selected]: selected,
+        [classes.disabled]: disabled,
+        [classes.withStartAdornment]: startAdornment != null,
+        [classes.withEndAdornment]: endAdornment != null,
+      })}
+      {...roleOptionAriaProps}
+      {...others}
+    >
+      {clonedStartAdornment}
+      {children}
+      {clonedEndAdornment}
+    </li>
   );
-
-  const listItem = useMemo(() => {
-    const roleOptionAriaProps =
-      role === "option" || role === "menuitem"
-        ? {
-            "aria-disabled": disabled || undefined,
-            "aria-selected": selected,
-          }
-        : {};
-
-    return (
-      <li
-        id={id}
-        role={role}
-        onClick={handleOnClick}
-        onKeyDown={() => {}}
-        className={clsx(className, classes.root, {
-          [classes.gutters]: !disableGutters,
-          [classes.condensed]: condensed,
-          [classes.interactive]: interactive,
-          [classes.selected]: selected,
-          [classes.disabled]: disabled,
-          [classes.withStartAdornment]: startAdornment != null,
-          [classes.withEndAdornment]: endAdornment != null,
-        })}
-        {...roleOptionAriaProps}
-        {...others}
-      >
-        {listItemContent}
-      </li>
-    );
-  }, [
-    role,
-    disabled,
-    selected,
-    id,
-    handleOnClick,
-    className,
-    classes.root,
-    classes.gutters,
-    classes.condensed,
-    classes.interactive,
-    classes.selected,
-    classes.disabled,
-    classes.withStartAdornment,
-    classes.withEndAdornment,
-    disableGutters,
-    condensed,
-    interactive,
-    startAdornment,
-    endAdornment,
-    others,
-    listItemContent,
-  ]);
 
   return interactive ? (
     <Focus

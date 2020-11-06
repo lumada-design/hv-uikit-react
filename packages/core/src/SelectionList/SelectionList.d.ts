@@ -14,6 +14,11 @@ export type HvSelectionListClassKey =
 export interface HvSelectionListProps
   extends StandardProps<HvFormElementProps, HvSelectionListClassKey, "onChange"> {
   /**
+   * When uncontrolled, defines the initial value.
+   */
+  defaultValue?: any[] | any;
+
+  /**
    * Indicates that the user may select more than one item from the current selectable list items.
    */
   multiple?: boolean;

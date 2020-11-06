@@ -37,7 +37,9 @@ export interface InputLabelsProp {
 
 export type HvInputClassKey =
   | "root"
+  | "hasSuggestions"
   | "inputRoot"
+  | "inputBorderContainer"
   | "inputRootFocused"
   | "inputRootDisabled"
   | "inputRootMultiline"
@@ -50,6 +52,7 @@ export type HvInputClassKey =
   | "adornmentButton"
   | "icon"
   | "iconClear"
+  | "inputExtension"
   | "suggestionsContainer"
   | "suggestionList";
 

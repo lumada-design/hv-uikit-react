@@ -23,7 +23,11 @@ export interface HvRadioGroupProps
    *
    * When defined the radio button group state becomes controlled.
    */
-  value: any;
+  value?: any;
+  /**
+   * When uncontrolled, defines the initial value.
+   */
+  defaultValue?: any;
 
   /**
    * The label of the form element.

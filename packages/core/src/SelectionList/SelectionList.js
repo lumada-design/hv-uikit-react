@@ -18,6 +18,21 @@ import { setId, useControlled } from "../utils";
 
 import styles from "./styles";
 
+const getValueFromSelectedChildren = (children, multiple) => {
+  const selectedValues = React.Children.toArray(children)
+    .map((child) => {
+      const childIsControlled = child.props.selected !== undefined;
+      const childIsSelected = childIsControlled
+        ? child.props.selected
+        : child.props.defaultSelected;
+
+      return childIsSelected ? child.props.value : undefined;
+    })
+    .filter((v) => v !== undefined);
+
+  return multiple ? selectedValues : selectedValues?.[0];
+};
+
 /**
  * Allows the user to select one or more items from a list of choices.
  *
@@ -64,29 +79,9 @@ const HvSelectionList = (props) => {
     valueProp,
     defaultValue !== undefined
       ? defaultValue
-      : (() => {
-          // when uncontrolled and no default value is given,
-          // extract the initial selected values from the children own state
-          const selectedValues = [];
-
-          React.Children.toArray(children).forEach((child, i) => {
-            const childIsControlled = child.props.selected !== undefined;
-            const childValue = child.props.value;
-
-            let childIsSelected = false;
-            if (childIsControlled) {
-              childIsSelected = child.props.selected;
-            } else {
-              childIsSelected = child.props.defaultSelected;
-            }
-
-            selectedValues[i] = childIsSelected ? childValue : undefined;
-          });
-
-          const filtered = selectedValues.filter((v) => v !== undefined);
-
-          return multiple ? filtered : filtered?.[0];
-        })()
+      : // when uncontrolled and no default value is given,
+        // extract the initial selected values from the children own state
+        () => getValueFromSelectedChildren(children, multiple)
   );
 
   const [validationState, setValidationState] = useControlled(status, "standBy");
@@ -285,7 +280,8 @@ HvSelectionList.propTypes = {
   /**
    * When uncontrolled, defines the initial value.
    */
-  defaultValue: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  defaultValue: PropTypes.oneOfType([PropTypes.any, PropTypes.arrayOf(PropTypes.any)]),
 
   /**
    * The label of the form element.
