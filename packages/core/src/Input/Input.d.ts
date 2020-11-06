@@ -45,6 +45,7 @@ export type HvInputClassKey =
   | "labelContainer"
   | "label"
   | "description"
+  | "error"
   | "adornmentsBox"
   | "adornmentButton"
   | "icon"
