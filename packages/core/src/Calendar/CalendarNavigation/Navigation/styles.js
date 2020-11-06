@@ -54,6 +54,7 @@ const styles = (theme) => ({
     width: "calc(100% - 64px)",
     textAlign: "center",
     padding: "0 5px",
+    outline: "none",
   },
 });
 
