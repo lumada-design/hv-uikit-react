@@ -448,9 +448,9 @@ HvAssetInventory.propTypes = {
    */
   actions: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      icon: PropTypes.func,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      icon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
       disabled: PropTypes.bool,
     })
   ),

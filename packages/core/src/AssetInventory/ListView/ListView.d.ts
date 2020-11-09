@@ -8,7 +8,7 @@ export interface ListViewConfiguration extends ViewConfiguration {
    * Sets the title at the top of the column and applies styles to the cells in the column.
    */
   columnConfiguration: {
-    title: string;
+    title?: string;
     style: object;
     align?: string;
   }[];

@@ -25,7 +25,7 @@
     "doc": "start-storybook -p 9001 --ci --quiet --no-version-updates",
     "test": "npx lerna run test --parallel",
     "test:update": "npx lerna run test:update --parallel",
-    "link": "npx lerna run link",
+    "link": "npx lerna run link --parallel",
     "generate": "node scripts/generator/index.js",
     "publish-": "npx lerna changed && npx lerna publish --yes",
     "publish-prerelease": "npx lerna changed && npx lerna publish prerelease --yes",
