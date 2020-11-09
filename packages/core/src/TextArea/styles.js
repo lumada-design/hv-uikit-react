@@ -49,7 +49,7 @@ const styles = (theme) => ({
     ...theme.hv.typography.infoText,
   },
   invalid: {
-    color: theme.hv.palette.accent.acce3,
+    color: theme.hv.palette.semantic.sema4,
   },
 });
 
