@@ -20,7 +20,9 @@ export interface File {
   progress?: number;
 }
 
-export type FileEvent = (file: File) => void;
+export type FilesAddedEvent = (files: File[]) => void;
+
+export type FileRemovedEvent = (file: File) => void;
 
 export interface FileProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFileClassKey> {
@@ -31,7 +33,7 @@ export interface FileProps
   /**
    * Callback fired when file is removed from list.
    */
-  onFileRemoved?: FileEvent;
+  onFileRemoved?: FileRemovedEvent;
   /**
    * File upload progress conjunction.
    */
