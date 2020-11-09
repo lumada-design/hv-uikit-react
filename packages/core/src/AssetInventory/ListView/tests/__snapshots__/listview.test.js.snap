@@ -746,7 +746,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                              fill="#f9f9f9"
+                                                              fill="#F0F0F0"
                                                             />
                                                           </svg>
                                                         </div>
@@ -962,7 +962,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                              fill="#f9f9f9"
+                                                              fill="#F0F0F0"
                                                             />
                                                           </svg>
                                                         </div>
@@ -1180,7 +1180,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                              fill="#f9f9f9"
+                                                              fill="#F0F0F0"
                                                             />
                                                           </svg>
                                                         </div>
@@ -1561,7 +1561,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               <path
                                                                 class="color1"
                                                                 d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                fill="#f9f9f9"
+                                                                fill="#F0F0F0"
                                                               />
                                                             </svg>
                                                           </div>
@@ -1777,7 +1777,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               <path
                                                                 class="color1"
                                                                 d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                fill="#f9f9f9"
+                                                                fill="#F0F0F0"
                                                               />
                                                             </svg>
                                                           </div>
@@ -1995,7 +1995,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               <path
                                                                 class="color1"
                                                                 d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                fill="#f9f9f9"
+                                                                fill="#F0F0F0"
                                                               />
                                                             </svg>
                                                           </div>
@@ -2590,7 +2590,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           <path
                                                             class="color1"
                                                             d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                            fill="#f9f9f9"
+                                                            fill="#F0F0F0"
                                                           />
                                                         </svg>
                                                       </div>
@@ -2806,7 +2806,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           <path
                                                             class="color1"
                                                             d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                            fill="#f9f9f9"
+                                                            fill="#F0F0F0"
                                                           />
                                                         </svg>
                                                       </div>
@@ -3024,7 +3024,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           <path
                                                             class="color1"
                                                             d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                            fill="#f9f9f9"
+                                                            fill="#F0F0F0"
                                                           />
                                                         </svg>
                                                       </div>
@@ -3437,7 +3437,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                              fill="#f9f9f9"
+                                                              fill="#F0F0F0"
                                                             />
                                                           </svg>
                                                         </div>
@@ -3653,7 +3653,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                              fill="#f9f9f9"
+                                                              fill="#F0F0F0"
                                                             />
                                                           </svg>
                                                         </div>
@@ -3871,7 +3871,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                              fill="#f9f9f9"
+                                                              fill="#F0F0F0"
                                                             />
                                                           </svg>
                                                         </div>
@@ -4303,7 +4303,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -4519,7 +4519,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -4737,7 +4737,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -5065,7 +5065,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -5281,7 +5281,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -5499,7 +5499,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -6147,7 +6147,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <path
                                                                     className="color1"
                                                                     d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                    fill="#f9f9f9"
+                                                                    fill="#F0F0F0"
                                                                   />
                                                                 </svg>
                                                               </div>
@@ -7769,7 +7769,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -7985,7 +7985,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -8203,7 +8203,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -8531,7 +8531,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -8747,7 +8747,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -8965,7 +8965,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -9613,7 +9613,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <path
                                                                     className="color1"
                                                                     d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                    fill="#f9f9f9"
+                                                                    fill="#F0F0F0"
                                                                   />
                                                                 </svg>
                                                               </div>
@@ -11235,7 +11235,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -11451,7 +11451,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -11669,7 +11669,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                        fill="#f9f9f9"
+                                                                        fill="#F0F0F0"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -11997,7 +11997,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -12213,7 +12213,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -12431,7 +12431,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                          fill="#f9f9f9"
+                                                                          fill="#F0F0F0"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -13081,7 +13081,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   <path
                                                                     className="color1"
                                                                     d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
-                                                                    fill="#f9f9f9"
+                                                                    fill="#F0F0F0"
                                                                   />
                                                                 </svg>
                                                               </div>
