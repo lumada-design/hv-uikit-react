@@ -20,7 +20,9 @@ export interface File {
   progress?: number;
 }
 
-export type FileEvent = (file: File) => void;
+export type FilesAddedEvent = (files: File[]) => void;
+
+export type FileRemovedEvent = (file: File) => void;
 
 export type HvFileClassKey =
   | "progressbar"
@@ -38,7 +40,7 @@ export interface FileProps
   /**
    * Callback fired when file is removed from list.
    */
-  onFileRemoved?: FileEvent;
+  onFileRemoved?: FileRemovedEvent;
   /**
    * Value of aria-label to apply to remove file button in filelist
    * */

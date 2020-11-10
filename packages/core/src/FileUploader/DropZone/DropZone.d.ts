@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { FileEvent } from "../File";
+import { FilesAddedEvent } from "../File";
 
 export interface HvDropZoneLabelsProp {
   /**
@@ -74,7 +74,7 @@ export interface DropZoneProps
   /**
    * Function responsible for processing files added to the drop zone.
    */
-  onFilesAdded?: FileEvent;
+  onFilesAdded?: FilesAddedEvent;
 }
 
 export default function DropZone(props: DropZoneProps): JSX.Element | null;

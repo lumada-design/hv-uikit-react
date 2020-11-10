@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvDropZoneLabelsProp } from "./DropZone";
-import { File, FileEvent } from "./File";
+import { File, FilesAddedEvent, FileRemovedEvent } from "./File";
 
 export interface FileUploaderLabelsProp extends HvDropZoneLabelsProp {
   /**
@@ -45,11 +45,11 @@ export interface FileUploaderProps
   /**
    * Callback fired when files are addded.
    */
-  onFilesAdded?: FileEvent;
+  onFilesAdded?: FilesAddedEvent;
   /**
    * Callback fired when file is removed from list.
    */
-  onFileRemoved?: FileEvent;
+  onFileRemoved?: FileRemovedEvent;
 }
 
 export default function HvFileUploader(props: FileUploaderProps): JSX.Element | null;
