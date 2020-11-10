@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { File, FileEvent } from "../File";
+import { File, FileRemovedEvent } from "../File";
 
 export interface FileListProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFileListClassKey> {
@@ -11,7 +11,7 @@ export interface FileListProps
   /**
    * Callback fired when file is removed from list.
    */
-  onFileRemoved?: FileEvent;
+  onFileRemoved?: FileRemovedEvent;
 
   /**
    * File upload progress message conjunction.
