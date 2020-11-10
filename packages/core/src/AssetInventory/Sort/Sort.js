@@ -104,7 +104,7 @@ Sort.propTypes = {
    */
   labels: PropTypes.shape({
     sortBy: PropTypes.string,
-  }).isRequired,
+  }),
   /**
    * Metadata associated with the values.
    */

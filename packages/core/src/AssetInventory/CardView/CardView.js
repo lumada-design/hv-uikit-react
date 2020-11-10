@@ -199,7 +199,14 @@ CardView.propTypes = {
     /**
      * List of actions to be passed to the cards.
      */
-    actions: PropTypes.instanceOf(Array),
+    actions: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+        disabled: PropTypes.bool,
+      })
+    ),
     /**
      * The callback function ran when an action is triggered, receiving `action` as param
      */

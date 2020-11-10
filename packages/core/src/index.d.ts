@@ -1,6 +1,9 @@
 export { default as HvActionBar } from "./ActionBar";
 export * from "./ActionBar";
 
+export { default as HvActionsGeneric } from "./ActionsGeneric";
+export * from "./ActionsGeneric";
+
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 
@@ -205,7 +208,9 @@ export interface HvThemeTypographyDefinition {
   fontWeight: string;
 }
 
-export type HvThemeSpacing = Map<string, number>;
+export type HvSpacingKeys = "xs" | "sm" | "md" | "lg" | "xl";
+
+export type HvThemeSpacing = Record<HvSpacingKeys, string>;
 
 export interface HvThemeVizPalette {
   palette: {

@@ -93,30 +93,45 @@ ListView.propTypes = {
    */
   emptyComponent: PropTypes.node,
   /**
-   * Configuration used to setup various properties of the view.
-   * This configuration is propagated to the known children of the asset inventory through context.
+   * Configuration settings for the view.
    */
   viewConfiguration: PropTypes.shape({
+    /**
+     * Callback evoked in the selection of the card.
+     */
     onSelection: PropTypes.func,
+    /**
+     * Defines if the view allows selections.
+     */
     isSelectable: PropTypes.bool,
+    /**
+     * List column configuration.
+     */
     columnConfiguration: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.String,
         style: PropTypes.instanceOf(Object),
       })
     ),
-    maxVisibleActions: PropTypes.number,
-    actions: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          label: PropTypes.string.isRequired,
-          icon: PropTypes.func,
-        })
-      ),
-    ]),
+    /**
+     * List of actions to be passed to the cards.
+     */
+    actions: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+        disabled: PropTypes.bool,
+      })
+    ),
+    /**
+     * The callback function ran when an action is triggered, receiving `action` as param
+     */
     actionsCallback: PropTypes.func,
+    /**
+     * The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
+     */
+    maxVisibleActions: PropTypes.number,
   }),
   /**
    * A Jss Object used to override or extend the styles applied.
