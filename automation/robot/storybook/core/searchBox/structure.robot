@@ -1,6 +1,7 @@
 *** Setting ***
 Resource      _searchBox.resource
 Test Setup    open searchBox sample    dynamic-search
+Force Tags    bug-infrastructure-ie
 
 
 *** Test Cases ***

@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _multiButton.resource
 Test Setup    Open multiButton sample    enforced-selection
-Force Tags    keyboard
+Force Tags    keyboard    bug-infrastructure-ie
 
 
 *** Test Cases ***
