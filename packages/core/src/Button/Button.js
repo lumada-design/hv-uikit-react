@@ -8,7 +8,7 @@ import styles from "./styles";
 /**
  * A button refers to a graphical control element that provides the user with a simple way to trigger an event.
  */
-const HvButton = (props) => {
+const HvButton = React.forwardRef((props, ref) => {
   const {
     id,
     classes,
@@ -31,6 +31,7 @@ const HvButton = (props) => {
         [classes.icon]: icon,
         [classes[`${category}SVG`]]: overrideIconColors,
       })}
+      ref={ref}
       id={id}
       classes={buttonConfiguration.classes}
       variant={buttonConfiguration.variant}
@@ -45,7 +46,7 @@ const HvButton = (props) => {
       {children}
     </Button>
   );
-};
+});
 
 HvButton.propTypes = {
   /**

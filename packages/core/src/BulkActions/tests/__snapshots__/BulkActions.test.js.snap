@@ -692,7 +692,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
           <div
             className="HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer"
           >
-            <WithStyles(HvButton)
+            <WithStyles(ForwardRef)
               category="ghost"
               className="HvActionsGeneric-button"
               disabled={true}
@@ -701,7 +701,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               onClick={[Function]}
               startIcon={<Add />}
             >
-              <HvButton
+              <ForwardRef
                 category="ghost"
                 className="HvActionsGeneric-button"
                 classes={
@@ -882,9 +882,9 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     </WithStyles(ForwardRef(ButtonBase))>
                   </ForwardRef(Button)>
                 </WithStyles(ForwardRef(Button))>
-              </HvButton>
-            </WithStyles(HvButton)>
-            <WithStyles(HvButton)
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
               category="ghost"
               className="HvActionsGeneric-button"
               disabled={true}
@@ -893,7 +893,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               onClick={[Function]}
               startIcon={<Delete />}
             >
-              <HvButton
+              <ForwardRef
                 category="ghost"
                 className="HvActionsGeneric-button"
                 classes={
@@ -1074,8 +1074,8 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     </WithStyles(ForwardRef(ButtonBase))>
                   </ForwardRef(Button)>
                 </WithStyles(ForwardRef(Button))>
-              </HvButton>
-            </WithStyles(HvButton)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
             <WithStyles(WithId)
               category="ghost"
               classes={
@@ -1189,7 +1189,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       }
                     }
                     component={
-                      <WithStyles(HvButton)
+                      <WithStyles(ForwardRef)
                         aria-label="Dropdown menu"
                         category="ghost"
                         className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1200,7 +1200,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         <MoreOptionsVertical
                           color="atmo5"
                         />
-                      </WithStyles(HvButton)>
+                      </WithStyles(ForwardRef)>
                     }
                     disablePortal={false}
                     disabled={true}
@@ -1233,7 +1233,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         }
                       }
                       component={
-                        <WithStyles(HvButton)
+                        <WithStyles(ForwardRef)
                           aria-label="Dropdown menu"
                           category="ghost"
                           className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1244,7 +1244,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           <MoreOptionsVertical
                             color="atmo5"
                           />
-                        </WithStyles(HvButton)>
+                        </WithStyles(ForwardRef)>
                       }
                       disablePortal={false}
                       disabled={true}
@@ -1262,7 +1262,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         onKeyDown={[Function]}
                         tabIndex={-1}
                       >
-                        <WithStyles(HvButton)
+                        <WithStyles(ForwardRef)
                           aria-label="Dropdown menu"
                           category="ghost"
                           className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1270,7 +1270,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           icon={true}
                           id="bulkActions-actions-menu-icon-button"
                         >
-                          <HvButton
+                          <ForwardRef
                             aria-label="Dropdown menu"
                             category="ghost"
                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1446,8 +1446,8 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 </WithStyles(ForwardRef(ButtonBase))>
                               </ForwardRef(Button)>
                             </WithStyles(ForwardRef(Button))>
-                          </HvButton>
-                        </WithStyles(HvButton)>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
                       </div>
                       <ForwardRef(Popper)
                         anchorEl={null}

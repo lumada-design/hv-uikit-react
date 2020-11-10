@@ -15,11 +15,11 @@ exports[`Action Bar should render correctly 1`] = `
     <div
       className="HvActionBar-root makeStyles-actionBar-2"
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         category="ghost"
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           category="ghost"
           classes={
             Object {
@@ -158,20 +158,20 @@ exports[`Action Bar should render correctly 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
       <div
         aria-hidden="true"
         className="makeStyles-space-3"
       >
          
       </div>
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         category="ghost"
         className="makeStyles-buttonSeparator-4"
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           category="ghost"
           className="makeStyles-buttonSeparator-4"
           classes={
@@ -311,13 +311,13 @@ exports[`Action Bar should render correctly 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-      <WithStyles(HvButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+      <WithStyles(ForwardRef)
         category="ghost"
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           category="ghost"
           classes={
             Object {
@@ -456,8 +456,8 @@ exports[`Action Bar should render correctly 1`] = `
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
     </div>
   </HvActionBar>
 </WithStyles(HvActionBar)>

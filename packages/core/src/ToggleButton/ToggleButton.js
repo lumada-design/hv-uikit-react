@@ -14,15 +14,17 @@ import styles from "./styles";
  * Use when two instances are opposite and the on/off analogy doesn’t apply (Ex: Locked / Unlocked).
  * Only well known icons should be used, otherwise use a single checkbox for the same situation.
  */
-const ToggleButton = ({
-  defaultSelected,
-  selected,
-  notSelectedIcon,
-  selectedIcon = null,
-  onClick,
-  children,
-  ...others
-}) => {
+
+const ToggleButton = React.forwardRef((props, ref) => {
+  const {
+    defaultSelected,
+    selected,
+    notSelectedIcon,
+    selectedIcon = null,
+    onClick,
+    children,
+    ...others
+  } = props;
   const [isSelected, setIsSelected] = useControlled(selected, Boolean(defaultSelected));
 
   const onClickHandler = (e) => {
@@ -31,11 +33,11 @@ const ToggleButton = ({
   };
 
   return (
-    <HvButton icon aria-pressed={isSelected} onClick={onClickHandler} {...others}>
+    <HvButton ref={ref} icon aria-pressed={isSelected} onClick={onClickHandler} {...others}>
       {children || (!isSelected ? notSelectedIcon : selectedIcon)}
     </HvButton>
   );
-};
+});
 
 ToggleButton.propTypes = {
   /**

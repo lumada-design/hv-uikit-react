@@ -2,27 +2,27 @@
 
 exports[`ToggleButton should render correctly 1`] = `
 Array [
-  <WithStyles(ToggleButton)
+  <WithStyles(ForwardRef)
     aria-label="Favorite"
     defaultSelected={true}
     notSelectedIcon={<Favorite />}
     selectedIcon={<FavoriteSelected />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Favorite"
       classes={Object {}}
       defaultSelected={true}
       notSelectedIcon={<Favorite />}
       selectedIcon={<FavoriteSelected />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Favorite"
         aria-pressed={true}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Favorite"
           aria-pressed={true}
           classes={
@@ -202,29 +202,29 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Backwards"
     notSelectedIcon={<BackwardsEmpty />}
     selectedIcon={<BackwardsSelected />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Backwards"
       classes={Object {}}
       notSelectedIcon={<BackwardsEmpty />}
       selectedIcon={<BackwardsSelected />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Backwards"
         aria-pressed={false}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Backwards"
           aria-pressed={false}
           classes={
@@ -404,29 +404,29 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Up"
     notSelectedIcon={<UpEmpty />}
     selectedIcon={<UpSelected />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Up"
       classes={Object {}}
       notSelectedIcon={<UpEmpty />}
       selectedIcon={<UpSelected />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Up"
         aria-pressed={false}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Up"
           aria-pressed={false}
           classes={
@@ -601,24 +601,24 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Down"
     disabled={true}
     notSelectedIcon={<DownEmpty />}
     selectedIcon={<DownSelected />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Down"
       classes={Object {}}
       disabled={true}
       notSelectedIcon={<DownEmpty />}
       selectedIcon={<DownSelected />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Down"
         aria-pressed={false}
         classes={Object {}}
@@ -626,7 +626,7 @@ Array [
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Down"
           aria-pressed={false}
           classes={
@@ -804,29 +804,29 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Forward"
     notSelectedIcon={<ForwardsEmpty />}
     selectedIcon={<ForwardsSelected />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Forward"
       classes={Object {}}
       notSelectedIcon={<ForwardsEmpty />}
       selectedIcon={<ForwardsSelected />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Forward"
         aria-pressed={false}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Forward"
           aria-pressed={false}
           classes={
@@ -1001,29 +1001,29 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Like"
     notSelectedIcon={<Like />}
     selectedIcon={<LikeSelected />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Like"
       classes={Object {}}
       notSelectedIcon={<Like />}
       selectedIcon={<LikeSelected />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Like"
         aria-pressed={false}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Like"
           aria-pressed={false}
           classes={
@@ -1198,29 +1198,29 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Dislike"
     notSelectedIcon={<Dislike />}
     selectedIcon={<DislikeSelected />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Dislike"
       classes={Object {}}
       notSelectedIcon={<Dislike />}
       selectedIcon={<DislikeSelected />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Dislike"
         aria-pressed={false}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Dislike"
           aria-pressed={false}
           classes={
@@ -1395,29 +1395,29 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Light"
     notSelectedIcon={<LightOff />}
     selectedIcon={<LightOn />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Light"
       classes={Object {}}
       notSelectedIcon={<LightOff />}
       selectedIcon={<LightOn />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Light"
         aria-pressed={false}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Light"
           aria-pressed={false}
           classes={
@@ -1592,29 +1592,29 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
-  <WithStyles(ToggleButton)
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     aria-label="Lock"
     notSelectedIcon={<Unlock />}
     selectedIcon={<Lock />}
   >
-    <ToggleButton
+    <ForwardRef
       aria-label="Lock"
       classes={Object {}}
       notSelectedIcon={<Unlock />}
       selectedIcon={<Lock />}
     >
-      <WithStyles(HvButton)
+      <WithStyles(ForwardRef)
         aria-label="Lock"
         aria-pressed={false}
         classes={Object {}}
         icon={true}
         onClick={[Function]}
       >
-        <HvButton
+        <ForwardRef
           aria-label="Lock"
           aria-pressed={false}
           classes={
@@ -1789,9 +1789,9 @@ Array [
               </WithStyles(ForwardRef(ButtonBase))>
             </ForwardRef(Button)>
           </WithStyles(ForwardRef(Button))>
-        </HvButton>
-      </WithStyles(HvButton)>
-    </ToggleButton>
-  </WithStyles(ToggleButton)>,
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
 ]
 `;

@@ -91,11 +91,11 @@ exports[`Header should be able to render 1`] = `
               <div
                 className="HvHeader-header"
               >
-                <WithStyles(HvButton)
+                <WithStyles(ForwardRef)
                   icon={true}
                   onClick={[Function]}
                 >
-                  <HvButton
+                  <ForwardRef
                     classes={
                       Object {
                         "focusVisible": "HvButton-focusVisible",
@@ -258,8 +258,8 @@ exports[`Header should be able to render 1`] = `
                         </WithStyles(ForwardRef(ButtonBase))>
                       </ForwardRef(Button)>
                     </WithStyles(ForwardRef(Button))>
-                  </HvButton>
-                </WithStyles(HvButton)>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
                 <WithStyles(Brand)
                   logo={<_default />}
                   name="Lumada App"
@@ -396,12 +396,12 @@ exports[`Header should be able to render 1`] = `
                     <div
                       className="HvHeaderActions-root"
                     >
-                      <WithStyles(HvButton)
+                      <WithStyles(ForwardRef)
                         aria-label="Open Notifications panel"
                         icon={true}
                         onClick={[Function]}
                       >
-                        <HvButton
+                        <ForwardRef
                           aria-label="Open Notifications panel"
                           classes={
                             Object {
@@ -603,8 +603,8 @@ exports[`Header should be able to render 1`] = `
                               </WithStyles(ForwardRef(ButtonBase))>
                             </ForwardRef(Button)>
                           </WithStyles(ForwardRef(Button))>
-                        </HvButton>
-                      </WithStyles(HvButton)>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
                     </div>
                   </Actions>
                 </WithStyles(Actions)>
