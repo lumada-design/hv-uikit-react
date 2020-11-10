@@ -1,5 +1,6 @@
 *** Setting ***
 Resource      _toggleSwitch.resource
+Force Tags    bug-infrastructure-ie
 
 
 *** Test Cases ***
