@@ -238,7 +238,7 @@ const Focus = (props) => {
     switch (evt.keyCode) {
       case SpaceBar:
       case Enter:
-        evt.currentTarget.click();
+        evt.target.click();
         break;
       case ArrowUp:
         focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
