@@ -15,6 +15,7 @@ const Actions = ({
   actions = [],
   actionsCallback,
   maxVisibleActions = Infinity,
+  dropDownMenuProps,
   ...others
 }) => {
   if (!Array.isArray(actions)) return React.isValidElement(actions) ? actions : null;
@@ -63,6 +64,7 @@ const Actions = ({
           dataList={actsDropdown}
           keepOpened={false}
           disablePortal={false}
+          {...dropDownMenuProps}
         />
       </>
     );
@@ -153,6 +155,11 @@ Actions.propTypes = {
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
   maxVisibleActions: PropTypes.number,
+  /**
+   * Properties to be passed onto the Dropdown Menu component, the values of the object are equivalent to the
+   * HvDropdownMenu API.
+   */
+  dropDownMenuProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvActions" })(Actions);

@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvButtonCategories } from "../Button";
+import { HvDropDownMenuProps } from "../DropDownMenu";
+
 
 export type Action = {
   id: string;
@@ -27,6 +29,11 @@ export interface HvActionsCommonProps {
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
   maxVisibleActions?: number;
+  /**
+   * Properties to be passed onto the Dropdown Menu component, the values of the object are equivalent to the
+   * HvDropdownMenu API.
+   */
+  dropDownMenuProps?: HvDropDownMenuProps;
 }
 
 export interface HvActionsProps

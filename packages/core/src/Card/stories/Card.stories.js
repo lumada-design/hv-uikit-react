@@ -217,6 +217,18 @@ export const AllComponents = () => {
         }}
         footerProps={{
           "aria-label": "leaf",
+          actionsProps: {
+            dropDownMenuProps: {
+              disablePortal: true,
+              popperProps: {
+                modifiers: {
+                  preventOverflow: {
+                    enabled: false,
+                  },
+                },
+              },
+            },
+          },
         }}
         checkboxProps={{
           value: "value",
@@ -239,7 +251,8 @@ export const AllComponents = () => {
 AllComponents.story = {
   parameters: {
     docs: {
-      storyDescription: "A card that has all it's component defined.",
+      storyDescription:
+        "A card that has all it's component defined and extending the actions dropdown menu default values.",
     },
   },
 };

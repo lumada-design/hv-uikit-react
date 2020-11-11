@@ -155,18 +155,18 @@ const HvCard = ({
             [classes.semanticSelected]: selected,
           })}
         />
-        <Card
-          id={id}
-          className={clsx(classes.cardContainer, className, {
-            [classes.selectable]: isSelectable,
-            [classes.cardContainerSelected]: selected,
-            [classes.selected]: selected,
-          })}
-          {...others}
-        >
-          {children || defaultContent}
-        </Card>
       </div>
+      <Card
+        id={id}
+        className={clsx(classes.cardContainer, className, {
+          [classes.selectable]: isSelectable,
+          [classes.cardContainerSelected]: selected,
+          [classes.selected]: selected,
+        })}
+        {...others}
+      >
+        {children || defaultContent}
+      </Card>
     </div>
   );
 };

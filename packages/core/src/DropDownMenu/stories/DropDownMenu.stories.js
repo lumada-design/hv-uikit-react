@@ -118,7 +118,7 @@ export const Controlled = () => {
           id="dropMenu"
           expanded={open}
           onClick={(e, item) => console.log(item.label)}
-          disablePortal={false}
+          disablePortal
           aria-label="dropdownMenu-1"
           keepOpened={false}
           dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
@@ -133,7 +133,8 @@ export const Controlled = () => {
 Controlled.story = {
   parameters: {
     docs: {
-      storyDescription: "DropDownMenu toggle opening controlled by an external button",
+      storyDescription:
+        "DropDownMenu toggle opening controlled by an external button and being mounted inline",
     },
   },
 };

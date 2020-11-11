@@ -1,5 +1,5 @@
 import { CardActionsProps, StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../../Actions";
+import { HvActionsCommonProps, HvActionsProps } from "../../Actions";
 import { HvCheckBoxProps } from "../../Selectors/CheckBox";
 
 export interface HvCardFooterCommonProps extends HvActionsCommonProps {
@@ -24,6 +24,11 @@ export interface HvCardFooterProps
    * Extra properties to be passed to the checkbox component in the footer.
    */
   checkboxProps: HvCheckBoxProps;
+  /**
+   * Properties to be passed onto the Actions component, the values of the object are equivalent to the
+   * HvActions API.
+   */
+  actionsProps?: HvActionsProps;
 }
 
 export type HvCardFooterClassKey = "root" | "leftContainer" | "rightContainer";

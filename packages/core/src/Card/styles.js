@@ -20,7 +20,6 @@ const styles = (theme) => {
     },
     cardContainer: {
       boxSizing: "content-box",
-      position: "relative",
       marginTop: "-4px",
     },
     sema0: {
