@@ -13,7 +13,7 @@
 #  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Release
+name: v2.x Release
 on:
   repository_dispatch:
     types: [v2-release]
