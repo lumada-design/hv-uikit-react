@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.14.0...@hv/uikit-react-core@2.15.0) (2020-11-11)
+
+
+### Bug Fixes
+
+* **fileuploader:** file callback definition ([9f2f202](https://github.com/pentaho/hv-uikit-react/commit/9f2f2026e66d3541dcfc61ef5503e737fb743081))
+* **ssr:** remove theme global variable ([fbeef51](https://github.com/pentaho/hv-uikit-react/commit/fbeef51a3b7f63a519e32b04ec1cab485c22041b))
+* **textarea:** adding character quantity message. HVUIKIT-5611 ([ec40f41](https://github.com/pentaho/hv-uikit-react/commit/ec40f41c910becf4f5d4c5a1e642d454e38bd2d3))
+* **textarea:** modifying color. HVUIKIT-5611 ([0545c95](https://github.com/pentaho/hv-uikit-react/commit/0545c95fa43e580ab516d34caef60a1289d6fae3))
+
+
+### Features
+
+* **textarea:** enable setup as required comp. HVUIKIT-5610 ([92fa53c](https://github.com/pentaho/hv-uikit-react/commit/92fa53c125f04abadd542b7554c01f6cc8bebe68))
+
+
+
+
+
 # [2.14.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.13.0...@hv/uikit-react-core@2.14.0) (2020-11-02)
 
 

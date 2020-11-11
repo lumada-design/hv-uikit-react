@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.22](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.5.21...@hv/uikit-react-lab@2.5.22) (2020-11-11)
+
+
+### Bug Fixes
+
+* **lab:** add ts indexes. HVUIKIT-5471 ([7e41477](https://github.com/pentaho/hv-uikit-react/commit/7e414770d4c16d05a8bc064dd9e7df15840165a8))
+
+
+
+
+
 ## [2.5.21](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.5.20...@hv/uikit-react-lab@2.5.21) (2020-11-02)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
