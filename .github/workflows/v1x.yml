@@ -44,7 +44,7 @@ env:
 jobs:
   Notify-Start:
     name: Notify Start
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     steps:
       - name: Notify
         uses: hbfernandes/slack-action@1.0
@@ -185,7 +185,7 @@ jobs:
     name: Notify End
     needs: [Static-Checks, Robot]
     if: always()
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: technote-space/workflow-conclusion-action@v1
@@ -223,7 +223,7 @@ jobs:
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
     needs: [Static-Checks, Robot]
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
     steps:
       - name: Trigger Release
         # repo scope personal token is required to generate a dispatch event
