@@ -1,9 +1,7 @@
 import { outlineStyles } from "../Focus/styles";
 
 const styles = (theme) => ({
-  root: {
-    display: "contents",
-  },
+  root: {},
   popper: {
     zIndex: theme.zIndex.tooltip,
   },
