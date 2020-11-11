@@ -79,6 +79,7 @@ export { default as withTooltip } from "./withTooltip";
 // Hooks
 export { default as useWidth } from "./utils/useWidth";
 export { default as useUniqueId } from "./useUniqueId";
+export { default as useLocale } from "./Provider/useLocale";
 
 // theme
 export { default as hvTheme } from "./theme";

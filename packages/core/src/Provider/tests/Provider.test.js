@@ -3,8 +3,9 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core";
-import { ConfigProvider } from "../context";
+import ConfigContext from "../context";
 import HvProvider from "../Provider";
+import useLocale from "../useLocale";
 
 describe("Provider", () => {
   let wrapper;
@@ -37,7 +38,7 @@ describe("Provider", () => {
   });
 
   it("should wrap the config provider component", () => {
-    const provider = wrapper.find(ConfigProvider);
+    const provider = wrapper.find(ConfigContext.Provider);
     expect(provider.length).toBe(1);
   });
 
@@ -54,5 +55,58 @@ describe("Provider", () => {
     expect(muiThemeProvider.props().theme.typography.h1.fontSize).not.toEqual(
       mockOverriden.typography.h1.fontSize
     );
+  });
+});
+
+describe("Provider with locale", () => {
+  let wrapper;
+
+  beforeEach(async () => {
+    wrapper = shallow(<HvProvider locale="en-UK">Mock</HvProvider>);
+  });
+
+  it("should be defined", () => {
+    expect(wrapper).toBeDefined();
+  });
+
+  it("should pick up the configured locale", () => {
+    const provider = wrapper.find(ConfigContext.Provider);
+    expect(provider.props().value.locale).toBeDefined();
+    expect(provider.props().value.locale).toBe("en-UK");
+  });
+
+  it("should apply en-US fallback, when locale is not configured", () => {
+    wrapper = shallow(<HvProvider>Mock</HvProvider>);
+    const provider = wrapper.find(ConfigContext.Provider);
+    expect(provider.props().value.locale).toBeDefined();
+    expect(provider.props().value.locale).toBe("en-US");
+  });
+
+  it("should pick up default locale configured in the HvProvider", () => {
+    const MockComponent = () => {
+      const locale = useLocale();
+      return <div>{locale}</div>;
+    };
+    wrapper = mount(
+      <HvProvider>
+        <MockComponent />
+      </HvProvider>
+    );
+
+    expect(wrapper.find("div").text()).toBe("en-US");
+  });
+
+  it("should pick up specified locale via the HvProvider", () => {
+    const MockComponent = () => {
+      const locale = useLocale();
+      return <div>{locale}</div>;
+    };
+    wrapper = mount(
+      <HvProvider locale="fr_CA">
+        <MockComponent />
+      </HvProvider>
+    );
+
+    expect(wrapper.find("div").text()).toBe("fr_CA");
   });
 });
