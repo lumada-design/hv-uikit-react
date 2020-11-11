@@ -299,7 +299,7 @@ jobs:
     name: Notify End
     needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
     if: always()
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     steps:
       # delete artifact since it was published to gh-pages
