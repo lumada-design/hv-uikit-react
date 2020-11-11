@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@3.0.0...@hv/uikit-react-icons@3.0.1) (2020-11-11)
+
+
+### Bug Fixes
+
+* **icons:** change inner color. HVUIKIT-5623 ([a31e258](https://github.com/pentaho/hv-uikit-react/commit/a31e258c777f99d2ec9f2e1a4acd35fcd2972c31))
+
+
+
+
+
 
 # [3.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.3.2...@hv/uikit-react-icons@3.0.0) (2020-10-30)
 

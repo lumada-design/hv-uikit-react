@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.0.0...@hv/uikit-react-core@3.1.0) (2020-11-11)
+
+
+### Bug Fixes
+
+* **datepicker:** fix styling issues. HVUIKIT-5609 ([777b0e1](https://github.com/pentaho/hv-uikit-react/commit/777b0e1758157c33ff494f39b5e6a23d90158279))
+* **fileuploader:** file callback definition ([02af82f](https://github.com/pentaho/hv-uikit-react/commit/02af82f9e3e2f3d71bdf5efb9e6dff1352765c29))
+* **icons:** change inner color. HVUIKIT-5623 ([a31e258](https://github.com/pentaho/hv-uikit-react/commit/a31e258c777f99d2ec9f2e1a4acd35fcd2972c31))
+* **ssr:** remove theme global variable ([702f17a](https://github.com/pentaho/hv-uikit-react/commit/702f17a85edec7fa7979cbc27161590cf0821f43))
+* **typescript:** resolve type definitions and API problems. HVUIKIT-5589 ([bb8251f](https://github.com/pentaho/hv-uikit-react/commit/bb8251f898a5759107c51a37d26b088f98067fac))
+* add "error" to HvInputClassKey ([64c35ac](https://github.com/pentaho/hv-uikit-react/commit/64c35ac8009d4495a3a791c6cfbe19f7a07fd7f5))
+* form selectors state with lazy initialization and ts fixes ([3e06d77](https://github.com/pentaho/hv-uikit-react/commit/3e06d77ebb0a28b4370a6f5518c5efac38378be6))
+* **table:** format function not applied with sub template. HVUIKIT-5575 ([#2114](https://github.com/pentaho/hv-uikit-react/issues/2114)) ([3cb59b0](https://github.com/pentaho/hv-uikit-react/commit/3cb59b02ea2b5970e4c6fbe4e382d8c642aa5d98))
+* resolve type definition problems ([65a6da6](https://github.com/pentaho/hv-uikit-react/commit/65a6da68080ef289ccdff9525a77ae4b1f9ebeea))
+
+
+### Features
+
+* **docs:** hide basedropdown story. HVUIKIT-5608 ([#2107](https://github.com/pentaho/hv-uikit-react/issues/2107)) ([be53e06](https://github.com/pentaho/hv-uikit-react/commit/be53e06d904812106679bee13f2d65ee28168eb6))
+
+
+
+
+
 # [3.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.13.0...@hv/uikit-react-core@3.0.0) (2020-10-30)
 
 ### Features
