@@ -26,6 +26,7 @@ const DropDownMenu = ({
   keepOpened = true,
   disabled = false,
   expanded = false,
+  popperProps,
   ...others
 }) => {
   const didMountRef = useRef(false);
@@ -142,6 +143,7 @@ const DropDownMenu = ({
           onUpdate: (data) => handleListFlip(data),
           onCreate: (data) => handleListFlip(data),
         }}
+        {...popperProps}
       >
         <OutsideClickHandler onOutsideClick={handleClose}>
           <div>
@@ -284,6 +286,10 @@ DropDownMenu.propTypes = {
    * If true it should be displayed open.
    */
   expanded: PropTypes.bool,
+  /**
+   *
+   */
+  popperProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvDropDownMenu" })(withId(DropDownMenu));
