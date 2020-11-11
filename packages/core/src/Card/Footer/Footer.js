@@ -24,6 +24,7 @@ const Footer = (props) => {
     onChange,
     checked,
     checkboxProps,
+    actionsProps,
     ...others
   } = props;
 
@@ -44,6 +45,7 @@ const Footer = (props) => {
           actions={actions}
           maxVisibleActions={maxVisibleActions}
           actionsCallback={actionsCallback}
+          {...actionsProps}
         />
       </div>
     </CardActions>
@@ -124,6 +126,11 @@ Footer.propTypes = {
    * HvCheckbox API.
    */
   checkboxProps: PropTypes.instanceOf(Object),
+  /**
+   * Properties to be passed onto the Actions component, the values of the object are equivalent to the
+   * HvActions API.
+   */
+  actionsProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvCardFooter" })(withConfig(Footer));
