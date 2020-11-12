@@ -13,7 +13,7 @@ import {
   MoreOptionsVertical,
 } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvButton, HvCard, HvKpi, HvTypography } from "../..";
+import { HvButton, HvCard, HvKpi, HvTypography, HvContainer } from "../..";
 import { HvCardMedia, HvCardFooter, HvCardHeader, HvCardContent } from "..";
 import compressor from "./resources/compressor.png";
 import leaf from "./resources/leaf.png";
@@ -568,12 +568,6 @@ export const KPICard = () => {
     },
   };
 
-  const cardSpacing = (theme) => ({
-    root: {
-      padding: theme.spacing(2),
-    },
-  });
-
   const data = {
     firstTitle: "Related assets",
     firstContent: "Primary asset to be worked on, other asset, other asset",
@@ -609,64 +603,67 @@ export const KPICard = () => {
   );
 
   const ContentWithStyles = withStyles(kpiStyles)(Content);
-  const StyledCard = withStyles(cardSpacing)(HvCard);
 
   return (
-    <Grid container>
-      <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <StyledCard
-          icon={<Tool />}
-          headerTitle="Replace contaminated oil"
-          innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
-          semantic="sema2"
-          isSelectable
-          checkboxProps={{
-            value: "value",
-            inputProps: { "aria-label": "leaf input" },
-          }}
-          cardButtonProps={{ "aria-label": "leaf" }}
-          headerProps={{ "aria-label": "leaf" }}
-          footerProps={{ "aria-label": "leaf" }}
-          onChange={(event) => console.log(`my value is ${event.target.value}`)}
-        />
+    <HvContainer>
+      <Grid container spacing={4}>
+        <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+          <HvCard
+            icon={<Tool />}
+            headerTitle="Replace contaminated oil"
+            innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
+            semantic="sema2"
+            isSelectable
+            checkboxProps={{
+              value: "value",
+              inputProps: { "aria-label": "leaf input" },
+            }}
+            cardButtonProps={{ "aria-label": "leaf" }}
+            headerProps={{ "aria-label": "leaf" }}
+            footerProps={{ "aria-label": "leaf" }}
+            onChange={(event) => console.log(`my value is ${event.target.value}`)}
+          />
+        </Grid>
+        <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+          <HvCard
+            icon={<Tool />}
+            headerTitle="Replace contaminated oil"
+            innerCardContent={
+              <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
+            }
+            semantic="sema3"
+            isSelectable
+            checkboxProps={{
+              value: "value",
+              inputProps: { "aria-label": "leaf input" },
+            }}
+            cardButtonProps={{ "aria-label": "leaf" }}
+            headerProps={{ "aria-label": "leaf" }}
+            footerProps={{ "aria-label": "leaf" }}
+            onChange={(event) => console.log(`my value is ${event.target.value}`)}
+          />
+        </Grid>
+        <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
+          <HvCard
+            icon={<Tool />}
+            headerTitle="Replace contaminated oil"
+            innerCardContent={
+              <ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />
+            }
+            semantic="sema4"
+            isSelectable
+            checkboxProps={{
+              value: "value",
+              inputProps: { "aria-label": "leaf input" },
+            }}
+            cardButtonProps={{ "aria-label": "leaf" }}
+            headerProps={{ "aria-label": "leaf" }}
+            footerProps={{ "aria-label": "leaf" }}
+            onChange={(event) => console.log(`my value is ${event.target.value}`)}
+          />
+        </Grid>
       </Grid>
-      <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <StyledCard
-          icon={<Tool />}
-          headerTitle="Replace contaminated oil"
-          innerCardContent={
-            <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
-          }
-          semantic="sema3"
-          isSelectable
-          checkboxProps={{
-            value: "value",
-            inputProps: { "aria-label": "leaf input" },
-          }}
-          cardButtonProps={{ "aria-label": "leaf" }}
-          headerProps={{ "aria-label": "leaf" }}
-          footerProps={{ "aria-label": "leaf" }}
-          onChange={(event) => console.log(`my value is ${event.target.value}`)}
-        />
-      </Grid>
-      <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <StyledCard
-          icon={<Tool />}
-          headerTitle="Replace contaminated oil"
-          innerCardContent={<ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />}
-          semantic="sema4"
-          isSelectable
-          checkboxProps={{
-            value: "value",
-            inputProps: { "aria-label": "leaf input" },
-          }}
-          cardButtonProps={{ "aria-label": "leaf" }}
-          headerProps={{ "aria-label": "leaf" }}
-          footerProps={{ "aria-label": "leaf" }}
-          onChange={(event) => console.log(`my value is ${event.target.value}`)}
-        />
-      </Grid>
-    </Grid>
+    </HvContainer>
   );
 };
 
