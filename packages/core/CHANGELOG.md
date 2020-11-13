@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.15.0...@hv/uikit-react-core@2.16.0) (2020-11-13)
+
+
+### Bug Fixes
+
+* **card:** remove style to fix dropdown menu inside it. HVUIKIT-5576 ([a6ec45c](https://github.com/pentaho/hv-uikit-react/commit/a6ec45c2da8eced12e0291391d80eace658a9a0d))
+* **dropdown-menu:** change style to fix popper positioning. HVUIKIT-5576 ([f6f0c7b](https://github.com/pentaho/hv-uikit-react/commit/f6f0c7b0e789aa137a4ea784fef7b7ccd668fe50))
+
+
+### Features
+
+* **actions:** allow actions to extend dropdown menu. HVUIKIT-5576 ([10d3b4e](https://github.com/pentaho/hv-uikit-react/commit/10d3b4e8e067d6c6cc74e9f8876c16d0cb33f731))
+* **assetinventory:** allow props page alterations. [#2089](https://github.com/pentaho/hv-uikit-react/issues/2089) ([#2090](https://github.com/pentaho/hv-uikit-react/issues/2090)) ([b64b1ee](https://github.com/pentaho/hv-uikit-react/commit/b64b1eea1d66995ab3b641e601f6d0deec1ebcaa))
+* **card-footer:** allow actions to be extended. HVUIKIT-5576 ([6250c58](https://github.com/pentaho/hv-uikit-react/commit/6250c58ef4f3be343dc5eb3fcadd16755c523004))
+* **dropdown-menu:** allow Popper to be extended. HVUIKIT-5576 ([60b18b0](https://github.com/pentaho/hv-uikit-react/commit/60b18b0502742dd656f6ff999d9328f0236e404a))
+
+
+
+
+
 # [2.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.14.0...@hv/uikit-react-core@2.15.0) (2020-11-11)
 
 
