@@ -101,11 +101,9 @@ export const Main = () => (
 export const Disabled = () => {
   return (
     <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
-      <div>
-        <HvToggleButton disabled aria-label="Light">
-          <LightOff />
-        </HvToggleButton>
-      </div>
+      <HvToggleButton disabled aria-label="Light">
+        <LightOff />
+      </HvToggleButton>
     </HvTooltip>
   );
 };
@@ -126,11 +124,9 @@ export const Tooltip = () => {
 
   return (
     <HvTooltip title={tooltip}>
-      <div>
-        <HvToggleButton aria-label="Light" onClick={() => setSelected(!selected)}>
-          {selected ? <LightOn /> : <LightOff />}
-        </HvToggleButton>
-      </div>
+      <HvToggleButton aria-label="Light" onClick={() => setSelected(!selected)}>
+        {selected ? <LightOn /> : <LightOff />}
+      </HvToggleButton>
     </HvTooltip>
   );
 };

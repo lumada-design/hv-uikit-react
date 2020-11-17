@@ -6779,7 +6779,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               <div
                                                                 className="HvActionsGeneric-root HvActionsGeneric-actionContainer"
                                                               >
-                                                                <WithStyles(HvButton)
+                                                                <WithStyles(ForwardRef)
                                                                   category="ghost"
                                                                   className="HvActionsGeneric-button"
                                                                   disabled={false}
@@ -6787,7 +6787,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   key="1-0-action-1-1"
                                                                   onClick={[Function]}
                                                                 >
-                                                                  <HvButton
+                                                                  <ForwardRef
                                                                     category="ghost"
                                                                     className="HvActionsGeneric-button"
                                                                     classes={
@@ -6936,9 +6936,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         </WithStyles(ForwardRef(ButtonBase))>
                                                                       </ForwardRef(Button)>
                                                                     </WithStyles(ForwardRef(Button))>
-                                                                  </HvButton>
-                                                                </WithStyles(HvButton)>
-                                                                <WithStyles(HvButton)
+                                                                  </ForwardRef>
+                                                                </WithStyles(ForwardRef)>
+                                                                <WithStyles(ForwardRef)
                                                                   category="ghost"
                                                                   className="HvActionsGeneric-button"
                                                                   disabled={false}
@@ -6946,7 +6946,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   key="1-1-action-2-1"
                                                                   onClick={[Function]}
                                                                 >
-                                                                  <HvButton
+                                                                  <ForwardRef
                                                                     category="ghost"
                                                                     className="HvActionsGeneric-button"
                                                                     classes={
@@ -7095,8 +7095,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         </WithStyles(ForwardRef(ButtonBase))>
                                                                       </ForwardRef(Button)>
                                                                     </WithStyles(ForwardRef(Button))>
-                                                                  </HvButton>
-                                                                </WithStyles(HvButton)>
+                                                                  </ForwardRef>
+                                                                </WithStyles(ForwardRef)>
                                                                 <WithStyles(WithId)
                                                                   category="ghost"
                                                                   classes={
@@ -7198,7 +7198,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           }
                                                                         }
                                                                         component={
-                                                                          <WithStyles(HvButton)
+                                                                          <WithStyles(ForwardRef)
                                                                             aria-label="Dropdown menu"
                                                                             category="ghost"
                                                                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7207,7 +7207,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             id="1-menu-icon-button"
                                                                           >
                                                                             <MoreOptionsVertical />
-                                                                          </WithStyles(HvButton)>
+                                                                          </WithStyles(ForwardRef)>
                                                                         }
                                                                         disablePortal={false}
                                                                         disabled={false}
@@ -7240,7 +7240,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             }
                                                                           }
                                                                           component={
-                                                                            <WithStyles(HvButton)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7249,7 +7249,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               id="1-menu-icon-button"
                                                                             >
                                                                               <MoreOptionsVertical />
-                                                                            </WithStyles(HvButton)>
+                                                                            </WithStyles(ForwardRef)>
                                                                           }
                                                                           disablePortal={false}
                                                                           disabled={false}
@@ -7267,7 +7267,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             onKeyDown={[Function]}
                                                                             tabIndex={-1}
                                                                           >
-                                                                            <WithStyles(HvButton)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7275,7 +7275,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               icon={true}
                                                                               id="1-menu-icon-button"
                                                                             >
-                                                                              <HvButton
+                                                                              <ForwardRef
                                                                                 aria-label="Dropdown menu"
                                                                                 category="ghost"
                                                                                 className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7449,8 +7449,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                     </WithStyles(ForwardRef(ButtonBase))>
                                                                                   </ForwardRef(Button)>
                                                                                 </WithStyles(ForwardRef(Button))>
-                                                                              </HvButton>
-                                                                            </WithStyles(HvButton)>
+                                                                              </ForwardRef>
+                                                                            </WithStyles(ForwardRef)>
                                                                           </div>
                                                                           <ForwardRef(Popper)
                                                                             anchorEl={null}
@@ -10245,7 +10245,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               <div
                                                                 className="HvActionsGeneric-root HvActionsGeneric-actionContainer"
                                                               >
-                                                                <WithStyles(HvButton)
+                                                                <WithStyles(ForwardRef)
                                                                   category="ghost"
                                                                   className="HvActionsGeneric-button"
                                                                   disabled={false}
@@ -10253,7 +10253,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   key="2-0-action-1-2"
                                                                   onClick={[Function]}
                                                                 >
-                                                                  <HvButton
+                                                                  <ForwardRef
                                                                     category="ghost"
                                                                     className="HvActionsGeneric-button"
                                                                     classes={
@@ -10402,9 +10402,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         </WithStyles(ForwardRef(ButtonBase))>
                                                                       </ForwardRef(Button)>
                                                                     </WithStyles(ForwardRef(Button))>
-                                                                  </HvButton>
-                                                                </WithStyles(HvButton)>
-                                                                <WithStyles(HvButton)
+                                                                  </ForwardRef>
+                                                                </WithStyles(ForwardRef)>
+                                                                <WithStyles(ForwardRef)
                                                                   category="ghost"
                                                                   className="HvActionsGeneric-button"
                                                                   disabled={false}
@@ -10412,7 +10412,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   key="2-1-action-2-2"
                                                                   onClick={[Function]}
                                                                 >
-                                                                  <HvButton
+                                                                  <ForwardRef
                                                                     category="ghost"
                                                                     className="HvActionsGeneric-button"
                                                                     classes={
@@ -10561,8 +10561,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         </WithStyles(ForwardRef(ButtonBase))>
                                                                       </ForwardRef(Button)>
                                                                     </WithStyles(ForwardRef(Button))>
-                                                                  </HvButton>
-                                                                </WithStyles(HvButton)>
+                                                                  </ForwardRef>
+                                                                </WithStyles(ForwardRef)>
                                                                 <WithStyles(WithId)
                                                                   category="ghost"
                                                                   classes={
@@ -10664,7 +10664,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           }
                                                                         }
                                                                         component={
-                                                                          <WithStyles(HvButton)
+                                                                          <WithStyles(ForwardRef)
                                                                             aria-label="Dropdown menu"
                                                                             category="ghost"
                                                                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10673,7 +10673,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             id="2-menu-icon-button"
                                                                           >
                                                                             <MoreOptionsVertical />
-                                                                          </WithStyles(HvButton)>
+                                                                          </WithStyles(ForwardRef)>
                                                                         }
                                                                         disablePortal={false}
                                                                         disabled={false}
@@ -10706,7 +10706,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             }
                                                                           }
                                                                           component={
-                                                                            <WithStyles(HvButton)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10715,7 +10715,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               id="2-menu-icon-button"
                                                                             >
                                                                               <MoreOptionsVertical />
-                                                                            </WithStyles(HvButton)>
+                                                                            </WithStyles(ForwardRef)>
                                                                           }
                                                                           disablePortal={false}
                                                                           disabled={false}
@@ -10733,7 +10733,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             onKeyDown={[Function]}
                                                                             tabIndex={-1}
                                                                           >
-                                                                            <WithStyles(HvButton)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10741,7 +10741,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               icon={true}
                                                                               id="2-menu-icon-button"
                                                                             >
-                                                                              <HvButton
+                                                                              <ForwardRef
                                                                                 aria-label="Dropdown menu"
                                                                                 category="ghost"
                                                                                 className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10915,8 +10915,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                     </WithStyles(ForwardRef(ButtonBase))>
                                                                                   </ForwardRef(Button)>
                                                                                 </WithStyles(ForwardRef(Button))>
-                                                                              </HvButton>
-                                                                            </WithStyles(HvButton)>
+                                                                              </ForwardRef>
+                                                                            </WithStyles(ForwardRef)>
                                                                           </div>
                                                                           <ForwardRef(Popper)
                                                                             anchorEl={null}
@@ -13713,7 +13713,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               <div
                                                                 className="HvActionsGeneric-root HvActionsGeneric-actionContainer"
                                                               >
-                                                                <WithStyles(HvButton)
+                                                                <WithStyles(ForwardRef)
                                                                   category="ghost"
                                                                   className="HvActionsGeneric-button"
                                                                   disabled={false}
@@ -13721,7 +13721,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   key="3-0-action-1-3"
                                                                   onClick={[Function]}
                                                                 >
-                                                                  <HvButton
+                                                                  <ForwardRef
                                                                     category="ghost"
                                                                     className="HvActionsGeneric-button"
                                                                     classes={
@@ -13870,9 +13870,9 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         </WithStyles(ForwardRef(ButtonBase))>
                                                                       </ForwardRef(Button)>
                                                                     </WithStyles(ForwardRef(Button))>
-                                                                  </HvButton>
-                                                                </WithStyles(HvButton)>
-                                                                <WithStyles(HvButton)
+                                                                  </ForwardRef>
+                                                                </WithStyles(ForwardRef)>
+                                                                <WithStyles(ForwardRef)
                                                                   category="ghost"
                                                                   className="HvActionsGeneric-button"
                                                                   disabled={false}
@@ -13880,7 +13880,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                   key="3-1-action-2-3"
                                                                   onClick={[Function]}
                                                                 >
-                                                                  <HvButton
+                                                                  <ForwardRef
                                                                     category="ghost"
                                                                     className="HvActionsGeneric-button"
                                                                     classes={
@@ -14029,8 +14029,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         </WithStyles(ForwardRef(ButtonBase))>
                                                                       </ForwardRef(Button)>
                                                                     </WithStyles(ForwardRef(Button))>
-                                                                  </HvButton>
-                                                                </WithStyles(HvButton)>
+                                                                  </ForwardRef>
+                                                                </WithStyles(ForwardRef)>
                                                                 <WithStyles(WithId)
                                                                   category="ghost"
                                                                   classes={
@@ -14132,7 +14132,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           }
                                                                         }
                                                                         component={
-                                                                          <WithStyles(HvButton)
+                                                                          <WithStyles(ForwardRef)
                                                                             aria-label="Dropdown menu"
                                                                             category="ghost"
                                                                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14141,7 +14141,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             id="3-menu-icon-button"
                                                                           >
                                                                             <MoreOptionsVertical />
-                                                                          </WithStyles(HvButton)>
+                                                                          </WithStyles(ForwardRef)>
                                                                         }
                                                                         disablePortal={false}
                                                                         disabled={false}
@@ -14174,7 +14174,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             }
                                                                           }
                                                                           component={
-                                                                            <WithStyles(HvButton)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14183,7 +14183,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               id="3-menu-icon-button"
                                                                             >
                                                                               <MoreOptionsVertical />
-                                                                            </WithStyles(HvButton)>
+                                                                            </WithStyles(ForwardRef)>
                                                                           }
                                                                           disablePortal={false}
                                                                           disabled={false}
@@ -14201,7 +14201,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             onKeyDown={[Function]}
                                                                             tabIndex={-1}
                                                                           >
-                                                                            <WithStyles(HvButton)
+                                                                            <WithStyles(ForwardRef)
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14209,7 +14209,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               icon={true}
                                                                               id="3-menu-icon-button"
                                                                             >
-                                                                              <HvButton
+                                                                              <ForwardRef
                                                                                 aria-label="Dropdown menu"
                                                                                 category="ghost"
                                                                                 className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14383,8 +14383,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                     </WithStyles(ForwardRef(ButtonBase))>
                                                                                   </ForwardRef(Button)>
                                                                                 </WithStyles(ForwardRef(Button))>
-                                                                              </HvButton>
-                                                                            </WithStyles(HvButton)>
+                                                                              </ForwardRef>
+                                                                            </WithStyles(ForwardRef)>
                                                                           </div>
                                                                           <ForwardRef(Popper)
                                                                             anchorEl={null}

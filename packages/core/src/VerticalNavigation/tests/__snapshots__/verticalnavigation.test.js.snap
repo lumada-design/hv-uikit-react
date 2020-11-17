@@ -60,7 +60,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                 className="HvVerticalNavigationVerticalContainer-anchorBar"
                 id="sample3-container-anchor-bar"
               >
-                <WithStyles(HvButton)
+                <WithStyles(ForwardRef)
                   aria-label="open"
                   buttonRef={
                     Object {
@@ -101,7 +101,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                   id="sample3-container-hamburger-button"
                   onClick={[Function]}
                 >
-                  <HvButton
+                  <ForwardRef
                     aria-label="open"
                     buttonRef={
                       Object {
@@ -447,8 +447,8 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         </WithStyles(ForwardRef(ButtonBase))>
                       </ForwardRef(Button)>
                     </WithStyles(ForwardRef(Button))>
-                  </HvButton>
-                </WithStyles(HvButton)>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
               </div>
             </div>
           </ClickAwayListener>
@@ -519,7 +519,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                 className="HvVerticalNavigationVerticalContainer-anchorBar"
                 id="sample3-container-anchor-bar"
               >
-                <WithStyles(HvButton)
+                <WithStyles(ForwardRef)
                   aria-label="open"
                   buttonRef={
                     Object {
@@ -560,7 +560,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                   id="sample3-container-hamburger-button"
                   onClick={[Function]}
                 >
-                  <HvButton
+                  <ForwardRef
                     aria-label="open"
                     buttonRef={
                       Object {
@@ -906,8 +906,8 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                         </WithStyles(ForwardRef(ButtonBase))>
                       </ForwardRef(Button)>
                     </WithStyles(ForwardRef(Button))>
-                  </HvButton>
-                </WithStyles(HvButton)>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
               </div>
             </div>
           </ClickAwayListener>
