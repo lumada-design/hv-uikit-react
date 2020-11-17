@@ -18,7 +18,6 @@ const styles = (theme) => ({
   },
   show: {
     display: "flex",
-    float: "left",
   },
   hideText: {
     // display none or visibility hidden prevents

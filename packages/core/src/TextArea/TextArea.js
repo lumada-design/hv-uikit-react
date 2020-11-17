@@ -357,7 +357,7 @@ const HvTextArea = (props) => {
       />
 
       {canShowError && (
-        <HvWarningText id={setId(elementId, "error")} disableBorder>
+        <HvWarningText id={setId(elementId, "error")} className={classes.error} disableBorder>
           {validationMessage}
         </HvWarningText>
       )}
@@ -421,6 +421,10 @@ HvTextArea.propTypes = {
      * Style applied on the character counter.
      */
     characterCounter: PropTypes.string,
+    /**
+     * Styles applied to the error area.
+     */
+    error: PropTypes.string,
   }).isRequired,
 
   /**

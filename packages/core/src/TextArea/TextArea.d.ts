@@ -16,7 +16,8 @@ export type HvTextAreaClassKey =
   | "labelContainer"
   | "label"
   | "description"
-  | "characterCounter";
+  | "characterCounter"
+  | "error";
 
 export interface HvTextAreaProps
   extends StandardProps<HvBaseInputProps, HvTextAreaClassKey, "onChange" | "onBlur"> {
