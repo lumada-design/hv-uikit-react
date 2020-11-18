@@ -37,8 +37,6 @@ const HvFormElement = (props) => {
 
     status = "standBy",
 
-    locale = "en-US",
-
     ...others
   } = props;
 
@@ -52,9 +50,8 @@ const HvFormElement = (props) => {
       elementDisabled: disabled,
       elementRequired: required,
       elementReadOnly: readOnly,
-      elementLocale: locale,
     }),
-    [disabled, elementId, locale, name, readOnly, required, status]
+    [disabled, elementId, name, readOnly, required, status]
   );
 
   const descriptors = useMemo(() => findDescriptors(children), [children]);
@@ -156,13 +153,6 @@ HvFormElement.propTypes = {
    * The callback fired when the value changes.
    */
   onChange: PropTypes.func,
-
-  /**
-   * @ignore
-   *
-   * Locale to be used by the calendar.
-   */
-  locale: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvFormElement" })(HvFormElement);

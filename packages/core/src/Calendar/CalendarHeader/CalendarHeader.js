@@ -34,7 +34,7 @@ const HvCalendarHeader = ({
   onFocus,
   ...others
 }) => {
-  const { elementId, elementLocale } = useContext(HvFormElementContext);
+  const { elementId } = useContext(HvFormElementContext);
   const elementValue = useContext(HvFormElementValueContext);
   const { label } = useContext(HvFormElementDescriptorsContext);
 
@@ -48,7 +48,7 @@ const HvCalendarHeader = ({
   const [weekdayDisplay, setWeekdayDisplay] = useState("");
 
   const localId = id ?? setId(elementId, "calendarHeader");
-  const locale = localeProp ?? elementLocale ?? "en";
+  const locale = localeProp;
 
   const inputValue = editedValue ?? displayValue;
   const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");
@@ -177,10 +177,11 @@ HvCalendarHeader.propTypes = {
     PropTypes.string,
     PropTypes.shape({ startDate: PropTypes.instanceOf(Date), endDate: PropTypes.instanceOf(Date) }),
   ]),
+
   /**
    * Locale to be used by the calendar.
    */
-  locale: PropTypes.string,
+  locale: PropTypes.string.isRequired,
   /**
    * Callback to define the input date.
    */

@@ -24,13 +24,13 @@ const HvCalendar = ({
   onVisibleDateChange,
   ...others
 }) => {
-  const { elementId, elementLocale } = useContext(HvFormElementContext);
+  const { elementId } = useContext(HvFormElementContext);
   const elementValue = useContext(HvFormElementValueContext);
   const localValue = value ?? elementValue;
   const localId = id ?? setId(elementId, "single-calendar");
   const rangeMode = isRange(localValue);
   const rightCalendarId = setId(localId, "single-calendar-right");
-  const localLocale = locale ?? elementLocale;
+  const localLocale = locale;
   const clampedMonth = visibleMonth % 13 > 0 ? visibleMonth % 13 : 1;
 
   const singleCalendar = (
@@ -106,8 +106,10 @@ HvCalendar.propTypes = {
    */
   id: PropTypes.string,
   /**
-   * Locale to be used by the calendar.
+   * The calendar locale. If undefined, it uses calendar default
+   *
    */
+  // locale: deprecatedPropType(PropTypes.string, "instead pass a different locale via the Provider"),
   locale: PropTypes.string,
   /**
    * Date that the calendar would show.

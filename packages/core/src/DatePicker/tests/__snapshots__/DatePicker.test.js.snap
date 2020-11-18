@@ -80,6 +80,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
           <div
             className="HvDatePicker-root HvFormElement-root"
             id="hv-date-picker-39"
+            locale="en-US"
           >
             <WithStyles(HvBaseDropdown)
               adornment={
@@ -445,6 +446,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
           <div
             className="HvDatePicker-root HvFormElement-root"
             id="testingDatePicker"
+            locale="en-US"
           >
             <WithStyles(HvBaseDropdown)
               adornment={
@@ -749,7 +751,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
         className="HvDatePicker-root"
         disabled={false}
         id="hv-date-picker-5"
-        locale="en"
+        locale="en-US"
         required={false}
         status="standBy"
       >
@@ -762,13 +764,14 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
           }
           disabled={false}
           id="hv-date-picker-5"
-          locale="en"
+          locale="en-US"
           required={false}
           status="standBy"
         >
           <div
             className="HvDatePicker-root HvFormElement-root"
             id="hv-date-picker-5"
+            locale="en-US"
           >
             <WithStyles(HvBaseDropdown)
               adornment={

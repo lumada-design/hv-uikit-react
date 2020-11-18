@@ -19,9 +19,10 @@ import {
 } from "..";
 import styles from "./styles";
 import withId from "../withId";
-import { DEFAULT_LOCALE, isDate } from "../Calendar/utils";
-import { getDateLabel, isVisibleDate, validateLocale } from "./utils";
+import { isDate } from "../Calendar/utils";
+import { getDateLabel, isVisibleDate } from "./utils";
 import useVisibleDate from "./useVisibleDate";
+import useLocale from "../Provider/useLocale";
 
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
@@ -65,7 +66,7 @@ const HvDatePicker = (props) => {
     rangeMode = false,
     startAdornment,
     horizontalPlacement = "right",
-    locale: localeProp = DEFAULT_LOCALE,
+    locale: localeProp,
     showActions = false,
     disablePortal = true,
     escapeWithReference = true,
@@ -80,7 +81,10 @@ const HvDatePicker = (props) => {
 
   const [validationMessage] = useControlled(statusMessage, "Required");
 
-  const [locale, setLocale] = useState(validateLocale(localeProp));
+  const localeFromProvider = useLocale();
+
+  const locale = localeProp || localeFromProvider;
+
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const [startDate, setStartDate, rollbackStartDate] = useSavedState(
@@ -94,10 +98,6 @@ const HvDatePicker = (props) => {
     setEndDate(endValue, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, startValue, endValue, rangeMode]);
-
-  useEffect(() => {
-    setLocale(validateLocale(localeProp));
-  }, [localeProp]);
 
   useEffect(() => {
     if (!startDate || isVisibleDate(startDate, visibleDate)) return;
@@ -298,6 +298,7 @@ const HvDatePicker = (props) => {
           onChange={handleDateChange}
           onInputChange={handleInputDateChange}
           onVisibleDateChange={onVisibleDateChange}
+          locale={locale}
           {...visibleDate}
         />
         {(rangeMode || showActions) && renderActions()}
@@ -459,6 +460,7 @@ HvDatePicker.propTypes = {
    * The calendar locale. If undefined, it uses calendar default
    */
   locale: PropTypes.string,
+
   /**
    * Controls if actions buttons are visible at the calendar.
    */
