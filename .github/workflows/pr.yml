@@ -267,7 +267,7 @@ jobs:
     name: Notify End
     needs: [Static-Checks, Github-Deployment, A11Y-Tests, Robot]
     if: always()
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     steps:
       # delete artifact since it was published to gh-pages
@@ -279,7 +279,7 @@ jobs:
 
       - name: generate conclusion color
         id: conclusion_color
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
