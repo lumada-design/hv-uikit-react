@@ -184,13 +184,13 @@ jobs:
     name: Notify End
     needs: [Static-Checks, Build-Documentation, Robot]
     if: always()
-    runs-on: [self-hosted, Linux]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: technote-space/workflow-conclusion-action@v1
       - name: generate conclusion color
         id: conclusion_color
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
