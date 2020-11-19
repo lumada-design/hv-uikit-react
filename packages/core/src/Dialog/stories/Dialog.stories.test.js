@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import {
   Main,
   CustomContent,
@@ -25,6 +25,15 @@ export default {
 // __________________________________
 // Extended applitools test scenarios
 
+const openDialog = async (bIndex = 0) => {
+  fireEvent.click(screen.getAllByRole("button")[bIndex]);
+
+  const dialog = await waitFor(() => screen.getByRole("dialog"));
+
+  // extra buffer to allow popper layout
+  return new Promise((resolve) => setTimeout(() => resolve(dialog), 1000));
+};
+
 // test scenario, dialog open
 export const DialogOpened = () => Main();
 
@@ -32,8 +41,7 @@ DialogOpened.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("heading", { name: /switch model view\?/i }));
+        return openDialog();
       },
     },
   },
@@ -46,8 +54,7 @@ TableOpened.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Table"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog(0);
       },
     },
   },
@@ -60,8 +67,7 @@ inputsOpened.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Inputs"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog(1);
       },
     },
   },
@@ -74,8 +80,7 @@ sNoRename.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog();
       },
     },
   },
@@ -88,8 +93,7 @@ sDeleteConfirmation.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog();
       },
     },
   },
@@ -102,8 +106,7 @@ sRemoveSchedule.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog();
       },
     },
   },
@@ -116,8 +119,7 @@ sAccessibility.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog();
       },
     },
   },
@@ -130,8 +132,7 @@ sCustomIcon.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Custom icon"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog();
       },
     },
   },
@@ -144,8 +145,7 @@ sTextAndSemanticNoIcon.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("No icon"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog(0);
       },
     },
   },
@@ -158,8 +158,7 @@ sTextAndSemanticWarning.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Warning"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog(1);
       },
     },
   },
@@ -172,8 +171,7 @@ sTextAndSemanticInfo.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Info"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog(2);
       },
     },
   },
@@ -186,8 +184,7 @@ sTextAndSemanticError.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByText("Error"));
-        return wait(() => screen.getByRole("dialog"));
+        return openDialog(3);
       },
     },
   },

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React from "react";
 
 import { HvButton, HvDropDownMenu } from "../..";
@@ -82,6 +82,15 @@ A11YOpen.story = {
 // __________________________________
 // Extended applitools test scenarios
 
+const openMenu = async () => {
+  fireEvent.click(screen.getByRole("button"));
+
+  const menu = await waitFor(() => screen.getByRole("menu"));
+
+  // extra buffer to allow popper layout
+  return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
+};
+
 // test scenario, With Icons And Actions opened
 export const sWithIconsAndActions = () => WithIconsAndActions();
 
@@ -89,8 +98,7 @@ sWithIconsAndActions.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-3/i }));
-        return wait(() => screen.getByText("Label 3"));
+        return openMenu();
       },
     },
   },
@@ -103,8 +111,7 @@ sDisabledItems.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-disableditems/i }));
-        return wait(() => screen.getByText("Label 3"));
+        return openMenu();
       },
     },
   },

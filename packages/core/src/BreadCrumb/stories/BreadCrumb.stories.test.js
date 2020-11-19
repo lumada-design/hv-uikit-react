@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import { LimitedToTwoPaths, WithURLLimited } from "./BreadCrumb.stories";
 
 export default {
@@ -16,6 +16,15 @@ export default {
 // __________________________________
 // Extended applitools test scenarios
 
+const openMenu = async () => {
+  fireEvent.click(screen.getByRole("button"));
+
+  const menu = await waitFor(() => screen.getByRole("menu"));
+
+  // extra buffer to allow popper layout
+  return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
+};
+
 // test scenario, drop/open hidden breadCrumb items
 export const LimitedToTwoPathsOpened = () => LimitedToTwoPaths();
 
@@ -23,8 +32,7 @@ LimitedToTwoPathsOpened.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-        return wait(() => screen.getByText("Label 7"));
+        return openMenu();
       },
     },
   },
@@ -37,8 +45,7 @@ WithURLLimitedOpened.story = {
   parameters: {
     eyes: {
       runBefore() {
-        fireEvent.click(screen.getByRole("button"));
-        return wait(() => screen.getByText("DesignSystem"));
+        return openMenu();
       },
     },
   },
