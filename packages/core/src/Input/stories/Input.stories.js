@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import isEmpty from "lodash/isEmpty";
 import { makeStyles } from "@material-ui/core";
 import { Map } from "@hv/uikit-react-icons";
-import { HvButton, HvInput, HvBaseInput } from "../..";
+import { HvButton, HvInput, HvBaseInput, HvTypography, HvLabel, HvInfoMessage } from "../..";
 import countryNamesArray from "./countries";
 
 export default {
@@ -173,7 +173,7 @@ InvalidState.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the externalWarningTextOverride property, or else it will always default to labels.warningText. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
+        "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
     },
     pa11y: {
       ignore: [
@@ -398,6 +398,82 @@ Suggestion.story = {
   parameters: {
     docs: {
       storyDescription: "Input with suggestion list.",
+    },
+  },
+};
+
+export const PrefixAndSuffix = () => {
+  const validationMessages = {
+    error: "Invalid subdomain",
+  };
+
+  const validateSubdomain = (value) => {
+    const re = /[^a-zA-Z0-9-]/;
+
+    return !re.test(value);
+  };
+
+  const useStyles = makeStyles((theme) => ({
+    controlContainer: {
+      width: "100%",
+      maxWidth: 400,
+    },
+
+    labelContainer: {
+      display: "flex",
+      alignItems: "flex-start",
+    },
+    label: {
+      paddingBottom: "6px",
+    },
+
+    inputContainer: {
+      width: "100%",
+      display: "flex",
+      alignItems: "baseline",
+
+      "& > *": {
+        marginLeft: theme.hv.spacing.xs,
+      },
+      "& > *:first-child": {
+        marginLeft: 0,
+      },
+    },
+    input: {
+      flexGrow: 1,
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <div className={classes.controlContainer}>
+      <div className={classes.labelContainer}>
+        <HvLabel label="Subdomain" htmlFor="subdomain-input" className={classes.label} />
+        <HvInfoMessage id="subdomain-description">Choose your application subdomain</HvInfoMessage>
+      </div>
+      <div className={classes.inputContainer}>
+        <HvTypography noWrap>https://</HvTypography>
+        <HvInput
+          id="subdomain"
+          name="subdomain"
+          aria-describedby="subdomain-description"
+          placeholder="Enter sub-domain"
+          validation={validateSubdomain}
+          validationMessages={validationMessages}
+          className={classes.input}
+        />
+        <HvTypography noWrap>.lumada.org</HvTypography>
+      </div>
+    </div>
+  );
+};
+
+PrefixAndSuffix.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label and description.",
     },
   },
 };

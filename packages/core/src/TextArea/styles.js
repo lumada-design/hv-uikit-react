@@ -41,6 +41,9 @@ const styles = {
     textAlign: "right",
     marginBottom: "6px",
   },
+  error: {
+    float: "left",
+  },
 };
 
 export default styles;
