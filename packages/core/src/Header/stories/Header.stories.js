@@ -107,11 +107,9 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    eyes: {
-      // waiting until all elements are rendered (issue #1794)
-      waitBeforeScreenshot: ".HvHeaderMenuBar-active",
-    },
+Main.parameters = {
+  eyes: {
+    // waiting until all elements are rendered (issue #1794)
+    waitBeforeScreenshot: ".HvHeaderMenuBar-active",
   },
 };

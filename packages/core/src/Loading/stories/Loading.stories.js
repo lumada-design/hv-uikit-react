@@ -154,11 +154,9 @@ export const WithChildren = () => {
   );
 };
 
-WithChildren.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "If a children is passed the component wraps it, creating a overlay. You can control whether it's hidden with the `hidden` prop.",
-    },
+WithChildren.parameters = {
+  docs: {
+    description:
+      "If a children is passed the component wraps it, creating a overlay. You can control whether it's hidden with the `hidden` prop.",
   },
 };

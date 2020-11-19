@@ -14,6 +14,10 @@ export default {
 };
 
 export const Main = () => {
+  return <HvPagination />;
+};
+
+export const ControlledSample = () => {
   const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
   const data = [...Array(64).keys()];
 
@@ -63,4 +67,10 @@ export const Main = () => {
       />
     </>
   );
+};
+
+ControlledSample.parameters = {
+  docs: {
+    description: { story: "Pagination controlling a list of elements" },
+  },
 };

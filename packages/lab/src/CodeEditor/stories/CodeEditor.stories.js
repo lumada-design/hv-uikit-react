@@ -51,10 +51,8 @@ export const YamlEditor = () => {
   );
 };
 
-YamlEditor.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Yaml editor",
-    },
+YamlEditor.parameters = {
+  docs: {
+    description: { story: "Yaml editor" },
   },
 };

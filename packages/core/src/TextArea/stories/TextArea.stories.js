@@ -36,11 +36,9 @@ export const LimitedWithCustomLabels = () => {
   );
 };
 
-LimitedWithCustomLabels.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Text area char count with a custom labels.",
-    },
+LimitedWithCustomLabels.parameters = {
+  docs: {
+    description: { story: "Text area char count with a custom labels." },
   },
 };
 
@@ -73,10 +71,10 @@ export const LimitedBlocking = () => {
   );
 };
 
-LimitedBlocking.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+LimitedBlocking.parameters = {
+  docs: {
+    description: {
+      story:
         "Text area that limits the quantity of character that can be introduced in the text area.",
     },
   },
@@ -93,11 +91,9 @@ export const Resizable = () => (
   />
 );
 
-Resizable.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Text area that allow resizing.",
-    },
+Resizable.parameters = {
+  docs: {
+    story: "Text area that allow resizing.",
   },
 };
 
@@ -112,11 +108,9 @@ export const Disabled = () => (
   />
 );
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Text area that does not allows any interaction.",
-    },
+Disabled.parameters = {
+  docs: {
+    description: { story: "Text area that does not allows any interaction." },
   },
 };
 
@@ -130,11 +124,9 @@ export const ReadOnly = () => (
   />
 );
 
-ReadOnly.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Not editable text area.",
-    },
+ReadOnly.parameters = {
+  docs: {
+    story: "Not editable text area.",
   },
 };
 
@@ -142,12 +134,10 @@ export const WithoutLabel = () => (
   <HvTextArea aria-label="The label" placeholder="Enter value" rows={5} />
 );
 
-WithoutLabel.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Text area without label. The accessible name is provided via the `aria-label` property.",
-    },
+WithoutLabel.parameters = {
+  docs: {
+    story:
+      "Text area without label. The accessible name is provided via the `aria-label` property.",
   },
 };
 
@@ -172,10 +162,8 @@ export const CustomValidation = () => {
   );
 };
 
-CustomValidation.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Text area value that can't contain numbers.",
-    },
+CustomValidation.parameters = {
+  docs: {
+    description: { story: "Text area value that can't contain numbers." },
   },
 };

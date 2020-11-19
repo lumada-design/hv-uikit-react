@@ -35,11 +35,9 @@ export const SingleSelectedValue = () => (
   />
 );
 
-SingleSelectedValue.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+SingleSelectedValue.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -67,11 +65,9 @@ export const LongLabel = () => (
   />
 );
 
-LongLabel.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+LongLabel.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -91,11 +87,9 @@ export const General = () => (
   />
 );
 
-General.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+General.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -113,11 +107,9 @@ export const SingleSelection = () => (
   />
 );
 
-SingleSelection.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+SingleSelection.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -137,11 +129,9 @@ export const MultiSelection = () => (
   />
 );
 
-MultiSelection.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+MultiSelection.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -160,11 +150,9 @@ export const MultiSelectionNoSearch = () => (
   />
 );
 
-MultiSelectionNoSearch.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+MultiSelectionNoSearch.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -182,11 +170,9 @@ export const SingleSelectionWithSearch = () => (
   />
 );
 
-SingleSelectionWithSearch.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+SingleSelectionWithSearch.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -206,11 +192,9 @@ export const SingleSelectionNoDefault = () => (
   />
 );
 
-SingleSelectionNoDefault.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+SingleSelectionNoDefault.parameters = {
+  docs: {
+    disable: true,
   },
 };
 
@@ -263,10 +247,8 @@ export const DifferentSizeAndPlacements = () => {
   );
 };
 
-DifferentSizeAndPlacements.story = {
-  parameters: {
-    docs: {
-      disable: true,
-    },
+DifferentSizeAndPlacements.parameters = {
+  docs: {
+    disable: true,
   },
 };

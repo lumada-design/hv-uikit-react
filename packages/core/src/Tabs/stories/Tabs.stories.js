@@ -27,10 +27,8 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
-  },
+Main.parameters = {
+  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
 };
 
 export const FullWidth = () => {
@@ -46,12 +44,9 @@ export const FullWidth = () => {
   );
 };
 
-FullWidth.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Tabs occupying the full width of the available space",
-    },
-    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+FullWidth.parameters = {
+  docs: {
+    description: { story: "Tabs occupying the full width of the available space" },
   },
 };
 
@@ -79,13 +74,11 @@ export const ContentChanging = () => {
   );
 };
 
-ContentChanging.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Tabs changing the content to display according to the selected tab",
-    },
-    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+ContentChanging.parameters = {
+  docs: {
+    description: { story: "Tabs changing the content to display according to the selected tab" },
   },
+  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
 };
 
 export const TextSize = () => {
@@ -108,10 +101,8 @@ export const TextSize = () => {
   );
 };
 
-TextSize.story = {
-  parameters: {
-    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
-  },
+TextSize.parameters = {
+  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
 };
 
 export const CenteredTabs = () => {
@@ -135,10 +126,8 @@ export const CenteredTabs = () => {
   );
 };
 
-CenteredTabs.story = {
-  parameters: {
-    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
-  },
+CenteredTabs.parameters = {
+  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
 };
 
 export const WithBadges = () => {
@@ -168,11 +157,9 @@ export const WithBadges = () => {
   return <Sample />;
 };
 
-WithBadges.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Badges applied to Tabs component.",
-    },
-    eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+WithBadges.parameters = {
+  docs: {
+    description: { story: "Badges applied to Tabs component." },
   },
+  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
 };

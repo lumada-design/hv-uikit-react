@@ -47,10 +47,10 @@ export const WarningTextWithStatus = () => {
   );
 };
 
-WarningTextWithStatus.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+WarningTextWithStatus.parameters = {
+  docs: {
+    description: {
+      story:
         "Warning text showcasing the ability to notify the user and to react to the form status.",
     },
   },
@@ -86,19 +86,17 @@ export const DisabledWarningText = () => {
   );
 };
 
-DisabledWarningText.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Helper text showcasing the disabled state.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+DisabledWarningText.parameters = {
+  docs: {
+    description: { story: "Helper text showcasing the disabled state." },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };

@@ -1,9 +1,8 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+
 import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
 
-import React from "react";
 import { HvList, HvTypography } from "../..";
 
 const styles = (theme) => ({
@@ -11,7 +10,7 @@ const styles = (theme) => ({
     display: "inline-block",
     minWidth: 200,
     maxWidth: 260,
-    padding: theme.hv.spacing.sm,
+    padding: `${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
   },
 });
@@ -21,13 +20,12 @@ const ListContainer = withStyles(styles)(({ classes, children }) => (
 ));
 
 export default {
-  title: "Tests/List",
+  title: "Patterns/List",
   parameters: {
-    docs: {
-      disable: true,
-      page: null,
-    },
+    componentSubtitle: null,
+    usage: "import { HvList } from '@hv/uikit-react-core/dist'",
   },
+  component: HvList,
   decorators: [(storyFn) => <ListContainer>{storyFn()}</ListContainer>],
 };
 
@@ -87,11 +85,12 @@ export const WithNavigationIcons = () => (
 export const SingleSelection = () => (
   <HvList
     id="list"
+    selectDefault
     hasTooltips
     condensed
     aria-label="Single Selection List Title"
     values={[
-      { label: "Share", selected: true },
+      { label: "Share" },
       { label: "Edit" },
       { label: "Remove" },
       { label: "Delete" },
@@ -118,6 +117,7 @@ export const SingleSelectionWithIcon = () => {
     <HvList
       id="list"
       style={{ marginLeft: -10 }}
+      selectDefault
       aria-label="Single Selection List with Left Icons Title"
       values={data}
     />
@@ -127,13 +127,14 @@ export const SingleSelectionWithIcon = () => {
 export const SingleSelectionWithSelectors = () => (
   <HvList
     id="list"
+    selectDefault
     useSelector
     condensed
     hasTooltips
     aria-label="Single Selection List with radio"
     values={[
       { label: "98001, Store Manager" },
-      { label: "98002, Store Manager", selected: true },
+      { label: "98002, Store Manager" },
       { label: "98003, Store Manager of district" },
       { label: "98004, Store Manager", disabled: true },
       { label: "98005, Store Manager" },
@@ -143,7 +144,7 @@ export const SingleSelectionWithSelectors = () => (
 
 SingleSelectionWithSelectors.parameters = {
   docs: {
-    description: "Selectable List that uses single-selection radio button selectors.",
+    description: { story: "Selectable List that uses single-selection radio button selectors." },
   },
 };
 
@@ -167,7 +168,7 @@ export const MultiSelectionWithSelectors = () => (
 
 MultiSelectionWithSelectors.parameters = {
   docs: {
-    description: "Selectable List that uses multiple-selection checkboxes selectors.",
+    description: { story: "Selectable List that uses multiple-selection checkboxes selectors." },
   },
 };
 
@@ -191,84 +192,8 @@ export const MultiSelectionWithSelectAll = () => (
 
 MultiSelectionWithSelectAll.parameters = {
   docs: {
-    description: "List that has multi selection with selectors and a select all checkbox.",
-  },
-};
-
-// __________________________________
-// Extended robot test scenarios
-
-export const TestListNotSelected = () => (
-  <>
-    <button type="button" id="anchorButton" tabIndex={0}>
-      Anchor
-    </button>
-    <HvList
-      id="list"
-      aria-label="Test List Not Selected"
-      hasTooltips
-      values={[
-        { label: "Share" },
-        { label: "Edit" },
-        { label: "Remove" },
-        { label: "Delete" },
-        { label: "Updateaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
-      ]}
-    />
-  </>
-);
-
-export const TestListFocusableSelection = () => (
-  <>
-    <button type="button" id="anchorButton" tabIndex={0}>
-      Anchor
-    </button>
-    <HvList
-      id="list"
-      aria-label="Test List Focusable Selection"
-      hasTooltips
-      values={[
-        { label: "Share" },
-        { label: "Edit" },
-        { label: "Remove", selected: true },
-        { label: "Delete" },
-        { label: "Updateaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
-      ]}
-    />
-  </>
-);
-
-export const TestListSelectableDisabled = () => (
-  <>
-    <button type="button" id="anchorButton" tabIndex={0}>
-      Anchor
-    </button>
-    <HvList
-      id="list"
-      selectable={false}
-      values={[
-        { label: "Share", disabled: true },
-        { label: "Edit" },
-        { label: "Remove", path: "https://www.hitachivantara.com" },
-        { label: "Delete" },
-        { label: "Update", path: "https://www.hitachivantara.com" },
-      ]}
-    />
-  </>
-);
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, Multi Selection With Select All selecting some items
-export const IconsOpened = () => MultiSelectionWithSelectAll();
-
-IconsOpened.parameters = {
-  eyes: {
-    runBefore() {
-      fireEvent.click(screen.getByRole("checkbox", { name: /bergen city/i }));
-      fireEvent.click(screen.getByText("Boston of the Seven Seas"));
-      return waitFor(() => screen.getByRole("checkbox", { name: /3 of 5/i }));
+    description: {
+      story: "List that has multi selection with selectors and a select all checkbox.",
     },
   },
 };

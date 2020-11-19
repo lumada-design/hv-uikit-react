@@ -91,18 +91,16 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label",
-      ],
-    },
+Main.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // TODO: BUG Properties missing on production:
+      // https://github.com/lumada-design/hv-uikit-react/issues/1703
+      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      "label",
+    ],
   },
 };
 
@@ -176,18 +174,16 @@ export const ServerSideSuggestions = () => {
   );
 };
 
-ServerSideSuggestions.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label",
-      ],
-    },
+ServerSideSuggestions.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // TODO: BUG Properties missing on production:
+      // https://github.com/lumada-design/hv-uikit-react/issues/1703
+      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      "label",
+    ],
   },
 };
 
@@ -259,18 +255,16 @@ export const OpenWithDownArrow = () => {
   );
 };
 
-OpenWithDownArrow.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label",
-      ],
-    },
+OpenWithDownArrow.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // TODO: BUG Properties missing on production:
+      // https://github.com/lumada-design/hv-uikit-react/issues/1703
+      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      "label",
+    ],
   },
 };
 
@@ -373,17 +367,15 @@ export const WithHighlighter = () => {
   );
 };
 
-WithHighlighter.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label",
-      ],
-    },
+WithHighlighter.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // TODO: BUG Properties missing on production:
+      // https://github.com/lumada-design/hv-uikit-react/issues/1703
+      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+      "label",
+    ],
   },
 };

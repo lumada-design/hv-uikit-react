@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React from "react";
 
 import { WithActions } from "./BulkActions.stories";
@@ -27,13 +27,11 @@ export default {
 // test scenario, selected
 export const selected = () => <WithActions />;
 
-selected.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("All"));
-        return wait(() => screen.getByText("8 of 8 items"));
-      },
+selected.parameters = {
+  eyes: {
+    runBefore() {
+      fireEvent.click(screen.getByText("All"));
+      return waitFor(() => screen.getByText("8 of 8 items"));
     },
   },
 };
@@ -41,13 +39,11 @@ selected.story = {
 // test scenario, indeterminate status
 export const indeterminate = () => <WithActions />;
 
-indeterminate.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Value 3"));
-        return wait(() => screen.getByText("1 of 8 items"));
-      },
+indeterminate.parameters = {
+  eyes: {
+    runBefore() {
+      fireEvent.click(screen.getByText("Value 3"));
+      return waitFor(() => screen.getByText("1 of 8 items"));
     },
   },
 };

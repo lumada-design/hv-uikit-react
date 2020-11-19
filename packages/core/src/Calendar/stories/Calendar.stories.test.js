@@ -94,10 +94,8 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+Main.parameters = {
+  eyes: { include: false },
 };
 
 export const SingleDate = () => {
@@ -156,10 +154,8 @@ export const SingleDate = () => {
   );
 };
 
-SingleDate.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+SingleDate.parameters = {
+  eyes: { include: false },
 };
 
 export const Localized = () => {
@@ -229,12 +225,12 @@ export const Localized = () => {
   );
 };
 
-Localized.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Localized.parameters = {
+  docs: {
+    description: {
+      story:
         "Warning: Changing this sample locale changes the locale for all samples. Locales should be loaded by the user.",
     },
-    eyes: { include: false },
   },
+  eyes: { include: false },
 };

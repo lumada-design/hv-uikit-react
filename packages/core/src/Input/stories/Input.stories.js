@@ -36,20 +36,18 @@ export const Disabled = () => (
   />
 );
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input sample that does not allow interactions.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Disabled.parameters = {
+  docs: {
+    description: "Input sample that does not allow interactions.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -63,11 +61,9 @@ export const ReadOnly = () => (
   />
 );
 
-ReadOnly.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Not editable input.",
-    },
+ReadOnly.parameters = {
+  docs: {
+    description: "Not editable input.",
   },
 };
 
@@ -75,12 +71,10 @@ export const WithoutLabel = () => (
   <HvInput aria-label="First name" placeholder="Insert first name" />
 );
 
-WithoutLabel.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Input without label. The accessible name is provided via the `aria-label` property.",
-    },
+WithoutLabel.parameters = {
+  docs: {
+    description:
+      "Input without label. The accessible name is provided via the `aria-label` property.",
   },
 };
 
@@ -93,11 +87,9 @@ export const Required = () => (
   />
 );
 
-Required.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Required input value. Clear the input to show default error message.",
-    },
+Required.parameters = {
+  docs: {
+    description: "Required input value. Clear the input to show default error message.",
   },
 };
 
@@ -139,11 +131,9 @@ export const ControlledWithButtons = () => {
   );
 };
 
-ControlledWithButtons.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Changing the input value from outside the input component.",
-    },
+ControlledWithButtons.parameters = {
+  docs: {
+    description: "Changing the input value from outside the input component.",
   },
 };
 
@@ -169,21 +159,19 @@ export const InvalidState = () => {
   );
 };
 
-InvalidState.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // aria-errormessage value is being reported as invalid because axe-core forces
-        // the referenced error element to have aria-live="assertive", when the spec does not
-        // https://github.com/dequelabs/axe-core/pull/2590
-        "aria-valid-attr-value",
-      ],
-    },
+InvalidState.parameters = {
+  docs: {
+    description:
+      "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
   },
 };
 
@@ -209,11 +197,10 @@ export const NumericRequired = () => {
   );
 };
 
-NumericRequired.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Required Input that only accepts numbers and limits the maximum length to 5.",
+NumericRequired.parameters = {
+  docs: {
+    description: {
+      story: "Required Input that only accepts numbers and limits the maximum length to 5.",
     },
   },
 };
@@ -236,11 +223,9 @@ export const Email = () => {
   );
 };
 
-Email.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Required Input that only accepts valid emails.",
-    },
+Email.parameters = {
+  docs: {
+    description: { story: "Required Input that only accepts valid emails." },
   },
 };
 
@@ -268,10 +253,10 @@ export const Password = () => {
   );
 };
 
-Password.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Password.parameters = {
+  docs: {
+    description: {
+      story:
         "Password required input that only accepts the value `password` and limits the value between 6 or 12 characters.",
     },
   },
@@ -301,12 +286,10 @@ export const CustomValidation = () => {
   );
 };
 
-CustomValidation.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Input with a custom validation function, it validates if the input contains the value `hello`.",
-    },
+CustomValidation.parameters = {
+  docs: {
+    description:
+      "Input with a custom validation function, it validates if the input contains the value `hello`.",
   },
 };
 
@@ -331,11 +314,9 @@ export const EventDemonstration = () => {
   );
 };
 
-EventDemonstration.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input with all events functions enabled.",
-    },
+EventDemonstration.parameters = {
+  docs: {
+    description: { story: "Input with all events functions enabled." },
   },
 };
 
@@ -352,12 +333,10 @@ export const CustomProps = () => (
   />
 );
 
-CustomProps.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Using the input props to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
-    },
+CustomProps.parameters = {
+  docs: {
+    description:
+      "Using the input props to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
   },
 };
 
@@ -394,11 +373,9 @@ export const Suggestion = () => {
   );
 };
 
-Suggestion.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Input with suggestion list.",
-    },
+Suggestion.parameters = {
+  docs: {
+    description: "Input with suggestion list.",
   },
 };
 
@@ -469,11 +446,9 @@ export const PrefixAndSuffix = () => {
   );
 };
 
-PrefixAndSuffix.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label and description.",
-    },
+PrefixAndSuffix.parameters = {
+  docs: {
+    description:
+      "If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label and description.",
   },
 };

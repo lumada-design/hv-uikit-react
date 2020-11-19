@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React from "react";
 
 import { HvButton, HvDropDownMenu } from "../..";
@@ -35,10 +35,8 @@ export const KeyboardNavigation = () => (
   </>
 );
 
-KeyboardNavigation.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+KeyboardNavigation.parameters = {
+  eyes: { include: false },
 };
 
 // __________________________________
@@ -52,10 +50,8 @@ export const A11YClosed = () => (
   />
 );
 
-A11YClosed.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+A11YClosed.parameters = {
+  eyes: { include: false },
 };
 
 export const A11YOpen = () => (
@@ -66,32 +62,36 @@ export const A11YOpen = () => (
   />
 );
 
-A11YOpen.story = {
-  parameters: {
-    pa11y: {
-      actions: [
-        // open menu before testing
-        "click element #dropdownmenu-open-icon-button",
-        "wait for element #dropdownmenu-open-list to be visible",
-      ],
-    },
-    eyes: { include: false },
+A11YOpen.parameters = {
+  pa11y: {
+    actions: [
+      // open menu before testing
+      "click element #dropdownmenu-open-icon-button",
+      "wait for element #dropdownmenu-open-list to be visible",
+    ],
   },
+  eyes: { include: false },
 };
 
 // __________________________________
 // Extended applitools test scenarios
 
+const openMenu = async () => {
+  fireEvent.click(screen.getByRole("button"));
+
+  const menu = await waitFor(() => screen.getByRole("menu"));
+
+  // extra buffer to allow popper layout
+  return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
+};
+
 // test scenario, With Icons And Actions opened
 export const sWithIconsAndActions = () => WithIconsAndActions();
 
-sWithIconsAndActions.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-3/i }));
-        return wait(() => screen.getByText("Label 3"));
-      },
+sWithIconsAndActions.parameters = {
+  eyes: {
+    runBefore() {
+      return openMenu();
     },
   },
 };
@@ -99,13 +99,10 @@ sWithIconsAndActions.story = {
 // test scenario, Disabled Items opened
 export const sDisabledItems = () => DisabledItems();
 
-sDisabledItems.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: /dropdownmenu-disableditems/i }));
-        return wait(() => screen.getByText("Label 3"));
-      },
+sDisabledItems.parameters = {
+  eyes: {
+    runBefore() {
+      return openMenu();
     },
   },
 };

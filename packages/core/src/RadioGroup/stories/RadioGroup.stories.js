@@ -32,11 +32,9 @@ export const Horizontal = () => (
   </HvRadioGroup>
 );
 
-Horizontal.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Layout checkboxes horizontally.",
-    },
+Horizontal.parameters = {
+  docs: {
+    description: "Layout checkboxes horizontally.",
   },
 };
 
@@ -48,20 +46,18 @@ export const Disabled = () => (
   </HvRadioGroup>
 );
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Disabled checkbox group.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Disabled.parameters = {
+  docs: {
+    description: "Disabled checkbox group.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -73,11 +69,9 @@ export const ReadOnly = () => (
   </HvRadioGroup>
 );
 
-ReadOnly.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Not editable checkbox group.",
-    },
+ReadOnly.parameters = {
+  docs: {
+    description: "Not editable checkbox group.",
   },
 };
 
@@ -89,12 +83,10 @@ export const WithoutLabel = () => (
   </HvRadioGroup>
 );
 
-WithoutLabel.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
-    },
+WithoutLabel.parameters = {
+  docs: {
+    description:
+      "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
   },
 };
 
@@ -128,11 +120,9 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Controlled checkbox group.",
-    },
+Controlled.parameters = {
+  docs: {
+    description: "Controlled checkbox group.",
   },
 };
 
@@ -144,16 +134,14 @@ export const ErrorMessage = () => (
   </HvRadioGroup>
 );
 
-ErrorMessage.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // aria-errormessage value is being reported as invalid because axe-core forces
-        // the referenced error element to have aria-live="assertive", when the spec does not
-        // https://github.com/dequelabs/axe-core/pull/2590
-        "aria-valid-attr-value",
-      ],
-    },
+ErrorMessage.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
   },
 };

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import {
   Main,
   CustomContent,
@@ -25,16 +25,22 @@ export default {
 // __________________________________
 // Extended applitools test scenarios
 
+const openDialog = async (bIndex = 0) => {
+  fireEvent.click(screen.getAllByRole("button")[bIndex]);
+
+  const dialog = await waitFor(() => screen.getByRole("dialog"));
+
+  // extra buffer to allow popper layout
+  return new Promise((resolve) => setTimeout(() => resolve(dialog), 1000));
+};
+
 // test scenario, dialog open
 export const DialogOpened = () => Main();
 
-DialogOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("heading", { name: /switch model view\?/i }));
-      },
+DialogOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -42,13 +48,10 @@ DialogOpened.story = {
 // test scenario, dialog with table open
 export const TableOpened = () => CustomContent();
 
-TableOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Table"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+TableOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(0);
     },
   },
 };
@@ -56,13 +59,10 @@ TableOpened.story = {
 // test scenario, dialog with inputs opened
 export const inputsOpened = () => CustomContent();
 
-inputsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Inputs"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+inputsOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(1);
     },
   },
 };
@@ -70,13 +70,10 @@ inputsOpened.story = {
 // open No Rename Dialog
 export const sNoRename = () => NoRename();
 
-sNoRename.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sNoRename.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -84,13 +81,10 @@ sNoRename.story = {
 // open dialog DeleteConfirmation
 export const sDeleteConfirmation = () => DeleteConfirmation();
 
-sDeleteConfirmation.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sDeleteConfirmation.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -98,13 +92,10 @@ sDeleteConfirmation.story = {
 // open dialog DeleteConfirmation
 export const sRemoveSchedule = () => RemoveSchedule();
 
-sRemoveSchedule.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sRemoveSchedule.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -112,13 +103,10 @@ sRemoveSchedule.story = {
 // open dialog DeleteConfirmation
 export const sAccessibility = () => Accessibility();
 
-sAccessibility.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Open dialog"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sAccessibility.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -126,13 +114,10 @@ sAccessibility.story = {
 // open dialog CustomIcon
 export const sCustomIcon = () => CustomIcon();
 
-sCustomIcon.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Custom icon"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sCustomIcon.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -140,13 +125,10 @@ sCustomIcon.story = {
 // open dialog TextAndSemantic no icon
 export const sTextAndSemanticNoIcon = () => TextAndSemantic();
 
-sTextAndSemanticNoIcon.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("No icon"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sTextAndSemanticNoIcon.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(0);
     },
   },
 };
@@ -154,13 +136,10 @@ sTextAndSemanticNoIcon.story = {
 // open dialog TextAndSemantic Warning
 export const sTextAndSemanticWarning = () => TextAndSemantic();
 
-sTextAndSemanticWarning.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Warning"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sTextAndSemanticWarning.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(1);
     },
   },
 };
@@ -168,13 +147,10 @@ sTextAndSemanticWarning.story = {
 // open dialog TextAndSemantic info
 export const sTextAndSemanticInfo = () => TextAndSemantic();
 
-sTextAndSemanticInfo.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Info"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sTextAndSemanticInfo.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(2);
     },
   },
 };
@@ -182,13 +158,10 @@ sTextAndSemanticInfo.story = {
 // open dialog TextAndSemantic Error
 export const sTextAndSemanticError = () => TextAndSemantic();
 
-sTextAndSemanticError.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByText("Error"));
-        return wait(() => screen.getByRole("dialog"));
-      },
+sTextAndSemanticError.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(3);
     },
   },
 };

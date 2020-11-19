@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types, no-unused-vars */
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
 
 import { HvActionBar, HvCard, HvCardHeader, HvCardMedia, HvCheckBox, HvSwitch } from "../..";
@@ -52,14 +52,17 @@ export const Controlled = () => {
 // test scenario, card selected and dropdownmenu open
 export const SelectedOpened = () => AllComponents();
 
-SelectedOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("checkbox"));
-        fireEvent.click(screen.getByLabelText("Dropdown menu"));
-        return wait(() => screen.getByText("Delete"));
-      },
+SelectedOpened.parameters = {
+  eyes: {
+    runBefore: async () => {
+      fireEvent.click(screen.getByRole("checkbox"));
+
+      fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
+
+      const menu = await waitFor(() => screen.getByRole("menu"));
+
+      // extra buffer to allow popper layout
+      return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
     },
   },
 };

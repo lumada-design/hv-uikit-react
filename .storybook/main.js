@@ -10,21 +10,17 @@ const iconsPackageBin = path.resolve(__dirname, "../packages/icons/bin");
 
 const excludePaths = [/node_modules/, /dist/];
 
-const excludingTests = !!process.env.EXCLUDE_TEST_STORIES;
-
-const searchPaths = [];
-searchPaths.push("../doc/**/*.stories.@(js|mdx)");
-searchPaths.push("../packages/core/src/**/*.stories.@(js|mdx)");
-searchPaths.push("../packages/lab/src/**/*.stories.@(js|mdx)");
-
-if (!excludingTests) {
-  searchPaths.push("../packages/core/src/**/stories/*.test.@(js|mdx)");
-}
-
 module.exports = {
   // to avoid a manual setup, we must keep the "stories" suffix at least for mdx
   // see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/docspage.md#story-file-names
-  stories: searchPaths,
+  stories: [
+    "../doc/**/*.stories.@(js|mdx)",
+    "../packages/core/src/**/*.stories.@(js|mdx)",
+    ...(!process.env.EXCLUDE_TEST_STORIES
+      ? ["../packages/core/src/**/stories/*.test.@(js|mdx)"]
+      : []),
+    "../packages/lab/src/**/*.stories.js",
+  ],
   addons: [
     "@storybook/addon-actions",
     "@storybook/addon-links",
@@ -34,24 +30,22 @@ module.exports = {
         configureJSX: true,
       },
     },
-    "./.storybook/themes/register",
+    __dirname + "/themes/register",
   ],
 
   webpackFinal: async (config) => {
     const rules = config.module.rules;
 
-    // Fix for https://github.com/storybooks/storybook/issues/3346
-    // 6.0 already have https://github.com/storybookjs/storybook/pull/8822
-    const jsRule = config.module.rules.find((rule) => rule.test.test(".js"));
+    const jsRule = rules.find((rule) => rule.test.test(".js"));
+
     jsRule.include = [__dirname, docFolder, corePackageSrc, labPackageSrc, iconsPackageBin];
     jsRule.exclude = excludePaths;
     const babelLoader = jsRule.use.find(({ loader }) => loader === "babel-loader");
-    babelLoader.options.sourceType = "unambiguous";
+    const overrideJsRule = babelLoader.options.overrides.find((rule) => rule.test.test(".js"));
+    const overrideJsRulePlugins = overrideJsRule.plugins;
 
     // add docgen handlers
-    const babelLoaderPlugins = babelLoader.options.plugins;
-
-    let docgenPlugin = babelLoaderPlugins.find(
+    let docgenPlugin = overrideJsRulePlugins.find(
       (plugin) =>
         plugin.includes("babel-plugin-react-docgen") ||
         (Array.isArray(plugin) &&
@@ -63,8 +57,8 @@ module.exports = {
       const docgenPluginName = docgenPlugin;
       docgenPlugin = [docgenPluginName, { DOC_GEN_COLLECTION_NAME: "STORYBOOK_REACT_CLASSES" }];
 
-      babelLoaderPlugins[
-        babelLoaderPlugins.findIndex((plugin) => plugin.includes("babel-plugin-react-docgen"))
+      overrideJsRulePlugins[
+        overrideJsRulePlugins.findIndex((plugin) => plugin.includes("babel-plugin-react-docgen"))
       ] = docgenPlugin;
     }
 
@@ -136,7 +130,6 @@ module.exports = {
       "@hv/uikit-react-core/dist": corePackageSrc,
       "@hv/uikit-react-lab/dist": labPackageSrc,
       "@hv/uikit-react-icons/dist": iconsPackageBin,
-      "react-hook-form": "react-hook-form/dist/index.ie11",
     };
 
     return config;

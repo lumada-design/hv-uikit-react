@@ -161,11 +161,9 @@ export const AllComponents = () => {
   );
 };
 
-AllComponents.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A Card with header, content, image, and actions.",
-    },
+AllComponents.parameters = {
+  docs: {
+    description: { story: "A card that has all it's component defined." },
   },
 };
 
@@ -230,11 +228,9 @@ export const NoActions = () => {
   );
 };
 
-NoActions.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A Card without any actions.",
-    },
+NoActions.parameters = {
+  docs: {
+    description: { story: "A Card without any actions." },
   },
 };
 
@@ -244,11 +240,9 @@ export const OnlyTitle = () => (
   </HvCard>
 );
 
-OnlyTitle.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A Card that only has a title.",
-    },
+OnlyTitle.parameters = {
+  docs: {
+    description: { story: "A Card that only has a title." },
   },
 };
 
@@ -343,11 +337,9 @@ export const KPICard = () => {
   );
 };
 
-KPICard.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A card sample combined with a kpi as content.",
-    },
+KPICard.parameters = {
+  docs: {
+    description: { story: "A card sample combined with a kpi as content." },
   },
 };
 
@@ -432,11 +424,10 @@ export const Selectable = () => {
   );
 };
 
-Selectable.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "A card sample showcasing the ability to select in the content and click action.",
+Selectable.parameters = {
+  docs: {
+    description: {
+      story: "A card sample showcasing the ability to select in the content and click action.",
     },
   },
 };
@@ -472,10 +463,8 @@ export const SelectableNoFooter = () => {
   );
 };
 
-SelectableNoFooter.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A card sample showcasing the ability to select in the content.",
-    },
+SelectableNoFooter.parameters = {
+  docs: {
+    description: { story: "A card sample showcasing the ability to select in the content." },
   },
 };
