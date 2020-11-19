@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
 
 import { HvTable, HvInput } from "../..";
@@ -32,7 +32,7 @@ ContentExpanded.story = {
     eyes: {
       runBefore() {
         fireEvent.click(screen.getAllByRole("button", { name: /row expander button/i })[2]);
-        return wait(
+        return waitFor(
           () => screen.getAllByRole("table")[4] && document.querySelector("[id|=reactgooglegraph]")
         );
       },
@@ -50,7 +50,7 @@ mixSelection.story = {
         fireEvent.click(screen.getByRole("checkbox", { name: /select-2-select/i }));
         fireEvent.click(screen.getByRole("checkbox", { name: /select-3-select/i }));
         fireEvent.click(screen.getByRole("checkbox", { name: /select-7-select/i }));
-        return wait(() => document.querySelectorAll("[aria-selected=true]")[2]);
+        return waitFor(() => document.querySelectorAll("[aria-selected=true]")[2]);
       },
     },
   },
@@ -62,9 +62,13 @@ export const RowActionOpened = () => WithCheckboxAndSecondaryActions();
 RowActionOpened.story = {
   parameters: {
     eyes: {
-      runBefore() {
+      runBefore: async () => {
         fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
-        return wait(() => screen.getByRole("menuitem", { name: /share/i }));
+
+        const menu = await waitFor(() => screen.getByRole("menu"));
+
+        // extra buffer to allow popper layout
+        return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
       },
     },
   },
@@ -78,7 +82,7 @@ AllRowsSelected.story = {
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByRole("checkbox", { name: /all/i }));
-        return wait(() => document.querySelectorAll("[aria-selected=true]")[9]);
+        return waitFor(() => document.querySelectorAll("[aria-selected=true]")[9]);
       },
     },
   },
@@ -92,7 +96,7 @@ SortColumn.story = {
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByRole("button", { name: /test-column-priority-sort-button/i }));
-        return wait(() => screen.getByText("Event 2"));
+        return waitFor(() => screen.getByText("Event 2"));
       },
     },
   },

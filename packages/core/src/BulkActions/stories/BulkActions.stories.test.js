@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React from "react";
 
 import { WithActions } from "./BulkActions.stories";
@@ -32,7 +32,7 @@ selected.story = {
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("All"));
-        return wait(() => screen.getByText("8 of 8 items"));
+        return waitFor(() => screen.getByText("8 of 8 items"));
       },
     },
   },
@@ -46,7 +46,7 @@ indeterminate.story = {
     eyes: {
       runBefore() {
         fireEvent.click(screen.getByText("Value 3"));
-        return wait(() => screen.getByText("1 of 8 items"));
+        return waitFor(() => screen.getByText("1 of 8 items"));
       },
     },
   },

@@ -1,6 +1,7 @@
 *** Setting ***
 Resource      ../_table.resource
 Test Setup    open table sample    ${visualizations}    with-checkbox
+Force Tags    bug-infrastructure-ie
 
 
 *** Test Cases ***

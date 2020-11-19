@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { wait, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
 
@@ -275,7 +275,7 @@ IconsOpened.story = {
       runBefore() {
         fireEvent.click(screen.getByRole("checkbox", { name: /bergen city/i }));
         fireEvent.click(screen.getByText("Boston of the Seven Seas"));
-        return wait(() => screen.getByRole("checkbox", { name: /3 of 5/i }));
+        return waitFor(() => screen.getByRole("checkbox", { name: /3 of 5/i }));
       },
     },
   },
