@@ -1,20 +1,20 @@
 import { withTooltip } from "..";
 
 const isItemSelected = (item, newItem) => {
-  const selectionKey = item && item.id ? "id" : "label";
+  const selectionKey = item?.id ? "id" : "label";
   const selectionElement = item && item[selectionKey];
   return newItem[selectionKey] === selectionElement;
 };
 
-const checkIcons = (list) => !!list.filter((elem) => elem.icon).length;
+const checkIcons = (list) => list?.some((elem) => elem?.icon);
 
-const parseState = (list) => {
+const parseState = (list = []) => {
   const hasLeftIcons = checkIcons(list);
-  const selection = list.filter((elem) => elem.selected);
+  const selection = list.filter((elem) => elem?.selected);
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;
-  const anySelectableSelected = list.some((elem) => elem.selected || elem.disabled);
-  const allSelectableSelected = list.every((elem) => elem.selected || elem.disabled);
+  const anySelectableSelected = list.some((elem) => elem?.selected || elem?.disabled);
+  const allSelectableSelected = list.every((elem) => elem?.selected || elem?.disabled);
 
   return {
     list,
@@ -27,7 +27,7 @@ const parseState = (list) => {
   };
 };
 
-const parseList = (list, item, props, selectAll) => {
+const parseList = (list = [], item, props, selectAll) => {
   const { multiSelect, selectable, singleSelectionToggle } = props;
 
   let anySelected = false;
@@ -39,25 +39,25 @@ const parseList = (list, item, props, selectAll) => {
       newItem.selected = false;
     }
 
-    const selectItem = item ? isItemSelected(item, newItem) : elem.selected;
+    const selectItem = item ? isItemSelected(item, newItem) : elem?.selected;
 
     if (selectItem && selectable) {
       let selectionState;
 
       if (multiSelect) {
-        selectionState = item ? !elem.selected : true;
+        selectionState = item ? !elem?.selected : true;
       } else {
-        selectionState = !anySelected && (item && singleSelectionToggle ? !elem.selected : true);
+        selectionState = !anySelected && (item && singleSelectionToggle ? !elem?.selected : true);
       }
 
       newItem.selected = selectionState;
       anySelected = true;
     }
 
-    if (typeof selectAll === "boolean" && !elem.disabled) newItem.selected = selectAll;
+    if (typeof selectAll === "boolean" && !elem?.disabled) newItem.selected = selectAll;
 
     // normalize item selected prop if not provided
-    if (!newItem.selected) newItem.selected = false;
+    if (!newItem?.selected) newItem.selected = false;
 
     return newItem;
   });
