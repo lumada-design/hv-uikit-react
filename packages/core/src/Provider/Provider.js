@@ -18,7 +18,7 @@ import {
 
 import { themeBuilder, generateClassName, CssBaseline, getTheme } from "../theme";
 
-import { ConfigProvider } from "./context";
+import ConfigContext from "./context";
 
 /**
  * Augments the target theme with the differences found in the source theme.
@@ -45,16 +45,22 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   return targetTheme;
 };
 
-const HvProvider = ({ children, theme = null, uiKitTheme = "dawn", changeTheme = () => {} }) => {
-  const pConfig = { changeTheme };
+const HvProvider = ({
+  children,
+  theme = null,
+  uiKitTheme = "dawn",
+  changeTheme = () => {},
+  locale,
+}) => {
+  const localeSetting = locale || (navigator?.language ?? "en-US");
+  const pConfig = { changeTheme, locale: localeSetting };
   const rawUiKitTheme = getTheme(uiKitTheme);
   const customTheme = applyCustomTheme(themeBuilder(rawUiKitTheme), theme);
-
   return (
     <MuiStylesProvider generateClassName={generateClassName}>
       <MuiThemeProvider theme={customTheme}>
         <CssBaseline />
-        <ConfigProvider value={pConfig}>{children}</ConfigProvider>
+        <ConfigContext.Provider value={pConfig}>{children}</ConfigContext.Provider>
       </MuiThemeProvider>
     </MuiStylesProvider>
   );
@@ -77,6 +83,11 @@ HvProvider.propTypes = {
    * Which of design system default themes to use.
    */
   changeTheme: PropTypes.func,
+  /**
+   * The locale to be used.
+   * Defaults to the browser's configured locale or "en-US" if not available.
+   */
+  locale: PropTypes.string,
 };
 
 export default HvProvider;

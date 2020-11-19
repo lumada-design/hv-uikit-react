@@ -20,6 +20,10 @@ export interface HvProviderProps {
    * Your component tree.
    */
   children: React.ReactNode;
+  /**
+   * The locale to be used. If empty falls back to browser locale
+   */
+  locale?: string;
 }
 
 export default function HvProvider(props: HvProviderProps): JSX.Element | null;
