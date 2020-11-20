@@ -1,31 +1,45 @@
+const isIncludedPath = (kind) => {
+  const includedPaths = ["Components/", "Visualizations/", "Tests/"];
+  return includedPaths.some((p) => kind.startsWith(p));
+};
+
+const isExcludedSample = (kind) => {
+  const excludedSamples = [
+    // asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
+    "Components/Asset Inventory",
+
+    // dialog is opened and tested via Tests/Modal
+    "Components/Modal",
+
+    // no way to take a stable screenshot of a loading animation
+    "Components/Loading",
+
+    // plottly visualizations with axis rendering appear to produce small variations
+    // https://insightgroup.atlassian.net/browse/HVUIKIT-5448
+    "Visualizations/Bar Chart",
+    "Visualizations/Line Chart",
+  ];
+
+  return excludedSamples.some((p) => kind.includes(p));
+};
+
 module.exports = {
-  // showLogs: true,
   matchLevel: "Strict",
   puppeteerOptions: { args: ["--no-sandbox", "--disable-setuid-sandbox"], ignoreHTTPSErrors: true },
   runInDocker: true,
   variations: () => ["theme:wicked"],
 
+  appName: "UI Kit v2.x",
+
   browser: [
-    { width: 1920, height: 1080, name: "ie11" },
-    { width: 1920, height: 1080, name: "chrome" },
-    { width: 1920, height: 1080, name: "firefox" },
-    { width: 1920, height: 1080, name: "safari" },
-    { width: 1920, height: 1080, name: "edgechromium" }
-
-    // { width: 1920, height: 1080, name: "chrome-one-versionsback" },
-    // { width: 1920, height: 1080, name: "firefox-one-version-back" },
-    // { width: 1920, height: 1080, name: "safari-one-version-back" },
-    // { width: 1920, height: 1080, name: "edgechromium-one-version-back" },
-
-    // { width: 1920, height: 1080, name: "chrome-two-versions-back" },
-    // { width: 1920, height: 1080, name: "firefox-two-versions-back" },
-    // { width: 1920, height: 1080, name: "safari-two-versions-back" }
+    { width: 1024, height: 768, name: "ie11" },
+    { width: 1024, height: 768, name: "chrome" },
+    { width: 1024, height: 768, name: "firefox" },
+    { width: 1024, height: 768, name: "safari" },
+    { width: 1024, height: 768, name: "edgechromium" },
   ],
-  //asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
-  include: ({ name, kind, parameters }) =>
-    (kind.includes("Components") && !kind.includes("Components/Asset Inventory")) ||
-    (kind.includes("Visualizations") &&
-      !kind.includes("Visualizations/Bar Chart") &&
-      !kind.includes("Visualizations/Line Chart")),
-  concurrency: 10
+
+  include: ({ kind }) => isIncludedPath(kind) && !isExcludedSample(kind),
+
+  concurrency: 10,
 };
