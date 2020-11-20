@@ -12,7 +12,7 @@ const html = {
 const body = (theme) => ({
   fontFamily: theme.hv.typography.fontFamily,
   ...theme.hv.typography.normalText,
-  backgroundColor: theme.hv.palette.atmosphere.atmo3,
+  backgroundColor: theme.hv.palette.atmosphere.atmo2,
 
   "@media print": {
     backgroundColor: "white",
