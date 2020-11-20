@@ -1,4 +1,5 @@
 import mapValues from "lodash/mapValues";
+import { outlineStyles } from "../Focus/styles";
 
 const semantics = (theme) =>
   mapValues(theme.hv.palette.semantic, (value) => ({
@@ -8,6 +9,12 @@ const semantics = (theme) =>
 const styles = (theme) => ({
   root: {
     overflow: "visible",
+    "&.focus-visible": {
+      ...outlineStyles,
+    },
+    "&:focus": {
+      outline: "none",
+    },
   },
   sema0: {
     backgroundColor: theme.palette.atmo4,

@@ -22,6 +22,7 @@ import {
   HvTypography,
 } from "../..";
 import { HvCardMedia, HvCardHeader, HvCardContent } from "..";
+import { KeyboardCodes, isKeypress } from "../../utils";
 
 import compressor from "./resources/compressor.png";
 import leaf from "./resources/leaf.png";
@@ -456,13 +457,26 @@ export const SelectableNoFooter = () => {
       </div>
     </HvCardContent>
   );
-
+  /*
+    `aria-selected` is explicitly unset because cards
+    are normally used in groups, however this being an isolated card
+    the proper role for it is a button/toggle-button with `aria-pressed`
+  */
   return (
     <HvCard
       bgcolor="atmo1"
       style={{ width: 360, cursor: "pointer" }}
       selectable
       selected={selected}
+      tabIndex="0"
+      role="button"
+      onKeyDown={(event) => {
+        if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.SpaceBar)) {
+          setSelected(!selected);
+        }
+      }}
+      aria-pressed={selected}
+      aria-selected={undefined}
       onClick={() => setSelected(!selected)}
       semantic="sema4"
     >
