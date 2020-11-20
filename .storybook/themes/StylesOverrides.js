@@ -38,6 +38,11 @@ export const getManagerStylesOverrides = theme => ({
 });
 
 export const getDocsStylesOverrides = theme => ({
+  "body.sb-show-main": {
+    // margin not needed in Docs view
+    margin: 0,
+  },
+
   // removes the transformation buttons from toolbar
   ".simplebar-content > div >div:first-of-type > button ": {
     display: "none"
