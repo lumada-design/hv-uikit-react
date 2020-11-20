@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.0...@hv/uikit-react-core@2.16.1) (2020-11-20)
+
+
+### Bug Fixes
+
+* **dropdown:** error when dropdown is empty. HVUIKIT-5546 ([647ea39](https://github.com/pentaho/hv-uikit-react/commit/647ea39684ce9924c2acaca897c5c1faad488607))
+
+
+
+
+
 # [2.16.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.15.0...@hv/uikit-react-core@2.16.0) (2020-11-13)
 
 
