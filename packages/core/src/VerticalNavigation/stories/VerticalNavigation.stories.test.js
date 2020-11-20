@@ -25,12 +25,10 @@ const openNavigation = async () => {
 // test scenario, Collapse
 export const CollapsableOpened = () => Collapsable();
 
-CollapsableOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openNavigation();
-      },
+CollapsableOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openNavigation();
     },
   },
 };
@@ -38,12 +36,10 @@ CollapsableOpened.story = {
 // test scenario, Collapsable On Exit open
 export const CollapseOnExitOpened = () => CollapseOnExit();
 
-CollapseOnExitOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openNavigation();
-      },
+CollapseOnExitOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openNavigation();
     },
   },
 };

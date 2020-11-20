@@ -35,10 +35,8 @@ export const KeyboardNavigation = () => (
   </>
 );
 
-KeyboardNavigation.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+KeyboardNavigation.parameters = {
+  eyes: { include: false },
 };
 
 // __________________________________
@@ -52,10 +50,8 @@ export const A11YClosed = () => (
   />
 );
 
-A11YClosed.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+A11YClosed.parameters = {
+  eyes: { include: false },
 };
 
 export const A11YOpen = () => (
@@ -66,17 +62,15 @@ export const A11YOpen = () => (
   />
 );
 
-A11YOpen.story = {
-  parameters: {
-    pa11y: {
-      actions: [
-        // open menu before testing
-        "click element #dropdownmenu-open-icon-button",
-        "wait for element #dropdownmenu-open-list to be visible",
-      ],
-    },
-    eyes: { include: false },
+A11YOpen.parameters = {
+  pa11y: {
+    actions: [
+      // open menu before testing
+      "click element #dropdownmenu-open-icon-button",
+      "wait for element #dropdownmenu-open-list to be visible",
+    ],
   },
+  eyes: { include: false },
 };
 
 // __________________________________
@@ -94,12 +88,10 @@ const openMenu = async () => {
 // test scenario, With Icons And Actions opened
 export const sWithIconsAndActions = () => WithIconsAndActions();
 
-sWithIconsAndActions.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openMenu();
-      },
+sWithIconsAndActions.parameters = {
+  eyes: {
+    runBefore() {
+      return openMenu();
     },
   },
 };
@@ -107,12 +99,10 @@ sWithIconsAndActions.story = {
 // test scenario, Disabled Items opened
 export const sDisabledItems = () => DisabledItems();
 
-sDisabledItems.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openMenu();
-      },
+sDisabledItems.parameters = {
+  eyes: {
+    runBefore() {
+      return openMenu();
     },
   },
 };

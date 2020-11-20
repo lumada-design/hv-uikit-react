@@ -135,11 +135,10 @@ export const TextAndSemantic = () => {
   );
 };
 
-TextAndSemantic.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "The Dialog allow the definition of variants, that alters the presented icon.",
+TextAndSemantic.parameters = {
+  docs: {
+    description: {
+      story: "The modal allow the definition of variants, that alters the presented icon.",
     },
   },
 };
@@ -152,10 +151,10 @@ export const CustomIcon = () => (
   />
 );
 
-CustomIcon.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+CustomIcon.parameters = {
+  docs: {
+    description: {
+      story:
         "The standard icon can be replaced by a custom or just removed. The firstFocusable is set to the Switch Away button.",
     },
   },
@@ -194,11 +193,11 @@ export const Accessibility = () => {
   );
 };
 
-Accessibility.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Dialogs should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content.",
+Accessibility.parameters = {
+  docs: {
+    description: {
+      story:
+        "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content.",
     },
   },
 };
@@ -284,11 +283,9 @@ export const CustomContent = () => {
   );
 };
 
-CustomContent.story = {
-  parameters: {
-    docs: {
-      storyDescription: "It is possible to insert any component in the dialog.",
-    },
+CustomContent.parameters = {
+  docs: {
+    description: { story: "It is possible to insert any component in the modal." },
   },
 };
 

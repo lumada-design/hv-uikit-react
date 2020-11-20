@@ -41,11 +41,9 @@ export const Horizontal = () => (
   </HvSelectionList>
 );
 
-Horizontal.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Layout items horizontally.",
-    },
+Horizontal.parameters = {
+  docs: {
+    description: "Layout items horizontally.",
   },
 };
 
@@ -59,20 +57,18 @@ export const Disabled = () => (
   </HvSelectionList>
 );
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Disabled selection list.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Disabled.parameters = {
+  docs: {
+    description: "Disabled selection list.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -86,11 +82,9 @@ export const ReadOnly = () => (
   </HvSelectionList>
 );
 
-ReadOnly.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Not editable selection list.",
-    },
+ReadOnly.parameters = {
+  docs: {
+    description: "Not editable selection list.",
   },
 };
 
@@ -104,12 +98,10 @@ export const WithoutLabel = () => (
   </HvSelectionList>
 );
 
-WithoutLabel.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "A selection list without label. The accessible name is provided via the `aria-label` property.",
-    },
+WithoutLabel.parameters = {
+  docs: {
+    description:
+      "A selection list without label. The accessible name is provided via the `aria-label` property.",
   },
 };
 
@@ -143,11 +135,9 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Controlled selection list.",
-    },
+Controlled.parameters = {
+  docs: {
+    description: "Controlled selection list.",
   },
 };
 
@@ -161,16 +151,14 @@ export const ErrorMessage = () => (
   </HvSelectionList>
 );
 
-ErrorMessage.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // aria-errormessage value is being reported as invalid because axe-core forces
-        // the referenced error element to have aria-live="assertive", when the spec does not
-        // https://github.com/dequelabs/axe-core/pull/2590
-        "aria-valid-attr-value",
-      ],
-    },
+ErrorMessage.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
   },
 };

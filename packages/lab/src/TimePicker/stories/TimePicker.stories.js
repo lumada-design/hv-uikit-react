@@ -18,26 +18,22 @@ export default {
 
 export const Main = () => <HvTimePicker locale="pt-pt" />;
 
-Main.story = {
-  parameters: {
-    eyes: {
-      // excluded due to dynamic date (which is the default that we intend to exemplify)
-      include: false,
-    },
+Main.parameters = {
+  eyes: {
+    // excluded due to dynamic date (which is the default that we intend to exemplify)
+    include: false,
   },
 };
 
 export const Format12Hours = () => <HvTimePicker locale="en-US" />;
 
-Format12Hours.story = {
-  parameters: {
-    docs: {
-      storyDescription: "TimePicker to select time in 12-hour format.",
-    },
-    eyes: {
-      // excluded due to dynamic date (which is the default that we intend to exemplify)
-      include: false,
-    },
+Format12Hours.parameters = {
+  docs: {
+    description: { story: "TimePicker to select time in 12-hour format." },
+  },
+  eyes: {
+    // excluded due to dynamic date (which is the default that we intend to exemplify)
+    include: false,
   },
 };
 
@@ -45,11 +41,9 @@ export const CustomDefault = () => (
   <HvTimePicker hours={14} minutes={35} seconds={45} period="AM" timeFormat={12} />
 );
 
-CustomDefault.story = {
-  parameters: {
-    docs: {
-      storyDescription: "TimePicker with default custom set time. ",
-    },
+CustomDefault.parameters = {
+  docs: {
+    description: { story: "TimePicker with default custom set time. " },
   },
 };
 
@@ -78,10 +72,8 @@ export const WithOnChange = () => {
   return <ControlledTimePicker />;
 };
 
-WithOnChange.story = {
-  parameters: {
-    docs: {
-      storyDescription: "TimePicker triggers an onChange when some of values change. ",
-    },
+WithOnChange.parameters = {
+  docs: {
+    description: { story: "TimePicker triggers an onChange when some of values change. " },
   },
 };

@@ -131,8 +131,6 @@ export const SmokeTests = () => (
   </>
 );
 
-SmokeTests.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+SmokeTests.parameters = {
+  eyes: { include: false },
 };

@@ -52,19 +52,17 @@ export const Controlled = () => {
 // test scenario, card selected and dropdownmenu open
 export const SelectedOpened = () => AllComponents();
 
-SelectedOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore: async () => {
-        fireEvent.click(screen.getByRole("checkbox"));
+SelectedOpened.parameters = {
+  eyes: {
+    runBefore: async () => {
+      fireEvent.click(screen.getByRole("checkbox"));
 
-        fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
+      fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
 
         const menu = await screen.findByRole("menu");
 
-        // extra buffer to allow popper layout
-        return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
-      },
+      // extra buffer to allow popper layout
+      return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
     },
   },
 };

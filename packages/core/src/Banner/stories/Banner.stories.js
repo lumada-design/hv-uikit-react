@@ -80,13 +80,11 @@ export const BannerController = () => {
   );
 };
 
-BannerController.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Different Banner variants with actions and controlled by buttons.",
-    },
-    eyes: { include: false },
+BannerController.parameters = {
+  docs: {
+    description: { story: "Different Banner variants with actions and controlled by buttons." },
   },
+  eyes: { include: false },
 };
 
 export const CustomIcon = () => (
@@ -98,11 +96,9 @@ export const CustomIcon = () => (
   />
 );
 
-CustomIcon.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Banner with custom icon with base color on the semantic background.",
-    },
+CustomIcon.parameters = {
+  docs: {
+    description: { story: "Banner with custom icon with base color on the semantic background." },
   },
 };
 
@@ -118,11 +114,10 @@ export const CustomAction = () => (
   />
 );
 
-CustomAction.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Banner can receive a component or object action that will render a semantic button.",
+CustomAction.parameters = {
+  docs: {
+    description: {
+      story: "Banner can receive a component or object action that will render a semantic button.",
     },
   },
 };

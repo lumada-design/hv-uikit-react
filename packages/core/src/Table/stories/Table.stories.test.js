@@ -27,15 +27,13 @@ export default {
 // test scenario, Expanded
 export const ContentExpanded = () => WithExpanderAndCustomContent();
 
-ContentExpanded.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getAllByRole("button", { name: /row expander button/i })[2]);
-        return waitFor(
-          () => screen.getAllByRole("table")[4] && document.querySelector("[id|=reactgooglegraph]")
-        );
-      },
+ContentExpanded.parameters = {
+  eyes: {
+    runBefore() {
+      fireEvent.click(screen.getAllByRole("button", { name: /row expander button/i })[2]);
+      return waitFor(
+        () => screen.getAllByRole("table")[4] && document.querySelector("[id|=reactgooglegraph]")
+      );
     },
   },
 };
@@ -43,15 +41,13 @@ ContentExpanded.story = {
 // test scenario, rows selected and unselected
 export const mixSelection = () => WithCheckbox();
 
-mixSelection.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("checkbox", { name: /select-2-select/i }));
-        fireEvent.click(screen.getByRole("checkbox", { name: /select-3-select/i }));
-        fireEvent.click(screen.getByRole("checkbox", { name: /select-7-select/i }));
-        return waitFor(() => document.querySelectorAll("[aria-selected=true]")[2]);
-      },
+mixSelection.parameters = {
+  eyes: {
+    runBefore() {
+      fireEvent.click(screen.getByRole("checkbox", { name: /select-2-select/i }));
+      fireEvent.click(screen.getByRole("checkbox", { name: /select-3-select/i }));
+      fireEvent.click(screen.getByRole("checkbox", { name: /select-7-select/i }));
+      return waitFor(() => document.querySelectorAll("[aria-selected=true]")[2]);
     },
   },
 };
@@ -59,17 +55,15 @@ mixSelection.story = {
 // test scenario, opened row action dropdownmenu
 export const RowActionOpened = () => WithCheckboxAndSecondaryActions();
 
-RowActionOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore: async () => {
-        fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
+RowActionOpened.parameters = {
+  eyes: {
+    runBefore: async () => {
+      fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
 
         const menu = await screen.findByRole("menu");
 
-        // extra buffer to allow popper layout
-        return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
-      },
+      // extra buffer to allow popper layout
+      return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
     },
   },
 };
@@ -77,13 +71,11 @@ RowActionOpened.story = {
 // test scenario, all selected
 export const AllRowsSelected = () => WithCheckboxAndSecondaryActions();
 
-AllRowsSelected.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("checkbox", { name: /all/i }));
-        return waitFor(() => document.querySelectorAll("[aria-selected=true]")[9]);
-      },
+AllRowsSelected.parameters = {
+  eyes: {
+    runBefore() {
+      fireEvent.click(screen.getByRole("checkbox", { name: /all/i }));
+      return waitFor(() => document.querySelectorAll("[aria-selected=true]")[9]);
     },
   },
 };
@@ -91,13 +83,11 @@ AllRowsSelected.story = {
 // test scenario, sort column
 export const SortColumn = () => Main();
 
-SortColumn.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("button", { name: /test-column-priority-sort-button/i }));
-        return waitFor(() => screen.getByText("Event 2"));
-      },
+SortColumn.parameters = {
+  eyes: {
+    runBefore() {
+      fireEvent.click(screen.getByRole("button", { name: /test-column-priority-sort-button/i }));
+      return waitFor(() => screen.getByText("Event 2"));
     },
   },
 };

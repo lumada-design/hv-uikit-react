@@ -29,12 +29,10 @@ const openCombobox = async () => {
 // test scenario, datepicker default value opened
 export const DefaultValueOpened = () => DefaultValue();
 
-DefaultValueOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openCombobox();
-      },
+DefaultValueOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openCombobox();
     },
   },
 };
@@ -42,16 +40,14 @@ DefaultValueOpened.story = {
 // test scenario, datepicker months opened
 export const DatepickerMonths = () => DefaultValue();
 
-DatepickerMonths.story = {
-  parameters: {
-    eyes: {
-      runBefore: async () => {
-        await openCombobox();
+DatepickerMonths.parameters = {
+  eyes: {
+    runBefore: async () => {
+      await openCombobox();
 
-        fireEvent.click(screen.getByText("October"));
+      fireEvent.click(screen.getByText("October"));
 
-        return waitFor(() => screen.getByRole("button", { name: "Dec" }));
-      },
+      return waitFor(() => screen.getByRole("button", { name: "Dec" }));
     },
   },
 };
@@ -59,12 +55,10 @@ DatepickerMonths.story = {
 // test scenario, dateRange default value opened
 export const RangeValuesOpened = () => RangeWithValues();
 
-RangeValuesOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openCombobox();
-      },
+RangeValuesOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openCombobox();
     },
   },
 };
@@ -72,17 +66,15 @@ RangeValuesOpened.story = {
 // test scenario, dateRange months opened
 export const RangeMonthsOpened = () => RangeWithValues();
 
-RangeMonthsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore: async () => {
-        await openCombobox();
+RangeMonthsOpened.parameters = {
+  eyes: {
+    runBefore: async () => {
+      await openCombobox();
 
-        fireEvent.click(screen.getAllByText("July")[0]);
-        fireEvent.click(screen.getAllByText("August")[0]);
+      fireEvent.click(screen.getAllByText("July")[0]);
+      fireEvent.click(screen.getAllByText("August")[0]);
 
-        return waitFor(() => screen.getAllByRole("button", { name: "Dec" }));
-      },
+      return waitFor(() => screen.getAllByRole("button", { name: "Dec" }));
     },
   },
 };

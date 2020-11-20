@@ -16,11 +16,9 @@ export default {
 
 export const Main = () => <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />;
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      ignore: ["region"],
-    },
+Main.parameters = {
+  pa11y: {
+    ignore: ["region"],
   },
 };
 
@@ -110,7 +108,3 @@ export const Custom = () => {
     </HvBaseDropdown>
   );
 };
-
-export const disabled = () => (
-  <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" disabled />
-);

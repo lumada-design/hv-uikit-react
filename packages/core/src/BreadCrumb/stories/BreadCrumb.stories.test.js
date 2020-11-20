@@ -28,12 +28,10 @@ const openMenu = async () => {
 // test scenario, drop/open hidden breadCrumb items
 export const LimitedToTwoPathsOpened = () => LimitedToTwoPaths();
 
-LimitedToTwoPathsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openMenu();
-      },
+LimitedToTwoPathsOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openMenu();
     },
   },
 };
@@ -41,12 +39,10 @@ LimitedToTwoPathsOpened.story = {
 // test scenario, drop/open hidden breadCrumb items
 export const WithURLLimitedOpened = () => WithURLLimited();
 
-WithURLLimitedOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openMenu();
-      },
+WithURLLimitedOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openMenu();
     },
   },
 };

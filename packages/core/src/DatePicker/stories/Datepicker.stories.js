@@ -27,17 +27,15 @@ export const Main = () => (
   <HvDatePicker id="DatePicker" placeholder="Select date" aria-label="Date" />
 );
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Main.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -50,20 +48,18 @@ export const DefaultValue = () => (
   />
 );
 
-DefaultValue.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Datepicker sample with a value already set.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+DefaultValue.parameters = {
+  docs: {
+    description: { story: "Datepicker sample with a value already set." },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -98,21 +94,18 @@ export const Localized = () => {
   );
 };
 
-Localized.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Datepicker sample with values localized. Locales should be loaded by the user.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Localized.parameters = {
+  docs: {
+    description: { story: "Datepicker sample with values localized." },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -126,20 +119,18 @@ export const WithActions = () => (
   />
 );
 
-WithActions.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Datepicker with action buttons at the bottom.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+WithActions.parameters = {
+  docs: {
+    description: { story: "Datepicker with action buttons at the bottom." },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -152,20 +143,20 @@ export const WithCustomLabels = () => (
   />
 );
 
-WithCustomLabels.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Datepicker with actions buttons at the bottom that have custom labels.",
+WithCustomLabels.parameters = {
+  docs: {
+    description: {
+      story: "Datepicker with actions buttons at the bottom that have custom labels.",
     },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -183,20 +174,21 @@ export const RangeMode = () => (
   />
 );
 
-RangeMode.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Datepicker in range mode allowing the selection of more than one value.",
+RangeMode.parameters = {
+  docs: {
+    description: {
+      story: "Datepicker in range mode allowing the selection of more than one value.",
     },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // TODO: BUG Input has no label
+      // https://github.com/lumada-design/hv-uikit-react/issues/1692
+      "label",
+      "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+      "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+    ],
   },
 };
 
@@ -212,20 +204,18 @@ export const RangeModeWithNoValues = () => (
   />
 );
 
-RangeModeWithNoValues.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Datepicker in range mode allowing the selection of more than one value.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+RangeModeWithNoValues.parameters = {
+  docs: {
+    description: "Datepicker in range mode allowing the selection of more than one value.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -248,20 +238,18 @@ export const RangeWithValues = () => {
   );
 };
 
-RangeWithValues.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Datepicker in range mode with values already set.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+RangeWithValues.parameters = {
+  docs: {
+    description: { story: "Datepicker in range mode with values already set." },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -269,20 +257,18 @@ export const NearInvalid = () => (
   <HvDatePicker aria-label="Date" placeholder="Select date" value={new Date(1000, 0, 1)} />
 );
 
-NearInvalid.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Datepicker in range mode with invalid near invalid dates.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+NearInvalid.parameters = {
+  docs: {
+    description: { story: "Datepicker in range mode with invalid near invalid dates." },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -308,17 +294,15 @@ export const WithValueChange = () => {
   );
 };
 
-WithValueChange.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+WithValueChange.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -394,16 +378,14 @@ export const Disabled = () => (
   />
 );
 
-Disabled.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Disabled.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };

@@ -105,12 +105,10 @@ export const BasicSearch = () => {
   );
 };
 
-BasicSearch.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "The Basic Search redirects the user to a <b>Search Results page</b> to show the correspondences to the search query. The user can either press <b>enter</b> or use the <b>search button</b>.",
-    },
+BasicSearch.parameters = {
+  docs: {
+    description:
+      "The Basic Search redirects the user to a <b>Search Results page</b> to show the correspondences to the search query. The user can either press <b>enter</b> or use the <b>search button</b>.",
   },
 };
 
@@ -184,15 +182,14 @@ export const DynamicSearch = () => {
   );
 };
 
-DynamicSearch.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "The Dynamic Search is similar to the Basic Search but <b>can handle displaying options in real time</b> given a partial search string. The user can still press <b>enter</b> or use the <b>search button</b>, but may also <b>select</b> any of the options displayed.",
-    },
+DynamicSearch.parameters = {
+  docs: {
+    description:
+      "The Dynamic Search is similar to the Basic Search but <b>can handle displaying options in real time</b> given a partial search string. The user can still press <b>enter</b> or use the <b>search button</b>, but may also <b>select</b> any of the options displayed.",
   },
-  decorators: [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>],
 };
+
+DynamicSearch.decorators = [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>];
 
 export const ScopedSearch = () => {
   const useStyles = makeStyles((theme) => ({
@@ -312,15 +309,14 @@ export const ScopedSearch = () => {
   );
 };
 
-ScopedSearch.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Use it when users might want to limit their search to a section of type of content.",
-    },
+ScopedSearch.parameters = {
+  docs: {
+    description:
+      "Use it when users might want to limit their search to a section of type of content.",
   },
-  decorators: [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>],
 };
+
+ScopedSearch.decorators = [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>];
 
 export const SearchAsYouType = () => {
   const useStyles = makeStyles((theme) => ({
@@ -372,21 +368,19 @@ export const SearchAsYouType = () => {
   );
 };
 
-SearchAsYouType.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Search-As-You-Type should be used to enable the user to narrow down a list according to the search query. The change is triggered on each keystroke.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // scrollable region should be focusable so the user can scroll with the keyboard
-        // however that's not the focus of this sample
-        "scrollable-region-focusable",
-      ],
-    },
+SearchAsYouType.parameters = {
+  docs: {
+    description:
+      "Search-As-You-Type should be used to enable the user to narrow down a list according to the search query. The change is triggered on each keystroke.",
   },
-
-  decorators: [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>],
+  pa11y: {
+    ignore: [
+      "region",
+      // scrollable region should be focusable so the user can scroll with the keyboard
+      // however that's not the focus of this sample
+      "scrollable-region-focusable",
+    ],
+  },
 };
+
+SearchAsYouType.decorators = [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>];

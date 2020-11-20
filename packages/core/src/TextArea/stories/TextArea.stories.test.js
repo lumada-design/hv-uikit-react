@@ -66,11 +66,9 @@ export const ControlledLimited = () => {
   );
 };
 
-ControlledLimited.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Text area value altered from an outside component.",
-    },
+ControlledLimited.parameters = {
+  docs: {
+    description: "Text area value altered from an outside component.",
   },
 };
 
@@ -108,10 +106,8 @@ export const ControlledValidation = () => {
   );
 };
 
-ControlledValidation.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Text area value altered from an outside component.",
-    },
+ControlledValidation.parameters = {
+  docs: {
+    description: "Text area value altered from an outside component.",
   },
 };
