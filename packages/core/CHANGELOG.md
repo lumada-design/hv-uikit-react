@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.1.0...@hv/uikit-react-core@3.2.0) (2020-11-20)
+
+
+### Bug Fixes
+
+* **button:** add ref to allow button in tooltip. HVUIKIT-5599 ([6b9955c](https://github.com/pentaho/hv-uikit-react/commit/6b9955c9c9cc6383ea0cab307e5ae24e17780764))
+* **datepicker:** fix styling issues. HVUIKIT-5609 ([777b0e1](https://github.com/pentaho/hv-uikit-react/commit/777b0e1758157c33ff494f39b5e6a23d90158279))
+* **dropdown:** error when dropdown is empty. HVUIKIT-5546 ([acd8ba5](https://github.com/pentaho/hv-uikit-react/commit/acd8ba5470b45ad11fa89b73338805e7e9ecb2f4))
+* **input:** layout change when displaying error HVUIKIT-5566 ([caa5164](https://github.com/pentaho/hv-uikit-react/commit/caa516437ba52991ed823f0c02d3cbe3b0e61596))
+* **ssr:** remove theme global variable ([702f17a](https://github.com/pentaho/hv-uikit-react/commit/702f17a85edec7fa7979cbc27161590cf0821f43))
+* add "error" to HvInputClassKey ([64c35ac](https://github.com/pentaho/hv-uikit-react/commit/64c35ac8009d4495a3a791c6cfbe19f7a07fd7f5))
+* form selectors state with lazy initialization and ts fixes ([3e06d77](https://github.com/pentaho/hv-uikit-react/commit/3e06d77ebb0a28b4370a6f5518c5efac38378be6))
+* **table:** format function not applied with sub template. HVUIKIT-5575 ([#2114](https://github.com/pentaho/hv-uikit-react/issues/2114)) ([3cb59b0](https://github.com/pentaho/hv-uikit-react/commit/3cb59b02ea2b5970e4c6fbe4e382d8c642aa5d98))
+* resolve type definition problems ([65a6da6](https://github.com/pentaho/hv-uikit-react/commit/65a6da68080ef289ccdff9525a77ae4b1f9ebeea))
+
+
+### Features
+
+* **breadcrumb:** menu does not accept enter. HVUIKIT-5602 ([e9b2bf3](https://github.com/pentaho/hv-uikit-react/commit/e9b2bf35b99944ffaf8085f2729d9043eeec77d4))
+* **docs:** hide basedropdown story. HVUIKIT-5608 ([#2107](https://github.com/pentaho/hv-uikit-react/issues/2107)) ([be53e06](https://github.com/pentaho/hv-uikit-react/commit/be53e06d904812106679bee13f2d65ee28168eb6))
+* **provider:** add locale definition to provider. HVUIKIT-5626 ([fdc92c2](https://github.com/pentaho/hv-uikit-react/commit/fdc92c2d0a400b9e7bb3e19c055795313baf7c31))
+
+
+
+
+
 # [3.1.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.0.0...@hv/uikit-react-core@3.1.0) (2020-11-11)
 
 
