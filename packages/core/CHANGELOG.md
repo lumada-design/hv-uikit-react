@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.2...@hv/uikit-react-core@2.16.3) (2020-11-23)
+
+
+### Bug Fixes
+
+* **cssbaseline:** revert change of body background color ([04bf0a2](https://github.com/pentaho/hv-uikit-react/commit/04bf0a23e9b06c9a907ad792d84097894dc8521d))
+
+
+
+
+
 ## [2.16.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.1...@hv/uikit-react-core@2.16.2) (2020-11-21)
 
 
