@@ -87,6 +87,7 @@ export const Main = () => {
             visibleYear={visibleYear}
             minimumDate={availableDates.minimumDate}
             maximumDate={availableDates.maximumDate}
+            locale="en-US"
           />
         </HvLabel>
       </HvFormElement>
@@ -149,6 +150,7 @@ export const SingleDate = () => {
             visibleYear={visibleYear}
             minimumDate={new Date(2020, 5, 1)}
             maximumDate={new Date(2020, 11, 10)}
+            locale="en-US"
           />
         </HvLabel>
       </HvFormElement>
@@ -163,7 +165,7 @@ SingleDate.story = {
 };
 
 export const Localized = () => {
-  const [locale, setLocale] = useState("en");
+  const [locale, setLocale] = useState("en-US");
   const [selectionDate, setSelectionDate] = useState(new Date(2020, 7, 19));
   const [visibleMonth, setVisibleMonth] = useState(8);
   const [visibleYear, setVisibleYear] = useState(2020);
@@ -221,6 +223,7 @@ export const Localized = () => {
               visibleYear={visibleYear}
               minimumDate={new Date(2020, 5, 1)}
               maximumDate={new Date(2020, 11, 10)}
+              locale={locale}
             />
           </HvLabel>
         </HvFormElement>

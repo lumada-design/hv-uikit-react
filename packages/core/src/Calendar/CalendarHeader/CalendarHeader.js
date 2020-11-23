@@ -27,7 +27,7 @@ const { Enter } = KeyboardCodes;
 const HvCalendarHeader = ({
   id,
   value,
-  locale: localeProp,
+  locale,
   classes,
   onChange,
   showEndDate,
@@ -48,7 +48,6 @@ const HvCalendarHeader = ({
   const [weekdayDisplay, setWeekdayDisplay] = useState("");
 
   const localId = id ?? setId(elementId, "calendarHeader");
-  const locale = localeProp;
 
   const inputValue = editedValue ?? displayValue;
   const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");

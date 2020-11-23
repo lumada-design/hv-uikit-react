@@ -244,7 +244,7 @@ HvSingleCalendar.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * The calendar locale. If undefined, it uses calendar default
+   * The calendar locale.
    *
    */
   locale: PropTypes.string,
