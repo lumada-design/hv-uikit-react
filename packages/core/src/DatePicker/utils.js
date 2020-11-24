@@ -1,12 +1,5 @@
 import { NAV_OPTIONS, REPRESENTATION_VALUES } from "../Calendar/enums";
-import {
-  DEFAULT_LOCALE,
-  getFormattedDate,
-  getMonthName,
-  isDate,
-  isSameMonth,
-  isValidLocale,
-} from "../Calendar/utils";
+import { getFormattedDate, getMonthName, isDate, isSameMonth } from "../Calendar/utils";
 
 /**
  * Validates if a given date is visible according to the provided visible month and year numbers.
@@ -25,8 +18,6 @@ export const isVisibleDate = (date, visibleDate) => {
 };
 
 export const validateDate = (date) => (isDate(date) && date) || new Date();
-
-export const validateLocale = (locale) => (isValidLocale(locale) ? locale : DEFAULT_LOCALE);
 
 export const getFormattedDateRange = (date, locale, rep = REPRESENTATION_VALUES.SHORT) => {
   const { startDate, endDate } = date;

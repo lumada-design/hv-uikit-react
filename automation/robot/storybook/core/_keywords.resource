@@ -37,8 +37,12 @@ force input
     ...    Cleans the input locator and sets with the string value.
     ...     - note: check "clean input" documentation
     [Arguments]    ${locator}    ${string}
-    Press Keys    ${locator}    CTRL+a    DELETE
-    Input Text    ${locator}    ${string}
+    Click Element   ${locator}
+    Repeat Keyword  12 times    Press Keys  ${locator}   BACKSPACE
+
+    Input Text     ${locator}   ${string}
+    
+    
 
 get elements text
     [Documentation]

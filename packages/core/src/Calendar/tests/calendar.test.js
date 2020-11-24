@@ -10,7 +10,7 @@ describe("<Calendar /> with minimum configuration", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvCalendar id="calendar" />
+        <HvCalendar id="calendar" locale="en-US" />
       </HvProvider>
     );
   });
