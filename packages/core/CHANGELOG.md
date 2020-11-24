@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.2.0...@hv/uikit-react-core@3.2.1) (2020-11-24)
+
+
+### Bug Fixes
+
+* **card:** sample can't trigger action by keyboard. HVUIKIT-5574 ([#2156](https://github.com/pentaho/hv-uikit-react/issues/2156)) ([a980064](https://github.com/pentaho/hv-uikit-react/commit/a9800643b06d262b06b9648a1d80ef40b703f587))
+* **cssbaseline:** body background should be atmo2 ([d98ef42](https://github.com/pentaho/hv-uikit-react/commit/d98ef425b0c7c870774275107b8ecd9d415ba571))
+
+
+
+
+
 # [3.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.1.0...@hv/uikit-react-core@3.2.0) (2020-11-20)
 
 
