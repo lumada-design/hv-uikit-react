@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import find from "lodash/find";
 import { withStyles } from "@material-ui/core";
@@ -18,7 +18,7 @@ const DEFAULT_LABELS = {
   placeholder: "Search",
 };
 
-const getPaginationData = ({ hasPagination, paginationServerSide }, values, pageSize, page) =>
+const getPaginationData = (hasPagination, paginationServerSide, values, pageSize, page) =>
   hasPagination && !paginationServerSide
     ? values.slice(pageSize * page, pageSize * (page + 1))
     : values;
@@ -69,25 +69,31 @@ const HvAssetInventory = (props) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const innerPageSize = pageSizeProp || pageSizeOptions[0];
-  const innerPageValues = getPaginationData(props, valuesProp, innerPageSize, pageProp);
+  const innerPageValues = getPaginationData(
+    hasPagination,
+    paginationServerSide,
+    valuesProp,
+    innerPageSize,
+    pageProp
+  );
 
   const [selectedView, setSelectedView] = useState(selectedViewProp || 0);
   const [pageSize, setPageSize] = useState(innerPageSize);
   const [page, setPage] = useState(pageProp);
-
   const [values, setValues] = useState([...valuesProp]);
   const [pageValues, setPageValues] = useState(innerPageValues);
 
   const [selectedValues, setSelectedValues] = useState([...selectedValuesProp]);
   const [searchString, setSearchString] = useState(searchStringProp);
-  const [selectedSort, setSelectedSort] = useState(sortOptionId);
+  const [selectedSort, setSelectedSort] = useState({ sortId: sortOptionId, sortFunc: undefined });
 
   useEffect(() => {
     setValues(valuesProp);
-    setPageValues(innerPageValues);
+    setPageValues(
+      getPaginationData(hasPagination, paginationServerSide, valuesProp, innerPageSize, pageProp)
+    );
     setPage(pageProp);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [valuesProp, pageProp]);
+  }, [valuesProp, pageProp, innerPageSize, hasPagination, paginationServerSide]);
 
   useEffect(() => {
     setPageSize(pageSizeProp);
@@ -109,13 +115,25 @@ const HvAssetInventory = (props) => {
     setSearchString(searchStringProp);
   }, [searchStringProp]);
 
-  const changeView = (event, viewIndex) => {
+  const changeView = (_event, viewIndex) => {
     setSelectedView(viewIndex);
   };
 
-  const changePageValues = (returnedPageValues) => {
-    setPageValues(getPaginationData(props, returnedPageValues, pageSize, page));
-  };
+  const changePageValues = useCallback(
+    (returnedPageValues) => {
+      setPageValues(
+        getPaginationData(hasPagination, paginationServerSide, returnedPageValues, pageSize, page)
+      );
+    },
+    [hasPagination, paginationServerSide, pageSize, page]
+  );
+
+  useEffect(() => {
+    if (!(selectedSort?.sortId && selectedSort?.sortFunc)) return;
+    const sortedValues = [...valuesProp].sort(selectedSort.sortFunc);
+    setValues(sortedValues);
+    changePageValues(sortedValues);
+  }, [selectedSort, valuesProp, changePageValues]);
 
   const setSearchResults = (results, value) => {
     setValues(results);
@@ -148,10 +166,7 @@ const HvAssetInventory = (props) => {
   };
 
   const onSort = (sortFunc, sortId) => {
-    const sortedValues = [...values].sort(sortFunc);
-    setValues(sortedValues);
-    changePageValues(sortedValues);
-    setSelectedSort(sortId);
+    setSelectedSort({ sortId, sortFunc });
   };
 
   const renderSort = () => {
@@ -159,9 +174,9 @@ const HvAssetInventory = (props) => {
       <div className={classes.sortContainer}>
         <Sort
           id={id}
-          aria-label={labels.sortBy}
-          metadata={configuration.metadata}
-          selected={selectedSort}
+          aria-label={labels?.sortBy}
+          metadata={configuration?.metadata}
+          selected={selectedSort?.sortId}
           onSelection={onSort}
           onSortChange={onSortChange}
           disablePortal={disablePortal}
