@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.2.1...@hv/uikit-react-core@3.3.0) (2020-11-25)
+
+
+### Features
+
+* **datepicker:** deprecate localeProp. HVUIKIT-5580 ([30f967f](https://github.com/pentaho/hv-uikit-react/commit/30f967f019c75532f972b0ab1d8c699743c59b4f))
+
+
+
+
+
 ## [3.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.2.0...@hv/uikit-react-core@3.2.1) (2020-11-24)
 
 
