@@ -94,6 +94,12 @@ exports[`Header should be able to render 1`] = `
                 <WithStyles(ForwardRef)
                   icon={true}
                   onClick={[Function]}
+                  style={
+                    Object {
+                      "height": 32,
+                      "width": 32,
+                    }
+                  }
                 >
                   <ForwardRef
                     classes={
@@ -119,6 +125,12 @@ exports[`Header should be able to render 1`] = `
                     }
                     icon={true}
                     onClick={[Function]}
+                    style={
+                      Object {
+                        "height": 32,
+                        "width": 32,
+                      }
+                    }
                   >
                     <WithStyles(ForwardRef(Button))
                       className="HvButton-icon HvButton-ghostSVG"
@@ -136,6 +148,12 @@ exports[`Header should be able to render 1`] = `
                       disableRipple={true}
                       focusVisibleClassName="HvButton-focusVisible"
                       onClick={[Function]}
+                      style={
+                        Object {
+                          "height": 32,
+                          "width": 32,
+                        }
+                      }
                       variant="text"
                     >
                       <ForwardRef(Button)
@@ -177,6 +195,12 @@ exports[`Header should be able to render 1`] = `
                         disableRipple={true}
                         focusVisibleClassName="HvButton-focusVisible"
                         onClick={[Function]}
+                        style={
+                          Object {
+                            "height": 32,
+                            "width": 32,
+                          }
+                        }
                         variant="text"
                       >
                         <WithStyles(ForwardRef(ButtonBase))
@@ -187,6 +211,12 @@ exports[`Header should be able to render 1`] = `
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                           onClick={[Function]}
+                          style={
+                            Object {
+                              "height": 32,
+                              "width": 32,
+                            }
+                          }
                           type="button"
                         >
                           <ForwardRef(ButtonBase)
@@ -204,6 +234,12 @@ exports[`Header should be able to render 1`] = `
                             focusRipple={true}
                             focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
                             onClick={[Function]}
+                            style={
+                              Object {
+                                "height": 32,
+                                "width": 32,
+                              }
+                            }
                             type="button"
                           >
                             <button
@@ -221,6 +257,12 @@ exports[`Header should be able to render 1`] = `
                               onTouchEnd={[Function]}
                               onTouchMove={[Function]}
                               onTouchStart={[Function]}
+                              style={
+                                Object {
+                                  "height": 32,
+                                  "width": 32,
+                                }
+                              }
                               tabIndex={0}
                               type="button"
                             >
