@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { SnackbarContent, withStyles } from "@material-ui/core";
-import TextTruncate from "./MultiLineEllipsis";
 import iconVariant from "../../utils/iconVariant";
 import { setId } from "../../utils";
 import ActionsGeneric from "../../ActionsGeneric";
@@ -31,13 +30,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
       message={
         <div id={setId(id, "message")} className={classes.messageSpan}>
           {icon && <div className={classes.iconVariant}>{icon}</div>}
-          <TextTruncate
-            id={setId(id, "message-text")}
-            containerClassName={classes.messageText}
-            line={3}
-            text={label}
-            textElement="div"
-          />
+          <div className={classes.messageText}>{label}</div>
           {action && (
             <div id={setId(id, "action")} className={classes.action}>
               <ActionsGeneric
