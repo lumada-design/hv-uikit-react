@@ -85,7 +85,7 @@ export const Main = () => {
   return (
     <HvHeader position="relative">
       {!isMdUp && (
-        <HvButton icon onClick={() => console.log("menu")}>
+        <HvButton style={{ width: 32, height: 32 }} icon onClick={() => console.log("menu")}>
           <Menu />
         </HvButton>
       )}
