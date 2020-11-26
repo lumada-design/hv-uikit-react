@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.3.0...@hv/uikit-react-core@3.4.0) (2020-11-26)
+
+
+### Bug Fixes
+
+* **card:** workaround type issue of HvCardHeader.title [#2163](https://github.com/pentaho/hv-uikit-react/issues/2163) ([06da25f](https://github.com/pentaho/hv-uikit-react/commit/06da25fa0d90799c5c4e7e631ca48c1e0c24f7bc))
+* **header:** fix menu button positioning in sample. HVUIKIT-5639 ([21be112](https://github.com/pentaho/hv-uikit-react/commit/21be112279a84035a4c4b83861957056d9a26357))
+* **snackbar:** ellipsis on single char. HVUIKIT-5621 ([10ec716](https://github.com/pentaho/hv-uikit-react/commit/10ec716ef7b663b6108510fc072dfd2b7967dec8))
+
+
+### Features
+
+* **datepicker:** deprecate localeProp. HVUIKIT-5580 ([30f967f](https://github.com/pentaho/hv-uikit-react/commit/30f967f019c75532f972b0ab1d8c699743c59b4f))
+
+
+
+
+
 # [3.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.2.1...@hv/uikit-react-core@3.3.0) (2020-11-25)
 
 
