@@ -124,21 +124,15 @@ const HvRadioGroup = (props) => {
       className={clsx(className, classes.root)}
     >
       {label && (
-        <HvLabel
-          id={setId(elementId, "label")}
-          htmlFor={setId(elementId, "group")}
-          label={label}
-          className={clsx(classes.label)}
-        />
+        <HvLabel id={setId(elementId, "label")} label={label} className={clsx(classes.label)} />
       )}
       {description && (
         <HvInfoMessage id={setId(elementId, "description")}>{description}</HvInfoMessage>
       )}
       <div
-        id={label && setId(elementId, "group")}
         role="radiogroup"
         aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
+        aria-labelledby={ariaLabelledBy || (label && setId(elementId, "label"))}
         aria-invalid={status === "invalid" ? true : undefined}
         aria-errormessage={status === "invalid" ? setId(elementId, "error") : undefined}
         aria-describedby={

@@ -46,7 +46,6 @@ exports[`CheckBoxGroup should render correctly 1`] = `
         >
           <WithStyles(HvLabel)
             className="HvRadioGroup-label"
-            htmlFor="hvradiogroup9-group"
             id="hvradiogroup9-label"
             label="Choose your favorite checkboxes"
           >
@@ -59,14 +58,12 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                   "root": "HvLabel-root",
                 }
               }
-              htmlFor="hvradiogroup9-group"
               id="hvradiogroup9-label"
               label="Choose your favorite checkboxes"
             >
               <WithStyles(ForwardRef)
                 className="HvRadioGroup-label HvLabel-root"
                 component="label"
-                htmlFor="hvradiogroup9-group"
                 id="hvradiogroup9-label"
                 variant="highlightText"
               >
@@ -99,13 +96,11 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                     }
                   }
                   component="label"
-                  htmlFor="hvradiogroup9-group"
                   id="hvradiogroup9-label"
                   variant="highlightText"
                 >
                   <label
                     className="HvRadioGroup-label HvLabel-root HvTypography-root HvTypography-highlightText"
-                    htmlFor="hvradiogroup9-group"
                     id="hvradiogroup9-label"
                   >
                     Choose your favorite checkboxes
@@ -115,8 +110,8 @@ exports[`CheckBoxGroup should render correctly 1`] = `
             </HvLabel>
           </WithStyles(HvLabel)>
           <div
+            aria-labelledby="hvradiogroup9-label"
             className="HvRadioGroup-group HvRadioGroup-vertical"
-            id="hvradiogroup9-group"
             role="radiogroup"
           >
             <WithStyles(HvRadio)
