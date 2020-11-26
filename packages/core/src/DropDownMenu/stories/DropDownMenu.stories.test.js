@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React from "react";
 
 import { HvButton, HvDropDownMenu } from "../..";
@@ -85,7 +85,7 @@ A11YOpen.story = {
 const openMenu = async () => {
   fireEvent.click(screen.getByRole("button"));
 
-  const menu = await waitFor(() => screen.getByRole("menu"));
+  const menu = await screen.findByRole("menu");
 
   // extra buffer to allow popper layout
   return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));

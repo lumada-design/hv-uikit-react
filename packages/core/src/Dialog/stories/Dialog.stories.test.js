@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
+import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import {
   Main,
   CustomContent,
@@ -28,7 +28,7 @@ export default {
 const openDialog = async (bIndex = 0) => {
   fireEvent.click(screen.getAllByRole("button")[bIndex]);
 
-  const dialog = await waitFor(() => screen.getByRole("dialog"));
+  const dialog = await screen.findByRole("dialog");
 
   // extra buffer to allow popper layout
   return new Promise((resolve) => setTimeout(() => resolve(dialog), 1000));
