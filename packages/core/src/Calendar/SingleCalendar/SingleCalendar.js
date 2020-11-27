@@ -11,7 +11,7 @@ import { HvFormElementDescriptorsContext } from "../../Forms/FormElement";
 import { VIEW_MODE } from "../enums";
 import { isRange, isDate } from "../utils";
 import { generateCalendarModel } from "../model";
-import CalendarCell from "../CalendarCell";
+import CalendarCell from "./CalendarCell";
 import CalendarHeader from "../CalendarHeader";
 import CalendarWeekLabels from "../CalendarWeekLabels";
 import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
@@ -73,7 +73,7 @@ const HvSingleCalendar = ({
     // This code is very brittle and should be managed with the focus wrapper
     const el = document?.activeElement;
     const parent = el?.parentElement?.parentElement;
-    const siblings = [...parent?.getElementsByClassName("HvCalendarCell-cellContainer")];
+    const siblings = [...parent?.getElementsByClassName(classes.cellContainer)];
     const elIndex = siblings.indexOf(el);
 
     if (isKeypress(event, Enter)) {
@@ -98,11 +98,11 @@ const HvSingleCalendar = ({
    * @param currentDate - The array representing the date [YYYY, MM, DD].
    * @memberOf Calendar
    */
-  const renderCalendarDate = (currentDate, index) => {
+  const renderCalendarDate = (currentDate) => {
     return (
       <CalendarCell
         classes={classes}
-        key={index}
+        key={currentDate}
         tabIndex={currentDate.getTime() === firstDayOfCurrentMonthTime ? 0 : -1}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
@@ -234,6 +234,7 @@ HvSingleCalendar.propTypes = {
      * Styles applied to the cells when it is not part of the selection in progress.
      */
     cellsOutsideRange: PropTypes.string,
+    cellContainer: PropTypes.string,
   }).isRequired,
   /**
    * Identifier.

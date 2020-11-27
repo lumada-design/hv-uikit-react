@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
 import {
   getDateISO,
   getFormattedDate,
@@ -11,7 +10,6 @@ import {
   checkIfDateIsDisabled,
 } from "../utils";
 import { HvTooltip, HvTypography } from "../..";
-import styles from "./styles";
 
 const HvCalendarCell = ({
   classes,
@@ -90,7 +88,7 @@ const HvCalendarCell = ({
           [classes.cellsInRange]: inMonth && rangeMode && isSelecting,
           [classes.cellsOutsideRange]: rangeMode && !isSelecting,
         })}
-        data-calendarCell="calendarCell"
+        data-calendar-cell="calendarCell"
       >
         {renderDate()}
       </div>
@@ -141,4 +139,4 @@ HvCalendarCell.propTypes = {
   rangeMode: PropTypes.bool,
 };
 
-export default withStyles(styles, { name: "HvCalendarCell" })(HvCalendarCell);
+export default HvCalendarCell;
