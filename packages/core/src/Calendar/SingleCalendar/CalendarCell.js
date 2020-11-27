@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import useComputation from "../../utils/useComputation";
 import {
   getDateISO,
   getFormattedDate,
@@ -27,6 +28,7 @@ const HvCalendarCell = ({
   ...others
 }) => {
   const buttonEl = useRef(null);
+  const [title, computeTitle] = useComputation(() => getFormattedDate(value, locale));
   const { startDate, endDate } = calendarValue;
   const isCellToday = isSameDay(value, today);
   const isCellSelected = isSameDay(calendarValue, value);
@@ -81,7 +83,8 @@ const HvCalendarCell = ({
     <HvTooltip
       key={getDateISO(value)}
       enterDelay={600}
-      title={<HvTypography noWrap>{getFormattedDate(value, locale)}</HvTypography>}
+      onOpen={computeTitle}
+      title={title ? <HvTypography noWrap>{title}</HvTypography> : ""}
     >
       <div
         className={clsx(classes.dateWrapper, {
