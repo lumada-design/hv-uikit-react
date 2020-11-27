@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
@@ -8,8 +8,8 @@ import isNil from "lodash/isNil";
 import { isKeypress, KeyboardCodes, setId } from "../../utils";
 import styles from "./styles";
 import { HvFormElementDescriptorsContext } from "../../Forms/FormElement";
-import { VIEW_MODE } from "../enums";
-import { isRange, isDate } from "../utils";
+import { VIEW_MODE, REPRESENTATION_VALUES } from "../enums";
+import { isRange, isDate, getWeekdayNamesList } from "../utils";
 import { generateCalendarModel } from "../model";
 import CalendarCell from "./CalendarCell";
 import CalendarHeader from "../CalendarHeader";
@@ -50,6 +50,11 @@ const HvSingleCalendar = ({
     : generateCalendarModel(localValue, visibleMonth, visibleYear);
   const firstDayOfCurrentMonth = new Date(calModel.year, calModel.month - 1, 1);
   const firstDayOfCurrentMonthTime = firstDayOfCurrentMonth.getTime();
+
+  const listWeekdayNames = useMemo(
+    () => getWeekdayNamesList(locale, REPRESENTATION_VALUES.NARROW),
+    [locale]
+  );
 
   const handleChange = (event, date) => {
     event?.preventDefault();
@@ -119,34 +124,6 @@ const HvSingleCalendar = ({
     );
   };
 
-  const monthSelector = (
-    <HvMonthSelector
-      id={id}
-      locale={locale}
-      onChange={onVisibleDateChange}
-      onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
-      visibleMonth={visibleMonth || today.getMonth() + 1}
-      rangeMode={rangeMode}
-    />
-  );
-
-  const navigationAndCalendar = (
-    <div className="calendarWrapper">
-      <HvComposedNavigation
-        id={id}
-        locale={locale}
-        onChange={onVisibleDateChange}
-        onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
-        visibleYear={visibleYear || today.getFullYear()}
-        visibleMonth={visibleMonth || today.getMonth() + 1}
-      />
-      <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
-        <CalendarWeekLabels locale={locale} />
-        {calModel.dates.map(renderCalendarDate)}
-      </div>
-    </div>
-  );
-
   return (
     <div className={clsx(className, classes.calendarContainer)} {...others}>
       <div id={id} className={classes.calendarWrapper}>
@@ -157,8 +134,32 @@ const HvSingleCalendar = ({
           showEndDate={showEndDate && !isDateSelectionMode}
         />
         <>
-          {calViewMode === VIEW_MODE.CALENDAR && navigationAndCalendar}
-          {calViewMode === VIEW_MODE.MONTHLY && monthSelector}
+          {calViewMode === VIEW_MODE.CALENDAR && (
+            <div>
+              <HvComposedNavigation
+                id={id}
+                locale={locale}
+                onChange={onVisibleDateChange}
+                onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+                visibleYear={visibleYear || today.getFullYear()}
+                visibleMonth={visibleMonth || today.getMonth() + 1}
+              />
+              <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
+                <CalendarWeekLabels labels={listWeekdayNames} />
+                {calModel.dates.map(renderCalendarDate)}
+              </div>
+            </div>
+          )}
+          {calViewMode === VIEW_MODE.MONTHLY && (
+            <HvMonthSelector
+              id={id}
+              locale={locale}
+              onChange={onVisibleDateChange}
+              onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+              visibleMonth={visibleMonth || today.getMonth() + 1}
+              rangeMode={rangeMode}
+            />
+          )}
         </>
       </div>
     </div>
