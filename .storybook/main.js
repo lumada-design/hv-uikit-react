@@ -1,8 +1,5 @@
 const path = require("path");
 
-var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
-const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
-
 const docFolder = path.resolve(__dirname, "../doc");
 const corePackageSrc = path.resolve(__dirname, "../packages/core/src");
 const labPackageSrc = path.resolve(__dirname, "../packages/lab/src");
@@ -11,8 +8,6 @@ const iconsPackageBin = path.resolve(__dirname, "../packages/icons/bin");
 const excludePaths = [/node_modules/, /dist/];
 
 module.exports = {
-  // to avoid a manual setup, we must keep the "stories" suffix at least for mdx
-  // see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/docspage.md#story-file-names
   stories: [
     "../doc/**/*.stories.@(js|mdx)",
     "../packages/core/src/**/*.stories.@(js|mdx)",
@@ -21,26 +16,27 @@ module.exports = {
       : []),
     "../packages/lab/src/**/*.stories.js",
   ],
+
   addons: [
-    "@storybook/addon-actions",
     "@storybook/addon-links",
     {
-      name: "@storybook/addon-docs",
+      name: "@storybook/addon-essentials",
       options: {
-        configureJSX: true,
+        viewport: false,
+        backgrounds: false,
       },
     },
-    __dirname + "/themes/register",
+    __dirname + "/theme/addon/register",
   ],
 
   webpackFinal: async (config) => {
     const rules = config.module.rules;
 
     const jsRule = rules.find((rule) => rule.test.test(".js"));
-
     jsRule.include = [__dirname, docFolder, corePackageSrc, labPackageSrc, iconsPackageBin];
     jsRule.exclude = excludePaths;
-    const babelLoader = jsRule.use.find(({ loader }) => loader === "babel-loader");
+
+    const babelLoader = jsRule.use.find(({ loader }) => loader.includes("babel-loader"));
     const overrideJsRule = babelLoader.options.overrides.find((rule) => rule.test.test(".js"));
     const overrideJsRulePlugins = overrideJsRule.plugins;
 
@@ -79,52 +75,9 @@ module.exports = {
       ...docgenPluginOptions.handlers,
       "react-docgen-deprecation-handler",
       path.resolve(__dirname, "docgen/defaultPropsHandler"),
-      path.resolve(__dirname, "docgen/defaultValuePropsHandler"),
+      // path.resolve(__dirname, "docgen/defaultValuePropsHandler"),
     ];
 
-    // patch Storybook's sortProps because it doesn't handle wrapped components
-    config.plugins.push(
-      new NormalModuleReplacementPlugin(
-        /(.*)addon-docs\/dist\/frameworks\/react\/propTypes\/sortProps(\.*)/,
-        function (resource) {
-          resource.request = path.resolve(__dirname, "patches/sortProps.js");
-          if (resource.resource) {
-            resource.resource = resource.request;
-          }
-        }
-      )
-    );
-
-    config.plugins.push(
-      new MonacoWebpackPlugin({
-        // see https://github.com/Microsoft/monaco-editor-webpack-plugin#options
-        languages: [
-          // "javascript",
-          "json",
-          // "typescript", // needed for JavaScript, adds the required HTML worker
-          "yaml",
-        ],
-      })
-    );
-
-    // rule for txt files
-    rules.push({
-      test: /\.txt$/i,
-      use: "raw-loader",
-    });
-
-    // specific rule for templates' svg files
-    const fileLoaderRule = rules.find((rule) => rule.test.test(".svg"));
-    fileLoaderRule.exclude = path.resolve(__dirname, "../samples/templates");
-
-    rules.push({
-      test: /\.svg$/,
-      include: path.resolve(__dirname, "../samples/templates"),
-      use: "@svgr/webpack",
-    });
-
-    // not sure it is really needed, as stories can import components
-    // using relative paths
     config.resolve.alias = {
       ...config.resolve.alias,
       "@hv/uikit-react-core/dist": corePackageSrc,

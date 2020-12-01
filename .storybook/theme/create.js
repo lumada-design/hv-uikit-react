@@ -1,7 +1,7 @@
 import { create } from "@storybook/theming/create";
 
-export default function storybookThemeFromUiKitTheme(theme) {
-  return create({
+export default (theme) =>
+  create({
     base: theme.type,
 
     color: {
@@ -85,4 +85,3 @@ export default function storybookThemeFromUiKitTheme(theme) {
 
     hv: theme,
   });
-}

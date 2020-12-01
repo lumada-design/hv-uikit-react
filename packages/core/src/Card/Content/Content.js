@@ -7,7 +7,7 @@ import styles from "./styles";
 /**
  * The content container for the card.
  */
-const Content = (props) => {
+export const Content = (props) => {
   const { id, classes, className, children, onClick, ...others } = props;
   return (
     <CardContent id={id} className={clsx(classes.content, className)} onClick={onClick} {...others}>

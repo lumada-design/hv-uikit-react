@@ -7,7 +7,7 @@ import styles from "./styles";
 /**
  * A card is a container for a few short and related pieces of content. It roughly resembles a playing card in size and shape and is intended as a linked short representation of a conceptual unit. For that reason, this pattern must be used as an entry-point for further information.
  */
-const HvCard = (props) => {
+export const Card = (props) => {
   const {
     classes,
     className,
@@ -41,7 +41,7 @@ const HvCard = (props) => {
   );
 };
 
-HvCard.propTypes = {
+Card.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -118,4 +118,4 @@ HvCard.propTypes = {
   selected: PropTypes.bool,
 };
 
-export default withStyles(styles, { name: "HvCard" })(HvCard);
+export default withStyles(styles, { name: "HvCard" })(Card);
