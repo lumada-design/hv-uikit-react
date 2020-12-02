@@ -20,7 +20,7 @@ export default {
 const openCombobox = async () => {
   fireEvent.click(screen.getByRole("combobox"));
 
-  const tooltip = await waitFor(() => screen.getByRole("tooltip"));
+  const tooltip = await screen.findByRole("tooltip");
 
   // extra buffer to allow popper layout
   return new Promise((resolve) => setTimeout(() => resolve(tooltip), 1000));

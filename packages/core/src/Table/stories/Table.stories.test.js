@@ -65,7 +65,7 @@ RowActionOpened.story = {
       runBefore: async () => {
         fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
 
-        const menu = await waitFor(() => screen.getByRole("menu"));
+        const menu = await screen.findByRole("menu");
 
         // extra buffer to allow popper layout
         return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));

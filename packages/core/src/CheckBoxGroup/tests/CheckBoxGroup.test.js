@@ -4,8 +4,6 @@ import React from "react";
 
 import userEvent from "@testing-library/user-event";
 
-// TODO find a better solution for the location of this file so the ignore isn't needed
-// eslint-disable-next-line import/no-unresolved
 import { render } from "testing-utils";
 
 import { HvCheckBox, HvCheckBoxGroup } from "../..";
@@ -40,20 +38,30 @@ describe("HvCheckBoxGroup", () => {
         </HvCheckBoxGroup>
       );
 
-      const checkboxGroup = getByRole("group");
+      const checkboxGroup = getByRole("group", { name: "Favorite Pet" });
       expect(checkboxGroup).toBeInTheDocument();
 
+      // defaults
+      expect(checkboxGroup).not.toHaveAttribute("aria-disabled");
+      expect(checkboxGroup).toBeValid();
+      expect(checkboxGroup).not.toHaveDescription();
+
+      // childs ordered and rendered as expected
       const checkboxes = getAllByRole("checkbox");
       expect(checkboxes.length).toBe(3);
 
-      // order as expected
       expect(checkboxes[0].value).toBe("dogs");
       expect(checkboxes[1].value).toBe("cats");
       expect(checkboxes[2].value).toBe("dragons");
-
-      expect(checkboxes[0].checked).toBe(false);
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[0]).not.toBeChecked();
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[0]).not.toHaveAttribute("name");
+      expect(checkboxes[1]).not.toHaveAttribute("name");
+      expect(checkboxes[2]).not.toHaveAttribute("name");
+      expect(checkboxes[0]).toBeEnabled();
+      expect(checkboxes[1]).toBeEnabled();
+      expect(checkboxes[2]).toBeEnabled();
     });
 
     it("supports custom props", () => {
@@ -64,6 +72,7 @@ describe("HvCheckBoxGroup", () => {
           <HvCheckBox value="dragons" label="Dragons" />
         </HvCheckBoxGroup>
       );
+
       const checkboxGroup = getByRole("group");
 
       expect(checkboxGroup).toHaveAttribute("data-testid", "favorite-pet");
@@ -71,22 +80,6 @@ describe("HvCheckBoxGroup", () => {
   });
 
   describe("name", () => {
-    it("no name by default", () => {
-      const { getAllByRole } = render(
-        <HvCheckBoxGroup label="Favorite Pet">
-          <HvCheckBox value="dogs" label="Dogs" />
-          <HvCheckBox value="cats" label="Cats" />
-          <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
-      );
-
-      const checkboxes = getAllByRole("checkbox");
-
-      expect(checkboxes[0]).not.toHaveAttribute("name");
-      expect(checkboxes[1]).not.toHaveAttribute("name");
-      expect(checkboxes[2]).not.toHaveAttribute("name");
-    });
-
     it("child checkboxes can have names", () => {
       const { getAllByRole } = render(
         <HvCheckBoxGroup label="Favorite Pet">
@@ -151,16 +144,16 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxes = getAllByRole("checkbox");
 
-      expect(checkboxes[0].checked).toBe(false);
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[0]).not.toBeChecked();
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
 
       const dragons = getByLabelText("Dragons");
       userEvent.click(dragons);
 
-      expect(checkboxes[0].checked).toBe(false);
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[0]).not.toBeChecked();
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
     });
 
     it("can have a uncontrolled default value", () => {
@@ -176,9 +169,9 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxes = getAllByRole("checkbox");
 
-      expect(checkboxes[0].checked).toBe(false);
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[0]).not.toBeChecked();
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
 
       const dragons = getByLabelText("Dragons");
       userEvent.click(dragons);
@@ -186,9 +179,9 @@ describe("HvCheckBoxGroup", () => {
       expect(onChangeSpy).toHaveBeenCalledTimes(1);
       expect(onChangeSpy).toHaveBeenCalledWith(expect.anything(), ["cats", "dragons"]);
 
-      expect(checkboxes[0].checked).toBe(false);
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(true);
+      expect(checkboxes[0]).not.toBeChecked();
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
     });
 
     it("can have a uncontrolled default value from the children state", () => {
@@ -204,9 +197,9 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxes = getAllByRole("checkbox");
 
-      expect(checkboxes[0].checked).toBe(false);
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(true);
+      expect(checkboxes[0]).not.toBeChecked();
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
 
       const dragons = getByLabelText("Dragons");
       userEvent.click(dragons);
@@ -214,9 +207,9 @@ describe("HvCheckBoxGroup", () => {
       expect(onChangeSpy).toHaveBeenCalledTimes(1);
       expect(onChangeSpy).toHaveBeenCalledWith(expect.anything(), ["cats"]);
 
-      expect(checkboxes[0].checked).toBe(false);
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[0]).not.toBeChecked();
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
     });
 
     it("children state is ignored when group has defaultValue", () => {
@@ -230,9 +223,9 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxes = getAllByRole("checkbox");
 
-      expect(checkboxes[0].checked).toBe(true);
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[0]).toBeChecked();
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
     });
 
     it("children state is ignored when group has value", () => {
@@ -246,9 +239,9 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxes = getAllByRole("checkbox");
 
-      expect(checkboxes[0].checked).toBe(true);
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[0]).toBeChecked();
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
     });
   });
 
@@ -278,9 +271,9 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxes = getAllByRole("checkbox");
-      expect(checkboxes[0]).not.toHaveAttribute("required");
-      expect(checkboxes[1]).not.toHaveAttribute("required");
-      expect(checkboxes[2]).not.toHaveAttribute("required");
+      expect(checkboxes[0]).not.toBeRequired();
+      expect(checkboxes[1]).not.toBeRequired();
+      expect(checkboxes[2]).not.toBeRequired();
     });
   });
 
@@ -318,31 +311,11 @@ describe("HvCheckBoxGroup", () => {
 
       expect(groupOnChangeSpy).toHaveBeenCalledTimes(0);
       expect(checkboxOnChangeSpy).toHaveBeenCalledTimes(0);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[2]).not.toBeChecked();
     });
   });
 
   describe("disabled", () => {
-    it("not disabled by default", () => {
-      const { getAllByRole, getByRole } = render(
-        <HvCheckBoxGroup label="Favorite Pet">
-          <HvCheckBox value="dogs" label="Dogs" />
-          <HvCheckBox value="cats" label="Cats" />
-          <HvCheckBox value="dragons" label="Dragons" />
-        </HvCheckBoxGroup>
-      );
-
-      const checkboxGroup = getByRole("group");
-
-      // aria-disabled should be unset, never "false"
-      expect(checkboxGroup).not.toHaveAttribute("aria-disabled");
-
-      const checkboxes = getAllByRole("checkbox");
-      expect(checkboxes[0]).not.toHaveAttribute("disabled");
-      expect(checkboxes[1]).not.toHaveAttribute("disabled");
-      expect(checkboxes[2]).not.toHaveAttribute("disabled");
-    });
-
     it("can be disabled", () => {
       const groupOnChangeSpy = jest.fn();
       const checkboxOnChangeSpy = jest.fn();
@@ -359,16 +332,16 @@ describe("HvCheckBoxGroup", () => {
       expect(checkboxGroup).toHaveAttribute("aria-disabled", "true");
 
       const checkboxes = getAllByRole("checkbox");
-      expect(checkboxes[0]).toHaveAttribute("disabled");
-      expect(checkboxes[1]).toHaveAttribute("disabled");
-      expect(checkboxes[2]).toHaveAttribute("disabled");
+      expect(checkboxes[0]).toBeDisabled();
+      expect(checkboxes[1]).toBeDisabled();
+      expect(checkboxes[2]).toBeDisabled();
 
       const dragons = getByLabelText("Dragons");
       userEvent.click(dragons);
 
       expect(groupOnChangeSpy).toHaveBeenCalledTimes(0);
       expect(checkboxOnChangeSpy).toHaveBeenCalledTimes(0);
-      expect(checkboxes[2].checked).toBe(false);
+      expect(checkboxes[2]).not.toBeChecked();
     });
 
     it("supports disabled child checkboxes", () => {
@@ -387,13 +360,13 @@ describe("HvCheckBoxGroup", () => {
       expect(checkboxGroup).not.toHaveAttribute("aria-disabled");
 
       const checkboxes = getAllByRole("checkbox");
-      expect(checkboxes[0]).not.toHaveAttribute("disabled");
-      expect(checkboxes[1]).toHaveAttribute("disabled");
-      expect(checkboxes[2]).not.toHaveAttribute("disabled");
+      expect(checkboxes[0]).toBeEnabled();
+      expect(checkboxes[1]).toBeDisabled();
+      expect(checkboxes[2]).toBeEnabled();
 
       expect(groupOnChangeSpy).toHaveBeenCalledTimes(0);
       expect(checkboxOnChangeSpy).toHaveBeenCalledTimes(0);
-      expect(checkboxes[1].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
     });
   });
 
@@ -455,10 +428,10 @@ describe("HvCheckBoxGroup", () => {
       );
 
       // the description text is visible
-      const description = getByText("Choose an animal", { exact: true });
+      getByText("Choose an animal");
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).toHaveAttribute("aria-describedby", description.getAttribute("id"));
+      expect(checkboxGroup).toHaveDescription("Choose an animal");
     });
 
     it("supports an external description", () => {
@@ -474,7 +447,7 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).toHaveAttribute("aria-describedby", "description-element-id");
+      expect(checkboxGroup).toHaveDescription("An external description");
     });
   });
 
@@ -563,7 +536,7 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).toHaveAttribute("aria-invalid", "true");
+      expect(checkboxGroup).toBeInvalid();
 
       const errorId = checkboxGroup.getAttribute("aria-errormessage");
       const error = document.getElementById(errorId);
@@ -581,13 +554,13 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).not.toHaveAttribute("aria-invalid");
+      expect(checkboxGroup).toBeValid();
 
       const error = queryByText("The error message");
       expect(error).toBeNull();
     });
 
-    it("sets aria-invalid in the group and not on every checkbox", () => {
+    it("sets the group invalid, not the child checkboxes", () => {
       const { getByRole, getAllByRole } = render(
         <HvCheckBoxGroup label="Favorite Pet" status="invalid">
           <HvCheckBox value="dogs" label="Dogs" />
@@ -597,16 +570,16 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).toHaveAttribute("aria-invalid", "true");
+      expect(checkboxGroup).toBeInvalid();
 
       const checkboxes = getAllByRole("checkbox");
-      expect(checkboxes[0]).not.toHaveAttribute("aria-invalid");
-      expect(checkboxes[1]).not.toHaveAttribute("aria-invalid");
-      expect(checkboxes[2]).not.toHaveAttribute("aria-invalid");
+      expect(checkboxes[0]).toBeValid();
+      expect(checkboxes[1]).toBeValid();
+      expect(checkboxes[2]).toBeValid();
     });
 
     it("built-in validation: displays error when required and no checkbox is selected", () => {
-      const { getByRole, getAllByRole, getByLabelText } = render(
+      const { getByRole, getByLabelText } = render(
         <HvCheckBoxGroup label="Favorite Pet" required>
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
@@ -615,26 +588,44 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).not.toHaveAttribute("aria-invalid");
+      expect(checkboxGroup).toBeValid();
 
       const dragons = getByLabelText("Dragons");
       userEvent.click(dragons);
 
-      expect(checkboxGroup).toHaveAttribute("aria-invalid", "true");
+      expect(checkboxGroup).toBeInvalid();
 
       const errorId = checkboxGroup.getAttribute("aria-errormessage");
       const error = document.getElementById(errorId);
 
       expect(error).toHaveTextContent("Required");
+    });
 
-      const checkboxes = getAllByRole("checkbox");
-      expect(checkboxes[0]).not.toHaveAttribute("aria-invalid");
-      expect(checkboxes[1]).not.toHaveAttribute("aria-invalid");
-      expect(checkboxes[2]).not.toHaveAttribute("aria-invalid");
+    it("built-in validation: displays error when required and select all is unchecked", () => {
+      const { getByRole } = render(
+        <HvCheckBoxGroup label="Favorite Pet" showSelectAll required>
+          <HvCheckBox value="dogs" label="Dogs" checked />
+          <HvCheckBox value="cats" label="Cats" checked />
+          <HvCheckBox value="dragons" label="Dragons" checked />
+        </HvCheckBoxGroup>
+      );
+
+      const checkboxGroup = getByRole("group");
+      expect(checkboxGroup).toBeValid();
+
+      const selectAll = getByRole("checkbox", { name: "All" });
+      userEvent.click(selectAll);
+
+      expect(checkboxGroup).toBeInvalid();
+
+      const errorId = checkboxGroup.getAttribute("aria-errormessage");
+      const error = document.getElementById(errorId);
+
+      expect(error).toHaveTextContent("Required");
     });
 
     it("built-in validation: doesn't display error before user interaction", () => {
-      const { getByRole, getAllByRole, getByLabelText } = render(
+      const { getByRole, getByLabelText, queryByText } = render(
         <HvCheckBoxGroup label="Favorite Pet" required>
           <HvCheckBox value="dogs" label="Dogs" />
           <HvCheckBox value="cats" label="Cats" />
@@ -643,23 +634,19 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).not.toHaveAttribute("aria-invalid");
+      expect(checkboxGroup).toBeValid();
+      expect(queryByText("Required")).toBeNull();
 
       const dragons = getByLabelText("Dragons");
       userEvent.click(dragons);
       userEvent.click(dragons);
 
-      expect(checkboxGroup).toHaveAttribute("aria-invalid", "true");
+      expect(checkboxGroup).toBeInvalid();
 
       const errorId = checkboxGroup.getAttribute("aria-errormessage");
       const error = document.getElementById(errorId);
 
       expect(error).toHaveTextContent("Required");
-
-      const checkboxes = getAllByRole("checkbox");
-      expect(checkboxes[0]).not.toHaveAttribute("aria-invalid");
-      expect(checkboxes[1]).not.toHaveAttribute("aria-invalid");
-      expect(checkboxes[2]).not.toHaveAttribute("aria-invalid");
     });
   });
 
@@ -674,7 +661,7 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const selectAll = getByRole("checkbox", { name: "All" });
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -688,7 +675,7 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const selectAll = getByRole("checkbox", { name: "All" });
-      expect(selectAll.checked).toBe(true);
+      expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -702,7 +689,7 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const selectAll = getByRole("checkbox", { name: "All" });
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -718,17 +705,17 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).not.toBeChecked();
 
       userEvent.click(selectAll);
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(true);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
-      expect(selectAll.checked).toBe(true);
+      expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -744,17 +731,17 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(true);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
       userEvent.click(selectAll);
 
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).not.toBeChecked();
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -770,17 +757,17 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
       userEvent.click(selectAll);
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(true);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
-      expect(selectAll.checked).toBe(true);
+      expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -796,20 +783,20 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
 
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).not.toBeChecked();
 
       userEvent.click(checkboxes[2]);
 
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(true);
-      expect(checkboxes[3].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
+      expect(checkboxes[3]).not.toBeChecked();
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -823,16 +810,16 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
 
-      expect(checkboxes[1].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
 
       userEvent.click(checkboxes[1]);
 
-      expect(checkboxes[1].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
 
-      expect(selectAll.checked).toBe(true);
+      expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -848,20 +835,20 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(selectAll.checked).toBe(true);
+      expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(true);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
       userEvent.click(checkboxes[2]);
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -875,16 +862,16 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(selectAll.checked).toBe(true);
+      expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
 
-      expect(checkboxes[1].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
 
       userEvent.click(checkboxes[1]);
 
-      expect(checkboxes[1].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -900,20 +887,20 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).toHaveAttribute("data-indeterminate", "true");
 
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
       userEvent.click(checkboxes[3]);
 
-      expect(checkboxes[1].checked).toBe(false);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(false);
+      expect(checkboxes[1]).not.toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).not.toBeChecked();
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
 
@@ -929,20 +916,20 @@ describe("HvCheckBoxGroup", () => {
       const checkboxes = getAllByRole("checkbox");
       const selectAll = checkboxes[0];
 
-      expect(selectAll.checked).toBe(false);
+      expect(selectAll).not.toBeChecked();
       expect(selectAll).toHaveAttribute("data-indeterminate", "true");
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(false);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).not.toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
       userEvent.click(checkboxes[2]);
 
-      expect(checkboxes[1].checked).toBe(true);
-      expect(checkboxes[2].checked).toBe(true);
-      expect(checkboxes[3].checked).toBe(true);
+      expect(checkboxes[1]).toBeChecked();
+      expect(checkboxes[2]).toBeChecked();
+      expect(checkboxes[3]).toBeChecked();
 
-      expect(selectAll.checked).toBe(true);
+      expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
   });

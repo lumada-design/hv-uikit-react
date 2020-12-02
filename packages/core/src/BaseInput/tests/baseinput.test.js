@@ -42,6 +42,9 @@ describe("Input", () => {
         <BaseInput placeholder="test" disabled />
       </HvProvider>
     );
+
+    // not using jest-dom yet
+    // eslint-disable-next-line jest-dom/prefer-enabled-disabled
     expect(getInputProps(wrapper).disabled).toBe(true);
   });
 

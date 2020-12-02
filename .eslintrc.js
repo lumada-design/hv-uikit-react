@@ -1,8 +1,15 @@
 const javascriptFileExtensions = [".js", ".jsx"];
 
 module.exports = {
-  extends: ["airbnb", "prettier", "prettier/@typescript-eslint"],
-  plugins: ["prettier", "react-hooks", "@typescript-eslint"],
+  extends: [
+    "airbnb",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:testing-library/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+  ],
+  plugins: ["prettier", "react-hooks", "@typescript-eslint", "testing-library", "jest-dom"],
   parser: "babel-eslint",
   rules: {
     "react/jsx-filename-extension": [1, { extensions: javascriptFileExtensions }],
@@ -34,6 +41,13 @@ module.exports = {
         "no-console": "off",
         "no-alert": "off",
         "no-any": 0,
+      },
+    },
+    {
+      files: ["*.test.js"],
+      env: { jest: true },
+      rules: {
+        "import/no-unresolved": [2, { ignore: ["^testing-utils$"] }],
       },
     },
     {
