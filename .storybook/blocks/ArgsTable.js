@@ -32,10 +32,6 @@ export const ArgsTable = (props) => {
   if (story) {
     return <StoryTable {...props} component={main} subcomponents={subcomponents} />;
   }
-
-  const mainLabel = getComponentName(main);
-
-  return <h1>Hey</h1>;
 };
 
 ArgsTable.defaultProps = {

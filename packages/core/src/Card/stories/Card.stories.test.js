@@ -59,7 +59,7 @@ SelectedOpened.parameters = {
 
       fireEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[0]);
 
-        const menu = await screen.findByRole("menu");
+      const menu = await screen.findByRole("menu");
 
       // extra buffer to allow popper layout
       return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));

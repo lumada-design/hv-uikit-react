@@ -7,7 +7,7 @@ import { Main } from "../stories/DropDownMenu.stories";
 import { KeyboardNavigation } from "../stories/DropDownMenu.stories.test";
 
 jest.mock(
-  "popper.js",
+  "@popperjs/core",
   () =>
     class {
       constructor() {
