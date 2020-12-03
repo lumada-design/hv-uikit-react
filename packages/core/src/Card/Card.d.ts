@@ -68,7 +68,8 @@ export interface HvCardProps
    */
   mediaAriaDescribedBy?: string;
   /**
-   *  The border color at the top of the card. Must be one of palette semantic colors. To set another color, the borderTop should be override.
+   *  The border color at the top of the card. Must be one of palette semantic colors.
+   *  To set another color, the backgroundColor in the class semanticContainer should be override.
    */
   semantic?: "sema0" | HvSemanticColorKeys;
   /**
