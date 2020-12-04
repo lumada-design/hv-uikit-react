@@ -49,6 +49,11 @@ const HvBaseDropdown = ({
       const value = expanded && !disabled;
 
       if (currentIsOpen !== value) {
+        /* 
+          TODO: review the triggering of this onToggle, it might not be necessary
+          because this hook triggers when the baseDropdown props are updated, meaning that
+          a component made an explicit change. So it might be executing a callback to notify something the component should already know.
+        */
         onToggle?.(null, value);
         return value;
       }
