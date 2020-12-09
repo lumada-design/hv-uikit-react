@@ -23,7 +23,7 @@ export interface HvMultiButtonProps
   /**
    * Category of button to use
    */
-  category: HvButtonCategories;
+  category?: HvButtonCategories;
 }
 
 export default function HvMultiButton(props: HvMultiButtonProps): JSX.Element | null;
