@@ -161,7 +161,7 @@ export interface HvTableProps
   /**
    * Callback to notify when the page size changes
    */
-  onPageSizeChange?: (pageSize: number) => void;
+  onPageSizeChange?: (pageSize: number, currentPage: number) => void;
 
   /**
    * Boolean to enable or disable the server side pagination mechanism
