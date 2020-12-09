@@ -57,4 +57,17 @@ describe("TextArea Component", () => {
     const labelCount = wrapperMount.find("HvTextArea").find("label").at(0).text();
     expect(labelCount).toBe("5");
   });
+
+  it("should use the ref passed by the caller", () => {
+    const ref = React.createRef(null);
+    expect(ref.current).toBe(null);
+
+    mount(
+      <HvProvider>
+        <HvTextArea inputRef={ref} />
+      </HvProvider>
+    );
+
+    expect(ref.current).toBeInstanceOf(HTMLTextAreaElement);
+  });
 });

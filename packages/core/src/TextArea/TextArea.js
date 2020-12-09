@@ -91,7 +91,8 @@ const HvTextArea = (props) => {
 
   const elementId = useUniqueId(id, "hvtextarea");
 
-  const inputRef = useRef(inputRefProp || null);
+  const inputRefOwn = useRef(null);
+  const inputRef = inputRefProp || inputRefOwn;
 
   const [focused, setFocused] = React.useState(false);
 
@@ -143,6 +144,7 @@ const HvTextArea = (props) => {
     return inputValidity;
   }, [
     errorMessages,
+    inputRef,
     isEmptyValue,
     maxCharQuantity,
     minCharQuantity,
@@ -166,17 +168,17 @@ const HvTextArea = (props) => {
 
   const [autoScrolling, setAutoScrolling] = useState(autoScroll);
 
-  const isScrolledDown = () => {
+  const isScrolledDown = useCallback(() => {
     const el = inputRef.current;
     return el == null || el.scrollHeight - el.scrollTop === el.clientHeight;
-  };
+  }, [inputRef]);
 
-  const scrollDown = () => {
+  const scrollDown = useCallback(() => {
     const el = inputRef.current;
     if (el != null) {
       el.scrollTop = el.scrollHeight - el.clientHeight;
     }
-  };
+  }, [inputRef]);
 
   const addScrollListener = useCallback(() => {
     const scrollHandler = {
@@ -185,7 +187,7 @@ const HvTextArea = (props) => {
       },
     };
     inputRef.current.addEventListener("scroll", scrollHandler);
-  }, []);
+  }, [inputRef, isScrolledDown]);
 
   /**
    * Validates the text area updating the state and modifying the warning text, also executes
@@ -239,7 +241,7 @@ const HvTextArea = (props) => {
     if (autoScrolling) {
       scrollDown();
     }
-  }, [addScrollListener, autoScroll, autoScrolling]);
+  }, [addScrollListener, autoScroll, autoScrolling, scrollDown]);
 
   // run initial validation after first render
   // and also when any validation condition changes
