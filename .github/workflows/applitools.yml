@@ -81,7 +81,7 @@ jobs:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npx eyes-storybook -u http://localhost:9001
+          APPLITOOLS_SHOW_LOGS=true npx eyes-storybook -u http://localhost:9001
 
       - name: Clean Folders
         if: always()
