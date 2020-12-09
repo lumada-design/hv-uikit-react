@@ -1370,6 +1370,11 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                 className="MuiBox-root MuiBox-root-9 HvPanel-root"
                               >
                                 <WithStyles(HvList)
+                                  classes={
+                                    Object {
+                                      "root": undefined,
+                                    }
+                                  }
                                   condensed={true}
                                   id="drop-down-menu-10-list"
                                   onClick={[Function]}
@@ -3175,6 +3180,11 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                 className="MuiBox-root MuiBox-root-1 HvPanel-root"
                               >
                                 <WithStyles(HvList)
+                                  classes={
+                                    Object {
+                                      "root": undefined,
+                                    }
+                                  }
                                   condensed={true}
                                   id="drop-down-menu-2-list"
                                   onClick={[Function]}
