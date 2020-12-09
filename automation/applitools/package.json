@@ -13,7 +13,8 @@
     "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
   "scripts": {
-    "eyes-storybook": "eyes-storybook"
+    "eyes-storybook": "eyes-storybook",
+    "eyes-storybook:verbose": "APPLITOOLS_SHOW_LOGS=true eyes-storybook"
   },
   "dependencies": {
     "@applitools/eyes-storybook": "^3.13.4"
