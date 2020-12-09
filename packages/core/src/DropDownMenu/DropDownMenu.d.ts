@@ -2,7 +2,7 @@ import * as React from "react";
 import { IconButtonProps, StandardProps } from "@material-ui/core";
 import { ListValueProp } from "../List";
 
-export type HvDropDownMenuClassKey = "icon" | "iconSelected";
+export type HvDropDownMenuClassKey = "root" | "icon" | "iconSelected";
 
 export interface HvDropDownMenuProps
   extends StandardProps<IconButtonProps, HvDropDownMenuClassKey, "onClick"> {
