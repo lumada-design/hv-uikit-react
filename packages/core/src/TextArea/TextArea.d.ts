@@ -58,7 +58,7 @@ export interface HvTextAreaProps
   /**
    * Text between the current char counter and max value.
    */
-  middleCountLabel: string;
+  middleCountLabel?: string;
 
   /**
    * An Object containing the various texts associated with the input.
