@@ -7,12 +7,12 @@ export interface HvToggleButtonProps extends StandardProps<HvButtonProps, HvTogg
   /**
    * When uncontrolled, defines the initial selected state.
    */
-  defaultSelected: boolean;
+  defaultSelected?: boolean;
   /**
    * Defines if the button is selected.
    * When defined the button state becomes controlled.
    */
-  selected: boolean;
+  selected?: boolean;
   /**
    * Icon for when selected. Ignored if the component has children.
    */
@@ -20,7 +20,7 @@ export interface HvToggleButtonProps extends StandardProps<HvButtonProps, HvTogg
   /**
    * Icon for when not selected. Ignored if the component has children.
    */
-  notSelectedIcon: React.ReactNode;
+  notSelectedIcon?: React.ReactNode;
 }
 
 export default function HvToggleButton(props: HvToggleButtonProps): JSX.Element | null;
