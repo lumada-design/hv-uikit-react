@@ -12,20 +12,20 @@ function getStories(url, filter) {
   return Promise.resolve(
     stories
       .filter(
-        s =>
+        (s) =>
           // test only core components
           (s.kind && s.kind.indexOf("Components/") === 0) ||
           // allow lab components if they provide a pa11y configuration (even if empty)
           (s.parameters != null && s.parameters.pa11y != null)
       )
       .filter(
-        s =>
-          s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== false
+        (s) =>
+          s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== true
       )
-      .filter(s => filter == null || s.id.indexOf(filter.toLowerCase()) !== -1)
-      .map(s => ({
+      .filter((s) => filter == null || s.id.indexOf(filter.toLowerCase()) !== -1)
+      .map((s) => ({
         url: url + "?id=" + s.id,
-        ...s.parameters.pa11y
+        ...s.parameters.pa11y,
       }))
   );
 }
@@ -33,7 +33,7 @@ function getStories(url, filter) {
 module.exports = (async () => {
   const browser = await puppeteer.launch({
     ignoreHTTPSErrors: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
   const page = await browser.newPage();
@@ -41,7 +41,7 @@ module.exports = (async () => {
   const stories = await page
     .goto(url)
     .then(() => page.evaluate(getStories, url, filter))
-    .catch(error => {
+    .catch((error) => {
       console.log(error.message);
     })
     .finally(() => {
@@ -60,7 +60,7 @@ module.exports = (async () => {
         // Disabling contrast tests due to inconsistent false positives
         // https://github.com/pa11y/pa11y/issues/422
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast"
+        "color-contrast",
       ],
       runners: ["htmlcs", "axe"],
       standard: "WCAG2AA",
@@ -68,10 +68,10 @@ module.exports = (async () => {
       reporter: "json",
       chromeLaunchConfig: {
         ignoreHTTPSErrors: true,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"]
-      }
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      },
     },
-    urls: stories
+    urls: stories,
   };
 
   return pa11yciConfig;
