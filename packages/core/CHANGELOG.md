@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.4.0...@hv/uikit-react-core@3.5.0) (2020-12-10)
+
+
+### Bug Fixes
+
+* **asset-inventory:** component callbacks stale reference HVUIKIT-5553 ([bb430b7](https://github.com/pentaho/hv-uikit-react/commit/bb430b78416d65ad5626af435029e64cf6778f30))
+* **datepicker:** handleToggle deadlock with null event. HVUIKIT-5643 ([#2174](https://github.com/pentaho/hv-uikit-react/issues/2174)) ([d972d3f](https://github.com/pentaho/hv-uikit-react/commit/d972d3fa4b90efa7564176546a00c86351ee9ba2))
+* **dropdownmenu:** classes root type definition ([72e0173](https://github.com/pentaho/hv-uikit-react/commit/72e01736a055c6ca17c25b87e7a38e8189403f53))
+* **multibutton:** category type definition ([7eb4392](https://github.com/pentaho/hv-uikit-react/commit/7eb43922f54122b2096589ed22c2a893159a26ec))
+* **table:** onPageSizeChange callback type definition ([9624e63](https://github.com/pentaho/hv-uikit-react/commit/9624e63da8bc00e29f46ae2ab70077b97060e3b8))
+* **textarea:** handle inputRef correctly ([8d243cf](https://github.com/pentaho/hv-uikit-react/commit/8d243cf888b0eb0e1b306d583383c08d028bb70a))
+* **textarea:** middleCountLabel type definition ([4f6a48e](https://github.com/pentaho/hv-uikit-react/commit/4f6a48e664991481553f5e2ee44963d49f55bcf4))
+* **togglebutton:** defaultSelected, selected, and nonSelectedIcon type definition ([810c507](https://github.com/pentaho/hv-uikit-react/commit/810c507f358e32fe48da8c32bb9851ac22c5a359))
+* incorrect labeling of checkbox and radio groups ([e2d6a03](https://github.com/pentaho/hv-uikit-react/commit/e2d6a0370430740ff1ec5662117f4157f4549b2a))
+
+
+### Features
+
+* **dropdownmenu:** add menuList to classes ([369b515](https://github.com/pentaho/hv-uikit-react/commit/369b515199a5aba1b71339dcef8c43f88f0c795b))
+
+
+
+
+
 # [3.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.3.0...@hv/uikit-react-core@3.4.0) (2020-11-26)
 
 
