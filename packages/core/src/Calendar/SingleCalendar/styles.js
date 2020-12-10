@@ -1,3 +1,5 @@
+import { outlineStyles } from "../../Focus/styles";
+
 const styles = (theme) => {
   const hover = {
     backgroundColor: theme.palette.atmo3,
@@ -62,9 +64,26 @@ const styles = (theme) => {
       "&:focus": {
         outline: "none",
       },
+      "&.focus-visible": {
+        ...hover,
+        ...outlineStyles,
+      },
     },
     navigationMonth: {
       minWidth: "160px",
+    },
+
+    // HvCalendarCell styles
+    cellContainer: {
+      cursor: "pointer",
+      border: 0,
+      padding: 0,
+      margin: 0,
+      backgroundColor: "transparent",
+    },
+    dateWrapper: {
+      width: "40px",
+      height: "40px",
     },
     calendarDate: {
       display: "flex",
@@ -76,6 +95,7 @@ const styles = (theme) => {
     },
     calendarDateNotInMonth: {
       color: theme.palette.atmo5,
+      cursor: "not-allowed",
     },
     calendarDateSelected: {
       backgroundColor: theme.palette.atmo3,
@@ -97,14 +117,36 @@ const styles = (theme) => {
       color: theme.palette.atmo5,
       cursor: "no-drop",
     },
+    calendarMonthlyGrid: {
+      top: "-15px",
+      height: "calc(100% - 85px)",
+      marginTop: "100px",
+      marginLeft: "-20px",
+      display: "flex",
+      zIndex: "10",
+      padding: "0 20px",
+      position: "absolute",
+      flexFlow: "wrap",
+      alignContent: "center",
+      justifyContent: "space-evenly",
+      backgroundColor: theme.palette.atmo1,
+    },
     startBookend: {
       borderLeft: `1px solid ${theme.palette.acce1}`,
     },
     endBookend: {
       borderRight: `1px solid ${theme.palette.acce1}`,
     },
-    cellsInRange: {},
-    cellsOutsideRange: {},
+    cellsInRange: {
+      "&:focus": {
+        outside: "none",
+      },
+    },
+    cellsOutsideRange: {
+      "&:focus": {
+        outside: "none",
+      },
+    },
   };
 };
 

@@ -1,15 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { getWeekdayNamesList } from "../utils";
-import { REPRESENTATION_VALUES } from "../enums";
-import HvTypography from "../../Typography";
+import { HvTypography } from "../..";
 import styles from "./styles";
 
-const HvCalendarWeekLabel = ({ classes, locale }) => {
-  const listWeekdayNamesNarrow = getWeekdayNamesList(locale, REPRESENTATION_VALUES.NARROW);
-
-  return listWeekdayNamesNarrow.map((dayName, index) => {
+const HvCalendarWeekLabel = ({ classes, labels = [] }) => {
+  return labels.map((dayName, index) => {
     const key = `${dayName}-${index}`;
     return (
       <HvTypography variant="highlightText" className={classes.calendarDay} key={key}>
@@ -29,9 +25,9 @@ HvCalendarWeekLabel.propTypes = {
    */
   id: PropTypes.string,
   /**
-   * Locale to be used by the calendar.
+   * Localized day of week labels.
    */
-  locale: PropTypes.string,
+  labels: PropTypes.arrayOf(PropTypes.string),
   /**
    * Callback to define the input date.
    */

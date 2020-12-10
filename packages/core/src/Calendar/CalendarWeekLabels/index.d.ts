@@ -1,1 +1,1 @@
-export { default } from "./CalendarWeekLabel";
+export { default } from "./CalendarWeekLabels";

@@ -3,11 +3,11 @@ Resource    ../_keywords.resource
 
 
 *** Variables ***
-${apply}               css:button[id*=apply]
+${apply}               css:.HvActionBar-root>button:first-child
 ${calendar}            css:.HvSingleCalendar-calendarWrapper
 ${calendarLeft}        css:.HvCalendar-rangeCalendarContainer>div:first-child
 ${calendarRight}       css:.HvCalendar-rangeCalendarContainer>div:last-child
-${cancel}              css:button[id*=cancel]
+${cancel}              css:.HvActionBar-root>button:last-child
 ${datePickerHeader}    css:.HvDatePicker-dropdown
 ${day}                 xpath:(//button[@data-in-month='true'])
 ${daySelected}         css:.HvSingleCalendar-calendarDateSelected

@@ -18,7 +18,6 @@ import {
   useControlled,
 } from "..";
 import styles from "./styles";
-import withId from "../withId";
 import { isDate } from "../Calendar/utils";
 import { getDateLabel, isVisibleDate } from "./utils";
 import useVisibleDate from "./useVisibleDate";
@@ -485,4 +484,4 @@ HvDatePicker.propTypes = {
   startAdornment: PropTypes.node,
 };
 
-export default withStyles(styles, { name: "HvDatePicker", index: 1 })(withId(HvDatePicker));
+export default withStyles(styles, { name: "HvDatePicker", index: 1 })(HvDatePicker);
