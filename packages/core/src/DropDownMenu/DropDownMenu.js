@@ -100,6 +100,7 @@ const DropDownMenu = ({
             onClick?.(event, item);
           }}
           onKeyDown={handleKeyDown}
+          classes={{ root: classes.menuList }}
         />
       </HvPanel>
     </HvBaseDropdown>
@@ -131,6 +132,10 @@ DropDownMenu.propTypes = {
      * Styles applied to the icon when selected.
      */
     iconSelected: PropTypes.string,
+    /**
+     * Styles applied to the list.
+     */
+    menuList: PropTypes.string,
   }).isRequired,
   /**
    * Icon.
