@@ -6,6 +6,7 @@ const { findByKey } = require("./utils");
 const docFolder = resolve(__dirname, "../doc");
 const corePackageSrc = resolve(__dirname, "../packages/core/src");
 const labPackageSrc = resolve(__dirname, "../packages/lab/src");
+const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
 const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
 
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
     "../doc/**/*.stories.@(js|mdx)",
     "../packages/core/src/**/*.stories.@(js|mdx)",
     "../packages/lab/src/**/*.stories.js",
+    "../packages/code-editor/src/**/*.stories.js",
     !process.env.EXCLUDE_TEST_STORIES && "../packages/core/src/**/stories/*.test.@(js|mdx)",
   ].filter(Boolean),
 
@@ -32,7 +34,14 @@ module.exports = {
     const rules = config.module.rules;
 
     const jsRule = rules.find((rule) => rule.test.test(".js"));
-    jsRule.include = [__dirname, docFolder, corePackageSrc, labPackageSrc, iconsPackageBin];
+    jsRule.include = [
+      __dirname,
+      docFolder,
+      corePackageSrc,
+      labPackageSrc,
+      iconsPackageBin,
+      codeEditorPackageSrc,
+    ];
     jsRule.exclude = [/node_modules/, /dist/];
 
     config.resolve.alias = {
@@ -40,6 +49,7 @@ module.exports = {
       "@hv/uikit-react-core/dist": corePackageSrc,
       "@hv/uikit-react-lab/dist": labPackageSrc,
       "@hv/uikit-react-icons/dist": iconsPackageBin,
+      "@hv/uikit-react-code-editor/dist": codeEditorPackageSrc,
       "react-hook-form": "react-hook-form/dist/index.ie11",
     };
 
