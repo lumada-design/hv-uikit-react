@@ -29,7 +29,7 @@ export const DefaultCodeEditorOptions = {
  * Please make sure you follow the instructions (found in the repository) to include the component. Webpack configurations, and MonacoWebpackPlugin, are required to see the editor syntax highlight.
  * This version of the Code Editor is deprecated. Please use the one available in the CodeEditor Package.
  */
-const LabCodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...others }) => {
+const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...others }) => {
   // merges the 2 objects together, overriding defaults with passed in options
   const mergedOptions = {
     ...DefaultCodeEditorOptions,
@@ -60,7 +60,7 @@ const LabCodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...
   );
 };
 
-LabCodeEditor.propTypes = {
+CodeEditor.propTypes = {
   /*
    * A Jss Object used to override or extend the styles applied.
    */
@@ -89,4 +89,4 @@ LabCodeEditor.propTypes = {
   options: PropTypes.instanceOf(Object),
 };
 
-export default withStyles(styles)(withTheme(LabCodeEditor));
+export default withStyles(styles)(withTheme(CodeEditor));

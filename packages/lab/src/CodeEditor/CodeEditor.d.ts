@@ -2,13 +2,13 @@ import * as React from "react";
 import { MonacoEditorProps } from "react-monaco-editor";
 import { editor } from "monaco-editor";
 
-export type HvLabCodeEditorProps = {
+export type HvCodeEditorProps = {
   editorProps: MonacoEditorProps;
   defaultValue?: string;
   onChange?(value: string): void;
   options?: editor.IEditorConstructionOptions;
 };
 
-export type HvLabCodeEditorClassKey = "root";
+export type HvCodeEditorClassKey = "root";
 
-export default function HvLabCodeEditor(props: HvLabCodeEditorProps): JSX.Element | null;
+export default function HvLabCodeEditor(props: HvCodeEditorProps): JSX.Element | null;
