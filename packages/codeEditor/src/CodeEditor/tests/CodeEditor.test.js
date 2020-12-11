@@ -2,7 +2,9 @@
 
 import React from "react";
 import { shallow } from "enzyme";
-import HvProvider from "../../Provider";
+// import HvProvider from "../../Provider";
+import HvProvider from "@hv/uikit-react-core/dist";
+
 import HvCodeEditor from "..";
 
 import { Main } from "../stories/CodeEditor.stories";

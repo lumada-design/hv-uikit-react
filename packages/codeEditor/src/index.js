@@ -1,2 +1,2 @@
 // components
-export { default as HvCodeEditor } from "./CodeEditor";
+export { default } from "./CodeEditor";
