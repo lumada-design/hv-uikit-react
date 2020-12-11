@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import MonacoEditor from "react-monaco-editor";
 
 import withTheme from "@material-ui/core/styles/withTheme";

@@ -1,17 +1,17 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
 import { Fullscreen, Duplicate, PopUp } from "@hv/uikit-react-icons/dist";
+import { HvTypography, HvButton, HvTooltip } from "@hv/uikit-react-core/dist";
 import { Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import HvCodeEditor from "../CodeEditor";
-import { HvTypography, HvButton, HvTooltip } from "../..";
 
 export default {
   title: "Components/CodeEditor",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCodeEditor } from '@hv/uikit-react-core/dist'",
+    usage: "import { HvCodeEditor } from '@hv/uikit-react-codeeditor/dist'",
     maturityStatus: "immature",
     dsVersion: "3.2.1",
   },
