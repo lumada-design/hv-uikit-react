@@ -17,7 +17,7 @@ function getStories(url, filter) {
   };
 
   const hasExplicitDisable = (s) =>
-    s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== false;
+    s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== true;
 
   return Promise.resolve(
     stories
