@@ -28,7 +28,7 @@ export const DefaultCodeEditorOptions = {
  * A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) with our styles.
  * Please make sure you follow the instructions (found in the repository) to include the component. Webpack configurations, and MonacoWebpackPlugin, are required to see the editor syntax highlight.
  */
-const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...others }) => {
+const LabCodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...others }) => {
   // merges the 2 objects together, overriding defaults with passed in options
   const mergedOptions = {
     ...DefaultCodeEditorOptions,
@@ -59,7 +59,7 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...oth
   );
 };
 
-CodeEditor.propTypes = {
+LabCodeEditor.propTypes = {
   /*
    * A Jss Object used to override or extend the styles applied.
    */
@@ -88,4 +88,4 @@ CodeEditor.propTypes = {
   options: PropTypes.instanceOf(Object),
 };
 
-export default withStyles(styles)(withTheme(CodeEditor));
+export default withStyles(styles)(withTheme(LabCodeEditor));

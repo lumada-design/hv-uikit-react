@@ -1,9 +1,7 @@
 /* eslint-disable no-alert */
 import * as React from "react";
 
-import CodeEditor from "../CodeEditor";
-import { HvButton } from "@hv/uikit-react-core/dist";
-import HvSlider from "../../Slider/index";
+import LabCodeEditor from "../LabCodeEditor";
 
 export default {
   title: "Lab/CodeEditor",
@@ -13,7 +11,7 @@ export default {
     maturityStatus: "immature",
     dsVersion: "3.2.1",
   },
-  component: CodeEditor,
+  component: LabCodeEditor,
   decorators: [(storyFn) => <div style={{ height: "270px" }}>{storyFn()}</div>],
 };
 
@@ -23,7 +21,7 @@ const defaultValueYaml =
   'affinity: {}\nconfiguration:\n  helm: defaultTimeoutSeconds=120\nenv:\n  debug: "true"\n  hostname: foo.bar.com\nfullnameOverride: mySolution\nimage:\n  pullPolicy: IfNotPresent\n repository: foo.bar.com:5000/app\n';
 
 export const Main = () => (
-  <CodeEditor
+  <LabCodeEditor
     options={{
       dimension: {
         height: 270,
@@ -39,7 +37,7 @@ export const Main = () => (
 
 export const YamlEditor = () => {
   return (
-    <CodeEditor
+    <LabCodeEditor
       options={{
         dimension: {
           height: 270,
