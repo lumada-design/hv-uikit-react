@@ -7,6 +7,7 @@ const docFolder = path.resolve(__dirname, "../doc");
 const corePackageSrc = path.resolve(__dirname, "../packages/core/src");
 const labPackageSrc = path.resolve(__dirname, "../packages/lab/src");
 const iconsPackageBin = path.resolve(__dirname, "../packages/icons/bin");
+const codeEditorPackageSrc = path.resolve(__dirname, "../packages/codeEditor/src");
 
 const excludePaths = [/node_modules/, /dist/];
 
@@ -16,6 +17,7 @@ const searchPaths = [];
 searchPaths.push("../doc/**/*.stories.@(js|mdx)");
 searchPaths.push("../packages/core/src/**/*.stories.@(js|mdx)");
 searchPaths.push("../packages/lab/src/**/*.stories.@(js|mdx)");
+searchPaths.push("../packages/codeEditor/src/**/*.stories.@(js|mdx)");
 
 if (!excludingTests) {
   searchPaths.push("../packages/core/src/**/stories/*.test.@(js|mdx)");
@@ -43,7 +45,14 @@ module.exports = {
     // Fix for https://github.com/storybooks/storybook/issues/3346
     // 6.0 already have https://github.com/storybookjs/storybook/pull/8822
     const jsRule = config.module.rules.find((rule) => rule.test.test(".js"));
-    jsRule.include = [__dirname, docFolder, corePackageSrc, labPackageSrc, iconsPackageBin];
+    jsRule.include = [
+      __dirname,
+      docFolder,
+      corePackageSrc,
+      labPackageSrc,
+      iconsPackageBin,
+      codeEditorPackageSrc,
+    ];
     jsRule.exclude = excludePaths;
     const babelLoader = jsRule.use.find(({ loader }) => loader === "babel-loader");
     babelLoader.options.sourceType = "unambiguous";
@@ -137,6 +146,7 @@ module.exports = {
       "@hv/uikit-react-lab/dist": labPackageSrc,
       "@hv/uikit-react-icons/dist": iconsPackageBin,
       "react-hook-form": "react-hook-form/dist/index.ie11",
+      "@hv/uikit-react-codeEditor/dist": codeEditorPackageSrc,
     };
 
     return config;

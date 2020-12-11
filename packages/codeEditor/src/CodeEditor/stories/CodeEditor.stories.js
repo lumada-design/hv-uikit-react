@@ -8,7 +8,7 @@ import clsx from "clsx";
 import HvCodeEditor from "../CodeEditor";
 
 export default {
-  title: "Components/CodeEditor",
+  title: "CodeEditor/CodeEditor",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCodeEditor } from '@hv/uikit-react-codeeditor/dist'",
