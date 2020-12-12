@@ -7134,6 +7134,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       Object {
                                                                         "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                         "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
+                                                                        "menuList": "HvDropDownMenu-menuList",
                                                                         "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                       }
                                                                     }
@@ -7165,6 +7166,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         Object {
                                                                           "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                           "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
+                                                                          "menuList": "HvDropDownMenu-menuList",
                                                                           "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                         }
                                                                       }
@@ -10600,6 +10602,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       Object {
                                                                         "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                         "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
+                                                                        "menuList": "HvDropDownMenu-menuList",
                                                                         "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                       }
                                                                     }
@@ -10631,6 +10634,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         Object {
                                                                           "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                           "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
+                                                                          "menuList": "HvDropDownMenu-menuList",
                                                                           "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                         }
                                                                       }
@@ -14068,6 +14072,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       Object {
                                                                         "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                         "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
+                                                                        "menuList": "HvDropDownMenu-menuList",
                                                                         "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                       }
                                                                     }
@@ -14099,6 +14104,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         Object {
                                                                           "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                           "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
+                                                                          "menuList": "HvDropDownMenu-menuList",
                                                                           "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                         }
                                                                       }

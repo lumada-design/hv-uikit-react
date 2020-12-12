@@ -22,6 +22,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
       Object {
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
+        "menuList": "HvDropDownMenu-menuList",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -45,6 +46,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
         Object {
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
+          "menuList": "HvDropDownMenu-menuList",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -407,6 +409,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
       Object {
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
+        "menuList": "HvDropDownMenu-menuList",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -430,6 +433,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
         Object {
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
+          "menuList": "HvDropDownMenu-menuList",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -753,6 +757,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
       Object {
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
+        "menuList": "HvDropDownMenu-menuList",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -776,6 +781,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
         Object {
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
+          "menuList": "HvDropDownMenu-menuList",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -1136,7 +1142,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             class="MuiBox-root MuiBox-root-1 HvPanel-root"
                           >
                             <ul
-                              class="HvList-root HvListContainer-root"
+                              class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                               id="drop-down-menu-2-list"
                               role="menu"
                             >
@@ -1186,7 +1192,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             class="MuiBox-root MuiBox-root-3 HvPanel-root"
                           >
                             <ul
-                              class="HvList-root HvListContainer-root"
+                              class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                               id="drop-down-menu-4-list"
                               role="menu"
                             >
@@ -1236,7 +1242,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             class="MuiBox-root MuiBox-root-5 HvPanel-root"
                           >
                             <ul
-                              class="HvList-root HvListContainer-root"
+                              class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                               id="drop-down-menu-6-list"
                               role="menu"
                             >
@@ -1287,7 +1293,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             class="MuiBox-root MuiBox-root-9 HvPanel-root"
                           >
                             <ul
-                              class="HvList-root HvListContainer-root"
+                              class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                               id="drop-down-menu-10-list"
                               role="menu"
                             >
@@ -1372,7 +1378,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                 <WithStyles(HvList)
                                   classes={
                                     Object {
-                                      "root": undefined,
+                                      "root": "HvDropDownMenu-menuList",
                                     }
                                   }
                                   condensed={true}
@@ -1400,7 +1406,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         "box": "HvList-box",
                                         "itemSelector": "HvList-itemSelector",
                                         "link": "HvList-link",
-                                        "root": "HvList-root",
+                                        "root": "HvList-root HvDropDownMenu-menuList",
                                         "selectAllSelector": "HvList-selectAllSelector",
                                         "selectorContainer": "HvList-selectorContainer",
                                         "selectorRoot": "HvList-selectorRoot",
@@ -1427,7 +1433,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     }
                                   >
                                     <WithStyles(HvListContainer)
-                                      className="HvList-root"
+                                      className="HvList-root HvDropDownMenu-menuList"
                                       condensed={true}
                                       disableGutters={false}
                                       id="drop-down-menu-10-list"
@@ -1436,7 +1442,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       role="menu"
                                     >
                                       <HvListContainer
-                                        className="HvList-root"
+                                        className="HvList-root HvDropDownMenu-menuList"
                                         classes={
                                           Object {
                                             "root": "HvListContainer-root",
@@ -1450,7 +1456,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         role="menu"
                                       >
                                         <ul
-                                          className="HvList-root HvListContainer-root"
+                                          className="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                           id="drop-down-menu-10-list"
                                           onKeyDown={[Function]}
                                           role="menu"
@@ -1504,7 +1510,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 rootRef={
                                                   Object {
                                                     "current": <ul
-                                                      class="HvList-root HvListContainer-root"
+                                                      class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                       id="drop-down-menu-10-list"
                                                       role="menu"
                                                     >
@@ -1558,7 +1564,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                   rootRef={
                                                     Object {
                                                       "current": <ul
-                                                        class="HvList-root HvListContainer-root"
+                                                        class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                         id="drop-down-menu-10-list"
                                                         role="menu"
                                                       >
@@ -1665,7 +1671,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 rootRef={
                                                   Object {
                                                     "current": <ul
-                                                      class="HvList-root HvListContainer-root"
+                                                      class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                       id="drop-down-menu-10-list"
                                                       role="menu"
                                                     >
@@ -1719,7 +1725,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                   rootRef={
                                                     Object {
                                                       "current": <ul
-                                                        class="HvList-root HvListContainer-root"
+                                                        class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                         id="drop-down-menu-10-list"
                                                         role="menu"
                                                       >
@@ -1826,7 +1832,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 rootRef={
                                                   Object {
                                                     "current": <ul
-                                                      class="HvList-root HvListContainer-root"
+                                                      class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                       id="drop-down-menu-10-list"
                                                       role="menu"
                                                     >
@@ -1880,7 +1886,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                   rootRef={
                                                     Object {
                                                       "current": <ul
-                                                        class="HvList-root HvListContainer-root"
+                                                        class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                         id="drop-down-menu-10-list"
                                                         role="menu"
                                                       >
@@ -1983,6 +1989,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
       Object {
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
+        "menuList": "HvDropDownMenu-menuList",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -2006,6 +2013,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
         Object {
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
+          "menuList": "HvDropDownMenu-menuList",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -2368,6 +2376,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
       Object {
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
+        "menuList": "HvDropDownMenu-menuList",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -2391,6 +2400,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
         Object {
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
+          "menuList": "HvDropDownMenu-menuList",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -2714,6 +2724,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
       Object {
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
+        "menuList": "HvDropDownMenu-menuList",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -2737,6 +2748,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
         Object {
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
+          "menuList": "HvDropDownMenu-menuList",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -3097,7 +3109,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                             class="MuiBox-root MuiBox-root-1 HvPanel-root"
                           >
                             <ul
-                              class="HvList-root HvListContainer-root"
+                              class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                               id="drop-down-menu-2-list"
                               role="menu"
                             >
@@ -3182,7 +3194,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                 <WithStyles(HvList)
                                   classes={
                                     Object {
-                                      "root": undefined,
+                                      "root": "HvDropDownMenu-menuList",
                                     }
                                   }
                                   condensed={true}
@@ -3210,7 +3222,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         "box": "HvList-box",
                                         "itemSelector": "HvList-itemSelector",
                                         "link": "HvList-link",
-                                        "root": "HvList-root",
+                                        "root": "HvList-root HvDropDownMenu-menuList",
                                         "selectAllSelector": "HvList-selectAllSelector",
                                         "selectorContainer": "HvList-selectorContainer",
                                         "selectorRoot": "HvList-selectorRoot",
@@ -3237,7 +3249,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     }
                                   >
                                     <WithStyles(HvListContainer)
-                                      className="HvList-root"
+                                      className="HvList-root HvDropDownMenu-menuList"
                                       condensed={true}
                                       disableGutters={false}
                                       id="drop-down-menu-2-list"
@@ -3246,7 +3258,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       role="menu"
                                     >
                                       <HvListContainer
-                                        className="HvList-root"
+                                        className="HvList-root HvDropDownMenu-menuList"
                                         classes={
                                           Object {
                                             "root": "HvListContainer-root",
@@ -3260,7 +3272,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         role="menu"
                                       >
                                         <ul
-                                          className="HvList-root HvListContainer-root"
+                                          className="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                           id="drop-down-menu-2-list"
                                           onKeyDown={[Function]}
                                           role="menu"
@@ -3314,7 +3326,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 rootRef={
                                                   Object {
                                                     "current": <ul
-                                                      class="HvList-root HvListContainer-root"
+                                                      class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                       id="drop-down-menu-2-list"
                                                       role="menu"
                                                     >
@@ -3368,7 +3380,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                   rootRef={
                                                     Object {
                                                       "current": <ul
-                                                        class="HvList-root HvListContainer-root"
+                                                        class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                         id="drop-down-menu-2-list"
                                                         role="menu"
                                                       >
@@ -3475,7 +3487,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 rootRef={
                                                   Object {
                                                     "current": <ul
-                                                      class="HvList-root HvListContainer-root"
+                                                      class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                       id="drop-down-menu-2-list"
                                                       role="menu"
                                                     >
@@ -3529,7 +3541,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                   rootRef={
                                                     Object {
                                                       "current": <ul
-                                                        class="HvList-root HvListContainer-root"
+                                                        class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                         id="drop-down-menu-2-list"
                                                         role="menu"
                                                       >
@@ -3636,7 +3648,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 rootRef={
                                                   Object {
                                                     "current": <ul
-                                                      class="HvList-root HvListContainer-root"
+                                                      class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                       id="drop-down-menu-2-list"
                                                       role="menu"
                                                     >
@@ -3690,7 +3702,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                   rootRef={
                                                     Object {
                                                       "current": <ul
-                                                        class="HvList-root HvListContainer-root"
+                                                        class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
                                                         id="drop-down-menu-2-list"
                                                         role="menu"
                                                       >
