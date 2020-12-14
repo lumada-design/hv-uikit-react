@@ -45,11 +45,9 @@ export const DonutChartThin = () => {
   );
 };
 
-DonutChartThin.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Thin Donut.",
-    },
+DonutChartThin.parameters = {
+  docs: {
+    description: { story: "Thin Donut." },
   },
 };
 
@@ -125,10 +123,8 @@ export const DonutChartWithControls = () => {
   );
 };
 
-DonutChartWithControls.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Donut chart with title and controls.",
-    },
+DonutChartWithControls.parameters = {
+  docs: {
+    description: "Donut chart with title and controls.",
   },
 };

@@ -28,9 +28,7 @@ export const Main = () => (
   </>
 );
 
-Main.story = {
-  decorators: [(storyFn) => <div style={{ ...container, width: 300 }}>{storyFn()}</div>],
-};
+Main.decorators = [(storyFn) => <div style={{ ...container, width: 300 }}>{storyFn()}</div>];
 
 export const WithIcon = () => (
   <>
@@ -43,12 +41,11 @@ export const WithIcon = () => (
   </>
 );
 
-WithIcon.story = {
-  decorators: [(storyFn) => <div style={{ ...container, width: 500 }}>{storyFn()}</div>],
-  parameters: {
-    docs: {
-      storyDescription: "Badge sample that uses a custom icon.",
-    },
+WithIcon.decorators = [(storyFn) => <div style={{ ...container, width: 500 }}>{storyFn()}</div>];
+
+WithIcon.parameters = {
+  docs: {
+    description: { story: "Badge sample that uses a custom icon." },
   },
 };
 
@@ -63,12 +60,11 @@ export const WithText = () => (
   </>
 );
 
-WithText.story = {
-  decorators: [(storyFn) => <div style={{ ...container, width: 650 }}>{storyFn()}</div>],
-  parameters: {
-    docs: {
-      storyDescription: "Badge sample using only text.",
-    },
+WithText.decorators = [(storyFn) => <div style={{ ...container, width: 650 }}>{storyFn()}</div>];
+
+WithText.parameters = {
+  docs: {
+    description: { story: "Badge sample using only text." },
   },
 };
 
@@ -85,10 +81,8 @@ export const WithState = () => {
   );
 };
 
-WithState.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Badge sample using react hooks to set the number of events.",
-    },
+WithState.parameters = {
+  docs: {
+    description: { story: "Badge sample using react hooks to set the number of events." },
   },
 };

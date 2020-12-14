@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card should be able to render with every property defined 1`] = `
-<WithStyles(HvCard)
+<WithStyles(Card)
   bgcolor="atmo1"
   style={
     Object {
@@ -9,7 +9,7 @@ exports[`Card should be able to render with every property defined 1`] = `
     }
   }
 >
-  <HvCard
+  <Card
     bgcolor="atmo1"
     classes={
       Object {
@@ -500,6 +500,6 @@ exports[`Card should be able to render with every property defined 1`] = `
         </WithStyles(Content)>
       </div>
     </Styled(MuiBox)>
-  </HvCard>
-</WithStyles(HvCard)>
+  </Card>
+</WithStyles(Card)>
 `;

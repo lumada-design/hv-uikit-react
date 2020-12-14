@@ -37,12 +37,10 @@ const openDialog = async (bIndex = 0) => {
 // test scenario, dialog open
 export const DialogOpened = () => Main();
 
-DialogOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog();
-      },
+DialogOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -50,12 +48,10 @@ DialogOpened.story = {
 // test scenario, dialog with table open
 export const TableOpened = () => CustomContent();
 
-TableOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog(0);
-      },
+TableOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(0);
     },
   },
 };
@@ -63,12 +59,10 @@ TableOpened.story = {
 // test scenario, dialog with inputs opened
 export const inputsOpened = () => CustomContent();
 
-inputsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog(1);
-      },
+inputsOpened.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(1);
     },
   },
 };
@@ -76,12 +70,10 @@ inputsOpened.story = {
 // open No Rename Dialog
 export const sNoRename = () => NoRename();
 
-sNoRename.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog();
-      },
+sNoRename.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -89,12 +81,10 @@ sNoRename.story = {
 // open dialog DeleteConfirmation
 export const sDeleteConfirmation = () => DeleteConfirmation();
 
-sDeleteConfirmation.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog();
-      },
+sDeleteConfirmation.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -102,12 +92,10 @@ sDeleteConfirmation.story = {
 // open dialog DeleteConfirmation
 export const sRemoveSchedule = () => RemoveSchedule();
 
-sRemoveSchedule.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog();
-      },
+sRemoveSchedule.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -115,12 +103,10 @@ sRemoveSchedule.story = {
 // open dialog DeleteConfirmation
 export const sAccessibility = () => Accessibility();
 
-sAccessibility.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog();
-      },
+sAccessibility.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -128,12 +114,10 @@ sAccessibility.story = {
 // open dialog CustomIcon
 export const sCustomIcon = () => CustomIcon();
 
-sCustomIcon.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog();
-      },
+sCustomIcon.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog();
     },
   },
 };
@@ -141,12 +125,10 @@ sCustomIcon.story = {
 // open dialog TextAndSemantic no icon
 export const sTextAndSemanticNoIcon = () => TextAndSemantic();
 
-sTextAndSemanticNoIcon.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog(0);
-      },
+sTextAndSemanticNoIcon.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(0);
     },
   },
 };
@@ -154,12 +136,10 @@ sTextAndSemanticNoIcon.story = {
 // open dialog TextAndSemantic Warning
 export const sTextAndSemanticWarning = () => TextAndSemantic();
 
-sTextAndSemanticWarning.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog(1);
-      },
+sTextAndSemanticWarning.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(1);
     },
   },
 };
@@ -167,12 +147,10 @@ sTextAndSemanticWarning.story = {
 // open dialog TextAndSemantic info
 export const sTextAndSemanticInfo = () => TextAndSemantic();
 
-sTextAndSemanticInfo.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog(2);
-      },
+sTextAndSemanticInfo.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(2);
     },
   },
 };
@@ -180,12 +158,10 @@ sTextAndSemanticInfo.story = {
 // open dialog TextAndSemantic Error
 export const sTextAndSemanticError = () => TextAndSemantic();
 
-sTextAndSemanticError.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        return openDialog(3);
-      },
+sTextAndSemanticError.parameters = {
+  eyes: {
+    runBefore() {
+      return openDialog(3);
     },
   },
 };

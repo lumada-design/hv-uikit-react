@@ -7,7 +7,7 @@ import HvBaseDropDown from "..";
 import { Main } from "../stories/BaseDropdown.stories.test";
 
 jest.mock(
-  "popper.js",
+  "@popperjs/core",
   () =>
     class {
       constructor() {

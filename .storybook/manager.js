@@ -1,1 +1,1 @@
-import "./themes/fonts/font-faces.css";
+import "./theme/fonts/font-faces.css";

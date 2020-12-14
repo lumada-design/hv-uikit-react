@@ -7,7 +7,7 @@ import styles from "./styles";
 /**
  * The header container for the card.
  */
-const Header = (props) => {
+export const Header = (props) => {
   const { classes, className, title, subheader, icon, onClick, ...others } = props;
 
   return (

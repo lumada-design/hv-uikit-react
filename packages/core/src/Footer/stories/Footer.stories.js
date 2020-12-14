@@ -36,10 +36,8 @@ export const CustomLabels = () => {
   );
 };
 
-CustomLabels.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Sample 2 description.",
-    },
+CustomLabels.parameters = {
+  docs: {
+    description: { story: "Sample 2 description." },
   },
 };

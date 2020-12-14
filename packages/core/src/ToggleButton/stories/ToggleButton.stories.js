@@ -98,20 +98,18 @@ export const Main = () => (
   </>
 );
 
-export const Disabled = () => {
-  return (
-    <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
-      <HvToggleButton disabled aria-label="Light">
-        <LightOff />
-      </HvToggleButton>
-    </HvTooltip>
-  );
-};
+export const Disabled = () => (
+  <HvTooltip title={<HvTypography>Can not turn the light on</HvTypography>}>
+    <HvToggleButton disabled aria-label="Light">
+      <LightOff />
+    </HvToggleButton>
+  </HvTooltip>
+);
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Disabled.parameters = {
+  docs: {
+    description: {
+      story:
         "A sample showcasing a disabled toggle button combined with a tooltip. There is a known limitation with the Button Forward ref, but adding a div around the Tooltip fixes it temporarily.",
     },
   },
@@ -131,12 +129,10 @@ export const Tooltip = () => {
   );
 };
 
-Tooltip.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "A sample showcasing a tooltip changing its content combined with the toggle button. The same Tooltip Forward Ref combination with Button known limitation as the previous sample is applied here.",
-    },
+Tooltip.parameters = {
+  docs: {
+    description:
+      "A sample showcasing a tooltip changing its content combined with the toggle button. The same Tooltip Forward Ref combination with Button known limitation as the previous sample is applied here.",
   },
 };
 
@@ -152,10 +148,8 @@ export const Animated = () => {
   );
 };
 
-Animated.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a toggle button with a custom animated icon.",
-    },
+Animated.parameters = {
+  docs: {
+    description: { story: "A sample showcasing a toggle button with a custom animated icon." },
   },
 };

@@ -273,10 +273,8 @@ export const WithComposition = () => {
   );
 };
 
-WithComposition.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Example of the form composer using multiple components.",
-    },
+WithComposition.parameters = {
+  docs: {
+    description: { story: "Example of the form composer using multiple components." },
   },
 };

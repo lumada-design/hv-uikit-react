@@ -35,27 +35,23 @@ export const Main = () => (
   />
 );
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      ignore: ["region"],
-    },
-    eyes: { include: false },
+Main.parameters = {
+  pa11y: {
+    ignore: ["region"],
   },
+  eyes: { include: false },
 };
 
 export const Empty = () => <HvDropdown id="dropdown1" aria-label="Empty" />;
 
-Empty.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Dropdown with no values",
-    },
-    pa11y: {
-      ignore: ["region"],
-    },
-    eyes: { include: false },
+Empty.parameters = {
+  docs: {
+    description: { story: "Dropdown with no values" },
   },
+  pa11y: {
+    ignore: ["region"],
+  },
+  eyes: { include: false },
 };
 
 export const SingleSelection = () => (
@@ -72,16 +68,14 @@ export const SingleSelection = () => (
   />
 );
 
-SingleSelection.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Support ids to manage selection",
-    },
-    pa11y: {
-      ignore: ["region"],
-    },
-    eyes: { include: false },
+SingleSelection.parameters = {
+  docs: {
+    description: { story: "Support ids to manage selection" },
   },
+  pa11y: {
+    ignore: ["region"],
+  },
+  eyes: { include: false },
 };
 
 export const MultiSelection = () => (
@@ -99,10 +93,8 @@ export const MultiSelection = () => (
   />
 );
 
-MultiSelection.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+MultiSelection.parameters = {
+  eyes: { include: false },
 };
 
 export const MultiSelectionNoSearch = () => (
@@ -120,13 +112,11 @@ export const MultiSelectionNoSearch = () => (
   />
 );
 
-MultiSelectionNoSearch.story = {
-  parameters: {
-    pa11y: {
-      ignore: ["region"],
-    },
-    eyes: { include: false },
+MultiSelectionNoSearch.parameters = {
+  pa11y: {
+    ignore: ["region"],
   },
+  eyes: { include: false },
 };
 
 export const SingleSelectionWithSearch = () => (
@@ -143,16 +133,14 @@ export const SingleSelectionWithSearch = () => (
   />
 );
 
-SingleSelectionWithSearch.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Single selection Dropdown with search and less than 10 elements",
-    },
-    pa11y: {
-      ignore: ["region"],
-    },
-    eyes: { include: false },
+SingleSelectionWithSearch.parameters = {
+  docs: {
+    description: { story: "Single selection Dropdown with search and less than 10 elements" },
   },
+  pa11y: {
+    ignore: ["region"],
+  },
+  eyes: { include: false },
 };
 
 export const SingleSelectionNoSelection = () => (
@@ -170,13 +158,11 @@ export const SingleSelectionNoSelection = () => (
   />
 );
 
-SingleSelectionNoSelection.story = {
-  parameters: {
-    pa11y: {
-      ignore: ["region"],
-    },
-    eyes: { include: false },
+SingleSelectionNoSelection.parameters = {
+  pa11y: {
+    ignore: ["region"],
   },
+  eyes: { include: false },
 };
 
 export const DifferentSizeAndPlacements = () => {
@@ -225,16 +211,14 @@ export const DifferentSizeAndPlacements = () => {
   );
 };
 
-DifferentSizeAndPlacements.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Dropdown defined with a specific width and with different placements.",
-    },
-    pa11y: {
-      ignore: ["region"],
-    },
-    eyes: { include: false },
+DifferentSizeAndPlacements.parameters = {
+  docs: {
+    description: { story: "Dropdown defined with a specific width and with different placements." },
   },
+  pa11y: {
+    ignore: ["region"],
+  },
+  eyes: { include: false },
 };
 
 export const Disabled = () => (
@@ -260,17 +244,15 @@ export const Disabled = () => (
   />
 );
 
-Disabled.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
-    eyes: { include: false },
+Disabled.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
+  eyes: { include: false },
 };

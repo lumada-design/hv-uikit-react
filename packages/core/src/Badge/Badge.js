@@ -8,7 +8,7 @@ import styles from "./styles";
 /**
  * The badge is a component used to notify the user that something has occurred, in the app context.
  */
-const Badge = (props) => {
+export const Badge = (props) => {
   const {
     classes,
     showCount = false,

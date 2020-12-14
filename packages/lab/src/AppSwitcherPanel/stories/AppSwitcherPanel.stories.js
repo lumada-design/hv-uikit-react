@@ -138,11 +138,9 @@ export const sample2 = () => {
   );
 };
 
-sample2.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Simple example with footer",
-    },
+sample2.parameters = {
+  docs: {
+    description: { story: "Simple example with footer" },
   },
 };
 
@@ -183,11 +181,9 @@ export const sample3 = () => {
   );
 };
 
-sample3.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Simple example with a big list of applications",
-    },
+sample3.parameters = {
+  docs: {
+    description: { story: "Simple example with a big list of applications" },
   },
 };
 
@@ -237,11 +233,9 @@ export const sample4 = () => {
   );
 };
 
-sample4.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Example with a custom header",
-    },
+sample4.parameters = {
+  docs: {
+    description: { story: "Example with a custom header" },
   },
 };
 
@@ -320,11 +314,9 @@ export const sample5 = () => {
   );
 };
 
-sample5.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Using icon components mixed with url icons",
-    },
+sample5.parameters = {
+  docs: {
+    description: { story: "Using icon components mixed with url icons" },
   },
 };
 
@@ -405,10 +397,8 @@ export const sample6 = () => {
   );
 };
 
-sample6.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Alerts on which menu was clicked",
-    },
+sample6.parameters = {
+  docs: {
+    description: { story: "Alerts on which menu was clicked" },
   },
 };

@@ -589,10 +589,10 @@ export const Configurations = () => {
   );
 };
 
-Configurations.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Configurations.parameters = {
+  docs: {
+    description: {
+      story:
         "Search uses the headerTitle, schedule and probability. Sort uses the headerTitle, probability and timeHorizon",
     },
   },
@@ -872,11 +872,9 @@ export const ThreeViews = () => {
   );
 };
 
-ThreeViews.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Asset Inventory with third view, a custom TextRender",
-    },
+ThreeViews.parameters = {
+  docs: {
+    description: { story: "Asset Inventory with third view, a custom TextRender" },
   },
 };
 
@@ -1116,11 +1114,9 @@ export const ServerSidePagination = () => {
   return <ServerSideAssetInventory />;
 };
 
-ServerSidePagination.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Asset Inventory with a simulation of server-side pagination",
-    },
+ServerSidePagination.parameters = {
+  docs: {
+    description: { story: "Asset Inventory with a simulation of server-side pagination" },
   },
 };
 
@@ -1377,10 +1373,10 @@ export const Accessibility = () => {
   );
 };
 
-Accessibility.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Accessibility.parameters = {
+  docs: {
+    description: {
+      story:
         "Accessibility:<br/>" +
         "- Search: Create a label using aria-label using the searchProps. <br/>" +
         "- Sort: Use the labels.sortBy to create a aria-label. <br/>" +

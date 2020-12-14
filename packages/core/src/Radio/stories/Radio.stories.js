@@ -88,20 +88,18 @@ export const Disabled = () => {
   );
 };
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Disabled radio buttons.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Disabled.parameters = {
+  docs: {
+    description: "Disabled radio buttons.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -130,11 +128,9 @@ export const ReadOnly = () => {
   );
 };
 
-ReadOnly.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Not editable radio buttons.",
-    },
+ReadOnly.parameters = {
+  docs: {
+    description: "Not editable radio buttons.",
   },
 };
 
@@ -161,12 +157,10 @@ export const WithoutLabel = () => {
   );
 };
 
-WithoutLabel.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Radio buttons without labels. The accessible name is provided via the `aria-label` property.",
-    },
+WithoutLabel.parameters = {
+  docs: {
+    description:
+      "Radio buttons without labels. The accessible name is provided via the `aria-label` property.",
   },
 };
 
@@ -174,16 +168,14 @@ export const ErrorMessage = () => (
   <HvRadio status="invalid" statusMessage="No way for this to be valid!" label="Radio 1" />
 );
 
-ErrorMessage.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // aria-errormessage value is being reported as invalid because axe-core forces
-        // the referenced error element to have aria-live="assertive", when the spec does not
-        // https://github.com/dequelabs/axe-core/pull/2590
-        "aria-valid-attr-value",
-      ],
-    },
+ErrorMessage.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
   },
 };

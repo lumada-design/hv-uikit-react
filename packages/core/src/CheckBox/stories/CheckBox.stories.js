@@ -58,20 +58,18 @@ export const Disabled = () => (
   </>
 );
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Disabled checkboxes.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Disabled.parameters = {
+  docs: {
+    description: "Disabled checkboxes.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -83,11 +81,9 @@ export const ReadOnly = () => (
   </>
 );
 
-ReadOnly.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Not editable checkboxes.",
-    },
+ReadOnly.parameters = {
+  docs: {
+    description: "Not editable checkboxes.",
   },
 };
 
@@ -99,12 +95,10 @@ export const WithoutLabel = () => (
   </>
 );
 
-WithoutLabel.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Checkboxes without labels. The accessible name is provided via the `aria-label` property.",
-    },
+WithoutLabel.parameters = {
+  docs: {
+    description:
+      "Checkboxes without labels. The accessible name is provided via the `aria-label` property.",
   },
 };
 
@@ -114,11 +108,9 @@ export const Required = () => (
   </>
 );
 
-Required.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Required checkbox. Uncheck to show default error message.",
-    },
+Required.parameters = {
+  docs: {
+    description: "Required checkbox. Uncheck to show default error message.",
   },
 };
 
@@ -137,12 +129,10 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.",
-    },
+Controlled.parameters = {
+  docs: {
+    description:
+      "Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.",
   },
 };
 
@@ -150,16 +140,14 @@ export const ErrorMessage = () => (
   <HvCheckBox status="invalid" statusMessage="No way for this to be valid!" label="Checkbox 1" />
 );
 
-ErrorMessage.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // aria-errormessage value is being reported as invalid because axe-core forces
-        // the referenced error element to have aria-live="assertive", when the spec does not
-        // https://github.com/dequelabs/axe-core/pull/2590
-        "aria-valid-attr-value",
-      ],
-    },
+ErrorMessage.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
   },
 };

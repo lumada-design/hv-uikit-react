@@ -6,7 +6,7 @@ import styles from "./styles";
 /**
  * The media container.
  */
-const Media = (props) => {
+export const Media = (props) => {
   const { classes, id, className, title, onClick, ...others } = props;
 
   return (

@@ -56,20 +56,18 @@ export const Disabled = () => (
   </>
 );
 
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Disabled switches.",
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
-        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
-        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-      ],
-    },
+Disabled.parameters = {
+  docs: {
+    description: "Disabled switches.",
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
   },
 };
 
@@ -80,11 +78,9 @@ export const ReadOnly = () => (
   </>
 );
 
-ReadOnly.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Not editable switches.",
-    },
+ReadOnly.parameters = {
+  docs: {
+    description: "Not editable switches.",
   },
 };
 
@@ -94,11 +90,9 @@ export const Required = () => (
   </>
 );
 
-Required.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Required switch. Uncheck to show the error state.",
-    },
+Required.parameters = {
+  docs: {
+    description: "Required switch. Uncheck to show the error state.",
   },
 };
 

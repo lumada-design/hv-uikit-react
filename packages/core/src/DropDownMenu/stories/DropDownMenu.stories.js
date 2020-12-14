@@ -24,10 +24,8 @@ export const Main = () => (
   />
 );
 
-Main.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+Main.parameters = {
+  eyes: { include: false },
 };
 
 export const Positioning = () => {
@@ -45,13 +43,11 @@ export const Positioning = () => {
   );
 };
 
-Positioning.story = {
-  parameters: {
-    docs: {
-      storyDescription: "DropDownMenu with configurable positioning in the dropdown",
-    },
-    eyes: { include: false },
+Positioning.parameters = {
+  docs: {
+    description: { story: "DropDownMenu with configurable positioning in the dropdown" },
   },
+  eyes: { include: false },
 };
 
 export const WithIconsAndActions = () => {
@@ -74,21 +70,21 @@ export const WithIconsAndActions = () => {
   );
 };
 
-WithIconsAndActions.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+WithIconsAndActions.parameters = {
+  docs: {
+    description: {
+      story:
         "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected",
     },
-    pa11y: {
-      actions: [
-        // open menu before testing
-        "click element #dropdownmenu-with-icons-and-actions-icon-button",
-        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible",
-      ],
-    },
-    eyes: { include: false },
   },
+  pa11y: {
+    actions: [
+      // open menu before testing
+      "click element #dropdownmenu-with-icons-and-actions-icon-button",
+      "wait for element #dropdownmenu-with-icons-and-actions-list to be visible",
+    ],
+  },
+  eyes: { include: false },
 };
 
 export const Disabled = () => (
@@ -110,10 +106,8 @@ export const DisabledItems = () => (
   />
 );
 
-DisabledItems.story = {
-  parameters: {
-    eyes: { include: false },
-  },
+DisabledItems.parameters = {
+  eyes: { include: false },
 };
 
 export const Controlled = () => {
@@ -149,11 +143,9 @@ export const Controlled = () => {
   return <ControlledDropdownMenu />;
 };
 
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "DropDownMenu toggle opening controlled by an external button",
-    },
-    eyes: { include: false },
+Controlled.parameters = {
+  docs: {
+    description: { story: "DropDownMenu toggle opening controlled by an external button" },
   },
+  eyes: { include: false },
 };

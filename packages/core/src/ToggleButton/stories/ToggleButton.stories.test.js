@@ -34,10 +34,8 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a toggle button with state.",
-    },
+Controlled.parameters = {
+  docs: {
+    description: "A sample showcasing a toggle button with state.",
   },
 };
