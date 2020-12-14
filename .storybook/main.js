@@ -11,7 +11,7 @@ const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
 module.exports = {
   stories: [
     "../doc/**/*.stories.@(js|mdx)",
-    "../packages/core/src/**/*.stories.@(js|mdx)",
+    "../packages/core/src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
     "../packages/lab/src/**/*.stories.js",
     !process.env.EXCLUDE_TEST_STORIES && "../packages/core/src/**/stories/*.test.@(js|mdx)",
   ].filter(Boolean),
@@ -27,6 +27,11 @@ module.exports = {
     },
     __dirname + "/theme/addon/register",
   ],
+
+  typescript: {
+    // also valid 'react-docgen-typescript' | false
+    reactDocgen: "react-docgen",
+  },
 
   webpackFinal: async (config) => {
     const rules = config.module.rules;
@@ -77,7 +82,7 @@ module.exports = {
     docgen.handlers = [
       "react-docgen-deprecation-handler",
       resolve(__dirname, "./docgen/defaultPropsHandler"),
-      // `${CONFIG_PATH}/docgen/defaultValuePropsHandler`
+      resolve(__dirname, "./docgen/defaultValuePropsHandler"),
     ];
 
     return {

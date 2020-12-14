@@ -10,18 +10,11 @@ export default {
     dsVersion: "3.2.1",
   },
   component: HvFooter,
-  decorators: [
-    (Story) => (
-      <div style={{ padding: 10 }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
-export const Main = () => <HvFooter />;
+export const Main = (): JSX.Element => <HvFooter />;
 
-export const CustomLabels = () => {
+export const CustomLabels = (): JSX.Element => {
   return (
     <HvFooter
       id="sample2"

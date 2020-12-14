@@ -1,4 +1,4 @@
-const javascriptFileExtensions = [".js", ".jsx"];
+const javascriptFileExtensions = [".js", ".jsx", ".ts", ".tsx"];
 
 module.exports = {
   extends: [
@@ -51,7 +51,7 @@ module.exports = {
       },
     },
     {
-      files: ["*.ts"],
+      files: ["*.ts", "*.tsx"],
       env: { browser: true, es6: true, node: true },
       rules: {
         "@typescript-eslint/no-explicit-any": "off",
@@ -64,6 +64,7 @@ module.exports = {
             },
           },
         ],
+        "no-undef": "off",
       },
       extends: [
         "eslint:recommended",
@@ -75,7 +76,8 @@ module.exports = {
         ecmaFeatures: { jsx: true },
         ecmaVersion: 2020,
         sourceType: "module",
-        project: "./tsconfig.json",
+        tsconfigRootDir: __dirname,
+        project: ['./tsconfig.json'],
       },
       plugins: ["@typescript-eslint"],
       settings: {

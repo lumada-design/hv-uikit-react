@@ -22,7 +22,6 @@ export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFileUploader } from "./FileUploader";
-export { default as HvFooter } from "./Footer";
 export * from "./Forms";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";

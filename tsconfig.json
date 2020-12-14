@@ -4,19 +4,30 @@
     "target": "es5",
     "lib": ["es6", "dom"],
     "jsx": "react",
+    "esModuleInterop": true,
+    "noEmit": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noEmit": true,
     "experimentalDecorators": true,
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "noErrorTruncation": true,
-    "allowJs": true,
     "paths": {
       "@hv/uikit-react-core": ["./packages/core/src"],
       "@hv/uikit-react-core/*": ["./packages/core/src/*"]
-    }
+    },
+    // Tells TypeScript to read JS files, as
+    // normally they are ignored as source files
+    "allowJs": true,
+    // Generate d.ts files
+    "declaration": true,
+    // Report errors on unused locals.
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   },
+  "include": ["**/packages/**/*.ts", "**/scripts/**/*.ts"],
   "exclude": ["**/dist/"]
 }
