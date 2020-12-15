@@ -87,6 +87,14 @@ const HvDropdown = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [expanded, disabled]);
 
+  useEffect(() => {
+    setInternalValues(values);
+  }, [values]);
+
+  useEffect(() => {
+    setSelectionLabel(getSelectionLabel(values, labels, placeholder, multiSelect));
+  }, [labels, multiSelect, placeholder, values]);
+
   /**
    * Applies the selected values to the state
    *

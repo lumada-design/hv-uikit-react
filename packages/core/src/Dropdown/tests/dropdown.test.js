@@ -1,132 +1,125 @@
 /* eslint-env jest */
-
 import React from "react";
-import { mount } from "enzyme";
-import { HvCheckBox, HvProvider } from "../..";
-import List from "../List";
-import Dropdown from "..";
 
-const mockData = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3" }];
+import userEvent from "@testing-library/user-event";
 
-const mockDataWithIds = [
-  { id: "id-1", label: "Value 1" },
-  { id: "id-2", label: "Value 2" },
-  { id: "id-3", label: "Value 3" },
-];
+import { render } from "testing-utils";
+
+import {
+  General,
+  SingleSelection,
+  SingleSelectionWithSearch,
+} from "../stories/Dropdown.stories.test";
 
 describe("<Dropdown />", () => {
-  global.document.addEventListener = jest.fn();
-  global.document.removeEventListener = jest.fn();
-  global.window.event = jest.fn();
-
-  let wrapper;
-  let dropdownComponent;
-
-  describe(" with defaults", () => {
-    const onChangeMock = jest.fn();
-
-    beforeEach(async () => {
-      // Hide console error: "Failed prop type: Material-UI: the `anchorEl` prop provided to the component is invalid."
-      // In real cases this value is filled if the dropdown is expanded.
-      // eslint-disable-next-line no-console
-      const originalError = console.error;
-      // eslint-disable-next-line no-console
-      console.error = jest.fn();
-
-      wrapper = mount(
-        <HvProvider>
-          <Dropdown values={mockData} onChange={onChangeMock} showSearch expanded />
-        </HvProvider>
-      );
-
-      // eslint-disable-next-line no-console
-      console.error = originalError;
-    });
-
-    it("should render correctly", () => {
-      expect(wrapper.find(Dropdown)).toMatchSnapshot();
-    });
-
-    it("onChange is triggered on first render when required", () => {
-      onChangeMock.mockReset();
-      mount(
-        <HvProvider>
-          <Dropdown
-            values={mockData}
-            onChange={onChangeMock}
-            notifyChangesOnFirstRender
-            showSearch
-            expanded
-          />
-        </HvProvider>
-      );
-
-      expect(onChangeMock).toHaveBeenCalled();
-    });
+  it("General", () => {
+    const { container } = render(<General />);
+    expect(container).toMatchSnapshot();
   });
 
-  describe("<Dropdown /> disabled", () => {
-    beforeEach(async () => {
-      wrapper = mount(
-        <HvProvider>
-          <Dropdown id="test-dropdown" values={mockData} multiSelect showSearch disabled expanded />
-        </HvProvider>
-      );
-    });
-
-    it("should render correctly", () => {
-      expect(wrapper.find(Dropdown)).toMatchSnapshot();
-    });
+  it("SingleSelection", () => {
+    const { container } = render(<SingleSelection />);
+    expect(container).toMatchSnapshot();
   });
 
-  describe("<Dropdown /> onChange prop called in multiselect", () => {
-    const onChangeMock = jest.fn();
+  it("SingleSelectionWithSearch", () => {
+    const { container } = render(<SingleSelectionWithSearch />);
+    expect(container).toMatchSnapshot();
+  });
+});
 
-    beforeEach(async () => {
-      wrapper = mount(
-        <HvProvider>
-          <Dropdown
-            id="dropdown2"
-            multiSelect
-            values={mockDataWithIds}
-            onChange={onChangeMock}
-            expanded
-          />
-        </HvProvider>
-      );
-      dropdownComponent = wrapper.find(List);
-    });
+describe("Single Selection", () => {
+  const { getByRole, getAllByRole } = render(<SingleSelection />);
+  const dropdownElement = getByRole("combobox");
+  expect(dropdownElement).toBeInTheDocument();
 
-    it("onChange shouldn't be triggered when a multi select item is selected ", () => {
-      dropdownComponent
-        .find(HvCheckBox)
-        .at(1)
-        .find('input[type="checkbox"]')
-        .simulate("change", { target: { checked: true } });
+  const optionElements = getAllByRole("option");
+  expect(optionElements.length).toBe(4);
+});
 
-      expect(onChangeMock).not.toBeCalled();
-    });
+describe("Single Selection With Search", () => {
+  const { getByRole } = render(<SingleSelectionWithSearch />);
 
-    it("onChange shouldn't be triggered when All checkbox is selected ", () => {
-      dropdownComponent
-        .find(HvCheckBox)
-        .at(0)
-        .find('input[type="checkbox"]')
-        .simulate("change", { target: { checked: true } });
+  const searchbox = getByRole("searchbox");
+  expect(searchbox).toBeInTheDocument();
+});
 
-      expect(onChangeMock).not.toBeCalled();
-    });
+describe("Multi Selection", () => {
+  it("renders a dropdown in the expected configuration", () => {
+    const { getByRole } = render(<General />);
 
-    it("onChange should be triggered when action apply is clicked ", () => {
-      dropdownComponent
-        .find("HvActionBar")
-        .find("button")
-        .at(0)
-        .simulate("click", {
-          preventDefault() {},
-        });
+    const dropdownElement = getByRole("combobox");
+    expect(dropdownElement).toBeInTheDocument();
 
-      expect(onChangeMock).toBeCalled();
-    });
+    const seachbox = getByRole("searchbox");
+    expect(seachbox).toBeInTheDocument();
+
+    const textboxElement = getByRole("textbox");
+    expect(textboxElement).toBeInTheDocument();
+
+    const dropdownContents = getByRole("tooltip");
+    expect(dropdownContents).toBeInTheDocument();
+
+    const listboxElement = getByRole("listbox");
+    expect(listboxElement).toBeInTheDocument();
+
+    const searchBox = getByRole("searchbox");
+    expect(searchBox).toBeInTheDocument();
+
+    const checkBox1 = getByRole("checkbox", { name: /value 1/i });
+    expect(checkBox1).toBeInTheDocument();
+    expect(checkBox1).not.toBeChecked();
+
+    const checkBox2 = getByRole("checkbox", { name: /value 2/i });
+    expect(checkBox2).toBeInTheDocument();
+    expect(checkBox2).toBeChecked();
+
+    const checkBox3 = getByRole("checkbox", { name: /value 3/i });
+    expect(checkBox3).toBeInTheDocument();
+    expect(checkBox3).not.toBeChecked();
+
+    const checkBox4 = getByRole("checkbox", { name: /value 4/i });
+    expect(checkBox4).toBeInTheDocument();
+    expect(checkBox4).not.toBeChecked();
+
+    const applyButton = getByRole("button", { name: /apply/i });
+    expect(applyButton).toBeInTheDocument();
+
+    const cancelButton = getByRole("button", { name: /cancel/i });
+    expect(cancelButton).toBeInTheDocument();
+  });
+
+  it("selections are applied correctly", () => {
+    const { getByRole } = render(<General />);
+
+    const checkBox1 = getByRole("checkbox", { name: /value 1/i });
+    userEvent.click(checkBox1);
+    expect(checkBox1).toBeChecked();
+
+    const checkBox2 = getByRole("checkbox", { name: /value 2/i });
+    userEvent.click(checkBox2);
+    expect(checkBox2).not.toBeChecked();
+
+    const checkBox3 = getByRole("checkbox", { name: /value 3/i });
+    userEvent.click(checkBox3);
+    expect(checkBox3).toBeChecked();
+
+    const checkBox4 = getByRole("checkbox", { name: /value 4/i });
+    userEvent.click(checkBox4);
+    expect(checkBox4).toBeChecked();
+
+    const applyButton = getByRole("button", { name: /apply/i });
+    // apply closes dropdown
+    userEvent.click(applyButton);
+
+    const dropdownElement = getByRole("combobox");
+    // open dropdown
+    userEvent.click(dropdownElement);
+
+    // check that selection is retained
+    expect(checkBox1).toBeChecked();
+    expect(checkBox2).not.toBeChecked();
+    expect(checkBox3).toBeChecked();
+    expect(checkBox4).toBeChecked();
   });
 });
