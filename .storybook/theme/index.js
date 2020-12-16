@@ -16,7 +16,7 @@ export const getTheme = (theme) => {
   if (isEyesStorybook) {
     // if being tested, don't rely on the stored theme but instead on the variation url parameter
     const eyesVariation = new URL(window.location).searchParams.get("eyes-variation");
-    const eyesTheme = eyesVariation.split(":")?.[1];
+    const eyesTheme = eyesVariation?.split(":")?.[1];
 
     return themes?.[eyesTheme] || themes?.[DEFAULT_THEME];
   }
