@@ -186,6 +186,7 @@ const HvTable = (props) => {
       ...((pageSize || pageSize !== undefined) &&
         (showPagination ? { defaultPageSize: pageSize } : { pageSize })),
       ...{ page: currentPage },
+      ...(!paginationServerSide && data.length === 0 && { pageSize: 0 }),
     };
   };
 
