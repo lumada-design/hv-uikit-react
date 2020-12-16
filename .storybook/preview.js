@@ -6,6 +6,7 @@ import DocsContainer from "./blocks/DocsContainer";
 import { getTheme, UIKIT_THEME } from "./theme";
 import { extractArgTypes } from "./props/extractArgTypes";
 import storySort from "./story_store/storySort";
+import "./theme/fonts/font-faces.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

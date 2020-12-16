@@ -13,7 +13,7 @@ export const getComponent = (props = {}, context) => {
   const { parameters = {} } = context;
   const { component } = parameters;
   if (isShortcut(of) || isShortcut(story)) {
-    return component.Naked || component || null;
+    return component?.Naked || component || null;
   }
   if (!of) {
     throw new Error(ArgsTableError.NO_COMPONENT);
