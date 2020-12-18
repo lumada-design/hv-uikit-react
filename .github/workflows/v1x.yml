@@ -17,13 +17,7 @@ on:
   workflow_dispatch:
 
 # flow:
-#      +------------+
-#      |Notify-Start|
-#      +-----+------+
-#            |
-#            +--------------------------------------+
-#            |                                      |
-# +----------v-------------------------+  +---------v---------+
+# +------------------------------------+  +-------------------+
 # |Static-Checks (Licenses, Lint, Jest)|  |Build-Documentation|
 # +----------+-------------------------+  +---------+---------+
 #            |                                      |
@@ -40,34 +34,12 @@ on:
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
+  RUN_URL: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
 
 jobs:
-  Notify-Start:
-    name: Notify Start
-    runs-on: ubuntu-latest
-    steps:
-      - name: Notify
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit-eng-ci",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
-                  "footer": "by ${{github.actor}}"
-                }
-              ]
-            }
-
   Static-Checks:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -94,7 +66,6 @@ jobs:
 
   Build-Documentation:
     name: Build Documentation
-    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
 
     steps:
@@ -201,7 +172,7 @@ jobs:
             else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
             else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
 
-      - name: Notify
+      - name: Notify CI
         uses: hbfernandes/slack-action@1.0
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
@@ -214,8 +185,28 @@ jobs:
                 {
                   "mrkdwn_in": ["text"],
                   "color": "${{env.COLOR}}",
-                  "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                  "title": "${{ github.workflow }} finished: ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}"
+                }
+              ]
+            }
+
+      - name: Notify Fail
+        if: failure()
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-internal",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} finished: ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}"
                 }
               ]
             }
