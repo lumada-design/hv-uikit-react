@@ -205,7 +205,14 @@ jobs:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
         run: |
           cd ${{ github.workspace }}/automation/applitools
-          npx eyes-storybook -u http://localhost:9001
+          npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
+
+      - name: Archive Logs
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: applitools-logs
+          path: ${{ github.workspace }}/automation/applitools/applitools-logs.txt
 
       - name: Clean Folders
         if: always()

@@ -960,10 +960,6 @@ WithExpanderAndCustomContent.parameters = {
       story: "Table sample that shows the ability to add a complex expander and custom cell.",
     },
   },
-  eyes: {
-    // waiting until external charts are rendered (issue #1792)
-    waitBeforeScreenshot: "[id|=reactgooglegraph]",
-  },
 };
 
 export const WithCheckbox = () => {
