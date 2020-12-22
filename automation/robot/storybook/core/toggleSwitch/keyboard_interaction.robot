@@ -3,7 +3,7 @@ Resource          _toggleSwitch.resource
 Suite Setup       reduce Selenium Speed for ie keyboard events    1s
 Test Setup        open toggle switch sample    main
 Suite Teardown    Set Selenium Speed  0s
-Force Tags        keyboard
+Force Tags        keyboard  bug-ie-webdriver 
 
 
 *** Test Cases ***
