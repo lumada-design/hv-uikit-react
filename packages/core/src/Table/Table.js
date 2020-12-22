@@ -154,14 +154,22 @@ const HvTable = (props) => {
    * Pagination customizations.
    */
   const getPaginationProps = () => {
-    const PaginationComponent = (paginationProps) => (
-      <HvPagination
-        {...paginationProps}
-        id={setId(id, "pagination")}
-        labels={paginationLabels}
-        page={currentPage}
-      />
-    );
+    const PaginationComponent = (paginationProps) => {
+      return (
+        <HvPagination
+          id={setId(id, "pagination")}
+          labels={paginationLabels}
+          pageSize={paginationProps.pageSize}
+          pages={paginationProps.pages}
+          page={paginationProps.page}
+          canPrevious={paginationProps.canPrevious}
+          canNext={paginationProps.canNext}
+          onPageChange={paginationProps.onPageChange}
+          onPageSizeChange={paginationProps.onPageSizeChange}
+          showPageSizeOptions={paginationProps.showPageSizeOptions}
+        />
+      );
+    };
 
     return {
       showPagination: data.length > 0 && showPagination,
