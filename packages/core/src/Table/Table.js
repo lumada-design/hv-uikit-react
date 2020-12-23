@@ -189,11 +189,11 @@ const HvTable = (props) => {
           setCurrentPage(p);
           onPageChange?.(p);
         },
+        ...(pageSize && { defaultPageSize: pageSize }),
         ...(pages && { pages }),
       }),
-      ...((pageSize || pageSize !== undefined) &&
-        (showPagination ? { defaultPageSize: pageSize } : { pageSize })),
-      ...{ page: currentPage },
+      page: currentPage,
+      pageSize: showPagination ? currentPageSize : pageSize,
     };
   };
 
