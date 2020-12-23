@@ -106,10 +106,11 @@ const DropZone = ({
         }}
         onDrop={(event) => {
           if (!disabled) {
-            if (multiple === false && event.dataTransfer.files.length === 1) {
+            const { files } = event.dataTransfer;
+            if (multiple === true || files.length === 1) {
               event.stopPropagation();
               event.preventDefault();
-              onChangeHandler(event.dataTransfer.files);
+              onChangeHandler(files);
             }
           }
         }}
