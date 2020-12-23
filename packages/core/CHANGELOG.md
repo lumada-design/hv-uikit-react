@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.5.0...@hv/uikit-react-core@3.5.1) (2020-12-23)
+
+
+### Bug Fixes
+
+* **dropdown:** dropdown not updating values. HVUIKIT-5667 ([963b99c](https://github.com/pentaho/hv-uikit-react/commit/963b99c24195f36a3f6a94b1ffb96eb978352cd0))
+* **dropdownmenu:** resolve menuList class override warning ([#2194](https://github.com/pentaho/hv-uikit-react/issues/2194)) ([b54ac6d](https://github.com/pentaho/hv-uikit-react/commit/b54ac6d88d4c0969340d5e41cd54fdd433443dd6))
+* **table:** invalid props in pagination component HVUIKIT-5666 ([#2205](https://github.com/pentaho/hv-uikit-react/issues/2205)) ([e2264c2](https://github.com/pentaho/hv-uikit-react/commit/e2264c24671707c76ef3f1ded2ea9deba292917f))
+* **tabs:** onChange callback type definition ([#2193](https://github.com/pentaho/hv-uikit-react/issues/2193)) ([3b10001](https://github.com/pentaho/hv-uikit-react/commit/3b10001287ad4f67fa276087199a586dddf2cd11))
+* incorrect labeling of checkbox and radio groups ([e2d6a03](https://github.com/pentaho/hv-uikit-react/commit/e2d6a0370430740ff1ec5662117f4157f4549b2a))
+
+
+
+
+
 # [3.5.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.4.0...@hv/uikit-react-core@3.5.0) (2020-12-10)
 
 
