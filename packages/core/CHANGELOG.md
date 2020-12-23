@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.5...@hv/uikit-react-core@2.16.6) (2020-12-23)
+
+
+### Bug Fixes
+
+* **table:** invalid props in pagination component HVUIKIT-5666 ([#2206](https://github.com/pentaho/hv-uikit-react/issues/2206)) ([abd8e77](https://github.com/pentaho/hv-uikit-react/commit/abd8e77c2f3b97a0bac5a55dc48c5e6c4cae297d))
+
+
+
+
+
 ## [2.16.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.4...@hv/uikit-react-core@2.16.5) (2020-12-11)
 
 **Note:** Version bump only for package @hv/uikit-react-core
