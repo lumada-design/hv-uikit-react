@@ -1,16 +1,18 @@
 import React from "react";
 
-import { HvTable } from "../../../packages/core/";
+import { HvTable, HvProvider } from "../../../packages/core/";
 
 const ComponentsTable = ({ tableData, tableColumnsConfig }) => {
   return (
-    <HvTable
-      data={tableData}
-      columns={tableColumnsConfig}
-      resizable={false}
-      sortable={false}
-      showPagination={false}
-    />
+    <HvProvider>
+      <HvTable
+        data={tableData}
+        columns={tableColumnsConfig}
+        resizable={false}
+        sortable={false}
+        showPagination={false}
+      />
+    </HvProvider>
   );
 };
 

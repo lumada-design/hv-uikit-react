@@ -1,16 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles, withTheme } from "@material-ui/core";
 
 import MonacoEditor from "react-monaco-editor";
 
-import withTheme from "@material-ui/core/styles/withTheme";
-import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 
-import useDeprecated from "../../../core/src/utils/useDeprecated";
-
 export const DefaultCodeEditorOptions = {
-  automaticLayout: true, // TODO add a resize event listener and manually resize?
+  automaticLayout: true,
   overviewRulerLanes: 0,
   minimap: {
     enabled: true,
@@ -28,8 +25,9 @@ export const DefaultCodeEditorOptions = {
 
 /**
  * A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) with our styles.
- * Please make sure you follow the instructions (found in the repository) to include the component. Webpack configurations, and MonacoWebpackPlugin, are required to see the editor syntax highlight.
- * This version of the Code Editor is deprecated. Please use the one available in the @hv/uikit-react-codeeditor package.
+ * Please make sure you follow the instructions (found in the repository) to include the component.
+ * Webpack configurations, and MonacoWebpackPlugin, are required to see the editor syntax highlight.
+ * Additional information regarding Tab trapping in Monaco, can be found here: https://github.com/microsoft/monaco-editor/wiki/Monaco-Editor-Accessibility-Guide#tab-trapping
  */
 const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...others }) => {
   // merges the 2 objects together, overriding defaults with passed in options
@@ -37,8 +35,6 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...oth
     ...DefaultCodeEditorOptions,
     ...options,
   };
-
-  useDeprecated("Code Editor", "Use the version in the code-editor package.");
 
   return (
     <div className={classes.root}>
@@ -49,14 +45,14 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...oth
           monaco.editor.defineTheme("hv", {
             base: theme.hv.type === "light" ? "vs" : "vs-dark",
             inherit: true,
-            rules: [],
+            rules: [{ background: theme.hv.palette.atmosphere.atmo1 }],
             colors: {
               "editor.background": theme.hv.palette.atmosphere.atmo1,
               "editorLineNumber.foreground": theme.hv.palette.atmosphere.atmo5,
             },
           });
         }}
-        theme={"hv"}
+        theme="hv"
         {...editorProps}
         {...others}
       />
@@ -73,7 +69,15 @@ CodeEditor.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Style applied to the bor
+     */
+    headerIncluded: PropTypes.string,
   }).isRequired,
+  /**
+   * styling theme to be applied to the code editor
+   */
+  theme: PropTypes.any.isRequired,
   /**
    * The properties of the Monaco editor. Please check MonacoEditorProps from https://microsoft.github.io/monaco-editor/api/index.html
    */

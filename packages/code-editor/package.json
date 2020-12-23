@@ -1,15 +1,15 @@
 {
-  "name": "@hv/uikit-react-lab",
-  "version": "3.0.7",
-  "description": "A collection of contributed React components for the Hitachi Vantara's Design System.",
+  "name": "@hv/uikit-react-code-editor",
+  "version": "3.0.0",
+  "description": "A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) using the Hitachi Vantara's Design System styles.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/index.d.ts",
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/pentaho/hv-uikit-react.git"
@@ -21,9 +21,6 @@
     "babel:build": "npx babel src -d dist --source-maps --copy-files",
     "copy": "npx cp -f src/index.js dist/index.es.js",
     "clean": "npx del-cli dist",
-    "test": "jest -c config/jest-config.js --coverage",
-    "test:watch": "jest -c config/jest-config.js --watch",
-    "test:update": "jest -c ./config/jest-config.js --u",
     "test:clean": "npx del-cli dist/**/tests",
     "prepare": "npm run build",
     "link": "npm link",
@@ -33,20 +30,26 @@
   },
   "peerDependencies": {
     "@material-ui/core": "^4.11.0",
+    "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-monaco-editor": "^0.40.0"
+    "react-monaco-editor": "^0.40.0",
+    "@hv/uikit-react-core": "^3.5.0"
   },
   "dependencies": {
-    "@hv/uikit-react-core": "^3.5.1",
-    "@hv/uikit-react-icons": "^3.1.0",
     "clsx": "^1.1.1",
+    "deep-diff": "^1.0.2",
+    "detect-browser": "^5.1.1",
+    "focus-trap-react": "^8.1.0",
+    "focus-visible": "^5.1.0",
+    "focus-within-polyfill": "^5.0.9",
+    "hoist-non-react-statics": "^3.3.2",
+    "html-react-parser": "^0.14.0",
     "lodash": "^4.17.20",
-    "moment": "^2.29.0",
-    "moment-timezone": "^0.5.31",
     "prop-types": "^15.7.2",
-    "rc-slider": "8.6.3",
-    "rc-tooltip": "^3.7.3"
+    "react-debounce-render": "^7.0.0",
+    "react-outside-click-handler": "^1.3.0",
+    "shallow-equal": "^1.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
@@ -56,25 +59,21 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
-    "@babel/runtime": "^7.11.2",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/lodash": "^4.14.161",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-optimize-clsx": "^2.6.1",
+    "babel-plugin-typescript-to-proptypes": "^1.4.1",
     "cash-cp": "^0.2.0",
+    "cross-env": "^7.0.2",
     "del-cli": "^3.0.1",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
-    "enzyme-to-json": "^3.6.0",
-    "jest": "^26.4.2",
-    "jest-junit": "^11.1.0",
-    "jss-snapshot-serializer": "^1.0.0",
-    "npm-run-all": "^4.1.5"
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "@hv/uikit-react-icons": "^3.0.1"
   },
   "files": [
     "dist"
-  ],
-  "jest": {
-    "testEnvironment": "node"
-  }
+  ]
 }
