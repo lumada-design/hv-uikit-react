@@ -128,7 +128,7 @@ describe("BulkActions with custom label", () => {
   it("should be defined", () => {
     wrapper = mount(
       <HvProvider>
-        <HvBulkActions numTotal={5} numSelected={2} selectAllLabel={labelMock} />
+        <HvBulkActions numTotal={5} numSelected={0} selectAllLabel={labelMock} />
       </HvProvider>
     );
     expect(wrapper).toBeDefined();

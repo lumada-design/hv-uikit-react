@@ -91,9 +91,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
             <WithStyles(ForwardRef)
               component="span"
             >
-              <b>
-                All
-              </b>
+              <React.Fragment>
+                <b>
+                  All
+                </b>
+                 (8)
+              </React.Fragment>
             </WithStyles(ForwardRef)>
           }
           onChange={[Function]}
@@ -118,9 +121,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               <WithStyles(ForwardRef)
                 component="span"
               >
-                <b>
-                  All
-                </b>
+                <React.Fragment>
+                  <b>
+                    All
+                  </b>
+                   (8)
+                </React.Fragment>
               </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
@@ -487,9 +493,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         <WithStyles(ForwardRef)
                           component="span"
                         >
-                          <b>
-                            All
-                          </b>
+                          <React.Fragment>
+                            <b>
+                              All
+                            </b>
+                             (8)
+                          </React.Fragment>
                         </WithStyles(ForwardRef)>
                       }
                     >
@@ -508,9 +517,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           <WithStyles(ForwardRef)
                             component="span"
                           >
-                            <b>
-                              All
-                            </b>
+                            <React.Fragment>
+                              <b>
+                                All
+                              </b>
+                               (8)
+                            </React.Fragment>
                           </WithStyles(ForwardRef)>
                         }
                       >
@@ -597,6 +609,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                     <b>
                                       All
                                     </b>
+                                     (8)
                                   </span>
                                 </ForwardRef>
                               </WithStyles(ForwardRef)>
@@ -1520,9 +1533,12 @@ exports[`BulkActions should render correctly 1`] = `
             <WithStyles(ForwardRef)
               component="span"
             >
-              <b>
-                All
-              </b>
+              <React.Fragment>
+                <b>
+                  All
+                </b>
+                 (8)
+              </React.Fragment>
             </WithStyles(ForwardRef)>
           }
           onChange={[Function]}
@@ -1546,9 +1562,12 @@ exports[`BulkActions should render correctly 1`] = `
               <WithStyles(ForwardRef)
                 component="span"
               >
-                <b>
-                  All
-                </b>
+                <React.Fragment>
+                  <b>
+                    All
+                  </b>
+                   (8)
+                </React.Fragment>
               </WithStyles(ForwardRef)>
             }
             onChange={[Function]}
@@ -1912,9 +1931,12 @@ exports[`BulkActions should render correctly 1`] = `
                         <WithStyles(ForwardRef)
                           component="span"
                         >
-                          <b>
-                            All
-                          </b>
+                          <React.Fragment>
+                            <b>
+                              All
+                            </b>
+                             (8)
+                          </React.Fragment>
                         </WithStyles(ForwardRef)>
                       }
                     >
@@ -1933,9 +1955,12 @@ exports[`BulkActions should render correctly 1`] = `
                           <WithStyles(ForwardRef)
                             component="span"
                           >
-                            <b>
-                              All
-                            </b>
+                            <React.Fragment>
+                              <b>
+                                All
+                              </b>
+                               (8)
+                            </React.Fragment>
                           </WithStyles(ForwardRef)>
                         }
                       >
@@ -2022,6 +2047,7 @@ exports[`BulkActions should render correctly 1`] = `
                                     <b>
                                       All
                                     </b>
+                                     (8)
                                   </span>
                                 </ForwardRef>
                               </WithStyles(ForwardRef)>
@@ -2074,7 +2100,7 @@ exports[`BulkActions should render correctly 1`] = `
 
 exports[`BulkActions with custom label should render correctly 1`] = `
 <WithStyles(HvBulkActions)
-  numSelected={2}
+  numSelected={0}
   numTotal={5}
   selectAllLabel="MockLabel"
 >
@@ -2089,26 +2115,37 @@ exports[`BulkActions with custom label should render correctly 1`] = `
         "semantic": "HvBulkActions-semantic",
       }
     }
-    numSelected={2}
+    numSelected={0}
     numTotal={5}
     selectAllLabel="MockLabel"
   >
     <div
-      className="HvBulkActions-root HvBulkActions-semantic"
+      className="HvBulkActions-root"
     >
       <div
         className="HvBulkActions-selectAllContainer"
       >
         <WithStyles(HvCheckBox)
-          checked={true}
+          checked={false}
           className="HvBulkActions-selectAll"
-          indeterminate={true}
-          label="MockLabel"
+          indeterminate={false}
+          label={
+            <WithStyles(ForwardRef)
+              component="span"
+            >
+              <React.Fragment>
+                <b>
+                  MockLabel
+                </b>
+                 (5)
+              </React.Fragment>
+            </WithStyles(ForwardRef)>
+          }
           onChange={[Function]}
-          semantic={true}
+          semantic={false}
         >
           <HvCheckBox
-            checked={true}
+            checked={false}
             className="HvBulkActions-selectAll"
             classes={
               Object {
@@ -2120,10 +2157,21 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                 "root": "HvCheckBox-root",
               }
             }
-            indeterminate={true}
-            label="MockLabel"
+            indeterminate={false}
+            label={
+              <WithStyles(ForwardRef)
+                component="span"
+              >
+                <React.Fragment>
+                  <b>
+                    MockLabel
+                  </b>
+                   (5)
+                </React.Fragment>
+              </WithStyles(ForwardRef)>
+            }
             onChange={[Function]}
-            semantic={true}
+            semantic={false}
           >
             <WithStyles(HvFormElement)
               className="HvBulkActions-selectAll HvCheckBox-root"
@@ -2151,11 +2199,11 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     className="HvCheckBox-container"
                   >
                     <WithStyles(HvBaseCheckbox)
-                      checked={true}
+                      checked={false}
                       className="HvCheckBox-checkbox"
                       disabled={false}
                       id="hvcheckbox7-input"
-                      indeterminate={true}
+                      indeterminate={false}
                       inputProps={
                         Object {
                           "aria-describedby": undefined,
@@ -2170,11 +2218,11 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       onFocusVisible={[Function]}
                       readOnly={false}
                       required={false}
-                      semantic={true}
+                      semantic={false}
                       value="on"
                     >
                       <HvBaseCheckbox
-                        checked={true}
+                        checked={false}
                         className="HvCheckBox-checkbox"
                         classes={
                           Object {
@@ -2185,7 +2233,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         }
                         disabled={false}
                         id="hvcheckbox7-input"
-                        indeterminate={true}
+                        indeterminate={false}
                         inputProps={
                           Object {
                             "aria-describedby": undefined,
@@ -2200,47 +2248,20 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         onFocusVisible={[Function]}
                         readOnly={false}
                         required={false}
-                        semantic={true}
+                        semantic={false}
                         value="on"
                       >
                         <WithStyles(ForwardRef(Checkbox))
-                          checked={true}
-                          checkedIcon={
-                            <CheckboxCheck
-                              color={
-                                Array [
-                                  "base2",
-                                  "base1",
-                                ]
-                              }
-                            />
-                          }
+                          checked={false}
+                          checkedIcon={<CheckboxCheck />}
                           className="HvCheckBox-checkbox HvBaseCheckbox-root"
                           color="default"
                           disableRipple={true}
                           disabled={false}
-                          icon={
-                            <Checkbox
-                              color={
-                                Array [
-                                  "base1",
-                                  "base2",
-                                ]
-                              }
-                            />
-                          }
+                          icon={<Checkbox />}
                           id="hvcheckbox7-input"
-                          indeterminate={true}
-                          indeterminateIcon={
-                            <CheckboxPartial
-                              color={
-                                Array [
-                                  "base1",
-                                  "base2",
-                                ]
-                              }
-                            />
-                          }
+                          indeterminate={false}
+                          indeterminateIcon={<CheckboxPartial />}
                           inputProps={
                             Object {
                               "aria-describedby": undefined,
@@ -2258,17 +2279,8 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                           value="on"
                         >
                           <ForwardRef(Checkbox)
-                            checked={true}
-                            checkedIcon={
-                              <CheckboxCheck
-                                color={
-                                  Array [
-                                    "base2",
-                                    "base1",
-                                  ]
-                                }
-                              />
-                            }
+                            checked={false}
+                            checkedIcon={<CheckboxCheck />}
                             className="HvCheckBox-checkbox HvBaseCheckbox-root"
                             classes={
                               Object {
@@ -2283,28 +2295,10 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             color="default"
                             disableRipple={true}
                             disabled={false}
-                            icon={
-                              <Checkbox
-                                color={
-                                  Array [
-                                    "base1",
-                                    "base2",
-                                  ]
-                                }
-                              />
-                            }
+                            icon={<Checkbox />}
                             id="hvcheckbox7-input"
-                            indeterminate={true}
-                            indeterminateIcon={
-                              <CheckboxPartial
-                                color={
-                                  Array [
-                                    "base1",
-                                    "base2",
-                                  ]
-                                }
-                              />
-                            }
+                            indeterminate={false}
+                            indeterminateIcon={<CheckboxPartial />}
                             inputProps={
                               Object {
                                 "aria-describedby": undefined,
@@ -2322,38 +2316,20 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             value="on"
                           >
                             <WithStyles(ForwardRef(SwitchBase))
-                              checked={true}
-                              checkedIcon={
-                                <CheckboxPartial
-                                  color={
-                                    Array [
-                                      "base1",
-                                      "base2",
-                                    ]
-                                  }
-                                />
-                              }
+                              checked={false}
+                              checkedIcon={<CheckboxCheck />}
                               className="HvCheckBox-checkbox HvBaseCheckbox-root"
                               classes={
                                 Object {
                                   "checked": "Mui-checked",
                                   "disabled": "Mui-disabled",
-                                  "root": "MuiCheckbox-root MuiCheckbox-indeterminate",
+                                  "root": "MuiCheckbox-root",
                                 }
                               }
                               color="default"
                               disableRipple={true}
                               disabled={false}
-                              icon={
-                                <CheckboxPartial
-                                  color={
-                                    Array [
-                                      "base1",
-                                      "base2",
-                                    ]
-                                  }
-                                />
-                              }
+                              icon={<Checkbox />}
                               id="hvcheckbox7-input"
                               inputProps={
                                 Object {
@@ -2362,7 +2338,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                   "aria-invalid": undefined,
                                   "aria-label": undefined,
                                   "aria-labelledby": undefined,
-                                  "data-indeterminate": true,
+                                  "data-indeterminate": false,
                                 }
                               }
                               onBlur={[Function]}
@@ -2374,39 +2350,21 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                               value="on"
                             >
                               <ForwardRef(SwitchBase)
-                                checked={true}
-                                checkedIcon={
-                                  <CheckboxPartial
-                                    color={
-                                      Array [
-                                        "base1",
-                                        "base2",
-                                      ]
-                                    }
-                                  />
-                                }
+                                checked={false}
+                                checkedIcon={<CheckboxCheck />}
                                 className="HvCheckBox-checkbox HvBaseCheckbox-root"
                                 classes={
                                   Object {
                                     "checked": "PrivateSwitchBase-checked-16 Mui-checked",
                                     "disabled": "PrivateSwitchBase-disabled-17 Mui-disabled",
                                     "input": "PrivateSwitchBase-input-18",
-                                    "root": "PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate",
+                                    "root": "PrivateSwitchBase-root-15 MuiCheckbox-root",
                                   }
                                 }
                                 color="default"
                                 disableRipple={true}
                                 disabled={false}
-                                icon={
-                                  <CheckboxPartial
-                                    color={
-                                      Array [
-                                        "base1",
-                                        "base2",
-                                      ]
-                                    }
-                                  />
-                                }
+                                icon={<Checkbox />}
                                 id="hvcheckbox7-input"
                                 inputProps={
                                   Object {
@@ -2415,7 +2373,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                     "aria-invalid": undefined,
                                     "aria-label": undefined,
                                     "aria-labelledby": undefined,
-                                    "data-indeterminate": true,
+                                    "data-indeterminate": false,
                                   }
                                 }
                                 onBlur={[Function]}
@@ -2427,7 +2385,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                 value="on"
                               >
                                 <WithStyles(ForwardRef(IconButton))
-                                  className="PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
+                                  className="PrivateSwitchBase-root-15 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                   color="default"
                                   component="span"
                                   disableRipple={true}
@@ -2438,7 +2396,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                   tabIndex={null}
                                 >
                                   <ForwardRef(IconButton)
-                                    className="PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
+                                    className="PrivateSwitchBase-root-15 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                     classes={
                                       Object {
                                         "colorInherit": "MuiIconButton-colorInherit",
@@ -2463,7 +2421,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(ButtonBase))
                                       centerRipple={true}
-                                      className="MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
+                                      className="MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                       component="span"
                                       disableRipple={true}
                                       disabled={false}
@@ -2475,7 +2433,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                     >
                                       <ForwardRef(ButtonBase)
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                         classes={
                                           Object {
                                             "disabled": "Mui-disabled",
@@ -2494,7 +2452,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                       >
                                         <span
                                           aria-disabled={false}
-                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-16 Mui-checked"
+                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-15 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                                           onBlur={[Function]}
                                           onDragLeave={[Function]}
                                           onFocus={[Function]}
@@ -2512,9 +2470,9 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                             className="MuiIconButton-label"
                                           >
                                             <input
-                                              checked={true}
+                                              checked={false}
                                               className="PrivateSwitchBase-input-18"
-                                              data-indeterminate={true}
+                                              data-indeterminate={false}
                                               disabled={false}
                                               id="hvcheckbox7-input"
                                               onChange={[Function]}
@@ -2523,21 +2481,14 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                               type="checkbox"
                                               value="on"
                                             />
-                                            <CheckboxPartial
-                                              color={
-                                                Array [
-                                                  "base1",
-                                                  "base2",
-                                                ]
-                                              }
-                                            >
+                                            <Checkbox>
                                               <HvIconBase
                                                 iconSize="S"
-                                                name="CheckboxPartial"
+                                                name="Checkbox"
                                               >
                                                 <div
                                                   className="HvIconBase-root HvIconBase-s"
-                                                  name="CheckboxPartial"
+                                                  name="Checkbox"
                                                 >
                                                   <svg
                                                     focusable={false}
@@ -2553,13 +2504,13 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                                     />
                                                     <path
                                                       className="color1"
-                                                      d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+                                                      d="M16 16H0V0h16zM1 15h14V1H1z"
                                                       fill="#414141"
                                                     />
                                                   </svg>
                                                 </div>
                                               </HvIconBase>
-                                            </CheckboxPartial>
+                                            </Checkbox>
                                           </span>
                                         </span>
                                       </ForwardRef(ButtonBase)>
@@ -2576,7 +2527,18 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       className="HvCheckBox-label"
                       htmlFor="hvcheckbox7-input"
                       id="hvcheckbox7-label"
-                      label="MockLabel"
+                      label={
+                        <WithStyles(ForwardRef)
+                          component="span"
+                        >
+                          <React.Fragment>
+                            <b>
+                              MockLabel
+                            </b>
+                             (5)
+                          </React.Fragment>
+                        </WithStyles(ForwardRef)>
+                      }
                     >
                       <HvLabel
                         className="HvCheckBox-label"
@@ -2589,7 +2551,18 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         }
                         htmlFor="hvcheckbox7-input"
                         id="hvcheckbox7-label"
-                        label="MockLabel"
+                        label={
+                          <WithStyles(ForwardRef)
+                            component="span"
+                          >
+                            <React.Fragment>
+                              <b>
+                                MockLabel
+                              </b>
+                               (5)
+                            </React.Fragment>
+                          </WithStyles(ForwardRef)>
+                        }
                       >
                         <WithStyles(ForwardRef)
                           className="HvCheckBox-label HvLabel-root"
@@ -2636,7 +2609,48 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                               htmlFor="hvcheckbox7-input"
                               id="hvcheckbox7-label"
                             >
-                              MockLabel
+                              <WithStyles(ForwardRef)
+                                component="span"
+                              >
+                                <ForwardRef
+                                  classes={
+                                    Object {
+                                      "3xlTitle": "HvTypography-3xlTitle",
+                                      "4xlTitle": "HvTypography-4xlTitle",
+                                      "5xlTitle": "HvTypography-5xlTitle",
+                                      "disabledText": "HvTypography-disabledText",
+                                      "highlightText": "HvTypography-highlightText",
+                                      "lTitle": "HvTypography-lTitle",
+                                      "link": "HvTypography-link",
+                                      "mTitle": "HvTypography-mTitle",
+                                      "noWrap": "HvTypography-noWrap",
+                                      "normalText": "HvTypography-normalText",
+                                      "placeholderText": "HvTypography-placeholderText",
+                                      "root": "HvTypography-root",
+                                      "sTitle": "HvTypography-sTitle",
+                                      "sectionTitle": "HvTypography-sectionTitle",
+                                      "selectedNavText": "HvTypography-selectedNavText",
+                                      "vizText": "HvTypography-vizText",
+                                      "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                      "xlTitle": "HvTypography-xlTitle",
+                                      "xsInlineLink": "HvTypography-xsInlineLink",
+                                      "xsTitle": "HvTypography-xsTitle",
+                                      "xxlTitle": "HvTypography-xxlTitle",
+                                      "xxsTitle": "HvTypography-xxsTitle",
+                                    }
+                                  }
+                                  component="span"
+                                >
+                                  <span
+                                    className="HvTypography-root HvTypography-normalText"
+                                  >
+                                    <b>
+                                      MockLabel
+                                    </b>
+                                     (5)
+                                  </span>
+                                </ForwardRef>
+                              </WithStyles(ForwardRef)>
                             </label>
                           </ForwardRef>
                         </WithStyles(ForwardRef)>
@@ -2650,16 +2664,16 @@ exports[`BulkActions with custom label should render correctly 1`] = `
         </WithStyles(HvCheckBox)>
       </div>
       <WithStyles(ActionsGeneric)
-        category="semantic"
+        category="ghost"
         classes={
           Object {
             "root": "HvBulkActions-actions",
           }
         }
-        disabled={false}
+        disabled={true}
       >
         <ActionsGeneric
-          category="semantic"
+          category="ghost"
           classes={
             Object {
               "actionContainer": "HvActionsGeneric-actionContainer",
@@ -2670,7 +2684,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
               "root": "HvActionsGeneric-root HvBulkActions-actions",
             }
           }
-          disabled={false}
+          disabled={true}
         >
           <div
             className="HvActionsGeneric-root HvBulkActions-actions"

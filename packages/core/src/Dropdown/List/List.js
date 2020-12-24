@@ -114,7 +114,7 @@ const List = ({
    * @returns {*}
    */
   const renderSelectAll = () => {
-    const { selectAll } = labels;
+    const { selectAll, multiSelectionConjunction } = labels;
     const nbrSelected = getSelected(list).length;
 
     const defaultLabel = (
@@ -122,10 +122,13 @@ const List = ({
         {nbrSelected > 0 ? (
           <>
             <b>{nbrSelected}</b>
-            {` / ${list.length}`}
+            {` ${multiSelectionConjunction} ${list.length}`}
           </>
         ) : (
-          <b>All</b>
+          <>
+            <b>{selectAll}</b>
+            {` (${list.length})`}
+          </>
         )}
       </HvTypography>
     );
@@ -134,7 +137,7 @@ const List = ({
       <div className={classes.selectAllContainer}>
         <HvCheckBox
           id={setId(id, "select-all")}
-          label={selectAll || defaultLabel}
+          label={defaultLabel}
           onChange={() => handleSelectAll()}
           classes={{ container: classes.selection }}
           className={classes.selectAll}

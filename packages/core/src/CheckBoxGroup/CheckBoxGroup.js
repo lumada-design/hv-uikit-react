@@ -69,6 +69,7 @@ const HvCheckBoxGroup = (props) => {
     orientation = "vertical",
     showSelectAll = false,
     selectAllLabel = "All",
+    selectAllConjunctionLabel = "/",
 
     children,
     ...others
@@ -89,9 +90,10 @@ const HvCheckBoxGroup = (props) => {
 
   const [validationMessage] = useControlled(statusMessage, "Required");
 
-  const [allValues, selectedState] = useMemo(() => {
+  const [allValues, selectedState, selectedCount] = useMemo(() => {
     const childValues = [];
     const childSelectedState = [];
+    let childSelectedCounter = 0;
 
     React.Children.toArray(children).forEach((child, i) => {
       const childValue = child.props.value;
@@ -99,9 +101,13 @@ const HvCheckBoxGroup = (props) => {
 
       childValues[i] = childValue;
       childSelectedState[i] = childIsSelected;
+
+      if (childIsSelected) {
+        childSelectedCounter += 1;
+      }
     });
 
-    return [childValues, childSelectedState];
+    return [childValues, childSelectedState, childSelectedCounter];
   }, [children, value]);
 
   const selectAllState = computeSelectAllState(value.length, selectedState.length);
@@ -179,6 +185,22 @@ const HvCheckBoxGroup = (props) => {
   // or if the value is uncontrolled and required is true
   const canShowError = status !== undefined || (required && valueProp === undefined);
 
+  const selectAllLabelComponent = (
+    <>
+      {selectedCount === 0 ? (
+        <>
+          <b>{selectAllLabel}</b>
+          {` (${children.length})`}
+        </>
+      ) : (
+        <>
+          <b>{selectedCount}</b>
+          {` ${selectAllConjunctionLabel} ${children.length}`}
+        </>
+      )}
+    </>
+  );
+
   return (
     <HvFormElement
       id={id}
@@ -216,7 +238,7 @@ const HvCheckBoxGroup = (props) => {
           <HvCheckBox
             checked={selectAllState === "all"}
             indeterminate={selectAllState === "some"}
-            label={selectAllLabel}
+            label={selectAllLabelComponent}
             disabled={disabled}
             readOnly={readOnly}
             className={clsx(classes.selectAll)}
@@ -367,7 +389,10 @@ HvCheckBoxGroup.propTypes = {
    * The label of the select all checkbox. Defaults to "All".
    */
   selectAllLabel: PropTypes.string,
-
+  /**
+   * Custom label for select all checkbox conjunction
+   */
+  selectAllConjunctionLabel: PropTypes.string,
   /**
    * The checkboxes that are part of the group.
    *

@@ -19,7 +19,7 @@ import styles from "./styles";
 
 const DEFAULT_LABELS = {
   select: undefined,
-  selectAll: undefined,
+  selectAll: "All",
   cancelLabel: "Cancel",
   applyLabel: "Apply",
   searchPlaceholder: "Search",

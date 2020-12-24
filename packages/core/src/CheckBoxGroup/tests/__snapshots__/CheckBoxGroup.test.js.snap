@@ -485,7 +485,10 @@ exports[`HvCheckBoxGroup sample snapshot testing Main (Vertical) 1`] = `
             for="hvcheckbox1-input"
             id="hvcheckbox1-label"
           >
-            All
+            <b>
+              1
+            </b>
+             / 3
           </label>
         </div>
       </div>

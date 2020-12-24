@@ -36,13 +36,7 @@ const styles = (theme) => ({
     },
   },
 
-  selectAll: {
-    // ensure more specificity than .HvCheckBox-root .HvCheckBox-label
-    "$group>& label": {
-      // not spreading theme.hv.typography.highlightText, it overrides too many things
-      fontWeight: 600,
-    },
-  },
+  selectAll: {},
 
   error: {
     marginTop: theme.hv.spacing.xs,

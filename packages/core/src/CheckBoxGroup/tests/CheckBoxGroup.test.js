@@ -46,7 +46,7 @@ describe("HvCheckBoxGroup", () => {
       expect(checkboxGroup).toBeValid();
       expect(checkboxGroup).not.toHaveDescription();
 
-      // childs ordered and rendered as expected
+      // children ordered and rendered as expected
       const checkboxes = getAllByRole("checkbox");
       expect(checkboxes.length).toBe(3);
 
@@ -499,7 +499,7 @@ describe("HvCheckBoxGroup", () => {
         </HvCheckBoxGroup>
       );
 
-      const selectAll = getByLabelText("All");
+      const selectAll = getByLabelText("All (3)");
       userEvent.click(selectAll);
 
       expect(onChangeSpy).toHaveBeenCalledTimes(1);
@@ -517,7 +517,7 @@ describe("HvCheckBoxGroup", () => {
         </HvCheckBoxGroup>
       );
 
-      const selectAll = getByLabelText("All");
+      const selectAll = getByLabelText("3 / 3");
       userEvent.click(selectAll);
 
       expect(onChangeSpy).toHaveBeenCalledTimes(1);
@@ -613,7 +613,7 @@ describe("HvCheckBoxGroup", () => {
       const checkboxGroup = getByRole("group");
       expect(checkboxGroup).toBeValid();
 
-      const selectAll = getByRole("checkbox", { name: "All" });
+      const selectAll = getByRole("checkbox", { name: "3 / 3" });
       userEvent.click(selectAll);
 
       expect(checkboxGroup).toBeInvalid();
@@ -660,7 +660,7 @@ describe("HvCheckBoxGroup", () => {
         </HvCheckBoxGroup>
       );
 
-      const selectAll = getByRole("checkbox", { name: "All" });
+      const selectAll = getByRole("checkbox", { name: "All (3)" });
       expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
@@ -674,7 +674,7 @@ describe("HvCheckBoxGroup", () => {
         </HvCheckBoxGroup>
       );
 
-      const selectAll = getByRole("checkbox", { name: "All" });
+      const selectAll = getByRole("checkbox", { name: "3 / 3" });
       expect(selectAll).toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");
     });
@@ -688,7 +688,7 @@ describe("HvCheckBoxGroup", () => {
         </HvCheckBoxGroup>
       );
 
-      const selectAll = getByRole("checkbox", { name: "All" });
+      const selectAll = getByRole("checkbox", { name: "2 / 3" });
       expect(selectAll).not.toBeChecked();
       expect(selectAll).toHaveAttribute("data-indeterminate", "true");
     });
