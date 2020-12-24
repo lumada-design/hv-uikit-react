@@ -8,8 +8,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvNavigationAnchors } from '@hv/uikit-react-lab/dist'",
-    maturityStatus: "immature",
-    dsVersion: "3.2.1",
   },
   component: HvNavigationAnchors,
 };
