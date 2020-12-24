@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.6...@hv/uikit-react-core@2.16.7) (2020-12-24)
+
+
+### Bug Fixes
+
+* **file-uploader:** fix drag and drop inconsistencies. HVUIKIT-5665 ([42cd73d](https://github.com/pentaho/hv-uikit-react/commit/42cd73da72547c15cbaddea622bd0b57eda1e57b))
+
+
+
+
+
 ## [2.16.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.5...@hv/uikit-react-core@2.16.6) (2020-12-23)
 
 
