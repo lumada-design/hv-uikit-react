@@ -19,7 +19,8 @@ const HvBulkActions = (props) => {
     numSelected = 0,
     onSelectAll,
     onSelectAllPages,
-    selectAllLabel,
+    selectAllLabel = "All",
+    selectAllConjunctionLabel = "/",
     selectAllPagesLabel,
     showSelectAllPages = false,
     semantic = true,
@@ -37,14 +38,17 @@ const HvBulkActions = (props) => {
     setAnySelected(numSelected > 0);
   }, [numSelected]);
 
-  const defaultSelectAllLabel = (
+  const selectAllLabelComponent = (
     <HvTypography component="span">
       {!anySelected ? (
-        <b>All</b>
+        <>
+          <b>{selectAllLabel}</b>
+          {` (${numTotal})`}
+        </>
       ) : (
         <>
           <b>{numSelected}</b>
-          {` / ${numTotal}`}
+          {` ${selectAllConjunctionLabel} ${numTotal}`}
         </>
       )}
     </HvTypography>
@@ -72,7 +76,7 @@ const HvBulkActions = (props) => {
           semantic={isSemantic}
           onChange={(...args) => onSelectAll?.(...args)}
           indeterminate={numSelected > 0 && numSelected < numTotal}
-          label={selectAllLabel ?? defaultSelectAllLabel}
+          label={selectAllLabelComponent}
         />
         {showSelectAllPages && anySelected && numSelected < numTotal && (
           <HvButton
@@ -140,6 +144,10 @@ HvBulkActions.propTypes = {
    * Custom label for select all checkbox
    */
   selectAllLabel: PropTypes.node,
+  /**
+   * Custom label for select all checkbox conjunction
+   */
+  selectAllConjunctionLabel: PropTypes.string,
   /**
    * Custom label for select all pages button
    */
