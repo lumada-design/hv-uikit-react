@@ -22,7 +22,7 @@ export default {
       </small>
     ),
     maturityStatus: "stable",
-    dsVersion: "3.2.1",
+    dsVersion: "3.3.0",
     docs: {
       page: () => (
         <DocsPage

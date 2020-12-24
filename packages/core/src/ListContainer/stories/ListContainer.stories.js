@@ -11,7 +11,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvListContainer } from '@hv/uikit-react-core/dist'",
     maturityStatus: "stable",
-    dsVersion: "3.2.1",
+    dsVersion: "3.3.0",
   },
   component: HvListContainer,
   subcomponents: { HvListItem },

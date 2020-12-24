@@ -7,8 +7,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvPagination } from '@hv/uikit-react-core/dist'",
-
-    dsVersion: "3.2.1",
+    maturityStatus: "stable",
+    dsVersion: "3.3.0",
   },
   component: HvPagination,
 };
