@@ -1,10 +1,7 @@
 import React from "react";
-import componentDefinitions from "../../../doc/GetStarted/ComponentVersioningTable/versions";
 
-const DSVersion = (props) => {
-  const { dsVersion } = props;
-  const version = dsVersion ? dsVersion : componentDefinitions.dsVersion3;
-  const svgTitle = `Design System: ${version}`;
+const DSVersion = ({ dsVersion }) => {
+  const svgTitle = `Design System: ${dsVersion}`;
 
   return (
     <svg
@@ -57,10 +54,10 @@ const DSVersion = (props) => {
           transform="scale(.1)"
           textLength="290"
         >
-          {version}
+          {dsVersion}
         </text>
         <text x="435" y="140" transform="scale(.1)" fill="#fff" textLength="290">
-          {version}
+          {dsVersion}
         </text>
       </g>
     </svg>
