@@ -30,8 +30,10 @@ this year
     ${yyyy}  ${mmm}  ${d}    get date
     wait until input has value           ${calendarLeft} input    1 Jan ${yyyy}
     wait until input has value           ${calendarRight} input    ${d} ${mmm} ${yyyy}
-    Element Text Should Be               ${datePickerHeader}    1 Jan ${yyyy} - ${d} ${mmm} ${yyyy}
-
+    Run Keyword If                       '${mmm}'=='Jan' 
+    ...  Element Text Should Be          ${datePickerHeader}    1 - ${d} Jan ${yyyy} 
+    ...  ELSE                            
+    ...  Element Text Should Be          ${datePickerHeader}    1 Jan ${yyyy} - ${d} ${mmm} ${yyyy}
 
 *** Variables ***
 ${last7days}    xpath://li[text()="Last 7 days"]
