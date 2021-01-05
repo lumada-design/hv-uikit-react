@@ -9,7 +9,6 @@ const styles = (theme) => ({
     display: "none",
   },
   showText: {
-    float: "left",
     display: "block",
   },
   "@global": {

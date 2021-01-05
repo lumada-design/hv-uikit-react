@@ -51,6 +51,9 @@ const styles = (theme) => ({
   invalid: {
     color: theme.hv.palette.semantic.sema4,
   },
+  infoText: {
+    float: "left",
+  },
 });
 
 export default styles;

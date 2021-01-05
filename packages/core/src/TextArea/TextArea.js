@@ -160,6 +160,9 @@ class HvTextArea extends React.Component {
             inputRoot: classes.inputRoot,
             inputRootDisabled: classes.inputRootDisabled,
             inputRootFocused: classes.inputRootFocused,
+            infoText: clsx({
+              [classes.infoText]: maxCharQuantity != null,
+            }),
           }}
           className={className}
           id={id}
@@ -261,6 +264,10 @@ HvTextArea.propTypes = {
      * Style applied container of the text area component.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the max char count label.
+     */
+    infoText: PropTypes.string,
   }).isRequired,
   /**
    * An Object containing the various text associated with the input.
