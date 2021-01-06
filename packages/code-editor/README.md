@@ -18,7 +18,7 @@ Install root dependencies:
 npm i
 ```
 
-Install neccessary peer dependencies. Note that, this component requires react-monaco-editor as a peer dependency.
+Install necessary peer dependencies. Note that, this component requires react-monaco-editor as a peer dependency.
 
 ## Getting Started
 

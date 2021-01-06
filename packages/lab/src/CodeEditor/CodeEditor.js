@@ -29,7 +29,7 @@ export const DefaultCodeEditorOptions = {
 /**
  * A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) with our styles.
  * Please make sure you follow the instructions (found in the repository) to include the component. Webpack configurations, and MonacoWebpackPlugin, are required to see the editor syntax highlight.
- * This version of the Code Editor is deprecated. Please use the one available in the @hv/uikit-react-codeeditor package.
+ * This version of the Code Editor is deprecated. Please use the one available in the @hv/uikit-react-code-editor package.
  */
 const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...others }) => {
   // merges the 2 objects together, overriding defaults with passed in options

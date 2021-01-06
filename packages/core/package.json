@@ -41,6 +41,7 @@
   "dependencies": {
     "@hv/uikit-common-themes": "^3.0.0",
     "@hv/uikit-react-icons": "^3.1.0",
+    "@popperjs/core": "2.6.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.9.3",
     "deep-diff": "^1.0.2",
