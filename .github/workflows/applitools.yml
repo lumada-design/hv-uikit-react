@@ -84,6 +84,7 @@ jobs:
           APPLITOOLS_SHOW_LOGS=true npx eyes-storybook -u http://localhost:9001 > applitools-logs.txt
 
       - name: Archive Logs
+        if: always()
         uses: actions/upload-artifact@v1
         with:
           name: applitools-logs
