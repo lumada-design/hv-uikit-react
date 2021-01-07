@@ -9,6 +9,7 @@ import storySort from "./story_store/storySort";
 import "./theme/fonts/font-faces.css";
 
 export const parameters = {
+  layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: { page: DocsPage, container: DocsContainer, extractArgTypes },
   options: {
