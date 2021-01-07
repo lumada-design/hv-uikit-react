@@ -9,7 +9,7 @@ const styles = (theme) => ({
     display: "none",
   },
   showText: {
-    display: "block",
+    display: "inline-block",
   },
   "@global": {
     "input:-webkit-autofill": {
