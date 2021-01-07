@@ -23,6 +23,7 @@ const HvBaseDropdown = ({
   onToggle,
   onFlip,
   onClickOutside,
+  onContainerCreation,
   disablePortal = false,
   component,
   adornment,
@@ -185,7 +186,7 @@ const HvBaseDropdown = ({
    * @param data
    */
   const handleContainerCreate = (data) => {
-    getFirstAndLastFocus(containerRef.current)?.first?.focus();
+    onContainerCreation(containerRef.current);
     if (!created) {
       const position = data.flipped;
       setterPosition(position);
@@ -412,6 +413,11 @@ HvBaseDropdown.propTypes = {
    * When user click outside the open container.
    */
   onClickOutside: PropTypes.func,
+  /**
+   * Callback called when the dropdown is opened and ready,
+   * commonly used to set focus to the content.
+   */
+  onContainerCreation: PropTypes.func,
   /**
    * When expanded dropdown flips position.
    */

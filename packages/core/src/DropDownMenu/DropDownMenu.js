@@ -55,6 +55,10 @@ const DropDownMenu = ({
     event.preventDefault();
   };
 
+  const setFocusToContent = (containerRef) => {
+    containerRef?.getElementsByTagName("li")[0]?.focus();
+  };
+
   const headerComponent = (
     <HvButton
       icon
@@ -63,6 +67,7 @@ const DropDownMenu = ({
       className={clsx(classes.icon, {
         [classes.iconSelected]: open,
       })}
+      aria-expanded={open}
       disabled={disabled}
       aria-label="Dropdown menu"
     >
@@ -87,6 +92,7 @@ const DropDownMenu = ({
         onToggleOpen?.(s);
       }}
       disabled={disabled}
+      onContainerCreation={setFocusToContent}
       {...others}
     >
       <HvPanel>

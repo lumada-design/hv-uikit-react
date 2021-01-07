@@ -852,6 +852,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             tabindex="-1"
                                                           >
                                                             <button
+                                                              aria-expanded="false"
                                                               aria-label="Dropdown menu"
                                                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                               id="1-menu-icon-button"
@@ -1068,6 +1069,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             tabindex="-1"
                                                           >
                                                             <button
+                                                              aria-expanded="false"
                                                               aria-label="Dropdown menu"
                                                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                               id="2-menu-icon-button"
@@ -1286,6 +1288,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             tabindex="-1"
                                                           >
                                                             <button
+                                                              aria-expanded="false"
                                                               aria-label="Dropdown menu"
                                                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                               id="3-menu-icon-button"
@@ -1667,6 +1670,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               tabindex="-1"
                                                             >
                                                               <button
+                                                                aria-expanded="false"
                                                                 aria-label="Dropdown menu"
                                                                 class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                 id="1-menu-icon-button"
@@ -1883,6 +1887,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               tabindex="-1"
                                                             >
                                                               <button
+                                                                aria-expanded="false"
                                                                 aria-label="Dropdown menu"
                                                                 class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                 id="2-menu-icon-button"
@@ -2101,6 +2106,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               tabindex="-1"
                                                             >
                                                               <button
+                                                                aria-expanded="false"
                                                                 aria-label="Dropdown menu"
                                                                 class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                 id="3-menu-icon-button"
@@ -2696,6 +2702,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           tabindex="-1"
                                                         >
                                                           <button
+                                                            aria-expanded="false"
                                                             aria-label="Dropdown menu"
                                                             class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                             id="1-menu-icon-button"
@@ -2912,6 +2919,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           tabindex="-1"
                                                         >
                                                           <button
+                                                            aria-expanded="false"
                                                             aria-label="Dropdown menu"
                                                             class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                             id="2-menu-icon-button"
@@ -3130,6 +3138,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                           tabindex="-1"
                                                         >
                                                           <button
+                                                            aria-expanded="false"
                                                             aria-label="Dropdown menu"
                                                             class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                             id="3-menu-icon-button"
@@ -3543,6 +3552,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             tabindex="-1"
                                                           >
                                                             <button
+                                                              aria-expanded="false"
                                                               aria-label="Dropdown menu"
                                                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                               id="1-menu-icon-button"
@@ -3759,6 +3769,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             tabindex="-1"
                                                           >
                                                             <button
+                                                              aria-expanded="false"
                                                               aria-label="Dropdown menu"
                                                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                               id="2-menu-icon-button"
@@ -3977,6 +3988,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                             tabindex="-1"
                                                           >
                                                             <button
+                                                              aria-expanded="false"
                                                               aria-label="Dropdown menu"
                                                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                               id="3-menu-icon-button"
@@ -4409,6 +4421,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="1-menu-icon-button"
@@ -4625,6 +4638,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="2-menu-icon-button"
@@ -4843,6 +4857,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="3-menu-icon-button"
@@ -5171,6 +5186,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="1-menu-icon-button"
@@ -5387,6 +5403,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="2-menu-icon-button"
@@ -5605,6 +5622,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="3-menu-icon-button"
@@ -7201,6 +7219,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         }
                                                                         component={
                                                                           <WithStyles(ForwardRef)
+                                                                            aria-expanded={false}
                                                                             aria-label="Dropdown menu"
                                                                             category="ghost"
                                                                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7215,6 +7234,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         disabled={false}
                                                                         expanded={false}
                                                                         id="1-menu"
+                                                                        onContainerCreation={[Function]}
                                                                         onToggle={[Function]}
                                                                         placement="left"
                                                                       >
@@ -7243,6 +7263,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           }
                                                                           component={
                                                                             <WithStyles(ForwardRef)
+                                                                              aria-expanded={false}
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7257,6 +7278,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           disabled={false}
                                                                           expanded={false}
                                                                           id="1-menu"
+                                                                          onContainerCreation={[Function]}
                                                                           onToggle={[Function]}
                                                                           placement="left"
                                                                         >
@@ -7270,6 +7292,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             tabIndex={-1}
                                                                           >
                                                                             <WithStyles(ForwardRef)
+                                                                              aria-expanded={false}
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7278,6 +7301,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               id="1-menu-icon-button"
                                                                             >
                                                                               <ForwardRef
+                                                                                aria-expanded={false}
                                                                                 aria-label="Dropdown menu"
                                                                                 category="ghost"
                                                                                 className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -7307,6 +7331,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                 id="1-menu-icon-button"
                                                                               >
                                                                                 <WithStyles(ForwardRef(Button))
+                                                                                  aria-expanded={false}
                                                                                   aria-label="Dropdown menu"
                                                                                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                                                                   classes={
@@ -7327,6 +7352,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                   variant="text"
                                                                                 >
                                                                                   <ForwardRef(Button)
+                                                                                    aria-expanded={false}
                                                                                     aria-label="Dropdown menu"
                                                                                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                                                                     classes={
@@ -7370,6 +7396,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                     variant="text"
                                                                                   >
                                                                                     <WithStyles(ForwardRef(ButtonBase))
+                                                                                      aria-expanded={false}
                                                                                       aria-label="Dropdown menu"
                                                                                       className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                       component="button"
@@ -7381,6 +7408,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                       type="button"
                                                                                     >
                                                                                       <ForwardRef(ButtonBase)
+                                                                                        aria-expanded={false}
                                                                                         aria-label="Dropdown menu"
                                                                                         className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                         classes={
@@ -7399,6 +7427,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                         type="button"
                                                                                       >
                                                                                         <button
+                                                                                          aria-expanded={false}
                                                                                           aria-label="Dropdown menu"
                                                                                           className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                           disabled={false}
@@ -7877,6 +7906,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="1-menu-icon-button"
@@ -8093,6 +8123,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="2-menu-icon-button"
@@ -8311,6 +8342,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="3-menu-icon-button"
@@ -8639,6 +8671,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="1-menu-icon-button"
@@ -8855,6 +8888,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="2-menu-icon-button"
@@ -9073,6 +9107,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="3-menu-icon-button"
@@ -10669,6 +10704,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         }
                                                                         component={
                                                                           <WithStyles(ForwardRef)
+                                                                            aria-expanded={false}
                                                                             aria-label="Dropdown menu"
                                                                             category="ghost"
                                                                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10683,6 +10719,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         disabled={false}
                                                                         expanded={false}
                                                                         id="2-menu"
+                                                                        onContainerCreation={[Function]}
                                                                         onToggle={[Function]}
                                                                         placement="left"
                                                                       >
@@ -10711,6 +10748,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           }
                                                                           component={
                                                                             <WithStyles(ForwardRef)
+                                                                              aria-expanded={false}
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10725,6 +10763,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           disabled={false}
                                                                           expanded={false}
                                                                           id="2-menu"
+                                                                          onContainerCreation={[Function]}
                                                                           onToggle={[Function]}
                                                                           placement="left"
                                                                         >
@@ -10738,6 +10777,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             tabIndex={-1}
                                                                           >
                                                                             <WithStyles(ForwardRef)
+                                                                              aria-expanded={false}
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10746,6 +10786,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               id="2-menu-icon-button"
                                                                             >
                                                                               <ForwardRef
+                                                                                aria-expanded={false}
                                                                                 aria-label="Dropdown menu"
                                                                                 category="ghost"
                                                                                 className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -10775,6 +10816,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                 id="2-menu-icon-button"
                                                                               >
                                                                                 <WithStyles(ForwardRef(Button))
+                                                                                  aria-expanded={false}
                                                                                   aria-label="Dropdown menu"
                                                                                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                                                                   classes={
@@ -10795,6 +10837,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                   variant="text"
                                                                                 >
                                                                                   <ForwardRef(Button)
+                                                                                    aria-expanded={false}
                                                                                     aria-label="Dropdown menu"
                                                                                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                                                                     classes={
@@ -10838,6 +10881,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                     variant="text"
                                                                                   >
                                                                                     <WithStyles(ForwardRef(ButtonBase))
+                                                                                      aria-expanded={false}
                                                                                       aria-label="Dropdown menu"
                                                                                       className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                       component="button"
@@ -10849,6 +10893,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                       type="button"
                                                                                     >
                                                                                       <ForwardRef(ButtonBase)
+                                                                                        aria-expanded={false}
                                                                                         aria-label="Dropdown menu"
                                                                                         className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                         classes={
@@ -10867,6 +10912,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                         type="button"
                                                                                       >
                                                                                         <button
+                                                                                          aria-expanded={false}
                                                                                           aria-label="Dropdown menu"
                                                                                           className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                           disabled={false}
@@ -11345,6 +11391,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="1-menu-icon-button"
@@ -11561,6 +11608,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="2-menu-icon-button"
@@ -11779,6 +11827,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       tabindex="-1"
                                                                     >
                                                                       <button
+                                                                        aria-expanded="false"
                                                                         aria-label="Dropdown menu"
                                                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                         id="3-menu-icon-button"
@@ -12107,6 +12156,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="1-menu-icon-button"
@@ -12323,6 +12373,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="2-menu-icon-button"
@@ -12541,6 +12592,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         tabindex="-1"
                                                                       >
                                                                         <button
+                                                                          aria-expanded="false"
                                                                           aria-label="Dropdown menu"
                                                                           class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                           id="3-menu-icon-button"
@@ -14139,6 +14191,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         }
                                                                         component={
                                                                           <WithStyles(ForwardRef)
+                                                                            aria-expanded={false}
                                                                             aria-label="Dropdown menu"
                                                                             category="ghost"
                                                                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14153,6 +14206,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         disabled={false}
                                                                         expanded={false}
                                                                         id="3-menu"
+                                                                        onContainerCreation={[Function]}
                                                                         onToggle={[Function]}
                                                                         placement="left"
                                                                       >
@@ -14181,6 +14235,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           }
                                                                           component={
                                                                             <WithStyles(ForwardRef)
+                                                                              aria-expanded={false}
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14195,6 +14250,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                           disabled={false}
                                                                           expanded={false}
                                                                           id="3-menu"
+                                                                          onContainerCreation={[Function]}
                                                                           onToggle={[Function]}
                                                                           placement="left"
                                                                         >
@@ -14208,6 +14264,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             tabIndex={-1}
                                                                           >
                                                                             <WithStyles(ForwardRef)
+                                                                              aria-expanded={false}
                                                                               aria-label="Dropdown menu"
                                                                               category="ghost"
                                                                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14216,6 +14273,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               id="3-menu-icon-button"
                                                                             >
                                                                               <ForwardRef
+                                                                                aria-expanded={false}
                                                                                 aria-label="Dropdown menu"
                                                                                 category="ghost"
                                                                                 className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -14245,6 +14303,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                 id="3-menu-icon-button"
                                                                               >
                                                                                 <WithStyles(ForwardRef(Button))
+                                                                                  aria-expanded={false}
                                                                                   aria-label="Dropdown menu"
                                                                                   className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                                                                   classes={
@@ -14265,6 +14324,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                   variant="text"
                                                                                 >
                                                                                   <ForwardRef(Button)
+                                                                                    aria-expanded={false}
                                                                                     aria-label="Dropdown menu"
                                                                                     className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                                                                     classes={
@@ -14308,6 +14368,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                     variant="text"
                                                                                   >
                                                                                     <WithStyles(ForwardRef(ButtonBase))
+                                                                                      aria-expanded={false}
                                                                                       aria-label="Dropdown menu"
                                                                                       className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                       component="button"
@@ -14319,6 +14380,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                       type="button"
                                                                                     >
                                                                                       <ForwardRef(ButtonBase)
+                                                                                        aria-expanded={false}
                                                                                         aria-label="Dropdown menu"
                                                                                         className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                         classes={
@@ -14337,6 +14399,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                                         type="button"
                                                                                       >
                                                                                         <button
+                                                                                          aria-expanded={false}
                                                                                           aria-label="Dropdown menu"
                                                                                           className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                                                           disabled={false}

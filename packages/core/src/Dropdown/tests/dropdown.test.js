@@ -3,12 +3,13 @@ import React from "react";
 
 import userEvent from "@testing-library/user-event";
 
-import { render } from "testing-utils";
+import { render, waitFor } from "testing-utils";
 
 import {
   General,
   SingleSelection,
   SingleSelectionWithSearch,
+  MultiSelectionNoSearch,
 } from "../stories/Dropdown.stories.test";
 
 describe("<Dropdown />", () => {
@@ -28,20 +29,46 @@ describe("<Dropdown />", () => {
   });
 });
 
-describe("Single Selection", () => {
-  const { getByRole, getAllByRole } = render(<SingleSelection />);
-  const dropdownElement = getByRole("combobox");
-  expect(dropdownElement).toBeInTheDocument();
+describe("Single selection", () => {
+  it("should render a list with options", () => {
+    const { getByRole, getAllByRole } = render(<SingleSelection />);
+    const dropdownElement = getByRole("combobox");
+    expect(dropdownElement).toBeInTheDocument();
 
-  const optionElements = getAllByRole("option");
-  expect(optionElements.length).toBe(4);
+    const optionElements = getAllByRole("option");
+    expect(optionElements.length).toBe(4);
+  });
+
+  it("should focus first focusable element on open", async () => {
+    const { getByRole } = render(<SingleSelection />);
+    const dropdownElement = getByRole("combobox");
+    userEvent.click(dropdownElement); // close
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "false");
+    userEvent.click(dropdownElement); // open
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+    const firstElement = getByRole("option", { name: /value 1/i });
+    await waitFor(() => expect(firstElement).toHaveFocus());
+  });
 });
 
-describe("Single Selection With Search", () => {
-  const { getByRole } = render(<SingleSelectionWithSearch />);
+describe("Single selection with search", () => {
+  it("should have a searchbox", () => {
+    const { getByRole } = render(<SingleSelectionWithSearch />);
 
-  const searchbox = getByRole("searchbox");
-  expect(searchbox).toBeInTheDocument();
+    const searchbox = getByRole("searchbox");
+    expect(searchbox).toBeInTheDocument();
+  });
+
+  it("should focus search on open", async () => {
+    const { getByRole } = render(<SingleSelectionWithSearch />);
+    const dropdownElement = getByRole("combobox");
+    userEvent.click(dropdownElement); // close
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "false");
+    userEvent.click(dropdownElement); // open
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+    const searchbox = getByRole("searchbox");
+    await waitFor(() => expect(searchbox).toHaveFocus());
+  });
 });
 
 describe("Multi Selection", () => {
@@ -51,8 +78,8 @@ describe("Multi Selection", () => {
     const dropdownElement = getByRole("combobox");
     expect(dropdownElement).toBeInTheDocument();
 
-    const seachbox = getByRole("searchbox");
-    expect(seachbox).toBeInTheDocument();
+    const searchbox = getByRole("searchbox");
+    expect(searchbox).toBeInTheDocument();
 
     const textboxElement = getByRole("textbox");
     expect(textboxElement).toBeInTheDocument();
@@ -121,5 +148,16 @@ describe("Multi Selection", () => {
     expect(checkBox2).not.toBeChecked();
     expect(checkBox3).toBeChecked();
     expect(checkBox4).toBeChecked();
+  });
+
+  it("should focus the checkbox all on open when there is no search", async () => {
+    const { getByRole } = render(<MultiSelectionNoSearch />);
+    const dropdownElement = getByRole("combobox");
+    userEvent.click(dropdownElement); // close
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "false");
+    userEvent.click(dropdownElement); // open
+    expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+    const allCheckbox = getByRole("checkbox", { name: "1 / 4" });
+    await waitFor(() => expect(allCheckbox).toHaveFocus());
   });
 });

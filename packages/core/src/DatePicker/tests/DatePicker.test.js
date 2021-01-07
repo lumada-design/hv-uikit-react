@@ -1,10 +1,13 @@
 import React from "react";
 import { mount } from "enzyme";
-
+import userEvent from "@testing-library/user-event";
+import { render, waitFor } from "testing-utils";
 import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
 import { HvActionBar, HvProvider, HvCalendar, HvDatePicker } from "../..";
 import SingleCalendar from "../../Calendar/SingleCalendar";
 import { isSameDay, makeUTCDate } from "../../Calendar/utils";
+
+import { Main } from "../stories/Datepicker.stories";
 
 describe("<DatePicker /> with minimum configuration", () => {
   let wrapper;
@@ -172,4 +175,17 @@ describe("<DatePicker /> with custom properties", () => {
     wrapper.find(CalendarIcon).simulate("click");
     expect(wrapper.find(HvActionBar).length).toBe(1);
   });
+});
+
+xit("should focus input on open", async () => {
+  /**
+   *  TODO: The focus should be on the input
+   *  https://insightgroup.atlassian.net/browse/HVUIKIT-5680
+   */
+  const { getByRole, getByPlaceholderText } = render(<Main />);
+  const dropdownElement = getByRole("combobox");
+  userEvent.click(dropdownElement); // open
+  expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
+  const datepickerInput = getByPlaceholderText("MM/DD/YYYY");
+  await waitFor(() => expect(datepickerInput).toHaveFocus());
 });

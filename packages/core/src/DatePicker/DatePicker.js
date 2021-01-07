@@ -160,6 +160,22 @@ const HvDatePicker = (props) => {
     if (!open) handleCalendarClose();
   };
 
+  const setFocusToDateInput = (containerRef) => {
+    /**
+     *  TODO: Review this focus function, it should focus the input
+     *  https://insightgroup.atlassian.net/browse/HVUIKIT-5680
+     *  containerRef?.getElementsByTagName("input")[0]?.focus();
+     */
+    const divs = [...containerRef?.getElementsByTagName("div")];
+    divs.every((div) => {
+      if (div.tabIndex >= 0) {
+        div.focus();
+        return false;
+      }
+      return true;
+    });
+  };
+
   const handleDateChange = (event, newDate) => {
     if (!isDate(newDate)) return;
 
@@ -279,6 +295,7 @@ const HvDatePicker = (props) => {
         expanded={calendarOpen}
         onToggle={handleToggle}
         onClickOutside={handleCalendarClose}
+        onContainerCreation={setFocusToDateInput}
         placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
         adornment={<Calendar className={classes.icon} color={disabled ? "atmo5" : undefined} />}
         popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}

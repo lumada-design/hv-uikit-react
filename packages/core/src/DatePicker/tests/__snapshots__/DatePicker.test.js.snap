@@ -71,6 +71,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             disabled={false}
             expanded={false}
             onClickOutside={[Function]}
+            onContainerCreation={[Function]}
             onToggle={[Function]}
             placeholder={
               <WithStyles(ForwardRef)
@@ -123,6 +124,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               disabled={false}
               expanded={false}
               onClickOutside={[Function]}
+              onContainerCreation={[Function]}
               onToggle={[Function]}
               placeholder={
                 <WithStyles(ForwardRef)
@@ -401,6 +403,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             disabled={false}
             expanded={false}
             onClickOutside={[Function]}
+            onContainerCreation={[Function]}
             onToggle={[Function]}
             placeholder={
               <WithStyles(ForwardRef)
@@ -453,6 +456,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               disabled={false}
               expanded={false}
               onClickOutside={[Function]}
+              onContainerCreation={[Function]}
               onToggle={[Function]}
               placeholder={
                 <WithStyles(ForwardRef)
@@ -699,6 +703,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             disabled={false}
             expanded={false}
             onClickOutside={[Function]}
+            onContainerCreation={[Function]}
             onToggle={[Function]}
             placeholder={
               <WithStyles(ForwardRef)
@@ -749,6 +754,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               disabled={false}
               expanded={false}
               onClickOutside={[Function]}
+              onContainerCreation={[Function]}
               onToggle={[Function]}
               placeholder={
                 <WithStyles(ForwardRef)
