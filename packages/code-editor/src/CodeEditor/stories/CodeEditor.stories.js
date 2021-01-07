@@ -15,8 +15,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCodeEditor } from '@hv/uikit-react-codeeditor/dist'",
-    maturityStatus: "immature",
-    dsVersion: "3.2.1",
+    maturityStatus: "stable",
+    dsVersion: "3.3.0",
   },
   component: HvCodeEditor,
 };

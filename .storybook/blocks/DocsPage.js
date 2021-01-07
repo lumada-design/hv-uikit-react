@@ -10,10 +10,12 @@ import {
 import { MaturityStatus } from "./MaturityStatus";
 import { Usage } from "./Usage";
 import { ArgsTable } from "./ArgsTable";
+import { Deprecated } from "./Deprecated";
 
 export default ({}) => (
   <>
     <Title />
+    <Deprecated />
     <MaturityStatus />
     <Subtitle />
     <Description />

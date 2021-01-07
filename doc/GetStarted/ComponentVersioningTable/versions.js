@@ -1,9 +1,8 @@
-const ComponentVersioning = {
-  notApplicable: "N/A",
-  dsVersion1: "1.2.1",
-  dsVersion3: "3.2.1",
-  stable: "stable",
-  unstable: "notStable",
+export default {
+  dsVersion: ["1.2.1", "", "3.3.0"],
+  dsClassification: {
+    stable: "stable",
+    unstable: "notStable",
+  },
+  notAvailable: "N/A",
 };
-
-export default ComponentVersioning;

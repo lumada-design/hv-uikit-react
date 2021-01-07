@@ -1,10 +1,13 @@
 import React from "react";
 import { DocsContainer } from "@storybook/addon-docs/blocks";
 import { Global } from "@storybook/theming";
-import { getTheme } from "../theme";
+import { getTheme, getStoredTheme } from "../theme";
 import { getDocsStyles } from "../theme/styles/docs";
 
+import HvProvider from "@hv/uikit-react-core/dist/Provider";
+
 export default ({ context, children }) => {
+  const themeName = getStoredTheme();
   const theme = getTheme();
 
   const docsContext = {
@@ -15,7 +18,9 @@ export default ({ context, children }) => {
   return (
     <>
       <Global styles={getDocsStyles(theme)} />
-      <DocsContainer context={docsContext}>{children}</DocsContainer>
+      <DocsContainer context={docsContext}>
+        <HvProvider uiKitTheme={themeName}>{children}</HvProvider>
+      </DocsContainer>
     </>
   );
 };

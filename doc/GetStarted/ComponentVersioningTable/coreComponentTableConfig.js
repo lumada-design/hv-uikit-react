@@ -3,12 +3,7 @@ import React from "react";
 import Stable from "../../../.storybook/blocks/resources/Stable";
 import DSVersion from "../../../.storybook/blocks/resources/DSVersion.js";
 
-import componentDefinitions from "../ComponentVersioningTable/versions";
-
 import { HvLink } from "../../../packages/core/src/..";
-
-const dsVersion3 = componentDefinitions.dsVersion3;
-const dsVersion1 = componentDefinitions.dsVersion1;
 
 const coreComponentTableConfig = [
   {
@@ -19,9 +14,13 @@ const coreComponentTableConfig = [
       return (
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
-            <HvLink route={`${cellData.row._original.path}`}>
-              {cellData.row._original.component}
-            </HvLink>
+            {cellData.row._original.path ? (
+              <HvLink route={`${cellData.row._original.path}`}>
+                {cellData.row._original.component}
+              </HvLink>
+            ) : (
+              cellData.row._original.component
+            )}
           </div>
         </div>
       );
@@ -35,11 +34,7 @@ const coreComponentTableConfig = [
       return (
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
-            {cellData.row._original.uikitVersion3 === dsVersion3 ? (
-              <DSVersion dsVersion1={dsVersion3} />
-            ) : (
-              `${cellData.row._original.uikitVersion3}`
-            )}
+            <DSVersion dsVersion={cellData.row._original.uikitVersion3} />
           </div>
           <div style={{ alignSelf: "center", marginLeft: 10 }}>
             {cellData.row._original.status === "stable" && <Stable />}
@@ -56,7 +51,7 @@ const coreComponentTableConfig = [
       return (
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
-            <DSVersion dsVersion={dsVersion1} />
+            <DSVersion dsVersion={cellData.row._original.uikitVersion2} />
           </div>
         </div>
       );

@@ -9,8 +9,6 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTimePicker } from '@hv/uikit-react-lab/dist'",
-    maturityStatus: "immature",
-    dsVersion: "3.2.1",
   },
   component: HvTimePicker,
   decorators: [(storyFn) => <div style={{ width: 200, minHeight: 200 }}>{storyFn()}</div>],

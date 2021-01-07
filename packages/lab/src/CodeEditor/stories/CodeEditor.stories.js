@@ -7,8 +7,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCodeEditor } from '@hv/uikit-react-lab/dist'",
-    maturityStatus: "immature",
-    dsVersion: "3.2.1",
+    deprecated: true,
+    compNameToUse: "the one available in the @hv/uikit-react-code-editor package",
   },
   component: HvCodeEditor,
   decorators: [(storyFn) => <div style={{ height: "270px" }}>{storyFn()}</div>],

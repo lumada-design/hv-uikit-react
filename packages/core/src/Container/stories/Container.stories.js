@@ -10,7 +10,7 @@ export default {
     componentSubtitle: null,
     usage: "import {HvContainer} from '@hv/uikit-react-core/dist'",
     maturityStatus: "stable",
-    dsVersion: "3.2.1",
+    dsVersion: "3.3.0",
   },
   component: HvContainer,
 };

@@ -8,8 +8,8 @@ export default {
     componentSubtitle: null,
     usage: "import { HvVerticalNavigation } from '@hv/uikit-react-core/dist'",
     subcomponents: { Navigation, Actions, Action },
-    maturityStatus: "unstable",
-    dsVersion: "3.2.1",
+
+    dsVersion: "3.3.0",
   },
   component: HvVerticalNavigation,
 };

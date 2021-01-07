@@ -7,7 +7,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvFileUploader } from '@hv/uikit-react-core/dist'",
 
-    dsVersion: "3.2.1",
+    dsVersion: "3.3.0",
   },
   component: HvFileUploader,
 };

@@ -1,8 +1,7 @@
 import componentDefinitions from "../ComponentVersioningTable/versions";
 
-const notAvailable = componentDefinitions.notApplicable;
-const dsVersion1 = componentDefinitions.dsVersion1;
-const dsVersion3 = componentDefinitions.dsVersion3;
+const notAvailable = componentDefinitions.notAvailable;
+const dsVersion3 = componentDefinitions.dsVersion[2];
 
 const CodeEditorComponentData = [
   {

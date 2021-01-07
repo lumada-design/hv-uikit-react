@@ -30,3 +30,13 @@ export const getTheme = (theme) => {
 export const storeTheme = (theme) => {
   window.localStorage.setItem(UIKIT_THEME, theme);
 };
+
+export const getStoredTheme = () => {
+  const stored = window.localStorage.getItem(UIKIT_THEME);
+  if (typeof stored === "string") {
+    return stored;
+  }
+
+  // default value
+  return "dawn";
+};

@@ -11,7 +11,7 @@ export const MaturityStatus = ({}) => {
 
   return (
     <div style={{ display: "flex" }}>
-      <div style={{ marginRight: 5 }}>{dsVersion && <DSVersion versionNumber={dsVersion} />}</div>
+      <div style={{ marginRight: 5 }}>{dsVersion && <DSVersion dsVersion={dsVersion} />}</div>
       {maturityStatus && <Stable />}
     </div>
   );
