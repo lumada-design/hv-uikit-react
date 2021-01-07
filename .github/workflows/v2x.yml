@@ -125,6 +125,7 @@ jobs:
           npm run build-documentation
 
       - name: Archive Documentation
+        if: failure()
         uses: actions/upload-artifact@v1
         with:
           name: documentation
