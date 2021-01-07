@@ -211,6 +211,10 @@ Main.story = {
   },
 };
 
+Main.parameters = {
+  eyes: { include: false },
+};
+
 export const YamlEditor = () => {
   return (
     <HvCodeEditor
@@ -236,4 +240,8 @@ YamlEditor.story = {
       disable: true,
     },
   },
+};
+
+YamlEditor.parameters = {
+  eyes: { include: false },
 };
