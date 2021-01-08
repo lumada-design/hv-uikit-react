@@ -271,58 +271,61 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
           rm -rf ${{ github.workspace }}/reports
 
-  Robot-Windows:
-    name: Test Robot (Windows)
-    needs: Build-Documentation
-    runs-on: [self-hosted, Windows]
-    timeout-minutes: 200
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [ie]
+  #  commented due to issues running storybook 6.1.11 in IE11
+  #  waiting for next minor to be released
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  #  Robot-Windows:
+  #   name: Test Robot (Windows)
+  #   needs: Build-Documentation
+  #   runs-on: [self-hosted, Windows]
+  #   timeout-minutes: 200
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       browser: [ie]
 
-      - name: Fetch Storybook
-        uses: actions/download-artifact@v1
-        with:
-          name: documentation
-          path: ${{ github.workspace }}/dist
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Run SELENIUM Robot
-        uses: ./.github/robot
-        with:
-          storybook-url: http://localhost:9002
-          browser: ${{ matrix.browser }}
-          excludes: |
-            bug-${{ matrix.browser }}
-            bug-${{ matrix.browser }}-webdriver
-            issue
-            issue-${{ matrix.browser }}
-            bug-infrastructure
-            bug-infrastructure-${{ matrix.browser }}
-          output-dir: ./reports
-          processes: 3
-          path: ./automation/robot/storybook/core
+  #     - name: Fetch Storybook
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: documentation
+  #         path: ${{ github.workspace }}/dist
 
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: ${{ matrix.browser }}-reports
-          path: ${{ github.workspace }}/reports
+  #     - name: Run SELENIUM Robot
+  #       uses: ./.github/robot
+  #       with:
+  #         storybook-url: http://localhost:9002
+  #         browser: ${{ matrix.browser }}
+  #         excludes: |
+  #           bug-${{ matrix.browser }}
+  #           bug-${{ matrix.browser }}-webdriver
+  #           issue
+  #           issue-${{ matrix.browser }}
+  #           bug-infrastructure
+  #           bug-infrastructure-${{ matrix.browser }}
+  #         output-dir: ./reports
+  #         processes: 3
+  #         path: ./automation/robot/storybook/core
 
-      - name: Clean Folders
-        if: always()
-        run: |
-          Remove-Item -path ${{ github.workspace }}/dist -recurse -force
-          Remove-Item -path ${{ github.workspace }}/reports -recurse -force
+  #     - name: Save Reports
+  #       uses: actions/upload-artifact@v1
+  #       if: failure()
+  #       with:
+  #         name: ${{ matrix.browser }}-reports
+  #         path: ${{ github.workspace }}/reports
+
+  #     - name: Clean Folders
+  #       if: always()
+  #       run: |
+  #         Remove-Item -path ${{ github.workspace }}/dist -recurse -force
+  #         Remove-Item -path ${{ github.workspace }}/reports -recurse -force
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
     if: always()
     runs-on: ubuntu-latest
 
@@ -387,7 +390,7 @@ jobs:
 
   Notify-End-Internal:
     name: Notify End Internal
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
     if: failure()
     runs-on: ubuntu-latest
 
@@ -426,7 +429,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Release
