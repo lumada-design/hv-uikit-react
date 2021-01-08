@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.5.1...@hv/uikit-react-core@3.5.2) (2021-01-08)
+
+
+### Bug Fixes
+
+* **bulk-actions:** add total count to select all label. HVUIKIT-5641 ([c8ad99b](https://github.com/pentaho/hv-uikit-react/commit/c8ad99bae24319f8546638ddaa25dc3256ab8d95))
+* **checkbox-group:** add total count to all label. HVUIKIT-5641 ([ccdf44e](https://github.com/pentaho/hv-uikit-react/commit/ccdf44e108bd360b0176220b3458b9673a5748a5))
+* **dropdown:** dropdown not updating values. HVUIKIT-5667 ([963b99c](https://github.com/pentaho/hv-uikit-react/commit/963b99c24195f36a3f6a94b1ffb96eb978352cd0))
+* **dropdownmenu:** resolve menuList class override warning ([#2194](https://github.com/pentaho/hv-uikit-react/issues/2194)) ([b54ac6d](https://github.com/pentaho/hv-uikit-react/commit/b54ac6d88d4c0969340d5e41cd54fdd433443dd6))
+* **file-uploader:** fix drag and drop inconsistencies. HVUIKIT-5665 ([20aa61c](https://github.com/pentaho/hv-uikit-react/commit/20aa61cc8fd36ef5536179827fc9a47b6a9e6139))
+* **table:** ignores the provided pageSize property. HVUIKIT-5672 ([574bdc0](https://github.com/pentaho/hv-uikit-react/commit/574bdc075e1e9d0b39d1bc81e8dc1862504a2ac3))
+* **tabs:** onChange callback type definition ([#2193](https://github.com/pentaho/hv-uikit-react/issues/2193)) ([3b10001](https://github.com/pentaho/hv-uikit-react/commit/3b10001287ad4f67fa276087199a586dddf2cd11))
+* incorrect labeling of checkbox and radio groups ([e2d6a03](https://github.com/pentaho/hv-uikit-react/commit/e2d6a0370430740ff1ec5662117f4157f4549b2a))
+
+
+
+
+
 ## [3.5.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.5.0...@hv/uikit-react-core@3.5.1) (2020-12-23)
 
 
