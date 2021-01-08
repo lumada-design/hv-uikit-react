@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.7...@hv/uikit-react-core@2.16.8) (2021-01-08)
+
+
+### Bug Fixes
+
+* **info-text:** info text displacing elements on inputs. HVUIKIT-5673 ([18924fa](https://github.com/pentaho/hv-uikit-react/commit/18924fa9ec088af99a7360c58d15db688653e0ad))
+* **info-text:** info text resolve visual diffs. HVUIKIT-5673 ([414acda](https://github.com/pentaho/hv-uikit-react/commit/414acda523bafb4e57af80ec969da57c5b025d6b))
+
+
+
+
+
 ## [2.16.7](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.6...@hv/uikit-react-core@2.16.7) (2020-12-24)
 
 
