@@ -5,16 +5,15 @@ const isIncludedPath = (kind) => {
 
 const isExcludedSample = (kind) => {
   const excludedSamples = [
-    // asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
+    // asset inventory stories excluded due inconsistent view port (applitools ticket)
     "Components/Asset Inventory",
-
     // dialog is opened and tested via Tests/Dialog
     "Components/Dialog",
 
     // no way to take a stable screenshot of a loading animation
     "Components/Loading",
 
-    // plottly visualizations with axis rendering appear to produce small variations
+    // plotly visualizations with axis rendering appear to produce small variations
     // https://insightgroup.atlassian.net/browse/HVUIKIT-5448
     "Visualizations/Bar Chart",
     "Visualizations/Line Chart",

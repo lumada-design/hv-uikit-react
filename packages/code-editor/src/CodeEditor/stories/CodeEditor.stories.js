@@ -200,11 +200,12 @@ export const Main = () => {
   );
 };
 
-Main.parameters = {
-  pa11y: {
-    disable: true,
+Main.story = {
+  parameters: {
+    pa11y: {
+      disable: true,
+    },
   },
-  eyes: { include: false },
 };
 
 export const YamlEditor = () => {
@@ -232,5 +233,4 @@ YamlEditor.parameters = {
   pa11y: {
     disable: true,
   },
-  eyes: { include: false },
 };
