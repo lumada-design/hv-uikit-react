@@ -105,7 +105,9 @@ const HvTable = (props) => {
   }, []);
 
   useEffect(() => {
-    setCurrentPage(page);
+    if (page) {
+      setCurrentPage(page);
+    }
   }, [page]);
 
   useEffect(() => {
@@ -132,12 +134,12 @@ const HvTable = (props) => {
     if (newPageSize) {
       setCurrentPageSize((previousValue) => {
         if (previousValue !== newPageSize) {
-          onPageSizeChange?.(newPageSize);
+          onPageSizeChange?.(newPageSize, currentPage);
         }
         return newPageSize;
       });
     }
-  }, [data.length, pageSize, showPagination, onPageSizeChange]);
+  }, [data.length, pageSize, showPagination, onPageSizeChange, currentPage]);
 
   /**
    * Returns data set with nulls replaced by em dashes.
