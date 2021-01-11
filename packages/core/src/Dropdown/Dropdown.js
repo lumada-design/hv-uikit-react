@@ -143,6 +143,22 @@ const HvDropdown = (props) => {
     }
   };
 
+  const setFocusToContent = (containerRef) => {
+    const inputs = containerRef?.getElementsByTagName("input");
+    if (inputs?.length > 0) {
+      inputs[0].focus();
+      return;
+    }
+    const listItems = [...containerRef?.getElementsByTagName("li")];
+    listItems.every((listItem) => {
+      if (listItem.tabIndex >= 0) {
+        listItem.focus();
+        return false;
+      }
+      return true;
+    });
+  };
+
   const buildHeaderLabel = () => {
     const hasSelection = getSelected(internalValues).length > 0;
     return labels.select || !multiSelect ? (
@@ -208,6 +224,7 @@ const HvDropdown = (props) => {
         popperProps={popperProps}
         placeholder={buildHeaderLabel()}
         onToggle={onToggle}
+        onContainerCreation={setFocusToContent}
         role="combobox"
         aria-label={ariaLabel}
         aria-labelledby={

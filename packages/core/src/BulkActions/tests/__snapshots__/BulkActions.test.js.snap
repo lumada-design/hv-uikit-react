@@ -1205,6 +1205,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     }
                     component={
                       <WithStyles(ForwardRef)
+                        aria-expanded={false}
                         aria-label="Dropdown menu"
                         category="ghost"
                         className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1221,6 +1222,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     disabled={true}
                     expanded={false}
                     id="bulkActions-actions-menu"
+                    onContainerCreation={[Function]}
                     onToggle={[Function]}
                     placement="left"
                   >
@@ -1249,6 +1251,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       }
                       component={
                         <WithStyles(ForwardRef)
+                          aria-expanded={false}
                           aria-label="Dropdown menu"
                           category="ghost"
                           className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1265,6 +1268,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       disabled={true}
                       expanded={false}
                       id="bulkActions-actions-menu"
+                      onContainerCreation={[Function]}
                       onToggle={[Function]}
                       placement="left"
                     >
@@ -1278,6 +1282,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         tabIndex={-1}
                       >
                         <WithStyles(ForwardRef)
+                          aria-expanded={false}
                           aria-label="Dropdown menu"
                           category="ghost"
                           className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1286,6 +1291,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           id="bulkActions-actions-menu-icon-button"
                         >
                           <ForwardRef
+                            aria-expanded={false}
                             aria-label="Dropdown menu"
                             category="ghost"
                             className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
@@ -1315,6 +1321,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             id="bulkActions-actions-menu-icon-button"
                           >
                             <WithStyles(ForwardRef(Button))
+                              aria-expanded={false}
                               aria-label="Dropdown menu"
                               className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                               classes={
@@ -1335,6 +1342,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               variant="text"
                             >
                               <ForwardRef(Button)
+                                aria-expanded={false}
                                 aria-label="Dropdown menu"
                                 className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG"
                                 classes={
@@ -1378,6 +1386,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 variant="text"
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
+                                  aria-expanded={false}
                                   aria-label="Dropdown menu"
                                   className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                                   component="button"
@@ -1389,6 +1398,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   type="button"
                                 >
                                   <ForwardRef(ButtonBase)
+                                    aria-expanded={false}
                                     aria-label="Dropdown menu"
                                     className="MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                                     classes={
@@ -1407,6 +1417,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                     type="button"
                                   >
                                     <button
+                                      aria-expanded={false}
                                       aria-label="Dropdown menu"
                                       className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
                                       disabled={true}

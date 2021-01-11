@@ -34,11 +34,23 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
     setOpen(s);
   };
 
+  const setFocusToContent = (containerRef) => {
+    const listItems = [...containerRef?.getElementsByTagName("li")];
+    listItems.every((listItem) => {
+      if (listItem.tabIndex >= 0) {
+        listItem.focus();
+        return false;
+      }
+      return true;
+    });
+  };
+
   return (
     <HvBaseDropdown
       classes={classes}
       expanded={open}
       onToggle={handleToggle}
+      onContainerCreation={setFocusToContent}
       placeholder={<HvTypography>{value}</HvTypography>}
       disabled={disabled}
       {...others}

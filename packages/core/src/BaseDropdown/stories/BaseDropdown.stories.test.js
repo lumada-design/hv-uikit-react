@@ -25,8 +25,16 @@ Main.parameters = {
 export const WithContent = () => {
   const theme = useTheme();
 
+  const setFocusToInput = (containerRef) => {
+    containerRef?.getElementsByTagName("input")[0]?.focus();
+  };
+
   return (
-    <HvBaseDropdown placeholder="Placeholder..." aria-label="With content">
+    <HvBaseDropdown
+      placeholder="Placeholder..."
+      aria-label="With content"
+      onContainerCreation={setFocusToInput}
+    >
       <HvPanel>
         <div style={{ width: "300px", height: "300px", background: theme.palette.atmo2 }}>
           <HvInput id="input-dropdown" />
