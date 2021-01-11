@@ -2078,9 +2078,6 @@ export const ServerSidePagination = () => {
   let serverData = makeData();
 
   const requestData = (pageSize, cursor, sorted) => {
-    console.log("Fetch data: sorted -> ", JSON.stringify(sorted));
-    console.log("Fetch data: pageSize -> ", JSON.stringify(pageSize));
-    console.log("Fetch data: cursor -> ", JSON.stringify(cursor));
     return new Promise((resolve) => {
       // You can retrieve your data however you want, in this case, we will just use some local data.
       const filteredData = serverData;

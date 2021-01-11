@@ -140,6 +140,7 @@ describe("Hv Table", () => {
       expect(getRowCount()).toBe(5);
 
       wrapper.setProps({ pageSize: 6 });
+      wrapper.update();
 
       expect(getRowCount()).toBe(6);
     });
@@ -164,6 +165,7 @@ describe("Hv Table", () => {
 
       const newRow = { t1: "test4" };
       wrapper.setProps({ data: initialData.concat(newRow) });
+      wrapper.update();
 
       expect(getRowCount()).toBe(4);
     });

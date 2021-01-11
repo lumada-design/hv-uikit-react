@@ -12,6 +12,7 @@ output.xml
 selenium-screenshot-*.png
 
 # Dependency directories
+.yalc
 node_modules/
 
 # cache
