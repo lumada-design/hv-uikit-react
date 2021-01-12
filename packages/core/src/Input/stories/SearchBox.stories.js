@@ -8,14 +8,14 @@ import { Fail } from "@hv/uikit-react-icons";
 
 import DocsPage from "../../../../../.storybook/blocks/DocsPage";
 
-import { HvDropdown, HvInput, HvPanel, HvTypography, HvEmptyState } from "../../..";
+import { HvDropdown, HvInput, HvPanel, HvTypography, HvEmptyState } from "../..";
 
 import countryList, { continents, countries } from "./countries";
 
 export default {
   title: "Forms/Search Box",
   parameters: {
-    usage: "import { HvInput } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvInput } from "@hv/uikit-react-core"',
     componentSubtitle: (
       <small style={{ fontWeight: 600, fontSize: "12px", margin: 0 }}>
         Note: only the Basic Search variant is labelled Stable by Design System.

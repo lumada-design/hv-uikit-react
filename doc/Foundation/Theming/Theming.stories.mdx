@@ -2,13 +2,19 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import MaturityStatus from "../../../.storybook/blocks/ExportedMaturityStatus";
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
-<Meta title="Foundation/Theming/Main" parameters={{ maturityStatus: componentDefinitions.stable, dsVersion: componentDefinitions.dsVersion3, }} />
+<Meta
+  title="Foundation/Theming/Main"
+  parameters={{
+    maturityStatus: componentDefinitions.stable,
+    dsVersion: componentDefinitions.dsVersion3,
+  }}
+/>
 
 # Theming
 
-<br/>
+<br />
 <MaturityStatus />
-<br/>
+<br />
 
 The UI Kit components come with two themes - **Wicked** and **Dawn**.
 
@@ -30,7 +36,7 @@ Ui-kit appends to the material theme an `hv` property which contains extra defin
 these definitions can be found in [here](https://github.com/lumada-design/hv-uikit-react/blob/master/packages/themes/src/dawn.json).
 
 Given the fact that the theme contains some utility functions, if you want to override one of the ui-kit themes you must built your custom theme first.
-To do this you must import the theme builder function like this `import { themeBuilder } from "@hv/uikit-react-core/dist/theme";`.
+To do this you must import the theme builder function like this `import { themeBuilder } from "@hv/uikit-react-core";`.
 The function receives a json object with the same structure as the definitions found in here [here](https://github.com/lumada-design/hv-uikit-react/blob/master/packages/themes/src/dawn.json).
 The themeBuilder will output a material theme object with the values received appended in the `hv` property ,
 this theme then can be passed to the provider.

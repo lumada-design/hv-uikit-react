@@ -9,7 +9,7 @@ export default {
   title: "Forms/Date Picker",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDatePicker } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvDatePicker } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

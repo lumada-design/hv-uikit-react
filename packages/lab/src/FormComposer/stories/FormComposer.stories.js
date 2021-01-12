@@ -1,15 +1,16 @@
 /* eslint-disable no-alert */
 import * as React from "react";
 
-import HvFormComposer from "../FormComposer";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvButton, HvDropdown, HvInput } from "@hv/uikit-react-core/dist";
+import { HvButton, HvDropdown, HvInput } from "@hv/uikit-react-core";
+
+import HvFormComposer from "../FormComposer";
 
 export default {
   title: "Lab/FormComposer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFormComposer } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvFormComposer } from "@hv/uikit-react-lab"',
   },
   component: HvFormComposer,
 };

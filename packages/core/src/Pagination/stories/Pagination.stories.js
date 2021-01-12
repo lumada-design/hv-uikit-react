@@ -6,7 +6,7 @@ export default {
   title: "Components/Pagination",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvPagination } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvPagination } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvProvider, HvButton } from "@hv/uikit-react-core/dist";
+import { HvProvider, HvButton } from "@hv/uikit-react-core";
 
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
@@ -14,7 +14,7 @@ export default {
   title: "Foundation/Theming/Provider",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvProvider } from '@hv/uikit-react-core/dist'",
+    usage: "import { HvProvider } from '@hv/uikit-react-core'",
     maturityStatus: componentDefinitions.stable,
     dsVersion: componentDefinitions.dsVersion3,
   },

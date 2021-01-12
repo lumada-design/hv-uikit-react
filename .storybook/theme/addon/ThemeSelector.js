@@ -3,7 +3,7 @@ import { FORCE_RE_RENDER } from "@storybook/core-events";
 import { Global } from "@storybook/theming";
 import { IconButton } from "@storybook/components";
 
-import ThemeSwitcherIcon from "../../../packages/icons/dist/ThemeSwitcher";
+import ThemeSwitcherIcon from "../../../packages/icons/bin/ThemeSwitcher";
 import { UIKIT_THEME, getTheme, storeTheme } from "../";
 import { getManagerStyles } from "../styles/manager";
 

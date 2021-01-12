@@ -7,7 +7,7 @@ export default {
   title: "Visualizations/KPI",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvKpi } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvKpi } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

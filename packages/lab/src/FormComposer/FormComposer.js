@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes, { shape } from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { HvTypography } from "@hv/uikit-react-core/dist";
+import { HvTypography } from "@hv/uikit-react-core";
 import HvNavigationAnchors from "../NavigationAnchors";
 import styles from "./styles";
 

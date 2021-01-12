@@ -1,7 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import HvDropLeftIcon from "@hv/uikit-react-icons/dist/DropLeftXS";
-import HvDropRightIcon from "@hv/uikit-react-icons/dist/DropRightXS";
+import { DropLeftXS, DropRightXS } from "@hv/uikit-react-icons";
 import HvProvider from "../../../../Provider";
 
 import Navigation from "..";
@@ -38,7 +37,7 @@ describe("<Navigation />", () => {
     navigationComponent = wrapper.find(Navigation);
 
     navigationComponent
-      .find(HvDropLeftIcon)
+      .find(DropLeftXS)
       .at(0)
       .simulate("click", {
         preventDefault() {},
@@ -51,7 +50,7 @@ describe("<Navigation />", () => {
     navigationComponent = wrapper.find(Navigation);
 
     navigationComponent
-      .find(HvDropRightIcon)
+      .find(DropRightXS)
       .at(0)
       .simulate("click", {
         preventDefault() {},

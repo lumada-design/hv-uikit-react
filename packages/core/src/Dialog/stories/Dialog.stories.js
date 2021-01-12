@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from "react";
 import { withStyles, useTheme } from "@material-ui/core";
-import { Ungroup } from "@hv/uikit-react-icons/dist";
+import { Ungroup } from "@hv/uikit-react-icons";
 
 import {
   HvButton,
@@ -21,7 +21,7 @@ export default {
   title: "Components/Dialog",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDialog } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvDialog } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

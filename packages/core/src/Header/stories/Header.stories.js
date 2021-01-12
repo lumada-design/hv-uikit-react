@@ -2,18 +2,24 @@
 import React, { useState } from "react";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { Alert, Menu, User } from "@hv/uikit-react-icons/dist";
-import { HvBadge, HvButton } from "../..";
-import HvHeader, { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation } from "..";
+import { Alert, Menu, User } from "@hv/uikit-react-icons";
+import {
+  HvBadge,
+  HvButton,
+  HvHeader,
+  HvHeaderActions,
+  HvHeaderBrand,
+  HvHeaderNavigation,
+} from "../..";
 import HitachiLogo from "./assets/HitachiLogo";
 
 export default {
   title: "Components/Header",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvHeader } from '@hv/uikit-react-core/dist'",
+    usage:
+      'import {\n  HvHeader,\n  HvHeaderBrand,\n  HvHeaderNavigation,\n  HvHeaderActions,\n} from "@hv/uikit-react-core";',
     subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
-
     dsVersion: "3.3.0",
   },
   component: HvHeader,

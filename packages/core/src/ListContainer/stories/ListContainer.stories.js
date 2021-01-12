@@ -9,7 +9,7 @@ export default {
   title: "Components/List",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvListContainer } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvListContainer } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

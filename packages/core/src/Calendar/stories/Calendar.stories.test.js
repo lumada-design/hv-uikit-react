@@ -7,7 +7,7 @@ export default {
   title: "Tests/Calendar",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCalendar } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvCalendar } from "@hv/uikit-react-core"',
     dsVersion: "3.3.0",
   },
   component: HvCalendar,

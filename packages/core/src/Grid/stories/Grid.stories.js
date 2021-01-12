@@ -7,7 +7,7 @@ export default {
   title: "Foundation/Grid",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvGrid } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvGrid } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

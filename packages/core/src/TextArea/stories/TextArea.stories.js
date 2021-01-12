@@ -5,7 +5,7 @@ export default {
   title: "Forms/Text Area",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTextArea } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvTextArea } from "@hv/uikit-react-core"',
 
     dsVersion: "3.3.0",
   },

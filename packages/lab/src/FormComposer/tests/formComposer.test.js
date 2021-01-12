@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import { HvProvider } from "@hv/uikit-react-core";
 import FormComposer from "..";
 
 describe("FormComposer", () => {

@@ -5,7 +5,7 @@ export default {
   title: "Forms/Form Element Blocks/Info Message",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvInfoMessage } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvInfoMessage } from "@hv/uikit-react-core"',
   },
   component: HvInfoMessage,
 };

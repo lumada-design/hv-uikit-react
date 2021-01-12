@@ -2,13 +2,7 @@ import React from "react";
 import { useForm, Controller } from "react-hook-form/dist/index.ie11";
 import { yupResolver } from "@hookform/resolvers/dist/ie11/yup";
 import * as yup from "yup";
-import {
-  HvInput,
-  HvButton,
-  HvCheckBoxGroup,
-  HvCheckBox,
-  HvDropdown,
-} from "@hv/uikit-react-core/dist";
+import { HvInput, HvButton, HvCheckBoxGroup, HvCheckBox, HvDropdown } from "@hv/uikit-react-core";
 
 const schema = yup.object().shape({
   textField: yup.string().required("Text Field is required"),

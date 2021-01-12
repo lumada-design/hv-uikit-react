@@ -5,7 +5,7 @@ export default {
   title: "Components/Footer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFooter } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvFooter } from "@hv/uikit-react-core"',
 
     dsVersion: "3.3.0",
   },

@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 
-import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
+import { LogOut, User } from "@hv/uikit-react-icons";
+
+import {
+  HvVerticalNavigation,
+  HvVerticalNavigationTree,
+  HvVerticalNavigationActions,
+  HvVerticalNavigationAction,
+} from "../..";
 
 export default {
   title: "Components/Vertical Navigation",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvVerticalNavigation } from '@hv/uikit-react-core/dist'",
-    subcomponents: { Navigation, Actions, Action },
-
+    usage:
+      'import {\n  HvVerticalNavigation,\n  HvVerticalNavigationTree,\n  HvVerticalNavigationActions,\n  HvVerticalNavigationAction,\n} from "@hv/uikit-react-core";',
+    subcomponents: {
+      HvVerticalNavigationTree,
+      HvVerticalNavigationActions,
+      HvVerticalNavigationAction,
+    },
     dsVersion: "3.3.0",
   },
   component: HvVerticalNavigation,
@@ -83,7 +94,7 @@ export const Main = () => {
 
   return (
     <HvVerticalNavigation id="sample1" isCollapsable={false}>
-      <Navigation
+      <HvVerticalNavigationTree
         label="Example 1 navigation"
         selected={value}
         onClick={(event, data) => {
@@ -92,6 +103,10 @@ export const Main = () => {
         }}
         data={navigationData}
       />
+      <HvVerticalNavigationActions>
+        <HvVerticalNavigationAction label="Profile" icon={<User />} />
+        <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
+      </HvVerticalNavigationActions>
     </HvVerticalNavigation>
   );
 };
@@ -165,7 +180,7 @@ export const WithoutActions = () => {
 
   return (
     <HvVerticalNavigation id="sample2" isCollapsable={false}>
-      <Navigation
+      <HvVerticalNavigationTree
         label="Example 1 navigation"
         selected={value}
         onClick={(event, data) => {
@@ -251,7 +266,7 @@ export const Collapsable = () => {
   return (
     <div style={sampleContainerStyle}>
       <HvVerticalNavigation id="sample3" isCollapsable>
-        <Navigation
+        <HvVerticalNavigationTree
           label="Example 2 navigation"
           selected={value}
           onClick={(event, data) => {
@@ -341,7 +356,7 @@ export const CollapseOnExit = () => {
         isCollapsable
         closeOnExit
       >
-        <Navigation
+        <HvVerticalNavigationTree
           label="Example 2 navigation"
           selected={value}
           onClick={(event, data) => {

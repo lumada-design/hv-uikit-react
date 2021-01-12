@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import range from "lodash/range";
 import { useTheme, withStyles } from "@material-ui/core";
-import { HvTypography } from "../..";
+import { HvTypography } from "..";
 import styles from "./styles";
 
 /**
