@@ -1,8 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
 import { Popper } from "@material-ui/core";
-import userEvent from "@testing-library/user-event";
-import { render, waitFor } from "testing-utils";
 import { HvDropDownMenu, HvProvider } from "../..";
 import { Main } from "../stories/DropDownMenu.stories";
 import { KeyboardNavigation } from "../stories/DropDownMenu.stories.test";
@@ -200,13 +198,4 @@ describe("DropDownMenu", () => {
       expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
   });
-});
-
-it("should focus first option on open", async () => {
-  const { getByRole } = render(<Main />);
-  const openButton = getByRole("button");
-  userEvent.click(openButton); // open
-  expect(openButton).toHaveAttribute("aria-expanded", "true");
-  const option = getByRole("menuitem", { name: "Label 1" });
-  await waitFor(() => expect(option).toHaveFocus());
 });
