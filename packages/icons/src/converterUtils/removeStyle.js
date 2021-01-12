@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Removes style tags from a node and its children
  * *Note* This mututates the passed in node
@@ -8,9 +6,9 @@
  */
 module.exports = function removeStyle(node) {
   const elements = node.getElementsByTagName("*");
-  for (var key in elements) {
+  Object.keys(elements).forEach((key) => {
     if (elements[key].removeAttribute) {
       elements[key].removeAttribute("style");
     }
-  }
+  });
 };

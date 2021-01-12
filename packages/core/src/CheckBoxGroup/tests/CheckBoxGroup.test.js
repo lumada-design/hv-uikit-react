@@ -557,7 +557,7 @@ describe("HvCheckBoxGroup", () => {
       expect(checkboxGroup).toBeValid();
 
       const error = queryByText("The error message");
-      expect(error).toBeNull();
+      expect(error).not.toBeInTheDocument();
     });
 
     it("sets the group invalid, not the child checkboxes", () => {
@@ -635,7 +635,7 @@ describe("HvCheckBoxGroup", () => {
 
       const checkboxGroup = getByRole("group");
       expect(checkboxGroup).toBeValid();
-      expect(queryByText("Required")).toBeNull();
+      expect(queryByText("Required")).not.toBeInTheDocument();
 
       const dragons = getByLabelText("Dragons");
       userEvent.click(dragons);

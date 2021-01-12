@@ -28,7 +28,7 @@ const ListView = ({
 }) => {
   const hasValues = values.length > 0;
 
-  const GridDisplay = (containerRef) => {
+  const renderGridDisplay = (containerRef) => {
     const enhancedViewConfiguration = {
       containerRef,
       ...viewConfiguration,
@@ -72,7 +72,7 @@ const ListView = ({
       {!hasValues && emptyComponent}
       {hasValues && (
         <div className={classes.root} ref={containerRef}>
-          <div className={classes.elements}>{GridDisplay(containerRef)}</div>
+          <div className={classes.elements}>{renderGridDisplay(containerRef)}</div>
         </div>
       )}
     </>

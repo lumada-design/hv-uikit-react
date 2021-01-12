@@ -174,12 +174,6 @@ export const Main = () => {
 };
 
 export const WithComposition = () => {
-  const inputTextConfiguration = {
-    inputLabel: "Default",
-    placeholder: "Placeholder value",
-    infoText: "Info text is here",
-  };
-
   const data = [
     {
       label: "value 1",

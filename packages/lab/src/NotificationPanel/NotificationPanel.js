@@ -89,6 +89,8 @@ HvNotificationPanel.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    root: PropTypes.string,
+    iconWrapper: PropTypes.string,
     /**
      * styles object applied to the panel
      */

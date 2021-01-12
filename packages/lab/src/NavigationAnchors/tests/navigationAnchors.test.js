@@ -54,7 +54,6 @@ describe("User withStyles", () => {
   it("should handle click action correctly", () => {
     const onClick = jest.fn();
     const onClickCallback = () => onClick();
-    let listItems;
 
     wrapper = mount(
       <HvProvider>
@@ -63,7 +62,7 @@ describe("User withStyles", () => {
     );
     expect(wrapper.find(NavigationAnchors)).toMatchSnapshot();
 
-    listItems = wrapper.find(ListItem);
+    const listItems = wrapper.find(ListItem);
     listItems.first().simulate("click");
     expect(onClick).not.toHaveBeenCalled();
   });

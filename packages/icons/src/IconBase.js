@@ -125,6 +125,10 @@ HvIconBase.propTypes = {
    * * Props passed down to the svg element..
    */
   svgProps: PropTypes.instanceOf(Object),
+  /**
+   * Node to be rendered.
+   */
+  children: PropTypes.node,
 };
 
 export default HvIconBase;

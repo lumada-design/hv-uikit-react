@@ -151,7 +151,7 @@ export const sample3 = () => {
   const getDummyApplicationsList = () => {
     const dummyApplicationsList = [];
 
-    for (let index = 1; index <= 100; index++) {
+    for (let index = 1; index <= 100; index += 1) {
       dummyApplicationsList.push({
         name:
           index % 3 === 0

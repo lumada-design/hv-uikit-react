@@ -12,8 +12,5 @@ node_modules/
 
 automation/
 
-packages/icons/
-packages/lab/
-
 # templates directory
 doc/

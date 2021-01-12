@@ -31,6 +31,7 @@ describe("HvCheckBox", () => {
       expect(checkbox).toBeInTheDocument();
 
       // toHaveValue() can't be used with <input type="checkbox">
+      // eslint-disable-next-line jest-dom/prefer-to-have-value
       expect(checkbox.value).toBe("dogs");
 
       // defaults
@@ -356,7 +357,7 @@ describe("HvCheckBox", () => {
       expect(checkbox).toBeValid();
 
       const error = queryByText("The error message");
-      expect(error).toBeNull();
+      expect(error).not.toBeInTheDocument();
     });
 
     it("built-in validation: displays error when required and not checked", () => {
@@ -387,7 +388,7 @@ describe("HvCheckBox", () => {
 
       // but not for the user before he touches it
       expect(checkbox).not.toHaveAttribute("aria-invalid");
-      expect(queryByText("Required")).toBeNull();
+      expect(queryByText("Required")).not.toBeInTheDocument();
 
       userEvent.click(checkbox);
       userEvent.click(checkbox);
