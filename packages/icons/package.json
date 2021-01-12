@@ -7,25 +7,29 @@
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/modern/index.js",
+    "./dist/": "./dist/modern/"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/legacy/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "build": "npm-run-all clean svg-optimize convert:* build:* copy:*",
+    "build": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize build:*",
+    "build:convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
+    "build:copy": "npx cp src/IconBase.* bin/",
+    "build:babel": "npx npm-run-all --npm-path npm --parallel build:babel:*",
+    "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward bin -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward bin -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:babel:modern": "BABEL_ENV=modern npx babel --root-mode upward bin -d dist/modern --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "svg-optimize": "npx svgo --config=./svgo-config.yml -r -f assets assets",
-    "convert:icons": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
-    "convert:pictograms": "node ./src/svgToReact.js dir --input assets/pictograms --output bin/pictograms --force",
-    "build:base": "npx cp src/IconBase.* bin/",
-    "build:base_pictogram": "npx cp src/IconBase.* bin/pictograms",
-    "build:babel": "npx babel bin -d dist --source-maps --copy-files",
-    "copy:icons": "npx cp -f bin/index.js dist/index.es.js",
-    "copy:pictograms": "npx cp -f bin/pictograms/index.js dist/pictograms/index.es.js",
-    "clean": "npx del-cli dist bin",
     "prepare": "npm run build",
+    "clean": "npx del-cli dist",
     "link": "npm link",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
     "lint:prettier": "npx prettier --config ../../prettier.config.js --check \"src/**/*.js\"",
@@ -33,27 +37,17 @@
   },
   "peerDependencies": {
     "@material-ui/core": "^4.11.0",
-    "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "dependencies": {
     "@hv/uikit-common-themes": "^3.0.0",
+    "core-js": "^3.8.1",
+    "@babel/runtime": "^7.12.5",
     "clsx": "^1.1.1",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-transform-regenerator": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/runtime": "^7.11.2",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-module-resolver": "^4.0.0",
     "cash-cp": "^0.2.0",
     "del-cli": "^3.0.1",
     "htmltojsx": "^0.3.0",
