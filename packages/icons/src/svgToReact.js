@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable import/no-extraneous-dependencies */
 // Vendor includes
 const fs = require("fs"); // file system
 const recursive = require("recursive-readdir");
@@ -21,15 +23,47 @@ const sizeReplacer = require("./sizeUtils/sizeReplacer");
 
 const printErrors = console.warn;
 
-const writeFile = (processedSVG, fileName) => {
-  const componentOutputFolder = outputPath
-    ? path.resolve(process.cwd(), outputPath)
-    : path.resolve(process.cwd());
+// Argument setup
+const args = yargs // reading arguments from the command line
+  .option("format", { default: true })
+  .option("output", { alias: "o" })
+  .option("input", { alias: "i" })
+  .option("rm-style", { default: false })
+  .option("force", { alias: "f", default: false }).argv;
 
-  fs.mkdirSync(componentOutputFolder, { recursive: true });
+// Resolve arguments
+const firstArg = args._[0];
+const secondArgs = args._[1] || "MyComponent";
+const outputPath = args.output;
+const inputPath = args.input;
+const { rmStyle, format } = args;
 
-  const file = path.resolve(componentOutputFolder, `${fileName}.js`);
-  const fileTs = path.resolve(componentOutputFolder, `${fileName}.d.ts`);
+// Bootstrap base variables
+const converter = new HTMLtoJSX({ createClass: false }); // instantiate a the html to jsx converter
+const svg = `./${firstArg}.svg`; // append the file extension
+
+// Exit out early arguments
+if (args.help) {
+  console.log(content.helptext);
+  process.exit(1);
+}
+
+if (args.example) {
+  console.log(content.exampleText);
+  process.exit(1);
+}
+
+const componentOutputFolder = outputPath
+  ? path.resolve(process.cwd(), outputPath)
+  : path.resolve(process.cwd());
+
+const knownSubfolders = {};
+
+const writeFile = (processedSVG, fileName, subFolder = ".", depth = 0) => {
+  fs.mkdirSync(path.resolve(componentOutputFolder, subFolder), { recursive: true });
+
+  const file = path.resolve(componentOutputFolder, subFolder, `${fileName}.js`);
+  const fileTs = path.resolve(componentOutputFolder, subFolder, `${fileName}.d.ts`);
 
   fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, (err) => {
     if (err) {
@@ -45,15 +79,56 @@ const writeFile = (processedSVG, fileName) => {
 
   const exportName = fileName.split(".").join("");
   const exportString = `export { default as ${exportName} } from "./${fileName}";\n`;
-  const exportStringTs = `export { default } from "./IconBase";`;
+  const exportStringTs = `export { default } from "${".".repeat(depth + 1)}/IconBase";`;
 
   fs.writeFile(fileTs, exportStringTs, { flag: "w" }, () => {});
 
-  fs.appendFile(path.resolve(componentOutputFolder, `index.js`), exportString, () => {});
-  fs.appendFile(path.resolve(componentOutputFolder, `index.d.ts`), exportString, () => {});
+  if (subFolder === ".") {
+    fs.appendFile(path.resolve(componentOutputFolder, `icons.js`), exportString, () => {});
+    fs.appendFile(path.resolve(componentOutputFolder, `icons.d.ts`), exportString, () => {});
+  } else {
+    fs.appendFile(
+      path.resolve(componentOutputFolder, subFolder, `index.js`),
+      exportString,
+      () => {}
+    );
+    fs.appendFile(
+      path.resolve(componentOutputFolder, subFolder, `index.d.ts`),
+      exportString,
+      () => {}
+    );
+  }
+
+  if (!knownSubfolders[subFolder]) {
+    knownSubfolders[subFolder] = true;
+
+    if (subFolder === ".") {
+      fs.appendFile(
+        path.resolve(componentOutputFolder, `index.js`),
+        `\nexport * from "./icons";\n`,
+        () => {}
+      );
+      fs.appendFile(
+        path.resolve(componentOutputFolder, `index.d.ts`),
+        `\nexport * from "./icons";\n`,
+        () => {}
+      );
+    } else {
+      fs.appendFile(
+        path.resolve(componentOutputFolder, subFolder, "..", `index.js`),
+        `\nexport * from "${subFolder}";\n`,
+        () => {}
+      );
+      fs.appendFile(
+        path.resolve(componentOutputFolder, subFolder, "..", `index.d.ts`),
+        `\nexport * from "${subFolder}";\n`,
+        () => {}
+      );
+    }
+  }
 };
 
-const runUtil = (fileToRead, fileToWrite) => {
+const runUtil = (fileToRead, fileToWrite, subFolder = ".", depth = 0) => {
   fs.readFile(fileToRead, "utf8", (err, file) => {
     if (err) {
       printErrors(err);
@@ -62,7 +137,7 @@ const runUtil = (fileToRead, fileToWrite) => {
 
     let output = file;
 
-    jsdom.env(output, (err, window) => {
+    jsdom.env(output, (_err, window) => {
       const body = window.document.getElementsByTagName("body")[0];
 
       if (rmStyle) {
@@ -78,7 +153,7 @@ const runUtil = (fileToRead, fileToWrite) => {
       let defaultWidth = "50px";
       let defaultHeight = "50px";
       if (body.firstChild.hasAttribute("viewBox")) {
-        const [minX, minY, width, height] = body.firstChild.getAttribute("viewBox").split(/[,\s]+/);
+        const [, , width, height] = body.firstChild.getAttribute("viewBox").split(/[,\s]+/);
         defaultWidth = width;
         defaultHeight = height;
       }
@@ -126,75 +201,60 @@ const runUtil = (fileToRead, fileToWrite) => {
         componentName: processedFileToWrite,
         colors: colorObject.colorText,
         defaultSizes: sizeObject,
+        iconBasePath: `${".".repeat(depth + 1)}/IconBase`,
       };
 
       output = generateComponent(params);
-      writeFile(output, fileToWrite);
+      writeFile(output, fileToWrite, subFolder, depth);
     });
   });
 };
 
-const processFile = (file) => {
+const isFolder = (dirPath) => fs.existsSync(dirPath) && fs.lstatSync(dirPath).isDirectory();
+
+const processFile = (file, subFolder = ".", depth = 0) => {
   const extension = path.extname(file); // extract extensions
   const fileName = path.basename(file); // extract file name extensions
 
   if (extension === ".svg") {
     // variable instantiated up top
     const componentName = createComponentName(file, fileName);
-    runUtil(file, componentName);
+    runUtil(file, componentName, subFolder, depth);
   }
+};
+
+const processFolder = (file, subFolder, depth) => {
+  // eslint-disable-next-line no-use-before-define
+  runUtilForJustFilesInDir(file, `${subFolder}/${path.basename(file)}`, depth + 1);
 };
 
 const runUtilForAllInDir = () => {
   recursive(`${process.cwd()}/${inputPath}`, (err, files) => {
     if (err) {
-      return console.log(err);
+      console.log(err);
+      return;
     } // Get out early if not found
     files.forEach((file) => processFile(file));
   });
 };
 
-const runUtilForJustFilesInDir = () => {
-  const files = fs.readdir(`${process.cwd()}/${inputPath}`, (err, files) => {
+const runUtilForJustFilesInDir = (folder, subFolder = ".", depth = 0) => {
+  fs.readdir(folder, (err, files) => {
     if (err) {
-      return console.log(err);
+      console.log(err);
+      return;
     } // Get out early if not found
+
     files.forEach((file) => {
-      const filePath = path.join(`${process.cwd()}/${inputPath}`, file);
-      processFile(filePath);
+      const filePath = path.resolve(folder, file);
+      if (!isFolder(filePath)) {
+        processFile(filePath, subFolder, depth);
+      } else {
+        processFolder(filePath, subFolder, depth);
+      }
     });
   });
 };
-
-// Argument setup
-const args = yargs // reading arguments from the command line
-  .option("format", { default: true })
-  .option("output", { alias: "o" })
-  .option("input", { alias: "i" })
-  .option("rm-style", { default: false })
-  .option("force", { alias: "f", default: false }).argv;
-
-// Resolve arguments
-const firstArg = args._[0];
-const secondArgs = args._[1] || "MyComponent";
-const outputPath = args.output;
-const inputPath = args.input;
-const { rmStyle, format } = args;
-
-// Bootstrap base variables
-const converter = new HTMLtoJSX({ createClass: false }); // instantiate a the html to jsx converter
-const svg = `./${firstArg}.svg`; // append the file extension
-
-// Exit out early arguments
-if (args.help) {
-  console.log(content.helptext);
-  process.exit(1);
-}
-
-if (args.example) {
-  console.log(content.exampleText);
-  process.exit(1);
-}
 
 fs.mkdir(outputPath, { recursive: true }, (err) => {
   if (err) throw err;
@@ -206,7 +266,7 @@ fs.writeFile(path.resolve(process.cwd(), outputPath, `index.d.ts`), "", () => {}
 // Main entry point
 if (firstArg === "dir") {
   if (secondArgs === "flatten") runUtilForAllInDir();
-  else runUtilForJustFilesInDir();
+  else runUtilForJustFilesInDir(`${process.cwd()}/${inputPath}`);
 } else {
   runUtil(svg, secondArgs);
 }

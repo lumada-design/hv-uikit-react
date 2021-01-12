@@ -24,7 +24,13 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
  * @param  string colors - The defaults value of colors to add to the component
  * @return string The parsed component string
  */
-module.exports = ({ svgOutput, componentName, colors, defaultSizes }) => {
+module.exports = ({
+  svgOutput,
+  componentName,
+  colors,
+  defaultSizes,
+  iconBasePath = "./IconBase",
+}) => {
   const themePalette = dawnTheme.palette;
 
   const selectors = ["Checkbox", "RadioButton"];
@@ -41,7 +47,7 @@ module.exports = ({ svgOutput, componentName, colors, defaultSizes }) => {
   return `
 import React from "react";
 import { useTheme } from "@material-ui/core";
-import HvIconBase from "./IconBase";
+import HvIconBase from "${iconBasePath}";
 
 const sizeSelector = (iconSize, height, width) => {
   if (height && width) {
