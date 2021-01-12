@@ -94,6 +94,12 @@ module.exports = {
     },
   ],
   settings: {
+    "import/resolver": {
+      node: {},
+      webpack: {
+        config: resolve(__dirname, "./config/eslint.webpack.js"),
+      },
+    },
     react: {
       pragma: "React",
       version: "detect",
