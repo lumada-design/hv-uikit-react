@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.5.2...@hv/uikit-react-core@3.6.0) (2021-01-12)
+
+
+### Features
+
+* **dropdown:** optimize opening of the dropdown.HVUIKIT-5644 ([#2220](https://github.com/pentaho/hv-uikit-react/issues/2220)) ([3726055](https://github.com/pentaho/hv-uikit-react/commit/37260555bbf137bd30aab29b08aefbacfaf6ca84))
+
+
+
+
+
 ## [3.5.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.5.1...@hv/uikit-react-core@3.5.2) (2021-01-08)
 
 
