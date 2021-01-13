@@ -78,7 +78,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
+          node-version: "14"
 
       - name: Install
         run: |
@@ -110,7 +110,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
+          node-version: "14"
 
       - name: Install
         run: |
@@ -159,7 +159,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
+          node-version: "14"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
@@ -211,7 +211,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
+          node-version: "14"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
