@@ -26,5 +26,5 @@ inputs:
     description: "The path of the tests to execute"
     required: true
 runs:
-  using: 'node12'
+  using: 'node14'
   main: 'lib/index.js'

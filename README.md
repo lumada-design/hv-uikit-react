@@ -4,8 +4,7 @@
 
 <div align="center">
 
-
-![alt text](https://img.shields.io/badge/node-12.14-brightgreen.svg)
+![alt text](https://img.shields.io/badge/node-14.15-brightgreen.svg)
 ![alt text](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![alt text](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge%20%7C%20ie%2011-blue.svg)
 ![Master](https://github.com/lumada-design/hv-uikit-react/workflows/Master%20Nightly/badge.svg)
@@ -90,10 +89,9 @@ An overview of the founding team and core contributors to Hitachi Vantara UI-KIT
 The UI Kit is maintained by a small group of invaluable core contributors, with the massive support and involvement of the community. 😄
 
 - Diogo Mariano ([@diogofscmariano](https://github.com/diogofscmariano))
-- Tiago Santos ([@tiago-ssantos](https://github.com/tiago-ssantos))
+- Paulo Lagoa([@plagoa](https://github.com/plagoa))
 - Francisco Guilherme ([@francisco-guilherme](https://github.com/frncisco-guilherme))
 - Elio Freitas ([@eliofreitas](https://github.com/eliofreitas))
-- João Gonçalves ([@JoaoEnesGoncalves](https://github.com/JoaoEnesGoncalves))
 - Bruno Henriques ([@zettca](https://github.com/zettca))
 - Nelson Antunes ([@nantunes](https://github.com/nantunes))
 - Júlio Costa ([@jsccosta](https://github.com/jsccosta))
