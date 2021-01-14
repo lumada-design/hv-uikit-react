@@ -16,7 +16,7 @@ import withId from "../withId";
 import DropDownMenu from "./DropdownMenu";
 import Header from "./Header";
 import NoData from "./NoData";
-import { isSelected, selectPage } from "./checkBoxUtils";
+import { isSelected, getPageSelection } from "./checkBoxUtils";
 import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
 import expander from "./expander";
 import withCheckbox from "./selectTable";
@@ -453,10 +453,8 @@ const HvTable = (props) => {
    * @param {object} event - the event that triggered the selection
    */
   const togglePage = (event) => {
-    const anySelected = selection.length > 0;
     const config = { currentPage, currentPageSize, paginationServerSide };
-    const newSelection = anySelected ? [] : selectPage(idForCheckbox, tableRef, config);
-
+    const newSelection = getPageSelection(idForCheckbox, tableRef, config, selection);
     setSelection(newSelection);
     onSelection?.(event, newSelection);
   };
@@ -468,8 +466,13 @@ const HvTable = (props) => {
    */
   const toggleAll = (event) => {
     const allSelected = selection.length === data.length;
-    const newSelection = allSelected ? [] : selectPage(idForCheckbox, tableRef);
-
+    const newSelection = getPageSelection(
+      idForCheckbox,
+      tableRef,
+      undefined,
+      selection,
+      allSelected
+    );
     setSelection(newSelection);
     onSelection?.(event, newSelection);
   };

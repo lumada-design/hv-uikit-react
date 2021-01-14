@@ -26,6 +26,7 @@ const defaultSelectInputComponent = (props) => {
         e.stopPropagation();
         props.onClick?.(props.id, shiftKey, props.row);
       }}
+      {...props.row?.checkboxProps}
     />
   );
 };

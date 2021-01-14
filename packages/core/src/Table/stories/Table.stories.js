@@ -1252,6 +1252,7 @@ export const WithCheckboxCustomContent = () => {
       salesGrowth: "94.7",
       orderNumber: "10101",
       color: "blue",
+      checkboxProps: { disabled: true },
     },
     {
       id: 4,
@@ -1270,6 +1271,25 @@ export const WithCheckboxCustomContent = () => {
       salesGrowth: "1000.6",
       orderNumber: "10102",
       color: "green",
+      checkboxProps: { disabled: true },
+    },
+    {
+      id: 6,
+      customer: "Quartz co.",
+      dealSize: "Big",
+      sales: "7205.3",
+      salesGrowth: "21670.6",
+      orderNumber: "11234",
+      color: "cyan",
+    },
+    {
+      id: 7,
+      customer: "Plumb inc.",
+      dealSize: "small",
+      sales: "105.3",
+      salesGrowth: "1370.6",
+      orderNumber: "114",
+      color: "yellow",
     },
   ];
 
@@ -1350,6 +1370,7 @@ export const WithCheckboxCustomContent = () => {
         onPageSizeChange={onPageSizeChange}
         resizable={false}
         defaultSorted={defaultSorted}
+        selections={[1, 3]}
         idForCheckbox="id"
       />
     </div>
