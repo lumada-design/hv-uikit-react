@@ -34,6 +34,26 @@ module.exports = {
   webpackFinal: async (config) => {
     const rules = config.module.rules;
 
+    rules.push({
+      test: /\.js?$/,
+      include: /node_modules\/highlight.js/,
+      use: [
+        {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              [
+                require.resolve("@babel/preset-env"),
+                {
+                  modules: "commonjs",
+                },
+              ],
+            ],
+          },
+        },
+      ],
+    });
+
     const jsRule = rules.find((rule) => rule.test.test(".js"));
     jsRule.include = [
       __dirname,
