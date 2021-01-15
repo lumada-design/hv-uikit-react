@@ -1,13 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
-import {
-  HvInput,
-  HvButton,
-  HvCheckBoxGroup,
-  HvCheckBox,
-  HvDropdown,
-} from "@hv/uikit-react-core/dist";
+import { HvInput, HvButton, HvCheckBoxGroup, HvCheckBox, HvDropdown } from "@hv/uikit-react-core";
 
 const validationSchema = yup.object({
   textField: yup.string().required("Text Field is required"),

@@ -6,6 +6,19 @@ interface Option {
   value: string;
 }
 
+export type HvNavigationAnchorsClassKey =
+  | "drawer"
+  | "dense"
+  | "drawerPaper"
+  | "drawerPaperPositionInherit"
+  | "listRoot"
+  | "listDense"
+  | "listItemSelected"
+  | "listItemRoot"
+  | "listItemGutters"
+  | "listItemTextSelected"
+  | "listItemTextDense";
+
 export interface HvNavigationAnchorsProps
   extends StandardProps<DrawerProps, HvNavigationAnchorsClassKey> {
   /**
@@ -29,18 +42,5 @@ export interface HvNavigationAnchorsProps
    */
   scrollElementId?: string;
 }
-
-export type HvNavigationAnchorsClassKey =
-  | "drawer"
-  | "dense"
-  | "drawerPaper"
-  | "drawerPaperPositionInherit"
-  | "listRoot"
-  | "listDense"
-  | "listItemSelected"
-  | "listItemRoot"
-  | "listItemGutters"
-  | "listItemTextSelected"
-  | "listItemTextDense";
 
 export default function HvNavigationAnchors(props: HvNavigationAnchorsProps): JSX.Element | null;

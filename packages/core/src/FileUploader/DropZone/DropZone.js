@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import Doc from "@hv/uikit-react-icons/dist/Doc";
+import { Doc } from "@hv/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../../utils";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";

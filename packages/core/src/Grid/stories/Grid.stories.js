@@ -7,7 +7,7 @@ export default {
   title: "Foundation/Grid",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvGrid } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvGrid } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },
@@ -161,25 +161,25 @@ export const Behaviour = () => {
       <div style={styledContainer}>
         <HvGrid container>
           <HvGrid item xs={4} sm={8} md={8} lg={12} xl={12}>
-            <StyledBox text={"xs={4} sm={8} md={8} lg={12} xl={12}"} />
+            <StyledBox text="xs={4} sm={8} md={8} lg={12} xl={12}" />
           </HvGrid>
           <HvGrid item xs={4} sm={4} md={4} lg={6} xl={6}>
-            <StyledBox text={"xs={4} sm={4} md={4} lg={6} xl={6}"} />
+            <StyledBox text="xs={4} sm={4} md={4} lg={6} xl={6}" />
           </HvGrid>
           <HvGrid item xs={4} sm={4} md={4} lg={6} xl={6}>
-            <StyledBox text={"xs={4} sm={4} md={4} lg={6} xl={6}"} />
+            <StyledBox text="xs={4} sm={4} md={4} lg={6} xl={6}" />
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <StyledBox text="xs={1} sm={2} md={2} lg={3} xl={3}" />
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <StyledBox text="xs={1} sm={2} md={2} lg={3} xl={3}" />
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <StyledBox text="xs={1} sm={2} md={2} lg={3} xl={3}" />
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <StyledBox text="xs={1} sm={2} md={2} lg={3} xl={3}" />
           </HvGrid>
         </HvGrid>
       </div>

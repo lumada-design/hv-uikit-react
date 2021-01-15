@@ -6,7 +6,7 @@ export default {
   title: "Forms/Checkbox Group",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCheckBoxGroup } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvCheckBoxGroup } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

@@ -5,9 +5,10 @@ const { findByKey } = require("./utils");
 
 const docFolder = resolve(__dirname, "../doc");
 const corePackageSrc = resolve(__dirname, "../packages/core/src");
-const labPackageSrc = resolve(__dirname, "../packages/lab/src");
 const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
 const iconsPackageBin = resolve(__dirname, "../packages/icons/bin");
+const labPackageSrc = resolve(__dirname, "../packages/lab/src");
+const commonThemesSrc = resolve(__dirname, "../packages/themes/src");
 
 module.exports = {
   stories: [
@@ -33,6 +34,26 @@ module.exports = {
   webpackFinal: async (config) => {
     const rules = config.module.rules;
 
+    rules.push({
+      test: /\.js?$/,
+      include: /node_modules\/highlight.js/,
+      use: [
+        {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              [
+                require.resolve("@babel/preset-env"),
+                {
+                  modules: "commonjs",
+                },
+              ],
+            ],
+          },
+        },
+      ],
+    });
+
     const jsRule = rules.find((rule) => rule.test.test(".js"));
     jsRule.include = [
       __dirname,
@@ -46,10 +67,20 @@ module.exports = {
 
     config.resolve.alias = {
       ...config.resolve.alias,
+
+      // package aliases for deep imports (/dist)
       "@hv/uikit-react-core/dist": corePackageSrc,
-      "@hv/uikit-react-lab/dist": labPackageSrc,
-      "@hv/uikit-react-icons/dist": iconsPackageBin,
       "@hv/uikit-react-code-editor/dist": codeEditorPackageSrc,
+      "@hv/uikit-react-icons/dist": iconsPackageBin,
+      "@hv/uikit-react-lab/dist": labPackageSrc,
+      "@hv/uikit-common-themes/dist": commonThemesSrc,
+
+      // package aliases for top-level imports
+      "@hv/uikit-react-core": corePackageSrc,
+      "@hv/uikit-react-code-editor": codeEditorPackageSrc,
+      "@hv/uikit-react-icons": iconsPackageBin,
+      "@hv/uikit-react-lab": labPackageSrc,
+
       "react-hook-form": "react-hook-form/dist/index.ie11",
     };
 

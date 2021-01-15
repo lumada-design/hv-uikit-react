@@ -55,7 +55,7 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...oth
             },
           });
         }}
-        theme={"hv"}
+        theme="hv"
         {...editorProps}
         {...others}
       />
@@ -73,6 +73,10 @@ CodeEditor.propTypes = {
      */
     root: PropTypes.string,
   }).isRequired,
+  /**
+   * styling theme to be applied to the code editor
+   */
+  theme: PropTypes.any.isRequired,
   /**
    * The properties of the Monaco editor. Please check MonacoEditorProps from https://microsoft.github.io/monaco-editor/api/index.html
    */

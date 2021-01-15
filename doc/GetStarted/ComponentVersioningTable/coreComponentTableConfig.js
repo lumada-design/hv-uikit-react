@@ -1,9 +1,9 @@
 import React from "react";
 
+import { HvLink } from "@hv/uikit-react-core";
+
 import Stable from "../../../.storybook/blocks/resources/Stable";
 import DSVersion from "../../../.storybook/blocks/resources/DSVersion.js";
-
-import { HvLink } from "../../../packages/core/src/..";
 
 const coreComponentTableConfig = [
   {

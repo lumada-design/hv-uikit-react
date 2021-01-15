@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import { MoreOptionsVertical } from "@hv/uikit-react-icons";
 import { getPrevNextFocus, isKeypress, KeyboardCodes } from "../utils";
 import { HvButton, HvList, HvPanel, HvBaseDropdown, setId } from "..";
 import styles from "./styles";
@@ -71,7 +71,7 @@ const DropDownMenu = ({
       disabled={disabled}
       aria-label="Dropdown menu"
     >
-      {icon || <MoreVert color={disabled ? "atmo5" : undefined} />}
+      {icon || <MoreOptionsVertical color={disabled ? "atmo5" : undefined} />}
     </HvButton>
   );
 

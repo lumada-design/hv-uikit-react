@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import { Info } from "@hv/uikit-react-icons/dist";
+import { HvTypography } from "@hv/uikit-react-core";
+import { Info } from "@hv/uikit-react-icons";
 
 export default class Action extends Component {
   constructor(props) {
     super(props);
     this.state = { validIconUrl: true };
   }
+
   render() {
     const { classes, application, isSelectedCallback } = this.props;
 
@@ -15,12 +16,17 @@ export default class Action extends Component {
       if (application.iconElement) {
         return application.iconElement;
       }
-      if (application.iconUrl && this.state.validIconUrl) {
+
+      const { validIconUrl } = this.state;
+
+      if (application.iconUrl && validIconUrl) {
         return (
+          // eslint-disable-next-line jsx-a11y/alt-text
           <img
             className={classes.iconUrl}
             src={application.iconUrl}
             onError={(element) => {
+              // eslint-disable-next-line no-param-reassign
               element.target.style.display = "none";
               this.setState({ validIconUrl: false });
             }}
@@ -31,14 +37,6 @@ export default class Action extends Component {
     };
 
     const isSelected = isSelectedCallback(application);
-
-    const renderElementWithLink = () => {
-      return (
-        <a href={application.url} target={application.target || "_top"} className={classes.link}>
-          {renderElement()}
-        </a>
-      );
-    };
 
     /**
      * Handles the onClick event and triggers the appropriate callback if it exists.
@@ -69,6 +67,14 @@ export default class Action extends Component {
             <Info className={classes.iconInfo} title={application.description} />
           )}
         </HvTypography>
+      );
+    };
+
+    const renderElementWithLink = () => {
+      return (
+        <a href={application.url} target={application.target || "_top"} className={classes.link}>
+          {renderElement()}
+        </a>
       );
     };
 
@@ -119,7 +125,14 @@ Action.propTypes = {
   /**
    * A Jss object used to override or extend the component styles.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    iconUrl: PropTypes.string,
+    dummyImage: PropTypes.string,
+    link: PropTypes.string,
+    typography: PropTypes.string,
+    selected: PropTypes.string,
+    iconInfo: PropTypes.string,
+  }).isRequired,
   /**
    * Callback triggered when the action is clicked.
    */
@@ -131,7 +144,6 @@ Action.propTypes = {
 };
 
 Action.defaultProps = {
-  target: "_top",
-  onClickCallback: (event, application) => {},
+  onClickCallback: () => {},
   isSelectedCallback: () => false,
 };

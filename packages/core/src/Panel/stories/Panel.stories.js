@@ -7,7 +7,7 @@ export default {
   title: "Components/Panel",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvPanel } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvPanel } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.2.0",
   },

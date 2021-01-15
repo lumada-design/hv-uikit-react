@@ -26,6 +26,7 @@ export { default as HvFooter } from "./Footer";
 export * from "./Forms";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";
+export * from "./Header";
 
 export { default as HvBaseInput } from "./BaseInput";
 export { default as HvInput } from "./Input";
@@ -69,7 +70,27 @@ export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvTooltip } from "./Tooltip";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
+// TODO refactor the HvUserPreferences subcomponents' names
+export {
+  Actions as HvUserPreferencesActions,
+  Action as HvUserPreferencesAction,
+} from "./UserPreferences";
+export {
+  Options as HvUserPreferencesOptions,
+  Option as HvUserPreferencesOption,
+  Group as HvUserPreferencesOptionsGroup,
+  Label as HvUserPreferencesOptionsGroupLabel,
+} from "./UserPreferences";
+
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
+// TODO refactor the HvVerticalNavigation subcomponents' names
+export { Navigation as HvVerticalNavigationTree } from "./VerticalNavigation";
+export { TreeView as HvTreeView, TreeViewItem as HvTreeViewItem } from "./VerticalNavigation";
+export {
+  Actions as HvVerticalNavigationActions,
+  Action as HvVerticalNavigationAction,
+} from "./VerticalNavigation";
+
 export { default as HvPanel } from "./Panel";
 
 // HOCs
@@ -83,6 +104,7 @@ export { default as useLocale } from "./Provider/useLocale";
 
 // theme
 export { default as hvTheme } from "./theme";
+export { themeBuilder, getTheme } from "./theme";
 
 // provider
 export { default as HvProvider } from "./Provider";

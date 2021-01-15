@@ -28,6 +28,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
         classes={
           Object {
             "circle": "MuiAvatar-circle",
+            "circular": "MuiAvatar-circular",
             "colorDefault": "MuiAvatar-colorDefault",
             "fallback": "MuiAvatar-fallback",
             "img": "MuiAvatar-img",
@@ -117,6 +118,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
         classes={
           Object {
             "circle": "MuiAvatar-circle",
+            "circular": "MuiAvatar-circular",
             "colorDefault": "MuiAvatar-colorDefault",
             "fallback": "MuiAvatar-fallback",
             "img": "MuiAvatar-img",
@@ -213,6 +215,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
         classes={
           Object {
             "circle": "MuiAvatar-circle",
+            "circular": "MuiAvatar-circular",
             "colorDefault": "MuiAvatar-colorDefault",
             "fallback": "MuiAvatar-fallback",
             "img": "MuiAvatar-img",
@@ -268,6 +271,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
         classes={
           Object {
             "circle": "MuiAvatar-circle",
+            "circular": "MuiAvatar-circular",
             "colorDefault": "MuiAvatar-colorDefault",
             "fallback": "MuiAvatar-fallback",
             "img": "MuiAvatar-img",

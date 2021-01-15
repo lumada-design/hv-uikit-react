@@ -15,7 +15,7 @@ export default {
   title: "Components/Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvButton } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvButton } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

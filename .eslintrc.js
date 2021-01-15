@@ -1,6 +1,9 @@
-const javascriptFileExtensions = [".js", ".jsx"];
+const { resolve } = require("path");
+
+const javascriptFileExtensions = [".js", ".jsx", ".ts", ".tsx"];
 
 module.exports = {
+  root: true,
   extends: [
     "airbnb",
     "prettier",
@@ -41,6 +44,7 @@ module.exports = {
         "no-console": "off",
         "no-alert": "off",
         "no-any": 0,
+        "react/prop-types": "off",
       },
     },
     {
@@ -51,7 +55,7 @@ module.exports = {
       },
     },
     {
-      files: ["*.ts"],
+      files: ["*.ts", "*.tsx"],
       env: { browser: true, es6: true, node: true },
       rules: {
         "@typescript-eslint/no-explicit-any": "off",
@@ -67,27 +71,35 @@ module.exports = {
       },
       extends: [
         "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/@typescript-eslint",
       ],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaFeatures: { jsx: true },
         ecmaVersion: 2020,
         sourceType: "module",
-        project: "./tsconfig.json",
+        tsconfigRootDir: __dirname,
+        project: ["./tsconfig.json"],
       },
       plugins: ["@typescript-eslint"],
       settings: {
         "import/resolver": {
           typescript: {
-            project: "./packages/*/tsconfig.json",
+            project: resolve(__dirname, "./packages/*/tsconfig.json"),
           },
         },
       },
     },
   ],
   settings: {
+    "import/resolver": {
+      node: {},
+      webpack: {
+        config: resolve(__dirname, "./config/eslint.webpack.js"),
+      },
+    },
     react: {
       pragma: "React",
       version: "detect",

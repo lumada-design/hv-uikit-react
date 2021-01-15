@@ -1,6 +1,26 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+interface Header {
+  /**
+   * The title of the header
+   */
+  headerTitle: string;
+  /**
+   * The icon that denoted close functionality
+   */
+  headerCloseImg: React.ElementType<React.HTMLAttributes<HTMLElement>>;
+}
+
+interface Notification {
+  /**
+   * Id of notification
+   */
+  id: string;
+}
+
+export type HvNotificationPanelClassKey = "panel" | "badgeBorder";
+
 export interface HvNotificationPanelProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvNotificationPanelClassKey> {
   /**
@@ -25,25 +45,5 @@ export interface HvNotificationPanelProps
    */
   footer: React.ElementType<React.HTMLAttributes<HTMLElement>>;
 }
-
-interface Header {
-  /**
-   * The title of the header
-   */
-  headerTitle: string;
-  /**
-   * The icon that denoted close functionality
-   */
-  headerCloseImg: React.ElementType<React.HTMLAttributes<HTMLElement>>;
-}
-
-interface Notification {
-  /**
-   * Id of notification
-   */
-  id: string;
-}
-
-export type HvNotificationPanelClassKey = "panel" | "badgeBorder";
 
 export default function HvNotificationPanel(props: HvNotificationPanelProps): JSX.Element | null;

@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Extract colors from the svg to an object
  * @param  string fileData

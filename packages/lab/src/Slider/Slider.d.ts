@@ -16,6 +16,18 @@ export interface MarkProperty {
   label?: string;
 }
 
+export type HvSliderClassKey =
+  | "root"
+  | "dot"
+  | "rail"
+  | "knobInner"
+  | "knobOuter"
+  | "knobHidden"
+  | "knobHiddenLast"
+  | "track"
+  | "mark"
+  | "sliderTooltip";
+
 export interface HvSliderProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSliderClassKey, "onChange"> {
   /**
@@ -117,17 +129,5 @@ export interface HvSliderProps
    */
   noOverlap?: boolean;
 }
-
-export type HvSliderClassKey =
-  | "root"
-  | "dot"
-  | "rail"
-  | "knobInner"
-  | "knobOuter"
-  | "knobHidden"
-  | "knobHiddenLast"
-  | "track"
-  | "mark"
-  | "sliderTooltip";
 
 export default function HvSlider(props: HvSliderProps): JSX.Element | null;

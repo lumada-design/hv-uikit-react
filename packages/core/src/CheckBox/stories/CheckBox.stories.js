@@ -26,7 +26,7 @@ export default {
   title: "Forms/Checkbox",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCheckBox } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvCheckBox } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

@@ -8,7 +8,7 @@ export default {
   title: "Tests/Base Dropdown",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBaseDropdown } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvBaseDropdown } from "@hv/uikit-react-core"',
     dsVersion: "3.3.0",
   },
   component: HvBaseDropdown,

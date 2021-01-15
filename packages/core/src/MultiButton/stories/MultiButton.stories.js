@@ -6,7 +6,7 @@ export default {
   title: "Components/Multi Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvMultiButton } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

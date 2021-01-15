@@ -35,7 +35,6 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
     }
     isSelectedCallback={[Function]}
     onClickCallback={[Function]}
-    target="_top"
   >
     <a
       className="Action-link-64"
@@ -165,7 +164,6 @@ exports[`<Action /> with description should render correctly 1`] = `
     }
     isSelectedCallback={[Function]}
     onClickCallback={[Function]}
-    target="_top"
   >
     <a
       className="Action-link-4"
@@ -304,7 +302,6 @@ exports[`<Action /> without description should render correctly 1`] = `
     }
     isSelectedCallback={[Function]}
     onClickCallback={[Function]}
-    target="_top"
   >
     <a
       className="Action-link-34"

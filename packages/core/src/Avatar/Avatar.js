@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { Avatar, withStyles, useTheme } from "@material-ui/core";
 
-import { User } from "@hv/uikit-react-icons/dist";
+import { User } from "@hv/uikit-react-icons";
 
 import { decreaseSize, useImageLoaded } from "../utils";
 

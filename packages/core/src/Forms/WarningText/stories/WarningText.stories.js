@@ -5,7 +5,7 @@ export default {
   title: "Forms/Form Element Blocks/Warning Text",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvWarningText } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvWarningText } from "@hv/uikit-react-core"',
   },
   component: HvWarningText,
   decorators: [(storyFn) => <div style={{ width: "300px" }}>{storyFn()}</div>],

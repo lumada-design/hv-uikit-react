@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Fullscreen, Duplicate, PopUp } from "@hv/uikit-react-icons/dist";
+import { Fullscreen, Duplicate, PopUp } from "@hv/uikit-react-icons";
 // eslint-disable-next-line import/no-unresolved
-import { HvTypography, HvButton, HvTooltip } from "@hv/uikit-react-core/dist";
+import { HvTypography, HvButton, HvTooltip } from "@hv/uikit-react-core";
 import { Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -14,7 +14,7 @@ export default {
   title: "Components/Code Editor",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCodeEditor } from '@hv/uikit-react-codeeditor/dist'",
+    usage: 'import { HvCodeEditor } from "@hv/uikit-react-code-editor"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },
@@ -79,7 +79,7 @@ const Header = (props) => {
         <HvTooltip title={<HvTypography>Open in new window</HvTypography>}>
           <HvButton className={classes.buttonMargin} icon aria-label="Popup">
             <a
-              href="http://localhost:9001/iframe.html?id=components-codeeditor--main"
+              href="http://localhost:9001/iframe.html?id=components-code-editor--main"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import { MoreOptionsVertical } from "@hv/uikit-react-icons";
 import HvDropDownMenu from "../../DropDownMenu";
 
 // eslint-disable-next-line react/prop-types
@@ -18,7 +18,7 @@ const DropDownMenu = ({ id, secondaryActions, dropdownMenuProps, original }) => 
       classes={{ inputExtensionOpen: dropdownClasses.inputExtensionOpen }}
       id={id}
       disablePortal={false}
-      icon={<MoreVert style={{ width: 30, height: 30 }} />}
+      icon={<MoreOptionsVertical style={{ width: 30, height: 30 }} />}
       dataList={secondaryActions}
       onClick={(event, item) => {
         event.stopPropagation();

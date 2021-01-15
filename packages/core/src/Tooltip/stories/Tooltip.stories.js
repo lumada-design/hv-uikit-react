@@ -8,7 +8,7 @@ export default {
   title: "Components/Tooltip",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTooltip } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvTooltip } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

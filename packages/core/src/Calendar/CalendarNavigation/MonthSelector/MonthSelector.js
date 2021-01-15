@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "../../../utils";
 import { getMonthNamesList } from "../../utils";
 import { NAV_OPTIONS, VIEW_MODE, REPRESENTATION_VALUES } from "../../enums";
-import { HvTypography } from "../../../..";
+import { HvTypography } from "../../..";
 import styles from "./styles";
 
 const HvMonthSelector = ({

@@ -7,29 +7,36 @@
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/modern/index.js",
+    "./dist/": "./dist/modern/"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/legacy/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "npm-run-all clean babel:watch copy",
-    "build": "npm-run-all clean babel:build copy test:clean",
-    "babel:watch": "npx babel src -d dist --source-maps --copy-files --watch",
-    "babel:build": "npx babel src -d dist --source-maps --copy-files",
-    "copy": "npx cp -f src/index.js dist/index.es.js",
+    "build": "npx npm-run-all --npm-path npm --serial clean build:babel build:post:**",
+    "build:babel": "npx npm-run-all --npm-path npm --parallel build:babel:*",
+    "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward src -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward src -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:babel:modern": "BABEL_ENV=modern npx babel --root-mode upward src -d dist/modern --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:post:clean-snapshots": "npx del-cli **/dist/**/tests",
+    "dev": "npx npm-run-all --npm-path npm clean dev:babel:watch",
+    "dev:babel:watch": "npx babel --root-mode upward src -d dist --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored --watch",
     "clean": "npx del-cli dist",
     "test": "jest -c config/jest-config.js --coverage",
     "test:watch": "jest -c config/jest-config.js --watch",
     "test:update": "jest -c ./config/jest-config.js --u",
-    "test:clean": "npx del-cli dist/**/tests",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "link": "npm link",
     "lint:prettier": "npx prettier --config ../../prettier.config.js --check \"src/**/*.js\"",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
-    "ts-check": "npx tsc -p tsconfig.json"
+    "ts-check": "npx tsc -p ."
   },
   "peerDependencies": {
     "@material-ui/core": "^4.11.0",
@@ -40,6 +47,8 @@
   "dependencies": {
     "@hv/uikit-react-core": "^3.6.0",
     "@hv/uikit-react-icons": "^3.1.0",
+    "core-js": "^3.8.1",
+    "@babel/runtime": "^7.12.5",
     "clsx": "^1.1.1",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
@@ -49,18 +58,6 @@
     "rc-tooltip": "^3.7.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-transform-regenerator": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/runtime": "^7.11.2",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.3.0",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-module-resolver": "^4.0.0",
     "cash-cp": "^0.2.0",
     "del-cli": "^3.0.1",
     "enzyme": "^3.11.0",

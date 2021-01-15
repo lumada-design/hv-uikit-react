@@ -9,7 +9,7 @@ export default {
   title: "Forms/Input",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvInput } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvInput } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

@@ -6,7 +6,7 @@ export default {
   title: "Lab/CodeEditor",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCodeEditor } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvCodeEditor } from "@hv/uikit-react-lab"',
     deprecated: true,
     compNameToUse: "the one available in the @hv/uikit-react-code-editor package",
   },

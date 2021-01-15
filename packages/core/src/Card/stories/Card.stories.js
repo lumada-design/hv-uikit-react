@@ -32,7 +32,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage:
-      "import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from '@hv/uikit-react-core/dist'",
+      'import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from "@hv/uikit-react-core"',
 
     dsVersion: "3.3.0",
   },

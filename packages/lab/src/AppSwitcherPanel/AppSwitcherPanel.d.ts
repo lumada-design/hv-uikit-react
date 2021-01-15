@@ -3,8 +3,17 @@ import { StandardProps } from "@material-ui/core";
 
 import { HvAppSwitcherPanelActionApplication } from "./Action";
 
+export type HvAppSwitcherPanelClassKey =
+  | "root"
+  | "open"
+  | "headerContainer"
+  | "titleContainer"
+  | "title"
+  | "actionsContainer"
+  | "footerContainer";
+
 export interface HvAppSwitcherPanelProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>> {
+  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherPanelClassKey> {
   /**
    * Flag stating if the panel is opened or closed.
    */
@@ -20,11 +29,11 @@ export interface HvAppSwitcherPanelProps
   /**
    * Element to be added to the header container, if none is provided a label with the title will be added.
    */
-  header?: React.ReactHTMLElement;
+  header?: React.ReactNode;
   /**
    * Element to be added to the footer container.
    */
-  footer?: React.ReactHTMLElement;
+  footer?: React.ReactNode;
   /**
    * Triggered when an action is clicked.
    */
@@ -35,11 +44,7 @@ export interface HvAppSwitcherPanelProps
   /**
    * Must return a boolean stating if the action element is selected or not.
    */
-  isActionSelectedCallback?: (
-    application?: HvAppSwitcherPanelActionApplication
-  ) => boolean;
+  isActionSelectedCallback?: (application?: HvAppSwitcherPanelActionApplication) => boolean;
 }
 
-export default function HvAppSwitcherPanel(
-  props: HvAppSwitcherPanelProps
-): JSX.Element | null;
+export default function HvAppSwitcherPanel(props: HvAppSwitcherPanelProps): JSX.Element | null;

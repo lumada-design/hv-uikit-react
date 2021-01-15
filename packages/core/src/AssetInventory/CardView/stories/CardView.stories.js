@@ -20,7 +20,7 @@ export default {
   title: "Components/Asset Inventory/Card View",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCardView } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvCardView } from "@hv/uikit-react-core"',
   },
   component: HvCardView,
   decorators: [

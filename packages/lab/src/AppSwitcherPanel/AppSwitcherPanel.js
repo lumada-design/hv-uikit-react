@@ -34,25 +34,25 @@ export default class AppSwitcherPanel extends Component {
       }
     };
 
-    const panelActions = applications.map((application, index) => {
+    const panelActions = applications.map((application) => {
       if (application.name && application.url) {
         return (
           <Action
-            key={index}
+            key={application.url}
             application={application}
             onClickCallback={actionClicked}
             isSelectedCallback={isActionSelectedCallback}
           />
         );
       }
+
+      return undefined;
     });
 
     return (
       <div id={internalId} className={`${classes.root} ${isOpen ? classes.open : ""}`}>
         <div className={classes.headerContainer}>
-          {header ? (
-            header
-          ) : (
+          {header || (
             <div className={classes.titleContainer}>
               <div className={classes.title} title={title}>
                 {title}
@@ -68,10 +68,19 @@ export default class AppSwitcherPanel extends Component {
 }
 
 AppSwitcherPanel.propTypes = {
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.shape({}).isRequired,
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    open: PropTypes.string,
+    headerContainer: PropTypes.string,
+    titleContainer: PropTypes.string,
+    title: PropTypes.string,
+    actionsContainer: PropTypes.string,
+    footerContainer: PropTypes.string,
+  }).isRequired,
   /**
    * Flag stating if the panel is opened or closed.
    */
@@ -132,17 +141,17 @@ AppSwitcherPanel.propTypes = {
   /**
    * Triggered when an action is clicked.
    */
-  onActionClickedCallback: PropTypes.element.func,
+  onActionClickedCallback: PropTypes.func,
   /**
    * Must return a boolean stating if the action element is selected or not.
    */
-  isActionSelectedCallback: PropTypes.element.func,
+  isActionSelectedCallback: PropTypes.func,
 };
 
 AppSwitcherPanel.defaultProps = {
   isOpen: false,
   title: "Apps",
   footer: undefined,
-  onActionClickedCallback: (event, application) => {},
+  onActionClickedCallback: () => {},
   isActionSelectedCallback: () => false,
 };

@@ -39,8 +39,7 @@ export default {
   title: "Components/Asset Inventory",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAssetInventory } from '@hv/uikit-react-core/dist'",
-
+    usage: 'import { HvAssetInventory } from "@hv/uikit-react-core"',
     dsVersion: "3.3.0",
   },
   component: HvAssetInventory,

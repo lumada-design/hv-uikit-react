@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Close from "@hv/uikit-react-icons/dist/CloseXS";
+import { CloseXS } from "@hv/uikit-react-icons";
 
 import HvProvider from "../../../Provider";
 import HvAdornment from "../Adornment";
@@ -13,7 +13,7 @@ describe("Adornment", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvAdornment icon={<Close />} />
+        <HvAdornment icon={<CloseXS />} />
       </HvProvider>
     );
   });

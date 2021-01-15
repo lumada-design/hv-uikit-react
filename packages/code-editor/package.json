@@ -4,8 +4,13 @@
   "description": "A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) using the Hitachi Vantara's Design System styles.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/modern/index.js",
+    "./dist/": "./dist/modern/"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/legacy/index.js",
   "typings": "dist/index.d.ts",
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
@@ -15,28 +20,31 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "npm-run-all clean babel:watch copy",
-    "build": "npm-run-all clean babel:build copy test:clean",
-    "babel:watch": "npx babel src -d dist --source-maps --copy-files --watch",
-    "babel:build": "npx babel src -d dist --source-maps --copy-files",
-    "copy": "npx cp -f src/index.js dist/index.es.js",
+    "build": "npx npm-run-all --npm-path npm --serial clean build:babel build:post:**",
+    "build:babel": "npx npm-run-all --npm-path npm --parallel build:babel:*",
+    "build:babel:node": "BABEL_ENV=commonjs npx babel --root-mode upward src -d dist --source-maps --extensions '.js,.jsx' --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward src -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:babel:modern": "BABEL_ENV=modern npx babel --root-mode upward src -d dist/modern --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
+    "build:post:clean-snapshots": "npx del-cli **/dist/**/tests",
+    "dev": "npx npm-run-all --npm-path npm clean dev:babel:watch",
+    "dev:babel:watch": "BABEL_ENV=commonjs npx babel --root-mode upward src -d dist --extensions '.js,.jsx' --source-maps --copy-files --ignore '**/tests','**/stories' --no-copy-ignored --watch",
     "clean": "npx del-cli dist",
-    "test:clean": "npx del-cli dist/**/tests",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "link": "npm link",
     "lint:prettier": "npx prettier --config ../../prettier.config.js --check \"src/**/*.js\"",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
-    "ts-check": "npx tsc -p tsconfig.json"
+    "ts-check": "npx tsc -p ."
   },
   "peerDependencies": {
     "@hv/uikit-react-core": "^3.5.0",
     "@material-ui/core": "^4.11.0",
-    "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-monaco-editor": "^0.36.0"
   },
   "dependencies": {
+    "core-js": "^3.8.1",
+    "@babel/runtime": "^7.12.5",
     "clsx": "^1.1.1",
     "deep-diff": "^1.0.2",
     "detect-browser": "^5.1.1",
@@ -52,21 +60,8 @@
     "shallow-equal": "^1.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-transform-regenerator": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/preset-typescript": "^7.10.4",
     "@hv/uikit-react-icons": "^3.0.1",
     "@types/lodash": "^4.14.161",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-module-resolver": "^4.0.0",
-    "babel-plugin-optimize-clsx": "^2.6.1",
-    "babel-plugin-typescript-to-proptypes": "^1.4.1",
     "cash-cp": "^0.2.0",
     "cross-env": "^7.0.2",
     "del-cli": "^3.0.1",

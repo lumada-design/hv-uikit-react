@@ -21,7 +21,7 @@ import {
   LightOn,
   Unlock,
   Lock,
-} from "@hv/uikit-react-icons/dist";
+} from "@hv/uikit-react-icons";
 import Eye from "./Eye";
 
 import { HvToggleButton, HvTooltip, HvTypography } from "../..";
@@ -48,7 +48,7 @@ export default {
   title: "Components/Toggle Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvToggleButton } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvToggleButton } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

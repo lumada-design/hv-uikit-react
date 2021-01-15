@@ -6,7 +6,7 @@ export default {
   title: "Forms/Radio Button Group",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvRadioGroup } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvRadioGroup } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
     dsVersion: "3.3.0",
   },

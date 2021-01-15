@@ -1,6 +1,5 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { TimeFormat } from "./enums";
 
 export interface TimePickerLabel {
   /**
@@ -12,6 +11,22 @@ export interface TimePickerLabel {
    */
   placeholder: string;
 }
+
+export type HvTimePickerClassKey =
+  | "input"
+  | "inputPopperOpenedBelow"
+  | "inputPopperOpenedAbove"
+  | "inputPopperClosed"
+  | "inputContainer"
+  | "icon"
+  | "timePickerContainer"
+  | "label"
+  | "timePopperContainer"
+  | "popper"
+  | "popperBelow"
+  | "popperAbove"
+  | "separator"
+  | "periodContainer";
 
 export interface HvTimePickerProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvTimePickerClassKey> {
@@ -56,23 +71,7 @@ export interface HvTimePickerProps
    *
    * It is always invoked with the hours in a 24h format
    */
-  onChange?: (timeIn24Format: object) => {};
+  onChange?: (timeIn24Format: object) => void;
 }
-
-export type HvTimePickerClassKey =
-  | "input"
-  | "inputPopperOpenedBelow"
-  | "inputPopperOpenedAbove"
-  | "inputPopperClosed"
-  | "inputContainer"
-  | "icon"
-  | "timePickerContainer"
-  | "label"
-  | "timePopperContainer"
-  | "popper"
-  | "popperBelow"
-  | "popperAbove"
-  | "separator"
-  | "periodContainer";
 
 export default function HvTimePicker(props: HvTimePickerProps): JSX.Element | null;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import addons from "@storybook/addons";
-import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import { HvProvider } from "@hv/uikit-react-core";
 import DocsPage from "./blocks/DocsPage";
 import DocsContainer from "./blocks/DocsContainer";
 import { getTheme, UIKIT_THEME } from "./theme";

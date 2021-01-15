@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Info } from "@hv/uikit-react-icons/dist";
+import { Info } from "@hv/uikit-react-icons";
 import { HvButton, HvBanner, HvBannerContent, HvTypography } from "../..";
 
 /* eslint-disable react/prop-types */
@@ -8,7 +8,7 @@ export default {
   title: "Components/Banner",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBanner } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvBanner } from "@hv/uikit-react-core"',
     dsVersion: "3.3.0",
   },
   component: HvBanner,

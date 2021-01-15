@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  HvInput,
-  HvButton,
-  HvCheckBoxGroup,
-  HvCheckBox,
-  HvDropdown,
-} from "@hv/uikit-react-core/dist";
+import { HvInput, HvButton, HvCheckBoxGroup, HvCheckBox, HvDropdown } from "@hv/uikit-react-core";
 
 const validate = (data) =>
   new Promise((resolve, reject) => {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import map from "lodash/map";
 import { withStyles } from "@material-ui/core";
-import { HvBadge } from "@hv/uikit-react-core/dist";
+import { HvBadge } from "@hv/uikit-react-core";
 import Panel from "./Panel";
 import Notification from "./Notification";
 import styles from "./styles";
@@ -89,6 +89,8 @@ HvNotificationPanel.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    root: PropTypes.string,
+    iconWrapper: PropTypes.string,
     /**
      * styles object applied to the panel
      */
