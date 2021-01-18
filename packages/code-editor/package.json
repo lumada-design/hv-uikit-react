@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-code-editor",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A wrapper to the React Monaco editor (https://github.com/react-monaco-editor/react-monaco-editor) using the Hitachi Vantara's Design System styles.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -43,9 +43,9 @@
     "react-monaco-editor": "^0.36.0"
   },
   "dependencies": {
-    "core-js": "^3.8.1",
     "@babel/runtime": "^7.12.5",
     "clsx": "^1.1.1",
+    "core-js": "^3.8.1",
     "deep-diff": "^1.0.2",
     "detect-browser": "^5.1.1",
     "focus-trap-react": "^8.1.0",
@@ -60,7 +60,7 @@
     "shallow-equal": "^1.2.1"
   },
   "devDependencies": {
-    "@hv/uikit-react-icons": "^3.0.1",
+    "@hv/uikit-react-icons": "^3.1.1",
     "@types/lodash": "^4.14.161",
     "cash-cp": "^0.2.0",
     "cross-env": "^7.0.2",

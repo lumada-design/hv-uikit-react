@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-lab",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "A collection of contributed React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -45,11 +45,11 @@
     "react-monaco-editor": "^0.40.0"
   },
   "dependencies": {
-    "@hv/uikit-react-core": "^3.6.0",
-    "@hv/uikit-react-icons": "^3.1.0",
-    "core-js": "^3.8.1",
     "@babel/runtime": "^7.12.5",
+    "@hv/uikit-react-core": "^3.6.1",
+    "@hv/uikit-react-icons": "^3.1.1",
     "clsx": "^1.1.1",
+    "core-js": "^3.8.1",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
     "moment-timezone": "^0.5.31",
