@@ -16,6 +16,6 @@
     "eyes-storybook": "eyes-storybook"
   },
   "dependencies": {
-    "@applitools/eyes-storybook": "^3.14.0"
+    "@applitools/eyes-storybook": "^3.16.3"
   }
 }
