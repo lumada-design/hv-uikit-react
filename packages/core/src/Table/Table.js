@@ -81,7 +81,7 @@ const HvTable = (props) => {
     showPagination = true,
     showPageSize = true,
     dataSize,
-    pageSize = data.length,
+    pageSize,
     onPageSizeChange,
     onPageChange,
     pages,
@@ -93,7 +93,7 @@ const HvTable = (props) => {
   const [initiallyLoaded, setInitiallyLoaded] = useState(false);
   const [expanded, setExpanded] = useState({});
   const [currentPage, setCurrentPage] = useState(page || 0);
-  const [currentPageSize, setCurrentPageSize] = useState(pageSize);
+  const [currentPageSize, setCurrentPageSize] = useState(pageSize || data.length);
   const [selection, setSelection] = useState(selections || []);
   const tableRef = useRef(null);
 
@@ -105,7 +105,7 @@ const HvTable = (props) => {
   }, []);
 
   useEffect(() => {
-    if (page !== currentPage) setCurrentPage(page);
+    setCurrentPage(page);
   }, [page]);
 
   useEffect(() => {
@@ -127,16 +127,17 @@ const HvTable = (props) => {
   }, [data, idForCheckbox]);
 
   useEffect(() => {
-    // When showPagination is true, pageSize is totally managed by the pagination component.
-    // Avoid running the first time, when pageSize and currentPageSize will already be equal.
-    if (!showPagination && pageSize !== currentPageSize) {
-      setCurrentPageSize(pageSize);
-      onPageSizeChange?.(pageSize, currentPage);
-    }
+    const newPageSize = !pageSize && !showPagination ? data.length : pageSize;
 
-    // Need not track dependencies for onPageSizeChange and currentPage.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showPagination, pageSize]);
+    if (newPageSize) {
+      setCurrentPageSize((previousValue) => {
+        if (previousValue !== newPageSize) {
+          onPageSizeChange?.(newPageSize);
+        }
+        return newPageSize;
+      });
+    }
+  }, [data.length, pageSize, showPagination, onPageSizeChange]);
 
   /**
    * Returns data set with nulls replaced by em dashes.
@@ -193,7 +194,7 @@ const HvTable = (props) => {
         ...(pages && { pages }),
       }),
       page: currentPage,
-      pageSize: showPagination ? currentPageSize : pageSize,
+      pageSize: currentPageSize,
     };
   };
 
