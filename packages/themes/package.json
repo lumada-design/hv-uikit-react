@@ -22,6 +22,7 @@
     "build:to-scss": "json-to-scss \"src/*.*\" dist",
     "build:to-json": "npx cp -f src/*.json dist",
     "clean": "npx del-cli dist",
+    "prepublishOnly": "npm run build",
     "link": "npm link"
   },
   "devDependencies": {
