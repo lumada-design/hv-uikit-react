@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.6.2...@hv/uikit-react-core@3.6.3) (2021-01-20)
+
+
+### Bug Fixes
+
+* **table:** checkbox disabled not working.HVUIKIT-5679 ([5a19de5](https://github.com/pentaho/hv-uikit-react/commit/5a19de5b2c81f2639d380ede8b6da9c7be2be170))
+* **table:** ignores the provided pageSize property. HVUIKIT-5672 ([8fa57e2](https://github.com/pentaho/hv-uikit-react/commit/8fa57e23dd0a4ad212d40fa5893a8a092b59321a))
+
+
+
+
+
 ## [3.6.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.6.1...@hv/uikit-react-core@3.6.2) (2021-01-19)
 
 **Note:** Version bump only for package @hv/uikit-react-core
