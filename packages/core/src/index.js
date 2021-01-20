@@ -21,6 +21,7 @@ export { default as HvFooter } from "./Footer";
 export * from "./Forms";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";
+export * from "./Header";
 export { default as HvInput } from "./Input";
 export { default as HvSearchBox } from "./SearchBox";
 export { default as HvKpi } from "./Kpi";
@@ -46,13 +47,33 @@ export { default as HvToggleButton } from "./ToggleButton";
 export { default as HvTooltip } from "./Tooltip";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
+// TODO refactor the HvUserPreferences subcomponents' names
+export {
+  Actions as HvUserPreferencesActions,
+  Action as HvUserPreferencesAction,
+} from "./UserPreferences";
+export {
+  Options as HvUserPreferencesOptions,
+  Option as HvUserPreferencesOption,
+  Group as HvUserPreferencesOptionsGroup,
+  Label as HvUserPreferencesOptionsGroupLabel,
+} from "./UserPreferences";
+
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
+// TODO refactor the HvVerticalNavigation subcomponents' names
+export { Navigation as HvVerticalNavigationTree } from "./VerticalNavigation";
+export { TreeView as HvTreeView, TreeViewItem as HvTreeViewItem } from "./VerticalNavigation";
+export {
+  Actions as HvVerticalNavigationActions,
+  Action as HvVerticalNavigationAction,
+} from "./VerticalNavigation";
 
 // HOCs
 export { default as withId } from "./withId";
 export { default as withLabels } from "./withLabels";
 export { default as withSemantic } from "./withSemantic";
 export { default as withTooltip } from "./withTooltip";
+export { default as withDeprecated } from "./withDeprecated";
 
 // Hooks
 export { default as useWidth } from "./utils/useWidth";
