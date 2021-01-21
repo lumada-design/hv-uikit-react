@@ -100,9 +100,7 @@ const styles = (theme) => ({
       marginTop: -2,
     },
   },
-  infoText: {
-    display: "block",
-  },
+  infoText: {},
   infoIcon: {
     display: "none",
   },

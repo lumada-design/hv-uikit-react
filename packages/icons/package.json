@@ -28,10 +28,11 @@
     "build:babel:legacy": "BABEL_ENV=legacy npx babel --root-mode upward bin -d dist/legacy --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "build:babel:modern": "BABEL_ENV=modern npx babel --root-mode upward bin -d dist/modern --extensions '.js,.jsx' --source-maps --ignore '**/tests','**/stories' --copy-files --no-copy-ignored",
     "svg-optimize": "npx svgo --config=./svgo-config.yml -r -f assets assets",
-    "clean": "npx del-cli dist",
-    "clean:all": "npx del-cli dist bin",
+    "clean": "npx del-cli dist hv-uikit-react-icons-*.tgz",
+    "clean:all": "npx del-cli dist bin hv-uikit-react-icons-*.tgz",
     "prepare": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize --parallel build:convert build:copy",
     "prepack": "npm run build",
+    "pack": "npm pack",
     "link": "npm link",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
     "ts-check": "npx tsc -p ."

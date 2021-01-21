@@ -21,8 +21,9 @@
     "build": "npm-run-all clean build:*",
     "build:to-scss": "json-to-scss \"src/*.*\" dist",
     "build:to-json": "npx cp -f src/*.json dist",
-    "clean": "npx del-cli dist",
+    "clean": "npx del-cli dist hv-uikit-common-themes-*.tgz",
     "prepack": "npm run build",
+    "pack": "npm pack",
     "link": "npm link"
   },
   "devDependencies": {
