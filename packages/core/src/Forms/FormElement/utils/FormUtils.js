@@ -7,6 +7,7 @@ import isNil from "lodash/isNil";
  * @param {string} componentName - The name of the component this function should scan i.e.: HvHelperText.
  */
 const getDescriptorMap = (element, componentName) => {
+  // eslint-disable-next-line no-underscore-dangle
   if (element.type?.__docgenInfo?.displayName?.includes(componentName)) {
     return {
       id: element.props?.id,

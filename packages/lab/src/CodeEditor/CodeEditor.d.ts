@@ -1,5 +1,5 @@
-import * as React from "react";
 import { MonacoEditorProps } from "react-monaco-editor";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { editor } from "monaco-editor";
 
 export type HvCodeEditorProps = {

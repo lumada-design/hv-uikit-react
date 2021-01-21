@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
+// TODO review aria-disabled and aria-expanded added conditionally to a no tree item li
+
 import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";

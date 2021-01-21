@@ -42,7 +42,7 @@ export const YamlEditor = () => {
         },
       }}
       editorProps={{}}
-      language={"yaml"}
+      language="yaml"
       onChange={(input) => console.log(input)}
       value={defaultValueYaml}
     />

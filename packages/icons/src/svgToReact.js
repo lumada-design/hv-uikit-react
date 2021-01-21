@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable import/no-extraneous-dependencies */
 // Vendor includes
 const fs = require("fs"); // file system
 const recursive = require("recursive-readdir");
@@ -20,6 +22,25 @@ const sizeExtractor = require("./sizeUtils/sizeExtractor");
 const sizeReplacer = require("./sizeUtils/sizeReplacer");
 
 const printErrors = console.warn;
+
+// Argument setup
+const args = yargs // reading arguments from the command line
+  .option("format", { default: true })
+  .option("output", { alias: "o" })
+  .option("input", { alias: "i" })
+  .option("rm-style", { default: false })
+  .option("force", { alias: "f", default: false }).argv;
+
+// Resolve arguments
+const firstArg = args._[0];
+const newFileName = args._[1] || "MyComponent";
+const outputPath = args.output;
+const inputPath = args.input;
+const { rmStyle, format } = args;
+
+// Bootstrap base variables
+const converter = new HTMLtoJSX({ createClass: false }); // instantiate a the html to jsx converter
+const svg = `./${firstArg}.svg`; // append the file extension
 
 const writeFile = (processedSVG, fileName) => {
   const componentOutputFolder = outputPath
@@ -62,7 +83,7 @@ const runUtil = (fileToRead, fileToWrite) => {
 
     let output = file;
 
-    jsdom.env(output, (err, window) => {
+    jsdom.env(output, (_err, window) => {
       const body = window.document.getElementsByTagName("body")[0];
 
       if (rmStyle) {
@@ -78,7 +99,7 @@ const runUtil = (fileToRead, fileToWrite) => {
       let defaultWidth = "50px";
       let defaultHeight = "50px";
       if (body.firstChild.hasAttribute("viewBox")) {
-        const [minX, minY, width, height] = body.firstChild.getAttribute("viewBox").split(/[,\s]+/);
+        const [, , width, height] = body.firstChild.getAttribute("viewBox").split(/[,\s]+/);
         defaultWidth = width;
         defaultHeight = height;
       }
@@ -137,7 +158,8 @@ const runUtil = (fileToRead, fileToWrite) => {
 const runUtilForAllInDir = () => {
   recursive(`${process.cwd()}/${inputPath}`, (err, files) => {
     if (err) {
-      return console.log(err);
+      console.log(err);
+      return;
     } // GEt out early if not found
     files.forEach((file) => {
       const extention = path.extname(file); // extract extensions
@@ -151,25 +173,6 @@ const runUtilForAllInDir = () => {
     });
   });
 };
-
-// Argument setup
-const args = yargs // reading arguments from the command line
-  .option("format", { default: true })
-  .option("output", { alias: "o" })
-  .option("input", { alias: "i" })
-  .option("rm-style", { default: false })
-  .option("force", { alias: "f", default: false }).argv;
-
-// Resolve arguments
-const firstArg = args._[0];
-const newFileName = args._[1] || "MyComponent";
-const outputPath = args.output;
-const inputPath = args.input;
-const { rmStyle, format } = args;
-
-// Bootstrap base variables
-const converter = new HTMLtoJSX({ createClass: false }); // instantiate a the html to jsx converter
-const svg = `./${firstArg}.svg`; // append the file extension
 
 // Exit out early arguments
 if (args.help) {

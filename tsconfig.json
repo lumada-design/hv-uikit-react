@@ -4,6 +4,7 @@
     "target": "es5",
     "lib": ["es6", "dom"],
     "jsx": "react",
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -15,8 +16,14 @@
     "allowJs": true,
     "paths": {
       "@hv/uikit-react-core": ["./packages/core/src"],
-      "@hv/uikit-react-core/*": ["./packages/core/src/*"]
-    }
+      "@hv/uikit-react-core/dist/*": ["./packages/core/src/*"],
+      "@hv/uikit-react-icons": ["./packages/core/bin"],
+      "@hv/uikit-react-icons/dist/*": ["./packages/icons/bin/*"]
+    },
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   },
   "exclude": ["**/dist/"]
 }

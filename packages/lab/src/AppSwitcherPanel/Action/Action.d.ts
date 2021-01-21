@@ -1,24 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-export interface HvAppSwitcherPanelActionProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>> {
-  /**
-   * The application data to be used to render the Action object.
-   */
-  application: HvAppSwitcherPanelActionApplication;
-  /**
-   * Callback triggered when the action is clicked.
-   */
-  onClickCallback?: (event: MouseEvent, application?: HvAppSwitcherPanelActionApplication) => void;
-  /**
-   * Must return a boolean stating if the action element is selected or not.
-   */
-  isSelectedCallback?: (
-    application?: HvAppSwitcherPanelActionApplication
-  ) => boolean;
-}
-
 export interface HvAppSwitcherPanelActionApplication {
   /**
    * Id of the application.
@@ -37,7 +19,7 @@ export interface HvAppSwitcherPanelActionApplication {
    * Element to be added as the icon representing the application.
    * The iconElement will be the primary option to be displayed.
    */
-  iconElement?: React.ReactHTMLElement;
+  iconElement?: React.ReactNode;
   /**
    * Small description of the application.
    */
@@ -54,6 +36,30 @@ export interface HvAppSwitcherPanelActionApplication {
    * True when the application is selected, false otherwise.
    */
   isSelected?: boolean;
+}
+
+export type HvAppSwitcherPanelActionClassKey =
+  | "iconUrl"
+  | "dummyImage"
+  | "link"
+  | "typography"
+  | "selected"
+  | "iconInfo";
+
+export interface HvAppSwitcherPanelActionProps
+  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherPanelActionClassKey> {
+  /**
+   * The application data to be used to render the Action object.
+   */
+  application: HvAppSwitcherPanelActionApplication;
+  /**
+   * Callback triggered when the action is clicked.
+   */
+  onClickCallback?: (event: MouseEvent, application?: HvAppSwitcherPanelActionApplication) => void;
+  /**
+   * Must return a boolean stating if the action element is selected or not.
+   */
+  isSelectedCallback?: (application?: HvAppSwitcherPanelActionApplication) => boolean;
 }
 
 export default function HvAppSwitcherPanelAction(

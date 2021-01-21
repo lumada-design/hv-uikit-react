@@ -1,9 +1,10 @@
 /* eslint-disable no-alert */
 import * as React from "react";
 
-import HvNotificationPanel from "../NotificationPanel";
 import { Alert, Close, Level5 } from "@hv/uikit-react-icons";
 import withStyles from "@material-ui/core/styles/withStyles";
+
+import HvNotificationPanel from "../NotificationPanel";
 
 export default {
   title: "Lab/Notification Panel",

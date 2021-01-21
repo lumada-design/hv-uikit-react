@@ -36,34 +36,11 @@ Loading.propTypes = {
    *  Styles applied to the Drawer Paper element.
    */
   classes: PropTypes.PropTypes.shape({
-    /**
-     * The class applied on the text area input box.
-     */
-    input: PropTypes.string,
-    /**
-     * The class applied on the character counter.
-     */
-    characterCounter: PropTypes.string,
-    /**
-     * The class controlling the layout of the counter.
-     */
-    inline: PropTypes.string,
-    /**
-     * The class applied to the separator element of the character counter.
-     */
-    separator: PropTypes.string,
-    /**
-     * The class applied to the max counter element of the character counter.
-     */
-    maxCharacter: PropTypes.string,
-    /**
-     * The class applied to the current counter element of the character counter.
-     */
-    currentCounter: PropTypes.string,
-    /**
-     * The class applied to the character counter when it is disabled.
-     */
-    disabled: PropTypes.string,
+    loadingBar: PropTypes.string,
+    loadingText: PropTypes.string,
+    loading: PropTypes.string,
+    centerPosition: PropTypes.string,
+    inlinePosition: PropTypes.string,
   }).isRequired,
   /**
    * The size of the loading indicator.
@@ -84,7 +61,6 @@ Loading.defaultProps = {
   size: "regular",
   position: "center",
   text: "",
-  classes: {},
 };
 
 export default withDeprecated(

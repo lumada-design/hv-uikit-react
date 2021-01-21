@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Creates a standardized component name from a given gile and filename
  * @param  string fileData

@@ -24,6 +24,8 @@ export type Semantic =
 
 export type IconSize = "XS" | "S" | "M" | "L" | "XL";
 
+export type HvIconBaseClassKey = "root" | "rootXs" | "rootS" | "rootM" | "rootL";
+
 export interface HvIconBaseProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvIconBaseClassKey, "color"> {
   /**
@@ -67,7 +69,5 @@ export interface HvIconBaseProps
    */
   boxStyles?: any;
 }
-
-export type HvIconBaseClassKey = "root" | "rootXs" | "rootS" | "rootM" | "rootL";
 
 export default function HvIconBase(props: HvIconBaseProps): JSX.Element | null;

@@ -1,6 +1,9 @@
-const javascriptFileExtensions = [".js", ".jsx"];
+const { resolve } = require("path");
+
+const javascriptFileExtensions = [".js", ".jsx", ".ts", ".tsx"];
 
 module.exports = {
+  root: true,
   extends: ["airbnb", "prettier", "prettier/@typescript-eslint"],
   plugins: ["prettier", "react-hooks", "@typescript-eslint"],
   parser: "babel-eslint",
@@ -15,7 +18,7 @@ module.exports = {
 
     // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
     "no-unused-expressions": "off",
-
+    "react/forbid-prop-types": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -23,56 +26,84 @@ module.exports = {
         js: "never",
         jsx: "never",
         ts: "never",
-        tsx: "never"
-      }
-    ]
+        tsx: "never",
+      },
+    ],
   },
   overrides: [
     {
-      files: ["*.stories.js"],
+      files: ["*.stories.js", "*.stories.test.js"],
       rules: {
         "no-console": "off",
         "no-alert": "off",
-        "no-any": 0
-      }
+        "no-any": 0,
+        "react/prop-types": "off",
+      },
     },
     {
-      files: ["*.ts"],
+      files: ["*.test.js"],
+      env: { jest: true },
+      rules: {
+        "import/no-unresolved": [2, { ignore: ["^testing-utils$"] }],
+      },
+    },
+    {
+      files: ["*.ts", "*.tsx"],
       env: { browser: true, es6: true, node: true },
       rules: {
-        "@typescript-eslint/no-explicit-any": "off"
+        // TODO fix all uses before define...
+        "no-use-before-define": "off",
+
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            types: {
+              object: false,
+              Function: false,
+            },
+          },
+        ],
       },
       extends: [
         "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/@typescript-eslint",
       ],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         ecmaFeatures: { jsx: true },
         ecmaVersion: 2020,
         sourceType: "module",
-        project: "./tsconfig.json"
+        tsconfigRootDir: __dirname,
+        project: ["./tsconfig.json"],
       },
       plugins: ["@typescript-eslint"],
       settings: {
         "import/resolver": {
           typescript: {
-            directory: "./packages/*/tsconfig.json"
-          }
-        }
-      }
-    }
+            project: resolve(__dirname, "./packages/*/tsconfig.json"),
+          },
+        },
+      },
+    },
   ],
   settings: {
+    "import/resolver": {
+      node: {},
+      webpack: {
+        config: resolve(__dirname, "./config/eslint.webpack.js"),
+      },
+    },
     react: {
       pragma: "React",
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   env: {
     browser: true,
     node: true,
-    jest: true
-  }
+    jest: true,
+  },
 };

@@ -37,7 +37,7 @@
     "link": "npm link",
     "lint:prettier": "npx prettier --check \"src/**/*.js\"",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
-    "ts-check": "npx tsc -p tsconfig.json"
+    "ts-check": "npx tsc -p ."
   },
   "peerDependencies": {
     "@material-ui/core": "~4.8.0",

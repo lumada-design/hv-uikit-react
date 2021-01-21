@@ -1,9 +1,10 @@
 /* eslint-disable no-alert */
 import * as React from "react";
+import { useState } from "react";
 
 import { HvButton } from "@hv/uikit-react-core";
+
 import HvSlider from "../index";
-import { useState } from "react";
 
 export default {
   title: "Lab/Slider",
