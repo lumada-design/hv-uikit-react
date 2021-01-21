@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { useMediaQuery, useTheme, withStyles } from "@material-ui/core";
-import { Settings, User } from "@hv/uikit-react-icons/dist";
-import VerticalNavigation, {
-  Action,
-  Actions,
-  Navigation
-} from "@hv/uikit-react-core/dist/VerticalNavigation";
+import { Settings, User } from "@hv/uikit-react-icons";
+import {
+  HvVerticalNavigation,
+  HvVerticalNavigationTree,
+  HvVerticalNavigationActions,
+  HvVerticalNavigationAction,
+} from "@hv/uikit-react-core";
 import styles from "../views/detail/styles";
 import NavContext from "../hoc/NavContext";
 
@@ -19,7 +20,7 @@ const NavigationTemplate = ({ hasAnchor }) => {
     verticalNavData,
     verticalSelection,
     onVerticalSelection,
-    shouldBeOpen
+    shouldBeOpen,
   } = useContext(NavContext);
 
   const handleChange = (evt, selectedItem) => {
@@ -29,20 +30,24 @@ const NavigationTemplate = ({ hasAnchor }) => {
   return (
     <>
       {(verticalNavData.length || null) && (isMdUp || isOpen) && (
-        <VerticalNavigation
+        <HvVerticalNavigation
           position="fixed"
           isCollapsable={hasAnchor && isMdUp}
           isOpen={!isMdUp ? null : isOpen || (!hasAnchor && isMdUp)}
-          toggleOpenCallback={value => shouldBeOpen(value)}
+          toggleOpenCallback={(value) => shouldBeOpen(value)}
         >
-          <Navigation data={verticalNavData} selected={verticalSelection} onClick={handleChange} />
+          <HvVerticalNavigationTree
+            data={verticalNavData}
+            selected={verticalSelection}
+            onClick={handleChange}
+          />
           {!isMdUp && (
-            <Actions>
-              <Action label="Settings" icon={<Settings />} />
-              <Action label="Profile" icon={<User />} />
-            </Actions>
+            <HvVerticalNavigationActions>
+              <HvVerticalNavigationAction label="Settings" icon={<Settings />} />
+              <HvVerticalNavigationAction label="Profile" icon={<User />} />
+            </HvVerticalNavigationActions>
           )}
-        </VerticalNavigation>
+        </HvVerticalNavigation>
       )}
     </>
   );

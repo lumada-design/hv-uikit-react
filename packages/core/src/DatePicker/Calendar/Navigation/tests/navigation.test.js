@@ -1,7 +1,9 @@
 import React from "react";
 import { mount } from "enzyme";
-import HvDropLeftIcon from "@hv/uikit-react-icons/dist/DropLeftXS";
-import HvDropRightIcon from "@hv/uikit-react-icons/dist/DropRightXS";
+import {
+  DropLeftXS as HvDropLeftIcon,
+  DropRightXS as HvDropRightIcon,
+} from "@hv/uikit-react-icons";
 import HvProvider from "../../../../Provider";
 
 import Navigation from "..";

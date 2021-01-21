@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import isEmpty from "lodash/isEmpty";
-import { Map } from "@hv/uikit-react-icons/dist";
+import { Map } from "@hv/uikit-react-icons";
 import { HvButton, HvInput } from "../..";
 import countryNamesArray from "./countries";
 
@@ -8,7 +8,7 @@ export default {
   title: "Components/Input",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvInput } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvInput } from "@hv/uikit-react-core";',
   },
   component: HvInput,
 };

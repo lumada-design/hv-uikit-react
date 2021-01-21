@@ -8,7 +8,7 @@ export default {
   title: "Components/Forms/Suggestions",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSuggestions } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvSuggestions } from "@hv/uikit-react-core";',
   },
   component: HvSuggestions,
   decorators: [

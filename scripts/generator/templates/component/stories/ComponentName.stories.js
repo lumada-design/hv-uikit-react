@@ -5,7 +5,7 @@ export default {
   title: "Components/ComponentName",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvComponentName } from '@hv/uikit-react-core/dist'"
+    usage: 'import { HvComponentName } from "@hv/uikit-react-core";'
   },
   component: HvComponentName
 };

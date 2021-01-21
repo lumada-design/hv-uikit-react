@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import * as React from "react";
 
-import { HvButton } from "@hv/uikit-react-core/dist";
+import { HvButton } from "@hv/uikit-react-core";
 import HvSlider from "../index";
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ export default {
   title: "Lab/Slider",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSlider } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvSlider } from "@hv/uikit-react-lab";',
   },
   component: HvSlider,
   decorators: [(storyFn) => <div style={{ height: "45px" }}>{storyFn()}</div>],

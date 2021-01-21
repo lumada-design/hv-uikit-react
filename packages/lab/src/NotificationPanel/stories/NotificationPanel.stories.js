@@ -2,14 +2,14 @@
 import * as React from "react";
 
 import HvNotificationPanel from "../NotificationPanel";
-import { Alert, Close, Level5 } from "@hv/uikit-react-icons/dist";
+import { Alert, Close, Level5 } from "@hv/uikit-react-icons";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 export default {
   title: "Lab/Notification Panel",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvNotificationsPanel } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvNotificationsPanel } from "@hv/uikit-react-lab";',
   },
   component: HvNotificationPanel,
   decorators: [(storyFn) => <div style={{ height: "600px" }}>{storyFn()}</div>],

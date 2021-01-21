@@ -1,5 +1,5 @@
 import React from "react";
-import { Fail, Success } from "@hv/uikit-react-icons/dist";
+import { Fail, Success } from "@hv/uikit-react-icons";
 
 const iconVariants = (variant) => {
   switch (variant) {

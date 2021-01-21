@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
+import { Calendar as CalendarIcon } from "@hv/uikit-react-icons";
 import HvProvider from "../../Provider";
 import Typography from "../../Typography";
 

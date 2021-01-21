@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import Separator from "@hv/uikit-react-icons/dist/DropRightXS";
-import MoreOptions from "@hv/uikit-react-icons/dist/MoreOptionsHorizontal";
+import {
+  DropRightXS as Separator,
+  MoreOptionsHorizontal as MoreOptions,
+} from "@hv/uikit-react-icons";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import HvTypography from "../Typography";

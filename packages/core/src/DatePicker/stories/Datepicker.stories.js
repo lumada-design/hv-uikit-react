@@ -6,7 +6,7 @@ export default {
   title: "Components/Date Picker",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvDatePicker } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvDatePicker } from "@hv/uikit-react-core";',
   },
   component: HvDatePicker,
   decorators: [(storyFn) => <div style={{ height: "600px" }}>{storyFn()}</div>],

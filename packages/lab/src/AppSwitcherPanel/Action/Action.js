@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import { Info } from "@hv/uikit-react-icons/dist";
+import { HvTypography } from "@hv/uikit-react-core";
+import { Info } from "@hv/uikit-react-icons";
 
 export default class Action extends Component {
   constructor(props) {

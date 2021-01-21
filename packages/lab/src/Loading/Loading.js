@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isEmpty from "lodash/isEmpty";
 import { withStyles } from "@material-ui/core";
-import withDeprecate from "@hv/uikit-react-core/dist/withDeprecated";
-import { HvTypography } from "@hv/uikit-react-core/dist";
+import { HvTypography, withDeprecated } from "@hv/uikit-react-core";
 import styles from "./styles";
 
 /**
@@ -88,7 +87,7 @@ Loading.defaultProps = {
   classes: {},
 };
 
-export default withDeprecate(
+export default withDeprecated(
   withStyles(styles, { name: "HvLoading" })(Loading),
   "Please use the Loading component in the Core Package"
 );

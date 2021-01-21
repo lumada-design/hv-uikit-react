@@ -9,7 +9,7 @@ export default {
   title: "Components/Bulk Actions",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBulkActions } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvBulkActions } from "@hv/uikit-react-core";',
   },
   component: HvBulkActions,
   decorators: [

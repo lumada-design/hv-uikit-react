@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { useMediaQuery, useTheme, withStyles } from "@material-ui/core";
-import { Alert, Menu, Settings, User } from "@hv/uikit-react-icons/dist";
-import { HvBadge, HvButton } from "@hv/uikit-react-core/dist";
-import HvHeader, {
+import { Alert, Menu, Settings, User } from "@hv/uikit-react-icons";
+import {
+  HvBadge,
+  HvButton,
+  HvHeader,
   HvHeaderActions,
   HvHeaderBrand,
-  HvHeaderNavigation
-} from "@hv/uikit-react-core/dist/Header";
+  HvHeaderNavigation,
+} from "@hv/uikit-react-core";
 import HitachiLogo from "../../resources/HitachiLogo";
 import styles from "../views/detail/styles";
 import NavContext from "../hoc/NavContext";
@@ -30,7 +32,7 @@ const NavigationTemplate = () => {
     shouldBeOpen();
   };
 
-  const handleClick = evt => console.log(evt);
+  const handleClick = (evt) => console.log(evt);
 
   return (
     <HvHeader position="fixed">

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import clsx from "clsx";
-import { HvLoginContainer } from "@hv/uikit-react-core/dist";
-import Header, { HvHeaderBrand } from "@hv/uikit-react-core/dist/Header";
+import { HvLoginContainer, HvHeader, HvHeaderBrand } from "@hv/uikit-react-core";
 import LoginForm from "./LoginForm";
 import RecoverForm from "./RecoverForm";
 import { authenticate, recoverPassword } from "./utils";
@@ -12,7 +10,7 @@ const Login = ({ classes }) => {
   const [recoverStatus, setRecoverStatus] = useState("idle");
   const [activeForm, setActiveForm] = useState("login");
 
-  const login = async credentials => {
+  const login = async (credentials) => {
     try {
       setAuthStatus("pending");
       await authenticate(credentials);
@@ -24,7 +22,7 @@ const Login = ({ classes }) => {
     }
   };
 
-  const recover = async email => {
+  const recover = async (email) => {
     try {
       setRecoverStatus("pending");
       await recoverPassword(email);
@@ -44,21 +42,21 @@ const Login = ({ classes }) => {
 
   return (
     <>
-      <Header id="header">
+      <HvHeader id="header">
         <HvHeaderBrand logo={<HitachiLogo />} name="Maintenance Insights" />
-      </Header>
+      </HvHeader>
       <HvLoginContainer className={classes.root}>
         {activeForm === "login" ? (
           <LoginForm
             status={authStatus}
-            onSubmit={credentials => login(credentials)}
+            onSubmit={(credentials) => login(credentials)}
             onRecover={() => setActiveForm("recover")}
             onRemenber={() => {}}
           />
         ) : (
           <RecoverForm
             status={recoverStatus}
-            onSubmit={email => recover(email)}
+            onSubmit={(email) => recover(email)}
             onCancel={() => setActiveForm("login")}
           />
         )}

@@ -5,7 +5,7 @@ export default {
   title: "Components/Forms/Base Input",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvBaseInput } from "@hv/uikit-react-core";',
   },
   component: HvBaseInput,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

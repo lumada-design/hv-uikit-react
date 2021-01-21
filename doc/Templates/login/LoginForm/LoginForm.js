@@ -7,7 +7,7 @@ import {
   HvLabel,
   HvBaseInput,
   HvCheckBox
-} from "@hv/uikit-react-core/dist";
+} from "@hv/uikit-react-core";
 import Message from "../Message";
 
 const DUMMY_CREDENTIALS = { username: "admin", password: "password" };

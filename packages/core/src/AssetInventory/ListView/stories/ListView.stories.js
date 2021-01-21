@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core";
-import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
+import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons";
 import { HvListView, HvListViewCell, HvListViewRow, HvTypography } from "../../..";
 
 /* eslint-disable react/prop-types */
@@ -9,7 +9,7 @@ export default {
   title: "Components/Asset Inventory/List View",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvListView, HvListViewRow, HvListViewCell } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvListView, HvListViewRow, HvListViewCell } from "@hv/uikit-react-core";',
   },
   component: HvListView,
   subcomponents: { HvListViewRow, HvListViewCell },

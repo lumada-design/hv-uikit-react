@@ -1,10 +1,12 @@
 import React from "react";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import Grid from "@hv/uikit-react-core/dist/Grid";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import { Level0Good as Good } from "@hv/uikit-react-icons/dist";
-import Linechart from "@hv/uikit-react-core/dist/Linechart";
-import Barchart from "@hv/uikit-react-core/dist/Barchart";
+import {
+  HvTypography,
+  HvGrid as Grid,
+  HvKpi,
+  HvLinechart as Linechart,
+  HvBarchart as Barchart,
+} from "@hv/uikit-react-core";
+import { Level0Good as Good } from "@hv/uikit-react-icons";
 import Table from "./table/Table";
 import data from "../../data/tableInventoryData";
 import getColumns from "../../configuration/tableConfiguration";
@@ -16,10 +18,10 @@ const labels = {
   indicator: "124 14",
   unit: "",
   comparisonIndicatorInfo: "vs last 24h.",
-  comparisonIndicator: "10%"
+  comparisonIndicator: "10%",
 };
 
-const averageComparisonVisualAverage = classes => (
+const averageComparisonVisualAverage = (classes) => (
   <div className={classes.kpi}>
     <div className={classes.kpiInner} />
     <HvTypography className={classes.kpiTypography} variant="highlightText">

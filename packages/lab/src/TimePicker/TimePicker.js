@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
 import clsx from "clsx";
-import Typography from "@hv/uikit-react-core/dist/Typography";
-import TimeIcon from "@hv/uikit-react-icons/dist/Time";
+import { HvTypography } from "@hv/uikit-react-core";
+import { Time as TimeIcon } from "@hv/uikit-react-icons";
 import UnitTimePicker from "./UnitTimePicker";
 import { TimePickerUnits, TimeFormat } from "./enums";
 import { getPeriodForDate } from "./timePickerUtils";
@@ -202,9 +202,9 @@ class HvTimePicker extends React.Component {
   renderLabel = () => {
     const { classes, labels } = this.props;
     return (
-      <Typography variant="labelText" className={classes.label}>
+      <HvTypography variant="labelText" className={classes.label}>
         {labels.title}
-      </Typography>
+      </HvTypography>
     );
   };
 

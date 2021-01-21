@@ -5,7 +5,7 @@ export default {
   title: "Components/Searchbox",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSearchBox } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvSearchBox } from "@hv/uikit-react-core";',
   },
   component: HvSearchBox,
 };
