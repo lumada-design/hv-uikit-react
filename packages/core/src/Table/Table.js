@@ -105,8 +105,9 @@ const HvTable = (props) => {
   }, []);
 
   useEffect(() => {
-    // don't nullify current page when page is not specified
-    setCurrentPage(page || 0);
+    if (page) {
+      setCurrentPage(page);
+    }
   }, [page]);
 
   useEffect(() => {
@@ -129,6 +130,10 @@ const HvTable = (props) => {
 
   useEffect(() => {
     const newPageSize = !pageSize && !showPagination ? data.length : pageSize;
+
+    if (pages && currentPage === pages) {
+      setCurrentPage((previousValue) => previousValue - 1);
+    }
 
     if (newPageSize && currentPageSize !== newPageSize) {
       const newPage = Math.floor((currentPageSize * currentPage) / newPageSize);
