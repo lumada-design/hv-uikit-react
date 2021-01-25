@@ -8,3 +8,5 @@ export { default as HvTable } from "./Table";
 export * from "./Table";
 export { default as HvTimePicker } from "./TimePicker";
 export { default as HvTag } from "./Tag";
+
+export { default as HvCookiesConsentDialog } from "./CookiesConsentDialog";
