@@ -105,7 +105,9 @@ const HvTable = (props) => {
   }, []);
 
   useEffect(() => {
-    setCurrentPage(page);
+    if (page) {
+      setCurrentPage(page);
+    }
   }, [page]);
 
   useEffect(() => {
@@ -129,14 +131,18 @@ const HvTable = (props) => {
   useEffect(() => {
     const newPageSize = !pageSize && !showPagination ? data.length : pageSize;
 
-    if (newPageSize) {
-      setCurrentPageSize((previousValue) => {
-        if (previousValue !== newPageSize) {
-          onPageSizeChange?.(newPageSize);
-        }
-        return newPageSize;
-      });
+    if (pages && currentPage === pages) {
+      setCurrentPage((previousValue) => previousValue - 1);
     }
+
+    if (newPageSize && currentPageSize !== newPageSize) {
+      const newPage = Math.floor((currentPageSize * currentPage) / newPageSize);
+      setCurrentPage(newPage);
+      setCurrentPageSize(newPageSize);
+      onPageSizeChange?.(newPageSize, newPage);
+    }
+    // currentPage and currentPageSize don't need to be watched
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.length, pageSize, showPagination, onPageSizeChange]);
 
   /**
@@ -224,7 +230,9 @@ const HvTable = (props) => {
    * @returns {Object}
    */
   const getServerSideProps = () =>
-    paginationServerSide ? { page, manual: true, onFetchData: onFetchDataInternal } : {};
+    paginationServerSide
+      ? { page: currentPage, manual: true, onFetchData: onFetchDataInternal }
+      : {};
 
   /**
    * Add the class "sorted" to the selected column.
