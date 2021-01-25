@@ -4,6 +4,8 @@ export * from "./AppSwitcherPanel";
 export { default as HvCodeEditor } from "./CodeEditor";
 export * from "./CodeEditor";
 
+export * from "./CookiesConsent";
+
 export { default as HvFormComposer } from "./FormComposer";
 export * from "./FormComposer";
 
