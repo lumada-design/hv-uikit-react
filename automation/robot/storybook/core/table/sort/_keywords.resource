@@ -22,6 +22,10 @@ should sort column by descending
     ...   column should be sorted by descending    ${column}(4)
 
 should not be sortable
+    # bug-infrastructure-firefox 
+    # fails sporadically because the values in severity column are not present initially
+    # cannot be reproduced outside of automation. 
+    [Tags]    bug-infrastructure-firefox
     [Documentation]     does nothing when column is not sortable
     ${before}          get column values    ${column}(6)
     Click Element      ${header}(6)
