@@ -12,7 +12,7 @@ Array [
       <WithStyles(ForwardRef(Grid))
         classes={Object {}}
         container={true}
-        spacing={1}
+        spacing={2}
       >
         <ForwardRef(Grid)
           classes={
@@ -123,10 +123,10 @@ Array [
             }
           }
           container={true}
-          spacing={1}
+          spacing={2}
         >
           <div
-            className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+            className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
           >
             <WithStyles(HvGrid)
               item={true}
