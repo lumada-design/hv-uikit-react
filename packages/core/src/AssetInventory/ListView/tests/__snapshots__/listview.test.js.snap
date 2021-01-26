@@ -253,7 +253,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
               classes={Object {}}
               container={true}
               justify="center"
-              spacing={1}
+              spacing={2}
             >
               <ForwardRef(Grid)
                 alignContent="stretch"
@@ -366,10 +366,10 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                 }
                 container={true}
                 justify="center"
-                spacing={1}
+                spacing={2}
               >
                 <div
-                  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                 >
                   <WithStyles(HvGrid)
                     item={true}
@@ -590,7 +590,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         >
                                           <div>
                                             <div
-                                              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                             >
                                               <div
                                                 class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -1408,7 +1408,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                           >
                                             <div>
                                               <div
-                                                class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                                class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                               >
                                                 <div
                                                   class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -2440,7 +2440,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                       >
                                         <div>
                                           <div
-                                            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                           >
                                             <div
                                               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -3290,7 +3290,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                         >
                                           <div>
                                             <div
-                                              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                             >
                                               <div
                                                 class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -4159,7 +4159,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                   >
                                                     <div>
                                                       <div
-                                                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                       >
                                                         <div
                                                           class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -4924,7 +4924,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     >
                                                       <div>
                                                         <div
-                                                          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                                          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                         >
                                                           <div
                                                             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -7644,7 +7644,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                   >
                                                     <div>
                                                       <div
-                                                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                       >
                                                         <div
                                                           class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -8409,7 +8409,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     >
                                                       <div>
                                                         <div
-                                                          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                                          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                         >
                                                           <div
                                                             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -11129,7 +11129,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                   >
                                                     <div>
                                                       <div
-                                                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                                        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                       >
                                                         <div
                                                           class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
@@ -11894,7 +11894,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                     >
                                                       <div>
                                                         <div
-                                                          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-center"
+                                                          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                         >
                                                           <div
                                                             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
