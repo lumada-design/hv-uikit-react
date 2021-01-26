@@ -886,7 +886,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
           }
           isSelectedCallback={[Function]}
-          key="0"
+          key="http://mockapp1/"
           onClickCallback={[Function]}
         >
           <Action
@@ -912,7 +912,6 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
-            target="_top"
             theme={
               Object {
                 "breakpoints": Object {
@@ -1795,7 +1794,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
           }
           isSelectedCallback={[Function]}
-          key="4"
+          key="http://mockapp5/"
           onClickCallback={[Function]}
         >
           <Action
@@ -1819,7 +1818,6 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
-            target="_top"
             theme={
               Object {
                 "breakpoints": Object {
@@ -3521,7 +3519,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
           }
           isSelectedCallback={[Function]}
-          key="0"
+          key="http://mockapp1/"
           onClickCallback={[Function]}
         >
           <Action
@@ -3546,7 +3544,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
-            target="_top"
             theme={
               Object {
                 "breakpoints": Object {
@@ -4389,7 +4386,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
           }
           isSelectedCallback={[Function]}
-          key="1"
+          key="http://mockapp2/"
           onClickCallback={[Function]}
         >
           <Action
@@ -4415,7 +4412,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
-            target="_top"
             theme={
               Object {
                 "breakpoints": Object {
@@ -5299,7 +5295,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
           }
           isSelectedCallback={[Function]}
-          key="2"
+          key="http://mockapp2/"
           onClickCallback={[Function]}
         >
           <Action
@@ -5324,7 +5320,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
-            target="_top"
             theme={
               Object {
                 "breakpoints": Object {

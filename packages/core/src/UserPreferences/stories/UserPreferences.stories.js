@@ -12,16 +12,32 @@ import {
   Research,
   User,
   WhiteBoard,
-} from "@hv/uikit-react-icons/dist";
-import HvButton from "../../Button";
-import HvUserPreferences, { Action, Actions, Group, Label, Option, Options } from "..";
+} from "@hv/uikit-react-icons";
+import {
+  HvButton,
+  HvUserPreferences,
+  HvUserPreferencesActions,
+  HvUserPreferencesAction,
+  HvUserPreferencesOptions,
+  HvUserPreferencesOption,
+  HvUserPreferencesOptionsGroup,
+  HvUserPreferencesOptionsGroupLabel,
+} from "../..";
 
 export default {
   title: "Components/User Preferences",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvUserPreferences } from '@hv/uikit-react-core/dist'",
-    subcomponents: { Action, Actions, Group, Options, Option, Label },
+    usage:
+      'import {\n  HvUserPreferences,\n  HvUserPreferencesActions,\n  HvUserPreferencesAction,\n  HvUserPreferencesOptions,\n  HvUserPreferencesOption,\n  HvUserPreferencesOptionsGroup,\n  HvUserPreferencesOptionsGroupLabel,\n} from "@hv/uikit-react-core";',
+    subcomponents: {
+      HvUserPreferencesActions,
+      HvUserPreferencesAction,
+      HvUserPreferencesOptions,
+      HvUserPreferencesOptionsGroup,
+      HvUserPreferencesOption,
+      HvUserPreferencesOptionsGroupLabel,
+    },
   },
   component: HvUserPreferences,
 };
@@ -32,37 +48,41 @@ export const Main = () => (
     isOpen
     userInfo={{ label1: "Gabriela Jennings", label2: "Admin, Rean Test" }}
   >
-    <Actions>
-      <Action
+    <HvUserPreferencesActions>
+      <HvUserPreferencesAction
         label="Log Out"
         icon={<LogOut />}
         onClick={(event, data) => {
           alert(`action ${data.label} selected`);
         }}
       />
-    </Actions>
-    <Options onClick={(event, payload) => alert(`id:${payload.id} label:${payload.label}`)}>
-      <Group>
-        <Option label="Personal Information" icon={<User />} />
-        <Option label="Manage Groups" icon={<People />} />
-        <Option label="Usage" icon={<BarChart />} />
-        <Option label="Devices" icon={<GameController />} />
-        <Option label="Recover Files" icon={<Components />} />
-      </Group>
-      <Group aria-labelledby="messages">
-        <Label id="messages">Messages</Label>
-        <Option label="Sharing Messages" icon={<Email />} />
-        <Option label="File Conflicts" icon={<Energy />} />
-      </Group>
-      <Group label="Display Settings">
-        <Option label="Appearance" icon={<Ghost />} />
-        <Option label="Accessibility" icon={<WhiteBoard />} />
-      </Group>
-      <Group label="Help and Documentation">
-        <Option label="Online Help" icon={<Help />} />
-        <Option label="Documentation" icon={<Research />} />
-      </Group>
-    </Options>
+    </HvUserPreferencesActions>
+    <HvUserPreferencesOptions
+      onClick={(event, payload) => alert(`id:${payload.id} label:${payload.label}`)}
+    >
+      <HvUserPreferencesOptionsGroup>
+        <HvUserPreferencesOption label="Personal Information" icon={<User />} />
+        <HvUserPreferencesOption label="Manage Groups" icon={<People />} />
+        <HvUserPreferencesOption label="Usage" icon={<BarChart />} />
+        <HvUserPreferencesOption label="Devices" icon={<GameController />} />
+        <HvUserPreferencesOption label="Recover Files" icon={<Components />} />
+      </HvUserPreferencesOptionsGroup>
+      <HvUserPreferencesOptionsGroup aria-labelledby="messages">
+        <HvUserPreferencesOptionsGroupLabel id="messages">
+          Messages
+        </HvUserPreferencesOptionsGroupLabel>
+        <HvUserPreferencesOption label="Sharing Messages" icon={<Email />} />
+        <HvUserPreferencesOption label="File Conflicts" icon={<Energy />} />
+      </HvUserPreferencesOptionsGroup>
+      <HvUserPreferencesOptionsGroup label="Display Settings">
+        <HvUserPreferencesOption label="Appearance" icon={<Ghost />} />
+        <HvUserPreferencesOption label="Accessibility" icon={<WhiteBoard />} />
+      </HvUserPreferencesOptionsGroup>
+      <HvUserPreferencesOptionsGroup label="Help and Documentation">
+        <HvUserPreferencesOption label="Online Help" icon={<Help />} />
+        <HvUserPreferencesOption label="Documentation" icon={<Research />} />
+      </HvUserPreferencesOptionsGroup>
+    </HvUserPreferencesOptions>
   </HvUserPreferences>
 );
 
@@ -81,39 +101,41 @@ export const WithOpenControl = () => {
         toggleOpenCallback={setOpen}
         id="user-preferences-controlled"
       >
-        <Actions>
-          <Action
+        <HvUserPreferencesActions>
+          <HvUserPreferencesAction
             label="Logout"
             icon={<LogOut />}
             onClick={(event, data) => {
               console.log(`action ${data.label} selected`);
             }}
           />
-        </Actions>
-        <Options
+        </HvUserPreferencesActions>
+        <HvUserPreferencesOptions
           onClick={(event, payload) => console.log(`id:${payload.id} label:${payload.label}`)}
         >
-          <Group>
-            <Option label="Personal Information" icon={<User />} />
-            <Option label="Manage Groups" icon={<People />} />
-            <Option label="Usage" icon={<BarChart />} />
-            <Option label="Devices" icon={<GameController />} />
-            <Option label="Recover Files" icon={<Components />} />
-          </Group>
-          <Group aria-labelledby="messages">
-            <Label id="messages">Messages</Label>
-            <Option label="Sharing Messages" icon={<Email />} />
-            <Option label="File Conflicts" icon={<Energy />} />
-          </Group>
-          <Group label="Display Settings">
-            <Option label="Appearance" icon={<Ghost />} />
-            <Option label="Accessibility" icon={<WhiteBoard />} />
-          </Group>
-          <Group label="Help and Documentation">
-            <Option label="Online Help" icon={<Help />} />
-            <Option label="Documentation" icon={<Research />} />
-          </Group>
-        </Options>
+          <HvUserPreferencesOptionsGroup>
+            <HvUserPreferencesOption label="Personal Information" icon={<User />} />
+            <HvUserPreferencesOption label="Manage Groups" icon={<People />} />
+            <HvUserPreferencesOption label="Usage" icon={<BarChart />} />
+            <HvUserPreferencesOption label="Devices" icon={<GameController />} />
+            <HvUserPreferencesOption label="Recover Files" icon={<Components />} />
+          </HvUserPreferencesOptionsGroup>
+          <HvUserPreferencesOptionsGroup aria-labelledby="messages">
+            <HvUserPreferencesOptionsGroupLabel id="messages">
+              Messages
+            </HvUserPreferencesOptionsGroupLabel>
+            <HvUserPreferencesOption label="Sharing Messages" icon={<Email />} />
+            <HvUserPreferencesOption label="File Conflicts" icon={<Energy />} />
+          </HvUserPreferencesOptionsGroup>
+          <HvUserPreferencesOptionsGroup label="Display Settings">
+            <HvUserPreferencesOption label="Appearance" icon={<Ghost />} />
+            <HvUserPreferencesOption label="Accessibility" icon={<WhiteBoard />} />
+          </HvUserPreferencesOptionsGroup>
+          <HvUserPreferencesOptionsGroup label="Help and Documentation">
+            <HvUserPreferencesOption label="Online Help" icon={<Help />} />
+            <HvUserPreferencesOption label="Documentation" icon={<Research />} />
+          </HvUserPreferencesOptionsGroup>
+        </HvUserPreferencesOptions>
       </HvUserPreferences>
     </>
   );

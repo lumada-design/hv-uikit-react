@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { Switch, withStyles } from "@material-ui/core";
-import CheckMark from "@hv/uikit-react-icons/dist/CompletedStep";
+import { CompletedStep as CheckMark } from "@hv/uikit-react-icons";
 import { setId } from "../utils";
 import withLabels from "../withLabels";
 import HvTypography from "../Typography";

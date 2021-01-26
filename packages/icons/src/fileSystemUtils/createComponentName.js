@@ -1,5 +1,3 @@
-"use strict";
-
 const path = require("path");
 
 /**
@@ -8,9 +6,7 @@ const path = require("path");
  * @return string The output string
  */
 function snakeToCamel(s) {
-  return s.replace(/(\-\w)/g, function (m) {
-    return m[1].toUpperCase();
-  });
+  return s.replace(/(-\w)/g, (m) => m[1].toUpperCase());
 }
 
 /**

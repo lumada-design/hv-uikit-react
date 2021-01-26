@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { HvDropdown, HvTypography } from "@hv/uikit-react-core/dist";
-import * as iconComponentList from "@hv/uikit-react-icons/dist";
+import { HvDropdown, HvTypography } from "@hv/uikit-react-core";
+import * as iconComponentList from "@hv/uikit-react-icons";
 
 const iconContainer = {
   margin: "5px",

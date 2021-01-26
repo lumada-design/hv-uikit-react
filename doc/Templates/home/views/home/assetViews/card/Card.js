@@ -1,49 +1,46 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@hv/uikit-react-core/dist/Grid";
-import Typography from "@hv/uikit-react-core/dist/Typography";
-import Kpi from "@hv/uikit-react-core/dist/Kpi";
-import Card from "@hv/uikit-react-core/dist/Card";
-import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
+import { HvTypography, HvGrid, HvCard, HvKpi } from "@hv/uikit-react-core";
+import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons";
 import styles from "./styles";
 
-const KpiProbability = score => ({
+const KpiProbability = (score) => ({
   title: "Probability",
-  indicator: `${score}%`
+  indicator: `${score}%`,
 });
 
-const KpiTimeHorizon = score => ({
+const KpiTimeHorizon = (score) => ({
   title: "Time horizon",
-  indicator: `${score}h`
+  indicator: `${score}h`,
 });
 
 /* eslint react/prop-types: 0 */
 const Content = ({ classes, values }) => (
   <>
-    <Grid container className={classes.container}>
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+    <HvGrid container className={classes.container}>
+      <HvGrid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <Typography className={classes.timestamp} variant="sText">
+          <HvTypography className={classes.timestamp} variant="sText">
             {values.event.timestamp}
-          </Typography>
-          <Typography variant="sText">{values.event.schedule}</Typography>
+          </HvTypography>
+          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
         </div>
-      </Grid>
+      </HvGrid>
 
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+      <HvGrid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <Kpi labels={KpiProbability(values.probability)} />
-          <Kpi labels={KpiTimeHorizon(values.timeHorizon)} />
+          <HvKpi labels={KpiProbability(values.probability)} />
+          <HvKpi labels={KpiTimeHorizon(values.timeHorizon)} />
         </div>
-      </Grid>
+      </HvGrid>
 
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className={classes.item}>
-        <Typography variant="labelText">Related assets</Typography>
-        <Typography variant="normalText" className={classes.text}>
+      <HvGrid item xs={12} sm={12} md={12} lg={12} xl={12} className={classes.item}>
+        <HvTypography variant="labelText">Related assets</HvTypography>
+        <HvTypography variant="normalText" className={classes.text}>
           {values.relatedAssets}
-        </Typography>
-      </Grid>
-    </Grid>
+        </HvTypography>
+      </HvGrid>
+    </HvGrid>
   </>
 );
 
@@ -85,7 +82,7 @@ const cardRenderer = (data, viewConfiguration) => {
   }
 
   return (
-    <Card
+    <HvCard
       icon={status.Icon}
       headerTitle={data.headerTitle}
       innerCardContent={<ContentWithStyles values={data} icon={status.Icon} />}

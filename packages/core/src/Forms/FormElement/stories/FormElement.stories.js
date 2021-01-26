@@ -8,7 +8,7 @@ export default {
   title: "Components/Forms/Form Element",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFormElement } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvFormElement } from "@hv/uikit-react-core";',
   },
   component: HvFormElement,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

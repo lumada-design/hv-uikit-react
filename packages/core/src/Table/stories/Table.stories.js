@@ -13,7 +13,7 @@ export default {
   title: "Visualizations/Table",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTable } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvTable } from "@hv/uikit-react-core";',
   },
   component: HvTable,
 };

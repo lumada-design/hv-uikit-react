@@ -8,7 +8,7 @@ export default {
   title: "Lab/Time Picker",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTimePicker } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvTimePicker } from "@hv/uikit-react-lab";',
   },
   component: HvTimePicker,
   decorators: [(storyFn) => <div style={{ width: 200, minHeight: 200 }}>{storyFn()}</div>],

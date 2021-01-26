@@ -4,6 +4,7 @@
   "description": "A collection of themes for use with Hitachi Vantara Components.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
+  "sideEffects": false,
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
@@ -20,8 +21,9 @@
     "build": "npm-run-all clean build:*",
     "build:to-scss": "json-to-scss \"src/*.*\" dist",
     "build:to-json": "npx cp -f src/*.json dist",
-    "clean": "npx del-cli dist",
-    "prepare": "npm run build",
+    "clean": "npx del-cli dist hv-uikit-common-themes-*.tgz",
+    "prepack": "npm run build",
+    "pack": "npm pack",
     "link": "npm link"
   },
   "devDependencies": {

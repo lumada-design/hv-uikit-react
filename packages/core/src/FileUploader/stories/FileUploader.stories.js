@@ -5,7 +5,7 @@ export default {
   title: "Components/File Uploader",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFileUploader } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvFileUploader } from "@hv/uikit-react-core";',
   },
   component: HvFileUploader,
 };

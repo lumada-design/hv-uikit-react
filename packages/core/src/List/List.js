@@ -4,7 +4,7 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import DropRight from "@hv/uikit-react-icons/dist/DropRightXS";
+import { DropRightXS as DropRight } from "@hv/uikit-react-icons";
 import { parseList, parseState, wrapperTooltip } from "./utils";
 import { HvCheckBox, HvRadio } from "../Selectors";
 import { HvLink, HvTypography, setId } from "..";

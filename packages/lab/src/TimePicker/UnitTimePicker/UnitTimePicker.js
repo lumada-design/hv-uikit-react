@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import Input from "@hv/uikit-react-core/dist/Input";
-import AddTimeIcon from "@hv/uikit-react-icons/dist/DropUpXS";
-import SubtractTimeIcon from "@hv/uikit-react-icons/dist/DropDownXS";
+import { HvInput } from "@hv/uikit-react-core";
+import { DropUpXS as AddTimeIcon, DropDownXS as SubtractTimeIcon } from "@hv/uikit-react-icons";
 import { isUnitTimeInValidRange } from "../timePickerUtils";
 import { padTime } from "../timePickerFormatter";
 import { TimePickerUnits } from "../enums";
@@ -127,7 +126,7 @@ class UnitTimePicker extends React.Component {
     return (
       <div className={classes.unitTimeContainer}>
         <AddTimeIcon className={classes.addIcon} onClick={this.handleAddTime} />
-        <Input
+        <HvInput
           disableClear
           className={classes.unitTime}
           classes={{

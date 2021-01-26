@@ -2,11 +2,8 @@ import React from "react";
 // Used only in Storybook context.
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { linkTo } from "@storybook/addon-links";
-import AssetInventory from "@hv/uikit-react-core/dist/AssetInventory";
-import Typography from "@hv/uikit-react-core/dist/Typography";
-import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
-import ListView from "@hv/uikit-react-core/dist/AssetInventory/ListView";
-import { Cards, List } from "@hv/uikit-react-icons/dist";
+import { HvTypography, HvAssetInventory, HvCardView, HvListView } from "@hv/uikit-react-core";
+import { Cards, List } from "@hv/uikit-react-icons";
 import getData from "../../data/assetInventoryData";
 import cardRenderer from "./assetViews/card/Card";
 import rowRenderer from "./assetViews/list/List";
@@ -14,7 +11,7 @@ import assetInventoryConfiguration from "../../configuration/assetInventoryConfi
 
 const myActions = [
   { id: "details", label: "Details", disabled: false },
-  { id: "dismiss", label: "Dismiss", disabled: false }
+  { id: "dismiss", label: "Dismiss", disabled: false },
 ];
 
 const control = (e, id, action) => {
@@ -26,18 +23,18 @@ const control = (e, id, action) => {
 const Home = ({ classes }) => {
   return (
     <div>
-      <Typography variant="3xlTitle" className={classes.title}>
+      <HvTypography variant="3xlTitle" className={classes.title}>
         Assets
-      </Typography>
-      <AssetInventory
+      </HvTypography>
+      <HvAssetInventory
         values={getData()}
         configuration={assetInventoryConfiguration}
         actions={myActions}
         actionsCallback={control}
       >
-        <CardView id="card" icon={<Cards />} renderer={cardRenderer} />
-        <ListView id="list" icon={<List />} renderer={rowRenderer} />
-      </AssetInventory>
+        <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
+        <HvListView id="list" icon={<List />} renderer={rowRenderer} />
+      </HvAssetInventory>
     </div>
   );
 };

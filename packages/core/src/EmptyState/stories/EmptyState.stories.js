@@ -1,12 +1,12 @@
 import React from "react";
-import { BarChart, Fail, Ghost } from "@hv/uikit-react-icons/dist";
+import { BarChart, Fail, Ghost } from "@hv/uikit-react-icons";
 import { HvEmptyState, HvLink, HvTypography } from "../..";
 
 export default {
   title: "Components/Empty State",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvEmptyState } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvEmptyState } from "@hv/uikit-react-core";',
   },
   component: HvEmptyState,
 };

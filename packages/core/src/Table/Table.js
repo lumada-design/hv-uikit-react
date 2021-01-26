@@ -499,9 +499,11 @@ const HvTable = (props) => {
 
   // Creates the thead with the text and the sorted icon.
   ReactTableDefaults.expanderDefaults.show = false;
+  // eslint-disable-next-line react/prop-types
   ReactTableDefaults.column.Header = ({ column }) => (
     <Header
       id={id}
+      // eslint-disable-next-line react/prop-types
       key={column.id}
       column={column}
       sort={sorted}

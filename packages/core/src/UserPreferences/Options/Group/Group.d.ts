@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+export type HvUserPreferenceActionsClassKey = "root" | "label";
+
 export interface HvGroupProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvUserPreferenceActionsClassKey> {
   /**
@@ -12,7 +14,5 @@ export interface HvGroupProps
    */
   labelProps: any;
 }
-
-export type HvUserPreferenceActionsClassKey = "root" | "label";
 
 export default function HvUserPreferencesGroup(props: HvGroupProps): JSX.Element | null;

@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { useMediaQuery, useTheme } from "@material-ui/core";
-import { Alert, BarChart, Menu, Settings, User } from "@hv/uikit-react-icons/dist";
-import { HvBadge, HvButton, HvEmptyState } from "@hv/uikit-react-core/dist";
-import VerticalNavigation, {
-  Action,
-  Actions,
-  Navigation
-} from "@hv/uikit-react-core/dist/VerticalNavigation";
-import HvHeader, {
+import { Alert, BarChart, Menu, Settings, User } from "@hv/uikit-react-icons";
+import {
+  HvBadge,
+  HvButton,
+  HvEmptyState,
+  HvVerticalNavigation,
+  HvVerticalNavigationTree,
+  HvVerticalNavigationActions,
+  HvVerticalNavigationAction,
+  HvHeader,
   HvHeaderActions,
   HvHeaderBrand,
-  HvHeaderNavigation
-} from "@hv/uikit-react-core/dist/Header";
+  HvHeaderNavigation,
+} from "@hv/uikit-react-core";
 import HitachiLogo from "../home/components/HitachiLogo";
 import navigationData from "./data";
 
@@ -28,8 +30,8 @@ const findById = (data = [], id) => {
   return undefined;
 };
 
-const navigationDepth = arr =>
-  Array.isArray(arr) ? 1 + Math.max(...arr.map(el => navigationDepth(el.data))) : 0;
+const navigationDepth = (arr) =>
+  Array.isArray(arr) ? 1 + Math.max(...arr.map((el) => navigationDepth(el.data))) : 0;
 
 // eslint-disable-next-line react/prop-types
 const NavigationTemplate = () => {
@@ -42,9 +44,9 @@ const NavigationTemplate = () => {
   const selectionData = findById(navigationData, selection);
   const trimHeader = navigationDepth(navigationData) > 2;
 
-  const headerNavData = navigationData.map(el => ({
+  const headerNavData = navigationData.map((el) => ({
     ...el,
-    data: trimHeader ? undefined : el.data
+    data: trimHeader ? undefined : el.data,
   }));
   const verticalNavData = (!isMdUp && navigationData) || (trimHeader && selectionData.data) || [];
 
@@ -57,7 +59,7 @@ const NavigationTemplate = () => {
     setExpanded(!expanded);
   };
 
-  const handleClick = evt => console.log(evt);
+  const handleClick = (evt) => console.log(evt);
 
   return (
     <div style={{ height: "90vh" }}>
@@ -88,13 +90,13 @@ const NavigationTemplate = () => {
         </HvHeaderActions>
       </HvHeader>
       {(verticalNavData.length || null) && (isMdUp || expanded) && (
-        <VerticalNavigation isCollapsable={isMdUp} position="fixed">
-          <Navigation data={verticalNavData} />
-          <Actions>
-            {!isMdUp && <Action label="Settings" icon={<Settings />} />}
-            {!isMdUp && <Action label="Profile" icon={<User />} />}
-          </Actions>
-        </VerticalNavigation>
+        <HvVerticalNavigation isCollapsable={isMdUp} position="fixed">
+          <HvVerticalNavigationTree data={verticalNavData} />
+          <HvVerticalNavigationActions>
+            {!isMdUp && <HvVerticalNavigationAction label="Settings" icon={<Settings />} />}
+            {!isMdUp && <HvVerticalNavigationAction label="Profile" icon={<User />} />}
+          </HvVerticalNavigationActions>
+        </HvVerticalNavigation>
       )}
 
       {page && (

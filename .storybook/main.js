@@ -1,12 +1,13 @@
 const path = require("path");
 
-var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
+const NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
 const docFolder = path.resolve(__dirname, "../doc");
 const corePackageSrc = path.resolve(__dirname, "../packages/core/src");
 const labPackageSrc = path.resolve(__dirname, "../packages/lab/src");
 const iconsPackageBin = path.resolve(__dirname, "../packages/icons/bin");
+const commonThemesSrc = path.resolve(__dirname, "../packages/themes/src");
 
 const excludePaths = [/node_modules/, /dist/];
 
@@ -125,13 +126,20 @@ module.exports = {
       use: "@svgr/webpack"
     });
 
-    // not sure it is really needed, as stories can import components
-    // using relative paths
     config.resolve.alias = {
       ...config.resolve.alias,
+
+      // package aliases for deep imports (/dist)
       "@hv/uikit-react-core/dist": corePackageSrc,
       "@hv/uikit-react-lab/dist": labPackageSrc,
-      "@hv/uikit-react-icons/dist": iconsPackageBin
+      "@hv/uikit-react-icons/dist": iconsPackageBin,
+      "@hv/uikit-react-lab/dist": labPackageSrc,
+      "@hv/uikit-common-themes/dist": commonThemesSrc,
+
+      // package aliases for top-level imports
+      "@hv/uikit-react-core": corePackageSrc,
+      "@hv/uikit-react-icons": iconsPackageBin,
+      "@hv/uikit-react-lab": labPackageSrc,
     };
 
     return config;

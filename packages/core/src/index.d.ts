@@ -126,11 +126,26 @@ export { default as HvTypography } from "./Typography";
 export * from "./Typography";
 
 export { default as HvUserPreferences } from "./UserPreferences";
-// TODO: review export name collisions
-// export * from "./UserPreferences";
+// TODO refactor the HvUserPreferences subcomponents' names
+export {
+  Actions as HvUserPreferencesActions,
+  Action as HvUserPreferencesAction,
+} from "./UserPreferences";
+export {
+  Options as HvUserPreferencesOptions,
+  Option as HvUserPreferencesOption,
+  Group as HvUserPreferencesOptionsGroup,
+  Label as HvUserPreferencesOptionsGroupLabel,
+} from "./UserPreferences";
 
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
-export * from "./VerticalNavigation";
+// TODO refactor the HvVerticalNavigation subcomponents' names
+export { Navigation as HvVerticalNavigationTree } from "./VerticalNavigation";
+export { TreeView as HvTreeView, TreeViewItem as HvTreeViewItem } from "./VerticalNavigation";
+export {
+  Actions as HvVerticalNavigationActions,
+  Action as HvVerticalNavigationAction,
+} from "./VerticalNavigation";
 
 export interface HvTheme {
   type: string;

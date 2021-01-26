@@ -5,7 +5,7 @@ export default {
   title: "Components/Selectors/Checkbox",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCheckBox } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvCheckBox } from "@hv/uikit-react-core";',
   },
   component: HvCheckBox,
 };

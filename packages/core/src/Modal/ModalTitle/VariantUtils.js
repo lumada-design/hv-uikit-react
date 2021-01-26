@@ -1,8 +1,5 @@
 import React from "react";
-import Success from "@hv/uikit-react-icons/dist/Success";
-import Info from "@hv/uikit-react-icons/dist/Info";
-import Caution from "@hv/uikit-react-icons/dist/Caution";
-import Fail from "@hv/uikit-react-icons/dist/Fail";
+import { Fail, Info, Success, Caution } from "@hv/uikit-react-icons";
 
 /**
  * Icon mapping.

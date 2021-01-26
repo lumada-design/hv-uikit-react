@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { LocationPin, Map } from "@hv/uikit-react-icons/dist";
+import { LocationPin, Map } from "@hv/uikit-react-icons";
 import { HvButton, HvMultiButton } from "../..";
 
 export default {
   title: "Components/Multi Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvMultiButton } from "@hv/uikit-react-core";',
   },
   component: HvMultiButton,
 };

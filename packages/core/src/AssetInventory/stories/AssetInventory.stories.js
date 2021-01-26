@@ -14,7 +14,7 @@ import {
   List,
   Preview,
   Upload,
-} from "@hv/uikit-react-icons/dist";
+} from "@hv/uikit-react-icons";
 import {
   HvAssetInventory,
   HvCard,
@@ -35,7 +35,7 @@ export default {
   title: "Components/Asset Inventory",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAssetInventory } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvAssetInventory } from "@hv/uikit-react-core";',
   },
   component: HvAssetInventory,
 };

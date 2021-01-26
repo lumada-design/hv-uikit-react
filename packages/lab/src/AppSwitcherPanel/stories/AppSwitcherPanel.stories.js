@@ -1,15 +1,15 @@
 /* eslint-disable no-alert */
 import React from "react";
 
-import { Tool, PingPong, GameController, Champion } from "@hv/uikit-react-icons/dist";
+import { Tool, PingPong, GameController, Champion } from "@hv/uikit-react-icons";
 
-import HvAppSwitcherPanel from "../../AppSwitcherPanel";
+import HvAppSwitcherPanel from "..";
 
 export default {
   title: "Lab/AppSwitcherPanel",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvAppSwitcherPanel } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvAppSwitcherPanel } from "@hv/uikit-react-lab";',
   },
   component: HvAppSwitcherPanel,
 };
@@ -163,7 +163,7 @@ export const sample3 = () => {
   const getDummyApplicationsList = () => {
     const dummyApplicationsList = [];
 
-    for (let index = 1; index <= 100; index++) {
+    for (let index = 1; index <= 100; index += 1) {
       dummyApplicationsList.push({
         name:
           index % 3 === 0

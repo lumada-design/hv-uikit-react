@@ -451,6 +451,7 @@ HvSlider.propTypes = {
       fixed: PropTypes.bool,
       hoverColor: PropTypes.string,
       trackColor: PropTypes.string,
+      dragColor: PropTypes.string,
     })
   ).isRequired,
   /**
@@ -569,6 +570,8 @@ HvSlider.propTypes = {
      */
     sliderTooltip: PropTypes.string,
   }).isRequired,
+
+  theme: PropTypes.any.isRequired,
 };
 
 HvSlider.defaultProps = {

@@ -6,6 +6,14 @@ interface FormGroup {
   children: React.ReactNode;
 }
 
+export type HvFormComposerClassKey =
+  | "root"
+  | "title"
+  | "mainContainer"
+  | "navContainer"
+  | "componentContainer"
+  | "footer";
+
 export interface HvFormComposerProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvFormComposerClassKey> {
   /**
@@ -29,13 +37,5 @@ export interface HvFormComposerProps
    */
   footerContent?: React.ReactNode;
 }
-
-export type HvFormComposerClassKey =
-  | "root"
-  | "title"
-  | "mainContainer"
-  | "navContainer"
-  | "componentContainer"
-  | "footer";
 
 export default function HvFormComposer(props: HvFormComposerProps): JSX.Element | null;

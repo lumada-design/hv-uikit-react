@@ -7,7 +7,7 @@ export default {
   title: "Lab/CodeEditor",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvCodeEditor } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvCodeEditor } from "@hv/uikit-react-lab";',
   },
   component: HvCodeEditor,
   decorators: [(storyFn) => <div style={{ height: "270px" }}>{storyFn()}</div>],
@@ -42,7 +42,7 @@ export const YamlEditor = () => {
         },
       }}
       editorProps={{}}
-      language={"yaml"}
+      language="yaml"
       onChange={(input) => console.log(input)}
       value={defaultValueYaml}
     />

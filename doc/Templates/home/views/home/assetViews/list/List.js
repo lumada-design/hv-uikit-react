@@ -1,8 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvListViewCell, HvListViewRow } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
-import Typography from "@hv/uikit-react-core/dist/Typography";
-import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
+import { HvTypography, HvListViewRow, HvListViewCell } from "@hv/uikit-react-core";
+import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons";
 import styles from "./styles";
 
 const Row = ({ classes, status, value, id }) => {
@@ -20,26 +19,26 @@ const Row = ({ classes, status, value, id }) => {
 
       <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div className={classes.cellInline}>
-          <Typography variant="highlightText">{value.event.description}</Typography>
-          <Typography className={classes.timestamp} variant="sText">
+          <HvTypography variant="highlightText">{value.event.description}</HvTypography>
+          <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
-          </Typography>
-          <Typography className={classes.schedule} variant="sText">
+          </HvTypography>
+          <HvTypography className={classes.schedule} variant="sText">
             {value.event.schedule}
-          </Typography>
+          </HvTypography>
         </div>
       </HvListViewCell>
 
       <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
-        <Typography variant="normalText">{`${value.probability}%`}</Typography>
+        <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
       </HvListViewCell>
 
       <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
-        <Typography variant="normalText">{`${value.timeHorizon}h`}</Typography>
+        <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
       </HvListViewCell>
 
       <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
-        <Typography variant="normalText">{value.relatedAssets}</Typography>
+        <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
       </HvListViewCell>
     </HvListViewRow>
   );

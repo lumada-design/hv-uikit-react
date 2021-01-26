@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Snackbar from "@hv/uikit-react-core/dist/Snackbar";
+import { HvSnackbar } from "@hv/uikit-react-core";
 
 const SnackbarController = () => {
   const [open, setOpen] = useState(false);
@@ -15,7 +15,7 @@ const SnackbarController = () => {
   });
 
   return (
-    <Snackbar
+    <HvSnackbar
       id="snackbar"
       offset={60}
       open={open}

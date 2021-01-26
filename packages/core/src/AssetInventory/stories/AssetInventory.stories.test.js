@@ -11,7 +11,7 @@ import {
   List,
   Preview,
   Upload,
-} from "@hv/uikit-react-icons/dist";
+} from "@hv/uikit-react-icons";
 import { withStyles } from "@material-ui/core";
 import React from "react";
 

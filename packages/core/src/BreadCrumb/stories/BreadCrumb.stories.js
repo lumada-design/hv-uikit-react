@@ -5,7 +5,7 @@ export default {
   title: "Components/Breadcrumb",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvBreadCrumb } from "@hv/uikit-react-core";',
   },
   component: HvBreadCrumb,
 };

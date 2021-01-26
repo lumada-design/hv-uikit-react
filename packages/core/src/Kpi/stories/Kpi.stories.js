@@ -6,14 +6,14 @@ import {
   Level2Average as Average,
   BottomXS as ArrowDown,
   Level3Bad,
-} from "@hv/uikit-react-icons/dist";
+} from "@hv/uikit-react-icons";
 import { HvKpi, HvTypography, HvCard } from "../..";
 
 export default {
   title: "Visualizations/KPI",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvKpi } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvKpi } from "@hv/uikit-react-core";',
   },
   component: HvKpi,
 };

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import HvBadge from "@hv/uikit-react-core/dist/Badge";
+import { HvBadge } from "@hv/uikit-react-core";
 
 const EnterKeyCode = 13;
 
@@ -77,6 +77,14 @@ Panel.propTypes = {
      * styles applied to the panel
      */
     panel: PropTypes.string,
+    root: PropTypes.string,
+    open: PropTypes.string,
+    header: PropTypes.string,
+    titleContainer: PropTypes.string,
+    title: PropTypes.string,
+    close: PropTypes.string,
+    notificationsContainer: PropTypes.string,
+    footerContainer: PropTypes.string,
   }).isRequired,
   /**
    * The function that will be executed when the panel is closed

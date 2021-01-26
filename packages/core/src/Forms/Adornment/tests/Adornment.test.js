@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Close from "@hv/uikit-react-icons/dist/CloseXS";
+import { CloseXS as Close } from "@hv/uikit-react-icons";
 
 import HvProvider from "../../../Provider";
 import HvAdornment from "../Adornment";

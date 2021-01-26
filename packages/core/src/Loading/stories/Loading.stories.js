@@ -9,7 +9,7 @@ export default {
   title: "Components/Loading",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLoading } from '@hv/uikit-react-core/dist'",
+    usage: 'import { HvLoading } from "@hv/uikit-react-core";',
   },
   component: HvLoading,
 };

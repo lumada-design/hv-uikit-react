@@ -1,15 +1,16 @@
 /* eslint-disable no-alert */
 import * as React from "react";
 
-import HvFormComposer from "../FormComposer";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvButton, HvDropdown, HvInput } from "@hv/uikit-react-core/dist";
+import { HvButton, HvDropdown, HvInput } from "@hv/uikit-react-core";
+
+import HvFormComposer from "../FormComposer";
 
 export default {
   title: "Lab/FormComposer",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvFormComposer } from '@hv/uikit-react-lab/dist'",
+    usage: 'import { HvFormComposer } from "@hv/uikit-react-lab";',
   },
   component: HvFormComposer,
 };
@@ -191,12 +192,6 @@ export const Main = () => {
 };
 
 export const WithComposition = () => {
-  const inputTextConfiguration = {
-    inputLabel: "Default",
-    placeholder: "Placeholder value",
-    infoText: "Info text is here",
-  };
-
   const data = [
     {
       label: "value 1",
@@ -230,7 +225,6 @@ export const WithComposition = () => {
       children: [
         <CustomInput
           labels={{
-            ...inputTextConfiguration,
             inputLabel: "Input 1",
           }}
           name="input1"
@@ -239,7 +233,6 @@ export const WithComposition = () => {
         />,
         <CustomInput
           labels={{
-            ...inputTextConfiguration,
             inputLabel: "Input 2",
           }}
           name="input2"

@@ -1,4 +1,4 @@
-const dawnTheme = require("@hv/uikit-common-themes/dist/dawn");
+const dawnTheme = require("../../../themes/src/dawn");
 
 const replaceColorsWithTheme = (defaultPalette, themePalette) => {
   let result = defaultPalette;

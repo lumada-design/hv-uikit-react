@@ -1,5 +1,5 @@
 import React from "react";
-import { Play, Stop } from "@hv/uikit-react-icons/dist";
+import { Play, Stop } from "@hv/uikit-react-icons";
 
 const navigationData = [
   {
