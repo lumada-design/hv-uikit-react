@@ -7,13 +7,13 @@ import { styles as containerStyles } from "@material-ui/core/Container/Container
 const styles = (theme) => ({
   ...containerStyles(theme),
   root: {
-    paddingLeft: theme.hvSpacing(1),
-    paddingRight: theme.hvSpacing(1),
+    paddingLeft: theme.hvSpacing(2),
+    paddingRight: theme.hvSpacing(2),
     ...theme.hv.typography.normalText,
     color: theme.hv.palette.base.base2,
     [theme.breakpoints.up("md")]: {
-      paddingLeft: theme.hvSpacing(2),
-      paddingRight: theme.hvSpacing(2),
+      paddingLeft: theme.hvSpacing(4),
+      paddingRight: theme.hvSpacing(4),
     },
   },
 });
