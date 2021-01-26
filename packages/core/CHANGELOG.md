@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.6.3...@hv/uikit-react-core@3.6.4) (2021-01-26)
+
+
+### Bug Fixes
+
+* **table:** currentPage of onPageSizeChange callback ([#2232](https://github.com/pentaho/hv-uikit-react/issues/2232)) ([0cbd967](https://github.com/pentaho/hv-uikit-react/commit/0cbd9672680d04f8b0a04c4ad5231a1b4576183a))
+
+
+
+
+
 ## [3.6.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.6.2...@hv/uikit-react-core@3.6.3) (2021-01-20)
 
 
