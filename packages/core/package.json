@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-core",
-  "version": "2.16.8",
+  "version": "2.16.9",
   "description": "A collection of React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -46,11 +46,11 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@hv/uikit-common-themes": "^2.0.6",
-    "@hv/uikit-react-icons": "^2.3.3",
-    "core-js": "^3.8.1",
     "@babel/runtime": "^7.12.5",
+    "@hv/uikit-common-themes": "^2.0.7",
+    "@hv/uikit-react-icons": "^2.3.4",
     "clsx": "^1.1.0",
+    "core-js": "^3.8.1",
     "deep-diff": "^1.0.2",
     "detect-browser": "^5.1.0",
     "focus-trap-react": "^6.0.0",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.7 (2021-01-27)
+
+**Note:** Version bump only for package @hv/uikit-common-themes
+
+
+
+
+
 ## [2.0.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-common-themes@2.0.5...@hv/uikit-common-themes@2.0.6) (2020-06-05)
 
 
