@@ -174,6 +174,11 @@ export interface HvTableProps
   pages?: number;
 
   /**
+   * Specify the current page number when using a server side pagination
+   */
+  page?: number;
+
+  /**
    * Callback with receives the page info and should fetch the data to show on the table
    */
   onFetchData?: (...args: any[]) => any;
