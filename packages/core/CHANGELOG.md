@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.7.0...@hv/uikit-react-core@3.8.0) (2021-01-29)
+
+
+### Bug Fixes
+
+* **container:** move spacings to 15/30. UIA-17 ([fe13040](https://github.com/pentaho/hv-uikit-react/commit/fe130400cdcd0df403b23e0604ec506d0d250cf1))
+* **grid:** move grid item spacings to 15/30. UIA-17 ([722534a](https://github.com/pentaho/hv-uikit-react/commit/722534a9aac8d8b66eecc31df42c0390c6c24c39))
+* **table:** page type definition ([eb748dd](https://github.com/pentaho/hv-uikit-react/commit/eb748dd8cc3560c027578bf8dfe4754cafb82f50))
+
+
+### Features
+
+* **list:** have selection with multi selection using shift. HVUIKIT-5677 ([e240965](https://github.com/pentaho/hv-uikit-react/commit/e240965d2ebab91f0fa7641c363c252b196a7a7e))
+
+
+
+
+
 # [3.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.6.4...@hv/uikit-react-core@3.7.0) (2021-01-27)
 
 
