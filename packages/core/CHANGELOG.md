@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.8.0...@hv/uikit-react-core@3.8.1) (2021-01-30)
+
+
+### Bug Fixes
+
+* **typography:** add sectionTitle in interface. HVUIKIT-5698 ([844193d](https://github.com/pentaho/hv-uikit-react/commit/844193d7dbe7ac4a1abdca965f9ced4ac121787d))
+
+
+
+
+
 # [3.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.7.0...@hv/uikit-react-core@3.8.0) (2021-01-29)
 
 
