@@ -24,6 +24,10 @@ export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassK
    * Category of button to use
    */
   category?: HvButtonCategories;
+  /**
+   * Whether the Button is in a selected state
+   */
+  selected?: boolean;
 
   /**
    * Defines the default colors of the button are forced into the icon.
