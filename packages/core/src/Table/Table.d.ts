@@ -6,6 +6,10 @@ import { PaginationLabelsProp } from "../Pagination";
 
 export interface TableColumn {
   /**
+   * The id of the column.
+   */
+  id?: string;
+  /**
    * The title of the column.
    */
   headerText?: string;
@@ -62,7 +66,6 @@ export interface SecondaryAction extends ListValueProp {
    */
   action?: (event: React.FormEvent<HTMLDivElement>, row: object) => void;
 }
-
 
 export type HvTableClassKey =
   | "root"
