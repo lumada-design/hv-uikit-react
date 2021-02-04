@@ -194,6 +194,51 @@ export type HvSemanticColorKeys =
   | "sema17"
   | "sema18"
   | "sema19";
+export type HvSupportColorKeys = "supp1" | "supp2" | "supp3" | "supp4" | "supp5";
+export type HvUndefinedStateColorKeys = "atmo4";
+export type HvCategoricalColorKeys =
+  | "cviz1"
+  | "cviz2"
+  | "cviz3"
+  | "cviz4"
+  | "cviz5"
+  | "cviz6"
+  | "cviz7"
+  | "cviz8"
+  | "cviz9"
+  | "cviz10"
+  | "cviz11"
+  | "cviz12"
+  | "cviz13"
+  | "cviz14"
+  | "cviz15"
+  | "cviz16"
+  | "cviz17"
+  | "cviz18"
+  | "cviz19"
+  | "cviz20";
+export type HvSequentialColorKeys =
+  | "cviz1"
+  | "cviz1_100"
+  | "cviz1_200"
+  | "cviz1_300"
+  | "cviz1_400"
+  | "cviz1_500"
+  | "cviz1_600"
+  | "cviz1_700"
+  | "cviz1_800"
+  | "cviz1_900";
+export type HvPolarizedColorKeys =
+  | "sema1"
+  | "cviz21"
+  | "cviz22"
+  | "cviz23"
+  | "cviz24"
+  | "cviz25"
+  | "cviz26"
+  | "cviz27"
+  | "cviz28"
+  | "sema5";
 
 export type HvAccentColors = Record<HvAccentColorKeys, string>;
 
@@ -203,7 +248,7 @@ export type HvBaseColors = Record<HvBaseColorKeys, string>;
 
 export type HvSemanticColors = Record<HvSemanticColorKeys, string>;
 
-export type HvSupportColors = Record<string, string>;
+export type HvSupportColors = Record<HvSupportColorKeys, string>;
 
 export interface HvThemeTypography extends Map<string, HvThemeTypographyDefinition> {
   fontFamily: string;
@@ -221,9 +266,9 @@ export type HvThemeSpacing = Map<string, number>;
 
 export interface HvThemeVizPalette {
   palette: {
-    categorical: Map<string, string>;
-    undefinedState: Map<string, string>;
-    sequential: Map<string, string>;
-    polarizes: Map<string, string>;
+    categorical: Map<HvCategoricalColorKeys, string>;
+    undefinedState: Map<HvUndefinedStateColorKeys, string>;
+    sequential: Map<HvSequentialColorKeys, string>;
+    polarized: Map<HvPolarizedColorKeys, string>;
   };
 }
