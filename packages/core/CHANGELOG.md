@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.8.1...@hv/uikit-react-core@3.8.2) (2021-02-05)
+
+
+### Bug Fixes
+
+* **button:** add selected declaration. HVUIKIT-5686 ([7c5abd2](https://github.com/pentaho/hv-uikit-react/commit/7c5abd26e7f208f9fc52a7eaeb78e506cfd254db))
+* **colors:** add missing palette declarations. HVUIKIT-5685 ([35cc50e](https://github.com/pentaho/hv-uikit-react/commit/35cc50e2667d332fb76f29862fa5665b815a09e2))
+* **dialog:** add indentcontent declaration. HVUIKIT-5688 ([e1469b8](https://github.com/pentaho/hv-uikit-react/commit/e1469b8a03d2793b540be433ef7ec2c4a49d5669))
+* **table:** add id declaration. HVUIKIT-5687 ([3d1492f](https://github.com/pentaho/hv-uikit-react/commit/3d1492f05864c2606379fa5af1430c1586e9a512))
+
+
+
+
+
 ## [3.8.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.8.0...@hv/uikit-react-core@3.8.1) (2021-01-30)
 
 

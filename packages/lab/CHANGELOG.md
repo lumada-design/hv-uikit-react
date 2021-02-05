@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.1.8...@hv/uikit-react-lab@3.1.9) (2021-02-05)
+
+**Note:** Version bump only for package @hv/uikit-react-lab
+
+
+
+
+
 ## [3.1.8](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.1.7...@hv/uikit-react-lab@3.1.8) (2021-01-30)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
