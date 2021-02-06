@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.9...@hv/uikit-react-core@2.17.0) (2021-02-06)
+
+
+### Bug Fixes
+
+* **colors:** add missing palette declarations. HVUIKIT-5685 ([3c22589](https://github.com/pentaho/hv-uikit-react/commit/3c225894a21cddce9124c3da602e6f5f85216139))
+* **fileuploader:** file callback definition ([9f2f202](https://github.com/pentaho/hv-uikit-react/commit/9f2f2026e66d3541dcfc61ef5503e737fb743081))
+* **ssr:** remove theme global variable ([fbeef51](https://github.com/pentaho/hv-uikit-react/commit/fbeef51a3b7f63a519e32b04ec1cab485c22041b))
+* **table:** add id declaration. HVUIKIT-5687 ([e2f6292](https://github.com/pentaho/hv-uikit-react/commit/e2f6292587cb3d5800eccd31711ce8d53159314a))
+* **textarea:** adding character quantity message. HVUIKIT-5611 ([ec40f41](https://github.com/pentaho/hv-uikit-react/commit/ec40f41c910becf4f5d4c5a1e642d454e38bd2d3))
+* **textarea:** modifying color. HVUIKIT-5611 ([0545c95](https://github.com/pentaho/hv-uikit-react/commit/0545c95fa43e580ab516d34caef60a1289d6fae3))
+
+
+### Features
+
+* **textarea:** enable setup as required comp. HVUIKIT-5610 ([92fa53c](https://github.com/pentaho/hv-uikit-react/commit/92fa53c125f04abadd542b7554c01f6cc8bebe68))
+
+
+
+
+
 ## [2.16.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.8...@hv/uikit-react-core@2.16.9) (2021-01-27)
 
 **Note:** Version bump only for package @hv/uikit-react-core
