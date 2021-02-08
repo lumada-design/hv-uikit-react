@@ -7,7 +7,7 @@ export interface HvDialogContentProps
   /**
    * Content should be indented in relationship to the Dialog title.
    */
-  indentContent: boolean;
+  indentContent?: boolean;
 }
 
 export default function HvDialogContent(props: HvDialogContentProps): JSX.Element | null;
