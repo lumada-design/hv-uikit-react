@@ -19,3 +19,5 @@ export { default as useSavedState } from "./useSavedState";
 export { default as useLabels } from "./useLabels";
 
 export { default as useUpdated } from "./useUpdated";
+
+export { default as useDeprecated } from "./useDeprecated";
