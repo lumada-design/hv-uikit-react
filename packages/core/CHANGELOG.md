@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.8.2...@hv/uikit-react-core@3.8.3) (2021-02-09)
+
+
+### Bug Fixes
+
+* **CodeEditor:** code editor is using a relative path.HVUIKIT-5693 ([307f6b7](https://github.com/pentaho/hv-uikit-react/commit/307f6b78721ec61d9847d89b0be5d83cf4fcef74))
+* **dialogcontent:** indentContent type definition ([474f25d](https://github.com/pentaho/hv-uikit-react/commit/474f25dbd75b5bb122d6e0ac9ae14969f1ea3367))
+
+
+
+
+
 ## [3.8.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.8.1...@hv/uikit-react-core@3.8.2) (2021-02-05)
 
 

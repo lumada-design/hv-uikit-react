@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.10](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.1.9...@hv/uikit-react-lab@3.1.10) (2021-02-09)
+
+
+### Bug Fixes
+
+* **CodeEditor:** code editor is using a relative path.HVUIKIT-5693 ([307f6b7](https://github.com/pentaho/hv-uikit-react/commit/307f6b78721ec61d9847d89b0be5d83cf4fcef74))
+
+
+
+
+
 ## [3.1.9](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.1.8...@hv/uikit-react-lab@3.1.9) (2021-02-05)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
