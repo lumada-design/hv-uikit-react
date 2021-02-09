@@ -16,7 +16,7 @@ const Index = ({ classes, data }) => {
           textRef.current.scrollHeight > textRef.current.clientHeight
       );
     }
-  }, []);
+  }, [data, classes.tooltipAnchor, classes.textContainer]);
 
   return (
     <HvTooltip
