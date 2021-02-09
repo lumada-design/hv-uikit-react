@@ -3,11 +3,9 @@ import PropTypes from "prop-types";
 
 import MonacoEditor from "react-monaco-editor";
 
-import withTheme from "@material-ui/core/styles/withTheme";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { useDeprecated } from "@hv/uikit-react-core";
+import { withStyles, withTheme } from "@material-ui/core";
 import styles from "./styles";
-
-import useDeprecated from "../../../core/src/utils/useDeprecated";
 
 export const DefaultCodeEditorOptions = {
   automaticLayout: true, // TODO add a resize event listener and manually resize?
