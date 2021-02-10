@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.0...@hv/uikit-react-core@2.17.1) (2021-02-10)
+
+
+### Bug Fixes
+
+* **table:** tooltip cell evaluation. [#2234](https://github.com/pentaho/hv-uikit-react/issues/2234) ([a7820fd](https://github.com/pentaho/hv-uikit-react/commit/a7820fd6cb440911c5e415415cbd174a1938b768))
+
+
+
+
+
 # [2.17.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.16.9...@hv/uikit-react-core@2.17.0) (2021-02-06)
 
 
