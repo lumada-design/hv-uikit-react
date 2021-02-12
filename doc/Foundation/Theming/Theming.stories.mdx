@@ -10,7 +10,7 @@ In order to have those themes available to the components, you will need to setu
 
 The **HvProvider** relies on the context feature of React to pass the theme down to the components, so every component or subcomponent enclosed by the **HvProvider** will be injected with a theme prop that contains the theme specs.
 
-```
+```jsx
 <HvProvider>
   <MyApp />
 <HvProvider/>
@@ -29,7 +29,7 @@ The function receives a json object with the same structure as the definitions f
 The themeBuilder will output a material theme object with the values received appended in the ```hv``` property ,
 this theme then can be passed to the provider.
 
-```
+```jsx
 const myRawCustomTheme = {
   "palette": {
     "accent": {
