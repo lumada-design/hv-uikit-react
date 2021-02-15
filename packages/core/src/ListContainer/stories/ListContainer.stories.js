@@ -219,103 +219,186 @@ export const MultiSelectionWithShift = () => {
     4: false,
   };
 
-  const [selectionAnchor, setSelectionAnchor] = useState();
-  const [selectedItems, setSelectedItems] = useState({ ...initialSelection });
+  const useKeyboardSelection = () => {
+    const [selectionAnchor, setSelectionAnchor] = useState();
+    const [selectedItems, setSelectedItems] = useState({ ...initialSelection });
 
-  useEffect(() => {
-    const existingSelections = Object.entries(selectedItems).filter((item) => {
-      return item[1] === true;
-    })[0];
-
-    if (existingSelections === undefined) {
-      setSelectionAnchor(null);
-    }
-  }, [selectedItems, selectionAnchor]);
-
-  const handleListItemClick = (_evt, index) => {
-    if (_evt.shiftKey || _evt.ctrlKey) {
-      let selectionStart;
-      let selectionEnd;
-
-      if (selectionAnchor === null) {
-        setSelectionAnchor(index);
-        selectionStart = index;
-      } else {
-        selectionStart = selectionAnchor;
-      }
-
-      selectionEnd = selectionStart === index ? index + 1 : index + 1;
-
-      if (selectionStart >= selectionEnd) {
-        const originalSelectionStart = selectionStart;
-        selectionStart = index;
-        selectionEnd = originalSelectionStart + 1;
-      }
-
-      const itemsToFlip = Object.entries(initialSelection).slice(selectionStart, selectionEnd);
-      const updatedArray = itemsToFlip.map((item) => {
+    const flipSelection = (selectionToFlip) => {
+      const updatedSelection = selectionToFlip.map((item) => {
         const updatedEntries = [item[0], !item[1]];
         return updatedEntries;
       });
 
-      setSelectedItems({
-        ...initialSelection,
-        ...Object.fromEntries(updatedArray),
-      });
-    } else {
-      setSelectionAnchor(index);
-      setSelectedItems(() => {
-        return {
-          ...initialSelection,
+      return updatedSelection;
+    };
+
+    const getSelectedItemsCount = (selectionSet) => {
+      return Object.values(selectionSet).filter((e) => e === true).length;
+    };
+
+    const getUpdatedSelectionArray = (initialSet, selectionStart, selectionEnd) => {
+      return Object.fromEntries(
+        flipSelection(Object.entries(initialSet).slice(selectionStart, selectionEnd + 1))
+      );
+    };
+
+    const getIndexOfSelectedItem = (selectionSet) => {
+      const preExistingSelectedItems = Object.entries(selectionSet).filter((e) => e[1] === true)[0];
+      return +preExistingSelectedItems[0];
+    };
+
+    const setSelectionSet = (index) => {
+      let leftSet;
+      let rightSet;
+      let updatedArray;
+
+      if (getSelectedItemsCount(selectedItems) > 0) {
+        const indexSelectedItem = getIndexOfSelectedItem(selectedItems);
+
+        if (indexSelectedItem < index) {
+          setSelectionAnchor(indexSelectedItem);
+          updatedArray = getUpdatedSelectionArray(initialSelection, indexSelectedItem, index);
+
+          leftSet = updatedArray;
+          rightSet = undefined;
+        } else {
+          setSelectionAnchor(index);
+          updatedArray = getUpdatedSelectionArray(initialSelection, index, indexSelectedItem);
+
+          leftSet = initialSelection;
+          rightSet = updatedArray;
+        }
+      } else {
+        leftSet = initialSelection;
+        rightSet = {
           [index]: !selectedItems[index],
         };
-      });
-    }
+      }
+
+      return [leftSet, rightSet];
+    };
+
+    const handleShiftCLick = (index) => {
+      let leftSet;
+      let rightSet;
+
+      let updatedArray;
+
+      if (selectionAnchor === null) {
+        [leftSet, rightSet] = setSelectionSet(index);
+      } else {
+        const startOfSlice = selectionAnchor < index ? selectionAnchor : index;
+        const endOfSlice = index > selectionAnchor ? index : selectionAnchor;
+
+        updatedArray = getUpdatedSelectionArray(initialSelection, startOfSlice, endOfSlice);
+
+        leftSet =
+          Object.keys(updatedArray).length <= getSelectedItemsCount(selectedItems)
+            ? initialSelection
+            : selectedItems;
+
+        rightSet = updatedArray;
+      }
+
+      return {
+        ...leftSet,
+        ...rightSet,
+      };
+    };
+
+    const handleListItemClick = (_evt, index) => {
+      if (_evt.shiftKey) {
+        setSelectedItems(handleShiftCLick(index, _evt));
+      } else if (_evt.metaKey || _evt.ctrlKey) {
+        setSelectionAnchor(index);
+
+        selectedItems[index] = !selectedItems[index];
+
+        setSelectedItems(() => {
+          return {
+            ...selectedItems,
+          };
+        });
+      } else {
+        setSelectionAnchor(index);
+
+        const selectedSet = {
+          ...initialSelection,
+          [index]:
+            getSelectedItemsCount(selectedItems) === Object.keys(initialSelection).length
+              ? selectedItems[index]
+              : !selectedItems[index],
+        };
+
+        setSelectedItems(() => {
+          return selectedSet;
+        });
+      }
+    };
+
+    useEffect(() => {
+      const existingSelections = Object.entries(selectedItems).filter((item) => {
+        return item[1] === true;
+      })[0];
+
+      if (existingSelections === undefined) {
+        setSelectionAnchor(null);
+      }
+    }, [selectedItems, selectionAnchor]);
+
+    return [selectedItems, handleListItemClick];
   };
-  return (
-    <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer interactive multiSelect condensed aria-label="Stores" role="listbox">
-        <HvListItem
-          onClick={(event) => handleListItemClick(event, 0)}
-          selected={selectedItems[0]}
-          role="option"
-          style={{ "user-select": "none" }}
-        >
-          98001, Store Manager
-        </HvListItem>
-        <HvListItem
-          onClick={(event) => handleListItemClick(event, 1)}
-          selected={selectedItems[1]}
-          role="option"
-          style={{ "user-select": "none" }}
-        >
-          98002, Store Manager
-        </HvListItem>
-        <HvListItem
-          onClick={(event) => handleListItemClick(event, 2)}
-          selected={selectedItems[2]}
-          role="option"
-          style={{ "user-select": "none" }}
-        >
-          98003, Store Manager
-        </HvListItem>
-        <HvListItem
-          onClick={(event) => handleListItemClick(event, 3)}
-          selected={selectedItems[3]}
-          role="option"
-          style={{ "user-select": "none" }}
-        >
-          98004, Store Manager
-        </HvListItem>
-        <HvListItem
-          onClick={(event) => handleListItemClick(event, 4)}
-          selected={selectedItems[4]}
-          role="option"
-          style={{ "user-select": "none" }}
-        >
-          98005, Store Manager
-        </HvListItem>
-      </HvListContainer>
-    </HvPanel>
-  );
+
+  const MultiSelectionWithShiftComponent = () => {
+    const [selectedItems, handleListItemClick] = useKeyboardSelection();
+
+    return (
+      <HvPanel m="10px" style={{ float: "left" }}>
+        <HvListContainer interactive multiSelect condensed aria-label="Stores" role="listbox">
+          <HvListItem
+            onClick={(event) => handleListItemClick(event, 0)}
+            selected={selectedItems[0]}
+            role="option"
+            style={{ "user-select": "none" }}
+          >
+            98001, Store Manager
+          </HvListItem>
+          <HvListItem
+            onClick={(event) => handleListItemClick(event, 1)}
+            selected={selectedItems[1]}
+            role="option"
+            style={{ "user-select": "none" }}
+          >
+            98002, Store Manager
+          </HvListItem>
+          <HvListItem
+            onClick={(event) => handleListItemClick(event, 2)}
+            selected={selectedItems[2]}
+            role="option"
+            style={{ "user-select": "none" }}
+          >
+            98003, Store Manager
+          </HvListItem>
+          <HvListItem
+            onClick={(event) => handleListItemClick(event, 3)}
+            selected={selectedItems[3]}
+            role="option"
+            style={{ "user-select": "none" }}
+          >
+            98004, Store Manager
+          </HvListItem>
+          <HvListItem
+            onClick={(event) => handleListItemClick(event, 4)}
+            selected={selectedItems[4]}
+            role="option"
+            style={{ "user-select": "none" }}
+          >
+            98005, Store Manager
+          </HvListItem>
+        </HvListContainer>
+      </HvPanel>
+    );
+  };
+
+  return <MultiSelectionWithShiftComponent />;
 };
