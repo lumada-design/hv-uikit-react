@@ -1,11 +1,11 @@
 import React from "react";
-import { HvComponentName } from "../..";
+import HvComponentName from ".."; // for named export update to lab index.js
 
 export default {
-  title: "Components/ComponentName",
+  title: "Lab/ComponentName",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvComponentName } from '@hv/uikit-react-core/dist'",
+    usage: "import { HvComponentName } from '@hv/uikit-react-lab'",
   },
   component: HvComponentName,
 };
