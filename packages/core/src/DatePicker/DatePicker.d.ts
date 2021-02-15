@@ -36,15 +36,15 @@ export interface HvDatePickerProps
   /**
    * The initial value of the input when in single calendar mode.
    */
-  value?: string;
+  value?: Date;
   /**
    * The initial value for the start date when in range mode.
    */
-  startValue?: string;
+  startValue?: Date;
   /**
    * The initial value for the end date when in range mode.
    */
-  endValue?: string;
+  endValue?: Date;
   /**
    * Flag informing if the the component should be in range mode or in single mode.
    */
@@ -65,7 +65,7 @@ export interface HvDatePickerProps
   /**
    * Callback function to be triggered when the input value is changed
    */
-  onChange?: (date?: string) => void;
+  onChange?: (date?: Date) => void;
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
