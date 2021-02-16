@@ -22,9 +22,6 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline": "off",
     "react/require-default-props": "off",
-
-    // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
-    "no-unused-expressions": "off",
     "react/forbid-prop-types": "off",
     "import/extensions": [
       "error",
@@ -45,6 +42,7 @@ module.exports = {
         "no-alert": "off",
         "no-any": 0,
         "react/prop-types": "off",
+        "import/no-extraneous-dependencies": "off",
       },
     },
     {
