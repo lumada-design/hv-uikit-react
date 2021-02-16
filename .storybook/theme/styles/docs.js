@@ -14,7 +14,10 @@ export const getDocsStyles = (theme) => ({
     },
     'a[class*="sbdocs"]': {
       ...theme.hv.typography.link,
-      fontSize: 14,
+      fontSize: "inherit",
+    },
+    "h1, h2": {
+      lineHeight: "initial",
     },
     "&.sbdocs-wrapper": {
       backgroundColor: theme.hv.palette.atmosphere.atmo2,

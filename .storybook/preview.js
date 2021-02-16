@@ -29,7 +29,7 @@ export const parameters = {
       method: "alphabetical",
       order: [
         "Get Started",
-        ["Introduction", "Installation"],
+        ["Introduction", "Installation", "Component List"],
         "Foundation",
         ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
         "Components",
