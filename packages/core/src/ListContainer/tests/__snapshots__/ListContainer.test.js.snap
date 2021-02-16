@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ListContainer should render correctly 1`] = `
-<WithStyles(HvListContainer)
+<WithStyles(ForwardRef)
   condensed={true}
 >
-  <HvListContainer
+  <ForwardRef
     classes={
       Object {
         "root": "HvListContainer-root",
@@ -232,6 +232,6 @@ exports[`ListContainer should render correctly 1`] = `
         </HvListItem>
       </WithStyles(HvListItem)>
     </ul>
-  </HvListContainer>
-</WithStyles(HvListContainer)>
+  </ForwardRef>
+</WithStyles(ForwardRef)>
 `;

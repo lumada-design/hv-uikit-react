@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { withStyles } from "@material-ui/core";
+import useForkRef from "../utils/useForkRef";
+
 import styles from "./styles";
 
 import HvListContext from "./ListContext";
@@ -13,7 +15,7 @@ import HvListContext from "./ListContext";
  * The simple list is for continous <b>vertical indexes of text or icons+text</b>. The content of these lists must be simple: ideally simples fields.
  * This pattern is ideal for <b>selections</b>. It should be used inside a HvPanel.
  */
-const HvListContainer = (props) => {
+const HvListContainer = React.forwardRef((props, externalRef) => {
   const {
     id,
     className,
@@ -60,14 +62,16 @@ const HvListContainer = (props) => {
     });
   };
 
+  const handleRef = useForkRef(externalRef, containerRef);
+
   return (
     <HvListContext.Provider value={listContext}>
-      <ul ref={containerRef} id={id} className={clsx(className, classes.root)} {...others}>
+      <ul ref={handleRef} id={id} className={clsx(className, classes.root)} {...others}>
         {renderChildren()}
       </ul>
     </HvListContext.Provider>
   );
-};
+});
 
 HvListContainer.propTypes = {
   /**

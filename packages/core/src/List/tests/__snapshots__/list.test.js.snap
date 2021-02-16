@@ -49,14 +49,14 @@ exports[`<List /> Single selection should render correctly 1`] = `
       ]
     }
   >
-    <WithStyles(HvListContainer)
+    <WithStyles(ForwardRef)
       className="HvList-root"
       condensed={false}
       disableGutters={false}
       interactive={true}
       role="listbox"
     >
-      <HvListContainer
+      <ForwardRef
         className="HvList-root"
         classes={
           Object {
@@ -523,8 +523,8 @@ exports[`<List /> Single selection should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
         </ul>
-      </HvListContainer>
-    </WithStyles(HvListContainer)>
+      </ForwardRef>
+    </WithStyles(ForwardRef)>
   </HvList>
 </WithStyles(HvList)>
 `;
@@ -576,14 +576,14 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
       ]
     }
   >
-    <WithStyles(HvListContainer)
+    <WithStyles(ForwardRef)
       className="HvList-root"
       condensed={false}
       disableGutters={false}
       interactive={true}
       role="listbox"
     >
-      <HvListContainer
+      <ForwardRef
         className="HvList-root"
         classes={
           Object {
@@ -1341,8 +1341,8 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             </HvListItem>
           </WithStyles(HvListItem)>
         </ul>
-      </HvListContainer>
-    </WithStyles(HvListContainer)>
+      </ForwardRef>
+    </WithStyles(ForwardRef)>
   </HvList>
 </WithStyles(HvList)>
 `;
@@ -1394,7 +1394,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
       ]
     }
   >
-    <WithStyles(HvListContainer)
+    <WithStyles(ForwardRef)
       className="HvList-root"
       condensed={false}
       disableGutters={true}
@@ -1402,7 +1402,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
       role="listbox"
       selectDefault={true}
     >
-      <HvListContainer
+      <ForwardRef
         className="HvList-root"
         classes={
           Object {
@@ -4946,8 +4946,8 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             </HvListItem>
           </WithStyles(HvListItem)>
         </ul>
-      </HvListContainer>
-    </WithStyles(HvListContainer)>
+      </ForwardRef>
+    </WithStyles(ForwardRef)>
   </HvList>
 </WithStyles(HvList)>
 `;
