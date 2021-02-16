@@ -1,8 +1,10 @@
-import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+import React, { useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { Delete, Fail, Lock, Preview, Edit, Duplicate, Drag } from "@hv/uikit-react-icons";
 import { makeStyles } from "@material-ui/core/styles";
 import orderBy from "lodash/orderBy";
-import React, { useState } from "react";
 import Chart from "react-google-charts";
+import ReactTable from "react-table";
 
 import { HvEmptyState, HvTable, HvButton } from "../..";
 
@@ -2438,6 +2440,170 @@ ConditionalPaginationDisplay.parameters = {
     description: {
       story:
         "Table pagination control conditionally displayed. In this case, when there are not enough records for multiple pages, Pagination can be disabled",
+    },
+  },
+};
+
+export const DragAndDrop = () => {
+  const reorder = (list, startIndex, endIndex) => {
+    console.log(list, startIndex, endIndex);
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+  };
+
+  const icons = (
+    <div style={{ display: "flex" }}>
+      <HvButton icon>
+        <Edit />
+      </HvButton>
+      <HvButton icon>
+        <Duplicate />
+      </HvButton>
+      <Drag />
+    </div>
+  );
+
+  const newEntry = (value, i) => {
+    const r = Math.random();
+    return {
+      id: `${i}`,
+      name: `Event ${i}`,
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: i % 2 === 0 ? "Closed" : "Open",
+      riskScore: `${100 - i}`,
+      severity: (r > 0.66 && "Critical") || (r > 0.33 && "Major") || "Minor",
+      priority: r > 0.5 ? "High" : "Medium",
+      icons,
+    };
+  };
+
+  const makeData = (len = 8) => Array.from(Array(len), newEntry);
+
+  const getColumns = () => [
+    {
+      headerText: "Title",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left",
+    },
+    {
+      headerText: "Time",
+      accessor: "createdDate",
+      cellType: "numeric",
+    },
+    {
+      headerText: "Event Type",
+      accessor: "eventType",
+      format: (value) => value.original.eventType.replace("_", " ").toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+    },
+    {
+      headerText: "Status",
+      accessor: "status",
+      format: (value) => value.original.status.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+    },
+    {
+      headerText: "Probability",
+      accessor: "riskScore",
+      format: (value) => `${value.original.riskScore}%`,
+      cellType: "numeric",
+    },
+    {
+      headerText: "Severity",
+      accessor: "severity",
+      format: (value) => value.original.severity.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+    },
+    {
+      headerText: "Priority",
+      accessor: "priority",
+      format: (value) => value.original.priority.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+    },
+    {
+      width: 140,
+      accessor: "icons",
+      fixed: "right",
+      sortable: false,
+    },
+  ];
+
+  const DragTrComponent = ({ children, rowInfo }) => {
+    if (!rowInfo) {
+      return (
+        <ReactTable.defaultProps.TrComponent style={{ width: "100%" }}>
+          {children}
+        </ReactTable.defaultProps.TrComponent>
+      );
+    }
+
+    const { original, index } = rowInfo;
+    const { id } = original;
+
+    return (
+      <Draggable key={id} index={index} draggableId={id}>
+        {(provided) => (
+          <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+            <ReactTable.defaultProps.TrComponent style={{ width: "100%" }}>
+              {children}
+            </ReactTable.defaultProps.TrComponent>
+          </div>
+        )}
+      </Draggable>
+    );
+  };
+
+  const DropTbodyComponent = ({ children }) => (
+    <Droppable droppableId="droppable">
+      {(provided) => (
+        <div ref={provided.innerRef}>
+          <ReactTable.defaultProps.TbodyComponent>
+            {children}
+          </ReactTable.defaultProps.TbodyComponent>
+        </div>
+      )}
+    </Droppable>
+  );
+
+  const DragAndDropTable = () => {
+    const [data, setData] = useState(makeData(8));
+
+    const handleDragEnd = (result) => {
+      const { source, destination } = result;
+      if (!destination) return;
+      setData(reorder(data, source.index, destination.index));
+    };
+
+    return (
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <HvTable
+          TrComponent={DragTrComponent}
+          TbodyComponent={DropTbodyComponent}
+          getTrProps={(state, rowInfo) => ({ rowInfo })}
+          data={data}
+          showPagination={false}
+          columns={getColumns()}
+        />
+      </DragDropContext>
+    );
+  };
+
+  return <DragAndDropTable />;
+};
+
+DragAndDrop.parameters = {
+  docs: {
+    description: {
+      story: "Table with Drag & Drop functionality using `react-beautiful-dnd`.",
     },
   },
 };
