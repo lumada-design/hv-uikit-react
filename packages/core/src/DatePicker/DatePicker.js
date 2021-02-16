@@ -146,7 +146,11 @@ const HvDatePicker = (props) => {
 
   const handleCalendarClose = () => {
     const shouldSave = !(rangeMode || showActions);
-    shouldSave ? handleApply() : handleCancel();
+    if (shouldSave) {
+      handleApply();
+    } else {
+      handleCancel();
+    }
   };
 
   const handleToggle = (evt, open) => {

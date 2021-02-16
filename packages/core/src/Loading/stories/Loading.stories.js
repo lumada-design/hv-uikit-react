@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import useResizeAware from "react-resize-aware";
 import { makeStyles } from "@material-ui/core";
 import { HvButton, HvLoading, HvTypography } from "../..";

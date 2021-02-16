@@ -36,7 +36,7 @@ export const Main = () => {
     if (setStatus) {
       setElementStatus((hasNumber && "invalid") || (isEmpty && "standBy") || "valid");
     }
-    isEmpty ? setShowCloseAdornment(false) : setShowCloseAdornment(true);
+    setShowCloseAdornment(!isEmpty);
     setElementValue(value);
   };
 

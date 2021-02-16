@@ -17,7 +17,7 @@
     "paths": {
       "@hv/uikit-react-core": ["./packages/core/src"],
       "@hv/uikit-react-core/dist/*": ["./packages/core/src/*"],
-      "@hv/uikit-react-icons": ["./packages/core/bin"],
+      "@hv/uikit-react-icons": ["./packages/icons/bin"],
       "@hv/uikit-react-icons/dist/*": ["./packages/icons/bin/*"]
     },
     "noUnusedLocals": true,

@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types, no-unused-vars */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
 
