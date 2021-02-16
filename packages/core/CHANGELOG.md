@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.8.3...@hv/uikit-react-core@3.9.0) (2021-02-16)
+
+
+### Bug Fixes
+
+* **datepicker:** date type declaration. HVUIKIT-5694 ([06157bc](https://github.com/pentaho/hv-uikit-react/commit/06157bc7552bdfd461571543abee2ba4918142f3))
+
+
+### Features
+
+* **list:** improve multi selection in sample. HVUIKIT-5677 ([aa7077c](https://github.com/pentaho/hv-uikit-react/commit/aa7077c77cf9441f5d3508e242c9dfd90c70b49d))
+
+
+
+
+
 ## [3.8.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.8.2...@hv/uikit-react-core@3.8.3) (2021-02-09)
 
 
