@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { ListValueProp } from "../List";
-import { PaginationLabelsProp } from "../Pagination";
+import { PaginationLabelsProp, HvPaginationProps } from "../Pagination";
 import { HvActionsCommonProps } from "../Actions";
 
 export interface TableLabel {
@@ -136,6 +136,11 @@ export interface HvTableProps
    * Boolean to enable or disable the server side pagination mechanism
    */
   paginationServerSide?: boolean;
+
+  /** 
+   * Attributes applied to the pagination component 
+   */
+  paginationProps?: HvPaginationProps;
 
   /**
    * Numeric value to control the number of pages. Useful when Server side pagination data is enabled
