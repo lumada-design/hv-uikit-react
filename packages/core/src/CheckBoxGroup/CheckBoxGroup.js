@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useRef } from "react";
 import PropTypes from "prop-types";
 
 import clsx from "clsx";
@@ -10,6 +10,8 @@ import { HvFormElement, HvLabel, HvInfoMessage, HvWarningText, useUniqueId, HvCh
 import { setId, useControlled } from "../utils";
 
 import styles from "./styles";
+
+import multiSelectionEventHandler from "../utils/multiSelectionEventHandler";
 
 const computeSelectAllState = (selected, total) => {
   if (selected === 0) {
@@ -112,18 +114,18 @@ const HvCheckBoxGroup = (props) => {
 
   const selectAllState = computeSelectAllState(value.length, selectedState.length);
 
+  const selectionAnchor = useRef(undefined);
+
   const onChildChangeInterceptor = useCallback(
     (index, childOnChange, evt, isChecked) => {
-      const newValue = [];
-      selectedState.forEach((isSelected, i) => {
-        if (i === index) {
-          if (isChecked) {
-            newValue.push(allValues[i]);
-          }
-        } else if (isSelected) {
-          newValue.push(allValues[i]);
-        }
-      });
+      const newValue = multiSelectionEventHandler(
+        evt,
+        index,
+        selectionAnchor,
+        allValues,
+        selectedState,
+        isChecked
+      );
 
       childOnChange?.(evt, isChecked);
 
