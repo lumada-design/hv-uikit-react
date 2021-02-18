@@ -6,6 +6,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 We welcome contributions to our project. Here are a few guidelines that will help you along the way:
 
+- [Getting Started](#getting-started)
 - [Question or Problem?](#question-or-problem)
 - [New components](#new-components)
 - [Bugs](#bugs)
@@ -18,6 +19,25 @@ We welcome contributions to our project. Here are a few guidelines that will hel
   - [Linting](#linting)
 - [Commit Message Guidelines](#commit-message-guidelines)
 - [Testing](#testing)
+
+## Getting Started
+
+### Clone the hv-uikit-react repository and bootstrap the project
+
+```shell
+git clone git@github.com:lumada-design/hv-uikit-react.git
+cd hv-uikit-react
+npm ci
+npm run bootstrap
+```
+
+#### Start the storybook dev environment
+
+```shell
+npm run doc
+```
+
+By default it will run in [http://localhost:9001](http://localhost:9001).
 
 ## Question or Problem?
 
@@ -32,11 +52,23 @@ In order to make your component available in the Storybook you also need to add:
 
 - A **sample** in `packages/lab/src/<COMPONENT>/stories/<COMPONENT>.stories.js`
 
-Too much work? We provide a generator that helps to scaffold all of this.
+### Running the generate utility tool
 
+```shell
+npm run generate <YOUR_COMPONENT>
 ```
-npm run generate
+
+This will generate a basic component structure in the lab folder found at `packages/lab/src/<YOUR_COMPONENT>`.
+
+### Symlinking packages
+
+If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
+
+```shell
+npm run link
 ```
+
+Alternatively you can use [yalc](https://github.com/wclr/yalc).
 
 ## Bugs
 
