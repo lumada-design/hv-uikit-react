@@ -76,6 +76,7 @@ const HvTable = (props) => {
     dropdownMenuProps,
     paginationLabels,
     paginationServerSide = false,
+    paginationProps = {},
     showPagination = true,
     showPageSize = true,
     dataSize,
@@ -154,19 +155,20 @@ const HvTable = (props) => {
    * Pagination customizations.
    */
   const getPaginationProps = () => {
-    const PaginationComponent = (paginationProps) => {
+    const PaginationComponent = (tablePaginationProps) => {
       return (
         <HvPagination
           id={setId(id, "pagination")}
           labels={paginationLabels}
-          pageSize={paginationProps.pageSize}
-          pages={paginationProps.pages}
-          page={paginationProps.page}
-          canPrevious={paginationProps.canPrevious}
-          canNext={paginationProps.canNext}
-          onPageChange={paginationProps.onPageChange}
-          onPageSizeChange={paginationProps.onPageSizeChange}
-          showPageSizeOptions={paginationProps.showPageSizeOptions}
+          pageSize={tablePaginationProps.pageSize}
+          pages={tablePaginationProps.pages}
+          page={tablePaginationProps.page}
+          canPrevious={tablePaginationProps.canPrevious}
+          canNext={tablePaginationProps.canNext}
+          onPageChange={tablePaginationProps.onPageChange}
+          onPageSizeChange={tablePaginationProps.onPageSizeChange}
+          showPageSizeOptions={tablePaginationProps.showPageSizeOptions}
+          {...paginationProps}
         />
       );
     };
@@ -809,6 +811,10 @@ HvTable.propTypes = {
    * Boolean to enable or disable the server side pagination mechanism
    */
   paginationServerSide: PropTypes.bool,
+  /**
+   * Attributes applied to the pagination component
+   */
+  paginationProps: PropTypes.instanceOf(Object),
   /**
    * Numeric value to control the number of pages. Useful when Server side pagination data is enabled
    */
