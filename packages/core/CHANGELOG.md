@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.1...@hv/uikit-react-core@2.17.2) (2021-02-20)
+
+
+### Bug Fixes
+
+* **Table:** missing pageSizeOptions prop.HVUIKIT-5695 ([f632f16](https://github.com/pentaho/hv-uikit-react/commit/f632f160dc4b98f38fb9d9c0294db37124919cec))
+
+
+
+
+
 ## [2.17.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.0...@hv/uikit-react-core@2.17.1) (2021-02-10)
 
 
