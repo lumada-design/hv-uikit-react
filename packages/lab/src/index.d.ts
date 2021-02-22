@@ -18,3 +18,6 @@ export * from "./Slider";
 
 export { default as HvTimePicker } from "./TimePicker";
 export * from "./TimePicker";
+
+export { default as HvCookiesConsentDialog } from "./CookiesConsentDialog";
+export * from "./CookiesConsentDialog";
