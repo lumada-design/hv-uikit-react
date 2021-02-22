@@ -2553,7 +2553,7 @@ export const DragAndDrop = () => {
       <Draggable key={id} index={index} draggableId={id}>
         {(provided) => (
           <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-            <ReactTable.defaultProps.TrComponent style={{ width: "100%" }}>
+            <ReactTable.defaultProps.TrComponent style={{ width: "100%" }} className="HvTable-tr">
               {children}
             </ReactTable.defaultProps.TrComponent>
           </div>
@@ -2566,7 +2566,7 @@ export const DragAndDrop = () => {
     <Droppable droppableId="droppable">
       {(provided) => (
         <div ref={provided.innerRef}>
-          <ReactTable.defaultProps.TbodyComponent>
+          <ReactTable.defaultProps.TbodyComponent className="HvTable-tbody">
             {children}
           </ReactTable.defaultProps.TbodyComponent>
         </div>
