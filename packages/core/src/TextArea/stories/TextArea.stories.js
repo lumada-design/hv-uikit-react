@@ -217,3 +217,41 @@ RequiredTextArea.story = {
     },
   },
 };
+
+export const LimitedOnChange = () => {
+  const [value, setValue] = useState("");
+  const [validationState, setValidationState] = useState("valid");
+  const maxCharQuantity = 10;
+
+  const labels = {
+    inputLabel: "Limited area",
+    placeholder: "Enter value",
+    warningText: "Character limit reached",
+  };
+
+  const onChangeHandler = (event, newValue) => {
+    newValue.length > maxCharQuantity ? setValidationState("invalid") : setValidationState("valid");
+    setValue(newValue);
+  };
+
+  return (
+    <>
+      <HvTextArea
+        value={value}
+        rows={5}
+        labels={labels}
+        onChange={onChangeHandler}
+        validationState={validationState}
+        maxCharQuantity={maxCharQuantity}
+      />
+    </>
+  );
+};
+
+LimitedOnChange.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Text area state being controlled from outside.",
+    },
+  },
+};
