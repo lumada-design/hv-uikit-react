@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.2...@hv/uikit-react-core@2.17.3) (2021-02-23)
+
+
+### Bug Fixes
+
+* **table:** format func not applied with sub template v2. HVUIKIT-5575 ([53a1ba9](https://github.com/pentaho/hv-uikit-react/commit/53a1ba9261540a0f72da41bcadcaa396739a43d8))
+* **Table:** missing pageSizeOptions prop.HVUIKIT-5695 ([f632f16](https://github.com/pentaho/hv-uikit-react/commit/f632f160dc4b98f38fb9d9c0294db37124919cec))
+
+
+
+
+
 ## [2.17.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.1...@hv/uikit-react-core@2.17.2) (2021-02-20)
 
 
