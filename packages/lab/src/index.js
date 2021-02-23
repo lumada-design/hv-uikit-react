@@ -10,3 +10,4 @@ export { default as HvTimePicker } from "./TimePicker";
 export { default as HvTag } from "./Tag";
 
 export { default as HvCookiesConsentDialog } from "./CookiesConsentDialog";
+export { default as HvCookiesConsentBanner } from "./CookiesConsentBanner";

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CookiesConsentBanner sample snapshot testing Main 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-5 CookiesConsentBanner-root-1"
+  >
+    <div
+      class="CookiesConsentBanner-content-2"
+    >
+      <p
+        class="CookiesConsentBanner-title-3 HvTypography-root HvTypography-highlightText"
+      >
+        This website uses cookies
+      </p>
+      <p
+        class="HvTypography-root HvTypography-normalText"
+      >
+        This website uses cookies to offer you a better browsing experience. You consent to our cookies by clicking "Accept". For more information, visit 
+        <a
+          class="HvTypography-root HvTypography-link"
+          href="http://www.hitachi.com"
+        >
+          Hitachi Cookie Policy
+        </a>
+        .
+      </p>
+    </div>
+    <div
+      class="CookiesConsentBanner-actions-4"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+        style="width: 70px;"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Accept
+        </span>
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+        style="width: 150px;"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          See cookie settings
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

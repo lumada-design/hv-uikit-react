@@ -24,3 +24,6 @@ export * from "./Tag";
 
 export { default as HvCookiesConsentDialog } from "./CookiesConsentDialog";
 export * from "./CookiesConsentDialog";
+
+export { default as HvCookiesConsentBanner } from "./CookiesConsentBanner";
+export * from "./CookiesConsentBanner";
