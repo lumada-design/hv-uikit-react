@@ -1,7 +1,9 @@
 import React from "react";
-import clsx from "clsx";
 import PropTypes from "prop-types";
+import clsx from "clsx";
+
 import { withStyles } from "@material-ui/core";
+
 import styles from "./styles";
 
 /**
@@ -29,8 +31,8 @@ HvComponentName.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    root: PropTypes.string
-  }).isRequired
+    root: PropTypes.string,
+  }).isRequired,
 };
 
 export default withStyles(styles, { name: "HvComponentName" })(HvComponentName);
