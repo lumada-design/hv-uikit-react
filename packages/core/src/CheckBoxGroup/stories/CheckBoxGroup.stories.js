@@ -159,3 +159,15 @@ ErrorMessage.parameters = {
     ],
   },
 };
+export const ShiftSelect = () => {
+  return (
+    <HvCheckBoxGroup label="Choose the best checkbox">
+      <HvCheckBox label="Checkbox 1" value="1" />
+      <HvCheckBox label="Checkbox 2" value="2" />
+      <HvCheckBox label="Checkbox 3" value="3" />
+      <HvCheckBox label="Checkbox 4" value="4" />
+      <HvCheckBox label="Checkbox 5" value="5" />
+      <HvCheckBox label="Checkbox 6" value="6" />
+    </HvCheckBoxGroup>
+  );
+};
