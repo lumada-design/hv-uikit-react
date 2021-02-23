@@ -3,6 +3,8 @@
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
+import "@testing-library/jest-dom";
+
 // Had to add this due a problem when running unit tests on component that have Popper.Js being used.
 if (global.document)
   document.createRange = () => ({
@@ -10,8 +12,8 @@ if (global.document)
     setEnd: () => {},
     commonAncestorContainer: {
       nodeName: "BODY",
-      ownerDocument: document
-    }
+      ownerDocument: document,
+    },
   });
 
 configure({ adapter: new Adapter() });
