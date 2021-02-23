@@ -1,5 +1,6 @@
 import React from "react";
-import HvComponentName from ".."; // for named export update to lab index.js
+
+import { HvComponentName } from "../..";
 
 export default {
   title: "Lab/ComponentName",

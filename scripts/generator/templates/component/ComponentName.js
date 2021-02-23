@@ -1,7 +1,9 @@
 import React from "react";
-import clsx from "clsx";
 import PropTypes from "prop-types";
+import clsx from "clsx";
+
 import { withStyles } from "@material-ui/core";
+
 import styles from "./styles";
 
 /**
