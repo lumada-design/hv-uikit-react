@@ -2,36 +2,78 @@
 
 We welcome contributions to our project. Here are a few guidelines that will help you along the way:
 
-  - [Question or Problem?](#question-or-problem)
-  - [New components](#new-components)
-  - [Bugs](#bugs)
-  - [Feature Requests](#feature-requests)
-  - [Submission Guidelines](#submission-guidelines)
-    - [Submitting an Issue](#submitting-an-issue)
-    - [Submitting a Pull Request](#submitting-a-pull-request)
-  - [Coding Standards](#coding-standards)
-    - [Style Guide](#style-guide)
-    - [Linting](#linting)
-  - [Commit Message Guidelines](#commit-message-guidelines)
-  - [Testing](#testing)
-  
+- [Getting Started](#getting-started)
+- [Question or Problem?](#question-or-problem)
+- [New components](#new-components)
+- [Bugs](#bugs)
+- [Feature Requests](#feature-requests)
+- [Submission Guidelines](#submission-guidelines)
+  - [Submitting an Issue](#submitting-an-issue)
+  - [Submitting a Pull Request](#submitting-a-pull-request)
+- [Coding Standards](#coding-standards)
+  - [Style Guide](#style-guide)
+  - [Linting](#linting)
+- [Commit Message Guidelines](#commit-message-guidelines)
+- [Testing](#testing)
+
+## Getting Started
+
+### Clone the hv-uikit-react repository and bootstrap the project
+
+```shell
+git clone git@github.com:lumada-design/hv-uikit-react.git
+cd hv-uikit-react
+npm ci
+npm run bootstrap
+```
+
+#### Start the storybook dev environment
+
+```shell
+npm run doc
+```
+
+By default it will run in [http://localhost:9001](http://localhost:9001).
+
 ## Question or Problem?
-Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests. 
+
+Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.
 Please use **#ui-kit** slack channel on the [hitachivantara-eng workspace](https://hitachivantara-eng.slack.com/messages/CFY74GK6G).
 
 ## New components
+
 When contributing with a new component, please add it to the **lab** in `packages/lab/src/<YOUR_COMPONENT>`
 
 In order to make your component available in the Storybook you also need to add:
+
 - A **story** in `packages/lab/src/<YOUR_COMPONENT>/stories/<YOUR_STORY>.stories.js`
 
+### Running the generate utility tool
+
+```shell
+npm run generate <YOUR_COMPONENT>
+```
+
+This will generate a basic component structure in the lab folder found at `packages/lab/src/<YOUR_COMPONENT>`.
+
+### Symlinking packages
+
+If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
+
+```shell
+npm run link
+```
+
+Alternatively you can use [yalc](https://github.com/wclr/yalc).
+
 ## Bugs
-If you find a bug in the source code, you can help us by [submitting an issue]((#submitting-an-issue)) to this repo.
+
+If you find a bug in the source code, you can help us by [submitting an issue](#submitting-an-issue) to this repo.
 Even better you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
 
 ## Feature Requests
 
-You can request a new feature by [submitting an issue]((#submitting-an-issue)) to this repo.
+You can request a new feature by [submitting an issue](#submitting-an-issue) to this repo.
 Features can be **new components** or changes to **existing**.
 
 Please make sure your features are compliant with the [Design System](https://hitachivantara.sharepoint.com/sites/DesignSystem/SitePages/Home.aspx) guidelines.
@@ -39,20 +81,24 @@ Please make sure your features are compliant with the [Design System](https://hi
 ## Submission Guidelines
 
 ### Submitting an Issue
-You can file new issues by selecting from our [new issue templates](https://github.com/pentaho/hv-uikit-react/issues/new/choose) and filling out the issue template. 
+
+You can file new issues by selecting from our [new issue templates](/issues/new/choose) and filling out the issue template.
 Before you submit your issue, search the repository, maybe your question was already answered.
 
-If your issue appears to be a bug, and hasn't been reported, [open a new issue]((https://github.com/pentaho/hv-uikit-react/issues)). 
+If your issue appears to be a bug, and hasn't been reported, [open a new issue](/issues).
 Help us to maximize the effort we can spend fixing issues and adding new features, by not reporting duplicate issues.
 
 ### Submitting a Pull Request
+
 Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
 
 #### Branch Structure
-All contributions should target the `master` branch (or `v1.x` if targeting the previous major versions). Maintainers will be responsible for reviewing and merging the Pull Request.
+
+All contributions should target the `master` branch (or `v2.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
 
 #### Setup
-1. Pull the latest `master` branch.  
+
+1. Pull the latest `master` branch.
 2. Always work and submit pull requests from a branch:
    ```
    $ git checkout -b YOUR_BRANCH_NAME master
@@ -80,7 +126,7 @@ Feel free to edit/write components in your own style but be wary that we may ask
 ### Linting
 
 We enforce some style rules for code in this repository using [eslint](http://eslint.org/). You can install a linting addon to a lot of editors and IDEs that will follow our linting rules.
-If you decide to not install a linter addon, or cannot, you can run `npm run lint` to get a report of any style issues. 
+If you decide to not install a linter addon, or cannot, you can run `npm run lint` to get a report of any style issues.
 
 Any issues not fixed will be caught during CI, and will prevent merging.
 
@@ -91,6 +137,7 @@ We enforce [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-
 Commits must be prefixed with a `type` in order to communicate intent, an optional `scope` may be provided after a type.
 
 ### Type
+
 Must be one of the following:
 
 - `feat:` a feature that is visible for end users.
@@ -101,17 +148,18 @@ Must be one of the following:
 - Others commit types are allowed, for example: `style:`, `perf:`, `test:`.
 
 Samples:
+
 ```
 docs: correct spelling of CHANGELOG
 ```
+
 ```
 feat(lang): added polish language
 ```
+
 ```
 fix: minor typos in code, fixes issue #12
 ```
-
-
 
 ## Testing
 

@@ -2,60 +2,57 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Get Started/Installation" />
 
-# Install UI Kit React
+# Installation
 
-<br />
+HV UI Kit is available as multiple npm packages. You can install them in any working React v16.x project.
 
-### npm registry
+## Configuring the npm registry
 
-Our packages are being published to an <b>Hitachi Vantara npm registry</b>. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
+The packages are being published to a corporate Hitachi Vantara npm registry.
+To be able to use them, you need to associate the `@hv` scope with that registry using `npm config`:
 
+```shell
+npm config set @hv:registry https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
 ```
-@hv:registry=https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
+
+You can check if your `~/.npmrc` is already configured by running `npm config ls`.
+
+## Package installation
+
+Install the `@hv/uikit-react-core` package and its peer dependencies:
+
+```shell
+npm install @hv/uikit-react-core @material-ui/core@^4.11.0 plotly.js-basic-dist@^1.55.2
 ```
 
-Please check that your npmrc has this by running `npm config ls -l`; otherwise you can add it to the config by running `npm config edit`, or the installation step below will not work.
+### Other packages available
 
-### Installation
+If you need to use any non-core community contributed package, install the `@hv/uikit-react-lab` package.
 
-- themes - `npm install @hv/uikit-common-themes`
-- icons - `npm install @hv/uikit-react-icons`
-- core - `npm install @hv/uikit-react-core`
-- lab - `npm install @hv/uikit-react-lab`
+```shell
+npm install @hv/uikit-react-lab
+```
+
+Also available:
+
 - code-editor - `npm install @hv/uikit-react-code-editor`
+- icons - `npm install @hv/uikit-react-icons`
+- themes - `npm install @hv/uikit-common-themes`
 
-To always have the latest development version of the UIkit, even before a release, you may want to use npm with the `latest` tag.
+The `@hv/uikit-react-icons` is installed as a dependency of `@hv/uikit-react-core` and the `@hv/uikit-common-themes` shouldn't be necessary out of a very specific use case.
 
-#### global link
+### Installing an older version
 
-If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
+The above commands will install the latest version of **UI Kit 3.x**. It implements the **DS 3.x** specifications.
 
-```sh
-npm run link
+If your project's design follows **DS 1.x** you must use the **UI Kit 2.x** release. Install it by suffixing "@2.\*" to the package names:
+
+```shell
+npm install @hv/uikit-react-core@2.*
 ```
 
-It will create a symlink in the global folder {prefix}/lib/node_modules/{package} for each package.
+The peer dependencies will also be different:
 
-### Getting Started
-
-Install root dependencies.
-
-```sh
-npm i
-```
-
-#### bootstrap
-
-Bootstrap the packages in the current repo. Installs all their dependencies and links any cross-dependencies.
-
-```sh
-npm run bootstrap
-```
-
-#### storybook
-
-It will startup the UI Development Environment [Storybook](https://storybook.js.org/). There you can see a list of the available components.
-
-```sh
-npm run doc
+```shell
+npm install @material-ui/core@~4.8.0 plotly.js@>1.34.0
 ```
