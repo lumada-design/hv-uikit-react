@@ -1,28 +1,28 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
+
+import { render } from "testing-utils";
+
+import { HvComponentName } from "../..";
+
 import { Main } from "../stories/ComponentName.stories";
-import { HvProvider, HvComponentName } from "../..";
 
 describe("ComponentName", () => {
-  let wrapper;
-
-  it("should be defined", () => {
-    wrapper = mount(
-      <HvProvider>
-        <Main />
-      </HvProvider>
-    );
-    expect(wrapper).toBeDefined();
+  describe("sample snapshot testing", () => {
+    it("Main", () => {
+      const { container } = render(<Main />);
+      expect(container).toMatchSnapshot();
+    });
   });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(HvComponentName)).toMatchSnapshot();
-  });
+  describe("general", () => {
+    it("renders the component as expected", () => {
+      const { getByText } = render(<HvComponentName />);
 
-  it("should render the ComponentName", () => {
-    const component = wrapper.find(HvComponentName);
-    expect(component.length).toBe(1);
+      const container = getByText("ComponentName");
+
+      expect(container).toBeInTheDocument();
+    });
   });
 });

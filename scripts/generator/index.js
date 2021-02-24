@@ -44,10 +44,15 @@ const writeFile = (name, srcPath, distPath) => {
  */
 const createComponent = (name, packageName, templateName) => {
   const srcDir = `${TEMPLATE_PATH}/${templateName}`;
-  const distDir = `${packageName === "core" ? CORE_PATH : LAB_PATH}/${name}`;
+  const distPackage = `${packageName === "core" ? CORE_PATH : LAB_PATH}`;
+  const distDir = `${distPackage}/${name}`;
 
   const exists = fs.pathExistsSync(distDir);
-  if (exists) throw console.log(`Component ${name} already exists!`);
+  if (exists) {
+    console.error(`ERROR: Component ${name} already exists!`);
+    // no error code, so it doesn't print "npm ERR! code ELIFECYCLE"...
+    process.exit();
+  }
 
   console.log(`Creating ${name} component...`);
 
@@ -60,6 +65,16 @@ const createComponent = (name, packageName, templateName) => {
 
     writeFile(name, srcPath, distPath, file);
   });
+
+  fs.appendFileSync(
+    `${distPackage}/index.js`,
+    `\nexport { default as Hv${name} } from "./${name}";`
+  );
+
+  fs.appendFileSync(
+    `${distPackage}/index.d.ts`,
+    `\nexport { default as Hv${name} } from "./${name}";\nexport * from "./${name}";\n`
+  );
 };
 
 const args = process.argv.slice(2);
@@ -68,6 +83,7 @@ const [componentName, packageName = "lab", templateName = "component"] = args;
 
 if (componentName) {
   createComponent(componentName, packageName, templateName);
+
   console.log(`Component ${componentName} created successfully!`);
 } else {
   console.error("ERROR: You must provide a component name.");
