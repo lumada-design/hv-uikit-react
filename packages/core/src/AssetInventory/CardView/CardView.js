@@ -2,13 +2,18 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { HvActionBar, HvActionsGeneric, HvCard, HvCardContent, HvGrid } from "../..";
+import {
+  HvActionBar,
+  HvActionsGeneric,
+  HvCard,
+  HvCardContent,
+  HvGrid,
+  useWidth,
+  setId,
+} from "../..";
 import Focus from "../../Focus";
 import styles from "./styles";
 import setActionsId from "../setActionsId";
-
-import useWidth from "../../utils/useWidth";
-import { setId } from "../../utils/setId";
 
 const DEFAULT_VIEW_CONFIGURATION = {
   onSelection: null,
@@ -114,7 +119,6 @@ const CardView = ({
           container
           justify="flex-start"
           alignItems="flex-start"
-          spacing={4}
         >
           {renderCards()}
         </HvGrid>

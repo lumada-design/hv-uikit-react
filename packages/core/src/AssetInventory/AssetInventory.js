@@ -10,7 +10,7 @@ import HvGrid from "../Grid";
 import HvPagination from "../Pagination";
 import HvBulkActions from "../BulkActions";
 import styles from "./styles";
-import { setId, useLabels } from "../utils";
+import { setId, useLabels, useWidth } from "../utils";
 
 const DEFAULT_LABELS = {
   sortBy: "Sort by",
@@ -86,6 +86,7 @@ const HvAssetInventory = (props) => {
   const [selectedValues, setSelectedValues] = useState([...selectedValuesProp]);
   const [searchString, setSearchString] = useState(searchStringProp);
   const [selectedSort, setSelectedSort] = useState({ sortId: sortOptionId, sortFunc: undefined });
+  const currentBreakpoint = useWidth();
 
   useEffect(() => {
     setValues(valuesProp);
@@ -295,58 +296,80 @@ const HvAssetInventory = (props) => {
   const showSearch = find(configuration.metadata, (element) => element.searchable);
   const showRightControls = showButtons || showSort;
 
+  const sortJustify = currentBreakpoint === "xs" ? "space-between" : "flex-start";
+  const justifyControls = showSort ? sortJustify : "flex-end";
   const align = !showSearch ? "flex-end" : "space-between";
 
   return (
     <div id={id} className={clsx(className, classes.root)}>
       {FilterPlaceholder && <FilterPlaceholder onSelection={changePageValues} />}
-      <HvGrid container spacing={0}>
-        <HvGrid container justify={align} alignItems="flex-end">
-          {showSearch && <HvGrid item>{renderSearch()}</HvGrid>}
-          {showRightControls && (
-            <HvGrid item>
-              <HvGrid container alignItems="flex-end" spacing={0}>
-                {showSort && <HvGrid item>{renderSort()}</HvGrid>}
-                {showButtons && (
-                  <HvGrid item>
-                    <div className={classes.multiButtons}>
-                      <MultiButton
-                        id={id}
-                        views={multibuttonProps}
-                        selectedView={selectedView}
-                        changeView={changeView}
-                        onViewChange={onViewChange}
-                      />
-                    </div>
-                  </HvGrid>
-                )}
+      <HvGrid container>
+        <HvGrid item xs={12}>
+          <HvGrid container justify={align}>
+            {showSearch && (
+              <HvGrid xs={12} sm={6} md={4} lg={3} xl={3} item>
+                {renderSearch()}
+              </HvGrid>
+            )}
+            {showRightControls && (
+              <HvGrid xs={12} sm={6} md={4} lg={3} xl={3} item>
+                <HvGrid
+                  className={classes.rightControls}
+                  justify={justifyControls}
+                  container
+                  alignItems="flex-end"
+                  spacing={0}
+                >
+                  {showSort && (
+                    <HvGrid className={classes.sortContainer} item xs>
+                      {renderSort()}
+                    </HvGrid>
+                  )}
+                  {showButtons && (
+                    <HvGrid item>
+                      <div className={classes.multiButtons}>
+                        <MultiButton
+                          id={id}
+                          views={multibuttonProps}
+                          selectedView={selectedView}
+                          changeView={changeView}
+                          onViewChange={onViewChange}
+                        />
+                      </div>
+                    </HvGrid>
+                  )}
+                </HvGrid>
+              </HvGrid>
+            )}
+          </HvGrid>
+          <HvGrid container>
+            <HvGrid item xs={12}>
+              {hasBulkActions && (
+                <HvBulkActions
+                  classes={{ root: classes.bulkActions }}
+                  numTotal={values.length}
+                  numSelected={selectedValues.length}
+                  onSelectAll={handleSelectPage}
+                  onSelectAllPages={handleSelectAll}
+                  showSelectAllPages
+                  maxVisibleActions={maxVisibleActions}
+                />
+              )}
+            </HvGrid>
+          </HvGrid>
+          <HvGrid container className={classes.viewContainer}>
+            <HvGrid item xs={12}>
+              {renderView()}
+            </HvGrid>
+          </HvGrid>
+          {hasPagination && (
+            <HvGrid container>
+              <HvGrid item xs={12}>
+                {renderPagination()}
               </HvGrid>
             </HvGrid>
           )}
         </HvGrid>
-        <HvGrid item xs={12}>
-          {hasBulkActions && (
-            <HvBulkActions
-              classes={{ root: classes.bulkActions }}
-              numTotal={values.length}
-              numSelected={selectedValues.length}
-              onSelectAll={handleSelectPage}
-              onSelectAllPages={handleSelectAll}
-              showSelectAllPages
-              maxVisibleActions={maxVisibleActions}
-            />
-          )}
-        </HvGrid>
-        <HvGrid item xs={12} className={classes.viewContainer}>
-          {renderView()}
-        </HvGrid>
-        {hasPagination && (
-          <HvGrid container>
-            <HvGrid item xs={12}>
-              {renderPagination()}
-            </HvGrid>
-          </HvGrid>
-        )}
       </HvGrid>
     </div>
   );

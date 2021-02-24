@@ -23,6 +23,7 @@ import {
   HvCardContent,
   HvCardView,
   HvCheckBox,
+  HvContainer,
   HvEmptyState,
   HvGrid,
   HvKpi,
@@ -293,26 +294,28 @@ export const Main = () => {
     }));
 
   return (
-    <HvAssetInventory
-      id="hv-assetinventory"
-      values={values()}
-      configuration={assetConfiguration}
-      onSelection={(event) => console.log(event.target.value)}
-      isSelectable
-      actions={myActions}
-      actionsCallback={(e, id, action) => console.log(`You have pressed action ${action.label}`)}
-      searchProps={{ "aria-label": "Filters the data" }}
-      multibuttonProps={[
-        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-      ]}
-      emptyComponent={
-        <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
-      }
-    >
-      <HvCardView id="card" renderer={cardRenderer} />
-      <HvListView id="list" renderer={rowRenderer} />
-    </HvAssetInventory>
+    <HvContainer>
+      <HvAssetInventory
+        id="hv-assetinventory"
+        values={values()}
+        configuration={assetConfiguration}
+        onSelection={(event) => console.log(event.target.value)}
+        isSelectable
+        actions={myActions}
+        actionsCallback={(e, id, action) => console.log(`You have pressed action ${action.label}`)}
+        searchProps={{ "aria-label": "Filters the data" }}
+        multibuttonProps={[
+          { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+          { id: "list-button", icon: <List />, "aria-label": "Select list view" },
+        ]}
+        emptyComponent={
+          <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
+        }
+      >
+        <HvCardView id="card" renderer={cardRenderer} />
+        <HvListView id="list" renderer={rowRenderer} />
+      </HvAssetInventory>
+    </HvContainer>
   );
 };
 
@@ -533,58 +536,60 @@ export const Configurations = () => {
   };
 
   return (
-    <HvAssetInventory
-      id="hv-assetinventory"
-      values={values()}
-      configuration={configuration}
-      onSelection={(event) => console.log(event.target.value)}
-      isSelectable
-      actions={myActions}
-      actionsCallback={(e, id, action) =>
-        console.log(`You have pressed data ${id} with action ${action.label}`)
-      }
-      hasPagination
-      pageSizeOptions={[2, 4, 6, 8, 10]}
-      pageSize={4}
-      selectedView={0}
-      searchProps={{ "aria-label": "Filters the cards by title, probability and time horizon." }}
-      multibuttonProps={[
-        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-      ]}
-      paginationProps={{
-        labels: {
-          pageSizeEntryName: "assets",
-        },
-      }}
-      emptyComponent={
-        <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
-      }
-    >
-      <HvCardView
-        id="cardView"
-        renderer={cardRenderer}
-        viewConfiguration={{
-          breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
+    <HvContainer>
+      <HvAssetInventory
+        id="hv-assetinventory"
+        values={values()}
+        configuration={configuration}
+        onSelection={(event) => console.log(event.target.value)}
+        isSelectable
+        actions={myActions}
+        actionsCallback={(e, id, action) =>
+          console.log(`You have pressed data ${id} with action ${action.label}`)
+        }
+        hasPagination
+        pageSizeOptions={[2, 4, 6, 8, 10]}
+        pageSize={4}
+        selectedView={0}
+        searchProps={{ "aria-label": "Filters the cards by title, probability and time horizon." }}
+        multibuttonProps={[
+          { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+          { id: "list-button", icon: <List />, "aria-label": "Select list view" },
+        ]}
+        paginationProps={{
+          labels: {
+            pageSizeEntryName: "assets",
+          },
         }}
-      />
-      <HvListView
-        id="listView"
-        renderer={rowRenderer}
-        viewConfiguration={{
-          columnConfiguration: [
-            { style: { width: 1, textAlign: "center" } },
-            { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
-            { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
-            { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
-            {
-              title: "Related Assets",
-              style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
-            },
-          ],
-        }}
-      />
-    </HvAssetInventory>
+        emptyComponent={
+          <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
+        }
+      >
+        <HvCardView
+          id="cardView"
+          renderer={cardRenderer}
+          viewConfiguration={{
+            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
+          }}
+        />
+        <HvListView
+          id="listView"
+          renderer={rowRenderer}
+          viewConfiguration={{
+            columnConfiguration: [
+              { style: { width: 1, textAlign: "center" } },
+              { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
+              { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
+              { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
+              {
+                title: "Related Assets",
+                style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+              },
+            ],
+          }}
+        />
+      </HvAssetInventory>
+    </HvContainer>
   );
 };
 
@@ -847,27 +852,29 @@ export const ThreeViews = () => {
     }));
 
   return (
-    <HvAssetInventory
-      values={values()}
-      configuration={assetConfiguration}
-      onSelection={(event) => console.log(event.target.value)}
-      isSelectable
-      hasBulkActions
-      actions={myActions}
-      actionsCallback={(e, id, action) =>
-        console.log(`You have pressed data ${id} with action ${action.label}`)
-      }
-      searchProps={{ "aria-label": "Filters the cards by title, probability and time horizon." }}
-      multibuttonProps={[
-        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-        { id: "text-button", icon: <LeftAlign />, "aria-label": "Select text view" },
-      ]}
-    >
-      <HvCardView id="card" renderer={cardRenderer} />
-      <HvListView id="list" renderer={rowRenderer} />
-      <TextRender id="text" />
-    </HvAssetInventory>
+    <HvContainer>
+      <HvAssetInventory
+        values={values()}
+        configuration={assetConfiguration}
+        onSelection={(event) => console.log(event.target.value)}
+        isSelectable
+        hasBulkActions
+        actions={myActions}
+        actionsCallback={(e, id, action) =>
+          console.log(`You have pressed data ${id} with action ${action.label}`)
+        }
+        searchProps={{ "aria-label": "Filters the cards by title, probability and time horizon." }}
+        multibuttonProps={[
+          { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+          { id: "list-button", icon: <List />, "aria-label": "Select list view" },
+          { id: "text-button", icon: <LeftAlign />, "aria-label": "Select text view" },
+        ]}
+      >
+        <HvCardView id="card" renderer={cardRenderer} />
+        <HvListView id="list" renderer={rowRenderer} />
+        <TextRender id="text" />
+      </HvAssetInventory>
+    </HvContainer>
   );
 };
 
@@ -1053,61 +1060,63 @@ export const ServerSidePagination = () => {
     };
 
     return (
-      <HvAssetInventory
-        values={values}
-        selectedValues={["id_1", "id_3", "id_4"]}
-        configuration={configuration}
-        onSelection={(event) => console.log(event.target.value)}
-        isSelectable
-        actions={myActions}
-        actionsCallback={(e, id, action) =>
-          console.log(`You have pressed data ${id} with action ${action.label}`)
-        }
-        // Pagination
-        hasPagination
-        paginationServerSide
-        pageSizeOptions={[2, 4, 6, 8, 10]}
-        onPageChange={onPageChange}
-        onPageSizeChange={onPageSizeChange}
-        pages={getPages(pageSize)}
-        page={page}
-        pageSize={pageSize}
-        // Search
-        onSearch={onSearch}
-        // Sort
-        onSortChange={onSort}
-        sortOptionId="id1Asc"
-        searchString={searchString}
-        searchProps={{ "aria-label": "Filters data by title, probability and time horizon." }}
-        multibuttonProps={[
-          { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-          { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-        ]}
-      >
-        <HvCardView
-          id="card"
-          renderer={cardRenderer}
-          viewConfiguration={{
-            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
-          }}
-        />
-        <HvListView
-          id="list"
-          renderer={rowRenderer}
-          viewConfiguration={{
-            columnConfiguration: [
-              { style: { width: 1, textAlign: "center" } },
-              { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
-              { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
-              { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
-              {
-                title: "Related Assets",
-                style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
-              },
-            ],
-          }}
-        />
-      </HvAssetInventory>
+      <HvContainer>
+        <HvAssetInventory
+          values={values}
+          selectedValues={["id_1", "id_3", "id_4"]}
+          configuration={configuration}
+          onSelection={(event) => console.log(event.target.value)}
+          isSelectable
+          actions={myActions}
+          actionsCallback={(e, id, action) =>
+            console.log(`You have pressed data ${id} with action ${action.label}`)
+          }
+          // Pagination
+          hasPagination
+          paginationServerSide
+          pageSizeOptions={[2, 4, 6, 8, 10]}
+          onPageChange={onPageChange}
+          onPageSizeChange={onPageSizeChange}
+          pages={getPages(pageSize)}
+          page={page}
+          pageSize={pageSize}
+          // Search
+          onSearch={onSearch}
+          // Sort
+          onSortChange={onSort}
+          sortOptionId="id1Asc"
+          searchString={searchString}
+          searchProps={{ "aria-label": "Filters data by title, probability and time horizon." }}
+          multibuttonProps={[
+            { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+            { id: "list-button", icon: <List />, "aria-label": "Select list view" },
+          ]}
+        >
+          <HvCardView
+            id="card"
+            renderer={cardRenderer}
+            viewConfiguration={{
+              breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
+            }}
+          />
+          <HvListView
+            id="list"
+            renderer={rowRenderer}
+            viewConfiguration={{
+              columnConfiguration: [
+                { style: { width: 1, textAlign: "center" } },
+                { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
+                { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
+                { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
+                {
+                  title: "Related Assets",
+                  style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" },
+                },
+              ],
+            }}
+          />
+        </HvAssetInventory>
+      </HvContainer>
     );
   };
   return <ServerSideAssetInventory />;
@@ -1351,24 +1360,26 @@ export const Accessibility = () => {
     }));
 
   return (
-    <HvAssetInventory
-      values={values()}
-      configuration={assetConfiguration}
-      onSelection={(event) => console.log(event.target.value)}
-      isSelectable
-      actions={myActions}
-      actionsCallback={(e, id, action) =>
-        console.log(`You have pressed data ${id} with action ${action.label}`)
-      }
-      searchProps={{ "aria-label": "Filters data" }}
-      multibuttonProps={[
-        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
-        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-      ]}
-    >
-      <HvCardView id="card" renderer={cardRenderer} />
-      <HvListView id="list" renderer={rowRenderer} />
-    </HvAssetInventory>
+    <HvContainer>
+      <HvAssetInventory
+        values={values()}
+        configuration={assetConfiguration}
+        onSelection={(event) => console.log(event.target.value)}
+        isSelectable
+        actions={myActions}
+        actionsCallback={(e, id, action) =>
+          console.log(`You have pressed data ${id} with action ${action.label}`)
+        }
+        searchProps={{ "aria-label": "Filters data" }}
+        multibuttonProps={[
+          { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+          { id: "list-button", icon: <List />, "aria-label": "Select list view" },
+        ]}
+      >
+        <HvCardView id="card" renderer={cardRenderer} />
+        <HvListView id="list" renderer={rowRenderer} />
+      </HvAssetInventory>
+    </HvContainer>
   );
 };
 
