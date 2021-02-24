@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Main Story should match snapshot 1`] = `
+<div>
+  <div
+    class="HvTableContainer-root"
+  >
+    <table
+      class="HvTable-root"
+    >
+      <thead
+        class="HvTableHead-root"
+      >
+        <tr
+          class="HvTableRow-root HvTableRow-head"
+        >
+          <th
+            class="HvTableCell-root HvTableCell-head"
+          >
+            Title
+          </th>
+          <th
+            class="HvTableCell-root HvTableCell-head"
+          >
+            Time
+          </th>
+          <th
+            class="HvTableCell-root HvTableCell-head"
+          >
+            Event Type
+          </th>
+          <th
+            class="HvTableCell-root HvTableCell-head"
+          >
+            Status
+          </th>
+          <th
+            class="HvTableCell-root HvTableCell-head"
+          >
+            Probability
+          </th>
+          <th
+            class="HvTableCell-root HvTableCell-head"
+          >
+            Severity
+          </th>
+          <th
+            class="HvTableCell-root HvTableCell-head"
+          >
+            Priority
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="HvTableBody-root"
+      >
+        <tr
+          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Event 0
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            10/14/2018
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Anomaly detection
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Closed
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            100%
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Minor
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Low
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Event 1
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            10/14/2018
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Anomaly detection
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Open
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            99%
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Critical
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            High
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Event 2
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            10/14/2018
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Anomaly detection
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Closed
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            98%
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Critical
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            High
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Event 3
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            10/14/2018
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Anomaly detection
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Open
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            97%
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Minor
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Low
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Event 4
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            10/14/2018
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Anomaly detection
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Closed
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            96%
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Minor
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Low
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Event 5
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            10/14/2018
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Anomaly detection
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Open
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            95%
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Minor
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Low
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
