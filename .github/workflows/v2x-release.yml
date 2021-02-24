@@ -98,7 +98,7 @@ jobs:
             core.exportVariable("SLACK_MESSAGE", slackMessage)
 
       - name: Start Documentation Deployment
-        uses: bobheadxi/deployments@master
+        uses: bobheadxi/deployments@v0.4.3
         id: deployment
         with:
           step: start
@@ -143,7 +143,7 @@ jobs:
           rm -rf ${{ github.workspace }}/gh-docs
 
       - name: Update Deployment Status
-        uses: bobheadxi/deployments@master
+        uses: bobheadxi/deployments@v0.4.3
         if: always()
         with:
           step: finish
