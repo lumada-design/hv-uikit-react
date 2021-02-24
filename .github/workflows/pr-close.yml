@@ -41,7 +41,7 @@ jobs:
           rm -rf ${{ github.workspace }}/gh-docs
 
       - name: mark environment as deactivated
-        uses: bobheadxi/deployments@master
+        uses: bobheadxi/deployments@v0.4.3
         with:
           step: deactivate-env
           token: ${{ secrets.GITHUB_TOKEN }}
