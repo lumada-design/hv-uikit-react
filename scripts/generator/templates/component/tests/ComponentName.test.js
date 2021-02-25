@@ -2,8 +2,12 @@
 
 import React from "react";
 import { mount } from "enzyme";
+
+import { HvProvider } from "@hv/uikit-react-core";
+
+import { HvComponentName } from "../..";
+
 import { Main } from "../stories/ComponentName.stories";
-import { HvProvider, HvComponentName } from "../..";
 
 describe("ComponentName", () => {
   let wrapper;

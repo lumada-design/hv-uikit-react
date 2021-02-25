@@ -28,7 +28,7 @@
     "test:update": "npx lerna run test:update --parallel",
     "pack": "npx lerna run pack",
     "link": "npx lerna run link",
-    "generate": "node generator/index.js",
+    "generate": "node scripts/generator/index.js",
     "publish-": "npx lerna changed && npx lerna publish --yes",
     "publish-prerelease": "npx lerna changed && npx lerna publish prerelease --yes",
     "publish-prepatch": "npx lerna changed && npx lerna publish prepatch --yes",
