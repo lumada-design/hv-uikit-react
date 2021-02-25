@@ -265,7 +265,7 @@ export interface HvThemeTypographyDefinition {
   fontSize: string;
   letterSpacing: string;
   lineHeight: string;
-  fontWeight: string;
+  fontWeight: number;
 }
 
 export type HvSpacingKeys = "xs" | "sm" | "md" | "lg" | "xl";
@@ -274,10 +274,10 @@ export type HvThemeSpacing = Record<HvSpacingKeys, string>;
 
 export interface HvThemeVizPalette {
   palette: {
-    categorical: Map<HvCategoricalColorKeys, string>;
-    undefinedState: Map<HvUndefinedStateColorKeys, string>;
-    sequential: Map<HvSequentialColorKeys, string>;
-    polarized: Map<HvPolarizedColorKeys, string>;
+    categorical: Record<HvCategoricalColorKeys, string>;
+    undefinedState: Record<HvUndefinedStateColorKeys, string>;
+    sequential: Record<HvSequentialColorKeys, string>;
+    polarized: Record<HvPolarizedColorKeys, string>;
   };
 }
 
@@ -289,9 +289,31 @@ export interface HvThemePalette {
   support: HvSupportColors;
 }
 
-export interface HvThemeTypography extends Map<string, HvThemeTypographyDefinition> {
+export type HvTypographyKeys =
+  | "5xlTitle"
+  | "4xlTitle"
+  | "3xlTitle"
+  | "xxlTitle"
+  | "xlTitle"
+  | "lTitle"
+  | "mTitle"
+  | "sTitle"
+  | "xsTitle"
+  | "xxsTitle"
+  | "sectionTitle"
+  | "highlightText"
+  | "normalText"
+  | "placeholderText"
+  | "link"
+  | "disabledText"
+  | "selectedNavText"
+  | "vizText"
+  | "vizTextDisabled"
+  | "xsInlineLink";
+
+export type HvThemeTypography = Record<HvTypographyKeys, HvThemeTypographyDefinition> & {
   fontFamily: string;
-}
+};
 
 export interface HvTheme {
   type: string;
