@@ -162,3 +162,39 @@ ErrorMessage.parameters = {
     ],
   },
 };
+
+export const MultiSelection = () => (
+  <HvSelectionList
+    id="main"
+    label="Choose your favorite items"
+    name="favorite"
+    onChange={console.log}
+    multiple
+  >
+    <HvListItem value="1">ListItem 1</HvListItem>
+    <HvListItem value="2" selected>
+      ListItem 2
+    </HvListItem>
+    <HvListItem value="3">ListItem 3</HvListItem>
+    <HvListItem value="4">ListItem 4</HvListItem>
+    <HvListItem value="5">ListItem 5</HvListItem>
+    <HvListItem value="6">ListItem 6</HvListItem>
+  </HvSelectionList>
+);
+
+export const CleanMultiSelection = () => (
+  <HvSelectionList
+    id="main"
+    label="Choose your favorite items"
+    name="favorite"
+    onChange={console.log}
+    multiple
+  >
+    <HvListItem value="1">ListItem 1</HvListItem>
+    <HvListItem value="2">ListItem 2</HvListItem>
+    <HvListItem value="3">ListItem 3</HvListItem>
+    <HvListItem value="4">ListItem 4</HvListItem>
+    <HvListItem value="5">ListItem 5</HvListItem>
+    <HvListItem value="6">ListItem 6</HvListItem>
+  </HvSelectionList>
+);

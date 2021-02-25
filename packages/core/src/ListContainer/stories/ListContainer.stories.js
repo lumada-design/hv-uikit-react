@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { withStyles } from "@material-ui/core";
+
 import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
 
 import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, withTooltip } from "../..";

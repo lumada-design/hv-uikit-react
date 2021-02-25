@@ -1,9 +1,10 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import clsx from "clsx";
 
 import { withStyles } from "@material-ui/core";
+import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 
 import {
   HvFormElement,
@@ -17,6 +18,8 @@ import {
 import { setId, useControlled } from "../utils";
 
 import styles from "./styles";
+
+import multiSelectionEventHandler from "../utils/multiSelectionEventHandler";
 
 const getValueFromSelectedChildren = (children, multiple) => {
   const selectedValues = React.Children.toArray(children)
@@ -39,6 +42,7 @@ const getValueFromSelectedChildren = (children, multiple) => {
  * Although it supports multi-selection, DS recommends the use of a selection list
  * when it’s clear that the user can only select just one option from the range provided.
  */
+
 const HvSelectionList = (props) => {
   const {
     classes,
@@ -103,23 +107,55 @@ const HvSelectionList = (props) => {
     return [childValues, childSelectedState];
   }, [children, multiple, value]);
 
+  const selectionAnchor = useRef(undefined);
+
+  const listContainer = useRef(null);
+
+  const { ArrowUp, ArrowDown } = KeyboardCodes;
+
+  useEffect(() => {
+    const handleMeta = (event) => {
+      const tempArray = [];
+      if (
+        (isKeypress(event, ArrowUp) &&
+          event.shiftKey &&
+          listContainer.current.contains(event.target)) ||
+        (isKeypress(event, ArrowDown) &&
+          event.shiftKey &&
+          listContainer.current.contains(event.target))
+      ) {
+        selectedState.forEach((isSelected, i) => {
+          if (i === event.target.value - 1) {
+            if (!isSelected) {
+              tempArray.push(allValues[i]);
+            }
+          } else if (isSelected) {
+            tempArray.push(allValues[i]);
+          }
+        });
+        setValue(tempArray);
+      }
+    };
+    window.addEventListener("keyup", handleMeta);
+
+    return () => {
+      window.removeEventListener("keyup", handleMeta);
+    };
+  }, [allValues, selectedState, setValue, ArrowUp, ArrowDown]);
+
   const onChildChangeInterceptor = useCallback(
     (index, childOnClick, evt) => {
       childOnClick?.(evt);
-
       if (!readOnly && !disabled) {
         let newValue;
         if (multiple) {
-          newValue = [];
-          selectedState.forEach((isSelected, i) => {
-            if (i === index) {
-              if (!isSelected) {
-                newValue.push(allValues[i]);
-              }
-            } else if (isSelected) {
-              newValue.push(allValues[i]);
-            }
-          });
+          newValue = multiSelectionEventHandler(
+            evt,
+            index,
+            selectionAnchor,
+            allValues,
+            selectedState
+          );
         } else {
           newValue = singleSelectionToggle && selectedState[index] ? null : allValues[index];
         }
@@ -150,6 +186,7 @@ const HvSelectionList = (props) => {
       setValidationState,
       setValue,
       singleSelectionToggle,
+      selectionAnchor,
     ]
   );
 
@@ -186,6 +223,7 @@ const HvSelectionList = (props) => {
           {description}
         </HvInfoMessage>
       )}
+
       <HvListContainer
         id={label && setId(elementId, "listbox")}
         interactive
@@ -206,10 +244,12 @@ const HvSelectionList = (props) => {
           [classes.vertical]: orientation === "vertical",
           [classes.horizontal]: orientation === "horizontal",
         })}
+        ref={listContainer}
         {...others}
       >
         {modifiedChildren}
       </HvListContainer>
+
       {canShowError && (
         <HvWarningText id={setId(elementId, "error")} className={classes.error}>
           {validationMessage}
