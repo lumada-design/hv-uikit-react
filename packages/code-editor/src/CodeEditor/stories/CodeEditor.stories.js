@@ -1,9 +1,6 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
-
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Fullscreen, Duplicate, PopUp } from "@hv/uikit-react-icons";
-// eslint-disable-next-line import/no-unresolved
 import { HvTypography, HvButton, HvTooltip } from "@hv/uikit-react-core";
 import { Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";

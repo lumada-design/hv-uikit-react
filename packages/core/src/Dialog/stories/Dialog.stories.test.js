@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import {
   Main,

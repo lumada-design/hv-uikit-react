@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import parser from "html-react-parser";
 
 import { makeStyles } from "@material-ui/core";
