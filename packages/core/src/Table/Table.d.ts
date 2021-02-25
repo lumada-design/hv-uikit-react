@@ -114,7 +114,8 @@ export type HvTableClassKey =
   | "checkBoxText"
   | "menuItem"
   | "expand"
-  | "separatorContainer";
+  | "separatorContainer"
+  | "bulkActions";
 
 export interface HvTableProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvTableClassKey>,
