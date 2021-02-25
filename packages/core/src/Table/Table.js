@@ -202,7 +202,7 @@ const HvTable = (props) => {
         ...(pages && { pages }),
       }),
       page: currentPage,
-      pageSize: currentPageSize,
+      pageSize: paginationServerSide || data.length !== 0 ? currentPageSize : 0,
     };
   };
 
