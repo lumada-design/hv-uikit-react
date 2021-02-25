@@ -274,10 +274,10 @@ export type HvThemeSpacing = Record<HvSpacingKeys, string>;
 
 export interface HvThemeVizPalette {
   palette: {
-    categorical: Map<HvCategoricalColorKeys, string>;
-    undefinedState: Map<HvUndefinedStateColorKeys, string>;
-    sequential: Map<HvSequentialColorKeys, string>;
-    polarized: Map<HvPolarizedColorKeys, string>;
+    categorical: Record<HvCategoricalColorKeys, string>;
+    undefinedState: Record<HvUndefinedStateColorKeys, string>;
+    sequential: Record<HvSequentialColorKeys, string>;
+    polarized: Record<HvPolarizedColorKeys, string>;
   };
 }
 
