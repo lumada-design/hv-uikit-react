@@ -43,7 +43,7 @@ class HvTextArea extends React.Component {
       if (nextLength !== oldLength) {
         return {
           currentValueLength: nextLength,
-          overflow: maxCharQuantity && isOverflow,
+          overflow: nextLength > maxCharQuantity && isOverflow,
         };
       }
     }
@@ -120,7 +120,7 @@ class HvTextArea extends React.Component {
 
     this.setState({
       currentValueLength: textAreaValue.length,
-      overflow: this.isOverflow(value),
+      overflow: this.isOverflow(textAreaValue),
     });
     return textAreaValue;
   };
