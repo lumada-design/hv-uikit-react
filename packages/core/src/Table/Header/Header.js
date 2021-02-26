@@ -35,7 +35,7 @@ const getSortType = (id, sort) => {
   return undefined;
 };
 
-const handleSortChange = (colId, onSortChange, sort) => {
+const handleSortChange = (event, colId, onSortChange, sort) => {
   // The table only supports one sorted column
   const newState = [...sort];
   newState[0].id = colId;
@@ -46,7 +46,7 @@ const handleSortChange = (colId, onSortChange, sort) => {
 const handleKeyDown = (event, colId, onSortChange, sort) => {
   if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space)) {
     event.preventDefault();
-    handleSortChange(colId, onSortChange, sort);
+    handleSortChange(event, colId, onSortChange, sort);
   }
 };
 
