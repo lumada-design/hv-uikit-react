@@ -106,7 +106,7 @@ const HvTable = (props) => {
   }, []);
 
   useEffect(() => {
-    if (page) {
+    if (page !== undefined) {
       setCurrentPage(page);
     }
   }, [page]);
@@ -137,7 +137,8 @@ const HvTable = (props) => {
     }
 
     if (newPageSize && currentPageSize !== newPageSize) {
-      const newPage = Math.floor((currentPageSize * currentPage) / newPageSize);
+      const newPage =
+        page !== undefined ? page : Math.floor((currentPageSize * currentPage) / newPageSize);
       setCurrentPage(newPage);
       setCurrentPageSize(newPageSize);
       onPageSizeChange?.(newPageSize, newPage);
