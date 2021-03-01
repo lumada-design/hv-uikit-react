@@ -31,6 +31,11 @@ const styles = (theme) => ({
     fontFamily: theme.hv.typography.fontFamily,
     textAlign: "right",
     border: "none",
+    position: "relative",
+    display: "flex",
+    "-webkit-box-orient": "vertical",
+    "-webkit-box-direction": "normal",
+    flexDirection: "column",
     "& $table": {
       "-ms-overflow-y": "hidden",
       "& $thead": {
@@ -41,6 +46,11 @@ const styles = (theme) => ({
         boxShadow: `none`,
         // Needed because of the HOC for the fixed columns
         top: "0 !important",
+        display: "flex",
+        "& .rt-tr": {
+          flex: "1 0 auto",
+          display: "inline-flex",
+        },
         "& $theadTh": {
           outline: "none",
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
@@ -79,7 +89,13 @@ const styles = (theme) => ({
             maxWidth: "31px",
             borderRight: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
           },
+          "&.rt-th": {
+            flex: "1 0",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+          },
           "& ~.rt-th.rthfc-th-fixed-left-last": {
+            left: 0,
             borderLeft: "none",
           },
           "&.rt-th.rthfc-th-fixed-left-last": {
@@ -108,7 +124,16 @@ const styles = (theme) => ({
         background: theme.hv.palette.atmosphere.atmo2,
         "& $trGroups": {
           borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+          "-webkit-box-flex": 1,
+          flex: "1 0 auto",
+          display: "flex",
+          "-webkit-box-orient": "vertical",
+          "-webkit-box-direction": "normal",
+          flexDirection: "column",
+          alignItems: "stretch",
           "& $tr": {
+            flex: "1 0 auto",
+            display: "inline-flex",
             "& > div$td": {
               background: theme.hv.palette.atmosphere.atmo2,
               "&.sorted": {
@@ -175,6 +200,14 @@ const styles = (theme) => ({
           "&:last-child": {
             borderRight: "none",
           },
+          "&.rt-td": {
+            flex: "1 0",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+            overflow: "hidden",
+            transition: ".3s ease",
+            transitionProperty: "all",
+          },
           "&.rt-td.rthfc-td-fixed-left-last": {
             borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
           },
@@ -201,7 +234,15 @@ const styles = (theme) => ({
       alignItems: "center",
     },
   },
-  table: {},
+  table: {
+    flex: "auto 1",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch",
+    width: "100%",
+    borderCollapse: "collapse",
+    overflow: "auto",
+  },
   theadGroup: {},
   theadGroupTr: {},
   theadGroupTh: {},
@@ -235,7 +276,19 @@ const styles = (theme) => ({
   tfootTr: {},
   tfootTh: {},
   pagination: {},
-  loading: {},
+  loading: {
+    display: "block",
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    background: "rgba(255, 255, 255, 0.8)",
+    transition: "all 0.3s ease",
+    zIndex: -1,
+    opacity: 0,
+    pointerEvents: "none",
+  },
   noDate: {},
   resizer: {},
   rtSortIcon: {

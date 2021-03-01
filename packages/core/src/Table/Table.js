@@ -5,9 +5,6 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 
-import "react-table/react-table.css";
-import "react-table-hoc-fixed-columns/lib/styles.css";
-
 import { withStyles } from "@material-ui/core";
 import { HvBulkActions, HvPagination } from "..";
 import { setId } from "../utils";
