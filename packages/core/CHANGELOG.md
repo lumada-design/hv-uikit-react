@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.10.0...@hv/uikit-react-core@3.11.0) (2021-03-01)
+
+
+### Bug Fixes
+
+* **table:** bulkActions class key definition ([0629ce7](https://github.com/pentaho/hv-uikit-react/commit/0629ce77b47c5e5796d2990b5f5e3e30158ec4f1))
+* **table:** cannot set page to zero. HVUIKIT-5708 ([aa1ee48](https://github.com/pentaho/hv-uikit-react/commit/aa1ee485e88eb6cecb0a7898a94d9ab30a48f3b0))
+* **table:** handleSortChange parameters not consistent. HVUIKIT-5712 ([9581c8a](https://github.com/pentaho/hv-uikit-react/commit/9581c8aa3dc5ab6205658dc46a579b934ecc6f1f))
+* **typescript:** change palette from map to record. HVUIKIT-5685 ([b99373c](https://github.com/pentaho/hv-uikit-react/commit/b99373c23df9c04a385455894ff9dee4d2987376))
+* **typescript:** typing of typography elements. HVUIKIT-5705 ([0f9a833](https://github.com/pentaho/hv-uikit-react/commit/0f9a83363537704dd4fae4cbb6071f94f1ca3552))
+
+
+### Features
+
+* **checkbox:** add multiselection selection to checkbox. HVUIKIT-5678 ([a62f2f5](https://github.com/pentaho/hv-uikit-react/commit/a62f2f5b47f37de09bf133a0355b611cec50b80f))
+* **selection-list:** allow multi selection with shift click. HVUIKIT-5683 ([49c852d](https://github.com/pentaho/hv-uikit-react/commit/49c852d4d1263917c24b2453997275d7dfe51acf))
+
+
+
+
+
 # [3.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.9.1...@hv/uikit-react-core@3.10.0) (2021-02-25)
 
 
