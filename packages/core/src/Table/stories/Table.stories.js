@@ -2441,3 +2441,95 @@ ConditionalPaginationDisplay.parameters = {
     },
   },
 };
+
+export const TableDataDeletion = () => {
+  // Table data manipulation
+  const initialData = [
+    { id: 1, name: "Aaron", surname: "Melantha", email: "melantha@mail.com" },
+    { id: 2, name: "Jeanette", surname: "Gentle", email: "gentle@mail.com" },
+    { id: 3, name: "Michael", surname: "Neil", email: "neil@mail.com" },
+    { id: 4, name: "Walter", surname: "Allegro", email: "allegro@mail.com" },
+    { id: 5, name: "James", surname: "Jonah", email: "allegro@mail.com" },
+    { id: 6, name: "Mary", surname: "Monroe", email: "monroe@mail.com" },
+    { id: 7, name: "Katherine", surname: "Kubrick", email: "kubrick@mail.com" },
+    { id: 8, name: "Peter", surname: "Portland", email: "portland@mail.com" },
+    { id: 9, name: "Yuri", surname: "York", email: "york@mail.com" },
+    { id: 10, name: "Howard", surname: "Holmes", email: "holmes@mail.com" },
+  ];
+
+  const [enabledUsers, setEnabledUsers] = useState(initialData.slice(0, 5));
+  const [disabledUsers, setDisabledUsers] = useState(initialData.slice(5));
+
+  // Table columns
+  const getColumns = () => [
+    {
+      headerText: "ID",
+      accessor: "id",
+      cellType: "alpha-numeric",
+      width: 50,
+    },
+    {
+      headerText: "Name",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left",
+    },
+    {
+      headerText: "Surname",
+      accessor: "surname",
+      cellType: "alpha-numeric",
+      fixed: "left",
+    },
+    {
+      headerText: "Email",
+      accessor: "email",
+      cellType: "alpha-numeric",
+      fixed: "left",
+    },
+  ];
+
+  const handleBulkDisable = (event, id, action, selection = []) => {
+    const elementsToMove = initialData.filter((el) => selection.includes(el.id));
+    setDisabledUsers([...disabledUsers, ...elementsToMove]);
+    setEnabledUsers(enabledUsers.filter((el) => !selection.includes(el.id)));
+  };
+
+  const useStyles = makeStyles({
+    container: {
+      display: "flex",
+      justifyContent: "space-evenly",
+      "&>*": {
+        flexGrow: 1,
+        margin: 20,
+      },
+    },
+  });
+  const classes = useStyles();
+
+  return (
+    <div className={classes.container}>
+      <HvTable
+        id="table1"
+        data={enabledUsers}
+        columns={getColumns()}
+        defaultSorted={[{ id: "id" }]}
+        idForCheckbox="id"
+        actions={[{ id: "disable", label: "Disable" }]}
+        actionsCallback={handleBulkDisable}
+        secondaryActions={[
+          {
+            label: "Delete",
+            action: (event, row) => handleBulkDisable(null, null, null, [row.id]),
+          },
+        ]}
+        labels={{ titleText: "Enabled users" }}
+      />
+    </div>
+  );
+};
+
+TableDataDeletion.parameters = {
+  docs: {
+    description: { story: "Sample showcasing data deletion with transition to empty state." },
+  },
+};
