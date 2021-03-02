@@ -13,7 +13,7 @@ export default {
     componentSubtitle: null,
     usage: 'import { HvCodeEditor } from "@hv/uikit-react-code-editor"',
     maturityStatus: "stable",
-    dsVersion: "3.3.0",
+    dsVersion: "3.4.0",
   },
   component: HvCodeEditor,
 };

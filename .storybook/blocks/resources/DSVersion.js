@@ -1,6 +1,6 @@
 import React from "react";
 
-const DSVersion = ({ dsVersion }) => {
+const DSVersion = ({ dsVersion, fill = "#477DBD" }) => {
   const svgTitle = `Design System: ${dsVersion}`;
 
   return (
@@ -21,7 +21,7 @@ const DSVersion = ({ dsVersion }) => {
       </clipPath>
       <g clipPath="url(#r)">
         <rect width="25" height="20" fill="#555" />
-        <rect x="25" width="39" height="20" fill="#007ec6" />
+        <rect x="25" width="39" height="20" fill={fill} />
         <rect width="64" height="20" fill="url(#s)" />
       </g>
       <g

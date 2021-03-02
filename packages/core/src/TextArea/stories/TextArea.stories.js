@@ -6,8 +6,8 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvTextArea } from "@hv/uikit-react-core"',
-
-    dsVersion: "3.3.0",
+    maturityStatus: "stable",
+    dsVersion: "3.4.0",
   },
   component: HvTextArea,
   decorators: [(storyFn) => <div style={{ width: "600px" }}>{storyFn()}</div>],

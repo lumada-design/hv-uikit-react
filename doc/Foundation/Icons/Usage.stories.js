@@ -1,6 +1,10 @@
 import React from "react";
 import { Bookmark, CheckboxCheck, Level4, Level5, Machine } from "@hv/uikit-react-icons";
 
+// HvIconBase isn't being exported, so we need to load it directly
+// only for API documentation purposes
+import HvIconBase from "@hv/uikit-react-icons/IconBase";
+
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
 export default {
@@ -8,10 +12,10 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: "import { Bookmark, CheckboxCheck } from '@hv/uikit-react-icons'",
-    maturityStatus: componentDefinitions.stable,
-    dsVersion: componentDefinitions.dsVersion3,
+    maturityStatus: componentDefinitions.dsClassification.stable,
+    dsVersion: componentDefinitions.dsVersion.v3,
   },
-  component: Bookmark,
+  component: HvIconBase,
 };
 
 export const Main = () => <CheckboxCheck />;

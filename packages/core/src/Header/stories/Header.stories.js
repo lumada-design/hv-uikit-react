@@ -20,7 +20,7 @@ export default {
     usage:
       'import {\n  HvHeader,\n  HvHeaderBrand,\n  HvHeaderNavigation,\n  HvHeaderActions,\n} from "@hv/uikit-react-core";',
     subcomponents: { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation },
-    dsVersion: "3.3.0",
+    dsVersion: "3.4.0",
   },
   component: HvHeader,
   decorators: [(storyFn) => <div style={{ minHeight: 100 }}>{storyFn()}</div>],

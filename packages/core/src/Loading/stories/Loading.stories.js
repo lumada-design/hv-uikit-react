@@ -13,6 +13,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvLoading } from "@hv/uikit-react-core"',
+    maturityStatus: "stable",
     dsVersion: "3.2.1",
   },
   component: HvLoading,

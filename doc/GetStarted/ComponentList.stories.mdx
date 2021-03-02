@@ -9,21 +9,13 @@ import coreComponentTableConfig from "./ComponentVersioningTable/coreComponentTa
 import labComponentData from "./ComponentVersioningTable/LabComponentData";
 import labComponentTableConfig from "./ComponentVersioningTable/labComponentTableConfig";
 
-import codeEditorComponentData from "./ComponentVersioningTable/CodeEditorComponentData";
-import codeEditorComponentTableConfig from "./ComponentVersioningTable/codeEditorComponentTableConfig";
-
 <Meta title="Get Started/Component List" />
 
 # Component List
 
-<br />
-<br />
-
-## Core
-
 <p>
-  DS 3.x is implemented by UI Kit v3, while DS 1.x is implemented by
-  <a href="https://lumada-design.github.io/uikit/master/?path=/docs/*">UI Kit v2</a>. The use of UI Kit
+  DS 3.x is implemented by UI Kit v3, while DS 1.x is implemented by&nbsp;
+  <a href="https://lumada-design.github.io/uikit/v2.x/?path=/docs/*">UI Kit v2</a>. The use of UI Kit
   v1 is strongly discouraged and is only supported on products that already used it before the release
   of UI Kit v2. You can find its documentation <a href="https://lumada-design.github.io/uikit/v1.x/">
     here
@@ -48,15 +40,3 @@ import codeEditorComponentTableConfig from "./ComponentVersioningTable/codeEdito
 <br />
 
 <ComponentsTable tableData={labComponentData} tableColumnsConfig={labComponentTableConfig} />
-
-<br />
-<br />
-
-## Code Editor
-
-<br />
-
-<ComponentsTable
-  tableData={codeEditorComponentData}
-  tableColumnsConfig={codeEditorComponentTableConfig}
-/>

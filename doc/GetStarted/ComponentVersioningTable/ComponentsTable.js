@@ -8,7 +8,8 @@ const ComponentsTable = ({ tableData, tableColumnsConfig }) => {
       data={tableData}
       columns={tableColumnsConfig}
       resizable={false}
-      sortable={false}
+      sortable={true}
+      defaultSorted={[{ id: "component", desc: false }]}
       showPagination={false}
     />
   );

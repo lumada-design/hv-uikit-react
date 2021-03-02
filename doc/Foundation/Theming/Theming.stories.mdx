@@ -1,20 +1,18 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import MaturityStatus from "../../../.storybook/blocks/ExportedMaturityStatus";
+import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
 <Meta
   title="Foundation/Theming/Main"
   parameters={{
-    maturityStatus: componentDefinitions.stable,
-    dsVersion: componentDefinitions.dsVersion3,
+    maturityStatus: componentDefinitions.dsClassification.stable,
+    dsVersion: componentDefinitions.dsVersion.v3,
   }}
 />
 
 # Theming
 
-<br />
 <MaturityStatus />
-<br />
 
 The UI Kit components come with two themes - **Wicked** and **Dawn**.
 
