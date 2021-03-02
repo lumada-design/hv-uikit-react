@@ -5,7 +5,7 @@ import range from "lodash/range";
 import { render } from "testing-utils";
 import userEvent from "@testing-library/user-event";
 
-import { Main, EmptyCells, Pagination, Sortable } from "../stories/Table.stories";
+import { Main, EmptyCells, Pagination, Sortable, BulkActions } from "../stories/Table.stories";
 import {
   HvTable,
   HvTableBody,
@@ -202,6 +202,56 @@ describe("Table", () => {
       // Back to default sorting
       userEvent.click(severityButton);
       expect(getEvent(0)).toHaveTextContent("Event 1");
+    });
+  });
+
+  describe("BulkActions Story", () => {
+    it("should be defined", () => {
+      const { container } = render(<BulkActions />);
+      expect(container).toBeDefined();
+    });
+
+    it("should render the table elements", () => {
+      const { getByRole, getAllByRole } = render(<BulkActions />);
+
+      expect(getByRole("table")).toBeInTheDocument();
+
+      expect(getAllByRole("cell").length).toBeGreaterThan(0);
+      expect(getAllByRole("row").length).toBeGreaterThan(0);
+    });
+
+    it("should select rows accordingly expected", () => {
+      const { getByLabelText, getAllByRole, queryAllByRole } = render(<BulkActions />);
+      const bulkCheckbox = getAllByRole("checkbox")[0];
+      const firstCheckbox = getAllByRole("checkbox")[1];
+      const secondCheckbox = getAllByRole("checkbox")[2];
+
+      expect(getByLabelText("All (64)")).toBeInTheDocument();
+      expect(bulkCheckbox).toBeInTheDocument();
+      expect(firstCheckbox).toBeInTheDocument();
+      expect(secondCheckbox).toBeInTheDocument();
+      expect(queryAllByRole("checkbox", { checked: true }).length).toBe(0);
+      expect(queryAllByRole("checkbox", { checked: false }).length).toBe(10 + 1);
+
+      // Click a checkbox
+      userEvent.click(firstCheckbox);
+      expect(getByLabelText("1 / 64")).toBeInTheDocument();
+      expect(queryAllByRole("checkbox", { checked: true }).length).toBe(1 + 1);
+
+      // Click another checkbox
+      userEvent.click(secondCheckbox);
+      expect(getByLabelText("2 / 64")).toBeInTheDocument();
+      expect(queryAllByRole("checkbox", { checked: true }).length).toBe(2 + 1);
+
+      // Click Bulk Actions - should deselect all in page when any selected
+      userEvent.click(bulkCheckbox);
+      expect(getByLabelText("All (64)")).toBeInTheDocument();
+      expect(queryAllByRole("checkbox", { checked: true }).length).toBe(0);
+
+      // Click Bulk Actions - should select all in page when none selected
+      userEvent.click(bulkCheckbox);
+      expect(getByLabelText("10 / 64")).toBeInTheDocument();
+      expect(queryAllByRole("checkbox", { checked: true }).length).toBe(10 + 1);
     });
   });
 });

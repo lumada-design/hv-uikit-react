@@ -1,13 +1,14 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import range from "lodash/range";
 import { useTable, useRowSelect, usePagination, useSortBy } from "react-table";
 
-import { Ban } from "@hv/uikit-react-icons";
+import { Ban, Delete, Duplicate, Lock, Preview } from "@hv/uikit-react-icons";
 import { HvCheckBox, HvDropDownMenu, HvEmptyState } from "@hv/uikit-react-core";
 
 import {
   HvTable,
   HvTableBody,
+  HvTableBulkActions,
   HvTableCell,
   HvTableContainer,
   HvTableHead,
@@ -198,7 +199,7 @@ SelectableSimple.parameters = {
   },
 };
 
-export const SelectableReactTable = () => {
+export const Selectable = () => {
   const data = useMemo(() => makeData(6), []);
   const columns = useMemo(
     () => [
@@ -246,9 +247,11 @@ export const SelectableReactTable = () => {
   );
 };
 
-SelectableReactTable.parameters = {
+Selectable.parameters = {
   docs: {
-    description: { story: "A table with checkboxes being managed by `react-table`." },
+    description: {
+      story: "A table with selectable rows being managed by `react-table`.",
+    },
   },
 };
 
@@ -373,6 +376,109 @@ Pagination.parameters = {
         "A table with a sticky header and pagination managed by `react-table`. " +
         "The `HvTableContainer` has a maximum height and the header rows are sticky, " +
         "preventing the table to grow excessively when there are many rows per page.",
+    },
+  },
+};
+
+export const BulkActions = () => {
+  const [data, setData] = useState(makeData(64));
+  const columns = useMemo(
+    () => [
+      {
+        id: "selection",
+        padding: "checkbox",
+        Cell: ({ row }) => <HvCheckBox {...row.getToggleRowSelectedProps()} />,
+      },
+      ...getColumns(),
+    ],
+    []
+  );
+
+  const instance = useTable({ columns, data }, usePagination, useRowSelect);
+  const {
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    headers,
+    page,
+    selectedFlatRows,
+  } = instance;
+
+  const handleAction = (evt, id, action) => {
+    const selected = selectedFlatRows.map((el) => el.original);
+    console.log(evt, id, action);
+
+    switch (action.id) {
+      case "duplicate": {
+        const newEls = selected.map((el) => ({
+          ...el,
+          id: `${el.id}-copy`,
+          name: `${el.name}-copy`,
+        }));
+        setData([...data, ...newEls]);
+        break;
+      }
+      case "delete": {
+        const selectedIds = selected.map((el) => el.id);
+        setData(data.filter((el) => !selectedIds.includes(el.id)));
+        break;
+      }
+      case "lock":
+      case "preview":
+      default:
+        break;
+    }
+  };
+
+  return (
+    <>
+      <HvTableBulkActions
+        rtInstance={instance}
+        maxVisibleActions={1}
+        actionsCallback={handleAction}
+        actions={[
+          { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
+          { id: "delete", label: "Delete", icon: <Delete /> },
+          { id: "lock", label: "Lock", icon: <Lock /> },
+          { id: "preview", label: "Preview", icon: <Preview /> },
+        ]}
+      />
+      <HvTableContainer>
+        <HvTable {...getTableProps()}>
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+                  {col.render("Header")}
+                </HvTableCell>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {page.map((row) => {
+              prepareRow(row);
+              return (
+                <HvTableRow hover key={row.Header} selected={row.isSelected} {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      <HvTablePagination rtInstance={instance} />
+    </>
+  );
+};
+
+BulkActions.parameters = {
+  docs: {
+    description: {
+      story: "A paginated table with selectable rows and bulk actions.",
     },
   },
 };

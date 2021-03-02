@@ -3,19 +3,19 @@ const styles = (theme) => ({
     color: "inherit",
     verticalAlign: "middle",
     outline: 0,
-
-    "&$hover:hover": {
-      backgroundColor: theme.palette.atmo3,
-    },
-    "&$selected, &$selected:hover": {
-      backgroundColor: theme.palette.atmo1,
-    },
+    borderBottom: `1px solid ${theme.palette.atmo4}`,
   },
   head: {},
   body: {},
   footer: {},
-  selected: {},
-  hover: {},
+  selected: {
+    backgroundColor: theme.palette.atmo1,
+  },
+  hover: {
+    "&:hover": {
+      backgroundColor: theme.palette.atmo3,
+    },
+  },
 });
 
 export default styles;
