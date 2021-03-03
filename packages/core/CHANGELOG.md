@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.17.4 (2021-03-03)
+
+
+### Bug Fixes
+
+* **table:** handleSortChange parameters not consistent. HVUIKIT-5712 ([44ff03a](https://github.com/pentaho/hv-uikit-react/commit/44ff03a9ea31e816c70aed0a5a1ee4be5a324c4a))
+* **text-area:** blockMax should not mark invalid state. HVUIKIT-5711 ([0a77399](https://github.com/pentaho/hv-uikit-react/commit/0a773996a50333a7cf33af0fb85ee02a725228b1))
+
+
+
+
+
 ## [2.17.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.2...@hv/uikit-react-core@2.17.3) (2021-02-23)
 
 
