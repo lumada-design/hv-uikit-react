@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.11.0...@hv/uikit-react-core@3.12.0) (2021-03-03)
+
+
+### Bug Fixes
+
+* **table:** table not hiding rows when no data. HVUIKIT-5707 ([d664bad](https://github.com/pentaho/hv-uikit-react/commit/d664badfa8c292db492e04ef1b0a340a1c7fadf8))
+
+
+### Features
+
+* **checkbox:** add multiselection selection to checkbox. HVUIKIT-5678 ([a62f2f5](https://github.com/pentaho/hv-uikit-react/commit/a62f2f5b47f37de09bf133a0355b611cec50b80f))
+
+
+
+
+
 # [3.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.10.0...@hv/uikit-react-core@3.11.0) (2021-03-01)
 
 
