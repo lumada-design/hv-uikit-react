@@ -23,21 +23,22 @@ export interface GenerateClassNameOptions {
 
 export interface HvProviderProps {
   /**
-   * The UI-Kit theme object to be wrapped by the MUI theme.
-   */
-  theme?: HvTheme;
-  /**
-   * Which of design system default themes to use.
-   */
-  uiKitTheme?: HvUiKitThemeNames;
-  /**
-   * Which of design system default themes to use.
-   */
-  changeTheme?: () => void;
-  /**
    * Your component tree.
    */
   children: React.ReactNode;
+  /**
+   * The Design System base theme in use. Defaults to `"dawn"`.
+   */
+  uiKitTheme?: HvUiKitThemeNames;
+  /**
+   * The UI Kit theme object to be applied on top of the base theme.
+   */
+  theme?: HvTheme;
+  /**
+   * Function stored in the provider's context to allow runtime switching of the active theme.
+   * The implementation is up to each App.
+   */
+  changeTheme?: () => void;
   /**
    * The locale to be used. If empty falls back to browser locale
    */

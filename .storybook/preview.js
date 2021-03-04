@@ -19,7 +19,7 @@ export const parameters = {
         "Get Started",
         ["Introduction", "Installation", "Component List"],
         "Foundation",
-        ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
+        ["Grid", "Container", "Provider", "Theming", "Typography", "Colors", "Icons"],
         "Components",
         "Forms",
         ["Main", "Form Element", "Form Element Blocks"],
