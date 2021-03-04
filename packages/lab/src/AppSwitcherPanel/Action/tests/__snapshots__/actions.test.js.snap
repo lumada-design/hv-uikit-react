@@ -25,24 +25,24 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "Action-dummyImage-63",
-        "iconInfo": "Action-iconInfo-65",
-        "iconUrl": "Action-iconUrl-66",
-        "link": "Action-link-64",
-        "selected": "Action-selected-62",
-        "typography": "Action-typography-61",
+        "dummyImage": "Action-dummyImage-3",
+        "iconInfo": "Action-iconInfo-5",
+        "iconUrl": "Action-iconUrl-6",
+        "link": "Action-link-4",
+        "selected": "Action-selected-2",
+        "typography": "Action-typography-1",
       }
     }
     isSelectedCallback={[Function]}
     onClickCallback={[Function]}
   >
     <a
-      className="Action-link-64"
+      className="Action-link-4"
       href="http://mockapp1/"
       target="_top"
     >
       <WithStyles(ForwardRef)
-        className="Action-typography-61"
+        className="Action-typography-1"
         component="div"
         onClick={[Function]}
         role="button"
@@ -50,7 +50,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
         variant="normalText"
       >
         <ForwardRef
-          className="Action-typography-61"
+          className="Action-typography-1"
           classes={
             Object {
               "3xlTitle": "HvTypography-3xlTitle",
@@ -84,7 +84,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
           variant="normalText"
         >
           <div
-            className="Action-typography-61 HvTypography-root HvTypography-normalText"
+            className="Action-typography-1 HvTypography-root HvTypography-normalText"
             onClick={[Function]}
             role="button"
             tabIndex={0}
@@ -292,24 +292,24 @@ exports[`<Action /> without description should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "Action-dummyImage-33",
-        "iconInfo": "Action-iconInfo-35",
-        "iconUrl": "Action-iconUrl-36",
-        "link": "Action-link-34",
-        "selected": "Action-selected-32",
-        "typography": "Action-typography-31",
+        "dummyImage": "Action-dummyImage-3",
+        "iconInfo": "Action-iconInfo-5",
+        "iconUrl": "Action-iconUrl-6",
+        "link": "Action-link-4",
+        "selected": "Action-selected-2",
+        "typography": "Action-typography-1",
       }
     }
     isSelectedCallback={[Function]}
     onClickCallback={[Function]}
   >
     <a
-      className="Action-link-34"
+      className="Action-link-4"
       href="http://mockapp1/"
       target="_top"
     >
       <WithStyles(ForwardRef)
-        className="Action-typography-31"
+        className="Action-typography-1"
         component="div"
         onClick={[Function]}
         role="button"
@@ -317,7 +317,7 @@ exports[`<Action /> without description should render correctly 1`] = `
         variant="normalText"
       >
         <ForwardRef
-          className="Action-typography-31"
+          className="Action-typography-1"
           classes={
             Object {
               "3xlTitle": "HvTypography-3xlTitle",
@@ -351,13 +351,13 @@ exports[`<Action /> without description should render correctly 1`] = `
           variant="normalText"
         >
           <div
-            className="Action-typography-31 HvTypography-root HvTypography-normalText"
+            className="Action-typography-1 HvTypography-root HvTypography-normalText"
             onClick={[Function]}
             role="button"
             tabIndex={0}
           >
             <img
-              className="Action-iconUrl-36"
+              className="Action-iconUrl-6"
               onError={[Function]}
               src="http://mockapp1/icon"
             />

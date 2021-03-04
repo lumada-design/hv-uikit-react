@@ -333,10 +333,10 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     className="HvRadio-radio HvBaseRadio-root"
                                     classes={
                                       Object {
-                                        "checked": "PrivateSwitchBase-checked-6 Mui-checked",
-                                        "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
-                                        "input": "PrivateSwitchBase-input-8",
-                                        "root": "PrivateSwitchBase-root-5 MuiRadio-root",
+                                        "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                        "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                        "input": "PrivateSwitchBase-input-4",
+                                        "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                       }
                                     }
                                     color="default"
@@ -364,7 +364,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     value="1"
                                   >
                                     <WithStyles(ForwardRef(IconButton))
-                                      className="PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                       color="default"
                                       component="span"
                                       disableRipple={true}
@@ -375,7 +375,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       tabIndex={null}
                                     >
                                       <ForwardRef(IconButton)
-                                        className="PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                        className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                         classes={
                                           Object {
                                             "colorInherit": "MuiIconButton-colorInherit",
@@ -400,7 +400,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       >
                                         <WithStyles(ForwardRef(ButtonBase))
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                           component="span"
                                           disableRipple={true}
                                           disabled={false}
@@ -412,7 +412,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                         >
                                           <ForwardRef(ButtonBase)
                                             centerRipple={true}
-                                            className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                            className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                             classes={
                                               Object {
                                                 "disabled": "Mui-disabled",
@@ -431,7 +431,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                           >
                                             <span
                                               aria-disabled={false}
-                                              className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                              className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                               onBlur={[Function]}
                                               onDragLeave={[Function]}
                                               onFocus={[Function]}
@@ -450,7 +450,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                               >
                                                 <input
                                                   checked={false}
-                                                  className="PrivateSwitchBase-input-8"
+                                                  className="PrivateSwitchBase-input-4"
                                                   disabled={false}
                                                   id="hvradio11-input"
                                                   name="favorite"
@@ -898,10 +898,10 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     className="HvRadio-radio HvBaseRadio-root"
                                     classes={
                                       Object {
-                                        "checked": "PrivateSwitchBase-checked-6 Mui-checked",
-                                        "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
-                                        "input": "PrivateSwitchBase-input-8",
-                                        "root": "PrivateSwitchBase-root-5 MuiRadio-root",
+                                        "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                        "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                        "input": "PrivateSwitchBase-input-4",
+                                        "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                       }
                                     }
                                     color="default"
@@ -929,7 +929,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     value="2"
                                   >
                                     <WithStyles(ForwardRef(IconButton))
-                                      className="PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-6 Mui-checked"
+                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
                                       color="default"
                                       component="span"
                                       disableRipple={true}
@@ -940,7 +940,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       tabIndex={null}
                                     >
                                       <ForwardRef(IconButton)
-                                        className="PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-6 Mui-checked"
+                                        className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
                                         classes={
                                           Object {
                                             "colorInherit": "MuiIconButton-colorInherit",
@@ -965,7 +965,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       >
                                         <WithStyles(ForwardRef(ButtonBase))
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-6 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
                                           component="span"
                                           disableRipple={true}
                                           disabled={false}
@@ -977,7 +977,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                         >
                                           <ForwardRef(ButtonBase)
                                             centerRipple={true}
-                                            className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-6 Mui-checked"
+                                            className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
                                             classes={
                                               Object {
                                                 "disabled": "Mui-disabled",
@@ -996,7 +996,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                           >
                                             <span
                                               aria-disabled={false}
-                                              className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-6 Mui-checked"
+                                              className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root PrivateSwitchBase-checked-2 Mui-checked"
                                               onBlur={[Function]}
                                               onDragLeave={[Function]}
                                               onFocus={[Function]}
@@ -1015,7 +1015,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                               >
                                                 <input
                                                   checked={true}
-                                                  className="PrivateSwitchBase-input-8"
+                                                  className="PrivateSwitchBase-input-4"
                                                   disabled={false}
                                                   id="hvradio13-input"
                                                   name="favorite"
@@ -1468,10 +1468,10 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     className="HvRadio-radio HvBaseRadio-root"
                                     classes={
                                       Object {
-                                        "checked": "PrivateSwitchBase-checked-6 Mui-checked",
-                                        "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
-                                        "input": "PrivateSwitchBase-input-8",
-                                        "root": "PrivateSwitchBase-root-5 MuiRadio-root",
+                                        "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                        "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                        "input": "PrivateSwitchBase-input-4",
+                                        "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                       }
                                     }
                                     color="default"
@@ -1499,7 +1499,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                     value="3"
                                   >
                                     <WithStyles(ForwardRef(IconButton))
-                                      className="PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                       color="default"
                                       component="span"
                                       disableRipple={true}
@@ -1510,7 +1510,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       tabIndex={null}
                                     >
                                       <ForwardRef(IconButton)
-                                        className="PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                        className="PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                         classes={
                                           Object {
                                             "colorInherit": "MuiIconButton-colorInherit",
@@ -1535,7 +1535,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                       >
                                         <WithStyles(ForwardRef(ButtonBase))
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                           component="span"
                                           disableRipple={true}
                                           disabled={false}
@@ -1547,7 +1547,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                         >
                                           <ForwardRef(ButtonBase)
                                             centerRipple={true}
-                                            className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                            className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                             classes={
                                               Object {
                                                 "disabled": "Mui-disabled",
@@ -1566,7 +1566,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                           >
                                             <span
                                               aria-disabled={false}
-                                              className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadio-radio HvBaseRadio-root"
+                                              className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadio-radio HvBaseRadio-root"
                                               onBlur={[Function]}
                                               onDragLeave={[Function]}
                                               onFocus={[Function]}
@@ -1585,7 +1585,7 @@ exports[`CheckBoxGroup should render correctly 1`] = `
                                               >
                                                 <input
                                                   checked={false}
-                                                  className="PrivateSwitchBase-input-8"
+                                                  className="PrivateSwitchBase-input-4"
                                                   disabled={false}
                                                   id="hvradio15-input"
                                                   name="favorite"

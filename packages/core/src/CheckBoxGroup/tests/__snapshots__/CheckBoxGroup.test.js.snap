@@ -26,13 +26,13 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-12"
+                class="PrivateSwitchBase-input-4"
                 data-indeterminate="false"
                 id="hvcheckbox19-input"
                 type="checkbox"
@@ -80,14 +80,14 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-10 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-12"
+                class="PrivateSwitchBase-input-4"
                 data-indeterminate="false"
                 id="hvcheckbox21-input"
                 type="checkbox"
@@ -140,13 +140,13 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-12"
+                class="PrivateSwitchBase-input-4"
                 data-indeterminate="false"
                 id="hvcheckbox23-input"
                 type="checkbox"
@@ -253,13 +253,13 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-8"
+                class="PrivateSwitchBase-input-4"
                 data-indeterminate="false"
                 id="hvcheckbox11-input"
                 type="checkbox"
@@ -307,14 +307,14 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-6 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-8"
+                class="PrivateSwitchBase-input-4"
                 data-indeterminate="false"
                 id="hvcheckbox13-input"
                 type="checkbox"
@@ -367,13 +367,13 @@ exports[`HvCheckBoxGroup sample snapshot testing Horizontal 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-8"
+                class="PrivateSwitchBase-input-4"
                 data-indeterminate="false"
                 id="hvcheckbox15-input"
                 type="checkbox"

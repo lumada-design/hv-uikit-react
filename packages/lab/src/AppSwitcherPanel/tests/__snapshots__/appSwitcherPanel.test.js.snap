@@ -80,13 +80,13 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
     }
     classes={
       Object {
-        "actionsContainer": "AppSwitcherPanel-actionsContainer-71",
-        "footerContainer": "AppSwitcherPanel-footerContainer-72",
-        "headerContainer": "AppSwitcherPanel-headerContainer-68",
-        "open": "AppSwitcherPanel-open-67",
-        "root": "AppSwitcherPanel-root-66",
-        "title": "AppSwitcherPanel-title-70",
-        "titleContainer": "AppSwitcherPanel-titleContainer-69",
+        "actionsContainer": "AppSwitcherPanel-actionsContainer-6",
+        "footerContainer": "AppSwitcherPanel-footerContainer-7",
+        "headerContainer": "AppSwitcherPanel-headerContainer-3",
+        "open": "AppSwitcherPanel-open-2",
+        "root": "AppSwitcherPanel-root-1",
+        "title": "AppSwitcherPanel-title-5",
+        "titleContainer": "AppSwitcherPanel-titleContainer-4",
       }
     }
     isActionSelectedCallback={[Function]}
@@ -95,17 +95,17 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
     title="Mock title"
   >
     <div
-      className="AppSwitcherPanel-root-66 AppSwitcherPanel-open-67"
+      className="AppSwitcherPanel-root-1 AppSwitcherPanel-open-2"
       id="hv-appswitcherpanel-6"
     >
       <div
-        className="AppSwitcherPanel-headerContainer-68"
+        className="AppSwitcherPanel-headerContainer-3"
       >
         <div
-          className="AppSwitcherPanel-titleContainer-69"
+          className="AppSwitcherPanel-titleContainer-4"
         >
           <div
-            className="AppSwitcherPanel-title-70"
+            className="AppSwitcherPanel-title-5"
             title="Mock title"
           >
             Mock title
@@ -113,7 +113,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
         </div>
       </div>
       <div
-        className="AppSwitcherPanel-actionsContainer-71"
+        className="AppSwitcherPanel-actionsContainer-6"
       >
         <WithStyles(Action)
           application={
@@ -143,24 +143,24 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-75",
-                "iconInfo": "Action-iconInfo-77",
-                "iconUrl": "Action-iconUrl-78",
-                "link": "Action-link-76",
-                "selected": "Action-selected-74",
-                "typography": "Action-typography-73",
+                "dummyImage": "Action-dummyImage-10",
+                "iconInfo": "Action-iconInfo-12",
+                "iconUrl": "Action-iconUrl-13",
+                "link": "Action-link-11",
+                "selected": "Action-selected-9",
+                "typography": "Action-typography-8",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-76"
+              className="Action-link-11"
               href="http://mockapp1/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-73"
+                className="Action-typography-8"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -168,7 +168,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-73"
+                  className="Action-typography-8"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -202,13 +202,13 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-73 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-78"
+                      className="Action-iconUrl-13"
                       onError={[Function]}
                       src="http://mockapp1/icon"
                     />
@@ -218,17 +218,17 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       Mock App 1 - VALID
                     </span>
                     <Info
-                      className="Action-iconInfo-77"
+                      className="Action-iconInfo-12"
                       title="Mock App 1 Description"
                     >
                       <HvIconBase
-                        className="Action-iconInfo-77"
+                        className="Action-iconInfo-12"
                         iconSize="S"
                         name="Info"
                         title="Mock App 1 Description"
                       >
                         <div
-                          className="Action-iconInfo-77 HvIconBase-root HvIconBase-s"
+                          className="Action-iconInfo-12 HvIconBase-root HvIconBase-s"
                           name="Info"
                           title="Mock App 1 Description"
                         >
@@ -278,24 +278,24 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-75",
-                "iconInfo": "Action-iconInfo-77",
-                "iconUrl": "Action-iconUrl-78",
-                "link": "Action-link-76",
-                "selected": "Action-selected-74",
-                "typography": "Action-typography-73",
+                "dummyImage": "Action-dummyImage-10",
+                "iconInfo": "Action-iconInfo-12",
+                "iconUrl": "Action-iconUrl-13",
+                "link": "Action-link-11",
+                "selected": "Action-selected-9",
+                "typography": "Action-typography-8",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-76"
+              className="Action-link-11"
               href="http://mockapp5/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-73"
+                className="Action-typography-8"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -303,7 +303,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-73"
+                  className="Action-typography-8"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -337,13 +337,13 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-73 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-78"
+                      className="Action-iconUrl-13"
                       onError={[Function]}
                       src="http://mockapp5/icon"
                     />
@@ -424,13 +424,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
     }
     classes={
       Object {
-        "actionsContainer": "AppSwitcherPanel-actionsContainer-19",
-        "footerContainer": "AppSwitcherPanel-footerContainer-20",
-        "headerContainer": "AppSwitcherPanel-headerContainer-16",
-        "open": "AppSwitcherPanel-open-15",
-        "root": "AppSwitcherPanel-root-14",
-        "title": "AppSwitcherPanel-title-18",
-        "titleContainer": "AppSwitcherPanel-titleContainer-17",
+        "actionsContainer": "AppSwitcherPanel-actionsContainer-6",
+        "footerContainer": "AppSwitcherPanel-footerContainer-7",
+        "headerContainer": "AppSwitcherPanel-headerContainer-3",
+        "open": "AppSwitcherPanel-open-2",
+        "root": "AppSwitcherPanel-root-1",
+        "title": "AppSwitcherPanel-title-5",
+        "titleContainer": "AppSwitcherPanel-titleContainer-4",
       }
     }
     isActionSelectedCallback={[Function]}
@@ -439,17 +439,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
     title="Mock title"
   >
     <div
-      className="AppSwitcherPanel-root-14 AppSwitcherPanel-open-15"
+      className="AppSwitcherPanel-root-1 AppSwitcherPanel-open-2"
       id="hv-appswitcherpanel-2"
     >
       <div
-        className="AppSwitcherPanel-headerContainer-16"
+        className="AppSwitcherPanel-headerContainer-3"
       >
         <div
-          className="AppSwitcherPanel-titleContainer-17"
+          className="AppSwitcherPanel-titleContainer-4"
         >
           <div
-            className="AppSwitcherPanel-title-18"
+            className="AppSwitcherPanel-title-5"
             title="Mock title"
           >
             Mock title
@@ -457,7 +457,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
         </div>
       </div>
       <div
-        className="AppSwitcherPanel-actionsContainer-19"
+        className="AppSwitcherPanel-actionsContainer-6"
       >
         <WithStyles(Action)
           application={
@@ -485,24 +485,24 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-23",
-                "iconInfo": "Action-iconInfo-25",
-                "iconUrl": "Action-iconUrl-26",
-                "link": "Action-link-24",
-                "selected": "Action-selected-22",
-                "typography": "Action-typography-21",
+                "dummyImage": "Action-dummyImage-10",
+                "iconInfo": "Action-iconInfo-12",
+                "iconUrl": "Action-iconUrl-13",
+                "link": "Action-link-11",
+                "selected": "Action-selected-9",
+                "typography": "Action-typography-8",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-24"
+              className="Action-link-11"
               href="http://mockapp1/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-21"
+                className="Action-typography-8"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -510,7 +510,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-21"
+                  className="Action-typography-8"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -544,13 +544,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-21 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-26"
+                      className="Action-iconUrl-13"
                       onError={[Function]}
                       src="http://mockapp1/icon"
                     />
@@ -593,24 +593,24 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-23",
-                "iconInfo": "Action-iconInfo-25",
-                "iconUrl": "Action-iconUrl-26",
-                "link": "Action-link-24",
-                "selected": "Action-selected-22",
-                "typography": "Action-typography-21",
+                "dummyImage": "Action-dummyImage-10",
+                "iconInfo": "Action-iconInfo-12",
+                "iconUrl": "Action-iconUrl-13",
+                "link": "Action-link-11",
+                "selected": "Action-selected-9",
+                "typography": "Action-typography-8",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-24"
+              className="Action-link-11"
               href="http://mockapp2/"
               target="_blank"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-21"
+                className="Action-typography-8"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -618,7 +618,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-21"
+                  className="Action-typography-8"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -652,13 +652,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-21 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-26"
+                      className="Action-iconUrl-13"
                       onError={[Function]}
                       src="http://mockapp2/icon"
                     />
@@ -668,17 +668,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       Mock App 2
                     </span>
                     <Info
-                      className="Action-iconInfo-25"
+                      className="Action-iconInfo-12"
                       title="Mock App 2 Description"
                     >
                       <HvIconBase
-                        className="Action-iconInfo-25"
+                        className="Action-iconInfo-12"
                         iconSize="S"
                         name="Info"
                         title="Mock App 2 Description"
                       >
                         <div
-                          className="Action-iconInfo-25 HvIconBase-root HvIconBase-s"
+                          className="Action-iconInfo-12 HvIconBase-root HvIconBase-s"
                           name="Info"
                           title="Mock App 2 Description"
                         >
@@ -730,24 +730,24 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-23",
-                "iconInfo": "Action-iconInfo-25",
-                "iconUrl": "Action-iconUrl-26",
-                "link": "Action-link-24",
-                "selected": "Action-selected-22",
-                "typography": "Action-typography-21",
+                "dummyImage": "Action-dummyImage-10",
+                "iconInfo": "Action-iconInfo-12",
+                "iconUrl": "Action-iconUrl-13",
+                "link": "Action-link-11",
+                "selected": "Action-selected-9",
+                "typography": "Action-typography-8",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-24"
+              className="Action-link-11"
               href="http://mockapp2/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-21"
+                className="Action-typography-8"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -755,7 +755,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-21"
+                  className="Action-typography-8"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -789,13 +789,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-21 HvTypography-root HvTypography-normalText"
+                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-26"
+                      className="Action-iconUrl-13"
                       onError={[Function]}
                       src="http://mockapp2/icon"
                     />
@@ -805,17 +805,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       Mock App 3
                     </span>
                     <Info
-                      className="Action-iconInfo-25"
+                      className="Action-iconInfo-12"
                       title="Mock App 2 Description"
                     >
                       <HvIconBase
-                        className="Action-iconInfo-25"
+                        className="Action-iconInfo-12"
                         iconSize="S"
                         name="Info"
                         title="Mock App 2 Description"
                       >
                         <div
-                          className="Action-iconInfo-25 HvIconBase-root HvIconBase-s"
+                          className="Action-iconInfo-12 HvIconBase-root HvIconBase-s"
                           name="Info"
                           title="Mock App 2 Description"
                         >
