@@ -3,7 +3,9 @@
 exports[`Provider should render correctly 1`] = `
 <HvProvider>
   <StylesProvider
+    disableGeneration={false}
     generateClassName={[Function]}
+    injectFirst={false}
   >
     <ThemeProvider
       theme={

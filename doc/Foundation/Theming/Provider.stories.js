@@ -23,11 +23,11 @@ export default {
 
 export const Usage = () => (
   <>
-    <HvProvider>
-      <HvButtonWithMargin category="secondary">Wicked</HvButtonWithMargin>
-    </HvProvider>
-    <HvProvider uiKitTheme="dawn">
+    <HvProvider uiKitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }}>
       <HvButtonWithMargin category="secondary">Dawn</HvButtonWithMargin>
+    </HvProvider>
+    <HvProvider uiKitTheme="wicked" generateClassNameOptions={{ seed: "wicked" }}>
+      <HvButtonWithMargin category="secondary">Wicked</HvButtonWithMargin>
     </HvProvider>
   </>
 );

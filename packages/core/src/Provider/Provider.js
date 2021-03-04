@@ -16,7 +16,7 @@ import {
   createMuiTheme,
 } from "@material-ui/core";
 
-import { themeBuilder, generateClassName, CssBaseline, getTheme } from "../theme";
+import { themeBuilder, createGenerateClassName, CssBaseline, getTheme } from "../theme";
 
 import ConfigContext from "./context";
 
@@ -47,17 +47,34 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
 
 const HvProvider = ({
   children,
-  theme = null,
+
   uiKitTheme = "dawn",
+  theme = null,
   changeTheme = () => {},
+
   locale,
+
+  generateClassName: generateClassNameProp,
+  generateClassNameOptions,
+  injectStylesFirst = false,
+  disableStylesGeneration = false,
 }) => {
   const localeSetting = locale || (navigator?.language ?? "en-US");
-  const pConfig = { changeTheme, locale: localeSetting };
+
   const rawUiKitTheme = getTheme(uiKitTheme);
   const customTheme = applyCustomTheme(themeBuilder(rawUiKitTheme), theme);
+
+  const generateClassName =
+    generateClassNameProp || createGenerateClassName(generateClassNameOptions);
+
+  const pConfig = { changeTheme, locale: localeSetting };
+
   return (
-    <MuiStylesProvider generateClassName={generateClassName}>
+    <MuiStylesProvider
+      generateClassName={generateClassName}
+      injectFirst={injectStylesFirst}
+      disableGeneration={disableStylesGeneration}
+    >
       <MuiThemeProvider theme={customTheme}>
         <CssBaseline />
         <ConfigContext.Provider value={pConfig}>{children}</ConfigContext.Provider>
@@ -83,11 +100,54 @@ HvProvider.propTypes = {
    * Which of design system default themes to use.
    */
   changeTheme: PropTypes.func,
+
   /**
    * The locale to be used.
    * Defaults to the browser's configured locale or "en-US" if not available.
    */
   locale: PropTypes.string,
+
+  /**
+   * Custom JSS's class name generator.
+   */
+  generateClassName: PropTypes.func,
+  /**
+   * Built-in JSS's class name generator options.
+   * Ignored if a custom `generateClassName` is provided.
+   *
+   * `disableGlobal`: Disable the generation of deterministic class names. Defaults to `false`.
+   *
+   * `productionPrefix`: The string used to prefix the class names in production. Defaults to `"jss-uikit"`.
+   *
+   * `seed`: The string used to uniquely identify the generator. Defaults to `""`.
+   *         It can be used to avoid class name collisions when using multiple generators in the same document.
+   */
+  generateClassNameOptions: PropTypes.shape({
+    /**
+     * Disable the generation of deterministic class names. Defaults to `false`.
+     */
+    disableGlobal: PropTypes.bool,
+    /**
+     * The string used to prefix the class names in production. Defaults to `"jss-uikit"`.
+     */
+    productionPrefix: PropTypes.string,
+    /**
+     * The string used to uniquely identify the generator. Defaults to `""`.
+     * It can be used to avoid class name collisions when using multiple generators in the same document.
+     */
+    seed: PropTypes.string,
+  }),
+  /**
+   * Injects the generated stylesheets at the top of the `<head>` element of the page.
+   * This can ease the override of UI Kit components styles.
+   *
+   * By default, the styles are injected last in the `<head>` element of the page.
+   */
+  injectStylesFirst: PropTypes.bool,
+  /**
+   * Disables the generation of the styles.
+   */
+  disableStylesGeneration: PropTypes.bool,
 };
 
 export default HvProvider;
