@@ -165,19 +165,8 @@ const HvDatePicker = (props) => {
   };
 
   const setFocusToDateInput = (containerRef) => {
-    /**
-     *  TODO: Review this focus function, it should focus the input
-     *  https://insightgroup.atlassian.net/browse/HVUIKIT-5680
-     *  containerRef?.getElementsByTagName("input")[0]?.focus();
-     */
-    const divs = [...containerRef?.getElementsByTagName("div")];
-    divs.every((div) => {
-      if (div.tabIndex >= 0) {
-        div.focus();
-        return false;
-      }
-      return true;
-    });
+    const calendarInput = containerRef?.querySelector(".HvCalendarHeader-input");
+    calendarInput?.focus();
   };
 
   const handleDateChange = (event, newDate) => {
@@ -313,11 +302,6 @@ const HvDatePicker = (props) => {
           undefined
         }
       >
-        {
-          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-          // necessary because `HvBaseDropdown` re-render auto-focus
-        }
-        <div tabIndex={0} />
         <HvCalendar
           id={setId(id, "calendar")}
           startAdornment={startAdornment}

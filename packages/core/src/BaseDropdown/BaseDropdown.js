@@ -186,7 +186,7 @@ const HvBaseDropdown = ({
    * @param data
    */
   const handleContainerCreate = (data) => {
-    onContainerCreation(containerRef.current);
+    onContainerCreation?.(containerRef.current);
     if (!created) {
       const position = data.flipped;
       setterPosition(position);
