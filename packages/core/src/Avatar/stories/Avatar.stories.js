@@ -67,10 +67,10 @@ export const ImageAvatars = () => (
   </>
 );
 
-ImageAvatars.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+ImageAvatars.parameters = {
+  docs: {
+    description: {
+      story:
         "Image avatars can be created by passing standard img props src or srcSet to the component.",
     },
   },
@@ -85,11 +85,10 @@ export const LetterAvatars = () => (
   </>
 );
 
-LetterAvatars.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "Avatars containing simple characters can be created by passing a string as children.",
+LetterAvatars.parameters = {
+  docs: {
+    description: {
+      story: "Avatars containing simple characters can be created by passing a string as children.",
     },
   },
 };
@@ -112,10 +111,10 @@ export const IconAvatars = () => (
   </>
 );
 
-IconAvatars.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+IconAvatars.parameters = {
+  docs: {
+    description: {
+      story:
         "Icon avatars are created by passing an icon as children. Its size and color aren't Avatar's responsibility.",
     },
   },
@@ -132,10 +131,10 @@ export const Fallbacks = () => (
   </>
 );
 
-Fallbacks.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Fallbacks.parameters = {
+  docs: {
+    description: {
+      story:
         "If there is an error loading the avatar image, the component falls back to an alternative in the following order: the provided children, the first letter of the alt text and finally the generic User icon.",
     },
   },
@@ -154,10 +153,10 @@ export const Sizes = () => (
   </>
 );
 
-Sizes.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Sizes.parameters = {
+  docs: {
+    description: {
+      story:
         "You can change the size of the avatar with the size property (S, M, L). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size.",
     },
   },
@@ -192,10 +191,10 @@ export const Buttons = () => {
   );
 };
 
-Buttons.story = {
-  parameters: {
-    docs: {
-      storyDescription:
+Buttons.parameters = {
+  docs: {
+    description: {
+      story:
         "You can change the component used for the root node, for instance for rendering a HvButton. All other properties are spread in the root node, such as event callbacks.",
     },
   },

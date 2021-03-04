@@ -49,15 +49,13 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  decorators: [
-    (Story) => (
-      <div style={{ width: 250, height: 40 }}>
-        <Story />
-      </div>
-    ),
-  ],
-};
+Main.decorators = [
+  (Story) => (
+    <div style={{ width: 250, height: 40 }}>
+      <Story />
+    </div>
+  ),
+];
 
 export const BasicSearch = () => {
   const useStyles = makeStyles((theme) => ({
