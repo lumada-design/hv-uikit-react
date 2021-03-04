@@ -101,6 +101,9 @@ const Focus = (props) => {
   const addFocusClass = (evt) => {
     if (!useFalseFocus) {
       evt.currentTarget.classList.add(classes.focused);
+      // add global class HvIsFocused as a marker
+      // not to be styled directly, only as helper in specific css queries
+      evt.currentTarget.classList.add("HvIsFocused");
       classes.focus.split(" ").forEach((c) => evt.currentTarget.classList.add(c));
     }
   };
@@ -109,6 +112,8 @@ const Focus = (props) => {
     if (!useFalseFocus) {
       getFocuses().forEach((element) => {
         element.classList.remove(classes.focused);
+        // remove the global class HvIsFocused
+        element.classList.remove("HvIsFocused");
         classes.focus.split(" ").forEach((c) => element.classList.remove(c));
       });
     }

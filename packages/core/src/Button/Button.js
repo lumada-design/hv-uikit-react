@@ -40,7 +40,9 @@ const HvButton = React.forwardRef((props, ref) => {
       disableRipple
       onClick={onClick}
       startIcon={startIcon}
-      focusVisibleClassName={classes.focusVisible}
+      // expose the global class HvIsFocusVisible as a marker
+      // not to be styled directly, only as helper in specific css queries
+      focusVisibleClassName={clsx("HvIsFocusVisible", classes.focusVisible)}
       {...others}
     >
       {children}

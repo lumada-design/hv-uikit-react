@@ -9,7 +9,7 @@ const styles = (theme) => ({
     zIndex: 0,
 
     // prevent the focus ring to be hidden by sibling hover background
-    "&>.HvButton-focusVisible": {
+    "&>.HvIsFocusVisible": {
       zIndex: 5,
     },
 
@@ -90,7 +90,7 @@ const styles = (theme) => ({
 
       // prevent the focus ring to be hidden by sibling hover background
       // even when selected
-      "&.HvButton-focusVisible": {
+      "&.HvIsFocusVisible": {
         zIndex: 5,
       },
     },

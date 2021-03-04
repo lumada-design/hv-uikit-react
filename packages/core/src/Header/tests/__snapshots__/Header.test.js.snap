@@ -146,7 +146,7 @@ exports[`Header should be able to render 1`] = `
                       }
                       color="primary"
                       disableRipple={true}
-                      focusVisibleClassName="HvButton-focusVisible"
+                      focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                       onClick={[Function]}
                       style={
                         Object {
@@ -193,7 +193,7 @@ exports[`Header should be able to render 1`] = `
                         }
                         color="primary"
                         disableRipple={true}
-                        focusVisibleClassName="HvButton-focusVisible"
+                        focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                         onClick={[Function]}
                         style={
                           Object {
@@ -209,7 +209,7 @@ exports[`Header should be able to render 1`] = `
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                           onClick={[Function]}
                           style={
                             Object {
@@ -232,7 +232,7 @@ exports[`Header should be able to render 1`] = `
                             disableRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                            focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                             onClick={[Function]}
                             style={
                               Object {
@@ -484,7 +484,7 @@ exports[`Header should be able to render 1`] = `
                             }
                             color="primary"
                             disableRipple={true}
-                            focusVisibleClassName="HvButton-focusVisible"
+                            focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                             onClick={[Function]}
                             variant="text"
                           >
@@ -526,7 +526,7 @@ exports[`Header should be able to render 1`] = `
                               }
                               color="primary"
                               disableRipple={true}
-                              focusVisibleClassName="HvButton-focusVisible"
+                              focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                               onClick={[Function]}
                               variant="text"
                             >
@@ -537,7 +537,7 @@ exports[`Header should be able to render 1`] = `
                                 disableRipple={true}
                                 disabled={false}
                                 focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                                focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -555,7 +555,7 @@ exports[`Header should be able to render 1`] = `
                                   disableRipple={true}
                                   disabled={false}
                                   focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                                  focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                                   onClick={[Function]}
                                   type="button"
                                 >
