@@ -17,7 +17,7 @@ export default {
     componentSubtitle: null,
     usage: 'import { HvButton } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
-    dsVersion: "3.3.0",
+    dsVersion: "3.4.0",
   },
   component: HvButton,
 };

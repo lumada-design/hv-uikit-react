@@ -9,7 +9,7 @@ export default {
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvBanner } from "@hv/uikit-react-core"',
-    dsVersion: "3.3.0",
+    dsVersion: "3.4.0",
   },
   component: HvBanner,
 };

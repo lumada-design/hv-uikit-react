@@ -1,27 +1,27 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Preview, ArgsTable } from "@storybook/addon-docs/blocks";
+
+import { HvTypography } from "@hv/uikit-react-core";
+
 import Typography from "./Typography";
-import MaturityStatus from "../../../.storybook/blocks/ExportedMaturityStatus";
+import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
 <Meta
   title="Foundation/Typography"
   parameters={{
-    maturityStatus: componentDefinitions.stable,
-    dsVersion: componentDefinitions.dsVersion3,
+    maturityStatus: componentDefinitions.dsClassification.stable,
+    dsVersion: componentDefinitions.dsVersion.v3,
   }}
 />
 
 # Typography
 
-<br />
 <MaturityStatus />
-<br />
 
 The UI-Kit uses **[Open Sans](https://fonts.google.com/specimen/Open+Sans)** as the default font, according to the Design System guidelines. Open Sans is an open source font that was designed and optimized for print, web, and mobile interfaces, and has excellent legibility characteristics in its letterforms.
 
 You will **need to ensure** that the font link is referenced in your application's code, since it cannot be loaded automatically by the UI Kit.
 
-<br />
 <br />
 
 ### Setup
@@ -32,12 +32,10 @@ The **Open Sans font** can be loaded from a CDN, using the following markup:
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600" />
 ```
 
-<br />
-
-### Font family
-
 <Preview>
   <Story name="Main">
     <Typography />
   </Story>
 </Preview>
+
+<ArgsTable of={HvTypography} />

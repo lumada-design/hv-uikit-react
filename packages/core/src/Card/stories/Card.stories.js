@@ -34,7 +34,7 @@ export default {
     usage:
       'import { HvCard, HvCardHeader, HvCardMedia, HvCardContent } from "@hv/uikit-react-core"',
 
-    dsVersion: "3.3.0",
+    dsVersion: "3.4.0",
   },
   component: HvCard,
   subcomponents: { HvCardHeader, HvCardMedia, HvCardContent },

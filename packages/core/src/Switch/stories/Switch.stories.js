@@ -29,7 +29,7 @@ export default {
     componentSubtitle: null,
     usage: 'import { HvSwitch } from "@hv/uikit-react-core"',
     maturityStatus: "stable",
-    dsVersion: "3.3.0",
+    dsVersion: "3.4.0",
   },
   component: HvSwitch,
   subcomponents: { HvBaseSwitch },

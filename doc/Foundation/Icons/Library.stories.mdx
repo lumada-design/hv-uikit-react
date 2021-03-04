@@ -3,20 +3,19 @@ import IconLibrary from "./Library";
 import { ActualSize, FemaleRunning } from "@hv/uikit-react-icons";
 import * as iconComponentList from "@hv/uikit-react-icons/dist/icons";
 import * as iconPictogramComponentList from "@hv/uikit-react-icons/dist/pictograms";
-import MaturityStatus from "../../../.storybook/blocks/ExportedMaturityStatus";
+import { MaturityStatus } from "../../../.storybook/blocks/MaturityStatus";
 import componentDefinitions from "../../GetStarted/ComponentVersioningTable/versions";
 
 <Meta
   title="Foundation/Icons/Library"
   parameters={{
-    maturityStatus: componentDefinitions.stable,
-    dsVersion: componentDefinitions.dsVersion3,
+    maturityStatus: componentDefinitions.dsClassification.stable,
+    dsVersion: componentDefinitions.dsVersion.v3,
   }}
 />
 
 # Icon library
 
-<br />
 <MaturityStatus />
 
 You can import our React icons from the icon library as follows (example for the `ActualSize` icon):

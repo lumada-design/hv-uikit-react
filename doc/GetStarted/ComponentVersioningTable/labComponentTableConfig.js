@@ -1,30 +1,62 @@
 import React from "react";
 
+import LinkTo from "@storybook/addon-links/react";
+
+import { HvTypography } from "@hv/uikit-react-core";
+
 const labComponentTableConfig = [
   {
-    headerText: "Component",
+    headerText: "Component name",
     accessor: "component",
     cellType: "alpha-numeric",
     Cell: (cellData) => {
       return (
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
-            <a href={`${cellData.row._original.path}`}>{cellData.row._original.component}</a>
+            {cellData.row._original.path ? (
+              <LinkTo kind={cellData.row._original.path}>
+                <HvTypography component="span" variant="link">
+                  {cellData.row._original.component}
+                </HvTypography>
+              </LinkTo>
+            ) : (
+              cellData.row._original.component
+            )}
           </div>
         </div>
       );
     },
   },
   {
-    headerText: "UiKit V3.x",
-    accessor: "uikitVersion3",
+    headerText: "DS Pattern name",
+    accessor: "dsPattern",
+    cellType: "alpha-numeric",
+    Cell: (cellData) => {
+      return (
+        <div style={{ display: "flex" }}>
+          <div style={{ alignSelf: "center" }}>
+            {cellData.row._original.dsPattern != null ? cellData.row._original.dsPattern : "N/A"}
+          </div>
+        </div>
+      );
+    },
+  },
+  {
+    headerText: "UI Kit v3.x",
     cellType: "alpha-numeric",
     Cell: (cellData) => {
       return (
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
             {cellData.row._original.uikitVersion3 !== "--" ? (
-              <a href={`${cellData.row._original.uikitVersion3}`}>View Repository</a>
+              <HvTypography
+                component="a"
+                variant="link"
+                href={`${cellData.row._original.uikitVersion3}`}
+                target="_blank"
+              >
+                View Repository
+              </HvTypography>
             ) : (
               "N/A"
             )}
@@ -34,15 +66,21 @@ const labComponentTableConfig = [
     },
   },
   {
-    headerText: "UiKit V2.x",
-    accessor: "uikitVersion2",
+    headerText: "UI Kit v2.x",
     cellType: "alpha-numeric",
     Cell: (cellData) => {
       return (
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
             {cellData.row._original.uikitVersion2 !== "--" ? (
-              <a href={`${cellData.row._original.uikitVersion2}`}>View Repository</a>
+              <HvTypography
+                component="a"
+                variant="link"
+                href={`${cellData.row._original.uikitVersion2}`}
+                target="_blank"
+              >
+                View Repository
+              </HvTypography>
             ) : (
               "N/A"
             )}

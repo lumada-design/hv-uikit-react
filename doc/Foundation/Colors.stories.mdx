@@ -1,19 +1,20 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import Colors from "./Colors";
-import MaturityStatus from "../../.storybook/blocks/ExportedMaturityStatus";
+import { MaturityStatus } from "../../.storybook/blocks/MaturityStatus";
 
 import componentDefinitions from "../../doc/GetStarted/ComponentVersioningTable/versions";
 
-
-<Meta title="Foundation/Colors" parameters={{ maturityStatus: componentDefinitions.stable, dsVersion: componentDefinitions.dsVersion3,  }} />
+<Meta
+  title="Foundation/Colors"
+  parameters={{
+    maturityStatus: componentDefinitions.dsClassification.stable,
+    dsVersion: componentDefinitions.dsVersion.v3,
+  }}
+/>
 
 # Color palette
 
-<br/>
 <MaturityStatus />
-<br/>
-
-<br/>
 
 The **Color Palette** was curated by the Design System team, providing a chromatic guidance for complex UIs in Data Analytics and IOT use cases.
 
@@ -24,8 +25,6 @@ Example of a color variable:
 ```
 theme.hv.palette.atmosphere.atmo5
 ```
-
-<br/>
 
 <Story name="Main">
   <Colors />
