@@ -2,8 +2,7 @@ import "focus-within-polyfill";
 
 const styles = (theme) => ({
   root: {
-    minWidth: "150px",
-    maxWidth: "610px",
+    display: "block",
   },
 
   hasSuggestions: {},

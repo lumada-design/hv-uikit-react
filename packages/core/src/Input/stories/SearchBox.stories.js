@@ -32,6 +32,13 @@ export default {
       ),
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 610, minWidth: 150 }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Main = () => {
