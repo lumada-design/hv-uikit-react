@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-code-editor@3.1.4...@hv/uikit-react-code-editor@3.1.5) (2021-03-05)
+
+**Note:** Version bump only for package @hv/uikit-react-code-editor
+
+
+
+
+
 ## [3.1.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-code-editor@3.1.3...@hv/uikit-react-code-editor@3.1.4) (2021-03-01)
 
 **Note:** Version bump only for package @hv/uikit-react-code-editor
