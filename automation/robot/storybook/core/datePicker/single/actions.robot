@@ -14,7 +14,7 @@ close and apply selection
     Force input                          ${input}    01/09/1970
     Click Button                         Apply
     wait Until Element Is Not Visible    ${calendar}    2s
-    Element Text Should Be               ${datePickerHeader}    9 Jan 1970
+    Element Should Contain               ${datePickerHeader}    9 Jan 1970
 
 close and ignore selection when header is clicked
     ${date}    Get Text                  ${datePickerHeader}

@@ -19,7 +19,6 @@ unselect an item
     [Setup]    open dropdown sample      ${tests}    single-selected-value
     Element Text Should Be               ${dropdownHeader}    Value 3    ignore_case=True
     click Element                        ${option}(3)
-    Wait Until Element Is Not Visible    ${listBox}
     Element Text Should Be               ${dropdownHeader}    Select...    ignore_case=True
 
 multi selection is changed

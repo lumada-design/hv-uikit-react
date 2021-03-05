@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import { withStyles, useTheme } from "@material-ui/core";
 import { MoreOptionsVertical } from "@hv/uikit-react-icons";
-import { getPrevNextFocus, isKeypress, KeyboardCodes } from "../utils";
+import { getPrevNextFocus, isKeypress, KeyboardCodes, useControlled } from "../utils";
 import { HvButton, HvList, HvPanel, HvBaseDropdown, setId } from "..";
 import styles from "./styles";
 import withId from "../withId";
@@ -23,26 +23,23 @@ const DropDownMenu = ({
   onClick,
   keepOpened = true,
   disabled = false,
-  expanded = false,
+  expanded,
+  defaultExpanded = false,
   // eslint-disable-next-line
   category,
   ...others
 }) => {
-  const [open, setOpen] = useState(expanded && !disabled);
+  const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
+  const theme = useTheme();
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
-
-  useEffect(() => {
-    if (expanded !== open) {
-      setOpen(expanded && !disabled);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [expanded, disabled]);
 
   const listId = setId(id, "list");
 
   const handleClose = () => {
-    onToggleOpen?.(false);
+    // this will only run if uncontrolled
     setOpen(false);
+
+    onToggleOpen?.(false);
   };
 
   // If the ESCAPE key is pressed inside the list, the close handler must be called.
@@ -76,23 +73,30 @@ const DropDownMenu = ({
   );
 
   const condensed = useMemo(() => dataList.every((el) => !el.icon), [dataList]);
+  const popperStyle = {
+    style: { zIndex: theme.zIndex.tooltip, width: null },
+  };
 
   return (
     <HvBaseDropdown
       id={id}
-      className={className}
+      className={clsx(className, classes.container)}
       classes={{ root: classes.root }}
-      expanded={open}
+      expanded={open && !disabled}
       component={headerComponent}
       aria-haspopup="menu"
       placement={placement}
+      sameWidth={false}
       disablePortal={disablePortal}
       onToggle={(e, s) => {
+        // this will only run if uncontrolled
         setOpen(s);
+
         onToggleOpen?.(s);
       }}
       disabled={disabled}
       onContainerCreation={setFocusToContent}
+      popperProps={popperStyle}
       {...others}
     >
       <HvPanel>
@@ -130,6 +134,10 @@ DropDownMenu.propTypes = {
      * Styles applied to the root.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the container.
+     */
+    container: PropTypes.string,
     /**
      * Styles applied to the icon.
      */
@@ -193,6 +201,10 @@ DropDownMenu.propTypes = {
    * If true it should be displayed open.
    */
   expanded: PropTypes.bool,
+  /**
+   * When uncontrolled, defines the initial expanded state.
+   */
+  defaultExpanded: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDropDownMenu" })(withId(DropDownMenu));

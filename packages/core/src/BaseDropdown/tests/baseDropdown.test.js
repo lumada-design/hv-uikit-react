@@ -1,96 +1,120 @@
 import React from "react";
-import { mount } from "enzyme";
-import { Popper } from "@material-ui/core";
-
-import { HvProvider } from "../..";
-import HvBaseDropDown from "..";
+import { render, fireEvent, waitFor } from "testing-utils";
+import userEvent from "@testing-library/user-event";
 import { Main } from "../stories/BaseDropdown.stories.test";
 
-jest.mock(
-  "@popperjs/core",
-  () =>
-    class {
-      constructor() {
-        return {
-          scheduleUpdate: jest.fn(),
-          update: jest.fn(),
-          destroy: jest.fn(),
-        };
-      }
-    }
-);
-
 describe("BaseDropDown", () => {
-  let wrapper;
-  let baseDropdown;
-  const SPACE = " ";
-  const ENTER = "Enter";
-
-  const validatePopperOpen = (isOpen = true) =>
-    expect(wrapper.find(Popper).prop("open")).toBe(isOpen);
-
-  beforeEach(() => {
-    wrapper = mount(
-      <HvProvider>
-        <Main />
-      </HvProvider>
-    );
-    baseDropdown = wrapper.find("div").at(0);
+  describe("Selection List Snapshot testing", () => {
+    it("Selection List Container", () => {
+      const { container } = render(<Main />);
+      expect(container).toMatchSnapshot();
+    });
   });
 
-  it("is rendered correctly and behaves as expected", () => {
-    expect(wrapper.find(HvBaseDropDown)).toMatchSnapshot();
+  it("opens on click", async () => {
+    const { getByRole } = render(<Main />);
+
+    const baseDropdownHeader = getByRole("combobox");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+
+    userEvent.click(baseDropdownHeader); // open
+
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "true");
+    });
   });
 
-  it("opens on click", () => {
-    baseDropdown.simulate("click");
+  it("closes on double click", async () => {
+    const { getByRole } = render(<Main />);
 
-    expect(wrapper.find(HvBaseDropDown)).toMatchSnapshot();
+    const baseDropdownHeader = getByRole("combobox");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+
+    userEvent.click(baseDropdownHeader); // open
+    userEvent.click(baseDropdownHeader); // close
+
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+    });
   });
 
-  it("closes on double click", () => {
-    baseDropdown.simulate("click");
-    baseDropdown.simulate("click");
-    expect(wrapper.find(HvBaseDropDown)).toMatchSnapshot();
+  it("opens on Enter", async () => {
+    const { getByRole } = render(<Main />);
+
+    const baseDropdownHeader = getByRole("combobox");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.keyDown(baseDropdownHeader, { key: "Enter", keyCode: 13 });
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "true");
+    });
   });
 
-  it("opens on Enter", () => {
-    baseDropdown.simulate("keydown", { key: ENTER, keyCode: 13 });
-    validatePopperOpen();
+  it("closes on double Enter", async () => {
+    const { getByRole } = render(<Main />);
+
+    const baseDropdownHeader = getByRole("combobox");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.keyDown(baseDropdownHeader, { key: "Enter", keyCode: 13 });
+    fireEvent.keyDown(baseDropdownHeader, { key: "Enter", keyCode: 13 });
+
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+    });
   });
 
-  it("closes on double Enter", () => {
-    baseDropdown.simulate("keydown", { key: ENTER, keyCode: 13 });
-    validatePopperOpen();
+  it("opens on Space", async () => {
+    const { getByRole } = render(<Main />);
 
-    baseDropdown.simulate("keydown", { key: ENTER, keyCode: 13 });
-    validatePopperOpen(false);
+    const baseDropdownHeader = getByRole("combobox");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.keyDown(baseDropdownHeader, { key: " ", keyCode: 32 });
+
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "true");
+    });
   });
 
-  it("opens on Space", () => {
-    baseDropdown.simulate("keydown", { key: SPACE, keyCode: 32 });
-    validatePopperOpen();
+  it("closes on double Space", async () => {
+    const { getByRole } = render(<Main />);
+
+    const baseDropdownHeader = getByRole("combobox");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.keyDown(baseDropdownHeader, { key: " ", keyCode: 32 });
+    fireEvent.keyDown(baseDropdownHeader, { key: " ", keyCode: 32 });
+
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+    });
   });
 
-  it("closes on double Space", () => {
-    baseDropdown.simulate("keydown", { key: SPACE, keyCode: 32 });
-    validatePopperOpen();
+  it("opens and closes mixing mouse click, Enter, and Space", async () => {
+    const { getByRole } = render(<Main />);
 
-    baseDropdown.simulate("keydown", { key: SPACE, keyCode: 32 });
-    validatePopperOpen(false);
-  });
+    const baseDropdownHeader = getByRole("combobox");
+    expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
 
-  it("opens and closes mixing mouse click, Enter, and Space", () => {
-    baseDropdown.simulate("click");
-    validatePopperOpen();
+    userEvent.click(baseDropdownHeader); // open
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "true");
+    });
 
-    baseDropdown.simulate("keydown", { key: ENTER, keyCode: 13 });
-    validatePopperOpen(false);
+    fireEvent.keyDown(baseDropdownHeader, { key: "Enter", keyCode: 13 }); // close
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+    });
 
-    baseDropdown.simulate("keydown", { key: SPACE, keyCode: 32 });
-    validatePopperOpen();
+    fireEvent.keyDown(baseDropdownHeader, { key: " ", keyCode: 32 }); // open
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "true");
+    });
 
-    baseDropdown.simulate("click");
-    validatePopperOpen(false);
+    userEvent.click(baseDropdownHeader); // open
+    await waitFor(() => {
+      expect(baseDropdownHeader).toHaveAttribute("aria-expanded", "false");
+    });
   });
 });

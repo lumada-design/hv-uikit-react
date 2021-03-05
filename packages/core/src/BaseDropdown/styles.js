@@ -2,13 +2,24 @@ import { outlineStyles } from "../Focus/styles";
 
 const styles = (theme) => ({
   root: {
+    width: "100%",
+    position: "relative",
+  },
+  anchor: {
     display: "inline-block",
+    width: "100%",
   },
   rootDisabled: {
     cursor: "not-allowed",
     "&:focus": {
       outline: "none",
     },
+  },
+  container: {
+    zIndex: theme.zIndex.tooltip,
+  },
+  containedPopper: {
+    width: "100%",
   },
   header: {
     cursor: "pointer",

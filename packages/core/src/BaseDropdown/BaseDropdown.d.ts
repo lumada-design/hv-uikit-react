@@ -52,6 +52,10 @@ export interface HvBaseDropdownProps
    */
   expanded?: boolean;
   /**
+   * When uncontrolled, defines the initial expanded state.
+   */
+  defaultExpanded?: boolean;
+  /**
    * An object containing props to be wired to the popper component.
    */
   popperProps?: Partial<PopperProps>;
@@ -80,7 +84,7 @@ export interface HvBaseDropdownProps
    */
   onClickOutside?: (event: Event) => void;
   /**
-   * Callback called when the dropdown is opened and ready, 
+   * Callback called when the dropdown is opened and ready,
    * commonly used to set focus to the content.
    */
   onContainerCreation: (containerRef: React.ReactNode) => void;

@@ -9,12 +9,12 @@ Documentation    Use Cases:
 *** Test Cases ***
 pick a date
     Click Element             ${day}\[7]
-    Element Text Should Be    ${datePickerHeader}    7 Feb 1970
+    Element Should Contain    ${datePickerHeader}    7 Feb 1970
 
 input a date
     Force input               ${input}    12/07/1982
     Press Keys                NONE    TAB
-    Element Text Should Be    ${datePickerHeader}    7 Dec 1982
+    Element Should Contain    ${datePickerHeader}    7 Dec 1982
 
 input locale pt-PT date
     [Setup]    Open DatePicker sample     localized
@@ -28,7 +28,7 @@ input and pick a date
     Force input               ${input}    02/07/1977
     Press Keys                NONE    TAB
     Click Element             ${day}\[9]
-    Element Text Should Be    ${datePickerHeader}    9 Feb 1977
+    Element Should Contain    ${datePickerHeader}    9 Feb 1977
 
 
 *** Variables ***

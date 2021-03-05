@@ -61,6 +61,10 @@ export interface HvDropdownProps
    */
   expanded?: boolean;
   /**
+   * When uncontrolled, defines the initial expanded state.
+   */
+  defaultExpanded?: boolean;
+  /**
    * If 'true' the dropdown will notify on the first render.
    */
   notifyChangesOnFirstRender?: boolean;

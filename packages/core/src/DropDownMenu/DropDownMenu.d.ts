@@ -48,6 +48,10 @@ export interface HvDropDownMenuProps
    * If true it should be displayed open.
    */
   expanded?: boolean;
+  /**
+   * When uncontrolled, defines the initial expanded state.
+   */
+  defaultExpanded?: boolean;
 }
 
 export default function HvDropDownMenu(props: HvDropDownMenuProps): JSX.Element | null;

@@ -231,6 +231,7 @@ export const DifferentSizeAndPlacements = () => {
           multiSelect
           showSearch
           placement="right"
+          sameWidth={false}
         />
       </div>
       <div>
@@ -241,6 +242,7 @@ export const DifferentSizeAndPlacements = () => {
           multiSelect
           showSearch
           placement="left"
+          sameWidth={false}
         />
       </div>
     </div>

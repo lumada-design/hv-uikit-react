@@ -515,44 +515,48 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="menu"
                     class="HvBaseDropdown-root HvDropDownMenu-root"
-                    id="table1-row-1"
-                    tabindex="-1"
                   >
-                    <button
+                    <div
                       aria-expanded="false"
-                      aria-label="Dropdown menu"
-                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                      id="table1-row-1-icon-button"
-                      tabindex="0"
-                      type="button"
+                      aria-haspopup="menu"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
+                      id="table1-row-1"
+                      tabindex="-1"
                     >
-                      <span
-                        class="MuiButton-label"
+                      <button
+                        aria-expanded="false"
+                        aria-label="Dropdown menu"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                        id="table1-row-1-icon-button"
+                        tabindex="0"
+                        type="button"
                       >
-                        <div
-                          class="HvIconBase-root HvIconBase-s"
-                          name="MoreOptionsVertical"
-                          style="width: 30px; height: 30px;"
+                        <span
+                          class="MuiButton-label"
                         >
-                          <svg
-                            focusable="false"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="HvIconBase-root HvIconBase-s"
+                            name="MoreOptionsVertical"
+                            style="width: 30px; height: 30px;"
                           >
-                            <path
-                              class="color0"
-                              d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                              fill="#414141"
-                            />
-                          </svg>
-                        </div>
-                      </span>
-                    </button>
+                            <svg
+                              focusable="false"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                class="color0"
+                                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                fill="#414141"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -674,44 +678,48 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="menu"
                     class="HvBaseDropdown-root HvDropDownMenu-root"
-                    id="table1-row-2"
-                    tabindex="-1"
                   >
-                    <button
+                    <div
                       aria-expanded="false"
-                      aria-label="Dropdown menu"
-                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                      id="table1-row-2-icon-button"
-                      tabindex="0"
-                      type="button"
+                      aria-haspopup="menu"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
+                      id="table1-row-2"
+                      tabindex="-1"
                     >
-                      <span
-                        class="MuiButton-label"
+                      <button
+                        aria-expanded="false"
+                        aria-label="Dropdown menu"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                        id="table1-row-2-icon-button"
+                        tabindex="0"
+                        type="button"
                       >
-                        <div
-                          class="HvIconBase-root HvIconBase-s"
-                          name="MoreOptionsVertical"
-                          style="width: 30px; height: 30px;"
+                        <span
+                          class="MuiButton-label"
                         >
-                          <svg
-                            focusable="false"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="HvIconBase-root HvIconBase-s"
+                            name="MoreOptionsVertical"
+                            style="width: 30px; height: 30px;"
                           >
-                            <path
-                              class="color0"
-                              d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                              fill="#414141"
-                            />
-                          </svg>
-                        </div>
-                      </span>
-                    </button>
+                            <svg
+                              focusable="false"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                class="color0"
+                                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                fill="#414141"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -833,44 +841,48 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="menu"
                     class="HvBaseDropdown-root HvDropDownMenu-root"
-                    id="table1-row-3"
-                    tabindex="-1"
                   >
-                    <button
+                    <div
                       aria-expanded="false"
-                      aria-label="Dropdown menu"
-                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                      id="table1-row-3-icon-button"
-                      tabindex="0"
-                      type="button"
+                      aria-haspopup="menu"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
+                      id="table1-row-3"
+                      tabindex="-1"
                     >
-                      <span
-                        class="MuiButton-label"
+                      <button
+                        aria-expanded="false"
+                        aria-label="Dropdown menu"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                        id="table1-row-3-icon-button"
+                        tabindex="0"
+                        type="button"
                       >
-                        <div
-                          class="HvIconBase-root HvIconBase-s"
-                          name="MoreOptionsVertical"
-                          style="width: 30px; height: 30px;"
+                        <span
+                          class="MuiButton-label"
                         >
-                          <svg
-                            focusable="false"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="HvIconBase-root HvIconBase-s"
+                            name="MoreOptionsVertical"
+                            style="width: 30px; height: 30px;"
                           >
-                            <path
-                              class="color0"
-                              d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                              fill="#414141"
-                            />
-                          </svg>
-                        </div>
-                      </span>
-                    </button>
+                            <svg
+                              focusable="false"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                class="color0"
+                                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                fill="#414141"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -992,44 +1004,48 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="menu"
                     class="HvBaseDropdown-root HvDropDownMenu-root"
-                    id="table1-row-4"
-                    tabindex="-1"
                   >
-                    <button
+                    <div
                       aria-expanded="false"
-                      aria-label="Dropdown menu"
-                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                      id="table1-row-4-icon-button"
-                      tabindex="0"
-                      type="button"
+                      aria-haspopup="menu"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
+                      id="table1-row-4"
+                      tabindex="-1"
                     >
-                      <span
-                        class="MuiButton-label"
+                      <button
+                        aria-expanded="false"
+                        aria-label="Dropdown menu"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                        id="table1-row-4-icon-button"
+                        tabindex="0"
+                        type="button"
                       >
-                        <div
-                          class="HvIconBase-root HvIconBase-s"
-                          name="MoreOptionsVertical"
-                          style="width: 30px; height: 30px;"
+                        <span
+                          class="MuiButton-label"
                         >
-                          <svg
-                            focusable="false"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="HvIconBase-root HvIconBase-s"
+                            name="MoreOptionsVertical"
+                            style="width: 30px; height: 30px;"
                           >
-                            <path
-                              class="color0"
-                              d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                              fill="#414141"
-                            />
-                          </svg>
-                        </div>
-                      </span>
-                    </button>
+                            <svg
+                              focusable="false"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                class="color0"
+                                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                fill="#414141"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1151,44 +1167,48 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                   style="flex: 33 0 auto; width: 33px; max-width: 33px;"
                 >
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="menu"
                     class="HvBaseDropdown-root HvDropDownMenu-root"
-                    id="table1-row-5"
-                    tabindex="-1"
                   >
-                    <button
+                    <div
                       aria-expanded="false"
-                      aria-label="Dropdown menu"
-                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                      id="table1-row-5-icon-button"
-                      tabindex="0"
-                      type="button"
+                      aria-haspopup="menu"
+                      class="HvDropDownMenu-container HvBaseDropdown-anchor"
+                      id="table1-row-5"
+                      tabindex="-1"
                     >
-                      <span
-                        class="MuiButton-label"
+                      <button
+                        aria-expanded="false"
+                        aria-label="Dropdown menu"
+                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                        id="table1-row-5-icon-button"
+                        tabindex="0"
+                        type="button"
                       >
-                        <div
-                          class="HvIconBase-root HvIconBase-s"
-                          name="MoreOptionsVertical"
-                          style="width: 30px; height: 30px;"
+                        <span
+                          class="MuiButton-label"
                         >
-                          <svg
-                            focusable="false"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="HvIconBase-root HvIconBase-s"
+                            name="MoreOptionsVertical"
+                            style="width: 30px; height: 30px;"
                           >
-                            <path
-                              class="color0"
-                              d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                              fill="#414141"
-                            />
-                          </svg>
-                        </div>
-                      </span>
-                    </button>
+                            <svg
+                              focusable="false"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                class="color0"
+                                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                fill="#414141"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1215,46 +1235,50 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                 </span>
               </div>
               <div
-                aria-expanded="false"
-                aria-label="Select how many to display"
-                class="HvPagination-pageSizeOptionsSelect HvBaseDropdown-root HvSelect-root-56"
-                id="table1-pagination-pageSize"
-                role="combobox"
-                tabindex="-1"
+                class="HvBaseDropdown-root HvSelect-root-56"
               >
                 <div
+                  aria-expanded="false"
                   aria-label="Select how many to display"
-                  class="HvBaseDropdown-header HvSelect-header-57"
-                  id="table1-pagination-pageSize-header"
-                  role="textbox"
-                  tabindex="0"
+                  class="HvPagination-pageSizeOptionsSelect HvBaseDropdown-anchor HvSelect-anchor-57"
+                  id="table1-pagination-pageSize"
+                  role="combobox"
+                  tabindex="-1"
                 >
                   <div
-                    class="HvBaseDropdown-selection"
+                    aria-label="Select how many to display"
+                    class="HvBaseDropdown-header HvSelect-header-58"
+                    id="table1-pagination-pageSize-header"
+                    role="textbox"
+                    tabindex="0"
                   >
-                    <p
-                      class="HvTypography-root HvTypography-normalText"
+                    <div
+                      class="HvBaseDropdown-selection"
                     >
-                      5
-                    </p>
-                  </div>
-                  <div
-                    class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
-                    name="DropDownXS"
-                  >
-                    <svg
-                      focusable="false"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      width="12"
-                      xmlns="http://www.w3.org/2000/svg"
+                      <p
+                        class="HvTypography-root HvTypography-normalText"
+                      >
+                        5
+                      </p>
+                    </div>
+                    <div
+                      class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
+                      name="DropDownXS"
                     >
-                      <path
-                        class="color0"
-                        d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                        fill="#414141"
-                      />
-                    </svg>
+                      <svg
+                        focusable="false"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        width="12"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>

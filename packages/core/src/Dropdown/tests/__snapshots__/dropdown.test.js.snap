@@ -6,47 +6,51 @@ exports[`<Dropdown /> General 1`] = `
     class="HvDropdown-root HvFormElement-root"
   >
     <div
-      aria-expanded="true"
-      aria-owns="hvbasedropdown3-children-container"
       class="HvBaseDropdown-root HvDropdown-dropdown"
-      role="combobox"
-      tabindex="-1"
     >
       <div
-        aria-controls="hvbasedropdown3-children-container"
-        class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
-        role="textbox"
-        tabindex="0"
+        aria-expanded="true"
+        aria-owns="hvbasedropdown3-children-container"
+        class="HvBaseDropdown-anchor"
+        role="combobox"
+        tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-selection"
+          aria-controls="hvbasedropdown3-children-container"
+          class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
+          role="textbox"
+          tabindex="0"
         >
-          <p
-            class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+          <div
+            class="HvBaseDropdown-selection"
           >
-            <b>
-              1
-            </b>
-             / 4
-          </p>
-        </div>
-        <div
-          class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
-          name="DropUpXS"
-        >
-          <svg
-            focusable="false"
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-            xmlns="http://www.w3.org/2000/svg"
+            <p
+              class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+            >
+              <b>
+                1
+              </b>
+               / 4
+            </p>
+          </div>
+          <div
+            class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+            name="DropUpXS"
           >
-            <path
-              class="color0"
-              d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
-              fill="#414141"
-            />
-          </svg>
+            <svg
+              focusable="false"
+              height="12"
+              viewBox="0 0 12 12"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -61,46 +65,50 @@ exports[`<Dropdown /> SingleSelection 1`] = `
     id="dropdown7"
   >
     <div
-      aria-expanded="true"
-      aria-owns="dropdown7-dropdown-children-container"
       class="HvBaseDropdown-root HvDropdown-dropdown"
-      id="dropdown7-dropdown"
-      role="combobox"
-      tabindex="-1"
     >
       <div
-        aria-controls="dropdown7-dropdown-children-container"
-        class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
-        id="dropdown7-dropdown-header"
-        role="textbox"
-        tabindex="0"
+        aria-expanded="true"
+        aria-owns="dropdown7-dropdown-children-container"
+        class="HvBaseDropdown-anchor"
+        id="dropdown7-dropdown"
+        role="combobox"
+        tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-selection"
+          aria-controls="dropdown7-dropdown-children-container"
+          class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
+          id="dropdown7-dropdown-header"
+          role="textbox"
+          tabindex="0"
         >
-          <p
-            class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+          <div
+            class="HvBaseDropdown-selection"
           >
-            Select...
-          </p>
-        </div>
-        <div
-          class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
-          name="DropUpXS"
-        >
-          <svg
-            focusable="false"
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-            xmlns="http://www.w3.org/2000/svg"
+            <p
+              class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+            >
+              Select...
+            </p>
+          </div>
+          <div
+            class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+            name="DropUpXS"
           >
-            <path
-              class="color0"
-              d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
-              fill="#414141"
-            />
-          </svg>
+            <svg
+              focusable="false"
+              height="12"
+              viewBox="0 0 12 12"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -115,46 +123,50 @@ exports[`<Dropdown /> SingleSelectionWithSearch 1`] = `
     id="dropdown6"
   >
     <div
-      aria-expanded="true"
-      aria-owns="dropdown6-dropdown-children-container"
       class="HvBaseDropdown-root HvDropdown-dropdown"
-      id="dropdown6-dropdown"
-      role="combobox"
-      tabindex="-1"
     >
       <div
-        aria-controls="dropdown6-dropdown-children-container"
-        class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
-        id="dropdown6-dropdown-header"
-        role="textbox"
-        tabindex="0"
+        aria-expanded="true"
+        aria-owns="dropdown6-dropdown-children-container"
+        class="HvBaseDropdown-anchor"
+        id="dropdown6-dropdown"
+        role="combobox"
+        tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-selection"
+          aria-controls="dropdown6-dropdown-children-container"
+          class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
+          id="dropdown6-dropdown-header"
+          role="textbox"
+          tabindex="0"
         >
-          <p
-            class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+          <div
+            class="HvBaseDropdown-selection"
           >
-            value 2
-          </p>
-        </div>
-        <div
-          class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
-          name="DropUpXS"
-        >
-          <svg
-            focusable="false"
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-            xmlns="http://www.w3.org/2000/svg"
+            <p
+              class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
+            >
+              value 2
+            </p>
+          </div>
+          <div
+            class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
+            name="DropUpXS"
           >
-            <path
-              class="color0"
-              d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
-              fill="#414141"
-            />
-          </svg>
+            <svg
+              focusable="false"
+              height="12"
+              viewBox="0 0 12 12"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>

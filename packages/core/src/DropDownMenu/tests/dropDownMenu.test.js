@@ -1,201 +1,154 @@
 import React from "react";
-import { mount } from "enzyme";
-import { Popper } from "@material-ui/core";
-import { HvDropDownMenu, HvProvider } from "../..";
-import { Main } from "../stories/DropDownMenu.stories";
-import { KeyboardNavigation } from "../stories/DropDownMenu.stories.test";
+import userEvent from "@testing-library/user-event";
+import { render, waitFor, fireEvent } from "testing-utils";
+import { Main, Disabled, Controlled } from "../stories/DropDownMenu.stories";
 
-jest.mock(
-  "@popperjs/core",
-  () =>
-    class {
-      constructor() {
-        return {
-          scheduleUpdate: jest.fn(),
-          update: jest.fn(),
-          destroy: jest.fn(),
-        };
-      }
-    }
-);
+describe("<Dropdown />", () => {
+  it("General", () => {
+    const { container } = render(<Main />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it("Disabled", () => {
+    const { container } = render(<Disabled />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it("Controlled", () => {
+    const { container } = render(<Controlled />);
+    expect(container).toMatchSnapshot();
+  });
+});
 
 describe("DropDownMenu", () => {
-  let wrapper;
-  const SPACE = " ";
-  const ENTER = "Enter";
+  it("opens on click", async () => {
+    const { getByRole } = render(<Main />);
+    const openButton = getByRole("button");
+    userEvent.click(openButton); // open
+    expect(openButton).toHaveAttribute("aria-expanded", "true");
+    const option = getByRole("menuitem", { name: "Label 1" });
+    await waitFor(() => expect(option).toHaveFocus());
+    const option2 = getByRole("menuitem", { name: "Label 2" });
+    expect(option2).toBeInTheDocument();
+    const option3 = getByRole("menuitem", { name: "Label 3" });
+    expect(option3).toBeInTheDocument();
+  });
 
-  describe("component without portal", () => {
-    beforeEach(() => {
-      wrapper = mount(
-        <HvProvider>
-          <Main />
-        </HvProvider>
-      );
-    });
+  it("closes after opening click", async () => {
+    const { getByRole } = render(<Main />);
+    const openButton = getByRole("button");
+    userEvent.click(openButton); // open
+    expect(openButton).toHaveAttribute("aria-expanded", "true");
+    const option = getByRole("menuitem", { name: "Label 1" });
+    await waitFor(() => expect(option).toHaveFocus());
+    const option2 = getByRole("menuitem", { name: "Label 2" });
+    expect(option2).toBeInTheDocument();
+    const option3 = getByRole("menuitem", { name: "Label 3" });
+    expect(option3).toBeInTheDocument();
+    userEvent.click(openButton); // closes
+    expect(openButton).toHaveAttribute("aria-expanded", "false");
+  });
 
-    it("is rendered correctly and behaves as expected", () => {
-      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
-    });
-
-    it("opens on click", () => {
-      const button = wrapper.find("div");
-      button.at(1).simulate("click");
-
-      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
-    });
-
-    it("closes on double click", () => {
-      const button = wrapper.find("div");
-      button.at(0).simulate("click");
-      button.at(0).simulate("click");
-      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
-    });
-
-    it("opens on Enter", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-    });
-
-    it("closes on double Enter", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-    });
-
-    it("opens on Space", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-    });
-
-    it("closes on double Space", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-    });
-
-    it("opens and closes mixing mouse click, Enter, and Space", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("click");
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("click");
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
+  it("opens on enter", async () => {
+    const { getByRole } = render(<Main />);
+    const openButton = getByRole("button");
+    userEvent.tab();
+    expect(openButton).toHaveFocus();
+    fireEvent.keyDown(openButton, { key: "Enter", keyCode: 13 }); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "true");
+      const option = getByRole("menuitem", { name: "Label 1" });
+      expect(option).toBeInTheDocument();
+      const option2 = getByRole("menuitem", { name: "Label 2" });
+      expect(option2).toBeInTheDocument();
+      const option3 = getByRole("menuitem", { name: "Label 3" });
+      expect(option3).toBeInTheDocument();
     });
   });
 
-  describe("component with portal", () => {
-    beforeEach(() => {
-      wrapper = mount(
-        <HvProvider>
-          <Main />
-        </HvProvider>
-      );
+  it("closes on enter", async () => {
+    const { getByRole } = render(<Main />);
+    const openButton = getByRole("button");
+    userEvent.tab();
+    expect(openButton).toHaveFocus();
+    fireEvent.keyDown(openButton, { key: "Enter", keyCode: 13 }); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "true");
+      const option = getByRole("menuitem", { name: "Label 1" });
+      expect(option).toBeInTheDocument();
+      const option2 = getByRole("menuitem", { name: "Label 2" });
+      expect(option2).toBeInTheDocument();
+      const option3 = getByRole("menuitem", { name: "Label 3" });
+      expect(option3).toBeInTheDocument();
+    });
+    fireEvent.keyDown(openButton, { key: "Enter", keyCode: 13 }); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "false");
+    });
+  });
+
+  it("opens on space", async () => {
+    const { getByRole } = render(<Main />);
+    const openButton = getByRole("button");
+    userEvent.tab();
+    expect(openButton).toHaveFocus();
+    fireEvent.keyDown(openButton, { key: " ", keyCode: 32 }); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "true");
+      const option = getByRole("menuitem", { name: "Label 1" });
+      expect(option).toBeInTheDocument();
+      const option2 = getByRole("menuitem", { name: "Label 2" });
+      expect(option2).toBeInTheDocument();
+      const option3 = getByRole("menuitem", { name: "Label 3" });
+      expect(option3).toBeInTheDocument();
+    });
+  });
+
+  it("closes on space", async () => {
+    const { getByRole } = render(<Main />);
+    const openButton = getByRole("button");
+    userEvent.tab();
+    expect(openButton).toHaveFocus();
+    fireEvent.keyDown(openButton, { key: " ", keyCode: 32 }); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "true");
+      const option = getByRole("menuitem", { name: "Label 1" });
+      expect(option).toBeInTheDocument();
+      const option2 = getByRole("menuitem", { name: "Label 2" });
+      expect(option2).toBeInTheDocument();
+      const option3 = getByRole("menuitem", { name: "Label 3" });
+      expect(option3).toBeInTheDocument();
+    });
+    fireEvent.keyDown(openButton, { key: " ", keyCode: 32 }); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "false");
+    });
+  });
+
+  it("opens and closes mixing mouse click, Enter, and Space", async () => {
+    const { getByRole } = render(<Main />);
+
+    const openButton = getByRole("button");
+    expect(openButton).toHaveAttribute("aria-expanded", "false");
+
+    userEvent.click(openButton); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "true");
     });
 
-    it("is rendered correctly and behaves as expected", () => {
-      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
+    fireEvent.keyDown(openButton, { key: "Enter", keyCode: 13 }); // close
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "false");
     });
 
-    it("opens on click", () => {
-      const button = wrapper.find("div");
-      button.at(1).simulate("click");
-
-      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
+    fireEvent.keyDown(openButton, { key: " ", keyCode: 32 }); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "true");
     });
 
-    it("closes on double click", () => {
-      const button = wrapper.find("div");
-      button.at(0).simulate("click");
-      button.at(0).simulate("click");
-      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
-    });
-
-    it("opens on Enter", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-    });
-
-    it("closes on double Enter", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-    });
-
-    it("opens on Space", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-    });
-
-    it("closes on double Space", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-    });
-
-    it("opens and closes mixing mouse click, Enter, and Space", () => {
-      const button = wrapper.find("button");
-
-      button.simulate("click");
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-
-      button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      button.simulate("click");
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-    });
-
-    it("closes after selecting one option", () => {
-      wrapper = mount(
-        <HvProvider>
-          <KeyboardNavigation />
-        </HvProvider>
-      );
-
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
-
-      const button = wrapper.find("button").at(1);
-      button.simulate("click");
-
-      expect(wrapper.find(Popper).prop("open")).toBe(true);
-
-      const option = wrapper.find("li").at(0);
-      option.simulate("click");
-      expect(wrapper.find(Popper).prop("open")).toBe(false);
+    userEvent.click(openButton); // open
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "false");
     });
   });
 });

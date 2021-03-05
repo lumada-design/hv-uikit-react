@@ -12,6 +12,13 @@ export default {
     dsVersion: "3.4.0",
   },
   component: HvBaseDropdown,
+  decorators: [
+    (Story) => (
+      <div style={{ height: 500 }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Main = () => <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />;
@@ -76,6 +83,7 @@ export const Controlled = () => {
         placeholder="Placeholder..."
         aria-label="Controlled"
         expanded={open}
+        disablePortal={false}
         onToggle={(e, s) => setOpen(s)}
       >
         <HvPanel>

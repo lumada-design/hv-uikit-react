@@ -32,7 +32,7 @@ TAB sequence
 
 TAB sequence when is pressed selector button
     set focus and press keys           ${year+}    ENTER
-    Repeat Keyword                     9 times
+    Repeat Keyword                     3 times
     ...    Press Keys                  NONE    TAB
     Wait Until Page Contains Element   ${cancel}:focus
 

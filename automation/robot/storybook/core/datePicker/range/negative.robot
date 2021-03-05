@@ -11,7 +11,7 @@ input end date previous of start date
     Press Keys                    NONE    TAB
     wait until input has value    ${calendarLeft} input    5 Jul 2019
     wait until input has value    ${calendarRight} input   5 Jul 2019
-    Element Text Should Be        ${datePickerHeader}    5 - 5 Jul 2019
+    Element Should Contain        ${datePickerHeader}    5 - 5 Jul 2019
 
 replace date in wrong format
     [Documentation]    restore previous date

@@ -1,13 +1,15 @@
 const styles = (theme) => ({
   root: {
+    width: "100%",
     borderRadius: 2,
+    position: "relative",
     display: "inline-block",
     "& $selectionDisabled": {
       color: theme.palette.atmo5,
     },
   },
   dropdown: {
-    width: 310,
+    width: "100%",
   },
   rootList: {},
   arrow: {},

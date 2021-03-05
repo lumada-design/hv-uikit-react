@@ -29,4 +29,4 @@ focus moves from to
 
 *** Variables ***
 ${button}    button[id*=post]
-${drop}      [class*=HvDropDownMenu-root]>button
+${drop}      [class*=HvDropDownMenu-root]>div>button

@@ -14,7 +14,7 @@ export default {
   component: HvDropdown,
   decorators: [
     (Story) => (
-      <div style={{ padding: 10 }}>
+      <div style={{ padding: 10, height: 800 }}>
         <Story />
       </div>
     ),

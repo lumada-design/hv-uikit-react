@@ -7,6 +7,9 @@ import { HvBaseDropdown, HvSelectionList, HvListItem, HvPanel, HvTypography } fr
 const styles = (theme) => ({
   root: {
     borderRadius: 2,
+    "& > div$anchor": {
+      width: "unset",
+    },
     "& $header": {
       backgroundColor: "transparent",
       borderColor: "transparent",
@@ -16,6 +19,7 @@ const styles = (theme) => ({
       borderColor: theme.palette.atmo1,
     },
   },
+  anchor: {},
   header: {},
   headerOpen: {},
 });
@@ -53,6 +57,7 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
       onContainerCreation={setFocusToContent}
       placeholder={<HvTypography>{value}</HvTypography>}
       disabled={disabled}
+      sameWidth={false}
       {...others}
     >
       <HvPanel>
