@@ -9,7 +9,7 @@ const HvButtonWithMargin = withStyles({
 })(HvButton);
 
 export default {
-  title: "Foundation/Theming/Provider",
+  title: "Foundation/Provider",
   parameters: {
     componentSubtitle: null,
     usage: 'import { HvProvider } from "@hv/uikit-react-core";',
@@ -17,7 +17,7 @@ export default {
   component: HvProvider,
 };
 
-export const Usage = () => (
+export const Main = () => (
   <>
     <HvProvider uiKitTheme="dawn" generateClassNameOptions={{ seed: "dawn" }}>
       <HvButtonWithMargin category="secondary">Dawn</HvButtonWithMargin>

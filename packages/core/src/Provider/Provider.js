@@ -42,11 +42,32 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   return targetTheme;
 };
 
+/**
+ * This component makes cross-component properties, like the active `theme`,
+ * available down the React tree thanks to React context.
+ *
+ * This component should preferably be used at **the root of your component tree** and
+ * be unique in the App in most cases.
+ *
+ * ```jsx
+ * <HvProvider>
+ *   <MyApp />
+ * <HvProvider/>
+ * ```
+ *
+ * If several `HvProvider`'s are used, either nested or in paralel, the `generateClassNameOptions`
+ * must be tweaked to avoid CSS classnames colision. Or a custom JSS's class name generator can
+ * be provided via the `generateClassName` property.
+ *
+ * **UI Kit components will not work at all if the `HvProvider` is not configured correctly**,
+ * as they will not be able to access the properties of the active theme..
+ *
+ */
 const HvProvider = ({
   children,
 
-  theme = null,
   uiKitTheme = "dawn",
+  theme = null,
   changeTheme = () => {},
 
   generateClassName: generateClassNameProp,
@@ -82,15 +103,16 @@ HvProvider.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * The UI-Kit theme object to be wrapped by the MUI theme.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
-   * Which of design system default themes to use.
+   * The Design System base theme in use. Defaults to `"dawn"`.
    */
   uiKitTheme: PropTypes.oneOf(["dawn", "wicked"]),
   /**
-   * Which of design system default themes to use.
+   * The UI Kit theme object to be applied on top of the base theme.
+   */
+  theme: PropTypes.instanceOf(Object),
+  /**
+   * Function stored in the provider's context to allow runtime switching of the active theme.
+   * The implementation is up to each App.
    */
   changeTheme: PropTypes.func,
 
