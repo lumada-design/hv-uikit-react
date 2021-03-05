@@ -202,10 +202,10 @@ exports[`RadioButton should render correctly 1`] = `
                   className="HvRadioButton-radio"
                   classes={
                     Object {
-                      "checked": "PrivateSwitchBase-checked-6 Mui-checked",
-                      "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
-                      "input": "PrivateSwitchBase-input-8",
-                      "root": "PrivateSwitchBase-root-5 MuiRadio-root",
+                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                      "input": "PrivateSwitchBase-input-4",
+                      "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                     }
                   }
                   color="default"
@@ -227,7 +227,7 @@ exports[`RadioButton should render correctly 1`] = `
                   value=""
                 >
                   <WithStyles(ForwardRef(IconButton))
-                    className="PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                    className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                     color="default"
                     component="span"
                     disableRipple={true}
@@ -237,7 +237,7 @@ exports[`RadioButton should render correctly 1`] = `
                     tabIndex={null}
                   >
                     <ForwardRef(IconButton)
-                      className="PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                       classes={
                         Object {
                           "colorInherit": "MuiIconButton-colorInherit",
@@ -261,7 +261,7 @@ exports[`RadioButton should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         centerRipple={true}
-                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                         component="span"
                         disableRipple={true}
                         disabled={false}
@@ -272,7 +272,7 @@ exports[`RadioButton should render correctly 1`] = `
                       >
                         <ForwardRef(ButtonBase)
                           centerRipple={true}
-                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -290,7 +290,7 @@ exports[`RadioButton should render correctly 1`] = `
                         >
                           <span
                             aria-disabled={false}
-                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                             onBlur={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
@@ -309,7 +309,7 @@ exports[`RadioButton should render correctly 1`] = `
                             >
                               <input
                                 aria-label="Simple radio button"
-                                className="PrivateSwitchBase-input-8"
+                                className="PrivateSwitchBase-input-4"
                                 disabled={false}
                                 onChange={[Function]}
                                 type="radio"

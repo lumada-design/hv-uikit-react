@@ -84,7 +84,7 @@ exports[`Card should be able to render with every property defined 1`] = `
     subheader="Compressor"
   >
     <div
-      className="HvCard-root"
+      className="HvIsCardGridElement HvCard-root"
     >
       <div
         className="HvCard-cardContentWrapper"

@@ -241,10 +241,10 @@ exports[`CheckBox should render correctly 1`] = `
                   className="HvCheckBox-checkBox"
                   classes={
                     Object {
-                      "checked": "PrivateSwitchBase-checked-6 Mui-checked",
-                      "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
-                      "input": "PrivateSwitchBase-input-8",
-                      "root": "PrivateSwitchBase-root-5 MuiCheckbox-root",
+                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                      "input": "PrivateSwitchBase-input-4",
+                      "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
                     }
                   }
                   color="default"
@@ -269,7 +269,7 @@ exports[`CheckBox should render correctly 1`] = `
                   value=""
                 >
                   <WithStyles(ForwardRef(IconButton))
-                    className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                    className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                     color="default"
                     component="span"
                     disableRipple={true}
@@ -279,7 +279,7 @@ exports[`CheckBox should render correctly 1`] = `
                     tabIndex={null}
                   >
                     <ForwardRef(IconButton)
-                      className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                      className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                       classes={
                         Object {
                           "colorInherit": "MuiIconButton-colorInherit",
@@ -303,7 +303,7 @@ exports[`CheckBox should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef(ButtonBase))
                         centerRipple={true}
-                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                         component="span"
                         disableRipple={true}
                         disabled={false}
@@ -314,7 +314,7 @@ exports[`CheckBox should render correctly 1`] = `
                       >
                         <ForwardRef(ButtonBase)
                           centerRipple={true}
-                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -332,7 +332,7 @@ exports[`CheckBox should render correctly 1`] = `
                         >
                           <span
                             aria-disabled={false}
-                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                             onBlur={[Function]}
                             onDragLeave={[Function]}
                             onFocus={[Function]}
@@ -351,7 +351,7 @@ exports[`CheckBox should render correctly 1`] = `
                             >
                               <input
                                 aria-label="Checkbox example"
-                                className="PrivateSwitchBase-input-8"
+                                className="PrivateSwitchBase-input-4"
                                 data-indeterminate={false}
                                 disabled={false}
                                 id="test-input"

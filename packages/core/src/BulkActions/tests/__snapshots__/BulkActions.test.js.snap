@@ -403,10 +403,10 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             className="HvCheckBox-checkBox"
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-6 Mui-checked",
-                                "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
-                                "input": "PrivateSwitchBase-input-8",
-                                "root": "PrivateSwitchBase-root-5 MuiCheckbox-root",
+                                "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                "input": "PrivateSwitchBase-input-4",
+                                "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
                               }
                             }
                             color="default"
@@ -430,7 +430,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                               color="default"
                               component="span"
                               disableRipple={true}
@@ -440,7 +440,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -464,7 +464,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                   component="span"
                                   disableRipple={true}
                                   disabled={false}
@@ -475,7 +475,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -493,7 +493,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -512,7 +512,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                       >
                                         <input
                                           checked={false}
-                                          className="PrivateSwitchBase-input-8"
+                                          className="PrivateSwitchBase-input-4"
                                           data-indeterminate={false}
                                           disabled={false}
                                           id="bulkActions-select-input"
@@ -3678,10 +3678,10 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             className="HvCheckBox-checkBox"
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-15 Mui-checked",
-                                "disabled": "PrivateSwitchBase-disabled-16 Mui-disabled",
-                                "input": "PrivateSwitchBase-input-17",
-                                "root": "PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate",
+                                "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                "input": "PrivateSwitchBase-input-4",
+                                "root": "PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate",
                               }
                             }
                             color="default"
@@ -3710,7 +3710,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-15 Mui-checked"
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                               color="default"
                               component="span"
                               disableRipple={true}
@@ -3720,7 +3720,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-15 Mui-checked"
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -3744,7 +3744,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-15 Mui-checked"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                   component="span"
                                   disableRipple={true}
                                   disabled={false}
@@ -3755,7 +3755,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-15 Mui-checked"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -3773,7 +3773,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-14 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-15 Mui-checked"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -3792,7 +3792,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                       >
                                         <input
                                           checked={true}
-                                          className="PrivateSwitchBase-input-17"
+                                          className="PrivateSwitchBase-input-4"
                                           data-indeterminate={true}
                                           disabled={false}
                                           onChange={[Function]}
@@ -4383,10 +4383,10 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             className="HvCheckBox-checkBox"
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-11 Mui-checked",
-                                "disabled": "PrivateSwitchBase-disabled-12 Mui-disabled",
-                                "input": "PrivateSwitchBase-input-13",
-                                "root": "PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate",
+                                "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                "input": "PrivateSwitchBase-input-4",
+                                "root": "PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate",
                               }
                             }
                             color="default"
@@ -4415,7 +4415,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-11 Mui-checked"
+                              className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                               color="default"
                               component="span"
                               disableRipple={true}
@@ -4425,7 +4425,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-11 Mui-checked"
+                                className="PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -4449,7 +4449,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-11 Mui-checked"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                   component="span"
                                   disableRipple={true}
                                   disabled={false}
@@ -4460,7 +4460,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-11 Mui-checked"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -4478,7 +4478,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-10 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-11 Mui-checked"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox PrivateSwitchBase-checked-2 Mui-checked"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -4497,7 +4497,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                       >
                                         <input
                                           checked={true}
-                                          className="PrivateSwitchBase-input-13"
+                                          className="PrivateSwitchBase-input-4"
                                           data-indeterminate={true}
                                           disabled={false}
                                           onChange={[Function]}
