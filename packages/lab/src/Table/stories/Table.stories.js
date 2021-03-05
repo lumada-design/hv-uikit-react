@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import range from "lodash/range";
-import { useTable, useRowSelect } from "react-table";
+import { useTable, useRowSelect, usePagination, useResizeColumns } from "react-table";
 
 import { Ban } from "@hv/uikit-react-icons";
 
@@ -12,6 +12,7 @@ import {
   HvTableCell,
   HvTableContainer,
   HvTableHead,
+  HvTablePagination,
   HvTableRow,
 } from "../..";
 
@@ -29,6 +30,7 @@ export default {
     HvTableCell,
     HvTableContainer,
     HvTableHead,
+    HvTablePagination,
     HvTableRow,
   },
 };
@@ -196,5 +198,74 @@ export const SelectableReactTable = () => {
 SelectableReactTable.parameters = {
   docs: {
     description: { story: "A table with checkboxes being managed by `react-table`." },
+  },
+};
+
+export const Pagination = () => {
+  const data = useMemo(() => makeData(32), []);
+  const columns = useMemo(() => getColumns(), []);
+
+  const instance = useTable({ columns, data }, usePagination, useResizeColumns);
+  const {
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    headers,
+    page,
+    state: { pageSize },
+  } = instance;
+
+  const EmptyRow = () => (
+    <HvTableRow>
+      <HvTableCell colSpan="100%" />
+    </HvTableRow>
+  );
+
+  return (
+    <div>
+      <HvTableContainer>
+        <HvTable {...getTableProps()}>
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableCell
+                  key={col.Header}
+                  rtCol={col}
+                  // adds fixed column sizes
+                  {...col.getHeaderProps({ style: { width: col.width } })}
+                >
+                  {col.render("Header")}
+                </HvTableCell>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {range(pageSize).map((i) => {
+              const row = page[i];
+
+              if (!row) return <EmptyRow key={i} />;
+
+              prepareRow(row);
+              return (
+                <HvTableRow key={i} {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      <HvTablePagination rtInstance={instance} />
+    </div>
+  );
+};
+
+Pagination.parameters = {
+  docs: {
+    description: { story: "A table with pagination managed by `react-table`." },
   },
 };
