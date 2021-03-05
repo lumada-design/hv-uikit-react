@@ -22,7 +22,9 @@ export const Card = (props) => {
   return (
     <Box
       aria-selected={selectable ? selected : undefined}
-      className={clsx(classes.root, className, {
+      // expose the global class HvIsCardGridElement as a marker
+      // not to be styled directly, only as helper in specific css queries
+      className={clsx("HvIsCardGridElement", classes.root, className, {
         [classes.selectable]: selectable,
         [classes.selected]: selected,
       })}

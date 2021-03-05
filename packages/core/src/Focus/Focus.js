@@ -135,7 +135,7 @@ const Focus = (props) => {
   };
 
   const onMouseDown = (evt) => {
-    const hasCard = !!evt.currentTarget?.querySelector(".HvCard-root");
+    const hasCard = !!evt.currentTarget?.querySelector(".HvIsCardGridElement");
     if (strategy === "grid" && hasCard) return;
 
     setFocusTo(evt.currentTarget);

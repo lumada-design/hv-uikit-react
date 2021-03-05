@@ -53,7 +53,7 @@ exports[`Card should be able to render with every property defined 1`] = `
   >
     <Styled(MuiBox)
       bgcolor="atmo1"
-      className="HvCard-root"
+      className="HvIsCardGridElement HvCard-root"
       style={
         Object {
           "width": 360,
@@ -61,7 +61,7 @@ exports[`Card should be able to render with every property defined 1`] = `
       }
     >
       <div
-        className="MuiBox-root MuiBox-root-1 HvCard-root"
+        className="MuiBox-root MuiBox-root-1 HvIsCardGridElement HvCard-root"
         style={
           Object {
             "width": 360,
