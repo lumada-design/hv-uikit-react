@@ -9,29 +9,31 @@ const styles = (theme) => ({
     alignItems: "center",
   },
   link: {
-    textDecoration: "none",
     maxWidth: "170px",
-    fontWeight: 400,
     color: theme.hv.palette.accent.acce1,
     "&:hover": {
       cursor: "pointer",
-      textDecoration: "underline",
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
   },
-  separatorContainer: {
-    margin: theme.hvSpacing(0, "xs"),
-  },
+  separatorContainer: {},
   orderedList: {
     display: "flex",
+    paddingLeft: 0,
+    marginLeft: `-${theme.spacing("xs")}px`,
+  },
+  currentPage: {
+    padding: `8px ${theme.spacing("xs")}px`,
   },
   a: {
+    padding: `8px ${theme.spacing("xs")}px`,
     textDecoration: "none",
+    borderRadius: "2px",
     "&:hover": {
-      textDecoration: "underline",
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
-    "&:focus > p": {
-      color: theme.hv.palette.accent.acce1,
-      textDecoration: "underline",
+    "&:focus": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
   },
 });

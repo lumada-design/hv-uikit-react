@@ -17,7 +17,7 @@ const Page = ({ Component, onClick, elem, classes }) => (
     data={elem}
     classes={{ a: classes.a }}
   >
-    <HvTypography noWrap variant="link" className={classes.link}>
+    <HvTypography noWrap variant="highlightText" className={classes.link}>
       {startCase(elem.label)}
     </HvTypography>
   </HvLink>
@@ -101,7 +101,9 @@ const BreadCrumb = (props) => {
             <PathElement classes={classes} key={key} last={isLast}>
               {(React.isValidElement(elem) && elem) ||
                 (isLast && (
-                  <HvTypography>{startCase(removeExtension(elem.label))}</HvTypography>
+                  <HvTypography className={classes.currentPage} variant="normalText">
+                    {startCase(removeExtension(elem.label))}
+                  </HvTypography>
                 )) || (
                   <Page
                     key={key}
@@ -144,6 +146,10 @@ BreadCrumb.propTypes = {
      *  Styles applied to the list.
      */
     orderedList: PropTypes.string,
+    /**
+     *  Styles applied to the last element.
+     */
+    currentPage: PropTypes.string,
   }).isRequired,
   /**
    * List of breadcrumb.

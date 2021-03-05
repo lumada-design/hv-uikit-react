@@ -7,7 +7,7 @@ export interface BreadCrumbPathElement {
   path: string;
 }
 
-export type HvBreadCrumbClassKey = "root" | "link" | "separator" | "orderedList";
+export type HvBreadCrumbClassKey = "root" | "link" | "separator" | "orderedList" | "currentPage";
 
 export interface HvBreadCrumbProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBreadCrumbClassKey> {
