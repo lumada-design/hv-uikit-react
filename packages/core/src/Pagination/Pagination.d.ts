@@ -39,6 +39,22 @@ export interface PaginationLabelsProp {
    * Aria-label passed to the page input.
    */
   paginationInputLabel?: string;
+  /**
+   * Aria-label of the first page button
+   */
+  firstPage?: string;
+  /**
+   * Aria-label of the previous page button
+   */
+  previousPage?: string;
+  /**
+   * Aria-label of the next page button
+   */
+  nextPage?: string;
+  /**
+   * Aria-label of the last page button
+   */
+  lastPage?: string;
 }
 
 export interface HvPaginationCommonProps {

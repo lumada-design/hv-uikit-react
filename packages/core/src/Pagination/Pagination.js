@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -8,6 +8,7 @@ import { HvInput, HvTypography } from "..";
 import { setId, useLabels } from "../utils";
 import ButtonIconTooltip from "./ButtonIconTooltip";
 import Select, { Option } from "./Select";
+import { usePageInput, getSafePage, setColor } from "./utils";
 import styles from "./styles";
 
 const DEFAULT_LABELS = {
@@ -20,9 +21,11 @@ const DEFAULT_LABELS = {
   paginationNextPageTitle: "Next page",
   paginationLastPageTitle: "Last page",
   paginationInputLabel: "Total pages for page input",
+  firstPage: "First Page",
+  previousPage: "Previous Page",
+  nextPage: "Next Page",
+  lastPage: "Last Page",
 };
-
-const setColor = (condition) => (condition ? "atmo5" : undefined);
 
 const { Enter } = KeyboardCodes;
 
@@ -51,30 +54,23 @@ const Pagination = ({
   ...others
 }) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
-  const [statePage, setStatePage] = useState(page);
+  const [pageInput, handleInputChange] = usePageInput(page);
 
-  const getSafePage = (inPage) =>
-    Number.isNaN(inPage) ? page : Math.min(Math.max(inPage, 0), pages - 1);
+  const changePage = useCallback(
+    (newPage) => {
+      const safePage = getSafePage(newPage, page, pages);
 
-  const changePage = (inPage) => {
-    const outPage = getSafePage(inPage);
-    setStatePage(outPage);
-
-    if (page !== outPage) {
-      onPageChange?.(outPage);
-    }
-  };
-
-  const applyPage = () => {
-    changePage(statePage === "" ? page : statePage);
-  };
+      onPageChange?.(safePage);
+      handleInputChange(null, safePage + 1);
+    },
+    [page, pages, onPageChange, handleInputChange]
+  );
 
   useEffect(() => {
-    if (page !== statePage || page >= pages) {
+    if (page >= pages && pages > 0) {
       changePage(page);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page, pageSize]);
+  }, [page, pages, pageSize, changePage]);
 
   const renderPageJump = () => (
     <div className={classes.pageJump}>
@@ -91,10 +87,10 @@ const Pagination = ({
           input: classes.pageSizeInput,
           inputRoot: classes.pageSizeInputRoot,
         }}
-        onChange={(event, val) => setStatePage(val - 1)}
-        value={`${statePage === "" ? "" : Number(statePage) + 1}`}
-        onBlur={applyPage}
-        onKeyDown={(e) => isKeypress(e, Enter) && applyPage()}
+        onChange={handleInputChange}
+        value={String(pageInput)}
+        onBlur={(evt, value) => changePage(value - 1)}
+        onKeyDown={(evt, value) => isKeypress(evt, Enter) && changePage(value - 1)}
         disabled={pageSize === 0}
         disableClear
         {...currentPageInputProps}
@@ -133,7 +129,7 @@ const Pagination = ({
       <div className={classes.pageNavigator} {...navigationProps}>
         <ButtonIconTooltip
           id={setId(id, "firstPage-button")}
-          aria-label="First Page"
+          aria-label={labels.firstPage}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
@@ -143,10 +139,10 @@ const Pagination = ({
         </ButtonIconTooltip>
         <ButtonIconTooltip
           id={setId(id, "previousPage-button")}
-          aria-label="Previous Page"
+          aria-label={labels.previousPage}
           className={classes.iconContainer}
           disabled={!canPrevious}
-          onClick={() => changePage(statePage - 1)}
+          onClick={() => changePage(page - 1)}
           tooltip={labels.paginationPreviousPageTitle}
         >
           <Backwards className={classes.icon} color={setColor(!canPrevious)} />
@@ -155,7 +151,7 @@ const Pagination = ({
           {showPageJump ? (
             renderPageJump()
           ) : (
-            <HvTypography component="span">{`${statePage + 1}`}</HvTypography>
+            <HvTypography component="span">{`${page + 1}`}</HvTypography>
           )}
           <HvTypography component="span">{`${labels.pagesSeparator} `}</HvTypography>
           <HvTypography id={setId(id, "totalPages")} component="span">
@@ -164,17 +160,17 @@ const Pagination = ({
         </div>
         <ButtonIconTooltip
           id={setId(id, "nextPage-button")}
-          aria-label="Next Page"
+          aria-label={labels.nextPage}
           className={classes.iconContainer}
           disabled={!canNext}
-          onClick={() => changePage(statePage + 1)}
+          onClick={() => changePage(page + 1)}
           tooltip={labels.paginationNextPageTitle}
         >
           <Forwards className={classes.icon} color={setColor(!canNext)} />
         </ButtonIconTooltip>
         <ButtonIconTooltip
           id={setId(id, "lastPage-button")}
-          aria-label="Last Page"
+          aria-label={labels.lastPage}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
@@ -329,6 +325,22 @@ Pagination.propTypes = {
      * Aria-label passed to the page input.
      */
     paginationInputLabel: PropTypes.string,
+    /**
+     * Aria-label of the first page button
+     */
+    firstPage: PropTypes.string,
+    /**
+     * Aria-label of the previous page button
+     */
+    previousPage: PropTypes.string,
+    /**
+     * Aria-label of the next page button
+     */
+    nextPage: PropTypes.string,
+    /**
+     * Aria-label of the last page button
+     */
+    lastPage: PropTypes.string,
   }),
   /**
    * Other props to show page component.
