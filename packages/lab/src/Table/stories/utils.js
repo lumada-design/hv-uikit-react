@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import range from "lodash/range";
 import { Random } from "@hv/uikit-react-core";
 
@@ -6,22 +6,24 @@ const rand = new Random();
 
 const formatDate = (date) => date.toISOString().split("T")[0];
 
-const newEntry = (value, i) => {
-  const [r1, r2] = range(2).map(() => rand.next());
-  const [dateMax, dateMin] = [1640995200000, 1514764800000];
+const getOption = (opts, i) => opts[i % opts.length];
+
+const newEntry = (i) => {
+  const r = rand.next();
+  const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
   return {
-    id: `${i}`,
-    name: `Event ${i}`,
+    id: `${i + 1}`,
+    name: `Event ${i + 1}`,
     createdDate: formatDate(new Date(rand.next(dateMax, dateMin))),
     eventType: "Anomaly detection",
-    status: i % 2 === 0 ? "Closed" : "Open",
+    status: getOption(["Closed", "Open"], i),
     riskScore: rand.next(100, 10),
-    severity: (r1 > 0.66 && "Critical") || (r1 > 0.33 && "Major") || "Minor",
-    priority: (r2 > 0.66 && "High") || (r2 > 0.33 && "Medium") || "Low",
+    severity: getOption(["Critical", "Major", "Average", "Minor"], i),
+    priority: (r > 0.66 && "High") || (r > 0.33 && "Medium") || "Low",
   };
 };
 
-export const makeData = (len = 10) => Array.from(Array(len), newEntry);
+export const makeData = (len = 10) => range(len).map(newEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
@@ -49,4 +51,50 @@ export const useToggleIndex = (initialState) => {
   };
 
   return [index, toggleState];
+};
+
+const simpleSortBy = (a, b, sortBy) => {
+  const { id, desc } = sortBy;
+  if (a[id] < b[id]) return desc ? -1 : 1;
+  if (a[id] > b[id]) return desc ? 1 : -1;
+  return 0;
+};
+
+export const useServerData = () => {
+  const serverData = useMemo(() => makeData(999), []);
+  const columns = useMemo(() => getColumns().map((col) => ({ ...col, isSortable: true })), []);
+
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [pageCount, setPageCount] = useState(0);
+  const fetchIdRef = useRef(0);
+
+  const fetchData = useCallback(
+    ({ pageSize, pageIndex, sortBy }) => {
+      fetchIdRef.current += 1;
+      const fetchId = fetchIdRef.current;
+
+      setLoading(true);
+
+      setTimeout(() => {
+        if (fetchId !== fetchIdRef.current) return;
+
+        const startRow = pageSize * pageIndex;
+        const endRow = startRow + pageSize;
+
+        const newData = [...serverData]
+          .sort(sortBy.length === 0 ? undefined : (a, b) => simpleSortBy(a, b, sortBy[0]))
+          .slice(startRow, endRow);
+        setData(newData);
+
+        // Static example . Set server-side page count here
+        setPageCount(Math.ceil(serverData.length / pageSize));
+
+        setLoading(false);
+      }, 600);
+    },
+    [serverData]
+  );
+
+  return [data, columns, fetchData, loading, pageCount];
 };

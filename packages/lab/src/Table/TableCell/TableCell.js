@@ -33,9 +33,6 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
   const tableContext = useContext(TableContext);
   const { align: rtAlign, padding: rtPadding, isSortable, isSorted, isSortedDesc } = rtCol;
 
-  const isHeadCell = tableContext?.variant === "head";
-  const Component = component || (isHeadCell && "th") || "td";
-
   // prop > RT col > context > fallback
   const align = alignProp ?? rtAlign ?? "inherit";
   const padding = paddingProp ?? rtPadding ?? tableContext?.padding ?? "default";
@@ -44,6 +41,9 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
   const sortable = sortableProp ?? isSortable;
   const sortDirection =
     sortDirectionProp ?? (isSorted && (isSortedDesc ? "descending" : "ascending"));
+
+  const isHeadCell = variant === "head";
+  const Component = component || (isHeadCell && "th") || "td";
 
   const Sort = useMemo(() => getSortIcon(sortDirection), [sortDirection]);
 
@@ -59,7 +59,7 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
       aria-sort={sortDirection}
       {...others}
     >
-      {variant === "head" && sortable && <Sort className={classes.sortIcon} />}
+      {isHeadCell && sortable && <Sort className={classes.sortIcon} />}
       {children}
     </Component>
   );
@@ -109,7 +109,7 @@ HvTableCell.propTypes = {
   /**
    * Set sort direction icon and aria-sort.
    */
-  sortDirection: PropTypes.oneOf(["asc", "desc", false]),
+  sortDirection: PropTypes.oneOf(["ascending", "descending", false]),
   /**
    * A Jss Object used to override or extend the styles applied.
    */

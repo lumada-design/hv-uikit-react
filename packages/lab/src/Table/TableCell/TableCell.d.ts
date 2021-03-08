@@ -29,7 +29,7 @@ export interface HvTableCellProps
   /**
    * Set sort direction icon and aria-sort.
    */
-  sortDirection?: "asc" | "desc" | false;
+  sortDirection?: "ascending" | "descending" | false;
 
   /**
    * React Table column instance. Also contains other props passed as `data`
