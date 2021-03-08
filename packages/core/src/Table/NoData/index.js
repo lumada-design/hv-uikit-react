@@ -1,4 +1,4 @@
-import { Fail } from "@hv/uikit-react-icons";
+import { Ban } from "@hv/uikit-react-icons";
 import React from "react";
 import HvEmptyState from "../../EmptyState";
 import useStyles from "./styles";
@@ -9,7 +9,7 @@ const NoData = ({ noDataMessage = " No data to display.", children }) => {
   return (
     <div className={classes.root}>
       {children || (
-        <HvEmptyState className={classes.default} message={noDataMessage} icon={<Fail />} />
+        <HvEmptyState className={classes.default} message={noDataMessage} icon={<Ban />} />
       )}
     </div>
   );
