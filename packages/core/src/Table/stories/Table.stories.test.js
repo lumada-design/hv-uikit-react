@@ -317,20 +317,21 @@ export const WithSearch = () => {
 
   return (
     <div style={{ padding: "10px" }}>
-      <HvInput
-        type="search"
-        onChange={(e, value) => {
-          const filteredData = data.filter((dt) =>
-            dt.name.toUpperCase().includes(value.toUpperCase())
-          );
-          if (filteredData) {
-            setPayload(filteredData);
-            setPage(0);
-          }
-          return value;
-        }}
-        style={{ maxWidth: 610, minWidth: 150 }}
-      />
+      <div style={{ maxWidth: 610, minWidth: 150 }}>
+        <HvInput
+          type="search"
+          onChange={(e, value) => {
+            const filteredData = data.filter((dt) =>
+              dt.name.toUpperCase().includes(value.toUpperCase())
+            );
+            if (filteredData) {
+              setPayload(filteredData);
+              setPage(0);
+            }
+            return value;
+          }}
+        />
+      </div>
       <HvTable
         data={payload.slice()}
         id="test"
