@@ -172,8 +172,8 @@ export interface HvTableProps
    */
   paginationServerSide?: boolean;
 
-  /** 
-   * Attributes applied to the pagination component 
+  /**
+   * Attributes applied to the pagination component
    */
   paginationProps?: HvPaginationProps;
 
