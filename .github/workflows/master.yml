@@ -322,7 +322,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
     if: always()
     runs-on: ubuntu-latest
 
@@ -387,7 +387,7 @@ jobs:
 
   Notify-End-Internal:
     name: Notify End Internal
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
     if: failure()
     runs-on: ubuntu-latest
 
@@ -426,7 +426,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Release
