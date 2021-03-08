@@ -23,6 +23,7 @@ module.exports = {
     "react/jsx-curly-newline": "off",
     "react/require-default-props": "off",
     "react/forbid-prop-types": "off",
+    "react/jsx-fragments": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

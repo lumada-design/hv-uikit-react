@@ -39,7 +39,7 @@ exports[`Button should render correctly 1`] = `
       }
       color="primary"
       disableRipple={true}
-      focusVisibleClassName="HvButton-focusVisible"
+      focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
       variant="contained"
     >
       <ForwardRef(Button)
@@ -79,7 +79,7 @@ exports[`Button should render correctly 1`] = `
         }
         color="primary"
         disableRipple={true}
-        focusVisibleClassName="HvButton-focusVisible"
+        focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
         variant="contained"
       >
         <WithStyles(ForwardRef(ButtonBase))
@@ -88,7 +88,7 @@ exports[`Button should render correctly 1`] = `
           disableRipple={true}
           disabled={false}
           focusRipple={true}
-          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+          focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
           type="button"
         >
           <ForwardRef(ButtonBase)
@@ -104,7 +104,7 @@ exports[`Button should render correctly 1`] = `
             disableRipple={true}
             disabled={false}
             focusRipple={true}
-            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+            focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
             type="button"
           >
             <button

@@ -209,10 +209,10 @@ Array [
                           }
                           classes={
                             Object {
-                              "checked": "PrivateSwitchBase-checked-6 Mui-checked HvBaseSwitch-checked",
-                              "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled HvBaseSwitch-disabled",
-                              "input": "PrivateSwitchBase-input-8 MuiSwitch-input",
-                              "root": "PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase",
+                              "checked": "PrivateSwitchBase-checked-2 Mui-checked HvBaseSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled HvBaseSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-4 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase",
                             }
                           }
                           disableRipple={true}
@@ -241,7 +241,7 @@ Array [
                           value="on"
                         >
                           <WithStyles(ForwardRef(IconButton))
-                            className="PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase"
+                            className="PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase"
                             component="span"
                             disableRipple={true}
                             disabled={false}
@@ -251,7 +251,7 @@ Array [
                             tabIndex={null}
                           >
                             <ForwardRef(IconButton)
-                              className="PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase"
+                              className="PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase"
                               classes={
                                 Object {
                                   "colorInherit": "MuiIconButton-colorInherit",
@@ -275,7 +275,7 @@ Array [
                             >
                               <WithStyles(ForwardRef(ButtonBase))
                                 centerRipple={true}
-                                className="MuiIconButton-root PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase"
+                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase"
                                 component="span"
                                 disableRipple={true}
                                 disabled={false}
@@ -287,7 +287,7 @@ Array [
                               >
                                 <ForwardRef(ButtonBase)
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase"
                                   classes={
                                     Object {
                                       "disabled": "Mui-disabled",
@@ -306,7 +306,7 @@ Array [
                                 >
                                   <span
                                     aria-disabled={false}
-                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase"
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase"
                                     onBlur={[Function]}
                                     onDragLeave={[Function]}
                                     onFocus={[Function]}
@@ -326,7 +326,7 @@ Array [
                                       <input
                                         aria-label="Engine 1"
                                         checked={false}
-                                        className="PrivateSwitchBase-input-8 MuiSwitch-input"
+                                        className="PrivateSwitchBase-input-4 MuiSwitch-input"
                                         disabled={false}
                                         id={null}
                                         onChange={[Function]}
@@ -568,10 +568,10 @@ Array [
                           }
                           classes={
                             Object {
-                              "checked": "PrivateSwitchBase-checked-6 Mui-checked HvBaseSwitch-checked",
-                              "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled HvBaseSwitch-disabled",
-                              "input": "PrivateSwitchBase-input-8 MuiSwitch-input",
-                              "root": "PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase",
+                              "checked": "PrivateSwitchBase-checked-2 Mui-checked HvBaseSwitch-checked",
+                              "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled HvBaseSwitch-disabled",
+                              "input": "PrivateSwitchBase-input-4 MuiSwitch-input",
+                              "root": "PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase",
                             }
                           }
                           disableRipple={true}
@@ -600,7 +600,7 @@ Array [
                           value="on"
                         >
                           <WithStyles(ForwardRef(IconButton))
-                            className="PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-6 Mui-checked HvBaseSwitch-checked"
+                            className="PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-2 Mui-checked HvBaseSwitch-checked"
                             component="span"
                             disableRipple={true}
                             disabled={false}
@@ -610,7 +610,7 @@ Array [
                             tabIndex={null}
                           >
                             <ForwardRef(IconButton)
-                              className="PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-6 Mui-checked HvBaseSwitch-checked"
+                              className="PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-2 Mui-checked HvBaseSwitch-checked"
                               classes={
                                 Object {
                                   "colorInherit": "MuiIconButton-colorInherit",
@@ -634,7 +634,7 @@ Array [
                             >
                               <WithStyles(ForwardRef(ButtonBase))
                                 centerRipple={true}
-                                className="MuiIconButton-root PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-6 Mui-checked HvBaseSwitch-checked"
+                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-2 Mui-checked HvBaseSwitch-checked"
                                 component="span"
                                 disableRipple={true}
                                 disabled={false}
@@ -646,7 +646,7 @@ Array [
                               >
                                 <ForwardRef(ButtonBase)
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-6 Mui-checked HvBaseSwitch-checked"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-2 Mui-checked HvBaseSwitch-checked"
                                   classes={
                                     Object {
                                       "disabled": "Mui-disabled",
@@ -665,7 +665,7 @@ Array [
                                 >
                                   <span
                                     aria-disabled={false}
-                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-6 Mui-checked HvBaseSwitch-checked"
+                                    className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiSwitch-switchBase HvBaseSwitch-switchBase PrivateSwitchBase-checked-2 Mui-checked HvBaseSwitch-checked"
                                     onBlur={[Function]}
                                     onDragLeave={[Function]}
                                     onFocus={[Function]}
@@ -685,7 +685,7 @@ Array [
                                       <input
                                         aria-label="Engine 2"
                                         checked={true}
-                                        className="PrivateSwitchBase-input-8 MuiSwitch-input"
+                                        className="PrivateSwitchBase-input-4 MuiSwitch-input"
                                         disabled={false}
                                         id={null}
                                         onChange={[Function]}

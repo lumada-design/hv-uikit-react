@@ -200,15 +200,10 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      disable: true,
-    },
-  },
-};
-
 Main.parameters = {
+  pa11y: {
+    disable: true,
+  },
   eyes: { include: false },
 };
 
@@ -228,17 +223,14 @@ export const YamlEditor = () => {
   );
 };
 
-YamlEditor.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Yaml editor",
-    },
-    pa11y: {
-      disable: true,
+YamlEditor.parameters = {
+  docs: {
+    description: {
+      story: "Yaml editor",
     },
   },
-};
-
-YamlEditor.parameters = {
+  pa11y: {
+    disable: true,
+  },
   eyes: { include: false },
 };

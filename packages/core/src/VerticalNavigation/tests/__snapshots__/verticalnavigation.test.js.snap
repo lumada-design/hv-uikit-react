@@ -212,7 +212,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       }
                       color="primary"
                       disableRipple={true}
-                      focusVisibleClassName="HvButton-focusVisible"
+                      focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                       id="sample3-container-hamburger-button"
                       onClick={[Function]}
                       variant="text"
@@ -289,7 +289,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         }
                         color="primary"
                         disableRipple={true}
-                        focusVisibleClassName="HvButton-focusVisible"
+                        focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                         id="sample3-container-hamburger-button"
                         onClick={[Function]}
                         variant="text"
@@ -335,7 +335,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                           id="sample3-container-hamburger-button"
                           onClick={[Function]}
                           type="button"
@@ -388,7 +388,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             disableRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                            focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                             id="sample3-container-hamburger-button"
                             onClick={[Function]}
                             type="button"
@@ -671,7 +671,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                       }
                       color="primary"
                       disableRipple={true}
-                      focusVisibleClassName="HvButton-focusVisible"
+                      focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                       id="sample3-container-hamburger-button"
                       onClick={[Function]}
                       variant="text"
@@ -748,7 +748,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                         }
                         color="primary"
                         disableRipple={true}
-                        focusVisibleClassName="HvButton-focusVisible"
+                        focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                         id="sample3-container-hamburger-button"
                         onClick={[Function]}
                         variant="text"
@@ -794,7 +794,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                           disableRipple={true}
                           disabled={false}
                           focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                          focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                           id="sample3-container-hamburger-button"
                           onClick={[Function]}
                           type="button"
@@ -847,7 +847,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             disableRipple={true}
                             disabled={false}
                             focusRipple={true}
-                            focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                            focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                             id="sample3-container-hamburger-button"
                             onClick={[Function]}
                             type="button"

@@ -36,10 +36,10 @@ const styles = (theme) => ({
   },
 
   itemSelector: {
-    "&:not(:hover):not(.HvListItem-focus):not(:focus-within)": {
+    "&:not(:hover):not(.HvIsFocused):not(:focus-within)": {
       backgroundColor: "transparent",
     },
-    "&:not(:hover):not(.HvListItem-focus):not(.focus-within)": {
+    "&:not(:hover):not(.HvIsFocused):not(.focus-within)": {
       backgroundColor: "transparent",
     },
   },

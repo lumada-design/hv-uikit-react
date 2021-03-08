@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { Tab, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
@@ -15,7 +16,9 @@ const HvTab = (props) => {
       }}
       disableRipple
       disableTouchRipple
-      focusVisibleClassName={classes.focusVisible}
+      // expose the global class HvIsFocusVisible as a marker
+      // not to be styled directly, only as helper in specific css queries
+      focusVisibleClassName={clsx("HvIsFocusVisible", classes.focusVisible)}
       {...others}
     />
   );

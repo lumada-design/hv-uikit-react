@@ -199,7 +199,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  focusVisibleClassName="HvButton-focusVisible"
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                   id="drop-down-menu-11-icon-button"
                   variant="text"
                 >
@@ -243,7 +243,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                     color="primary"
                     disableRipple={true}
                     disabled={false}
-                    focusVisibleClassName="HvButton-focusVisible"
+                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                     id="drop-down-menu-11-icon-button"
                     variant="text"
                   >
@@ -255,7 +255,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                      focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                       id="drop-down-menu-11-icon-button"
                       type="button"
                     >
@@ -274,7 +274,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                         id="drop-down-menu-11-icon-button"
                         type="button"
                       >
@@ -598,7 +598,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  focusVisibleClassName="HvButton-focusVisible"
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                   id="drop-down-menu-9-icon-button"
                   variant="text"
                 >
@@ -642,7 +642,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                     color="primary"
                     disableRipple={true}
                     disabled={false}
-                    focusVisibleClassName="HvButton-focusVisible"
+                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                     id="drop-down-menu-9-icon-button"
                     variant="text"
                   >
@@ -654,7 +654,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                      focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                       id="drop-down-menu-9-icon-button"
                       type="button"
                     >
@@ -673,7 +673,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                         id="drop-down-menu-9-icon-button"
                         type="button"
                       >
@@ -958,7 +958,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  focusVisibleClassName="HvButton-focusVisible"
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                   id="drop-down-menu-10-icon-button"
                   variant="text"
                 >
@@ -1002,7 +1002,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     color="primary"
                     disableRipple={true}
                     disabled={false}
-                    focusVisibleClassName="HvButton-focusVisible"
+                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                     id="drop-down-menu-10-icon-button"
                     variant="text"
                   >
@@ -1014,7 +1014,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                      focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                       id="drop-down-menu-10-icon-button"
                       type="button"
                     >
@@ -1033,7 +1033,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                         id="drop-down-menu-10-icon-button"
                         type="button"
                       >
@@ -1224,7 +1224,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                           id="drop-down-menu-4-children-container"
                         >
                           <div
-                            class="MuiBox-root MuiBox-root-3 HvPanel-root"
+                            class="MuiBox-root MuiBox-root-1 HvPanel-root"
                           >
                             <ul
                               class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
@@ -1274,7 +1274,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                           id="drop-down-menu-6-children-container"
                         >
                           <div
-                            class="MuiBox-root MuiBox-root-5 HvPanel-root"
+                            class="MuiBox-root MuiBox-root-1 HvPanel-root"
                           >
                             <ul
                               class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
@@ -1282,7 +1282,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               role="menu"
                             >
                               <li
-                                class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled focus-visible HvFocus-focused HvFocus-focus HvListItem-focus"
+                                class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled focus-visible HvFocus-focused HvIsFocused HvFocus-focus HvListItem-focus"
                                 data-focus-visible-added=""
                                 id="drop-down-menu-6-list-item-0"
                                 role="menuitem"
@@ -1325,7 +1325,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                           id="drop-down-menu-10-children-container"
                         >
                           <div
-                            class="MuiBox-root MuiBox-root-9 HvPanel-root"
+                            class="MuiBox-root MuiBox-root-1 HvPanel-root"
                           >
                             <ul
                               class="HvList-root HvDropDownMenu-menuList HvListContainer-root"
@@ -1408,7 +1408,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               className="HvPanel-root"
                             >
                               <div
-                                className="MuiBox-root MuiBox-root-9 HvPanel-root"
+                                className="MuiBox-root MuiBox-root-1 HvPanel-root"
                               >
                                 <WithStyles(HvList)
                                   classes={
@@ -2201,7 +2201,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  focusVisibleClassName="HvButton-focusVisible"
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                   id="drop-down-menu-3-icon-button"
                   variant="text"
                 >
@@ -2245,7 +2245,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                     color="primary"
                     disableRipple={true}
                     disabled={false}
-                    focusVisibleClassName="HvButton-focusVisible"
+                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                     id="drop-down-menu-3-icon-button"
                     variant="text"
                   >
@@ -2257,7 +2257,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                      focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                       id="drop-down-menu-3-icon-button"
                       type="button"
                     >
@@ -2276,7 +2276,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                         id="drop-down-menu-3-icon-button"
                         type="button"
                       >
@@ -2600,7 +2600,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  focusVisibleClassName="HvButton-focusVisible"
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                   id="drop-down-menu-1-icon-button"
                   variant="text"
                 >
@@ -2644,7 +2644,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
                     color="primary"
                     disableRipple={true}
                     disabled={false}
-                    focusVisibleClassName="HvButton-focusVisible"
+                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                     id="drop-down-menu-1-icon-button"
                     variant="text"
                   >
@@ -2656,7 +2656,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                      focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                       id="drop-down-menu-1-icon-button"
                       type="button"
                     >
@@ -2675,7 +2675,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                         id="drop-down-menu-1-icon-button"
                         type="button"
                       >
@@ -2960,7 +2960,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                   color="primary"
                   disableRipple={true}
                   disabled={false}
-                  focusVisibleClassName="HvButton-focusVisible"
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                   id="drop-down-menu-2-icon-button"
                   variant="text"
                 >
@@ -3004,7 +3004,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                     color="primary"
                     disableRipple={true}
                     disabled={false}
-                    focusVisibleClassName="HvButton-focusVisible"
+                    focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
                     id="drop-down-menu-2-icon-button"
                     variant="text"
                   >
@@ -3016,7 +3016,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                      focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                       id="drop-down-menu-2-icon-button"
                       type="button"
                     >
@@ -3035,7 +3035,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                         disableRipple={true}
                         disabled={false}
                         focusRipple={true}
-                        focusVisibleClassName="Mui-focusVisible HvButton-focusVisible"
+                        focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
                         id="drop-down-menu-2-icon-button"
                         type="button"
                       >

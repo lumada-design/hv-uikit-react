@@ -140,10 +140,10 @@ export const SingleSelectionWithSelectors = () => (
   />
 );
 
-SingleSelectionWithSelectors.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Selectable List that uses single-selection radio button selectors.",
+SingleSelectionWithSelectors.parameters = {
+  docs: {
+    description: {
+      story: "Selectable List that uses single-selection radio button selectors.",
     },
   },
 };
@@ -166,10 +166,10 @@ export const MultiSelectionWithSelectors = () => (
   />
 );
 
-MultiSelectionWithSelectors.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Selectable List that uses multiple-selection checkboxes selectors.",
+MultiSelectionWithSelectors.parameters = {
+  docs: {
+    description: {
+      story: "Selectable List that uses multiple-selection checkboxes selectors.",
     },
   },
 };
@@ -192,10 +192,10 @@ export const MultiSelectionWithSelectAll = () => (
   />
 );
 
-MultiSelectionWithSelectAll.story = {
-  parameters: {
-    docs: {
-      storyDescription: "List that has multi selection with selectors and a select all checkbox.",
+MultiSelectionWithSelectAll.parameters = {
+  docs: {
+    description: {
+      story: "List that has multi selection with selectors and a select all checkbox.",
     },
   },
 };
@@ -268,14 +268,12 @@ export const TestListSelectableDisabled = () => (
 // test scenario, Multi Selection With Select All selecting some items
 export const IconsOpened = () => MultiSelectionWithSelectAll();
 
-IconsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        fireEvent.click(screen.getByRole("checkbox", { name: /bergen city/i }));
-        fireEvent.click(screen.getByText("Boston of the Seven Seas"));
-        return waitFor(() => screen.getByRole("checkbox", { name: /3 of 5/i }));
-      },
+IconsOpened.parameters = {
+  eyes: {
+    runBefore() {
+      fireEvent.click(screen.getByRole("checkbox", { name: /bergen city/i }));
+      fireEvent.click(screen.getByText("Boston of the Seven Seas"));
+      return waitFor(() => screen.getByRole("checkbox", { name: /3 of 5/i }));
     },
   },
 };

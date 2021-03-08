@@ -13,25 +13,13 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: { page: DocsPage, container: DocsContainer, extractArgTypes },
   options: {
-    isFullscreen: false,
-    showNav: true,
-    showPanel: true,
-    panelPosition: "bottom",
-    sidebarAnimations: true,
-    // enable keyboard shortcuts
-    // (even thou we're hidding the button)
-    enableShortcuts: true,
-    // show tool bar
-    isToolshown: true,
-    // display the top-level grouping as a "root" in the sidebar
-    showRoots: true,
     storySort: storySort({
       method: "alphabetical",
       order: [
         "Get Started",
         ["Introduction", "Installation", "Component List"],
         "Foundation",
-        ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
+        ["Grid", "Container", "Provider", "Theming", "Typography", "Colors", "Icons"],
         "Components",
         "Forms",
         ["Main", "Form Element", "Form Element Blocks"],
