@@ -31,7 +31,6 @@ export const Main = () => {
     return [...Array(num).keys()].map((id) => ({
       id: `id_${id + 1}`,
       headerTitle: `Asset Avatar ${id + 1}`,
-      checkboxValue: `id_${id + 1}`,
       checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
       data: {
         firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
@@ -125,7 +124,6 @@ export const DefaultRender = () => {
     return [...Array(num).keys()].map((id) => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
-      checkboxValue: `id_${id}`,
       checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
       data: {
         firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",

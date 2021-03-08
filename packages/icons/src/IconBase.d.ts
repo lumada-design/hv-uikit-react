@@ -42,12 +42,12 @@ export interface HvIconBaseProps
   /**
    * A string that will override the height of the svg
    */
-  height?: string;
+  height?: string | number;
 
   /**
    * A string that will override the width of the svg
    */
-  width?: string;
+  width?: string | number;
 
   /**
    * Sets one of the standard sizes of the icons

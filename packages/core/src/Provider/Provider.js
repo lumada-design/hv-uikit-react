@@ -13,7 +13,7 @@ import {
   createMuiTheme,
 } from "@material-ui/core";
 
-import { themeBuilder, generateClassName, CssBaseline, getTheme } from "../theme";
+import { themeBuilder, createGenerateClassName, CssBaseline, getTheme } from "../theme";
 
 import { ConfigProvider } from "../config/context";
 
@@ -42,13 +42,53 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   return targetTheme;
 };
 
-const HvProvider = ({ children, theme = null, uiKitTheme = "dawn", changeTheme = () => {} }) => {
-  const pConfig = { changeTheme };
+/**
+ * This component makes cross-component properties, like the active `theme`,
+ * available down the React tree thanks to React context.
+ *
+ * This component should preferably be used at **the root of your component tree** and
+ * be unique in the App in most cases.
+ *
+ * ```jsx
+ * <HvProvider>
+ *   <MyApp />
+ * <HvProvider/>
+ * ```
+ *
+ * If several `HvProvider`'s are used, either nested or in paralel, the `generateClassNameOptions`
+ * must be tweaked to avoid CSS classnames colision. Or a custom JSS's class name generator can
+ * be provided via the `generateClassName` property.
+ *
+ * **UI Kit components will not work at all if the `HvProvider` is not configured correctly**,
+ * as they will not be able to access the properties of the active theme..
+ *
+ */
+const HvProvider = ({
+  children,
+
+  uiKitTheme = "dawn",
+  theme = null,
+  changeTheme = () => {},
+
+  generateClassName: generateClassNameProp,
+  generateClassNameOptions,
+  injectStylesFirst = false,
+  disableStylesGeneration = false,
+}) => {
   const rawUiKitTheme = getTheme(uiKitTheme);
   const customTheme = applyCustomTheme(themeBuilder(rawUiKitTheme), theme);
 
+  const generateClassName =
+    generateClassNameProp || createGenerateClassName(generateClassNameOptions);
+
+  const pConfig = { changeTheme };
+
   return (
-    <MuiStylesProvider generateClassName={generateClassName}>
+    <MuiStylesProvider
+      generateClassName={generateClassName}
+      injectFirst={injectStylesFirst}
+      disableGeneration={disableStylesGeneration}
+    >
       <MuiThemeProvider theme={customTheme}>
         <CssBaseline />
         <ConfigProvider value={pConfig}>{children}</ConfigProvider>
@@ -63,17 +103,60 @@ HvProvider.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * The UI-Kit theme object to be wrapped by the MUI theme.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
-   * Which of design system default themes to use.
+   * The Design System base theme in use. Defaults to `"dawn"`.
    */
   uiKitTheme: PropTypes.oneOf(["dawn", "wicked"]),
   /**
-   * Which of design system default themes to use.
+   * The UI Kit theme object to be applied on top of the base theme.
+   */
+  theme: PropTypes.instanceOf(Object),
+  /**
+   * Function stored in the provider's context to allow runtime switching of the active theme.
+   * The implementation is up to each App.
    */
   changeTheme: PropTypes.func,
+
+  /**
+   * Custom JSS's class name generator.
+   */
+  generateClassName: PropTypes.func,
+  /**
+   * Built-in JSS's class name generator options.
+   * Ignored if a custom `generateClassName` is provided.
+   *
+   * `disableGlobal`: Disable the generation of deterministic class names. Defaults to `false`.
+   *
+   * `productionPrefix`: The string used to prefix the class names in production. Defaults to `"jss-uikit"`.
+   *
+   * `seed`: The string used to uniquely identify the generator. Defaults to `""`.
+   *         It can be used to avoid class name collisions when using multiple generators in the same document.
+   */
+  generateClassNameOptions: PropTypes.shape({
+    /**
+     * Disable the generation of deterministic class names. Defaults to `false`.
+     */
+    disableGlobal: PropTypes.bool,
+    /**
+     * The string used to prefix the class names in production. Defaults to `"jss-uikit"`.
+     */
+    productionPrefix: PropTypes.string,
+    /**
+     * The string used to uniquely identify the generator. Defaults to `""`.
+     * It can be used to avoid class name collisions when using multiple generators in the same document.
+     */
+    seed: PropTypes.string,
+  }),
+  /**
+   * Injects the generated stylesheets at the top of the `<head>` element of the page.
+   * This can ease the override of UI Kit components styles.
+   *
+   * By default, the styles are injected last in the `<head>` element of the page.
+   */
+  injectStylesFirst: PropTypes.bool,
+  /**
+   * Disables the generation of the styles.
+   */
+  disableStylesGeneration: PropTypes.bool,
 };
 
 export default HvProvider;

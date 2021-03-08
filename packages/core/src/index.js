@@ -81,6 +81,7 @@ export { default as useUniqueId } from "./useUniqueId";
 
 // theme
 export { default as hvTheme } from "./theme";
+export { themeBuilder, getTheme } from "./theme";
 
 // provider
 export { default as HvProvider } from "./Provider";

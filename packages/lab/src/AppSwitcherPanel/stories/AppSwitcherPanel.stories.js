@@ -55,7 +55,7 @@ export const Main = () => {
       name: "UI-KIT Storybook",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
-      url: "https://lumada-design.github.io/uikit/master/",
+      url: "https://lumada-design.github.io/uikit/v2.x/",
       target: "_top",
     },
     {
@@ -112,7 +112,7 @@ export const sample2 = () => {
         "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
-      url: "https://lumada-design.github.io/uikit/master/",
+      url: "https://lumada-design.github.io/uikit/v2.x/",
       target: "_top",
     },
     {
@@ -216,7 +216,7 @@ export const sample4 = () => {
         "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
-      url: "https://lumada-design.github.io/uikit/master/",
+      url: "https://lumada-design.github.io/uikit/v2.x/",
       target: "_top",
     },
     {

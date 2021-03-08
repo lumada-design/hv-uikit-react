@@ -534,10 +534,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 className="MuiTabs-indicator HvTabs-indicator"
                 classes={
                   Object {
-                    "colorPrimary": "PrivateTabIndicator-colorPrimary-6",
-                    "colorSecondary": "PrivateTabIndicator-colorSecondary-7",
-                    "root": "PrivateTabIndicator-root-5",
-                    "vertical": "PrivateTabIndicator-vertical-8",
+                    "colorPrimary": "PrivateTabIndicator-colorPrimary-2",
+                    "colorSecondary": "PrivateTabIndicator-colorSecondary-3",
+                    "root": "PrivateTabIndicator-root-1",
+                    "vertical": "PrivateTabIndicator-vertical-4",
                   }
                 }
                 color="secondary"
@@ -550,7 +550,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 }
               >
                 <span
-                  className="PrivateTabIndicator-root-5 PrivateTabIndicator-colorSecondary-7 MuiTabs-indicator HvTabs-indicator"
+                  className="PrivateTabIndicator-root-1 PrivateTabIndicator-colorSecondary-3 MuiTabs-indicator HvTabs-indicator"
                   style={
                     Object {
                       "left": 0,

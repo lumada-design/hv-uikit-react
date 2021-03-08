@@ -147,7 +147,9 @@ const HvCard = ({
   );
 
   return (
-    <div className={clsx(classes.root)}>
+    // expose the global class HvIsCardGridElement as a marker
+    // not to be styled directly, only as helper in specific css queries
+    <div className={clsx("HvIsCardGridElement", classes.root)}>
       <div id={setId(id, "cardContentWrapper")} className={classes.cardContentWrapper}>
         <div
           className={clsx(classes.semanticContainer, {

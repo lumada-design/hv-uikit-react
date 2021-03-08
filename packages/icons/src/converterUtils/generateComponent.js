@@ -202,11 +202,11 @@ ${componentName}.propTypes = {
   /**
    * A string that will override the height of the svg
    */
-  height: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * A string that will override the width of the svg
    */
-  width: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Sets one of the standard sizes of the icons
    */
