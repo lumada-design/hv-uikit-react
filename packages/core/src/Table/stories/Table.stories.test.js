@@ -329,6 +329,7 @@ export const WithSearch = () => {
           }
           return value;
         }}
+        style={{ maxWidth: 610, minWidth: 150 }}
       />
       <HvTable
         data={payload.slice()}

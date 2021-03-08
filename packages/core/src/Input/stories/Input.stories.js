@@ -15,6 +15,13 @@ export default {
   },
   component: HvInput,
   subcomponents: { HvBaseInput },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 610, minWidth: 150 }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Main = () => (
