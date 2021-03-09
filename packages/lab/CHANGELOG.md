@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.5.38...@hv/uikit-react-lab@2.6.0) (2021-03-09)
+
+
+### Features
+
+* allow configuration of css class name generator HVUIKIT-5578 ([18b345a](https://github.com/pentaho/hv-uikit-react/commit/18b345a485676957b724fffae06e9be97d644992))
+
+
+
+
+
 ## [2.5.38](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.5.37...@hv/uikit-react-lab@2.5.38) (2021-03-03)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

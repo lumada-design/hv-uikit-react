@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.3.5 (2021-03-09)
+
+
+### Bug Fixes
+
+* icon's width and height type definition ([35719ce](https://github.com/pentaho/hv-uikit-react/commit/35719cea413d3d578ce1fdb2edc80f4413d79e0f))
+
+
+
+
+
 ## 2.3.4 (2021-01-27)
 
 **Note:** Version bump only for package @hv/uikit-react-icons

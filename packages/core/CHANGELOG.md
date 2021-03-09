@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.4...@hv/uikit-react-core@2.18.0) (2021-03-09)
+
+
+### Bug Fixes
+
+* export themeBuilder and getTheme ([2e96e60](https://github.com/pentaho/hv-uikit-react/commit/2e96e60da11417cdffd64430dddde948530df275))
+
+
+### Features
+
+* allow configuration of css class name generator HVUIKIT-5578 ([18b345a](https://github.com/pentaho/hv-uikit-react/commit/18b345a485676957b724fffae06e9be97d644992))
+
+
+
+
+
 ## 2.17.4 (2021-03-03)
 
 
