@@ -149,26 +149,61 @@ export const Main = () => {
         title: "Status",
         style: { paddingLeft: "8px", width: "52px" },
         align: "left",
-        tooltip: "The status",
+        headerCellProps: {
+          "aria-label": "Status",
+          "aria-description": "The accessible long status description",
+        },
+        headerCellTooltipProps: {
+          title: "The long status description",
+        },
       },
-      { title: "Event", style: { width: "370px" }, align: "left", tooltip: "The event" },
+      {
+        title: "Event",
+        style: { width: "370px" },
+        align: "left",
+        headerCellProps: {
+          "aria-label": "Event",
+          "aria-description": "The accessible long event description",
+        },
+        headerCellTooltipProps: {
+          title: "The long event description",
+        },
+      },
       {
         title: "Probability",
         style: { width: "93px" },
         align: "right",
-        tooltip: "The probability",
+        headerCellProps: {
+          "aria-label": "Probability",
+          "aria-description": "The accessible long probability description",
+        },
+        headerCellTooltipProps: {
+          title: "The long probability description",
+        },
       },
       {
         title: "Time horizon",
         style: { width: "108px" },
         align: "right",
-        tooltip: "The time horizon",
+        headerCellProps: {
+          "aria-label": "Time horizon",
+          "aria-description": "The accessible long time horizon description",
+        },
+        headerCellTooltipProps: {
+          title: "The long time horizon description",
+        },
       },
       {
         title: "Related Assets",
         style: { width: "195px", paddingLeft: "30px" },
         align: "left",
-        tooltip: "The related Assets",
+        headerCellProps: {
+          "aria-label": "Related Assets",
+          "aria-description": "The accessible long related assets description",
+        },
+        headerCellTooltipProps: {
+          title: "The long related assets description",
+        },
       },
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],

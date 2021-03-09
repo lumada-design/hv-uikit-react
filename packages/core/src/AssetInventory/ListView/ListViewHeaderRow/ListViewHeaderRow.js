@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { HvTypography } from "../../..";
+import { HvTooltip, HvTypography } from "../../..";
 import styles from "./styles";
 
 const renderHeaderCells = (classes, columnConfiguration) =>
   columnConfiguration.map((configuration, index) => {
     const keyIndex = `th${index}`;
+    const { headerCellProps = {}, headerCellTooltipProps = {} } = configuration;
 
     return (
       <div
@@ -17,10 +18,21 @@ const renderHeaderCells = (classes, columnConfiguration) =>
         style={{ textAlign: configuration.align, ...configuration.style }}
         id={index}
         key={keyIndex}
-        title={configuration.tooltip}
-        aria-label={configuration.tooltip}
+        {...headerCellProps}
       >
-        <HvTypography variant="labelText">{configuration.title || ""}</HvTypography>
+        <HvTooltip
+          {...headerCellTooltipProps}
+          placement={headerCellTooltipProps.placement || "top-start"}
+          title={
+            headerCellTooltipProps.title ? (
+              <HvTypography variant="infoText">{headerCellTooltipProps.title}</HvTypography>
+            ) : (
+              ""
+            )
+          }
+        >
+          <HvTypography variant="labelText">{configuration.title || ""}</HvTypography>
+        </HvTooltip>
       </div>
     );
   });

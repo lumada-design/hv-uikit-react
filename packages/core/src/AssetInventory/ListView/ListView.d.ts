@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvTooltipProps } from "../../Tooltip";
 import { AssetInventoryMetadata } from "..";
 import { ViewConfiguration } from "../ViewConfiguration";
 
@@ -11,7 +12,14 @@ export interface ListViewConfiguration extends ViewConfiguration {
     title: string;
     style: object;
     align?: string;
-    tooltip?: string;
+    /**
+     * Extra properties for the cell in the column.
+     */
+    headerCellProps?: Record<string, any>;
+    /**
+     * Extra properties for the tooltip of the cell in the column.
+     */
+    headerCellTooltipProps?: HvTooltipProps;
   }[];
 }
 
