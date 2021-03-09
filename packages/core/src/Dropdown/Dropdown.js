@@ -375,7 +375,7 @@ HvDropdown.propTypes = {
      */
     title: PropTypes.string,
     /**
-     * The default when there are no options available.
+     * The placeholder value of the dropdown, when no value is selected.
      */
     select: PropTypes.string,
     /**
