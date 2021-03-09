@@ -13,13 +13,13 @@ export interface ListViewConfiguration extends ViewConfiguration {
     style: object;
     align?: string;
     /**
-     * Extra properties for the cell in the column.
+     * Extra properties for the header cell in the column.
      */
-    headerCellProps?: Record<string, any>;
+    cellProps?: Record<string, any>;
     /**
-     * Extra properties for the tooltip of the cell in the column.
+     * Extra properties for the tooltip of the header cell in the column.
      */
-    headerCellTooltipProps?: HvTooltipProps;
+    tooltipProps?: HvTooltipProps;
   }[];
 }
 

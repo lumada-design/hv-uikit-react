@@ -61,42 +61,27 @@ exports[`AssetInventoryListView should render correctly 1`] = `
       "columnConfiguration": Array [
         Object {
           "align": "left",
-          "headerCellProps": Object {
-            "aria-description": "The accessible long status description",
-            "aria-label": "Status",
-          },
-          "headerCellTooltipProps": Object {
-            "title": "The long status description",
-          },
           "style": Object {
             "paddingLeft": "8px",
             "width": "52px",
           },
           "title": "Status",
+          "tooltipProps": Object {
+            "title": "The long status description",
+          },
         },
         Object {
           "align": "left",
-          "headerCellProps": Object {
-            "aria-description": "The accessible long event description",
-            "aria-label": "Event",
-          },
-          "headerCellTooltipProps": Object {
-            "title": "The long event description",
-          },
           "style": Object {
             "width": "370px",
           },
           "title": "Event",
+          "tooltipProps": Object {
+            "title": "The long event description",
+          },
         },
         Object {
           "align": "right",
-          "headerCellProps": Object {
-            "aria-description": "The accessible long probability description",
-            "aria-label": "Probability",
-          },
-          "headerCellTooltipProps": Object {
-            "title": "The long probability description",
-          },
           "style": Object {
             "width": "93px",
           },
@@ -104,13 +89,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
         },
         Object {
           "align": "right",
-          "headerCellProps": Object {
-            "aria-description": "The accessible long time horizon description",
-            "aria-label": "Time horizon",
-          },
-          "headerCellTooltipProps": Object {
-            "title": "The long time horizon description",
-          },
           "style": Object {
             "width": "108px",
           },
@@ -118,13 +96,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
         },
         Object {
           "align": "left",
-          "headerCellProps": Object {
-            "aria-description": "The accessible long related assets description",
-            "aria-label": "Related Assets",
-          },
-          "headerCellTooltipProps": Object {
-            "title": "The long related assets description",
-          },
           "style": Object {
             "paddingLeft": "30px",
             "width": "195px",
@@ -205,42 +176,27 @@ exports[`AssetInventoryListView should render correctly 1`] = `
         "columnConfiguration": Array [
           Object {
             "align": "left",
-            "headerCellProps": Object {
-              "aria-description": "The accessible long status description",
-              "aria-label": "Status",
-            },
-            "headerCellTooltipProps": Object {
-              "title": "The long status description",
-            },
             "style": Object {
               "paddingLeft": "8px",
               "width": "52px",
             },
             "title": "Status",
+            "tooltipProps": Object {
+              "title": "The long status description",
+            },
           },
           Object {
             "align": "left",
-            "headerCellProps": Object {
-              "aria-description": "The accessible long event description",
-              "aria-label": "Event",
-            },
-            "headerCellTooltipProps": Object {
-              "title": "The long event description",
-            },
             "style": Object {
               "width": "370px",
             },
             "title": "Event",
+            "tooltipProps": Object {
+              "title": "The long event description",
+            },
           },
           Object {
             "align": "right",
-            "headerCellProps": Object {
-              "aria-description": "The accessible long probability description",
-              "aria-label": "Probability",
-            },
-            "headerCellTooltipProps": Object {
-              "title": "The long probability description",
-            },
             "style": Object {
               "width": "93px",
             },
@@ -248,13 +204,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
           },
           Object {
             "align": "right",
-            "headerCellProps": Object {
-              "aria-description": "The accessible long time horizon description",
-              "aria-label": "Time horizon",
-            },
-            "headerCellTooltipProps": Object {
-              "title": "The long time horizon description",
-            },
             "style": Object {
               "width": "108px",
             },
@@ -262,13 +211,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
           },
           Object {
             "align": "left",
-            "headerCellProps": Object {
-              "aria-description": "The accessible long related assets description",
-              "aria-label": "Related Assets",
-            },
-            "headerCellTooltipProps": Object {
-              "title": "The long related assets description",
-            },
             "style": Object {
               "paddingLeft": "30px",
               "width": "195px",
@@ -585,42 +527,27 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       "columnConfiguration": Array [
                                         Object {
                                           "align": "left",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long status description",
-                                            "aria-label": "Status",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long status description",
-                                          },
                                           "style": Object {
                                             "paddingLeft": "8px",
                                             "width": "52px",
                                           },
                                           "title": "Status",
+                                          "tooltipProps": Object {
+                                            "title": "The long status description",
+                                          },
                                         },
                                         Object {
                                           "align": "left",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long event description",
-                                            "aria-label": "Event",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long event description",
-                                          },
                                           "style": Object {
                                             "width": "370px",
                                           },
                                           "title": "Event",
+                                          "tooltipProps": Object {
+                                            "title": "The long event description",
+                                          },
                                         },
                                         Object {
                                           "align": "right",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long probability description",
-                                            "aria-label": "Probability",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long probability description",
-                                          },
                                           "style": Object {
                                             "width": "93px",
                                           },
@@ -628,13 +555,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         },
                                         Object {
                                           "align": "right",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long time horizon description",
-                                            "aria-label": "Time horizon",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long time horizon description",
-                                          },
                                           "style": Object {
                                             "width": "108px",
                                           },
@@ -642,13 +562,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         },
                                         Object {
                                           "align": "left",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long related assets description",
-                                            "aria-label": "Related Assets",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long related assets description",
-                                          },
                                           "style": Object {
                                             "paddingLeft": "30px",
                                             "width": "195px",
@@ -682,8 +595,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         aria-label="selectable"
                                                       />
                                                       <div
-                                                        aria-description="The accessible long status description"
-                                                        aria-label="Status"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="0"
                                                         style="text-align: left; padding-left: 8px; width: 52px;"
@@ -695,8 +606,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long event description"
-                                                        aria-label="Event"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
                                                         style="text-align: left; width: 370px;"
@@ -708,40 +617,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long probability description"
-                                                        aria-label="Probability"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
                                                         style="text-align: right; width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-labelText"
+                                                          title=""
                                                         >
                                                           Probability
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long time horizon description"
-                                                        aria-label="Time horizon"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
                                                         style="text-align: right; width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-labelText"
+                                                          title=""
                                                         >
                                                           Time horizon
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long related assets description"
-                                                        aria-label="Related Assets"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
                                                         style="text-align: left; width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-labelText"
+                                                          title=""
                                                         >
                                                           Related Assets
                                                         </p>
@@ -1292,42 +1198,27 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         "columnConfiguration": Array [
                                           Object {
                                             "align": "left",
-                                            "headerCellProps": Object {
-                                              "aria-description": "The accessible long status description",
-                                              "aria-label": "Status",
-                                            },
-                                            "headerCellTooltipProps": Object {
-                                              "title": "The long status description",
-                                            },
                                             "style": Object {
                                               "paddingLeft": "8px",
                                               "width": "52px",
                                             },
                                             "title": "Status",
+                                            "tooltipProps": Object {
+                                              "title": "The long status description",
+                                            },
                                           },
                                           Object {
                                             "align": "left",
-                                            "headerCellProps": Object {
-                                              "aria-description": "The accessible long event description",
-                                              "aria-label": "Event",
-                                            },
-                                            "headerCellTooltipProps": Object {
-                                              "title": "The long event description",
-                                            },
                                             "style": Object {
                                               "width": "370px",
                                             },
                                             "title": "Event",
+                                            "tooltipProps": Object {
+                                              "title": "The long event description",
+                                            },
                                           },
                                           Object {
                                             "align": "right",
-                                            "headerCellProps": Object {
-                                              "aria-description": "The accessible long probability description",
-                                              "aria-label": "Probability",
-                                            },
-                                            "headerCellTooltipProps": Object {
-                                              "title": "The long probability description",
-                                            },
                                             "style": Object {
                                               "width": "93px",
                                             },
@@ -1335,13 +1226,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                           },
                                           Object {
                                             "align": "right",
-                                            "headerCellProps": Object {
-                                              "aria-description": "The accessible long time horizon description",
-                                              "aria-label": "Time horizon",
-                                            },
-                                            "headerCellTooltipProps": Object {
-                                              "title": "The long time horizon description",
-                                            },
                                             "style": Object {
                                               "width": "108px",
                                             },
@@ -1349,13 +1233,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                           },
                                           Object {
                                             "align": "left",
-                                            "headerCellProps": Object {
-                                              "aria-description": "The accessible long related assets description",
-                                              "aria-label": "Related Assets",
-                                            },
-                                            "headerCellTooltipProps": Object {
-                                              "title": "The long related assets description",
-                                            },
                                             "style": Object {
                                               "paddingLeft": "30px",
                                               "width": "195px",
@@ -1389,8 +1266,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           aria-label="selectable"
                                                         />
                                                         <div
-                                                          aria-description="The accessible long status description"
-                                                          aria-label="Status"
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="0"
                                                           style="text-align: left; padding-left: 8px; width: 52px;"
@@ -1402,8 +1277,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           </p>
                                                         </div>
                                                         <div
-                                                          aria-description="The accessible long event description"
-                                                          aria-label="Event"
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="1"
                                                           style="text-align: left; width: 370px;"
@@ -1415,40 +1288,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           </p>
                                                         </div>
                                                         <div
-                                                          aria-description="The accessible long probability description"
-                                                          aria-label="Probability"
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="2"
                                                           style="text-align: right; width: 93px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-labelText"
+                                                            title=""
                                                           >
                                                             Probability
                                                           </p>
                                                         </div>
                                                         <div
-                                                          aria-description="The accessible long time horizon description"
-                                                          aria-label="Time horizon"
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="3"
                                                           style="text-align: right; width: 108px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-labelText"
+                                                            title=""
                                                           >
                                                             Time horizon
                                                           </p>
                                                         </div>
                                                         <div
-                                                          aria-description="The accessible long related assets description"
-                                                          aria-label="Related Assets"
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="4"
                                                           style="text-align: left; width: 195px; padding-left: 30px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-labelText"
+                                                            title=""
                                                           >
                                                             Related Assets
                                                           </p>
@@ -1986,8 +1856,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         aria-label="selectable"
                                       />
                                       <div
-                                        aria-description="The accessible long status description"
-                                        aria-label="Status"
                                         className="HvListViewHeaderRow-headCell"
                                         id={0}
                                         key="th0"
@@ -2211,8 +2079,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         </WithStyles(HvTooltip)>
                                       </div>
                                       <div
-                                        aria-description="The accessible long event description"
-                                        aria-label="Event"
                                         className="HvListViewHeaderRow-headCell"
                                         id={1}
                                         key="th1"
@@ -2435,8 +2301,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         </WithStyles(HvTooltip)>
                                       </div>
                                       <div
-                                        aria-description="The accessible long probability description"
-                                        aria-label="Probability"
                                         className="HvListViewHeaderRow-headCell"
                                         id={2}
                                         key="th2"
@@ -2449,13 +2313,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       >
                                         <WithStyles(HvTooltip)
                                           placement="top-start"
-                                          title={
-                                            <ForwardRef(WithStyles)
-                                              variant="infoText"
-                                            >
-                                              The long probability description
-                                            </ForwardRef(WithStyles)>
-                                          }
+                                          title=""
                                         >
                                           <HvTooltip
                                             classes={
@@ -2474,13 +2332,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               }
                                             }
                                             placement="top-start"
-                                            title={
-                                              <ForwardRef(WithStyles)
-                                                variant="infoText"
-                                              >
-                                                The long probability description
-                                              </ForwardRef(WithStyles)>
-                                            }
+                                            title=""
                                           >
                                             <WithStyles(ForwardRef(Tooltip))
                                               TransitionComponent={
@@ -2510,13 +2362,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               }
                                               enterDelay={300}
                                               placement="top-start"
-                                              title={
-                                                <ForwardRef(WithStyles)
-                                                  variant="infoText"
-                                                >
-                                                  The long probability description
-                                                </ForwardRef(WithStyles)>
-                                              }
+                                              title=""
                                             >
                                               <ForwardRef(Tooltip)
                                                 TransitionComponent={
@@ -2555,13 +2401,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 }
                                                 enterDelay={300}
                                                 placement="top-start"
-                                                title={
-                                                  <ForwardRef(WithStyles)
-                                                    variant="infoText"
-                                                  >
-                                                    The long probability description
-                                                  </ForwardRef(WithStyles)>
-                                                }
+                                                title=""
                                               >
                                                 <WithStyles(ForwardRef)
                                                   aria-describedby={null}
@@ -2572,7 +2412,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   onMouseOver={[Function]}
                                                   onTouchEnd={[Function]}
                                                   onTouchStart={[Function]}
-                                                  title={null}
+                                                  title=""
                                                   variant="labelText"
                                                 >
                                                   <ForwardRef
@@ -2611,7 +2451,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     onMouseOver={[Function]}
                                                     onTouchEnd={[Function]}
                                                     onTouchStart={[Function]}
-                                                    title={null}
+                                                    title=""
                                                     variant="labelText"
                                                   >
                                                     <p
@@ -2623,7 +2463,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       onMouseOver={[Function]}
                                                       onTouchEnd={[Function]}
                                                       onTouchStart={[Function]}
-                                                      title={null}
+                                                      title=""
                                                     >
                                                       Probability
                                                     </p>
@@ -2633,6 +2473,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   anchorEl={
                                                     <p
                                                       class="HvTypography-root HvTypography-labelText"
+                                                      title=""
                                                     >
                                                       Probability
                                                     </p>
@@ -2659,8 +2500,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         </WithStyles(HvTooltip)>
                                       </div>
                                       <div
-                                        aria-description="The accessible long time horizon description"
-                                        aria-label="Time horizon"
                                         className="HvListViewHeaderRow-headCell"
                                         id={3}
                                         key="th3"
@@ -2673,13 +2512,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       >
                                         <WithStyles(HvTooltip)
                                           placement="top-start"
-                                          title={
-                                            <ForwardRef(WithStyles)
-                                              variant="infoText"
-                                            >
-                                              The long time horizon description
-                                            </ForwardRef(WithStyles)>
-                                          }
+                                          title=""
                                         >
                                           <HvTooltip
                                             classes={
@@ -2698,13 +2531,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               }
                                             }
                                             placement="top-start"
-                                            title={
-                                              <ForwardRef(WithStyles)
-                                                variant="infoText"
-                                              >
-                                                The long time horizon description
-                                              </ForwardRef(WithStyles)>
-                                            }
+                                            title=""
                                           >
                                             <WithStyles(ForwardRef(Tooltip))
                                               TransitionComponent={
@@ -2734,13 +2561,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               }
                                               enterDelay={300}
                                               placement="top-start"
-                                              title={
-                                                <ForwardRef(WithStyles)
-                                                  variant="infoText"
-                                                >
-                                                  The long time horizon description
-                                                </ForwardRef(WithStyles)>
-                                              }
+                                              title=""
                                             >
                                               <ForwardRef(Tooltip)
                                                 TransitionComponent={
@@ -2779,13 +2600,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 }
                                                 enterDelay={300}
                                                 placement="top-start"
-                                                title={
-                                                  <ForwardRef(WithStyles)
-                                                    variant="infoText"
-                                                  >
-                                                    The long time horizon description
-                                                  </ForwardRef(WithStyles)>
-                                                }
+                                                title=""
                                               >
                                                 <WithStyles(ForwardRef)
                                                   aria-describedby={null}
@@ -2796,7 +2611,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   onMouseOver={[Function]}
                                                   onTouchEnd={[Function]}
                                                   onTouchStart={[Function]}
-                                                  title={null}
+                                                  title=""
                                                   variant="labelText"
                                                 >
                                                   <ForwardRef
@@ -2835,7 +2650,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     onMouseOver={[Function]}
                                                     onTouchEnd={[Function]}
                                                     onTouchStart={[Function]}
-                                                    title={null}
+                                                    title=""
                                                     variant="labelText"
                                                   >
                                                     <p
@@ -2847,7 +2662,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       onMouseOver={[Function]}
                                                       onTouchEnd={[Function]}
                                                       onTouchStart={[Function]}
-                                                      title={null}
+                                                      title=""
                                                     >
                                                       Time horizon
                                                     </p>
@@ -2857,6 +2672,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   anchorEl={
                                                     <p
                                                       class="HvTypography-root HvTypography-labelText"
+                                                      title=""
                                                     >
                                                       Time horizon
                                                     </p>
@@ -2883,8 +2699,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         </WithStyles(HvTooltip)>
                                       </div>
                                       <div
-                                        aria-description="The accessible long related assets description"
-                                        aria-label="Related Assets"
                                         className="HvListViewHeaderRow-headCell"
                                         id={4}
                                         key="th4"
@@ -2898,13 +2712,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       >
                                         <WithStyles(HvTooltip)
                                           placement="top-start"
-                                          title={
-                                            <ForwardRef(WithStyles)
-                                              variant="infoText"
-                                            >
-                                              The long related assets description
-                                            </ForwardRef(WithStyles)>
-                                          }
+                                          title=""
                                         >
                                           <HvTooltip
                                             classes={
@@ -2923,13 +2731,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               }
                                             }
                                             placement="top-start"
-                                            title={
-                                              <ForwardRef(WithStyles)
-                                                variant="infoText"
-                                              >
-                                                The long related assets description
-                                              </ForwardRef(WithStyles)>
-                                            }
+                                            title=""
                                           >
                                             <WithStyles(ForwardRef(Tooltip))
                                               TransitionComponent={
@@ -2959,13 +2761,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                               }
                                               enterDelay={300}
                                               placement="top-start"
-                                              title={
-                                                <ForwardRef(WithStyles)
-                                                  variant="infoText"
-                                                >
-                                                  The long related assets description
-                                                </ForwardRef(WithStyles)>
-                                              }
+                                              title=""
                                             >
                                               <ForwardRef(Tooltip)
                                                 TransitionComponent={
@@ -3004,13 +2800,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 }
                                                 enterDelay={300}
                                                 placement="top-start"
-                                                title={
-                                                  <ForwardRef(WithStyles)
-                                                    variant="infoText"
-                                                  >
-                                                    The long related assets description
-                                                  </ForwardRef(WithStyles)>
-                                                }
+                                                title=""
                                               >
                                                 <WithStyles(ForwardRef)
                                                   aria-describedby={null}
@@ -3021,7 +2811,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   onMouseOver={[Function]}
                                                   onTouchEnd={[Function]}
                                                   onTouchStart={[Function]}
-                                                  title={null}
+                                                  title=""
                                                   variant="labelText"
                                                 >
                                                   <ForwardRef
@@ -3060,7 +2850,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     onMouseOver={[Function]}
                                                     onTouchEnd={[Function]}
                                                     onTouchStart={[Function]}
-                                                    title={null}
+                                                    title=""
                                                     variant="labelText"
                                                   >
                                                     <p
@@ -3072,7 +2862,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       onMouseOver={[Function]}
                                                       onTouchEnd={[Function]}
                                                       onTouchStart={[Function]}
-                                                      title={null}
+                                                      title=""
                                                     >
                                                       Related Assets
                                                     </p>
@@ -3082,6 +2872,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   anchorEl={
                                                     <p
                                                       class="HvTypography-root HvTypography-labelText"
+                                                      title=""
                                                     >
                                                       Related Assets
                                                     </p>
@@ -3150,8 +2941,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       aria-label="selectable"
                                                     />
                                                     <div
-                                                      aria-description="The accessible long status description"
-                                                      aria-label="Status"
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="0"
                                                       style="text-align: left; padding-left: 8px; width: 52px;"
@@ -3163,8 +2952,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       </p>
                                                     </div>
                                                     <div
-                                                      aria-description="The accessible long event description"
-                                                      aria-label="Event"
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="1"
                                                       style="text-align: left; width: 370px;"
@@ -3176,40 +2963,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       </p>
                                                     </div>
                                                     <div
-                                                      aria-description="The accessible long probability description"
-                                                      aria-label="Probability"
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="2"
                                                       style="text-align: right; width: 93px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-labelText"
+                                                        title=""
                                                       >
                                                         Probability
                                                       </p>
                                                     </div>
                                                     <div
-                                                      aria-description="The accessible long time horizon description"
-                                                      aria-label="Time horizon"
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="3"
                                                       style="text-align: right; width: 108px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-labelText"
+                                                        title=""
                                                       >
                                                         Time horizon
                                                       </p>
                                                     </div>
                                                     <div
-                                                      aria-description="The accessible long related assets description"
-                                                      aria-label="Related Assets"
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="4"
                                                       style="text-align: left; width: 195px; padding-left: 30px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-labelText"
+                                                        title=""
                                                       >
                                                         Related Assets
                                                       </p>
@@ -3793,42 +3577,27 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       "columnConfiguration": Array [
                                         Object {
                                           "align": "left",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long status description",
-                                            "aria-label": "Status",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long status description",
-                                          },
                                           "style": Object {
                                             "paddingLeft": "8px",
                                             "width": "52px",
                                           },
                                           "title": "Status",
+                                          "tooltipProps": Object {
+                                            "title": "The long status description",
+                                          },
                                         },
                                         Object {
                                           "align": "left",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long event description",
-                                            "aria-label": "Event",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long event description",
-                                          },
                                           "style": Object {
                                             "width": "370px",
                                           },
                                           "title": "Event",
+                                          "tooltipProps": Object {
+                                            "title": "The long event description",
+                                          },
                                         },
                                         Object {
                                           "align": "right",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long probability description",
-                                            "aria-label": "Probability",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long probability description",
-                                          },
                                           "style": Object {
                                             "width": "93px",
                                           },
@@ -3836,13 +3605,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         },
                                         Object {
                                           "align": "right",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long time horizon description",
-                                            "aria-label": "Time horizon",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long time horizon description",
-                                          },
                                           "style": Object {
                                             "width": "108px",
                                           },
@@ -3850,13 +3612,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         },
                                         Object {
                                           "align": "left",
-                                          "headerCellProps": Object {
-                                            "aria-description": "The accessible long related assets description",
-                                            "aria-label": "Related Assets",
-                                          },
-                                          "headerCellTooltipProps": Object {
-                                            "title": "The long related assets description",
-                                          },
                                           "style": Object {
                                             "paddingLeft": "30px",
                                             "width": "195px",
@@ -3890,8 +3645,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         aria-label="selectable"
                                                       />
                                                       <div
-                                                        aria-description="The accessible long status description"
-                                                        aria-label="Status"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="0"
                                                         style="text-align: left; padding-left: 8px; width: 52px;"
@@ -3903,8 +3656,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long event description"
-                                                        aria-label="Event"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
                                                         style="text-align: left; width: 370px;"
@@ -3916,40 +3667,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long probability description"
-                                                        aria-label="Probability"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
                                                         style="text-align: right; width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-labelText"
+                                                          title=""
                                                         >
                                                           Probability
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long time horizon description"
-                                                        aria-label="Time horizon"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
                                                         style="text-align: right; width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-labelText"
+                                                          title=""
                                                         >
                                                           Time horizon
                                                         </p>
                                                       </div>
                                                       <div
-                                                        aria-description="The accessible long related assets description"
-                                                        aria-label="Related Assets"
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
                                                         style="text-align: left; width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-labelText"
+                                                          title=""
                                                         >
                                                           Related Assets
                                                         </p>
@@ -5217,8 +4965,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   aria-label="selectable"
                                                                 />
                                                                 <div
-                                                                  aria-description="The accessible long status description"
-                                                                  aria-label="Status"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="0"
                                                                   style="text-align: left; padding-left: 8px; width: 52px;"
@@ -5230,8 +4976,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long event description"
-                                                                  aria-label="Event"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
                                                                   style="text-align: left; width: 370px;"
@@ -5243,40 +4987,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long probability description"
-                                                                  aria-label="Probability"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
                                                                   style="text-align: right; width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Probability
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long time horizon description"
-                                                                  aria-label="Time horizon"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
                                                                   style="text-align: right; width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Time horizon
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long related assets description"
-                                                                  aria-label="Related Assets"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
                                                                   style="text-align: left; width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Related Assets
                                                                   </p>
@@ -5848,8 +5589,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     aria-label="selectable"
                                                                   />
                                                                   <div
-                                                                    aria-description="The accessible long status description"
-                                                                    aria-label="Status"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="0"
                                                                     style="text-align: left; padding-left: 8px; width: 52px;"
@@ -5861,8 +5600,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long event description"
-                                                                    aria-label="Event"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
                                                                     style="text-align: left; width: 370px;"
@@ -5874,40 +5611,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long probability description"
-                                                                    aria-label="Probability"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
                                                                     style="text-align: right; width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Probability
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long time horizon description"
-                                                                    aria-label="Time horizon"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
                                                                     style="text-align: right; width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Time horizon
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long related assets description"
-                                                                    aria-label="Related Assets"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
                                                                     style="text-align: left; width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Related Assets
                                                                     </p>
@@ -8557,8 +8291,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   aria-label="selectable"
                                                                 />
                                                                 <div
-                                                                  aria-description="The accessible long status description"
-                                                                  aria-label="Status"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="0"
                                                                   style="text-align: left; padding-left: 8px; width: 52px;"
@@ -8570,8 +8302,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long event description"
-                                                                  aria-label="Event"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
                                                                   style="text-align: left; width: 370px;"
@@ -8583,40 +8313,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long probability description"
-                                                                  aria-label="Probability"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
                                                                   style="text-align: right; width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Probability
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long time horizon description"
-                                                                  aria-label="Time horizon"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
                                                                   style="text-align: right; width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Time horizon
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long related assets description"
-                                                                  aria-label="Related Assets"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
                                                                   style="text-align: left; width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Related Assets
                                                                   </p>
@@ -9188,8 +8915,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     aria-label="selectable"
                                                                   />
                                                                   <div
-                                                                    aria-description="The accessible long status description"
-                                                                    aria-label="Status"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="0"
                                                                     style="text-align: left; padding-left: 8px; width: 52px;"
@@ -9201,8 +8926,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long event description"
-                                                                    aria-label="Event"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
                                                                     style="text-align: left; width: 370px;"
@@ -9214,40 +8937,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long probability description"
-                                                                    aria-label="Probability"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
                                                                     style="text-align: right; width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Probability
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long time horizon description"
-                                                                    aria-label="Time horizon"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
                                                                     style="text-align: right; width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Time horizon
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long related assets description"
-                                                                    aria-label="Related Assets"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
                                                                     style="text-align: left; width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Related Assets
                                                                     </p>
@@ -11897,8 +11617,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   aria-label="selectable"
                                                                 />
                                                                 <div
-                                                                  aria-description="The accessible long status description"
-                                                                  aria-label="Status"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="0"
                                                                   style="text-align: left; padding-left: 8px; width: 52px;"
@@ -11910,8 +11628,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long event description"
-                                                                  aria-label="Event"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
                                                                   style="text-align: left; width: 370px;"
@@ -11923,40 +11639,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long probability description"
-                                                                  aria-label="Probability"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
                                                                   style="text-align: right; width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Probability
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long time horizon description"
-                                                                  aria-label="Time horizon"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
                                                                   style="text-align: right; width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Time horizon
                                                                   </p>
                                                                 </div>
                                                                 <div
-                                                                  aria-description="The accessible long related assets description"
-                                                                  aria-label="Related Assets"
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
                                                                   style="text-align: left; width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-labelText"
+                                                                    title=""
                                                                   >
                                                                     Related Assets
                                                                   </p>
@@ -12528,8 +12241,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     aria-label="selectable"
                                                                   />
                                                                   <div
-                                                                    aria-description="The accessible long status description"
-                                                                    aria-label="Status"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="0"
                                                                     style="text-align: left; padding-left: 8px; width: 52px;"
@@ -12541,8 +12252,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long event description"
-                                                                    aria-label="Event"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
                                                                     style="text-align: left; width: 370px;"
@@ -12554,40 +12263,37 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long probability description"
-                                                                    aria-label="Probability"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
                                                                     style="text-align: right; width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Probability
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long time horizon description"
-                                                                    aria-label="Time horizon"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
                                                                     style="text-align: right; width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Time horizon
                                                                     </p>
                                                                   </div>
                                                                   <div
-                                                                    aria-description="The accessible long related assets description"
-                                                                    aria-label="Related Assets"
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
                                                                     style="text-align: left; width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-labelText"
+                                                                      title=""
                                                                     >
                                                                       Related Assets
                                                                     </p>

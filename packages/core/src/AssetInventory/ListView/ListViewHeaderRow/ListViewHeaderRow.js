@@ -8,7 +8,7 @@ import styles from "./styles";
 const renderHeaderCells = (classes, columnConfiguration) =>
   columnConfiguration.map((configuration, index) => {
     const keyIndex = `th${index}`;
-    const { headerCellProps = {}, headerCellTooltipProps = {} } = configuration;
+    const { cellProps = {}, tooltipProps = {} } = configuration;
 
     return (
       <div
@@ -18,14 +18,14 @@ const renderHeaderCells = (classes, columnConfiguration) =>
         style={{ textAlign: configuration.align, ...configuration.style }}
         id={index}
         key={keyIndex}
-        {...headerCellProps}
+        {...cellProps}
       >
         <HvTooltip
-          {...headerCellTooltipProps}
-          placement={headerCellTooltipProps.placement || "top-start"}
+          {...tooltipProps}
+          placement={tooltipProps.placement || "top-start"}
           title={
-            headerCellTooltipProps.title ? (
-              <HvTypography variant="infoText">{headerCellTooltipProps.title}</HvTypography>
+            tooltipProps.title ? (
+              <HvTypography variant="infoText">{tooltipProps.title}</HvTypography>
             ) : (
               ""
             )

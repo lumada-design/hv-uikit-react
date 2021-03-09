@@ -149,11 +149,7 @@ export const Main = () => {
         title: "Status",
         style: { paddingLeft: "8px", width: "52px" },
         align: "left",
-        headerCellProps: {
-          "aria-label": "Status",
-          "aria-description": "The accessible long status description",
-        },
-        headerCellTooltipProps: {
+        tooltipProps: {
           title: "The long status description",
         },
       },
@@ -161,11 +157,7 @@ export const Main = () => {
         title: "Event",
         style: { width: "370px" },
         align: "left",
-        headerCellProps: {
-          "aria-label": "Event",
-          "aria-description": "The accessible long event description",
-        },
-        headerCellTooltipProps: {
+        tooltipProps: {
           title: "The long event description",
         },
       },
@@ -173,37 +165,16 @@ export const Main = () => {
         title: "Probability",
         style: { width: "93px" },
         align: "right",
-        headerCellProps: {
-          "aria-label": "Probability",
-          "aria-description": "The accessible long probability description",
-        },
-        headerCellTooltipProps: {
-          title: "The long probability description",
-        },
       },
       {
         title: "Time horizon",
         style: { width: "108px" },
         align: "right",
-        headerCellProps: {
-          "aria-label": "Time horizon",
-          "aria-description": "The accessible long time horizon description",
-        },
-        headerCellTooltipProps: {
-          title: "The long time horizon description",
-        },
       },
       {
         title: "Related Assets",
         style: { width: "195px", paddingLeft: "30px" },
         align: "left",
-        headerCellProps: {
-          "aria-label": "Related Assets",
-          "aria-description": "The accessible long related assets description",
-        },
-        headerCellTooltipProps: {
-          title: "The long related assets description",
-        },
       },
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],
