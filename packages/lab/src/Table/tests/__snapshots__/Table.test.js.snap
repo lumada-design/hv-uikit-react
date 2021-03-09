@@ -65,7 +65,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            10/14/2018
+            2021-11-24
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -80,7 +80,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            100%
+            28
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -90,7 +90,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            Low
+            High
           </td>
         </tr>
         <tr
@@ -104,7 +104,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            10/14/2018
+            2018-08-15
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -119,17 +119,17 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            99%
+            88
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            Critical
+            Minor
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            High
+            Low
           </td>
         </tr>
         <tr
@@ -143,7 +143,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            10/14/2018
+            2018-11-05
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -158,7 +158,46 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            98%
+            92
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Critical
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Low
+          </td>
+        </tr>
+        <tr
+          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
+        >
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Event 3
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            2018-04-18
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Anomaly detection
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            Open
+          </td>
+          <td
+            class="HvTableCell-root HvTableCell-body"
+          >
+            89
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -177,51 +216,12 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            Event 3
-          </td>
-          <td
-            class="HvTableCell-root HvTableCell-body"
-          >
-            10/14/2018
-          </td>
-          <td
-            class="HvTableCell-root HvTableCell-body"
-          >
-            Anomaly detection
-          </td>
-          <td
-            class="HvTableCell-root HvTableCell-body"
-          >
-            Open
-          </td>
-          <td
-            class="HvTableCell-root HvTableCell-body"
-          >
-            97%
-          </td>
-          <td
-            class="HvTableCell-root HvTableCell-body"
-          >
-            Minor
-          </td>
-          <td
-            class="HvTableCell-root HvTableCell-body"
-          >
-            Low
-          </td>
-        </tr>
-        <tr
-          class="HvTableRow-root HvTableRow-hover HvTableRow-body"
-        >
-          <td
-            class="HvTableCell-root HvTableCell-body"
-          >
             Event 4
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            10/14/2018
+            2021-06-28
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -236,7 +236,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            96%
+            80
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -246,7 +246,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            Low
+            High
           </td>
         </tr>
         <tr
@@ -260,7 +260,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            10/14/2018
+            2020-01-20
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -275,7 +275,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            95%
+            28
           </td>
           <td
             class="HvTableCell-root HvTableCell-body"
@@ -285,7 +285,7 @@ exports[`Table Main Story should match snapshot 1`] = `
           <td
             class="HvTableCell-root HvTableCell-body"
           >
-            Low
+            High
           </td>
         </tr>
       </tbody>
