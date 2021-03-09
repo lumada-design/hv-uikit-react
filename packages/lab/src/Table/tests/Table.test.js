@@ -3,8 +3,9 @@
 import React from "react";
 import range from "lodash/range";
 import { render } from "testing-utils";
+import userEvent from "@testing-library/user-event";
 
-import { Main } from "../stories/Table.stories";
+import { Main, Pagination } from "../stories/Table.stories";
 import {
   HvTable,
   HvTableBody,
@@ -98,6 +99,58 @@ describe("Table", () => {
 
       expect(getAllByRole("row").length).toBe(1);
       expect(getAllByRole("columnheader").length).toBe(NUM_COLS);
+    });
+  });
+
+  describe("Pagination Story", () => {
+    it("should be defined", () => {
+      const { container } = render(<Pagination />);
+      expect(container).toBeDefined();
+    });
+
+    it("should render the table elements", () => {
+      const { getByRole, getAllByRole } = render(<Pagination />);
+
+      expect(getByRole("table")).toBeInTheDocument();
+
+      expect(getAllByRole("cell").length).toBeGreaterThan(0);
+      expect(getAllByRole("row").length).toBeGreaterThan(0);
+    });
+
+    it("should contain the correct page elements", () => {
+      const { getByLabelText, queryByText, getAllByRole } = render(<Pagination />);
+
+      const [fistPage, previousPage, nextPage, lastPage] = [
+        "First Page",
+        "Previous Page",
+        "Next Page",
+        "Last Page",
+      ].map(getByLabelText);
+
+      expect(getAllByRole("row").length).toBe(11);
+      expect(queryByText("Event 0")).toBeInTheDocument();
+      expect(queryByText("Event 10")).not.toBeInTheDocument();
+
+      userEvent.click(fistPage);
+      expect(getAllByRole("row").length).toBe(11);
+      expect(queryByText("Event 0")).toBeInTheDocument();
+      expect(queryByText("Event 10")).not.toBeInTheDocument();
+
+      userEvent.click(previousPage);
+      expect(getAllByRole("row").length).toBe(11);
+      expect(queryByText("Event 0")).toBeInTheDocument();
+      expect(queryByText("Event 10")).not.toBeInTheDocument();
+
+      userEvent.click(nextPage);
+      expect(getAllByRole("row").length).toBe(11);
+      expect(queryByText("Event 0")).not.toBeInTheDocument();
+      expect(queryByText("Event 10")).toBeInTheDocument();
+
+      userEvent.click(lastPage);
+      expect(getAllByRole("row").length).toBe(11);
+      expect(queryByText("Event 0")).not.toBeInTheDocument();
+      expect(queryByText("Event 29")).not.toBeInTheDocument();
+      expect(queryByText("Event 30")).toBeInTheDocument();
     });
   });
 });

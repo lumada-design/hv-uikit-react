@@ -24,6 +24,7 @@ const newEntry = (value, i) => {
 export const makeData = (len = 10) => Array.from(Array(len), newEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
+// width is only used if explicitly passed in column.getHeaderProps
 export const getColumns = () => [
   { Header: "Title", accessor: "name", width: 260 },
   { Header: "Time", accessor: "createdDate" },
