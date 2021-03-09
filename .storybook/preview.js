@@ -32,6 +32,8 @@ export const parameters = {
   },
 };
 
+let appCounter = 0;
+
 const App = ({ story: Story }) => {
   const channel = addons.getChannel();
   const theme = getTheme();
@@ -42,8 +44,18 @@ const App = ({ story: Story }) => {
     return () => channel.off(UIKIT_THEME, setThemeName);
   }, [channel, setThemeName]);
 
+  const instanceNumber = appCounter++;
+
   return (
-    <HvProvider uiKitTheme={themeName}>
+    <HvProvider
+      uiKitTheme={themeName}
+      // prevent the seed prefix for the first instance
+      // allows to keep the classnames clean and stable for E2E tests
+      // that access via /iframe.html?id=
+      generateClassNameOptions={
+        instanceNumber > 0 ? { seed: `sb-preview-${instanceNumber}` } : undefined
+      }
+    >
       <Story />
     </HvProvider>
   );

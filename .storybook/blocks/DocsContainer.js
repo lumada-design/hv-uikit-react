@@ -19,7 +19,9 @@ export default ({ context, children }) => {
     <>
       <Global styles={getDocsStyles(theme)} />
       <DocsContainer context={docsContext}>
-        <HvProvider uiKitTheme={themeName}>{children}</HvProvider>
+        <HvProvider uiKitTheme={themeName} generateClassNameOptions={{ seed: "sb-docs-container" }}>
+          {children}
+        </HvProvider>
       </DocsContainer>
     </>
   );
