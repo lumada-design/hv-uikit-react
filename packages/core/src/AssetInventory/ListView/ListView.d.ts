@@ -11,6 +11,7 @@ export interface ListViewConfiguration extends ViewConfiguration {
     title: string;
     style: object;
     align?: string;
+    tooltip?: string;
   }[];
 }
 
@@ -26,7 +27,7 @@ export interface HvListViewProps
   emptyComponent: React.ReactNode;
   /**
    * Configuration used to setup various properties of the view.
-   * This configuration is propagated to the known childs of the asset inventory through context.
+   * This configuration is propagated to the known children of the asset inventory through context.
    */
   viewConfiguration?: ListViewConfiguration;
   /**

@@ -14,9 +14,11 @@ const renderHeaderCells = (classes, columnConfiguration) =>
         className={clsx(classes.headCell, {
           [classes[configuration.spacing]]: configuration.spacing,
         })}
-        style={{ textAlign: configuration?.align, ...configuration.style }}
+        style={{ textAlign: configuration.align, ...configuration.style }}
         id={index}
         key={keyIndex}
+        title={configuration.tooltip}
+        aria-label={configuration.tooltip}
       >
         <HvTypography variant="labelText">{configuration.title || ""}</HvTypography>
       </div>
