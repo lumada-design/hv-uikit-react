@@ -20,7 +20,7 @@ const getSelectionLabel = (list, labels, multiSelect) => {
   const hasSelection = selected.length > 0;
   const isSingleSelection = selected.length === 1;
 
-  let selectionLabel = multiSelect ? labels.selectAll : labels.select;
+  let selectionLabel = labels.select;
 
   if (hasSelection && isSingleSelection) {
     selectionLabel = selected[0].label;

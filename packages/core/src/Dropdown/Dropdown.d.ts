@@ -9,7 +9,7 @@ export interface DropDownLabelsProp extends ListLabelsProp {
    */
   title?: string;
   /**
-   * The default when there are no options available.
+   * The placeholder value of the dropdown, when no value is selected.
    */
   select?: string;
   /**

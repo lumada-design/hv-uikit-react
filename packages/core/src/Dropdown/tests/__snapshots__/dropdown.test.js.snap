@@ -221,7 +221,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                   className="HvDropdown-selection HvDropdown-truncate HvDropdown-selectionDisabled HvTypography-root HvTypography-normalText"
                   id="test-dropdown-selectionLabel"
                 >
-                  All
+                  Select...
                 </p>
               </ForwardRef>
             </WithStyles(ForwardRef)>
@@ -286,7 +286,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                     class="HvDropdown-selection HvDropdown-truncate HvDropdown-selectionDisabled HvTypography-root HvTypography-normalText"
                     id="test-dropdown-selectionLabel"
                   >
-                    All
+                    Select...
                   </p>
                   <div
                     class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
@@ -381,7 +381,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                       class="HvDropdown-selection HvDropdown-truncate HvDropdown-selectionDisabled HvTypography-root HvTypography-normalText"
                       id="test-dropdown-selectionLabel"
                     >
-                      All
+                      Select...
                     </p>
                     <div
                       class="HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
