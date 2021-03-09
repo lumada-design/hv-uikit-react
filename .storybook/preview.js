@@ -71,6 +71,8 @@ const getInitialTheme = () => {
   return getStoredTheme();
 };
 
+let appCounter = 0;
+
 const App = ({ story: Story }) => {
   const [theme, setTheme] = useState(getInitialTheme());
 
@@ -79,8 +81,18 @@ const App = ({ story: Story }) => {
     return () => channel.off(UIKIT_THEME, setTheme);
   }, [channel, setTheme]);
 
+  const instanceNumber = appCounter++;
+
   return (
-    <HvProvider uiKitTheme={theme}>
+    <HvProvider
+      uiKitTheme={theme}
+      // prevent the seed prefix for the first instance
+      // allows to keep the classnames clean and stable for E2E tests
+      // that access via /iframe.html?id=
+      generateClassNameOptions={
+        instanceNumber > 0 ? { seed: `sb-preview-${instanceNumber}` } : undefined
+      }
+    >
       <Story />
     </HvProvider>
   );
