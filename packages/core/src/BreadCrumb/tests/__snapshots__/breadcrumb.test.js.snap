@@ -51,6 +51,7 @@ exports[`Breadcrumb should render correctly 1`] = `
       Object {
         "a": "HvBreadCrumb-a",
         "centerContainer": "HvBreadCrumb-centerContainer",
+        "currentPage": "HvBreadCrumb-currentPage",
         "link": "HvBreadCrumb-link",
         "orderedList": "HvBreadCrumb-orderedList",
         "root": "HvBreadCrumb-root",
@@ -112,6 +113,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -129,6 +131,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -178,7 +181,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -209,10 +212,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 1
                         </p>
@@ -258,6 +261,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -275,6 +279,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -324,7 +329,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -355,10 +360,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 2
                         </p>
@@ -404,6 +409,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -421,6 +427,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -470,7 +477,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -501,10 +508,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 3
                         </p>
@@ -550,6 +557,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -567,6 +575,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -616,7 +625,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -647,10 +656,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 4
                         </p>
@@ -696,6 +705,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -713,6 +723,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -762,7 +773,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -793,10 +804,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 5
                         </p>
@@ -842,6 +853,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -859,6 +871,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -908,7 +921,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -939,10 +952,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 6
                         </p>
@@ -988,6 +1001,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -1005,6 +1019,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -1054,7 +1069,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -1085,10 +1100,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 7
                         </p>
@@ -1134,6 +1149,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -1151,6 +1167,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 Object {
                   "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
+                  "currentPage": "HvBreadCrumb-currentPage",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
                   "root": "HvBreadCrumb-root",
@@ -1200,7 +1217,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     <WithStyles(ForwardRef)
                       className="HvBreadCrumb-link"
                       noWrap={true}
-                      variant="link"
+                      variant="highlightText"
                     >
                       <ForwardRef
                         className="HvBreadCrumb-link"
@@ -1231,10 +1248,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                         }
                         noWrap={true}
-                        variant="link"
+                        variant="highlightText"
                       >
                         <p
-                          className="HvBreadCrumb-link HvTypography-root HvTypography-link HvTypography-noWrap"
+                          className="HvBreadCrumb-link HvTypography-root HvTypography-highlightText HvTypography-noWrap"
                         >
                           Label 8
                         </p>
@@ -1280,6 +1297,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             Object {
               "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
+              "currentPage": "HvBreadCrumb-currentPage",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
               "root": "HvBreadCrumb-root",
@@ -1292,8 +1310,12 @@ exports[`Breadcrumb should render correctly 1`] = `
           <li
             className="HvBreadCrumb-centerContainer"
           >
-            <WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
+              className="HvBreadCrumb-currentPage"
+              variant="normalText"
+            >
               <ForwardRef
+                className="HvBreadCrumb-currentPage"
                 classes={
                   Object {
                     "3xlTitle": "HvTypography-3xlTitle",
@@ -1320,9 +1342,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                variant="normalText"
               >
                 <p
-                  className="HvTypography-root HvTypography-normalText"
+                  className="HvBreadCrumb-currentPage HvTypography-root HvTypography-normalText"
                 >
                   Label 9
                 </p>
