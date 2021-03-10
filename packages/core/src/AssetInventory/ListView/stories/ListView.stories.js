@@ -145,11 +145,37 @@ export const Main = () => {
     onSelection: (event) => alert(`this ${event.target.value}`),
     isSelectable: true,
     columnConfiguration: [
-      { title: "Status", style: { paddingLeft: "8px", width: "52px" }, align: "left" },
-      { title: "Event", style: { width: "370px" }, align: "left" },
-      { title: "Probability", style: { width: "93px" }, align: "right" },
-      { title: "Time horizon", style: { width: "108px" }, align: "right" },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" }, align: "left" },
+      {
+        title: "Status",
+        style: { paddingLeft: "8px", width: "52px" },
+        align: "left",
+        tooltipProps: {
+          title: "The long status description",
+        },
+      },
+      {
+        title: "Event",
+        style: { width: "370px" },
+        align: "left",
+        tooltipProps: {
+          title: "The long event description",
+        },
+      },
+      {
+        title: "Probability",
+        style: { width: "93px" },
+        align: "right",
+      },
+      {
+        title: "Time horizon",
+        style: { width: "108px" },
+        align: "right",
+      },
+      {
+        title: "Related Assets",
+        style: { width: "195px", paddingLeft: "30px" },
+        align: "left",
+      },
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],
     actionsCallback: (e, id, action) => alert(`You have pressed ${id} with action ${action.label}`),

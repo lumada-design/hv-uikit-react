@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvTooltipProps } from "../../Tooltip";
 import { AssetInventoryMetadata } from "..";
 import { ViewConfiguration } from "../ViewConfiguration";
 
@@ -11,6 +12,14 @@ export interface ListViewConfiguration extends ViewConfiguration {
     title: string;
     style: object;
     align?: string;
+    /**
+     * Extra properties for the header cell in the column.
+     */
+    cellProps?: Record<string, any>;
+    /**
+     * Extra properties for the tooltip of the header cell in the column.
+     */
+    tooltipProps?: HvTooltipProps;
   }[];
 }
 
@@ -26,7 +35,7 @@ export interface HvListViewProps
   emptyComponent: React.ReactNode;
   /**
    * Configuration used to setup various properties of the view.
-   * This configuration is propagated to the known childs of the asset inventory through context.
+   * This configuration is propagated to the known children of the asset inventory through context.
    */
   viewConfiguration?: ListViewConfiguration;
   /**
