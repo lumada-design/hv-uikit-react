@@ -207,6 +207,14 @@ const CoreComponentData = [
     status: statusClassification.stable,
   },
   {
+    dsPattern: "Global Actions",
+    component: "Global Actions",
+    path: "components-global-actions--main",
+    uikitVersion3: dsVersion3,
+    uikitVersion2: dsVersion1,
+    status: statusClassification.stable,
+  },
+  {
     dsPattern: "Header",
     component: "Header",
     path: "components-header--main",

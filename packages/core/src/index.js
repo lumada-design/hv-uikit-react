@@ -24,7 +24,10 @@ export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFileUploader } from "./FileUploader";
 export { default as HvFooter } from "./Footer";
 export * from "./Forms";
+
 export { default as HvGrid } from "./Grid";
+export { default as HvGlobalActions } from "./GlobalActions";
+
 export { default as HvHeader } from "./Header";
 export * from "./Header";
 
@@ -32,9 +35,9 @@ export { default as HvBaseInput } from "./BaseInput";
 export { default as HvInput } from "./Input";
 
 export { default as HvKpi } from "./Kpi";
+
 export { default as HvLinechart } from "./Linechart";
 export { default as HvLink } from "./Link";
-
 export { default as HvListContainer } from "./ListContainer";
 export * from "./ListContainer";
 
