@@ -94,9 +94,60 @@ export const Empty = () => {
   );
 };
 
-Main.parameters = {
+export const EmptyCells = () => {
+  const data = makeData(6).map((entry) => ({
+    ...entry,
+    // make some entries empty
+    status: entry.status === "Closed" ? null : entry.status,
+  }));
+  const columns = getColumns();
+
+  const instance = useTable({ columns, data }, useRowSelect);
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = instance;
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableCell
+                key={col.Header}
+                rtCol={col}
+                {...col.getHeaderProps({ style: { width: col.width } })}
+              >
+                {col.render("Header")}
+              </HvTableCell>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            return (
+              <HvTableRow key={row.id}>
+                {row.cells.map((cell) => {
+                  return (
+                    <HvTableCell key={cell.column.Header} rtCol={cell.column}>
+                      {cell.value ? cell.render("Cell") : "—"}
+                    </HvTableCell>
+                  );
+                })}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+EmptyCells.parameters = {
   docs: {
-    description: { story: "A minimal table example." },
+    description: {
+      story: "Table cells with null or empty values should instead display an em-dash (—).",
+    },
   },
 };
 
@@ -202,7 +253,15 @@ SelectableReactTable.parameters = {
 };
 
 export const Sortable = () => {
-  const data = useMemo(() => makeData(5), []);
+  const data = useMemo(
+    () =>
+      makeData(5).map((entry) => ({
+        ...entry,
+        // make some entries empty
+        status: entry.status === "Closed" ? null : entry.status,
+      })),
+    []
+  );
   const columns = useMemo(() => getColumns().map((col) => ({ ...col, isSortable: true })), []);
 
   const instance = useTable({ columns, data }, useSortBy, useRowSelect);
@@ -231,7 +290,7 @@ export const Sortable = () => {
               <HvTableRow hover {...row.getRowProps()}>
                 {row.cells.map((cell) => (
                   <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
-                    {cell.render("Cell")}
+                    {cell.value ? cell.render("Cell") : "—"}
                   </HvTableCell>
                 ))}
               </HvTableRow>
