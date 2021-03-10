@@ -1,9 +1,10 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { withStyles } from "@material-ui/core";
 
+import TableContext from "./TableContext";
 import styles from "./styles";
 
 /**
@@ -16,9 +17,19 @@ import styles from "./styles";
  * PLEASE NOTE: This Table implementation is still a WIP. There might be breaking changes.
  */
 const HvTable = forwardRef(function HvTable(props, ref) {
-  const { classes, className, ...others } = props;
+  const { classes, className, stickyHeader = false, ...others } = props;
 
-  return <table ref={ref} className={clsx(classes.root, className)} {...others} />;
+  const tableContext = useMemo(() => ({ stickyHeader }), [stickyHeader]);
+
+  return (
+    <TableContext.Provider value={tableContext}>
+      <table
+        ref={ref}
+        className={clsx(classes.root, className, { [classes.stickyHeader]: stickyHeader })}
+        {...others}
+      />
+    </TableContext.Provider>
+  );
 });
 
 HvTable.propTypes = {
@@ -31,6 +42,10 @@ HvTable.propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
+   * Whether the `HvTable` has a sticky header row
+   */
+  stickyHeader: PropTypes.bool,
+  /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
@@ -38,6 +53,10 @@ HvTable.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the component root class when it has a sticky header.
+     */
+    stickyHeader: PropTypes.string,
   }).isRequired,
 };
 
