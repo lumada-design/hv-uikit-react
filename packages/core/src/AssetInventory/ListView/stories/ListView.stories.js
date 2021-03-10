@@ -138,11 +138,31 @@ export const Main = () => {
     onSelection: (event) => alert(`this ${event.target.value}`),
     isSelectable: true,
     columnConfiguration: [
-      { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
-      { title: "Event", style: { minWidth: "370px", paddingLeft: "30px" } },
-      { title: "Probability", style: { minWidth: "93px" } },
-      { title: "Time horizon", style: { minWidth: "108px" } },
-      { title: "Related Assets", style: { minWidth: "195px", paddingLeft: "30px" } },
+      {
+        title: "Status",
+        style: { paddingLeft: "8px", width: "40px" },
+        tooltipProps: { title: "Status tooltip" },
+      },
+      {
+        title: "Event",
+        style: { minWidth: "370px", paddingLeft: "30px" },
+        tooltipProps: { title: "Event tooltip" },
+      },
+      {
+        title: "Probability",
+        style: { minWidth: "93px" },
+        tooltipProps: { title: "Probability tooltip" },
+      },
+      {
+        title: "Time horizon",
+        style: { minWidth: "108px" },
+        tooltipProps: { title: "Time tooltip" },
+      },
+      {
+        title: "Related Assets",
+        style: { minWidth: "195px", paddingLeft: "30px" },
+        tooltipProps: { title: "Related tooltip" },
+      },
     ],
     actions: [
       { id: "1", label: "Dismiss", disabled: false },
