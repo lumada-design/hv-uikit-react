@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.18.0...@hv/uikit-react-core@2.18.1) (2021-03-10)
+
+
+### Bug Fixes
+
+* **dropdown:** show placeholder when nothing selected HVUIKIT-5722 [#2293](https://github.com/pentaho/hv-uikit-react/issues/2293) ([da38447](https://github.com/pentaho/hv-uikit-react/commit/da3844796cd4bedb01d2e7905e9941bef3970c7d))
+
+
+
+
+
 # [2.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.17.4...@hv/uikit-react-core@2.18.0) (2021-03-09)
 
 
