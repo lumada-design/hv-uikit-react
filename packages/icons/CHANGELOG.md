@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@3.2.0...@hv/uikit-react-icons@3.2.1) (2021-03-10)
+
+
+### Bug Fixes
+
+* icon's width and height type definition ([432d5c7](https://github.com/pentaho/hv-uikit-react/commit/432d5c7f2435f46007f594dc0a2c9601f655eada))
+
+
+
+
+
 # 3.2.0 (2021-02-09)
 
 

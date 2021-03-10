@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.1.16...@hv/uikit-react-lab@3.2.0) (2021-03-10)
+
+
+### Features
+
+* **table:** add table pagination. HVUIKIT-5648 ([4a3c5f2](https://github.com/pentaho/hv-uikit-react/commit/4a3c5f2dc84ec6356dd7bf0218659d1d9faa579f))
+* add new table. HVUIKIT-5647 ([9021d20](https://github.com/pentaho/hv-uikit-react/commit/9021d20865177d711e23abc0e07e8c809baa42e9))
+
+
+
+
+
 ## [3.1.16](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.1.15...@hv/uikit-react-lab@3.1.16) (2021-03-05)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

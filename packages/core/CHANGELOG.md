@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.12.1...@hv/uikit-react-core@3.13.0) (2021-03-10)
+
+
+### Bug Fixes
+
+* **card:** add HvIsCardGridElement marker class for focus management HVUIKIT-5578 ([8afe704](https://github.com/pentaho/hv-uikit-react/commit/8afe7040a885765eda31187d9fc9a644cc2c633f))
+* **input:** elimination of fixed width. HVUIKIT-5718 ([8781dee](https://github.com/pentaho/hv-uikit-react/commit/8781deee041a003cdb0913e6e24db377f4cc40ff))
+* **table:** remove inline css imports. HVUIKIT-5709 ([5182af5](https://github.com/pentaho/hv-uikit-react/commit/5182af573600f55e405b5b61847782d4c57713e9))
+
+
+### Features
+
+* **breadcrumb:** update to DS 3.4.0.HVUIKIT-5692 ([43e2855](https://github.com/pentaho/hv-uikit-react/commit/43e2855d4ed50826737ae313ebf5416b5a946bcb))
+* add new table. HVUIKIT-5647 ([9021d20](https://github.com/pentaho/hv-uikit-react/commit/9021d20865177d711e23abc0e07e8c809baa42e9))
+* allow configuration of css class name generator HVUIKIT-5578 ([04f7f93](https://github.com/pentaho/hv-uikit-react/commit/04f7f93e5d1fd0b7d5146c6a2284f96d8fb39f52))
+* introduce HvIsFocused and HvIsFocusVisible global marker classes HVUIKIT-5578 ([49f8af5](https://github.com/pentaho/hv-uikit-react/commit/49f8af51e1b35ddc8a8b84018b38f6cacd8b7cd0))
+
+
+
+
+
 ## [3.12.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.12.0...@hv/uikit-react-core@3.12.1) (2021-03-05)
 
 **Note:** Version bump only for package @hv/uikit-react-core
