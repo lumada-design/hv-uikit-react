@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { HvTypography } from "../../..";
+import { HvTooltip, HvTypography } from "../../..";
 import styles from "./styles";
 
 const renderHeaderCells = (classes, columnConfiguration) =>
   columnConfiguration.map((configuration, index) => {
     const keyIndex = `th${index}`;
-
+    const { cellProps = {}, tooltipProps = {} } = configuration;
     return (
       <div
         className={clsx(classes.headCell, {
@@ -17,8 +17,21 @@ const renderHeaderCells = (classes, columnConfiguration) =>
         style={{ textAlign: configuration?.align, ...configuration.style }}
         id={index}
         key={keyIndex}
+        {...cellProps}
       >
-        <HvTypography variant="highlightText">{configuration.title || ""}</HvTypography>
+        <HvTooltip
+          {...tooltipProps}
+          placement={tooltipProps.placement || "top-start"}
+          title={
+            tooltipProps.title ? (
+              <HvTypography variant="normalText">{tooltipProps.title}</HvTypography>
+            ) : (
+              ""
+            )
+          }
+        >
+          <HvTypography variant="highlightText">{configuration.title || ""}</HvTypography>
+        </HvTooltip>
       </div>
     );
   });
