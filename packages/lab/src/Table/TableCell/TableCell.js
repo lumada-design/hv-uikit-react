@@ -21,6 +21,7 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
     rtCol = {},
 
     align: alignProp,
+    style: styleProp,
     padding: paddingProp,
     sortDirection: sortDirectionProp,
     variant: variantProp,
@@ -31,7 +32,14 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
   } = props;
 
   const tableContext = useContext(TableContext);
-  const { align: rtAlign, padding: rtPadding, isSortable, isSorted, isSortedDesc } = rtCol;
+  const {
+    align: rtAlign,
+    style: rtStyle,
+    padding: rtPadding,
+    isSortable,
+    isSorted,
+    isSortedDesc,
+  } = rtCol;
 
   // prop > RT col > context > fallback
   const align = alignProp ?? rtAlign ?? "inherit";
@@ -50,6 +58,7 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
   return (
     <Component
       ref={ref}
+      style={{ ...(isHeadCell && rtStyle), ...styleProp }}
       className={clsx(className, classes.root, classes[variant], {
         [classes.sortable]: sortable,
         [classes.sorted]: sorted,
@@ -74,6 +83,10 @@ HvTableCell.propTypes = {
    * Content to be rendered
    */
   children: PropTypes.node,
+  /**
+   * Inline styles to be applied to the root element.
+   */
+  style: PropTypes.instanceOf(Object),
   /**
    * React Table column instance. Also contains other props passed as `data`
    * https://react-table.tanstack.com/docs/api/useTable#column-options
