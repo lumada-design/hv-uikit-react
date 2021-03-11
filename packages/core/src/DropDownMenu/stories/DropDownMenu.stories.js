@@ -121,8 +121,10 @@ export const Controlled = () => {
           onClick={() => {
             setOpen(!open);
           }}
+          style={{ width: 125 }}
         >
-          Click
+          Click to&nbsp;
+          {!open ? "Open" : "Close"}
         </HvButton>
         <HvDropDownMenu
           id="dropMenu"
@@ -133,7 +135,7 @@ export const Controlled = () => {
           keepOpened={false}
           dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
           onToggleOpen={(s) => {
-            console.log(s);
+            setOpen(s);
           }}
         />
       </>

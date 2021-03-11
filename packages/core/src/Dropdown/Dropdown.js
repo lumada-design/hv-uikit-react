@@ -56,7 +56,8 @@ const HvDropdown = (props) => {
     values,
     multiSelect = false,
     showSearch = false,
-    expanded = false,
+    expanded,
+    defaultExpanded = false,
     notifyChangesOnFirstRender = false,
     labels: labelsProp,
     hasTooltips = false,
@@ -74,7 +75,7 @@ const HvDropdown = (props) => {
 
   const [validationMessage] = useControlled(statusMessage, "Required");
 
-  const [isOpen, setIsOpen] = useState(expanded);
+  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
   const [selectionLabel, setSelectionLabel] = useState(
     getSelectionLabel(values, labels, placeholder, multiSelect)
   );
@@ -407,6 +408,10 @@ HvDropdown.propTypes = {
    * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded: PropTypes.bool,
+  /**
+   * When uncontrolled, defines the initial expanded state.
+   */
+  defaultExpanded: PropTypes.bool,
   /**
    * If 'true' the dropdown will notify on the first render.
    */

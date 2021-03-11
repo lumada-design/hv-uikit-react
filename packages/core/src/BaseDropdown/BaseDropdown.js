@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import ReactDOM from "react-dom";
+import React, { useState, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
-import { ClickAwayListener, Popper, useTheme, withStyles } from "@material-ui/core";
+import { ClickAwayListener, withStyles } from "@material-ui/core";
+import { usePopper } from "react-popper";
 import clsx from "clsx";
 import { DropUpXS, DropDownXS } from "@hv/uikit-react-icons";
 import { HvTypography, useUniqueId } from "..";
-import { getFirstAndLastFocus, isKeypress, KeyboardCodes, setId, useUpdated } from "../utils";
+import { getFirstAndLastFocus, isKeypress, KeyboardCodes, setId, useControlled } from "../utils";
 import styles from "./styles";
 
 const { Tab, Enter, Esc, Space, ArrowDown } = KeyboardCodes;
@@ -17,69 +19,62 @@ const HvBaseDropdown = ({
   className,
   placeholder,
   disabled = false,
-  expanded = false,
+  expanded,
+  defaultExpanded = false,
   placement = "right",
-  popperProps,
+  popperProps = {},
   onToggle,
-  onFlip,
   onClickOutside,
   onContainerCreation,
   disablePortal = false,
   component,
   adornment,
   children,
+  sameWidth,
   ...others
 }) => {
-  const [isOpen, setIsOpen] = useState(expanded);
-  const [positionUp, setPositionUp] = useState(false);
-  const [widthInput, setWidthInput] = useState(null);
+  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
 
-  const [created, setCreated] = useUpdated(false);
-  const anchorHeaderRef = useRef(null);
-  const containerRef = useRef(null);
+  const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
+
+  const [referenceElement, setReferenceElement] = useState(null);
+  const [popperElement, setPopperElement] = useState(null);
+
+  const extensionWidth = referenceElement ? referenceElement.offsetWidth : "inherit";
+  const { modifiers: popperPropsModifiers = [], ...otherPopperProps } = popperProps;
+
+  const onFirstUpdate = useCallback(() => {
+    if (onContainerCreation) onContainerCreation(popperElement);
+  }, [onContainerCreation, popperElement]);
+
+  const modifiers = useMemo(
+    () => [
+      {
+        name: "sameWidth",
+        enabled: true,
+        phase: "beforeWrite",
+        requires: ["computeStyles"],
+      },
+      ...popperPropsModifiers,
+    ],
+    [popperPropsModifiers]
+  );
+
+  const { styles: popperStyles, attributes } = usePopper(referenceElement, popperElement, {
+    placement: bottom,
+    modifiers,
+    onFirstUpdate,
+    ...otherPopperProps,
+  });
 
   const elementId = useUniqueId(id, "hvbasedropdown");
 
-  const theme = useTheme();
-
-  const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
   const ariaRole = role || (component == null ? "combobox" : undefined);
 
-  useEffect(() => {
-    setIsOpen((currentIsOpen) => {
-      const value = expanded && !disabled;
-
-      if (currentIsOpen !== value) {
-        /* 
-          TODO: review the triggering of this onToggle, it might not be necessary
-          because this hook triggers when the baseDropdown props are updated, meaning that
-          a component made an explicit change. So it might be executing a callback to notify something the component should already know.
-        */
-        onToggle?.(null, value);
-        return value;
-      }
-
-      return currentIsOpen;
-    });
-  }, [disabled, expanded, onToggle]);
-
-  /**
-   *
-   * Set the extension of the container to follow the header width.
-   */
-  useEffect(() => {
-    const width = anchorHeaderRef?.current?.getBoundingClientRect()?.width;
-    if (width) setWidthInput(width);
-  }, []);
-
-  const handleOutside = (event) => {
-    const isButtonClick = anchorHeaderRef.current?.contains(event.target);
-    if (!isButtonClick) {
-      setIsOpen(false);
-      onToggle?.(event, false);
-      onClickOutside?.(event);
-    }
-  };
+  let popperPlacement = "bottom";
+  if (attributes.popper) {
+    popperPlacement = attributes.popper["data-popper-placement"];
+  }
 
   const handleToggle = useCallback(
     (event) => {
@@ -103,47 +98,35 @@ const HvBaseDropdown = ({
       const newOpen = !isOpen;
 
       /* If about to close focus on the header component. */
-      if (!newOpen) anchorHeaderRef.current?.firstChild.focus({ preventScroll: true });
-      setIsOpen(newOpen);
+      const focusHeader = () => {
+        if (!newOpen) {
+          referenceElement.focus({ preventScroll: true });
+        }
+
+        return newOpen;
+      };
+      setIsOpen(focusHeader());
+
       onToggle?.(event, newOpen);
     },
-    [disabled, isOpen, onToggle]
+    [isOpen, disabled, setIsOpen, onToggle, referenceElement]
   );
 
-  const buildHeaderLabel = () => (
-    <div className={classes.selection}>
-      {placeholder && typeof placeholder === "string" ? (
-        <HvTypography
-          noWrap
-          className={clsx(classes.placeholder, {
-            [classes.selectionDisabled]: disabled,
-          })}
-          variant="placeholderText"
-        >
-          {placeholder}
-        </HvTypography>
-      ) : (
-        placeholder
-      )}
-    </div>
-  );
-  const renderAdornment = () =>
-    adornment ||
-    (isOpen ? (
-      <DropUpXS iconSize="XS" className={classes.arrow} />
-    ) : (
-      <DropDownXS iconSize="XS" className={classes.arrow} color={disabled ? "atmo5" : undefined} />
-    ));
+  const headerComponent = (() => {
+    if (component) {
+      return React.cloneElement(component, {
+        ref: setReferenceElement,
+      });
+    }
 
-  const renderHeader = () => {
     return (
       <div
         id={setId(id, "header")}
         className={clsx(classes.header, {
           [classes.headerDisabled]: disabled,
           [classes.headerOpen]: isOpen,
-          [classes.headerOpenUp]: isOpen && positionUp,
-          [classes.headerOpenDown]: isOpen && !positionUp,
+          [classes.headerOpenUp]: isOpen && popperPlacement.includes("top"),
+          [classes.headerOpenDown]: isOpen && popperPlacement.includes("bottom"),
         })}
         role={ariaRole === "combobox" ? "textbox" : undefined}
         style={disabled ? { pointerEvents: "none" } : undefined}
@@ -151,130 +134,124 @@ const HvBaseDropdown = ({
         aria-label={others["aria-label"] ?? undefined}
         aria-labelledby={others["aria-labelledby"] ?? undefined}
         tabIndex={disabled ? -1 : 0}
+        ref={setReferenceElement}
       >
-        {buildHeaderLabel()}
-        {renderAdornment()}
-      </div>
-    );
-  };
-
-  /**
-   * Sets the position, notifying the dropdown of the change.
-   *
-   * @param position
-   */
-  const setterPosition = (position) => {
-    setPositionUp(position);
-    onFlip?.(position);
-  };
-
-  /**
-   * When the container flips updates its position.
-   *
-   * @param data
-   */
-  const handleContainerFlip = (data) => {
-    const position = data.flipped;
-    if (positionUp !== position) {
-      setterPosition(position);
-    }
-  };
-
-  /**
-   * Setter of position on creation and focus on the first focusable element of the container.
-   *
-   * @param data
-   */
-  const handleContainerCreate = (data) => {
-    onContainerCreation(containerRef.current);
-    if (!created) {
-      const position = data.flipped;
-      setterPosition(position);
-      setCreated();
-    }
-  };
-
-  /**
-   *  Handle keyboard inside children container.
-   */
-  const handleContainerKeyDown = (event) => {
-    if (isKeypress(event, Esc)) {
-      handleToggle(event);
-    }
-    if (isKeypress(event, Tab) && !event.shiftKey) {
-      const focusList = getFirstAndLastFocus(containerRef.current);
-      if (document.activeElement === focusList?.last) {
-        event.preventDefault();
-        focusList?.first?.focus();
-      }
-    }
-  };
-
-  const renderContainer = () => (
-    <Popper
-      disablePortal={disablePortal}
-      open={isOpen}
-      anchorEl={anchorHeaderRef.current}
-      placement={bottom}
-      popperOptions={{
-        onUpdate: handleContainerFlip,
-        onCreate: handleContainerCreate,
-      }}
-      style={{ zIndex: theme.zIndex.tooltip }}
-      {...popperProps}
-    >
-      <ClickAwayListener onClickAway={handleOutside}>
-        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-        <div onKeyDown={handleContainerKeyDown}>
-          {!positionUp && (
-            <div
-              className={clsx(classes.inputExtensionOpen, {
-                [classes.inputExtensionLeftPosition]: placement === "left",
+        <div className={classes.selection}>
+          {placeholder && typeof placeholder === "string" ? (
+            <HvTypography
+              noWrap
+              className={clsx(classes.placeholder, {
+                [classes.selectionDisabled]: disabled,
               })}
-              style={{ width: widthInput }}
-            />
-          )}
-          <div
-            id={setId(elementId, "children-container")}
-            ref={containerRef}
-            className={classes.panel}
-          >
-            {children}
-          </div>
-          {positionUp && (
-            <div
-              className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
-                [classes.inputExtensionFloatRight]: placement === "right",
-                [classes.inputExtensionFloatLeft]: placement === "left",
-              })}
-              style={{ width: widthInput }}
-            />
+              variant="placeholderText"
+            >
+              {placeholder}
+            </HvTypography>
+          ) : (
+            placeholder
           )}
         </div>
-      </ClickAwayListener>
-    </Popper>
-  );
+        {adornment ||
+          (isOpen ? (
+            <DropUpXS iconSize="XS" className={classes.arrow} />
+          ) : (
+            <DropDownXS
+              iconSize="XS"
+              className={classes.arrow}
+              color={disabled ? "atmo5" : undefined}
+            />
+          ))}
+      </div>
+    );
+  })();
+
+  const containerComponent = (() => {
+    /**
+     *  Handle keyboard inside children container.
+     */
+    const handleContainerKeyDown = (event) => {
+      if (isKeypress(event, Esc)) {
+        handleToggle(event);
+      }
+      if (isKeypress(event, Tab) && !event.shiftKey) {
+        const focusList = getFirstAndLastFocus(popperElement);
+        if (document.activeElement === focusList?.last) {
+          event.preventDefault();
+          focusList?.first?.focus();
+        }
+      }
+    };
+
+    const handleOutside = (event) => {
+      const isButtonClick = referenceElement?.contains(event.target);
+      if (!isButtonClick) {
+        setIsOpen(false);
+        onToggle?.(event, false);
+        onClickOutside?.(event);
+      }
+    };
+
+    const container = (
+      <div
+        ref={setPopperElement}
+        className={clsx(classes.container)}
+        style={popperStyles.popper}
+        {...attributes.popper}
+      >
+        <ClickAwayListener onClickAway={handleOutside}>
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+          <div onKeyDown={handleContainerKeyDown}>
+            {popperPlacement.includes("bottom") && (
+              <div
+                style={{ width: extensionWidth }}
+                className={clsx(classes.inputExtensionOpen, {
+                  [classes.inputExtensionLeftPosition]: placement === "left",
+                })}
+              />
+            )}
+            <div id={setId(elementId, "children-container")} className={classes.panel}>
+              {children}
+            </div>
+            {popperPlacement.includes("top") && (
+              <div
+                style={{ width: extensionWidth }}
+                className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
+                  [classes.inputExtensionFloatRight]: placement === "right",
+                  [classes.inputExtensionFloatLeft]: placement === "left",
+                })}
+              />
+            )}
+          </div>
+        </ClickAwayListener>
+      </div>
+    );
+
+    if (disablePortal) return container;
+
+    return ReactDOM.createPortal(container, document.body);
+  })();
 
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-      <div
-        id={id}
-        role={ariaRole}
-        aria-expanded={isOpen}
-        aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
-        ref={anchorHeaderRef}
-        className={clsx(className, classes.root, {
-          [classes.rootDisabled]: disabled,
-        })}
-        onKeyDown={handleToggle}
-        onClick={handleToggle}
-        tabIndex={-1}
-        {...others}
-      >
-        {component || renderHeader()}
+      <div className={classes.root}>
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        <div
+          id={id}
+          role={ariaRole}
+          aria-expanded={!!isOpen}
+          aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
+          className={clsx(className, classes.anchor, {
+            [classes.rootDisabled]: disabled,
+          })}
+          onKeyDown={handleToggle}
+          onClick={handleToggle}
+          tabIndex={-1}
+          {...others}
+        >
+          {headerComponent}
+        </div>
+        {isOpen ? containerComponent : <></>}
       </div>
-      {renderContainer()}
     </>
   );
 };
@@ -307,6 +284,14 @@ HvBaseDropdown.propTypes = {
      * Styles applied to the root when disabled.
      */
     rootDisabled: PropTypes.string,
+    /**
+     * Styles applied to the element that serves as reference for the popper when disabled.
+     */
+    anchor: PropTypes.string,
+    /**
+     * Styles applied to the popper element when it is inside the root element hierarchy.
+     */
+    container: PropTypes.string,
     /**
      * Styles applied to the header
      */
@@ -382,9 +367,17 @@ HvBaseDropdown.propTypes = {
    */
   disablePortal: PropTypes.bool,
   /**
+   * If `true` the dropdown has the same size of the header, `false` otherwise.
+   */
+  sameWidth: PropTypes.bool,
+  /**
    * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded: PropTypes.bool,
+  /**
+   * When uncontrolled, defines the initial expanded state.
+   */
+  defaultExpanded: PropTypes.bool,
   /**
    * An object containing props to be wired to the popper component.
    */

@@ -37,7 +37,7 @@ end is previous than start
     Press Keys                    NONE    TAB
     wait until input has value    ${calendarLeft} input     1 Jan 2000
     wait until input has value    ${calendarRight} input    1 Jan 2000
-    Element Text Should Be        ${datePickerHeader}       1 - 1 Jan 2000
+    Element Should Contain        ${datePickerHeader}       1 - 1 Jan 2000
 
 start is forward than end
     Force input                   ${calendarLeft} input     01 01 1980
@@ -48,7 +48,7 @@ start is forward than end
     Press Keys                    NONE    TAB
     wait until input has value    ${calendarLeft} input     7 Dec 1982
     wait until input has value    ${calendarRight} input    7 Dec 1982
-    Element Text Should Be               ${datePickerHeader}       7 - 7 Dec 1982
+    Element Should Contain        ${datePickerHeader}       7 - 7 Dec 1982
 
 input start date and pick end date
     [Documentation]    Was assumed picked date will be considered as new start date
@@ -57,7 +57,7 @@ input start date and pick end date
     Click Element                 ${xcalendar2Day}\[3]
     wait until input has value    ${calendarRight} input    3 Mar 2020
     wait until input has value    ${calendarLeft} input     3 Mar 2020
-    Element Text Should Be        ${datePickerHeader}       3 Mar 2020
+    Element Should Contain        ${datePickerHeader}       3 Mar 2020
 
 
 *** Variables ***

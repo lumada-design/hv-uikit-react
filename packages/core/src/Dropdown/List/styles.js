@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   rootList: {
-    width: 310,
+    width: "100%",
     backgroundColor: theme.palette.atmo1,
   },
   listContainer: {

@@ -7,6 +7,9 @@ const styles = (theme) => ({
       ...outlineStyles,
     },
   },
+  container: {
+    width: 32,
+  },
   icon: {
     position: "relative",
     boxSizing: "content-box",

@@ -25,7 +25,7 @@ pick initial on left and end date on right calendar
     wait Until Element Is Enabled    ${xcalendar2Day}\[7]
     Click Element                    ${xcalendar2Day}\[7]
     wait until input has value       ${calendarRight} input    7 Aug 2019
-    Element Text Should Be           ${datePickerHeader}    3 Jul 2019 - 7 Aug 2019
+    Element Should Contain           ${datePickerHeader}    3 Jul 2019 - 7 Aug 2019
 
 pick both dates on left calendar
     [Tags]    bug-ie-webdriver
@@ -34,20 +34,20 @@ pick both dates on left calendar
     Click Element                    ${xcalendar2Day}\[7]
     wait until input has value       ${calendarLeft} input    2 Jul 2019
     wait until input has value       ${calendarRight} input    7 Aug 2019
-    Element Text Should Be           ${datePickerHeader}    2 Jul 2019 - 7 Aug 2019
+    Element Should Contain           ${datePickerHeader}    2 Jul 2019 - 7 Aug 2019
 
 just apply default values
     [Documentation]    does not select any date, just apply the default selection
     ${date}    Get Text       ${datePickerHeader}
     Click Button              Apply
-    Element Text Should Be    ${datePickerHeader}    ${date}
+    Element Should Contain    ${datePickerHeader}    ${date}
 
 apply empty values
     [Documentation]    Uses Cases:
     ...                 - it can be empty
     [Setup]    Open DatePicker sample    range-mode-with-no-values
     Click Button              Apply
-    Element Text Should Be    ${datePickerHeader}    Select a range
+    Element Should Contain    ${datePickerHeader}    Select a range
 
 
 *** Variables ***

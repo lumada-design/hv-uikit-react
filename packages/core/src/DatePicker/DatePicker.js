@@ -295,6 +295,7 @@ const HvDatePicker = (props) => {
         classes={{ root: classes.dropdown, panel: classes.panel }}
         disabled={disabled}
         disablePortal={disablePortal}
+        sameWidth={false}
         placement={horizontalPlacement}
         expanded={calendarOpen}
         onToggle={handleToggle}
@@ -302,7 +303,7 @@ const HvDatePicker = (props) => {
         onContainerCreation={setFocusToDateInput}
         placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
         adornment={<Calendar className={classes.icon} color={disabled ? "atmo5" : undefined} />}
-        popperProps={{ modifiers: { preventOverflow: { escapeWithReference } } }}
+        popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
         aria-haspopup="dialog"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}

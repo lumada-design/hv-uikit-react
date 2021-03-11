@@ -8,7 +8,7 @@ ${calendar}            css:.HvSingleCalendar-calendarWrapper
 ${calendarLeft}        css:.HvCalendar-rangeCalendarContainer>div:first-child
 ${calendarRight}       css:.HvCalendar-rangeCalendarContainer>div:last-child
 ${cancel}              css:.HvActionBar-root>button:last-child
-${datePickerHeader}    css:.HvDatePicker-dropdown
+${datePickerHeader}    css:.HvBaseDropdown-selection
 ${day}                 xpath:(//button[@data-in-month='true'])
 ${daySelected}         css:.HvSingleCalendar-calendarDateSelected
 ${input}               css:.HvCalendarHeader-input
