@@ -6,12 +6,16 @@ const styles = (theme) => ({
     textAlign: "left",
     padding: theme.hvSpacing(0, "xs"),
 
-    border: "none",
+    borderBottom: `1px solid ${theme.palette.atmo4}`,
   },
   head: {
     height: 52,
     paddingTop: 8,
     verticalAlign: "top",
+
+    backgroundColor: theme.palette.atmo1,
+    borderTop: `1px solid ${theme.palette.atmo4}`,
+    borderBottom: `1px solid ${theme.palette.atmo4}`,
     ...theme.hv.typography.highlightText,
     "&$sortable": {
       verticalAlign: "initial",
@@ -35,6 +39,13 @@ const styles = (theme) => ({
     },
   },
   footer: {},
+
+  stickyHeader: {
+    position: "sticky",
+    top: 0,
+    left: 0,
+    zIndex: 2,
+  },
 
   paddingNone: {
     padding: 0,

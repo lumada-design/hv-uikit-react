@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
 import styles from "./styles";
-import TableContext from "../TableContext";
+import TableContext from "../TableSectionContext";
 
 /**
  * `HvTableRow` acts as a `tr` element and inherits styles from its context

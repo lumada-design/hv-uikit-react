@@ -7,6 +7,7 @@ import { withStyles } from "@material-ui/core";
 import { getSortIcon } from "./utils";
 import styles from "./styles";
 import TableContext from "../TableContext";
+import TableSectionContext from "../TableSectionContext";
 
 /**
  * `HvTableCell` acts as a `td` element and inherits styles from its context
@@ -31,7 +32,8 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
     ...others
   } = props;
 
-  const tableContext = useContext(TableContext);
+  const tableRootContext = useContext(TableContext);
+  const tableContext = useContext(TableSectionContext);
   const {
     align: rtAlign,
     style: rtStyle,
@@ -64,6 +66,7 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
         [classes.sorted]: sorted,
         [classes[`align${capitalize(align)}`]]: align !== "inherit",
         [classes[`padding${capitalize(padding)}`]]: padding !== "default",
+        [classes.stickyHeader]: isHeadCell && tableRootContext?.stickyHeader,
       })}
       aria-sort={sortDirection}
       {...others}
@@ -155,6 +158,10 @@ HvTableCell.propTypes = {
      * Styles applied to the sort icon component.
      */
     sortIcon: PropTypes.string,
+    /**
+     * Styles applied to the row when the table has a sticky header.
+     */
+    stickyHeader: PropTypes.string,
   }).isRequired,
 };
 

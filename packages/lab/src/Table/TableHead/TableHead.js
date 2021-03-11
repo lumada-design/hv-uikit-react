@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { withStyles } from "@material-ui/core";
 
-import TableContext from "../TableContext";
+import TableContext from "../TableSectionContext";
 import styles from "./styles";
 
 const tableContext = {

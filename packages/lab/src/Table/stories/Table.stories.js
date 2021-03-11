@@ -1,9 +1,8 @@
 import React, { useEffect, useMemo } from "react";
 import range from "lodash/range";
-import { useTable, useRowSelect, usePagination, useSortBy, useResizeColumns } from "react-table";
+import { useTable, useRowSelect, usePagination, useSortBy } from "react-table";
 
 import { Ban } from "@hv/uikit-react-icons";
-
 import { HvCheckBox, HvDropDownMenu, HvEmptyState } from "@hv/uikit-react-core";
 
 import {
@@ -254,7 +253,7 @@ export const Pagination = () => {
   const data = useMemo(() => makeData(32), []);
   const columns = useMemo(() => getColumns(), []);
 
-  const instance = useTable({ columns, data }, usePagination, useResizeColumns);
+  const instance = useTable({ columns, data }, usePagination);
   const {
     getTableProps,
     getTableBodyProps,
@@ -271,9 +270,9 @@ export const Pagination = () => {
   );
 
   return (
-    <div>
-      <HvTableContainer>
-        <HvTable {...getTableProps()}>
+    <>
+      <HvTableContainer style={{ maxHeight: 400 }}>
+        <HvTable stickyHeader {...getTableProps()}>
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
@@ -304,13 +303,18 @@ export const Pagination = () => {
         </HvTable>
       </HvTableContainer>
       <HvTablePagination rtInstance={instance} />
-    </div>
+    </>
   );
 };
 
 Pagination.parameters = {
   docs: {
-    description: { story: "A table with pagination managed by `react-table`." },
+    description: {
+      story:
+        "A table with a sticky header and pagination managed by `react-table`. " +
+        "The `HvTableContainer` has a maximum height and the header rows are sticky, " +
+        "preventing the table to grow excessively when there are many rows per page.",
+    },
   },
 };
 

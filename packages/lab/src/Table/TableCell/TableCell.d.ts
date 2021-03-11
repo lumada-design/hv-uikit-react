@@ -8,7 +8,8 @@ export type HvTableCellClassKey =
   | "footer"
   | "sortable"
   | "sorted"
-  | "sortIcon";
+  | "sortIcon"
+  | "stickyHeader";
 
 export interface HvTableCellProps
   extends StandardProps<React.HTMLAttributes<HTMLTableCellElement>, HvTableCellClassKey> {

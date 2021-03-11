@@ -13,6 +13,9 @@ const styles = (theme) => ({
       captionSide: "bottom",
     },
   },
+  stickyHeader: {
+    borderCollapse: "separate",
+  },
 });
 
 export default styles;

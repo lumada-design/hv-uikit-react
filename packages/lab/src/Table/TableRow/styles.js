@@ -3,7 +3,6 @@ const styles = (theme) => ({
     color: "inherit",
     verticalAlign: "middle",
     outline: 0,
-    borderBottom: `1px solid ${theme.palette.atmo4}`,
 
     "&$hover:hover": {
       backgroundColor: theme.palette.atmo3,
