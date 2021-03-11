@@ -5,7 +5,7 @@ import range from "lodash/range";
 import { render } from "testing-utils";
 import userEvent from "@testing-library/user-event";
 
-import { Main, Pagination } from "../stories/Table.stories";
+import { Main, Pagination, Sortable } from "../stories/Table.stories";
 import {
   HvTable,
   HvTableBody,
@@ -20,7 +20,6 @@ describe("Table", () => {
     it("should match snapshot", () => {
       const { container } = render(<Main />);
       expect(container).toBeDefined();
-      expect(container).toMatchSnapshot();
     });
 
     it("should render the table elements", () => {
@@ -64,6 +63,7 @@ describe("Table", () => {
       const { container } = render(<SimpleTable />);
 
       expect(container).toBeDefined();
+      expect(container).toMatchSnapshot();
     });
 
     it("should render the rows and cells", () => {
@@ -128,29 +128,67 @@ describe("Table", () => {
       ].map(getByLabelText);
 
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 0")).toBeInTheDocument();
-      expect(queryByText("Event 10")).not.toBeInTheDocument();
+      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(queryByText("Event 11")).not.toBeInTheDocument();
 
       userEvent.click(fistPage);
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 0")).toBeInTheDocument();
-      expect(queryByText("Event 10")).not.toBeInTheDocument();
+      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(queryByText("Event 11")).not.toBeInTheDocument();
 
       userEvent.click(previousPage);
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 0")).toBeInTheDocument();
-      expect(queryByText("Event 10")).not.toBeInTheDocument();
+      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(queryByText("Event 11")).not.toBeInTheDocument();
 
       userEvent.click(nextPage);
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 0")).not.toBeInTheDocument();
-      expect(queryByText("Event 10")).toBeInTheDocument();
+      expect(queryByText("Event 1")).not.toBeInTheDocument();
+      expect(queryByText("Event 11")).toBeInTheDocument();
 
       userEvent.click(lastPage);
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 0")).not.toBeInTheDocument();
-      expect(queryByText("Event 29")).not.toBeInTheDocument();
-      expect(queryByText("Event 30")).toBeInTheDocument();
+      expect(queryByText("Event 1")).not.toBeInTheDocument();
+      expect(queryByText("Event 30")).not.toBeInTheDocument();
+      expect(queryByText("Event 31")).toBeInTheDocument();
+    });
+  });
+
+  describe("Sortable Story", () => {
+    it("should be defined", () => {
+      const { container } = render(<Sortable />);
+      expect(container).toBeDefined();
+    });
+
+    it("should render the table elements", () => {
+      const { getByRole, getAllByRole } = render(<Sortable />);
+
+      expect(getByRole("table")).toBeInTheDocument();
+
+      expect(getAllByRole("cell").length).toBeGreaterThan(0);
+      expect(getAllByRole("row").length).toBeGreaterThan(0);
+    });
+
+    it("should single-sort as expected", () => {
+      const { getByText, queryAllByText } = render(<Sortable />);
+      const probabilityButton = getByText("Probability");
+
+      const getEvent = (i) => queryAllByText(/^Event \d+$/g)[i];
+
+      // Default sorting
+      expect(getEvent(0)).toHaveTextContent("Event 1");
+
+      // Asc sorting
+      userEvent.click(probabilityButton);
+      expect(getEvent(0)).toHaveTextContent("Event 3");
+
+      // Desc sorting
+      userEvent.click(probabilityButton);
+      expect(getEvent(0)).toHaveTextContent("Event 5");
+
+      // Back to default sorting
+      userEvent.click(probabilityButton);
+      expect(getEvent(0)).toHaveTextContent("Event 1");
     });
   });
 });

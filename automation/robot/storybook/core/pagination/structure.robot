@@ -41,7 +41,7 @@ input value greater than maximum pages
 input value less than minimal pages
     Input Text                   ${input}     -3
     Press Keys                   ${input}     RETURN
-    Textfield Value Should Be    ${input}     3
+    Textfield Value Should Be    ${input}     1
 
 input value just accept integers
     Input Text                   ${input}     invalid

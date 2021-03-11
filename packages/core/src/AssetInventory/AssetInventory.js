@@ -342,7 +342,7 @@ const HvAssetInventory = (props) => {
         </HvGrid>
         {hasPagination && (
           <HvGrid container>
-            <HvGrid item xs={12} sm={12} md={12} lg={12} xl={12}>
+            <HvGrid item xs={12}>
               {renderPagination()}
             </HvGrid>
           </HvGrid>

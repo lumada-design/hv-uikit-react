@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import range from "lodash/range";
-import { useTable, useRowSelect, usePagination, useResizeColumns } from "react-table";
+import { useTable, useRowSelect, usePagination, useSortBy, useResizeColumns } from "react-table";
 
 import { Ban } from "@hv/uikit-react-icons";
 
@@ -16,7 +16,8 @@ import {
   HvTableRow,
 } from "../..";
 
-import { makeData, getColumns, useToggleIndex } from "./utils";
+import { makeData, getColumns, useToggleIndex, useServerData } from "./utils";
+import LoadingContainer from "./LoadingContainer";
 
 export default {
   title: "Lab/Table",
@@ -201,6 +202,54 @@ SelectableReactTable.parameters = {
   },
 };
 
+export const Sortable = () => {
+  const data = useMemo(() => makeData(5), []);
+  const columns = useMemo(() => getColumns().map((col) => ({ ...col, isSortable: true })), []);
+
+  const instance = useTable({ columns, data }, useSortBy, useRowSelect);
+  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = instance;
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableCell
+                key={col.Header}
+                rtCol={col}
+                {...col.getHeaderProps(col.getSortByToggleProps({ style: { width: col.width } }))}
+              >
+                {col.render("Header")}
+              </HvTableCell>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <HvTableRow hover {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+Sortable.parameters = {
+  docs: {
+    description: { story: "A table with multi column sorting, managed by `react-table`." },
+  },
+};
+
 export const Pagination = () => {
   const data = useMemo(() => makeData(32), []);
   const columns = useMemo(() => getColumns(), []);
@@ -267,5 +316,97 @@ export const Pagination = () => {
 Pagination.parameters = {
   docs: {
     description: { story: "A table with pagination managed by `react-table`." },
+  },
+};
+
+export const ServerSide = () => {
+  const [data, columns, fetchData, loading, pageCount] = useServerData();
+
+  const instance = useTable(
+    {
+      columns,
+      data,
+      manualPagination: true,
+      manualSortBy: true,
+      autoResetPage: false,
+      autoResetSortBy: false,
+      pageCount,
+    },
+    useSortBy,
+    usePagination,
+    useRowSelect
+  );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headers,
+    prepareRow,
+    page,
+    gotoPage,
+    state: { pageSize, pageIndex, sortBy },
+  } = instance;
+
+  useEffect(() => {
+    gotoPage(0);
+  }, [sortBy, gotoPage]);
+
+  useEffect(() => {
+    fetchData({ pageIndex, pageSize, sortBy });
+  }, [sortBy, fetchData, pageIndex, pageSize]);
+
+  const EmptyRow = () => (
+    <HvTableRow>
+      <HvTableCell colSpan="100%" />
+    </HvTableRow>
+  );
+
+  return (
+    <LoadingContainer loading={loading}>
+      <HvTableContainer>
+        <HvTable {...getTableProps()}>
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableCell
+                  key={col.Header}
+                  rtCol={col}
+                  {...col.getHeaderProps(col.getSortByToggleProps({ style: { width: col.width } }))}
+                >
+                  {col.render("Header")}
+                </HvTableCell>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps({ style: { position: "relative" } })}>
+            {range(pageSize).map((i) => {
+              const row = page[i];
+
+              if (!row) return <EmptyRow key={i} />;
+
+              prepareRow(row);
+              return (
+                <HvTableRow hover {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      <HvTablePagination rtInstance={instance} />
+    </LoadingContainer>
+  );
+};
+
+ServerSide.parameters = {
+  docs: {
+    description: {
+      story:
+        "A table with sorting and pagination handled server-side, using React Table. Set `manualPagination` and `manualSortBy` to have manual control over pagination and sorting.",
+    },
   },
 };
