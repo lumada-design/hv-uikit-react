@@ -2,7 +2,7 @@
 
 exports[`Compose Tabs withStyles should render correctly 1`] = `
 <WithStyles(HvTabs)
-  id="tabs"
+  id="tabs-main"
   onChange={[Function]}
   value={0}
 >
@@ -15,7 +15,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
         "scroller": "HvTabs-scroller",
       }
     }
-    id="tabs"
+    id="tabs-main"
     onChange={[Function]}
     value={0}
   >
@@ -33,7 +33,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
           "scroller": "HvTabs-scroller",
         }
       }
-      id="tabs"
+      id="tabs-main"
       onChange={[Function]}
       value={0}
     >
@@ -58,13 +58,13 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
             "vertical": "MuiTabs-vertical",
           }
         }
-        id="tabs"
+        id="tabs-main"
         onChange={[Function]}
         value={0}
       >
         <div
           className="MuiTabs-root HvTabs-root"
-          id="tabs"
+          id="tabs-main"
         >
           <div
             className="MuiTabs-scroller HvTabs-scroller MuiTabs-fixed"

@@ -116,6 +116,6 @@ export const Main = () => {
 Main.parameters = {
   eyes: {
     // waiting until all elements are rendered (issue #1794)
-    waitBeforeScreenshot: ".HvHeaderMenuBar-active",
+    waitBeforeScreenshot: 1000,
   },
 };

@@ -19,7 +19,7 @@ export const Main = () => {
   const handleChange = (e, newValue) => setValue(newValue);
 
   return (
-    <HvTabs id="tabs" value={value} onChange={handleChange}>
+    <HvTabs id="tabs-main" value={value} onChange={handleChange}>
       <HvTab id="tabs-tab1" label="Clickable tab 1" />
       <HvTab id="tabs-tab2" label="Clickable tab 2" />
       <HvTab id="tabs-tab3" label="Clickable tab 3" />
@@ -28,7 +28,7 @@ export const Main = () => {
 };
 
 Main.parameters = {
-  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  eyes: { waitBeforeScreenshot: "#tabs-main" },
 };
 
 export const FullWidth = () => {
@@ -62,7 +62,7 @@ export const ContentChanging = () => {
 
   return (
     <>
-      <HvTabs id="tabs" value={value} onChange={handleChange}>
+      <HvTabs id="tabs-content-change" value={value} onChange={handleChange}>
         <HvTab id="tabs-tab1" label="Clickable tab 1" />
         <HvTab id="tabs-tab2" label="Clickable tab 2" />
         <HvTab id="tabs-tab3" label="Clickable tab 3" />
@@ -78,7 +78,7 @@ ContentChanging.parameters = {
   docs: {
     description: { story: "Tabs changing the content to display according to the selected tab" },
   },
-  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  eyes: { waitBeforeScreenshot: "#tabs-content-change" },
 };
 
 export const TextSize = () => {
@@ -93,7 +93,7 @@ export const TextSize = () => {
   }))((props) => <HvTab {...props} />);
 
   return (
-    <HvTabs id="tabs" value={value} onChange={handleChange}>
+    <HvTabs id="tabs-text-size" value={value} onChange={handleChange}>
       <StyledTab id="tabs-tab1" label="Clickable tab" />
       <StyledTab id="tabs-tab2" disabled label="Disabled tab" />
       <StyledTab id="tabs-tab3" label="Clickable tab" />
@@ -102,7 +102,7 @@ export const TextSize = () => {
 };
 
 TextSize.parameters = {
-  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  eyes: { waitBeforeScreenshot: "#tabs-text-size" },
 };
 
 export const CenteredTabs = () => {
@@ -118,7 +118,7 @@ export const CenteredTabs = () => {
   })();
 
   return (
-    <HvTabs className={classes.content} value={value} onChange={handleChange}>
+    <HvTabs id="tabs-centered" className={classes.content} value={value} onChange={handleChange}>
       <HvTab label="Clickable tab" />
       <HvTab label="Clickable tab" />
       <HvTab label="Clickable tab" />
@@ -127,7 +127,7 @@ export const CenteredTabs = () => {
 };
 
 CenteredTabs.parameters = {
-  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  eyes: { waitBeforeScreenshot: "#tabs-centered" },
 };
 
 export const WithBadges = () => {
@@ -147,7 +147,7 @@ export const WithBadges = () => {
     }))((props) => <HvTab {...props} />);
 
     return (
-      <HvTabs value={value} onChange={handleChange}>
+      <HvTabs id="tabs-with-badge" value={value} onChange={handleChange}>
         <StyledTab label={<HvBadge showCount count={2} text="Track events" />} />
         <StyledTab label={<HvBadge count={1} text="Vehicle events" />} />
       </HvTabs>
@@ -161,5 +161,5 @@ WithBadges.parameters = {
   docs: {
     description: { story: "Badges applied to Tabs component." },
   },
-  eyes: { waitBeforeScreenshot: ".HvTabs-root" },
+  eyes: { waitBeforeScreenshot: "#tabs-with-badge" },
 };
