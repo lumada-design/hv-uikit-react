@@ -111,7 +111,10 @@ WithClickActionDisabled.story = {
         "color-contrast",
       ],
     },
-    eyes: { waitBeforeScreenshot: ".MuiFormControlLabel-label" },
+    eyes: {
+      // this sample showcases functionality, the disabled state is already showcased above
+      include: false,
+    },
   },
 };
 
