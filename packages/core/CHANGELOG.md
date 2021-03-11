@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.18.1...@hv/uikit-react-core@2.19.0) (2021-03-11)
+
+
+### Features
+
+* **listview:** allow setting tooltips for the values in the header row ([#2302](https://github.com/pentaho/hv-uikit-react/issues/2302)) ([3a0521b](https://github.com/pentaho/hv-uikit-react/commit/3a0521b9416092b1fd455428ac23818a42d8541f))
+
+
+
+
+
 ## [2.18.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.18.0...@hv/uikit-react-core@2.18.1) (2021-03-10)
 
 
