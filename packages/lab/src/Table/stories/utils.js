@@ -28,10 +28,10 @@ export const makeData = (len = 10) => range(len).map(newEntry);
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
 export const getColumns = () => [
-  { Header: "Title", accessor: "name", width: 260 },
-  { Header: "Time", accessor: "createdDate" },
-  { Header: "Event Type", accessor: "eventType", width: 200 },
-  { Header: "Status", accessor: "status", width: 120 },
+  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+  { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 140 } },
+  { Header: "Status", accessor: "status", style: { width: 120 } },
   // numeric values should be right-aligned
   {
     Header: "Probability",

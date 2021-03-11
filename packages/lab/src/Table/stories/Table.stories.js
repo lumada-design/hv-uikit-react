@@ -218,7 +218,7 @@ export const Sortable = () => {
               <HvTableCell
                 key={col.Header}
                 rtCol={col}
-                {...col.getHeaderProps(col.getSortByToggleProps({ style: { width: col.width } }))}
+                {...col.getHeaderProps(col.getSortByToggleProps())}
               >
                 {col.render("Header")}
               </HvTableCell>
@@ -277,12 +277,7 @@ export const Pagination = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableCell
-                  key={col.Header}
-                  rtCol={col}
-                  // adds fixed column sizes
-                  {...col.getHeaderProps({ style: { width: col.width } })}
-                >
+                <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                   {col.render("Header")}
                 </HvTableCell>
               ))}
@@ -370,7 +365,7 @@ export const ServerSide = () => {
                 <HvTableCell
                   key={col.Header}
                   rtCol={col}
-                  {...col.getHeaderProps(col.getSortByToggleProps({ style: { width: col.width } }))}
+                  {...col.getHeaderProps(col.getSortByToggleProps())}
                 >
                   {col.render("Header")}
                 </HvTableCell>
