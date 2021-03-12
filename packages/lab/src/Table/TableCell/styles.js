@@ -29,9 +29,8 @@ const styles = (theme) => ({
   body: {
     height: 32,
     backgroundColor: "transparent",
-    // padding: theme.hvSpacing(0, "xs"),
     ...theme.hv.typography.normalText,
-    "&$sortable": {
+    "&$sortable:not($paddingNone)": {
       paddingLeft: 32,
     },
     "&$sorted": {
