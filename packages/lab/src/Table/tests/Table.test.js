@@ -5,7 +5,7 @@ import range from "lodash/range";
 import { render } from "testing-utils";
 import userEvent from "@testing-library/user-event";
 
-import { Main, Pagination, Sortable } from "../stories/Table.stories";
+import { Main, EmptyCells, Pagination, Sortable } from "../stories/Table.stories";
 import {
   HvTable,
   HvTableBody,
@@ -102,6 +102,19 @@ describe("Table", () => {
     });
   });
 
+  describe("EmptyCells Story", () => {
+    it("should be defined", () => {
+      const { container } = render(<EmptyCells />);
+      expect(container).toBeDefined();
+    });
+
+    it("should contain the em-dashes", () => {
+      const { getAllByText } = render(<EmptyCells />);
+
+      expect(getAllByText("—").length).toBe(3);
+    });
+  });
+
   describe("Pagination Story", () => {
     it("should be defined", () => {
       const { container } = render(<Pagination />);
@@ -171,7 +184,7 @@ describe("Table", () => {
 
     it("should single-sort as expected", () => {
       const { getByText, queryAllByText } = render(<Sortable />);
-      const probabilityButton = getByText("Probability");
+      const severityButton = getByText("Severity");
 
       const getEvent = (i) => queryAllByText(/^Event \d+$/g)[i];
 
@@ -179,15 +192,15 @@ describe("Table", () => {
       expect(getEvent(0)).toHaveTextContent("Event 1");
 
       // Asc sorting
-      userEvent.click(probabilityButton);
+      userEvent.click(severityButton);
       expect(getEvent(0)).toHaveTextContent("Event 3");
 
       // Desc sorting
-      userEvent.click(probabilityButton);
-      expect(getEvent(0)).toHaveTextContent("Event 5");
+      userEvent.click(severityButton);
+      expect(getEvent(0)).toHaveTextContent("Event 4");
 
       // Back to default sorting
-      userEvent.click(probabilityButton);
+      userEvent.click(severityButton);
       expect(getEvent(0)).toHaveTextContent("Event 1");
     });
   });
