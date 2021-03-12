@@ -87,7 +87,7 @@ const BreadCrumb = (props) => {
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu(id, listPath, maxVisibleElem, dropDownMenuProps)
+      ? pathWithSubMenu(id, classes, listPath, maxVisibleElem, dropDownMenuProps)
       : listPath;
 
   return (
@@ -150,6 +150,10 @@ BreadCrumb.propTypes = {
      *  Styles applied to the last element.
      */
     currentPage: PropTypes.string,
+    /**
+     *  Styles applied to dropdown element that contain the middle paths.
+     */
+    dropdownContainer: PropTypes.string,
   }).isRequired,
   /**
    * List of breadcrumb.

@@ -51,22 +51,24 @@ const ActionsGeneric = ({
     return (
       <>
         {actsVisible.map((action, idx) => renderButton(action, idx))}
-        <HvDropDownMenu
-          id={setId(id, "menu")}
-          disabled={disabled}
-          category={category}
-          classes={{
-            root: classes.dropDownMenu,
-            icon: classes.dropDownMenuButton,
-            iconSelected: classes.dropDownMenuButtonSelected,
-          }}
-          icon={<MoreOptionsVertical color={iconColor} />}
-          placement="left"
-          onClick={(event, action) => actionsCallback?.(event, id, action)}
-          dataList={actsDropdown}
-          keepOpened={false}
-          disablePortal={false}
-        />
+        <div className={classes.dropdownContainer}>
+          <HvDropDownMenu
+            id={setId(id, "menu")}
+            disabled={disabled}
+            category={category}
+            classes={{
+              root: classes.dropDownMenu,
+              icon: classes.dropDownMenuButton,
+              iconSelected: classes.dropDownMenuButtonSelected,
+            }}
+            icon={<MoreOptionsVertical color={iconColor} />}
+            placement="left"
+            onClick={(event, action) => actionsCallback?.(event, id, action)}
+            dataList={actsDropdown}
+            keepOpened={false}
+            disablePortal={false}
+          />
+        </div>
       </>
     );
   };
@@ -120,6 +122,10 @@ ActionsGeneric.propTypes = {
      * Styles applied to the DropDownMenu IconButton component when it is selected.
      */
     dropDownMenuButtonSelected: PropTypes.string,
+    /**
+     * Styles applied to the DropDownMenu container.
+     */
+    dropdownContainer: PropTypes.string,
   }).isRequired,
   /**
    * Component identifier.

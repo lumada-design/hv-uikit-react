@@ -9,6 +9,9 @@ const styles = (theme) => ({
     display: "flex",
     float: "right",
   },
+  dropdownContainer: {
+    width: 32,
+  },
   dropDownMenu: {},
   dropDownMenuButton: {},
   dropDownMenuButtonSelected: {},

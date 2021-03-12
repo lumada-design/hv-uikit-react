@@ -18,10 +18,12 @@ export default {
 };
 
 export const Main = () => (
-  <HvDropDownMenu
-    onClick={(e, item) => console.log(item.label)}
-    dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
-  />
+  <div style={{ width: 32 }}>
+    <HvDropDownMenu
+      onClick={(e, item) => console.log(item.label)}
+      dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+    />
+  </div>
 );
 
 Main.parameters = {
@@ -31,15 +33,17 @@ Main.parameters = {
 export const Positioning = () => {
   const [position, setPosition] = useState("right");
   return (
-    <HvDropDownMenu
-      placement={position}
-      keepOpened
-      onClick={(e, item) => setPosition(item.value)}
-      dataList={[
-        { label: "Left", value: "left" },
-        { label: "Right", value: "right" },
-      ]}
-    />
+    <div style={{ width: 32 }}>
+      <HvDropDownMenu
+        placement={position}
+        keepOpened
+        onClick={(e, item) => setPosition(item.value)}
+        dataList={[
+          { label: "Left", value: "left" },
+          { label: "Right", value: "right" },
+        ]}
+      />
+    </div>
   );
 };
 
@@ -56,17 +60,19 @@ export const WithIconsAndActions = () => {
   );
 
   return (
-    <HvDropDownMenu
-      id="dropdownmenu-with-icons-and-actions"
-      placement="right"
-      onClick={(e, item) => console.log(item.label)}
-      aria-label="dropdownMenu-3"
-      dataList={[
-        { label: "Label 1", icon: iconSelectedColor(User) },
-        { label: "Label 2", icon: iconSelectedColor(Calendar) },
-        { label: "Label 3", icon: iconSelectedColor(Plane) },
-      ]}
-    />
+    <div style={{ width: 32 }}>
+      <HvDropDownMenu
+        id="dropdownmenu-with-icons-and-actions"
+        placement="right"
+        onClick={(e, item) => console.log(item.label)}
+        aria-label="dropdownMenu-3"
+        dataList={[
+          { label: "Label 1", icon: iconSelectedColor(User) },
+          { label: "Label 2", icon: iconSelectedColor(Calendar) },
+          { label: "Label 3", icon: iconSelectedColor(Plane) },
+        ]}
+      />
+    </div>
   );
 };
 
@@ -88,22 +94,26 @@ WithIconsAndActions.parameters = {
 };
 
 export const Disabled = () => (
-  <HvDropDownMenu
-    disabled
-    id="dropMenu"
-    onClick={(e, item) => console.log(item.label)}
-    disablePortal={false}
-    aria-label="dropdownMenu-4"
-    dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
-  />
+  <div style={{ width: 32 }}>
+    <HvDropDownMenu
+      disabled
+      id="dropMenu"
+      onClick={(e, item) => console.log(item.label)}
+      disablePortal={false}
+      aria-label="dropdownMenu-4"
+      dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+    />
+  </div>
 );
 
 export const DisabledItems = () => (
-  <HvDropDownMenu
-    id="dpmDisabledItems"
-    aria-label="dropdownMenu-DisabledItems"
-    dataList={[{ label: "Label 1" }, { label: "Label 2", disabled: true }, { label: "Label 3" }]}
-  />
+  <div style={{ width: 32 }}>
+    <HvDropDownMenu
+      id="dpmDisabledItems"
+      aria-label="dropdownMenu-DisabledItems"
+      dataList={[{ label: "Label 1" }, { label: "Label 2", disabled: true }, { label: "Label 3" }]}
+    />
+  </div>
 );
 
 DisabledItems.parameters = {
@@ -126,18 +136,20 @@ export const Controlled = () => {
           Click to&nbsp;
           {!open ? "Open" : "Close"}
         </HvButton>
-        <HvDropDownMenu
-          id="dropMenu"
-          expanded={open}
-          onClick={(e, item) => console.log(item.label)}
-          disablePortal={false}
-          aria-label="dropdownMenu-1"
-          keepOpened={false}
-          dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
-          onToggleOpen={(s) => {
-            setOpen(s);
-          }}
-        />
+        <div style={{ width: 32 }}>
+          <HvDropDownMenu
+            id="dropMenu"
+            expanded={open}
+            onClick={(e, item) => console.log(item.label)}
+            disablePortal={false}
+            aria-label="dropdownMenu-1"
+            keepOpened={false}
+            dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+            onToggleOpen={(s) => {
+              setOpen(s);
+            }}
+          />
+        </div>
       </>
     );
   };

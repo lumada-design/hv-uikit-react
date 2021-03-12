@@ -24,12 +24,18 @@ export default {
 export const KeyboardNavigation = () => (
   <>
     <HvButton id="button1">button1</HvButton>
-    <HvDropDownMenu
-      id="dpmKeepOpenedFalse"
-      dataList={[{ label: "Label 1" }, { label: "Label 2", disabled: true }, { label: "Label 3" }]}
-      onClick={(e, item) => console.log(item.label)}
-      keepOpened={false}
-    />
+    <div style={{ width: 32 }}>
+      <HvDropDownMenu
+        id="dpmKeepOpenedFalse"
+        dataList={[
+          { label: "Label 1" },
+          { label: "Label 2", disabled: true },
+          { label: "Label 3" },
+        ]}
+        onClick={(e, item) => console.log(item.label)}
+        keepOpened={false}
+      />
+    </div>
     <HvButton id="button2">button2</HvButton>
   </>
 );
@@ -42,11 +48,13 @@ KeyboardNavigation.parameters = {
 // Extended pa11y test scenarios
 
 export const A11YClosed = () => (
-  <HvDropDownMenu
-    id="dropdownmenu-closed"
-    onClick={(e, item) => console.log(item.label)}
-    dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
-  />
+  <div style={{ width: 32 }}>
+    <HvDropDownMenu
+      id="dropdownmenu-closed"
+      onClick={(e, item) => console.log(item.label)}
+      dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+    />
+  </div>
 );
 
 A11YClosed.parameters = {
@@ -54,11 +62,13 @@ A11YClosed.parameters = {
 };
 
 export const A11YOpen = () => (
-  <HvDropDownMenu
-    id="dropdownmenu-open"
-    onClick={(e, item) => console.log(item.label)}
-    dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
-  />
+  <div style={{ width: 32 }}>
+    <HvDropDownMenu
+      id="dropdownmenu-open"
+      onClick={(e, item) => console.log(item.label)}
+      dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+    />
+  </div>
 );
 
 A11YOpen.parameters = {

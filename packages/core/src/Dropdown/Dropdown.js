@@ -64,6 +64,7 @@ const HvDropdown = (props) => {
     disablePortal = false,
     singleSelectionToggle = true,
     placement,
+    sameWidth = true,
     popperProps = {},
   } = props;
 
@@ -227,6 +228,7 @@ const HvDropdown = (props) => {
         onToggle={onToggle}
         onContainerCreation={setFocusToContent}
         role="combobox"
+        sameWidth={sameWidth}
         aria-label={ariaLabel}
         aria-labelledby={
           [label && setId(elementId, "label"), ariaLabelledBy].join(" ").trim() || undefined
@@ -450,6 +452,10 @@ HvDropdown.propTypes = {
    * The children stay within it's parent DOM hierarchy.
    */
   disablePortal: PropTypes.bool,
+  /**
+   * If `true` the dropdown has the same size of the header, `false` otherwise.
+   */
+  sameWidth: PropTypes.bool,
   /**
    * If `true`, selection can be toggled when single selection.
    */

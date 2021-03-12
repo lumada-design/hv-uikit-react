@@ -8,7 +8,7 @@ const styles = (theme) => ({
   root: {
     borderRadius: 2,
     "& > div$anchor": {
-      width: "unset",
+      width: "auto",
     },
     "& $header": {
       backgroundColor: "transparent",

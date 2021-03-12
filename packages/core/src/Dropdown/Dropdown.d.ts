@@ -82,6 +82,10 @@ export interface HvDropdownProps
    */
   disablePortal?: boolean;
   /**
+   * If `true` the dropdown has the same size of the header, `false` otherwise.
+   */
+  sameWidth?: boolean;
+  /**
    * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle?: boolean;

@@ -16,47 +16,51 @@ exports[`<Dropdown /> Controlled 1`] = `
     </span>
   </button>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root"
+    style="width: 32px;"
   >
     <div
-      aria-expanded="false"
-      aria-haspopup="menu"
-      aria-label="dropdownMenu-1"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor"
-      id="dropMenu"
-      tabindex="-1"
+      class="HvBaseDropdown-root HvDropDownMenu-root"
     >
-      <button
+      <div
         aria-expanded="false"
-        aria-label="Dropdown menu"
-        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-        id="dropMenu-icon-button"
-        tabindex="0"
-        type="button"
+        aria-haspopup="menu"
+        aria-label="dropdownMenu-1"
+        class="HvDropDownMenu-container HvBaseDropdown-anchor"
+        id="dropMenu"
+        tabindex="-1"
       >
-        <span
-          class="MuiButton-label"
+        <button
+          aria-expanded="false"
+          aria-label="Dropdown menu"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="dropMenu-icon-button"
+          tabindex="0"
+          type="button"
         >
-          <div
-            class="HvIconBase-root HvIconBase-s"
-            name="MoreOptionsVertical"
+          <span
+            class="MuiButton-label"
           >
-            <svg
-              focusable="false"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="MoreOptionsVertical"
             >
-              <path
-                class="color0"
-                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </span>
-      </button>
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -65,48 +69,52 @@ exports[`<Dropdown /> Controlled 1`] = `
 exports[`<Dropdown /> Disabled 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root"
+    style="width: 32px;"
   >
     <div
-      aria-expanded="false"
-      aria-haspopup="menu"
-      aria-label="dropdownMenu-4"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor HvBaseDropdown-rootDisabled"
-      id="dropMenu"
-      tabindex="-1"
+      class="HvBaseDropdown-root HvDropDownMenu-root"
     >
-      <button
+      <div
         aria-expanded="false"
-        aria-label="Dropdown menu"
-        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
-        disabled=""
-        id="dropMenu-icon-button"
+        aria-haspopup="menu"
+        aria-label="dropdownMenu-4"
+        class="HvDropDownMenu-container HvBaseDropdown-anchor HvBaseDropdown-rootDisabled"
+        id="dropMenu"
         tabindex="-1"
-        type="button"
       >
-        <span
-          class="MuiButton-label"
+        <button
+          aria-expanded="false"
+          aria-label="Dropdown menu"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+          disabled=""
+          id="dropMenu-icon-button"
+          tabindex="-1"
+          type="button"
         >
-          <div
-            class="HvIconBase-root HvIconBase-s"
-            name="MoreOptionsVertical"
+          <span
+            class="MuiButton-label"
           >
-            <svg
-              focusable="false"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="MoreOptionsVertical"
             >
-              <path
-                class="color0"
-                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                fill="#999999"
-              />
-            </svg>
-          </div>
-        </span>
-      </button>
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                  fill="#999999"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -115,46 +123,50 @@ exports[`<Dropdown /> Disabled 1`] = `
 exports[`<Dropdown /> General 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root HvDropDownMenu-root"
+    style="width: 32px;"
   >
     <div
-      aria-expanded="false"
-      aria-haspopup="menu"
-      class="HvDropDownMenu-container HvBaseDropdown-anchor"
-      id="drop-down-menu-1"
-      tabindex="-1"
+      class="HvBaseDropdown-root HvDropDownMenu-root"
     >
-      <button
+      <div
         aria-expanded="false"
-        aria-label="Dropdown menu"
-        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-        id="drop-down-menu-1-icon-button"
-        tabindex="0"
-        type="button"
+        aria-haspopup="menu"
+        class="HvDropDownMenu-container HvBaseDropdown-anchor"
+        id="drop-down-menu-1"
+        tabindex="-1"
       >
-        <span
-          class="MuiButton-label"
+        <button
+          aria-expanded="false"
+          aria-label="Dropdown menu"
+          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropDownMenu-icon HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+          id="drop-down-menu-1-icon-button"
+          tabindex="0"
+          type="button"
         >
-          <div
-            class="HvIconBase-root HvIconBase-s"
-            name="MoreOptionsVertical"
+          <span
+            class="MuiButton-label"
           >
-            <svg
-              focusable="false"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="HvIconBase-root HvIconBase-s"
+              name="MoreOptionsVertical"
             >
-              <path
-                class="color0"
-                d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </span>
-      </button>
+              <svg
+                focusable="false"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>

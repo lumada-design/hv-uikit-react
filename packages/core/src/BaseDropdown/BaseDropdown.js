@@ -30,7 +30,7 @@ const HvBaseDropdown = ({
   component,
   adornment,
   children,
-  sameWidth,
+  sameWidth = true,
   ...others
 }) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -47,17 +47,23 @@ const HvBaseDropdown = ({
     if (onContainerCreation) onContainerCreation(popperElement);
   }, [onContainerCreation, popperElement]);
 
+  const widthCalculator = useCallback(({ state }) => {
+    // eslint-disable-next-line no-param-reassign
+    state.styles.popper.width = `${state.rects.reference.width}px`;
+  }, []);
+
   const modifiers = useMemo(
     () => [
       {
         name: "sameWidth",
-        enabled: true,
+        enabled: sameWidth,
         phase: "beforeWrite",
         requires: ["computeStyles"],
+        fn: widthCalculator,
       },
       ...popperPropsModifiers,
     ],
-    [popperPropsModifiers]
+    [popperPropsModifiers, sameWidth, widthCalculator]
   );
 
   const { styles: popperStyles, attributes } = usePopper(referenceElement, popperElement, {
@@ -75,6 +81,7 @@ const HvBaseDropdown = ({
   if (attributes.popper) {
     popperPlacement = attributes.popper["data-popper-placement"];
   }
+  console.log("test", attributes.popper);
 
   const handleToggle = useCallback(
     (event) => {
@@ -193,6 +200,7 @@ const HvBaseDropdown = ({
 
     const container = (
       <div
+        role="tooltip"
         ref={setPopperElement}
         className={clsx(classes.container)}
         style={popperStyles.popper}
@@ -205,7 +213,7 @@ const HvBaseDropdown = ({
               <div
                 style={{ width: extensionWidth }}
                 className={clsx(classes.inputExtensionOpen, {
-                  [classes.inputExtensionLeftPosition]: placement === "left",
+                  [classes.inputExtensionLeftPosition]: popperPlacement.includes("end"),
                 })}
               />
             )}
@@ -216,8 +224,8 @@ const HvBaseDropdown = ({
               <div
                 style={{ width: extensionWidth }}
                 className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
-                  [classes.inputExtensionFloatRight]: placement === "right",
-                  [classes.inputExtensionFloatLeft]: placement === "left",
+                  [classes.inputExtensionFloatRight]: popperPlacement.includes("start"),
+                  [classes.inputExtensionFloatLeft]: popperPlacement.includes("end"),
                 })}
               />
             )}
