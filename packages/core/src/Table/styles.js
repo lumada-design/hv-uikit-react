@@ -94,9 +94,16 @@ const styles = (theme) => ({
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
           },
+          "&.rt-th.-cursor-pointer": {
+            cursor: "pointer",
+          },
           "& ~.rt-th.rthfc-th-fixed-left-last": {
             left: 0,
             borderLeft: "none",
+          },
+          "&.rthfc-th-fixed": {
+            position: "sticky",
+            zIndex: 1,
           },
           "&.rt-th.rthfc-th-fixed-left-last": {
             borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
@@ -140,6 +147,8 @@ const styles = (theme) => ({
                 background: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4),
               },
               "&.rthfc-td-fixed": {
+                position: "sticky",
+                zIndex: 1,
                 background: theme.hv.palette.atmosphere.atmo2,
                 "&.sorted": {
                   background: theme.hv.palette.atmosphere.atmo2,
