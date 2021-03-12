@@ -58,7 +58,7 @@ const CoreComponentData = [
     dsPattern: "Breadcrumb",
     component: "Breadcrumb",
     path: "components-breadcrumb--main",
-    uikitVersion3: "3.3.0",
+    uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
   },
