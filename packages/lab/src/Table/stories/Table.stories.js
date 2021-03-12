@@ -1,9 +1,19 @@
 import React, { useEffect, useMemo, useState } from "react";
 import range from "lodash/range";
-import { useTable, useRowSelect, usePagination, useSortBy } from "react-table";
+import { useTable, useRowSelect, usePagination, useSortBy, useExpanded } from "react-table";
 
-import { Ban, Delete, Duplicate, Lock, Unlock, Preview } from "@hv/uikit-react-icons";
 import {
+  Ban,
+  DropDownXS,
+  DropRightXS,
+  Delete,
+  Duplicate,
+  Lock,
+  Unlock,
+  Preview,
+} from "@hv/uikit-react-icons";
+import {
+  HvButton,
   HvBulkActions,
   HvCheckBox,
   HvDropDownMenu,
@@ -118,11 +128,7 @@ export const EmptyCells = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableCell
-                key={col.Header}
-                rtCol={col}
-                {...col.getHeaderProps({ style: { width: col.width } })}
-              >
+              <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                 {col.render("Header")}
               </HvTableCell>
             ))}
@@ -314,6 +320,92 @@ export const Sortable = () => {
 Sortable.parameters = {
   docs: {
     description: { story: "A table with multi column sorting, managed by `react-table`." },
+  },
+};
+
+export const Expandable = () => {
+  const data = useMemo(() => makeData(6), []);
+  const columns = useMemo(() => {
+    const initialColumns = getColumns().map((col) => ({ ...col, isSortable: true }));
+    const selectionColumn = {
+      id: "selection",
+      padding: "checkbox",
+      Cell: ({ row }) => <HvCheckBox {...row.getToggleRowSelectedProps()} />,
+    };
+    const expandableHeaderColumn = {
+      ...initialColumns[0],
+      padding: "none",
+      Cell: ({ row, cell }) => (
+        <HvButton
+          category="ghost"
+          startIcon={row.isExpanded ? <DropDownXS /> : <DropRightXS />}
+          aria-label={`${row.isExpanded ? "Collapse" : "Expand"} row`}
+          aria-expanded={row.isExpanded}
+          {...row.getToggleRowExpandedProps()}
+        >
+          {cell.value}
+        </HvButton>
+      ),
+    };
+
+    return [selectionColumn, expandableHeaderColumn, ...initialColumns.slice(1)];
+  }, []);
+
+  const instance = useTable({ columns, data }, useSortBy, useExpanded, useRowSelect);
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = instance;
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableCell
+                key={col.Header}
+                rtCol={col}
+                {...col.getHeaderProps(col.getSortByToggleProps())}
+              >
+                {col.render("Header")}
+              </HvTableCell>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            // expandable row
+            return (
+              <React.Fragment key={row.id}>
+                <HvTableRow hover selected={row.isSelected} {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  ))}
+                </HvTableRow>
+                <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
+                  <HvTableCell
+                    style={{ paddingBottom: 0, paddingTop: 0, textAlign: "center" }}
+                    colSpan="100%"
+                  >
+                    <code>{JSON.stringify(row.values, null, 2)}</code>
+                  </HvTableCell>
+                </HvTableRow>
+              </React.Fragment>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+Expandable.parameters = {
+  docs: {
+    description: {
+      story: "A table with expandable custom rows being managed by `react-table`.",
+    },
   },
 };
 
