@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import { Calendar } from "@hv/uikit-react-icons";
@@ -92,6 +92,8 @@ const HvDatePicker = (props) => {
   const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
   const [visibleDate, setVisibleDate, onVisibleDateChange] = useVisibleDate(startDate);
 
+  const focusTarget = useRef();
+
   useEffect(() => {
     setStartDate(rangeMode ? startValue : value, true);
     setEndDate(endValue, true);
@@ -164,20 +166,8 @@ const HvDatePicker = (props) => {
     if (!open) handleCalendarClose();
   };
 
-  const setFocusToDateInput = (containerRef) => {
-    /**
-     *  TODO: Review this focus function, it should focus the input
-     *  https://insightgroup.atlassian.net/browse/HVUIKIT-5680
-     *  containerRef?.getElementsByTagName("input")[0]?.focus();
-     */
-    const divs = [...containerRef?.getElementsByTagName("div")];
-    divs.every((div) => {
-      if (div.tabIndex >= 0) {
-        div.focus();
-        return false;
-      }
-      return true;
-    });
+  const focusOnContainer = () => {
+    focusTarget.current?.focus();
   };
 
   const handleDateChange = (event, newDate) => {
@@ -300,7 +290,7 @@ const HvDatePicker = (props) => {
         expanded={calendarOpen}
         onToggle={handleToggle}
         onClickOutside={handleCalendarClose}
-        onContainerCreation={setFocusToDateInput}
+        onContainerCreation={focusOnContainer}
         placeholder={renderInput(getDateLabel(dateValue, rangeMode, locale))}
         adornment={<Calendar className={classes.icon} color={disabled ? "atmo5" : undefined} />}
         popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
@@ -314,11 +304,7 @@ const HvDatePicker = (props) => {
           undefined
         }
       >
-        {
-          /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-          // necessary because `HvBaseDropdown` re-render auto-focus
-        }
-        <div tabIndex={0} />
+        <div ref={focusTarget} tabIndex={-1} />
         <HvCalendar
           id={setId(id, "calendar")}
           startAdornment={startAdornment}
