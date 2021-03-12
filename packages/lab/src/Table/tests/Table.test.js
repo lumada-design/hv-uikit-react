@@ -1,11 +1,14 @@
 /* eslint-env jest */
-
 import React from "react";
 import range from "lodash/range";
 import { render } from "testing-utils";
 import userEvent from "@testing-library/user-event";
 
+import { useTable, useRowSelect } from "react-table";
 import { Main, EmptyCells, Pagination, Sortable, BulkActions } from "../stories/Table.stories";
+
+import { makeData, getColumns } from "../stories/utils";
+
 import {
   HvTable,
   HvTableBody,
@@ -252,6 +255,58 @@ describe("Table", () => {
       userEvent.click(bulkCheckbox);
       expect(getByLabelText("10 / 64")).toBeInTheDocument();
       expect(queryAllByRole("checkbox", { checked: true }).length).toBe(10 + 1);
+    });
+  });
+
+  describe("Table line click", () => {
+    it("executes the provided callback", () => {
+      const onClickSpy = jest.fn();
+      const TableWithRowClick = () => {
+        const data = makeData(6);
+        const columns = getColumns();
+
+        const instance = useTable({ columns, data }, useRowSelect);
+        const { prepareRow, headers, rows } = instance;
+
+        return (
+          <HvTableContainer>
+            <HvTable>
+              <HvTableHead>
+                <HvTableRow>
+                  {headers.map((col) => (
+                    <HvTableCell key={col.id}>{`Sample Header ${col.id}`}</HvTableCell>
+                  ))}
+                </HvTableRow>
+              </HvTableHead>
+              <HvTableBody>
+                {rows.map((row) => {
+                  prepareRow(row);
+                  return (
+                    <HvTableRow
+                      key={row.id}
+                      onClick={(e) => onClickSpy(e)}
+                      {...row.getRowProps()}
+                      style={{ ...row.getRowProps().style, cursor: "pointer" }}
+                    >
+                      {headers.map((col) => (
+                        <HvTableCell key={col.id}>{`Sample Header ${col.id}`}</HvTableCell>
+                      ))}
+                    </HvTableRow>
+                  );
+                })}
+              </HvTableBody>
+            </HvTable>
+          </HvTableContainer>
+        );
+      };
+
+      const { getAllByRole } = render(<TableWithRowClick />);
+
+      const rowsInTable = getAllByRole("row");
+
+      userEvent.click(rowsInTable[1]);
+      userEvent.click(rowsInTable[3]);
+      expect(onClickSpy).toHaveBeenCalledTimes(2);
     });
   });
 });

@@ -19,6 +19,7 @@ import {
   HvDropDownMenu,
   HvEmptyState,
   HvToggleButton,
+  HvTypography,
 } from "@hv/uikit-react-core";
 
 import {
@@ -801,5 +802,82 @@ ServerSide.parameters = {
       story:
         "A table with sorting and pagination handled server-side, using React Table. Set `manualPagination` and `manualSortBy` to have manual control over pagination and sorting.",
     },
+  },
+};
+
+export const TableRowClick = () => {
+  const initialData = useMemo(() => makeData(6), []);
+  const data = initialData.map((row) => {
+    const updatedRow = { ...row };
+    updatedRow.link =
+      "https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx";
+    return updatedRow;
+  });
+  const columns = useMemo(() => getColumns(), []);
+  columns.push({
+    Header: "Details",
+    accessor: "link",
+    Cell: (props) => {
+      const { row } = props;
+      const { original } = row;
+      const { link } = original;
+
+      return (
+        <HvTypography variant="xsInlineLink" component="a" href={link}>
+          Details Page
+        </HvTypography>
+      );
+    },
+  });
+  const instance = useTable({ columns, data }, useRowSelect);
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = instance;
+
+  const onRowClicked = (row) => {
+    const win = window.open(row.original.link, "_blank");
+    win.focus();
+  };
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+                {col.render("Header")}
+              </HvTableCell>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <HvTableRow
+                hover
+                key={row.Header}
+                selected={row.isSelected}
+                onClick={(e) => onRowClicked(row, e)}
+                {...row.getRowProps({
+                  style: { cursor: "pointer" },
+                })}
+              >
+                {row.cells.map((cell) => (
+                  <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+TableRowClick.parameters = {
+  docs: {
+    description: { story: "A table example where you can click on a row." },
   },
 };
