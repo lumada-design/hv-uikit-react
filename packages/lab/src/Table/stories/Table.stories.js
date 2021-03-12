@@ -2,8 +2,14 @@ import React, { useEffect, useMemo, useState } from "react";
 import range from "lodash/range";
 import { useTable, useRowSelect, usePagination, useSortBy } from "react-table";
 
-import { Ban, Delete, Duplicate, Lock, Preview } from "@hv/uikit-react-icons";
-import { HvCheckBox, HvDropDownMenu, HvEmptyState } from "@hv/uikit-react-core";
+import { Ban, Delete, Duplicate, Lock, Unlock, Preview } from "@hv/uikit-react-icons";
+import {
+  HvBulkActions,
+  HvCheckBox,
+  HvDropDownMenu,
+  HvEmptyState,
+  HvToggleButton,
+} from "@hv/uikit-react-core";
 
 import {
   HvTable,
@@ -394,7 +400,11 @@ export const BulkActions = () => {
     []
   );
 
-  const instance = useTable({ columns, data }, usePagination, useRowSelect);
+  const instance = useTable(
+    { columns, data, autoResetSelectedRows: false },
+    usePagination,
+    useRowSelect
+  );
   const {
     getTableProps,
     getTableBodyProps,
@@ -406,7 +416,7 @@ export const BulkActions = () => {
 
   const handleAction = (evt, id, action) => {
     const selected = selectedFlatRows.map((el) => el.original);
-    console.log(evt, id, action);
+    console.log(id, action);
 
     switch (action.id) {
       case "duplicate": {
@@ -478,7 +488,134 @@ export const BulkActions = () => {
 BulkActions.parameters = {
   docs: {
     description: {
-      story: "A paginated table with selectable rows and bulk actions.",
+      story: "A paginated table with selectable rows and bulk actions managed by `react-table`.",
+    },
+  },
+};
+
+export const BulkActionsManual = () => {
+  const [data, setData] = useState(
+    makeData(64).map((el) => ({ ...el, isSelected: false, disabled: false }))
+  );
+
+  const columns = useMemo(
+    () => [
+      {
+        id: "selection",
+        padding: "checkbox",
+        Cell: ({ row }) => (
+          <HvCheckBox disabled={row.original.disabled} {...row.getToggleRowSelectedProps()} />
+        ),
+      },
+      ...getColumns(),
+      {
+        id: "actions",
+        padding: "checkbox",
+        Cell: ({ row }) => {
+          const { id, disabled } = row.original;
+
+          return (
+            <HvToggleButton
+              aria-label="Lock"
+              notSelectedIcon={<Unlock />}
+              selectedIcon={<Lock />}
+              selected={disabled}
+              onClick={() =>
+                setData(data.map((el) => (el.id !== id ? el : { ...el, disabled: !disabled })))
+              }
+            />
+          );
+        },
+      },
+    ],
+    [data]
+  );
+
+  const instance = useTable(
+    { columns, data, autoResetSelectedRows: false },
+    usePagination,
+    useRowSelect
+  );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    headers,
+    page,
+    rows,
+    selectedFlatRows,
+  } = instance;
+
+  const enabledRows = useMemo(() => rows.filter((el) => !el.original.disabled), [rows]);
+  const enabledPage = useMemo(() => page.filter((el) => !el.original.disabled), [page]);
+
+  const handleSelectAllPages = (checked = true) => {
+    enabledRows.forEach((row) => {
+      prepareRow(row);
+      row.toggleRowSelected(checked);
+    });
+  };
+
+  const handleSelectAll = () => {
+    const anySelected = enabledRows.some((el) => el.isSelected);
+
+    if (anySelected) {
+      handleSelectAllPages(false);
+    } else {
+      enabledPage.forEach((row) => {
+        prepareRow(row);
+        row.toggleRowSelected(true);
+      });
+    }
+  };
+
+  return (
+    <>
+      <HvBulkActions
+        style={{ marginBottom: 10 }}
+        numTotal={rows.length}
+        numSelected={selectedFlatRows.length}
+        showSelectAllPages
+        onSelectAll={handleSelectAll}
+        onSelectAllPages={handleSelectAllPages}
+      />
+      <HvTableContainer>
+        <HvTable {...getTableProps()}>
+          <HvTableHead>
+            <HvTableRow>
+              {headers.map((col) => (
+                <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+                  {col.render("Header")}
+                </HvTableCell>
+              ))}
+            </HvTableRow>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {page.map((row) => {
+              prepareRow(row);
+              return (
+                <HvTableRow hover key={row.Header} selected={row.isSelected} {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </HvTableCell>
+                  ))}
+                </HvTableRow>
+              );
+            })}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      <HvTablePagination rtInstance={instance} />
+    </>
+  );
+};
+
+BulkActionsManual.parameters = {
+  docs: {
+    description: {
+      story:
+        "A paginated table with manual selectable rows and bulk actions. The Bulk Actions selection mechanism ignores disabled rows",
     },
   },
 };
