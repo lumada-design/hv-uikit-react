@@ -106,10 +106,8 @@ export const TextAndSemantic = () => {
         title={<HvDialogTitle showIcon={false}>Are you sure?</HvDialogTitle>}
         content={
           <HvDialogContent>
-            <HvTypography>
-              Switching to model view will clear all the fields in your visualization. You will need
-              to re-select your fields.
-            </HvTypography>
+            Switching to model view will clear all the fields in your visualization. You will need
+            to re-select your fields.
           </HvDialogContent>
         }
       />
@@ -315,9 +313,7 @@ export const RemoveSchedule = () => {
         firstFocusable="close"
       >
         <HvDialogTitle variant="warning">Remove schedule?</HvDialogTitle>
-        <HvDialogContent indentContent>
-          <div>{styledString()}</div>
-        </HvDialogContent>
+        <HvDialogContent indentContent>{styledString()}</HvDialogContent>
         <HvDialogActions>
           <HvButton id="remove" category="ghost">
             Remove

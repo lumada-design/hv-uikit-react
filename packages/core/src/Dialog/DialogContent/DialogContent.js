@@ -7,11 +7,12 @@ import styles from "./styles";
 
 const HvDialogContent = ({ classes, className, children, indentContent = false }) => {
   return (
-    <DialogContent className={clsx(className, classes.root)}>
-      <div className={clsx({ [classes.textContent]: indentContent })}>
-        <HvTypography>{children}</HvTypography>
-      </div>
-    </DialogContent>
+    <HvTypography
+      component={DialogContent}
+      className={clsx(className, classes.root, { [classes.textContent]: indentContent })}
+    >
+      {children}
+    </HvTypography>
   );
 };
 
