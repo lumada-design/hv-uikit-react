@@ -72,6 +72,33 @@ The peer dependencies will also be different:
 npm install @material-ui/core@~4.8.0 plotly.js@>1.34.0
 ```
 
+## Usage
+
+1. Wrap your application with the `HvProvider` provided by
+   `@hv/uikit-react-core`.
+
+```jsx
+import { HvProvider } from "@hv/uikit-react-core"
+
+// Do this at the root of your application
+function App({ children }) {
+  return <HvProvider>{children}</HvProvider>
+}
+```
+
+Optionally, you can configure the active theme and locale, among others.
+Check [the Provider's API documentation](https://lumada-design.github.io/uikit/master/?path=/docs/foundation-provider--main) for further details.
+
+2. Now you can start using components:
+
+```jsx
+import { HvButton } from "@hv/uikit-react-core"
+
+function Example() {
+  return <HvButton>Hello from UI Kit!</HvButton>
+}
+```
+
 ## Documentation
 
 Check out our [documentation website](https://lumada-design.github.io/uikit/master/).

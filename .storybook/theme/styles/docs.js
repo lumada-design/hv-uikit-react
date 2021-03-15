@@ -51,6 +51,14 @@ export const getDocsStyles = (theme) => ({
         paddingBottom: theme.hv.spacing.xs,
         marginBottom: theme.hv.spacing.sm,
       },
+
+      "& > h3": {
+        paddingTop: theme.hv.spacing.xs,
+      },
+
+      "& .docblock-source": {
+        margin: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.sm}px`,
+      },
     },
   },
 });
