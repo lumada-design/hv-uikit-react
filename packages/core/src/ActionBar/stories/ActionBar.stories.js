@@ -119,9 +119,6 @@ export const VariedActionBar = () => {
       position: "absolute",
       bottom: "0",
     },
-    dropdownContainer: {
-      width: 32,
-    },
     space: {
       flex: 1,
     },
@@ -147,12 +144,10 @@ export const VariedActionBar = () => {
         >
           Save
         </HvButton>
-        <div className={classes.dropdownContainer}>
-          <HvDropDownMenu
-            onClick={(e, item) => console.log(item.label)}
-            dataList={[{ label: "Delete" }, { label: "Update" }]}
-          />
-        </div>
+        <HvDropDownMenu
+          onClick={(e, item) => console.log(item.label)}
+          dataList={[{ label: "Delete" }, { label: "Update" }]}
+        />
       </HvActionBar>
     </div>
   );

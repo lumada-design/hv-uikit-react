@@ -150,10 +150,6 @@ BreadCrumb.propTypes = {
      *  Styles applied to the last element.
      */
     currentPage: PropTypes.string,
-    /**
-     *  Styles applied to dropdown element that contain the middle paths.
-     */
-    dropdownContainer: PropTypes.string,
   }).isRequired,
   /**
    * List of breadcrumb.

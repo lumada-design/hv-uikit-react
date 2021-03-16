@@ -17,9 +17,6 @@ const styles = (theme) => ({
     },
   },
   separatorContainer: {},
-  dropdownContainer: {
-    width: 32,
-  },
   orderedList: {
     display: "flex",
     paddingLeft: 0,

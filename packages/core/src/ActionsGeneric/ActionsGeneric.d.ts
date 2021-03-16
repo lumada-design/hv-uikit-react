@@ -34,8 +34,7 @@ export type HvActionsGenericClassKey =
   | "actionContainer"
   | "dropDownMenu"
   | "dropDownMenuButton"
-  | "dropDownMenuButtonSelected"
-  | "dropdownContainer";
+  | "dropDownMenuButtonSelected";
 
 export interface HvActionsGenericProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvActionsGenericClassKey>,

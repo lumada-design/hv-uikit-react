@@ -81,7 +81,6 @@ const HvBaseDropdown = ({
   if (attributes.popper) {
     popperPlacement = attributes.popper["data-popper-placement"];
   }
-  console.log("test", attributes.popper);
 
   const handleToggle = useCallback(
     (event) => {

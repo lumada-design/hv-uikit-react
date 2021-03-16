@@ -70,8 +70,7 @@ export const DonutChartWithControls = () => {
     },
     label: { paddingBottom: 6 },
     titlePadding: { marginTop: 10 },
-    dropdownMenuContainer: {
-      width: 32,
+    dropdownSeparator: {
       marginLeft: 10,
     },
     controllerGroup: {
@@ -101,7 +100,7 @@ export const DonutChartWithControls = () => {
               { label: "Last 48h" },
             ]}
           />
-          <div className={classes.dropdownMenuContainer}>
+          <div className={classes.dropdownSeparator}>
             <HvDropDownMenu
               onClick={(e, item) => console.log(item.label)}
               dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}

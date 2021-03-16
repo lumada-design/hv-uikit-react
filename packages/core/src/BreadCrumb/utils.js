@@ -13,14 +13,12 @@ export const pathWithSubMenu = (id, classes, listRoute, maxVisible, dropDownMenu
   listRoute.splice(
     1,
     nbrElemToSubMenu,
-    <div className={classes.dropdownContainer}>
-      <HvDropDownMenu
-        id={setId(id, "submenu")}
-        icon={<MoreOptionsHorizontal iconSize="S" color="acce1" />}
-        dataList={subMenuList}
-        {...dropDownMenuProps}
-      />
-    </div>
+    <HvDropDownMenu
+      id={setId(id, "submenu")}
+      icon={<MoreOptionsHorizontal iconSize="S" color="acce1" />}
+      dataList={subMenuList}
+      {...dropDownMenuProps}
+    />
   );
 
   return listRoute;
