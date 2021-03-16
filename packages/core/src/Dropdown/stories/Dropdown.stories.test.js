@@ -248,7 +248,7 @@ export const DifferentSizeAndPlacements = () => {
         multiSelect
         showSearch
         placement="left"
-        sameWidth={false}
+        variableWidth
       />
       <StyledDropdown
         id="dropdown2"
@@ -257,7 +257,7 @@ export const DifferentSizeAndPlacements = () => {
         multiSelect
         showSearch
         placement="right"
-        sameWidth={false}
+        variableWidth
       />
     </div>
   );

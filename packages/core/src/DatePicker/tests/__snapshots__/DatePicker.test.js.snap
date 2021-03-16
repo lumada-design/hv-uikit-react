@@ -92,7 +92,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               }
             }
             role="combobox"
-            sameWidth={false}
+            variableWidth={true}
           >
             <HvBaseDropdown
               adornment={
@@ -150,7 +150,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 }
               }
               role="combobox"
-              sameWidth={false}
+              variableWidth={true}
             >
               <div
                 className="HvBaseDropdown-root HvDatePicker-dropdown"
@@ -369,7 +369,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               }
             }
             role="combobox"
-            sameWidth={false}
+            variableWidth={true}
           >
             <HvBaseDropdown
               adornment={
@@ -427,7 +427,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 }
               }
               role="combobox"
-              sameWidth={false}
+              variableWidth={true}
             >
               <div
                 className="HvBaseDropdown-root HvDatePicker-dropdown"
@@ -612,7 +612,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               }
             }
             role="combobox"
-            sameWidth={false}
+            variableWidth={true}
           >
             <HvBaseDropdown
               adornment={
@@ -668,7 +668,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 }
               }
               role="combobox"
-              sameWidth={false}
+              variableWidth={true}
             >
               <div
                 className="HvBaseDropdown-root HvDatePicker-dropdown"

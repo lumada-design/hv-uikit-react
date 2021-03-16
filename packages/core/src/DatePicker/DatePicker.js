@@ -285,7 +285,7 @@ const HvDatePicker = (props) => {
         classes={{ root: classes.dropdown, panel: classes.panel }}
         disabled={disabled}
         disablePortal={disablePortal}
-        sameWidth={false}
+        variableWidth
         placement={horizontalPlacement}
         expanded={calendarOpen}
         onToggle={handleToggle}

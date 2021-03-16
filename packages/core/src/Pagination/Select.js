@@ -57,7 +57,7 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
       onContainerCreation={setFocusToContent}
       placeholder={<HvTypography>{value}</HvTypography>}
       disabled={disabled}
-      sameWidth={false}
+      variableWidth
       {...others}
     >
       <HvPanel>

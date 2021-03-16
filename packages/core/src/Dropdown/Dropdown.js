@@ -64,7 +64,7 @@ const HvDropdown = (props) => {
     disablePortal = false,
     singleSelectionToggle = true,
     placement,
-    sameWidth = true,
+    variableWidth = false,
     popperProps = {},
   } = props;
 
@@ -228,7 +228,7 @@ const HvDropdown = (props) => {
         onToggle={onToggle}
         onContainerCreation={setFocusToContent}
         role="combobox"
-        sameWidth={sameWidth}
+        variableWidth={variableWidth}
         aria-label={ariaLabel}
         aria-labelledby={
           [label && setId(elementId, "label"), ariaLabelledBy].join(" ").trim() || undefined
@@ -453,9 +453,10 @@ HvDropdown.propTypes = {
    */
   disablePortal: PropTypes.bool,
   /**
-   * If `true` the dropdown has the same size of the header, `false` otherwise.
+   * If `true` the dropdown width depends size of content if `false` the width depends on the header size.
+   * Defaults to `false`.
    */
-  sameWidth: PropTypes.bool,
+  variableWidth: PropTypes.bool,
   /**
    * If `true`, selection can be toggled when single selection.
    */

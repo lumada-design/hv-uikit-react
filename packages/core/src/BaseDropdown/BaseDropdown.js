@@ -30,7 +30,7 @@ const HvBaseDropdown = ({
   component,
   adornment,
   children,
-  sameWidth = true,
+  variableWidth = false,
   ...others
 }) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -55,15 +55,15 @@ const HvBaseDropdown = ({
   const modifiers = useMemo(
     () => [
       {
-        name: "sameWidth",
-        enabled: sameWidth,
+        name: "variableWidth",
+        enabled: !variableWidth,
         phase: "beforeWrite",
         requires: ["computeStyles"],
         fn: widthCalculator,
       },
       ...popperPropsModifiers,
     ],
-    [popperPropsModifiers, sameWidth, widthCalculator]
+    [popperPropsModifiers, variableWidth, widthCalculator]
   );
 
   const { styles: popperStyles, attributes } = usePopper(referenceElement, popperElement, {
@@ -374,9 +374,10 @@ HvBaseDropdown.propTypes = {
    */
   disablePortal: PropTypes.bool,
   /**
-   * If `true` the dropdown has the same size of the header, `false` otherwise.
+   * If `true` the dropdown width depends size of content if `false` the width depends on the header size.
+   * Defaults to `false`.
    */
-  sameWidth: PropTypes.bool,
+  variableWidth: PropTypes.bool,
   /**
    * If `true` the dropdown starts opened if `false` it starts closed.
    */
