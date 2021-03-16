@@ -48,6 +48,11 @@ export interface HvBaseDropdownProps
    */
   disablePortal?: boolean;
   /**
+   * If `true` the dropdown width depends size of content if `false` the width depends on the header size.
+   * Defaults to `false`.
+   */
+  variableWidth?: boolean;
+  /**
    * If `true` the dropdown starts opened if `false` it starts closed.
    */
   expanded?: boolean;

@@ -3,6 +3,7 @@ import { outlineStyles } from "../Focus/styles";
 const styles = (theme) => ({
   root: {
     display: "inline-block",
+    width: "auto",
     "&.focus-visible $icon": {
       ...outlineStyles,
     },

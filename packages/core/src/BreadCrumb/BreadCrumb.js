@@ -87,7 +87,7 @@ const BreadCrumb = (props) => {
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu(id, listPath, maxVisibleElem, dropDownMenuProps)
+      ? pathWithSubMenu(id, classes, listPath, maxVisibleElem, dropDownMenuProps)
       : listPath;
 
   return (

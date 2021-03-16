@@ -1236,7 +1236,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         },
                       }
                     }
-                    sameWidth={false}
+                    variableWidth={true}
                   >
                     <HvBaseDropdown
                       aria-haspopup="menu"
@@ -1295,7 +1295,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           },
                         }
                       }
-                      sameWidth={false}
+                      variableWidth={true}
                     >
                       <div
                         className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"

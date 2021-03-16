@@ -82,6 +82,11 @@ export interface HvDropdownProps
    */
   disablePortal?: boolean;
   /**
+   * If `true` the dropdown width depends size of content if `false` the width depends on the header size.
+   * Defaults to `false`.
+   */
+  variableWidth?: boolean;
+  /**
    * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle?: boolean;

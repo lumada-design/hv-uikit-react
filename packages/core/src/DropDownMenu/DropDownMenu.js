@@ -86,7 +86,7 @@ const DropDownMenu = ({
       component={headerComponent}
       aria-haspopup="menu"
       placement={placement}
-      sameWidth={false}
+      variableWidth
       disablePortal={disablePortal}
       onToggle={(e, s) => {
         // this will only run if uncontrolled

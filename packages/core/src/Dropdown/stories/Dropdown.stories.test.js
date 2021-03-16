@@ -22,17 +22,19 @@ export default {
 };
 
 export const SingleSelectedValue = () => (
-  <HvDropdown
-    id="dropdownSelected"
-    expanded
-    onChange={(item) => console.log(item)}
-    values={[
-      { id: "id-1", label: "value 1" },
-      { id: "id-2", label: "value 2" },
-      { id: "id-3", label: "value 3", selected: true },
-      { id: "id-4", label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdownSelected"
+      expanded
+      onChange={(item) => console.log(item)}
+      values={[
+        { id: "id-1", label: "value 1" },
+        { id: "id-2", label: "value 2" },
+        { id: "id-3", label: "value 3", selected: true },
+        { id: "id-4", label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 SingleSelectedValue.parameters = {
@@ -42,27 +44,30 @@ SingleSelectedValue.parameters = {
 };
 
 export const LongLabel = () => (
-  <HvDropdown
-    id="dropdown12"
-    expanded
-    multiSelect
-    showSearch
-    label="Dropdown"
-    values={[
-      { label: "value 1" },
-      { label: "value 2" },
-      { label: "value 3", selected: true },
-      { label: "value 4" },
-      { label: "value 5 value 5 value 5 555555555555 value value 5" },
-      { label: "value 6" },
-      { label: "value 7" },
-      { label: "value 8", selected: true },
-      { label: "value 9", selected: true },
-      { label: "value 10" },
-      { label: "value 11" },
-      { label: "value 12" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown12"
+      expanded
+      multiSelect
+      showSearch
+      disablePortal
+      label="Dropdown"
+      values={[
+        { label: "value 1" },
+        { label: "value 2" },
+        { label: "value 3", selected: true },
+        { label: "value 4" },
+        { label: "value 5 value 5 value 5 555555555555 value value 5" },
+        { label: "value 6" },
+        { label: "value 7" },
+        { label: "value 8", selected: true },
+        { label: "value 9", selected: true },
+        { label: "value 10" },
+        { label: "value 11" },
+        { label: "value 12" },
+      ]}
+    />
+  </div>
 );
 
 LongLabel.parameters = {
@@ -74,17 +79,19 @@ LongLabel.parameters = {
 // Dropdown.stories.js with property expanded
 
 export const General = () => (
-  <HvDropdown
-    expanded
-    multiSelect
-    showSearch
-    values={[
-      { label: "value 1" },
-      { label: "value 2", selected: true },
-      { label: "value 3" },
-      { label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      expanded
+      multiSelect
+      showSearch
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 General.parameters = {
@@ -94,17 +101,19 @@ General.parameters = {
 };
 
 export const SingleSelection = () => (
-  <HvDropdown
-    expanded
-    id="dropdown7"
-    onChange={(item) => console.log(item)}
-    values={[
-      { id: "id-1", label: "value 1" },
-      { id: "id-2", label: "value 2" },
-      { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      expanded
+      id="dropdown7"
+      onChange={(item) => console.log(item)}
+      values={[
+        { id: "id-1", label: "value 1" },
+        { id: "id-2", label: "value 2" },
+        { id: "id-3", label: "value 3" },
+        { id: "id-4", label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 SingleSelection.parameters = {
@@ -114,19 +123,21 @@ SingleSelection.parameters = {
 };
 
 export const MultiSelection = () => (
-  <HvDropdown
-    expanded
-    id="dropdown2"
-    multiSelect
-    showSearch
-    label="Dropdown Title"
-    values={[
-      { label: "value 1" },
-      { label: "value 2", selected: true },
-      { label: "value 3" },
-      { label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      expanded
+      id="dropdown2"
+      multiSelect
+      showSearch
+      label="Dropdown Title"
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 MultiSelection.parameters = {
@@ -136,18 +147,20 @@ MultiSelection.parameters = {
 };
 
 export const MultiSelectionNoSearch = () => (
-  <HvDropdown
-    expanded
-    id="dropdown5"
-    onChange={(item) => console.log(item)}
-    multiSelect
-    values={[
-      { id: "id-1", label: "value 1" },
-      { id: "id-2", label: "value 1", selected: true },
-      { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      expanded
+      id="dropdown5"
+      onChange={(item) => console.log(item)}
+      multiSelect
+      values={[
+        { id: "id-1", label: "value 1" },
+        { id: "id-2", label: "value 1", selected: true },
+        { id: "id-3", label: "value 3" },
+        { id: "id-4", label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 MultiSelectionNoSearch.parameters = {
@@ -157,17 +170,19 @@ MultiSelectionNoSearch.parameters = {
 };
 
 export const SingleSelectionWithSearch = () => (
-  <HvDropdown
-    expanded
-    id="dropdown6"
-    showSearch
-    values={[
-      { label: "value 1" },
-      { label: "value 2", selected: true },
-      { label: "value 3" },
-      { label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      expanded
+      id="dropdown6"
+      showSearch
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 SingleSelectionWithSearch.parameters = {
@@ -177,19 +192,22 @@ SingleSelectionWithSearch.parameters = {
 };
 
 export const SingleSelectionNoDefault = () => (
-  <HvDropdown
-    expanded
-    id="dropdown8"
-    selectDefault={false}
-    hasTooltips
-    values={[
-      { label: "value 1" },
-      { label: "value 2" },
-      { label: "value 3" },
-      { label: "value 4" },
-      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      expanded
+      id="dropdown8"
+      selectDefault={false}
+      disablePortal
+      hasTooltips
+      values={[
+        { label: "value 1" },
+        { label: "value 2" },
+        { label: "value 3" },
+        { label: "value 4" },
+        { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" },
+      ]}
+    />
+  </div>
 );
 
 SingleSelectionNoDefault.parameters = {
@@ -215,7 +233,7 @@ export const DifferentSizeAndPlacements = () => {
       width: "200px",
     },
     rootList: {
-      width: "520px",
+      width: "320px",
     },
   });
 
@@ -223,28 +241,24 @@ export const DifferentSizeAndPlacements = () => {
 
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div>
-        <StyledDropdown
-          expanded
-          id="dropdown1"
-          values={data}
-          multiSelect
-          showSearch
-          placement="right"
-          sameWidth={false}
-        />
-      </div>
-      <div>
-        <StyledDropdown
-          expanded
-          id="dropdown2"
-          values={data}
-          multiSelect
-          showSearch
-          placement="left"
-          sameWidth={false}
-        />
-      </div>
+      <StyledDropdown
+        expanded
+        id="dropdown1"
+        values={data}
+        multiSelect
+        showSearch
+        placement="left"
+        variableWidth
+      />
+      <StyledDropdown
+        id="dropdown2"
+        expanded
+        values={data}
+        multiSelect
+        showSearch
+        placement="right"
+        variableWidth
+      />
     </div>
   );
 };

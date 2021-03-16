@@ -3,47 +3,51 @@
 exports[`BaseDropDown Selection List Snapshot testing Selection List Container 1`] = `
 <div>
   <div
-    class="HvBaseDropdown-root"
+    style="width: 121px;"
   >
     <div
-      aria-expanded="false"
-      aria-label="Main sample"
-      class="HvBaseDropdown-anchor"
-      role="combobox"
-      tabindex="-1"
+      class="HvBaseDropdown-root"
     >
       <div
+        aria-expanded="false"
         aria-label="Main sample"
-        class="HvBaseDropdown-header"
-        role="textbox"
-        tabindex="0"
+        class="HvBaseDropdown-anchor"
+        role="combobox"
+        tabindex="-1"
       >
         <div
-          class="HvBaseDropdown-selection"
+          aria-label="Main sample"
+          class="HvBaseDropdown-header"
+          role="textbox"
+          tabindex="0"
         >
-          <p
-            class="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+          <div
+            class="HvBaseDropdown-selection"
           >
-            Placeholder...
-          </p>
-        </div>
-        <div
-          class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
-          name="DropDownXS"
-        >
-          <svg
-            focusable="false"
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-            xmlns="http://www.w3.org/2000/svg"
+            <p
+              class="HvBaseDropdown-placeholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
+            >
+              Placeholder...
+            </p>
+          </div>
+          <div
+            class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
+            name="DropDownXS"
           >
-            <path
-              class="color0"
-              d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-              fill="#414141"
-            />
-          </svg>
+            <svg
+              focusable="false"
+              height="12"
+              viewBox="0 0 12 12"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { setId } from "../utils";
 export const removeExtension = (label) =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
 
-export const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {
+export const pathWithSubMenu = (id, classes, listRoute, maxVisible, dropDownMenuProps) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
 

@@ -8,7 +8,7 @@ const styles = (theme) => ({
   root: {
     borderRadius: 2,
     "& > div$anchor": {
-      width: "unset",
+      width: "auto",
     },
     "& $header": {
       backgroundColor: "transparent",
@@ -57,7 +57,7 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
       onContainerCreation={setFocusToContent}
       placeholder={<HvTypography>{value}</HvTypography>}
       disabled={disabled}
-      sameWidth={false}
+      variableWidth
       {...others}
     >
       <HvPanel>

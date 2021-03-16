@@ -7320,7 +7320,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             },
                                                                           }
                                                                         }
-                                                                        sameWidth={false}
+                                                                        variableWidth={true}
                                                                       >
                                                                         <HvBaseDropdown
                                                                           aria-haspopup="menu"
@@ -7377,7 +7377,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               },
                                                                             }
                                                                           }
-                                                                          sameWidth={false}
+                                                                          variableWidth={true}
                                                                         >
                                                                           <div
                                                                             className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
@@ -10841,7 +10841,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             },
                                                                           }
                                                                         }
-                                                                        sameWidth={false}
+                                                                        variableWidth={true}
                                                                       >
                                                                         <HvBaseDropdown
                                                                           aria-haspopup="menu"
@@ -10898,7 +10898,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               },
                                                                             }
                                                                           }
-                                                                          sameWidth={false}
+                                                                          variableWidth={true}
                                                                         >
                                                                           <div
                                                                             className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
@@ -14364,7 +14364,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                             },
                                                                           }
                                                                         }
-                                                                        sameWidth={false}
+                                                                        variableWidth={true}
                                                                       >
                                                                         <HvBaseDropdown
                                                                           aria-haspopup="menu"
@@ -14421,7 +14421,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               },
                                                                             }
                                                                           }
-                                                                          sameWidth={false}
+                                                                          variableWidth={true}
                                                                         >
                                                                           <div
                                                                             className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"

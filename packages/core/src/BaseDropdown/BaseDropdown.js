@@ -30,7 +30,7 @@ const HvBaseDropdown = ({
   component,
   adornment,
   children,
-  sameWidth,
+  variableWidth = false,
   ...others
 }) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -47,17 +47,23 @@ const HvBaseDropdown = ({
     if (onContainerCreation) onContainerCreation(popperElement);
   }, [onContainerCreation, popperElement]);
 
+  const widthCalculator = useCallback(({ state }) => {
+    // eslint-disable-next-line no-param-reassign
+    state.styles.popper.width = `${state.rects.reference.width}px`;
+  }, []);
+
   const modifiers = useMemo(
     () => [
       {
-        name: "sameWidth",
-        enabled: true,
+        name: "variableWidth",
+        enabled: !variableWidth,
         phase: "beforeWrite",
         requires: ["computeStyles"],
+        fn: widthCalculator,
       },
       ...popperPropsModifiers,
     ],
-    [popperPropsModifiers]
+    [popperPropsModifiers, variableWidth, widthCalculator]
   );
 
   const { styles: popperStyles, attributes } = usePopper(referenceElement, popperElement, {
@@ -193,6 +199,7 @@ const HvBaseDropdown = ({
 
     const container = (
       <div
+        role="tooltip"
         ref={setPopperElement}
         className={clsx(classes.container)}
         style={popperStyles.popper}
@@ -205,7 +212,7 @@ const HvBaseDropdown = ({
               <div
                 style={{ width: extensionWidth }}
                 className={clsx(classes.inputExtensionOpen, {
-                  [classes.inputExtensionLeftPosition]: placement === "left",
+                  [classes.inputExtensionLeftPosition]: popperPlacement.includes("end"),
                 })}
               />
             )}
@@ -216,8 +223,8 @@ const HvBaseDropdown = ({
               <div
                 style={{ width: extensionWidth }}
                 className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
-                  [classes.inputExtensionFloatRight]: placement === "right",
-                  [classes.inputExtensionFloatLeft]: placement === "left",
+                  [classes.inputExtensionFloatRight]: popperPlacement.includes("start"),
+                  [classes.inputExtensionFloatLeft]: popperPlacement.includes("end"),
                 })}
               />
             )}
@@ -367,9 +374,10 @@ HvBaseDropdown.propTypes = {
    */
   disablePortal: PropTypes.bool,
   /**
-   * If `true` the dropdown has the same size of the header, `false` otherwise.
+   * If `true` the dropdown width depends size of content if `false` the width depends on the header size.
+   * Defaults to `false`.
    */
-  sameWidth: PropTypes.bool,
+  variableWidth: PropTypes.bool,
   /**
    * If `true` the dropdown starts opened if `false` it starts closed.
    */

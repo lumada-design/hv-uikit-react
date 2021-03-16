@@ -22,17 +22,19 @@ export default {
 };
 
 export const Main = () => (
-  <HvDropdown
-    aria-label="Main sample"
-    multiSelect
-    showSearch
-    values={[
-      { label: "value 1" },
-      { label: "value 2", selected: true },
-      { label: "value 3" },
-      { label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      aria-label="Main sample"
+      multiSelect
+      showSearch
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 Main.parameters = {
@@ -42,7 +44,11 @@ Main.parameters = {
   eyes: { include: false },
 };
 
-export const Empty = () => <HvDropdown id="dropdown1" aria-label="Empty" />;
+export const Empty = () => (
+  <div style={{ width: 310 }}>
+    <HvDropdown id="dropdown1" aria-label="Empty" />
+  </div>
+);
 
 Empty.parameters = {
   docs: {
@@ -55,17 +61,19 @@ Empty.parameters = {
 };
 
 export const SingleSelection = () => (
-  <HvDropdown
-    id="dropdown7"
-    aria-label="Single selection"
-    onChange={(item) => console.log(item)}
-    values={[
-      { id: "id-1", label: "value 1", selected: true },
-      { id: "id-2", label: "value 2" },
-      { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown7"
+      aria-label="Single selection"
+      onChange={(item) => console.log(item)}
+      values={[
+        { id: "id-1", label: "value 1", selected: true },
+        { id: "id-2", label: "value 2" },
+        { id: "id-3", label: "value 3" },
+        { id: "id-4", label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 SingleSelection.parameters = {
@@ -79,18 +87,20 @@ SingleSelection.parameters = {
 };
 
 export const MultiSelection = () => (
-  <HvDropdown
-    id="dropdown2"
-    multiSelect
-    showSearch
-    label="Dropdown Title"
-    values={[
-      { label: "value 1" },
-      { label: "value 2", selected: true },
-      { label: "value 3" },
-      { label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown2"
+      multiSelect
+      showSearch
+      label="Dropdown Title"
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 MultiSelection.parameters = {
@@ -98,18 +108,20 @@ MultiSelection.parameters = {
 };
 
 export const MultiSelectionNoSearch = () => (
-  <HvDropdown
-    id="dropdown5"
-    aria-label="No search"
-    onChange={(item) => console.log(item)}
-    multiSelect
-    values={[
-      { id: "id-1", label: "value 1" },
-      { id: "id-2", label: "value 1", selected: true },
-      { id: "id-3", label: "value 3" },
-      { id: "id-4", label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown5"
+      aria-label="No search"
+      onChange={(item) => console.log(item)}
+      multiSelect
+      values={[
+        { id: "id-1", label: "value 1" },
+        { id: "id-2", label: "value 1", selected: true },
+        { id: "id-3", label: "value 3" },
+        { id: "id-4", label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 MultiSelectionNoSearch.parameters = {
@@ -120,17 +132,19 @@ MultiSelectionNoSearch.parameters = {
 };
 
 export const SingleSelectionWithSearch = () => (
-  <HvDropdown
-    id="dropdown6"
-    aria-label="With search"
-    showSearch
-    values={[
-      { label: "value 1" },
-      { label: "value 2", selected: true },
-      { label: "value 3" },
-      { label: "value 4" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown6"
+      aria-label="With search"
+      showSearch
+      values={[
+        { label: "value 1" },
+        { label: "value 2", selected: true },
+        { label: "value 3" },
+        { label: "value 4" },
+      ]}
+    />
+  </div>
 );
 
 SingleSelectionWithSearch.parameters = {
@@ -144,18 +158,21 @@ SingleSelectionWithSearch.parameters = {
 };
 
 export const SingleSelectionNoSelection = () => (
-  <HvDropdown
-    id="dropdown8"
-    aria-label="No default"
-    hasTooltips
-    values={[
-      { label: "value 1" },
-      { label: "value 2" },
-      { label: "value 3" },
-      { label: "value 4" },
-      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown8"
+      aria-label="No default"
+      hasTooltips
+      disablePortal
+      values={[
+        { label: "value 1" },
+        { label: "value 2" },
+        { label: "value 3" },
+        { label: "value 4" },
+        { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" },
+      ]}
+    />
+  </div>
 );
 
 SingleSelectionNoSelection.parameters = {
@@ -194,6 +211,7 @@ export const DifferentSizeAndPlacements = () => {
           values={data}
           multiSelect
           showSearch
+          disablePortal
           placement="right"
         />
       </div>
@@ -204,6 +222,7 @@ export const DifferentSizeAndPlacements = () => {
           values={data}
           multiSelect
           showSearch
+          disablePortal
           placement="left"
         />
       </div>
@@ -222,26 +241,29 @@ DifferentSizeAndPlacements.parameters = {
 };
 
 export const Disabled = () => (
-  <HvDropdown
-    id="dropdown9"
-    disabled
-    multiSelect
-    aria-label="text"
-    values={[
-      { label: "value 1", selected: false },
-      { label: "value 2", selected: false },
-      { label: "value 3", selected: true },
-      { label: "value 4", selected: false },
-      { label: "value 5 value 5 value 5 555555555555 value value 5", selected: false },
-      { label: "value 6" },
-      { label: "value 7" },
-      { label: "value 8", selected: true },
-      { label: "value 9", selected: true },
-      { label: "value 10" },
-      { label: "value 11" },
-      { label: "value 12" },
-    ]}
-  />
+  <div style={{ width: 310 }}>
+    <HvDropdown
+      id="dropdown9"
+      disabled
+      multiSelect
+      aria-label="text"
+      disablePortal
+      values={[
+        { label: "value 1", selected: false },
+        { label: "value 2", selected: false },
+        { label: "value 3", selected: true },
+        { label: "value 4", selected: false },
+        { label: "value 5 value 5 value 5 555555555555 value value 5", selected: false },
+        { label: "value 6" },
+        { label: "value 7" },
+        { label: "value 8", selected: true },
+        { label: "value 9", selected: true },
+        { label: "value 10" },
+        { label: "value 11" },
+        { label: "value 12" },
+      ]}
+    />
+  </div>
 );
 
 Disabled.parameters = {

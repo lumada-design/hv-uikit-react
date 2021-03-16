@@ -21,7 +21,11 @@ export default {
   ],
 };
 
-export const Main = () => <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />;
+export const Main = () => (
+  <div style={{ width: 121 }}>
+    <HvBaseDropdown placeholder="Placeholder..." aria-label="Main sample" />
+  </div>
+);
 
 Main.parameters = {
   pa11y: {
@@ -37,17 +41,19 @@ export const WithContent = () => {
   };
 
   return (
-    <HvBaseDropdown
-      placeholder="Placeholder..."
-      aria-label="With content"
-      onContainerCreation={setFocusToInput}
-    >
-      <HvPanel>
-        <div style={{ width: "300px", height: "300px", background: theme.palette.atmo2 }}>
-          <HvInput id="input-dropdown" />
-        </div>
-      </HvPanel>
-    </HvBaseDropdown>
+    <div style={{ width: 121 }}>
+      <HvBaseDropdown
+        placeholder="Placeholder..."
+        aria-label="With content"
+        onContainerCreation={setFocusToInput}
+      >
+        <HvPanel>
+          <div style={{ width: "300px", height: "300px", background: theme.palette.atmo2 }}>
+            <HvInput id="input-dropdown" />
+          </div>
+        </HvPanel>
+      </HvBaseDropdown>
+    </div>
   );
 };
 
@@ -60,11 +66,13 @@ export const WithForms = () => {
         style={{ paddingBottom: "6px", display: "block" }}
         label="Label"
       />
-      <HvBaseDropdown placeholder="Placeholder..." aria-labelledby="withForms-label">
-        <HvPanel>
-          <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
-        </HvPanel>
-      </HvBaseDropdown>
+      <div style={{ width: 121 }}>
+        <HvBaseDropdown placeholder="Placeholder..." aria-labelledby="withForms-label">
+          <HvPanel>
+            <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
+          </HvPanel>
+        </HvBaseDropdown>
+      </div>
       <HvWarningText disableBorder isVisible>
         The description.
       </HvWarningText>
@@ -79,17 +87,19 @@ export const Controlled = () => {
     <>
       <HvButton onClick={() => setOpen(!open)}>Toggle</HvButton>
       <p />
-      <HvBaseDropdown
-        placeholder="Placeholder..."
-        aria-label="Controlled"
-        expanded={open}
-        disablePortal={false}
-        onToggle={(e, s) => setOpen(s)}
-      >
-        <HvPanel>
-          <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
-        </HvPanel>
-      </HvBaseDropdown>
+      <div style={{ width: 121 }}>
+        <HvBaseDropdown
+          placeholder="Placeholder..."
+          aria-label="Controlled"
+          expanded={open}
+          disablePortal={false}
+          onToggle={(e, s) => setOpen(s)}
+        >
+          <HvPanel>
+            <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
+          </HvPanel>
+        </HvBaseDropdown>
+      </div>
     </>
   );
 };
@@ -102,25 +112,27 @@ export const Custom = () => {
   const setterOpen = () => setOpen(!open);
 
   return (
-    <HvBaseDropdown
-      expanded={open}
-      onClickOutside={setterOpen}
-      aria-label="custom menu"
-      component={
-        <HvButton
-          overrideIconColors={false}
-          onClick={setterOpen}
-          icon
-          aria-label="Dropdown menu"
-          style={{ backgroundColor: open ? theme.palette.atmo1 : undefined }}
-        >
-          <MoreOptionsVertical />
-        </HvButton>
-      }
-    >
-      <HvPanel>
-        <div style={{ width: "500px", height: "500px", background: theme.palette.atmo2 }} />
-      </HvPanel>
-    </HvBaseDropdown>
+    <div style={{ width: 32 }}>
+      <HvBaseDropdown
+        expanded={open}
+        onClickOutside={setterOpen}
+        aria-label="custom menu"
+        component={
+          <HvButton
+            overrideIconColors={false}
+            onClick={setterOpen}
+            icon
+            aria-label="Dropdown menu"
+            style={{ backgroundColor: open ? theme.palette.atmo1 : undefined }}
+          >
+            <MoreOptionsVertical />
+          </HvButton>
+        }
+      >
+        <HvPanel>
+          <div style={{ width: "500px", height: "500px", background: theme.palette.atmo2 }} />
+        </HvPanel>
+      </HvBaseDropdown>
+    </div>
   );
 };
