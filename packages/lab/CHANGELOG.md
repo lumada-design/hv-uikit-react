@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.2.0...@hv/uikit-react-lab@3.3.0) (2021-03-18)
+
+
+### Features
+
+* **dropdown:** responsive dropdown. HVUIKIT-5710 ([5520904](https://github.com/pentaho/hv-uikit-react/commit/552090454e3f1f564ed30c880c9926f096f25e6c))
+* **table:** add bulk actions. HVUIKIT-5656 ([37a5a54](https://github.com/pentaho/hv-uikit-react/commit/37a5a54de87c883597a09f7f99ef5806bb7bafcc))
+* **table:** add stickyHeader prop. HVUIKIT-5654 ([30a53b5](https://github.com/pentaho/hv-uikit-react/commit/30a53b5b977b8ff394fb543f3c418878a318572b))
+* **table:** add table pagination. HVUIKIT-5648 ([4a3c5f2](https://github.com/pentaho/hv-uikit-react/commit/4a3c5f2dc84ec6356dd7bf0218659d1d9faa579f))
+* **table:** load styles from columns. HVUIKIT-5659 ([2d36c74](https://github.com/pentaho/hv-uikit-react/commit/2d36c74e87fda8cd755b38c0074eb791ae156264))
+* add new table. HVUIKIT-5647 ([9021d20](https://github.com/pentaho/hv-uikit-react/commit/9021d20865177d711e23abc0e07e8c809baa42e9))
+
+
+
+
+
 # [3.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.1.16...@hv/uikit-react-lab@3.2.0) (2021-03-10)
 
 
