@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-code-editor@3.1.6...@hv/uikit-react-code-editor@3.2.0) (2021-03-18)
+
+
+### Features
+
+* **dropdown:** responsive dropdown. HVUIKIT-5710 ([5520904](https://github.com/pentaho/hv-uikit-react/commit/552090454e3f1f564ed30c880c9926f096f25e6c))
+
+
+
+
+
 ## [3.1.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-code-editor@3.1.5...@hv/uikit-react-code-editor@3.1.6) (2021-03-10)
 
 **Note:** Version bump only for package @hv/uikit-react-code-editor
