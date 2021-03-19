@@ -40,5 +40,5 @@ module.exports = {
 
   include: ({ kind }) => isIncludedPath(kind) && !isExcludedSample(kind),
 
-  testConcurrency: 10,
+  concurrency: 10,
 };
