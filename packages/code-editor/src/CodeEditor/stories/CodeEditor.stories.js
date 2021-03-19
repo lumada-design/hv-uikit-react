@@ -205,6 +205,7 @@ Main.story = {
     pa11y: {
       disable: true,
     },
+    eyes: { include: false },
   },
 };
 
@@ -233,4 +234,5 @@ YamlEditor.parameters = {
   pa11y: {
     disable: true,
   },
+  eyes: { include: false },
 };
