@@ -60,6 +60,9 @@ export * from "./Footer";
 export { default as HvGrid } from "./Grid";
 export * from "./Grid";
 
+export { default as HvGlobalActions } from "./GlobalActions";
+export * from "./GlobalActions";
+
 export { default as HvHeader } from "./Header";
 export * from "./Header";
 
@@ -323,3 +326,5 @@ export interface HvTheme {
   spacing: HvThemeSpacing;
   viz: HvThemeVizPalette;
 }
+
+
