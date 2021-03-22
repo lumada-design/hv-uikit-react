@@ -8,3 +8,4 @@ export { default as HvSlider } from "./Slider";
 export { default as HvTable } from "./Table";
 export * from "./Table";
 export { default as HvTimePicker } from "./TimePicker";
+export { default as HvTag } from "./Tag";

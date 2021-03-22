@@ -21,3 +21,6 @@ export * from "./Table";
 
 export { default as HvTimePicker } from "./TimePicker";
 export * from "./TimePicker";
+
+export { default as HvTag } from "./Tag";
+export * from "./Tag";
