@@ -323,3 +323,9 @@ export const AccessibilityList = () => {
     </HvAssetInventory>
   );
 };
+
+AccessibilityList.story = {
+  parameters: {
+    eyes: { include: false },
+  },
+};
