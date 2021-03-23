@@ -102,7 +102,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://docker
+        uses: docker pull dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
         with:
           args: docker restart storybook
 
