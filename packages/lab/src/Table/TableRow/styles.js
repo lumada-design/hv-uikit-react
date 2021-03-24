@@ -1,9 +1,9 @@
 const styles = (theme) => ({
   root: {
     color: "inherit",
+    backgroundColor: "inherit",
     verticalAlign: "middle",
     outline: 0,
-    borderBottom: `1px solid ${theme.palette.atmo4}`,
   },
   head: {},
   body: {},

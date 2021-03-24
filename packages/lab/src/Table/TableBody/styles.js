@@ -1,5 +1,10 @@
 const styles = () => ({
-  root: {},
+  root: {
+    backgroundColor: "inherit",
+
+    position: "relative",
+    zIndex: 0,
+  },
 });
 
 export default styles;

@@ -1,7 +1,7 @@
 const styles = (theme) => ({
   root: {
     width: "100%",
-    borderCollapse: "collapse",
+    borderCollapse: "separate",
     borderSpacing: 0,
 
     ...theme.hv.typography.normalText,
@@ -13,8 +13,9 @@ const styles = (theme) => ({
       captionSide: "bottom",
     },
   },
-  stickyHeader: {
-    borderCollapse: "separate",
+  stickyHeader: {},
+  stickyColumns: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
   },
 });
 

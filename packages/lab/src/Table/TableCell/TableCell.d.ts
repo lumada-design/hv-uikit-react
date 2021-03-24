@@ -9,7 +9,9 @@ export type HvTableCellClassKey =
   | "sortable"
   | "sorted"
   | "sortIcon"
-  | "stickyHeader";
+  | "stickyColumn"
+  | "stickyColumnMostLeft"
+  | "stickyColumnLeastRight";
 
 export interface HvTableCellProps
   extends StandardProps<React.HTMLAttributes<HTMLTableCellElement>, HvTableCellClassKey> {
@@ -52,6 +54,19 @@ export interface HvTableCellProps
    * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
    */
   variant?: "body" | "footer" | "head";
+
+  /**
+   * The cell is part of a sticky column.
+   */
+  stickyColumn?: boolean;
+  /**
+   * The cell is part of the last sticky to the left column.
+   */
+  stickyColumnMostLeft?: boolean;
+  /**
+   * The cell is part of the first sticky to the right column.
+   */
+  stickyColumnLeastRight?: boolean;
 }
 
 export default function HvTableCell(props: HvTableCellProps): JSX.Element | null;

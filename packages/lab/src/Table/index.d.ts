@@ -21,3 +21,5 @@ export * from "./TablePagination";
 
 export { default as HvTableRow } from "./TableRow";
 export * from "./TableRow";
+
+export { default as useHvTableSticky } from "./hooks/useSticky";

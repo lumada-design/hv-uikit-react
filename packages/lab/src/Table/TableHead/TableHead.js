@@ -17,11 +17,15 @@ const tableContext = {
  * `HvTableCell` and `HvTableRow` elements in it inherit header-specific styles
  */
 const HvTableHead = forwardRef(function HvTableHead(props, ref) {
-  const { classes, className, ...others } = props;
+  const { classes, className, stickyHeader, ...others } = props;
 
   return (
     <TableContext.Provider value={tableContext}>
-      <thead className={clsx(classes.root, className)} ref={ref} {...others} />
+      <thead
+        className={clsx(classes.root, className, { [classes.stickyHeader]: stickyHeader })}
+        ref={ref}
+        {...others}
+      />
     </TableContext.Provider>
   );
 });
@@ -36,6 +40,10 @@ HvTableHead.propTypes = {
    */
   children: PropTypes.node,
   /**
+   * The table has sticky headers.
+   */
+  stickyHeader: PropTypes.bool,
+  /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
@@ -43,6 +51,10 @@ HvTableHead.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied when the table has a sticky header.
+     */
+    stickyHeader: PropTypes.string,
   }).isRequired,
 };
 

@@ -28,7 +28,7 @@ const styles = (theme) => ({
   },
   body: {
     height: 32,
-    backgroundColor: "transparent",
+    backgroundColor: "inherit",
     ...theme.hv.typography.normalText,
     "&$sortable:not($paddingNone)": {
       paddingLeft: 32,
@@ -39,11 +39,17 @@ const styles = (theme) => ({
   },
   footer: {},
 
-  stickyHeader: {
+  stickyColumn: {
     position: "sticky",
-    top: 0,
-    left: 0,
     zIndex: 2,
+  },
+
+  stickyColumnMostLeft: {
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+  },
+
+  stickyColumnLeastRight: {
+    borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
 
   paddingNone: {

@@ -66,6 +66,45 @@ Check [React Table's `useExpanded` documentation](https://react-table.tanstack.c
   <Story inline story={stories.Expandable} />
 </Preview>
 
+## Sticky Headers And Columns
+
+The table headers can be fixed at the top, allowing it to keep always visible when table has vertical scrolling enabled.
+
+It is also possible to stick columns, either on the left or on the right, making them always visible when scrolling horizontally.
+
+This is implemented the `useHvTableSticky` custom React Table hook provided by the UI Kit library.
+
+When using sticky columns, all column widths will be fixed and a non-table-element layout is applied.
+
+<Usage>{'import { useHvTableSticky } from "@hv/uikit-react-core";'}</Usage>
+
+### Configuration
+
+#### Table Options
+
+The following options are supported via the main options object passed to `useTable(options)`:
+
+- `stickyHeader: Bool`
+  - Enables the sticky header
+
+#### Column Options
+
+The following options are supported on any `Column` object passed to the `columns` options in `useTable()`:
+
+- `sticky: "left" | "right"`
+  - Sticks this column to the defined side. Columns will be re-orderer if needed.
+- `width: Int`
+  - Defaults to 150
+  - Specifies the width for the column
+
+### Usage
+
+The `getTableProps`, `getTableHeadProps`, `getHeaderGroupProps`, `getHeaderProps`, `getTableBodyProps`, `getRowProps` and `getCellProps` prop getters must be called and the properties injected into the corresponding elements.
+
+<Preview withToolbar>
+  <Story inline story={stories.StickyHeadersAndColumns} />
+</Preview>
+
 ## Empty Cells
 
 The absence of data within an individual cell in the table should be displayed as a `—` (_em dash_), according to Design System guidelines.
