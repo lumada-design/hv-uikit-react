@@ -113,7 +113,7 @@ jobs:
 
     services:
       storybook:
-        image: nginx
+        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
         ports:
           - 9001:80
         volumes:
@@ -138,7 +138,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://docker
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
         with:
           args: docker restart storybook
 
@@ -165,7 +165,7 @@ jobs:
 
     services:
       storybook:
-        image: nginx
+        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
         ports:
           - 9001:80
         volumes:
@@ -190,7 +190,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://docker
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
         with:
           args: docker restart storybook
 
@@ -229,7 +229,7 @@ jobs:
       matrix:
         browser: [firefox, chrome]
     container:
-      image: joaoeg/docker-robot-framework:0.1
+      image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
       options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
@@ -240,7 +240,7 @@ jobs:
 
     services:
       storybook:
-        image: nginx
+        image: dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
@@ -259,7 +259,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://docker
+        uses: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/docker
         with:
           args: docker restart storybook
 
