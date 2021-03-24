@@ -1,3 +1,6 @@
+export { default as HvAccordion } from "./Accordion";
+export * from "./Accordion";
+
 export { default as HvActionBar } from "./ActionBar";
 export * from "./ActionBar";
 
