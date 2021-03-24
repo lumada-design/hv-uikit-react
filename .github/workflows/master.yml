@@ -90,6 +90,8 @@ jobs:
         run: npm run bootstrap
 
       - name: Generate Documentation
+        env:
+          INPUT_TOKEN: ''
         run: |
           npm run build-documentation
 
