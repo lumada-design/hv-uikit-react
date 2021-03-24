@@ -3,6 +3,7 @@ const NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplaceme
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const { findByKey } = require("./utils");
 
+const storybookFolder = resolve(__dirname);
 const docFolder = resolve(__dirname, "../doc");
 const corePackageSrc = resolve(__dirname, "../packages/core/src");
 const codeEditorPackageSrc = resolve(__dirname, "../packages/code-editor/src");
@@ -14,8 +15,8 @@ module.exports = {
   stories: [
     "../doc/**/*.stories.@(js|mdx)",
     "../packages/core/src/**/*.stories.@(js|mdx)",
-    "../packages/lab/src/**/*.stories.js",
-    "../packages/code-editor/src/**/*.stories.js",
+    "../packages/lab/src/**/*.stories.@(js|mdx)",
+    "../packages/code-editor/src/**/*.stories.@(js|mdx)",
     !process.env.EXCLUDE_TEST_STORIES && "../packages/core/src/**/stories/*.test.@(js|mdx)",
   ].filter(Boolean),
 
@@ -82,6 +83,8 @@ module.exports = {
       "@hv/uikit-react-lab": labPackageSrc,
 
       "react-hook-form": "react-hook-form/dist/index.ie11",
+
+      "storybook-root": storybookFolder,
     };
 
     // patch Storybook's sortProps because it doesn't handle wrapped components

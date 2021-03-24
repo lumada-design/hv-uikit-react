@@ -1,0 +1,92 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+import LinkTo from "@storybook/addon-links/react";
+
+import { Usage } from "storybook-root/blocks/Usage";
+
+import { HvTable } from "../..";
+
+import * as stories from "./TableHooks.stories.js";
+
+<Meta title="Lab/Table Hooks" />
+
+# Table hooks
+
+[React Table](https://react-table.tanstack.com) is an "headless" UI utility library that allows to build data tables while retaining control over markup and styles.
+
+It consists of a collection of custom React hooks. These hooks are lightweight, composable and extensible.
+The UI Kit library provides some custom hooks that ease the integration with the <LinkTo kind="Lab/Table" name="Table" story="Main" className="sbdocs-a">Table component</LinkTo>.
+
+Together is easier to build powerful experiences and extend the features offered.
+
+<Usage>{'import { useTable } from "react-table";'}</Usage>
+
+<Preview withToolbar>
+  <Story inline story={stories.Main} />
+</Preview>
+
+## Pagination
+
+Data can be paginated. Optionally, empty lines can be added to the last page to avoid changes in height.
+
+Check [React Table's `usePagination` documentation](https://react-table.tanstack.com/docs/api/usePagination) for configuration details.
+
+<Preview withToolbar>
+  <Story inline story={stories.Pagination} />
+</Preview>
+
+## Selection and bulk actions
+
+Rows can be selected individually or in bulk.
+
+Check [React Table's `useRowSelect` documentation](https://react-table.tanstack.com/docs/api/useRowSelect) for configuration details.
+
+<Preview withToolbar>
+  <Story inline story={stories.BulkActions} />
+</Preview>
+
+## Sortable
+
+Tables can have the capability of sorting the data by column.
+Clicking a sortable column header toggles between ascending or descending. Multiple sorting criteria is enabled through holding shift while clicking.
+
+Check [React Table's `useSortBy` documentation](https://react-table.tanstack.com/docs/api/useSortBy) for configuration details.
+
+<Preview withToolbar>
+  <Story inline story={stories.Sortable} />
+</Preview>
+
+## Expandable
+
+Tables rows can have the capability of being expanded to show more details.
+
+Check [React Table's `useExpanded` documentation](https://react-table.tanstack.com/docs/api/useExpanded) for configuration details.
+
+<Preview withToolbar>
+  <Story inline story={stories.Expandable} />
+</Preview>
+
+## Empty Cells
+
+The absence of data within an individual cell in the table should be displayed as a `—` (_em dash_), according to Design System guidelines.
+
+This must be handled by the developer in the respective cell renderer, as it is an guideline and not a strict rule.
+Different use cases may require different solutions, like `N/A` or `0`. Empty cells should be avoided.
+
+<Preview withToolbar>
+  <Story inline story={stories.EmptyCells} />
+</Preview>
+
+# Stuff still to be documented
+
+## Bulk Actions Manual
+
+<Preview withToolbar>
+  <Story inline story={stories.BulkActionsManual} />
+</Preview>
+
+## Server Side
+
+<Preview withToolbar>
+  <Story inline story={stories.ServerSide} />
+</Preview>

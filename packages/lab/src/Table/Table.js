@@ -14,6 +14,9 @@ import styles from "./styles";
  * HvTable component offers a set of HTML-equivalent elements, styled to Design System's specification,
  * for building tables.
  *
+ * For better data handling and advanced features we recommend the use of a collection of utility hooks.
+ * See the <a href="?id=lab-table-hooks--main&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
+ *
  * PLEASE NOTE: This Table implementation is still a WIP. There might be breaking changes.
  */
 const HvTable = forwardRef(function HvTable(props, ref) {
