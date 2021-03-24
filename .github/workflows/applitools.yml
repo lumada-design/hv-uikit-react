@@ -43,7 +43,7 @@ jobs:
 
     services:
       storybook:
-        image: nginx
+        image: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
         ports:
           - 9001:80
         volumes:
@@ -66,9 +66,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://docker
-        with:
-          args: docker restart storybook
+        run: docker restart storybook
 
       - name: Install automation/Applitools
         run: |

@@ -162,7 +162,7 @@ jobs:
 
     services:
       storybook:
-        image: nginx
+        image: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
         ports:
           - 9001:80
         volumes:
@@ -185,9 +185,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://docker
-        with:
-          args: docker restart storybook
+        run: docker restart storybook
 
       - name: Install automation/pa11y
         run: |
@@ -215,7 +213,7 @@ jobs:
       matrix:
         browser: [chrome]
     container:
-      image: joaoeg/docker-robot-framework:0.1
+      image: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/joaoeg/docker-robot-framework:0.1
       options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
@@ -226,7 +224,7 @@ jobs:
 
     services:
       storybook:
-        image: nginx
+        image: docker://dockerhub-docker-remote.repo.orl.eng.hitachivantara.com/nginx
         volumes:
           - ${{ github.workspace }}/dist:/usr/share/nginx/html
         options: >-
@@ -243,9 +241,7 @@ jobs:
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
-        uses: docker://docker
-        with:
-          args: docker restart storybook
+        run: docker restart storybook
 
       - name: Run Robot
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
