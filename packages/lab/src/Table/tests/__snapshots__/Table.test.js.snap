@@ -15,17 +15,20 @@ exports[`Table Simple Table should be defined 1`] = `
           class="HvTableRow-root HvTableRow-head"
         >
           <th
-            class="HvTableCell-root HvTableCell-head"
+            class="HvTableHeader-root HvTableHeader-head"
+            scope="col"
           >
             Sample Header 0
           </th>
           <th
-            class="HvTableCell-root HvTableCell-head"
+            class="HvTableHeader-root HvTableHeader-head"
+            scope="col"
           >
             Sample Header 1
           </th>
           <th
-            class="HvTableCell-root HvTableCell-head"
+            class="HvTableHeader-root HvTableHeader-head"
+            scope="col"
           >
             Sample Header 2
           </th>

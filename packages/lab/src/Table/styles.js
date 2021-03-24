@@ -1,10 +1,12 @@
 const styles = (theme) => ({
   root: {
     width: "100%",
-    borderCollapse: "separate",
-    borderSpacing: 0,
 
     ...theme.hv.typography.normalText,
+
+    "table&": {
+      borderSpacing: 0,
+    },
 
     "& caption": {
       ...theme.typography.normalText,

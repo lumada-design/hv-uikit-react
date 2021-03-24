@@ -1,28 +1,40 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { withStyles } from "@material-ui/core";
 
-import TableContext from "../TableSectionContext";
+import TableContext from "../TableContext";
+import TableSectionContext from "../TableSectionContext";
 import styles from "./styles";
 
-const tableContext = {
+const tableSectionContext = {
   variant: "body",
   padding: "default",
 };
+
+const defaultComponent = "tbody";
 
 /**
  * HvTableBody acts as a `tbody` element.
  * `HvTableCell` and `HvTableRow` elements in it inherit body-specific styles
  */
 const HvTableBody = forwardRef(function HvTableBody(props, ref) {
-  const { classes, className, ...others } = props;
+  const { classes, className, component, ...others } = props;
+
+  const tableContext = useContext(TableContext);
+
+  const Component = component || tableContext?.components?.TBody || defaultComponent;
 
   return (
-    <TableContext.Provider value={tableContext}>
-      <tbody className={clsx(classes.root, className)} ref={ref} {...others} />
-    </TableContext.Provider>
+    <TableSectionContext.Provider value={tableSectionContext}>
+      <Component
+        className={clsx(classes.root, className)}
+        ref={ref}
+        role={Component === defaultComponent ? null : "rowgroup"}
+        {...others}
+      />
+    </TableSectionContext.Provider>
   );
 });
 
@@ -35,6 +47,11 @@ HvTableBody.propTypes = {
    * Content to be rendered
    */
   children: PropTypes.node,
+  /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * Defaults to tbody.
+   */
+  component: PropTypes.elementType,
   /**
    * A Jss Object used to override or extend the styles applied.
    */

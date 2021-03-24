@@ -7,6 +7,30 @@ import { withStyles } from "@material-ui/core";
 import TableContext from "./TableContext";
 import styles from "./styles";
 
+const defaultComponent = "table";
+
+const computeTablePartComponents = (rootComponent) => {
+  if (rootComponent === "table") {
+    return {
+      Table: "table",
+      THead: "thead",
+      TBody: "tbody",
+      Tr: "tr",
+      Th: "th",
+      Td: "td",
+    };
+  }
+
+  return {
+    Table: rootComponent,
+    THead: rootComponent,
+    TBody: rootComponent,
+    Tr: rootComponent,
+    Th: rootComponent,
+    Td: rootComponent,
+  };
+};
+
 /**
  * A Table gathers relational data, it displays values arranged to allow quick numerical analysis
  * like comparison and sorting.
@@ -20,14 +44,24 @@ import styles from "./styles";
  * PLEASE NOTE: This Table implementation is still a WIP. There might be breaking changes.
  */
 const HvTable = forwardRef(function HvTable(props, ref) {
-  const { classes, className, stickyHeader = false, stickyColumns = false, ...others } = props;
+  const {
+    classes,
+    className,
+    component = defaultComponent,
+    stickyHeader = false,
+    stickyColumns = false,
+    ...others
+  } = props;
 
-  const tableContext = useMemo(() => ({}), []);
+  const components = useMemo(() => computeTablePartComponents(component), [component]);
+
+  const tableContext = useMemo(() => ({ components }), [components]);
 
   return (
     <TableContext.Provider value={tableContext}>
-      <table
+      <components.Table
         ref={ref}
+        role={component === defaultComponent ? null : "table"}
         className={clsx(classes.root, className, {
           [classes.stickyHeader]: stickyHeader,
           [classes.stickyColumns]: stickyColumns,
@@ -40,21 +74,32 @@ const HvTable = forwardRef(function HvTable(props, ref) {
 
 HvTable.propTypes = {
   /**
-   * Class names to be applied.
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * Defaults to `table`.
+   *
+   * When using non-table elements, layout is up to the developer using the component.
    */
-  className: PropTypes.string,
+  component: PropTypes.elementType,
+
   /**
    * Content to be rendered
    */
   children: PropTypes.node.isRequired,
+
   /**
-   * Whether the `HvTable` has a sticky header row
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+
+  /**
+   * Whether the `HvTable` has a sticky header row.
    */
   stickyHeader: PropTypes.bool,
   /**
    * Whether the `HvTable` has sticky columns.
    */
   stickyColumns: PropTypes.bool,
+
   /**
    * A Jss Object used to override or extend the styles applied.
    */

@@ -1,32 +1,40 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
 import { withStyles } from "@material-ui/core";
 
-import TableContext from "../TableSectionContext";
+import TableContext from "../TableContext";
+import TableSectionContext from "../TableSectionContext";
 import styles from "./styles";
 
-const tableContext = {
+const tableSectionContext = {
   variant: "head",
   padding: "default",
 };
+
+const defaultComponent = "thead";
 
 /**
  * HvTableHead acts as a `thead` element.
  * `HvTableCell` and `HvTableRow` elements in it inherit header-specific styles
  */
 const HvTableHead = forwardRef(function HvTableHead(props, ref) {
-  const { classes, className, stickyHeader, ...others } = props;
+  const { classes, className, component, stickyHeader, ...others } = props;
+
+  const tableContext = useContext(TableContext);
+
+  const Component = component || tableContext?.components?.THead || defaultComponent;
 
   return (
-    <TableContext.Provider value={tableContext}>
-      <thead
+    <TableSectionContext.Provider value={tableSectionContext}>
+      <Component
         className={clsx(classes.root, className, { [classes.stickyHeader]: stickyHeader })}
         ref={ref}
+        role={Component === defaultComponent ? null : "rowgroup"}
         {...others}
       />
-    </TableContext.Provider>
+    </TableSectionContext.Provider>
   );
 });
 
@@ -39,6 +47,11 @@ HvTableHead.propTypes = {
    * Content to be rendered
    */
   children: PropTypes.node,
+  /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * Defaults to thead.
+   */
+  component: PropTypes.elementType,
   /**
    * The table has sticky headers.
    */

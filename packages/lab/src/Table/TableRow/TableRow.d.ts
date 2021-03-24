@@ -5,6 +5,12 @@ export type HvTableRowClassKey = "root" | "head" | "body" | "footer" | "hover" |
 export interface HvTableRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableRowElement>, HvTableRowClassKey> {
   /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * Defaults to `tr`.
+   */
+  component?: React.ElementType<React.HTMLAttributes<HTMLElement>>;
+
+  /**
    * Whether the table row will shade on hover.
    */
   hover?: boolean;
