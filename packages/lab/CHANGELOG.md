@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.3.1...@hv/uikit-react-lab@3.4.0) (2021-03-25)
+
+
+### Features
+
+* **table:** lines can be clicked and assigned to custom action. HVUIKIT-5655 ([55ebb0d](https://github.com/pentaho/hv-uikit-react/commit/55ebb0d3c907ce1755bdde640101bad92ba6b7be))
+* **tag:** addition of new tag component ([4c9ea31](https://github.com/pentaho/hv-uikit-react/commit/4c9ea319dfb486702f412cd8881dbf04ae80f236))
+
+
+
+
+
 ## [3.3.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.3.0...@hv/uikit-react-lab@3.3.1) (2021-03-20)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

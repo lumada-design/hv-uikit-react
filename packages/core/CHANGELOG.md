@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.14.0...@hv/uikit-react-core@3.15.0) (2021-03-25)
+
+
+### Bug Fixes
+
+* **base-dropdown:** add missing code for width calculation. HVUIKIT-5710 ([89f00c9](https://github.com/pentaho/hv-uikit-react/commit/89f00c919e06313c8538ec275ca4443ea9a80727))
+* **base-dropdown:** change variable name. HVUIKIT-5710 ([4b8de36](https://github.com/pentaho/hv-uikit-react/commit/4b8de36b592f0bb64b0b900c4a7712bbb4c34ea9))
+* **card:** add HvIsCardGridElement marker class for focus management HVUIKIT-5578 ([8afe704](https://github.com/pentaho/hv-uikit-react/commit/8afe7040a885765eda31187d9fc9a644cc2c633f))
+* **date-picker:** remove initial focused element from tab order HVUIKIT-5680 ([2040562](https://github.com/pentaho/hv-uikit-react/commit/204056263264fe4a260b0400ba109bc7b28852ec))
+* **dialog:** fix dialog content dom structure HVUIKIT-5727 ([1d4a7f4](https://github.com/pentaho/hv-uikit-react/commit/1d4a7f458a9fac78514150bc737d85cf87eb1967))
+* **dropdown-menu:** default width with button size. HVUIKIT-5710 ([1065ed4](https://github.com/pentaho/hv-uikit-react/commit/1065ed42492e1bd5e09b375b599affa35bd76d21))
+* **input:** elimination of fixed width. HVUIKIT-5718 ([8781dee](https://github.com/pentaho/hv-uikit-react/commit/8781deee041a003cdb0913e6e24db377f4cc40ff))
+* **pagination:** improve internal control ([d1d1a7c](https://github.com/pentaho/hv-uikit-react/commit/d1d1a7c12336058baf5ef56e8e88bcdffc233852))
+* **table:** fixed columns not working. HVUIKIT-5724 ([eeccdea](https://github.com/pentaho/hv-uikit-react/commit/eeccdea41d41fdb3c3f336d5df52ed79bbbe4a60))
+* **table:** remove inline css imports. HVUIKIT-5709 ([5182af5](https://github.com/pentaho/hv-uikit-react/commit/5182af573600f55e405b5b61847782d4c57713e9))
+
+
+### Features
+
+* **breadcrumb:** update to DS 3.4.0.HVUIKIT-5692 ([43e2855](https://github.com/pentaho/hv-uikit-react/commit/43e2855d4ed50826737ae313ebf5416b5a946bcb))
+* **dropdown:** responsive dropdown. HVUIKIT-5710 ([5520904](https://github.com/pentaho/hv-uikit-react/commit/552090454e3f1f564ed30c880c9926f096f25e6c))
+* **globalactions:** implement the component. HVUIKIT-5698 ([95564e1](https://github.com/pentaho/hv-uikit-react/commit/95564e14c953b2e9c0c247434f4b2316ccaee00f))
+* add new table. HVUIKIT-5647 ([9021d20](https://github.com/pentaho/hv-uikit-react/commit/9021d20865177d711e23abc0e07e8c809baa42e9))
+* allow configuration of css class name generator HVUIKIT-5578 ([04f7f93](https://github.com/pentaho/hv-uikit-react/commit/04f7f93e5d1fd0b7d5146c6a2284f96d8fb39f52))
+* introduce HvIsFocused and HvIsFocusVisible global marker classes HVUIKIT-5578 ([49f8af5](https://github.com/pentaho/hv-uikit-react/commit/49f8af51e1b35ddc8a8b84018b38f6cacd8b7cd0))
+
+
+
+
+
 # [3.14.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.13.0...@hv/uikit-react-core@3.14.0) (2021-03-18)
 
 
