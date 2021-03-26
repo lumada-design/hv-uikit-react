@@ -69,6 +69,12 @@ export interface TableColumn {
    * Labels for the pagination.
    */
   paginationLabels?: PaginationLabelsProp;
+  /**
+   * Custom sort method
+   * @param a - the first value to compare.
+   * @param b - the second value to compare.
+   */
+  sortMethod?: (a: any, b: any) => number;
 }
 
 export interface SecondaryAction extends ListValueProp {
