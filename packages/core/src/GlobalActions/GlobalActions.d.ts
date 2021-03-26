@@ -28,7 +28,7 @@ export interface HvGlobalActionsProps
   /**
    * Allows the user to pass in a fully customized button.
    */
-  backButton: React.ReactNode;
+  backButton?: React.ReactNode;
   /**
   /**
    * Action to be executed by the Back button in the Global Actions.
@@ -41,7 +41,7 @@ export interface HvGlobalActionsProps
   /**
    * Custom icon to be applied to Backwards button.
    */
-  backwardsIcon: React.ReactNode;
+  backwardsIcon?: React.ReactNode;
   /**
    * Heading Level to apply to Title Area.
    */
