@@ -1,7 +1,7 @@
 const styles = () => ({
   root: {
     width: "100%",
-    overflowX: "auto",
+    overflow: "auto",
   },
 });
 

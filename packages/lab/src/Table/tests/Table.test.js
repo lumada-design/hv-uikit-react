@@ -4,10 +4,9 @@ import range from "lodash/range";
 import { render } from "testing-utils";
 import userEvent from "@testing-library/user-event";
 
-import { useTable, useRowSelect } from "react-table";
-import { Main, EmptyCells, Pagination, Sortable, BulkActions } from "../stories/Table.stories";
+import { Main, EmptyCells } from "../stories/Table.stories";
 
-import { makeData, getColumns } from "../stories/utils";
+import { Pagination, Sortable, BulkActions } from "../stories/TableHooks.stories";
 
 import {
   HvTable,
@@ -261,39 +260,29 @@ describe("Table", () => {
   describe("Table line click", () => {
     it("executes the provided callback", () => {
       const onClickSpy = jest.fn();
-      const TableWithRowClick = () => {
-        const data = makeData(6);
-        const columns = getColumns();
 
-        const instance = useTable({ columns, data }, useRowSelect);
-        const { prepareRow, headers, rows } = instance;
+      const TableWithRowClick = () => {
+        const NUM_ROWS = 6;
+        const NUM_COLS = 3;
 
         return (
           <HvTableContainer>
             <HvTable>
               <HvTableHead>
                 <HvTableRow>
-                  {headers.map((col) => (
-                    <HvTableCell key={col.id}>{`Sample Header ${col.id}`}</HvTableCell>
+                  {range(NUM_COLS).map((id) => (
+                    <HvTableCell key={id}>{`Sample Header ${id}`}</HvTableCell>
                   ))}
                 </HvTableRow>
               </HvTableHead>
               <HvTableBody>
-                {rows.map((row) => {
-                  prepareRow(row);
-                  return (
-                    <HvTableRow
-                      key={row.id}
-                      onClick={(e) => onClickSpy(e)}
-                      {...row.getRowProps()}
-                      style={{ ...row.getRowProps().style, cursor: "pointer" }}
-                    >
-                      {headers.map((col) => (
-                        <HvTableCell key={col.id}>{`Sample Header ${col.id}`}</HvTableCell>
-                      ))}
-                    </HvTableRow>
-                  );
-                })}
+                {range(NUM_ROWS).map((id) => (
+                  <HvTableRow key={id} onClick={(e) => onClickSpy(id, e)}>
+                    {range(NUM_COLS).map((id2) => (
+                      <HvTableCell key={id2}>{`Sample Cell ${id2}`}</HvTableCell>
+                    ))}
+                  </HvTableRow>
+                ))}
               </HvTableBody>
             </HvTable>
           </HvTableContainer>
@@ -306,7 +295,11 @@ describe("Table", () => {
 
       userEvent.click(rowsInTable[1]);
       userEvent.click(rowsInTable[3]);
+
       expect(onClickSpy).toHaveBeenCalledTimes(2);
+
+      expect(onClickSpy).toHaveBeenNthCalledWith(1, 0, expect.anything());
+      expect(onClickSpy).toHaveBeenNthCalledWith(2, 2, expect.anything());
     });
   });
 });

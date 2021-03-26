@@ -6,7 +6,6 @@ import capitalize from "lodash/capitalize";
 import { withStyles } from "@material-ui/core";
 import { getSortIcon } from "./utils";
 import styles from "./styles";
-import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
 
 /**
@@ -29,10 +28,13 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
     sorted: sortedProp,
     sortable: sortableProp,
 
+    stickyColumn = false,
+    stickyColumnMostLeft = false,
+    stickyColumnLeastRight = false,
+
     ...others
   } = props;
 
-  const tableRootContext = useContext(TableContext);
   const tableContext = useContext(TableSectionContext);
   const {
     align: rtAlign,
@@ -66,7 +68,10 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
         [classes.sorted]: sorted,
         [classes[`align${capitalize(align)}`]]: align !== "inherit",
         [classes[`padding${capitalize(padding)}`]]: padding !== "default",
-        [classes.stickyHeader]: isHeadCell && tableRootContext?.stickyHeader,
+
+        [classes.stickyColumn]: stickyColumn,
+        [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
+        [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
       })}
       aria-sort={sortDirection}
       {...others}
@@ -126,6 +131,20 @@ HvTableCell.propTypes = {
    * Set sort direction icon and aria-sort.
    */
   sortDirection: PropTypes.oneOf(["ascending", "descending", false]),
+
+  /**
+   * The cell is part of a sticky column.
+   */
+  stickyColumn: PropTypes.bool,
+  /**
+   * The cell is part of the last sticky to the left column.
+   */
+  stickyColumnMostLeft: PropTypes.bool,
+  /**
+   * The cell is part of the first sticky to the right column.
+   */
+  stickyColumnLeastRight: PropTypes.bool,
+
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -159,9 +178,17 @@ HvTableCell.propTypes = {
      */
     sortIcon: PropTypes.string,
     /**
-     * Styles applied to the row when the table has a sticky header.
+     * Styles applied to the cell when it's part of a sticky column.
      */
-    stickyHeader: PropTypes.string,
+    stickyColumn: PropTypes.string,
+    /**
+     * Styles applied to the cell when it's part of the last sticky to the left column.
+     */
+    stickyColumnMostLeft: PropTypes.string,
+    /**
+     * Styles applied to the cell when it's part of the first right sticky column.
+     */
+    stickyColumnLeastRight: PropTypes.string,
   }).isRequired,
 };
 

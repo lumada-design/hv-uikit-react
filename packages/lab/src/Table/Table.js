@@ -14,18 +14,24 @@ import styles from "./styles";
  * HvTable component offers a set of HTML-equivalent elements, styled to Design System's specification,
  * for building tables.
  *
+ * For better data handling and advanced features we recommend the use of a collection of utility hooks.
+ * See the <a href="?id=lab-table-hooks--main&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
+ *
  * PLEASE NOTE: This Table implementation is still a WIP. There might be breaking changes.
  */
 const HvTable = forwardRef(function HvTable(props, ref) {
-  const { classes, className, stickyHeader = false, ...others } = props;
+  const { classes, className, stickyHeader = false, stickyColumns = false, ...others } = props;
 
-  const tableContext = useMemo(() => ({ stickyHeader }), [stickyHeader]);
+  const tableContext = useMemo(() => ({}), []);
 
   return (
     <TableContext.Provider value={tableContext}>
       <table
         ref={ref}
-        className={clsx(classes.root, className, { [classes.stickyHeader]: stickyHeader })}
+        className={clsx(classes.root, className, {
+          [classes.stickyHeader]: stickyHeader,
+          [classes.stickyColumns]: stickyColumns,
+        })}
         {...others}
       />
     </TableContext.Provider>
@@ -46,6 +52,10 @@ HvTable.propTypes = {
    */
   stickyHeader: PropTypes.bool,
   /**
+   * Whether the `HvTable` has sticky columns.
+   */
+  stickyColumns: PropTypes.bool,
+  /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
@@ -57,6 +67,10 @@ HvTable.propTypes = {
      * Styles applied to the component root class when it has a sticky header.
      */
     stickyHeader: PropTypes.string,
+    /**
+     * Styles applied to the component root class when it has sticky columns.
+     */
+    stickyColumns: PropTypes.string,
   }).isRequired,
 };
 
