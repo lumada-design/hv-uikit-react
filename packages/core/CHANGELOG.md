@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.15.0...@hv/uikit-react-core@3.15.1) (2021-03-27)
+
+
+### Bug Fixes
+
+* **globalactions:** update ts definitions to optional ([c40c2c0](https://github.com/pentaho/hv-uikit-react/commit/c40c2c04e984b49227970ad469f1042263c13882))
+* **table:** add sortMethod type definition ([dcfb368](https://github.com/pentaho/hv-uikit-react/commit/dcfb3682d9742750b20146cf0d5e172ff3a8dcfb))
+
+
+
+
+
 # [3.15.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.14.0...@hv/uikit-react-core@3.15.0) (2021-03-25)
 
 
