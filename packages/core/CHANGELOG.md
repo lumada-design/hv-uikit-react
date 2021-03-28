@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.19.0...@hv/uikit-react-core@2.20.0) (2021-03-28)
+
+
+### Bug Fixes
+
+* **table:** add sortMethod type definition ([f666e7c](https://github.com/pentaho/hv-uikit-react/commit/f666e7ccce1379ff987cf23b351c26d032a92cb1))
+
+
+### Features
+
+* **listview:** allow setting tooltips for the values in the header row ([#2302](https://github.com/pentaho/hv-uikit-react/issues/2302)) ([3a0521b](https://github.com/pentaho/hv-uikit-react/commit/3a0521b9416092b1fd455428ac23818a42d8541f))
+
+
+
+
+
 # [2.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.18.1...@hv/uikit-react-core@2.19.0) (2021-03-11)
 
 
