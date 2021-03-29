@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { Backwards } from "@hv/uikit-react-icons";
 import { withStyles } from "@material-ui/core";
-import isString from "lodash";
+import isString from "lodash/isString";
 
 import HvButton from "../Button";
 import HvTypography from "../Typography";
