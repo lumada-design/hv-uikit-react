@@ -8,7 +8,7 @@ import {
   SortDescendingXS as SortDesc,
 } from "@hv/uikit-react-icons";
 import { HvTypography } from "../..";
-import { KeyboardCodes, isKeypress, setId } from "../../utils";
+import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
@@ -35,21 +35,6 @@ const getSortType = (id, sort) => {
   return undefined;
 };
 
-const handleSortChange = (event, colId, onSortChange, sort) => {
-  // The table only supports one sorted column
-  const newState = [...sort];
-  newState[0].id = colId;
-  newState[0].desc = !newState[0].desc;
-  onSortChange?.(newState);
-};
-
-const handleKeyDown = (event, colId, onSortChange, sort) => {
-  if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space)) {
-    event.preventDefault();
-    handleSortChange(event, colId, onSortChange, sort);
-  }
-};
-
 const Header = ({ id, classes, column, tableSortable, sort, onSortChange }) => {
   const { id: colId, sortable, cellType, headerText } = column;
 
@@ -67,8 +52,6 @@ const Header = ({ id, classes, column, tableSortable, sort, onSortChange }) => {
           aria-label={setId(id, "column", colId, "sort-button")}
           role="button"
           tabIndex="0"
-          onClick={(event) => handleSortChange(event, colId, onSortChange, sort)}
-          onKeyDown={(event) => handleKeyDown(event, colId, onSortChange, sort)}
         >
           {renderSort(sortType, columnSortable)}
         </div>
