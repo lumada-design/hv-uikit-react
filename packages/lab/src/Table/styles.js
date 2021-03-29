@@ -1,5 +1,6 @@
 const styles = (theme) => ({
   root: {
+    position: "relative",
     width: "100%",
 
     ...theme.hv.typography.normalText,

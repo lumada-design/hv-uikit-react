@@ -4,8 +4,11 @@ const styles = (theme) => ({
     backgroundColor: "inherit",
     verticalAlign: "middle",
     outline: 0,
+    minHeight: 32,
   },
-  head: {},
+  head: {
+    minHeight: 52,
+  },
   body: {},
   footer: {},
   selected: {
