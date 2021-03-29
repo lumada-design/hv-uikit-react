@@ -12,7 +12,7 @@ export type HvGlobalActionsClassKey =
   | "actions";
 
 export interface HvGlobalActionsProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvGlobalActionsClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvGlobalActionsClassKey, "title"> {
   /**
    * Action Buttons passed into the Component.
    */
