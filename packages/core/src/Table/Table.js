@@ -12,7 +12,7 @@ import { withStyles } from "@material-ui/core";
 import { HvBulkActions, HvPagination, HvTypography } from "..";
 import withLabels from "../withLabels";
 import withId from "../withId";
-import { setId } from "../utils";
+import { setId, KeyboardCodes, isKeypress } from "../utils";
 
 import expander from "./expander";
 import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
@@ -303,9 +303,16 @@ const HvTable = (props) => {
 
     return {
       id: setId(id, "column", column.id),
+      onKeyDown: (event) => {
+        if (
+          isSortable &&
+          (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space))
+        ) {
+          event.preventDefault();
+          instance.sortColumn(column);
+        }
+      },
       onClick: () => {
-        // The onClick select the outside div and not the custom header. This forces the focus to be set in the icons
-        // so the focus works normally.
         if (isSortable) {
           document.getElementById(`${id}-column-${column.id}-sort-button`).focus();
           instance.sortColumn(column);
