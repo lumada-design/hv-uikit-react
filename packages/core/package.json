@@ -49,6 +49,7 @@
     "@hv/uikit-common-themes": "^3.0.2",
     "@hv/uikit-react-icons": "^3.2.1",
     "@popperjs/core": "2.6.0",
+    "attr-accept": "^2.2.2",
     "clsx": "^1.1.1",
     "core-js": "^3.8.1",
     "dayjs": "^1.9.3",

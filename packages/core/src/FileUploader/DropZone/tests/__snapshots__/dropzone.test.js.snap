@@ -281,6 +281,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         tabIndex={0}
       >
         <input
+          accept=""
           className="HvFileUploaderDropZone-inputArea"
           disabled={false}
           id="dropzone1-input-file"
@@ -666,6 +667,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         tabIndex={0}
       >
         <input
+          accept=""
           className="HvFileUploaderDropZone-inputArea"
           disabled={true}
           id="dropzone1-input-file"
