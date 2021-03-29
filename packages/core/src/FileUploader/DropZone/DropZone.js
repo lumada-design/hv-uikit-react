@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
+import accept from "attr-accept";
 import { withStyles } from "@material-ui/core";
 import { Doc } from "@hv/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../../utils";
@@ -42,7 +43,11 @@ const DropZone = ({
 
       const isSizeAllowed = file.size <= maxFileSize;
       const isFileAccepted =
-        !acceptedFiles.length || acceptedFiles.indexOf(file.type.split("/")[1]) > -1;
+        !acceptedFiles.length ||
+        acceptedFiles.indexOf(file.type.split("/")[1]) > -1 ||
+        acceptedFiles.some((acceptExtension) =>
+          accept({ name: file.name, type: file.type }, acceptExtension)
+        );
 
       if (!isFileAccepted) {
         newFile.errorMessage = labels.fileTypeError;
@@ -139,6 +144,7 @@ const DropZone = ({
             }
           }}
           ref={inputRef}
+          accept={acceptedFiles.join(",")}
         />
 
         <div className={classes.dropArea}>

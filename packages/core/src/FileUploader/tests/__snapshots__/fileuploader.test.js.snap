@@ -389,6 +389,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 tabIndex={0}
               >
                 <input
+                  accept="jpeg"
                   className="HvFileUploaderDropZone-inputArea"
                   disabled={false}
                   id="drop-zone-2-input-file"
