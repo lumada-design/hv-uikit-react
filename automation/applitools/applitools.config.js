@@ -30,6 +30,7 @@ module.exports = {
   variations: () => ["theme:wicked"],
 
   appName: "UI Kit v2.x",
+  batchName: "UI Kit v2.x",
 
   browser: [
     { width: 1024, height: 768, name: "ie11" },
