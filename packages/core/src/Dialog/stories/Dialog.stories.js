@@ -78,7 +78,7 @@ export const Main = () => {
         id="test"
         open={open}
         onClose={() => setOpen(false)}
-        firstFocusable="close"
+        firstFocusable="test-close"
       >
         <HvDialogTitle variant="warning">Switch model view?</HvDialogTitle>
         <HvDialogContent indentContent>
@@ -310,7 +310,7 @@ export const RemoveSchedule = () => {
         id="test"
         open={open}
         onClose={() => setOpen(false)}
-        firstFocusable="close"
+        firstFocusable="test-close"
       >
         <HvDialogTitle variant="warning">Remove schedule?</HvDialogTitle>
         <HvDialogContent indentContent>{styledString()}</HvDialogContent>
@@ -353,7 +353,7 @@ export const DeleteConfirmation = () => {
         id="test"
         open={open}
         onClose={() => setOpen(false)}
-        firstFocusable="close"
+        firstFocusable="test-close"
       >
         <HvDialogTitle variant="warning">Delete Confirmation</HvDialogTitle>
         <HvDialogContent indentContent>
@@ -388,7 +388,7 @@ export const NoRename = () => {
         id="test"
         open={open}
         onClose={() => setOpen(false)}
-        firstFocusable="close"
+        firstFocusable="test-close"
       >
         <HvDialogTitle variant="warning">Cannot rename</HvDialogTitle>
         <HvDialogContent indentContent>
