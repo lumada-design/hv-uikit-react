@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.20.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.20.0...@hv/uikit-react-core@2.20.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **table:** sort cursors not triggering sort. HVUIKIT-5734 ([f952401](https://github.com/pentaho/hv-uikit-react/commit/f9524013010d0ba1287159e6e65ae6f1cabe00a4))
+
+
+
+
+
 # [2.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.19.0...@hv/uikit-react-core@2.20.0) (2021-03-28)
 
 
