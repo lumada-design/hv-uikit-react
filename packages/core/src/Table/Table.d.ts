@@ -233,6 +233,18 @@ export interface HvTableProps
    * Defines if the expanded row is collapsed when data changes.
    */
   collapseOnDataChange?: boolean;
+  /**
+   * Defines if the selection checkbox column should be always visible/fixed to the left.
+   *
+   * Defaults to true when there are any other columns fixed to the left, false otherwise.
+   */
+  fixedCheckbox?: boolean;
+  /**
+   * Defines if the secondary actions column should be always visible/fixed to the right.
+   *
+   * Defaults to true when there are any other columns fixed to the right, false otherwise.
+   */
+  fixedSecondaryActions?: boolean;
 }
 
 export type HvTableClassKey =
