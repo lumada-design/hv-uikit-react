@@ -231,6 +231,42 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
+        <WithStyles(ForwardRef)>
+          <ForwardRef
+            classes={
+              Object {
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
+              }
+            }
+          >
+            <p
+              className="HvTypography-root HvTypography-normalText"
+            >
+              Accepted files:
+            </p>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
       </div>
       <div
         className="HvFileUploaderDropZone-dropZoneContainer"
@@ -245,6 +281,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         tabIndex={0}
       >
         <input
+          accept=""
           className="HvFileUploaderDropZone-inputArea"
           disabled={false}
           id="dropzone1-input-file"
@@ -580,6 +617,42 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
+        <WithStyles(ForwardRef)>
+          <ForwardRef
+            classes={
+              Object {
+                "3xlTitle": "HvTypography-3xlTitle",
+                "4xlTitle": "HvTypography-4xlTitle",
+                "5xlTitle": "HvTypography-5xlTitle",
+                "disabledText": "HvTypography-disabledText",
+                "highlightText": "HvTypography-highlightText",
+                "lTitle": "HvTypography-lTitle",
+                "link": "HvTypography-link",
+                "mTitle": "HvTypography-mTitle",
+                "noWrap": "HvTypography-noWrap",
+                "normalText": "HvTypography-normalText",
+                "placeholderText": "HvTypography-placeholderText",
+                "root": "HvTypography-root",
+                "sTitle": "HvTypography-sTitle",
+                "sectionTitle": "HvTypography-sectionTitle",
+                "selectedNavText": "HvTypography-selectedNavText",
+                "vizText": "HvTypography-vizText",
+                "vizTextDisabled": "HvTypography-vizTextDisabled",
+                "xlTitle": "HvTypography-xlTitle",
+                "xsInlineLink": "HvTypography-xsInlineLink",
+                "xsTitle": "HvTypography-xsTitle",
+                "xxlTitle": "HvTypography-xxlTitle",
+                "xxsTitle": "HvTypography-xxsTitle",
+              }
+            }
+          >
+            <p
+              className="HvTypography-root HvTypography-normalText"
+            >
+              Accepted files:
+            </p>
+          </ForwardRef>
+        </WithStyles(ForwardRef)>
       </div>
       <div
         className="HvFileUploaderDropZone-dropZoneContainer HvFileUploaderDropZone-dropZoneContainerDisabled"
@@ -594,6 +667,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         tabIndex={0}
       >
         <input
+          accept=""
           className="HvFileUploaderDropZone-inputArea"
           disabled={true}
           id="dropzone1-input-file"

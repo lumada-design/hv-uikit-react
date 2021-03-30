@@ -20,6 +20,8 @@ const DEFAULT_LABELS = {
 /**
  * Lets the user choose one or more files from their device storage. Once chosen,
  * the files can be uploaded to a server or manipulated on the client side.
+ *
+ * Accepted file types follow the format of the html input accept attribute. Please check https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file for more details.
  */
 const FileUploader = ({
   id,
@@ -72,7 +74,7 @@ FileUploader.propTypes = {
    */
   labels: PropTypes.shape({
     /**
-     *
+     * Accepted file list label
      */
     acceptedFiles: PropTypes.string,
     /**
