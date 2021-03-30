@@ -5,7 +5,7 @@ import { ViewConfiguration } from "../ViewConfiguration";
 
 export type SizeProps = true | false | "auto" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export type HvCardViewClassKey = "root" | "elements";
+export type HvCardViewClassKey = "root" | "elements" | "elementsXS" | "rightColumn" | "leftColumn";
 
 export interface CardViewConfiguration extends ViewConfiguration {
   /**

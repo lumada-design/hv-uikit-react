@@ -10,20 +10,22 @@ const styles = (theme) => ({
     justifyContent: "flex-end",
   },
   rightControls: {
-    display: "flex",
-    alignItems: "flex-end",
+    flexWrap: "nowrap",
+    justifyContent: "space-between",
+  },
+  sortContainer: {
+    flexWrap: "nowrap",
   },
   multiButtons: {
-    paddingLeft: theme.hv.spacing.md,
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: `${theme.spacing(4)}px`,
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: `${theme.spacing(2)}px`,
+    },
   },
-  viewContainer: {
-    padding: theme.hvSpacing("sm", 0),
-    width: "100%",
-  },
-  sortContainer: {},
-  searchBoxContainer: {
-    width: "250px",
-  },
+  viewContainer: {},
+  searchBoxContainer: {},
   pagination: {
     marginTop: 0,
   },

@@ -101,7 +101,6 @@ export { default as withId } from "./withId";
 export { default as withTooltip } from "./withTooltip";
 
 // Hooks
-export { default as useWidth } from "./utils/useWidth";
 export { default as useUniqueId } from "./useUniqueId";
 export { default as useLocale } from "./Provider/useLocale";
 
