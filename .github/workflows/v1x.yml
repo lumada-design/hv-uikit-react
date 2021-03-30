@@ -10,10 +10,6 @@
 
 name: v1.x Nightly
 on:
-  schedule:
-    - cron: "0 1 * * *" # daily at 01:00
-  repository_dispatch:
-    types: [v1x]
   workflow_dispatch:
 
 # flow:
