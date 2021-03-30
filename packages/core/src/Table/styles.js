@@ -155,6 +155,14 @@ const styles = (theme) => ({
                 },
               },
             },
+            "&.selected > div$td": {
+              "&.rthfc-td-fixed": {
+                background: theme.hv.palette.atmosphere.atmo1,
+                "&.sorted": {
+                  background: theme.hv.palette.atmosphere.atmo1,
+                },
+              },
+            },
             "&.selected": {
               background: theme.hv.palette.atmosphere.atmo1,
               "& > div$td": {
@@ -163,6 +171,12 @@ const styles = (theme) => ({
             },
             "&.selected:hover > div$td": {
               background: theme.hv.palette.atmosphere.atmo3,
+              "&.rthfc-td-fixed": {
+                background: theme.hv.palette.atmosphere.atmo3,
+                "&.sorted": {
+                  background: theme.hv.palette.atmosphere.atmo3,
+                },
+              },
             },
             "&:hover > div$td": {
               background: theme.hv.palette.atmosphere.atmo3,

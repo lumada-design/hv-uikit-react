@@ -1921,19 +1921,16 @@ export const TableWithChangingData = () => {
       headerText: "Name",
       accessor: "name",
       cellType: "alpha-numeric",
-      fixed: "left",
     },
     {
       headerText: "Surname",
       accessor: "surname",
       cellType: "alpha-numeric",
-      fixed: "left",
     },
     {
       headerText: "Email",
       accessor: "email",
       cellType: "alpha-numeric",
-      fixed: "left",
     },
   ];
 
@@ -2472,19 +2469,16 @@ export const TableDataDeletion = () => {
       headerText: "Name",
       accessor: "name",
       cellType: "alpha-numeric",
-      fixed: "left",
     },
     {
       headerText: "Surname",
       accessor: "surname",
       cellType: "alpha-numeric",
-      fixed: "left",
     },
     {
       headerText: "Email",
       accessor: "email",
       cellType: "alpha-numeric",
-      fixed: "left",
     },
   ];
 
