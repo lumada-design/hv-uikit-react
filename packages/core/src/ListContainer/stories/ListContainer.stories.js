@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core";
 
 import { DropRightXS, Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons";
 
-import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, withTooltip } from "../..";
+import { HvListContainer, HvListItem, HvPanel, HvTypography, HvLink, HvTooltip } from "../..";
 
 export default {
   title: "Components/List",
@@ -160,6 +160,13 @@ export const WithNavigationIcons = () => (
 );
 
 export const WithTextOverflow = () => {
+  const style = {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    lineHeight: "32px",
+  };
+
   return (
     <HvPanel width="200px">
       <HvListContainer condensed interactive aria-label="Single Selection List Title">
@@ -168,10 +175,17 @@ export const WithTextOverflow = () => {
         <HvListItem>Remove</HvListItem>
         <HvListItem>Delete</HvListItem>
         <HvListItem>
-          {withTooltip(
-            () => <>Really big text that should be truncated</>,
-            "The complete really big text that should be shown in the tooltip"
-          )()}
+          <HvTooltip
+            title={
+              <HvTypography>
+                The complete really big text that should be shown in the tooltip
+              </HvTypography>
+            }
+          >
+            <HvTypography style={style} component="div">
+              Really big text that should be truncated
+            </HvTypography>
+          </HvTooltip>
         </HvListItem>
       </HvListContainer>
     </HvPanel>
