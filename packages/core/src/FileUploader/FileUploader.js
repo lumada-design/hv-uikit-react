@@ -147,7 +147,7 @@ FileUploader.propTypes = {
    * */
   maxFileSize: PropTypes.number,
   /**
-   * Files extensions accepted for upload.
+   * Files extensions accepted for upload. Follows https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept
    */
   acceptedFiles: PropTypes.arrayOf(PropTypes.string),
   /**
