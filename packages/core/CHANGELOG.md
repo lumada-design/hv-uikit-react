@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.15.2...@hv/uikit-react-core@3.15.3) (2021-03-31)
+
+
+### Bug Fixes
+
+* **assetInventory:** adjust responsiveness behaviour.HVUIKIT-5704 ([ea028eb](https://github.com/pentaho/hv-uikit-react/commit/ea028eba629a81bfa7ee78a1939ba875ab928896))
+* **file-uploader:** add acceptedFiles label usage over acceptedFile list. HVUIKIT-5731 ([7255b40](https://github.com/pentaho/hv-uikit-react/commit/7255b4057275088ad17356964ec2b025f4749df3))
+* **file-uploader:** handle accept file types according to the html standard. HVUIKIT-5731 ([556d728](https://github.com/pentaho/hv-uikit-react/commit/556d7283fa8203a2fefc0e1d2b534efa395f450e))
+* **globalactions:** fix ts definitions ([#2347](https://github.com/pentaho/hv-uikit-react/issues/2347)) ([cab0f26](https://github.com/pentaho/hv-uikit-react/commit/cab0f26ab5961b87097030ae35ffb2e64d100be5))
+
+
+
+
+
 ## [3.15.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.15.1...@hv/uikit-react-core@3.15.2) (2021-03-30)
 
 
