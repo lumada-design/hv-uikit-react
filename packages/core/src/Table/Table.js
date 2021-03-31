@@ -25,6 +25,9 @@ import { styles, tableStyleOverrides } from "./styles";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = withCheckbox(ReactTable);
+const ReactTableFixedColumnsCheckbox = withCheckbox(ReactTableFixedColumns, {
+  callbackRefProperty: "innerRef",
+});
 
 const DEFAULT_LABELS = {
   titleText: "",
@@ -85,6 +88,8 @@ const HvTable = (props) => {
     onPageChange,
     pages,
     collapseOnDataChange = true,
+    fixedCheckbox,
+    fixedSecondaryActions,
     ...others
   } = props;
 
@@ -479,10 +484,45 @@ const HvTable = (props) => {
     onSelection?.(event, newSelection);
   };
 
-  const AugmentedTable = useMemo(
-    () => (idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns),
-    [idForCheckbox]
+  const hasFixedLeftColumns = useMemo(
+    () => columns.some((col) => col.fixed === "left" || col.fixed === true),
+    [columns]
   );
+
+  const hasFixedRightColumns = useMemo(() => columns.some((col) => col.fixed === "right"), [
+    columns,
+  ]);
+
+  const hasFixedCheckbox =
+    !!idForCheckbox && ((fixedCheckbox === undefined && hasFixedLeftColumns) || fixedCheckbox);
+
+  const hasFixedSecundaryActions =
+    !!secondaryActions &&
+    ((fixedSecondaryActions === undefined && hasFixedRightColumns) || fixedSecondaryActions);
+
+  const AugmentedTable = useMemo(() => {
+    const hasFixedColumns =
+      hasFixedLeftColumns || hasFixedRightColumns || hasFixedCheckbox || hasFixedSecundaryActions;
+    if (idForCheckbox && hasFixedColumns) {
+      return ReactTableFixedColumnsCheckbox;
+    }
+
+    if (idForCheckbox) {
+      return ReactTableCheckbox;
+    }
+
+    if (hasFixedColumns) {
+      return ReactTableFixedColumns;
+    }
+
+    return ReactTable;
+  }, [
+    hasFixedCheckbox,
+    hasFixedLeftColumns,
+    hasFixedRightColumns,
+    hasFixedSecundaryActions,
+    idForCheckbox,
+  ]);
 
   const getTableStyles = () => tableStyleOverrides(classes);
 
@@ -494,6 +534,8 @@ const HvTable = (props) => {
       cellType: "alpha-numeric",
       width: 33,
       sortable: false,
+      // will be fixed if told so or automatically if there are any column fixed to the right
+      fixed: hasFixedSecundaryActions ? "right" : undefined,
       Cell: (propsCell) =>
         propsCell.original.noActions ? null : (
           <DropDownMenu
@@ -593,6 +635,7 @@ const HvTable = (props) => {
         isSelected={(key) => isSelected(key, selection)}
         NoDataComponent={getNoDataProps}
         getTrGroupProps={getTrGroupProps}
+        fixedCheckbox={hasFixedCheckbox}
       />
     </div>
   );
@@ -920,6 +963,18 @@ HvTable.propTypes = {
    * Defines if the expanded row is collapsed when data changes.
    */
   collapseOnDataChange: PropTypes.bool,
+  /**
+   * Defines if the selection checkbox column should be always visible/fixed to the left.
+   *
+   * Defaults to true when there are any other columns fixed to the left, false otherwise.
+   */
+  fixedCheckbox: PropTypes.bool,
+  /**
+   * Defines if the secondary actions column should be always visible/fixed to the right.
+   *
+   * Defaults to true when there are any other columns fixed to the right, false otherwise.
+   */
+  fixedSecondaryActions: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(HvTable)));

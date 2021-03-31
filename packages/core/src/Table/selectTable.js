@@ -81,6 +81,7 @@ export default (Component, options) => {
         selectWidth,
         SelectAllInputComponent,
         SelectInputComponent,
+        fixedCheckbox,
         ...rest
       } = this.props;
       const select = {
@@ -95,6 +96,11 @@ export default (Component, options) => {
         sortable: false,
         resizable: false,
         style: { textAlign: "center" },
+        fixed: fixedCheckbox
+          ? options !== undefined && options.floatingLeft === true
+            ? "right"
+            : "left"
+          : undefined,
       };
 
       const columns =
@@ -104,7 +110,13 @@ export default (Component, options) => {
       const extra = {
         columns,
       };
-      return <Component {...rest} {...extra} ref={(r) => (this.wrappedInstance = r)} />;
+      return (
+        <Component
+          {...rest}
+          {...extra}
+          {...{ [options?.callbackRefProperty || "ref"]: (r) => (this.wrappedInstance = r) }}
+        />
+      );
     }
   };
 
