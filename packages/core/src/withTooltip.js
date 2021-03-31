@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import Typography from "./Typography";
 import Tooltip from "./Tooltip";
 
-const withTooltip = (
-  Component,
-  label = "",
-  placement,
-  evaluationExpression = (evt) => evt.target.scrollWidth > evt.target.clientWidth
-) => (props) => {
+const withTooltip = (Component, label = "", placement, evaluationExpression = () => true) => (
+  props
+) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const styles = {
     truncate: {
