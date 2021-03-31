@@ -1926,6 +1926,7 @@ exports[`ToggleButton should render correctly 1`] = `
                 disableFocusListener={true}
                 disableTouchListener={true}
                 enterDelay={300}
+                open={false}
                 placement="top"
                 style={
                   Object {
@@ -1980,6 +1981,7 @@ exports[`ToggleButton should render correctly 1`] = `
                   disableFocusListener={true}
                   disableTouchListener={true}
                   enterDelay={300}
+                  open={false}
                   placement="top"
                   style={
                     Object {
