@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.20.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.20.1...@hv/uikit-react-core@2.20.2) (2021-03-31)
+
+
+### Bug Fixes
+
+* **file-uploader:** handle accept file types according to the html standard. HVUIKIT-5731 ([75c8324](https://github.com/pentaho/hv-uikit-react/commit/75c8324ed268ec0979bbb3c0a4b0bb8b0f711f7b))
+
+
+
+
+
 ## [2.20.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.20.0...@hv/uikit-react-core@2.20.1) (2021-03-30)
 
 
