@@ -72,7 +72,16 @@ const parseList = (list = [], item, props, selectAll) => {
 
 const wrapperTooltip = (hasTooltips, Component, label) => {
   const ComponentFunction = () => Component;
-  return hasTooltips ? withTooltip(ComponentFunction, label) : ComponentFunction;
+  return hasTooltips
+    ? withTooltip(ComponentFunction, label, undefined, (evt) => {
+        if (evt.target.children.length > 1) {
+          return Array.of(...evt.target.children).some(
+            (child) => child.scrollWidth > child.clientWidth
+          );
+        }
+        return evt.target.scrollWidth > evt.target.clientWidth;
+      })
+    : ComponentFunction;
 };
 
 export { isItemSelected, parseList, parseState, wrapperTooltip };
