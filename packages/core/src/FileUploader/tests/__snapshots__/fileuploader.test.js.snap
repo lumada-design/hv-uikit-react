@@ -295,9 +295,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  variant="labelText"
-                >
+                <WithStyles(ForwardRef)>
                   <ForwardRef
                     classes={
                       Object {
@@ -326,52 +324,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="labelText"
                   >
                     <p
-                      className="HvTypography-root HvTypography-labelText"
+                      className="HvTypography-root HvTypography-normalText"
                     >
                       Accepted files:
-                    </p>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  variant="sText"
-                >
-                  <ForwardRef
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
-                        "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
-                        "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
-                        "mTitle": "HvTypography-mTitle",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
-                        "sTitle": "HvTypography-sTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
-                        "vizText": "HvTypography-vizText",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
-                    }
-                    variant="sText"
-                  >
-                    <p
-                      className="HvTypography-root HvTypography-sText"
-                    >
-                      jpeg
                     </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
