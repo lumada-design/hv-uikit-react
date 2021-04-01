@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.15.3...@hv/uikit-react-core@3.16.0) (2021-04-01)
+
+
+### Bug Fixes
+
+* **assetInventory:** adjust responsiveness behaviour.HVUIKIT-5704 ([ea028eb](https://github.com/pentaho/hv-uikit-react/commit/ea028eba629a81bfa7ee78a1939ba875ab928896))
+* **table:** fixed sorted column background color HVUIKIT-5733 ([db4c142](https://github.com/pentaho/hv-uikit-react/commit/db4c142141c1e0cadcae859dbc775220960afc04))
+* **tooltip:** withTooltip util not using updated Tooltip. HVUIKIT-5732 ([906de3f](https://github.com/pentaho/hv-uikit-react/commit/906de3fb1b2f74998f7c26994409c6695842540c))
+
+
+### Features
+
+* **table:** allow selection with fixed columns HVUIKIT-5733 ([78bd49e](https://github.com/pentaho/hv-uikit-react/commit/78bd49eec60dfeca5b238c65e25a1364d4a74e24))
+
+
+
+
+
 ## [3.15.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.15.2...@hv/uikit-react-core@3.15.3) (2021-03-31)
 
 
