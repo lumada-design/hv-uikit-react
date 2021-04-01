@@ -27,25 +27,28 @@ const HvDialog = ({
 }) => {
   const [focusableQueue, setFocusableQueue] = useState(null);
 
-  const measuredRef = useCallback((node) => {
-    if (node) {
-      const focusableList = getFocusableList(node);
-      setFocusableQueue({
-        first: focusableList[1],
-        last: focusableList[focusableList.length - 2],
-      });
-      if (isNil(firstFocusable)) focusableList[1].focus();
-      else {
-        const element = document.getElementById(firstFocusable);
-        if (element) element.focus();
+  const measuredRef = useCallback(
+    (node) => {
+      if (node) {
+        const focusableList = getFocusableList(node);
+        setFocusableQueue({
+          first: focusableList[1],
+          last: focusableList[focusableList.length - 2],
+        });
+        if (isNil(firstFocusable)) focusableList[1].focus();
         else {
-          // eslint-disable-next-line no-console
-          console.warn(`firstFocusable element ${firstFocusable} not found.`);
-          focusableList[1].focus();
+          const element = document.getElementById(firstFocusable);
+          if (element) element.focus();
+          else {
+            // eslint-disable-next-line no-console
+            console.warn(`firstFocusable element ${firstFocusable} not found.`);
+            focusableList[1].focus();
+          }
         }
       }
-    }
-  }, []);
+    },
+    [firstFocusable]
+  );
 
   const keyDownHandler = (event) => {
     if (isKeypress(event, KeyboardCodes.Tab) && !isNil(event.target) && !isNil(focusableQueue)) {

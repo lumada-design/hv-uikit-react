@@ -1,30 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Typography from "./Typography";
 import Tooltip from "./Tooltip";
 
-const withTooltip = (
-  Component,
-  label = "",
-  placement,
-  evaluationExpression = (evt) => evt.target.scrollWidth > evt.target.clientWidth,
-  tooltipProps,
-  tooltipContainerProps
-) => (props) => {
-  const [showTooltip, setShowTooltip] = useState(false);
+const withTooltip = (Component, label = "", placement, tooltipProps, tooltipContainerProps) => (
+  props
+) => {
   const styles = {
     truncate: {
       overflow: "hidden",
       textOverflow: "ellipsis",
       whiteSpace: "nowrap",
     },
-  };
-
-  const handleMouseEnter = (evt) => {
-    setShowTooltip(evaluationExpression(evt));
-  };
-
-  const handleMouseLeave = () => {
-    setShowTooltip(false);
   };
 
   const title = <Typography>{label}</Typography>;
@@ -35,15 +21,10 @@ const withTooltip = (
       disableFocusListener
       disableTouchListener
       title={title}
-      open={showTooltip}
       placement={placement}
       {...tooltipProps}
     >
-      <div
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        {...tooltipContainerProps}
-      >
+      <div {...tooltipContainerProps}>
         <Component {...props} />
       </div>
     </Tooltip>
