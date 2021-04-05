@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.20.2...@hv/uikit-react-core@2.21.0) (2021-04-05)
+
+
+### Bug Fixes
+
+* **tooltip:** list displaying tooltip only if needed. HVUIKIT-5732 ([50802b0](https://github.com/pentaho/hv-uikit-react/commit/50802b0a5e3da3b657800e787ccb41b86490a9ea))
+* **tooltip:** should be visible only when open is true. HVUIKIT-5732 ([42dc4fe](https://github.com/pentaho/hv-uikit-react/commit/42dc4fe1077678fb5601b118a135a3b0335c0865))
+
+
+### Features
+
+* **table:** allow selection with fixed columns HVUIKIT-5733 ([9271fb4](https://github.com/pentaho/hv-uikit-react/commit/9271fb40e9348b9917fe92ef33afd8c9adf6b11a))
+
+
+
+
+
 ## [2.20.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.20.1...@hv/uikit-react-core@2.20.2) (2021-03-31)
 
 
