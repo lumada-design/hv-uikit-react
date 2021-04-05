@@ -77,8 +77,8 @@ Main.parameters = {
 export const Empty = () => {
   const EmptyRow = () => (
     <HvTableRow>
-      <HvTableCell colSpan="100%" style={{ height: 100 }}>
-        <HvEmptyState message="No data to display" icon={<Ban role="presentation" />} />
+      <HvTableCell colSpan="100%" style={{ height: 96 }}>
+        <HvEmptyState message="No data to display." icon={<Ban role="presentation" />} />
       </HvTableCell>
     </HvTableRow>
   );
@@ -206,7 +206,7 @@ export const TableRowClick = () => {
         const { link } = original;
 
         return (
-          <HvTypography variant="xsInlineLink" component="a" href={link}>
+          <HvTypography variant="link" component="a" href={link}>
             Details Page
           </HvTypography>
         );
@@ -258,7 +258,7 @@ export const TableRowClick = () => {
               <HvTableCell>{el.severity}</HvTableCell>
               <HvTableCell>{el.priority}</HvTableCell>
               <HvTableCell>
-                <HvTypography variant="xsInlineLink" component="a" href={el.link}>
+                <HvTypography variant="link" component="a" href={el.link}>
                   Details Page
                 </HvTypography>
               </HvTableCell>
