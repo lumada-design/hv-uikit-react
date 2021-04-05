@@ -10,9 +10,11 @@ import styles from "./styles";
  * HvTableContainer is a container for the HvTable
  */
 const HvTableContainer = forwardRef(function HvTableContainer(props, ref) {
-  const { classes, className, ...others } = props;
+  const { classes, className, component, ...others } = props;
 
-  return <div ref={ref} className={clsx(classes.root, className)} {...others} />;
+  const Component = component || "div";
+
+  return <Component ref={ref} className={clsx(classes.root, className)} {...others} />;
 });
 
 HvTableContainer.propTypes = {
@@ -24,6 +26,11 @@ HvTableContainer.propTypes = {
    * Content to be rendered. Usually `<HvTable>`
    */
   children: PropTypes.node,
+  /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * Defaults to div.
+   */
+  component: PropTypes.elementType,
   /**
    * A Jss Object used to override or extend the styles applied.
    */

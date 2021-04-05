@@ -1,10 +1,10 @@
 /* eslint-env jest */
 import React from "react";
 import range from "lodash/range";
-import { render } from "testing-utils";
+import { render, within } from "testing-utils";
 import userEvent from "@testing-library/user-event";
 
-import { Main, EmptyCells } from "../stories/Table.stories";
+import { Main, EmptyCells, NonTableLayout } from "../stories/Table.stories";
 
 import { Pagination, Sortable, BulkActions } from "../stories/TableHooks.stories";
 
@@ -14,6 +14,7 @@ import {
   HvTableCell,
   HvTableContainer,
   HvTableHead,
+  HvTableHeader,
   HvTableRow,
 } from "../..";
 
@@ -34,6 +35,94 @@ describe("Table", () => {
     });
   });
 
+  describe("non-table elements support", () => {
+    it("defaults to table elements", () => {
+      const { getByRole, getAllByRole } = render(<Main />);
+
+      const table = getByRole("table");
+      expect(table).toBeInTheDocument();
+
+      expect(table.nodeName).toEqual("TABLE");
+      expect(table).not.toHaveAttribute("role");
+
+      const rowgroups = getAllByRole("rowgroup");
+      expect(rowgroups.length).toBe(2);
+
+      expect(rowgroups[0].nodeName).toEqual("THEAD");
+      expect(rowgroups[0]).not.toHaveAttribute("role");
+
+      expect(rowgroups[1].nodeName).toEqual("TBODY");
+      expect(rowgroups[1]).not.toHaveAttribute("role");
+
+      const headerRows = within(rowgroups[0]).getAllByRole("row");
+      expect(headerRows.length).toBe(1);
+
+      expect(headerRows[0].nodeName).toEqual("TR");
+      expect(headerRows[0]).not.toHaveAttribute("role");
+
+      const headerCells = within(headerRows[0]).getAllByRole("columnheader");
+      expect(headerCells.length).toBe(7);
+
+      expect(headerCells[0].nodeName).toEqual("TH");
+      expect(headerCells[0]).not.toHaveAttribute("role");
+
+      const bodyRows = within(rowgroups[1]).getAllByRole("row");
+      expect(bodyRows.length).toBe(6);
+
+      expect(bodyRows[0].nodeName).toEqual("TR");
+      expect(bodyRows[0]).not.toHaveAttribute("role");
+
+      const bodyCells = within(bodyRows[0]).getAllByRole("cell");
+      expect(bodyCells.length).toBe(7);
+
+      expect(bodyCells[0].nodeName).toEqual("TD");
+      expect(bodyCells[0]).not.toHaveAttribute("role");
+    });
+
+    it("can render a different component and sets roles", () => {
+      const { getByRole, getAllByRole } = render(<NonTableLayout />);
+
+      const table = getByRole("table");
+      expect(table).toBeInTheDocument();
+
+      expect(table.nodeName).toEqual("DIV");
+      expect(table).toHaveAttribute("role", "table");
+
+      const rowgroups = getAllByRole("rowgroup");
+      expect(rowgroups.length).toBe(2);
+
+      expect(rowgroups[0].nodeName).toEqual("DIV");
+      expect(rowgroups[0]).toHaveAttribute("role", "rowgroup");
+
+      expect(rowgroups[1].nodeName).toEqual("DIV");
+      expect(rowgroups[1]).toHaveAttribute("role", "rowgroup");
+
+      const headerRows = within(rowgroups[0]).getAllByRole("row");
+      expect(headerRows.length).toBe(1);
+
+      expect(headerRows[0].nodeName).toEqual("DIV");
+      expect(headerRows[0]).toHaveAttribute("role", "row");
+
+      const headerCells = within(headerRows[0]).getAllByRole("columnheader");
+      expect(headerCells.length).toBe(7);
+
+      expect(headerCells[0].nodeName).toEqual("DIV");
+      expect(headerCells[0]).toHaveAttribute("role", "columnheader");
+
+      const bodyRows = within(rowgroups[1]).getAllByRole("row");
+      expect(bodyRows.length).toBe(6);
+
+      expect(bodyRows[0].nodeName).toEqual("DIV");
+      expect(bodyRows[0]).toHaveAttribute("role", "row");
+
+      const bodyCells = within(bodyRows[0]).getAllByRole("cell");
+      expect(bodyCells.length).toBe(7);
+
+      expect(bodyCells[0].nodeName).toEqual("DIV");
+      expect(bodyCells[0]).toHaveAttribute("role", "cell");
+    });
+  });
+
   describe("Simple Table", () => {
     const NUM_ROWS = 6;
     const NUM_COLS = 3;
@@ -44,7 +133,7 @@ describe("Table", () => {
           <HvTableHead>
             <HvTableRow>
               {range(NUM_COLS).map((id) => (
-                <HvTableCell key={id}>{`Sample Header ${id}`}</HvTableCell>
+                <HvTableHeader key={id}>{`Sample Header ${id}`}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -87,7 +176,7 @@ describe("Table", () => {
           <HvTableHead>
             <HvTableRow>
               {range(NUM_COLS).map((id) => (
-                <HvTableCell key={id}>{`Header ${id}`}</HvTableCell>
+                <HvTableHeader key={id}>{`Header ${id}`}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -195,11 +284,11 @@ describe("Table", () => {
 
       // Asc sorting
       userEvent.click(severityButton);
-      expect(getEvent(0)).toHaveTextContent("Event 3");
+      expect(getEvent(0)).toHaveTextContent("Event 4");
 
       // Desc sorting
       userEvent.click(severityButton);
-      expect(getEvent(0)).toHaveTextContent("Event 4");
+      expect(getEvent(0)).toHaveTextContent("Event 5");
 
       // Back to default sorting
       userEvent.click(severityButton);
@@ -271,7 +360,7 @@ describe("Table", () => {
               <HvTableHead>
                 <HvTableRow>
                   {range(NUM_COLS).map((id) => (
-                    <HvTableCell key={id}>{`Sample Header ${id}`}</HvTableCell>
+                    <HvTableHeader key={id}>{`Sample Header ${id}`}</HvTableHeader>
                   ))}
                 </HvTableRow>
               </HvTableHead>

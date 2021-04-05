@@ -21,6 +21,7 @@ import {
   HvTableCell,
   HvTableContainer,
   HvTableHead,
+  HvTableHeader,
   HvTablePagination,
   HvTableRow,
   HvTableBulkActions,
@@ -45,9 +46,9 @@ export const Main = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableCell rtCol={col} {...col.getHeaderProps()}>
+              <HvTableHeader rtCol={col} {...col.getHeaderProps()}>
                 {col.render("Header")}
-              </HvTableCell>
+              </HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -98,9 +99,9 @@ export const Pagination = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                   {col.render("Header")}
-                </HvTableCell>
+                </HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -152,9 +153,9 @@ export const Selection = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+              <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                 {col.render("Header")}
-              </HvTableCell>
+              </HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -249,9 +250,9 @@ export const BulkActions = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                   {col.render("Header")}
-                </HvTableCell>
+                </HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -277,7 +278,24 @@ export const BulkActions = () => {
 };
 
 export const Sortable = () => {
-  const columns = useMemo(() => getColumns().map((col) => ({ ...col, isSortable: true })), []);
+  const sortSeverity = useMemo(() => {
+    const levels = ["minor", "average", "major", "critical"];
+
+    return (rowA, rowB, columnId) => {
+      const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
+      const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
+
+      // eslint-disable-next-line no-nested-ternary
+      return a === b ? 0 : a > b ? 1 : -1;
+    };
+  }, []);
+
+  const columns = useMemo(() => {
+    const cols = getColumns();
+    cols[5].sortType = sortSeverity;
+    return cols;
+  }, [sortSeverity]);
+
   const data = useMemo(
     () =>
       makeData(5).map((entry) => ({
@@ -297,13 +315,13 @@ export const Sortable = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableCell
+              <HvTableHeader
                 key={col.Header}
                 rtCol={col}
                 {...col.getHeaderProps(col.getSortByToggleProps())}
               >
                 {col.render("Header")}
-              </HvTableCell>
+              </HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -358,9 +376,9 @@ export const Expandable = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+              <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                 {col.render("Header")}
-              </HvTableCell>
+              </HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -439,9 +457,9 @@ export const StickyHeadersAndColumns = () => {
           {headerGroups.map((headerGroup) => (
             <HvTableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((col) => (
-                <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                   {col.render("Header")}
-                </HvTableCell>
+                </HvTableHeader>
               ))}
             </HvTableRow>
           ))}
@@ -483,9 +501,9 @@ export const EmptyCells = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+              <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                 {col.render("Header")}
-              </HvTableCell>
+              </HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -602,9 +620,9 @@ export const BulkActionsManual = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableCell key={col.Header} rtCol={col} {...col.getHeaderProps()}>
+                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
                   {col.render("Header")}
-                </HvTableCell>
+                </HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>

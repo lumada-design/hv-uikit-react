@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import range from "lodash/range";
 
+import { makeStyles } from "@material-ui/core";
+
 import { Ban } from "@hv/uikit-react-icons";
 import { HvCheckBox, HvDropDownMenu, HvEmptyState, HvTypography } from "@hv/uikit-react-core";
 
@@ -10,6 +12,7 @@ import {
   HvTableCell,
   HvTableContainer,
   HvTableHead,
+  HvTableHeader,
   HvTablePagination,
   HvTableRow,
 } from "../..";
@@ -43,7 +46,7 @@ export const Main = () => {
         <HvTableHead>
           <HvTableRow>
             {columns.map((el) => (
-              <HvTableCell key={el.Header}>{el.Header}</HvTableCell>
+              <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -85,7 +88,7 @@ export const Empty = () => {
         <HvTableHead>
           <HvTableRow>
             {getColumns().map((el) => (
-              <HvTableCell key={el.Header}>{el.Header}</HvTableCell>
+              <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -111,7 +114,7 @@ export const EmptyCells = () => {
         <HvTableHead>
           <HvTableRow>
             {columns.map((el) => (
-              <HvTableCell key={el.Header}>{el.Header}</HvTableCell>
+              <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -156,7 +159,7 @@ export const SelectableSimple = () => {
           <HvTableRow>
             <HvTableCell padding="checkbox" />
             {columns.map((el) => (
-              <HvTableCell key={el.Header}>{el.Header}</HvTableCell>
+              <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
             ))}
             <HvTableCell padding="checkbox" />
           </HvTableRow>
@@ -235,7 +238,7 @@ export const TableRowClick = () => {
         <HvTableHead>
           <HvTableRow>
             {columns.map((el) => (
-              <HvTableCell key={el.Header}>{el.Header}</HvTableCell>
+              <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -270,5 +273,105 @@ export const TableRowClick = () => {
 TableRowClick.parameters = {
   docs: {
     description: { story: "A table example where you can click on a row." },
+  },
+};
+
+export const NonTableLayout = () => {
+  const useStyles = makeStyles((theme) => ({
+    flexTable: {
+      display: "flex",
+      flexFlow: "column wrap",
+    },
+    flexRowGroup: {
+      display: "flex",
+      flexFlow: "column wrap",
+
+      [theme.breakpoints.only("md")]: {
+        "&:first-of-type": {
+          position: "sticky",
+          top: -1,
+          zIndex: 3,
+          backgroundColor: theme.palette.atmo1,
+          borderBottom: `1px solid ${theme.palette.atmo4}`,
+        },
+      },
+    },
+    flexRow: {
+      display: "flex",
+      flexFlow: "row wrap",
+
+      "&>*": {
+        width: "calc(100% / 7)",
+
+        display: "flex",
+        alignItems: "center",
+
+        [theme.breakpoints.down("md")]: {
+          width: "calc(100% / 6)",
+          height: 32,
+          borderTop: "none",
+
+          "&:first-of-type": {
+            width: "100%",
+            justifyContent: "center",
+            backgroundColor: theme.palette.atmo1,
+            borderTop: `1px solid ${theme.palette.atmo4}`,
+          },
+        },
+
+        [theme.breakpoints.down("sm")]: {
+          width: "100%",
+        },
+      },
+    },
+
+    columnHeader: {
+      display: "flex",
+      alignItems: "start",
+    },
+
+    container: { minWidth: 200, maxHeight: 300 },
+  }));
+
+  const classes = useStyles();
+
+  const columns = useMemo(() => getColumns(), []);
+  const data = useMemo(() => makeData(6), []);
+
+  return (
+    <HvTableContainer className={classes.container}>
+      <HvTable component="div" className={classes.flexTable}>
+        <HvTableHead className={classes.flexRowGroup}>
+          <HvTableRow className={classes.flexRow}>
+            {columns.map((el) => (
+              <HvTableHeader key={el.Header} className={classes.columnHeader}>
+                {el.Header}
+              </HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody className={classes.flexRowGroup}>
+          {data.map((el) => (
+            <HvTableRow key={el.id} hover className={classes.flexRow}>
+              <HvTableCell>{el.name}</HvTableCell>
+              <HvTableCell>{el.createdDate}</HvTableCell>
+              <HvTableCell>{el.eventType}</HvTableCell>
+              <HvTableCell>{el.status}</HvTableCell>
+              <HvTableCell>{el.riskScore}</HvTableCell>
+              <HvTableCell>{el.severity}</HvTableCell>
+              <HvTableCell>{el.priority}</HvTableCell>
+            </HvTableRow>
+          ))}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+NonTableLayout.parameters = {
+  docs: {
+    description: {
+      story: "A table with non-table elements and a responsive layout (try resizing your browser).",
+    },
   },
 };

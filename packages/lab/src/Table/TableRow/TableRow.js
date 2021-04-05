@@ -5,25 +5,33 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
 import styles from "./styles";
-import TableContext from "../TableSectionContext";
+import TableContext from "../TableContext";
+import TableSectionContext from "../TableSectionContext";
+
+const defaultComponent = "tr";
 
 /**
  * `HvTableRow` acts as a `tr` element and inherits styles from its context
  */
 const HvTableRow = forwardRef(function HvTableRow(props, ref) {
-  const { classes, className, hover = false, selected = false, ...others } = props;
+  const { classes, className, component, hover = false, selected = false, ...others } = props;
+  const tableSectionContext = useContext(TableSectionContext);
+
   const tableContext = useContext(TableContext);
 
+  const Component = component || tableContext?.components?.Tr || defaultComponent;
+
   return (
-    <tr
+    <Component
       ref={ref}
       className={clsx(className, classes.root, {
-        [classes.head]: tableContext?.variant === "head",
-        [classes.body]: tableContext?.variant === "body",
-        [classes.footer]: tableContext?.variant === "footer",
+        [classes.head]: tableSectionContext?.variant === "head",
+        [classes.body]: tableSectionContext?.variant === "body",
+        [classes.footer]: tableSectionContext?.variant === "footer",
         [classes.hover]: hover,
         [classes.selected]: selected,
       })}
+      role={Component === defaultComponent ? null : "row"}
       {...others}
     />
   );
@@ -31,13 +39,21 @@ const HvTableRow = forwardRef(function HvTableRow(props, ref) {
 
 HvTableRow.propTypes = {
   /**
-   * Class names to be applied.
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * Defaults to tr.
    */
-  className: PropTypes.string,
+  component: PropTypes.elementType,
+
   /**
    * Content to be rendered
    */
   children: PropTypes.node,
+
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+
   /**
    * Whether the table row will shade on hover.
    */
@@ -46,6 +62,7 @@ HvTableRow.propTypes = {
    * Whether the table row will have the selected shading.
    */
   selected: PropTypes.bool,
+
   /**
    * A Jss Object used to override or extend the styles applied.
    */
