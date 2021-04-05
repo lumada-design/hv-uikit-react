@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.5.3...@hv/uikit-react-lab@3.6.0) (2021-04-05)
+
+
+### Bug Fixes
+
+* **tag:** remove styles import from the core package ([d852af5](https://github.com/pentaho/hv-uikit-react/commit/d852af522892ad998bb14c67571c87a404f12e73))
+
+
+### Features
+
+* **table:** styling adjustments. HVUIKIT-5653 ([784632b](https://github.com/pentaho/hv-uikit-react/commit/784632bab75ce87ddcfdf4a36d7d8bab289968c6))
+
+
+
+
+
 ## [3.5.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.5.2...@hv/uikit-react-lab@3.5.3) (2021-04-01)
 
 
