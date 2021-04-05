@@ -1,4 +1,5 @@
 // components
+export { default as HvAccordion } from "./Accordion";
 export { default as HvActionsGeneric } from "./ActionsGeneric";
 export { default as HvActionBar } from "./ActionBar";
 export { default as HvAssetInventory } from "./AssetInventory";
