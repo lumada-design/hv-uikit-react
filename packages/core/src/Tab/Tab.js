@@ -42,10 +42,6 @@ HvTab.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the tab bottom border.
-     */
-    tabBorder: PropTypes.string,
-    /**
      * Styles applied to the label container element if `label` is provided.
      */
     labelContainer: PropTypes.string,
