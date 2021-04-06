@@ -25,19 +25,19 @@ export const Main = () => {
   const classes = useStyles();
   return (
     <div className={classes.accordionContainer}>
-      <HvAccordion id="item1" label="Analytics">
+      <HvAccordion id="item1" label="Analytics" headingLevel={3}>
         <HvListContainer className={classes.accordionSpacing} interactive condensed>
           <HvListItem>Views</HvListItem>
           <HvListItem>Parameters</HvListItem>
         </HvListContainer>
       </HvAccordion>
-      <HvAccordion id="item2" label="System">
+      <HvAccordion id="item2" label="System" headingLevel={3}>
         <HvListContainer className={classes.accordionSpacing} interactive condensed>
           <HvListItem>Settings</HvListItem>
           <HvListItem>Network</HvListItem>
         </HvListContainer>
       </HvAccordion>
-      <HvAccordion id="item3" label="Data">
+      <HvAccordion id="item3" label="Data" headingLevel={3}>
         <HvListContainer className={classes.accordionSpacing} interactive condensed>
           <HvListItem>Storage</HvListItem>
           <HvListItem>Memory</HvListItem>
@@ -61,19 +61,19 @@ export const Disabled = () => {
   const classes = useStyles();
   return (
     <div className={classes.accordionContainer}>
-      <HvAccordion id="disabled-item1" label="Analytics" disabled>
+      <HvAccordion id="disabled-item1" label="Analytics" headingLevel={3} disabled>
         <HvListContainer className={classes.accordionSpacing} interactive condensed>
           <HvListItem>Views</HvListItem>
           <HvListItem>Parameters</HvListItem>
         </HvListContainer>
       </HvAccordion>
-      <HvAccordion id="disabled-item2" label="System">
+      <HvAccordion id="disabled-item2" label="System" headingLevel={3}>
         <HvListContainer className={classes.accordionSpacing} interactive condensed>
           <HvListItem>Settings</HvListItem>
           <HvListItem>Network</HvListItem>
         </HvListContainer>
       </HvAccordion>
-      <HvAccordion id="disabled-item3" label="Data" disabled>
+      <HvAccordion id="disabled-item3" label="Data" headingLevel={3} disabled>
         <HvListContainer className={classes.accordionSpacing} interactive condensed>
           <HvListItem>Storage</HvListItem>
           <HvListItem>Memory</HvListItem>
@@ -195,7 +195,7 @@ export const Form = () => {
   const classes = useStyles();
   return (
     <div className={classes.accordionContainer}>
-      <HvAccordion id="personal" label="Personal Information">
+      <HvAccordion id="personal" label="Personal Information" headingLevel={3}>
         <div className={classes.formContainer}>
           <HvInput id="input-name" label="Name" placeholder="Insert first name" required />
           <HvInput id="input-email" label="Email" placeholder="Insert your email" required />
@@ -205,7 +205,7 @@ export const Form = () => {
           <HvInput id="input-province" label="City/Province" placeholder="Insert province name" />
         </div>
       </HvAccordion>
-      <HvAccordion id="billing" label="Billing Address">
+      <HvAccordion id="billing" label="Billing Address" headingLevel={3}>
         <div className={classes.formContainer}>
           <HvInput id="input-address" label="Address 1" placeholder="Insert first name" />
           <HvInput id="input-address2" label="Address 2" placeholder="Insert address" />
@@ -214,7 +214,7 @@ export const Form = () => {
           <HvInput id="input-code" label="Zip Code" placeholder="Insert code" />
         </div>
       </HvAccordion>
-      <HvAccordion id="shipping" label="Shipping Address">
+      <HvAccordion id="shipping" label="Shipping Address" headingLevel={3}>
         <div className={classes.formContainer}>
           <HvInput id="input-address-bill" label="Address 1" placeholder="Insert first name" />
           <HvInput id="input-address2-bill" label="Address 2" placeholder="Insert address" />
@@ -308,7 +308,7 @@ export const Typography = () => {
 
   return (
     <div className={classes.accordionContainer}>
-      <HvAccordion id="film" label="Films" labelProps={{ variant: "sectionTitle" }}>
+      <HvAccordion id="film" label="Films" headingLevel={2}>
         <HvTable
           data={data}
           id="accordion-table"
