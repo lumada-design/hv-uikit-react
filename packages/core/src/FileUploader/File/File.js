@@ -20,18 +20,19 @@ const getStatusIcon = (classes, status) => {
 
 const getProgressText = (classes, data) => {
   const hasFailed = data.status === "fail";
+  const inProgress = data.status === "progress";
 
   return (
     <>
       {`\xa0|\xa0`}
 
-      {!hasFailed && data.progress != null && (
-        <HvTypography variant="highlightText">{`${convertUnits(data.progress)}`}</HvTypography>
+      {inProgress && data.progress != null && (
+        <HvTypography variant="highlightText">
+          {`${convertUnits(data.progress)}\xa0/\xa0`}
+        </HvTypography>
       )}
 
-      {!hasFailed && data.size && (
-        <HvTypography>{`\xa0/\xa0${convertUnits(data.size)}`}</HvTypography>
-      )}
+      {!hasFailed && data.size && <HvTypography>{`${convertUnits(data.size)}`}</HvTypography>}
 
       {hasFailed && data.errorMessage && (
         <HvTypography className={classes.fail}>{data.errorMessage}</HvTypography>
@@ -76,6 +77,8 @@ const File = ({ id, classes, data, onFileRemoved, removeFileButtonLabel }) => {
 
       <span className={classes.progressTextContainer}>{progressText}</span>
 
+      {data.preview && <div className={classes.previewContainer}>{data.preview}</div>}
+
       <IconButton
         id={setId(id, "remove-button")}
         aria-label={removeFileButtonLabel}
@@ -118,6 +121,10 @@ File.propTypes = {
      * Style applied to the remove button.
      */
     removeButton: PropTypes.string,
+    /**
+     * Style applied to the file preview container.
+     */
+    previewContainer: PropTypes.string,
   }).isRequired,
   /**
    * File information to be displayed
@@ -135,6 +142,10 @@ File.propTypes = {
      * The upload status.
      */
     status: PropTypes.oneOf(["progress", "success", "fail"]),
+    /**
+     * Optional node representing a preview of the uploaded file.
+     */
+    preview: PropTypes.node,
   }).isRequired,
   /**
    * Callback fired when file is removed from list.

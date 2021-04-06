@@ -23,6 +23,7 @@ export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFileUploader } from "./FileUploader";
+export * from "./FileUploader";
 export { default as HvFooter } from "./Footer";
 export * from "./Forms";
 

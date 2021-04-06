@@ -18,6 +18,10 @@ export interface File {
    * Upload progress in bytes.
    */
   progress?: number;
+  /**
+   * Optional node representing a preview of the uploaded file.
+   */
+  preview?: React.ReactNode;
 }
 
 export type FilesAddedEvent = (files: File[]) => void;
@@ -29,6 +33,7 @@ export type HvFileClassKey =
   | "progressbarBack"
   | "nameText"
   | "progressTextContainer"
+  | "previewContainer"
   | "removeButton";
 
 export interface FileProps

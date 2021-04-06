@@ -131,6 +131,10 @@ FileUploader.propTypes = {
        * Upload status.
        */
       status: PropTypes.oneOf(["progress", "success", "fail"]),
+      /**
+       * Optional node representing a preview of the uploaded file.
+       */
+      preview: PropTypes.node,
     })
   ).isRequired,
   /**
