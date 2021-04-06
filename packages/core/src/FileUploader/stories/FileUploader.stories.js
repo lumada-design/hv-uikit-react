@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+
 import { HvFileUploader } from "../..";
+
+import { simulateUpload, cancelUpload } from "./simulator";
 
 export default {
   title: "Forms/File Uploader",
@@ -13,34 +16,6 @@ export default {
 };
 
 export const Main = () => {
-  const uploadHandlers = {};
-
-  function clearUploadSimulationHandler(file) {
-    clearInterval(uploadHandlers[file.id]);
-    delete uploadHandlers[file.id];
-  }
-
-  const simulateUpload = (file, setList) => {
-    const uploadSpeed = 20000; // bits per second
-
-    const newFile = file;
-
-    newFile.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
-
-    if (file.size === file.progress) {
-      newFile.status = "success";
-
-      // other needed fields can be added, like the file URL in the server
-      // where the file was uploaded, etc.
-
-      clearUploadSimulationHandler(newFile);
-    }
-
-    // the new state must always be a new list, so it must be cloned
-    // otherwise the list elements changes wouldn't be detected
-    setList((previousList) => [...previousList]);
-  };
-
   function addFile(file, setList) {
     const newFile = file;
 
@@ -50,9 +25,25 @@ export const Main = () => {
       newFile.status = "progress";
       newFile.progress = 0;
 
-      uploadHandlers[newFile.id] = setInterval(() => {
-        simulateUpload(newFile, setList);
-      }, 250);
+      simulateUpload(
+        newFile,
+
+        // onProgress:
+        (progress) => {
+          newFile.progress = progress;
+
+          // the new state must always be a new list, so it must be cloned
+          // otherwise the list elements changes wouldn't be detected
+          setList((previousList) => [...previousList]);
+        },
+
+        // onComplete:
+        () => {
+          newFile.status = "success";
+
+          setList((previousList) => [...previousList]);
+        }
+      );
     }
 
     // we're adding the new file to the top of the list
@@ -62,12 +53,14 @@ export const Main = () => {
   }
 
   const removeFile = (fileToRemove, setList) => {
-    clearInterval(uploadHandlers[fileToRemove.id]);
-    delete uploadHandlers[fileToRemove.id];
+    if (fileToRemove.status === "progress") {
+      cancelUpload(fileToRemove);
+    }
 
-    // the filename isn't necessarly unique (e.g. the user can add two different files
-    // from different folders with the same), so an individual ID is created in each file
-    setList((previousList) => previousList.filter((file) => file.id !== fileToRemove.id));
+    // if the file was already upload to a server,
+    // it might be necessary to call an API to delete it there
+
+    setList((previousList) => previousList.filter((file) => file !== fileToRemove));
   };
 
   const [list, setList] = useState([]);
@@ -86,121 +79,6 @@ export const Main = () => {
 };
 
 export const Basic = () => {
-  const Sample = () => {
-    const uploadHandlers = {};
-
-    function clearUploadSimulationHandler(file) {
-      clearInterval(uploadHandlers[file.id]);
-      delete uploadHandlers[file.id];
-    }
-
-    const simulateUpload = (file, setList) => {
-      const uploadSpeed = 20000; // bits per second
-
-      const newFile = file;
-
-      newFile.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
-
-      if (file.size === file.progress) {
-        newFile.status = "success";
-
-        // other needed fields can be added, like the file URL in the server
-        // where the file was uploaded, etc.
-
-        clearUploadSimulationHandler(newFile);
-      }
-
-      // the new state must always be a new list, so it must be cloned
-      // otherwise the list elements changes wouldn't be detected
-      setList((previousList) => [...previousList]);
-    };
-
-    function addFile(file, setList) {
-      const newFile = file;
-
-      const hasFailed = file.status === "fail";
-
-      if (!hasFailed) {
-        newFile.status = "progress";
-        newFile.progress = 0;
-
-        uploadHandlers[newFile.id] = setInterval(() => {
-          simulateUpload(newFile, setList);
-        }, 250);
-      }
-
-      // we're adding the new file to the top of the list
-      // depending on the use case, we could also add to the bottom,
-      // order them alphabetically, etc.
-      setList((previousList) => [newFile, ...previousList]);
-    }
-
-    const removeFile = (fileToRemove, setList) => {
-      clearInterval(uploadHandlers[fileToRemove.id]);
-      delete uploadHandlers[fileToRemove.id];
-
-      // the filename isn't necessarly unique (e.g. the user can add two different files
-      // from different folders with the same), so an individual ID is created in each file
-      setList((previousList) => previousList.filter((file) => file.id !== fileToRemove.id));
-    };
-
-    const [list, setList] = useState([]);
-
-    return (
-      <HvFileUploader
-        id="fileuploader1"
-        acceptedFiles={["jpg", "jpeg", "png"]}
-        labels={{ sizeWarning: "Maximum file size:" }}
-        maxFileSize={1 * 1000 ** 2}
-        fileList={list}
-        onFilesAdded={(newFiles) => {
-          newFiles.forEach((newFile) => addFile(newFile, setList));
-        }}
-        onFileRemoved={(removedFile) => {
-          removeFile(removedFile, setList);
-        }}
-      />
-    );
-  };
-
-  return <Sample />;
-};
-
-Basic.parameters = {
-  docs: {
-    description: { story: "FileUploader default usage sample" },
-  },
-};
-
-export const SingleUpload = () => {
-  const uploadHandlers = {};
-
-  function clearUploadSimulationHandler(file) {
-    clearInterval(uploadHandlers[file.id]);
-    delete uploadHandlers[file.id];
-  }
-
-  const simulateUpload = (file, setList) => {
-    const uploadSpeed = 20000; // bits per second
-
-    const newFile = file;
-
-    newFile.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
-
-    if (file.size === file.progress) {
-      newFile.status = "success";
-
-      // other needed fields can be added, like the file URL in the server
-      // where the file was uploaded, etc.
-
-      clearUploadSimulationHandler(newFile);
-    }
-
-    // the new state must always be a new list, so it must be cloned
-    // otherwise the list elements changes wouldn't be detected
-    setList((previousList) => [...previousList]);
-  };
-
   function addFile(file, setList) {
     const newFile = file;
 
@@ -210,46 +88,108 @@ export const SingleUpload = () => {
       newFile.status = "progress";
       newFile.progress = 0;
 
-      uploadHandlers[newFile.id] = setInterval(() => {
-        simulateUpload(newFile, setList);
-      }, 250);
+      simulateUpload(
+        newFile,
+        (progress) => {
+          newFile.progress = progress;
+          setList((previousList) => [...previousList]);
+        },
+        () => {
+          newFile.status = "success";
+          setList((previousList) => [...previousList]);
+        }
+      );
     }
 
-    // we're adding the new file to the top of the list
-    // depending on the use case, we could also add to the bottom,
-    // order them alphabetically, etc.
     setList((previousList) => [newFile, ...previousList]);
   }
 
   const removeFile = (fileToRemove, setList) => {
-    clearInterval(uploadHandlers[fileToRemove.id]);
-    delete uploadHandlers[fileToRemove.id];
+    if (fileToRemove.status === "progress") {
+      cancelUpload(fileToRemove);
+    }
 
-    // the filename isn't necessarly unique (e.g. the user can add two different files
-    // from different folders with the same), so an individual ID is created in each file
-    setList((previousList) => previousList.filter((file) => file.id !== fileToRemove.id));
-  };
-  const Sample = () => {
-    const [list, setList] = useState([]);
-
-    return (
-      <HvFileUploader
-        fileList={list}
-        onFilesAdded={(newFiles) => {
-          newFiles.forEach((newFile) => addFile(newFile, setList));
-        }}
-        onFileRemoved={(removedFile) => {
-          removeFile(removedFile, setList);
-        }}
-        acceptedFiles={["jpg", "jpeg", "png"]}
-        maxFileSize={1 * 1000 ** 2}
-        multiple={false}
-        disabled={list.length === 1}
-      />
-    );
+    setList((previousList) => previousList.filter((file) => file !== fileToRemove));
   };
 
-  return <Sample />;
+  const [list, setList] = useState([]);
+
+  return (
+    <HvFileUploader
+      id="fileuploader1"
+      acceptedFiles={["jpg", "jpeg", "png"]}
+      labels={{ sizeWarning: "Maximum file size:" }}
+      maxFileSize={1 * 1000 ** 2}
+      fileList={list}
+      onFilesAdded={(newFiles) => {
+        newFiles.forEach((newFile) => addFile(newFile, setList));
+      }}
+      onFileRemoved={(removedFile) => {
+        removeFile(removedFile, setList);
+      }}
+    />
+  );
+};
+
+Basic.parameters = {
+  docs: {
+    description: { story: "FileUploader default usage sample" },
+  },
+};
+
+export const SingleUpload = () => {
+  function addFile(file, setList) {
+    const newFile = file;
+
+    const hasFailed = file.status === "fail";
+
+    if (!hasFailed) {
+      newFile.status = "progress";
+      newFile.progress = 0;
+
+      simulateUpload(
+        newFile,
+        (progress) => {
+          newFile.progress = progress;
+
+          setList((previousList) => [...previousList]);
+        },
+        () => {
+          newFile.status = "success";
+
+          setList((previousList) => [...previousList]);
+        }
+      );
+    }
+
+    setList((previousList) => [newFile, ...previousList]);
+  }
+
+  const removeFile = (fileToRemove, setList) => {
+    if (fileToRemove.status === "progress") {
+      cancelUpload(fileToRemove);
+    }
+
+    setList((previousList) => previousList.filter((file) => file !== fileToRemove));
+  };
+
+  const [list, setList] = useState([]);
+
+  return (
+    <HvFileUploader
+      fileList={list}
+      onFilesAdded={(newFiles) => {
+        newFiles.forEach((newFile) => addFile(newFile, setList));
+      }}
+      onFileRemoved={(removedFile) => {
+        removeFile(removedFile, setList);
+      }}
+      acceptedFiles={["jpg", "jpeg", "png"]}
+      maxFileSize={1 * 1000 ** 2}
+      multiple={false}
+      disabled={list.length === 1}
+    />
+  );
 };
 
 SingleUpload.parameters = {
@@ -267,34 +207,6 @@ SingleUpload.parameters = {
 };
 
 export const CustomizedFileTypes = () => {
-  const uploadHandlers = {};
-
-  function clearUploadSimulationHandler(file) {
-    clearInterval(uploadHandlers[file.id]);
-    delete uploadHandlers[file.id];
-  }
-
-  const simulateUpload = (file, setList) => {
-    const uploadSpeed = 20000; // bits per second
-
-    const newFile = file;
-
-    newFile.progress = Math.min(file.progress + uploadSpeed / 4, file.size);
-
-    if (file.size === file.progress) {
-      newFile.status = "success";
-
-      // other needed fields can be added, like the file URL in the server
-      // where the file was uploaded, etc.
-
-      clearUploadSimulationHandler(newFile);
-    }
-
-    // the new state must always be a new list, so it must be cloned
-    // otherwise the list elements changes wouldn't be detected
-    setList((previousList) => [...previousList]);
-  };
-
   function addFile(file, setList) {
     const newFile = file;
 
@@ -304,50 +216,53 @@ export const CustomizedFileTypes = () => {
       newFile.status = "progress";
       newFile.progress = 0;
 
-      uploadHandlers[newFile.id] = setInterval(() => {
-        simulateUpload(newFile, setList);
-      }, 250);
+      simulateUpload(
+        newFile,
+        (progress) => {
+          newFile.progress = progress;
+
+          setList((previousList) => [...previousList]);
+        },
+        () => {
+          newFile.status = "success";
+
+          setList((previousList) => [...previousList]);
+        }
+      );
     }
 
-    // we're adding the new file to the top of the list
-    // depending on the use case, we could also add to the bottom,
-    // order them alphabetically, etc.
     setList((previousList) => [newFile, ...previousList]);
   }
 
   const removeFile = (fileToRemove, setList) => {
-    clearInterval(uploadHandlers[fileToRemove.id]);
-    delete uploadHandlers[fileToRemove.id];
+    if (fileToRemove.status === "progress") {
+      cancelUpload(fileToRemove);
+    }
 
-    // the filename isn't necessarly unique (e.g. the user can add two different files
-    // from different folders with the same), so an individual ID is created in each file
-    setList((previousList) => previousList.filter((file) => file.id !== fileToRemove.id));
-  };
-  const Sample = () => {
-    const [list, setList] = useState([]);
-
-    return (
-      <HvFileUploader
-        fileList={list}
-        onFilesAdded={(newFiles) => {
-          newFiles.forEach((newFile) => addFile(newFile, setList));
-        }}
-        onFileRemoved={(removedFile) => {
-          removeFile(removedFile, setList);
-        }}
-        acceptedFiles={[
-          "application/vnd.ms-excel",
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        ]}
-        labels={{
-          dropzone: "Upload your spreadsheets",
-          acceptedFiles: "(excel files)",
-        }}
-      />
-    );
+    setList((previousList) => previousList.filter((file) => file !== fileToRemove));
   };
 
-  return <Sample />;
+  const [list, setList] = useState([]);
+
+  return (
+    <HvFileUploader
+      fileList={list}
+      onFilesAdded={(newFiles) => {
+        newFiles.forEach((newFile) => addFile(newFile, setList));
+      }}
+      onFileRemoved={(removedFile) => {
+        removeFile(removedFile, setList);
+      }}
+      acceptedFiles={[
+        "application/vnd.ms-excel",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      ]}
+      labels={{
+        dropzone: "Upload your spreadsheets",
+        acceptedFiles: "(excel files)",
+      }}
+    />
+  );
 };
 
 CustomizedFileTypes.parameters = {
