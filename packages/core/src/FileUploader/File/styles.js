@@ -17,6 +17,24 @@ const styles = (theme) => ({
   },
   progressTextContainer: {
     display: "flex",
+    flexGrow: 1,
+  },
+  previewContainer: {
+    display: "flex",
+    margin: theme.hvSpacing(0, "xs"),
+    width: 52,
+    height: 52,
+    justifyContent: "center",
+    alignItems: "center",
+
+    "& img": {
+      width: "100%",
+      height: "100%",
+      maxWidth: 52,
+      maxHeight: 52,
+      objectFit: "cover",
+      objectPosition: "center",
+    },
   },
   icon: {
     width: 32,
@@ -24,10 +42,7 @@ const styles = (theme) => ({
     margin: theme.hvSpacing(0, "xs"),
   },
   removeButton: {
-    position: "absolute",
     margin: theme.hvSpacing(0, "xs"),
-    right: 0,
-    top: 20,
   },
   fail: {
     color: theme.palette.sema4,
