@@ -27,6 +27,7 @@ const HvGlobalActions = (props) => {
     backButtonAriaLabel = "Back",
     backwardsIcon,
     headingLevel,
+    position = "sticky",
     ...others
   } = props;
 
@@ -41,6 +42,8 @@ const HvGlobalActions = (props) => {
   return (
     <div
       className={clsx(className, classes.root, {
+        [classes.positionSticky]: position === "sticky",
+        [classes.positionFixed]: position === "fixed",
         [classes.global]: variant === "global",
       })}
       {...others}
@@ -87,6 +90,15 @@ HvGlobalActions.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+
+     * Styles applied to the component root class if component is sticky.
+     */
+    positionSticky: PropTypes.string,
+    /**
+     * Styles applied to the component root class if component is fixed.
+     */
+    positionFixed: PropTypes.string,
     /**
      * Styles applied to the component root when `variant="global"`.
      */
@@ -148,6 +160,10 @@ HvGlobalActions.propTypes = {
    * Heading Level to apply to Title Area.
    */
   headingLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  /**
+   * Position of the Global Actions
+   */
+  position: PropTypes.oneOf(["sticky", "fixed"]),
 };
 
 export default withStyles(styles, { name: "HvGlobalActions" })(HvGlobalActions);

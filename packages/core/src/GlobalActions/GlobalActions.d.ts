@@ -9,7 +9,9 @@ export type HvGlobalActionsClassKey =
   | "globalSectionArea"
   | "backButton"
   | "name"
-  | "actions";
+  | "actions"
+  | "positionFixed"
+  | "positionSticky";
 
 export interface HvGlobalActionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvGlobalActionsClassKey, "title"> {
@@ -46,6 +48,10 @@ export interface HvGlobalActionsProps
    * Heading Level to apply to Title Area.
    */
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
+  /**
+   * Position of the Global Actions
+   */
+  position?: "sticky" | "fixed";
 }
 
 export default function HvGlobalActions(props: HvGlobalActionsProps): JSX.Element | null;
