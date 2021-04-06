@@ -28,9 +28,6 @@ const styles = (theme) => ({
       opacity: 1,
       "&:hover": {
         background: "none",
-        "& $tabBorder": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo4,
-        },
       },
     },
     opacity: 1,

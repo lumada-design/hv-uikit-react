@@ -3,7 +3,7 @@ const styles = (theme) => ({
     alignItems: "center",
     justifyContent: "center",
     top: 0,
-    position: "sticky",
+    left: 0,
     "&:before": {
       content: "''",
       width: "100%",
@@ -14,13 +14,31 @@ const styles = (theme) => ({
       opacity: "75%",
     },
   },
+  positionSticky: {
+    width: "100%",
+    position: "sticky",
+  },
+  positionFixed: {
+    width: "100%",
+    position: "fixed",
+    [theme.breakpoints.up("md")]: {
+      width: `calc(100% - 2*${theme.spacing(4)}px)`,
+      marginLeft: `${theme.spacing(4)}px`,
+      marginRight: `${theme.spacing(4)}px`,
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: `calc(100% - 2*${theme.spacing(2)}px)`,
+      marginLeft: `${theme.spacing(2)}px`,
+      marginRight: `${theme.spacing(2)}px`,
+    },
+  },
   global: {
     zIndex: theme.zIndex.appBar - 2,
   },
   wrapper: {
     top: 0,
     left: 0,
-    width: "calc(100% - 30px)",
+    width: "100%",
     position: "absolute",
     height: 52,
     background: theme.hv.palette.atmosphere.atmo1,
@@ -30,9 +48,7 @@ const styles = (theme) => ({
     justifyContent: "space-between",
   },
   globalWrapperComplement: {
-    width: "calc(100% - 60px)",
-    marginLeft: theme.hv.spacing.md,
-    marginRight: theme.hv.spacing.md,
+    width: "100%",
     padding: theme.hv.spacing.xs,
   },
   content: {

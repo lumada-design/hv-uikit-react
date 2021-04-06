@@ -3,7 +3,7 @@
 exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
 <div>
   <div
-    class="HvGlobalActions-root"
+    class="HvGlobalActions-root HvGlobalActions-positionSticky"
   >
     <div
       class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
@@ -83,9 +83,11 @@ exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
 
 exports[`GlobalActions sample snapshot testing Main 1`] = `
 <div>
-  <div>
+  <div
+    class="MuiContainer-root HvContainer-root MuiContainer-maxWidthXl HvContainer-maxWidthXl"
+  >
     <div
-      class="HvGlobalActions-root HvGlobalActions-global"
+      class="HvGlobalActions-root HvGlobalActions-positionSticky HvGlobalActions-global"
     >
       <div
         class="HvGlobalActions-wrapper HvGlobalActions-globalWrapperComplement"
@@ -205,10 +207,10 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       </div>
     </div>
     <div
-      style="padding-bottom: 60px; margin-left: 30px;"
+      style="padding-bottom: 60px;"
     >
       <div
-        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1"
+        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1 HvGlobalActions-positionSticky"
       >
         <div
           class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
@@ -296,18 +298,18 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       </div>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 30px; margin-right: 30px;"
+        style="margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 60px; margin-right: 30px;"
+        style="margin-bottom: 60px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <div
-        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1"
+        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1 HvGlobalActions-positionSticky"
       >
         <div
           class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
@@ -395,18 +397,18 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       </div>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 30px; margin-right: 30px;"
+        style="margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 60px; margin-right: 30px;"
+        style="margin-bottom: 60px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <div
-        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1"
+        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1 HvGlobalActions-positionSticky"
       >
         <div
           class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
@@ -494,13 +496,13 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       </div>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 30px; margin-right: 30px;"
+        style="margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 30px; margin-right: 30px;"
+        style="margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>

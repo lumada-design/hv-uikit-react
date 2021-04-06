@@ -1,18 +1,25 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
+import uniqueId from "lodash/uniqueId";
 
 import { HvContainer, HvGlobalActions, HvButton, HvDropDownMenu, HvTypography } from "../..";
 
 export default {
-  title: "Components/Global Actions",
+  title: "Tests/GlobalActions",
   parameters: {
-    componentSubtitle: null,
-    usage: "import { HvGlobalActions } from '@hv/uikit-react-core'",
-    maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    docs: {
+      disable: true,
+      page: null,
+    },
   },
-  component: HvGlobalActions,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: 10, maxWidth: "1000px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Main = () => {
@@ -25,9 +32,10 @@ export const Main = () => {
   const StyledGlobalAction = withStyles(styles)(HvGlobalActions);
 
   return (
-    <HvContainer>
+    <HvContainer maxWidth="sm">
       <HvGlobalActions
         title="Detail Page Title"
+        position="fixed"
         backButtonAction={() => {
           alert("Back");
         }}
@@ -68,7 +76,6 @@ export const Main = () => {
           mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam
           eleifend mi in nulla posuere.
         </HvTypography>
-
         <HvTypography variant="normalText" style={{ marginBottom: 60 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed.
@@ -109,7 +116,6 @@ export const Main = () => {
           mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam
           eleifend mi in nulla posuere.
         </HvTypography>
-
         <HvTypography variant="normalText" style={{ marginBottom: 60 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed.
@@ -150,7 +156,6 @@ export const Main = () => {
           mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam
           eleifend mi in nulla posuere.
         </HvTypography>
-
         <HvTypography variant="normalText" style={{ marginBottom: 30 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed.
@@ -170,66 +175,3 @@ export const Main = () => {
   );
 };
 Main.decorators = [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>];
-
-export const SampleWithAdditionalActions = () => (
-  <HvGlobalActions title="Detail Page Title">
-    <HvButton category="primary">Primary</HvButton>
-    <HvDropDownMenu
-      id={`dropdownItem-${uniqueId()}`}
-      aria-label="dropdownMenu-Items"
-      placement="left"
-      dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
-    />
-  </HvGlobalActions>
-);
-
-SampleWithAdditionalActions.parameters = {
-  docs: {
-    description: {
-      story:
-        "When more than two secondary actions are in place, they should be grouped in a dropdown menu, ordered from the most to least used.",
-    },
-  },
-};
-
-export const SampleWithCustomTitleAndAdditionalActions = () => {
-  const CustomTitle = (
-    <HvTypography variant="xsTitle" component="h1">
-      A Custom Title
-    </HvTypography>
-  );
-
-  return (
-    <HvGlobalActions title={CustomTitle}>
-      <HvButton category="primary">Primary</HvButton>
-      <HvButton category="secondary">Secondary</HvButton>
-      <HvButton category="secondary">Secondary</HvButton>
-    </HvGlobalActions>
-  );
-};
-
-SampleWithCustomTitleAndAdditionalActions.parameters = {
-  docs: {
-    description: {
-      story: "Global Actions section uses a Typography component to build the title.",
-    },
-  },
-};
-
-export const SectionGlobalActions = () => (
-  <HvGlobalActions title="Section Title" variant="section">
-    <HvButton category="primary">Primary</HvButton>
-    <HvDropDownMenu
-      id={`dropdownItem-${uniqueId()}`}
-      aria-label="dropdownMenu-Items"
-      placement="left"
-      dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
-    />
-  </HvGlobalActions>
-);
-
-SectionGlobalActions.parameters = {
-  SectionGlobalActions: {
-    description: { story: "Section Global Actions." },
-  },
-};
