@@ -557,7 +557,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         <p
                           className="HvTypography-root HvTypography-normalText"
                         >
-                           / 14.10MB
+                          14.10MB
                         </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
@@ -791,7 +791,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         <p
                           className="HvTypography-root HvTypography-normalText"
                         >
-                           / 875.00kB
+                          875.00kB
                         </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>

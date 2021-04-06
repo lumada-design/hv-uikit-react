@@ -121,45 +121,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
         className="HvFileUploaderFile-progressTextContainer"
       >
          | 
-        <WithStyles(ForwardRef)
-          variant="highlightText"
-        >
-          <ForwardRef
-            classes={
-              Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
-              }
-            }
-            variant="highlightText"
-          >
-            <p
-              className="HvTypography-root HvTypography-highlightText"
-            >
-              25.00B
-            </p>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
         <WithStyles(ForwardRef)>
           <ForwardRef
             classes={
@@ -192,7 +153,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             <p
               className="HvTypography-root HvTypography-normalText"
             >
-               / 875.00B
+              875.00B
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
@@ -430,45 +391,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
         className="HvFileUploaderFile-progressTextContainer"
       >
          | 
-        <WithStyles(ForwardRef)
-          variant="highlightText"
-        >
-          <ForwardRef
-            classes={
-              Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
-              }
-            }
-            variant="highlightText"
-          >
-            <p
-              className="HvTypography-root HvTypography-highlightText"
-            >
-              25.00B
-            </p>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
         <WithStyles(ForwardRef)>
           <ForwardRef
             classes={
@@ -501,7 +423,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             <p
               className="HvTypography-root HvTypography-normalText"
             >
-               / 875.00B
+              875.00B
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>

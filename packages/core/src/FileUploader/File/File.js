@@ -20,18 +20,19 @@ const getStatusIcon = (classes, status) => {
 
 const getProgressText = (classes, data) => {
   const hasFailed = data.status === "fail";
+  const inProgress = data.status === "progress";
 
   return (
     <>
       {`\xa0|\xa0`}
 
-      {!hasFailed && data.progress != null && (
-        <HvTypography variant="highlightText">{`${convertUnits(data.progress)}`}</HvTypography>
+      {inProgress && data.progress != null && (
+        <HvTypography variant="highlightText">
+          {`${convertUnits(data.progress)}\xa0/\xa0`}
+        </HvTypography>
       )}
 
-      {!hasFailed && data.size && (
-        <HvTypography>{`\xa0/\xa0${convertUnits(data.size)}`}</HvTypography>
-      )}
+      {!hasFailed && data.size && <HvTypography>{`${convertUnits(data.size)}`}</HvTypography>}
 
       {hasFailed && data.errorMessage && (
         <HvTypography className={classes.fail}>{data.errorMessage}</HvTypography>
