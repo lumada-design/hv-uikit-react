@@ -20,10 +20,12 @@ const HvAccordion = ({
   onChange = null,
   children,
   expanded,
+  headingLevel,
+  defaultExpanded = false,
   containerProps,
   ...others
 }) => {
-  const [isOpen, setIsOpen] = useControlled(expanded, false);
+  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
 
   const handleAction = useCallback(
     (event) => {
@@ -75,7 +77,9 @@ const HvAccordion = ({
   const accordionContainer = setId(id, "container");
   const accordionHeader = useMemo(() => {
     const color = (disabled && ["atmo5"]) || undefined;
-    return (
+    const variantToApply =
+      headingLevel === 1 || headingLevel === 2 ? "sectionTitle" : "highlightText";
+    const accordionButton = (
       <HvTypography
         id={accordionHeaderId}
         component="div"
@@ -86,7 +90,7 @@ const HvAccordion = ({
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        variant={disabled ? "disabledText" : "highlightText"}
+        variant={variantToApply}
         aria-expanded={isOpen}
         aria-disabled={disabled}
         {...labelProps}
@@ -95,7 +99,24 @@ const HvAccordion = ({
         {label}
       </HvTypography>
     );
-  }, [classes, handleClick, handleKeyDown, label, labelProps, accordionHeaderId, disabled, isOpen]);
+    const result =
+      headingLevel === undefined ? (
+        accordionButton
+      ) : (
+        <HvTypography component={`h${headingLevel}`}>{accordionButton}</HvTypography>
+      );
+    return result;
+  }, [
+    classes,
+    handleClick,
+    handleKeyDown,
+    label,
+    labelProps,
+    accordionHeaderId,
+    disabled,
+    headingLevel,
+    isOpen,
+  ]);
 
   return (
     <div id={id} className={clsx(className, classes.root)} {...others}>
@@ -164,9 +185,17 @@ HvAccordion.propTypes = {
    */
   expanded: PropTypes.bool,
   /**
+   * When uncontrolled, defines the initial expanded state.
+   */
+  defaultExpanded: PropTypes.bool,
+  /**
    * An object containing props to be passed onto container holding the accordion children.
    */
   containerProps: PropTypes.instanceOf(Object),
+  /**
+   * Heading Level to apply to accordion button if ´undefined´ the button won't have a header wrapper.
+   */
+  headingLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /**
    * Is the accordion disabled.
    */

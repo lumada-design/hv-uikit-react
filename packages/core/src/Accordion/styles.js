@@ -49,6 +49,7 @@ const styles = (theme) => ({
     cursor: "pointer",
     "&$disabled": {
       cursor: "not-allowed",
+      color: theme.hv.palette.atmosphere.atmo5,
     },
   },
   disabled: {},
