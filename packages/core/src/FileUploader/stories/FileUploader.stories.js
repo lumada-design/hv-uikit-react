@@ -244,6 +244,7 @@ export const WithPreviewThumbnails = () => {
         <HvFileUploaderPreview
           aria-label="Open preview of the document (not!)"
           onClick={() => {}}
+          disableOverlay
         >
           <DocWord />
         </HvFileUploaderPreview>
