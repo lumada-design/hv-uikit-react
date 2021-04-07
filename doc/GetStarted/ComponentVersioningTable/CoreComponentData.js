@@ -236,7 +236,7 @@ const CoreComponentData = [
     component: "Icons",
     path: "Foundation/Icons Library",
     story: "Icons",
-    uikitVersion3: dsVersion3,
+    uikitVersion3: "3.5.0",
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
   },

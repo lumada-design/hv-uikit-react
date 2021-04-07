@@ -13,7 +13,7 @@ export default {
     componentSubtitle: null,
     usage: "import { Bookmark, CheckboxCheck } from '@hv/uikit-react-icons'",
     maturityStatus: componentDefinitions.dsClassification.stable,
-    dsVersion: componentDefinitions.dsVersion.v3,
+    dsVersion: "3.5.0",
   },
   component: HvIconBase,
 };
