@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.3.0 (2021-04-07)
+
+
+### Features
+
+* **icons:** update library according to DS 3.5.0. HVUIKIT-5740 ([087fdd2](https://github.com/pentaho/hv-uikit-react/commit/087fdd2acaad580b23541ca439fcc206b3af692c))
+
+
+
+
+
 ## [3.2.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@3.2.0...@hv/uikit-react-icons@3.2.1) (2021-03-10)
 
 
