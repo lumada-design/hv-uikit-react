@@ -14,10 +14,12 @@ const labComponentTableConfig = [
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
             {cellData.row._original.path ? (
-              <LinkTo kind={cellData.row._original.path}>
-                <HvTypography component="span" variant="link">
-                  {cellData.row._original.component}
-                </HvTypography>
+              <LinkTo
+                kind={cellData.row._original.path}
+                story={cellData.row._original.story || "Main"}
+                className="sbdocs-a"
+              >
+                {cellData.row._original.component}
               </LinkTo>
             ) : (
               cellData.row._original.component

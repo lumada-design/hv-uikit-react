@@ -9,7 +9,7 @@ const CoreComponentData = [
   {
     dsPattern: "Action Bar",
     component: "Action Bar",
-    path: "components-action-bar--main",
+    path: "Components/Action Bar",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -17,7 +17,7 @@ const CoreComponentData = [
   {
     dsPattern: "Asset Inventory",
     component: "Asset Inventory",
-    path: "components-asset-inventory--main",
+    path: "Components/Asset Inventory",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -25,7 +25,7 @@ const CoreComponentData = [
   {
     dsPattern: "Avatar",
     component: "Avatar",
-    path: "components-avatar--main",
+    path: "Components/Avatar",
     uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
     status: notAvailable,
@@ -33,7 +33,7 @@ const CoreComponentData = [
   {
     dsPattern: "Badge",
     component: "Badge",
-    path: "components-badge--main",
+    path: "Components/Badge",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -41,7 +41,7 @@ const CoreComponentData = [
   {
     dsPattern: "Notifications",
     component: "Banner",
-    path: "components-banner--main",
+    path: "Components/Banner",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -49,7 +49,7 @@ const CoreComponentData = [
   {
     dsPattern: "Visualization > Bar Chart",
     component: "Bar Chart",
-    path: "visualizations-bar-chart--main",
+    path: "Visualizations/Bar Chart",
     uikitVersion3: "3.2.1",
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -57,7 +57,7 @@ const CoreComponentData = [
   {
     dsPattern: "Breadcrumb",
     component: "Breadcrumb",
-    path: "components-breadcrumb--main",
+    path: "Components/Breadcrumb",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -65,7 +65,7 @@ const CoreComponentData = [
   {
     dsPattern: "Bulk Actions",
     component: "Bulk Actions",
-    path: "components-bulk-actions--main",
+    path: "Components/Bulk Actions",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -73,7 +73,7 @@ const CoreComponentData = [
   {
     dsPattern: "Button",
     component: "Button",
-    path: "components-button--main",
+    path: "Components/Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -81,7 +81,7 @@ const CoreComponentData = [
   {
     dsPattern: "Card",
     component: "Card",
-    path: "components-card--main",
+    path: "Components/Card",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -89,7 +89,7 @@ const CoreComponentData = [
   {
     dsPattern: "Selection",
     component: "Checkbox",
-    path: "forms-checkbox--main",
+    path: "Forms/Checkbox",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -97,7 +97,7 @@ const CoreComponentData = [
   {
     dsPattern: "Selection",
     component: "Checkbox Group",
-    path: "forms-checkbox-group--main",
+    path: "Forms/Checkbox Group",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -105,7 +105,7 @@ const CoreComponentData = [
   {
     dsPattern: "Code Editor",
     component: "Code Editor",
-    path: "components-code-editor--main",
+    path: "Components/Code Editor",
     uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
     status: statusClassification.stable,
@@ -113,7 +113,7 @@ const CoreComponentData = [
   {
     dsPattern: "Style Guide > Color",
     component: "Colors",
-    path: "foundation-colors--main",
+    path: "Foundation/Colors",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -121,7 +121,7 @@ const CoreComponentData = [
   {
     dsPattern: "Style Guide > Layout",
     component: "Container",
-    path: "foundation-container--main",
+    path: "Foundation/Container",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -129,7 +129,7 @@ const CoreComponentData = [
   {
     dsPattern: "Date Range",
     component: "Date Picker",
-    path: "forms-date-picker--main",
+    path: "Forms/Date Picker",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -137,7 +137,7 @@ const CoreComponentData = [
   {
     dsPattern: "Dialog",
     component: "Dialog",
-    path: "components-dialog--main",
+    path: "Components/Dialog",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -145,7 +145,7 @@ const CoreComponentData = [
   {
     dsPattern: "Visualization > Donut Chart",
     component: "Donut Chart",
-    path: "visualizations-donut-chart--main",
+    path: "Visualizations/Donut Chart",
     uikitVersion3: dsVersion3,
     uikitVersion2: notAvailable,
     status: statusClassification.stable,
@@ -153,7 +153,7 @@ const CoreComponentData = [
   {
     dsPattern: "Dropdown",
     component: "Dropdown",
-    path: "forms-dropdown--main",
+    path: "Forms/Dropdown",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -161,7 +161,7 @@ const CoreComponentData = [
   {
     dsPattern: "Dropdown",
     component: "Dropdown Menu",
-    path: "components-dropdown-menu--main",
+    path: "Components/Dropdown Menu",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -169,7 +169,7 @@ const CoreComponentData = [
   {
     dsPattern: "Empty State",
     component: "Empty State",
-    path: "components-empty-state--main",
+    path: "Components/Empty State",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -177,7 +177,7 @@ const CoreComponentData = [
   {
     dsPattern: "File Uploader",
     component: "File Uploader",
-    path: "forms-file-uploader--main",
+    path: "Forms/File Uploader",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -185,7 +185,7 @@ const CoreComponentData = [
   {
     dsPattern: "Footer",
     component: "Footer",
-    path: "components-footer--main",
+    path: "Components/Footer",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -193,7 +193,8 @@ const CoreComponentData = [
   {
     dsPattern: "Form",
     component: "Forms",
-    path: "forms-main--react-form",
+    path: "Forms/Main",
+    story: "React Form",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -201,7 +202,7 @@ const CoreComponentData = [
   {
     dsPattern: "Style Guide > Layout",
     component: "Grid",
-    path: "foundation-grid--main",
+    path: "Foundation/Grid",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -209,7 +210,7 @@ const CoreComponentData = [
   {
     dsPattern: "Global Actions",
     component: "Global Actions",
-    path: "components-global-actions--main",
+    path: "Components/Global Actions",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -217,7 +218,7 @@ const CoreComponentData = [
   {
     dsPattern: "Header",
     component: "Header",
-    path: "components-header--main",
+    path: "Components/Header",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -225,7 +226,7 @@ const CoreComponentData = [
   {
     dsPattern: "Navigation System",
     component: "Horizontal Navigation",
-    path: "components-header--main",
+    path: "Components/Header",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -233,15 +234,16 @@ const CoreComponentData = [
   {
     dsPattern: "Iconography",
     component: "Icons",
-    path: "foundation-icons-library--icons",
-    uikitVersion3: dsVersion3,
+    path: "Foundation/Icons Library",
+    story: "Icons",
+    uikitVersion3: "3.5.0",
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
   },
   {
     dsPattern: "Input Box",
     component: "Input",
-    path: "forms-input--main",
+    path: "Forms/Input",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -249,7 +251,7 @@ const CoreComponentData = [
   {
     dsPattern: "Visualization > Kpi",
     component: "Kpi",
-    path: "visualizations-kpi--main",
+    path: "Visualizations/Kpi",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -257,7 +259,7 @@ const CoreComponentData = [
   {
     dsPattern: "Visualization > Line Chart",
     component: "Line Chart",
-    path: "visualizations-line-chart--main",
+    path: "Visualizations/Line Chart",
     uikitVersion3: "3.2.1",
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -265,7 +267,7 @@ const CoreComponentData = [
   {
     dsPattern: "List",
     component: "List",
-    path: "components-list--main",
+    path: "Components/List",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -273,7 +275,7 @@ const CoreComponentData = [
   {
     dsPattern: "Loading",
     component: "Loading",
-    path: "components-loading--main",
+    path: "Components/Loading",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -281,7 +283,7 @@ const CoreComponentData = [
   {
     dsPattern: "Login Page",
     component: "Login",
-    path: "components-login--main",
+    path: "Components/Login",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -289,7 +291,7 @@ const CoreComponentData = [
   {
     dsPattern: "Multi Button",
     component: "Multi Button",
-    path: "components-multi-button--main",
+    path: "Components/Multi Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -297,7 +299,7 @@ const CoreComponentData = [
   {
     dsPattern: "Pagination",
     component: "Pagination",
-    path: "components-pagination--main",
+    path: "Components/Pagination",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -305,7 +307,7 @@ const CoreComponentData = [
   {
     dsPattern: "Panel",
     component: "Panel",
-    path: "components-panel--main",
+    path: "Components/Panel",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -313,7 +315,7 @@ const CoreComponentData = [
   {
     dsPattern: "Selection",
     component: "Radio Button",
-    path: "forms-radio-button--main",
+    path: "Forms/Radio Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -321,7 +323,7 @@ const CoreComponentData = [
   {
     dsPattern: "Selection",
     component: "Radio Button Group",
-    path: "forms-radio-button-group--main",
+    path: "Forms/Radio Button Group",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -329,7 +331,7 @@ const CoreComponentData = [
   {
     dsPattern: "Selection",
     component: "Selection List",
-    path: "forms-selection-list--main",
+    path: "Forms/Selection List",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -337,7 +339,7 @@ const CoreComponentData = [
   {
     dsPattern: "Search Box",
     component: "Search Box",
-    path: "forms-search-box--main",
+    path: "Forms/Search Box",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -345,7 +347,7 @@ const CoreComponentData = [
   {
     dsPattern: "Notifications",
     component: "Snackbar",
-    path: "components-snackbar--main",
+    path: "Components/Snackbar",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,
@@ -353,7 +355,7 @@ const CoreComponentData = [
   {
     dsPattern: "Selection",
     component: "Switch",
-    path: "forms-switch--main",
+    path: "Forms/Switch",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -361,7 +363,7 @@ const CoreComponentData = [
   {
     dsPattern: "Visualization > Table",
     component: "Table",
-    path: "visualizations-table--main",
+    path: "Visualizations/Table",
     uikitVersion3: "3.2.1",
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -369,7 +371,7 @@ const CoreComponentData = [
   {
     dsPattern: "Tab",
     component: "Tabs",
-    path: "components-tabs--main",
+    path: "Components/Tabs",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -377,7 +379,7 @@ const CoreComponentData = [
   {
     dsPattern: "Text Area",
     component: "Text Area",
-    path: "forms-text-area--main",
+    path: "Forms/Text Area",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -385,7 +387,7 @@ const CoreComponentData = [
   {
     dsPattern: "Selection",
     component: "Toggle Button",
-    path: "components-toggle-button--main",
+    path: "Components/Toggle Button",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -393,7 +395,7 @@ const CoreComponentData = [
   {
     dsPattern: "Tooltip",
     component: "Tooltip",
-    path: "components-tooltip--main",
+    path: "Components/Tooltip",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -401,7 +403,7 @@ const CoreComponentData = [
   {
     dsPattern: "Style Guide > Typography",
     component: "Typography",
-    path: "foundation-typography--main",
+    path: "Foundation/Typography",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -409,7 +411,7 @@ const CoreComponentData = [
   {
     dsPattern: "User Preferences",
     component: "User Preferences",
-    path: "components-user-preferences--main",
+    path: "Components/User Preferences",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.stable,
@@ -417,7 +419,7 @@ const CoreComponentData = [
   {
     dsPattern: "Navigation System",
     component: "Vertical Navigation",
-    path: "components-vertical-navigation--main",
+    path: "Components/Vertical Navigation",
     uikitVersion3: dsVersion3,
     uikitVersion2: dsVersion1,
     status: statusClassification.unstable,

@@ -14,6 +14,11 @@ const statusClassification = componentDefinitions.dsClassification;
 const dsVersion1 = componentDefinitions.dsVersion.v1;
 const dsVersion3 = componentDefinitions.dsVersion.v3;
 
+const getMinorVersion = (v) => Number(v.split(".")[1]) || 0;
+
+const dsVersion1Minor = getMinorVersion(dsVersion1);
+const dsVersion3Minor = getMinorVersion(dsVersion3);
+
 const coreComponentTableConfig = [
   {
     headerText: "Component name",
@@ -24,10 +29,12 @@ const coreComponentTableConfig = [
         <div style={{ display: "flex" }}>
           <div style={{ alignSelf: "center" }}>
             {cellData.row._original.path ? (
-              <LinkTo kind={cellData.row._original.path}>
-                <HvTypography component="span" variant="link">
-                  {cellData.row._original.component}
-                </HvTypography>
+              <LinkTo
+                kind={cellData.row._original.path}
+                story={cellData.row._original.story || "Main"}
+                className="sbdocs-a"
+              >
+                {cellData.row._original.component}
               </LinkTo>
             ) : (
               cellData.row._original.component
@@ -59,7 +66,11 @@ const coreComponentTableConfig = [
           <div style={{ alignSelf: "center" }}>
             <DSVersion
               dsVersion={cellData.row._original.uikitVersion3}
-              fill={cellData.row._original.uikitVersion3 == dsVersion3 ? "#477DBD" : "#7ECEE9"}
+              fill={
+                getMinorVersion(cellData.row._original.uikitVersion3) >= dsVersion3Minor
+                  ? "#477DBD"
+                  : "#7ECEE9"
+              }
             />
           </div>
           <div style={{ alignSelf: "center", marginLeft: 10 }}>
@@ -81,7 +92,11 @@ const coreComponentTableConfig = [
             cellData.row._original.uikitVersion2 != notAvailable ? (
               <DSVersion
                 dsVersion={cellData.row._original.uikitVersion2}
-                fill={cellData.row._original.uikitVersion2 == dsVersion1 ? "#477DBD" : "#7ECEE9"}
+                fill={
+                  getMinorVersion(cellData.row._original.uikitVersion2) >= dsVersion1Minor
+                    ? "#477DBD"
+                    : "#7ECEE"
+                }
               />
             ) : (
               notAvailable

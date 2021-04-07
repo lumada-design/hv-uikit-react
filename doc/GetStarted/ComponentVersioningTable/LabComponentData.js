@@ -2,7 +2,7 @@ const LabComponentData = [
   {
     component: "App Switcher Panel",
     dsPattern: "App Launcher & Switcher",
-    path: "lab-appswitcherpanel--main",
+    path: "Lab/AppSwitcherPanel",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/AppSwitcherPanel",
     uikitVersion2:
@@ -11,7 +11,7 @@ const LabComponentData = [
   {
     component: "Code Editor",
     dsPattern: "Code Editor",
-    path: "lab-codeeditor--main",
+    path: "Lab/CodeEditor",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/CodeEditor",
     uikitVersion2:
@@ -19,7 +19,7 @@ const LabComponentData = [
   },
   {
     component: "Form Composer",
-    path: "lab-formcomposer--main",
+    path: "Lab/FormComposer",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/FormComposer",
     uikitVersion2:
@@ -28,7 +28,7 @@ const LabComponentData = [
   {
     component: "Navigation Anchors",
     dsPattern: "Scroll To",
-    path: "lab-navigation-anchors--main",
+    path: "Lab/Navigation Anchors",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/NavigationAnchors",
     uikitVersion2:
@@ -37,7 +37,7 @@ const LabComponentData = [
   {
     component: "Notification Panel",
     dsPattern: "Notifications",
-    path: "lab-notification-panel--main",
+    path: "Lab/Notification Panel",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/NotificationPanel",
     uikitVersion2:
@@ -46,7 +46,7 @@ const LabComponentData = [
   {
     component: "Slider",
     dsPattern: "Slider",
-    path: "lab-slider--main",
+    path: "Lab/Slider",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/Slider",
     uikitVersion2:
@@ -55,11 +55,19 @@ const LabComponentData = [
   {
     component: "Time Picker",
     dsPattern: "Time Picker",
-    path: "lab-time-picker--main",
+    path: "Lab/Time Picker",
     uikitVersion3:
       "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/TimePicker",
     uikitVersion2:
       "https://github.com/lumada-design/hv-uikit-react/tree/v2.x/packages/lab/src/TimePicker",
+  },
+  {
+    component: "Table",
+    dsPattern: "Table",
+    path: "Lab/Table",
+    uikitVersion3:
+      "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/Table",
+    uikitVersion2: "--",
   },
 ];
 
