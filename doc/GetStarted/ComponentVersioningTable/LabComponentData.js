@@ -61,6 +61,14 @@ const LabComponentData = [
     uikitVersion2:
       "https://github.com/lumada-design/hv-uikit-react/tree/v2.x/packages/lab/src/TimePicker",
   },
+  {
+    component: "Table",
+    dsPattern: "Table",
+    path: "Lab/Table",
+    uikitVersion3:
+      "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/Table",
+    uikitVersion2: "--",
+  },
 ];
 
 export default LabComponentData;
