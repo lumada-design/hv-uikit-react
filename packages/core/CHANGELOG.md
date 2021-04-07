@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.18.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.17.0...@hv/uikit-react-core@3.18.0) (2021-04-07)
+
+
+### Bug Fixes
+
+* **file-uploader:** extra bar on file size label ([8e82a0b](https://github.com/pentaho/hv-uikit-react/commit/8e82a0be864d230c364245ed145e776fed452ed9))
+* **global-actions:** add back responsiveness and position prop. HVUIKIT-5698 ([2154cdd](https://github.com/pentaho/hv-uikit-react/commit/2154cdd5945a0b044b7d647fb13023c3adaf963e))
+* **tab:** remove console jss warning ([100bb7c](https://github.com/pentaho/hv-uikit-react/commit/100bb7c051aceb03e6bf94554ad1d8d1f1d20a96))
+
+
+### Features
+
+* **accordion:** adding default expanded state and correcting header semantic. HVUIKIT-5697 ([c1bb592](https://github.com/pentaho/hv-uikit-react/commit/c1bb592f51a196f3ca995a70c07c324eed6ea61a))
+* **file-uploader:** add overlay to preview button HVUIKIT-5728 ([62d2522](https://github.com/pentaho/hv-uikit-react/commit/62d252203e40eb3b68b59f2a86ac5a9917da1ab4))
+* **file-uploader:** file preview HVUIKIT-5728 ([916852d](https://github.com/pentaho/hv-uikit-react/commit/916852de48d9a34aaccb3354dc980a427357db6e))
+
+
+
+
+
 # [3.17.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.16.0...@hv/uikit-react-core@3.17.0) (2021-04-05)
 
 
