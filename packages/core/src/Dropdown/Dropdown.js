@@ -83,13 +83,6 @@ const HvDropdown = (props) => {
   const [internalValues, setInternalValues] = useState(values);
 
   useEffect(() => {
-    if (expanded !== isOpen) {
-      setIsOpen(expanded && !disabled);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [expanded, disabled]);
-
-  useEffect(() => {
     setInternalValues(values);
   }, [values]);
 
