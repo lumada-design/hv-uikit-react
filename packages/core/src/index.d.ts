@@ -48,6 +48,9 @@ export * from "./Donutchart";
 export { default as HvDropdown } from "./Dropdown";
 export * from "./Dropdown";
 
+export { default as HvBaseDropdown } from "./BaseDropdown";
+export * from "./BaseDropdown";
+
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export * from "./DropDownMenu";
 
@@ -329,5 +332,3 @@ export interface HvTheme {
   spacing: HvThemeSpacing;
   viz: HvThemeVizPalette;
 }
-
-
