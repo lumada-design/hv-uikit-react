@@ -38,6 +38,7 @@ const HvCheckBox = (props) => {
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     "aria-describedby": ariaDescribedBy,
+    labelProps,
 
     checked,
     defaultChecked = false,
@@ -166,6 +167,7 @@ const HvCheckBox = (props) => {
             htmlFor={setId(elementId, "input")}
             label={label}
             className={clsx(classes.label)}
+            {...labelProps}
           />
         </div>
       ) : (
@@ -258,6 +260,10 @@ HvCheckBox.propTypes = {
    * @ignore
    */
   "aria-describedby": PropTypes.string,
+  /**
+   * Properties passed on to the label element.
+   */
+  labelProps: PropTypes.instanceOf(Object),
 
   /**
    * Indicates that the form element is disabled.

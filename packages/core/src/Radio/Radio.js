@@ -36,6 +36,7 @@ const HvRadio = (props) => {
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     "aria-describedby": ariaDescribedBy,
+    labelProps,
 
     checked,
     defaultChecked = false,
@@ -137,6 +138,7 @@ const HvRadio = (props) => {
             htmlFor={setId(elementId, "input")}
             label={label}
             className={clsx(classes.label)}
+            {...labelProps}
           />
         </div>
       ) : (
@@ -220,6 +222,10 @@ HvRadio.propTypes = {
    * @ignore
    */
   "aria-describedby": PropTypes.string,
+  /**
+   * Properties passed on to the label element.
+   */
+  labelProps: PropTypes.instanceOf(Object),
 
   /**
    * Indicates that user input is required on the form element.
