@@ -12,12 +12,13 @@ const DEFAULT_LABELS = {
   progressConjunction: "of",
   sizeWarning: "Max. file size:",
   acceptedFiles: "Accepted files:",
+  acceptedFilesCaption: "",
   drag: "Drag and drop or",
   selectFiles: "Select files",
   dropFiles: "Drop files here",
   fileSizeError: "The file exceeds the maximum upload size",
   fileTypeError: "File type not allowed for upload",
-  removeFileButtonLabel: "Remove File",
+  removeFileButtonLabel: "Remove File"
 };
 
 const FileUploader = ({
@@ -77,6 +78,10 @@ FileUploader.propTypes = {
     /**
      *
      */
+    acceptedFilesCaption: PropTypes.string,
+    /**
+     *
+     */
     progressConjunction: PropTypes.string,
     /**
      * DropZone area label.
@@ -109,7 +114,7 @@ FileUploader.propTypes = {
     /**
      * Value of aria-label to apply to remove file button in filelist
      * */
-    removeFileButtonLabel: PropTypes.string,
+    removeFileButtonLabel: PropTypes.string
   }),
   /**
    * The files to upload.
@@ -131,7 +136,7 @@ FileUploader.propTypes = {
       /**
        * Upload status.
        */
-      status: PropTypes.oneOf(["progress", "success", "fail"]),
+      status: PropTypes.oneOf(["progress", "success", "fail"])
     })
   ).isRequired,
   /**
@@ -157,7 +162,7 @@ FileUploader.propTypes = {
   /**
    * Callback fired when file is removed from list.
    */
-  onFileRemoved: PropTypes.func,
+  onFileRemoved: PropTypes.func
 };
 
 export default withStyles(styles, { name: "HvFileUploader" })(
