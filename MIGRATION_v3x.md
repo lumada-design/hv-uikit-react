@@ -175,6 +175,26 @@ The props `actions`, `actionsCallback`, `maxVisibleActions`, `actionsAlignment` 
 - `needsBorder` removed.
 - `onClickAction` removed.
 
+### Checkbox
+
+The Checkbox is now a form element. Check [Form Element](#formelement) for more information.
+
+- `disabledFocus` class removed.
+- `truncate` class removed.
+- `container` class removed.
+- `icon` class removed.
+- `labelTypography` class removed.
+- `labelEnd` class removed.
+- `labelStart` class removed.
+- `truncate` class removed.
+- `root` class added.
+- `disabled` class added.
+- `focusVisible` class added.
+- `label` class added.
+
+- `formControlLabelProps` removed use `labelProps` instead
+- `labelPlacement` removed if a different label placement is needed it can be constructed with an `HvLabel` and a `HvBaseCheckbox`
+
 ### DatePicker
 
 This component now only accepts `Date` objects. `Date` internally uses time values in UTC, but the basic methods to fetch the date and time or its components all work in the local time zone and offset. When generating dates, remember that parsing strings is strongly discouraged, due to browser differences and inconsistencies; i.e., `new Date("YYYY-MM-DD")` does not produce the same time value as `new Date("MM/DD/YYYY")` when the local time zone is not UTC.
@@ -190,6 +210,8 @@ This component now only accepts `Date` objects. `Date` internally uses time valu
 
 ### Dropdown
 
+The Dropdown is now a form element. Check [Form Element](#formelement) for more information.
+
 The following `classes` were removed:
 
 ```
@@ -202,7 +224,7 @@ rootOpen
 selection
 ```
 
-The `selectDefault` prop was removed
+The `selectDefault` prop was removed instead pass a default selected `value`
 
 ### DropDownMenu
 
@@ -220,12 +242,42 @@ popper
 
 ### FormElement
 
-- `HelperText` removed.
+Some components have been been adapted to work as a form element to ensure consistency in forms.
+Components that follows this API will possess the following props:
+
+- `label` renders an HvLabel to identify the element
+- `name` Name of the form element for accesibility 
+- `status` the current status of the element used to trigger validation messages
+- `statusMessage` the message show when the `status` prop is invalid
+- `value` the current value of the element if declared the element starts behaving as a controlled component.
+- `disabled` whether the element is interactable.
+
+as for the component itself:
+
+- `HelperText` prop was removed use `statusMessage`.
 
 ### Input
+The input is now a form element check. Check [Form Element](#formelement) for more information.
 
-- `infoIcon` removed.
-- `infoIcon` and `infoIconContainer` classes removed.
+- `Labels` prop was reworked:
+  - `infoText` subProp was removed use `description` instead.
+  - `inputLabel` subProp was removed use `label` instead.
+  - `maxCharQuantityWarningText` subProp was removed use `validationMessage` prop instead.
+  - `minCharQuantityWarningText` subProp was removed use `validationMessage` prop instead.
+  - `placeholder` subProp was removed use `placeholder` prop instead.
+  - `requiredWarningText` subProp was removed use `validationMessage` prop instead.
+  - `warningText` subProp was removed use `validationMessage` prop instead.
+- `customFixedIcon` prop was removed use `endAdornment`
+- `externalWarningTextOverride` prop was removed use `statusMessage` instead.
+- `infoIcon` prop was removed use `statusMessage`instead if a icon is needed it needs to be custom made.
+- `initialValue` prop was removed use `defaultValue`instead.
+- `password` prop was removed use `type="password"` instead.
+- `showInfo` prop was removed use `description`prop instead, if defined it will show the text.
+- `suggestionSelectedCallback`prop was removed selection is received through `onChange``
+- `validationState` prop was removed use `status` instead.
+- `validationType`prop was removed use `type` instead to access built-in validations.
+
+- `infoIconContainer` classes removed.
 
 ### KPI
 
@@ -261,7 +313,7 @@ The `selectDefault` prop was removed
 ### Loading
 
 Loading is now visible by default. To hide it, use `hidden` prop.
-Removed option to pass `children` and use component as a wrapper "HOC". We still provide a sample of an `HvLoading` wrapping a component.
+Removed option to pass `children` and use component as a wrapper "HOC". We still provide a [sample](http://lumada-design.github.io/uikit/master/?path=/docs/components-loading--main#with-children) of an `HvLoading` wrapping a component.
 
 - `text` renamed to `label`
 - `isActive` renamed to `hidden`, and is not visible by default (`hidden=false`)
@@ -276,6 +328,13 @@ Component was replaced for `HvLoginContainer`.
 Component was renamed to `HvLogin`.
 
 - `customBackground` renamed to `background`.
+
+### Modal
+
+- `HvModal` renamed to `HvDialog`
+- `HvModalTitle` renamed to `HvDialogTitle`
+- `HvModalContent` renamed to `HvDialogContent`
+- `HvModalActions` renamed to `HvDialogActions`
 
 ### Multi-Button
 
@@ -301,20 +360,74 @@ The Multi-Button is now built through composition and offers no control.
 
 - `selectDownIcon` class removed.
 
+### Radio
+
+The Radio is now a form element. Check [Form Element](#formelement) for more information.
+
+- `disabledFocus` class removed.
+- `truncate` class removed.
+- `container` class removed.
+- `icon` class removed.
+- `labelTypography` class removed.
+- `labelEnd` class removed.
+- `labelStart` class removed.
+- `truncate` class removed.
+- `root` class added.
+- `disabled` class added.
+- `focusVisible` class added.
+- `label` class added.
+
+- `formControlLabelProps` removed use `labelProps` instead
+- `labelPlacement` removed if a different label placement is needed it can be constructed with an `HvLabel` and a `HvBaseRadio`
+
 ### Searchbox
+
+The `HvSearchbox` was removed to construct a searchbox use the `HvInput`.
 
 - `ariaLabel` removed, you can pass `aria-*` props directly to the component.
 
 ```diff
-<HvSearchbox
--  ariaLabel="label"
-+  aria-label="label"
-/>
+- <HvSearchbox
+-   ariaLabel="Select country"
+-   placeholder="Search"
+- />
++ <HvInput
++   type="search"
++   aria-label="Select country"
++   placeholder="Search"
++ />
 ```
 
-### Selectors
+for more information check the searchbox [sample](https://lumada-design.github.io/uikit/master/?path=/docs/forms-search-box--main)
 
-- _TODO Checkbox/Radio/Switch/ToggleButton_
+### Switch
+
+The Switch is now a form element. Check [Form Element](#formelement) for more information.
+
+- `checked` class removed.
+- `checkedIcon` class removed.
+- `disabled` class removed.
+- `disabledLabel` class removed.
+- `labelDeselected` class removed.
+- `labelSelected` class removed.
+- `switch` class removed.
+- `switchBase` class removed.
+- `thumb` class removed.
+- `track` class removed.
+- `label` class added.
+- `error` class added.
+
+- `displayIconChecked` removed, internal icons are not supported in the design system v3.
+- `showLabels`removed, labels on the side are not longer supported if required it can be constructed with an `HvLabel` and a `HvBaseSwitch`.
+
+### ToggleButton
+
+- `root` class removed.
+- `disabled` class removed.
+- `icon` class removed.
+
+- `animated` removed animated icons should be implemented externally check [sample](https://lumada-design.github.io/uikit/master/?path=/docs/components-toggle-button--main#animated)
+- `labels` removed, apply the accessibility labels directly, check the toggleButton [sample](https://lumada-design.github.io/uikit/master/?path=/docs/components-toggle-button--main)
 
 ### TextArea
 
