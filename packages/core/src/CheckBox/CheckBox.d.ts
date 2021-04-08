@@ -1,7 +1,9 @@
 import { StandardProps } from "@material-ui/core";
+import React from "react";
 
 import { HvBaseCheckBoxProps } from "../BaseCheckBox";
 import { HvFormStatus } from "../Forms/FormElement";
+import { HvLabelProps } from "../Forms/Label";
 
 export type HvCheckBoxClassKey =
   | "root"
@@ -20,7 +22,10 @@ export interface HvCheckBoxProps extends StandardProps<HvBaseCheckBoxProps, HvCh
    * If not provided, an aria-label or aria-labelledby must be inputted via inputProps.
    */
   label?: React.ReactNode;
-
+  /**
+   * Properties passed on to the label element.
+   */
+  labelProps: HvLabelProps;
   /**
    * The status of the form element.
    *

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvLabelProps } from "../Forms/Label";
 
 export interface HvSwitchLabelsProp {
   /**
@@ -39,6 +40,10 @@ export interface HvSwitchProps
    * An Object containing the various text associated with the switch.
    */
   labels?: HvSwitchLabelsProp;
+  /**
+   * Properties passed on to the label element.
+   */
+  labelProps: HvLabelProps;
   /**
    * Value assigned to the Switch Component.
    */

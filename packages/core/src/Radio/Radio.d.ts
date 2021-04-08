@@ -2,6 +2,7 @@ import { StandardProps } from "@material-ui/core";
 
 import { HvBaseRadioProps } from "../BaseRadio";
 import { HvFormStatus } from "../Forms/FormElement";
+import { HvLabelProps } from "../Forms/Label";
 
 export type HvRadioClassKey =
   | "root"
@@ -19,7 +20,10 @@ export interface HvRadioProps extends StandardProps<HvBaseRadioProps, HvRadioCla
    * If not provided, an aria-label or aria-labelledby must be provided.
    */
   label?: React.ReactNode;
-
+  /**
+   * Properties passed on to the label element.
+   */
+  labelProps: HvLabelProps;
   /**
    * The status of the form element.
    *
