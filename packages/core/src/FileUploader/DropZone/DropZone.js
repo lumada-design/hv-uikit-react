@@ -20,7 +20,7 @@ const DropZone = ({
   disabled = false,
   acceptedFiles,
   maxFileSize,
-  onFilesAdded
+  onFilesAdded,
 }) => {
   const [dragState, setDrag] = useState(false);
   const inputRef = useRef();
@@ -33,19 +33,19 @@ const DropZone = ({
     setDrag(true);
   };
 
-  const onChangeHandler = evt => {
-    const filesToProcess = Object.keys(evt).map(e => evt[e]);
+  const onChangeHandler = (evt) => {
+    const filesToProcess = Object.keys(evt).map((e) => evt[e]);
 
     const newFiles = [];
 
-    filesToProcess.forEach(file => {
+    filesToProcess.forEach((file) => {
       const newFile = file;
 
       const isSizeAllowed = file.size <= maxFileSize;
       const isFileAccepted =
         !acceptedFiles.length ||
         acceptedFiles.indexOf(file.type.split("/")[1]) > -1 ||
-        acceptedFiles.some(acceptExtension =>
+        acceptedFiles.some((acceptExtension) =>
           accept({ name: file.name, type: file.type }, acceptExtension)
         );
 
@@ -66,15 +66,13 @@ const DropZone = ({
 
   return (
     <>
-      <div
-        id={id}
-        className={classes.dropZoneLabelsGroup}
-        aria-label="File Dropzone">
+      <div id={id} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
         <HvTypography
           variant="labelText"
           component="label"
           id={setId(id, "input-file-label")}
-          htmlFor={setId(id, "input-file")}>
+          htmlFor={setId(id, "input-file")}
+        >
           {labels.dropzone}
         </HvTypography>
 
@@ -82,18 +80,12 @@ const DropZone = ({
           {`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
         </HvTypography>
         {labels.acceptedFilesCaption && (
-          <HvTypography variant="sText">
-            {labels.acceptedFilesCaption}
-          </HvTypography>
+          <HvTypography variant="sText">{labels.acceptedFilesCaption}</HvTypography>
         )}
         {!labels.acceptedFilesCaption && acceptedFiles.length > 0 && (
           <>
-            <HvTypography variant="labelText">
-              {labels.acceptedFiles}
-            </HvTypography>
-            <HvTypography variant="sText">
-              {acceptedFiles.join(", ")}
-            </HvTypography>
+            <HvTypography variant="labelText">{labels.acceptedFiles}</HvTypography>
+            <HvTypography variant="sText">{acceptedFiles.join(", ")}</HvTypography>
           </>
         )}
       </div>
@@ -102,11 +94,11 @@ const DropZone = ({
         id={setId(id, "button")}
         className={clsx(classes.dropZoneContainer, {
           [classes.dragAction]: dragState,
-          [classes.dropZoneContainerDisabled]: disabled
+          [classes.dropZoneContainerDisabled]: disabled,
         })}
         role="button"
         tabIndex={0}
-        onDragEnter={event => {
+        onDragEnter={(event) => {
           if (!disabled) {
             enterDropArea();
             event.stopPropagation();
@@ -115,14 +107,14 @@ const DropZone = ({
         }}
         onDragLeave={leaveDropArea}
         onDropCapture={leaveDropArea}
-        onDragOver={event => {
+        onDragOver={(event) => {
           if (!disabled) {
             enterDropArea();
             event.stopPropagation();
             event.preventDefault();
           }
         }}
-        onDrop={event => {
+        onDrop={(event) => {
           if (!disabled) {
             const { files } = event.dataTransfer;
             if (multiple === true || files.length === 1) {
@@ -132,11 +124,12 @@ const DropZone = ({
             }
           }
         }}
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           if (isKeypress(e, KeyboardCodes.Enter) || isKeypress(e, 32)) {
             inputRef.current.click();
           }
-        }}>
+        }}
+      >
         <input
           id={setId(id, "input-file")}
           tabIndex={-1}
@@ -161,9 +154,7 @@ const DropZone = ({
           {dragState ? (
             <>
               <div className={classes.dropZoneAreaLabels}>
-                <HvTypography className={classes.dragText}>
-                  {labels.dropFiles}
-                </HvTypography>
+                <HvTypography className={classes.dragText}>{labels.dropFiles}</HvTypography>
               </div>
             </>
           ) : (
@@ -176,10 +167,7 @@ const DropZone = ({
               <div className={classes.dropZoneAreaLabels}>
                 <HvTypography className={classes.dragText}>
                   {labels.drag}
-                  <span
-                    className={
-                      classes.selectFilesText
-                    }>{`\xa0${labels.selectFiles}`}</span>
+                  <span className={classes.selectFilesText}>{`\xa0${labels.selectFiles}`}</span>
                 </HvTypography>
               </div>
             </>
@@ -238,7 +226,7 @@ DropZone.propTypes = {
     /**
      * Style applied to the selected files.
      */
-    selectFilesText: PropTypes.string
+    selectFilesText: PropTypes.string,
   }).isRequired,
   /**
    * Labels to present in Fileuploader.
@@ -263,9 +251,7 @@ DropZone.propTypes = {
   /**
    * Function responsible for processing files added to the drop zone.
    */
-  onFilesAdded: PropTypes.func
+  onFilesAdded: PropTypes.func,
 };
 
-export default withStyles(styles, { name: "HvFileUploaderDropZone" })(
-  withId(DropZone)
-);
+export default withStyles(styles, { name: "HvFileUploaderDropZone" })(withId(DropZone));
