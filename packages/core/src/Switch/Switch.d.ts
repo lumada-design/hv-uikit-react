@@ -28,7 +28,7 @@ export interface HvSwitchProps
   /**
    * Properties passed on to the label element.
    */
-  labelProps: HvLabelProps;
+  labelProps?: HvLabelProps;
   /**
    * Value assigned to the Switch Component.
    */

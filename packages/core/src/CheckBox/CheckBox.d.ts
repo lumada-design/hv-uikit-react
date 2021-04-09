@@ -25,7 +25,7 @@ export interface HvCheckBoxProps extends StandardProps<HvBaseCheckBoxProps, HvCh
   /**
    * Properties passed on to the label element.
    */
-  labelProps: HvLabelProps;
+  labelProps?: HvLabelProps;
   /**
    * The status of the form element.
    *
