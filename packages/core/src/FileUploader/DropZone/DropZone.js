@@ -79,7 +79,10 @@ const DropZone = ({
         <HvTypography variant="sText">
           {`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
         </HvTypography>
-        {acceptedFiles.length > 0 && (
+        {labels.acceptedFilesCaption && (
+          <HvTypography variant="sText">{labels.acceptedFilesCaption}</HvTypography>
+        )}
+        {!labels.acceptedFilesCaption && acceptedFiles.length > 0 && (
           <>
             <HvTypography variant="labelText">{labels.acceptedFiles}</HvTypography>
             <HvTypography variant="sText">{acceptedFiles.join(", ")}</HvTypography>

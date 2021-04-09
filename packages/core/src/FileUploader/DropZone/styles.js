@@ -64,6 +64,9 @@ const styles = (theme) => ({
       marginRight: `${theme.hv.spacing.sm}px`,
       marginLeft: "auto",
     },
+    "& p:last-child": {
+      marginRight: 0,
+    },
   },
   dropZoneAreaLabels: {
     display: "flex",

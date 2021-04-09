@@ -12,6 +12,7 @@ const DEFAULT_LABELS = {
   progressConjunction: "of",
   sizeWarning: "Max. file size:",
   acceptedFiles: "Accepted files:",
+  acceptedFilesCaption: "",
   drag: "Drag and drop or",
   selectFiles: "Select files",
   dropFiles: "Drop files here",
@@ -74,6 +75,10 @@ FileUploader.propTypes = {
      *
      */
     acceptedFiles: PropTypes.string,
+    /**
+     *
+     */
+    acceptedFilesCaption: PropTypes.string,
     /**
      *
      */
