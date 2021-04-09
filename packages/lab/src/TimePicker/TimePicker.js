@@ -202,7 +202,7 @@ class HvTimePicker extends React.Component {
   renderLabel = () => {
     const { classes, labels } = this.props;
     return (
-      <HvTypography variant="labelText" className={classes.label}>
+      <HvTypography component="label" variant="highlightText" className={classes.label}>
         {labels.title}
       </HvTypography>
     );
