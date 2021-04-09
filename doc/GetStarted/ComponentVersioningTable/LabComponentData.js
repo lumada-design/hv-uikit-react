@@ -9,15 +9,6 @@ const LabComponentData = [
       "https://github.com/lumada-design/hv-uikit-react/tree/v2.x/packages/lab/src/AppSwitcherPanel",
   },
   {
-    component: "Code Editor",
-    dsPattern: "Code Editor",
-    path: "Lab/CodeEditor",
-    uikitVersion3:
-      "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/CodeEditor",
-    uikitVersion2:
-      "https://github.com/lumada-design/hv-uikit-react/tree/v2.x/packages/lab/src/CodeEditor",
-  },
-  {
     component: "Form Composer",
     path: "Lab/FormComposer",
     uikitVersion3:

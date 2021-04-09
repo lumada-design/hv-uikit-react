@@ -452,6 +452,20 @@ The Switch is now a form element. Check [Form Element](#formelement) for more in
 
 - `tooltipData` renamed to `title`.
 
+### Code Editor
+
+Lab's Code Editor was promoted to core but shipped in a separate package (@hv/uikit-react-code-editor), as it requires the instalation
+of the react-monaco-editor package and specific build configurations (in webpack or equivalent).
+
+For that reason, the old version of the component was removed from the lab package to avoid the setup even when not using the Code Editor.
+
+If you are using the Code Editor, install @hv/uikit-react-code-editor and change the import statement:
+
+```diff
+-import { HvCodeEditor } from "@hv/uikit-react-lab";
++import { HvCodeEditor } from "@hv/uikit-react-code-editor";
+```
+
 ## Templates
 
 The template section has been removed, as we considered that the [Adoption project](https://github.com/lumada-design/hv-uikit-adoption) does a better job of showing how to use the UI Kit project.

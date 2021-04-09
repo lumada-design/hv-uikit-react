@@ -41,8 +41,7 @@
   "peerDependencies": {
     "@material-ui/core": "^4.11.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-monaco-editor": "^0.40.0"
+    "react-dom": "^16.13.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",

@@ -1,9 +1,6 @@
 export { default as HvAppSwitcherPanel } from "./AppSwitcherPanel";
 export * from "./AppSwitcherPanel";
 
-export { default as HvCodeEditor } from "./CodeEditor";
-export * from "./CodeEditor";
-
 export { default as HvFormComposer } from "./FormComposer";
 export * from "./FormComposer";
 
