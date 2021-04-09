@@ -23,7 +23,7 @@ export interface HvRadioProps extends StandardProps<HvBaseRadioProps, HvRadioCla
   /**
    * Properties passed on to the label element.
    */
-  labelProps: HvLabelProps;
+  labelProps?: HvLabelProps;
   /**
    * The status of the form element.
    *
