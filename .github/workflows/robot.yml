@@ -122,58 +122,9 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
           rm -rf ${{ github.workspace }}/reports
 
-  Robot-Windows:
-    name: Test Robot (Windows)
-    needs: Build-Documentation
-    runs-on: [self-hosted, Windows]
-    timeout-minutes: 200
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [ie]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Fetch Storybook
-        uses: actions/download-artifact@v1
-        with:
-          name: documentation
-          path: ${{ github.workspace }}/dist
-
-      - name: Run SELENIUM Robot
-        uses: ./.github/robot
-        with:
-          storybook-url: http://localhost:9002
-          browser: ${{ matrix.browser }}
-          excludes: |
-            bug-${{ matrix.browser }}
-            bug-${{ matrix.browser }}-webdriver
-            issue
-            issue-${{ matrix.browser }}
-            bug-infrastructure
-            bug-infrastructure-${{ matrix.browser }}
-          output-dir: ./reports
-          processes: 3
-          path: ./automation/robot/storybook/core
-
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: ${{ matrix.browser }}-reports
-          path: ${{ github.workspace }}/reports
-
-      - name: Clean Folders
-        if: always()
-        run: |
-          Remove-Item -path ${{ github.workspace }}/dist -recurse -force
-          Remove-Item -path ${{ github.workspace }}/reports -recurse -force
-
   Notify-End:
     name: Notify End
-    needs: [Robot, Robot-Windows]
+    needs: [Robot]
     if: always()
     runs-on: ubuntu-latest
 
