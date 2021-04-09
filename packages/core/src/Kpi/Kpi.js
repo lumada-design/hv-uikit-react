@@ -183,7 +183,7 @@ HvKpi.propTypes = {
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "normalText", "normalText"]),
+  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "normalText"]),
 };
 
 export default withStyles(styles, { name: "HvKpi" })(HvKpi);
