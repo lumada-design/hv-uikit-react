@@ -82,7 +82,8 @@ exports[`TimePicker should render correctly 1`] = `
       >
         <WithStyles(ForwardRef)
           className="HvTimePicker-label"
-          variant="labelText"
+          component="label"
+          variant="highlightText"
         >
           <ForwardRef
             className="HvTimePicker-label"
@@ -112,13 +113,14 @@ exports[`TimePicker should render correctly 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle",
               }
             }
-            variant="labelText"
+            component="label"
+            variant="highlightText"
           >
-            <span
-              className="HvTimePicker-label HvTypography-root"
+            <label
+              className="HvTimePicker-label HvTypography-root HvTypography-highlightText"
             >
               mockTitle
-            </span>
+            </label>
           </ForwardRef>
         </WithStyles(ForwardRef)>
         <div

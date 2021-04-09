@@ -57,7 +57,7 @@ export interface HvKpiProps
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant?: "sTitle" | "sText" | "infoText";
+  indicatorUnitTextVariant?: "sTitle" | "normalText";
 }
 
 export default function HvKpi(props: HvKpiProps): JSX.Element | null;

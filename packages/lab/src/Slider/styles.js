@@ -80,7 +80,7 @@ const styles = (theme) => ({
       maxWidth: "532px",
       height: "100%",
       padding: `${theme.hv.spacing.sm}px`,
-      ...theme.hv.typography.infoText,
+      ...theme.hv.typography.normalText,
       fontFamily: theme.hv.typography.fontFamily,
       boxShadow: "none",
     },
