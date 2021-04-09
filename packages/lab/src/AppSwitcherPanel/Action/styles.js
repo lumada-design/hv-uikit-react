@@ -1,6 +1,7 @@
 const selected = (theme) => ({
   background: theme.hv.palette.accent.acce1,
   color: theme.hv.palette.atmosphere.atmo1,
+  fontWeight: 600,
   cursor: "default",
   "& *": {
     background: theme.hv.palette.accent.acce1,

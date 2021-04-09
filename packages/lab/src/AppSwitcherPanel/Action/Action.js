@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { HvTypography } from "@hv/uikit-react-core";
 import { Info } from "@hv/uikit-react-icons";
 
@@ -53,9 +54,11 @@ export default class Action extends Component {
       return (
         <HvTypography
           component="div"
-          variant={isSelected ? "selectedText" : "normalText"}
+          variant="normalText"
           role="button"
-          className={`${classes.typography} ${isSelected ? classes.selected : ""}`}
+          className={clsx(classes.typography, {
+            [classes.selected]: isSelected,
+          })}
           tabIndex={0}
           onClick={handleOnClick}
         >
