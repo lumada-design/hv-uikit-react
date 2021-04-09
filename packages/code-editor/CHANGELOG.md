@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-code-editor@3.2.2...@hv/uikit-react-code-editor@3.2.3) (2021-04-09)
+
+
+### Bug Fixes
+
+* **code-editor:** import component not working ([8919a85](https://github.com/pentaho/hv-uikit-react/commit/8919a850912239ec64d0e65722b7759b72158ea5))
+
+
+
+
+
 ## 3.2.2 (2021-04-07)
 
 **Note:** Version bump only for package @hv/uikit-react-code-editor

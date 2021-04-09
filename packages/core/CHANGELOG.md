@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.18.1...@hv/uikit-react-core@3.19.0) (2021-04-09)
+
+
+### Bug Fixes
+
+* **basedropdown:** adding missing export to index. HVUIKIT-5738 ([b3f5e16](https://github.com/pentaho/hv-uikit-react/commit/b3f5e16bafa5740549ca7724ccd20524f1e4fac3))
+* **dropdown:** defaultExpanded wasn't working ([15172c0](https://github.com/pentaho/hv-uikit-react/commit/15172c06deb3bfdddebc2069ab2b212feae3f04d))
+* **switch:** stale type definitions.HVUIKIT-5738 ([d7ccbe9](https://github.com/pentaho/hv-uikit-react/commit/d7ccbe9194c24433020bdc8e2248e309526a604d))
+
+
+### Features
+
+* **selectors:** allow passing props to the label.HVUIKIT-5738 ([fc3dfaa](https://github.com/pentaho/hv-uikit-react/commit/fc3dfaac70aced6c5ef48659a5fe422f719feaf6))
+
+
+
+
+
 ## [3.18.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.18.0...@hv/uikit-react-core@3.18.1) (2021-04-07)
 
 **Note:** Version bump only for package @hv/uikit-react-core
