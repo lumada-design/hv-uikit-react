@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.19.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.19.0...@hv/uikit-react-core@3.19.1) (2021-04-09)
+
+
+### Bug Fixes
+
+* **selectors:** labelProps as optional. HVUIKIT-5738 ([deab74e](https://github.com/pentaho/hv-uikit-react/commit/deab74ef1b354bc1d85764043f186f48a6e3cd84))
+
+
+
+
+
 # [3.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.18.1...@hv/uikit-react-core@3.19.0) (2021-04-09)
 
 
