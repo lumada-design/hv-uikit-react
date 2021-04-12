@@ -255,7 +255,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
     if: always()
     runs-on: ubuntu-latest
 
