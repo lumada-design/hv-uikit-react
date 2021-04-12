@@ -32,6 +32,11 @@ const styles = (theme) => {
         left: 0,
       },
     },
+    sema0: {
+      "&::before": {
+        backgroundColor: theme.palette.atmo4,
+      },
+    },
     ...semantics,
     ...atmosphere,
   };

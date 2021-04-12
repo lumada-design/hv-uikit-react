@@ -98,6 +98,7 @@ ListViewCell.propTypes = {
    *  The border color of the cell. Must be one of palette semantic colors.
    */
   semantic: PropTypes.oneOf([
+    "sema0",
     "sema1",
     "sema2",
     "sema3",
