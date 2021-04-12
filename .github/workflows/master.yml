@@ -312,7 +312,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot]
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Release
