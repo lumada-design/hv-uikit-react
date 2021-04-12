@@ -5,7 +5,7 @@ import { HvTag } from "../Tag";
 export default {
   title: "Lab/Tag",
   parameters: {
-    componentSubtitle: null,
+    componentSubtitle: "This component is deprecated. Please use the one in Core.",
     usage: 'import { HvTag } from "@hv/uikit-react-core"',
 
     dsVersion: "3.3.0",
