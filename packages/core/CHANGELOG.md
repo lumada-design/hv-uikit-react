@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.19.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.19.1...@hv/uikit-react-core@3.19.2) (2021-04-13)
+
+
+### Bug Fixes
+
+* **kpi:** indicatorUnitTextVariant prop type definition ([3b2dd0a](https://github.com/pentaho/hv-uikit-react/commit/3b2dd0a9a8eb96b623f854214bc950666c4d58cc))
+* **table:** remove use of dropdownmenu's deprecated class ([01252e2](https://github.com/pentaho/hv-uikit-react/commit/01252e2972271eb6d6d94f5aa0c5bdcf610853ff))
+
+
+
+
+
 ## [3.19.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.19.0...@hv/uikit-react-core@3.19.1) (2021-04-09)
 
 

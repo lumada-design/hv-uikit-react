@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.6.4...@hv/uikit-react-lab@3.7.0) (2021-04-13)
+
+
+### Bug Fixes
+
+* **app-switcher-panel:** usage of deprecated typography ([6e0a833](https://github.com/pentaho/hv-uikit-react/commit/6e0a833076ce3397a549db2b8e2ccd55012d44a3))
+* **slider:** usage of deprecated typography ([c9323c1](https://github.com/pentaho/hv-uikit-react/commit/c9323c115ee61d18281a1673a3fb105b0fc5bf3b))
+* **time-picker:** label used deprecated typography ([d8018d2](https://github.com/pentaho/hv-uikit-react/commit/d8018d29fad5fed3ef0772515f32f9cb07088e65))
+
+
+### Features
+
+* **code-editor:** removed code editor from lab ([2cb19ed](https://github.com/pentaho/hv-uikit-react/commit/2cb19eddb8277a2e65fb1dc333e342c5b7ca4328))
+
+
+
+
+
 ## [3.6.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.6.3...@hv/uikit-react-lab@3.6.4) (2021-04-09)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
