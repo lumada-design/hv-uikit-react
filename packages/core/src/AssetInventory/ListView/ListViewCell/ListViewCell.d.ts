@@ -18,6 +18,7 @@ export interface HvListViewCellProps
    *  The border color of the cell. Must be one of palette semantic colors.
    */
   semantic?:
+    | "sema0"
     | "sema1"
     | "sema2"
     | "sema3"
