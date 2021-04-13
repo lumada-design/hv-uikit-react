@@ -17,6 +17,8 @@ import {
   HvTableRow,
 } from "../..";
 
+import KitchenSink from "./KitchenSink";
+
 import { makeData, getColumns, useToggleIndex } from "./utils";
 
 export default {
@@ -372,6 +374,18 @@ NonTableLayout.parameters = {
   docs: {
     description: {
       story: "A table with non-table elements and a responsive layout (try resizing your browser).",
+    },
+  },
+};
+
+export const KitchenSinkSample = () => {
+  return <KitchenSink />;
+};
+
+KitchenSinkSample.parameters = {
+  docs: {
+    description: {
+      story: "A table with all features.",
     },
   },
 };
