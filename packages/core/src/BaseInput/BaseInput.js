@@ -69,6 +69,7 @@ const HvBaseInput = (props) => {
         [classes.disabled]: formElementProps.disabled,
         [classes.invalid]: localInvalid,
         [classes.resizable]: multiline && resizable,
+        [classes.readOnly]: readOnly,
       })}
     >
       <Input
@@ -164,6 +165,10 @@ HvBaseInput.propTypes = {
      * Styles applied to the container of the border element.
      */
     inputBorderContainer: PropTypes.string,
+    /**
+     * Styles applied to the container of the border element, when in read only mode.
+     */
+    readOnly: PropTypes.string,
   }).isRequired,
 
   /**
