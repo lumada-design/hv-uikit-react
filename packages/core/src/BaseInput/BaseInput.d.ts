@@ -11,7 +11,8 @@ export type HvBaseInputClassKey =
   | "inputRootMultiline"
   | "input"
   | "inputResizable"
-  | "inputBorderContainer";
+  | "inputBorderContainer"
+  | "readOnly";
 
 export interface HvBaseInputProps
   extends StandardProps<InputProps, HvBaseInputClassKey, "onChange"> {

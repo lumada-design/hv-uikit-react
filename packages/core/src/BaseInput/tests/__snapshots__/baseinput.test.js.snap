@@ -21,6 +21,7 @@ exports[`Input should render correctly 1`] = `
         "inputRootFocused": "HvBaseInput-inputRootFocused",
         "inputRootMultiline": "HvBaseInput-inputRootMultiline",
         "invalid": "HvBaseInput-invalid",
+        "readOnly": "HvBaseInput-readOnly",
         "resizable": "HvBaseInput-resizable",
         "root": "HvBaseInput-root",
       }
@@ -217,6 +218,7 @@ exports[`Input should render the Input component with the multiline style 1`] = 
         "inputRootFocused": "HvBaseInput-inputRootFocused",
         "inputRootMultiline": "HvBaseInput-inputRootMultiline",
         "invalid": "HvBaseInput-invalid",
+        "readOnly": "HvBaseInput-readOnly",
         "resizable": "HvBaseInput-resizable",
         "root": "HvBaseInput-root",
       }

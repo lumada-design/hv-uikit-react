@@ -207,6 +207,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                         "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
                         "invalid": "HvBaseInput-invalid",
+                        "readOnly": "HvBaseInput-readOnly",
                         "resizable": "HvBaseInput-resizable",
                         "root": "HvBaseInput-root",
                       }

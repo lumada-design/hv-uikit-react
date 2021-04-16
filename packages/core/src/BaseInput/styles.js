@@ -39,6 +39,34 @@ const styles = (theme) => ({
   resizable: {
     width: "auto",
   },
+  readOnly: {
+    "& $inputBorderContainer": {
+      backgroundColor: "transparent",
+    },
+    "&:hover $inputBorderContainer": {
+      backgroundColor: "transparent",
+    },
+    "&:focus-within $inputBorderContainer": {
+      backgroundColor: "transparent",
+    },
+
+    // multiline
+    "& $inputRootMultiline": {
+      "& $input": {
+        border: "1px solid transparent",
+      },
+    },
+    "&:hover $inputRootMultiline": {
+      "& $input": {
+        border: "1px solid transparent",
+      },
+    },
+    "&:focus-within $inputRootMultiline": {
+      "& $input": {
+        border: "1px solid transparent",
+      },
+    },
+  },
   disabled: {
     "& $inputBorderContainer": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4,

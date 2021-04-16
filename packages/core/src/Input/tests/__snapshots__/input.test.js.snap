@@ -125,6 +125,7 @@ exports[`Input should not have the validation section 1`] = `
                   "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                   "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
                   "invalid": "HvBaseInput-invalid",
+                  "readOnly": "HvBaseInput-readOnly",
                   "resizable": "HvBaseInput-resizable",
                   "root": "HvBaseInput-root",
                 }
@@ -616,6 +617,7 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                   "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
                   "invalid": "HvBaseInput-invalid",
+                  "readOnly": "HvBaseInput-readOnly",
                   "resizable": "HvBaseInput-resizable",
                   "root": "HvBaseInput-root",
                 }
@@ -1208,6 +1210,7 @@ exports[`Input should render correctly 1`] = `
                   "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                   "inputRootMultiline": "HvBaseInput-inputRootMultiline HvInput-inputRootMultiline",
                   "invalid": "HvBaseInput-invalid",
+                  "readOnly": "HvBaseInput-readOnly",
                   "resizable": "HvBaseInput-resizable",
                   "root": "HvBaseInput-root",
                 }
