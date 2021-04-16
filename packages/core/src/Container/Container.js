@@ -21,9 +21,9 @@ const styles = (theme) => ({
 /**
  * The Container is the element responsible for creating and adding margins to the page, and making them react to the current screen size. Default maxWidth is overridden to xl.
  */
-const HvContainer = ({ maxWidth = "xl", fixed, ...others }) => {
-  return <Container maxWidth={maxWidth} fixed={fixed} {...others} />;
-};
+const HvContainer = React.forwardRef(({ maxWidth = "xl", fixed, ...others }, ref) => {
+  return <Container ref={ref} maxWidth={maxWidth} fixed={fixed} {...others} />;
+});
 
 /*
  * copied from Material-UI Container.js since we simply override the styles of the component

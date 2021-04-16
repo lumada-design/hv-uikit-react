@@ -2,10 +2,10 @@
 
 exports[`Grid should render correctly 1`] = `
 Array [
-  <WithStyles(HvGrid)
+  <WithStyles(ForwardRef)
     container={true}
   >
-    <HvGrid
+    <ForwardRef
       classes={Object {}}
       container={true}
     >
@@ -128,7 +128,7 @@ Array [
           <div
             className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
           >
-            <WithStyles(HvGrid)
+            <WithStyles(ForwardRef)
               item={true}
               lg={1}
               md={true}
@@ -136,7 +136,7 @@ Array [
               xl={1}
               xs={3}
             >
-              <HvGrid
+              <ForwardRef
                 classes={Object {}}
                 item={true}
                 lg={1}
@@ -320,9 +320,9 @@ Array [
                     </div>
                   </ForwardRef(Grid)>
                 </WithStyles(ForwardRef(Grid))>
-              </HvGrid>
-            </WithStyles(HvGrid)>
-            <WithStyles(HvGrid)
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
               item={true}
               lg={1}
               md={true}
@@ -330,7 +330,7 @@ Array [
               xl={1}
               xs={3}
             >
-              <HvGrid
+              <ForwardRef
                 classes={Object {}}
                 item={true}
                 lg={1}
@@ -514,9 +514,9 @@ Array [
                     </div>
                   </ForwardRef(Grid)>
                 </WithStyles(ForwardRef(Grid))>
-              </HvGrid>
-            </WithStyles(HvGrid)>
-            <WithStyles(HvGrid)
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
               item={true}
               lg={1}
               md={true}
@@ -524,7 +524,7 @@ Array [
               xl={1}
               xs={3}
             >
-              <HvGrid
+              <ForwardRef
                 classes={Object {}}
                 item={true}
                 lg={1}
@@ -708,9 +708,9 @@ Array [
                     </div>
                   </ForwardRef(Grid)>
                 </WithStyles(ForwardRef(Grid))>
-              </HvGrid>
-            </WithStyles(HvGrid)>
-            <WithStyles(HvGrid)
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
               item={true}
               lg={1}
               md={true}
@@ -718,7 +718,7 @@ Array [
               xl={1}
               xs={3}
             >
-              <HvGrid
+              <ForwardRef
                 classes={Object {}}
                 item={true}
                 lg={1}
@@ -902,8 +902,8 @@ Array [
                     </div>
                   </ForwardRef(Grid)>
                 </WithStyles(ForwardRef(Grid))>
-              </HvGrid>
-            </WithStyles(HvGrid)>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
             <Hidden
               smDown={true}
             >
@@ -923,9 +923,9 @@ Array [
           </div>
         </ForwardRef(Grid)>
       </WithStyles(ForwardRef(Grid))>
-    </HvGrid>
-  </WithStyles(HvGrid)>,
-  <WithStyles(HvGrid)
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     item={true}
     lg={1}
     md={true}
@@ -933,7 +933,7 @@ Array [
     xl={1}
     xs={3}
   >
-    <HvGrid
+    <ForwardRef
       classes={Object {}}
       item={true}
       lg={1}
@@ -1117,9 +1117,9 @@ Array [
           </div>
         </ForwardRef(Grid)>
       </WithStyles(ForwardRef(Grid))>
-    </HvGrid>
-  </WithStyles(HvGrid)>,
-  <WithStyles(HvGrid)
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     item={true}
     lg={1}
     md={true}
@@ -1127,7 +1127,7 @@ Array [
     xl={1}
     xs={3}
   >
-    <HvGrid
+    <ForwardRef
       classes={Object {}}
       item={true}
       lg={1}
@@ -1311,9 +1311,9 @@ Array [
           </div>
         </ForwardRef(Grid)>
       </WithStyles(ForwardRef(Grid))>
-    </HvGrid>
-  </WithStyles(HvGrid)>,
-  <WithStyles(HvGrid)
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     item={true}
     lg={1}
     md={true}
@@ -1321,7 +1321,7 @@ Array [
     xl={1}
     xs={3}
   >
-    <HvGrid
+    <ForwardRef
       classes={Object {}}
       item={true}
       lg={1}
@@ -1505,9 +1505,9 @@ Array [
           </div>
         </ForwardRef(Grid)>
       </WithStyles(ForwardRef(Grid))>
-    </HvGrid>
-  </WithStyles(HvGrid)>,
-  <WithStyles(HvGrid)
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
+  <WithStyles(ForwardRef)
     item={true}
     lg={1}
     md={true}
@@ -1515,7 +1515,7 @@ Array [
     xl={1}
     xs={3}
   >
-    <HvGrid
+    <ForwardRef
       classes={Object {}}
       item={true}
       lg={1}
@@ -1699,7 +1699,7 @@ Array [
           </div>
         </ForwardRef(Grid)>
       </WithStyles(ForwardRef(Grid))>
-    </HvGrid>
-  </WithStyles(HvGrid)>,
+    </ForwardRef>
+  </WithStyles(ForwardRef)>,
 ]
 `;

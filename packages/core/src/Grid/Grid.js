@@ -31,7 +31,7 @@ const SPACINGS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * | xl         | [1920-...[    | 30              | 12                |
  *
  */
-const HvGrid = ({ container, spacing = "auto", ...others }) => {
+const HvGrid = React.forwardRef(({ container, spacing = "auto", ...others }, ref) => {
   const width = useWidth();
   let gridSpacing = spacing;
 
@@ -43,8 +43,8 @@ const HvGrid = ({ container, spacing = "auto", ...others }) => {
     }
   }
 
-  return <Grid {...(container && { container, spacing: gridSpacing })} {...others} />;
-};
+  return <Grid ref={ref} {...(container && { container, spacing: gridSpacing })} {...others} />;
+});
 
 /*
  * copied from Material-UI Grid.js since we simply override the styles of the component
