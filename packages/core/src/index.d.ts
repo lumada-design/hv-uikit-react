@@ -95,6 +95,9 @@ export * from "./Link";
 export { default as HvList } from "./List";
 export * from "./List";
 
+export { default as HvListContainer } from "./ListContainer";
+export * from "./ListContainer";
+
 export { default as HvLoading } from "./Loading";
 export * from "./Loading";
 

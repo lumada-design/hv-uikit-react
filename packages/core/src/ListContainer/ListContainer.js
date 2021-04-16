@@ -12,7 +12,7 @@ import HvListContext from "./ListContext";
 
 /**
  * A <b>list</b> is any enumeration of a set of items.
- * The simple list is for continous <b>vertical indexes of text or icons+text</b>. The content of these lists must be simple: ideally simples fields.
+ * The simple list is for continuous <b>vertical indexes of text or icons+text</b>. The content of these lists must be simple: ideally simples fields.
  * This pattern is ideal for <b>selections</b>. It should be used inside a HvPanel.
  */
 const HvListContainer = React.forwardRef((props, externalRef) => {
