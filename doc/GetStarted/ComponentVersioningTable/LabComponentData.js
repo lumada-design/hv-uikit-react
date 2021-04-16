@@ -44,6 +44,14 @@ const LabComponentData = [
       "https://github.com/lumada-design/hv-uikit-react/tree/v2.x/packages/lab/src/Slider",
   },
   {
+    component: "Tag",
+    dsPattern: "Tag",
+    path: "Lab/Tag",
+    uikitVersion3:
+      "https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/Tag",
+    uikitVersion2: "--",
+  },
+  {
     component: "Time Picker",
     dsPattern: "Time Picker",
     path: "Lab/Time Picker",

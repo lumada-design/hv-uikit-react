@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import { Close } from "@hv/uikit-react-icons";
 
+import { useDeprecated } from "@hv/uikit-react-core";
+
 import clsx from "clsx";
 import { withStyles, makeStyles, useTheme } from "@material-ui/core";
 import styles from "./styles";
@@ -26,6 +28,7 @@ export const HvTag = (props) => {
     ...others
   } = props;
 
+  useDeprecated("Tag", "Please use the Tag component in Core");
   const classes = useStyles();
   const isDisabled = disabled || false;
   const Tagshape = shape || classes.square;
@@ -39,6 +42,7 @@ export const HvTag = (props) => {
       theme.hv.palette.accent.acce1
     );
   }
+
   /**
    * Renders the content for the tag elements.
    */

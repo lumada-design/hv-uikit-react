@@ -377,6 +377,14 @@ const CoreComponentData = [
     status: statusClassification.stable,
   },
   {
+    dsPattern: "Tag",
+    component: "Tag",
+    path: "Components/Tag",
+    uikitVersion3: "3.5.0",
+    uikitVersion2: notAvailable,
+    status: statusClassification.stable,
+  },
+  {
     dsPattern: "Text Area",
     component: "Text Area",
     path: "Forms/Text Area",
