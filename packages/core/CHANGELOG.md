@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.19.1...@hv/uikit-react-core@3.21.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **kpi:** indicatorUnitTextVariant prop type definition ([3b2dd0a](https://github.com/pentaho/hv-uikit-react/commit/3b2dd0a9a8eb96b623f854214bc950666c4d58cc))
+* **table:** remove use of dropdownmenu's deprecated class ([01252e2](https://github.com/pentaho/hv-uikit-react/commit/01252e2972271eb6d6d94f5aa0c5bdcf610853ff))
+
+
+### Features
+
+* **grid:** support forwarding ref to the root element ([ad5a788](https://github.com/pentaho/hv-uikit-react/commit/ad5a7885deed6b353bb0a71a023d2b8608860c12))
+* **input:** update input to ui specs. HVUIKIT-5638 ([0fc2cc8](https://github.com/pentaho/hv-uikit-react/commit/0fc2cc835a833acd9c260e87f5969391cf8c172f))
+* **tag:** implement the component according. HVUIKIT-4986 ([6b085eb](https://github.com/pentaho/hv-uikit-react/commit/6b085eb44f14b5dc05dda119efaa9c6eec70bab8))
+* **typescript:** export TS types for HvListContainer and its “sub-component” HvListItem ([08b3ac8](https://github.com/pentaho/hv-uikit-react/commit/08b3ac8c27e43c38c878fc890e15ac17cae2d5af))
+
+
+
+
+
 # [3.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.19.2...@hv/uikit-react-core@3.20.0) (2021-04-13)
 
 
