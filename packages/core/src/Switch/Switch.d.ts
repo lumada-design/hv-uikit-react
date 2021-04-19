@@ -3,10 +3,7 @@ import { StandardProps } from "@material-ui/core";
 import { HvLabelProps } from "../Forms/Label";
 import { HvFormStatus } from "../Forms/FormElement";
 
-export type HvSwitchClassKey =
-  | "root"
-  | "label"
-  | "error";
+export type HvSwitchClassKey = "root" | "label" | "error";
 
 export interface HvSwitchProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSwitchClassKey, "onChange"> {
