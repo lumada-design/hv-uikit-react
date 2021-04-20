@@ -23,14 +23,6 @@ export interface HvListContainerProps
    */
   interactive?: boolean;
   /**
-   * If the list represents a set of selectable items.
-   */
-  selectable?: boolean;
-  /**
-   * If the is list is selectable, indicates that the user may select more than one item from the current selectable list items.
-   */
-  multiSelect?: boolean;
-  /**
    * If `true` compact the vertical spacing between list items.
    */
   condensed?: boolean;

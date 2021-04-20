@@ -113,6 +113,9 @@ export * from "./MultiButton";
 export { default as HvPagination } from "./Pagination";
 export * from "./Pagination";
 
+export { default as HvPanel } from "./Panel";
+export * from "./Panel";
+
 export { default as HvProvider } from "./Provider";
 export * from "./Provider";
 
