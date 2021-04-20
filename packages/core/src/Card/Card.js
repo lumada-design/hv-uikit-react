@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Box, withStyles } from "@material-ui/core";
+import { Box, withStyles, deprecatedPropType } from "@material-ui/core";
 import styles from "./styles";
 
 /**
@@ -15,10 +15,11 @@ export const Card = (props) => {
     icon,
     selectable = false,
     selected = false,
-    semantic = "sema0",
+    semantic,
+    statusColor = "sema0",
     ...others
   } = props;
-
+  const barColor = semantic || statusColor;
   return (
     <Box
       aria-selected={selectable ? selected : undefined}
@@ -33,7 +34,7 @@ export const Card = (props) => {
       <div className={classes.semanticContainer}>
         <div
           className={clsx(classes.semanticBar, {
-            [classes[semantic]]: semantic,
+            [classes[barColor]]: barColor,
           })}
         />
         <div className={classes.icon}>{icon}</div>
@@ -87,8 +88,43 @@ Card.propTypes = {
   icon: PropTypes.node,
   /**
    *  The border color at the top of the card. Must be one of palette semantic colors. To set another color, the borderTop should be override.
+   *  @deprecated use status color instead
    */
-  semantic: PropTypes.oneOf([
+  semantic: deprecatedPropType(
+    PropTypes.oneOf([
+      "sema0",
+      "sema1",
+      "sema2",
+      "sema3",
+      "sema4",
+      "sema5",
+      "sema6",
+      "sema7",
+      "sema8",
+      "sema9",
+      "sema10",
+      "sema11",
+      "sema12",
+      "sema13",
+      "sema14",
+      "sema15",
+      "sema16",
+      "sema17",
+      "sema18",
+      "sema19",
+      "atmo1",
+      "atmo2",
+      "atmo3",
+      "atmo4",
+      "atmo5",
+    ]),
+    "use statusColor instead"
+  ),
+  /**
+   *  The border color at the top of the card. Must be one of palette semantic or atmosphere colors.
+   *  To set another color, the borderTop should be override.
+   */
+  statusColor: PropTypes.oneOf([
     "sema0",
     "sema1",
     "sema2",
@@ -109,6 +145,11 @@ Card.propTypes = {
     "sema17",
     "sema18",
     "sema19",
+    "atmo1",
+    "atmo2",
+    "atmo3",
+    "atmo4",
+    "atmo5",
   ]),
   /**
    * Whether the card is selectable.

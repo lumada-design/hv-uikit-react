@@ -100,7 +100,7 @@ export const Main = () => {
     return (
       <HvCard
         bgcolor="atmo1"
-        semantic={sema}
+        statusColor={sema}
         icon={<Icon semantic={sema} />}
         selectable={viewConfiguration.isSelectable}
         selected={data.checked}
@@ -356,7 +356,7 @@ export const Configurations = () => {
     return (
       <HvCard
         bgcolor="atmo1"
-        semantic={sema}
+        statusColor={sema}
         icon={<Icon semantic={sema} />}
         selectable={viewConfiguration.isSelectable}
         selected={data.checked}
@@ -639,7 +639,7 @@ export const ThreeViews = () => {
     return (
       <HvCard
         bgcolor="atmo1"
-        semantic={sema}
+        statusColor={sema}
         icon={<Icon semantic={sema} />}
         selectable={viewConfiguration.isSelectable}
         selected={data.checked}
@@ -921,7 +921,7 @@ export const ServerSidePagination = () => {
     return (
       <HvCard
         bgcolor="atmo1"
-        semantic={sema}
+        statusColor={sema}
         icon={<Icon semantic={sema} />}
         selectable={viewConfiguration.isSelectable}
         selected={data.checked}
@@ -1165,7 +1165,7 @@ export const Accessibility = () => {
     return (
       <HvCard
         bgcolor="atmo1"
-        semantic={sema}
+        statusColor={sema}
         icon={<Icon semantic={sema} />}
         selectable={viewConfiguration.isSelectable}
         selected={data.checked}

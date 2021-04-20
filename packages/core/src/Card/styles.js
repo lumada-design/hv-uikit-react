@@ -5,6 +5,10 @@ const semantics = (theme) =>
   mapValues(theme.hv.palette.semantic, (value) => ({
     backgroundColor: value,
   }));
+const atmosphere = (theme) =>
+  mapValues(theme.hv.palette.atmosphere, (value) => ({
+    backgroundColor: value,
+  }));
 
 const styles = (theme) => ({
   root: {
@@ -20,6 +24,7 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.atmo4,
   },
   ...semantics(theme),
+  ...atmosphere(theme),
   semanticContainer: {
     position: "relative",
     backgroundColor: theme.hv.palette.accent.acce0,

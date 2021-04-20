@@ -1,6 +1,6 @@
 import React from "react";
 import { StandardProps, BoxProps } from "@material-ui/core";
-import { HvSemanticColorKeys } from "..";
+import { HvSemanticColorKeys, HvAtmosphereColorKeys } from "..";
 
 export type HvCardClassKey =
   | HvSemanticColorKeys
@@ -19,8 +19,20 @@ export interface HvCardProps extends StandardProps<BoxProps, HvCardClassKey> {
   icon?: React.ReactNode;
   /**
    *  The border color at the top of the card. Must be one of palette semantic colors. To set another color, the borderTop should be override.
+   *  @deprecated use status color instead 
    */
-  semantic?: "sema0" | HvSemanticColorKeys;
+  semantic?: 
+  | "sema0" 
+  | HvSemanticColorKeys 
+  | HvAtmosphereColorKeys;
+  /**
+   *  The border color at the top of the card. Must be one of palette semantic or atmosphere colors.
+   *  To set another color, the borderTop should be override.
+   */
+   statusColor?: 
+   | "sema0" 
+   | HvSemanticColorKeys 
+   | HvAtmosphereColorKeys;
   /**
    * Whether the card is selectable.
    */

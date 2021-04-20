@@ -102,7 +102,7 @@ export const AllComponents = () => {
       style={{ width: 360 }}
       bgcolor="atmo1"
       icon={<Level3Bad semantic="sema4" />}
-      semantic="sema4"
+      statusColor="sema4"
       selected={checked}
       selectable
       onClick={(event) => console.log(`my value is ${event.target.value}`)}
@@ -314,21 +314,21 @@ export const KPICard = () => {
   return (
     <Grid container>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <HvCard className={classes.card} semantic="sema2" selectable selected={checked === 1}>
+        <HvCard className={classes.card} statusColor="sema2" selectable selected={checked === 1}>
           <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
           <CardContent value="85" icon={<Level1 semantic="sema2" />} />
           <CardFooter n={1} />
         </HvCard>
       </Grid>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <HvCard className={classes.card} semantic="sema3" selectable selected={checked === 2}>
+        <HvCard className={classes.card} statusColor="sema3" selectable selected={checked === 2}>
           <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
           <CardContent value="45" icon={<Level2Average semantic="sema3" />} />
           <CardFooter n={2} />
         </HvCard>
       </Grid>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <HvCard className={classes.card} semantic="sema4" selectable selected={checked === 3}>
+        <HvCard className={classes.card} statusColor="sema4" selectable selected={checked === 3}>
           <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
           <CardContent value="19" icon={<Level3Bad semantic="sema4" />} />
           <CardFooter n={3} />
@@ -469,7 +469,7 @@ export const SelectableNoFooter = () => {
       aria-pressed={selected}
       aria-selected={undefined}
       onClick={() => setSelected(!selected)}
-      semantic="sema4"
+      statusColor="sema4"
     >
       <HvCardHeader title="Asset Avatar L90" subheader="Compressor" />
       <SingleContent />
