@@ -1,7 +1,7 @@
 import { StandardProps } from "@material-ui/core";
 import { ColumnInstance } from "react-table";
 
-export type HvTableCellClassKey =
+export type HvTableHeaderClassKey =
   | "root"
   | "head"
   | "body"
@@ -13,8 +13,8 @@ export type HvTableCellClassKey =
   | "stickyColumnMostLeft"
   | "stickyColumnLeastRight";
 
-export interface HvTableCellProps
-  extends StandardProps<React.HTMLAttributes<HTMLTableCellElement>, HvTableCellClassKey> {
+export interface HvTableHeaderProps
+  extends StandardProps<React.HTMLAttributes<HTMLTableCellElement>, HvTableHeaderClassKey> {
   /**
    * The component used for the root node. Either a string to use a HTML element or a component.
    * Defaults to th.
@@ -75,4 +75,4 @@ export interface HvTableCellProps
   rtCol: ColumnInstance;
 }
 
-export default function HvTableCell(props: HvTableCellProps): JSX.Element | null;
+export default function HvTableHeader(props: HvTableHeaderProps): JSX.Element | null;

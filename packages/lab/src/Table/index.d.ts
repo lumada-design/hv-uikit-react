@@ -16,6 +16,9 @@ export * from "./TableContainer";
 export { default as HvTableHead } from "./TableHead";
 export * from "./TableHead";
 
+export { default as HvTableHeader } from "./TableHeader";
+export * from "./TableHeader";
+
 export { default as HvTablePagination } from "./TablePagination";
 export * from "./TablePagination";
 
