@@ -71,7 +71,7 @@ const HvGlobalActions = (props) => {
             </HvTypography>
           )}
         </div>
-        <div className={classes.actions}>{children}</div>
+        {children && <div className={classes.actions}>{children}</div>}
       </div>
     </div>
   );
@@ -131,7 +131,7 @@ HvGlobalActions.propTypes = {
   /**
    * Action Buttons passed into the Component.
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /**
    * Denotes if this is a global or section component.
    */
