@@ -10,8 +10,6 @@ const styles = (theme) => ({
       height: 72,
       top: 0,
       display: "flex",
-      background: theme.palette.atmo2,
-      opacity: "75%",
     },
   },
   positionSticky: {
@@ -34,6 +32,11 @@ const styles = (theme) => ({
   },
   global: {
     zIndex: theme.zIndex.appBar - 2,
+    "&:before": {
+      content: "''",
+      background: theme.palette.atmo2,
+      opacity: "75%",
+    },
   },
   wrapper: {
     top: 0,
@@ -42,7 +45,6 @@ const styles = (theme) => ({
     position: "absolute",
     height: 52,
     background: theme.hv.palette.atmosphere.atmo1,
-    marginTop: theme.hv.spacing.xs,
     padding: theme.hvSpacing("xs", "xs", "xs", 0),
     display: "flex",
     justifyContent: "space-between",
@@ -50,6 +52,7 @@ const styles = (theme) => ({
   globalWrapperComplement: {
     width: "100%",
     padding: theme.hv.spacing.xs,
+    marginTop: theme.hv.spacing.xs,
   },
   content: {
     width: "100%",
