@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.21.0...@hv/uikit-react-core@3.22.0) (2021-04-21)
+
+
+### Features
+
+* **typescript:** export HvPanel and review HvListContainer props ([483fa16](https://github.com/pentaho/hv-uikit-react/commit/483fa16399fbf26d22b7015cdfd239f055321c20))
+
+
+
+
+
 # [3.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.19.1...@hv/uikit-react-core@3.21.0) (2021-04-19)
 
 
