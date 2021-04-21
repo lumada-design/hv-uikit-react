@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
-import { HvSwitch, HvBaseSwitch } from "../..";
+import { HvSwitch, HvBaseSwitch, HvLabel, HvInfoMessage } from "../..";
 import Typography from "../../Typography";
 import Button from "../../Button";
 
@@ -130,4 +130,81 @@ export const Controlled = () => {
       <StateString state={state} />
     </>
   );
+};
+
+export const WithLabels = () => {
+  const useStyles = makeStyles((theme) => ({
+    controlContainer: {
+      width: "100%",
+      maxWidth: 400,
+    },
+
+    labelContainer: {
+      display: "flex",
+      alignItems: "flex-start",
+    },
+    label: {
+      paddingBottom: "6px",
+    },
+
+    switchContainer: {
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+
+      "& > *": {
+        marginLeft: theme.hv.spacing.xs,
+      },
+      "& > *:first-child": {
+        marginLeft: 0,
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
+  const [deactivatedSwitch, setActivatedSwitch] = useState(false);
+  const [state, setState] = useState(false);
+
+  const SwitchLabel = ({ label }) => {
+    const variant = deactivatedSwitch ? "placeholderText" : "normalText";
+    const clickCallback = deactivatedSwitch ? undefined : () => setState(!state);
+    const style = deactivatedSwitch ? undefined : { cursor: "pointer" };
+    return (
+      <Typography aria-hidden="true" variant={variant} style={style} onClick={clickCallback}>
+        {label}
+      </Typography>
+    );
+  };
+
+  return (
+    <div className={classes.controlContainer}>
+      <div className={classes.labelContainer}>
+        <HvLabel label="Toggle switch" htmlFor="engine-control-input" className={classes.label} />
+        <HvInfoMessage id="engine-control-description">
+          {deactivatedSwitch ? "Switch is inactive" : "Switch is active"}
+        </HvInfoMessage>
+      </div>
+      <div className={classes.switchContainer}>
+        <Button onClick={() => setActivatedSwitch((prev) => !prev)}>Toggle</Button>
+
+        <SwitchLabel label="Off" />
+        <HvSwitch
+          id="engine-control"
+          disabled={deactivatedSwitch}
+          checked={state}
+          aria-label="Engine Control"
+          onChange={(_evt, newChecked) => setState(newChecked)}
+        />
+        <SwitchLabel label="On" />
+      </div>
+    </div>
+  );
+};
+
+WithLabels.parameters = {
+  docs: {
+    description:
+      "Sample showing usage of auxiliary labels to denote switch state. The labels can also be clicked to trigger the switch",
+  },
 };

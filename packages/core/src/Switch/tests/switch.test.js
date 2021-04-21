@@ -1,32 +1,69 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
 
-import { HvProvider, HvSwitch } from "../..";
-import { Main } from "../stories/Switch.stories";
+import userEvent from "@testing-library/user-event";
 
-describe("Switch withStyles", () => {
-  let wrapper;
+import { render } from "testing-utils";
 
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
-        <Main />
-      </HvProvider>
-    );
+import { Main, Disabled } from "../stories/Switch.stories";
+
+describe("<Switch />", () => {
+  describe("Basic functionality", () => {
+    it("should match snapshot", () => {
+      const { container } = render(<Main />);
+      expect(container).toBeDefined();
+    });
+
+    it("correctly render the switches", () => {
+      const { getByLabelText } = render(<Main />);
+      const switch1 = getByLabelText("Engine 1");
+      const switch2 = getByLabelText("Engine 2");
+      expect(switch1).toBeInTheDocument();
+      expect(switch1.checked).toBe(false);
+
+      expect(switch2).toBeInTheDocument();
+      expect(switch2.checked).toBe(true);
+    });
+
+    it("changes state when clicked", () => {
+      const { getByLabelText } = render(<Main />);
+
+      const switchComponent = getByLabelText("Engine 1");
+
+      expect(switchComponent).toBeInTheDocument();
+      expect(switchComponent.checked).toBe(false);
+      userEvent.click(switchComponent);
+      expect(switchComponent.checked).toBe(true);
+    });
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
+  describe("Disabled switch", () => {
+    it("should match snapshot", () => {
+      const { container } = render(<Disabled />);
+      expect(container).toBeDefined();
+    });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(HvSwitch)).toMatchSnapshot();
-  });
+    it("correctly render the switches", () => {
+      const { getByLabelText } = render(<Disabled />);
+      const switch1 = getByLabelText("Engine 1");
+      const switch2 = getByLabelText("Engine 2");
+      expect(switch1).toBeInTheDocument();
+      expect(switch1.checked).toBe(false);
 
-  it("should render the Switch components", () => {
-    const buttonComponent = wrapper.find(HvSwitch);
-    expect(buttonComponent.length).toBe(2);
+      expect(switch2).toBeInTheDocument();
+      expect(switch2.checked).toBe(true);
+    });
+
+    it("changes state when clicked", () => {
+      const { getByLabelText } = render(<Disabled />);
+
+      const switchComponent = getByLabelText("Engine 1");
+
+      expect(switchComponent).toBeInTheDocument();
+      expect(switchComponent.checked).toBe(false);
+      userEvent.click(switchComponent);
+      expect(switchComponent.checked).toBe(false);
+    });
   });
 });
