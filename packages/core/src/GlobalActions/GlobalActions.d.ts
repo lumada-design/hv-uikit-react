@@ -18,7 +18,7 @@ export interface HvGlobalActionsProps
   /**
    * Action Buttons passed into the Component.
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * Denotes if this is a global or section component.
    */

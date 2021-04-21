@@ -233,3 +233,5 @@ SectionGlobalActions.parameters = {
     description: { story: "Section Global Actions." },
   },
 };
+
+export const SampleWithNoChildren = () => <HvGlobalActions title="Detail Page Title" />;
