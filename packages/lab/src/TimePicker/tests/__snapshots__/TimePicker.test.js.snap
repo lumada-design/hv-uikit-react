@@ -1,184 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TimePicker should render correctly 1`] = `
-<WithStyles(HvTimePicker)
-  hours={10}
-  labels={
-    Object {
-      "title": "mockTitle",
-    }
-  }
-  minutes={20}
-  onChange={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          "mockGetTimeWithFormat24",
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  period="PM"
-  seconds={30}
->
-  <HvTimePicker
-    classes={
-      Object {
-        "icon": "HvTimePicker-icon",
-        "input": "HvTimePicker-input",
-        "inputContainer": "HvTimePicker-inputContainer",
-        "inputPopperClosed": "HvTimePicker-inputPopperClosed",
-        "inputPopperOpenedAbove": "HvTimePicker-inputPopperOpenedAbove",
-        "inputPopperOpenedBelow": "HvTimePicker-inputPopperOpenedBelow",
-        "label": "HvTimePicker-label",
-        "periodContainer": "HvTimePicker-periodContainer",
-        "popper": "HvTimePicker-popper",
-        "popperAbove": "HvTimePicker-popperAbove",
-        "popperBelow": "HvTimePicker-popperBelow",
-        "separator": "HvTimePicker-separator",
-        "timePickerContainer": "HvTimePicker-timePickerContainer",
-        "timePopperContainer": "HvTimePicker-timePopperContainer",
-      }
-    }
-    hours={10}
-    labels={
-      Object {
-        "title": "mockTitle",
-      }
-    }
-    locale="en"
-    minutes={20}
-    onChange={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            "mockGetTimeWithFormat24",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    period="PM"
-    seconds={30}
+exports[`Timepicker snapshot tests Main 1`] = `
+<div>
+  <div
+    class="HvFormElement-root HvTimePicker-formElementRoot"
+    id="hvtimepicker1-timepicker"
+    locale="en-US"
   >
-    <ClickAwayListener
-      onClickAway={[Function]}
+    <div
+      class="HvTimePicker-labelContainer"
+    >
+      <label
+        class="HvTimePicker-label HvLabel-root HvTypography-root HvTypography-highlightText"
+        for="hvtimepicker1-input"
+        id="hvtimepicker1-label"
+      >
+        Time
+      </label>
+    </div>
+    <div
+      class="HvBaseDropdown-root"
     >
       <div
-        className="HvTimePicker-timePickerContainer"
-        onClick={[Function]}
-        onTouchEnd={[Function]}
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="HvBaseDropdown-anchor"
+        role="combobox"
+        tabindex="-1"
       >
-        <WithStyles(ForwardRef)
-          className="HvTimePicker-label"
-          component="label"
-          variant="highlightText"
-        >
-          <ForwardRef
-            className="HvTimePicker-label"
-            classes={
-              Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
-              }
-            }
-            component="label"
-            variant="highlightText"
-          >
-            <label
-              className="HvTimePicker-label HvTypography-root HvTypography-highlightText"
-            >
-              mockTitle
-            </label>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
         <div
-          className="HvTimePicker-inputContainer HvTimePicker-inputPopperClosed"
+          class="HvBaseDropdown-header"
+          role="textbox"
+          tabindex="0"
         >
-          <input
-            className="HvTimePicker-input"
-            readOnly={true}
-            type="text"
-            value="mockGetFormattedTime"
-          />
-          <Time
-            className="HvTimePicker-icon"
-            onClick={[Function]}
+          <div
+            class="HvBaseDropdown-selection"
           >
-            <HvIconBase
-              className="HvTimePicker-icon"
-              iconSize="S"
-              name="Time"
-              onClick={[Function]}
+            <p
+              class="HvBaseDropdown-placeholder HvTimePicker-dropdownPlaceholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
             >
-              <div
-                className="HvTimePicker-icon HvIconBase-root HvIconBase-s"
-                name="Time"
-                onClick={[Function]}
-              >
-                <svg
-                  focusable={false}
-                  height={16}
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    className="color0"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8zm2.646-4.646L7.5 8.207V3h1v4.793l2.854 2.854z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </HvIconBase>
-          </Time>
+              02:35:45 AM
+            </p>
+          </div>
+          <div
+            class="HvTimePicker-iconBaseRoot HvIconBase-root HvIconBase-s"
+            name="Time"
+          >
+            <svg
+              focusable="false"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="color0"
+                d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8zm2.646-4.646L7.5 8.207V3h1v4.793l2.854 2.854z"
+                fill="#414141"
+              />
+            </svg>
+          </div>
         </div>
-        <ForwardRef(Popper)
-          anchorEl={null}
-          className="HvTimePicker-popper HvTimePicker-popperBelow"
-          disablePortal={true}
-          open={false}
-          placement="bottom-start"
-          popperOptions={
-            Object {
-              "onCreate": [Function],
-              "onUpdate": [Function],
-            }
-          }
-        />
       </div>
-    </ClickAwayListener>
-  </HvTimePicker>
-</WithStyles(HvTimePicker)>
+    </div>
+  </div>
+</div>
 `;

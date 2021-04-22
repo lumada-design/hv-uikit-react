@@ -125,13 +125,14 @@ class UnitTimePicker extends React.Component {
 
     return (
       <div className={classes.unitTimeContainer}>
-        <AddTimeIcon className={classes.addIcon} onClick={this.handleAddTime} />
+        <AddTimeIcon onClick={this.handleAddTime} />
         <HvInput
           disableClear
           className={classes.unitTime}
           classes={{
             input: classes.unitTimeInput,
             root: classes.inputContainer,
+            inputBorderContainer: classes.inputBorderContainer,
             inputRoot: clsx(classes.unitTimeInputRoot, {
               [classes.unitTimeInputRootInvalid]: !isValid,
             }),

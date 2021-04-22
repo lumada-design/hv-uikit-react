@@ -1,72 +1,95 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
-import { HvTypography } from "@hv/uikit-react-core";
+
+import {
+  HvFormElement,
+  HvBaseDropdown,
+  HvLabel,
+  HvWarningText,
+  HvInfoMessage,
+  setId,
+  useUniqueId,
+  useControlled,
+  useLocale,
+} from "@hv/uikit-react-core";
 import { Time as TimeIcon } from "@hv/uikit-react-icons";
 import UnitTimePicker from "./UnitTimePicker";
 import { TimePickerUnits, TimeFormat } from "./enums";
 import { getPeriodForDate } from "./timePickerUtils";
 import { getFormattedTime, getTimeFormatForLocale } from "./timePickerFormatter";
 import { getHoursForTimeFormat, getTimeWithFormat24 } from "./timePickerConverter";
+
 import PeriodPicker from "./PeriodPicker";
 import styles from "./styles";
 
 /**
- * A TimePicker component with a popup used to choose the time, following specifications provided by Design System. Still in development.
+ * A TimePicker component used to choose the time, following specifications provided by Design System. Still in development.
  */
-class HvTimePicker extends React.Component {
-  constructor(props) {
-    super(props);
 
-    const { onChange, hours, minutes, seconds, period } = this.props;
-    const timeFormat = this.getTimeFormat();
-    const selectedTime = {
+const HvTimePicker = ({
+  classes,
+  className,
+  id,
+  name,
+  required = false,
+  disabled = false,
+  label,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
+  description,
+  "aria-describedby": ariaDescribedBy,
+  status,
+  statusMessage,
+  timeFormat: chosenTimeFormat,
+  locale: localeProp,
+  onChange,
+  hours = new Date().getHours(),
+  minutes = new Date().getMinutes(),
+  seconds = 0,
+  period: chosenTimePeriod,
+  disablePortal = true,
+  escapeWithReference = true,
+  ...others
+}) => {
+  const localeFromProvider = useLocale();
+
+  const locale = localeProp || localeFromProvider;
+
+  const timeFormat = chosenTimeFormat || getTimeFormatForLocale(locale);
+  const period = timeFormat === TimeFormat.H24 ? undefined : chosenTimePeriod || getPeriodForDate();
+
+  const [selectedTime, setSelectedTime] = useState("");
+
+  useEffect(() => {
+    setSelectedTime({
       hours: getHoursForTimeFormat(hours, timeFormat),
       minutes,
       seconds,
-      period: timeFormat === TimeFormat.H24 ? undefined : period,
-    };
+      period,
+    });
+  }, [hours, minutes, seconds, period, timeFormat]);
 
-    this.state = {
-      timePopperOpen: false,
-      timePopperAnchor: null,
-      timePopperPlacement: "bottom-start",
-      timeFormat,
-      selectedTime,
-    };
+  const [validationMessage] = useControlled(statusMessage, "Required");
+  const [validationState, setValidationState] = useControlled(status, "standBy");
 
-    onChange(getTimeWithFormat24(selectedTime, timeFormat));
-  }
-
-  /**
-   * Handles the event of clicking away from the Popper.
-   *
-   * @memberof HvTimePicker
-   */
-  handleTimePopperClickAway = () => {
-    this.cancelTimeSelection();
+  const handleTimeChange = (updatedTimeObject) => {
+    const selectedTimeIn24Format = getTimeWithFormat24(updatedTimeObject, timeFormat);
+    setSelectedTime(updatedTimeObject);
+    onChange?.(selectedTimeIn24Format);
   };
 
-  /**
-   * Handles the click on the Time icon inside the input.
-   *
-   * @param {Object} event - on click event on the icon
-   * @memberof HvTimePicker
-   */
-  handleTimeIconClick = (event) => {
-    const { currentTarget } = event;
-    const { timePopperOpen } = this.state;
-    this.setTimePopperState(currentTarget.parentElement, !timePopperOpen);
-  };
+  const elementId = useUniqueId(id, "hvtimepicker");
 
-  /**
-   * Cancels the time selection and closes the Time popper.
-   *
-   * @memberof HvTimePicker
-   */
-  cancelTimeSelection = () => {
-    this.setTimePopperState(null, false);
+  const validateInput = (timeChangeState) => {
+    setValidationState(() => {
+      // this will only run if status is uncontrolled
+      if (required && timeChangeState) {
+        return "invalid";
+      }
+      return "valid";
+    });
   };
 
   /**
@@ -74,13 +97,17 @@ class HvTimePicker extends React.Component {
    * @param {Number} hours - selected hours
    * @memberof HvTimePicker
    */
-  handleHoursChange = (hours) => {
-    const { selectedTime } = this.state;
+  const handleHoursChange = (updatedHours) => {
     const newSelectedTime = {
       ...selectedTime,
-      hours,
+      hours: updatedHours,
     };
-    this.onSelectedTimeChange(newSelectedTime);
+
+    const hourInputState =
+      (timeFormat === 24 && updatedHours <= 24) || (timeFormat === 12 && updatedHours <= 12);
+
+    validateInput(hourInputState);
+    handleTimeChange(newSelectedTime);
   };
 
   /**
@@ -88,13 +115,16 @@ class HvTimePicker extends React.Component {
    * @param {Number} minutes - selected minutes
    * @memberof HvTimePicker
    */
-  handleMinutesChange = (minutes) => {
-    const { selectedTime } = this.state;
+  const handleMinutesChange = (updatedMinutes) => {
     const newSelectedTime = {
       ...selectedTime,
-      minutes,
+      minutes: updatedMinutes,
     };
-    this.onSelectedTimeChange(newSelectedTime);
+
+    const minutesInputState = updatedMinutes >= 0 || updatedMinutes <= 59;
+
+    validateInput(minutesInputState);
+    handleTimeChange(newSelectedTime);
   };
 
   /**
@@ -102,13 +132,20 @@ class HvTimePicker extends React.Component {
    * @param {Number} seconds - selected seconds
    * @memberof HvTimePicker
    */
-  handleSecondsChange = (seconds) => {
-    const { selectedTime } = this.state;
+  const handleSecondsChange = (updatedSeconds) => {
     const newSelectedTime = {
       ...selectedTime,
-      seconds,
+      seconds: updatedSeconds,
     };
-    this.onSelectedTimeChange(newSelectedTime);
+
+    const secondsInputState = updatedSeconds >= 0 || updatedSeconds <= 59;
+
+    validateInput(secondsInputState);
+    handleTimeChange(newSelectedTime);
+  };
+
+  const setFocusToContent = (containerRef) => {
+    containerRef?.getElementsByTagName("input")[0]?.focus();
   };
 
   /**
@@ -116,180 +153,18 @@ class HvTimePicker extends React.Component {
    * @param {String} period - selected period
    * @memberof HvTimePicker
    */
-  handleChangePeriod = (period) => {
-    const { selectedTime } = this.state;
+  const handleChangePeriod = (updatedPeriod) => {
     const newSelectedTime = {
       ...selectedTime,
-      period,
+      period: updatedPeriod,
     };
-    this.onSelectedTimeChange(newSelectedTime);
+    handleTimeChange(newSelectedTime);
   };
 
-  /**
-   * Changes the popper open state according to the received flag.
-   *
-   * @param {element} anchor - Anchor element to append the popper
-   * @param {boolean} open - Opens / closes the popper according to this flag.
-   * @memberof HvTimePicker
-   */
-  setTimePopperState = (anchor, open) => {
-    this.setState({
-      timePopperAnchor: anchor,
-      timePopperOpen: open,
-    });
-  };
-
-  /**
-   * Changes the popper placement in the state
-   *
-   * @param {String} placement - Popper placement
-   * @memberof HvTimePicker
-   */
-  setTimePopperPlacement = (placement) => {
-    const { timePopperPlacement } = this.state;
-    if (timePopperPlacement !== placement) {
-      this.setState({
-        timePopperPlacement: placement,
-      });
-    }
-  };
-
-  /**
-   * Changes the selected time on the component state
-   * Also calls the onChange callback
-   * @param {Object} selectedTime - time object with the selected values for hours, minutes, seconds and period
-   */
-  onSelectedTimeChange = (selectedTime) => {
-    const { onChange } = this.props;
-    const { timeFormat } = this.state;
-    this.setState({
-      selectedTime,
-    });
-    const selectedTimeIn24Format = getTimeWithFormat24(selectedTime, timeFormat);
-    onChange(selectedTimeIn24Format);
-  };
-
-  /**
-   * Returns the appropriate time format (12 or 24) depending on the passed props(timeFormat and locale)
-   * @memberof HvTimePicker
-   */
-  getTimeFormat = () => {
-    const { timeFormat, locale } = this.props;
-    if (timeFormat) {
-      return timeFormat;
-    }
-    return getTimeFormatForLocale(locale);
-  };
-
-  /**
-   * Returns true if the popper is below the input and false otherwise
-   * @memberof HvTimePicker
-   */
-  isPopperBelowParent = () => {
-    const { timePopperPlacement } = this.state;
-    return timePopperPlacement.includes("bottom");
-  };
-
-  /**
-   * Renderers
-   */
-
-  /**
-   * Renders the Label element.
-   *
-   * @memberof HvTimePicker
-   */
-  renderLabel = () => {
-    const { classes, labels } = this.props;
-    return (
-      <HvTypography component="label" variant="highlightText" className={classes.label}>
-        {labels.title}
-      </HvTypography>
-    );
-  };
-
-  /**
-   * Renders the input.
-   *
-   * @memberof HvTimePicker
-   */
-  renderInput = () => {
-    const { classes, labels } = this.props;
-    const { selectedTime, timePopperOpen } = this.state;
-    const isPopperBelow = this.isPopperBelowParent();
-    return (
-      <>
-        {labels && labels.title && this.renderLabel()}
-        <div
-          className={clsx(classes.inputContainer, {
-            [classes.inputPopperOpenedBelow]: timePopperOpen && isPopperBelow,
-            [classes.inputPopperOpenedAbove]: timePopperOpen && !isPopperBelow,
-            [classes.inputPopperClosed]: !timePopperOpen,
-          })}
-        >
-          <input
-            ref={(element) => {
-              this.inputElement = element;
-            }}
-            className={classes.input}
-            value={getFormattedTime(selectedTime)}
-            placeholder={labels.placeholder}
-            type="text"
-            readOnly
-          />
-          <TimeIcon className={classes.icon} onClick={this.handleTimeIconClick} />
-        </div>
-      </>
-    );
-  };
-
-  /**
-   * Renders the Popper to choose the time
-   *
-   * @memberof HvTimePicker
-   */
-  renderPopper = () => {
-    const { classes } = this.props;
-    const { timePopperOpen, timePopperAnchor } = this.state;
-    const isPopperBelow = this.isPopperBelowParent();
-
-    return (
-      <Popper
-        className={clsx(classes.popper, {
-          [classes.popperBelow]: isPopperBelow,
-          [classes.popperAbove]: !isPopperBelow,
-        })}
-        open={timePopperOpen}
-        anchorEl={timePopperAnchor}
-        placement="bottom-start"
-        disablePortal
-        popperOptions={{
-          onCreate: (data) => {
-            this.setTimePopperPlacement(data.placement);
-          },
-          onUpdate: (data) => {
-            this.setTimePopperPlacement(data.placement);
-          },
-        }}
-      >
-        {this.renderTimePopperContent()}
-      </Popper>
-    );
-  };
-
-  /**
-   * Renders the time popper content for time selection.
-   *
-   * @memberof HvTimePicker
-   */
-  renderTimePopperContent = () => {
-    const { classes } = this.props;
-    const { selectedTime, timeFormat } = this.state;
-
+  const RenderTimePickerContent = () => {
     const separator = <span className={classes.separator}>:</span>;
-
     return (
-      <div className={classes.timePopperContainer}>
+      <div className={classes.timePopperContainer} role="tooltip">
         <UnitTimePicker
           unit={
             timeFormat === TimeFormat.H24
@@ -297,74 +172,247 @@ class HvTimePicker extends React.Component {
               : TimePickerUnits.HOUR_12.type
           }
           unitValue={selectedTime.hours}
-          onChangeUnitTimeValue={this.handleHoursChange}
+          onChangeUnitTimeValue={handleHoursChange}
         />
         {separator}
         <UnitTimePicker
           unit={TimePickerUnits.MINUTE.type}
           unitValue={selectedTime.minutes}
-          onChangeUnitTimeValue={this.handleMinutesChange}
+          onChangeUnitTimeValue={handleMinutesChange}
         />
         {separator}
         <UnitTimePicker
           unit={TimePickerUnits.SECOND.type}
           unitValue={selectedTime.seconds}
-          onChangeUnitTimeValue={this.handleSecondsChange}
+          onChangeUnitTimeValue={handleSecondsChange}
         />
         {timeFormat === TimeFormat.H12 && (
           <div className={classes.periodContainer}>
-            <PeriodPicker onChangePeriod={this.handleChangePeriod} period={selectedTime.period} />
+            <PeriodPicker onChangePeriod={handleChangePeriod} period={selectedTime.period} />
           </div>
         )}
       </div>
     );
   };
 
-  /**
-   * Renders the TimePicker component.
-   *
-   * @returns
-   * @memberof HvTimePicker
-   */
-  render() {
-    const { classes } = this.props;
+  const hasLabels = label != null;
+  const hasDescription = description != null;
 
-    return (
-      <ClickAwayListener onClickAway={this.handleTimePopperClickAway}>
-        <div className={classes.timePickerContainer}>
-          {this.renderInput()}
-          {this.renderPopper()}
+  // error message area will only be needed if the status is being controlled
+  // or if required is true
+  const canShowError = status !== undefined || required;
+
+  return (
+    <HvFormElement
+      id={setId(elementId, "timepicker")}
+      name={name}
+      locale={locale}
+      required={required}
+      disabled={disabled}
+      status={validationState}
+      classes={{
+        root: classes.formElementRoot,
+      }}
+      className={clsx(className, classes.root)}
+      {...others}
+    >
+      {(hasLabels || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabels && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+              className={classes.label}
+            />
+          )}
+          {hasDescription && (
+            <HvInfoMessage id={setId(elementId, "description")} className={classes.description}>
+              {description}
+            </HvInfoMessage>
+          )}
         </div>
-      </ClickAwayListener>
-    );
-  }
-}
+      )}
+      <HvBaseDropdown
+        role="combobox"
+        placeholder={getFormattedTime(selectedTime)}
+        classes={{
+          placeholder: classes.dropdownPlaceholder,
+        }}
+        variableWidth
+        placement="right"
+        adornment={<TimeIcon className={classes.iconBaseRoot} />}
+        onContainerCreation={setFocusToContent}
+        aria-haspopup="dialog"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-invalid={validationState === "invalid" ? true : undefined}
+        aria-errormessage={validationState === "invalid" ? setId(elementId, "error") : undefined}
+        aria-describedby={
+          [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
+          undefined
+        }
+        disablePortal={disablePortal}
+        disabled={disabled}
+        popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
+      >
+        <RenderTimePickerContent />
+      </HvBaseDropdown>
+      {canShowError && (
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
+          {validationMessage}
+        </HvWarningText>
+      )}
+    </HvFormElement>
+  );
+};
 
 HvTimePicker.propTypes = {
   /**
-   * An Object containing the various text associated with the time picker.
+   * A Jss Object used to override or extend the styles applied to the input/popper
    */
-  labels: PropTypes.shape({
+  classes: PropTypes.shape({
     /**
-     * Time picker label (appears above the input)
+     * Styles applied to the root element.
      */
-    title: PropTypes.string,
+    root: PropTypes.string,
     /**
-     * Time picker placeholder (appears in the input)
+     * Styles applied to the input.
      */
-    placeholder: PropTypes.string,
-  }),
+    input: PropTypes.string,
+    /**
+     * Styles applied to the label.
+     */
+    label: PropTypes.string,
+    /**
+     * Styles applied to the timePopperContainer.
+     */
+    timePopperContainer: PropTypes.string,
+    /**
+     * Styles applied to the separator.
+     */
+    separator: PropTypes.string,
+    /**
+     * Styles applied to the period container.
+     */
+    periodContainer: PropTypes.string,
+    /**
+     * Styles applied to the form element.
+     */
+    formElementRoot: PropTypes.string,
+    /**
+     * Styles applied to the dropdown placeholder.
+     */
+    dropdownPlaceholder: PropTypes.string,
+    /**
+     * Styles applied to the icon base.
+     */
+    iconBaseRoot: PropTypes.string,
+    /**
+     * Styles applied to the error area.
+     */
+    error: PropTypes.string,
+    /**
+     * Styles applied to the container of the labels elements.
+     */
+    labelContainer: PropTypes.string,
+    /**
+     * Styles applied to the icon information text.
+     */
+    description: PropTypes.string,
+  }).isRequired,
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+
+  /**
+   * Id to be applied to the form element root node.
+   */
+  id: PropTypes.string,
+
+  /**
+   * The form element name.
+   */
+  name: PropTypes.string,
+
+  /**
+   * Indicates that user input is required on the form element.
+   */
+  required: PropTypes.bool,
+
+  /**
+   * Indicates that the form element is disabled.
+   */
+  disabled: PropTypes.bool,
+
+  /**
+   * The label of the form element.
+   *
+   * The form element must be labeled for accessibility reasons.
+   * If not provided, an aria-label or aria-labelledby must be provided instead.
+   */
+  label: PropTypes.string,
+
+  /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+
+  /**
+   * @ignore
+   */
+  "aria-labelledby": PropTypes.string,
+
+  /**
+   * Provide additional descriptive text for the form element.
+   */
+  description: PropTypes.node,
+
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
+
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to the state.
+   */
+  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  /**
+   * The error message to show when `status` is "invalid". Defaults to "Required".
+   */
+  statusMessage: PropTypes.node,
+
   /**
    * If the time should be presented in 12 or 24 hour format.
    * If undefined, the component will use a format according to the passed locale.
    * If defined, it will "override" the default value given by the locale
    */
   timeFormat: PropTypes.oneOf([TimeFormat.H12, TimeFormat.H24, undefined]),
+
   /**
    * Locale that will provide the time format(12 or 24 hour format)
    * It is "overwritten" by the timeFormat prop
    */
   locale: PropTypes.string,
+
+  /**
+   * Callback function to be triggered when the input value is changed.
+   * It is invoked with a object param with the following props:
+   *  - hours (in a 24h format)
+   *  - minutes
+   *  - seconds
+   *  - period
+   *
+   * It is always invoked with the hours in a 24h format
+   */
+  onChange: PropTypes.func,
+
   /**
    * Default value for the hours picker
    */
@@ -381,50 +429,16 @@ HvTimePicker.propTypes = {
    * Default value for the period picker
    */
   period: PropTypes.string,
-  /**
-   * Callback function to be triggered when the input value is changed.
-   * It is invoked with a object param with the following props:
-   *  - hours (in a 24h format)
-   *  - minutes
-   *  - seconds
-   *  - period
-   *
-   * It is always invoked with the hours in a 24h format
-   */
-  onChange: PropTypes.func,
-  /**
-   * A Jss Object used to override or extend the styles applied to the input/popper
-   */
-  classes: PropTypes.shape({
-    input: PropTypes.string,
-    inputPopperOpenedBelow: PropTypes.string,
-    inputPopperOpenedAbove: PropTypes.string,
-    inputPopperClosed: PropTypes.string,
-    inputContainer: PropTypes.string,
-    icon: PropTypes.string,
-    timePickerContainer: PropTypes.string,
-    label: PropTypes.string,
-    timePopperContainer: PropTypes.string,
-    popper: PropTypes.string,
-    popperBelow: PropTypes.string,
-    popperAbove: PropTypes.string,
-    separator: PropTypes.string,
-    periodContainer: PropTypes.string,
-  }).isRequired,
-};
 
-HvTimePicker.defaultProps = {
-  labels: {
-    title: undefined,
-    placeholder: "hh:mm:ss",
-  },
-  timeFormat: undefined,
-  locale: "en",
-  hours: new Date().getHours(),
-  minutes: new Date().getMinutes(),
-  seconds: 0,
-  period: getPeriodForDate(),
-  onChange: () => {},
+  /**
+   * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
+   */
+  disablePortal: PropTypes.bool,
+
+  /**
+   * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
+   */
+  escapeWithReference: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvTimePicker" })(HvTimePicker);

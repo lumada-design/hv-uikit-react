@@ -9,7 +9,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
   <UnitTimePicker
     classes={
       Object {
-        "addIcon": "HvTimePickerUnitTimePicker-addIcon",
+        "inputBorderContainer": "HvTimePickerUnitTimePicker-inputBorderContainer",
         "inputContainer": "HvTimePickerUnitTimePicker-inputContainer",
         "subtractIcon": "HvTimePickerUnitTimePicker-subtractIcon",
         "unitTimeContainer": "HvTimePickerUnitTimePicker-unitTimeContainer",
@@ -26,17 +26,15 @@ exports[`UnitTimePicker should render correctly 1`] = `
       className="HvTimePickerUnitTimePicker-unitTimeContainer"
     >
       <DropUpXS
-        className="HvTimePickerUnitTimePicker-addIcon"
         onClick={[Function]}
       >
         <HvIconBase
-          className="HvTimePickerUnitTimePicker-addIcon"
           iconSize="XS"
           name="DropUpXS"
           onClick={[Function]}
         >
           <div
-            className="HvTimePickerUnitTimePicker-addIcon HvIconBase-root HvIconBase-xs"
+            className="HvIconBase-root HvIconBase-xs"
             name="DropUpXS"
             onClick={[Function]}
           >
@@ -60,6 +58,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
         classes={
           Object {
             "input": "HvTimePickerUnitTimePicker-unitTimeInput",
+            "inputBorderContainer": "HvTimePickerUnitTimePicker-inputBorderContainer",
             "inputRoot": "HvTimePickerUnitTimePicker-unitTimeInputRoot",
             "root": "HvTimePickerUnitTimePicker-inputContainer",
           }
@@ -87,7 +86,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               "icon": "HvInput-icon",
               "iconClear": "HvInput-iconClear",
               "input": "HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-              "inputBorderContainer": "HvInput-inputBorderContainer",
+              "inputBorderContainer": "HvInput-inputBorderContainer HvTimePickerUnitTimePicker-inputBorderContainer",
               "inputExtension": "HvInput-inputExtension",
               "inputRoot": "HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
               "inputRootDisabled": "HvInput-inputRootDisabled",
@@ -142,7 +141,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   classes={
                     Object {
                       "input": "HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-                      "inputBorderContainer": "HvInput-inputBorderContainer",
+                      "inputBorderContainer": "HvInput-inputBorderContainer HvTimePickerUnitTimePicker-inputBorderContainer",
                       "inputRoot": "HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
                       "inputRootDisabled": "HvInput-inputRootDisabled",
                       "inputRootFocused": "HvInput-inputRootFocused",
@@ -200,7 +199,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       Object {
                         "disabled": "HvBaseInput-disabled",
                         "input": "HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput",
-                        "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer",
+                        "inputBorderContainer": "HvBaseInput-inputBorderContainer HvInput-inputBorderContainer HvTimePickerUnitTimePicker-inputBorderContainer",
                         "inputResizable": "HvBaseInput-inputResizable",
                         "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot",
                         "inputRootDisabled": "HvBaseInput-inputRootDisabled HvInput-inputRootDisabled",
@@ -551,7 +550,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         </ForwardRef(Input)>
                       </WithStyles(ForwardRef(Input))>
                       <div
-                        className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer"
+                        className="HvBaseInput-inputBorderContainer HvInput-inputBorderContainer HvTimePickerUnitTimePicker-inputBorderContainer"
                         role="presentation"
                       />
                     </div>
