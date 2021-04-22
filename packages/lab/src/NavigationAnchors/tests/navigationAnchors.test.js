@@ -3,8 +3,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import ListItem from "@material-ui/core/ListItem";
-import { HvProvider } from "@hv/uikit-react-core";
+import { HvProvider, HvListItem } from "@hv/uikit-react-core";
 
 import NavigationAnchors from "..";
 
@@ -62,7 +61,7 @@ describe("User withStyles", () => {
     );
     expect(wrapper.find(NavigationAnchors)).toMatchSnapshot();
 
-    const listItems = wrapper.find(ListItem);
+    const listItems = wrapper.find(HvListItem);
     listItems.first().simulate("click");
     expect(onClick).not.toHaveBeenCalled();
   });

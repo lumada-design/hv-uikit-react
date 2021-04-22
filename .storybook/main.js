@@ -17,7 +17,7 @@ module.exports = {
     "../packages/core/src/**/*.stories.@(js|mdx)",
     "../packages/lab/src/**/*.stories.@(js|mdx)",
     "../packages/code-editor/src/**/*.stories.@(js|mdx)",
-    !process.env.EXCLUDE_TEST_STORIES && "../packages/core/src/**/stories/*.test.@(js|mdx)",
+    !process.env.EXCLUDE_TEST_STORIES && "../packages/*/src/**/stories/*.test.@(js|mdx)",
   ].filter(Boolean),
 
   addons: [

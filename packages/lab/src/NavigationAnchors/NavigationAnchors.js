@@ -1,190 +1,218 @@
-import React from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Drawer, List, ListItem, ListItemText, withStyles } from "@material-ui/core";
+import { deprecatedPropType, withStyles } from "@material-ui/core";
+import { HvListContainer, HvListItem } from "@hv/uikit-react-core";
 import styles from "./styles";
 
 const RETRY_MAX = 5;
 
+const verticalScrollOffset = (t, c = window) => {
+  if (c === window) {
+    return (t?.getBoundingClientRect?.().top || 0) + (window.scrollY || window.pageYOffset);
+  }
+  if (getComputedStyle(c).position !== "static") {
+    return t.offsetTop;
+  }
+
+  return t.offsetTop - c.offsetTop;
+};
+
+const scrollElement = (element, container, offset = 0) => {
+  const elemTop = verticalScrollOffset(element, container);
+  container.scrollTo({
+    top: elemTop - offset,
+    behavior: "smooth",
+  });
+};
+
+const isScrolledToTheBottom = (container) => {
+  let atTheBottom = false;
+  if (container === window) {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      atTheBottom = true;
+    }
+  } else if (container.scrollHeight - container.scrollTop === container.offsetHeight) {
+    atTheBottom = true;
+  }
+  return atTheBottom;
+};
+
+const hasScrolledIntoView = (container, options, offset) => {
+  const boundsTop = verticalScrollOffset(container);
+
+  let i = 0;
+  // find index of first element whose top is still visible inside the container
+  for (; i < options.length; i += 1) {
+    const ele = document.getElementById(options[i].value);
+    if (ele) {
+      const elemTop = verticalScrollOffset(ele) - (options[i].offset || offset);
+
+      if (elemTop > boundsTop) {
+        break;
+      }
+    }
+  }
+
+  // select the last nav item that whose top scrolled out of the container's visible area
+  // or, if the user has reached the bottom of the container, select the first nav item still visible.
+  // (usually this selects the last nav item, when it can't reach the top the container)
+  return i - (i < options.length && isScrolledToTheBottom(container) ? 0 : 1);
+};
+
 /**
  * A navigation component to help in changing views, still in development
  */
-class NavigationAnchors extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedIndex: props.selectedIndex || 0,
-      throttle: false,
-    };
-  }
+const NavigationAnchors = ({
+  selectedIndex: selectedIndexProp = 0,
+  scrollElementId,
+  href = true,
+  onClick,
+  className,
+  classes,
+  options,
+  floating,
+  offset = 0,
+  ...other
+}) => {
+  const [selectedIndex, setSelectedIndex] = useState(selectedIndexProp);
 
-  componentDidMount() {
-    const { scrollElementId } = this.props;
-    this.afterLoadScrollIntoView();
-    // Check if scrolled
-    this.scrollEle = document.getElementById(scrollElementId);
-    if (this.scrollEle) {
-      this.scrollEle.addEventListener("wheel", this.checkScroll);
-    }
-  }
+  const scrollEle = useRef();
+  const requestedAnimationFrame = useRef(0);
 
-  componentWillUnmount() {
-    if (this.scrollEle) {
-      this.scrollEle.removeEventListener("wheel", this.checkScroll);
-    }
-    clearInterval(this.checkRenderedInterval);
-  }
+  // get and store the container's dom element
+  useEffect(() => {
+    scrollEle.current = (scrollElementId && document.getElementById(scrollElementId)) || window;
+  }, [scrollElementId]);
 
-  // afterLoadScrollIntoView waits for the elements to be rendered on the page
-  afterLoadScrollIntoView = () => {
-    const hashValue = document.location.hash.split("#")[1] || "";
-    let ele = document.getElementById(hashValue);
+  const checkScroll = useCallback(() => {
+    if (requestedAnimationFrame.current === 0 && window?.requestAnimationFrame) {
+      requestedAnimationFrame.current = window.requestAnimationFrame(() => {
+        requestedAnimationFrame.current = 0;
 
-    let retry = 0;
-    this.checkRenderedInterval = setInterval(() => {
-      ele = document.getElementById(hashValue);
-      if (ele) {
-        ele.scrollIntoView({ behavior: "smooth" });
-        clearInterval(this.checkRenderedInterval);
-      } else {
-        retry += 1;
-        if (retry === RETRY_MAX) {
-          clearInterval(this.checkRenderedInterval);
+        const newSelectedIndex = hasScrolledIntoView(scrollEle.current, options, offset);
+        if (newSelectedIndex > -1) {
+          setSelectedIndex(newSelectedIndex);
         }
-      }
-    }, 1000);
-  };
-
-  checkScroll = () => {
-    const { throttle } = this.state;
-    if (!throttle) {
-      const selectedIndex = this.hasScrolledIntoView();
-      if (selectedIndex > -1) {
-        this.setState({ selectedIndex });
-      }
-      this.setState({
-        throttle: true,
       });
-      setTimeout(() => {
-        this.setState({
-          throttle: false,
-        });
-      }, 100);
     }
-  };
+  }, [offset, options]);
 
-  hasScrolledIntoView = () => {
-    const { options, scrollElementId } = this.props;
-
-    // Select last nav item if user has scrolled to bottom of page
-    const page = document.getElementById(scrollElementId);
-    if (!!page && page.scrollHeight - page.scrollTop === page.offsetHeight) {
-      return options.length - 1;
+  // registers and unregisters the scroll listener
+  useEffect(() => {
+    if (scrollEle.current) {
+      scrollEle.current.addEventListener("scroll", checkScroll, false);
     }
 
-    const bounds = this.scrollEle.getBoundingClientRect();
-    const midPoint = bounds.top + window.scrollY + bounds.height / 2;
+    return () => {
+      if (scrollEle.current) {
+        scrollEle.current.removeEventListener("scroll", checkScroll);
+      }
 
-    // Find index of element where top is between the top and mid point of container
-    for (let i = 0; i < options.length; i += 1) {
-      const ele = document.getElementById(options[i].value);
-      if (ele) {
-        const rect = ele.getBoundingClientRect();
-        const elemTop = rect.top + window.scrollY;
+      if (requestedAnimationFrame.current !== 0) {
+        window.cancelAnimationFrame(requestedAnimationFrame.current);
+        requestedAnimationFrame.current = 0;
+      }
+    };
+  }, [checkScroll]);
 
-        // Bounding rectangle relative to the top left corner of the parent.
-        if (elemTop >= bounds.top + window.scrollY && elemTop <= midPoint) {
-          return i;
-        }
+  // waits for the elements to be rendered and scrolls to the one referenced
+  // in the URL hash, if any
+  useEffect(() => {
+    let checkRenderedInterval;
+
+    if (href) {
+      const hashValue = document.location.hash.split("#")[1] || "";
+
+      const option = options.find((o) => o.value === hashValue);
+
+      if (option) {
+        let retry = 0;
+        checkRenderedInterval = setInterval(() => {
+          const ele = document.getElementById(option.value);
+
+          if (ele) {
+            scrollElement(ele, scrollEle.current, option.offset || offset);
+            clearInterval(checkRenderedInterval);
+          } else {
+            retry += 1;
+            if (retry === RETRY_MAX) {
+              clearInterval(checkRenderedInterval);
+            }
+          }
+        }, 1000);
       }
     }
-    return -1;
+
+    return () => {
+      clearInterval(checkRenderedInterval);
+    };
+
+    // we really want to run this just in the first load
+    // in fact this doesn't even belong here, the logic should be external
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleListItemClick = (event, id, index) => {
+    const option = options.find((o) => o.value === id);
+
+    if (option) {
+      const ele = document.getElementById(id);
+      if (ele) {
+        scrollElement(ele, scrollEle.current, option.offset || offset);
+      }
+
+      if (!href && onClick) {
+        onClick(event, index, option);
+      } else if (href) {
+        window.history.pushState({}, "", `#${options[index].value}`);
+      }
+    }
   };
 
-  handleListItemClick = (event, id, index) => {
-    this.setState({ selectedIndex: index });
-
-    const ele = document.getElementById(id);
-    if (ele) {
-      ele.scrollIntoView({ behavior: "smooth" });
-    }
-
-    const { href, onClick, options } = this.props;
-    if (!href && onClick) {
-      onClick(event, index);
-    } else if (href) {
-      window.history.pushState({}, "", `#${options[index].value}`);
-    }
-  };
-
-  render() {
-    const { classes, options, floating } = this.props;
-    const { selectedIndex } = this.state;
-
-    return (
-      <Drawer
-        className={clsx(classes.drawer, classes.dense)}
-        variant="persistent"
-        anchor="left"
-        open
-        classes={{
-          paper: clsx(classes.drawerPaper, {
-            [classes.drawerPaperPositionInherit]: !floating,
-          }),
-        }}
-      >
-        <List
-          dense
+  return (
+    <HvListContainer interactive className={clsx(className, classes.root)} {...other}>
+      {options.map((option, index) => (
+        <HvListItem
           classes={{
-            root: classes.listRoot,
-            dense: classes.listDense,
+            selected: classes.listItemSelected,
+            gutters: classes.listItemGutters,
           }}
+          key={option.key || option.label}
+          onClick={(event) => handleListItemClick(event, option.value, index)}
+          selected={selectedIndex === index}
         >
-          {options.map((option, index) => (
-            <ListItem
-              button
-              classes={{
-                selected: classes.listItemSelected,
-                root: classes.listItemRoot,
-                gutters: classes.listItemGutters,
-              }}
-              key={option.key || option.label}
-              onClick={(event) => this.handleListItemClick(event, option.value, index)}
-              selected={selectedIndex === index}
-            >
-              <ListItemText
-                classes={{
-                  primary: clsx({
-                    [classes.listItemTextSelected]: selectedIndex === index,
-                  }),
-                  dense: classes.listItemTextDense,
-                }}
-                primary={option.label}
-              />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-    );
-  }
-}
+          {option.label}
+        </HvListItem>
+      ))}
+    </HvListContainer>
+  );
+};
 
 NavigationAnchors.propTypes = {
   /**
-   *  Styles applied to the Drawer Paper element
+   * Class names to be applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  className: PropTypes.string,
+  /**
+   * A Jss Object used to override or extend the styles applied.
+   */
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    listItemGutters: PropTypes.string,
+    listItemSelected: PropTypes.string,
+  }).isRequired,
   /**
    * An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied
    */
-  options: PropTypes.arrayOf((propValue, key, componentName, location, propFullName) => {
-    if (propValue[key].label === undefined || propValue[key].value === undefined) {
-      return new Error(
-        `Invalid prop "${propFullName}" supplied to "${componentName}". Validation Failed.`
-      );
-    }
-    return null;
-  }).isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      offset: PropTypes.number,
+    })
+  ).isRequired,
   /**
    * True if the href location link should be applied. It will create an a element around every list item
    */
@@ -195,24 +223,28 @@ NavigationAnchors.propTypes = {
   onClick: PropTypes.func,
   /**
    * Whether the anchors are always in a fixed position
+   *
+   * @deprecated Currently does nothing. Style the component instead.
    */
-  floating: PropTypes.bool,
+  floating: deprecatedPropType(PropTypes.bool),
   /**
    * Currently selected index passed from the parent.
    */
   selectedIndex: PropTypes.number,
   /**
-   * The Id of the scrollable container containing displayed elements
+   * The Id of the scrollable container containing displayed elements.
+   *
+   * Defaults to `window` if unspecified.
    */
   scrollElementId: PropTypes.string,
-};
-
-NavigationAnchors.defaultProps = {
-  href: true,
-  onClick: undefined,
-  floating: true,
-  selectedIndex: 0,
-  scrollElementId: "",
+  /**
+   * Defines the offset from the top of each element for getting an optimal viewing region in the container.
+   * This allows to exclude regions of the container that are obscured by other content (such as fixed-positioned toolbars or titles)
+   * or to put more breathing room between the targeted element and the edges of the container.
+   *
+   * Each element can alse have a specific offset via the options property.
+   */
+  offset: PropTypes.number,
 };
 
 export default withStyles(styles, { name: "HvNavigationAnchors" })(NavigationAnchors);
