@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.8.1...@hv/uikit-react-lab@3.8.2) (2021-04-22)
+
+
+### Bug Fixes
+
+* **table:** rename and add missing HvTableHeader export. HVUIKIT-5749 ([31409b4](https://github.com/pentaho/hv-uikit-react/commit/31409b4405640b299fbed9d55f27da22eb4cf868))
+
+
+
+
+
 ## [3.8.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.8.0...@hv/uikit-react-lab@3.8.1) (2021-04-21)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
