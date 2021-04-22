@@ -13,6 +13,11 @@ exports[`Card should be able to render with every property defined 1`] = `
     bgcolor="atmo1"
     classes={
       Object {
+        "atmo1": "HvCard-atmo1",
+        "atmo2": "HvCard-atmo2",
+        "atmo3": "HvCard-atmo3",
+        "atmo4": "HvCard-atmo4",
+        "atmo5": "HvCard-atmo5",
         "cardOutLine": "HvCard-cardOutLine",
         "icon": "HvCard-icon",
         "root": "HvCard-root",

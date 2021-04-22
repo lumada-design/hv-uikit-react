@@ -38,7 +38,7 @@ export const Main = () => {
       id={value.id}
       bgcolor="atmo1"
       selectable={viewConfiguration.isSelectable}
-      semantic={value.semantic}
+      statusColor={value.semantic}
     >
       <HvCardHeader title={value.headerTitle} subheader={value.subtitle} />
       <HvCardMedia
