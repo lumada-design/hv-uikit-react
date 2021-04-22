@@ -1,9 +1,3 @@
-const icon = {
-  width: "32px",
-  height: "32px",
-  cursor: "pointer",
-};
-
 const styles = (theme) => ({
   unitTimeContainer: {
     display: "flex",
@@ -33,17 +27,16 @@ const styles = (theme) => ({
   unitTimeInputRootInvalid: {
     border: "1px red solid",
   },
-  addIcon: {
-    ...icon,
-    marginTop: `${theme.hv.spacing.sm}px`,
-  },
+
   subtractIcon: {
-    ...icon,
-    marginBottom: `${theme.hv.spacing.sm}px`,
+    marginTop: `${theme.hv.spacing.xs}px`,
   },
   inputContainer: {
     minWidth: "40px",
     maxWidth: "40px",
+  },
+  inputBorderContainer: {
+    top: "40px",
   },
 });
 

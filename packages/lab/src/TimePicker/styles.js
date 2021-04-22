@@ -37,16 +37,20 @@ const styles = (theme) => ({
     paddingLeft: `${theme.hv.spacing.xs}px`,
     paddingRight: `${theme.hv.spacing.md}px`,
   },
+  labelContainer: {
+    display: "flex",
+    alignItems: "flex-start",
+  },
   icon: {
     ...icon,
     cursor: "pointer",
   },
   timePickerContainer: {
     position: "relative",
-    minWidth: "200px",
+    minWidth: "175px",
   },
   label: {
-    marginBottom: `${theme.hv.spacing.xs}px`,
+    marginBottom: 6,
     display: "block",
   },
   timePopperContainer: {
@@ -56,28 +60,52 @@ const styles = (theme) => ({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    paddingLeft: `${theme.hv.spacing.sm}px`,
-    paddingRight: `${theme.hv.spacing.sm}px`,
-  },
-  popper: {
-    minWidth: "100%",
-    zIndex: "10",
-  },
-  popperBelow: {
-    marginTop: `${theme.hv.spacing.xs}px`,
-    boxShadow: "0 -2px 12px rgba(65,65,65,.12)",
-  },
-  popperAbove: {
-    marginBottom: `${theme.hv.spacing.xs}px`,
-    boxShadow: "0 2px 12px rgba(65,65,65,.12)",
+    padding: `${theme.hv.spacing.sm}px`,
+    userSelect: "none",
+    minWidth: "175px",
   },
   separator: {
     ...theme.hv.typography.sTitle,
-    marginLeft: "5px",
-    marginRight: "5px",
+    width: 8,
+    position: "relative",
+    top: -8,
+    paddingLeft: 2,
   },
   periodContainer: {
-    marginLeft: `${theme.hv.spacing.xs}px`,
+    marginLeft: "8px",
+  },
+
+  formElementRoot: {
+    position: "relative",
+  },
+
+  iconBaseRoot: {
+    position: "absolute",
+    top: "-1px",
+    right: "-1px",
+  },
+
+  dropdownInputRootFocused: {
+    boxShadow: "none",
+  },
+  dropdownPlaceholder: {
+    color: theme.hv.palette.accent.acce1,
+  },
+  dropdownPlaceholderDisabled: {
+    color: theme.hv.palette.atmosphere.atmo5,
+  },
+  dropdownHeaderInvalid: {
+    border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+    "&:hover": {
+      border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+    },
+  },
+
+  dropdownHeaderOpen: {
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    "&:hover": {
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    },
   },
 });
 

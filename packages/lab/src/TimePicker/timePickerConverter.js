@@ -1,5 +1,5 @@
-import { TimeFormat, PeriodPickerOptions, TimePickerUnits } from "./enums";
 import { isUnitTimeInValidRange } from "./timePickerUtils";
+import { TimeFormat, PeriodPickerOptions, TimePickerUnits } from "./enums";
 
 /**
  * Gets hours for the passed time format.
