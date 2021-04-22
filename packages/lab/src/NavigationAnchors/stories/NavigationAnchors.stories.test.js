@@ -4,26 +4,16 @@ import * as React from "react";
 import HvNavigationAnchors from "../index";
 
 export default {
-  title: "Lab/Navigation Anchors",
+  title: "Tests/Navigation Anchors",
   parameters: {
-    componentSubtitle: null,
-    usage: 'import { HvNavigationAnchors } from "@hv/uikit-react-lab"',
+    docs: {
+      disable: true,
+      page: null,
+    },
   },
-  component: HvNavigationAnchors,
 };
 
-export const Main = () => (
-  <HvNavigationAnchors
-    href
-    options={[
-      { label: "Option1", value: "Value1" },
-      { label: "Option2", value: "Value2" },
-      { label: "Option3", value: "Value3" },
-    ]}
-  />
-);
-
-export const WithScroll = () => {
+export const DocumentScroll = () => {
   const options = [
     { label: "Option1", value: "Id1" },
     { label: "Option2", value: "Id2" },
@@ -32,16 +22,9 @@ export const WithScroll = () => {
   ];
 
   return (
-    <div style={{ display: "flex" }}>
-      <HvNavigationAnchors href options={options} scrollElementId="pageContentId" />
-      <div
-        id="pageContentId"
-        style={{
-          width: "800px",
-          height: "600px",
-          overflow: "auto",
-        }}
-      >
+    <>
+      <HvNavigationAnchors style={{ position: "fixed" }} href options={options} />
+      <div id="pageContentId" style={{ marginLeft: 250 }}>
         <div
           id="Id1"
           style={{
@@ -75,14 +58,6 @@ export const WithScroll = () => {
           }}
         />
       </div>
-    </div>
+    </>
   );
-};
-
-WithScroll.parameters = {
-  docs: {
-    description: {
-      story: "Basic navigation anchors to provide a clickable area to show scrolling capabilities",
-    },
-  },
 };
