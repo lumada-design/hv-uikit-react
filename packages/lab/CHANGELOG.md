@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.8.2...@hv/uikit-react-lab@3.9.0) (2021-04-23)
+
+
+### Bug Fixes
+
+* **table:** rename and add missing HvTableHeader export. HVUIKIT-5749 ([31409b4](https://github.com/pentaho/hv-uikit-react/commit/31409b4405640b299fbed9d55f27da22eb4cf868))
+
+
+### Features
+
+* **navigation-anchors:** update with ds 3.x specs HVUIKIT-5751 ([6a19c96](https://github.com/pentaho/hv-uikit-react/commit/6a19c963b60f4a0395af6fbe5a8bd57a19fbc3fd))
+
+
+
+
+
 ## [3.8.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@3.8.1...@hv/uikit-react-lab@3.8.2) (2021-04-22)
 
 
