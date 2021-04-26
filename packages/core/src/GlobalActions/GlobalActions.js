@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
 import { Backwards } from "@hv/uikit-react-icons";
 import { withStyles } from "@material-ui/core";
@@ -39,6 +40,22 @@ const HvGlobalActions = (props) => {
 
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);
 
+  const backButtonRenderer = () => {
+    let bkButton;
+
+    if (typeof backButton === "object") {
+      bkButton = <div className={classes.backButton}>{backButton}</div>;
+    } else if (backButton !== false) {
+      bkButton = (
+        <div className={classes.backButton}>
+          <BackButtonComp />
+        </div>
+      );
+    }
+
+    return bkButton;
+  };
+
   return (
     <div
       className={clsx(className, classes.root, {
@@ -55,9 +72,7 @@ const HvGlobalActions = (props) => {
         })}
       >
         <div className={classes.name}>
-          {variant === "global" && (
-            <div className={classes.backButton}>{backButton || <BackButtonComp />}</div>
-          )}
+          {variant === "global" && backButtonRenderer()}
 
           {!isString(title) ? (
             title
@@ -141,21 +156,31 @@ HvGlobalActions.propTypes = {
    */
   title: PropTypes.node,
   /**
-   * Allows the user to pass in a fully customized button.
+   * User can pass in a fully customized button or false for when the back button should not be rendered.
    */
-  backButton: PropTypes.node,
+  backButton: PropTypes.oneOf([PropTypes.node, PropTypes.bool]),
   /**
    * Action to be executed by the Back button in the Global Actions.
    */
-  backButtonAction: PropTypes.func,
+  backButtonAction: deprecatedPropType(
+    PropTypes.func,
+    "Instead use the backButon property to pass in the button for the back action"
+  ),
   /**
    * Aria label to be applied to the back navigation button.
    */
-  backButtonAriaLabel: PropTypes.string,
+  backButtonAriaLabel: deprecatedPropType(
+    PropTypes.string,
+    "Instead use the backButon property to pass in the button for the back action"
+  ),
   /**
    * Custom item to be applied to Backwards button.
    */
-  backwardsIcon: PropTypes.node,
+  backwardsIcon: deprecatedPropType(
+    PropTypes.node,
+    "Instead use the backButon property to pass in the button for the back action"
+  ),
+
   /**
    * Heading Level to apply to Title Area.
    */

@@ -28,20 +28,19 @@ export interface HvGlobalActionsProps
    */
   title?: React.ReactNode;
   /**
-   * Allows the user to pass in a fully customized button.
+   * User can pass in a fully customized button or false for when the back button should not be rendered.
    */
-  backButton?: React.ReactNode;
+  backButton?: React.ReactNode | boolean;
   /**
-  /**
-   * Action to be executed by the Back button in the Global Actions.
+   * @deprecated This prop should not be used. Use backButton to pass in a component
    */
   backButtonAction?: (value: string) => void;
   /**
-   * Aria label to be applied to the back navigation button.
+   * @deprecated This prop should not be used. Use backButton to pass in a component
    */
   backButtonArialLabel?: string;
   /**
-   * Custom icon to be applied to Backwards button.
+   * @deprecated This prop should not be used. Use backButton to pass in a component
    */
   backwardsIcon?: React.ReactNode;
   /**

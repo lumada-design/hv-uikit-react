@@ -2,6 +2,7 @@ import React from "react";
 import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
 
+import { Backwards } from "@hv/uikit-react-icons";
 import { HvContainer, HvGlobalActions, HvButton, HvDropDownMenu, HvTypography } from "../..";
 
 export default {
@@ -24,14 +25,15 @@ export const Main = () => {
 
   const StyledGlobalAction = withStyles(styles)(HvGlobalActions);
 
+  const BackButton = () => (
+    <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
+      <Backwards />
+    </HvButton>
+  );
+
   return (
     <HvContainer>
-      <HvGlobalActions
-        title="Detail Page Title"
-        backButtonAction={() => {
-          alert("Back");
-        }}
-      >
+      <HvGlobalActions title="Detail Page Title" backButton={<BackButton />}>
         <HvButton category="primary">Approve & Share</HvButton>
         <HvButton category="secondary">Reset</HvButton>
         <HvDropDownMenu
@@ -171,17 +173,25 @@ export const Main = () => {
 };
 Main.decorators = [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>];
 
-export const SampleWithAdditionalActions = () => (
-  <HvGlobalActions title="Detail Page Title">
-    <HvButton category="primary">Primary</HvButton>
-    <HvDropDownMenu
-      id={`dropdownItem-${uniqueId()}`}
-      aria-label="dropdownMenu-Items"
-      placement="left"
-      dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
-    />
-  </HvGlobalActions>
-);
+export const SampleWithAdditionalActions = () => {
+  const BackButton = () => (
+    <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
+      <Backwards />
+    </HvButton>
+  );
+
+  return (
+    <HvGlobalActions title="Detail Page Title" backButton={<BackButton />}>
+      <HvButton category="primary">Primary</HvButton>
+      <HvDropDownMenu
+        id={`dropdownItem-${uniqueId()}`}
+        aria-label="dropdownMenu-Items"
+        placement="left"
+        dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
+      />
+    </HvGlobalActions>
+  );
+};
 
 SampleWithAdditionalActions.parameters = {
   docs: {
@@ -192,6 +202,20 @@ SampleWithAdditionalActions.parameters = {
   },
 };
 
+export const SampleWithAdditionalActionsAndNoBackButton = () => {
+  return (
+    <HvGlobalActions title="Detail Page Title" backButton={false}>
+      <HvButton category="primary">Primary</HvButton>
+      <HvDropDownMenu
+        id={`dropdownItem-${uniqueId()}`}
+        aria-label="dropdownMenu-Items"
+        placement="left"
+        dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
+      />
+    </HvGlobalActions>
+  );
+};
+
 export const SampleWithCustomTitleAndAdditionalActions = () => {
   const CustomTitle = (
     <HvTypography variant="xsTitle" component="h1">
@@ -199,8 +223,14 @@ export const SampleWithCustomTitleAndAdditionalActions = () => {
     </HvTypography>
   );
 
+  const BackButton = () => (
+    <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
+      <Backwards />
+    </HvButton>
+  );
+
   return (
-    <HvGlobalActions title={CustomTitle}>
+    <HvGlobalActions title={CustomTitle} backButton={<BackButton />}>
       <HvButton category="primary">Primary</HvButton>
       <HvButton category="secondary">Secondary</HvButton>
       <HvButton category="secondary">Secondary</HvButton>
