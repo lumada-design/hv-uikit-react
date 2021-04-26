@@ -28,7 +28,7 @@ const HvGlobalActions = (props) => {
     backButtonAriaLabel = "Back",
     backwardsIcon,
     headingLevel,
-    position = "sticky",
+    position: positionProp,
     ...others
   } = props;
 
@@ -56,6 +56,8 @@ const HvGlobalActions = (props) => {
     return bkButton;
   };
 
+  const position = positionProp || (variant === "global" ? "sticky" : "relative");
+
   return (
     <div
       className={clsx(className, classes.root, {
@@ -71,21 +73,18 @@ const HvGlobalActions = (props) => {
           [classes.globalSectionArea]: variant === "section",
         })}
       >
-        <div className={classes.name}>
-          {variant === "global" && backButtonRenderer()}
-
-          {!isString(title) ? (
-            title
-          ) : (
-            <HvTypography
-              variant="sectionTitle"
-              component={`h${headingLevelToApply}`}
-              className={classes.name}
-            >
-              {title}
-            </HvTypography>
-          )}
-        </div>
+        {variant === "global" && backButtonRenderer()}
+        {!isString(title) ? (
+          title
+        ) : (
+          <HvTypography
+            variant="sectionTitle"
+            component={`h${headingLevelToApply}`}
+            className={classes.name}
+          >
+            {title}
+          </HvTypography>
+        )}
         {children && <div className={classes.actions}>{children}</div>}
       </div>
     </div>
@@ -186,9 +185,10 @@ HvGlobalActions.propTypes = {
    */
   headingLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /**
-   * Position of the Global Actions
+   * Position of the Global Actions.
+   * Defaults to `sticky` when it is a global title and `relative` when it's a section title.
    */
-  position: PropTypes.oneOf(["sticky", "fixed"]),
+  position: PropTypes.oneOf(["sticky", "fixed", "relative"]),
 };
 
 export default withStyles(styles, { name: "HvGlobalActions" })(HvGlobalActions);
