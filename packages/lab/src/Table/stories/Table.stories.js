@@ -1,7 +1,10 @@
 import React, { useMemo } from "react";
 import range from "lodash/range";
 
+import Chart from "react-google-charts";
+
 import { makeStyles } from "@material-ui/core";
+import { useTable } from "react-table";
 
 import { Ban } from "@hv/uikit-react-icons";
 import { HvCheckBox, HvDropDownMenu, HvEmptyState, HvTypography } from "@hv/uikit-react-core";
@@ -387,5 +390,466 @@ KitchenSinkSample.parameters = {
     description: {
       story: "A table with all features.",
     },
+  },
+};
+
+export const TableWithIncludedChart = () => {
+  const useStyles = makeStyles(() => ({
+    container: { overflow: "hidden" },
+  }));
+
+  const classes = useStyles();
+
+  const columns = useMemo(
+    () => [
+      {
+        Header: "Customer",
+        accessor: "customer",
+      },
+      {
+        Header: "Dealsize",
+        accessor: "dealSize",
+        align: "right",
+      },
+      {
+        Header: "Sales",
+        accessor: "sales",
+        align: "right",
+      },
+      {
+        Header: "Sales Growth",
+        align: "right",
+        cellType: "numeric",
+        width: 170,
+        minWidth: 170,
+        maxWidth: 170,
+        Cell: (cellData) => {
+          const value = [
+            [" ", " ", { role: "style" }],
+            [
+              " ",
+              Number(cellData.row.original.salesGrowth),
+              `color:${cellData.row.original.color}`,
+            ],
+          ];
+          return (
+            <div
+              style={{
+                display: "flex",
+                minWidth: "170px",
+                width: "170px",
+                justifyContent: "flex-end",
+                margin: "auto",
+                marginRight: 0,
+              }}
+            >
+              <div style={{ alignSelf: "center" }}>{`${cellData.row.original.salesGrowth}€`}</div>
+              <div style={{ alignSelf: "center" }}>
+                <Chart
+                  width="55px"
+                  height="30px"
+                  chartType="BarChart"
+                  loader={<div>Loading Chart</div>}
+                  data={value}
+                  options={{
+                    legend: "none",
+                    hAxis: {
+                      minValue: 0,
+                      maxValue: 1001,
+                    },
+                    backgroundColor: "transparent",
+                  }}
+                />
+              </div>
+            </div>
+          );
+        },
+      },
+      {
+        Header: "Order Number",
+        accessor: "orderNumber",
+        align: "right",
+      },
+    ],
+    []
+  );
+
+  const data = [
+    {
+      id: 1,
+      customer: "Blauer See Auto, Co.",
+      dealSize: "Small",
+      sales: "2871.0",
+      salesGrowth: "925.7",
+      orderNumber: "10100",
+      color: "red",
+    },
+    {
+      id: 2,
+      customer: "Blauer See Auto, Co.",
+      dealSize: "Small",
+      sales: "2765.9",
+      salesGrowth: "119.3",
+      orderNumber: "10100",
+      color: "orange",
+    },
+    {
+      id: 3,
+      customer: "Blauer See Auto, Co.",
+      dealSize: "Medium",
+      sales: "3884.3",
+      salesGrowth: "94.7",
+      orderNumber: "10101",
+      color: "blue",
+      checkboxProps: { disabled: true },
+    },
+    {
+      id: 4,
+      customer: "Online Diecast Creation",
+      dealSize: "Medium",
+      sales: "3746.7",
+      salesGrowth: "30.2",
+      orderNumber: "10102",
+      color: "yellow",
+    },
+    {
+      id: 5,
+      customer: "Vitachrome Inc.",
+      dealSize: "Small",
+      sales: "5205.3",
+      salesGrowth: "1000.6",
+      orderNumber: "10102",
+      color: "green",
+      checkboxProps: { disabled: true },
+    },
+    {
+      id: 6,
+      customer: "Quartz co.",
+      dealSize: "Big",
+      sales: "7205.3",
+      salesGrowth: "21670.6",
+      orderNumber: "11234",
+      color: "cyan",
+    },
+    {
+      id: 7,
+      customer: "Plumb inc.",
+      dealSize: "small",
+      sales: "105.3",
+      salesGrowth: "1370.6",
+      orderNumber: "114",
+      color: "yellow",
+    },
+  ];
+
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useTable({
+    columns,
+    data,
+  });
+
+  return (
+    <HvTableContainer className={classes.container}>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableHeader rtCol={col} {...col.getHeaderProps()}>
+                {col.render("Header")}
+              </HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            return (
+              <HvTableRow hover {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+TableWithIncludedChart.parameters = {
+  docs: {
+    description: { story: "A table example with a chart included for each row." },
+  },
+};
+
+export const WithSecondaryActions = () => {
+  const columns = useMemo(
+    () => [
+      {
+        Header: "Title",
+        accessor: "name",
+      },
+      {
+        Header: "Time",
+        accessor: "createdDate",
+      },
+      {
+        Header: "Event Type",
+        accessor: "eventType",
+      },
+      {
+        Header: "Status",
+        accessor: "status",
+      },
+      {
+        Header: "Probability",
+        accessor: "riskScore",
+      },
+      {
+        Header: "Severity",
+        accessor: "severity",
+      },
+      {
+        Header: "Priority",
+        accessor: "priority",
+      },
+      {
+        Header: "Asset",
+        accessor: "link",
+        Cell: (props) => {
+          const { row } = props;
+          const { original } = row;
+          const { link } = original;
+
+          return (
+            <HvTypography variant="link" component="a" href={link.url}>
+              {link.displayText}
+            </HvTypography>
+          );
+        },
+      },
+      {
+        accessor: "blank",
+        align: "right",
+        Cell: (props) => {
+          const { row } = props;
+          return (
+            <HvDropDownMenu
+              onClick={(e, item) => {
+                alert(`${item.label} ${JSON.stringify(row.original)}`);
+                console.log(item.label);
+              }}
+              dataList={[
+                {
+                  label: "Share",
+                },
+                {
+                  label: "Hide",
+                },
+                {
+                  label: "Remove",
+                },
+              ]}
+            />
+          );
+        },
+      },
+    ],
+    []
+  );
+
+  const data = [
+    {
+      pid: 14,
+      name: "Event 1",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+      subElementTitle: "cell_1",
+      subElementTitle2: "cell_2",
+    },
+    {
+      pid: 13,
+      name: "Event 2",
+      createdDate: "10/14/2018",
+      eventType: "Risk of failure profile",
+      status: "Pending",
+      riskScore: "90",
+      severity: "Catastrophic",
+      priority: "High",
+      link: { displayText: "Asset 2", url: "blablabla" },
+    },
+    {
+      pid: 12,
+      name: "Event 3",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Closed",
+      riskScore: "98",
+      severity: "Moderate",
+      priority: "Medium",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      pid: 11,
+      name: "Event 4",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Low",
+      priority: "Low",
+      link: { displayText: "Asset 3", url: "blablabla" },
+    },
+    {
+      pid: 10,
+      name: "Event 5",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Pending",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 2", url: "blablabla" },
+    },
+    {
+      pid: 8,
+      name: "Event 6",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Closed",
+      riskScore: "98",
+      severity: "Major",
+      priority: "High",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      pid: 7,
+      name: "Event 7",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      pid: 6,
+      name: "Event 8",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Pending",
+      riskScore: "98",
+      severity: "Moderate",
+      priority: "Medium",
+      link: { displayText: "Asset 2", url: "blablabla" },
+    },
+    {
+      pid: 5,
+      name: "Event 9",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+      noActions: true,
+    },
+    {
+      pid: 4,
+      name: "Event 1",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Closed",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      pid: 3,
+      name: "Event 10",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Major",
+      priority: "High",
+      link: { displayText: "Asset 1", url: "blablabla" },
+      noActions: true,
+    },
+    {
+      pid: 2,
+      name: "Event 11",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+    },
+    {
+      pid: 1,
+      name: "Event 12",
+      createdDate: "10/14/2018",
+      eventType: "Anomaly detection",
+      status: "Open",
+      riskScore: "98",
+      severity: "Critical",
+      priority: "Critical",
+      link: { displayText: "Asset 1", url: "blablabla" },
+      noActions: true,
+    },
+  ];
+
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useTable({
+    columns,
+    data,
+  });
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableHeader rtCol={col} {...col.getHeaderProps()}>
+                {col.render("Header")}
+              </HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <HvTableRow hover {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+WithSecondaryActions.parameters = {
+  docs: {
+    description: { story: "A table example with secondary actions." },
   },
 };
