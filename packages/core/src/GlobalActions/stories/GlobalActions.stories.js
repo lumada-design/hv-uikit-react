@@ -1,6 +1,5 @@
 import React from "react";
 import uniqueId from "lodash/uniqueId";
-import { withStyles } from "@material-ui/core";
 
 import { Backwards } from "@hv/uikit-react-icons";
 import { HvContainer, HvGlobalActions, HvButton, HvDropDownMenu, HvTypography } from "../..";
@@ -17,14 +16,6 @@ export default {
 };
 
 export const Main = () => {
-  const styles = () => ({
-    root: {
-      position: "relative",
-    },
-  });
-
-  const StyledGlobalAction = withStyles(styles)(HvGlobalActions);
-
   const BackButton = () => (
     <HvButton aria-label="Back" icon onClick={() => alert("Back!")}>
       <Backwards />
@@ -45,7 +36,7 @@ export const Main = () => {
       </HvGlobalActions>
 
       <div style={{ paddingBottom: 60 }}>
-        <StyledGlobalAction title="Section Title" variant="section">
+        <HvGlobalActions title="Section Title" variant="section">
           <HvButton category="secondary">Remove</HvButton>
           <HvButton category="secondary">Share</HvButton>
           <HvDropDownMenu
@@ -54,9 +45,9 @@ export const Main = () => {
             placement="left"
             dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
           />
-        </StyledGlobalAction>
+        </HvGlobalActions>
 
-        <HvTypography variant="normalText" style={{ marginBottom: 30 }}>
+        <HvTypography variant="normalText" style={{ marginTop: 20, marginBottom: 30 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed.
           Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis.
@@ -86,7 +77,7 @@ export const Main = () => {
           eleifend mi in nulla posuere.
         </HvTypography>
 
-        <StyledGlobalAction title="Section Title" variant="section">
+        <HvGlobalActions title="Section Title" variant="section">
           <HvButton category="secondary">Remove</HvButton>
           <HvButton category="secondary">Share</HvButton>
           <HvDropDownMenu
@@ -95,9 +86,9 @@ export const Main = () => {
             placement="left"
             dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
           />
-        </StyledGlobalAction>
+        </HvGlobalActions>
 
-        <HvTypography variant="normalText" style={{ marginBottom: 30 }}>
+        <HvTypography variant="normalText" style={{ marginTop: 20, marginBottom: 30 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed.
           Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis.
@@ -127,7 +118,7 @@ export const Main = () => {
           eleifend mi in nulla posuere.
         </HvTypography>
 
-        <StyledGlobalAction title="Section Title" variant="section">
+        <HvGlobalActions title="Section Title" variant="section">
           <HvButton category="secondary">Remove</HvButton>
           <HvButton category="secondary">Share</HvButton>
           <HvDropDownMenu
@@ -136,9 +127,9 @@ export const Main = () => {
             placement="left"
             dataList={[{ label: "Action 2" }, { label: "Action 3" }, { label: "Action 4" }]}
           />
-        </StyledGlobalAction>
+        </HvGlobalActions>
 
-        <HvTypography variant="normalText" style={{ marginBottom: 30 }}>
+        <HvTypography variant="normalText" style={{ marginTop: 20, marginBottom: 30 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed.
           Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis.

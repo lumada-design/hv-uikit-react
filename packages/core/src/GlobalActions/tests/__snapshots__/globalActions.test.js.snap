@@ -3,20 +3,16 @@
 exports[`GlobalActions sample snapshot testing Global Section Actions 1`] = `
 <div>
   <div
-    class="HvGlobalActions-root HvGlobalActions-positionSticky"
+    class="HvGlobalActions-root"
   >
     <div
       class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
     >
-      <div
-        class="HvGlobalActions-name"
+      <h2
+        class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
       >
-        <h2
-          class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
-        >
-          Section Title
-        </h2>
-      </div>
+        Section Title
+      </h2>
       <div
         class="HvGlobalActions-actions"
       >
@@ -93,47 +89,43 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
         class="HvGlobalActions-wrapper HvGlobalActions-globalWrapperComplement"
       >
         <div
-          class="HvGlobalActions-name"
+          class="HvGlobalActions-backButton"
         >
-          <div
-            class="HvGlobalActions-backButton"
+          <button
+            aria-label="Back"
+            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+            tabindex="0"
+            type="button"
           >
-            <button
-              aria-label="Back"
-              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-              tabindex="0"
-              type="button"
+            <span
+              class="MuiButton-label"
             >
-              <span
-                class="MuiButton-label"
+              <div
+                class="HvIconBase-root HvIconBase-s"
+                name="Backwards"
               >
-                <div
-                  class="HvIconBase-root HvIconBase-s"
-                  name="Backwards"
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    focusable="false"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      class="color0"
-                      d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </span>
-            </button>
-          </div>
-          <h1
-            class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
-          >
-            Detail Page Title
-          </h1>
+                  <path
+                    class="color0"
+                    d="M11.30863 15.5L4 8 11.30863.5 12 1.30536 5.38272 8 12 14.79529z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </span>
+          </button>
         </div>
+        <h1
+          class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
+        >
+          Detail Page Title
+        </h1>
         <div
           class="HvGlobalActions-actions"
         >
@@ -210,20 +202,16 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       style="padding-bottom: 60px;"
     >
       <div
-        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1 HvGlobalActions-positionSticky"
+        class="HvGlobalActions-root"
       >
         <div
           class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
         >
-          <div
-            class="HvGlobalActions-name"
+          <h2
+            class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
           >
-            <h2
-              class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
-            >
-              Section Title
-            </h2>
-          </div>
+            Section Title
+          </h2>
           <div
             class="HvGlobalActions-actions"
           >
@@ -298,7 +286,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       </div>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 30px;"
+        style="margin-top: 20px; margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
@@ -309,20 +297,16 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <div
-        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1 HvGlobalActions-positionSticky"
+        class="HvGlobalActions-root"
       >
         <div
           class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
         >
-          <div
-            class="HvGlobalActions-name"
+          <h2
+            class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
           >
-            <h2
-              class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
-            >
-              Section Title
-            </h2>
-          </div>
+            Section Title
+          </h2>
           <div
             class="HvGlobalActions-actions"
           >
@@ -397,7 +381,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       </div>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 30px;"
+        style="margin-top: 20px; margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
@@ -408,20 +392,16 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>
       <div
-        class="HvGlobalActions-root WithStyles(HvGlobalActions)-root-1 HvGlobalActions-positionSticky"
+        class="HvGlobalActions-root"
       >
         <div
           class="HvGlobalActions-wrapper HvGlobalActions-globalSectionArea"
         >
-          <div
-            class="HvGlobalActions-name"
+          <h2
+            class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
           >
-            <h2
-              class="HvGlobalActions-name HvTypography-root HvTypography-sectionTitle"
-            >
-              Section Title
-            </h2>
-          </div>
+            Section Title
+          </h2>
           <div
             class="HvGlobalActions-actions"
           >
@@ -496,7 +476,7 @@ exports[`GlobalActions sample snapshot testing Main 1`] = `
       </div>
       <p
         class="HvTypography-root HvTypography-normalText"
-        style="margin-bottom: 30px;"
+        style="margin-top: 20px; margin-bottom: 30px;"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed. Tortor at risus viverra adipiscing at in tellus. Et netus et malesuada fames ac turpis. Sed blandit libero volutpat sed cras ornare arcu. Arcu odio ut sem nulla pharetra diam sit amet. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Dictum varius duis at consectetur. Lorem sed risus ultricies tristique nulla aliquet enim tortor at. Turpis egestas maecenas pharetra convallis posuere morbi. Eget sit amet tellus cras adipiscing. Egestas erat imperdiet sed euismod nisi. Morbi tincidunt augue interdum velit euismod in pellentesque massa. At augue eget arcu dictum varius duis at. Tellus elementum sagittis vitae et. In est ante in nibh mauris cursus mattis. Faucibus nisl tincidunt eget nullam non. Cursus metus aliquam eleifend mi in nulla posuere.
       </p>

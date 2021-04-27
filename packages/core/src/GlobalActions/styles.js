@@ -1,16 +1,6 @@
 const styles = (theme) => ({
   root: {
-    alignItems: "center",
-    justifyContent: "center",
-    top: 0,
-    left: 0,
-    "&:before": {
-      content: "''",
-      width: "100%",
-      height: 72,
-      top: 0,
-      display: "flex",
-    },
+    position: "relative",
   },
   positionSticky: {
     width: "100%",
@@ -19,6 +9,7 @@ const styles = (theme) => ({
   positionFixed: {
     width: "100%",
     position: "fixed",
+
     [theme.breakpoints.up("md")]: {
       width: `calc(100% - 2*${theme.spacing(4)}px)`,
       marginLeft: `${theme.spacing(4)}px`,
@@ -32,24 +23,32 @@ const styles = (theme) => ({
   },
   global: {
     zIndex: theme.zIndex.appBar - 2,
+
+    top: 0,
+    left: 0,
+
     "&:before": {
       content: "''",
+      display: "flex",
+      width: "100%",
+      height: 72,
+      top: 0,
       background: theme.palette.atmo2,
       opacity: "75%",
     },
   },
   wrapper: {
-    top: 0,
-    left: 0,
-    width: "100%",
-    position: "absolute",
     height: 52,
-    background: theme.hv.palette.atmosphere.atmo1,
-    padding: theme.hvSpacing("xs", "xs", "xs", 0),
+    paddingRight: theme.hv.spacing.xs,
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   globalWrapperComplement: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    background: theme.hv.palette.atmosphere.atmo1,
     width: "100%",
     padding: theme.hv.spacing.xs,
     marginTop: theme.hv.spacing.xs,
@@ -71,13 +70,13 @@ const styles = (theme) => ({
     marginRight: theme.hv.spacing.xs,
   },
   name: {
-    display: "flex",
-    alignItems: "center",
+    flexGrow: 1,
   },
   actions: {
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-end",
+    marginLeft: "auto",
     "& > *:not(:first-child) ": {
       marginLeft: theme.hv.spacing.sm,
     },

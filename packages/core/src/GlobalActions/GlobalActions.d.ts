@@ -48,9 +48,10 @@ export interface HvGlobalActionsProps
    */
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
   /**
-   * Position of the Global Actions
+   * Position of the Global Actions.
+   * Defaults to `sticky` when it is a global title and `relative` when it's a section title.
    */
-  position?: "sticky" | "fixed";
+  position?: "sticky" | "fixed" | "relative";
 }
 
 export default function HvGlobalActions(props: HvGlobalActionsProps): JSX.Element | null;
