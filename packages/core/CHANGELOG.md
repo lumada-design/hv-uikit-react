@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.25.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.24.0...@hv/uikit-react-core@3.25.0) (2021-04-28)
+
+
+### Bug Fixes
+
+* **assetinventory:** asset inventory is ignoring sortOptionId prop. HVUIKIT-5754 ([8b96e30](https://github.com/pentaho/hv-uikit-react/commit/8b96e309cb48cd195dbea3073a36feba3b3a1a63))
+* **global-actions:** section title positioning and height ([8b7b8cc](https://github.com/pentaho/hv-uikit-react/commit/8b7b8ccb28175bd1a6d86c4d407e63c175e2f943))
+* **globalactions:** enable usage without back button. HVUIKIT-5750 ([03061ca](https://github.com/pentaho/hv-uikit-react/commit/03061ca53878167e0333bbc1ea094e32d716e864))
+* **globalactions:** make children optional. HVUIKIT-5748 ([a753fe2](https://github.com/pentaho/hv-uikit-react/commit/a753fe29476fcd4c8be28c23e638ccde62c45bef))
+* **globalactions:** remove background from global actions. HVUIKIT-5747 ([9b20d51](https://github.com/pentaho/hv-uikit-react/commit/9b20d514d799cd88d3ef610d48df4e4871afbfea))
+* **kpi:** indicatorUnitTextVariant prop type definition ([3b2dd0a](https://github.com/pentaho/hv-uikit-react/commit/3b2dd0a9a8eb96b623f854214bc950666c4d58cc))
+* **table:** remove use of dropdownmenu's deprecated class ([01252e2](https://github.com/pentaho/hv-uikit-react/commit/01252e2972271eb6d6d94f5aa0c5bdcf610853ff))
+
+
+### Features
+
+* **card:** add atmo support for top bar. HVUIKIT-5746 ([ece281c](https://github.com/pentaho/hv-uikit-react/commit/ece281cc6421085a5c8418c5ddb2d4bfb5bc6fba))
+* **input:** update input to ui specs. HVUIKIT-5638 ([0fc2cc8](https://github.com/pentaho/hv-uikit-react/commit/0fc2cc835a833acd9c260e87f5969391cf8c172f))
+* **tag:** implement the component according. HVUIKIT-4986 ([6b085eb](https://github.com/pentaho/hv-uikit-react/commit/6b085eb44f14b5dc05dda119efaa9c6eec70bab8))
+* **toggleswitch:** add auxiliary labels. HVUIKIT-5558' ([9160973](https://github.com/pentaho/hv-uikit-react/commit/9160973cae28fff0ab26caf061511f2379ab02c8))
+* **typescript:** export HvPanel and review HvListContainer props ([483fa16](https://github.com/pentaho/hv-uikit-react/commit/483fa16399fbf26d22b7015cdfd239f055321c20))
+* **typescript:** export TS types for HvListContainer and its “sub-component” HvListItem ([08b3ac8](https://github.com/pentaho/hv-uikit-react/commit/08b3ac8c27e43c38c878fc890e15ac17cae2d5af))
+
+
+
+
+
 # [3.24.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.22.0...@hv/uikit-react-core@3.24.0) (2021-04-27)
 
 
