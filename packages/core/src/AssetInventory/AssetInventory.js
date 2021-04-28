@@ -109,7 +109,7 @@ const HvAssetInventory = (props) => {
   }, [selectedViewProp]);
 
   useEffect(() => {
-    setSelectedSort(sortOptionId);
+    setSelectedSort({ sortId: sortOptionId, sortFunc: undefined });
   }, [sortOptionId]);
 
   useEffect(() => {
