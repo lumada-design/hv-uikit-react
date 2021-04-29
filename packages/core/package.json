@@ -2,7 +2,7 @@
   "name": "@hv/uikit-react-core",
   "version": "3.25.0",
   "description": "A collection of React components for the Hitachi Vantara's Design System.",
-  "homepage": "https://github.com/pentaho/hv-uikit-react",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
   "sideEffects": false,
   "exports": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pentaho/hv-uikit-react.git"
+    "url": "https://github.com/lumada-design/hv-uikit-react.git"
   },
   "scripts": {
     "build": "npx npm-run-all --npm-path npm --serial clean build:babel build:post:**",

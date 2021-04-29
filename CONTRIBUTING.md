@@ -2,19 +2,27 @@
 
 We welcome contributions to our project. Here are a few guidelines that will help you along the way:
 
-- [Getting Started](#getting-started)
-- [Question or Problem?](#question-or-problem)
-- [New components](#new-components)
-- [Bugs](#bugs)
-- [Feature Requests](#feature-requests)
-- [Submission Guidelines](#submission-guidelines)
-  - [Submitting an Issue](#submitting-an-issue)
-  - [Submitting a Pull Request](#submitting-a-pull-request)
-- [Coding Standards](#coding-standards)
-  - [Style Guide](#style-guide)
-  - [Linting](#linting)
-- [Commit Message Guidelines](#commit-message-guidelines)
-- [Testing](#testing)
+- [Contribution guidelines](#contribution-guidelines)
+  - [Getting Started](#getting-started)
+    - [Clone the hv-uikit-react repository and bootstrap the project](#clone-the-hv-uikit-react-repository-and-bootstrap-the-project)
+      - [Start the storybook dev environment](#start-the-storybook-dev-environment)
+  - [Question or Problem?](#question-or-problem)
+  - [New components](#new-components)
+    - [Running the generate utility tool](#running-the-generate-utility-tool)
+    - [Symlinking packages](#symlinking-packages)
+  - [Bugs](#bugs)
+  - [Feature Requests](#feature-requests)
+  - [Submission Guidelines](#submission-guidelines)
+    - [Submitting an Issue](#submitting-an-issue)
+    - [Submitting a Pull Request](#submitting-a-pull-request)
+      - [Branch Structure](#branch-structure)
+      - [Setup](#setup)
+  - [Coding Standards](#coding-standards)
+    - [Style Guide](#style-guide)
+    - [Linting](#linting)
+  - [Commit Message Guidelines](#commit-message-guidelines)
+    - [Type](#type)
+  - [Testing](#testing)
 
 ## Getting Started
 
@@ -82,10 +90,10 @@ Please make sure your features are compliant with the [Design System](https://hi
 
 ### Submitting an Issue
 
-You can file new issues by selecting from our [new issue templates](/issues/new/choose) and filling out the issue template.
+You can file new issues by selecting from our [new issue templates](https://github.com/lumada-design/hv-uikit-react/issues/new/choose) and filling out the issue template.
 Before you submit your issue, search the repository, maybe your question was already answered.
 
-If your issue appears to be a bug, and hasn't been reported, [open a new issue](/issues).
+If your issue appears to be a bug, and hasn't been reported, [open a new issue](https://github.com/lumada-design/hv-uikit-react/issues).
 Help us to maximize the effort we can spend fixing issues and adding new features, by not reporting duplicate issues.
 
 ### Submitting a Pull Request
