@@ -203,6 +203,7 @@ The Checkbox is now a form element. Check [Form Element](#formelement) for more 
 
 - `formControlLabelProps` removed use `labelProps` instead
 - `labelPlacement` removed if a different label placement is needed it can be constructed with an `HvLabel` and a `HvBaseCheckbox`
+- `onChange` receives the future value of the checkbox, rather than the present value.
 
 ### DatePicker
 
@@ -255,7 +256,7 @@ Some components have been been adapted to work as a form element to ensure consi
 Components that follows this API will possess the following props:
 
 - `label` renders an HvLabel to identify the element
-- `name` Name of the form element for accesibility 
+- `name` Name of the form element for accesibility
 - `status` the current status of the element used to trigger validation messages
 - `statusMessage` the message show when the `status` prop is invalid
 - `value` the current value of the element if declared the element starts behaving as a controlled component.
@@ -266,6 +267,7 @@ as for the component itself:
 - `HelperText` prop was removed use `statusMessage`.
 
 ### Input
+
 The input is now a form element check. Check [Form Element](#formelement) for more information.
 
 - `Labels` prop was reworked:
@@ -287,6 +289,7 @@ The input is now a form element check. Check [Form Element](#formelement) for mo
 - `validationType`prop was removed use `type` instead to access built-in validations.
 
 - `infoIconContainer` classes removed.
+- `onChange` the provided function no longer returns anything.
 
 ### KPI
 
