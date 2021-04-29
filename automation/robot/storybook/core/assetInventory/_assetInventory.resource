@@ -32,7 +32,7 @@ ${cardView}             css:.HvCardView-elements
 ${checkBox}             xpath:(//input[@type='checkbox'])
 ${dropSortBy}           css:#hv-assetinventory-sort-dropdown>div
 ${dropSortTitleDesc}    css:#hv-assetinventory-sort-values-list-item-1
-${pageCurrent}          css:input[class*=pageSizeInput]
+${pageCurrent}          xpath:(//input[@type='number'])
 ${pageInTotal}          css:.HvPagination-pageInfo>:nth-child(3)
 ${pageLast}             css:#hv-assetinventory-pagination-lastPage-button
 ${pageNavigator}        css:div[class=HvPagination-pageNavigator]
