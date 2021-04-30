@@ -69,6 +69,7 @@ const HvDatePicker = (props) => {
     showActions = false,
     disablePortal = true,
     escapeWithReference = true,
+    dropdownProps,
     ...others
   } = props;
 
@@ -303,6 +304,7 @@ const HvDatePicker = (props) => {
           [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
           undefined
         }
+        {...dropdownProps}
       >
         <div ref={focusTarget} tabIndex={-1} />
         <HvCalendar
@@ -490,6 +492,10 @@ HvDatePicker.propTypes = {
    * An element placed before the Calendar
    */
   startAdornment: PropTypes.node,
+  /**
+   * An object containing props to be passed onto the baseDropdown.
+   */
+  dropdownProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvDatePicker", index: 1 })(HvDatePicker);
