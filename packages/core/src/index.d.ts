@@ -152,6 +152,9 @@ export * from "./Tab";
 export { default as HvTag } from "./Tag";
 export * from "./Tag";
 
+export { default as HvTagInput } from "./TagInput";
+export * from "./TagInput";
+
 export { default as HvTable } from "./Table";
 export * from "./Table";
 
