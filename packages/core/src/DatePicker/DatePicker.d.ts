@@ -78,6 +78,10 @@ export interface HvDatePickerProps
    * An element placed before the Calendar
    */
   startAdornment: React.ReactNode;
+  /**
+   * An object containing props to be passed onto the baseDropdown.
+   */
+  dropdownProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

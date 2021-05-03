@@ -31,6 +31,7 @@ const HvBaseDropdown = ({
   adornment,
   children,
   variableWidth = false,
+  dropdownHeaderProps,
   ...others
 }) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -141,6 +142,7 @@ const HvBaseDropdown = ({
         aria-labelledby={others["aria-labelledby"] ?? undefined}
         tabIndex={disabled ? -1 : 0}
         ref={setReferenceElement}
+        {...dropdownHeaderProps}
       >
         <div className={classes.selection}>
           {placeholder && typeof placeholder === "string" ? (
@@ -423,6 +425,10 @@ HvBaseDropdown.propTypes = {
    * When expanded dropdown flips position.
    */
   onFlip: PropTypes.func,
+  /**
+   * An object containing props to be passed onto the baseDropdown.
+   */
+  dropdownHeaderProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvBaseDropdown" })(HvBaseDropdown);

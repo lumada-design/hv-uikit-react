@@ -97,6 +97,10 @@ export interface HvBaseDropdownProps
    * When expanded dropdown changes position.
    */
   onFlip?: (flipped: boolean) => void;
+  /**
+   * An object containing props to be passed onto the baseDropdown.
+   */
+  dropdownHeaderProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export default function HvBaseDropdown(props: HvBaseDropdownProps): JSX.Element | null;
