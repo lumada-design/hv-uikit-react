@@ -118,10 +118,11 @@ Required.parameters = {
 };
 
 export const ExternallyControlled = () => {
+  const currentTime = new Date();
   const currentTimeProps = {
-    hours: new Date().getHours(),
-    minutes: new Date().getMinutes(),
-    seconds: 0,
+    hours: currentTime.getHours(),
+    minutes: currentTime.getMinutes(),
+    seconds: currentTime.getSeconds(),
   };
 
   const staticTimeProps = {
@@ -130,7 +131,7 @@ export const ExternallyControlled = () => {
     seconds: 30,
   };
 
-  const [time, setTime] = useState(currentTimeProps);
+  const [time, setTime] = useState(staticTimeProps);
 
   return (
     <>
@@ -155,7 +156,7 @@ export const ExternallyControlled = () => {
           Set Static Time
         </HvButton>
       </div>
-      <HvTimePicker {...time} locale="pt-pt" />
+      <HvTimePicker value={time} onChange={(v) => setTime(v)} locale="en-US" />
     </>
   );
 };

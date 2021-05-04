@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvFormElementProps } from "@hv/uikit-react-core";
 
 export type HvTimePickerClassKey =
   | "root"
@@ -16,7 +17,7 @@ export type HvTimePickerClassKey =
   | "description";
 
 export interface HvTimePickerProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvTimePickerClassKey> {
+  extends StandardProps<HvFormElementProps, HvTimePickerClassKey, "onChange"> {
   /**
    * Class names to be applied.
    */
@@ -31,6 +32,17 @@ export interface HvTimePickerProps
    * The form element name.
    */
   name?: string;
+
+  /**
+   * The value of the form element.
+   *
+   * When defined the value state becomes controlled.
+   */
+  value?: any;
+  /**
+   * When uncontrolled, defines the initial value.
+   */
+  defaultValue?: any;
 
   /**
    * Indicates that user input is required on the form element.
@@ -76,20 +88,25 @@ export interface HvTimePickerProps
    * It is "overwritten" by the timeFormat prop
    */
   locale?: string;
+
   /**
    * Default value for the hours picker
+   * @deprecated use defaultValue instead
    */
   hours?: number;
   /**
    * Default value for the minutes picker
+   * @deprecated use defaultValue instead
    */
   minutes?: number;
   /**
    * Default value for the seconds picker
+   * @deprecated use defaultValue instead
    */
   seconds?: number;
   /**
    * Default value for the period picker
+   * @deprecated use defaultValue instead
    */
   period?: string;
 

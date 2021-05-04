@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
@@ -16,8 +16,7 @@ import {
 } from "@hv/uikit-react-core";
 import { Time as TimeIcon } from "@hv/uikit-react-icons";
 import UnitTimePicker from "./UnitTimePicker";
-import { TimePickerUnits, TimeFormat } from "./enums";
-import { getPeriodForDate } from "./timePickerUtils";
+import { TimePickerUnits, TimeFormat, PeriodPickerOptions } from "./enums";
 import { getFormattedTime, getTimeFormatForLocale } from "./timePickerFormatter";
 import { getHoursForTimeFormat, getTimeWithFormat24 } from "./timePickerConverter";
 
@@ -33,6 +32,10 @@ const HvTimePicker = ({
   className,
   id,
   name,
+
+  value: valueProp,
+  defaultValue: defaultValueProp,
+
   required = false,
   disabled = false,
   label,
@@ -58,25 +61,37 @@ const HvTimePicker = ({
   const locale = localeProp || localeFromProvider;
 
   const timeFormat = chosenTimeFormat || getTimeFormatForLocale(locale);
-  const period = timeFormat === TimeFormat.H24 ? undefined : chosenTimePeriod || getPeriodForDate();
 
-  const [selectedTime, setSelectedTime] = useState("");
+  // fallback to the deprecated properties
+  // we shouldn't do that when promoting to core
+  // as it makes impossible to start with an empty value
+  const defaultValue = defaultValueProp ?? {
+    hours,
+    minutes,
+    seconds,
+  };
 
-  useEffect(() => {
-    setSelectedTime({
-      hours: getHoursForTimeFormat(hours, timeFormat),
-      minutes,
-      seconds,
-      period,
-    });
-  }, [hours, minutes, seconds, period, timeFormat]);
+  const [value, setValue] = useControlled(valueProp, defaultValue);
+
+  const selectedTime = {
+    hours: getHoursForTimeFormat(value.hours, timeFormat),
+    minutes: value.minutes,
+    seconds: value.seconds,
+    period:
+      timeFormat === TimeFormat.H24
+        ? undefined
+        : chosenTimePeriod || (value.hours < 12 ? PeriodPickerOptions.AM : PeriodPickerOptions.PM),
+  };
 
   const [validationMessage] = useControlled(statusMessage, "Required");
   const [validationState, setValidationState] = useControlled(status, "standBy");
 
   const handleTimeChange = (updatedTimeObject) => {
     const selectedTimeIn24Format = getTimeWithFormat24(updatedTimeObject, timeFormat);
-    setSelectedTime(updatedTimeObject);
+
+    // this will only run if value is uncontrolled
+    setValue(selectedTimeIn24Format);
+
     onChange?.(selectedTimeIn24Format);
   };
 
@@ -337,6 +352,15 @@ HvTimePicker.propTypes = {
   name: PropTypes.string,
 
   /**
+   * The value of the form element.
+   */
+  value: PropTypes.string,
+  /**
+   * When uncontrolled, defines the initial input value.
+   */
+  defaultValue: PropTypes.string,
+
+  /**
    * Indicates that user input is required on the form element.
    */
   required: PropTypes.bool,
@@ -415,18 +439,22 @@ HvTimePicker.propTypes = {
 
   /**
    * Default value for the hours picker
+   * @deprecated use defaultValue instead
    */
   hours: PropTypes.number,
   /**
    * Default value for the minutes picker
+   * @deprecated use defaultValue instead
    */
   minutes: PropTypes.number,
   /**
    * Default value for the seconds picker
+   * @deprecated use defaultValue instead
    */
   seconds: PropTypes.number,
   /**
    * Default value for the period picker
+   * @deprecated use defaultValue instead
    */
   period: PropTypes.string,
 
