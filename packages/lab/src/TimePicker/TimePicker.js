@@ -176,10 +176,10 @@ const HvTimePicker = ({
     handleTimeChange(newSelectedTime);
   };
 
-  const RenderTimePickerContent = () => {
+  const TimePickerContent = () => {
     const separator = <span className={classes.separator}>:</span>;
     return (
-      <div className={classes.timePopperContainer} role="tooltip">
+      <div className={classes.timePopperContainer}>
         <UnitTimePicker
           unit={
             timeFormat === TimeFormat.H24
@@ -271,7 +271,7 @@ const HvTimePicker = ({
         disabled={disabled}
         popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
       >
-        <RenderTimePickerContent />
+        <TimePickerContent />
       </HvBaseDropdown>
       {canShowError && (
         <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>

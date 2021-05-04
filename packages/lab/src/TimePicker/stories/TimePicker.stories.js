@@ -108,15 +108,6 @@ WithoutLabel.parameters = {
   },
 };
 
-export const Required = () => <HvTimePicker label="Time" required locale="pt-pt" />;
-
-Required.parameters = {
-  eyes: {
-    // excluded due to dynamic date (which is the default that we intend to exemplify)
-    include: false,
-  },
-};
-
 export const ExternallyControlled = () => {
   const currentTime = new Date();
   const currentTimeProps = {
