@@ -62,7 +62,6 @@ const HvTag = (props) => {
       <HvButton
         startIcon={
           <CloseXS
-            color="red"
             iconSize="XS"
             style={{
               ...(disabled ? { cursor: "not-allowed" } : undefined),
