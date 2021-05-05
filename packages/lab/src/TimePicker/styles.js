@@ -91,6 +91,10 @@ const styles = (theme) => ({
   dropdownPlaceholder: {
     color: theme.hv.palette.accent.acce1,
   },
+
+  dropdownHeaderInvalid: {
+    border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+  },
 });
 
 export default styles;

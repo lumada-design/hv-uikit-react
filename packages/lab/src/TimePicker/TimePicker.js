@@ -253,6 +253,7 @@ const HvTimePicker = ({
         placeholder={getFormattedTime(selectedTime)}
         classes={{
           placeholder: classes.dropdownPlaceholder,
+          header: validationState === "invalid" ? classes.dropdownHeaderInvalid : undefined,
         }}
         variableWidth
         placement="right"
@@ -335,6 +336,10 @@ HvTimePicker.propTypes = {
      * Styles applied to the icon information text.
      */
     description: PropTypes.string,
+    /**
+     * Styles applied to the dropdown when invalid information text.
+     */
+    dropdownHeaderInvalid: PropTypes.string,
   }).isRequired,
   /**
    * Class names to be applied.
