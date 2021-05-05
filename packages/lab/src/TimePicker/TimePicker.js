@@ -252,12 +252,15 @@ const HvTimePicker = ({
         role="combobox"
         placeholder={getFormattedTime(selectedTime)}
         classes={{
-          placeholder: classes.dropdownPlaceholder,
+          placeholder: disabled ? classes.dropdownPlaceholderDisabled : classes.dropdownPlaceholder,
           header: validationState === "invalid" ? classes.dropdownHeaderInvalid : undefined,
+          headerOpen: classes.dropdownHeaderOpen,
         }}
         variableWidth
         placement="right"
-        adornment={<TimeIcon className={classes.iconBaseRoot} />}
+        adornment={
+          <TimeIcon color={[disabled ? "atmo5" : "acce1"]} className={classes.iconBaseRoot} />
+        }
         onContainerCreation={setFocusToContent}
         aria-haspopup="dialog"
         aria-label={ariaLabel}
@@ -340,6 +343,15 @@ HvTimePicker.propTypes = {
      * Styles applied to the dropdown when invalid information text.
      */
     dropdownHeaderInvalid: PropTypes.string,
+    /**
+     * Styles applied to the dropdown text when invalid.
+     */
+
+    dropdownPlaceholderDisabled: PropTypes.string,
+    /**
+     * Styles applied to the dropdown border when invalid.
+     */
+    dropdownHeaderOpen: PropTypes.string,
   }).isRequired,
   /**
    * Class names to be applied.

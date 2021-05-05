@@ -80,7 +80,7 @@ WithOnChange.parameters = {
 };
 
 export const WithDescription = () => (
-  <HvTimePicker label="Time" description="Please enter your first name" locale="pt-pt" />
+  <HvTimePicker label="Time" description="Pick a time" locale="pt-pt" />
 );
 
 WithDescription.parameters = {
@@ -91,6 +91,8 @@ WithDescription.parameters = {
 };
 
 export const Disabled = () => <HvTimePicker disabled label="Time" locale="pt-pt" />;
+
+Disabled.decorators = [(storyFn) => <div style={{ minHeight: 60 }}>{storyFn()}</div>];
 
 Disabled.parameters = {
   eyes: {
@@ -151,6 +153,8 @@ export const ExternallyControlled = () => {
     </>
   );
 };
+
+ExternallyControlled.decorators = [(storyFn) => <div style={{ height: 300 }}>{storyFn()}</div>];
 
 ExternallyControlled.parameters = {
   eyes: {

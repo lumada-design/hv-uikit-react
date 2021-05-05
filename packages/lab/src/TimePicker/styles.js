@@ -91,9 +91,21 @@ const styles = (theme) => ({
   dropdownPlaceholder: {
     color: theme.hv.palette.accent.acce1,
   },
-
+  dropdownPlaceholderDisabled: {
+    color: theme.hv.palette.atmosphere.atmo5,
+  },
   dropdownHeaderInvalid: {
     border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+    "&:hover": {
+      border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+    },
+  },
+
+  dropdownHeaderOpen: {
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    "&:hover": {
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    },
   },
 });
 

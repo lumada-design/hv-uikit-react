@@ -14,7 +14,10 @@ export type HvTimePickerClassKey =
   | "iconBaseRoot"
   | "error"
   | "labelContainer"
-  | "description";
+  | "description"
+  | "dropdownHeaderInvalid"
+  | "dropdownPlaceholderDisabled"
+  | "dropdownHeaderOpen";
 
 export interface HvTimePickerProps
   extends StandardProps<HvFormElementProps, HvTimePickerClassKey, "onChange"> {
