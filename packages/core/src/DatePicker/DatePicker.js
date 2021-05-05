@@ -283,7 +283,12 @@ const HvDatePicker = (props) => {
       )}
       <HvBaseDropdown
         role="combobox"
-        classes={{ root: classes.dropdown, panel: classes.panel }}
+        classes={{
+          root: classes.dropdown,
+          panel: classes.panel,
+          header: validationState === "invalid" ? classes.dropdownHeaderInvalid : undefined,
+          headerOpen: classes.dropdownHeaderOpen,
+        }}
         disabled={disabled}
         disablePortal={disablePortal}
         variableWidth
@@ -367,6 +372,14 @@ HvDatePicker.propTypes = {
     panel: PropTypes.string,
     action: PropTypes.string,
     icon: PropTypes.string,
+    /**
+     * Styles applied to the date picker when invalid.
+     */
+    dropdownHeaderInvalid: PropTypes.string,
+    /**
+     * Styles applied to the date picker when opened.
+     */
+    dropdownHeaderOpen: PropTypes.string,
   }).isRequired,
 
   /**

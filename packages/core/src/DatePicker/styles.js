@@ -70,6 +70,18 @@ const styles = (theme) => ({
       lineHeight: "26px",
     },
   },
+  dropdownHeaderInvalid: {
+    border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+    "&:hover": {
+      border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+    },
+  },
+  dropdownHeaderOpen: {
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    "&:hover": {
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    },
+  },
   icon: {
     position: "absolute",
     right: -1,
