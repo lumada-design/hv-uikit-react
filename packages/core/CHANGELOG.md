@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.25.0...@hv/uikit-react-core@3.26.0) (2021-05-05)
+
+
+### Bug Fixes
+
+* **docs:** broken links ([72f072b](https://github.com/lumada-design/hv-uikit-react/commit/72f072b541efc16519183ec4d42e51563de74a9e))
+* **tag:** remove leftover color ([4425bb5](https://github.com/lumada-design/hv-uikit-react/commit/4425bb578c4093f4e34db7803e9430a1c382d7d5))
+
+
+### Features
+
+* **dropdown:** enable wiring of additional props to base drowpdown. HVUIKIT-5754 ([54ab173](https://github.com/lumada-design/hv-uikit-react/commit/54ab17326fcbef44df0aee44938d12ca84b7d60f))
+
+
+
+
+
 # [3.25.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@3.24.0...@hv/uikit-react-core@3.25.0) (2021-04-28)
 
 

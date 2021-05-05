@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.0.3 (2021-05-05)
+
+
+### Bug Fixes
+
+* **docs:** broken links ([72f072b](https://github.com/lumada-design/hv-uikit-react/commit/72f072b541efc16519183ec4d42e51563de74a9e))
+
+
+
+
+
 ## [3.0.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-common-themes@3.0.1...@hv/uikit-common-themes@3.0.2) (2021-01-19)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
