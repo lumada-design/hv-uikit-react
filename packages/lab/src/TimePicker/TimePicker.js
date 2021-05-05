@@ -54,6 +54,7 @@ const HvTimePicker = ({
   period: chosenTimePeriod,
   disablePortal = true,
   escapeWithReference = true,
+  dropdownProps,
   ...others
 }) => {
   const localeFromProvider = useLocale();
@@ -219,7 +220,7 @@ const HvTimePicker = ({
 
   return (
     <HvFormElement
-      id={setId(elementId, "timepicker")}
+      id={id}
       name={name}
       locale={locale}
       required={required}
@@ -234,12 +235,7 @@ const HvTimePicker = ({
       {(hasLabels || hasDescription) && (
         <div className={classes.labelContainer}>
           {hasLabels && (
-            <HvLabel
-              id={setId(elementId, "label")}
-              htmlFor={setId(elementId, "input")}
-              label={label}
-              className={classes.label}
-            />
+            <HvLabel id={setId(elementId, "label")} label={label} className={classes.label} />
           )}
           {hasDescription && (
             <HvInfoMessage id={setId(elementId, "description")} className={classes.description}>
@@ -249,6 +245,7 @@ const HvTimePicker = ({
         </div>
       )}
       <HvBaseDropdown
+        id={setId(elementId, "timepicker-dropdown")}
         role="combobox"
         placeholder={getFormattedTime(selectedTime)}
         classes={{
@@ -264,7 +261,9 @@ const HvTimePicker = ({
         onContainerCreation={setFocusToContent}
         aria-haspopup="dialog"
         aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
+        aria-labelledby={
+          [label && setId(elementId, "label"), ariaLabelledBy].join(" ").trim() || undefined
+        }
         aria-invalid={validationState === "invalid" ? true : undefined}
         aria-errormessage={validationState === "invalid" ? setId(elementId, "error") : undefined}
         aria-describedby={
@@ -274,6 +273,7 @@ const HvTimePicker = ({
         disablePortal={disablePortal}
         disabled={disabled}
         popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
+        {...dropdownProps}
       >
         <TimePickerContent />
       </HvBaseDropdown>
@@ -484,6 +484,10 @@ HvTimePicker.propTypes = {
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
   escapeWithReference: PropTypes.bool,
+  /**
+   * Extra properties to be passed to the timepicker dropdown.
+   */
+  dropdownProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvTimePicker" })(HvTimePicker);

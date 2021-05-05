@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvFormElementProps } from "@hv/uikit-react-core";
+import { HvFormElementProps, HvBaseDropdownProps } from "@hv/uikit-react-core";
 
 export type HvTimePickerClassKey =
   | "root"
@@ -139,6 +139,11 @@ export interface HvTimePickerProps
    * Sets if the calendar container should follow the date picker input out of the screen or stay visible.
    */
   escapeWithReference?: boolean;
+
+  /**
+   * Extra properties to be passed to the timepicker dropdown.
+   */
+  dropdownProps: HvBaseDropdownProps;
 }
 
 export default function HvTimePicker(props: HvTimePickerProps): JSX.Element | null;

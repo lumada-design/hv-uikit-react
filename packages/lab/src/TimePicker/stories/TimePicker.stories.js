@@ -15,7 +15,7 @@ export default {
   decorators: [(storyFn) => <div style={{ width: 200, minHeight: 200 }}>{storyFn()}</div>],
 };
 
-export const Main = () => <HvTimePicker label="Time" locale="pt-pt" />;
+export const Main = () => <HvTimePicker id="main" label="Time" locale="pt-pt" />;
 
 Main.parameters = {
   eyes: {
@@ -24,7 +24,7 @@ Main.parameters = {
   },
 };
 
-export const Format12Hours = () => <HvTimePicker label="Time" locale="en-US" />;
+export const Format12Hours = () => <HvTimePicker id="format" label="Time" locale="en-US" />;
 
 Format12Hours.parameters = {
   docs: {
@@ -37,7 +37,15 @@ Format12Hours.parameters = {
 };
 
 export const CustomDefault = () => (
-  <HvTimePicker label="Time" hours={14} minutes={35} seconds={45} period="AM" timeFormat={12} />
+  <HvTimePicker
+    id="custom"
+    label="Time"
+    hours={14}
+    minutes={35}
+    seconds={45}
+    period="AM"
+    timeFormat={12}
+  />
 );
 
 CustomDefault.parameters = {
@@ -65,7 +73,7 @@ export const WithOnChange = () => {
     return (
       <>
         <div>{formattedTime}</div>
-        <HvTimePicker label="Time" {...timeProps} onChange={updateTime} />
+        <HvTimePicker id="onchange" label="Time" {...timeProps} onChange={updateTime} />
       </>
     );
   };
@@ -80,7 +88,7 @@ WithOnChange.parameters = {
 };
 
 export const WithDescription = () => (
-  <HvTimePicker label="Time" description="Pick a time" locale="pt-pt" />
+  <HvTimePicker id="description" label="Time" description="Pick a time" locale="pt-pt" />
 );
 
 WithDescription.parameters = {
@@ -90,7 +98,7 @@ WithDescription.parameters = {
   },
 };
 
-export const Disabled = () => <HvTimePicker disabled label="Time" locale="pt-pt" />;
+export const Disabled = () => <HvTimePicker id="disabled" disabled label="Time" locale="pt-pt" />;
 
 Disabled.decorators = [(storyFn) => <div style={{ minHeight: 60 }}>{storyFn()}</div>];
 
@@ -101,7 +109,9 @@ Disabled.parameters = {
   },
 };
 
-export const WithoutLabel = () => <HvTimePicker aria-label="Timepicker" locale="pt-pt" />;
+export const WithoutLabel = () => (
+  <HvTimePicker id="nolabel" aria-label="Timepicker" locale="pt-pt" />
+);
 
 WithoutLabel.parameters = {
   eyes: {
@@ -149,7 +159,7 @@ export const ExternallyControlled = () => {
           Set Static Time
         </HvButton>
       </div>
-      <HvTimePicker value={time} onChange={(v) => setTime(v)} locale="en-US" />
+      <HvTimePicker id="controlled" value={time} onChange={(v) => setTime(v)} locale="en-US" />
     </>
   );
 };
@@ -164,7 +174,7 @@ ExternallyControlled.parameters = {
 };
 
 export const InvalidState = () => (
-  <HvTimePicker status="invalid" statusMessage="Invalid period" locale="pt-pt" />
+  <HvTimePicker id="invalid" status="invalid" statusMessage="Invalid period" locale="pt-pt" />
 );
 
 InvalidState.parameters = {
@@ -188,7 +198,7 @@ export const Localized = () => {
         ]}
         label="Select locale"
       />
-      <HvTimePicker locale={locale} style={{ marginTop: "20px" }} />
+      <HvTimePicker id="localized" locale={locale} style={{ marginTop: "20px" }} />
     </>
   );
 };

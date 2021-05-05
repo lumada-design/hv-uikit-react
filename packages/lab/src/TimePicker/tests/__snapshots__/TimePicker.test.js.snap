@@ -4,7 +4,7 @@ exports[`Timepicker snapshot tests Main 1`] = `
 <div>
   <div
     class="HvFormElement-root HvTimePicker-formElementRoot"
-    id="hvtimepicker1-timepicker"
+    id="custom"
     locale="en-US"
   >
     <div
@@ -12,8 +12,7 @@ exports[`Timepicker snapshot tests Main 1`] = `
     >
       <label
         class="HvTimePicker-label HvLabel-root HvTypography-root HvTypography-highlightText"
-        for="hvtimepicker1-input"
-        id="hvtimepicker1-label"
+        id="custom-label"
       >
         Time
       </label>
@@ -24,12 +23,16 @@ exports[`Timepicker snapshot tests Main 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        aria-labelledby="custom-label"
         class="HvBaseDropdown-anchor"
+        id="custom-timepicker-dropdown"
         role="combobox"
         tabindex="-1"
       >
         <div
+          aria-labelledby="custom-label"
           class="HvBaseDropdown-header"
+          id="custom-timepicker-dropdown-header"
           role="textbox"
           tabindex="0"
         >
