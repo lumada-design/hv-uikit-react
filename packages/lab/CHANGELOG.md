@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.9.3...@hv/uikit-react-lab@3.10.0) (2021-05-05)
+
+
+### Features
+
+* **timepicker:** update component with ds specs. HVUIKIT-5752 ([706b496](https://github.com/lumada-design/hv-uikit-react/commit/706b49680643a57547dc63860dff361c9d58d441))
+
+
+
+
+
 ## [3.9.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.9.2...@hv/uikit-react-lab@3.9.3) (2021-05-05)
 
 
