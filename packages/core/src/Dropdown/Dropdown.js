@@ -211,7 +211,12 @@ const HvDropdown = (props) => {
       )}
       <HvBaseDropdown
         id={setId(id, "dropdown")}
-        classes={{ root: classes.dropdown, arrow: classes.arrow }}
+        classes={{
+          root: classes.dropdown,
+          arrow: classes.arrow,
+          header: validationState === "invalid" ? classes.dropdownHeaderInvalid : undefined,
+          headerOpen: classes.dropdownHeaderOpen,
+        }}
         expanded={isOpen}
         disabled={disabled}
         disablePortal={disablePortal}
@@ -311,6 +316,14 @@ HvDropdown.propTypes = {
      * Styles applied to the list.
      */
     rootList: PropTypes.string,
+    /**
+     * Styles applied to the dropdown is invalid.
+     */
+    dropdownHeaderInvalid: PropTypes.string,
+    /**
+     * Styles applied to the dropdown is opened.
+     */
+    dropdownHeaderOpen: PropTypes.string,
   }).isRequired,
 
   /**
