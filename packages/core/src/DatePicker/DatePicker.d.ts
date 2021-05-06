@@ -10,7 +10,9 @@ export type HvDatePickerClassKey =
   | "dropdown"
   | "panel"
   | "action"
-  | "icon";
+  | "icon"
+  | "dropdownHeaderInvalid"
+  | "dropdownHeaderOpen";
 
 export interface HvDatePickerProps
   extends StandardProps<HvFormElementProps, HvDatePickerClassKey, "onChange"> {

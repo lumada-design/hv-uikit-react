@@ -11,6 +11,8 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
         "action": "HvDatePicker-action",
         "description": "HvDatePicker-description",
         "dropdown": "HvDatePicker-dropdown",
+        "dropdownHeaderInvalid": "HvDatePicker-dropdownHeaderInvalid",
+        "dropdownHeaderOpen": "HvDatePicker-dropdownHeaderOpen",
         "error": "HvDatePicker-error",
         "icon": "HvDatePicker-icon",
         "input": "HvDatePicker-input",
@@ -63,6 +65,8 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             aria-haspopup="dialog"
             classes={
               Object {
+                "header": undefined,
+                "headerOpen": "HvDatePicker-dropdownHeaderOpen",
                 "panel": "HvDatePicker-panel",
                 "root": "HvDatePicker-dropdown",
               }
@@ -109,7 +113,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                   "container": "HvBaseDropdown-container",
                   "header": "HvBaseDropdown-header",
                   "headerDisabled": "HvBaseDropdown-headerDisabled",
-                  "headerOpen": "HvBaseDropdown-headerOpen",
+                  "headerOpen": "HvBaseDropdown-headerOpen HvDatePicker-dropdownHeaderOpen",
                   "headerOpenDown": "HvBaseDropdown-headerOpenDown",
                   "headerOpenUp": "HvBaseDropdown-headerOpenUp",
                   "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
@@ -274,6 +278,8 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
         "action": "HvDatePicker-action",
         "description": "HvDatePicker-description",
         "dropdown": "HvDatePicker-dropdown",
+        "dropdownHeaderInvalid": "HvDatePicker-dropdownHeaderInvalid",
+        "dropdownHeaderOpen": "HvDatePicker-dropdownHeaderOpen",
         "error": "HvDatePicker-error",
         "icon": "HvDatePicker-icon",
         "input": "HvDatePicker-input",
@@ -340,6 +346,8 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             aria-haspopup="dialog"
             classes={
               Object {
+                "header": undefined,
+                "headerOpen": "HvDatePicker-dropdownHeaderOpen",
                 "panel": "HvDatePicker-panel",
                 "root": "HvDatePicker-dropdown",
               }
@@ -386,7 +394,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                   "container": "HvBaseDropdown-container",
                   "header": "HvBaseDropdown-header",
                   "headerDisabled": "HvBaseDropdown-headerDisabled",
-                  "headerOpen": "HvBaseDropdown-headerOpen",
+                  "headerOpen": "HvBaseDropdown-headerOpen HvDatePicker-dropdownHeaderOpen",
                   "headerOpenDown": "HvBaseDropdown-headerOpenDown",
                   "headerOpenUp": "HvBaseDropdown-headerOpenUp",
                   "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
@@ -537,6 +545,8 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
         "action": "HvDatePicker-action",
         "description": "HvDatePicker-description",
         "dropdown": "HvDatePicker-dropdown",
+        "dropdownHeaderInvalid": "HvDatePicker-dropdownHeaderInvalid",
+        "dropdownHeaderOpen": "HvDatePicker-dropdownHeaderOpen",
         "error": "HvDatePicker-error",
         "icon": "HvDatePicker-icon",
         "input": "HvDatePicker-input",
@@ -585,6 +595,8 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             aria-haspopup="dialog"
             classes={
               Object {
+                "header": undefined,
+                "headerOpen": "HvDatePicker-dropdownHeaderOpen",
                 "panel": "HvDatePicker-panel",
                 "root": "HvDatePicker-dropdown",
               }
@@ -629,7 +641,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                   "container": "HvBaseDropdown-container",
                   "header": "HvBaseDropdown-header",
                   "headerDisabled": "HvBaseDropdown-headerDisabled",
-                  "headerOpen": "HvBaseDropdown-headerOpen",
+                  "headerOpen": "HvBaseDropdown-headerOpen HvDatePicker-dropdownHeaderOpen",
                   "headerOpenDown": "HvBaseDropdown-headerOpenDown",
                   "headerOpenUp": "HvBaseDropdown-headerOpenUp",
                   "inputExtensionFloatLeft": "HvBaseDropdown-inputExtensionFloatLeft",
