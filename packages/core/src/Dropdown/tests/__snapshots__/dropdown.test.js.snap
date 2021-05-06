@@ -20,7 +20,7 @@ exports[`<Dropdown /> General 1`] = `
         >
           <div
             aria-controls="hvbasedropdown3-children-container"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
             role="textbox"
             tabindex="0"
           >
@@ -84,7 +84,7 @@ exports[`<Dropdown /> SingleSelection 1`] = `
         >
           <div
             aria-controls="dropdown7-dropdown-children-container"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
             id="dropdown7-dropdown-header"
             role="textbox"
             tabindex="0"
@@ -146,7 +146,7 @@ exports[`<Dropdown /> SingleSelectionWithSearch 1`] = `
         >
           <div
             aria-controls="dropdown6-dropdown-children-container"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
             id="dropdown6-dropdown-header"
             role="textbox"
             tabindex="0"
