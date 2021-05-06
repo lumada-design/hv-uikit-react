@@ -16,7 +16,7 @@ export default {
   component: HvDatePicker,
   decorators: [
     (Story) => (
-      <div style={{ height: 600, padding: 10 }}>
+      <div style={{ width: 340, height: 600, padding: 10 }}>
         <Story />
       </div>
     ),
