@@ -7,6 +7,24 @@ const styles = (theme) => ({
     "& $selectionDisabled": {
       color: theme.palette.atmo5,
     },
+    "& $dropdownHeaderInvalid": {
+      border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+      "&:hover": {
+        border: `1px solid ${theme.hv.palette.semantic.sema4}`,
+      },
+      "&$dropdownHeaderOpen": {
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+        "&:hover": {
+          border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+        },
+      },
+    },
+    "& $dropdownHeaderOpen": {
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+      "&:hover": {
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+      },
+    },
   },
   dropdown: {
     width: "100%",
@@ -31,6 +49,8 @@ const styles = (theme) => ({
   selectionDisabled: {
     lineHeight: theme.hv.spacing.md,
   },
+  dropdownHeaderInvalid: {},
+  dropdownHeaderOpen: {},
 });
 
 export default styles;
