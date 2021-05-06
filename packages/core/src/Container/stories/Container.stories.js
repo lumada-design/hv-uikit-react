@@ -27,8 +27,7 @@ export const Main = () => {
     paper: {
       padding: theme.hvSpacing(2),
       textAlign: "center",
-      backgroundColor: theme.hv.palette.semantic.sema7,
-      color: theme.hv.palette.base.base2,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
       height: 125,
     },
   });
@@ -47,7 +46,8 @@ export const Main = () => {
 export const SmMaxWidth = () => {
   const styles = (theme) => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+      border: "1px solid",
+      borderColor: theme.hv.palette.atmosphere.atmo4,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.normalText,
@@ -55,8 +55,7 @@ export const SmMaxWidth = () => {
     paper: {
       padding: theme.hvSpacing(2),
       textAlign: "center",
-      backgroundColor: theme.hv.palette.semantic.sema7,
-      color: theme.hv.palette.base.base2,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
       height: 125,
     },
   });
@@ -81,7 +80,8 @@ SmMaxWidth.parameters = {
 export const FullWidth = () => {
   const styles = (theme) => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+      border: "1px solid",
+      borderColor: theme.hv.palette.atmosphere.atmo4,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.normalText,
@@ -89,8 +89,7 @@ export const FullWidth = () => {
     paper: {
       padding: theme.hvSpacing(2),
       textAlign: "center",
-      backgroundColor: theme.hv.palette.semantic.sema7,
-      color: theme.hv.palette.base.base2,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
       height: 125,
     },
   });
