@@ -58,7 +58,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    description: "Disabled switches.",
+    description: { story: "Disabled switches." },
   },
   pa11y: {
     ignore: [
@@ -80,7 +80,7 @@ export const ReadOnly = () => (
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable switches.",
+    description: { story: "Not editable switches." },
   },
 };
 
@@ -92,7 +92,7 @@ export const Required = () => (
 
 Required.parameters = {
   docs: {
-    description: "Required switch. Uncheck to show the error state.",
+    description: { story: "Required switch. Uncheck to show the error state." },
   },
 };
 

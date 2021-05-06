@@ -126,6 +126,6 @@ export const DonutChartWithControls = () => {
 
 DonutChartWithControls.parameters = {
   docs: {
-    description: "Donut chart with title and controls.",
+    description: { story: "Donut chart with title and controls." },
   },
 };

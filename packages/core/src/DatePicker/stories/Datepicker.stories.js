@@ -206,7 +206,9 @@ export const RangeModeWithNoValues = () => (
 
 RangeModeWithNoValues.parameters = {
   docs: {
-    description: "Datepicker in range mode allowing the selection of more than one value.",
+    description: {
+      story: "Datepicker in range mode allowing the selection of more than one value.",
+    },
   },
   pa11y: {
     ignore: [

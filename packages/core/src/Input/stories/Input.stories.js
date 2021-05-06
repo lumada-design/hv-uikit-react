@@ -45,7 +45,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    description: "Input sample that does not allow interactions.",
+    description: { story: "Input sample that does not allow interactions." },
   },
   pa11y: {
     ignore: [
@@ -70,7 +70,7 @@ export const ReadOnly = () => (
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable input.",
+    description: { story: "Not editable input." },
   },
 };
 
@@ -96,7 +96,7 @@ export const Required = () => (
 
 Required.parameters = {
   docs: {
-    description: "Required input value. Clear the input to show default error message.",
+    description: { story: "Required input value. Clear the input to show default error message." },
   },
 };
 
@@ -140,7 +140,7 @@ export const ControlledWithButtons = () => {
 
 ControlledWithButtons.parameters = {
   docs: {
-    description: "Changing the input value from outside the input component.",
+    description: { story: "Changing the input value from outside the input component." },
   },
 };
 
@@ -168,8 +168,10 @@ export const InvalidState = () => {
 
 InvalidState.parameters = {
   docs: {
-    description:
-      "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
+    description: {
+      story:
+        "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
+    },
   },
   pa11y: {
     ignore: [
@@ -382,7 +384,7 @@ export const Suggestion = () => {
 
 Suggestion.parameters = {
   docs: {
-    description: "Input with suggestion list.",
+    description: { story: "Input with suggestion list." },
   },
 };
 

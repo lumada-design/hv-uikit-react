@@ -91,7 +91,7 @@ export const Disabled = () => {
 
 Disabled.parameters = {
   docs: {
-    description: "Disabled radio buttons.",
+    description: { story: "Disabled radio buttons." },
   },
   pa11y: {
     ignore: [
@@ -131,7 +131,7 @@ export const ReadOnly = () => {
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable radio buttons.",
+    description: { story: "Not editable radio buttons." },
   },
 };
 

@@ -61,7 +61,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    description: "Disabled checkboxes.",
+    description: { story: "Disabled checkboxes." },
   },
   pa11y: {
     ignore: [
@@ -84,7 +84,7 @@ export const ReadOnly = () => (
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable checkboxes.",
+    description: { story: "Not editable checkboxes." },
   },
 };
 
@@ -111,7 +111,7 @@ export const Required = () => (
 
 Required.parameters = {
   docs: {
-    description: "Required checkbox. Uncheck to show default error message.",
+    description: { story: "Required checkbox. Uncheck to show default error message." },
   },
 };
 

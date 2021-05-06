@@ -105,6 +105,6 @@ export const CustomBackground = () => {
 
 CustomBackground.parameters = {
   docs: {
-    description: "Login container with custom background.",
+    description: { story: "Login container with custom background." },
   },
 };
