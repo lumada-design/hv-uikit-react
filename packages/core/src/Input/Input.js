@@ -82,6 +82,7 @@ const HvInput = (props) => {
 
     status,
     statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
     type = "text",
 
@@ -183,18 +184,22 @@ const HvInput = (props) => {
     value,
   ]);
 
-  // error message area will only be needed if the status property is being controlled
-  // or if any of the built-in validations are active
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and any of the built-in validations are active
   const canShowError =
-    status !== undefined ||
-    hasBuiltInValidations(
-      required,
-      validationType,
-      minCharQuantity,
-      maxCharQuantity,
-      validation,
-      inputProps
-    );
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) ||
+      (status === undefined &&
+        hasBuiltInValidations(
+          required,
+          validationType,
+          minCharQuantity,
+          maxCharQuantity,
+          validation,
+          inputProps
+        )));
 
   const isStateInvalid = isInvalid(validationState);
 
@@ -514,7 +519,7 @@ const HvInput = (props) => {
   ]);
 
   const validationIcon = useMemo(() => {
-    if (!showValidationIcon || !canShowError) {
+    if (!showValidationIcon) {
       return null;
     }
 
@@ -523,7 +528,7 @@ const HvInput = (props) => {
     }
 
     return <Success semantic="sema1" className={classes.icon} />;
-  }, [showValidationIcon, canShowError, validationState, classes.icon]);
+  }, [showValidationIcon, validationState, classes.icon]);
 
   // useMemo to avoid repetitive cloning of the custom icon
   const customIconEl = useMemo(
@@ -569,6 +574,11 @@ const HvInput = (props) => {
 
     performValidation();
   }, [focused, isEmptyValue, performValidation]);
+
+  let errorMessageId;
+  if (isStateInvalid) {
+    errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
+  }
 
   return (
     <HvFormElement
@@ -629,7 +639,7 @@ const HvInput = (props) => {
           "aria-label": ariaLabel,
           "aria-labelledby": ariaLabelledBy,
           "aria-invalid": isStateInvalid ? true : undefined,
-          "aria-errormessage": isStateInvalid ? setId(elementId, "error") : undefined,
+          "aria-errormessage": errorMessageId,
           "aria-describedby":
             ariaDescribedBy != null
               ? ariaDescribedBy
@@ -837,6 +847,12 @@ HvInput.propTypes = {
    * The error message to show when `status` is "invalid".
    */
   statusMessage: PropTypes.string,
+  /**
+   * Identifies the element that provides an error message for the input.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * The function that will be executed onChange, allows modification of the input,
