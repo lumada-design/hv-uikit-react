@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.10.0...@hv/uikit-react-lab@3.10.1) (2021-05-06)
+
+
+### Bug Fixes
+
+* **timepicker:** missing accessibility features. HVUIKIT-5752 ([4f80b1d](https://github.com/lumada-design/hv-uikit-react/commit/4f80b1d930be10f0f35b1f87befe039eb271824f))
+
+
+
+
+
 # [3.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.9.3...@hv/uikit-react-lab@3.10.0) (2021-05-05)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.27.0 (2021-05-06)
+
+
+### Features
+
+* **date-picker:** add invalid styles. HVUIKIT-5770 ([#2408](https://github.com/lumada-design/hv-uikit-react/issues/2408)) ([b023fb8](https://github.com/lumada-design/hv-uikit-react/commit/b023fb8bcdfcb0334ec74e2a1115a8efbc4c3709))
+
+
+
+
+
 # [3.26.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.25.0...@hv/uikit-react-core@3.26.0) (2021-05-05)
 
 
