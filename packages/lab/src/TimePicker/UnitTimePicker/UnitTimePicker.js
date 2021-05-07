@@ -120,13 +120,14 @@ class UnitTimePicker extends React.Component {
    * Renders the UnitTimePicker
    */
   render() {
-    const { classes } = this.props;
+    const { classes, id } = this.props;
     const { isValid } = this.state;
 
     return (
       <div className={classes.unitTimeContainer}>
         <AddTimeIcon onClick={this.handleAddTime} />
         <HvInput
+          id={id}
           disableClear
           className={classes.unitTime}
           classes={{
@@ -154,6 +155,10 @@ class UnitTimePicker extends React.Component {
 }
 
 UnitTimePicker.propTypes = {
+  /**
+   * Id to be applied to the input node.
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the input/popper
    */

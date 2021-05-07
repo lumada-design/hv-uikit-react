@@ -182,6 +182,7 @@ const HvTimePicker = ({
     return (
       <div className={classes.timePopperContainer}>
         <UnitTimePicker
+          id={setId(elementId, "hours")}
           unit={
             timeFormat === TimeFormat.H24
               ? TimePickerUnits.HOUR_24.type
@@ -192,12 +193,14 @@ const HvTimePicker = ({
         />
         {separator}
         <UnitTimePicker
+          id={setId(elementId, "minutes")}
           unit={TimePickerUnits.MINUTE.type}
           unitValue={selectedTime.minutes}
           onChangeUnitTimeValue={handleMinutesChange}
         />
         {separator}
         <UnitTimePicker
+          id={setId(elementId, "seconds")}
           unit={TimePickerUnits.SECOND.type}
           unitValue={selectedTime.seconds}
           onChangeUnitTimeValue={handleSecondsChange}
