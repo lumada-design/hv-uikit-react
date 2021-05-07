@@ -88,7 +88,7 @@ const HvRadioGroup = (props) => {
 
   const modifiedChildren = useMemo(() => {
     return React.Children.map(children, (child) => {
-      const childValue = child.props.value || "on";
+      const childValue = child.props.value ?? "on";
 
       const childIsSelected = childValue === value;
 
