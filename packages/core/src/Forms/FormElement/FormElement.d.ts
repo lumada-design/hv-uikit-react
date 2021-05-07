@@ -63,6 +63,12 @@ export interface HvFormElementProps
    * The error message to show when `status` is "invalid".
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the form element.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 
   /**
    * The callback fired when the value changes.
