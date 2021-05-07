@@ -56,15 +56,6 @@ describe("Input", () => {
     expect(getInputProps(wrapper).disabled).toBe(true);
   });
 
-  it("should not have the validation section", () => {
-    wrapper = mount(
-      <HvProvider>
-        <HvInput showInfo={false} />
-      </HvProvider>
-    );
-    expect(wrapper.find(HvInput)).toMatchSnapshot();
-  });
-
   it("should pass other props to the child input component", () => {
     wrapper = mount(
       <HvProvider>
