@@ -3,8 +3,6 @@ import { outlineStyles } from "../Focus/styles";
 const styles = (theme) => ({
   root: {
     position: "relative",
-    width: 320,
-    display: "inline-block",
   },
   inputContainer: {
     position: "relative",

@@ -26,7 +26,7 @@ const openCombobox = async () => {
 };
 
 // test scenario, datepicker default value opened
-export const DefaultValueOpened = () => DefaultValue();
+export const DefaultValueOpened = () => <div style={{ width: 320 }}>{DefaultValue()}</div>;
 
 DefaultValueOpened.parameters = {
   eyes: {
@@ -36,8 +36,16 @@ DefaultValueOpened.parameters = {
   },
 };
 
+// test scenario, smaller datepicker months opened
+export const DatepickerMonthsSmaller = () => <div style={{ width: 150 }}>{DefaultValue()}</div>;
+DatepickerMonthsSmaller.parameters = DefaultValueOpened.parameters;
+
+// test scenario, smaller datepicker months opened
+export const DatepickerMonthsBigger = () => <div style={{ width: 400 }}>{DefaultValue()}</div>;
+DatepickerMonthsBigger.parameters = DefaultValueOpened.parameters;
+
 // test scenario, datepicker months opened
-export const DatepickerMonths = () => DefaultValue();
+export const DatepickerMonths = () => <div style={{ width: 320 }}>{DefaultValue()}</div>;
 
 DatepickerMonths.parameters = {
   eyes: {
@@ -52,7 +60,7 @@ DatepickerMonths.parameters = {
 };
 
 // test scenario, dateRange default value opened
-export const RangeValuesOpened = () => RangeWithValues();
+export const RangeValuesOpened = () => <div style={{ width: 320 }}>{RangeWithValues()}</div>;
 
 RangeValuesOpened.parameters = {
   eyes: {
@@ -62,8 +70,16 @@ RangeValuesOpened.parameters = {
   },
 };
 
+// test scenario, smaller datepicker months opened
+export const RangeValuesOpenedSmaller = () => <div style={{ width: 150 }}>{RangeWithValues()}</div>;
+RangeValuesOpenedSmaller.parameters = RangeValuesOpened.parameters;
+
+// test scenario, smaller datepicker months opened
+export const RangeValuesOpenedBigger = () => <div style={{ width: 700 }}>{RangeWithValues()}</div>;
+RangeValuesOpenedBigger.parameters = RangeValuesOpened.parameters;
+
 // test scenario, dateRange months opened
-export const RangeMonthsOpened = () => RangeWithValues();
+export const RangeMonthsOpened = () => <div style={{ width: 320 }}>{RangeWithValues()}</div>;
 
 RangeMonthsOpened.parameters = {
   eyes: {
