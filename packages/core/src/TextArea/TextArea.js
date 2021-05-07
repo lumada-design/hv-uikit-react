@@ -58,6 +58,7 @@ const HvTextArea = (props) => {
 
     status,
     statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
     placeholder,
 
@@ -259,22 +260,31 @@ const HvTextArea = (props) => {
   const hasDescription = description != null;
   const hasCounter = maxCharQuantity != null && !hideCounter;
 
-  // error message area will only be needed if the status property is being controlled
-  // or if any of the built-in validations are active
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and any of the built-in validations are active
   const canShowError =
-    status !== undefined ||
-    hasBuiltInValidations(
-      required,
-      validationTypes.none,
-      minCharQuantity,
-      // if blockMax is true maxCharQuantity will never produce an error
-      // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity
-      maxCharQuantity != null && (blockMax !== true || value != null) ? maxCharQuantity : null,
-      validation,
-      inputProps
-    );
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) ||
+      (status === undefined &&
+        hasBuiltInValidations(
+          required,
+          validationTypes.none,
+          minCharQuantity,
+          // if blockMax is true maxCharQuantity will never produce an error
+          // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity
+          maxCharQuantity != null && (blockMax !== true || value != null) ? maxCharQuantity : null,
+          validation,
+          inputProps
+        )));
 
   const isStateInvalid = isInvalid(validationState);
+
+  let errorMessageId;
+  if (isStateInvalid) {
+    errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
+  }
 
   return (
     <HvFormElement
@@ -345,7 +355,7 @@ const HvTextArea = (props) => {
           "aria-label": ariaLabel,
           "aria-labelledby": ariaLabelledBy,
           "aria-invalid": isStateInvalid ? true : undefined,
-          "aria-errormessage": isStateInvalid ? setId(elementId, "error") : undefined,
+          "aria-errormessage": errorMessageId,
           "aria-describedby":
             ariaDescribedBy != null
               ? ariaDescribedBy
@@ -497,6 +507,12 @@ HvTextArea.propTypes = {
    * The error message to show when `status` is "invalid".
    */
   statusMessage: PropTypes.string,
+  /**
+   * Identifies the element that provides an error message for the textarea.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * The function that will be executed onChange.
