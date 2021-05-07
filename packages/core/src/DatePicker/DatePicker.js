@@ -280,12 +280,7 @@ const HvDatePicker = (props) => {
       {(hasLabel || hasDescription) && (
         <div className={classes.labelContainer}>
           {hasLabel && (
-            <HvLabel
-              id={setId(elementId, "label")}
-              htmlFor={setId(elementId, "input")}
-              label={label}
-              className={classes.label}
-            />
+            <HvLabel id={setId(elementId, "label")} label={label} className={classes.label} />
           )}
 
           {hasDescription && (
@@ -316,7 +311,9 @@ const HvDatePicker = (props) => {
         popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
         aria-haspopup="dialog"
         aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
+        aria-labelledby={
+          [label && setId(elementId, "label"), ariaLabelledBy].join(" ").trim() || undefined
+        }
         aria-invalid={isStateInvalid ? true : undefined}
         aria-errormessage={errorMessageId}
         aria-describedby={

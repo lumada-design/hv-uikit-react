@@ -23,14 +23,13 @@ export default {
     dsVersion: "3.4.0",
   },
   component: HvDatePicker,
-  decorators: [
-    (Story) => (
-      <div style={{ width: 340, height: 600, padding: 10 }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
+
+const defaultDecorator = (Story) => (
+  <div style={{ width: 340, height: 600, padding: 10 }}>
+    <Story />
+  </div>
+);
 
 export const Main = () => (
   <HvDatePicker id="DatePicker" placeholder="Select date" aria-label="Date" />
@@ -47,6 +46,8 @@ Main.parameters = {
     ],
   },
 };
+
+Main.decorators = [defaultDecorator];
 
 export const DefaultValue = () => (
   <HvDatePicker
@@ -71,6 +72,8 @@ DefaultValue.parameters = {
     ],
   },
 };
+
+DefaultValue.decorators = [defaultDecorator];
 
 export const Localized = () => {
   // Locales must be imported beforehand:
@@ -118,6 +121,8 @@ Localized.parameters = {
   },
 };
 
+Localized.decorators = [defaultDecorator];
+
 export const WithActions = () => (
   <HvDatePicker
     showActions
@@ -142,6 +147,8 @@ WithActions.parameters = {
     ],
   },
 };
+
+WithActions.decorators = [defaultDecorator];
 
 export const WithCustomLabels = () => (
   <HvDatePicker
@@ -168,6 +175,8 @@ WithCustomLabels.parameters = {
     ],
   },
 };
+
+WithCustomLabels.decorators = [defaultDecorator];
 
 export const RangeMode = () => (
   <HvDatePicker
@@ -201,6 +210,8 @@ RangeMode.parameters = {
   },
 };
 
+RangeMode.decorators = [defaultDecorator];
+
 export const RangeModeWithNoValues = () => (
   <HvDatePicker
     aria-label="Date"
@@ -229,6 +240,8 @@ RangeModeWithNoValues.parameters = {
     ],
   },
 };
+
+RangeModeWithNoValues.decorators = [defaultDecorator];
 
 export const RangeWithValues = () => {
   const labels = {
@@ -264,6 +277,8 @@ RangeWithValues.parameters = {
   },
 };
 
+RangeWithValues.decorators = [defaultDecorator];
+
 export const NearInvalid = () => (
   <HvDatePicker aria-label="Date" placeholder="Select date" value={new Date(1000, 0, 1)} />
 );
@@ -282,6 +297,8 @@ NearInvalid.parameters = {
     ],
   },
 };
+
+NearInvalid.decorators = [defaultDecorator];
 
 export const WithValueChange = () => {
   const [date, setDate] = useState(new Date(2020, 0, 1));
@@ -316,6 +333,8 @@ WithValueChange.parameters = {
     ],
   },
 };
+
+WithValueChange.decorators = [defaultDecorator];
 
 export const WithSelectionList = () => {
   const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
@@ -380,6 +399,8 @@ export const WithSelectionList = () => {
   );
 };
 
+WithSelectionList.decorators = [defaultDecorator];
+
 export const Disabled = () => (
   <HvDatePicker
     id="DatePicker"
@@ -400,6 +421,8 @@ Disabled.parameters = {
     ],
   },
 };
+
+Disabled.decorators = [defaultDecorator];
 
 export const Invalid = () => (
   <HvDatePicker
@@ -433,6 +456,8 @@ Invalid.parameters = {
   },
 };
 
+Invalid.decorators = [defaultDecorator];
+
 export const ExternalErrorMessage = () => {
   const theme = useTheme();
 
@@ -445,8 +470,8 @@ export const ExternalErrorMessage = () => {
 
   return (
     <HvGrid container>
-      <HvGrid item xs={12} container>
-        <HvGrid item>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
           <HvDatePicker
             label="Birth day"
             description="Please enter when you're born"
@@ -462,7 +487,7 @@ export const ExternalErrorMessage = () => {
             }}
           />
         </HvGrid>
-        <HvGrid item>
+        <HvGrid item xs={12}>
           <HvDatePicker
             label="Death day"
             description="Please enter when you're dead"
@@ -484,7 +509,7 @@ export const ExternalErrorMessage = () => {
       </HvGrid>
       <HvGrid
         item
-        xs={12}
+        xs={7}
         style={{
           backgroundColor: theme.hv.palette.semantic.sema9,
           color: theme.hv.palette.base.base2,
@@ -521,3 +546,11 @@ ExternalErrorMessage.parameters = {
     ],
   },
 };
+
+ExternalErrorMessage.decorators = [
+  (Story) => (
+    <div style={{ height: 650 }}>
+      <Story />
+    </div>
+  ),
+];
