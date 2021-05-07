@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.27.0...@hv/uikit-react-core@3.28.0) (2021-05-07)
+
+
+### Features
+
+* **dropdown:** add invalid styles. HVUIKIT-5771 ([eb76d70](https://github.com/lumada-design/hv-uikit-react/commit/eb76d709cd99101f779007a68af2a78fda00870b))
+
+
+
+
+
 # 3.27.0 (2021-05-06)
 
 
