@@ -67,6 +67,7 @@ const HvCheckBoxGroup = (props) => {
 
     status,
     statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
     orientation = "vertical",
     showSelectAll = false,
@@ -183,9 +184,13 @@ const HvCheckBoxGroup = (props) => {
     });
   };
 
-  // error message area will only be needed if the status is being controlled
-  // or if the value is uncontrolled and required is true
-  const canShowError = status !== undefined || (required && valueProp === undefined);
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and required is true
+  const canShowError =
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) || (status === undefined && required));
 
   const selectAllLabelComponent = (
     <>
@@ -202,6 +207,8 @@ const HvCheckBoxGroup = (props) => {
       )}
     </>
   );
+
+  const errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
 
   return (
     <HvFormElement
@@ -225,7 +232,7 @@ const HvCheckBoxGroup = (props) => {
         aria-labelledby={ariaLabelledBy || (label && setId(elementId, "label"))}
         aria-disabled={disabled ? true : undefined}
         aria-invalid={validationState === "invalid" ? true : undefined}
-        aria-errormessage={validationState === "invalid" ? setId(elementId, "error") : undefined}
+        aria-errormessage={validationState === "invalid" ? errorMessageId : undefined}
         aria-describedby={
           [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
           undefined
@@ -233,6 +240,7 @@ const HvCheckBoxGroup = (props) => {
         className={clsx(classes.group, {
           [classes.vertical]: orientation === "vertical",
           [classes.horizontal]: orientation === "horizontal",
+          [classes.invalid]: validationState === "invalid",
         })}
         {...others}
       >
@@ -250,7 +258,7 @@ const HvCheckBoxGroup = (props) => {
         {modifiedChildren}
       </div>
       {canShowError && (
-        <HvWarningText id={setId(elementId, "error")} className={clsx(classes.error)}>
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
           {validationMessage}
         </HvWarningText>
       )}
@@ -287,6 +295,10 @@ HvCheckBoxGroup.propTypes = {
      * Styles applied to the checkbox group when orientation is horizontal.
      */
     horizontal: PropTypes.string,
+    /**
+     * Styles applied to the checkbox group when validation status is invalid.
+     */
+    invalid: PropTypes.string,
     /**
      * Styles applied to the select all checkbox.
      */
@@ -368,9 +380,17 @@ HvCheckBoxGroup.propTypes = {
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
    */
-  statusMessage: PropTypes.node,
+  statusMessage: PropTypes.string,
+  /**
+   * Identifies the element that provides an error message for the checkbox group.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * The callback fired when the value changes.

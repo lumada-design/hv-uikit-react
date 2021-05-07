@@ -11,6 +11,7 @@ const styles = (theme) => ({
 
   group: {
     display: "flex",
+    paddingBottom: theme.hv.spacing.xs,
   },
   vertical: {
     flexDirection: "column",
@@ -36,11 +37,13 @@ const styles = (theme) => ({
     },
   },
 
+  invalid: {
+    borderBottom: `1px solid ${theme.hv.palette.semantic.sema4}`,
+  },
+
   selectAll: {},
 
-  error: {
-    marginTop: theme.hv.spacing.xs,
-  },
+  error: {},
 });
 
 export default styles;

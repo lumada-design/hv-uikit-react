@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import clsx from "clsx";
 import { HvSwitch, HvBaseSwitch, HvLabel, HvInfoMessage } from "../..";
 import Typography from "../../Typography";
 import Button from "../../Button";
+import HvGrid from "../../Grid";
 
 // eslint-disable-next-line react/prop-types
 const FlexDecorator = ({ children }) => {
@@ -206,5 +207,78 @@ WithLabels.parameters = {
   docs: {
     description:
       "Sample showing usage of auxiliary labels to denote switch state. The labels can also be clicked to trigger the switch",
+  },
+};
+
+export const ExternalErrorMessage = () => {
+  const theme = useTheme();
+
+  const [firstSwitchErrorMessage, setFirstSwitchErrorMessage] = useState(null);
+  const [secondSwitchErrorMessage, setSecondSwitchErrorMessage] = useState(
+    "No way for the second switch to be valid!"
+  );
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
+          <HvSwitch
+            required
+            defaultChecked
+            aria-errormessage="firstSwitch-error"
+            onChange={(_e, checked) => {
+              if (checked) {
+                setFirstSwitchErrorMessage(null);
+              } else if (!checked) {
+                setFirstSwitchErrorMessage("You must turn on the first switch");
+              }
+            }}
+            label="First Switch"
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvSwitch
+            status="invalid"
+            aria-errormessage="secondSwitch-error"
+            onChange={() => {
+              setSecondSwitchErrorMessage("No way for the second switch to be valid! I told you!");
+            }}
+            label="Second Switch"
+          />
+        </HvGrid>
+      </HvGrid>
+      <HvGrid
+        item
+        xs={7}
+        style={{
+          backgroundColor: theme.hv.palette.semantic.sema9,
+          color: theme.hv.palette.base.base2,
+        }}
+      >
+        <h4>Form errors:</h4>
+        <ul>
+          {firstSwitchErrorMessage && <li id="firstSwitch-error">{firstSwitchErrorMessage}</li>}
+          {secondSwitchErrorMessage && <li id="secondSwitch-error">{secondSwitchErrorMessage}</li>}
+        </ul>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+ExternalErrorMessage.parameters = {
+  docs: {
+    description: {
+      story:
+        "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
+    },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
   },
 };

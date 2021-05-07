@@ -8,8 +8,10 @@ import { HvLabelProps } from "../Forms/Label";
 export type HvCheckBoxClassKey =
   | "root"
   | "container"
+  | "invalidContainer"
   | "disabled"
   | "checkBox"
+  | "invalidCheckbox"
   | "label"
   | "focusVisible"
   | "labelTypography";
@@ -36,9 +38,17 @@ export interface HvCheckBoxProps extends StandardProps<HvBaseCheckBoxProps, HvCh
    */
   status?: HvFormStatus;
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the checkbox.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 }
 
 export default function HvCheckBox(props: HvCheckBoxProps): JSX.Element | null;

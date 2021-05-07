@@ -34,10 +34,10 @@ required toggle switch
     Checkbox Should Be Selected        ${switch}(1) input
     Click Element                      ${switch}(1)
     Checkbox Should not Be Selected    ${switch}(1) input
-    Wait Until Element Is Visible      ${warningText}
+    Wait Until Page Contains Element   ${warningText}
     Click Element                      ${switch}(1)
     Checkbox Should Be Selected        ${switch}(1) input
-    Wait Until Element Is Not Visible  ${warningText}
+    Wait Until Page Does Not Contain   ${warningText}
 
 controlled toggle switch
     [Setup]    open toggle switch sample    controlled

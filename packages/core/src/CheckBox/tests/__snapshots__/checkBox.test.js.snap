@@ -6,11 +6,11 @@ exports[`HvCheckBox sample snapshot testing ErrorMessage 1`] = `
     class="HvCheckBox-root HvFormElement-root"
   >
     <div
-      class="HvCheckBox-container"
+      class="HvCheckBox-container HvCheckBox-invalidContainer"
     >
       <span
         aria-disabled="false"
-        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvCheckBox-invalidCheckbox HvBaseCheckbox-root"
       >
         <span
           class="MuiIconButton-label"
@@ -58,7 +58,7 @@ exports[`HvCheckBox sample snapshot testing ErrorMessage 1`] = `
       </label>
     </div>
     <div
-      class="HvWarningText-root HvWarningText-show HvWarningText-topBorder"
+      class="HvWarningText-root HvWarningText-show"
     >
       <div
         class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"

@@ -19,6 +19,7 @@ const styles = (theme) => ({
     float: "left",
     clear: "both",
     width: "100%",
+    paddingBottom: theme.hv.spacing.xs,
   },
   vertical: {
     flexDirection: "column",
@@ -44,6 +45,10 @@ const styles = (theme) => ({
     },
   },
 
+  invalid: {
+    borderBottom: `1px solid ${theme.hv.palette.semantic.sema4}`,
+  },
+
   selectAll: {
     // ensure more specificity than .HvCheckBox-root .HvCheckBox-label
     "$listbox>& label": {
@@ -53,7 +58,6 @@ const styles = (theme) => ({
   },
 
   error: {
-    marginTop: theme.hv.spacing.xs,
     width: "100%",
     float: "left",
     clear: "both",
