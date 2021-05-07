@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { HvButton, HvListContainer, HvListItem, HvDatePicker, HvRadioGroup, HvRadio } from "../..";
+import { useTheme } from "@material-ui/core";
+import {
+  HvButton,
+  HvListContainer,
+  HvListItem,
+  HvDatePicker,
+  HvRadioGroup,
+  HvRadio,
+  HvGrid,
+} from "../..";
 
 import "dayjs/locale/pt";
 import "dayjs/locale/en";
@@ -397,6 +406,7 @@ export const Invalid = () => (
     placeholder="Select date"
     id="DatePicker"
     status="invalid"
+    statusMessage="This date picker is always invalid"
     aria-label="Invalid date picker"
   />
 );
@@ -406,6 +416,95 @@ Invalid.parameters = {
     description: {
       story:
         "Datepicker sample with invalid status. It is a Form Element and it inherits all Form capabilities.",
+    },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // placeholder text is failing contrast test
+      // TODO: check if that's acceptable
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
+  },
+};
+
+export const ExternalErrorMessage = () => {
+  const theme = useTheme();
+
+  const [deathValidationState, setDeathValidationState] = useState("invalid");
+
+  const [birthErrorMessage, setBirthErrorMessage] = useState(null);
+  const [deathErrorMessage, setDeathErrorMessage] = useState(
+    "The death day will always be invalid."
+  );
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={12} container>
+        <HvGrid item>
+          <HvDatePicker
+            label="Birth day"
+            description="Please enter when you're born"
+            placeholder="Choose a date"
+            required
+            aria-errormessage="birth-error"
+            onChange={(value) => {
+              if (!value) {
+                setBirthErrorMessage("You must provide a birth day.");
+              } else {
+                setBirthErrorMessage(null);
+              }
+            }}
+          />
+        </HvGrid>
+        <HvGrid item>
+          <HvDatePicker
+            label="Death day"
+            description="Please enter when you're dead"
+            placeholder="Choose a date"
+            required
+            status={deathValidationState}
+            aria-errormessage="death-error"
+            onChange={(value) => {
+              setDeathValidationState("invalid");
+
+              if (!value) {
+                setDeathErrorMessage("You can try choosing a death day.");
+              } else {
+                setDeathErrorMessage("The death day will always be invalid. I know you're alive!");
+              }
+            }}
+          />
+        </HvGrid>
+      </HvGrid>
+      <HvGrid
+        item
+        xs={12}
+        style={{
+          backgroundColor: theme.hv.palette.semantic.sema9,
+          color: theme.hv.palette.base.base2,
+        }}
+      >
+        <h4>Form errors:</h4>
+        <ul>
+          {birthErrorMessage && <li id="birth-error">{birthErrorMessage}</li>}
+          {deathErrorMessage && <li id="death-error">{deathErrorMessage}</li>}
+        </ul>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+ExternalErrorMessage.parameters = {
+  docs: {
+    description: {
+      story:
+        "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
     },
   },
   pa11y: {
