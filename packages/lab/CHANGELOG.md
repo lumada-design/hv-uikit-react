@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.10.2...@hv/uikit-react-lab@3.11.0) (2021-05-08)
+
+
+### Features
+
+* **timepicker:** propagate id to inner inputs. HVUIKIT-5779 ([d012f5b](https://github.com/lumada-design/hv-uikit-react/commit/d012f5bf77dcb42ab65bdddd0ca5889151fac380))
+
+
+
+
+
 ## [3.10.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.10.1...@hv/uikit-react-lab@3.10.2) (2021-05-07)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
