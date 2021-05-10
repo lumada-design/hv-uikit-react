@@ -268,3 +268,69 @@ DifferentSizeAndPlacements.parameters = {
     disable: true,
   },
 };
+
+export const DropdownWithScroll = () => {
+  const data = [
+    {
+      label: "value 1",
+      selected: false,
+    },
+    {
+      label: "value 2",
+      selected: false,
+    },
+    {
+      label: "value 3",
+      selected: false,
+    },
+    {
+      label: "value 4",
+      selected: false,
+    },
+    {
+      label: "value 5",
+      selected: false,
+    },
+    {
+      label: "value 6",
+      selected: false,
+    },
+    {
+      label: "value 7",
+      selected: false,
+    },
+    {
+      label: "value 8",
+      selected: false,
+    },
+    {
+      label: "value 9",
+      selected: false,
+    },
+    {
+      label: "value 10",
+      selected: false,
+    },
+  ];
+
+  const styles = () => ({
+    dropdownListContainer: {
+      maxHeight: 200,
+      overflowY: "scroll",
+    },
+  });
+
+  const StyledDropdown = withStyles(styles)(HvDropdown);
+
+  return (
+    <div style={{ width: 250 }}>
+      <StyledDropdown expanded id="dropdown1" values={data} multiSelect showSearch variableWidth />
+    </div>
+  );
+};
+
+DropdownWithScroll.parameters = {
+  docs: {
+    disable: true,
+  },
+};

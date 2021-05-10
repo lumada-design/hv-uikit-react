@@ -38,7 +38,8 @@ export type HvDropdownClassKey =
   | "selectionDisabled"
   | "rootList"
   | "dropdownHeaderInvalid"
-  | "dropdownHeaderOpen";
+  | "dropdownHeaderOpen"
+  | "dropdownListContainer";
 
 export interface HvDropdownProps
   extends StandardProps<HvFormElementProps, HvDropdownClassKey, "onChange"> {
