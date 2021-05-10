@@ -142,7 +142,6 @@ class UnitTimePicker extends React.Component {
           onChange={this.handleCurrentValueChange}
           onFocus={this.handleFocusChange}
           onBlur={this.handleFocusChange}
-          showInfo={false}
           validation={this.validateUnitTime}
           labels={{
             placeholder: "",

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 import { HvRadio, HvBaseRadio } from "../..";
+import HvGrid from "../../Grid";
 
 // eslint-disable-next-line react/prop-types
 const FlexDecorator = ({ children }) => {
@@ -91,7 +92,7 @@ export const Disabled = () => {
 
 Disabled.parameters = {
   docs: {
-    description: "Disabled radio buttons.",
+    description: { story: "Disabled radio buttons." },
   },
   pa11y: {
     ignore: [
@@ -131,7 +132,7 @@ export const ReadOnly = () => {
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable radio buttons.",
+    description: { story: "Not editable radio buttons." },
   },
 };
 
@@ -170,6 +171,82 @@ export const ErrorMessage = () => (
 );
 
 ErrorMessage.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
+  },
+};
+
+export const ExternalErrorMessage = () => {
+  const theme = useTheme();
+
+  const [secondRadioStatus, setSecondRadioStatus] = useState("standBy");
+  const [firstRadioErrorMessage, setFirstRadioErrorMessage] = useState();
+
+  const [secondRadioErrorMessage, setSecondRadioErrorMessage] = useState(
+    "No way for the second radio to be valid!"
+  );
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
+          <HvRadio
+            status={secondRadioStatus}
+            aria-errormessage="firstRadio-error"
+            onChange={(_e, checked) => {
+              if (checked) {
+                setSecondRadioStatus("invalid");
+                setFirstRadioErrorMessage("Don't choose the first radio.");
+              } else if (!checked) {
+                setSecondRadioStatus("valid");
+                setFirstRadioErrorMessage(null);
+              }
+            }}
+            label="First Radio"
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvRadio
+            status="invalid"
+            aria-errormessage="secondRadio-error"
+            onChange={() => {
+              setSecondRadioErrorMessage("No way for the second radio to be valid! I told you!");
+            }}
+            label="Second Radio"
+          />
+        </HvGrid>
+      </HvGrid>
+      <HvGrid
+        item
+        xs={7}
+        style={{
+          backgroundColor: theme.hv.palette.semantic.sema9,
+          color: theme.hv.palette.base.base2,
+        }}
+      >
+        <h4>Form errors:</h4>
+        <ul>
+          {firstRadioErrorMessage && <li id="firstRadio-error">{firstRadioErrorMessage}</li>}
+          {secondRadioErrorMessage && <li id="secondRadio-error">{secondRadioErrorMessage}</li>}
+        </ul>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+ExternalErrorMessage.parameters = {
+  docs: {
+    description: {
+      story:
+        "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
+    },
+  },
   pa11y: {
     ignore: [
       "region",

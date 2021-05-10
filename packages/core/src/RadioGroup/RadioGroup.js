@@ -57,6 +57,7 @@ const HvRadioGroup = (props) => {
 
     status,
     statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
     orientation = "vertical",
 
@@ -110,8 +111,15 @@ const HvRadioGroup = (props) => {
     });
   }, [children, disabled, elementId, name, onChildChangeInterceptor, readOnly, required, value]);
 
-  // error message area will only be needed if the status is being controlled
-  const canShowError = status !== undefined;
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and required is true
+  const canShowError =
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) || (status === undefined && required));
+
+  const errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
 
   return (
     <HvFormElement
@@ -134,7 +142,7 @@ const HvRadioGroup = (props) => {
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy || (label && setId(elementId, "label"))}
         aria-invalid={status === "invalid" ? true : undefined}
-        aria-errormessage={status === "invalid" ? setId(elementId, "error") : undefined}
+        aria-errormessage={status === "invalid" ? errorMessageId : undefined}
         aria-describedby={
           [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
           undefined
@@ -142,13 +150,14 @@ const HvRadioGroup = (props) => {
         className={clsx(classes.group, {
           [classes.vertical]: orientation === "vertical",
           [classes.horizontal]: orientation === "horizontal",
+          [classes.invalid]: status === "invalid",
         })}
         {...others}
       >
         {modifiedChildren}
       </div>
       {canShowError && (
-        <HvWarningText id={setId(elementId, "error")} className={clsx(classes.error)}>
+        <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>
           {statusMessage}
         </HvWarningText>
       )}
@@ -185,6 +194,10 @@ HvRadioGroup.propTypes = {
      * Styles applied to the radio button group when orientation is horizontal.
      */
     horizontal: PropTypes.string,
+    /**
+     * Styles applied to the radio button group when validation status is invalid.
+     */
+    invalid: PropTypes.string,
     /**
      * Styles applied to the error area.
      */
@@ -264,9 +277,15 @@ HvRadioGroup.propTypes = {
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when `status` is "invalid".
    */
   statusMessage: PropTypes.node,
+  /**
+   * Identifies the element that provides an error message for the radio group.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * The callback fired when the value changes.

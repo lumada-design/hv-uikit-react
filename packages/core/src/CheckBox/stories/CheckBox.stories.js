@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-import { HvCheckBox, HvBaseCheckBox } from "../..";
+import { HvCheckBox, HvBaseCheckBox, HvGrid } from "../..";
 
 // eslint-disable-next-line react/prop-types
 const FlexDecorator = ({ children }) => {
@@ -61,7 +61,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    description: "Disabled checkboxes.",
+    description: { story: "Disabled checkboxes." },
   },
   pa11y: {
     ignore: [
@@ -84,7 +84,7 @@ export const ReadOnly = () => (
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable checkboxes.",
+    description: { story: "Not editable checkboxes." },
   },
 };
 
@@ -111,7 +111,7 @@ export const Required = () => (
 
 Required.parameters = {
   docs: {
-    description: "Required checkbox. Uncheck to show default error message.",
+    description: { story: "Required checkbox. Uncheck to show default error message." },
   },
 };
 
@@ -142,6 +142,85 @@ export const ErrorMessage = () => (
 );
 
 ErrorMessage.parameters = {
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
+  },
+};
+
+export const ExternalErrorMessage = () => {
+  const theme = useTheme();
+
+  const [firstCheckboxErrorMessage, setFirstCheckboxErrorMessage] = useState(null);
+  const [secondCheckboxErrorMessage, setSecondCheckboxErrorMessage] = useState(
+    "No way for the second checkbox to be valid!"
+  );
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
+          <HvCheckBox
+            required
+            defaultChecked
+            aria-errormessage="firstCheckbox-error"
+            onChange={(_e, checked) => {
+              if (checked) {
+                setFirstCheckboxErrorMessage(null);
+              } else if (!checked) {
+                setFirstCheckboxErrorMessage("You must check the first checkbox");
+              }
+            }}
+            label="First Checkbox"
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvCheckBox
+            status="invalid"
+            aria-errormessage="secondCheckbox-error"
+            onChange={() => {
+              setSecondCheckboxErrorMessage(
+                "No way for the second checkbox to be valid! I told you!"
+              );
+            }}
+            label="Second Checkbox"
+          />
+        </HvGrid>
+      </HvGrid>
+      <HvGrid
+        item
+        xs={7}
+        style={{
+          backgroundColor: theme.hv.palette.semantic.sema9,
+          color: theme.hv.palette.base.base2,
+        }}
+      >
+        <h4>Form errors:</h4>
+        <ul>
+          {firstCheckboxErrorMessage && (
+            <li id="firstCheckbox-error">{firstCheckboxErrorMessage}</li>
+          )}
+          {secondCheckboxErrorMessage && (
+            <li id="secondCheckbox-error">{secondCheckboxErrorMessage}</li>
+          )}
+        </ul>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+ExternalErrorMessage.parameters = {
+  docs: {
+    description: {
+      story:
+        "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
+    },
+  },
   pa11y: {
     ignore: [
       "region",

@@ -9,6 +9,7 @@ export type HvSelectionListClassKey =
   | "listbox"
   | "vertical"
   | "horizontal"
+  | "invalid"
   | "error";
 
 export interface HvSelectionListProps

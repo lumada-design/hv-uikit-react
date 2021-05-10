@@ -45,6 +45,7 @@ const HvTimePicker = ({
   "aria-describedby": ariaDescribedBy,
   status,
   statusMessage,
+  "aria-errormessage": ariaErrorMessage,
   timeFormat: chosenTimeFormat,
   locale: localeProp,
   onChange,
@@ -217,9 +218,20 @@ const HvTimePicker = ({
   const hasLabels = label != null;
   const hasDescription = description != null;
 
-  // error message area will only be needed if the status is being controlled
-  // or if required is true
-  const canShowError = status !== undefined || required;
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and required is true
+  const canShowError =
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) || (status === undefined && required));
+
+  const isStateInvalid = validationState === "invalid";
+
+  let errorMessageId;
+  if (isStateInvalid) {
+    errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
+  }
 
   return (
     <HvFormElement
@@ -253,7 +265,7 @@ const HvTimePicker = ({
         placeholder={getFormattedTime(selectedTime)}
         classes={{
           placeholder: disabled ? classes.dropdownPlaceholderDisabled : classes.dropdownPlaceholder,
-          header: validationState === "invalid" ? classes.dropdownHeaderInvalid : undefined,
+          header: isStateInvalid ? classes.dropdownHeaderInvalid : undefined,
           headerOpen: classes.dropdownHeaderOpen,
         }}
         variableWidth
@@ -267,8 +279,8 @@ const HvTimePicker = ({
         aria-labelledby={
           [label && setId(elementId, "label"), ariaLabelledBy].join(" ").trim() || undefined
         }
-        aria-invalid={validationState === "invalid" ? true : undefined}
-        aria-errormessage={validationState === "invalid" ? setId(elementId, "error") : undefined}
+        aria-invalid={isStateInvalid ? true : undefined}
+        aria-errormessage={errorMessageId}
         aria-describedby={
           [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
           undefined
@@ -428,9 +440,17 @@ HvTimePicker.propTypes = {
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
    */
   statusMessage: PropTypes.node,
+  /**
+   * Identifies the element that provides an error message for the time picker.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * If the time should be presented in 12 or 24 hour format.

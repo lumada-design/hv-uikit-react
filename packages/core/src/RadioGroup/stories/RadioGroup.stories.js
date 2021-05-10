@@ -35,7 +35,7 @@ export const Horizontal = () => (
 
 Horizontal.parameters = {
   docs: {
-    description: "Layout checkboxes horizontally.",
+    description: { story: "Layout checkboxes horizontally." },
   },
 };
 
@@ -49,7 +49,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    description: "Disabled checkbox group.",
+    description: { story: "Disabled checkbox group." },
   },
   pa11y: {
     ignore: [
@@ -72,7 +72,7 @@ export const ReadOnly = () => (
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable checkbox group.",
+    description: { story: "Not editable checkbox group." },
   },
 };
 
@@ -123,7 +123,7 @@ export const Controlled = () => {
 
 Controlled.parameters = {
   docs: {
-    description: "Controlled checkbox group.",
+    description: { story: "Controlled checkbox group." },
   },
 };
 

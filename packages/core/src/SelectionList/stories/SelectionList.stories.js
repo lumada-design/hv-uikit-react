@@ -44,7 +44,7 @@ export const Horizontal = () => (
 
 Horizontal.parameters = {
   docs: {
-    description: "Layout items horizontally.",
+    description: { story: "Layout items horizontally." },
   },
 };
 
@@ -60,7 +60,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    description: "Disabled selection list.",
+    description: { story: "Disabled selection list." },
   },
   pa11y: {
     ignore: [
@@ -85,7 +85,7 @@ export const ReadOnly = () => (
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable selection list.",
+    description: { story: "Not editable selection list." },
   },
 };
 
@@ -138,7 +138,7 @@ export const Controlled = () => {
 
 Controlled.parameters = {
   docs: {
-    description: "Controlled selection list.",
+    description: { story: "Controlled selection list." },
   },
 };
 

@@ -65,7 +65,7 @@ export const DisabledButtons = () => (
 
 DisabledButtons.parameters = {
   docs: {
-    description: "Disabled buttons that don't allow any interaction.",
+    description: { story: "Disabled buttons that don't allow any interaction." },
   },
 };
 

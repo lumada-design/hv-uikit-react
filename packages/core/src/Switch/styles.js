@@ -9,10 +9,19 @@ const styles = (theme) => ({
     marginBottom: theme.hv.spacing.xs,
   },
 
-  error: {
-    marginTop: theme.hv.spacing.xs,
-    width: "100%",
+  switchContainer: {
+    height: 32,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    borderBottom: `1px solid transparent`,
   },
+
+  invalidSwitch: {
+    borderBottom: `1px solid ${theme.hv.palette.semantic.sema4}`,
+  },
+
+  error: {},
 });
 
 export default styles;
