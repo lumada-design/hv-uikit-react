@@ -106,7 +106,7 @@ const HvRadio = (props) => {
 
   const radio = (
     <HvBaseRadio
-      id={label ? setId(elementId, "input") : null}
+      id={label ? setId(elementId, "input") : setId(id, "input")}
       name={name}
       className={clsx(classes.radio, { [classes.invalidRadio]: isStateInvalid })}
       disabled={disabled}

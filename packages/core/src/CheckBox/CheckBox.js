@@ -131,7 +131,7 @@ const HvCheckBox = (props) => {
 
   const checkbox = (
     <HvBaseCheckBox
-      id={hasLabel ? setId(elementId, "input") : null}
+      id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
       name={name}
       className={clsx(classes.checkbox, { [classes.invalidCheckbox]: isStateInvalid })}
       disabled={disabled}

@@ -114,7 +114,7 @@ const HvSwitch = (props) => {
       )}
       <div className={clsx(classes.switchContainer, { [classes.invalidSwitch]: isStateInvalid })}>
         <HvBaseSwitch
-          id={label ? setId(elementId, "input") : null}
+          id={label ? setId(elementId, "input") : setId(id, "input")}
           name={name}
           disabled={disabled}
           readOnly={readOnly}
