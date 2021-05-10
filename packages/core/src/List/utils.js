@@ -65,9 +65,23 @@ const parseList = (list = [], item, props, selectAll) => {
   return newList;
 };
 
+/**
+ * Hide tooltip when content doesn't overflow
+ */
+const hideTooltip = (evt) => {
+  const isOverFlow =
+    evt.target.children.length > 1
+      ? Array.of(...evt.target.children).some((child) => child.scrollWidth > child.clientWidth)
+      : evt.target.scrollWidth > evt.target.clientWidth;
+
+  return !isOverFlow;
+};
+
 const wrapperTooltip = (hasTooltips, Component, label) => {
   const ComponentFunction = () => Component;
-  return hasTooltips ? withTooltip(ComponentFunction, label) : ComponentFunction;
+  return hasTooltips
+    ? withTooltip(ComponentFunction, label, "top", hideTooltip)
+    : ComponentFunction;
 };
 
 export { isItemSelected, parseList, parseState, wrapperTooltip };
