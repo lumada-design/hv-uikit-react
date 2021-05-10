@@ -88,14 +88,14 @@ export interface HvCheckBoxGroupProps
   /**
    * The callback fired when the value changes.
    */
-  onChange: (event: Event, value: any) => void;
+  onChange?: (event: Event, value: any) => void;
 
   /**
    * Indicates whether the checkbox group's orientation is horizontal or vertical.
    *
    * Defaults to vertical.
    */
-  orientation: "vertical" | "horizontal";
+  orientation?: "vertical" | "horizontal";
   /**
    * Indicates if an aditional select all checkbox should be shown.
    */
