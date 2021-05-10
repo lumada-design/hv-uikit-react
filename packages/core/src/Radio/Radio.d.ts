@@ -7,8 +7,10 @@ import { HvLabelProps } from "../Forms/Label";
 export type HvRadioClassKey =
   | "root"
   | "container"
+  | "invalidContainer"
   | "disabled"
   | "radio"
+  | "invalidRadio"
   | "label"
   | "focusVisible";
 
@@ -34,9 +36,15 @@ export interface HvRadioProps extends StandardProps<HvBaseRadioProps, HvRadioCla
    */
   status?: HvFormStatus;
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when `status` is "invalid".
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the radio button.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 }
 
 export default function HvRadio(props: HvRadioProps): JSX.Element | null;

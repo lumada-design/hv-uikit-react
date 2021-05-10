@@ -15,7 +15,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
       aria-errormessage="hvcheckboxgroup17-error"
       aria-invalid="true"
       aria-labelledby="hvcheckboxgroup17-label"
-      class="HvCheckBoxGroup-group HvCheckBoxGroup-vertical"
+      class="HvCheckBoxGroup-group HvCheckBoxGroup-vertical HvCheckBoxGroup-invalid"
       role="group"
     >
       <div
@@ -188,7 +188,7 @@ exports[`HvCheckBoxGroup sample snapshot testing ErrorMessage 1`] = `
       </div>
     </div>
     <div
-      class="HvCheckBoxGroup-error HvWarningText-root HvWarningText-show HvWarningText-topBorder"
+      class="HvCheckBoxGroup-error HvWarningText-root HvWarningText-show"
     >
       <div
         class="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"

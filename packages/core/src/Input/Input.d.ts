@@ -90,6 +90,12 @@ export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputCla
    * The error message to show when `status` is "invalid".
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the input.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 
   /**
    * Internal labels.
@@ -125,7 +131,7 @@ export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputCla
 
   /**
    * If `true` the validation icon adorment is visible. Defaults to `false`.
-   * 
+   *
    * Currently, DS specifications define only a positive feedback icon;
    * errors are signaled through the border style and by displaying the error message.
    */
@@ -150,10 +156,7 @@ export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputCla
   /**
    * Called back when the value is changed.
    */
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: string
-  ) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
 }
 
 export default function HvInput(props: HvInputProps): JSX.Element | null;

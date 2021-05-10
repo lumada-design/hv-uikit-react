@@ -9,6 +9,7 @@ export type HvCheckBoxGroupClassKey =
   | "group"
   | "vertical"
   | "horizontal"
+  | "invalid"
   | "selectAll"
   | "error";
 
@@ -81,9 +82,17 @@ export interface HvCheckBoxGroupProps
    */
   status?: HvFormStatus;
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the checkbox group.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 
   /**
    * The callback fired when the value changes.

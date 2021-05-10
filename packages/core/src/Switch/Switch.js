@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
 import { HvFormElement, HvLabel, HvWarningText, useUniqueId } from "..";
+import { isInvalid } from "../Forms/FormElement/validationStates";
 
 import { setId, useControlled } from "../utils";
 
@@ -44,6 +45,7 @@ const HvSwitch = (props) => {
 
     status,
     statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
     inputProps,
 
@@ -76,9 +78,20 @@ const HvSwitch = (props) => {
     [onChange, required, setIsChecked, setValidationState, value]
   );
 
-  // error message area will only be needed if the status is being controlled
-  // or if the checked state is uncontrolled and required is true
-  const canShowError = status !== undefined || (required && checked === undefined);
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and required is true
+  const canShowError =
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) || (status === undefined && required));
+
+  const isStateInvalid = isInvalid(validationState);
+
+  let errorMessageId;
+  if (isStateInvalid) {
+    errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
+  }
 
   return (
     <HvFormElement
@@ -99,30 +112,32 @@ const HvSwitch = (props) => {
           {...labelProps}
         />
       )}
-      <HvBaseSwitch
-        id={label ? setId(elementId, "input") : null}
-        name={name}
-        disabled={disabled}
-        readOnly={readOnly}
-        required={required}
-        onChange={onLocalChange}
-        value={value}
-        checked={isChecked}
-        inputProps={{
-          "aria-invalid": validationState === "invalid" ? true : undefined,
-          "aria-errormessage":
-            validationState === "invalid" ? setId(elementId, "error") : undefined,
-          "aria-label": ariaLabel,
-          "aria-labelledby": ariaLabelledBy,
-          "aria-describedby": ariaDescribedBy,
-          ...inputProps,
-        }}
-        {...others}
-      />
+      <div className={clsx(classes.switchContainer, { [classes.invalidSwitch]: isStateInvalid })}>
+        <HvBaseSwitch
+          id={label ? setId(elementId, "input") : null}
+          name={name}
+          disabled={disabled}
+          readOnly={readOnly}
+          required={required}
+          onChange={onLocalChange}
+          value={value}
+          checked={isChecked}
+          inputProps={{
+            "aria-invalid": isStateInvalid ? true : undefined,
+            "aria-errormessage": errorMessageId,
+            "aria-label": ariaLabel,
+            "aria-labelledby": ariaLabelledBy,
+            "aria-describedby": ariaDescribedBy,
+            ...inputProps,
+          }}
+          {...others}
+        />
+      </div>
       {canShowError && (
         <HvWarningText
           id={setId(elementId, "error")}
           className={clsx(classes.error)}
+          disableBorder
           disableAdornment
           hideText
         >
@@ -154,6 +169,14 @@ HvSwitch.propTypes = {
      * Styles applied to the error area.
      */
     error: PropTypes.string,
+    /**
+     * Styles applied to the switch container.
+     */
+    switchContainer: PropTypes.string,
+    /**
+     * Styles applied to the switch container when the validations status is invalid.
+     */
+    invalidSwitch: PropTypes.string,
   }).isRequired,
 
   /**
@@ -233,9 +256,17 @@ HvSwitch.propTypes = {
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
    */
   statusMessage: PropTypes.string,
+  /**
+   * Identifies the element that provides an error message for the switch.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * The callback fired when the switch is pressed.

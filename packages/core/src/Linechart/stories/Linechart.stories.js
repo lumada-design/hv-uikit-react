@@ -161,7 +161,7 @@ export const CustomLinechartGrouped = () => {
 
 CustomLinechartGrouped.parameters = {
   docs: {
-    description: "Line chart with title and controls.",
+    description: { story: "Line chart with title and controls." },
   },
 };
 

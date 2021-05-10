@@ -3,7 +3,14 @@ import { StandardProps } from "@material-ui/core";
 
 import { HvFormStatus } from "../Forms/FormElement";
 
-export type HvRadioGroupClassKey = "root" | "label" | "group" | "vertical" | "horizontal" | "error";
+export type HvRadioGroupClassKey =
+  | "root"
+  | "label"
+  | "group"
+  | "vertical"
+  | "horizontal"
+  | "invalid"
+  | "error";
 
 export interface HvRadioGroupProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvRadioGroupClassKey, "onChange"> {
@@ -75,9 +82,15 @@ export interface HvRadioGroupProps
    */
   status?: HvFormStatus;
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when `status` is "invalid".
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the radio group.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 
   /**
    * The callback fired when the value changes.

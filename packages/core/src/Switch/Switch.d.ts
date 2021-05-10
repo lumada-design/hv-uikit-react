@@ -3,7 +3,7 @@ import { StandardProps } from "@material-ui/core";
 import { HvLabelProps } from "../Forms/Label";
 import { HvFormStatus } from "../Forms/FormElement";
 
-export type HvSwitchClassKey = "root" | "label" | "error";
+export type HvSwitchClassKey = "root" | "label" | "error" | "switchContainer" | "invalidSwitch";
 
 export interface HvSwitchProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSwitchClassKey, "onChange"> {
@@ -44,9 +44,17 @@ export interface HvSwitchProps
    */
   status?: HvFormStatus;
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the switch.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 }
 
 export default function HvSwitch(props: HvSwitchProps): JSX.Element | null;

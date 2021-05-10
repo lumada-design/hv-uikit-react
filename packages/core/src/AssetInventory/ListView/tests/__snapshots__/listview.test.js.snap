@@ -6752,6 +6752,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               "container": "HvCheckBox-container",
                                                               "disabled": "HvCheckBox-disabled",
                                                               "focusVisible": "HvCheckBox-focusVisible",
+                                                              "invalidCheckbox": "HvCheckBox-invalidCheckbox",
+                                                              "invalidContainer": "HvCheckBox-invalidContainer",
                                                               "label": "HvCheckBox-label",
                                                               "root": "HvCheckBox-root",
                                                             }
@@ -10279,6 +10281,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               "container": "HvCheckBox-container",
                                                               "disabled": "HvCheckBox-disabled",
                                                               "focusVisible": "HvCheckBox-focusVisible",
+                                                              "invalidCheckbox": "HvCheckBox-invalidCheckbox",
+                                                              "invalidContainer": "HvCheckBox-invalidContainer",
                                                               "label": "HvCheckBox-label",
                                                               "root": "HvCheckBox-root",
                                                             }
@@ -13806,6 +13810,8 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                               "container": "HvCheckBox-container",
                                                               "disabled": "HvCheckBox-disabled",
                                                               "focusVisible": "HvCheckBox-focusVisible",
+                                                              "invalidCheckbox": "HvCheckBox-invalidCheckbox",
+                                                              "invalidContainer": "HvCheckBox-invalidContainer",
                                                               "label": "HvCheckBox-label",
                                                               "root": "HvCheckBox-root",
                                                             }

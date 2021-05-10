@@ -72,7 +72,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
-        showInfo={false}
         value="30"
       >
         <HvInput
@@ -108,7 +107,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          showInfo={false}
           value="30"
         >
           <WithStyles(HvFormElement)
@@ -189,7 +187,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   onKeyDown={[Function]}
                   readOnly={false}
                   required={false}
-                  showInfo={false}
                   type="text"
                   value="30"
                 >
@@ -252,7 +249,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     onKeyDown={[Function]}
                     readOnly={false}
                     required={false}
-                    showInfo={false}
                     type="text"
                     value="30"
                   >
@@ -312,7 +308,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         onKeyDown={[Function]}
                         readOnly={false}
                         rows={10}
-                        showInfo={false}
                         type="text"
                         value="30"
                       >
@@ -379,7 +374,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           onKeyDown={[Function]}
                           readOnly={false}
                           rows={10}
-                          showInfo={false}
                           type="text"
                           value="30"
                         >
@@ -447,7 +441,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             onKeyDown={[Function]}
                             readOnly={false}
                             rows={10}
-                            showInfo={false}
                             type="text"
                             value="30"
                           >
@@ -519,14 +512,12 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               onKeyDown={[Function]}
                               readOnly={false}
                               rows={10}
-                              showInfo={false}
                               type="text"
                               value="30"
                             >
                               <div
                                 className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvTimePickerUnitTimePicker-unitTimeInputRoot"
                                 onClick={[Function]}
-                                showInfo={false}
                               >
                                 <input
                                   autoFocus={false}

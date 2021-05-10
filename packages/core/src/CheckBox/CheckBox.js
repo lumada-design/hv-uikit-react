@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
 import { HvFormElement, HvLabel, HvWarningText, useUniqueId } from "..";
+import { isInvalid } from "../Forms/FormElement/validationStates";
 
 import { setId, useControlled } from "../utils";
 
@@ -48,6 +49,7 @@ const HvCheckBox = (props) => {
 
     status,
     statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
     semantic = false,
 
@@ -110,17 +112,28 @@ const HvCheckBox = (props) => {
     [onChange, required, setIsChecked, setIsIndeterminate, setValidationState, value]
   );
 
-  // error message area will only be needed if the status is being controlled
-  // or if the checked state is uncontrolled and required is true
-  const canShowError = status !== undefined || (required && checked === undefined);
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and required is true
+  const canShowError =
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) || (status === undefined && required));
 
   const hasLabel = label != null;
+
+  const isStateInvalid = isInvalid(validationState);
+
+  let errorMessageId;
+  if (isStateInvalid) {
+    errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
+  }
 
   const checkbox = (
     <HvBaseCheckBox
       id={hasLabel ? setId(elementId, "input") : null}
       name={name}
-      className={classes.checkbox}
+      className={clsx(classes.checkbox, { [classes.invalidCheckbox]: isStateInvalid })}
       disabled={disabled}
       readOnly={readOnly}
       required={required}
@@ -130,8 +143,8 @@ const HvCheckBox = (props) => {
       indeterminate={isIndeterminate}
       semantic={semantic}
       inputProps={{
-        "aria-invalid": validationState === "invalid" ? true : undefined,
-        "aria-errormessage": validationState === "invalid" ? setId(elementId, "error") : undefined,
+        "aria-invalid": isStateInvalid ? true : undefined,
+        "aria-errormessage": errorMessageId,
         "aria-label": ariaLabel,
         "aria-labelledby": ariaLabelledBy,
         "aria-describedby": ariaDescribedBy,
@@ -159,6 +172,7 @@ const HvCheckBox = (props) => {
         <div
           className={clsx(classes.container, {
             [classes.disabled]: disabled,
+            [classes.invalidContainer]: isStateInvalid,
           })}
         >
           {checkbox}
@@ -178,6 +192,7 @@ const HvCheckBox = (props) => {
           id={setId(elementId, "error")}
           disableAdornment={!hasLabel}
           hideText={!hasLabel}
+          disableBorder
         >
           {validationMessage}
         </HvWarningText>
@@ -204,6 +219,10 @@ HvCheckBox.propTypes = {
      */
     container: PropTypes.string,
     /**
+     * Styles applied to the HvBaseCheckbox (only when a label is provided).
+     */
+    invalidContainer: PropTypes.string,
+    /**
      * Styles applied to the checkbox+label container when checkbox is disabled.
      */
     disabled: PropTypes.string,
@@ -211,6 +230,10 @@ HvCheckBox.propTypes = {
      * Styles applied to the HvBaseCheckbox.
      */
     checkbox: PropTypes.string,
+    /**
+     * Styles applied to the HvBaseCheckbox (only when a label is not provided).
+     */
+    invalidCheckbox: PropTypes.string,
     /**
      * Styles applied to the label.
      */
@@ -307,9 +330,17 @@ HvCheckBox.propTypes = {
    */
   status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * The error message to show when `status` is "invalid". Defaults to "Required".
+   * The error message to show when the validation status is "invalid".
+   *
+   * Defaults to "Required" when the status is uncontrolled and no `aria-errormessage` is provided.
    */
   statusMessage: PropTypes.string,
+  /**
+   * Identifies the element that provides an error message for the checkbox.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * The callback fired when the checkbox is pressed.

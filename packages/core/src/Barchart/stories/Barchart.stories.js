@@ -146,7 +146,7 @@ export const CustomStackedVerticalBarchart = () => {
 
 CustomStackedVerticalBarchart.parameters = {
   docs: {
-    description: "Bar chart with title and controls.",
+    description: { story: "Bar chart with title and controls." },
   },
 };
 

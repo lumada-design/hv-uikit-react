@@ -54,6 +54,12 @@ export interface HvTextAreaProps
    * The error message to show when `status` is "invalid".
    */
   statusMessage?: React.ReactNode;
+  /**
+   * Identifies the element that provides an error message for the textarea.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage"?: string;
 
   /**
    * Text between the current char counter and max value.

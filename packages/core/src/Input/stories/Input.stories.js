@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import isEmpty from "lodash/isEmpty";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core";
 import { Map } from "@hv/uikit-react-icons";
-import { HvButton, HvInput, HvBaseInput, HvTypography, HvLabel, HvInfoMessage } from "../..";
+import {
+  HvButton,
+  HvInput,
+  HvBaseInput,
+  HvTypography,
+  HvLabel,
+  HvInfoMessage,
+  HvGrid,
+} from "../..";
 import countryNamesArray from "./countries";
 
 export default {
@@ -15,14 +23,13 @@ export default {
   },
   component: HvInput,
   subcomponents: { HvBaseInput },
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 610, minWidth: 150 }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
+
+const defaultDecorator = (Story) => (
+  <div style={{ maxWidth: 610, minWidth: 150 }}>
+    <Story />
+  </div>
+);
 
 export const Main = () => (
   <HvInput
@@ -32,6 +39,8 @@ export const Main = () => (
     placeholder="Insert first name"
   />
 );
+
+Main.decorators = [defaultDecorator];
 
 export const Disabled = () => (
   <HvInput
@@ -45,7 +54,7 @@ export const Disabled = () => (
 
 Disabled.parameters = {
   docs: {
-    description: "Input sample that does not allow interactions.",
+    description: { story: "Input sample that does not allow interactions." },
   },
   pa11y: {
     ignore: [
@@ -57,6 +66,8 @@ Disabled.parameters = {
     ],
   },
 };
+
+Disabled.decorators = [defaultDecorator];
 
 export const ReadOnly = () => (
   <HvInput
@@ -70,9 +81,11 @@ export const ReadOnly = () => (
 
 ReadOnly.parameters = {
   docs: {
-    description: "Not editable input.",
+    description: { story: "Not editable input." },
   },
 };
+
+ReadOnly.decorators = [defaultDecorator];
 
 export const WithoutLabel = () => (
   <HvInput aria-label="First name" placeholder="Insert first name" />
@@ -85,6 +98,8 @@ WithoutLabel.parameters = {
   },
 };
 
+WithoutLabel.decorators = [defaultDecorator];
+
 export const Required = () => (
   <HvInput
     required
@@ -96,9 +111,11 @@ export const Required = () => (
 
 Required.parameters = {
   docs: {
-    description: "Required input value. Clear the input to show default error message.",
+    description: { story: "Required input value. Clear the input to show default error message." },
   },
 };
+
+Required.decorators = [defaultDecorator];
 
 export const ControlledWithButtons = () => {
   const useStyles = makeStyles((theme) => ({
@@ -140,9 +157,11 @@ export const ControlledWithButtons = () => {
 
 ControlledWithButtons.parameters = {
   docs: {
-    description: "Changing the input value from outside the input component.",
+    description: { story: "Changing the input value from outside the input component." },
   },
 };
+
+ControlledWithButtons.decorators = [defaultDecorator];
 
 export const InvalidState = () => {
   const [validationState, setValidationState] = useState("invalid");
@@ -157,7 +176,7 @@ export const InvalidState = () => {
       defaultValue="Not a name!"
       status={validationState}
       statusMessage={errorMessage}
-      onFocus={(value) => setValidationState(value ? "filled" : "empty")}
+      onFocus={(value) => setValidationState(value ? "standBy" : "empty")}
       onBlur={() => {
         setValidationState("invalid");
         setErrorMessage("Nice try, but this will always be invalid. I told you!");
@@ -168,8 +187,106 @@ export const InvalidState = () => {
 
 InvalidState.parameters = {
   docs: {
-    description:
-      "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
+    description: {
+      story:
+        "Controlling the validation state and the error message. When controlling the validation state it is recommended to also manage the error message via the statusMessage property. Also, the input will remain in invalid state even when active, unless it is handled manually in the onFocus/onBlur.",
+    },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // aria-errormessage value is being reported as invalid because axe-core forces
+      // the referenced error element to have aria-live="assertive", when the spec does not
+      // https://github.com/dequelabs/axe-core/pull/2590
+      "aria-valid-attr-value",
+    ],
+  },
+};
+
+InvalidState.decorators = [defaultDecorator];
+
+export const ExternalErrorMessage = () => {
+  const theme = useTheme();
+
+  const [lastNameValidationState, setLastNameValidationState] = useState("invalid");
+
+  const [firstNameErrorMessage, setFirstNameErrorMessage] = useState(null);
+  const [lastNameErrorMessage, setLastNameErrorMessage] = useState(
+    "The last name is invalid just because I said so."
+  );
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
+          <HvInput
+            label="First name"
+            description="Please enter your first name"
+            placeholder="Insert first name"
+            required
+            minCharQuantity={2}
+            aria-errormessage="firstName-error"
+            onBlur={(_e, _value, inputValidity) => {
+              if (inputValidity.valid) {
+                setFirstNameErrorMessage(null);
+              } else if (inputValidity.valueMissing) {
+                setFirstNameErrorMessage("You must provide a first name");
+              } else if (inputValidity.tooShort) {
+                setFirstNameErrorMessage("The first name is too short");
+              }
+            }}
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvInput
+            label="Last name"
+            description="Please enter your last name"
+            placeholder="Insert last name"
+            defaultValue="Not a name!"
+            required
+            status={lastNameValidationState}
+            aria-errormessage="lastName-error"
+            onFocus={(value) => {
+              setLastNameValidationState(value ? "standBy" : "empty");
+            }}
+            onBlur={(_e, _value, inputValidity) => {
+              setLastNameValidationState("invalid");
+
+              if (inputValidity.valueMissing) {
+                setLastNameErrorMessage("You must provide a last name");
+              } else {
+                setLastNameErrorMessage(
+                  "Nice try, but the last name will always be invalid. I told you!"
+                );
+              }
+            }}
+          />
+        </HvGrid>
+      </HvGrid>
+      <HvGrid
+        item
+        xs={7}
+        style={{
+          backgroundColor: theme.hv.palette.semantic.sema9,
+          color: theme.hv.palette.base.base2,
+        }}
+      >
+        <h4>Form errors:</h4>
+        <ul>
+          {firstNameErrorMessage && <li id="firstName-error">{firstNameErrorMessage}</li>}
+          {lastNameErrorMessage && <li id="lastName-error">{lastNameErrorMessage}</li>}
+        </ul>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+ExternalErrorMessage.parameters = {
+  docs: {
+    description: {
+      story:
+        "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
+    },
   },
   pa11y: {
     ignore: [
@@ -212,6 +329,8 @@ NumericRequired.parameters = {
   },
 };
 
+NumericRequired.decorators = [defaultDecorator];
+
 export const Email = () => {
   const validationMessages = {
     typeMismatchError: "Please add the right email format: your.name@hitachivantara.com",
@@ -235,6 +354,8 @@ Email.parameters = {
     description: { story: "Required Input that only accepts valid emails." },
   },
 };
+
+Email.decorators = [defaultDecorator];
 
 export const Password = () => {
   const validationMessages = {
@@ -269,11 +390,15 @@ Password.parameters = {
   },
 };
 
+Password.decorators = [defaultDecorator];
+
 export const Search = () => {
   return (
     <HvInput aria-label="Basic search" placeholder="Search" type="search" onEnter={console.log} />
   );
 };
+
+Search.decorators = [defaultDecorator];
 
 export const CustomValidation = () => {
   const validationMessages = {
@@ -299,6 +424,8 @@ CustomValidation.parameters = {
       "Input with a custom validation function, it validates if the input contains the value `hello`.",
   },
 };
+
+CustomValidation.decorators = [defaultDecorator];
 
 export const EventDemonstration = () => {
   const [value, setValue] = useState("");
@@ -327,6 +454,8 @@ EventDemonstration.parameters = {
   },
 };
 
+EventDemonstration.decorators = [defaultDecorator];
+
 export const CustomProps = () => (
   <HvInput
     id="extraProps-input"
@@ -346,6 +475,8 @@ CustomProps.parameters = {
       "Using the input props to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
   },
 };
+
+CustomProps.decorators = [defaultDecorator];
 
 export const Suggestion = () => {
   const [value, setValue] = useState("");
@@ -382,9 +513,11 @@ export const Suggestion = () => {
 
 Suggestion.parameters = {
   docs: {
-    description: "Input with suggestion list.",
+    description: { story: "Input with suggestion list." },
   },
 };
+
+Suggestion.decorators = [defaultDecorator];
 
 export const PrefixAndSuffix = () => {
   const validationMessages = {
@@ -459,3 +592,5 @@ PrefixAndSuffix.parameters = {
       "If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label and description.",
   },
 };
+
+PrefixAndSuffix.decorators = [defaultDecorator];

@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
 import { HvBaseRadio, HvFormElement, HvLabel, HvWarningText, useUniqueId } from "..";
+import { isInvalid } from "../Forms/FormElement/validationStates";
 
 import { setId, useControlled } from "../utils";
 
@@ -44,7 +45,8 @@ const HvRadio = (props) => {
     onChange,
 
     status = "standBy",
-    statusMessage = "",
+    statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
     semantic = false,
 
@@ -87,14 +89,26 @@ const HvRadio = (props) => {
     [onChange, setIsChecked, value]
   );
 
-  // error message area will only be needed if the status is being controlled
-  const canShowError = status !== undefined;
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled
+  const canShowError =
+    ariaErrorMessage == null && status !== undefined && statusMessage !== undefined;
+
+  const hasLabel = label != null;
+
+  const isStateInvalid = isInvalid(status);
+
+  let errorMessageId;
+  if (isStateInvalid) {
+    errorMessageId = canShowError ? setId(elementId, "error") : ariaErrorMessage;
+  }
 
   const radio = (
     <HvBaseRadio
       id={label ? setId(elementId, "input") : null}
       name={name}
-      className={classes.radio}
+      className={clsx(classes.radio, { [classes.invalidRadio]: isStateInvalid })}
       disabled={disabled}
       readOnly={readOnly}
       onChange={onLocalChange}
@@ -102,8 +116,8 @@ const HvRadio = (props) => {
       checked={isChecked}
       semantic={semantic}
       inputProps={{
-        "aria-invalid": status === "invalid" ? true : undefined,
-        "aria-errormessage": status === "invalid" ? setId(elementId, "error") : undefined,
+        "aria-invalid": isStateInvalid ? true : undefined,
+        "aria-errormessage": errorMessageId,
         "aria-label": ariaLabel,
         "aria-labelledby": ariaLabelledBy,
         "aria-describedby": ariaDescribedBy,
@@ -125,11 +139,12 @@ const HvRadio = (props) => {
       readOnly={readOnly}
       className={clsx(className, classes.root)}
     >
-      {label ? (
+      {hasLabel ? (
         <div
           className={clsx(classes.container, {
             [classes.disabled]: disabled,
             [classes.focusVisible]: focusVisible && label,
+            [classes.invalidContainer]: isStateInvalid,
           })}
         >
           {radio}
@@ -145,7 +160,9 @@ const HvRadio = (props) => {
         radio
       )}
       {canShowError && (
-        <HvWarningText id={setId(elementId, "error")}>{statusMessage}</HvWarningText>
+        <HvWarningText id={setId(elementId, "error")} disableBorder>
+          {statusMessage}
+        </HvWarningText>
       )}
     </HvFormElement>
   );
@@ -169,6 +186,10 @@ HvRadio.propTypes = {
      */
     container: PropTypes.string,
     /**
+     * Styles applied to the HvBaseCheckbox (only when a label is provided).
+     */
+    invalidContainer: PropTypes.string,
+    /**
      * Styles applied to the radio button+label container when the radio button is disabled.
      */
     disabled: PropTypes.string,
@@ -176,6 +197,10 @@ HvRadio.propTypes = {
      * Styles applied to the HvBaseRadio.
      */
     radio: PropTypes.string,
+    /**
+     * Styles applied to the HvBaseCheckbox (only when a label is not provided).
+     */
+    invalidRadio: PropTypes.string,
     /**
      * Styles applied to the label.
      */
@@ -267,6 +292,12 @@ HvRadio.propTypes = {
    * The error message to show when `status` is "invalid".
    */
   statusMessage: PropTypes.string,
+  /**
+   * Identifies the element that provides an error message for the radio button.
+   *
+   * Will only be used when the validation status is invalid.
+   */
+  "aria-errormessage": PropTypes.string,
 
   /**
    * The callback fired when the radio button is pressed.

@@ -111,6 +111,8 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
                 "focusVisible": "HvCheckBox-focusVisible",
+                "invalidCheckbox": "HvCheckBox-invalidCheckbox",
+                "invalidContainer": "HvCheckBox-invalidContainer",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -1576,6 +1578,8 @@ exports[`BulkActions should render correctly 1`] = `
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
                 "focusVisible": "HvCheckBox-focusVisible",
+                "invalidCheckbox": "HvCheckBox-invalidCheckbox",
+                "invalidContainer": "HvCheckBox-invalidContainer",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -2176,6 +2180,8 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
                 "focusVisible": "HvCheckBox-focusVisible",
+                "invalidCheckbox": "HvCheckBox-invalidCheckbox",
+                "invalidContainer": "HvCheckBox-invalidContainer",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }
@@ -2794,6 +2800,8 @@ exports[`BulkActions with selection should render correctly 1`] = `
                 "container": "HvCheckBox-container",
                 "disabled": "HvCheckBox-disabled",
                 "focusVisible": "HvCheckBox-focusVisible",
+                "invalidCheckbox": "HvCheckBox-invalidCheckbox",
+                "invalidContainer": "HvCheckBox-invalidContainer",
                 "label": "HvCheckBox-label",
                 "root": "HvCheckBox-root",
               }

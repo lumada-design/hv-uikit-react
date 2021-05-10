@@ -9,15 +9,29 @@ const styles = (theme) => ({
     cursor: "pointer",
     display: "flex",
 
+    height: 32,
+
+    transition: theme.transitions.create("background-color", {
+      duration: theme.transitions.duration.shortest,
+    }),
+
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
     },
+  },
+  invalidContainer: {
+    borderBottom: `1px solid ${theme.hv.palette.semantic.sema4}`,
   },
   disabled: {
     cursor: "not-allowed",
   },
 
-  radio: {},
+  radio: {
+    height: 32,
+  },
+  invalidRadio: {
+    borderBottom: `1px solid ${theme.hv.palette.semantic.sema4}`,
+  },
 
   label: {
     // ensure more specificity than .HvTypography-highlightText

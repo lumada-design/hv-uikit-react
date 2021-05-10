@@ -11,6 +11,7 @@ const styles = (theme) => ({
 
   group: {
     display: "flex",
+    paddingBottom: theme.hv.spacing.xs,
   },
   vertical: {
     flexDirection: "column",
@@ -37,17 +38,11 @@ const styles = (theme) => ({
     width: "calc(100% + 20px)", // compensate the negative margin left which increases the width
   },
 
-  selectAll: {
-    // ensure more specificity than .HvCheckBox-root .HvCheckBox-label
-    "$group>& label": {
-      // not spreading theme.hv.typography.highlightText, it overrides too many things
-      fontWeight: 600,
-    },
+  invalid: {
+    borderBottom: `1px solid ${theme.hv.palette.semantic.sema4}`,
   },
 
-  error: {
-    marginTop: theme.hv.spacing.xs,
-  },
+  error: {},
 });
 
 export default styles;
