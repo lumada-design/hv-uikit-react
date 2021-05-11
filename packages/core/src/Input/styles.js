@@ -10,19 +10,19 @@ const styles = (theme) => ({
   inputRoot: {
     "&:hover": {
       "& $iconClear": {
-        visibility: "visible",
+        display: "block",
       },
     },
     "&:focus-within $iconClear": {
-      visibility: "visible",
+      display: "block",
     },
     // IE fallback code (using focus-within-polyfill)
     "&.focus-within $iconClear": {
-      visibility: "visible",
+      display: "block",
     },
   },
   inputRootFocused: {
-    "& $iconClear": { visibility: "visible" },
+    "& $iconClear": { display: "block" },
   },
   inputRootDisabled: {
     cursor: "not-allowed",
@@ -52,9 +52,7 @@ const styles = (theme) => ({
     flexDirection: "row",
     height: "30px",
     justifyContent: "center",
-    position: "absolute",
-    top: 1,
-    right: 1,
+    marginRight: 1,
   },
   adornmentButton: {
     backgroundColor: "transparent",
@@ -68,7 +66,7 @@ const styles = (theme) => ({
     height: "30px",
   },
   iconClear: {
-    visibility: "hidden",
+    display: "none",
   },
 
   suggestionsContainer: {

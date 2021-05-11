@@ -121,8 +121,12 @@ export const ControlledWithButtons = () => {
   const useStyles = makeStyles((theme) => ({
     container: {
       "& button": {
-        marginRight: theme.hvSpacing("xs"),
         marginBottom: theme.hvSpacing("md"),
+      },
+    },
+    buttonWrapper: {
+      "& button": {
+        marginRight: theme.hvSpacing("xs"),
       },
     },
   }));
@@ -138,18 +142,21 @@ export const ControlledWithButtons = () => {
 
   return (
     <div className={classes.container}>
-      <HvButton category="secondary" onClick={() => setValue("First value")}>
-        First value
-      </HvButton>
-      <HvButton category="secondary" onClick={() => setValue("Second value")}>
-        Second value
-      </HvButton>
-      <HvButton category="secondary" onClick={() => setValue("Third value")}>
-        Third value
-      </HvButton>
-      <HvButton category="secondary" onClick={() => setValue("")}>
-        Clear value
-      </HvButton>
+      <div className={classes.buttonWrapper}>
+        <HvButton category="secondary" onClick={() => setValue("First value")}>
+          First value
+        </HvButton>
+        <HvButton category="secondary" onClick={() => setValue("Second value")}>
+          Second value
+        </HvButton>
+        <HvButton category="secondary" onClick={() => setValue("Third value")}>
+          Third value
+        </HvButton>
+        <HvButton category="secondary" onClick={() => setValue("")}>
+          Clear value
+        </HvButton>
+      </div>
+
       <HvInput label="Label" placeholder="Enter value" value={value} onChange={handleChange} />
     </div>
   );
