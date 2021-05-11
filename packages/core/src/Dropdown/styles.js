@@ -51,6 +51,7 @@ const styles = (theme) => ({
   },
   dropdownHeaderInvalid: {},
   dropdownHeaderOpen: {},
+  dropdownListContainer: {},
 });
 
 export default styles;

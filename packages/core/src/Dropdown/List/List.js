@@ -205,6 +205,9 @@ const List = ({
         {showList && (
           <HvList
             id={setId(id, "list")}
+            classes={{
+              root: classes.dropdownListContainer,
+            }}
             values={list}
             multiSelect={multiSelect}
             useSelector={multiSelect}

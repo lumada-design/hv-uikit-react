@@ -255,6 +255,7 @@ const HvDropdown = (props) => {
           id={setId(elementId, "values")}
           classes={{
             rootList: classes.rootList,
+            dropdownListContainer: classes.dropdownListContainer,
           }}
           values={internalValues}
           multiSelect={multiSelect}
@@ -337,6 +338,10 @@ HvDropdown.propTypes = {
      * Styles applied to the dropdown is opened.
      */
     dropdownHeaderOpen: PropTypes.string,
+    /**
+     * Styles applied to the dropdown list.
+     */
+    dropdownListContainer: PropTypes.string,
   }).isRequired,
 
   /**
