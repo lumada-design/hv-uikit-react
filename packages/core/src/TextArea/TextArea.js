@@ -337,7 +337,7 @@ const HvTextArea = (props) => {
           input: classes.input,
           inputResizable: classes.inputResizable,
         }}
-        id={hasLabel ? setId(elementId, "input") : null}
+        id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
         name={name}
         value={value}
         required={required}

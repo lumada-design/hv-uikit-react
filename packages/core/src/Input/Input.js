@@ -390,7 +390,7 @@ const HvInput = (props) => {
 
   const showSearchIcon = type === "search" && !disableSearchButton;
 
-  const showRevealPasswordButton = type !== "password" || disableRevealPassword;
+  const showRevealPasswordButton = type === "password" && !disableRevealPassword;
 
   /**
    * Clears the input value from the state and refocus the input.
@@ -482,7 +482,7 @@ const HvInput = (props) => {
   }, [revealPassword]);
 
   const revealPasswordButton = useMemo(() => {
-    if (showRevealPasswordButton) {
+    if (!showRevealPasswordButton) {
       return null;
     }
 
@@ -613,7 +613,11 @@ const HvInput = (props) => {
       )}
 
       <HvBaseInput
-        id={hasLabel || !disableClear || !disableRevealPassword ? setId(elementId, "input") : null}
+        id={
+          hasLabel || showClear || showRevealPasswordButton
+            ? setId(elementId, "input")
+            : setId(id, "input")
+        }
         name={name}
         value={value}
         required={required}
