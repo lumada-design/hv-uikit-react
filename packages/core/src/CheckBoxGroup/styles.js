@@ -4,6 +4,7 @@ const styles = (theme) => ({
     padding: 0,
     margin: 0,
     overflow: "hidden",
+    verticalAlign: "top",
   },
 
   label: {
