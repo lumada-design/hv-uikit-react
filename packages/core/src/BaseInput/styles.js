@@ -172,7 +172,7 @@ const styles = (theme) => ({
     "&::-ms-clear": {
       display: "none",
     },
-    width: "initial",
+    width: "auto",
     flexGrow: 1,
   },
   inputResizable: {
