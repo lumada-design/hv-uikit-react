@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.30.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.29.0...@hv/uikit-react-core@3.30.0) (2021-05-11)
+
+
+### Bug Fixes
+
+* **dropdown:** expose class to allow maxHeight in the list. HVUIKIT-5782 ([44fa486](https://github.com/lumada-design/hv-uikit-react/commit/44fa4861d88d93030f16ec9bc92b6a8732ba528b))
+* style of invalid horizontal checkbox and radio groups HVUIKIT-5772 ([c977004](https://github.com/lumada-design/hv-uikit-react/commit/c97700404debf62295df08352d7901ca6c874f24))
+* **button:** change text color to pass contrast check. HVUIKIT-5774 ([1d9d46c](https://github.com/lumada-design/hv-uikit-react/commit/1d9d46c730f07f80565b7a4ea94d491caa18a812))
+* remove extra padding in valid checkbox and radio groups HVUIKIT-5772 ([25a63ce](https://github.com/lumada-design/hv-uikit-react/commit/25a63cedc0a36e923f281f42d20e76cf3bd36ccd))
+* **checkboxgroup:** type definition of onChange and orientation ([2f444d7](https://github.com/lumada-design/hv-uikit-react/commit/2f444d76da229eb05364905739cbf510c420d0fa))
+* **container:** remove fixed colors from components and sample. HVUIKIT-5763 ([a87bfe0](https://github.com/lumada-design/hv-uikit-react/commit/a87bfe0250b35dc15726d20865354c17e85add35))
+* **datepicker:** remove fixed width allowing responsiveness usecases. HVUIKIT-5769 ([1a94f4e](https://github.com/lumada-design/hv-uikit-react/commit/1a94f4e69f2946cc0873f46399766b241c7e00eb))
+* **dialog:** add margin on title to prevent close button overlay. HVUIKIT-5761 ([ff83ae4](https://github.com/lumada-design/hv-uikit-react/commit/ff83ae41b5c117ddb80b43c273033ae66678c641))
+* **input:** text in input overlays close icon. HVUIKIT-5754 ([dc919df](https://github.com/lumada-design/hv-uikit-react/commit/dc919df21073b36d0fcd162199752a469b7daa55))
+* **list:** fix showing unneeded tooltips. HVUIKIT-5767 ([f90e4bd](https://github.com/lumada-design/hv-uikit-react/commit/f90e4bd338cbfd9bc4d4d4549e0d5de201b727a9))
+* **radio-group:** allow false value selection. HVUIKIT-5764 ([df05a99](https://github.com/lumada-design/hv-uikit-react/commit/df05a99b1a6a093fccdcf387585ec1f64c362a00))
+
+
+### Features
+
+* allow specifying id of input native elements ([c6c80c6](https://github.com/lumada-design/hv-uikit-react/commit/c6c80c6dd9e4200bc24c1198cf96c8e1e1d9704e))
+* **assetinventory:** adding tooltips to list view header. HVUIKIT-5778 ([c045c20](https://github.com/lumada-design/hv-uikit-react/commit/c045c208eac12ce8278ae7637e706f9c66b77fed))
+* **date-picker:** add invalid styles. HVUIKIT-5770 ([#2408](https://github.com/lumada-design/hv-uikit-react/issues/2408)) ([b023fb8](https://github.com/lumada-design/hv-uikit-react/commit/b023fb8bcdfcb0334ec74e2a1115a8efbc4c3709))
+* **dropdown:** add invalid styles. HVUIKIT-5771 ([eb76d70](https://github.com/lumada-design/hv-uikit-react/commit/eb76d709cd99101f779007a68af2a78fda00870b))
+* **form-element:** support external error message HVUIKIT-5772 ([#2421](https://github.com/lumada-design/hv-uikit-react/issues/2421)) ([9e96802](https://github.com/lumada-design/hv-uikit-react/commit/9e96802c4316abd0b9a7b6b270847da828f48485))
+
+
+### Reverts
+
+* Revert "chore:replace input width to auto" ([dabc340](https://github.com/lumada-design/hv-uikit-react/commit/dabc3406c6dbf08b2e14da392bb4b4bc95dcb869))
+
+
+
+
+
 # [3.29.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.28.0...@hv/uikit-react-core@3.29.0) (2021-05-08)
 
 

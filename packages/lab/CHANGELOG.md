@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.11.0...@hv/uikit-react-lab@3.12.0) (2021-05-11)
+
+
+### Features
+
+* allow specifying id of input native elements ([c6c80c6](https://github.com/lumada-design/hv-uikit-react/commit/c6c80c6dd9e4200bc24c1198cf96c8e1e1d9704e))
+* **form-element:** support external error message HVUIKIT-5772 ([#2421](https://github.com/lumada-design/hv-uikit-react/issues/2421)) ([9e96802](https://github.com/lumada-design/hv-uikit-react/commit/9e96802c4316abd0b9a7b6b270847da828f48485))
+
+
+
+
+
 # [3.11.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.10.2...@hv/uikit-react-lab@3.11.0) (2021-05-08)
 
 
