@@ -36,7 +36,7 @@ const styles = (theme) => {
     },
 
     primary: {
-      color: theme.palette.base1,
+      color: theme.hv.palette.atmosphere.atmo1,
       backgroundColor: theme.hv.palette.accent.acce2,
       "&:hover": {
         backgroundColor: theme.hv.palette.accent.acce2h,
