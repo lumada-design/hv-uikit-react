@@ -3,23 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.29.1-alpha.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.29.0...@hv/uikit-react-core@3.29.1-alpha.0) (2021-05-10)
-
-
-### Bug Fixes
-
-* **checkboxgroup:** type definition of onChange and orientation ([2f444d7](https://github.com/lumada-design/hv-uikit-react/commit/2f444d76da229eb05364905739cbf510c420d0fa))
-* **list:** fix showing unneeded tooltips. HVUIKIT-5767 ([f90e4bd](https://github.com/lumada-design/hv-uikit-react/commit/f90e4bd338cbfd9bc4d4d4549e0d5de201b727a9))
-
-
-### Features
-
-* **assetinventory:** adding tooltips to list view header. HVUIKIT-5778 ([e715094](https://github.com/lumada-design/hv-uikit-react/commit/e715094266edfa22ea56c6134d773018a46dbb40))
-
-
-
-
-
 # [3.29.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.28.0...@hv/uikit-react-core@3.29.0) (2021-05-08)
 
 
