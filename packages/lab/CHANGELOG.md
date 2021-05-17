@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.12.0...@hv/uikit-react-lab@3.13.0) (2021-05-17)
+
+
+### Features
+
+* **navigation-anchors:** allow selection of unreachable items ([d406e9d](https://github.com/lumada-design/hv-uikit-react/commit/d406e9d4943ac9070e94e271fa7d91a4602fcf36))
+* **slider:** adjusting trail rail and mark colors. HVUIKIT-5754 ([b374115](https://github.com/lumada-design/hv-uikit-react/commit/b374115c92847973c2b406900780c171362c322f))
+
+
+
+
+
 # [3.12.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.11.0...@hv/uikit-react-lab@3.12.0) (2021-05-11)
 
 
