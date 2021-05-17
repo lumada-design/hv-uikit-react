@@ -23,7 +23,7 @@ export const DocumentScroll = () => {
 
   return (
     <>
-      <HvNavigationAnchors style={{ position: "fixed" }} href options={options} />
+      <HvNavigationAnchors style={{ position: "fixed" }} href options={options} offset={15} />
       <div id="pageContentId" style={{ marginLeft: 250 }}>
         <div
           id="Id1"
