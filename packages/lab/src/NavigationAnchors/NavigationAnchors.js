@@ -7,6 +7,19 @@ import styles from "./styles";
 
 const RETRY_MAX = 5;
 
+const getScrollTop = (c = window) => {
+  if (c === window) {
+    return (
+      window.scrollY ||
+      window.pageYOffset ||
+      (document.documentElement && document.documentElement.scrollTop) ||
+      document.body.scrollTop
+    );
+  }
+
+  return c.scrollTop;
+};
+
 const verticalScrollOffset = (t, c = window) => {
   if (c === window) {
     return (t?.getBoundingClientRect?.().top || 0) + (window.scrollY || window.pageYOffset);
@@ -27,24 +40,29 @@ const scrollElement = (element, container, offset = 0) => {
 };
 
 const isScrolledToTheBottom = (container) => {
-  let atTheBottom = false;
+  const containerScrollTop = getScrollTop(container);
+
   if (container === window) {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      atTheBottom = true;
-    }
-  } else if (container.scrollHeight - container.scrollTop === container.offsetHeight) {
-    atTheBottom = true;
+    // accounting for cases where html/body are set to height:100%
+    const scrollHeight =
+      (document.documentElement && document.documentElement.scrollHeight) ||
+      document.body.scrollHeight;
+
+    return containerScrollTop + window.innerHeight >= scrollHeight;
   }
-  return atTheBottom;
+
+  return containerScrollTop + container.offsetHeight >= container.scrollHeight;
 };
 
-const hasScrolledIntoView = (container, options, offset) => {
+// find the last nav item that whose top scrolled out of the container's visible area
+const findFirstVisibleElement = (container, options, offset) => {
   const boundsTop = verticalScrollOffset(container);
 
   let i = 0;
   // find index of first element whose top is still visible inside the container
   for (; i < options.length; i += 1) {
     const ele = document.getElementById(options[i].value);
+
     if (ele) {
       const elemTop = verticalScrollOffset(ele) - (options[i].offset || offset);
 
@@ -54,10 +72,8 @@ const hasScrolledIntoView = (container, options, offset) => {
     }
   }
 
-  // select the last nav item that whose top scrolled out of the container's visible area
-  // or, if the user has reached the bottom of the container, select the first nav item still visible.
-  // (usually this selects the last nav item, when it can't reach the top the container)
-  return i - (i < options.length && isScrolledToTheBottom(container) ? 0 : 1);
+  // return the previous index, the element that last scrolled past the top
+  return i - 1;
 };
 
 /**
@@ -80,9 +96,19 @@ const NavigationAnchors = ({
   const scrollEle = useRef();
   const requestedAnimationFrame = useRef(0);
 
+  const lastContainerScrollTop = useRef();
+
+  // ref to use a often-changing value in useCallback, has recommended in
+  // https://reactjs.org/docs/hooks-faq.html#how-to-read-an-often-changing-value-from-usecallback
+  const selectedIndexRef = useRef(selectedIndex);
+  useEffect(() => {
+    selectedIndexRef.current = selectedIndex;
+  }, [selectedIndex]);
+
   // get and store the container's dom element
   useEffect(() => {
     scrollEle.current = (scrollElementId && document.getElementById(scrollElementId)) || window;
+    lastContainerScrollTop.current = verticalScrollOffset(scrollEle.current);
   }, [scrollElementId]);
 
   const checkScroll = useCallback(() => {
@@ -90,10 +116,40 @@ const NavigationAnchors = ({
       requestedAnimationFrame.current = window.requestAnimationFrame(() => {
         requestedAnimationFrame.current = 0;
 
-        const newSelectedIndex = hasScrolledIntoView(scrollEle.current, options, offset);
-        if (newSelectedIndex > -1) {
-          setSelectedIndex(newSelectedIndex);
+        const firstVisibleElementIndex = findFirstVisibleElement(
+          scrollEle.current,
+          options,
+          offset
+        );
+
+        let newSelectedIndex = firstVisibleElementIndex;
+
+        // select the first element when all elements are bellow the container's top
+        if (firstVisibleElementIndex < 0) {
+          newSelectedIndex = 0;
         }
+
+        // if the user has reached the bottom of the container, select the first nav item still visible
+        // (usually this selects the last nav item, when it can't reach the top the container)
+        // in theory only needed when scrolling down, but no... because of the Safari bouncing behaviour
+        if (newSelectedIndex < options.length - 1 && isScrolledToTheBottom(scrollEle.current)) {
+          newSelectedIndex += 1;
+        }
+
+        const containerScrollTop = getScrollTop(scrollEle.current);
+        const isScrollingDown = containerScrollTop > lastContainerScrollTop.current;
+        lastContainerScrollTop.current = containerScrollTop;
+
+        // only update the selected item if the scroll direction is moving away from it
+        if (isScrollingDown) {
+          if (newSelectedIndex < selectedIndexRef.current) {
+            newSelectedIndex = selectedIndexRef.current;
+          }
+        } else if (newSelectedIndex > selectedIndexRef.current) {
+          newSelectedIndex = selectedIndexRef.current;
+        }
+
+        setSelectedIndex(newSelectedIndex);
       });
     }
   }, [offset, options]);
@@ -167,6 +223,12 @@ const NavigationAnchors = ({
       } else if (href) {
         window.history.pushState({}, "", `#${options[index].value}`);
       }
+
+      setSelectedIndex(index);
+
+      // Safari scrolls immediately (no smooth scroll support),
+      // so this ref value must be updated asap
+      selectedIndexRef.current = index;
     }
   };
 
