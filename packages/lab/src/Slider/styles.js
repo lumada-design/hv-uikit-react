@@ -17,13 +17,13 @@ const styles = (theme) => ({
     height: "4px",
     border: "none",
     borderRadius: "0%",
-    backgroundColor: theme.hv.palette.atmosphere.atmo7,
+    backgroundColor: theme.hv.palette.atmosphere.atmo4,
     cursor: "pointer",
     verticalAlign: "middle",
     zIndex: "-3",
   },
   rail: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo7,
+    backgroundColor: theme.hv.palette.atmosphere.atmo4,
     height: "1px",
     zIndex: "-3",
   },
@@ -39,7 +39,7 @@ const styles = (theme) => ({
     borderColor: "transparent",
     borderRadius: "50%",
     boxShadow: "none",
-    backgroundColor: theme.hv.palette.atmosphere.atmo7,
+    backgroundColor: theme.hv.palette.atmosphere.atmo4,
     width: "32px",
     height: "32px",
     top: "-80%",
@@ -75,7 +75,6 @@ const styles = (theme) => ({
   sliderTooltip: {
     "& .rc-slider-tooltip-inner": {
       background: theme.hv.palette.atmosphere.atmo1,
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo7} `,
       borderRadius: 0,
       maxWidth: "532px",
       height: "100%",

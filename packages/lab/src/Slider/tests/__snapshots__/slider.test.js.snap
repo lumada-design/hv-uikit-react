@@ -866,7 +866,7 @@ exports[`Slider  should render correctly 1`] = `
       disabled={false}
       dotStyle={
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#CCCED0",
           "border": "none",
           "borderRadius": "0%",
           "bottom": "-1px",
@@ -2657,7 +2657,7 @@ exports[`Slider  should render correctly 1`] = `
       pushable={false}
       railStyle={
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#CCCED0",
           "height": "1px",
           "zIndex": "-3",
         }
@@ -2722,7 +2722,7 @@ exports[`Slider  should render correctly 1`] = `
           className="rc-slider-rail"
           style={
             Object {
-              "backgroundColor": undefined,
+              "backgroundColor": "#CCCED0",
               "height": "1px",
               "zIndex": "-3",
             }
@@ -2852,7 +2852,7 @@ exports[`Slider  should render correctly 1`] = `
           activeDotStyle={Object {}}
           dotStyle={
             Object {
-              "backgroundColor": undefined,
+              "backgroundColor": "#CCCED0",
               "border": "none",
               "borderRadius": "0%",
               "bottom": "-1px",
@@ -4604,7 +4604,7 @@ exports[`Slider  should render correctly 1`] = `
               key="0"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4624,7 +4624,7 @@ exports[`Slider  should render correctly 1`] = `
               key="1"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4644,7 +4644,7 @@ exports[`Slider  should render correctly 1`] = `
               key="2"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4664,7 +4664,7 @@ exports[`Slider  should render correctly 1`] = `
               key="3"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4684,7 +4684,7 @@ exports[`Slider  should render correctly 1`] = `
               key="4"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4704,7 +4704,7 @@ exports[`Slider  should render correctly 1`] = `
               key="5"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4724,7 +4724,7 @@ exports[`Slider  should render correctly 1`] = `
               key="6"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4744,7 +4744,7 @@ exports[`Slider  should render correctly 1`] = `
               key="7"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4764,7 +4764,7 @@ exports[`Slider  should render correctly 1`] = `
               key="8"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4784,7 +4784,7 @@ exports[`Slider  should render correctly 1`] = `
               key="9"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4804,7 +4804,7 @@ exports[`Slider  should render correctly 1`] = `
               key="10"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4824,7 +4824,7 @@ exports[`Slider  should render correctly 1`] = `
               key="11"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4844,7 +4844,7 @@ exports[`Slider  should render correctly 1`] = `
               key="12"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4864,7 +4864,7 @@ exports[`Slider  should render correctly 1`] = `
               key="13"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4884,7 +4884,7 @@ exports[`Slider  should render correctly 1`] = `
               key="14"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4904,7 +4904,7 @@ exports[`Slider  should render correctly 1`] = `
               key="15"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4924,7 +4924,7 @@ exports[`Slider  should render correctly 1`] = `
               key="16"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4944,7 +4944,7 @@ exports[`Slider  should render correctly 1`] = `
               key="17"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4964,7 +4964,7 @@ exports[`Slider  should render correctly 1`] = `
               key="18"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -4984,7 +4984,7 @@ exports[`Slider  should render correctly 1`] = `
               key="19"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5004,7 +5004,7 @@ exports[`Slider  should render correctly 1`] = `
               key="20"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5024,7 +5024,7 @@ exports[`Slider  should render correctly 1`] = `
               key="21"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5044,7 +5044,7 @@ exports[`Slider  should render correctly 1`] = `
               key="22"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5064,7 +5064,7 @@ exports[`Slider  should render correctly 1`] = `
               key="23"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5084,7 +5084,7 @@ exports[`Slider  should render correctly 1`] = `
               key="24"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5104,7 +5104,7 @@ exports[`Slider  should render correctly 1`] = `
               key="25"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5124,7 +5124,7 @@ exports[`Slider  should render correctly 1`] = `
               key="26"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5144,7 +5144,7 @@ exports[`Slider  should render correctly 1`] = `
               key="27"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5164,7 +5164,7 @@ exports[`Slider  should render correctly 1`] = `
               key="28"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5184,7 +5184,7 @@ exports[`Slider  should render correctly 1`] = `
               key="29"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5204,7 +5204,7 @@ exports[`Slider  should render correctly 1`] = `
               key="30"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5224,7 +5224,7 @@ exports[`Slider  should render correctly 1`] = `
               key="31"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5244,7 +5244,7 @@ exports[`Slider  should render correctly 1`] = `
               key="32"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5264,7 +5264,7 @@ exports[`Slider  should render correctly 1`] = `
               key="33"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5284,7 +5284,7 @@ exports[`Slider  should render correctly 1`] = `
               key="34"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5304,7 +5304,7 @@ exports[`Slider  should render correctly 1`] = `
               key="35"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5324,7 +5324,7 @@ exports[`Slider  should render correctly 1`] = `
               key="36"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5344,7 +5344,7 @@ exports[`Slider  should render correctly 1`] = `
               key="37"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5364,7 +5364,7 @@ exports[`Slider  should render correctly 1`] = `
               key="38"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5384,7 +5384,7 @@ exports[`Slider  should render correctly 1`] = `
               key="39"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5404,7 +5404,7 @@ exports[`Slider  should render correctly 1`] = `
               key="40"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5424,7 +5424,7 @@ exports[`Slider  should render correctly 1`] = `
               key="41"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5444,7 +5444,7 @@ exports[`Slider  should render correctly 1`] = `
               key="42"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5464,7 +5464,7 @@ exports[`Slider  should render correctly 1`] = `
               key="43"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5484,7 +5484,7 @@ exports[`Slider  should render correctly 1`] = `
               key="44"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5504,7 +5504,7 @@ exports[`Slider  should render correctly 1`] = `
               key="45"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5524,7 +5524,7 @@ exports[`Slider  should render correctly 1`] = `
               key="46"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5544,7 +5544,7 @@ exports[`Slider  should render correctly 1`] = `
               key="47"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5564,7 +5564,7 @@ exports[`Slider  should render correctly 1`] = `
               key="48"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5584,7 +5584,7 @@ exports[`Slider  should render correctly 1`] = `
               key="49"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5604,7 +5604,7 @@ exports[`Slider  should render correctly 1`] = `
               key="50"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5624,7 +5624,7 @@ exports[`Slider  should render correctly 1`] = `
               key="51"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5644,7 +5644,7 @@ exports[`Slider  should render correctly 1`] = `
               key="52"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5664,7 +5664,7 @@ exports[`Slider  should render correctly 1`] = `
               key="53"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5684,7 +5684,7 @@ exports[`Slider  should render correctly 1`] = `
               key="54"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5704,7 +5704,7 @@ exports[`Slider  should render correctly 1`] = `
               key="55"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5724,7 +5724,7 @@ exports[`Slider  should render correctly 1`] = `
               key="56"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5744,7 +5744,7 @@ exports[`Slider  should render correctly 1`] = `
               key="57"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5764,7 +5764,7 @@ exports[`Slider  should render correctly 1`] = `
               key="58"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5784,7 +5784,7 @@ exports[`Slider  should render correctly 1`] = `
               key="59"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5804,7 +5804,7 @@ exports[`Slider  should render correctly 1`] = `
               key="60"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5824,7 +5824,7 @@ exports[`Slider  should render correctly 1`] = `
               key="61"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5844,7 +5844,7 @@ exports[`Slider  should render correctly 1`] = `
               key="62"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5864,7 +5864,7 @@ exports[`Slider  should render correctly 1`] = `
               key="63"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5884,7 +5884,7 @@ exports[`Slider  should render correctly 1`] = `
               key="64"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5904,7 +5904,7 @@ exports[`Slider  should render correctly 1`] = `
               key="65"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5924,7 +5924,7 @@ exports[`Slider  should render correctly 1`] = `
               key="66"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5944,7 +5944,7 @@ exports[`Slider  should render correctly 1`] = `
               key="67"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5964,7 +5964,7 @@ exports[`Slider  should render correctly 1`] = `
               key="68"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -5984,7 +5984,7 @@ exports[`Slider  should render correctly 1`] = `
               key="69"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6004,7 +6004,7 @@ exports[`Slider  should render correctly 1`] = `
               key="70"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6024,7 +6024,7 @@ exports[`Slider  should render correctly 1`] = `
               key="71"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6044,7 +6044,7 @@ exports[`Slider  should render correctly 1`] = `
               key="72"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6064,7 +6064,7 @@ exports[`Slider  should render correctly 1`] = `
               key="73"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6084,7 +6084,7 @@ exports[`Slider  should render correctly 1`] = `
               key="74"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6104,7 +6104,7 @@ exports[`Slider  should render correctly 1`] = `
               key="75"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6124,7 +6124,7 @@ exports[`Slider  should render correctly 1`] = `
               key="76"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6144,7 +6144,7 @@ exports[`Slider  should render correctly 1`] = `
               key="77"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6164,7 +6164,7 @@ exports[`Slider  should render correctly 1`] = `
               key="78"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6184,7 +6184,7 @@ exports[`Slider  should render correctly 1`] = `
               key="79"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6204,7 +6204,7 @@ exports[`Slider  should render correctly 1`] = `
               key="80"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6224,7 +6224,7 @@ exports[`Slider  should render correctly 1`] = `
               key="81"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6244,7 +6244,7 @@ exports[`Slider  should render correctly 1`] = `
               key="82"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6264,7 +6264,7 @@ exports[`Slider  should render correctly 1`] = `
               key="83"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6284,7 +6284,7 @@ exports[`Slider  should render correctly 1`] = `
               key="84"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6304,7 +6304,7 @@ exports[`Slider  should render correctly 1`] = `
               key="85"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6324,7 +6324,7 @@ exports[`Slider  should render correctly 1`] = `
               key="86"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6344,7 +6344,7 @@ exports[`Slider  should render correctly 1`] = `
               key="87"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6364,7 +6364,7 @@ exports[`Slider  should render correctly 1`] = `
               key="88"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6384,7 +6384,7 @@ exports[`Slider  should render correctly 1`] = `
               key="89"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6404,7 +6404,7 @@ exports[`Slider  should render correctly 1`] = `
               key="90"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6424,7 +6424,7 @@ exports[`Slider  should render correctly 1`] = `
               key="91"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6444,7 +6444,7 @@ exports[`Slider  should render correctly 1`] = `
               key="92"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6464,7 +6464,7 @@ exports[`Slider  should render correctly 1`] = `
               key="93"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6484,7 +6484,7 @@ exports[`Slider  should render correctly 1`] = `
               key="94"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6504,7 +6504,7 @@ exports[`Slider  should render correctly 1`] = `
               key="95"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6524,7 +6524,7 @@ exports[`Slider  should render correctly 1`] = `
               key="96"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6544,7 +6544,7 @@ exports[`Slider  should render correctly 1`] = `
               key="97"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6564,7 +6564,7 @@ exports[`Slider  should render correctly 1`] = `
               key="98"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6584,7 +6584,7 @@ exports[`Slider  should render correctly 1`] = `
               key="99"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
@@ -6604,7 +6604,7 @@ exports[`Slider  should render correctly 1`] = `
               key="100"
               style={
                 Object {
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#CCCED0",
                   "border": "none",
                   "borderRadius": "0%",
                   "bottom": "-1px",
