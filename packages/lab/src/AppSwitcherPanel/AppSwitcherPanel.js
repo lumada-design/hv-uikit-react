@@ -1,71 +1,61 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
+
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+
+import styles from "./styles";
 
 import Action from "./Action";
 
-export default class AppSwitcherPanel extends Component {
-  constructor(props) {
-    super(props);
+const AppSwitcherPanel = (props) => {
+  const {
+    id,
+    classes,
+    isOpen = false,
+    title = "Apps",
+    applications,
+    header,
+    footer,
+    onActionClickedCallback = () => {},
+    isActionSelectedCallback = () => false,
+  } = props;
 
-    const { id } = this.props;
+  const actionClicked = (event, application) => {
+    onActionClickedCallback?.(event, application);
+  };
 
-    this.state = {
-      internalId: id || uniqueId("hv-appswitcherpanel-"),
-    };
-  }
+  const panelActions = applications.map((application) => {
+    if (application.name && application.url) {
+      return (
+        <Action
+          key={application.url}
+          application={application}
+          onClickCallback={actionClicked}
+          isSelectedCallback={isActionSelectedCallback}
+        />
+      );
+    }
 
-  render() {
-    const { internalId } = this.state;
-    const {
-      classes,
-      isOpen,
-      title,
-      applications,
-      header,
-      footer,
-      onActionClickedCallback,
-      isActionSelectedCallback,
-    } = this.props;
+    return undefined;
+  });
 
-    const actionClicked = (event, application) => {
-      if (onActionClickedCallback) {
-        onActionClickedCallback(event, application);
-      }
-    };
-
-    const panelActions = applications.map((application) => {
-      if (application.name && application.url) {
-        return (
-          <Action
-            key={application.url}
-            application={application}
-            onClickCallback={actionClicked}
-            isSelectedCallback={isActionSelectedCallback}
-          />
-        );
-      }
-
-      return undefined;
-    });
-
-    return (
-      <div id={internalId} className={`${classes.root} ${isOpen ? classes.open : ""}`}>
-        <div className={classes.headerContainer}>
-          {header || (
-            <div className={classes.titleContainer}>
-              <div className={classes.title} title={title}>
-                {title}
-              </div>
+  return (
+    <div id={id} className={clsx(classes.root, { [classes.open]: isOpen })}>
+      <div className={classes.headerContainer}>
+        {header || (
+          <div className={classes.titleContainer}>
+            <div className={classes.title} title={title}>
+              {title}
             </div>
-          )}
-        </div>
-        <div className={classes.actionsContainer}>{panelActions}</div>
-        {footer && <div className={classes.footerContainer}>{footer}</div>}
+          </div>
+        )}
       </div>
-    );
-  }
-}
+      <div className={classes.actionsContainer}>{panelActions}</div>
+      {footer && <div className={classes.footerContainer}>{footer}</div>}
+    </div>
+  );
+};
 
 AppSwitcherPanel.propTypes = {
   id: PropTypes.string,
@@ -148,10 +138,4 @@ AppSwitcherPanel.propTypes = {
   isActionSelectedCallback: PropTypes.func,
 };
 
-AppSwitcherPanel.defaultProps = {
-  isOpen: false,
-  title: "Apps",
-  footer: undefined,
-  onActionClickedCallback: () => {},
-  isActionSelectedCallback: () => false,
-};
+export default withStyles(styles, { name: "HvAppSwitcherPanel" })(AppSwitcherPanel);

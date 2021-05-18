@@ -80,32 +80,29 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
     }
     classes={
       Object {
-        "actionsContainer": "AppSwitcherPanel-actionsContainer-6",
-        "footerContainer": "AppSwitcherPanel-footerContainer-7",
-        "headerContainer": "AppSwitcherPanel-headerContainer-3",
-        "open": "AppSwitcherPanel-open-2",
-        "root": "AppSwitcherPanel-root-1",
-        "title": "AppSwitcherPanel-title-5",
-        "titleContainer": "AppSwitcherPanel-titleContainer-4",
+        "actionsContainer": "HvAppSwitcherPanel-actionsContainer",
+        "footerContainer": "HvAppSwitcherPanel-footerContainer",
+        "headerContainer": "HvAppSwitcherPanel-headerContainer",
+        "open": "HvAppSwitcherPanel-open",
+        "root": "HvAppSwitcherPanel-root",
+        "title": "HvAppSwitcherPanel-title",
+        "titleContainer": "HvAppSwitcherPanel-titleContainer",
       }
     }
-    isActionSelectedCallback={[Function]}
     isOpen={true}
-    onActionClickedCallback={[Function]}
     title="Mock title"
   >
     <div
-      className="AppSwitcherPanel-root-1 AppSwitcherPanel-open-2"
-      id="hv-appswitcherpanel-6"
+      className="HvAppSwitcherPanel-root HvAppSwitcherPanel-open"
     >
       <div
-        className="AppSwitcherPanel-headerContainer-3"
+        className="HvAppSwitcherPanel-headerContainer"
       >
         <div
-          className="AppSwitcherPanel-titleContainer-4"
+          className="HvAppSwitcherPanel-titleContainer"
         >
           <div
-            className="AppSwitcherPanel-title-5"
+            className="HvAppSwitcherPanel-title"
             title="Mock title"
           >
             Mock title
@@ -113,7 +110,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
         </div>
       </div>
       <div
-        className="AppSwitcherPanel-actionsContainer-6"
+        className="HvAppSwitcherPanel-actionsContainer"
       >
         <WithStyles(Action)
           application={
@@ -143,24 +140,24 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-10",
-                "iconInfo": "Action-iconInfo-12",
-                "iconUrl": "Action-iconUrl-13",
-                "link": "Action-link-11",
-                "selected": "Action-selected-9",
-                "typography": "Action-typography-8",
+                "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+                "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+                "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+                "link": "HvAppSwitcherPanelAction-link",
+                "selected": "HvAppSwitcherPanelAction-selected",
+                "typography": "HvAppSwitcherPanelAction-typography",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-11"
+              className="HvAppSwitcherPanelAction-link"
               href="http://mockapp1/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="HvAppSwitcherPanelAction-typography"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -168,7 +165,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="HvAppSwitcherPanelAction-typography"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -202,13 +199,13 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-13"
+                      className="HvAppSwitcherPanelAction-iconUrl"
                       onError={[Function]}
                       src="http://mockapp1/icon"
                     />
@@ -218,17 +215,17 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       Mock App 1 - VALID
                     </span>
                     <Info
-                      className="Action-iconInfo-12"
+                      className="HvAppSwitcherPanelAction-iconInfo"
                       title="Mock App 1 Description"
                     >
                       <HvIconBase
-                        className="Action-iconInfo-12"
+                        className="HvAppSwitcherPanelAction-iconInfo"
                         iconSize="S"
                         name="Info"
                         title="Mock App 1 Description"
                       >
                         <div
-                          className="Action-iconInfo-12 HvIconBase-root HvIconBase-s"
+                          className="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
                           name="Info"
                           title="Mock App 1 Description"
                         >
@@ -278,24 +275,24 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-10",
-                "iconInfo": "Action-iconInfo-12",
-                "iconUrl": "Action-iconUrl-13",
-                "link": "Action-link-11",
-                "selected": "Action-selected-9",
-                "typography": "Action-typography-8",
+                "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+                "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+                "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+                "link": "HvAppSwitcherPanelAction-link",
+                "selected": "HvAppSwitcherPanelAction-selected",
+                "typography": "HvAppSwitcherPanelAction-typography",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-11"
+              className="HvAppSwitcherPanelAction-link"
               href="http://mockapp5/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="HvAppSwitcherPanelAction-typography"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -303,7 +300,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="HvAppSwitcherPanelAction-typography"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -337,13 +334,13 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-13"
+                      className="HvAppSwitcherPanelAction-iconUrl"
                       onError={[Function]}
                       src="http://mockapp5/icon"
                     />
@@ -424,32 +421,29 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
     }
     classes={
       Object {
-        "actionsContainer": "AppSwitcherPanel-actionsContainer-6",
-        "footerContainer": "AppSwitcherPanel-footerContainer-7",
-        "headerContainer": "AppSwitcherPanel-headerContainer-3",
-        "open": "AppSwitcherPanel-open-2",
-        "root": "AppSwitcherPanel-root-1",
-        "title": "AppSwitcherPanel-title-5",
-        "titleContainer": "AppSwitcherPanel-titleContainer-4",
+        "actionsContainer": "HvAppSwitcherPanel-actionsContainer",
+        "footerContainer": "HvAppSwitcherPanel-footerContainer",
+        "headerContainer": "HvAppSwitcherPanel-headerContainer",
+        "open": "HvAppSwitcherPanel-open",
+        "root": "HvAppSwitcherPanel-root",
+        "title": "HvAppSwitcherPanel-title",
+        "titleContainer": "HvAppSwitcherPanel-titleContainer",
       }
     }
-    isActionSelectedCallback={[Function]}
     isOpen={true}
-    onActionClickedCallback={[Function]}
     title="Mock title"
   >
     <div
-      className="AppSwitcherPanel-root-1 AppSwitcherPanel-open-2"
-      id="hv-appswitcherpanel-2"
+      className="HvAppSwitcherPanel-root HvAppSwitcherPanel-open"
     >
       <div
-        className="AppSwitcherPanel-headerContainer-3"
+        className="HvAppSwitcherPanel-headerContainer"
       >
         <div
-          className="AppSwitcherPanel-titleContainer-4"
+          className="HvAppSwitcherPanel-titleContainer"
         >
           <div
-            className="AppSwitcherPanel-title-5"
+            className="HvAppSwitcherPanel-title"
             title="Mock title"
           >
             Mock title
@@ -457,7 +451,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
         </div>
       </div>
       <div
-        className="AppSwitcherPanel-actionsContainer-6"
+        className="HvAppSwitcherPanel-actionsContainer"
       >
         <WithStyles(Action)
           application={
@@ -485,24 +479,24 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-10",
-                "iconInfo": "Action-iconInfo-12",
-                "iconUrl": "Action-iconUrl-13",
-                "link": "Action-link-11",
-                "selected": "Action-selected-9",
-                "typography": "Action-typography-8",
+                "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+                "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+                "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+                "link": "HvAppSwitcherPanelAction-link",
+                "selected": "HvAppSwitcherPanelAction-selected",
+                "typography": "HvAppSwitcherPanelAction-typography",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-11"
+              className="HvAppSwitcherPanelAction-link"
               href="http://mockapp1/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="HvAppSwitcherPanelAction-typography"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -510,7 +504,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="HvAppSwitcherPanelAction-typography"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -544,13 +538,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-13"
+                      className="HvAppSwitcherPanelAction-iconUrl"
                       onError={[Function]}
                       src="http://mockapp1/icon"
                     />
@@ -593,24 +587,24 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-10",
-                "iconInfo": "Action-iconInfo-12",
-                "iconUrl": "Action-iconUrl-13",
-                "link": "Action-link-11",
-                "selected": "Action-selected-9",
-                "typography": "Action-typography-8",
+                "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+                "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+                "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+                "link": "HvAppSwitcherPanelAction-link",
+                "selected": "HvAppSwitcherPanelAction-selected",
+                "typography": "HvAppSwitcherPanelAction-typography",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-11"
+              className="HvAppSwitcherPanelAction-link"
               href="http://mockapp2/"
               target="_blank"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="HvAppSwitcherPanelAction-typography"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -618,7 +612,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="HvAppSwitcherPanelAction-typography"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -652,13 +646,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-13"
+                      className="HvAppSwitcherPanelAction-iconUrl"
                       onError={[Function]}
                       src="http://mockapp2/icon"
                     />
@@ -668,17 +662,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       Mock App 2
                     </span>
                     <Info
-                      className="Action-iconInfo-12"
+                      className="HvAppSwitcherPanelAction-iconInfo"
                       title="Mock App 2 Description"
                     >
                       <HvIconBase
-                        className="Action-iconInfo-12"
+                        className="HvAppSwitcherPanelAction-iconInfo"
                         iconSize="S"
                         name="Info"
                         title="Mock App 2 Description"
                       >
                         <div
-                          className="Action-iconInfo-12 HvIconBase-root HvIconBase-s"
+                          className="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
                           name="Info"
                           title="Mock App 2 Description"
                         >
@@ -730,24 +724,24 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             }
             classes={
               Object {
-                "dummyImage": "Action-dummyImage-10",
-                "iconInfo": "Action-iconInfo-12",
-                "iconUrl": "Action-iconUrl-13",
-                "link": "Action-link-11",
-                "selected": "Action-selected-9",
-                "typography": "Action-typography-8",
+                "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+                "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+                "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+                "link": "HvAppSwitcherPanelAction-link",
+                "selected": "HvAppSwitcherPanelAction-selected",
+                "typography": "HvAppSwitcherPanelAction-typography",
               }
             }
             isSelectedCallback={[Function]}
             onClickCallback={[Function]}
           >
             <a
-              className="Action-link-11"
+              className="HvAppSwitcherPanelAction-link"
               href="http://mockapp2/"
               target="_top"
             >
               <WithStyles(ForwardRef)
-                className="Action-typography-8"
+                className="HvAppSwitcherPanelAction-typography"
                 component="div"
                 onClick={[Function]}
                 role="button"
@@ -755,7 +749,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 variant="normalText"
               >
                 <ForwardRef
-                  className="Action-typography-8"
+                  className="HvAppSwitcherPanelAction-typography"
                   classes={
                     Object {
                       "3xlTitle": "HvTypography-3xlTitle",
@@ -789,13 +783,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   variant="normalText"
                 >
                   <div
-                    className="Action-typography-8 HvTypography-root HvTypography-normalText"
+                    className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
                     onClick={[Function]}
                     role="button"
                     tabIndex={0}
                   >
                     <img
-                      className="Action-iconUrl-13"
+                      className="HvAppSwitcherPanelAction-iconUrl"
                       onError={[Function]}
                       src="http://mockapp2/icon"
                     />
@@ -805,17 +799,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       Mock App 3
                     </span>
                     <Info
-                      className="Action-iconInfo-12"
+                      className="HvAppSwitcherPanelAction-iconInfo"
                       title="Mock App 2 Description"
                     >
                       <HvIconBase
-                        className="Action-iconInfo-12"
+                        className="HvAppSwitcherPanelAction-iconInfo"
                         iconSize="S"
                         name="Info"
                         title="Mock App 2 Description"
                       >
                         <div
-                          className="Action-iconInfo-12 HvIconBase-root HvIconBase-s"
+                          className="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
                           name="Info"
                           title="Mock App 2 Description"
                         >

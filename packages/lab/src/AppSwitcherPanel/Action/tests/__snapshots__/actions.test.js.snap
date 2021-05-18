@@ -25,24 +25,22 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "Action-dummyImage-3",
-        "iconInfo": "Action-iconInfo-5",
-        "iconUrl": "Action-iconUrl-6",
-        "link": "Action-link-4",
-        "selected": "Action-selected-2",
-        "typography": "Action-typography-1",
+        "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+        "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+        "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+        "link": "HvAppSwitcherPanelAction-link",
+        "selected": "HvAppSwitcherPanelAction-selected",
+        "typography": "HvAppSwitcherPanelAction-typography",
       }
     }
-    isSelectedCallback={[Function]}
-    onClickCallback={[Function]}
   >
     <a
-      className="Action-link-4"
+      className="HvAppSwitcherPanelAction-link"
       href="http://mockapp1/"
       target="_top"
     >
       <WithStyles(ForwardRef)
-        className="Action-typography-1"
+        className="HvAppSwitcherPanelAction-typography"
         component="div"
         onClick={[Function]}
         role="button"
@@ -50,7 +48,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
         variant="normalText"
       >
         <ForwardRef
-          className="Action-typography-1"
+          className="HvAppSwitcherPanelAction-typography"
           classes={
             Object {
               "3xlTitle": "HvTypography-3xlTitle",
@@ -84,7 +82,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
           variant="normalText"
         >
           <div
-            className="Action-typography-1 HvTypography-root HvTypography-normalText"
+            className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
             onClick={[Function]}
             role="button"
             tabIndex={0}
@@ -154,24 +152,22 @@ exports[`<Action /> with description should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "Action-dummyImage-3",
-        "iconInfo": "Action-iconInfo-5",
-        "iconUrl": "Action-iconUrl-6",
-        "link": "Action-link-4",
-        "selected": "Action-selected-2",
-        "typography": "Action-typography-1",
+        "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+        "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+        "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+        "link": "HvAppSwitcherPanelAction-link",
+        "selected": "HvAppSwitcherPanelAction-selected",
+        "typography": "HvAppSwitcherPanelAction-typography",
       }
     }
-    isSelectedCallback={[Function]}
-    onClickCallback={[Function]}
   >
     <a
-      className="Action-link-4"
+      className="HvAppSwitcherPanelAction-link"
       href="http://mockapp1/"
       target="_top"
     >
       <WithStyles(ForwardRef)
-        className="Action-typography-1"
+        className="HvAppSwitcherPanelAction-typography"
         component="div"
         onClick={[Function]}
         role="button"
@@ -179,7 +175,7 @@ exports[`<Action /> with description should render correctly 1`] = `
         variant="normalText"
       >
         <ForwardRef
-          className="Action-typography-1"
+          className="HvAppSwitcherPanelAction-typography"
           classes={
             Object {
               "3xlTitle": "HvTypography-3xlTitle",
@@ -213,13 +209,13 @@ exports[`<Action /> with description should render correctly 1`] = `
           variant="normalText"
         >
           <div
-            className="Action-typography-1 HvTypography-root HvTypography-normalText"
+            className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
             onClick={[Function]}
             role="button"
             tabIndex={0}
           >
             <img
-              className="Action-iconUrl-6"
+              className="HvAppSwitcherPanelAction-iconUrl"
               onError={[Function]}
               src="http://mockapp1/icon"
             />
@@ -229,17 +225,17 @@ exports[`<Action /> with description should render correctly 1`] = `
               Mock App 1
             </span>
             <Info
-              className="Action-iconInfo-5"
+              className="HvAppSwitcherPanelAction-iconInfo"
               title="Mock App 1 Description"
             >
               <HvIconBase
-                className="Action-iconInfo-5"
+                className="HvAppSwitcherPanelAction-iconInfo"
                 iconSize="S"
                 name="Info"
                 title="Mock App 1 Description"
               >
                 <div
-                  className="Action-iconInfo-5 HvIconBase-root HvIconBase-s"
+                  className="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
                   name="Info"
                   title="Mock App 1 Description"
                 >
@@ -292,24 +288,22 @@ exports[`<Action /> without description should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "Action-dummyImage-3",
-        "iconInfo": "Action-iconInfo-5",
-        "iconUrl": "Action-iconUrl-6",
-        "link": "Action-link-4",
-        "selected": "Action-selected-2",
-        "typography": "Action-typography-1",
+        "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+        "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
+        "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
+        "link": "HvAppSwitcherPanelAction-link",
+        "selected": "HvAppSwitcherPanelAction-selected",
+        "typography": "HvAppSwitcherPanelAction-typography",
       }
     }
-    isSelectedCallback={[Function]}
-    onClickCallback={[Function]}
   >
     <a
-      className="Action-link-4"
+      className="HvAppSwitcherPanelAction-link"
       href="http://mockapp1/"
       target="_top"
     >
       <WithStyles(ForwardRef)
-        className="Action-typography-1"
+        className="HvAppSwitcherPanelAction-typography"
         component="div"
         onClick={[Function]}
         role="button"
@@ -317,7 +311,7 @@ exports[`<Action /> without description should render correctly 1`] = `
         variant="normalText"
       >
         <ForwardRef
-          className="Action-typography-1"
+          className="HvAppSwitcherPanelAction-typography"
           classes={
             Object {
               "3xlTitle": "HvTypography-3xlTitle",
@@ -351,13 +345,13 @@ exports[`<Action /> without description should render correctly 1`] = `
           variant="normalText"
         >
           <div
-            className="Action-typography-1 HvTypography-root HvTypography-normalText"
+            className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
             onClick={[Function]}
             role="button"
             tabIndex={0}
           >
             <img
-              className="Action-iconUrl-6"
+              className="HvAppSwitcherPanelAction-iconUrl"
               onError={[Function]}
               src="http://mockapp1/icon"
             />
