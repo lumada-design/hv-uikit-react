@@ -178,43 +178,6 @@ const HvTimePicker = ({
     handleTimeChange(newSelectedTime);
   };
 
-  const TimePickerContent = () => {
-    const separator = <span className={classes.separator}>:</span>;
-    return (
-      <div className={classes.timePopperContainer}>
-        <UnitTimePicker
-          id={setId(elementId, "hours")}
-          unit={
-            timeFormat === TimeFormat.H24
-              ? TimePickerUnits.HOUR_24.type
-              : TimePickerUnits.HOUR_12.type
-          }
-          unitValue={selectedTime.hours}
-          onChangeUnitTimeValue={handleHoursChange}
-        />
-        {separator}
-        <UnitTimePicker
-          id={setId(elementId, "minutes")}
-          unit={TimePickerUnits.MINUTE.type}
-          unitValue={selectedTime.minutes}
-          onChangeUnitTimeValue={handleMinutesChange}
-        />
-        {separator}
-        <UnitTimePicker
-          id={setId(elementId, "seconds")}
-          unit={TimePickerUnits.SECOND.type}
-          unitValue={selectedTime.seconds}
-          onChangeUnitTimeValue={handleSecondsChange}
-        />
-        {timeFormat === TimeFormat.H12 && (
-          <div className={classes.periodContainer}>
-            <PeriodPicker onChangePeriod={handleChangePeriod} period={selectedTime.period} />
-          </div>
-        )}
-      </div>
-    );
-  };
-
   const hasLabels = label != null;
   const hasDescription = description != null;
 
@@ -271,7 +234,7 @@ const HvTimePicker = ({
         variableWidth
         placement="right"
         adornment={
-          <TimeIcon color={[disabled ? "atmo5" : "acce1"]} className={classes.iconBaseRoot} />
+          <TimeIcon color={disabled ? "atmo5" : "acce1"} className={classes.iconBaseRoot} />
         }
         onContainerCreation={setFocusToContent}
         aria-haspopup="dialog"
@@ -290,7 +253,37 @@ const HvTimePicker = ({
         popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
         {...dropdownProps}
       >
-        <TimePickerContent />
+        <div className={classes.timePopperContainer}>
+          <UnitTimePicker
+            id={setId(elementId, "hours")}
+            unit={
+              timeFormat === TimeFormat.H24
+                ? TimePickerUnits.HOUR_24.type
+                : TimePickerUnits.HOUR_12.type
+            }
+            unitValue={selectedTime.hours}
+            onChangeUnitTimeValue={handleHoursChange}
+          />
+          <span className={classes.separator}>:</span>
+          <UnitTimePicker
+            id={setId(elementId, "minutes")}
+            unit={TimePickerUnits.MINUTE.type}
+            unitValue={selectedTime.minutes}
+            onChangeUnitTimeValue={handleMinutesChange}
+          />
+          <span className={classes.separator}>:</span>
+          <UnitTimePicker
+            id={setId(elementId, "seconds")}
+            unit={TimePickerUnits.SECOND.type}
+            unitValue={selectedTime.seconds}
+            onChangeUnitTimeValue={handleSecondsChange}
+          />
+          {timeFormat === TimeFormat.H12 && (
+            <div className={classes.periodContainer}>
+              <PeriodPicker onChangePeriod={handleChangePeriod} period={selectedTime.period} />
+            </div>
+          )}
+        </div>
       </HvBaseDropdown>
       {canShowError && (
         <HvWarningText id={setId(elementId, "error")} disableBorder className={classes.error}>

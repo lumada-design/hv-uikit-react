@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { HvInput, isKeypress, KeyboardCodes } from "@hv/uikit-react-core";
@@ -7,82 +7,24 @@ import { isUnitTimeInValidRange } from "../timePickerUtils";
 import { padTime } from "../timePickerFormatter";
 import { TimePickerUnits } from "../enums";
 
-class UnitTimePicker extends React.Component {
-  constructor(props) {
-    super(props);
+const UnitTimePicker = (props) => {
+  const { classes, id, unit, unitValue = 0, onChangeUnitTimeValue } = props;
 
-    this.state = {
-      minValue: TimePickerUnits[props.unit].min,
-      maxValue: TimePickerUnits[props.unit].max,
-      currentValue: props.unitValue,
-      isFocused: false,
-      isValid: true,
-    };
-  }
+  const minValue = TimePickerUnits[unit].min;
+  const maxValue = TimePickerUnits[unit].max;
+
+  const [currentValue, setCurrentValue] = useState(unitValue);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isValid, setIsValid] = useState(true);
 
   /**
-   * Handles the unit time value change when it is done through a change on the input.
-   * It only reflects on the state if the number of digits is between 0 and 2   *
-   * @param event - event
-   * @param value - new unit time value
+   * Checks if the unit time is valid, meaning that is between the min and max values for the specific unit time
    * @memberof UnitTimePicker
    */
-  handleCurrentValueChange = (event, value) => {
-    const unitTime = value === "" ? value : Number(value);
-    if ((unitTime || unitTime === "") && unitTime.toString().length <= 2) {
-      this.changeTimeUnit(unitTime);
-    }
-  };
-
-  /**
-   * Handles the change on the focus of the input
-   * @memberof UnitTimePicker
-   */
-  handleFocusChange = () => {
-    this.setState((prevState) => ({
-      isFocused: !prevState.isFocused,
-    }));
-  };
-
-  handleOnBlur = () => {
-    const { onChangeUnitTimeValue } = this.props;
-    const { currentValue } = this.state;
-
-    if (this.isUnitTimeValid(currentValue)) {
-      onChangeUnitTimeValue(currentValue);
-    }
-  };
-
-  handleKeyPressed = (event) => {
-    if (isKeypress(event, KeyboardCodes.Enter)) this.handleOnBlur();
-  };
-
-  /**
-   * Handles the action to increase the unit time value
-   * If the new value surpasses the max allowed, it updates the time to the min value.
-   * @memberof UnitTimePicker
-   */
-  handleAddTime = () => {
-    const { currentValue, maxValue, minValue } = this.state;
-    let newUnitTime = currentValue === "" ? minValue : currentValue + 1;
-    if (newUnitTime > maxValue) {
-      newUnitTime = minValue;
-    }
-    this.changeTimeUnit(newUnitTime, true);
-  };
-
-  /**
-   * Handles the action to decrease the unit time value
-   * If the new value goes below the min allowed, it updates the time to the max value.
-   * @memberof UnitTimePicker
-   */
-  handleSubtractTime = () => {
-    const { currentValue, maxValue, minValue } = this.state;
-    let newUnitTime = currentValue === "" ? maxValue : currentValue - 1;
-    if (newUnitTime < minValue) {
-      newUnitTime = maxValue;
-    }
-    this.changeTimeUnit(newUnitTime, true);
+  const isUnitTimeValid = (unitTime) => {
+    const valid = isUnitTimeInValidRange(unitTime, unit);
+    setIsValid(valid);
+    return valid;
   };
 
   /**
@@ -92,27 +34,75 @@ class UnitTimePicker extends React.Component {
    * @param {Number} value - new time unit value
    * @memberof UnitTimePicker
    */
-  changeTimeUnit = (value, callback = false) => {
-    const { onChangeUnitTimeValue } = this.props;
-    this.setState({
-      currentValue: value,
-    });
-    if (callback && this.isUnitTimeValid(value)) {
+  const changeTimeUnit = (value, callback = false) => {
+    setCurrentValue(value);
+    if (callback && isUnitTimeValid(value)) {
       onChangeUnitTimeValue(value);
     }
   };
 
   /**
-   * Checks if the unit time is valid, meaning that is between the min and max values for the specific unit time
+   * Handles the unit time value change when it is done through a change on the input.
+   * It only reflects on the state if the number of digits is between 0 and 2   *
+   * @param event - event
+   * @param value - new unit time value
    * @memberof UnitTimePicker
    */
-  isUnitTimeValid = (unitTime) => {
-    const { unit } = this.props;
-    const isValid = isUnitTimeInValidRange(unitTime, unit);
-    this.setState({
-      isValid,
-    });
-    return isValid;
+  const handleCurrentValueChange = (event, value) => {
+    const unitTime = value === "" ? value : Number(value);
+    if ((unitTime || unitTime === "") && unitTime.toString().length <= 2) {
+      changeTimeUnit(unitTime);
+    }
+  };
+
+  /**
+   * Handles the change on the focus of the input
+   * @memberof UnitTimePicker
+   */
+  const handleFocusChange = () => {
+    setIsFocused(true);
+  };
+
+  const handleOnBlur = () => {
+    setIsFocused(false);
+
+    if (isUnitTimeValid(currentValue)) {
+      onChangeUnitTimeValue(currentValue);
+    }
+  };
+
+  const handleKeyPressed = (event) => {
+    if (isKeypress(event, KeyboardCodes.Enter)) {
+      if (isUnitTimeValid(currentValue)) {
+        onChangeUnitTimeValue(currentValue);
+      }
+    }
+  };
+
+  /**
+   * Handles the action to increase the unit time value
+   * If the new value surpasses the max allowed, it updates the time to the min value.
+   * @memberof UnitTimePicker
+   */
+  const handleAddTime = () => {
+    let newUnitTime = currentValue === "" ? minValue : currentValue + 1;
+    if (newUnitTime > maxValue) {
+      newUnitTime = minValue;
+    }
+    changeTimeUnit(newUnitTime, true);
+  };
+
+  /**
+   * Handles the action to decrease the unit time value
+   * If the new value goes below the min allowed, it updates the time to the max value.
+   * @memberof UnitTimePicker
+   */
+  const handleSubtractTime = () => {
+    let newUnitTime = currentValue === "" ? maxValue : currentValue - 1;
+    if (newUnitTime < minValue) {
+      newUnitTime = maxValue;
+    }
+    changeTimeUnit(newUnitTime, true);
   };
 
   /**
@@ -123,46 +113,37 @@ class UnitTimePicker extends React.Component {
    * Renders the time unit value input in the correct format
    * @memberof UnitTimePicker
    */
-  renderTimeUnit = () => {
-    const { currentValue, isFocused } = this.state;
+  const renderTimeUnit = () => {
     return isFocused ? currentValue.toString() : padTime(currentValue).toString();
   };
 
-  /**
-   * Renders the UnitTimePicker
-   */
-  render() {
-    const { classes, id } = this.props;
-    const { isValid } = this.state;
-
-    return (
-      <div className={classes.unitTimeContainer}>
-        <AddTimeIcon onClick={this.handleAddTime} />
-        <HvInput
-          id={id}
-          disableClear
-          classes={{
-            input: classes.unitTimeInput,
-            root: classes.inputContainer,
-            inputBorderContainer: classes.inputBorderContainer,
-            inputRoot: clsx(classes.unitTimeInputRoot, {
-              [classes.unitTimeInputRootInvalid]: !isValid,
-            }),
-          }}
-          value={this.renderTimeUnit()}
-          onChange={this.handleCurrentValueChange}
-          onFocus={this.handleFocusChange}
-          onBlur={this.handleOnBlur}
-          onKeyDown={this.handleKeyPressed}
-          labels={{
-            placeholder: "",
-          }}
-        />
-        <SubtractTimeIcon className={classes.subtractIcon} onClick={this.handleSubtractTime} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classes.unitTimeContainer}>
+      <AddTimeIcon onClick={handleAddTime} />
+      <HvInput
+        id={id}
+        disableClear
+        classes={{
+          input: classes.unitTimeInput,
+          root: classes.inputContainer,
+          inputBorderContainer: classes.inputBorderContainer,
+          inputRoot: clsx(classes.unitTimeInputRoot, {
+            [classes.unitTimeInputRootInvalid]: !isValid,
+          }),
+        }}
+        value={renderTimeUnit()}
+        onChange={handleCurrentValueChange}
+        onFocus={handleFocusChange}
+        onBlur={handleOnBlur}
+        onKeyDown={handleKeyPressed}
+        labels={{
+          placeholder: "",
+        }}
+      />
+      <SubtractTimeIcon className={classes.subtractIcon} onClick={handleSubtractTime} />
+    </div>
+  );
+};
 
 UnitTimePicker.propTypes = {
   /**
@@ -200,10 +181,6 @@ UnitTimePicker.propTypes = {
    * Callback function called when the unit time value changes
    */
   onChangeUnitTimeValue: PropTypes.func.isRequired,
-};
-
-UnitTimePicker.defaultProps = {
-  unitValue: 0,
 };
 
 export default UnitTimePicker;
