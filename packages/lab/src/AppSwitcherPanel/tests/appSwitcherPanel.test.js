@@ -85,7 +85,7 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
   });
 });
 
-describe("<AppSwitcherPanel /> Applications without a name or url should not be renderered", () => {
+describe("<AppSwitcherPanel /> Applications without a name should not be renderered", () => {
   let wrapper;
   let appSwitcherPanelComponent;
 
@@ -146,11 +146,11 @@ describe("<AppSwitcherPanel /> Applications without a name or url should not be 
     expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
   });
 
-  it("should render 2 action components", () => {
-    expect(appSwitcherPanelComponent.find(Action).length).toBe(2);
+  it("should render 3 action components", () => {
+    expect(appSwitcherPanelComponent.find(Action).length).toBe(3);
   });
 
-  it("should have 1 Info icons rendered", () => {
-    expect(appSwitcherPanelComponent.find(Info).length).toBe(1);
+  it("should have 2 Info icons rendered", () => {
+    expect(appSwitcherPanelComponent.find(Info).length).toBe(2);
   });
 });

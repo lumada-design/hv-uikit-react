@@ -16,7 +16,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { HvProvider, HvTypography } from "@hv/uikit-react-core";
+import { HvProvider } from "@hv/uikit-react-core";
 import { Info, Tool } from "@hv/uikit-react-icons";
 
 import ActionWrapper from "../index";
@@ -43,10 +43,6 @@ describe("<Action /> with description", () => {
 
   it("should render correctly", () => {
     expect(wrapper.find(ActionWrapper)).toMatchSnapshot();
-  });
-
-  it("should render an HvTypography component", () => {
-    expect(wrapper.find(HvTypography).length).toBe(1);
   });
 
   it("should render a link element", () => {
@@ -85,10 +81,6 @@ describe("<Action /> without description", () => {
     expect(wrapper.find(ActionWrapper)).toMatchSnapshot();
   });
 
-  it("should render an HvTypography component", () => {
-    expect(wrapper.find(HvTypography).length).toBe(1);
-  });
-
   it("should render a link element", () => {
     expect(wrapper.find("a").length).toBe(1);
   });
@@ -123,10 +115,6 @@ describe("<Action /> with an element icon", () => {
 
   it("should render correctly", () => {
     expect(wrapper.find(ActionWrapper)).toMatchSnapshot();
-  });
-
-  it("should render an HvTypography component", () => {
-    expect(wrapper.find(HvTypography).length).toBe(1);
   });
 
   it("should render a link element", () => {

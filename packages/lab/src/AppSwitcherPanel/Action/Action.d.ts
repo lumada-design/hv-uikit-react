@@ -5,11 +5,16 @@ export interface HvAppSwitcherPanelActionApplication {
   /**
    * Id of the application.
    */
-  id: string;
+  id?: string;
   /**
    * Name of the application, this is the value that will be displayed on the component.
    */
   name: string;
+  /**
+   * The color to be applied to the item's border and to the default icon.
+   * You can use either an HEX or color name from the palette.
+   */
+  color?: string;
   /**
    * URL with the icon location to be used to represent the application.
    * iconUrl will only be used if no iconElement is provided.
@@ -27,11 +32,15 @@ export interface HvAppSwitcherPanelActionApplication {
   /**
    *  URL where the application is accesible.
    */
-  url: string;
+  url?: string;
   /**
    * Defines if the application should be opened in the same tab or in a new one.
    */
   target?: "_top" | "_blank";
+  /**
+   * If true, the item will be disabled.
+   */
+  disabled?: boolean;
   /**
    * True when the application is selected, false otherwise.
    */
@@ -39,11 +48,12 @@ export interface HvAppSwitcherPanelActionApplication {
 }
 
 export type HvAppSwitcherPanelActionClassKey =
-  | "iconUrl"
-  | "dummyImage"
-  | "link"
+  | "root"
   | "typography"
   | "selected"
+  | "icon"
+  | "iconUrl"
+  | "title"
   | "iconInfo";
 
 export interface HvAppSwitcherPanelActionProps

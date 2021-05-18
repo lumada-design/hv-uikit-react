@@ -25,102 +25,407 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+        "disabled": "HvAppSwitcherPanelAction-disabled",
+        "icon": "HvAppSwitcherPanelAction-icon",
         "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
         "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-        "link": "HvAppSwitcherPanelAction-link",
-        "selected": "HvAppSwitcherPanelAction-selected",
+        "root": "HvAppSwitcherPanelAction-root",
+        "title": "HvAppSwitcherPanelAction-title",
         "typography": "HvAppSwitcherPanelAction-typography",
       }
     }
   >
-    <a
-      className="HvAppSwitcherPanelAction-link"
-      href="http://mockapp1/"
-      target="_top"
+    <WithStyles(HvListItem)
+      className="HvAppSwitcherPanelAction-root"
+      interactive={true}
+      selected={false}
+      tabIndex={0}
     >
-      <WithStyles(ForwardRef)
-        className="HvAppSwitcherPanelAction-typography"
-        component="div"
-        onClick={[Function]}
-        role="button"
+      <HvListItem
+        className="HvAppSwitcherPanelAction-root"
+        classes={
+          Object {
+            "condensed": "HvListItem-condensed",
+            "disabled": "HvListItem-disabled",
+            "endAdornment": "HvListItem-endAdornment",
+            "focus": "HvListItem-focus",
+            "gutters": "HvListItem-gutters",
+            "interactive": "HvListItem-interactive",
+            "root": "HvListItem-root",
+            "selected": "HvListItem-selected",
+            "startAdornment": "HvListItem-startAdornment",
+            "withEndAdornment": "HvListItem-withEndAdornment",
+            "withStartAdornment": "HvListItem-withStartAdornment",
+          }
+        }
+        interactive={true}
+        selected={false}
         tabIndex={0}
-        variant="normalText"
       >
-        <ForwardRef
-          className="HvAppSwitcherPanelAction-typography"
+        <WithStyles(Focus)
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
+              "focus": "HvListItem-focus",
             }
           }
-          component="div"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-          variant="normalText"
+          configuration={
+            Object {
+              "tabIndex": 0,
+            }
+          }
+          selected={false}
+          strategy="menu"
         >
-          <div
-            className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
-            onClick={[Function]}
-            role="button"
-            tabIndex={0}
+          <Focus
+            classes={
+              Object {
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvListItem-focus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
+              }
+            }
+            configuration={
+              Object {
+                "tabIndex": 0,
+              }
+            }
+            selected={false}
+            strategy="menu"
           >
-            <Tool>
-              <HvIconBase
-                iconSize="S"
-                name="Tool"
-              >
-                <div
-                  className="HvIconBase-root HvIconBase-s"
-                  name="Tool"
-                >
-                  <svg
-                    focusable={false}
-                    height={16}
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      className="color0"
-                      d="M4.79431 14.03412l4.59619-4.5962.49494.07061a3.97211 3.97211 0 003.39415-1.13127 4.01469 4.01469 0 001.03528-3.86371L12.987 5.84145l-.41363.00069h-2.41551V3.42665l.00069-.41363 1.3279-1.32789a4.01606 4.01606 0 00-3.86371 1.03528 3.97211 3.97211 0 00-1.13127 3.39415l.07061.49494-4.5962 4.59619 2.82843 2.82843m0 1.41421L.55167 11.20569l4.94975-4.94975a5.00069 5.00069 0 017.70739-4.879l-2.05054 2.05058v1.41421h1.41421L14.623 2.79119a5.01258 5.01258 0 01-.63632 6.29318 4.96269 4.96269 0 01-4.24264 1.41421z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </HvIconBase>
-            </Tool>
-            <span
-              title="Mock App 1"
+            <ConditionalWrapper
+              condition={false}
+              wrapper={[Function]}
             >
-              Mock App 1
-            </span>
-          </div>
-        </ForwardRef>
-      </WithStyles(ForwardRef)>
-    </a>
+              <li
+                className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                selected={false}
+              >
+                <WithStyles(ForwardRef)
+                  className="HvAppSwitcherPanelAction-typography"
+                  component="a"
+                  href="http://mockapp1/"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "borderColor": "#414141",
+                    }
+                  }
+                  target="_top"
+                >
+                  <ForwardRef
+                    className="HvAppSwitcherPanelAction-typography"
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledText": "HvTypography-disabledText",
+                        "highlightText": "HvTypography-highlightText",
+                        "lTitle": "HvTypography-lTitle",
+                        "link": "HvTypography-link",
+                        "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                    component="a"
+                    href="http://mockapp1/"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "borderColor": "#414141",
+                      }
+                    }
+                    target="_top"
+                  >
+                    <a
+                      className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+                      href="http://mockapp1/"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "borderColor": "#414141",
+                        }
+                      }
+                      target="_top"
+                    >
+                      <div
+                        className="HvAppSwitcherPanelAction-icon"
+                      >
+                        <Tool>
+                          <HvIconBase
+                            iconSize="S"
+                            name="Tool"
+                          >
+                            <div
+                              className="HvIconBase-root HvIconBase-s"
+                              name="Tool"
+                            >
+                              <svg
+                                focusable={false}
+                                height={16}
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  className="color0"
+                                  d="M4.79431 14.03412l4.59619-4.5962.49494.07061a3.97211 3.97211 0 003.39415-1.13127 4.01469 4.01469 0 001.03528-3.86371L12.987 5.84145l-.41363.00069h-2.41551V3.42665l.00069-.41363 1.3279-1.32789a4.01606 4.01606 0 00-3.86371 1.03528 3.97211 3.97211 0 00-1.13127 3.39415l.07061.49494-4.5962 4.59619 2.82843 2.82843m0 1.41421L.55167 11.20569l4.94975-4.94975a5.00069 5.00069 0 017.70739-4.879l-2.05054 2.05058v1.41421h1.41421L14.623 2.79119a5.01258 5.01258 0 01-.63632 6.29318 4.96269 4.96269 0 01-4.24264 1.41421z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </HvIconBase>
+                        </Tool>
+                      </div>
+                      <TitleWithTooltip
+                        className="HvAppSwitcherPanelAction-title"
+                        title="Mock App 1"
+                      >
+                        <WithStyles(ForwardRef)
+                          disableHoverListener={true}
+                          placement="top-start"
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Mock App 1
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableHoverListener={true}
+                            placement="top-start"
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Mock App 1
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableHoverListener={true}
+                              enterDelay={300}
+                              placement="top-start"
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Mock App 1
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableHoverListener={true}
+                                enterDelay={300}
+                                placement="top-start"
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Mock App 1
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <WithStyles(ForwardRef)
+                                  aria-describedby={null}
+                                  className="HvAppSwitcherPanelAction-title"
+                                  component="span"
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchStart={[Function]}
+                                  title={null}
+                                  variant="highlightText"
+                                >
+                                  <ForwardRef
+                                    aria-describedby={null}
+                                    className="HvAppSwitcherPanelAction-title"
+                                    classes={
+                                      Object {
+                                        "3xlTitle": "HvTypography-3xlTitle",
+                                        "4xlTitle": "HvTypography-4xlTitle",
+                                        "5xlTitle": "HvTypography-5xlTitle",
+                                        "disabledText": "HvTypography-disabledText",
+                                        "highlightText": "HvTypography-highlightText",
+                                        "lTitle": "HvTypography-lTitle",
+                                        "link": "HvTypography-link",
+                                        "mTitle": "HvTypography-mTitle",
+                                        "noWrap": "HvTypography-noWrap",
+                                        "normalText": "HvTypography-normalText",
+                                        "placeholderText": "HvTypography-placeholderText",
+                                        "root": "HvTypography-root",
+                                        "sTitle": "HvTypography-sTitle",
+                                        "sectionTitle": "HvTypography-sectionTitle",
+                                        "selectedNavText": "HvTypography-selectedNavText",
+                                        "vizText": "HvTypography-vizText",
+                                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                        "xlTitle": "HvTypography-xlTitle",
+                                        "xsInlineLink": "HvTypography-xsInlineLink",
+                                        "xsTitle": "HvTypography-xsTitle",
+                                        "xxlTitle": "HvTypography-xxlTitle",
+                                        "xxsTitle": "HvTypography-xxsTitle",
+                                      }
+                                    }
+                                    component="span"
+                                    onBlur={[Function]}
+                                    onFocus={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchStart={[Function]}
+                                    title={null}
+                                    variant="highlightText"
+                                  >
+                                    <span
+                                      aria-describedby={null}
+                                      className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                      onBlur={[Function]}
+                                      onFocus={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchStart={[Function]}
+                                      title={null}
+                                    >
+                                      Mock App 1
+                                    </span>
+                                  </ForwardRef>
+                                </WithStyles(ForwardRef)>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <span
+                                      class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    >
+                                      Mock App 1
+                                    </span>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top-start"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </TitleWithTooltip>
+                    </a>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </li>
+            </ConditionalWrapper>
+          </Focus>
+        </WithStyles(Focus)>
+      </HvListItem>
+    </WithStyles(HvListItem)>
   </Action>
 </WithStyles(Action)>
 `;
@@ -152,113 +457,593 @@ exports[`<Action /> with description should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+        "disabled": "HvAppSwitcherPanelAction-disabled",
+        "icon": "HvAppSwitcherPanelAction-icon",
         "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
         "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-        "link": "HvAppSwitcherPanelAction-link",
-        "selected": "HvAppSwitcherPanelAction-selected",
+        "root": "HvAppSwitcherPanelAction-root",
+        "title": "HvAppSwitcherPanelAction-title",
         "typography": "HvAppSwitcherPanelAction-typography",
       }
     }
   >
-    <a
-      className="HvAppSwitcherPanelAction-link"
-      href="http://mockapp1/"
-      target="_top"
+    <WithStyles(HvListItem)
+      className="HvAppSwitcherPanelAction-root"
+      interactive={true}
+      selected={false}
+      tabIndex={0}
     >
-      <WithStyles(ForwardRef)
-        className="HvAppSwitcherPanelAction-typography"
-        component="div"
-        onClick={[Function]}
-        role="button"
+      <HvListItem
+        className="HvAppSwitcherPanelAction-root"
+        classes={
+          Object {
+            "condensed": "HvListItem-condensed",
+            "disabled": "HvListItem-disabled",
+            "endAdornment": "HvListItem-endAdornment",
+            "focus": "HvListItem-focus",
+            "gutters": "HvListItem-gutters",
+            "interactive": "HvListItem-interactive",
+            "root": "HvListItem-root",
+            "selected": "HvListItem-selected",
+            "startAdornment": "HvListItem-startAdornment",
+            "withEndAdornment": "HvListItem-withEndAdornment",
+            "withStartAdornment": "HvListItem-withStartAdornment",
+          }
+        }
+        interactive={true}
+        selected={false}
         tabIndex={0}
-        variant="normalText"
       >
-        <ForwardRef
-          className="HvAppSwitcherPanelAction-typography"
+        <WithStyles(Focus)
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
+              "focus": "HvListItem-focus",
             }
           }
-          component="div"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-          variant="normalText"
+          configuration={
+            Object {
+              "tabIndex": 0,
+            }
+          }
+          selected={false}
+          strategy="menu"
         >
-          <div
-            className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
-            onClick={[Function]}
-            role="button"
-            tabIndex={0}
+          <Focus
+            classes={
+              Object {
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvListItem-focus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
+              }
+            }
+            configuration={
+              Object {
+                "tabIndex": 0,
+              }
+            }
+            selected={false}
+            strategy="menu"
           >
-            <img
-              className="HvAppSwitcherPanelAction-iconUrl"
-              onError={[Function]}
-              src="http://mockapp1/icon"
-            />
-            <span
-              title="Mock App 1"
+            <ConditionalWrapper
+              condition={false}
+              wrapper={[Function]}
             >
-              Mock App 1
-            </span>
-            <Info
-              className="HvAppSwitcherPanelAction-iconInfo"
-              title="Mock App 1 Description"
-            >
-              <HvIconBase
-                className="HvAppSwitcherPanelAction-iconInfo"
-                iconSize="S"
-                name="Info"
-                title="Mock App 1 Description"
+              <li
+                className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                selected={false}
               >
-                <div
-                  className="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
-                  name="Info"
-                  title="Mock App 1 Description"
+                <WithStyles(ForwardRef)
+                  className="HvAppSwitcherPanelAction-typography"
+                  component="a"
+                  href="http://mockapp1/"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "borderColor": "#414141",
+                    }
+                  }
+                  target="_top"
                 >
-                  <svg
-                    focusable={false}
-                    height={16}
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <ForwardRef
+                    className="HvAppSwitcherPanelAction-typography"
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledText": "HvTypography-disabledText",
+                        "highlightText": "HvTypography-highlightText",
+                        "lTitle": "HvTypography-lTitle",
+                        "link": "HvTypography-link",
+                        "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                    component="a"
+                    href="http://mockapp1/"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "borderColor": "#414141",
+                      }
+                    }
+                    target="_top"
                   >
-                    <path
-                      className="color0"
-                      d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </HvIconBase>
-            </Info>
-          </div>
-        </ForwardRef>
-      </WithStyles(ForwardRef)>
-    </a>
+                    <a
+                      className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+                      href="http://mockapp1/"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "borderColor": "#414141",
+                        }
+                      }
+                      target="_top"
+                    >
+                      <div
+                        className="HvAppSwitcherPanelAction-icon"
+                      >
+                        <img
+                          className="HvAppSwitcherPanelAction-iconUrl"
+                          onError={[Function]}
+                          src="http://mockapp1/icon"
+                        />
+                      </div>
+                      <TitleWithTooltip
+                        className="HvAppSwitcherPanelAction-title"
+                        title="Mock App 1"
+                      >
+                        <WithStyles(ForwardRef)
+                          disableHoverListener={true}
+                          placement="top-start"
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Mock App 1
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableHoverListener={true}
+                            placement="top-start"
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Mock App 1
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableHoverListener={true}
+                              enterDelay={300}
+                              placement="top-start"
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Mock App 1
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableHoverListener={true}
+                                enterDelay={300}
+                                placement="top-start"
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Mock App 1
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <WithStyles(ForwardRef)
+                                  aria-describedby={null}
+                                  className="HvAppSwitcherPanelAction-title"
+                                  component="span"
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchStart={[Function]}
+                                  title={null}
+                                  variant="highlightText"
+                                >
+                                  <ForwardRef
+                                    aria-describedby={null}
+                                    className="HvAppSwitcherPanelAction-title"
+                                    classes={
+                                      Object {
+                                        "3xlTitle": "HvTypography-3xlTitle",
+                                        "4xlTitle": "HvTypography-4xlTitle",
+                                        "5xlTitle": "HvTypography-5xlTitle",
+                                        "disabledText": "HvTypography-disabledText",
+                                        "highlightText": "HvTypography-highlightText",
+                                        "lTitle": "HvTypography-lTitle",
+                                        "link": "HvTypography-link",
+                                        "mTitle": "HvTypography-mTitle",
+                                        "noWrap": "HvTypography-noWrap",
+                                        "normalText": "HvTypography-normalText",
+                                        "placeholderText": "HvTypography-placeholderText",
+                                        "root": "HvTypography-root",
+                                        "sTitle": "HvTypography-sTitle",
+                                        "sectionTitle": "HvTypography-sectionTitle",
+                                        "selectedNavText": "HvTypography-selectedNavText",
+                                        "vizText": "HvTypography-vizText",
+                                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                        "xlTitle": "HvTypography-xlTitle",
+                                        "xsInlineLink": "HvTypography-xsInlineLink",
+                                        "xsTitle": "HvTypography-xsTitle",
+                                        "xxlTitle": "HvTypography-xxlTitle",
+                                        "xxsTitle": "HvTypography-xxsTitle",
+                                      }
+                                    }
+                                    component="span"
+                                    onBlur={[Function]}
+                                    onFocus={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchStart={[Function]}
+                                    title={null}
+                                    variant="highlightText"
+                                  >
+                                    <span
+                                      aria-describedby={null}
+                                      className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                      onBlur={[Function]}
+                                      onFocus={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchStart={[Function]}
+                                      title={null}
+                                    >
+                                      Mock App 1
+                                    </span>
+                                  </ForwardRef>
+                                </WithStyles(ForwardRef)>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <span
+                                      class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    >
+                                      Mock App 1
+                                    </span>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top-start"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </TitleWithTooltip>
+                      <WithStyles(ForwardRef)
+                        disableFocusListener={true}
+                        disableTouchListener={true}
+                        title={
+                          <WithStyles(ForwardRef)>
+                            Mock App 1 Description
+                          </WithStyles(ForwardRef)>
+                        }
+                      >
+                        <ForwardRef
+                          classes={
+                            Object {
+                              "color": "HvTooltip-color",
+                              "popper": "HvTooltip-popper",
+                              "root": "HvTooltip-root",
+                              "separator": "HvTooltip-separator",
+                              "separatorColor": "HvTooltip-separatorColor",
+                              "title": "HvTooltip-title",
+                              "tooltip": "HvTooltip-tooltip",
+                              "tooltipMulti": "HvTooltip-tooltipMulti",
+                              "valueWrapper": "HvTooltip-valueWrapper",
+                              "values": "HvTooltip-values",
+                              "valuesContainer": "HvTooltip-valuesContainer",
+                            }
+                          }
+                          disableFocusListener={true}
+                          disableTouchListener={true}
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Mock App 1 Description
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <WithStyles(ForwardRef(Tooltip))
+                            TransitionComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "propTypes": Object {
+                                  "children": [Function],
+                                  "disableStrictModeCompat": [Function],
+                                  "in": [Function],
+                                  "onEnter": [Function],
+                                  "onEntered": [Function],
+                                  "onEntering": [Function],
+                                  "onExit": [Function],
+                                  "onExited": [Function],
+                                  "onExiting": [Function],
+                                  "style": [Function],
+                                  "timeout": [Function],
+                                },
+                                "render": [Function],
+                              }
+                            }
+                            TransitionProps={
+                              Object {
+                                "timeout": 400,
+                              }
+                            }
+                            classes={
+                              Object {
+                                "popper": "HvTooltip-popper",
+                                "tooltip": "HvTooltip-tooltip",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableTouchListener={true}
+                            enterDelay={300}
+                            placement="top"
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Mock App 1 Description
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <ForwardRef(Tooltip)
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "arrow": "MuiTooltip-arrow",
+                                  "popper": "MuiTooltip-popper HvTooltip-popper",
+                                  "popperArrow": "MuiTooltip-popperArrow",
+                                  "popperInteractive": "MuiTooltip-popperInteractive",
+                                  "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                  "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                  "touch": "MuiTooltip-touch",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Mock App 1 Description
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <div
+                                aria-describedby={null}
+                                className=""
+                                onMouseLeave={[Function]}
+                                onMouseOver={[Function]}
+                                onTouchStart={[Function]}
+                                title={null}
+                              >
+                                <Info
+                                  className="HvAppSwitcherPanelAction-iconInfo"
+                                >
+                                  <HvIconBase
+                                    className="HvAppSwitcherPanelAction-iconInfo"
+                                    iconSize="S"
+                                    name="Info"
+                                  >
+                                    <div
+                                      className="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
+                                      name="Info"
+                                    >
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </Info>
+                              </div>
+                              <ForwardRef(Popper)
+                                anchorEl={
+                                  <div
+                                    class=""
+                                  >
+                                    <div
+                                      class="HvAppSwitcherPanelAction-iconInfo HvIconBase-root HvIconBase-s"
+                                      name="Info"
+                                    >
+                                      <svg
+                                        focusable="false"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          class="color0"
+                                          d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                }
+                                className="MuiTooltip-popper HvTooltip-popper"
+                                id={null}
+                                open={false}
+                                placement="top"
+                                popperOptions={
+                                  Object {
+                                    "modifiers": Object {
+                                      "arrow": Object {
+                                        "element": null,
+                                        "enabled": false,
+                                      },
+                                    },
+                                  }
+                                }
+                                transition={true}
+                              />
+                            </ForwardRef(Tooltip)>
+                          </WithStyles(ForwardRef(Tooltip))>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
+                    </a>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </li>
+            </ConditionalWrapper>
+          </Focus>
+        </WithStyles(Focus)>
+      </HvListItem>
+    </WithStyles(HvListItem)>
   </Action>
 </WithStyles(Action)>
 `;
@@ -288,82 +1073,387 @@ exports[`<Action /> without description should render correctly 1`] = `
     }
     classes={
       Object {
-        "dummyImage": "HvAppSwitcherPanelAction-dummyImage",
+        "disabled": "HvAppSwitcherPanelAction-disabled",
+        "icon": "HvAppSwitcherPanelAction-icon",
         "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
         "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-        "link": "HvAppSwitcherPanelAction-link",
-        "selected": "HvAppSwitcherPanelAction-selected",
+        "root": "HvAppSwitcherPanelAction-root",
+        "title": "HvAppSwitcherPanelAction-title",
         "typography": "HvAppSwitcherPanelAction-typography",
       }
     }
   >
-    <a
-      className="HvAppSwitcherPanelAction-link"
-      href="http://mockapp1/"
-      target="_top"
+    <WithStyles(HvListItem)
+      className="HvAppSwitcherPanelAction-root"
+      interactive={true}
+      selected={false}
+      tabIndex={0}
     >
-      <WithStyles(ForwardRef)
-        className="HvAppSwitcherPanelAction-typography"
-        component="div"
-        onClick={[Function]}
-        role="button"
+      <HvListItem
+        className="HvAppSwitcherPanelAction-root"
+        classes={
+          Object {
+            "condensed": "HvListItem-condensed",
+            "disabled": "HvListItem-disabled",
+            "endAdornment": "HvListItem-endAdornment",
+            "focus": "HvListItem-focus",
+            "gutters": "HvListItem-gutters",
+            "interactive": "HvListItem-interactive",
+            "root": "HvListItem-root",
+            "selected": "HvListItem-selected",
+            "startAdornment": "HvListItem-startAdornment",
+            "withEndAdornment": "HvListItem-withEndAdornment",
+            "withStartAdornment": "HvListItem-withStartAdornment",
+          }
+        }
+        interactive={true}
+        selected={false}
         tabIndex={0}
-        variant="normalText"
       >
-        <ForwardRef
-          className="HvAppSwitcherPanelAction-typography"
+        <WithStyles(Focus)
           classes={
             Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
+              "focus": "HvListItem-focus",
             }
           }
-          component="div"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-          variant="normalText"
+          configuration={
+            Object {
+              "tabIndex": 0,
+            }
+          }
+          selected={false}
+          strategy="menu"
         >
-          <div
-            className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
-            onClick={[Function]}
-            role="button"
-            tabIndex={0}
+          <Focus
+            classes={
+              Object {
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvListItem-focus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
+              }
+            }
+            configuration={
+              Object {
+                "tabIndex": 0,
+              }
+            }
+            selected={false}
+            strategy="menu"
           >
-            <img
-              className="HvAppSwitcherPanelAction-iconUrl"
-              onError={[Function]}
-              src="http://mockapp1/icon"
-            />
-            <span
-              title="Mock App 1"
+            <ConditionalWrapper
+              condition={false}
+              wrapper={[Function]}
             >
-              Mock App 1
-            </span>
-          </div>
-        </ForwardRef>
-      </WithStyles(ForwardRef)>
-    </a>
+              <li
+                className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-gutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                selected={false}
+              >
+                <WithStyles(ForwardRef)
+                  className="HvAppSwitcherPanelAction-typography"
+                  component="a"
+                  href="http://mockapp1/"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "borderColor": "#414141",
+                    }
+                  }
+                  target="_top"
+                >
+                  <ForwardRef
+                    className="HvAppSwitcherPanelAction-typography"
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledText": "HvTypography-disabledText",
+                        "highlightText": "HvTypography-highlightText",
+                        "lTitle": "HvTypography-lTitle",
+                        "link": "HvTypography-link",
+                        "mTitle": "HvTypography-mTitle",
+                        "noWrap": "HvTypography-noWrap",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sTitle": "HvTypography-sTitle",
+                        "sectionTitle": "HvTypography-sectionTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                    component="a"
+                    href="http://mockapp1/"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "borderColor": "#414141",
+                      }
+                    }
+                    target="_top"
+                  >
+                    <a
+                      className="HvAppSwitcherPanelAction-typography HvTypography-root HvTypography-normalText"
+                      href="http://mockapp1/"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "borderColor": "#414141",
+                        }
+                      }
+                      target="_top"
+                    >
+                      <div
+                        className="HvAppSwitcherPanelAction-icon"
+                      >
+                        <img
+                          className="HvAppSwitcherPanelAction-iconUrl"
+                          onError={[Function]}
+                          src="http://mockapp1/icon"
+                        />
+                      </div>
+                      <TitleWithTooltip
+                        className="HvAppSwitcherPanelAction-title"
+                        title="Mock App 1"
+                      >
+                        <WithStyles(ForwardRef)
+                          disableHoverListener={true}
+                          placement="top-start"
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Mock App 1
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableHoverListener={true}
+                            placement="top-start"
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Mock App 1
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableHoverListener={true}
+                              enterDelay={300}
+                              placement="top-start"
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Mock App 1
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableHoverListener={true}
+                                enterDelay={300}
+                                placement="top-start"
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Mock App 1
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <WithStyles(ForwardRef)
+                                  aria-describedby={null}
+                                  className="HvAppSwitcherPanelAction-title"
+                                  component="span"
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchStart={[Function]}
+                                  title={null}
+                                  variant="highlightText"
+                                >
+                                  <ForwardRef
+                                    aria-describedby={null}
+                                    className="HvAppSwitcherPanelAction-title"
+                                    classes={
+                                      Object {
+                                        "3xlTitle": "HvTypography-3xlTitle",
+                                        "4xlTitle": "HvTypography-4xlTitle",
+                                        "5xlTitle": "HvTypography-5xlTitle",
+                                        "disabledText": "HvTypography-disabledText",
+                                        "highlightText": "HvTypography-highlightText",
+                                        "lTitle": "HvTypography-lTitle",
+                                        "link": "HvTypography-link",
+                                        "mTitle": "HvTypography-mTitle",
+                                        "noWrap": "HvTypography-noWrap",
+                                        "normalText": "HvTypography-normalText",
+                                        "placeholderText": "HvTypography-placeholderText",
+                                        "root": "HvTypography-root",
+                                        "sTitle": "HvTypography-sTitle",
+                                        "sectionTitle": "HvTypography-sectionTitle",
+                                        "selectedNavText": "HvTypography-selectedNavText",
+                                        "vizText": "HvTypography-vizText",
+                                        "vizTextDisabled": "HvTypography-vizTextDisabled",
+                                        "xlTitle": "HvTypography-xlTitle",
+                                        "xsInlineLink": "HvTypography-xsInlineLink",
+                                        "xsTitle": "HvTypography-xsTitle",
+                                        "xxlTitle": "HvTypography-xxlTitle",
+                                        "xxsTitle": "HvTypography-xxsTitle",
+                                      }
+                                    }
+                                    component="span"
+                                    onBlur={[Function]}
+                                    onFocus={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchStart={[Function]}
+                                    title={null}
+                                    variant="highlightText"
+                                  >
+                                    <span
+                                      aria-describedby={null}
+                                      className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                      onBlur={[Function]}
+                                      onFocus={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchStart={[Function]}
+                                      title={null}
+                                    >
+                                      Mock App 1
+                                    </span>
+                                  </ForwardRef>
+                                </WithStyles(ForwardRef)>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <span
+                                      class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    >
+                                      Mock App 1
+                                    </span>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top-start"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </TitleWithTooltip>
+                    </a>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </li>
+            </ConditionalWrapper>
+          </Focus>
+        </WithStyles(Focus)>
+      </HvListItem>
+    </WithStyles(HvListItem)>
   </Action>
 </WithStyles(Action)>
 `;
