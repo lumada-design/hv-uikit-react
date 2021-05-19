@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-lab",
-  "version": "3.13.0",
+  "version": "3.13.1",
   "description": "A collection of contributed React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.13.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.13.0...@hv/uikit-react-lab@3.13.1) (2021-05-19)
+
+
+### Bug Fixes
+
+* **timePicker:** call onChange only on blur of inputs [#2434](https://github.com/lumada-design/hv-uikit-react/issues/2434) ([266cb4e](https://github.com/lumada-design/hv-uikit-react/commit/266cb4ec2fc40a203d2a576c647094206b407734))
+
+
+
+
+
 # [3.13.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.12.0...@hv/uikit-react-lab@3.13.0) (2021-05-17)
 
 
