@@ -16,7 +16,7 @@ export const Main = () => (
   <HvNavigationAnchors
     href
     options={[
-      { label: "Option1", value: "Value1" },
+      { label: "Option1 with a large label that needs a tooltip", value: "Value1" },
       { label: "Option2", value: "Value2" },
       { label: "Option3", value: "Value3" },
     ]}

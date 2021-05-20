@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { deprecatedPropType, withStyles } from "@material-ui/core";
 import { HvListContainer, HvListItem } from "@hv/uikit-react-core";
 import styles from "./styles";
+import navigationOption from "./NavigationOption";
 
 const RETRY_MAX = 5;
 
@@ -231,22 +232,25 @@ const NavigationAnchors = ({
       selectedIndexRef.current = index;
     }
   };
-
   return (
     <HvListContainer interactive className={clsx(className, classes.root)} {...other}>
-      {options.map((option, index) => (
-        <HvListItem
-          classes={{
-            selected: classes.listItemSelected,
-            gutters: classes.listItemGutters,
-          }}
-          key={option.key || option.label}
-          onClick={(event) => handleListItemClick(event, option.value, index)}
-          selected={selectedIndex === index}
-        >
-          {option.label}
-        </HvListItem>
-      ))}
+      {options.map((option, index) => {
+        const NavOpt = navigationOption(option.label);
+
+        return (
+          <HvListItem
+            classes={{
+              selected: classes.listItemSelected,
+              gutters: classes.listItemGutters,
+            }}
+            key={option.key || option.label}
+            onClick={(event) => handleListItemClick(event, option.value, index)}
+            selected={selectedIndex === index}
+          >
+            <NavOpt />
+          </HvListItem>
+        );
+      })}
     </HvListContainer>
   );
 };
@@ -304,7 +308,7 @@ NavigationAnchors.propTypes = {
    * This allows to exclude regions of the container that are obscured by other content (such as fixed-positioned toolbars or titles)
    * or to put more breathing room between the targeted element and the edges of the container.
    *
-   * Each element can alse have a specific offset via the options property.
+   * Each element can also have a specific offset via the options property.
    */
   offset: PropTypes.number,
 };
