@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.13.1...@hv/uikit-react-lab@3.14.0) (2021-05-21)
+
+
+### Bug Fixes
+
+* **navigationanchor:** add tooltip when needed. 2440 ([25b44e6](https://github.com/lumada-design/hv-uikit-react/commit/25b44e6c27cb8c083531336a714d74378a4142bb))
+
+
+### Features
+
+* **app-switcher:** update according to latest ds 3.x specs HVUIKIT-5781 ([73c7e7b](https://github.com/lumada-design/hv-uikit-react/commit/73c7e7b645d751ddd7c5941f5e538bdaca80628c))
+
+
+
+
+
 ## [3.13.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.13.0...@hv/uikit-react-lab@3.13.1) (2021-05-19)
 
 
