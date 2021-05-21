@@ -114,19 +114,34 @@ exports[`User withStyles should handle click action correctly 1`] = `
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         tabindex="0"
                       >
-                        Option1
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option1
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option2
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option2
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option3
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option3
+                        </div>
                       </li>
                     </ul>,
                   }
@@ -161,19 +176,34 @@ exports[`User withStyles should handle click action correctly 1`] = `
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           tabindex="0"
                         >
-                          Option1
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option1
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option2
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option2
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option3
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option3
+                          </div>
                         </li>
                       </ul>,
                     }
@@ -195,7 +225,215 @@ exports[`User withStyles should handle click action correctly 1`] = `
                       onMouseDown={[Function]}
                       selected={true}
                     >
-                      Option1
+                      <Component>
+                        <WithStyles(ForwardRef)
+                          disableFocusListener={true}
+                          disableHoverListener={false}
+                          disableTouchListener={true}
+                          placement="top"
+                          style={
+                            Object {
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Option1
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableHoverListener={false}
+                            disableTouchListener={true}
+                            placement="top"
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Option1
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableHoverListener={false}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Option1
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableHoverListener={false}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Option1
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <ComponentFunction>
+                                    Option1
+                                  </ComponentFunction>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      Option1
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </Component>
                     </li>
                   </ConditionalWrapper>
                 </Focus>
@@ -254,19 +492,34 @@ exports[`User withStyles should handle click action correctly 1`] = `
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         tabindex="0"
                       >
-                        Option1
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option1
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option2
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option2
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option3
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option3
+                        </div>
                       </li>
                     </ul>,
                   }
@@ -301,19 +554,34 @@ exports[`User withStyles should handle click action correctly 1`] = `
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           tabindex="0"
                         >
-                          Option1
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option1
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option2
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option2
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option3
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option3
+                          </div>
                         </li>
                       </ul>,
                     }
@@ -335,7 +603,215 @@ exports[`User withStyles should handle click action correctly 1`] = `
                       onMouseDown={[Function]}
                       selected={false}
                     >
-                      Option2
+                      <Component>
+                        <WithStyles(ForwardRef)
+                          disableFocusListener={true}
+                          disableHoverListener={false}
+                          disableTouchListener={true}
+                          placement="top"
+                          style={
+                            Object {
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Option2
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableHoverListener={false}
+                            disableTouchListener={true}
+                            placement="top"
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Option2
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableHoverListener={false}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Option2
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableHoverListener={false}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Option2
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <ComponentFunction>
+                                    Option2
+                                  </ComponentFunction>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      Option2
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </Component>
                     </li>
                   </ConditionalWrapper>
                 </Focus>
@@ -394,19 +870,34 @@ exports[`User withStyles should handle click action correctly 1`] = `
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         tabindex="0"
                       >
-                        Option1
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option1
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option2
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option2
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option3
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option3
+                        </div>
                       </li>
                     </ul>,
                   }
@@ -441,19 +932,34 @@ exports[`User withStyles should handle click action correctly 1`] = `
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           tabindex="0"
                         >
-                          Option1
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option1
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option2
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option2
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option3
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option3
+                          </div>
                         </li>
                       </ul>,
                     }
@@ -475,7 +981,215 @@ exports[`User withStyles should handle click action correctly 1`] = `
                       onMouseDown={[Function]}
                       selected={false}
                     >
-                      Option3
+                      <Component>
+                        <WithStyles(ForwardRef)
+                          disableFocusListener={true}
+                          disableHoverListener={false}
+                          disableTouchListener={true}
+                          placement="top"
+                          style={
+                            Object {
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Option3
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableHoverListener={false}
+                            disableTouchListener={true}
+                            placement="top"
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Option3
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableHoverListener={false}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Option3
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableHoverListener={false}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Option3
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <ComponentFunction>
+                                    Option3
+                                  </ComponentFunction>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      Option3
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </Component>
                     </li>
                   </ConditionalWrapper>
                 </Focus>
@@ -622,19 +1336,34 @@ exports[`User withStyles should render correctly with props 1`] = `
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         tabindex="0"
                       >
-                        Option1
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option1
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option2
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option2
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option3
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option3
+                        </div>
                       </li>
                     </ul>,
                   }
@@ -669,19 +1398,34 @@ exports[`User withStyles should render correctly with props 1`] = `
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           tabindex="0"
                         >
-                          Option1
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option1
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option2
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option2
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option3
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option3
+                          </div>
                         </li>
                       </ul>,
                     }
@@ -703,7 +1447,215 @@ exports[`User withStyles should render correctly with props 1`] = `
                       onMouseDown={[Function]}
                       selected={true}
                     >
-                      Option1
+                      <Component>
+                        <WithStyles(ForwardRef)
+                          disableFocusListener={true}
+                          disableHoverListener={false}
+                          disableTouchListener={true}
+                          placement="top"
+                          style={
+                            Object {
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Option1
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableHoverListener={false}
+                            disableTouchListener={true}
+                            placement="top"
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Option1
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableHoverListener={false}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Option1
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableHoverListener={false}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Option1
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <ComponentFunction>
+                                    Option1
+                                  </ComponentFunction>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      Option1
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </Component>
                     </li>
                   </ConditionalWrapper>
                 </Focus>
@@ -762,19 +1714,34 @@ exports[`User withStyles should render correctly with props 1`] = `
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         tabindex="0"
                       >
-                        Option1
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option1
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option2
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option2
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option3
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option3
+                        </div>
                       </li>
                     </ul>,
                   }
@@ -809,19 +1776,34 @@ exports[`User withStyles should render correctly with props 1`] = `
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           tabindex="0"
                         >
-                          Option1
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option1
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option2
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option2
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option3
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option3
+                          </div>
                         </li>
                       </ul>,
                     }
@@ -843,7 +1825,215 @@ exports[`User withStyles should render correctly with props 1`] = `
                       onMouseDown={[Function]}
                       selected={false}
                     >
-                      Option2
+                      <Component>
+                        <WithStyles(ForwardRef)
+                          disableFocusListener={true}
+                          disableHoverListener={false}
+                          disableTouchListener={true}
+                          placement="top"
+                          style={
+                            Object {
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Option2
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableHoverListener={false}
+                            disableTouchListener={true}
+                            placement="top"
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Option2
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableHoverListener={false}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Option2
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableHoverListener={false}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Option2
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <ComponentFunction>
+                                    Option2
+                                  </ComponentFunction>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      Option2
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </Component>
                     </li>
                   </ConditionalWrapper>
                 </Focus>
@@ -902,19 +2092,34 @@ exports[`User withStyles should render correctly with props 1`] = `
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                         tabindex="0"
                       >
-                        Option1
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option1
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option2
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option2
+                        </div>
                       </li>
                       <li
                         class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                         tabindex="-1"
                       >
-                        Option3
+                        <div
+                          class=""
+                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                        >
+                          Option3
+                        </div>
                       </li>
                     </ul>,
                   }
@@ -949,19 +2154,34 @@ exports[`User withStyles should render correctly with props 1`] = `
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvListItem-selected HvNavigationAnchors-listItemSelected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                           tabindex="0"
                         >
-                          Option1
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option1
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option2
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option2
+                          </div>
                         </li>
                         <li
                           class="HvListItem-root HvListItem-gutters HvNavigationAnchors-listItemGutters HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                           tabindex="-1"
                         >
-                          Option3
+                          <div
+                            class=""
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                          >
+                            Option3
+                          </div>
                         </li>
                       </ul>,
                     }
@@ -983,7 +2203,215 @@ exports[`User withStyles should render correctly with props 1`] = `
                       onMouseDown={[Function]}
                       selected={false}
                     >
-                      Option3
+                      <Component>
+                        <WithStyles(ForwardRef)
+                          disableFocusListener={true}
+                          disableHoverListener={false}
+                          disableTouchListener={true}
+                          placement="top"
+                          style={
+                            Object {
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
+                            }
+                          }
+                          title={
+                            <WithStyles(ForwardRef)>
+                              Option3
+                            </WithStyles(ForwardRef)>
+                          }
+                        >
+                          <ForwardRef
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableHoverListener={false}
+                            disableTouchListener={true}
+                            placement="top"
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <WithStyles(ForwardRef)>
+                                Option3
+                              </WithStyles(ForwardRef)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "disableStrictModeCompat": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
+                                    "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableHoverListener={false}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  Option3
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "disableStrictModeCompat": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
+                                      "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableHoverListener={false}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    Option3
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <ComponentFunction>
+                                    Option3
+                                  </ComponentFunction>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      Option3
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </Component>
                     </li>
                   </ConditionalWrapper>
                 </Focus>
