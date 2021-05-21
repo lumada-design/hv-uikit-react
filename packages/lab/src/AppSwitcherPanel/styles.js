@@ -1,51 +1,71 @@
 const styles = (theme) => ({
   root: {
-    display: "none",
-    width: "320px",
+    display: "flex",
+    flexDirection: "column",
+
+    overflow: "hidden",
+
+    // we need to play with the 4px because of the focus ring
+    padding: `${theme.hv.spacing.sm - 4}px 0 ${theme.hv.spacing.sm - 4}px ${
+      theme.hv.spacing.sm - 4
+    }px`,
+
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: `0 2px 12px rgba(65, 65, 65, 0.12)`, // rgb color corresponds to #414141;
+  },
+
+  single: {
+    width: 320,
+  },
+  dual: {
+    width: 620,
+  },
+  fluid: {},
+
+  closed: {
+    display: "none",
   },
   open: {
-    display: "flex",
     zIndex: "1200",
-    flexDirection: "column",
     position: "absolute",
     top: "50px",
     overflowX: "hidden",
+    boxShadow: theme.hv.shadows[1],
   },
 
-  headerContainer: {
-    ...theme.hv.typography.highlightText,
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: `${theme.hv.spacing.sm}px`,
-    borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-  },
-  titleContainer: {
-    width: "100%",
-    display: "flex",
-    alignItems: "center",
-  },
   title: {
+    minHeight: 36,
+
+    // we need to play with the 4px because of the focus ring
+    padding: `4px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm - 4}px 4px`,
+
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
   },
 
   actionsContainer: {
-    flex: 1,
-    padding: `${theme.hv.spacing.sm}px`,
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
+
     overflowY: "auto",
+
+    // we need to play with the 4px because of the focus ring
+    padding: "4px 0 4px 4px",
   },
 
   footerContainer: {
-    ...theme.hv.typography.highlightText,
     display: "flex",
     alignItems: "center",
-    height: "52px",
-    borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
-    padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px`,
+
+    marginTop: "auto",
+
+    height: 52,
+
+    // we need to play with the 4px because of the focus ring
+    padding: `${theme.hv.spacing.sm - 4}px ${theme.hv.spacing.sm + 4}px 4px 4px`,
+
+    ...theme.hv.typography.highlightText,
   },
 });
 

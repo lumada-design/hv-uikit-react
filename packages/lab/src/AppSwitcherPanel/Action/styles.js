@@ -1,82 +1,61 @@
-const selected = (theme) => ({
-  background: theme.hv.palette.accent.acce1,
-  color: theme.hv.palette.atmosphere.atmo1,
-  fontWeight: 600,
-  cursor: "default",
-  "& *": {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1,
-    cursor: "default",
-  },
-  "& svg *.color0": {
-    fill: theme.hv.palette.atmosphere.atmo1,
-  },
-  // hover
-  "&:hover": {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1,
-    "& *": {
-      background: theme.hv.palette.accent.acce1,
-      color: theme.hv.palette.atmosphere.atmo1,
-    },
-  },
-});
-
-const hover = (theme) => ({
-  background: theme.hv.palette.atmosphere.atmo4,
-  "& *": {
-    background: theme.hv.palette.atmosphere.atmo4,
-  },
-});
-
 const styles = (theme) => ({
+  root: {
+    width: "100%",
+    maxWidth: 280,
+    minHeight: 52,
+    marginRight: theme.hv.spacing.sm,
+  },
+  disabled: {},
+
   typography: {
     display: "flex",
-    background: theme.hv.palette.atmosphere.atmo1,
-    width: "100%",
     justifyContent: "flex-start",
     alignItems: "center",
-    height: "32px",
-    color: theme.hv.palette.atmosphere.acce1,
-    marginBottom: "8px",
 
-    // hover
-    "&:hover": hover(theme),
+    width: "100%",
+    minHeight: 52,
 
-    // cursor
+    padding: theme.hv.spacing.xs,
+
+    border: "none",
+    borderLeft: `solid 2px ${theme.hv.palette.accent.acce1}`,
+
     cursor: "pointer",
-    "& *": {
-      cursor: "pointer",
-    },
 
-    "& span": {
-      overflow: "hidden",
-      whiteSpace: "nowrap",
-      textOverflow: "ellipsis",
-      width: "calc(100% - 64px)", // The with of both icons, 32px each.
-    },
-  },
-  selected: selected(theme),
-
-  dummyImage: {
-    width: "8px",
-  },
-
-  link: {
-    color: "inherit",
     textDecoration: "inherit",
+    color: "inherit",
+    backgroundColor: "inherit",
+
+    "$disabled &": {
+      cursor: "not-allowed",
+    },
+  },
+
+  icon: {
+    minWidth: 32,
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  title: {
+    flexGrow: 1,
+    margin: `0 ${theme.hv.spacing.xs}px`,
+
+    textAlign: "left",
+
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+
+    color: "inherit",
   },
 
   iconInfo: {
-    width: "32px",
-    height: "32px",
-    marginLeft: "auto",
+    minWidth: 32,
   },
 
   iconUrl: {
-    width: "16px",
-    height: "16px",
-    margin: "8px",
+    width: 32,
   },
 });
 

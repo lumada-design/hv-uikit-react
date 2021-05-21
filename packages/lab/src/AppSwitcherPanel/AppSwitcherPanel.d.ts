@@ -5,19 +5,22 @@ import { HvAppSwitcherPanelActionApplication } from "./Action";
 
 export type HvAppSwitcherPanelClassKey =
   | "root"
-  | "open"
-  | "headerContainer"
-  | "titleContainer"
+  | "single"
+  | "dual"
+  | "fluid"
   | "title"
   | "actionsContainer"
-  | "footerContainer";
+  | "footerContainer"
+  | "closed"
+  | "open";
 
 export interface HvAppSwitcherPanelProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherPanelClassKey> {
   /**
-   * Flag stating if the panel is opened or closed.
+   * Number of columns to render. One, two, or whatever fits the component's width.
    */
-  isOpen?: boolean;
+  layout?: "single" | "dual" | "fluid";
+
   /**
    * Title to be displayed on the header of the component.
    */
@@ -26,14 +29,7 @@ export interface HvAppSwitcherPanelProps
    * The list of applications to be used to render the actions on the component.
    */
   applications: HvAppSwitcherPanelActionApplication[];
-  /**
-   * Element to be added to the header container, if none is provided a label with the title will be added.
-   */
-  header?: React.ReactNode;
-  /**
-   * Element to be added to the footer container.
-   */
-  footer?: React.ReactNode;
+
   /**
    * Triggered when an action is clicked.
    */
@@ -45,6 +41,20 @@ export interface HvAppSwitcherPanelProps
    * Must return a boolean stating if the action element is selected or not.
    */
   isActionSelectedCallback?: (application?: HvAppSwitcherPanelActionApplication) => boolean;
+
+  /**
+   * Element to be added to the header container, if none is provided a label with the title will be added.
+   */
+  header?: string | React.ReactNode;
+  /**
+   * Element to be added to the footer container.
+   */
+  footer?: string | React.ReactNode;
+
+  /**
+   * Flag stating if the panel is opened or closed.
+   */
+  isOpen?: boolean;
 }
 
 export default function HvAppSwitcherPanel(props: HvAppSwitcherPanelProps): JSX.Element | null;

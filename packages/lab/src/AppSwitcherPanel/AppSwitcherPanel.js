@@ -1,90 +1,104 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
 
+import clsx from "clsx";
+import { deprecatedPropType, withStyles } from "@material-ui/core";
+
+import { HvListContainer } from "@hv/uikit-react-core";
+
+import styles from "./styles";
+
+import TitleWithTooltip from "./TitleWithTooltip";
 import Action from "./Action";
 
-export default class AppSwitcherPanel extends Component {
-  constructor(props) {
-    super(props);
+const AppSwitcherPanel = (props) => {
+  const {
+    id,
 
-    const { id } = this.props;
+    className,
+    classes,
 
-    this.state = {
-      internalId: id || uniqueId("hv-appswitcherpanel-"),
-    };
-  }
+    layout = "single",
 
-  render() {
-    const { internalId } = this.state;
-    const {
-      classes,
-      isOpen,
-      title,
-      applications,
-      header,
-      footer,
-      onActionClickedCallback,
-      isActionSelectedCallback,
-    } = this.props;
+    title,
+    applications,
 
-    const actionClicked = (event, application) => {
-      if (onActionClickedCallback) {
-        onActionClickedCallback(event, application);
-      }
-    };
+    onActionClickedCallback = () => {},
+    isActionSelectedCallback = () => false,
 
-    const panelActions = applications.map((application) => {
-      if (application.name && application.url) {
-        return (
-          <Action
-            key={application.url}
-            application={application}
-            onClickCallback={actionClicked}
-            isSelectedCallback={isActionSelectedCallback}
-          />
-        );
-      }
+    header,
+    footer,
 
-      return undefined;
-    });
+    isOpen,
+  } = props;
 
-    return (
-      <div id={internalId} className={`${classes.root} ${isOpen ? classes.open : ""}`}>
-        <div className={classes.headerContainer}>
-          {header || (
-            <div className={classes.titleContainer}>
-              <div className={classes.title} title={title}>
-                {title}
-              </div>
-            </div>
-          )}
-        </div>
-        <div className={classes.actionsContainer}>{panelActions}</div>
-        {footer && <div className={classes.footerContainer}>{footer}</div>}
-      </div>
-    );
-  }
-}
+  const actionClicked = (event, application) => {
+    onActionClickedCallback?.(event, application);
+  };
+
+  const panelActions = applications.map((application) => {
+    if (application.name) {
+      return (
+        <Action
+          key={application.id || `${application.name}_${application.url}`}
+          application={application}
+          onClickCallback={actionClicked}
+          isSelectedCallback={isActionSelectedCallback}
+        />
+      );
+    }
+
+    return undefined;
+  });
+
+  return (
+    <div
+      id={id}
+      className={clsx(className, classes.root, classes[layout], {
+        [classes.closed]: isOpen === false,
+        [classes.open]: isOpen,
+      })}
+    >
+      {(header && <div className={classes.title}>{header}</div>) ||
+        (title && <TitleWithTooltip className={classes.title} title={title} />)}
+      <HvListContainer disableGutters className={classes.actionsContainer}>
+        {panelActions}
+      </HvListContainer>
+      {footer && <div className={classes.footerContainer}>{footer}</div>}
+    </div>
+  );
+};
 
 AppSwitcherPanel.propTypes = {
+  /**
+   * Identifier to be applied to the root element.
+   */
   id: PropTypes.string,
+
+  /**
+   * Class names to be applied to the root element.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
     root: PropTypes.string,
-    open: PropTypes.string,
-    headerContainer: PropTypes.string,
-    titleContainer: PropTypes.string,
+    single: PropTypes.string,
+    dual: PropTypes.string,
+    fluid: PropTypes.string,
     title: PropTypes.string,
     actionsContainer: PropTypes.string,
     footerContainer: PropTypes.string,
+    closed: PropTypes.string,
+    open: PropTypes.string,
   }).isRequired,
+
   /**
-   * Flag stating if the panel is opened or closed.
+   * Number of columns to render. One, two, or whatever fits the component's width.
    */
-  isOpen: PropTypes.bool,
+  layout: PropTypes.oneOf(["single", "dual", "fluid"]),
+
   /**
    * Title to be displayed on the header of the component.
    */
@@ -97,7 +111,7 @@ AppSwitcherPanel.propTypes = {
       /**
        * Id of the application.
        */
-      id: PropTypes.string.isRequired,
+      id: PropTypes.string,
       /**
        * Name of the application, this is the value that will be displayed on the component.
        */
@@ -119,25 +133,22 @@ AppSwitcherPanel.propTypes = {
       /**
        *  URL where the application is accesible.
        */
-      url: PropTypes.string.isRequired,
+      url: PropTypes.string,
       /**
        * Defines if the application should be opened in the same tab or in a new one.
        */
       target: PropTypes.oneOf(["_top", "_blank"]),
+      /**
+       * If true, the item will be disabled.
+       */
+      disabled: PropTypes.bool,
       /**
        * True when the application is selected, false otherwise.
        */
       isSelected: PropTypes.bool,
     })
   ).isRequired,
-  /**
-   * Element to be added to the header container, if none is provided a label with the title will be added.
-   */
-  header: PropTypes.element,
-  /**
-   * Element to be added to the footer container.
-   */
-  footer: PropTypes.element,
+
   /**
    * Triggered when an action is clicked.
    */
@@ -146,12 +157,22 @@ AppSwitcherPanel.propTypes = {
    * Must return a boolean stating if the action element is selected or not.
    */
   isActionSelectedCallback: PropTypes.func,
+
+  /**
+   * Element to be added to the header container, if none is provided a label with the title will be added.
+   */
+  header: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /**
+   * Element to be added to the footer container.
+   */
+  footer: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+
+  /**
+   * Flag stating if the panel is opened or closed.
+   *
+   * @deprecated This logic should be external, i.e. using the HvAppSwitcherPanel inside a Drawer component.
+   */
+  isOpen: deprecatedPropType(PropTypes.bool),
 };
 
-AppSwitcherPanel.defaultProps = {
-  isOpen: false,
-  title: "Apps",
-  footer: undefined,
-  onActionClickedCallback: () => {},
-  isActionSelectedCallback: () => false,
-};
+export default withStyles(styles, { name: "HvAppSwitcherPanel" })(AppSwitcherPanel);
