@@ -23,7 +23,7 @@ header item should not be selected
 ${action1}       css:div[class='HvHeaderActions-root']>button:nth-child(1)
 ${action2}       css:div[class='HvHeaderActions-root']>button:nth-child(2)
 ${actions}       css:[id^=hv-actions]
-${brand}         css:div[class=HvHeaderBrand-root]
+${brand}         css:div[class*=HvHeaderBrand-root]
 ${childItems}    css:ul[class*=MenuBar-active] li
 ${header}        css:div[class=HvHeader-header]
 ${item1.1}       css:li[class*=MenuItem]:nth-child(1) li:nth-child(1)

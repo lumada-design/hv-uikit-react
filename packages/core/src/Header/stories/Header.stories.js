@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme, makeStyles } from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Alert, Menu, User } from "@hv/uikit-react-icons";
 import {
@@ -80,6 +80,18 @@ const navigationData = [
 ];
 
 export const Main = () => {
+  const useStyles = makeStyles((theme) => ({
+    brand: {
+      [theme.breakpoints.down("sm")]: {
+        position: "absolute",
+        left: "50%",
+        transform: "translate(-50%, 0)",
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
   const theme = useTheme();
   const [selected, setSelected] = useState("3-2");
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
@@ -95,7 +107,7 @@ export const Main = () => {
           <Menu />
         </HvButton>
       )}
-      <HvHeaderBrand logo={<HitachiLogo />} name="Lumada App" />
+      <HvHeaderBrand className={classes.brand} logo={<HitachiLogo />} name="Lumada App" />
       {isMdUp && (
         <HvHeaderNavigation data={navigationData} selected={selected} onClick={handleChange} />
       )}
