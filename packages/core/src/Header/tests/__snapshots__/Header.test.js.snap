@@ -303,10 +303,12 @@ exports[`Header should be able to render 1`] = `
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <WithStyles(Brand)
+                  className="makeStyles-brand-1"
                   logo={<_default />}
                   name="Lumada App"
                 >
                   <Brand
+                    className="makeStyles-brand-1"
                     classes={
                       Object {
                         "root": "HvHeaderBrand-root",
@@ -317,7 +319,7 @@ exports[`Header should be able to render 1`] = `
                     name="Lumada App"
                   >
                     <div
-                      className="HvHeaderBrand-root"
+                      className="makeStyles-brand-1 HvHeaderBrand-root"
                     >
                       <_default>
                         <HitachiLogo
