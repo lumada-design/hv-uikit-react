@@ -12,7 +12,7 @@ export interface HvGroupProps
   /**
    * Props applied to the generated label.
    */
-  labelProps: any;
+  labelProps?: any;
 }
 
 export default function HvUserPreferencesGroup(props: HvGroupProps): JSX.Element | null;

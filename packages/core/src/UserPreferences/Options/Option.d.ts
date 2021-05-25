@@ -20,7 +20,7 @@ export interface HvOptionProps
   /**
    * Callback called when clicked.
    */
-  onClick: (event: Event, payload: Payload) => void;
+  onClick?: (event: Event, payload: Payload) => void;
 }
 
 export default function HvUserPreferencesOption(props: HvOptionProps): JSX.Element | null;
