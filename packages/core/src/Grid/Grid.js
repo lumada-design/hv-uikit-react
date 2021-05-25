@@ -77,7 +77,196 @@ HvGrid.propTypes = {
    * See [CSS API](#css) below for more details.
    */
   // eslint-disable-next-line react/forbid-prop-types
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the root element if container={true}.
+     */
+    container: PropTypes.string,
+    /**
+     * Styles applied to the root element if item={true}.
+     */
+    item: PropTypes.string,
+    /**
+     * Styles applied to the root element if zeroMinWidth={true}.
+     */
+    zeroMinWidth: PropTypes.string,
+    /**
+     * Styles related to column direction.
+     */
+    "direction-xs-column": PropTypes.string,
+    /**
+     * Styles related to column direction.
+     */
+    "direction-xs-reverse": PropTypes.string,
+    /**
+     * Styles related to column direction.
+     */
+    "direction-xs-row-reverse": PropTypes.string,
+    /**
+     * Styles related to wrapping.
+     */
+    "wrap-xs-nowrap": PropTypes.string,
+    /**
+     * Styles related to wrapping.
+     */
+    "wrap-xs-wrap-reverse": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-items-xs-center": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-items-xs-flex-start": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-items-xs-flex-end": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-items-xs-baseline": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-content-xs-center": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-content-xs-flex-start": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-content-xs-flex-end": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-content-xs-space-between": PropTypes.string,
+    /**
+     * Styles related to alignment.
+     */
+    "align-content-xs-space-around": PropTypes.string,
+    /**
+     * Styles related to content justification.
+     */
+    "justify-xs-center": PropTypes.string,
+    /**
+     * Styles related to content justification.
+     */
+    "justify-xs-flex-end": PropTypes.string,
+    /**
+     * Styles related to content justification.
+     */
+    "justify-xs-space-between": PropTypes.string,
+    /**
+     * Styles related to content justification.
+     */
+    "justify-xs-space-around": PropTypes.string,
+    /**
+     * Styles related to content justification.
+     */
+    "justify-xs-space-evenly": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-1": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-2": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-3": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-4": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-5": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-6": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-7": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-8": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-9": PropTypes.string,
+    /**
+     * Styles related to spacing.
+     */
+    "spacing-xs-10": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-auto": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-true": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-1": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-2": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-3": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-4": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-5": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-6": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-7": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-8": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-9": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-10": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-11": PropTypes.string,
+    /**
+     * Styles related to grid sizing.
+     */
+    "grid-xs-12": PropTypes.string,
+  }).isRequired,
   /**
    * @ignore
    */

@@ -34,7 +34,47 @@ HvContainer.propTypes = {
    * See [CSS API](#css) below for more details.
    */
   // eslint-disable-next-line react/forbid-prop-types
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the root element.
+     */
+    root: PropTypes.string,
+
+    /**
+     * Styles applied to the root element if disableGutters={true}.
+     */
+    disableGutters: PropTypes.string,
+
+    /**
+     * Styles applied to the root element if fixed={true}.
+     */
+    fixed: PropTypes.string,
+
+    /**
+     * Styles applied to the root element if maxWidth="xs".
+     */
+    maxWidthXs: PropTypes.string,
+
+    /**
+     * Styles applied to the root element if maxWidth="sm".
+     */
+    maxWidthSm: PropTypes.string,
+
+    /**
+     * Styles applied to the root element if maxWidth="md".
+     */
+    maxWidthMd: PropTypes.string,
+
+    /**
+     * Styles applied to the root element if maxWidth="lg".
+     */
+    maxWidthLg: PropTypes.string,
+
+    /**
+     * Styles applied to the root element if maxWidth="xl".
+     */
+    maxWidthXl: PropTypes.string,
+  }).isRequired,
   /**
    * @ignore
    */
