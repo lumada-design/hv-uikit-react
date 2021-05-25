@@ -1,141 +1,275 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import map from "lodash/map";
-import { withStyles } from "@material-ui/core";
-import { HvBadge } from "@hv/uikit-react-core";
-import Panel from "./Panel";
-import Notification from "./Notification";
+import clsx from "clsx";
+import { deprecatedPropType, withStyles } from "@material-ui/core";
+import { HvPanel, HvActionBar, HvDropDownMenu, setId, useLabels } from "@hv/uikit-react-core";
+
 import styles from "./styles";
+
+import Notification from "./Notification";
+import EmptyStatePanel from "./EmptyStatePanel";
+import NotificationsIndicator from "./NotificationsIndicator";
+
+const DEFAULT_LABELS = {
+  notificationGroupHeader: {
+    newNotifications: "New",
+    olderNotifications: "Earlier",
+  },
+  notificationIndicator: {
+    label: "You have new notifications",
+    buttonLabel: "Update",
+  },
+};
 
 /**
  * Notification Panel displays all of read and unread notifications. Still in development
  */
-class HvNotificationPanel extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      open: props.open,
-    };
-  }
+const HvNotificationPanel = ({
+  id,
+  className,
+  classes,
+  open,
+  footer,
+  notifications,
+  hasNewNotifications = false,
+  emptyStatePanelTitle = "No notifications",
+  emptyStatePanelMessage = "You currently have no notifications.",
+  emptyStatePanelIcon,
+  labels: labelsProp,
+  newNotificationsButtonAction,
+  ...others
+}) => {
+  const [highlighted, setHighlighted] = useState(undefined);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  handleIconClick = () => {
-    this.setState((prevState) => ({
-      open: !prevState.open,
-    }));
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
+
+  const NotificationActions = ({ notificationId, actions }) => {
+    const expand = notificationId === highlighted;
+    const dList = [...actions.values];
+    return (
+      <HvDropDownMenu
+        expanded={expand}
+        onClick={(e, item) => {
+          setHighlighted(undefined);
+          item.callback(notificationId);
+        }}
+        dataList={dList}
+        onToggleOpen={(s) => {
+          if (s) {
+            setHighlighted(notificationId);
+          } else {
+            setHighlighted(undefined);
+          }
+          setIsExpanded(!isExpanded);
+        }}
+        {...actions.dropDownMenuProps}
+      />
+    );
   };
 
-  handleIconKeyDown = (e) => {
-    if (e.keyCode === 13) {
-      this.setState((prevState) => ({
-        open: !prevState.open,
-      }));
-    }
-  };
-
-  onClose = () => {
-    this.setState({
-      open: false,
+  const notificationElementGenerator = (notificationsToRender) => {
+    return notificationsToRender.map((notification) => {
+      const notificationIsHighlighted = highlighted === notification.id;
+      return (
+        <Notification
+          key={notification.id}
+          title={notification.title}
+          isRead={notification.isRead}
+          icon={notification.icon}
+          date={notification.date}
+          onClick={notification.onClick}
+          onKeyPress={notification.onKeyPress}
+          rightContainer={
+            <NotificationActions notificationId={notification.id} actions={notification.actions} />
+          }
+          isHighlighted={notificationIsHighlighted}
+        />
+      );
     });
   };
 
-  render() {
-    const { classes, icon, header, footer, notifications } = this.props;
-    const { open } = this.state;
+  const hasNotifications = notifications.length > 0;
 
-    const n = map(notifications, (notification) => (
-      <Notification key={notification.id} notification={notification} />
-    ));
+  const renderNotifications = (notificationsToRender) =>
+    notificationElementGenerator(notificationsToRender);
 
-    const panelProps = {
-      open,
-      classes: {
-        panel: classes.panel,
-      },
-      onClose: this.onClose,
-      header,
-      footer,
-      notifications,
-    };
-
-    return (
-      <div className={classes.root}>
-        <div
-          role="button"
-          className={classes.iconWrapper}
-          tabIndex="0"
-          onKeyDown={this.handleIconKeyDown}
-          onClick={this.handleIconClick}
-        >
-          <HvBadge
-            icon={icon}
-            showCount
-            count={notifications.length}
-            classes={{ root: classes.badgeBorder }}
-          />
+  return (
+    <HvPanel
+      id={id}
+      className={clsx(className, classes.root, {
+        [classes.closed]: open === false,
+        [classes.open]: open,
+      })}
+      {...others}
+    >
+      {hasNewNotifications && (
+        <NotificationsIndicator
+          labels={labels.notificationIndicator}
+          onClick={newNotificationsButtonAction}
+        />
+      )}
+      {hasNotifications ? (
+        <div className={classes.panel}>
+          {notifications.length > 0 && renderNotifications(notifications)}
         </div>
-        <Panel {...panelProps}>{n}</Panel>
-      </div>
-    );
-  }
-}
+      ) : (
+        <EmptyStatePanel
+          id={setId(id, "empty-state")}
+          title={emptyStatePanelTitle}
+          message={emptyStatePanelMessage}
+          icon={emptyStatePanelIcon}
+          className={classes.emptyState}
+        />
+      )}
+      {footer && (
+        <HvActionBar
+          id={setId(id, "action-bar")}
+          classes={{
+            root: classes.actionBarRoot,
+          }}
+          className={classes.actionBar}
+        >
+          {footer}
+        </HvActionBar>
+      )}
+    </HvPanel>
+  );
+};
 
 HvNotificationPanel.propTypes = {
   /**
-   * 'true' if panel is open or 'false' if the panel is not open
+   * Id to be applied to the root node of the panel.
    */
-  open: PropTypes.bool,
+  id: PropTypes.string,
+  /**
+   * Class names to be applied to the root element.
+   */
+  className: PropTypes.string,
+  /**
+   * 'true' if panel is open or 'false' if the panel is not open
+   *
+   * @deprecated This logic should be external, i.e. using the HvAppSwitcherPanel inside a Drawer component.
+   */
+  open: deprecatedPropType(PropTypes.bool),
   /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    /**
+     * styles object applied to the root
+     */
     root: PropTypes.string,
-    iconWrapper: PropTypes.string,
+    /**
+     * styles object applied to the root when closed
+     */
+    closed: PropTypes.string,
+    /**
+     * styles object applied to the root when open
+     */
+    open: PropTypes.string,
     /**
      * styles object applied to the panel
      */
-    panel: PropTypes.any,
+    panel: PropTypes.string,
     /**
-     * styles object applied to badgeContainer
+     * styles object applied to the action bar
      */
-    badgeBorder: PropTypes.any,
+    actionBar: PropTypes.string,
+    /**
+     * styles object applied to the root of the action bar
+     */
+    actionBarRoot: PropTypes.string,
+    /**
+     * styles object applied to the new notification indicator
+     */
+    notificationsIndicator: PropTypes.string,
+    /**
+     * styles object applied to the empty state panel
+     */
+    emptyState: PropTypes.string,
   }).isRequired,
   /**
-   * renderable element that opens the notification panel
-   */
-  icon: PropTypes.element.isRequired,
-  /**
-   * Object that holds header properties
-   */
-  header: PropTypes.shape({
-    /**
-     * The title of the header
-     */
-    headerTitle: PropTypes.string.isRequired,
-    /**
-     * The icon that denoted close functionality
-     */
-    headerCloseImg: PropTypes.element.isRequired,
-  }).isRequired,
-  /**
-   * Array of notification object to be rendered inside the panel
+   * The properties of the notifications to be rendered in the Panel.
    */
   notifications: PropTypes.arrayOf(
     PropTypes.shape({
-      /**
-       * Id of notification
-       */
       id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      isRead: PropTypes.bool.isRequired,
+      date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]).isRequired,
+      icon: PropTypes.element,
+      onClick: PropTypes.func,
+      onKeyPress: PropTypes.func,
+      actions: PropTypes.shape({
+        label: PropTypes.bool,
+        action: PropTypes.string,
+        callback: PropTypes.func,
+        dropDownMenuProps: PropTypes.instanceOf(Object),
+      }),
     })
-  ).isRequired,
+  ),
   /**
-   * renderable footer element
+   * Whether to render the new notifications indicator
    */
-  footer: PropTypes.element.isRequired,
-};
-
-HvNotificationPanel.defaultProps = {
-  open: false,
+  hasNewNotifications: PropTypes.bool,
+  /**
+   * Action buttons to render in footer
+   */
+  footer: PropTypes.node,
+  /**
+   * Id of the notification actioned via click
+   */
+  notificationId: PropTypes.string,
+  /**
+   * Actions attached to each notification
+   */
+  actions: PropTypes.shape({
+    /**
+     * Properties to be assigned to the actions dropdown buttons
+     */
+    values: PropTypes.string,
+    /**
+     * Additional props to be spread if necessary
+     */
+    dropDownMenuProps: PropTypes.shape({}),
+  }),
+  /**
+   * Title of the EmptyStatePanel
+   */
+  emptyStatePanelTitle: PropTypes.string,
+  /**
+   * Message of the EmptyStatePanel
+   */
+  emptyStatePanelMessage: PropTypes.string,
+  /**
+   * Empty Panel custom Icon
+   */
+  emptyStatePanelIcon: PropTypes.node,
+  /**
+   * Labels to apply to the Panel
+   */
+  labels: PropTypes.shape({
+    /**
+     * Labels to apply to the groups separating newer and older notifications
+     */
+    notificationGroupHeader: {
+      olderNotifications: PropTypes.string,
+      newNotifications: PropTypes.string,
+    },
+    /**
+     * Labels to apply to the element of the New Notifications Indicator
+     */
+    notificationIndicator: {
+      label: PropTypes.string,
+      buttonLabel: PropTypes.string,
+    },
+  }),
+  /**
+   * Function to be supplied to the notification update button
+   */
+  newNotificationsButtonAction: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvNotificationPanel" })(HvNotificationPanel);

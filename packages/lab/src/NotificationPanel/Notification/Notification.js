@@ -1,15 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import moment from "moment/moment";
+import { HvTypography } from "@hv/uikit-react-core";
 
-export default class Notification extends Component {
-  // TODO: figure out rules for how time should be presented
-  getTime = () => {
-    const {
-      notification: { date, isRead },
-    } = this.props;
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
+const Notification = ({
+  classes,
+  className,
+  title,
+  isRead,
+  icon,
+  date,
+  onClick,
+  onKeyPress,
+  rightContainer,
+  isHighlighted,
+}) => {
+  const getTime = () => {
     if (!isRead) {
       return moment(date).fromNow();
     }
@@ -24,51 +34,142 @@ export default class Notification extends Component {
     return d.format(format);
   };
 
-  render() {
-    const {
-      classes,
-      notification: { title, isRead, icon },
-    } = this.props;
-
-    return (
-      <div className={clsx(classes.root, { [classes.read]: isRead })}>
+  return (
+    <div
+      onClick={onClick}
+      onKeyPress={onKeyPress}
+      className={clsx(className, classes.root, {
+        [classes.notificationWrapperDropdown]: isHighlighted,
+        [classes.read]: isRead,
+      })}
+      role="button"
+      tabIndex={0}
+    >
+      <div
+        className={clsx(classes.notificationWrapper, {
+          [classes.notificationDropdownOpen]: isHighlighted,
+        })}
+      >
         <div className={classes.iconContainer}>{icon}</div>
         <div>
-          <div className={clsx(classes.title, { [classes.read]: isRead })}>{title}</div>
-          <div className={clsx(classes.timeContainer, { [classes.read]: isRead })}>
-            <div className={clsx(classes.bullet, { [classes.hide]: isRead })} />
-            <div className={classes.time}>{this.getTime()}</div>
+          <div className={classes.messageContainer}>
+            <HvTypography variant={isRead ? "normalText" : "highlightText"}>{title}</HvTypography>
+          </div>
+
+          <div className={classes.timeContainer}>
+            <div
+              className={clsx(classes.bullet, {
+                [classes.hide]: isRead,
+              })}
+            />
+            <div className={classes.time}>{getTime()}</div>
           </div>
         </div>
       </div>
-    );
-  }
-}
+      <div className={classes.notificationActionWrapper}>{rightContainer}</div>
+    </div>
+  );
+};
 
 Notification.propTypes = {
   /**
    * A Jss Object used to override or extend the component styles.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
-  /**
-   * Notification object to be rendered
-   */
-  notification: PropTypes.shape({
+  classes: PropTypes.shape({
     /**
-     * Title of the notification
+     * Styles applied to the component root of the accordion.
      */
-    title: PropTypes.string.isRequired,
+    root: PropTypes.string,
     /**
-     * 'true' if the notification has been read or 'false' if it has not been read
+     * Styles applied to the notification wrapper.
      */
-    isRead: PropTypes.bool.isRequired,
+    notificationWrapper: PropTypes.string,
+
     /**
-     * date the notification was created
+     * Styles applied to the notification wrapper when the actions dropdown is open.
      */
-    date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]).isRequired,
+    notificationWrapperDropdown: PropTypes.string,
+
     /**
-     * renderable icon that denotes the status of the notification
+     * Styles applied to the notification icon container.
      */
-    icon: PropTypes.element,
+    iconContainer: PropTypes.string,
+
+    /**
+     * Styles applied to the notification message container.
+     */
+    messageContainer: PropTypes.string,
+
+    /**
+     * Styles applied to the notification time container.
+     */
+    timeContainer: PropTypes.string,
+
+    /**
+     * Styles applied to the notification bullet.
+     */
+    bullet: PropTypes.string,
+
+    /**
+     * Styles applied to the content when it is hidden.
+     */
+    hide: PropTypes.string,
+
+    /**
+     * Styles applied to the notification time indicator.
+     */
+    time: PropTypes.string,
+    /**
+     * Styles applied to the notification is read.
+     */
+    read: PropTypes.string,
+    /**
+     * Styles applied when the notification dorpdown is open.
+     */
+    notificationDropdownOpen: PropTypes.string,
+
+    /**
+     * Styles applied to the notification message actions dropdown.
+     */
+    notificationActionWrapper: PropTypes.string,
   }).isRequired,
+
+  /**
+   * Class names to be applied to the accordion.
+   */
+  className: PropTypes.string,
+  /**
+   * Title of the notification
+   */
+  title: PropTypes.string.isRequired,
+  /**
+   * 'true' if the notification has been read or 'false' if it has not been read
+   */
+  isRead: PropTypes.bool.isRequired,
+  /**
+   * date the notification was created
+   */
+  date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]).isRequired,
+  /**
+   * renderable icon that denotes the status of the notification
+   */
+  icon: PropTypes.element,
+  /**
+   *Click action applied to the notification
+   */
+  onClick: PropTypes.func,
+  /**
+   * On Key Press action applied to the notification
+   */
+  onKeyPress: PropTypes.func,
+  /**
+   * Actions to be executed by the notification, available in the dropdown menu
+   */
+  rightContainer: PropTypes.node,
+  /**
+   * Denotes index of clicked notification
+   */
+  isHighlighted: PropTypes.string,
 };
+
+export default withStyles(styles, { name: "HvNotificationPanelNotification" })(Notification);
