@@ -30,7 +30,7 @@ export interface HvUserPreferenceActionProps
   /**
    * Callback called when clicked.
    */
-  onClick: (event: Event, payload: Payload) => void;
+  onClick?: (event: Event, payload: Payload) => void;
 }
 
 export default function HvUserPreferencesAction(
