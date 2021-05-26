@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.15.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.14.1...@hv/uikit-react-lab@3.15.0) (2021-05-26)
+
+
+### Features
+
+* **notification-panel:** update panel component. HVUIKIT-5753 ([c9e6200](https://github.com/lumada-design/hv-uikit-react/commit/c9e62002ff80effa6fc01e6291b20d99ff8d04e2))
+
+
+
+
+
 ## [3.14.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.14.0...@hv/uikit-react-lab@3.14.1) (2021-05-25)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
