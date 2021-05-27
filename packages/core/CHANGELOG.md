@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.30.2...@hv/uikit-react-core@3.31.0) (2021-05-27)
+
+
+### Features
+
+* **userpreference:** typescript props should be optional. HVUIKIT-5786 ([bd52014](https://github.com/lumada-design/hv-uikit-react/commit/bd52014134d19df6b28cc36ac0cdac05698e0d3f))
+
+
+
+
+
 ## [3.30.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.30.1...@hv/uikit-react-core@3.30.2) (2021-05-26)
 
 **Note:** Version bump only for package @hv/uikit-react-core
