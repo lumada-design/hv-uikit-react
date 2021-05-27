@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { deprecatedPropType, withStyles } from "@material-ui/core";
@@ -232,10 +232,17 @@ const NavigationAnchors = ({
       selectedIndexRef.current = index;
     }
   };
+
+  const navOptions = useMemo(() => {
+    return options.map((option) => {
+      return navigationOption(option.label);
+    });
+  }, [options]);
+
   return (
     <HvListContainer interactive className={clsx(className, classes.root)} {...other}>
       {options.map((option, index) => {
-        const NavOpt = navigationOption(option.label);
+        const NavOpt = navOptions[index];
 
         return (
           <HvListItem
