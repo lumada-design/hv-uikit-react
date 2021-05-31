@@ -10,8 +10,9 @@
 
 name: v2.x Nightly
 on:
-  schedule:
-    - cron: "0 3 * * *" # daily at 03:00
+  # disable v2.x cron since no daily changes come in
+  #  schedule:
+  #    - cron: "0 3 * * *" # daily at 03:00
   repository_dispatch:
     types: [v2x]
   workflow_dispatch:
