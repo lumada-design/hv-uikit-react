@@ -1,10 +1,12 @@
+import { hexToRgbA } from "@hv/uikit-react-core";
+
 const styles = (theme) => ({
   root: {
     verticalAlign: "inherit",
     textAlign: "left",
-    padding: theme.hvSpacing(0, "xs"),
+    padding: theme.hvSpacing(0, "xs", 0, "32px"),
 
-    borderBottom: `1px solid ${theme.palette.atmo4}`,
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
   },
 
   head: {
@@ -12,17 +14,23 @@ const styles = (theme) => ({
     paddingTop: 8,
     verticalAlign: "top",
 
-    backgroundColor: theme.palette.atmo1,
-    borderTop: `1px solid ${theme.palette.atmo4}`,
-    borderBottom: `1px solid ${theme.palette.atmo4}`,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     ...theme.hv.typography.highlightText,
   },
   body: {
     height: 32,
     backgroundColor: "inherit",
     ...theme.hv.typography.normalText,
+
+    "&$sorted": {
+      backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4),
+    },
   },
   footer: {},
+
+  sorted: {},
 
   alignLeft: {
     textAlign: "left",
@@ -44,6 +52,15 @@ const styles = (theme) => ({
   paddingCheckbox: {
     padding: 0,
     width: 32,
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+  },
+  paddingActions: {
+    padding: 0,
+    width: 32,
+    borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+  },
+  paddingExpand: {
+    paddingLeft: 0,
   },
 
   stickyColumn: {

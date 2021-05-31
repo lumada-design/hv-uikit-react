@@ -21,20 +21,20 @@ describe("useHvTableSticky", () => {
     expect(hooks.visibleColumns.push).toHaveBeenCalledWith(stickyHooks.visibleColumnsHook);
     expect(hooks.useInstance.push).toHaveBeenCalledWith(stickyHooks.useInstanceHook);
 
-    // <table>
+    // props target: <table>
     expect(hooks.getTableProps.push).toHaveBeenCalledWith(stickyHooks.getTablePropsHook);
-    // <table><thead>
+    // props target: <table><thead>
     expect(hooks.getTableHeadProps).toBeDefined();
     expect(hooks.getTableHeadProps[0]).toBe(stickyHooks.getTableHeadPropsHook);
-    // <table><thead><tr>
+    // props target: <table><thead><tr>
     expect(hooks.getHeaderGroupProps.push).toHaveBeenCalledWith(
       stickyHooks.getHeaderGroupPropsHook
     );
-    // <table><thead><tr><th>
+    // props target: <table><thead><tr><th>
     expect(hooks.getHeaderProps.push).toHaveBeenCalledWith(stickyHooks.getHeaderPropsHook);
-    // <table><tbody><tr>
+    // props target: <table><tbody><tr>
     expect(hooks.getRowProps.push).toHaveBeenCalledWith(stickyHooks.getRowPropsHook);
-    // <table><tbody><tr><td>
+    // props target: <table><tbody><tr><td>
     expect(hooks.getCellProps.push).toHaveBeenCalledWith(stickyHooks.getCellPropsHook);
   });
 
@@ -249,7 +249,7 @@ describe("useHvTableSticky", () => {
         { Header: "Priority", isVisible: true, totalWidth: 160 },
       ];
 
-      const instance = { headers };
+      const instance = { headers, getHooks: () => ({}) };
 
       renderHook(() => stickyHooks.useInstanceHook(instance));
 
@@ -274,7 +274,7 @@ describe("useHvTableSticky", () => {
         { Header: "Priority", isVisible: true, totalWidth: 160 },
       ];
 
-      const instance = { headers };
+      const instance = { headers, getHooks: () => ({}) };
       renderHook(() => stickyHooks.useInstanceHook(instance));
 
       // headers should be augmented with totalRight
@@ -283,6 +283,14 @@ describe("useHvTableSticky", () => {
       expect(headers[3].totalRight).toEqual(160 + 150);
       expect(headers[5].totalRight).toEqual(160);
       expect(headers[6].totalRight).toEqual(0);
+    });
+
+    it("without any header, should not crash", () => {
+      const headers = [];
+
+      const instance = { headers, getHooks: () => ({}) };
+
+      renderHook(() => stickyHooks.useInstanceHook(instance));
     });
   });
 

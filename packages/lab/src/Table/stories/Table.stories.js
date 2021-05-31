@@ -4,20 +4,19 @@ import range from "lodash/range";
 import Chart from "react-google-charts";
 
 import { makeStyles } from "@material-ui/core";
-import { useTable } from "react-table";
 
 import { Ban } from "@hv/uikit-react-icons";
 import { HvCheckBox, HvDropDownMenu, HvEmptyState, HvTypography } from "@hv/uikit-react-core";
 
 import {
   HvTable,
-  HvTableBody,
-  HvTableCell,
   HvTableContainer,
+  HvTableRow,
   HvTableHead,
   HvTableHeader,
-  HvTablePagination,
-  HvTableRow,
+  HvTableBody,
+  HvTableCell,
+  useHvTable,
 } from "../..";
 
 import KitchenSink from "./KitchenSink";
@@ -32,12 +31,12 @@ export default {
   },
   component: HvTable,
   subcomponents: {
+    HvTableContainer,
+    HvTableRow,
+    HvTableHead,
+    HvTableHeader,
     HvTableBody,
     HvTableCell,
-    HvTableContainer,
-    HvTableHead,
-    HvTablePagination,
-    HvTableRow,
   },
 };
 
@@ -162,17 +161,17 @@ export const SelectableSimple = () => {
       <HvTable>
         <HvTableHead>
           <HvTableRow>
-            <HvTableCell padding="checkbox" />
+            <HvTableCell variant="checkbox" />
             {columns.map((el) => (
               <HvTableHeader key={el.Header}>{el.Header}</HvTableHeader>
             ))}
-            <HvTableCell padding="checkbox" />
+            <HvTableCell variant="actions" />
           </HvTableRow>
         </HvTableHead>
         <HvTableBody>
           {data.map((el, idx) => (
             <HvTableRow key={el.id} hover selected={checkedIdx === idx}>
-              <HvTableCell padding="checkbox">
+              <HvTableCell variant="checkbox">
                 <HvCheckBox checked={checkedIdx === idx} onClick={toggleChecked(idx)} />
               </HvTableCell>
               <HvTableCell>{el.name}</HvTableCell>
@@ -182,7 +181,7 @@ export const SelectableSimple = () => {
               <HvTableCell>{el.riskScore}</HvTableCell>
               <HvTableCell>{el.severity}</HvTableCell>
               <HvTableCell>{el.priority}</HvTableCell>
-              <HvTableCell padding="checkbox">
+              <HvTableCell variant="actions">
                 <HvDropDownMenu keepOpened={false} placement="left" dataList={actions} />
               </HvTableCell>
             </HvTableRow>
@@ -542,7 +541,7 @@ export const TableWithIncludedChart = () => {
     },
   ];
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
     columns,
     data,
   });
@@ -553,9 +552,7 @@ export const TableWithIncludedChart = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader rtCol={col} {...col.getHeaderProps()}>
-                {col.render("Header")}
-              </HvTableHeader>
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -564,11 +561,9 @@ export const TableWithIncludedChart = () => {
             prepareRow(row);
 
             return (
-              <HvTableRow hover {...row.getRowProps()}>
+              <HvTableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </HvTableCell>
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                 ))}
               </HvTableRow>
             );
@@ -582,6 +577,10 @@ export const TableWithIncludedChart = () => {
 TableWithIncludedChart.parameters = {
   docs: {
     description: { story: "A table example with a chart included for each row." },
+  },
+  eyes: {
+    // waiting until external charts are rendered (issue #1792)
+    waitBeforeScreenshot: "[id|=reactgooglegraph]",
   },
 };
 
@@ -633,7 +632,7 @@ export const WithSecondaryActions = () => {
       },
       {
         accessor: "blank",
-        align: "right",
+        variant: "actions",
         Cell: (props) => {
           const { row } = props;
           return (
@@ -812,7 +811,7 @@ export const WithSecondaryActions = () => {
     },
   ];
 
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useTable({
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
     columns,
     data,
   });
@@ -823,9 +822,7 @@ export const WithSecondaryActions = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader rtCol={col} {...col.getHeaderProps()}>
-                {col.render("Header")}
-              </HvTableHeader>
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -833,11 +830,9 @@ export const WithSecondaryActions = () => {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <HvTableRow hover {...row.getRowProps()}>
+              <HvTableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </HvTableCell>
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                 ))}
               </HvTableRow>
             );

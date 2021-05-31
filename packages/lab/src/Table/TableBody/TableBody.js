@@ -9,8 +9,7 @@ import TableSectionContext from "../TableSectionContext";
 import styles from "./styles";
 
 const tableSectionContext = {
-  variant: "body",
-  padding: "default",
+  type: "body",
 };
 
 const defaultComponent = "tbody";

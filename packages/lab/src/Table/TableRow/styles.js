@@ -15,6 +15,10 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.atmo1,
   },
   hover: {
+    transition: theme.transitions.create("background-color", {
+      duration: theme.transitions.duration.shortest,
+    }),
+
     "&:hover": {
       backgroundColor: theme.palette.atmo3,
     },

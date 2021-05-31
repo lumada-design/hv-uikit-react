@@ -49,13 +49,14 @@ const calculateHeaderWidthsToTheRight = (headers, right = 0) => {
 
   for (let i = headers.length - 1; i !== -1; i -= 1) {
     const header = headers[i];
-    const { headers: subHeaders } = header;
 
     header.totalRight = right;
 
-    if (subHeaders && subHeaders.length) {
-      calculateHeaderWidthsToTheRight(subHeaders, right);
-    }
+    // TODO: Add support for sub-headers
+    // const { headers: subHeaders } = header;
+    // if (subHeaders && subHeaders.length) {
+    //   calculateHeaderWidthsToTheRight(subHeaders, right);
+    // }
     if (header.isVisible) {
       right += header.totalWidth;
     }
@@ -133,7 +134,7 @@ const getCellProps = (header, isHeaderCell) => {
  * Everything will work fine when Chrome gets its bugs fixed (as they seem to be in Google Canary).
  */
 
-// <table>
+// props target: <table>
 export const getTablePropsHook = (props, { instance }) => {
   const nextProps = {
     stickyHeader: instance.stickyHeader,
@@ -143,7 +144,7 @@ export const getTablePropsHook = (props, { instance }) => {
   return [props, nextProps];
 };
 
-// <table><thead>
+// props target: <table><thead>
 export const getTableHeadPropsHook = (props, { instance }) => {
   const nextProps = {};
   if (instance.stickyHeader) {
@@ -158,7 +159,7 @@ export const getTableHeadPropsHook = (props, { instance }) => {
   return [props, nextProps];
 };
 
-// <table><thead><tr>
+// props target: <table><thead><tr>
 export const getHeaderGroupPropsHook = (props, { instance }) => {
   const nextProps = instance.hasStickyColumns ? getRowProps(instance) : {};
 
@@ -170,7 +171,7 @@ export const getHeaderGroupPropsHook = (props, { instance }) => {
   return [props, nextProps];
 };
 
-// <table><thead><tr><th>
+// props target: <table><thead><tr><th>
 export const getHeaderPropsHook = (props, { instance, column }) => {
   const nextProps = instance.hasStickyColumns ? getCellProps(column, true) : {};
 
@@ -182,14 +183,14 @@ export const getHeaderPropsHook = (props, { instance, column }) => {
   return [props, nextProps];
 };
 
-// <table><tbody><tr>
+// props target: <table><tbody><tr>
 export const getRowPropsHook = (props, { instance }) => {
   const nextProps = instance.hasStickyColumns ? getRowProps(instance) : {};
 
   return [props, nextProps];
 };
 
-// <table><tbody><tr><td>
+// props target: <table><tbody><tr><td>
 export const getCellPropsHook = (props, { instance, cell }) => {
   const nextProps = instance.hasStickyColumns ? getCellProps(cell.column, false) : {};
 
@@ -200,17 +201,17 @@ const useSticky = (hooks) => {
   hooks.visibleColumns.push(visibleColumnsHook);
   hooks.useInstance.push(useInstanceHook);
 
-  // <table>
+  // props target: <table>
   hooks.getTableProps.push(getTablePropsHook);
-  // <table><thead>
+  // props target: <table><thead>
   hooks.getTableHeadProps = [getTableHeadPropsHook];
-  // <table><thead><tr>
+  // props target: <table><thead><tr>
   hooks.getHeaderGroupProps.push(getHeaderGroupPropsHook);
-  // <table><thead><tr><th>
+  // props target: <table><thead><tr><th>
   hooks.getHeaderProps.push(getHeaderPropsHook);
-  // <table><tbody><tr>
+  // props target: <table><tbody><tr>
   hooks.getRowProps.push(getRowPropsHook);
-  // <table><tbody><tr><td>
+  // props target: <table><tbody><tr><td>
   hooks.getCellProps.push(getCellPropsHook);
 };
 

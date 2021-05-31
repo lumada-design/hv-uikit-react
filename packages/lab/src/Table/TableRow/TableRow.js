@@ -15,19 +15,18 @@ const defaultComponent = "tr";
  */
 const HvTableRow = forwardRef(function HvTableRow(props, ref) {
   const { classes, className, component, hover = false, selected = false, ...others } = props;
-  const tableSectionContext = useContext(TableSectionContext);
 
   const tableContext = useContext(TableContext);
+  const tableSectionContext = useContext(TableSectionContext);
+
+  const type = tableSectionContext?.type || "body";
 
   const Component = component || tableContext?.components?.Tr || defaultComponent;
 
   return (
     <Component
       ref={ref}
-      className={clsx(className, classes.root, {
-        [classes.head]: tableSectionContext?.variant === "head",
-        [classes.body]: tableSectionContext?.variant === "body",
-        [classes.footer]: tableSectionContext?.variant === "footer",
+      className={clsx(className, classes.root, classes[type], {
         [classes.hover]: hover,
         [classes.selected]: selected,
       })}

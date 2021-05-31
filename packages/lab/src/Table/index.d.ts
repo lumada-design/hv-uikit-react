@@ -4,9 +4,6 @@ export * from "./Table";
 export { default as HvTableBody } from "./TableBody";
 export * from "./TableBody";
 
-export { default as HvTableBulkActions } from "./TableBulkActions";
-export * from "./TableBulkActions";
-
 export { default as HvTableCell } from "./TableCell";
 export * from "./TableCell";
 
@@ -18,9 +15,6 @@ export * from "./TableHead";
 
 export { default as HvTableHeader } from "./TableHeader";
 export * from "./TableHeader";
-
-export { default as HvTablePagination } from "./TablePagination";
-export * from "./TablePagination";
 
 export { default as HvTableRow } from "./TableRow";
 export * from "./TableRow";
