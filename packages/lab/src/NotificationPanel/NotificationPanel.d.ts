@@ -36,7 +36,7 @@ interface values {
 }
 
 interface actions {
-  values: values;
+  values: values[];
   dropDownMenuProps?: HvDropDownMenuProps;
 }
 
