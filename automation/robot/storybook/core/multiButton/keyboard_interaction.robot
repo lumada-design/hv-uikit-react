@@ -13,6 +13,7 @@ TAB disable buttons
 
 TAB on enforced selection
     [Documentation]    use case: Buttons can be focused
+    [Setup]    Open multiButton sample    enforced-selection
     Press Keys                   css:body    TAB
     Element Should Be Focused    ${button}(1)
     Press Keys                   NONE    TAB    TAB    TAB    TAB

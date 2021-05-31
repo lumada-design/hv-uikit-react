@@ -22,12 +22,6 @@ tooltip is triggered and when mouse hover item
     Mouse Over                  ${tooltipPlaceholder}
     Wait Until Page Contains    Tooltips can showcase
 
-tooltip is triggered when item is focused
-    [Tags]    keyboard
-    Page Should Not Contain     Tooltips can showcase
-    Press Keys                  ${placeholder}          TAB
-    Wait Until Page Contains    Tooltips can showcase   5s
-
 tooltip is dismissed when mouse leaves touch target
     [Tags]    keyboard
     Press Keys                          ${placeholder}    TAB
@@ -41,6 +35,12 @@ tooltip is dismissed when is removed the item focus
     Wait Until Page Contains            Tooltips can showcase
     Press Keys                          ${tooltipPlaceholder}    TAB
     Wait Until Page Does Not Contain    Tooltips can showcase
+
+tooltip is triggered when item is focused
+    [Tags]    keyboard
+    Page Should Not Contain     Tooltips can showcase
+    Press Keys                  ${placeholder}          TAB
+    Wait Until Page Contains    Tooltips can showcase   5s
 
 
 *** Variables ***
