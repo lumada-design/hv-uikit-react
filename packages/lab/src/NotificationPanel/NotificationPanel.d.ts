@@ -29,14 +29,14 @@ interface Header {
   headerCloseImg: React.ElementType<React.HTMLAttributes<HTMLElement>>;
 }
 
-interface values {
+interface Value {
   label: string;
   action: string;
   callback?: (event: Event) => void;
 }
 
 interface actions {
-  values: values[];
+  values: Value[];
   dropDownMenuProps?: HvDropDownMenuProps;
 }
 
