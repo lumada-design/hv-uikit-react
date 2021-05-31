@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { withTooltip } from "@hv/uikit-react-core";
 
 const hideTooltip = (evt) => {
@@ -15,7 +14,7 @@ const wrapperTooltip = (Component, label) => {
 };
 
 const NavigationOption = (label) => {
-  const NavOpt = useMemo(() => wrapperTooltip(label, label), [label]);
+  const NavOpt = wrapperTooltip(label, label);
   return NavOpt;
 };
 
