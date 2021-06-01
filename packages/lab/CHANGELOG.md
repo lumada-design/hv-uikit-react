@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.15.1...@hv/uikit-react-lab@3.15.2) (2021-06-01)
+
+
+### Bug Fixes
+
+* **navigationanchors:** component does not render if value changes. HVUIKIT-5787 ([7bb2b19](https://github.com/lumada-design/hv-uikit-react/commit/7bb2b1925d2dab55f39e4c6622e137af1de5a12a))
+* **notificationpanel:** updated the values object type in the actions interface on the notificationpanel typescript file ([0638921](https://github.com/lumada-design/hv-uikit-react/commit/06389214990c24cc7034d4fa5275af4484e8252b))
+
+
+
+
+
 ## [3.15.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.15.0...@hv/uikit-react-lab@3.15.1) (2021-05-27)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
