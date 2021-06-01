@@ -17,6 +17,6 @@
     "eyes-storybook:verbose": "APPLITOOLS_SHOW_LOGS=true eyes-storybook"
   },
   "dependencies": {
-    "@applitools/eyes-storybook": "3.20.2"
+    "@applitools/eyes-storybook": "3.22.2"
   }
 }
