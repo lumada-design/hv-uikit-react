@@ -18,6 +18,10 @@ export type HvNotificationClassKey =
 export interface HvNotificationProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvNotificationClassKey> {
   /**
+   * Notification id
+   */
+  notificationId: string;
+  /**
    * Title of the notification
    */
   title: string;

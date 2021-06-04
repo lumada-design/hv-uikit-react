@@ -10,6 +10,7 @@ import styles from "./styles";
 const Notification = ({
   classes,
   className,
+  notificationId,
   title,
   isRead,
   icon,
@@ -18,8 +19,11 @@ const Notification = ({
   onKeyPress,
   rightContainer,
   isHighlighted,
+  locale,
 }) => {
   const getTime = () => {
+    moment.locale(locale);
+
     if (!isRead) {
       return moment(date).fromNow();
     }
@@ -36,8 +40,8 @@ const Notification = ({
 
   return (
     <div
-      onClick={onClick}
-      onKeyPress={onKeyPress}
+      onClick={(event) => onClick(event, notificationId)}
+      onKeyPress={(event) => onKeyPress(event, notificationId)}
       className={clsx(className, classes.root, {
         [classes.notificationWrapperDropdown]: isHighlighted,
         [classes.read]: isRead,
@@ -139,6 +143,10 @@ Notification.propTypes = {
    */
   className: PropTypes.string,
   /**
+   * Notification id
+   */
+  notificationId: PropTypes.string,
+  /**
    * Title of the notification
    */
   title: PropTypes.string.isRequired,
@@ -155,7 +163,7 @@ Notification.propTypes = {
    */
   icon: PropTypes.element,
   /**
-   *Click action applied to the notification
+   * Click action applied to the notification
    */
   onClick: PropTypes.func,
   /**
@@ -170,6 +178,10 @@ Notification.propTypes = {
    * Denotes index of clicked notification
    */
   isHighlighted: PropTypes.string,
+  /**
+   * The locale to be used on the date
+   */
+  locale: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvNotificationPanelNotification" })(Notification);
