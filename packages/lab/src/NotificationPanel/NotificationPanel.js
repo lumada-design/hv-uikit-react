@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { deprecatedPropType, withStyles } from "@material-ui/core";
-import { HvPanel, HvActionBar, HvDropDownMenu, setId, useLabels } from "@hv/uikit-react-core";
+import {
+  HvPanel,
+  HvActionBar,
+  HvDropDownMenu,
+  setId,
+  useLabels,
+  useLocale,
+} from "@hv/uikit-react-core";
 
 import styles from "./styles";
 
@@ -38,8 +45,13 @@ const HvNotificationPanel = ({
   emptyStatePanelIcon,
   labels: labelsProp,
   newNotificationsButtonAction,
+  locale: localeProp,
   ...others
 }) => {
+  const localeFromProvider = useLocale();
+
+  const locale = localeProp || localeFromProvider;
+
   const [highlighted, setHighlighted] = useState(undefined);
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -75,6 +87,7 @@ const HvNotificationPanel = ({
       return (
         <Notification
           key={notification.id}
+          id={notification.id}
           title={notification.title}
           isRead={notification.isRead}
           icon={notification.icon}
@@ -85,6 +98,7 @@ const HvNotificationPanel = ({
             <NotificationActions notificationId={notification.id} actions={notification.actions} />
           }
           isHighlighted={notificationIsHighlighted}
+          locale={locale}
         />
       );
     });
@@ -270,6 +284,10 @@ HvNotificationPanel.propTypes = {
    * Function to be supplied to the notification update button
    */
   newNotificationsButtonAction: PropTypes.func,
+  /**
+   * The locale to be used on the notification date, if undefined it will use the one from the HvProvider
+   */
+  locale: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvNotificationPanel" })(HvNotificationPanel);
