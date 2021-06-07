@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.15.2...@hv/uikit-react-lab@3.16.0) (2021-06-07)
+
+
+### Features
+
+* **notificationpanel:** localize dates and return notification id on click event ([3d8dbed](https://github.com/lumada-design/hv-uikit-react/commit/3d8dbed008f902663cc7802cb70b8ead429d9f2b))
+
+
+
+
+
 ## [3.15.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.15.1...@hv/uikit-react-lab@3.15.2) (2021-06-01)
 
 
