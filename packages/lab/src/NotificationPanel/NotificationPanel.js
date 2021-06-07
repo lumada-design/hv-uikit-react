@@ -87,7 +87,7 @@ const HvNotificationPanel = ({
       return (
         <Notification
           key={notification.id}
-          id={notification.id}
+          notificationId={notification.id}
           title={notification.title}
           isRead={notification.isRead}
           icon={notification.icon}

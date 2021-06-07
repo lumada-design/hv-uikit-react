@@ -32,7 +32,7 @@ interface Header {
 interface Value {
   label: string;
   action: string;
-  callback?: (event: Event) => void;
+  callback?: (notificationId: string) => void;
 }
 
 interface actions {
@@ -46,8 +46,8 @@ interface notification {
   isRead?: boolean;
   date: string | number | Record<string, unknown>;
   icon?: React.ReactNode;
-  onClick?: (event: Event) => void;
-  onKeyPress?: (event: Event) => void;
+  onClick?: (event: Event, notificationId: string) => void;
+  onKeyPress?: (event: Event, notificationId: string) => void;
   actions?: actions;
 }
 
@@ -107,6 +107,10 @@ export interface HvNotificationPanelProps
    * Function to be supplied to the notification update button
    */
   newNotificationsButtonAction?: (event: Event) => void;
+  /**
+   * The locale to be used on the notification date, if undefined it will use the one from the HvProvider
+   */
+  locale?: string;
 }
 
 export default function HvNotificationPanel(props: HvNotificationPanelProps): JSX.Element | null;
