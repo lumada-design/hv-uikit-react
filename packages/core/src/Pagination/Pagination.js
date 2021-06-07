@@ -70,7 +70,21 @@ const Pagination = ({
     if (page >= pages && pages > 0) {
       changePage(page);
     }
-  }, [page, pages, pageSize, changePage]);
+  }, [changePage, page, pages]);
+
+  useEffect(() => {
+    if (pageInput !== page + 1) {
+      handleInputChange(null, page + 1);
+    }
+
+    // we only want to "fix" the input's display value when `page` property changed
+    // (either externaly or when internally commited - onBlur or Enter),
+    // not while editing the input.
+    // breaking a rule of hooks isn't ideal and it's just a hack for fixing
+    // a bug preventing properly controling of the `page` property.
+    // fixing it some other way would potentialy introduce a breaking change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handleInputChange, page]);
 
   const renderPageJump = () => (
     <div className={classes.pageJump}>
