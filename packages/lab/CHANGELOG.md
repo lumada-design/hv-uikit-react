@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.16.0...@hv/uikit-react-lab@3.16.1) (2021-06-08)
+
+
+### Bug Fixes
+
+* **notificationpanel:** Fixed some issue found on the notifications panel [#2458](https://github.com/lumada-design/hv-uikit-react/issues/2458) ([51fc566](https://github.com/lumada-design/hv-uikit-react/commit/51fc56694576dd65a78167b07efa857ef5bb5ee1))
+
+
+
+
+
 # [3.16.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.15.2...@hv/uikit-react-lab@3.16.0) (2021-06-07)
 
 
