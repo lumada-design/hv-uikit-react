@@ -1,19 +1,11 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import range from "lodash/range";
 
-import { useTable, useRowSelect, usePagination, useSortBy, useExpanded } from "react-table";
+import { useTable } from "react-table";
 
-import {
-  Delete,
-  Duplicate,
-  Lock,
-  Unlock,
-  Preview,
-  DropDownXS,
-  DropRightXS,
-} from "@hv/uikit-react-icons";
+import { Delete, Duplicate, Lock, Unlock, Preview, Ban } from "@hv/uikit-react-icons";
 
-import { HvBulkActions, HvCheckBox, HvToggleButton, HvButton } from "@hv/uikit-react-core";
+import { HvBulkActions, HvEmptyState, HvPagination, HvToggleButton } from "@hv/uikit-react-core";
 
 import {
   HvTable,
@@ -22,17 +14,21 @@ import {
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
-  HvTablePagination,
   HvTableRow,
-  HvTableBulkActions,
+  useHvTable,
+  useHvPagination,
+  useHvSortBy,
+  useHvRowSelection,
+  useHvBulkActions,
   useHvTableSticky,
+  useHvRowExpand,
 } from "../..";
 
 import { makeData, getColumns, useServerData } from "./utils";
 import LoadingContainer from "./LoadingContainer";
 
 export const Main = () => {
-  const columns = getColumns();
+  const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);
 
   const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useTable({
@@ -46,7 +42,7 @@ export const Main = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader rtCol={col} {...col.getHeaderProps()}>
+              <HvTableHeader {...col.getHeaderProps({ align: col.align })}>
                 {col.render("Header")}
               </HvTableHeader>
             ))}
@@ -59,7 +55,7 @@ export const Main = () => {
             return (
               <HvTableRow hover {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
+                  <HvTableCell {...cell.getCellProps({ align: cell.column.align })}>
                     {cell.render("Cell")}
                   </HvTableCell>
                 ))}
@@ -72,11 +68,45 @@ export const Main = () => {
   );
 };
 
-export const Pagination = () => {
-  const data = useMemo(() => makeData(32), []);
-  const columns = useMemo(() => getColumns(), []);
+export const UseHvTable = () => {
+  const data = useMemo(() => makeData(6), []);
 
-  const instance = useTable({ columns, data }, usePagination);
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
+    data,
+  });
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+
+            return (
+              <HvTableRow {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+export const Pagination = () => {
+  const columns = useMemo(() => getColumns(), []);
+  const data = useMemo(() => makeData(32), []);
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -84,7 +114,8 @@ export const Pagination = () => {
     headers,
     page,
     state: { pageSize },
-  } = instance;
+    getHvPaginationProps,
+  } = useHvTable({ columns, data }, useHvPagination);
 
   const EmptyRow = () => (
     <HvTableRow>
@@ -99,9 +130,7 @@ export const Pagination = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
-                  {col.render("Header")}
-                </HvTableHeader>
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -112,12 +141,11 @@ export const Pagination = () => {
               if (!row) return <EmptyRow key={i} />;
 
               prepareRow(row);
+
               return (
-                <HvTableRow hover key={i} {...row.getRowProps()}>
+                <HvTableRow {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
-                      {cell.render("Cell")}
-                    </HvTableCell>
+                    <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                   ))}
                 </HvTableRow>
               );
@@ -125,27 +153,19 @@ export const Pagination = () => {
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      <HvTablePagination rtInstance={instance} />
+      {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
     </>
   );
 };
 
 export const Selection = () => {
+  const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);
-  const columns = useMemo(
-    () => [
-      {
-        id: "selection",
-        padding: "checkbox",
-        Cell: ({ row }) => <HvCheckBox {...row.getToggleRowSelectedProps()} />,
-      },
-      ...getColumns(),
-    ],
-    []
-  );
 
-  const instance = useTable({ columns, data }, useRowSelect);
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = instance;
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable(
+    { columns, data },
+    useHvRowSelection
+  );
 
   return (
     <HvTableContainer>
@@ -153,21 +173,18 @@ export const Selection = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
-                {col.render("Header")}
-              </HvTableHeader>
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
+
             return (
-              <HvTableRow hover key={row.Header} selected={row.isSelected} {...row.getRowProps()}>
+              <HvTableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </HvTableCell>
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                 ))}
               </HvTableRow>
             );
@@ -179,24 +196,9 @@ export const Selection = () => {
 };
 
 export const BulkActions = () => {
+  const columns = useMemo(() => getColumns(), []);
   const [data, setData] = useState(makeData(64));
-  const columns = useMemo(
-    () => [
-      {
-        id: "selection",
-        padding: "checkbox",
-        Cell: ({ row }) => <HvCheckBox {...row.getToggleRowSelectedProps()} />,
-      },
-      ...getColumns(),
-    ],
-    []
-  );
 
-  const instance = useTable(
-    { columns, data, autoResetSelectedRows: false },
-    usePagination,
-    useRowSelect
-  );
   const {
     getTableProps,
     getTableBodyProps,
@@ -204,38 +206,61 @@ export const BulkActions = () => {
     headers,
     page,
     selectedFlatRows,
-  } = instance;
+    toggleAllRowsSelected,
+    getHvBulkActionsProps,
+    getHvPaginationProps,
+  } = useHvTable(
+    { columns, data, autoResetSelectedRows: false },
+    useHvPagination,
+    useHvRowSelection,
+    useHvBulkActions
+  );
 
-  const handleAction = (evt, id, action) => {
-    const selected = selectedFlatRows.map((el) => el.original);
-    console.log(id, action);
+  const handleAction = useCallback(
+    (_evt, id, action) => {
+      const selected = selectedFlatRows.map((el) => el.original);
+      console.log(id, action);
 
-    switch (action.id) {
-      case "duplicate": {
-        const newEls = selected.map((el) => ({
-          ...el,
-          id: `${el.id}-copy`,
-          name: `${el.name}-copy`,
-        }));
-        setData([...data, ...newEls]);
-        break;
+      switch (action.id) {
+        case "duplicate": {
+          const newEls = selected.map((el) => ({
+            ...el,
+            id: `${el.id}-copy`,
+            name: `${el.name}-copy`,
+          }));
+          setData([...data, ...newEls]);
+          break;
+        }
+        case "delete": {
+          const selectedIds = selected.map((el) => el.id);
+          toggleAllRowsSelected(false);
+          setData(data.filter((el) => !selectedIds.includes(el.id)));
+          break;
+        }
+        case "lock":
+        case "preview":
+        default:
+          break;
       }
-      case "delete": {
-        const selectedIds = selected.map((el) => el.id);
-        setData(data.filter((el) => !selectedIds.includes(el.id)));
-        break;
-      }
-      case "lock":
-      case "preview":
-      default:
-        break;
-    }
-  };
+    },
+    [data, selectedFlatRows, toggleAllRowsSelected]
+  );
+
+  const EmptyStateRow = useCallback(
+    () => (
+      <HvTableRow>
+        <HvTableCell colSpan="100%" style={{ height: 96 }}>
+          <HvEmptyState message="No data to display." icon={<Ban role="presentation" />} />
+        </HvTableCell>
+      </HvTableRow>
+    ),
+    []
+  );
 
   return (
     <>
-      <HvTableBulkActions
-        rtInstance={instance}
+      <HvBulkActions
+        {...getHvBulkActionsProps()}
         maxVisibleActions={1}
         actionsCallback={handleAction}
         actions={[
@@ -250,29 +275,30 @@ export const BulkActions = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
-                  {col.render("Header")}
-                </HvTableHeader>
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
           <HvTableBody {...getTableBodyProps()}>
-            {page.map((row) => {
-              prepareRow(row);
-              return (
-                <HvTableRow hover key={row.Header} selected={row.isSelected} {...row.getRowProps()}>
-                  {row.cells.map((cell) => (
-                    <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
-                      {cell.render("Cell")}
-                    </HvTableCell>
-                  ))}
-                </HvTableRow>
-              );
-            })}
+            {page?.length ? (
+              page.map((row) => {
+                prepareRow(row);
+
+                return (
+                  <HvTableRow {...row.getRowProps()}>
+                    {row.cells.map((cell) => (
+                      <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
+                    ))}
+                  </HvTableRow>
+                );
+              })
+            ) : (
+              <EmptyStateRow />
+            )}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      <HvTablePagination rtInstance={instance} />
+      {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
     </>
   );
 };
@@ -296,18 +322,12 @@ export const Sortable = () => {
     return cols;
   }, [sortSeverity]);
 
-  const data = useMemo(
-    () =>
-      makeData(5).map((entry) => ({
-        ...entry,
-        // make some entries empty
-        status: entry.status === "Closed" ? null : entry.status,
-      })),
-    []
-  );
+  const data = useMemo(() => makeData(5), []);
 
-  const instance = useTable({ columns, data }, useSortBy);
-  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = instance;
+  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useHvTable(
+    { columns, data },
+    useHvSortBy
+  );
 
   return (
     <HvTableContainer>
@@ -315,25 +335,18 @@ export const Sortable = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader
-                key={col.Header}
-                rtCol={col}
-                {...col.getHeaderProps(col.getSortByToggleProps())}
-              >
-                {col.render("Header")}
-              </HvTableHeader>
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
+
             return (
-              <HvTableRow hover {...row.getRowProps()}>
+              <HvTableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
-                    {cell.value ? cell.render("Cell") : "—"}
-                  </HvTableCell>
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                 ))}
               </HvTableRow>
             );
@@ -345,30 +358,20 @@ export const Sortable = () => {
 };
 
 export const Expandable = () => {
+  const columns = useMemo(() => getColumns(), []);
   const data = useMemo(() => makeData(6), []);
-  const columns = useMemo(() => {
-    const initialColumns = getColumns().map((col) => ({ ...col, isSortable: true }));
-    const expandableHeaderColumn = {
-      ...initialColumns[0],
-      padding: "none",
-      Cell: ({ row, cell }) => (
-        <HvButton
-          category="ghost"
-          startIcon={row.isExpanded ? <DropDownXS /> : <DropRightXS />}
-          aria-label={`${row.isExpanded ? "Collapse" : "Expand"} row`}
-          aria-expanded={row.isExpanded}
-          {...row.getToggleRowExpandedProps()}
-        >
-          {cell.value}
-        </HvButton>
-      ),
-    };
+  const i18n = useMemo(
+    () => ({
+      expandRowButtonAriaLabel: "Click to expand this row",
+      collapseRowButtonAriaLabel: "Click to collapse this row",
+    }),
+    []
+  );
 
-    return [expandableHeaderColumn, ...initialColumns.slice(1)];
-  }, []);
-
-  const instance = useTable({ columns, data }, useExpanded);
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = instance;
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable(
+    { columns, data, labels: i18n },
+    useHvRowExpand
+  );
 
   return (
     <HvTableContainer>
@@ -376,9 +379,7 @@ export const Expandable = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
-                {col.render("Header")}
-              </HvTableHeader>
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -389,11 +390,9 @@ export const Expandable = () => {
             // expandable row
             return (
               <React.Fragment key={row.id}>
-                <HvTableRow hover {...row.getRowProps()}>
+                <HvTableRow {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
-                      {cell.render("Cell")}
-                    </HvTableCell>
+                    <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                   ))}
                 </HvTableRow>
                 <HvTableRow style={{ display: row.isExpanded ? null : "none" }}>
@@ -441,7 +440,7 @@ export const StickyHeadersAndColumns = () => {
     prepareRow,
     headerGroups,
     rows,
-  } = useTable(
+  } = useHvTable(
     {
       columns,
       data,
@@ -457,9 +456,7 @@ export const StickyHeadersAndColumns = () => {
           {headerGroups.map((headerGroup) => (
             <HvTableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((col) => (
-                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
-                  {col.render("Header")}
-                </HvTableHeader>
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
               ))}
             </HvTableRow>
           ))}
@@ -469,11 +466,9 @@ export const StickyHeadersAndColumns = () => {
             prepareRow(row);
 
             return (
-              <HvTableRow hover key={row.id} {...row.getRowProps()}>
+              <HvTableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </HvTableCell>
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                 ))}
               </HvTableRow>
             );
@@ -492,8 +487,13 @@ export const EmptyCells = () => {
     status: entry.status === "Closed" ? null : entry.status,
   }));
 
-  const instance = useTable({ columns, data });
-  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = instance;
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable({
+    columns,
+    data,
+    defaultColumn: {
+      Cell: ({ value }) => value ?? "—",
+    },
+  });
 
   return (
     <HvTableContainer>
@@ -501,9 +501,7 @@ export const EmptyCells = () => {
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (
-              <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
-                {col.render("Header")}
-              </HvTableHeader>
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
             ))}
           </HvTableRow>
         </HvTableHead>
@@ -512,13 +510,9 @@ export const EmptyCells = () => {
             prepareRow(row);
 
             return (
-              <HvTableRow hover key={row.id}>
+              <HvTableRow {...row.getRowProps()}>
                 {row.cells.map((cell) => {
-                  return (
-                    <HvTableCell key={cell.column.Header} rtCol={cell.column}>
-                      {cell.value ? cell.render("Cell") : "—"}
-                    </HvTableCell>
-                  );
+                  return <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>;
                 })}
               </HvTableRow>
             );
@@ -536,17 +530,10 @@ export const BulkActionsManual = () => {
 
   const columns = useMemo(
     () => [
-      {
-        id: "selection",
-        padding: "checkbox",
-        Cell: ({ row }) => (
-          <HvCheckBox disabled={row.original.disabled} {...row.getToggleRowSelectedProps()} />
-        ),
-      },
       ...getColumns(),
       {
         id: "actions",
-        padding: "checkbox",
+        variant: "actions",
         Cell: ({ row }) => {
           const { id, disabled } = row.original;
 
@@ -567,11 +554,6 @@ export const BulkActionsManual = () => {
     [data]
   );
 
-  const instance = useTable(
-    { columns, data, autoResetSelectedRows: false },
-    usePagination,
-    useRowSelect
-  );
   const {
     getTableProps,
     getTableBodyProps,
@@ -580,7 +562,12 @@ export const BulkActionsManual = () => {
     page,
     rows,
     selectedFlatRows,
-  } = instance;
+    getHvPaginationProps,
+  } = useHvTable(
+    { columns, data, autoResetSelectedRows: false },
+    useHvPagination,
+    useHvRowSelection
+  );
 
   const enabledRows = useMemo(() => rows.filter((el) => !el.original.disabled), [rows]);
   const enabledPage = useMemo(() => page.filter((el) => !el.original.disabled), [page]);
@@ -608,7 +595,6 @@ export const BulkActionsManual = () => {
   return (
     <>
       <HvBulkActions
-        style={{ marginBottom: 10 }}
         numTotal={rows.length}
         numSelected={selectedFlatRows.length}
         showSelectAllPages
@@ -620,9 +606,7 @@ export const BulkActionsManual = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader key={col.Header} rtCol={col} {...col.getHeaderProps()}>
-                  {col.render("Header")}
-                </HvTableHeader>
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -630,11 +614,9 @@ export const BulkActionsManual = () => {
             {page.map((row) => {
               prepareRow(row);
               return (
-                <HvTableRow hover key={row.Header} selected={row.isSelected} {...row.getRowProps()}>
+                <HvTableRow {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
-                      {cell.render("Cell")}
-                    </HvTableCell>
+                    <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                   ))}
                 </HvTableRow>
               );
@@ -642,7 +624,7 @@ export const BulkActionsManual = () => {
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      <HvTablePagination rtInstance={instance} />
+      {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
     </>
   );
 };
@@ -659,20 +641,6 @@ BulkActionsManual.parameters = {
 export const ServerSide = () => {
   const [data, columns, fetchData, loading, pageCount] = useServerData();
 
-  const instance = useTable(
-    {
-      columns,
-      data,
-      manualPagination: true,
-      manualSortBy: true,
-      autoResetPage: false,
-      autoResetSortBy: false,
-      pageCount,
-    },
-    useSortBy,
-    usePagination,
-    useRowSelect
-  );
   const {
     getTableProps,
     getTableBodyProps,
@@ -681,7 +649,21 @@ export const ServerSide = () => {
     page,
     gotoPage,
     state: { pageSize, pageIndex, sortBy },
-  } = instance;
+    getHvPaginationProps,
+  } = useHvTable(
+    {
+      columns,
+      data,
+      manualPagination: true,
+      manualSortBy: true,
+      autoResetPage: false,
+      autoResetSortBy: false,
+      disableMultiSort: true,
+      pageCount,
+    },
+    useHvSortBy,
+    useHvPagination
+  );
 
   useEffect(() => {
     gotoPage(0);
@@ -704,13 +686,7 @@ export const ServerSide = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableCell
-                  key={col.Header}
-                  rtCol={col}
-                  {...col.getHeaderProps(col.getSortByToggleProps())}
-                >
-                  {col.render("Header")}
-                </HvTableCell>
+                <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
               ))}
             </HvTableRow>
           </HvTableHead>
@@ -721,12 +697,11 @@ export const ServerSide = () => {
               if (!row) return <EmptyRow key={i} />;
 
               prepareRow(row);
+
               return (
-                <HvTableRow hover {...row.getRowProps()}>
+                <HvTableRow {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <HvTableCell rtCol={cell.column} {...cell.getCellProps()}>
-                      {cell.render("Cell")}
-                    </HvTableCell>
+                    <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                   ))}
                 </HvTableRow>
               );
@@ -734,7 +709,7 @@ export const ServerSide = () => {
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      <HvTablePagination rtInstance={instance} />
+      <HvPagination {...getHvPaginationProps()} />
     </LoadingContainer>
   );
 };

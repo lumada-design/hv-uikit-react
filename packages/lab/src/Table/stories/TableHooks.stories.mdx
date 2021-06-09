@@ -25,42 +25,90 @@ Together is easier to build powerful experiences and extend the features offered
   <Story inline story={stories.Main} />
 </Preview>
 
+## The `useHv*` hooks
+
+For further ease, you can use the provided `useHvTable` hook that wraps the [React Table's `useTable` hook](https://react-table.tanstack.com/docs/api/useTable) and
+provides the following functionality:
+
+- Ensures the use of the needed core and layout plugins when using any of the UI Kit custom hooks (e.g. adding `useHvPagination` implies the instalation of React Table's `usePagination` hook).
+- Automatically installs the `useHvTableStyles` hook.
+- Generates default column metadata from the data fields, if the `columns` option is missing.
+- Defaults to an empty array if no `data` is provided.
+
+The following plugin hooks are available:
+
+- `useHvTableStyles`: ensures the correct styling of the table by injecting the column's `padding` and `align` options into the `HvTableHeader` and `HvTableCell` components (via `getHeaderProps` and `getCellProps`, respectively).
+- `useHvPagination`: eases the wiring of the `HvPagination` component when using pagination. See <a href="#pagination" className="sbdocs-a">Pagination</a>.
+- `useHvRowSelection`: creates and manages the UI for selecting rows. See <a href="#selection" className="sbdocs-a">Selection</a>.
+- `useHvBulkActions`: eases the wiring of the `HvBulkActions` component. See <a href="#bulk-selection-and-actions" className="sbdocs-a">Bulk selection and actions</a>.
+- `useHvSortBy`: manages the table's header sorting functionality. See <a href="#sorting" className="sbdocs-a">Sorting</a>.
+- `useHvRowExpand`: manages the row expanding functionality. See <a href="#row-expanding" className="sbdocs-a">Row expanding</a>.
+- `useHvTableSticky`: allows defining sticky headers and columns. See <a href="#sticky-headers-and-columns" className="sbdocs-a">Sticky Headers And Columns</a>.
+
 ## Pagination
 
 Data can be paginated. Optionally, empty lines can be added to the last page to avoid changes in height.
 
 Check [React Table's `usePagination` documentation](https://react-table.tanstack.com/docs/api/usePagination) for configuration details.
 
+The `useHvPagination` hook makes the `getHvPaginationProps` function available on the table instance returned that can be used to setup a `HvPagination` component.
+
+_Note: This hook depends on the `usePagination` hook from `react-table`, but when using `useHvTable` only `useHvPagination` needs to be installed._
+
 <Preview withToolbar>
   <Story inline story={stories.Pagination} />
 </Preview>
 
-## Selection and bulk actions
+## Selection
 
-Rows can be selected individually or in bulk.
+Rows can be selected individually.
 
 Check [React Table's `useRowSelect` documentation](https://react-table.tanstack.com/docs/api/useRowSelect) for configuration details.
+
+The `useHvRowSelecion` hook injects a new column with a `HvCheckBox` to select each row. It also manages the `HvTableRow`'s `isSelected` property via the `getRowProps`.
+
+_Note: This hook depends on the `useRowSelect` hook from `react-table`, but when using `useHvTable` only `useHvRowSelecion` needs to be installed._
+
+<Preview withToolbar>
+  <Story inline story={stories.Selection} />
+</Preview>
+
+## Bulk selection and actions
+
+Rows can also be selected in bulk and actions can be performed on the current selection.
+
+The `useHvBulkActions` hook makes the `getHvBulkActionsProps` function available on the table instance returned that can be used to setup a `HvBulkActions` component.
+
+_Note: This hook depends on the `useRowSelect` hook from `react-table`, but when using `useHvTable` only `useHvBulkActions` needs to be installed._
 
 <Preview withToolbar>
   <Story inline story={stories.BulkActions} />
 </Preview>
 
-## Sortable
+## Sorting
 
 Tables can have the capability of sorting the data by column.
 Clicking a sortable column header toggles between ascending or descending. Multiple sorting criteria is enabled through holding shift while clicking.
 
 Check [React Table's `useSortBy` documentation](https://react-table.tanstack.com/docs/api/useSortBy) for configuration details.
 
+The `useHvSortBy` hook ensures that the proper properties are injected in the `HvTableHeader` (including the on click sorting trigger) and `HvTableCell` (for styling).
+
+_Note: This hook depends on the `useSortBy` hook from `react-table`, but when using `useHvTable` only `useHvSortBy` needs to be installed._
+
 <Preview withToolbar>
   <Story inline story={stories.Sortable} />
 </Preview>
 
-## Expandable
+## Row expanding
 
 Tables rows can have the capability of being expanded to show more details.
 
 Check [React Table's `useExpanded` documentation](https://react-table.tanstack.com/docs/api/useExpanded) for configuration details.
+
+The `useHvRowExpand` hook injects a `HvButton` into the first data column that toggles each row expansion. If the column has a custom renderer, an extra column is created instead.
+
+_Note: This hook depends on the `useExpanded` hook from `react-table`, but when using `useHvTable` only `useHvRowExpand` needs to be installed._
 
 <Preview withToolbar>
   <Story inline story={stories.Expandable} />
@@ -72,22 +120,16 @@ The table headers can be fixed at the top, allowing it to keep always visible wh
 
 It is also possible to stick columns, either on the left or on the right, making them always visible when scrolling horizontally.
 
-This is implemented the `useHvTableSticky` custom React Table hook provided by the UI Kit library.
+This is implemented using the `useHvTableSticky` custom React Table hook provided by the UI Kit library.
 
 When using sticky columns, all column widths will be fixed and a non-table-element layout is applied.
 
-<Usage>{'import { useHvTableSticky } from "@hv/uikit-react-core";'}</Usage>
-
 ### Configuration
-
-#### Table Options
 
 The following options are supported via the main options object passed to `useTable(options)`:
 
 - `stickyHeader: Bool`
   - Enables the sticky header
-
-#### Column Options
 
 The following options are supported on any `Column` object passed to the `columns` options in `useTable()`:
 

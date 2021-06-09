@@ -62,7 +62,7 @@ const simpleSortBy = (a, b, sortBy) => {
 
 export const useServerData = () => {
   const serverData = useMemo(() => makeData(999), []);
-  const columns = useMemo(() => getColumns().map((col) => ({ ...col, isSortable: true })), []);
+  const columns = useMemo(() => getColumns(), []);
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);

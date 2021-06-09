@@ -23,16 +23,15 @@ export interface HvTableCellProps
    */
   align?: "center" | "inherit" | "justify" | "left" | "right";
   /**
-   * Sets the padding applied to the cell.
-   * By default, the Table parent component set the value, which is the default padding specified by Design System.
+   * Sets the cell's variant.
    */
-  padding?: "checkbox" | "default" | "none";
+  variant?: "checkbox" | "expand" | "actions" | "default" | "none";
 
   /**
    * Specify the cell type.
    * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
    */
-  variant?: "body" | "footer" | "head";
+  type?: "body" | "footer" | "head";
 
   /**
    * The cell is part of a sticky column.

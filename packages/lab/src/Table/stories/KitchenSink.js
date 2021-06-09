@@ -1,8 +1,7 @@
 import React, { useState, useMemo } from "react";
 
 import { Ban, Duplicate, Delete, Lock, Preview } from "@hv/uikit-react-icons";
-import { HvCheckBox, HvEmptyState } from "@hv/uikit-react-core";
-import { useTable, useRowSelect, usePagination, useSortBy } from "react-table";
+import { HvEmptyState, HvBulkActions, HvPagination } from "@hv/uikit-react-core";
 
 import {
   HvTable,
@@ -10,28 +9,20 @@ import {
   HvTableCell,
   HvTableContainer,
   HvTableHead,
-  HvTablePagination,
   HvTableRow,
-  HvTableBulkActions,
   HvTableHeader,
+  useHvTable,
+  useHvPagination,
+  useHvSortBy,
+  useHvRowSelection,
+  useHvBulkActions,
 } from "../..";
 
 import { makeData, getColumns } from "./utils";
 
 const KitchenSink = () => {
+  const columns = useMemo(() => getColumns(), []);
   const [data, setData] = useState(makeData(64));
-  const columns = useMemo(
-    () => [
-      {
-        id: "selection",
-        padding: "checkbox",
-        /* eslint-disable-next-line react/prop-types */
-        Cell: ({ row }) => <HvCheckBox {...row.getToggleRowSelectedProps()} />,
-      },
-      ...getColumns().map((col) => ({ ...col, isSortable: true })),
-    ],
-    []
-  );
 
   const EmptyRow = () => (
     <HvTableRow>
@@ -41,11 +32,12 @@ const KitchenSink = () => {
     </HvTableRow>
   );
 
-  const instance = useTable(
+  const instance = useHvTable(
     { columns, data, autoResetSelectedRows: false },
-    useSortBy,
-    usePagination,
-    useRowSelect
+    useHvSortBy,
+    useHvPagination,
+    useHvRowSelection,
+    useHvBulkActions
   );
   const {
     getTableProps,
@@ -54,6 +46,8 @@ const KitchenSink = () => {
     headers,
     page,
     selectedFlatRows,
+    getHvBulkActionsProps,
+    getHvPaginationProps,
   } = instance;
 
   const handleAction = (evt, id, action) => {
@@ -86,17 +80,16 @@ const KitchenSink = () => {
   const rowRenderer = (pages) => {
     return pages.map((row, index) => {
       prepareRow(row);
+
       return (
         <HvTableRow
-          hover
           key={row.Header}
-          selected={row.isSelected}
           {...row.getRowProps({
             "aria-rowindex": index,
           })}
         >
           {row.cells.map((cell) => (
-            <HvTableCell key={cell.Header} rtCol={cell.column} {...cell.getCellProps()}>
+            <HvTableCell key={cell.Header} {...cell.getCellProps()}>
               {cell.render("Cell")}
             </HvTableCell>
           ))}
@@ -106,8 +99,8 @@ const KitchenSink = () => {
   };
   return (
     <>
-      <HvTableBulkActions
-        rtInstance={instance}
+      <HvBulkActions
+        {...getHvBulkActionsProps()}
         maxVisibleActions={1}
         actionsCallback={handleAction}
         actions={[
@@ -128,11 +121,7 @@ const KitchenSink = () => {
           <HvTableHead>
             <HvTableRow>
               {headers.map((col) => (
-                <HvTableHeader
-                  key={col.Header}
-                  rtCol={col}
-                  {...col.getHeaderProps(col.getSortByToggleProps())}
-                >
+                <HvTableHeader key={col.Header} {...col.getHeaderProps()}>
                   {col.render("Header")}
                 </HvTableHeader>
               ))}
@@ -143,7 +132,8 @@ const KitchenSink = () => {
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      <HvTablePagination rtInstance={instance} />
+
+      <HvPagination {...getHvPaginationProps()} />
     </>
   );
 };

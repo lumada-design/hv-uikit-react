@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useHvRowSelection CellWithCheckBox snapshot 1`] = `
+<div>
+  <div
+    class="HvCheckBox-root HvFormElement-root"
+  >
+    <span
+      aria-disabled="false"
+      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-2 Mui-checked"
+    >
+      <span
+        class="MuiIconButton-label"
+      >
+        <input
+          aria-label="selectRowCheckBoxAriaLabel"
+          checked=""
+          class="PrivateSwitchBase-input-4"
+          data-indeterminate="false"
+          type="checkbox"
+          value="on"
+        />
+        <div
+          class="HvIconBase-root HvIconBase-s"
+          name="CheckboxCheck"
+        >
+          <svg
+            focusable="false"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="color0"
+              d="M0 0h16v16H0z"
+              fill="#414141"
+            />
+            <path
+              class="color0"
+              d="M16 16H0V0h16zM1 15h14V1H1z"
+              fill="#414141"
+            />
+            <path
+              class="color1"
+              d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+              fill="#FBFCFC"
+            />
+          </svg>
+        </div>
+      </span>
+    </span>
+  </div>
+</div>
+`;

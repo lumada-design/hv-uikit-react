@@ -39,10 +39,10 @@ cells contain the correct a11y role when a paginated table is rendered
     Page Should Contain Element          css:[role=cell]    limit=40
 
 aria-sort property is correctly applied when a column is sorted
-    Element Attribute Value Should Be    ${header}(8)    aria-sort    false
+    Element Attribute Value Should Be    ${header}(8)    aria-sort    none
     Click Element                        ${header}(8)
     Element Attribute Value Should Be    ${header}(8)    aria-sort    ascending
     Click Element                        ${header}(8)
     Element Attribute Value Should Be    ${header}(8)    aria-sort    descending
     Click Element                        ${header}(2)
-    Element Attribute Value Should Be    ${header}(8)    aria-sort    false
+    Element Attribute Value Should Be    ${header}(8)    aria-sort    none

@@ -4,7 +4,7 @@ const styles = (theme) => ({
   root: {
     verticalAlign: "inherit",
     textAlign: "left",
-    padding: theme.hvSpacing(0, "xs"),
+    padding: theme.hvSpacing(0, "xs", 0, "32px"),
 
     borderBottom: `1px solid ${theme.palette.atmo4}`,
   },
@@ -23,8 +23,14 @@ const styles = (theme) => ({
       verticalAlign: "initial",
       paddingTop: 0,
       paddingLeft: 0,
+      cursor: "pointer",
+
       "&:hover": {
         backgroundColor: theme.palette.atmo3,
+
+        "& $sortIcon": {
+          visibility: "visible",
+        },
       },
     },
   },
@@ -33,7 +39,7 @@ const styles = (theme) => ({
     backgroundColor: "inherit",
     ...theme.hv.typography.normalText,
 
-    "&$sortable:not($paddingNone)": {
+    "&$sortable:not($variantNone)": {
       paddingLeft: 32,
     },
     "&$sorted": {
@@ -56,12 +62,19 @@ const styles = (theme) => ({
     textAlign: "justify",
   },
 
-  paddingNone: {
+  variantNone: {
     padding: 0,
   },
-  paddingCheckbox: {
+  variantCheckbox: {
     padding: 0,
     width: 32,
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+  },
+  variantExpand: {},
+  variantActions: {
+    padding: 0,
+    width: 32,
+    borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
 
   stickyColumn: {
@@ -78,9 +91,14 @@ const styles = (theme) => ({
   },
 
   sortable: {},
-  sorted: {},
+  sorted: {
+    "& $sortIcon": {
+      visibility: "visible",
+    },
+  },
   sortIcon: {
     display: "inline-flex",
+    visibility: "hidden",
   },
 });
 

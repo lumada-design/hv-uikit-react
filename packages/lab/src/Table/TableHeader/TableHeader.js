@@ -26,42 +26,31 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
 
     scope: scopeProp,
 
-    align: alignProp,
-    padding: paddingProp,
+    align = "inherit",
+    variant = "default",
 
-    variant: variantProp,
+    type: typeProp,
 
     stickyColumn = false,
     stickyColumnMostLeft = false,
     stickyColumnLeastRight = false,
 
-    sortDirection: sortDirectionProp,
-    sorted: sortedProp,
-    sortable: sortableProp,
-
-    rtCol = {},
+    sortDirection = "none",
+    sorted,
+    sortable,
 
     ...others
   } = props;
 
   const tableContext = useContext(TableContext);
   const tableSectionContext = useContext(TableSectionContext);
-  const { align: rtAlign, padding: rtPadding, canSort, isSorted, isSortedDesc } = rtCol;
 
-  const variant = variantProp ?? tableSectionContext?.variant;
-  const isHeadCell = variant === "head";
+  const type = typeProp || tableSectionContext?.type || "body";
+  const isHeadCell = type === "head";
 
   const scope = scopeProp ?? isHeadCell ? "col" : "row";
 
-  const align = alignProp ?? rtAlign ?? "inherit";
-  const padding = paddingProp ?? rtPadding ?? tableSectionContext?.padding ?? "default";
-
-  const sorted = sortedProp ?? isSorted;
-  const sortable = sortableProp ?? canSort;
-  const sortDirection =
-    sortDirectionProp ?? (isSorted && (isSortedDesc ? "descending" : "ascending"));
-
-  const Sort = useMemo(() => getSortIcon(sortDirection), [sortDirection]);
+  const Sort = useMemo(() => getSortIcon(sorted && sortDirection), [sorted, sortDirection]);
 
   const Component = component || tableContext?.components?.Th || defaultComponent;
 
@@ -74,9 +63,9 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
       role={role}
       scope={scope}
       style={style}
-      className={clsx(className, classes.root, classes[variant], {
+      className={clsx(className, classes.root, classes[type], {
         [classes[`align${capitalize(align)}`]]: align !== "inherit",
-        [classes[`padding${capitalize(padding)}`]]: padding !== "default",
+        [classes[`variant${capitalize(variant)}`]]: variant !== "default",
 
         [classes.stickyColumn]: stickyColumn,
         [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
@@ -85,7 +74,7 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
         [classes.sortable]: sortable,
         [classes.sorted]: sorted,
       })}
-      aria-sort={sortDirection}
+      aria-sort={sortable ? sortDirection : undefined}
       {...others}
     >
       {isHeadCell && sortable && <Sort className={classes.sortIcon} />}
@@ -125,16 +114,15 @@ HvTableHeader.propTypes = {
    */
   align: PropTypes.oneOf(["center", "inherit", "justify", "left", "right"]),
   /**
-   * Sets the padding applied to the cell.
-   * By default, the Table parent component set the value, which is the default padding specified by Design System.
+   * Sets the cell's variant.
    */
-  padding: PropTypes.oneOf(["checkbox", "default", "none"]),
+  variant: PropTypes.oneOf(["checkbox", "expand", "actions", "default", "none"]),
 
   /**
    * Specify the cell type.
    * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
    */
-  variant: PropTypes.oneOf(["body", "footer", "head"]),
+  type: PropTypes.oneOf(["body", "footer", "head"]),
 
   /**
    * The cell is part of a sticky column.
@@ -161,12 +149,6 @@ HvTableHeader.propTypes = {
    * Set sort direction icon and aria-sort.
    */
   sortDirection: PropTypes.oneOf(["ascending", "descending", false]),
-
-  /**
-   * React Table column instance. Also contains other props passed as `data`
-   * https://react-table.tanstack.com/docs/api/useTable#column-options
-   */
-  rtCol: PropTypes.instanceOf(Object),
 
   /**
    * A Jss Object used to override or extend the styles applied.

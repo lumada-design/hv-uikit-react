@@ -23,28 +23,24 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
     style,
     classes,
 
-    align: alignProp,
-    padding: paddingProp,
+    align = "inherit",
+    variant = "default",
 
-    variant: variantProp,
+    type: typeProp,
 
     stickyColumn = false,
     stickyColumnMostLeft = false,
     stickyColumnLeastRight = false,
 
-    rtCol = {},
+    sorted = false,
 
     ...others
   } = props;
 
   const tableContext = useContext(TableContext);
   const tableSectionContext = useContext(TableSectionContext);
-  const { align: rtAlign, padding: rtPadding } = rtCol;
 
-  const variant = variantProp ?? tableSectionContext?.variant;
-
-  const align = alignProp ?? rtAlign ?? "inherit";
-  const padding = paddingProp ?? rtPadding ?? tableSectionContext?.padding ?? "default";
+  const type = typeProp || tableSectionContext?.type || "body";
 
   const Component = component || tableContext?.components?.Td || defaultComponent;
 
@@ -53,9 +49,11 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
       ref={ref}
       role={Component === defaultComponent ? null : "cell"}
       style={style}
-      className={clsx(className, classes.root, classes[variant], {
+      className={clsx(className, classes.root, classes[type], {
         [classes[`align${capitalize(align)}`]]: align !== "inherit",
-        [classes[`padding${capitalize(padding)}`]]: padding !== "default",
+        [classes[`variant${capitalize(variant)}`]]: variant !== "default",
+
+        [classes.sorted]: sorted,
 
         [classes.stickyColumn]: stickyColumn,
         [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
@@ -94,16 +92,20 @@ HvTableCell.propTypes = {
    */
   align: PropTypes.oneOf(["center", "inherit", "justify", "left", "right"]),
   /**
-   * Sets the padding applied to the cell.
-   * By default, the Table parent component set the value, which is the default padding specified by Design System.
+   * Sets the cell's variant.
    */
-  padding: PropTypes.oneOf(["checkbox", "default", "none"]),
+  variant: PropTypes.oneOf(["checkbox", "expand", "actions", "default", "none"]),
 
   /**
-   * Specify the cell type.
+   * Specify the cell's type.
    * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
    */
-  variant: PropTypes.oneOf(["body", "footer", "head"]),
+  type: PropTypes.oneOf(["body", "footer", "head"]),
+
+  /**
+   * Whether or not the cell is part of a sorted column.
+   */
+  sorted: PropTypes.bool,
 
   /**
    * The cell is part of a sticky column.
@@ -117,12 +119,6 @@ HvTableCell.propTypes = {
    * The cell is part of the first sticky to the right column.
    */
   stickyColumnLeastRight: PropTypes.bool,
-
-  /**
-   * React Table column instance. Also contains other props passed as `data`
-   * https://react-table.tanstack.com/docs/api/useTable#column-options
-   */
-  rtCol: PropTypes.instanceOf(Object),
 
   /**
    * A Jss Object used to override or extend the styles applied.
@@ -158,6 +154,11 @@ HvTableCell.propTypes = {
      * Styles applied to the cell when it's part of the first right sticky column.
      */
     stickyColumnLeastRight: PropTypes.string,
+
+    /**
+     * Styles applied to the cell when it's part of a sorted column.
+     */
+    sorted: PropTypes.string,
   }).isRequired,
 };
 

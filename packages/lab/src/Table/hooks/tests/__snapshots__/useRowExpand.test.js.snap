@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useHvRowExpand CellWithExpandButton snapshots as an additional system column 1`] = `
+<div>
+  <button
+    aria-expanded="false"
+    aria-label="expandRowButtonAriaLabel"
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      <div
+        class="HvIconBase-root HvIconBase-xs"
+        name="DropRightXS"
+      >
+        <svg
+          focusable="false"
+          height="12"
+          viewBox="0 0 12 12"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+            fill="#414141"
+          />
+        </svg>
+      </div>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`useHvRowExpand CellWithExpandButton snapshots as an augmented cell 1`] = `
+<div>
+  <button
+    aria-expanded="false"
+    aria-label="expandRowButtonAriaLabel"
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      <div
+        class="HvIconBase-root HvIconBase-xs"
+        name="DropRightXS"
+      >
+        <svg
+          focusable="false"
+          height="12"
+          viewBox="0 0 12 12"
+          width="12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="color0"
+            d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+            fill="#414141"
+          />
+        </svg>
+      </div>
+    </span>
+  </button>
+  <span
+    class="HvTypography-root HvTypography-highlightText"
+  >
+    Text
+  </span>
+</div>
+`;
