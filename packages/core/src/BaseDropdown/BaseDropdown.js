@@ -86,7 +86,7 @@ const HvBaseDropdown = ({
   const handleToggle = useCallback(
     (event) => {
       if (event && !isKeypress(event, Tab)) {
-        event.stopPropagation();
+        // event.stopPropagation();
         event.preventDefault();
       }
 
