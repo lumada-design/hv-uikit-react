@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.32.0 (2021-06-14)
+
+
+### Bug Fixes
+
+* **globalactions:** error in console because of wrong type.HVUIKIT-5789 ([c71749b](https://github.com/lumada-design/hv-uikit-react/commit/c71749b914476abf4e4d9c39af56ac4c6fc3efe4))
+* **pagination:** update input when page prop is externally changed ([0ec4c07](https://github.com/lumada-design/hv-uikit-react/commit/0ec4c079105705d8a19cb62df9d3c0105c504345))
+
+
+### Features
+
+* **table:** usage with react-table HVUIKIT-5736 ([8caf14a](https://github.com/lumada-design/hv-uikit-react/commit/8caf14a93b46516db332276972de04fcae00ca4d))
+
+
+
+
+
 # [3.31.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.30.2...@hv/uikit-react-core@3.31.0) (2021-05-27)
 
 

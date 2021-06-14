@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.17.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.16.1...@hv/uikit-react-lab@3.17.0) (2021-06-14)
+
+
+### Features
+
+* **table:** usage with react-table HVUIKIT-5736 ([8caf14a](https://github.com/lumada-design/hv-uikit-react/commit/8caf14a93b46516db332276972de04fcae00ca4d))
+
+
+
+
+
 ## [3.16.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.16.0...@hv/uikit-react-lab@3.16.1) (2021-06-08)
 
 
