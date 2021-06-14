@@ -157,7 +157,7 @@ HvGlobalActions.propTypes = {
   /**
    * User can pass in a fully customized button or false for when the back button should not be rendered.
    */
-  backButton: PropTypes.oneOf([PropTypes.node, PropTypes.bool]),
+  backButton: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
   /**
    * Action to be executed by the Back button in the Global Actions.
    */
