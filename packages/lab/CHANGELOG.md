@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.18.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.17.0...@hv/uikit-react-lab@3.18.0) (2021-06-17)
+
+
+### Features
+
+* added support for react 17 HVUIKIT-5618 ([#2449](https://github.com/lumada-design/hv-uikit-react/issues/2449)) ([65eaecf](https://github.com/lumada-design/hv-uikit-react/commit/65eaecfd221de75e037e0898e38d857d8a49adc3))
+
+
+
+
+
 # [3.17.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.16.1...@hv/uikit-react-lab@3.17.0) (2021-06-14)
 
 
