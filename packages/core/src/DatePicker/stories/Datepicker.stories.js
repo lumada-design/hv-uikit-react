@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "@material-ui/core";
 import {
   HvButton,
@@ -339,6 +339,16 @@ WithValueChange.decorators = [defaultDecorator];
 export const WithSelectionList = () => {
   const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
   const [endDate, setEndDate] = useState(new Date(2020, 8, 10));
+  const [trueStartDate, setTrueStartDate] = useState(new Date(2020, 8, 5));
+  const [trueEndDate, setTrueEndDate] = useState(new Date(2020, 8, 10));
+
+  useEffect(() => {
+    setStartDate(trueStartDate);
+  }, [trueStartDate]);
+
+  useEffect(() => {
+    setEndDate(trueEndDate);
+  }, [trueEndDate]);
 
   const handleClick = (item) => {
     console.log(item);
@@ -394,7 +404,15 @@ export const WithSelectionList = () => {
       rangeMode
       startValue={startDate}
       endValue={endDate}
+      onChange={(sd, ed) => {
+        setTrueStartDate(sd);
+        setTrueEndDate(ed);
+      }}
       placeholder="Select date"
+      onCancel={() => {
+        setStartDate(trueStartDate);
+        setEndDate(trueEndDate);
+      }}
     />
   );
 };
