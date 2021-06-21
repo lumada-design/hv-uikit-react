@@ -51,7 +51,7 @@ const HvDatePicker = (props) => {
     "aria-describedby": ariaDescribedBy,
 
     onChange,
-
+    onCancel,
     status,
     statusMessage,
     "aria-errormessage": ariaErrorMessage,
@@ -136,6 +136,8 @@ const HvDatePicker = (props) => {
   const handleCancel = () => {
     rollbackStartDate();
     rollbackEndDate();
+
+    onCancel?.();
 
     setCalendarOpen(false);
   };
@@ -467,6 +469,11 @@ HvDatePicker.propTypes = {
    * The callback fired when the value changes.
    */
   onChange: PropTypes.func,
+
+  /**
+   * The callback fired when user clicks on cancel.
+   */
+  onCancel: PropTypes.func,
 
   /**
    * An object containing all the labels for the datepicker.
