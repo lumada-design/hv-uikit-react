@@ -6,9 +6,6 @@ const selected = (theme) => ({
   "& *": {
     background: theme.hv.palette.atmosphere.atmo3,
   },
-  "& svg *.color0": {
-    fill: theme.hv.palette.atmosphere.atmo1,
-  },
 });
 
 const hover = (theme) => ({
@@ -26,6 +23,8 @@ const styles = (theme) => ({
     padding: `0px`,
     margin: "0",
     listStyle: "none",
+
+    outline: "none",
   },
 
   /* role="group" element */
@@ -41,38 +40,13 @@ const styles = (theme) => ({
     "&:not(:last-child)": {
       marginBottom: "8px",
     },
-
-    // level indentation
-    // 1st, with icon
-    "&[data-hasicon]>$content": { paddingLeft: `0px` },
-    // 1st, no icon
-    "&:not([data-hasicon])>$content": {
-      paddingLeft: theme.hv.spacing.xs * 1,
-    },
-
-    // 2nd, with icon
-    "&[data-hasicon]>$group>$node>$content": {
-      paddingLeft: 32 + theme.hv.spacing.xs * 2,
-    },
-    // 2nd, no icon
-    "&:not([data-hasicon])>$group>$node>$content": {
-      paddingLeft: theme.hv.spacing.xs * 2,
-    },
-
-    // 3rd, with icon
-    "&[data-hasicon]>$group>$node>$group>$node>$content": {
-      paddingLeft: 32 + theme.hv.spacing.xs * 3,
-    },
-    // 3rd, no icon
-    "&:not([data-hasicon])>$group>$node>$group>$node>$content": {
-      paddingLeft: theme.hv.spacing.xs * 3,
-    },
   },
 
   /* role="treeitem" element states */
   disabled: {},
   selectable: {},
   unselectable: {},
+  expandable: {},
   collapsed: {
     "&>$group": { display: "none" },
   },
@@ -81,6 +55,8 @@ const styles = (theme) => ({
   },
   selected: {},
   unselected: {},
+
+  focused: {},
 
   noIcon: {},
   withIcon: {},
@@ -94,6 +70,11 @@ const styles = (theme) => ({
     height: "32px",
     color: theme.hv.palette.accent.acce1,
     borderLeft: `2px solid transparent`,
+    paddingRight: theme.hv.spacing.xs,
+
+    "$expandable>&": {
+      fontWeight: 600,
+    },
 
     // selected state
     "$selected>&": selected(theme),
@@ -103,7 +84,20 @@ const styles = (theme) => ({
     ":not($disabled)$selected>&:hover": {},
 
     // focus
-    ":not($disabled):not($selected)>&:focus": hover(theme),
+    ":not($disabled):not($selected)>&:focus-visible": hover(theme),
+    ":not($disabled):not($selected)>&.focus-visible": hover(theme),
+
+    "*:focus-visible $focused>&": {
+      ...outlineStyles,
+    },
+
+    ".focus-visible $focused>&": {
+      ...outlineStyles,
+    },
+
+    "$focused>&": {
+      ...hover(theme),
+    },
 
     "&[disabled], &:active": {
       outline: "none",
@@ -111,6 +105,10 @@ const styles = (theme) => ({
 
     "&:focus": {
       outline: "none",
+    },
+
+    "&:focus-visible": {
+      ...outlineStyles,
     },
 
     "&.focus-visible": {

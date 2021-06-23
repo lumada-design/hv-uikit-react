@@ -1,9 +1,9 @@
 import { outlineStyles } from "../../Focus/styles";
 
 const hover = (theme) => ({
-  background: theme.hv.palette.atmosphere.atmo4,
+  background: theme.hv.palette.atmosphere.atmo3,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4,
+    background: theme.hv.palette.atmosphere.atmo3,
   },
 });
 
@@ -30,6 +30,7 @@ const styles = (theme) => ({
 
     "&:focus": {
       outline: "none",
+      ...hover(theme),
     },
 
     "&.focus-visible": {

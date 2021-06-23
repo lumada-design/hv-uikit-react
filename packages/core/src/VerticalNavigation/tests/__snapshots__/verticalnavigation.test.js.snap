@@ -8,6 +8,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
   <VerticalNavigation
     classes={
       Object {
+        "legacyMode": "HvVerticalNavigation-legacyMode",
         "noCollapse": "HvVerticalNavigation-noCollapse",
         "root": "HvVerticalNavigation-root",
       }
@@ -467,6 +468,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
   <VerticalNavigation
     classes={
       Object {
+        "legacyMode": "HvVerticalNavigation-legacyMode",
         "noCollapse": "HvVerticalNavigation-noCollapse",
         "root": "HvVerticalNavigation-root",
       }
@@ -928,6 +930,7 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
   <VerticalNavigation
     classes={
       Object {
+        "legacyMode": "HvVerticalNavigation-legacyMode",
         "noCollapse": "HvVerticalNavigation-noCollapse",
         "root": "HvVerticalNavigation-root",
       }
@@ -982,7 +985,7 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
                 onKeyDown={[Function]}
               >
                 <div
-                  className="HvVerticalNavigation-root"
+                  className="HvVerticalNavigation-root HvVerticalNavigation-legacyMode"
                 >
                   <div>
                     1
@@ -1011,6 +1014,7 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
   <VerticalNavigation
     classes={
       Object {
+        "legacyMode": "HvVerticalNavigation-legacyMode",
         "noCollapse": "HvVerticalNavigation-noCollapse",
         "root": "HvVerticalNavigation-root",
       }

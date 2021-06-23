@@ -1,6 +1,6 @@
 export default class NodeTreeExpandUtils {
   static isExpanded(expanded, nodeId) {
-    return expanded.indexOf(nodeId) !== -1;
+    return Array.isArray(expanded) ? expanded.indexOf(nodeId) !== -1 : false;
   }
 
   static toggle(expanded, nodeId) {

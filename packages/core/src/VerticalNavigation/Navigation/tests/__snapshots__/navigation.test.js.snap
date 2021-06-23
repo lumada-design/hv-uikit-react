@@ -49,6 +49,8 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
   <Navigation
     classes={
       Object {
+        "list": "HvVerticalNavigationNavigation-list",
+        "listItem": "HvVerticalNavigationNavigation-listItem",
         "root": "HvVerticalNavigationNavigation-root",
       }
     }
@@ -99,20 +101,27 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
     <nav
       aria-label="Example 1 navigation"
       className="HvVerticalNavigationNavigation-root"
-      onChange={[MockFunction]}
     >
-      <WithStyles(TreeView)
+      <WithStyles(ForwardRef)
+        className="HvVerticalNavigationNavigation-list"
+        collapsible={false}
+        expanded={Array []}
         mode="navigation"
         onChange={[Function]}
+        onToggle={[Function]}
+        selectable={true}
         selected="01-01"
       >
-        <TreeView
+        <ForwardRef
+          className="HvVerticalNavigationNavigation-list"
           classes={
             Object {
               "collapsed": "HvVerticalNavigationTreeView-collapsed",
               "content": "HvVerticalNavigationTreeView-content",
               "disabled": "HvVerticalNavigationTreeView-disabled",
+              "expandable": "HvVerticalNavigationTreeView-expandable",
               "expanded": "HvVerticalNavigationTreeView-expanded",
+              "focused": "HvVerticalNavigationTreeView-focused",
               "group": "HvVerticalNavigationTreeView-group",
               "noIcon": "HvVerticalNavigationTreeView-noIcon",
               "node": "HvVerticalNavigationTreeView-node",
@@ -124,77 +133,23 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeView-withIcon",
             }
           }
+          collapsible={false}
+          expanded={Array []}
           mode="navigation"
           onChange={[Function]}
+          onToggle={[Function]}
+          selectable={true}
           selected="01-01"
         >
-          <ul
-            className="HvVerticalNavigationTreeView-root"
-          >
-            <WithStyles(TreeViewItem)
-              icon={<Play />}
-              key="01"
-              label="System"
-              nodeId="01"
-              payload={
-                Object {
-                  "children": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "id": "01-01-01",
-                          "label": "Compute",
-                        },
-                        Object {
-                          "id": "01-01-02",
-                          "label": "Storage",
-                        },
-                        Object {
-                          "id": "01-01-03",
-                          "label": "Ethernet",
-                        },
-                        Object {
-                          "id": "01-01-04",
-                          "label": "Fiber Channel",
-                          "payload": Object {
-                            "params": Object {
-                              "a": 2,
-                              "b": "3",
-                            },
-                            "path": "/hello/world",
-                          },
-                        },
-                      ],
-                      "id": "01-01",
-                      "label": "SCPodF",
-                    },
-                  ],
-                  "icon": <Play />,
-                  "id": "01",
-                  "label": "System",
-                }
-              }
+          <DescendantProvider>
+            <ul
+              className="HvVerticalNavigationTreeView-root HvVerticalNavigationNavigation-list"
             >
-              <TreeViewItem
-                classes={
-                  Object {
-                    "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
-                    "content": "HvVerticalNavigationTreeViewItem-content",
-                    "disabled": "HvVerticalNavigationTreeViewItem-disabled",
-                    "expanded": "HvVerticalNavigationTreeViewItem-expanded",
-                    "group": "HvVerticalNavigationTreeViewItem-group",
-                    "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
-                    "node": "HvVerticalNavigationTreeViewItem-node",
-                    "root": "HvVerticalNavigationTreeViewItem-root",
-                    "selectable": "HvVerticalNavigationTreeViewItem-selectable",
-                    "selected": "HvVerticalNavigationTreeViewItem-selected",
-                    "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
-                    "unselected": "HvVerticalNavigationTreeViewItem-unselected",
-                    "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
-                  }
-                }
+              <WithStyles(ForwardRef)
+                className="HvVerticalNavigationNavigation-listItem"
                 icon={<Play />}
-                label="System"
+                key="01"
+                label={<Unknown />}
                 nodeId="01"
                 payload={
                   Object {
@@ -235,123 +190,428 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                   }
                 }
               >
-                <li
-                  className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
-                  data-hasicon={true}
-                >
-                  <WithStyles(ForwardRef)
-                    className="HvVerticalNavigationTreeViewItem-content"
-                    component="div"
-                    innerRef={
-                      Object {
-                        "current": <div
-                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                          role="button"
-                          tabindex="0"
-                        >
-                          <div
-                            class="HvIconBase-root HvIconBase-s"
-                            name="Play"
-                          >
-                            <svg
-                              focusable="false"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                class="color0"
-                                d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
-                                fill="#414141"
-                              />
-                            </svg>
-                          </div>
-                          System
-                        </div>,
-                      }
+                <ForwardRef
+                  className="HvVerticalNavigationNavigation-listItem"
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expandable": "HvVerticalNavigationTreeViewItem-expandable",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "focused": "HvVerticalNavigationTreeViewItem-focused",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                     }
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <ForwardRef
-                      className="HvVerticalNavigationTreeViewItem-content"
-                      classes={
+                  }
+                  icon={<Play />}
+                  label={<Unknown />}
+                  nodeId="01"
+                  payload={
+                    Object {
+                      "children": Array [
                         Object {
-                          "3xlTitle": "HvTypography-3xlTitle",
-                          "4xlTitle": "HvTypography-4xlTitle",
-                          "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledText": "HvTypography-disabledText",
-                          "highlightText": "HvTypography-highlightText",
-                          "lTitle": "HvTypography-lTitle",
-                          "link": "HvTypography-link",
-                          "mTitle": "HvTypography-mTitle",
-                          "noWrap": "HvTypography-noWrap",
-                          "normalText": "HvTypography-normalText",
-                          "placeholderText": "HvTypography-placeholderText",
-                          "root": "HvTypography-root",
-                          "sTitle": "HvTypography-sTitle",
-                          "sectionTitle": "HvTypography-sectionTitle",
-                          "selectedNavText": "HvTypography-selectedNavText",
-                          "vizText": "HvTypography-vizText",
-                          "vizTextDisabled": "HvTypography-vizTextDisabled",
-                          "xlTitle": "HvTypography-xlTitle",
-                          "xsInlineLink": "HvTypography-xsInlineLink",
-                          "xsTitle": "HvTypography-xsTitle",
-                          "xxlTitle": "HvTypography-xxlTitle",
-                          "xxsTitle": "HvTypography-xxsTitle",
-                        }
-                      }
+                          "children": Array [
+                            Object {
+                              "id": "01-01-01",
+                              "label": "Compute",
+                            },
+                            Object {
+                              "id": "01-01-02",
+                              "label": "Storage",
+                            },
+                            Object {
+                              "id": "01-01-03",
+                              "label": "Ethernet",
+                            },
+                            Object {
+                              "id": "01-01-04",
+                              "label": "Fiber Channel",
+                              "payload": Object {
+                                "params": Object {
+                                  "a": 2,
+                                  "b": "3",
+                                },
+                                "path": "/hello/world",
+                              },
+                            },
+                          ],
+                          "id": "01-01",
+                          "label": "SCPodF",
+                        },
+                      ],
+                      "icon": <Play />,
+                      "id": "01",
+                      "label": "System",
+                    }
+                  }
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationNavigation-listItem HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                    data-hasicon={true}
+                    id="hvtreeview1-01"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
                       component="div"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        role="button"
-                        tabIndex={0}
-                      >
-                        <Play>
-                          <HvIconBase
-                            iconSize="S"
-                            name="Play"
+                      id="hvtreeview1-01-button"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            id="hvtreeview1-01-button"
+                            role="button"
+                            style="padding-left: 0px;"
+                            tabindex="0"
                           >
                             <div
-                              className="HvIconBase-root HvIconBase-s"
+                              class="HvIconBase-root HvIconBase-s"
                               name="Play"
                             >
                               <svg
-                                focusable={false}
-                                height={16}
+                                focusable="false"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width={16}
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  className="color0"
+                                  class="color0"
                                   d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
                                   fill="#414141"
                                 />
                               </svg>
                             </div>
-                          </HvIconBase>
-                        </Play>
-                        System
-                      </div>
-                    </ForwardRef>
-                  </WithStyles(ForwardRef)>
-                </li>
-              </TreeViewItem>
-            </WithStyles(TreeViewItem)>
-          </ul>
-        </TreeView>
-      </WithStyles(TreeView)>
+                            <div
+                              class=""
+                              style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                            >
+                              System
+                            </div>
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "paddingLeft": 0,
+                        }
+                      }
+                      tabIndex={0}
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "noWrap": "HvTypography-noWrap",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        id="hvtreeview1-01-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseDown={[Function]}
+                        role="button"
+                        style={
+                          Object {
+                            "paddingLeft": 0,
+                          }
+                        }
+                        tabIndex={0}
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          id="hvtreeview1-01-button"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onMouseDown={[Function]}
+                          role="button"
+                          style={
+                            Object {
+                              "paddingLeft": 0,
+                            }
+                          }
+                          tabIndex={0}
+                        >
+                          <Play>
+                            <HvIconBase
+                              iconSize="S"
+                              name="Play"
+                            >
+                              <div
+                                className="HvIconBase-root HvIconBase-s"
+                                name="Play"
+                              >
+                                <svg
+                                  focusable={false}
+                                  height={16}
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </HvIconBase>
+                          </Play>
+                          <Component>
+                            <WithStyles(ForwardRef)
+                              disableFocusListener={true}
+                              disableHoverListener={false}
+                              disableTouchListener={true}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <WithStyles(ForwardRef)>
+                                  System
+                                </WithStyles(ForwardRef)>
+                              }
+                            >
+                              <ForwardRef
+                                classes={
+                                  Object {
+                                    "color": "HvTooltip-color",
+                                    "popper": "HvTooltip-popper",
+                                    "root": "HvTooltip-root",
+                                    "separator": "HvTooltip-separator",
+                                    "separatorColor": "HvTooltip-separatorColor",
+                                    "title": "HvTooltip-title",
+                                    "tooltip": "HvTooltip-tooltip",
+                                    "tooltipMulti": "HvTooltip-tooltipMulti",
+                                    "valueWrapper": "HvTooltip-valueWrapper",
+                                    "values": "HvTooltip-values",
+                                    "valuesContainer": "HvTooltip-valuesContainer",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableHoverListener={false}
+                                disableTouchListener={true}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <WithStyles(ForwardRef)>
+                                    System
+                                  </WithStyles(ForwardRef)>
+                                }
+                              >
+                                <WithStyles(ForwardRef(Tooltip))
+                                  TransitionComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "propTypes": Object {
+                                        "children": [Function],
+                                        "disableStrictModeCompat": [Function],
+                                        "in": [Function],
+                                        "onEnter": [Function],
+                                        "onEntered": [Function],
+                                        "onEntering": [Function],
+                                        "onExit": [Function],
+                                        "onExited": [Function],
+                                        "onExiting": [Function],
+                                        "style": [Function],
+                                        "timeout": [Function],
+                                      },
+                                      "render": [Function],
+                                    }
+                                  }
+                                  TransitionProps={
+                                    Object {
+                                      "timeout": 400,
+                                    }
+                                  }
+                                  classes={
+                                    Object {
+                                      "popper": "HvTooltip-popper",
+                                      "tooltip": "HvTooltip-tooltip",
+                                    }
+                                  }
+                                  disableFocusListener={true}
+                                  disableHoverListener={false}
+                                  disableTouchListener={true}
+                                  enterDelay={300}
+                                  placement="top"
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={
+                                    <WithStyles(ForwardRef)>
+                                      System
+                                    </WithStyles(ForwardRef)>
+                                  }
+                                >
+                                  <ForwardRef(Tooltip)
+                                    TransitionComponent={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "propTypes": Object {
+                                          "children": [Function],
+                                          "disableStrictModeCompat": [Function],
+                                          "in": [Function],
+                                          "onEnter": [Function],
+                                          "onEntered": [Function],
+                                          "onEntering": [Function],
+                                          "onExit": [Function],
+                                          "onExited": [Function],
+                                          "onExiting": [Function],
+                                          "style": [Function],
+                                          "timeout": [Function],
+                                        },
+                                        "render": [Function],
+                                      }
+                                    }
+                                    TransitionProps={
+                                      Object {
+                                        "timeout": 400,
+                                      }
+                                    }
+                                    classes={
+                                      Object {
+                                        "arrow": "MuiTooltip-arrow",
+                                        "popper": "MuiTooltip-popper HvTooltip-popper",
+                                        "popperArrow": "MuiTooltip-popperArrow",
+                                        "popperInteractive": "MuiTooltip-popperInteractive",
+                                        "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                        "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                        "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                        "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                        "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                        "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                        "touch": "MuiTooltip-touch",
+                                      }
+                                    }
+                                    disableFocusListener={true}
+                                    disableHoverListener={false}
+                                    disableTouchListener={true}
+                                    enterDelay={300}
+                                    placement="top"
+                                    style={
+                                      Object {
+                                        "overflow": "hidden",
+                                        "textOverflow": "ellipsis",
+                                        "whiteSpace": "nowrap",
+                                      }
+                                    }
+                                    title={
+                                      <WithStyles(ForwardRef)>
+                                        System
+                                      </WithStyles(ForwardRef)>
+                                    }
+                                  >
+                                    <div
+                                      aria-describedby={null}
+                                      className=""
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseOver={[Function]}
+                                      onTouchStart={[Function]}
+                                      style={
+                                        Object {
+                                          "overflow": "hidden",
+                                          "textOverflow": "ellipsis",
+                                          "whiteSpace": "nowrap",
+                                        }
+                                      }
+                                      title={null}
+                                    >
+                                      <ComponentFunction>
+                                        System
+                                      </ComponentFunction>
+                                    </div>
+                                    <ForwardRef(Popper)
+                                      anchorEl={
+                                        <div
+                                          class=""
+                                          style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                        >
+                                          System
+                                        </div>
+                                      }
+                                      className="MuiTooltip-popper HvTooltip-popper"
+                                      id={null}
+                                      open={false}
+                                      placement="top"
+                                      popperOptions={
+                                        Object {
+                                          "modifiers": Object {
+                                            "arrow": Object {
+                                              "element": null,
+                                              "enabled": false,
+                                            },
+                                          },
+                                        }
+                                      }
+                                      transition={true}
+                                    />
+                                  </ForwardRef(Tooltip)>
+                                </WithStyles(ForwardRef(Tooltip))>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </Component>
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                    <DescendantProvider
+                      id="01"
+                      level={1}
+                    />
+                  </li>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+            </ul>
+          </DescendantProvider>
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
     </nav>
   </Navigation>
 </WithStyles(Navigation)>

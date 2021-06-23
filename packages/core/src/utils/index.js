@@ -27,3 +27,7 @@ export { default as useWidth } from "./useWidth";
 export { default as useDeprecated } from "./useDeprecated";
 
 export { default as multiSelectionEventHandler } from "./multiSelectionEventHandler";
+
+export { default as useForkRef } from "./useForkRef";
+
+export { default as useEnhancedEffect } from "./useEnhancedEffect";
