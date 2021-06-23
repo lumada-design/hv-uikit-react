@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.34.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.33.0...@hv/uikit-react-core@3.34.0) (2021-06-23)
+
+
+### Features
+
+* add onCancel callback. [#2466](https://github.com/lumada-design/hv-uikit-react/issues/2466) ([3309f5d](https://github.com/lumada-design/hv-uikit-react/commit/3309f5d98d117eb68071dbbafb61bd6f585ddeab))
+
+
+
+
+
 # [3.33.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.32.0...@hv/uikit-react-core@3.33.0) (2021-06-17)
 
 
