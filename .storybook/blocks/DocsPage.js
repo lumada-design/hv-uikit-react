@@ -6,7 +6,7 @@ import {
   Primary,
   Stories,
   PRIMARY_STORY,
-} from "@storybook/addon-docs/blocks";
+} from "@storybook/addon-docs";
 import { MaturityStatus } from "./MaturityStatus";
 import { Usage } from "./Usage";
 import { ArgsTable } from "./ArgsTable";

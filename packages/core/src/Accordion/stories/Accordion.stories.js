@@ -8,6 +8,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvAccordion } from '@hv/uikit-react-core'",
   },
+
   component: HvAccordion,
 };
 

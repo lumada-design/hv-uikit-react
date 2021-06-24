@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Source } from "@storybook/components";
-import { DocsContext } from "@storybook/addon-docs/blocks";
+import { DocsContext } from "@storybook/addon-docs";
 
 export const Usage = ({ slot, children }) => {
   const context = useContext(DocsContext);

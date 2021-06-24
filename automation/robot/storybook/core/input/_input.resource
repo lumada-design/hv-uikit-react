@@ -13,7 +13,9 @@ open input sample
 ${adornment_accepted}    css:div[name*='Success']
 ${adornment_failed}      css:div[name*='Fail']
 ${clean_button}          css:div[name*='Close']
-${description}           css:.HvInput-description
+${description}           css:label[id*='input-simple-sample-description']
 ${helperText}            css:#password-input-error
 ${input}                 css:input
 ${label}                 css:#limited-input-label
+
+

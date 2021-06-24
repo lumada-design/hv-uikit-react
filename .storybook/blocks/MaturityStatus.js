@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DocsContext } from "@storybook/addon-docs/blocks";
+import { DocsContext } from "@storybook/addon-docs";
 
 import DSVersion from "./resources/DSVersion";
 import Stable from "./resources/Stable";
