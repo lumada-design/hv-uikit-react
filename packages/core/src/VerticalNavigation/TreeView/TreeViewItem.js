@@ -1,38 +1,45 @@
-/* eslint-disable jsx-a11y/role-supports-aria-props */
-// TODO review aria-disabled and aria-expanded added conditionally to a no tree item li
-
-import React, { useCallback, useContext, useEffect, useMemo, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
+
+import { DropDownXS, DropUpXS } from "@hv/uikit-react-icons";
+
 import HvTypography from "../../Typography";
 
 import { TreeViewControlContext, TreeViewStateContext } from "./TreeViewContexts";
 
-import { setId } from "../../utils";
-import arrayDiff from "../../utils/arrayDiff";
-import usePropAsRef from "../../utils/usePropAsRef";
+import { setId, useForkRef } from "../../utils";
+
+import { DescendantProvider, useDescendant } from "./descendants";
 
 import styles from "./styles";
 
-const isPrintableCharacter = (str) => str && str.length === 1 && str.match(/\S/);
+const preventSelection = (event, disabled) => {
+  if (event.shiftKey || event.ctrlKey || event.metaKey || disabled) {
+    // Prevent text selection
+    event.preventDefault();
+  }
+};
 
-const TreeViewItem = (props) => {
+const TreeViewItem = React.forwardRef((props, ref) => {
   const {
-    id,
+    id: idProp,
     className,
     classes,
 
-    disabled = false,
+    disabled: disabledProp = false,
 
-    selectable: selectableProp = null,
+    selectable: selectableProp,
 
     nodeId,
     icon = null,
     label,
-    payload = null,
+    payload,
 
-    onClick = null,
+    onClick,
+    onMouseDown,
+    onFocus,
 
     children,
 
@@ -40,93 +47,221 @@ const TreeViewItem = (props) => {
   } = props;
 
   const treeViewControlContext = useContext(TreeViewControlContext);
-  const treeViewStateContext = useContext(TreeViewStateContext);
+  const { isExpanded, isSelected, isFocused, isDisabled } = useContext(TreeViewStateContext);
 
   const {
-    expandAllSiblings,
-    focus,
-    focusFirstNode,
-    focusLastNode,
-    focusNextNode,
-    focusPreviousNode,
-    handleLeftArrow,
-    addNodeToNodeMap,
-    removeNodeFromNodeMap,
-    collapsible,
-    select,
-    setFocusByFirstCharacter,
-    toggle,
+    treeId,
     mode,
+    collapsible,
+    toggleExpansion,
+    multiSelect,
+    selectNode,
+    selectRange,
+    disabledItemsFocusable,
+    registerNode,
+    unregisterNode,
+    mapFirstChar,
+    unMapFirstChar,
+    focus,
   } = treeViewControlContext;
 
   const treeviewMode = mode === "treeview";
 
-  const listItemRef = useRef(null);
-  const actionableRef = useRef(null);
+  let id = null;
 
-  const expandable = Boolean(Array.isArray(children) ? children.length : children);
+  if (idProp != null) {
+    id = idProp;
+  } else if (treeId && nodeId) {
+    id = `${treeId}-${nodeId}`;
+  }
 
-  const selectable = selectableProp != null ? selectableProp : !(collapsible && expandable);
+  const [treeitemElement, setTreeitemElement] = useState(null);
+  const contentRef = useRef(null);
+  const handleRef = useForkRef(setTreeitemElement, ref);
 
-  const expanded = treeViewStateContext.isExpanded(nodeId);
-  const selected = treeViewStateContext.isSelected(nodeId);
-
-  const tabbable = treeViewStateContext.isTabbable(nodeId);
-
-  const handleAction = useCallback(
-    (event) => {
-      if (!disabled) {
-        if (collapsible && expandable) {
-          if (!selectable || !expanded || selected) {
-            return toggle(nodeId);
-          }
-        }
-
-        if (selectable && !selected) {
-          return select(event, nodeId);
-        }
-      }
-
-      return false;
-    },
-    [collapsible, disabled, expandable, expanded, nodeId, select, selectable, selected, toggle]
+  const descendant = useMemo(
+    () => ({
+      element: treeitemElement,
+      id: nodeId,
+    }),
+    [nodeId, treeitemElement]
   );
 
-  const onChangeCallback = usePropAsRef(onClick);
+  const { index, parentId, level } = useDescendant(descendant);
+
+  const expandable = collapsible && Boolean(Array.isArray(children) ? children.length : children);
+  const expanded = isExpanded ? isExpanded(nodeId) : false;
+  const focused = isFocused ? isFocused(nodeId) : false;
+  const selected = isSelected ? isSelected(nodeId) : false;
+  const disabled = isDisabled ? isDisabled(nodeId) : false;
+
+  const selectable = selectableProp != null ? selectableProp : !collapsible || !expandable;
+
+  useEffect(() => {
+    // On the first render a node's index will be -1. We want to wait for the real index.
+    if (registerNode && unregisterNode && index !== -1) {
+      registerNode({
+        id: nodeId,
+        idAttribute: id,
+        index,
+        parentId,
+        selectable,
+        expandable,
+        disabled: disabledProp,
+        onFocus,
+        payload,
+      });
+
+      return () => {
+        unregisterNode(nodeId);
+      };
+    }
+
+    return undefined;
+  }, [
+    registerNode,
+    unregisterNode,
+    parentId,
+    index,
+    nodeId,
+    expandable,
+    disabledProp,
+    id,
+    selectable,
+    onFocus,
+    payload,
+  ]);
+
+  useEffect(() => {
+    if (mapFirstChar && unMapFirstChar && label) {
+      mapFirstChar(nodeId, contentRef.current.textContent.substring(0, 1).toLowerCase());
+
+      return () => {
+        unMapFirstChar(nodeId);
+      };
+    }
+    return undefined;
+  }, [mapFirstChar, unMapFirstChar, nodeId, label]);
+
+  let ariaSelected;
+  if (multiSelect) {
+    ariaSelected = selected;
+  } else if (selected) {
+    /* single-selection trees unset aria-selected on un-selected items.
+     *
+     * If the tree does not support multiple selection, aria-selected
+     * is set to true for the selected node and it is not present on any other node in the tree.
+     * Source: https://www.w3.org/TR/wai-aria-practices/#TreeView
+     */
+    ariaSelected = true;
+  }
+
+  const handleFocus = useCallback(
+    (event) => {
+      // DOM focus stays on the tree which manages focus with aria-activedescendant
+      if (event.target === event.currentTarget) {
+        (event.target.ownerDocument || document)
+          .getElementById(treeId)
+          .focus({ preventScroll: true });
+      }
+
+      const unfocusable = !disabledItemsFocusable && disabled;
+      if (!focused && event.currentTarget === event.target && !unfocusable) {
+        focus(event, nodeId);
+      }
+    },
+    [disabled, disabledItemsFocusable, focus, focused, nodeId, treeId]
+  );
+
+  const handleExpansion = useCallback(
+    (event) => {
+      if (!disabled) {
+        if (treeviewMode && !focused) {
+          focus(event, nodeId);
+        }
+
+        const multiple = multiSelect && (event.shiftKey || event.ctrlKey || event.metaKey);
+
+        // If already expanded and trying to toggle selection don't close
+        if (expandable && !(multiple && isExpanded(nodeId))) {
+          toggleExpansion(event, nodeId);
+        }
+      }
+    },
+    [
+      disabled,
+      expandable,
+      focus,
+      focused,
+      isExpanded,
+      multiSelect,
+      nodeId,
+      toggleExpansion,
+      treeviewMode,
+    ]
+  );
+
+  const handleSelection = useCallback(
+    (event) => {
+      if (selectable && !disabled) {
+        if (treeviewMode && !focused) {
+          focus(event, nodeId);
+        }
+
+        const multiple = multiSelect && (event.shiftKey || event.ctrlKey || event.metaKey);
+
+        if (multiple) {
+          if (event.shiftKey) {
+            selectRange(event, { end: nodeId });
+          } else {
+            selectNode(event, nodeId, true);
+          }
+        } else {
+          selectNode(event, nodeId);
+        }
+      }
+    },
+    [
+      disabled,
+      focus,
+      focused,
+      multiSelect,
+      nodeId,
+      selectNode,
+      selectRange,
+      selectable,
+      treeviewMode,
+    ]
+  );
+
+  const handleMouseDown = useCallback(
+    (event) => {
+      preventSelection(event, disabled);
+
+      if (onMouseDown) {
+        onMouseDown(event);
+      }
+    },
+    [disabled, onMouseDown]
+  );
 
   const handleClick = useCallback(
     (event) => {
-      if (!tabbable) {
-        focus(nodeId);
-      }
-
-      handleAction(event);
-
-      // allow custom click event
-      if (!disabled && onChangeCallback.current) {
-        onChangeCallback.current(event);
-      }
-
-      event.preventDefault();
-      event.stopPropagation();
-    },
-    [disabled, focus, tabbable, handleAction, nodeId, onChangeCallback]
-  );
-
-  const handleNextArrow = useCallback(
-    (event) => {
-      if (expandable) {
-        if (expanded) {
-          return focusNextNode(event, nodeId);
+      if (!disabled) {
+        if (expandable) {
+          handleExpansion(event);
         }
-        if (!disabled) {
-          return toggle(event, nodeId);
+
+        if (selectable) {
+          handleSelection(event);
         }
       }
 
-      return false;
+      if (onClick) {
+        onClick(event);
+      }
     },
-    [disabled, expandable, expanded, focusNextNode, nodeId, toggle]
+    [disabled, expandable, handleExpansion, handleSelection, onClick, selectable]
   );
 
   const handleKeyDown = useCallback(
@@ -137,170 +272,122 @@ const TreeViewItem = (props) => {
       if (event.altKey || event.ctrlKey || event.metaKey || event.currentTarget !== event.target) {
         return;
       }
-
-      if (!treeviewMode) {
+      if (contentRef.current === event.currentTarget) {
         if (key === "Enter" || key === " ") {
-          if (actionableRef.current === event.currentTarget) {
-            isEventHandled = handleAction(event);
+          if (expandable) {
+            isEventHandled = handleExpansion(event);
+          }
+
+          if (selectable) {
+            isEventHandled = handleSelection(event);
           }
         }
-      } else {
-        switch (key) {
-          case "Enter":
-          case " ":
-            if (event.shift) {
-              isEventHandled = true;
-            } else if (actionableRef.current === event.currentTarget) {
-              isEventHandled = handleAction(event);
-            }
-            break;
-          case "ArrowDown":
-            isEventHandled = focusNextNode(nodeId);
-            break;
-          case "ArrowUp":
-            isEventHandled = focusPreviousNode(nodeId);
-            break;
-          case "ArrowRight":
-            isEventHandled = handleNextArrow(nodeId);
-            break;
-          case "ArrowLeft":
-            isEventHandled = handleLeftArrow(nodeId, event);
-            break;
-          case "Home":
-            isEventHandled = focusFirstNode();
-            break;
-          case "End":
-            isEventHandled = focusLastNode();
-            break;
-          case "*":
-            isEventHandled = expandAllSiblings(nodeId);
-            break;
-          default:
-            if (isPrintableCharacter(key)) {
-              isEventHandled = setFocusByFirstCharacter(nodeId, key);
-            }
+
+        if (isEventHandled) {
+          event.preventDefault();
+          event.stopPropagation();
         }
       }
-
-      if (isEventHandled) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
     },
-    [
-      treeviewMode,
-      handleAction,
-      focusNextNode,
-      nodeId,
-      focusPreviousNode,
-      handleNextArrow,
-      handleLeftArrow,
-      focusFirstNode,
-      focusLastNode,
-      expandAllSiblings,
-      setFocusByFirstCharacter,
-    ]
+    [expandable, handleExpansion, handleSelection, selectable]
   );
-
-  const previousChildIds = useRef([]);
-  const childIds = useMemo(() => {
-    const ids = React.Children.map(children, (child) => child.props.nodeId) || [];
-
-    if (arrayDiff(previousChildIds.current, ids)) {
-      previousChildIds.current = ids;
-    }
-
-    return previousChildIds.current;
-  }, [children]);
-
-  // payload prop was causing unneeded context changes
-  // we just need to keep it as a mutable reference
-  const nodePayloadRef = usePropAsRef(payload);
-
-  // register node in the tree (and unregister on unmount)
-  useEffect(() => {
-    addNodeToNodeMap(nodeId, childIds, nodePayloadRef, actionableRef, label);
-
-    return () => {
-      removeNodeFromNodeMap(nodeId);
-    };
-  }, [addNodeToNodeMap, childIds, label, nodeId, nodePayloadRef, removeNodeFromNodeMap]);
-
-  // focus the rendered DOM element (if tabbable)
-  useEffect(() => {
-    if (treeviewMode && tabbable && actionableRef.current) {
-      actionableRef.current.focus();
-    }
-  }, [treeviewMode, tabbable]);
 
   const renderedContent = useMemo(
     () => (
       <HvTypography
         id={setId(id, "button")}
         component="div"
-        role="button"
-        innerRef={actionableRef}
-        className={clsx(classes.content)}
-        tabIndex={tabbable ? 0 : -1}
-        onKeyDown={handleKeyDown}
+        innerRef={contentRef}
+        className={classes.content}
         onClick={handleClick}
-        aria-current={!treeviewMode && selectable && selected ? "page" : undefined}
+        onMouseDown={handleMouseDown}
+        style={{
+          paddingLeft: (expandable || icon != null ? 0 : 10) + level * (collapsible ? 32 : 10),
+        }}
+        {...(treeviewMode
+          ? {
+              role: "button",
+              tabIndex: -1,
+              onFocus: handleFocus,
+            }
+          : {
+              role: "button",
+              tabIndex: selectable || expandable ? 0 : -1,
+              onKeyDown: handleKeyDown,
+              "aria-current": selectable && selected ? "page" : undefined,
+              "aria-expanded": expandable ? expanded : undefined,
+              "aria-controls": expandable ? setId(id, "group") : undefined,
+            })}
       >
+        {expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
         {icon}
         {label}
       </HvTypography>
     ),
     [
-      classes,
-      handleClick,
-      handleKeyDown,
       id,
-      label,
+      classes.content,
+      handleClick,
+      handleMouseDown,
+      expandable,
+      level,
+      collapsible,
       treeviewMode,
-      icon,
+      handleFocus,
+      handleKeyDown,
       selectable,
       selected,
-      tabbable,
+      expanded,
+      icon,
+      label,
     ]
   );
 
   const renderedChildren = useMemo(
     () =>
       children && (
-        <ul className={classes.group} role={treeviewMode ? "group" : undefined}>
+        <ul
+          id={setId(id, "group")}
+          className={classes.group}
+          role={treeviewMode ? "group" : undefined}
+        >
           {children}
         </ul>
       ),
-    [children, classes.group, treeviewMode]
+    [children, classes.group, id, treeviewMode]
   );
 
   return (
     <li
-      ref={listItemRef}
+      ref={handleRef}
       id={id}
       className={clsx(classes.node, className, {
         [classes.disabled]: disabled,
+        [classes.expandable]: expandable,
         [classes.collapsed]: expandable && !expanded,
         [classes.expanded]: expandable && expanded,
         [classes.selectable]: !disabled && selectable,
         [classes.unselectable]: !disabled && !selectable,
         [classes.selected]: !disabled && selectable && selected,
         [classes.unselected]: !disabled && selectable && !selected,
+        [classes.focused]: focused,
       })}
       data-hasicon={icon != null ? true : undefined}
-      aria-disabled={disabled ? true : undefined}
-      aria-expanded={collapsible && expandable ? expanded : undefined}
       {...(mode === "treeview" && {
         role: "treeitem",
-        "aria-selected": selectable && selected ? true : undefined,
+        "aria-selected": ariaSelected,
+        "aria-expanded": expandable ? expanded : undefined,
+        "aria-disabled": disabled ? true : undefined,
       })}
       {...others}
     >
       {renderedContent}
-      {renderedChildren}
+      <DescendantProvider id={nodeId} level={level + 1}>
+        {renderedChildren}
+      </DescendantProvider>
     </li>
   );
-};
+});
 
 TreeViewItem.propTypes = {
   /**
@@ -332,6 +419,10 @@ TreeViewItem.propTypes = {
      */
     disabled: PropTypes.string,
     /**
+     * Style applied when item is expandable.
+     */
+    expandable: PropTypes.string,
+    /**
      * Style applied when item is collapsed.
      */
     collapsed: PropTypes.string,
@@ -355,6 +446,10 @@ TreeViewItem.propTypes = {
      * Style applied when item is unselectable.
      */
     unselected: PropTypes.string,
+    /**
+     * Style applied when item is focused.
+     */
+    focused: PropTypes.string,
   }).isRequired,
   /**
    * Is the node disabled.
@@ -385,6 +480,14 @@ TreeViewItem.propTypes = {
    * @ignore
    */
   onClick: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onMouseDown: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onFocus: PropTypes.func,
   /**
    * The content of the component.
    */

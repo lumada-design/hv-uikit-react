@@ -6,18 +6,18 @@ export type HvVerticalNavigationTreeViewItemClassKey =
   | "content"
   | "group"
   | "disabled"
+  | "expandable"
   | "collapsed"
   | "expanded"
   | "selectable"
   | "unselectable"
   | "selected"
   | "unselected"
-  | "contentFocused"
-  | " contentFocusDisabled";
+  | "focused";
 
 export interface HvVerticalNavigationTreeViewItemProps
   extends StandardProps<
-    React.HTMLAttributes<HTMLUListElement>,
+    React.HTMLAttributes<HTMLLIElement>,
     HvVerticalNavigationTreeViewItemClassKey
   > {
   /**
@@ -49,6 +49,14 @@ export interface HvVerticalNavigationTreeViewItemProps
    * @ignore
    */
   onClick: (event: React.SyntheticEvent) => void;
+  /**
+   * @ignore
+   */
+  onMouseDown: (event: React.SyntheticEvent) => void;
+  /**
+   * @ignore
+   */
+  onFocus: (event: React.SyntheticEvent) => void;
 }
 
 export default function HvVerticalNavigationTreeItemView(

@@ -20,32 +20,82 @@ export interface NavigationData {
   data?: NavigationData[];
 }
 
-export type HvNavigationClassKey = "root";
+export type HvNavigationClassKey = "root" | "list" | "listItem";
 
 export interface HvVerticalNavigationNavigationProps
-  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvNavigationClassKey, "onClick"> {
+  extends StandardProps<
+    React.HTMLAttributes<HTMLElement>,
+    HvNavigationClassKey,
+    "onClick" | "onChange"
+  > {
   /**
-   * Label.
+   * Modus operandi (role) of the widget instance.
    */
-  label?: string;
+  mode?: "treeview" | "navigation";
+  /**
+   * Can non-leaf nodes be collapsed / expanded.
+   */
+  collapsible?: boolean;
+
+  /**
+   * The ID of the selected page.
+   */
+  selected?: string;
+  /**
+   * When uncontrolled, defines the initial selected page ID.
+   */
+  defaultSelected?: string;
+  /**
+   * Callback fired when a navigation item is selected.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {(array|string)} value The data of the selected page.
+   */
+  onChange?: (event: React.SyntheticEvent, nodeIds: string) => void;
+
+  /**
+   * Expanded nodes' ids.
+   */
+  expanded?: string[];
+  /**
+   * When uncontrolled, defines the initial expanded nodes' ids.
+   *
+   * It also supports `true` for starting with all nodes expanded.
+   * With `false` all nodes will be collapsed.
+   *
+   * By default it expands the needed nodes to display the current selection, if any.
+   */
+  defaultExpanded?: string[] | boolean;
+  /**
+   * Callback fired when tree items are expanded/collapsed.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {array} nodeIds The ids of the expanded nodes.
+   */
+  onToggle?: (event: React.SyntheticEvent, nodeIds: string[]) => void;
 
   /**
    * An array containing the data for each menu item.
    *
    * id - the id to be applied to the root element.
    * label - the label to be rendered on the menu item.
+   * data - sub-menu items
    */
-  data?: NavigationData[];
-
-  /**
-   * Menu item id selected.
-   */
-  selected?: string;
+  data: NavigationData[];
 
   /**
    * Callback triggered when any item is clicked.
+   *
+   *  @deprecated use `onChange` for selection and `onToggle` for node expansion/collapse.
    */
   onClick?: (event: MouseEvent, selectedItem: NavigationData) => void;
+
+  /**
+   * The root element (nav) aria label.
+   *
+   *  @deprecated Use directly the `aria-label` property instead.
+   */
+  label?: string;
 }
 
 export default function HvVerticalNavigationNavigation(

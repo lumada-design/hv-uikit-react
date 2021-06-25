@@ -1,6 +1,13 @@
 const styles = (theme) => ({
   root: {
-    width: "225px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+
+    width: "100%",
+
+    background: theme.hv.palette.atmosphere.atmo1,
+
     "& > :only-child": {
       padding: theme.hv.spacing.sm,
     },
@@ -13,6 +20,9 @@ const styles = (theme) => ({
     },
   },
   noCollapse: {},
+  legacyMode: {
+    width: 225,
+  },
 });
 
 export default styles;
