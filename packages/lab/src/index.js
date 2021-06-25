@@ -1,5 +1,6 @@
 // components
 export { default as HvAppSwitcherPanel } from "./AppSwitcherPanel";
+export * from "./AppSwitcherPanel";
 export { default as HvFormComposer } from "./FormComposer";
 export { default as HvNavigationAnchors } from "./NavigationAnchors";
 export { default as HvNotificationPanel } from "./NotificationPanel";
