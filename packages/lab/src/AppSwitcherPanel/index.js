@@ -1,3 +1,2 @@
-import AppSwitcherPanel from "./AppSwitcherPanel";
-
-export default AppSwitcherPanel;
+export { default } from "./AppSwitcherPanel";
+export { default as HvAppSwitcherPanelAction } from "./Action";
