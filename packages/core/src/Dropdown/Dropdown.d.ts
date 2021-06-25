@@ -105,6 +105,28 @@ export interface HvDropdownProps
    * Properties passed to the underlying Popper component
    */
   popperProps?: Partial<PopperProps>;
+
+  /**
+   * Callback called when the user cancels the changes.
+   *
+   * Called when the cancel button is used and when the user clicks outside the open container.
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onCancel?: (event: Event) => void;
+  /**
+   * Callback called when dropdown changes the expanded state.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {boolean} open If the dropdown new state is open (`true`) or closed (`false`).
+   */
+  onToggle: (event: Event, open: boolean) => void;
+  /**
+   * Callback called when the user clicks outside the open container.
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onClickOutside?: (event: Event) => void;
 }
 
 export default function HvDropdown(props: HvDropdownProps): JSX.Element | null;

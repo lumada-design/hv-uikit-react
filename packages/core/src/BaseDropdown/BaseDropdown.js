@@ -7,7 +7,14 @@ import { usePopper } from "react-popper";
 import clsx from "clsx";
 import { DropUpXS, DropDownXS } from "@hv/uikit-react-icons";
 import { HvTypography, useUniqueId } from "..";
-import { getFirstAndLastFocus, isKeypress, KeyboardCodes, setId, useControlled } from "../utils";
+import {
+  getFirstAndLastFocus,
+  isKeypress,
+  KeyboardCodes,
+  setId,
+  useControlled,
+  useForkRef,
+} from "../utils";
 import styles from "./styles";
 
 const { Tab, Enter, Esc, Space, ArrowDown } = KeyboardCodes;
@@ -32,6 +39,7 @@ const HvBaseDropdown = ({
   children,
   variableWidth = false,
   dropdownHeaderProps,
+  dropdownHeaderRef: dropdownHeaderRefProp,
   ...others
 }) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
@@ -39,6 +47,10 @@ const HvBaseDropdown = ({
   const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
 
   const [referenceElement, setReferenceElement] = useState(null);
+
+  const handleDropdownHeaderRefProp = useForkRef(dropdownHeaderRefProp, dropdownHeaderProps?.ref);
+  const handleDropdownHeaderRef = useForkRef(setReferenceElement, handleDropdownHeaderRefProp);
+
   const [popperElement, setPopperElement] = useState(null);
 
   const extensionWidth = referenceElement ? referenceElement.offsetWidth : "inherit";
@@ -88,7 +100,6 @@ const HvBaseDropdown = ({
       if (event && !isKeypress(event, Tab)) {
         event.preventDefault();
       }
-
       // we are checking specifically for false because if "isKeypress" returns true or undefined it should continue
       const notControlKey = [Tab, Enter, Esc, ArrowDown, Space].every(
         (key) => isKeypress(event, key) === false
@@ -106,6 +117,8 @@ const HvBaseDropdown = ({
       /* If about to close focus on the header component. */
       const focusHeader = () => {
         if (!newOpen) {
+          // focus-ring won't be visible even if using the keyboard:
+          // https://github.com/WICG/focus-visible/issues/88
           referenceElement.focus({ preventScroll: true });
         }
 
@@ -121,7 +134,7 @@ const HvBaseDropdown = ({
   const headerComponent = (() => {
     if (component) {
       return React.cloneElement(component, {
-        ref: setReferenceElement,
+        ref: handleDropdownHeaderRef,
       });
     }
 
@@ -140,7 +153,7 @@ const HvBaseDropdown = ({
         aria-label={others["aria-label"] ?? undefined}
         aria-labelledby={others["aria-labelledby"] ?? undefined}
         tabIndex={disabled ? -1 : 0}
-        ref={setReferenceElement}
+        ref={handleDropdownHeaderRef}
         {...dropdownHeaderProps}
       >
         <div className={classes.selection}>
@@ -192,9 +205,9 @@ const HvBaseDropdown = ({
     const handleOutside = (event) => {
       const isButtonClick = referenceElement?.contains(event.target);
       if (!isButtonClick) {
+        onClickOutside?.(event);
         setIsOpen(false);
         onToggle?.(event, false);
-        onClickOutside?.(event);
       }
     };
 
@@ -425,9 +438,13 @@ HvBaseDropdown.propTypes = {
    */
   onFlip: PropTypes.func,
   /**
-   * An object containing props to be passed onto the baseDropdown.
+   * Attributes applied to the dropdown header element.
    */
   dropdownHeaderProps: PropTypes.instanceOf(Object),
+  /**
+   * Pass a ref to the dropdown header element.
+   */
+  dropdownHeaderRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
 };
 
 export default withStyles(styles, { name: "HvBaseDropdown" })(HvBaseDropdown);
