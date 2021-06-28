@@ -15,25 +15,33 @@ import {
 } from "../stories/Dropdown.stories.test";
 
 describe("<Dropdown />", () => {
-  it("General", () => {
-    const { container } = render(<General />);
+  it("General", async () => {
+    const { container, findByRole } = render(<General />);
+    await findByRole("tooltip");
+
     expect(container).toMatchSnapshot();
   });
 
-  it("SingleSelection", () => {
-    const { container } = render(<SingleSelection />);
+  it("SingleSelection", async () => {
+    const { container, findByRole } = render(<SingleSelection />);
+    await findByRole("tooltip");
+
     expect(container).toMatchSnapshot();
   });
 
-  it("SingleSelectionWithSearch", () => {
-    const { container } = render(<SingleSelectionWithSearch />);
+  it("SingleSelectionWithSearch", async () => {
+    const { container, findByRole } = render(<SingleSelectionWithSearch />);
+    await findByRole("tooltip");
+
     expect(container).toMatchSnapshot();
   });
 });
 
 describe("Single selection", () => {
-  it("should render a list with options", () => {
-    const { getByRole, getAllByRole } = render(<SingleSelection />);
+  it("should render a list with options", async () => {
+    const { getByRole, getAllByRole, findByRole } = render(<SingleSelection />);
+    await findByRole("tooltip");
+
     const dropdownElement = getByRole("combobox");
     expect(dropdownElement).toBeInTheDocument();
 
@@ -42,9 +50,10 @@ describe("Single selection", () => {
   });
 
   it("should focus first focusable element on open", async () => {
-    const { getByRole } = render(<SingleSelection />);
+    const { getByRole, findByRole } = render(<SingleSelection />);
+    await findByRole("tooltip");
+
     const dropdownElement = getByRole("combobox");
-    userEvent.click(dropdownElement); // open
     expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
     const firstElement = getByRole("option", { name: /value 1/i });
     await waitFor(() => expect(firstElement).toHaveFocus());
@@ -52,17 +61,19 @@ describe("Single selection", () => {
 });
 
 describe("Single selection with search", () => {
-  it("should have a searchbox", () => {
-    const { getByRole } = render(<SingleSelectionWithSearch />);
+  it("should have a searchbox", async () => {
+    const { getByRole, findByRole } = render(<SingleSelectionWithSearch />);
+    await findByRole("tooltip");
 
     const searchbox = getByRole("searchbox");
     expect(searchbox).toBeInTheDocument();
   });
 
   it("should focus search on open", async () => {
-    const { getByRole } = render(<SingleSelectionWithSearch />);
+    const { getByRole, findByRole } = render(<SingleSelectionWithSearch />);
+    await findByRole("tooltip");
+
     const dropdownElement = getByRole("combobox");
-    userEvent.click(dropdownElement); // open
     expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
     const searchbox = getByRole("searchbox");
     await waitFor(() => expect(searchbox).toHaveFocus());
@@ -70,8 +81,9 @@ describe("Single selection with search", () => {
 });
 
 describe("Multi Selection", () => {
-  it("renders a dropdown in the expected configuration", () => {
-    const { getByRole } = render(<General />);
+  it("renders a dropdown in the expected configuration", async () => {
+    const { getByRole, findByRole } = render(<General />);
+    await findByRole("tooltip");
 
     const dropdownElement = getByRole("combobox");
     expect(dropdownElement).toBeInTheDocument();
@@ -111,6 +123,10 @@ describe("Multi Selection", () => {
     expect(cancelButton).toBeInTheDocument();
   });
 
+  // TODO changing to async and await findByRole("tooltip") was causing
+  // the test to fail with "async callback was not invoked within the 5000 ms timeout"
+  // in the CI (but not locally), so the changes were reverting, despite bringing
+  // back the "not wrapped in act" warning.
   it("selections are applied correctly", () => {
     const { getByRole } = render(<General />);
 
@@ -146,9 +162,10 @@ describe("Multi Selection", () => {
   });
 
   it("should focus the checkbox all on open when there is no search", async () => {
-    const { getByRole } = render(<MultiSelectionNoSearch />);
+    const { getByRole, findByRole } = render(<MultiSelectionNoSearch />);
+    await findByRole("tooltip");
+
     const dropdownElement = getByRole("combobox");
-    userEvent.click(dropdownElement); // open
     expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
     const allCheckbox = getByRole("checkbox", { name: "1 / 4" });
     await waitFor(() => expect(allCheckbox).toHaveFocus());
