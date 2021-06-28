@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.18.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.18.1...@hv/uikit-react-lab@3.18.2) (2021-06-28)
+
+
+### Bug Fixes
+
+* export HvAppSwitcherPanelAction in root ([fea66dd](https://github.com/lumada-design/hv-uikit-react/commit/fea66dd80378a14ecc2fa57168418ca9ffd7a505))
+
+
+
+
+
 ## [3.18.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.18.0...@hv/uikit-react-lab@3.18.1) (2021-06-23)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

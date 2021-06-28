@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.35.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.34.0...@hv/uikit-react-core@3.35.0) (2021-06-28)
+
+
+### Features
+
+* **vertical-navigation:** add expand/collapse capability HVUIKIT-5788 ([0aefec1](https://github.com/lumada-design/hv-uikit-react/commit/0aefec1177b98956ea30354b33245acc765a903a))
+
+
+
+
+
 # [3.34.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.33.0...@hv/uikit-react-core@3.34.0) (2021-06-23)
 
 
