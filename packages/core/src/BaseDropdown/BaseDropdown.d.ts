@@ -98,9 +98,13 @@ export interface HvBaseDropdownProps
    */
   onFlip?: (flipped: boolean) => void;
   /**
-   * An object containing props to be passed onto the baseDropdown.
+   * Attributes applied to the dropdown header element.
    */
   dropdownHeaderProps?: React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * Pass a ref to the dropdown header element.
+   */
+  dropdownHeaderRef?: React.Ref<any>;
 }
 
 export default function HvBaseDropdown(props: HvBaseDropdownProps): JSX.Element | null;

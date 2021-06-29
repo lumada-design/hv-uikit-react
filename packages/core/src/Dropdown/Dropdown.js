@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -55,6 +55,13 @@ const HvDropdown = (props) => {
     statusMessage,
     "aria-errormessage": ariaErrorMessage,
 
+    onCancel,
+    onToggle,
+    onClickOutside,
+
+    onFocus,
+    onBlur,
+
     values,
     multiSelect = false,
     showSearch = false,
@@ -92,6 +99,31 @@ const HvDropdown = (props) => {
     setSelectionLabel(getSelectionLabel(values, labels, placeholder, multiSelect));
   }, [labels, multiSelect, placeholder, values]);
 
+  const dropdownHeaderRef = useRef();
+
+  const handleToggle = (_e, open) => {
+    onToggle?.(_e, open);
+
+    setIsOpen(open);
+
+    if (!open) {
+      // also run built-in validation when closing without changes
+      // as the user "touched" the input
+      setValidationState(() => {
+        // this will only run if status is uncontrolled
+        if (required) {
+          const hasSelection = getSelected(internalValues).length > 0;
+
+          if (!hasSelection) {
+            return "invalid";
+          }
+        }
+
+        return "valid";
+      });
+    }
+  };
+
   /**
    * Applies the selected values to the state
    *
@@ -115,29 +147,32 @@ const HvDropdown = (props) => {
         return "valid";
       });
     }
-    if (toggle) setIsOpen(false);
     if (notifyChanges) onChange?.(multiSelect ? selected : selected[0]);
+    if (toggle) {
+      handleToggle(undefined, false);
+
+      // focus-ring won't be visible even if using the keyboard:
+      // https://github.com/WICG/focus-visible/issues/88
+      dropdownHeaderRef.current?.focus({ preventScroll: true });
+    }
   };
 
-  const onToggle = (_e, open) => {
-    setIsOpen(open);
+  /**
+   * Handles the `Cancel` action. Both single and ranged modes are handled here.
+   */
+  const handleCancel = (evt) => {
+    onCancel?.(evt);
 
-    if (!open) {
-      // also run built-in validation when closing without changes
-      // as the user "touched" the input
-      setValidationState(() => {
-        // this will only run if status is uncontrolled
-        if (required) {
-          const hasSelection = getSelected(internalValues).length > 0;
+    handleToggle(evt, false);
 
-          if (!hasSelection) {
-            return "invalid";
-          }
-        }
+    // focus-ring won't be visible even if using the keyboard:
+    // https://github.com/WICG/focus-visible/issues/88
+    dropdownHeaderRef.current?.focus({ preventScroll: true });
+  };
 
-        return "valid";
-      });
-    }
+  const handleClickOutside = (evt) => {
+    onClickOutside?.(evt);
+    onCancel?.(evt);
   };
 
   const setFocusToContent = (containerRef) => {
@@ -236,7 +271,8 @@ const HvDropdown = (props) => {
         placement={placement}
         popperProps={popperProps}
         placeholder={buildHeaderLabel()}
-        onToggle={onToggle}
+        onToggle={handleToggle}
+        onClickOutside={handleClickOutside}
         onContainerCreation={setFocusToContent}
         role="combobox"
         variableWidth={variableWidth}
@@ -250,6 +286,9 @@ const HvDropdown = (props) => {
           [description && setId(elementId, "description"), ariaDescribedBy].join(" ").trim() ||
           undefined
         }
+        onFocus={onFocus}
+        onBlur={onBlur}
+        dropdownHeaderRef={dropdownHeaderRef}
       >
         <List
           id={setId(elementId, "values")}
@@ -261,6 +300,7 @@ const HvDropdown = (props) => {
           multiSelect={multiSelect}
           showSearch={showSearch}
           onChange={handleSelection}
+          onCancel={handleCancel}
           labels={labels}
           notifyChangesOnFirstRender={notifyChangesOnFirstRender}
           hasTooltips={hasTooltips}
@@ -501,6 +541,37 @@ HvDropdown.propTypes = {
    * An object containing props to be wired to the popper component.
    */
   popperProps: PropTypes.shape(),
+
+  /**
+   * Callback called when the user cancels the changes.
+   *
+   * Called when the cancel button is used and when the user clicks outside the open container.
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onCancel: PropTypes.func,
+  /**
+   * Callback called when dropdown changes the expanded state.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {boolean} open If the dropdown new state is open (`true`) or closed (`false`).
+   */
+  onToggle: PropTypes.func,
+  /**
+   * Callback called when the user clicks outside the open container.
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onClickOutside: PropTypes.func,
+
+  /**
+   * @ignore
+   */
+  onFocus: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onBlur: PropTypes.func,
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(HvDropdown);

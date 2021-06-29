@@ -17,6 +17,7 @@ const List = ({
   multiSelect = false,
   showSearch = false,
   onChange,
+  onCancel,
   labels,
   notifyChangesOnFirstRender = false,
   hasTooltips = false,
@@ -183,11 +184,7 @@ const List = ({
         >
           {applyLabel}
         </HvButton>
-        <HvButton
-          id={setId(id, "actions-cancel")}
-          onClick={() => onChange(null, false, true, false)}
-          category="ghost"
-        >
+        <HvButton id={setId(id, "actions-cancel")} onClick={onCancel} category="ghost">
           {cancelLabel}
         </HvButton>
       </HvActionBar>
@@ -249,9 +246,14 @@ List.propTypes = {
    */
   showSearch: PropTypes.bool,
   /**
-   * A function to be executed whenever a item is selected in the list.
+   * A function to be executed whenever a item is selected in the list
+   * or the Apply button is activated (when `multiSelect` is `true`).
    */
   onChange: PropTypes.func,
+  /**
+   * A function to be executed whenever the Cancel button is activated.
+   */
+  onCancel: PropTypes.func,
   /**
    * An object containing all the labels for the dropdown.
    */

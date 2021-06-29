@@ -17,6 +17,7 @@ import {
   HvWarningText,
   HvInfoMessage,
   useUniqueId,
+  useIsMounted,
 } from "..";
 
 import { isBrowser, isKeypress, KeyboardCodes, setId, useControlled, useLabels } from "../utils";
@@ -243,11 +244,15 @@ const HvInput = (props) => {
     materialInputRef.current.focus();
   };
 
+  const isMounted = useIsMounted();
+
   /**
    * Clears the suggestion array.
    */
   const suggestionClearHandler = () => {
-    setSuggestionValues(null);
+    if (isMounted.current) {
+      setSuggestionValues(null);
+    }
   };
 
   /**
@@ -290,13 +295,15 @@ const HvInput = (props) => {
 
     onChange?.(event, newValue);
 
-    // an edge case might be a controlled input whose onChange callback
-    // doesn't change the value (or sets another): the suggestionListCallback
-    // callback will still receive the original rejected value.
-    // a refactor is needed so the suggestionListCallback might be called only
-    // when the input is uncontrolled, providing a way to externally control
-    // the suggestion values.
-    suggestionHandler(newValue);
+    if (canShowSuggestions) {
+      // an edge case might be a controlled input whose onChange callback
+      // doesn't change the value (or sets another): the suggestionListCallback
+      // callback will still receive the original rejected value.
+      // a refactor is needed so the suggestionListCallback might be called only
+      // when the input is uncontrolled, providing a way to externally control
+      // the suggestion values.
+      suggestionHandler(newValue);
+    }
   };
 
   /**
