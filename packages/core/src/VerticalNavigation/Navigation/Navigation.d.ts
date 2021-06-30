@@ -49,9 +49,9 @@ export interface HvVerticalNavigationNavigationProps
    * Callback fired when a navigation item is selected.
    *
    * @param {object} event The event source of the callback.
-   * @param {(array|string)} value The data of the selected page.
+   * @param {object} page The data of the selected page.
    */
-  onChange?: (event: React.SyntheticEvent, nodeIds: string) => void;
+  onChange?: (event: React.SyntheticEvent, selectedItem: NavigationData) => void;
 
   /**
    * Expanded nodes' ids.
