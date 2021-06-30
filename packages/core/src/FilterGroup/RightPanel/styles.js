@@ -1,17 +1,19 @@
 import { makeStyles } from "@material-ui/core";
 
 const styles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    "& ul$list": {
+      width: "calc(100% + 8px)",
+      height: "calc(100% - 70px)",
+      overflowY: "auto",
+      margin: -4,
+      padding: 4,
+    },
+  },
   search: {
     marginBottom: theme.hvSpacing("xs"),
   },
-  list: {
-    width: "calc(100% + 8px)",
-    height: "calc(100% - 70px)",
-    overflowY: "auto",
-    margin: -4,
-    padding: 4,
-  },
+  list: {},
   hiddenOption: {
     display: "none",
   },
