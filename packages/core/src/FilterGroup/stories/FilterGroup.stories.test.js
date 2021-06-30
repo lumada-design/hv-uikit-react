@@ -27,7 +27,8 @@ Main.parameters = {
   },
   eyes: {
     runBefore() {
-      fireEvent.click(screen.getById("example-dropdown"));
+      const dropdownElement = screen.getByRole("combobox");
+      fireEvent.click(dropdownElement);
 
       // extra buffer to allow popper layout
       return new Promise((resolve) => setTimeout(() => resolve(), 1000));
