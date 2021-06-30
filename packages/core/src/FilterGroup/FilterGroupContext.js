@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useSavedState } from "../utils";
 
@@ -16,10 +16,6 @@ export const FilterGroupContext = React.createContext({
 export const FilterGroupProvider = ({ value, filters, children }) => {
   const [group, setActiveGroup] = useState(0);
   const [filterValues, setFilterValues, rollbackFilterValues] = useSavedState(value);
-
-  useEffect(() => {
-    setFilterValues(value);
-  }, [value]);
 
   return (
     <FilterGroupContext.Provider
