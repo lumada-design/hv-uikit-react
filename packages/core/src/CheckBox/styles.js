@@ -55,7 +55,9 @@ const styles = (theme) => ({
   },
   focusVisible: {
     ...outlineStyles,
-    backgroundColor: theme.hv.palette.atmosphere.atmo3,
+    "& div": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+    },
 
     // ensure more specificity than .HvBaseCheckbox-root.HvBaseCheckbox-focusVisible svg
     "& $checkbox div>svg": {
