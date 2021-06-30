@@ -24,6 +24,7 @@ export const parameters = {
         "Forms",
         ["Main", "Form Element", "Form Element Blocks"],
         "Visualizations",
+        "Widgets",
         "Lab",
         ["Table", "Table Hooks"],
         "Community",

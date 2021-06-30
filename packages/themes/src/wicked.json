@@ -65,7 +65,8 @@
       "supp3": "#4E7599",
       "supp4": "#C19C31",
       "supp5": "#546B6B"
-    }
+    },
+    "shadow": "rgba(0,0,0,.16)"
   },
   "typography": {
     "fontFamily": ["'Open Sans'", "Arial", "Helvetica", "sans-serif"],
