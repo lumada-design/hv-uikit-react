@@ -30,8 +30,10 @@ selected.parameters = {
   eyes: {
     runBefore: async () => {
       fireEvent.click(screen.getByText("All"));
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      return waitFor(() => screen.getByText("8 of 8 items"));
+      return waitFor(async () => {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        screen.getByText("8 of 8 items");
+      });
     },
   },
 };
@@ -43,8 +45,10 @@ indeterminate.parameters = {
   eyes: {
     runBefore: async () => {
       fireEvent.click(screen.getByText("Value 3"));
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      return waitFor(() => screen.getByText("1 of 8 items"));
+      return waitFor(async () => {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        screen.getByText("1 of 8 items");
+      });
     },
   },
 };
