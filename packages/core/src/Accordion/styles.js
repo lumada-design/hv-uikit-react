@@ -25,7 +25,6 @@ const styles = (theme) => ({
     justifyContent: "flex-start",
     alignItems: "center",
     height: "32px",
-    borderLeft: `2px solid transparent`,
 
     // hover
     ":not($disabled)&:hover": hover(theme),
