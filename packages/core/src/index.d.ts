@@ -187,7 +187,10 @@ export {
 
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 // TODO refactor the HvVerticalNavigation subcomponents' names
-export { Navigation as HvVerticalNavigationTree } from "./VerticalNavigation";
+export {
+  Navigation as HvVerticalNavigationTree,
+  NavigationData as HvVerticalNavigationTreeItem,
+} from "./VerticalNavigation";
 export { TreeView as HvTreeView, TreeViewItem as HvTreeViewItem } from "./VerticalNavigation";
 export {
   Actions as HvVerticalNavigationActions,

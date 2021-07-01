@@ -18,6 +18,10 @@ export interface NavigationData {
    * Data subset.
    */
   data?: NavigationData[];
+  /**
+   * Any other properties.
+   */
+  [otherProperty: string]: any;
 }
 
 export type HvNavigationClassKey = "root" | "list" | "listItem";
