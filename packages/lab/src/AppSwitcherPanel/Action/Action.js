@@ -84,7 +84,10 @@ const Action = (props) => {
       tabIndex={0}
       selected={isSelected}
       disabled={disabled}
-      className={clsx(className, classes.root, { [classes.disabled]: disabled })}
+      className={clsx(className, classes.root, {
+        [classes.disabled]: disabled,
+        [classes.selected]: isSelected,
+      })}
     >
       <HvTypography
         component={isLink ? "a" : "button"}

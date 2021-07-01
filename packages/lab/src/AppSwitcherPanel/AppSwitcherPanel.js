@@ -44,6 +44,15 @@ const AppSwitcherPanel = (props) => {
           application={application}
           onClickCallback={actionClicked}
           isSelectedCallback={isActionSelectedCallback}
+          classes={{
+            root: classes.item,
+            selected: classes.itemSelected,
+            disabled: classes.itemDisabled,
+            typography: classes.itemTrigger,
+            icon: classes.itemIcon,
+            title: classes.itemTitle,
+            iconInfo: classes.itemInfoIcon,
+          }}
         />
       );
     }
@@ -92,6 +101,14 @@ AppSwitcherPanel.propTypes = {
     footerContainer: PropTypes.string,
     closed: PropTypes.string,
     open: PropTypes.string,
+
+    item: PropTypes.string,
+    itemSelected: PropTypes.string,
+    itemDisabled: PropTypes.string,
+    itemTrigger: PropTypes.string,
+    itemIcon: PropTypes.string,
+    itemTitle: PropTypes.string,
+    itemInfoIcon: PropTypes.string,
   }).isRequired,
 
   /**
