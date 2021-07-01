@@ -89,6 +89,8 @@ export {
   Label as HvUserPreferencesOptionsGroupLabel,
 } from "./UserPreferences";
 
+export { default as HvScrollToHorizontal } from "./ScrollTo/Horizontal";
+
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 // TODO refactor the HvVerticalNavigation subcomponents' names
 export { Navigation as HvVerticalNavigationTree } from "./VerticalNavigation";

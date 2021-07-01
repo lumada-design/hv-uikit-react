@@ -197,6 +197,9 @@ export {
   Action as HvVerticalNavigationAction,
 } from "./VerticalNavigation";
 
+export { default as HvScrollToHorizontal } from "./ScrollTo/Horizontal";
+export * from "./ScrollTo/Horizontal";
+
 export type HvAccentColorKeys = "acce0" | "acce1" | "acce2" | "acce2h" | "acce3";
 export type HvAtmosphereColorKeys =
   | "atmo1"
