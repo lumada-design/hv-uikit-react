@@ -362,6 +362,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
                     "root": "HvAppSwitcherPanelAction-root",
+                    "selected": "HvAppSwitcherPanelAction-selected",
                     "title": "HvAppSwitcherPanelAction-title",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
@@ -1233,6 +1234,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
                     "root": "HvAppSwitcherPanelAction-root",
+                    "selected": "HvAppSwitcherPanelAction-selected",
                     "title": "HvAppSwitcherPanelAction-title",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
@@ -2098,6 +2100,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
                     "root": "HvAppSwitcherPanelAction-root",
+                    "selected": "HvAppSwitcherPanelAction-selected",
                     "title": "HvAppSwitcherPanelAction-title",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
@@ -3082,6 +3085,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
                     "root": "HvAppSwitcherPanelAction-root",
+                    "selected": "HvAppSwitcherPanelAction-selected",
                     "title": "HvAppSwitcherPanelAction-title",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
@@ -3755,6 +3759,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
                     "root": "HvAppSwitcherPanelAction-root",
+                    "selected": "HvAppSwitcherPanelAction-selected",
                     "title": "HvAppSwitcherPanelAction-title",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
@@ -4632,6 +4637,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
                     "root": "HvAppSwitcherPanelAction-root",
+                    "selected": "HvAppSwitcherPanelAction-selected",
                     "title": "HvAppSwitcherPanelAction-title",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }

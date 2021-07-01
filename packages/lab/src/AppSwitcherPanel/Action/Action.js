@@ -90,7 +90,7 @@ const Action = (props) => {
         component={isLink ? "a" : "button"}
         href={isLink ? url : undefined}
         target={isLink ? target || "_top" : undefined}
-        className={classes.typography}
+        className={clsx(classes.typography, { [classes.selected]: isSelected })}
         onClick={handleOnClick}
         style={{ borderColor: color }}
       >

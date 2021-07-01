@@ -31,6 +31,8 @@ const styles = (theme) => ({
     },
   },
 
+  selected: { cursor: "default" },
+
   icon: {
     minWidth: 32,
     display: "flex",
