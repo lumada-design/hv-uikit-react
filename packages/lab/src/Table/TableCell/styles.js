@@ -46,20 +46,20 @@ const styles = (theme) => ({
     textAlign: "justify",
   },
 
-  paddingNone: {
+  variantNone: {
     padding: 0,
   },
-  paddingCheckbox: {
+  variantCheckbox: {
     padding: 0,
     width: 32,
     borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
-  paddingActions: {
+  variantActions: {
     padding: 0,
     width: 32,
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
-  paddingExpand: {
+  variantExpand: {
     paddingLeft: 0,
   },
 
