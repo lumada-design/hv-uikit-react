@@ -11,9 +11,7 @@ const styles = (theme) => ({
 
     height: 32,
 
-    transition: theme.transitions.create("background-color", {
-      duration: theme.transitions.duration.shortest,
-    }),
+    transition: "none",
 
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
@@ -28,6 +26,7 @@ const styles = (theme) => ({
 
   checkbox: {
     height: 32,
+    transition: "none",
   },
   invalidCheckbox: {
     borderBottom: `1px solid ${theme.hv.palette.semantic.sema4}`,
