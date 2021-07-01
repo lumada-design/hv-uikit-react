@@ -28,8 +28,9 @@ export const selected = () => <WithActions />;
 
 selected.parameters = {
   eyes: {
-    runBefore() {
+    runBefore: async () => {
       fireEvent.click(screen.getByText("All"));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       return waitFor(() => screen.getByText("8 of 8 items"));
     },
   },
@@ -40,8 +41,9 @@ export const indeterminate = () => <WithActions />;
 
 indeterminate.parameters = {
   eyes: {
-    runBefore() {
+    runBefore: async () => {
       fireEvent.click(screen.getByText("Value 3"));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       return waitFor(() => screen.getByText("1 of 8 items"));
     },
   },
