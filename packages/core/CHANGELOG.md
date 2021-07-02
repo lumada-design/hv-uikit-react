@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.35.0...@hv/uikit-react-core@3.36.0) (2021-07-02)
+
+
+### Bug Fixes
+
+* **accordion:** remove transparent border. HVUIKIT-5872 ([35dc292](https://github.com/lumada-design/hv-uikit-react/commit/35dc2921baf8a0828653931f1c49c3ad427967e7))
+* **checkbox:** add background on focus. HVUIKIT-5861 ([8c23c76](https://github.com/lumada-design/hv-uikit-react/commit/8c23c766e53682dbb361cbebab8221ad23fa9c30))
+* **checkbox:** apply background in the correct element. HVUIKIT-5861 ([aa871ba](https://github.com/lumada-design/hv-uikit-react/commit/aa871bae318424f1d1231625ce1fa347598e23ac))
+* **filter-group:** fix focus style and remove unnneeded hook. HVUIKIT-4981 ([0d06670](https://github.com/lumada-design/hv-uikit-react/commit/0d066706a1d3bf2e3b97e48ef375951e4590803a))
+* **input:** prevent state update on unmounted input ([c1a6fc1](https://github.com/lumada-design/hv-uikit-react/commit/c1a6fc13529418be4970b7b1f78aa3abd54e00f8))
+* **vertical-navigation:** export NavigationData ts definition ([64eeb12](https://github.com/lumada-design/hv-uikit-react/commit/64eeb1296f2616c89f2ce5fa69a762cd29d4b3a8))
+* **vertical-navigation:** onChange TS function [#2476](https://github.com/lumada-design/hv-uikit-react/issues/2476) ([3de627d](https://github.com/lumada-design/hv-uikit-react/commit/3de627d8846ed6b2ae49b22ec886aca41264ffee))
+
+
+### Features
+
+* **dropdown:** onToggle, onCancel and onClickOutside callbacks [#2469](https://github.com/lumada-design/hv-uikit-react/issues/2469) ([46b237f](https://github.com/lumada-design/hv-uikit-react/commit/46b237f2ddcd6deb86c54fda3a0c7a6981252228))
+* **filter-group:** add component according to DS guidelines. HVUIKIT-4981 ([44dd361](https://github.com/lumada-design/hv-uikit-react/commit/44dd3615c093b704136e59814a1e50607f671872))
+* **scrollto:** add horizontal scrollto.HVUIKIT-5510 ([5856f9c](https://github.com/lumada-design/hv-uikit-react/commit/5856f9c5dfa2a02b0945045d22213b1cefac3d30))
+* **theme:** add shadow color. HVUIKIT-4981 ([e3dc8d4](https://github.com/lumada-design/hv-uikit-react/commit/e3dc8d4f925c1468584ce67979b951302bc00b78))
+* **vertical-navigation:** allow other properties in navigation data ([b86078b](https://github.com/lumada-design/hv-uikit-react/commit/b86078b0e7eeb6cb99c1f01b12e20f1d9c1ef79f))
+
+
+
+
+
 # [3.35.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.34.0...@hv/uikit-react-core@3.35.0) (2021-06-28)
 
 

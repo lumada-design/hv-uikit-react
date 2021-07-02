@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.1.0 (2021-07-02)
+
+
+### Features
+
+* **theme:** add shadow color. HVUIKIT-4981 ([e3dc8d4](https://github.com/lumada-design/hv-uikit-react/commit/e3dc8d4f925c1468584ce67979b951302bc00b78))
+
+
+
+
+
 ## 3.0.5 (2021-06-14)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
