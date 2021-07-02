@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import { withStyles, useTheme } from "@material-ui/core";
 import { MoreOptionsVertical } from "@hv/uikit-react-icons";
 import { getPrevNextFocus, isKeypress, KeyboardCodes, useControlled } from "../utils";
@@ -19,6 +20,7 @@ const DropDownMenu = ({
   placement = "right",
   dataList,
   disablePortal = false,
+  onToggle,
   onToggleOpen,
   onClick,
   keepOpened = true,
@@ -35,11 +37,11 @@ const DropDownMenu = ({
 
   const listId = setId(id, "list");
 
-  const handleClose = () => {
+  const handleClose = (event) => {
     // this will only run if uncontrolled
     setOpen(false);
-
     onToggleOpen?.(false);
+    onToggle?.(event, false);
   };
 
   // If the ESCAPE key is pressed inside the list, the close handler must be called.
@@ -47,7 +49,7 @@ const DropDownMenu = ({
     if (isKeypress(event, KeyboardCodes.Tab)) {
       const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
-      handleClose();
+      handleClose(event);
     }
     event.preventDefault();
   };
@@ -91,8 +93,8 @@ const DropDownMenu = ({
       onToggle={(e, s) => {
         // this will only run if uncontrolled
         setOpen(s);
-
         onToggleOpen?.(s);
+        onToggle?.(e, s);
       }}
       disabled={disabled}
       onContainerCreation={setFocusToContent}
@@ -106,7 +108,7 @@ const DropDownMenu = ({
           selectable={false}
           condensed={condensed}
           onClick={(event, item) => {
-            if (!keepOpened) handleClose();
+            if (!keepOpened) handleClose(event);
             onClick?.(event, item);
           }}
           onKeyDown={handleKeyDown}
@@ -184,7 +186,14 @@ DropDownMenu.propTypes = {
   /**
    * Function executed on toggle of the dropdown. Should receive the open status.
    */
-  onToggleOpen: PropTypes.func,
+  onToggleOpen: deprecatedPropType(
+    PropTypes.func,
+    "Instead use the onToggle prop which receives the event"
+  ),
+  /**
+   * Function executed on toggle of the dropdown. Should receive the open status.
+   */
+  onToggle: PropTypes.func,
   /**
    * Function executed in each onClick. Should received the clicked element.
    */

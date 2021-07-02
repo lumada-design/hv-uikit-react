@@ -48,6 +48,7 @@ interface notification {
   icon?: React.ReactNode;
   onClick?: (event: Event, notificationId: string) => void;
   onKeyPress?: (event: Event, notificationId: string) => void;
+  onToggleOpen?: (open: boolean) => void; 
   actions?: actions;
 }
 
