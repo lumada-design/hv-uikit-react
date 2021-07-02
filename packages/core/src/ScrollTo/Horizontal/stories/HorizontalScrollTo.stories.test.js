@@ -1,7 +1,5 @@
-import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import { WithContent } from "./HorizontalScrollTo.stories";
 import { HvScrollToHorizontal, HvContainer, HvInput, HvTypography } from "../../..";
 
 export default {
@@ -16,25 +14,6 @@ export default {
 
 // __________________________________
 // Extended applitools test scenarios
-
-const scrollItem = async () => {
-  const Insights = screen.getByRole("button", { name: "Insights" });
-  fireEvent.click(Insights); // scroll
-
-  return new Promise((resolve) => setTimeout(() => resolve(), 1000));
-};
-
-// test scenario, datepicker default value opened
-export const ScrollSample = () => WithContent();
-
-ScrollSample.parameters = {
-  eyes: {
-    runBefore() {
-      return scrollItem();
-    },
-  },
-};
-
 export const DocumentScroll = () => {
   const options = [
     { label: "Server status summary", value: "documentScrollId1" },
@@ -118,11 +97,6 @@ DocumentScroll.parameters = {
   docs: {
     description: {
       story: "Basic navigation providing a clickable area to show scrolling capabilities",
-    },
-  },
-  eyes: {
-    runBefore() {
-      return scrollItem();
     },
   },
 };
