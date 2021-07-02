@@ -54,6 +54,9 @@ export const Main = () => {
       date: new Date(),
 
       icon: <Level5 semantic="sema4" />,
+      onToggleOpen: (open) => {
+        alert(`Dropdown is open: ${open}`);
+      },
       onClick: () => {
         alert("Clicked");
       },

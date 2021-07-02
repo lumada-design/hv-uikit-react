@@ -57,7 +57,7 @@ const HvNotificationPanel = ({
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-  const NotificationActions = ({ notificationId, actions }) => {
+  const generateNotificationsActions = (notificationId, onToggleOpen, actions) => {
     const expand = notificationId === highlighted;
     const dList = [...actions.values];
     return (
@@ -65,10 +65,11 @@ const HvNotificationPanel = ({
         expanded={expand}
         onClick={(e, item) => {
           setHighlighted(undefined);
-          item.callback(notificationId);
+          item?.callback?.(notificationId);
         }}
         dataList={dList}
         onToggleOpen={(s) => {
+          onToggleOpen?.(s);
           if (s) {
             setHighlighted(notificationId);
           } else {
@@ -94,9 +95,11 @@ const HvNotificationPanel = ({
           date={notification.date}
           onClick={notification.onClick}
           onKeyPress={notification.onKeyPress}
-          rightContainer={
-            <NotificationActions notificationId={notification.id} actions={notification.actions} />
-          }
+          rightContainer={generateNotificationsActions(
+            notification.id,
+            notification.onToggleOpen,
+            notification.actions
+          )}
           isHighlighted={notificationIsHighlighted}
           locale={locale}
         />
@@ -216,6 +219,7 @@ HvNotificationPanel.propTypes = {
       icon: PropTypes.element,
       onClick: PropTypes.func,
       onKeyPress: PropTypes.func,
+      onToggleOpen: PropTypes.func,
       actions: PropTypes.shape({
         label: PropTypes.bool,
         action: PropTypes.string,
@@ -232,23 +236,6 @@ HvNotificationPanel.propTypes = {
    * Action buttons to render in footer
    */
   footer: PropTypes.node,
-  /**
-   * Id of the notification actioned via click
-   */
-  notificationId: PropTypes.string,
-  /**
-   * Actions attached to each notification
-   */
-  actions: PropTypes.shape({
-    /**
-     * Properties to be assigned to the actions dropdown buttons
-     */
-    values: PropTypes.string,
-    /**
-     * Additional props to be spread if necessary
-     */
-    dropDownMenuProps: PropTypes.shape({}),
-  }),
   /**
    * Title of the EmptyStatePanel
    */
