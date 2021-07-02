@@ -120,7 +120,7 @@ export interface HvDropdownProps
    * @param {object} event The event source of the callback.
    * @param {boolean} open If the dropdown new state is open (`true`) or closed (`false`).
    */
-  onToggle: (event: Event, open: boolean) => void;
+  onToggle?: (event: Event, open: boolean) => void;
   /**
    * Callback called when the user clicks outside the open container.
    *
