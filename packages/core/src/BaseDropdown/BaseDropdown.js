@@ -99,6 +99,7 @@ const HvBaseDropdown = ({
     (event) => {
       if (event && !isKeypress(event, Tab)) {
         event.preventDefault();
+        event.stopPropagation();
       }
       // we are checking specifically for false because if "isKeypress" returns true or undefined it should continue
       const notControlKey = [Tab, Enter, Esc, ArrowDown, Space].every(
