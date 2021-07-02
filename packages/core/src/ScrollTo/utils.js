@@ -78,7 +78,17 @@ const hideTooltip = (evt) => {
   return !isOverFlow;
 };
 
-export const addTooltipToElement = (label) => {
-  const component = (props) => <HvTypography {...props}>{props.children}</HvTypography>;
-  return withTooltip(component, label, "top", hideTooltip);
+export const addTooltipToElement = (
+  label,
+  componentType,
+  tooltipPosition = "top",
+  hideOnOverflow = true
+) => {
+  const component = (props) => (
+    <HvTypography component={componentType} {...props}>
+      {props.children}
+    </HvTypography>
+  );
+  const hideTooltipFunc = hideOnOverflow ? hideTooltip : undefined;
+  return withTooltip(component, label, tooltipPosition, hideTooltipFunc);
 };
