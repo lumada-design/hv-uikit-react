@@ -12,7 +12,14 @@ export type HvAppSwitcherPanelClassKey =
   | "actionsContainer"
   | "footerContainer"
   | "closed"
-  | "open";
+  | "open"
+  | "item"
+  | "itemSelected"
+  | "itemDisabled"
+  | "itemTrigger"
+  | "itemIcon"
+  | "itemTitle"
+  | "itemInfoIcon";
 
 export interface HvAppSwitcherPanelProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvAppSwitcherPanelClassKey> {

@@ -67,6 +67,14 @@ const styles = (theme) => ({
 
     ...theme.hv.typography.highlightText,
   },
+
+  item: {},
+  itemSelected: {},
+  itemDisabled: {},
+  itemTypography: {},
+  itemIcon: {},
+  itemTitle: {},
+  itemInfo: {},
 });
 
 export default styles;

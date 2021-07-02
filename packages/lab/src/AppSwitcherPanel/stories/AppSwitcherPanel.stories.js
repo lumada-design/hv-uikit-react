@@ -1,5 +1,7 @@
 /* eslint-disable no-alert */
-import React from "react";
+import React, { useState } from "react";
+
+import { makeStyles } from "@material-ui/core";
 
 import { HvTypography } from "@hv/uikit-react-core";
 
@@ -73,7 +75,7 @@ export const Main = () => {
 };
 
 // Sample 2 - Simple example with footer
-export const sample2 = () => {
+export const Sample2 = () => {
   const handlesActionSelectedCallback = (application) => {
     return application.url != null && window.location.href.startsWith(application.url);
   };
@@ -132,7 +134,7 @@ export const sample2 = () => {
   );
 };
 
-sample2.parameters = {
+Sample2.parameters = {
   docs: {
     description: {
       story: "Sample using the dual columns layout and showcasing multiple item's variations.",
@@ -141,7 +143,7 @@ sample2.parameters = {
 };
 
 // Sample 3 - Simple example with a big list of applications
-export const sample3 = () => {
+export const Sample3 = () => {
   const handlesActionSelectedCallback = (application) => {
     return window.location.href.startsWith(application.url);
   };
@@ -178,44 +180,71 @@ export const sample3 = () => {
   );
 };
 
-sample3.parameters = {
+Sample3.parameters = {
   docs: {
     description: { story: "Sample with a very high cardinality (scrollable)." },
   },
 };
 
 // Sample 4 - Example with a custom header and footer
-export const sample4 = () => {
+export const Sample4 = () => {
   const applicationsList = [
     {
       name:
         "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
-      url: "https://lumada-design.github.io/uikit/master/",
-      target: "_top",
     },
     {
       name: "UI-KIT GitHub (New Tab)",
       iconElement: <Tool />,
       description: "This is the UI-KIT repository on Github",
-      url: "https://github.com/lumada-design/hv-uikit-react",
-      target: "_blank",
     },
     {
       name: "No Icon App",
       description: "This is an App without an icon, URL is set to the UI-KIT storybook",
-      url: "https://github.com/lumada-design/hv-uikit-react",
     },
     {
       name: "No Description App",
-      url: "https://github.com/lumada-design/hv-uikit-react",
     },
   ];
+
+  const [selected, setSelected] = useState(null);
+
+  const handleIsActionSelected = (application) => {
+    return application.name === selected;
+  };
+
+  const handleActionClicked = (event, application) => {
+    setSelected(application.name);
+  };
+
+  const useStyles = makeStyles((theme) => ({
+    itemTrigger: {},
+    itemIcon: {
+      transition: "transform .8s ease-in-out",
+    },
+    itemSelected: {
+      backgroundColor: theme.hv.palette.semantic.sema18,
+
+      "& $itemTrigger": {
+        cursor: "default",
+      },
+
+      "& $itemIcon": {
+        transform: "rotate(315deg)",
+      },
+    },
+  }));
+
+  const classes = useStyles();
 
   return (
     <HvAppSwitcherPanel
       applications={applicationsList}
+      isActionSelectedCallback={handleIsActionSelected}
+      onActionClickedCallback={handleActionClicked}
+      classes={classes}
       header={
         <HvTypography
           variant="sTitle"
@@ -234,7 +263,7 @@ export const sample4 = () => {
   );
 };
 
-sample4.parameters = {
+Sample4.parameters = {
   docs: {
     description: { story: "Example with a custom header and footer" },
   },

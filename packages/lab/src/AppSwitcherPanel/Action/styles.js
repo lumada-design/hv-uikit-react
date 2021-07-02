@@ -6,6 +6,7 @@ const styles = (theme) => ({
     marginRight: theme.hv.spacing.sm,
   },
   disabled: {},
+  selected: {},
 
   typography: {
     display: "flex",

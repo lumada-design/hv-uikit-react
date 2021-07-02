@@ -85,6 +85,13 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
         "dual": "HvAppSwitcherPanel-dual",
         "fluid": "HvAppSwitcherPanel-fluid",
         "footerContainer": "HvAppSwitcherPanel-footerContainer",
+        "item": "HvAppSwitcherPanel-item",
+        "itemDisabled": "HvAppSwitcherPanel-itemDisabled",
+        "itemIcon": "HvAppSwitcherPanel-itemIcon",
+        "itemInfo": "HvAppSwitcherPanel-itemInfo",
+        "itemSelected": "HvAppSwitcherPanel-itemSelected",
+        "itemTitle": "HvAppSwitcherPanel-itemTitle",
+        "itemTypography": "HvAppSwitcherPanel-itemTypography",
         "open": "HvAppSwitcherPanel-open",
         "root": "HvAppSwitcherPanel-root",
         "single": "HvAppSwitcherPanel-single",
@@ -340,6 +347,17 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                   "url": "http://mockapp1/",
                 }
               }
+              classes={
+                Object {
+                  "disabled": "HvAppSwitcherPanel-itemDisabled",
+                  "icon": "HvAppSwitcherPanel-itemIcon",
+                  "iconInfo": undefined,
+                  "root": "HvAppSwitcherPanel-item",
+                  "selected": "HvAppSwitcherPanel-itemSelected",
+                  "title": "HvAppSwitcherPanel-itemTitle",
+                  "typography": undefined,
+                }
+              }
               isSelectedCallback={[Function]}
               key="app-1"
               onClickCallback={[Function]}
@@ -357,12 +375,13 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                 }
                 classes={
                   Object {
-                    "disabled": "HvAppSwitcherPanelAction-disabled",
-                    "icon": "HvAppSwitcherPanelAction-icon",
+                    "disabled": "HvAppSwitcherPanelAction-disabled HvAppSwitcherPanel-itemDisabled",
+                    "icon": "HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon",
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-                    "root": "HvAppSwitcherPanelAction-root",
-                    "title": "HvAppSwitcherPanelAction-title",
+                    "root": "HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item",
+                    "selected": "HvAppSwitcherPanelAction-selected HvAppSwitcherPanel-itemSelected",
+                    "title": "HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
                 }
@@ -370,13 +389,13 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                 onClickCallback={[Function]}
               >
                 <WithStyles(HvListItem)
-                  className="HvAppSwitcherPanelAction-root"
+                  className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                   interactive={true}
                   selected={false}
                   tabIndex={0}
                 >
                   <HvListItem
-                    className="HvAppSwitcherPanelAction-root"
+                    className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                     classes={
                       Object {
                         "condensed": "HvListItem-condensed",
@@ -413,7 +432,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                             class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                           >
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -424,7 +443,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -432,7 +451,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 1 - VALID
                                 </span>
@@ -461,7 +480,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <button
@@ -470,7 +489,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 tabindex="0"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -478,7 +497,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 3
                                 </span>
@@ -507,7 +526,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               </button>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -518,7 +537,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -526,7 +545,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 5 - VALID without description
                                 </span>
@@ -562,7 +581,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                             >
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -573,7 +592,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -581,7 +600,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 1 - VALID
                                   </span>
@@ -610,7 +629,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <button
@@ -619,7 +638,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   tabindex="0"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -627,7 +646,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 3
                                   </span>
@@ -656,7 +675,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 </button>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -667,7 +686,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -675,7 +694,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 5 - VALID without description
                                   </span>
@@ -692,7 +711,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                           wrapper={[Function]}
                         >
                           <li
-                            className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -763,7 +782,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    className="HvAppSwitcherPanelAction-icon"
+                                    className="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       className="HvAppSwitcherPanelAction-iconUrl"
@@ -772,7 +791,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <TitleWithTooltip
-                                    className="HvAppSwitcherPanelAction-title"
+                                    className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                     title="Mock App 1 - VALID"
                                   >
                                     <WithStyles(ForwardRef)
@@ -899,7 +918,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                           >
                                             <WithStyles(ForwardRef)
                                               aria-describedby={null}
-                                              className="HvAppSwitcherPanelAction-title"
+                                              className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                               component="span"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -910,7 +929,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                             >
                                               <ForwardRef
                                                 aria-describedby={null}
-                                                className="HvAppSwitcherPanelAction-title"
+                                                className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                                 classes={
                                                   Object {
                                                     "3xlTitle": "HvTypography-3xlTitle",
@@ -947,7 +966,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                               >
                                                 <span
                                                   aria-describedby={null}
-                                                  className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                   onBlur={[Function]}
                                                   onFocus={[Function]}
                                                   onTouchEnd={[Function]}
@@ -961,7 +980,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                             <ForwardRef(Popper)
                                               anchorEl={
                                                 <span
-                                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                 >
                                                   Mock App 1 - VALID
                                                 </span>
@@ -1213,6 +1232,17 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                   "name": "Mock App 3",
                 }
               }
+              classes={
+                Object {
+                  "disabled": "HvAppSwitcherPanel-itemDisabled",
+                  "icon": "HvAppSwitcherPanel-itemIcon",
+                  "iconInfo": undefined,
+                  "root": "HvAppSwitcherPanel-item",
+                  "selected": "HvAppSwitcherPanel-itemSelected",
+                  "title": "HvAppSwitcherPanel-itemTitle",
+                  "typography": undefined,
+                }
+              }
               isSelectedCallback={[Function]}
               key="app-3"
               onClickCallback={[Function]}
@@ -1228,12 +1258,13 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                 }
                 classes={
                   Object {
-                    "disabled": "HvAppSwitcherPanelAction-disabled",
-                    "icon": "HvAppSwitcherPanelAction-icon",
+                    "disabled": "HvAppSwitcherPanelAction-disabled HvAppSwitcherPanel-itemDisabled",
+                    "icon": "HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon",
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-                    "root": "HvAppSwitcherPanelAction-root",
-                    "title": "HvAppSwitcherPanelAction-title",
+                    "root": "HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item",
+                    "selected": "HvAppSwitcherPanelAction-selected HvAppSwitcherPanel-itemSelected",
+                    "title": "HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
                 }
@@ -1241,13 +1272,13 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                 onClickCallback={[Function]}
               >
                 <WithStyles(HvListItem)
-                  className="HvAppSwitcherPanelAction-root"
+                  className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                   interactive={true}
                   selected={false}
                   tabIndex={0}
                 >
                   <HvListItem
-                    className="HvAppSwitcherPanelAction-root"
+                    className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                     classes={
                       Object {
                         "condensed": "HvListItem-condensed",
@@ -1284,7 +1315,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                             class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                           >
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -1295,7 +1326,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -1303,7 +1334,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 1 - VALID
                                 </span>
@@ -1332,7 +1363,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <button
@@ -1341,7 +1372,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 tabindex="0"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -1349,7 +1380,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 3
                                 </span>
@@ -1378,7 +1409,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               </button>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -1389,7 +1420,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -1397,7 +1428,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 5 - VALID without description
                                 </span>
@@ -1433,7 +1464,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                             >
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -1444,7 +1475,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -1452,7 +1483,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 1 - VALID
                                   </span>
@@ -1481,7 +1512,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <button
@@ -1490,7 +1521,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   tabindex="0"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -1498,7 +1529,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 3
                                   </span>
@@ -1527,7 +1558,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 </button>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -1538,7 +1569,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -1546,7 +1577,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 5 - VALID without description
                                   </span>
@@ -1563,7 +1594,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                           wrapper={[Function]}
                         >
                           <li
-                            className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -1628,7 +1659,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   }
                                 >
                                   <div
-                                    className="HvAppSwitcherPanelAction-icon"
+                                    className="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       className="HvAppSwitcherPanelAction-iconUrl"
@@ -1637,7 +1668,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <TitleWithTooltip
-                                    className="HvAppSwitcherPanelAction-title"
+                                    className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                     title="Mock App 3"
                                   >
                                     <WithStyles(ForwardRef)
@@ -1764,7 +1795,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                           >
                                             <WithStyles(ForwardRef)
                                               aria-describedby={null}
-                                              className="HvAppSwitcherPanelAction-title"
+                                              className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                               component="span"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -1775,7 +1806,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                             >
                                               <ForwardRef
                                                 aria-describedby={null}
-                                                className="HvAppSwitcherPanelAction-title"
+                                                className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                                 classes={
                                                   Object {
                                                     "3xlTitle": "HvTypography-3xlTitle",
@@ -1812,7 +1843,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                               >
                                                 <span
                                                   aria-describedby={null}
-                                                  className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                   onBlur={[Function]}
                                                   onFocus={[Function]}
                                                   onTouchEnd={[Function]}
@@ -1826,7 +1857,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                             <ForwardRef(Popper)
                                               anchorEl={
                                                 <span
-                                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                 >
                                                   Mock App 3
                                                 </span>
@@ -2078,6 +2109,17 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                   "url": "http://mockapp5/",
                 }
               }
+              classes={
+                Object {
+                  "disabled": "HvAppSwitcherPanel-itemDisabled",
+                  "icon": "HvAppSwitcherPanel-itemIcon",
+                  "iconInfo": undefined,
+                  "root": "HvAppSwitcherPanel-item",
+                  "selected": "HvAppSwitcherPanel-itemSelected",
+                  "title": "HvAppSwitcherPanel-itemTitle",
+                  "typography": undefined,
+                }
+              }
               isSelectedCallback={[Function]}
               key="app-5"
               onClickCallback={[Function]}
@@ -2093,12 +2135,13 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                 }
                 classes={
                   Object {
-                    "disabled": "HvAppSwitcherPanelAction-disabled",
-                    "icon": "HvAppSwitcherPanelAction-icon",
+                    "disabled": "HvAppSwitcherPanelAction-disabled HvAppSwitcherPanel-itemDisabled",
+                    "icon": "HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon",
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-                    "root": "HvAppSwitcherPanelAction-root",
-                    "title": "HvAppSwitcherPanelAction-title",
+                    "root": "HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item",
+                    "selected": "HvAppSwitcherPanelAction-selected HvAppSwitcherPanel-itemSelected",
+                    "title": "HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
                 }
@@ -2106,13 +2149,13 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                 onClickCallback={[Function]}
               >
                 <WithStyles(HvListItem)
-                  className="HvAppSwitcherPanelAction-root"
+                  className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                   interactive={true}
                   selected={false}
                   tabIndex={0}
                 >
                   <HvListItem
-                    className="HvAppSwitcherPanelAction-root"
+                    className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                     classes={
                       Object {
                         "condensed": "HvListItem-condensed",
@@ -2149,7 +2192,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                             class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                           >
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -2160,7 +2203,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -2168,7 +2211,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 1 - VALID
                                 </span>
@@ -2197,7 +2240,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <button
@@ -2206,7 +2249,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 tabindex="0"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -2214,7 +2257,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 3
                                 </span>
@@ -2243,7 +2286,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               </button>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -2254,7 +2297,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -2262,7 +2305,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 5 - VALID without description
                                 </span>
@@ -2298,7 +2341,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                               class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                             >
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -2309,7 +2352,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -2317,7 +2360,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 1 - VALID
                                   </span>
@@ -2346,7 +2389,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <button
@@ -2355,7 +2398,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   tabindex="0"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -2363,7 +2406,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 3
                                   </span>
@@ -2392,7 +2435,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                 </button>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -2403,7 +2446,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -2411,7 +2454,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 5 - VALID without description
                                   </span>
@@ -2428,7 +2471,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                           wrapper={[Function]}
                         >
                           <li
-                            className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -2499,7 +2542,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                   target="_top"
                                 >
                                   <div
-                                    className="HvAppSwitcherPanelAction-icon"
+                                    className="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       className="HvAppSwitcherPanelAction-iconUrl"
@@ -2508,7 +2551,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                     />
                                   </div>
                                   <TitleWithTooltip
-                                    className="HvAppSwitcherPanelAction-title"
+                                    className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                     title="Mock App 5 - VALID without description"
                                   >
                                     <WithStyles(ForwardRef)
@@ -2635,7 +2678,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                           >
                                             <WithStyles(ForwardRef)
                                               aria-describedby={null}
-                                              className="HvAppSwitcherPanelAction-title"
+                                              className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                               component="span"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -2646,7 +2689,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                             >
                                               <ForwardRef
                                                 aria-describedby={null}
-                                                className="HvAppSwitcherPanelAction-title"
+                                                className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                                 classes={
                                                   Object {
                                                     "3xlTitle": "HvTypography-3xlTitle",
@@ -2683,7 +2726,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                               >
                                                 <span
                                                   aria-describedby={null}
-                                                  className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                   onBlur={[Function]}
                                                   onFocus={[Function]}
                                                   onTouchEnd={[Function]}
@@ -2697,7 +2740,7 @@ exports[`<AppSwitcherPanel /> Applications without a name should not be renderer
                                             <ForwardRef(Popper)
                                               anchorEl={
                                                 <span
-                                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                 >
                                                   Mock App 5 - VALID without description
                                                 </span>
@@ -2807,6 +2850,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
         "dual": "HvAppSwitcherPanel-dual",
         "fluid": "HvAppSwitcherPanel-fluid",
         "footerContainer": "HvAppSwitcherPanel-footerContainer",
+        "item": "HvAppSwitcherPanel-item",
+        "itemDisabled": "HvAppSwitcherPanel-itemDisabled",
+        "itemIcon": "HvAppSwitcherPanel-itemIcon",
+        "itemInfo": "HvAppSwitcherPanel-itemInfo",
+        "itemSelected": "HvAppSwitcherPanel-itemSelected",
+        "itemTitle": "HvAppSwitcherPanel-itemTitle",
+        "itemTypography": "HvAppSwitcherPanel-itemTypography",
         "open": "HvAppSwitcherPanel-open",
         "root": "HvAppSwitcherPanel-root",
         "single": "HvAppSwitcherPanel-single",
@@ -3061,6 +3111,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "url": "http://mockapp1/",
                 }
               }
+              classes={
+                Object {
+                  "disabled": "HvAppSwitcherPanel-itemDisabled",
+                  "icon": "HvAppSwitcherPanel-itemIcon",
+                  "iconInfo": undefined,
+                  "root": "HvAppSwitcherPanel-item",
+                  "selected": "HvAppSwitcherPanel-itemSelected",
+                  "title": "HvAppSwitcherPanel-itemTitle",
+                  "typography": undefined,
+                }
+              }
               isSelectedCallback={[Function]}
               key="app-1"
               onClickCallback={[Function]}
@@ -3077,12 +3138,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 }
                 classes={
                   Object {
-                    "disabled": "HvAppSwitcherPanelAction-disabled",
-                    "icon": "HvAppSwitcherPanelAction-icon",
+                    "disabled": "HvAppSwitcherPanelAction-disabled HvAppSwitcherPanel-itemDisabled",
+                    "icon": "HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon",
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-                    "root": "HvAppSwitcherPanelAction-root",
-                    "title": "HvAppSwitcherPanelAction-title",
+                    "root": "HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item",
+                    "selected": "HvAppSwitcherPanelAction-selected HvAppSwitcherPanel-itemSelected",
+                    "title": "HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
                 }
@@ -3090,13 +3152,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 onClickCallback={[Function]}
               >
                 <WithStyles(HvListItem)
-                  className="HvAppSwitcherPanelAction-root"
+                  className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                   interactive={true}
                   selected={false}
                   tabIndex={0}
                 >
                   <HvListItem
-                    className="HvAppSwitcherPanelAction-root"
+                    className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                     classes={
                       Object {
                         "condensed": "HvListItem-condensed",
@@ -3133,7 +3195,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                             class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                           >
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -3144,7 +3206,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -3152,14 +3214,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 1
                                 </span>
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -3170,7 +3232,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_blank"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -3178,7 +3240,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 2
                                 </span>
@@ -3207,7 +3269,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -3218,7 +3280,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -3226,7 +3288,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 3
                                 </span>
@@ -3284,7 +3346,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                               class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                             >
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -3295,7 +3357,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -3303,14 +3365,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 1
                                   </span>
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -3321,7 +3383,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_blank"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -3329,7 +3391,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 2
                                   </span>
@@ -3358,7 +3420,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -3369,7 +3431,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -3377,7 +3439,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 3
                                   </span>
@@ -3416,7 +3478,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                           wrapper={[Function]}
                         >
                           <li
-                            className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -3487,7 +3549,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    className="HvAppSwitcherPanelAction-icon"
+                                    className="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       className="HvAppSwitcherPanelAction-iconUrl"
@@ -3496,7 +3558,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <TitleWithTooltip
-                                    className="HvAppSwitcherPanelAction-title"
+                                    className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                     title="Mock App 1"
                                   >
                                     <WithStyles(ForwardRef)
@@ -3623,7 +3685,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                           >
                                             <WithStyles(ForwardRef)
                                               aria-describedby={null}
-                                              className="HvAppSwitcherPanelAction-title"
+                                              className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                               component="span"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -3634,7 +3696,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                             >
                                               <ForwardRef
                                                 aria-describedby={null}
-                                                className="HvAppSwitcherPanelAction-title"
+                                                className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                                 classes={
                                                   Object {
                                                     "3xlTitle": "HvTypography-3xlTitle",
@@ -3671,7 +3733,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                               >
                                                 <span
                                                   aria-describedby={null}
-                                                  className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                   onBlur={[Function]}
                                                   onFocus={[Function]}
                                                   onTouchEnd={[Function]}
@@ -3685,7 +3747,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                             <ForwardRef(Popper)
                                               anchorEl={
                                                 <span
-                                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                 >
                                                   Mock App 1
                                                 </span>
@@ -3733,6 +3795,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "url": "http://mockapp2/",
                 }
               }
+              classes={
+                Object {
+                  "disabled": "HvAppSwitcherPanel-itemDisabled",
+                  "icon": "HvAppSwitcherPanel-itemIcon",
+                  "iconInfo": undefined,
+                  "root": "HvAppSwitcherPanel-item",
+                  "selected": "HvAppSwitcherPanel-itemSelected",
+                  "title": "HvAppSwitcherPanel-itemTitle",
+                  "typography": undefined,
+                }
+              }
               isSelectedCallback={[Function]}
               key="app-2"
               onClickCallback={[Function]}
@@ -3750,12 +3823,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 }
                 classes={
                   Object {
-                    "disabled": "HvAppSwitcherPanelAction-disabled",
-                    "icon": "HvAppSwitcherPanelAction-icon",
+                    "disabled": "HvAppSwitcherPanelAction-disabled HvAppSwitcherPanel-itemDisabled",
+                    "icon": "HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon",
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-                    "root": "HvAppSwitcherPanelAction-root",
-                    "title": "HvAppSwitcherPanelAction-title",
+                    "root": "HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item",
+                    "selected": "HvAppSwitcherPanelAction-selected HvAppSwitcherPanel-itemSelected",
+                    "title": "HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
                 }
@@ -3763,13 +3837,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 onClickCallback={[Function]}
               >
                 <WithStyles(HvListItem)
-                  className="HvAppSwitcherPanelAction-root"
+                  className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                   interactive={true}
                   selected={false}
                   tabIndex={0}
                 >
                   <HvListItem
-                    className="HvAppSwitcherPanelAction-root"
+                    className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                     classes={
                       Object {
                         "condensed": "HvListItem-condensed",
@@ -3806,7 +3880,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                             class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                           >
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -3817,7 +3891,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -3825,14 +3899,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 1
                                 </span>
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -3843,7 +3917,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_blank"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -3851,7 +3925,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 2
                                 </span>
@@ -3880,7 +3954,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -3891,7 +3965,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -3899,7 +3973,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 3
                                 </span>
@@ -3957,7 +4031,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                               class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                             >
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -3968,7 +4042,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -3976,14 +4050,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 1
                                   </span>
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -3994,7 +4068,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_blank"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -4002,7 +4076,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 2
                                   </span>
@@ -4031,7 +4105,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -4042,7 +4116,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -4050,7 +4124,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 3
                                   </span>
@@ -4089,7 +4163,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                           wrapper={[Function]}
                         >
                           <li
-                            className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -4160,7 +4234,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_blank"
                                 >
                                   <div
-                                    className="HvAppSwitcherPanelAction-icon"
+                                    className="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       className="HvAppSwitcherPanelAction-iconUrl"
@@ -4169,7 +4243,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <TitleWithTooltip
-                                    className="HvAppSwitcherPanelAction-title"
+                                    className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                     title="Mock App 2"
                                   >
                                     <WithStyles(ForwardRef)
@@ -4296,7 +4370,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                           >
                                             <WithStyles(ForwardRef)
                                               aria-describedby={null}
-                                              className="HvAppSwitcherPanelAction-title"
+                                              className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                               component="span"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -4307,7 +4381,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                             >
                                               <ForwardRef
                                                 aria-describedby={null}
-                                                className="HvAppSwitcherPanelAction-title"
+                                                className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                                 classes={
                                                   Object {
                                                     "3xlTitle": "HvTypography-3xlTitle",
@@ -4344,7 +4418,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                               >
                                                 <span
                                                   aria-describedby={null}
-                                                  className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                   onBlur={[Function]}
                                                   onFocus={[Function]}
                                                   onTouchEnd={[Function]}
@@ -4358,7 +4432,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                             <ForwardRef(Popper)
                                               anchorEl={
                                                 <span
-                                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                 >
                                                   Mock App 2
                                                 </span>
@@ -4611,6 +4685,17 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "url": "http://mockapp2/",
                 }
               }
+              classes={
+                Object {
+                  "disabled": "HvAppSwitcherPanel-itemDisabled",
+                  "icon": "HvAppSwitcherPanel-itemIcon",
+                  "iconInfo": undefined,
+                  "root": "HvAppSwitcherPanel-item",
+                  "selected": "HvAppSwitcherPanel-itemSelected",
+                  "title": "HvAppSwitcherPanel-itemTitle",
+                  "typography": undefined,
+                }
+              }
               isSelectedCallback={[Function]}
               key="app-3"
               onClickCallback={[Function]}
@@ -4627,12 +4712,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 }
                 classes={
                   Object {
-                    "disabled": "HvAppSwitcherPanelAction-disabled",
-                    "icon": "HvAppSwitcherPanelAction-icon",
+                    "disabled": "HvAppSwitcherPanelAction-disabled HvAppSwitcherPanel-itemDisabled",
+                    "icon": "HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon",
                     "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
                     "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
-                    "root": "HvAppSwitcherPanelAction-root",
-                    "title": "HvAppSwitcherPanelAction-title",
+                    "root": "HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item",
+                    "selected": "HvAppSwitcherPanelAction-selected HvAppSwitcherPanel-itemSelected",
+                    "title": "HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle",
                     "typography": "HvAppSwitcherPanelAction-typography",
                   }
                 }
@@ -4640,13 +4726,13 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 onClickCallback={[Function]}
               >
                 <WithStyles(HvListItem)
-                  className="HvAppSwitcherPanelAction-root"
+                  className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                   interactive={true}
                   selected={false}
                   tabIndex={0}
                 >
                   <HvListItem
-                    className="HvAppSwitcherPanelAction-root"
+                    className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item"
                     classes={
                       Object {
                         "condensed": "HvListItem-condensed",
@@ -4683,7 +4769,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                             class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                           >
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -4694,7 +4780,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -4702,14 +4788,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 1
                                 </span>
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -4720,7 +4806,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_blank"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -4728,7 +4814,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 2
                                 </span>
@@ -4757,7 +4843,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                               </a>
                             </li>
                             <li
-                              class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                              class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                               tabindex="-1"
                             >
                               <a
@@ -4768,7 +4854,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 target="_top"
                               >
                                 <div
-                                  class="HvAppSwitcherPanelAction-icon"
+                                  class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                 >
                                   <img
                                     class="HvAppSwitcherPanelAction-iconUrl"
@@ -4776,7 +4862,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   />
                                 </div>
                                 <span
-                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                 >
                                   Mock App 3
                                 </span>
@@ -4834,7 +4920,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                               class="HvAppSwitcherPanel-actionsContainer HvListContainer-root"
                             >
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -4845,7 +4931,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -4853,14 +4939,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 1
                                   </span>
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -4871,7 +4957,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_blank"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -4879,7 +4965,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 2
                                   </span>
@@ -4908,7 +4994,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                 </a>
                               </li>
                               <li
-                                class="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                                class="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                                 tabindex="-1"
                               >
                                 <a
@@ -4919,7 +5005,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    class="HvAppSwitcherPanelAction-icon"
+                                    class="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       class="HvAppSwitcherPanelAction-iconUrl"
@@ -4927,7 +5013,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <span
-                                    class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                    class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                   >
                                     Mock App 3
                                   </span>
@@ -4966,7 +5052,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                           wrapper={[Function]}
                         >
                           <li
-                            className="HvAppSwitcherPanelAction-root HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+                            className="HvAppSwitcherPanelAction-root HvAppSwitcherPanel-item HvListItem-root HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
@@ -5037,7 +5123,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                   target="_top"
                                 >
                                   <div
-                                    className="HvAppSwitcherPanelAction-icon"
+                                    className="HvAppSwitcherPanelAction-icon HvAppSwitcherPanel-itemIcon"
                                   >
                                     <img
                                       className="HvAppSwitcherPanelAction-iconUrl"
@@ -5046,7 +5132,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                     />
                                   </div>
                                   <TitleWithTooltip
-                                    className="HvAppSwitcherPanelAction-title"
+                                    className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                     title="Mock App 3"
                                   >
                                     <WithStyles(ForwardRef)
@@ -5173,7 +5259,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                           >
                                             <WithStyles(ForwardRef)
                                               aria-describedby={null}
-                                              className="HvAppSwitcherPanelAction-title"
+                                              className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                               component="span"
                                               onBlur={[Function]}
                                               onFocus={[Function]}
@@ -5184,7 +5270,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                             >
                                               <ForwardRef
                                                 aria-describedby={null}
-                                                className="HvAppSwitcherPanelAction-title"
+                                                className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle"
                                                 classes={
                                                   Object {
                                                     "3xlTitle": "HvTypography-3xlTitle",
@@ -5221,7 +5307,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                               >
                                                 <span
                                                   aria-describedby={null}
-                                                  className="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  className="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                   onBlur={[Function]}
                                                   onFocus={[Function]}
                                                   onTouchEnd={[Function]}
@@ -5235,7 +5321,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                                             <ForwardRef(Popper)
                                               anchorEl={
                                                 <span
-                                                  class="HvAppSwitcherPanelAction-title HvTypography-root HvTypography-highlightText"
+                                                  class="HvAppSwitcherPanelAction-title HvAppSwitcherPanel-itemTitle HvTypography-root HvTypography-highlightText"
                                                 >
                                                   Mock App 3
                                                 </span>

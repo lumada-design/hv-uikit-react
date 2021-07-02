@@ -30,6 +30,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
         "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
         "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
         "root": "HvAppSwitcherPanelAction-root",
+        "selected": "HvAppSwitcherPanelAction-selected",
         "title": "HvAppSwitcherPanelAction-title",
         "typography": "HvAppSwitcherPanelAction-typography",
       }
@@ -462,6 +463,7 @@ exports[`<Action /> with description should render correctly 1`] = `
         "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
         "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
         "root": "HvAppSwitcherPanelAction-root",
+        "selected": "HvAppSwitcherPanelAction-selected",
         "title": "HvAppSwitcherPanelAction-title",
         "typography": "HvAppSwitcherPanelAction-typography",
       }
@@ -1078,6 +1080,7 @@ exports[`<Action /> without description should render correctly 1`] = `
         "iconInfo": "HvAppSwitcherPanelAction-iconInfo",
         "iconUrl": "HvAppSwitcherPanelAction-iconUrl",
         "root": "HvAppSwitcherPanelAction-root",
+        "selected": "HvAppSwitcherPanelAction-selected",
         "title": "HvAppSwitcherPanelAction-title",
         "typography": "HvAppSwitcherPanelAction-typography",
       }
