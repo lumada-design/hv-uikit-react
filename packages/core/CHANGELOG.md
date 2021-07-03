@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.36.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.36.0...@hv/uikit-react-core@3.36.1) (2021-07-03)
+
+
+### Bug Fixes
+
+* **dropdown:** make onToggle optional in type definition ([ca3cba9](https://github.com/lumada-design/hv-uikit-react/commit/ca3cba97ed7f3e636fa59ca590c5a128d65c2af3))
+
+
+
+
+
 # [3.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.35.0...@hv/uikit-react-core@3.36.0) (2021-07-02)
 
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.20.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.19.0...@hv/uikit-react-lab@3.20.0) (2021-07-03)
+
+
+### Bug Fixes
+
+* **table:** table hooks ts exports ([465b845](https://github.com/lumada-design/hv-uikit-react/commit/465b8452f0f881e857745f162cf221d85f81b477))
+* **table:** wrong cell's style names ([cdc3033](https://github.com/lumada-design/hv-uikit-react/commit/cdc30333aea35cc6680f4058f25a06f226485ae9))
+
+
+### Features
+
+* **app-switcher:** expose item styling classes [#2483](https://github.com/lumada-design/hv-uikit-react/issues/2483) ([3221ae5](https://github.com/lumada-design/hv-uikit-react/commit/3221ae5027123ba8879fe43a1707b9ea2492ba48))
+* **theme:** add shadow color. HVUIKIT-4981 ([e3dc8d4](https://github.com/lumada-design/hv-uikit-react/commit/e3dc8d4f925c1468584ce67979b951302bc00b78))
+
+
+
+
+
 # [3.19.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.18.2...@hv/uikit-react-lab@3.19.0) (2021-07-02)
 
 
