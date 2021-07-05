@@ -6,6 +6,7 @@ describe("useHvTableStyles", () => {
   it("registers hooks", () => {
     const hooks = {
       getHeaderProps: { push: jest.fn() },
+      getFooterProps: { push: jest.fn() },
       getRowProps: { push: jest.fn() },
       getCellProps: { push: jest.fn() },
     };
@@ -13,18 +14,24 @@ describe("useHvTableStyles", () => {
     useTableStyles(hooks);
 
     // props target: <table><thead><tr><th>
-    expect(hooks.getHeaderProps.push).toHaveBeenCalledWith(useTableStylesHooks.getHeaderPropsHook);
+    expect(hooks.getHeaderProps.push).toHaveBeenCalledWith(
+      useTableStylesHooks.getHeaderFooterPropsHook
+    );
+    // props target: <table><tfoot><tr><td>
+    expect(hooks.getFooterProps.push).toHaveBeenCalledWith(
+      useTableStylesHooks.getHeaderFooterPropsHook
+    );
     // props target: <table><tbody><tr>
     expect(hooks.getRowProps.push).toHaveBeenCalledWith(useTableStylesHooks.getRowPropsHook);
     // props target: <table><tbody><tr><td>
     expect(hooks.getCellProps.push).toHaveBeenCalledWith(useTableStylesHooks.getCellPropsHook);
   });
 
-  describe("getHeaderProps", () => {
+  describe("getHeaderProps/getFooterProps", () => {
     it("adds variant and align properties", () => {
       const existingProps = {};
 
-      const [existing, props] = useTableStylesHooks.getHeaderPropsHook(existingProps, {
+      const [existing, props] = useTableStylesHooks.getHeaderFooterPropsHook(existingProps, {
         column: { variant: "variant_value", align: "align_value" },
       });
 

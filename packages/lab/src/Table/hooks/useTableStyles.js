@@ -1,5 +1,5 @@
 // props target: <table><thead><tr><th>
-export const getHeaderPropsHook = (props, { column }) => {
+export const getHeaderFooterPropsHook = (props, { column }) => {
   const nextProps = {
     variant: column.variant,
     align: column.align,
@@ -29,7 +29,9 @@ export const getCellPropsHook = (props, { cell }) => {
 
 const useTableStyles = (hooks) => {
   // props target: <table><thead><tr><th>
-  hooks.getHeaderProps.push(getHeaderPropsHook);
+  hooks.getHeaderProps.push(getHeaderFooterPropsHook);
+  // props target: <table><tfoot><tr><td>
+  hooks.getFooterProps.push(getHeaderFooterPropsHook);
   // props target: <table><tbody><tr>
   hooks.getRowProps.push(getRowPropsHook);
   // props target: <table><tbody><tr><td>
