@@ -134,7 +134,7 @@ export const Controlled = () => {
           aria-label="dropdownMenu-1"
           keepOpened={false}
           dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
-          onToggleOpen={(s) => {
+          onToggle={(e, s) => {
             setOpen(s);
           }}
         />

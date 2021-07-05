@@ -31,6 +31,10 @@ export interface HvDropDownMenuProps
   /**
    * Function executed on toggle of the dropdown. Should receive the open status.
    */
+  onToggle?: (event: React.SyntheticEvent , open: boolean) => void;
+  /**
+   * @deprecated This prop should not be used. Use onToggle instead.
+   */
   onToggleOpen?: (open: boolean) => void;
   /**
    * Function executed in each onClick. Should received the clicked element.
