@@ -1,5 +1,4 @@
 import { StandardProps } from "@material-ui/core";
-import { ColumnInstance } from "react-table";
 
 export type HvTableHeaderClassKey =
   | "root"
@@ -24,7 +23,7 @@ export interface HvTableHeaderProps
   /**
    * The scope of cells that the header element relates to.
    */
-  scope: "col" | "row" | "colgroup" | "rowgroup";
+  scope?: "col" | "row" | "colgroup" | "rowgroup";
 
   /**
    * Set the text-align on the table cell content.
@@ -66,12 +65,6 @@ export interface HvTableHeaderProps
    * Set sort direction icon and aria-sort.
    */
   sortDirection?: "ascending" | "descending" | false;
-
-  /**
-   * React Table column instance. Also contains other props passed as `data`
-   * https://react-table.tanstack.com/docs/api/useTable#column-options
-   */
-  rtCol: ColumnInstance;
 }
 
 export default function HvTableHeader(props: HvTableHeaderProps): JSX.Element | null;

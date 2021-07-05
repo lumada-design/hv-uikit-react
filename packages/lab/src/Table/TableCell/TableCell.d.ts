@@ -1,5 +1,4 @@
 import { StandardProps } from "@material-ui/core";
-import { ColumnInstance } from "react-table";
 
 export type HvTableCellClassKey =
   | "root"
@@ -45,12 +44,6 @@ export interface HvTableCellProps
    * The cell is part of the first sticky to the right column.
    */
   stickyColumnLeastRight?: boolean;
-
-  /**
-   * React Table column instance. Also contains other props passed as `data`
-   * https://react-table.tanstack.com/docs/api/useTable#column-options
-   */
-  rtCol: ColumnInstance;
 }
 
 export default function HvTableCell(props: HvTableCellProps): JSX.Element | null;
