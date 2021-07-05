@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { HvTypography } from "@hv/uikit-react-core";
-import Collapse from "@material-ui/core/Collapse";
 import { Code } from "@hv/uikit-react-icons";
 import IconButton from "@material-ui/core/IconButton";
 import { useTheme } from "@material-ui/core";
@@ -12,16 +10,7 @@ const styles = (theme) => ({
   group: {
     margin: "10px",
     padding: "10px",
-    width: "450px",
-  },
-  groupName: {
-    ...theme.hv.typography.mTitle,
-    marginBottom: 15,
-  },
-  typographyInfoContainer: {
-    marginTop: "10px",
-    padding: "10px",
-    backgroundColor: theme.hv.palette.atmosphere.atmo4,
+    width: "100%",
   },
   sentenceContainer: {
     display: "flex",
@@ -32,48 +21,18 @@ const styles = (theme) => ({
     display: "flex",
     paddingBottom: "5px",
   },
-  iconCode: {
-    marginLeft: "auto",
-  },
-  icon: {
-    width: 32,
-    height: 32,
-  },
 });
 
 const text = "The quick brown fox jumps over the lazy dog.";
 
-const CodeButton = ({ classes, onClick }) => (
-  <IconButton className={classes.iconCode} aria-label="View code" onClick={onClick}>
-    <Code className={classes.icon} />
-  </IconButton>
-);
-
 const Group = ({ classes, name, typography }) => {
   const theme = useTheme();
-  const [snippetIsOpen, setSnippetIsOpen] = useState(false);
-
-  const toggleSnippet = () => setSnippetIsOpen(!snippetIsOpen);
 
   return (
     <div className={classes.group}>
       <div className={classes.container}>
         <HvTypography variant="mTitle">{name}</HvTypography>
-        <CodeButton classes={classes} onClick={toggleSnippet} />
       </div>
-      <Collapse in={snippetIsOpen}>
-        <SyntaxHighlighter
-          language="css"
-          style={theme.hv.type === "dark" ? darcula : prism}
-          customStyle={{
-            margin: 0,
-            borderRadius: 0,
-            fontSize: 14,
-          }}
-        >
-          {JSON.stringify(typography, null, 4)}
-        </SyntaxHighlighter>
-      </Collapse>
       <div className={classes.sentenceContainer}>
         <HvTypography variant={name}>{text}</HvTypography>
       </div>
