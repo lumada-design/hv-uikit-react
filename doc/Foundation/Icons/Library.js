@@ -57,11 +57,11 @@ const Icons = ({ icons, widerSpacing }) => {
 
   return (
     <div>
-      <div style={{ padding: "20px 0" }}>
+      <div style={{ padding: "20px 0", width: 220 }}>
         <HvDropdown
+          label="Select icon size"
           values={dropdownSizes}
           multiSelect={false}
-          labels={{ title: "Size selector" }}
           onChange={(item) => setIconSize(item)}
           notifyChangesOnFirstRender
         />

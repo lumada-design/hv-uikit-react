@@ -35,9 +35,21 @@ module.exports = ({
 
   const selectors = ["Checkbox", "RadioButton"];
   const isSelector = selectors.some((el) => componentName.startsWith(el));
-  const hasSpecialSizeLevel = /^Level(\d)/g.test(componentName);
+  const largerIcons = [
+    "Level0Good",
+    "Level1",
+    "Level2Average",
+    "Level3Bad",
+    "Level4",
+    "Level5",
+    "Canceled",
+    "Running",
+    "Pending",
+  ];
+  const hasSpecialSize = largerIcons.includes(componentName);
+
   const hasSpecialSizeXS = componentName.endsWith("XS");
-  const calcSize = (size) => (hasSpecialSizeLevel ? size + 8 : size);
+  const calcSize = (size) => (hasSpecialSize ? size + 8 : size);
 
   const themedPalette = colors
     .replace(/"#414141"/g, "theme.palette.acce1")
