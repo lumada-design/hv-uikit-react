@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.36.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.36.1...@hv/uikit-react-core@3.36.2) (2021-07-06)
+
+
+### Bug Fixes
+
+* **notificationPanel:** dropdown click event is bubbled to notifications.[#2492](https://github.com/lumada-design/hv-uikit-react/issues/2492) ([ebeb1b8](https://github.com/lumada-design/hv-uikit-react/commit/ebeb1b850094bc388f6542ab15ca9ab4f5406424))
+
+
+
+
+
 ## [3.36.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.36.0...@hv/uikit-react-core@3.36.1) (2021-07-03)
 
 

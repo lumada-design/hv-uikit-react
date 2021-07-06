@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.20.0...@hv/uikit-react-lab@3.21.0) (2021-07-06)
+
+
+### Bug Fixes
+
+* **notificationPanel:** dropdown click event is bubbled to notifications.[#2492](https://github.com/lumada-design/hv-uikit-react/issues/2492) ([ebeb1b8](https://github.com/lumada-design/hv-uikit-react/commit/ebeb1b850094bc388f6542ab15ca9ab4f5406424))
+
+
+### Features
+
+* **table:** table hooks ts definitions ([d54f7a1](https://github.com/lumada-design/hv-uikit-react/commit/d54f7a1369e2bd72e0ccf2e901486c433af34b09))
+
+
+
+
+
 # [3.20.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.19.0...@hv/uikit-react-lab@3.20.0) (2021-07-03)
 
 
