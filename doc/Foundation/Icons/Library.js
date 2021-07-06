@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HvDropdown, HvTypography, HvLabel } from "@hv/uikit-react-core";
+import { HvDropdown, HvTypography } from "@hv/uikit-react-core";
 
 const iconContainer = {
   margin: "5px",
@@ -58,15 +58,13 @@ const Icons = ({ icons, widerSpacing }) => {
   return (
     <div>
       <div style={{ padding: "20px 0", width: 220 }}>
-        <HvLabel label="Select icon size">
-          <HvDropdown
-            values={dropdownSizes}
-            multiSelect={false}
-            labels={{ title: "Size selector" }}
-            onChange={(item) => setIconSize(item)}
-            notifyChangesOnFirstRender
-          />
-        </HvLabel>
+        <HvDropdown
+          label="Select icon size"
+          values={dropdownSizes}
+          multiSelect={false}
+          onChange={(item) => setIconSize(item)}
+          notifyChangesOnFirstRender
+        />
       </div>
       <Group iconSize={iconSize} widerSpacing={widerSpacing} iconsLibrary={icons} />
     </div>
