@@ -14,5 +14,7 @@ addons.setConfig({
   // show tool bar
   isToolshown: true,
   // display the top-level grouping as a "root" in the sidebar
-  showRoots: true,
+  sidebar: {
+    showRoots: true,
+  },
 });

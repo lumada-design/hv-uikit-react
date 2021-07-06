@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { ArgsTableError } from "@storybook/components";
-import { DocsContext, CURRENT_SELECTION, PRIMARY_STORY } from "@storybook/addon-docs/blocks";
-import { StoryTable } from "@storybook/addon-docs/dist/blocks/ArgsTable";
+import { DocsContext, CURRENT_SELECTION, PRIMARY_STORY, StoryTable } from "@storybook/addon-docs";
 
 const isShortcut = (value) => {
   return value && [CURRENT_SELECTION, PRIMARY_STORY].includes(value);
@@ -28,7 +27,6 @@ export const ArgsTable = (props) => {
   const { story } = props;
 
   const main = getComponent(props, context);
-
   if (story) {
     return <StoryTable {...props} component={main} subcomponents={subcomponents} />;
   }

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Subtitle } from "@storybook/components";
-import { DocsContext } from "@storybook/addon-docs/blocks";
+import { DocsContext } from "@storybook/addon-docs";
 import { getTheme } from "../theme";
 
 export const Deprecated = () => {

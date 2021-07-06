@@ -1,5 +1,5 @@
 import React from "react";
-import { DocsContainer } from "@storybook/addon-docs/blocks";
+import { DocsContainer } from "@storybook/addon-docs";
 import { Global } from "@storybook/theming";
 import { getTheme, getStoredTheme } from "../theme";
 import { getDocsStyles } from "../theme/styles/docs";

@@ -1,6 +1,6 @@
 import { isForwardRef, isMemo } from "react-is";
-import { hasDocgen, extractComponentProps } from "@storybook/addon-docs/dist/lib/docgen";
-import { enhancePropTypesProps } from "@storybook/addon-docs/dist/frameworks/react/propTypes/handleProp";
+import { hasDocgen, extractComponentProps } from "@storybook/addon-docs/dist/esm/lib/docgen";
+import { enhancePropTypesProps } from "@storybook/addon-docs/dist/esm/frameworks/react/propTypes/handleProp";
 
 import sortProps from "./sortProps";
 

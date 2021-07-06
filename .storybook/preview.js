@@ -47,6 +47,7 @@ const App = ({ story: Story }) => {
   }, [channel, setThemeName]);
 
   const instanceNumber = appCounter++;
+  const isIsolatedSample = window.location === window.parent.location;
 
   return (
     <HvProvider
@@ -55,7 +56,7 @@ const App = ({ story: Story }) => {
       // allows to keep the classnames clean and stable for E2E tests
       // that access via /iframe.html?id=
       generateClassNameOptions={
-        instanceNumber > 0 ? { seed: `sb-preview-${instanceNumber}` } : undefined
+        isIsolatedSample ? undefined : { seed: `sb-preview-${instanceNumber}` }
       }
     >
       <Story />
