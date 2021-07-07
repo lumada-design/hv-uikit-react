@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.4.0 (2021-07-07)
+
+
+### Features
+
+* **icons:** update library according to DS 3.6.0. HVUIKIT-5876 ([272efb1](https://github.com/lumada-design/hv-uikit-react/commit/272efb143cefda32d5048011e889c0747e0ebf0a))
+
+
+
+
+
 ## 3.3.5 (2021-07-02)
 
 **Note:** Version bump only for package @hv/uikit-react-icons

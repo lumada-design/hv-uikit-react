@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.21.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.21.0...@hv/uikit-react-lab@3.21.1) (2021-07-07)
+
+**Note:** Version bump only for package @hv/uikit-react-lab
+
+
+
+
+
 # [3.21.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.20.0...@hv/uikit-react-lab@3.21.0) (2021-07-06)
 
 
