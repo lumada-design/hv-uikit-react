@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "../../utils";
-import HorizontalScrollListItem from "./HorizontalScrollListItem";
-import styles from "./styles";
+import VerticalScrollListItem from "./VerticalScrollListItem";
+import styles, { generateDynamicStyles } from "./styles";
 import useScrollTo from "../useScrollTo";
 import { addTooltipToElement } from "../utils";
 import { useUniqueId, setId } from "../..";
@@ -12,9 +12,9 @@ import { useUniqueId, setId } from "../..";
 const { Enter } = KeyboardCodes;
 
 /**
- * HorizontalScrollTo element used to quickly navigate in a page.
+ * VerticalScrollTo element used to quickly navigate in a page.
  */
-const HvScrollToHorizontal = (props) => {
+const HvScrollToVertical = (props) => {
   const {
     id,
     defaultSelectedIndex = 0,
@@ -28,11 +28,11 @@ const HvScrollToHorizontal = (props) => {
     options,
     offset = 0,
     position = "relative",
-    tooltipPosition = "top",
+    tooltipPosition = "left",
     ...others
   } = props;
 
-  const elementId = useUniqueId(id, "hvHorizontalScrollto");
+  const elementId = useUniqueId(id, "hvVerticalScrollto");
 
   const [selectedIndex, setScrollTo] = useScrollTo(
     defaultSelectedIndex,
@@ -42,7 +42,7 @@ const HvScrollToHorizontal = (props) => {
     options,
     onChange
   );
-
+  const dynamicClasses = generateDynamicStyles(options.length);
   const handleSelection = (event, value, index) => {
     event.preventDefault();
     const wrappedOnChange = () => {
@@ -53,7 +53,7 @@ const HvScrollToHorizontal = (props) => {
 
   const tooltipWrappers = useMemo(() => {
     return options.map((option) => {
-      return addTooltipToElement(option.label, "p", tooltipPosition);
+      return addTooltipToElement(option.label, "div", tooltipPosition, false);
     });
   }, [options, tooltipPosition]);
 
@@ -61,7 +61,7 @@ const HvScrollToHorizontal = (props) => {
     const selected = selectedIndex === index;
     const tooltipWrapper = tooltipWrappers[index];
     return (
-      <HorizontalScrollListItem
+      <VerticalScrollListItem
         id={setId(elementId, `item-${index}`)}
         onClick={(event) => {
           handleSelection(event, option.value, index);
@@ -76,16 +76,15 @@ const HvScrollToHorizontal = (props) => {
         tooltipWrapper={tooltipWrapper}
         selected={selected}
         key={option.key || option.label}
-      >
-        {option.label}
-      </HorizontalScrollListItem>
+        aria-label={option.label}
+      />
     );
   });
   return (
     <ol
       className={clsx(className, classes.root, {
-        [classes.positionSticky]: position === "sticky",
-        [classes.positionFixed]: position === "fixed",
+        [dynamicClasses.positionAbsolute]: position === "absolute",
+        [dynamicClasses.positionFixed]: position === "fixed",
       })}
       id={elementId}
       {...others}
@@ -95,7 +94,7 @@ const HvScrollToHorizontal = (props) => {
   );
 };
 
-HvScrollToHorizontal.propTypes = {
+HvScrollToVertical.propTypes = {
   /**
    * Id to be applied to the element.
    */
@@ -115,7 +114,7 @@ HvScrollToHorizontal.propTypes = {
     /**
      * Styles applied to the component when it has a sticky position.
      */
-    positionSticky: PropTypes.string,
+    positionAbsolute: PropTypes.string,
     /**
      * Styles applied to the component when it has a fixed position.
      */
@@ -167,13 +166,13 @@ HvScrollToHorizontal.propTypes = {
    */
   href: PropTypes.bool,
   /**
-   * Position of the Horizontal scroll to.
+   * Position of the Vertical scroll to.
    */
-  position: PropTypes.oneOf(["sticky", "fixed", "relative"]),
+  position: PropTypes.oneOf(["absolute", "fixed", "relative"]),
   /**
    * Position of tooltip identifying the current item.
    */
   tooltipPosition: PropTypes.oneOf(["left", "right", "top", "bottom"]),
 };
 
-export default withStyles(styles, { name: "HvScrollToHorizontal" })(HvScrollToHorizontal);
+export default withStyles(styles, { name: "HvScrollToVertical" })(HvScrollToVertical);

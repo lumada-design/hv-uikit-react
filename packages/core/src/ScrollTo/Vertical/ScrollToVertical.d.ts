@@ -9,15 +9,15 @@ interface Option {
   offset?: number;
 }
 
-export type HvScrollToHorizontalClassKey = "root" | "positionSticky" | "positionFixed";
-export type HvScrollToHorizontalPositions = "sticky" | "fixed" | "relative";
-export type HvScrollToHorizontalTooltipPositions =  "left" | "right" | "top" | "bottom";
+export type HvScrollToVerticalClassKey = "root" | "positionSticky" | "positionFixed";
+export type HvScrollToVerticalPositions = "absolute" | "fixed" | "relative";
+
 type newStandardProps = Omit<
-  StandardProps<React.HTMLAttributes<HTMLDivElement>, HvScrollToHorizontalClassKey>,
+  StandardProps<React.HTMLAttributes<HTMLDivElement>, HvScrollToVerticalClassKey>,
   "onChange" | "onClick"
 >;
 
-export interface HvScrollToHorizontalProps extends newStandardProps {
+export interface HvScrollToVerticalProps extends newStandardProps {
   /**
    * An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied
    */
@@ -45,13 +45,13 @@ export interface HvScrollToHorizontalProps extends newStandardProps {
    */
   offset?: number;
   /**
-   * Position of the Horizontal scroll to.
+   * Position of the Vertical scroll to.
    */
-  position?: HvScrollToHorizontalPositions;
+  position?: HvScrollToVerticalPositions;
   /**
    * Position of tooltip identifying the current item.
    */
-   tooltipPosition?: HvScrollToTooltipPositions;
+  tooltipPosition?: HvScrollToTooltipPositions;
   /**
    * A function called each time the selected index changes.
    */
@@ -66,4 +66,4 @@ export interface HvScrollToHorizontalProps extends newStandardProps {
   onEnter?: (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => void;
 }
 
-export default function HvScrollToHorizontal(props: HvScrollToHorizontalProps): JSX.Element | null;
+export default function HvScrollToVertical(props: HvScrollToVerticalProps): JSX.Element | null;
