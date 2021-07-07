@@ -209,12 +209,7 @@ export const BulkActions = () => {
     toggleAllRowsSelected,
     getHvBulkActionsProps,
     getHvPaginationProps,
-  } = useHvTable(
-    { columns, data, autoResetSelectedRows: false },
-    useHvPagination,
-    useHvRowSelection,
-    useHvBulkActions
-  );
+  } = useHvTable({ columns, data }, useHvPagination, useHvRowSelection, useHvBulkActions);
 
   const handleAction = useCallback(
     (_evt, id, action) => {
@@ -523,10 +518,8 @@ export const EmptyCells = () => {
   );
 };
 
-export const BulkActionsManual = () => {
-  const [data, setData] = useState(
-    makeData(64).map((el) => ({ ...el, isSelected: false, disabled: false }))
-  );
+export const LockedSelection = () => {
+  const data = useMemo(() => makeData(64), []);
 
   const columns = useMemo(
     () => [
@@ -535,23 +528,19 @@ export const BulkActionsManual = () => {
         id: "actions",
         variant: "actions",
         Cell: ({ row }) => {
-          const { id, disabled } = row.original;
-
           return (
             <HvToggleButton
               aria-label="Lock"
               notSelectedIcon={<Unlock />}
               selectedIcon={<Lock />}
-              selected={disabled}
-              onClick={() =>
-                setData(data.map((el) => (el.id !== id ? el : { ...el, disabled: !disabled })))
-              }
+              selected={row.isSelectionLocked}
+              onClick={() => row.toggleRowLockedSelection()}
             />
           );
         },
       },
     ],
-    [data]
+    []
   );
 
   const {
@@ -562,44 +551,31 @@ export const BulkActionsManual = () => {
     page,
     rows,
     selectedFlatRows,
+    getHvBulkActionsProps,
     getHvPaginationProps,
   } = useHvTable(
-    { columns, data, autoResetSelectedRows: false },
+    {
+      columns,
+      data,
+      aditivePageBulkSelection: true,
+      subtractivePageBulkDeselection: false,
+      initialState: {
+        selectedRowIds: { 5: true, 7: true },
+        lockedSelectionRowIds: { 2: true, 6: true },
+      },
+    },
     useHvPagination,
-    useHvRowSelection
+    useHvRowSelection,
+    useHvBulkActions
   );
-
-  const enabledRows = useMemo(() => rows.filter((el) => !el.original.disabled), [rows]);
-  const enabledPage = useMemo(() => page.filter((el) => !el.original.disabled), [page]);
-
-  const handleSelectAllPages = (checked = true) => {
-    enabledRows.forEach((row) => {
-      prepareRow(row);
-      row.toggleRowSelected(checked);
-    });
-  };
-
-  const handleSelectAll = () => {
-    const anySelected = enabledRows.some((el) => el.isSelected);
-
-    if (anySelected) {
-      handleSelectAllPages(false);
-    } else {
-      enabledPage.forEach((row) => {
-        prepareRow(row);
-        row.toggleRowSelected(true);
-      });
-    }
-  };
 
   return (
     <>
       <HvBulkActions
+        {...getHvBulkActionsProps()}
         numTotal={rows.length}
         numSelected={selectedFlatRows.length}
         showSelectAllPages
-        onSelectAll={handleSelectAll}
-        onSelectAllPages={handleSelectAllPages}
       />
       <HvTableContainer>
         <HvTable {...getTableProps()}>
@@ -627,15 +603,6 @@ export const BulkActionsManual = () => {
       {page?.length ? <HvPagination {...getHvPaginationProps()} /> : undefined}
     </>
   );
-};
-
-BulkActionsManual.parameters = {
-  docs: {
-    description: {
-      story:
-        "A paginated table with manual selectable rows and bulk actions. The Bulk Actions selection mechanism ignores disabled rows",
-    },
-  },
 };
 
 export const ServerSide = () => {

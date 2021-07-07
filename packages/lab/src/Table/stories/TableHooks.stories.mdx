@@ -67,7 +67,7 @@ Check [React Table's `useRowSelect` documentation](https://react-table.tanstack.
 
 The `useHvRowSelecion` hook injects a new column with a `HvCheckBox` to select each row. It also manages the `HvTableRow`'s `isSelected` property via the `getRowProps`.
 
-_Note: This hook depends on the `useRowSelect` hook from `react-table`, but when using `useHvTable` only `useHvRowSelecion` needs to be installed._
+This hook is originally based on the code `useRowSelect` hook from `react-table` and implements its API, but extends it with support for locking the selection state of individual rows.
 
 <Preview withToolbar>
   <Story inline story={stories.Selection} />
@@ -158,13 +158,15 @@ Different use cases may require different solutions, like `N/A` or `0`. Empty ce
   <Story inline story={stories.EmptyCells} />
 </Preview>
 
-# Stuff still to be documented
+## Locked Selection
 
-## Bulk Actions Manual
+Individual rows can have its selection state locked (becoming either not selectable or not unselectable), disabling the selection checkbox and also preventing the bulk actions to change the row state.
 
 <Preview withToolbar>
-  <Story inline story={stories.BulkActionsManual} />
+  <Story inline story={stories.LockedSelection} />
 </Preview>
+
+# Stuff still to be documented
 
 ## Server Side
 

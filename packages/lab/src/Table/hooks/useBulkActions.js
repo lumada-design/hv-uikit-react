@@ -4,9 +4,9 @@ import React from "react";
 import { makePropGetter, useGetLatest, ensurePluginOrder } from "react-table";
 
 export const useInstanceHook = (instance) => {
-  const { plugins, page, rows, toggleAllPageRowsSelected, toggleAllRowsSelected } = instance;
+  const { plugins, page, toggleAllPageRowsSelected, toggleAllRowsSelected } = instance;
 
-  ensurePluginOrder(plugins, ["useRowSelect"], "useHvBulkActions");
+  ensurePluginOrder(plugins, ["useHvRowSelection"], "useHvBulkActions");
 
   const getInstance = useGetLatest(instance);
 
@@ -19,15 +19,60 @@ export const useInstanceHook = (instance) => {
   const invertedToggleAllRowsSelected = React.useCallback(() => {
     if (!isPaginated) return toggleAllRowsSelected();
 
-    const anySelected = rows.some((row) => row.isSelected);
-    if (anySelected) return toggleAllRowsSelected(false);
+    const {
+      aditivePageBulkSelection,
+      subtractivePageBulkDeselection,
+      isNoRowsSelected,
+      isNoPageRowsSelected,
+      isAllSelectablePageRowsSelected,
+      isAllSelectablePageRowsUnselected,
+    } = getInstance();
+
+    if (aditivePageBulkSelection && subtractivePageBulkDeselection) {
+      return toggleAllPageRowsSelected(!isAllSelectablePageRowsSelected);
+    }
+
+    if (aditivePageBulkSelection && !subtractivePageBulkDeselection) {
+      if (!isAllSelectablePageRowsSelected) {
+        return toggleAllPageRowsSelected();
+      }
+
+      return toggleAllRowsSelected(false);
+    }
+
+    if (!aditivePageBulkSelection && !subtractivePageBulkDeselection) {
+      if (isNoRowsSelected) {
+        return toggleAllPageRowsSelected();
+      }
+
+      return toggleAllRowsSelected(false);
+    }
+
+    if (!aditivePageBulkSelection && subtractivePageBulkDeselection) {
+      if (isNoRowsSelected) {
+        return toggleAllPageRowsSelected();
+      }
+      if (!isAllSelectablePageRowsUnselected) {
+        return toggleAllPageRowsSelected(false);
+      }
+      if (!isNoPageRowsSelected) {
+        return toggleAllPageRowsSelected(false);
+      }
+
+      return toggleAllRowsSelected(false);
+    }
 
     return toggleAllPageRowsSelected();
-  }, [isPaginated, rows, toggleAllPageRowsSelected, toggleAllRowsSelected]);
+  }, [getInstance, isPaginated, toggleAllPageRowsSelected, toggleAllRowsSelected]);
+
+  const aditive = instance.aditivePageBulkSelection === true;
+  const subtractive = instance.subtractivePageBulkDeselection === true;
 
   Object.assign(instance, {
     getHvBulkActionsProps,
     invertedToggleAllRowsSelected,
+    aditivePageBulkSelection: aditive,
+    subtractivePageBulkDeselection: subtractive,
   });
 };
 
@@ -38,7 +83,6 @@ export const defaultGetHvBulkActionsProps = (props, { instance }) => {
     page,
     toggleAllRowsSelected,
     invertedToggleAllRowsSelected,
-    labels,
   } = instance;
 
   const isPaginated = !!page;
@@ -49,7 +93,6 @@ export const defaultGetHvBulkActionsProps = (props, { instance }) => {
     showSelectAllPages: isPaginated,
     onSelectAll: invertedToggleAllRowsSelected,
     onSelectAllPages: toggleAllRowsSelected,
-    labels,
   };
 
   return [props, nextProps];
