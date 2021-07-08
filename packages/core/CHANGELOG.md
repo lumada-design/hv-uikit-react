@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.37.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.36.3...@hv/uikit-react-core@3.37.0) (2021-07-08)
+
+
+### Features
+
+* **scrollTo:** adding vertical scrollto.HVUIKIT-5510. ([32942f7](https://github.com/lumada-design/hv-uikit-react/commit/32942f7c16f927f9f3390ce5994f746505d3b696))
+
+
+
+
+
 ## [3.36.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.36.2...@hv/uikit-react-core@3.36.3) (2021-07-07)
 
 **Note:** Version bump only for package @hv/uikit-react-core
