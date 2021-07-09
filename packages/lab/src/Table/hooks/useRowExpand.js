@@ -56,6 +56,8 @@ export const visibleColumnsHook = (columns) => {
     id: "_hv_expand",
     variant: "none",
 
+    width: 32,
+
     // this will only work when using useHvTableSticky
     // but ensures it stays left of any sticky column
     sticky: "left",
