@@ -118,18 +118,18 @@ const HvTable = (props) => {
   }, [data, collapseOnDataChange]);
 
   useEffect(() => {
-    setSelection(selections || []);
-  }, [selections]);
-
-  useEffect(() => {
     if (!idForCheckbox) return;
+    if (selections) {
+      setSelection(selections);
+      return;
+    }
 
     const dataIds = data.map((item) => item[idForCheckbox]);
     const updatedSelection = selection.filter((item) => dataIds.includes(item));
     setSelection(updatedSelection);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, idForCheckbox]);
+  }, [data, idForCheckbox, selections]);
 
   useEffect(() => {
     const newPageSize = !pageSize && !showPagination ? data.length : pageSize;
