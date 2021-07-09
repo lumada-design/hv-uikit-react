@@ -38,6 +38,7 @@ provides the following functionality:
 The following plugin hooks are available:
 
 - `useHvTableStyles`: ensures the correct styling of the table by injecting the column's `variant` and `align` options into the `HvTableHeader` and `HvTableCell` components (via `getHeaderProps` and `getCellProps`, respectively).
+  Also adds support for injecting the `styles`, `className` and `classes` into the `HvTable`, `HvTableHeader` and `HvTableCell` components.
 - `useHvPagination`: eases the wiring of the `HvPagination` component when using pagination. See <a href="#pagination" className="sbdocs-a">Pagination</a>.
 - `useHvRowSelection`: creates and manages the UI for selecting rows. See <a href="#selection" className="sbdocs-a">Selection</a>.
 - `useHvBulkActions`: eases the wiring of the `HvBulkActions` component. See <a href="#bulk-selection-and-actions" className="sbdocs-a">Bulk selection and actions</a>.

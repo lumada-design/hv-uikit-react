@@ -28,7 +28,7 @@ const HvTableHead = forwardRef(function HvTableHead(props, ref) {
   return (
     <TableSectionContext.Provider value={tableSectionContext}>
       <Component
-        className={clsx(classes.root, className, { [classes.stickyHeader]: stickyHeader })}
+        className={clsx(classes.root, { [classes.stickyHeader]: stickyHeader }, className)}
         ref={ref}
         role={Component === defaultComponent ? null : "rowgroup"}
         {...others}

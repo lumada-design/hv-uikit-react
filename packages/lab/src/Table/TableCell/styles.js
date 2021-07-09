@@ -4,14 +4,13 @@ const styles = (theme) => ({
   root: {
     verticalAlign: "inherit",
     textAlign: "left",
-    padding: theme.hvSpacing(0, "xs", 0, "32px"),
+    padding: theme.hvSpacing("8px", "xs", "8px", "32px"),
 
     borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
   },
 
   head: {
     height: 52,
-    paddingTop: 8,
     verticalAlign: "top",
 
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
@@ -20,7 +19,10 @@ const styles = (theme) => ({
     ...theme.hv.typography.highlightText,
   },
   body: {
-    height: 32,
+    minHeight: 32,
+    "td&": {
+      height: 32,
+    },
     backgroundColor: "inherit",
     ...theme.hv.typography.normalText,
 
@@ -52,15 +54,20 @@ const styles = (theme) => ({
   variantCheckbox: {
     padding: 0,
     width: 32,
+    maxWidth: 32,
+    overflow: "hidden",
     borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
   variantActions: {
     padding: 0,
     width: 32,
+    maxWidth: 32,
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
   variantExpand: {
     paddingLeft: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
   },
 
   stickyColumn: {

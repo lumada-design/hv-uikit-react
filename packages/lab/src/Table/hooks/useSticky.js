@@ -152,7 +152,12 @@ export const getTableHeadPropsHook = (props, { instance }) => {
 
     // To be removed when not needed (see comment above)
     if (instance.hasStickyColumns) {
-      nextProps.style = { position: "sticky", zIndex: 3, top: 0, ...nextProps.style };
+      nextProps.style = {
+        ...props?.style,
+        position: "sticky",
+        zIndex: 3,
+        top: 0,
+      };
     }
   }
 
@@ -165,7 +170,7 @@ export const getHeaderGroupPropsHook = (props, { instance }) => {
 
   // To be removed when not needed (see comment above)
   if (instance.stickyHeader && instance.hasStickyColumns) {
-    nextProps.style = { position: "sticky", top: 0, ...nextProps.style };
+    nextProps.style = { ...props?.style, position: "sticky", top: 0, ...nextProps.style };
   }
 
   return [props, nextProps];
@@ -177,7 +182,13 @@ export const getHeaderPropsHook = (props, { instance, column }) => {
 
   // To be removed when not needed (see comment above)
   if (instance.stickyHeader && !instance.hasStickyColumns) {
-    nextProps.style = { position: "sticky", top: 0, zIndex: 2, ...nextProps.style };
+    nextProps.style = {
+      ...props?.style,
+      position: "sticky",
+      top: 0,
+      zIndex: 2,
+      ...nextProps.style,
+    };
   }
 
   return [props, nextProps];

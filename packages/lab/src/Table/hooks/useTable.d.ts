@@ -61,6 +61,7 @@ import {
 } from "react-table";
 
 import {
+  UseHvTableStylesTableOptions,
   UseHvTableStylesColumnOptions,
   UseHvTableStylesTableCellProps,
   UseHvTableStylesTableRowProps,
@@ -196,6 +197,7 @@ export interface HvTableOptions<D extends object>
     UsePaginationOptions<D>,
     UseResizeColumnsOptions<D>,
     UseSortByOptions<D>,
+    UseHvTableStylesTableOptions,
     UseHvRowSelectionTableOptions,
     UseHvTableStickyTableOptions,
     UseHvBulkActionsTableOptions {

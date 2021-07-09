@@ -26,10 +26,15 @@ const HvTableRow = forwardRef(function HvTableRow(props, ref) {
   return (
     <Component
       ref={ref}
-      className={clsx(className, classes.root, classes[type], {
-        [classes.hover]: hover,
-        [classes.selected]: selected,
-      })}
+      className={clsx(
+        classes.root,
+        classes[type],
+        {
+          [classes.hover]: hover,
+          [classes.selected]: selected,
+        },
+        className
+      )}
       role={Component === defaultComponent ? null : "row"}
       {...others}
     />
