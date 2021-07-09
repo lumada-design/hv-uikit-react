@@ -52,8 +52,6 @@ const KitchenSink = () => {
 
   const handleAction = (evt, id, action) => {
     const selected = selectedFlatRows.map((el) => el.original);
-    // eslint-disable-next-line no-console
-    console.log(id, action);
 
     switch (action.id) {
       case "duplicate": {
