@@ -23,7 +23,7 @@
     "build": "npx lerna run build",
     "build-documentation": "npx npm-run-all --npm-path npm --serial clean:docs build-documentation:storybook",
     "build-documentation:storybook": "NODE_OPTIONS=--max_old_space_size=8192 build-storybook --docs -o dist --quiet",
-    "doc": "start-storybook -p 9001 --ci --quiet --no-version-updates",
+    "doc": "NODE_OPTIONS=--max_old_space_size=8192 start-storybook -p 9001 --ci --quiet --no-version-updates",
     "test": "npx lerna run test --parallel",
     "test:update": "npx lerna run test:update --parallel",
     "link": "npx lerna run link --parallel",
