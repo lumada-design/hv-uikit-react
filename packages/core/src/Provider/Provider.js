@@ -13,8 +13,8 @@ import "focus-visible";
 import {
   ThemeProvider as MuiThemeProvider,
   StylesProvider as MuiStylesProvider,
-  createMuiTheme,
 } from "@material-ui/core";
+import { createTheme } from "@material-ui/core/styles";
 
 import { themeBuilder, createGenerateClassName, CssBaseline, getTheme } from "../theme";
 
@@ -28,7 +28,7 @@ import ConfigContext from "./context";
  * @returns {Object} - A new modified material UI theme.
  */
 const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
-  const muiDefaultTheme = createMuiTheme();
+  const muiDefaultTheme = createTheme();
   const targetTheme = cloneDeep(InputTargetTheme);
   const sourceTheme = cloneDeep(InputSourceTheme);
   const deleteDifference = "D";
