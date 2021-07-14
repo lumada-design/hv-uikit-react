@@ -68,12 +68,14 @@ const styles = (theme) => ({
   variantCheckbox: {
     padding: 0,
     width: 32,
+    maxWidth: 32,
     borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
   variantExpand: {},
   variantActions: {
     padding: 0,
     width: 32,
+    maxWidth: 32,
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
 

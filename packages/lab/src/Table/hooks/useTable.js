@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useTable, usePagination, useRowSelect, useExpanded, useSortBy } from "react-table";
+import { useTable, usePagination, useExpanded, useSortBy } from "react-table";
 
 import useHvTableStyles from "./useTableStyles";
 
@@ -55,8 +55,6 @@ const useHvTable = (props, ...plugins) => {
   const columns = useDefaultColumns(columnsProp, data);
 
   ensureCorePluginInstalation(plugins, "useHvPagination", usePagination);
-  ensureCorePluginInstalation(plugins, "useHvRowSelection", useRowSelect);
-  ensureCorePluginInstalation(plugins, "useHvBulkActions", useRowSelect);
   ensureCorePluginInstalation(plugins, "useHvRowExpand", useExpanded);
   ensureCorePluginInstalation(plugins, "useHvSortBy", useSortBy);
 

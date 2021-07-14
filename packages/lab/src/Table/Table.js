@@ -62,10 +62,14 @@ const HvTable = forwardRef(function HvTable(props, ref) {
       <components.Table
         ref={ref}
         role={component === defaultComponent ? null : "table"}
-        className={clsx(classes.root, className, {
-          [classes.stickyHeader]: stickyHeader,
-          [classes.stickyColumns]: stickyColumns,
-        })}
+        className={clsx(
+          classes.root,
+          {
+            [classes.stickyHeader]: stickyHeader,
+            [classes.stickyColumns]: stickyColumns,
+          },
+          className
+        )}
         {...others}
       />
     </TableContext.Provider>

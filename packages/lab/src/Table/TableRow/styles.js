@@ -5,9 +5,15 @@ const styles = (theme) => ({
     verticalAlign: "middle",
     outline: 0,
     minHeight: 32,
+    "tr&": {
+      height: 32,
+    },
   },
   head: {
-    minHeight: 52,
+    height: 52,
+    "tr&": {
+      height: 52,
+    },
   },
   body: {},
   footer: {},

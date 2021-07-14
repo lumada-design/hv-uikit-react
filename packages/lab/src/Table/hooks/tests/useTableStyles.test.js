@@ -5,6 +5,7 @@ import * as useTableStylesHooks from "../useTableStyles";
 describe("useHvTableStyles", () => {
   it("registers hooks", () => {
     const hooks = {
+      getTableProps: { push: jest.fn() },
       getHeaderProps: { push: jest.fn() },
       getFooterProps: { push: jest.fn() },
       getRowProps: { push: jest.fn() },
@@ -12,6 +13,9 @@ describe("useHvTableStyles", () => {
     };
 
     useTableStyles(hooks);
+
+    // props target: <table>
+    expect(hooks.getTableProps.push).toHaveBeenCalledWith(useTableStylesHooks.getTablePropsHook);
 
     // props target: <table><thead><tr><th>
     expect(hooks.getHeaderProps.push).toHaveBeenCalledWith(

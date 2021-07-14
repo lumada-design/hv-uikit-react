@@ -47,6 +47,13 @@ describe("useHvBulkActions", () => {
         toggleAllPageRowsSelected: jest.fn(),
         toggleAllRowsSelected: jest.fn(),
 
+        aditivePageBulkSelection: false,
+        subtractivePageBulkDeselection: false,
+        isNoRowsSelected: false,
+        isNoPageRowsSelected: false,
+        isAllSelectablePageRowsSelected: false,
+        isAllSelectablePageRowsUnselected: false,
+
         getHooks: () => ({}),
       };
 
@@ -71,6 +78,13 @@ describe("useHvBulkActions", () => {
         ],
         toggleAllPageRowsSelected: jest.fn(),
         toggleAllRowsSelected: jest.fn(),
+
+        aditivePageBulkSelection: false,
+        subtractivePageBulkDeselection: false,
+        isNoRowsSelected: false,
+        isNoPageRowsSelected: false,
+        isAllSelectablePageRowsSelected: false,
+        isAllSelectablePageRowsUnselected: false,
 
         getHooks: () => ({}),
       };
@@ -97,6 +111,13 @@ describe("useHvBulkActions", () => {
         toggleAllPageRowsSelected: jest.fn(),
         toggleAllRowsSelected: jest.fn(),
 
+        aditivePageBulkSelection: false,
+        subtractivePageBulkDeselection: false,
+        isNoRowsSelected: false,
+        isNoPageRowsSelected: false,
+        isAllSelectablePageRowsSelected: true,
+        isAllSelectablePageRowsUnselected: false,
+
         getHooks: () => ({}),
       };
 
@@ -122,6 +143,13 @@ describe("useHvBulkActions", () => {
         toggleAllPageRowsSelected: jest.fn(),
         toggleAllRowsSelected: jest.fn(),
 
+        aditivePageBulkSelection: false,
+        subtractivePageBulkDeselection: false,
+        isNoRowsSelected: true,
+        isNoPageRowsSelected: true,
+        isAllSelectablePageRowsSelected: false,
+        isAllSelectablePageRowsUnselected: true,
+
         getHooks: () => ({}),
       };
 
@@ -146,7 +174,6 @@ describe("useHvBulkActions", () => {
         page: 2,
         toggleAllRowsSelected: jest.fn(),
         invertedToggleAllRowsSelected: jest.fn(),
-        labels: { a: "b" },
       };
 
       const [existing, props] = useBulkActionsHooks.defaultGetHvBulkActionsProps(existingProps, {
@@ -158,7 +185,6 @@ describe("useHvBulkActions", () => {
       expect(props.showSelectAllPages).toBeTruthy();
       expect(props.onSelectAll).toBe(instance.invertedToggleAllRowsSelected);
       expect(props.onSelectAllPages).toBe(instance.toggleAllRowsSelected);
-      expect(props.labels).toBe(instance.labels);
 
       // should return the other properties
       expect(existing).toBe(existingProps);
@@ -172,7 +198,6 @@ describe("useHvBulkActions", () => {
         selectedFlatRows: [1],
         toggleAllRowsSelected: jest.fn(),
         invertedToggleAllRowsSelected: jest.fn(),
-        labels: { a: "b" },
       };
 
       const [existing, props] = useBulkActionsHooks.defaultGetHvBulkActionsProps(existingProps, {
@@ -183,7 +208,6 @@ describe("useHvBulkActions", () => {
       expect(props.numSelected).toEqual(1);
       expect(props.showSelectAllPages).toBeFalsy();
       expect(props.onSelectAll).toBe(instance.invertedToggleAllRowsSelected);
-      expect(props.labels).toBe(instance.labels);
 
       // should return the other properties
       expect(existing).toBe(existingProps);

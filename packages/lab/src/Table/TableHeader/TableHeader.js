@@ -63,17 +63,22 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
       role={role}
       scope={scope}
       style={style}
-      className={clsx(className, classes.root, classes[type], {
-        [classes[`align${capitalize(align)}`]]: align !== "inherit",
-        [classes[`variant${capitalize(variant)}`]]: variant !== "default",
+      className={clsx(
+        classes.root,
+        classes[type],
+        {
+          [classes[`align${capitalize(align)}`]]: align !== "inherit",
+          [classes[`variant${capitalize(variant)}`]]: variant !== "default",
 
-        [classes.stickyColumn]: stickyColumn,
-        [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
-        [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
+          [classes.stickyColumn]: stickyColumn,
+          [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
+          [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
 
-        [classes.sortable]: sortable,
-        [classes.sorted]: sorted,
-      })}
+          [classes.sortable]: sortable,
+          [classes.sorted]: sorted,
+        },
+        className
+      )}
       aria-sort={sortable ? sortDirection : undefined}
       {...others}
     >

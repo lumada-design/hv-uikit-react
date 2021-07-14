@@ -3,15 +3,13 @@ import { renderHook } from "@testing-library/react-hooks";
 import useHvTable from "../useTable";
 
 import useHvPagination from "../usePagination";
-import useHvRowSelection from "../useRowSelection";
-import useHvBulkActions from "../useBulkActions";
 import useHvRowExpand from "../useRowExpand";
 import useHvSortBy from "../useSortBy";
 import useHvTableStyles from "../useTableStyles";
 
 jest.mock("react-table");
 // eslint-disable-next-line import/first, import/order
-import { useTable, usePagination, useRowSelect, useExpanded, useSortBy } from "react-table";
+import { useTable, usePagination, useExpanded, useSortBy } from "react-table";
 
 describe("useHvTable", () => {
   const mockPlugin = { pluginName: "mockPlugin" };
@@ -67,8 +65,6 @@ describe("useHvTable", () => {
     const cases = [
       // name, hvPlugin, corePlugin
       ["useHvPagination", useHvPagination, usePagination],
-      ["useHvRowSelection", useHvRowSelection, useRowSelect],
-      ["useHvBulkActions", useHvBulkActions, useRowSelect],
       ["useHvRowExpand", useHvRowExpand, useExpanded],
       ["useHvSortBy", useHvSortBy, useSortBy],
     ];

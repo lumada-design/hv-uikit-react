@@ -5,19 +5,26 @@ export interface HvBulkActionsProps extends TableCommonProps {
   numSelected: number;
   showSelectAllPages: boolean;
   onSelectAll: () => void;
-  onSelectAllPages: (value?: boolean) => void;
+  onSelectAllPages: () => void;
   labels?: Record<string, string>;
 }
 
 export type HvBulkActionsPropGetter<D extends object> = PropGetter<D, HvBulkActionsProps>;
 
-export function useHvBulkActions<D extends object = Record<string, unknown>>(hooks: Hooks<D>): void;
-
 export interface UseHvBulkActionsHooks<D extends object> {
   getHvBulkActionsProps: Array<HvBulkActionsPropGetter<D>>;
 }
+
+export type UseHvBulkActionsTableOptions = {
+  aditivePageBulkSelection?: boolean;
+  subtractivePageBulkDeselection?: boolean;
+};
 
 export interface UseHvBulkActionsTableInstanceProps<D extends object> {
   getHvBulkActionsProps: (propGetter?: HvBulkActionsPropGetter<D>) => HvBulkActionsProps;
   invertedToggleAllRowsSelected: () => void;
 }
+
+export default function useBulkActions<D extends object = Record<string, unknown>>(
+  hooks: Hooks<D>
+): void;

@@ -52,11 +52,6 @@ import {
   UseResizeColumnsColumnProps,
   UseResizeColumnsOptions,
   UseResizeColumnsState,
-  UseRowSelectHooks,
-  UseRowSelectInstanceProps,
-  UseRowSelectOptions,
-  UseRowSelectRowProps,
-  UseRowSelectState,
   UseSortByColumnOptions,
   UseSortByColumnProps,
   UseSortByHooks,
@@ -66,6 +61,7 @@ import {
 } from "react-table";
 
 import {
+  UseHvTableStylesTableOptions,
   UseHvTableStylesColumnOptions,
   UseHvTableStylesTableCellProps,
   UseHvTableStylesTableRowProps,
@@ -79,9 +75,20 @@ import {
   UseHvTableStickyTableProps,
 } from "./useSticky";
 import { UseHvSortByColumnProps, UseHvSortByTableCellProps } from "./useSortBy";
-import { UseHvRowSelectionTableRowProps } from "./useRowSelection";
+import {
+  UseHvRowSelectionHooks,
+  UseHvRowSelectionRowInstance,
+  UseHvRowSelectionState,
+  UseHvRowSelectionTableInstance,
+  UseHvRowSelectionTableOptions,
+  UseHvRowSelectionTableRowProps,
+} from "./useRowSelection";
 import { UseHvPaginationHooks, UseHvPaginationTableInstance } from "./usePagination";
-import { UseHvBulkActionsHooks, UseHvBulkActionsTableInstanceProps } from "./useBulkActions";
+import {
+  UseHvBulkActionsHooks,
+  UseHvBulkActionsTableInstanceProps,
+  UseHvBulkActionsTableOptions,
+} from "./useBulkActions";
 
 type Accessor<D extends object> = (
   originalRow: D,
@@ -156,8 +163,8 @@ export interface HvHooks<D extends object = Record<string, unknown>>
   extends Hooks<D>,
     UseExpandedHooks<D>,
     UseGroupByHooks<D>,
-    UseRowSelectHooks<D>,
     UseSortByHooks<D>,
+    UseHvRowSelectionHooks<D>,
     UseHvTableStickyHooks<D>,
     UseHvPaginationHooks<D>,
     UseHvBulkActionsHooks<D> {}
@@ -173,8 +180,8 @@ export interface HvTableState<D extends object = Record<string, unknown>>
     UseGroupByState<D>,
     UsePaginationState<D>,
     UseResizeColumnsState<D>,
-    UseRowSelectState<D>,
-    UseSortByState<D> {
+    UseSortByState<D>,
+    UseHvRowSelectionState<D> {
   rowCount: number;
 }
 // #endregion
@@ -189,9 +196,11 @@ export interface HvTableOptions<D extends object>
     UseGroupByOptions<D>,
     UsePaginationOptions<D>,
     UseResizeColumnsOptions<D>,
-    UseRowSelectOptions<D>,
     UseSortByOptions<D>,
-    UseHvTableStickyTableOptions {
+    UseHvTableStylesTableOptions,
+    UseHvRowSelectionTableOptions,
+    UseHvTableStickyTableOptions,
+    UseHvBulkActionsTableOptions {
   columns?: Array<HvTableColumnConfig<D>>;
   data?: D[];
 
@@ -219,8 +228,8 @@ export interface HvTableInstance<D extends object = Record<string, unknown>>
     UseGlobalFiltersInstanceProps<D>,
     UseGroupByInstanceProps<D>,
     UsePaginationInstanceProps<D>,
-    UseRowSelectInstanceProps<D>,
     UseSortByInstanceProps<D>,
+    UseHvRowSelectionTableInstance<D>,
     UseHvTableStickyTableInstance<D>,
     UseHvPaginationTableInstance<D>,
     UseHvBulkActionsTableInstanceProps<D> {
@@ -236,6 +245,7 @@ export interface HvTableInstance<D extends object = Record<string, unknown>>
   flatRows: Array<HvRowInstance<D>>;
   getHooks: () => HvHooks<D>;
   getTableProps: (propGetter?: TablePropGetter<D>) => HvTableProps;
+  selectedFlatRows: Array<HvRowInstance<D>>;
 
   labels: Record<string, string>;
 }
@@ -259,7 +269,7 @@ export interface HvRowInstance<D extends object = Record<string, unknown>>
   extends Row<D>,
     UseExpandedRowProps<D>,
     UseGroupByRowProps<D>,
-    UseRowSelectRowProps<D> {
+    UseHvRowSelectionRowInstance {
   cells: Array<HvCellInstance<D>>;
   allCells: Array<HvCellInstance<D>>;
   getRowProps: (propGetter?: RowPropGetter<D>) => HvTableRowProps;
@@ -305,3 +315,5 @@ export default function useHvTable<D extends object = Record<string, unknown>>(
   options: HvTableOptions<D>,
   ...plugins: Array<PluginHook<D>>
 ): HvTableInstance<D>;
+
+export { PluginHook as HvTablePluginHook };

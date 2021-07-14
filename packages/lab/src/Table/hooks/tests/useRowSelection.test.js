@@ -14,12 +14,33 @@ describe("useHvRowSelection", () => {
     const hooks = {
       visibleColumns: { push: jest.fn() },
       getRowProps: { push: jest.fn() },
+
+      stateReducers: { push: jest.fn() },
+      useInstance: { push: jest.fn() },
+      prepareRow: { push: jest.fn() },
     };
 
     useRowSelection(hooks);
 
     expect(hooks.visibleColumns.push).toHaveBeenCalledWith(useRowSelectionHooks.visibleColumnsHook);
     expect(hooks.getRowProps.push).toHaveBeenCalledWith(useRowSelectionHooks.getRowPropsHook);
+
+    expect(hooks.getToggleRowSelectedProps).toBeDefined();
+    expect(hooks.getToggleRowSelectedProps[0]).toBe(
+      useRowSelectionHooks.defaultGetToggleRowSelectedProps
+    );
+    expect(hooks.getToggleAllRowsSelectedProps).toBeDefined();
+    expect(hooks.getToggleAllRowsSelectedProps[0]).toBe(
+      useRowSelectionHooks.defaultGetToggleAllRowsSelectedProps
+    );
+    expect(hooks.getToggleAllPageRowsSelectedProps).toBeDefined();
+    expect(hooks.getToggleAllPageRowsSelectedProps[0]).toBe(
+      useRowSelectionHooks.defaultGetToggleAllPageRowsSelectedProps
+    );
+
+    expect(hooks.stateReducers.push).toHaveBeenCalledWith(useRowSelectionHooks.reducer);
+    expect(hooks.useInstance.push).toHaveBeenCalledWith(useRowSelectionHooks.useInstance);
+    expect(hooks.prepareRow.push).toHaveBeenCalledWith(useRowSelectionHooks.prepareRow);
   });
 
   describe("visibleColumnsHook", () => {
