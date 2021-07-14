@@ -103,7 +103,7 @@ const HvTag = (props) => {
       label={label}
       className={clsx(classes.root, className)}
       onMouseEnter={() => {
-        setHover(true);
+        setHover(!!onClick);
       }}
       onMouseLeave={() => {
         setHover(false);
@@ -115,6 +115,7 @@ const HvTag = (props) => {
       classes={{
         root: clsx(classes.chipRoot, {
           [classes.disabled]: disabled,
+          [classes.clickable]: !!onClick,
           [classes.categorical]: type === "categorical",
           [classes.categoricalFocus]: type === "categorical" && !disabled,
           [classes.categoricalDisabled]: type === "categorical" && disabled,
@@ -191,6 +192,10 @@ HvTag.propTypes = {
      * Styles applied to the component.
      */
     deletable: PropTypes.string,
+    /**
+     * Styles applied to the component if has onClick.
+     */
+    clickable: PropTypes.string,
     /**
      * Styles applied to the component.
      */
