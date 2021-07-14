@@ -176,7 +176,7 @@ export const CategoricalTags = () => {
   return (
     <div
       style={{
-        width: "350px",
+        width: "400px",
         display: "flex",
         justifyContent: "space-between",
       }}
@@ -206,6 +206,7 @@ export const CategoricalTags = () => {
         type="categorical"
         color="cviz5"
       />
+      <HvTag label={textElement("No Click")} type="categorical" color="#22FF45" />
     </div>
   );
 };

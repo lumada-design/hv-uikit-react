@@ -73,7 +73,9 @@ const styles = (theme) => ({
   },
   categorical: {
     borderRadius: 8,
-    cursor: "pointer",
+    "&$clickable": {
+      cursor: "pointer",
+    },
     "&:hover": {
       borderRadius: 8,
     },
@@ -85,6 +87,7 @@ const styles = (theme) => ({
       boxShadow: "none !important",
     },
   },
+  clickable: {},
 
   categoricalFocus: {
     "&:focus": {

@@ -2,14 +2,15 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core";
+import { createTheme } from "@material-ui/core/styles";
 import ConfigContext from "../context";
 import HvProvider from "../Provider";
 import useLocale from "../useLocale";
 
 describe("Provider", () => {
   let wrapper;
-  const mockOverriden = createMuiTheme({
+  const mockOverriden = createTheme({
     typography: {
       useNextVariants: true,
       suppressDeprecationWarnings: true,

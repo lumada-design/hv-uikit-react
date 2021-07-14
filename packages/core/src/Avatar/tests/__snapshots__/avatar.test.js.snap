@@ -45,7 +45,7 @@ exports[`Avatar  default avatar snapshot 1`] = `
         }
       >
         <div
-          className="MuiAvatar-root MuiAvatar-circle HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
+          className="MuiAvatar-root MuiAvatar-circular HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
           style={
             Object {
               "backgroundColor": "#414141",
@@ -135,7 +135,7 @@ exports[`Avatar  icon avatar snapshot 1`] = `
         }
       >
         <div
-          className="MuiAvatar-root MuiAvatar-circle HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
+          className="MuiAvatar-root MuiAvatar-circular HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
           style={
             Object {
               "backgroundColor": "#414141",
@@ -227,7 +227,7 @@ exports[`Avatar  image avatar snapshot 1`] = `
         style={Object {}}
       >
         <div
-          className="MuiAvatar-root MuiAvatar-circle HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
+          className="MuiAvatar-root MuiAvatar-circular HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
           style={Object {}}
         >
           <img
@@ -288,7 +288,7 @@ exports[`Avatar  letter avatar snapshot 1`] = `
         }
       >
         <div
-          className="MuiAvatar-root MuiAvatar-circle HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
+          className="MuiAvatar-root MuiAvatar-circular HvAvatar-root HvAvatar-S MuiAvatar-colorDefault"
           style={
             Object {
               "backgroundColor": "#414141",

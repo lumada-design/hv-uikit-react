@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@material-ui/core/styles";
 import dawnTheme from "@hv/uikit-common-themes/dist/dawn";
 import wickedTheme from "@hv/uikit-common-themes/dist/wicked";
 import muiAppBarOverrides from "./overrides/muiAppBar";
@@ -23,7 +23,7 @@ const themeBuilder = (theme) => {
   const themePalette = createPalette(theme);
   const themeTypography = createTypography(themePalette, theme);
 
-  return createMuiTheme({
+  return createTheme({
     shadows: Array(25).fill("none"),
 
     // MUI's spacing doesn't cover our use cases because of regression:
