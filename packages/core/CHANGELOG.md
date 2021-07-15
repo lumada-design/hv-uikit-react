@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.38.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.37.0...@hv/uikit-react-core@3.38.0) (2021-07-15)
+
+
+### Bug Fixes
+
+* **button:** icon buttons inheriting parent size ([41375a5](https://github.com/lumada-design/hv-uikit-react/commit/41375a565380ccd123c2e7397603d46661128b55))
+
+
+### Features
+
+* **table:** allow bulk actions to handle server side pagination. HVUIKIT-5837 ([caa9cd4](https://github.com/lumada-design/hv-uikit-react/commit/caa9cd4f71677b5f1a091fb708462283a7fffc14))
+* **tag:** remove hover effect if no onClick is assigned. HVUIKIT-5847 ([759377a](https://github.com/lumada-design/hv-uikit-react/commit/759377afb4cc15b8768f017fad95e4772a72b3ca))
+
+
+
+
+
 # [3.37.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.36.3...@hv/uikit-react-core@3.37.0) (2021-07-08)
 
 

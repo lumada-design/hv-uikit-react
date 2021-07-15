@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.21.2...@hv/uikit-react-lab@3.22.0) (2021-07-15)
+
+
+### Features
+
+* **table:** allows injection of styles and classnames ([9a9ddba](https://github.com/lumada-design/hv-uikit-react/commit/9a9ddbad9c51748c7a3c51bcb68da30f9c4f3fba))
+* **table:** alternative layouts support ([34e606a](https://github.com/lumada-design/hv-uikit-react/commit/34e606a900e8a22ac1e723f6ab17bd0e7de76fc4))
+* **table:** selection locked rows ([4c4b18f](https://github.com/lumada-design/hv-uikit-react/commit/4c4b18f237473d4b885fc2c08466e5978146852f))
+
+
+
+
+
 ## [3.21.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.21.1...@hv/uikit-react-lab@3.21.2) (2021-07-08)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
