@@ -93,9 +93,13 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
             [classes.firstWithNumeric]: rest.column.cellType === "numeric",
           })}
         >
-          {rest?.column?.format
-            ? rest.column.format(rest.row._original[rest.column.id])
-            : rest.row._original[rest.column.id]}
+          <CellWithTooltip
+            data={
+              rest?.column?.format
+                ? rest.column.format(rest.row._original[rest.column.id])
+                : rest.row._original[rest.column.id]
+            }
+          />
         </div>
       </>
     );
