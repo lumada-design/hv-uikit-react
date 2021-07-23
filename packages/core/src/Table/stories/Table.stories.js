@@ -735,7 +735,7 @@ export const WithExpanderAndCustomContent = () => {
     },
     {
       id: 2,
-      dataCenter: "Captain America Route",
+      dataCenter: "Captain America Route is a very long string of characters",
       storageSegment: "Tandem",
       storageArray: 3,
 
