@@ -377,8 +377,8 @@ const styles = (theme) => {
       marginRight: 5,
       width: "25px",
       height: "25px",
-      minWidth: "unset",
-      minHeight: "unset",
+      minWidth: "25px",
+      minHeight: "25px",
       borderRadius: 0,
       "&:focus": {
         background: theme.hv.palette.atmosphere.atmo3,
