@@ -120,6 +120,15 @@ export interface HvTextAreaProps
    * Props passed to the char count.
    */
   countCharProps?: HvCharCounterProps;
+
+  /**
+   * Called back when the value is changed.
+   */
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
+  /**
+   * Called back when the value is changed.
+   */
+  onBlur?: (event: React.ChangeEvent<HTMLInputElement>, value: string, validationState: string) => void;
 }
 
 export default function HvTextArea(props: HvTextAreaProps): JSX.Element | null;
