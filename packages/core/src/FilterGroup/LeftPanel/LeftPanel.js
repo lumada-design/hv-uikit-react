@@ -5,6 +5,7 @@ import { HvPanel, HvListContainer, HvListItem, setId } from "../..";
 import { FilterGroupContext } from "../FilterGroupContext";
 import Counter from "../Counter";
 import useStyles from "./styles";
+import { wrapperTooltip } from "../../List/utils";
 
 const LeftPanel = ({ id, className }) => {
   const classes = useStyles();
@@ -13,17 +14,20 @@ const LeftPanel = ({ id, className }) => {
   return (
     <HvPanel id={setId(id, "leftPanel")} className={clsx(className, classes.root)}>
       <HvListContainer id={setId(id, "leftPanel-list")} condensed interactive>
-        {filterOptions.map((group, index) => (
-          <HvListItem
-            id={group.id}
-            key={group.name}
-            onClick={() => setActiveGroup(index)}
-            selected={filterOptions[activeGroup].id === group.id}
-            endAdornment={<Counter id={group.id} />}
-          >
-            {group.name}
-          </HvListItem>
-        ))}
+        {filterOptions.map((group, index) => {
+          const ItemText = wrapperTooltip(true, group.name, group.name);
+          return (
+            <HvListItem
+              id={group.id}
+              key={group.name}
+              onClick={() => setActiveGroup(index)}
+              selected={filterOptions[activeGroup].id === group.id}
+              endAdornment={<Counter id={group.id} />}
+            >
+              <ItemText />
+            </HvListItem>
+          );
+        })}
       </HvListContainer>
     </HvPanel>
   );

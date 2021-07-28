@@ -128,6 +128,7 @@ const RightPanel = ({ id, className, labels }) => {
         onChange={onChangeHandler}
         selectable
         condensed
+        hasTooltips
       />
     </HvPanel>
   );

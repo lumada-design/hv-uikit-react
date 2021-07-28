@@ -40,6 +40,10 @@ const styles = makeStyles((theme) => ({
   baseDropdownSelection: {
     padding: "0 30px 0 0",
   },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
   leftSidePanel: {},
   rightSidePanel: {},
 }));

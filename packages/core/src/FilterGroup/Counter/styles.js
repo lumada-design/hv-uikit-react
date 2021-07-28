@@ -4,11 +4,8 @@ const styles = makeStyles(() => ({
   root: {
     height: "100%",
     lineHeight: "32px",
-    marginRight: 10,
-    position: "absolute",
+    margin: "0 10px",
     pointerEvents: "none",
-    top: -1,
-    right: -1,
   },
 }));
 
