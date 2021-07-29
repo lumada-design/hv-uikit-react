@@ -26,7 +26,7 @@ export const Main = () => {
       id: "category",
       name: "Category",
       data: [
-        { id: "category1", name: "Category 1" },
+        { id: "category1", name: "Categoryyyyyyyyyyyyyyyyyyyyyyyyy is a very long string 1" },
         { id: "category2", name: "Category 2" },
         { id: "category3", name: "Category 3" },
         { id: "category4", name: "Category 4" },
@@ -36,7 +36,7 @@ export const Main = () => {
       id: "subcategory",
       name: "Sub-Category",
       data: [
-        { id: "subcategory1", name: "Sub Category 1" },
+        { id: "subcategory1", name: "Sub Category Categoryyyyyyyyy is a very long string 1" },
         { id: "subcategory2", name: "Sub Category 2" },
         { id: "subcategory3", name: "Sub Category 3" },
         { id: "subcategory4", name: "Sub Category 4" },
@@ -44,9 +44,12 @@ export const Main = () => {
     },
     {
       id: "subsubcategory",
-      name: "Sub-Sub-Category",
+      name: "Sub-Sub-Category Category Category Category Category Category",
       data: [
-        { id: "subsubcategory1", name: "Sub sub Category 1" },
+        {
+          id: "subsubcategory1",
+          name: "Sub sub Category 1 Categoryyyyyyyyy is a very long string",
+        },
         { id: "subsubcategory2", name: "Sub sub Category 2" },
         { id: "subsubcategory3", name: "Sub sub Category 3" },
         { id: "subsubcategory4", name: "Sub sub Category 4" },

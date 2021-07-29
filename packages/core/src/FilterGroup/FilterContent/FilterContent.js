@@ -94,6 +94,7 @@ const FilterContent = ({
         root: classes.dropdown,
         panel: classes.panel,
         selection: classes.baseDropdownSelection,
+        header: classes.header,
       }}
       disabled={disabled}
       disablePortal={disablePortal}

@@ -8,7 +8,8 @@ const styles = (theme) => ({
     ...theme.hv.typography.normalText,
     padding: 0,
 
-    display: "block",
+    display: "flex",
+    justifyContent: "space-between",
     height: "32px",
     lineHeight: "32px",
 
