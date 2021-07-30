@@ -19,6 +19,7 @@ const LeftPanel = ({ id, className }) => {
           return (
             <HvListItem
               id={group.id}
+              className={classes.filterItem}
               key={group.name}
               onClick={() => setActiveGroup(index)}
               selected={filterOptions[activeGroup].id === group.id}

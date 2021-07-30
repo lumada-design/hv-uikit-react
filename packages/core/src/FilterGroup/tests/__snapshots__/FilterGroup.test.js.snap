@@ -87,7 +87,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                 style="height: 350px;"
               >
                 <div
-                  class="MuiBox-root MuiBox-root-15 makeStyles-leftSidePanel-11 makeStyles-root-14 HvPanel-root"
+                  class="MuiBox-root MuiBox-root-16 makeStyles-leftSidePanel-11 makeStyles-root-14 HvPanel-root"
                   id="example-leftPanel"
                 >
                   <ul
@@ -95,7 +95,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                     id="example-leftPanel-list"
                   >
                     <li
-                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       id="category"
                       tabindex="0"
                     >
@@ -115,7 +115,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                       </div>
                     </li>
                     <li
-                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                      class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                       id="subcategory"
                       tabindex="-1"
                     >
@@ -133,7 +133,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                       </div>
                     </li>
                     <li
-                      class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+                      class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
                       id="subsubcategory"
                       tabindex="-1"
                     >
@@ -155,11 +155,11 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="MuiBox-root MuiBox-root-22 makeStyles-rightSidePanel-12 makeStyles-root-16 HvPanel-root"
+                  class="MuiBox-root MuiBox-root-23 makeStyles-rightSidePanel-12 makeStyles-root-17 HvPanel-root"
                   id="example-rightPanel"
                 >
                   <div
-                    class="HvInput-root makeStyles-search-17 HvFormElement-root"
+                    class="HvInput-root makeStyles-search-18 HvFormElement-root"
                     id="example-search"
                   >
                     <div
@@ -217,10 +217,10 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                     </div>
                   </div>
                   <div
-                    class="makeStyles-selectAllContainer-20"
+                    class="makeStyles-selectAllContainer-21"
                   >
                     <div
-                      class="makeStyles-selectAll-21 HvCheckBox-root HvFormElement-root"
+                      class="makeStyles-selectAll-22 HvCheckBox-root HvFormElement-root"
                       id="example-select-all"
                     >
                       <div
@@ -228,13 +228,13 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkbox HvBaseCheckbox-root"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-26"
+                              class="PrivateSwitchBase-input-27"
                               data-indeterminate="true"
                               id="example-select-all-input"
                               type="checkbox"
@@ -284,7 +284,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                   </div>
                   <ul
                     aria-multiselectable="true"
-                    class="makeStyles-list-18 HvList-root HvListContainer-root"
+                    class="makeStyles-list-19 HvList-root HvListContainer-root"
                     id="example-list"
                     role="listbox"
                   >
@@ -308,14 +308,14 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                           >
                             <span
                               aria-disabled="false"
-                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
                             >
                               <span
                                 class="MuiIconButton-label"
                               >
                                 <input
                                   checked=""
-                                  class="PrivateSwitchBase-input-26"
+                                  class="PrivateSwitchBase-input-27"
                                   data-indeterminate="false"
                                   id="example-list-item-0-selector-input"
                                   type="checkbox"
@@ -382,13 +382,13 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                           >
                             <span
                               aria-disabled="false"
-                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                             >
                               <span
                                 class="MuiIconButton-label"
                               >
                                 <input
-                                  class="PrivateSwitchBase-input-26"
+                                  class="PrivateSwitchBase-input-27"
                                   data-indeterminate="false"
                                   id="example-list-item-1-selector-input"
                                   type="checkbox"
@@ -450,13 +450,13 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                           >
                             <span
                               aria-disabled="false"
-                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                             >
                               <span
                                 class="MuiIconButton-label"
                               >
                                 <input
-                                  class="PrivateSwitchBase-input-26"
+                                  class="PrivateSwitchBase-input-27"
                                   data-indeterminate="false"
                                   id="example-list-item-2-selector-input"
                                   type="checkbox"
@@ -518,13 +518,13 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                           >
                             <span
                               aria-disabled="false"
-                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
                             >
                               <span
                                 class="MuiIconButton-label"
                               >
                                 <input
-                                  class="PrivateSwitchBase-input-26"
+                                  class="PrivateSwitchBase-input-27"
                                   data-indeterminate="false"
                                   id="example-list-item-3-selector-input"
                                   type="checkbox"
@@ -916,7 +916,7 @@ exports[`Clear Filters Clears are option selections and reset counters 1`] = `
   id="example-leftPanel-list"
 >
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
     id="category"
     tabindex="0"
   >
@@ -936,7 +936,7 @@ exports[`Clear Filters Clears are option selections and reset counters 1`] = `
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subcategory"
     tabindex="-1"
   >
@@ -954,7 +954,7 @@ exports[`Clear Filters Clears are option selections and reset counters 1`] = `
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subsubcategory"
     tabindex="-1"
   >
@@ -979,7 +979,7 @@ exports[`Clear Filters Clears are option selections and reset counters 1`] = `
 exports[`Clear Filters Clears are option selections and reset counters 2`] = `
 <ul
   aria-multiselectable="true"
-  class="makeStyles-list-18 HvList-root HvListContainer-root"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
   id="example-list"
   role="listbox"
 >
@@ -1003,14 +1003,14 @@ exports[`Clear Filters Clears are option selections and reset counters 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
                 type="checkbox"
@@ -1077,13 +1077,13 @@ exports[`Clear Filters Clears are option selections and reset counters 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-1-selector-input"
                 type="checkbox"
@@ -1145,13 +1145,13 @@ exports[`Clear Filters Clears are option selections and reset counters 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-2-selector-input"
                 type="checkbox"
@@ -1213,13 +1213,13 @@ exports[`Clear Filters Clears are option selections and reset counters 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-3-selector-input"
                 type="checkbox"
@@ -1270,7 +1270,7 @@ exports[`Clear Filters Clears are option selections and reset counters 3`] = `
   id="example-leftPanel-list"
 >
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
     id="category"
     tabindex="0"
   >
@@ -1288,7 +1288,7 @@ exports[`Clear Filters Clears are option selections and reset counters 3`] = `
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subcategory"
     tabindex="-1"
   >
@@ -1306,7 +1306,7 @@ exports[`Clear Filters Clears are option selections and reset counters 3`] = `
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subsubcategory"
     tabindex="-1"
   >
@@ -1329,7 +1329,7 @@ exports[`Clear Filters Clears are option selections and reset counters 3`] = `
 exports[`Clear Filters Clears are option selections and reset counters 4`] = `
 <ul
   aria-multiselectable="true"
-  class="makeStyles-list-18 HvList-root HvListContainer-root"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
   id="example-list"
   role="listbox"
 >
@@ -1353,13 +1353,13 @@ exports[`Clear Filters Clears are option selections and reset counters 4`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
                 type="checkbox"
@@ -1421,13 +1421,13 @@ exports[`Clear Filters Clears are option selections and reset counters 4`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-1-selector-input"
                 type="checkbox"
@@ -1489,13 +1489,13 @@ exports[`Clear Filters Clears are option selections and reset counters 4`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-2-selector-input"
                 type="checkbox"
@@ -1557,13 +1557,13 @@ exports[`Clear Filters Clears are option selections and reset counters 4`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-3-selector-input"
                 type="checkbox"
@@ -1611,7 +1611,7 @@ exports[`Clear Filters Clears are option selections and reset counters 4`] = `
 exports[`Left side selection changes the Right side elements 1`] = `
 <ul
   aria-multiselectable="true"
-  class="makeStyles-list-18 HvList-root HvListContainer-root"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
   id="example-list"
   role="listbox"
 >
@@ -1635,14 +1635,14 @@ exports[`Left side selection changes the Right side elements 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
                 type="checkbox"
@@ -1709,13 +1709,13 @@ exports[`Left side selection changes the Right side elements 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-1-selector-input"
                 type="checkbox"
@@ -1777,13 +1777,13 @@ exports[`Left side selection changes the Right side elements 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-2-selector-input"
                 type="checkbox"
@@ -1845,13 +1845,13 @@ exports[`Left side selection changes the Right side elements 1`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-3-selector-input"
                 type="checkbox"
@@ -1899,7 +1899,7 @@ exports[`Left side selection changes the Right side elements 1`] = `
 exports[`Left side selection changes the Right side elements 2`] = `
 <ul
   aria-multiselectable="true"
-  class="makeStyles-list-18 HvList-root HvListContainer-root"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
   id="example-list"
   role="listbox"
 >
@@ -1923,14 +1923,14 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
                 type="checkbox"
@@ -1997,14 +1997,14 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-1-selector-input"
                 type="checkbox"
@@ -2071,13 +2071,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-2-selector-input"
                 type="checkbox"
@@ -2139,13 +2139,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-3-selector-input"
                 type="checkbox"
@@ -2207,13 +2207,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-4-selector-input"
                 type="checkbox"
@@ -2275,13 +2275,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-5-selector-input"
                 type="checkbox"
@@ -2343,13 +2343,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-6-selector-input"
                 type="checkbox"
@@ -2411,13 +2411,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-7-selector-input"
                 type="checkbox"
@@ -2479,13 +2479,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-8-selector-input"
                 type="checkbox"
@@ -2547,13 +2547,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-9-selector-input"
                 type="checkbox"
@@ -2615,13 +2615,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-10-selector-input"
                 type="checkbox"
@@ -2683,13 +2683,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-11-selector-input"
                 type="checkbox"
@@ -2740,7 +2740,7 @@ exports[`Right side selection Changes the counters in the expected locations 1`]
   id="example-leftPanel-list"
 >
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
     id="category"
     tabindex="0"
   >
@@ -2760,7 +2760,7 @@ exports[`Right side selection Changes the counters in the expected locations 1`]
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subcategory"
     tabindex="-1"
   >
@@ -2778,7 +2778,7 @@ exports[`Right side selection Changes the counters in the expected locations 1`]
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subsubcategory"
     tabindex="-1"
   >
@@ -2803,7 +2803,7 @@ exports[`Right side selection Changes the counters in the expected locations 1`]
 exports[`Right side selection Changes the counters in the expected locations 2`] = `
 <ul
   aria-multiselectable="true"
-  class="makeStyles-list-18 HvList-root HvListContainer-root"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
   id="example-list"
   role="listbox"
 >
@@ -2827,14 +2827,14 @@ exports[`Right side selection Changes the counters in the expected locations 2`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
                 type="checkbox"
@@ -2901,13 +2901,13 @@ exports[`Right side selection Changes the counters in the expected locations 2`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-1-selector-input"
                 type="checkbox"
@@ -2969,13 +2969,13 @@ exports[`Right side selection Changes the counters in the expected locations 2`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-2-selector-input"
                 type="checkbox"
@@ -3037,13 +3037,13 @@ exports[`Right side selection Changes the counters in the expected locations 2`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-3-selector-input"
                 type="checkbox"
@@ -3094,7 +3094,7 @@ exports[`Right side selection Changes the counters in the expected locations 3`]
   id="example-leftPanel-list"
 >
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-selected HvListItem-withEndAdornment HvFocus-root HvFocus-selected HvFocus-focusDisabled"
     id="category"
     tabindex="0"
   >
@@ -3114,7 +3114,7 @@ exports[`Right side selection Changes the counters in the expected locations 3`]
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subcategory"
     tabindex="-1"
   >
@@ -3132,7 +3132,7 @@ exports[`Right side selection Changes the counters in the expected locations 3`]
     </div>
   </li>
   <li
-    class="HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
+    class="makeStyles-filterItem-15 HvListItem-root HvListItem-gutters HvListItem-condensed HvListItem-interactive HvListItem-withEndAdornment HvFocus-root HvFocus-focusDisabled"
     id="subsubcategory"
     tabindex="-1"
   >
@@ -3157,7 +3157,7 @@ exports[`Right side selection Changes the counters in the expected locations 3`]
 exports[`Right side selection Changes the counters in the expected locations 4`] = `
 <ul
   aria-multiselectable="true"
-  class="makeStyles-list-18 HvList-root HvListContainer-root"
+  class="makeStyles-list-19 HvList-root HvListContainer-root"
   id="example-list"
   role="listbox"
 >
@@ -3181,14 +3181,14 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
                 type="checkbox"
@@ -3255,14 +3255,14 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-24 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
                 checked=""
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-1-selector-input"
                 type="checkbox"
@@ -3329,13 +3329,13 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-2-selector-input"
                 type="checkbox"
@@ -3397,13 +3397,13 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-23 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                class="PrivateSwitchBase-input-26"
+                class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-3-selector-input"
                 type="checkbox"
