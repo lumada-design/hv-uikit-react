@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.38.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.1...@hv/uikit-react-core@3.38.2) (2021-07-30)
+
+
+### Bug Fixes
+
+* **filterGroup:** flex item only applied in filter. HVUIKIT-5914 ([a2b30f2](https://github.com/lumada-design/hv-uikit-react/commit/a2b30f20cf976f75310ad43def61bada461bd99a))
+* **filterGroup:** no tooltip on the list options when required.HVUIKIT-5914 ([93d5c1a](https://github.com/lumada-design/hv-uikit-react/commit/93d5c1aca03a9224966664907f1c73298a71e5be))
+* **table:** cell with expander does not include tooltip.HVUIKIT-5908 ([70e30ae](https://github.com/lumada-design/hv-uikit-react/commit/70e30ae4ae04fc77c68d38832d0d453fcaffb79a))
+* **table:** fix ie columns are moving with big text.HVUIKIT-5908 ([31791cd](https://github.com/lumada-design/hv-uikit-react/commit/31791cdcd546dc5b4300c75bc41e6fa4101a54b7))
+* **textArea:** typescript is missing callbacks.HVUIKIT-5866 ([4f48259](https://github.com/lumada-design/hv-uikit-react/commit/4f48259a6e35e6e6fe6ef4895093c1605b93a787))
+
+
+
+
+
 ## [3.38.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.0...@hv/uikit-react-core@3.38.1) (2021-07-27)
 
 
