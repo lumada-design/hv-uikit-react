@@ -17,7 +17,7 @@ ${column}                 ${rows}>div>div:nth-child
 ${header}                 ${headers}:nth-child
 ${headers}                css:[role=columnheader]
 ${nav_first_page}         css:button[aria-label='First Page']
-${nav_input}              css:input[aria-label*='page input']
+${nav_input}              css:input[aria-label='Current page']
 ${nav_last_page}          css:button[aria-label='Last Page']
 ${nav_next_page}          css:button[aria-label='Next Page']
 ${nav_previous_page}      css:button[aria-label='Previous Page']

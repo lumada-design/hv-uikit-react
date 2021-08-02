@@ -20,7 +20,7 @@ const DEFAULT_LABELS = {
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
   paginationLastPageTitle: "Last page",
-  paginationInputLabel: "Total pages for page input",
+  paginationInputLabel: "Current page",
   firstPage: "First Page",
   previousPage: "Previous Page",
   nextPage: "Next Page",
@@ -92,7 +92,7 @@ const Pagination = ({
         id={setId(id, "currentPage")}
         labels={labels}
         inputProps={{
-          "aria-label": `${pages} ${labels.paginationInputLabel}`,
+          "aria-label": labels.paginationInputLabel,
           // we really want the native number input
           type: "number",
         }}
