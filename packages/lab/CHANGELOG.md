@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.22.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.22.2...@hv/uikit-react-lab@3.22.3) (2021-08-03)
+
+
+### Bug Fixes
+
+* **pagination:** current page input aria-label ([c54a617](https://github.com/lumada-design/hv-uikit-react/commit/c54a61772b11181429a33eba7f130134dd963ebe))
+
+
+
+
+
 ## [3.22.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.22.1...@hv/uikit-react-lab@3.22.2) (2021-07-30)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

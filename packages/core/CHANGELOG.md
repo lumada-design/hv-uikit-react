@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.38.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.2...@hv/uikit-react-core@3.38.3) (2021-08-03)
+
+
+### Bug Fixes
+
+* **pagination:** current page input aria-label ([c54a617](https://github.com/lumada-design/hv-uikit-react/commit/c54a61772b11181429a33eba7f130134dd963ebe))
+* **pagination:** page size options layout ([bd52cd9](https://github.com/lumada-design/hv-uikit-react/commit/bd52cd9bcde49ba120d57875a355ba9aa67e25a9))
+* **table:** paginationLabels prop ts definition ([9f46aa6](https://github.com/lumada-design/hv-uikit-react/commit/9f46aa61a7afc0665b8af47548e31e99620cc0df))
+
+
+
+
+
 ## [3.38.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.1...@hv/uikit-react-core@3.38.2) (2021-07-30)
 
 
