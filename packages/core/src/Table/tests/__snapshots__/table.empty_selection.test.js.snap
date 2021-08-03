@@ -1235,19 +1235,19 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                 </span>
               </div>
               <div
-                class="HvBaseDropdown-root HvSelect-root-51"
+                class="HvBaseDropdown-root HvSelect-base HvSelect-root"
               >
                 <div
                   aria-expanded="false"
                   aria-label="Select how many to display"
-                  class="HvPagination-pageSizeOptionsSelect HvBaseDropdown-anchor HvSelect-anchor-52"
+                  class="HvPagination-pageSizeOptionsSelect HvBaseDropdown-anchor HvSelect-anchor"
                   id="table1-pagination-pageSize"
                   role="combobox"
                   tabindex="-1"
                 >
                   <div
                     aria-label="Select how many to display"
-                    class="HvBaseDropdown-header HvSelect-header-53"
+                    class="HvBaseDropdown-header HvSelect-header"
                     id="table1-pagination-pageSize-header"
                     role="textbox"
                     tabindex="0"

@@ -1,25 +1,31 @@
 /* eslint-disable react/prop-types */
 
 import React, { useState } from "react";
+import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { HvBaseDropdown, HvSelectionList, HvListItem, HvPanel, HvTypography } from "..";
 
 const styles = (theme) => ({
-  root: {
-    borderRadius: 2,
-    width: "auto",
-    "& > div$anchor": {
+  base: {
+    "&$root": {
+      borderRadius: 2,
       width: "auto",
-    },
-    "& $header": {
-      backgroundColor: "transparent",
-      borderColor: "transparent",
-    },
-    "& $headerOpen": {
-      backgroundColor: theme.palette.atmo1,
-      borderColor: theme.palette.atmo1,
+
+      "& > div$anchor": {
+        width: "auto",
+      },
+      "& $header": {
+        backgroundColor: "transparent",
+        borderColor: "transparent",
+      },
+      "& $headerOpen": {
+        backgroundColor: theme.palette.atmo1,
+        borderColor: theme.palette.atmo1,
+      },
     },
   },
+
+  root: {},
   anchor: {},
   header: {},
   headerOpen: {},
@@ -53,7 +59,12 @@ const HvSelect = ({ className, classes, onChange, disabled, value, children, ...
   return (
     <HvBaseDropdown
       className={className}
-      classes={classes}
+      classes={{
+        root: clsx(classes.base, classes.root),
+        anchor: classes.anchor,
+        header: classes.header,
+        headerOpen: classes.headerOpen,
+      }}
       expanded={open}
       onToggle={handleToggle}
       onContainerCreation={setFocusToContent}
@@ -71,4 +82,4 @@ const HvSelect = ({ className, classes, onChange, disabled, value, children, ...
   );
 };
 
-export default withStyles(styles)(HvSelect);
+export default withStyles(styles, { name: "HvSelect" })(HvSelect);
