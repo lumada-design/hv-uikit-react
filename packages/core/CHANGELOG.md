@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.38.5](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.4...@hv/uikit-react-core@3.38.5) (2021-08-03)
+
+
+### Bug Fixes
+
+* **table:** detect cell content overflow to show tooltip HVUIKIT-5927 ([6304fe7](https://github.com/lumada-design/hv-uikit-react/commit/6304fe7623a01efbe9c1ad758cdcfe164cec0496))
+
+
+
+
+
 ## [3.38.4](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.3...@hv/uikit-react-core@3.38.4) (2021-08-03)
 
 
