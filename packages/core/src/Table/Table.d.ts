@@ -55,10 +55,6 @@ export interface TableColumn {
    */
   minWidth?: string | number;
   /**
-   * Labels for the pagination.
-   */
-  paginationLabels?: PaginationLabelsProp;
-  /**
    * Custom sort method
    * @param a - the first value to compare.
    * @param b - the second value to compare.
@@ -177,6 +173,11 @@ export interface HvTableProps
    * Boolean to enable or disable the server side pagination mechanism
    */
   paginationServerSide?: boolean;
+
+  /**
+   * Labels for the pagination.
+   */
+  paginationLabels?: PaginationLabelsProp;
 
   /**
    * Attributes applied to the pagination component

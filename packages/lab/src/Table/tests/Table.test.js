@@ -267,7 +267,7 @@ describe("Table", () => {
         "Last Page",
       ].map(getByLabelText);
 
-      const input = getByRole("spinbutton", { name: "4 Total pages for page input" });
+      const input = getByRole("spinbutton", { name: "Current page" });
       expect(input).toBeInTheDocument();
       // value before page navigation
       expect(input.value).toBe("1");
@@ -415,7 +415,7 @@ describe("Table", () => {
       expect(getByLabelText("2 / 64")).toBeInTheDocument();
       expect(queryAllByRole("checkbox", { checked: true }).length).toBe(2 + 1);
 
-      const input = getByRole("spinbutton", { name: "7 Total pages for page input" });
+      const input = getByRole("spinbutton", { name: "Current page" });
       expect(input).toBeInTheDocument();
       // Navigate to next page
       userEvent.click(nextPage);

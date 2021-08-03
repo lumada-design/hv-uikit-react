@@ -1382,7 +1382,7 @@ exports[`HvTable sample snapshot testing Main 1`] = `
                         class="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
                       >
                         <input
-                          aria-label="1 Total pages for page input"
+                          aria-label="Current page"
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                           id="table1-pagination-currentPage-input"
                           rows="10"

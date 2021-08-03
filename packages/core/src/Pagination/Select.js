@@ -7,6 +7,7 @@ import { HvBaseDropdown, HvSelectionList, HvListItem, HvPanel, HvTypography } fr
 const styles = (theme) => ({
   root: {
     borderRadius: 2,
+    width: "auto",
     "& > div$anchor": {
       width: "auto",
     },
@@ -26,7 +27,7 @@ const styles = (theme) => ({
 
 export const Option = ({ children, ...others }) => <HvListItem {...others}>{children}</HvListItem>;
 
-const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) => {
+const HvSelect = ({ className, classes, onChange, disabled, value, children, ...others }) => {
   const [open, setOpen] = useState(false);
 
   const handleSelect = (evt, val) => {
@@ -51,6 +52,7 @@ const HvSelect = ({ classes, onChange, disabled, value, children, ...others }) =
 
   return (
     <HvBaseDropdown
+      className={className}
       classes={classes}
       expanded={open}
       onToggle={handleToggle}
