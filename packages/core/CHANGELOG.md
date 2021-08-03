@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.38.4](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.3...@hv/uikit-react-core@3.38.4) (2021-08-03)
+
+
+### Bug Fixes
+
+* **pagination:** dropdown styling specificity HVUIKIT-5923 ([8d0604c](https://github.com/lumada-design/hv-uikit-react/commit/8d0604c5ec73600a4ab9dc90fa01bed2ff6f4d8f))
+
+
+
+
+
 ## [3.38.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.2...@hv/uikit-react-core@3.38.3) (2021-08-03)
 
 
