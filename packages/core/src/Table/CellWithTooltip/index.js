@@ -1,7 +1,11 @@
 /* eslint-disable react/prop-types */
-import withStyles from "@material-ui/core/styles/withStyles";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import clsx from "clsx";
+
+import { withStyles } from "@material-ui/core";
+
+import { useResizeDetector } from "react-resize-detector";
+
 import { HvTooltip, HvTypography } from "../..";
 import { styles } from "../styles";
 
@@ -9,14 +13,15 @@ const Index = ({ classes, data }) => {
   const [isOverflowed, setIsOverflowed] = useState(false);
   const textRef = useRef();
 
-  useEffect(() => {
-    if (textRef?.current) {
-      setIsOverflowed(
-        textRef.current.scrollWidth > textRef.current.clientWidth ||
-          textRef.current.scrollHeight > textRef.current.clientHeight
-      );
-    }
+  const onResize = useCallback(() => {
+    setIsOverflowed(
+      textRef.current != null &&
+        (textRef.current.scrollWidth > textRef.current.clientWidth ||
+          textRef.current.scrollHeight > textRef.current.clientHeight)
+    );
   }, []);
+
+  useResizeDetector({ onResize, targetRef: textRef });
 
   return (
     <HvTooltip

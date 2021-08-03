@@ -8,6 +8,23 @@ import { render } from "testing-utils";
 import { TableDataDeletion } from "../stories/Table.stories";
 
 describe("HvTable", () => {
+  // https://github.com/maslianok/react-resize-detector#testing-with-enzyme-and-jest
+  const { ResizeObserver } = window;
+
+  beforeEach(() => {
+    delete window.ResizeObserver;
+    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    jest.restoreAllMocks();
+  });
+
   describe("sample snapshot testing", () => {
     it("Main", () => {
       const { container } = render(<TableDataDeletion />);
