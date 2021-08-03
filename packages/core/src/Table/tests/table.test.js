@@ -15,6 +15,23 @@ describe("Hv Table", () => {
 
   const originalWarn = console.warn;
 
+  // https://github.com/maslianok/react-resize-detector#testing-with-enzyme-and-jest
+  const { ResizeObserver } = window;
+
+  beforeEach(() => {
+    delete window.ResizeObserver;
+    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    jest.restoreAllMocks();
+  });
+
   describe("index", () => {
     beforeEach(async () => {
       // Expected warning "Please update the following components: ReactTable"

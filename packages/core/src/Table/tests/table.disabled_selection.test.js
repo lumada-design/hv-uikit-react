@@ -9,6 +9,23 @@ import { render } from "testing-utils";
 import { WithCheckboxCustomContent } from "../stories/Table.stories";
 
 describe("Hv Table with disabled checkbox", () => {
+  // https://github.com/maslianok/react-resize-detector#testing-with-enzyme-and-jest
+  const { ResizeObserver } = window;
+
+  beforeEach(() => {
+    delete window.ResizeObserver;
+    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    jest.restoreAllMocks();
+  });
+
   it("should deselect the page except the selected disabled checkbox", () => {
     const { getByRole } = render(<WithCheckboxCustomContent />);
     let bulkSelector = getByRole("checkbox", { name: "2 / 7" });
