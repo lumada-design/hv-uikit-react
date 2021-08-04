@@ -107,7 +107,7 @@ const VerticalContainer = ({
         <Button
           id={setId(id, "hamburger-button")}
           className={classes.button}
-          buttonRef={buttonRef}
+          ref={buttonRef}
           onClick={() => toggleOpen()}
           aria-label={buttonAriaLabel || (open && "close") || (!open && "open")}
           icon

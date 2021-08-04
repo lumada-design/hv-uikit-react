@@ -305,7 +305,7 @@ const HvAssetInventory = (props) => {
       {FilterPlaceholder && <FilterPlaceholder onSelection={changePageValues} />}
       <HvGrid container>
         <HvGrid item xs={12}>
-          <HvGrid container justify={align}>
+          <HvGrid container justifyContent={align}>
             {showSearch && (
               <HvGrid xs={12} sm={6} md={4} lg={3} xl={3} item>
                 {renderSearch()}
@@ -315,7 +315,7 @@ const HvAssetInventory = (props) => {
               <HvGrid xs={12} sm={6} md={4} lg={3} xl={3} item>
                 <HvGrid
                   className={classes.rightControls}
-                  justify={justifyControls}
+                  justifyContent={justifyControls}
                   container
                   alignItems="flex-end"
                   spacing={0}

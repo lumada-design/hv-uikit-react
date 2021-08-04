@@ -1,8 +1,8 @@
-import { fade, hexToRgb } from "@material-ui/core";
+import fade from "../utils/hexToRgbA";
 
 const styles = (theme) => ({
   background: {
-    background: fade(hexToRgb(theme.hv.palette.atmosphere.atmo4), 0.8),
+    background: fade(theme.hv.palette.atmosphere.atmo4, 0.8),
   },
   paper: {
     background: `${theme.hv.palette.atmosphere.atmo1}`,

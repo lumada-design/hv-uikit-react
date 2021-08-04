@@ -63,40 +63,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
               >
                 <WithStyles(ForwardRef)
                   aria-label="open"
-                  buttonRef={
-                    Object {
-                      "current": <button
-                        aria-label="open"
-                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                        id="sample3-container-hamburger-button"
-                        tabindex="0"
-                        type="button"
-                      >
-                        <span
-                          class="MuiButton-label"
-                        >
-                          <div
-                            class="HvIconBase-root HvIconBase-s"
-                            name="Menu"
-                          >
-                            <svg
-                              focusable="false"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                class="color0"
-                                d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                fill="#414141"
-                              />
-                            </svg>
-                          </div>
-                        </span>
-                      </button>,
-                    }
-                  }
                   className="HvVerticalNavigationVerticalContainer-button"
                   icon={true}
                   id="sample3-container-hamburger-button"
@@ -104,40 +70,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                 >
                   <ForwardRef
                     aria-label="open"
-                    buttonRef={
-                      Object {
-                        "current": <button
-                          aria-label="open"
-                          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                          id="sample3-container-hamburger-button"
-                          tabindex="0"
-                          type="button"
-                        >
-                          <span
-                            class="MuiButton-label"
-                          >
-                            <div
-                              class="HvIconBase-root HvIconBase-s"
-                              name="Menu"
-                            >
-                              <svg
-                                focusable="false"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  class="color0"
-                                  d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </span>
-                        </button>,
-                      }
-                    }
                     className="HvVerticalNavigationVerticalContainer-button"
                     classes={
                       Object {
@@ -166,40 +98,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                   >
                     <WithStyles(ForwardRef(Button))
                       aria-label="open"
-                      buttonRef={
-                        Object {
-                          "current": <button
-                            aria-label="open"
-                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                            id="sample3-container-hamburger-button"
-                            tabindex="0"
-                            type="button"
-                          >
-                            <span
-                              class="MuiButton-label"
-                            >
-                              <div
-                                class="HvIconBase-root HvIconBase-s"
-                                name="Menu"
-                              >
-                                <svg
-                                  focusable="false"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    class="color0"
-                                    d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </span>
-                          </button>,
-                        }
-                      }
                       className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
@@ -220,40 +118,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                     >
                       <ForwardRef(Button)
                         aria-label="open"
-                        buttonRef={
-                          Object {
-                            "current": <button
-                              aria-label="open"
-                              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                              id="sample3-container-hamburger-button"
-                              tabindex="0"
-                              type="button"
-                            >
-                              <span
-                                class="MuiButton-label"
-                              >
-                                <div
-                                  class="HvIconBase-root HvIconBase-s"
-                                  name="Menu"
-                                >
-                                  <svg
-                                    focusable="false"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="color0"
-                                      d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                      fill="#414141"
-                                    />
-                                  </svg>
-                                </div>
-                              </span>
-                            </button>,
-                          }
-                        }
                         className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                         classes={
                           Object {
@@ -297,40 +161,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       >
                         <WithStyles(ForwardRef(ButtonBase))
                           aria-label="open"
-                          buttonRef={
-                            Object {
-                              "current": <button
-                                aria-label="open"
-                                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                                id="sample3-container-hamburger-button"
-                                tabindex="0"
-                                type="button"
-                              >
-                                <span
-                                  class="MuiButton-label"
-                                >
-                                  <div
-                                    class="HvIconBase-root HvIconBase-s"
-                                    name="Menu"
-                                  >
-                                    <svg
-                                      focusable="false"
-                                      height="16"
-                                      viewBox="0 0 16 16"
-                                      width="16"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        class="color0"
-                                        d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </span>
-                              </button>,
-                            }
-                          }
                           className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           component="button"
                           disableRipple={true}
@@ -343,40 +173,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         >
                           <ForwardRef(ButtonBase)
                             aria-label="open"
-                            buttonRef={
-                              Object {
-                                "current": <button
-                                  aria-label="open"
-                                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                                  id="sample3-container-hamburger-button"
-                                  tabindex="0"
-                                  type="button"
-                                >
-                                  <span
-                                    class="MuiButton-label"
-                                  >
-                                    <div
-                                      class="HvIconBase-root HvIconBase-s"
-                                      name="Menu"
-                                    >
-                                      <svg
-                                        focusable="false"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          class="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </span>
-                                </button>,
-                              }
-                            }
                             className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             classes={
                               Object {
@@ -523,40 +319,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
               >
                 <WithStyles(ForwardRef)
                   aria-label="open"
-                  buttonRef={
-                    Object {
-                      "current": <button
-                        aria-label="open"
-                        class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                        id="sample3-container-hamburger-button"
-                        tabindex="0"
-                        type="button"
-                      >
-                        <span
-                          class="MuiButton-label"
-                        >
-                          <div
-                            class="HvIconBase-root HvIconBase-s"
-                            name="Menu"
-                          >
-                            <svg
-                              focusable="false"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                class="color0"
-                                d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                fill="#414141"
-                              />
-                            </svg>
-                          </div>
-                        </span>
-                      </button>,
-                    }
-                  }
                   className="HvVerticalNavigationVerticalContainer-button"
                   icon={true}
                   id="sample3-container-hamburger-button"
@@ -564,40 +326,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                 >
                   <ForwardRef
                     aria-label="open"
-                    buttonRef={
-                      Object {
-                        "current": <button
-                          aria-label="open"
-                          class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                          id="sample3-container-hamburger-button"
-                          tabindex="0"
-                          type="button"
-                        >
-                          <span
-                            class="MuiButton-label"
-                          >
-                            <div
-                              class="HvIconBase-root HvIconBase-s"
-                              name="Menu"
-                            >
-                              <svg
-                                focusable="false"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  class="color0"
-                                  d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </span>
-                        </button>,
-                      }
-                    }
                     className="HvVerticalNavigationVerticalContainer-button"
                     classes={
                       Object {
@@ -626,40 +354,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                   >
                     <WithStyles(ForwardRef(Button))
                       aria-label="open"
-                      buttonRef={
-                        Object {
-                          "current": <button
-                            aria-label="open"
-                            class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                            id="sample3-container-hamburger-button"
-                            tabindex="0"
-                            type="button"
-                          >
-                            <span
-                              class="MuiButton-label"
-                            >
-                              <div
-                                class="HvIconBase-root HvIconBase-s"
-                                name="Menu"
-                              >
-                                <svg
-                                  focusable="false"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    class="color0"
-                                    d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </span>
-                          </button>,
-                        }
-                      }
                       className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                       classes={
                         Object {
@@ -680,40 +374,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                     >
                       <ForwardRef(Button)
                         aria-label="open"
-                        buttonRef={
-                          Object {
-                            "current": <button
-                              aria-label="open"
-                              class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                              id="sample3-container-hamburger-button"
-                              tabindex="0"
-                              type="button"
-                            >
-                              <span
-                                class="MuiButton-label"
-                              >
-                                <div
-                                  class="HvIconBase-root HvIconBase-s"
-                                  name="Menu"
-                                >
-                                  <svg
-                                    focusable="false"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="color0"
-                                      d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                      fill="#414141"
-                                    />
-                                  </svg>
-                                </div>
-                              </span>
-                            </button>,
-                          }
-                        }
                         className="HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG"
                         classes={
                           Object {
@@ -757,40 +417,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                       >
                         <WithStyles(ForwardRef(ButtonBase))
                           aria-label="open"
-                          buttonRef={
-                            Object {
-                              "current": <button
-                                aria-label="open"
-                                class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                                id="sample3-container-hamburger-button"
-                                tabindex="0"
-                                type="button"
-                              >
-                                <span
-                                  class="MuiButton-label"
-                                >
-                                  <div
-                                    class="HvIconBase-root HvIconBase-s"
-                                    name="Menu"
-                                  >
-                                    <svg
-                                      focusable="false"
-                                      height="16"
-                                      viewBox="0 0 16 16"
-                                      width="16"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        class="color0"
-                                        d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </span>
-                              </button>,
-                            }
-                          }
                           className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                           component="button"
                           disableRipple={true}
@@ -803,40 +429,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                         >
                           <ForwardRef(ButtonBase)
                             aria-label="open"
-                            buttonRef={
-                              Object {
-                                "current": <button
-                                  aria-label="open"
-                                  class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
-                                  id="sample3-container-hamburger-button"
-                                  tabindex="0"
-                                  type="button"
-                                >
-                                  <span
-                                    class="MuiButton-label"
-                                  >
-                                    <div
-                                      class="HvIconBase-root HvIconBase-s"
-                                      name="Menu"
-                                    >
-                                      <svg
-                                        focusable="false"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          class="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </span>
-                                </button>,
-                              }
-                            }
                             className="MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                             classes={
                               Object {

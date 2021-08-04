@@ -1,4 +1,4 @@
-import { fade, hexToRgb } from "@material-ui/core";
+import fade from "../utils/hexToRgbA";
 
 const styles = (theme) => ({
   root: {
@@ -11,7 +11,7 @@ const styles = (theme) => ({
     margin: "-1px 0 0 0",
   },
   formContainer: {
-    background: fade(hexToRgb(theme.hv.palette.atmosphere.atmo2), 1),
+    background: fade(theme.hv.palette.atmosphere.atmo2, 1),
     marginLeft: "auto",
     maxWidth: 500,
     height: "100%",

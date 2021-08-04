@@ -117,7 +117,7 @@ const CardView = ({
           className={clsx(className, classes.root)}
           id={id}
           container
-          justify="flex-start"
+          justifyContent="flex-start"
           alignItems="flex-start"
         >
           {renderCards()}

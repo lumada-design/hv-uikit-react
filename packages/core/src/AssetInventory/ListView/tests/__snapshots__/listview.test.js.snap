@@ -270,19 +270,19 @@ exports[` AssetInventory ListView should render correctly 1`] = `
         <WithStyles(ForwardRef)
           alignContent="stretch"
           container={true}
-          justify="center"
+          justifyContent="center"
         >
           <ForwardRef
             alignContent="stretch"
             classes={Object {}}
             container={true}
-            justify="center"
+            justifyContent="center"
           >
             <WithStyles(ForwardRef(Grid))
               alignContent="stretch"
               classes={Object {}}
               container={true}
-              justify="center"
+              justifyContent="center"
               spacing={2}
             >
               <ForwardRef(Grid)
@@ -395,7 +395,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                   }
                 }
                 container={true}
-                justify="center"
+                justifyContent="center"
                 spacing={2}
               >
                 <div
