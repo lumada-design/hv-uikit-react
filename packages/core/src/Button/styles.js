@@ -1,4 +1,4 @@
-import { fade, hexToRgb } from "@material-ui/core";
+import fade from "../utils/hexToRgbA";
 import { outlineStyles } from "../Focus/styles";
 
 const setColor = (color) => ({
@@ -8,7 +8,7 @@ const setColor = (color) => ({
 });
 
 const styles = (theme) => {
-  const base1RGB = hexToRgb(theme.hv.palette.base.base1);
+  const base1RGB = theme.hv.palette.base.base1;
   const convertedColor = fade(base1RGB, 0.3);
   const convertedColorDisabled = fade(base1RGB, 0.1);
 

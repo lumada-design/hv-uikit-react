@@ -1,4 +1,4 @@
-import { fade, hexToRgb } from "@material-ui/core";
+import fade from "../../../utils/hexToRgbA";
 import { outlineStyles } from "../../../Focus/styles";
 
 const styles = (theme) => ({
@@ -16,7 +16,7 @@ const styles = (theme) => ({
     alignSelf: "flex-end",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: fade(hexToRgb(theme.hv.palette.base.base1), 0.3),
+      backgroundColor: fade(theme.hv.palette.base.base1, 0.3),
     },
     "&:focus": {
       ...outlineStyles,
