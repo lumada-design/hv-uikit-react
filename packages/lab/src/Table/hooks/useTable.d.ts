@@ -145,7 +145,7 @@ type HvColumnWithLooseAccessor<
     | { accessor: keyof D extends never ? IdType<D> : never }
   ) & { accessor?: keyof D extends never ? IdType<D> | Accessor<D> : Accessor<D> };
 
-type HvCellProps<D extends object, V = any> = CellProps<D, V> & {
+export type HvCellProps<D extends object, V = any> = CellProps<D, V> & {
   column: HvColumnInstance<D>;
   row: HvRowInstance<D>;
   cell: HvCellInstance<D, V>;
@@ -241,6 +241,7 @@ export interface HvTableInstance<D extends object = Record<string, unknown>>
   headers: Array<HvColumnInstance<D>>;
   flatHeaders: Array<HvColumnInstance<D>>;
   rows: Array<HvRowInstance<D>>;
+  page: Array<HvRowInstance<D>>;
   rowsById: Record<string, HvRowInstance<D>>;
   flatRows: Array<HvRowInstance<D>>;
   getHooks: () => HvHooks<D>;

@@ -13,7 +13,11 @@ export type HvTableHeaderClassKey =
   | "stickyColumnLeastRight";
 
 export interface HvTableHeaderProps
-  extends StandardProps<React.HTMLAttributes<HTMLTableCellElement>, HvTableHeaderClassKey> {
+  extends StandardProps<
+    React.ThHTMLAttributes<HTMLTableHeaderCellElement>,
+    HvTableHeaderClassKey,
+    "align"
+  > {
   /**
    * The component used for the root node. Either a string to use a HTML element or a component.
    * Defaults to th.

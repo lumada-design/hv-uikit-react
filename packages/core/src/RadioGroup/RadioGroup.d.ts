@@ -95,7 +95,7 @@ export interface HvRadioGroupProps
   /**
    * The callback fired when the value changes.
    */
-  onChange: (event: Event, value: any) => void;
+  onChange?: (event: Event, value: any) => void;
 
   /**
    * Indicates whether the radio buttons group's orientation is horizontal or vertical.

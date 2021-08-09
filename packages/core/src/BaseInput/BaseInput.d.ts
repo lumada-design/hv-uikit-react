@@ -20,7 +20,7 @@ export interface HvBaseInputProps
    * The function that will be executed onChange, allows modification of the input,
    * it receives the value. If a new value should be presented it must returned it.
    */
-  onChange: (event: React.ChangeEvent<HTMLInputElement>, value: any) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: any) => void;
 
   /**
    * If true and multiline is also true the textarea element will be resizable.
