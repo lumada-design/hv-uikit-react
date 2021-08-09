@@ -27,7 +27,6 @@ import {
   UseExpandedHooks,
   UseExpandedInstanceProps,
   UseExpandedOptions,
-  UseExpandedRowProps,
   UseExpandedState,
   UseFiltersColumnOptions,
   UseFiltersColumnProps,
@@ -89,6 +88,7 @@ import {
   UseHvBulkActionsTableInstanceProps,
   UseHvBulkActionsTableOptions,
 } from "./useBulkActions";
+import { UseHvRowExpandTableOptions, UseHvRowExpandRowInstance } from "./useRowExpand";
 
 type Accessor<D extends object> = (
   originalRow: D,
@@ -145,7 +145,7 @@ type HvColumnWithLooseAccessor<
     | { accessor: keyof D extends never ? IdType<D> : never }
   ) & { accessor?: keyof D extends never ? IdType<D> | Accessor<D> : Accessor<D> };
 
-type HvCellProps<D extends object, V = any> = CellProps<D, V> & {
+export type HvCellProps<D extends object, V = any> = CellProps<D, V> & {
   column: HvColumnInstance<D>;
   row: HvRowInstance<D>;
   cell: HvCellInstance<D, V>;
@@ -200,7 +200,8 @@ export interface HvTableOptions<D extends object>
     UseHvTableStylesTableOptions,
     UseHvRowSelectionTableOptions,
     UseHvTableStickyTableOptions,
-    UseHvBulkActionsTableOptions {
+    UseHvBulkActionsTableOptions,
+    UseHvRowExpandTableOptions {
   columns?: Array<HvTableColumnConfig<D>>;
   data?: D[];
 
@@ -241,6 +242,7 @@ export interface HvTableInstance<D extends object = Record<string, unknown>>
   headers: Array<HvColumnInstance<D>>;
   flatHeaders: Array<HvColumnInstance<D>>;
   rows: Array<HvRowInstance<D>>;
+  page: Array<HvRowInstance<D>>;
   rowsById: Record<string, HvRowInstance<D>>;
   flatRows: Array<HvRowInstance<D>>;
   getHooks: () => HvHooks<D>;
@@ -267,9 +269,9 @@ export interface HvColumnInstance<D extends object = Record<string, unknown>>
 
 export interface HvRowInstance<D extends object = Record<string, unknown>>
   extends Row<D>,
-    UseExpandedRowProps<D>,
     UseGroupByRowProps<D>,
-    UseHvRowSelectionRowInstance {
+    UseHvRowSelectionRowInstance,
+    UseHvRowExpandRowInstance<D> {
   cells: Array<HvCellInstance<D>>;
   allCells: Array<HvCellInstance<D>>;
   getRowProps: (propGetter?: RowPropGetter<D>) => HvTableRowProps;

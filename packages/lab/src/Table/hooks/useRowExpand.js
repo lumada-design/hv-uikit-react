@@ -36,7 +36,11 @@ export const CellWithExpandButton = ({ row, cell, labels: labelsProp }) => {
   );
 };
 
-export const visibleColumnsHook = (columns) => {
+export const visibleColumnsHook = (columns, { instance }) => {
+  if (instance.disableCreateExpandButton) {
+    return columns;
+  }
+
   // add a button to first data column, unless it has a custom renderer
   // if so, add an extra column instead
   const firstDataColumnIndex = columns.findIndex((c) => c.id?.indexOf("_hv_") !== 0);

@@ -2,7 +2,8 @@ import { StandardProps, SwitchProps } from "@material-ui/core";
 
 export type HvBaseSwitchClassKey = "root" | "disabled";
 
-export interface HvBaseSwitchProps extends StandardProps<SwitchProps, HvBaseSwitchClassKey, "onChange"> {
+export interface HvBaseSwitchProps
+  extends StandardProps<SwitchProps, HvBaseSwitchClassKey, "onChange"> {
   /**
    * Id to be applied to the root node.
    */
@@ -49,12 +50,12 @@ export interface HvBaseSwitchProps extends StandardProps<SwitchProps, HvBaseSwit
   /**
    * The callback fired when the checkbox is pressed.
    */
-  onChange: (event: Event, checked: boolean, value: any) => void;
+  onChange?: (event: Event, checked: boolean, value: any) => void;
 
   /**
    * Properties passed on to the input element.
    */
-  inputProps: object;
+  inputProps?: object;
 }
 
 export default function HvBaseSwitch(props: HvBaseSwitchProps): JSX.Element | null;

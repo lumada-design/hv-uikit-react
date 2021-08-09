@@ -2,11 +2,12 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvLabelProps } from "../Forms/Label";
 import { HvFormStatus } from "../Forms/FormElement";
+import { HvBaseSwitchProps } from "../BaseSwitch";
 
 export type HvSwitchClassKey = "root" | "label" | "error" | "switchContainer" | "invalidSwitch";
 
 export interface HvSwitchProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSwitchClassKey, "onChange"> {
+  extends StandardProps<HvBaseSwitchProps, HvSwitchClassKey, "onChange"> {
   /**
    * Denotes selection state of switch component.
    */
@@ -33,7 +34,7 @@ export interface HvSwitchProps
   /**
    * Callback function to be triggered when the input value is changed
    */
-  onChange: (event: Event, state: boolean) => void;
+  onChange?: (event: Event, state: boolean) => void;
   /**
    * The status of the form element.
    *

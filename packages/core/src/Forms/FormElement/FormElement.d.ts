@@ -73,7 +73,7 @@ export interface HvFormElementProps
   /**
    * The callback fired when the value changes.
    */
-  onChange: (event: Event, value: any) => void;
+  onChange?: (event: Event, value: any) => void;
 }
 
 export default function HvFormElement(props: HvFormElementProps): JSX.Element | null;
