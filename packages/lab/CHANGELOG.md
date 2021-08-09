@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.23.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.22.6...@hv/uikit-react-lab@3.23.0) (2021-08-09)
+
+
+### Bug Fixes
+
+* misc ts definitions HVUIKIT-5928 ([128c1bd](https://github.com/lumada-design/hv-uikit-react/commit/128c1bd97d00584704146f0b4447eb98a96d6828))
+
+
+### Features
+
+* **table:** manual creation of expand button ([1c7c491](https://github.com/lumada-design/hv-uikit-react/commit/1c7c491faa6b1f40b51f055a6ae5a3b05db9abb2))
+
+
+
+
+
 ## [3.22.6](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.22.5...@hv/uikit-react-lab@3.22.6) (2021-08-06)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
