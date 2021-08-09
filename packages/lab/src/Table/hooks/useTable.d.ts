@@ -27,7 +27,6 @@ import {
   UseExpandedHooks,
   UseExpandedInstanceProps,
   UseExpandedOptions,
-  UseExpandedRowProps,
   UseExpandedState,
   UseFiltersColumnOptions,
   UseFiltersColumnProps,
@@ -89,6 +88,7 @@ import {
   UseHvBulkActionsTableInstanceProps,
   UseHvBulkActionsTableOptions,
 } from "./useBulkActions";
+import { UseHvRowExpandTableOptions, UseHvRowExpandRowInstance } from "./useRowExpand";
 
 type Accessor<D extends object> = (
   originalRow: D,
@@ -200,7 +200,8 @@ export interface HvTableOptions<D extends object>
     UseHvTableStylesTableOptions,
     UseHvRowSelectionTableOptions,
     UseHvTableStickyTableOptions,
-    UseHvBulkActionsTableOptions {
+    UseHvBulkActionsTableOptions,
+    UseHvRowExpandTableOptions {
   columns?: Array<HvTableColumnConfig<D>>;
   data?: D[];
 
@@ -268,9 +269,9 @@ export interface HvColumnInstance<D extends object = Record<string, unknown>>
 
 export interface HvRowInstance<D extends object = Record<string, unknown>>
   extends Row<D>,
-    UseExpandedRowProps<D>,
     UseGroupByRowProps<D>,
-    UseHvRowSelectionRowInstance {
+    UseHvRowSelectionRowInstance,
+    UseHvRowExpandRowInstance<D> {
   cells: Array<HvCellInstance<D>>;
   allCells: Array<HvCellInstance<D>>;
   getRowProps: (propGetter?: RowPropGetter<D>) => HvTableRowProps;
