@@ -113,11 +113,14 @@ describe("Left side selection", () => {
       expect(getAllByRole("option").length).toEqual(4);
 
       userEvent.click(leftSizeOption[2]);
+    });
 
-      await waitFor(async () => {
-        expect(getAllByRole("option").length).toEqual(12);
-        expect(rightSizeList).toMatchSnapshot();
-      });
+    await waitFor(async () => {
+      const rightSizeList = screen.getByRole("listbox");
+      const { getAllByRole } = within(rightSizeList);
+
+      expect(getAllByRole("option").length).toEqual(12);
+      expect(rightSizeList).toMatchSnapshot();
     });
   });
 });

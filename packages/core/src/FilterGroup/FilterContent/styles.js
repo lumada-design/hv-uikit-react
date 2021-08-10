@@ -43,6 +43,7 @@ const styles = makeStyles((theme) => ({
   header: {
     display: "flex",
     justifyContent: "space-between",
+    height: 32,
   },
   leftSidePanel: {},
   rightSidePanel: {},
