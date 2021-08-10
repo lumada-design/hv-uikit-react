@@ -67,7 +67,7 @@ export const Main = () => {
     },
     {
       id: "2",
-      title: "Cabin door knob malfunction",
+      title: "Cabin door knob malfunction to second line",
       isRead: false,
       date: new Date(),
 
