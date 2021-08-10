@@ -49,6 +49,8 @@ const RightPanel = ({ id, className, labels }) => {
     updateSelectAll();
   }, [activeFilterValues, updateSelectAll]);
 
+  useEffect(() => setSearchStr(""), [activeGroup]);
+
   const onChangeHandler = (values) => {
     setFilterValues(
       filterValues
@@ -119,6 +121,7 @@ const RightPanel = ({ id, className, labels }) => {
       />
       <SelectAll />
       <HvList
+        key={activeGroup}
         id={setId(id, "list")}
         className={classes.list}
         values={listValues}
