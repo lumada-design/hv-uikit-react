@@ -2,10 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import moment from "moment/moment";
-import { HvTypography } from "@hv/uikit-react-core";
+import { HvTypography, withTooltip } from "@hv/uikit-react-core";
 
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
+
+const hideTooltip = (evt) => evt.target.scrollHeight <= evt.target.clientHeight;
+
+const wrapperTooltip = (Component, label) => {
+  const ComponentFunction = () => Component;
+  // override thr withTooltip styles as we want to use the styles of the component
+  return withTooltip(ComponentFunction, label, "top", hideTooltip, { style: {} });
+};
 
 const Notification = ({
   classes,
@@ -38,6 +46,13 @@ const Notification = ({
     return d.format(format);
   };
 
+  const NotificationWithTooltip = wrapperTooltip(
+    <div className={classes.messageContainer}>
+      <HvTypography variant={isRead ? "normalText" : "highlightText"}>{title}</HvTypography>
+    </div>,
+    title
+  );
+
   return (
     <div
       onClick={(event) => onClick(event, notificationId)}
@@ -56,10 +71,7 @@ const Notification = ({
       >
         <div className={classes.iconContainer}>{icon}</div>
         <div>
-          <div className={classes.messageContainer}>
-            <HvTypography variant={isRead ? "normalText" : "highlightText"}>{title}</HvTypography>
-          </div>
-
+          <NotificationWithTooltip />
           <div className={classes.timeContainer}>
             <div
               className={clsx(classes.bullet, {
@@ -128,7 +140,7 @@ Notification.propTypes = {
      */
     read: PropTypes.string,
     /**
-     * Styles applied when the notification dorpdown is open.
+     * Styles applied when the notification dropdown is open.
      */
     notificationDropdownOpen: PropTypes.string,
 
@@ -177,7 +189,7 @@ Notification.propTypes = {
   /**
    * Denotes index of clicked notification
    */
-  isHighlighted: PropTypes.string,
+  isHighlighted: PropTypes.bool,
   /**
    * The locale to be used on the date
    */

@@ -187,13 +187,17 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             </div>
             <div>
               <div
-                class="HvNotificationPanelNotification-messageContainer"
+                class=""
               >
-                <p
-                  class="HvTypography-root HvTypography-highlightText"
+                <div
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
-                  Cabin door knob malfunction. Super long test title, to test line break behavior.
-                </p>
+                  <p
+                    class="HvTypography-root HvTypography-highlightText"
+                  >
+                    Cabin door knob malfunction. Super long test title, to test line break behavior.
+                  </p>
+                </div>
               </div>
               <div
                 class="HvNotificationPanelNotification-timeContainer"
@@ -268,13 +272,17 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             />
             <div>
               <div
-                class="HvNotificationPanelNotification-messageContainer"
+                class=""
               >
-                <p
-                  class="HvTypography-root HvTypography-highlightText"
+                <div
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
-                  Cabin door knob malfunction
-                </p>
+                  <p
+                    class="HvTypography-root HvTypography-highlightText"
+                  >
+                    Cabin door knob malfunction to second line
+                  </p>
+                </div>
               </div>
               <div
                 class="HvNotificationPanelNotification-timeContainer"
@@ -373,13 +381,17 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             </div>
             <div>
               <div
-                class="HvNotificationPanelNotification-messageContainer"
+                class=""
               >
-                <p
-                  class="HvTypography-root HvTypography-normalText"
+                <div
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
-                  Cabin door knob malfunction
-                </p>
+                  <p
+                    class="HvTypography-root HvTypography-normalText"
+                  >
+                    Cabin door knob malfunction
+                  </p>
+                </div>
               </div>
               <div
                 class="HvNotificationPanelNotification-timeContainer"
@@ -478,13 +490,17 @@ exports[`Notification Panel sample snapshot testing Main 1`] = `
             </div>
             <div>
               <div
-                class="HvNotificationPanelNotification-messageContainer"
+                class=""
               >
-                <p
-                  class="HvTypography-root HvTypography-normalText"
+                <div
+                  class="HvNotificationPanelNotification-messageContainer"
                 >
-                  Cabin door knob malfunction
-                </p>
+                  <p
+                    class="HvTypography-root HvTypography-normalText"
+                  >
+                    Cabin door knob malfunction
+                  </p>
+                </div>
               </div>
               <div
                 class="HvNotificationPanelNotification-timeContainer"
