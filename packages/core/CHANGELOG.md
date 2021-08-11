@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.38.8](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.7...@hv/uikit-react-core@3.38.8) (2021-08-11)
+
+
+### Bug Fixes
+
+* **filtergroup:** clear input on group change and list scroll. HVUIKIT-5936 ([664426f](https://github.com/lumada-design/hv-uikit-react/commit/664426fc4b5ad21c318fd4ce297c4b8ac03404a7))
+* **filtergroup:** item selection not being retained. HVUIKIT-5937 ([e4663a2](https://github.com/lumada-design/hv-uikit-react/commit/e4663a2665ce199c9ad910c3da1175c30c9b32e9))
+
+
+
+
+
 ## [3.38.7](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.6...@hv/uikit-react-core@3.38.7) (2021-08-09)
 
 
