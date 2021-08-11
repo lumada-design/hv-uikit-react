@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.23.0...@hv/uikit-react-lab@3.24.0) (2021-08-11)
+
+
+### Features
+
+* **notificationpanel:** add tooltip [#2520](https://github.com/lumada-design/hv-uikit-react/issues/2520) ([316282c](https://github.com/lumada-design/hv-uikit-react/commit/316282ca6a3201c4b7dcd05c08f751238c558f15))
+
+
+
+
+
 # [3.23.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.22.6...@hv/uikit-react-lab@3.23.0) (2021-08-09)
 
 
