@@ -19,6 +19,10 @@ const styles = (theme) => ({
     borderBottom: `1px solid ${theme.palette.atmo4}`,
     ...theme.hv.typography.highlightText,
 
+    transition: theme.transitions.create("background-color", {
+      duration: theme.transitions.duration.shorter,
+    }),
+
     "&$sortable": {
       verticalAlign: "initial",
       paddingTop: 0,
@@ -26,6 +30,21 @@ const styles = (theme) => ({
       cursor: "pointer",
 
       "&:hover": {
+        backgroundColor: theme.palette.atmo3,
+
+        "& $sortIcon": {
+          visibility: "visible",
+        },
+      },
+      "&:focus-within": {
+        backgroundColor: theme.palette.atmo3,
+
+        "& $sortIcon": {
+          visibility: "visible",
+        },
+      },
+      // IE fallback code (using focus-within-polyfill)
+      "&.focus-within": {
         backgroundColor: theme.palette.atmo3,
 
         "& $sortIcon": {
@@ -96,6 +115,12 @@ const styles = (theme) => ({
   sorted: {
     "& $sortIcon": {
       visibility: "visible",
+    },
+  },
+  sortButton: {
+    "$root$sortable &": {
+      boxShadow: "none",
+      backgroundColor: "transparent",
     },
   },
   sortIcon: {

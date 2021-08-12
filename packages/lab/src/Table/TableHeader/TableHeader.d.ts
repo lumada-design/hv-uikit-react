@@ -7,6 +7,7 @@ export type HvTableHeaderClassKey =
   | "footer"
   | "sortable"
   | "sorted"
+  | "sortButton"
   | "sortIcon"
   | "stickyColumn"
   | "stickyColumnMostLeft"

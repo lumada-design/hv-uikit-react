@@ -4,6 +4,7 @@ import clsx from "clsx";
 import capitalize from "lodash/capitalize";
 
 import { withStyles } from "@material-ui/core";
+import { HvButton } from "@hv/uikit-react-core";
 import { getSortIcon } from "./utils";
 import styles from "./styles";
 import TableContext from "../TableContext";
@@ -82,7 +83,11 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
       aria-sort={sortable ? sortDirection : undefined}
       {...others}
     >
-      {isHeadCell && sortable && <Sort className={classes.sortIcon} />}
+      {isHeadCell && sortable && (
+        <HvButton className={classes.sortButton} icon overrideIconColors={false}>
+          <Sort className={classes.sortIcon} />
+        </HvButton>
+      )}
       {children}
     </Component>
   );
@@ -198,6 +203,10 @@ HvTableHeader.propTypes = {
      * Styles applied to the component root when it is sortable.
      */
     sortable: PropTypes.string,
+    /**
+     * Styles applied to the sort button component.
+     */
+    sortButton: PropTypes.string,
     /**
      * Styles applied to the sort icon component.
      */
