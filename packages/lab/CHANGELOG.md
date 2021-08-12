@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.24.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.1...@hv/uikit-react-lab@3.24.2) (2021-08-12)
+
+
+### Bug Fixes
+
+* sortable table header focus ([7e82fac](https://github.com/lumada-design/hv-uikit-react/commit/7e82facbfc29a1e75179fa2d55cfc389555619a0))
+
+
+
+
+
 ## [3.24.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.0...@hv/uikit-react-lab@3.24.1) (2021-08-11)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

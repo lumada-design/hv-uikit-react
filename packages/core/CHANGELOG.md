@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.38.9](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.8...@hv/uikit-react-core@3.38.9) (2021-08-12)
+
+
+### Bug Fixes
+
+* **datepicker:** set start adornment to not required in ts defs ([b05d69a](https://github.com/lumada-design/hv-uikit-react/commit/b05d69a64910086abbafa441de747a997b43bb03))
+
+
+
+
+
 ## [3.38.8](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.7...@hv/uikit-react-core@3.38.8) (2021-08-11)
 
 
