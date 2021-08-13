@@ -3,7 +3,7 @@ import { StandardProps } from "@material-ui/core";
 
 export interface ListValueProp {
   id?: string;
-  label: string;
+  label: string | React.ReactNode;
   selected?: boolean;
   disabled?: boolean;
   isHidden?: boolean;
