@@ -67,7 +67,7 @@ export interface HvDatePickerProps
   /**
    * Callback function to be triggered when the input value is changed
    */
-  onChange?: (date?: Date) => void;
+  onChange?: (...args: Date[]) => void;
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
