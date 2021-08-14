@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.25.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.2...@hv/uikit-react-lab@3.25.0) (2021-08-14)
+
+
+### Features
+
+* **color-picker:** implement color picker ([9cd805e](https://github.com/lumada-design/hv-uikit-react/commit/9cd805ebe5dcadac079ab3afb869be5d87156228))
+* **notificationpanel:** add tooltip [#2520](https://github.com/lumada-design/hv-uikit-react/issues/2520) ([316282c](https://github.com/lumada-design/hv-uikit-react/commit/316282ca6a3201c4b7dcd05c08f751238c558f15))
+
+
+
+
+
 ## [3.24.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.1...@hv/uikit-react-lab@3.24.2) (2021-08-12)
 
 

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.38.10](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.9...@hv/uikit-react-core@3.38.10) (2021-08-14)
+
+
+### Bug Fixes
+
+* **base-dropdown:** add max-width to fix popper position calculation. HVUIKIT-5838 ([2597d90](https://github.com/lumada-design/hv-uikit-react/commit/2597d90b00825177c3253aa14942b6cb11590206))
+* **datepicker:** set ts onchange def to accept varying args ([f8ed7b9](https://github.com/lumada-design/hv-uikit-react/commit/f8ed7b93949054ae4c37d88a6f3efa20edafb2cf))
+* **list:** list value label ts definition ([639102a](https://github.com/lumada-design/hv-uikit-react/commit/639102a6b930cd5041778291c61f460c3564ca47))
+
+
+
+
+
 ## [3.38.9](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.8...@hv/uikit-react-core@3.38.9) (2021-08-12)
 
 
