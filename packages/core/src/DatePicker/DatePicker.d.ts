@@ -12,7 +12,8 @@ export type HvDatePickerClassKey =
   | "action"
   | "icon"
   | "dropdownHeaderInvalid"
-  | "dropdownHeaderOpen";
+  | "dropdownHeaderOpen"
+  | "clearButton";
 
 export interface HvDatePickerProps
   extends StandardProps<HvFormElementProps, HvDatePickerClassKey, "onChange"> {
@@ -28,6 +29,10 @@ export interface HvDatePickerProps
      * Cancel button label.
      */
     cancelLabel?: string;
+    /**
+     * Clear date button label.
+     */
+     clearDateLabel?: string;
   };
 
   /**
@@ -84,6 +89,10 @@ export interface HvDatePickerProps
    * An object containing props to be passed onto the baseDropdown.
    */
   dropdownProps?: React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * Whether to display the clear date button or not
+   */
+   showClearDate?: boolean,
 }
 
 export default function HvDatePicker(props: HvDatePickerProps): JSX.Element | null;

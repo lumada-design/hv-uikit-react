@@ -75,6 +75,10 @@ export interface HvCalendarProps
    * An element placed before the Calendar
    */
   startAdornment: React.ReactNode;
+  /**
+   * Denotes whether the calendar date has been cleared from an external component
+   */
+   dateCleared?: boolean;
 }
 
 export default function HvCalendar(props: HvCalendarProps): JSX.Element | null;

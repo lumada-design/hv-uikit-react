@@ -16,7 +16,10 @@ import {
   HvFormElementValueContext,
   HvFormElementDescriptorsContext,
 } from "../../Forms/FormElement";
-import { isRange, isSameDay, formatDMY } from "../utils";
+
+import { HvCalendarContext } from "../context/CalendarContext";
+
+import { isSameDay, formatDMY } from "../utils";
 
 dayjs.extend(localeData);
 dayjs.extend(localizedFormat);
@@ -38,10 +41,14 @@ const HvCalendarHeader = ({
   const elementValue = useContext(HvFormElementValueContext);
   const { label } = useContext(HvFormElementDescriptorsContext);
 
-  let localValue = value ?? elementValue ?? "";
-  if (isRange(localValue)) {
+  const { dateCleared, rangeMode } = useContext(HvCalendarContext);
+
+  let localValue = dateCleared ? undefined : value ?? elementValue ?? undefined;
+
+  if (rangeMode && !dateCleared) {
     localValue = showEndDate ? localValue.endDate : localValue.startDate;
   }
+
   const [dateValue, setDateValue] = useState(localValue);
   const [editedValue, setEditedValue] = useState(null);
   const [displayValue, setDisplayValue] = useState("");
@@ -49,25 +56,34 @@ const HvCalendarHeader = ({
 
   const localId = id ?? setId(elementId, "calendarHeader");
 
-  const inputValue = editedValue ?? displayValue;
+  const inputValue =
+    dateCleared && !editedValue && localValue === undefined ? "" : editedValue ?? displayValue;
+
   const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");
 
   const [isValidValue, setIsValidValue] = useState(
     inputValue.length === 0 || (!!inputValue && dayjs(localValue).isValid())
   );
 
-  const validateInput = (incomingValid) => dayjs(incomingValid).isValid();
+  const validateInput = (incomingValid) => {
+    return incomingValid === "" || dayjs(incomingValid).isValid();
+  };
+
   useEffect(() => {
     const valid = validateInput(localValue);
     setIsValidValue(valid);
     if (valid) {
-      if (!localValue) return;
+      if ((!localValue && dateCleared) || inputValue === undefined) {
+        setWeekdayDisplay("");
+        return;
+      }
+
       const weekday = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(localValue);
       setDisplayValue(formatDMY(localValue, locale));
       setEditedValue(null);
       setWeekdayDisplay(weekday);
     }
-  }, [localValue, locale]);
+  }, [localValue, locale, dateCleared]);
 
   const handleNewDate = (event, date) => {
     // attempt to format in locale data, or fallback to default
@@ -114,6 +130,7 @@ const HvCalendarHeader = ({
   const onChangeHandler = (event) => {
     setEditedValue(event.target.value);
   };
+
   return (
     <>
       <div

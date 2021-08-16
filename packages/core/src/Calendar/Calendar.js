@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../utils";
 import styles from "./styles";
 import { HvFormElementContext, HvFormElementValueContext } from "../Forms/FormElement";
+import { HvCalendarContextProvider } from "./context/CalendarContext";
 import { isRange } from "./utils";
 import SingleCalendar from "./SingleCalendar";
 
@@ -22,6 +23,7 @@ const HvCalendar = ({
   onChange,
   onInputChange,
   onVisibleDateChange,
+  dateCleared,
   ...others
 }) => {
   const { elementId } = useContext(HvFormElementContext);
@@ -32,6 +34,23 @@ const HvCalendar = ({
   const rightCalendarId = setId(localId, "single-calendar-right");
   const clampedMonth = visibleMonth % 13 > 0 ? visibleMonth % 13 : 1;
 
+  const [dateIsCleared, setDateIsCleared] = useState(dateCleared);
+
+  useEffect(() => {
+    setDateIsCleared(dateCleared);
+  }, [dateCleared]);
+
+  const contextValue = {
+    dateCleared: dateIsCleared,
+    rangeMode,
+  };
+
+  const handleChange = (event, date) => {
+    event?.preventDefault();
+    setDateIsCleared(false);
+    onChange?.(event, date);
+  };
+
   const singleCalendar = (
     <SingleCalendar
       id={localId}
@@ -41,7 +60,7 @@ const HvCalendar = ({
       visibleYear={visibleYear}
       minimumDate={minimumDate}
       maximumDate={maximumDate}
-      onChange={onChange}
+      onChange={handleChange}
       onInputChange={(evt, date) => onInputChange(evt, date, "left")}
       onVisibleDateChange={onVisibleDateChange}
       {...others}
@@ -59,7 +78,7 @@ const HvCalendar = ({
         visibleYear={visibleYear}
         minimumDate={minimumDate}
         maximumDate={maximumDate}
-        onChange={onChange}
+        onChange={handleChange}
         onInputChange={(evt, date) => onInputChange(evt, date, "left")}
         onVisibleDateChange={(event, action, index) =>
           onVisibleDateChange?.(event, action, index, "left")
@@ -76,7 +95,7 @@ const HvCalendar = ({
         visibleYear={rightVisibleYear}
         minimumDate={minimumDate}
         maximumDate={maximumDate}
-        onChange={onChange}
+        onChange={handleChange}
         onInputChange={(evt, date) => onInputChange(evt, date, "right")}
         onVisibleDateChange={(event, action, index) => {
           onVisibleDateChange?.(event, action, index, "right");
@@ -90,7 +109,9 @@ const HvCalendar = ({
   return (
     <div className={classes.root}>
       {startAdornment}
-      {rangeMode ? rangeCalendar : singleCalendar}
+      <HvCalendarContextProvider value={contextValue}>
+        {rangeMode ? rangeCalendar : singleCalendar}
+      </HvCalendarContextProvider>
     </div>
   );
 };
@@ -160,6 +181,10 @@ HvCalendar.propTypes = {
    * An element placed before the Calendar
    */
   startAdornment: PropTypes.node,
+  /**
+   * Denotes whether the calendar date has been cleared from an external component
+   */
+  dateCleared: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvCalendar" })(HvCalendar);

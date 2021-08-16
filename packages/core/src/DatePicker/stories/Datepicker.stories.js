@@ -150,6 +150,34 @@ WithActions.parameters = {
 
 WithActions.decorators = [defaultDecorator];
 
+export const WithActionsWithClearButton = () => (
+  <HvDatePicker
+    showActions
+    value={new Date(1970, 1, 2)}
+    id="DatePicker"
+    placeholder="Select date"
+    aria-label="Date"
+    showClearDate
+  />
+);
+
+WithActionsWithClearButton.parameters = {
+  docs: {
+    description: { story: "Datepicker with action buttons at the bottom." },
+  },
+  pa11y: {
+    ignore: [
+      "region",
+      // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+      // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "color-contrast",
+    ],
+  },
+};
+
+WithActionsWithClearButton.decorators = [defaultDecorator];
+
 export const WithCustomLabels = () => (
   <HvDatePicker
     aria-label="Date"
@@ -418,6 +446,90 @@ export const WithSelectionList = () => {
 };
 
 WithSelectionList.decorators = [defaultDecorator];
+
+export const WithSelectionListAndClearButton = () => {
+  const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
+  const [endDate, setEndDate] = useState(new Date(2020, 8, 10));
+  const [trueStartDate, setTrueStartDate] = useState(new Date(2020, 8, 5));
+  const [trueEndDate, setTrueEndDate] = useState(new Date(2020, 8, 10));
+
+  useEffect(() => {
+    setStartDate(trueStartDate);
+  }, [trueStartDate]);
+
+  useEffect(() => {
+    setEndDate(trueEndDate);
+  }, [trueEndDate]);
+
+  const handleClick = (item) => {
+    console.log(item);
+    const today = new Date();
+    const [d, m, y] = [today.getDate(), today.getMonth(), today.getFullYear()];
+
+    switch (item) {
+      case "Last 7 days": {
+        setStartDate(new Date(y, m, d - 7));
+        setEndDate(new Date(y, m, d));
+        break;
+      }
+      case "This month": {
+        setStartDate(new Date(y, m, 1));
+        setEndDate(new Date(y, m, d));
+        break;
+      }
+      case "This year": {
+        setStartDate(new Date(y, 0, 1));
+        setEndDate(new Date(y, m, d));
+        break;
+      }
+      default:
+        break;
+    }
+  };
+
+  const options = (
+    <HvListContainer role="menu" style={{ padding: "40px 20px", minWidth: 160 }} interactive>
+      <HvListItem role="menuitem" disabled>
+        Today
+      </HvListItem>
+      <HvListItem role="menuitem" disabled>
+        Yesterday
+      </HvListItem>
+      <HvListItem role="menuitem" onClick={() => handleClick("Last 7 days")}>
+        Last 7 days
+      </HvListItem>
+      <HvListItem role="menuitem" onClick={() => handleClick("This month")}>
+        This month
+      </HvListItem>
+      <HvListItem role="menuitem" onClick={() => handleClick("This year")}>
+        This year
+      </HvListItem>
+    </HvListContainer>
+  );
+
+  return (
+    <HvDatePicker
+      id="DatePicker"
+      aria-label="Date"
+      startAdornment={options}
+      rangeMode
+      startValue={startDate}
+      endValue={endDate}
+      onChange={(sd, ed) => {
+        setTrueStartDate(sd);
+        setTrueEndDate(ed);
+      }}
+      placeholder="Select date"
+      onCancel={() => {
+        setStartDate(trueStartDate);
+        setEndDate(trueEndDate);
+      }}
+      showClearDate
+    />
+  );
+};
+
+WithSelectionListAndClearButton.decorators = [defaultDecorator];
 
 export const Disabled = () => (
   <HvDatePicker

@@ -104,6 +104,10 @@ const styles = (theme) => ({
   rangeCalendarContainer: {
     width: "50%",
   },
+  clearButton: {
+    position: "absolute",
+    left: 20,
+  },
 });
 
 export default styles;

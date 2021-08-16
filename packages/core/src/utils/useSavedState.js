@@ -13,5 +13,9 @@ export default function useSavedState(defaultState) {
     setState(submittedState);
   };
 
-  return [state, changeState, rollback];
+  const clear = () => {
+    setState(undefined);
+  };
+
+  return [state, changeState, rollback, clear];
 }

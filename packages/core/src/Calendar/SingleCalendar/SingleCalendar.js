@@ -43,6 +43,8 @@ const HvSingleCalendar = ({
 
   const [calViewMode, setCalViewMode] = useState(VIEW_MODE.CALENDAR);
 
+  // const dateCleared = { ...others };
+
   const rangeMode = isRange(localValue);
   const isDateSelectionMode = rangeMode && !isDate(localValue.endDate);
   const calModel = rangeMode
@@ -132,6 +134,7 @@ const HvSingleCalendar = ({
           locale={locale}
           onChange={handleInputChange}
           showEndDate={showEndDate && !isDateSelectionMode}
+          // dateCleared={dateCleared}
         />
         <>
           {calViewMode === VIEW_MODE.CALENDAR && (

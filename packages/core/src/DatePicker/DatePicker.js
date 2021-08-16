@@ -27,6 +27,7 @@ import useLocale from "../Provider/useLocale";
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
   cancelLabel: "Cancel",
+  clearDateLabel: "Clear Date",
 };
 
 /**
@@ -72,6 +73,7 @@ const HvDatePicker = (props) => {
     disablePortal = true,
     escapeWithReference = true,
     dropdownProps,
+    showClearDate = false,
     ...others
   } = props;
 
@@ -89,11 +91,13 @@ const HvDatePicker = (props) => {
 
   const [calendarOpen, setCalendarOpen] = useState(false);
 
-  const [startDate, setStartDate, rollbackStartDate] = useSavedState(
+  const [startDate, setStartDate, rollbackStartDate, clearStartDate] = useSavedState(
     rangeMode ? startValue : value
   );
-  const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
+  const [endDate, setEndDate, rollbackEndDate, clearEndDate] = useSavedState(endValue);
   const [visibleDate, setVisibleDate, onVisibleDateChange] = useVisibleDate(startDate);
+
+  const [dateCleared, setDateCleared] = useState(false);
 
   const focusTarget = useRef();
 
@@ -138,8 +142,16 @@ const HvDatePicker = (props) => {
     rollbackEndDate();
 
     onCancel?.();
-
     setCalendarOpen(false);
+  };
+
+  /**
+   * Handles the `Clear` action. Both single and ranged modes are handled here.
+   */
+  const handleClear = () => {
+    clearStartDate();
+    clearEndDate();
+    setDateCleared(true);
   };
 
   const handleCalendarClose = () => {
@@ -149,6 +161,7 @@ const HvDatePicker = (props) => {
     } else {
       handleCancel();
     }
+    setDateCleared(false);
   };
 
   const handleToggle = (evt, open) => {
@@ -222,6 +235,16 @@ const HvDatePicker = (props) => {
    */
   const renderActions = () => (
     <HvActionBar>
+      {showClearDate && (
+        <HvButton
+          id={setId(id, "action", "clear")}
+          className={clsx(classes.action, classes.clearButton)}
+          category="ghost"
+          onClick={handleClear}
+        >
+          {labels.clearDateLabel}
+        </HvButton>
+      )}
       <HvButton
         id={setId(id, "action", "apply")}
         className={classes.action}
@@ -277,6 +300,7 @@ const HvDatePicker = (props) => {
       required={required}
       className={clsx(className, classes.root)}
       locale={locale}
+      dateCleared={dateCleared}
       {...others}
     >
       {(hasLabel || hasDescription) && (
@@ -332,6 +356,7 @@ const HvDatePicker = (props) => {
           onInputChange={handleInputDateChange}
           onVisibleDateChange={onVisibleDateChange}
           locale={locale}
+          dateCleared={dateCleared}
           {...visibleDate}
         />
         {(rangeMode || showActions) && renderActions()}
@@ -393,6 +418,10 @@ HvDatePicker.propTypes = {
      * Styles applied to the date picker when opened.
      */
     dropdownHeaderOpen: PropTypes.string,
+    /**
+     * Styles applied to the date picker when opened.
+     */
+    clearButton: PropTypes.string,
   }).isRequired,
 
   /**
@@ -487,6 +516,10 @@ HvDatePicker.propTypes = {
      * Cancel button label.
      */
     cancelLabel: PropTypes.string,
+    /**
+     * Clear date button label.
+     */
+    clearDateLabel: PropTypes.string,
   }),
 
   /**
@@ -535,6 +568,10 @@ HvDatePicker.propTypes = {
    * An object containing props to be passed onto the baseDropdown.
    */
   dropdownProps: PropTypes.instanceOf(Object),
+  /**
+   * Whether to display the clear date button or not
+   */
+  showClearDate: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDatePicker", index: 1 })(HvDatePicker);
