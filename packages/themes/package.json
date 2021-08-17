@@ -23,7 +23,8 @@
     "build:to-json": "npx cp -f src/*.json dist",
     "clean": "npx del-cli dist",
     "prepublishOnly": "npm run build",
-    "link": "npm link"
+    "link": "npm link",
+    "yalc-publish": "npx yalc publish --no-scripts"
   },
   "devDependencies": {
     "cash-cp": "^0.2.0",

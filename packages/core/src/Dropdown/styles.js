@@ -43,12 +43,11 @@ const styles = (theme) => ({
   description: {},
   error: {},
 
-  placeholder: {
-    display: "block",
-  },
+  placeholder: {},
   selectionDisabled: {
     lineHeight: theme.hv.spacing.md,
   },
+  dropdownHeader: {},
   dropdownHeaderInvalid: {},
   dropdownHeaderOpen: {},
   dropdownListContainer: {},

@@ -34,6 +34,7 @@
     "test:update": "jest -c ./config/jest-config.js --u",
     "prepublishOnly": "npm run build",
     "link": "npm link",
+    "yalc-publish": "npx yalc publish --no-scripts",
     "lint:prettier": "npx prettier --config ../../prettier.config.js --check \"src/**/*.js\"",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
     "ts-check": "npx tsc -p ."

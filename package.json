@@ -27,6 +27,8 @@
     "test": "npx lerna run test --parallel",
     "test:update": "npx lerna run test:update --parallel",
     "link": "npx lerna run link --parallel",
+    "yalc": "npx npm-run-all --npm-path npm --serial build yalc-publish",
+    "yalc-publish": "npx lerna run yalc-publish --parallel",
     "generate": "node scripts/generator/index.js",
     "publish-": "npx lerna changed && npx lerna publish --yes",
     "publish-prerelease": "npx lerna changed && npx lerna publish prerelease --yes",
@@ -111,6 +113,7 @@
     "spdx-satisfies": "^5.0.0",
     "ts-check": "0.2.4",
     "typescript": "^4.1.3",
+    "yalc": "^1.0.0-pre.53",
     "yup": "^0.29.3"
   }
 }

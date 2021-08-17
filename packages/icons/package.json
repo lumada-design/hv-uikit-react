@@ -33,6 +33,7 @@
     "prepare": "npx npm-run-all --npm-path npm --serial clean:all svg-optimize --parallel build:convert build:copy",
     "prepublishOnly": "npm run build",
     "link": "npm link",
+    "yalc-publish": "npx yalc publish --no-scripts",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json",
     "lint:prettier": "npx prettier --config ../../prettier.config.js --check \"src/**/*.js\"",
     "ts-check": "npx tsc -p ."

@@ -4,10 +4,13 @@ import { StandardProps } from "@material-ui/core";
 export interface ListValueProp {
   id?: string;
   label: string | React.ReactNode;
+  searchValue?: string;
   selected?: boolean;
   disabled?: boolean;
   isHidden?: boolean;
-  icon?: React.ReactNode | ((params: { isDisabled?: boolean; isSelected?: boolean }) => React.ReactNode);
+  icon?:
+    | React.ReactNode
+    | ((params: { isDisabled?: boolean; isSelected?: boolean }) => React.ReactNode);
   showNavIcon?: boolean;
   path?: string;
   params?: object;
@@ -38,6 +41,7 @@ export interface HvListProps
    *
    * - id: The id of the item.
    * - label: The label of the element to be rendered.
+   * - searchValue: Text used when filtering the list. Used when label is a node.
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
    * - isHidden: Is item visible.
