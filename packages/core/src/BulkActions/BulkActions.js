@@ -28,6 +28,7 @@ const HvBulkActions = (props) => {
     actionsCallback,
     actionsDisabled,
     maxVisibleActions,
+    checkboxProps,
     ...others
   } = props;
   const [anySelected, setAnySelected] = useState(false);
@@ -39,7 +40,10 @@ const HvBulkActions = (props) => {
   }, [numSelected]);
 
   const selectAllLabelComponent = (
-    <HvTypography component="span">
+    <HvTypography
+      component="span"
+      variant={checkboxProps?.disabled ? "disabledText" : "normalText"}
+    >
       {!anySelected ? (
         <>
           <b>{selectAllLabel}</b>
@@ -77,6 +81,7 @@ const HvBulkActions = (props) => {
           onChange={(...args) => onSelectAll?.(...args)}
           indeterminate={numSelected > 0 && numSelected < numTotal}
           label={selectAllLabelComponent}
+          {...checkboxProps}
         />
         {showSelectAllPages && anySelected && numSelected < numTotal && (
           <HvButton
@@ -203,6 +208,11 @@ HvBulkActions.propTypes = {
    *  The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
    */
   maxVisibleActions: PropTypes.number,
+  /**
+   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * HvCheckbox API.
+   */
+  checkboxProps: PropTypes.object,
 };
 
 export default withStyles(styles, { name: "HvBulkActions" })(HvBulkActions);

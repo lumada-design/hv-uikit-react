@@ -90,6 +90,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
           label={
             <WithStyles(ForwardRef)
               component="span"
+              variant="normalText"
             >
               <React.Fragment>
                 <b>
@@ -122,6 +123,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
             label={
               <WithStyles(ForwardRef)
                 component="span"
+                variant="normalText"
               >
                 <React.Fragment>
                   <b>
@@ -494,6 +496,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       label={
                         <WithStyles(ForwardRef)
                           component="span"
+                          variant="normalText"
                         >
                           <React.Fragment>
                             <b>
@@ -518,6 +521,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         label={
                           <WithStyles(ForwardRef)
                             component="span"
+                            variant="normalText"
                           >
                             <React.Fragment>
                               <b>
@@ -575,6 +579,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             >
                               <WithStyles(ForwardRef)
                                 component="span"
+                                variant="normalText"
                               >
                                 <ForwardRef
                                   classes={
@@ -604,6 +609,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                     }
                                   }
                                   component="span"
+                                  variant="normalText"
                                 >
                                   <span
                                     className="HvTypography-root HvTypography-normalText"
@@ -1557,6 +1563,7 @@ exports[`BulkActions should render correctly 1`] = `
           label={
             <WithStyles(ForwardRef)
               component="span"
+              variant="normalText"
             >
               <React.Fragment>
                 <b>
@@ -1588,6 +1595,7 @@ exports[`BulkActions should render correctly 1`] = `
             label={
               <WithStyles(ForwardRef)
                 component="span"
+                variant="normalText"
               >
                 <React.Fragment>
                   <b>
@@ -1957,6 +1965,7 @@ exports[`BulkActions should render correctly 1`] = `
                       label={
                         <WithStyles(ForwardRef)
                           component="span"
+                          variant="normalText"
                         >
                           <React.Fragment>
                             <b>
@@ -1981,6 +1990,7 @@ exports[`BulkActions should render correctly 1`] = `
                         label={
                           <WithStyles(ForwardRef)
                             component="span"
+                            variant="normalText"
                           >
                             <React.Fragment>
                               <b>
@@ -2038,6 +2048,7 @@ exports[`BulkActions should render correctly 1`] = `
                             >
                               <WithStyles(ForwardRef)
                                 component="span"
+                                variant="normalText"
                               >
                                 <ForwardRef
                                   classes={
@@ -2067,6 +2078,7 @@ exports[`BulkActions should render correctly 1`] = `
                                     }
                                   }
                                   component="span"
+                                  variant="normalText"
                                 >
                                   <span
                                     className="HvTypography-root HvTypography-normalText"
@@ -2159,6 +2171,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
           label={
             <WithStyles(ForwardRef)
               component="span"
+              variant="normalText"
             >
               <React.Fragment>
                 <b>
@@ -2190,6 +2203,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
             label={
               <WithStyles(ForwardRef)
                 component="span"
+                variant="normalText"
               >
                 <React.Fragment>
                   <b>
@@ -2559,6 +2573,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       label={
                         <WithStyles(ForwardRef)
                           component="span"
+                          variant="normalText"
                         >
                           <React.Fragment>
                             <b>
@@ -2583,6 +2598,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         label={
                           <WithStyles(ForwardRef)
                             component="span"
+                            variant="normalText"
                           >
                             <React.Fragment>
                               <b>
@@ -2640,6 +2656,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             >
                               <WithStyles(ForwardRef)
                                 component="span"
+                                variant="normalText"
                               >
                                 <ForwardRef
                                   classes={
@@ -2669,6 +2686,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                     }
                                   }
                                   component="span"
+                                  variant="normalText"
                                 >
                                   <span
                                     className="HvTypography-root HvTypography-normalText"
@@ -2779,6 +2797,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
           label={
             <WithStyles(ForwardRef)
               component="span"
+              variant="normalText"
             >
               <React.Fragment>
                 <b>
@@ -2810,6 +2829,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
             label={
               <WithStyles(ForwardRef)
                 component="span"
+                variant="normalText"
               >
                 <React.Fragment>
                   <b>
@@ -3276,6 +3296,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       label={
                         <WithStyles(ForwardRef)
                           component="span"
+                          variant="normalText"
                         >
                           <React.Fragment>
                             <b>
@@ -3300,6 +3321,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         label={
                           <WithStyles(ForwardRef)
                             component="span"
+                            variant="normalText"
                           >
                             <React.Fragment>
                               <b>
@@ -3357,6 +3379,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             >
                               <WithStyles(ForwardRef)
                                 component="span"
+                                variant="normalText"
                               >
                                 <ForwardRef
                                   classes={
@@ -3386,6 +3409,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                     }
                                   }
                                   component="span"
+                                  variant="normalText"
                                 >
                                   <span
                                     className="HvTypography-root HvTypography-normalText"
