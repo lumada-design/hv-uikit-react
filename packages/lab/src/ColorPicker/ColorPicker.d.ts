@@ -1,4 +1,3 @@
-import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvFormElementProps } from "@hv/uikit-react-core";
 
