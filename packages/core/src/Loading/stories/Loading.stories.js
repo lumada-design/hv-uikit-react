@@ -106,7 +106,7 @@ export const WithChildren = () => {
       zIndex: -1,
     },
     blur: {
-      backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1),
+      backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo2),
       zIndex: theme.zIndex.drawer,
     },
   }));
@@ -156,6 +156,6 @@ export const WithChildren = () => {
 WithChildren.parameters = {
   docs: {
     description:
-      "If a children is passed the component wraps it, creating a overlay. You can control whether it's hidden with the `hidden` prop.",
+      "If a children is passed the component wraps it, creating an overlay. You can control whether it's hidden with the `hidden` prop.",
   },
 };

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: -1,
   },
   blur: {
-    backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1),
+    backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo2),
     zIndex: theme.zIndex.drawer,
   },
 }));
