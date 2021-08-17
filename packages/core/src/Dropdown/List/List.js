@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../../utils";
 import { HvActionBar, HvButton, HvCheckBox, HvList, HvInput, HvTypography } from "../..";
 import { getSelected } from "../utils";
 import styles from "./styles";
+
+/**
+ * The values property was being deeply cloned. That created a significant performance
+ * hit when the values contained complex properties' values, like React Nodes.
+ *
+ * For minimizing the impact of removing the clone, a shallow clone of the array and its
+ * objects is performed instead. That should have the same effect in the majority of the
+ * cases, where the properties' values are primitive.
+ */
+const clone = (values) => values.map((value) => ({ ...value }));
+
+/**
+ * Set all hidden's to false.
+ */
+const cleanHidden = (lst) => lst.map((item) => ({ ...item, isHidden: false }));
 
 const valuesExist = (values) => !isNil(values) && values?.length > 0;
 
