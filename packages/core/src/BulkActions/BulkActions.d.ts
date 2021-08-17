@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { HvActionsGenericCommonProps } from "../ActionsGeneric";
+import { HvCheckBoxProps } from "..";
 
 export type HvBulkActionsClassKey =
   | "root"
@@ -9,7 +10,7 @@ export type HvBulkActionsClassKey =
   | "selectAllContainer"
   | "selectAll"
   | "selectAllPages";
-  
+
 export interface HvBulkActionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBulkActionsClassKey>,
     HvActionsGenericCommonProps {
@@ -49,6 +50,11 @@ export interface HvBulkActionsProps
    * Whether the bulk actions should use the semantic styles when there are selected elements.
    */
   semantic?: boolean;
+  /**
+   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * HvCheckbox API.
+   */
+  checkboxProps?: HvCheckBoxProps;
 }
 
 export default function HvBulkActions(props: HvBulkActionsProps): JSX.Element | null;
