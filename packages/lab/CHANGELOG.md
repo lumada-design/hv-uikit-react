@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.25.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.25.0...@hv/uikit-react-lab@3.25.1) (2021-08-17)
+
+
+### Bug Fixes
+
+* **loading:** change overlay background color. HVUIKIT-5948 ([e4ebf20](https://github.com/lumada-design/hv-uikit-react/commit/e4ebf209e3d0c114932e98e7a1c84de47cd791e3))
+
+
+
+
+
 # [3.25.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.2...@hv/uikit-react-lab@3.25.0) (2021-08-14)
 
 

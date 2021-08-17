@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.39.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.10...@hv/uikit-react-core@3.39.0) (2021-08-17)
+
+
+### Bug Fixes
+
+* **dropdown:** don't break when filtering values with label nodes ([8e99f42](https://github.com/lumada-design/hv-uikit-react/commit/8e99f42429c58fa0dd585eb3a7705adcaa707846))
+* **dropdown:** remove slow deep clone of values ([7c2019e](https://github.com/lumada-design/hv-uikit-react/commit/7c2019e6b242a7f591221731b85191fd893b081b))
+* **dropdown:** warning div as descendant of p with custom placeholder ([d15e22b](https://github.com/lumada-design/hv-uikit-react/commit/d15e22b099c68d3b27cb029fed1d4cbbfc451153))
+* **loading:** change overlay background color. HVUIKIT-5948 ([e4ebf20](https://github.com/lumada-design/hv-uikit-react/commit/e4ebf209e3d0c114932e98e7a1c84de47cd791e3))
+* **tag:** fix invalid semantic color warning ([fa38d4e](https://github.com/lumada-design/hv-uikit-react/commit/fa38d4edb70ac22225571d219a71de99989a1084))
+
+
+### Features
+
+* **bulk-actions:** add checkbox prop. HVUIKIT-5912 ([1d10a8e](https://github.com/lumada-design/hv-uikit-react/commit/1d10a8ed2ccba9c843c7ab5735f193700abbccfc))
+
+
+
+
+
 ## [3.38.10](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.9...@hv/uikit-react-core@3.38.10) (2021-08-14)
 
 
