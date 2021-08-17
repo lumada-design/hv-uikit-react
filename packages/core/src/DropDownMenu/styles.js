@@ -11,6 +11,7 @@ const styles = (theme) => ({
   container: {
     width: 32,
   },
+  baseContainer: {},
   icon: {
     position: "relative",
     boxSizing: "content-box",

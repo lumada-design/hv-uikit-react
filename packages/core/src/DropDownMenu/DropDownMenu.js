@@ -83,7 +83,7 @@ const DropDownMenu = ({
     <HvBaseDropdown
       id={id}
       className={clsx(className, classes.container)}
-      classes={{ root: classes.root }}
+      classes={{ root: classes.root, container: classes.baseContainer }}
       expanded={open && !disabled}
       component={headerComponent}
       aria-haspopup="menu"
@@ -140,6 +140,10 @@ DropDownMenu.propTypes = {
      * Styles applied to the container.
      */
     container: PropTypes.string,
+    /**
+     * Styles applied to the BaseDropdown container.
+     */
+    baseContainer: PropTypes.string,
     /**
      * Styles applied to the icon.
      */
