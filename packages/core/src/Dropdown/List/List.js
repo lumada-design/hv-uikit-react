@@ -81,7 +81,18 @@ const List = ({
    */
   const handleSearch = (str) => {
     const results = list
-      ? list.filter((value) => value.label.toLowerCase().indexOf(str.toLowerCase()) >= 0)
+      ? list.filter(({ searchValue, label, value }) => {
+          let stringValue = "";
+          if (typeof searchValue === "string" || searchValue instanceof String) {
+            stringValue = searchValue.toLowerCase();
+          } else if (typeof label === "string" || label instanceof String) {
+            stringValue = label.toLowerCase();
+          } else if (typeof value === "string" || value instanceof String) {
+            stringValue = value.toLowerCase();
+          }
+
+          return stringValue.indexOf(str.toLowerCase()) >= 0;
+        })
       : null;
 
     if (!isNil(results)) {
@@ -162,13 +173,6 @@ const List = ({
       </div>
     );
   };
-
-  /**
-   * Set all hidden's to false.
-   *
-   * @returns {*}
-   */
-  const cleanHidden = (lst) => lst.map((item) => ({ ...item, isHidden: false }));
 
   /**
    * When selecting the state list is updated with the corresponding selection.

@@ -466,6 +466,7 @@ HvDropdown.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       label: PropTypes.node.isRequired,
+      searchValue: PropTypes.string,
       value: PropTypes.any,
       selected: PropTypes.bool,
     })

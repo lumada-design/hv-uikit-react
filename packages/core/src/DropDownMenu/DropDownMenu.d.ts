@@ -14,6 +14,7 @@ export interface HvDropDownMenuProps
    * A list containing the elements to be rendered.
    *
    * - label: The label of the element to be rendered.
+   * - searchValue: Text used when filtering the list. Used when label is a node.
    * - selected: The selection state of the element.
    * - disabled: The disabled state of the element.
    * - icon: The icon node to be rendered on the left.
@@ -31,7 +32,7 @@ export interface HvDropDownMenuProps
   /**
    * Function executed on toggle of the dropdown. Should receive the open status.
    */
-  onToggle?: (event: React.SyntheticEvent , open: boolean) => void;
+  onToggle?: (event: React.SyntheticEvent, open: boolean) => void;
   /**
    * @deprecated This prop should not be used. Use onToggle instead.
    */
