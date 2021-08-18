@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { setId } from "../../utils";
 import { HvActionBar, HvButton, HvCheckBox, HvList, HvInput, HvTypography } from "../..";
 import { getSelected } from "../utils";
 import styles from "./styles";
+
+/**
+ * The values property was being deeply cloned. That created a significant performance
+ * hit when the values contained complex properties' values, like React Nodes.
+ *
+ * For minimizing the impact of removing the clone, a shallow clone of the array and its
+ * objects is performed instead. That should have the same effect in the majority of the
+ * cases, where the properties' values are primitive.
+ */
+const clone = (values) => values.map((value) => ({ ...value }));
+
+/**
+ * Set all hidden's to false.
+ */
+const cleanHidden = (lst) => lst.map((item) => ({ ...item, isHidden: false }));
 
 const valuesExist = (values) => !isNil(values) && values?.length > 0;
 
@@ -67,7 +81,18 @@ const List = ({
    */
   const handleSearch = (str) => {
     const results = list
-      ? list.filter((value) => value.label.toLowerCase().indexOf(str.toLowerCase()) >= 0)
+      ? list.filter(({ searchValue, label, value }) => {
+          let stringValue = "";
+          if (typeof searchValue === "string" || searchValue instanceof String) {
+            stringValue = searchValue.toLowerCase();
+          } else if (typeof label === "string" || label instanceof String) {
+            stringValue = label.toLowerCase();
+          } else if (typeof value === "string" || value instanceof String) {
+            stringValue = value.toLowerCase();
+          }
+
+          return stringValue.indexOf(str.toLowerCase()) >= 0;
+        })
       : null;
 
     if (!isNil(results)) {
@@ -148,13 +173,6 @@ const List = ({
       </div>
     );
   };
-
-  /**
-   * Set all hidden's to false.
-   *
-   * @returns {*}
-   */
-  const cleanHidden = (lst) => lst.map((item) => ({ ...item, isHidden: false }));
 
   /**
    * When selecting the state list is updated with the corresponding selection.

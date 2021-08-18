@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPicker sample snapshot testing Main 1`] = `
+<div>
+  <div
+    style="width: 240px;"
+  >
+    <div
+      class="HvFormElement-root"
+    >
+      <div
+        class="HvColorPicker-labelContainer"
+      >
+        <label
+          class="HvColorPicker-label HvLabel-root HvTypography-root HvTypography-highlightText"
+          id="hvdropdown1-label"
+        >
+          Color
+        </label>
+      </div>
+      <div
+        class="HvBaseDropdown-root"
+      >
+        <div
+          aria-expanded="false"
+          aria-labelledby="hvdropdown1-label"
+          class="HvBaseDropdown-anchor"
+          role="combobox"
+          tabindex="-1"
+        >
+          <div
+            aria-labelledby="hvdropdown1-label"
+            class="HvBaseDropdown-header"
+            role="textbox"
+            tabindex="0"
+          >
+            <div
+              class="HvBaseDropdown-selection"
+            >
+              <div
+                class="HvColorPicker-headerColorIcon HvIconBase-root HvIconBase-s"
+                name="Checkbox"
+              >
+                <svg
+                  focusable="false"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="color0"
+                    d="M0 0h16v16H0z"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color1"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                  />
+                </svg>
+              </div>
+              <p
+                class="HvColorPicker-headerColorValue HvTypography-root HvTypography-normalText"
+              >
+                #414141
+              </p>
+            </div>
+            <div
+              class="HvBaseDropdown-arrow HvIconBase-root HvIconBase-xs"
+              name="DropDownXS"
+            >
+              <svg
+                focusable="false"
+                height="12"
+                viewBox="0 0 12 12"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="color0"
+                  d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

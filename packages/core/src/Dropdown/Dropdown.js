@@ -195,6 +195,7 @@ const HvDropdown = (props) => {
     const hasSelection = getSelected(internalValues).length > 0;
     return labels.select || !multiSelect ? (
       <HvTypography
+        component="div"
         noWrap
         variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
         className={clsx(classes.placeholder, {
@@ -205,6 +206,7 @@ const HvDropdown = (props) => {
       </HvTypography>
     ) : (
       <HvTypography
+        component="div"
         noWrap
         className={clsx(classes.placeholder, {
           [classes.selectionDisabled]: disabled,
@@ -262,7 +264,10 @@ const HvDropdown = (props) => {
         classes={{
           root: classes.dropdown,
           arrow: classes.arrow,
-          header: isStateInvalid ? classes.dropdownHeaderInvalid : undefined,
+          header: clsx(
+            classes.dropdownHeader,
+            isStateInvalid ? classes.dropdownHeaderInvalid : undefined
+          ),
           headerOpen: classes.dropdownHeaderOpen,
         }}
         expanded={isOpen}
@@ -371,6 +376,10 @@ HvDropdown.propTypes = {
      */
     rootList: PropTypes.string,
     /**
+     * Styles applied to the dropdown header.
+     */
+    dropdownHeader: PropTypes.string,
+    /**
      * Styles applied to the dropdown is invalid.
      */
     dropdownHeaderInvalid: PropTypes.string,
@@ -466,6 +475,7 @@ HvDropdown.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       label: PropTypes.node.isRequired,
+      searchValue: PropTypes.string,
       value: PropTypes.any,
       selected: PropTypes.bool,
     })

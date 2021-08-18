@@ -67,7 +67,7 @@ const HvTag = (props) => {
               ...(disabled ? { cursor: "not-allowed" } : undefined),
               height: 16,
             }}
-            semantic={disabled ? disabledSemanticColor : "base2"}
+            color={disabled ? disabledSemanticColor : "base2"}
           />
         }
         classes={{

@@ -24,3 +24,6 @@ export * from "./Tag";
 
 export { default as HvDrawer } from "./Drawer";
 export * from "./Drawer";
+
+export { default as HvColorPicker } from "./ColorPicker";
+export * from "./ColorPicker";

@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.25.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.25.0...@hv/uikit-react-lab@3.25.1) (2021-08-17)
+
+
+### Bug Fixes
+
+* **loading:** change overlay background color. HVUIKIT-5948 ([e4ebf20](https://github.com/lumada-design/hv-uikit-react/commit/e4ebf209e3d0c114932e98e7a1c84de47cd791e3))
+
+
+
+
+
+# [3.25.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.2...@hv/uikit-react-lab@3.25.0) (2021-08-14)
+
+
+### Features
+
+* **color-picker:** implement color picker ([9cd805e](https://github.com/lumada-design/hv-uikit-react/commit/9cd805ebe5dcadac079ab3afb869be5d87156228))
+* **notificationpanel:** add tooltip [#2520](https://github.com/lumada-design/hv-uikit-react/issues/2520) ([316282c](https://github.com/lumada-design/hv-uikit-react/commit/316282ca6a3201c4b7dcd05c08f751238c558f15))
+
+
+
+
+
+## [3.24.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.1...@hv/uikit-react-lab@3.24.2) (2021-08-12)
+
+
+### Bug Fixes
+
+* sortable table header focus ([7e82fac](https://github.com/lumada-design/hv-uikit-react/commit/7e82facbfc29a1e75179fa2d55cfc389555619a0))
+
+
+
+
+
+## [3.24.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.24.0...@hv/uikit-react-lab@3.24.1) (2021-08-11)
+
+**Note:** Version bump only for package @hv/uikit-react-lab
+
+
+
+
+
+# [3.24.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.23.0...@hv/uikit-react-lab@3.24.0) (2021-08-11)
+
+
+### Features
+
+* **notificationpanel:** add tooltip [#2520](https://github.com/lumada-design/hv-uikit-react/issues/2520) ([316282c](https://github.com/lumada-design/hv-uikit-react/commit/316282ca6a3201c4b7dcd05c08f751238c558f15))
+
+
+
+
+
 # [3.23.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.22.6...@hv/uikit-react-lab@3.23.0) (2021-08-09)
 
 

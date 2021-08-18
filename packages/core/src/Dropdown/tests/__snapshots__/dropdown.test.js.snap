@@ -20,21 +20,21 @@ exports[`<Dropdown /> General 1`] = `
         >
           <div
             aria-controls="hvbasedropdown3-children-container"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header HvDropdown-dropdownHeader HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
             role="textbox"
             tabindex="0"
           >
             <div
               class="HvBaseDropdown-selection"
             >
-              <p
+              <div
                 class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
               >
                 <b>
                   1
                 </b>
                  / 4
-              </p>
+              </div>
             </div>
             <div
               class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
@@ -84,7 +84,7 @@ exports[`<Dropdown /> SingleSelection 1`] = `
         >
           <div
             aria-controls="dropdown7-dropdown-children-container"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header HvDropdown-dropdownHeader HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
             id="dropdown7-dropdown-header"
             role="textbox"
             tabindex="0"
@@ -92,11 +92,11 @@ exports[`<Dropdown /> SingleSelection 1`] = `
             <div
               class="HvBaseDropdown-selection"
             >
-              <p
+              <div
                 class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
               >
                 Select...
-              </p>
+              </div>
             </div>
             <div
               class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"
@@ -146,7 +146,7 @@ exports[`<Dropdown /> SingleSelectionWithSearch 1`] = `
         >
           <div
             aria-controls="dropdown6-dropdown-children-container"
-            class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
+            class="HvBaseDropdown-header HvDropdown-dropdownHeader HvBaseDropdown-headerOpen HvDropdown-dropdownHeaderOpen HvBaseDropdown-headerOpenDown"
             id="dropdown6-dropdown-header"
             role="textbox"
             tabindex="0"
@@ -154,11 +154,11 @@ exports[`<Dropdown /> SingleSelectionWithSearch 1`] = `
             <div
               class="HvBaseDropdown-selection"
             >
-              <p
+              <div
                 class="HvDropdown-placeholder HvTypography-root HvTypography-normalText HvTypography-noWrap"
               >
                 value 2
-              </p>
+              </div>
             </div>
             <div
               class="HvBaseDropdown-arrow HvDropdown-arrow HvIconBase-root HvIconBase-xs"

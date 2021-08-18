@@ -67,7 +67,7 @@ export interface HvDatePickerProps
   /**
    * Callback function to be triggered when the input value is changed
    */
-  onChange?: (date?: Date) => void;
+  onChange?: (date?: Date, endDate?: Date) => void;
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */
@@ -79,7 +79,7 @@ export interface HvDatePickerProps
   /**
    * An element placed before the Calendar
    */
-  startAdornment: React.ReactNode;
+  startAdornment?: React.ReactNode;
   /**
    * An object containing props to be passed onto the baseDropdown.
    */

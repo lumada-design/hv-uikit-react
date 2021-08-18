@@ -37,6 +37,7 @@ export type HvDropdownClassKey =
   | "placeholder"
   | "selectionDisabled"
   | "rootList"
+  | "dropdownHeader"
   | "dropdownHeaderInvalid"
   | "dropdownHeaderOpen"
   | "dropdownListContainer";

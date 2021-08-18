@@ -50,6 +50,7 @@ const FilterContent = ({
   };
 
   const onApplyHandler = (evt) => {
+    setFilterValues(filterValues, true);
     onChange?.(evt, filterValues);
     setFilterGroupOpen(false);
   };
