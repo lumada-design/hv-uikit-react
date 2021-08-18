@@ -21,3 +21,6 @@ export * from "./TimePicker";
 
 export { default as HvTag } from "./Tag";
 export * from "./Tag";
+
+export { default as HvDrawer } from "./Drawer";
+export * from "./Drawer";
