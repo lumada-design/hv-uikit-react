@@ -157,6 +157,16 @@ export interface HvInputProps extends StandardProps<HvBaseInputProps, HvInputCla
    * Called back when the value is changed.
    */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
+
+  /**
+   * Callback called when the user submits the value by pressing Enter/Return.
+   *
+   * Also called when the search button is clicked (when type is "search").
+   */
+  onEnter?: (
+    event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent<HTMLButtonElement>,
+    value: string
+  ) => void;
 }
 
 export default function HvInput(props: HvInputProps): JSX.Element | null;
