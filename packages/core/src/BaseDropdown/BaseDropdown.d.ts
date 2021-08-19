@@ -92,7 +92,7 @@ export interface HvBaseDropdownProps
    * Callback called when the dropdown is opened and ready,
    * commonly used to set focus to the content.
    */
-  onContainerCreation: (containerRef: React.ReactNode) => void;
+  onContainerCreation: (containerRef: React.Ref<HTMLDivElement>) => void;
   /**
    * When expanded dropdown changes position.
    */

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
-import { KeyboardCodes, isBrowser } from "../utils";
+import { KeyboardCodes, isBrowser, refType } from "../utils";
 import ConditionalWrapper from "../utils/ConditionalWrapper";
 import { isKey, isOneOfKeys, setFocusTo, getFocusableChildren } from "./utils";
 import styles from "./styles";
@@ -387,7 +387,7 @@ Focus.propTypes = {
   /**
    * The reference to the root element to hold all Focus' context.
    */
-  rootRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any })]),
+  rootRef: refType,
   /**
    * Extra configuration for the child element.
    */

@@ -8,6 +8,8 @@ export * from "./focusableElementFinder";
 
 export * from "./sizes";
 
+export { default as refType } from "./refType";
+
 export { default as Random } from "./Random";
 
 export { default as hexToRgbA } from "./hexToRgbA";
