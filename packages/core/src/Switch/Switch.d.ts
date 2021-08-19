@@ -34,7 +34,7 @@ export interface HvSwitchProps
   /**
    * Callback function to be triggered when the input value is changed
    */
-  onChange?: (event: Event, state: boolean) => void;
+  onChange?: (event: Event, state: boolean, value?: string) => void;
   /**
    * The status of the form element.
    *

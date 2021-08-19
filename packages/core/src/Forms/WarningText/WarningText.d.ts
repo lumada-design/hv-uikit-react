@@ -14,7 +14,7 @@ export interface HvWarningTextProps
   /**
    * Icon to be rendered alongside the warning text.
    */
-  adornment: React.ReactNode;
+  adornment?: React.ReactNode;
   /**
    * If `true` the text is not rendered.
    */

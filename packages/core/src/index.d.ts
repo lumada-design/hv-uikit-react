@@ -203,6 +203,9 @@ export * from "./ScrollTo/Horizontal";
 export { default as HvScrollToVertical } from "./ScrollTo/Vertical";
 export * from "./ScrollTo/Vertical";
 
+// utils
+export * from "./utils";
+
 export type HvAccentColorKeys = "acce0" | "acce1" | "acce2" | "acce2h" | "acce3";
 export type HvAtmosphereColorKeys =
   | "atmo1"
