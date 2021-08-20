@@ -81,6 +81,30 @@ const styles = (theme) => ({
     textAlign: "justify",
   },
 
+  headerContent: {
+    display: "flex",
+    alignItems: "flex-start",
+  },
+  headerText: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  },
+  sortableHeaderText: {
+    paddingTop: "8px",
+  },
+  alignFlexLeft: {
+    justifyContent: "flex-start",
+  },
+  alignFlexCenter: {
+    justifyContent: "center",
+  },
+  alignFlexRight: {
+    justifyContent: "flex-end",
+  },
+  alignFlexJustify: {
+    textAlign: "justify",
+  },
+
   variantNone: {
     padding: 0,
   },

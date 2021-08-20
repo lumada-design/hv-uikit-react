@@ -1,10 +1,18 @@
 import { StandardProps } from "@material-ui/core";
+import { HvTypographyProps } from "@hv/uikit-react-core";
 
 export type HvTableHeaderClassKey =
   | "root"
   | "head"
   | "body"
   | "footer"
+  | "headerContent"
+  | "headerText"
+  | "sortableHeaderText"
+  | "alignFlexLeft"
+  | "alignFlexCenter"
+  | "alignFlexRight"
+  | "alignFlexJustify"
   | "sortable"
   | "sorted"
   | "sortButton"
@@ -70,6 +78,10 @@ export interface HvTableHeaderProps
    * Set sort direction icon and aria-sort.
    */
   sortDirection?: "ascending" | "descending" | false;
+  /**
+   * Extra props to be passed onto the text in the header.
+   */
+  headerTextProps?: HvTypographyProps;
 }
 
 export default function HvTableHeader(props: HvTableHeaderProps): JSX.Element | null;

@@ -18,19 +18,43 @@ exports[`Table Simple Table should be defined 1`] = `
             class="HvTableHeader-root HvTableHeader-head"
             scope="col"
           >
-            Sample Header 0
+            <div
+              class="HvTableHeader-headerContent"
+            >
+              <div
+                class="HvTableHeader-headerText HvTypography-root HvTypography-highlightText"
+              >
+                Sample Header 0
+              </div>
+            </div>
           </th>
           <th
             class="HvTableHeader-root HvTableHeader-head"
             scope="col"
           >
-            Sample Header 1
+            <div
+              class="HvTableHeader-headerContent"
+            >
+              <div
+                class="HvTableHeader-headerText HvTypography-root HvTypography-highlightText"
+              >
+                Sample Header 1
+              </div>
+            </div>
           </th>
           <th
             class="HvTableHeader-root HvTableHeader-head"
             scope="col"
           >
-            Sample Header 2
+            <div
+              class="HvTableHeader-headerContent"
+            >
+              <div
+                class="HvTableHeader-headerText HvTypography-root HvTypography-highlightText"
+              >
+                Sample Header 2
+              </div>
+            </div>
           </th>
         </tr>
       </thead>
