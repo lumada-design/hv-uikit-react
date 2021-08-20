@@ -203,6 +203,8 @@ export * from "./ScrollTo/Horizontal";
 export { default as HvScrollToVertical } from "./ScrollTo/Vertical";
 export * from "./ScrollTo/Vertical";
 
+export { default as useScrollTo } from "./ScrollTo/useScrollTo";
+
 // utils
 export * from "./utils";
 
