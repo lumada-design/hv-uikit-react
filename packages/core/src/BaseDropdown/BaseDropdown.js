@@ -12,6 +12,7 @@ import {
   isKeypress,
   KeyboardCodes,
   setId,
+  refType,
   useControlled,
   useForkRef,
 } from "../utils";
@@ -444,7 +445,7 @@ HvBaseDropdown.propTypes = {
   /**
    * Pass a ref to the dropdown header element.
    */
-  dropdownHeaderRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  dropdownHeaderRef: refType,
 };
 
 export default withStyles(styles, { name: "HvBaseDropdown" })(HvBaseDropdown);

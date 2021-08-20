@@ -20,7 +20,15 @@ import {
   useIsMounted,
 } from "..";
 
-import { isBrowser, isKeypress, KeyboardCodes, setId, useControlled, useLabels } from "../utils";
+import {
+  isBrowser,
+  isKeypress,
+  KeyboardCodes,
+  refType,
+  setId,
+  useControlled,
+  useLabels,
+} from "../utils";
 
 import validationStates, { isValid, isInvalid } from "../Forms/FormElement/validationStates";
 import {
@@ -948,7 +956,7 @@ HvInput.propTypes = {
   /**
    * Allows passing a ref to the underlying input
    */
-  inputRef: PropTypes.shape({ current: PropTypes.any }),
+  inputRef: refType,
 
   /**
    * The function that will be executed onBlur, allows checking the validation state,

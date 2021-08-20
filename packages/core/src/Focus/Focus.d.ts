@@ -19,7 +19,7 @@ export interface HvFocusProps
   /**
    * The reference to the root element to hold all Focus' context.
    */
-  rootRef: React.RefObject<HTMLInputElement>;
+  rootRef: React.Ref<HTMLInputElement>;
   /**
    * Extra configuration for the child element.
    */

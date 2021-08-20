@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
+import { refType } from "../utils";
 import styles from "./styles";
 
 import {
@@ -238,7 +239,7 @@ HvBaseInput.propTypes = {
   /**
    * Allows passing a ref to the underlying input
    */
-  inputRef: PropTypes.shape({ current: PropTypes.any }),
+  inputRef: refType,
 };
 
 export default withStyles(styles, { name: "HvBaseInput" })(HvBaseInput);

@@ -6,7 +6,7 @@ import isNil from "lodash/isNil";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 
-import { setId, useControlled } from "../utils";
+import { refType, setId, useControlled } from "../utils";
 
 import {
   HvFormElement,
@@ -558,7 +558,7 @@ HvTextArea.propTypes = {
   /**
    * Allows passing a ref to the underlying input
    */
-  inputRef: PropTypes.shape({ current: PropTypes.any }),
+  inputRef: refType,
 
   /**
    * The function that will be executed onBlur, allows checking the validation state,
