@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.39.0...@hv/uikit-react-core@3.39.1) (2021-08-20)
+
+
+### Bug Fixes
+
+* miscellaneous wrong typescript definitions ([038546b](https://github.com/lumada-design/hv-uikit-react/commit/038546b674487e6974bd1742a0fe9d9bd0a52b1b))
+
+
+
+
+
 # [3.39.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.38.10...@hv/uikit-react-core@3.39.0) (2021-08-17)
 
 
