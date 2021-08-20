@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
+import { makeStyles } from "@material-ui/core";
 import { screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
-import React from "react";
+import React, { useState } from "react";
 
-import { HvButton, HvDropDownMenu } from "../..";
+import { HvButton, HvDropDownMenu, HvDialog, HvDialogContent, HvDialogTitle } from "../..";
 import { WithIconsAndActions, DisabledItems } from "./DropDownMenu.stories";
 
 export default {
@@ -104,4 +105,30 @@ sDisabledItems.parameters = {
       return openMenu();
     },
   },
+};
+
+export const ZIndexConfiguration = () => {
+  const [open, setOpen] = useState(false);
+  const classes = makeStyles((theme) => ({
+    baseContainer: {
+      zIndex: theme.zIndex.modal,
+    },
+  }))();
+
+  return (
+    <div>
+      <HvDropDownMenu
+        classes={{ baseContainer: classes.baseContainer }}
+        dataList={[{ label: "Open Dialog" }]}
+        onClick={() => setOpen(true)}
+      />
+      <HvDialog open={open} onClose={() => setOpen(false)}>
+        <HvDialogTitle variant="warning">Switch model view?</HvDialogTitle>
+        <HvDialogContent indentContent>
+          Switching to model view will clear all the fields in your visualization. You will need to
+          re-select your fields.
+        </HvDialogContent>
+      </HvDialog>
+    </div>
+  );
 };

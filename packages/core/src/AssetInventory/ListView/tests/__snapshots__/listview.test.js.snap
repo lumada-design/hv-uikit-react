@@ -8223,6 +8223,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     category="ghost"
                                                                     classes={
                                                                       Object {
+                                                                        "baseContainer": "HvDropDownMenu-baseContainer",
                                                                         "container": "HvDropDownMenu-container",
                                                                         "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                         "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
@@ -8256,6 +8257,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       category="ghost"
                                                                       classes={
                                                                         Object {
+                                                                          "baseContainer": "HvDropDownMenu-baseContainer",
                                                                           "container": "HvDropDownMenu-container",
                                                                           "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                           "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
@@ -8290,6 +8292,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         className="HvDropDownMenu-container"
                                                                         classes={
                                                                           Object {
+                                                                            "container": "HvDropDownMenu-baseContainer",
                                                                             "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                           }
                                                                         }
@@ -8331,7 +8334,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               "anchor": "HvBaseDropdown-anchor",
                                                                               "arrow": "HvBaseDropdown-arrow",
                                                                               "containedPopper": "HvBaseDropdown-containedPopper",
-                                                                              "container": "HvBaseDropdown-container",
+                                                                              "container": "HvBaseDropdown-container HvDropDownMenu-baseContainer",
                                                                               "header": "HvBaseDropdown-header",
                                                                               "headerDisabled": "HvBaseDropdown-headerDisabled",
                                                                               "headerOpen": "HvBaseDropdown-headerOpen",
@@ -11758,6 +11761,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     category="ghost"
                                                                     classes={
                                                                       Object {
+                                                                        "baseContainer": "HvDropDownMenu-baseContainer",
                                                                         "container": "HvDropDownMenu-container",
                                                                         "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                         "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
@@ -11791,6 +11795,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       category="ghost"
                                                                       classes={
                                                                         Object {
+                                                                          "baseContainer": "HvDropDownMenu-baseContainer",
                                                                           "container": "HvDropDownMenu-container",
                                                                           "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                           "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
@@ -11825,6 +11830,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         className="HvDropDownMenu-container"
                                                                         classes={
                                                                           Object {
+                                                                            "container": "HvDropDownMenu-baseContainer",
                                                                             "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                           }
                                                                         }
@@ -11866,7 +11872,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               "anchor": "HvBaseDropdown-anchor",
                                                                               "arrow": "HvBaseDropdown-arrow",
                                                                               "containedPopper": "HvBaseDropdown-containedPopper",
-                                                                              "container": "HvBaseDropdown-container",
+                                                                              "container": "HvBaseDropdown-container HvDropDownMenu-baseContainer",
                                                                               "header": "HvBaseDropdown-header",
                                                                               "headerDisabled": "HvBaseDropdown-headerDisabled",
                                                                               "headerOpen": "HvBaseDropdown-headerOpen",
@@ -15295,6 +15301,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                     category="ghost"
                                                                     classes={
                                                                       Object {
+                                                                        "baseContainer": "HvDropDownMenu-baseContainer",
                                                                         "container": "HvDropDownMenu-container",
                                                                         "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                         "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
@@ -15328,6 +15335,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                       category="ghost"
                                                                       classes={
                                                                         Object {
+                                                                          "baseContainer": "HvDropDownMenu-baseContainer",
                                                                           "container": "HvDropDownMenu-container",
                                                                           "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
                                                                           "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
@@ -15362,6 +15370,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                         className="HvDropDownMenu-container"
                                                                         classes={
                                                                           Object {
+                                                                            "container": "HvDropDownMenu-baseContainer",
                                                                             "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                                                                           }
                                                                         }
@@ -15403,7 +15412,7 @@ exports[` AssetInventory ListView should render correctly 1`] = `
                                                                               "anchor": "HvBaseDropdown-anchor",
                                                                               "arrow": "HvBaseDropdown-arrow",
                                                                               "containedPopper": "HvBaseDropdown-containedPopper",
-                                                                              "container": "HvBaseDropdown-container",
+                                                                              "container": "HvBaseDropdown-container HvDropDownMenu-baseContainer",
                                                                               "header": "HvBaseDropdown-header",
                                                                               "headerDisabled": "HvBaseDropdown-headerDisabled",
                                                                               "headerOpen": "HvBaseDropdown-headerOpen",
