@@ -1,6 +1,3 @@
-import React from "react";
-import { withTooltip, HvTypography } from "..";
-
 export const getScrollTop = (c = window) => {
   if (c === window) {
     return (
@@ -68,27 +65,4 @@ export const findFirstVisibleElement = (container, options, offset) => {
 
   // return the previous index, the element that last scrolled past the top
   return i - 1;
-};
-
-const hideTooltip = (evt) => {
-  const isOverFlow =
-    evt.target.children.length > 1
-      ? Array.of(...evt.target.children).some((child) => child.scrollWidth > child.clientWidth)
-      : evt.target.scrollWidth > evt.target.clientWidth;
-  return !isOverFlow;
-};
-
-export const addTooltipToElement = (
-  label,
-  componentType,
-  tooltipPosition = "top",
-  hideOnOverflow = true
-) => {
-  const component = (props) => (
-    <HvTypography component={componentType} {...props}>
-      {props.children}
-    </HvTypography>
-  );
-  const hideTooltipFunc = hideOnOverflow ? hideTooltip : undefined;
-  return withTooltip(component, label, tooltipPosition, hideTooltipFunc);
 };

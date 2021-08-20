@@ -33,6 +33,14 @@ export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassK
    * Defines the default colors of the button are forced into the icon.
    */
   overrideIconColors?: boolean;
+
+  // this prop is not being found by typescript extend chain. Consider removing this in the future
+  /**
+   * The component used for the root node. Either a string to use a HTML element or a component.
+   * Defaults to `table`.
+   *
+   */
+  component?: React.ElementType<React.HTMLAttributes<HTMLElement>>;
 }
 
 export default function HvButton(props: HvButtonProps): JSX.Element | null;

@@ -6,7 +6,7 @@ import { isKeypress, KeyboardCodes } from "../../utils";
 import HorizontalScrollListItem from "./HorizontalScrollListItem";
 import styles from "./styles";
 import useScrollTo from "../useScrollTo";
-import { addTooltipToElement } from "../utils";
+import addTooltipToElement from "../withTooltip";
 import { useUniqueId, setId } from "../..";
 
 const { Enter } = KeyboardCodes;
