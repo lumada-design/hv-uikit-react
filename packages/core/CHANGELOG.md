@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.40.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.39.1...@hv/uikit-react-core@3.40.0) (2021-08-20)
+
+
+### Features
+
+* **button:** expose component prop in typescript ([9eba433](https://github.com/lumada-design/hv-uikit-react/commit/9eba43383f7c2583902e729bb54ea0da2ea10978))
+* **scroll-to:** expose useScrollTo hook ([5ce8a16](https://github.com/lumada-design/hv-uikit-react/commit/5ce8a1640be64b7715e30ca0d51a2839cba3a372))
+* allow customization of `HvBaseDropdown` `container` class. [#2535](https://github.com/lumada-design/hv-uikit-react/issues/2535) ([72c0036](https://github.com/lumada-design/hv-uikit-react/commit/72c003665a4c9489fa912b4930c68036eaa638e0))
+
+
+
+
+
 ## [3.39.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.39.0...@hv/uikit-react-core@3.39.1) (2021-08-20)
 
 
