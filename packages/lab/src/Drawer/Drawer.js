@@ -8,14 +8,13 @@ import { setId } from "../../../core/src/utils";
 import styles from "./styles";
 import withTooltip from "../../../core/src/withTooltip";
 
-
 /**
  * The Drawer component provides a foundation to create a sliding pane.
- * It only provides the pane with a close button, the rest of the 
+ * It only provides the pane with a close button, the rest of the
  * content can be customized.
  */
-const HvDrawer = ({ 
-  className, 
+const HvDrawer = ({
+  className,
   classes,
   id,
   children,
@@ -23,45 +22,45 @@ const HvDrawer = ({
   onClose,
   anchor = "right",
   buttonTitle = "Close",
-  ...others }) => {
+  ...others
+}) => {
+  const closeButtonDisplay = () => <Close role="presentation" />;
 
-    const closeButtonDisplay = () => <Close role="presentation" />;
+  const CloseButtonTooltipWrapper = buttonTitle
+    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
+    : closeButtonDisplay;
 
-    const CloseButtonTooltipWrapper = buttonTitle
-      ? withTooltip(closeButtonDisplay, buttonTitle, "top")
-      : closeButtonDisplay;
-
-    return (
-      <Drawer
-        className={clsx(classes.root, className)}
-        id={id}
-        anchor={anchor}
-        open={open}
-        PaperProps={{
-          classes: {
-            root: classes.paper,
-          },
-        }}
-        BackdropProps={{
-          classes: {
-            root: classes.background,
-          },
-        }}
-        onClose={(event, reason) => onClose(event, reason)}
-        {...others}
+  return (
+    <Drawer
+      className={clsx(classes.root, className)}
+      id={id}
+      anchor={anchor}
+      open={open}
+      PaperProps={{
+        classes: {
+          root: classes.paper,
+        },
+      }}
+      BackdropProps={{
+        classes: {
+          root: classes.background,
+        },
+      }}
+      onClose={(event, reason) => onClose(event, reason)}
+      {...others}
+    >
+      <Button
+        id={setId(id, "close")}
+        className={classes.closeButton}
+        category="ghost"
+        onClick={onClose}
+        aria-label={buttonTitle}
       >
-        <Button
-          id={setId(id, "close")}
-          className={classes.closeButton}
-          category="ghost"
-          onClick={onClose}
-          aria-label={buttonTitle}
-        >
-          <CloseButtonTooltipWrapper />
-        </Button>
-        {children}
-      </Drawer>
-    )
+        <CloseButtonTooltipWrapper />
+      </Button>
+      {children}
+    </Drawer>
+  );
 };
 
 HvDrawer.propTypes = {
@@ -74,24 +73,24 @@ HvDrawer.propTypes = {
    */
   id: PropTypes.string,
   /**
-  * A Jss Object used to override or extend the styles applied.
-  */
+   * A Jss Object used to override or extend the styles applied.
+   */
   classes: PropTypes.shape({
     /**
-    * Style applied to the root of the component.
-    */
+     * Style applied to the root of the component.
+     */
     root: PropTypes.string,
     /**
-    * Style applied to the background (outside) of the component.
-    */
+     * Style applied to the background (outside) of the component.
+     */
     background: PropTypes.string,
     /**
-    * Style applied to the component (root).
-    */
+     * Style applied to the component (root).
+     */
     paper: PropTypes.string,
     /**
-    * Style applied to the close button.
-    */
+     * Style applied to the close button.
+     */
     closeButton: PropTypes.string,
   }).isRequired,
   /**
@@ -113,7 +112,7 @@ HvDrawer.propTypes = {
   /**
    * The side the drawer opens from.
    */
-  anchor: PropTypes.oneOf(['left', 'top', 'right', 'bottom']),
+  anchor: PropTypes.oneOf(["left", "top", "right", "bottom"]),
   /**
    * Title for the button close.
    */

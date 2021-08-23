@@ -39,7 +39,6 @@ describe("HvDrawer Component", () => {
     onCloseMock.mockClear();
   });
 
-
   it("should render correctly if opened", () => {
     expect(wrapper.find(HvDrawer)).toMatchSnapshot();
   });
@@ -60,8 +59,8 @@ describe("HvDrawer Component", () => {
       <HvProvider>
         <HvDrawer
           open={open}
-          onClose={onCloseMock} 
-          disableBackdropClick={false} 
+          onClose={onCloseMock}
+          disableBackdropClick={false}
           disableEscapeKeyDown
         >
           HvDrawer Content
