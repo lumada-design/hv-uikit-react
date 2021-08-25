@@ -8,6 +8,7 @@ export type HvTableHeaderClassKey =
   | "footer"
   | "headerContent"
   | "headerText"
+  | "headerParagraph"
   | "sortableHeaderText"
   | "alignFlexLeft"
   | "alignFlexCenter"
