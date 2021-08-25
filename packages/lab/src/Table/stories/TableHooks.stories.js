@@ -335,7 +335,7 @@ export const Sortable = () => {
 
   return (
     <HvTableContainer>
-      <HvTable {...getTableProps()}>
+      <HvTable style={{ tableLayout: "fixed" }} {...getTableProps()}>
         <HvTableHead>
           <HvTableRow>
             {headers.map((col) => (

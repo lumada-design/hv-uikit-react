@@ -30,7 +30,7 @@ export const makeData = (len = 10) => range(len).map(newEntry);
 export const getColumns = () => [
   { Header: "Title", accessor: "name", style: { minWidth: 120 } },
   { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
-  { Header: "Event Type", accessor: "eventType", style: { minWidth: 140 } },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
   { Header: "Status", accessor: "status", style: { width: 120 } },
   // numeric values should be right-aligned
   {

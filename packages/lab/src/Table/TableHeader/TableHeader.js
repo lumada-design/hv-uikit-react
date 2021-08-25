@@ -1,10 +1,10 @@
 import React, { forwardRef, useContext, useMemo } from "react";
-import PropTypes from "prop-types";
+import PropTypes, { object } from "prop-types";
 import clsx from "clsx";
 import capitalize from "lodash/capitalize";
 
 import { withStyles } from "@material-ui/core";
-import { HvButton } from "@hv/uikit-react-core";
+import { HvButton, HvTypography } from "@hv/uikit-react-core";
 import { getSortIcon } from "./utils";
 import styles from "./styles";
 import TableContext from "../TableContext";
@@ -39,6 +39,7 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
     sortDirection = "none",
     sorted,
     sortable,
+    headerTextProps,
 
     ...others
   } = props;
@@ -83,12 +84,27 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
       aria-sort={sortable ? sortDirection : undefined}
       {...others}
     >
-      {isHeadCell && sortable && (
-        <HvButton className={classes.sortButton} icon overrideIconColors={false}>
-          <Sort className={classes.sortIcon} />
-        </HvButton>
-      )}
-      {children}
+      <div
+        className={clsx(classes.headerContent, {
+          [classes[`alignFlex${capitalize(align)}`]]: align !== "inherit",
+        })}
+      >
+        {isHeadCell && sortable && (
+          <HvButton className={classes.sortButton} icon overrideIconColors={false}>
+            <Sort className={classes.sortIcon} />
+          </HvButton>
+        )}
+        <HvTypography
+          component="div"
+          className={clsx(classes.headerText, {
+            [classes.sortableHeaderText]: sortable,
+          })}
+          variant="highlightText"
+          {...headerTextProps}
+        >
+          {children}
+        </HvTypography>
+      </div>
     </Component>
   );
 });
@@ -159,6 +175,10 @@ HvTableHeader.propTypes = {
    * Set sort direction icon and aria-sort.
    */
   sortDirection: PropTypes.oneOf(["ascending", "descending", false]),
+  /**
+   * Extra props to be passed onto the text in the header.
+   */
+  headerTextProps: PropTypes.instanceOf(object),
 
   /**
    * A Jss Object used to override or extend the styles applied.
@@ -194,6 +214,19 @@ HvTableHeader.propTypes = {
      * Styles applied to the cell when it's part of the first right sticky column.
      */
     stickyColumnLeastRight: PropTypes.string,
+
+    /**
+     * Styles applied to the container of the header cell content.
+     */
+    headerContent: PropTypes.string,
+    /**
+     * Styles applied to the text of the header cell.
+     */
+    headerText: PropTypes.string,
+    /**
+     * Styles applied to the text of the header cell when it is sorted.
+     */
+    sortableHeaderText: PropTypes.string,
 
     /**
      * Styles applied to the component root when it is sorted.
