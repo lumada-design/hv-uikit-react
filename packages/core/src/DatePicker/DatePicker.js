@@ -27,6 +27,7 @@ import useLocale from "../Provider/useLocale";
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
   cancelLabel: "Cancel",
+  clearLabel: "Clear",
 };
 
 /**
@@ -52,6 +53,7 @@ const HvDatePicker = (props) => {
 
     onChange,
     onCancel,
+    onClear,
     status,
     statusMessage,
     "aria-errormessage": ariaErrorMessage,
@@ -69,6 +71,7 @@ const HvDatePicker = (props) => {
     horizontalPlacement = "right",
     locale: localeProp,
     showActions = false,
+    showClear = false,
     disablePortal = true,
     escapeWithReference = true,
     dropdownProps,
@@ -140,6 +143,15 @@ const HvDatePicker = (props) => {
     onCancel?.();
 
     setCalendarOpen(false);
+  };
+
+  /**
+   * Handles the `Cancel` action. Both single and ranged modes are handled here.
+   */
+  const handleClear = () => {
+    setStartDate(undefined, false);
+    setEndDate(undefined, false);
+    onClear?.();
   };
 
   const handleCalendarClose = () => {
@@ -221,23 +233,41 @@ const HvDatePicker = (props) => {
    * Renders the container for the action elements.
    */
   const renderActions = () => (
-    <HvActionBar>
-      <HvButton
-        id={setId(id, "action", "apply")}
-        className={classes.action}
-        category="ghost"
-        onClick={handleApply}
-      >
-        {labels.applyLabel}
-      </HvButton>
-      <HvButton
-        id={setId(id, "action", "cancel")}
-        className={classes.action}
-        category="ghost"
-        onClick={handleCancel}
-      >
-        {labels.cancelLabel}
-      </HvButton>
+    <HvActionBar
+      className={clsx({
+        [classes.actionContainer]: showClear,
+      })}
+    >
+      {showClear && (
+        <div className={classes.leftContainer}>
+          <HvButton
+            id={setId(id, "action", "clear")}
+            className={classes.action}
+            category="ghost"
+            onClick={handleClear}
+          >
+            {labels.clearLabel}
+          </HvButton>
+        </div>
+      )}
+      <div className={classes.rightContainer}>
+        <HvButton
+          id={setId(id, "action", "apply")}
+          className={classes.action}
+          category="ghost"
+          onClick={handleApply}
+        >
+          {labels.applyLabel}
+        </HvButton>
+        <HvButton
+          id={setId(id, "action", "cancel")}
+          className={classes.action}
+          category="ghost"
+          onClick={handleCancel}
+        >
+          {labels.cancelLabel}
+        </HvButton>
+      </div>
     </HvActionBar>
   );
 
@@ -393,6 +423,18 @@ HvDatePicker.propTypes = {
      * Styles applied to the date picker when opened.
      */
     dropdownHeaderOpen: PropTypes.string,
+    /**
+     * Styles applied to the container that holds the actions buttons.
+     */
+    actionContainer: PropTypes.string,
+    /**
+     * Styles applied to the container that holds the clear button.
+     */
+    leftContainer: PropTypes.string,
+    /**
+     * Styles applied to the container that holds the apply and cancel button.
+     */
+    rightContainer: PropTypes.string,
   }).isRequired,
 
   /**
@@ -476,6 +518,11 @@ HvDatePicker.propTypes = {
   onCancel: PropTypes.func,
 
   /**
+   * The callback fired when user clicks on cancel.
+   */
+  onClear: PropTypes.func,
+
+  /**
    * An object containing all the labels for the datepicker.
    */
   labels: PropTypes.shape({
@@ -487,6 +534,10 @@ HvDatePicker.propTypes = {
      * Cancel button label.
      */
     cancelLabel: PropTypes.string,
+    /**
+     * Clear button label.
+     */
+    clearLabel: PropTypes.string,
   }),
 
   /**
@@ -519,6 +570,11 @@ HvDatePicker.propTypes = {
    * Controls if actions buttons are visible at the calendar.
    */
   showActions: PropTypes.bool,
+  /**
+   * Controls if clear button is visible at the calendar,
+   * only works if showing actions or in range mode.
+   */
+  showClear: PropTypes.bool,
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */

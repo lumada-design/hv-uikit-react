@@ -35,6 +35,13 @@ this year
     ...  ELSE                            
     ...  Element Should Contain          ${datePickerHeader}    1 Jan ${yyyy} - ${d} ${mmm} ${yyyy}
 
+clear date
+    Element Should Contain               ${datePickerHeader}    5 - 10 Sep 2020
+    Click Element                        ${clear}
+    Click Element                        ${apply}
+    Press Keys                           NONE    ESCAPE
+    Element Should Contain               ${datePickerHeader}    Select date
+
 *** Variables ***
 ${last7days}    xpath://li[text()="Last 7 days"]
 ${thisMonth}    xpath://li[text()="This month"]

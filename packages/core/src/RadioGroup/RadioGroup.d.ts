@@ -102,7 +102,7 @@ export interface HvRadioGroupProps
    *
    * Defaults to vertical.
    */
-  orientation: "vertical" | "horizontal";
+  orientation?: "vertical" | "horizontal";
 
   /**
    * The radio buttons that are part of the group.

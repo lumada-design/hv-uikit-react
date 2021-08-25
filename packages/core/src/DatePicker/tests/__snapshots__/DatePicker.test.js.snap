@@ -9,6 +9,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
     classes={
       Object {
         "action": "HvDatePicker-action",
+        "actionContainer": "HvDatePicker-actionContainer",
         "description": "HvDatePicker-description",
         "dropdown": "HvDatePicker-dropdown",
         "dropdownHeaderInvalid": "HvDatePicker-dropdownHeaderInvalid",
@@ -21,10 +22,12 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
         "inputContainer": "HvDatePicker-inputContainer",
         "label": "HvDatePicker-label",
         "labelContainer": "HvDatePicker-labelContainer",
+        "leftContainer": "HvDatePicker-leftContainer",
         "panel": "HvDatePicker-panel",
         "rangeCalendarContainer": "HvDatePicker-rangeCalendarContainer",
         "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer",
         "rangeMainContainer": "HvDatePicker-rangeMainContainer",
+        "rightContainer": "HvDatePicker-rightContainer",
         "root": "HvDatePicker-root",
       }
     }
@@ -276,6 +279,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
     classes={
       Object {
         "action": "HvDatePicker-action",
+        "actionContainer": "HvDatePicker-actionContainer",
         "description": "HvDatePicker-description",
         "dropdown": "HvDatePicker-dropdown",
         "dropdownHeaderInvalid": "HvDatePicker-dropdownHeaderInvalid",
@@ -288,10 +292,12 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
         "inputContainer": "HvDatePicker-inputContainer",
         "label": "HvDatePicker-label",
         "labelContainer": "HvDatePicker-labelContainer",
+        "leftContainer": "HvDatePicker-leftContainer",
         "panel": "HvDatePicker-panel",
         "rangeCalendarContainer": "HvDatePicker-rangeCalendarContainer",
         "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer",
         "rangeMainContainer": "HvDatePicker-rangeMainContainer",
+        "rightContainer": "HvDatePicker-rightContainer",
         "root": "HvDatePicker-root",
       }
     }
@@ -543,6 +549,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
     classes={
       Object {
         "action": "HvDatePicker-action",
+        "actionContainer": "HvDatePicker-actionContainer",
         "description": "HvDatePicker-description",
         "dropdown": "HvDatePicker-dropdown",
         "dropdownHeaderInvalid": "HvDatePicker-dropdownHeaderInvalid",
@@ -555,10 +562,12 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
         "inputContainer": "HvDatePicker-inputContainer",
         "label": "HvDatePicker-label",
         "labelContainer": "HvDatePicker-labelContainer",
+        "leftContainer": "HvDatePicker-leftContainer",
         "panel": "HvDatePicker-panel",
         "rangeCalendarContainer": "HvDatePicker-rangeCalendarContainer",
         "rangeCalendarsContainer": "HvDatePicker-rangeCalendarsContainer",
         "rangeMainContainer": "HvDatePicker-rangeMainContainer",
+        "rightContainer": "HvDatePicker-rightContainer",
         "root": "HvDatePicker-root",
       }
     }

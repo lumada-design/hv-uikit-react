@@ -65,9 +65,18 @@ export interface HvDatePickerProps
    */
   showActions?: boolean;
   /**
+   * Controls if clear button is visible at the calendar, 
+   * only works if showing actions or in range mode.
+   */
+  showClear?: boolean;
+  /**
    * Callback function to be triggered when the input value is changed
    */
   onChange?: (date?: Date, endDate?: Date) => void;
+  /**
+   * Callback function to be triggered when the datepicker value is cleared.
+   */
+  onClear?: () => void;
   /**
    * Disable the portal behavior. The children stay within it's parent DOM hierarchy.
    */

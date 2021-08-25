@@ -413,6 +413,7 @@ export const WithSelectionList = () => {
         setStartDate(trueStartDate);
         setEndDate(trueEndDate);
       }}
+      showClear
     />
   );
 };

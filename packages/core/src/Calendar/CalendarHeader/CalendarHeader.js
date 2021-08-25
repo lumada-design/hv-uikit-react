@@ -56,12 +56,18 @@ const HvCalendarHeader = ({
     inputValue.length === 0 || (!!inputValue && dayjs(localValue).isValid())
   );
 
-  const validateInput = (incomingValid) => dayjs(incomingValid).isValid();
+  const validateInput = (incomingValid) =>
+    incomingValid === undefined || dayjs(incomingValid).isValid();
   useEffect(() => {
     const valid = validateInput(localValue);
     setIsValidValue(valid);
     if (valid) {
-      if (!localValue) return;
+      if (!localValue) {
+        setDisplayValue("");
+        setEditedValue(null);
+        setWeekdayDisplay("");
+        return;
+      }
       const weekday = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(localValue);
       setDisplayValue(formatDMY(localValue, locale));
       setEditedValue(null);
