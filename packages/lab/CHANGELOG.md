@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.25.5](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.25.4...@hv/uikit-react-lab@3.25.5) (2021-08-26)
+
+
+### Bug Fixes
+
+* **loading:** change overlay background color. HVUIKIT-5948 ([e4ebf20](https://github.com/lumada-design/hv-uikit-react/commit/e4ebf209e3d0c114932e98e7a1c84de47cd791e3))
+* **table:** adding samples to showcase ellipsis paragraph ([2990013](https://github.com/lumada-design/hv-uikit-react/commit/2990013971e6a5d896d64387cba5cedec1e89808))
+* **table:** table header breaks layout on resize.HVUIKIT-5944 ([5e3aa53](https://github.com/lumada-design/hv-uikit-react/commit/5e3aa530027b5fbcef83e57926ca43d0e6f68085))
+
+
+
+
+
 ## [3.25.4](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.25.3...@hv/uikit-react-lab@3.25.4) (2021-08-21)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

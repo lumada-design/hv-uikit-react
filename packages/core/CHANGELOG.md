@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.41.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.40.1...@hv/uikit-react-core@3.41.0) (2021-08-26)
+
+
+### Bug Fixes
+
+* **radioGroup:** orientation is optional ([55b7f3e](https://github.com/lumada-design/hv-uikit-react/commit/55b7f3e6f8d6c2a227097bab41ccab2b72fd6ae8))
+
+
+### Features
+
+* **datepicker:** adding clear button.HVUIKIT-5845 ([eda9590](https://github.com/lumada-design/hv-uikit-react/commit/eda9590f44cc3a043180db6d4ba6f69aecfc8c59))
+
+
+
+
+
 ## [3.40.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.40.0...@hv/uikit-react-core@3.40.1) (2021-08-21)
 
 
