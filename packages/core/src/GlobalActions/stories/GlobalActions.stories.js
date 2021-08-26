@@ -10,7 +10,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvGlobalActions } from '@hv/uikit-react-core'",
     maturityStatus: "stable",
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvGlobalActions,
 };
@@ -209,7 +209,7 @@ export const SampleWithAdditionalActionsAndNoBackButton = () => {
 
 export const SampleWithCustomTitleAndAdditionalActions = () => {
   const CustomTitle = (
-    <HvTypography variant="xsTitle" component="h1">
+    <HvTypography variant="sectionTitle" component="h1">
       A Custom Title
     </HvTypography>
   );

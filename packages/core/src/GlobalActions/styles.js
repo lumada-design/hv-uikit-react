@@ -78,7 +78,7 @@ const styles = (theme) => ({
     justifyContent: "flex-end",
     marginLeft: "auto",
     "& > *:not(:first-child) ": {
-      marginLeft: theme.hv.spacing.sm,
+      marginLeft: theme.hv.spacing.xs,
     },
   },
 });
