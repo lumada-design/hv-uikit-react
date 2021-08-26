@@ -5,7 +5,7 @@ import capitalize from "lodash/capitalize";
 
 import { withStyles } from "@material-ui/core";
 import { HvButton, HvTypography } from "@hv/uikit-react-core";
-import { getSortIcon } from "./utils";
+import { getSortIcon, isParagraph } from "./utils";
 import styles from "./styles";
 import TableContext from "../TableContext";
 import TableSectionContext from "../TableSectionContext";
@@ -58,7 +58,7 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
 
   // eslint-disable-next-line no-nested-ternary
   const role = Component === defaultComponent ? null : isHeadCell ? "columnheader" : "rowheader";
-
+  const paragraph = isParagraph(children);
   return (
     <Component
       ref={ref}
@@ -96,7 +96,9 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
         )}
         <HvTypography
           component="div"
-          className={clsx(classes.headerText, {
+          className={clsx({
+            [classes.headerText]: !paragraph,
+            [classes.headerParagraph]: paragraph,
             [classes.sortableHeaderText]: sortable,
           })}
           variant="highlightText"
@@ -223,6 +225,10 @@ HvTableHeader.propTypes = {
      * Styles applied to the text of the header cell.
      */
     headerText: PropTypes.string,
+    /**
+     * Styles applied to the text of the header cell when it is a paragraph.
+     */
+    headerParagraph: PropTypes.string,
     /**
      * Styles applied to the text of the header cell when it is sorted.
      */

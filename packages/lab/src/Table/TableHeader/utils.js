@@ -21,3 +21,8 @@ export const getSortDir = (sortDirection) => {
       return null;
   }
 };
+
+export const isParagraph = (children) => {
+  if (typeof children === "string" && /\s/.test(children)) return true;
+  return false;
+};

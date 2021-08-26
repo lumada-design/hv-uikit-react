@@ -22,7 +22,7 @@ exports[`Table Simple Table should be defined 1`] = `
               class="HvTableHeader-headerContent"
             >
               <div
-                class="HvTableHeader-headerText HvTypography-root HvTypography-highlightText"
+                class="HvTableHeader-headerParagraph HvTypography-root HvTypography-highlightText"
               >
                 Sample Header 0
               </div>
@@ -36,7 +36,7 @@ exports[`Table Simple Table should be defined 1`] = `
               class="HvTableHeader-headerContent"
             >
               <div
-                class="HvTableHeader-headerText HvTypography-root HvTypography-highlightText"
+                class="HvTableHeader-headerParagraph HvTypography-root HvTypography-highlightText"
               >
                 Sample Header 1
               </div>
@@ -50,7 +50,7 @@ exports[`Table Simple Table should be defined 1`] = `
               class="HvTableHeader-headerContent"
             >
               <div
-                class="HvTableHeader-headerText HvTypography-root HvTypography-highlightText"
+                class="HvTableHeader-headerParagraph HvTypography-root HvTypography-highlightText"
               >
                 Sample Header 2
               </div>

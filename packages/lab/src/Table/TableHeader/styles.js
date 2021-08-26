@@ -89,6 +89,12 @@ const styles = (theme) => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
   },
+  headerParagraph: {
+    overflow: "hidden",
+    display: "-webkit-box",
+    "-webkit-line-clamp": 2,
+    "-webkit-box-orient": "vertical",
+  },
   sortableHeaderText: {
     paddingTop: "8px",
   },
