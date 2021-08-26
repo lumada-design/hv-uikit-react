@@ -6,6 +6,8 @@ import DropZone from "./DropZone";
 import FileList from "./FileList";
 import styles from "./styles";
 
+// TODO: this component needs to adopt the Form element shape and deprecate its way of composing labels
+
 const DEFAULT_LABELS = {
   dropzone: "Label",
   sizeWarning: "Max. file size:",
@@ -34,6 +36,9 @@ const FileUploader = ({
   acceptedFiles = [],
   onFilesAdded,
   onFileRemoved,
+
+  showLabels = true,
+  inputProps = {},
   ...others
 }) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
@@ -48,6 +53,8 @@ const FileUploader = ({
         acceptedFiles={acceptedFiles}
         maxFileSize={maxFileSize}
         onFilesAdded={onFilesAdded}
+        inputProps={inputProps}
+        showLabels={showLabels}
       />
       <FileList
         id={setId(id, "filelist")}
@@ -161,6 +168,14 @@ FileUploader.propTypes = {
    * Callback fired when file is removed from list.
    */
   onFileRemoved: PropTypes.func,
+  /**
+   * Whether the DropZone should show labels or not.
+   */
+  showLabels: PropTypes.bool,
+  /**
+   * Attributes applied to the input element.
+   */
+  inputProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvFileUploader" })(FileUploader);

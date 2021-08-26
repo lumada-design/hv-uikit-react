@@ -8,7 +8,7 @@ import { Doc } from "@hv/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../../utils";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
-import { setId } from "../..";
+import { setId, HvLabel, HvInfoMessage } from "../..";
 import withId from "../../withId";
 import styles from "./styles";
 
@@ -21,6 +21,8 @@ const DropZone = ({
   acceptedFiles,
   maxFileSize,
   onFilesAdded,
+  inputProps,
+  showLabels,
 }) => {
   const [dragState, setDrag] = useState(false);
   const inputRef = useRef();
@@ -66,26 +68,22 @@ const DropZone = ({
 
   return (
     <>
-      <div id={id} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
-        <HvTypography
-          variant="highlightText"
-          component="label"
-          id={setId(id, "input-file-label")}
-          htmlFor={setId(id, "input-file")}
-        >
-          {labels.dropzone}
-        </HvTypography>
-
-        {Number.isInteger(maxFileSize) && (
-          <HvTypography>{`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}</HvTypography>
-        )}
-
-        {labels.acceptedFiles && <HvTypography>{labels.acceptedFiles}</HvTypography>}
-
-        {!labels.acceptedFiles && acceptedFiles.length > 0 && (
-          <HvTypography>{`\u00A0(${acceptedFiles.join(", ")})`}</HvTypography>
-        )}
-      </div>
+      {showLabels && (
+        <div id={id} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
+          <HvLabel
+            id={setId(id, "input-file-label")}
+            htmlFor={setId(id, "input-file")}
+            label={labels.dropzone}
+          />
+          <HvInfoMessage id={setId(id, "description")}>
+            {Number.isInteger(maxFileSize) && `${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
+            {labels.acceptedFiles && labels.acceptedFiles}
+            {!labels.acceptedFiles &&
+              acceptedFiles.length > 0 &&
+              `\u00A0(${acceptedFiles.join(", ")})`}
+          </HvInfoMessage>
+        </div>
+      )}
 
       <div
         id={setId(id, "button")}
@@ -145,6 +143,7 @@ const DropZone = ({
           }}
           ref={inputRef}
           accept={acceptedFiles.join(",")}
+          {...inputProps}
         />
 
         <div className={classes.dropArea}>
@@ -228,7 +227,7 @@ DropZone.propTypes = {
   /**
    * Labels to present in Fileuploader.
    */
-  labels: PropTypes.instanceOf(Object).isRequired,
+  labels: PropTypes.instanceOf(Object),
   /**
    * Whether the Dropzone should accept multiple files at once.
    */
@@ -249,6 +248,14 @@ DropZone.propTypes = {
    * Function responsible for processing files added to the drop zone.
    */
   onFilesAdded: PropTypes.func,
+  /**
+   * Whether the DropZone should show labels or not.
+   */
+  showLabels: PropTypes.bool,
+  /**
+   * Attributes applied to the input element.
+   */
+  inputProps: PropTypes.instanceOf(Object),
 };
 
 export default withStyles(styles, { name: "HvFileUploaderDropZone" })(withId(DropZone));

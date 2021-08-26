@@ -21,7 +21,7 @@ export interface FileUploaderProps
   /**
    * An object containing all the labels.
    */
-  labels: FileUploaderLabelsProp;
+  labels?: FileUploaderLabelsProp;
   /**
    * The files to upload.
    */
@@ -50,6 +50,14 @@ export interface FileUploaderProps
    * Callback fired when file is removed from list.
    */
   onFileRemoved?: FileRemovedEvent;
+  /**
+   * Whether the DropZone should show labels or not.
+   */
+  showLabels?: boolean;
+  /**
+   * Attributes applied to the input element.
+   */
+  inputProps?: object;
 }
 
 export default function HvFileUploader(props: FileUploaderProps): JSX.Element | null;
