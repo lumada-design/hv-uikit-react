@@ -9,8 +9,8 @@ import styles from "./styles";
 const DEFAULT_LABELS = {
   dropzone: "Label",
   sizeWarning: "Max. file size:",
-  drag: "Drag and drop or",
-  selectFiles: "Select files",
+  drag: "Drop files here or",
+  selectFiles: "click to upload",
   dropFiles: "Drop files here",
   fileSizeError: "The file exceeds the maximum upload size",
   fileTypeError: "File type not allowed for upload",

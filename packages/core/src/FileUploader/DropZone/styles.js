@@ -54,9 +54,8 @@ const styles = (theme) => ({
     display: "flex",
     paddingBottom: "6px",
     justifyContent: "start",
-    "& label:nth-child(1)": {},
-    "& p:nth-child(2)": {
-      marginLeft: "auto",
+    "& :first-child": {
+      marginRight: 10,
     },
   },
   dropZoneAreaLabels: {

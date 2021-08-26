@@ -66,13 +66,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
         disabled={false}
         labels={
           Object {
-            "drag": "Drag and drop or",
+            "drag": "Drop files here or",
             "dropFiles": "Drop files here",
             "dropzone": "Label",
             "fileSizeError": "The file exceeds the maximum upload size",
             "fileTypeError": "File type not allowed for upload",
             "removeFileButtonLabel": "Remove File",
-            "selectFiles": "Select files",
+            "selectFiles": "click to upload",
             "sizeWarning": "Max. file size:",
           }
         }
@@ -103,13 +103,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           disabled={false}
           labels={
             Object {
-              "drag": "Drag and drop or",
+              "drag": "Drop files here or",
               "dropFiles": "Drop files here",
               "dropzone": "Label",
               "fileSizeError": "The file exceeds the maximum upload size",
               "fileTypeError": "File type not allowed for upload",
               "removeFileButtonLabel": "Remove File",
-              "selectFiles": "Select files",
+              "selectFiles": "click to upload",
               "sizeWarning": "Max. file size:",
             }
           }
@@ -141,13 +141,13 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             id="drop-zone-2"
             labels={
               Object {
-                "drag": "Drag and drop or",
+                "drag": "Drop files here or",
                 "dropFiles": "Drop files here",
                 "dropzone": "Label",
                 "fileSizeError": "The file exceeds the maximum upload size",
                 "fileTypeError": "File type not allowed for upload",
                 "removeFileButtonLabel": "Remove File",
-                "selectFiles": "Select files",
+                "selectFiles": "click to upload",
                 "sizeWarning": "Max. file size:",
               }
             }
@@ -301,7 +301,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 onChange={[Function]}
                 onClick={[Function]}
                 tabIndex={-1}
-                title="Drag and drop or Select files"
+                title="Drop files here or click to upload"
                 type="file"
               />
               <div
@@ -375,11 +375,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       <p
                         className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
                       >
-                        Drag and drop or
+                        Drop files here or
                         <span
                           className="HvFileUploaderDropZone-selectFilesText"
                         >
-                           Select files
+                           click to upload
                         </span>
                       </p>
                     </ForwardRef>

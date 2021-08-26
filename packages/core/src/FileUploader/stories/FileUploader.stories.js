@@ -20,7 +20,7 @@ export default {
     componentSubtitle: null,
     usage: 'import { HvFileUploader } from "@hv/uikit-react-core"',
 
-    dsVersion: "3.4.0",
+    dsVersion: "3.6.0",
   },
   component: HvFileUploader,
   subcomponents: { HvFileUploaderPreview },
@@ -256,7 +256,11 @@ export const WithPreviewThumbnails = () => {
     <>
       <HvFileUploader
         acceptedFiles={["image/*"]}
-        labels={{ sizeWarning: "Maximum file size:", acceptedFiles: "Pick an image" }}
+        labels={{
+          dropzone: "Upload files",
+          sizeWarning: "Maximum file size:",
+          acceptedFiles: "Pick an image",
+        }}
         fileList={list}
         onFilesAdded={(newFiles) => {
           newFiles.forEach((newFile) => addFile(newFile, setList));
@@ -345,6 +349,7 @@ export const SingleUpload = () => {
       maxFileSize={1 * 1000 ** 2}
       multiple={false}
       disabled={list.length === 1}
+      labels={{ dropzone: "File upload" }}
     />
   );
 };
