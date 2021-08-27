@@ -25,7 +25,7 @@ export interface HvSuggestionsProps
   /**
    * Function called when a suggestion is selected
    */
-  onSuggestionSelected?: (event: MouseEvent, item: ListValueProp) => void;
+  onSuggestionSelected?: (event: React.MouseEvent, item: ListValueProp) => void;
 }
 
 export default function HvSuggestions(props: HvSuggestionsProps): JSX.Element | null;
