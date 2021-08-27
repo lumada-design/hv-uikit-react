@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
+import { HvButton, HvDialogTitle, HvDialogContent, HvDialogActions } from "@hv/uikit-react-core";
 import { HvDrawer } from "../..";
-
-import { HvButton, HvDialogTitle, HvDialogContent, HvDialogActions } from "../../../../core/src";
 
 export default {
   title: "Lab/Drawer",

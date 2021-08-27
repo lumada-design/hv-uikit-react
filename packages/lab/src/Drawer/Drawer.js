@@ -3,10 +3,8 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { Drawer, withStyles } from "@material-ui/core";
 import { Close } from "@hv/uikit-react-icons";
-import Button from "../../../core/src/Button";
-import { setId } from "../../../core/src/utils";
+import { HvButton, withTooltip, setId } from "@hv/uikit-react-core";
 import styles from "./styles";
-import withTooltip from "../../../core/src/withTooltip";
 
 /**
  * The Drawer component provides a foundation to create a sliding pane.
@@ -49,7 +47,7 @@ const HvDrawer = ({
       onClose={(event, reason) => onClose(event, reason)}
       {...others}
     >
-      <Button
+      <HvButton
         id={setId(id, "close")}
         className={classes.closeButton}
         category="ghost"
@@ -57,7 +55,7 @@ const HvDrawer = ({
         aria-label={buttonTitle}
       >
         <CloseButtonTooltipWrapper />
-      </Button>
+      </HvButton>
       {children}
     </Drawer>
   );
