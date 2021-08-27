@@ -46,6 +46,7 @@ export type HvDropZoneClassKey =
   | "dropArea"
   | "dropZoneAreaLabels"
   | "dropZoneAreaIcon"
+  | "dropZoneLabel"
   | "dragText"
   | "selectFilesText";
 
@@ -76,9 +77,9 @@ export interface DropZoneProps
    */
   onFilesAdded?: FilesAddedEvent;
   /**
-   * Whether the DropZone should show labels or not.
+   * Whether the DropZone should hide labels or not.
    */
-  showLabels?: boolean;
+  hideLabels?: boolean;
   /**
    * Attributes applied to the input element.
    */

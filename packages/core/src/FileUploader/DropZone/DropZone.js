@@ -22,7 +22,7 @@ const DropZone = ({
   maxFileSize,
   onFilesAdded,
   inputProps,
-  showLabels,
+  hideLabels,
 }) => {
   const [dragState, setDrag] = useState(false);
   const inputRef = useRef();
@@ -68,12 +68,13 @@ const DropZone = ({
 
   return (
     <>
-      {showLabels && (
+      {!hideLabels && (
         <div id={id} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
           <HvLabel
             id={setId(id, "input-file-label")}
             htmlFor={setId(id, "input-file")}
             label={labels.dropzone}
+            className={classes.dropZoneLabel}
           />
           <HvInfoMessage id={setId(id, "description")}>
             {Number.isInteger(maxFileSize) && `${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
@@ -84,7 +85,6 @@ const DropZone = ({
           </HvInfoMessage>
         </div>
       )}
-
       <div
         id={setId(id, "button")}
         className={clsx(classes.dropZoneContainer, {
@@ -216,6 +216,10 @@ DropZone.propTypes = {
      */
     dropZoneAreaIcon: PropTypes.string,
     /**
+     * Style applied to the dropzone label.
+     */
+    dropZoneLabel: PropTypes.string,
+    /**
      * Style applied to the typography when dragging.
      */
     dragText: PropTypes.string,
@@ -251,7 +255,7 @@ DropZone.propTypes = {
   /**
    * Whether the DropZone should show labels or not.
    */
-  showLabels: PropTypes.bool,
+  hideLabels: PropTypes.bool,
   /**
    * Attributes applied to the input element.
    */

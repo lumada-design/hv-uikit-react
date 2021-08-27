@@ -51,9 +51,9 @@ export interface FileUploaderProps
    */
   onFileRemoved?: FileRemovedEvent;
   /**
-   * Whether the DropZone should show labels or not.
+   * Whether the DropZone should hide labels or not.
    */
-  showLabels?: boolean;
+  hideLabels?: boolean;
   /**
    * Attributes applied to the input element.
    */
