@@ -46,6 +46,7 @@ export type HvDropZoneClassKey =
   | "dropArea"
   | "dropZoneAreaLabels"
   | "dropZoneAreaIcon"
+  | "dropZoneLabel"
   | "dragText"
   | "selectFilesText";
 
@@ -54,7 +55,7 @@ export interface DropZoneProps
   /**
    * Labels to present in FileUploader.
    */
-  labels: HvDropZoneLabelsProp;
+  labels?: HvDropZoneLabelsProp;
   /**
    * Whether the Dropzone should accept multiple files at once.
    */
@@ -75,6 +76,14 @@ export interface DropZoneProps
    * Function responsible for processing files added to the drop zone.
    */
   onFilesAdded?: FilesAddedEvent;
+  /**
+   * Whether the DropZone should hide labels or not.
+   */
+  hideLabels?: boolean;
+  /**
+   * Attributes applied to the input element.
+   */
+  inputProps?: object;
 }
 
 export default function DropZone(props: DropZoneProps): JSX.Element | null;

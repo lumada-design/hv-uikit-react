@@ -50,6 +50,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels",
         "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer",
         "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled",
+        "dropZoneLabel": "HvFileUploaderDropZone-dropZoneLabel",
         "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup",
         "inputArea": "HvFileUploaderDropZone-inputArea",
         "selectFilesText": "HvFileUploaderDropZone-selectFilesText",
@@ -102,6 +103,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
           "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels",
           "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer",
           "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled",
+          "dropZoneLabel": "HvFileUploaderDropZone-dropZoneLabel",
           "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup",
           "inputArea": "HvFileUploaderDropZone-inputArea",
           "selectFilesText": "HvFileUploaderDropZone-selectFilesText",
@@ -148,125 +150,138 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         className="HvFileUploaderDropZone-dropZoneLabelsGroup"
         id="dropzone1"
       >
-        <WithStyles(ForwardRef)
-          component="label"
+        <WithStyles(HvLabel)
+          className="HvFileUploaderDropZone-dropZoneLabel"
           htmlFor="dropzone1-input-file"
           id="dropzone1-input-file-label"
-          variant="highlightText"
+          label="Label"
         >
-          <ForwardRef
+          <HvLabel
+            className="HvFileUploaderDropZone-dropZoneLabel"
             classes={
               Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
+                "childGutter": "HvLabel-childGutter",
+                "labelDisabled": "HvLabel-labelDisabled",
+                "root": "HvLabel-root",
               }
             }
-            component="label"
             htmlFor="dropzone1-input-file"
             id="dropzone1-input-file-label"
-            variant="highlightText"
+            label="Label"
           >
-            <label
-              className="HvTypography-root HvTypography-highlightText"
+            <WithStyles(ForwardRef)
+              className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root"
+              component="label"
               htmlFor="dropzone1-input-file"
               id="dropzone1-input-file-label"
+              variant="highlightText"
             >
-              Label
-            </label>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
-        <WithStyles(ForwardRef)>
-          <ForwardRef
+              <ForwardRef
+                className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="label"
+                htmlFor="dropzone1-input-file"
+                id="dropzone1-input-file-label"
+                variant="highlightText"
+              >
+                <label
+                  className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root HvTypography-root HvTypography-highlightText"
+                  htmlFor="dropzone1-input-file"
+                  id="dropzone1-input-file-label"
+                >
+                  Label
+                </label>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </HvLabel>
+        </WithStyles(HvLabel)>
+        <WithStyles(HvInfoMessage)
+          id="dropzone1-description"
+        >
+          <HvInfoMessage
             classes={
               Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
+                "gutter": "HvInfoMessage-gutter",
+                "infoDisabled": "HvInfoMessage-infoDisabled",
+                "root": "HvInfoMessage-root",
               }
             }
+            id="dropzone1-description"
           >
-            <p
-              className="HvTypography-root HvTypography-normalText"
+            <WithStyles(ForwardRef)
+              className="HvInfoMessage-root HvInfoMessage-gutter"
+              component="label"
+              id="dropzone1-description"
+              variant="normalText"
             >
-              Max. file size: 1.00B
-            </p>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
-        <WithStyles(ForwardRef)>
-          <ForwardRef
-            classes={
-              Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
-              }
-            }
-          >
-            <p
-              className="HvTypography-root HvTypography-normalText"
-            >
-              Accepted files:
-            </p>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
+              <ForwardRef
+                className="HvInfoMessage-root HvInfoMessage-gutter"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="label"
+                id="dropzone1-description"
+                variant="normalText"
+              >
+                <label
+                  className="HvInfoMessage-root HvInfoMessage-gutter HvTypography-root HvTypography-normalText"
+                  id="dropzone1-description"
+                >
+                  Max. file size: 1.00B
+                  Accepted files:
+                </label>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </HvInfoMessage>
+        </WithStyles(HvInfoMessage)>
       </div>
       <div
         className="HvFileUploaderDropZone-dropZoneContainer"
@@ -432,6 +447,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels",
         "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer",
         "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled",
+        "dropZoneLabel": "HvFileUploaderDropZone-dropZoneLabel",
         "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup",
         "inputArea": "HvFileUploaderDropZone-inputArea",
         "selectFilesText": "HvFileUploaderDropZone-selectFilesText",
@@ -486,6 +502,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
           "dropZoneAreaLabels": "HvFileUploaderDropZone-dropZoneAreaLabels",
           "dropZoneContainer": "HvFileUploaderDropZone-dropZoneContainer",
           "dropZoneContainerDisabled": "HvFileUploaderDropZone-dropZoneContainerDisabled",
+          "dropZoneLabel": "HvFileUploaderDropZone-dropZoneLabel",
           "dropZoneLabelsGroup": "HvFileUploaderDropZone-dropZoneLabelsGroup",
           "inputArea": "HvFileUploaderDropZone-inputArea",
           "selectFilesText": "HvFileUploaderDropZone-selectFilesText",
@@ -534,125 +551,138 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         className="HvFileUploaderDropZone-dropZoneLabelsGroup"
         id="dropzone1"
       >
-        <WithStyles(ForwardRef)
-          component="label"
+        <WithStyles(HvLabel)
+          className="HvFileUploaderDropZone-dropZoneLabel"
           htmlFor="dropzone1-input-file"
           id="dropzone1-input-file-label"
-          variant="highlightText"
+          label="Label"
         >
-          <ForwardRef
+          <HvLabel
+            className="HvFileUploaderDropZone-dropZoneLabel"
             classes={
               Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
+                "childGutter": "HvLabel-childGutter",
+                "labelDisabled": "HvLabel-labelDisabled",
+                "root": "HvLabel-root",
               }
             }
-            component="label"
             htmlFor="dropzone1-input-file"
             id="dropzone1-input-file-label"
-            variant="highlightText"
+            label="Label"
           >
-            <label
-              className="HvTypography-root HvTypography-highlightText"
+            <WithStyles(ForwardRef)
+              className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root"
+              component="label"
               htmlFor="dropzone1-input-file"
               id="dropzone1-input-file-label"
+              variant="highlightText"
             >
-              Label
-            </label>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
-        <WithStyles(ForwardRef)>
-          <ForwardRef
+              <ForwardRef
+                className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="label"
+                htmlFor="dropzone1-input-file"
+                id="dropzone1-input-file-label"
+                variant="highlightText"
+              >
+                <label
+                  className="HvFileUploaderDropZone-dropZoneLabel HvLabel-root HvTypography-root HvTypography-highlightText"
+                  htmlFor="dropzone1-input-file"
+                  id="dropzone1-input-file-label"
+                >
+                  Label
+                </label>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </HvLabel>
+        </WithStyles(HvLabel)>
+        <WithStyles(HvInfoMessage)
+          id="dropzone1-description"
+        >
+          <HvInfoMessage
             classes={
               Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
+                "gutter": "HvInfoMessage-gutter",
+                "infoDisabled": "HvInfoMessage-infoDisabled",
+                "root": "HvInfoMessage-root",
               }
             }
+            id="dropzone1-description"
           >
-            <p
-              className="HvTypography-root HvTypography-normalText"
+            <WithStyles(ForwardRef)
+              className="HvInfoMessage-root HvInfoMessage-gutter"
+              component="label"
+              id="dropzone1-description"
+              variant="normalText"
             >
-              Max. file size: 1.00B
-            </p>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
-        <WithStyles(ForwardRef)>
-          <ForwardRef
-            classes={
-              Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledText": "HvTypography-disabledText",
-                "highlightText": "HvTypography-highlightText",
-                "lTitle": "HvTypography-lTitle",
-                "link": "HvTypography-link",
-                "mTitle": "HvTypography-mTitle",
-                "noWrap": "HvTypography-noWrap",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sTitle": "HvTypography-sTitle",
-                "sectionTitle": "HvTypography-sectionTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "vizText": "HvTypography-vizText",
-                "vizTextDisabled": "HvTypography-vizTextDisabled",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsInlineLink": "HvTypography-xsInlineLink",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
-              }
-            }
-          >
-            <p
-              className="HvTypography-root HvTypography-normalText"
-            >
-              Accepted files:
-            </p>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
+              <ForwardRef
+                className="HvInfoMessage-root HvInfoMessage-gutter"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledText": "HvTypography-disabledText",
+                    "highlightText": "HvTypography-highlightText",
+                    "lTitle": "HvTypography-lTitle",
+                    "link": "HvTypography-link",
+                    "mTitle": "HvTypography-mTitle",
+                    "noWrap": "HvTypography-noWrap",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sTitle": "HvTypography-sTitle",
+                    "sectionTitle": "HvTypography-sectionTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="label"
+                id="dropzone1-description"
+                variant="normalText"
+              >
+                <label
+                  className="HvInfoMessage-root HvInfoMessage-gutter HvTypography-root HvTypography-normalText"
+                  id="dropzone1-description"
+                >
+                  Max. file size: 1.00B
+                  Accepted files:
+                </label>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </HvInfoMessage>
+        </WithStyles(HvInfoMessage)>
       </div>
       <div
         className="HvFileUploaderDropZone-dropZoneContainer HvFileUploaderDropZone-dropZoneContainerDisabled"

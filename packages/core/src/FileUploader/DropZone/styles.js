@@ -18,6 +18,9 @@ const styles = (theme) => ({
       ...outlineStyles,
     },
   },
+  dropZoneLabel: {
+    paddingBottom: 6,
+  },
   dropZoneContainerDisabled: {
     "&$dropZoneContainer": {
       background: `${theme.hv.palette.atmosphere.atmo3}`,
@@ -48,11 +51,10 @@ const styles = (theme) => ({
   dropArea: {
     display: "flex",
     margin: theme.hvSpacing("md", "auto"),
-    minHeight: 40,
+    minHeight: 48,
   },
   dropZoneLabelsGroup: {
     display: "flex",
-    paddingBottom: "6px",
     justifyContent: "start",
     "& label:nth-child(1)": {},
     "& p:nth-child(2)": {
