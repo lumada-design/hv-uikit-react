@@ -78,7 +78,7 @@ const HvGlobalActions = (props) => {
           title
         ) : (
           <HvTypography
-            variant="sectionTitle"
+            variant={variant === "global" ? "xsTitle" : "sectionTitle"}
             component={`h${headingLevelToApply}`}
             className={classes.name}
           >
