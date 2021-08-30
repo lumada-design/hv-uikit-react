@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.25.5...@hv/uikit-react-lab@3.26.0) (2021-08-30)
+
+
+### Bug Fixes
+
+* **drawer:** reference to package instead of folder ([f1b9116](https://github.com/lumada-design/hv-uikit-react/commit/f1b91166c4658d1f3f0e3b3e12a11949276996d6))
+
+
+### Features
+
+* drawer component, implements issue [#2517](https://github.com/lumada-design/hv-uikit-react/issues/2517) ([829768e](https://github.com/lumada-design/hv-uikit-react/commit/829768ea82e300ea6fd106bc8e1f26bb90239df9))
+* **notificationpanel:** add tooltip [#2520](https://github.com/lumada-design/hv-uikit-react/issues/2520) ([316282c](https://github.com/lumada-design/hv-uikit-react/commit/316282ca6a3201c4b7dcd05c08f751238c558f15))
+
+
+
+
+
 ## [3.25.5](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.25.4...@hv/uikit-react-lab@3.25.5) (2021-08-26)
 
 

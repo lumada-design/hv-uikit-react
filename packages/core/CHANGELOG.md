@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.42.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.41.0...@hv/uikit-react-core@3.42.0) (2021-08-30)
+
+
+### Bug Fixes
+
+* **GlobalActions:** adjust title and buttons spacing. HVUIKIT-5962 ([645c32f](https://github.com/lumada-design/hv-uikit-react/commit/645c32f89d26caaed630f730623a27cabc8208b2))
+* change [Event] to React.[Event] ([d7a7da5](https://github.com/lumada-design/hv-uikit-react/commit/d7a7da52910d0e0f15fc2bc4d8fef9c8198353b9))
+* **radioGroup:** orientation is optional ([55b7f3e](https://github.com/lumada-design/hv-uikit-react/commit/55b7f3e6f8d6c2a227097bab41ccab2b72fd6ae8))
+
+
+### Features
+
+* **datepicker:** adding clear button.HVUIKIT-5845 ([eda9590](https://github.com/lumada-design/hv-uikit-react/commit/eda9590f44cc3a043180db6d4ba6f69aecfc8c59))
+* **file-uploader:** allow optional labels. ([0fe7209](https://github.com/lumada-design/hv-uikit-react/commit/0fe720960fb3533060ffbe4748ae6cd7fc9b71f4))
+* **fileuploader:** adjust labels, spacing and prop name. HVUIKIT-5975 ([bb6cde4](https://github.com/lumada-design/hv-uikit-react/commit/bb6cde44eaa76e87567663df6443723aafb42d54))
+
+
+
+
+
 # [3.41.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.40.1...@hv/uikit-react-core@3.41.0) (2021-08-26)
 
 
