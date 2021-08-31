@@ -4,6 +4,7 @@ import React, { useState, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import { ClickAwayListener, withStyles } from "@material-ui/core";
 import { usePopper } from "react-popper";
+import maxSize from "popper-max-size-modifier";
 import clsx from "clsx";
 import { DropUpXS, DropDownXS } from "@hv/uikit-react-icons";
 import { HvTypography, useUniqueId } from "..";
@@ -66,6 +67,22 @@ const HvBaseDropdown = ({
     state.styles.popper.width = `${state.rects.reference.width}px`;
   }, []);
 
+  const widthCalculatorEffect = useCallback(({ state }) => {
+    // eslint-disable-next-line no-param-reassign
+    state.elements.popper.style.width = `${state.elements.reference.offsetWidth}px`;
+  }, []);
+
+  const maxSizeCalculator = useCallback(({ state }) => {
+    // The `maxSize` modifier provides this data
+    const { width, height } = state.modifiersData.maxSize;
+    // eslint-disable-next-line no-param-reassign
+    state.styles.popper = {
+      ...state.styles.popper,
+      maxWidth: `${width}px`,
+      maxHeight: `${height}px`,
+    };
+  }, []);
+
   const modifiers = useMemo(
     () => [
       {
@@ -74,10 +91,19 @@ const HvBaseDropdown = ({
         phase: "beforeWrite",
         requires: ["computeStyles"],
         fn: widthCalculator,
+        effect: widthCalculatorEffect,
+      },
+      maxSize,
+      {
+        name: "applyMaxSize",
+        enabled: true,
+        phase: "beforeWrite",
+        requires: ["maxSize"],
+        fn: maxSizeCalculator,
       },
       ...popperPropsModifiers,
     ],
-    [popperPropsModifiers, variableWidth, widthCalculator]
+    [maxSizeCalculator, popperPropsModifiers, variableWidth, widthCalculator, widthCalculatorEffect]
   );
 
   const { styles: popperStyles, attributes } = usePopper(referenceElement, popperElement, {
