@@ -23,7 +23,24 @@ const newEntry = (i) => {
   };
 };
 
+const controlledSelectedEntry = (i) => {
+  const r = rand.next();
+  const [dateMax, dateMin] = [2018, 2022].map((y) => new Date(y, 0).getTime());
+  return {
+    id: `${i + 1}`,
+    name: `Event ${i + 1}`,
+    createdDate: formatDate(new Date(rand.next(dateMax, dateMin))),
+    eventType: "Anomaly detection",
+    status: getOption(["Closed", "Open"], i),
+    riskScore: rand.next(100, 10),
+    severity: getOption(["Critical", "Major", "Average", "Minor"], i),
+    priority: (r > 0.66 && "High") || (r > 0.33 && "Medium") || "Low",
+    selected: r < 0.66,
+  };
+};
+
 export const makeData = (len = 10) => range(len).map(newEntry);
+export const makeSelectedData = (len = 10) => range(len).map(controlledSelectedEntry);
 
 // https://react-table.tanstack.com/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps

@@ -66,15 +66,24 @@ export const getRowPropsHook = (props, { row }) => {
   return [props, nextProps];
 };
 
-export const defaultGetToggleRowSelectedProps = (props, { row }) => {
+export const defaultGetToggleRowSelectedProps = (props, { instance, row }) => {
+  const { manualRowSelectedKey = "isSelected" } = instance;
+  let checked = false;
+
+  if (row.original && row.original[manualRowSelectedKey]) {
+    checked = true;
+  } else {
+    checked = row.isSelected;
+  }
+
   return [
     props,
     {
-      onChange: (e, checked) => {
-        row.toggleRowSelected(checked ?? e?.target?.checked);
+      onChange: (e, check) => {
+        row.toggleRowSelected(check ?? e?.target?.checked);
       },
       disabled: row.isSelectionLocked,
-      checked: row.isSelected,
+      checked,
       indeterminate: row.isSomeSelected,
     },
   ];
