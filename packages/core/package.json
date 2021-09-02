@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-core",
-  "version": "3.42.0",
+  "version": "3.43.0",
   "description": "A collection of React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",

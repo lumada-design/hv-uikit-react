@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.43.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.42.0...@hv/uikit-react-core@3.43.0) (2021-09-02)
+
+
+### Bug Fixes
+
+* **base-dropdown:** prevent bad positioning with popper ([4c84535](https://github.com/lumada-design/hv-uikit-react/commit/4c84535e3b3cc8e84ca9da2d4d0fb8ee2181b940))
+
+
+### Features
+
+* **snackbar:** expose SnackbarContent typescript definitions ([23bd3a8](https://github.com/lumada-design/hv-uikit-react/commit/23bd3a898d40d640086e71099261ad49c7b155fa))
+
+
+
+
+
 # [3.42.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.41.0...@hv/uikit-react-core@3.42.0) (2021-08-30)
 
 
