@@ -17,7 +17,6 @@ const styles = (theme) => ({
   },
   container: {
     zIndex: theme.zIndex.tooltip,
-    maxWidth: "100vh",
   },
   containedPopper: {
     width: "100%",
