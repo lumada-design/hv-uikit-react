@@ -1,2 +1,2 @@
-export { default as SnackbarContent } from "./SnackbarContentWrapper";
+export { default } from "./SnackbarContentWrapper";
 export * from "./SnackbarContentWrapper";

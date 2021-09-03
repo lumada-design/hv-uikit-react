@@ -2,7 +2,7 @@ import { StandardProps, SnackbarContentProps } from "@material-ui/core";
 import { ActionGeneric } from "../../ActionsGeneric";
 import { SemanticVariantTypes } from "../../Banner";
 
-export type HvSnackbarContentWrapperClassKey =
+export type HvSnackbarContentClassKey =
   | "root"
   | "success"
   | "error"
@@ -12,12 +12,8 @@ export type HvSnackbarContentWrapperClassKey =
   | "messageText"
   | "action";
 
-export interface HvSnackbarContentWrapperProps
-  extends StandardProps<
-    SnackbarContentProps,
-    HvSnackbarContentWrapperClassKey,
-    "action" | "variant"
-  > {
+export interface HvSnackbarContentProps
+  extends StandardProps<SnackbarContentProps, HvSnackbarContentClassKey, "action" | "variant"> {
   /**
    * The message to display.
    */
@@ -44,6 +40,4 @@ export interface HvSnackbarContentWrapperProps
   actionCallback?: (id: string, action: ActionGeneric) => void;
 }
 
-export default function HvSnackbarContentWrapper(
-  props: HvSnackbarContentWrapperProps
-): JSX.Element | null;
+export default function HvSnackbarContent(props: HvSnackbarContentProps): JSX.Element | null;

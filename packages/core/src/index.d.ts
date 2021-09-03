@@ -148,7 +148,7 @@ export * from "./Switch";
 export { default as HvSnackbar } from "./Snackbar";
 export * from "./Snackbar";
 
-export { default as HvSnackbarContentWrapper } from "./Snackbar/SnackbarContentWrapper";
+export { default as HvSnackbarContent } from "./Snackbar/SnackbarContentWrapper";
 export * from "./Snackbar/SnackbarContentWrapper";
 
 export { default as HvTab } from "./Tab";
