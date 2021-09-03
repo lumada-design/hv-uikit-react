@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.43.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.43.0...@hv/uikit-react-core@3.43.1) (2021-09-03)
+
+
+### Bug Fixes
+
+* **breadcrumb:** typo in typescript export. [#2538](https://github.com/lumada-design/hv-uikit-react/issues/2538) ([0348563](https://github.com/lumada-design/hv-uikit-react/commit/03485639dc8a65b5ce5ec3f2a3eff94a5f2f92bf))
+* **snackbar:** typos in typescript export ([c79442d](https://github.com/lumada-design/hv-uikit-react/commit/c79442dae48306adb6a67aec7404e9e4035583e8))
+* **theme:** add and fix typescript definitions. [#2554](https://github.com/lumada-design/hv-uikit-react/issues/2554) ([01507f2](https://github.com/lumada-design/hv-uikit-react/commit/01507f2ecf8283e50f01b439d9b65069b59ff98f))
+
+
+
+
+
 # [3.43.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.42.0...@hv/uikit-react-core@3.43.0) (2021-09-02)
 
 

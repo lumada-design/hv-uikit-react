@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.27.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.26.1...@hv/uikit-react-lab@3.27.0) (2021-09-03)
+
+
+### Features
+
+* **table:** add manual row selection key. HVUIKIT-5958 ([9b0b7da](https://github.com/lumada-design/hv-uikit-react/commit/9b0b7daafe89118482daabb025012150c52f8ea7))
+
+
+
+
+
 ## [3.26.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.26.0...@hv/uikit-react-lab@3.26.1) (2021-09-02)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
