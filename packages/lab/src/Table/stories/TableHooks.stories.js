@@ -33,7 +33,7 @@ import {
   useHvRowExpand,
 } from "../..";
 
-import { makeData, getColumns, useServerData } from "./utils";
+import { makeData, makeSelectedData, getColumns, useServerData } from "./utils";
 import LoadingContainer from "./LoadingContainer";
 
 export const Main = () => {
@@ -192,6 +192,51 @@ export const Selection = () => {
 
             return (
               <HvTableRow {...row.getRowProps()}>
+                {row.cells.map((cell) => (
+                  <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
+                ))}
+              </HvTableRow>
+            );
+          })}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  );
+};
+
+export const ControlledSelection = () => {
+  const columns = useMemo(() => getColumns(), []);
+  const initialData = useMemo(() => makeSelectedData(6), []);
+  const [data, setData] = useState(initialData);
+
+  const { getTableProps, getTableBodyProps, prepareRow, headers, rows } = useHvTable(
+    { columns, data, manualRowSelectedKey: "selected" },
+    useHvRowSelection
+  );
+
+  return (
+    <HvTableContainer>
+      <HvTable {...getTableProps()}>
+        <HvTableHead>
+          <HvTableRow>
+            {headers.map((col) => (
+              <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
+            ))}
+          </HvTableRow>
+        </HvTableHead>
+        <HvTableBody {...getTableBodyProps()}>
+          {rows.map((row, index) => {
+            prepareRow(row);
+
+            return (
+              <HvTableRow
+                onChange={(event) => {
+                  const newData = [...data];
+                  newData[index].selected = event.target.checked;
+                  setData(newData);
+                }}
+                {...row.getRowProps()}
+              >
                 {row.cells.map((cell) => (
                   <HvTableCell {...cell.getCellProps()}>{cell.render("Cell")}</HvTableCell>
                 ))}

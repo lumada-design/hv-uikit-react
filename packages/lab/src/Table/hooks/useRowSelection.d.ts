@@ -23,6 +23,7 @@ export type UseHvRowSelectionTableOptions = Partial<{
   autoResetSelectedRows: boolean;
   autoResetLockedSelectionRows: boolean;
   selectSubRows: boolean;
+  manualRowSelectedKey: string;
 }>;
 
 export interface UseHvRowSelectionHooks<D extends object> {
