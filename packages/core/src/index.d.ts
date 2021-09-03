@@ -22,7 +22,7 @@ export * from "./Banner";
 export { default as HvBarchart } from "./Barchart";
 export * from "./Barchart";
 
-export { default as HvBreadCrumb } from "./BreadCrumb";
+export { default as HvBreadcrumb } from "./BreadCrumb";
 export * from "./BreadCrumb";
 
 export { default as HvBulkActions } from "./BulkActions";
