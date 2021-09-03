@@ -67,7 +67,8 @@ export { default as HvBaseSwitch } from "./BaseSwitch";
 export { default as HvSwitch } from "./Switch";
 
 export { default as HvSnackbar } from "./Snackbar";
-export * from "./Snackbar";
+export { default as HvSnackbarContent } from "./Snackbar/SnackbarContentWrapper";
+
 export { default as HvTab } from "./Tab";
 export { default as HvTag } from "./Tag";
 export { default as HvTable } from "./Table";
