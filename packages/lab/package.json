@@ -51,6 +51,7 @@
     "@types/react-table": "^7.7.1",
     "clsx": "^1.1.1",
     "core-js": "^3.8.1",
+    "dayjs": "^1.10.6",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
     "moment-timezone": "^0.5.31",

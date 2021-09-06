@@ -16,6 +16,9 @@ export * from "./Slider";
 export { default as HvTable } from "./Table";
 export * from "./Table";
 
+export { default as HvTimeAgo } from "./TimeAgo";
+export * from "./TimeAgo";
+
 export { default as HvTimePicker } from "./TimePicker";
 export * from "./TimePicker";
 
