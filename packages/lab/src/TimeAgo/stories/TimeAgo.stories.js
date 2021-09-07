@@ -91,13 +91,9 @@ export const LocaleOverride = () => {
     setTime(newDate.getTime());
   };
 
-  const handleLocaleChange = async (event, value) => {
-    const newLocale = value;
+  const handleLocaleChange = async (event, newLocale) => {
     await import(`dayjs/locale/${newLocale}`);
-    dayjs.locale(newLocale);
-
     setLocale(newLocale);
-    setTime(time + 1); // force update for locale update
   };
 
   return (
@@ -105,7 +101,6 @@ export const LocaleOverride = () => {
       <div>
         <HvRadioGroup orientation="horizontal" value={locale} onChange={handleLocaleChange}>
           <HvRadio label="🇬🇧 English" value="en" />
-          <HvRadio label="🇹🇹 English (TT)" value="en-tt" />
           <HvRadio label="🇫🇷 French" value="fr" />
           <HvRadio label="🇩🇪 German" value="de" />
           <HvRadio label="🇵🇹 Portuguese" value="pt" />
@@ -113,7 +108,7 @@ export const LocaleOverride = () => {
       </div>
       <div>
         <HvTypography variant="sTitle">
-          <HvTimeAgo timestamp={time} />
+          <HvTimeAgo timestamp={time} locale={locale} />
         </HvTypography>
         <span>{new Date(time).toISOString()}</span>
       </div>
@@ -127,9 +122,11 @@ export const LocaleOverride = () => {
 LocaleOverride.parameters = {
   docs: {
     description: {
-      story: `Sample dates and locale controlled externally.
-        HvTimeAgo leverages dayjs for locales and custom dates - to use a locale, import it with ${`dayjs/locale/<locale>`}.
-        Locale strings can be overridden using [dayjs.updateLocale](https://day.js.org/docs/en/plugin/update-locale)`,
+      story:
+        // eslint-disable-next-line no-multi-str
+        "Sample dates and locale controlled externally.<br /> \
+        `HvTimeAgo` leverages `dayjs` for locales and custom dates. To use a locale, import it with `dayjs/locale/{locale}`<br />\
+        Locale strings can be overridden using [dayjs.updateLocale](https://day.js.org/docs/en/plugin/update-locale)",
     },
   },
 };

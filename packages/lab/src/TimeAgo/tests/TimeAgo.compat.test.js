@@ -119,7 +119,12 @@ describe("TimeAgo", () => {
     );
     expect(wrapper.find(HvTypography).length).toEqual(1);
     expect(wrapper.find(HvTypography).props().children).toEqual(mockDateToTimeAgo.timeAgo);
-    expect(formatTimeAgoMockSeconds).toHaveBeenNthCalledWith(1, expect.anything(), true);
+    expect(formatTimeAgoMockSeconds).toHaveBeenNthCalledWith(
+      1,
+      expect.anything(),
+      expect.anything(),
+      true
+    );
   });
 
   it("should render a Typography with a dash when timestamp is not defined", () => {

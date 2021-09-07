@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { HvTypography } from "@hv/uikit-react-core";
+import { HvTypography, useLocale } from "@hv/uikit-react-core";
 import useTimeAgo from "./useTimeAgo";
 import styles from "./styles";
 
@@ -11,13 +11,17 @@ import styles from "./styles";
 const HvTimeAgo = ({
   classes,
   timestamp,
+  locale: localeProp,
   component: Component = HvTypography,
   emptyElement = "—",
+  disableRefresh = false,
   showSeconds = false,
   justText = false,
   ...others
 }) => {
-  const timeAgo = useTimeAgo(timestamp, { showSeconds });
+  const contextLocale = useLocale();
+  const locale = localeProp || contextLocale;
+  const timeAgo = useTimeAgo(timestamp, { locale, disableRefresh, showSeconds });
 
   if (justText && timestamp) return timeAgo;
 
@@ -43,6 +47,11 @@ HvTimeAgo.propTypes = {
    */
   timestamp: PropTypes.number,
   /**
+   * The locale to be used. Should be on of the dayjs supported locales
+   * @see https://day.js.org/docs/en/i18n/i18n
+   */
+  locale: PropTypes.string,
+  /**
    * The component used for the root node. Either a string to use a HTML element or a component.
    * Defaults to `div`.
    */
@@ -52,6 +61,10 @@ HvTimeAgo.propTypes = {
    * Defaults to `—` (Em Dash)
    */
   emptyElement: PropTypes.node,
+  /**
+   * Disables periodic date refreshes
+   */
+  disableRefresh: PropTypes.bool,
   /**
    * Whether to show seconds in the rendered time
    */

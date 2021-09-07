@@ -70,14 +70,15 @@ const secondsUntilNextWeek = (date = new Date()) => {
  * Formats a date to the a relative time format using dayjs.
  *
  * @param {Date} date - date to format.
+ * @param {String} locale - locale to use.
  * @param {Boolean} [showSeconds=false] - if seconds should be part of the result.
  * @param {Date} referenceDate - reference date to use when formatting (defaults to current date).
  *
  * @return {TimeAgo} the formatted date using the "time ago format" and the time until it needs to be updated
  */
-export const formatTimeAgo = (date, showSeconds = false, referenceDate = new Date()) => {
+export const formatTimeAgo = (date, locale, showSeconds = false, referenceDate = new Date()) => {
   const dayReferenceDate = dayjs(referenceDate);
-  const dayDate = dayjs(date);
+  const dayDate = dayjs(date).locale(locale);
 
   const dayDiffSeconds = dayReferenceDate.diff(dayDate, "second");
 
@@ -94,7 +95,7 @@ export const formatTimeAgo = (date, showSeconds = false, referenceDate = new Dat
   // just now, until the 2 minutes
   if (dayDiffSeconds < 120) {
     return {
-      timeAgo: dayjs.duration(dayDiffSeconds, "second").humanize(),
+      timeAgo: dayjs.duration(dayDiffSeconds, "second").locale(locale).humanize(),
       delay: 120 - dayDiffSeconds,
     };
   }
@@ -104,7 +105,7 @@ export const formatTimeAgo = (date, showSeconds = false, referenceDate = new Dat
 
   if (dayDiffMinutes < 60) {
     return {
-      timeAgo: dayjs.duration(-dayDiffMinutes, "minute").humanize(true),
+      timeAgo: dayjs.duration(-dayDiffMinutes, "minute").locale(locale).humanize(true),
       delay: 60 * (dayDiffMinutes + 1) - dayDiffSeconds,
     };
   }

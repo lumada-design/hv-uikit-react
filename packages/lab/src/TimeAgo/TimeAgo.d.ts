@@ -10,6 +10,11 @@ export interface HvTimeAgoProps
    */
   timestamp?: number;
   /**
+   * The locale to be used. Should be on of the dayjs supported locales and explicitly imported
+   * @see https://day.js.org/docs/en/i18n/i18n
+   */
+  locale?: string;
+  /**
    * The component used for the root node. Either a string to use a HTML element or a component.
    * Defaults to `HvTypography`.
    */
@@ -19,6 +24,10 @@ export interface HvTimeAgoProps
    * Defaults to `—` (Em Dash)
    */
   emptyElement?: React.ReactNode;
+  /**
+   * Disables periodic date refreshes
+   */
+  disableRefresh?: boolean;
   /**
    * Whether to show seconds in the rendered time
    */
