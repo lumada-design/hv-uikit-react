@@ -21,11 +21,6 @@ export type HvTimePickerClassKey =
 export interface HvTimePickerProps
   extends StandardProps<HvFormElementProps, HvTimePickerClassKey, "onChange"> {
   /**
-   * Class names to be applied.
-   */
-  className: string;
-
-  /**
    * Id to be applied to the form element root node.
    */
   id?: string;
@@ -93,7 +88,7 @@ export interface HvTimePickerProps
   /**
    * Extra properties to be passed to the timepicker dropdown.
    */
-  dropdownProps: HvBaseDropdownProps;
+  dropdownProps?: HvBaseDropdownProps;
 }
 
 export default function HvTimePicker(props: HvTimePickerProps): JSX.Element | null;
