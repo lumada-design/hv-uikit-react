@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import moment from "moment/moment";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import { HvTypography, withTooltip } from "@hv/uikit-react-core";
-
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
+
+dayjs.extend(relativeTime);
 
 const hideTooltip = (evt) => evt.target.scrollHeight <= evt.target.clientHeight;
 
@@ -30,13 +32,13 @@ const Notification = ({
   locale,
 }) => {
   const getTime = () => {
-    moment.locale(locale);
+    dayjs.locale(locale);
 
     if (!isRead) {
-      return moment(date).fromNow();
+      return dayjs(date).fromNow();
     }
 
-    const d = moment(date);
+    const d = dayjs(date);
     let format = "D MMMM YYYY, h:mm A";
 
     if (d.isSame(Date.now(), "week")) {

@@ -7,6 +7,8 @@ export { default as HvNotificationPanel } from "./NotificationPanel";
 export { default as HvSlider } from "./Slider";
 export { default as HvTable } from "./Table";
 export * from "./Table";
+export { default as HvTimeAgo } from "./TimeAgo";
+export * from "./TimeAgo";
 export { default as HvTimePicker } from "./TimePicker";
 export { default as HvTag } from "./Tag";
 export { default as HvDrawer } from "./Drawer";
