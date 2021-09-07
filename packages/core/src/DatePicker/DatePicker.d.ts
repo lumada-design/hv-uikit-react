@@ -28,6 +28,10 @@ export interface HvDatePickerProps
      * Cancel button label.
      */
     cancelLabel?: string;
+    /**
+     * Clear button label.
+     */
+    clearLabel?: string;
   };
 
   /**
@@ -65,7 +69,7 @@ export interface HvDatePickerProps
    */
   showActions?: boolean;
   /**
-   * Controls if clear button is visible at the calendar, 
+   * Controls if clear button is visible at the calendar,
    * only works if showing actions or in range mode.
    */
   showClear?: boolean;
