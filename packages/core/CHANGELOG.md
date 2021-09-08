@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.43.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.43.1...@hv/uikit-react-core@3.43.2) (2021-09-08)
+
+
+### Bug Fixes
+
+* **date-picker:** labels ts definition HVUIKIT-5990 ([c7a94e9](https://github.com/lumada-design/hv-uikit-react/commit/c7a94e96c7e42cfd808d0bb0d0b2354f78369d82))
+
+
+
+
+
 ## [3.43.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.43.0...@hv/uikit-react-core@3.43.1) (2021-09-03)
 
 

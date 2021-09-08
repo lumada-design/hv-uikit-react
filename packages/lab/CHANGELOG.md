@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.27.0...@hv/uikit-react-lab@3.28.0) (2021-09-08)
+
+
+### Bug Fixes
+
+* **timepicker:** optional props ([9e13271](https://github.com/lumada-design/hv-uikit-react/commit/9e13271ad9258a1180d3ef70ece4330235d7f222))
+
+
+### Features
+
+* **timeago:** add component ([c8752b9](https://github.com/lumada-design/hv-uikit-react/commit/c8752b90b5c049f80950f2d4c366bc2a4b6f11b1))
+
+
+
+
+
 # [3.27.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.26.1...@hv/uikit-react-lab@3.27.0) (2021-09-03)
 
 
