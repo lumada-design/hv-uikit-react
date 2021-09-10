@@ -5,6 +5,7 @@ import { PopperProps } from "@material-ui/core/Popper";
 export type HvBaseDropdownClassKey =
   | "root"
   | "rootDisabled"
+  | "container"
   | "header"
   | "headerOpen"
   | "headerOpenUp"
