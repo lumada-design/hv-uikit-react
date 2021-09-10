@@ -172,7 +172,7 @@ DropDownMenu.propTypes = {
    */
   dataList: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string.isRequired,
+      label: PropTypes.node.isRequired,
       selected: PropTypes.bool,
       disabled: PropTypes.bool,
       icon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
