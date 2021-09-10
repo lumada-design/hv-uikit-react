@@ -242,7 +242,7 @@ const HvBaseDropdown = ({
       <div
         role="tooltip"
         ref={setPopperElement}
-        className={clsx(classes.container)}
+        className={classes.container}
         style={popperStyles.popper}
         {...attributes.popper}
       >
