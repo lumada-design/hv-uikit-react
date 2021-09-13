@@ -50,6 +50,7 @@
     "@hv/uikit-common-themes": "^3.1.2",
     "@hv/uikit-react-icons": "^3.4.2",
     "@popperjs/core": "2.6.0",
+    "@types/react-window": "^1.8.5",
     "attr-accept": "^2.2.2",
     "clsx": "^1.1.1",
     "core-js": "^3.8.1",
@@ -68,7 +69,9 @@
     "react-popper": "^2.2.4",
     "react-resize-detector": "^6.7.4",
     "react-table": "6.8.6",
-    "react-table-hoc-fixed-columns": "2.1.1"
+    "react-table-hoc-fixed-columns": "2.1.1",
+    "react-virtualized-auto-sizer": "^1.0.6",
+    "react-window": "^1.8.6"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.6",

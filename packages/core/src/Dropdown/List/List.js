@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import { withStyles } from "@material-ui/core";
+import { withStyles, makeStyles, useTheme } from "@material-ui/core";
 import { setId } from "../../utils";
 import { HvActionBar, HvButton, HvCheckBox, HvList, HvInput, HvTypography } from "../..";
 import { getSelected } from "../utils";
 import styles from "./styles";
+import BaseDropdownContext from "../../BaseDropdown/BaseDropdownContext";
 
 /**
  * The values property was being deeply cloned. That created a significant performance
@@ -36,12 +38,16 @@ const List = ({
   notifyChangesOnFirstRender = false,
   hasTooltips = false,
   singleSelectionToggle,
+  height: dropdownHeight,
+  virtualized = false,
   ...others
 }) => {
   const [searchStr, setSearchStr] = useState("");
   const [list, setList] = useState(clone(values));
   const [allSelected, setAllSelected] = useState(false);
   const [anySelected, setAnySelected] = useState(false);
+  const { width, height } = useContext(BaseDropdownContext);
+  const theme = useTheme();
 
   const newLabels = {
     selectAll: labels.selectAll,
@@ -211,6 +217,28 @@ const List = ({
 
   const showList = valuesExist(values);
 
+  const maxSizeClasses = useMemo(
+    () =>
+      makeStyles({
+        root: {
+          ...(dropdownHeight && { height: dropdownHeight }),
+          maxWidth: width,
+          maxHeight: `calc(${height}px - 32px - ${theme.spacing("xs")}px - ${theme.spacing(
+            "sm"
+          )}px)`,
+          overflow: "auto",
+          padding: 5,
+        },
+        virtualized: {
+          maxWidth: "inherit",
+          maxHeight: "inherit",
+          overflow: "inherit",
+          padding: 0,
+        },
+      }),
+    [width, height, dropdownHeight, theme]
+  )();
+
   return (
     <div className={classes.rootList}>
       <div className={classes.listBorderDown} />
@@ -221,7 +249,11 @@ const List = ({
           <HvList
             id={setId(id, "list")}
             classes={{
-              root: classes.dropdownListContainer,
+              root: clsx(
+                classes.dropdownListContainer,
+                dropdownHeight && maxSizeClasses.root,
+                virtualized && maxSizeClasses.virtualized
+              ),
             }}
             values={list}
             multiSelect={multiSelect}
@@ -233,6 +265,8 @@ const List = ({
             selectable
             condensed
             singleSelectionToggle={singleSelectionToggle}
+            height={dropdownHeight}
+            virtualized={virtualized}
             {...others}
           />
         )}
@@ -288,6 +322,14 @@ List.propTypes = {
    * If `true`, selection can be toggled when single selection.
    */
   singleSelectionToggle: PropTypes.bool.isRequired,
+  /**
+   * Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used
+   */
+  height: PropTypes.number,
+  /**
+   * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
+   */
+  virtualized: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDropdownList" })(List);

@@ -1,6 +1,7 @@
-import React, { isValidElement, useEffect } from "react";
+import React, { isValidElement, useEffect, memo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { FixedSizeList, areEqual } from "react-window";
 
 import { withStyles } from "@material-ui/core";
 import { DropRightXS } from "@hv/uikit-react-icons";
@@ -36,9 +37,12 @@ const HvList = (props) => {
     onChange,
     onClick,
     values: valuesProp = [],
+    height,
+    virtualized = false,
     ...others
   } = props;
   const [list, setList, selection] = useSelectableList(valuesProp);
+  const listRef = React.useRef(null);
 
   useEffect(() => {
     const passedProps = { multiSelect, selectable, singleSelectionToggle };
@@ -168,7 +172,7 @@ const HvList = (props) => {
     return renderItemText(item);
   };
 
-  const renderListItem = (item, i) => {
+  const renderListItem = (item, i, otherProps = {}) => {
     const itemId = setId(id, "item", i);
     const selected = item.selected || false;
 
@@ -189,17 +193,57 @@ const HvList = (props) => {
         onClick={(evt) => handleSelect(evt, item)}
         startAdornment={startAdornment}
         endAdornment={item.showNavIcon && <DropRightXS className={classes.box} iconSize="XS" />}
+        {...otherProps}
       >
         {multiSelect ? renderMultiSelectItem(item, itemId) : renderSingleSelectItem(item, itemId)}
       </HvListItem>
     );
   };
 
+  const filteredList = list.filter((it) => !it.isHidden);
+  const anySelected = list
+    .map((item) => item.selected && !item.disabled)
+    .reduce((result, selected) => result || selected, false);
+
+  const selectedItemIndex = list.findIndex((item) => item.selected);
+  useEffect(() => {
+    if (selectedItemIndex >= 0 && listRef.current !== null) {
+      listRef.current.scrollToItem(selectedItemIndex);
+    }
+  }, [listRef, selectedItemIndex]);
+
+  const ListItem = memo(({ index, style }) => {
+    const item = filteredList[index];
+    const tabIndex =
+      item.tabIndex || (!anySelected && index === 0) || (item.selected && !item.disabled) ? 0 : -1;
+
+    return renderListItem(item, index, {
+      style: {
+        ...style,
+        top: `${parseFloat(style.top) + 5}px`,
+        left: `${parseFloat(style.left) + 5}px`,
+        width: `calc(${parseFloat(style.width)}% - 10px)`,
+      },
+      tabIndex,
+      interactive: true,
+      condensed,
+      disableGutters: useSelector,
+    });
+  }, areEqual);
+  ListItem.propTypes = {
+    index: PropTypes.number.isRequired,
+    style: PropTypes.shape({
+      top: PropTypes.number.isRequired,
+      left: PropTypes.number.isRequired,
+      width: PropTypes.number.isRequired,
+    }).isRequired,
+  };
+
   return (
     <>
       {multiSelect && useSelector && showSelectAll && renderSelectAll()}
 
-      {list && (
+      {filteredList.length > 0 && !virtualized && (
         <HvListContainer
           id={id}
           className={clsx(className, classes.root)}
@@ -210,8 +254,34 @@ const HvList = (props) => {
           aria-multiselectable={(selectable && multiSelect) || undefined}
           {...others}
         >
-          {list.filter((it) => !it.isHidden).map((item, i) => renderListItem(item, i))}
+          {filteredList.map((item, i) => renderListItem(item, i))}
         </HvListContainer>
+      )}
+      {filteredList.length > 0 && virtualized && (
+        <FixedSizeList
+          ref={listRef}
+          className={classes.virtualizedRoot}
+          height={height + 5}
+          width="100%"
+          itemCount={filteredList.length}
+          itemSize={condensed ? 32 : 40}
+          innerElementType={React.forwardRef(({ ...rest }, ref) => (
+            <HvListContainer
+              id={id}
+              className={clsx(className, classes.root)}
+              role={selectable ? "listbox" : "menu"}
+              interactive
+              condensed={condensed}
+              disableGutters={useSelector}
+              aria-multiselectable={(selectable && multiSelect) || undefined}
+              ref={ref}
+              {...rest}
+            />
+          ))}
+          {...others}
+        >
+          {ListItem}
+        </FixedSizeList>
       )}
     </>
   );
@@ -230,6 +300,10 @@ HvList.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the component root class in virtualized form.
+     */
+    virtualizedRoot: PropTypes.string,
     /**
      * Styles applied to the list item selector.
      */
@@ -343,6 +417,14 @@ HvList.propTypes = {
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips: PropTypes.bool,
+  /**
+   * Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used
+   */
+  height: PropTypes.number,
+  /**
+   * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
+   */
+  virtualized: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvList" })(HvList);

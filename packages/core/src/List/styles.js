@@ -1,5 +1,8 @@
 const styles = (theme) => ({
   root: {},
+  virtualizedRoot: {
+    marginBottom: 5,
+  },
 
   selectorRoot: {
     width: "100%",

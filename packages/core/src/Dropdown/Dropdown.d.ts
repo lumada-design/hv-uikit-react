@@ -128,6 +128,14 @@ export interface HvDropdownProps
    * @param {object} event The event source of the callback.
    */
   onClickOutside?: (event: Event) => void;
+  /**
+   * Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used
+   */
+  height?: number;
+  /**
+   * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
+   */
+  virtualized?: boolean;
 }
 
 export default function HvDropdown(props: HvDropdownProps): JSX.Element | null;

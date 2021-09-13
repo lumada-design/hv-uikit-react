@@ -413,3 +413,82 @@ ExternalErrorMessage.parameters = {
     ],
   },
 };
+
+export const WithDefinedHeight = () => {
+  const values1 = [];
+  for (let i = 0; i < 100; i += 1) {
+    values1.push({
+      id: `${i}`,
+      label: `value  ${i}`,
+    });
+  }
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
+          <HvDropdown
+            aria-label="With defined height"
+            values={values1}
+            height={350}
+            hasTooltips
+            showSearch
+          />
+        </HvGrid>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+WithDefinedHeight.parameters = {
+  docs: {
+    description: {
+      story:
+        "Experimental Dropdown with height defined. Note: only validated in the single selection use-case.",
+    },
+  },
+  pa11y: {
+    ignore: ["region"],
+  },
+  eyes: { include: false },
+};
+
+export const WithMoreThan1000Items = () => {
+  const values1 = [];
+  for (let i = 0; i < 1500; i += 1) {
+    values1.push({
+      id: `${i}`,
+      label: `value  ${i}`,
+    });
+  }
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={5} container>
+        <HvGrid item xs={12}>
+          <HvDropdown
+            aria-label="More than 1000 items"
+            values={values1}
+            virtualized
+            height={350}
+            hasTooltips
+            showSearch
+          />
+        </HvGrid>
+      </HvGrid>
+    </HvGrid>
+  );
+};
+
+WithMoreThan1000Items.parameters = {
+  docs: {
+    description: {
+      story:
+        "Experimental Dropdown with virtualized list, which handles performance in lists with a lot of options. Note: only validated in the single selection use-case.",
+    },
+  },
+  pa11y: {
+    ignore: ["region"],
+  },
+  eyes: { include: false },
+};

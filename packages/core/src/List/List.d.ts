@@ -23,6 +23,7 @@ export interface ListLabelsProp {
 
 export type HvListClassKey =
   | "root"
+  | "virtualizedRoot"
   | "selectorRoot"
   | "selectorContainer"
   | "box"
@@ -86,6 +87,14 @@ export interface HvListProps
    * If `true` the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips?: boolean;
+  /**
+   * Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used
+   */
+  height?: number;
+  /**
+   * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
+   */
+  virtualized?: boolean;
 }
 
 export default function HvList(props: HvListProps): JSX.Element | null;
