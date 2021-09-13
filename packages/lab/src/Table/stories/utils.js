@@ -80,6 +80,26 @@ export const getLongNameColumns = () => [
   { Header: "Priority", accessor: "priority" },
 ];
 
+export const getGroupedColumns = () => [
+  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+  { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+  { Header: "Event Info",
+    columns: [
+      { Header: "Status", accessor: "status", style: { width: 120 } },
+      // numeric values should be right-aligned
+      {
+        Header: "Probability",
+        accessor: "riskScore",
+        align: "right",
+        Cell: ({ value }) => `${value}%`,
+      },
+      { Header: "Severity", accessor: "severity" },
+    ]
+  },
+  { Header: "Priority", accessor: "priority" },
+];
+
 export const useToggleIndex = (initialState) => {
   const [index, setIndex] = useState(initialState);
 

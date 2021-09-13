@@ -89,6 +89,7 @@ import {
   UseHvBulkActionsTableOptions,
 } from "./useBulkActions";
 import { UseHvRowExpandTableOptions, UseHvRowExpandRowInstance } from "./useRowExpand";
+import { UseHvHeaderGroupsColumnProps, UseHvHeaderGroupsCellProps } from "./useHeaderGroups";
 
 type Accessor<D extends object> = (
   originalRow: D,
@@ -297,6 +298,7 @@ export interface HvTableHeaderProps
   extends TableHeaderProps,
     UseHvTableStylesTableCellProps,
     UseHvTableStickyColumnProps,
+    UseHvHeaderGroupsColumnProps,
     UseHvSortByColumnProps {}
 export interface HvTableFooterProps extends TableFooterProps, UseHvTableStylesTableCellProps {}
 
@@ -309,6 +311,7 @@ export interface HvTableCellProps
   extends TableCellProps,
     UseHvTableStylesTableCellProps,
     UseHvTableStickyCellProps,
+    UseHvHeaderGroupsCellProps,
     UseHvSortByTableCellProps {}
 
 // #endregion

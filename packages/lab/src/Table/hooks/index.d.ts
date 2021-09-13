@@ -21,3 +21,6 @@ export * from "./useBulkActions";
 
 export { default as useHvRowExpand } from "./useRowExpand";
 export * from "./useRowExpand";
+
+export { default as useHvHeaderGroups } from "./useHeaderGroups";
+export * from "./useHeaderGroups";

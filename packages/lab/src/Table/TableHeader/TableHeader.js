@@ -36,6 +36,9 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
     stickyColumnMostLeft = false,
     stickyColumnLeastRight = false,
 
+    groupColumnMostLeft = false,
+    groupColumnMostRight = false,
+
     sortDirection = "none",
     sorted,
     sortable,
@@ -75,6 +78,9 @@ const HvTableHeader = forwardRef(function HvTableHeader(props, ref) {
           [classes.stickyColumn]: stickyColumn,
           [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
           [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
+
+          [classes.groupColumnMostLeft]: groupColumnMostLeft,
+          [classes.groupColumnMostRight]: groupColumnMostRight,
 
           [classes.sortable]: sortable,
           [classes.sorted]: sorted,
@@ -166,6 +172,15 @@ HvTableHeader.propTypes = {
   stickyColumnLeastRight: PropTypes.bool,
 
   /**
+   * The cell is part of the first column in the group.
+   */
+  groupColumnMostLeft: PropTypes.bool,
+  /**
+   * The cell is part of the last column in the group.
+   */
+  groupColumnMostRight: PropTypes.bool,
+
+  /**
    * Whether or not the cell is sorted
    */
   sorted: PropTypes.bool,
@@ -216,6 +231,15 @@ HvTableHeader.propTypes = {
      * Styles applied to the cell when it's part of the first right sticky column.
      */
     stickyColumnLeastRight: PropTypes.string,
+
+    /**
+     * Styles applied to the cell when it's part of the first column in the group.
+     */
+    groupColumnMostLeft: PropTypes.string,
+    /**
+     * Styles applied to the cell when it's part of the last column in the group.
+     */
+    groupColumnMostRight: PropTypes.string,
 
     /**
      * Styles applied to the container of the header cell content.
