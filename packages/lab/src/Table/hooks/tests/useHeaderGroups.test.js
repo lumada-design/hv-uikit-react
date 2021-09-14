@@ -196,7 +196,7 @@ describe("useHvTableHeaderGroups", () => {
       const column = { id, parent };
 
       const [existing, props] = headerGroupsHooks.getCellPropsHook(existingProps, {
-        column,
+        cell: { column },
       });
 
       expect(props.groupColumnMostLeft).toBe(id === "first");
