@@ -7,6 +7,7 @@ import * as headerGroupsHooks from "../useHeaderGroups";
 describe("useHvTableHeaderGroups", () => {
   it("registers hooks", () => {
     const hooks = {
+      columns: { push: jest.fn() },
       useInstance: { push: jest.fn() },
       getHeaderProps: { push: jest.fn() },
       getCellProps: { push: jest.fn() }
@@ -14,6 +15,7 @@ describe("useHvTableHeaderGroups", () => {
 
     useHeaderGroups(hooks);
 
+    expect(hooks.columns.push).toHaveBeenCalledWith(headerGroupsHooks.userColumnsHook);
     expect(hooks.useInstance.push).toHaveBeenCalledWith(headerGroupsHooks.useInstanceHook);
 
     // props target: <table><thead><tr><th>
@@ -22,7 +24,28 @@ describe("useHvTableHeaderGroups", () => {
     expect(hooks.getCellProps.push).toHaveBeenCalledWith(headerGroupsHooks.getCellPropsHook);
   });
 
+  describe("userColumnsHook", () => {
+    it("set the align property to 'center' on group columns", () => {
+
+      const columns = [
+        { Header: "Event Type", align: "left" },
+        { Header: "Info", columns: [{ Header: "Event Type" }, { Header: "Status" }] },
+        { Header: "Status" }
+      ];
+
+      renderHook(() => headerGroupsHooks.userColumnsHook(columns));
+
+      expect(columns[0].align).toEqual("left");
+      expect(columns[1].align).toEqual("center");
+      expect(columns[2].align).toBeUndefined();
+    });
+  });
+
   describe("useInstanceHook", () => {
+    const replacedPlaceholderHeaders = (headers) => {
+      return headers.some((h) => h.rowSpan != null);
+    };
+
     it("replaces top level placeholder headers with original header", () => {
       const header = { Header: "Title", id: "title" };
       const placeholderHeader = { Header: "", id: "title_placeholder", placeholderOf: header };
@@ -47,34 +70,16 @@ describe("useHvTableHeaderGroups", () => {
 
       renderHook(() => headerGroupsHooks.useInstanceHook(instance));
 
-      expect(headerGroups[0].headers[0].id).toEqual(header.id);
-      expect(headerGroups[1].headers[0].id).toEqual(placeholderHeader.id);
-    });
+      expect(replacedPlaceholderHeaders(headerGroups[0].headers)).toBe(true);
 
-    it("aligns group headers to 'center'", () => {
-      const header = { Header: "Title", id: "title" };
-
-      const headerGroups = [
-        {
-          headers: [
-            { Header: "", id: "title_placeholder", placeholderOf: header },
-            { Header: "Info", headers: [{ Header: "Event Type" }, { Header: "Status" }] }
-          ]
-        },
-        {
-          headers: [
-            header,
-            { Header: "Event Type" }, { Header: "Status" }
-          ]
-        }
-      ];
-
-      const instance = { headerGroups, getHooks: () => ({}) };
-
-      renderHook(() => headerGroupsHooks.useInstanceHook(instance));
-
-      expect(headerGroups[0].headers[0].align).toBeUndefined();
-      expect(headerGroups[0].headers[1].align).toEqual("center");
+      expect(headerGroups[0].headers[0]).toEqual(expect.objectContaining({
+        id: header.id,
+        rowSpan: headerGroups.length
+      }));
+      expect(headerGroups[1].headers[0]).toEqual(expect.objectContaining({
+        id: placeholderHeader.id,
+        depth: headerGroups.length - 1
+      }));
     });
 
     it("with less than two header groups, should do nothing", () => {
@@ -89,9 +94,31 @@ describe("useHvTableHeaderGroups", () => {
 
       renderHook(() => headerGroupsHooks.useInstanceHook(instance));
 
-      expect(headers[0].align).toBeUndefined();
-      expect(headers[1].align).toBeUndefined();
-      expect(headers[2].align).toBeUndefined();
+      expect(replacedPlaceholderHeaders(headers)).toBe(false);
+    });
+
+    it("without placeholder headers, should do nothing", () => {
+      const headers = [
+        { Header: "Title", headers: [{ Header: "Name" }] },
+        { Header: "Info", headers: [{ Header: "Event Type" }, { Header: "Status" }] }
+      ];
+
+      const headerGroups = [
+        { headers },
+        {
+          headers: [
+            { Header: "Name" },
+            { Header: "Event Type" },
+            { Header: "Status" }
+          ]
+        }
+      ];
+
+      const instance = { headerGroups, getHooks: () => ({}) };
+
+      renderHook(() => headerGroupsHooks.useInstanceHook(instance));
+
+      expect(replacedPlaceholderHeaders(headers)).toBe(false);
     });
   });
 

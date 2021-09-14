@@ -1,7 +1,5 @@
 /* eslint-disable no-param-reassign */
 
-import { useEffect } from "react";
-
 /**
  * Moving non grouped headers to the top level,
  * by placing them in the position of their top level placeholder.
@@ -20,17 +18,19 @@ const replaceHeaderPlaceholders = (headerGroups) => {
 
   const [ headerGroup ] = headerGroups;
 
+  const hasPlaceholderHeaders = headerGroup.headers.some((h) => h.placeholderOf != null);
+  if (!hasPlaceholderHeaders) {
+    return; // no placeholder header found to replace
+  }
+
   const maxDepth = groupLevels - 1;
   const leafGroup = headerGroups[maxDepth];
 
   headerGroup.headers.forEach((header, position) => {
-    header.rowSpan = 1;
-
     const { placeholderOf } = header;
-    if (placeholderOf == null) {
-      // group header must be aligned to center
-      header.align = "center";
-    } else {
+
+    const isPlaceholderHeader = placeholderOf != null;
+    if (isPlaceholderHeader) {
       // is placeholder header
       const leafIndex = leafGroup.headers.slice(position).findIndex(({ id }) => id === placeholderOf.id) + position;
 
@@ -60,7 +60,7 @@ export const getHeaderPropsHook = (props, { column }) => {
   const nextProps = getColumnBoundaryProps(column);
 
   if (column.depth === 0) {
-    nextProps.rowSpan = column.rowSpan;
+    nextProps.rowSpan = column.rowSpan ?? 1;
   }
 
   if (column.placeholderOf != null) {
@@ -77,13 +77,20 @@ export const getCellPropsHook = (props, { cell }) => {
   return [props, nextProps];
 };
 
+export const userColumnsHook = (userColumns) => userColumns.map((column) => {
+  if (column.columns?.length > 0) {
+    column.align = "center"; // group column must be aligned to center
+  }
+
+  return column;
+});
+
 export const useInstanceHook = (instance) => {
-  useEffect(() => {
-    replaceHeaderPlaceholders(instance.headerGroups);
-  }, [instance.headerGroups]);
+  replaceHeaderPlaceholders(instance.headerGroups);
 };
 
 const useHeaderGroups = (hooks) => {
+  hooks.columns.push(userColumnsHook);
   hooks.useInstance.push(useInstanceHook);
 
   // props target: <table><thead><tr><th>
