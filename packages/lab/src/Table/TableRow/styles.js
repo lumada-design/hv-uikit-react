@@ -10,8 +10,11 @@ const styles = (theme) => ({
     },
   },
   head: {
-    height: 52,
-    "tr&": {
+    "&:first-child": {
+      height: 52,
+    },
+
+    "tr&:first-child": {
       height: 52,
     },
   },

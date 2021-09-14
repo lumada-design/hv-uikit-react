@@ -82,6 +82,21 @@ const styles = (theme) => ({
   stickyColumnLeastRight: {
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
+
+  groupColumnMostLeft: {
+    borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+
+    "&:first-child,$groupColumnMostRight+&": {
+      borderLeft: 0,
+    },
+  },
+  groupColumnMostRight: {
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+
+    "&:last-child": {
+      borderRight: 0,
+    },
+  },
 });
 
 export default styles;

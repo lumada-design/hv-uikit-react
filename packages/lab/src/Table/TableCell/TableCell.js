@@ -32,6 +32,9 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
     stickyColumnMostLeft = false,
     stickyColumnLeastRight = false,
 
+    groupColumnMostLeft = false,
+    groupColumnMostRight = false,
+
     sorted = false,
 
     ...others
@@ -61,6 +64,9 @@ const HvTableCell = forwardRef(function HvTableCell(props, ref) {
           [classes.stickyColumn]: stickyColumn,
           [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
           [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
+
+          [classes.groupColumnMostLeft]: groupColumnMostLeft,
+          [classes.groupColumnMostRight]: groupColumnMostRight,
         },
         className
       )}
@@ -126,6 +132,15 @@ HvTableCell.propTypes = {
   stickyColumnLeastRight: PropTypes.bool,
 
   /**
+   * The cell is part of the first column in the group.
+   */
+  groupColumnMostLeft: PropTypes.bool,
+  /**
+   * The cell is part of the last column in the group.
+   */
+  groupColumnMostRight: PropTypes.bool,
+
+  /**
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
@@ -159,6 +174,15 @@ HvTableCell.propTypes = {
      * Styles applied to the cell when it's part of the first right sticky column.
      */
     stickyColumnLeastRight: PropTypes.string,
+
+    /**
+     * Styles applied to the cell when it's part of the first column in the group.
+     */
+    groupColumnMostLeft: PropTypes.string,
+    /**
+     * Styles applied to the cell when it's part of the last column in the group.
+     */
+    groupColumnMostRight: PropTypes.string,
 
     /**
      * Styles applied to the cell when it's part of a sorted column.

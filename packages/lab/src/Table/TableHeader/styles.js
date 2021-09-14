@@ -2,6 +2,7 @@ import { hexToRgbA } from "@hv/uikit-react-core";
 
 const styles = (theme) => ({
   root: {
+    height: 32,
     verticalAlign: "inherit",
     textAlign: "left",
     padding: theme.hvSpacing(0, "xs", 0, "32px"),
@@ -10,12 +11,15 @@ const styles = (theme) => ({
   },
 
   head: {
-    height: 52,
+    ":first-child > &": {
+      height: 52,
+      borderTop: `1px solid ${theme.palette.atmo4}`,
+    },
+
     paddingTop: 8,
     verticalAlign: "top",
 
     backgroundColor: theme.palette.atmo1,
-    borderTop: `1px solid ${theme.palette.atmo4}`,
     borderBottom: `1px solid ${theme.palette.atmo4}`,
     ...theme.hv.typography.highlightText,
 
@@ -54,7 +58,6 @@ const styles = (theme) => ({
     },
   },
   body: {
-    height: 32,
     backgroundColor: "inherit",
     ...theme.hv.typography.normalText,
 
@@ -132,13 +135,26 @@ const styles = (theme) => ({
     position: "sticky",
     zIndex: 2,
   },
-
   stickyColumnMostLeft: {
     borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
   },
-
   stickyColumnLeastRight: {
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+  },
+
+  groupColumnMostLeft: {
+    borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+
+    "&:first-child,$groupColumnMostRight+&": {
+      borderLeft: 0,
+    },
+  },
+  groupColumnMostRight: {
+    borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+
+    "&:last-child": {
+      borderRight: 0,
+    },
   },
 
   sortable: {},
