@@ -75,6 +75,8 @@ const HvDropdown = (props) => {
     placement,
     variableWidth = false,
     popperProps = {},
+    height,
+    virtualized = false,
   } = props;
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
@@ -98,6 +100,11 @@ const HvDropdown = (props) => {
   useEffect(() => {
     setSelectionLabel(getSelectionLabel(values, labels, placeholder, multiSelect));
   }, [labels, multiSelect, placeholder, values]);
+
+  if (virtualized && !height && process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.error("Dropdown/List in virtualized mode requires a height. Please define it.");
+  }
 
   const dropdownHeaderRef = useRef();
 
@@ -311,6 +318,8 @@ const HvDropdown = (props) => {
           hasTooltips={hasTooltips}
           singleSelectionToggle={singleSelectionToggle}
           aria-labelledby={hasLabel ? setId(elementId, "label") : undefined}
+          height={height}
+          virtualized={virtualized}
         />
       </HvBaseDropdown>
       {canShowError && (
@@ -582,6 +591,15 @@ HvDropdown.propTypes = {
    * @ignore
    */
   onBlur: PropTypes.func,
+
+  /**
+   * Experimental. Height of the dropdown, in case you want to control it from a prop. Styles can also be used through dropdownListContainer class. Required in case virtualized is used
+   */
+  height: PropTypes.number,
+  /**
+   * Experimental. Uses dropdown in a virtualized form, where not all options are rendered initially. Good for use cases with a lot of options.
+   */
+  virtualized: PropTypes.bool,
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(HvDropdown);

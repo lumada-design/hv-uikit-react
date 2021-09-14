@@ -19,6 +19,8 @@ import {
 } from "../utils";
 import styles from "./styles";
 
+import BaseDropdownContext from "./BaseDropdownContext";
+
 const { Tab, Enter, Esc, Space, ArrowDown } = KeyboardCodes;
 
 const HvBaseDropdown = ({
@@ -49,6 +51,7 @@ const HvBaseDropdown = ({
   const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
 
   const [referenceElement, setReferenceElement] = useState(null);
+  const [popperMaxSize, setPopperMaxSize] = useState({});
 
   const handleDropdownHeaderRefProp = useForkRef(dropdownHeaderRefProp, dropdownHeaderProps?.ref);
   const handleDropdownHeaderRef = useForkRef(setReferenceElement, handleDropdownHeaderRefProp);
@@ -72,16 +75,23 @@ const HvBaseDropdown = ({
     state.elements.popper.style.width = `${state.elements.reference.offsetWidth}px`;
   }, []);
 
-  const maxSizeCalculator = useCallback(({ state }) => {
-    // The `maxSize` modifier provides this data
-    const { width, height } = state.modifiersData.maxSize;
-    // eslint-disable-next-line no-param-reassign
-    state.styles.popper = {
-      ...state.styles.popper,
-      maxWidth: `${width}px`,
-      maxHeight: `${height}px`,
-    };
-  }, []);
+  const maxSizeCalculator = useCallback(
+    ({ state }) => {
+      // The `maxSize` modifier provides this data
+      const { width, height } = state.modifiersData.maxSize;
+      if (width !== popperMaxSize.width || height !== popperMaxSize.height) {
+        setPopperMaxSize({ width, height });
+      }
+
+      // eslint-disable-next-line no-param-reassign
+      state.styles.popper = {
+        ...state.styles.popper,
+        maxWidth: `${width}px`,
+        maxHeight: `${height}px`,
+      };
+    },
+    [popperMaxSize]
+  );
 
   const modifiers = useMemo(
     () => [
@@ -257,9 +267,11 @@ const HvBaseDropdown = ({
                 })}
               />
             )}
-            <div id={setId(elementId, "children-container")} className={classes.panel}>
-              {children}
-            </div>
+            <BaseDropdownContext.Provider value={popperMaxSize}>
+              <div id={setId(elementId, "children-container")} className={classes.panel}>
+                {children}
+              </div>
+            </BaseDropdownContext.Provider>
             {popperPlacement.includes("top") && (
               <div
                 style={{ width: extensionWidth }}

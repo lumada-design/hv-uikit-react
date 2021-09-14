@@ -30,6 +30,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
         "selectorContainer": "HvList-selectorContainer",
         "selectorRoot": "HvList-selectorRoot",
         "truncate": "HvList-truncate",
+        "virtualizedRoot": "HvList-virtualizedRoot",
       }
     }
     onChange={[MockFunction]}
@@ -558,6 +559,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
         "selectorContainer": "HvList-selectorContainer",
         "selectorRoot": "HvList-selectorRoot",
         "truncate": "HvList-truncate",
+        "virtualizedRoot": "HvList-virtualizedRoot",
       }
     }
     values={
@@ -1376,6 +1378,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
         "selectorContainer": "HvList-selectorContainer",
         "selectorRoot": "HvList-selectorRoot",
         "truncate": "HvList-truncate",
+        "virtualizedRoot": "HvList-virtualizedRoot",
       }
     }
     selectDefault={true}
