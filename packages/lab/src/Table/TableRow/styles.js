@@ -11,12 +11,12 @@ const styles = (theme) => ({
   },
   head: {
     "&:first-child": {
-      height: 52
+      height: 52,
     },
 
     "tr&:first-child": {
       height: 52,
-    }
+    },
   },
   body: {},
   footer: {},

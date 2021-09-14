@@ -10,7 +10,7 @@ describe("useHvTableHeaderGroups", () => {
       columns: { push: jest.fn() },
       useInstance: { push: jest.fn() },
       getHeaderProps: { push: jest.fn() },
-      getCellProps: { push: jest.fn() }
+      getCellProps: { push: jest.fn() },
     };
 
     useHeaderGroups(hooks);
@@ -26,11 +26,10 @@ describe("useHvTableHeaderGroups", () => {
 
   describe("userColumnsHook", () => {
     it("set the align property to 'center' on group columns", () => {
-
       const columns = [
         { Header: "Event Type", align: "left" },
         { Header: "Info", columns: [{ Header: "Event Type" }, { Header: "Status" }] },
-        { Header: "Status" }
+        { Header: "Status" },
       ];
 
       renderHook(() => headerGroupsHooks.userColumnsHook(columns));
@@ -54,16 +53,12 @@ describe("useHvTableHeaderGroups", () => {
         {
           headers: [
             placeholderHeader,
-            { Header: "Info", headers: [{ Header: "Event Type" }, { Header: "Status" }] }
-          ]
+            { Header: "Info", headers: [{ Header: "Event Type" }, { Header: "Status" }] },
+          ],
         },
         {
-          headers: [
-            header,
-            { Header: "Event Type" },
-            { Header: "Status" }
-          ]
-        }
+          headers: [header, { Header: "Event Type" }, { Header: "Status" }],
+        },
       ];
 
       const instance = { headerGroups, getHooks: () => ({}) };
@@ -72,22 +67,22 @@ describe("useHvTableHeaderGroups", () => {
 
       expect(replacedPlaceholderHeaders(headerGroups[0].headers)).toBe(true);
 
-      expect(headerGroups[0].headers[0]).toEqual(expect.objectContaining({
-        id: header.id,
-        rowSpan: headerGroups.length
-      }));
-      expect(headerGroups[1].headers[0]).toEqual(expect.objectContaining({
-        id: placeholderHeader.id,
-        depth: headerGroups.length - 1
-      }));
+      expect(headerGroups[0].headers[0]).toEqual(
+        expect.objectContaining({
+          id: header.id,
+          rowSpan: headerGroups.length,
+        })
+      );
+      expect(headerGroups[1].headers[0]).toEqual(
+        expect.objectContaining({
+          id: placeholderHeader.id,
+          depth: headerGroups.length - 1,
+        })
+      );
     });
 
     it("with less than two header groups, should do nothing", () => {
-      const headers = [
-        { Header: "Title" },
-        { Header: "Event Type" },
-        { Header: "Status" }
-      ];
+      const headers = [{ Header: "Title" }, { Header: "Event Type" }, { Header: "Status" }];
       const headerGroups = [{ headers }];
 
       const instance = { headerGroups, getHooks: () => ({}) };
@@ -100,18 +95,14 @@ describe("useHvTableHeaderGroups", () => {
     it("without placeholder headers, should do nothing", () => {
       const headers = [
         { Header: "Title", headers: [{ Header: "Name" }] },
-        { Header: "Info", headers: [{ Header: "Event Type" }, { Header: "Status" }] }
+        { Header: "Info", headers: [{ Header: "Event Type" }, { Header: "Status" }] },
       ];
 
       const headerGroups = [
         { headers },
         {
-          headers: [
-            { Header: "Name" },
-            { Header: "Event Type" },
-            { Header: "Status" }
-          ]
-        }
+          headers: [{ Header: "Name" }, { Header: "Event Type" }, { Header: "Status" }],
+        },
       ];
 
       const instance = { headerGroups, getHooks: () => ({}) };
@@ -128,11 +119,11 @@ describe("useHvTableHeaderGroups", () => {
 
       const column = {
         depth: 0,
-        rowSpan: 1
+        rowSpan: 1,
       };
 
       const [existing, props] = headerGroupsHooks.getHeaderPropsHook(existingProps, {
-        column
+        column,
       });
 
       expect(props.groupColumnMostLeft).toBeTruthy();
@@ -149,11 +140,11 @@ describe("useHvTableHeaderGroups", () => {
 
       const column = {
         depth: 1,
-        placeholderOf: { Header: "Mock" }
+        placeholderOf: { Header: "Mock" },
       };
 
       const [existing, props] = headerGroupsHooks.getHeaderPropsHook(existingProps, {
-        column
+        column,
       });
 
       expect(props.groupColumnMostLeft).toBeTruthy();
@@ -167,18 +158,10 @@ describe("useHvTableHeaderGroups", () => {
 
     describe("headers with parent", () => {
       const parent = {
-        columns: [
-          { id: "first" },
-          { id: "center" },
-          { id: "last" }
-        ]
+        columns: [{ id: "first" }, { id: "center" }, { id: "last" }],
       };
 
-      const cases = [
-        ["first"],
-        ["center"],
-        ["last"]
-      ];
+      const cases = [["first"], ["center"], ["last"]];
 
       test.each(cases)("id: %p", (id) => {
         const existingProps = {};
@@ -186,7 +169,7 @@ describe("useHvTableHeaderGroups", () => {
         const column = { id, parent };
 
         const [existing, props] = headerGroupsHooks.getHeaderPropsHook(existingProps, {
-          column
+          column,
         });
 
         expect(props.groupColumnMostLeft).toBe(id === "first");
@@ -202,18 +185,10 @@ describe("useHvTableHeaderGroups", () => {
 
   describe("getCellPropsHook (<table><tbody><tr><td>)", () => {
     const parent = {
-      columns: [
-        { id: "first" },
-        { id: "center" },
-        { id: "last" }
-      ]
+      columns: [{ id: "first" }, { id: "center" }, { id: "last" }],
     };
 
-    const cases = [
-      ["first"],
-      ["center"],
-      ["last"]
-    ];
+    const cases = [["first"], ["center"], ["last"]];
 
     test.each(cases)("id: %p", (id) => {
       const existingProps = {};
@@ -221,7 +196,7 @@ describe("useHvTableHeaderGroups", () => {
       const column = { id, parent };
 
       const [existing, props] = headerGroupsHooks.getCellPropsHook(existingProps, {
-        column
+        column,
       });
 
       expect(props.groupColumnMostLeft).toBe(id === "first");

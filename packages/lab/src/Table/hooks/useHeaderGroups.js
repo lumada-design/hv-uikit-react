@@ -16,7 +16,7 @@ const replaceHeaderPlaceholders = (headerGroups) => {
     return; // no sub headers defined
   }
 
-  const [ headerGroup ] = headerGroups;
+  const [headerGroup] = headerGroups;
 
   const hasPlaceholderHeaders = headerGroup.headers.some((h) => h.placeholderOf != null);
   if (!hasPlaceholderHeaders) {
@@ -32,7 +32,8 @@ const replaceHeaderPlaceholders = (headerGroups) => {
     const isPlaceholderHeader = placeholderOf != null;
     if (isPlaceholderHeader) {
       // is placeholder header
-      const leafIndex = leafGroup.headers.slice(position).findIndex(({ id }) => id === placeholderOf.id) + position;
+      const leafIndex =
+        leafGroup.headers.slice(position).findIndex(({ id }) => id === placeholderOf.id) + position;
 
       // store leaf placeholder header
       header.depth = maxDepth;
@@ -51,7 +52,7 @@ const getColumnBoundaryProps = (column) => {
 
   return {
     groupColumnMostLeft: groupIdx === 0,
-    groupColumnMostRight: groupIdx === groupColumns.length - 1
+    groupColumnMostRight: groupIdx === groupColumns.length - 1,
   };
 };
 
@@ -64,7 +65,7 @@ export const getHeaderPropsHook = (props, { column }) => {
   }
 
   if (column.placeholderOf != null) {
-    nextProps.style = { ...props.style, display: "none" }
+    nextProps.style = { ...props.style, display: "none" };
   }
 
   return [props, nextProps];
@@ -77,13 +78,14 @@ export const getCellPropsHook = (props, { cell }) => {
   return [props, nextProps];
 };
 
-export const userColumnsHook = (userColumns) => userColumns.map((column) => {
-  if (column.columns?.length > 0) {
-    column.align = "center"; // group column must be aligned to center
-  }
+export const userColumnsHook = (userColumns) =>
+  userColumns.map((column) => {
+    if (column.columns?.length > 0) {
+      column.align = "center"; // group column must be aligned to center
+    }
 
-  return column;
-});
+    return column;
+  });
 
 export const useInstanceHook = (instance) => {
   replaceHeaderPlaceholders(instance.headerGroups);

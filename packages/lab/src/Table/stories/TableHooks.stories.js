@@ -905,16 +905,19 @@ export const GroupedHeaders = () => {
   const columns = useMemo(() => getGroupedColumns(), []);
   const data = useMemo(() => makeData(), []);
 
-  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable({
-    columns,
-    data
-  }, useHvHeaderGroups);
+  const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } = useHvTable(
+    {
+      columns,
+      data,
+    },
+    useHvHeaderGroups
+  );
 
   return (
     <HvTableContainer>
       <HvTable {...getTableProps()}>
         <HvTableHead>
-          {headerGroups.map(headerGroup => (
+          {headerGroups.map((headerGroup) => (
             <HvTableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((col) => (
                 <HvTableHeader {...col.getHeaderProps()}>{col.render("Header")}</HvTableHeader>
@@ -943,5 +946,5 @@ export const GroupedHeaders = () => {
 GroupedHeaders.parameters = {
   docs: {
     description: { story: "A table example with grouped headers." },
-  }
+  },
 };

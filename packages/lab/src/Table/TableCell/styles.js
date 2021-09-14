@@ -87,14 +87,14 @@ const styles = (theme) => ({
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
 
     "&:first-child,$groupColumnMostRight+&": {
-      borderLeft: 0
+      borderLeft: 0,
     },
   },
   groupColumnMostRight: {
     borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
 
     "&:last-child": {
-      borderRight: 0
+      borderRight: 0,
     },
   },
 });
