@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.44.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.43.2...@hv/uikit-react-core@3.44.0) (2021-09-15)
+
+
+### Bug Fixes
+
+* **basedropdown:** add container class to types ([bc998c9](https://github.com/lumada-design/hv-uikit-react/commit/bc998c9dc674d5a01a0329e24aa5ed959d397f53))
+* **dropdownmenu:** label types ([02fd062](https://github.com/lumada-design/hv-uikit-react/commit/02fd062dbf96983610e0ea455dde1db94d836e18))
+
+
+### Features
+
+* **dropdown:** add experimental virtualized list. HVUIKIT-6001 ([d4a68d6](https://github.com/lumada-design/hv-uikit-react/commit/d4a68d6db304e3c662cd3817ddad46536aa2de3f))
+
+
+
+
+
 ## [3.43.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.43.1...@hv/uikit-react-core@3.43.2) (2021-09-08)
 
 

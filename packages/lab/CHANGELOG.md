@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.28.0...@hv/uikit-react-lab@3.29.0) (2021-09-15)
+
+
+### Features
+
+* **table:** fix header broken layout ([b8b1fb9](https://github.com/lumada-design/hv-uikit-react/commit/b8b1fb9cb9e2219d6f5598d0a92416a06f448ee2))
+* **table:** fix lint ([f587140](https://github.com/lumada-design/hv-uikit-react/commit/f5871404f4070ab4f71d6d3b8c0240d5ca9b5a1c))
+* **table:** fix unit test ([50729f1](https://github.com/lumada-design/hv-uikit-react/commit/50729f1c89ac279ecfa0fa0115db4b4c652b150a))
+* **table:** make header groups compliant with Design System guidelines ([e005766](https://github.com/lumada-design/hv-uikit-react/commit/e005766e6df889d4426085a0e6f82e6a7062d60d))
+
+
+
+
+
 # [3.28.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.27.0...@hv/uikit-react-lab@3.28.0) (2021-09-08)
 
 
