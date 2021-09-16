@@ -1,6 +1,5 @@
 import React, { useMemo, useState, useRef, useContext } from "react";
 import PropTypes from "prop-types";
-import { isEqual } from "lodash";
 import { Filters } from "@hv/uikit-react-icons";
 import { FilterGroupContext } from "../FilterGroupContext";
 import LeftPanel from "../LeftPanel";
@@ -13,10 +12,7 @@ import { setId, HvBaseDropdown, HvTypography, HvButton, HvActionBar } from "../.
 
 const FilterContent = ({
   id,
-
   status,
-  value,
-
   disabled = false,
 
   "aria-label": ariaLabel,
@@ -41,7 +37,9 @@ const FilterContent = ({
   const classes = useStyles();
   const [filterGroupOpen, setFilterGroupOpen] = useState(false);
 
-  const { filterValues, setFilterValues, rollbackFilterValues } = useContext(FilterGroupContext);
+  const { filterValues, rollbackFilters, clearFilters, applyFilters, applyDisabled } = useContext(
+    FilterGroupContext
+  );
 
   const focusTarget = useRef();
 
@@ -50,19 +48,19 @@ const FilterContent = ({
   };
 
   const onApplyHandler = (evt) => {
-    setFilterValues(filterValues, true);
+    applyFilters();
     onChange?.(evt, filterValues);
     setFilterGroupOpen(false);
   };
 
   const onCancelHandler = (evt) => {
-    rollbackFilterValues();
+    rollbackFilters();
     onCancel?.(evt);
     setFilterGroupOpen(false);
   };
 
   const onClearHandler = (evt) => {
-    setFilterValues([]);
+    clearFilters();
     onClear?.(evt);
   };
 
@@ -106,7 +104,7 @@ const FilterContent = ({
       onClickOutside={onCancelHandler}
       onContainerCreation={focusOnContainer}
       placeholder={Header}
-      adornment={<Counter value={value} />}
+      adornment={<Counter />}
       popperProps={{ modifiers: [{ name: "preventOverflow", enabled: escapeWithReference }] }}
       aria-haspopup="dialog"
       aria-label={ariaLabel}
@@ -137,7 +135,7 @@ const FilterContent = ({
         </div>
         <HvButton
           id={setId(id, "apply-button")}
-          disabled={isEqual(value?.sort(), filterValues?.sort())}
+          disabled={applyDisabled}
           category="ghost"
           onClick={onApplyHandler}
         >
@@ -174,8 +172,6 @@ FilterContent.propTypes = {
     selectAll: PropTypes.string,
     multiSelectionConjunction: PropTypes.string,
   }),
-
-  value: PropTypes.arrayOf(PropTypes.string),
 
   horizontalPlacement: PropTypes.oneOf(["left", "right"]),
   disablePortal: PropTypes.bool,

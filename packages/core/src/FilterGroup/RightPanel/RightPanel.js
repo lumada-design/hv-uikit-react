@@ -1,5 +1,6 @@
 import React, { useMemo, useContext, useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
+import cloneDeep from "lodash/cloneDeep";
 import clsx from "clsx";
 import { FilterGroupContext } from "../FilterGroupContext";
 import useStyles from "./styles";
@@ -21,8 +22,8 @@ const RightPanel = ({ id, className, labels }) => {
   );
 
   const activeFilterValues = useMemo(
-    () => filterValues.filter((value) => activeGroupOptions.includes(value)),
-    [filterValues, activeGroupOptions]
+    () => filterValues[activeGroup]?.filter((value) => activeGroupOptions.includes(value)),
+    [filterValues, activeGroupOptions, activeGroup]
   );
 
   const listValues = useMemo(
@@ -30,14 +31,14 @@ const RightPanel = ({ id, className, labels }) => {
       filterOptions[activeGroup].data.map((option) => ({
         ...option,
         label: option.name,
-        selected: filterValues.includes(option.id),
+        selected: filterValues[activeGroup]?.includes(option.id),
         isHidden: option.name.toLowerCase().indexOf(searchStr.toLowerCase()) < 0,
       })),
     [filterOptions, filterValues, activeGroup, searchStr]
   );
 
   const updateSelectAll = useCallback(() => {
-    const nbrSelected = activeFilterValues.length;
+    const nbrSelected = activeFilterValues?.length;
     const hasSelection = nbrSelected > 0;
     const allSelect = nbrSelected === activeGroupOptions.length;
 
@@ -52,19 +53,19 @@ const RightPanel = ({ id, className, labels }) => {
   useEffect(() => setSearchStr(""), [activeGroup]);
 
   const onChangeHandler = (values) => {
-    setFilterValues(
-      filterValues
-        .filter((option) => !activeGroupOptions.includes(option))
-        .concat(values.filter((v) => v.selected).map((v) => v.id))
+    const newFilterValues = filterOptions.map((option, i) =>
+      activeGroup === i
+        ? values.filter((v) => v.selected).map((v) => v.id)
+        : [...(filterValues[i] || [])]
     );
+    setFilterValues(newFilterValues);
   };
 
   const handleSelectAll = () => {
-    setFilterValues(
-      filterValues
-        .filter((option) => !activeGroupOptions.includes(option))
-        .concat(anySelected ? [] : activeGroupOptions)
-    );
+    const newFilterValues = cloneDeep(filterValues);
+    newFilterValues[activeGroup] = anySelected ? [] : activeGroupOptions;
+
+    setFilterValues(newFilterValues);
   };
 
   /**
@@ -74,7 +75,7 @@ const RightPanel = ({ id, className, labels }) => {
    */
   const SelectAll = () => {
     const { selectAll, multiSelectionConjunction } = labels;
-    const nbrSelected = activeFilterValues.length;
+    const nbrSelected = activeFilterValues?.length;
 
     const defaultLabel = (
       <HvTypography component="span">
