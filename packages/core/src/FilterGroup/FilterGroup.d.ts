@@ -3,6 +3,10 @@ import { HvFormElementProps } from "..";
 
 export type HvFilterGroupClassKey = "root" | "labelContainer" | "label" | "description" | "error";
 
+interface FilterValue {
+  value: string | number[][];
+}
+
 export interface HvFilterGroupProps
   extends StandardProps<HvFormElementProps, HvFilterGroupClassKey> {
   /**
@@ -14,6 +18,11 @@ export interface HvFilterGroupProps
    * The callback fired when the clear filters button is clicked.
    */
   onClear: (event: Event) => void;
+
+  /**
+   * The callback fired when the value changes.
+   */
+  onChange?: (event: Event, value: FilterValue) => void;
 
   /**
    * An Object containing the various text associated with the input.
@@ -61,7 +70,7 @@ export interface HvFilterGroupProps
     id: string;
     name: string;
     data: {
-      id: string;
+      id: string | number;
       name: string;
       checked?: boolean;
     }[];
@@ -70,7 +79,7 @@ export interface HvFilterGroupProps
   /**
    * The value of the filter group.
    */
-  value?: string[];
+  value?: FilterValue;
 
   /**
    * The placement where the filter group should be placed according to the input. Options are `left` or `right`.

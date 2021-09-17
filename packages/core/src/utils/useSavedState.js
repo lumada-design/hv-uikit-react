@@ -13,5 +13,5 @@ export default function useSavedState(defaultState) {
     setState(submittedState);
   };
 
-  return [state, changeState, rollback];
+  return [state, changeState, rollback, submittedState];
 }

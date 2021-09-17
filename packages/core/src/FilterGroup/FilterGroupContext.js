@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import isEqual from "lodash/isEqual";
 import { useSavedState } from "../utils";
 
 export const FilterGroupContext = React.createContext({
@@ -9,13 +10,32 @@ export const FilterGroupContext = React.createContext({
   setFilterOptions: () => {},
   filterValues: [],
   setFilterValues: () => {},
-  rollbackFilterValues: () => {},
+  rollbackFilters: () => {},
   clearFilters: () => {},
+  applyFilters: () => {},
+  applyDisabled: false,
 });
+
+const groups = (filters) => filters.map(() => []);
 
 export const FilterGroupProvider = ({ value, filters, children }) => {
   const [group, setActiveGroup] = useState(0);
-  const [filterValues, setFilterValues, rollbackFilterValues] = useSavedState(value);
+  const [filterValues, setFilterValues, rollbackFilters, appliedFilters] = useSavedState(
+    value || groups(filters)
+  );
+  const [applyDisabled, setApplyDisabled] = useState(false);
+
+  useEffect(() => {
+    setApplyDisabled(isEqual(filterValues, appliedFilters));
+  }, [filterValues, appliedFilters]);
+
+  const clearFilters = () => {
+    setFilterValues(groups(filters));
+  };
+
+  const applyFilters = () => {
+    setFilterValues(filterValues, true);
+  };
 
   return (
     <FilterGroupContext.Provider
@@ -25,8 +45,11 @@ export const FilterGroupProvider = ({ value, filters, children }) => {
         filterOptions: filters,
         filterValues,
         setFilterValues,
-        rollbackFilterValues,
-        clearFilters: () => setFilterValues([]),
+        appliedFilters,
+        rollbackFilters,
+        clearFilters,
+        applyFilters,
+        applyDisabled,
       }}
     >
       {children}
@@ -35,14 +58,16 @@ export const FilterGroupProvider = ({ value, filters, children }) => {
 };
 
 FilterGroupProvider.propTypes = {
-  value: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  ),
   filters: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       data: PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.string.isRequired,
+          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
           name: PropTypes.string.isRequired,
         })
       ).isRequired,

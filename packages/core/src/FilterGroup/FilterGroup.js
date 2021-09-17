@@ -120,7 +120,6 @@ const HvFilterGroup = ({
           onCancel={onCancel}
           onClear={onClear}
           labels={labels}
-          value={value}
           height={height}
           {...filterContentProps}
         />
@@ -255,7 +254,7 @@ HvFilterGroup.propTypes = {
       name: PropTypes.string.isRequired,
       data: PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.string.isRequired,
+          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
           name: PropTypes.string.isRequired,
         })
       ).isRequired,
@@ -265,7 +264,9 @@ HvFilterGroup.propTypes = {
   /**
    * The value of the filter group.
    */
-  value: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]))
+  ),
   /**
    * The placement where the filter group should be placed according to the input. Options are `left` or `right`.
    */

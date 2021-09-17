@@ -19,7 +19,11 @@ export default {
 };
 
 export const Main = () => {
-  const [value, setValue] = useState(["category1", "subsubcategory1", "subsubcategory2"]);
+  const [value, setValue] = useState([
+    ["category1"],
+    [],
+    [1, "subsubcategory2", "subsubcategory8"],
+  ]);
 
   const filters = [
     {
@@ -36,7 +40,7 @@ export const Main = () => {
       id: "subcategory",
       name: "Sub-Category",
       data: [
-        { id: "subcategory1", name: "Sub Category Categoryyyyyyyyy is a very long string 1" },
+        { id: "category1", name: "Sub Category Categoryyyyyyyyy is a very long string 1" },
         { id: "subcategory2", name: "Sub Category 2" },
         { id: "subcategory3", name: "Sub Category 3" },
         { id: "subcategory4", name: "Sub Category 4" },

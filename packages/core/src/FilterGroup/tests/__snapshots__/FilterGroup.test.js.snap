@@ -59,7 +59,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
               class="makeStyles-root-13"
             >
               <b>
-                3
+                4
               </b>
                / 20
             </div>
@@ -147,7 +147,7 @@ exports[`<FilterGroup /> Can be opened 1`] = `
                         class="makeStyles-root-13 HvListItem-endAdornment"
                       >
                         <b>
-                          2
+                          3
                         </b>
                          / 12
                       </div>
@@ -682,7 +682,7 @@ exports[`<FilterGroup /> Main 1`] = `
               class="makeStyles-root-13"
             >
               <b>
-                3
+                4
               </b>
                / 20
             </div>
@@ -740,7 +740,7 @@ exports[`Changes are Canceled committed on cancel 1`] = `
       class="makeStyles-root-13"
     >
       <b>
-        3
+        4
       </b>
        / 20
     </div>
@@ -794,7 +794,7 @@ exports[`Changes are Canceled committed on cancel 2`] = `
       class="makeStyles-root-13"
     >
       <b>
-        3
+        4
       </b>
        / 20
     </div>
@@ -848,7 +848,7 @@ exports[`Changes are Committed on apply 1`] = `
       class="makeStyles-root-13"
     >
       <b>
-        3
+        4
       </b>
        / 20
     </div>
@@ -902,7 +902,7 @@ exports[`Changes are Committed on apply 2`] = `
       class="makeStyles-root-13"
     >
       <b>
-        4
+        5
       </b>
        / 20
     </div>
@@ -968,7 +968,7 @@ exports[`Clear Filters Clears are option selections and reset counters 1`] = `
       class="makeStyles-root-13 HvListItem-endAdornment"
     >
       <b>
-        2
+        3
       </b>
        / 12
     </div>
@@ -1904,8 +1904,8 @@ exports[`Left side selection changes the Right side elements 2`] = `
   role="listbox"
 >
   <li
-    aria-selected="true"
-    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+    aria-selected="false"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
     id="example-list-item-0"
     role="option"
     tabindex="-1"
@@ -1923,13 +1923,12 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
-                checked=""
                 class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
@@ -1938,7 +1937,7 @@ exports[`Left side selection changes the Right side elements 2`] = `
               />
               <div
                 class="HvIconBase-root HvIconBase-s"
-                name="CheckboxCheck"
+                name="Checkbox"
               >
                 <svg
                   focusable="false"
@@ -1950,17 +1949,12 @@ exports[`Left side selection changes the Right side elements 2`] = `
                   <path
                     class="color0"
                     d="M0 0h16v16H0z"
-                    fill="#414141"
-                  />
-                  <path
-                    class="color0"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
+                    fill="#FBFCFC"
                   />
                   <path
                     class="color1"
-                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
-                    fill="#FBFCFC"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
                   />
                 </svg>
               </div>
@@ -2392,8 +2386,8 @@ exports[`Left side selection changes the Right side elements 2`] = `
     </div>
   </li>
   <li
-    aria-selected="false"
-    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvFocus-root HvFocus-focusDisabled"
+    aria-selected="true"
+    class="HvListItem-root HvListItem-condensed HvListItem-interactive HvListItem-selected HvList-itemSelector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
     id="example-list-item-7"
     role="option"
     tabindex="-1"
@@ -2411,12 +2405,13 @@ exports[`Left side selection changes the Right side elements 2`] = `
         >
           <span
             aria-disabled="false"
-            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root HvCheckBox-checkbox HvBaseCheckbox-root PrivateSwitchBase-checked-25 Mui-checked"
           >
             <span
               class="MuiIconButton-label"
             >
               <input
+                checked=""
                 class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-7-selector-input"
@@ -2425,7 +2420,7 @@ exports[`Left side selection changes the Right side elements 2`] = `
               />
               <div
                 class="HvIconBase-root HvIconBase-s"
-                name="Checkbox"
+                name="CheckboxCheck"
               >
                 <svg
                   focusable="false"
@@ -2437,12 +2432,17 @@ exports[`Left side selection changes the Right side elements 2`] = `
                   <path
                     class="color0"
                     d="M0 0h16v16H0z"
-                    fill="#FBFCFC"
+                    fill="#414141"
+                  />
+                  <path
+                    class="color0"
+                    d="M16 16H0V0h16zM1 15h14V1H1z"
+                    fill="#414141"
                   />
                   <path
                     class="color1"
-                    d="M16 16H0V0h16zM1 15h14V1H1z"
-                    fill="#414141"
+                    d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                    fill="#FBFCFC"
                   />
                 </svg>
               </div>
@@ -2792,7 +2792,7 @@ exports[`Right side selection Changes the counters in the expected locations 1`]
       class="makeStyles-root-13 HvListItem-endAdornment"
     >
       <b>
-        2
+        3
       </b>
        / 12
     </div>
@@ -3146,7 +3146,7 @@ exports[`Right side selection Changes the counters in the expected locations 3`]
       class="makeStyles-root-13 HvListItem-endAdornment"
     >
       <b>
-        2
+        3
       </b>
        / 12
     </div>
