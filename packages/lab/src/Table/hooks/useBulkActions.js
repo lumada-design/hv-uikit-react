@@ -77,13 +77,8 @@ export const useInstanceHook = (instance) => {
 };
 
 export const defaultGetHvBulkActionsProps = (props, { instance }) => {
-  const {
-    rows,
-    selectedFlatRows,
-    page,
-    toggleAllRowsSelected,
-    invertedToggleAllRowsSelected,
-  } = instance;
+  const { rows, selectedFlatRows, page, toggleAllRowsSelected, invertedToggleAllRowsSelected } =
+    instance;
 
   const isPaginated = !!page;
 

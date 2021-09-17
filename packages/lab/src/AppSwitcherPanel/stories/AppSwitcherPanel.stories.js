@@ -46,8 +46,7 @@ export const Main = () => {
       target: "_blank",
     },
     {
-      name:
-        "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
       color: "acce2",
       iconElement: <LeftAlign color="acce2" />,
       description: "App 1 description",
@@ -103,8 +102,7 @@ export const Sample2 = () => {
       target: "_blank",
     },
     {
-      name:
-        "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
       color: "acce2",
       iconElement: <LeftAlign color="acce2" />,
       description: "App 1 description",
@@ -190,8 +188,7 @@ Sample3.parameters = {
 export const Sample4 = () => {
   const applicationsList = [
     {
-      name:
-        "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
+      name: "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
       iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
     },

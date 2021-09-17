@@ -165,6 +165,15 @@ VerticalNavigation.propTypes = {
     PropTypes.bool,
     "This logic should be external, i.e. using the HvVerticalNavigation inside a Drawer component."
   ),
+  /**
+   * Aria-label for the button that opens the vertical navigation.
+   *
+   * @deprecated This logic should be external, i.e. using the HvVerticalNavigation inside a Drawer component.
+   */
+  buttonAriaLabel: deprecatedPropType(
+    PropTypes.bool,
+    "This logic should be external, i.e. using the HvVerticalNavigation inside a Drawer component."
+  ),
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigation" })(VerticalNavigation);

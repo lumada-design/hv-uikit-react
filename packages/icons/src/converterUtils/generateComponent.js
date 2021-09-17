@@ -1,4 +1,4 @@
-const dawnTheme = require("../../../themes/src/dawn");
+const dawnTheme = require("../../../themes/src/dawn.json");
 
 const replaceColorsWithTheme = (defaultPalette, themePalette) => {
   let result = defaultPalette;

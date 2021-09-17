@@ -27,29 +27,28 @@ const DEFAULT_VIEW_CONFIGURATION = {
   actions: null,
 };
 
-const CardRenderChooser = (viewConfiguration, render, cardContent, metadata, cardProps) => (
-  data
-) => {
-  const { onSelection, isSelectable, maxVisibleActions, actionsCallback } = viewConfiguration;
-  const actions = setActionsId(viewConfiguration.actions, data.id);
+const CardRenderChooser =
+  (viewConfiguration, render, cardContent, metadata, cardProps) => (data) => {
+    const { onSelection, isSelectable, maxVisibleActions, actionsCallback } = viewConfiguration;
+    const actions = setActionsId(viewConfiguration.actions, data.id);
 
-  return render ? (
-    render(data, { ...viewConfiguration, actions }, metadata, cardProps)
-  ) : (
-    <HvCard onChange={onSelection} selectable={isSelectable} {...data} {...cardProps}>
-      <HvCardContent>{cardContent?.(data)}</HvCardContent>
-      {actions && (
-        <HvActionBar>
-          <HvActionsGeneric
-            actions={actions}
-            actionsCallback={actionsCallback}
-            maxVisibleActions={maxVisibleActions}
-          />
-        </HvActionBar>
-      )}
-    </HvCard>
-  );
-};
+    return render ? (
+      render(data, { ...viewConfiguration, actions }, metadata, cardProps)
+    ) : (
+      <HvCard onChange={onSelection} selectable={isSelectable} {...data} {...cardProps}>
+        <HvCardContent>{cardContent?.(data)}</HvCardContent>
+        {actions && (
+          <HvActionBar>
+            <HvActionsGeneric
+              actions={actions}
+              actionsCallback={actionsCallback}
+              maxVisibleActions={maxVisibleActions}
+            />
+          </HvActionBar>
+        )}
+      </HvCard>
+    );
+  };
 
 const CardView = ({
   id = "",

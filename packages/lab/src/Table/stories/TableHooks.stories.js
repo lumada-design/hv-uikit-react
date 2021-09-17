@@ -483,21 +483,15 @@ export const StickyHeadersAndColumns = () => {
   );
   const data = useMemo(() => makeData(100), []);
 
-  const {
-    getTableProps,
-    getTableHeadProps,
-    getTableBodyProps,
-    prepareRow,
-    headerGroups,
-    rows,
-  } = useHvTable(
-    {
-      columns,
-      data,
-      stickyHeader: true,
-    },
-    useHvTableSticky
-  );
+  const { getTableProps, getTableHeadProps, getTableBodyProps, prepareRow, headerGroups, rows } =
+    useHvTable(
+      {
+        columns,
+        data,
+        stickyHeader: true,
+      },
+      useHvTableSticky
+    );
 
   return (
     <HvTableContainer style={{ maxWidth: 640, maxHeight: 480 }}>

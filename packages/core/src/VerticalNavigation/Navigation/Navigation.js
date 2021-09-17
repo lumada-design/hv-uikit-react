@@ -142,11 +142,10 @@ const Navigation = ({
     [onClick, onToggle, setExpanded]
   );
 
-  const children = useMemo(() => data && createListHierarchy(data, id, classes), [
-    classes,
-    data,
-    id,
-  ]);
+  const children = useMemo(
+    () => data && createListHierarchy(data, id, classes),
+    [classes, data, id]
+  );
 
   return (
     <nav id={id} className={clsx(className, classes.root)} aria-label={label} {...others}>

@@ -9,10 +9,12 @@ const spacing = (theme) => (key) => {
   }
 };
 
-export const hvSpacing = (spacingFn) => (...args) =>
-  args
-    .map(spacingFn)
-    .map((s) => (typeof s === "number" ? `${s}px` : s))
-    .join(" ");
+export const hvSpacing =
+  (spacingFn) =>
+  (...args) =>
+    args
+      .map(spacingFn)
+      .map((s) => (typeof s === "number" ? `${s}px` : s))
+      .join(" ");
 
 export default spacing;

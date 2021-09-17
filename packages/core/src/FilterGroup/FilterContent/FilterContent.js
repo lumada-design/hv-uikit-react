@@ -37,9 +37,8 @@ const FilterContent = ({
   const classes = useStyles();
   const [filterGroupOpen, setFilterGroupOpen] = useState(false);
 
-  const { filterValues, rollbackFilters, clearFilters, applyFilters, applyDisabled } = useContext(
-    FilterGroupContext
-  );
+  const { filterValues, rollbackFilters, clearFilters, applyFilters, applyDisabled } =
+    useContext(FilterGroupContext);
 
   const focusTarget = useRef();
 

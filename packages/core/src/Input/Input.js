@@ -150,13 +150,16 @@ const HvInput = (props) => {
   // validationMessages reference tends to change, as users will not useState for it;
   // dependencies must be more explicit and:
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const errorMessages = useMemo(() => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }), [
-    validationMessages?.error,
-    validationMessages?.requiredError,
-    validationMessages?.minCharError,
-    validationMessages?.maxCharError,
-    validationMessages?.typeMismatchError,
-  ]);
+  const errorMessages = useMemo(
+    () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
+    [
+      validationMessages?.error,
+      validationMessages?.requiredError,
+      validationMessages?.minCharError,
+      validationMessages?.maxCharError,
+      validationMessages?.typeMismatchError,
+    ]
+  );
 
   const validationType = useMemo(() => computeValidationType(type), [type]);
 
