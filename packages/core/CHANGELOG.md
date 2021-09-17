@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.44.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.44.0...@hv/uikit-react-core@3.44.1) (2021-09-17)
+
+
+### Bug Fixes
+
+* **filter-group:** change filter value to selection by group ([6505bfe](https://github.com/lumada-design/hv-uikit-react/commit/6505bfe632d36f0245f56a10bd690676d7ec845d))
+
+
+
+
+
 # [3.44.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.43.2...@hv/uikit-react-core@3.44.0) (2021-09-15)
 
 
