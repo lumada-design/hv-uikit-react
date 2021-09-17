@@ -24,6 +24,8 @@ module.exports = {
     "react/require-default-props": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-fragments": "off",
+    "react/destructuring-assignment": "off",
+    "react/jsx-no-bind": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -44,6 +46,7 @@ module.exports = {
         "no-any": 0,
         "react/prop-types": "off",
         "import/no-extraneous-dependencies": "off",
+        "react/jsx-no-bind": "off",
       },
     },
     {

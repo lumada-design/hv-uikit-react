@@ -34,6 +34,12 @@ export interface HvVerticalNavigationProps
    * @deprecated This logic should be external, i.e. using the HvVerticalNavigation inside a Drawer component.
    */
   closeOnExit?: boolean;
+  /**
+   * Aria-label for the button that opens the vertical navigation.
+   *
+   * @deprecated This logic should be external, i.e. using the HvVerticalNavigation inside a Drawer component.
+   */
+  buttonAriaLabel?: string;
 }
 
 export default function HvVerticalNavigation(props: HvVerticalNavigationProps): JSX.Element | null;
