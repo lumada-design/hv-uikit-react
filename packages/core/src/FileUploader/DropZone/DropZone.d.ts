@@ -6,35 +6,35 @@ export interface HvDropZoneLabelsProp {
   /**
    * Extensions of the accepted file types
    */
-  acceptedFiles: string;
+  acceptedFiles?: string;
   /**
    * Dropzone area label.
    */
-  dropzone: string;
+  dropzone?: string;
   /**
    * Size file warning label.
    */
-  sizeWarning: string;
+  sizeWarning?: string;
   /**
    * Size file warning label.
    */
-  drag: string;
+  drag?: string;
   /**
    * Size file warning label.
    */
-  selectFiles: string;
+  selectFiles?: string;
   /**
    * Theming sheet used to style components
    * */
-  dropFiles: string;
+  dropFiles?: string;
   /**
    * Message to display when file size is greater than allowed
    * */
-  fileSizeError: string;
+  fileSizeError?: string;
   /**
    * Message to display when file type is greater than allowed
    * */
-  fileTypeError: string;
+  fileTypeError?: string;
 }
 
 export type HvDropZoneClassKey =

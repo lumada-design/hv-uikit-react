@@ -7,11 +7,11 @@ export interface FileUploaderLabelsProp extends HvDropZoneLabelsProp {
   /**
    * Conjunction label 'of'
    */
-  progressConjunction: string;
+  progressConjunction?: string;
   /**
    * Value of aria-label to apply to remove file button in FileList
    * */
-  removeFileButtonLabel: string;
+  removeFileButtonLabel?: string;
 }
 
 export type HvFileUploaderClassKey = "root";
