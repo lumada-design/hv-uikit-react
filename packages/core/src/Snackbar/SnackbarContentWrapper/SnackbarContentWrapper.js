@@ -7,17 +7,8 @@ import ActionsGeneric from "../../ActionsGeneric";
 import styles from "./styles";
 
 const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
-  const {
-    id,
-    classes,
-    label,
-    showIcon,
-    customIcon,
-    variant,
-    action,
-    actionCallback,
-    ...others
-  } = props;
+  const { id, classes, label, showIcon, customIcon, variant, action, actionCallback, ...others } =
+    props;
   const icon = customIcon || (showIcon && iconVariant(variant, "base2"));
   const innerAction = React.isValidElement(action) ? action : [action];
 

@@ -10,46 +10,41 @@ const styles = {
   },
 };
 
-const withTooltip = (
-  Component,
-  label = "",
-  placement,
-  hideTooltip,
-  tooltipProps,
-  tooltipContainerProps
-) => (props) => {
-  const [isHoverDisabled, setIsHoverDisabled] = useState(false);
+const withTooltip =
+  (Component, label = "", placement, hideTooltip, tooltipProps, tooltipContainerProps) =>
+  (props) => {
+    const [isHoverDisabled, setIsHoverDisabled] = useState(false);
 
-  const title = <Typography>{label}</Typography>;
+    const title = <Typography>{label}</Typography>;
 
-  const handleMouseEnter = (evt) => {
-    const isHidden = hideTooltip?.(evt);
-    setIsHoverDisabled(isHidden);
-  };
+    const handleMouseEnter = (evt) => {
+      const isHidden = hideTooltip?.(evt);
+      setIsHoverDisabled(isHidden);
+    };
 
-  const handleMouseLeave = () => {
-    setIsHoverDisabled(false);
-  };
+    const handleMouseLeave = () => {
+      setIsHoverDisabled(false);
+    };
 
-  return (
-    <Tooltip
-      style={{ ...styles.truncate }}
-      disableHoverListener={isHoverDisabled}
-      disableFocusListener
-      disableTouchListener
-      title={title}
-      placement={placement}
-      {...tooltipProps}
-    >
-      <div
-        {...tooltipContainerProps}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+    return (
+      <Tooltip
+        style={{ ...styles.truncate }}
+        disableHoverListener={isHoverDisabled}
+        disableFocusListener
+        disableTouchListener
+        title={title}
+        placement={placement}
+        {...tooltipProps}
       >
-        <Component {...props} />
-      </div>
-    </Tooltip>
-  );
-};
+        <div
+          {...tooltipContainerProps}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Component {...props} />
+        </div>
+      </Tooltip>
+    );
+  };
 
 export default withTooltip;

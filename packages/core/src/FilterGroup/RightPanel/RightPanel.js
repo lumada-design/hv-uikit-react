@@ -12,9 +12,8 @@ const RightPanel = ({ id, className, labels }) => {
   const [allSelected, setAllSelected] = useState(false);
   const [anySelected, setAnySelected] = useState(false);
 
-  const { filterOptions, filterValues, setFilterValues, activeGroup } = useContext(
-    FilterGroupContext
-  );
+  const { filterOptions, filterValues, setFilterValues, activeGroup } =
+    useContext(FilterGroupContext);
 
   const activeGroupOptions = useMemo(
     () => filterOptions[activeGroup].data.map((option) => option.id),

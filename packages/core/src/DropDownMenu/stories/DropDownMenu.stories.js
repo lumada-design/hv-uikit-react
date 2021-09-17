@@ -51,9 +51,10 @@ Positioning.parameters = {
 };
 
 export const WithIconsAndActions = () => {
-  const iconSelectedColor = (Icon) => ({ isSelected }) => (
-    <Icon color={isSelected ? "atmo1" : undefined} />
-  );
+  const iconSelectedColor =
+    (Icon) =>
+    ({ isSelected }) =>
+      <Icon color={isSelected ? "atmo1" : undefined} />;
 
   return (
     <HvDropDownMenu

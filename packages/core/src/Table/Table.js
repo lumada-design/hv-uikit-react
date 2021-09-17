@@ -503,9 +503,10 @@ const HvTable = (props) => {
     [columns]
   );
 
-  const hasFixedRightColumns = useMemo(() => columns.some((col) => col.fixed === "right"), [
-    columns,
-  ]);
+  const hasFixedRightColumns = useMemo(
+    () => columns.some((col) => col.fixed === "right"),
+    [columns]
+  );
 
   const hasFixedCheckbox =
     !!idForCheckbox && ((fixedCheckbox === undefined && hasFixedLeftColumns) || fixedCheckbox);

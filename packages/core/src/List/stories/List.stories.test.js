@@ -101,9 +101,10 @@ export const SingleSelection = () => (
 
 export const SingleSelectionWithIcon = () => {
   /* eslint-disable no-nested-ternary */
-  const ColoredIcon = (Icon) => ({ isDisabled }) => (
-    <Icon color={isDisabled ? "atmo5" : undefined} />
-  );
+  const ColoredIcon =
+    (Icon) =>
+    ({ isDisabled }) =>
+      <Icon color={isDisabled ? "atmo5" : undefined} />;
 
   const data = [
     { label: "Advanced server DS120", iconCallback: ColoredIcon(User) },

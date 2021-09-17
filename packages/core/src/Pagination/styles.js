@@ -17,10 +17,11 @@ const styles = (theme) => {
         width: 40,
         minWidth: 40,
         maxWidth: theme.hv.spacing.lg,
-        '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
-          WebkitAppearance: "none",
-          margin: 0,
-        },
+        '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button':
+          {
+            WebkitAppearance: "none",
+            margin: 0,
+          },
       },
       "& $pageSizeInputRoot": {
         backgroundColor: "transparent",

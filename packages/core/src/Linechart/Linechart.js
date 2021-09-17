@@ -25,10 +25,10 @@ const Linechart = ({
   /* Values derived from props */
 
   const chartData = useMemo(() => applyDataDefaults(data, type), [data, type]);
-  const chartLayout = useMemo(() => applyLayoutDefaults(layout, rangeSlider), [
-    layout,
-    rangeSlider,
-  ]);
+  const chartLayout = useMemo(
+    () => applyLayoutDefaults(layout, rangeSlider),
+    [layout, rangeSlider]
+  );
 
   return (
     <Chart
