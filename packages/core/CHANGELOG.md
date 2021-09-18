@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.44.1...@hv/uikit-react-core@3.45.0) (2021-09-18)
+
+
+### Bug Fixes
+
+* **file-uploader:** labels should be optional ([56f36d1](https://github.com/lumada-design/hv-uikit-react/commit/56f36d1c7bd94655dd2840ec2e49330bb37307d5))
+* **file-uploader:** separator file list rendered if needed ([9642c03](https://github.com/lumada-design/hv-uikit-react/commit/9642c03644a61a333c8111497faa6c03e8518f15))
+
+
+### Features
+
+* upgrade dependencies ([23ee616](https://github.com/lumada-design/hv-uikit-react/commit/23ee6167429605bbce7f70e93412b9dd28f5195f))
+
+
+
+
+
 ## [3.44.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.44.0...@hv/uikit-react-core@3.44.1) (2021-09-17)
 
 

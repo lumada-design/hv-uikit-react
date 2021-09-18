@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.5.0 (2021-09-18)
+
+
+### Features
+
+* upgrade dependencies ([23ee616](https://github.com/lumada-design/hv-uikit-react/commit/23ee6167429605bbce7f70e93412b9dd28f5195f))
+
+
+
+
+
 ## 3.4.2 (2021-08-17)
 
 **Note:** Version bump only for package @hv/uikit-react-icons

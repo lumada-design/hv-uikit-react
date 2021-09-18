@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-lab",
-  "version": "3.29.1",
+  "version": "3.30.0",
   "description": "A collection of contributed React components for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "license": "Apache-2.0",
@@ -46,8 +46,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "@hv/uikit-react-core": "^3.44.1",
-    "@hv/uikit-react-icons": "^3.4.2",
+    "@hv/uikit-react-core": "^3.45.0",
+    "@hv/uikit-react-icons": "^3.5.0",
     "@types/react-table": "^7.7.3",
     "clsx": "^1.1.1",
     "core-js": "^3.17.3",
