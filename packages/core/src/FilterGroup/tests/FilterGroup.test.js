@@ -137,7 +137,7 @@ describe("Right side selection", () => {
 
     expect(leftSizeList).toMatchSnapshot();
     expect(rightSizeList).toMatchSnapshot();
-    const checkBox1 = screen.getByRole("checkbox", { name: /category 2/i });
+    const checkBox1 = screen.getByRole("checkbox", { name: /category 3/i });
     userEvent.click(checkBox1);
 
     await waitFor(async () => {
