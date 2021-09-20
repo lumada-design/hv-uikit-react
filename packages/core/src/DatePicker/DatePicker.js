@@ -20,9 +20,10 @@ import {
 import { isInvalid } from "../Forms/FormElement/validationStates";
 import styles from "./styles";
 import { isDate } from "../Calendar/utils";
-import { getDateLabel, isVisibleDate } from "./utils";
+import { getDateLabel } from "./utils";
 import useVisibleDate from "./useVisibleDate";
 import useLocale from "../Provider/useLocale";
+import { NAV_OPTIONS } from "../Calendar/enums";
 
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
@@ -96,7 +97,8 @@ const HvDatePicker = (props) => {
     rangeMode ? startValue : value
   );
   const [endDate, setEndDate, rollbackEndDate] = useSavedState(endValue);
-  const [visibleDate, setVisibleDate, onVisibleDateChange] = useVisibleDate(startDate);
+
+  const [visibleDate, dispatchAction] = useVisibleDate(startDate, endDate);
 
   const focusTarget = useRef();
 
@@ -106,11 +108,30 @@ const HvDatePicker = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, startValue, endValue, rangeMode]);
 
+  const endDateIsSet = useRef(false);
+  endDateIsSet.current = endDate != null;
+
   useEffect(() => {
-    if (!startDate || isVisibleDate(startDate, visibleDate)) return;
-    setVisibleDate(startDate);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [startDate]);
+    if (startDate != null) {
+      dispatchAction({
+        type: NAV_OPTIONS.MONTH_YEAR,
+        target: endDateIsSet.current ? "left" : "best",
+        year: startDate.getFullYear(),
+        month: startDate.getMonth() + 1,
+      });
+    }
+  }, [dispatchAction, startDate]);
+
+  useEffect(() => {
+    if (endDate != null) {
+      dispatchAction({
+        type: NAV_OPTIONS.MONTH_YEAR,
+        target: "right",
+        year: endDate.getFullYear(),
+        month: endDate.getMonth() + 1,
+      });
+    }
+  }, [dispatchAction, endDate]);
 
   /**
    * Handles the `Apply` action. Both single and ranged modes are handled here.
@@ -360,7 +381,9 @@ const HvDatePicker = (props) => {
           startAdornment={startAdornment}
           onChange={handleDateChange}
           onInputChange={handleInputDateChange}
-          onVisibleDateChange={onVisibleDateChange}
+          onVisibleDateChange={(_event, type, month, target) => {
+            dispatchAction({ type, target, month });
+          }}
           locale={locale}
           {...visibleDate}
         />
@@ -518,7 +541,7 @@ HvDatePicker.propTypes = {
   onCancel: PropTypes.func,
 
   /**
-   * The callback fired when user clicks on cancel.
+   * The callback fired when user clicks on clear.
    */
   onClear: PropTypes.func,
 

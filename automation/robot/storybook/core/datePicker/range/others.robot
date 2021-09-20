@@ -13,18 +13,13 @@ show placeholder when dates are empty
     Page Should Contain Element    ${calendarRight} input\[placeholder='MM/DD/YYYY']
 
 shows calendar month when input date
-    [Tags]    run-any-way
-    [Documentation]    Bug  https://insightgroup.atlassian.net/browse/HVUIKIT-5605
     Force input                     ${calendarLeft} input    03 01 2000
     Force input                     ${calendarRight} input    07 30 2000
     Press Keys                      NONE    ENTER
     Element Text Should Be          ${calendarLeft} ${month}    March
-    Run Keyword And Expect Error    *
-    ...   Element Text Should Be    ${calendarRight} ${month}    July
+    Element Text Should Be          ${calendarRight} ${month}    July
 
 shows calendar month when reopen edited calendar
-    [Tags]    run-any-way
-    [Documentation]    Bug  https://insightgroup.atlassian.net/browse/HVUIKIT-5605
     Force input                       ${calendarLeft} input    03 01 2000
     Force input                       ${calendarRight} input    07 30 2000
     Press Keys                        NONE    ENTER
@@ -32,8 +27,7 @@ shows calendar month when reopen edited calendar
     Click Element                     ${datePickerHeader}
     Wait Until Element Is Visible     ${calendar}
     Element Text Should Be            ${calendarLeft} ${month}    March
-    Run Keyword And Expect Error      *
-    ...   Element Text Should Be      ${calendarRight} ${month}    July
+    Element Text Should Be            ${calendarRight} ${month}    July
 
 
 *** Variables ***

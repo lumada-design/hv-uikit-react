@@ -152,7 +152,11 @@ const HvCalendarHeader = ({
       )}
       <div style={{ height: 32 }}>
         {!isValidValue && inputValue !== "" && (
-          <HvTypography variant="normalText" className={classes.invalidMessageStyling}>
+          <HvTypography
+            component="span"
+            variant="normalText"
+            className={classes.invalidMessageStyling}
+          >
             <Info color="acce3" iconSize="S" />
             Invalid date
           </HvTypography>
