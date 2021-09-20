@@ -356,7 +356,7 @@ HvList.propTypes = {
   // eslint-disable-next-line react/no-unused-prop-types
   values: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       label: PropTypes.node.isRequired,
       selected: PropTypes.bool,
       disabled: PropTypes.bool,

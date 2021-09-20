@@ -20,7 +20,7 @@ export default {
 
 export const Main = () => {
   const [value, setValue] = useState([
-    ["category1"],
+    ["category1", 2],
     [],
     [1, "subsubcategory2", "subsubcategory8"],
   ]);
@@ -31,7 +31,7 @@ export const Main = () => {
       name: "Category",
       data: [
         { id: "category1", name: "Categoryyyyyyyyyyyyyyyyyyyyyyyyy is a very long string 1" },
-        { id: "category2", name: "Category 2" },
+        { id: 2, name: "Category 2" },
         { id: "category3", name: "Category 3" },
         { id: "category4", name: "Category 4" },
       ],
