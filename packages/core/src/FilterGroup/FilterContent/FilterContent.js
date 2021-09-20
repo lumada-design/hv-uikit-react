@@ -123,7 +123,7 @@ const FilterContent = ({
       <HvActionBar className={classes.actionBar}>
         <HvButton
           id={setId(id, "clearFilters-button")}
-          disabled={filterValues.length === 0}
+          disabled={filterValues.flat().length === 0}
           category="ghost"
           onClick={onClearHandler}
         >
