@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.45.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.45.0...@hv/uikit-react-core@3.45.1) (2021-09-21)
+
+
+### Bug Fixes
+
+* **date-picker:** review of visible calendars logic HVUIKIT-6005 HVUIKIT-5605 ([72afce4](https://github.com/lumada-design/hv-uikit-react/commit/72afce407f385766f17c74242fa966ddc3a55657))
+* **filtergroup:** add support for ids as number ([5b43fb7](https://github.com/lumada-design/hv-uikit-react/commit/5b43fb7d528651e260f70def5bc7e0ff95cae2ce))
+* **theme:** create structure for shadow color [#2559](https://github.com/lumada-design/hv-uikit-react/issues/2559) ([7a84641](https://github.com/lumada-design/hv-uikit-react/commit/7a84641db8f69bc3827f7dd7948257314cc9387a))
+
+
+
+
+
 # [3.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.44.1...@hv/uikit-react-core@3.45.0) (2021-09-18)
 
 

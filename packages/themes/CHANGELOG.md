@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.1.3 (2021-09-21)
+
+
+### Bug Fixes
+
+* **theme:** create structure for shadow color [#2559](https://github.com/lumada-design/hv-uikit-react/issues/2559) ([7a84641](https://github.com/lumada-design/hv-uikit-react/commit/7a84641db8f69bc3827f7dd7948257314cc9387a))
+
+
+
+
+
 ## 3.1.2 (2021-08-17)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
