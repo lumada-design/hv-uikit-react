@@ -78,6 +78,10 @@ export interface HvDatePickerProps
    */
   onChange?: (date?: Date, endDate?: Date) => void;
   /**
+   * Callback function to be triggered when the datepicker is closed without applying.
+   */
+  onCancel?: () => void;
+  /**
    * Callback function to be triggered when the datepicker value is cleared.
    */
   onClear?: () => void;
