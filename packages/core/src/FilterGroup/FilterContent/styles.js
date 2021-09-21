@@ -24,7 +24,7 @@ const styles = makeStyles((theme) => ({
       minHeight: "calc(370px - 75px)",
       verticalAlign: "top",
       overflow: "visible",
-      boxShadow: `inset 8px 0 8px -6px ${theme.hv.palette.shadow}`,
+      boxShadow: `inset 8px 0 8px -6px ${theme.hv.palette.shadow.shad1}`,
     },
   },
   panel: {
