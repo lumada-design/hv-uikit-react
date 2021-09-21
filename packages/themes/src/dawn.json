@@ -66,7 +66,9 @@
       "supp4": "#C19C31",
       "supp5": "#546B6B"
     },
-    "shadow": "rgba(65,65,65,0.12)"
+    "shadow": {
+      "shad1":"rgba(65,65,65,0.12)"
+    }
   },
   "typography": {
     "fontFamily": ["'Open Sans'", "Arial", "Helvetica", "sans-serif"],
