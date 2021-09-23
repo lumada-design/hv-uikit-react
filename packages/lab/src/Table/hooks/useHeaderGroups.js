@@ -11,11 +11,6 @@
  * @param {Array.<Object>} headerGroups - table header groups
  */
 const replaceHeaderPlaceholders = (headerGroups) => {
-  const groupLevels = headerGroups.length;
-  if (groupLevels <= 1) {
-    return; // no sub headers defined
-  }
-
   const [headerGroup] = headerGroups;
 
   const hasPlaceholderHeaders = headerGroup.headers.some((h) => h.placeholderOf != null);
@@ -23,7 +18,7 @@ const replaceHeaderPlaceholders = (headerGroups) => {
     return; // no placeholder header found to replace
   }
 
-  const maxDepth = groupLevels - 1;
+  const maxDepth = headerGroups.length - 1;
   const leafGroup = headerGroups[maxDepth];
 
   headerGroup.headers.forEach((header, position) => {
@@ -36,63 +31,91 @@ const replaceHeaderPlaceholders = (headerGroups) => {
         leafGroup.headers.slice(position).findIndex(({ id }) => id === placeholderOf.id) + position;
 
       // store leaf placeholder header
+      header.variant = placeholderOf.variant;
       header.depth = maxDepth;
       leafGroup.headers[leafIndex] = header;
 
       // replace placeholder with leaf header
-      placeholderOf.rowSpan = groupLevels;
+      placeholderOf.rowSpan = maxDepth + 1;
       headerGroup.headers[position] = placeholderOf;
     }
   });
 };
 
-const getColumnBoundaryProps = (column) => {
-  const groupColumns = column.parent?.columns ?? [column];
-  const groupIdx = groupColumns.findIndex(({ id }) => id === column.id);
-
-  return {
-    groupColumnMostLeft: groupIdx === 0,
-    groupColumnMostRight: groupIdx === groupColumns.length - 1,
-  };
-};
+const getCellProps = (column) => ({
+  groupColumnMostLeft: column.isGroupLeftColumn,
+  groupColumnMostRight: column.isGroupRightColumn,
+  rowSpan: column.rowSpan ?? 1,
+});
 
 // props target: <table><thead><tr><th>
-export const getHeaderPropsHook = (props, { column }) => {
-  const nextProps = getColumnBoundaryProps(column);
+export const getHeaderPropsHook = (props, { instance, column }) => {
+  const nextProps = instance.hasGroupedColumns ? getCellProps(column) : {};
 
-  if (column.depth === 0) {
-    nextProps.rowSpan = column.rowSpan ?? 1;
-  }
+  if (instance.hasGroupedColumns) {
+    const isPlaceholder = column.placeholderOf != null;
 
-  if (column.placeholderOf != null) {
-    nextProps.style = { ...props.style, display: "none" };
+    nextProps.style = {
+      display: isPlaceholder ? "none" : props.style?.display,
+    };
+
+    if (instance.hasStickyColumns) {
+      if (isPlaceholder) {
+        nextProps.style.visibility = "hidden";
+      }
+
+      if (column.rowSpan > 1) {
+        // rowSpan doesn't work with flex, so we need to simulate it but adjusting the height value manually
+        nextProps.style.height = `${52 + 32 * (column.rowSpan - 1)}px`;
+      }
+    }
   }
 
   return [props, nextProps];
 };
 
 // props target: <table><tbody><tr><td>
-export const getCellPropsHook = (props, { cell }) => {
-  const nextProps = getColumnBoundaryProps(cell.column);
+export const getCellPropsHook = (props, { instance, cell }) => {
+  const nextProps = instance.hasGroupedColumns ? getCellProps(cell.column) : {};
 
   return [props, nextProps];
 };
 
-export const userColumnsHook = (userColumns) =>
-  userColumns.map((column) => {
-    if (column.columns?.length > 0) {
-      column.align = "center"; // group column must be aligned to center
-    }
+export const visibleColumnsHook = (visibleColumns, { instance }) => {
+  const parentList = new Set();
 
-    return column;
+  visibleColumns.forEach(({ parent }) => {
+    if (parent != null && !parentList.has(parent)) {
+      parentList.add(parent);
+    }
   });
 
+  const hasGroupedColumns = parentList.size > 0;
+  if (hasGroupedColumns) {
+    parentList.forEach((parent) => {
+      parent.align = "center";
+      parent.isGroupLeftColumn = true;
+      parent.isGroupRightColumn = true;
+
+      const { columns } = parent;
+      columns[0].isGroupLeftColumn = true;
+      columns[columns.length - 1].isGroupRightColumn = true;
+    });
+  }
+
+  Object.assign(instance, { hasGroupedColumns });
+
+  return visibleColumns;
+};
+
 export const useInstanceHook = (instance) => {
-  replaceHeaderPlaceholders(instance.headerGroups);
+  if (instance.hasGroupedColumns) {
+    replaceHeaderPlaceholders(instance.headerGroups);
+  }
 };
 
 const useHeaderGroups = (hooks) => {
-  hooks.columns.push(userColumnsHook);
+  hooks.visibleColumns.push(visibleColumnsHook);
   hooks.useInstance.push(useInstanceHook);
 
   // props target: <table><thead><tr><th>

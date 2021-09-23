@@ -89,7 +89,11 @@ import {
   UseHvBulkActionsTableOptions,
 } from "./useBulkActions";
 import { UseHvRowExpandTableOptions, UseHvRowExpandRowInstance } from "./useRowExpand";
-import { UseHvHeaderGroupsColumnProps, UseHvHeaderGroupsCellProps } from "./useHeaderGroups";
+import {
+  UseHvHeaderGroupsColumnProps,
+  UseHvHeaderGroupsCellProps,
+  UseHvHeaderGroupsInstance,
+} from "./useHeaderGroups";
 
 type Accessor<D extends object> = (
   originalRow: D,
@@ -125,26 +129,22 @@ type HvColumnGroup<D extends object = Record<string, unknown>> = HvTableColumnOp
 type ValueOf<T> = T[keyof T];
 
 // The accessors like `foo.bar` are not supported, use functions instead
-type HvColumnWithStrictAccessor<
-  D extends object = Record<string, unknown>
-> = HvTableColumnOptions<D> &
-  ValueOf<
-    {
+type HvColumnWithStrictAccessor<D extends object = Record<string, unknown>> =
+  HvTableColumnOptions<D> &
+    ValueOf<{
       [K in keyof D]: {
         accessor: K;
       } & HvColumnInterfaceBasedOnValue<D, D[K]>;
-    }
-  >;
+    }>;
 
-type HvColumnWithLooseAccessor<
-  D extends object = Record<string, unknown>
-> = HvTableColumnOptions<D> &
-  HvColumnInterfaceBasedOnValue<D> &
-  (
-    | { Header: string }
-    | { id: IdType<D> }
-    | { accessor: keyof D extends never ? IdType<D> : never }
-  ) & { accessor?: keyof D extends never ? IdType<D> | Accessor<D> : Accessor<D> };
+type HvColumnWithLooseAccessor<D extends object = Record<string, unknown>> =
+  HvTableColumnOptions<D> &
+    HvColumnInterfaceBasedOnValue<D> &
+    (
+      | { Header: string }
+      | { id: IdType<D> }
+      | { accessor: keyof D extends never ? IdType<D> : never }
+    ) & { accessor?: keyof D extends never ? IdType<D> | Accessor<D> : Accessor<D> };
 
 export type HvCellProps<D extends object, V = any> = CellProps<D, V> & {
   column: HvColumnInstance<D>;
@@ -233,6 +233,7 @@ export interface HvTableInstance<D extends object = Record<string, unknown>>
     UseSortByInstanceProps<D>,
     UseHvRowSelectionTableInstance<D>,
     UseHvTableStickyTableInstance<D>,
+    UseHvHeaderGroupsInstance,
     UseHvPaginationTableInstance<D>,
     UseHvBulkActionsTableInstanceProps<D> {
   initialState: Partial<HvTableState<D>>;

@@ -134,6 +134,10 @@ const styles = (theme) => ({
   stickyColumn: {
     position: "sticky",
     zIndex: 2,
+
+    "&$groupColumnMostRight+$stickyColumn": {
+      borderLeft: 0,
+    },
   },
   stickyColumnMostLeft: {
     borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
@@ -145,15 +149,23 @@ const styles = (theme) => ({
   groupColumnMostLeft: {
     borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
 
-    "&:first-child,$groupColumnMostRight+&": {
+    "&:first-child": {
       borderLeft: 0,
     },
   },
   groupColumnMostRight: {
     borderRight: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
 
+    // due to the ":has()" selector not being supported in browsers,
+    // this need to be managed with inline styles
+    // To be uncommented when not needed (see comment in src/Table/hooks/useSticky.js)
+    // "&:last-child,&:has(+ $stickyColumnLeastRight)": {
     "&:last-child": {
       borderRight: 0,
+    },
+
+    "&+:not($stickyColumn)": {
+      borderLeft: 0,
     },
   },
 

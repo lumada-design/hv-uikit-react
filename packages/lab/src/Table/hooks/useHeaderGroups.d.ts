@@ -1,5 +1,9 @@
 import { Hooks } from "react-table";
 
+export interface UseHvHeaderGroupsInstance {
+  hasGroupedColumns?: boolean;
+}
+
 // props target: <table><thead><tr><th>
 export interface UseHvHeaderGroupsColumnProps {
   groupColumnMostLeft?: boolean;
