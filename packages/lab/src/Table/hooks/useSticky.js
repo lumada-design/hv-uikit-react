@@ -2,15 +2,39 @@
 
 import { makePropGetter, useGetLatest } from "react-table";
 
-const normalizeStickyValue = (column) => {
-  const sticky = column?.sticky?.toLowerCase();
-  if (sticky === "left" || sticky === "right") {
+const isSticky = (value) => /left|right/i.test(value);
+
+const getStickyValue = ({ sticky, parent }) => {
+  if (isSticky(sticky)) {
     return sticky;
   }
 
-  // TODO: add support for grouped columns (column.parent)
+  if (parent != null) {
+    // check if parent is sticky
+    sticky = getStickyValue(parent);
+    if (isSticky(sticky)) {
+      return sticky;
+    }
+
+    const { columns } = parent;
+    // check if any column in the same group is sticky
+    if (columns?.length > 0) {
+      sticky = columns?.find((col) => col.sticky != null)?.sticky;
+      if (isSticky(sticky)) {
+        return sticky;
+      }
+    }
+  }
 
   return undefined;
+};
+
+const updateColumnAndParent = (column, props) => {
+  Object.assign(column, props);
+
+  if (column.parent != null) {
+    updateColumnAndParent(column.parent, props);
+  }
 };
 
 export const visibleColumnsHook = (columns, { instance }) => {
@@ -19,25 +43,40 @@ export const visibleColumnsHook = (columns, { instance }) => {
   const others = [];
 
   columns.forEach((column) => {
-    column.sticky = normalizeStickyValue(column);
+    const sticky = getStickyValue(column)?.toLowerCase();
 
-    if (column.sticky === "left") {
+    updateColumnAndParent(column, { sticky });
+
+    if (sticky === "left") {
       toTheLeft.push(column);
-    } else if (column.sticky === "right") {
+    } else if (sticky === "right") {
       toTheRight.push(column);
     } else {
       others.push(column);
     }
   });
 
-  if (toTheLeft.length > 0) {
-    toTheLeft[toTheLeft.length - 1].isLastLeftSticky = true;
-  }
-  if (toTheRight.length > 0) {
-    toTheRight[0].isFirstRightSticky = true;
+  if (others.length > 0) {
+    const lastNotSticky = others[others.length - 1];
+
+    updateColumnAndParent(lastNotSticky, { isLastNotSticky: true });
   }
 
-  instance.hasStickyColumns = toTheLeft.length > 0 || toTheRight.length > 0;
+  const hasLeftSticky = toTheLeft.length > 0;
+  if (hasLeftSticky) {
+    const lastLeftSticky = toTheLeft[toTheLeft.length - 1];
+
+    updateColumnAndParent(lastLeftSticky, { isLastLeftSticky: true });
+  }
+
+  const hasRightSticky = toTheRight.length > 0;
+  if (hasRightSticky) {
+    const [firstRightSticky] = toTheRight;
+
+    updateColumnAndParent(firstRightSticky, { isFirstRightSticky: true });
+  }
+
+  instance.hasStickyColumns = hasLeftSticky || hasRightSticky;
 
   return [...toTheLeft, ...others, ...toTheRight];
 };
@@ -52,11 +91,11 @@ const calculateHeaderWidthsToTheRight = (headers, right = 0) => {
 
     header.totalRight = right;
 
-    // TODO: Add support for sub-headers
-    // const { headers: subHeaders } = header;
-    // if (subHeaders && subHeaders.length) {
-    //   calculateHeaderWidthsToTheRight(subHeaders, right);
-    // }
+    const { headers: subHeaders } = header;
+    if (subHeaders?.length > 0) {
+      calculateHeaderWidthsToTheRight(subHeaders, right);
+    }
+
     if (header.isVisible) {
       right += header.totalWidth;
     }
@@ -72,19 +111,23 @@ export const useInstanceHook = (instance) => {
   });
 };
 
-const getRowProps = (instance) => ({
+const getRowProps = () => ({
   style: {
     display: "flex",
-    width: `${instance.totalColumnsWidth}px`,
+    flex: "1 0 auto",
   },
 });
 
 const getCellProps = (header, isHeaderCell) => {
   const props = {
     style: {
-      display: "flex",
+      display: "inline-flex",
+      flex: `${header.totalWidth} ${header.totalMinWidth} auto`,
       alignItems: isHeaderCell ? "start" : "center",
+      justifyContent: header.align,
+
       width: `${header.totalWidth}px`,
+      minWidth: `${header.totalMinWidth}px`,
     },
   };
 
@@ -102,6 +145,8 @@ const getCellProps = (header, isHeaderCell) => {
     if (header.isFirstRightSticky) {
       props.stickyColumnLeastRight = true;
     }
+  } else if (header.isLastNotSticky) {
+    props.style.borderRight = 0;
   }
 
   return props;
@@ -109,29 +154,20 @@ const getCellProps = (header, isHeaderCell) => {
 
 /*
  * STICKY POSITION MANAGEMENT
- *
- * What would make sense:
  *   <thead>: sticky if stickyHeader: true
  *   <tr>: never sticky
  *   <th>: sticky only if that particular column is sticky (left or right)
+ */
+
+/*
+ * We need to hide the last non sticky column right border, to avoid issues with double borders.
  *
- * What works cross-browser:
- *   <thead>: sticky only if stickyHeader: true and there are sticky columns
- *   <tr>: sticky only if stickyHeader: true and there are sticky columns
- *   <th>: always sticky if stickyHeader: true, otherwise only if that particular column is sticky (left or right)
+ * This could be done with css, using the `:has()` selector:
+ *  - ".not-sticky:has(+ .first-right-sticky)": { border-right: 0 }
  *
- * Why:
- *   Chrome ignores position: sticky on the <thead> (and <tr>) (https://bugs.chromium.org/p/chromium/issues/detail?id=702927).
- *   Seems to be fixed on Chrome Canary, so this might be changed in the near future.
- *   Therefore we need to add position: sticky to every <th>.
- *
- *   However this will break Safari (and Chrome Canary), with the header actually scrolling down with the table...
- *   So we need to remove the position: sticky from the <thead>.
- *
- *   But, when not using table-* displays (when hasStickyColumns: true), Chrome (again, not Google Canary) ignores position: sticky
- *   from both the <thead> and the <th> **unless** the <tr> is also sticky.
- *
- * Everything will work fine when Chrome gets its bugs fixed (as they seem to be in Google Canary).
+ * Until the `:has()` selector is supported by modern browsers,
+ * that at the moment is just a proposal https://developer.mozilla.org/en-US/docs/Web/CSS/:has,
+ * we need to override the last not sticky column "borderRight" here.
  */
 
 // props target: <table>
@@ -146,32 +182,16 @@ export const getTablePropsHook = (props, { instance }) => {
 
 // props target: <table><thead>
 export const getTableHeadPropsHook = (props, { instance }) => {
-  const nextProps = {};
-  if (instance.stickyHeader) {
-    nextProps.stickyHeader = true;
-
-    // To be removed when not needed (see comment above)
-    if (instance.hasStickyColumns) {
-      nextProps.style = {
-        ...props?.style,
-        position: "sticky",
-        zIndex: 3,
-        top: 0,
-      };
-    }
-  }
+  const nextProps = {
+    stickyHeader: instance.stickyHeader,
+  };
 
   return [props, nextProps];
 };
 
 // props target: <table><thead><tr>
 export const getHeaderGroupPropsHook = (props, { instance }) => {
-  const nextProps = instance.hasStickyColumns ? getRowProps(instance) : {};
-
-  // To be removed when not needed (see comment above)
-  if (instance.stickyHeader && instance.hasStickyColumns) {
-    nextProps.style = { ...props?.style, position: "sticky", top: 0, ...nextProps.style };
-  }
+  const nextProps = instance.hasStickyColumns ? getRowProps() : {};
 
   return [props, nextProps];
 };
@@ -180,23 +200,12 @@ export const getHeaderGroupPropsHook = (props, { instance }) => {
 export const getHeaderPropsHook = (props, { instance, column }) => {
   const nextProps = instance.hasStickyColumns ? getCellProps(column, true) : {};
 
-  // To be removed when not needed (see comment above)
-  if (instance.stickyHeader && !instance.hasStickyColumns) {
-    nextProps.style = {
-      ...props?.style,
-      position: "sticky",
-      top: 0,
-      zIndex: 2,
-      ...nextProps.style,
-    };
-  }
-
   return [props, nextProps];
 };
 
 // props target: <table><tbody><tr>
 export const getRowPropsHook = (props, { instance }) => {
-  const nextProps = instance.hasStickyColumns ? getRowProps(instance) : {};
+  const nextProps = instance.hasStickyColumns ? getRowProps() : {};
 
   return [props, nextProps];
 };

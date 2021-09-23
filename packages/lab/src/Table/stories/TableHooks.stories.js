@@ -466,7 +466,7 @@ export const StickyHeadersAndColumns = () => {
   const columns = useMemo(
     () => [
       { Header: "Title", accessor: "name", sticky: "left", width: 120 },
-      { Header: "Time", accessor: "createdDate", sticky: "right", width: 100 },
+      { Header: "Time", accessor: "createdDate", sticky: "right", width: 120 },
       { Header: "Event Type", accessor: "eventType" },
       { Header: "Status", accessor: "status", width: 70 },
       {
@@ -494,7 +494,7 @@ export const StickyHeadersAndColumns = () => {
     );
 
   return (
-    <HvTableContainer style={{ maxWidth: 640, maxHeight: 480 }}>
+    <HvTableContainer style={{ maxHeight: 480 }}>
       <HvTable {...getTableProps()}>
         <HvTableHead {...getTableHeadProps()}>
           {headerGroups.map((headerGroup) => (
