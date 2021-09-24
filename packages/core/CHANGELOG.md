@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.45.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.45.1...@hv/uikit-react-core@3.45.2) (2021-09-24)
+
+
+### Bug Fixes
+
+* **file-uploader:** export Preview typescript defs ([f2b0659](https://github.com/lumada-design/hv-uikit-react/commit/f2b065993c780b272b75ce9ec8f3a9917e326110))
+
+
+
+
+
 ## [3.45.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.45.0...@hv/uikit-react-core@3.45.1) (2021-09-21)
 
 
