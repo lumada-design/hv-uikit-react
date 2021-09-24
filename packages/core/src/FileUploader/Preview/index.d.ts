@@ -1,2 +1,2 @@
-export { default as HvFile } from "./Preview";
+export { default } from "./Preview";
 export * from "./Preview";
