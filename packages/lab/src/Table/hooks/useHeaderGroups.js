@@ -42,15 +42,15 @@ const replaceHeaderPlaceholders = (headerGroups) => {
   });
 };
 
-const getCellProps = (column) => ({
+const getCellProps = (column, isHeaderCell = false) => ({
   groupColumnMostLeft: column.isGroupLeftColumn,
   groupColumnMostRight: column.isGroupRightColumn,
-  rowSpan: column.rowSpan ?? 1,
+  rowSpan: isHeaderCell && column.rowSpan != null ? column.rowSpan : 1,
 });
 
 // props target: <table><thead><tr><th>
 export const getHeaderPropsHook = (props, { instance, column }) => {
-  const nextProps = instance.hasGroupedColumns ? getCellProps(column) : {};
+  const nextProps = instance.hasGroupedColumns ? getCellProps(column, true) : {};
 
   if (instance.hasGroupedColumns) {
     const isPlaceholder = column.placeholderOf != null;

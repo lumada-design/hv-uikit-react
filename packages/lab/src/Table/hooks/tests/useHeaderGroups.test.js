@@ -271,7 +271,7 @@ describe("useHvTableHeaderGroups", () => {
 
           expect(props.groupColumnMostLeft).toEqual(isGroupLeftColumn);
           expect(props.groupColumnMostRight).toEqual(isGroupRightColumn);
-          expect(props.rowSpan).toEqual(rowSpan ?? 1);
+          expect(props.rowSpan).toEqual(1);
 
           expect(props.style).toBeUndefined();
 
