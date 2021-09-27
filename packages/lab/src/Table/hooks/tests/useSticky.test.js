@@ -5,6 +5,27 @@ import useSticky from "../useSticky";
 import * as stickyHooks from "../useSticky";
 
 describe("useHvTableSticky", () => {
+  const expectStickyColumn = (style, column, isHeaderCell = false) => {
+    expect(style).toBeDefined();
+
+    if (column.sticky === "left") {
+      expect(style.left).toEqual(`${column.totalLeft}px`);
+      expect(style.right).toBeUndefined();
+    } else if (column.sticky === "right") {
+      expect(style.left).toBeUndefined();
+      expect(style.right).toEqual(`${column.totalRight}px`);
+    }
+
+    expect(style.width).toEqual(`${column.totalWidth}px`);
+    expect(style.minWidth).toEqual(`${column.totalMinWidth}px`);
+
+    expect(style.display).toEqual("inline-flex");
+    expect(style.flex).toEqual(`${column.totalWidth} ${column.totalMinWidth} auto`);
+
+    expect(style.alignItems).toEqual(isHeaderCell ? "start" : "center");
+    expect(style.justifyContent).toEqual(column.align);
+  };
+
   it("registers hooks", () => {
     const hooks = {
       visibleColumns: { push: jest.fn() },
@@ -90,6 +111,15 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.isFirstRightSticky).toBeTruthy();
       expect(processed[6]?.isFirstRightSticky).toBeFalsy();
 
+      // last not sticky should be marked as such
+      expect(processed[0]?.isLastNotSticky).toBeFalsy();
+      expect(processed[1]?.isLastNotSticky).toBeFalsy();
+      expect(processed[2]?.isLastNotSticky).toBeFalsy();
+      expect(processed[3]?.isLastNotSticky).toBeFalsy();
+      expect(processed[4]?.isLastNotSticky).toBeTruthy();
+      expect(processed[5]?.isLastNotSticky).toBeFalsy();
+      expect(processed[6]?.isLastNotSticky).toBeFalsy();
+
       // instance should indicate if there are sticky columns
       expect(instance?.hasStickyColumns).toBeTruthy();
     });
@@ -144,6 +174,15 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.isFirstRightSticky).toBeFalsy();
       expect(processed[6]?.isFirstRightSticky).toBeFalsy();
 
+      // last not sticky should be marked as such
+      expect(processed[0]?.isLastNotSticky).toBeFalsy();
+      expect(processed[1]?.isLastNotSticky).toBeFalsy();
+      expect(processed[2]?.isLastNotSticky).toBeFalsy();
+      expect(processed[3]?.isLastNotSticky).toBeFalsy();
+      expect(processed[4]?.isLastNotSticky).toBeFalsy();
+      expect(processed[5]?.isLastNotSticky).toBeFalsy();
+      expect(processed[6]?.isLastNotSticky).toBeTruthy();
+
       // instance should indicate if there are no sticky columns
       expect(instance?.hasStickyColumns).toBeFalsy();
     });
@@ -163,7 +202,6 @@ describe("useHvTableSticky", () => {
 
       const processed = stickyHooks.visibleColumnsHook(columns, { instance });
 
-      // no columns should be marked as sticky
       expect(processed[0]?.sticky).toEqual("left");
       expect(processed[1]?.sticky).toBeUndefined();
       expect(processed[2]?.sticky).toBeUndefined();
@@ -172,7 +210,9 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.sticky).toBeUndefined();
       expect(processed[6]?.sticky).toEqual("right");
 
-      // no columns should be marked as a sticky boundary
+      // last left sticky should be marked as such
+      // first right sticky should be marked as such
+      // last not sticky should be marked as such
       expect(processed[0]?.isLastLeftSticky).toBeTruthy();
       expect(processed[1]?.isLastLeftSticky).toBeFalsy();
       expect(processed[2]?.isLastLeftSticky).toBeFalsy();
@@ -181,6 +221,7 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.isLastLeftSticky).toBeFalsy();
       expect(processed[6]?.isLastLeftSticky).toBeFalsy();
 
+      // first right sticky should be marked as such
       expect(processed[0]?.isFirstRightSticky).toBeFalsy();
       expect(processed[1]?.isFirstRightSticky).toBeFalsy();
       expect(processed[2]?.isFirstRightSticky).toBeFalsy();
@@ -188,6 +229,15 @@ describe("useHvTableSticky", () => {
       expect(processed[4]?.isFirstRightSticky).toBeFalsy();
       expect(processed[5]?.isFirstRightSticky).toBeFalsy();
       expect(processed[6]?.isFirstRightSticky).toBeTruthy();
+
+      // last not sticky should be marked as such
+      expect(processed[0]?.isLastNotSticky).toBeFalsy();
+      expect(processed[1]?.isLastNotSticky).toBeFalsy();
+      expect(processed[2]?.isLastNotSticky).toBeFalsy();
+      expect(processed[3]?.isLastNotSticky).toBeFalsy();
+      expect(processed[4]?.isLastNotSticky).toBeFalsy();
+      expect(processed[5]?.isLastNotSticky).toBeTruthy();
+      expect(processed[6]?.isLastNotSticky).toBeFalsy();
 
       expect(instance?.hasStickyColumns).toBeTruthy();
     });
@@ -233,18 +283,34 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.isFirstRightSticky).toBeFalsy();
       expect(processed[6]?.isFirstRightSticky).toBeFalsy();
 
+      // last not sticky should be marked as such
+      expect(processed[0]?.isLastNotSticky).toBeFalsy();
+      expect(processed[1]?.isLastNotSticky).toBeFalsy();
+      expect(processed[2]?.isLastNotSticky).toBeFalsy();
+      expect(processed[3]?.isLastNotSticky).toBeFalsy();
+      expect(processed[4]?.isLastNotSticky).toBeFalsy();
+      expect(processed[5]?.isLastNotSticky).toBeFalsy();
+      expect(processed[6]?.isLastNotSticky).toBeTruthy();
+
       expect(instance?.hasStickyColumns).toBeFalsy();
     });
   });
 
   describe("useInstanceHook", () => {
-    it("calculates for each column the total width in pixels of all columns to the right", () => {
+    it("calculates for each column and sub headers, the total width in pixels of all columns to the right", () => {
       const headers = [
         { Header: "Title", isVisible: true, totalWidth: 100 },
         { Header: "Time", isVisible: true, totalWidth: 110 },
-        { Header: "Event Type", isVisible: true, totalWidth: 120 },
-        { Header: "Status", isVisible: true, totalWidth: 130 },
-        { Header: "Probability", isVisible: true, totalWidth: 140 },
+        {
+          Header: "Info",
+          isVisible: true,
+          totalWidth: 120 + 130 + 140,
+          headers: [
+            { Header: "Event Type", isVisible: true, totalWidth: 120 },
+            { Header: "Status", isVisible: true, totalWidth: 130 },
+            { Header: "Probability", isVisible: true, totalWidth: 140 },
+          ],
+        },
         { Header: "Severity", isVisible: true, totalWidth: 150 },
         { Header: "Priority", isVisible: true, totalWidth: 160 },
       ];
@@ -254,13 +320,18 @@ describe("useHvTableSticky", () => {
       renderHook(() => stickyHooks.useInstanceHook(instance));
 
       // headers should be augmented with totalRight
-      expect(headers[0].totalRight).toEqual(160 + 150 + 140 + 130 + 120 + 110);
-      expect(headers[1].totalRight).toEqual(160 + 150 + 140 + 130 + 120);
-      expect(headers[2].totalRight).toEqual(160 + 150 + 140 + 130);
-      expect(headers[3].totalRight).toEqual(160 + 150 + 140);
-      expect(headers[4].totalRight).toEqual(160 + 150);
-      expect(headers[5].totalRight).toEqual(160);
-      expect(headers[6].totalRight).toEqual(0);
+      expect(headers[0].totalRight).toEqual(160 + 150 + 120 + 130 + 140 + 110);
+      expect(headers[1].totalRight).toEqual(160 + 150 + 120 + 130 + 140);
+
+      const groupedHeader = headers[2];
+      expect(groupedHeader.headers[0].totalRight).toEqual(160 + 150 + 140 + 130);
+      expect(groupedHeader.headers[1].totalRight).toEqual(160 + 150 + 140);
+
+      expect(groupedHeader.headers[2].totalRight).toEqual(160 + 150);
+      expect(groupedHeader.totalRight).toEqual(160 + 150);
+
+      expect(headers[3].totalRight).toEqual(160);
+      expect(headers[4].totalRight).toEqual(0);
     });
 
     it("non-visible columns are ignored", () => {
@@ -318,20 +389,14 @@ describe("useHvTableSticky", () => {
   });
 
   describe("sticky header only", () => {
+    const existingProps = {};
+    const instance = { stickyHeader: true, hasStickyColumns: false };
+
     describe("getTableHeadPropsHook (<table><thead>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: false };
-
         const [existing, props] = stickyHooks.getTableHeadPropsHook(existingProps, { instance });
 
-        expect(props?.stickyHeader).toBeTruthy();
-
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toBeUndefined();
-        expect(props?.style?.top).toBeUndefined();
-        expect(props?.style?.zIndex).toBeUndefined();
+        expect(props.stickyHeader).toBeTruthy();
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -340,18 +405,9 @@ describe("useHvTableSticky", () => {
 
     describe("getHeaderGroupPropsHook (<table><thead><tr>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: false, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getHeaderGroupPropsHook(existingProps, { instance });
 
-        // expect(props?.style).toBeUndefined();
-        // Uncomment above after removing bellow
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toBeUndefined();
-        expect(props?.style?.top).toBeUndefined();
-        expect(props?.style?.zIndex).toBeUndefined();
+        expect(props).toEqual({});
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -360,9 +416,6 @@ describe("useHvTableSticky", () => {
 
     describe("getHeaderPropsHook (<table><thead><tr><th>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: false };
         const column = {
           totalLeft: 200,
           totalRight: 300,
@@ -373,20 +426,11 @@ describe("useHvTableSticky", () => {
           column,
         });
 
-        expect(props?.stickyColumn).toBeFalsy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeFalsy();
+        expect(props.stickyColumn).toBeFalsy();
+        expect(props.stickyColumnMostLeft).toBeFalsy();
+        expect(props.stickyColumnLeastRight).toBeFalsy();
 
-        expect(props?.style?.left).toBeUndefined();
-        expect(props?.style?.right).toBeUndefined();
-        expect(props?.style?.display).toBeUndefined();
-        expect(props?.style?.alignItems).toBeUndefined();
-        expect(props?.style?.width).toBeUndefined();
-
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toEqual("sticky");
-        expect(props?.style?.top).toEqual(0);
-        expect(props?.style?.zIndex).toEqual(2);
+        expect(props.style).toBeUndefined();
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -395,13 +439,9 @@ describe("useHvTableSticky", () => {
 
     describe("getRowPropsHook (<table><tbody><tr>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: false, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getRowPropsHook(existingProps, { instance });
 
-        expect(props?.style).toBeUndefined();
+        expect(props).toEqual({});
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -410,9 +450,6 @@ describe("useHvTableSticky", () => {
 
     describe("getCellPropsHook (<table><tbody><tr><td>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: false };
         const column = {
           totalLeft: 200,
           totalRight: 300,
@@ -423,11 +460,11 @@ describe("useHvTableSticky", () => {
           cell: { column },
         });
 
-        expect(props?.stickyColumn).toBeFalsy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeFalsy();
+        expect(props.stickyColumn).toBeFalsy();
+        expect(props.stickyColumnMostLeft).toBeFalsy();
+        expect(props.stickyColumnLeastRight).toBeFalsy();
 
-        expect(props?.style).toBeUndefined();
+        expect(props.style).toBeUndefined();
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -436,17 +473,15 @@ describe("useHvTableSticky", () => {
   });
 
   describe("sticky columns only", () => {
+    const existingProps = {};
+    const instance = { stickyHeader: false, hasStickyColumns: true };
+
     describe("getTableHeadPropsHook (<table><thead>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: true };
-
         const [existing, props] = stickyHooks.getTableHeadPropsHook(existingProps, { instance });
 
-        expect(props?.stickyHeader).toBeFalsy();
-
-        expect(props?.style).toBeUndefined();
+        expect(props.stickyHeader).toBeFalsy();
+        expect(props.style).toBeUndefined();
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -455,19 +490,10 @@ describe("useHvTableSticky", () => {
 
     describe("getHeaderGroupPropsHook (<table><thead><tr>)", () => {
       it("set the styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: true, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getHeaderGroupPropsHook(existingProps, { instance });
 
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.width).toEqual("1500px");
-
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toBeUndefined();
-        expect(props?.style?.top).toBeUndefined();
-        expect(props?.style?.zIndex).toBeUndefined();
+        expect(props.style?.display).toEqual("flex");
+        expect(props.style?.flex).toEqual("1 0 auto");
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -476,16 +502,14 @@ describe("useHvTableSticky", () => {
 
     describe("getHeaderPropsHook (<table><thead><tr><th>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: true };
         const column = {
-          isSticky: true,
           sticky: "right",
+          align: "left",
           totalLeft: 200,
           totalRight: 300,
           isFirstRightSticky: true,
           totalWidth: 100,
+          totalMinWidth: 75,
         };
 
         const [existing, props] = stickyHooks.getHeaderPropsHook(existingProps, {
@@ -493,16 +517,11 @@ describe("useHvTableSticky", () => {
           column,
         });
 
-        expect(props?.stickyColumn).toBeTruthy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeTruthy();
+        expect(props.stickyColumn).toBeTruthy();
+        expect(props.stickyColumnMostLeft).toBeFalsy();
+        expect(props.stickyColumnLeastRight).toBeTruthy();
 
-        expect(props?.style?.left).toBeUndefined();
-        expect(props?.style?.right).toEqual("300px");
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("start");
-        expect(props?.style?.width).toEqual("100px");
+        expectStickyColumn(props.style, column, true);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -519,13 +538,9 @@ describe("useHvTableSticky", () => {
       ];
 
       test.each(cases)("sticky: %p, isBoundary: %p", (sticky, isBoundary) => {
-        const existingProps = {};
-
         const isSticky = sticky === "left" || sticky === "right";
 
-        const instance = { stickyHeader: false, hasStickyColumns: true };
         const column = {
-          isSticky,
           sticky,
           // eslint-disable-next-line no-nested-ternary
           ...(sticky === "left"
@@ -534,6 +549,7 @@ describe("useHvTableSticky", () => {
             ? { totalRight: 256, isFirstRightSticky: isBoundary }
             : {}),
           totalWidth: 100,
+          totalMinWidth: 0,
         };
 
         const [existing, props] = stickyHooks.getHeaderPropsHook(existingProps, {
@@ -542,29 +558,23 @@ describe("useHvTableSticky", () => {
         });
 
         if (isSticky) {
-          expect(props?.stickyColumn).toBeTruthy();
+          expect(props.stickyColumn).toBeTruthy();
         } else {
-          expect(props?.stickyColumn).toBeFalsy();
+          expect(props.stickyColumn).toBeFalsy();
         }
 
         if (isBoundary && sticky === "left") {
-          expect(props?.stickyColumnMostLeft).toBeTruthy();
+          expect(props.stickyColumnMostLeft).toBeTruthy();
         } else {
-          expect(props?.stickyColumnMostLeft).toBeFalsy();
+          expect(props.stickyColumnMostLeft).toBeFalsy();
         }
         if (isBoundary && sticky === "right") {
-          expect(props?.stickyColumnLeastRight).toBeTruthy();
+          expect(props.stickyColumnLeastRight).toBeTruthy();
         } else {
-          expect(props?.stickyColumnLeastRight).toBeFalsy();
+          expect(props.stickyColumnLeastRight).toBeFalsy();
         }
 
-        if (isSticky) {
-          expect(props?.style[sticky]).toEqual("256px");
-        }
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("start");
-        expect(props?.style?.width).toEqual("100px");
+        expectStickyColumn(props.style, column, true);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -573,14 +583,10 @@ describe("useHvTableSticky", () => {
 
     describe("getRowPropsHook (<table><tbody><tr>)", () => {
       it("set the styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: true, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getRowPropsHook(existingProps, { instance });
 
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.width).toEqual("1500px");
+        expect(props.style?.display).toEqual("flex");
+        expect(props.style?.flex).toEqual("1 0 auto");
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -589,17 +595,13 @@ describe("useHvTableSticky", () => {
 
     describe("getCellPropsHook (<table><tbody><tr><td>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: true };
-
         const column = {
-          isSticky: true,
           sticky: "right",
           totalLeft: 200,
           totalRight: 300,
           isFirstRightSticky: true,
           totalWidth: 100,
+          totalMinWidth: 50,
         };
 
         const [existing, props] = stickyHooks.getCellPropsHook(existingProps, {
@@ -607,19 +609,14 @@ describe("useHvTableSticky", () => {
           cell: { column },
         });
 
-        expect(props?.stickyColumn).toBeTruthy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeTruthy();
+        expect(props.stickyColumn).toBeTruthy();
+        expect(props.stickyColumnMostLeft).toBeFalsy();
+        expect(props.stickyColumnLeastRight).toBeTruthy();
 
-        expect(props?.style?.left).toBeUndefined();
-        expect(props?.style?.right).toEqual("300px");
+        expectStickyColumn(props.style, column);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("center");
-        expect(props?.style?.width).toEqual("100px");
 
         // all valid cases tested bellow
       });
@@ -633,13 +630,9 @@ describe("useHvTableSticky", () => {
       ];
 
       test.each(cases)("sticky: %p, isBoundary: %p", (sticky, isBoundary) => {
-        const existingProps = {};
-
         const isSticky = sticky === "left" || sticky === "right";
 
-        const instance = { stickyHeader: false, hasStickyColumns: true };
         const column = {
-          isSticky,
           sticky,
           // eslint-disable-next-line no-nested-ternary
           ...(sticky === "left"
@@ -648,6 +641,7 @@ describe("useHvTableSticky", () => {
             ? { totalRight: 256, isFirstRightSticky: isBoundary }
             : {}),
           totalWidth: 100,
+          totalMinWidth: 0,
         };
 
         const [existing, props] = stickyHooks.getCellPropsHook(existingProps, {
@@ -656,29 +650,23 @@ describe("useHvTableSticky", () => {
         });
 
         if (isSticky) {
-          expect(props?.stickyColumn).toBeTruthy();
+          expect(props.stickyColumn).toBeTruthy();
         } else {
-          expect(props?.stickyColumn).toBeFalsy();
+          expect(props.stickyColumn).toBeFalsy();
         }
 
         if (isBoundary && sticky === "left") {
-          expect(props?.stickyColumnMostLeft).toBeTruthy();
+          expect(props.stickyColumnMostLeft).toBeTruthy();
         } else {
-          expect(props?.stickyColumnMostLeft).toBeFalsy();
+          expect(props.stickyColumnMostLeft).toBeFalsy();
         }
         if (isBoundary && sticky === "right") {
-          expect(props?.stickyColumnLeastRight).toBeTruthy();
+          expect(props.stickyColumnLeastRight).toBeTruthy();
         } else {
-          expect(props?.stickyColumnLeastRight).toBeFalsy();
+          expect(props.stickyColumnLeastRight).toBeFalsy();
         }
 
-        if (isSticky) {
-          expect(props?.style[sticky]).toEqual("256px");
-        }
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("center");
-        expect(props?.style?.width).toEqual("100px");
+        expectStickyColumn(props.style, column);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -687,20 +675,14 @@ describe("useHvTableSticky", () => {
   });
 
   describe("sticky header and columns", () => {
+    const existingProps = {};
+    const instance = { stickyHeader: true, hasStickyColumns: true };
+
     describe("getTableHeadPropsHook (<table><thead>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: true };
-
         const [existing, props] = stickyHooks.getTableHeadPropsHook(existingProps, { instance });
 
-        expect(props?.stickyHeader).toBeTruthy();
-
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toEqual("sticky");
-        expect(props?.style?.top).toEqual(0);
-        expect(props?.style?.zIndex).toEqual(3);
+        expect(props.stickyHeader).toBeTruthy();
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -709,19 +691,10 @@ describe("useHvTableSticky", () => {
 
     describe("getHeaderGroupPropsHook (<table><thead><tr>)", () => {
       it("set the styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: true, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getHeaderGroupPropsHook(existingProps, { instance });
 
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.width).toEqual("1500px");
-
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toEqual("sticky");
-        expect(props?.style?.top).toEqual(0);
-        expect(props?.style?.zIndex).toBeUndefined();
+        expect(props.style?.display).toEqual("flex");
+        expect(props.style?.flex).toEqual("1 0 auto");
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -730,16 +703,13 @@ describe("useHvTableSticky", () => {
 
     describe("getHeaderPropsHook (<table><thead><tr><th>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: true };
         const column = {
-          isSticky: true,
           sticky: "right",
           totalLeft: 200,
           totalRight: 300,
           isFirstRightSticky: true,
           totalWidth: 100,
+          totalMinWidth: 50,
         };
 
         const [existing, props] = stickyHooks.getHeaderPropsHook(existingProps, {
@@ -747,21 +717,11 @@ describe("useHvTableSticky", () => {
           column,
         });
 
-        expect(props?.stickyColumn).toBeTruthy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeTruthy();
+        expect(props.stickyColumn).toBeTruthy();
+        expect(props.stickyColumnMostLeft).toBeFalsy();
+        expect(props.stickyColumnLeastRight).toBeTruthy();
 
-        expect(props?.style?.left).toBeUndefined();
-        expect(props?.style?.right).toEqual("300px");
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("start");
-        expect(props?.style?.width).toEqual("100px");
-
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toBeUndefined();
-        expect(props?.style?.top).toBeUndefined();
-        expect(props?.style?.zIndex).toBeUndefined();
+        expectStickyColumn(props.style, column, true);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -778,13 +738,9 @@ describe("useHvTableSticky", () => {
       ];
 
       test.each(cases)("sticky: %p, isBoundary: %p", (sticky, isBoundary) => {
-        const existingProps = {};
-
         const isSticky = sticky === "left" || sticky === "right";
 
-        const instance = { stickyHeader: true, hasStickyColumns: true };
         const column = {
-          isSticky,
           sticky,
           // eslint-disable-next-line no-nested-ternary
           ...(sticky === "left"
@@ -793,6 +749,7 @@ describe("useHvTableSticky", () => {
             ? { totalRight: 256, isFirstRightSticky: isBoundary }
             : {}),
           totalWidth: 100,
+          totalMinWidth: 0,
         };
 
         const [existing, props] = stickyHooks.getHeaderPropsHook(existingProps, {
@@ -801,34 +758,23 @@ describe("useHvTableSticky", () => {
         });
 
         if (isSticky) {
-          expect(props?.stickyColumn).toBeTruthy();
+          expect(props.stickyColumn).toBeTruthy();
         } else {
-          expect(props?.stickyColumn).toBeFalsy();
+          expect(props.stickyColumn).toBeFalsy();
         }
 
         if (isBoundary && sticky === "left") {
-          expect(props?.stickyColumnMostLeft).toBeTruthy();
+          expect(props.stickyColumnMostLeft).toBeTruthy();
         } else {
-          expect(props?.stickyColumnMostLeft).toBeFalsy();
+          expect(props.stickyColumnMostLeft).toBeFalsy();
         }
         if (isBoundary && sticky === "right") {
-          expect(props?.stickyColumnLeastRight).toBeTruthy();
+          expect(props.stickyColumnLeastRight).toBeTruthy();
         } else {
-          expect(props?.stickyColumnLeastRight).toBeFalsy();
+          expect(props.stickyColumnLeastRight).toBeFalsy();
         }
 
-        if (isSticky) {
-          expect(props?.style[sticky]).toEqual("256px");
-        }
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("start");
-        expect(props?.style?.width).toEqual("100px");
-
-        // To be removed when not needed (see comment src/Table/hooks/useSticky.js)
-        expect(props?.style?.position).toBeUndefined();
-        expect(props?.style?.top).toBeUndefined();
-        expect(props?.style?.zIndex).toBeUndefined();
+        expectStickyColumn(props.style, column, true);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -837,14 +783,10 @@ describe("useHvTableSticky", () => {
 
     describe("getRowPropsHook (<table><tbody><tr>)", () => {
       it("set the styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: true, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getRowPropsHook(existingProps, { instance });
 
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.width).toEqual("1500px");
+        expect(props.style?.display).toEqual("flex");
+        expect(props.style?.flex).toEqual("1 0 auto");
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -853,17 +795,13 @@ describe("useHvTableSticky", () => {
 
     describe("getCellPropsHook (<table><tbody><tr><td>)", () => {
       it("set the sticky* properties and styles accordingly", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: true, hasStickyColumns: true };
-
         const column = {
-          isSticky: true,
           sticky: "right",
           totalLeft: 200,
           totalRight: 300,
           isFirstRightSticky: true,
           totalWidth: 100,
+          totalMinWidth: 10,
         };
 
         const [existing, props] = stickyHooks.getCellPropsHook(existingProps, {
@@ -871,16 +809,11 @@ describe("useHvTableSticky", () => {
           cell: { column },
         });
 
-        expect(props?.stickyColumn).toBeTruthy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeTruthy();
+        expect(props.stickyColumn).toBeTruthy();
+        expect(props.stickyColumnMostLeft).toBeFalsy();
+        expect(props.stickyColumnLeastRight).toBeTruthy();
 
-        expect(props?.style?.left).toBeUndefined();
-        expect(props?.style?.right).toEqual("300px");
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("center");
-        expect(props?.style?.width).toEqual("100px");
+        expectStickyColumn(props.style, column);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -897,14 +830,9 @@ describe("useHvTableSticky", () => {
       ];
 
       test.each(cases)("sticky: %p, isBoundary: %p", (sticky, isBoundary) => {
-        const existingProps = {};
-
         const isSticky = sticky === "left" || sticky === "right";
 
-        const instance = { stickyHeader: true, hasStickyColumns: true };
-
         const column = {
-          isSticky,
           sticky,
           // eslint-disable-next-line no-nested-ternary
           ...(sticky === "left"
@@ -913,6 +841,7 @@ describe("useHvTableSticky", () => {
             ? { totalRight: 256, isFirstRightSticky: isBoundary }
             : {}),
           totalWidth: 100,
+          totalMinWidth: 10,
         };
 
         const [existing, props] = stickyHooks.getCellPropsHook(existingProps, {
@@ -921,29 +850,23 @@ describe("useHvTableSticky", () => {
         });
 
         if (isSticky) {
-          expect(props?.stickyColumn).toBeTruthy();
+          expect(props.stickyColumn).toBeTruthy();
         } else {
-          expect(props?.stickyColumn).toBeFalsy();
+          expect(props.stickyColumn).toBeFalsy();
         }
 
         if (isBoundary && sticky === "left") {
-          expect(props?.stickyColumnMostLeft).toBeTruthy();
+          expect(props.stickyColumnMostLeft).toBeTruthy();
         } else {
-          expect(props?.stickyColumnMostLeft).toBeFalsy();
+          expect(props.stickyColumnMostLeft).toBeFalsy();
         }
         if (isBoundary && sticky === "right") {
-          expect(props?.stickyColumnLeastRight).toBeTruthy();
+          expect(props.stickyColumnLeastRight).toBeTruthy();
         } else {
-          expect(props?.stickyColumnLeastRight).toBeFalsy();
+          expect(props.stickyColumnLeastRight).toBeFalsy();
         }
 
-        if (isSticky) {
-          expect(props?.style[sticky]).toEqual("256px");
-        }
-
-        expect(props?.style?.display).toEqual("flex");
-        expect(props?.style?.alignItems).toEqual("center");
-        expect(props?.style?.width).toEqual("100px");
+        expectStickyColumn(props.style, column);
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -952,15 +875,14 @@ describe("useHvTableSticky", () => {
   });
 
   describe("nothing sticky", () => {
+    const existingProps = {};
+    const instance = { stickyHeader: false, hasStickyColumns: false };
+
     describe("getHeaderGroupPropsHook (<table><thead><tr>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: false, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getHeaderGroupPropsHook(existingProps, { instance });
 
-        expect(props?.style).toBeUndefined();
+        expect(props).toEqual({});
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -969,9 +891,6 @@ describe("useHvTableSticky", () => {
 
     describe("getHeaderPropsHook (<table><thead><tr><th>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: false };
         const column = {
           totalLeft: 200,
           totalRight: 300,
@@ -983,11 +902,7 @@ describe("useHvTableSticky", () => {
           column,
         });
 
-        expect(props?.stickyColumn).toBeFalsy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeFalsy();
-
-        expect(props?.style).toBeUndefined();
+        expect(props).toEqual({});
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -996,13 +911,9 @@ describe("useHvTableSticky", () => {
 
     describe("getRowPropsHook (<table><tbody><tr>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: false, totalColumnsWidth: 1500 };
-
         const [existing, props] = stickyHooks.getRowPropsHook(existingProps, { instance });
 
-        expect(props?.style).toBeUndefined();
+        expect(props).toEqual({});
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -1011,9 +922,6 @@ describe("useHvTableSticky", () => {
 
     describe("getCellPropsHook (<table><tbody><tr><td>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: false };
         const column = {
           totalLeft: 200,
           totalRight: 300,
@@ -1025,11 +933,7 @@ describe("useHvTableSticky", () => {
           cell: { column },
         });
 
-        expect(props?.stickyColumn).toBeFalsy();
-        expect(props?.stickyColumnMostLeft).toBeFalsy();
-        expect(props?.stickyColumnLeastRight).toBeFalsy();
-
-        expect(props?.style).toBeUndefined();
+        expect(props).toEqual({});
 
         // should return the other properties
         expect(existing).toBe(existingProps);
@@ -1038,15 +942,10 @@ describe("useHvTableSticky", () => {
 
     describe("getTableHeadPropsHook (<table><thead>)", () => {
       it("do nothing", () => {
-        const existingProps = {};
-
-        const instance = { stickyHeader: false, hasStickyColumns: false };
-
         const [existing, props] = stickyHooks.getTableHeadPropsHook(existingProps, { instance });
 
-        expect(props?.stickyHeader).toBeFalsy();
-
-        expect(props?.style).toBeUndefined();
+        expect(props.stickyHeader).toBeFalsy();
+        expect(props.style).toBeUndefined();
 
         // should return the other properties
         expect(existing).toBe(existingProps);
