@@ -42,7 +42,7 @@ exports[`Timepicker snapshot tests Main 1`] = `
             <p
               class="HvBaseDropdown-placeholder HvTimePicker-dropdownPlaceholder HvTypography-root HvTypography-placeholderText HvTypography-noWrap"
             >
-              02:35:45 AM
+              02:35:45 PM
             </p>
           </div>
           <div

@@ -27,8 +27,8 @@ const PeriodPickerOptions = {
 };
 
 const TimeFormat = {
-  H12: 12,
-  H24: 24,
+  H12: "12",
+  H24: "24",
 };
 
 export { TimePickerUnits, PeriodPickerOptions, TimeFormat };

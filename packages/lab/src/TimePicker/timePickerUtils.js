@@ -18,7 +18,7 @@ const getPeriodForDate = (date = new Date()) => {
  */
 const isUnitTimeInValidRange = (value, type) => {
   const timeUnit = TimePickerUnits[type];
-  return value >= timeUnit.min && value <= timeUnit.max;
+  return value !== "" && value >= timeUnit.min && value <= timeUnit.max;
 };
 
 export { getPeriodForDate, isUnitTimeInValidRange };

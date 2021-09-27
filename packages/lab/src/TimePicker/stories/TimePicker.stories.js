@@ -24,6 +24,16 @@ Main.parameters = {
   },
 };
 
+export const EmptyAndRequired = () => (
+  <HvTimePicker
+    disableDefaultValue
+    required
+    placeholder="Select time"
+    label="Time"
+    timeFormat="24"
+  />
+);
+
 export const Format12Hours = () => <HvTimePicker id="format" label="Time" locale="en-US" />;
 
 Format12Hours.parameters = {
@@ -40,11 +50,8 @@ export const CustomDefault = () => (
   <HvTimePicker
     id="custom"
     label="Time"
-    hours={14}
-    minutes={35}
-    seconds={45}
-    period="AM"
-    timeFormat={12}
+    defaultValue={{ hours: 14, minutes: 35, seconds: 45 }}
+    timeFormat="12"
   />
 );
 
@@ -55,30 +62,30 @@ CustomDefault.parameters = {
 };
 
 export const WithOnChange = () => {
-  const timeProps = {
+  const [time, setTime] = useState({
     hours: 9,
     minutes: 10,
     seconds: 30,
+  });
+
+  const updateTime = ({ hours, minutes, seconds }) => {
+    setTime({ hours, minutes, seconds });
   };
 
-  const ControlledTimePicker = () => {
-    const [time, setTime] = useState(timeProps);
+  const formattedTime = getFormattedTime(time);
 
-    const updateTime = ({ hours, minutes, seconds }) => {
-      setTime({ hours, minutes, seconds });
-    };
-
-    const formattedTime = getFormattedTime(time);
-
-    return (
-      <>
-        <div>{formattedTime}</div>
-        <HvTimePicker id="onchange" label="Time" {...timeProps} onChange={updateTime} />
-      </>
-    );
-  };
-
-  return <ControlledTimePicker />;
+  return (
+    <>
+      <div>{formattedTime}</div>
+      <HvTimePicker
+        id="onchange"
+        disableDefaultValue
+        label="Time"
+        value={time}
+        onChange={updateTime}
+      />
+    </>
+  );
 };
 
 WithOnChange.parameters = {
@@ -193,10 +200,11 @@ export const Localized = () => {
         id="dropdown7"
         onChange={(item) => setLocale(item.id)}
         values={[
-          { id: "pt-PT", label: "Portuguese" },
-          { id: "en-US", label: "English" },
+          { id: "pt-PT", label: "Portuguese", selected: locale === "pt-PT" },
+          { id: "en-US", label: "English", selected: locale === "en-US" },
         ]}
         label="Select locale"
+        singleSelectionToggle={false}
       />
       <HvTimePicker id="localized" locale={locale} style={{ marginTop: "20px" }} />
     </>

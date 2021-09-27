@@ -147,11 +147,12 @@ const HvInput = (props) => {
 
   const [validationMessage, setValidationMessage] = useControlled(statusMessage, "");
 
-  // validationMessages reference tends to change, as users will not useState for it;
-  // dependencies must be more explicit and:
+  // validationMessages reference tends to change, as users will not memoize/useState for it;
+  // dependencies must be more explicit so we set
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const errorMessages = useMemo(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [
       validationMessages?.error,
       validationMessages?.requiredError,

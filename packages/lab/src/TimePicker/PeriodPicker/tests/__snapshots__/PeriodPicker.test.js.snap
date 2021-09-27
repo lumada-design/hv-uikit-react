@@ -10,7 +10,8 @@ exports[`PeriodPicker should render correctly 1`] = `
       Object {
         "icon": "HvTimePickerPeriodPicker-icon",
         "periodContainer": "HvTimePickerPeriodPicker-periodContainer",
-        "periodText": "HvTimePickerPeriodPicker-periodText",
+        "periodToggle": "HvTimePickerPeriodPicker-periodToggle",
+        "subtractIcon": "HvTimePickerPeriodPicker-subtractIcon",
       }
     }
     onChangePeriod={[MockFunction]}
@@ -51,58 +52,185 @@ exports[`PeriodPicker should render correctly 1`] = `
         </HvIconBase>
       </DropUpXS>
       <WithStyles(ForwardRef)
-        className="HvTimePickerPeriodPicker-periodText"
-        variant="highlightText"
+        className="HvTimePickerPeriodPicker-periodToggle"
+        onClick={[Function]}
+        selected={false}
       >
         <ForwardRef
-          className="HvTimePickerPeriodPicker-periodText"
-          classes={
-            Object {
-              "3xlTitle": "HvTypography-3xlTitle",
-              "4xlTitle": "HvTypography-4xlTitle",
-              "5xlTitle": "HvTypography-5xlTitle",
-              "disabledText": "HvTypography-disabledText",
-              "highlightText": "HvTypography-highlightText",
-              "lTitle": "HvTypography-lTitle",
-              "link": "HvTypography-link",
-              "mTitle": "HvTypography-mTitle",
-              "noWrap": "HvTypography-noWrap",
-              "normalText": "HvTypography-normalText",
-              "placeholderText": "HvTypography-placeholderText",
-              "root": "HvTypography-root",
-              "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
-              "selectedNavText": "HvTypography-selectedNavText",
-              "vizText": "HvTypography-vizText",
-              "vizTextDisabled": "HvTypography-vizTextDisabled",
-              "xlTitle": "HvTypography-xlTitle",
-              "xsInlineLink": "HvTypography-xsInlineLink",
-              "xsTitle": "HvTypography-xsTitle",
-              "xxlTitle": "HvTypography-xxlTitle",
-              "xxsTitle": "HvTypography-xxsTitle",
-            }
-          }
-          variant="highlightText"
+          className="HvTimePickerPeriodPicker-periodToggle"
+          classes={Object {}}
+          onClick={[Function]}
+          selected={false}
         >
-          <p
-            className="HvTimePickerPeriodPicker-periodText HvTypography-root HvTypography-highlightText"
+          <WithStyles(ForwardRef)
+            aria-pressed={false}
+            className="HvTimePickerPeriodPicker-periodToggle"
+            classes={Object {}}
+            icon={true}
+            onClick={[Function]}
           >
-            AM
-          </p>
+            <ForwardRef
+              aria-pressed={false}
+              className="HvTimePickerPeriodPicker-periodToggle"
+              classes={
+                Object {
+                  "focusVisible": "HvButton-focusVisible",
+                  "ghost": "HvButton-ghost",
+                  "ghostDisabled": "HvButton-ghostDisabled",
+                  "ghostSVG": "HvButton-ghostSVG",
+                  "icon": "HvButton-icon",
+                  "iconSVG": "HvButton-iconSVG",
+                  "primary": "HvButton-primary",
+                  "primaryDisabled": "HvButton-primaryDisabled",
+                  "primarySVG": "HvButton-primarySVG",
+                  "root": "HvButton-root",
+                  "secondary": "HvButton-secondary",
+                  "secondaryDisabled": "HvButton-secondaryDisabled",
+                  "secondarySVG": "HvButton-secondarySVG",
+                  "semantic": "HvButton-semantic",
+                  "semanticDisabled": "HvButton-semanticDisabled",
+                  "semanticSVG": "HvButton-semanticSVG",
+                  "startIcon": "HvButton-startIcon",
+                }
+              }
+              icon={true}
+              onClick={[Function]}
+            >
+              <WithStyles(ForwardRef(Button))
+                aria-pressed={false}
+                className="HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG"
+                classes={
+                  Object {
+                    "containedPrimary": "HvButton-primary",
+                    "disabled": "HvButton-ghostDisabled",
+                    "outlinedPrimary": "HvButton-secondary",
+                    "root": "HvButton-root",
+                    "startIcon": "HvButton-startIcon",
+                    "textPrimary": "HvButton-ghost",
+                  }
+                }
+                color="primary"
+                disableRipple={true}
+                focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
+                onClick={[Function]}
+                variant="text"
+              >
+                <ForwardRef(Button)
+                  aria-pressed={false}
+                  className="HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG"
+                  classes={
+                    Object {
+                      "colorInherit": "MuiButton-colorInherit",
+                      "contained": "MuiButton-contained",
+                      "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
+                      "containedSecondary": "MuiButton-containedSecondary",
+                      "containedSizeLarge": "MuiButton-containedSizeLarge",
+                      "containedSizeSmall": "MuiButton-containedSizeSmall",
+                      "disableElevation": "MuiButton-disableElevation",
+                      "disabled": "Mui-disabled HvButton-ghostDisabled",
+                      "endIcon": "MuiButton-endIcon",
+                      "focusVisible": "Mui-focusVisible",
+                      "fullWidth": "MuiButton-fullWidth",
+                      "iconSizeLarge": "MuiButton-iconSizeLarge",
+                      "iconSizeMedium": "MuiButton-iconSizeMedium",
+                      "iconSizeSmall": "MuiButton-iconSizeSmall",
+                      "label": "MuiButton-label",
+                      "outlined": "MuiButton-outlined",
+                      "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
+                      "outlinedSecondary": "MuiButton-outlinedSecondary",
+                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                      "root": "MuiButton-root HvButton-root",
+                      "sizeLarge": "MuiButton-sizeLarge",
+                      "sizeSmall": "MuiButton-sizeSmall",
+                      "startIcon": "MuiButton-startIcon HvButton-startIcon",
+                      "text": "MuiButton-text",
+                      "textPrimary": "MuiButton-textPrimary HvButton-ghost",
+                      "textSecondary": "MuiButton-textSecondary",
+                      "textSizeLarge": "MuiButton-textSizeLarge",
+                      "textSizeSmall": "MuiButton-textSizeSmall",
+                    }
+                  }
+                  color="primary"
+                  disableRipple={true}
+                  focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
+                  onClick={[Function]}
+                  variant="text"
+                >
+                  <WithStyles(ForwardRef(ButtonBase))
+                    aria-pressed={false}
+                    className="MuiButton-root HvButton-root MuiButton-text HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                    component="button"
+                    disableRipple={true}
+                    disabled={false}
+                    focusRipple={true}
+                    focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <ForwardRef(ButtonBase)
+                      aria-pressed={false}
+                      className="MuiButton-root HvButton-root MuiButton-text HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      component="button"
+                      disableRipple={true}
+                      disabled={false}
+                      focusRipple={true}
+                      focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <button
+                        aria-pressed={false}
+                        className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvTimePickerPeriodPicker-periodToggle HvButton-icon HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        <span
+                          className="MuiButton-label"
+                        >
+                          AM
+                        </span>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Button)>
+              </WithStyles(ForwardRef(Button))>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <DropDownXS
-        className="HvTimePickerPeriodPicker-icon"
+        className="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon"
         onClick={[Function]}
       >
         <HvIconBase
-          className="HvTimePickerPeriodPicker-icon"
+          className="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon"
           iconSize="XS"
           name="DropDownXS"
           onClick={[Function]}
         >
           <div
-            className="HvTimePickerPeriodPicker-icon HvIconBase-root HvIconBase-xs"
+            className="HvTimePickerPeriodPicker-icon HvTimePickerPeriodPicker-subtractIcon HvIconBase-root HvIconBase-xs"
             name="DropDownXS"
             onClick={[Function]}
           >

@@ -15,7 +15,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
         "unitTimeContainer": "HvTimePickerUnitTimePicker-unitTimeContainer",
         "unitTimeInput": "HvTimePickerUnitTimePicker-unitTimeInput",
         "unitTimeInputRoot": "HvTimePickerUnitTimePicker-unitTimeInputRoot",
-        "unitTimeInputRootInvalid": "HvTimePickerUnitTimePicker-unitTimeInputRootInvalid",
       }
     }
     onChangeUnitTimeValue={[MockFunction]}
@@ -64,15 +63,20 @@ exports[`UnitTimePicker should render correctly 1`] = `
           }
         }
         disableClear={true}
-        labels={
+        inputProps={
           Object {
-            "placeholder": "",
+            "autoComplete": "off",
+            "max": 59,
+            "min": 0,
+            "type": "number",
           }
         }
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
+        required={true}
+        status="valid"
         value="30"
       >
         <HvInput
@@ -100,15 +104,20 @@ exports[`UnitTimePicker should render correctly 1`] = `
             }
           }
           disableClear={true}
-          labels={
+          inputProps={
             Object {
-              "placeholder": "",
+              "autoComplete": "off",
+              "max": 59,
+              "min": 0,
+              "type": "number",
             }
           }
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          required={true}
+          status="valid"
           value="30"
         >
           <WithStyles(HvFormElement)
@@ -116,7 +125,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
             disabled={false}
             onBlur={[Function]}
             readOnly={false}
-            required={false}
+            required={true}
             status="valid"
           >
             <HvFormElement
@@ -129,7 +138,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               disabled={false}
               onBlur={[Function]}
               readOnly={false}
-              required={false}
+              required={true}
               status="valid"
             >
               <div
@@ -158,23 +167,34 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       "aria-invalid": undefined,
                       "aria-label": undefined,
                       "aria-labelledby": undefined,
-                      "autoComplete": undefined,
+                      "autoComplete": "off",
+                      "max": 59,
+                      "min": 0,
                       "ref": Object {
                         "current": <input
+                          autocomplete="off"
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                          max="59"
+                          min="0"
+                          required=""
                           rows="10"
-                          type="text"
+                          type="number"
                           value="30"
                         />,
                       },
+                      "type": "number",
                     }
                   }
                   inputRef={
                     Object {
                       "current": <input
+                        autocomplete="off"
                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                        max="59"
+                        min="0"
+                        required=""
                         rows="10"
-                        type="text"
+                        type="number"
                         value="30"
                       />,
                     }
@@ -185,7 +205,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   readOnly={false}
-                  required={false}
+                  required={true}
                   type="text"
                   value="30"
                 >
@@ -217,23 +237,34 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         "aria-invalid": undefined,
                         "aria-label": undefined,
                         "aria-labelledby": undefined,
-                        "autoComplete": undefined,
+                        "autoComplete": "off",
+                        "max": 59,
+                        "min": 0,
                         "ref": Object {
                           "current": <input
+                            autocomplete="off"
                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                            max="59"
+                            min="0"
+                            required=""
                             rows="10"
-                            type="text"
+                            type="number"
                             value="30"
                           />,
                         },
+                        "type": "number",
                       }
                     }
                     inputRef={
                       Object {
                         "current": <input
+                          autocomplete="off"
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                          max="59"
+                          min="0"
+                          required=""
                           rows="10"
-                          type="text"
+                          type="number"
                           value="30"
                         />,
                       }
@@ -244,7 +275,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     onFocus={[Function]}
                     onKeyDown={[Function]}
                     readOnly={false}
-                    required={false}
+                    required={true}
                     type="text"
                     value="30"
                   >
@@ -272,24 +303,35 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             "aria-invalid": undefined,
                             "aria-label": undefined,
                             "aria-labelledby": undefined,
-                            "autoComplete": undefined,
+                            "autoComplete": "off",
+                            "max": 59,
+                            "min": 0,
                             "ref": Object {
                               "current": <input
+                                autocomplete="off"
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                max="59"
+                                min="0"
+                                required=""
                                 rows="10"
-                                type="text"
+                                type="number"
                                 value="30"
                               />,
                             },
-                            "required": false,
+                            "required": true,
+                            "type": "number",
                           }
                         }
                         inputRef={
                           Object {
                             "current": <input
+                              autocomplete="off"
                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                              max="59"
+                              min="0"
+                              required=""
                               rows="10"
-                              type="text"
+                              type="number"
                               value="30"
                             />,
                           }
@@ -335,24 +377,35 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               "aria-invalid": undefined,
                               "aria-label": undefined,
                               "aria-labelledby": undefined,
-                              "autoComplete": undefined,
+                              "autoComplete": "off",
+                              "max": 59,
+                              "min": 0,
                               "ref": Object {
                                 "current": <input
+                                  autocomplete="off"
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                  max="59"
+                                  min="0"
+                                  required=""
                                   rows="10"
-                                  type="text"
+                                  type="number"
                                   value="30"
                                 />,
                               },
-                              "required": false,
+                              "required": true,
+                              "type": "number",
                             }
                           }
                           inputRef={
                             Object {
                               "current": <input
+                                autocomplete="off"
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                max="59"
+                                min="0"
+                                required=""
                                 rows="10"
-                                type="text"
+                                type="number"
                                 value="30"
                               />,
                             }
@@ -399,24 +452,35 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "aria-invalid": undefined,
                                 "aria-label": undefined,
                                 "aria-labelledby": undefined,
-                                "autoComplete": undefined,
+                                "autoComplete": "off",
+                                "max": 59,
+                                "min": 0,
                                 "ref": Object {
                                   "current": <input
+                                    autocomplete="off"
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                    max="59"
+                                    min="0"
+                                    required=""
                                     rows="10"
-                                    type="text"
+                                    type="number"
                                     value="30"
                                   />,
                                 },
-                                "required": false,
+                                "required": true,
+                                "type": "number",
                               }
                             }
                             inputRef={
                               Object {
                                 "current": <input
+                                  autocomplete="off"
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                  max="59"
+                                  min="0"
+                                  required=""
                                   rows="10"
-                                  type="text"
+                                  type="number"
                                   value="30"
                                 />,
                               }
@@ -467,24 +531,35 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "aria-invalid": undefined,
                                   "aria-label": undefined,
                                   "aria-labelledby": undefined,
-                                  "autoComplete": undefined,
+                                  "autoComplete": "off",
+                                  "max": 59,
+                                  "min": 0,
                                   "ref": Object {
                                     "current": <input
+                                      autocomplete="off"
                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                      max="59"
+                                      min="0"
+                                      required=""
                                       rows="10"
-                                      type="text"
+                                      type="number"
                                       value="30"
                                     />,
                                   },
-                                  "required": false,
+                                  "required": true,
+                                  "type": "number",
                                 }
                               }
                               inputRef={
                                 Object {
                                   "current": <input
+                                    autocomplete="off"
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                    max="59"
+                                    min="0"
+                                    required=""
                                     rows="10"
-                                    type="text"
+                                    type="number"
                                     value="30"
                                   />,
                                 }
@@ -504,18 +579,21 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <input
+                                  autoComplete="off"
                                   autoFocus={false}
                                   className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                   disabled={false}
+                                  max={59}
+                                  min={0}
                                   onAnimationStart={[Function]}
                                   onBlur={[Function]}
                                   onChange={[Function]}
                                   onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   readOnly={false}
-                                  required={false}
+                                  required={true}
                                   rows={10}
-                                  type="text"
+                                  type="number"
                                   value="30"
                                 />
                               </div>

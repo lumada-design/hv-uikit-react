@@ -71,9 +71,6 @@ const styles = (theme) => ({
     top: -8,
     paddingLeft: 2,
   },
-  periodContainer: {
-    marginLeft: "8px",
-  },
 
   formElementRoot: {
     position: "relative",
