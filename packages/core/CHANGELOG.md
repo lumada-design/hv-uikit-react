@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.46.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.45.3...@hv/uikit-react-core@3.46.0) (2021-09-28)
+
+
+### Features
+
+* **timepicker:** allow empty initial value HVUIKIT-6021 ([336a032](https://github.com/lumada-design/hv-uikit-react/commit/336a0322fa24f26e462e41b456abcea8a7b6505c))
+
+
+
+
+
 ## [3.45.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.45.2...@hv/uikit-react-core@3.45.3) (2021-09-24)
 
 

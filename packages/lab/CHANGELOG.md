@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.30.3...@hv/uikit-react-lab@3.31.0) (2021-09-28)
+
+
+### Features
+
+* **table:** created css variables to store header cell height value ([99dcb78](https://github.com/lumada-design/hv-uikit-react/commit/99dcb787b3a481f486a6ba32cb05f1139c16542f))
+* **table:** extra changes to header groups styles ([41927d1](https://github.com/lumada-design/hv-uikit-react/commit/41927d1af4fde3159fb3411b9c428240855c48d8))
+* **table:** fix behaviour of sticky columns and sticky headers ([d67d5fe](https://github.com/lumada-design/hv-uikit-react/commit/d67d5fe9ee7f523cd977f1def936968e22be0f8a))
+* **table:** fix rowSpan value for tbody cells ([f9b6570](https://github.com/lumada-design/hv-uikit-react/commit/f9b65709f1f615a13b20cfc58d9b1467ecfbad9f))
+* **table:** unit tests ([7ddab86](https://github.com/lumada-design/hv-uikit-react/commit/7ddab868c02012bc8b098e440b7f1b53a07031ac))
+* **timepicker:** allow empty initial value HVUIKIT-6021 ([336a032](https://github.com/lumada-design/hv-uikit-react/commit/336a0322fa24f26e462e41b456abcea8a7b6505c))
+
+
+
+
+
 ## [3.30.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.30.2...@hv/uikit-react-lab@3.30.3) (2021-09-24)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
