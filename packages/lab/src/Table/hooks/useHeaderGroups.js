@@ -65,8 +65,10 @@ export const getHeaderPropsHook = (props, { instance, column }) => {
       }
 
       if (column.rowSpan > 1) {
-        // rowSpan doesn't work with flex, so we need to simulate it but adjusting the height value manually
-        nextProps.style.height = `${52 + 32 * (column.rowSpan - 1)}px`;
+        // rowSpan doesn't work with flex, so we need to simulate it by adjusting the height value manually
+        nextProps.style.height = `calc(var(--first-row-cell-height) + var(--cell-height) * ${
+          column.rowSpan - 1
+        })`;
       }
     }
   }

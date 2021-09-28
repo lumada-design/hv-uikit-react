@@ -4,7 +4,7 @@ import useHeaderGroups from "../useHeaderGroups";
 
 import * as headerGroupsHooks from "../useHeaderGroups";
 
-describe("useHvTableHeaderGroups", () => {
+describe("useHvHeaderGroups", () => {
   it("registers hooks", () => {
     const hooks = {
       visibleColumns: { push: jest.fn() },
@@ -216,7 +216,9 @@ describe("useHvTableHeaderGroups", () => {
 
         expect(props.style?.display).toEqual("none");
         expect(props.style?.visibility).toEqual("hidden");
-        expect(props.style?.height).toEqual(`${52 + 32}px`);
+        expect(props.style?.height).toEqual(
+          "calc(var(--first-row-cell-height) + var(--cell-height) * 1)"
+        );
 
         // should return the other properties
         expect(existing).toBe(existingProps);

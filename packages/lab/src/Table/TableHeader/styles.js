@@ -2,7 +2,10 @@ import { hexToRgbA } from "@hv/uikit-react-core";
 
 const styles = (theme) => ({
   root: {
-    height: 32,
+    "--first-row-cell-height": "52px",
+    "--cell-height": "32px",
+
+    height: "var(--cell-height)",
     verticalAlign: "inherit",
     textAlign: "left",
     padding: theme.hvSpacing(0, "xs", 0, "32px"),
@@ -12,7 +15,7 @@ const styles = (theme) => ({
 
   head: {
     ":first-child > &": {
-      height: 52,
+      height: "var(--first-row-cell-height)",
       borderTop: `1px solid ${theme.palette.atmo4}`,
     },
 
