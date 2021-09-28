@@ -11,7 +11,7 @@ import { TimeFormat, PeriodPickerOptions, TimePickerUnits } from "./enums";
  */
 const getHoursForTimeFormat = (hours, timeFormat) => {
   if (timeFormat === TimeFormat.H12) {
-    if (hours === 0) {
+    if (hours == null || hours === 0) {
       return TimePickerUnits.HOUR_12.max;
     }
     if (isUnitTimeInValidRange(hours, TimePickerUnits.HOUR_12.type)) {

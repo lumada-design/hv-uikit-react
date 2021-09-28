@@ -1,4 +1,5 @@
-import { TimeFormat } from "./enums";
+import { TimeFormat, PeriodPickerOptions } from "./enums";
+import { getHoursForTimeFormat } from "./timePickerConverter";
 
 /**
  * Pads the unit time values so that they always have two digits
@@ -6,13 +7,13 @@ import { TimeFormat } from "./enums";
  * @returns The unit time value with two digits
  */
 const padTime = (value) => {
-  if (!value || value < 0) {
-    return "00";
+  if (value == null || value === "" || value < 0) {
+    return value?.toString();
   }
   if (value < 10 && value.toString().length === 1) {
     return `0${value.toString()}`;
   }
-  return value;
+  return value.toString();
 };
 
 /**
@@ -39,14 +40,19 @@ const getTimeFormatForLocale = (locale) => {
  *
  * @returns {String} formatted time
  */
-const getFormattedTime = (time) => {
-  const { hours, minutes, seconds } = time;
+const getFormattedTime = (time, timeFormat) => {
+  const { hours, minutes, seconds, period } = time;
 
-  let timeToRender = `${padTime(hours)}:${padTime(minutes)}:${padTime(seconds)}`;
-  if (time.period) {
-    timeToRender += ` ${time.period}`;
+  const isInHour12Format = timeFormat === TimeFormat.H12 || (timeFormat == null && period != null);
+
+  if (isInHour12Format) {
+    const p = period ?? (hours > 12 ? PeriodPickerOptions.PM : PeriodPickerOptions.AM);
+    return `${padTime(getHoursForTimeFormat(hours, TimeFormat.H12))}:${padTime(minutes)}:${padTime(
+      seconds
+    )} ${p}`;
   }
-  return timeToRender;
+
+  return `${padTime(hours)}:${padTime(minutes)}:${padTime(seconds)}`;
 };
 
 export { padTime, getFormattedTime, getTimeFormatForLocale };

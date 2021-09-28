@@ -4,18 +4,17 @@ const styles = (theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    marginLeft: 8,
   },
-  periodText: {
-    ...theme.hv.typography.highlightText,
-    textAlign: "center",
+  periodToggle: {
     height: "40px",
     width: "40px",
-    paddingTop: `${theme.hv.spacing.xs}px`,
-    paddingBottom: `${theme.hv.spacing.xs}px`,
-    marginTop: "2px",
   },
   icon: {
     cursor: "pointer",
+  },
+  subtractIcon: {
+    marginTop: `${theme.hv.spacing.xs}px`,
   },
 });
 

@@ -13,6 +13,10 @@ const styles = (theme) => ({
     width: "40px",
     padding: 0,
     margin: 0,
+    "&::placeholder": {
+      fontSize: 16,
+      fontWeight: 600,
+    },
     "&::-webkit-outer-spin-button, &::-webkit-inner-spin-button": {
       "-webkit-appearance": "none",
       "-moz-appearance": "none",
@@ -24,9 +28,6 @@ const styles = (theme) => ({
     },
   },
   unitTimeInputRoot: {},
-  unitTimeInputRootInvalid: {
-    border: "1px red solid",
-  },
 
   subtractIcon: {
     marginTop: `${theme.hv.spacing.xs}px`,

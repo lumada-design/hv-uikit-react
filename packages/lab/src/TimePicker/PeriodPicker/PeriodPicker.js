@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { HvTypography } from "@hv/uikit-react-core";
+import clsx from "clsx";
+import { HvToggleButton } from "@hv/uikit-react-core";
 import { DropUpXS as UpIcon, DropDownXS as DownIcon } from "@hv/uikit-react-icons";
-import { getPeriodForDate } from "../timePickerUtils";
 import { PeriodPickerOptions } from "../enums";
 
 class PeriodPicker extends React.Component {
@@ -10,7 +10,7 @@ class PeriodPicker extends React.Component {
     super(props);
 
     this.state = {
-      currentPeriod: props.period,
+      currentPeriod: props.period ?? PeriodPickerOptions.AM,
     };
   }
 
@@ -50,10 +50,17 @@ class PeriodPicker extends React.Component {
     return (
       <div className={classes.periodContainer}>
         <UpIcon className={classes.icon} onClick={this.handleChangePeriod} />
-        <HvTypography variant="highlightText" className={classes.periodText}>
+        <HvToggleButton
+          className={classes.periodToggle}
+          selected={currentPeriod === PeriodPickerOptions.PM}
+          onClick={this.handleChangePeriod}
+        >
           {currentPeriod}
-        </HvTypography>
-        <DownIcon className={classes.icon} onClick={this.handleChangePeriod} />
+        </HvToggleButton>
+        <DownIcon
+          className={clsx(classes.icon, classes.subtractIcon)}
+          onClick={this.handleChangePeriod}
+        />
       </div>
     );
   }
@@ -72,10 +79,6 @@ PeriodPicker.propTypes = {
    * Default period value
    */
   period: PropTypes.oneOf([PeriodPickerOptions.AM, PeriodPickerOptions.PM]),
-};
-
-PeriodPicker.defaultProps = {
-  period: getPeriodForDate(),
 };
 
 export default PeriodPicker;

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 
 import {
   HvFormElement,
@@ -13,15 +13,50 @@ import {
   useUniqueId,
   useControlled,
   useLocale,
+  HvTypography,
+  useSavedState,
 } from "@hv/uikit-react-core";
 import { Time as TimeIcon } from "@hv/uikit-react-icons";
-import UnitTimePicker from "./UnitTimePicker";
+
 import { TimePickerUnits, TimeFormat, PeriodPickerOptions } from "./enums";
 import { getFormattedTime, getTimeFormatForLocale } from "./timePickerFormatter";
 import { getHoursForTimeFormat, getTimeWithFormat24 } from "./timePickerConverter";
-
+import UnitTimePicker from "./UnitTimePicker";
 import PeriodPicker from "./PeriodPicker";
+
 import styles from "./styles";
+
+const setFocusToContent = (containerRef) => {
+  containerRef?.getElementsByTagName("input")[0]?.focus();
+};
+
+const timeIsEqual = (timeA, timeB) => {
+  return (
+    timeA === timeB ||
+    (timeA == null && timeB == null) ||
+    (timeA != null &&
+      timeB != null &&
+      timeA.hours === timeB.hours &&
+      timeA.minutes === timeB.minutes &&
+      timeA.seconds === timeB.seconds &&
+      timeA.period === timeB.period)
+  );
+};
+
+const timeIsValid = (time, timeFormat) => {
+  const hourInputState =
+    time?.hours != null &&
+    time.hours !== "" &&
+    time.hours >= 0 &&
+    ((timeFormat === TimeFormat.H24 && time.hours <= 24) ||
+      (timeFormat === TimeFormat.H12 && time.hours <= 12));
+  const minutesInputState =
+    time?.minutes != null && time.minutes !== "" && time.minutes >= 0 && time.minutes <= 59;
+  const secondsInputState =
+    time?.seconds != null && time.seconds !== "" && time.seconds >= 0 && time.seconds <= 59;
+
+  return hourInputState && minutesInputState && secondsInputState;
+};
 
 /**
  * A TimePicker component used to choose the time, following specifications provided by Design System. Still in development.
@@ -30,83 +65,212 @@ import styles from "./styles";
 const HvTimePicker = ({
   classes,
   className,
+
   id,
   name,
 
-  value: valueProp,
-  defaultValue: defaultValueProp,
-
   required = false,
   disabled = false,
+
   label,
   "aria-label": ariaLabel,
   "aria-labelledby": ariaLabelledBy,
   description,
   "aria-describedby": ariaDescribedBy,
+
+  onChange,
+
   status,
   statusMessage,
   "aria-errormessage": ariaErrorMessage,
+
+  placeholder,
+  hoursPlaceholder = "hh",
+  minutesPlaceholder = "mm",
+  secondsPlaceholder = "ss",
+
+  value: valueProp,
+  defaultValue: defaultValueProp,
+
   timeFormat: chosenTimeFormat,
   locale: localeProp,
-  onChange,
+
+  disableDefaultValue,
+
+  onToggle: onToggleCallback,
+
+  // deprecated properties:
   hours = new Date().getHours(),
   minutes = new Date().getMinutes(),
   seconds = 0,
   period: chosenTimePeriod,
+
+  // misc properties:
   disablePortal = true,
   escapeWithReference = true,
   dropdownProps,
   ...others
 }) => {
+  // #region STATE
+  const elementId = useUniqueId(id, "hvtimepicker");
+
   const localeFromProvider = useLocale();
-
   const locale = localeProp || localeFromProvider;
+  const timeFormat = useMemo(
+    () => (chosenTimeFormat != null ? chosenTimeFormat.toString() : getTimeFormatForLocale(locale)),
+    [chosenTimeFormat, locale]
+  );
 
-  const timeFormat = chosenTimeFormat || getTimeFormatForLocale(locale);
+  const [value, setValue, rollbackValue, lastValidValue] = useSavedState(() => {
+    // fallback to the deprecated properties
+    // we shouldn't do that when promoting to core
+    // as it makes impossible to start with an empty value
+    const defaultValue =
+      defaultValueProp ??
+      (disableDefaultValue
+        ? null
+        : {
+            hours,
+            minutes,
+            seconds,
+          });
 
-  // fallback to the deprecated properties
-  // we shouldn't do that when promoting to core
-  // as it makes impossible to start with an empty value
-  const defaultValue = defaultValueProp ?? {
-    hours,
-    minutes,
-    seconds,
-  };
+    const v = valueProp ?? defaultValue;
 
-  const [value, setValue] = useControlled(valueProp, defaultValue);
-
-  const selectedTime = {
-    hours: getHoursForTimeFormat(value.hours, timeFormat),
-    minutes: value.minutes,
-    seconds: value.seconds,
-    period:
-      timeFormat === TimeFormat.H24
-        ? undefined
-        : chosenTimePeriod || (value.hours < 12 ? PeriodPickerOptions.AM : PeriodPickerOptions.PM),
-  };
+    return v != null
+      ? {
+          hours: v?.hours != null ? getHoursForTimeFormat(v.hours, timeFormat) : null,
+          minutes: v?.minutes,
+          seconds: v?.seconds,
+          period:
+            timeFormat === TimeFormat.H12
+              ? chosenTimePeriod ??
+                (v?.hours == null || v.hours < 12 ? PeriodPickerOptions.AM : PeriodPickerOptions.PM)
+              : null,
+        }
+      : null;
+  });
 
   const [validationMessage] = useControlled(statusMessage, "Required");
   const [validationState, setValidationState] = useControlled(status, "standBy");
 
-  const handleTimeChange = (updatedTimeObject) => {
-    const selectedTimeIn24Format = getTimeWithFormat24(updatedTimeObject, timeFormat);
+  const [isOpen, setOpen] = useState(false);
+  // #endregion
 
-    // this will only run if value is uncontrolled
-    setValue(selectedTimeIn24Format);
+  // #region SIDE EFFECTS
+  const firstRender = useRef(true);
+  const currentValue = useRef(value);
+  useEffect(() => {
+    currentValue.current = value;
+  });
+  const currentTimeFormat = useRef(timeFormat);
+  useEffect(() => {
+    currentTimeFormat.current = timeFormat;
+  });
 
-    onChange?.(selectedTimeIn24Format);
-  };
+  useEffect(() => {
+    // allow external changes to the time format (via timeFormat or locale properties)
+    if (!firstRender.current && currentValue.current != null) {
+      const to12 = timeFormat === TimeFormat.H12;
 
-  const elementId = useUniqueId(id, "hvtimepicker");
-
-  const validateInput = (timeChangeState) => {
-    setValidationState(() => {
-      // this will only run if status is uncontrolled
-      if (required && timeChangeState) {
-        return "invalid";
+      let { hours: h, period: p } = currentValue.current;
+      if (to12) {
+        if (h == null || h < 12) {
+          p = PeriodPickerOptions.AM;
+        } else {
+          p = PeriodPickerOptions.PM;
+          if (h > 12) {
+            h -= 12;
+          }
+        }
+      } else {
+        if (p === PeriodPickerOptions.AM) {
+          if (h === 12) {
+            h = 0;
+          }
+        } else if (h < 12) {
+          h += 12;
+        }
+        p = undefined;
       }
-      return "valid";
-    });
+
+      setValue(
+        {
+          hours: h,
+          minutes: currentValue.current.minutes,
+          seconds: currentValue.current.seconds,
+          period: p,
+        },
+        true
+      );
+    }
+  }, [setValue, timeFormat]);
+
+  useEffect(() => {
+    // allow control of value property
+    if (!firstRender.current) {
+      const dayPeriod =
+        valueProp?.hours == null || valueProp.hours < 12
+          ? PeriodPickerOptions.AM
+          : PeriodPickerOptions.PM;
+
+      setValue(
+        valueProp != null
+          ? {
+              hours:
+                valueProp?.hours != null
+                  ? getHoursForTimeFormat(valueProp.hours, currentTimeFormat.current)
+                  : null,
+              minutes: valueProp?.minutes,
+              seconds: valueProp?.seconds,
+              period: currentTimeFormat.current === TimeFormat.H12 ? dayPeriod : null,
+            }
+          : null,
+        true
+      );
+    }
+  }, [setValue, valueProp]);
+
+  useEffect(() => {
+    // on close, make sure to restore the last valid value
+    // (in the case the user closed with some time part invalid)
+    if (!firstRender.current && !isOpen) {
+      rollbackValue();
+    }
+  }, [isOpen, rollbackValue]);
+
+  useEffect(() => {
+    // run validations on each render
+    // (except on the first, remaining in the standBy/untouched state)
+    if (!firstRender.current) {
+      setValidationState(() => {
+        // this will only run if status is uncontrolled
+        if (required && lastValidValue == null) {
+          return "invalid";
+        }
+        return "valid";
+      });
+    }
+  });
+
+  useEffect(() => {
+    firstRender.current = false;
+  }, []);
+  // #endregion
+
+  // #region EVENT HANDLERS
+  const handleTimeChange = (updatedTimeObject) => {
+    if (!timeIsEqual(value, updatedTimeObject)) {
+      const valid = timeIsValid(updatedTimeObject, timeFormat);
+
+      // the value only is commited if valid
+      setValue(updatedTimeObject, valid);
+
+      if (valid) {
+        // always output in 24h format
+        onChange?.(getTimeWithFormat24(updatedTimeObject, timeFormat));
+      }
+    }
   };
 
   /**
@@ -116,14 +280,10 @@ const HvTimePicker = ({
    */
   const handleHoursChange = (updatedHours) => {
     const newSelectedTime = {
-      ...selectedTime,
+      ...value,
       hours: updatedHours,
     };
 
-    const hourInputState =
-      (timeFormat === 24 && updatedHours <= 24) || (timeFormat === 12 && updatedHours <= 12);
-
-    validateInput(hourInputState);
     handleTimeChange(newSelectedTime);
   };
 
@@ -134,13 +294,10 @@ const HvTimePicker = ({
    */
   const handleMinutesChange = (updatedMinutes) => {
     const newSelectedTime = {
-      ...selectedTime,
+      ...value,
       minutes: updatedMinutes,
     };
 
-    const minutesInputState = updatedMinutes >= 0 || updatedMinutes <= 59;
-
-    validateInput(minutesInputState);
     handleTimeChange(newSelectedTime);
   };
 
@@ -151,18 +308,11 @@ const HvTimePicker = ({
    */
   const handleSecondsChange = (updatedSeconds) => {
     const newSelectedTime = {
-      ...selectedTime,
+      ...value,
       seconds: updatedSeconds,
     };
 
-    const secondsInputState = updatedSeconds >= 0 || updatedSeconds <= 59;
-
-    validateInput(secondsInputState);
     handleTimeChange(newSelectedTime);
-  };
-
-  const setFocusToContent = (containerRef) => {
-    containerRef?.getElementsByTagName("input")[0]?.focus();
   };
 
   /**
@@ -172,11 +322,26 @@ const HvTimePicker = ({
    */
   const handleChangePeriod = (updatedPeriod) => {
     const newSelectedTime = {
-      ...selectedTime,
+      ...value,
       period: updatedPeriod,
     };
+
     handleTimeChange(newSelectedTime);
   };
+
+  const onToggle = (evt, open) => {
+    /* 
+     If evt is null this toggle wasn't triggered by the user.
+     instead it was triggered by the baseDropdown useEffect after
+     the change of the expanded property.
+    */
+    if (evt === null) return;
+
+    onToggleCallback?.(evt, open);
+
+    setOpen(open);
+  };
+  // #endregion
 
   const hasLabels = label != null;
   const hasDescription = description != null;
@@ -225,7 +390,13 @@ const HvTimePicker = ({
       <HvBaseDropdown
         id={setId(elementId, "timepicker-dropdown")}
         role="combobox"
-        placeholder={getFormattedTime(selectedTime)}
+        placeholder={
+          lastValidValue != null ? (
+            getFormattedTime(lastValidValue, timeFormat)
+          ) : (
+            <HvTypography variant="placeholderText">{placeholder}</HvTypography>
+          )
+        }
         classes={{
           placeholder: disabled ? classes.dropdownPlaceholderDisabled : classes.dropdownPlaceholder,
           header: isStateInvalid ? classes.dropdownHeaderInvalid : undefined,
@@ -236,6 +407,8 @@ const HvTimePicker = ({
         adornment={
           <TimeIcon color={disabled ? "atmo5" : "acce1"} className={classes.iconBaseRoot} />
         }
+        expanded={isOpen}
+        onToggle={onToggle}
         onContainerCreation={setFocusToContent}
         aria-haspopup="dialog"
         aria-label={ariaLabel}
@@ -256,32 +429,33 @@ const HvTimePicker = ({
         <div className={classes.timePopperContainer}>
           <UnitTimePicker
             id={setId(elementId, "hours")}
+            placeholder={hoursPlaceholder}
             unit={
               timeFormat === TimeFormat.H24
                 ? TimePickerUnits.HOUR_24.type
                 : TimePickerUnits.HOUR_12.type
             }
-            unitValue={selectedTime.hours}
+            unitValue={value?.hours}
             onChangeUnitTimeValue={handleHoursChange}
           />
           <span className={classes.separator}>:</span>
           <UnitTimePicker
             id={setId(elementId, "minutes")}
+            placeholder={minutesPlaceholder}
             unit={TimePickerUnits.MINUTE.type}
-            unitValue={selectedTime.minutes}
+            unitValue={value?.minutes}
             onChangeUnitTimeValue={handleMinutesChange}
           />
           <span className={classes.separator}>:</span>
           <UnitTimePicker
             id={setId(elementId, "seconds")}
+            placeholder={secondsPlaceholder}
             unit={TimePickerUnits.SECOND.type}
-            unitValue={selectedTime.seconds}
+            unitValue={value?.seconds}
             onChangeUnitTimeValue={handleSecondsChange}
           />
           {timeFormat === TimeFormat.H12 && (
-            <div className={classes.periodContainer}>
-              <PeriodPicker onChangePeriod={handleChangePeriod} period={selectedTime.period} />
-            </div>
+            <PeriodPicker onChangePeriod={handleChangePeriod} period={value?.period} />
           )}
         </div>
       </HvBaseDropdown>
@@ -379,11 +553,21 @@ HvTimePicker.propTypes = {
   /**
    * The value of the form element.
    */
-  value: PropTypes.string,
+  value: PropTypes.shape({
+    hours: PropTypes.number,
+    minutes: PropTypes.number,
+    seconds: PropTypes.number,
+    period: PropTypes.string,
+  }),
   /**
    * When uncontrolled, defines the initial input value.
    */
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.shape({
+    hours: PropTypes.number,
+    minutes: PropTypes.number,
+    seconds: PropTypes.number,
+    period: PropTypes.string,
+  }),
 
   /**
    * Indicates that user input is required on the form element.
@@ -424,6 +608,24 @@ HvTimePicker.propTypes = {
   "aria-describedby": PropTypes.string,
 
   /**
+   * The placeholder value when no time is selected.
+   */
+  placeholder: PropTypes.string,
+
+  /**
+   * The placeholder of the hours input.
+   */
+  hoursPlaceholder: PropTypes.string,
+  /**
+   * The placeholder of the minutes input.
+   */
+  minutesPlaceholder: PropTypes.string,
+  /**
+   * The placeholder of the seconds input.
+   */
+  secondsPlaceholder: PropTypes.string,
+
+  /**
    * The status of the form element.
    *
    * Valid is correct, invalid is incorrect and standBy means no validations have run.
@@ -450,7 +652,7 @@ HvTimePicker.propTypes = {
    * If undefined, the component will use a format according to the passed locale.
    * If defined, it will "override" the default value given by the locale
    */
-  timeFormat: PropTypes.oneOf([TimeFormat.H12, TimeFormat.H24, undefined]),
+  timeFormat: PropTypes.oneOf([TimeFormat.H12, TimeFormat.H24, 12, 24, undefined]),
 
   /**
    * Locale that will provide the time format(12 or 24 hour format)
@@ -469,6 +671,20 @@ HvTimePicker.propTypes = {
    * It is always invoked with the hours in a 24h format
    */
   onChange: PropTypes.func,
+
+  /**
+   * Callback called when dropdown changes the expanded state.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {boolean} open If the dropdown new state is open (`true`) or closed (`false`).
+   */
+  onToggle: PropTypes.func,
+
+  /**
+   * Allow starting with an empty value by not defaulting to the current time.
+   * This should become the default behavior when the component is promoted to core.
+   */
+  disableDefaultValue: PropTypes.bool,
 
   /**
    * Default value for the hours picker
