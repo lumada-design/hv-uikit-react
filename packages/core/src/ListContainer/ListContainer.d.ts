@@ -4,7 +4,7 @@ import { StandardProps } from "@material-ui/core";
 export type HvListContainerClassKey = "root";
 
 export interface HvListContainerProps
-  extends StandardProps<React.HTMLAttributes<HTMLUListElement>, HvListContainerClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLElement>, HvListContainerClassKey> {
   /**
    * The id of the root element
    */
