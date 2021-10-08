@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.46.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.46.0...@hv/uikit-react-core@3.46.1) (2021-10-08)
+
+
+### Bug Fixes
+
+* **list-container:** ts definition ([1643b54](https://github.com/lumada-design/hv-uikit-react/commit/1643b5495555a5f20bef7486c463157ee1416cac))
+
+
+
+
+
 # [3.46.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.45.3...@hv/uikit-react-core@3.46.0) (2021-09-28)
 
 
