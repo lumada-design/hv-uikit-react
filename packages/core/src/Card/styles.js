@@ -72,6 +72,9 @@ const styles = (theme) => ({
     "&:hover": {
       outline: `1px solid ${theme.hv.palette.accent.acce1}`,
     },
+    "&:focus": {
+      outline: `1px solid ${theme.hv.palette.accent.acce1}`,
+    },
     "& $semanticBar": {
       height: 4,
     },
