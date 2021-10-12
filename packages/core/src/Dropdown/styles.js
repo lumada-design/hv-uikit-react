@@ -45,7 +45,7 @@ const styles = (theme) => ({
 
   placeholder: {},
   selectionDisabled: {
-    lineHeight: theme.hv.spacing.md,
+    lineHeight: `${theme.hv.spacing.md}px`,
   },
   dropdownHeader: {},
   dropdownHeaderInvalid: {},
