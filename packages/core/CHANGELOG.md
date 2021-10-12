@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.46.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.46.1...@hv/uikit-react-core@3.46.2) (2021-10-12)
+
+
+### Bug Fixes
+
+* **card:** selected card should have border visible ([1daa450](https://github.com/lumada-design/hv-uikit-react/commit/1daa4505569de64d0d36ab2e76902457402b3937))
+* **dropdown:** line-height should be in pixels ([52d0255](https://github.com/lumada-design/hv-uikit-react/commit/52d0255b68847b91c91dd479d1157171e0f74277))
+
+
+
+
+
 ## [3.46.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.46.0...@hv/uikit-react-core@3.46.1) (2021-10-08)
 
 
