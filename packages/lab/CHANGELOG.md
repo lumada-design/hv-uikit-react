@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.3](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.31.2...@hv/uikit-react-lab@3.31.3) (2021-10-15)
+
+
+### Bug Fixes
+
+* **notificationpanel:** added locale dynamic loading for dayjs [#2579](https://github.com/lumada-design/hv-uikit-react/issues/2579) ([ea07e76](https://github.com/lumada-design/hv-uikit-react/commit/ea07e7638a3abc4d2633b388ba269c370af62d79))
+
+
+
+
+
 ## [3.31.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.31.1...@hv/uikit-react-lab@3.31.2) (2021-10-12)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
