@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import dayjs from "dayjs";
 import { deprecatedPropType, withStyles } from "@material-ui/core";
 import {
   HvPanel,
@@ -29,9 +30,37 @@ const DEFAULT_LABELS = {
 };
 
 /**
+ * Obtains a simplified locale, if possible, e.g: "en-US" returns "en".
+ *
+ * @param {string} locale - The locale to be used
+ * @returns The more generic locale if found
+ */
+export const getGenericLocale = (locale) =>
+  locale.includes("-") && locale.substr(0, locale.indexOf("-"));
+
+/**
+ * Imports and load the received locale in order to be used by dayjs. If the provided locale or a generic one
+ * obtained is not possible to load, then dayjs will fallback to its default.
+ *
+ * @param {string} locale - The locale to be used
+ */
+const importAndLoadLocale = async (locale) => {
+  await import(`dayjs/locale/${locale}.js`)
+    .then(() => {
+      dayjs.locale(locale);
+    })
+    .catch(async () => {
+      const genericLocale = getGenericLocale(locale);
+      await import(`dayjs/locale/${genericLocale}.js`)
+        .then(() => dayjs.locale(genericLocale))
+        // eslint-disable-next-line no-console
+        .catch(() => console.warn(`Unable to load locale: ${locale}. Falling back to the default`));
+    });
+};
+
+/**
  * Notification Panel displays all of read and unread notifications. Still in development
  */
-
 const HvNotificationPanel = ({
   id,
   className,
@@ -54,6 +83,23 @@ const HvNotificationPanel = ({
 
   const [highlighted, setHighlighted] = useState(undefined);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isLocaleLoaded, setIsLocaleLoaded] = useState(false);
+
+  useEffect(() => {
+    // We're using this mount logic to avoid potential memory leak problems.
+    let isMounted = true;
+
+    if (!isLocaleLoaded) {
+      importAndLoadLocale(locale).then(() => {
+        if (isMounted) {
+          setIsLocaleLoaded(true);
+        }
+      });
+    }
+    return () => {
+      isMounted = false;
+    };
+  });
 
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 

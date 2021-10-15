@@ -29,11 +29,8 @@ const Notification = ({
   onKeyPress,
   rightContainer,
   isHighlighted,
-  locale,
 }) => {
   const getTime = () => {
-    dayjs.locale(locale);
-
     if (!isRead) {
       return dayjs(date).fromNow();
     }
@@ -192,10 +189,6 @@ Notification.propTypes = {
    * Denotes index of clicked notification
    */
   isHighlighted: PropTypes.bool,
-  /**
-   * The locale to be used on the date
-   */
-  locale: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvNotificationPanelNotification" })(Notification);
