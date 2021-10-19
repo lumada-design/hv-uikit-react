@@ -30,3 +30,6 @@ export * from "./Drawer";
 
 export { default as HvColorPicker } from "./ColorPicker";
 export * from "./ColorPicker";
+
+export { default as HvCarousel } from "./Carousel";
+export * from "./Carousel";

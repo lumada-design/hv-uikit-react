@@ -13,3 +13,4 @@ export { default as HvTimePicker } from "./TimePicker";
 export { default as HvTag } from "./Tag";
 export { default as HvDrawer } from "./Drawer";
 export { default as HvColorPicker } from "./ColorPicker";
+export { default as HvCarousel } from "./Carousel";

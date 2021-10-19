@@ -57,6 +57,7 @@
     "rc-slider": "8.6.3",
     "rc-tooltip": "^3.7.3",
     "react-color": "^2.19.3",
+    "react-swipeable-views": "^0.14.0",
     "react-table": "^7.7.0"
   },
   "devDependencies": {
