@@ -51,7 +51,7 @@ HvSnackbarContentWrapper.propTypes = {
   /**
    * The message to display.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    * Variant of the snackbar.
    */

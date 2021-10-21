@@ -21,7 +21,7 @@ export interface NotificationsCommonProps {
   /**
    * The message to display.
    */
-  label?: string;
+  label?: React.ReactNode;
   /**
    * Variant of the snackbar.
    */
