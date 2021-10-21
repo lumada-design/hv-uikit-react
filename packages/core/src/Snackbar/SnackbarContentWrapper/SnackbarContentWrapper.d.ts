@@ -17,7 +17,7 @@ export interface HvSnackbarContentProps
   /**
    * The message to display.
    */
-  label?: string;
+  label?: React.ReactNode;
   /**
    * Variant of the snackbar.
    */

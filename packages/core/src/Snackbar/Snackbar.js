@@ -135,7 +135,7 @@ HvSnackbar.propTypes = {
   /**
    * The message to display.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    *  The anchor of the Snackbar. vertical: "top", "bottom" | horizontal: "left","center","right. It defines where the snackbar will end his animation
    */

@@ -118,7 +118,7 @@ HvBanner.propTypes = {
   /**
    * The message to display.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    *  The anchor of the Snackbar.
    */
