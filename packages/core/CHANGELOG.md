@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.46.3 (2021-10-22)
+
+
+### Bug Fixes
+
+* **banner:** label can be a node ([66dd992](https://github.com/lumada-design/hv-uikit-react/commit/66dd99244a17fa3e6183f1c0ec7764216a4ddc53))
+
+
+
+
+
 ## [3.46.2](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.46.1...@hv/uikit-react-core@3.46.2) (2021-10-12)
 
 
