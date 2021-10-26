@@ -14,16 +14,19 @@ const withTooltip =
   (Component, label = "", placement, hideTooltip, tooltipProps, tooltipContainerProps) =>
   (props) => {
     const [isHoverDisabled, setIsHoverDisabled] = useState(false);
+    const [open, setOpen] = useState(false);
 
     const title = <Typography>{label}</Typography>;
 
     const handleMouseEnter = (evt) => {
       const isHidden = hideTooltip?.(evt);
       setIsHoverDisabled(isHidden);
+      setOpen(!isHidden);
     };
 
     const handleMouseLeave = () => {
       setIsHoverDisabled(false);
+      setOpen(false);
     };
 
     return (
@@ -33,6 +36,7 @@ const withTooltip =
         disableFocusListener
         disableTouchListener
         title={title}
+        open={open}
         placement={placement}
         {...tooltipProps}
       >

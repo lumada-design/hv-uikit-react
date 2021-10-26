@@ -230,6 +230,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                           disableFocusListener={true}
                           disableHoverListener={false}
                           disableTouchListener={true}
+                          open={false}
                           placement="top"
                           style={
                             Object {
@@ -263,6 +264,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                             disableFocusListener={true}
                             disableHoverListener={false}
                             disableTouchListener={true}
+                            open={false}
                             placement="top"
                             style={
                               Object {
@@ -312,6 +314,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                               disableHoverListener={false}
                               disableTouchListener={true}
                               enterDelay={300}
+                              open={false}
                               placement="top"
                               style={
                                 Object {
@@ -370,6 +373,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                 disableHoverListener={false}
                                 disableTouchListener={true}
                                 enterDelay={300}
+                                open={false}
                                 placement="top"
                                 style={
                                   Object {
@@ -608,6 +612,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                           disableFocusListener={true}
                           disableHoverListener={false}
                           disableTouchListener={true}
+                          open={false}
                           placement="top"
                           style={
                             Object {
@@ -641,6 +646,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                             disableFocusListener={true}
                             disableHoverListener={false}
                             disableTouchListener={true}
+                            open={false}
                             placement="top"
                             style={
                               Object {
@@ -690,6 +696,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                               disableHoverListener={false}
                               disableTouchListener={true}
                               enterDelay={300}
+                              open={false}
                               placement="top"
                               style={
                                 Object {
@@ -748,6 +755,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                 disableHoverListener={false}
                                 disableTouchListener={true}
                                 enterDelay={300}
+                                open={false}
                                 placement="top"
                                 style={
                                   Object {
@@ -986,6 +994,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                           disableFocusListener={true}
                           disableHoverListener={false}
                           disableTouchListener={true}
+                          open={false}
                           placement="top"
                           style={
                             Object {
@@ -1019,6 +1028,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                             disableFocusListener={true}
                             disableHoverListener={false}
                             disableTouchListener={true}
+                            open={false}
                             placement="top"
                             style={
                               Object {
@@ -1068,6 +1078,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                               disableHoverListener={false}
                               disableTouchListener={true}
                               enterDelay={300}
+                              open={false}
                               placement="top"
                               style={
                                 Object {
@@ -1126,6 +1137,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                 disableHoverListener={false}
                                 disableTouchListener={true}
                                 enterDelay={300}
+                                open={false}
                                 placement="top"
                                 style={
                                   Object {
@@ -1452,6 +1464,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                           disableFocusListener={true}
                           disableHoverListener={false}
                           disableTouchListener={true}
+                          open={false}
                           placement="top"
                           style={
                             Object {
@@ -1485,6 +1498,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                             disableFocusListener={true}
                             disableHoverListener={false}
                             disableTouchListener={true}
+                            open={false}
                             placement="top"
                             style={
                               Object {
@@ -1534,6 +1548,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                               disableHoverListener={false}
                               disableTouchListener={true}
                               enterDelay={300}
+                              open={false}
                               placement="top"
                               style={
                                 Object {
@@ -1592,6 +1607,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                 disableHoverListener={false}
                                 disableTouchListener={true}
                                 enterDelay={300}
+                                open={false}
                                 placement="top"
                                 style={
                                   Object {
@@ -1830,6 +1846,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                           disableFocusListener={true}
                           disableHoverListener={false}
                           disableTouchListener={true}
+                          open={false}
                           placement="top"
                           style={
                             Object {
@@ -1863,6 +1880,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                             disableFocusListener={true}
                             disableHoverListener={false}
                             disableTouchListener={true}
+                            open={false}
                             placement="top"
                             style={
                               Object {
@@ -1912,6 +1930,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                               disableHoverListener={false}
                               disableTouchListener={true}
                               enterDelay={300}
+                              open={false}
                               placement="top"
                               style={
                                 Object {
@@ -1970,6 +1989,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                 disableHoverListener={false}
                                 disableTouchListener={true}
                                 enterDelay={300}
+                                open={false}
                                 placement="top"
                                 style={
                                   Object {
@@ -2208,6 +2228,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                           disableFocusListener={true}
                           disableHoverListener={false}
                           disableTouchListener={true}
+                          open={false}
                           placement="top"
                           style={
                             Object {
@@ -2241,6 +2262,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                             disableFocusListener={true}
                             disableHoverListener={false}
                             disableTouchListener={true}
+                            open={false}
                             placement="top"
                             style={
                               Object {
@@ -2290,6 +2312,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                               disableHoverListener={false}
                               disableTouchListener={true}
                               enterDelay={300}
+                              open={false}
                               placement="top"
                               style={
                                 Object {
@@ -2348,6 +2371,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                 disableHoverListener={false}
                                 disableTouchListener={true}
                                 enterDelay={300}
+                                open={false}
                                 placement="top"
                                 style={
                                   Object {
