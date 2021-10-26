@@ -394,6 +394,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                               disableFocusListener={true}
                               disableHoverListener={false}
                               disableTouchListener={true}
+                              open={false}
                               placement="top"
                               style={
                                 Object {
@@ -427,6 +428,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                 disableFocusListener={true}
                                 disableHoverListener={false}
                                 disableTouchListener={true}
+                                open={false}
                                 placement="top"
                                 style={
                                   Object {
@@ -476,6 +478,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                   disableHoverListener={false}
                                   disableTouchListener={true}
                                   enterDelay={300}
+                                  open={false}
                                   placement="top"
                                   style={
                                     Object {
@@ -534,6 +537,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                     disableHoverListener={false}
                                     disableTouchListener={true}
                                     enterDelay={300}
+                                    open={false}
                                     placement="top"
                                     style={
                                       Object {
