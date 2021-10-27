@@ -24,6 +24,7 @@ export type UseHvRowSelectionTableOptions = Partial<{
   autoResetLockedSelectionRows: boolean;
   selectSubRows: boolean;
   manualRowSelectedKey: string;
+  applyToggleAllRowsSelectedToPrefilteredRows: boolean;
 }>;
 
 export interface UseHvRowSelectionHooks<D extends object> {
