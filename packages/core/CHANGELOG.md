@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.46.4](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.46.3...@hv/uikit-react-core@3.46.4) (2021-10-27)
+
+
+### Bug Fixes
+
+* **Tooltip:** prevent tooltip to be opened ([3bcd3f1](https://github.com/lumada-design/hv-uikit-react/commit/3bcd3f1ad96524c54ff1737219101e376336f005))
+
+
+
+
+
 ## 3.46.3 (2021-10-22)
 
 
