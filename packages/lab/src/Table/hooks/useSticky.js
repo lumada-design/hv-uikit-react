@@ -57,8 +57,10 @@ export const visibleColumnsHook = (columns, { instance }) => {
   });
 
   if (others.length > 0) {
-    const lastNotSticky = others[others.length - 1];
+    const [firstNotSticky] = others;
+    updateColumnAndParent(firstNotSticky, { isFirstNotSticky: true });
 
+    const lastNotSticky = others[others.length - 1];
     updateColumnAndParent(lastNotSticky, { isLastNotSticky: true });
   }
 
@@ -145,8 +147,14 @@ const getCellProps = (header, isHeaderCell) => {
     if (header.isFirstRightSticky) {
       props.stickyColumnLeastRight = true;
     }
-  } else if (header.isLastNotSticky) {
-    props.style.borderRight = 0;
+  } else {
+    if (header.isFirstNotSticky) {
+      props.style.borderLeft = 0;
+    }
+
+    if (header.isLastNotSticky) {
+      props.style.borderRight = 0;
+    }
   }
 
   return props;

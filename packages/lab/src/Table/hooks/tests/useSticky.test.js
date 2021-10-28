@@ -111,6 +111,15 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.isFirstRightSticky).toBeTruthy();
       expect(processed[6]?.isFirstRightSticky).toBeFalsy();
 
+      // first not sticky should be marked as such
+      expect(processed[0]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[1]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[2]?.isFirstNotSticky).toBeTruthy();
+      expect(processed[3]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[4]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[5]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[6]?.isFirstNotSticky).toBeFalsy();
+
       // last not sticky should be marked as such
       expect(processed[0]?.isLastNotSticky).toBeFalsy();
       expect(processed[1]?.isLastNotSticky).toBeFalsy();
@@ -174,6 +183,15 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.isFirstRightSticky).toBeFalsy();
       expect(processed[6]?.isFirstRightSticky).toBeFalsy();
 
+      // first not sticky should be marked as such
+      expect(processed[0]?.isFirstNotSticky).toBeTruthy();
+      expect(processed[1]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[2]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[3]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[4]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[5]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[6]?.isFirstNotSticky).toBeFalsy();
+
       // last not sticky should be marked as such
       expect(processed[0]?.isLastNotSticky).toBeFalsy();
       expect(processed[1]?.isLastNotSticky).toBeFalsy();
@@ -230,6 +248,15 @@ describe("useHvTableSticky", () => {
       expect(processed[5]?.isFirstRightSticky).toBeFalsy();
       expect(processed[6]?.isFirstRightSticky).toBeTruthy();
 
+      // first not sticky should be marked as such
+      expect(processed[0]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[1]?.isFirstNotSticky).toBeTruthy();
+      expect(processed[2]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[3]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[4]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[5]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[6]?.isFirstNotSticky).toBeFalsy();
+
       // last not sticky should be marked as such
       expect(processed[0]?.isLastNotSticky).toBeFalsy();
       expect(processed[1]?.isLastNotSticky).toBeFalsy();
@@ -282,6 +309,15 @@ describe("useHvTableSticky", () => {
       expect(processed[4]?.isFirstRightSticky).toBeFalsy();
       expect(processed[5]?.isFirstRightSticky).toBeFalsy();
       expect(processed[6]?.isFirstRightSticky).toBeFalsy();
+
+      // first not sticky should be marked as such
+      expect(processed[0]?.isFirstNotSticky).toBeTruthy();
+      expect(processed[1]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[2]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[3]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[4]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[5]?.isFirstNotSticky).toBeFalsy();
+      expect(processed[6]?.isFirstNotSticky).toBeFalsy();
 
       // last not sticky should be marked as such
       expect(processed[0]?.isLastNotSticky).toBeFalsy();
