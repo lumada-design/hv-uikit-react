@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.32.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.31.5...@hv/uikit-react-lab@3.32.0) (2021-10-28)
+
+
+### Bug Fixes
+
+* **table:** double border when using grouped headers hook ([1f2a4f1](https://github.com/lumada-design/hv-uikit-react/commit/1f2a4f130ddd26d109e69033dbc41c4dd516eb17))
+
+
+### Features
+
+* minor dependencies updates ([09c4766](https://github.com/lumada-design/hv-uikit-react/commit/09c47665940c6bef70eb57fe86ec79931c592585))
+* **table:** allow to apply bulk selection on filtered rows ([3197333](https://github.com/lumada-design/hv-uikit-react/commit/3197333834c84e33b37561e71058e5d0222ea04b))
+
+
+
+
+
 ## [3.31.5](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.31.4...@hv/uikit-react-lab@3.31.5) (2021-10-27)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

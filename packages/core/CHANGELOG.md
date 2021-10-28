@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.47.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.46.4...@hv/uikit-react-core@3.47.0) (2021-10-28)
+
+
+### Features
+
+* minor dependencies updates ([09c4766](https://github.com/lumada-design/hv-uikit-react/commit/09c47665940c6bef70eb57fe86ec79931c592585))
+
+
+
+
+
 ## [3.46.4](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-core@3.46.3...@hv/uikit-react-core@3.46.4) (2021-10-27)
 
 
