@@ -190,6 +190,32 @@ describe("useHvBulkActions", () => {
       expect(existing).toBe(existingProps);
     });
 
+    it("returns properties ready to be injected in HvBulkActions (paginated, showSelectAllPages: false)", () => {
+      const existingProps = {};
+
+      const instance = {
+        showSelectAllPages: false,
+        rows: [1, 2, 3],
+        selectedFlatRows: [1],
+        page: 2,
+        toggleAllRowsSelected: jest.fn(),
+        invertedToggleAllRowsSelected: jest.fn(),
+      };
+
+      const [existing, props] = useBulkActionsHooks.defaultGetHvBulkActionsProps(existingProps, {
+        instance,
+      });
+
+      expect(props.numTotal).toEqual(3);
+      expect(props.numSelected).toEqual(1);
+      expect(props.showSelectAllPages).toBeFalsy();
+      expect(props.onSelectAll).toBe(instance.invertedToggleAllRowsSelected);
+      expect(props.onSelectAllPages).toBe(instance.toggleAllRowsSelected);
+
+      // should return the other properties
+      expect(existing).toBe(existingProps);
+    });
+
     it("returns properties ready to be injected in HvBulkActions (not paginated)", () => {
       const existingProps = {};
 
@@ -206,6 +232,58 @@ describe("useHvBulkActions", () => {
 
       expect(props.numTotal).toEqual(3);
       expect(props.numSelected).toEqual(1);
+      expect(props.showSelectAllPages).toBeFalsy();
+      expect(props.onSelectAll).toBe(instance.invertedToggleAllRowsSelected);
+
+      // should return the other properties
+      expect(existing).toBe(existingProps);
+    });
+
+    it("returns properties ready to be injected in HvBulkActions (filtered, not applyToggleAllRowsSelectedToPrefilteredRows)", () => {
+      const existingProps = {};
+
+      const instance = {
+        applyToggleAllRowsSelectedToPrefilteredRows: false,
+        initialRows: [1, 2, 3, 4, 5, 6],
+        rows: [1, 3, 5],
+        selectedFlatRows: [1, 3],
+        state: { selectedRowIds: { 1: true, 2: true, 3: true } },
+        toggleAllRowsSelected: jest.fn(),
+        invertedToggleAllRowsSelected: jest.fn(),
+      };
+
+      const [existing, props] = useBulkActionsHooks.defaultGetHvBulkActionsProps(existingProps, {
+        instance,
+      });
+
+      expect(props.numTotal).toEqual(3);
+      expect(props.numSelected).toEqual(2);
+      expect(props.showSelectAllPages).toBeFalsy();
+      expect(props.onSelectAll).toBe(instance.invertedToggleAllRowsSelected);
+
+      // should return the other properties
+      expect(existing).toBe(existingProps);
+    });
+
+    it("returns properties ready to be injected in HvBulkActions (filtered, applyToggleAllRowsSelectedToPrefilteredRows)", () => {
+      const existingProps = {};
+
+      const instance = {
+        applyToggleAllRowsSelectedToPrefilteredRows: true,
+        initialRows: [1, 2, 3, 4, 5, 6],
+        rows: [1, 3, 5],
+        selectedFlatRows: [1, 3],
+        state: { selectedRowIds: { 1: true, 2: true, 3: true } },
+        toggleAllRowsSelected: jest.fn(),
+        invertedToggleAllRowsSelected: jest.fn(),
+      };
+
+      const [existing, props] = useBulkActionsHooks.defaultGetHvBulkActionsProps(existingProps, {
+        instance,
+      });
+
+      expect(props.numTotal).toEqual(6);
+      expect(props.numSelected).toEqual(3);
       expect(props.showSelectAllPages).toBeFalsy();
       expect(props.onSelectAll).toBe(instance.invertedToggleAllRowsSelected);
 

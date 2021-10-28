@@ -134,7 +134,17 @@ export function reducer(state, action, previousState, instance) {
 
   if (action.type === actions.toggleAllRowsSelected) {
     const { value: setSelected } = action;
-    const { isAllRowsSelected, rowsById, nonGroupedRowsById = rowsById } = instance;
+    const {
+      isAllRowsSelected,
+      rowsById,
+      initialRowsById,
+      nonGroupedRowsById = rowsById,
+      applyToggleAllRowsSelectedToPrefilteredRows,
+    } = instance;
+
+    const rowsToSelect = applyToggleAllRowsSelectedToPrefilteredRows
+      ? initialRowsById
+      : nonGroupedRowsById;
 
     const selectAll = typeof setSelected !== "undefined" ? setSelected : !isAllRowsSelected;
 
@@ -143,14 +153,14 @@ export function reducer(state, action, previousState, instance) {
     const selectedRowIds = { ...state.selectedRowIds };
 
     if (selectAll) {
-      Object.keys(nonGroupedRowsById).forEach((rowId) => {
+      Object.keys(rowsToSelect).forEach((rowId) => {
         const isSelectionLocked = state.lockedSelectionRowIds[rowId];
         if (!isSelectionLocked) {
           selectedRowIds[rowId] = true;
         }
       });
     } else {
-      Object.keys(nonGroupedRowsById).forEach((rowId) => {
+      Object.keys(rowsToSelect).forEach((rowId) => {
         const isSelectionLocked = state.lockedSelectionRowIds[rowId];
         if (!isSelectionLocked) {
           delete selectedRowIds[rowId];
@@ -212,7 +222,6 @@ export function reducer(state, action, previousState, instance) {
     const { page, rowsById, selectSubRows = true, isAllPageRowsSelected, getSubRows } = instance;
 
     const selectAll = typeof setSelected !== "undefined" ? setSelected : !isAllPageRowsSelected;
-
     const newSelectedRowIds = { ...state.selectedRowIds };
 
     const handleRowById = (rowId) => {
@@ -334,6 +343,7 @@ export function useInstance(instance) {
     getHooks,
     plugins,
     rowsById,
+    initialRowsById,
     nonGroupedRowsById = rowsById,
     autoResetSelectedRows = true,
     autoResetLockedSelectionRows = true,
@@ -342,6 +352,7 @@ export function useInstance(instance) {
     dispatch,
     page,
     getSubRows,
+    applyToggleAllRowsSelectedToPrefilteredRows,
   } = instance;
 
   ensurePluginOrder(
@@ -349,6 +360,10 @@ export function useInstance(instance) {
     ["useFilters", "useGroupBy", "useSortBy", "useExpanded", "usePagination"],
     "useHvRowSelection"
   );
+
+  const rowsToSelect = applyToggleAllRowsSelectedToPrefilteredRows
+    ? initialRowsById
+    : nonGroupedRowsById;
 
   const selectedFlatRows = React.useMemo(() => {
     const selectedRows = [];
@@ -370,9 +385,7 @@ export function useInstance(instance) {
 
   const existsLockedRows = !!Object.keys(lockedSelectionRowIds).length;
 
-  const isNoRowsSelected = !(
-    Object.keys(nonGroupedRowsById).length && Object.keys(selectedRowIds).length
-  );
+  const isNoRowsSelected = !(Object.keys(rowsToSelect).length && selectedFlatRows.length);
 
   let isNoPageRowsSelected;
   let isAllRowsSelected;
@@ -388,7 +401,7 @@ export function useInstance(instance) {
     isAllPageRowsSelected = false;
 
     isAllSelectableRowsSelected =
-      existsLockedRows && !Object.keys(nonGroupedRowsById).some((id) => !lockedSelectionRowIds[id]);
+      existsLockedRows && !Object.keys(rowsToSelect).some((id) => !lockedSelectionRowIds[id]);
     isAllSelectablePageRowsSelected = isAllSelectableRowsSelected;
 
     isAllSelectableRowsUnselected = isAllSelectableRowsSelected;
@@ -396,7 +409,7 @@ export function useInstance(instance) {
 
     isNoPageRowsSelected = true;
   } else {
-    isAllRowsSelected = !Object.keys(nonGroupedRowsById).some((id) => !selectedRowIds[id]);
+    isAllRowsSelected = !Object.keys(rowsToSelect).some((id) => !selectedRowIds[id]);
 
     if (isAllRowsSelected) {
       isAllSelectableRowsSelected = true;
@@ -404,7 +417,7 @@ export function useInstance(instance) {
 
       isAllSelectableRowsUnselected =
         existsLockedRows &&
-        Object.keys(nonGroupedRowsById).filter((id) => !lockedSelectionRowIds[id]).length === 0;
+        Object.keys(rowsToSelect).filter((id) => !lockedSelectionRowIds[id]).length === 0;
       isAllSelectablePageRowsUnselected = isAllSelectableRowsUnselected;
 
       isNoPageRowsSelected = false;
@@ -412,13 +425,13 @@ export function useInstance(instance) {
     } else {
       isAllSelectableRowsSelected =
         existsLockedRows &&
-        !Object.keys(nonGroupedRowsById)
+        !Object.keys(rowsToSelect)
           .filter((id) => !lockedSelectionRowIds[id])
           .some((id) => !selectedRowIds[id]);
 
       isAllSelectableRowsUnselected =
         !existsLockedRows ||
-        !Object.keys(nonGroupedRowsById)
+        !Object.keys(rowsToSelect)
           .filter((id) => !lockedSelectionRowIds[id])
           .some((id) => selectedRowIds[id]);
 

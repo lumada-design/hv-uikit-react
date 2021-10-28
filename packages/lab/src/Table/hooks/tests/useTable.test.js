@@ -28,7 +28,8 @@ describe("useHvTable", () => {
 
     expect(useTable.mock.calls[0][0].data).toBe(data);
     expect(useTable.mock.calls[0][0].columns).toBe(columns);
-    expect(useTable.mock.calls[0][1]).toBe(mockPlugin);
+    expect(useTable.mock.calls[0][1].pluginName).toBe("useHvTableSetup");
+    expect(useTable.mock.calls[0][2]).toBe(mockPlugin);
   });
 
   describe("plugin automatic instalations", () => {
@@ -43,7 +44,7 @@ describe("useHvTable", () => {
 
         const plugins = useTable.mock.calls[0].slice(1);
 
-        expect(plugins.length).toEqual(2);
+        expect(plugins.length).toEqual(3);
         expect(plugins).toEqual(expect.arrayContaining([mockPlugin, useHvTableStyles]));
       });
 
@@ -57,7 +58,7 @@ describe("useHvTable", () => {
 
         const plugins = useTable.mock.calls[0].slice(1);
 
-        expect(plugins.length).toEqual(2);
+        expect(plugins.length).toEqual(3);
         expect(plugins).toEqual(expect.arrayContaining([mockPlugin, useHvTableStyles]));
       });
     });
@@ -80,8 +81,8 @@ describe("useHvTable", () => {
 
         const plugins = useTable.mock.calls[0].slice(1);
 
-        expect(plugins[0]).toEqual(corePlugin);
-        expect(plugins[1]).toEqual(hvPlugin);
+        expect(plugins[1]).toEqual(corePlugin);
+        expect(plugins[2]).toEqual(hvPlugin);
       });
 
       it("does nothing if core plugin is present", () => {
@@ -94,8 +95,8 @@ describe("useHvTable", () => {
 
         const plugins = useTable.mock.calls[0].slice(1);
 
-        expect(plugins[0]).toEqual(corePlugin);
-        expect(plugins[2]).toEqual(hvPlugin);
+        expect(plugins[1]).toEqual(corePlugin);
+        expect(plugins[3]).toEqual(hvPlugin);
       });
 
       it("fixes plugin order", () => {
@@ -108,8 +109,8 @@ describe("useHvTable", () => {
 
         const plugins = useTable.mock.calls[0].slice(1);
 
-        expect(plugins[0]).toEqual(corePlugin);
-        expect(plugins[1]).toEqual(hvPlugin);
+        expect(plugins[1]).toEqual(corePlugin);
+        expect(plugins[2]).toEqual(hvPlugin);
       });
     });
   });

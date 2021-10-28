@@ -18,6 +18,7 @@ export interface UseHvBulkActionsHooks<D extends object> {
 export type UseHvBulkActionsTableOptions = {
   aditivePageBulkSelection?: boolean;
   subtractivePageBulkDeselection?: boolean;
+  showSelectAllPages?: boolean;
 };
 
 export interface UseHvBulkActionsTableInstanceProps<D extends object> {

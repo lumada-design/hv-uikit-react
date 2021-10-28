@@ -251,6 +251,9 @@ export interface HvTableInstance<D extends object = Record<string, unknown>>
   getTableProps: (propGetter?: TablePropGetter<D>) => HvTableProps;
   selectedFlatRows: Array<HvRowInstance<D>>;
 
+  initialRows: Array<HvRowInstance<D>>;
+  initialRowsById: Record<string, HvRowInstance<D>>;
+
   labels: Record<string, string>;
 }
 

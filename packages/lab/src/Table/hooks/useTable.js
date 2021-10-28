@@ -48,6 +48,20 @@ const ensureCorePluginInstalation = (plugins, hvPluginName, corePluginToInstall)
   }
 };
 
+const useInstanceHook = (instance) => {
+  const { rowsById } = instance;
+
+  Object.assign(instance, {
+    initialRowsById: rowsById,
+  });
+};
+
+const useHvTableSetup = (hooks) => {
+  hooks.useInstance.push(useInstanceHook);
+};
+
+useHvTableSetup.pluginName = "useHvTableSetup";
+
 const useHvTable = (props, ...plugins) => {
   const { data: dataProp, columns: columnsProp, ...others } = props;
 
@@ -72,6 +86,7 @@ const useHvTable = (props, ...plugins) => {
       columns,
       ...others,
     },
+    useHvTableSetup,
     ...plugins
   );
 };
