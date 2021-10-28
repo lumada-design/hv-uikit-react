@@ -166,6 +166,32 @@ The `getTableProps`, `getTableHeadProps`, `getHeaderGroupProps`, `getHeaderProps
   <Story inline story={stories.StickyHeadersAndColumns} />
 </Preview>
 
+## Grouped Headers
+
+The table columns can be grouped, allowing it to have header groups.
+
+Check [React Table's `useTable#column-options` documentation](https://react-table.tanstack.com/docs/api/useTable#column-options) for configuration details.
+
+This is implemented using the `useHvHeaderGroups` custom React Table hook provided by the UI Kit library.
+
+When using grouped columns, all header group columns text will be centered.
+
+### Configuration
+
+The following options are supported on any `Column` object passed to the `columns` options in `useTable()`:
+
+- `columns: Array<Column>`
+  - A nested array of columns. If defined, the column will act as a header group. Columns can be recursively nested as much as needed.
+
+### Usage
+
+The `getTableProps`, `getHeaderGroupProps`, `getHeaderProps`, `getTableBodyProps`, `getRowProps` and `getCellProps` prop getters must be called and the properties injected into the corresponding elements.
+
+<Preview withToolbar>
+  <Story inline story={stories.GroupedHeaders} />
+</Preview>
+
+
 ## Empty Cells
 
 The absence of data within an individual cell in the table should be displayed as a `—` (_em dash_), according to Design System guidelines.
@@ -212,10 +238,4 @@ Elements can be changed (to `div` or any other apropriate html element) by using
 
 <Preview withToolbar>
   <Story inline story={stories.ServerSide} />
-</Preview>
-
-## Grouped Headers
-
-<Preview withToolbar>
-  <Story inline story={stories.GroupedHeaders} />
 </Preview>
