@@ -76,9 +76,15 @@ const styles = (theme) => {
     stickyColumn: {
       position: "sticky",
       zIndex: 2,
+      background: theme.hv.palette.atmosphere.atmo2,
 
       "&$groupColumnMostRight+$stickyColumn": {
         borderLeft: 0,
+      },
+
+      "&$sorted": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo2,
+        backgroundImage: `linear-gradient(to right, ${semiTransparentAtmo1}, ${semiTransparentAtmo1})`,
       },
     },
     stickyColumnMostLeft: {
