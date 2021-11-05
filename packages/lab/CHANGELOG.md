@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.1](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.32.0...@hv/uikit-react-lab@3.32.1) (2021-11-05)
+
+
+### Bug Fixes
+
+* **table:** extract color with transparency to variable ([a8bd20d](https://github.com/lumada-design/hv-uikit-react/commit/a8bd20df1046f99eb60ba93a398f1cbb5d75ca97))
+* **table:** fix sticky sorted column transparency ([c46d818](https://github.com/lumada-design/hv-uikit-react/commit/c46d818de8e3ab549cbe3c683cd42653ad1d6c30))
+
+
+
+
+
 # [3.32.0](https://github.com/lumada-design/hv-uikit-react/compare/@hv/uikit-react-lab@3.31.5...@hv/uikit-react-lab@3.32.0) (2021-10-28)
 
 
