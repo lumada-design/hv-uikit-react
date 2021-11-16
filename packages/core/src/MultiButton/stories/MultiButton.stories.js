@@ -27,10 +27,10 @@ export const Main = () => {
 
   return (
     <HvMultiButton style={{ width: "210px" }}>
-      <HvButton selected={val === 0} onClick={() => setVal(0)} startIcon={<Map />}>
+      <HvButton key="1" selected={val === 0} onClick={() => setVal(0)} startIcon={<Map />}>
         Map
       </HvButton>
-      <HvButton selected={val === 1} onClick={() => setVal(1)} startIcon={<LocationPin />}>
+      <HvButton key="2" selected={val === 1} onClick={() => setVal(1)} startIcon={<LocationPin />}>
         Satellite
       </HvButton>
     </HvMultiButton>
@@ -50,6 +50,7 @@ export const OnlyLabels = () => {
       {buttons.map((button, i) => (
         <HvButton
           id={button.toLowerCase()}
+          key={`${buttons[i]}`}
           selected={selection === i}
           onClick={(evt) => handleChange(evt, i)}
         >
@@ -79,6 +80,7 @@ export const OnlyIcons = () => {
       {buttons.map(({ name, icon }, i) => (
         <HvButton
           id={name.toLowerCase()}
+          key={`${buttons[i].name}`}
           icon
           aria-label={name}
           selected={selection.includes(i)}
@@ -164,6 +166,7 @@ export const MultipleSelection = () => {
     <HvMultiButton style={{ width: "224px" }}>
       {buttons.map((button, i) => (
         <HvButton
+          key={`${buttons[i]}`}
           aria-label={button}
           selected={selection.includes(i)}
           onClick={(evt) => handleChange(evt, i)}
@@ -179,12 +182,12 @@ export const VerticalOrientation = () => {
   const [selection, setSelection] = useState([0, 2, 3, 5]);
 
   const buttons = [
-    { name: "Map", icon: <Map /> },
-    { name: "Location", icon: <LocationPin /> },
-    { name: "Map", icon: <Map /> },
-    { name: "Location", icon: <LocationPin /> },
-    { name: "Map", icon: <Map /> },
-    { name: "Location", icon: <LocationPin /> },
+    { name: "Map", icon: <Map />, key: 1 },
+    { name: "Location", icon: <LocationPin />, key: 2 },
+    { name: "Map", icon: <Map />, key: 3 },
+    { name: "Location", icon: <LocationPin />, key: 4 },
+    { name: "Map", icon: <Map />, key: 5 },
+    { name: "Location", icon: <LocationPin />, key: 6 },
   ];
 
   const handleChange = (event, idx) => {
@@ -196,9 +199,10 @@ export const VerticalOrientation = () => {
 
   return (
     <div style={{ display: "flex" }}>
-      <HvMultiButton icon vertical style={{ width: "32px" }}>
+      <HvMultiButton vertical style={{ width: "32px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
+            key={`${buttons[i].key}`}
             aria-label={name}
             selected={selection.includes(i)}
             onClick={(evt) => handleChange(evt, i)}
@@ -210,6 +214,7 @@ export const VerticalOrientation = () => {
       <HvMultiButton vertical style={{ marginLeft: "20px", width: "120px" }}>
         {buttons.map(({ name, icon }, i) => (
           <HvButton
+            key={`${buttons[i].key}`}
             aria-label={name}
             startIcon={icon}
             selected={selection.includes(i)}
@@ -248,6 +253,7 @@ export const EnforcedSelection = () => {
         {range(5).map((i) => (
           <HvButton
             id={`location${i + 1 || ""}`}
+            key={`ef-${i}`}
             startIcon={<LocationPin />}
             selected={selection.includes(i)}
             onClick={(evt) => handleChange(evt, i)}
@@ -286,6 +292,7 @@ export const MinimumSelection = () => {
         {range(5).map((i) => (
           <HvButton
             id={`location${i + 1}`}
+            key={`ms-${i}`}
             startIcon={<LocationPin />}
             selected={selection.includes(i)}
             onClick={(evt) => handleChange(evt, i)}
@@ -324,6 +331,7 @@ export const MaximumSelection = () => {
         {range(5).map((i) => (
           <HvButton
             id={`location${i + 1}`}
+            key={`maxse-${i}`}
             startIcon={<LocationPin />}
             selected={selection.includes(i)}
             onClick={(evt) => handleChange(evt, i)}

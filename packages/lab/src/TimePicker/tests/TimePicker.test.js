@@ -26,13 +26,14 @@ describe("Timepicker", () => {
       expect(timepickerInput).toBeInTheDocument();
     });
 
-    it("Opens timepicker when dropdown button is clicked", () => {
-      const { getByRole, getAllByRole } = render(<Main />);
+    it("Opens timepicker when dropdown button is clicked", async () => {
+      const { getByRole, getAllByRole, findByRole } = render(<Main />);
 
-      const timepickerDropdown = getByRole("combobox");
+      let timepickerDropdown = getByRole("combobox");
       expect(timepickerDropdown).toBeInTheDocument();
       expect(timepickerDropdown).toHaveAttribute("aria-expanded", "false");
       userEvent.click(timepickerDropdown); // try to open
+      timepickerDropdown = await findByRole("combobox");
       expect(timepickerDropdown).toHaveAttribute("aria-expanded", "true");
 
       const [pickerTooltip] = getAllByRole("tooltip");

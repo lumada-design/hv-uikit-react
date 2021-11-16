@@ -54,7 +54,7 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <HvList values={mockDataSingleSelection} selectDefault useSelector />
+          <HvList values={mockDataSingleSelection} useSelector />
         </HvProvider>
       );
     });

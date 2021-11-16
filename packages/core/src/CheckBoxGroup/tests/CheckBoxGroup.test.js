@@ -44,7 +44,7 @@ describe("HvCheckBoxGroup", () => {
       // defaults
       expect(checkboxGroup).not.toHaveAttribute("aria-disabled");
       expect(checkboxGroup).toBeValid();
-      expect(checkboxGroup).not.toHaveDescription();
+      expect(checkboxGroup).not.toHaveAccessibleDescription();
 
       // children ordered and rendered as expected
       const checkboxes = getAllByRole("checkbox");
@@ -434,7 +434,7 @@ describe("HvCheckBoxGroup", () => {
       getByText("Choose an animal");
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).toHaveDescription("Choose an animal");
+      expect(checkboxGroup).toHaveAccessibleDescription("Choose an animal");
     });
 
     it("supports an external description", () => {
@@ -450,7 +450,7 @@ describe("HvCheckBoxGroup", () => {
       );
 
       const checkboxGroup = getByRole("group");
-      expect(checkboxGroup).toHaveDescription("An external description");
+      expect(checkboxGroup).toHaveAccessibleDescription("An external description");
     });
   });
 

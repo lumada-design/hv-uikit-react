@@ -110,7 +110,7 @@ export const MultiSelection = () => {
   };
   return (
     <HvPanel m="10px" style={{ float: "left" }}>
-      <HvListContainer interactive multiSelect condensed aria-label="Stores">
+      <HvListContainer interactive condensed aria-label="Stores">
         <HvListItem onClick={(event) => handleListItemClick(event, 0)} selected={selectedItems[0]}>
           98001, Store Manager
         </HvListItem>
@@ -369,12 +369,12 @@ export const MultiSelectionWithShift = () => {
 
     return (
       <HvPanel m="10px" style={{ float: "left" }}>
-        <HvListContainer interactive multiSelect condensed aria-label="Stores" role="listbox">
+        <HvListContainer interactive condensed aria-label="Stores" role="listbox">
           <HvListItem
             onClick={(event) => handleListItemClick(event, 0)}
             selected={selectedItems[0]}
             role="option"
-            style={{ "user-select": "none" }}
+            style={{ userSelect: "none" }}
           >
             98001, Store Manager
           </HvListItem>
@@ -382,7 +382,7 @@ export const MultiSelectionWithShift = () => {
             onClick={(event) => handleListItemClick(event, 1)}
             selected={selectedItems[1]}
             role="option"
-            style={{ "user-select": "none" }}
+            style={{ userSelect: "none" }}
           >
             98002, Store Manager
           </HvListItem>
@@ -390,7 +390,7 @@ export const MultiSelectionWithShift = () => {
             onClick={(event) => handleListItemClick(event, 2)}
             selected={selectedItems[2]}
             role="option"
-            style={{ "user-select": "none" }}
+            style={{ userSelect: "none" }}
           >
             98003, Store Manager
           </HvListItem>
@@ -398,7 +398,7 @@ export const MultiSelectionWithShift = () => {
             onClick={(event) => handleListItemClick(event, 3)}
             selected={selectedItems[3]}
             role="option"
-            style={{ "user-select": "none" }}
+            style={{ userSelect: "none" }}
           >
             98004, Store Manager
           </HvListItem>
@@ -406,7 +406,7 @@ export const MultiSelectionWithShift = () => {
             onClick={(event) => handleListItemClick(event, 4)}
             selected={selectedItems[4]}
             role="option"
-            style={{ "user-select": "none" }}
+            style={{ userSelect: "none" }}
           >
             98005, Store Manager
           </HvListItem>

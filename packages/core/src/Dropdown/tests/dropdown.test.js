@@ -15,6 +15,7 @@ import {
 } from "../stories/Dropdown.stories.test";
 
 describe("<Dropdown />", () => {
+  jest.setTimeout(30000);
   it("General", async () => {
     const { container, findByRole } = render(<General />);
     await findByRole("tooltip");
@@ -127,32 +128,45 @@ describe("Multi Selection", () => {
   // the test to fail with "async callback was not invoked within the 5000 ms timeout"
   // in the CI (but not locally), so the changes were reverting, despite bringing
   // back the "not wrapped in act" warning.
-  it("selections are applied correctly", () => {
-    const { getByRole } = render(<General />);
+  it("selections are applied correctly", async () => {
+    const { getByRole, findByRole } = render(<General />);
 
-    const checkBox1 = getByRole("checkbox", { name: /value 1/i });
+    let checkBox1 = getByRole("checkbox", { name: /value 1/i });
+    expect(checkBox1).not.toBeChecked();
     userEvent.click(checkBox1);
+    checkBox1 = await findByRole("checkbox", { name: /value 1/i });
     expect(checkBox1).toBeChecked();
 
-    const checkBox2 = getByRole("checkbox", { name: /value 2/i });
+    let checkBox2 = getByRole("checkbox", { name: /value 2/i });
+    expect(checkBox2).toBeChecked();
     userEvent.click(checkBox2);
+    checkBox2 = await findByRole("checkbox", { name: /value 2/i });
     expect(checkBox2).not.toBeChecked();
 
-    const checkBox3 = getByRole("checkbox", { name: /value 3/i });
+    let checkBox3 = getByRole("checkbox", { name: /value 3/i });
+    expect(checkBox3).not.toBeChecked();
     userEvent.click(checkBox3);
+    checkBox3 = await findByRole("checkbox", { name: /value 3/i });
     expect(checkBox3).toBeChecked();
 
-    const checkBox4 = getByRole("checkbox", { name: /value 4/i });
+    let checkBox4 = getByRole("checkbox", { name: /value 4/i });
+    expect(checkBox4).not.toBeChecked();
     userEvent.click(checkBox4);
+    checkBox4 = await findByRole("checkbox", { name: /value 4/i });
     expect(checkBox4).toBeChecked();
 
     const applyButton = getByRole("button", { name: /apply/i });
     // apply closes dropdown
     userEvent.click(applyButton);
 
-    const dropdownElement = getByRole("combobox");
+    const dropdownElement = await findByRole("combobox");
     // open dropdown
     userEvent.click(dropdownElement);
+
+    checkBox1 = await findByRole("checkbox", { name: /value 1/i });
+    checkBox2 = getByRole("checkbox", { name: /value 2/i });
+    checkBox3 = getByRole("checkbox", { name: /value 3/i });
+    checkBox4 = getByRole("checkbox", { name: /value 4/i });
 
     // check that selection is retained
     expect(checkBox1).toBeChecked();

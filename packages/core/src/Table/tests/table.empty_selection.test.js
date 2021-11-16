@@ -1,4 +1,5 @@
 /* eslint-env jest */
+/* eslint-disable no-console */
 import React from "react";
 
 import userEvent from "@testing-library/user-event";
@@ -26,9 +27,27 @@ describe("HvTable", () => {
   });
 
   describe("sample snapshot testing", () => {
+    const consoleSpy = jest.fn();
+    const originalWarn = console.warn;
+
+    beforeEach(() => {
+      consoleSpy.mockReset();
+      console.warn = consoleSpy;
+    });
+    afterEach(() => {
+      console.warn = originalWarn;
+    });
+
     it("Main", () => {
       const { container } = render(<TableDataDeletion />);
       expect(container).toMatchSnapshot();
+      expect(console.warn).toHaveBeenCalledTimes(2);
+      expect(consoleSpy.mock.calls[0][0].includes("componentWillMount has been renamed")).toBe(
+        true
+      );
+      expect(
+        consoleSpy.mock.calls[1][0].includes("componentWillReceiveProps has been renamed")
+      ).toBe(true);
     });
   });
 

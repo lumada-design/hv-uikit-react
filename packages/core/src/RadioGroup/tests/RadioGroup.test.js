@@ -76,7 +76,7 @@ describe("HvRadioGroup", () => {
       // defaults
       expect(radioGroup).not.toHaveAttribute("aria-disabled");
       expect(radioGroup).toBeValid();
-      expect(radioGroup).not.toHaveDescription();
+      expect(radioGroup).not.toHaveAccessibleDescription();
 
       // children ordered and rendered as expected
       const radiobuttons = getAllByRole("radio");
@@ -379,7 +379,7 @@ describe("HvRadioGroup", () => {
       getByText("Choose a radio");
 
       const radioGroup = getByRole("radiogroup");
-      expect(radioGroup).toHaveDescription("Choose a radio");
+      expect(radioGroup).toHaveAccessibleDescription("Choose a radio");
     });
 
     it("supports an external description", () => {
@@ -395,7 +395,7 @@ describe("HvRadioGroup", () => {
       );
 
       const radioGroup = getByRole("radiogroup");
-      expect(radioGroup).toHaveDescription("An external description");
+      expect(radioGroup).toHaveAccessibleDescription("An external description");
     });
   });
 

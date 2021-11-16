@@ -3,6 +3,7 @@
 import React from "react";
 
 import { render } from "testing-utils";
+import { Backwards } from "@hv/uikit-react-icons";
 import userEvent from "@testing-library/user-event";
 
 import { HvButton, HvGlobalActions } from "../..";
@@ -65,9 +66,13 @@ describe("GlobalActions", () => {
 
     it("executes the provided callback", () => {
       const onClickSpy = jest.fn();
-
+      const BackButton = () => (
+        <HvButton aria-label="Back" icon onClick={onClickSpy}>
+          <Backwards />
+        </HvButton>
+      );
       const { getAllByRole } = render(
-        <HvGlobalActions name="Detail Page Title" backButtonAction={onClickSpy}>
+        <HvGlobalActions name="Detail Page Title" backButton={<BackButton />}>
           <HvButton category="primary">Approve & Share</HvButton>
           <HvButton category="secondary">Reset</HvButton>
         </HvGlobalActions>

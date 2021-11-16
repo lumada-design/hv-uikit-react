@@ -41,6 +41,7 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
         >
           <WithStyles(ForwardRef)
             className="HvEmptyState-titleContainer"
+            component="div"
             variant="xxsTitle"
           >
             <ForwardRef
@@ -71,9 +72,10 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
+              component="div"
               variant="xxsTitle"
             >
-              <h6
+              <div
                 className="HvEmptyState-titleContainer HvTypography-root HvTypography-xxsTitle"
               >
                 <MockTitle>
@@ -81,11 +83,12 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
                     mockTitle
                   </div>
                 </MockTitle>
-              </h6>
+              </div>
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
             className="HvEmptyState-messageContainer"
+            component="div"
             variant="normalText"
           >
             <ForwardRef
@@ -116,9 +119,10 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
+              component="div"
               variant="normalText"
             >
-              <p
+              <div
                 className="HvEmptyState-messageContainer HvTypography-root HvTypography-normalText"
               >
                 <MockMessage>
@@ -126,11 +130,12 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
                     mockMessage
                   </div>
                 </MockMessage>
-              </p>
+              </div>
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
             className="HvEmptyState-actionContainer"
+            component="div"
             variant="normalText"
           >
             <ForwardRef
@@ -161,9 +166,10 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
+              component="div"
               variant="normalText"
             >
-              <p
+              <div
                 className="HvEmptyState-actionContainer HvTypography-root HvTypography-normalText"
               >
                 <MockAction>
@@ -171,7 +177,7 @@ exports[`<EmptyState /> with Element title/message/action should render correctl
                     mockAction
                   </div>
                 </MockAction>
-              </p>
+              </div>
             </ForwardRef>
           </WithStyles(ForwardRef)>
         </div>
@@ -295,6 +301,7 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
         >
           <WithStyles(ForwardRef)
             className="HvEmptyState-titleContainer"
+            component="div"
             variant="xxsTitle"
           >
             <ForwardRef
@@ -325,17 +332,19 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
+              component="div"
               variant="xxsTitle"
             >
-              <h6
+              <div
                 className="HvEmptyState-titleContainer HvTypography-root HvTypography-xxsTitle"
               >
                 This page can't be displayed
-              </h6>
+              </div>
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
             className="HvEmptyState-messageContainer"
+            component="div"
             variant="normalText"
           >
             <ForwardRef
@@ -366,9 +375,10 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
+              component="div"
               variant="normalText"
             >
-              <p
+              <div
                 className="HvEmptyState-messageContainer HvTypography-root HvTypography-normalText"
               >
                 <WithStyles(ForwardRef)>
@@ -407,11 +417,12 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                     </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
-              </p>
+              </div>
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
             className="HvEmptyState-actionContainer"
+            component="div"
             variant="normalText"
           >
             <ForwardRef
@@ -442,9 +453,10 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
+              component="div"
               variant="normalText"
             >
-              <p
+              <div
                 className="HvEmptyState-actionContainer HvTypography-root HvTypography-normalText"
               >
                 <WithStyles(ForwardRef)
@@ -507,7 +519,7 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                     </div>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
-              </p>
+              </div>
             </ForwardRef>
           </WithStyles(ForwardRef)>
         </div>

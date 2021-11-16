@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 
 import { render } from "@testing-library/react";
@@ -8,6 +9,17 @@ import "@testing-library/jest-dom/extend-expect";
 
 describe("HvTags", () => {
   describe("sample snapshot testing", () => {
+    const consoleSpy = jest.fn();
+    const originalWarn = console.warn;
+    beforeEach(async () => {
+      consoleSpy.mockReset();
+      console.warn = consoleSpy;
+    });
+
+    afterEach(async () => {
+      console.warn = originalWarn;
+    });
+
     it("Default", () => {
       const { container } = render(
         <HvProvider>
@@ -15,6 +27,10 @@ describe("HvTags", () => {
         </HvProvider>
       );
       expect(container).toMatchSnapshot();
+      expect(console.warn).toHaveBeenCalledTimes(4);
+      expect(consoleSpy.mock.calls[0][1].includes("Please use the Tag component in Core")).toBe(
+        true
+      );
     });
     it("renders a tag as expected", () => {
       const { container, getByText } = render(
@@ -31,6 +47,10 @@ describe("HvTags", () => {
       expect(tag2).toBeInTheDocument();
       expect(tag3).toBeInTheDocument();
       expect(tag4).toBeInTheDocument();
+      expect(console.warn).toHaveBeenCalledTimes(4);
+      expect(consoleSpy.mock.calls[0][1].includes("Please use the Tag component in Core")).toBe(
+        true
+      );
     });
   });
 });

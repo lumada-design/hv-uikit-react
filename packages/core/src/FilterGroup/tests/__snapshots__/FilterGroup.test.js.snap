@@ -67,8 +67,11 @@ exports[`<FilterGroup /> Can be opened 1`] = `
         </div>
         <div
           class="HvBaseDropdown-container"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
           role="tooltip"
-          style="position: absolute; left: 0px; top: 0px;"
+          style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px); max-width: 0px; max-height: 0px;"
         >
           <div>
             <div
@@ -3215,6 +3218,7 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
                 class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-0-selector-input"
+                tabindex="0"
                 type="checkbox"
                 value="on"
               />
@@ -3289,6 +3293,7 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
                 class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-1-selector-input"
+                tabindex="-1"
                 type="checkbox"
                 value="on"
               />
@@ -3363,6 +3368,7 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
                 class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-2-selector-input"
+                tabindex="-1"
                 type="checkbox"
                 value="on"
               />
@@ -3436,6 +3442,7 @@ exports[`Right side selection Changes the counters in the expected locations 4`]
                 class="PrivateSwitchBase-input-27"
                 data-indeterminate="false"
                 id="example-list-item-3-selector-input"
+                tabindex="-1"
                 type="checkbox"
                 value="on"
               />
