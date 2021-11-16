@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: "jsdom",
   collectCoverageFrom: [
     "src/**/*.{js,jsx}",
     "!src/**/*.test.{js,jsx}",
@@ -28,7 +29,7 @@ module.exports = {
   testRegex: "src/.*/tests/.*\\.test\\.(js|jsx)$",
   rootDir: "../",
   testURL: "http://localhost/",
-  snapshotSerializers: ["enzyme-to-json/serializer", "jss-snapshot-serializer"],
+  snapshotSerializers: ["enzyme-to-json/serializer"],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { rootMode: "upward" }],
   },

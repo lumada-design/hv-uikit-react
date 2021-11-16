@@ -235,26 +235,32 @@ describe("Table", () => {
       expect(queryByText("Event 1")).toBeInTheDocument();
       expect(queryByText("Event 11")).not.toBeInTheDocument();
 
-      userEvent.click(fistPage);
-      expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 1")).toBeInTheDocument();
-      expect(queryByText("Event 11")).not.toBeInTheDocument();
-
-      userEvent.click(previousPage);
-      expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 1")).toBeInTheDocument();
-      expect(queryByText("Event 11")).not.toBeInTheDocument();
+      expect(fistPage).toBeDisabled();
+      expect(previousPage).toBeDisabled();
 
       userEvent.click(nextPage);
+
       expect(getAllByRole("row").length).toBe(11);
       expect(queryByText("Event 1")).not.toBeInTheDocument();
       expect(queryByText("Event 11")).toBeInTheDocument();
 
+      userEvent.click(previousPage);
+
+      expect(getAllByRole("row").length).toBe(11);
+      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(queryByText("Event 11")).not.toBeInTheDocument();
+
       userEvent.click(lastPage);
+
       expect(getAllByRole("row").length).toBe(11);
       expect(queryByText("Event 1")).not.toBeInTheDocument();
       expect(queryByText("Event 30")).not.toBeInTheDocument();
       expect(queryByText("Event 31")).toBeInTheDocument();
+
+      userEvent.click(fistPage);
+      expect(getAllByRole("row").length).toBe(11);
+      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(queryByText("Event 11")).not.toBeInTheDocument();
     });
 
     it("should change current page when next and previous page is clicked sequentially", () => {
