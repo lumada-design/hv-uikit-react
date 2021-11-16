@@ -1,139 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should render correctly 1`] = `
-<WithStyles(ForwardRef)>
-  <ForwardRef
-    classes={
-      Object {
-        "focusVisible": "HvButton-focusVisible",
-        "ghost": "HvButton-ghost",
-        "ghostDisabled": "HvButton-ghostDisabled",
-        "ghostSVG": "HvButton-ghostSVG",
-        "icon": "HvButton-icon",
-        "iconSVG": "HvButton-iconSVG",
-        "primary": "HvButton-primary",
-        "primaryDisabled": "HvButton-primaryDisabled",
-        "primarySVG": "HvButton-primarySVG",
-        "root": "HvButton-root",
-        "secondary": "HvButton-secondary",
-        "secondaryDisabled": "HvButton-secondaryDisabled",
-        "secondarySVG": "HvButton-secondarySVG",
-        "semantic": "HvButton-semantic",
-        "semanticDisabled": "HvButton-semanticDisabled",
-        "semanticSVG": "HvButton-semanticSVG",
-        "startIcon": "HvButton-startIcon",
-      }
-    }
+exports[`HvButton sample snapshot testing Main (Vertical) 1`] = `
+<div>
+  <button
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
+    tabindex="0"
+    type="button"
   >
-    <WithStyles(ForwardRef(Button))
-      className="HvButton-primarySVG"
-      classes={
-        Object {
-          "containedPrimary": "HvButton-primary",
-          "disabled": "HvButton-primaryDisabled",
-          "outlinedPrimary": "HvButton-secondary",
-          "root": "HvButton-root",
-          "startIcon": "HvButton-startIcon",
-          "textPrimary": "HvButton-ghost",
-        }
-      }
-      color="primary"
-      disableRipple={true}
-      focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
-      variant="contained"
+    <span
+      class="MuiButton-label"
     >
-      <ForwardRef(Button)
-        className="HvButton-primarySVG"
-        classes={
-          Object {
-            "colorInherit": "MuiButton-colorInherit",
-            "contained": "MuiButton-contained",
-            "containedPrimary": "MuiButton-containedPrimary HvButton-primary",
-            "containedSecondary": "MuiButton-containedSecondary",
-            "containedSizeLarge": "MuiButton-containedSizeLarge",
-            "containedSizeSmall": "MuiButton-containedSizeSmall",
-            "disableElevation": "MuiButton-disableElevation",
-            "disabled": "Mui-disabled HvButton-primaryDisabled",
-            "endIcon": "MuiButton-endIcon",
-            "focusVisible": "Mui-focusVisible",
-            "fullWidth": "MuiButton-fullWidth",
-            "iconSizeLarge": "MuiButton-iconSizeLarge",
-            "iconSizeMedium": "MuiButton-iconSizeMedium",
-            "iconSizeSmall": "MuiButton-iconSizeSmall",
-            "label": "MuiButton-label",
-            "outlined": "MuiButton-outlined",
-            "outlinedPrimary": "MuiButton-outlinedPrimary HvButton-secondary",
-            "outlinedSecondary": "MuiButton-outlinedSecondary",
-            "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-            "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-            "root": "MuiButton-root HvButton-root",
-            "sizeLarge": "MuiButton-sizeLarge",
-            "sizeSmall": "MuiButton-sizeSmall",
-            "startIcon": "MuiButton-startIcon HvButton-startIcon",
-            "text": "MuiButton-text",
-            "textPrimary": "MuiButton-textPrimary HvButton-ghost",
-            "textSecondary": "MuiButton-textSecondary",
-            "textSizeLarge": "MuiButton-textSizeLarge",
-            "textSizeSmall": "MuiButton-textSizeSmall",
-          }
-        }
-        color="primary"
-        disableRipple={true}
-        focusVisibleClassName="HvIsFocusVisible HvButton-focusVisible"
-        variant="contained"
-      >
-        <WithStyles(ForwardRef(ButtonBase))
-          className="MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
-          component="button"
-          disableRipple={true}
-          disabled={false}
-          focusRipple={true}
-          focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
-          type="button"
-        >
-          <ForwardRef(ButtonBase)
-            className="MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
-            classes={
-              Object {
-                "disabled": "Mui-disabled",
-                "focusVisible": "Mui-focusVisible",
-                "root": "MuiButtonBase-root",
-              }
-            }
-            component="button"
-            disableRipple={true}
-            disabled={false}
-            focusRipple={true}
-            focusVisibleClassName="Mui-focusVisible HvIsFocusVisible HvButton-focusVisible"
-            type="button"
-          >
-            <button
-              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
-              disabled={false}
-              onBlur={[Function]}
-              onDragLeave={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="MuiButton-label"
-              >
-                Click!
-              </span>
-            </button>
-          </ForwardRef(ButtonBase)>
-        </WithStyles(ForwardRef(ButtonBase))>
-      </ForwardRef(Button)>
-    </WithStyles(ForwardRef(Button))>
-  </ForwardRef>
-</WithStyles(ForwardRef)>
+      Primary
+    </span>
+  </button>
+  <button
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-outlined HvButton-secondarySVG MuiButton-outlinedPrimary HvButton-secondary"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Secondary
+    </span>
+  </button>
+  <button
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Ghost
+    </span>
+  </button>
+  <button
+    class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvButton-semanticSVG MuiButton-textPrimary HvButton-semantic"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Semantic
+    </span>
+  </button>
+</div>
 `;

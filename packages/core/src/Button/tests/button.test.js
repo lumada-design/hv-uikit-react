@@ -1,131 +1,139 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount } from "enzyme";
-import { Download } from "@hv/uikit-react-icons";
-import { HvButton, HvProvider } from "../..";
-import materialButtonConfiguration from "../materialButtonConfiguration";
 
-describe("Button", () => {
-  let wrapper;
+import userEvent from "@testing-library/user-event";
 
-  const getMaterialButtonProps = (ParentElement) => ParentElement.children().children().props();
+import { render, fireEvent, waitFor } from "testing-utils";
 
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
-        <HvButton>Click!</HvButton>
-      </HvProvider>
-    );
+import { HvButton } from "../..";
+import { Main, DisabledButtons, SemanticWithIcons, Icons } from "../stories/Button.stories";
+
+describe("HvButton", () => {
+  describe("sample snapshot testing", () => {
+    it("Main (Vertical)", () => {
+      const { container } = render(<Main />);
+      expect(container).toMatchSnapshot();
+    });
   });
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
+  describe("storybook samples checks", () => {
+    it("renders the main sample correctly", () => {
+      const { getByRole } = render(<Main />);
+
+      const primaryButton = getByRole("button", { name: "Primary" });
+      expect(primaryButton).toBeInTheDocument();
+      const secondaryButton = getByRole("button", { name: "Secondary" });
+      expect(secondaryButton).toBeInTheDocument();
+      const ghostButton = getByRole("button", { name: "Ghost" });
+      expect(ghostButton).toBeInTheDocument();
+      const semanticButton = getByRole("button", { name: "Semantic" });
+      expect(semanticButton).toBeInTheDocument();
+    });
+
+    it("renders the disabled sample correctly", () => {
+      const { getByRole } = render(<DisabledButtons />);
+
+      const primaryButton = getByRole("button", { name: "Primary" });
+      expect(primaryButton).toBeInTheDocument();
+      expect(primaryButton).toBeDisabled();
+      const secondaryButton = getByRole("button", { name: "Secondary" });
+      expect(secondaryButton).toBeInTheDocument();
+      expect(secondaryButton).toBeDisabled();
+      const ghostButton = getByRole("button", { name: "Ghost" });
+      expect(ghostButton).toBeInTheDocument();
+      expect(ghostButton).toBeDisabled();
+      const semanticButton = getByRole("button", { name: "Semantic" });
+      expect(semanticButton).toBeInTheDocument();
+      expect(semanticButton).toBeDisabled();
+    });
+
+    it("renders the semantic sample correctly", () => {
+      const { getByRole } = render(<SemanticWithIcons />);
+
+      const favoriteButton = getByRole("button", { name: "Favorite" });
+      expect(favoriteButton).toBeInTheDocument();
+      const refreshButton = getByRole("button", { name: "Refresh" });
+      expect(refreshButton).toBeInTheDocument();
+      const deleteButton = getByRole("button", { name: "Delete" });
+      expect(deleteButton).toBeInTheDocument();
+      const optionsButtons = getByRole("button", { name: "More options" });
+      expect(optionsButtons).toBeInTheDocument();
+    });
+
+    it("renders the icons sample correctly", () => {
+      const { getAllByRole } = render(<Icons />);
+
+      const playButton = getAllByRole("button", { name: "Play" });
+      expect(playButton.length).toEqual(2);
+      expect(playButton[0]).toBeInTheDocument();
+      expect(playButton[1]).toBeInTheDocument();
+      const pauseButton = getAllByRole("button", { name: "Pause" });
+      expect(pauseButton.length).toEqual(2);
+      expect(pauseButton[0]).toBeInTheDocument();
+      expect(pauseButton[1]).toBeInTheDocument();
+      const stopButton = getAllByRole("button", { name: "Stop" });
+      expect(stopButton.length).toEqual(2);
+      expect(stopButton[0]).toBeInTheDocument();
+      expect(stopButton[1]).toBeInTheDocument();
+    });
   });
 
-  it("should render correctly", () => {
-    expect(wrapper.find(HvButton)).toMatchSnapshot();
-  });
+  describe("interactions", () => {
+    it("executes the passed function on click", () => {
+      const buttonSpy = jest.fn();
+      const buttonText = "click me";
+      const { getByRole } = render(<HvButton onClick={buttonSpy}>{buttonText}</HvButton>);
 
-  it("should render the Button component", () => {
-    const buttonComponent = wrapper.find(HvButton);
-    expect(buttonComponent.length).toBe(1);
-  });
+      const buttonToTest = getByRole("button", { name: buttonText });
+      expect(buttonToTest).toBeInTheDocument();
+      userEvent.click(buttonToTest);
+      expect(buttonSpy).toHaveBeenCalled();
+    });
 
-  it("should correctly map the primary type to the material ui configurations", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <HvButton category="primary">Click!</HvButton>
-      </HvProvider>
-    ).find(HvButton);
+    it("executes the passed function on keydown", async () => {
+      const buttonSpy = jest.fn();
+      const buttonText = "click me";
+      const { getByRole } = render(<HvButton onKeyDown={buttonSpy}>{buttonText}</HvButton>);
 
-    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
-      materialButtonConfiguration.color.primary
-    );
-    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
-      materialButtonConfiguration.variant.contained
-    );
-  });
+      const buttonToTest = getByRole("button", { name: buttonText });
+      expect(buttonToTest).toBeInTheDocument();
+      userEvent.tab();
+      expect(buttonToTest).toHaveFocus();
+      fireEvent.keyDown(buttonToTest, { key: "Enter", keyCode: 13 });
+      await waitFor(() => {
+        expect(buttonSpy).toHaveBeenCalledTimes(1);
+      });
+    });
 
-  it("should correctly map the secondary type to the material ui configurations", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <HvButton category="secondary">Click!</HvButton>
-      </HvProvider>
-    ).find(HvButton);
-    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
-      materialButtonConfiguration.color.primary
-    );
-    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
-      materialButtonConfiguration.variant.outlined
-    );
-  });
-
-  it("should correctly map the link type to the material ui configurations", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <HvButton category="ghost">Click!</HvButton>
-      </HvProvider>
-    ).find(HvButton);
-    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
-      materialButtonConfiguration.color.primary
-    );
-    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
-      materialButtonConfiguration.variant.text
-    );
-  });
-
-  it("should correctly map the secondary category to the material ui configurations", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <HvButton category="secondary">Click!</HvButton>
-      </HvProvider>
-    ).find(HvButton);
-    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
-      materialButtonConfiguration.color.primary
-    );
-    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
-      materialButtonConfiguration.variant.outlined
-    );
-  });
-
-  it("should correctly map the secondary type to the material ui configurations", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <HvButton category="ghost">Click!</HvButton>
-      </HvProvider>
-    ).find(HvButton);
-    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
-      materialButtonConfiguration.color.primary
-    );
-    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
-      materialButtonConfiguration.variant.text
-    );
-  });
-});
-
-describe("Button with Icon", () => {
-  let wrapper;
-
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
-        <HvButton category="primary" startIcon={<Download />}>
-          Click!
+    it("does not executes the passed function on click", () => {
+      const buttonSpy = jest.fn();
+      const buttonText = "click me";
+      const { getByRole } = render(
+        <HvButton disabled onClick={buttonSpy}>
+          {buttonText}
         </HvButton>
-      </HvProvider>
-    );
-  });
+      );
 
-  it("should be defined", () => {
-    expect(wrapper).toBeDefined();
-  });
+      const buttonToTest = getByRole("button", { name: buttonText });
+      expect(buttonToTest).toBeInTheDocument();
+      userEvent.click(buttonToTest);
+      expect(buttonSpy).not.toHaveBeenCalled();
+    });
 
-  it("should render the Button component", () => {
-    expect(wrapper.find(HvButton).length).toBe(1);
-  });
+    it("does not focus the button", () => {
+      const buttonSpy = jest.fn();
+      const buttonText = "click me";
+      const { getByRole } = render(
+        <HvButton disabled onKeyDown={buttonSpy}>
+          {buttonText}
+        </HvButton>
+      );
 
-  it("should render the icon component", () => {
-    expect(wrapper.find(Download).length).toBe(1);
+      const buttonToTest = getByRole("button", { name: buttonText });
+      expect(buttonToTest).toBeInTheDocument();
+      userEvent.tab();
+      expect(buttonToTest).not.toHaveFocus();
+    });
   });
 });
