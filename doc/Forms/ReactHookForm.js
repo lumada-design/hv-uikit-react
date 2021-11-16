@@ -1,6 +1,6 @@
 import React from "react";
-import { useForm, Controller } from "react-hook-form/dist/index.ie11";
-import { yupResolver } from "@hookform/resolvers/dist/ie11/yup/yup";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { HvInput, HvButton, HvCheckBoxGroup, HvCheckBox, HvDropdown } from "@hv/uikit-react-core";
 
@@ -12,12 +12,17 @@ const schema = yup.object().shape({
 const onSubmit = (data) => alert("React Hook: " + JSON.stringify(data));
 
 export default () => {
-  const { handleSubmit, errors, control, setValue } = useForm({
+  const {
+    handleSubmit,
+    formState: { errors },
+    control,
+    setValue,
+  } = useForm({
     resolver: yupResolver(schema),
   });
 
   const parseStatus = (name) => {
-    return errors[name] ? "invalid" : "valid";
+    return errors?.[name] ? "invalid" : "valid";
   };
 
   const parseStatusMessage = (name) => {
@@ -30,7 +35,7 @@ export default () => {
         <Controller
           name="textField"
           control={control}
-          render={({ onChange, name }) => (
+          render={({ field: { name } }) => (
             <HvInput
               name={name}
               label="Text Field"
@@ -44,7 +49,7 @@ export default () => {
         <Controller
           name="dropdown"
           control={control}
-          render={({ name }) => (
+          render={({ field: { name } }) => (
             <HvDropdown
               name={name}
               label="Dropdown"
@@ -68,7 +73,7 @@ export default () => {
         <Controller
           name="checkboxes"
           control={control}
-          render={({ name }) => (
+          render={({ field: { name } }) => (
             <HvCheckBoxGroup
               name={name}
               label="Checkboxes"
