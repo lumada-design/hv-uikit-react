@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { DropDownXS, DropUpXS } from "@hv/uikit-react-icons";
+import { DropDownXS, DropUpXS, DropLeftXS, DropRightXS } from "@hv/uikit-react-icons";
 import styles from "./styles";
 import { setId, useControlled } from "../utils";
 import { HvTypography } from "..";
@@ -20,12 +20,23 @@ const HvAccordion = ({
   onChange = null,
   children,
   expanded,
+  expandedIcon = "dropdownDownIcon",
+  collapsedIcon = "dropUpIcon",
   headingLevel,
   defaultExpanded = false,
   containerProps,
   ...others
 }) => {
   const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
+
+  const ArrowIconComponents = {
+    dropLeftIcon: DropLeftXS,
+    dropRightIcon: DropRightXS,
+    dropDownIcon: DropDownXS,
+    dropUpIcon: DropUpXS,
+  };
+  const ArrowExpand = ArrowIconComponents[expandedIcon];
+  const ArrowCollapsed = ArrowIconComponents[collapsedIcon];
 
   const handleAction = useCallback(
     (event) => {
@@ -95,7 +106,7 @@ const HvAccordion = ({
         aria-disabled={disabled}
         {...labelProps}
       >
-        {isOpen ? <DropUpXS color={color} /> : <DropDownXS color={color} />}
+        {isOpen ? <ArrowCollapsed color={color} /> : <ArrowExpand color={color} />}
         {label}
       </HvTypography>
     );
@@ -204,6 +215,14 @@ HvAccordion.propTypes = {
    * The content of the accordion.
    */
   children: PropTypes.node,
+  /**
+   * Icon to expand the accordion
+   */
+  expandedIcon: PropTypes.string,
+  /**
+   * Icon to collapse the accordion
+   */
+  collapsedIcon: PropTypes.string,
 };
 
 export default withStyles(styles, { name: "HvAccordion" })(HvAccordion);
