@@ -78,7 +78,8 @@ const HvSingleCalendar = ({
     // This code is very brittle and should be managed with the focus wrapper
     const el = document?.activeElement;
     const parent = el?.parentElement?.parentElement;
-    const siblings = [...parent?.getElementsByClassName(classes.cellContainer)];
+    const siblings =
+      parent != null ? [...parent.getElementsByClassName(classes.cellContainer)] : [];
     const elIndex = siblings.indexOf(el);
 
     if (isKeypress(event, Enter)) {

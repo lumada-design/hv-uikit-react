@@ -188,7 +188,7 @@ const HvDropdown = (props) => {
       inputs[0].focus();
       return;
     }
-    const listItems = [...containerRef?.getElementsByTagName("li")];
+    const listItems = containerRef != null ? [...containerRef.getElementsByTagName("li")] : [];
     listItems.every((listItem) => {
       if (listItem.tabIndex >= 0) {
         listItem.focus();
