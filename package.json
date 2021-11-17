@@ -87,7 +87,7 @@
     "formik": "^2.2.9",
     "fs-extra": "^10.0.0",
     "fs-readdir-recursive": "^1.1.0",
-    "html-react-parser": "^0.14.0",
+    "html-react-parser": "^1.4.0",
     "husky": "^7.0.0",
     "lerna": "^4.0.0",
     "license-checker": "^25.0.1",
