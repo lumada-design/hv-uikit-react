@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 
 import clsx from "clsx";
@@ -31,13 +31,16 @@ const HvListContainer = React.forwardRef((props, externalRef) => {
 
   const { topContainerRef, nesting = -1 } = useContext(HvListContext);
 
-  const listContext = {
-    topContainerRef: topContainerRef || containerRef,
-    condensed,
-    disableGutters,
-    interactive,
-    nesting: nesting + 1,
-  };
+  const listContext = useMemo(
+    () => ({
+      topContainerRef: topContainerRef || containerRef,
+      condensed,
+      disableGutters,
+      interactive,
+      nesting: nesting + 1,
+    }),
+    [condensed, disableGutters, interactive, nesting, topContainerRef]
+  );
 
   const renderChildren = () => {
     if (!interactive) {

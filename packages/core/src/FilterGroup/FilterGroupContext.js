@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import isEqual from "lodash/isEqual";
 import { useSavedState } from "../utils";
@@ -29,32 +29,41 @@ export const FilterGroupProvider = ({ value, filters, children }) => {
     setApplyDisabled(isEqual(filterValues, appliedFilters));
   }, [filterValues, appliedFilters]);
 
-  const clearFilters = () => {
+  const clearFilters = useCallback(() => {
     setFilterValues(groups(filters));
-  };
+  }, [filters, setFilterValues]);
 
-  const applyFilters = () => {
+  const applyFilters = useCallback(() => {
     setFilterValues(filterValues, true);
-  };
+  }, [filterValues, setFilterValues]);
 
-  return (
-    <FilterGroupContext.Provider
-      value={{
-        activeGroup: group,
-        setActiveGroup,
-        filterOptions: filters,
-        filterValues,
-        setFilterValues,
-        appliedFilters,
-        rollbackFilters,
-        clearFilters,
-        applyFilters,
-        applyDisabled,
-      }}
-    >
-      {children}
-    </FilterGroupContext.Provider>
+  const contextValue = useMemo(
+    () => ({
+      activeGroup: group,
+      setActiveGroup,
+      filterOptions: filters,
+      filterValues,
+      setFilterValues,
+      appliedFilters,
+      rollbackFilters,
+      clearFilters,
+      applyFilters,
+      applyDisabled,
+    }),
+    [
+      appliedFilters,
+      applyDisabled,
+      applyFilters,
+      clearFilters,
+      filterValues,
+      filters,
+      group,
+      rollbackFilters,
+      setFilterValues,
+    ]
   );
+
+  return <FilterGroupContext.Provider value={contextValue}>{children}</FilterGroupContext.Provider>;
 };
 
 FilterGroupProvider.propTypes = {
