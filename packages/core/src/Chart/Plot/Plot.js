@@ -24,6 +24,7 @@ const Plot = ({ data, layout, config, revision = 0, onHover, onUnHover, afterPlo
    * Call in the first render because react-plotly.js won't do so.
    * (https://github.com/plotly/react-plotly.js/blob/bd15ca98be12b159633fb57c4ea762cb7a64c3a7/src/factory.js#L88)
    */
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(afterPlotInternal, []);
 
   return (

@@ -292,27 +292,25 @@ const HvBaseDropdown = ({
   })();
 
   return (
-    <>
-      <div className={classes.root}>
-        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-        <div
-          id={id}
-          role={ariaRole}
-          aria-expanded={!!isOpen}
-          aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
-          className={clsx(className, classes.anchor, {
-            [classes.rootDisabled]: disabled,
-          })}
-          onKeyDown={handleToggle}
-          onClick={handleToggle}
-          tabIndex={-1}
-          {...others}
-        >
-          {headerComponent}
-        </div>
-        {isOpen ? containerComponent : <></>}
+    <div className={classes.root}>
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+      <div
+        id={id}
+        role={ariaRole}
+        aria-expanded={!!isOpen}
+        aria-owns={isOpen ? setId(elementId, "children-container") : undefined}
+        className={clsx(className, classes.anchor, {
+          [classes.rootDisabled]: disabled,
+        })}
+        onKeyDown={handleToggle}
+        onClick={handleToggle}
+        tabIndex={-1}
+        {...others}
+      >
+        {headerComponent}
       </div>
-    </>
+      {isOpen ? containerComponent : null}
+    </div>
   );
 };
 

@@ -134,34 +134,32 @@ const HvSingleCalendar = ({
           onChange={handleInputChange}
           showEndDate={showEndDate && !isDateSelectionMode}
         />
-        <>
-          {calViewMode === VIEW_MODE.CALENDAR && (
-            <div>
-              <HvComposedNavigation
-                id={id}
-                locale={locale}
-                onChange={onVisibleDateChange}
-                onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
-                visibleYear={visibleYear || today.getFullYear()}
-                visibleMonth={visibleMonth || today.getMonth() + 1}
-              />
-              <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
-                <CalendarWeekLabels labels={listWeekdayNames} />
-                {calModel.dates.map(renderCalendarDate)}
-              </div>
-            </div>
-          )}
-          {calViewMode === VIEW_MODE.MONTHLY && (
-            <HvMonthSelector
+        {calViewMode === VIEW_MODE.CALENDAR && (
+          <div>
+            <HvComposedNavigation
               id={id}
               locale={locale}
               onChange={onVisibleDateChange}
               onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+              visibleYear={visibleYear || today.getFullYear()}
               visibleMonth={visibleMonth || today.getMonth() + 1}
-              rangeMode={rangeMode}
             />
-          )}
-        </>
+            <div className={classes.calendarGrid} aria-controls={HvCalendarHeader?.[0]?.id}>
+              <CalendarWeekLabels labels={listWeekdayNames} />
+              {calModel.dates.map(renderCalendarDate)}
+            </div>
+          </div>
+        )}
+        {calViewMode === VIEW_MODE.MONTHLY && (
+          <HvMonthSelector
+            id={id}
+            locale={locale}
+            onChange={onVisibleDateChange}
+            onViewModeChange={(viewMode) => setCalViewMode(viewMode)}
+            visibleMonth={visibleMonth || today.getMonth() + 1}
+            rangeMode={rangeMode}
+          />
+        )}
       </div>
     </div>
   );
