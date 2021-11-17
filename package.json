@@ -43,13 +43,8 @@
     "lint:prettier": "npx lerna run lint:prettier",
     "lint:root-prettier": "npx prettier --config ./prettier.config.js --check \"*.js\" \"(doc|.storybook|scripts|automation)/**/*.js\"",
     "license-check": "npx lerna run license-check",
-    "ts-check": "npx lerna run ts-check --parallel"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:eslint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "ts-check": "npx lerna run ts-check --parallel",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -75,7 +70,7 @@
     "babel-plugin-optimize-clsx": "^2.6.2",
     "babel-plugin-react-docgen": "^4.2.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "del-cli": "^3.0.1",
+    "del-cli": "^4.0.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
@@ -90,11 +85,11 @@
     "eslint-plugin-testing-library": "^3.10.2",
     "find-root": "^1.1.0",
     "formik": "^2.2.9",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "fs-readdir-recursive": "^1.1.0",
     "html-react-parser": "^0.14.0",
-    "husky": "^4.3.8",
-    "lerna": "^3.22.1",
+    "husky": "^7.0.0",
+    "lerna": "^4.0.0",
     "license-checker": "^25.0.1",
     "monaco-editor": "0.20.0",
     "monaco-editor-webpack-plugin": "1.9.1",
