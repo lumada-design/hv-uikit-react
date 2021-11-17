@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
@@ -32,10 +32,13 @@ const HvGlobalActions = (props) => {
     ...others
   } = props;
 
-  const BackButtonComp = () => (
-    <HvButton aria-label={backButtonAriaLabel} icon onClick={backButtonAction}>
-      {backwardsIcon || <Backwards />}
-    </HvButton>
+  const BackButtonComp = useCallback(
+    () => (
+      <HvButton aria-label={backButtonAriaLabel} icon onClick={backButtonAction}>
+        {backwardsIcon || <Backwards />}
+      </HvButton>
+    ),
+    [backButtonAction, backButtonAriaLabel, backwardsIcon]
   );
 
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);

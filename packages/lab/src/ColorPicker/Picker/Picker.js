@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 
 import clsx from "clsx";
-import React from "react";
+import React, { useCallback } from "react";
 import { Saturation, ColorWrap, Hue } from "react-color/lib/components/common";
 
 import Fields from "../Fields";
@@ -11,8 +11,14 @@ import useStyles from "./styles";
 const Picker = ({ onChange, rgb, hsl, hsv, hex }) => {
   const classes = useStyles();
 
-  const SaturationPointer = () => <div className={clsx(classes.saturationPointer)} />;
-  const HueSlider = () => <div className={clsx(classes.hueSlider)} />;
+  const SaturationPointer = useCallback(
+    () => <div className={clsx(classes.saturationPointer)} />,
+    [classes.saturationPointer]
+  );
+  const HueSlider = useCallback(
+    () => <div className={clsx(classes.hueSlider)} />,
+    [classes.hueSlider]
+  );
 
   return (
     <>

@@ -60,19 +60,19 @@ const RightPanel = ({ id, className, labels }) => {
     setFilterValues(newFilterValues);
   };
 
-  const handleSelectAll = () => {
+  const handleSelectAll = useCallback(() => {
     const newFilterValues = cloneDeep(filterValues);
     newFilterValues[activeGroup] = anySelected ? [] : activeGroupOptions;
 
     setFilterValues(newFilterValues);
-  };
+  }, [activeGroup, activeGroupOptions, anySelected, filterValues, setFilterValues]);
 
   /**
    * Create selecteAll component.
    *
    * @returns {*}
    */
-  const SelectAll = () => {
+  const SelectAll = useCallback(() => {
     const { selectAll, multiSelectionConjunction } = labels;
     const nbrSelected = activeFilterValues?.length;
 
@@ -105,7 +105,18 @@ const RightPanel = ({ id, className, labels }) => {
         />
       </div>
     );
-  };
+  }, [
+    activeFilterValues?.length,
+    activeGroupOptions.length,
+    allSelected,
+    anySelected,
+    classes.selectAll,
+    classes.selectAllContainer,
+    classes.selection,
+    handleSelectAll,
+    id,
+    labels,
+  ]);
 
   return (
     <HvPanel id={setId(id, "rightPanel")} className={clsx(className, classes.root)}>
