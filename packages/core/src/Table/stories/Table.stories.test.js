@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-node-access */
 import { waitFor, screen, fireEvent } from "@testing-library/dom/dist/@testing-library/dom.umd";
 import React, { useState } from "react";
 

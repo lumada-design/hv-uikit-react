@@ -61,7 +61,9 @@ SelectedOpened.parameters = {
       const menu = await screen.findByRole("menu");
 
       // extra buffer to allow popper layout
-      return new Promise((resolve) => setTimeout(() => resolve(menu), 1000));
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(menu), 1000);
+      });
     },
   },
 };

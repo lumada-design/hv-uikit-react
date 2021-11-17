@@ -222,7 +222,7 @@ describe("Table", () => {
     });
 
     it("should contain the correct page elements", () => {
-      const { getByLabelText, queryByText, getAllByRole } = render(<Pagination />);
+      const { getByLabelText, getByText, queryByText, getAllByRole } = render(<Pagination />);
 
       const [fistPage, previousPage, nextPage, lastPage] = [
         "First Page",
@@ -232,7 +232,7 @@ describe("Table", () => {
       ].map(getByLabelText);
 
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(getByText("Event 1")).toBeInTheDocument();
       expect(queryByText("Event 11")).not.toBeInTheDocument();
 
       expect(fistPage).toBeDisabled();
@@ -242,12 +242,12 @@ describe("Table", () => {
 
       expect(getAllByRole("row").length).toBe(11);
       expect(queryByText("Event 1")).not.toBeInTheDocument();
-      expect(queryByText("Event 11")).toBeInTheDocument();
+      expect(getByText("Event 11")).toBeInTheDocument();
 
       userEvent.click(previousPage);
 
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(getByText("Event 1")).toBeInTheDocument();
       expect(queryByText("Event 11")).not.toBeInTheDocument();
 
       userEvent.click(lastPage);
@@ -255,11 +255,11 @@ describe("Table", () => {
       expect(getAllByRole("row").length).toBe(11);
       expect(queryByText("Event 1")).not.toBeInTheDocument();
       expect(queryByText("Event 30")).not.toBeInTheDocument();
-      expect(queryByText("Event 31")).toBeInTheDocument();
+      expect(getByText("Event 31")).toBeInTheDocument();
 
       userEvent.click(fistPage);
       expect(getAllByRole("row").length).toBe(11);
-      expect(queryByText("Event 1")).toBeInTheDocument();
+      expect(getByText("Event 1")).toBeInTheDocument();
       expect(queryByText("Event 11")).not.toBeInTheDocument();
     });
 
@@ -488,15 +488,18 @@ describe("Table", () => {
 
       await waitFor(() => {
         const options = screen.getAllByRole("option");
-        const fiveRows = options[0];
-        const twentyRows = options[2];
-        const hundredRows = options[5];
-
-        expect(fiveRows).toBeInTheDocument();
-        expect(twentyRows).toBeInTheDocument();
-        expect(hundredRows).toBeInTheDocument();
-        fireEvent.click(hundredRows);
+        expect(options.length).toBe(6);
       });
+
+      const options = screen.getAllByRole("option");
+      const fiveRows = options[0];
+      const twentyRows = options[2];
+      const hundredRows = options[5];
+
+      expect(fiveRows).toBeInTheDocument();
+      expect(twentyRows).toBeInTheDocument();
+      expect(hundredRows).toBeInTheDocument();
+      fireEvent.click(hundredRows);
 
       const visibleCheckboxes = screen.queryAllByRole("checkbox", { checked: false });
 

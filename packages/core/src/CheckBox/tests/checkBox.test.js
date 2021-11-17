@@ -341,11 +341,7 @@ describe("HvCheckBox", () => {
 
       const checkbox = getByRole("checkbox");
       expect(checkbox).toBeInvalid();
-
-      const errorId = checkbox.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-
-      expect(error).toHaveTextContent("The error message");
+      expect(checkbox).toHaveErrorMessage("The error message");
     });
 
     it("doesn't display the statusMessage when the status is valid", () => {
@@ -371,11 +367,7 @@ describe("HvCheckBox", () => {
       userEvent.click(checkbox);
 
       expect(checkbox).toBeInvalid();
-
-      const errorId = checkbox.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-
-      expect(error).toHaveTextContent("Required");
+      expect(checkbox).toHaveErrorMessage("Required");
     });
 
     it("built-in validation: doesn't display error before user interaction", () => {
@@ -394,11 +386,7 @@ describe("HvCheckBox", () => {
       userEvent.click(checkbox);
 
       expect(checkbox).toBeInvalid();
-
-      const errorId = checkbox.getAttribute("aria-errormessage");
-      const error = document.getElementById(errorId);
-
-      expect(error).toHaveTextContent("Required");
+      expect(checkbox).toHaveErrorMessage("Required");
     });
   });
 });

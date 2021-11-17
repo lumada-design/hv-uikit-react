@@ -149,16 +149,14 @@ export const CustomValidation = () => {
 
   const hasNumber = (value) => /\d/.test(value);
   return (
-    <>
-      <HvTextArea
-        id="custom-validation"
-        rows={5}
-        label="Label"
-        placeholder="Enter value"
-        validationMessages={validationMessages}
-        validation={(value) => !hasNumber(value)}
-      />
-    </>
+    <HvTextArea
+      id="custom-validation"
+      rows={5}
+      label="Label"
+      placeholder="Enter value"
+      validationMessages={validationMessages}
+      validation={(value) => !hasNumber(value)}
+    />
   );
 };
 

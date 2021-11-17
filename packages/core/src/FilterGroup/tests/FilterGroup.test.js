@@ -1,4 +1,8 @@
 /* eslint-env jest */
+/* eslint-env jest */
+/* eslint testing-library/no-wait-for-side-effects: "warn" */
+/* eslint testing-library/no-wait-for-multiple-assertions: "warn" */
+/* eslint testing-library/no-wait-for-snapshot: "warn" */
 import React from "react";
 
 import userEvent from "@testing-library/user-event";
@@ -7,6 +11,8 @@ import { screen, render, waitFor, within } from "testing-utils";
 
 import { Main } from "../stories/FilterGroup.stories.test";
 
+// TODO fix wrong use of waitFor
+// marked as warnings for not breaking the build, but they are effectively wrong
 describe("<FilterGroup />", () => {
   it("Main", () => {
     const { container } = render(<Main />);
@@ -33,10 +39,10 @@ describe("<FilterGroup />", () => {
 
     await waitFor(async () => {
       expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
-      userEvent.click(dropdownElement);
-      await waitFor(() => {
-        expect(dropdownElement).toHaveAttribute("aria-expanded", "false");
-      });
+    });
+    userEvent.click(dropdownElement);
+    await waitFor(() => {
+      expect(dropdownElement).toHaveAttribute("aria-expanded", "false");
     });
   });
 
@@ -48,12 +54,11 @@ describe("<FilterGroup />", () => {
 
     await waitFor(async () => {
       expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
-      const cancelButton = screen.getByText("Cancel");
-
-      userEvent.click(cancelButton);
-      await waitFor(() => {
-        expect(dropdownElement).toHaveAttribute("aria-expanded", "false");
-      });
+    });
+    const cancelButton = screen.getByText("Cancel");
+    userEvent.click(cancelButton);
+    await waitFor(() => {
+      expect(dropdownElement).toHaveAttribute("aria-expanded", "false");
     });
   });
 
@@ -65,10 +70,9 @@ describe("<FilterGroup />", () => {
 
     await waitFor(async () => {
       expect(dropdownElement).toHaveAttribute("aria-expanded", "true");
-      const applyButton = getByRole("button", { name: /apply/i });
-
-      expect(applyButton).toBeDisabled();
     });
+    const applyButton = getByRole("button", { name: /apply/i });
+    expect(applyButton).toBeDisabled();
   });
 });
 
